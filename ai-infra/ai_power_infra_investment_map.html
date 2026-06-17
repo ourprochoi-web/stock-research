@@ -54,7 +54,8 @@
     color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
   }
   .nav-links a:hover{color:var(--ink);background:var(--surface)}
-  .nav-toggle{display:none}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
 
   /* ---------- HERO ---------- */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
@@ -236,7 +237,11 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:860px){
-    .nav-links{display:none}
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
     .macro-grid{grid-template-columns:1fr}
     .cards{grid-template-columns:1fr}
     .timeline{grid-template-columns:1fr}
@@ -268,6 +273,7 @@
 <nav>
   <div class="wrap nav-in">
     <div class="brand"><span class="dot"></span>AI 전력 인프라 투자 지도</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="#macro">01 / 수요</a>
       <a href="#chain">02 / 밸류체인</a>
@@ -299,7 +305,7 @@
       <div class="hstat">
         <div class="num tnum">2<span class="u"> GW</span></div>
         <div class="lab">단일 AI 클러스터(xAI Colossus, GPU 55.5만개)의 전력 소비. 웬만한 대도시 한 곳의 피크 수요를 넘어선다.</div>
-        <div class="src">SRC: 2025.12–2026.01</div>
+        <div class="src">SRC: xAI Colossus · 2025.12–2026.01</div>
       </div>
       <div class="hstat">
         <div class="num tnum">100<span class="u"> GW</span></div>
@@ -455,7 +461,7 @@
         <div class="link-line">국산 기술로 가스터빈 종주국 미국 시장에 진입, <b>빅테크에 가스터빈 5기</b> 공급. 동시에 NuScale·X-energy·TerraPower와 협력하며 창원에 <b>SMR 전용공장</b>(연 20기)을 짓는다. AI 전력 수요의 ‘발전 측 종합세트’.</div>
         <div class="nums">
           <div><div class="nk">2025 신규수주</div><div class="nv tnum">14.7조</div></div>
-          <div><div class="nk">발전 수주잔고</div><div class="nv tnum">23조+</div></div>
+          <div><div class="nk">수주잔고(2025)</div><div class="nv tnum">23조+</div></div>
           <div><div class="nk">체코 원전</div><div class="nv tnum">5.6조</div></div>
         </div>
         <div class="bb">
@@ -472,8 +478,8 @@
         </div>
         <div class="link-line">가스터빈 백로그가 <b>예약 포함 100GW</b>까지 차 2029년 이후로 슬롯이 밀려 있고, 가격은 신규 예약이 기존 수주를 웃돈다. 1분기 데이터센터향 전동화 수주만 <b>$2.4B</b>로 작년 연간치를 넘어섰다.</div>
         <div class="nums">
-          <div><div class="nk">총 백로그</div><div class="nv tnum">$163B</div></div>
-          <div><div class="nk">가스터빈 연산</div><div class="nv tnum">20→24GW</div></div>
+          <div><div class="nk">백로그(1Q26)</div><div class="nv tnum">$163B</div></div>
+          <div><div class="nk">가스터빈 연산(26E)</div><div class="nv tnum">20→24GW</div></div>
           <div><div class="nk">1Q26 순이익</div><div class="nv tnum">$4.7B</div></div>
         </div>
         <div class="bb">
@@ -534,7 +540,7 @@
         <div class="nums">
           <div><div class="nk">수주잔고(3Q25)</div><div class="nv tnum">9.6조</div></div>
           <div><div class="nk">1–3Q25 영익</div><div class="nv tnum">6,744억</div></div>
-          <div><div class="nk">3Q OPM</div><div class="nv tnum">24.8%</div></div>
+          <div><div class="nk">3Q25 OPM</div><div class="nv tnum">24.8%</div></div>
         </div>
         <div class="bb">
           <div class="b bull"><div class="bh">▲ Bull</div><span>765kV 과점 + 미국 교체 슈퍼사이클. 연 영업이익 1조 가시권, 앨라배마 증설(2027).</span></div>
@@ -551,8 +557,8 @@
         <div class="link-line">초고압 변압기뿐 아니라, 변압기 시장의 <b>약 6배 큰 북미 배전 시장</b>에서 빅테크 데이터센터 전력 시스템 공급사로 자리잡았다. Bloom Energy 연료전지 전력설비 3,190억 수주 등 ‘발전 인근 분산전원’까지 솔루션화.</div>
         <div class="nums">
           <div><div class="nk">2025 매출</div><div class="nv tnum">4.96조</div></div>
-          <div><div class="nk">수주잔고</div><div class="nv tnum">5조</div></div>
-          <div><div class="nk">DC 수주</div><div class="nv tnum">1조+</div></div>
+          <div><div class="nk">수주잔고(2025)</div><div class="nv tnum">5조</div></div>
+          <div><div class="nk">DC 수주(2025)</div><div class="nv tnum">1조+</div></div>
         </div>
         <div class="bb">
           <div class="b bull"><div class="bh">▲ Bull</div><span>송·배전을 아우르는 토탈 솔루션. 북미 매출 1조 돌파, HVDC·ESS로 확장.</span></div>
@@ -569,7 +575,7 @@
         <div class="link-line">초고압교류(HVAC)·<b>초고압직류(HVDC) 해저케이블</b> 기술을 보유. 미국·유럽 노후 전력망 교체와 해상풍력 장거리 송전 수요가 맞물린다. 당진 해저 2공장(약 5,000억, 2027 가동)으로 생산기반 확장 중.</div>
         <div class="nums">
           <div><div class="nk">2025 매출</div><div class="nv tnum">3.64조</div></div>
-          <div><div class="nk">수주잔고</div><div class="nv tnum">3.66조</div></div>
+          <div><div class="nk">수주잔고(2025)</div><div class="nv tnum">3.66조</div></div>
           <div><div class="nk">2025 영익</div><div class="nv tnum">1,286억</div></div>
         </div>
         <div class="bb">
@@ -605,8 +611,44 @@
 
       <div class="card reveal">
         <div class="card-top">
+          <div><div class="card-name">Vertiv</div><div class="ticker">NYSE VRT</div></div>
+          <span class="badge dc">DC 전력·냉각 통합</span>
+        </div>
+        <div class="link-line">AI 데이터센터 전력·냉각 통합 인프라 1위. UPS·배전·열관리를 한 번에 납품하는 <b>'원스톱' 공급사</b>. NVIDIA GB200/GB300 레퍼런스 아키텍처의 기본 인프라 파트너.</div>
+        <div class="nums">
+          <div><div class="nk">1Q26 매출</div><div class="nv tnum">$2,650M</div></div>
+          <div><div class="nk">수주잔고</div><div class="nv tnum">$12.5B</div></div>
+          <div><div class="nk">Adj OPM</div><div class="nv tnum">20.8%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>수주잔고 $12.5B + 액체냉각 리드타임 18–24개월 선점. 2026 가이던스 매출 $13.3–13.8B, FCF $2.1–2.3B.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>Forward P/E ~49x로 밸류 부담. 하이퍼스케일러 CAPEX 사이클 둔화 시 멀티플 급락 리스크.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>분기 수주 성장률 둔화 / 냉각 솔루션 경쟁사 추격으로 마진 압박.</div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div><div class="card-name">Bloom Energy</div><div class="ticker">NYSE BE</div></div>
+          <span class="badge dc">SOFC 자가발전</span>
+        </div>
+        <div class="link-line">고체산화물 연료전지(SOFC)로 데이터센터 <b>behind-the-meter 자가발전</b>. 전력망 대기 없이 90일 내 배치 가능. Oracle 2.8GW · Brookfield $5B · AEP $2.65B 등 대형 계약 연쇄.</div>
+        <div class="nums">
+          <div><div class="nk">1Q26 매출</div><div class="nv tnum">$751M</div></div>
+          <div><div class="nk">백로그</div><div class="nv tnum">~$20B</div></div>
+          <div><div class="nk">2026E 매출</div><div class="nv tnum">$3.4–3.8B</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>백로그 $20B로 다년 가시성. AI 전력 병목의 가장 직접적 솔루션. 2026 비GAAP 영익 가이던스 $600–750M.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>1년 주가 +1,628%. 제조 CAPA 1→2GW 확장 실행 리스크. IRA 세액공제 정책 변수.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>연 CAPA 2GW 확장 지연 / Oracle·AEP 등 대형 계약 이행 차질.</div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
           <div><div class="card-name">DC 전력 인프라</div><div class="ticker">UPS · 배전반 · 전력반도체</div></div>
-          <span class="badge dc">데이터센터 내부</span>
+          <span class="badge dc">Context</span>
         </div>
         <div class="link-line">데이터센터 안에서 전기를 받아 분배·변환·보호하는 단계. 고밀도 랙은 <b>직류(DC) 배전</b>으로 전환되고, 전력망을 기다리지 못한 빅테크는 연료전지·가스로 <b>자가발전(behind-the-meter)</b>을 택한다. Vertiv·슈나이더·Bloom Energy, 그리고 배전·연료전지 설비를 대는 LS일렉트릭이 수혜.</div>
         <div class="nums">
@@ -624,12 +666,12 @@
       <div class="card reveal d1">
         <div class="card-top">
           <div><div class="card-name">냉각 — 액침으로의 전환</div><div class="ticker">공냉 → 수냉 → 액침</div></div>
-          <span class="badge cool">열 관리</span>
+          <span class="badge cool">Context</span>
         </div>
-        <div class="link-line">랙당 발열이 급증하며 공냉의 한계가 분명해졌다. 다이렉트-투-칩 수냉을 거쳐 <b>액침냉각</b>으로 이동 중이며, 액체냉각 시장은 연 30%+ 성장이 전망된다. 3M의 냉각유체 생산 중단(2025말)으로 생긴 공백은 <b>SK엔무브·GS칼텍스</b> 등 국내 유체 공급사에 기회.</div>
+        <div class="link-line">랙당 발열이 급증하며 공냉의 한계가 분명해졌다. 다이렉트-투-칩 수냉을 거쳐 <b>액침냉각</b>으로 이동 중이며, 액체냉각 시장은 연 30%+ 성장이 전망된다. 3M의 냉각유체 생산 중단(2025말)으로 생긴 공백은 <b>SK엔무브</b>(SK이노베이션(096770) 산하, LG전자·GRC와 MOU)·GS칼텍스 등 국내 유체 공급사에 기회. 시장 규모는 2040년 40조원+까지 성장 전망.</div>
         <div class="nums">
           <div><div class="nk">시장 성장</div><div class="nv tnum">30%+/yr</div></div>
-          <div><div class="nk">전환축</div><div class="nv" style="font-size:.82rem">D2C·액침</div></div>
+          <div><div class="nk">2040E 시장</div><div class="nv tnum">40조+</div></div>
           <div><div class="nk">유체 공백</div><div class="nv" style="font-size:.82rem">3M 철수</div></div>
         </div>
         <div class="bb">
@@ -659,13 +701,13 @@
         <div class="th">● 단기 · 향후 6개월</div>
         <h3>증명된 현금흐름 — 송배전</h3>
         <div class="tp">수주잔고와 분기 실적이 이미 숫자로 나오는 구간. 북미 변압기·배전·케이블은 공급자 우위가 유지되는 동안 가시성이 높다. 단, 주가가 빠르게 오른 만큼 밸류에이션 부담을 함께 본다.</div>
-        <div class="picks"><span>HD현대일렉트릭</span><span>LS일렉트릭</span><span>대한전선</span><span>GE Vernova</span></div>
+        <div class="picks"><span>HD현대일렉트릭</span><span>LS일렉트릭</span><span>대한전선</span><span>GE Vernova</span><span>Vertiv</span></div>
       </div>
       <div class="tcard mid reveal d1">
         <div class="th">● 중기 · 향후 2년</div>
         <h3>매출 인식 본격화 — 발전·냉각</h3>
         <div class="tp">두산의 가스터빈·체코 원전 매출이 인식되기 시작하고, 대한전선 해저 2공장이 가동되며, 냉각 전환이 양산 단계로 들어선다. 변동성은 크지만 실적 레벨업의 변곡이 이 구간에 있다. SMR은 ‘2030년대’를 보는 장기 옵션.</div>
-        <div class="picks"><span>두산에너빌리티</span><span>냉각 유체·솔루션</span><span>대한전선(2공장)</span><span>NuScale (옵션)</span></div>
+        <div class="picks"><span>두산에너빌리티</span><span>Bloom Energy</span><span>냉각 유체·솔루션</span><span>대한전선(2공장)</span><span>NuScale (옵션)</span></div>
       </div>
     </div>
 
@@ -723,6 +765,14 @@
     }});
   },{threshold:.4});
   secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
 </script>
 </body>
 </html>
