@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>피지컬 AI 투자 지도 — 두뇌는 수렴하고, 몸은 갈라진다</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0F1A;
+    --ink-2:#0F1726;
+    --ink-3:#16223A;
+    --raised:#1B2A45;
+    --signal:#46E0C8;      /* 지능·신호 — 수렴 */
+    --signal-dim:#2A8C80;
+    --metal:#E5B264;       /* 하드웨어·토크 — 병목 */
+    --metal-deep:#C18F3C;
+    --text:#E9EFF7;
+    --muted:#8093AD;
+    --faint:#5B6B86;
+    --line:rgba(255,255,255,0.09);
+    --line-strong:rgba(255,255,255,0.16);
+    --danger:#F06A52;
+    --font-kr:'Pretendard','Pretendard Variable',system-ui,-apple-system,sans-serif;
+    --font-mono:'Space Mono','Space Grotesk',monospace;
+    --font-disp:'Space Grotesk','Pretendard',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--font-kr);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--signal);color:var(--ink)}
+
+  /* ---------- Layout shell ---------- */
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  section{position:relative}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--signal);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--signal);opacity:.6}
+  .eyebrow.metal{color:var(--metal)}
+  .eyebrow.metal::before{background:var(--metal)}
+
+  h1,h2,h3{font-weight:700;letter-spacing:-0.02em;line-height:1.18}
+  .mono{font-family:var(--font-mono)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:90px 0 60px;
+    background:
+      radial-gradient(900px 520px at 78% 18%, rgba(70,224,200,0.10), transparent 60%),
+      radial-gradient(760px 520px at 12% 92%, rgba(229,178,100,0.09), transparent 60%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+  .hero h1{
+    font-size:clamp(34px,5.2vw,62px);
+    margin:22px 0 22px;
+  }
+  .hero h1 .sig{color:var(--signal)}
+  .hero h1 .met{color:var(--metal)}
+  .hero .lead{font-size:clamp(16px,1.7vw,19px);color:var(--muted);max-width:30em}
+  .hero .tag{
+    margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;
+  }
+  .chip{
+    font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;
+    border:1px solid var(--line-strong);border-radius:999px;
+    padding:7px 14px;color:var(--muted);
+  }
+
+  /* Hero SVG — converge to brain, diverge to bodies */
+  .stage{width:100%;height:auto}
+  .pulse{opacity:0}
+  @keyframes flow{to{transform:translateY(0)}}
+
+  /* ---------- generic section spacing ---------- */
+  .band{padding:96px 0;border-top:1px solid var(--line)}
+  .band-head{max-width:42em;margin-bottom:46px}
+  .band-head h2{font-size:clamp(26px,3.4vw,40px);margin:18px 0 16px}
+  .band-head p{color:var(--muted);font-size:16.5px}
+
+  /* ---------- analogy / brain-body ---------- */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .duo-card{
+    border:1px solid var(--line);border-radius:18px;padding:30px;
+    background:linear-gradient(180deg,var(--ink-2),var(--ink));
+    position:relative;overflow:hidden;
+  }
+  .duo-card .ico{font-size:30px;margin-bottom:14px;display:block}
+  .duo-card h3{font-size:21px;margin-bottom:10px}
+  .duo-card.brain{border-color:rgba(70,224,200,0.32)}
+  .duo-card.brain h3{color:var(--signal)}
+  .duo-card.body{border-color:rgba(229,178,100,0.32)}
+  .duo-card.body h3{color:var(--metal)}
+  .duo-card p{color:var(--muted);font-size:15px}
+  .duo-card .analog{
+    margin-top:18px;padding-top:16px;border-top:1px dashed var(--line-strong);
+    font-size:14px;color:var(--text)
+  }
+  .duo-card .analog b{font-weight:700}
+  .duo-card.brain .analog b{color:var(--signal)}
+  .duo-card.body .analog b{color:var(--metal)}
+
+  /* ---------- 3-layer stack ---------- */
+  .stack{display:flex;flex-direction:column;gap:18px}
+  .layer{
+    border:1px solid var(--line);border-radius:18px;padding:28px 30px;
+    display:grid;grid-template-columns:54px 1fr auto;gap:24px;align-items:center;
+    background:var(--ink-2);
+    opacity:0;transform:translateY(26px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .layer.in{opacity:1;transform:none}
+  .layer .num{
+    font-family:var(--font-mono);font-size:22px;font-weight:700;
+    width:54px;height:54px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line-strong);
+  }
+  .layer .body h3{font-size:20px;margin-bottom:6px}
+  .layer .body p{color:var(--muted);font-size:14.5px;max-width:46em}
+  .layer .verdict{
+    text-align:right;font-family:var(--font-mono);font-size:12px;
+    letter-spacing:.05em;max-width:170px;
+  }
+  .layer .verdict .v-label{display:block;color:var(--faint);font-size:10.5px;letter-spacing:.18em;margin-bottom:6px}
+  .layer.l1{border-left:3px solid var(--signal)}
+  .layer.l1 .num{color:var(--signal)}
+  .layer.l2{border-left:3px solid #9b8cff}
+  .layer.l2 .num{color:#a99bff}
+  .layer.l3{border-left:3px solid var(--metal)}
+  .layer.l3 .num{color:var(--metal)}
+  .tagline{font-weight:600}
+  .l1 .tagline{color:var(--signal)} .l2 .tagline{color:#a99bff} .l3 .tagline{color:var(--metal)}
+
+  /* ---------- BOM bar ---------- */
+  .bom-wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:center}
+  .bom-bar{display:flex;flex-direction:column;gap:14px}
+  .bom-row{display:grid;grid-template-columns:148px 1fr 54px;gap:14px;align-items:center;font-size:14px}
+  .bom-row .lab{color:var(--text)}
+  .bom-track{height:14px;border-radius:7px;background:var(--ink-3);overflow:hidden}
+  .bom-fill{height:100%;width:0;border-radius:7px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .bom-row .pct{font-family:var(--font-mono);text-align:right;color:var(--muted);font-size:13px}
+  .bom-note{color:var(--muted);font-size:15px}
+  .bom-note b{color:var(--metal)}
+
+  /* ---------- moat matrix ---------- */
+  .matrix-shell{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--ink-2)}
+  .matrix{position:relative;width:100%;aspect-ratio:16/10;max-height:520px}
+  .axis-x,.axis-y{position:absolute;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+  .axis-x{bottom:-6px;left:50%;transform:translateX(-50%)}
+  .axis-y{top:50%;left:-12px;transform:rotate(-90deg) translateX(50%);transform-origin:left center}
+  .quad-label{position:absolute;font-size:12px;color:var(--faint);font-family:var(--font-mono);letter-spacing:.04em}
+  .grid-line{position:absolute;background:var(--line)}
+  .dot{
+    position:absolute;transform:translate(-50%,-50%) scale(0);
+    width:14px;height:14px;border-radius:50%;
+    transition:transform .6s cubic-bezier(.34,1.4,.5,1);
+    cursor:default;
+  }
+  .dot::after{
+    content:attr(data-label);
+    position:absolute;left:50%;top:-22px;transform:translateX(-50%);
+    white-space:nowrap;font-size:11.5px;font-family:var(--font-mono);
+    color:var(--text);background:rgba(10,15,26,0.85);padding:2px 7px;border-radius:6px;
+    border:1px solid var(--line);opacity:0;transition:opacity .2s;pointer-events:none;
+  }
+  .dot:hover::after{opacity:1}
+  .dot.shown{transform:translate(-50%,-50%) scale(1)}
+  .dot.sig{background:var(--signal);box-shadow:0 0 0 5px rgba(70,224,200,0.14)}
+  .dot.met{background:var(--metal);box-shadow:0 0 0 5px rgba(229,178,100,0.14)}
+  .dot.met.bottleneck{animation:glow 2.4s ease-in-out infinite}
+  @keyframes glow{0%,100%{box-shadow:0 0 0 4px rgba(229,178,100,0.10)}50%{box-shadow:0 0 0 10px rgba(229,178,100,0.22)}}
+  .dot.weak{background:var(--faint)}
+  .matrix-legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;font-size:12.5px;color:var(--muted);font-family:var(--font-mono)}
+  .matrix-legend span{display:inline-flex;align-items:center;gap:8px}
+  .lg-dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+
+  /* ---------- field / stock cards ---------- */
+  .field{border-top:1px solid var(--line);padding:54px 0}
+  .field-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+  .field-head .fnum{font-family:var(--font-mono);color:var(--faint);font-size:14px}
+  .field-head h3{font-size:24px}
+  .field-head .moat-tag{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;padding:4px 11px;border-radius:999px;
+    border:1px solid var(--line-strong);
+  }
+  .moat-tag.high{color:var(--signal);border-color:rgba(70,224,200,0.4)}
+  .moat-tag.mid{color:var(--metal);border-color:rgba(229,178,100,0.4)}
+  .moat-tag.spec{color:#a99bff;border-color:rgba(169,155,255,0.4)}
+  .field-desc{color:var(--muted);font-size:15.5px;max-width:54em;margin-bottom:22px}
+  .field-desc .analog-inline{color:var(--text)}
+  .field-desc .analog-inline b{color:var(--metal);font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{
+    border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;
+    background:var(--ink-2);transition:border-color .25s, transform .25s;
+    display:flex;flex-direction:column;gap:9px;
+  }
+  .card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+  .card .ticker{font-family:var(--font-mono);font-size:12px;color:var(--metal);letter-spacing:.04em}
+  .card .nm{font-size:16px;font-weight:600;line-height:1.3}
+  .card .role{font-size:13.5px;color:var(--muted);flex:1}
+  .card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .card .pill{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+  .card.kr .ticker{color:var(--signal)}
+  .card.private{opacity:.92}
+  .card.private .ticker{color:var(--faint)}
+
+  /* expandable stock detail */
+  .card.expandable{cursor:pointer}
+  .card.expandable:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .card .caret{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--faint);
+    margin-top:8px;display:inline-flex;align-items:center;gap:6px;
+  }
+  .card .caret::after{content:"▾";transition:transform .3s}
+  .card.open .caret::after{transform:rotate(180deg)}
+  .card.open{
+    grid-column:1/-1;border-color:var(--line-strong);
+    background:linear-gradient(180deg,var(--ink-3),var(--ink-2));
+  }
+  .card-detail{
+    display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);
+    animation:fadein .4s ease;
+  }
+  .card.open .card-detail{display:block}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .cd-row{margin-bottom:12px}
+  .cd-l{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:4px}
+  .card-detail p{font-size:14px;color:var(--text);line-height:1.65}
+  .cd-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+  .cd-box{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--ink-2)}
+  .cd-box.pot{border-left:2px solid var(--signal)} .cd-box.pot .cd-l{color:var(--signal)}
+  .cd-box.risk{border-left:2px solid var(--danger)} .cd-box.risk .cd-l{color:#ff8a73}
+  .quote-btn{
+    display:inline-flex;align-items:center;gap:8px;margin-top:4px;
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.04em;
+    color:var(--ink);background:var(--metal);text-decoration:none;
+    padding:9px 16px;border-radius:9px;font-weight:700;transition:background .2s,transform .2s;
+  }
+  .quote-btn:hover{background:#f0c074;transform:translateY(-1px)}
+  @media(max-width:520px){.cd-grid{grid-template-columns:1fr}}
+
+  /* strength block inside detail */
+  .cd-strength{
+    border:1px solid rgba(229,178,100,0.28);border-radius:12px;
+    background:linear-gradient(180deg,rgba(229,178,100,0.07),transparent);
+    padding:14px 16px;margin:6px 0 14px;
+  }
+  .cd-strength .cd-l{color:var(--metal)}
+  .cd-strength p{font-size:14px;color:var(--text);line-height:1.7}
+
+  /* ---------- component glossary ---------- */
+  .gloss{display:flex;flex-direction:column;gap:18px}
+  .gblock{
+    border:1px solid var(--line);border-radius:18px;background:var(--ink-2);
+    padding:28px 30px;
+  }
+  .gblock h3{font-size:20px;margin-bottom:6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .gblock h3 .gk{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--faint);font-weight:400;border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+  .gblock > p{color:var(--muted);font-size:15px;line-height:1.75;margin-top:6px}
+  .gblock .lead-in{color:var(--text)}
+  .ganalogy{
+    margin-top:16px;border-left:3px solid var(--metal);
+    background:rgba(229,178,100,0.06);border-radius:0 10px 10px 0;
+    padding:13px 16px;font-size:14.5px;color:var(--text);line-height:1.7;
+  }
+  .ganalogy b{color:var(--metal)}
+  .ganalogy.sig{border-left-color:var(--signal);background:rgba(70,224,200,0.06)}
+  .ganalogy.sig b{color:var(--signal)}
+
+  /* actuator anatomy svg */
+  .anatomy{width:100%;height:auto;margin:18px 0 4px}
+
+  /* reducer 3-up */
+  .red3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .rcard{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--ink-3)}
+  .rcard svg{display:block;margin:0 auto 12px}
+  .rcard h4{font-size:15.5px;margin-bottom:6px;color:var(--metal)}
+  .rcard .use{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--faint);margin-bottom:8px;text-transform:uppercase}
+  .rcard p{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+  /* contact viz (screw) */
+  .screw2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .scard{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--ink-3)}
+  .scard h4{font-size:15.5px;margin-bottom:10px}
+  .scard.ball h4{color:var(--faint)} .scard.roller h4{color:var(--metal)}
+  .scard p{font-size:13.5px;color:var(--muted);line-height:1.6;margin-top:10px}
+  .scard svg{display:block}
+
+  /* two-col generic for rotary/linear & hand */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .gmini{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--ink-3)}
+  .gmini h4{font-size:15px;margin-bottom:8px}
+  .gmini.rot h4{color:var(--signal)} .gmini.lin h4{color:var(--metal)}
+  .gmini p{font-size:13.5px;color:var(--muted);line-height:1.65}
+  .gmini .where{font-family:var(--font-mono);font-size:11px;color:var(--text);margin-top:8px;display:block}
+
+  @media(max-width:760px){.red3,.screw2,.g2{grid-template-columns:1fr}}
+
+  /* ---------- risk ---------- */
+  .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .risk{
+    border:1px solid var(--line);border-left:3px solid var(--danger);
+    border-radius:14px;padding:22px 24px;background:var(--ink-2);
+  }
+  .risk h3{font-size:17px;margin-bottom:8px;color:#ff8a73}
+  .risk p{color:var(--muted);font-size:14.5px}
+  .risk .num{font-family:var(--font-mono);color:var(--danger);font-size:13px}
+
+  /* ---------- barbell conclusion ---------- */
+  .barbell{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
+  .bb{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--ink-2);position:relative}
+  .bb .w{position:absolute;top:22px;right:24px;font-family:var(--font-mono);font-size:11px;color:var(--faint);letter-spacing:.1em}
+  .bb h3{font-size:19px;margin-bottom:6px}
+  .bb .sub{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .bb p{color:var(--muted);font-size:14.5px}
+  .bb.core{border-top:3px solid var(--signal)} .bb.core h3,.bb.core .sub{color:var(--signal)}
+  .bb.sat{border-top:3px solid var(--metal)} .bb.sat h3,.bb.sat .sub{color:var(--metal)}
+  .bb.opt{border-top:3px solid #a99bff} .bb.opt h3,.bb.opt .sub{color:#a99bff}
+
+  /* ---------- counters ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .stat{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--ink-2)}
+  .stat .big{font-family:var(--font-mono);font-size:34px;font-weight:700;color:var(--metal);line-height:1}
+  .stat .big.sig{color:var(--signal)}
+  .stat .cap{color:var(--muted);font-size:13.5px;margin-top:10px}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:46px 0 70px;color:var(--faint);font-size:13px}
+  footer .disc{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--ink-2);color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:20px}
+  footer .src{font-family:var(--font-mono);font-size:11px;color:var(--faint);letter-spacing:.04em}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .hero{min-height:auto}
+    .duo,.bom-wrap,.risk-grid,.barbell,.cards{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .cards{grid-template-columns:1fr 1fr}
+    .layer{grid-template-columns:44px 1fr;gap:16px}
+    .layer .verdict{grid-column:1/-1;text-align:left;max-width:none;margin-top:4px}
+    .layer .verdict .v-label{display:inline;margin-right:8px}
+  }
+  @media(max-width:520px){
+    .wrap{padding:0 18px}
+    .cards{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    .bom-row{grid-template-columns:96px 1fr 42px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .layer{opacity:1;transform:none}
+    .dot{transform:translate(-50%,-50%) scale(1)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Physical AI · Investment Map</span>
+      <h1>두뇌는 <span class="sig">수렴</span>하고<br>몸은 <span class="met">갈라진다</span></h1>
+      <p class="lead">피지컬 AI는 "로봇"이라는 한 가지 몸이 아니라, 물리 세계를 인식·추론·행동하는 <b style="color:var(--text)">지능 레이어</b> 전체입니다. 같은 두뇌가 자동차·산업팔·휴머노이드에 동일하게 들어갑니다. 그래서 투자의 질문은 "어떤 로봇이 이기나"가 아니라 — <b style="color:var(--metal)">상품화에서 살아남는 의존성(불가결 노드)이 어디 있나</b>입니다.</p>
+      <div class="tag">
+        <span class="chip">3 LAYER STACK</span>
+        <span class="chip">불가결 노드 · BOTTLENECK</span>
+        <span class="chip">FIELD-BY-FIELD 종목분석</span>
+      </div>
+    </div>
+
+    <!-- Converge→diverge schematic -->
+    <div>
+      <svg class="stage" viewBox="0 0 460 420" role="img" aria-label="지능이 수렴하고 몸이 갈라지는 구조도">
+        <defs>
+          <radialGradient id="brainGlow"><stop offset="0" stop-color="#46E0C8" stop-opacity="0.55"/><stop offset="1" stop-color="#46E0C8" stop-opacity="0"/></radialGradient>
+        </defs>
+
+        <!-- brain glow -->
+        <circle cx="230" cy="64" r="64" fill="url(#brainGlow)"/>
+        <!-- substrate / brain node -->
+        <circle cx="230" cy="64" r="30" fill="none" stroke="#46E0C8" stroke-width="2"/>
+        <circle cx="230" cy="64" r="7" fill="#46E0C8"/>
+        <text x="230" y="22" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="#8093AD" letter-spacing="2">INTELLIGENCE</text>
+
+        <!-- fan-out paths to 4 bodies -->
+        <g fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.6">
+          <path id="p1" d="M230,94 C150,150 90,220 70,300"/>
+          <path id="p2" d="M230,94 C200,160 180,230 176,300"/>
+          <path id="p3" d="M230,94 C262,160 282,230 286,300"/>
+          <path id="p4" d="M230,94 C312,150 372,220 392,300"/>
+        </g>
+
+        <!-- signal pulses -->
+        <g>
+          <circle r="4" fill="#46E0C8"><animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.6s" repeatCount="indefinite"/></circle>
+          <circle r="4" fill="#46E0C8"><animateMotion dur="2.6s" begin="0.6s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.6s" begin="0.6s" repeatCount="indefinite"/></circle>
+          <circle r="4" fill="#46E0C8"><animateMotion dur="2.6s" begin="1.2s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.6s" begin="1.2s" repeatCount="indefinite"/></circle>
+          <circle r="4" fill="#46E0C8"><animateMotion dur="2.6s" begin="1.8s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.6s" begin="1.8s" repeatCount="indefinite"/></circle>
+        </g>
+
+        <!-- bodies (diverging form factors) -->
+        <g font-family="'Space Mono', monospace" font-size="10" fill="#8093AD" text-anchor="middle">
+          <g transform="translate(70,330)">
+            <rect x="-22" y="-16" width="44" height="22" rx="5" fill="none" stroke="#E5B264" stroke-width="1.8"/><circle cx="-12" cy="9" r="5" fill="none" stroke="#E5B264" stroke-width="1.8"/><circle cx="12" cy="9" r="5" fill="none" stroke="#E5B264" stroke-width="1.8"/>
+            <text y="34">자율주행</text>
+          </g>
+          <g transform="translate(176,330)">
+            <path d="M0,-18 L0,4 L16,12" fill="none" stroke="#E5B264" stroke-width="1.8" stroke-linecap="round"/><circle cx="0" cy="-18" r="4" fill="#E5B264"/><circle cx="16" cy="12" r="4" fill="none" stroke="#E5B264" stroke-width="1.8"/>
+            <text y="34">산업 로봇팔</text>
+          </g>
+          <g transform="translate(286,330)">
+            <circle cx="0" cy="-16" r="6" fill="none" stroke="#E5B264" stroke-width="1.8"/><line x1="0" y1="-10" x2="0" y2="6" stroke="#E5B264" stroke-width="1.8"/><line x1="-9" y1="-2" x2="9" y2="-2" stroke="#E5B264" stroke-width="1.8"/><line x1="0" y1="6" x2="-7" y2="18" stroke="#E5B264" stroke-width="1.8"/><line x1="0" y1="6" x2="7" y2="18" stroke="#E5B264" stroke-width="1.8"/>
+            <text y="34">휴머노이드</text>
+          </g>
+          <g transform="translate(392,330)">
+            <line x1="-18" y1="-12" x2="18" y2="-12" stroke="#E5B264" stroke-width="1.8"/><line x1="0" y1="-12" x2="0" y2="2" stroke="#E5B264" stroke-width="1.8"/><circle cx="-18" cy="-12" r="4" fill="none" stroke="#E5B264" stroke-width="1.8"/><circle cx="18" cy="-12" r="4" fill="none" stroke="#E5B264" stroke-width="1.8"/><circle cx="0" cy="2" r="3" fill="#E5B264"/>
+            <text y="34">드론·물류</text>
+          </g>
+        </g>
+        <text x="230" y="408" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="#8093AD" letter-spacing="2">FORM FACTORS — 발산</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BRAIN vs BODY ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">개념 정리 · 가장 흔한 오해</span>
+      <h2>"피지컬 AI = 로봇" 이 아니다</h2>
+      <p>혼동의 핵심은 <b style="color:var(--text)">지능</b>과 <b style="color:var(--text)">몸</b>을 한 덩어리로 보는 데서 옵니다. 둘을 분리하면 전체 그림이 단순해집니다.</p>
+    </div>
+    <div class="duo">
+      <div class="duo-card brain">
+        <span class="ico">◎</span>
+        <h3>지능 레이어 (두뇌)</h3>
+        <p>물리 세계를 인식 → 추론 → 행동으로 옮기는 능력 그 자체. 월드모델·VLA(시각-언어-행동) 모델·시뮬레이션이 여기 속합니다. <b style="color:var(--text)">어떤 몸에 실리든 동일하게 작동</b>합니다.</p>
+        <div class="analog">🧭 비유 — <b>운전 실력</b>. 경차에 타든 트럭에 타든 운전 실력 자체는 같습니다. 그 실력이 곧 지능 레이어.</div>
+      </div>
+      <div class="duo-card body">
+        <span class="ico">⚙</span>
+        <h3>몸 레이어 (form factor)</h3>
+        <p>지능을 담는 물리적 형태. 바퀴 넷(자동차), 팔 하나(산업로봇), 두 발(휴머노이드), 프로펠러(드론)… 형태는 용도마다 <b style="color:var(--text)">제각각 갈라집니다</b>.</p>
+        <div class="analog">🚗 비유 — <b>차체와 부품</b>. 같은 운전 실력도 차종마다 엔진·변속기·타이어가 다릅니다. 그 부품 묶음이 곧 몸 레이어.</div>
+      </div>
+    </div>
+    <p style="margin-top:26px;color:var(--muted);font-size:15.5px;max-width:60em">
+      그래서 <b style="color:var(--signal)">휴머노이드는 피지컬 AI의 "가장 눈에 띄는 한 사례"일 뿐</b>입니다. 실제로 가장 성숙하고 돈을 벌고 있는 피지컬 AI는 오히려 <b style="color:var(--text)">자율주행차</b>와 <b style="color:var(--text)">수술 로봇</b>입니다. "휴머노이드 = 피지컬 AI"로 좁혀 보면 내러티브 베타가 가장 센 구간만 쫓게 됩니다.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= 3-LAYER STACK ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow metal">투자 구조 · 2층이 아니라 3층</span>
+      <h2>"소프트웨어는 끝났으니 하드웨어" 라는 이분법의 함정</h2>
+      <p>실제 구조는 3층이고, 각 층의 성격과 투자 매력이 완전히 다릅니다. "소프트웨어가 끝났다"는 말은 ①층(기반)에만 맞고, ②층(모델)은 아직 승자가 없습니다.</p>
+    </div>
+    <div class="stack">
+      <div class="layer l1">
+        <div class="num">01</div>
+        <div class="body">
+          <h3>기반 (Substrate) — <span class="tagline">컴퓨팅 + 개발 스택</span></h3>
+          <p>NVIDIA가 사실상 장악. Cosmos(월드모델)·GR00T(VLA)·Isaac(시뮬레이션)·Jetson Thor(로봇 칩). 어떤 몸이 이기든 그 밑에 깔리는 공통 기반. 비유하면 <b style="color:var(--text)">모두가 달리는 도로와 전기</b>.</p>
+        </div>
+        <div class="verdict"><span class="v-label">VERDICT</span>끝났지만<br>이미 비싸다</div>
+      </div>
+      <div class="layer l2">
+        <div class="num">02</div>
+        <div class="body">
+          <h3>지능 모델 (Foundation Model) — <span class="tagline">아직 승자 없음</span></h3>
+          <p>로봇 파운데이션 모델. 학습 데이터가 인터넷 텍스트가 아니라 <b style="color:var(--text)">로봇 상호작용 데이터</b>라 기존 LLM 강자가 자동으로 가져가지 못함. Figure·Skild·Physical Intelligence 등 신생 전문가들의 레이스. 플랫폼급 업사이드가 남았지만 거의 벤처 베팅.</p>
+        </div>
+        <div class="verdict"><span class="v-label">VERDICT</span>업사이드 크나<br>대부분 비상장</div>
+      </div>
+      <div class="layer l3">
+        <div class="num">03</div>
+        <div class="body">
+          <h3>하드웨어 / BOM — <span class="tagline">불가결 노드의 집결지</span></h3>
+          <p>액추에이터·감속기·자석·손. 메가캡 자본이 직접 만들 생각이 없는 영역이라 <b style="color:var(--text)">분석 가능한 모트가 가장 많음</b>. 공급 집중도·전환비용을 실제로 계산해 병목을 검증할 수 있는 곳. 단, 양산 = 원가절감 압박이라 노드별 마진 지속성 확인 필수.</p>
+        </div>
+        <div class="verdict"><span class="v-label">VERDICT</span>가장 underwritable<br>(분석 가능)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BOM breakdown ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow metal">원가 해부 · 휴머노이드 BOM</span>
+      <h2>가치는 "부품 원가"가 큰 곳에 고인다</h2>
+      <p>휴머노이드 한 대의 부품 원가(BOM) 구성. 액추에이터가 절반 이상, 그중에서도 정밀 손과 감속기가 가장 비쌉니다 — 바로 여기가 병목입니다. <span class="mono" style="color:var(--faint)">McKinsey / IDTechEx 2026</span></p>
+    </div>
+    <div class="bom-wrap">
+      <div class="bom-bar" id="bom">
+        <div class="bom-row"><span class="lab">액추에이터(관절)</span><div class="bom-track"><div class="bom-fill" data-w="55" style="background:linear-gradient(90deg,#E5B264,#C18F3C)"></div></div><span class="pct">40–60%</span></div>
+        <div class="bom-row"><span class="lab">└ 정밀 손(dexterous)</span><div class="bom-track"><div class="bom-fill" data-w="31" style="background:linear-gradient(90deg,#F0A84E,#D88A2E)"></div></div><span class="pct">~31%*</span></div>
+        <div class="bom-row"><span class="lab">센싱·인지</span><div class="bom-track"><div class="bom-fill" data-w="16" style="background:linear-gradient(90deg,#5BEFD8,#2A8C80)"></div></div><span class="pct">10–20%</span></div>
+        <div class="bom-row"><span class="lab">컴퓨팅·제어</span><div class="bom-track"><div class="bom-fill" data-w="13" style="background:linear-gradient(90deg,#5BEFD8,#2A8C80)"></div></div><span class="pct">10–15%</span></div>
+        <div class="bom-row"><span class="lab">구조·배터리 등</span><div class="bom-track"><div class="bom-fill" data-w="14" style="background:linear-gradient(90deg,#3a4a66,#26334d)"></div></div><span class="pct">나머지</span></div>
+      </div>
+      <div class="bom-note">
+        <p>핵심 통찰 두 가지:</p>
+        <p style="margin-top:12px">① 액추에이터 안에서 <b>감속기가 부품 원가의 30–50%</b>를 차지하고, 그 정밀 공차를 맞출 수 있는 공급자가 손에 꼽힙니다.</p>
+        <p style="margin-top:12px">② <b>정밀 손이 단일 최대 원가 부품(약 31%)</b>이자 가장 안 풀린 구간. 배터리 에너지밀도 한계로 연속 가동이 2–4시간에 묶여 있는 것도 미해결 과제.</p>
+        <p style="margin-top:12px;font-size:13px;color:var(--faint)">*손 비중은 일부 설계 기준이며 액추에이터 항목과 일부 중복.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COMPONENT GLOSSARY ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow metal">부품 도감 · 쉽게 뜯어보기</span>
+      <h2>로봇 관절 안에는 뭐가 들어있나</h2>
+      <p>종목을 보기 전에, 그 회사들이 만드는 "부품"이 실제로 무엇인지부터 알아야 합니다. 로봇의 관절 하나를 떼어내 안을 들여다보는 방식으로 설명합니다.</p>
+    </div>
+
+    <div class="gloss">
+
+      <!-- 1. Actuator anatomy -->
+      <div class="gblock">
+        <h3>① 액추에이터 <span class="gk">로봇의 근육+관절 한 덩어리</span></h3>
+        <p><span class="lead-in">모터의 회전을 '힘 있는 움직임'으로 바꾸는 모듈 전체</span>입니다. 사람으로 치면 근육·관절·신경을 캡슐 하나에 넣은 것. 휴머노이드 한 대에 수십 개가 들어가고, 부품 원가의 40~60%를 차지하는 가장 비싼 덩어리입니다. 안에는 보통 다섯 부품이 들어갑니다.</p>
+        <svg class="anatomy" viewBox="0 0 720 150" role="img" aria-label="액추에이터 내부 구조">
+          <rect x="8" y="22" width="704" height="86" rx="20" fill="none" stroke="#E5B264" stroke-width="2"/>
+          <line x1="184" y1="22" x2="184" y2="108" stroke="rgba(255,255,255,0.12)"/>
+          <line x1="360" y1="22" x2="360" y2="108" stroke="rgba(255,255,255,0.12)"/>
+          <line x1="536" y1="22" x2="536" y2="108" stroke="rgba(255,255,255,0.12)"/>
+          <!-- motor -->
+          <g stroke="#E5B264" stroke-width="2" fill="none">
+            <circle cx="96" cy="62" r="20"/><line x1="96" y1="42" x2="96" y2="82"/><line x1="76" y1="62" x2="116" y2="62"/><line x1="82" y1="48" x2="110" y2="76"/><line x1="110" y1="48" x2="82" y2="76"/>
+          </g>
+          <!-- reducer (gear) -->
+          <g stroke="#E5B264" stroke-width="2" fill="none">
+            <circle cx="272" cy="62" r="18"/><circle cx="272" cy="62" r="6"/>
+            <g stroke-width="3"><line x1="272" y1="38" x2="272" y2="46"/><line x1="272" y1="78" x2="272" y2="86"/><line x1="248" y1="62" x2="256" y2="62"/><line x1="288" y1="62" x2="296" y2="62"/><line x1="255" y1="45" x2="261" y2="51"/><line x1="283" y1="73" x2="289" y2="79"/><line x1="289" y1="45" x2="283" y2="51"/><line x1="261" y1="73" x2="255" y2="79"/></g>
+          </g>
+          <!-- encoder (dial) -->
+          <g stroke="#5BEFD8" stroke-width="2" fill="none">
+            <circle cx="448" cy="62" r="18"/><circle cx="448" cy="62" r="3" fill="#5BEFD8"/>
+            <g stroke-width="2"><line x1="448" y1="44" x2="448" y2="50"/><line x1="448" y1="74" x2="448" y2="80"/><line x1="430" y1="62" x2="436" y2="62"/><line x1="460" y1="62" x2="466" y2="62"/><line x1="435" y1="49" x2="439" y2="53"/><line x1="457" y1="71" x2="461" y2="75"/></g>
+          </g>
+          <!-- bearing -->
+          <g stroke="#E5B264" stroke-width="2" fill="none">
+            <circle cx="624" cy="62" r="20"/><circle cx="624" cy="62" r="9"/>
+            <g fill="#E5B264" stroke="none"><circle cx="624" cy="47" r="2.4"/><circle cx="624" cy="77" r="2.4"/><circle cx="609" cy="62" r="2.4"/><circle cx="639" cy="62" r="2.4"/><circle cx="613" cy="51" r="2.4"/><circle cx="635" cy="73" r="2.4"/><circle cx="635" cy="51" r="2.4"/><circle cx="613" cy="73" r="2.4"/></g>
+          </g>
+          <g font-family="'Space Mono', monospace" font-size="12" fill="#E9EFF7" text-anchor="middle">
+            <text x="96" y="128">모터</text><text x="272" y="128">감속기</text><text x="448" y="128">인코더</text><text x="624" y="128">베어링</text>
+          </g>
+          <text x="360" y="16" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="#5B6B86" letter-spacing="2">HOUSING — 전체를 감싸는 껍데기(하우징)</text>
+        </svg>
+        <p style="margin-top:6px"><b style="color:var(--text)">모터</b>는 힘의 원천(빨리 돌지만 힘은 약함), <b style="color:var(--text)">감속기</b>는 그 속도를 줄여 힘을 키우는 증폭기, <b style="color:var(--text)">인코더</b>는 지금 몇 도 돌았는지 읽는 각도 센서, <b style="color:var(--text)">베어링</b>은 마찰을 줄이는 받침, <b style="color:var(--text)">하우징</b>은 이 전부를 감싸는 케이스입니다. 이 중 <b style="color:var(--metal)">감속기가 액추에이터 원가의 30~50%</b>를 차지하고, 그걸 정밀하게 만들 수 있는 회사가 손에 꼽혀서 병목이 됩니다.</p>
+      </div>
+
+      <!-- 2. Rotary vs Linear -->
+      <div class="gblock">
+        <h3>② 회전형 vs 직선형 <span class="gk">팔과 다리는 다르게 만든다</span></h3>
+        <p>같은 액추에이터라도 움직이는 방식이 둘로 갈립니다. 관절을 빙글 돌리느냐, 자동차 피스톤처럼 밀고 당기느냐.</p>
+        <div class="g2">
+          <div class="gmini rot">
+            <h4>회전형 (Rotary)</h4>
+            <p>관절축을 직접 회전. 보통 <b style="color:var(--text)">모터 + 하모닉 감속기</b> 조합. 정밀하고 구조가 단순해 빠르고 민첩한 동작에 유리.</p>
+            <span class="where">→ 어깨·팔꿈치·손목 등 상체</span>
+          </div>
+          <div class="gmini lin">
+            <h4>직선형 (Linear)</h4>
+            <p>나사를 돌려 너트를 밀고 당김. <b style="color:var(--text)">모터 + 롤러스크류</b> 조합. 무거운 충격을 흡수하는 데 압도적.</p>
+            <span class="where">→ 무릎·발목 등 다리(걷고 뛸 때 충격)</span>
+          </div>
+        </div>
+        <div class="ganalogy">🦵 <b>왜 다리는 직선형인가</b> — 90kg 로봇이 착지할 때 무릎에 엄청난 충격이 옵니다. 회전형 기어는 그 충격에 깨지기 쉬워서, 테슬라 옵티머스와 전기식 보스턴다이내믹스 아틀라스 모두 다리엔 롤러스크류 직선형을 씁니다. 사람 종아리 근육이 정강이뼈 옆에 길게 붙어있는 것과 같은 배치죠.</div>
+      </div>
+
+      <!-- 3. Reducers -->
+      <div class="gblock">
+        <h3>③ 감속기 3종 <span class="gk">힘 증폭기의 종류</span></h3>
+        <p>모터는 빨리 돌지만 힘이 약합니다. 감속기는 <span class="lead-in">속도를 줄이는 대신 힘(토크)을 키우는</span> 장치. 자전거 기어를 무겁게 놓으면 페달은 무거워도 큰 힘이 나가는 것과 같습니다. 종류마다 성격이 다릅니다.</p>
+        <div class="red3">
+          <div class="rcard">
+            <svg width="80" height="64" viewBox="0 0 80 64" aria-hidden="true"><circle cx="40" cy="32" r="26" fill="none" stroke="#E5B264" stroke-width="2"/><ellipse cx="40" cy="32" rx="22" ry="13" fill="none" stroke="#E5B264" stroke-width="2"/><circle cx="40" cy="32" r="4" fill="#E5B264"/></svg>
+            <h4>하모닉 (파동기어)</h4>
+            <div class="use">상체·팔 / 정밀</div>
+            <p>작고 가벼운데 한 단으로 큰 감속비를 내고 틈(백래시)이 거의 0. 산업용 로봇팔의 표준. 단 안쪽 '유연한 톱니'가 계속 휘어서 큰 충격엔 약함.</p>
+          </div>
+          <div class="rcard">
+            <svg width="80" height="64" viewBox="0 0 80 64" aria-hidden="true"><circle cx="40" cy="32" r="26" fill="none" stroke="#E5B264" stroke-width="2"/><circle cx="40" cy="32" r="16" fill="none" stroke="#E5B264" stroke-width="2"/><g fill="#E5B264"><circle cx="40" cy="10" r="2.6"/><circle cx="40" cy="54" r="2.6"/><circle cx="18" cy="32" r="2.6"/><circle cx="62" cy="32" r="2.6"/><circle cx="24" cy="16" r="2.6"/><circle cx="56" cy="48" r="2.6"/><circle cx="56" cy="16" r="2.6"/><circle cx="24" cy="48" r="2.6"/></g></svg>
+            <h4>사이클로이드 / RV</h4>
+            <div class="use">무거운 관절 / 튼튼</div>
+            <p>통짜 강철 구조라 강성·충격저항·수명이 높음. 무거운 하중을 받는 산업로봇 베이스 관절에 적합. 대신 더 무겁고 큼.</p>
+          </div>
+          <div class="rcard">
+            <svg width="80" height="64" viewBox="0 0 80 64" aria-hidden="true"><circle cx="40" cy="32" r="10" fill="none" stroke="#8093AD" stroke-width="2"/><circle cx="40" cy="13" r="7" fill="none" stroke="#8093AD" stroke-width="2"/><circle cx="23" cy="42" r="7" fill="none" stroke="#8093AD" stroke-width="2"/><circle cx="57" cy="42" r="7" fill="none" stroke="#8093AD" stroke-width="2"/></svg>
+            <h4>유성 (Planetary)</h4>
+            <div class="use">저가 / 단순</div>
+            <p>가운데 해, 둘레에 행성 기어가 도는 구조. 싸고 단순하지만 톱니 맞물림에 틈이 있어 정밀도가 떨어짐. 가격이 중요한 곳에.</p>
+          </div>
+        </div>
+        <div class="ganalogy">⌚ <b>한 줄 비유</b> — 하모닉은 "정밀 손목시계 톱니"(정교하지만 약함), RV는 "탱크 변속기"(투박하지만 튼튼함), 유성은 "값싼 전동공구 기어"(무난하지만 틈 있음).</div>
+      </div>
+
+      <!-- 4. Roller vs Ball screw -->
+      <div class="gblock">
+        <h3>④ 롤러스크류 vs 볼스크류 <span class="gk">다리의 핵심, 직선운동</span></h3>
+        <p>직선형 액추에이터의 심장. 나사를 돌리면 너트가 앞뒤로 밀리며 <span class="lead-in">회전을 직선 힘으로</span> 바꿉니다. 차이는 나사와 너트 사이에서 하중을 받치는 게 <b style="color:var(--text)">구슬이냐 롤러냐</b>입니다.</p>
+        <div class="screw2">
+          <div class="scard ball">
+            <h4>볼스크류 (구슬·점접촉)</h4>
+            <svg width="100%" height="70" viewBox="0 0 280 70" aria-hidden="true">
+              <rect x="10" y="28" width="260" height="14" rx="3" fill="none" stroke="#5B6B86" stroke-width="2"/>
+              <g fill="#8093AD"><circle cx="50" cy="35" r="7"/><circle cx="100" cy="35" r="7"/><circle cx="150" cy="35" r="7"/><circle cx="200" cy="35" r="7"/></g>
+              <g fill="#F06A52"><circle cx="50" cy="42" r="2"/><circle cx="100" cy="42" r="2"/><circle cx="150" cy="42" r="2"/><circle cx="200" cy="42" r="2"/></g>
+            </svg>
+            <p>구슬이 한 점으로 닿음(빨간 점). 싸고 흔하지만 충격을 받으면 그 점에 자국이 패여(브리넬링) 결국 파손. 중간 하중에 적합.</p>
+          </div>
+          <div class="scard roller">
+            <h4>롤러스크류 (롤러·선접촉)</h4>
+            <svg width="100%" height="70" viewBox="0 0 280 70" aria-hidden="true">
+              <rect x="10" y="28" width="260" height="14" rx="3" fill="none" stroke="#E5B264" stroke-width="2"/>
+              <g fill="none" stroke="#E5B264" stroke-width="2"><rect x="42" y="20" width="16" height="30" rx="6"/><rect x="92" y="20" width="16" height="30" rx="6"/><rect x="142" y="20" width="16" height="30" rx="6"/><rect x="192" y="20" width="16" height="30" rx="6"/></g>
+              <g stroke="#F06A52" stroke-width="2.4"><line x1="50" y1="42" x2="50" y2="49"/><line x1="100" y1="42" x2="100" y2="49"/><line x1="150" y1="42" x2="150" y2="49"/><line x1="200" y1="42" x2="200" y2="49"/></g>
+            </svg>
+            <p>롤러가 선으로 닿음(빨간 선). 접촉면이 10~15배 넓어 하중을 분산. 무릎·발목 충격을 견디는 프리미엄 부품.</p>
+          </div>
+        </div>
+        <div class="ganalogy">🪵 <b>가장 쉬운 비유</b> — 진흙에 <b>구슬</b>을 누르면 점으로 깊게 패이고(볼스크류), <b>연필</b>을 누르면 선으로 넓게 분산됩니다(롤러스크류). 그래서 롤러스크류는 같은 지름에서 <b>하중 3~6배(최대 10배)·수명 15배</b>. 정밀도는 일본 규격(JIS) C0~C9로 나뉘는데 휴머노이드엔 고정밀 C5~C3급이 필요하고, <b>중국이 이 C3급에서 서방에 뒤처져 있는 게 약점</b>입니다.</div>
+      </div>
+
+      <!-- 5. Motor & magnet -->
+      <div class="gblock">
+        <h3>⑤ 모터와 자석 <span class="gk">모든 것의 천장</span></h3>
+        <p>모터의 힘은 결국 <span class="lead-in">자석의 세기</span>가 결정합니다. 토크밀도(같은 크기에서 얼마나 센 힘)를 자석이 좌우하기 때문에, NdFeB(네오디뮴) 영구자석의 에너지밀도가 액추에이터 성능의 천장입니다. 모터 자체는 <b style="color:var(--text)">프레임리스 토크모터</b>(기술 난도 낮음)와 <b style="color:var(--text)">코어리스 모터</b>(난도 높음)로 나뉩니다.</p>
+        <div class="ganalogy">🧲 <b>왜 지정학 이슈인가</b> — 그 핵심 자석을 중국이 채굴 ~69%·가공/정제 ~90% 쥐고 있어, 수출규제 한 번에 전 세계 로봇 모터 공급이 흔들립니다. 그래서 비중국 자석(MP·Lynas)이 '탈중국 프리미엄'을 받습니다.</div>
+      </div>
+
+      <!-- 6. Dexterous hand -->
+      <div class="gblock">
+        <h3>⑥ 정밀 손 <span class="gk">가장 안 풀린, 가장 비싼 부품</span></h3>
+        <p>사람 손은 <span class="lead-in">약 27개 자유도와 수천 개의 촉각 수용체</span>를 가진 인체에서 가장 복잡한 기계입니다. 이걸 흉내내는 방식은 셋 — <b style="color:var(--text)">모터 직접구동</b>, <b style="color:var(--text)">힘줄(tendon)구동</b>(사람과 가장 비슷, 손가락을 줄로 당김), <b style="color:var(--text)">링크(linkage)구동</b>. 그런데 손가락 사이가 좁아 힘 센서 배선이 어렵고, 컴팩트함과 고성능을 동시에 내기가 난제입니다. 연구용 정밀 손은 대당 10만 달러가 넘고 잘 깨져서, 아직 업계 표준이 없습니다.</p>
+        <div class="ganalogy">✋ <b>투자 함의</b> — 손이 BOM의 약 31%로 단일 최대 원가인데 아직 승자가 없다는 건, 표준을 잡는 곳이 나오면 큰 가치가 생긴다는 뜻. 다만 대부분 비상장(스타트업)이라 현재는 옵션성 영역입니다.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MOAT MATRIX ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">불가결 노드 매트릭스 · 어디에 베팅할까</span>
+      <h2>모트의 깊이 vs 상품화 노출</h2>
+      <p>"병목"이라는 라벨만으로 사지 마세요. <b style="color:var(--text)">전환비용이 높고(모트 깊음) 원가절감 압박에 덜 노출된</b> 노드가 진짜입니다. 우상단이 베팅 구간, 우하단(비싸짐)·좌측(약한 모트)은 주의. 깜빡이는 점이 핵심 병목.</p>
+    </div>
+    <div class="matrix-shell">
+      <div class="matrix" id="matrix">
+        <div class="grid-line" style="left:50%;top:0;bottom:0;width:1px"></div>
+        <div class="grid-line" style="top:50%;left:0;right:0;height:1px"></div>
+        <span class="axis-x">모트 깊이 (전환비용·대체불가) →</span>
+        <span class="axis-y">상품화 노출 (원가절감 압박) →</span>
+        <span class="quad-label" style="right:8px;top:8px">비싸도 견고</span>
+        <span class="quad-label" style="left:8px;top:8px">레드오션</span>
+        <span class="quad-label" style="right:8px;bottom:24px">★ 핵심 베팅</span>
+        <span class="quad-label" style="left:8px;bottom:24px">회피</span>
+        <!-- dots: left%(moat→x), top%(commoditization→y inverted so low commodit = bottom) -->
+        <div class="dot sig"        style="left:84%;top:18%" data-label="기반 NVIDIA — 깊은 모트·비쌈"></div>
+        <div class="dot met bottleneck" style="left:88%;top:74%" data-label="희토류 자석 — 지정학 초크포인트"></div>
+        <div class="dot met bottleneck" style="left:80%;top:70%" data-label="하모닉 감속기 — 정밀 공차 모트"></div>
+        <div class="dot met bottleneck" style="left:86%;top:62%" data-label="롤러스크류 — 좁은 공급자·긴 리드"></div>
+        <div class="dot sig"        style="left:74%;top:80%" data-label="수술 로봇 — 인증·생태계 락인"></div>
+        <div class="dot met"        style="left:58%;top:50%" data-label="모터/액추에이터 — 중간 모트"></div>
+        <div class="dot weak"       style="left:30%;top:30%" data-label="구조물·범용 배터리 — 상품화"></div>
+        <div class="dot weak"       style="left:24%;top:64%" data-label="단순 조립·통합 — 약한 모트"></div>
+        <div class="dot met"        style="left:46%;top:42%" data-label="덱스트러스 손 — 큰 원가, 표준 미정"></div>
+      </div>
+      <div class="matrix-legend">
+        <span><i class="lg-dot" style="background:var(--signal)"></i>지능·기반 레이어</span>
+        <span><i class="lg-dot" style="background:var(--metal)"></i>하드웨어 노드</span>
+        <span><i class="lg-dot" style="background:var(--metal);box-shadow:0 0 0 4px rgba(229,178,100,0.25)"></i>핵심 병목 (깜빡임)</span>
+        <span><i class="lg-dot" style="background:var(--faint)"></i>상품화·약한 모트</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FIELD-BY-FIELD STOCKS ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow metal">필드별 종목 분석 · INVESTABLE NAMES</span>
+      <h2>노드별 회사 지도</h2>
+      <p>레이어/노드마다 대표 상장사와 비상장 핵심 플레이어를 정리. <span style="color:var(--signal)">청록 티커=한국 상장</span>, <span style="color:var(--metal)">호박색=해외 상장</span>, <span style="color:var(--faint)">회색=비상장</span>. 모트 태그는 위 매트릭스 기준.</p>
+      <p style="margin-top:12px;font-size:14px;color:var(--text)">↘ <b>상장 카드를 클릭</b>하면 회사 소개·피지컬 AI 사업·포텐셜·리스크가 펼쳐지고, <b style="color:var(--metal)">실시간 시세 보기</b> 버튼으로 현재가를 확인할 수 있습니다. <span style="color:var(--faint)">(정적 페이지라 현재가는 시세 페이지 링크로 연결 — 한국주: 네이버금융 · 해외주: 야후파이낸스)</span></p>
+    </div>
+
+    <!-- A. Substrate -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">A</span><h3>기반·컴퓨팅 (Substrate)</h3><span class="moat-tag high">모트 깊음 / 비쌈</span></div>
+      <p class="field-desc">어떤 몸이 이기든 그 밑에 깔리는 도로. 생태계 락인이 강하지만 기대가 이미 가격에 반영돼 있어 초과수익 여지는 제한적. <span class="analog-inline">비유 — <b>전기·고속도로 운영사</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">NVDA · Nasdaq</span><span class="nm">NVIDIA</span><span class="role">Cosmos·GR00T·Isaac·Jetson Thor. 피지컬 AI 전 영역의 공통 기반. 동일 스택이 차·팔·휴머노이드에 모두 탑재.</span><div class="meta"><span class="pill">코어 보유</span><span class="pill">밸류 부담</span></div></div>
+        <div class="card"><span class="ticker">QCOM · Nasdaq</span><span class="nm">Qualcomm</span><span class="role">엣지 로봇 컴퓨팅·전력효율. Neura Robotics 투자 등 로봇 칩 진영 확장.</span><div class="meta"><span class="pill">엣지 컴퓨팅</span></div></div>
+        <div class="card private"><span class="ticker">PRIVATE</span><span class="nm">오픈소스 (LeRobot)</span><span class="role">NVIDIA·HuggingFace가 GR00T를 오픈모델로 통합 — 모델 레이어를 의도적으로 상품화해 칩 수요로 흡수하는 전략.</span><div class="meta"><span class="pill">생태계</span></div></div>
+      </div>
+    </div>
+
+    <!-- B. Foundation models -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">B</span><h3>지능 모델 (Robot Foundation Model)</h3><span class="moat-tag spec">투기적 / 대부분 비상장</span></div>
+      <p class="field-desc">아직 승자 없음. 순수 상장 노출이 거의 없어 사실상 벤처 영역. 공개시장 프록시는 자체 스택을 만드는 테슬라·구글, 그리고 다시 NVIDIA. <span class="analog-inline">비유 — <b>"로봇계의 ChatGPT 후보들"</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">TSLA · Nasdaq</span><span class="nm">Tesla</span><span class="role">Optimus + FSD를 수직통합. 자체 데이터·모델·몸을 모두 보유한 유일한 대형 상장 풀스택.</span><div class="meta"><span class="pill">풀스택</span><span class="pill">고변동</span></div></div>
+        <div class="card"><span class="ticker">GOOGL · Nasdaq</span><span class="nm">Alphabet (DeepMind)</span><span class="role">로보틱스 파운데이션 모델 연구. 간접·옵션성 노출.</span><div class="meta"><span class="pill">연구</span></div></div>
+        <div class="card private"><span class="ticker">PRIVATE</span><span class="nm">Figure · Skild AI · Physical Intelligence · World Labs</span><span class="role">로봇 전용 파운데이션 모델 전문 신생기업. 플랫폼급 업사이드의 진앙이나 비상장.</span><div class="meta"><span class="pill">벤처</span></div></div>
+      </div>
+    </div>
+
+    <!-- C. Rare-earth magnets -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">C</span><h3>희토류 영구자석 (NdFeB)</h3><span class="moat-tag high">최강 모트 / 지정학 초크포인트</span></div>
+      <p class="field-desc">모터 토크밀도의 천장을 자석이 결정. 중국이 채굴 ~69%·가공/정제 ~90%를 통제 → 수출규제가 변동성을 만들고, 동시에 <b style="color:var(--text)">탈중국 프리미엄</b>으로 비중국 채굴주를 띄움. <span class="analog-inline">비유 — <b>특정 광산에서만 나는 재료</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">MP · NYSE</span><span class="nm">MP Materials</span><span class="role">미국 마운틴패스 광산 + 자석 내재화. 대표적 탈중국 채굴·정제 플레이.</span><div class="meta"><span class="pill">탈중국</span></div></div>
+        <div class="card"><span class="ticker">LYC · ASX</span><span class="nm">Lynas Rare Earths</span><span class="role">호주 기반 비중국 최대 정제. Nd·Pr 등 자석 원료 공급.</span><div class="meta"><span class="pill">호주</span></div></div>
+        <div class="card"><span class="ticker">600111 · SH</span><span class="nm">China Northern Rare Earth</span><span class="role">중국 최대 희토류. 공급의 본원이지만 정책 리스크 직접 노출.</span><div class="meta"><span class="pill">중국 본원</span></div></div>
+      </div>
+    </div>
+
+    <!-- D. Precision reducers -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">D</span><h3>정밀 감속기 (하모닉 / strain-wave)</h3><span class="moat-tag high">정밀 공차 모트</span></div>
+      <p class="field-desc">고속 모터 회전을 저속·고토크·무백래시로 바꾸는 관절의 핵심. 정밀 공차와 인증 사이클이 진입장벽. 한국 기업의 탈중국 다변화 수혜축. <span class="analog-inline">비유 — <b>정밀 시계 톱니 — 아무나 못 만든다</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">6324 · TSE</span><span class="nm">Harmonic Drive Systems</span><span class="role">하모닉 감속기 원조·글로벌 표준. 정밀 로봇 관절의 레퍼런스.</span><div class="meta"><span class="pill">일본·원조</span></div></div>
+        <div class="card"><span class="ticker">002896 · SZ</span><span class="nm">Leader Harmonious Drive</span><span class="role">중국 하모닉 감속기 선두. 자국 휴머노이드 내재화 수혜.</span><div class="meta"><span class="pill">중국</span></div></div>
+        <div class="card kr"><span class="ticker">389500 · KOSDAQ</span><span class="nm">에스비비테크 (SBB테크)</span><span class="role">하모닉 감속기 국산화. 일본 대비 ~30% 저가로 원가민감 고객(테슬라형)에 대안.</span><div class="meta"><span class="pill">국산화</span><span class="pill">가격경쟁</span></div></div>
+        <div class="card kr"><span class="ticker">058610 · KOSDAQ</span><span class="nm">에스피지 (SPG)</span><span class="role">정밀 감속기·기어드모터 전문. 3대 정밀 감속기 생산, 레인보우로보틱스 공급 이력, 테슬라 공급망 진입 시도.</span><div class="meta"><span class="pill">감속기+모터</span></div></div>
+        <div class="card kr"><span class="ticker">459510 · KOSDAQ</span><span class="nm">나우로보틱스</span><span class="role">하모닉 드라이브 웨이브 제너레이터 등 구동부품 특허 5건 등록, 핵심부품 내재화 가속.</span><div class="meta"><span class="pill">부품 내재화</span></div></div>
+      </div>
+    </div>
+
+    <!-- E. Roller screws / bearings -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">E</span><h3>롤러스크류·베어링</h3><span class="moat-tag high">가장 좁은 공급자 풀</span></div>
+      <p class="field-desc">유성 롤러스크류는 고부하·고정밀 니치 — 공급자 기반이 좁고 리드타임이 길며 대체 옵션이 제한적. 매트릭스상 가장 견고한 병목 중 하나. <span class="analog-inline">비유 — <b>모두가 지나야 하는 좁은 다리</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">SKF · STO</span><span class="nm">SKF</span><span class="role">정밀 베어링·롤러스크류 글로벌. 로봇 등급 서브셋 인증이 관건.</span><div class="meta"><span class="pill">베어링</span></div></div>
+        <div class="card"><span class="ticker">6481 · TSE</span><span class="nm">THK</span><span class="role">선형운동·정밀 가이드 강자. 액추에이터 정밀 전동 부품.</span><div class="meta"><span class="pill">선형운동</span></div></div>
+        <div class="card"><span class="ticker">2049 · TWSE</span><span class="nm">Hiwin</span><span class="role">대만 정밀 볼/롤러스크류·가이드. 로봇 전동 핵심.</span><div class="meta"><span class="pill">대만</span></div></div>
+      </div>
+    </div>
+
+    <!-- F. Motors / actuators -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">F</span><h3>모터·통합 액추에이터</h3><span class="moat-tag mid">중간 모트 / 노드별 편차 큼</span></div>
+      <p class="field-desc">프레임리스 토크모터·코어리스 모터. 범용 모터는 상품화 노출이 크지만, 모터+감속기+제어 <b style="color:var(--text)">3-in-1 통합</b>이나 NVIDIA 시뮬레이션 표준 채택 같은 차별화 지점은 모트가 생김.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">6594 · TSE</span><span class="nm">Nidec</span><span class="role">정밀 소형모터 세계 최대. 로봇 구동모터 규모의 경제.</span><div class="meta"><span class="pill">규모</span></div></div>
+        <div class="card"><span class="ticker">300124 · SZ</span><span class="nm">Shenzhen Inovance</span><span class="role">중국 모션제어·서보 선두. 휴머노이드 구동 밸류체인 핵심.</span><div class="meta"><span class="pill">서보·제어</span></div></div>
+        <div class="card kr"><span class="ticker">108490 · KOSDAQ</span><span class="nm">로보티즈 (Robotis)</span><span class="role">'다이나믹셀' 액추에이터. NVIDIA 가상 시뮬레이션 환경에 표준 등록 → 전 세계 개발자 사전 채택 효과.</span><div class="meta"><span class="pill">시뮬 표준</span></div></div>
+        <div class="card kr"><span class="ticker">437730 · KOSDAQ</span><span class="nm">삼현</span><span class="role">모터·제어기·감속기 3-in-1 통합 솔루션. 자동차·방산·로봇 구동시스템.</span><div class="meta"><span class="pill">3-in-1</span></div></div>
+        <div class="card"><span class="ticker">RRX · NYSE</span><span class="nm">Regal Rexnord</span><span class="role">산업용 모터·전동. 폭넓은 산업 노출의 미국 플레이.</span><div class="meta"><span class="pill">미국</span></div></div>
+      </div>
+    </div>
+
+    <!-- G. Integrators / platforms -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">G</span><h3>통합·플랫폼 (Integrator)</h3><span class="moat-tag spec">내러티브 베타 최고 / 언더라이팅 난이도 높음</span></div>
+      <p class="field-desc">완성형 로봇을 만드는 인티그레이터. 기대가 가장 크고 변동성도 가장 큼. 한국은 코스닥 소형주 비중이 높아 테마 수급에 민감 — 비중·진입가 규율 필수. <span class="analog-inline">비유 — <b>완성차 브랜드</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">TSLA · Nasdaq</span><span class="nm">Tesla (Optimus)</span><span class="role">Gen3 양산 램프 추진 — design freeze→ramp 일정이 주가 촉매이자 실망 리스크.</span><div class="meta"><span class="pill">휴머노이드</span></div></div>
+        <div class="card"><span class="ticker">6954 · TSE</span><span class="nm">FANUC</span><span class="role">ABB와 함께 산업용 로봇 생산의 약 1/3. NVIDIA Isaac 통합으로 "두뇌" 탑재.</span><div class="meta"><span class="pill">산업로봇</span></div></div>
+        <div class="card"><span class="ticker">ABBN · SWX</span><span class="nm">ABB Robotics</span><span class="role">산업용 로봇 글로벌 톱. 제조 자동화 본류.</span><div class="meta"><span class="pill">산업로봇</span></div></div>
+        <div class="card kr"><span class="ticker">277810 · KOSDAQ</span><span class="nm">레인보우로보틱스</span><span class="role">국내 협동로봇·이족보행 플랫폼. 삼성전자가 최대주주 — 그룹 차원 휴머노이드 드라이브.</span><div class="meta"><span class="pill">삼성 백킹</span><span class="pill">시총 1위</span></div></div>
+        <div class="card kr"><span class="ticker">454910 · KOSPI</span><span class="nm">두산로보틱스</span><span class="role">국내 협동로봇 대형주(코스피). 시스템 통합·제조 레이어.</span><div class="meta"><span class="pill">협동로봇</span></div></div>
+        <div class="card"><span class="ticker">005380 · KOSPI</span><span class="nm">현대차 (Boston Dynamics)</span><span class="role">보스턴다이내믹스 보유 → 휴머노이드(Atlas) 간접 노출. 안정성 큰 우회로.</span><div class="meta"><span class="pill">간접 노출</span></div></div>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--faint)">비상장 인티그레이터: Figure · Agility Robotics · Unitree(NVIDIA가 첫 휴머노이드 AI 플랫폼 파트너로 채택) · Neura Robotics(’26년 시리즈C ~$14억, 밸류 ~$70억).</p>
+    </div>
+
+    <!-- H. Surgical / mature physical AI -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">H</span><h3>수술·의료 로봇 (성숙한 피지컬 AI)</h3><span class="moat-tag high">인증·전환비용 모트</span></div>
+      <p class="field-desc">이미 수익을 내는 피지컬 AI. 규제 인증·임상 데이터·소모품 생태계 락인으로 모트가 매우 깊음. 휴머노이드 열풍과 별개로 안정적 노출. <span class="analog-inline">비유 — <b>이미 운행 중인 자율주행 — 검증 끝난 몸</b></span>.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">ISRG · Nasdaq</span><span class="nm">Intuitive Surgical</span><span class="role">da Vinci 수술로봇 표준. 소모품·서비스 반복매출 + 전환비용 락인.</span><div class="meta"><span class="pill">락인</span></div></div>
+        <div class="card"><span class="ticker">MDT · NYSE</span><span class="nm">Medtronic</span><span class="role">Hugo 등 수술로봇 + 광범위 의료기기. AI 영상·자동화 결합.</span><div class="meta"><span class="pill">의료기기</span></div></div>
+        <div class="card kr"><span class="ticker">060280 · KOSDAQ</span><span class="nm">큐렉소</span><span class="role">국내 수술로봇(정형외과 등). 의료 피지컬 AI 한국 플레이.</span><div class="meta"><span class="pill">한국 수술로봇</span></div></div>
+      </div>
+    </div>
+
+    <!-- I. ETFs -->
+    <div class="field">
+      <div class="field-head"><span class="fnum">I</span><h3>투자 비히클 (ETF 바스켓)</h3><span class="moat-tag mid">개별 노드 리스크 분산</span></div>
+      <p class="field-desc">단일 노드 베팅의 양산 타이밍 리스크를 분산하고 싶을 때. 단, 바스켓은 핵심 병목과 약한 모트 종목이 섞여 있어 "병목 집중"의 알파는 희석됨.</p>
+      <div class="cards">
+        <div class="card"><span class="ticker">KOID · NYSE</span><span class="nm">KraneShares Humanoid Robotics</span><span class="role">휴머노이드 밸류체인 집중(감속기·자석·통합). 구성종목 일부 상장 후 +89~130% — 과열 신호.</span><div class="meta"><span class="pill">휴머노이드 순수</span></div></div>
+        <div class="card"><span class="ticker">BOTZ · Nasdaq</span><span class="nm">Global X Robotics & AI</span><span class="role">로봇·AI 광범위. 대형주 중심으로 변동성 낮은 편.</span><div class="meta"><span class="pill">광범위</span></div></div>
+        <div class="card kr"><span class="ticker">KR 다수</span><span class="nm">국내 로봇 ETF (TIGER·ACE·RISE 등)</span><span class="role">에스피지·뉴로메카·레인보우·두산 등 편입. 운용사별 비중·구성 상이 — 구성종목 확인 필수.</span><div class="meta"><span class="pill">국내 바스켓</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================= STATS ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow metal">시장 온도 · 2026</span>
+      <h2>지금 시장은 뜨겁다 — 그래서 가격을 봐야 한다</h2>
+    </div>
+    <div class="stats" id="stats">
+      <div class="stat"><div class="big" data-to="55.8" data-suf="B$">0</div><div class="cap">2026년 들어 로보틱스 기업 조달액 (Dealroom)</div></div>
+      <div class="stat"><div class="big" data-to="69" data-suf="%">0</div><div class="cap">중국의 희토류 채굴 점유 — 지정학 초크포인트</div></div>
+      <div class="stat"><div class="big" data-to="90" data-suf="%">0</div><div class="cap">중국의 자석 가공·정제 점유</div></div>
+      <div class="stat"><div class="big sig" data-to="31" data-suf="%">0</div><div class="cap">정밀 손이 차지하는 BOM 비중 — 단일 최대</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= RISK ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow" style="color:var(--danger)">리스크 · 반드시 같이 볼 것</span>
+      <h2>"하드웨어니까 다 좋다"는 절대 아니다</h2>
+    </div>
+    <div class="risk-grid">
+      <div class="risk"><h3>밸류에이션·과열</h3><p><span class="num">KOID +89~130% · ’26년 $55.8B 조달.</span> 플랫폼 전환 내러티브가 섹터 전체를 띄워, 병목이 아닌 종목까지 동반 상승. 진입가 규율이 알파를 좌우.</p></div>
+      <div class="risk"><h3>상품화 = 마진 압축</h3><p>산업 전체 게임이 BOM 원가절감. 양산 진입은 곧 부품 단가 인하 압박. <b style="color:#ff8a73">병목이라 가격결정력이 유지되는 노드만</b> 보호받음(감속기·롤러스크류·자석). 범용 모터·구조물은 노출.</p></div>
+      <div class="risk"><h3>희토류의 양날</h3><p>중국 수출규제는 탈중국주(MP·Lynas)엔 호재지만, 공급망 전반엔 원가·조달 리스크. 정책 한 번에 방향이 바뀌는 변동성.</p></div>
+      <div class="risk"><h3>타임라인 슬리피지</h3><p><span class="num">Optimus Gen3: Q1 설계 동결 → 8월 램프.</span> 하드웨어 일정은 분기 단위로 미끄러지기 쉬움. 소프트웨어 속도에 맞춰 기대하면 실망 구간이 옴.</p></div>
+      <div class="risk"><h3>한국 소형주 수급 리스크</h3><p>국내 로봇주는 코스닥 소형주 비중↑(톱20 중 19개 코스닥). 테마 수급에 민감하고 변동성 큼. 거래정지 사례(삼익THK)도 존재.</p></div>
+      <div class="risk"><h3>모델 레이어 = 비상장 한계</h3><p>플랫폼급 업사이드(②층)는 대부분 비상장이라 공개시장 노출이 어려움. 프록시(TSLA 등)는 다른 리스크가 섞여 순수 베팅이 안 됨.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BARBELL CONCLUSION ======================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">종합 · 어떻게 담을까</span>
+      <h2>"소프트웨어냐 하드웨어냐"가 아니라<br>"상품화에서 살아남는 의존성이 어디냐"</h2>
+      <p>그 질문으로 바꾸면 자연히 바벨(barbell) 구조가 나옵니다 — 안정 코어 + 분석 가능한 모트 위성 + 소액 옵션.</p>
+    </div>
+    <div class="barbell">
+      <div class="bb core"><span class="w">코어</span><div class="sub">Layer 01</div><h3>기반 (Substrate)</h3><p>NVIDIA. 어떤 몸이 이기든 깔리는 공통 기반. 비싸지만 구조적. 포트폴리오의 닻.</p></div>
+      <div class="bb sat"><span class="w">위성</span><div class="sub">Layer 03</div><h3>하드웨어 병목 노드</h3><p>감속기·롤러스크류·희토류 자석. 공급 집중도·전환비용을 실제 계산해 모트를 검증할 수 있는 곳. 분석 강점이 가장 잘 발휘됨.</p></div>
+      <div class="bb opt"><span class="w">옵션</span><div class="sub">Layer 02</div><h3>지능 모델 레이어</h3><p>플랫폼급 업사이드가 남았지만 벤처성. 비중을 작게 — 상장 프록시(TSLA 등) 또는 향후 IPO 모니터링.</p></div>
+    </div>
+    <p style="margin-top:28px;color:var(--text);font-size:16px;max-width:60em">
+      요컨대 — <b style="color:var(--signal)">몸(form factor)은 갈라지지만 두뇌(지능)는 수렴</b>합니다. 그래서 꼭대기의 불가결 노드는 "어떤 로봇이 이기느냐"가 아니라 "어떤 몸이 이기든 그 지능을 까는 공통 기반"이고, 그 아래에서 <b style="color:var(--metal)">상품화에서 살아남는 물리 병목</b>이 분석 가능한 모트의 보고입니다. 하드웨어로 좁히는 게 아니라, 세 층 중 검증 가능한 의존성을 층별로 골라 담는 쪽이 더 방어적입니다.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="wrap">
+    <div class="disc">
+      본 자료는 정보·교육 목적의 분석이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 그 결과의 책임은 전적으로 투자자 본인에게 있으며, 작성 주체는 투자자문업자가 아닙니다. 종목코드·티커·시장 구분은 작성 시점(2026년 중반) 기준으로 변동될 수 있으니 매매 전 반드시 직접 확인하시기 바랍니다. 일부 비상장 기업·밸류에이션 수치는 보도·리서치 기준이며 시점에 따라 달라질 수 있습니다.
+    </div>
+    <p class="src">SOURCES — NVIDIA (CES·GTC 2026), McKinsey humanoid supply chain (2026.04), IDTechEx rare-earth (2026), KraneShares KOID, Dealroom, CNBC, KIND/FnGuide. 시각화·구성: 대화 기반 종합 분석.</p>
+  </div>
+</footer>
+
+<script>
+  // reduced motion check
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Layer reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.25});
+  document.querySelectorAll('.layer').forEach((el,i)=>{ el.style.transitionDelay=(i*0.12)+'s'; io.observe(el); });
+
+  // BOM bars
+  const bomIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.bom-fill').forEach((f,i)=>{
+          const w=f.getAttribute('data-w');
+          setTimeout(()=>{ f.style.width=w+'%'; }, reduce?0:i*120);
+        });
+        bomIO.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  const bom=document.getElementById('bom'); if(bom) bomIO.observe(bom);
+
+  // Matrix dots
+  const mtxIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.dot').forEach((d,i)=>{
+          setTimeout(()=>d.classList.add('shown'), reduce?0:i*90);
+        });
+        mtxIO.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  const mtx=document.getElementById('matrix'); if(mtx) mtxIO.observe(mtx);
+
+  // Count up
+  function countUp(el){
+    const to=parseFloat(el.getAttribute('data-to'));
+    const suf=el.getAttribute('data-suf')||'';
+    const dec=(to%1!==0)?1:0;
+    if(reduce){ el.textContent=to.toFixed(dec)+suf; return; }
+    const dur=1100, start=performance.now();
+    function tick(now){
+      const p=Math.min((now-start)/dur,1);
+      const eased=1-Math.pow(1-p,3);
+      el.textContent=(to*eased).toFixed(dec)+suf;
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statIO=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.querySelectorAll('.big').forEach(countUp); statIO.unobserve(e.target);} });
+  },{threshold:0.5});
+  // ---------- Expandable stock detail ----------
+  const Y='https://finance.yahoo.com/quote/';
+  const N='https://finance.naver.com/item/main.naver?code=';
+  const stockData={
+    "NVDA":{what:"미국 GPU·가속컴퓨팅 1위. 데이터센터 AI의 사실상 표준 공급자.",biz:"Cosmos(월드모델)·GR00T(VLA)·Isaac(시뮬레이션)·Jetson Thor(로봇 칩)로 피지컬 AI 전 영역의 공통 기반을 제공. 차·산업팔·휴머노이드에 동일 스택 탑재.",pot:"어떤 몸이 이기든 그 밑에 깔리는 substrate. 강력한 생태계 락인.",risk:"기대가 이미 가격에 선반영, 밸류에이션 부담. 대중국 수출규제 노출.",q:Y+"NVDA"},
+    "QCOM":{what:"모바일 AP 강자. 엣지 AI 칩으로 영역 확장 중.",biz:"로봇 온디바이스 추론·전력효율 칩. Neura Robotics 등 휴머노이드 진영에 투자·공급.",pot:"휴머노이드 엣지 컴퓨팅 수요 수혜.",risk:"로봇은 아직 소액 매출, 스마트폰 사이클 의존.",q:Y+"QCOM"},
+    "TSLA":{what:"전기차·자율주행·에너지 기업. Optimus 휴머노이드 개발.",biz:"Optimus(몸)+FSD(자율주행 지능)를 자체 데이터·모델·하드웨어로 수직통합한 유일한 대형 상장 풀스택.",pot:"데이터·양산·자본을 모두 보유. 성공 시 피지컬 AI 최대 수혜.",risk:"Optimus 양산 일정 슬리피지, 밸류·기대 과열, 경영진 리스크.",q:Y+"TSLA"},
+    "GOOGL":{what:"알파벳/구글 딥마인드.",biz:"로보틱스 파운데이션 모델·월드모델 연구(Gemini Robotics 계열).",pot:"모델 레이어 우위 확보 시 옵션성 큼.",risk:"로봇은 본업 대비 소액·간접 노출.",q:Y+"GOOGL"},
+    "MP":{what:"미국 마운틴패스 희토류 광산·정제 기업.",biz:"NdFeB 자석 원료(Nd·Pr) 채굴 + 자석 내재화. 모터 토크밀도의 핵심 소재.",pot:"탈중국 공급망 재편 최대 수혜, 미 정부·국방 지원.",risk:"희토류 가격 변동, 자석 양산 실행 리스크.",q:Y+"MP"},
+    "LYC":{what:"호주 희토류, 비중국 최대 정제사.",biz:"Nd·Pr 등 자석 원료 공급. 휴머노이드 모터 소재축.",pot:"탈중국 다변화 핵심, 말레이시아·미국 정제 확장.",risk:"중국 가격공세, 정제 capex·규제 부담.",q:Y+"LYC.AX"},
+    "600111":{what:"중국 최대 희토류 생산기업.",biz:"자석 원료 공급의 본원.",pot:"글로벌 자석 공급 지배력.",risk:"중국 정책·수출규제 직접 노출, 외국인 접근성·거버넌스.",q:Y+"600111.SS"},
+    "6324":{what:"일본, 하모닉(strain-wave) 감속기 원조이자 글로벌 표준.",biz:"로봇 관절의 무백래시 정밀 감속기. 휴머노이드 BOM의 핵심 병목 부품.",pot:"정밀 공차 진입장벽, 휴머노이드 관절 표준 지위.",risk:"밸류 높음, 중국 저가 국산화의 추격.",q:Y+"6324.T"},
+    "002896":{what:"중국 하모닉 감속기 선두기업.",biz:"자국 휴머노이드 관절 감속기 공급.",pot:"중국 휴머노이드 내재화 폭증 수혜.",risk:"중국 외 확장 제한, 거버넌스.",q:Y+"002896.SZ"},
+    "389500":{what:"한국 하모닉 감속기 국산화 기업.",biz:"일본산 대비 약 30% 저가의 하모닉 감속기. 원가민감 고객의 대안.",pot:"탈중국·국산화 수요, 가격경쟁력.",risk:"소형주 변동성, 양산 캐파·수율 검증 단계.",q:N+"389500"},
+    "058610":{what:"한국 정밀 감속기·기어드모터 전문기업(인천).",biz:"3대 정밀 감속기 생산, 레인보우로보틱스 공급 이력, 테슬라 공급망 진입 시도.",pot:"감속기+모터 동시 보유, 테슬라 채택 시 리레이팅 여지.",risk:"테마 수급 의존, 대형 공급계약 확정 전 불확실.",q:N+"058610"},
+    "459510":{what:"한국 지능형 로봇 기업.",biz:"하모닉 웨이브 제너레이터 등 구동부품 특허 5건 등록, 핵심부품 내재화 가속.",pot:"산업로봇→휴머노이드 부품으로 확장.",risk:"소형주, 부품 내재화 초기 단계.",q:N+"459510"},
+    "108490":{what:"한국 로봇 액추에이터 전문기업.",biz:"'다이나믹셀' 액추에이터. NVIDIA 가상 시뮬레이션 환경에 표준 등록.",pot:"글로벌 개발자 사전 채택 → 실제 채택 전환 기대.",risk:"단가·경쟁 압박, 휴머노이드 양산 채택 불확실.",q:N+"108490"},
+    "437730":{what:"한국 구동시스템 기업.",biz:"모터·제어기·감속기를 합친 3-in-1 통합 솔루션. 자동차·방산·로봇.",pot:"통합 솔루션 차별화, 신규시장 확장.",risk:"소형주, 로봇 매출 비중 초기.",q:N+"437730"},
+    "6594":{what:"일본 정밀 소형모터 세계 최대 기업(Nidec).",biz:"로봇 구동모터·액추에이터용 모터. 규모의 경제로 단가 경쟁력.",pot:"휴머노이드 모터 수요 폭증의 규모 수혜.",risk:"전방산업 다변화로 로봇 순수도 낮음, 사이클.",q:Y+"6594.T"},
+    "300124":{what:"중국 모션제어·서보 선두기업(Inovance).",biz:"휴머노이드 구동 밸류체인의 서보·제어 핵심.",pot:"중국 로봇 내재화 폭증 수혜.",risk:"중국 외 확장 제한, 거버넌스.",q:Y+"300124.SZ"},
+    "RRX":{what:"미국 산업용 모터·전동 기업(Regal Rexnord).",biz:"산업용 모터·기어·전동. 폭넓은 산업 노출의 미국 플레이.",pot:"좁은 정밀 전동 공급자 풀 내 포지션.",risk:"산업 사이클 의존, 로봇 비중 작음.",q:Y+"RRX"},
+    "SKF":{what:"스웨덴 정밀 베어링·롤러스크류 글로벌 기업.",biz:"액추에이터용 베어링·정밀 전동 부품. 로봇등급 인증·램프가 관건.",pot:"좁은 공급자 풀 내 규모와 신뢰성.",risk:"산업 사이클 의존, 로봇 매출 비중 아직 작음.",q:Y+"SKF-B.ST"},
+    "6481":{what:"일본 선형운동(LM 가이드)·정밀 전동 강자.",biz:"액추에이터 정밀 직선운동·가이드 부품.",pot:"정밀 전동 병목 수혜.",risk:"산업 자동화 사이클, 경쟁.",q:Y+"6481.T"},
+    "2049":{what:"대만 정밀 볼/롤러스크류·가이드 기업.",biz:"로봇 전동의 핵심 부품 공급.",pot:"롤러스크류의 좁은 공급자 풀.",risk:"사이클·가격경쟁 노출.",q:Y+"2049.TW"},
+    "6954":{what:"일본 산업용 로봇·CNC 글로벌 톱.",biz:"ABB와 함께 산업로봇 생산의 약 1/3. NVIDIA Isaac 통합으로 '두뇌' 탑재.",pot:"방대한 설치 베이스 + AI 결합.",risk:"제조 capex 사이클, 휴머노이드는 본업 외곽.",q:Y+"6954.T"},
+    "ABBN":{what:"스위스 전력·자동화 기업, 산업로봇 글로벌 톱.",biz:"제조 자동화·산업로봇 본류.",pot:"광범위 자동화 수요.",risk:"산업 사이클, 휴머노이드 직접 노출 작음.",q:Y+"ABBN.SW"},
+    "277810":{what:"한국 협동로봇·이족보행 플랫폼, 국내 로봇 시총 1위.",biz:"협동로봇 + 휴머노이드 플랫폼, 핵심부품 자체기술 보유. 삼성전자가 최대주주.",pot:"삼성 그룹 차원의 휴머노이드 드라이브.",risk:"밸류에이션 매우 높음, 기대 선반영.",q:N+"277810"},
+    "454910":{what:"한국 협동로봇 대형주(코스피 상장).",biz:"협동로봇·시스템 통합·제조 레이어.",pot:"두산 그룹 자본·B2B 채널.",risk:"수익성·밸류 부담, 협동로봇 경쟁 심화.",q:N+"454910"},
+    "005380":{what:"한국 완성차 대형주.",biz:"보스턴다이내믹스 보유 → 휴머노이드(Atlas) 간접 노출. 공장 자동화 내재 수요.",pot:"안정적 캐시플로 + 로봇 옵션성.",risk:"로봇은 전체 대비 소액, 본업은 자동차 사이클.",q:N+"005380"},
+    "ISRG":{what:"미국 수술로봇(da Vinci) 표준 기업.",biz:"이미 수익을 내는 피지컬 AI. 소모품·서비스 반복매출.",pot:"전환비용 락인, AI 영상·자동화 고도화.",risk:"고밸류, 경쟁(메드트로닉 등) 진입.",q:Y+"ISRG"},
+    "MDT":{what:"미국 대형 의료기기 기업.",biz:"Hugo 수술로봇 + 광범위 의료기기, AI 결합.",pot:"의료 자동화 광범위 노출.",risk:"수술로봇은 후발, 대기업 성장성 한계.",q:Y+"MDT"},
+    "060280":{what:"한국 수술로봇 기업.",biz:"정형외과 등 의료 수술로봇.",pot:"국산 의료 피지컬 AI 플레이.",risk:"소형주, 글로벌 경쟁.",q:N+"060280"},
+    "KOID":{what:"KraneShares 휴머노이드 로보틱스 ETF.",biz:"감속기·자석·통합 등 휴머노이드 밸류체인에 집중한 바스켓.",pot:"단일 종목 리스크 분산.",risk:"구성종목 일부 +89~130% 과열, 병목 알파 희석.",q:Y+"KOID"},
+    "BOTZ":{what:"Global X 로봇·AI ETF.",biz:"로봇·AI 광범위 대형주 바스켓.",pot:"변동성 낮은 섹터 노출.",risk:"광범위 구성 → 피지컬 AI 순수도 낮음.",q:Y+"BOTZ"}
+  };
+  const strData={
+    "NVDA":"강점은 부품이 아니라 '로봇의 두뇌+개발도구'를 통째로 파는 것입니다. Cosmos·GR00T·Isaac으로 한 번 학습시킨 지능을 자동차·로봇팔·휴머노이드에 그대로 옮길 수 있게 해주고, 개발자가 NVIDIA 환경 위에서 작업을 시작하게 만들어 한 번 들어오면 빠져나가기 어렵게(생태계 락인) 묶습니다. 부품 회사들이 NVIDIA '두뇌'를 얹는 식으로 줄을 서는 구조라, 누가 로봇을 만들든 통행세를 걷는 위치입니다.",
+    "QCOM":"강점은 '저전력' 엣지 추론 칩입니다. 배터리로 움직이는 로봇은 전력을 아끼는 게 생명인데, 스마트폰에서 수십 년 갈고닦은 저전력 칩 설계 노하우를 로봇 두뇌에 그대로 적용합니다. 콘센트에 꽂힌 데이터센터 칩과 달리 '들고 다니는' 지능에 강점이 있습니다.",
+    "TSLA":"강점은 두뇌·몸·데이터·양산라인을 한 회사가 다 가진 수직통합입니다. 전기차에서 쌓은 자율주행 데이터, 자체 모터·배터리, 자동차를 연 수백만 대 찍어내는 양산 노하우를 그대로 옵티머스에 붓습니다. 부품 하나가 아니라 '완성형 로봇을 싸게 대량으로'를 노리는 거의 유일한 대형 상장사입니다.",
+    "GOOGL":"강점은 딥마인드의 모델 연구력입니다. 로봇이 눈으로 보고 상황을 추론해 행동을 계획하는 '머리' 쪽 알고리즘에서 세계 최고 수준입니다. 다만 로봇은 본업(검색·클라우드) 옆의 연구축이라, 직접 베팅이라기보다 옵션성에 가깝습니다.",
+    "MP":"강점은 미국 안에서 채굴부터 자석까지 한 번에 하는 거의 유일한 일관 생산입니다. 희토류는 '캐는 것'보다 '정제·자석화'가 훨씬 어려운데, 그 어려운 단계를 중국 밖에서 할 수 있다는 게 핵심 카드입니다. 미 정부·국방이 공급망 안보 차원에서 밀어주는 것도 강점입니다.",
+    "LYC":"강점은 중국 밖 최대 '정제(분리)' 능력입니다. 희토류는 땅에서 캐도 여러 원소가 섞여 나와, 모터에 쓰는 Nd·Pr만 골라 분리하는 게 진짜 기술입니다. 그 분리를 중국 밖에서 대규모로 할 수 있는 거의 유일한 곳이라 '탈중국'의 핵심입니다.",
+    "600111":"강점은 압도적 규모와 원가입니다. 세계 최대 희토류 생산 기반 위에서 가장 싸게 자석 원료를 공급합니다. 다만 강점이 곧 약점 — 중국 정부 통제 아래 있어 수출규제·거버넌스 리스크에 직접 노출됩니다.",
+    "6324":"강점은 '파동기어(하모닉)' 그 자체를 발명하고 수십 년 다듬어 표준으로 만든 것입니다. 정밀 손목시계 톱니 같은 이 부품을 토크밀도·백래시·신뢰성 면에서 가장 잘 만들고, 두꺼운 특허와 노하우로 신규 진입을 막습니다. 항공우주·수술로봇처럼 '절대 고장나면 안 되는' 극한 영역의 레퍼런스라, 사실상 회사 자체가 진입장벽입니다.",
+    "002896":"강점은 중국 하모닉 감속기 1위라는 자국 물량과 원가입니다. 중국 휴머노이드 업체들이 부품을 국산화하면서 가장 먼저 채택하는 공급사입니다. 다만 중국 밖 확장과 최고 정밀 영역에선 일본 원조에 아직 못 미칩니다.",
+    "389500":"강점은 일본이 쥔 하모닉 감속기를 국산화해 같은 성능을 약 30% 싸게 만드는 가격경쟁력입니다. 원가를 한 푼이라도 깎아야 하는 양산형 휴머노이드(테슬라처럼)에게는 '비싼 일본산'의 매력적인 대안입니다. 탈중국·국산화 흐름의 직접 수혜축입니다.",
+    "058610":"강점은 하모닉·사이클로이드·유성 세 종류 감속기를 다 만들 수 있는 드문 종합 능력에 모터까지 보유한 점입니다. 로봇은 부위마다 다른 감속기가 필요한데, 고객이 한 곳에서 다 조달할 수 있습니다. 레인보우로보틱스 공급 이력에 더해 테슬라 공급망 진입을 시도 중이라, 채택이 확정되면 가치가 재평가될 여지가 있습니다.",
+    "459510":"강점은 산업용 로봇 '완제품'을 만들면서 그 핵심 구동부품(하모닉 웨이브 제너레이터 등)까지 직접 특허·내재화하는 수직 능력입니다. 부품을 사오는 게 아니라 직접 만들어 원가와 품질을 쥐려는 행보입니다. 다만 부품 내재화는 아직 초기 단계입니다.",
+    "108490":"강점은 '다이나믹셀'이라는 올인원 스마트 액추에이터입니다. 모터+감속기+제어기+센서를 한 모듈로 묶어, 개발자가 레고처럼 가져다 조립할 수 있게 만든 게 차별점입니다. 특히 NVIDIA 시뮬레이션 환경에 표준으로 들어가 있어, 전 세계 로봇 개발자가 가상에서 먼저 써보고 실물에 채택할 확률이 높습니다.",
+    "437730":"강점은 모터·제어기·감속기를 하나로 합친 '3-in-1' 통합 모듈화입니다. 원래 따로 사서 조립해야 할 것을 한 덩어리로 제공해 부피·배선·원가를 줄입니다. 자동차·방산에서 쌓은 구동 기술을 로봇으로 넓히는 중입니다.",
+    "6594":"강점은 기술 난도보다 '세계 최대 규모로 싸게 대량 생산'하는 능력입니다. 정밀 소형모터 세계 1위로, 휴머노이드 모터 수요가 폭증하면 규모의 경제로 수혜를 봅니다. 다만 전방산업이 넓어 '로봇 순수 베팅'은 아닙니다.",
+    "300124":"강점은 중국 서보·모션제어 선두라는 점입니다. 모터를 정밀하게 돌리고 멈추게 하는 드라이브·제어기에서 중국 내 1위입니다. 중국 로봇 내재화 폭증의 직접 수혜이나, 중국 밖 확장과 거버넌스가 변수입니다.",
+    "RRX":"강점은 산업용 모터·기어·전동 부품을 폭넓게 갖춘 미국 종합 포트폴리오입니다. 좁은 정밀 전동 공급자 풀 안에서 미국 내 조달처로서 가치가 있습니다. 다만 산업 사이클에 묶이고 로봇 비중은 작습니다.",
+    "SKF":"강점은 100년 넘게 쌓은 베어링·정밀 전동 노하우와 신뢰성입니다. 충격을 견디고 마찰을 줄이는 베어링·스크류를 '오래, 안 망가지게' 만드는 데 강합니다. 로봇용으로 인증된 정밀 등급을 양산 램프하는 게 관건입니다.",
+    "6481":"강점은 선형운동(LM 가이드)의 원조이자 표준이라는 점입니다. 무언가를 직선으로 정밀하게 미끄러뜨리는 부품에서 세계적 레퍼런스입니다. 직선형 액추에이터가 다리에 쓰이며 수요가 커지는 수혜축입니다.",
+    "2049":"강점은 정밀 볼/롤러스크류와 가이드를 대만에서 고정밀로 만드는 능력입니다. 다리 직선운동의 핵심 나사를 만드는 좁은 공급자 풀에 속합니다. 고정밀(C3급) 영역에서 서방·일본·대만이 앞서는데, Hiwin이 그 한 축입니다.",
+    "6954":"강점은 산업로봇·CNC 세계 톱이라는 방대한 설치 베이스입니다. 이미 전 세계 공장에 깔린 자사 로봇에 NVIDIA '두뇌'를 얹어 똑똑하게 만드는 위치입니다. 휴머노이드보다는 '기존 공장 로봇의 지능화'가 강점입니다.",
+    "ABBN":"강점은 전력·자동화의 글로벌 종합 역량입니다. 로봇 한 대가 아니라 공장 전체를 자동화 설계하는 시스템 관점에서 강합니다. 휴머노이드 직접 노출은 작지만 산업 자동화 본류입니다.",
+    "277810":"강점은 협동로봇과 이족보행(휴머노이드) 플랫폼을 핵심부품 수준부터 자체기술로 가진 점입니다. 남의 부품을 조립하는 게 아니라 요소기술을 직접 보유합니다. 삼성전자가 최대주주여서 그룹 차원의 휴머노이드 드라이브가 붙는다는 게 가장 큰 강점이자, 동시에 밸류를 비싸게 만드는 요인입니다.",
+    "454910":"강점은 협동로봇 완제품과 시스템 통합 능력, 그리고 두산 그룹의 자본·B2B 채널입니다. 대형 그룹사라 자금·영업망에서 소형주보다 안정적입니다. 다만 협동로봇 경쟁이 치열해 수익성·밸류가 과제입니다.",
+    "005380":"강점은 휴머노이드 명가 보스턴다이내믹스(아틀라스)를 그룹에 보유했다는 점입니다. 완성차에서 나오는 막대한 현금흐름과 양산 능력으로 로봇을 뒤에서 받칩니다. 안정성 위에 로봇 옵션을 얹는 우회로지만, 로봇은 전체 사업 대비 아직 소액입니다.",
+    "ISRG":"강점은 da Vinci 수술로봇을 사실상 표준으로 만든 데다, 소모품·교육·서비스가 묶인 생태계로 한 번 도입한 병원이 못 바꾸게 잠그는(전환비용 락인) 것입니다. 이미 수익을 내는 검증된 피지컬 AI라 휴머노이드 열풍과 별개로 견고합니다.",
+    "MDT":"강점은 넓은 의료기기 포트폴리오와 병원 채널입니다. 수술로봇(Hugo) 외에도 다양한 기기로 의료 자동화에 폭넓게 노출됩니다. 다만 수술로봇 자체는 인튜이티브에 비해 후발입니다.",
+    "060280":"강점은 정형외과 등 국산 수술로봇을 직접 개발한다는 점입니다. 의료 피지컬 AI의 드문 한국 플레이입니다. 다만 소형주이고 글로벌 강자들과 경쟁해야 합니다.",
+    "KOID":"특징은 휴머노이드 밸류체인(감속기·자석·통합)만 골라 담은 순수 바스켓이라는 점입니다. 개별 종목을 고르는 부담 없이 테마 전체에 한 번에 노출됩니다. 단 과열 구간이라 진입 시점을 봐야 합니다.",
+    "BOTZ":"특징은 로봇·AI 광범위 대형주를 담아 변동성이 낮은 편이라는 점입니다. 안정적으로 섹터에 발을 담그고 싶을 때 적합하나, 피지컬 AI 순수도는 낮습니다."
+  };
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  document.querySelectorAll('.card').forEach(card=>{
+    const tEl=card.querySelector('.ticker'); if(!tEl) return;
+    const key=tEl.textContent.split('·')[0].trim();
+    const d=stockData[key]; if(!d) return;
+    card.classList.add('expandable');
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-expanded','false');
+    const caret=document.createElement('span');
+    caret.className='caret'; caret.textContent='자세히 보기';
+    card.appendChild(caret);
+    const det=document.createElement('div');
+    det.className='card-detail';
+    det.innerHTML=
+      '<div class="cd-row"><span class="cd-l">회사</span><p>'+esc(d.what)+'</p></div>'+
+      '<div class="cd-row"><span class="cd-l">피지컬 AI 사업</span><p>'+esc(d.biz)+'</p></div>'+
+      (strData[key]?'<div class="cd-strength"><span class="cd-l">무엇을 잘하나 — 강점</span><p>'+esc(strData[key])+'</p></div>':'')+
+      '<div class="cd-grid">'+
+        '<div class="cd-box pot"><span class="cd-l">포텐셜</span><p>'+esc(d.pot)+'</p></div>'+
+        '<div class="cd-box risk"><span class="cd-l">리스크</span><p>'+esc(d.risk)+'</p></div>'+
+      '</div>'+
+      '<a class="quote-btn" href="'+d.q+'" target="_blank" rel="noopener">실시간 시세 보기 →</a>';
+    card.appendChild(det);
+    function toggle(){
+      const open=card.classList.toggle('open');
+      card.setAttribute('aria-expanded',open?'true':'false');
+      caret.textContent=open?'접기':'자세히 보기';
+    }
+    card.addEventListener('click',e=>{ if(e.target.closest('.quote-btn'))return; toggle(); });
+    card.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+  });
+</script>
+</body>
+</html>
