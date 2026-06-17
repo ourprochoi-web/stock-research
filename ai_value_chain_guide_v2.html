@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#21262e; --sub:#5d6671; --faint:#98a0aa;
+  --bg:#faf9f6; --card:#ffffff; --line:#e7e4dc; --note:#f5f3ec; --chip-bg:#f1efe9;
+  --z1:#d4582e; --z1s:#fdf0ea;
+  --z2:#6457c9; --z2s:#f0eefb;
+  --z3:#d4900e; --z3s:#fdf5e4;
+  --z4:#1f9e68; --z4s:#e9f7f0;
+  --elec:#f5b32a; --data:#4a8df0; --money:#2ec47e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--elec),var(--z1),var(--z2),var(--z4));width:0%;z-index:99}
+nav{position:sticky;top:0;background:rgba(250,249,246,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 100px}
+
+/* ───────── HERO (dark) ───────── */
+.hero-shell{background:radial-gradient(1200px 600px at 50% -10%, #243049 0%, #141a26 55%, #0e1320 100%);color:#eef1f7;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(400px 220px at 15% 25%, rgba(245,179,42,.14), transparent 70%),
+  radial-gradient(420px 240px at 85% 65%, rgba(46,196,126,.13), transparent 70%),
+  radial-gradient(360px 200px at 70% 15%, rgba(74,141,240,.12), transparent 70%);
+  animation:auroral 9s ease-in-out infinite alternate}
+@keyframes auroral{from{opacity:.7;transform:translateY(0)}to{opacity:1;transform:translateY(-14px)}}
+.hero{position:relative;max-width:780px;margin:0 auto;padding:72px 20px 40px;text-align:center}
+.hero .eyebrow{font-size:12.5px;letter-spacing:.26em;color:var(--elec);font-weight:800}
+.hero h1{font-size:clamp(30px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin:16px 0;background:linear-gradient(110deg,#fff 30%,#f5d48a 50%,#fff 70%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p{color:#aeb6c6;max-width:580px;margin:0 auto;font-size:16px}
+.particle{position:absolute;border-radius:50%;pointer-events:none;opacity:0}
+@media (prefers-reduced-motion: no-preference){
+  .particle{animation:rise-p linear infinite}
+  .particle.down{animation-name:fall-p}
+  @keyframes rise-p{0%{transform:translateY(40vh) scale(.6);opacity:0}15%{opacity:.9}85%{opacity:.6}100%{transform:translateY(-12vh) scale(1.1);opacity:0}}
+  @keyframes fall-p{0%{transform:translateY(-10vh) scale(.7);opacity:0}15%{opacity:.85}85%{opacity:.5}100%{transform:translateY(46vh) scale(1);opacity:0}}
+}
+.stats{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:640px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(19px,4.4vw,28px);font-weight:900;color:#ffd98a;letter-spacing:-.02em}
+.stat .l{font-size:12px;color:#9aa3b5;margin-top:4px;line-height:1.45}
+.hero .legend{position:relative;display:flex;justify-content:center;gap:18px;margin-top:30px;font-size:12.5px;color:#9aa3b5;flex-wrap:wrap}
+.hero .legend span{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%;box-shadow:0 0 8px currentColor}
+.hero-diag{position:relative;max-width:740px;margin:0 auto;padding:8px 16px 56px}
+.hero-diag .diag{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.hero-diag .cap{color:#8d96a9}
+
+/* ───────── sections ───────── */
+section{padding-top:10px}
+.zone-head{margin:74px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-6px;top:-44px;font-size:120px;font-weight:900;opacity:.07;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12.5px;font-weight:800;letter-spacing:.2em}
+.zone-head h2{font-size:clamp(24px,5.2vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:6px}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:640px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:20px;padding:30px 28px;margin:28px 0;opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease, box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media (hover:hover){.floor:hover{box-shadow:0 14px 40px -18px rgba(33,38,46,.25)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12.5px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.05em}
+.floor h3{font-size:23px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:14px;color:var(--faint);margin-bottom:14px}
+.analogy{background:linear-gradient(100deg,#fdf6e4,#fbf2dc);border-left:4px solid var(--elec);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.5px;margin:14px 0;color:#574a28}
+.analogy b{color:#3f3315}
+.floor p.body{margin:12px 0;font-size:15.8px}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+.fact{background:var(--zs);border:1px solid color-mix(in srgb, var(--zc) 22%, white);border-radius:14px;padding:13px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.6vw,21px);font-weight:900;color:var(--zc);letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11.5px;color:var(--sub);margin-top:5px;line-height:1.45}
+
+.terms{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+details.term{display:inline-block}
+details.term summary{list-style:none;cursor:pointer;font-size:13px;font-weight:700;background:var(--chip-bg);border:1px solid var(--line);padding:6px 13px;border-radius:999px;user-select:none;transition:transform .15s}
+details.term summary:active{transform:scale(.96)}
+details.term summary::-webkit-details-marker{display:none}
+details.term summary::after{content:' +';color:var(--faint)}
+details.term[open] summary{background:var(--zc);border-color:var(--zc);color:#fff}
+details.term[open] summary::after{content:' −'}
+details.term .def{font-size:14px;background:var(--note);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-top:8px;max-width:580px;color:var(--sub)}
+details.term .def b{color:var(--ink)}
+
+.cos{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 2px}
+.co{font-size:13.5px;font-weight:600;border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:10px}
+.co.kr{border-color:#bcd5f2;background:#f2f7fd}
+.cos-label{font-size:11.5px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin-top:16px}
+
+.bottleneck{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14.5px;color:var(--sub);background:var(--note);border-radius:12px;padding:12px 14px}
+.bottleneck .ic{flex:none;width:23px;height:23px;border-radius:50%;background:var(--zc);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:13px}
+.view{margin-top:16px;border:1.5px dashed #c9b8a4;background:#faf6ef;border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:12px;font-weight:900;letter-spacing:.12em;color:#8a6a3c;margin-bottom:6px}
+.view p{font-size:14.5px;color:#5c4f3a}
+.view .v-note{font-size:11.5px;color:#a99877;margin-top:8px}
+
+.diag{margin:20px 0 6px;background:linear-gradient(180deg,#fdfcf9,#f6f4ee);border:1px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center}
+.diag svg{width:100%;height:auto;max-width:660px}
+.diag .cap{font-size:13px;color:var(--faint);margin-top:8px}
+.diag text{font-family:'Pretendard',sans-serif}
+
+@media (prefers-reduced-motion: no-preference){
+  .visible .flow-line{stroke-dasharray:8 8;animation:flow 1.1s linear infinite}
+  .visible .flow-rev{stroke-dasharray:8 8;animation:flowrev 1.1s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-16}}
+  @keyframes flowrev{to{stroke-dashoffset:16}}
+  .visible .stackup{opacity:0;animation:rise .5s ease forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .visible .pulse{animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+  .visible .spin-droplet{animation:looprun 3.2s linear infinite}
+  @keyframes looprun{to{stroke-dashoffset:-400}}
+  .visible .cell{opacity:0;animation:cellon .4s ease forwards}
+  @keyframes cellon{to{opacity:1}}
+  .visible .drawline{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.2s ease forwards .3s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .visible .growbar{transform:scaleY(0);transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.8,.3,1) forwards}
+  @keyframes grow{to{transform:scaleY(1)}}
+  .visible .gapfill{opacity:0;animation:fadein 1s ease forwards 1.6s}
+  @keyframes fadein{to{opacity:1}}
+  .visible .blink{animation:blink 1.6s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+th{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.5px;display:flex;justify-content:space-between}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub)}
+
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:13px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12.5px;margin-top:40px}
+@media print{nav,#prog,.particle{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell" id="hero">
+  <div id="pfield"></div>
+  <div class="hero">
+    <div class="eyebrow">AI VALUE CHAIN GUIDE · 2026.06</div>
+    <h1>전기를 지능으로<br>바꾸는 공장</h1>
+    <p>챗봇에 질문 하나를 던지면, 그 뒤에서 12개 층으로 이뤄진 거대한 공장이 돌아갑니다. 전기가 맨 아래로 들어가 맨 위에서 '답변'과 '돈'이 되어 나오는 여정 — 그 공장의 설계도를 한 층씩 안내합니다.</p>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="700">$0B</div><div class="l">빅테크 4사의<br>연간 AI 설비투자</div></div>
+      <div class="stat"><div class="n" data-count="1">0%</div><div class="l">미국 데이터센터<br>공실률 (사실상 만실)</div></div>
+      <div class="stat"><div class="n" data-count="5">0년</div><div class="l">대형 가스터빈<br>주문 대기 기간</div></div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--elec);color:var(--elec)"></span>전기 (아래→위)</span>
+      <span><span class="dot" style="background:var(--data);color:var(--data)"></span>데이터</span>
+      <span><span class="dot" style="background:var(--money);color:var(--money)"></span>돈 (위→아래)</span>
+    </div>
+  </div>
+  <div class="hero-diag">
+  <div class="diag floor visible" style="margin:0;padding:14px 10px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)">
+  <svg viewBox="0 0 640 460" role="img" aria-label="AI 공장 12층 단면도. 전기가 아래에서 위로, 돈이 위에서 아래로 흐른다">
+    <g font-size="13" font-weight="700">
+      <rect x="120" y="20"  width="400" height="30" rx="7" fill="#1f3c2f" stroke="#2ec47e"/><text x="320" y="40" text-anchor="middle" fill="#a9ebcd">12F 수익화 — 기업·소비자</text>
+      <rect x="120" y="55"  width="400" height="30" rx="7" fill="#1d3050" stroke="#4a8df0"/><text x="320" y="75" text-anchor="middle" fill="#bcd6fa">11F 모델 회사 (OpenAI·Anthropic·xAI)</text>
+      <rect x="120" y="90"  width="400" height="30" rx="7" fill="#1d3050" stroke="#4a8df0"/><text x="320" y="110" text-anchor="middle" fill="#bcd6fa">10F 클라우드 (구글·아마존·MS)</text>
+      <rect x="120" y="125" width="400" height="30" rx="7" fill="#33301f" stroke="#bfa14a"/><text x="320" y="145" text-anchor="middle" fill="#ecd9a0">9F 데이터센터 건물·부지</text>
+      <rect x="120" y="160" width="400" height="30" rx="7" fill="#3a2e14" stroke="#f5b32a"/><text x="320" y="180" text-anchor="middle" fill="#fbdf9e">8F 냉각 (칠러·콜드플레이트)</text>
+      <rect x="120" y="195" width="400" height="30" rx="7" fill="#3a2e14" stroke="#f5b32a"/><text x="320" y="215" text-anchor="middle" fill="#fbdf9e">7F 전력 (터빈·변압기·배터리)</text>
+      <rect x="120" y="230" width="400" height="30" rx="7" fill="#2b2547" stroke="#8d80e8"/><text x="320" y="250" text-anchor="middle" fill="#cfc8f6">6F 서버 조립</text>
+      <rect x="120" y="265" width="400" height="30" rx="7" fill="#2b2547" stroke="#8d80e8"/><text x="320" y="285" text-anchor="middle" fill="#cfc8f6">5F 네트워크 (스위치·광통신)</text>
+      <rect x="120" y="300" width="400" height="30" rx="7" fill="#43221a" stroke="#e8714a"/><text x="320" y="320" text-anchor="middle" fill="#f8c4af">4F 기판·부품</text>
+      <rect x="120" y="335" width="400" height="30" rx="7" fill="#43221a" stroke="#e8714a"/><text x="320" y="355" text-anchor="middle" fill="#f8c4af">3F 제조 장비·소모품</text>
+      <rect x="120" y="370" width="400" height="30" rx="7" fill="#43221a" stroke="#e8714a"/><text x="320" y="390" text-anchor="middle" fill="#f8c4af">2F 메모리 (HBM·D램)</text>
+      <rect x="120" y="405" width="400" height="30" rx="7" fill="#43221a" stroke="#e8714a"/><text x="320" y="425" text-anchor="middle" fill="#f8c4af">1F 두뇌 — 연산 칩 (GPU)</text>
+    </g>
+    <path class="flow-rev" d="M70 440 L70 30" stroke="#f5b32a" stroke-width="4" fill="none"/>
+    <polygon points="70,18 62,34 78,34" fill="#f5b32a"/>
+    <text x="70" y="456" text-anchor="middle" font-size="12" fill="#f5b32a" font-weight="800">전기 ⚡</text>
+    <path class="flow-line" d="M572 30 L572 440" stroke="#2ec47e" stroke-width="4" fill="none"/>
+    <polygon points="572,452 564,436 580,436" fill="#2ec47e"/>
+    <text x="572" y="18" text-anchor="middle" font-size="12" fill="#2ec47e" font-weight="800">돈 ₩</text>
+  </svg>
+  <div class="cap">전기는 아래에서 위로 올라가며 지능이 되고, 돈은 위(고객)에서 아래(부품·장비)로 내려옵니다. 1층부터 올라가 봅시다.</div>
+  </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#z1">Ⅰ 두뇌·기억</a>
+  <a href="#z2">Ⅱ 신경·몸</a>
+  <a href="#z3">Ⅲ 심장·체온</a>
+  <a href="#z4">Ⅳ 운영자·세입자</a>
+  <a href="#map">기업 지도</a>
+  <a href="#gloss">용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══════ ZONE 1 ═══════ -->
+<section id="z1" style="--zc:var(--z1);--zs:var(--z1s)">
+<div class="zone-head" style="color:var(--z1)">
+  <div class="z-big">Ⅰ</div>
+  <div class="z-num">ZONE Ⅰ · 1~4층 · 반도체</div>
+  <h2 style="color:var(--ink)">두뇌와 기억</h2>
+  <p>계산을 하는 칩, 데이터를 기억하는 칩, 그 칩들을 만드는 장비, 칩이 앉는 자리까지 — AI의 가장 안쪽 심장부입니다.</p>
+</div>
+
+<!-- 1F -->
+<div class="floor" style="--zc:var(--z1);--zs:var(--z1s)">
+  <span class="f-tag">1F · 두뇌</span>
+  <h3>연산 칩 — 계산을 하는 두뇌</h3>
+  <div class="meta">GPU, 전용 칩(ASIC), 그리고 이들을 묶는 패키징</div>
+  <div class="analogy">💡 비유: 일반 CPU가 <b>천재 한 명</b>이라면, GPU는 <b>단순 계산만 하는 학생 수만 명의 주판 교실</b>입니다. AI 학습은 천재 한 명보다 수만 명의 동시 계산이 압도적으로 유리한 작업입니다.</div>
+  <div class="diag">
+  <svg viewBox="0 0 640 230" role="img" aria-label="CPU와 GPU 비교: 큰 코어 하나 대 작은 코어 수십 개가 차례로 켜지는 그림">
+    <text x="160" y="26" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">CPU — 천재 한 명</text>
+    <rect x="85" y="45" width="150" height="150" rx="14" fill="#e8ecf4" stroke="#9aa8c4" stroke-width="2"/>
+    <rect class="pulse" x="115" y="75" width="90" height="90" rx="10" fill="#5b84bd"/>
+    <text x="160" y="215" text-anchor="middle" font-size="12" fill="#5d6671">복잡한 일을 순서대로</text>
+    <text x="475" y="26" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">GPU — 학생 일만 명</text>
+    <rect x="385" y="45" width="180" height="150" rx="14" fill="#fdeee8" stroke="#d4845e" stroke-width="2"/>
+    <g fill="#d4582e">
+      <rect class="cell" style="animation-delay:.05s" x="398" y="58" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.1s" x="420" y="58" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.15s" x="442" y="58" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.2s" x="464" y="58" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.25s" x="486" y="58" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.3s" x="508" y="58" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.35s" x="530" y="58" width="18" height="18" rx="3"/>
+      <rect class="cell" style="animation-delay:.4s" x="398" y="80" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.45s" x="420" y="80" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.5s" x="442" y="80" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.55s" x="464" y="80" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.6s" x="486" y="80" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.65s" x="508" y="80" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.7s" x="530" y="80" width="18" height="18" rx="3"/>
+      <rect class="cell" style="animation-delay:.75s" x="398" y="102" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.8s" x="420" y="102" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.85s" x="442" y="102" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.9s" x="464" y="102" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:.95s" x="486" y="102" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1s" x="508" y="102" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.05s" x="530" y="102" width="18" height="18" rx="3"/>
+      <rect class="cell" style="animation-delay:1.1s" x="398" y="124" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.15s" x="420" y="124" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.2s" x="442" y="124" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.25s" x="464" y="124" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.3s" x="486" y="124" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.35s" x="508" y="124" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.4s" x="530" y="124" width="18" height="18" rx="3"/>
+      <rect class="cell" style="animation-delay:1.45s" x="398" y="146" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.5s" x="420" y="146" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.55s" x="442" y="146" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.6s" x="464" y="146" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.65s" x="486" y="146" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.7s" x="508" y="146" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.75s" x="530" y="146" width="18" height="18" rx="3"/>
+      <rect class="cell" style="animation-delay:1.8s" x="398" y="168" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.85s" x="420" y="168" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.9s" x="442" y="168" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:1.95s" x="464" y="168" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:2s" x="486" y="168" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:2.05s" x="508" y="168" width="18" height="18" rx="3"/><rect class="cell" style="animation-delay:2.1s" x="530" y="168" width="18" height="18" rx="3"/>
+    </g>
+    <text x="475" y="215" text-anchor="middle" font-size="12" fill="#5d6671">단순한 일을 한꺼번에 — AI 계산의 정체</text>
+  </svg>
+  <div class="cap">AI 학습 = 행렬 곱셈의 무한 반복. '동시에 많이'가 '하나를 빨리'를 이깁니다.</div>
+  </div>
+  <p class="body">AI의 모든 것은 결국 곱셈과 덧셈의 거대한 반복입니다. 이 단순 반복을 수만 개 동시에 처리하도록 설계된 칩이 <b>GPU</b>이고, 엔비디아가 시장의 90% 안팎을 장악하고 있습니다. 엔비디아의 진짜 해자는 칩 그 자체보다 <b>CUDA</b>라는 소프트웨어 생태계입니다 — 전 세계 AI 개발자가 15년간 이 도구로 코드를 짜왔기 때문에, 경쟁사 칩이 더 싸도 갈아타는 비용이 만만치 않습니다.</p>
+  <p class="body">그래서 구글·아마존 같은 큰손들은 다른 길을 팝니다. "우리가 쓰는 계산 패턴은 정해져 있으니, 거기에만 최적화한 전용 칩을 만들면 전기료와 칩값을 모두 아낄 수 있다"는 계산으로 <b>전용 칩(ASIC)</b>을 직접 기획하는 거죠. 구글의 TPU가 대표작입니다. 분업 구조가 흥미로운데 — 구글이 메뉴를 정하면, <b>브로드컴</b>이 레시피(회로 설계)를 쓰고, 대만 <b>TSMC</b>가 주방(공장)에서 만듭니다. 마지막으로 GPU와 메모리를 한 몸으로 합치는 <b>첨단 패키징(CoWoS)</b> 공정이 있는데, 2023~24년 AI 칩 품귀의 진짜 범인이 바로 이 공정의 부족이었습니다 — 병목은 늘 가장 안 보이는 곳에 숨어 있다는 첫 번째 교훈입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">~90%</div><div class="l">엔비디아의<br>AI GPU 점유율</div></div>
+    <div class="fact"><div class="n">수천만 원</div><div class="l">최신 GPU<br>한 장의 가격</div></div>
+    <div class="fact"><div class="n">40억 원+</div><div class="l">최신 AI 랙<br>한 대의 가격</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>GPU</summary><div class="def"><b>Graphics Processing Unit, 그래픽처리장치.</b> 원래 게임 화면을 그리던 칩인데, "단순 계산 동시 처리"라는 구조가 AI 학습과 똑같아 AI의 표준 두뇌가 됐습니다.</div></details>
+    <details class="term"><summary>CUDA</summary><div class="def">엔비디아 GPU로 프로그램을 짜는 <b>개발 도구 생태계.</b> 15년치 코드와 인력이 쌓여 있어, 엔비디아의 가장 깊은 해자(진입장벽)로 꼽힙니다.</div></details>
+    <details class="term"><summary>ASIC / XPU / TPU</summary><div class="def"><b>ASIC</b>(주문형 반도체)은 특정 용도 전용 설계 칩, <b>XPU</b>는 그런 맞춤 칩들의 통칭, <b>TPU</b>는 구글의 자체 AI 칩입니다. 범용 GPU 대비 그 용도에선 전기를 덜 쓰고 쌉니다.</div></details>
+    <details class="term"><summary>파운드리 / CoWoS</summary><div class="def"><b>파운드리</b>는 설계도를 받아 칩을 대신 생산하는 공장(TSMC가 1위). <b>CoWoS</b>는 TSMC의 첨단 패키징 기술로, GPU와 HBM 메모리를 한 기판 위에 합치는 공정 — 2023~24년 AI 칩 품귀의 실제 병목이었습니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co">🇺🇸 엔비디아 — GPU 절대강자</span><span class="co">🇺🇸 AMD — 추격자</span><span class="co">🇺🇸 브로드컴 — 전용칩 설계 대행</span><span class="co">🇹🇼 TSMC — 생산·패키징</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 칩 설계보다 칩+메모리를 합치는 첨단 패키징 캐파 — 그래서 3층(장비)·4층(기판)이 함께 귀해집니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>전용 칩 설계 대행은 진입자가 극소수인 과점이고, 브로드컴은 AI 매출이 1년 새 2.4배로 커지는 중에 구글과 2031년까지 장기계약까지 맺어 저희가 가장 주목한 기업 중 하나입니다. 다만 최근 실적 발표 직후 주가가 단기 급등해 "좋은 회사"와 "좋은 가격"이 분리된 상태 — 회사의 질과 진입 시점은 별개의 질문이라는 걸 보여주는 사례입니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 2F -->
+<div class="floor" style="--zc:var(--z1);--zs:var(--z1s)">
+  <span class="f-tag">2F · 기억</span>
+  <h3>메모리 — 데이터를 기억하는 칩</h3>
+  <div class="meta">HBM, D램, 저장장치, 그리고 사이클이라는 운명</div>
+  <div class="analogy">💡 비유: GPU가 아무리 천재여도 책(데이터)을 가지러 매번 도서관까지 뛰어가면 일이 안 됩니다. <b>HBM은 사서가 아예 책장째 천재의 옆자리로 이사 온 것</b>입니다.</div>
+  <p class="body">AI 계산의 진짜 병목은 계산 속도가 아니라 <b>데이터를 가져오는 속도</b>입니다. 그래서 보통의 메모리(D램)를 8~12층으로 쌓아 GPU 바로 옆에 붙인 <b>HBM(고대역폭 메모리)</b>이 주인공이 됐습니다. 쌓인 칩들은 위아래로 관통하는 수천 개의 미세 구리 기둥(TSV)으로 연결되고, 차세대 HBM4부터는 맨 아래층(베이스 다이)을 아예 연산용 공정으로 만들 만큼 메모리와 두뇌의 경계가 흐려지고 있습니다.</p>
+  <div class="diag">
+  <svg viewBox="0 0 640 250" role="img" aria-label="HBM 구조: D램 칩이 8층으로 쌓이고 TSV 기둥이 관통하며, GPU 옆에 나란히 배치된 모습">
+    <text x="160" y="24" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">HBM = D램을 아파트처럼 쌓기</text>
+    <g>
+      <rect class="stackup" style="animation-delay:.1s" x="80" y="190" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <rect class="stackup" style="animation-delay:.25s" x="80" y="166" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <rect class="stackup" style="animation-delay:.4s" x="80" y="142" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <rect class="stackup" style="animation-delay:.55s" x="80" y="118" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <rect class="stackup" style="animation-delay:.7s" x="80" y="94" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <rect class="stackup" style="animation-delay:.85s" x="80" y="70" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <rect class="stackup" style="animation-delay:1s" x="80" y="46" width="160" height="20" rx="4" fill="#f4c9b8" stroke="#d4845e"/>
+      <line x1="115" y1="46" x2="115" y2="210" stroke="#9a4f2a" stroke-width="3"/>
+      <line x1="160" y1="46" x2="160" y2="210" stroke="#9a4f2a" stroke-width="3"/>
+      <line x1="205" y1="46" x2="205" y2="210" stroke="#9a4f2a" stroke-width="3"/>
+      <text x="160" y="232" text-anchor="middle" font-size="12" fill="#5d6671">↑ TSV: 층을 관통하는 구리 기둥</text>
+    </g>
+    <rect x="330" y="46" width="230" height="164" rx="10" fill="#d9e6f6" stroke="#7da3d6"/>
+    <text x="445" y="120" text-anchor="middle" font-size="17" font-weight="800" fill="#2b5489">GPU</text>
+    <text x="445" y="142" text-anchor="middle" font-size="12" fill="#557">두뇌 (1층)</text>
+    <path class="flow-line" d="M250 128 L320 128" stroke="#3a7bd5" stroke-width="4" fill="none"/>
+    <text x="285" y="116" text-anchor="middle" font-size="11" fill="#3a7bd5" font-weight="700">초광폭 데이터 통로</text>
+  </svg>
+  <div class="cap">바로 옆에 붙어 있어 데이터 통로가 일반 메모리보다 수십 배 넓습니다 — '고대역폭'이라는 이름의 이유.</div>
+  </div>
+  <p class="body">지금 메모리 가격이 폭등한 이유는 단순한 수요 증가가 아닙니다. 빅3(하이닉스·삼성·마이크론)가 <b>일반 D램 만들던 생산라인을 HBM으로 돌리면서</b>, 평범한 D램에 공백이 생겨 그쪽 가격까지 덩달아 뛴 겁니다. 한 가지 알아둘 배경 — 메모리는 역사적으로 호황과 불황을 4~5년 주기로 오가는 <b>'사이클 산업'</b>입니다(2018년, 2022년에 큰 폭락). 이번엔 1년 선계약(LTA)과 3사의 공급 절제 때문에 "이번 사이클은 다르다"는 주장과 "사이클은 늘 그렇게 말하다 꺾였다"는 반론이 정면으로 맞서는 중입니다. 그리고 중국 창신메모리(CXMT)가 일반 D램에서 무서운 속도로 추격 중인 것 — 최신 D램 수율이 선두권에 근접했고 글로벌 PC 회사들이 채용을 검토하기 시작한 것 — 이 이 논쟁의 최대 변수입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">12단</div><div class="l">최신 HBM의<br>적층 층수</div></div>
+    <div class="fact"><div class="n">완판</div><div class="l">2026년 HBM 물량<br>1년 전 매진</div></div>
+    <div class="fact"><div class="n">+55~60%</div><div class="l">올 1분기 D램<br>계약가 상승률</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>DRAM (D램)</summary><div class="def"><b>Dynamic Random Access Memory.</b> '지금 작업 중인' 데이터를 잠시 올려두는 메모리. 전원이 꺼지면 사라집니다 — 책상 위 공간이라고 생각하면 됩니다.</div></details>
+    <details class="term"><summary>HBM</summary><div class="def"><b>High Bandwidth Memory, 고대역폭 메모리.</b> D램을 수직으로 쌓아 GPU 옆에 붙인 AI 전용 메모리. 일반 D램보다 몇 배 비싸게 팔리는 고수익 제품입니다.</div></details>
+    <details class="term"><summary>TSV / 베이스 다이</summary><div class="def"><b>TSV</b>는 쌓인 칩들을 연결하는 미세 구리 기둥(아파트의 엘리베이터). <b>베이스 다이</b>는 HBM의 맨 아래층 관제실 칩으로, HBM4부터는 첨단 연산 공정으로 만들어 메모리가 '생각도 조금 하는' 시대가 열립니다.</div></details>
+    <details class="term"><summary>NAND / SSD / HDD</summary><div class="def"><b>낸드플래시</b>는 전원이 꺼져도 데이터가 남는 메모리로 <b>SSD</b>의 재료. <b>HDD</b>(하드디스크)는 용량당 가격이 싸 대량 보관용 — AI 데이터 폭증으로 단 3개 제조사에 주문이 1년치 밀린 품귀 품목입니다.</div></details>
+    <details class="term"><summary>LTA / 메모리 사이클</summary><div class="def"><b>LTA</b>(장기공급계약)는 1년치 물량·가격을 미리 약속하는 계약. <b>메모리 사이클</b>은 호황→증설→공급과잉→폭락을 반복해온 이 산업의 고질적 리듬으로, 이번에 그 리듬이 깨졌는지가 핵심 논쟁입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co kr">🇰🇷 SK하이닉스 — HBM 1위</span><span class="co">🇺🇸 마이크론</span><span class="co kr">🇰🇷 삼성전자</span><span class="co">🇨🇳 CXMT — 추격자</span><span class="co">🇺🇸 시게이트·WD — 하드디스크</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: HBM 공장이 모자라 내년 물량까지 선판매 — 단, "호황의 정점이 언제인가"가 시장 최대의 논쟁입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>메모리 회사들의 이익은 올해 4~5배로 뛸 전망인데 주가는 이익 대비 매우 쌉니다 — 시장이 "이 호황은 곧 끝난다"고 의심한다는 뜻입니다. 저희 판단은 "가격 정점은 올해 안에 오겠지만(과거 패턴 존중), 그 뒤의 하락은 과거처럼 깊지 않을 것(선계약·공급절제라는 새 구조)"이라는 중간 경로입니다. 경계 신호는 두 가지로 정해뒀습니다 — 중국산 D램의 해외 대형 고객 채택, 그리고 HBM 장기계약 가격의 재협상 요구.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 3F -->
+<div class="floor" style="--zc:var(--z1);--zs:var(--z1s)">
+  <span class="f-tag">3F · 도구</span>
+  <h3>제조 장비와 소모품 — 칩을 만드는 기계들</h3>
+  <div class="meta">쌓는 장비, 굽는 장비, 검사하는 장비</div>
+  <div class="analogy">💡 비유: HBM이 초고층 아파트라면 이 층은 <b>그 아파트를 짓는 크레인(본더), 굽는 가마(어닐링), 준공 검사관(테스트)</b>입니다. 골드러시에서 금 캐는 사람보다 곡괭이 장수가 안정적으로 벌었다는 그 '곡괭이' 자리죠.</div>
+  <p class="body">D램을 아파트처럼 쌓으려면 칩을 한 장씩 나노미터 정밀도로 붙이는 장비가 필요합니다. 현재 주력은 열과 압력으로 붙이는 <b>TC본더</b> — 한국 한미반도체가 세계 1위(점유율 70%대)입니다. 그런데 층수가 16단, 20단으로 높아지면 기존 방식의 한계가 옵니다. 칩 사이의 범프(돌기)가 차지하는 두께 때문이죠. 그래서 다음 세대는 돌기 없이 <b>구리 배선끼리 직접 융합시키는 하이브리드 본딩</b>입니다 — 더 얇게, 더 높이 쌓을 수 있지만 표면을 원자 수준으로 매끈하게 다듬어야 하는 초고난도 기술입니다.</p>
+  <p class="body">여기서 재미있는 회사가 나옵니다. 어떤 본딩 방식이 이기든 구리 접합엔 <b>고압 수소 열처리(어닐링)</b>가 필수인데, 이 장비를 한국 HPSP가 사실상 독점합니다 — "선수가 누가 되든 심판은 돈을 번다"는 위치죠. 검사 쪽도 구조가 좋습니다. 칩이 비싸질수록 검사를 더 자주, 더 오래 해야 해서 테스트 시간 자체가 늘어나는데, 검사기에 칩을 꽂는 소모품 핀(테스트 소켓 — 리노공업)은 계속 닳아 교체되는 '면도날 사업'이라 경기를 덜 탑니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">71%</div><div class="l">한미반도체의<br>TC본더 점유율</div></div>
+    <div class="fact"><div class="n">8~12회</div><div class="l">HBM 1개에 필요한<br>본딩 횟수</div></div>
+    <div class="fact"><div class="n">독점</div><div class="l">HPSP의 고압수소<br>어닐링 장비</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>TC본더</summary><div class="def"><b>Thermo-Compression 본더, 열압착 접합 장비.</b> 칩에 열과 압력을 가해 아래층과 붙이는 기계. HBM 한 개에 이 작업을 8~12번 반복합니다.</div></details>
+    <details class="term"><summary>하이브리드 본딩</summary><div class="def">접착 돌기 없이 <b>구리 배선끼리 직접 융합</b>시키는 차세대 접합. 칩 사이 간격이 사실상 0이 되어 더 얇고 높게 쌓을 수 있습니다 — 차차세대 HBM의 관문 기술.</div></details>
+    <details class="term"><summary>어닐링</summary><div class="def">반도체를 <b>고온·고압 가스 속에서 구워 미세 결함을 치유</b>하는 열처리 공정. HPSP는 이를 고압 수소로 하는 장비를 독점합니다.</div></details>
+    <details class="term"><summary>테스트 소켓 / 핸들러</summary><div class="def"><b>소켓</b>은 칩을 검사기에 연결하는 수천 개 미세 핀이 박힌 소모품(계속 닳아 재구매). <b>핸들러</b>는 칩을 자동으로 옮겨가며 검사시키는 로봇 장비입니다.</div></details>
+    <details class="term"><summary>EUV</summary><div class="def"><b>극자외선 노광장비.</b> 머리카락 수만 분의 1 굵기 회로를 그리는 장비로 네덜란드 ASML 독점, 대당 수천억 원. 중국 수출 금지 품목이라 중국 추격의 최대 걸림돌입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co kr">🇰🇷 한미반도체 — TC본더 1위</span><span class="co kr">🇰🇷 한화세미텍 — 추격</span><span class="co kr">🇰🇷 HPSP — 열처리 독점</span><span class="co kr">🇰🇷 리노공업 — 소켓</span><span class="co kr">🇰🇷 테크윙 — 핸들러</span><span class="co">🇯🇵 어드반테스트 — 검사기</span><span class="co">🇳🇱 ASML — EUV</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 기술 세대교체(TC→하이브리드)의 한복판 — "지금의 1등이 다음 세대에도 1등인가"가 이 층의 핵심 질문입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>저희가 가장 주목한 건 HPSP였습니다 — 세대교체의 승자와 무관하게 수혜받는 '심판' 포지션이라서요. 다만 경쟁사가 시장 진입을 시작했고 독점의 근거인 특허 소송 판결이 임박해, 결과 확인 전엔 판단을 보류 중입니다. 한미반도체는 사업은 훌륭하나 주가가 전문가 목표가를 넘어선 상태 — "좋은 회사, 부담스러운 가격"의 교과서적 사례로 분류했습니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 4F -->
+<div class="floor" style="--zc:var(--z1);--zs:var(--z1s)">
+  <span class="f-tag">4F · 자리</span>
+  <h3>기판과 부품 — 칩이 앉는 의자와 마룻바닥</h3>
+  <div class="meta">패키지 기판, 대형 회로기판, 그리고 그 원재료</div>
+  <div class="analogy">💡 비유: 칩은 혼자선 아무것도 못 합니다. <b>전기와 신호가 드나드는 회로가 깔린 '의자(패키지 기판)'에 앉고, 그 의자들이 '마룻바닥(대형 기판)'에 놓여야</b> 비로소 작동합니다.</div>
+  <p class="body">GPU가 직접 앉는 고급 의자가 <b>FC-BGA</b> 패키지 기판, 그 의자 수십 개가 놓이는 마룻바닥이 <b>MLB(다층기판)</b>입니다. AI용 MLB는 회로를 30층 이상 쌓는데, 층이 높아질수록 한 층의 미세한 어긋남이 전체 불량으로 이어져 만들 수 있는 회사가 세계에 몇 곳 없습니다 — 한국 <b>이수페타시스</b>가 구글 TPU 보드와 고급 네트워크 장비용 MLB의 핵심 공급사입니다.</p>
+  <div class="diag">
+  <svg viewBox="0 0 640 270" role="img" aria-label="기판의 샌드위치 구조: 아래부터 글라스클로스, CCL, MLB, FC-BGA, 맨 위 GPU와 HBM">
+    <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">칩 아래의 샌드위치 — 아래로 갈수록 '원재료'</text>
+    <g font-size="12.5">
+      <rect class="stackup" style="animation-delay:.1s" x="100" y="218" width="440" height="26" rx="5" fill="#efe9db" stroke="#c9bda0"/><text class="stackup" style="animation-delay:.1s" x="320" y="236" text-anchor="middle" fill="#6b5d3e" font-weight="700">글라스클로스 (유리섬유 천) — 🇯🇵 닛토보 독점</text>
+      <rect class="stackup" style="animation-delay:.35s" x="115" y="186" width="410" height="26" rx="5" fill="#f0ddca" stroke="#cfa97e"/><text class="stackup" style="animation-delay:.35s" x="320" y="204" text-anchor="middle" fill="#7a5c34" font-weight="700">CCL (동박적층판) — 🇹🇼 EMC · 🇰🇷 두산</text>
+      <rect class="stackup" style="animation-delay:.6s" x="130" y="148" width="380" height="32" rx="5" fill="#dcead9" stroke="#93b88c"/><text class="stackup" style="animation-delay:.6s" x="320" y="169" text-anchor="middle" fill="#3d5c38" font-weight="700">MLB 다층기판 (마룻바닥) — 🇰🇷 이수페타시스</text>
+      <rect class="stackup" style="animation-delay:.85s" x="200" y="112" width="240" height="30" rx="5" fill="#d9e6f6" stroke="#7da3d6"/><text class="stackup" style="animation-delay:.85s" x="320" y="132" text-anchor="middle" fill="#2b5489" font-weight="700">FC-BGA 패키지 기판 (의자)</text>
+      <rect class="stackup" style="animation-delay:1.1s" x="240" y="66" width="90" height="40" rx="6" fill="#c6d8f0" stroke="#5b84bd"/><text class="stackup" style="animation-delay:1.1s" x="285" y="91" text-anchor="middle" font-weight="800" fill="#2b5489">GPU</text>
+      <rect class="stackup" style="animation-delay:1.25s" x="340" y="66" width="70" height="40" rx="6" fill="#f4c9b8" stroke="#d4845e"/><text class="stackup" style="animation-delay:1.25s" x="375" y="91" text-anchor="middle" font-weight="800" fill="#9a4f2a">HBM</text>
+    </g>
+  </svg>
+  <div class="cap">수요가 폭증하면 부족은 위층(완성 기판)에서 시작해 아래층(원재료)으로 내려갑니다 — 독점일수록 더 귀해집니다.</div>
+  </div>
+  <p class="body">마룻바닥에도 원자재가 있습니다. 유리섬유 천에 수지를 먹이고 구리막을 입힌 <b>CCL(동박적층판)</b> — 고급품은 대만 EMC, 한국에선 두산이 만듭니다. 더 깊이 가면 그 유리섬유 천 중 <b>열을 받아도 변형되지 않는 최고급품(low-CTE)은 일본 닛토보가 사실상 독점</b>합니다. 신호가 빨라질수록 미세한 휘어짐도 치명적이라 이 '실'의 품질이 전체 보드의 성능을 좌우하거든요. AI 수요가 커질수록 부족이 "완성 기판 → 원단 → 실"로 상류로 올라가는 구조입니다. 한편 칩 주변엔 전압을 안정시키는 쌀알 크기 부품 <b>MLCC</b>가 서버 한 대에 수만 개씩 박히고(삼성전기의 영역), 미래엔 플라스틱 기판을 <b>유리 기판</b>으로 바꾸려는 시도(SKC 등)도 진행 중입니다 — 아직은 상용화 전의 '옵션' 단계지만요.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">30층+</div><div class="l">AI용 MLB의<br>회로 층수</div></div>
+    <div class="fact"><div class="n">수만 개</div><div class="l">서버 1대에 들어가는<br>MLCC 개수</div></div>
+    <div class="fact"><div class="n">1곳</div><div class="l">최고급 유리섬유의<br>글로벌 공급사 수</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>FC-BGA</summary><div class="def"><b>Flip-Chip Ball Grid Array.</b> 칩을 뒤집어(Flip) 바둑판처럼 배열된 공 모양 단자로 기판에 붙이는 고급 패키지 기판 — 고성능 칩의 표준 '의자'.</div></details>
+    <details class="term"><summary>ABF</summary><div class="def"><b>Ajinomoto Build-up Film.</b> FC-BGA용 절연 필름인데, 일본 조미료 회사 아지노모토가 만듭니다(MSG 연구의 부산물). 사실상 독점 소재.</div></details>
+    <details class="term"><summary>MLB / CCL</summary><div class="def"><b>MLB</b>는 회로를 수십 층 쌓은 대형 다층기판(마룻바닥). <b>CCL</b>은 그 원판 재료인 동박적층판 — 유리섬유+수지+구리막의 샌드위치입니다.</div></details>
+    <details class="term"><summary>low-CTE 글라스클로스</summary><div class="def"><b>CTE</b>는 열팽창계수 — 열 받았을 때 늘어나는 정도. 이게 낮은(low) 유리섬유 천일수록 고온에서도 회로가 안 뒤틀립니다. 최고급품은 일본 닛토보 독점.</div></details>
+    <details class="term"><summary>MLCC</summary><div class="def"><b>적층세라믹콘덴서.</b> 전기를 머금었다 내보내며 전압을 안정시키는 쌀알 크기 부품. '산업의 쌀'로 불리며 AI 서버 한 대에 수만 개가 들어갑니다.</div></details>
+    <details class="term"><summary>유리 기판</summary><div class="def">플라스틱 수지 대신 <b>유리를 기판 코어로 쓰는 차세대 기술.</b> 더 평평하고 열에 강해 미세 회로에 유리하지만, 깨짐 문제로 아직 양산 전 단계입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co kr">🇰🇷 이수페타시스 — MLB</span><span class="co kr">🇰🇷 삼성전기 — MLCC·FC-BGA</span><span class="co kr">🇰🇷 두산 — CCL</span><span class="co">🇹🇼 EMC — 고급 CCL</span><span class="co">🇯🇵 닛토보 — 유리섬유</span><span class="co">🇯🇵 이비덴·신코 — 패키지기판</span><span class="co kr">🇰🇷 SKC — 유리기판 도전</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 위로 갈수록 좁아지는 깔때기 — 고다층 기판은 소수, 최고급 유리섬유는 단 한 곳입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>이수페타시스는 "검증된 성장 대비 합리적 가격"의 대표 사례였습니다 — 구글 TPU 차세대 양산(올 하반기)이라는 명확한 일정표, 그리고 작년 이익 2배라는 증명된 실적. 유의점은 사실상 구글 한 고객에 기대는 구조라는 것입니다. 원재료 단(CCL·유리섬유)은 저희도 최근에야 주목한 '다음 숙제' 영역 — 병목이 상류로 올라가는 중이라면 다음 수혜는 거기서 나올 수 있습니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ ZONE 2 ═══════ -->
+<section id="z2" style="--zc:var(--z2);--zs:var(--z2s)">
+<div class="zone-head" style="color:var(--z2)">
+  <div class="z-big">Ⅱ</div>
+  <div class="z-num">ZONE Ⅱ · 5~6층 · 연결과 조립</div>
+  <h2 style="color:var(--ink)">신경과 몸</h2>
+  <p>칩 수만 개가 '한 팀'으로 일하게 만드는 네트워크, 그리고 부품을 서버라는 몸체로 완성하는 조립의 세계입니다.</p>
+</div>
+
+<!-- 5F -->
+<div class="floor" style="--zc:var(--z2);--zs:var(--z2s)">
+  <span class="f-tag">5F · 신경</span>
+  <h3>네트워크 — 칩과 칩, 센터와 센터를 잇다</h3>
+  <div class="meta">스위치, 광통신, 그리고 통신망의 변신</div>
+  <div class="analogy">💡 비유: GPU 10만 개가 한 문제를 같이 풀려면 쉴 새 없이 의논해야 합니다. <b>스위치는 사내 전화 교환수, 광통신은 도시와 도시를 잇는 고속도로</b> — 한 명이라도 연락이 느리면 10만 명 전체가 기다립니다.</div>
+  <p class="body">네트워크는 두 겹입니다. 랙 안에서 GPU끼리 직결하는 초근거리망(스케일업)과, 서버·랙들을 묶는 데이터센터망(스케일아웃). 후자의 교통경찰이 <b>스위치</b>(아리스타가 강자)인데, 통신 속도가 800G에서 1.6T로 — 2년마다 2배로 — 뛰면서 장비 교체 수요가 끊이지 않습니다. 전기 신호는 멀리 못 가서 일정 거리부터는 <b>빛으로 변환해 광케이블로</b> 쏘는데, 이 변환 부품(<b>광트랜시버</b>)의 심장인 레이저 칩은 미국 루멘텀·코히런트 정도만 최고급을 양산합니다. 엔비디아가 두 회사에 각각 20억 달러씩 직접 투자하며 물량을 선점했을 정도입니다.</p>
+  <div class="diag">
+  <svg viewBox="0 0 640 220" role="img" aria-label="빛의 여행: GPU에서 나온 전기신호가 광트랜시버에서 빛으로 바뀌어 광케이블을 타고 다른 데이터센터로 간다">
+    <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">빛의 여행 — 전기가 빛이 되어 옆 도시까지</text>
+    <rect x="30" y="70" width="120" height="80" rx="10" fill="#d9e6f6" stroke="#7da3d6"/>
+    <text x="90" y="105" text-anchor="middle" font-size="13" font-weight="800" fill="#2b5489">서버 A</text>
+    <text x="90" y="125" text-anchor="middle" font-size="11" fill="#557">전기 신호</text>
+    <rect x="195" y="82" width="90" height="56" rx="8" fill="#efeafb" stroke="#a99ae0"/>
+    <text x="240" y="105" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5d4eb8">광트랜시버</text>
+    <text x="240" y="122" text-anchor="middle" font-size="10.5" fill="#8071ce">전기→빛 변환</text>
+    <path class="flow-line" d="M150 110 L195 110" stroke="#4a8df0" stroke-width="4" fill="none"/>
+    <path class="flow-line pulse" d="M285 110 C 350 60, 420 160, 490 110" stroke="#f5b32a" stroke-width="4" fill="none"/>
+    <text x="388" y="80" text-anchor="middle" font-size="11" fill="#b0830f" font-weight="700">광케이블 (빛) ~수백 km</text>
+    <rect x="490" y="70" width="120" height="80" rx="10" fill="#dcead9" stroke="#93b88c"/>
+    <text x="550" y="105" text-anchor="middle" font-size="13" font-weight="800" fill="#3d5c38">데이터센터 B</text>
+    <text x="550" y="125" text-anchor="middle" font-size="11" fill="#5a7a55">DCI 장비가 수신</text>
+    <text x="320" y="195" text-anchor="middle" font-size="12" fill="#5d6671">레이저 칩(루멘텀·코히런트) → 장거리 연결(시에나) → 차세대는 칩 옆에 광부품을 합치는 CPO</text>
+  </svg>
+  <div class="cap">AI 모델이 데이터센터 한 곳으로 부족해지자, 여러 센터를 묶어 '한 대의 컴퓨터'처럼 쓰는 장거리 광통신이 새 성장 시장이 됐습니다.</div>
+  </div>
+  <p class="body">이 대화의 출발점이었던 <b>노키아의 부활</b>도 이 층 이야기입니다. 휴대폰 몰락 후 통신장비사로 변신한 노키아는, AI가 로봇·자율주행차 등 현실 기기로 나오는 시대(피지컬 AI)에 "기지국이 통신만 하지 말고 남는 시간에 AI 계산도 하자"는 <b>AI-RAN</b>으로 다시 주목받고 있습니다 — 엔비디아가 10억 달러를 투자했죠. 다만 노키아의 실제 실적 개선은 AI-RAN보다 데이터센터 광통신 쪽에서 먼저 나오고 있다는 게 흥미로운 디테일입니다. 한국에선 건물 안 통신망(DAS)의 쏠리드, 기지국 증폭기 부품(GaN)의 RFHIC가 이 체인에 있습니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">수십만 개</div><div class="l">데이터센터 1곳의<br>광트랜시버 수</div></div>
+    <div class="fact"><div class="n">800G→1.6T</div><div class="l">2년마다 2배 빨라지는<br>통신 속도</div></div>
+    <div class="fact"><div class="n">$4B</div><div class="l">엔비디아가 광부품<br>2사에 투자한 금액</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>스케일업 vs 스케일아웃</summary><div class="def"><b>스케일업</b>은 랙 안 GPU들을 초고속 직결로 묶어 '한 개의 거대 칩'처럼 만드는 것, <b>스케일아웃</b>은 그런 랙 수천 개를 네트워크로 잇는 것. 두 망 모두에 별도의 장비 시장이 있습니다.</div></details>
+    <details class="term"><summary>광트랜시버</summary><div class="def">전기 신호를 <b>빛(레이저)으로 바꾸고 되돌리는</b> 엄지손가락만 한 부품. 핵심은 내부의 레이저 칩 — 최고급은 전 세계 한두 회사만 양산합니다.</div></details>
+    <details class="term"><summary>DCI</summary><div class="def"><b>Data Center Interconnect.</b> 수백 km 떨어진 데이터센터들을 하나의 컴퓨터처럼 묶는 장거리 광통신. AI 모델이 커지면서 필수가 됐습니다.</div></details>
+    <details class="term"><summary>CPO</summary><div class="def"><b>Co-Packaged Optics.</b> 광부품을 연산 칩 바로 옆에 함께 패키징해 전력 소모를 크게 줄이는 차세대 기술 — 엔비디아가 부품사에 직접 투자한 이유.</div></details>
+    <details class="term"><summary>AI-RAN / O-RAN / DAS</summary><div class="def"><b>RAN</b>은 기지국 무선망. <b>AI-RAN</b>은 기지국 장비로 AI 연산까지 하자는 개념, <b>O-RAN</b>은 특정 제조사에 묶이지 않는 개방형 표준, <b>DAS</b>는 건물·경기장 안에 전파를 고루 뿌리는 분산 안테나입니다.</div></details>
+    <details class="term"><summary>GaN</summary><div class="def"><b>질화갈륨.</b> 고온·고전압에 강한 차세대 반도체 소재. 기지국 전파 증폭기와 전력 변환의 핵심으로, 한국 RFHIC가 강자입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co">🇺🇸 아리스타 — 스위치</span><span class="co">🇺🇸 루멘텀·코히런트 — 레이저</span><span class="co">🇺🇸 시에나 — 장거리 광통신</span><span class="co kr">🇰🇷 오이솔루션 — 광트랜시버</span><span class="co">🇫🇮 노키아 — AI-RAN</span><span class="co kr">🇰🇷 쏠리드 — DAS·O-RAN</span><span class="co kr">🇰🇷 RFHIC — GaN 부품</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 최고급 레이저 칩의 양산사는 한두 곳 — 엔비디아가 돈으로 줄을 선 자리입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>광통신은 이 체인에서 "이미 돈을 벌고 있는" 검증된 구간이지만, 그만큼 주가도 1년 새 2~4배씩 올라 신규 진입엔 부담스러운 가격대입니다. 한국 통신장비(쏠리드 등)는 반대로 미국 통신사 투자 사이클을 기다리는 '눌린' 구간 — 싼 데는 이유(실적 확인 전)가 있어, 분기 실적으로 검증해가며 보자는 입장입니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 6F -->
+<div class="floor" style="--zc:var(--z2);--zs:var(--z2s)">
+  <span class="f-tag">6F · 몸체</span>
+  <h3>서버 조립 — 부품을 완성품으로</h3>
+  <div class="meta">서버 제조사, 위탁생산, 그리고 '랙'이라는 새 단위</div>
+  <div class="analogy">💡 비유: 1~5층의 부품을 받아 <b>컴퓨터 본체로 조립하는 공장</b>입니다. 최고급 식재료로 도시락을 싸는 일 — 꼭 필요하지만, 식재료 회사만큼 남는 장사는 아닙니다.</div>
+  <p class="body">눈여겨볼 변화는 판매 단위가 '서버 한 대'에서 <b>'랙 한 대'로 커졌다</b>는 점입니다. 엔비디아 최신 제품은 GPU 72개를 냉각 배관·전원까지 통합한 1.5톤짜리 랙 통째로 출고됩니다 — 조립 난도가 올라가 검증된 업체로 물량이 쏠리는 효과가 있죠. 슈퍼마이크로·델이 완제품을, 셀레스티카 같은 <b>EMS</b>(위탁생산) 업체는 빅테크가 직접 설계한 장비를 대신 만들어줍니다. 다만 구조적 한계도 분명합니다 — 조립의 기술 장벽이 상대적으로 낮아 <b>영업이익률이 한 자릿수</b>인 경우가 많고, 빅테크가 대만 ODM에 직접 주문하는 흐름도 있어 이 층은 "매출의 화려함"보다 "마진의 생존"을 먼저 봐야 합니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">~1.5톤</div><div class="l">최신 AI 랙<br>1대의 무게</div></div>
+    <div class="fact"><div class="n">72개</div><div class="l">랙 1대에 통합되는<br>GPU 수</div></div>
+    <div class="fact"><div class="n">한 자릿수</div><div class="l">조립업의 전형적<br>영업이익률</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>랙 (Rack)</summary><div class="def">서버를 책꽂이처럼 꽂는 표준 캐비닛 — 이제는 그 자체가 수십억 원짜리 판매 단위가 됐습니다. 무게와 발열 때문에 건물 바닥 설계까지 바꾸는 중.</div></details>
+    <details class="term"><summary>EMS / ODM</summary><div class="def"><b>EMS</b>는 남의 설계를 받아 대신 생산하는 위탁생산, <b>ODM</b>은 설계까지 해서 남의 브랜드로 납품하는 방식. 대만 폭스콘·콴타가 ODM의 거인들입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co">🇺🇸 슈퍼마이크로</span><span class="co">🇺🇸 델</span><span class="co">🇨🇦 셀레스티카</span><span class="co">🇹🇼 폭스콘·콴타</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 병목이라기보다 '박리다매' 층 — 물량은 넘치고 마진 경쟁이 치열합니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>셀레스티카는 성장 대비 가격이 매력적으로 보였지만, 위탁생산업의 낮은 마진 구조가 주가의 천장으로 작용한다는 점을 함께 적었습니다. 슈퍼마이크로는 매출이 2배씩 커도 이익률이 10%를 밑돌아 "싼 데는 이유가 있다"로 분류 — 이 층은 숫자가 화려할수록 마진을 의심해야 하는 곳입니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ ZONE 3 ═══════ -->
+<section id="z3" style="--zc:var(--z3);--zs:var(--z3s)">
+<div class="zone-head" style="color:var(--z3)">
+  <div class="z-big">Ⅲ</div>
+  <div class="z-num">ZONE Ⅲ · 7~9층 · 물리 인프라</div>
+  <h2 style="color:var(--ink)">심장과 체온</h2>
+  <p>2026년 현재 AI의 진짜 병목은 칩이 아니라 여기에 있습니다. 전기를 끌어오고, 열을 식히고, 건물을 짓는 — 가장 물리적인 세계입니다.</p>
+</div>
+
+<!-- 7F -->
+<div class="floor" style="--zc:var(--z3);--zs:var(--z3s)">
+  <span class="f-tag">7F · 심장</span>
+  <h3>전력 — 도시 하나만큼 먹는 공장</h3>
+  <div class="meta">발전, 송전, 변압, 백업까지</div>
+  <div class="analogy">💡 비유: 대형 AI 데이터센터 하나의 전기 사용량은 <b>원자력발전소 1기 = 중소도시 하나</b>와 맞먹습니다. 심장(발전소)에서 피(전기)를 뽑아 혈관(송전망)으로 보내고 동맥·모세혈관(변압기·배전반)으로 나누는 전 과정이 전부 부족합니다.</div>
+  <p class="body">발전부터 봅시다. 데이터센터용 대형 <b>가스터빈</b>은 세계에서 단 3개 회사(GE 버노바·지멘스에너지·미츠비시)가 만드는데, 주문이 5년치 밀려 2030년대 생산분까지 예약이 끝났습니다 — 제조사들이 고객에게 "7~8년 시계로 계획하라"고 권할 정도입니다. 국가 전력망 접속 허가(<b>계통연계</b>)는 미국에서 3~7년이 걸려, 못 기다리는 회사들은 발전기를 부지에 직접 들입니다(<b>자가발전</b>). 일론 머스크의 xAI는 버려진 공장을 6개월 만에 기가와트급 시설로 바꾸며 이동식 가스터빈 수십 대를 세웠습니다 — 속도가 곧 경쟁력인 시대의 상징적 장면이죠.</p>
+  <div class="diag">
+  <svg viewBox="0 0 640 200" role="img" aria-label="전력 흐름도: 가스터빈에서 변압기, 개폐기, UPS와 배터리를 거쳐 서버랙까지">
+    <text x="320" y="22" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">전기의 여정 — 발전소에서 서버까지</text>
+    <g font-size="11.5" font-weight="700">
+      <rect x="20"  y="70" width="105" height="64" rx="9" fill="#fdf0dd" stroke="#dca96e"/><text x="72" y="98" text-anchor="middle" fill="#8a5a1d">가스터빈</text><text x="72" y="116" text-anchor="middle" font-weight="400" fill="#a87a3a" font-size="10.5">발전 · 3사 과점</text>
+      <rect x="155" y="70" width="105" height="64" rx="9" fill="#fdf0dd" stroke="#dca96e"/><text x="207" y="98" text-anchor="middle" fill="#8a5a1d">변압기</text><text x="207" y="116" text-anchor="middle" font-weight="400" fill="#a87a3a" font-size="10.5">전압 변환</text>
+      <rect x="290" y="70" width="105" height="64" rx="9" fill="#fdf0dd" stroke="#dca96e"/><text x="342" y="98" text-anchor="middle" fill="#8a5a1d">개폐기</text><text x="342" y="116" text-anchor="middle" font-weight="400" fill="#a87a3a" font-size="10.5">잇고 끊기</text>
+      <rect x="425" y="70" width="105" height="64" rx="9" fill="#fdf0dd" stroke="#dca96e"/><text x="477" y="98" text-anchor="middle" fill="#8a5a1d">UPS·배터리</text><text x="477" y="116" text-anchor="middle" font-weight="400" fill="#a87a3a" font-size="10.5">정전 대비</text>
+      <rect x="558" y="62" width="66" height="80" rx="9" fill="#d9e6f6" stroke="#7da3d6"/><text x="591" y="98" text-anchor="middle" fill="#2b5489">서버</text><text x="591" y="116" text-anchor="middle" fill="#2b5489">랙</text>
+    </g>
+    <path class="flow-line" d="M125 102 L155 102 M260 102 L290 102 M395 102 L425 102 M530 102 L558 102" stroke="#f5b32a" stroke-width="4" fill="none"/>
+    <text x="320" y="178" text-anchor="middle" font-size="12" fill="#5d6671">이 다섯 칸이 전부 주문 적체 — 2026년 AI 건설 지연의 진짜 원인</text>
+  </svg>
+  <div class="cap">"GPU는 샀는데 꽂을 전기가 없다" — 2026년 업계의 가장 흔한 한탄입니다.</div>
+  </div>
+  <p class="body">전기가 와도 끝이 아닙니다. 전압을 바꾸는 <b>변압기</b>(HD현대일렉트릭·효성중공업이 미국 수출 호황 — 납기가 3~4년), 회로를 잇고 끊는 대형 차단기 <b>개폐기</b>, 정전 대비 <b>UPS</b>와 대형 배터리(ESS), 비상발전기까지 전부 장납기 품목입니다. 심지어 변압기 속 철심 재료인 <b>전기강판</b>(포스코)까지 부족합니다. 그 결과 데이터센터 부지의 가치 기준이 바뀌었습니다 — 위치나 인건비가 아니라 <b>"전력이 확보됐는가(speed to power)"</b>가 1순위가 됐고, 전력 확보된 땅(powered land)이 금싸라기가 됐습니다. 미래 변화 하나 더: 엔비디아가 차세대 랙의 전력 규격을 <b>800V 직류</b>로 바꾸면서 2027년부터 전력 반도체·전원장치의 대대적 교체 수요가 예고돼 있습니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">5년</div><div class="l">대형 가스터빈<br>주문 대기</div></div>
+    <div class="fact"><div class="n">3~7년</div><div class="l">미국 전력망 접속<br>(계통연계) 대기</div></div>
+    <div class="fact"><div class="n">1GW≈원전 1기</div><div class="l">대형 AI 캠퍼스<br>1곳의 전력 수요</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>계통연계</summary><div class="def">내 시설을 <b>국가 전력망에 접속하는 허가 절차.</b> 신청 폭주로 미국 일부 지역은 지금 신청하면 2030년대에나 전기를 받습니다 — 데이터센터 사업성의 알파이자 오메가.</div></details>
+    <details class="term"><summary>behind-the-meter</summary><div class="def">'계량기 뒤편' — 전력망을 거치지 않고 <b>부지에 발전기를 직접 설치해 쓰는 자가발전.</b> 계통연계 적체를 우회하는 방법으로 급부상했습니다.</div></details>
+    <details class="term"><summary>UPS / ESS(BESS)</summary><div class="def"><b>UPS</b>는 정전 순간에도 전원을 끊김 없이 잇는 무정전 장치, <b>ESS/BESS</b>는 전기를 쌓아뒀다 꺼내 쓰는 대형 배터리 창고입니다.</div></details>
+    <details class="term"><summary>800V HVDC</summary><div class="def"><b>고전압 직류.</b> 전압을 높여 직류로 보내면 변환 손실과 구리 사용량이 줄어듭니다. 엔비디아 차세대 랙의 새 전력 규격 — 2027년부터 관련 부품의 큰 교체 수요가 예정.</div></details>
+    <details class="term"><summary>powered land</summary><div class="def"><b>전력 확보가 끝난 부지.</b> 계통연계가 수년씩 걸리자 '전기 들어오는 땅' 자체가 희소자산으로 재평가되고 있습니다.</div></details>
+    <details class="term"><summary>전기강판</summary><div class="def">변압기·모터의 철심에 쓰는 <b>특수 강판.</b> 변압기 호황의 그림자에서 함께 부족해진 소재로, 한국에선 포스코가 만듭니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co">🇺🇸 GE 버노바 — 터빈</span><span class="co">🇩🇪 지멘스에너지</span><span class="co kr">🇰🇷 두산에너빌리티 — 터빈 4위</span><span class="co kr">🇰🇷 HD현대일렉트릭 — 변압기</span><span class="co kr">🇰🇷 효성중공업·산일전기</span><span class="co">🇺🇸 파월 — 개폐기</span><span class="co">🇺🇸 이튼·🇫🇷 슈나이더 — 배전</span><span class="co">🇺🇸 플루언스 — ESS</span><span class="co kr">🇰🇷 지엔씨에너지 — 비상발전</span><span class="co kr">🇰🇷 포스코 — 전기강판</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 체인 전체에서 공급 부족이 가장 심한 층 — 터빈은 공급자 3곳에 대기 5년, 이 체인의 '끝판왕 희소자원'입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>"약속된 투자금은 다 모였는데 전기설비가 못 따라와 공사가 밀리는" 시차가 2026년의 핵심 구조라고 봤습니다. 이 시차 구간에선 변압기·개폐기·터빈처럼 일찍 주문되는 품목이 유리하고 — 한국 변압기 회사들은 테마 조정으로 주가가 눌린 반면 수주는 계속 쌓이고 있어 저희 감시 1순위입니다. 반대로 일부 기대주는 기대감이 가격에 과하게 실렸다고 판단했습니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 8F -->
+<div class="floor" style="--zc:var(--z3);--zs:var(--z3s)">
+  <span class="f-tag">8F · 체온</span>
+  <h3>냉각 — 전기난로 수만 대를 식혀라</h3>
+  <div class="meta">공랭의 종말, 액체냉각의 시대</div>
+  <div class="analogy">💡 비유: 최신 AI 랙 하나가 뿜는 열(약 120kW)은 <b>가정용 전기난로 60대</b>와 같습니다. 선풍기(공랭)는 40kW 부근이 한계 — 그래서 이제 <b>칩 위에 직접 수도관을 깔아 물로 식힙니다.</b></div>
+  <p class="body">방식은 이렇습니다. 칩 위에 물길이 파인 금속판(<b>콜드플레이트</b>)을 밀착시키고 냉각수를 흘립니다(직접액체냉각). 데워진 물은 랙 옆의 펌프장(<b>CDU</b>)에 모였다가, 건물의 대형 냉방기(<b>칠러</b>)에서 식혀져 돌아옵니다 — 사람의 혈액순환과 똑같은 폐회로입니다. 콜드플레이트는 대만 AVC·아우라스가 과점하는데(엔비디아 최신 GPU용의 절반 가까이), 신제품 설계를 시제품에서 양산까지 '주 단위'로 올리는 제조력이 30년 쌓인 진입장벽입니다.</p>
+  <div class="diag">
+  <svg viewBox="0 0 640 230" role="img" aria-label="냉각 순환 루프: 콜드플레이트에서 데워진 물이 CDU를 거쳐 칠러에서 식고 다시 돌아오는 폐회로">
+    <text x="320" y="22" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">냉각수의 혈액순환</text>
+    <path class="spin-droplet" d="M120 130 C 120 70, 250 60, 320 60 C 420 60, 520 70, 520 130 C 520 185, 400 195, 320 195 C 230 195, 120 185, 120 130 Z" fill="none" stroke="#4a8df0" stroke-width="5" stroke-dasharray="14 12" stroke-linecap="round"/>
+    <g font-size="11.5" font-weight="700">
+      <rect x="60" y="100" width="120" height="60" rx="9" fill="#fbe3da" stroke="#d4845e"/><text x="120" y="126" text-anchor="middle" fill="#9a4f2a">콜드플레이트</text><text x="120" y="144" text-anchor="middle" font-weight="400" font-size="10.5" fill="#b06a44">칩 위에서 열 흡수 🔥</text>
+      <rect x="265" y="30" width="110" height="56" rx="9" fill="#eef0f6" stroke="#9aa5c0"/><text x="320" y="54" text-anchor="middle" fill="#4a557a">CDU</text><text x="320" y="72" text-anchor="middle" font-weight="400" font-size="10.5" fill="#6a7596">냉각수 분배 펌프장</text>
+      <rect x="460" y="100" width="120" height="60" rx="9" fill="#ddeef8" stroke="#6fa6cc"/><text x="520" y="126" text-anchor="middle" fill="#2a6186">칠러</text><text x="520" y="144" text-anchor="middle" font-weight="400" font-size="10.5" fill="#4a82a6">건물 대형 냉방기 ❄️</text>
+    </g>
+    <text x="320" y="222" text-anchor="middle" font-size="12" fill="#5d6671">뜨거운 물 →(파란 점선을 따라)→ 식은 물 — 24시간 도는 폐회로</text>
+  </svg>
+  <div class="cap">물이 도는 한 AI는 돌고, 물이 멈추면 수천억 원어치 칩이 몇 분 만에 위험해집니다.</div>
+  </div>
+  <p class="body">두 가지 구조 변화가 진행 중입니다. 첫째, <b>칠러의 '터빈화'</b> — 원래 백화점·공장용이던 칠러가 데이터센터 수요로 주문이 5년치씩 쌓이고 장기공급계약 품목으로 변하고 있습니다. "냉각 용량 확보가 전력 확보만큼 중요하다"는 게 새 상식이죠. 미국 모딘이 대표 수혜이고, 한국 LG전자도 칠러 매출이 1년 새 3배로 뛰며 이 시장의 다크호스가 됐습니다. 둘째, <b>중간 단계(CDU)의 대기업 흡수</b> — 슈나이더·이튼·에콜랩 같은 거인들이 냉각 전문업체를 줄줄이 인수하면서 독립 회사가 사라지는 중입니다. 서버를 통째로 절연 액체에 담그는 <b>액침냉각</b>은 효율은 최고지만 유지보수 문제로 아직 소수파입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">~120kW</div><div class="l">최신 랙 1대의 발열<br>(전기난로 60대)</div></div>
+    <div class="fact"><div class="n">~40kW</div><div class="l">공랭(바람)으로<br>버티는 한계선</div></div>
+    <div class="fact"><div class="n">5년</div><div class="l">칠러 주문<br>가시성 (모딘)</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>DLC / D2C</summary><div class="def"><b>직접 액체냉각 / 칩 직접 냉각.</b> 공기 대신 액체로, 그것도 칩에 직접 닿게 식히는 방식 — 최신 AI 랙의 표준입니다.</div></details>
+    <details class="term"><summary>콜드플레이트</summary><div class="def">칩 위에 밀착시키는 <b>물길 파인 금속판.</b> 손바닥만 하지만 정밀가공 난도가 높아 과점 시장입니다.</div></details>
+    <details class="term"><summary>CDU</summary><div class="def"><b>Coolant Distribution Unit, 냉각수 분배 장치.</b> 냉각수를 각 서버로 나누고 유량·온도를 관리하는 펌프장. 최근 대기업들의 인수 표적이 된 자리.</div></details>
+    <details class="term"><summary>칠러</summary><div class="def">건물 전체의 냉각수를 식히는 <b>초대형 냉방기.</b> 백화점용 제품이 데이터센터 수요로 제2의 전성기를 맞았습니다.</div></details>
+    <details class="term"><summary>액침냉각 / 2상 냉각</summary><div class="def"><b>액침</b>은 서버를 통째로 절연 액체에 담그는 방식, <b>2상(two-phase)</b>은 액체가 끓으며 기화열로 식히는 방식 — 둘 다 차세대 후보지만 아직 실험적 위치입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co">🇺🇸 버티브 — 통합 강자</span><span class="co">🇹🇼 AVC·아우라스 — 콜드플레이트</span><span class="co">🇺🇸 모딘 — 칠러</span><span class="co kr">🇰🇷 LG전자 — 칠러 급성장</span><span class="co kr">🇰🇷 삼성전자 — 유럽 공조사 인수</span><span class="co kr">🇰🇷 GST·케이엔솔 — 액침</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 랙 발열이 세대마다 2배 — '식히는 속도'가 곧 'AI를 늘리는 속도'입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>버티브는 "이익이 매년 50%씩 느는데 주가는 고점에서 25% 내려온" 조합으로 주목 목록 상단에 있었습니다. LG전자는 결이 다른 아이디어 — 회사 전체가 가전 기준의 싼 값에 매겨져 있어, 급성장하는 데이터센터 냉각 사업이 사실상 '공짜 덤'으로 끼워진 구조라고 봤습니다. 대만 콜드플레이트 2사는 실적 검증이 가장 확실하나 국내 투자자에겐 접근 경로가 관문입니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 9F -->
+<div class="floor" style="--zc:var(--z3);--zs:var(--z3s)">
+  <span class="f-tag">9F · 건물</span>
+  <h3>데이터센터 — 약속한 돈과 못 따라가는 공사</h3>
+  <div class="meta">건설, 부지, 그리고 '타이밍 갭'</div>
+  <div class="analogy">💡 비유: <b>분양은 100% 끝났는데 착공은 3분의 1만 된 신도시</b>입니다. 입주 희망자(AI 수요)는 줄 서 있는데, 인허가와 자재(전기설비)가 공사 속도를 묶고 있습니다.</div>
+  <div class="diag">
+  <svg viewBox="0 0 640 250" role="img" aria-label="타이밍 갭 차트: 약속된 투자금 곡선은 가파르게 오르는데 실제 가동 용량 곡선은 한참 뒤처져 둘 사이에 갭이 벌어진다">
+    <text x="320" y="22" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">타이밍 갭 — 돈은 모였는데 공사가 못 따라간다</text>
+    <line x1="60" y1="210" x2="600" y2="210" stroke="#b9b3a4" stroke-width="2"/>
+    <line x1="60" y1="210" x2="60" y2="40" stroke="#b9b3a4" stroke-width="2"/>
+    <polygon class="gapfill" points="60,210 180,185 320,140 460,95 580,55 580,160 460,178 320,195 180,205 60,210" fill="#f5b32a" opacity="0" style="fill-opacity:.18"/>
+    <path class="drawline" d="M60 210 L180 185 L320 140 L460 95 L580 55" stroke="#d4582e" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path class="drawline" style="animation-delay:.8s" d="M60 210 L180 205 L320 195 L460 178 L580 160" stroke="#1f9e68" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="560" y="44" text-anchor="end" font-size="12.5" font-weight="800" fill="#d4582e">약속된 투자금 (커밋)</text>
+    <text x="560" y="150" text-anchor="end" font-size="12.5" font-weight="800" fill="#1f9e68">실제 가동 용량 (MW)</text>
+    <text class="gapfill" x="400" y="135" font-size="13" font-weight="900" fill="#b0830f">← 이 틈이 '타이밍 갭' (1~2년)</text>
+    <text x="60" y="232" font-size="11.5" fill="#98a0aa">2024</text><text x="320" y="232" text-anchor="middle" font-size="11.5" fill="#98a0aa">2025</text><text x="580" y="232" text-anchor="end" font-size="11.5" fill="#98a0aa">2026 →</text>
+  </svg>
+  <div class="cap">같은 호황 안에서도 "일찍 돈 받는 층"과 "늦게 돈 받는 층"의 처지가 갈리는 이유.</div>
+  </div>
+  <p class="body">숫자가 상황을 말해줍니다. 미국 데이터센터 <b>공실률 1%</b>(사실상 만실), 건설 예정 물량의 <b>92%가 짓기도 전에 임차 계약 완료</b>. 그런데 2026년 목표 공급의 3분의 1만 실제 착공됐고, 작년 프로젝트의 57%가 일정이 밀렸으며, 건설비는 MW당 1,100만 달러를 넘어 계속 오릅니다. 원인은 7층에서 본 전기설비 부족과 계통연계 적체죠.</p>
+  <p class="body">그 결과 <b>"약속된 투자금"과 "실제 가동 시설" 사이에 1~2년의 시차</b>가 생겼습니다 — 위 차트의 노란 틈, 저희가 '타이밍 갭'이라 부른 현상입니다. 이 갭은 층마다 다르게 작용합니다. 공사 초기에 주문되는 전기설비(7층)엔 호재, 완공 직전 설치되는 냉각(8층)·서버(6층)엔 매출이 미뤄지는 리스크. 그리고 갭이 길어질수록 빚으로 짓는 회사의 이자 부담이 커지는 — 10층에서 볼 금융 리스크의 씨앗이기도 합니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">1%</div><div class="l">미국 데이터센터<br>공실률</div></div>
+    <div class="fact"><div class="n">92%</div><div class="l">완공 전에 임차가<br>끝난 비율</div></div>
+    <div class="fact"><div class="n">$11M+</div><div class="l">1MW당<br>건설 비용</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>capex</summary><div class="def"><b>Capital Expenditure, 설비투자.</b> 공장·건물·장비에 쓰는 돈. "빅테크 capex"가 이 공장 전체 매출의 원천이라, AI 기사에 가장 자주 나오는 단어입니다.</div></details>
+    <details class="term"><summary>사전임차 (pre-lease)</summary><div class="def">건물이 완공되기 전에 임차 계약이 끝나는 것. 92%라는 수치는 "짓기만 하면 손님은 정해져 있다"는 뜻입니다.</div></details>
+    <details class="term"><summary>타이밍 갭</summary><div class="def">투자 약속과 실제 가동 사이의 <b>1~2년 시차.</b> 돈은 있는데 물리적 건설이 못 따라가는 상태 — 2026년 AI 산업을 읽는 핵심 열쇳말입니다.</div></details>
+  </div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 이 층의 병목은 기술이 아니라 시간 — 허가, 전기, 자재의 시간입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>타이밍 갭의 함의를 둘로 정리했습니다. ① 갭이 길어질수록 전기설비 기업의 가격 결정력이 강해진다, ② 완공 직전 품목 기업의 실적 실망은 '수요 소멸'이 아니라 '수요 이연'일 수 있다 — 그래서 이런 기업은 주문 취소와 단순 지연을 구분해 봐야 한다는 점검 기준을 만들어뒀습니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ ZONE 4 ═══════ -->
+<section id="z4" style="--zc:var(--z4);--zs:var(--z4s)">
+<div class="zone-head" style="color:var(--z4)">
+  <div class="z-big">Ⅳ</div>
+  <div class="z-num">ZONE Ⅳ · 10~12층 · 돈의 원천</div>
+  <h2 style="color:var(--ink)">운영자와 세입자</h2>
+  <p>아래 9개 층의 매출은 전부 여기서 내려옵니다. 공장을 빌려주는 건물주, 그 안에서 AI를 만드는 세입자, 그리고 최종 손님까지.</p>
+</div>
+
+<!-- 10F -->
+<div class="floor" style="--zc:var(--z4);--zs:var(--z4s)">
+  <span class="f-tag">10F · 건물주</span>
+  <h3>클라우드 — 컴퓨팅을 시간당 임대하는 사업</h3>
+  <div class="meta">하이퍼스케일러, 신흥 임대업자, 그리고 돈의 출처</div>
+  <div class="analogy">💡 비유: 1~9층으로 지은 공장을 소유하고 <b>"컴퓨팅 파워"를 시간당 요금으로 임대하는 건물주</b>입니다. 이들이 쓰는 투자금이 아래 모든 층의 월급입니다.</div>
+  <div class="diag">
+  <svg viewBox="0 0 640 260" role="img" aria-label="2026년 빅테크 4사 설비투자 막대그래프: 아마존 약 2000억 달러, 마이크로소프트와 구글 약 1900억 달러, 메타 약 1400억 달러">
+    <text x="320" y="22" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">2026년 AI 설비투자 계획 — 합치면 약 $700B (약 1,000조 원)</text>
+    <g>
+      <rect class="growbar" style="animation-delay:.1s" x="80"  y="60"  width="90" height="150" rx="8" fill="#2e9e6b"/>
+      <rect class="growbar" style="animation-delay:.3s" x="220" y="68"  width="90" height="142" rx="8" fill="#4a8df0"/>
+      <rect class="growbar" style="animation-delay:.5s" x="360" y="68"  width="90" height="142" rx="8" fill="#d4900e"/>
+      <rect class="growbar" style="animation-delay:.7s" x="500" y="105" width="90" height="105" rx="8" fill="#6457c9"/>
+    </g>
+    <g font-size="12.5" font-weight="800" fill="#21262e">
+      <text x="125" y="50" text-anchor="middle">~$200B</text><text x="265" y="58" text-anchor="middle">~$190B</text><text x="405" y="58" text-anchor="middle">~$190B</text><text x="545" y="95" text-anchor="middle">~$140B</text>
+    </g>
+    <g font-size="12" fill="#5d6671">
+      <text x="125" y="232" text-anchor="middle">아마존</text><text x="265" y="232" text-anchor="middle">마이크로소프트</text><text x="405" y="232" text-anchor="middle">구글</text><text x="545" y="232" text-anchor="middle">메타</text>
+    </g>
+  </svg>
+  <div class="cap">참고: 한국 정부 1년 예산이 약 650조 원 — 네 회사가 그 1.5배를 한 해에 '공장 짓는 데' 씁니다.</div>
+  </div>
+  <p class="body">이 네 회사(<b>하이퍼스케일러</b>)에 더해, GPU 임대만 전문으로 하는 신흥 업체(<b>네오클라우드</b> — 코어위브가 대표)와 오라클이 가세했습니다. 핵심은 <b>돈의 출처</b>입니다. 구글은 주식을 팔아(빚 없이) 투자하고 "주문이 밀려 컴퓨팅이 모자라다"고 공언하는 수요의 우등생인 반면, 오라클은 대부분을 <b>빚으로</b> 지어 시장이 부도 위험 보험료(CDS)를 사상 최고로 매기는 중입니다. 또 하나의 디테일 — 이 거대한 투자는 <b>감가상각</b>이라는 형태로 수년에 걸쳐 이익을 깎기 때문에, 하이퍼스케일러의 순이익 숫자는 한동안 실제 사업의 기세보다 나빠 보입니다. 이들의 주가가 "이익 대비 비싸 보이는" 착시의 정체죠.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">$700B</div><div class="l">4사 합산 연간<br>설비투자</div></div>
+    <div class="fact"><div class="n">$460B</div><div class="l">구글 클라우드의<br>주문 잔고</div></div>
+    <div class="fact"><div class="n">사상 최고</div><div class="l">오라클의 부도보험료<br>(CDS) 수준</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>하이퍼스케일러</summary><div class="def">구글·아마존·MS·메타 등 초대형 클라우드 사업자. '하이퍼 스케일' = 상상을 넘는 규모로 인프라를 짓는다는 뜻.</div></details>
+    <details class="term"><summary>네오클라우드</summary><div class="def">AI용 GPU 임대만 전문으로 하는 <b>신흥 클라우드.</b> 빚과 투자 유치로 몸집을 빠르게 불려, 성장성과 재무 위험을 동시에 안고 있습니다.</div></details>
+    <details class="term"><summary>CDS</summary><div class="def"><b>Credit Default Swap, 부도 보험.</b> 회사가 망하면 보상해주는 보험의 가격 — 높아질수록 시장이 보는 부도 위험이 크다는 신호입니다.</div></details>
+    <details class="term"><summary>FCF / 감가상각</summary><div class="def"><b>FCF</b>(잉여현금흐름)는 번 돈에서 투자를 빼고 실제 남는 현금 — AI 투자가 워낙 커 아마존조차 마이너스가 거론됩니다. <b>감가상각</b>은 산 장비의 비용을 수년에 나눠 이익에서 까는 회계 처리 — 투자 폭증기의 이익을 실제보다 나빠 보이게 만듭니다.</div></details>
+  </div>
+  <div class="cos-label">주요 기업</div>
+  <div class="cos"><span class="co">🇺🇸 구글(알파벳)</span><span class="co">🇺🇸 아마존(AWS)</span><span class="co">🇺🇸 마이크로소프트</span><span class="co">🇺🇸 메타</span><span class="co">🇺🇸 오라클 — 빚으로 건설</span><span class="co">🇺🇸 코어위브 — 네오클라우드</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 이 층의 위험은 공급이 아니라 재무 — "투자 속도를 현금이 따라가는가"입니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>저희는 이 층을 '살 종목'이 아니라 '읽을 공시'로 분류했습니다 — 이들의 분기 투자계획 발표가 아래 모든 층의 선행지표라서요. 역할 분담은 이렇습니다: 구글 = 수요의 질을 재는 온도계, 아마존 = 현금흐름 압박의 진앙, 오라클 = 신용 위험의 바로미터. "AI 거품의 균열은 칩 수요가 아니라 빚 많은 회사의 재무에서 먼저 보인다"는 게 저희 가설인데, 오라클의 부도보험료 급등이 실제로 그 경로를 따라가고 있습니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 11F -->
+<div class="floor" style="--zc:var(--z4);--zs:var(--z4s)">
+  <span class="f-tag">11F · 세입자</span>
+  <h3>AI 모델 회사 — 공장에서 지능을 빚는 곳</h3>
+  <div class="meta">학습과 추론, 그리고 거품 논쟁의 진앙</div>
+  <div class="analogy">💡 비유: 건물주(클라우드)에게 주방을 빌려 <b>요리사(AI 모델)를 길러내는 세입자</b>입니다. 요리사를 키우는 건(학습) 한 번의 거대한 투자, 손님상을 차리는 건(추론) 주문마다 돈이 드는 일상 영업입니다.</div>
+  <p class="body">모델 회사의 사업은 두 공정입니다. <b>학습</b>은 수개월간 GPU 수십만 개를 돌려 모델을 만드는 것(한 번에 수천억 원), <b>추론</b>은 완성된 모델이 질문에 답하는 것(질문당 몇 원, 그러나 하루 수십억 건). 산업의 무게중심이 추론으로 넘어가는 중인데 — 추론은 쓰임이 늘수록 비용도 매출도 같이 늘어, "AI 거품이 꺼져도 추론 수요는 남는다"는 논리의 근거가 됩니다.</p>
+  <p class="body">거품 논쟁의 핵심 숫자도 이 층에 있습니다. 모델 회사들이 클라우드·칩 회사와 맺은 인프라 약속이 한때 <b>연매출의 70배</b>까지 부풀었다가, 최근 약속 축소와 매출 급증으로 <b>20배대</b>까지 줄며 정상화 중입니다. 또 하나 주의 깊게 봐야 할 구조가 <b>순환금융</b> — 칩 회사가 AI 회사에 투자하고, AI 회사가 그 돈으로 다시 그 칩을 사는, 돈이 제자리를 도는 구조입니다. "수요가 진짜인지" 가려지게 만든다는 비판을 받았고, 최근 대형 투자 약속이 철회·축소되며 부분적으로 해소되는 중입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">70배→24배</div><div class="l">인프라 약속 ÷ 매출<br>(거품 온도계)</div></div>
+    <div class="fact"><div class="n">$25B</div><div class="l">선두 모델사의<br>연환산 매출</div></div>
+    <div class="fact"><div class="n">3배</div><div class="l">추론이 학습보다<br>더 쓰는 메모리</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>학습 vs 추론</summary><div class="def"><b>학습</b>은 모델을 만드는 공정(한 번에 수천억 원), <b>추론</b>은 만들어진 모델이 답하는 것(건당 몇 원 × 하루 수십억 건). 산업의 무게중심이 추론으로 이동 중입니다.</div></details>
+    <details class="term"><summary>토큰</summary><div class="def">AI가 글을 읽고 쓰는 <b>최소 단위</b>(대략 한국어 한두 글자). AI의 사용량과 비용은 모두 토큰 수로 계산됩니다 — AI 시대의 kWh.</div></details>
+    <details class="term"><summary>API</summary><div class="def"><b>Application Programming Interface.</b> 다른 회사 소프트웨어가 AI 모델을 갖다 쓰는 '주문 창구'. 모델 회사 매출의 핵심 통로입니다.</div></details>
+    <details class="term"><summary>순환금융</summary><div class="def">칩 회사가 AI 회사에 투자 → AI 회사가 그 돈으로 그 칩을 구매 — <b>돈이 제자리를 도는 구조.</b> 닷컴 시대의 '상호 매출' 논쟁과 닮았다는 비판을 받았고, 최근 일부 해소 중입니다.</div></details>
+  </div>
+  <div class="cos-label">주요 플레이어</div>
+  <div class="cos"><span class="co">🇺🇸 OpenAI (ChatGPT)</span><span class="co">🇺🇸 Anthropic (Claude)</span><span class="co">🇺🇸 xAI (Grok)</span><span class="co">🇺🇸 구글 딥마인드 (Gemini)</span></div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 기술이 아니라 돈 — 매출 성장이 인프라 약속을 따라잡는 속도가 산업 전체의 건전성을 결정합니다.</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>"2026년 하반기에 AI 인프라의 청구서가 도래한다"는 월가의 경고를 추적해왔는데, 최근 점검 결과 약속 축소와 대규모 자금조달 성공으로 '시스템 전체 위기'보다는 '빚 많은 특정 회사로 위험이 집중'되는 시나리오로 이동했다고 판단했습니다. 위기가 사라진 게 아니라 주소가 좁혀진 것 — 그 주소(오라클·코어위브의 재무)를 계속 지켜보고 있습니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+
+<!-- 12F -->
+<div class="floor" style="--zc:var(--z4);--zs:var(--z4s)">
+  <span class="f-tag">12F · 손님</span>
+  <h3>수익화 — 결국 누가 돈을 내는가</h3>
+  <div class="meta">기업·소비자, 제본스의 역설, 그리고 AI의 그늘</div>
+  <div class="analogy">💡 비유: 식당이 아무리 화려해도 <b>손님이 음식값을 내야 주방·건물주·농부가 다 먹고삽니다.</b> 12층의 지갑이 1~11층 전체의 존립 근거입니다.</div>
+  <p class="body">기업이 AI로 비용을 줄이거나 매출을 늘리고, 소비자가 구독료를 내는 — 가치가 실제로 '실현'되는 층입니다. 흥미로운 역학이 하나 있습니다. AI 답변 한 건의 가격(토큰 단가)은 기술 발전으로 <b>빠르게 떨어지는데</b>, 싸진 만큼 쓰임이 폭발해 <b>총사용량은 그보다 빠르게 늘고</b> 있습니다 — 경제학에서 말하는 '제본스의 역설'(효율이 좋아질수록 총소비가 오히려 는다)입니다. 단가 하락 + 사용량 폭증이 함께 가는 한 이 공장은 돌고, 단가만 떨어지고 사용량이 정체되는 순간이 진짜 경고등입니다.</p>
+  <p class="body">그리고 이 층에는 그늘도 있습니다. 콜센터·단순 IT 외주·반복 문서 업무처럼 <b>AI가 직접 대체하는 업종</b>은 같은 혁명의 반대편에 서 있습니다. AI 밸류체인을 본다는 건 수혜자 목록만이 아니라 이 피해자 목록을 함께 보는 일입니다 — 투자에서든, 기업의 거래처 평가에서든, 자기 커리어 설계에서든.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">↓ 단가</div><div class="l">토큰 가격은<br>계속 하락</div></div>
+    <div class="fact"><div class="n">↑↑ 사용량</div><div class="l">총소비는 그보다<br>빠르게 증가</div></div>
+    <div class="fact"><div class="n">양면</div><div class="l">수혜 업종과<br>대체되는 업종</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>ROI</summary><div class="def"><b>Return on Investment, 투자수익률.</b> "AI에 쓴 돈이 실제로 돈을 벌어주는가" — 이 질문의 답이 늦어질수록 아래 층들의 투자도 식습니다.</div></details>
+    <details class="term"><summary>제본스의 역설</summary><div class="def">효율이 좋아져 단가가 떨어지면 <b>총소비는 오히려 늘어나는</b> 현상(19세기 석탄에서 처음 관찰). AI 토큰 가격 폭락에도 인프라 수요가 느는 이유를 설명하는 핵심 논리입니다.</div></details>
+    <details class="term"><summary>앱 레이어</summary><div class="def">모델 위에 만들어진 <b>실제 서비스들의 층</b> — 법률 AI, 코딩 AI, 고객상담 AI 등. 인프라 호황의 지속 여부를 최종 결정하는 곳입니다.</div></details>
+  </div>
+  <div class="bottleneck"><span class="ic">!</span>병목 포인트: 이 층이 산업 전체의 마지막 검증대 — "지능은 충분히 싸졌는가, 그리고 충분히 쓸모 있는가."</div>
+  <div class="view"><div class="v-head">우리의 분석 노트</div><p>고백하자면 저희 분석의 맹점이 이 층이었습니다 — 공급(투자·건설·신용)은 촘촘히 추적하면서 수요의 최종 검증(토큰 경제, 기업 AI 지출)은 지표화하지 못했죠. 다음 과제로 남겨둔 상태입니다. 분명한 것 하나: 12층의 손님이 지갑을 여는 한 공장은 돌고, 멈춤의 신호는 언제나 이 층에서 가장 먼저 나타납니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ MAP ═══════ -->
+<section id="map" style="--zc:var(--ink);--zs:var(--note)">
+<div class="zone-head">
+  <div class="z-num" style="color:var(--faint)">SUMMARY</div>
+  <h2>한 장 요약 — 층별 기업 지도</h2>
+  <p>지금까지의 12개 층과 대표 기업을 한 표로, 그리고 '병목의 이동사'를 한 줄로 모았습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--ink);--zs:var(--note)">
+  <div class="diag">
+  <svg viewBox="0 0 640 150" role="img" aria-label="병목의 이동: 2023년 GPU, 2024년 패키징, 2025년 HBM, 2026년 전력과 냉각">
+    <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="800" fill="#21262e">병목의 이동사 — 부족한 곳이 가장 비싸진다</text>
+    <line x1="50" y1="85" x2="590" y2="85" stroke="#c9c3b4" stroke-width="3"/>
+    <g font-size="12" font-weight="800">
+      <circle cx="95" cy="85" r="9" fill="#d4582e"/><text x="95" y="62" text-anchor="middle" fill="#d4582e">GPU</text><text x="95" y="115" text-anchor="middle" font-weight="500" fill="#5d6671">2023</text>
+      <circle cx="245" cy="85" r="9" fill="#d4582e"/><text x="245" y="62" text-anchor="middle" fill="#d4582e">첨단 패키징</text><text x="245" y="115" text-anchor="middle" font-weight="500" fill="#5d6671">2024</text>
+      <circle cx="395" cy="85" r="9" fill="#d4582e"/><text x="395" y="62" text-anchor="middle" fill="#d4582e">HBM</text><text x="395" y="115" text-anchor="middle" font-weight="500" fill="#5d6671">2025</text>
+      <circle class="blink" cx="545" cy="85" r="11" fill="#d4900e"/><text x="545" y="62" text-anchor="middle" fill="#b0830f">전력·냉각</text><text x="545" y="115" text-anchor="middle" font-weight="500" fill="#5d6671">2026 (현재)</text>
+    </g>
+    <text x="320" y="142" text-anchor="middle" font-size="12" fill="#98a0aa">다음 후보: 기판 원재료? 스토리지? 연료(가스)? — 병목 추적이 곧 투자 지도</text>
+  </svg>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--ink);--zs:var(--note);padding:14px">
+<table>
+  <tr><th>층</th><th>역할</th><th>🇰🇷 한국</th><th>🌎 해외</th></tr>
+  <tr><td>1F 두뇌</td><td>연산 칩</td><td>—</td><td>엔비디아·AMD·브로드컴·TSMC</td></tr>
+  <tr><td>2F 기억</td><td>메모리·저장</td><td>SK하이닉스·삼성전자</td><td>마이크론·CXMT·시게이트</td></tr>
+  <tr><td>3F 도구</td><td>제조 장비·소모품</td><td>한미반도체·HPSP·리노공업·테크윙</td><td>어드반테스트·ASML</td></tr>
+  <tr><td>4F 자리</td><td>기판·부품</td><td>이수페타시스·삼성전기·두산·SKC</td><td>EMC·닛토보·이비덴</td></tr>
+  <tr><td>5F 신경</td><td>네트워크·광통신</td><td>오이솔루션·쏠리드·RFHIC</td><td>아리스타·루멘텀·코히런트·시에나·노키아</td></tr>
+  <tr><td>6F 몸체</td><td>서버 조립</td><td>—</td><td>슈퍼마이크로·델·셀레스티카·폭스콘</td></tr>
+  <tr><td>7F 심장</td><td>전력</td><td>HD현대일렉트릭·효성중공업·산일전기·두산에너빌리티·지엔씨에너지·포스코</td><td>GE버노바·지멘스·파월·이튼·플루언스</td></tr>
+  <tr><td>8F 체온</td><td>냉각</td><td>LG전자·삼성전자·GST·케이엔솔</td><td>버티브·모딘·AVC·아우라스</td></tr>
+  <tr><td>9F 건물</td><td>데이터센터 건설·부지</td><td>(국내 DC 개발사)</td><td>(미국 디벨로퍼·리츠)</td></tr>
+  <tr><td>10F 건물주</td><td>클라우드</td><td>네이버·카카오(국내)</td><td>구글·아마존·MS·메타·오라클·코어위브</td></tr>
+  <tr><td>11F 세입자</td><td>AI 모델</td><td>—</td><td>OpenAI·Anthropic·xAI</td></tr>
+  <tr><td>12F 손님</td><td>수익화</td><td colspan="2">모든 산업 — 수혜 업종과 대체되는 업종으로 갈림</td></tr>
+</table>
+</div>
+
+<div class="floor" style="--zc:var(--ink);--zs:var(--note)">
+  <h3 style="margin-top:0">이 지도를 읽는 세 가지 열쇠</h3>
+  <p class="body"><b>① 돈은 위에서 아래로 흐른다.</b> 10층(클라우드)의 투자 계획이 줄면 1~9층 전체의 매출이 함께 준다 — 이 산업의 모든 기업은 결국 같은 배를 탔습니다. 분산 투자를 했다고 생각해도, 전부 이 체인 안이라면 사실 한 배에 짐을 나눠 실은 것뿐입니다.</p>
+  <p class="body"><b>② 병목은 계속 이동한다.</b> 2023년 GPU → 2024년 패키징 → 2025년 HBM → 2026년 전력·냉각. 부족한 곳이 가장 비싸지고, 그 자리는 매년 바뀝니다. "지금 무엇이 부족한가"를 묻는 것이 "무엇이 좋은가"를 묻는 것보다 먼저입니다.</p>
+  <p class="body"><b>③ 좋은 회사와 좋은 가격은 다르다.</b> 어떤 층의 강자라도 모두가 이미 아는 강자라면 주가에 다 반영돼 있습니다. "얼마나 좋은가"와 "얼마에 살 수 있는가"는 끝까지 따로 물어야 하는 질문입니다.</p>
+</div>
+</section>
+
+<!-- ═══════ GLOSSARY ═══════ -->
+<section id="gloss" style="--zc:var(--ink);--zs:var(--note)">
+<div class="zone-head">
+  <div class="z-num" style="color:var(--faint)">APPENDIX</div>
+  <h2>약어 사전</h2>
+  <p>본문에 나온 용어를 한 곳에 모았습니다. 눌러서 펼쳐보세요.</p>
+</div>
+<div class="gloss">
+  <details><summary>ABF</summary><div class="g-body">Ajinomoto Build-up Film. 고급 패키지 기판용 절연 필름. 일본 조미료 회사 아지노모토가 사실상 독점 생산.</div></details>
+  <details><summary>AI-RAN</summary><div class="g-body">AI 무선접속망. 통신 기지국 장비로 AI 연산까지 처리하자는 개념. 엔비디아·노키아·삼성 등이 연합 결성.</div></details>
+  <details><summary>API</summary><div class="g-body">외부 프로그램이 AI 모델을 호출해 쓰는 주문 창구.</div></details>
+  <details><summary>ASIC / XPU / TPU</summary><div class="g-body">특정 용도 전용 주문형 반도체 / 그 통칭 / 구글의 자체 AI 칩.</div></details>
+  <details><summary>BESS / ESS</summary><div class="g-body">대형 배터리 에너지 저장장치 — 전기를 쌓아뒀다 꺼내 쓰는 '전기 창고'.</div></details>
+  <details><summary>capex</summary><div class="g-body">설비투자. 빅테크 capex가 AI 공장 전체 매출의 원천.</div></details>
+  <details><summary>CCL</summary><div class="g-body">동박적층판. 유리섬유+수지+구리막으로 만든 모든 회로기판의 원판.</div></details>
+  <details><summary>CDS</summary><div class="g-body">부도 보험의 가격. 높을수록 시장이 보는 부도 위험이 크다는 신호.</div></details>
+  <details><summary>CDU</summary><div class="g-body">냉각수 분배 장치 — 데이터센터 액체냉각의 펌프장.</div></details>
+  <details><summary>CoWoS</summary><div class="g-body">TSMC의 첨단 패키징 기술. GPU와 HBM을 한 기판에 합치는 공정 — 2023~24년 AI 칩 품귀의 실제 병목.</div></details>
+  <details><summary>CPO</summary><div class="g-body">광부품을 연산 칩 옆에 함께 패키징해 전력을 아끼는 차세대 기술.</div></details>
+  <details><summary>CUDA</summary><div class="g-body">엔비디아 GPU 개발 도구 생태계 — 엔비디아의 가장 깊은 해자.</div></details>
+  <details><summary>DCI</summary><div class="g-body">멀리 떨어진 데이터센터들을 하나로 묶는 장거리 광통신.</div></details>
+  <details><summary>DLC / D2C</summary><div class="g-body">직접 액체냉각 / 칩 직접 냉각. 액체로 칩을 직접 식히는 현 표준.</div></details>
+  <details><summary>DRAM</summary><div class="g-body">작업 중 데이터를 잠시 두는 메모리. 전원이 꺼지면 사라짐.</div></details>
+  <details><summary>EMS / ODM</summary><div class="g-body">위탁생산 / 설계까지 해주는 위탁생산.</div></details>
+  <details><summary>EUV</summary><div class="g-body">극자외선 노광장비. ASML 독점, 중국 수출 금지 품목.</div></details>
+  <details><summary>FC-BGA</summary><div class="g-body">고성능 칩용 패키지 기판 — 칩의 '의자'.</div></details>
+  <details><summary>FCF</summary><div class="g-body">잉여현금흐름. 번 돈에서 투자를 빼고 실제 남는 현금.</div></details>
+  <details><summary>GaN</summary><div class="g-body">질화갈륨. 고온·고전압에 강한 차세대 반도체 소재.</div></details>
+  <details><summary>GPU</summary><div class="g-body">단순 계산 수만 개를 동시 처리하는 AI의 표준 두뇌.</div></details>
+  <details><summary>HBM</summary><div class="g-body">D램을 수직으로 쌓아 GPU 옆에 붙인 AI 전용 고급 메모리.</div></details>
+  <details><summary>HVDC (800V)</summary><div class="g-body">고전압 직류. 차세대 AI 랙의 새 전력 규격.</div></details>
+  <details><summary>low-CTE</summary><div class="g-body">열팽창계수가 낮음 — 열을 받아도 변형이 적은 최고급 소재 등급.</div></details>
+  <details><summary>LTA</summary><div class="g-body">장기공급계약. 1년 이상의 물량·가격을 미리 약속해 가격 변동을 완충.</div></details>
+  <details><summary>MLB</summary><div class="g-body">다층 회로기판 — AI 보드의 '마룻바닥'.</div></details>
+  <details><summary>MLCC</summary><div class="g-body">전압을 안정시키는 쌀알 크기 부품. AI 서버 한 대에 수만 개.</div></details>
+  <details><summary>NAND / SSD / HDD</summary><div class="g-body">저장용 메모리 / 그것으로 만든 고속 저장장치 / 대용량 자기식 저장장치.</div></details>
+  <details><summary>powered land</summary><div class="g-body">전력 확보가 끝난 데이터센터 부지 — 새로운 희소자산.</div></details>
+  <details><summary>PEG</summary><div class="g-body">주가수익비율(P/E)을 이익성장률로 나눈 값. 1보다 낮으면 "성장 대비 싸다"는 잣대.</div></details>
+  <details><summary>ROI</summary><div class="g-body">투자수익률. "쓴 돈이 돈을 벌어주는가"의 최종 질문.</div></details>
+  <details><summary>TC본더</summary><div class="g-body">열압착 접합 장비 — HBM의 칩들을 쌓아 붙이는 기계.</div></details>
+  <details><summary>TSV</summary><div class="g-body">쌓인 칩들을 위아래로 연결하는 미세 구리 기둥.</div></details>
+  <details><summary>UPS</summary><div class="g-body">정전 순간에도 전원을 끊김 없이 잇는 무정전 전원장치.</div></details>
+  <details><summary>계통연계</summary><div class="g-body">시설을 국가 전력망에 접속하는 허가 절차 — 데이터센터의 최대 관문.</div></details>
+  <details><summary>제본스의 역설</summary><div class="g-body">효율이 좋아져 단가가 떨어지면 총소비가 오히려 늘어나는 현상.</div></details>
+  <details><summary>추론 / 학습</summary><div class="g-body">학습은 모델을 만드는 공정, 추론은 모델이 답하는 것. 무게중심은 추론으로 이동 중.</div></details>
+  <details><summary>토큰</summary><div class="g-body">AI가 글을 처리하는 최소 단위 — AI 시대의 kWh.</div></details>
+  <details><summary>하이퍼스케일러</summary><div class="g-body">구글·아마존·MS·메타 등 초대형 클라우드 사업자 — 이 공장의 '돈줄'.</div></details>
+</div>
+
+<div class="disclaimer">
+<b>읽어두실 점</b> — 이 문서는 AI 산업의 구조를 이해하기 위한 교육 자료입니다. 본문의 "우리의 분석 노트"는 2026년 6월 시점의 개인적 분석·의견 요약으로, 특정 종목의 매수·매도를 권유하지 않으며 언급된 수치와 상황은 이후 변했을 수 있습니다. 일부 수치는 이해를 돕기 위한 어림값입니다. 투자에 대한 판단과 책임은 전적으로 투자자 본인에게 있습니다.
+</div>
+<footer>전기를 지능으로 바꾸는 공장 · AI 밸류체인 가이드 v2 · 2026.06</footer>
+</section>
+
+</div>
+
+<script>
+// progress bar
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.floor').forEach(f=>io.observe(f));
+
+// hero particles
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const shell=document.querySelector('.hero-shell');
+  const colors=[['#f5b32a',false],['#f5b32a',false],['#ffd98a',false],['#2ec47e',true],['#2ec47e',true],['#4a8df0',true]];
+  for(let i=0;i<22;i++){
+    const p=document.createElement('span');
+    const [c,down]=colors[i%colors.length];
+    const s=3+Math.random()*5;
+    p.className='particle'+(down?' down':'');
+    p.style.cssText=`width:${s}px;height:${s}px;background:${c};box-shadow:0 0 ${s*2.5}px ${c};left:${Math.random()*100}%;top:${10+Math.random()*70}%;animation-duration:${5+Math.random()*7}s;animation-delay:${Math.random()*8}s`;
+    shell.appendChild(p);
+  }
+})();
+
+// count-up stats
+(function(){
+  const els=document.querySelectorAll('.stat .n');
+  const fmt=(el,v)=>{
+    const d=el.dataset.count;
+    if(d==='700') el.textContent='$'+Math.round(v)+'B';
+    else if(d==='1') el.textContent=v.toFixed(1).replace(/\.0$/,'')+'%';
+    else el.textContent=Math.round(v)+'년';
+  };
+  const run=el=>{
+    const target=parseFloat(el.dataset.count), dur=1600, t0=performance.now();
+    const step=t=>{
+      const k=Math.min((t-t0)/dur,1), e=1-Math.pow(1-k,3);
+      fmt(el,target*e);
+      if(k<1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io2=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){run(e.target);io2.unobserve(e.target);}})},{threshold:.6});
+  els.forEach(el=>io2.observe(el));
+})();
+</script>
+</body>
+</html>
