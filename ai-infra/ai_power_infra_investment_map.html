@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#4DA8FF;        /* 전압 — 일렉트릭 블루 */
+    --current:#FFB13E;     /* 전류 — 앰버 */
+    --glow:#38E6D4;        /* 흐름 글로우 — 시안 */
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  /* current lines sweeping through hero */
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- MACRO ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  /* bar compare */
+  .bars{display:flex;align-items:flex-end;gap:36px;height:230px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar{width:100%;max-width:96px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar.b1{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar.b2{background:linear-gradient(180deg,var(--volt),#1d5fa8);box-shadow:0 0 40px -8px var(--volt)}
+  .bar .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.92rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+  .barcol .cap{font-size:.72rem;color:var(--ink-3);margin-top:2px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.5rem;color:var(--current);min-width:118px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- VALUE CHAIN ---------- */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 30px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  .chain{display:flex;align-items:stretch;gap:0}
+  .node{flex:1;position:relative;text-align:center;padding:0 10px}
+  .node .stage{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.08em}
+  .node .disc{
+    width:74px;height:74px;margin:14px auto 16px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+    background:var(--surface);border:1px solid var(--line);position:relative;transition:.3s;
+  }
+  .node .disc svg{width:34px;height:34px}
+  .node:hover .disc{border-color:var(--volt);box-shadow:0 0 34px -10px var(--volt);transform:translateY(-3px)}
+  .node h4{font-size:1rem;font-weight:750;letter-spacing:-.01em}
+  .node .nd{font-size:.8rem;color:var(--ink-2);margin-top:7px;line-height:1.5}
+  .node .tags{margin-top:13px;display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+  .node .tags span{font-family:var(--mono);font-size:.66rem;color:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--bg)}
+  /* connector line with travelling pulse */
+  .conn{flex:0 0 46px;align-self:flex-start;margin-top:50px;height:3px;border-radius:3px;background:var(--line);position:relative;overflow:hidden}
+  .conn::after{content:"";position:absolute;top:0;left:0;height:100%;width:42%;
+    background:linear-gradient(90deg,transparent,var(--glow),transparent);animation:flow 2.6s linear infinite}
+  .conn.c2::after{animation-delay:.6s}
+  .conn.c3::after{animation-delay:1.2s}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* ---------- STOCKS ---------- */
+  .group-label{display:flex;align-items:center;gap:14px;margin:54px 0 22px}
+  .group-label:first-of-type{margin-top:8px}
+  .group-label .gi{font-family:var(--mono);font-size:.78rem;color:var(--volt);letter-spacing:.1em}
+  .group-label .gt{font-size:1.18rem;font-weight:800;letter-spacing:-.02em}
+  .group-label .gl{flex:1;height:1px;background:var(--line)}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .card:hover{border-color:#33456b;transform:translateY(-4px)}
+  .card:hover::before{opacity:1}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card-name{font-size:1.22rem;font-weight:850;letter-spacing:-.02em}
+  .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.gen{background:rgba(255,177,62,.12);color:var(--current);border:1px solid rgba(255,177,62,.3)}
+  .badge.grid{background:rgba(77,168,255,.12);color:var(--volt);border:1px solid rgba(77,168,255,.3)}
+  .badge.dc{background:rgba(56,230,212,.12);color:var(--glow);border:1px solid rgba(56,230,212,.3)}
+  .badge.cool{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .link-line{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .link-line b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .bb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .bb .b{border-radius:11px;padding:14px;font-size:.83rem;line-height:1.5}
+  .bb .bull{background:rgba(72,213,151,.07);border:1px solid rgba(72,213,151,.22)}
+  .bb .bear{background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.22)}
+  .bb .bh{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .bb .bull .bh{color:var(--bull)}.bb .bear .bh{color:var(--bear)}
+  .bb .b span{color:var(--ink-2)}
+  .kill{margin-top:18px;border-top:1px dashed var(--line);padding-top:15px;font-size:.82rem;color:var(--ink-2);display:flex;gap:10px}
+  .kill .kk{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bear);white-space:nowrap;padding-top:2px;font-weight:700}
+
+  /* ---------- VIEW ---------- */
+  .timeline{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .tcard .th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .tcard.short .th{color:var(--glow)} .tcard.mid .th{color:var(--current)}
+  .tcard h3{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:12px 0 4px}
+  .tcard .tp{font-size:.92rem;color:var(--ink-2);margin-top:10px;line-height:1.6}
+  .tcard .picks{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+  .tcard .picks span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:7px;padding:5px 10px;color:var(--ink)}
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-links{display:none}
+    .macro-grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .chain{flex-direction:column;align-items:stretch}
+    .conn{flex:0 0 38px;width:3px;height:38px;align-self:center;margin:6px 0;
+      background:var(--line)}
+    .conn::after{width:100%;height:42%;top:0;left:0;
+      background:linear-gradient(180deg,transparent,var(--glow),transparent);animation:flowv 2.6s linear infinite}
+    .conn.c2::after{animation-delay:.6s}.conn.c3::after{animation-delay:1.2s}
+    @keyframes flowv{0%{transform:translateY(-120%)}100%{transform:translateY(360%)}}
+    .node{padding:0;display:flex;align-items:center;gap:18px;text-align:left}
+    .node .disc{margin:0;flex-shrink:0;width:62px;height:62px}
+    .node .ndbody{flex:1}
+    .node .tags{justify-content:flex-start}
+    .hero-stats{grid-template-columns:1fr}
+    .bb{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI 전력 인프라 투자 지도</div>
+    <div class="nav-links">
+      <a href="#macro">01 / 수요</a>
+      <a href="#chain">02 / 밸류체인</a>
+      <a href="#stocks">03 / 종목</a>
+      <a href="#view">04 / 투자관점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">산업 리서치 · 2026.06 기준</span>
+    <h1 class="hero-title">지능을 켜려면<br><span class="hl">전기가 필요하다</span></h1>
+    <p class="hero-sub">GPU는 충분히 살 수 있어도, 그것을 돌릴 전력은 그렇지 않다. AI 데이터센터의 폭발적 전력 수요를 기점으로 발전·송배전·전력 인프라·냉각까지 밸류체인 전체를 분해하고 투자 기회를 매핑한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">415<span class="u"> → </span>945<span class="u"> TWh</span></div>
+        <div class="lab">글로벌 데이터센터 연간 전력소비 (2024 → 2030). 일본 전체 전력소비에 맞먹는 규모로 두 배 이상 증가.</div>
+        <div class="src">SRC: IEA Energy &amp; AI</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2<span class="u"> GW</span></div>
+        <div class="lab">단일 AI 클러스터(xAI Colossus, GPU 55.5만개)의 전력 소비. 웬만한 대도시 한 곳의 피크 수요를 넘어선다.</div>
+        <div class="src">SRC: 2025.12–2026.01</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">100<span class="u"> GW</span></div>
+        <div class="lab">GE 버노바 가스터빈 백로그(예약 포함). 발주는 폭증하는데 공급이 못 따라간다는 가장 직접적인 증거.</div>
+        <div class="src">SRC: GE Vernova 1Q26</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>전류를 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 MACRO ================= -->
+<section class="blk" id="macro">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;매크로 — AI가 만드는 전력 수요의 규모</div>
+      <h2 class="sec-title">컴퓨팅이 아니라, 전력이 한계다</h2>
+      <p class="sec-lead">AI 학습·추론은 기존 컴퓨팅과 차원이 다른 전력 밀도를 요구한다. 칩은 돈으로 빠르게 늘릴 수 있지만, 전력은 발전소·송전망·변압기라는 물리적 인프라에 묶여 있다. 이 시차가 곧 투자 기회다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>글로벌 데이터센터 전력 소비</h3>
+        <div class="ph-sub">단위: TWh / 연간 · IEA Base Case</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar b1" data-h="26%"><span class="val tnum">415</span></div>
+            <div class="yr">2024</div><div class="cap">전 세계 전력의 1.5%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="38%"><span class="val tnum">~580</span></div>
+            <div class="yr">2027E</div><div class="cap">AI 서버 가속 구간</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b2" data-h="92%"><span class="val tnum">945</span></div>
+            <div class="yr">2030E</div><div class="cap">≈ 일본 전체 소비량</div>
+          </div>
+        </div>
+        <div class="foot">데이터센터 전력은 2024–2030년 연평균 약 15% 증가해 전체 전력 수요 증가의 4배 속도다. 이 중 AI 가속 서버 소비는 연 30%씩 늘어 전체를 견인한다.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>왜 ‘다른 종류’의 전력인가</h3>
+        <div class="ph-sub">밀도 · 집중 · 속도</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">60kW+</div>
+            <div class="mt"><b>AI 랙 한 대</b>의 전력 소비. 일반 서버 랙(5–10kW)의 6–12배. 같은 면적에 몇 배의 전력과 발열이 몰린다.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">80→150</div>
+            <div class="mt">미국 데이터센터 용량(GW) 전망, <b>2025 → 2028</b>. 대형 발전소 수십 기에 해당하는 신규 발전이 필요하다. <span style="color:var(--ink-3)">(LBNL·Bloom Energy)</span></div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$500B</div>
+            <div class="mt"><b>Stargate</b>(OpenAI·SoftBank) 4년 인프라 계획. 5개의 1GW급 데이터센터가 2026–2027년에 차례로 가동을 앞두고 있다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>“병목은 GPU가 아니라 전력이다.”
+      <span class="u">IEA조차 “더 공격적인 수요 시나리오를 제약하는 것은 칩이 아니라 발전·송전·기자재 밸류체인의 병목”이라고 명시한다. 변압기·가스터빈의 리드타임은 수년 단위로 길어졌고, 빅테크는 전력망을 기다리지 못해 가스 발전소를 직접 짓고 있다. 수요는 디지털 속도로, 공급은 물리적 속도로 움직인다 — 그 격차에 가격 결정력과 수익이 쌓인다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 VALUE CHAIN ================= -->
+<section class="blk" id="chain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;밸류체인 맵 — 전력은 어디서 오는가</div>
+      <h2 class="sec-title">발전에서 칩까지, 전류를 따라가기</h2>
+      <p class="sec-lead">전기는 발전소에서 만들어져(발전) 송전망을 타고 운반되며(송배전), 데이터센터 안에서 분배·변환되고(DC 전력 인프라), 마지막으로 막대한 열을 식힌다(냉각). 각 단계마다 공급이 빠듯한 ‘불가결 노드’가 있다.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>전류 흐름 / 발전 → 냉각</div>
+      <div class="chain">
+        <!-- 발전 -->
+        <div class="node">
+          <div class="ndbody">
+            <div class="stage">STAGE 01</div>
+            <div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#FFB13E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+            <h4>발전</h4>
+            <div class="nd">원전·SMR / 가스터빈·LNG / 재생. 24시간 끊김 없는 베이스로드가 핵심.</div>
+            <div class="tags"><span>두산에너빌리티</span><span>GE Vernova</span><span>NuScale</span></div>
+          </div>
+        </div>
+        <div class="conn"></div>
+        <!-- 송배전 -->
+        <div class="node">
+          <div class="ndbody">
+            <div class="stage">STAGE 02</div>
+            <div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#4DA8FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v4M18 3v4M6 7h12M9 7l-3 14M15 7l3 14M9 11h6"/></svg></div>
+            <h4>송배전</h4>
+            <div class="nd">초고압 변압기·차단기·전력케이블. 글로벌 공급부족과 긴 리드타임이 진입장벽.</div>
+            <div class="tags"><span>HD현대일렉트릭</span><span>LS일렉트릭</span><span>대한전선</span></div>
+          </div>
+        </div>
+        <div class="conn c2"></div>
+        <!-- DC 인프라 -->
+        <div class="node">
+          <div class="ndbody">
+            <div class="stage">STAGE 03</div>
+            <div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#38E6D4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.4"/><rect x="3" y="14" width="18" height="6" rx="1.4"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+            <h4>DC 전력 인프라</h4>
+            <div class="nd">UPS·배전반·전력반도체. 직류(DC) 배전과 자가발전(연료전지) 전환이 트렌드.</div>
+            <div class="tags"><span>Vertiv</span><span>Bloom Energy</span><span>LS일렉트릭</span></div>
+          </div>
+        </div>
+        <div class="conn c3"></div>
+        <!-- 냉각 -->
+        <div class="node">
+          <div class="ndbody">
+            <div class="stage">STAGE 04</div>
+            <div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="#9DA9C2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 7l16 10M20 7 4 17M12 2l3 3M12 2 9 5M12 22l3-3M12 22l-3-3"/></svg></div>
+            <h4>냉각</h4>
+            <div class="nd">공냉 → 수냉(D2C) → 액침냉각. 랙 발열 급증으로 액체냉각이 필수재로.</div>
+            <div class="tags"><span>액침 유체</span><span>Schneider</span><span>SK엔무브</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 STOCKS ================= -->
+<section class="blk" id="stocks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;종목 분석 — 핵심 플레이어</div>
+      <h2 class="sec-title">밸류체인 단계별 투자 포인트</h2>
+      <p class="sec-lead">각 종목을 ‘AI 전력과의 연결 고리 → 핵심 숫자 → Bull/Bear → 모니터링 지표(킬 크라이테리아)’ 순으로 정리했다. 수치는 2025 연간~2026년 1분기 기준 공시·언론 보도 종합.</p>
+    </div>
+
+    <!-- GENERATION -->
+    <div class="group-label reveal"><span class="gi">⚡ STAGE 01</span><span class="gt">발전</span><span class="gl"></span></div>
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="card-top">
+          <div><div class="card-name">두산에너빌리티</div><div class="ticker">KRX 034020</div></div>
+          <span class="badge gen">가스터빈·원전·SMR</span>
+        </div>
+        <div class="link-line">국산 기술로 가스터빈 종주국 미국 시장에 진입, <b>빅테크에 가스터빈 5기</b> 공급. 동시에 NuScale·X-energy·TerraPower와 협력하며 창원에 <b>SMR 전용공장</b>(연 20기)을 짓는다. AI 전력 수요의 ‘발전 측 종합세트’.</div>
+        <div class="nums">
+          <div><div class="nk">2025 신규수주</div><div class="nv tnum">14.7조</div></div>
+          <div><div class="nk">발전 수주잔고</div><div class="nv tnum">23조+</div></div>
+          <div><div class="nk">체코 원전</div><div class="nv tnum">5.6조</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>가스터빈 슈퍼사이클 + SMR이라는 장기 옵션. 체코 매출이 2026년부터 인식 시작.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>수주→이익 시차가 길어 진정한 회수기는 2030년대. 자회사(밥캣·퓨얼셀) 비용·밸류 부담.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>분기 가스터빈 신규수주 둔화 / SMR이 ‘협력’ 단계에 머물고 본계약 전환이 지연될 때.</div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div><div class="card-name">GE Vernova</div><div class="ticker">NYSE GEV</div></div>
+          <span class="badge gen">글로벌 가스터빈 1위</span>
+        </div>
+        <div class="link-line">가스터빈 백로그가 <b>예약 포함 100GW</b>까지 차 2029년 이후로 슬롯이 밀려 있고, 가격은 신규 예약이 기존 수주를 웃돈다. 1분기 데이터센터향 전동화 수주만 <b>$2.4B</b>로 작년 연간치를 넘어섰다.</div>
+        <div class="nums">
+          <div><div class="nk">총 백로그</div><div class="nv tnum">$163B</div></div>
+          <div><div class="nk">가스터빈 연산</div><div class="nv tnum">20→24GW</div></div>
+          <div><div class="nk">1Q26 순이익</div><div class="nv tnum">$4.7B</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>슬롯 매진 + ASP 상승 + 발전·송전 ‘통합 솔루션’. Prolec 인수로 북미 변압기까지 확장.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>이미 높아진 밸류에이션(EV/EBITDA). 풍력 부진과 정책 민감도.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>가스터빈 $/kW 상승세 둔화 / 슬롯 예약의 실제 수주 전환율 하락.</div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <div><div class="card-name">NuScale Power</div><div class="ticker">NYSE SMR</div></div>
+          <span class="badge gen">SMR 선도 · 고위험 옵션</span>
+        </div>
+        <div class="link-line">미국 NRC <b>설계인증 1호</b> SMR. 모듈당 77MWe, 최대 12모듈 924MWe. 파트너 ENTRA1을 통해 TVA와 <b>최대 6GW</b> 배치 — 미국 역사상 최대 SMR 프로그램. 데이터센터 무탄소 베이스로드 수요가 명분.</div>
+        <div class="nums">
+          <div><div class="nk">모듈 출력</div><div class="nv tnum">77MWe</div></div>
+          <div><div class="nk">TVA 잠재배치</div><div class="nv tnum">6GW</div></div>
+          <div><div class="nk">1Q26 유동성</div><div class="nv tnum">$1.0B</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>인증 선점 first-mover. DC·산업용 24시간 무탄소 전력 수요의 직접 수혜.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>아직 의미 있는 매출 없음·적자 지속. 실제 배치 시점과 비용·일정 리스크가 큼.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>TVA 합의의 ‘구속력 계약’ 전환 실패 / 첫 모듈 착공 일정의 반복적 지연.</div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div><div class="card-name">재생에너지의 자리</div><div class="ticker">보완재 · 한계 분명</div></div>
+          <span class="badge gen">Context</span>
+        </div>
+        <div class="link-line">태양광·풍력은 가장 싸지만 <b>간헐성</b> 때문에 24시간 가동돼야 하는 AI 클러스터의 ‘단독 해법’이 되기 어렵다. 빅테크가 자체 발전소(가스·연료전지·원전 PPA)와 ESS를 병행하는 이유다.</div>
+        <div class="nums">
+          <div><div class="nk">역할</div><div class="nv" style="font-size:.84rem">전력믹스 보완</div></div>
+          <div><div class="nk">필수 페어</div><div class="nv" style="font-size:.84rem">ESS·계통</div></div>
+          <div><div class="nk">수혜 채널</div><div class="nv" style="font-size:.84rem">HVDC·송전</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>해상풍력은 장거리 송전(HVDC·해저케이블) 수요를 만들어 송배전 종목에 낙수효과.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>정책·금리에 민감하고, AI의 ‘즉시·상시’ 수요에는 직접 대응력이 약함.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>보조금·계통연계 정책 후퇴 / 베이스로드 경쟁에서 가스·원전에 지속 밀릴 때.</div>
+      </div>
+
+    </div>
+
+    <!-- T&D -->
+    <div class="group-label reveal"><span class="gi">🔌 STAGE 02</span><span class="gt">송배전</span><span class="gl"></span></div>
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="card-top">
+          <div><div class="card-name">HD현대일렉트릭</div><div class="ticker">KRX 267260</div></div>
+          <span class="badge grid">초고압 변압기</span>
+        </div>
+        <div class="link-line">미국 내 최대 전압 <b>765kV 초고압 변압기</b>를 만들 수 있는 소수 기업. 전력망 70%가 1960년대인 미국에서 교체+AI 신규 수요가 겹치며 북미가 핵심 시장이 됐다. 고마진 북미 비중이 2027년 절반을 넘을 전망.</div>
+        <div class="nums">
+          <div><div class="nk">수주잔고(3Q25)</div><div class="nv tnum">9.6조</div></div>
+          <div><div class="nk">1–3Q25 영익</div><div class="nv tnum">6,744억</div></div>
+          <div><div class="nk">3Q OPM</div><div class="nv tnum">24.8%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>765kV 과점 + 미국 교체 슈퍼사이클. 연 영업이익 1조 가시권, 앨라배마 증설(2027).</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>가파른 주가 상승으로 밸류 부담. 관세·환율 변수.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>북미 신규 수주 모멘텀 둔화 / 변압기 ASP(판가) 상승 멈춤.</div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div><div class="card-name">LS일렉트릭</div><div class="ticker">KRX 010120</div></div>
+          <span class="badge grid">변압기 + 배전 + 자가발전</span>
+        </div>
+        <div class="link-line">초고압 변압기뿐 아니라, 변압기 시장의 <b>약 6배 큰 북미 배전 시장</b>에서 빅테크 데이터센터 전력 시스템 공급사로 자리잡았다. Bloom Energy 연료전지 전력설비 3,190억 수주 등 ‘발전 인근 분산전원’까지 솔루션화.</div>
+        <div class="nums">
+          <div><div class="nk">2025 매출</div><div class="nv tnum">4.96조</div></div>
+          <div><div class="nk">수주잔고</div><div class="nv tnum">5조</div></div>
+          <div><div class="nk">DC 수주</div><div class="nv tnum">1조+</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>송·배전을 아우르는 토탈 솔루션. 북미 매출 1조 돌파, HVDC·ESS로 확장.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>중국 사업 회복 지연, 관세 영향. DC 물량의 분기 변동성.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>북미 DC 후속 수주 공백 / 배전 점유율·마진 둔화.</div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <div><div class="card-name">대한전선</div><div class="ticker">KRX 001440</div></div>
+          <span class="badge grid">HVDC · 해저케이블</span>
+        </div>
+        <div class="link-line">초고압교류(HVAC)·<b>초고압직류(HVDC) 해저케이블</b> 기술을 보유. 미국·유럽 노후 전력망 교체와 해상풍력 장거리 송전 수요가 맞물린다. 당진 해저 2공장(약 5,000억, 2027 가동)으로 생산기반 확장 중.</div>
+        <div class="nums">
+          <div><div class="nk">2025 매출</div><div class="nv tnum">3.64조</div></div>
+          <div><div class="nk">수주잔고</div><div class="nv tnum">3.66조</div></div>
+          <div><div class="nk">2025 영익</div><div class="nv tnum">1,286억</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>해저·HVDC라는 높은 진입장벽. 수주잔고는 2021년 인수 당시 대비 3배 이상.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>구리값 원가 부담, 마진 회복은 진행 중. 리레이팅 상당부분 진행돼 단기 추격 부담.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>해저·HVDC 신규 수주 둔화 / 2공장 가동·수익성 개선 지연.</div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div><div class="card-name">변압기 공급부족</div><div class="ticker">구조적 배경</div></div>
+          <span class="badge grid">Context</span>
+        </div>
+        <div class="link-line">전 세계가 동시에 전력망을 늘리면서 <b>초고압 변압기 리드타임이 수년 단위</b>로 길어졌다. 신규 증설은 더디고, 그 사이 ‘만들 수 있는 곳’이 가격을 정한다 — 한국 3사가 북미에서 사상 최대 실적을 쓰는 이유.</div>
+        <div class="nums">
+          <div><div class="nk">미국 망 노후</div><div class="nv" style="font-size:.84rem">70% / 1960s</div></div>
+          <div><div class="nk">북미 DC 인프라</div><div class="nv tnum">13→56조</div></div>
+          <div><div class="nk">기간</div><div class="nv" style="font-size:.84rem">2025→2035</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>공급자 우위 시장. 신규 CAPA가 켜지기 전까지 판가·마진이 유지·확대.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>증설이 한꺼번에 풀리면 공급부족 해소 → 가격 정상화 리스크.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>글로벌 변압기 증설 가속으로 리드타임이 빠르게 정상화될 때.</div>
+      </div>
+
+    </div>
+
+    <!-- DC INFRA + COOLING -->
+    <div class="group-label reveal"><span class="gi">🖥️ STAGE 03–04</span><span class="gt">DC 전력 인프라 &amp; 냉각</span><span class="gl"></span></div>
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="card-top">
+          <div><div class="card-name">DC 전력 인프라</div><div class="ticker">UPS · 배전반 · 전력반도체</div></div>
+          <span class="badge dc">데이터센터 내부</span>
+        </div>
+        <div class="link-line">데이터센터 안에서 전기를 받아 분배·변환·보호하는 단계. 고밀도 랙은 <b>직류(DC) 배전</b>으로 전환되고, 전력망을 기다리지 못한 빅테크는 연료전지·가스로 <b>자가발전(behind-the-meter)</b>을 택한다. Vertiv·슈나이더·Bloom Energy, 그리고 배전·연료전지 설비를 대는 LS일렉트릭이 수혜.</div>
+        <div class="nums">
+          <div><div class="nk">랙 밀도</div><div class="nv tnum">60kW+</div></div>
+          <div><div class="nk">추세</div><div class="nv" style="font-size:.82rem">DC 배전·자가발전</div></div>
+          <div><div class="nk">핵심부품</div><div class="nv" style="font-size:.82rem">전력반도체</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>‘전력→랙(power-to-rack)’ 통합 발주. 자가발전 전환으로 연료전지·배전 동반 성장.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>경쟁 심화·표준화로 마진 압박 가능. 빅테크 CAPEX 사이클에 동행.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>하이퍼스케일러 CAPEX 가이던스 하향 / 자가발전 채택 둔화.</div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div><div class="card-name">냉각 — 액침으로의 전환</div><div class="ticker">공냉 → 수냉 → 액침</div></div>
+          <span class="badge cool">열 관리</span>
+        </div>
+        <div class="link-line">랙당 발열이 급증하며 공냉의 한계가 분명해졌다. 다이렉트-투-칩 수냉을 거쳐 <b>액침냉각</b>으로 이동 중이며, 액체냉각 시장은 연 30%+ 성장이 전망된다. 3M의 냉각유체 생산 중단(2025말)으로 생긴 공백은 <b>SK엔무브·GS칼텍스</b> 등 국내 유체 공급사에 기회.</div>
+        <div class="nums">
+          <div><div class="nk">시장 성장</div><div class="nv tnum">30%+/yr</div></div>
+          <div><div class="nk">전환축</div><div class="nv" style="font-size:.82rem">D2C·액침</div></div>
+          <div><div class="nk">유체 공백</div><div class="nv" style="font-size:.82rem">3M 철수</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>고밀도 GPU엔 액체냉각이 사실상 필수재. 유체·CDU·솔루션 전반 수요 확대.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>표준·레퍼런스 미확립, 종목별 실적 연결 약함. 테마성 변동 주의.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>빅테크 표준 냉각 채택사 확정 시 비채택사 소외 / 유체 양산·인증 지연.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 VIEW ================= -->
+<section class="blk" id="view">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;투자 관점 정리</div>
+      <h2 class="sec-title">언제, 어디를 볼 것인가</h2>
+      <p class="sec-lead">같은 테마라도 ‘이미 실적으로 증명된 구간’과 ‘이제 매출이 인식되기 시작하는 구간’의 리스크-리워드는 다르다. 시간축으로 나눠 본다.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tcard short reveal">
+        <div class="th">● 단기 · 향후 6개월</div>
+        <h3>증명된 현금흐름 — 송배전</h3>
+        <div class="tp">수주잔고와 분기 실적이 이미 숫자로 나오는 구간. 북미 변압기·배전·케이블은 공급자 우위가 유지되는 동안 가시성이 높다. 단, 주가가 빠르게 오른 만큼 밸류에이션 부담을 함께 본다.</div>
+        <div class="picks"><span>HD현대일렉트릭</span><span>LS일렉트릭</span><span>대한전선</span><span>GE Vernova</span></div>
+      </div>
+      <div class="tcard mid reveal d1">
+        <div class="th">● 중기 · 향후 2년</div>
+        <h3>매출 인식 본격화 — 발전·냉각</h3>
+        <div class="tp">두산의 가스터빈·체코 원전 매출이 인식되기 시작하고, 대한전선 해저 2공장이 가동되며, 냉각 전환이 양산 단계로 들어선다. 변동성은 크지만 실적 레벨업의 변곡이 이 구간에 있다. SMR은 ‘2030년대’를 보는 장기 옵션.</div>
+        <div class="picks"><span>두산에너빌리티</span><span>냉각 유체·솔루션</span><span>대한전선(2공장)</span><span>NuScale (옵션)</span></div>
+      </div>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 요인 — 무엇이 이 테제를 깨는가</h3>
+      <div class="risk-grid">
+        <div class="ritem"><div class="ri">R1</div><div class="rt"><b>AI CAPEX 사이클 조정</b><span>하이퍼스케일러 투자 둔화·연기 시 전력 발주가 가장 먼저 흔들린다.</span></div></div>
+        <div class="ritem"><div class="ri">R2</div><div class="rt"><b>효율 개선의 역설</b><span>IEA에 따르면 AI 작업당 에너지는 매년 큰 폭으로 떨어진다. 효율이 수요 전망을 깎을 수 있다.</span></div></div>
+        <div class="ritem"><div class="ri">R3</div><div class="rt"><b>공급부족 해소</b><span>변압기·가스터빈 증설이 한꺼번에 풀리면 공급자 우위와 판가가 정상화된다.</span></div></div>
+        <div class="ritem"><div class="ri">R4</div><div class="rt"><b>정책·관세·금리</b><span>전력요금 규제, 미국 관세, 환율, 그리고 높아진 밸류에이션을 누르는 금리.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 전력 인프라 투자 지도</div>
+      <div class="src-list">
+        DATA · IEA Energy &amp; AI (2025–2026) · LBNL · Bloom Energy<br>
+        각 사 공시·IR / 국내외 언론보도 (2025 연간–2026 1Q)<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // bar heights
+  window.addEventListener('load',()=>{
+    document.querySelectorAll('.bar').forEach(b=>{
+      requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+</script>
+</body>
+</html>
