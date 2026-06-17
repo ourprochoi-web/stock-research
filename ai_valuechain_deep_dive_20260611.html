@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 밸류체인 심화 검증 — 1·2·3군 분석 (2026.06.11)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ibm/plex@6.4.1/css/ibm-plex.min.css">
+<style>
+:root{
+  --ink:#1a2332; --steel:#5b6b7f; --faint:#8a96a3;
+  --paper:#ffffff; --wash:#f6f7f5; --hairline:#e2e4e0;
+  --teal:#0f6e56; --teal-bg:#eef6f2;
+  --amber:#b45f1d; --amber-bg:#faf3ea;
+  --red:#a32d2d; --red-bg:#fbf0f0;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--wash);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.page{max-width:880px;margin:0 auto;padding:48px 28px 80px;background:var(--paper);min-height:100vh;border-left:1px solid var(--hairline);border-right:1px solid var(--hairline)}
+
+/* ── masthead ── */
+.masthead{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+.masthead .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--steel);text-transform:uppercase;margin-bottom:10px}
+.masthead h1{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.masthead .sub{margin-top:8px;color:var(--steel);font-size:14px}
+.meta-row{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--steel);padding:12px 0;border-bottom:1px solid var(--hairline);margin-bottom:36px}
+.meta-row span b{color:var(--ink);font-weight:600}
+
+/* ── sections ── */
+.sec{margin-bottom:56px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-head .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;padding:3px 9px;border:1px solid var(--ink);color:var(--ink)}
+.sec-head h2{font-size:21px;font-weight:800;letter-spacing:-.01em}
+.sec-lede{color:var(--steel);font-size:14px;margin-bottom:24px;max-width:680px}
+
+/* ── verdict summary table ── */
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);font-weight:600;text-align:left;padding:8px 10px;border-bottom:2px solid var(--ink)}
+td{padding:10px;border-bottom:1px solid var(--hairline);vertical-align:top}
+.num{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.verdict{font-weight:700;white-space:nowrap}
+.v-go{color:var(--teal)} .v-hold{color:var(--amber)} .v-no{color:var(--red)}
+
+/* ── card ── */
+.card{border:1px solid var(--hairline);border-top:3px solid var(--ink);margin-bottom:36px;background:var(--paper)}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;padding:18px 22px 0}
+.card-head h3{font-size:19px;font-weight:800;letter-spacing:-.01em}
+.card-head .ticker{font-family:var(--mono);font-size:12px;color:var(--steel);margin-left:8px;font-weight:400}
+.badge{font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 10px;letter-spacing:.06em}
+.b-go{background:var(--teal-bg);color:var(--teal)}
+.b-hold{background:var(--amber-bg);color:var(--amber)}
+.b-watch{background:var(--red-bg);color:var(--red)}
+
+/* signature: coordinate strip */
+.coord{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin:16px 22px 0;border:1px solid var(--hairline)}
+.coord>div{padding:10px 14px;border-right:1px solid var(--hairline)}
+.coord>div:last-child{border-right:none}
+.coord .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.coord .val{font-family:var(--mono);font-size:17px;font-weight:600;margin-top:2px}
+.coord .note{font-size:11px;color:var(--steel);margin-top:1px}
+
+.card-body{padding:18px 22px 22px}
+.block{margin-bottom:18px}
+.block:last-child{margin-bottom:0}
+.block h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.block h4::after{content:'';flex:1;height:1px;background:var(--hairline)}
+.block ul{list-style:none}
+.block li{padding-left:14px;position:relative;margin-bottom:5px;font-size:14px}
+.block li::before{content:'—';position:absolute;left:0;color:var(--faint)}
+.block li b{font-weight:700}
+.judg{background:var(--wash);padding:12px 16px;font-size:14px;border-left:3px solid var(--steel)}
+
+/* kill criteria — signature element */
+.kill{border:1.5px dashed var(--red);background:var(--red-bg);padding:14px 18px;margin-top:18px}
+.kill h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--red);font-weight:700;margin-bottom:8px}
+.kill li{padding-left:18px;position:relative;margin-bottom:5px;font-size:13.5px;color:#5c1f1f}
+.kill li::before{content:'✕';position:absolute;left:0;color:var(--red);font-weight:700;font-size:11px;top:2px}
+.kill .fired{text-decoration:none;background:#f3d9d9;padding:1px 5px;font-weight:700}
+
+.cat-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.cat{font-family:var(--mono);font-size:11.5px;background:var(--wash);border:1px solid var(--hairline);padding:5px 10px}
+.cat b{color:var(--ink)}
+
+/* tier 3 dashboard */
+.gauge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:18px 0}
+.gauge{border:1px solid var(--hairline);padding:14px 16px}
+.gauge .g-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.gauge .g-val{font-size:17px;font-weight:800;margin:4px 0 2px}
+.gauge .g-dir{font-family:var(--mono);font-size:11px;font-weight:600}
+.d-up{color:var(--teal)} .d-warn{color:var(--amber)} .d-down{color:var(--red)}
+.gauge .g-note{font-size:12px;color:var(--steel);margin-top:5px;line-height:1.5}
+
+.scenario{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.scn{border:1px solid var(--hairline);padding:16px 18px}
+.scn h5{font-size:14px;font-weight:800;margin-bottom:4px}
+.scn .prob{font-family:var(--mono);font-size:11px;color:var(--steel)}
+.scn p{font-size:13px;color:var(--ink);margin-top:8px}
+.scn ul{list-style:none;margin-top:8px}
+.scn li{font-size:12.5px;color:var(--steel);padding-left:12px;position:relative;margin-bottom:3px}
+.scn li::before{content:'·';position:absolute;left:0}
+
+/* footer */
+.foot{margin-top:60px;padding-top:18px;border-top:2px solid var(--ink);font-size:12px;color:var(--steel)}
+.foot p{margin-bottom:6px}
+.src{font-family:var(--mono);font-size:11px;color:var(--faint);line-height:1.8}
+
+@media (max-width:640px){
+  .page{padding:32px 18px 60px}
+  .masthead h1{font-size:24px}
+  .scenario{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff}
+  .page{border:none;max-width:100%}
+  .card{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════ MASTHEAD ═══════════ -->
+<div class="masthead">
+  <div class="kicker">Investment Verification Memo · AI Value Chain</div>
+  <h1>AI 밸류체인 심화 검증<br>1군 검증카드 · 2군 승격트리거 · 3군 사이클판정</h1>
+  <div class="sub">스크리닝(성장 대비 저평가 평면 × 불가결 노드)에서 추출된 가격매력 종목의 좌표 진위 검증. 종목별 성장분해 — 삼각측량 — 다운사이드 — 촉매 — 무효화조건 구조.</div>
+</div>
+<div class="meta-row">
+  <span>작성 <b>2026.06.11</b> · 갱신 <b>06.16</b></span>
+  <span>기준 주가 <b>6/12 종가</b></span>
+  <span>방법론 <b>PEG 평면 + 불가결 노드 교차</b></span>
+  <span>성격 <b>내부 검토용 · 투자권유 아님</b></span>
+</div>
+
+<!-- ═══════════ EXECUTIVE SUMMARY ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">SUMMARY</span><h2>판정 요약</h2></div>
+  <p class="sec-lede">검증 결과, 스크리닝 시점 대비 두 종목의 상태 변경. Broadcom — 6/3 실적 발표 후 급등으로 가격매력 소진(성장은 가속). HPSP — 예스티 시장진입 확인으로 노드 논리 일부 훼손, 6/18 특허법원 선고 전 진입 보류.</p>
+  <table>
+    <tr><th>군</th><th>종목</th><th>좌표 (P/E·성장)</th><th>판정</th><th>액션</th></tr>
+    <tr><td>1군</td><td><b>Vertiv</b></td><td class="num">45배 · +51%</td><td class="verdict v-go">진입 유효</td><td>고점 -25% 구간, 분할 진입. Q2 실적(7월말) 전후 2회 분할</td></tr>
+    <tr><td>1군</td><td><b>이수페타시스</b></td><td class="num">37배 · +45%</td><td class="verdict v-go">진입 유효</td><td>3Q26 G사 8세대 램프업 전 선취. 8/18 실적이 1차 검증점</td></tr>
+    <tr><td>1군</td><td><b>Broadcom</b></td><td class="num">~40배 · +70%↑</td><td class="verdict v-hold">눌림 대기</td><td>6/3 실적 후 급등. PEG는 오히려 개선됐으나 추격 구간 — 조정 시 우선 매수</td></tr>
+    <tr><td>1군→보류</td><td><b>HPSP</b></td><td class="num">33배 · +37%</td><td class="verdict v-hold">6/18 판결 대기</td><td>킬 크라이테리아 1개 선행 발동. 판결 확인 후 재분류</td></tr>
+    <tr><td>2군</td><td>쏠리드 · Celestica · HD현대일렉트릭</td><td class="num">16~33배</td><td class="verdict v-hold">트리거 감시</td><td>승격 조건 계량화 완료 — 본문 트리거 보드 참조</td></tr>
+    <tr><td>3군</td><td>SK하이닉스 / 마이크론</td><td class="num">6.5~11.5배 · +400%↑</td><td class="verdict v-go">보유 유효·신규 증액 금지</td><td>하우스 뷰 "타이밍 B·깊이 A" — 가격 정점 4Q26 내 70%, 정점 후 얕은 조정 55~60%. 판정 지표 6종(CXMT 침투·HBM4 협상 추가) 분기 점검</td></tr>
+    <tr><td>신설</td><td><b>Alphabet</b> / Amazon</td><td class="num">~27배 · +9% / ~26배 · +8.5%</td><td class="verdict v-hold">수요 모니터</td><td>EPS 평면 기준 가격매력 미달(PEG ~3) — 보유 대상이 아니라 전 포트폴리오의 수요 선행지표. 구글은 에쿼티 조달로 부채 리스크 상대 우위</td></tr>
+    <tr><td>신설</td><td>전기설비 노드 (효성중공업 · Powell 등)</td><td class="num">좌표 확보 중</td><td class="verdict v-hold">테제 강화</td><td>타이밍 갭(커밋 capex vs 가동 MW)의 직접 수혜 단 — 본문 신설 섹션 참조</td></tr>
+    <tr><td>헤지</td><td>지정학 (InP·희토류: AXT·MP·Lynas)</td><td class="num">PEG 부적용</td><td class="verdict v-hold">위성·소액</td><td>"미·중 디커플링" 베타 — capex와 다른 축의 분산재. 진짜 노드는 중국이 쥔 인듐·희토류 정제. 정책 풋옵션, EXPANSION 3 참조</td></tr>
+    <tr><td>신규</td><td><b>삼성전기</b> (FC-BGA·MLCC)</td><td class="num">~24배 · +26%</td><td class="verdict v-hold">신규 감시</td><td>PEG ~0.9 통과 · 4층 기판 노드. 단 6/12 급등 변동성으로 타이밍 보류 — MLCC 가격인상 공시가 분모 확대 트리거. EXPANSION 4 참조</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════ TIER 1 ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">TIER 1</span><h2>검증카드 — 진입 후보 4종</h2></div>
+  <p class="sec-lede">카드별 5단 구조. 성장분해(성장의 원천이 P인지 Q인지 마진인지) → 삼각측량(가이던스·컨센서스·선행지표 정합성) → 다운사이드(하이퍼스케일러 capex -20% 가정) → 촉매 → 무효화조건.</p>
+
+  <!-- ── VERTIV ── -->
+  <div class="card">
+    <div class="card-head">
+      <h3>Vertiv<span class="ticker">NYSE: VRT · 냉각/전력관리</span></h3>
+      <span class="badge b-go">진입 유효</span>
+    </div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">$284</div><div class="note">6/10 · 고점 $376 대비 -25%</div></div>
+      <div><div class="lbl">2026E P/E</div><div class="val">~45배</div><div class="note">조정 EPS $6.35 기준</div></div>
+      <div><div class="lbl">EPS 성장</div><div class="val">+51%</div><div class="note">회사 가이던스 (2회 상향)</div></div>
+      <div><div class="lbl">PEG</div><div class="val">0.9</div><div class="note">1군 내 근거 신뢰도 최상</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>성장분해 — Q × 마진 동시 구동</h4><ul>
+        <li>Q: 1Q26 매출 $2,650M, +30%. 4Q25 유기적 수주 +252%, 백로그 $15.0B(+109%) — 물량이 1차 동력</li>
+        <li>마진: 1Q26 조정 영업이익률 20.8%(+430bp). 가동 레버리지 + 가격-원가 우호 — 매출 +30%가 EPS +51%로 증폭되는 구조</li>
+        <li>P: 800V 포트폴리오 2H26 출시 — NVIDIA Kyber 랙 전환(2027 대량배치)의 신규 ASP 단. 현재 좌표에 미반영</li>
+      </ul></div>
+      <div class="block"><h4>삼각측량</h4><ul>
+        <li>가이던스(EPS $6.30~6.40) vs 백로그: book-to-bill 2.9배 — 백로그가 약 1.1년치 매출. 가이던스가 백로그 대비 보수적 → 추가 상향 여지가 정합적</li>
+        <li>이견: 모닝스타 적정가치 $144(불확실성 '매우 높음') — 멀티플 정상화 시나리오의 하단 앵커로 보유</li>
+      </ul></div>
+      <div class="block"><h4>다운사이드 — capex -20% 가정</h4><ul>
+        <li>DC 매출 비중 80%+ 순수노출. 수주 +252%의 역회전 시 주문 급감 폭도 대칭적으로 큼</li>
+        <li>단, $15B 백로그가 1년+ 완충 — 이익 타격은 1~2분기 지연되어 도착. 멀티플 압축(45→25배)이 먼저 옴 → 손실의 대부분은 실적이 아니라 멀티플에서 발생</li>
+        <li><b>지연 vs 취소 구분 ('26.6 추가)</b>: 업계 '25 프로젝트 57% 지연·1Q26 20건 취소 — 수요 소멸 없이 백로그→매출 전환만 미끄러지는 어닝 미스 가능. 분기 백로그 전환율(당기 매출/기초 백로그)을 별도 추적 — 전환율 하락+수주 유지면 "지연"(보유), 둘 다 하락이면 "취소"(킬)</li>
+      </ul></div>
+      <div class="block"><h4>촉매</h4>
+        <div class="cat-row"><span class="cat"><b>7월말</b> Q2 실적 — 3회 연속 가이던스 상향 여부</span><span class="cat"><b>2H26</b> 800V 제품 출시</span><span class="cat"><b>2027</b> Kyber 랙 대량배치</span></div>
+      </div>
+      <div class="kill"><h4>KILL CRITERIA — 무효화 조건</h4><ul>
+        <li>분기 유기적 수주 YoY 마이너스 전환 (백로그 내러티브 종료 신호)</li>
+        <li>조정 영업이익률 18% 하회 2개 분기 지속 (가격-원가 역전)</li>
+        <li>주요 하이퍼스케일러 1곳 이상 DC capex 가이던스 하향</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- ── 이수페타시스 ── -->
+  <div class="card">
+    <div class="card-head">
+      <h3>이수페타시스<span class="ticker">KRX: 007660 · AI가속기 MLB</span></h3>
+      <span class="badge b-go">진입 유효</span>
+    </div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">136,300원</div><div class="note">6/3 · 고점 164,400 대비 -17%</div></div>
+      <div><div class="lbl">12MF P/E</div><div class="val">~37배</div><div class="note">한투 목표가 산식 역산</div></div>
+      <div><div class="lbl">이익 성장</div><div class="val">+45%</div><div class="note">14개사 컨센서스</div></div>
+      <div><div class="lbl">PEG</div><div class="val">0.75</div><div class="note">목표가 평균 184,929 (+36%)</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>성장분해 — P·Q·믹스 3중 구동, 1군 중 유일</h4><ul>
+        <li>Q: 빅테크 AI capex 물량 — 1Q26 매출 3,391억(+34%), 분기 수주잔고 연속 증가</li>
+        <li>P: 다중적층 비중 확대로 blended ASP 상승 — 한투, ASP 상승세가 예상 상회 시 추정치 추가 상향 명시</li>
+        <li>믹스: HDI+MLB 하이브리드 기판 전환 — 북미 전략고객 품질인증 통과, 양산 캐파 준비 중. 2H26 캐파 축소+ASP 상승으로 포트폴리오 개선 국면</li>
+        <li>증거: 2025 영업이익 2,047억(+101%, OPM 18.8%) — 이미 P×Q가 마진으로 전환됨을 실적으로 입증</li>
+      </ul></div>
+      <div class="block"><h4>삼각측량</h4><ul>
+        <li>컨센서스(14사 전원 매수) = 가이던스 방향 = 선행지표(대구 PCB 수출액·경쟁사 월매출 특이점 없음) — 3자 정합. 1군 중 삼각측량이 가장 깨끗함</li>
+        <li>캐파 증설 발표로 2027 EPS +17% 상향 — 성장둔화 우려(유일한 약점)가 해소된 직후</li>
+      </ul></div>
+      <div class="block"><h4>다운사이드</h4><ul>
+        <li>단일고객 집중: G사 TPU 의존 — TPU 외판 전략 둔화 시 P·Q 동시 타격. capex -20% 시나리오에서 1군 중 진폭 최대 추정</li>
+        <li>증설기 고정비: 캐파 투자 사이클 진입 — 수요 둔화와 겹치면 마진 역레버리지</li>
+      </ul></div>
+      <div class="block"><h4>촉매</h4>
+        <div class="cat-row"><span class="cat"><b>8/18</b> 2Q 실적</span><span class="cat"><b>3Q26~4Q26</b> G사 8세대 양산 — 추정치 상향 기반 리레이팅 구간(메리츠)</span></div>
+      </div>
+      <div class="kill"><h4>KILL CRITERIA — 무효화 조건</h4><ul>
+        <li>분기 수주잔고 감소 전환</li>
+        <li>G사 TPU 외판 전략 축소·세대 전환 지연 공시</li>
+        <li>하이브리드 기판 양산 인증 지연 (믹스 개선 스토리 소멸)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- ── BROADCOM ── -->
+  <div class="card">
+    <div class="card-head">
+      <h3>Broadcom<span class="ticker">NASDAQ: AVGO · 커스텀 XPU/네트워킹</span></h3>
+      <span class="badge b-hold">눌림 대기 — 좌표 수정</span>
+    </div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">~$460</div><div class="note">6/3 실적 후 급등 (직전 $310대)</div></div>
+      <div><div class="lbl">2026E P/E</div><div class="val">~40배</div><div class="note">Non-GAAP EPS ~$11 추정</div></div>
+      <div><div class="lbl">성장</div><div class="val">가속</div><div class="note">AI매출 +106% → +143%</div></div>
+      <div><div class="lbl">PEG</div><div class="val">~0.6</div><div class="note">개선 — 단, 가격이 먼저 반응</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>좌표 수정 사유 — 6/3 FQ2 실적</h4><ul>
+        <li>FQ2 매출 $22.2B(+48%), AI 반도체 매출 <b>$10.8B(+143%)</b> — 전분기 +106%에서 가속, 자체 가이던스($10.7B) 상회</li>
+        <li>FQ3 가이던스 매출 <b>$29.4B(+84%)</b> — 분기 매출이 한 분기 만에 $7B 점프하는 이례적 가이던스</li>
+        <li>FCF $10.3B, 매출의 46% — 성장과 현금창출 동시. Non-GAAP EPS $2.44(FQ2)</li>
+        <li>결과: 스크리닝 시점($310, 고점 -25%)의 "눌림" 전제가 소멸 — 주가가 실적 발표 주간 신고가권 회귀</li>
+      </ul></div>
+      <div class="block"><h4>삼각측량</h4><ul>
+        <li>가이던스가 컨센서스를 견인하는 국면 — 2개 분기 연속 자체 전망 상회. 구글 TPU 2031년 계약 + 신규 하이퍼스케일러 3곳이 멀티이어 앵커</li>
+        <li>FQ3 +84% 가이던스의 함의: 신규 XPU 고객 램프 시작 추정 — 9월 실적에서 고객별 기여 확인 필요</li>
+      </ul></div>
+      <div class="block"><h4>다운사이드</h4><ul>
+        <li>XPU는 소수 고객 구조 — 1곳의 설계 내재화·주문 이연이 분기 매출을 직접 타격</li>
+        <li>완충: 인프라SW(VMware) 부문의 경상 매출 — 1군 중 유일한 비(非)capex 완충재. 같은 -20% 시나리오에서 EPS 방어력 최상</li>
+      </ul></div>
+      <div class="block"><h4>판단</h4>
+        <div class="judg">성장이 가격보다 빨리 커져 PEG는 0.9→0.6으로 오히려 개선. 다만 실적 발표 주간 +40%대 급등 직후의 진입은 갭 되돌림 리스크를 그대로 지는 것입니다. 펀더멘털 1군 유지, 실행은 보류 — 시장 전반 조정으로 $400 이하 회귀 시 1군 내 최우선 매수 대상으로 두시는 것을 권합니다.</div>
+      </div>
+      <div class="kill"><h4>KILL CRITERIA — 무효화 조건</h4><ul>
+        <li>XPU 고객 이탈·자체설계 전환 공식화</li>
+        <li>AI 매출 YoY 성장률 2개 분기 연속 둔화 (143% → 100% 이하 → 추가 하락 패턴)</li>
+        <li>FQ3 실적이 자체 가이던스($29.4B) 미달 — 가이던스 신뢰 프리미엄 소멸</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- ── HPSP ── -->
+  <div class="card">
+    <div class="card-head">
+      <h3>HPSP<span class="ticker">KOSDAQ: 403870 · 고압수소어닐링</span></h3>
+      <span class="badge b-watch">보류 — 6/18 판결 대기</span>
+    </div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">4만원대</div><div class="note">컨센 목표가 59,100원</div></div>
+      <div><div class="lbl">2026E P/E</div><div class="val">~33배</div><div class="note">영업이익 1,245억 기준</div></div>
+      <div><div class="lbl">이익 성장</div><div class="val">+37%</div><div class="note">OPM 53% · 순현금</div></div>
+      <div><div class="lbl">판결 D-day</div><div class="val">6/18</div><div class="note">특허법원 027 선고</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>상태 변경 — 노드 논리 훼손 진행 중</h4><ul>
+        <li>예스티 시장진입 개시: 3월 HPA 장비 <b>첫 출하</b>, 삼성전자 76억 납품 + 글로벌 메모리사 125매 처리 장비 수주 확보</li>
+        <li>303 특허 5/30 만료 — 예스티 측 "심결 결과와 무관하게 고객사 판매·양산 공급에 영향 없음" 주장</li>
+        <li>456 특허 무효심판은 기각(HPSP 유효 유지)됐으나, 2차례 정정으로 권리범위 축소 — 예스티는 분쟁 가능성 해소로 해석</li>
+        <li>잔여 분수령: <b>6/18 특허법원 027 특허 선고</b> (무효심판 + 소극적권리범위 2심) — 2023년 침해소송의 근거 특허라 전체 분쟁이 한쪽으로 기우는 판결</li>
+      </ul></div>
+      <div class="block"><h4>시나리오</h4><ul>
+        <li>승소 시: 독점 유지 — 1심 승소(2024.10) 당시 삼성증권이 점유율 전망 80%→95% 상향한 전례. 1군 복귀 + 4만원대는 컨센 목표가 대비 +40% 괴리</li>
+        <li>패소 시: 독점 → 듀얼소싱 구조 전환 가격. OPM 53%는 독점 렌트 — 멀티플(33배)과 마진이 동시 압축되는 이중 타격. 33배가 20배로, OPM이 40%대로 가는 경로</li>
+        <li>비대칭성 판단: 예스티가 이미 출하·수주를 시작한 이상 승소해도 "완전 독점 영구화"는 아님 — 업사이드 캡 존재. 반면 패소 다운사이드는 구조적. <b>판결 전 보유는 비대칭이 불리한 베팅</b></li>
+      </ul></div>
+      <div class="block"><h4>촉매</h4>
+        <div class="cat-row"><span class="cat"><b>6/18</b> 특허법원 선고 — 3건 동시</span><span class="cat"><b>5월 중순 발표분</b> 1Q 어닝미스 소화 여부 (NH 추정 매출 333억, 컨센 -25%)</span><span class="cat"><b>4Q26</b> 분기 매출 800억+ 계단식 상승 검증</span></div>
+      </div>
+      <div class="kill"><h4>KILL CRITERIA — 무효화 조건 (1개 선행 발동)</h4><ul>
+        <li><span class="fired">발동</span> 예스티 양산 수주 확인 — 3월 첫 출하 + 글로벌 메모리사 수주로 부분 충족</li>
+        <li>6/18 027 특허 패소 + 주요 고객사(삼성·하이닉스·TSMC) 듀얼벤더 공식 채택</li>
+        <li>예스티 HPA 양산 라인 안착 (2026 하반기 납품 후 반복 발주 확인 시 완전 무효화)</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TIER 2 ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">TIER 2</span><h2>승격 트리거 보드 — 감시 3종</h2></div>
+  <p class="sec-lede">2군은 딥다이브 대상이 아니라 트리거 감시 대상. 디스카운트 사유가 해소됐는지를 판정하는 계량 조건을 사전 정의 — 트리거 발동 시 1군 검증카드 절차로 승격, 그 전에는 분석 자원 미투입.</p>
+  <table>
+    <tr><th>종목</th><th>디스카운트 사유</th><th>승격 트리거 (계량)</th><th>분기 점검 지표</th><th>강등 조건</th></tr>
+    <tr>
+      <td><b>쏠리드</b><div class="num" style="color:var(--steel)">PEG ~0.35</div></td>
+      <td>단일 커버리지 · 미 통신사 capex 집행 타이밍 의존</td>
+      <td>① 분기 북미/O-RAN 매출의 P&amp;L 확인 ② 2번째 증권사 커버리지 개시 ③ AT&amp;T·버라이즌 capex 가이던스 상향 — <b>2개 충족 시 승격</b></td>
+      <td>분기보고서 지역별 매출 · DAS 수주잔고</td>
+      <td>2개 분기 연속 북미 매출 역성장</td>
+    </tr>
+    <tr>
+      <td><b>Celestica</b><div class="num" style="color:var(--steel)">PEG ~0.65</div></td>
+      <td>EMS 위탁제조의 멀티플 상단 제약</td>
+      <td>자체설계(HPS) 비중 확대로 부문 마진 구조 개선 확인 — CCS 마진 분기 연속 상승 시 "EMS 디스카운트" 논리 소멸 → 승격</td>
+      <td>CCS 부문 마진 · 800G→1.6T 프로그램 전환율</td>
+      <td>2026 가이던스(매출 $17B · EPS $8.75) 하향</td>
+    </tr>
+    <tr>
+      <td><b>HD현대일렉트릭</b><div class="num" style="color:var(--steel)">PEG ~0.9*</div></td>
+      <td>선행 추정 미검증 · 한국 전력기기 섹터 멀티플 압축 진행(섹터 ETF 고점 -24%) — <b>'26.6 보정: 변압기가 美 DC 병목으로 확인돼 섹터 조정은 사유 악화가 아닌 테제 강화+가격 하락 조합. 2군 내 우선순위 최상단</b></td>
+      <td>① 분기 OPM이 수주잔고 마진 수준 유지 ② 2026E 컨센서스 형성으로 추정치(*) 해소 ③ 섹터 수급 바닥 신호 — <b>①+② 충족 시 승격</b></td>
+      <td>분기 OPM · 신규수주/매출 비율 · 북미 변압기 ASP</td>
+      <td>수주잔고 증가율 한 자릿수 둔화</td>
+    </tr>
+    <tr>
+      <td><b>효성중공업</b><div class="num" style="color:var(--steel)">좌표 확보 중</div></td>
+      <td>'26.6 신규 편입 — 초고압 변압기·북미 익스포저, HD현대일렉과 동일 테제. 컨센서스 미확보가 1차 디스카운트</td>
+      <td>① 2026E 컨센서스 좌표 확보 ② 분기 북미 매출·수주 확인 — HD현대일렉 트리거 체계 준용</td>
+      <td>분기 수주잔고 · 북미 비중</td>
+      <td>HD현대일렉과 동일</td>
+    </tr>
+  </table>
+  <p style="font-size:12.5px;color:var(--steel);margin-top:10px">참고: 외국계 시각(맥쿼리 LS일렉트릭 중립·목표가 당시 주가 -37%)이 보여주듯 한국 전력기기는 국내외 컨센서스 괴리가 큰 섹터 — HD현대일렉트릭 승격 판정 시 외사 리포트 교차 확인 필수.</p>
+</div>
+
+<!-- ═══════════ TIER 3 ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">TIER 3</span><h2>메모리 사이클 판정 대시보드</h2></div>
+  <p class="sec-lede">SK하이닉스·마이크론은 PEG 논리가 아니라 "2027년에도 증익이 지속되는가"라는 단일 질문에 대한 베팅. 종목 분석 대신 사이클 판정 지표 6종을 분기 단위로 갱신 — 역사적으로 메모리 주가 피크는 가격 피크에 1~2분기 선행. 하우스 뷰: "타이밍은 B, 깊이는 A" 제3경로(시나리오 박스 하단 참조).</p>
+
+  <div class="gauge-grid">
+    <div class="gauge">
+      <div class="g-lbl">① 계약가 모멘텀 (2차 미분)</div>
+      <div class="g-val">둔화 진입</div>
+      <div class="g-dir d-warn">▼ 1Q +55~60% → 2Q +20~30%</div>
+      <div class="g-note">상승률 자체는 높으나 가속도는 이미 마이너스. TrendForce 베이스: 3Q26 가격 정점 (확률 60%)</div>
+    </div>
+    <div class="gauge">
+      <div class="g-lbl">② 수급 밸런스</div>
+      <div class="g-val">-12% 부족</div>
+      <div class="g-dir d-up">▲ '25 +8% 과잉 → '26 부족 전환</div>
+      <div class="g-note">2026 공급 증가율 +16%로 수요 미달(IDC). 물량 측면은 여전히 타이트</div>
+    </div>
+    <div class="gauge">
+      <div class="g-lbl">③ 신규 캐파 캘린더</div>
+      <div class="g-val">2H26 시작</div>
+      <div class="g-dir d-warn">● M15X 2H26 → 아이다호 '27 → P5/용인 '28</div>
+      <div class="g-note">의미 있는 공급은 2028년부터 — 단, 주가는 캐파 가동 1년 전부터 반응하는 게 패턴</div>
+    </div>
+    <div class="gauge">
+      <div class="g-lbl">④ HBM 가격</div>
+      <div class="g-val">조정 가능성</div>
+      <div class="g-dir d-warn">▼ '26 이후 두 자릿수 조정 시나리오 (하나)</div>
+      <div class="g-note">DDR5-HBM3E 가격차 5배 → 2배로 축소 전망 — 프리미엄 희석은 믹스 역풍</div>
+    </div>
+    <div class="gauge">
+      <div class="g-lbl">⑤ 중국 침투 ('26.6 구체화)</div>
+      <div class="g-val">DDR5 7% · 가속</div>
+      <div class="g-dir d-warn">▼ 수율 80% · 스펙 동등 · OEM 침투 시동</div>
+      <div class="g-note">판정 기준: CXMT DDR5 점유율 두 자릿수 도달 속도 + 비중국 OEM 공식 채택(HP·Dell 검토, 레노버 탑재 보도). 내수 소화 = A 유효 / 글로벌 침투 = B 가중</div>
+    </div>
+    <div class="gauge">
+      <div class="g-lbl">⑥ HBM4 LTA 협상 ('26.6 추가)</div>
+      <div class="g-val">최우선 판정 변수</div>
+      <div class="g-dir d-warn">● 관측 윈도우 4Q26~1H27</div>
+      <div class="g-note">하이퍼스케일러의 LTA 재협상 요구 = 시나리오 A 사망 / 프리미엄 유지 = 조정은 범용 D램 국한. 단일 지표로는 가장 강력한 A/B 판별자</div>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="scn">
+      <h5 style="color:var(--teal)">시나리오 A — 구조적 전환 (지속론)</h5>
+      <div class="prob">노무라 · JP모건 · 씨티 / 컨센서스 진영</div>
+      <p>슈퍼사이클 최소 2027년 지속, 과거와 달리 고점 가격이 장기 유지. 추론 메모리(학습 대비 3배) + 에이전틱 AI 토큰 폭증 + LTA 계약 비중 확대가 진폭 자체를 축소.</p>
+      <ul><li>유지 조건: 하이닉스 2027 순이익 334조 추정 경로 유효</li><li>이 경우 P/E 6.5배는 역대급 기회</li></ul>
+    </div>
+    <div class="scn">
+      <h5 style="color:var(--red)">시나리오 B — 고전적 피크 (사이클론)</h5>
+      <div class="prob">TrendForce 베이스 (확률 60%) — 3Q26 정점, 4Q26~1Q27 하락 전환</div>
+      <p>가격 2차 미분 둔화(①)가 이미 신호. 2H26 AI 인프라 부채·비용 청구 본격화(씨티)가 수요 측 트리거로 겹칠 경우 멀티플·실적 동시 압축.</p>
+      <ul><li>이 경우 주가 피크는 1Q~2Q26 — 즉 지금이 피크권일 가능성</li><li>최근 하이닉스 -7.5% 일중 변동성은 이 긴장의 표출</li></ul>
+    </div>
+  </div>
+
+  <div class="judg" style="margin-top:14px;border-left-color:var(--ink)">
+    <b>하우스 뷰 ('26.6.11 확정) — 제3경로: "타이밍은 B, 깊이는 A"</b><br>
+    확신도: 가격 정점 4Q26 이내 도래 70% / 정점 후 얕은 조정(2018·2022년형 붕괴 아님) 55~60%. 양자택일이 아니라 <b>가격 피크와 이익 피크가 분리되는 사이클</b>이 베이스 — 근거: ① HBM은 스팟이 아닌 1년 선계약 구조라 가격이 꺾여도 2027년 물량·가격 상당분이 기락인 ② 3사 모두 HBM 전환으로 범용 증설 여력 부재 — 과거 붕괴의 원인은 수요가 아니라 공급 규율 붕괴였음 ③ 추론 수요는 매출 연동형이라 버블 조정과 분리. 함의: 2차 미분 신호와 싸우지 말 것(신규 증액 금지) — 단 B 확정 신호 후의 하락은 탈출 자리가 아니라 차기 사이클 진입 준비 구간으로 분류. P/E 6.5배는 시장이 B를 상당분 선반영한 가격 — B 현실화 시 하방 -30~40%(멀티플이 아닌 추정치 하향 몫) vs A 현실화 시 +50~100%. 분기 평가 자금에는 부적합, 장기 자금에는 감당 가능한 비대칭.<br><br>
+    <b>최우선 판정 변수: 4Q26~1H27 HBM4 가격 협상.</b> 하이퍼스케일러가 LTA 재협상을 들고 나오면 A 사망, 프리미엄 유지되면 조정은 범용 D램에 국한 — 대시보드 6번 지표로 편입.
+  </div>
+
+  <div class="block" style="margin-top:18px"><h4>심화 — 중국(CXMT) 변수가 "깊이"의 스윙인 이유</h4><ul>
+    <li><b>프레임 교정</b>: 범용 D램은 성능재가 아니라 규격재 — "중저가 60~70% 성능"이 아니라 "100% 규격 + 10~30% 할인"이 올라오는 중. CXMT DDR5 8000Mbps·24Gb(삼성 7200Mbps 대비 대등), 수율 80%(하이닉스 80~90% 근접), DDR5/LPDDR5 점유율 이미 7%/9% — 세계 최속 성장 D램 기업(카운터포인트). 기술격차 5년→3년 압축</li>
+    <li><b>타격점은 저가 시장이 아니라 범용 윈드폴</b>: 이번 사이클 이익의 절반은 HBM이 아닌 범용 D램(DDR5 계약가 2개월 +60%, "HBM 수익성 추월" 분석) — 빅3의 HBM 전환이 만든 공백이 원천. CXMT는 2026년 중반 DDR4 단계 폐지 후 DDR5·HBM 전환으로 정확히 그 공백을 조준 — 2027년 334조 경로(시나리오 A 유지 조건)가 깨지는 가장 현실적 경로</li>
+    <li><b>실증된 플레이북</b>: '24 하반기 DDR4 30% 할인 → PC DDR4 고정가 5개월 -35.7%, 한국사 재고 누적·수익성 훼손 전례. 장비 자급률 확보로 수율 안착 시 증산 속도 빠름</li>
+    <li><b>게임이론 차원</b>: 시나리오 A의 전제(3사 규율)는 ROIC 합리 과점에서만 성립 — CXMT의 목적함수는 자급률이라 다운턴 무감산. 네 번째 비합리 플레이어의 진입 = 2018년형 규율 붕괴의 재도입 경로. LCD(BOE) 단계론의 선례</li>
+    <li><b>균형추(A가 여전히 55~60%인 이유)</b>: CXMT HBM 로드맵(HBM3 '26·HBM3e '27)은 그 시점 하이닉스 HBM4/4e 대비 2세대+ 격차 / 하이닉스 이익 믹스의 HBM 이동으로 범용 충격 탄력성 축소 / EUV 부재로 1c 이하 미세화 한계(비트코스트 격차 구조적 유지) / 당분간 내수 소화</li>
+    <li><b>임계 지표 = 중국 밖 침투</b>: 내수 소화 동안 A 유효, 글로벌 OEM 채택 순간 B 가중 — 이미 시동: '25 창사 첫 흑자, HP·Dell 채용 검토, 레노버 씽크북 '26년형 탑재 보도. 페어 노출도: 삼성전자(범용 최대) &gt; 마이크론 &gt; 하이닉스(HBM 믹스 최고) — 중국 변수 가중 시 하이닉스 상대 우위</li>
+  </ul></div>
+
+  <div class="kill" style="margin-top:18px"><h4>3군 공통 KILL CRITERIA — 비중축소 신호</h4><ul>
+    <li>현물가격 하락 전환 + 공급사 재고일수 증가 동시 확인 (단독 신호는 노이즈, 동시 발생이 판정)</li>
+    <li>분기 계약가 상승률 한 자릿수 진입 (모멘텀 소멸)</li>
+    <li>하이퍼스케일러 메모리 LTA 재협상·물량 이연 보도 2건 이상 — 특히 HBM4 협상(⑥)에서 발생 시 즉시</li>
+    <li>CXMT DDR5의 비중국 메이저 OEM 공식 채택 — 규율 붕괴 경로 개시 신호</li>
+  </ul></div>
+
+  <p style="font-size:13.5px;margin-top:14px"><b>페어 선택</b> — 하이닉스(HBM 점유 우위 + 2026 물량 완판 + 중국 변수 노출 최소) vs 마이크론(외부 컨센서스 검증 강도 + USD 자산 분산). 중국 침투 가속 시나리오에서 범용 노출도는 삼성전자 &gt; 마이크론 &gt; 하이닉스 순 — 중국 변수를 무겁게 볼수록 하이닉스 상대 우위. 동일 베팅의 이중 보유는 비권장, 원화 자산 집중도 기준 택일. 신규 비중 확대는 하우스 뷰상 금지(2차 미분 신호 존중), 보유분은 킬 신호 발동 시 기계적 축소.</p>
+</div>
+
+<!-- ═══════════ HYPERSCALERS ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">DEMAND</span><h2>하이퍼스케일러 — 수요의 원천 분석 (구글·아마존)</h2></div>
+  <p class="sec-lede">2026.06.11 추가. 역할 정의가 먼저: 이들은 우리 포트폴리오의 "종목"이 아니라 "수요 함수"다 — 1~3군 전 종목의 매출이 이들의 비용(capex)이며, 4사 합산 2026 capex는 $700B+. EPS 기반 평면에서 하이퍼스케일러는 감가상각 선반영으로 구조적으로 불리하게 찍히므로, 평가 축을 EPS가 아닌 "수요의 질 × 조달의 질"로 교체.</p>
+
+  <div class="card">
+    <div class="card-head"><h3>Alphabet<span class="ticker">NASDAQ: GOOGL · 수요 모니터 + 조건부 보조 후보</span></h3><span class="badge b-hold">수요의 질 최상 · 가격은 중립</span></div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">~$385</div><div class="note">1년 +135% · 목표가 $427</div></div>
+      <div><div class="lbl">2026E P/E</div><div class="val">~27배</div><div class="note">EPS $14.22 컨센서스</div></div>
+      <div><div class="lbl">순이익 성장</div><div class="val">+9%</div><div class="note">감가상각이 EPS 압착</div></div>
+      <div><div class="lbl">2026 capex</div><div class="val">$180~190B</div><div class="note">'25 $91.4B의 2배 · '27 "대폭 증가" 예고</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>수요의 질 — 4사 중 유일하게 "공급 제약" 상태</h4><ul>
+        <li>1Q26 매출 $109.9B(+22%), 클라우드 $20B(+컨센 11% 상회), <b>클라우드 백로그 $460B</b> — CEO "단기적으로 컴퓨트가 부족해 클라우드 매출이 수요를 못 따라감(compute constrained)"</li>
+        <li>capex 2배 증액의 근거가 "수요 추정"이 아니라 "이미 받아둔 주문" — 4사 중 capex와 매출의 연결이 가장 직접적</li>
+      </ul></div>
+      <div class="block"><h4>조달의 질 — "부채 청구서" 리스크의 예외</h4><ul>
+        <li>$80B 주식 매각(버크셔 $10B 사모 포함) + Blackstone과 $25B TPU 인프라 JV + Intersect(DC 디벨로퍼) $4.75B 인수 — <b>부채가 아닌 에쿼티·JV 조달</b>. 부록의 순환금융·신용 우려에서 구조적으로 비켜서 있음. 비용은 희석이며, 이는 EPS 평면에서 또 한 번 벌점 — 그러나 신용 이벤트 내성은 4사 중 최고</li>
+        <li>FCF는 Pivotal 추정 -90%(~$8.2B) — 시장이 이 숫자에 반응하는 순간이 우리 1군 전체의 변동성 이벤트</li>
+      </ul></div>
+      <div class="block"><h4>당 포트폴리오와의 관계</h4><ul>
+        <li>직접 연결: 이수페타시스(TPU MLB)·Broadcom(TPU 설계)의 수요 원천이 바로 이 capex — 구글 capex 가이던스가 두 종목의 1차 선행지표</li>
+        <li>보유 판단: PEG ~3으로 가격매력 기준 미달이나, "AI 인프라 수혜+수요 검증을 한 종목으로" 원하면 4사 중 유일 후보. 단 1년 +135% 이후라 신규 진입 매력은 제한적 — 모니터 우선</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3>Amazon<span class="ticker">NASDAQ: AMZN · 수요 모니터 — FCF 변곡의 진앙</span></h3><span class="badge b-watch">체인 리스크의 선행 지표</span></div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">~$200</div><div class="note">11월 고점 $258 대비 약 -20%</div></div>
+      <div><div class="lbl">2026E P/E</div><div class="val">~26배</div><div class="note">비GAAP 기준 5년 최저</div></div>
+      <div><div class="lbl">EPS 성장</div><div class="val">+8.5%</div><div class="note">Zacks 컨센서스</div></div>
+      <div><div class="lbl">2026 capex</div><div class="val">~$200B</div><div class="note">'25 $128B → FCF $11.2B로 압착</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>왜 "진앙"인가</h4><ul>
+        <li>'25 capex $128B가 FCF를 $11.2B까지 압착했고 '26 $200B는 투자가 영업현금을 초과할 수 있는 해 — <b>4사 중 FCF 마이너스 전환 가능성이 가장 먼저 거론되는 곳</b>. 부록 "부채 청구서" 경로 ④의 1번 관찰 대상</li>
+        <li>주가 고점 -20%·5년 최저 멀티플 = 시장이 이미 capex를 벌점 처리 중. AWS는 연환산 ~$142B로 재가속, Trainium+Graviton 연환산 $10B — 수요 자체는 견조하다는 반증도 공존</li>
+        <li>리스크 경로: FCF 압박 → capex 가이던스 보수화 → 우리 1군 백로그 전환 둔화. 아마존의 capex 코멘트가 사실상 <b>전 포트폴리오의 공통 킬 크라이테리아 트리거</b></li>
+      </ul></div>
+      <div class="block"><h4>판단</h4>
+        <div class="judg">5년 최저 멀티플은 역발상 가치 신호일 수 있으나, 당 방법론(성장 대비 저평가) 기준으로는 +8.5% 성장에 26배 — 기준 미달입니다. 보유 대상이 아니라 분기마다 가장 먼저 읽어야 할 공시로 분류합니다. 단, Trainium 체인(자체 칩 확대)은 Broadcom·엔비디아 체인과 수요를 나누는 변수라 칩 단 종목 분석 시 교차 확인 항목입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="judg" style="margin-top:4px">공통 유의 — 하이퍼스케일러를 포트폴리오에 넣어도 분산이 아닙니다. capex 하향 시나리오에서 이들의 주가는 (비용 절감으로) 오히려 오를 수 있다는 역상관 가설이 있으나, 2026년 현재 시장은 capex 증액에 보상(MSFT +5%)·삭감 신호에 처벌하는 국면이라 단기 상관은 동방향입니다. 수요 모니터 기능: 분기 capex 가이던스 + 백로그($460B) 증감 + "compute constrained" 표현 지속 여부 3가지를 1군 카드들의 공통 선행지표로 사용.</div>
+</div>
+
+<!-- ═══════════ TIMING GAP ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">EXPANSION 2</span><h2>타이밍 갭 — capex→가동 MW 전환 병목과 전기설비 노드</h2></div>
+  <p class="sec-lede">2026.06.11 추가. 커밋 capex $650B+ vs 2026 목표 16GW 중 착공 5GW. 공실률 1%·파이프라인 92% 사전임차·'25 프로젝트 57% 지연·1Q 20건 취소. 병목은 GPU가 아니라 변압기·개폐기·배터리 등 장납기 전기설비와 계통연계(평균 3년+, 북버지니아 신규 큐는 2030~2033년). 사이트 선정 1순위가 'speed to power'로 교체 — powered land 재평가 진행.</p>
+
+  <div class="block" style="margin-bottom:16px"><h4>포트폴리오 함의 — 베타의 분해</h4><ul>
+    <li><b>선행 단(병목 자산) 유리</b>: 변압기·개폐기·터빈·배터리 — 프로젝트가 지연될수록 주문이 길게 깔리고 가격결정력 강화. HD현대일렉트릭 테제 직접 보강 → 2군 내 우선순위 최상단으로 상향</li>
+    <li><b>후행 단(가동 직전 설치) 전환속도 리스크</b>: 냉각·기판 — 수요 소멸 없는 매출 인식 지연이 어닝 미스로 발현 가능. Vertiv·Modine 카드에 "지연 vs 취소" 구분 항목 반영(아래)</li>
+    <li><b>자가발전 확산</b>: xAI(Solaris JV 1.1GW+ 터빈)·Anthropic Nexus(자가 가스터빈) — 터빈 수요가 유틸리티 capex에서 AI 빌더 직접구매로 확장. GE Vernova 노드 가산점 추가 상향(조정 시 매수 후보)</li>
+  </ul></div>
+
+  <table>
+    <tr><th>후보</th><th>단</th><th>상태</th><th>액션</th></tr>
+    <tr><td><b>효성중공업</b></td><td>초고압 변압기 · 북미</td><td>2군 정식 편입 — 미래에셋 '26 Top Pick, 3사 합산 수주잔고 30조+</td><td>HD현대일렉과 동일 트리거 체계 적용, 컨센서스 좌표 확보</td></tr>
+    <tr><td><b>Powell Industries</b></td><td>개폐기(switchgear) 美 순수 플레이</td><td>유니버스 공백 단 — 좌표 미확보</td><td>컨센서스 확보 후 평면 추가</td></tr>
+    <tr><td><b>산일전기 · 일진전기</b></td><td>북미 변압기 수출 중소형</td><td>좌표 미확보</td><td>동일 — HD현대일렉 레버리지 버전으로 검토</td></tr>
+    <tr><td><b>Fluence(FLNC)</b></td><td>BESS — 장납기 병목 리스트에 배터리 명시</td><td>기보유 테제 재연결: "계통연계 못 기다리는 DC의 브리지/그리드 자산"으로 재정의</td><td>기존 테제 문서에 본 각도 반영</td></tr>
+    <tr><td><b>Solaris Energy(SEI)</b></td><td>behind-the-meter 모바일 터빈 · xAI JV 49.9%</td><td>노드라기보다 단일고객(xAI) 신용 베팅</td><td>관찰만 — 진입 비권장</td></tr>
+    <tr><td><b>지엔씨에너지</b></td><td>비상발전기 — 브리지 전력 테제</td><td>분기보고서 확인된 마진 훼손과 테제 충돌 — "Q는 늘고 P가 깨지는 단"인지 판정 필요</td><td>차기 분기 마진으로 검증 후 판단, 테마 편승 금지</td></tr>
+  </table>
+
+  <div class="block" style="margin-top:14px"><h4>관측 캘린더 — 브리지 수요의 풋옵션 구조</h4><ul>
+    <li>SpaceX-구글 머천트 컴퓨트 계약: 2026.12.31 이후 90일 통지 해지 가능 — Anthropic 자체 캐파(Nexus 1단계 ~500MW + Fluidstack) 가동 시점과 일치. <b>관측 윈도우 2027년 1~2분기</b>: 해지 행사 = 자체 캐파 전환 신호, 연장 = 건설 지연 장기화 신호(전기설비 노드 테제 강화)</li>
+    <li>6/12 SpaceX 상장 — 시장이 90일 해지가능 머천트 매출에 부여하는 멀티플 자체가 "브리지 수요 듀레이션"에 대한 가격 신호</li>
+    <li>중국 변수: 2조 위안 국가망 계획(국채 조달·엔비디아 배제·80% 국산)은 미국 체인에 직접 수혜 없음 — 단 중국산 HBM/D램(CXMT) 캐파 속도는 3군 대시보드 5번 지표로 편입</li>
+  </ul></div>
+</div>
+
+<!-- ═══════════ COOLING CHAIN ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">EXPANSION</span><h2>냉각 체인 — 단별 구조 분해</h2></div>
+  <p class="sec-lede">2026.06.11 추가. DLC 시장 2Q25 +156% YoY, 2029년 약 $7B 전망(Dell'Oro). 단상 D2C가 지배 아키텍처로 확정. 핵심 구조 변화: 하이퍼스케일러에게 냉각 캐파 확보가 전력 확보와 동급 — 장기공급계약·생산슬롯 예약 구조가 칠러 단에서 출현(가스터빈 공식의 재현).</p>
+
+  <table>
+    <tr><th>단</th><th>구조</th><th>대표 종목</th><th>판정</th></tr>
+    <tr>
+      <td><b>① 칩 레벨</b><br>콜드플레이트·VC</td>
+      <td>대만 과점. AVC가 GB200/300 콜드플레이트 40~50% 점유, 특허 1,700건+. 주 단위 양산 램프 역량이 진입장벽</td>
+      <td class="num">AVC · Auras (대만)</td>
+      <td><span class="verdict v-go">노드 순도 최상</span><br><span style="font-size:12px;color:var(--steel)">AVC '25 매출 ~2배($4.5B), 3월 +112% 사상최대 / Auras '26 가이던스 +50%→+70% 상향. 실적 검증 진행형 — 대만 직접투자 경로가 실무 관문</span></td>
+    </tr>
+    <tr>
+      <td><b>② CDU·랙</b></td>
+      <td>Dell'Oro "포화" 경고 — 신규진입 쇄도. 독립사 M&amp;A 소멸: Motivair→슈나이더($850M), CoolIT→Ecolab, Boyd→Eaton($9.5B, '26.3 완료), STL→Vertiv('26.4)</td>
+      <td class="num">— (독립 순수플레이 부재)</td>
+      <td><span class="verdict v-no">단독 회피</span><br><span style="font-size:12px;color:var(--steel)">익스포저는 인수자(Vertiv·Eaton)로 이미 보유 — 기존 1군과 중복</span></td>
+    </tr>
+    <tr>
+      <td><b>③ 시설·칠러</b></td>
+      <td>"칠러의 가스터빈화" — Modine 수주 가시성 약 5년, 장기공급계약 전환, 칠러 라인 +125% 증설(FY28 20개). LG전자 DC 냉각 전년比 3배, 칠러 1조 조기달성 전망, TAM 16억→127억달러(8배)</td>
+      <td class="num">Modine(MOD) · LG전자 · Vertiv</td>
+      <td><span class="verdict v-hold">선별 진입</span><br><span style="font-size:12px;color:var(--steel)">MOD: FQ3 DC +78%, FY28 DC매출 $2B 목표 — 단 YTD 급등 반영, 조정 대기. LG전자: 전사 한자릿수 멀티플에 DC 옵션 무가 산입 — SOTP 트랙 별도 검토 권고</span></td>
+    </tr>
+    <tr>
+      <td><b>④ 액침·2상</b></td>
+      <td>단상 D2C 지배 확정으로 여전히 니치. 글로벌 순수플레이(GRC·Submer) 비상장. 2상은 2027+ 스토리</td>
+      <td class="num">GST · 케이엔솔 · 유니셈</td>
+      <td><span class="verdict v-hold">옵션 트랙</span><br><span style="font-size:12px;color:var(--steel)">기술채택+수주 이중 옵션 — 필옵틱스형. GST는 칠러·스크러버 본업 흑자로 하방 상대 우위. 사이징으로 리스크 통제</span></td>
+    </tr>
+    <tr>
+      <td><b>⑤ 부품</b><br>QD커플링·매니폴드</td>
+      <td>누설 제로 요구 — 노드성 있으나 Staubli·Danfoss 비상장. AVC가 퀵커넥터 확장 중</td>
+      <td class="num">(①에 부분 포함)</td>
+      <td><span class="verdict v-hold">①로 흡수</span></td>
+    </tr>
+  </table>
+
+  <div class="judg" style="margin-top:14px">냉각 추가 편입 시 유의: ②③단의 베타는 기존 1군 Vertiv와 사실상 동일(하이퍼스케일러 capex)입니다. 신규 노출이 실제로 추가되는 건 ① 대만 콜드플레이트(엔비디아 플랫폼 직결 — capex보다 GPU 출하량 베타)와 LG전자(가전 본업이 완충하는 옵션 구조) 두 곳뿐입니다.</div>
+</div>
+
+<!-- ═══════════ GEOPOLITICAL HEDGE ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">EXPANSION 3</span><h2>지정학 공급망 헤지 — InP 소재 · 전략 희토류</h2></div>
+  <p class="sec-lede">2026.06.13 추가 (외부 X 분석 교차 검토 계기). 1~3군이 "하이퍼스케일러 capex" 베타라면, 본 섹션은 "미·중 디커플링" 베타 — 다른 축의 리스크 분산재. 단 PEG 평면 부적용(MP는 적자, AXT는 수출허가가 실적을 좌우해 멀티플 무의미). 별도 트랙으로 관리.</p>
+
+  <div class="judg" style="border-left-color:var(--ink);margin-bottom:24px">
+    <b>핵심 인사이트 — 진짜 노드는 한 단계 더 위에 있다.</b><br>
+    이 게임의 불가결 노드는 InP 기판도 희토류 광산도 아니라, <b>중국이 쥔 '인듐 정제'와 '희토류 분리·정제'</b>다. 서방 상장 종목(AXT·MP·Lynas)은 그 중국 독점을 깨려는 <b>정책 수혜주</b>이지 노드 자체가 아니다. 따라서 이들의 주가 동력은 펀더멘털이 아니라 ① 미국 정부 조달·자금, ② 중국 수출통제 강도, ③ 미·중 데탕트 여부 — 즉 지정학 이벤트다. "회사 품질"이 아니라 "정책 지속성"에 베팅하는 트랙임을 전제로 접근.
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3>InP 체인<span class="ticker">광통신(5층)의 상류 소재 — "병목의 상류 이동"</span></h3><span class="badge b-hold">수요 폭발 · 허가가 가림</span></div>
+    <div class="card-body">
+      <div class="block"><h4>구조 — Lumentum·Coherent의 레이저가 먹는 원재료</h4><ul>
+        <li>InP(인화인듐) = 800G·1.6T·CPO 광통신 레이저의 핵심 기판. 우리 4층 논리(이수페타시스→CCL→닛토보 "병목이 상류로")의 <b>광통신 버전</b> — 5층 종목(Lumentum·Coherent)이 이 InP의 고객</li>
+        <li>수요: AI 데이터센터 광전환으로 AXT 스케일아웃 주문 <b>'26 2배·'27 또 2배</b>, '28~'29 CPO 변곡점 전망. 구조적 성장은 진짜</li>
+      </ul></div>
+      <div class="block"><h4>반전 — AXT는 "비중국 헤지"가 아니라 "중국 인질"</h4><ul>
+        <li>외부 분석의 분류 오류 정정: <b>AXT는 InP·GaAs·Ge 기판을 전량 중국 자회사(통메이)에서 생산, '25 매출의 98%가 북미 외부</b>. 미국 상장사지만 생산 100% 중국 — 미국 블록 헤지가 아니라 중국 수출통제 직접 노출</li>
+        <li>실적 증거: 중국이 '25.2.4 InP를 수출통제 목록 추가 → 건별 허가 필요. AXT '25 매출 -11%($99.4M→$88.3M), 4Q는 허가 지연으로 가이던스 하회($23M). <b>수요가 없어서가 아니라 허가가 안 나와 못 판 것</b></li>
+        <li>역설: 일본 업체(Sumitomo·JX)가 중국산 인듐을 통제로 못 구해 InP 가격 급등 — 중국 내 업체가 원료 조달 우위. <b>진짜 노드는 InP 기판이 아니라 그 위 '인듐 정제'이고 중국이 장악</b></li>
+      </ul></div>
+      <div class="block"><h4>체인 종목 (채점: 노드 A− / 성장 A / 가격 C)</h4>
+        <div class="cat-row"><span class="cat"><b>AXT(AXTI)</b> InP 기판 · 중국생산 · 허가 양면 · ~$96</span><span class="cat"><b>IQE(IQE.L)</b> 에피웨이퍼 · 마이크로캡</span><span class="cat"><b>Sumitomo(5802.T)·JX(5016.T)</b> 일본 소재 · 인듐난 피해자</span></div>
+      </div>
+      <div class="judg">판단: 수요는 우리 5층 테제를 상류에서 재확인하는 강력한 신호. 단 AXT는 "허가 리스크가 성장을 가리는" 구조라 분기 실적이 정부 허가 발급 속도에 인질 — 종합 B−, 옵션 트랙. 차라리 이 수요의 수혜는 다운스트림(Lumentum·Coherent, 우리가 이미 본 5층)에서 더 깨끗하게 잡힘.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3>전략 희토류<span class="ticker">AI 직접 수혜 아님 — 지정학 풋옵션</span></h3><span class="badge b-watch">정책이 만든 시장</span></div>
+    <div class="card-body">
+      <div class="block"><h4>구조 — 펀더멘털이 아니라 국방 조달 마감시한이 수요</h4><ul>
+        <li>'25.7 펜타곤이 MP에 $400M 우선주 투자 → 국방부가 최대주주, 가격 하한선+10년 구매계약 부착. <b>2027 국방용 중국산 희토류 금지 발효까지 8개월</b> — 정부가 도메스틱 생산을 강제로 키우는 국면</li>
+        <li>즉 민간 수요가 아니라 <b>국방 조달 시한이 매출을 보장</b>하는 정책 시장. AI 밸류체인과는 간접 연결(자석·전력·국방)</li>
+      </ul></div>
+      <div class="block"><h4>종목 (채점: 노드 A[정책] / 성장 B+ / 가격 D)</h4><ul>
+        <li><b>MP Materials(MP)</b>: $400M 펜타곤 자금, 1Q26 매출 +49%, 텍사스 자석공장 '26 하반기 가동. 단 <b>적정가치 추정 $50.85가 주가를 크게 하회</b> — 고평가 경고, 종합 C+</li>
+        <li><b>Lynas(LYC.AX)</b>: 중국 외 최대 생산사, 펜타곤이 kg당 $110 하한선 계약. 비중국 순수도는 MP보다 높음 — 종합 C+</li>
+      </ul></div>
+      <div class="kill"><h4>공통 KILL CRITERIA — 이 트랙의 무효화</h4><ul>
+        <li><b>미·중 데탕트로 중국 희토류 수출 재개</b> — 이 리스트 전체의 경제성 붕괴. 단일 최대 리스크</li>
+        <li>'26.11 미·중 휴전 만료 — 이 날짜가 정책 윈도우의 시한. 연장 시 테제 약화</li>
+        <li>고가격 지속 실패 (Benchmark "고가는 오래 못 간다" 경고)</li>
+      </ul></div>
+      <div class="judg">판단: AI 직접 베팅이 아닌 <b>지정학 풋옵션</b>으로만 분류. 우리 "AI 부채 청구서"가 신용 베팅이듯, 희토류는 미·중 관계 베팅 — 포트폴리오에서 코어가 아닌 위성, 그것도 소액 헤지 포지션이 적정. 가격이 정책 기대를 이미 상당 반영.</div>
+    </div>
+  </div>
+
+  <div class="judg" style="border-left-color:var(--steel)">
+    <b>외부 리스트 채점 총평 (교차 검토 결론)</b> — 외부 X 분석의 코어 5종(Broadcom·Vertiv·SK하이닉스·Coherent/Lumentum·전력)이 본 보고서 결론과 독립적으로 수렴 → 종목 발굴력은 검증됨. 단 세 가지 한계: ① <b>가격·진입 시점·킬 조건 부재</b> — "무엇을"은 같으나 "언제·얼마에"가 통째로 빠져 Broadcom·Coherent·AXT·MP가 모두 "좋은 회사, 부담스러운 가격"으로 강등 ② <b>분류 오류</b>(AXT를 비중국 헤지로 오인 — 실제 중국 100% 생산) — 지정학 렌즈만으로는 생산지를 놓침 ③ <b>한국 노드 공백</b>(SK하이닉스만 수록, 이수페타시스·HD현대일렉·한미반도체 누락) — 접근성·정보우위 있는 한국 노드는 본 보고서가 우위. 결론: 발굴 자료로는 교차검증 가치 있으나, 실행은 본 보고서의 가격·타이밍·킬 체계가 보완.
+  </div>
+</div>
+
+<!-- ═══════════ EXPANSION 4 — REFRESH ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">EXPANSION 4</span><h2>좌표 리프레시 (6/12 종가) · 삼성전기 신규 편입</h2></div>
+  <p class="sec-lede">2026.06.16 갱신. 6/12 금요일 반도체·전력 동반 급등(지정학 반등 + 노무라 코스피 11,000 리포트 + 만기 수급)으로 한국 종목 좌표가 우상향 이동 — 직전 좌표가 부분 stale. 6/12 종가로 재계산. 한 줄 요약: <b>"좋은 회사"는 그대로지만 "좋은 가격"이 하루 만에 상당분 사라진 종목 다수.</b></p>
+
+  <div class="card" style="border-top-color:#b8901e">
+    <div class="card-head"><h3>삼성전기<span class="ticker">KRX: 009150 · FC-BGA + AI MLCC 노드 (4층)</span></h3><span class="badge b-hold">PEG 통과 · 급등 변동성</span></div>
+    <div class="coord">
+      <div><div class="lbl">주가</div><div class="val">1,747,000</div><div class="note">6/12 종가(-3.37%) · 장중 169~199만 출렁</div></div>
+      <div><div class="lbl">2026E P/E</div><div class="val">~24배</div><div class="note">영업이익 1.55조(대신) 기준</div></div>
+      <div><div class="lbl">영업이익 성장</div><div class="val">+26%</div><div class="note">'27E 2.06조 → 추가 성장</div></div>
+      <div><div class="lbl">PEG</div><div class="val">~0.9</div><div class="note">대각선 바로 아래</div></div>
+    </div>
+    <div class="card-body">
+      <div class="block"><h4>노드 위계 — FC-BGA 한국 체인 (이형수 영상 교차)</h4><ul>
+        <li><b>노드 = 삼성전기</b>: AI 서버용 고부가 MLCC 점유율 45% + FC-BGA 동시 노출. 수요 드라이버는 ① 에이전틱 AI로 GPU:CPU 비율 8:1→1:1 전환 → 기판 수요 폭증, ② 메이저 완판이 가격상승 촉발하는 사이클(미래에셋 FC-BGA ASP +13% 상향, 패키지 부문 '26~'30 영업이익 CAGR 51% 추정)</li>
+        <li><b>낙수 (노드 아님)</b>: 대덕전자·코리아써키트·LG이노텍 — "글로벌 선두 물량이 꽉 차 받는" 2등 포지션. 마진·가격결정력 제한적, 테마 장세 변동성 최대. 평면 미편입 — 삼성전기 검증 후 낙수 확인 순서</li>
+      </ul></div>
+      <div class="block"><h4>판단 — 양날의 가동률 스토리</h4><ul>
+        <li>업사이드 옵션: 대신 "2026·2027 MLCC 추정에 가격인상 미반영, 하반기 인상 시 추가 이익 상향" — 가격인상 현실화 시 분모(이익) 확대로 PEG 추가 하락</li>
+        <li>그러나 가격이 기대 선반영: 5월 목표가 줄상향(미래에셋 +145%, 현대차 +123% → 230만), KB 목표가 220만의 implied P/E 92배. 한 달 새 목표가 2배는 재평가인 동시에 기대가 가격을 앞지르는 신호</li>
+        <li>6/12 시그널: 장중 199만(+10%)→169만(-6%), 종가 -3.37%. 하루 변동 30만원 — 가동률 90% 스토리에 테마 수급이 얹힌 과열. 지금 PEG 0.9는 "구조적 저평가"보다 "급등 후 첫 조정"</li>
+      </ul></div>
+      <div class="judg">등급: HD현대일렉과 동일 <b>"감시" 트랙</b> — PEG는 통과하나 6/12 변동성으로 진입 타이밍 보류. 트리거: MLCC 가격인상 실제 공시(분모 확대 확인) 또는 급등분 조정. 7/29 2Q 실적이 1차 검증점.</div>
+    </div>
+  </div>
+
+  <div class="block" style="margin-bottom:16px"><h4>6/12 좌표 이동 — 한국 종목 우상향(고PER) 시프트</h4>
+    <table>
+      <tr><th>종목</th><th>6/12 종가</th><th>이동</th><th>재판정</th></tr>
+      <tr><td><b>HPSP</b></td><td class="num">71,000 (+29%)</td><td class="num">PER ~33→46배 ↑↑</td><td><span class="verdict v-no">목표가 초과</span> 컨센 목표가 평균 59,714원을 주가가 -16% 초과. 6/18 판결 전 급등 = "이기면 차익실현, 지면 급락"으로 비대칭 더 악화. 보류 유지·신규 진입 금지</td></tr>
+      <tr><td><b>이수페타시스</b></td><td class="num">~123,500</td><td class="num">PER ~37→45배 ↑</td><td><span class="verdict v-hold">중립화</span> 6/12 급등으로 PEG 매력 희석. 3Q26 8세대 양산 촉매는 유효하나 진입 매력은 6/11 대비 하락 — 조정 시 재진입</td></tr>
+      <tr><td><b>HD현대일렉</b></td><td class="num">~263,500 (연초+220%)</td><td class="num">TTM PER ~54배 ↑</td><td><span class="verdict v-hold">감시 유지</span> MSCI 한국지수 편입(패시브 자금) + 앨라배마·울산 증설. 변압기 노드 테제 유효하나 가격도 급등 — 분기 OPM이 수주 따라오는지 확인 후</td></tr>
+      <tr><td><b>삼성전기</b></td><td class="num">1,747,000</td><td class="num">신규 P/E ~24배</td><td><span class="verdict v-hold">신규 감시</span> 위 카드 — PEG 통과, 급등 변동성으로 타이밍 보류</td></tr>
+      <tr><td>Broadcom·Vertiv (미국)</td><td class="num">$460·$284대</td><td class="num">대체로 유지</td><td>미국 종목은 6/12 한국 장 급등과 별개 — Broadcom 눌림 대기, Vertiv 진입 유효 등 기존 판정 유지</td></tr>
+    </table>
+  </div>
+
+  <div class="judg" style="border-left-color:var(--amber)">
+    <b>리프레시 결론</b> — 6/12 급등은 펀더멘털 재평가가 아니라 "지정학 반등 + 단일 리포트 + 만기 수급"의 합작 과열로 판단(코스닥 신고가의 95%가 반도체 소부장이라는 쏠림이 그 증거). 한국 종목 다수가 PEG 매력을 하루 만에 상당분 소진 — 특히 HPSP는 목표가까지 초과해 "보류"에서 사실상 "회피" 영역 진입. 행동 원칙 불변: <b>급등 추격 금지, 조정·실적 확인 후 진입.</b> 다음 거래일 초반 차익실현 변동성 경계. 이형수 대표(HSL)의 "3분기까지 변동성 후 니프티 피프티식 상위주 쏠림" 전망도 우리 메모리 대시보드 시나리오 B(3Q26 정점)와 같은 방향 — 현금 비중 확보 구간이라는 데 복수 분석이 수렴.
+  </div>
+</div>
+
+<!-- ═══════════ PORTFOLIO NOTE ═══════════ -->
+<div class="sec">
+  <div class="sec-head"><span class="tag">RISK</span><h2>포트폴리오 공통 리스크</h2></div>
+  <div class="judg" style="border-left-color:var(--red)">
+    1·2·3군 전체가 하이퍼스케일러 capex라는 단일 변수에 노출된 한 방향 베팅입니다. capex -20% 시나리오에서 종목 간 상관계수는 1에 수렴한다고 가정하셔야 합니다 — 분산은 종목 수가 아니라 ① 진입 시점 분할(최소 2~3회), ② 현금 비중, ③ 군별 완충 구조 차이(Broadcom의 SW 매출, Vertiv의 백로그, 메모리의 LTA)로 확보하는 것이 맞습니다. 2H26 "AI 부채 청구서" 우려가 현실화될 경우 가장 먼저 빠지는 것은 멀티플이 높은 순서 — Vertiv(45배) → 이수페타시스(37배) → Broadcom(40배) → 메모리(6~11배) 순으로 하방 진폭이 클 것으로 추정됩니다. '26.6.11 재점검: 선제 디레버리징(커밋 축소·엔비디아 철수·Stargate 재편)으로 시스템 전반 위기 확률은 하향, 리스크는 오라클·CoreWeave 신용 이벤트라는 단일 진앙으로 집중 — 부록 카드 참조.
+  </div>
+
+  <div class="card" style="margin-top:24px;border-top-color:var(--red)">
+    <div class="card-head"><h3>부록 — "2H26 AI 부채 청구서" 구조 해설<span class="ticker">씨티 경고('25.12) · '26.6.11 재점검 반영</span></h3><span class="badge b-watch">질서 있는 후퇴 + 오라클 집중</span></div>
+    <div class="card-body">
+      <div class="block"><h4>원문 — 씨티 반도체 시장 전망 ('25.12월말 발간)</h4><ul>
+        <li>"AI 슈퍼사이클은 2026년까지 지속 — 다만 <b>2026년 하반기에는 오픈AI 관련 비용 청구가 본격화되고, AI 인프라 구축 자금조달 관련 부채 우려가 커질 수 있다</b>"</li>
+      </ul></div>
+      <div class="block"><h4>4개 경로 — '26.6.11 재점검 (원문 '25.12월말 대비 변경점 굵게)</h4><ul>
+        <li><b>① 칩 인도 → 대금 지급 개시</b>: Broadcom 10GW 커스텀칩 첫 배치 H2 2026 목표(3nm/2nm) 유지 — 단 <b>'26.5월 $18B 파이낸싱 차질 보도, 볼륨 양산(1GW+)은 '27년</b>. 현금유출 본격화 시점이 일부 '27로 이연될 수 있음 — 청구서가 사라진 게 아니라 미뤄진 것</li>
+        <li><b>② 커밋·매출 괴리 — 좁혀지는 중</b>: OpenAI가 '26.2월 컴퓨트 지출 목표를 2030년까지 <b>~$600B로 재제시(기존 $1.4조 대비 대폭 하향)</b>, 지출을 예상 매출 성장에 연동하는 구조로 변경. 매출은 연환산 $20B('25말)→$25B('26.2), 월 ~$2B — <b>괴리율 ~70배 → ~24배</b>. 광고 파일럿 6주 내 $100M+ 연환산('26년 내부목표 $2.4B). 단 손익은 여전히 무거움: 총마진 33%, 추론비용 $8.4B→$14.1B, <b>현금소진 '26 ~$27B → '27 ~$63B 확대 전망</b> — "결제 능력" 질문이 H2'26에서 '27로 이연된 구조. MS 수익배분 재협상으로 2030년까지 $38B 상한(~$97B 절감), 괴리를 메우는 건 여전히 외부 자본('26.3월 $122B 라운드 @ $852B — 사상 최대)</li>
+        <li><b>③ 순환금융 — 부분 해체·정상화 진행</b>: <b>엔비디아 $100B 커밋 사실상 철회</b> — '26.2월 $20~30B 단계 투자로 축소(현재 $730B pre 라운드에 최대 $30B 협의), 순환금융 비판이 신중론을 견인. <b>Stargate-오라클 균열</b>: OpenAI가 Vera Rubin 채택 위해 플래그십 확장 이탈. <b>CoreWeave는 순환→제3자 신디케이션으로 진화</b>: $8.5B DDTL 4.0(GPU·고객계약 담보 최초의 투자등급 A3 비소구), $3.1B DDTL 5.0(최초 공모 신디케이션 HPC 담보, Ba2/BB+, 50bp 타이트닝) — 공급자 단독 자금공급에서 기관투자자 분산으로. 단 직접 고리 잔존: '26.1월 엔비디아 CoreWeave 지분 $2B 추가 + 5GW AI 팩토리 협력("엔비디아 재무 체력 활용한 토지·전력·셸 조달" 명시)</li>
+        <li><b>④ 부채의 집중 — 오라클이 신용 바로미터로 확정</b>: 주요 플레이어 중 유일하게 부채로 빌드아웃 — 장부 부채 $100B+, Q3 누적 FCF <b>-$24.7B</b>, '26년 중 $45~50B 조달 계획, <b>5년 CDS ~198bp 사상 최고</b>, 주가 YTD -25%+, 신규 회사채 Baa2(부정적)/BBB(부정적). 원문의 "4배 가능성" 시나리오가 현실화 경로 진입. 아마존 FCF 마이너스 전환 전망·알파벳 FCF -90% 추정은 유지 — 단 알파벳은 에쿼티 조달로 경로 분리</li>
+      </ul></div>
+      <div class="block"><h4>재점검 결론</h4>
+        <div class="judg">씨티의 "2H26 청구서" 테제는 절반만 유효해졌습니다. 청구서 도래 전에 커밋 축소·엔비디아 철수·Stargate 재편이라는 <b>선제 디레버리징</b>이 진행돼, 시스템 전체의 위기 시나리오보다는 <b>"질서 있는 후퇴 + 부채의 특정 차주(오라클·CoreWeave) 집중"</b> 시나리오로 이동 중입니다. 포트폴리오 관점의 번역: 전 종목 동반 급락 확률은 낮아졌고, 대신 오라클 신용 이벤트라는 단일 진앙 리스크로 좁혀짐 — 진앙이 좁혀지면 감시도 좁힐 수 있습니다.</div>
+      </div>
+      <div class="block"><h4>당 포트폴리오 직접 함의 ('26.6.11 갱신)</h4><ul>
+        <li><b>Broadcom 체크포인트 변경</b>: OpenAI 결제능력 우려는 $122B 조달로 단기 완화 — 새 체크포인트는 <b>$18B 파이낸싱 차질과 볼륨 양산 '27 이연 여부</b>. AI 백로그 $73B·'27년 AI 매출 $100B 목표는 유지. FQ3(9월초)에서 확인 항목: 선수금·결제조건 → 파이낸싱 진행·양산 일정으로 교체</li>
+        <li><b>조기경보 가설 적중</b>: "균열은 칩 수요가 아니라 차주 재무에서 먼저 나타난다" — 오라클 CDS 198bp 사상 최고가 정확히 그 경로. 차기 관찰 대상 2개로 압축: ① CoreWeave DDTL 시리즈의 신디케이션 스프레드(타이트닝 지속 = 기관 수요 견조 = 정상화 / 와이드닝 = 경계) ② 오라클 FY27 capex 가이던스(차기 분기 공개)</li>
+        <li><b>메모리 3군 연결 유지</b>: 부채 우려가 capex 가이던스 하향으로 전이되는 순간이 시나리오 B의 수요 측 트리거라는 구조는 불변 — 단 트리거의 진앙이 "시스템 전반"에서 "오라클·CoreWeave 신용"으로 좁혀져 감시 효율 상승</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="foot">
+  <p><b>차기 갱신 트리거</b> — ① 6/18 HPSP 특허법원 선고 당일 ② 7월말 Vertiv Q2(백로그 전환율 포함) ③ 8/18 이수페타시스 2Q ④ 9월초 Broadcom FQ3(OpenAI 결제조건 코멘트 포함) ⑤ 분기별 메모리 대시보드 6지표(CXMT 점유율·비중국 OEM 채택 포함) ⑥ 분기별 진앙 감시 2종 — CoreWeave DDTL 신디케이션 스프레드·오라클 FY27 capex 가이던스(차기 분기) ⑦ LG전자 SOTP 별도 작업 ⑧ 분기별 하이퍼스케일러 capex 가이던스·구글 클라우드 백로그·착공/취소 건수 ⑨ 2027년 1~2분기 SpaceX-구글 해지옵션 행사 여부(브리지 수요 듀레이션 판정) ⑩ 효성중공업·Powell·산일전기 좌표 확보 ⑪ 4Q26~1H27 HBM4 LTA 가격 협상 — 단일 최강 A/B 판별자 ⑫ '26.11 미·중 휴전 만료(희토류 트랙 시한)·중국 InP 수출허가 발급 속도(AXT 분기 실적 좌우) ⑬ 7/29 삼성전기 2Q·MLCC 가격인상 공시 여부(분모 확대 트리거).</p>
+  <p class="src">출처 — 회사 공시(SEC 8-K/10-Q, DART), Vertiv·Broadcom·SMCI·Modine 실적발표, Dell'Oro DLC 시장 리포트, TrendForce·IDC·시그마인텔 산업전망, 국내외 증권사 리포트(한국투자·메리츠·미래에셋·하나·KB·삼성·NH·BNK, 노무라·씨티·JP모건·모건스탠리·맥쿼리·모닝스타), Bloomberg 순환금융 분석('26.3), Digitimes·TVBS(대만 냉각 공급망), LG전자 컨퍼런스콜('26.1Q), ZDNet·딜사이트·디일렉 특허분쟁 보도, Semiconductor Today·AXT 10-K/실적(InP 수출통제), 펜타곤·MP Materials·Lynas 공시 및 Reuters·Benchmark(희토류). 수치 중 추정 표기(*·~)는 컨센서스 부재 항목. 본 자료는 내부 검토용이며 투자 권유가 아님. 최종 투자 판단과 책임은 투자자 본인에게 있음.</p>
+</div>
+
+</div>
+</body>
+</html>
