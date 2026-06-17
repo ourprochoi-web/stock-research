@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Research — ourprochoi</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,sans-serif;
+  background:#0a0e1a;
+  color:#e8ecf4;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ══════════ HERO — fullscreen intro ══════════ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+/* animated gradient background */
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:-50%;
+  background:
+    radial-gradient(800px 600px at 30% 20%, rgba(99,102,241,.18), transparent 60%),
+    radial-gradient(600px 500px at 70% 70%, rgba(59,200,170,.14), transparent 55%),
+    radial-gradient(700px 400px at 60% 10%, rgba(244,180,60,.10), transparent 50%);
+  animation:auroraShift 12s ease-in-out infinite alternate;
+}
+@keyframes auroraShift{
+  0%{transform:translate(0,0) scale(1);opacity:.7}
+  50%{transform:translate(-3%,4%) scale(1.05);opacity:1}
+  100%{transform:translate(3%,-2%) scale(1);opacity:.8}
+}
+
+/* grid lines */
+.hero-grid-bg{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 70%);
+}
+
+/* floating particles */
+.particles{position:absolute;inset:0;pointer-events:none}
+.particle{
+  position:absolute;
+  border-radius:50%;
+  opacity:0;
+  animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+  0%{transform:translateY(100vh) scale(.5);opacity:0}
+  10%{opacity:.8}
+  90%{opacity:.4}
+  100%{transform:translateY(-10vh) scale(1.2);opacity:0}
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:0 24px;
+}
+.hero .eyebrow{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#6ee7b7;
+  opacity:0;
+  animation:fadeUp .8s ease forwards .3s;
+}
+.hero h1{
+  font-size:clamp(36px,7vw,64px);
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1.1;
+  margin:20px 0 0;
+  background:linear-gradient(135deg, #fff 0%, #a5b4fc 40%, #6ee7b7 70%, #fbbf24 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:fadeUp .8s ease forwards .5s, gradientFlow 6s ease infinite;
+  opacity:0;
+}
+@keyframes gradientFlow{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+.hero .lead{
+  margin-top:20px;
+  font-size:clamp(15px,2vw,18px);
+  color:#8893a7;
+  max-width:500px;
+  opacity:0;
+  animation:fadeUp .8s ease forwards .7s;
+}
+.hero .scroll-cue{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  color:#4b5570;
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  opacity:0;
+  animation:fadeUp .8s ease forwards 1.2s;
+}
+.scroll-line{
+  width:1px;height:40px;
+  background:linear-gradient(to bottom, #4b5570, transparent);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.3)}}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ══════════ MAIN CONTENT ══════════ */
+.content{
+  position:relative;
+  background:#0f1322;
+  padding:0 0 80px;
+}
+/* fade transition from hero */
+.content::before{
+  content:'';
+  position:absolute;
+  top:-120px;left:0;right:0;
+  height:120px;
+  background:linear-gradient(to bottom, transparent, #0f1322);
+  pointer-events:none;
+}
+
+.section{
+  max-width:800px;
+  margin:0 auto;
+  padding:80px 24px 0;
+}
+
+/* section header */
+.sec-label{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.sec-label::before{
+  content:'';
+  width:24px;height:2px;
+  border-radius:1px;
+}
+.sec-label.ai-infra{ color:#818cf8; }
+.sec-label.ai-infra::before{ background:#818cf8; }
+.sec-label.physical-ai{ color:#34d399; }
+.sec-label.physical-ai::before{ background:#34d399; }
+
+.sec-title{
+  font-size:clamp(24px,4vw,36px);
+  font-weight:900;
+  letter-spacing:-.03em;
+  line-height:1.2;
+  margin-bottom:10px;
+}
+.sec-desc{
+  color:#6b7a93;
+  font-size:15px;
+  max-width:560px;
+  margin-bottom:40px;
+}
+
+/* research cards */
+.cards{ display:flex; flex-direction:column; gap:16px; }
+
+.r-card{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:20px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;
+  padding:28px 32px;
+  text-decoration:none;
+  color:inherit;
+  transition:all .3s ease;
+  opacity:0;
+  transform:translateY(30px);
+}
+.r-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.r-card:hover{
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.15);
+  transform:translateY(-2px);
+  box-shadow:0 20px 60px -20px rgba(0,0,0,.5);
+}
+
+.r-card .badge{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  padding:4px 11px;
+  border-radius:6px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+.badge-overview{ background:rgba(129,140,248,.15); color:#a5b4fc; }
+.badge-deep{ background:rgba(251,191,36,.12); color:#fbbf24; }
+.badge-map{ background:rgba(52,211,153,.12); color:#6ee7b7; }
+
+.r-card h3{
+  font-size:clamp(17px,2.5vw,21px);
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:1.35;
+}
+.r-card .r-desc{
+  margin-top:8px;
+  font-size:14px;
+  color:#6b7a93;
+  line-height:1.55;
+}
+.r-card .r-date{
+  margin-top:12px;
+  font-size:12px;
+  color:#4b5570;
+}
+
+.r-card .arrow{
+  width:40px;height:40px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  transition:all .3s ease;
+  color:#4b5570;
+}
+.r-card:hover .arrow{
+  border-color:rgba(255,255,255,.3);
+  color:#e8ecf4;
+  transform:translateX(3px);
+}
+
+/* series connector */
+.series-group{ position:relative; }
+.series-group .cards{ position:relative; }
+.series-line{
+  position:absolute;
+  left:20px;
+  top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom, rgba(129,140,248,.3), rgba(129,140,248,.05));
+  border-radius:1px;
+  display:none;
+}
+@media(min-width:640px){
+  .series-line{ display:block; }
+  .series-group .cards{ padding-left:44px; }
+}
+
+/* stats bar */
+.stats-bar{
+  max-width:800px;
+  margin:0 auto;
+  padding:100px 24px 0;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border-radius:16px;
+  overflow:hidden;
+}
+.stat{
+  background:#0f1322;
+  padding:28px 20px;
+  text-align:center;
+  opacity:0;
+  transform:translateY(20px);
+}
+.stat.visible{ opacity:1; transform:none; transition:all .6s ease; }
+.stat .num{
+  font-size:clamp(28px,5vw,40px);
+  font-weight:900;
+  letter-spacing:-.03em;
+  background:linear-gradient(135deg,#a5b4fc,#6ee7b7);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.stat .stat-label{
+  margin-top:6px;
+  font-size:13px;
+  color:#5b6b86;
+}
+
+/* footer */
+footer{
+  text-align:center;
+  padding:80px 24px 40px;
+  font-size:12px;
+  color:#3b4560;
+  letter-spacing:.05em;
+}
+
+/* responsive */
+@media(max-width:520px){
+  .r-card{ grid-template-columns:1fr; padding:22px 20px; }
+  .r-card .arrow{ display:none; }
+  .stats-grid{ grid-template-columns:1fr; }
+  .stat{ padding:20px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Deep Research Archive</div>
+    <h1>산업의 구조를<br>읽는 리서치</h1>
+    <p class="lead">기술, 산업, 기업 — 돈이 흐르는 구조를 추적하는 심층 분석 아카이브</p>
+  </div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════ STATS ══════ -->
+<div class="content">
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat" data-reveal>
+      <div class="num" id="stat-count">0</div>
+      <div class="stat-label">리서치</div>
+    </div>
+    <div class="stat" data-reveal>
+      <div class="num" id="stat-themes">0</div>
+      <div class="stat-label">산업 테마</div>
+    </div>
+    <div class="stat" data-reveal>
+      <div class="num">2026</div>
+      <div class="stat-label">Latest</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SECTIONS (rendered by JS) ══════ -->
+<div id="sections"></div>
+
+<footer>
+  &copy; 2026 ourprochoi
+</footer>
+</div>
+
+<script>
+/* ── particles ── */
+(function(){
+  const wrap=document.getElementById('particles');
+  const colors=['#818cf8','#6ee7b7','#fbbf24','#f472b6'];
+  for(let i=0;i<35;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size=Math.random()*4+2;
+    const c=colors[Math.floor(Math.random()*colors.length)];
+    p.style.cssText=`
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      background:${c};
+      box-shadow:0 0 ${size*3}px ${c};
+      animation-duration:${Math.random()*6+6}s;
+      animation-delay:${Math.random()*8}s;
+    `;
+    wrap.appendChild(p);
+  }
+})();
+
+/* ── config ── */
+const SECTIONS = {
+  'AI 인프라': {
+    cssClass: 'ai-infra',
+    title: 'AI Infrastructure',
+    desc: '전력·GPU·데이터센터에서 모델·서비스까지 — AI 밸류체인 전 구간 분석',
+    badgeMap: { '산업 개관': 'badge-overview', '종목 심화': 'badge-deep', '투자 지도': 'badge-map' }
+  },
+  'Physical AI': {
+    cssClass: 'physical-ai',
+    title: 'Physical AI',
+    desc: '로보틱스·자율주행·드론 — 소프트웨어 지능이 물리 세계와 만나는 접점',
+    badgeMap: { '산업 개관': 'badge-overview', '종목 심화': 'badge-deep', '투자 지도': 'badge-map' }
+  }
+};
+
+/* ── inline data (also kept in data/research.json for reference) ── */
+const DATA = [
+  {
+    "title": "전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드",
+    "file": "ai-infra/ai_value_chain_guide_v2.html",
+    "date": "2025-06",
+    "category": "AI 인프라",
+    "type": "산업 개관",
+    "series": "AI 밸류체인",
+    "desc": "전력 인프라부터 GPU, 모델, 서비스까지 AI 밸류체인 전 구간을 체계적으로 정리한 투자 가이드"
+  },
+  {
+    "title": "AI 밸류체인 심화 검증 — 1·2·3군 분석",
+    "file": "ai-infra/ai_valuechain_deep_dive_20260611.html",
+    "date": "2026-06-11",
+    "category": "AI 인프라",
+    "type": "종목 심화",
+    "series": "AI 밸류체인",
+    "desc": "밸류체인 내 주요 종목을 1·2·3군으로 분류하고 실적·밸류에이션·킬 크라이테리아를 기반으로 심화 검증"
+  },
+  {
+    "title": "피지컬 AI 투자 지도 — 두뇌는 수렴하고, 몸은 갈라진다",
+    "file": "physical-ai/physical-ai-investment-map_1.html",
+    "date": "2026-06",
+    "category": "Physical AI",
+    "type": "투자 지도",
+    "series": null,
+    "desc": "로보틱스·자율주행·드론 등 피지컬 AI 영역의 HW/SW 구조를 분석하고 투자 기회를 매핑"
+  }
+];
+
+/* ── data load & render ── */
+function init(){
+  const data = [...DATA];
+  data.sort((a,b)=>b.date.localeCompare(a.date));
+
+  // stats
+  const categories = [...new Set(data.map(d=>d.category))];
+  animateNumber('stat-count', data.length);
+  animateNumber('stat-themes', categories.length);
+
+  // group by category
+  const grouped = {};
+  data.forEach(d=>{
+    if(!grouped[d.category]) grouped[d.category]=[];
+    grouped[d.category].push(d);
+  });
+
+  // group by series within category
+  const container = document.getElementById('sections');
+  Object.keys(grouped).forEach(cat=>{
+    const cfg = SECTIONS[cat] || { cssClass:'default', title:cat, desc:'', badgeMap:{} };
+    const items = grouped[cat];
+
+    // detect series
+    const seriesMap = {};
+    const standalone = [];
+    items.forEach(d=>{
+      if(d.series){
+        if(!seriesMap[d.series]) seriesMap[d.series]=[];
+        seriesMap[d.series].push(d);
+      } else {
+        standalone.push(d);
+      }
+    });
+
+    let cardsHtml = '';
+
+    // series groups
+    Object.keys(seriesMap).forEach(seriesName=>{
+      const seriesItems = seriesMap[seriesName];
+      // sort oldest first within series
+      seriesItems.sort((a,b)=>a.date.localeCompare(b.date));
+      cardsHtml += `<div class="series-group"><div class="series-line"></div><div class="cards">`;
+      seriesItems.forEach(d=>{ cardsHtml += renderCard(d, cfg); });
+      cardsHtml += `</div></div>`;
+    });
+
+    // standalone
+    standalone.forEach(d=>{ cardsHtml += renderCard(d, cfg); });
+
+    container.innerHTML += `
+      <div class="section">
+        <div class="sec-label ${cfg.cssClass}">${esc(cfg.title)}</div>
+        <h2 class="sec-title">${esc(cat)}</h2>
+        <p class="sec-desc">${esc(cfg.desc)}</p>
+        <div class="cards">${cardsHtml}</div>
+      </div>`;
+  });
+
+  // scroll reveal
+  observeReveal();
+}
+
+function renderCard(d, cfg){
+  const badgeClass = cfg.badgeMap[d.type] || 'badge-overview';
+  return `
+    <a class="r-card" href="${esc(d.file)}" data-reveal>
+      <div>
+        <span class="badge ${badgeClass}">${esc(d.type)}</span>
+        <h3>${esc(d.title)}</h3>
+        <p class="r-desc">${esc(d.desc)}</p>
+        <div class="r-date">${esc(d.date)}</div>
+      </div>
+      <div class="arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>`;
+}
+
+function esc(s){
+  const d=document.createElement('div');
+  d.textContent=s;
+  return d.innerHTML;
+}
+
+/* ── count animation ── */
+function animateNumber(id, target){
+  const el=document.getElementById(id);
+  let n=0;
+  const step=Math.max(1, Math.ceil(target/30));
+  const iv=setInterval(()=>{
+    n+=step;
+    if(n>=target){n=target;clearInterval(iv);}
+    el.textContent=n;
+  },40);
+}
+
+/* ── scroll reveal (IntersectionObserver) ── */
+function observeReveal(){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+
+  document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+}
+
+init();
+</script>
+
+</body>
+</html>
