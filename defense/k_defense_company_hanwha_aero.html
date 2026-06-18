@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한화에어로스페이스 딥다이브 — K-방산 시리즈 Part 4-1</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f0ede7; --card:#ffffff; --line:#d8dbd1; --note:#ebe8e0; --chip-bg:#e4e6dc;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+  --accent:#c79a2f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--up),var(--blue),var(--gold));width:0%;z-index:99;transition:width .15s}
+
+nav{position:sticky;top:0;background:rgba(240,237,231,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover{border-color:var(--gold);color:var(--gold)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#1a1f2e 0%,#1c2a3e 40%,#162232 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.35;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(199,154,47,.07) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(199,154,47,.07) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(22,34,50,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:86px 20px 44px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#e7c77e 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8b8;max-width:620px;margin:0 auto;font-size:16px;line-height:1.75}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:680px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(17px,4.5vw,28px);font-weight:900;color:#e7c77e;letter-spacing:-.02em}
+.stat .l{font-size:11px;color:#8a96a6;margin-top:5px;line-height:1.45}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:80px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none;user-select:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--gold)}
+.zone-head h2{font-size:clamp(22px,5vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--gold));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.25)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--gold));background:var(--zs,var(--golds));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:21px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.5px;line-height:1.82}
+.floor p.body b{color:var(--ink)}
+
+/* DATA TABLE */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+
+/* FACT GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--golds));border:1px solid color-mix(in srgb, var(--zc,var(--gold)) 20%, white);border-radius:13px;padding:16px 10px;text-align:center}
+.fact .n{font-size:clamp(14px,3.5vw,21px);font-weight:900;color:var(--zc,var(--gold));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-gold .c-head{background:var(--gold)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--gold-line);background:var(--golds);border-radius:14px;padding:18px 20px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a7a4c;margin-bottom:8px}
+.view p{font-size:14.3px;color:#5b5236;line-height:1.8}
+.view p b{color:#3d3009;font-weight:800}
+
+/* ANALOGY */
+.analogy{background:linear-gradient(100deg,#f7f0db,#f5ecce);border-left:4px solid var(--gold);padding:14px 18px;border-radius:0 12px 12px 0;font-size:15.3px;margin:16px 0;color:#574813;line-height:1.75}
+.analogy b{color:#3d3009}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px}
+.gloss details[open] summary::after{content:'−'}
+.gloss details[open] summary{color:var(--gold)}
+.gloss .g-body{padding:0 16px 16px;font-size:14px;color:var(--sub);line-height:1.75}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.16em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* SERIES NAV */
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:52px}
+.series-nav a{flex:1;display:block;padding:18px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:5px}
+.series-nav .sn-next{text-align:right}
+
+/* DISCLAIMER + FOOTER */
+.disclaimer{margin-top:52px;padding:20px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.75}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px;padding-bottom:24px}
+
+/* SECTION COLORS */
+.sec-overview{--zc:var(--gold);--zs:var(--golds)}
+.sec-perf{--zc:var(--up);--zs:var(--ups)}
+.sec-revenue{--zc:var(--blue);--zs:var(--blues)}
+.sec-backlog{--zc:var(--gold);--zs:var(--golds)}
+.sec-engine{--zc:var(--steel);--zs:var(--steels)}
+.sec-export{--zc:var(--up);--zs:var(--ups)}
+.sec-invest{--zc:var(--caution);--zs:var(--cautions)}
+.sec-gloss{--zc:var(--blue);--zs:var(--blues)}
+
+/* PROGRESS BAR CHART */
+.bar-chart{margin:18px 0}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.bar-row .bl{font-size:13px;font-weight:700;width:120px;flex:none;color:var(--sub)}
+.bar-track{flex:1;height:26px;background:var(--note);border-radius:8px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;font-size:11.5px;font-weight:800;color:#fff;transition:width 1.2s cubic-bezier(.2,.8,.3,1)}
+.bar-row .bv{font-size:13px;font-weight:800;width:60px;text-align:right;flex:none}
+
+/* ITAR ALERT */
+.itar-alert{background:linear-gradient(135deg,#fff5f3,#fff0ed);border:1.5px solid #e8c4bc;border-radius:14px;padding:18px 22px;margin:18px 0}
+.itar-alert .ia-head{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--down);margin-bottom:8px}
+.itar-alert p{font-size:14.5px;color:var(--sub);line-height:1.75}
+.itar-alert b{color:var(--ink)}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 6px}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+.mini-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mini-card .mc-head{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--faint);margin-bottom:8px}
+.mini-card h4{font-size:16px;font-weight:900;margin-bottom:6px;letter-spacing:-.01em}
+.mini-card ul{list-style:none}
+.mini-card li{font-size:13.5px;color:var(--sub);padding:4px 0;border-bottom:1px dashed var(--line);line-height:1.6}
+.mini-card li:last-child{border-bottom:none}
+.mini-card li b{color:var(--ink)}
+
+/* NODE FRAME */
+.node-frame{background:linear-gradient(135deg,#f7f0db,#f0ece2);border:2px solid var(--gold-line);border-radius:18px;padding:24px;margin:18px 0;position:relative;overflow:hidden}
+.node-frame::before{content:'불가결 노드';position:absolute;top:14px;right:18px;font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--gold);opacity:.7}
+.node-frame h4{font-size:18px;font-weight:900;color:var(--gold);margin-bottom:12px;letter-spacing:-.01em}
+.node-frame p{font-size:14.5px;color:#574813;line-height:1.8}
+.node-frame b{color:#3d3009}
+
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .stat:last-child{grid-column:1/-1}
+  .floor{padding:22px 18px}
+  .series-nav{flex-direction:column}
+}
+@media print{
+  nav,#prog{display:none}
+  .floor{opacity:1;transform:none;break-inside:avoid}
+  .hero-shell{background:#fff;color:var(--ink)}
+  .hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 시리즈 · Part 4-1</div>
+    <h1>한화에어로스페이스</h1>
+    <p class="lede">K-방산 최상위 수직통합 기업 — 지상·해양·항공우주를 아우르는 국내 유일의 풀스펙트럼 방산 그룹사. 폴란드·호주로 뻗어나가는 수출 기업으로의 대전환.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">26.7조</div>
+        <div class="l">2025년 연결 매출<br>(YoY +137.4%)</div>
+      </div>
+      <div class="stat">
+        <div class="n">116.8조</div>
+        <div class="l">연결 수주잔고<br>(2025년 말 기준)</div>
+      </div>
+      <div class="stat">
+        <div class="n">20.4%</div>
+        <div class="l">지상방산 OPM<br>(수출 비중 47.3%)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav>
+  <a href="#overview">기업 개요</a>
+  <a href="#perf">실적 분석</a>
+  <a href="#revenue">사업부 구조</a>
+  <a href="#backlog">수주잔고</a>
+  <a href="#engine">항공엔진</a>
+  <a href="#export">수출 계약</a>
+  <a href="#invest">투자 관점</a>
+  <a href="#gloss">용어 사전</a>
+</nav>
+
+<!-- ═══════ CONTENT ═══════ -->
+<div class="wrap">
+
+<!-- ══════════════════════════════════
+     SECTION 1: 기업 개요
+══════════════════════════════════ -->
+<section id="overview" class="sec-overview">
+  <div class="zone-head">
+    <div class="z-big">01</div>
+    <div class="z-num">SECTION 01</div>
+    <h2>기업 개요</h2>
+    <p>한화에어로스페이스는 어떤 회사인가 — 사업부 구조와 수직통합의 의미</p>
+  </div>
+
+  <div class="floor visible" style="border-top-color:var(--gold)">
+    <div class="f-tag" style="color:var(--gold);background:var(--golds)">종목코드 012450</div>
+    <h3>국내 유일 풀스펙트럼 방산 그룹사</h3>
+    <p class="body">한화에어로스페이스(012450)는 <b>K-방산의 최상위 체계종합 기업</b>이다. 지상무기·항공엔진·해양·우주발사체까지 아우르는 국내 유일의 수직통합 방산 그룹사로, 2024년 <b>한화오션 편입</b>으로 해양방산까지 포트폴리오를 완성했다.</p>
+    <p class="body"><b>체계종합(System Integrator)이란?</b> 전차·자주포·로켓 등 복잡한 무기체계를 설계하고, 수백 개의 부품·소프트웨어·엔진을 조합해 완성품을 납품하는 역할이다. 한국 방산에서 체계종합 능력을 보유한 기업은 극히 소수이며, 지상무기 분야에서 한화에어로스페이스의 위치는 사실상 독점에 가깝다.</p>
+    <p class="body"><b>수직통합이란?</b> 일반적으로 기업은 설계만 하고 부품은 협력사에 맡긴다. 한화에어로스페이스는 엔진부터 포탑, 탄약공급장치, 전장관리 소프트웨어까지 내재화해 마진 누수를 최소화하고 납기 자율성을 높였다.</p>
+  </div>
+
+  <div class="floor visible" style="border-top-color:var(--gold)">
+    <div class="f-tag" style="color:var(--gold);background:var(--golds)">4개 사업부</div>
+    <h3>사업부 구조 한눈에 보기</h3>
+    <div class="two-col">
+      <div class="mini-card">
+        <div class="mc-head">DIVISION 1</div>
+        <h4 style="color:var(--gold)">지상방산</h4>
+        <ul>
+          <li><b>K9 자주포</b> — 폴란드·노르웨이·호주 수출</li>
+          <li><b>천무 다연장로켓</b> — 세계 최대 단일 계약</li>
+          <li><b>레드백 IFV</b> — 호주 차기 보병전투차</li>
+          <li><b>K10 탄약운반장갑차</b> — K9 세트 납품</li>
+          <li>OPM 20.4%, 수주잔고 37.2조</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <div class="mc-head">DIVISION 2</div>
+        <h4 style="color:var(--blue)">해양부문 (한화오션)</h4>
+        <ul>
+          <li>상선 · LNG 운반선 건조</li>
+          <li>해군 함정 체계종합</li>
+          <li>2024년 편입, 완전년도 반영</li>
+          <li>매출 기여 약 48% (12.7조)</li>
+          <li>상대적 저마진 — 연결 OPM 희석</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <div class="mc-head">DIVISION 3</div>
+        <h4 style="color:var(--steel)">항공우주</h4>
+        <ul>
+          <li>GE 엔진 면허생산 (F404, F414)</li>
+          <li>KF-21 보라매 엔진 공급</li>
+          <li>FA-50 엔진 수출 연동 수혜</li>
+          <li>독자엔진 R&D 진행 중</li>
+          <li>ITAR 족쇄 — 제3국 수출 병목</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <div class="mc-head">DIVISION 4</div>
+        <h4 style="color:var(--up)">산업장비</h4>
+        <ul>
+          <li>스마트팩토리 자동화</li>
+          <li>한화비전 보안카메라</li>
+          <li>반도체 장비</li>
+          <li>방산 시너지 낮음</li>
+          <li>매출 약 1.6조, 비중 6%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor visible" style="border-top-color:var(--gold)">
+    <div class="f-tag" style="color:var(--gold);background:var(--golds)">핵심 포지션</div>
+    <h3>밸류체인 내 위치</h3>
+    <div class="analogy">
+      <b>비유로 이해하기:</b> 한화에어로스페이스는 K-방산의 "최종 조립 공장 + 브랜드"다. 현대로템이 전차를 만드는 동안, 한화에어로스페이스는 자주포·로켓·보병전투차를 만든다. 두 회사가 합쳐져야 육군이 필요한 지상전력 전체를 커버할 수 있다.
+    </div>
+    <div class="facts" style="--zc:var(--gold);--zs:var(--golds)">
+      <div class="fact"><div class="n">1952년</div><div class="l">창립 (삼성精機→한화 인수)</div></div>
+      <div class="fact"><div class="n">4개국</div><div class="l">현재 지상방산 수출 국가</div></div>
+      <div class="fact"><div class="n">약 3만명</div><div class="l">임직원 수 (연결 기준)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 2: 실적 분석
+══════════════════════════════════ -->
+<section id="perf" class="sec-perf">
+  <div class="zone-head">
+    <div class="z-big">02</div>
+    <div class="z-num">SECTION 02</div>
+    <h2>실적 분석</h2>
+    <p>3년 실적 추이와 한화오션 편입 효과 해부 — 숫자를 제대로 읽는 법</p>
+  </div>
+
+  <div class="floor sec-perf" style="border-top-color:var(--up)">
+    <div class="f-tag" style="color:var(--up);background:var(--ups)">연결 손익</div>
+    <h3>최근 3년 연결 실적 추이</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>2023년</th>
+          <th>2024년</th>
+          <th>2025년</th>
+          <th>YoY ('24→'25)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>매출액 (억원)</td>
+          <td>~90,000</td>
+          <td>112,462</td>
+          <td>267,029</td>
+          <td><span class="tag-up">+137.4%</span></td>
+        </tr>
+        <tr>
+          <td>영업이익 (억원)</td>
+          <td>~10,000</td>
+          <td>17,247</td>
+          <td>30,893</td>
+          <td><span class="tag-up">+79.1%</span></td>
+        </tr>
+        <tr>
+          <td>영업이익률</td>
+          <td>~11.1%</td>
+          <td>15.3%</td>
+          <td>11.6%</td>
+          <td><span class="tag-dn">−3.7%p</span></td>
+        </tr>
+        <tr>
+          <td>수주잔고 (조원)</td>
+          <td>—</td>
+          <td>—</td>
+          <td>~116.8</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout callout-blue">
+      <div class="c-head">매출 급증 해석 주의</div>
+      <div class="c-body">2025년 매출이 +137%로 급증했지만, 이는 주로 <b>한화오션(매출 12.7조) 연결 편입 첫 완전년도</b> 반영 효과다. 영업이익률이 15.3%→11.6%로 하락한 것도 한화오션의 상대적 저마진 구조가 연결에 녹아든 결과다. <b>순수 방산+항공우주+산업장비 기준 이익률은 지속 개선 중</b>임을 감안해야 한다.</div>
+    </div>
+  </div>
+
+  <div class="floor sec-perf" style="border-top-color:var(--up)">
+    <div class="f-tag" style="color:var(--up);background:var(--ups)">지상방산 단독</div>
+    <h3>진짜 이익 엔진 — 지상방산 단독 추이</h3>
+    <p class="body">연결 기준 희석 효과를 걷어내고, 핵심 사업인 <b>지상방산 사업부만의 실적</b>을 별도로 분석해야 투자 매력이 드러난다.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>2023년</th>
+          <th>2024년</th>
+          <th>2025년</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>지상방산 매출 (억원)</td>
+          <td>~41,000</td>
+          <td>70,056</td>
+          <td>98,816</td>
+        </tr>
+        <tr>
+          <td>지상방산 영업이익 (억원)</td>
+          <td>~5,700</td>
+          <td>15,659</td>
+          <td>20,129</td>
+        </tr>
+        <tr>
+          <td>지상방산 OPM</td>
+          <td>~13.9%</td>
+          <td>22.4%</td>
+          <td><b>20.4%</b></td>
+        </tr>
+        <tr>
+          <td>수출 비중</td>
+          <td>~35%</td>
+          <td>~43%</td>
+          <td>47.3%</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="facts" style="--zc:var(--up);--zs:var(--ups)">
+      <div class="fact"><div class="n">98,816억</div><div class="l">2025년 지상방산 매출</div></div>
+      <div class="fact"><div class="n">20.4%</div><div class="l">지상방산 OPM (이익률)</div></div>
+      <div class="fact"><div class="n">47.3%</div><div class="l">2025년 수출 비중</div></div>
+    </div>
+    <div class="view">
+      <div class="v-head">INVESTOR NOTE</div>
+      <p>OPM이 22.4%→20.4%로 소폭 하락한 배경은 <b>원가 상승(스테인리스강·알루미늄 등 원자재 가격)</b>이다. 그러나 20%대 이익률 자체는 방산 글로벌 최상위 수준이며, 수출 수주잔고 71% 구조가 유지되는 한 이익률 재반등 가능성이 높다.</p>
+    </div>
+  </div>
+
+  <div class="floor sec-perf" style="border-top-color:var(--up)">
+    <div class="f-tag" style="color:var(--up);background:var(--ups)">4Q25 이슈</div>
+    <h3>컨센서스 쇼크와 구조적 해석</h3>
+    <p class="body">4분기 2025년 영업이익이 시장 컨센서스를 <b>36% 하회</b>했다. 단기 노이즈인가, 구조적 훼손인가?</p>
+    <div class="callout callout-red">
+      <div class="c-head">리스크 팩터</div>
+      <div class="c-body">
+        <b>단기 요인:</b> 원자재 가격 상승(스테인리스강, 알루미늄), 폴란드 K9 2차 계약 초기 원가 인식, 생산능력 확대에 따른 선투자 비용.<br><br>
+        <b>구조적 해석:</b> 수주잔고 37조원 = 향후 3~4년 매출이 이미 확보된 상황. OPM 희석이 일시적이라면, 수주잔고 소화 과정에서 이익률 회복 가능성이 있다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 3: 사업부별 매출 구조
+══════════════════════════════════ -->
+<section id="revenue" class="sec-revenue">
+  <div class="zone-head">
+    <div class="z-big">03</div>
+    <div class="z-num">SECTION 03</div>
+    <h2>사업부별 매출 구조</h2>
+    <p>2025년 기준 4개 사업부 비중과 각 부문의 전략적 역할</p>
+  </div>
+
+  <div class="floor sec-revenue" style="border-top-color:var(--blue)">
+    <div class="f-tag" style="color:var(--blue);background:var(--blues)">2025년 기준</div>
+    <h3>사업부별 매출 분해</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>사업부</th>
+          <th>매출(억원)</th>
+          <th>비중</th>
+          <th>핵심 제품·특이사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>지상방산</td>
+          <td>98,816</td>
+          <td><span class="tag-up">~37%</span></td>
+          <td>K9 자주포, K10, 천무, 레드백 IFV</td>
+        </tr>
+        <tr>
+          <td>해양부문 (한화오션)</td>
+          <td>126,884</td>
+          <td><span class="tag-bl">~48%</span></td>
+          <td>상선·LNG·해양방산 (2024 편입 첫 완전년도)</td>
+        </tr>
+        <tr>
+          <td>항공우주</td>
+          <td>~25,131</td>
+          <td><span class="tag-ca">~9%</span></td>
+          <td>GE 엔진 면허생산, KF-21 엔진, 독자엔진 R&D</td>
+        </tr>
+        <tr>
+          <td>산업장비</td>
+          <td>~16,200</td>
+          <td><span class="tag-ca">~6%</span></td>
+          <td>스마트팩토리, 보안카메라(한화비전)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bl">해양부문</div>
+        <div class="bar-track"><div class="bar-fill" style="width:48%;background:var(--blue)">48%</div></div>
+        <div class="bv" style="color:var(--blue)">12.7조</div>
+      </div>
+      <div class="bar-row">
+        <div class="bl">지상방산</div>
+        <div class="bar-track"><div class="bar-fill" style="width:37%;background:var(--gold)">37%</div></div>
+        <div class="bv" style="color:var(--gold)">9.9조</div>
+      </div>
+      <div class="bar-row">
+        <div class="bl">항공우주</div>
+        <div class="bar-track"><div class="bar-fill" style="width:9%;background:var(--steel)">9%</div></div>
+        <div class="bv" style="color:var(--steel)">2.5조</div>
+      </div>
+      <div class="bar-row">
+        <div class="bl">산업장비</div>
+        <div class="bar-track"><div class="bar-fill" style="width:6%;background:var(--caution)">6%</div></div>
+        <div class="bv" style="color:var(--caution)">1.6조</div>
+      </div>
+    </div>
+    <div class="analogy">
+      <b>핵심 포인트:</b> 매출 기준으로는 한화오션(48%)이 가장 크지만, 이익 기여로 보면 <b>지상방산이 이익의 65% 이상을 담당</b>하는 핵심 엔진이다. 투자자는 지상방산의 OPM과 수주잔고를 1순위 지표로 봐야 한다.
+    </div>
+  </div>
+
+  <div class="floor sec-revenue" style="border-top-color:var(--blue)">
+    <div class="f-tag" style="color:var(--blue);background:var(--blues)">오션 효과</div>
+    <h3>한화오션 편입의 두 얼굴</h3>
+    <div class="two-col">
+      <div class="mini-card" style="border-left:3px solid var(--up)">
+        <div class="mc-head" style="color:var(--up)">긍정 효과</div>
+        <h4 style="color:var(--up)">전략적 시너지</h4>
+        <ul>
+          <li>해군 함정 + 지상무기 <b>패키지 수출</b> 가능</li>
+          <li>폴란드·호주 등 원스톱 방산 수주</li>
+          <li>LNG 운반선 수요 대형화</li>
+          <li>그룹 재무 규모 확대</li>
+        </ul>
+      </div>
+      <div class="mini-card" style="border-left:3px solid var(--down)">
+        <div class="mc-head" style="color:var(--down)">부정 효과</div>
+        <h4 style="color:var(--down)">마진 희석 구조</h4>
+        <ul>
+          <li>조선업 <b>저마진(5~8%)</b> 연결 반영</li>
+          <li>OPM 15%→11.6% 희석</li>
+          <li>시황 사이클 리스크 추가</li>
+          <li>투자자 혼란 유발</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 4: 수주잔고 분석
+══════════════════════════════════ -->
+<section id="backlog" class="sec-backlog">
+  <div class="zone-head">
+    <div class="z-big">04</div>
+    <div class="z-num">SECTION 04</div>
+    <h2>수주잔고 분석</h2>
+    <p>116.8조원의 해부 — 진짜 방산 파이프라인을 찾아라</p>
+  </div>
+
+  <div class="floor sec-backlog" style="border-top-color:var(--gold)">
+    <div class="f-tag" style="color:var(--gold);background:var(--golds)">2025년 말</div>
+    <h3>116.8조원 수주잔고 분해</h3>
+    <p class="body"><b>수주잔고(Order Backlog)</b>란 이미 계약이 체결됐으나 아직 납품·매출 인식이 되지 않은 미래 매출 예약 금액이다. 116.8조원은 현재 연간 매출(26.7조)의 약 4.4배 — 향후 4~5년치 매출이 이미 확보된 상태다.</p>
+    <div class="facts" style="--zc:var(--gold);--zs:var(--golds)">
+      <div class="fact"><div class="n">116.8조</div><div class="l">연결 총수주잔고</div></div>
+      <div class="fact"><div class="n">37.2조</div><div class="l">지상방산 수주잔고</div></div>
+      <div class="fact"><div class="n">71%</div><div class="l">지상방산 수출 비중</div></div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>부문</th>
+          <th>수주잔고</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>지상방산</td>
+          <td>37.2조원</td>
+          <td>수출 71%, 폴란드·호주 중심</td>
+        </tr>
+        <tr>
+          <td>해양부문 (한화오션)</td>
+          <td>~70조원 (추정)</td>
+          <td>상선 + 해군함정 포함</td>
+        </tr>
+        <tr>
+          <td>항공우주</td>
+          <td>포함</td>
+          <td>KF-21 엔진 5,562억원(~2027년)</td>
+        </tr>
+        <tr>
+          <td>연결 합계</td>
+          <td><b>116.8조원</b></td>
+          <td>2025년 말 기준</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="view">
+      <div class="v-head">INVESTOR NOTE — 수주잔고의 질</div>
+      <p>지상방산 37.2조 중 수출이 71%를 차지한다는 점이 핵심이다. 내수 방산은 예산 삭감·지연 리스크가 있지만, <b>수출 계약은 상대국 국방예산에서 지원되므로 취소 리스크가 훨씬 낮다.</b> 폴란드, 호주 등 NATO/우방국 계약은 정치적 안정성도 높다.</p>
+    </div>
+  </div>
+
+  <div class="floor sec-backlog" style="border-top-color:var(--gold)">
+    <div class="f-tag" style="color:var(--gold);background:var(--golds)">수출 계약 테이블</div>
+    <h3>지역별 주요 수출 수주 현황</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>국가</th>
+          <th>품목</th>
+          <th>규모</th>
+          <th>납기</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>폴란드</td>
+          <td>K9 자주포 1·2차</td>
+          <td>약 4~5조원</td>
+          <td>2026~2030</td>
+        </tr>
+        <tr>
+          <td>폴란드</td>
+          <td>천무 다연장로켓</td>
+          <td>약 5조원</td>
+          <td>2025~2029</td>
+        </tr>
+        <tr>
+          <td>호주</td>
+          <td>레드백 IFV</td>
+          <td>비공개 (수조원+)</td>
+          <td>2027~2035</td>
+        </tr>
+        <tr>
+          <td>노르웨이</td>
+          <td>K9·천무</td>
+          <td>협상 진행 중</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="body" style="margin-top:14px;font-size:14.5px;color:var(--sub)">폴란드 K9·천무 합계만 <b>약 8조원+</b>이며, 한국 방산 단일 국가 수출 계약 역사상 최대 규모다. 호주 레드백은 공개 규모가 비공개이나 업계에서는 수조원대로 추산한다.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 5: 항공엔진 사업부
+══════════════════════════════════ -->
+<section id="engine" class="sec-engine">
+  <div class="zone-head">
+    <div class="z-big">05</div>
+    <div class="z-num">SECTION 05</div>
+    <h2>항공엔진 사업부</h2>
+    <p>F404·F414 면허생산의 한계와 독자엔진 개발 — ITAR 족쇄를 끊을 수 있는가</p>
+  </div>
+
+  <div class="floor sec-engine" style="border-top-color:var(--steel)">
+    <div class="f-tag" style="color:var(--steel);background:var(--steels)">현재 구조</div>
+    <h3>GE 엔진 면허생산 현황</h3>
+    <p class="body"><b>면허생산(Licensed Production)</b>이란 외국 업체(GE)의 특허·기술·설계를 허가받아 국내에서 조립·생산하는 방식이다. 설계 능력은 없지만 생산 역량과 일부 부품 국산화 능력을 쌓는 단계다.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>엔진 모델</th>
+          <th>탑재 기체</th>
+          <th>추력</th>
+          <th>국산화율</th>
+          <th>수출 연동</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>F404-GE-102</td>
+          <td>FA-50 경공격기</td>
+          <td>5,300 kgf</td>
+          <td>약 20%</td>
+          <td>FA-50 수출 확대 동반</td>
+        </tr>
+        <tr>
+          <td>F414-GE-400K</td>
+          <td>KF-21 보라매</td>
+          <td>9,979 kgf</td>
+          <td>목표 40%<br>(현재 30%)</td>
+          <td>2025.6 최초양산 계약<br>5,562억원, 납기 2027년</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="itar-alert">
+      <div class="ia-head">ITAR 족쇄 — 최대 수출 병목</div>
+      <p><b>ITAR(International Traffic in Arms Regulations)</b>는 미국 무기수출통제법으로, GE 엔진 기술이 포함된 항공기(KF-21, FA-50)를 제3국에 수출하려면 <b>미국 국무부의 별도 승인</b>이 필요하다. 미국이 거부권을 사실상 보유하는 구조다. 폴란드가 KF-21에 관심을 보여도 ITAR이 병목이 될 수 있다.</p>
+    </div>
+  </div>
+
+  <div class="floor sec-engine" style="border-top-color:var(--steel)">
+    <div class="f-tag" style="color:var(--steel);background:var(--steels)">독자엔진</div>
+    <h3>독자엔진 개발 계획 — ITAR 탈출 전략</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>목표 사양</td>
+          <td>1만 5,000 파운드급 추력 (F414 동급)</td>
+        </tr>
+        <tr>
+          <td>완료 목표</td>
+          <td>2030년대 중후반</td>
+        </tr>
+        <tr>
+          <td>추진 주체</td>
+          <td>한화에어로스페이스 주도 + 방사청 + ADD</td>
+        </tr>
+        <tr>
+          <td>예산 규모</td>
+          <td>약 3.3조원 (14년 계획)</td>
+        </tr>
+        <tr>
+          <td>전략적 의미</td>
+          <td>ITAR 족쇄 탈출 → KF-21 제3국 수출 자유화</td>
+        </tr>
+        <tr>
+          <td>경쟁 구도</td>
+          <td>두산에너빌리티와 역할 분담 (저압터빈·압축기)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout callout-gold">
+      <div class="c-head">영국 대안 경로 (2026년 현재 협상 중)</div>
+      <div class="c-body">영국이 <b>Rolls-Royce 엔진으로 GE F414를 대체</b>하는 방안을 한국에 제안 중이다. 목적은 KF-21 수출 가속화 — Rolls-Royce 엔진으로 교체하면 ITAR 족쇄에서 벗어나 유럽 및 제3국 수출이 훨씬 자유로워진다. 협상 결과에 따라 한화에어로스페이스 항공우주 사업부 전략이 크게 바뀔 수 있다.</div>
+    </div>
+    <div class="analogy">
+      <b>독자엔진이 왜 '비선형 성장 옵션'인가:</b> 현재 KF-21 100대 내수 수주 외에도, ITAR 해결 시 폴란드·인도·중동 수출이 열린다. KF-21 한 대당 엔진이 2개 × 대당 가격 최소 수십억원 = 수출 대수가 늘수록 엔진 매출이 비선형으로 증가한다.
+    </div>
+    <div class="view">
+      <div class="v-head">INVESTOR NOTE — 항공엔진 타임라인</div>
+      <p>독자엔진 완성은 <b>2030년대 중후반</b>으로 10년 이상 남았다. 단기 주가 촉매라기보다는 <b>장기 성장 옵션 프리미엄</b>으로 접근해야 한다. 영국 RR 협상이 가속된다면 단기 ITAR 우회 경로가 열릴 수 있어 주목할 이벤트다.</p>
+    </div>
+  </div>
+
+  <div class="floor sec-engine" style="border-top-color:var(--steel)">
+    <div class="f-tag" style="color:var(--steel);background:var(--steels)">국산화 논쟁</div>
+    <h3>블랙박스 부품과 국산화율의 한계</h3>
+    <p class="body">F404의 국산화율 20%, F414의 국산화율 30%는 수치상 낮아 보이지만, 문제는 <b>나머지 70~80%가 단순히 수입 부품이 아닌 'FADEC(전자식 엔진 제어 장치)'·터빈 블레이드 등 GE 블랙박스 부품</b>이라는 점이다.</p>
+    <div class="callout callout-blue">
+      <div class="c-head">블랙박스 부품이란?</div>
+      <div class="c-body"><b>블랙박스 부품</b>은 외형은 공급받지만 내부 설계와 소프트웨어가 공개되지 않는 부품이다. FADEC(Full Authority Digital Engine Control)은 엔진 출력·연료 분사·안전 관리를 모두 제어하는 두뇌에 해당한다. GE가 이 부품의 소스코드를 공유하지 않으면, 한화가 엔진의 40%를 만들어도 <b>진짜 독립은 불가능</b>하다. 독자엔진 개발이 필요한 근본 이유다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 6: 주요 수출 계약
+══════════════════════════════════ -->
+<section id="export" class="sec-export">
+  <div class="zone-head">
+    <div class="z-big">06</div>
+    <div class="z-num">SECTION 06</div>
+    <h2>주요 수출 계약</h2>
+    <p>폴란드·호주·노르웨이 — K-방산 수출 역사를 다시 쓰는 계약들</p>
+  </div>
+
+  <div class="floor sec-export" style="border-top-color:var(--up)">
+    <div class="f-tag" style="color:var(--up);background:var(--ups)">폴란드</div>
+    <h3>폴란드 — 세계 최대 K-방산 수출 클라이언트</h3>
+    <p class="body">2022년 러시아의 우크라이나 침공 이후 폴란드는 GDP의 4% 이상을 국방에 투자하며 NATO 최대 재무장 국가가 됐다. 한국산 무기의 신뢰성과 빠른 납기가 맞아떨어지며 역대 최대 계약이 성사됐다.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>품목</th>
+          <th>규모</th>
+          <th>납기</th>
+          <th>특이사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>K9 자주포 (1·2차)</td>
+          <td>약 4~5조원</td>
+          <td>2026~2030</td>
+          <td>K9PL 현지생산(절충교역) 협상 병행</td>
+        </tr>
+        <tr>
+          <td>천무 다연장로켓</td>
+          <td>약 5조원</td>
+          <td>2025~2029</td>
+          <td>세계 최대 단일 다연장로켓 계약</td>
+        </tr>
+        <tr>
+          <td>폴란드 소계</td>
+          <td><b>약 8조원+</b></td>
+          <td>—</td>
+          <td>단일 국가 최대</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="body" style="font-size:14.5px;color:var(--sub)"><b>절충교역(Offset Trade)</b>이란 대규모 무기 구매국이 수출국에게 현지 생산·기술 이전을 요구하는 조건이다. 폴란드는 K9의 현지 조립 생산을 요구했으며, 이는 한화에어로스페이스가 폴란드 방산 산업과 장기 파트너십을 구축하는 기회이기도 하다.</p>
+  </div>
+
+  <div class="floor sec-export" style="border-top-color:var(--up)">
+    <div class="f-tag" style="color:var(--up);background:var(--ups)">호주 레드백</div>
+    <h3>호주 — 레드백 IFV와 질롱 공장</h3>
+    <p class="body"><b>레드백(Redback) IFV(보병전투차)</b>는 한화에어로스페이스가 호주 차기 보병전투차(LAND 400 Phase 3) 사업에서 독일 라인메탈의 링스(Lynx)를 꺾고 최종 선정된 신형 전투차량이다.</p>
+    <div class="facts" style="--zc:var(--up);--zs:var(--ups)">
+      <div class="fact"><div class="n">수조원+</div><div class="l">추정 계약 규모<br>(비공개)</div></div>
+      <div class="fact"><div class="n">2027년</div><div class="l">첫 납품 예정</div></div>
+      <div class="fact"><div class="n">질롱</div><div class="l">호주 H-ACE 공장<br>(건설 중)</div></div>
+    </div>
+    <div class="callout callout-green">
+      <div class="c-head">레드백이 특별한 이유</div>
+      <div class="c-body">단순 수출이 아닌 <b>호주 현지 생산</b>이 조건이다. 질롱(Geelong)에 H-ACE(Hanwha Armoured Centre of Excellence) 공장을 건설 중이며, 이는 한화에어로스페이스가 <b>호주 방위산업 생태계에 직접 편입</b>되는 것을 의미한다. 단발성 계약이 아닌 수십 년 유지보수·업그레이드 계약으로 이어지는 구조다.</div>
+    </div>
+  </div>
+
+  <div class="floor sec-export" style="border-top-color:var(--up)">
+    <div class="f-tag" style="color:var(--up);background:var(--ups)">기타 국가</div>
+    <h3>노르웨이·루마니아 및 파이프라인</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>국가</th>
+          <th>품목</th>
+          <th>현황</th>
+          <th>특이사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>노르웨이</td>
+          <td>K9·천무</td>
+          <td>추가 계약 진행 중</td>
+          <td>NATO 북측방 방어선 강화</td>
+        </tr>
+        <tr>
+          <td>루마니아</td>
+          <td>K9 자주포</td>
+          <td>검토 중</td>
+          <td>EU "Buy European" 장벽 주의</td>
+        </tr>
+        <tr>
+          <td>기타 유럽</td>
+          <td>K9 계열</td>
+          <td>파이프라인</td>
+          <td>핀란드·에스토니아 관심</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="analogy">
+      <b>EU "Buy European" 리스크:</b> 2024년부터 EU는 방산 보조금을 EU 역내 생산 무기에만 지급하는 정책을 강화하고 있다. 루마니아, 체코 등 동유럽 국가가 K9을 원해도 EU 보조금을 받으려면 유럽산 장비를 선택해야 하는 구조적 제약이 있다.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 7: 투자 관점
+══════════════════════════════════ -->
+<section id="invest" class="sec-invest">
+  <div class="zone-head">
+    <div class="z-big">07</div>
+    <div class="z-num">SECTION 07</div>
+    <h2>투자 관점</h2>
+    <p>강점·리스크·성장 옵션 — 한화에어로스페이스를 어떻게 볼 것인가</p>
+  </div>
+
+  <div class="floor sec-invest" style="border-top-color:var(--caution)">
+    <div class="f-tag" style="color:var(--caution);background:var(--cautions)">핵심 강점</div>
+    <h3>투자 강점 3가지</h3>
+    <div class="callout callout-green">
+      <div class="c-head">강점 1 — 수주잔고의 질과 양</div>
+      <div class="c-body">지상방산 수주잔고 <b>37조원</b> = 현재 연간 지상방산 매출(9.9조)의 3.7배. 단순 계산으로도 향후 3~4년 매출이 확보됐으며, <b>수출 비중 71%</b>로 내수 예산 삭감 리스크에서 절연돼 있다.</div>
+    </div>
+    <div class="callout callout-green">
+      <div class="c-head">강점 2 — 수직통합 이익률 방어력</div>
+      <div class="c-body">지상방산 OPM <b>20%+</b>는 글로벌 방산 기업 최상위권이다. 록히드마틴(~11%), BAE(~9%)와 비교하면 압도적이다. 수직통합 구조로 협력사 이익 누수가 없고, 수출 프리미엄 가격이 더해진 구조다.</div>
+    </div>
+    <div class="callout callout-green">
+      <div class="c-head">강점 3 — 불가결 노드(Irreplaceable Node) 위치</div>
+      <div class="c-body">K9 자주포, 천무, 레드백을 납품할 수 있는 기업은 <b>전 세계에서 한화에어로스페이스 단 하나</b>다. 대체재가 없는 독점적 지위는 협상력을 극대화하고 계약 취소 가능성을 극소화한다.</div>
+    </div>
+  </div>
+
+  <div class="floor sec-invest" style="border-top-color:var(--caution)">
+    <div class="f-tag" style="color:var(--caution);background:var(--cautions)">리스크</div>
+    <h3>투자 리스크 분석</h3>
+    <div class="callout callout-red">
+      <div class="c-head">리스크 1 — 원가 상승과 마진 압박</div>
+      <div class="c-body">4Q25 컨센서스 36% 하회의 주범은 <b>스테인리스강·알루미늄 등 원자재 가격 상승</b>이다. 방산 계약은 장기 고정가 계약이 많아, 원자재 가격이 오르면 마진이 직접 훼손된다. 에스컬레이션 조항이 없는 기존 계약은 리스크 요인이다.</div>
+    </div>
+    <div class="callout callout-red">
+      <div class="c-head">리스크 2 — 한화오션 마진 희석 구조</div>
+      <div class="c-body">조선업 사이클이 하락하거나 LNG 운반선 발주가 줄면 <b>한화오션 마진이 추가로 악화</b>될 수 있다. 연결 OPM 기준으로 투자 분석하는 투자자에게는 이 구조가 지속적 불만 요소다.</div>
+    </div>
+    <div class="callout callout-gold">
+      <div class="c-head">리스크 3 — EU Buy European 장벽</div>
+      <div class="c-body">유럽 방산 자립 강화 기조가 이어지면 루마니아·동유럽 신규 수출 기회가 줄어들 수 있다. <b>폴란드처럼 현지 생산 조건을 수용하는 방식</b>으로 대응 중이나, 이는 단가 희석을 동반한다.</div>
+    </div>
+  </div>
+
+  <div class="floor sec-invest" style="border-top-color:var(--caution)">
+    <div class="f-tag" style="color:var(--caution);background:var(--cautions)">성장 옵션</div>
+    <h3>성장 옵션 — 비선형 성장의 잠재력</h3>
+    <div class="node-frame">
+      <h4>불가결 노드 프레임</h4>
+      <p>한화에어로스페이스는 K-방산 밸류체인에서 <b>대체 불가능한 체계종합 노드</b>다. K9 없이는 폴란드·노르웨이 육군 재건이 불가능하고, 레드백 없이는 호주 지상전력 현대화가 멈춘다. 이 위치는 단순한 시장 점유율이 아닌 <b>구조적 필수성</b>에서 비롯된다. 독자엔진 성공 시 KF-21 수출 게이트가 열리며, 이 노드의 크기가 지상+항공 양 방향으로 확장된다.</p>
+    </div>
+    <div class="callout callout-gold">
+      <div class="c-head">성장 옵션 1 — 독자엔진 성공</div>
+      <div class="c-body">ITAR 족쇄 탈출 시 KF-21 수출 가능 국가가 현재보다 대폭 확대. 중동·동남아·유럽 수출 시 <b>항공엔진 매출이 비선형 증가</b>. 현재 주가에 이 옵션이 얼마나 반영됐는지 확인 필요.</div>
+    </div>
+    <div class="callout callout-gold">
+      <div class="c-head">성장 옵션 2 — 레드백 해외 복제 효과</div>
+      <div class="c-body">호주 성공 시 레드백은 NATO 표준 IFV로 발전할 가능성. 독일 링스를 이긴 레드백의 실적은 <b>유럽 추가 수출을 위한 최강의 레퍼런스</b>다.</div>
+    </div>
+    <div class="callout callout-gold">
+      <div class="c-head">성장 옵션 3 — 우주발사체 상업화</div>
+      <div class="c-body">누리호 상업 발사, 민간 위성 발사 수요와 연계된 우주사업부 확장. 단기 매출 기여는 미미하나 <b>장기 포트폴리오 다변화 가치</b>를 제공한다.</div>
+    </div>
+    <div class="view">
+      <div class="v-head">INVESTOR VIEW — 한화에어로스페이스 포지션</div>
+      <p>한화에어로스페이스는 <b>'수출 방산 기업으로의 대전환이 이미 시작된 기업'</b>이다. 수주잔고 37조, 수출 71% 구조는 더 이상 내수 방산이 아님을 증명한다. 핵심 관찰 포인트는 세 가지다: <b>(1) 폴란드 K9 2차 납품 일정 정상화, (2) 독자엔진 또는 영국 RR 협상 진전, (3) 레드백 호주 첫 납품(2027년) 이전 추가 국가 수주 여부</b>. 이 세 이벤트가 맞아떨어지면 현재 연결 OPM 11.6% 희석 우려는 노이즈에 그칠 것이다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 8: 용어 사전
+══════════════════════════════════ -->
+<section id="gloss" class="sec-gloss">
+  <div class="zone-head">
+    <div class="z-big">08</div>
+    <div class="z-num">SECTION 08</div>
+    <h2>용어 사전</h2>
+    <p>한화에어로스페이스를 이해하기 위한 핵심 용어 해설</p>
+  </div>
+
+  <div class="floor sec-gloss" style="border-top-color:var(--blue)">
+    <div class="f-tag" style="color:var(--blue);background:var(--blues)">무기체계</div>
+    <h3>무기·장비 관련 용어</h3>
+
+    <div class="gloss-sec">주요 무기체계</div>
+    <div class="gloss">
+      <details>
+        <summary>K9 자주포</summary>
+        <div class="g-body">한화에어로스페이스가 제작하는 155mm 자주포. '자주(自走)'란 포 자체에 엔진이 달려 스스로 이동한다는 뜻이다. 1999년 한국군 첫 납품 이후 폴란드·핀란드·노르웨이·인도·호주 등 10개국 이상에 수출됐으며, 현재 세계에서 가장 많이 팔린 자주포다. <b>K9PL은 폴란드 현지 생산 버전</b>으로, 절충교역 조건에 따라 폴란드 방위산업과 공동 생산한다.</div>
+      </details>
+      <details>
+        <summary>천무 (K239 다연장로켓)</summary>
+        <div class="g-body">한화에어로스페이스가 제작하는 다연장로켓 시스템. 20km~80km 거리의 표적을 정밀 타격한다. 2022년 폴란드가 약 5조원 규모의 세계 최대 단일 다연장로켓 계약을 체결했다. <b>미국 HIMARS와 유사한 역할</b>을 하며, 납기 속도에서 한국산이 압도적 우위다. 천무란 '하늘의 춤'이라는 의미다.</div>
+      </details>
+      <details>
+        <summary>레드백 IFV (보병전투차)</summary>
+        <div class="g-body"><b>IFV(Infantry Fighting Vehicle)</b>는 보병을 탑재하고 적 전차·보병과 싸울 수 있는 전투 차량이다. 레드백은 한화에어로스페이스가 독자 개발한 차세대 IFV로, 호주 LAND 400 Phase 3 사업에서 독일 라인메탈 링스를 꺾고 최종 선정됐다. 레드백은 호주 독거미의 영어 이름이다. 질롱 H-ACE 공장에서 현지 생산 예정.</div>
+      </details>
+      <details>
+        <summary>K10 탄약운반장갑차</summary>
+        <div class="g-body">K9 자주포에 탄약을 자동으로 보급하는 지원 장갑차. K9 수출 시 세트로 납품되는 경우가 많아 K9 수출 증가 시 K10 매출도 동반 증가한다. 탄약 보급 속도를 3~4배 높여 K9의 지속 사격 능력을 극대화한다.</div>
+      </details>
+      <details>
+        <summary>KF-21 보라매</summary>
+        <div class="g-body">한국항공우주산업(KAI)이 개발 중인 한국 최초 독자 전투기. 4.5세대 초음속 전투기로 분류된다. 한화에어로스페이스는 GE F414-GE-400K 엔진을 면허생산해 KF-21에 탑재한다. 2025년 6월 첫 양산 엔진 계약(5,562억원, 납기 2027년)이 체결됐다. <b>ITAR 적용으로 제3국 수출 시 미국 승인이 필수</b>다.</div>
+      </details>
+      <details>
+        <summary>FA-50 경공격기</summary>
+        <div class="g-body">KAI가 생산하는 초음속 경공격기. 한화에어로스페이스는 GE F404-GE-102 엔진을 면허생산해 FA-50에 탑재한다. 폴란드·필리핀·말레이시아 등에 수출됐으며, 수출 확대 시 한화 엔진 매출이 동반 성장한다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">항공엔진 관련</div>
+    <div class="gloss">
+      <details>
+        <summary>F404-GE-102 엔진</summary>
+        <div class="g-body">GE(미국)가 설계한 군용 터보팬 엔진. 추력 5,300kgf급으로 FA-50 경공격기에 탑재된다. 한화에어로스페이스가 GE로부터 면허를 받아 국내에서 조립·생산한다. 국산화율은 약 20%로, 핵심 고온 부품과 FADEC는 GE 공급에 의존한다.</div>
+      </details>
+      <details>
+        <summary>F414-GE-400K 엔진</summary>
+        <div class="g-body">GE가 설계한 차세대 군용 터보팬 엔진. 추력 9,979kgf급으로 KF-21 전투기에 탑재된다. F404보다 강력하며, 국산화율 목표 40%(현재 30%). <b>ITAR 규제 적용</b>으로 이 엔진이 탑재된 KF-21을 제3국에 수출하려면 미국 국무부 승인이 필요하다.</div>
+      </details>
+      <details>
+        <summary>FADEC (전자식 엔진 제어 장치)</summary>
+        <div class="g-body"><b>Full Authority Digital Engine Control</b>의 약자. 항공기 엔진의 연료 분사량, 출력, 냉각, 안전 차단 등 모든 기능을 디지털로 제어하는 '엔진의 두뇌'다. GE는 FADEC의 소스코드를 공개하지 않는다. 이 때문에 한화에어로스페이스가 엔진 부품 40%를 만들어도 FADEC 없이는 독립적 운용이 불가능하다. <b>독자엔진 개발의 핵심 목표 중 하나가 독자 FADEC 확보</b>다.</div>
+      </details>
+      <details>
+        <summary>블랙박스 부품</summary>
+        <div class="g-body">외형은 납품받지만 내부 설계·소프트웨어·제조 공정이 비공개인 부품. 항공 엔진에서는 FADEC, 고압 터빈 블레이드, 연소기 등이 여기에 해당한다. <b>블랙박스 부품에 의존하는 한 진정한 기술 자립은 불가능</b>하며, 원 제조사가 공급을 중단하면 운용 자체가 멈출 수 있다.</div>
+      </details>
+      <details>
+        <summary>독자엔진</summary>
+        <div class="g-body">GE 등 외국 기술에 의존하지 않고 한국이 독자 설계·개발·생산하는 군용 항공 엔진. 한화에어로스페이스 주도로 추력 15,000 파운드급(F414 동급) 엔진 개발을 2030년대 중후반 완성 목표로 진행 중. 총 사업비 약 3.3조원, 14년 계획. 성공 시 ITAR에서 완전 독립 가능.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">규제·무역 관련</div>
+    <div class="gloss">
+      <details>
+        <summary>ITAR (국제무기거래규정)</summary>
+        <div class="g-body"><b>International Traffic in Arms Regulations</b>. 미국 국무부가 관할하는 무기 수출입 통제 규정. 미국산 기술·부품이 포함된 무기를 제3국에 수출할 때 미국 정부의 사전 승인이 필요하다. GE 엔진이 탑재된 KF-21, FA-50의 수출 허가권을 미국이 사실상 보유하게 되는 구조다. <b>한국 방산 수출의 최대 제도적 병목</b>이다.</div>
+      </details>
+      <details>
+        <summary>절충교역 (Offset Trade)</summary>
+        <div class="g-body">대규모 방산 수입국이 수출국에게 현지 생산·기술 이전·고용 창출 등을 조건으로 요구하는 무역 방식. 폴란드는 K9 구매 조건으로 K9PL 현지 생산을 요구했다. 단기적으로는 수출 단가가 낮아지지만, 장기적으로는 해당 국가 방산 생태계에 편입되어 유지보수·업그레이드 계약이 지속된다.</div>
+      </details>
+      <details>
+        <summary>NATO (북대서양조약기구)</summary>
+        <div class="g-body">미국·유럽·캐나다 등 32개국이 가입한 집단 방위 동맹. 러시아의 우크라이나 침공 이후 NATO 회원국들의 국방비가 급격히 증가하며 한국 방산 수출의 최대 수요처가 됐다. 폴란드·노르웨이·핀란드 등이 K9, 천무 주요 고객이다. <b>NATO 표준 규격(STANAG) 충족이 유럽 추가 수출의 핵심 조건</b>이다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">재무·투자 관련</div>
+    <div class="gloss">
+      <details>
+        <summary>수주잔고 (Order Backlog)</summary>
+        <div class="g-body">이미 계약이 체결됐으나 아직 납품·매출 인식이 완료되지 않은 미래 매출 예약 금액. 방산 투자의 핵심 선행 지표다. 수주잔고가 높을수록 향후 매출이 안정적이다. 한화에어로스페이스 연결 수주잔고 116.8조(2025년 말)는 현재 연간 매출(26.7조)의 4.4배다.</div>
+      </details>
+      <details>
+        <summary>OPM (영업이익률)</summary>
+        <div class="g-body"><b>Operating Profit Margin</b>. 매출 대비 영업이익 비율. 한화에어로스페이스 지상방산 OPM은 20.4%로 글로벌 최상위권이다. 연결 기준 OPM이 11.6%로 낮은 것은 한화오션(조선업, OPM 5~8%) 편입 희석 효과다. 방산 투자 시 <b>지상방산 단독 OPM을 별도 추적하는 것이 필수</b>다.</div>
+      </details>
+      <details>
+        <summary>체계종합 (System Integration)</summary>
+        <div class="g-body">복잡한 무기체계(자주포, 전투기 등)를 설계·조립·통합하는 역할. 수백 개 부품을 조합해 완성품을 납품하며, 설계 능력과 핵심 부품 내재화 여부에 따라 이익률이 크게 달라진다. 한화에어로스페이스는 K9, 천무, 레드백 체계종합 능력을 보유한 국내 유일 기업이다.</div>
+      </details>
+      <details>
+        <summary>면허생산 (Licensed Production)</summary>
+        <div class="g-body">외국 기업의 특허·설계를 허가받아 국내에서 생산하는 방식. 독자 개발보다 빠르고 비용이 낮지만, 핵심 기술은 원 제조사에게 귀속된다. 한화에어로스페이스의 F404, F414 생산이 대표 사례다. ITAR 등 수출 규제 종속 문제가 발생하며, 장기적으로는 독자 개발로 전환이 필요한 이유다.</div>
+      </details>
+      <details>
+        <summary>밸류체인 (Value Chain)</summary>
+        <div class="g-body">원자재 조달→부품 생산→체계종합→납품→유지보수로 이어지는 방산 산업 전체 가치 사슬. 한화에어로스페이스는 밸류체인의 상위(체계종합, 부품 내재화)를 점령한 기업이다. 밸류체인 상위에 위치할수록 이익률이 높고 협상력이 강하다.</div>
+      </details>
+      <details>
+        <summary>수출 비중</summary>
+        <div class="g-body">전체 매출 중 해외 수출이 차지하는 비율. 한화에어로스페이스 지상방산의 2025년 수출 비중은 47.3%. 수주잔고 기준으로는 71%가 수출. 수출 비중이 높을수록 국내 국방예산 삭감 리스크에서 자유롭고, 글로벌 재무장 사이클의 직접 수혜를 받는다.</div>
+      </details>
+      <details>
+        <summary>한화오션</summary>
+        <div class="g-body">한화그룹이 2023년 인수한 조선·해양 기업 (구 대우조선해양). 상선·LNG 운반선·군함을 생산한다. 2024년부터 한화에어로스페이스 연결 재무제표에 편입됐다. 매출 기여 약 48%(12.7조)로 최대 사업부지만, 조선업 특성상 OPM이 방산보다 낮아 연결 이익률을 희석한다.</div>
+      </details>
+      <details>
+        <summary>GE (제너럴 일렉트릭 / GE Aerospace)</summary>
+        <div class="g-body">미국 항공기 엔진 제조 세계 1위 기업. F404, F414를 설계·제조하며, 한화에어로스페이스에 면허를 허가해 한국 내 생산을 허용한다. 블랙박스 부품(FADEC 등)을 직접 공급하며, ITAR을 통해 KF-21·FA-50 수출에 사실상 거부권을 행사할 수 있다.</div>
+      </details>
+      <details>
+        <summary>AESA 레이더</summary>
+        <div class="g-body"><b>Active Electronically Scanned Array</b> 레이더. 수천 개의 소형 안테나 소자를 전자적으로 제어해 빠르게 빔을 조향하는 최신 전투기 레이더. KF-21에 탑재될 예정이며, 한국형 AESA 개발은 LIG넥스원이 담당한다. 한화에어로스페이스와 직접 관련은 없으나 KF-21 전체 수출 경쟁력에 영향을 미친다.</div>
+      </details>
+      <details>
+        <summary>ADD (국방과학연구소)</summary>
+        <div class="g-body"><b>Agency for Defense Development</b>. 한국 국방부 산하 연구기관으로 무기 개발의 핵심 기술을 연구한다. 독자엔진 개발에서 한화에어로스페이스·방사청과 협력한다. ADD 기술은 민간 기업으로 이전돼 상용화되는 구조다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SERIES NAV + FOOTER
+══════════════════════════════════ -->
+<div class="series-nav">
+  <a href="k_defense_investment_map.html">
+    <div class="sn-label">PREV · PART 3</div>
+    방산주 투자 지도
+  </a>
+  <a href="k_defense_company_hyundai_rotem.html" class="sn-next">
+    <div class="sn-label">NEXT · PART 4-2</div>
+    현대로템 딥다이브
+  </a>
+</div>
+
+<div class="disclaimer">
+  <b>투자 고지:</b> 본 문서는 교육·연구 목적의 정보 제공 자료이며, 특정 증권의 매매를 권유하거나 투자를 유도하지 않습니다. 제시된 수치와 내용은 공개된 정보를 바탕으로 작성됐으며, 실제 수치와 차이가 있을 수 있습니다. 모든 투자 결정은 독자 본인의 판단과 책임하에 이루어져야 하며, 투자에는 원금 손실의 위험이 따릅니다. 과거 실적이 미래 수익을 보장하지 않습니다.
+</div>
+
+<footer>
+  K-방산 시리즈 · Part 4-1 &nbsp;|&nbsp; 한화에어로스페이스 딥다이브 &nbsp;|&nbsp; 2026년 6월 기준
+</footer>
+
+</div><!-- end .wrap -->
+
+<script>
+// Progress bar
+(function(){
+  var prog = document.getElementById('prog');
+  function updateProg(){
+    var scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+    var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    prog.style.width = (total > 0 ? (scrolled / total * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', updateProg, {passive:true});
+  updateProg();
+})();
+
+// Scroll reveal for .floor elements
+(function(){
+  var floors = document.querySelectorAll('.floor');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+    floors.forEach(function(f){ obs.observe(f); });
+  } else {
+    floors.forEach(function(f){ f.classList.add('visible'); });
+  }
+})();
+
+// Smooth scroll for nav links
+document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if(target){
+      var offset = 70;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({top:top,behavior:'smooth'});
+    }
+  });
+});
+
+// Animate bar fills on scroll into view
+(function(){
+  var bars = document.querySelectorAll('.bar-fill');
+  var widths = [];
+  bars.forEach(function(b){ widths.push(b.style.width); b.style.width = '0%'; });
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var idx = Array.from(bars).indexOf(e.target);
+          setTimeout(function(){ bars[idx].style.width = widths[idx]; }, 120);
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.5});
+    bars.forEach(function(b){ obs.observe(b); });
+  } else {
+    bars.forEach(function(b,i){ b.style.width = widths[i]; });
+  }
+})();
+</script>
+</body>
+</html>

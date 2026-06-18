@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAI 한국항공우주산업 — K-방산 시리즈 Part 4-4</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#eef0f3; --card:#ffffff; --line:#d6dae0; --note:#e6eaee; --chip-bg:#dde2e8;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --accent:#3c5167; --accents:#e3eaf1;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#5a7fa0,#8aafc4,var(--accent));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(238,240,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover{border-color:var(--accent);color:var(--accent)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#111720 0%,#1a2535 40%,#0e1b2a 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.30;background-image:
+  repeating-linear-gradient(0deg,transparent 0 48px,rgba(60,81,103,.15) 48px 49px),
+  repeating-linear-gradient(90deg,transparent 0 48px,rgba(60,81,103,.15) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(14,27,42,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:80px 20px 44px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#7aaed4;font-weight:800;text-transform:uppercase}
+.hero .ticker{font-size:13px;color:#4d7a9a;font-weight:700;margin:10px 0 0;letter-spacing:.1em}
+.hero h1{font-size:clamp(28px,6.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.18;margin:16px 0 12px;
+  background:linear-gradient(110deg,#fff 20%,#a8cce0 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#8da8be;max-width:620px;margin:0 auto;font-size:15.5px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.2vw,26px);font-weight:900;color:#a8cce0;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#6e8fa6;margin-top:5px;line-height:1.45}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.045;letter-spacing:-.05em;line-height:1;pointer-events:none;color:var(--accent)}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--accent)}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--accent));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.22)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--accent));background:var(--zs,var(--accents));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* DATA TABLE */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 4px}
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);min-width:460px}
+th{background:var(--accent);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px 12px;text-align:left;font-weight:800}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.3px}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#f7f9fb}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent)}
+
+/* FACT GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--accents));border:1px solid color-mix(in srgb,var(--zc,var(--accent)) 20%,white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,22px);font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-gold .c-head{background:var(--gold)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--accent)}
+.callout-steel .c-head{background:#2b3d52}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--gold-line);background:var(--golds);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a7a4c;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5b5236;line-height:1.75}
+.view p b{color:#3d3009}
+
+/* DUAL CARD GRID */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:560px){.dual{grid-template-columns:1fr}}
+.dbox{border-radius:16px;padding:20px;border:1.5px solid}
+.dbox h4{font-size:15.5px;font-weight:900;margin-bottom:10px}
+.dbox ul{list-style:none}
+.dbox li{font-size:13.5px;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08);color:var(--sub);line-height:1.6}
+.dbox li:last-child{border-bottom:none}
+.dbox li b{color:var(--ink)}
+.dbox-red{background:var(--downs);border-color:#e5b4aa}.dbox-red h4{color:var(--down)}
+.dbox-green{background:var(--ups);border-color:#a9d6c3}.dbox-green h4{color:var(--up)}
+.dbox-blue{background:var(--accents);border-color:#a8bed0}.dbox-blue h4{color:var(--accent)}
+.dbox-gold{background:var(--golds);border-color:var(--gold-line)}.dbox-gold h4{color:var(--gold)}
+
+/* RISK CARDS */
+.risk-list{display:grid;gap:14px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--up)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.08em}
+.risk h4{font-size:15.5px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.8px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* STRATEGY 3-COLUMN */
+.opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:600px){.opt-grid{grid-template-columns:1fr}}
+.opt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 14px;border-top:4px solid var(--accent)}
+.opt .opt-num{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--accent);margin-bottom:6px}
+.opt h4{font-size:14.5px;font-weight:900;margin-bottom:8px;letter-spacing:-.01em}
+.opt p{font-size:13px;color:var(--sub);line-height:1.6}
+.opt p b{color:var(--ink)}
+
+/* SPACE ITEMS */
+.space-list{display:grid;gap:10px;margin:18px 0 6px}
+.space-item{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start}
+.space-item .sp-icon{flex:none;width:40px;height:40px;border-radius:10px;background:var(--accents);display:flex;align-items:center;justify-content:center;font-size:20px}
+.space-item h4{font-size:14.5px;font-weight:900;margin-bottom:3px}
+.space-item p{font-size:13px;color:var(--sub);line-height:1.6}
+.space-item .sp-badge{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent);margin-top:5px}
+
+/* SWOT */
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:560px){.swot{grid-template-columns:1fr}}
+.sw{border-radius:14px;padding:18px;border:1.5px solid}
+.sw .sw-label{font-size:10.5px;font-weight:900;letter-spacing:.14em;margin-bottom:10px}
+.sw ul{list-style:none}
+.sw li{font-size:13.2px;color:var(--sub);padding:4px 0;border-bottom:1px dashed rgba(0,0,0,.07);line-height:1.55}
+.sw li:last-child{border-bottom:none}
+.sw li b{color:var(--ink)}
+.sw-s{background:var(--ups);border-color:#a9d6c3}.sw-s .sw-label{color:var(--up)}
+.sw-w{background:var(--downs);border-color:#e5b4aa}.sw-w .sw-label{color:var(--down)}
+.sw-o{background:var(--accents);border-color:#a8bed0}.sw-o .sw-label{color:var(--accent)}
+.sw-t{background:var(--cautions);border-color:#dfc38a}.sw-t .sw-label{color:var(--caution)}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px}
+.gloss details[open] summary::after{content:'−'}
+.gloss details[open] summary{border-bottom:1px solid var(--line)}
+.gloss .g-body{padding:12px 16px 14px;font-size:14px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:12.5px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);text-transform:uppercase}
+
+/* MISC */
+.analogy{background:linear-gradient(100deg,#eaf0f6,#dce7f0);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#2a3d52}
+.analogy b{color:#1a2a3a}
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px;padding-bottom:20px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+.series-nav .sn-title{font-size:13px;font-weight:800;color:var(--accent)}
+.series-nav a.next-link .sn-label{text-align:right}
+.series-nav a.next-link{text-align:right}
+
+@media(max-width:600px){
+  .floor{padding:20px 16px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats .stat:last-child{grid-column:1/-1}
+  .dual,.opt-grid,.swot,.series-nav{flex-direction:column}
+  .dual,.swot{grid-template-columns:1fr}
+  .opt-grid{grid-template-columns:1fr}
+  .series-nav{flex-direction:column}
+}
+
+@media print{
+  nav,#prog,.home-btn{display:none}
+  .floor{opacity:1;transform:none;break-inside:avoid}
+  .hero-shell{background:#fff;color:var(--ink)}
+  .hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<!-- Fixed Home Button -->
+<a href="../" class="home-btn" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--accent);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<!-- Progress Bar -->
+<div id="prog"></div>
+
+<!-- HERO -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 시리즈 · Part 4-4 · 한국항공우주산업</div>
+    <div class="ticker">KAI · 047810 · KOSPI</div>
+    <h1>KAI — 엔진 족쇄를 풀면<br>날개가 된다</h1>
+    <p class="lede">국내 유일 항공기 체계종합 기업. FA-50·KF-21·수리온·누리호·군 정찰위성을 한 손에 쥔 회사가 ITAR 구조적 병목을 넘는 순간을 기다린다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">3.70조</div>
+        <div class="l">2025년 매출<br>(연결 기준)</div>
+      </div>
+      <div class="stat">
+        <div class="n">27.3조</div>
+        <div class="l">수주잔고<br>(매출의 7.4배)</div>
+      </div>
+      <div class="stat">
+        <div class="n">5.7조</div>
+        <div class="l">2026E 매출<br>(컨센서스)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav>
+  <a href="#overview">기업 개요</a>
+  <a href="#financials">실적 추이</a>
+  <a href="#fa50">FA-50 수출</a>
+  <a href="#kf21">KF-21 보라매</a>
+  <a href="#itar">ITAR 족쇄</a>
+  <a href="#space">위성·우주</a>
+  <a href="#investment">투자 관점</a>
+  <a href="#glossary">용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- §1 기업 개요 -->
+<section id="overview">
+  <div class="zone-head">
+    <div class="z-big">01</div>
+    <div class="z-num">SECTION 01</div>
+    <h2>기업 개요</h2>
+    <p>국내 유일 항공기 체계종합(System Integrator) 기업. 전투기부터 위성발사체까지 대한민국 하늘을 설계한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">COMPANY PROFILE</span>
+    <h3>한국항공우주산업(KAI)이란?</h3>
+    <p class="body">KAI는 <b>대한민국 유일의 항공기 체계종합 기업</b>으로, 항공기 설계·개발·생산·수출 전 과정을 관할한다. 1999년 삼성항공·대우중공업·현대우주항공 항공사업부문이 통합되어 탄생했으며, 현재 방위사업청 및 한국항공우주연구원과 긴밀히 협력한다.</p>
+    <p class="body">핵심 사업은 <b>전투기·헬기·훈련기 제작, 위성체계 통합, 발사체 부품 공급</b>으로 나뉜다. 군(軍) 납품이 매출의 대부분이나, FA-50 수출이 확대되면서 수출 비중이 빠르게 높아지고 있다.</p>
+    <div class="facts">
+      <div class="fact"><div class="n">1999</div><div class="l">설립연도<br>(3사 합병)</div></div>
+      <div class="fact"><div class="n">5,800+</div><div class="l">임직원 수<br>(연결 기준)</div></div>
+      <div class="fact"><div class="n">047810</div><div class="l">코스피 종목코드</div></div>
+      <div class="fact"><div class="n">사천</div><div class="l">본사 위치<br>(경남 사천시)</div></div>
+      <div class="fact"><div class="n">7.4배</div><div class="l">수주잔고/매출비<br>(2025년 기준)</div></div>
+      <div class="fact"><div class="n">66대+</div><div class="l">FA-50 수출 확정<br>(파이프라인)</div></div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">PRODUCT PORTFOLIO</span>
+    <h3>주요 제품 포트폴리오</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>구분</th><th>제품·사업</th><th>주요 특징</th><th>현황</th></tr></thead>
+      <tbody>
+        <tr><td>전투기</td><td>KF-21 보라매</td><td>4.5세대 멀티롤 전투기. GE F414 엔진 탑재</td><td><span class="tag-up">양산 진행</span></td></tr>
+        <tr><td>경공격기</td><td>FA-50</td><td>T-50 파생 경공격기. AESA 레이더 탑재</td><td><span class="tag-up">수출 확대</span></td></tr>
+        <tr><td>훈련기</td><td>T-50 골든이글</td><td>초음속 고등훈련기. 10개국 이상 운용</td><td><span class="tag-bl">운용 중</span></td></tr>
+        <tr><td>헬기</td><td>수리온 (KUH-1)</td><td>국산 기동헬기. 의무·경찰 파생형 다수</td><td><span class="tag-bl">운용 중</span></td></tr>
+        <tr><td>위성</td><td>군 정찰위성 425사업</td><td>광학위성 4기 + SAR위성 1기 체계종합</td><td><span class="tag-up">완료·운용</span></td></tr>
+        <tr><td>발사체</td><td>누리호 부품</td><td>한국형발사체 추력기 등 핵심 부품 공급</td><td><span class="tag-bl">진행 중</span></td></tr>
+        <tr><td>MRO</td><td>항공기 유지보수</td><td>국내외 납품 기체 정비·성능개량</td><td><span class="tag-bl">상시 운영</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="analogy">
+      <b>한 줄 요약:</b> KAI는 대한민국이 독자적으로 하늘을 지배하기 위해 만든 유일한 '항공우주 국가대표 기업'이다. 보잉·록히드마틴의 한국판이라고 이해하면 쉽다. 단, 엔진은 외제를 써야 한다는 결정적 차이가 있다.
+    </div>
+  </div>
+</section>
+
+<!-- §2 실적 추이 -->
+<section id="financials">
+  <div class="zone-head">
+    <div class="z-big">02</div>
+    <div class="z-num">SECTION 02</div>
+    <h2>실적 추이</h2>
+    <p>2025년 매출 성장률이 1.7%에 그쳤으나 이는 착시다. 진짜 급증은 2026년부터 시작된다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">FINANCIALS 2023–2025</span>
+    <h3>3개년 실적 요약</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>구분</th><th>2023년</th><th>2024년</th><th>2025년</th><th>YoY ('24→'25)</th></tr></thead>
+      <tbody>
+        <tr><td>매출액 (억원)</td><td>~36,300</td><td>36,318</td><td>36,964</td><td><span class="tag-ca">+1.7%</span></td></tr>
+        <tr><td>영업이익 (억원)</td><td>~2,408</td><td>2,408</td><td>2,692</td><td><span class="tag-up">+11.8%</span></td></tr>
+        <tr><td>영업이익률</td><td>~6.6%</td><td>6.6%</td><td>7.3%</td><td><span class="tag-up">+0.7%p</span></td></tr>
+        <tr><td>수주 (연간, 억원)</td><td>—</td><td>49,038</td><td>63,946</td><td><span class="tag-up">+30.4%</span></td></tr>
+        <tr><td>수주잔고 (억원)</td><td>246,994</td><td>246,994</td><td>273,437</td><td><span class="tag-up">+10.7%</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout callout-blue" style="margin-top:18px">
+      <div class="c-head">왜 2025년 매출 성장률이 1.7%에 불과한가?</div>
+      <div class="c-body">
+        <b>매출 인식 타이밍의 문제다.</b> KF-21 전투기 양산 계약(2025년 6월, 17.6억 달러 규모)과 FA-50 폴란드·말레이시아 수출 물량의 실제 납기(인도)는 <b>2026~2028년</b>에 집중된다. 항공기는 계약 체결 시점이 아니라 납품·검수 완료 시점에 매출을 인식하는 구조다. 즉, 2025년의 낮은 매출 성장은 착시이며, <b>수주잔고 27.3조원(매출의 7.4배)</b>이 실제 잠재력을 나타낸다. 2026년 컨센서스 매출 전망은 5.7조원으로, 전년 대비 약 54% 급증이 예상된다.
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">OUTLOOK 2026</span>
+    <h3>2026년 실적 전망 근거</h3>
+    <div class="facts">
+      <div class="fact"><div class="n">5.7조</div><div class="l">2026E 매출<br>(컨센서스)</div></div>
+      <div class="fact"><div class="n">+54%</div><div class="l">전년 대비 매출<br>성장률 전망</div></div>
+      <div class="fact"><div class="n">10.4조</div><div class="l">2026E 신규수주<br>전망</div></div>
+      <div class="fact"><div class="n">KF-21</div><div class="l">양산 매출 인식<br>본격화</div></div>
+      <div class="fact"><div class="n">FA-50</div><div class="l">폴란드·말레이시아<br>납기 시작</div></div>
+      <div class="fact"><div class="n">~8%</div><div class="l">영업이익률<br>목표 수준</div></div>
+    </div>
+    <div class="view">
+      <div class="v-head">투자자 시각</div>
+      <p>2025년 연말~2026년 초는 KAI의 실적 <b>"캐즘 돌파"</b> 구간이다. 매출 성장이 본격화하는 시점에 선행적으로 주가가 반응할 가능성이 높다. 수주잔고 7.4배는 향후 7년치 매출이 이미 확보되었음을 의미한다. 단, ITAR 문제가 해결되지 않으면 고마진 수출의 천장이 낮다는 점은 주의해야 한다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- §3 FA-50 수출 -->
+<section id="fa50">
+  <div class="zone-head">
+    <div class="z-big">03</div>
+    <div class="z-num">SECTION 03</div>
+    <h2>FA-50 경공격기 수출</h2>
+    <p>K-방산 수출 1번 타자. 폴란드·말레이시아·필리핀 3국 확정 계약만 66대, 총 수조원 규모.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">FA-50 OVERVIEW</span>
+    <h3>FA-50이란 무엇인가?</h3>
+    <p class="body">FA-50은 T-50 골든이글 초음속 훈련기를 기반으로 개발된 <b>경공격기(Light Combat Aircraft)</b>다. 마하 1.5의 초음속 속도, 공대공·공대지 정밀유도무기 탑재 능력, 최신 항전장비를 갖췄으며, 선진국 전투기 대비 훨씬 낮은 가격이 핵심 경쟁력이다. 폴란드 수출형(FA-50PL)에는 <b>PhantomStrike AESA 레이더</b>가 탑재되어 성능이 대폭 업그레이드됐다.</p>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>수출국</th><th>계약 물량</th><th>계약 규모</th><th>납기·현황</th><th>특이사항</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>폴란드</td>
+          <td>FA-50PL 36대</td>
+          <td>약 3조원+</td>
+          <td><span class="tag-ca">납기 진행 중</span></td>
+          <td>PhantomStrike AESA 레이더 탑재. NATO 기준 충족</td>
+        </tr>
+        <tr>
+          <td>말레이시아</td>
+          <td>FA-50MY 18대</td>
+          <td>약 9.2억 달러</td>
+          <td><span class="tag-ca">2026년 납기 시작</span></td>
+          <td>동남아 최초 FA-50 수출. 유지보수 계약 포함</td>
+        </tr>
+        <tr>
+          <td>필리핀</td>
+          <td>FA-50PH 추가</td>
+          <td>약 7억 달러</td>
+          <td><span class="tag-up">계약 확정</span></td>
+          <td>기존 12대 운용 중. 추가 계약으로 전력 증강</td>
+        </tr>
+        <tr>
+          <td>이라크</td>
+          <td>FA-50IQ (기납품)</td>
+          <td>기 납품 완료</td>
+          <td><span class="tag-bl">MRO 협상</span></td>
+          <td>추가 유지보수·성능개량 협상 진행 중</td>
+        </tr>
+        <tr>
+          <td>인도네시아</td>
+          <td>T-50i (기존)</td>
+          <td>기 납품</td>
+          <td><span class="tag-bl">MRO 병행</span></td>
+          <td>FA-50 수준 성능개량 업그레이드 협의 중</td>
+        </tr>
+        <tr>
+          <td style="color:var(--accent);font-weight:900">파이프라인 합계</td>
+          <td style="font-weight:900">약 66대 이상</td>
+          <td style="font-weight:900">수조원 규모</td>
+          <td><span class="tag-up">확정 계약 기준</span></td>
+          <td>폴란드 36 + 말레이시아 18 + 필리핀 12</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">COMPETITIVE EDGE</span>
+    <h3>FA-50 수출 경쟁력 분석</h3>
+    <div class="dual">
+      <div class="dbox dbox-green">
+        <h4>강점 — 왜 팔리는가</h4>
+        <ul>
+          <li><b>가격 경쟁력:</b> 선진국 전투기 대비 1/5~1/10 수준</li>
+          <li><b>성능 충분성:</b> 마하 1.5 초음속, 정밀타격 가능</li>
+          <li><b>검증된 기체:</b> 한국 공군 운용 실적 다수</li>
+          <li><b>패키지 딜:</b> 훈련·MRO·현지화 일괄 제공</li>
+          <li><b>AESA 업그레이드:</b> PL형으로 NATO급 도달</li>
+        </ul>
+      </div>
+      <div class="dbox dbox-red">
+        <h4>약점 — 수출 제약 요인</h4>
+        <ul>
+          <li><b>AMRAAM 미통합:</b> BVR 교전능력 제약</li>
+          <li><b>ITAR 무장 제한:</b> 美 미사일 탑재 시 수출통제</li>
+          <li><b>엔진 의존:</b> GE 엔진 면허생산으로 독자성 부족</li>
+          <li><b>일부 고객 이탈:</b> BVR 부재로 선택 포기 사례</li>
+          <li><b>중형 전투기 갭:</b> FA-50 상위급 수요 대응 불가</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout callout-gold">
+      <div class="c-head">MBDA 유럽 미사일 통합 전략</div>
+      <div class="c-body">
+        ITAR의 AMRAAM 통합 제약을 돌파하기 위해 KAI는 <b>유럽제 MBDA Meteor·MICA 미사일 통합</b>을 추진 중이다. Meteor는 AMRAAM보다 사거리가 길고 성능이 우수한 BVR 미사일로, ITAR 적용을 받지 않는다. 통합 성공 시 FA-50의 수출 시장이 중동·아시아로 대폭 확장될 수 있다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §4 KF-21 보라매 -->
+<section id="kf21">
+  <div class="zone-head">
+    <div class="z-big">04</div>
+    <div class="z-num">SECTION 04</div>
+    <h2>KF-21 보라매</h2>
+    <p>대한민국 최초의 독자 전투기. 4.5세대 성능에 엔진만 GE 의존. 수출의 열쇠는 ITAR 해결에 달렸다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">KF-21 SPEC</span>
+    <h3>KF-21 보라매 핵심 스펙</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>전투기 유형</td><td>4.5세대 멀티롤 전투기 (Multi-Role Fighter)</td></tr>
+        <tr><td>추진체</td><td>GE F414-GE-400K × 2기 (한화에어로스페이스 면허생산). ITAR 적용</td></tr>
+        <tr><td>레이더</td><td>국내 개발 AESA 레이더 + IRST(적외선탐색추적장치)</td></tr>
+        <tr><td>최고속도</td><td>마하 1.81 (초음속)</td></tr>
+        <tr><td>무장 능력</td><td>공대공·공대지·공대함 정밀유도무기 탑재 가능</td></tr>
+        <tr><td>국내 양산 계획</td><td>총 120대 (한국 공군)</td></tr>
+        <tr><td>최초 양산 계약</td><td>2025년 3월 출고식, 2025년 6월 20대 추가계약 (17.6억 달러)</td></tr>
+        <tr><td>인도네시아 수출</td><td>48대 공식 주문 확정</td></tr>
+        <tr><td>필리핀 협상</td><td>KF-21 도입 고려 — 협상 단계</td></tr>
+        <tr><td>핵심 리스크</td><td><b>GE F414 ITAR</b> — 제3국 수출 시 미국 국무부 승인 필수</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">GENERATION GUIDE</span>
+    <h3>4.5세대 전투기란? — 세대 구분 이해하기</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>세대</th><th>대표 전투기</th><th>핵심 특징</th></tr></thead>
+      <tbody>
+        <tr><td>4세대</td><td>F-16, F/A-18, Su-27</td><td>디지털 항전, 플라이바이와이어, BVR 교전 시작</td></tr>
+        <tr><td><b>4.5세대</b></td><td><b>KF-21, Typhoon, Rafale</b></td><td>AESA 레이더, 향상된 스텔스, 네트워크 중심전</td></tr>
+        <tr><td>5세대</td><td>F-35, F-22, Su-57</td><td>완전 스텔스, 적외선 차폐, 초음속 순항</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="body" style="margin-top:14px">KF-21은 5세대 완전 스텔스에는 못 미치지만, <b>AESA 레이더·네트워크 중심전·정밀타격 능력</b>에서 4세대를 월등히 능가한다. 유럽의 Typhoon·Rafale과 동급으로 이해하면 된다. F-35보다 훨씬 저렴하면서 절반 이상의 임무를 수행할 수 있어, 중진국 공군에겐 최적의 선택지다.</p>
+    <div class="callout callout-steel">
+      <div class="c-head">인도네시아 48대 계약 — 실제 의미</div>
+      <div class="c-body">
+        인도네시아는 KF-21 개발에 공동투자(약 6,000억원)를 했고, 그 대가로 <b>48대 우선 구매권</b>을 확보했다. 기술이전 조건·GE 엔진 ITAR·현지 생산 비율을 둘러싼 협상이 복잡하게 얽혀있다. 인도네시아가 이 계약을 원만히 이행하면, KAI의 KF-21 수출 레퍼런스가 생기고 이후 중동·동남아 수출 협상에 강력한 레버리지가 된다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §5 ITAR 족쇄 분석 -->
+<section id="itar">
+  <div class="zone-head">
+    <div class="z-big">05</div>
+    <div class="z-num">SECTION 05</div>
+    <h2>ITAR 족쇄 분석</h2>
+    <p>KAI의 수출 확장을 가로막는 구조적 장벽. 메커니즘을 이해해야 해결 전략이 보인다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+    <span class="f-tag">MECHANISM</span>
+    <h3>ITAR이 작동하는 방식</h3>
+    <p class="body">ITAR(International Traffic in Arms Regulations, 국제무기거래규정)은 <b>미국이 군사기술의 제3국 이전을 통제하는 연방 법령</b>이다. 미국산 부품·기술이 1%라도 탑재된 무기체계를 제3국에 수출할 때 미국 국무부(DDTC)의 사전 허가가 필요하다.</p>
+    <div class="dual">
+      <div class="dbox dbox-red">
+        <h4>제도적 메커니즘</h4>
+        <ul>
+          <li><b>제3국 이전 조항:</b> GE F414 엔진 탑재 시 수출에 미국 국무부 허가 필수</li>
+          <li><b>광범위 적용:</b> 엔진뿐 아니라 레이더·항전장비 일부도 ITAR 해당 가능</li>
+          <li><b>정치적 변수:</b> 미-한 동맹 상황·미국 대외정책에 따라 승인 불확실</li>
+          <li><b>시간 리스크:</b> 허가 절차에 수개월~수년 소요 가능</li>
+          <li><b>거부 권한:</b> 미국이 경쟁국 불리한 수출은 거부 가능</li>
+        </ul>
+      </div>
+      <div class="dbox dbox-gold">
+        <h4>실제 피해 사례</h4>
+        <ul>
+          <li><b>UAE 협상 지연:</b> KF-21 수출 협상에서 미국 승인 불확실성으로 교착</li>
+          <li><b>인도네시아:</b> 공식 수주에도 기술이전 조건에 미국 개입</li>
+          <li><b>FA-50 AMRAAM:</b> 미제 BVR 미사일 통합 불가 → 일부 고객 이탈</li>
+          <li><b>중동 시장:</b> 분쟁 연루국 수출 시 미국 거부 가능성</li>
+          <li><b>협상력 약화:</b> 고객국이 미국 눈치를 봐야 해 계약 지연</li>
+        </ul>
+      </div>
+    </div>
+    <div class="analogy">
+      <b>비유로 이해하기:</b> KAI가 만든 스포츠카에 GM 엔진이 들어있다면, 이 차를 제3국에 팔 때마다 GM의 허락을 받아야 하는 구조다. GM(미국)이 허락을 미루거나 거부하면, 계약 성사 직전에도 수출이 막힐 수 있다.
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+    <span class="f-tag">ESCAPE STRATEGY</span>
+    <h3>ITAR 족쇄 우회 전략 3가지</h3>
+    <div class="opt-grid">
+      <div class="opt" style="border-top-color:var(--up)">
+        <div class="opt-num">전략 01 — 단기</div>
+        <h4>Rolls-Royce 엔진 대체</h4>
+        <p>영국 <b>Rolls-Royce</b> 엔진으로 GE F414를 대체하는 협상이 2026년 진행 중이다. 영국 엔진은 ITAR 非해당으로, 성공 시 KF-21 수출에서 미국 승인이 불필요해진다. <b>가장 빠른 ITAR 탈출 경로</b>다.</p>
+      </div>
+      <div class="opt" style="border-top-color:var(--gold)">
+        <div class="opt-num">전략 02 — 중기</div>
+        <h4>MBDA 유럽 미사일 통합</h4>
+        <p>FA-50에 <b>MBDA Meteor·MICA</b> 미사일 통합 추진. ITAR 非해당 미사일로 BVR 교전능력을 확보하면, AMRAAM 없이도 경쟁력 있는 무장을 갖추게 된다. 특히 중동·유럽 고객에게 매력적이다.</p>
+      </div>
+      <div class="opt" style="border-top-color:var(--accent)">
+        <div class="opt-num">전략 03 — 장기</div>
+        <h4>독자 엔진 개발</h4>
+        <p>한화에어로스페이스 주도의 <b>국산 전투기용 엔진 개발 프로그램</b>. 완료 시점은 2030년대 중후반으로, 진정한 ITAR 탈출은 이때 가능하다. 최장기 옵션이나 전략적 자주성의 핵심이다.</p>
+      </div>
+    </div>
+    <div class="view">
+      <div class="v-head">투자자 시각 — ITAR 해소 모멘텀</div>
+      <p>Rolls-Royce 엔진 대체 협상이 2026년 중 타결 소식이 나온다면, <b>KAI 주가에 강력한 단기 촉매</b>가 될 수 있다. ITAR 탈출 = 중동·아프리카 수출 시장 개방 = 수주잔고 폭발적 증가라는 등식이 성립하기 때문이다. 이 이벤트를 모니터링하는 것이 KAI 투자의 핵심 관찰 포인트다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- §6 위성·우주 -->
+<section id="space">
+  <div class="zone-head">
+    <div class="z-big">06</div>
+    <div class="z-num">SECTION 06</div>
+    <h2>위성·우주 사업</h2>
+    <p>군 정찰위성부터 6G 저궤도위성까지. 항공기 회사를 넘어 우주기업으로 진화하는 KAI.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">SPACE PORTFOLIO</span>
+    <h3>우주 사업 포트폴리오</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>사업명</th><th>내용</th><th>규모 / 일정</th><th>현황</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>군 정찰위성<br>425사업</td>
+          <td>광학위성 4기 + SAR위성 1기 체계종합. 북한 전역 상시 감시 가능</td>
+          <td>수천억 규모</td>
+          <td><span class="tag-up">완료·운용 중</span></td>
+        </tr>
+        <tr>
+          <td>차세대중형위성 2호</td>
+          <td>국내 독자 개발 중형 지구관측위성</td>
+          <td>—</td>
+          <td><span class="tag-bl">운용 중</span></td>
+        </tr>
+        <tr>
+          <td>초소형위성 양산</td>
+          <td>민간·군 위성 플랫폼 표준화 및 양산 체계 구축</td>
+          <td>진행 중</td>
+          <td><span class="tag-ca">개발 중</span></td>
+        </tr>
+        <tr>
+          <td>6G 저궤도<br>위성통신</td>
+          <td>저궤도 통신위성 2기 체계종합. 민군 겸용 6G 플랫폼</td>
+          <td>정부예산 3,200억원<br>2024~2030</td>
+          <td><span class="tag-ca">진행 중</span></td>
+        </tr>
+        <tr>
+          <td>누리호 발사체</td>
+          <td>한국형발사체 추력기 등 핵심 부품 공급</td>
+          <td>반복 발사 계획</td>
+          <td><span class="tag-bl">진행 중</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="space-list" style="margin-top:18px">
+      <div class="space-item">
+        <div class="sp-icon">🛰</div>
+        <div>
+          <h4>425사업 — 군 정찰위성이 왜 중요한가</h4>
+          <p>425사업은 북한의 핵·미사일 시설을 24시간 감시하기 위한 전략자산이다. 광학위성은 맑은 날 고해상도 사진을, <b>SAR(합성개구레이더) 위성</b>은 구름·야간에도 영상 획득이 가능하다. KAI는 이 위성들의 체계종합을 담당했으며, 이는 국내 위성 기술 역량의 결정적 도약 기회가 됐다.</p>
+          <span class="sp-badge">전략자산</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="sp-icon">📡</div>
+        <div>
+          <h4>6G 저궤도위성통신 — 민군 겸용 플랫폼</h4>
+          <p>정부 예산 3,200억원이 투입되는 6G 위성통신 사업에서 KAI는 위성체 체계종합을 담당한다. 저궤도(LEO) 위성은 초고속·저지연 통신을 가능케 하며, 군사 통신 및 민간 통신 인프라로 동시 활용 가능하다. 이 사업이 성공하면 KAI는 <b>항공+우주+통신 복합 플랫폼</b> 기업으로 진화한다.</p>
+          <span class="sp-badge">2024~2030</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-blue">
+      <div class="c-head">우주 사업의 전략적 의미</div>
+      <div class="c-body">
+        KAI의 위성 사업은 단순 매출 다변화 이상의 의미가 있다. 항공기 양산이 완료되는 2030년대 이후를 대비한 <b>성장 엔진 확보</b>가 핵심이다. 위성 제조는 항공기와 유사한 정밀 제조 역량을 공유하므로 진입장벽이 낮고, 정부 발주 특성상 안정적인 매출이 보장된다. 특히 <b>6G 위성통신 플랫폼</b>은 민수 시장으로의 확장 가능성을 열어준다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §7 투자 관점 -->
+<section id="investment">
+  <div class="zone-head">
+    <div class="z-big">07</div>
+    <div class="z-num">SECTION 07</div>
+    <h2>투자 관점</h2>
+    <p>수주잔고 27.3조원의 실탄을 보유한 회사. 열쇠는 ITAR 탈출과 OPM 7% 구조 개선에 달렸다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">SWOT ANALYSIS</span>
+    <h3>KAI SWOT 분석</h3>
+    <div class="swot">
+      <div class="sw sw-s">
+        <div class="sw-label">강점 (STRENGTH)</div>
+        <ul>
+          <li><b>국내 유일 체계종합:</b> 대체 불가능한 독점적 지위</li>
+          <li><b>수주잔고 27.3조:</b> 매출의 7.4배, 7년치 보장</li>
+          <li><b>포트폴리오 다양성:</b> 전투기·헬기·위성·발사체</li>
+          <li><b>정부 지원 기조:</b> 방산 예산 지속 증가</li>
+          <li><b>FA-50 레퍼런스:</b> 10개국 이상 운용 기록</li>
+        </ul>
+      </div>
+      <div class="sw sw-w">
+        <div class="sw-label">약점 (WEAKNESS)</div>
+        <ul>
+          <li><b>OPM 7% 수준:</b> 한화에어로·현대로템 대비 낮은 마진</li>
+          <li><b>엔진 전량 외산:</b> GE F414 의존, 독자 파워 없음</li>
+          <li><b>ITAR 구조적 제약:</b> 고마진 수출의 천장 설정</li>
+          <li><b>고객 집중:</b> 한국 정부 의존도 높음</li>
+          <li><b>대형 개발비:</b> KF-21 등 개발비 지속 부담</li>
+        </ul>
+      </div>
+      <div class="sw sw-o">
+        <div class="sw-label">기회 (OPPORTUNITY)</div>
+        <ul>
+          <li><b>RR 엔진 대체:</b> 성공 시 ITAR 탈출·수출 폭발</li>
+          <li><b>동남아·중동 시장:</b> 중진국 공군 현대화 수요</li>
+          <li><b>KF-21 수출 확대:</b> 인도네시아 48대 레퍼런스</li>
+          <li><b>6G 위성 민수화:</b> 우주 사업 플랫폼 확장</li>
+          <li><b>NATO 성과 활용:</b> 폴란드 성공 기반 유럽 진출</li>
+        </ul>
+      </div>
+      <div class="sw sw-t">
+        <div class="sw-label">위협 (THREAT)</div>
+        <ul>
+          <li><b>ITAR 미해결:</b> 중동·아프리카 수출 지속 제약</li>
+          <li><b>경쟁 격화:</b> 스웨덴 그리펜, 이탈리아 M-346 등</li>
+          <li><b>환율 리스크:</b> 달러 강세 시 수입 부품 비용 증가</li>
+          <li><b>기술 유출:</b> 해외 공동개발 시 기술이전 협상</li>
+          <li><b>정치 리스크:</b> 수출국 정권 변화·분쟁 변수</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+    <span class="f-tag">INVESTMENT CASE</span>
+    <h3>수주잔고 27.3조원의 의미</h3>
+    <p class="body">2025년 수주잔고 27.3조원은 현재 연매출(3.7조원)의 약 <b>7.4배</b>에 해당한다. 이는 이미 계약이 완료되어 납품만 기다리는 '확정 매출'이다. 2026~2028년 KF-21 양산·FA-50 수출 인도가 집중되면서 매출이 급증할 것으로 예상된다.</p>
+    <div class="risk-list">
+      <div class="risk">
+        <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+        <div>
+          <h4>리스크 — ITAR 족쇄 (핵심 리스크)</h4>
+          <div class="rdesc">GE F414 엔진 ITAR로 인해 <b>UAE·사우디·카타르 등 오일머니 시장 진출이 구조적으로 차단</b>되어있다. 단순 수출 지연이 아니라 고마진 시장 자체가 막혀있는 상황이다. Rolls-Royce 엔진 대체 협상이 핵심 해결책이나 2026년 이후 결과가 나올 전망이다.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+        <div>
+          <h4>리스크 — 낮은 영업이익률 7%</h4>
+          <div class="rdesc">한화에어로스페이스(10%+), 현대로템(8%+) 대비 KAI의 OPM은 약 7%로 낮다. <b>개발비 분담·외산 부품 비용·초기 수출 계약 낮은 마진</b> 때문이다. 수출이 확대되고 양산 효율이 높아지면 점진적 개선이 기대되나, 단기적으로는 마진 압박이 지속된다.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot low"></div><div class="stxt">LOW</div></div>
+        <div>
+          <h4>성장 옵션 — RR 엔진 대체 성공 시나리오</h4>
+          <div class="rdesc">Rolls-Royce 엔진 대체 협상이 성공하면 <b>ITAR 탈출 → 중동·아프리카·중앙아시아 수출 개방 → 잠재 수주잔고 급증</b>의 연쇄반응이 가능하다. 이 이벤트가 실현되면 KAI의 밸류에이션 재평가 트리거가 된다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--gold);--zs:var(--golds)">
+    <span class="f-tag">KEY CATALYSTS</span>
+    <h3>주요 모니터링 이벤트</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>이벤트</th><th>예상 시점</th><th>긍정 시나리오</th><th>주가 영향</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>RR 엔진 대체 협상</td>
+          <td>2026년</td>
+          <td>타결 발표 → ITAR 탈출 신호</td>
+          <td><span class="tag-up">강한 상승</span></td>
+        </tr>
+        <tr>
+          <td>FA-50 말레이시아 납기</td>
+          <td>2026년 하반기</td>
+          <td>예정대로 인도 → 매출 인식</td>
+          <td><span class="tag-up">실적 상승</span></td>
+        </tr>
+        <tr>
+          <td>KF-21 추가 수출 계약</td>
+          <td>2026~2027</td>
+          <td>중동 or 동남아 신규 수주</td>
+          <td><span class="tag-up">강한 상승</span></td>
+        </tr>
+        <tr>
+          <td>FA-50 MBDA 미사일 통합</td>
+          <td>2026~2027</td>
+          <td>BVR 능력 확보 → 수출 경쟁력 제고</td>
+          <td><span class="tag-ca">중립~긍정</span></td>
+        </tr>
+        <tr>
+          <td>인도네시아 KF-21 기술이전</td>
+          <td>2026~</td>
+          <td>원만한 합의 → 48대 납기 순조</td>
+          <td><span class="tag-ca">중립~긍정</span></td>
+        </tr>
+        <tr>
+          <td>6G 위성통신 개발 진척</td>
+          <td>2026~2030</td>
+          <td>위성 사업 신규 수주 발표</td>
+          <td><span class="tag-bl">장기 긍정</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="view">
+      <div class="v-head">최종 투자 시각</div>
+      <p>KAI는 <b>"잠재력은 5세대, 현실은 ITAR 제약의 4.5세대"</b> 기업이다. 수주잔고 27.3조원이라는 든든한 기반 위에서 2026년부터 매출 급증이 예상되며, ITAR 탈출이라는 구조적 변화가 실현되는 순간 밸류에이션이 완전히 다른 수준으로 재평가될 수 있다. <b>핵심 관찰 포인트는 Rolls-Royce 엔진 협상 결과</b>다. 이 한 이벤트가 KAI 투자 thesis의 가장 중요한 분기점이 된다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- §8 용어 사전 -->
+<section id="glossary">
+  <div class="zone-head">
+    <div class="z-big">08</div>
+    <div class="z-num">SECTION 08</div>
+    <h2>용어 사전</h2>
+    <p>KAI·방산·항공기 투자에 필요한 핵심 용어 완전 정리. 항목을 클릭하면 설명이 펼쳐집니다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <span class="f-tag">GLOSSARY 20+ TERMS</span>
+    <h3>항공·방산·투자 핵심 용어</h3>
+
+    <div class="gloss-sec">항공기 · 기체</div>
+    <div class="gloss">
+      <details>
+        <summary>FA-50 경공격기</summary>
+        <div class="g-body">KAI가 개발한 <b>경공격기(Light Combat Aircraft)</b>. T-50 골든이글 초음속 훈련기를 기반으로 공대공·공대지 무장 능력을 추가한 전투형 기체다. 마하 1.5 속도, 최신 항전장비를 갖추고 있으며, 선진국 전투기 대비 가격 경쟁력이 뛰어나 수출 시장에서 K-방산의 1번 타자 역할을 하고 있다. 폴란드 수출형(FA-50PL)에는 PhantomStrike AESA 레이더가 탑재되었다.</div>
+      </details>
+      <details>
+        <summary>KF-21 보라매</summary>
+        <div class="g-body">대한민국이 독자 개발한 <b>4.5세대 멀티롤 전투기</b>. '보라매'는 매 과의 조류로 빠르고 날렵함을 상징한다. GE F414-GE-400K 엔진 2기를 탑재하며, AESA 레이더·IRST(적외선탐색추적장치) 등 최신 장비를 갖췄다. 최고속도 마하 1.81. 한국 공군 120대 양산 계획이며, 인도네시아 48대 수출이 확정됐다. 핵심 리스크는 엔진의 ITAR 적용이다.</div>
+      </details>
+      <details>
+        <summary>수리온 (KUH-1)</summary>
+        <div class="g-body">KAI가 개발한 <b>한국형 기동헬기</b>. KUH는 Korean Utility Helicopter의 약자다. 육군 기동용 기본형 외에도 의무(메디온), 경찰, 해병대, 해경 등 다양한 파생형이 운용 중이다. 터보샤프트 엔진 2기 탑재, 병력 9~11명 탑승 가능. 국산화율 70% 이상으로 국내 헬기 기술의 핵심 기반이 되었다.</div>
+      </details>
+      <details>
+        <summary>4.5세대 전투기</summary>
+        <div class="g-body">전투기 세대 분류에서 <b>4세대와 5세대의 중간 단계</b>. AESA 레이더, 향상된 전자전 능력, 네트워크 중심전 능력을 갖추었지만 F-35·F-22 수준의 완전 스텔스는 아닌 기체들을 통칭한다. 유럽의 타이푼·라팔, 러시아의 Su-35 등이 해당한다. KF-21은 이 범주에 해당하며, 5세대 대비 훨씬 저렴한 가격으로 유사한 임무 능력을 제공한다.</div>
+      </details>
+      <details>
+        <summary>경공격기</summary>
+        <div class="g-body"><b>경량화된 전투 항공기</b>로, 주로 공중 지원·근접항공지원(CAS)·제공 임무를 수행한다. 중형 또는 대형 전투기 대비 낮은 획득·운용 비용이 특징이다. 공군 예산이 제한된 중진국 공군에 적합한 선택지로, KAI의 FA-50이 이 시장에서 강력한 경쟁력을 가진다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">수출통제 · 규정</div>
+    <div class="gloss">
+      <details>
+        <summary>ITAR (국제무기거래규정)</summary>
+        <div class="g-body"><b>International Traffic in Arms Regulations</b>의 약자. 미국이 군사기술·무기체계의 제3국 이전을 통제하는 연방 규정이다. 미국산 부품이나 기술이 포함된 방산 제품을 제3국에 수출할 때는 미국 국무부(DDTC)의 사전 허가가 필요하다. KAI의 경우 GE F414 엔진이 ITAR 적용 대상으로, 이 엔진이 탑재된 KF-21의 수출 시 미국 허가 취득이 필수다.</div>
+      </details>
+      <details>
+        <summary>체계종합 (System Integration)</summary>
+        <div class="g-body">개별 부품·기술·하위 시스템을 결합하여 완성된 무기체계를 만들어내는 역할. <b>System Integrator</b>라고도 한다. 단순 부품 제조보다 높은 수준의 기술 역량과 관리 능력이 필요하며, 전체 사업의 주관 사업자로서 최종 성능과 일정 책임을 진다. KAI가 국내 유일 항공기 체계종합 기업이라는 것은 완성 항공기를 만들 수 있는 곳이 KAI뿐이라는 의미다.</div>
+      </details>
+      <details>
+        <summary>국산화율</summary>
+        <div class="g-body">방산 장비에서 <b>국내에서 생산된 부품·기술의 비율</b>. 국산화율이 높을수록 외국 부품에 대한 의존도가 낮고, ITAR 같은 수출통제 리스크가 줄어든다. KAI의 수리온 헬기는 국산화율 70% 이상을 달성했지만, KF-21의 경우 엔진·일부 항전장비가 외산이어서 이 부분의 국산화가 장기 과제다.</div>
+      </details>
+      <details>
+        <summary>CB (전환사채, Convertible Bond)</summary>
+        <div class="g-body"><b>일정 조건에서 주식으로 전환할 수 있는 회사채</b>. KAI는 대규모 개발비 조달을 위해 CB를 발행한 이력이 있다. CB 전환이 실행되면 주식 수가 늘어나 기존 주주의 지분가치가 희석될 수 있다(희석 효과). 투자자는 CB 발행 잔액과 전환 조건을 주기적으로 확인해야 한다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">레이더 · 항전장비</div>
+    <div class="gloss">
+      <details>
+        <summary>AESA 레이더</summary>
+        <div class="g-body"><b>Active Electronically Scanned Array</b>의 약자. 수천 개의 소형 송수신 모듈(T/R 모듈)이 전자적으로 빔을 조향하는 최신 레이더 기술이다. 기계식 회전 레이더와 달리 0.001초 이내에 빔 방향을 바꿀 수 있어 다중 표적 추적, 전자전, 지형 추적 등 다양한 임무를 동시 수행할 수 있다. KF-21과 FA-50PL에 탑재된다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">엔진 · 추진</div>
+    <div class="gloss">
+      <details>
+        <summary>GE F414</summary>
+        <div class="g-body">미국 제너럴 일렉트릭(GE)이 개발한 <b>쌍발 전투기용 터보팬 엔진</b>. 원래 F/A-18E/F 슈퍼호넷용으로 개발됐으며, KF-21에는 F414-GE-400K 버전이 탑재된다. 한화에어로스페이스가 면허생산하며, ITAR 적용 대상이라 이 엔진이 탑재된 항공기의 제3국 수출에 미국 허가가 필요하다.</div>
+      </details>
+      <details>
+        <summary>GE F404</summary>
+        <div class="g-body">GE가 개발한 <b>단발 전투기용 터보팬 엔진</b>. F-18 호넷과 T-50·FA-50에 탑재된다. F414의 소형 전임 엔진 계열로, 훈련기 및 경전투기에 적합한 추력 범위를 가진다. FA-50에 탑재된 엔진이 이 계열이다.</div>
+      </details>
+      <details>
+        <summary>Rolls-Royce (롤스로이스)</summary>
+        <div class="g-body">영국의 항공기 엔진 전문 기업. 자동차 브랜드와 이름이 같지만 별개 회사다. <b>EJ200</b>(타이푼 전투기용) 등 세계 최고 수준의 전투기 엔진을 생산한다. ITAR 규제를 받지 않는 영국 기업이므로, KAI가 KF-21 엔진을 RR 제품으로 교체한다면 미국 승인 없이 더 많은 국가에 수출할 수 있게 된다. 2026년 현재 KAI와 대체 협상 진행 중으로 알려져 있다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">미사일 · 무장</div>
+    <div class="gloss">
+      <details>
+        <summary>BVR (비가시거리, Beyond Visual Range)</summary>
+        <div class="g-body"><b>조종사의 눈으로 볼 수 없는 거리(약 10km 이상)에서 교전하는 공중전 개념</b>. 현대 공중전의 핵심 역량이다. BVR 교전에는 레이더 유도 장거리 미사일(AMRAAM, Meteor 등)이 필요하다. FA-50이 AMRAAM을 탑재하지 못하면 BVR 교전능력이 없어 고객국 공군이 FA-50 도입을 꺼리는 원인이 된다.</div>
+      </details>
+      <details>
+        <summary>AMRAAM</summary>
+        <div class="g-body"><b>Advanced Medium-Range Air-to-Air Missile</b>의 약자. 미국 RTX(레이시온)가 개발한 <b>중거리 공대공 미사일</b>로 NATO 표준 BVR 미사일이다. ITAR 적용을 받아 미국 승인 없이는 제3국 무기체계에 통합할 수 없다. FA-50이 AMRAAM을 탑재하지 못하는 이유가 바로 이 때문이다.</div>
+      </details>
+      <details>
+        <summary>MBDA Meteor</summary>
+        <div class="g-body">영국·프랑스·독일·이탈리아 등이 공동 개발한 <b>유럽제 장거리 BVR 공대공 미사일</b>. 램제트 추진으로 AMRAAM보다 사거리와 불가피 영역(No-Escape Zone)이 넓다. ITAR 非해당으로 미국 승인 없이 수출 가능하다. KAI가 FA-50에 Meteor를 통합하면 AMRAAM 없이도 최고 수준의 BVR 능력을 확보할 수 있다.</div>
+      </details>
+      <details>
+        <summary>MBDA MICA</summary>
+        <div class="g-body">프랑스 MBDA가 개발한 <b>중거리 공대공 미사일</b>. 라팔 전투기의 주력 무장이며, 적외선(IR)과 레이더 유도 두 가지 버전이 있다. Meteor와 마찬가지로 ITAR 非해당 유럽산 미사일로, FA-50의 무장 다양화 옵션이다. MICA NG(차세대형)는 사거리와 항재밍 능력이 대폭 향상됐다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">위성 · 우주</div>
+    <div class="gloss">
+      <details>
+        <summary>425사업</summary>
+        <div class="g-body">대한민국 군 정찰위성 확보 사업. <b>광학위성 4기와 SAR위성 1기</b>를 확보하여 북한 전역을 24시간 감시하는 것이 목표다. KAI가 위성체 체계종합을 담당했으며, 일부 위성은 이미 운용 중이다. 425사업 성공은 KAI가 위성 분야에서도 체계종합 역량을 입증했음을 의미한다.</div>
+      </details>
+      <details>
+        <summary>SAR (합성개구레이더)</summary>
+        <div class="g-body"><b>Synthetic Aperture Radar</b>의 약자. 마이크로파를 이용해 구름·야간에도 지상 영상을 획득할 수 있는 레이더 시스템. 광학 카메라와 달리 날씨와 시간에 무관하게 작동하므로 군사 정찰위성에 필수다. 425사업의 SAR위성은 이 기술을 채택했다.</div>
+      </details>
+      <details>
+        <summary>6G 저궤도 위성통신</summary>
+        <div class="g-body">저궤도(LEO, 약 200~2000km)에 위성을 띄워 초고속·저지연 통신을 제공하는 차세대 통신 인프라. 스타링크(스페이스X)가 대표적이다. 정부 예산 3,200억원이 투입되는 KAI의 6G 위성통신 사업은 2024~2030년에 저궤도 통신위성 2기를 개발·운용하는 것이 목표다. 군사 통신과 민간 통신을 동시에 지원하는 민군 겸용 플랫폼이다.</div>
+      </details>
+      <details>
+        <summary>누리호 (KSLV-II)</summary>
+        <div class="g-body">한국형발사체(Korea Space Launch Vehicle-II). 순수 국내 기술로 개발된 <b>3단 액체로켓 발사체</b>로, 저궤도에 최대 1.5톤의 탑재체를 올릴 수 있다. KAI는 누리호의 추력기 등 핵심 부품을 공급하며, 향후 반복 발사 계획에 따른 지속적 수요가 예상된다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">재무 · 투자 용어</div>
+    <div class="gloss">
+      <details>
+        <summary>수주잔고 (Backlog)</summary>
+        <div class="g-body">이미 계약이 체결됐으나 아직 매출로 인식되지 않은 <b>잔여 계약 금액</b>. 향후 매출이 보장된 '예약 매출'이라고 이해하면 된다. KAI의 수주잔고 27.3조원은 현재 연매출의 7.4배로, 약 7년치 매출이 이미 확보되어 있음을 의미한다. 방산기업 분석에서 가장 중요한 지표 중 하나다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="series-nav">
+  <a href="k_defense_company_lig_nexone.html">
+    <div class="sn-label">이전 — Part 4-3</div>
+    <div class="sn-title">LIG넥스원</div>
+    <div style="font-size:12px;color:var(--faint);margin-top:4px">유도무기 · 전자전 · K-방산 수출</div>
+  </a>
+  <a href="k_defense_company_hanwha_systems_ocean.html" class="next-link">
+    <div class="sn-label next">다음 — Part 4-5</div>
+    <div class="sn-title">한화시스템·한화오션</div>
+    <div style="font-size:12px;color:var(--faint);margin-top:4px">함정 전투체계 · 조선 방산</div>
+  </a>
+</div>
+
+<div class="disclaimer">
+  <b>투자 유의사항:</b> 본 자료는 개인 학습·정보 공유 목적으로 작성되었으며, 투자 권유나 매매 추천이 아닙니다. 투자 결정은 본인의 판단과 책임 하에 이루어져야 하며, 모든 투자에는 원금 손실의 위험이 있습니다. 제시된 수치는 공개 자료를 기반으로 하며 오류가 있을 수 있습니다. 최신 정보는 반드시 공식 공시 자료를 확인하시기 바랍니다.
+</div>
+
+<footer>
+  <p>K-방산 시리즈 · Part 4-4 · KAI 한국항공우주산업 · 2026.06</p>
+  <p style="margin-top:4px">데이터 기준: 2025년 연간 실적 및 공개 컨센서스</p>
+</footer>
+
+</div><!-- /.wrap -->
+
+<script>
+// Progress Bar
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  prog.style.width = pct + '%';
+}, { passive: true });
+
+// Scroll Reveal via IntersectionObserver
+const floors = document.querySelectorAll('.floor');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+floors.forEach(f => revealObs.observe(f));
+
+// Smooth scroll for nav
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 60;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => {
+        a.style.borderColor = '';
+        a.style.color = '';
+        a.style.background = '';
+      });
+      const activeLink = document.querySelector(`nav a[href="#${e.target.id}"]`);
+      if (activeLink) {
+        activeLink.style.borderColor = 'var(--accent)';
+        activeLink.style.color = 'var(--accent)';
+        activeLink.style.background = 'var(--accents)';
+      }
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => navObs.observe(s));
+</script>
+
+</body>
+</html>

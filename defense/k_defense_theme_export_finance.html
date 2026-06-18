@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수출금융·계약구조 — K-방산 심화 테마 Module G</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#ecf0ec; --card:#ffffff; --line:#cdd6cc; --note:#e4ebe4; --chip-bg:#dce6dc;
+  --accent:#2d6a4f; --accents:#e6f2ec; --accent-line:#a8ccb8;
+  --navy:#1c2a3e;
+  --up:#2d6a4f; --ups:#e6f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#40916c,#74c69d,var(--accent));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(236,240,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#0d1f17 0%,#1a3a2a 40%,#1c2a3e 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.30;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(45,106,79,.15) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(45,106,79,.15) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(13,31,23,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:74px 20px 36px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#74c69d;font-weight:800}
+.hero h1{font-size:clamp(28px,6.8vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1.18;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#74c69d 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8b8;max-width:620px;margin:0 auto;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(16px,4vw,26px);font-weight:900;color:#74c69d;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#8a96a6;margin-top:5px;line-height:1.45}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.045;letter-spacing:-.05em;line-height:1;pointer-events:none;color:var(--accent)}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--accent)}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--accent));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.22)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--accent));background:var(--zs,var(--accents));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* DATA TABLE */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+
+/* FACT GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--accents));border:1px solid color-mix(in srgb,var(--zc,var(--accent)) 20%,white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,22px);font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.05);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-green .c-head{background:var(--accent)}
+.callout-gold .c-head{background:var(--gold)}
+.callout-blue .c-head{background:var(--blue)}
+.callout-red .c-head{background:var(--down)}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--accent-line);background:var(--accents);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#2d6a4f;margin-bottom:6px;opacity:.75}
+.view p{font-size:14.3px;color:#2a4a38;line-height:1.75}
+.view p b{color:#1a3326}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.12em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--accent-line)}
+
+/* FLOW DIAGRAM */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:20px 0;justify-content:center}
+.flow-box{background:var(--accents);border:1.5px solid var(--accent-line);border-radius:12px;padding:11px 16px;font-size:13px;font-weight:800;color:var(--accent);text-align:center;min-width:100px;flex:none}
+.flow-box .fb-sub{font-size:10.5px;font-weight:600;color:var(--sub);margin-top:3px}
+.flow-arrow{font-size:20px;color:var(--faint);padding:0 4px;flex:none}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+@media(max-width:560px){.two-col{grid-template-columns:1fr}}
+.col-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.col-box h4{font-size:15.5px;font-weight:900;margin-bottom:10px;color:var(--ink)}
+.col-box ul{list-style:none}
+.col-box li{font-size:13.5px;color:var(--sub);padding:5px 0;border-bottom:1px dashed var(--line);line-height:1.6}
+.col-box li:last-child{border-bottom:none}
+.col-box li b{color:var(--ink)}
+
+/* TRIPLE BOXES */
+.triple{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:560px){.triple{grid-template-columns:1fr}}
+.triple-box{border-radius:14px;padding:18px 16px;text-align:center;border:1px solid}
+.triple-box .tb-icon{font-size:28px;margin-bottom:8px}
+.triple-box h4{font-size:14px;font-weight:900;margin-bottom:6px}
+.triple-box p{font-size:12.5px;color:var(--sub);line-height:1.6}
+.tb-green{background:var(--accents);border-color:var(--accent-line)}
+.tb-green h4{color:var(--accent)}
+.tb-blue{background:var(--blues);border-color:#b8ccdf}
+.tb-blue h4{color:var(--blue)}
+.tb-gold{background:var(--golds);border-color:var(--gold-line)}
+.tb-gold h4{color:var(--gold)}
+
+/* MISC */
+.analogy{background:linear-gradient(100deg,var(--accents),#d0e8da);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#1e4530}
+.analogy b{color:#0d2a1a}
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .stat:last-child{grid-column:1/-1}
+  .flow{flex-direction:column;align-items:flex-start}
+  .flow-arrow{transform:rotate(90deg);padding:2px 0}
+}
+
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 심화 테마 · Module G</div>
+    <h1>수출금융 — 무기를 파는 것은<br>금융이다</h1>
+    <p class="lede">K-방산의 폭발적 수출 성장 이면에는 정교한 금융 구조가 있다. 차관·보증·보험·채권이 어떻게 얽히는지, 투자자가 꼭 알아야 할 수출금융 메커니즘을 해부한다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">12~16B$</div>
+        <div class="l">폴란드 한국산<br>방산 계약 규모</div>
+      </div>
+      <div class="stat">
+        <div class="n">110억$</div>
+        <div class="l">미국 FMF 차관보증<br>(폴란드 제공)</div>
+      </div>
+      <div class="stat">
+        <div class="n">154억$</div>
+        <div class="l">한국 방산 수출액<br>(2024년 추정)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ STICKY NAV ═══════ -->
+<nav>
+  <a href="#s1">금융지원 구조</a>
+  <a href="#s2">폴란드 차관</a>
+  <a href="#s3">G2G vs 상업계약</a>
+  <a href="#s4">절충교역</a>
+  <a href="#s5">방산채권·PF</a>
+  <a href="#s6">글로벌 비교</a>
+  <a href="#s7">한국형 FMS</a>
+  <a href="#s8">용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: 금융지원 구조
+══════════════════════════════════════════ -->
+<section id="s1">
+  <div class="zone-head">
+    <div class="z-big">01</div>
+    <div class="z-num">SECTION 01</div>
+    <h2>한국 방산수출 금융지원 생태계</h2>
+    <p>K-Exim · K-SURE · DAPA · KRIT — 네 기관이 함께 만드는 금융 안전망. 2024~2025년을 기점으로 개별 기업 단위에서 공급망 전체를 지원하는 생태계형 구조로 전환됐다.</p>
+  </div>
+
+  <div class="floor visible" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">핵심 기관 역할</div>
+    <h3>4대 축: K-Exim · K-SURE · DAPA · KRIT</h3>
+    <table>
+      <thead>
+        <tr><th>기관</th><th>정식 명칭</th><th>주요 역할</th><th>금융 수단</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>K-Exim</td><td>한국수출입은행</td><td>구매국 차관(Buyer's Credit), 정부보증 대출 제공</td><td>차관, PF, 방산채권</td></tr>
+        <tr><td>K-SURE</td><td>한국무역보험공사</td><td>수출보험, 신용보증, 정치적 위험 헤지</td><td>수출보험, 이행보증</td></tr>
+        <tr><td>DAPA</td><td>방위사업청</td><td>수출 계약 총괄·허가, G2G 협상 주체</td><td>계약 승인, 정부 보증</td></tr>
+        <tr><td>KRIT</td><td>국방기술진흥연구소</td><td>G2G 계약 실무 지원, 기술이전 관리</td><td>계약 집행 지원</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">생태계형 전환 (2024~2025)</div>
+    <h3>공급망 전체를 감싸는 금융협력 체계</h3>
+    <p class="body">2024~2025년부터 <b>개별 기업 단위 지원</b>에서 <b>공급망 전체 생태계형 지원</b>으로 패러다임이 전환됐다. 한국수출입은행이 방산 5사(한화에어로스페이스, KAI, 현대로템, 한화시스템 등) 및 1·2차 협력사 전체를 포함하는 금융협력 체계를 구축했다.</p>
+
+    <div class="flow">
+      <div class="flow-box">구매국 정부<div class="fb-sub">수요·결제 주체</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">DAPA / KRIT<div class="fb-sub">G2G 협상·허가</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">K-Exim<div class="fb-sub">차관 집행</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">방산 5사<div class="fb-sub">납품 주체</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">협력사 전체<div class="fb-sub">공급망 생태계</div></div>
+    </div>
+
+    <div class="facts" style="--zc:var(--accent);--zs:var(--accents)">
+      <div class="fact">
+        <div class="n">Buyer's Credit</div>
+        <div class="l">구매국에 직접<br>차관 제공</div>
+      </div>
+      <div class="fact">
+        <div class="n">수출보증</div>
+        <div class="l">K-SURE 정치적<br>위험 헤지</div>
+      </div>
+      <div class="fact">
+        <div class="n">PF + 방산채권</div>
+        <div class="l">장기 프로젝트<br>자금 조달</div>
+      </div>
+    </div>
+
+    <div class="callout callout-green">
+      <div class="c-head">투자 시사점</div>
+      <div class="c-body"><b>생태계형 전환은 중소 방산 협력사에게 직접적 수혜</b>다. 이전에는 대기업만 금융 지원을 받았지만 이제는 공급망 전체가 K-Exim 신용 우산 아래 들어온다. <b>방산 부품주·소재주</b>의 재무 안정성이 구조적으로 개선되는 이유다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: 폴란드 차관 구조
+══════════════════════════════════════════ -->
+<section id="s2">
+  <div class="zone-head">
+    <div class="z-big">02</div>
+    <div class="z-num">SECTION 02</div>
+    <h2>폴란드 차관 구조: K-방산 최대 계약 해부</h2>
+    <p>2022~2025년 체결된 폴란드 방산 계약은 총 12~16B달러 규모다. 어떤 품목이 얼마에 팔렸고, 폴란드는 어떻게 돈을 마련했는가.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">품목별 계약 규모</div>
+    <h3>K9 · K2 · FA-50 · 천무 — 역대 최대 패키지</h3>
+    <table>
+      <thead>
+        <tr><th>품목</th><th>계약금액</th><th>수량·내용</th><th>납품 상태</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>K9A1 (1차)</td>
+          <td>2.4B달러</td>
+          <td>212문</td>
+          <td><span class="tag-up">납품 완료 (2025)</span></td>
+        </tr>
+        <tr>
+          <td>K9PL (2차)</td>
+          <td>2.6B달러</td>
+          <td>K9PL 146문 포함 추가</td>
+          <td><span class="tag-ca">진행 중</span></td>
+        </tr>
+        <tr>
+          <td>K2 (2차 추가)</td>
+          <td>6.1B달러</td>
+          <td>180대, K2PL 현지생산 포함</td>
+          <td><span class="tag-ca">협상·진행 중</span></td>
+        </tr>
+        <tr>
+          <td>FA-50 경전투기</td>
+          <td>~3.0B달러</td>
+          <td>48대</td>
+          <td><span class="tag-ca">진행 중</span></td>
+        </tr>
+        <tr>
+          <td>천무 K239</td>
+          <td>별도 계약</td>
+          <td>다연장 로켓포</td>
+          <td><span class="tag-ca">진행 중</span></td>
+        </tr>
+        <tr style="background:#f5f8f6">
+          <td>합계 (추정)</td>
+          <td><b style="color:var(--accent)">$12~16B</b></td>
+          <td>분할 납품 + 현지생산 포함</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="f-tag">차관 상환 구조</div>
+    <h3>BGK 국채 + 미국 FMF 보증의 이중 구조</h3>
+    <p class="body">폴란드는 <b>국가지원기금(Armed Forces Support Fund)</b>을 설치해 국채 발행으로 재원을 마련한다. 운용 기관은 국영 개발은행인 <b>Bank Gospodarstwa Krajowego(BGK)</b>다. BGK는 방산 전용 결제 계정을 운용하며 납품 마일스톤마다 한국 방산기업에 자금을 집행한다.</p>
+
+    <div class="triple">
+      <div class="triple-box tb-green">
+        <div class="tb-icon">&#127981;</div>
+        <h4>BGK 국채 발행</h4>
+        <p>폴란드 정부가 국채를 발행해 Armed Forces Support Fund에 납입. 방산 전용 계정으로 관리</p>
+      </div>
+      <div class="triple-box tb-blue">
+        <div class="tb-icon">&#127482;&#127480;</div>
+        <h4>미국 FMF 110억$</h4>
+        <p>미국이 폴란드에 FMF 차관보증 총 110억달러 이상 제공. 한국산 장비 일부도 혜택 적용</p>
+      </div>
+      <div class="triple-box tb-gold">
+        <div class="tb-icon">&#128197;</div>
+        <h4>분할납부 구조</h4>
+        <p>Progress Payment 방식. 현지생산 이후 완납 구조로 폴란드의 재정 부담을 분산</p>
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR VIEW</div>
+      <p>폴란드 계약의 핵심은 <b>미국 FMF 보증이 한국산 장비에도 적용된다</b>는 점이다. 이는 사실상 미국 국가 신용이 한국 방산 수출에 붙는 것과 같다. 결제 리스크가 구조적으로 낮아 장기 수주잔고의 품질이 일반 상업계약 대비 월등히 높다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: G2G vs 상업계약
+══════════════════════════════════════════ -->
+<section id="s3">
+  <div class="zone-head">
+    <div class="z-big">03</div>
+    <div class="z-num">SECTION 03</div>
+    <h2>G2G vs 상업계약: 두 트랙의 차이</h2>
+    <p>정부간 계약(G2G)과 상업계약은 계약 주체부터 금융 구조, 납기 속도까지 모든 게 다르다. 대형 플랫폼 수출의 주류가 G2G로 이동하는 이유를 분석한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">6개 항목 비교 분석</div>
+    <h3>G2G vs 상업계약 — 어떤 계약이 더 유리한가</h3>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>G2G (정부간 계약)</th><th>상업계약</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>계약 주체</td>
+          <td>한국 정부(DAPA/KODITS) ↔ 구매국 정부</td>
+          <td>한국 방산기업 ↔ 구매국 기업·정부</td>
+        </tr>
+        <tr>
+          <td>신뢰성</td>
+          <td><span class="tag-up">높음</span> — 국가 보증 기반</td>
+          <td><span class="tag-ca">상대적으로 낮음</span></td>
+        </tr>
+        <tr>
+          <td>납기 속도</td>
+          <td><span class="tag-dn">느림</span> — 승인 절차 복잡</td>
+          <td><span class="tag-up">빠름</span></td>
+        </tr>
+        <tr>
+          <td>가격 협상</td>
+          <td>제한적 (표준가격 적용)</td>
+          <td>유연 (시장가격 반영 가능)</td>
+        </tr>
+        <tr>
+          <td>기술이전</td>
+          <td>체계적 패키지 가능</td>
+          <td>개별 협상 방식</td>
+        </tr>
+        <tr>
+          <td>최근 추세</td>
+          <td><span class="tag-up">대규모 플랫폼</span> 도입 선호</td>
+          <td>MRO·소모품은 상업계약 혼용</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top:18px">
+      <div class="col-box" style="border-left:4px solid var(--accent)">
+        <h4 style="color:var(--accent)">G2G 주요 사례</h4>
+        <ul>
+          <li><b>UAE</b> — 천궁-II 방공미사일</li>
+          <li><b>폴란드</b> — K2 · K9 초도 계약</li>
+          <li><b>이집트</b> — K9 자주포</li>
+          <li><b>호주</b> — 레드백 IFV (협상 중)</li>
+        </ul>
+      </div>
+      <div class="col-box" style="border-left:4px solid var(--blue)">
+        <h4 style="color:var(--blue)">상업계약 주요 사례</h4>
+        <ul>
+          <li><b>인도</b> — K9 바즈라 추가 물량</li>
+          <li><b>루마니아</b> — K9 현지화 계약</li>
+          <li><b>동남아</b> — 일부 탄약·소모품</li>
+          <li><b>MRO</b> — 소모성 부품 보급</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analogy"><b>핵심 포인트:</b> G2G는 신뢰성이 높지만 납기가 길고 가격이 경직된다. 대신 상환 보장이 강하므로 <b>수주잔고(백로그) 품질이 높다</b>. 투자자 입장에서는 G2G 비중이 높은 기업의 백로그를 더 안정적으로 평가해야 한다.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: 절충교역(Offset)
+══════════════════════════════════════════ -->
+<section id="s4">
+  <div class="zone-head">
+    <div class="z-big">04</div>
+    <div class="z-num">SECTION 04</div>
+    <h2>절충교역(Offset): 기술이전의 양날의 검</h2>
+    <p>방산 계약에는 항상 절충교역이 따른다. 한국이 구매자일 때는 기술을 받고, 판매자일 때는 기술을 준다. 이 균형이 K-방산 수출의 핵심 경쟁변수다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--gold);--zs:var(--golds)">
+    <div class="f-tag">의무 발생 기준</div>
+    <h3>절충교역 적용 기준 및 최소 비율</h3>
+    <div class="facts" style="--zc:var(--gold);--zs:var(--golds)">
+      <div class="fact">
+        <div class="n">1,000만$</div>
+        <div class="l">절충교역 의무 발생<br>최소 계약 금액</div>
+      </div>
+      <div class="fact">
+        <div class="n">50% 이상</div>
+        <div class="l">경쟁 계약 시<br>최소 절충교역 비율</div>
+      </div>
+      <div class="fact">
+        <div class="n">30% 이상</div>
+        <div class="l">단독 계약 시<br>최소 절충교역 비율</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="f-tag">한국이 구매자 — 받은 절충교역</div>
+    <h3>F-35 · A330 수입: 기술 내재화의 교두보</h3>
+    <table>
+      <thead>
+        <tr><th>계약</th><th>절충교역 내용</th><th>금액</th><th>성과</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>F-35A<br>(록히드마틴)</td>
+          <td>군사통신위성 + KF-X 기술이전 + 중소기업 수출</td>
+          <td>21억$ + 14억$ + 3억$</td>
+          <td>FA-50 및 KF-21 개발 기술기반 형성</td>
+        </tr>
+        <tr>
+          <td>A330 MRTT<br>(에어버스)</td>
+          <td>기술이전 패키지 (이행률 92.6%)</td>
+          <td>6.62억$</td>
+          <td>공중급유 기술 일부 확보</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">한국이 판매자 — 줘야 하는 절충교역</div>
+    <h3>K2PL · K9 현지화: 기술이전의 대가</h3>
+    <p class="body">이제 한국이 판매자가 되면서 반대로 <b>기술이전 압박</b>을 받는다. 핵심 기술 유출 방지와 수출 경쟁력 유지 사이에서 전략적 균형이 필요하다.</p>
+
+    <table>
+      <thead>
+        <tr><th>수출 계약</th><th>절충교역 내용</th><th>현지화율 목표</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>폴란드 K2PL</td>
+          <td>약 3,800개 부품항목 현지생산·정비 기술 제공</td>
+          <td>현지생산 포함 구조</td>
+        </tr>
+        <tr>
+          <td>루마니아 K9</td>
+          <td>현지 K9 공장 건설 및 공급망 구축</td>
+          <td>현지화율 80% 목표</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-gold">
+      <div class="c-head">투자 주의 포인트</div>
+      <div class="c-body">절충교역으로 <b>기술이전 범위가 넓어질수록 장기 경쟁 우위가 약화</b>될 수 있다. 폴란드 K2PL의 경우 3,800개 부품 중 핵심 파워팩·사격통제 시스템이 포함되는지 여부가 중요하다. <b>핵심 블랙박스(파워팩, FCS) 유지 여부</b>를 공시·공청회 자료에서 반드시 확인해야 한다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 5: 방산채권·PF 구조
+══════════════════════════════════════════ -->
+<section id="s5">
+  <div class="zone-head">
+    <div class="z-big">05</div>
+    <div class="z-num">SECTION 05</div>
+    <h2>방산채권 · PF: 삼중 안전망과 금융 구조</h2>
+    <p>수주잔고가 담보가 되는 독특한 방산 금융. 구매국 보증 + K-Exim 차관 + K-SURE 보험의 삼중 안전망이 투자자에게 주는 의미를 분석한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">삼중 안전망 구조</div>
+    <h3>방산 PF: 세 겹으로 감싸는 신용 보강</h3>
+
+    <div class="triple">
+      <div class="triple-box tb-green">
+        <div class="tb-icon">&#127963;</div>
+        <h4>구매국 정부 보증</h4>
+        <p>1차 방어선. 구매국 국가 신용 + 국채 발행 기반 결제 보장. BGK 모델이 대표 사례</p>
+      </div>
+      <div class="triple-box tb-blue">
+        <div class="tb-icon">&#127981;</div>
+        <h4>K-Exim 차관</h4>
+        <p>2차 자금 공급선. 구매국에 직접 Buyer's Credit 제공. 한국 정부 보증 신용 활용</p>
+      </div>
+      <div class="triple-box tb-gold">
+        <div class="tb-icon">&#128737;</div>
+        <h4>K-SURE 보험</h4>
+        <p>3차 헤지 수단. 정치적 위험·신용 위험 커버. 이행보증 발급으로 계약 이행 담보</p>
+      </div>
+    </div>
+
+    <div class="analogy">폴란드 모델 요약: <b>BGK 국채 발행 → 방산 전용 계정 → 한국 방산기업에 단계별 지급</b>. 납품 마일스톤마다 자금이 집행되는 구조다. 기업 입장에서 미수금 리스크가 극히 낮다.</div>
+  </div>
+
+  <div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="f-tag">방산채권 (Defense Bond)</div>
+    <h3>수주잔고를 담보로 회사채 발행</h3>
+    <p class="body">한국 방산기업들은 장기 납품 계약 백로그를 담보로 <b>방산채권(Defense Bond)</b>을 발행할 수 있다. 이는 일반 기업의 자산담보부증권(ABS)과 유사한 구조로, 수출 계약 현금흐름이 담보 역할을 한다.</p>
+
+    <div class="flow">
+      <div class="flow-box">수주잔고(백로그)<div class="fb-sub">장기 납품 계약</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">방산채권 발행<div class="fb-sub">담보 기반 회사채</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">투자자 매입<div class="fb-sub">안정적 이자수익</div></div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR VIEW — 신용등급 임팩트</div>
+      <p>수출 계약 백로그가 담보 → 안정적 현금흐름 예측 가능 → <b>BBB+ 이상 신용등급 유지 가능</b>. 한화에어로스페이스·현대로템 등이 수십 조원 규모 백로그를 보유하는 이유 중 하나가 채권시장에서 자금 조달 비용을 낮추기 위한 신용 구조 때문이다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 6: 글로벌 비교
+══════════════════════════════════════════ -->
+<section id="s6">
+  <div class="zone-head">
+    <div class="z-big">06</div>
+    <div class="z-num">SECTION 06</div>
+    <h2>글로벌 방산 수출금융 비교</h2>
+    <p>미국 FMS, 프랑스 Bpifrance, 이스라엘 DCI, 독일 KfW와 한국을 비교한다. 한국이 배워야 할 것과 이미 앞선 것은 무엇인가.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">5개국 비교</div>
+    <h3>방산 수출금융 국가별 특징</h3>
+    <table>
+      <thead>
+        <tr><th>국가</th><th>제도</th><th>특징</th><th>평가</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>미국</td>
+          <td>FMS + FMF</td>
+          <td>미 국방부가 직접 계약 주체. 폴란드에 FMF 110억달러 제공</td>
+          <td><span class="tag-up">신뢰성 최고</span></td>
+        </tr>
+        <tr>
+          <td>프랑스</td>
+          <td>Bpifrance + 은행 신디케이션</td>
+          <td>원스톱 심사 2~3개월. 저신용국도 조건부 승인 가능</td>
+          <td><span class="tag-up">속도·유연성</span></td>
+        </tr>
+        <tr>
+          <td>이스라엘</td>
+          <td>민간 방산수출 + DCI 보증</td>
+          <td>2024년 수출 148억달러로 역대 최고 기록</td>
+          <td><span class="tag-ca">아시아·중동 특화</span></td>
+        </tr>
+        <tr>
+          <td>독일</td>
+          <td>KfW IPEX-Bank</td>
+          <td>EU 방산 공동구매와 연동. 유럽 조달과 시너지</td>
+          <td><span class="tag-bl">EU 통합 연동</span></td>
+        </tr>
+        <tr>
+          <td>한국</td>
+          <td>K-Exim + K-SURE</td>
+          <td>생태계형 전환 중. 한국형 FMS 도입 논의 활발</td>
+          <td><span class="tag-ca">전환 과도기</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-blue">
+      <div class="c-head">한국의 현재 위치</div>
+      <div class="c-body">한국은 <b>하드웨어(무기 품질·납기) 경쟁력은 세계 최상위권</b>이지만, <b>금융 인프라(신용 공여·보증 체계)는 아직 미국·프랑스 대비 2~3단계 뒤처진다</b>. 한국형 FMS 도입이 실현될 경우 이 격차가 크게 좁혀지고 신흥국 시장 공략에서 경쟁력이 대폭 강화될 것이다.</div>
+    </div>
+
+    <div class="facts" style="--zc:var(--accent);--zs:var(--accents);margin-top:18px">
+      <div class="fact">
+        <div class="n">이스라엘</div>
+        <div class="l">148억달러<br>2024년 역대 최고</div>
+      </div>
+      <div class="fact">
+        <div class="n">한국</div>
+        <div class="l">154억달러<br>2024년 추정</div>
+      </div>
+      <div class="fact">
+        <div class="n">미국</div>
+        <div class="l">~800억달러<br>FMS 수주 총액</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 7: 한국형 FMS
+══════════════════════════════════════════ -->
+<section id="s7">
+  <div class="zone-head">
+    <div class="z-big">07</div>
+    <div class="z-num">SECTION 07</div>
+    <h2>한국형 FMS: 정부 보증자로 나서는 한국</h2>
+    <p>미국 FMS의 핵심은 미 정부가 계약 보증자로 나선다는 점이다. 한국이 이 모델을 도입하면 무엇이 바뀌는가. 투자자에게 주는 함의를 분석한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">FMS 모델 이해</div>
+    <h3>미국 FMS가 강력한 이유</h3>
+    <p class="body">미국 FMS(Foreign Military Sales)는 <b>미 국방부가 계약 당사자</b>가 된다. 구매국은 미국 정부와 계약을 맺고, 미 정부가 방산기업에 발주한다. 이 구조에서 미국 정부 신용이 기반이 되므로 구매국 입장에서는 최고 수준의 신뢰가 확보된다.</p>
+
+    <div class="two-col">
+      <div class="col-box" style="border-left:4px solid var(--accent)">
+        <h4 style="color:var(--accent)">미국 FMS 구조</h4>
+        <ul>
+          <li>계약 주체: <b>미 국방부(DoD)</b></li>
+          <li>구매국 ↔ 미 정부 ↔ 방산기업</li>
+          <li>FMF로 금융까지 패키지 제공</li>
+          <li>CAATSA·ITAR 등 수출통제 통합</li>
+          <li>사후 지원(AS) 포함 원스톱 서비스</li>
+        </ul>
+      </div>
+      <div class="col-box" style="border-left:4px solid var(--caution)">
+        <h4 style="color:var(--caution)">한국 현재 구조 (상업계약 시)</h4>
+        <ul>
+          <li>계약 주체: <b>방산기업 직접</b></li>
+          <li>또는 DAPA/KODITS (G2G 시)</li>
+          <li>금융은 K-Exim·K-SURE가 별도</li>
+          <li>통합 원스톱 체계 미비</li>
+          <li>구매국 신뢰도 상대적으로 낮음</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="f-tag">한국형 FMS 도입 논의</div>
+    <h3>정부가 보증자로 나서면 달라지는 것</h3>
+    <p class="body">2023~2025년 DAPA, 기획재정부, K-Exim이 공동으로 <b>한국형 FMS 체계 구축</b>을 논의 중이다. 핵심은 한국 정부가 G2G 계약에서 단순 중개자가 아니라 <b>직접 보증자(Guarantor)</b>로 나서는 것이다.</p>
+
+    <div class="facts" style="--zc:var(--blue);--zs:var(--blues)">
+      <div class="fact">
+        <div class="n">신뢰도 제고</div>
+        <div class="l">국가 신용등급(AA-)<br>기반 보증</div>
+      </div>
+      <div class="fact">
+        <div class="n">협상력 강화</div>
+        <div class="l">정부 보증 → 가격<br>프리미엄 확보 가능</div>
+      </div>
+      <div class="fact">
+        <div class="n">수출 확대</div>
+        <div class="l">신흥국 시장<br>진입 장벽 완화</div>
+      </div>
+    </div>
+
+    <div class="callout callout-green">
+      <div class="c-head">투자 임팩트</div>
+      <div class="c-body">한국형 FMS가 제도화되면 <b>대형 방산기업의 수주 확률이 올라가고, 계약 후 결제 리스크가 낮아진다</b>. 특히 중동·동남아·중남미처럼 신용등급이 낮은 구매국과의 거래에서 결정적 차이를 만들어낼 것이다. <b>현대로템, 한화에어로스페이스, KAI</b> 등 G2G 비중이 높은 기업이 가장 큰 수혜를 입는다.</div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR VIEW — 제도화 진행 속도 모니터링</div>
+      <p>한국형 FMS 도입은 단기 이벤트가 아니라 <b>3~5년 제도 구축 과정</b>이다. DAPA 예산 확대, K-Exim 방산 전용 라인 증설, 국회 입법 여부를 체크포인트로 삼아야 한다. 매년 방위사업청 국정감사 자료가 중요한 선행 지표다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 8: 용어 사전
+══════════════════════════════════════════ -->
+<section id="s8">
+  <div class="zone-head">
+    <div class="z-big">08</div>
+    <div class="z-num">SECTION 08</div>
+    <h2>수출금융·계약구조 용어 사전</h2>
+    <p>방산 투자에서 반드시 알아야 할 핵심 용어 20개 이상. 각 항목을 펼쳐 상세 설명을 확인하라.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+
+    <div class="gloss-sec">금융 기관 및 제도</div>
+    <div class="gloss">
+      <details>
+        <summary>FMS (Foreign Military Sales) — 해외군사판매</summary>
+        <div class="g-body">미국 <b>국방부(DoD)가 직접 계약 당사자</b>가 되어 외국 정부에 방산물자를 판매하는 제도. 구매국은 미 정부와 계약하고, 미 정부가 록히드마틴·레이시온 등 방산기업에 발주한다. 미 정부 신용이 기반이므로 전 세계에서 가장 높은 신뢰도를 가진다. 2023년 기준 FMS 수주 총액 약 800억달러.</div>
+      </details>
+      <details>
+        <summary>FMF (Foreign Military Financing) — 해외군사금융</summary>
+        <div class="g-body">미국이 동맹국의 방산 구매를 돕기 위해 제공하는 <b>보조금·차관 형태의 금융 지원</b>. 폴란드에 제공한 110억달러가 대표 사례. FMF를 받으면 미국산뿐 아니라 미국이 승인한 한국산 등 동맹국 장비 구매에도 사용할 수 있다.</div>
+      </details>
+      <details>
+        <summary>K-Exim (한국수출입은행)</summary>
+        <div class="g-body">한국 정부 100% 출자 정책금융기관. <b>방산 수출에서는 구매국에 직접 Buyer's Credit(구매자 금융)을 제공</b>하거나 한국 방산기업의 수출금융을 지원한다. 2024년부터 방산 5사와 공급망 전체를 커버하는 생태계형 금융협력 체계를 운용 중이다.</div>
+      </details>
+      <details>
+        <summary>K-SURE (한국무역보험공사)</summary>
+        <div class="g-body">수출보험·신용보증 전문 정책기관. 방산 수출에서 <b>정치적 위험(구매국 정권 교체·전쟁 등)과 신용 위험(구매국 부도)을 헤지</b>한다. 이행보증서 발급으로 계약 이행을 보장하는 역할도 수행한다.</div>
+      </details>
+      <details>
+        <summary>DAPA (방위사업청)</summary>
+        <div class="g-body">Defense Acquisition Program Administration. <b>한국 방산 수출 계약의 총괄 행정기관</b>. G2G 협상의 한국측 주체로 나서며 수출 허가 권한을 보유한다. 2024년 기준 방산수출 지원 예산을 전년 대비 2배 이상 확대했다.</div>
+      </details>
+      <details>
+        <summary>KODITS (국방기술품질원)</summary>
+        <div class="g-body">Korea Defense Institute of Technology and Quality. G2G 계약에서 <b>품질 인증, 규격 검사, 계약 실무 지원</b>을 담당한다. 수출 계약 시 DAPA와 함께 행정 절차를 처리하는 실무 집행 기관이다.</div>
+      </details>
+      <details>
+        <summary>BGK (Bank Gospodarstwa Krajowego)</summary>
+        <div class="g-body">폴란드 국영 개발은행. <b>폴란드 Armed Forces Support Fund의 운용 기관</b>으로, 국채 발행 자금을 방산 전용 계정에 관리하고 한국 방산기업에 단계별로 지급한다. 폴란드 국가신용등급(A-/A2)을 배경으로 결제 신뢰도가 높다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">계약 구조</div>
+    <div class="gloss">
+      <details>
+        <summary>G2G (Government-to-Government) — 정부간 계약</summary>
+        <div class="g-body">구매국 정부와 판매국 정부(DAPA/KODITS) 간에 직접 체결하는 계약. <b>국가 신뢰성이 기반</b>이므로 상업계약 대비 신뢰도가 높고 기술이전 패키지를 체계적으로 구성할 수 있다. 단, 승인 절차가 복잡해 납기가 길어질 수 있다.</div>
+      </details>
+      <details>
+        <summary>상업계약 (Commercial Contract)</summary>
+        <div class="g-body">한국 방산기업이 직접 구매국 정부 또는 기업과 체결하는 계약. <b>납기 속도가 빠르고 가격 협상이 유연</b>하다. MRO(정비·수리·점검)와 소모성 탄약 보급에서 많이 활용된다. 결제 리스크는 G2G보다 높다.</div>
+      </details>
+      <details>
+        <summary>절충교역 (Offset)</summary>
+        <div class="g-body">방산 계약 시 판매국이 구매국 경제에 직접 기여하는 의무 조항. <b>1,000만달러 이상 계약 시 의무 발생</b>. 경쟁 계약 50%, 단독 계약 30% 이상의 절충교역 이행이 요구된다. 기술이전, 공동생산, 부품 현지 조달 등의 형태로 이행한다.</div>
+      </details>
+      <details>
+        <summary>차관 / Buyer's Credit</summary>
+        <div class="g-body">K-Exim 등 정책금융기관이 <b>구매국에 직접 제공하는 장기 저리 대출</b>. 구매국은 이 차관으로 한국 방산장비를 구매하고 이후 분할 상환한다. 차관 금리는 시장 금리보다 낮으며, 구매국 국가 신용등급에 따라 조건이 달라진다.</div>
+      </details>
+      <details>
+        <summary>분할납부 (Progress Payment)</summary>
+        <div class="g-body">납품 마일스톤별로 계약금을 분할 지급하는 방식. <b>계약 체결 시 선급금(10~20%) → 제조 개시 시 → 납품 시 → 운용 시험 후</b> 단계로 지급된다. 방산기업 입장에서는 제조 기간 중 현금흐름을 확보할 수 있다.</div>
+      </details>
+      <details>
+        <summary>기술이전 (Technology Transfer)</summary>
+        <div class="g-body">방산 계약 시 판매국이 구매국에 제공하는 기술·노하우·생산권. <b>절충교역의 핵심 수단</b>이다. 완성품 판매 → 공동생산 → 현지생산 순으로 기술이전 범위가 넓어진다. 핵심 기술(파워팩, 사격통제 등)은 최대한 이전 범위에서 제외하는 것이 수출국의 전략이다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">금융 수단</div>
+    <div class="gloss">
+      <details>
+        <summary>PF (Project Finance) — 프로젝트 파이낸싱</summary>
+        <div class="g-body">특정 프로젝트의 미래 현금흐름을 담보로 자금을 조달하는 방식. 방산에서는 <b>장기 납품 계약의 수취 현금흐름을 담보</b>로 대규모 차입이 가능하다. 기업의 대차대조표(자산)가 아닌 프로젝트 자체를 담보로 하므로 기업 신용등급과 별도로 금융 조달이 가능하다.</div>
+      </details>
+      <details>
+        <summary>방산채권 (Defense Bond)</summary>
+        <div class="g-body">한국 방산기업이 <b>장기 납품 계약 백로그를 담보로 발행하는 회사채</b>. 수주잔고가 안정적 현금흐름을 보장하므로 일반 제조업 채권 대비 높은 신용등급을 부여받을 수 있다. BBB+ 이상 등급 유지가 목표다.</div>
+      </details>
+      <details>
+        <summary>수출보험 (Export Credit Insurance)</summary>
+        <div class="g-body">K-SURE가 제공하는 보험 상품. <b>수출 대금 미결제 위험(신용 위험)과 정치적 위험(구매국 전쟁·제재·수용 등)을 커버</b>한다. 보험료는 구매국 신용등급에 따라 0.1~3% 수준이다.</div>
+      </details>
+      <details>
+        <summary>이행보증 (Performance Bond)</summary>
+        <div class="g-body">계약 이행을 보증하는 금융 상품. <b>K-SURE 또는 은행이 발행</b>하며, 납품 기업이 계약을 이행하지 못할 경우 구매국에 보증금을 지급한다. 통상 계약금액의 5~10% 수준으로 발행된다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">규제 및 제도</div>
+    <div class="gloss">
+      <details>
+        <summary>수출통제 (Export Control)</summary>
+        <div class="g-body">방산물자 수출 시 적용되는 국가 간 규제 체계. 한국은 <b>방위사업청 허가 + 산업부 전략물자 수출 허가</b>가 필요하다. 미국산 부품이 포함된 경우 미국 ITAR(국제무기거래규정) 규정도 준수해야 한다.</div>
+      </details>
+      <details>
+        <summary>CAATSA (미국 적국제재법)</summary>
+        <div class="g-body">Countering America's Adversaries Through Sanctions Act. <b>러시아·이란·북한산 무기를 구매한 국가에 미국이 2차 제재를 부과하는 법</b>. 인도·터키처럼 러시아산 무기를 운용하는 국가에 한국산 무기를 수출할 때 CAATSA 적용 여부가 리스크 요인이 된다.</div>
+      </details>
+      <details>
+        <summary>KRIT (국방기술진흥연구소)</summary>
+        <div class="g-body">Korea Research Institute for Defense Technology Planning and Advancement. <b>G2G 계약 실무 지원 및 방산 기술 기획·기술이전 관리</b>를 담당하는 기관. DAPA 산하 기관으로 절충교역 이행 관리와 기술이전 범위 협상을 지원한다.</div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="series-nav">
+  <a href="./k_defense_theme_mro.html">
+    <div class="sn-label">PREV &mdash; THEME F</div>
+    MRO · 후속지원 산업
+  </a>
+  <a href="./k_defense_theme_localization.html" style="text-align:right">
+    <div class="sn-label">NEXT &mdash; THEME H</div>
+    현지화 · 기술이전 전략
+  </a>
+</div>
+
+<div class="disclaimer">
+  본 자료는 공개된 정보를 바탕으로 한 <b>리서치 참고 자료</b>입니다. 투자 권유나 특정 종목 매수·매도 추천이 아닙니다. 방산 계약 금액·구조는 공식 발표 전까지 추정치이며 실제와 다를 수 있습니다. 투자 결정은 본인 책임 하에 하시기 바랍니다.
+</div>
+<footer>K-방산 심화 테마 시리즈 · Module G &mdash; 수출금융·계약구조 · 2026.06</footer>
+
+</div><!-- end .wrap -->
+
+<script>
+/* PROGRESS BAR */
+(function(){
+  var prog = document.getElementById('prog');
+  function upd(){
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    prog.style.width = (h > 0 ? Math.min(100, st / h * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  upd();
+})();
+
+/* SCROLL REVEAL via IntersectionObserver */
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.floor:not(.visible)').forEach(function(el){
+    io.observe(el);
+  });
+})();
+
+/* SMOOTH SCROLL for nav links */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var tgt = document.querySelector(this.getAttribute('href'));
+    if(tgt){
+      e.preventDefault();
+      tgt.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
+</script>
+</body>
+</html>

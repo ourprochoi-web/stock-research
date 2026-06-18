@@ -203,6 +203,8 @@ input{font-family:inherit}
 .badge-overview{background:rgba(129,140,248,.15);color:#a5b4fc}
 .badge-deep{background:rgba(251,191,36,.12);color:#fbbf24}
 .badge-map{background:rgba(52,211,153,.12);color:#6ee7b7}
+.badge-company{background:rgba(251,146,60,.12);color:#fb923c}
+.badge-theme{background:rgba(192,132,252,.12);color:#c084fc}
 
 .r-card h3{font-size:clamp(17px,2.5vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.35}
 .r-card .r-desc{margin-top:8px;font-size:14px;color:#6b7a93;line-height:1.55}
@@ -526,9 +528,9 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       badgeMap: { '산업 개관': 'badge-overview', '종목 심화': 'badge-deep', '투자 지도': 'badge-map' }
     },
     '방산': {
-      cssClass: 'defense', title: 'Defense',
-      desc: 'K-방산 산업구조·글로벌 권력지도·밸류체인 병목과 투자 기회',
-      badgeMap: { '산업 개관': 'badge-overview', '종목 심화': 'badge-deep', '투자 지도': 'badge-map' }
+      cssClass: 'defense', title: 'K-Defense',
+      desc: 'K-방산 산업구조·기업 심층 분석·심화 테마 8선 — 16편 시리즈 완결',
+      badgeMap: { '산업 개관': 'badge-overview', '종목 심화': 'badge-deep', '투자 지도': 'badge-map', '기업 분석': 'badge-company', '심화 테마': 'badge-theme' }
     }
   };
 
@@ -565,9 +567,114 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "전차는 만들지만 심장은 수입한다 — K-방산 산업구조와 글로벌 좌표",
       file: "defense/k_defense_industry_map.html",
-      date: "2026-06", category: "방산", type: "투자 지도", series: null,
+      date: "2026-06-19", category: "방산", type: "투자 지도", series: "K-방산",
       desc: "세계 무기시장 권력지도 위에 한국 방산의 정확한 좌표를 찍고, 밸류체인 병목과 3개 성장 벡터를 분석",
       tags: ["방산","K-방산","무기","밸류체인","국산화","수출"]
+    },
+    {
+      title: "방산주 투자 지도 — 수주잔고 120조, 수출 마진 20%+의 투자 좌표",
+      file: "defense/k_defense_investment_map.html",
+      date: "2026-06-19", category: "방산", type: "투자 지도", series: "K-방산",
+      desc: "빅4 밸류에이션 분해, 글로벌 멀티플 비교, 교두보 심화 vs 병목 해소 전략, 리스크 체크리스트",
+      tags: ["방산","투자","밸류에이션","PER","수주잔고","ETF","마진","MRO"]
+    },
+    {
+      title: "한화에어로스페이스 딥다이브 — K-방산의 심장",
+      file: "defense/k_defense_company_hanwha_aero.html",
+      date: "2026-06-19", category: "방산", type: "기업 분석", series: "K-방산",
+      desc: "매출 26.7조, 지상 OPM 20.4%, 수주잔고 116.8조 — K-방산 1위 플랫폼 기업의 사업구조·재무·성장 벡터 심층 분석",
+      tags: ["한화에어로","방산","K9","천무","수주잔고","지상무기","OPM"]
+    },
+    {
+      title: "현대로템 기업 심층 분석 — 궤도 위의 르네상스",
+      file: "defense/k_defense_company_hyundai_rotem.html",
+      date: "2026-06-19", category: "방산", type: "기업 분석", series: "K-방산",
+      desc: "K2 전차·장갑차 수출 붐, OPM 17.2% 달성, 방산수주 10.5조 — 디펜스와 레일솔루션 투트랙 분석",
+      tags: ["현대로템","K2","전차","장갑차","방산","수출","폴란드"]
+    },
+    {
+      title: "LIG넥스원 — 유도무기 독점 포트폴리오의 힘",
+      file: "defense/k_defense_company_lig_nexone.html",
+      date: "2026-06-19", category: "방산", type: "기업 분석", series: "K-방산",
+      desc: "매출 4.31조, 수주잔고 26.2조, 중동 천궁-II 10.2조 — 정밀유도무기·방공체계 핵심 기업 분석",
+      tags: ["LIG넥스원","천궁","유도무기","방공","정밀타격","중동수출"]
+    },
+    {
+      title: "KAI 한국항공우주산업 — 하늘의 국가대표",
+      file: "defense/k_defense_company_kai.html",
+      date: "2026-06-19", category: "방산", type: "기업 분석", series: "K-방산",
+      desc: "KF-21 보라매, FA-50, 수리온 — 매출 3.70조, 수주 27.3조의 한국 유일 항공 플랫폼 기업 심층 분석",
+      tags: ["KAI","KF-21","FA-50","수리온","항공","전투기","보라매"]
+    },
+    {
+      title: "한화시스템·한화오션 — 디지털 두뇌와 강철 선체",
+      file: "defense/k_defense_company_hanwha_systems_ocean.html",
+      date: "2026-06-19", category: "방산", type: "기업 분석", series: "K-방산",
+      desc: "한화시스템 C4ISR·레이더(매출 3.66조)와 한화오션 함정·잠수함(매출 12.69조)의 시너지 분석",
+      tags: ["한화시스템","한화오션","C4ISR","잠수함","함정","레이더","해군"]
+    },
+    {
+      title: "소부장 투자 지도 — 방산의 숨은 뿌리",
+      file: "defense/k_defense_company_subcontractors.html",
+      date: "2026-06-19", category: "방산", type: "기업 분석", series: "K-방산",
+      desc: "풍산(매출 3.85조)·한국화이바·빅텍·스페코 등 탄약·소재·부품 핵심 소부장 기업 투자 분석",
+      tags: ["풍산","소부장","탄약","방산부품","소재","한국화이바"]
+    },
+    {
+      title: "심화 테마 A — 엔진 국산화: 방산 천장을 깨는 열쇠",
+      file: "defense/k_defense_theme_engine.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "F414 엔진 ITAR 제약, 국산화율 20→40% 로드맵, 독자엔진 3.3조/14년 사업 분석",
+      tags: ["엔진","국산화","F414","ITAR","KF-21","가스터빈","방산자립"]
+    },
+    {
+      title: "심화 테마 B — 방공·정밀유도: 하늘의 방패",
+      file: "defense/k_defense_theme_air_defense.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "천궁-II 수출 $82.3B, 이스라엘 벤치마크 $148B, L-SAM 개발 완료 — 방공·미사일 시장 심층 분석",
+      tags: ["방공","천궁","미사일","L-SAM","정밀유도","아이언돔","방어"]
+    },
+    {
+      title: "심화 테마 C — 전장의 AI: 무인화·유무인복합",
+      file: "defense/k_defense_theme_unmanned.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "Baykar $2.2B 수출, CCA $8.9B 시장, MUM-T 유무인복합 — 드론·로봇·AI 전장의 미래",
+      tags: ["무인기","드론","AI","유무인복합","MUM-T","자율무기","로봇"]
+    },
+    {
+      title: "심화 테마 D — 함정·해양 방산: 바다의 산업전쟁",
+      file: "defense/k_defense_theme_naval.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "폴란드 잠수함 Saab 패배, 캐나다 CPSP 60조, 해양방산 6대 구조적 약점과 돌파구",
+      tags: ["함정","잠수함","해양","해군","조선","수상함","호위함"]
+    },
+    {
+      title: "심화 테마 E — 우주·위성: 궤도 위의 안보",
+      file: "defense/k_defense_theme_space.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "425사업 완료, KASA 1.12조, 글로벌 우주 군사 시장 $61.9→$116.1B — 한국 우주방산 로드맵",
+      tags: ["우주","위성","정찰","KASA","발사체","SAR","우주방산"]
+    },
+    {
+      title: "심화 테마 F — MRO·후속군수: 30년짜리 연금",
+      file: "defense/k_defense_theme_mro.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "수명주기 비용 60-70%가 운용단계, K9 11개국 MRO, 글로벌 $135.7→$187.3B 시장",
+      tags: ["MRO","후속군수","유지보수","수명주기","군수지원","부품"]
+    },
+    {
+      title: "심화 테마 G — 수출금융·계약구조: 무기 파는 법",
+      file: "defense/k_defense_theme_export_finance.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "폴란드 $12-16B 계약, G2G vs 상업수출, 한국형 FMS 논의 — 수출금융과 계약 메커니즘 분석",
+      tags: ["수출","금융","계약","FMS","G2G","오프셋","수출신용"]
+    },
+    {
+      title: "심화 테마 H — 현지화·생태계 수출: 공장을 심는 전략",
+      file: "defense/k_defense_theme_localization.html",
+      date: "2026-06-19", category: "방산", type: "심화 테마", series: "K-방산",
+      desc: "EU SAFE 65% 역내조달, 루마니아 공장 80% 현지화율, UAE $35B MOU — 생산거점 수출 전략",
+      tags: ["현지화","생태계","수출","오프셋","현지생산","루마니아","UAE"]
     }
   ];
 

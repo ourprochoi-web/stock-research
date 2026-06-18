@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한화시스템 · 한화오션 — K-방산 시리즈 Part 4-5</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#eceef2; --card:#ffffff; --line:#d4d8e0; --note:#e4e7ee; --chip-bg:#dde0e8;
+  --accent:#1c2a3e; --sys:#37588a; --ocean:#2563a8;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --sys-s:#eaeef5; --ocean-s:#e4edf7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--sys),var(--ocean),var(--up),var(--sys));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(236,238,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:hover{background:var(--chip-bg);color:var(--ink)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#0e1829 0%,#1c2a3e 45%,#162040 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.3;background-image:
+  repeating-linear-gradient(0deg,transparent 0 48px,rgba(55,88,138,.12) 48px 49px),
+  repeating-linear-gradient(90deg,transparent 0 48px,rgba(37,99,168,.10) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,rgba(14,24,41,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:80px 20px 42px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#7fb3e8;font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.18;margin:18px 0 16px;
+  background:linear-gradient(110deg,#fff 15%,#7fb3e8 45%,#a8d4f7 62%,#fff 85%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#8aa0b8;max-width:640px;margin:0 auto;font-size:15.5px;line-height:1.8}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:680px;margin:36px auto 0}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:18px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(16px,4.2vw,26px);font-weight:900;color:#7fb3e8;letter-spacing:-.02em}
+.stat .l{font-size:11px;color:#7a8ea4;margin-top:5px;line-height:1.45}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:110px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--faint)}
+.zone-head h2{font-size:clamp(22px,5.2vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.25)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.5px}
+.floor p.body b{color:var(--ink)}
+
+/* PART DIVIDER */
+.part-divider{margin:64px 0 0;padding:26px 28px 24px;border-radius:20px;position:relative;overflow:hidden}
+.part-divider.sys-div{background:linear-gradient(130deg,#1c2a3e 0%,#2d4268 100%);color:#fff}
+.part-divider.ocean-div{background:linear-gradient(130deg,#142d55 0%,#2563a8 100%);color:#fff}
+.part-divider .pd-eyebrow{font-size:11px;letter-spacing:.24em;font-weight:800;opacity:.7;margin-bottom:10px;text-transform:uppercase}
+.part-divider h2{font-size:clamp(22px,5vw,34px);font-weight:900;letter-spacing:-.02em}
+.part-divider .pd-sub{font-size:14.5px;opacity:.72;margin-top:8px;line-height:1.6}
+.part-divider .pd-bg{position:absolute;right:-10px;top:-20px;font-size:160px;font-weight:900;opacity:.05;letter-spacing:-.06em;line-height:1;pointer-events:none;color:#fff}
+
+/* DATA TABLE */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+.tag-nv{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:#e4e8ef;color:var(--accent)}
+
+/* FACT GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,#f0f2f6);border:1px solid color-mix(in srgb,var(--zc,#999) 20%,white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(14px,3.5vw,21px);font-weight:900;color:var(--zc,var(--ink));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-gold .c-head{background:var(--gold)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+.callout-navy .c-head{background:var(--accent)}
+.callout-ocean .c-head{background:var(--ocean)}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--gold-line);background:var(--golds);border-radius:14px;padding:16px 18px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a7a4c;margin-bottom:6px;text-transform:uppercase}
+.view p{font-size:14.3px;color:#5b5236;line-height:1.8}
+.view p b{color:#3d3009}
+
+/* INVEST GRID */
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:580px){.invest-grid{grid-template-columns:1fr}}
+.inv-card{border-radius:16px;padding:20px;border:1px solid}
+.inv-card.sys{background:var(--sys-s);border-color:#b8c8df}
+.inv-card.ocean{background:var(--ocean-s);border-color:#a8c2df}
+.inv-card .ic-ticker{font-size:11px;font-weight:800;letter-spacing:.1em;margin-bottom:6px}
+.inv-card.sys .ic-ticker{color:var(--sys)}
+.inv-card.ocean .ic-ticker{color:var(--ocean)}
+.inv-card h4{font-size:16.5px;font-weight:900;letter-spacing:-.01em;margin-bottom:12px}
+.inv-card ul{list-style:none}
+.inv-card li{font-size:13.3px;color:var(--sub);padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08);line-height:1.6}
+.inv-card li:last-child{border-bottom:none}
+.inv-card li b{color:var(--ink)}
+.inv-card .ic-head{font-size:11px;font-weight:800;letter-spacing:.1em;margin:12px 0 4px;color:var(--faint);text-transform:uppercase}
+
+/* VERSUS BOX */
+.versus{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:start;margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+@media(max-width:560px){.versus{grid-template-columns:1fr}}
+.versus .side h4{font-size:15px;font-weight:900;margin-bottom:8px}
+.versus .side ul{list-style:none}
+.versus .side li{font-size:12.5px;color:var(--sub);padding:3px 0;line-height:1.55}
+.versus .side li b{color:var(--ink)}
+.versus .vs-badge{font-size:22px;font-weight:900;color:var(--faint);text-align:center;white-space:nowrap;padding-top:6px}
+.side-kr h4{color:var(--ocean)}
+.side-de h4{color:#7a6a5a}
+
+/* TIMELINE */
+.tl{position:relative;margin:20px 0 6px;padding-left:28px}
+.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--ocean);border:2px solid var(--bg)}
+.tl-item.active::before{background:var(--up);box-shadow:0 0 0 4px rgba(29,122,89,.2)}
+.tl-item.warn::before{background:var(--caution)}
+.tl-item .ty{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em}
+.tl-item .tt{font-size:14.5px;font-weight:800;color:var(--ink)}
+.tl-item .td{font-size:13px;color:var(--sub);margin-top:2px;line-height:1.6}
+
+/* MRO LIST */
+.mro-list{display:grid;gap:10px;margin:16px 0}
+.mro-item{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;align-items:flex-start}
+.mro-flag{font-size:22px;flex:none;line-height:1.3}
+.mro-body .mn{font-size:14.5px;font-weight:800;color:var(--ink)}
+.mro-body .md{font-size:12.5px;color:var(--sub);margin-top:2px;line-height:1.55}
+
+/* RISK LIST */
+.risk-list{display:grid;gap:12px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--up)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--faint)}
+.risk h4{font-size:15px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.5px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* SYNERGY GRID */
+.syn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:560px){.syn-grid{grid-template-columns:1fr}}
+.syn{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.syn .si{font-size:28px;margin-bottom:8px}
+.syn h4{font-size:14px;font-weight:900;margin-bottom:5px;color:var(--ink)}
+.syn p{font-size:12.5px;color:var(--sub);line-height:1.55}
+
+/* ANALOGY / NOTE */
+.analogy{background:linear-gradient(100deg,#e8ecf4,#dde3ef);border-left:4px solid var(--sys);padding:14px 18px;border-radius:0 12px 12px 0;font-size:15px;margin:14px 0;color:#2d3d54;line-height:1.75}
+.analogy b{color:#1a2840}
+.note-box{background:var(--note);border:1px solid #c4c8d4;border-left:3px solid var(--faint);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--sub);margin:14px 0;line-height:1.7}
+.note-box b{color:var(--ink)}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px;flex:none}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:13.8px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:12.5px;font-weight:800;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* MISC */
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px;padding-bottom:20px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--ocean);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px;text-transform:uppercase}
+
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+@media(max-width:640px){.wrap{padding:0 14px 80px}.floor{padding:22px 18px}.versus{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--ocean)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- HERO -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 시리즈 &middot; Part 4-5</div>
+    <h1>두 얼굴의 방산<br>전자의 눈 &times; 바다의 몸</h1>
+    <p class="lede">한화시스템이 전투함의 눈과 귀를 만들고, 한화오션이 수면 아래 선체를 건조한다.<br>전자와 조선의 수직통합 &mdash; K-방산 해양 전략의 전모를 해부한다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">3.66조</div>
+        <div class="l">한화시스템<br>2025년 매출</div>
+      </div>
+      <div class="stat">
+        <div class="n">12.69조</div>
+        <div class="l">한화오션<br>2025년 매출</div>
+      </div>
+      <div class="stat">
+        <div class="n">60조</div>
+        <div class="l">캐나다 CPSP<br>잠수함 사업 규모</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#intro">그룹 개요</a>
+  <a href="#sys-overview">시스템 개요</a>
+  <a href="#sys-perf">시스템 실적</a>
+  <a href="#sys-products">핵심 제품</a>
+  <a href="#sys-future">미래사업</a>
+  <a href="#ocean-overview">오션 개요</a>
+  <a href="#ocean-perf">오션 실적</a>
+  <a href="#ocean-defense">방산 수주</a>
+  <a href="#cpsp">캐나다 CPSP</a>
+  <a href="#invest">투자 관점</a>
+  <a href="#gloss">용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- SECTION 1: INTRO -->
+<section id="intro">
+  <div class="zone-head">
+    <div class="z-big">한화</div>
+    <div class="z-num">SECTION 01</div>
+    <h2>그룹 역할 분담: 전자 + 조선의 수직통합</h2>
+    <p>한화그룹은 방산전자(한화시스템)와 조선·해양(한화오션)을 동시에 보유한 세계에서 몇 안 되는 방산 그룹이다. 전투체계와 플랫폼을 한 울타리 안에서 공급하는 구조가 핵심 경쟁력이다.</p>
+  </div>
+
+  <div class="floor visible" style="--zc:var(--accent);--zs:var(--sys-s)">
+    <div class="f-tag">그룹 구조</div>
+    <h3>전자 + 선체 = 한화 해양방산 패키지</h3>
+    <p class="body">잠수함 1척을 완성하려면 <b>수중음향·전투체계 소프트웨어(한화시스템)</b>와 <b>압력선체·추진체계·건조(한화오션)</b>가 모두 필요하다. 두 회사가 같은 그룹 안에 있다는 사실은 해외 입찰 시 <b>패키지 딜</b>을 가능하게 한다.</p>
+
+    <div class="syn-grid">
+      <div class="syn">
+        <div class="si">&#128065;</div>
+        <h4>한화시스템</h4>
+        <p>전투체계 &middot; AESA 레이더 &middot; C4I<br>함정의 감각기관과 두뇌</p>
+      </div>
+      <div class="syn">
+        <div class="si">&#128260;</div>
+        <h4>통합 시너지</h4>
+        <p>그룹 내 인터페이스 최적화<br>해외 입찰 원팀 구성 용이</p>
+      </div>
+      <div class="syn">
+        <div class="si">&#128674;</div>
+        <h4>한화오션</h4>
+        <p>잠수함 &middot; 구축함 &middot; 호위함<br>함정의 선체와 몸통</p>
+      </div>
+    </div>
+
+    <div class="callout callout-navy" style="margin-top:20px">
+      <div class="c-head">핵심 포인트 &mdash; 수직통합의 레버리지</div>
+      <div class="c-body">캐나다 잠수함 사업(CPSP)에서 한화오션이 선체를 짓고 한화시스템이 전투체계를 공급하는 <b>원팀 입찰</b>은 그룹 수직통합의 최대 레버리지다. 수주 성사 시 <b>두 회사 모두 동시 수혜</b>가 발생한다는 점에서, 투자자는 한 가지 테마로 두 개의 수익 흐름에 노출될 수 있다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PART DIVIDER: 한화시스템 -->
+<div class="part-divider sys-div" id="sys-overview">
+  <div class="pd-bg">SYS</div>
+  <div class="pd-eyebrow">Part A &middot; 한화시스템 272210</div>
+  <h2>전자의 눈 &mdash; 한화시스템</h2>
+  <div class="pd-sub">AESA 레이더 &middot; 전투체계 &middot; C4I 국내 독점 &middot; 방산전자 1위</div>
+</div>
+
+<!-- SECTION 2: 한화시스템 개요 -->
+<section>
+  <div class="zone-head">
+    <div class="z-num">SECTION 02</div>
+    <h2>한화시스템 기업 개요</h2>
+    <p>방산전자 1위 기업. 레이더부터 전투체계까지 국내 독자 기술을 보유한 유일한 기업이다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--sys);--zs:var(--sys-s)">
+    <div class="f-tag">기업 개요</div>
+    <h3>한화시스템 (272210)</h3>
+    <div class="meta">코스피 상장 &middot; 방산전자 + ICT 겸영 복합기업</div>
+    <p class="body">한화시스템은 <b>AESA 레이더, 지휘통제통신(C4I), 해양전투체계, 항공전자</b>를 독자 보유한 방산전자 1위 기업이다. ICT 사업부문(SI &middot; 디지털 플랫폼)을 겸영하며, UAM &middot; 저궤도 위성통신을 신성장 축으로 육성 중이다.</p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">방산전자 1위</div>
+        <div class="l">국내 AESA 레이더<br>유일 독자 개발사</div>
+      </div>
+      <div class="fact">
+        <div class="n">ICT 겸영</div>
+        <div class="l">SI &middot; 디지털 플랫폼<br>사업부 운영</div>
+      </div>
+      <div class="fact">
+        <div class="n">신성장 2축</div>
+        <div class="l">UAM &amp;<br>저궤도 위성통신</div>
+      </div>
+    </div>
+
+    <div class="analogy">
+      <b>비유:</b> 전투함이 인체라면, 한화오션은 뼈와 근육을 만들고 한화시스템은 눈 &middot; 귀 &middot; 뇌를 만든다. 아무리 거대한 잠수함도 전투체계 없이는 움직이는 철 덩어리에 불과하다. 반대로 정밀한 전투체계도 그것을 실을 선체 없이는 존재하지 못한다.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: 한화시스템 실적 -->
+<section id="sys-perf">
+  <div class="zone-head">
+    <div class="z-num">SECTION 03</div>
+    <h2>한화시스템 2025년 실적</h2>
+    <p>매출 성장세는 뚜렷하나 영업이익률 압박이 투자 판단의 핵심 변수다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--sys);--zs:var(--sys-s)">
+    <div class="f-tag">2025 실적</div>
+    <h3>매출 3.66조 &middot; OPM 3.3% &middot; 수주잔고 8.2조</h3>
+
+    <table>
+      <thead>
+        <tr><th>구분</th><th>2025년 수치</th><th>평가</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>매출액 (연결)</td>
+          <td>3조 6,642억원</td>
+          <td><span class="tag-up">YoY +10%</span></td>
+        </tr>
+        <tr>
+          <td>영업이익</td>
+          <td>1,199억원</td>
+          <td><span class="tag-dn">전년비 감소</span></td>
+        </tr>
+        <tr>
+          <td>영업이익률 (OPM)</td>
+          <td>3.3%</td>
+          <td><span class="tag-ca">섹터 평균 하회</span></td>
+        </tr>
+        <tr>
+          <td>수주잔고</td>
+          <td>약 8.2조원 (2025년 9월 말)</td>
+          <td><span class="tag-bl">안정적</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <b>주석 &mdash; OPM 3.3%가 낮은 이유 두 가지:</b> (1) <b>ICT 사업부문 마진 희석</b> &mdash; SI &middot; 디지털 플랫폼 사업은 방산 대비 수익성이 낮아 전체 OPM을 끌어내린다. (2) <b>KF-21 AESA 레이더 초기 양산 원가</b> &mdash; 초도 양산 단계에서는 공정 안정화 전 원가가 높게 반영된다. 양산 물량이 늘고 공정이 안정되면 마진 개선 여지가 존재한다.
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">3.66조</div>
+        <div class="l">2025년<br>연결 매출</div>
+      </div>
+      <div class="fact">
+        <div class="n">3.3%</div>
+        <div class="l">영업이익률<br>(개선 여지 존재)</div>
+      </div>
+      <div class="fact">
+        <div class="n">8.2조</div>
+        <div class="l">수주잔고<br>(2025.9 기준)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: 핵심 제품 -->
+<section id="sys-products">
+  <div class="zone-head">
+    <div class="z-num">SECTION 04</div>
+    <h2>핵심 제품 포트폴리오</h2>
+    <p>방산전자 부문은 KF-21 AESA 레이더를 중심으로 육 &middot; 해 &middot; 공 전 영역에 걸쳐 있다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--sys);--zs:var(--sys-s)">
+    <div class="f-tag">방산전자 부문</div>
+    <h3>KF-21부터 잠수함 전투체계까지</h3>
+
+    <table>
+      <thead>
+        <tr><th>제품</th><th>내용</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>KF-21 AESA 레이더</td>
+          <td>국내 최초 전투기용 능동위상배열 레이더. KF-21 양산 확대에 따라 매출 동반 증가</td>
+          <td><span class="tag-up">독점 공급</span></td>
+        </tr>
+        <tr>
+          <td>K2 전차 사통장치</td>
+          <td>현대로템과 K2 수출 연동. 폴란드·루마니아 수출 시 동반 수혜</td>
+          <td><span class="tag-bl">수출 연동</span></td>
+        </tr>
+        <tr>
+          <td>C4I (지휘통제통신)</td>
+          <td>육·해·공 통합전술데이터링크(LINK-16 등). 합동 C4I 체계 공급</td>
+          <td><span class="tag-nv">전군 적용</span></td>
+        </tr>
+        <tr>
+          <td>수상함 전투체계</td>
+          <td>KDX-III 대형구축함 탑재. 국내 유일 독자개발 역량 보유</td>
+          <td><span class="tag-up">독자 개발</span></td>
+        </tr>
+        <tr>
+          <td>잠수함 전투체계 (CMS)</td>
+          <td>KSS-III 장보고-III 탑재. 한화오션 잠수함 수주 확대 시 동반 수혜</td>
+          <td><span class="tag-bl">연동 수혜</span></td>
+        </tr>
+        <tr>
+          <td>전자전 체계 (EW)</td>
+          <td>전자방해·전자정찰 시스템. 현대 비대칭전 핵심 자산</td>
+          <td><span class="tag-nv">자체 개발</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-blue" style="margin-top:18px">
+      <div class="c-head">투자 레버리지 &mdash; KF-21 양산 확대 시나리오</div>
+      <div class="c-body">KF-21 초도 양산 계획은 <b>48대</b>. 완전 양산 목표는 <b>120대+</b>. 대당 AESA 레이더 1기를 공급하는 한화시스템 입장에서 양산 대수가 늘수록 레이더 물량이 <b>비례하여 급증</b>한다. 수출형 KF-21 수주 시 해외 물량까지 추가된다. 한화오션 잠수함 수주 확대 시에는 CMS(잠수함 전투체계) 수요도 동반 증가한다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: 미래사업 -->
+<section id="sys-future">
+  <div class="zone-head">
+    <div class="z-num">SECTION 05</div>
+    <h2>미래사업: UAM &middot; 위성통신 &middot; AI 방산</h2>
+    <p>방산전자 수익 기반 위에 세 개의 성장 옵션을 올려놓은 구조다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--sys);--zs:var(--sys-s)">
+    <div class="f-tag">신성장 사업</div>
+    <h3>중장기 성장 옵션 3종</h3>
+
+    <table>
+      <thead>
+        <tr><th>사업</th><th>현황 및 내용</th><th>일정</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UAM (도심항공모빌리티)</td>
+          <td>정부 K-UAM 그랜드 챌린지 참여. 528억원 과제 수행. 통합운용검증 플랫폼 개발 완료 목표</td>
+          <td><span class="tag-ca">2025년 말</span></td>
+        </tr>
+        <tr>
+          <td>저궤도 위성통신</td>
+          <td>군 통신체계에 저궤도 위성통신 서비스 개시. 민간 확장 검토 중</td>
+          <td><span class="tag-up">2026년 4월~</span></td>
+        </tr>
+        <tr>
+          <td>AI 기반 방산</td>
+          <td>무인화·자율화 전투체계 연구개발. 드론 스웜, 자율 전투기체 운용 소프트웨어</td>
+          <td><span class="tag-bl">중장기</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="view">
+      <div class="v-head">투자자 관점 &mdash; 미래사업을 어떻게 볼 것인가</div>
+      <p>미래사업 3종은 모두 <b>상업화까지 수년의 선투자 구간</b>이 필요하다. 현재 주가는 AESA 레이더 &middot; 전투체계 등 핵심 방산전자 실적을 중심으로 평가받고 있으며, UAM &middot; 위성통신은 <b>콜옵션(추가 성장 옵션)</b>으로 취급하는 것이 타당하다. 저궤도 위성통신 서비스가 2026년부터 군에 개시됐으므로, <b>민간 수요로의 확장 시점</b>이 리레이팅 트리거가 될 수 있다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PART DIVIDER: 한화오션 -->
+<div class="part-divider ocean-div" id="ocean-overview">
+  <div class="pd-bg">SEA</div>
+  <div class="pd-eyebrow">Part B &middot; 한화오션 042660</div>
+  <h2>바다의 몸 &mdash; 한화오션</h2>
+  <div class="pd-sub">대우조선 인수 후 한화그룹 편입 &middot; 상선 + 방산 복합조선의 새 패러다임</div>
+</div>
+
+<!-- SECTION 6: 한화오션 개요 -->
+<section>
+  <div class="zone-head">
+    <div class="z-num">SECTION 06</div>
+    <h2>한화오션 기업 개요</h2>
+    <p>2023년 대우조선해양을 인수하며 탄생한 신생 방산조선사. 상선과 방산의 이중 수익 구조.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">기업 개요</div>
+    <h3>한화오션 (042660)</h3>
+    <div class="meta">코스피 상장 &middot; 조선·해양방산 복합기업 &middot; 한화에어로스페이스 연결 편입</div>
+    <p class="body">한화오션은 2023년 한화그룹이 <b>대우조선해양을 인수</b>하며 출범했다. 상선(LNG 운반선 &middot; 컨테이너선)과 방산(잠수함 &middot; 구축함 &middot; 호위함)을 병영하며, 미 해군 MRO 수주를 계기로 <b>해양방산 글로벌 경쟁력</b>을 입증했다.</p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="ty">2000년대 ~ 2010년대</div>
+        <div class="tt">대우조선해양 시절</div>
+        <div class="td">KSS-III 장보고-III 건조 역량 축적. 국내 잠수함 건조 핵심 야드로 자리 잡음. 수년간 영업적자 지속.</div>
+      </div>
+      <div class="tl-item">
+        <div class="ty">2022 ~ 2023</div>
+        <div class="tt">한화그룹 인수 완료</div>
+        <div class="td">한화에어로스페이스 주도 컨소시엄이 대우조선해양 인수. 사명 한화오션으로 변경. 방산 시너지 설계 시작.</div>
+      </div>
+      <div class="tl-item active">
+        <div class="ty">2024 ~ 2025</div>
+        <div class="tt">흑자전환 + 해외 MRO 돌풍</div>
+        <div class="td">미 해군 함정 창정비 수주(한국 최초). 캐나다·영국 해군 MRO 연속 수주. 2025년 영업이익 1.1조 흑자전환 성공.</div>
+      </div>
+      <div class="tl-item active">
+        <div class="ty">2026년 ~</div>
+        <div class="tt">캐나다 CPSP 결전</div>
+        <div class="td">도산안창호함 태평양 횡단 후 캐나다 해군 C4I 호환성 검증 성공(2026.5). 60조원 사업 최종 결정 대기 중.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: 한화오션 실적 -->
+<section id="ocean-perf">
+  <div class="zone-head">
+    <div class="z-num">SECTION 07</div>
+    <h2>한화오션 2025년 실적</h2>
+    <p>흑자전환 성공 후 수익성 급개선. 2026년 1분기 OPM 13.7%는 구조적 전환을 시사한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">2025 실적</div>
+    <h3>매출 12.69조 &middot; OPM 8.7% &middot; 흑자전환</h3>
+
+    <table>
+      <thead>
+        <tr><th>구분</th><th>2025년 수치</th><th>평가</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>매출액</td>
+          <td>12조 6,884억원</td>
+          <td><span class="tag-up">고성장</span></td>
+        </tr>
+        <tr>
+          <td>영업이익</td>
+          <td>1조 1,091억원</td>
+          <td><span class="tag-up">흑자전환</span></td>
+        </tr>
+        <tr>
+          <td>영업이익률 (OPM)</td>
+          <td>8.7%</td>
+          <td><span class="tag-up">구조 개선</span></td>
+        </tr>
+        <tr>
+          <td>총수주 (연간)</td>
+          <td>14조원+</td>
+          <td><span class="tag-bl">목표 초과</span></td>
+        </tr>
+        <tr>
+          <td>2026년 1Q OPM</td>
+          <td>13.7%</td>
+          <td><span class="tag-up">급격 개선</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <b>주석 &mdash; 흑자전환의 의미:</b> 한화오션은 대우조선 시절 수년간 대규모 영업손실을 기록했다. 2025년 흑자전환 성공은 단순 실적 개선을 넘어 <b>사업 구조 정상화</b>를 의미한다. 2026년 1분기 OPM 13.7%는 방산 비중 확대와 고마진 LNG선 인도 효과가 복합 작용한 결과이며, 추세 유지 여부가 관건이다.
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">12.69조</div>
+        <div class="l">2025년<br>연결 매출</div>
+      </div>
+      <div class="fact">
+        <div class="n">8.7%</div>
+        <div class="l">2025년<br>영업이익률</div>
+      </div>
+      <div class="fact">
+        <div class="n">13.7%</div>
+        <div class="l">2026년 1Q<br>OPM (급개선)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: 방산 수주 -->
+<section id="ocean-defense">
+  <div class="zone-head">
+    <div class="z-num">SECTION 08</div>
+    <h2>방산 수주 및 해외 MRO 실적</h2>
+    <p>장보고-III 건조 기반 위에 해외 해군 MRO 5건을 연속 수주하며 글로벌 방산 야드로 도약했다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">잠수함 방산</div>
+    <h3>KSS-III 장보고-III: 실전 검증 완료</h3>
+
+    <table>
+      <thead>
+        <tr><th>항목</th><th>내용</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>핵심 플랫폼</td>
+          <td>KSS-III (장보고-III급), 배수량 3,600톤, AIP 탑재 비핵 잠수함</td>
+        </tr>
+        <tr>
+          <td>건조 실적</td>
+          <td>도산안창호함 &middot; 안무함 &middot; 신채호함 건조 및 취역 완료</td>
+        </tr>
+        <tr>
+          <td>실전 검증 (2026.5)</td>
+          <td>도산안창호함 태평양 횡단(1만4,000km) 후 캐나다 해군과 C4I 통신 호환성 검증 성공</td>
+        </tr>
+        <tr>
+          <td>기술 수준</td>
+          <td>AIP + 리튬이온 배터리 &middot; 잠대지 순항미사일 탑재. 서방 동급 최고 수준</td>
+        </tr>
+        <tr>
+          <td>납기 경쟁력</td>
+          <td>계약 체결(2026년 가정) 기준 &rarr; 2032년 1번함, 2035년까지 4척 인도 가능 제안</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">해외 해군 MRO</div>
+    <h3>5건 연속 수주 &mdash; 한국 최초 미 해군 창정비 포함</h3>
+    <p class="body">2024~2025년 사이 해외 해군 MRO 5건을 수주했다. 이는 한화오션의 방산이 <b>신규 건조에서 유지정비(MRO)로 사업 영역을 확장</b>하고 있음을 보여준다.</p>
+
+    <div class="mro-list">
+      <div class="mro-item">
+        <div class="mro-flag">&#127482;&#127480;</div>
+        <div class="mro-body">
+          <div class="mn">미국 해군 함정 창정비</div>
+          <div class="md">한국 조선소 최초 미 해군 MRO 수주 (2024년 하반기). 미-한 동맹 심화와 미 해군 국내 야드 포화 배경이 맞물린 결과.</div>
+        </div>
+      </div>
+      <div class="mro-item">
+        <div class="mro-flag">&#127468;&#127463;</div>
+        <div class="mro-body">
+          <div class="mn">영국 해군 호위함 HMS 리치먼드</div>
+          <div class="md">4,900톤급 Type 23 호위함 정비. 영국 해군과의 첫 직접 계약. 유럽 해군과의 관계 확장 신호.</div>
+        </div>
+      </div>
+      <div class="mro-item">
+        <div class="mro-flag">&#127464;&#127462;</div>
+        <div class="mro-body">
+          <div class="mn">캐나다 해군 초계함 HMCS 맥스 너베이스</div>
+          <div class="md">6,615톤급 초계함 정비. CPSP 입찰과 별도로 진행되며, 캐나다 해군 신뢰 구축의 실질적 레퍼런스로 작용.</div>
+        </div>
+      </div>
+      <div class="mro-item">
+        <div class="mro-flag">&#127760;</div>
+        <div class="mro-body">
+          <div class="mn">기타 우방국 해군 MRO 2건</div>
+          <div class="md">세부 사항 비공개. 인도-태평양 지역 우방국으로 추정. 글로벌 해군 야드 지위 공고화.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-ocean">
+      <div class="c-head">MRO의 전략적 의미</div>
+      <div class="c-body">MRO는 단순 수익원이 아니다. 해외 해군 함정이 한국 야드에서 정비를 받는다는 것은 <b>기술 수준 &middot; 보안 신뢰 &middot; 지리적 접근성</b>이 모두 검증됐다는 의미다. 이는 향후 신규 건조 계약의 <b>레퍼런스(실적 증명)</b>로 직접 활용된다. 캐나다 CPSP 입찰에서 캐나다 해군 초계함 MRO 경험은 결정적인 신뢰 자산이다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: 캐나다 CPSP -->
+<section id="cpsp">
+  <div class="zone-head">
+    <div class="z-num">SECTION 09</div>
+    <h2>캐나다 CPSP &mdash; 60조원 결전</h2>
+    <p>한국 방산 사상 최대 단일 수출 계약 가능성. 독일 TKMS와의 1:1 대결 전모.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">사업 개요</div>
+    <h3>CPSP (Canadian Patrol Submarine Project)</h3>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">~60조원</div>
+        <div class="l">사업 규모<br>(추정)</div>
+      </div>
+      <div class="fact">
+        <div class="n">최대 12척</div>
+        <div class="l">차세대 잠수함<br>도입 목표</div>
+      </div>
+      <div class="fact">
+        <div class="n">2032년</div>
+        <div class="l">한화오션 제안<br>1번함 인도 목표</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top:16px">캐나다 해군은 노후화된 빅토리아급 잠수함을 대체하기 위해 <b>차세대 잠수함 최대 12척</b>을 발주할 예정이다. 사업 규모는 약 60조원으로, 한국 방산 수출 역사상 단일 최대 계약이 될 수 있다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">경쟁 구도</div>
+    <h3>한화오션 vs. TKMS &mdash; 1:1 대결</h3>
+
+    <div class="versus">
+      <div class="side side-kr">
+        <h4>한화오션 (KR)</h4>
+        <ul>
+          <li><b>KSS-III</b> 장보고-III 실전 배치 완료</li>
+          <li>3,600톤 AIP 비핵 잠수함</li>
+          <li>태평양 1만4,000km 횡단 실증</li>
+          <li>캐나다 해군 C4I 호환 검증 완료</li>
+          <li>2032년 1번함 인도 가능 제안</li>
+          <li>원팀: 한화시스템 전투체계 패키지</li>
+        </ul>
+      </div>
+      <div class="vs-badge">VS</div>
+      <div class="side side-de">
+        <h4>TKMS (DE)</h4>
+        <ul>
+          <li><b>212CD</b> 차세대 잠수함 제안</li>
+          <li>독일·이탈리아·노르웨이 납품 레퍼런스</li>
+          <li>NATO 표준 연동성 강점</li>
+          <li>산업 패키지 구성 균열 보도</li>
+          <li>납기 경쟁력 불확실</li>
+          <li>캐나다 현지 생산 조건 협상 중</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-ocean">
+      <div class="c-head">한화오션의 결정적 어드밴티지 (2026년 5월)</div>
+      <div class="c-body">도산안창호함이 태평양을 횡단(1만4,000km)하여 캐나다 해군 기지에 입항하고, <b>현장에서 C4I 통신 호환성 실증 테스트</b>를 완료했다. 이는 단순 제안서 경쟁이 아닌 <b>실물 잠수함의 실전 능력을 캐나다 해군 눈앞에서 검증</b>한 것이다. 경쟁사(TKMS)는 동일한 방식의 실증을 제공하지 못했다. 독일 산업 패키지 균열 보도가 더해지면서 한화오션이 승기를 포착한 것으로 분석된다.</div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--ocean);--zs:var(--ocean-s)">
+    <div class="f-tag">원팀 구성</div>
+    <h3>한화그룹 패키지 딜 &mdash; 수직통합의 총집결</h3>
+    <p class="body">CPSP 입찰에서 한화오션은 단독이 아닌 <b>한화 원팀</b>으로 참여한다. 선체부터 무기체계까지 그룹 내에서 일괄 공급하는 전략이다.</p>
+
+    <table>
+      <thead>
+        <tr><th>역할</th><th>담당 법인</th><th>내용</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>선체 건조 총괄</td>
+          <td>한화오션</td>
+          <td>잠수함 압력선체, AIP 추진 시스템, 건조 총괄 책임</td>
+        </tr>
+        <tr>
+          <td>전투체계 (CMS)</td>
+          <td>한화시스템</td>
+          <td>CMS, 수중음향, 어뢰 관제, LINK-16 연동</td>
+        </tr>
+        <tr>
+          <td>무기 통합</td>
+          <td>한화에어로스페이스</td>
+          <td>잠대지 순항미사일, 어뢰 체계 통합</td>
+        </tr>
+        <tr>
+          <td>현지 산업 참여</td>
+          <td>캐나다 현지 파트너</td>
+          <td>캐나다 정부 요구 산업 참여(Canadian Industrial Benefits) 충족</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="--zc:var(--caution);--zs:var(--cautions)">
+    <div class="f-tag">리스크 요인</div>
+    <h3>CPSP의 불확실성 &mdash; 정치 변수가 핵심</h3>
+
+    <div class="risk-list">
+      <div class="risk">
+        <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+        <div>
+          <h4>캐나다 정치 리스크</h4>
+          <div class="rdesc">캐나다 연방 선거·정권 교체 시 사업 우선순위 재설정 가능성. 국방예산 집행 지연 또는 사업 구조 변경 리스크. <b>2025년 캐나다 총선 결과가 핵심 변수.</b></div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+        <div>
+          <h4>협상 장기화 가능성</h4>
+          <div class="rdesc">잠수함 계약은 통상 협상 완료까지 <b>수년이 소요</b>된다. 기술 검증, 가격 협상, 산업 참여 조건 등 전 항목에서 지연 가능.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+        <div>
+          <h4>TKMS 역습 및 NATO 압력</h4>
+          <div class="rdesc">독일 산업 패키지 균열 보도가 있으나 확정 아님. <b>유럽 동맹 압력</b>이 캐나다의 최종 결정에 영향을 줄 수 있다.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot low"></div><div class="stxt">LOW</div></div>
+        <div>
+          <h4>캐나다 현지 생산 요구</h4>
+          <div class="rdesc">캐나다 정부는 자국 산업 참여(CIB) 비율을 요구할 가능성이 높다. <b>시스팬 등 현지 파트너 확보</b> 여부가 조건 충족의 관건.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">투자자 관점 &mdash; CPSP를 어떻게 포지셔닝할 것인가</div>
+      <p>CPSP는 <b>바이너리 이벤트(수주 or 탈락)</b>에 가깝다. 수주 시 한화오션 주가에 대형 촉매, 탈락 시 단기 실망 매물 출회 가능. 수주 전까지는 <b>KDDX(차기 구축함) + 호주 해군 입찰</b> 등 다른 파이프라인으로 하방이 지지되는지 확인이 중요하다. CPSP 결과만을 기다리는 집중 포지션보다는 <b>포지션 크기를 불확실성에 비례해 조율</b>하는 접근을 권한다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: 투자 관점 -->
+<section id="invest">
+  <div class="zone-head">
+    <div class="z-num">SECTION 10</div>
+    <h2>투자 관점 종합 분석</h2>
+    <p>두 회사를 각각 독립적으로, 그리고 시너지 관점에서 동시에 분석한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--sys-s)">
+    <div class="f-tag">개별 투자 분석</div>
+    <h3>한화시스템 vs. 한화오션 &mdash; 각자의 투자 논리</h3>
+
+    <div class="invest-grid">
+      <div class="inv-card sys">
+        <div class="ic-ticker">272210 &middot; 한화시스템</div>
+        <h4>전자의 눈</h4>
+        <div class="ic-head">강점</div>
+        <ul>
+          <li><b>AESA 레이더 독점</b> (국내 유일)</li>
+          <li>전투체계 수직통합 &rarr; KF-21·KSS-III 수혜</li>
+          <li>C4I 전군 인프라 공급자 지위</li>
+          <li>한화오션 수주 시 자동 연동 수혜</li>
+        </ul>
+        <div class="ic-head">리스크</div>
+        <ul>
+          <li><b>OPM 3.3%</b> &mdash; 방산 섹터 평균 하회</li>
+          <li>ICT 사업부 마진 희석 구조적 문제</li>
+          <li>UAM 상업화까지 장기 선투자 부담</li>
+        </ul>
+        <div class="ic-head">성장 옵션</div>
+        <ul>
+          <li>KF-21 48대 &rarr; <b>120대+</b> 양산 확대</li>
+          <li>캐나다 CPSP 수주 시 CMS 동반 공급</li>
+          <li>저궤도 위성통신 민간 확장 (2026년~)</li>
+        </ul>
+      </div>
+      <div class="inv-card ocean">
+        <div class="ic-ticker">042660 &middot; 한화오션</div>
+        <h4>바다의 몸</h4>
+        <div class="ic-head">강점</div>
+        <ul>
+          <li>캐나다 60조 수주 시 <b>역사상 최대 단일 계약</b></li>
+          <li>KSS-III 실전 검증 + 태평양 횡단 실증</li>
+          <li>미·영·캐나다 MRO 5건 레퍼런스</li>
+          <li>상선(LNG)+방산 이중 수익 완충 구조</li>
+        </ul>
+        <div class="ic-head">리스크</div>
+        <ul>
+          <li>상선 부문 <b>사이클 하락</b> 리스크</li>
+          <li>잠수함 수주 불확실성 (바이너리 이벤트)</li>
+          <li>한화에어로스페이스 연결 희석 효과</li>
+        </ul>
+        <div class="ic-head">성장 옵션</div>
+        <ul>
+          <li><b>캐나다 CPSP</b> 60조 수주</li>
+          <li><b>KDDX</b> 차기 구축함 사업</li>
+          <li>호주 해군 잠수함 후속 공급 가능성</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--sys-s)">
+    <div class="f-tag">시너지 분석</div>
+    <h3>1+1=3: 수직통합의 승수 효과</h3>
+
+    <div class="syn-grid">
+      <div class="syn">
+        <div class="si">&#128279;</div>
+        <h4>패키지 입찰</h4>
+        <p>해외 입찰 시 선체+전투체계를 단일 계약으로 제안. 구매자 협상 비용 절감 및 책임 창구 일원화.</p>
+      </div>
+      <div class="syn">
+        <div class="si">&#128200;</div>
+        <h4>이중 수혜 구조</h4>
+        <p>한화오션 수주 = 한화시스템 수혜. 투자자는 한 테마로 두 수익 흐름에 동시 노출.</p>
+      </div>
+      <div class="syn">
+        <div class="si">&#128736;</div>
+        <h4>인터페이스 최적화</h4>
+        <p>같은 그룹 내 전투체계-선체 통합으로 개발 기간 단축. 시스템 통합 오류 감소.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-navy">
+      <div class="c-head">포트폴리오 전략 제언</div>
+      <div class="c-body"><b>한화시스템</b>은 방산전자 기반의 <b>안정 수익형</b>에 가깝다. KF-21 양산 확대가 이익률 개선의 트리거다. <b>한화오션</b>은 CPSP 바이너리 이벤트 의존도가 높아 <b>변동성이 더 큰 베타 플레이</b>다. 두 회사를 동시에 보유하면 해양방산 수직통합 전체에 노출되면서도 각사의 리스크를 분산할 수 있다.</div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">핵심 모니터링 지표 5가지</div>
+      <p>
+        (1) <b>KF-21 양산 계획 발표</b> &mdash; 48대 초도 이후 추가 양산 확정 여부.<br>
+        (2) <b>캐나다 CPSP 최종 계약자 발표</b> &mdash; 2026년 이후 예상, 가장 중요한 이벤트.<br>
+        (3) <b>한화시스템 OPM 추이</b> &mdash; 3.3%에서 5~6%로 회복 여부 (ICT 사업 분사 논의 포함).<br>
+        (4) <b>한화오션 방산 매출 비중</b> &mdash; 전체 매출 대비 방산 비중 확대 속도.<br>
+        (5) <b>KDDX 사업 타임라인</b> &mdash; 차기 구축함 입찰 일정 및 참여 구도.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11: 용어 사전 -->
+<section id="gloss">
+  <div class="zone-head">
+    <div class="z-num">SECTION 11</div>
+    <h2>용어 사전</h2>
+    <p>한화시스템 &middot; 한화오션 딥다이브에 필요한 핵심 용어 22개 정리.</p>
+  </div>
+
+  <div class="floor visible" style="--zc:var(--faint);--zs:var(--note)">
+    <div class="f-tag">용어 사전</div>
+    <h3>방산전자 &middot; 조선방산 &middot; 사업 용어</h3>
+
+    <div class="gloss-sec">방산전자 &middot; 레이더 &middot; 전자전</div>
+    <div class="gloss">
+      <details>
+        <summary>AESA 레이더 (Active Electronically Scanned Array)</summary>
+        <div class="g-body">능동위상배열 레이더. 수천 개의 독립 송수신 소자(T/R 모듈)가 전자적으로 빔을 조향한다. 기계식 레이더 대비 탐지 속도, 재밍 저항성, 다중 표적 추적 능력이 월등히 우수하다. <b>KF-21에 탑재된 한화시스템의 AESA 레이더는 국내 최초 전투기용 독자 개발 제품</b>이다. 양산 단계에서 공정 안정화가 이루어지면 원가가 낮아지며 OPM 개선으로 이어진다.</div>
+      </details>
+      <details>
+        <summary>C4I (Command, Control, Communications, Computers &amp; Intelligence)</summary>
+        <div class="g-body">지휘 &middot; 통제 &middot; 통신 &middot; 컴퓨터 &middot; 정보 통합 체계. 전쟁에서 모든 부대의 정보를 수집 &middot; 처리 &middot; 전파하는 신경망 역할을 한다. 한화시스템은 육 &middot; 해 &middot; 공군 통합 C4I를 국내 주요 공급사로 <b>합동 작전의 정보 허브</b>를 담당한다. 해외 잠수함 입찰에서 캐나다 해군 C4I와의 호환성 검증이 핵심 요건이었다.</div>
+      </details>
+      <details>
+        <summary>전투체계 / CMS (Combat Management System)</summary>
+        <div class="g-body">함정에 탑재된 두뇌. 레이더 &middot; 소나 &middot; ESM 등 각종 센서에서 들어온 정보를 통합 처리하고, 무기 발사 &middot; 기동 명령을 내리는 통합 소프트웨어-하드웨어 시스템이다. <b>한화시스템은 수상함(KDX-III)과 잠수함(KSS-III) 모두 독자 전투체계를 보유</b>한 국내 유일 업체다.</div>
+      </details>
+      <details>
+        <summary>사통장치 (Fire Control System)</summary>
+        <div class="g-body">화력 통제 장치. 표적을 탐지 &middot; 추적하여 무기 발사 파라미터(거리 &middot; 방위 &middot; 탄도)를 자동 산출하는 장치다. K2 전차의 사통장치는 한화시스템이 공급하며, K2 수출 증가(폴란드 &middot; 루마니아 등) 시 동반 수혜를 받는다.</div>
+      </details>
+      <details>
+        <summary>전자전 (Electronic Warfare, EW)</summary>
+        <div class="g-body">전자기 스펙트럼을 이용한 전쟁. 적의 레이더 &middot; 통신을 교란(Jamming), 탐지 &middot; 도청(ESM), 기만(Deception)하는 작전을 포함한다. 현대전에서 전자전 능력은 생존성과 직결되며, 한화시스템은 함정용 전자전 시스템도 독자 개발 &middot; 공급한다.</div>
+      </details>
+      <details>
+        <summary>LINK-16</summary>
+        <div class="g-body">NATO 표준 전술데이터링크 프로토콜. 전투기 &middot; 함정 &middot; 지상군 간 표적 정보를 실시간 공유하는 디지털 통신 방식이다. 한화시스템의 C4I 체계는 LINK-16과 연동되어 한미 연합작전에서 상호운용성을 보장한다. CPSP에서 캐나다 해군 통신과의 LINK-16 호환성이 검증 항목이었다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">잠수함 &middot; 함정 &middot; 조선 기술</div>
+    <div class="gloss">
+      <details>
+        <summary>KSS-III / 장보고-III급 잠수함</summary>
+        <div class="g-body">한국형 3,600톤급 재래식 잠수함. AIP 추진 시스템과 리튬이온 배터리를 탑재해 수중 지속 작전 능력을 크게 향상시켰다. 잠대지 순항미사일 발사 능력도 보유한다. <b>한화오션(구 대우조선해양)이 건조하며, 도산안창호 &middot; 안무 &middot; 신채호함이 현재 취역 중이다.</b></div>
+      </details>
+      <details>
+        <summary>AIP (Air-Independent Propulsion)</summary>
+        <div class="g-body">공기불요추진 시스템. 잠수함이 수중에서 산소 공급 없이 전력을 생산하는 기술이다. 연료전지(수소-산소 반응)를 활용해 디젤 잠수함의 가장 큰 약점인 스노켈(부상) 주기를 획기적으로 줄인다. AIP 탑재 잠수함은 비핵 잠수함 가운데 탐지 리스크가 가장 낮다.</div>
+      </details>
+      <details>
+        <summary>KDX-III (세종대왕급 구축함)</summary>
+        <div class="g-body">한국 해군의 7,600~8,200톤급 이지스 구축함. SM-2 &middot; SM-3 계열 미사일 탑재 이지스 체계를 장착한다. 한화시스템은 이 구축함에 전투체계(CMS)를 공급한다. 세종대왕급 Batch-II(2척)가 2020년대 중반 취역 예정이다.</div>
+      </details>
+      <details>
+        <summary>KDDX (차기 구축함)</summary>
+        <div class="g-body">한국형 차기 이지스 구축함 사업. KDX-III 후속으로, <b>국산 이지스 레이더 &middot; 전투체계를 완전 탑재</b>하는 것이 목표다. 한화시스템(전투체계)과 한화오션(선체)이 모두 사업에 참여하려는 핵심 프로젝트다. 사업 확정 시 한화그룹의 또 다른 원팀 기회가 된다.</div>
+      </details>
+      <details>
+        <summary>MRO (Maintenance, Repair &amp; Overhaul)</summary>
+        <div class="g-body">유지 &middot; 정비 &middot; 창정비. 군함의 계획 정비, 사고 수리, 주요 구성품 교체 등을 포함하는 서비스 사업이다. 신규 건조 대비 이익률이 높고 수요가 안정적이다. 한화오션은 2024~2025년 미 &middot; 영 &middot; 캐나다 해군 MRO 5건을 수주하며 <b>글로벌 해군 MRO 야드</b>로 공식 인정받았다.</div>
+      </details>
+      <details>
+        <summary>감항인증</summary>
+        <div class="g-body">항공기 또는 함정이 안전 운용 기준을 충족한다는 공식 인증. UAM 분야에서는 국토교통부의 항공기 감항인증이, 함정 분야에서는 해군의 취역 전 검사가 이에 해당한다. 한화시스템의 UAM 사업은 <b>감항인증 취득이 상용화의 첫 관문</b>이다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">캐나다 CPSP &middot; 경쟁사 &middot; 지정학</div>
+    <div class="gloss">
+      <details>
+        <summary>CPSP (Canadian Patrol Submarine Project)</summary>
+        <div class="g-body">캐나다 차세대 잠수함 도입 사업. 최대 12척, 약 60조원 규모로 추산된다. 캐나다 해군의 현 빅토리아급(영국산 처칠급 개조) 잠수함 대체가 목적이다. 한화오션과 독일 TKMS가 주요 경쟁자로 알려져 있으며, 한국 방산 사상 단일 최대 계약이 될 수 있다.</div>
+      </details>
+      <details>
+        <summary>TKMS (ThyssenKrupp Marine Systems)</summary>
+        <div class="g-body">독일 티센크루프 그룹의 해군 시스템 자회사. Type 212A/CD 잠수함으로 유명하며, 독일 &middot; 이탈리아 &middot; 노르웨이 해군에 납품 실적이 있다. CPSP에서 한화오션의 최대 경쟁자다. 최근 캐나다 산업 참여 패키지 구성에 어려움이 있다는 보도가 있었다.</div>
+      </details>
+      <details>
+        <summary>원팀 (One Team)</summary>
+        <div class="g-body">해외 방산 입찰에서 여러 기업이 단일 컨소시엄으로 참여하는 전략. 한화그룹은 CPSP 입찰에 한화오션(선체) + 한화시스템(전투체계) + 한화에어로스페이스(무기체계)로 구성된 원팀을 꾸렸다. 구매자 입장에서 <b>단일 책임창구(Single Point of Contact)</b>를 제공하는 이점이 있다.</div>
+      </details>
+      <details>
+        <summary>시스팬 (Seaspan)</summary>
+        <div class="g-body">캐나다 최대 민간 조선그룹. CPSP 현지 생산 파트너 후보 중 하나로 거론된다. 캐나다 정부가 요구하는 '캐나다 산업 참여(Canadian Industrial Benefits)' 비율을 충족하기 위해 한화오션이 협력 가능성을 검토 중인 파트너다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">신사업 &middot; 재무 &middot; 기타</div>
+    <div class="gloss">
+      <details>
+        <summary>UAM (Urban Air Mobility, 도심항공모빌리티)</summary>
+        <div class="g-body">도심 상공을 활용한 개인 및 화물 항공 이동 수단. eVTOL(전기 수직이착륙기)를 기반으로 하며, 한화시스템은 K-UAM 그랜드 챌린지 참여 및 운용 플랫폼 개발을 통해 도심 교통 혁신 시장 진입을 추진 중이다. 상업화까지 수년의 선투자 구간이 필요하다.</div>
+      </details>
+      <details>
+        <summary>저궤도 위성통신 (LEO Satellite Communication)</summary>
+        <div class="g-body">고도 200~2,000km의 저지구궤도(LEO)를 활용한 위성 통신 서비스. 정지궤도(GEO) 위성 대비 지연(latency)이 낮고 광대역 통신이 가능하다. 한화시스템은 <b>2026년 4월부터 군 통신체계에 LEO 위성통신 서비스를 개시</b>했으며, 민간 확장이 차기 성장 과제다.</div>
+      </details>
+      <details>
+        <summary>흑자전환</summary>
+        <div class="g-body">적자 상태에서 흑자(영업이익 플러스)로 전환하는 것. 한화오션은 대우조선해양 시절 수조 원의 영업손실을 기록했으나, 2025년 영업이익 1조 1,091억원을 달성하며 흑자전환에 성공했다. 이는 단순 실적 개선이 아닌 <b>사업 구조 정상화의 신호</b>다.</div>
+      </details>
+      <details>
+        <summary>ICT 사업 (Information &amp; Communications Technology)</summary>
+        <div class="g-body">정보통신기술 사업. 한화시스템은 방산전자 외에 SI(시스템 통합) &middot; 디지털 플랫폼 등 ICT 사업부문을 운영한다. 수익성이 방산 부문보다 낮아 전체 OPM을 희석하는 요인이지만, 고객 기반과 기술력 확보 측면의 전략적 가치가 있다. ICT 사업 분사 여부가 OPM 개선의 주요 변수다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <b>투자 유의사항:</b> 본 페이지는 정보 제공 목적의 리서치 자료이며, 특정 종목의 매수 &middot; 매도를 권유하는 투자 권유자료가 아닙니다. 모든 투자 결정은 본인의 판단과 책임 하에 이루어져야 합니다. 기재된 수치는 공개된 자료 기반이며, 이후 정정 &middot; 변경될 수 있습니다. 방산 사업의 특성상 정보 비대칭이 존재하므로 반드시 공식 공시 자료를 병행 확인하십시오.
+</div>
+
+<!-- SERIES NAV -->
+<div class="series-nav">
+  <a href="k_defense_company_kai.html">
+    <div class="sn-label">&larr; Part 4-4</div>
+    KAI 한국항공우주산업<br>KF-21 &middot; 수리온 &middot; LAH
+  </a>
+  <a href="k_defense_company_subcontractors.html" style="text-align:right">
+    <div class="sn-label">Part 4-6 &rarr;</div>
+    풍산 외 소부장<br>탄약 &middot; 부품 &middot; 소재
+  </a>
+</div>
+
+<footer>
+  K-방산 시리즈 Part 4-5 &middot; 한화시스템 &middot; 한화오션 &middot; 2026년 6월 기준 &middot; 본 자료는 투자 권유가 아닙니다
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+// 진행률 바
+(function(){
+  var bar = document.getElementById('prog');
+  function upd(){
+    var s = document.documentElement;
+    var h = s.scrollHeight - s.clientHeight;
+    bar.style.width = (h > 0 ? (s.scrollTop / h * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+})();
+
+// 스크롤 리빌 (IntersectionObserver)
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.floor').forEach(function(el){
+    io.observe(el);
+  });
+})();
+
+// 부드러운 스크롤 (nav 오프셋 보정)
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = this.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(!el) return;
+    e.preventDefault();
+    var nav = document.querySelector('nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 16;
+    window.scrollTo({top: top, behavior: 'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRO·후속군수 — K-방산 심화 테마 Module F</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f2efe8; --card:#ffffff; --line:#d8cdb8; --note:#ede9df; --chip-bg:#e6e0d2;
+  --accent:#b3801f; --accents:#f5edd5; --accent-line:#e8d09a;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+  --gold:#b3801f; --golds:#f5edd5; --gold-line:#e8d09a;
+  --zc:var(--accent); --zs:var(--accents);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#d4a640,#8a5e10,var(--accent));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(242,239,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#1a1505 0%,#2a1d08 40%,#3b2610 70%,#1a1505 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.4;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(179,128,31,.09) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(179,128,31,.09) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(26,21,5,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:74px 20px 36px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#d4a640;font-weight:800}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.18;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#e7c77e 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8b8;max-width:620px;margin:0 auto;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+@media(max-width:540px){.stats{grid-template-columns:1fr;max-width:340px}}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(16px,4vw,26px);font-weight:900;color:#e7c77e;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#8a96a6;margin-top:5px;line-height:1.45}
+
+/* LCC proportion bar in hero */
+.prop-bar{max-width:660px;margin:32px auto 0;position:relative}
+.prop-bar .pb-label{font-size:11px;color:#7a8694;letter-spacing:.12em;font-weight:700;margin-bottom:10px;text-align:left}
+.pb-track{display:flex;height:30px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.06)}
+.pb-seg{display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#fff;letter-spacing:.02em;transition:width 1.2s cubic-bezier(.2,.8,.3,1)}
+.pb-seg-a{background:#37588a}
+.pb-seg-b{background:#b3801f}
+.pb-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.pb-legend span{font-size:11.5px;color:#8a96a6;display:flex;align-items:center;gap:5px}
+.pb-legend .dot{width:8px;height:8px;border-radius:50%;flex:none}
+
+/* ═══ SECTIONS ═══ */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--accent)}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.25)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22.5px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* ═══ DATA TABLE ═══ */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+
+/* ═══ FACT GRID ═══ */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,#f5f5f2);border:1px solid color-mix(in srgb, var(--zc,#999) 20%, white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,22px);font-weight:900;color:var(--zc,var(--ink));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* ═══ LCC VISUAL ═══ */
+.lcc-visual{margin:20px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.lcc-visual{grid-template-columns:1fr}}
+.lcc-card{border-radius:14px;padding:22px 20px;text-align:center}
+.lcc-card.intro{background:#e7eef7;border:1px solid #bccbe2}
+.lcc-card.ops{background:#f5edd5;border:1px solid #e8d09a}
+.lcc-card .pct{font-size:clamp(32px,8vw,52px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.lcc-card.intro .pct{color:#37588a}
+.lcc-card.ops .pct{color:#b3801f}
+.lcc-card .label{font-size:12.5px;font-weight:700;margin-top:8px;color:var(--sub)}
+.lcc-card .sub{font-size:11px;color:var(--faint);margin-top:4px}
+
+/* F-35 special bar */
+.f35-bar{margin:20px 0}
+.f35-bar .f35-label{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--sub);margin-bottom:8px}
+.f35-track{display:flex;height:36px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.f35-intro{display:flex;align-items:center;justify-content:center;width:20%;background:#37588a;color:#fff;font-size:11px;font-weight:800}
+.f35-ops{display:flex;align-items:center;justify-content:center;width:80%;background:#b3801f;color:#fff;font-size:11px;font-weight:800}
+
+/* ═══ CALLOUT ═══ */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-gold .c-head{background:var(--accent)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+
+/* ═══ INVESTOR VIEW ═══ */
+.view{margin-top:16px;border:1.5px dashed var(--gold-line);background:var(--golds);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a7a4c;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5b5236}
+
+/* ═══ COMPANY CARDS ═══ */
+.co-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:600px){.co-grid{grid-template-columns:1fr}}
+.co-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc);border-radius:14px;padding:16px 18px;position:relative}
+.co-card .ticker{font-size:10.5px;font-weight:800;color:var(--faint);letter-spacing:.06em}
+.co-card h4{font-size:17px;font-weight:900;margin:2px 0 10px;letter-spacing:-.01em}
+.co-card .highlight{font-size:12.8px;color:var(--sub);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.6}
+.co-card .highlight b{color:var(--ink)}
+
+/* ═══ MARKET BAR ═══ */
+.mkt-bar-wrap{margin:20px 0}
+.mkt-bar-wrap .mb-label{font-size:12px;font-weight:800;color:var(--sub);margin-bottom:6px}
+.mkt-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.mkt-bar-row .mb-name{font-size:12.5px;font-weight:700;min-width:90px;color:var(--ink)}
+.mkt-bar-track{flex:1;height:18px;background:#ede9df;border-radius:6px;overflow:hidden;position:relative}
+.mkt-bar-fill{height:100%;background:var(--accent);border-radius:6px;width:0%;transition:width 1.4s cubic-bezier(.2,.8,.3,1)}
+.mkt-bar-row .mb-val{font-size:12px;font-weight:800;color:var(--accent);min-width:46px;text-align:right}
+
+/* ═══ ANNUITY STEPS ═══ */
+.annuity-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+@media(max-width:500px){.annuity-steps{grid-template-columns:1fr}}
+.a-step{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:14px;padding:16px 14px;text-align:center}
+.a-step .a-num{font-size:10px;font-weight:800;letter-spacing:.18em;color:var(--faint);margin-bottom:6px}
+.a-step .a-title{font-size:14px;font-weight:900;color:var(--ink);margin-bottom:6px}
+.a-step .a-desc{font-size:12px;color:var(--sub);line-height:1.5}
+
+/* ═══ GLOSSARY ═══ */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* ═══ MISC ═══ */
+.analogy{background:linear-gradient(100deg,#f5edd5,#f0e6c0);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#574813}
+.analogy b{color:#3d3009}
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+@media(max-width:500px){.series-nav{flex-direction:column}}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+.series-nav .sn-title{font-size:14.5px;font-weight:900}
+.series-nav a.next{text-align:right}
+
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 심화 테마 · Module F</div>
+    <h1>MRO — 팔면 끝이 아니라<br>30년 연금이 시작된다</h1>
+    <p class="lede">무기체계는 도입비보다 운용유지비가 훨씬 크다. 수출이 쌓일수록 MRO 수익은 복리처럼 불어난다. K-방산의 진짜 장기 수익 모델은 여기서 시작된다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">60–70%</div>
+        <div class="l">무기 총수명비용 중<br>운용유지비 비중</div>
+      </div>
+      <div class="stat">
+        <div class="n">1,357→1,873억$</div>
+        <div class="l">글로벌 MRO 시장<br>2024→2030년 전망</div>
+      </div>
+      <div class="stat">
+        <div class="n">4~5조원</div>
+        <div class="l">천궁-II 중동<br>MRO 시장 추산</div>
+      </div>
+    </div>
+    <div class="prop-bar">
+      <div class="pb-label">무기 총수명비용(LCC) 평균 구조</div>
+      <div class="pb-track">
+        <div class="pb-seg pb-seg-a" data-w="35%">도입비 35%</div>
+        <div class="pb-seg pb-seg-b" data-w="65%">운용유지비(MRO) 65%</div>
+      </div>
+      <div class="pb-legend">
+        <span><span class="dot" style="background:#37588a"></span>도입비 (30~40%)</span>
+        <span><span class="dot" style="background:#b3801f"></span>운용유지비 (60~70%)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ STICKY NAV ═══════ -->
+<nav>
+  <a href="#lcc">LCC 구조</a>
+  <a href="#cheonggung">천궁-II MRO</a>
+  <a href="#k9">K9 11개국</a>
+  <a href="#mlu">MLU 성능개량</a>
+  <a href="#companies">기업별 역량</a>
+  <a href="#global">글로벌 시장</a>
+  <a href="#invest">투자 시사점</a>
+  <a href="#glossary">용어사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══════ SECTION 1: LCC 구조 ═══════ -->
+<section id="lcc">
+  <div class="zone-head">
+    <div class="z-big">LCC</div>
+    <div class="z-num">SECTION 01</div>
+    <h2>무기 평생비용(LCC) 구조</h2>
+    <p>고가 무기일수록 운용유지비 비중이 압도적으로 높다. 도입 계약은 시작일 뿐, 진짜 수익은 수십 년의 유지보수에서 나온다.</p>
+  </div>
+
+  <div class="floor visible" style="border-top-color:var(--accent)">
+    <div class="f-tag">LCC 기본 공식</div>
+    <h3>총수명비용 = 도입비(30~40%) + 운용유지비(60~70%)</h3>
+    <p class="body">무기체계는 도입 이후 수십 년에 걸쳐 지속적인 정비·부품 교체·성능개량이 필요하다. 단순 도입가격만 보면 MRO 수익의 <b>2배 이상 규모</b>를 놓치게 된다.</p>
+
+    <div class="lcc-visual">
+      <div class="lcc-card intro">
+        <div class="pct">30~40%</div>
+        <div class="label">도입비</div>
+        <div class="sub">최초 구매·계약비용</div>
+      </div>
+      <div class="lcc-card ops">
+        <div class="pct">60~70%</div>
+        <div class="label">운용유지비(MRO)</div>
+        <div class="sub">정비·부품·성능개량</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">F-35 사례 — 극단적 MRO 집중</div>
+    <h3>F-35: 도입비 20% / 운용비 80%</h3>
+    <p class="body">스텔스 전투기 F-35는 첨단 시스템 집적으로 운용유지비 비중이 일반 무기 대비 더욱 높다. 미국 GAO 추산 기준 <b>기체 1대 전체 생애비용에서 운용비 비중이 80%</b>에 달한다.</p>
+
+    <div class="f35-bar">
+      <div class="f35-label">F-35 총수명비용(LCC) 구조</div>
+      <div class="f35-track">
+        <div class="f35-intro">도입 20%</div>
+        <div class="f35-ops">운용유지(MRO) 80%</div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">2×</div>
+        <div class="l">MRO 시장이 신규<br>도입 시장보다 큰 배수</div>
+      </div>
+      <div class="fact">
+        <div class="n">30년+</div>
+        <div class="l">고가 무기체계<br>평균 운용 기간</div>
+      </div>
+      <div class="fact">
+        <div class="n">복리</div>
+        <div class="l">수출 누적 시<br>MRO 수익 구조</div>
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR PERSPECTIVE</div>
+      <p>수출 계약 수주 시점에 MRO 계약 가치를 함께 추산하라. <b>도입가격의 2~3배가 향후 MRO 누적 수익</b>으로 귀결된다. K-방산 기업의 수주잔고는 도입비뿐 아니라 후속군수 계약을 포함해야 완전한 가치가 보인다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 2: 천궁-II 중동 MRO ═══════ -->
+<section id="cheonggung">
+  <div class="zone-head">
+    <div class="z-big">UAE</div>
+    <div class="z-num">SECTION 02</div>
+    <h2>천궁-II 중동 MRO 시장</h2>
+    <p>UAE에 수출된 천궁-II는 정밀 유도무기로 소모성 부품·미사일 재보충 주기가 짧아 MRO 밀도가 특히 높다.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">시장 규모 추산</div>
+    <h3>4~5조원 — UAE 천궁-II 후속군수</h3>
+    <p class="body">UAE 수출 분 기준으로 수십 년간 발생하는 <b>미사일 보충·유지·성능개량 수요</b>를 합산하면 4~5조원 수준으로 추산된다. 계약 규모 자체보다 훨씬 큰 장기 수익이다.</p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">4~5조원</div>
+        <div class="l">UAE 천궁-II<br>MRO 시장 추산</div>
+      </div>
+      <div class="fact">
+        <div class="n">짧음</div>
+        <div class="l">유도무기 미사일<br>재보충 주기</div>
+      </div>
+      <div class="fact">
+        <div class="n">高밀도</div>
+        <div class="l">정밀유도무기<br>MRO 집중도</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">주요 수혜 기업</div>
+    <h3>한화에어로스페이스 · LIG넥스원</h3>
+    <p class="body">두 기업은 UAE 천궁-II 수출 후 <b>후속군수 지원 계약을 체결</b>했다. 미사일 시스템 특성상 재보충·창정비·부품 교체 수요가 지속적으로 발생한다.</p>
+
+    <div class="co-grid">
+      <div class="co-card">
+        <div class="ticker">KRX · 012450</div>
+        <h4>한화에어로스페이스</h4>
+        <div class="highlight">
+          천궁-II 체계통합 주관사<br>
+          <b>UAE 후속군수 계약 체결</b><br>
+          발사대·통제장비 유지보수
+        </div>
+      </div>
+      <div class="co-card">
+        <div class="ticker">KRX · 035810</div>
+        <h4>LIG넥스원</h4>
+        <div class="highlight">
+          천궁-II 유도탄 개발·생산<br>
+          <b>미사일 재보충 주요 공급처</b><br>
+          현궁·신궁 유도무기 MRO 병행
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-gold">
+      <div class="c-head">MRO 연금화 구조</div>
+      <div class="c-body">
+        유도무기는 실전 배치 후 <b>연간 일정 비율의 미사일이 훈련·순환교체</b>로 소모된다. 소모된 분은 반드시 원 공급사에서 재보충해야 한다. 이는 매년 반복되는 <b>구조적 재구매 수요</b>로, 계약 기간 내 안정적 현금흐름을 창출한다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 3: K9 11개국 MRO ═══════ -->
+<section id="k9">
+  <div class="zone-head">
+    <div class="z-big">K9</div>
+    <div class="z-num">SECTION 03</div>
+    <h2>K9 11개국 MRO 계약 현황</h2>
+    <p>세계 자주포 시장 점유율 약 50%. 수출국이 늘수록 MRO 수익 기반도 함께 확대된다.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">국가별 현황</div>
+    <h3>K9 수출국 MRO 계약 현황표</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>국가</th>
+          <th>도입 규모</th>
+          <th>MRO 현황</th>
+          <th>특이사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>인도</td>
+          <td>100문 (2017) + 추가 3,700억원</td>
+          <td>현지업체(L&amp;T) 통해 부분 현지화 MRO</td>
+          <td><span class="tag-ca">현지화</span></td>
+        </tr>
+        <tr>
+          <td>폴란드</td>
+          <td>212문 납품 완료 + K9PL 추가 (2.6B)</td>
+          <td>한화에어로 폴란드 현지 지원팀 상주</td>
+          <td><span class="tag-up">상주팀</span></td>
+        </tr>
+        <tr>
+          <td>핀란드</td>
+          <td>48문 + 2026년 2차 9,400억원 (112문)</td>
+          <td>북유럽 기후 특수 정비 계약</td>
+          <td><span class="tag-bl">극한기후</span></td>
+        </tr>
+        <tr>
+          <td>노르웨이</td>
+          <td>총 52문 (3차례 계약)</td>
+          <td>북극권 운용 특수 MRO</td>
+          <td><span class="tag-bl">북극권</span></td>
+        </tr>
+        <tr>
+          <td>이집트</td>
+          <td>미공개</td>
+          <td>중동 MRO 거점 활용 가능성</td>
+          <td><span class="tag-ca">거점</span></td>
+        </tr>
+        <tr>
+          <td>루마니아</td>
+          <td>54문 (K9A1)</td>
+          <td>현지 생산공장 MRO 병행</td>
+          <td><span class="tag-ca">현지생산</span></td>
+        </tr>
+        <tr>
+          <td>에스토니아</td>
+          <td>소규모</td>
+          <td>발트 3국 유지보수 허브 구상</td>
+          <td><span class="tag-bl">허브</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="view">
+      <div class="v-head">INVESTOR PERSPECTIVE</div>
+      <p>K9은 이미 11개국에 수출되어 <b>세계 자주포 시장 점유율 약 50%</b>를 차지한다. 수출국이 다양한 기후대와 지역에 걸쳐 있어, MRO 계약은 국가별 특수 요건으로 분산 안정화된다. 한화에어로스페이스가 직접 수혜 기업이다.</p>
+    </div>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">시장 지배력</div>
+    <h3>세계 자주포 MRO의 절반이 K9</h3>
+    <p class="body">현재 운용 중인 K9 자주포 대수는 전 세계 자주포 재고의 약 50%를 차지한다. 이 물량이 모두 <b>향후 10~30년간 지속적인 MRO 수요</b>를 창출한다.</p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">11개국</div>
+        <div class="l">K9 수출국<br>(2025년 기준)</div>
+      </div>
+      <div class="fact">
+        <div class="n">~50%</div>
+        <div class="l">세계 자주포<br>시장 점유율</div>
+      </div>
+      <div class="fact">
+        <div class="n">수천문</div>
+        <div class="l">전 세계 운용 중<br>K9 누적 대수</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 4: MLU 성능개량 ═══════ -->
+<section id="mlu">
+  <div class="zone-head">
+    <div class="z-big">MLU</div>
+    <div class="z-num">SECTION 04</div>
+    <h2>MLU 성능개량 패키지 사업</h2>
+    <p>도입 후 10~15년차에 찾아오는 중간 업그레이드 사업. 초기 수출국일수록 MLU 수요가 먼저 발생한다.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">MLU 개요</div>
+    <h3>Mid-Life Upgrade — 전자장비·엔진·사격통제 일괄 업그레이드</h3>
+    <p class="body">MLU(Mid-Life Upgrade)는 도입 후 10~15년 차에 <b>전자장비·엔진·사격통제시스템</b> 등을 한꺼번에 최신화하는 사업이다. K9A2 사양 업그레이드 패키지 개발이 진행 중이다.</p>
+
+    <div class="analogy"><b>구독 갱신 모델:</b> MLU는 스마트폰의 대형 OS 업그레이드처럼, 무기도 10~15년마다 핵심 시스템 전체를 교체·최신화하는 사이클을 탄다. 이 사이클에서 원 제조사가 독점적 우위를 갖는다.</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>국가</th>
+          <th>현행 사양</th>
+          <th>MLU 수요 시점</th>
+          <th>주요 항목</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>인도</td>
+          <td>K9 Vajra</td>
+          <td>2030년 전후</td>
+          <td>자동장전장치, 통신 시스템 MLU</td>
+        </tr>
+        <tr>
+          <td>폴란드</td>
+          <td>K9A1 (초도 도입분)</td>
+          <td>2030년대</td>
+          <td><span class="tag-ca">수천억원+</span> 규모 예상</td>
+        </tr>
+        <tr>
+          <td>튀르키예</td>
+          <td>T-155 Firtina (K9 기반)</td>
+          <td>2028~2032년</td>
+          <td>디지털 전장 연동 업그레이드</td>
+        </tr>
+        <tr>
+          <td>핀란드</td>
+          <td>K9FIN</td>
+          <td>2030년대 초반</td>
+          <td>극한기후 특화 시스템 갱신</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">10~15년</div>
+        <div class="l">MLU 주기<br>(도입 후)</div>
+      </div>
+      <div class="fact">
+        <div class="n">수천억원</div>
+        <div class="l">폴란드 MLU<br>시장 예상 규모</div>
+      </div>
+      <div class="fact">
+        <div class="n">K9A2</div>
+        <div class="l">MLU 목표<br>업그레이드 사양</div>
+      </div>
+    </div>
+
+    <div class="callout callout-blue">
+      <div class="c-head">MLU 파이프라인 — 우선 대상국</div>
+      <div class="c-body">
+        초기 수출국인 <b>튀르키예·핀란드·인도</b>가 가장 먼저 MLU 사이클에 진입한다. 폴란드 초도 도입분(K9A1)은 2030년대에 규모 있는 MLU 시장을 형성할 것으로 예상된다. <b>원 제조사인 한화에어로스페이스가 사실상 독점적 수주 우위</b>를 가진다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 5: 기업별 MRO 역량 ═══════ -->
+<section id="companies">
+  <div class="zone-head">
+    <div class="z-big">기업</div>
+    <div class="z-num">SECTION 05</div>
+    <h2>한국 방산 기업별 MRO 역량</h2>
+    <p>K방산 2.0 전략 — 완제품 수출에서 MRO·현지생산·탄약보충 패키지로의 전환.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">6개사 역량 현황</div>
+    <h3>주요 방산 기업 MRO 주력 분야</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>기업</th>
+          <th>MRO 주력 분야</th>
+          <th>핵심 수혜 품목</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>한화에어로스페이스</td>
+          <td>K9 자주포, K239 천무 로켓, 항공엔진</td>
+          <td><span class="tag-up">K9 MRO</span> <span class="tag-ca">MLU</span></td>
+        </tr>
+        <tr>
+          <td>현대로템</td>
+          <td>K2 전차, K1 전차 후속군수</td>
+          <td><span class="tag-bl">전차 MRO</span></td>
+        </tr>
+        <tr>
+          <td>LIG넥스원</td>
+          <td>천궁-II, 현궁, 신궁 유도무기</td>
+          <td><span class="tag-ca">유도탄 재보충</span></td>
+        </tr>
+        <tr>
+          <td>KAI</td>
+          <td>항공기(FA-50, T-50), 위성 후속지원</td>
+          <td><span class="tag-bl">항공 MRO</span></td>
+        </tr>
+        <tr>
+          <td>한화시스템</td>
+          <td>레이더·지휘통제 시스템</td>
+          <td><span class="tag-up">C4I MRO</span></td>
+        </tr>
+        <tr>
+          <td>풍산</td>
+          <td>탄약 보충·저장 지원</td>
+          <td><span class="tag-ca">탄약 재보충</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">K방산 2.0 전략</div>
+    <h3>완제품 수출 → 생애주기 파트너십으로</h3>
+    <p class="body">과거의 K-방산은 무기를 팔고 끝이었다. <b>K방산 2.0</b>은 수출 이후 수십 년간 MRO·현지생산·탄약보충을 패키지로 제공하는 생애주기 전반의 파트너십 모델로 전환하는 전략이다.</p>
+
+    <div class="annuity-steps">
+      <div class="a-step">
+        <div class="a-num">STEP 01</div>
+        <div class="a-title">완제품 수출</div>
+        <div class="a-desc">초기 계약 체결.<br>도입가격 수입 발생.</div>
+      </div>
+      <div class="a-step">
+        <div class="a-num">STEP 02</div>
+        <div class="a-title">후속군수 계약</div>
+        <div class="a-desc">부품·정비·훈련<br>장기 계약 체결.</div>
+      </div>
+      <div class="a-step">
+        <div class="a-num">STEP 03</div>
+        <div class="a-title">MLU 성능개량</div>
+        <div class="a-desc">10~15년 후<br>대형 업그레이드 계약.</div>
+      </div>
+    </div>
+
+    <div class="callout callout-gold">
+      <div class="c-head">핵심 통찰 — 복리형 수익 사슬</div>
+      <div class="c-body">
+        수출 1건이 → 후속군수 → MLU → 2차 MLU → 탄약보충 등으로 이어지는 <b>복리형 수익 사슬</b>을 만든다. 수출 물량이 쌓일수록 MRO 수익 풀은 매년 자동으로 커진다. 이것이 "팔면 끝이 아니라 30년 연금이 시작된다"는 뜻이다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 6: 글로벌 MRO 시장 ═══════ -->
+<section id="global">
+  <div class="zone-head">
+    <div class="z-big">MKT</div>
+    <div class="z-num">SECTION 06</div>
+    <h2>글로벌 MRO 시장 규모 및 성장률</h2>
+    <p>우크라이나 전쟁 이후 유럽 국방비 급증, 노후 장비 교체·유지 수요로 군용 MRO 성장세가 가속된다.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">시장 전망</div>
+    <h3>1,357억$ → 1,873억$ (2024→2030, CAGR 5.6%)</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>지표</th>
+          <th>수치</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2024년 시장 규모</td>
+          <td><b>1,357억 달러</b></td>
+          <td><span class="tag-bl">기준년</span></td>
+        </tr>
+        <tr>
+          <td>2030년 전망</td>
+          <td><b>1,873억 달러</b></td>
+          <td><span class="tag-up">+38%</span></td>
+        </tr>
+        <tr>
+          <td>CAGR (2024~2030)</td>
+          <td><b>5.6%</b></td>
+          <td>안정적 성장</td>
+        </tr>
+        <tr>
+          <td>2033년 전망</td>
+          <td><b>2,232억 달러</b></td>
+          <td>CAGR 5.8%</td>
+        </tr>
+        <tr>
+          <td>최대 세그먼트</td>
+          <td><b>엔진 MRO</b></td>
+          <td><span class="tag-ca">점유율 40.7%</span></td>
+        </tr>
+        <tr>
+          <td>최대 지역</td>
+          <td><b>아시아태평양</b></td>
+          <td><span class="tag-ca">점유율 30.8%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">세그먼트 분석</div>
+    <h3>엔진 MRO 40.7%, 아태 지역 30.8% 최대</h3>
+
+    <div class="mkt-bar-wrap">
+      <div class="mb-label">MRO 세그먼트 점유율 (2024)</div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">엔진 MRO</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="40.7"></div></div>
+        <div class="mb-val">40.7%</div>
+      </div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">기체/구조</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="25"></div></div>
+        <div class="mb-val">~25%</div>
+      </div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">전자·부품</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="20"></div></div>
+        <div class="mb-val">~20%</div>
+      </div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">기타</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="14.3"></div></div>
+        <div class="mb-val">~14%</div>
+      </div>
+    </div>
+
+    <div class="mkt-bar-wrap" style="margin-top:28px">
+      <div class="mb-label">지역별 MRO 점유율 (2024)</div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">아시아태평양</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="30.8"></div></div>
+        <div class="mb-val">30.8%</div>
+      </div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">북미</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="28"></div></div>
+        <div class="mb-val">~28%</div>
+      </div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">유럽</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="24"></div></div>
+        <div class="mb-val">~24%</div>
+      </div>
+      <div class="mkt-bar-row">
+        <div class="mb-name">중동/기타</div>
+        <div class="mkt-bar-track"><div class="mkt-bar-fill" data-w="17.2"></div></div>
+        <div class="mb-val">~17%</div>
+      </div>
+    </div>
+
+    <div class="callout callout-green">
+      <div class="c-head">성장 동인</div>
+      <div class="c-body">
+        <b>우크라이나 전쟁 이후 유럽 국방비 급증</b>이 군용 MRO 시장의 핵심 성장 동인이다. 나토 회원국들은 수십 년 방치된 노후 장비를 유지·교체해야 하며, 이 수요가 K9·K2 등 K-방산 플랫폼의 MRO 수요로 직결된다. 아시아태평양 지역에서는 <b>인도·호주·필리핀</b> 등의 국방 현대화가 추가 성장을 이끈다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 7: 투자 시사점 ═══════ -->
+<section id="invest">
+  <div class="zone-head">
+    <div class="z-big">투자</div>
+    <div class="z-num">SECTION 07</div>
+    <h2>투자 시사점</h2>
+    <p>수출 복리 → MRO 연금화. 장기 현금흐름의 가치를 어떻게 볼 것인가.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">수익 구조 재평가</div>
+    <h3>수출 수주잔고는 MRO를 포함해야 진짜 가치</h3>
+    <p class="body">K-방산 기업의 수주잔고는 통상 완제품 도입 계약만 집계된다. 하지만 <b>실제 기업 가치는 이후 수십 년간 발생하는 MRO·MLU·탄약보충 계약을 포함</b>해야 제대로 평가된다.</p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="n">2~3×</div>
+        <div class="l">도입가 대비<br>MRO 누적 수익</div>
+      </div>
+      <div class="fact">
+        <div class="n">안정형</div>
+        <div class="l">장기 계약 기반<br>현금흐름 특성</div>
+      </div>
+      <div class="fact">
+        <div class="n">복리</div>
+        <div class="l">수출 누적에 따른<br>MRO 풀 확대</div>
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR FRAMEWORK</div>
+      <p><b>수출 계약 공시 시점</b> → 도입가의 2~3배 MRO 가치를 함께 추산하라. <b>MLU 파이프라인</b> → 초기 수출 10~15년 후 대형 단일 계약 발생 가능. <b>후속군수 계약 체결 공시</b> → 장기 안정 수익 확보 신호로 해석하라.</p>
+    </div>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="f-tag">기업별 수혜 시나리오</div>
+    <h3>MRO 수혜 집중 기업 및 시기</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>기업</th>
+          <th>MRO 수혜 품목</th>
+          <th>예상 수혜 시기</th>
+          <th>규모 추산</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>한화에어로스페이스</td>
+          <td>K9 MRO + 폴란드·핀란드 MLU</td>
+          <td>2026~2035년 지속</td>
+          <td><span class="tag-up">조 단위</span></td>
+        </tr>
+        <tr>
+          <td>LIG넥스원</td>
+          <td>천궁-II UAE 재보충·유지</td>
+          <td>2025~2040년 연속</td>
+          <td><span class="tag-up">4~5조원 총합</span></td>
+        </tr>
+        <tr>
+          <td>현대로템</td>
+          <td>K2 폴란드 전차 후속군수</td>
+          <td>2027년 이후</td>
+          <td><span class="tag-ca">수천억원+</span></td>
+        </tr>
+        <tr>
+          <td>KAI</td>
+          <td>FA-50 동남아·유럽 항공 MRO</td>
+          <td>2025~2030년</td>
+          <td><span class="tag-ca">수백억~수천억</span></td>
+        </tr>
+        <tr>
+          <td>풍산</td>
+          <td>K9·K2 수출국 탄약 재보충</td>
+          <td>연간 반복 수요</td>
+          <td><span class="tag-ca">구조적 반복</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-gold">
+      <div class="c-head">핵심 투자 논리 — MRO 연금화</div>
+      <div class="c-body">
+        K-방산 주식을 "무기 제조업"이 아니라 <b>"국방 서비스 구독 기업"</b>으로 재프레이밍하라. 수출이 늘수록 매년 들어오는 MRO 수익 기반이 자동으로 확대된다. 이는 <b>SaaS 기업의 ARR(연간 반복 수익)</b>과 구조가 동일하다. 장기 보유 관점에서 복리 효과가 극대화된다.
+      </div>
+    </div>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--down)">
+    <div class="f-tag" style="color:var(--down);background:var(--downs)">리스크 요인</div>
+    <h3>MRO 투자 시 주의 사항</h3>
+    <p class="body">수익 가시성이 높지만, 다음 리스크는 반드시 점검해야 한다.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>리스크</th>
+          <th>내용</th>
+          <th>수준</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>현지화 압력</td>
+          <td>수입국이 MRO 현지화 비율 확대 요구 시 수익 희석</td>
+          <td><span class="tag-ca">중간</span></td>
+        </tr>
+        <tr>
+          <td>정치·외교 리스크</td>
+          <td>수교 단절·무기금수 조치 시 MRO 계약 중단 가능</td>
+          <td><span class="tag-dn">높음</span></td>
+        </tr>
+        <tr>
+          <td>경쟁사 MLU 진입</td>
+          <td>서방 방산사가 MLU 패키지로 시장 진입 시 점유 경쟁</td>
+          <td><span class="tag-ca">중간</span></td>
+        </tr>
+        <tr>
+          <td>수익 인식 시기</td>
+          <td>MRO 수익은 장기 분산 인식 → 단기 실적 가시성 낮음</td>
+          <td><span class="tag-ca">중간</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 8: 용어 사전 ═══════ -->
+<section id="glossary">
+  <div class="zone-head">
+    <div class="z-big">GLOSS</div>
+    <div class="z-num">SECTION 08</div>
+    <h2>용어 사전</h2>
+    <p>MRO·후속군수 테마를 이해하는 데 필요한 핵심 용어 정리.</p>
+  </div>
+
+  <div class="floor" style="border-top-color:var(--accent)">
+    <div class="gloss-sec">핵심 개념 용어</div>
+    <div class="gloss">
+
+      <details>
+        <summary>MRO (Maintenance, Repair &amp; Overhaul)</summary>
+        <div class="g-body">무기·항공기·방산 장비의 <b>유지보수·수리·전반 정비</b>를 통칭하는 용어. 단순 정비부터 창정비(대규모 분해 점검), 부품 교체, 성능 업그레이드까지 넓은 범위를 포괄한다. 방산 MRO 시장은 신규 도입 시장의 <b>2배 이상</b> 규모로 추산된다.</div>
+      </details>
+
+      <details>
+        <summary>LCC (총수명비용, Life Cycle Cost)</summary>
+        <div class="g-body">무기체계의 <b>설계·개발·도입·운용·폐기까지 전 과정의 비용 합계</b>. 일반적으로 도입비 30~40%, 운용유지비 60~70%로 구성된다. 고가 첨단 무기일수록 LCC에서 운용유지비 비중이 더 높아진다. <b>F-35는 LCC 중 운용비 비중이 80%</b>에 달하는 극단적 사례다.</div>
+      </details>
+
+      <details>
+        <summary>MLU (중간 성능개량, Mid-Life Upgrade)</summary>
+        <div class="g-body">도입 후 <b>10~15년 차에 전자장비·엔진·사격통제 등 핵심 시스템을 최신 사양으로 업그레이드</b>하는 사업. 신규 도입보다 비용이 낮으면서 전투력을 현대화할 수 있어 수입국 입장에서 선호도가 높다. 원 제조사가 독점적 기술 우위를 보유해 경쟁이 제한적이다.</div>
+      </details>
+
+      <details>
+        <summary>후속군수 (Follow-on Logistics Support)</summary>
+        <div class="g-body">무기 수출 후 <b>수십 년에 걸쳐 제공되는 부품 공급·정비 교육·기술 지원·소모품 보충</b> 등의 패키지 서비스. 수출 계약과 함께 또는 별도로 체결되며, 안정적인 장기 수익 기반이 된다. K방산 2.0의 핵심 축이다.</div>
+      </details>
+
+      <details>
+        <summary>성능개량 (Performance Upgrade)</summary>
+        <div class="g-body">기존 무기체계에 <b>새로운 기술·장비를 추가하거나 기존 시스템을 교체</b>해 전투 성능을 향상시키는 사업. MLU의 상위 개념으로 볼 수 있으며, 레이더·통신·유도 시스템 등 광범위한 항목이 포함될 수 있다.</div>
+      </details>
+
+      <details>
+        <summary>창정비 (Depot Maintenance)</summary>
+        <div class="g-body">무기체계를 <b>분해 수준으로 해체해 핵심 부품까지 전반적으로 점검·수리·교체</b>하는 고강도 정비. 야전정비나 야전에서 불가능한 대규모 수리가 필요할 때 수행한다. 원 제조사 또는 지정 MRO 업체의 전용 시설에서 진행된다.</div>
+      </details>
+
+      <details>
+        <summary>야전정비 (Field Maintenance)</summary>
+        <div class="g-body">전투 현장 또는 그 근방에서 수행하는 <b>경정비·긴급 수리·부품 교환</b> 등의 일상 유지보수. 창정비와 달리 장비를 해체하지 않고 운용 가능 상태를 유지하는 데 초점을 맞춘다.</div>
+      </details>
+
+      <details>
+        <summary>재보충 (Replenishment)</summary>
+        <div class="g-body">훈련·실전에서 <b>소모된 탄약·미사일·소모부품을 원 공급사로부터 보충받는 것</b>. 특히 유도무기는 훈련 소모분과 예비 물량을 주기적으로 재보충해야 한다. 이 수요가 매년 반복되어 구조적 반복 수익을 창출한다.</div>
+      </details>
+
+      <details>
+        <summary>교체부품 (Spare Parts)</summary>
+        <div class="g-body">무기체계 운용 중 마모·손상될 경우 교체하기 위해 비축하는 <b>예비 부품 재고</b>. 도입 시 초도 물량을 구매하고 이후 소모 속도에 맞춰 지속 구매한다. 부품의 기술 복잡도가 높을수록 원 제조사 의존도가 높아진다.</div>
+      </details>
+
+      <details>
+        <summary>운용유지비 (O&amp;M Cost, Operating &amp; Maintenance)</summary>
+        <div class="g-body">무기체계를 운용하는 동안 <b>정기 정비·부품 교체·연료·훈련·인건비</b> 등으로 발생하는 모든 비용. 총수명비용(LCC)의 60~70%를 차지하며, 고성능 무기일수록 비중이 높다.</div>
+      </details>
+
+      <details>
+        <summary>도입비 (Acquisition Cost)</summary>
+        <div class="g-body">무기체계를 <b>설계·개발·생산해 수입국에 납품하는 데 드는 최초 비용</b>. 계약가격에 포함되며 LCC의 30~40%에 해당한다. 일반적으로 도입비만 공시되어 MRO 시장의 잠재 가치가 과소평가되는 경향이 있다.</div>
+      </details>
+
+    </div>
+
+    <div class="gloss-sec">K-방산 핵심 품목 용어</div>
+    <div class="gloss">
+
+      <details>
+        <summary>F-35 (F-35 라이트닝 II)</summary>
+        <div class="g-body">미국 록히드마틴의 <b>5세대 스텔스 전투기</b>. LCC 구조에서 운용유지비 비중이 80%에 달하는 것으로 알려져 있으며, 방산 MRO 수익 구조의 대표적 사례로 자주 인용된다. 한국은 F-35A를 도입하여 운용 중이다.</div>
+      </details>
+
+      <details>
+        <summary>K9A2 (K9 자주포 A2형)</summary>
+        <div class="g-body">한화에어로스페이스가 개발 중인 <b>K9 자주포의 최신 업그레이드 사양</b>. 자동화된 탄약 장전 시스템, 향상된 사격통제 컴퓨터, 강화된 전장 디지털화 시스템이 탑재된다. 기존 K9·K9A1 도입국의 MLU 목표 사양으로 설정되어 있다.</div>
+      </details>
+
+      <details>
+        <summary>연금화 (Annuitization)</summary>
+        <div class="g-body">일회성 수익 구조가 <b>장기 반복 수익 구조로 전환되는 것</b>을 비유적으로 표현하는 말. K-방산의 맥락에서는 수출 1건이 수십 년간의 MRO·재보충·MLU 수익으로 이어지는 구조를 의미한다. SaaS의 ARR(연간 반복 수익) 개념과 유사하다.</div>
+      </details>
+
+      <details>
+        <summary>K방산 2.0</summary>
+        <div class="g-body">한국 방위산업의 <b>2세대 수출 전략</b>을 지칭하는 용어. 1.0이 완제품 단순 수출이라면, 2.0은 MRO·현지생산·기술이전·MLU·탄약보충을 패키지로 묶어 수입국과 생애주기 전반의 파트너십을 맺는 모델이다.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DISCLAIMER ═══════ -->
+<div class="disclaimer">
+  <b>면책 고지.</b> 이 문서는 정보 제공 목적의 연구 자료이며 투자 권유나 특정 종목 매수·매도 추천이 아닙니다. 모든 수치는 공개 자료를 기반으로 하며 실제 수치와 차이가 있을 수 있습니다. 방산 주식은 지정학적 리스크·수출 규제·정치적 변수에 민감하므로 투자 결정 전 반드시 충분한 검토가 필요합니다. 과거의 수주 실적이 미래 수익을 보장하지 않습니다.
+</div>
+
+<!-- ═══════ SERIES NAV ═══════ -->
+<div class="series-nav">
+  <a href="k_defense_theme_space.html">
+    <div class="sn-label">PREV · THEME E</div>
+    <div class="sn-title">우주·위성</div>
+    <div style="font-size:12px;color:var(--faint);margin-top:4px">NewSpace 방산 수혜</div>
+  </a>
+  <a href="k_defense_theme_export_finance.html" class="next">
+    <div class="sn-label">NEXT · THEME G</div>
+    <div class="sn-title">수출금융</div>
+    <div style="font-size:12px;color:var(--faint);margin-top:4px">방산 수출 금융 구조</div>
+  </a>
+</div>
+
+<footer>
+  <p>K-방산 심화 테마 · Module F — MRO·후속군수</p>
+  <p style="margin-top:6px">데이터 기준: 2025년 공개 자료 / 최종 업데이트 2026-06-19</p>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+/* ─── Progress Bar ─── */
+const prog = document.getElementById('prog');
+function updateProg() {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateProg, {passive: true});
+
+/* ─── Scroll Reveal ─── */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll('.floor').forEach(el => revealObs.observe(el));
+
+/* ─── Market Bar Animation ─── */
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.mkt-bar-fill').forEach(bar => {
+        const w = bar.getAttribute('data-w');
+        if (w) {
+          setTimeout(() => { bar.style.width = w + '%'; }, 100);
+        }
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.2});
+
+document.querySelectorAll('.mkt-bar-wrap').forEach(el => barObs.observe(el));
+
+/* ─── Hero proportion bar animation ─── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.pb-seg').forEach(seg => {
+      const w = seg.getAttribute('data-w');
+      if (w) seg.style.width = w;
+    });
+  }, 400);
+});
+
+/* ─── Smooth scroll for nav links ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      const offset = 60;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({top, behavior: 'smooth'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔진 국산화 — 병목 해소 | K-방산 심화 테마 Module A</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f2edea; --card:#ffffff; --line:#d9d2cc; --note:#ece5e0; --chip-bg:#e6ddd8;
+  --accent:#c74a2b; --accents:#f9ece8; --accent-line:#e8b8a8;
+  --cool:#37588a; --cools:#e7eef7;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#e07a45,var(--cool),var(--accent));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(242,237,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#1a0e0a 0%,#2e1209 35%,#1a1e2e 70%,#12203a 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.3;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(199,74,43,.08) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(199,74,43,.08) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(18,32,58,.9),transparent);pointer-events:none}
+.hero-shell .flame-glow{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse at 50% 100%,rgba(199,74,43,.28) 0%,rgba(224,122,69,.1) 45%,transparent 70%);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:80px 20px 40px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#e07a45;font-weight:800}
+.hero h1{font-size:clamp(28px,7.4vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#e09070 48%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8b8;max-width:640px;margin:0 auto;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.6vw,28px);font-weight:900;color:#e09070;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#8a96a6;margin-top:5px;line-height:1.45}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.25)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22.5px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* DATA TABLE */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cools);color:var(--cool)}
+
+/* FACT GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,#f5f5f2);border:1px solid color-mix(in srgb, var(--zc,#999) 20%, white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,22px);font-weight:900;color:var(--zc,var(--ink));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-red .c-head{background:var(--accent)}
+.callout-blue .c-head{background:var(--cool)}
+.callout-gold .c-head{background:var(--gold)}
+.callout-green .c-head{background:var(--up)}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--accent-line);background:var(--accents);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a4a3c;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5b3028}
+
+/* DEBATE / COMPARISON BOX */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:560px){.debate{grid-template-columns:1fr}}
+.db-cell{border-radius:16px;padding:20px;border:1px solid}
+.db-cell h4{font-size:15px;font-weight:900;margin-bottom:6px}
+.db-cell .db-n{font-size:32px;font-weight:900;line-height:1;margin-bottom:6px;letter-spacing:-.02em}
+.db-cell ul{list-style:none;margin-top:10px}
+.db-cell li{font-size:13.5px;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08);color:var(--sub)}
+.db-cell li:last-child{border-bottom:none}
+.db-cell li b{color:var(--ink)}
+.db-a{background:var(--accents);border-color:var(--accent-line)}
+.db-a h4{color:var(--accent)}
+.db-a .db-n{color:var(--accent)}
+.db-b{background:var(--cools);border-color:#c0cedf}
+.db-b h4{color:var(--cool)}
+.db-b .db-n{color:var(--cool)}
+
+/* COMPANY CARDS */
+.co-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:600px){.co-grid{grid-template-columns:1fr}}
+.co-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc);border-radius:14px;padding:16px 18px}
+.co-card .ticker{font-size:10.5px;font-weight:800;color:var(--faint);letter-spacing:.06em}
+.co-card h4{font-size:17px;font-weight:900;margin:2px 0 10px;letter-spacing:-.01em}
+.co-card .highlight{font-size:13px;color:var(--sub);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.6}
+.co-card .highlight b{color:var(--ink)}
+.co-card .metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.co-card .m{text-align:center;background:var(--zs,#f5f5f2);border-radius:10px;padding:8px 4px}
+.co-card .m .mv{font-size:15px;font-weight:900;color:var(--zc,var(--ink));letter-spacing:-.02em}
+.co-card .m .ml{font-size:10px;color:var(--sub);margin-top:2px}
+
+/* TIMELINE */
+.tl{position:relative;margin:20px 0 6px;padding-left:28px}
+.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-item.active::before{background:var(--up);box-shadow:0 0 0 4px rgba(29,122,89,.2)}
+.tl-item .ty{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em}
+.tl-item .tt{font-size:14.5px;font-weight:800;color:var(--ink)}
+.tl-item .td{font-size:13px;color:var(--sub);margin-top:2px}
+
+/* TECH LEVEL BARS */
+.tech-row{display:flex;align-items:center;gap:12px;margin:10px 0;font-size:14px}
+.tech-row .tech-label{width:180px;flex:none;font-weight:700;font-size:13px}
+.tech-bar-wrap{flex:1;height:12px;background:#e8e2de;border-radius:99px;overflow:hidden}
+.tech-bar{height:100%;border-radius:99px;transition:width 1.4s cubic-bezier(.2,.8,.3,1);width:0}
+.tech-row .tech-pct{width:36px;text-align:right;font-size:12px;font-weight:800;color:var(--sub)}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400}
+.gloss details[open] summary::after{content:'minus'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* MISC */
+.analogy{background:linear-gradient(100deg,#f9ece8,#f5e0d8);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#5c2318}
+.analogy b{color:#3d1610}
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+
+@media(max-width:520px){
+  .floor{padding:22px 18px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .debate{grid-template-columns:1fr}
+  .co-grid{grid-template-columns:1fr}
+  .tech-row .tech-label{width:130px;font-size:12px}
+}
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- HERO -->
+<div class="hero-shell">
+  <div class="flame-glow"></div>
+  <div class="hero">
+    <div class="eyebrow">K-방산 심화 테마 &middot; MODULE A &middot; 엔진 국산화 &middot; 2026.06</div>
+    <h1>엔진 국산화<br>K-방산 최대 병목을 풀 열쇠</h1>
+    <p class="lede">KF-21이 날고 있지만 엔진은 미국 GE의 것입니다. ITAR 족쇄가 수출을 막고, 독자엔진 개발에 3조 원이 투입됩니다. 병목의 구조와 투자 시사점을 해부합니다.</p>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="3" data-suf=".3조">0</div><div class="l">독자엔진 개발<br>총예산 (업계 추정)</div></div>
+      <div class="stat"><div class="n" data-count="14" data-suf="년">0</div><div class="l">개발 목표 기간<br>(2027 착수 기준)</div></div>
+      <div class="stat"><div class="n" data-count="20" data-suf="%" data-pre="~">0</div><div class="l">실질 국산화율<br>(정부 기준 / 한화 40%)</div></div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#z1">I 면허생산</a>
+  <a href="#z2">II 국산화율 논쟁</a>
+  <a href="#z3">III 독자엔진 사업</a>
+  <a href="#z4">IV ITAR 탈출 효과</a>
+  <a href="#z5">V 기술 수준</a>
+  <a href="#z6">VI Rolls-Royce 대안</a>
+  <a href="#z7">VII 글로벌 시장</a>
+  <a href="#z8">VIII 투자 시사점</a>
+  <a href="#z9">용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- Z1: F414/F404 면허생산 현황 -->
+<section id="z1">
+<div class="zone-head"><span class="z-big">01</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 01</div>
+  <h2>F414 / F404 면허생산 현황</h2>
+  <p>한화에어로스페이스는 GE와의 면허생산 계약으로 KF-21 엔진을 조립합니다. 그러나 라이선스 구조 핵심에는 ITAR이라는 미국산 족쇄가 걸려 있습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">면허생산 구조</div>
+  <h3>GE 면허생산 계약과 ITAR 통제 메커니즘</h3>
+  <div class="meta">2025년 계약 체결 &middot; 6,232억 원 규모</div>
+
+  <p class="body">한화에어로스페이스는 GE(제너럴 일렉트릭)와의 면허생산 계약에 따라 KF-21에 탑재되는 <b>F414-400K 엔진</b>을 국내에서 조립·생산합니다. 초도 양산분(15대분) 엔진은 GE에서 직도입하고, 이후 물량은 한화에어로스페이스가 면허생산으로 전량 공급하는 구조입니다. 2025년 한화에어로스페이스는 방위사업청과 KF-21 최초 양산분 엔진 공급 계약(<b>약 6,232억 원</b>)을 체결했습니다.</p>
+
+  <table>
+    <thead><tr><th>구분</th><th>내용</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>계약 형태</td><td>GE&ndash;한화에어로스페이스 면허생산(License Production)</td><td>기술이전 범위 제한</td></tr>
+      <tr><td>초도 양산분</td><td>KF-21 15대분 엔진 GE 직도입</td><td><span class="tag-ca">과도기</span></td></tr>
+      <tr><td>이후 물량</td><td>한화에어로스페이스 국내 면허생산 전량 공급</td><td><span class="tag-up">수주 확보</span></td></tr>
+      <tr><td>계약 규모</td><td>약 6,232억 원 (최초 양산분)</td><td>방위사업청과 2025년 체결</td></tr>
+      <tr><td>APU 국산화율</td><td>92.78% &mdash; 설계·사업 권리 한화 보유</td><td><span class="tag-up">고내재화</span></td></tr>
+      <tr><td>ITAR 통제</td><td>제3국 수출 시 미 국무부 수출허가 필수</td><td><span class="tag-dn">핵심 리스크</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-red" style="margin-top:18px">
+    <div class="c-head">ITAR 수출 제약 &mdash; 2026년 현황</div>
+    <div class="c-body">
+      2026년 5월 서울경제 영문판 보도에 따르면, <b>UAE·인도네시아</b> 등 주요 잠재 수출국과의 협상에서 ITAR 조항이 실질적 장애물로 작용하고 있습니다. 인도네시아는 KF-21 Block II <b>16대 구매</b>를 협의 중이며 2026년 상반기 최종 계약을 목표로 하지만, F414 ITAR 조항으로 인해 미국의 수출허가가 필요한 상황입니다. 반면 ITAR 미적용 전투기인 <b>FA-50</b>의 수출 성공 사례가 이 병목의 실제 비용을 명확히 보여줍니다.
+    </div>
+  </div>
+
+  <div class="facts" style="margin-top:22px">
+    <div class="fact" style="--zc:var(--accent);--zs:var(--accents)">
+      <div class="n">6,232억</div><div class="l">KF-21 엔진 공급 계약<br>(2025년 체결)</div>
+    </div>
+    <div class="fact" style="--zc:var(--up);--zs:var(--ups)">
+      <div class="n">92.78%</div><div class="l">APU 국산화율<br>설계권 한화 보유</div>
+    </div>
+    <div class="fact" style="--zc:var(--cool);--zs:var(--cools)">
+      <div class="n">16대</div><div class="l">인도네시아 KF-21<br>협의 규모 (Block II)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Z2: 국산화율 논쟁 -->
+<section id="z2">
+<div class="zone-head"><span class="z-big">02</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 02</div>
+  <h2>국산화율 논쟁: 한화 40% vs 정부 20%</h2>
+  <p>같은 엔진, 다른 숫자. 산정 기준의 차이가 정책 방향과 투자 판단을 좌우합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">수치 불일치</div>
+  <h3>왜 수치가 두 배 차이 나는가</h3>
+  <div class="meta">2024년 8월 파이낸셜뉴스 단독 보도로 공식화</div>
+
+  <div class="debate">
+    <div class="db-cell db-a">
+      <h4>한화에어로스페이스 주장</h4>
+      <div class="db-n">40%</div>
+      <p style="font-size:12.5px;color:var(--sub);margin-bottom:8px">TES(Total Engine Share) 기준</p>
+      <ul>
+        <li>한화가 <b>실제 제작에 참여</b>하는 부품 비율로 산정</li>
+        <li>압축기·터빈 블레이드·구조물 등 제조 역량 반영</li>
+        <li>GE 직납 부품 중 제작 참여 가능 부품 포함 해석</li>
+        <li>APU 92.78% 달성 실적이 역량을 뒷받침</li>
+      </ul>
+    </div>
+    <div class="db-cell db-b">
+      <h4>정부(방위사업청) 기준</h4>
+      <div class="db-n">20%↓</div>
+      <p style="font-size:12.5px;color:var(--sub);margin-bottom:8px">전체비용 대비 국내기업 비용</p>
+      <ul>
+        <li>GE가 직납하는 <b>블랙박스 부품</b> 가치 포함 전체 계산</li>
+        <li>ITAR 수출통제 부품의 실제 원가 반영</li>
+        <li>엔진 원가 대부분이 고온부·핵심 모듈에 집중</li>
+        <li>실질 기술 내재화 수준의 보수적 평가</li>
+      </ul>
+    </div>
+  </div>
+
+  <table style="margin-top:20px">
+    <thead><tr><th>항목</th><th>한화 기준</th><th>정부 기준</th></tr></thead>
+    <tbody>
+      <tr><td>산정 방식</td><td>제작 참여 비율(TES)</td><td>전체비용 대비 국내 비용</td></tr>
+      <tr><td>블랙박스 부품 처리</td><td>제외 또는 일부 포함</td><td>전액 포함 (분모 확대)</td></tr>
+      <tr><td>결과 수치</td><td><span class="tag-dn">약 40%</span></td><td><span class="tag-bl">20% 미만</span></td></tr>
+      <tr><td>APU(보조동력장치)</td><td colspan="2">92.78% &mdash; 양측 공통 인정</td></tr>
+      <tr><td>추가 국산화 계획</td><td colspan="2">한화 "현재 구체 논의 없음" 공표</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-gold" style="margin-top:18px">
+    <div class="c-head">핵심 쟁점: 블랙박스 부품</div>
+    <div class="c-body">
+      GE가 ITAR을 근거로 기술이전을 거부하는 <b>'블랙박스' 부품</b>이란 핵심 내부 부품, 특히 <b>고온 섹션(연소기·1단 터빈 블레이드)</b>을 말합니다. 이 부품들은 한화에어로스페이스가 제조할 수 없으며, GE가 <b>완성품 상태로 직납</b>합니다. 해당 부품의 원가 비중이 엔진 전체의 절반 이상을 차지하기 때문에, 이를 분모에 포함하면 실질 국산화율은 20%를 밑돌게 됩니다.
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR LENS &middot; 국산화율 논쟁의 투자 함의</div>
+    <p>정부 기준 20% 미만이 공식화될수록 <b>독자엔진 개발 예산 확대의 명분</b>이 강화됩니다. 반면 한화 기준 40%는 현행 면허생산 수익성이 상당함을 의미합니다. 두 숫자 모두 한화에어로스페이스의 장기 수혜 논거로 읽힙니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- Z3: 독자엔진 개발 사업 -->
+<section id="z3">
+<div class="zone-head"><span class="z-big">03</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 03</div>
+  <h2>독자엔진 개발 사업</h2>
+  <p>정부는 2025년 11월 범부처 협의체를 출범시켰습니다. 세계 6번째 독자 전투기 엔진 보유국이 목표입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">사업 개요</div>
+  <h3>첨단 항공엔진 개발 범부처 사업</h3>
+  <div class="meta">2027년 착수 목표 &middot; 2030년대 중후반 비행 실증</div>
+
+  <div class="facts">
+    <div class="fact" style="--zc:var(--accent);--zs:var(--accents)">
+      <div class="n">3조+</div><div class="l">총예산 (업계 추정)<br>초기 700억 2027년 투입</div>
+    </div>
+    <div class="fact" style="--zc:var(--accent);--zs:var(--accents)">
+      <div class="n">14년</div><div class="l">개발 목표 기간<br>2027 착수 기준</div>
+    </div>
+    <div class="fact" style="--zc:var(--cool);--zs:var(--cools)">
+      <div class="n">1.5&ndash;1.6만</div><div class="l">목표 추력 lbf<br>첨단 전투기급</div>
+    </div>
+  </div>
+
+  <table style="margin-top:20px">
+    <thead><tr><th>항목</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>목표 추력</td><td>1만 5,000&ndash;1만 6,000 lbf급 첨단 전투기 엔진</td></tr>
+      <tr><td>개발 기간</td><td>약 14년 (2027년 착수 목표)</td></tr>
+      <tr><td>총 예산</td><td>약 3조 원 이상 (업계 추정); 2027년 상반기 700억 원 초기 투입</td></tr>
+      <tr><td>목표 시기</td><td>2030년대 중후반 독자 비행 실증</td></tr>
+      <tr><td>전략 목표</td><td>세계 6번째 독자 항공엔진 보유국 달성</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="floor" style="--zc:var(--cool);--zs:var(--cools)">
+  <div class="f-tag">범부처 협의체</div>
+  <h3>2025년 11월 출범 &mdash; 5개 부처 + 산업계</h3>
+
+  <table>
+    <thead><tr><th>기관</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td>산업통상자원부</td><td>민간 기술 연계, 소재·부품 산업 지원</td></tr>
+      <tr><td>국토교통부</td><td>항공 인증·표준 체계 구축</td></tr>
+      <tr><td>방위사업청</td><td>군사 요구도 설정, 예산 집행 총괄</td></tr>
+      <tr><td>우주항공청</td><td>항공우주 기술 연구개발 조율</td></tr>
+      <tr><td>국방부</td><td>안보 전략·수출 정책 연계</td></tr>
+      <tr><td>ADD (국방과학연구소)</td><td>핵심 기술 연구, 시험·검증 인프라 제공</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">주도권 경쟁</div>
+  <h3>한화에어로스페이스 vs 두산에너빌리티</h3>
+
+  <div class="co-grid" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="co-card">
+      <div class="ticker">012450 &middot; KRX</div>
+      <h4>한화에어로스페이스</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv">주계약자</div><div class="ml">독자엔진 유력 지위</div></div>
+        <div class="m"><div class="mv">F414 면허</div><div class="ml">생산 경험 보유</div></div>
+      </div>
+      <div class="highlight"><b>압축기·터빈 부품 제조 역량</b> 확보. KF-21 엔진 면허생산으로 축적한 실제 공정 경험이 강점. APU 설계권 보유로 시스템 통합 역량 증명.</div>
+    </div>
+    <div class="co-card" style="--zc:var(--cool);--zs:var(--cools)">
+      <div class="ticker">034020 &middot; KRX</div>
+      <h4>두산에너빌리티</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv">세계 5번째</div><div class="ml">가스터빈 독자개발</div></div>
+        <div class="m"><div class="mv">고온부</div><div class="ml">핵심 기술 보유</div></div>
+      </div>
+      <div class="highlight">발전용 <b>가스터빈 독자 개발 경험</b>으로 고온부 소재·제조 기술 보유. 독자엔진의 가장 어려운 관문인 <b>연소기·1단 터빈 블레이드</b>에서 국내 유일 역량 보유.</div>
+    </div>
+  </div>
+
+  <div class="analogy"><b>구조적 비유:</b> 한화가 "엔진 조립 공장"이라면, 두산은 "불꽃을 다루는 소재 전문가"입니다. 독자엔진은 두 역할 모두를 국내에서 완결해야 합니다.</div>
+</div>
+
+<!-- 타임라인 -->
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">개발 로드맵</div>
+  <h3>독자엔진 개발 타임라인</h3>
+
+  <div class="tl">
+    <div class="tl-item active">
+      <div class="ty">2025</div>
+      <div class="tt">범부처 협의체 출범</div>
+      <div class="td">산업부·국토부·방사청·우주항공청·국방부 5개 부처 참여. 독자엔진 개발 국가 전략과제 격상.</div>
+    </div>
+    <div class="tl-item active">
+      <div class="ty">2027 상반기</div>
+      <div class="tt">사업 착수 &mdash; 700억 원 초기 투입</div>
+      <div class="td">주계약업체 선정 경쟁(한화 vs 두산). 핵심 기술 연구 본격 시작. ADD 시험 인프라 구축.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">2027&ndash;2032</div>
+      <div class="tt">핵심 기술 개발 단계</div>
+      <div class="td">고온부 소재, 압축기, FADEC 소프트웨어 독자 개발. 부품 시험·검증 반복.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">2032&ndash;2038</div>
+      <div class="tt">엔진 통합 &amp; 지상 시험</div>
+      <div class="td">완성 엔진 조립, 지상 추력·내구성 시험. 목표 추력 1.5~1.6만 lbf 검증.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">2038&ndash;2041</div>
+      <div class="tt">비행 실증</div>
+      <div class="td">실제 항공기 탑재 비행 실증. 성공 시 세계 6번째 독자 전투기 엔진 보유국 달성.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Z4: ITAR 탈출 경제효과 -->
+<section id="z4">
+<div class="zone-head"><span class="z-big">04</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 04</div>
+  <h2>ITAR 탈출 시 경제효과</h2>
+  <p>ITAR 족쇄가 풀리면 KF-21 수출 대상국이 대폭 확대됩니다. 인도네시아·UAE 사례로 파급력을 계산합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">수출 시나리오</div>
+  <h3>KF-21 수출 병목 &mdash; ITAR Before / After</h3>
+
+  <table>
+    <thead><tr><th>수출국</th><th>현황 (ITAR 적용)</th><th>ITAR 탈출 후</th></tr></thead>
+    <tbody>
+      <tr><td>인도네시아</td><td>16대 협의 중, <b>미국 수출허가 필요</b></td><td>미국 동의 없이 계약 체결 가능</td></tr>
+      <tr><td>UAE</td><td>잠재 도입국, ITAR 장벽 실질 작동</td><td>협상 속도 대폭 가속화 전망</td></tr>
+      <tr><td>기타 비동맹국</td><td>미국 허가 불확실 → 협상 중단 리스크</td><td>수출 가능 국가 범위 대폭 확대</td></tr>
+      <tr><td>벤치마크: FA-50</td><td colspan="2">ITAR 미적용 전투기 &mdash; 다수 국가 수출 성공. KF-21 동급 확장 기대</td></tr>
+    </tbody>
+  </table>
+
+  <div class="view">
+    <div class="v-head">INVESTOR LENS &middot; 수출 파급 계산</div>
+    <p>독자 엔진 또는 Rolls-Royce 대안 엔진 전환 시, <b>미국 동의 없이 수출 가능한 국가 범위가 대폭 확대</b>됩니다. KF-21 단가(약 600&ndash;800억 원 추정)에 16대만 적용해도 최소 <b>1조 원 이상</b>의 계약이 열립니다. 이는 한화에어로스페이스·KAI 수주잔고 직결 이벤트입니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- Z5: 한국 엔진 기술 수준 -->
+<section id="z5">
+<div class="zone-head"><span class="z-big">05</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 05</div>
+  <h2>한국의 엔진 기술 수준과 관문</h2>
+  <p>Blisk은 만들 수 있습니다. 그러나 불꽃이 닿는 고온부는 아직 넘지 못했습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">기술 격차 분석</div>
+  <h3>핵심 기술 내재화 수준 (2025년 기준 추정)</h3>
+
+  <div style="margin:22px 0 10px">
+    <div class="tech-row">
+      <span class="tech-label">APU (보조동력장치)</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="93" style="background:var(--up)"></div></div>
+      <span class="tech-pct">93%</span>
+    </div>
+    <div class="tech-row">
+      <span class="tech-label">Blisk (압축기 일체형)</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="72" style="background:var(--accent)"></div></div>
+      <span class="tech-pct">72%</span>
+    </div>
+    <div class="tech-row">
+      <span class="tech-label">압축기 설계</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="60" style="background:var(--accent)"></div></div>
+      <span class="tech-pct">60%</span>
+    </div>
+    <div class="tech-row">
+      <span class="tech-label">연소기 설계</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="35" style="background:var(--caution)"></div></div>
+      <span class="tech-pct">35%</span>
+    </div>
+    <div class="tech-row">
+      <span class="tech-label">FADEC 소프트웨어</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="30" style="background:var(--caution)"></div></div>
+      <span class="tech-pct">30%</span>
+    </div>
+    <div class="tech-row">
+      <span class="tech-label">고온부 소재·코팅</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="20" style="background:#bd3030"></div></div>
+      <span class="tech-pct">20%</span>
+    </div>
+    <div class="tech-row">
+      <span class="tech-label">1단 터빈 블레이드</span>
+      <div class="tech-bar-wrap"><div class="tech-bar" data-w="15" style="background:#bd3030"></div></div>
+      <span class="tech-pct">15%</span>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--faint);margin-top:4px">* 수치는 공개 자료 및 업계 추정 기반 상대적 내재화 수준이며 공식 지표가 아닙니다</p>
+
+  <table style="margin-top:20px">
+    <thead><tr><th>기술 항목</th><th>현황</th><th>주요 과제</th></tr></thead>
+    <tbody>
+      <tr><td>Blisk</td><td><span class="tag-up">국내 생산 가능</span></td><td>압축기·터빈 일체형 정밀 가공 역량 확보</td></tr>
+      <tr><td>APU</td><td><span class="tag-up">92.78% 국산화</span></td><td>설계권 보유, 한화에어로스페이스</td></tr>
+      <tr><td>고온부 소재·코팅</td><td><span class="tag-dn">기술격차 존재</span></td><td>ITAR 블랙박스 영역, 선진국 대비 큰 격차</td></tr>
+      <tr><td>연소기</td><td><span class="tag-dn">독자 설계 부족</span></td><td>내열 소재, 연소 안정성 기술 미확보</td></tr>
+      <tr><td>FADEC</td><td><span class="tag-dn">역량 부족</span></td><td>독자 디지털 엔진 제어 소프트웨어 개발 과제</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-blue" style="margin-top:18px">
+    <div class="c-head">독자엔진의 두 핵심 관문</div>
+    <div class="c-body">
+      <b>첫 번째 관문 &mdash; 고온부:</b> 연소기와 1단 터빈 블레이드. 1,700°C 이상의 연소가스를 견디는 니켈 단결정 합금과 열차폐 코팅(TBC)이 필요합니다. 두산에너빌리티의 가스터빈 경험이 여기서 역할을 합니다.<br><br>
+      <b>두 번째 관문 &mdash; FADEC 소프트웨어:</b> 엔진의 모든 파라미터를 실시간으로 제어하는 두뇌입니다. 해외 의존 시 수출 통제 재발 위험이 있어, 완전한 독자 설계가 필수입니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Z6: Rolls-Royce 대안 -->
+<section id="z6">
+<div class="zone-head"><span class="z-big">06</span>
+  <div class="z-num" style="color:var(--cool)">SECTION 06</div>
+  <h2>Rolls-Royce 대안과 영국의 로비</h2>
+  <p>ITAR 탈출의 단기 경로로 영국 Rolls-Royce가 부상했습니다. 장기 독자엔진 개발과 어떻게 공존할 수 있는지가 핵심 질문입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--cool);--zs:var(--cools)">
+  <div class="f-tag">대안 엔진 협상</div>
+  <h3>Rolls-Royce &mdash; 영국의 전략적 접근</h3>
+
+  <p class="body">GE F414의 ITAR 제약에 대응해 <b>영국이 Rolls-Royce 엔진을 대안으로 제시</b>하며 한국을 대상으로 적극적인 로비를 전개하고 있습니다. 차세대 KF-21(블록 III 이후)에 Rolls-Royce 신형 엔진을 탑재하는 <b>공동개발 방안</b>이 논의 중입니다.</p>
+
+  <table>
+    <thead><tr><th>항목</th><th>F414 (현재)</th><th>Rolls-Royce (제안)</th></tr></thead>
+    <tbody>
+      <tr><td>원산지</td><td>미국 GE</td><td>영국 Rolls-Royce</td></tr>
+      <tr><td>ITAR 적용</td><td><span class="tag-dn">적용</span> &mdash; 미국 수출허가 필요</td><td><span class="tag-up">미적용</span> &mdash; 영국 EAR 규정 적용</td></tr>
+      <tr><td>추력 수준</td><td>~22,000 lbf (F414-400K)</td><td>신형 엔진 협의 중</td></tr>
+      <tr><td>적용 대상</td><td>KF-21 Block I/II (현재)</td><td>KF-21 Block III 이후 (논의)</td></tr>
+      <tr><td>기술이전</td><td>면허생산 수준 (블랙박스 유지)</td><td>공동개발 방안 협상 중</td></tr>
+      <tr><td>전략 의미</td><td>ITAR 족쇄, 수출 제약</td><td>수출 자유도 확대 기대</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-blue" style="margin-top:18px">
+    <div class="c-head">단기 대안 vs 장기 독자엔진 &mdash; 이중 전략</div>
+    <div class="c-body">
+      Rolls-Royce 엔진은 <b>ITAR 탈출의 단기 경로</b>가 될 수 있지만, 영국산 엔진 역시 완전한 기술 자주권을 보장하지는 않습니다. 정부의 독자엔진 개발 사업과 병행하는 <b>이중 전략</b>이 유력합니다. 독자엔진 개발은 14년 장기 과제인 반면, Rolls-Royce 협력은 <b>2030년대 초 KF-21 Block III 적용</b>을 겨냥합니다.
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR LENS &middot; 엔진 전략 분기점</div>
+    <p>Rolls-Royce 협력이 성사될 경우 <b>한화에어로스페이스의 단기 면허생산 물량에는 영향 없으나</b>, Block III 이후 엔진 공급자 변경 리스크가 생깁니다. 반면 독자엔진 사업 주도권 확보 시 <b>한화·두산 모두 장기 수혜</b>가 지속됩니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- Z7: 글로벌 항공엔진 시장 -->
+<section id="z7">
+<div class="zone-head"><span class="z-big">07</span>
+  <div class="z-num" style="color:var(--cool)">SECTION 07</div>
+  <h2>글로벌 항공엔진 시장 &mdash; 4대 과점</h2>
+  <p>2024년 269억 달러에서 2034년 354억 달러로 성장 전망. GE·P&amp;W·Rolls-Royce·Safran이 97%를 과점합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--cool);--zs:var(--cools)">
+  <div class="f-tag">시장 규모</div>
+  <h3>글로벌 항공엔진 시장 현황과 전망</h3>
+
+  <div class="facts">
+    <div class="fact" style="--zc:var(--accent);--zs:var(--accents)">
+      <div class="n">$269억</div><div class="l">2024년 시장 규모<br>(글로벌 항공엔진)</div>
+    </div>
+    <div class="fact" style="--zc:var(--cool);--zs:var(--cools)">
+      <div class="n">$354억</div><div class="l">2034년 시장 전망<br>CAGR 4.1%</div>
+    </div>
+    <div class="fact" style="--zc:var(--up);--zs:var(--ups)">
+      <div class="n">97%</div><div class="l">4대 기업 과점 비율<br>GE·P&amp;W·RR·Safran</div>
+    </div>
+  </div>
+
+  <table style="margin-top:20px">
+    <thead><tr><th>기업</th><th>주요 엔진</th><th>시장 지위</th></tr></thead>
+    <tbody>
+      <tr><td>GE / CFM<br><small style="font-weight:400">(GE+Safran JV)</small></td><td>LEAP, GE90, <b>F414, F404</b></td><td>민간·군용 복합 최대 점유율. CFM LEAP이 A320neo·B737 MAX 탑재</td></tr>
+      <tr><td>Pratt &amp; Whitney</td><td>GTF, <b>F135 (F-35 탑재)</b></td><td>여객기 약 1/4 점유. F135는 세계 최고 추력 전투기 엔진</td></tr>
+      <tr><td>Rolls-Royce</td><td>Trent XWB, Trent 7000</td><td>대형 쌍발 기체(A380, A350) 중심. 한국 KF-21 Block III 로비 중</td></tr>
+      <tr><td>Safran</td><td>CFM(GE와 JV), LEAP-1A</td><td>A320neo 탑재 LEAP-1A로 에어버스 공급망 핵심</td></tr>
+    </tbody>
+  </table>
+
+  <div class="analogy"><b>과점 구조의 시사점:</b> 세계 항공엔진 시장은 5개국(미·영·러·프·중)이 독점하는 초고진입장벽 산업입니다. 한국이 세계 6번째 독자엔진 보유국이 된다면, 이는 단순한 국방 자주권을 넘어 <b>수조 원 규모 글로벌 시장 진입권</b>을 의미합니다.</div>
+</div>
+
+<div class="floor" style="--zc:var(--cool);--zs:var(--cools)">
+  <div class="f-tag">현재 독자엔진 보유국</div>
+  <h3>세계 5개국 클럽 &mdash; 한국은 후보</h3>
+
+  <table>
+    <thead><tr><th>국가</th><th>주요 엔진 제조사</th><th>대표 전투기 엔진</th></tr></thead>
+    <tbody>
+      <tr><td>미국</td><td>GE, Pratt &amp; Whitney</td><td>F414, F404, F135, F100</td></tr>
+      <tr><td>영국</td><td>Rolls-Royce</td><td>Adour, EJ200 (유로파이터)</td></tr>
+      <tr><td>러시아</td><td>NPO Saturn, UMPO</td><td>AL-41, AL-31</td></tr>
+      <tr><td>프랑스</td><td>Safran (구 Snecma)</td><td>M88 (라팔 탑재)</td></tr>
+      <tr><td>중국</td><td>AECC</td><td>WS-10, WS-15 (개발 중)</td></tr>
+      <tr><td><b>한국</b></td><td><b>한화·두산 (개발 중)</b></td><td><b>목표: 1.5~1.6만 lbf급 (2041년대)</b></td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<!-- Z8: 투자 시사점 -->
+<section id="z8">
+<div class="zone-head"><span class="z-big">08</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 08</div>
+  <h2>투자 시사점 &mdash; 수혜 기업과 타임라인</h2>
+  <p>엔진 국산화의 수혜는 단선이 아닙니다. 단기 면허생산 수혜와 장기 독자엔진 수혜로 나뉩니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">수혜 기업 분석</div>
+  <h3>핵심 수혜 기업 &mdash; 단기 vs 장기</h3>
+
+  <div class="co-grid" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="co-card">
+      <div class="ticker">012450 &middot; KRX</div>
+      <h4>한화에어로스페이스</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv">주계약자</div><div class="ml">독자엔진 지위</div></div>
+        <div class="m"><div class="mv">6,232억</div><div class="ml">KF-21 엔진 계약</div></div>
+        <div class="m"><div class="mv">APU 설계권</div><div class="ml">기술 내재화 증거</div></div>
+        <div class="m"><div class="mv">F414 면허</div><div class="ml">즉시 매출 기여</div></div>
+      </div>
+      <div class="highlight">
+        <b>단기:</b> F414 면허생산 물량 확보, KF-21 양산 가속화.<br>
+        <b>중기:</b> 독자엔진 개발 주계약자로 정부 R&amp;D 예산 수혜.<br>
+        <b>장기:</b> 독자엔진 양산 시 엔진 국산화 수익 내재화.
+      </div>
+    </div>
+    <div class="co-card" style="--zc:var(--cool);--zs:var(--cools)">
+      <div class="ticker">034020 &middot; KRX</div>
+      <h4>두산에너빌리티</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv">세계 5번째</div><div class="ml">가스터빈 독자개발</div></div>
+        <div class="m"><div class="mv">고온부</div><div class="ml">핵심 기술 보유</div></div>
+        <div class="m"><div class="mv">R&amp;D 파트너</div><div class="ml">범부처 협의체</div></div>
+        <div class="m"><div class="mv">장기 구간</div><div class="ml">2027~2041</div></div>
+      </div>
+      <div class="highlight">
+        <b>핵심 강점:</b> 발전용 가스터빈 독자 개발 경험으로 고온부 소재·코팅 기술 보유.<br>
+        독자엔진의 최난관인 <b>연소기·터빈 블레이드</b>에서 국내 유일 역량. 주계약자 여부보다 핵심 부품 공급자 수익성이 포인트.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold" style="margin-top:20px">
+    <div class="c-head">투자 타임라인 &mdash; 주요 이벤트</div>
+    <div class="c-body">
+      <b>2025~2026:</b> KF-21 최초 양산분 엔진 공급 계약(6,232억) 실행. 한화에어로스페이스 F414 면허생산 본격 가동.<br><br>
+      <b>2026 상반기:</b> 인도네시아 KF-21 16대 최종 계약 예정. ITAR 허가 여부가 핵심 변수 &mdash; 계약 성사 시 주가 촉매.<br><br>
+      <b>2027:</b> 독자엔진 개발 사업 착수 목표. 700억 원 초기 예산 투입. <b>주계약자 선정</b>(한화 vs 두산 경쟁)이 최대 주가 이벤트.<br><br>
+      <b>2027~2035:</b> R&amp;D 단계. 한화·두산 정부 예산 수혜 구간. 기술 마일스톤마다 주가 이벤트 발생 가능.<br><br>
+      <b>2035~2041:</b> 비행 실증 단계. 독자엔진 성공 시 KF-21 Block IV 이후 적용 가능성.
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR LENS &middot; 핵심 리스크 4가지</div>
+    <p><b>①</b> ITAR 수출허가 거부 → 인도네시아 계약 불발 (한화·KAI 단기 타격). <b>②</b> 독자엔진 기술 목표 미달 → 개발 기간·예산 연장 (장기 수혜 지연). <b>③</b> Rolls-Royce 협력 성사 → KF-21 Block III 엔진 한화 물량 일부 대체 가능성. <b>④</b> 중국 AECC 기술 수준 급격한 향상 → 글로벌 엔진 시장 구조 변화.</p>
+  </div>
+</div>
+</section>
+
+<!-- Z9: 용어 사전 -->
+<section id="z9">
+<div class="zone-head"><span class="z-big">09</span>
+  <div class="z-num" style="color:var(--faint)">GLOSSARY</div>
+  <h2>용어 사전</h2>
+  <p>엔진 국산화 리서치를 이해하기 위한 필수 용어 21개를 정리했습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--ink);--zs:var(--note);border-top-color:var(--ink)">
+
+  <div class="gloss-sec">엔진 모델 / 제조사</div>
+  <div class="gloss">
+    <details>
+      <summary>F414</summary>
+      <div class="g-body">GE가 개발한 <b>터보팬 전투기 엔진</b>. 추력 약 22,000 lbf (애프터버너 포함). F/A-18E/F 슈퍼 호넷에 탑재. 한국 KF-21에는 <b>F414-400K</b> 버전이 탑재되며, 한화에어로스페이스가 면허생산. ITAR 통제 대상으로 제3국 수출 시 미국 허가 필요.</div>
+    </details>
+    <details>
+      <summary>F404</summary>
+      <div class="g-body">GE가 개발한 F414의 전신 엔진. 추력 약 17,700 lbf. 한국 KF-16, T/A-50에 탑재. F414보다 구형이나 동일한 GE 계열 ITAR 통제 적용. 한화에어로스페이스가 면허생산 경험 보유.</div>
+    </details>
+    <details>
+      <summary>GE (제너럴 일렉트릭)</summary>
+      <div class="g-body">미국의 항공엔진·발전설비 대기업. 항공엔진 부문은 GE Aerospace로 분사. F414, F404, LEAP, GE90 등 군용·민간용 엔진 최대 공급사. CFM 인터내셔널(Safran과의 JV)을 통해 민간 시장 과점. 한국에 F414 <b>면허생산 허가를 부여했으나 블랙박스 부품 기술이전은 거부</b>.</div>
+    </details>
+    <details>
+      <summary>Rolls-Royce</summary>
+      <div class="g-body">영국의 항공엔진 제조사. Trent XWB(A350), Trent 7000(A330neo) 등 대형 민간 엔진과 EJ200(유로파이터), Adour 등 군용 엔진 보유. <b>ITAR 비적용</b>, 영국 EAR 규정 적용. 한국 KF-21 Block III 이후 대안 엔진으로 공동개발 제안 중.</div>
+    </details>
+    <details>
+      <summary>Safran</summary>
+      <div class="g-body">프랑스 항공엔진·항공전자 그룹. GE와 합작사 <b>CFM 인터내셔널</b>을 통해 LEAP 엔진(A320neo, B737 MAX 탑재) 공급. 독자 M88 엔진(프랑스 라팔 탑재) 보유. 글로벌 엔진 시장 4대 과점 중 하나.</div>
+    </details>
+    <details>
+      <summary>Pratt &amp; Whitney</summary>
+      <div class="g-body">미국 RTX(레이시온 테크놀로지스) 산하 항공엔진 제조사. F135(F-35 탑재, 세계 최고 추력), GTF(기어드 터보팬, A320neo 옵션) 보유. 글로벌 여객기 엔진 시장 약 1/4 점유.</div>
+    </details>
+    <details>
+      <summary>ADD (국방과학연구소)</summary>
+      <div class="g-body">Agency for Defense Development. 한국 방위산업 핵심 기술 연구기관. 독자엔진 개발 범부처 협의체에서 <b>핵심 기술 연구·시험·검증 인프라</b> 제공 역할 담당. 천무·현궁·해성 등 국산 무기체계 핵심 기술 개발 주도.</div>
+    </details>
+  </div>
+
+  <div class="gloss-sec">규정 / 제도</div>
+  <div class="gloss">
+    <details>
+      <summary>ITAR (국제무기거래규정)</summary>
+      <div class="g-body">International Traffic in Arms Regulations. 미국 국무부가 관할하는 <b>군용 기술·장비 수출 통제 규정</b>. F414 등 군용 엔진이 대상. ITAR 적용 물품이 탑재된 무기체계를 제3국에 수출할 경우 <b>미국 국무부 수출허가</b> 필요. 거부 시 수출 불가. KF-21 수출의 핵심 장벽.</div>
+    </details>
+    <details>
+      <summary>면허생산</summary>
+      <div class="g-body">License Production. 원천 기술 보유사로부터 생산 허가를 받아 국내에서 동일 제품을 제조하는 방식. 기술 자체를 이전받는 것이 아니라 <b>생산 권리만 허가</b>. 핵심 기술(블랙박스)은 원청사가 완성품으로 직납하는 경우가 많아 실질 기술 내재화 한계 존재.</div>
+    </details>
+    <details>
+      <summary>국산화율</summary>
+      <div class="g-body">무기체계에서 국내 기업이 제조·공급하는 부품·서비스의 비율. <b>산정 기준에 따라 수치가 크게 달라짐.</b> 한화에어로스페이스는 제작 참여 비율(TES) 기준 40%를 주장하지만, 정부(방위사업청)는 전체 비용 대비 국내 비용으로 산정해 20% 미만으로 평가. 블랙박스 부품 포함 여부가 핵심 쟁점.</div>
+    </details>
+    <details>
+      <summary>TES (Total Engine Share)</summary>
+      <div class="g-body">엔진 전체 생산에서 특정 기업이 차지하는 제작 참여 비율을 의미하는 한화에어로스페이스의 산정 기준. <b>한화가 실제로 제조에 관여하는 부품의 비율</b>로, GE 직납 블랙박스 부품을 제외하거나 제한적으로 포함. 이 기준으로 한화는 F414 엔진 국산화율을 약 40%로 산정.</div>
+    </details>
+    <details>
+      <summary>독자엔진</summary>
+      <div class="g-body">외국 기술 의존 없이 국내에서 독자 설계·개발·생산한 항공엔진. 한국 정부의 목표는 <b>1만 5,000~1만 6,000 lbf급</b> 첨단 전투기 엔진 독자 개발로, 2027년 착수해 2030년대 중후반 비행 실증을 목표. 성공 시 세계 6번째 독자 전투기 엔진 보유국 달성.</div>
+    </details>
+    <details>
+      <summary>블랙박스 부품</summary>
+      <div class="g-body">기술이전 없이 완성품 형태로 공급되어 내부 구조·설계를 알 수 없는 부품. GE가 ITAR을 근거로 한국에 <b>기술이전을 거부</b>하는 F414 핵심 내부 부품(고온 섹션, 핵심 전자장비 등)을 지칭. 이 부품들은 한화에어로스페이스가 제조 불가하며 GE가 직납. 전체 엔진 원가의 절반 이상을 차지해 실질 국산화율을 낮추는 핵심 요인.</div>
+    </details>
+  </div>
+
+  <div class="gloss-sec">엔진 기술 용어</div>
+  <div class="gloss">
+    <details>
+      <summary>추력 (lbf, Pound-force)</summary>
+      <div class="g-body">엔진이 기체를 밀어내는 힘. <b>lbf(파운드포스)</b>로 표시. 1 lbf ≈ 4.45N. 한국 독자엔진 목표는 15,000~16,000 lbf급. 비교: F414-400K는 22,000 lbf (애프터버너), F-35 F135는 43,000 lbf로 세계 최고 수준.</div>
+    </details>
+    <details>
+      <summary>Blisk (블리스크)</summary>
+      <div class="g-body">Bladed Disk의 합성어. <b>압축기 또는 터빈의 블레이드(날개)와 디스크(원판)를 일체로 가공한 부품</b>. 접합부 없이 단일 소재로 제작해 무게 경감·내구성 향상. 고정밀 5축 CNC 가공이 필요. 한국은 국내 생산 가능 수준에 도달.</div>
+    </details>
+    <details>
+      <summary>APU (보조동력장치)</summary>
+      <div class="g-body">Auxiliary Power Unit. 주 엔진 가동 전 전기·공압을 공급하는 소형 가스터빈 장치. 한화에어로스페이스는 APU를 <b>92.78%까지 국산화</b>하고 설계·사업 권리를 보유. 엔진 본체 대비 기술 내재화 수준이 훨씬 높은 영역.</div>
+    </details>
+    <details>
+      <summary>고온부 (Hot Section)</summary>
+      <div class="g-body">엔진 내 연소기와 터빈(특히 1단 터빈 블레이드)을 포함하는 고온 영역. 연소 가스 온도가 <b>1,700°C 이상</b>에 달해 니켈 단결정 합금, 열차폐 코팅(TBC), 냉각 구멍 가공 등 최고 수준의 소재·제조 기술이 필요. ITAR 블랙박스의 핵심 영역.</div>
+    </details>
+    <details>
+      <summary>연소기 (Combustor)</summary>
+      <div class="g-body">압축된 공기와 연료를 혼합·연소시키는 엔진 핵심 부품. 연소 안정성, 배기 온도 균일성, 고온 내구성이 요구됨. <b>한국의 독자 설계 역량이 부족한 영역</b>. 두산에너빌리티의 발전용 가스터빈 연소기 경험이 이전 가능한지가 핵심 변수.</div>
+    </details>
+    <details>
+      <summary>터빈 블레이드 (Turbine Blade)</summary>
+      <div class="g-body">연소 가스의 에너지를 회전 운동으로 변환하는 날개 형태 부품. 특히 <b>1단(1st Stage) 터빈 블레이드</b>는 1,700°C 이상의 고온·고압 환경에 노출. 니켈 기반 단결정(Single Crystal) 합금 주조, 정밀 냉각 채널 가공, 열차폐 코팅이 필수. 한국이 가장 큰 기술 격차를 가진 영역.</div>
+    </details>
+    <details>
+      <summary>압축기 (Compressor)</summary>
+      <div class="g-body">엔진 앞단에서 외부 공기를 빨아들여 압축하는 부품. 팬·저압 압축기(LPC)·고압 압축기(HPC)로 구성. 압축비를 높일수록 효율 향상. 한화에어로스페이스는 F414 면허생산 과정에서 압축기 부품 <b>제조 역량</b>을 축적.</div>
+    </details>
+    <details>
+      <summary>FADEC (전자식 엔진 제어 장치)</summary>
+      <div class="g-body">Full Authority Digital Engine Control. 엔진의 <b>모든 파라미터(연료량, 압축비, 온도, 추력)를 실시간으로 디지털 제어</b>하는 소프트웨어·하드웨어 시스템. 독자 FADEC 개발 없이는 진정한 기술 자주권 불가. 현재 한국의 독자 설계 역량 부족 영역.</div>
+    </details>
+  </div>
+</div>
+</section>
+
+<!-- 시리즈 네비게이션 -->
+<div class="series-nav">
+  <a href="k_defense_company_subcontractors.html">
+    <div class="sn-label">PREV &middot; Part 4-6 소부장</div>
+    소부장 &mdash; K-방산 부품 생태계
+  </a>
+  <a href="k_defense_theme_air_defense.html" style="text-align:right">
+    <div class="sn-label">NEXT &middot; Theme B 방공·정밀</div>
+    방공·정밀유도 &mdash; 천궁의 확장
+  </a>
+</div>
+
+<div class="disclaimer">
+  본 문서는 공개된 뉴스·보고서·산업 자료를 바탕으로 작성된 <b>투자 교육 목적 리서치</b>입니다. 특정 종목에 대한 매수·매도 추천이 아니며, 투자 결과에 대한 책임은 투자자 본인에게 있습니다. 데이터는 2026년 6월 기준이며 이후 변동될 수 있습니다.
+</div>
+
+<footer>
+  K-방산 심화 테마 &middot; Module A &middot; 엔진 국산화 &mdash; 2026.06 &middot; Research Homepage
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+/* Progress Bar */
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('prog');
+  const h = document.documentElement;
+  const pct = (h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  el.style.width = pct + '%';
+});
+
+/* Scroll Reveal */
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealIO.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.floor').forEach(el => revealIO.observe(el));
+
+/* Count Up Animation */
+function countUp(el) {
+  const target = parseFloat(el.dataset.count);
+  const pre = el.dataset.pre || '';
+  const suf = el.dataset.suf || '';
+  const isFloat = String(target).includes('.');
+  const duration = 1200;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = target * ease;
+    el.textContent = pre + (isFloat ? val.toFixed(1) : Math.round(val).toLocaleString()) + suf;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+/* Tech Bar Animation */
+const techIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.tech-bar').forEach(bar => {
+        const w = bar.dataset.w;
+        bar.style.width = '0%';
+        requestAnimationFrame(() => {
+          setTimeout(() => { bar.style.width = w + '%'; }, 100);
+        });
+      });
+      techIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.floor').forEach(el => {
+  if (el.querySelector('.tech-bar')) techIO.observe(el);
+});
+
+/* Smooth Nav Scroll */
+document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

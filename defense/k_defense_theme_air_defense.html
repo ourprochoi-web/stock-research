@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방공·정밀 — 고부가 상승 | K-방산 심화 테마 Module B</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#ecf2ee; --card:#ffffff; --line:#c9d8cc; --note:#deeade; --chip-bg:#d6e8da;
+  --accent:#1d7a59; --accs:#e3f2ec; --acc-line:#a9d6c3;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#2d9e73,var(--navy),var(--accent));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(236,242,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(165deg,#0d1e14 0%,#122b1e 35%,#0f1c2e 70%,#0d1a28 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{
+  content:'';position:absolute;inset:0;opacity:.28;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 48px,rgba(29,122,89,.1) 48px 49px),
+    repeating-linear-gradient(90deg,transparent 0 48px,rgba(29,122,89,.1) 48px 49px);
+  pointer-events:none
+}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(13,26,40,.9),transparent);pointer-events:none}
+.hex-bg{position:absolute;inset:0;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpolygon points='28,2 54,16 54,44 28,58 2,44 2,16' fill='none' stroke='%231d7a59' stroke-width='1.2'/%3E%3Cpolygon points='28,52 54,66 54,94 28,108 2,94 2,66' fill='none' stroke='%231d7a59' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-size:56px 100px;pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:82px 20px 44px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#4dbf8a;font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(26px,6.8vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 15%,#6edfa8 45%,#fff 75%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#8aa89a;max-width:620px;margin:0 auto;font-size:15.8px;line-height:1.72}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px 10px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(16px,4.2vw,26px);font-weight:900;color:#6edfa8;letter-spacing:-.02em;line-height:1.2}
+.stat .l{font-size:11.5px;color:#7a9488;margin-top:6px;line-height:1.45}
+
+/* ═══ SECTIONS ═══ */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none;color:var(--accent)}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--accent)}
+.zone-head h2{font-size:clamp(22px,5.2vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.22)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:21px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* ═══ DATA TABLE ═══ */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+tr.total-row td{background:#f0f7f3;font-weight:900;color:var(--accent)}
+tr.highlight-row td{background:#f6faf7}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+.tag-ac{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accs);color:var(--accent)}
+
+/* ═══ FACT GRID ═══ */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,#e3f2ec);border:1px solid var(--acc-line);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(14px,3.4vw,20px);font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* ═══ CALLOUT ═══ */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-green .c-head{background:var(--accent)}
+.callout-gold .c-head{background:var(--gold)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+.callout-navy .c-head{background:var(--navy)}
+
+/* ═══ INVESTOR VIEW ═══ */
+.view{margin-top:16px;border:1.5px dashed var(--acc-line);background:var(--accs);border-radius:14px;padding:16px 18px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#2a6b48;margin-bottom:6px;text-transform:uppercase}
+.view p{font-size:14.3px;color:#2a4a38;line-height:1.75}
+.view p b{color:#19372a}
+
+/* ═══ TIMELINE ═══ */
+.tl{position:relative;margin:20px 0 6px;padding-left:28px}
+.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-item.active::before{background:var(--up);box-shadow:0 0 0 4px rgba(29,122,89,.22)}
+.tl-item.future::before{background:var(--faint)}
+.tl-item .ty{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em}
+.tl-item .tt{font-size:14.5px;font-weight:800;color:var(--ink)}
+.tl-item .td{font-size:13px;color:var(--sub);margin-top:2px;line-height:1.6}
+
+/* ═══ CO-GRID ═══ */
+.co-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:600px){.co-grid{grid-template-columns:1fr}}
+.co-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc,var(--accent));border-radius:14px;padding:18px 20px;position:relative}
+.co-card .ticker{font-size:10.5px;font-weight:800;color:var(--faint);letter-spacing:.06em}
+.co-card h4{font-size:17px;font-weight:900;margin:2px 0 10px;letter-spacing:-.01em}
+.co-card .metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.co-card .m{text-align:center;background:var(--zs,#e3f2ec);border-radius:10px;padding:8px 4px}
+.co-card .m .mv{font-size:15px;font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em}
+.co-card .m .ml{font-size:10px;color:var(--sub);margin-top:2px}
+.co-card .highlight{font-size:12.8px;color:var(--sub);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.6}
+.co-card .highlight b{color:var(--ink)}
+
+/* ═══ PGM GRID ═══ */
+.pgm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:580px){.pgm-grid{grid-template-columns:1fr}}
+.pgm-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;border-top:3px solid var(--zc,var(--accent))}
+.pgm-card .p-cat{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--zc,var(--accent));margin-bottom:6px;text-transform:uppercase}
+.pgm-card h4{font-size:16px;font-weight:900;margin-bottom:8px;letter-spacing:-.01em}
+.pgm-card ul{list-style:none}
+.pgm-card li{font-size:13.5px;color:var(--sub);padding:4px 0;border-bottom:1px dashed var(--line)}
+.pgm-card li:last-child{border-bottom:none}
+.pgm-card li b{color:var(--ink)}
+
+/* ═══ ANALOGY ═══ */
+.analogy{background:linear-gradient(100deg,var(--accs),#d4edde);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#1a4f34}
+.analogy b{color:#0f3322}
+
+/* ═══ GLOSSARY ═══ */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:16px}
+.gloss details[open] summary::after{content:'−'}
+.gloss details[open] summary{color:var(--accent)}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.72}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.14em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);text-transform:uppercase}
+
+/* ═══ DISCLAIMER / FOOTER ═══ */
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+
+/* ═══ SERIES NAV ═══ */
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.07)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px;text-transform:uppercase}
+.series-nav a.next{text-align:right}
+@media(max-width:500px){.series-nav{flex-direction:column}}
+
+@media(max-width:680px){
+  .floor{padding:22px 18px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .stat:last-child{grid-column:1/-1}
+}
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+</head>
+<body>
+
+<!-- Fixed Home button -->
+<a href="../"
+   style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s"
+   onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'"
+   onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'">
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home
+</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell" id="hero">
+  <div class="hex-bg"></div>
+  <div class="hero">
+    <div class="eyebrow">K-방산 심화 테마 &middot; Module B &middot; 방공·정밀 &middot; 2026.06</div>
+    <h1>방공·정밀 — 실전 검증이 만든<br>고부가 도약</h1>
+    <p class="lede">천궁-II UAE 실전 요격 성공 → 수주 82.3억 달러 확보. 이스라엘이 걸어간 '실전 검증 → MRO 연금화' 경로를 한국 방공산업이 따라가고 있습니다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">82.3억$</div>
+        <div class="l">천궁-II 누적 수주<br>(UAE·사우디·이라크)</div>
+      </div>
+      <div class="stat">
+        <div class="n">148억$</div>
+        <div class="l">이스라엘 방산수출<br>(48% 방공 · 벤치마크)</div>
+      </div>
+      <div class="stat">
+        <div class="n">L-SAM 개발완료</div>
+        <div class="l">2024.11 개발 완료<br>2028년 실전배치 예정</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky nav -->
+<nav>
+  <a href="#z1">Ⅰ 이스라엘 벤치마크</a>
+  <a href="#z2">Ⅱ 천궁-II 수출</a>
+  <a href="#z3">Ⅲ 현궁·해성</a>
+  <a href="#z4">Ⅳ L-SAM</a>
+  <a href="#z5">Ⅴ 글로벌 경쟁</a>
+  <a href="#z6">Ⅵ PGM 시장 진입</a>
+  <a href="#z7">Ⅶ 투자 시사점</a>
+  <a href="#z8">Ⅷ 용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══ Z1: 이스라엘 벤치마크 ═══ -->
+<section id="z1">
+<div class="zone-head"><span class="z-big">01</span>
+  <div class="z-num">SECTION 01</div>
+  <h2>이스라엘 벤치마크 — 방공 수출 제국의 공식</h2>
+  <p>이스라엘은 방공 시스템 수출로 연간 71억 달러를 버는 나라입니다. 한국이 복제하려는 성공 공식의 원형이 여기 있습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="f-tag">벤치마크</div>
+  <h3>이스라엘 방공 수출 실적 (2024년 기준)</h3>
+  <p class="meta">총 방산수출 148억$ 중 방공 비중 약 48% — 역대 최고치</p>
+
+  <table>
+    <thead>
+      <tr><th>시스템</th><th>수출 대상국</th><th>계약 금액</th><th>특이사항</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Arrow 3</td><td>독일 1차</td><td>약 35억 달러</td>
+        <td><span class="tag-up">최고고도 탄도탄</span></td>
+      </tr>
+      <tr>
+        <td>Arrow 3</td><td>독일 2차</td><td>약 31억 달러</td>
+        <td><span class="tag-up">66억$ 합산</span></td>
+      </tr>
+      <tr>
+        <td>David's Sling</td><td>핀란드</td><td>약 3.9억 달러</td>
+        <td><span class="tag-bl">중고도</span></td>
+      </tr>
+      <tr>
+        <td>Barak MX + David's Sling + Spyder</td><td>그리스 (예정)</td><td>약 35억 달러</td>
+        <td><span class="tag-ca">다층 패키지 딜</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-green" style="margin-top:20px">
+    <div class="c-head">이스라엘 성공 공식 3원칙</div>
+    <div class="c-body">
+      <b>① 실전 검증(Combat Proven)</b> — 아이언돔, Arrow, David's Sling은 모두 실제 전쟁에서 요격 실적을 보유. 카탈로그 수치와 달리 바이어가 신뢰할 수 있는 근거를 제공합니다.<br><br>
+      <b>② 다층 방공 체계 패키지 판매</b> — 단일 시스템이 아닌 저고도(아이언돔)+중고도(David's Sling)+고고도(Arrow 3) 풀패키지를 제안. 계약 규모를 단품 대비 3~5배 키웁니다.<br><br>
+      <b>③ MRO 번들링</b> — 본체 계약 금액의 50~100%에 달하는 정비·부품·업그레이드 계약을 처음부터 묶어서 판매. 20~30년에 걸친 안정적 수익 스트림을 확보합니다.
+    </div>
+  </div>
+
+  <div class="analogy"><b>한국의 위치:</b> 2025년 이란 미사일 공격에서 UAE가 천궁-II로 실전 요격에 성공했다는 보도가 나왔습니다. 이스라엘이 수십 년 걸려 쌓은 '실전 검증' 마케팅 경로에 한국이 단 3년 만에 진입한 것입니다.</div>
+</div>
+
+<div class="facts" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="fact"><div class="n">148억$</div><div class="l">이스라엘 2024년<br>방산 수출 총액(역대 최고)</div></div>
+  <div class="fact"><div class="n">48%</div><div class="l">방산 수출 중<br>방공 시스템 비중</div></div>
+  <div class="fact"><div class="n">71억$</div><div class="l">방공 시스템만으로<br>연간 수출 규모</div></div>
+</div>
+</section>
+
+<!-- ═══ Z2: 천궁-II 수출 ═══ -->
+<section id="z2">
+<div class="zone-head"><span class="z-big">02</span>
+  <div class="z-num">SECTION 02</div>
+  <h2>천궁-II 수출 — 82.3억 달러, 중동을 방패로</h2>
+  <p>3개국 계약으로 확보한 82.3억 달러(약 11조 원). 여기에 20~30년 MRO가 추가로 붙습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="f-tag">수출 현황</div>
+  <h3>천궁-II (M-SAM) 3개국 계약 현황</h3>
+
+  <table>
+    <thead>
+      <tr><th>국가</th><th>계약 시기</th><th>규모</th><th>계약 금액</th><th>비고</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>UAE</td><td>2022년 1월</td><td>10개 포대</td>
+        <td><b>약 35억 달러</b><br><small style="color:var(--sub);font-weight:400">(~5조 원)</small></td>
+        <td><span class="tag-up">실전 요격 성공</span></td>
+      </tr>
+      <tr>
+        <td>사우디아라비아</td><td>2023년 11월</td><td>10개 포대</td>
+        <td><b>약 32.5억 달러</b><br><small style="color:var(--sub);font-weight:400">(~4.3조 원)</small></td>
+        <td><span class="tag-bl">납품 진행 중</span></td>
+      </tr>
+      <tr>
+        <td>이라크</td><td>2024년 9월</td><td>—</td>
+        <td><b>약 27.9억 달러</b><br><small style="color:var(--sub);font-weight:400">(~3.7조 원)</small></td>
+        <td><span class="tag-bl">납품 진행 중</span></td>
+      </tr>
+      <tr class="total-row">
+        <td>합계</td><td>—</td><td>—</td>
+        <td><b>약 82.3억 달러</b><br><small>(~11조 원)</small></td>
+        <td><span class="tag-ac">3개국 누적</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-navy" style="margin-top:20px">
+    <div class="c-head">UAE 실전 요격 성과 — 한국 방산 역사적 전환점</div>
+    <div class="c-body">
+      2025년 이란이 탄도미사일로 UAE를 공격했을 때, UAE군이 배치한 천궁-II가 실전 요격에 성공했다는 보도가 나왔습니다. <b>한국 방산 수출 역사상 최초의 수출품 실전 검증 사례</b>입니다.<br><br>
+      이는 추가 수출 협상에서 강력한 레퍼런스로 작용합니다. 이란 위협을 공유하는 <b>바레인, 쿠웨이트, 카타르, 요르단</b> 등 중동 국가들의 관심이 집중되고 있으며, 동남아시아의 탄도탄 위협 노출국들도 주목하고 있습니다.
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">MRO 연금화 시나리오</div>
+    <p>3개국 82.3억 달러의 본체 계약이 완료되면, <b>20~30년 운용 주기 동안의 정비·부품·업그레이드 계약(MRO)이 본체 금액의 50~100%에 달할 수 있습니다.</b> 즉, 41~82억 달러 규모의 추가 수익이 장기에 걸쳐 쌓입니다. 한화에어로스페이스와 LIG넥스원(LIG D&amp;A)이 이 수익을 나눠 갖는 구조입니다.</p>
+  </div>
+</div>
+
+<div class="facts" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="fact"><div class="n">82.3억$</div><div class="l">3개국 누적<br>수주 총액</div></div>
+  <div class="fact"><div class="n">50~100%</div><div class="l">MRO 추가 수익<br>(본체 대비 비율)</div></div>
+  <div class="fact"><div class="n">최초</div><div class="l">한국 수출 무기<br>실전 검증 사례</div></div>
+</div>
+</section>
+
+<!-- ═══ Z3: 현궁·해성 ═══ -->
+<section id="z3">
+<div class="zone-head"><span class="z-big">03</span>
+  <div class="z-num">SECTION 03</div>
+  <h2>현궁·해성 — 대전차·대함 정밀유도의 두 기둥</h2>
+  <p>지대공(천궁-II) 성공을 뒤따르는 정밀유도무기 2종. 실전 사용 사례와 초음속 신형이 모두 확인됩니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+  <div class="f-tag">대전차 미사일</div>
+  <h3>현궁 (LIG넥스원) — 1조 원 양산, 실전 확인</h3>
+
+  <div class="facts" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="fact"><div class="n">~1조원</div><div class="l">국내 7년간<br>양산 계획 규모</div></div>
+    <div class="fact"><div class="n">2개 분쟁</div><div class="l">중동·코카서스에서<br>실전 사용 확인</div></div>
+    <div class="fact"><div class="n">LIG 핵심</div><div class="l">2024년 수익성<br>기여 1위 품목</div></div>
+  </div>
+
+  <p class="body">중동 분쟁 지역(사우디 지원 세력)에서 후티 반군 격퇴에 사용된 것으로 확인됐습니다. 아제르바이잔-아르메니아 전쟁(2020)에서도 비공식 유통 사례가 보고됐습니다. <b>실전 검증된 대전차 미사일로서, 동남아·중동 수출 가시화가 기대됩니다.</b></p>
+
+  <div class="callout callout-blue" style="margin-top:16px">
+    <div class="c-head">현궁 수출 경쟁력 포인트</div>
+    <div class="c-body">
+      <b>① 가격 경쟁력</b> — 서방 동급 제품(재블린 등) 대비 30~40% 저렴한 것으로 알려짐. 중소득 구매국에게 결정적 조건.<br>
+      <b>② 실전 검증</b> — 중동 실전 사용으로 "카탈로그 무기" 꼬리표를 뗐음.<br>
+      <b>③ 번들 가능성</b> — 천궁-II와 같은 중동 고객사에 지상군 패키지로 묶어서 제안 가능. 계약 규모 극대화.
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--navy);--zs:#eaecf4">
+  <div class="f-tag">초음속 대함 미사일</div>
+  <h3>해성-II (한화에어로스페이스 / LIG넥스원) — 초음속 세대 공개</h3>
+
+  <table>
+    <thead>
+      <tr><th>항목</th><th>내용</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>공개 시점</td><td>2024년 11월 — 신형 초음속 함대함 유도탄 최초 공개</td></tr>
+      <tr><td>속도</td><td>초음속(마하 초과) — 현 함대함 미사일 대비 요격 난이도 ↑</td></tr>
+      <tr><td>비행 방식</td><td>고고도-저고도 혼합 비행 가능, 레이더 포착 어려움</td></tr>
+      <tr><td>연동 플랫폼</td><td>KF-21, FA-50과 연동하는 공대함 버전 개발 중</td></tr>
+      <tr><td>수출 전략</td><td>KF-21 수출 패키지 번들링 — "항공기+미사일" 결합 수출</td></tr>
+    </tbody>
+  </table>
+
+  <div class="view">
+    <div class="v-head">번들 수출의 시너지</div>
+    <p>KF-21을 구매한 국가는 자연스럽게 해성-II 공대함 버전 구매를 검토하게 됩니다. <b>항공기+엔진+미사일 패키지 수출은 계약 단가를 2~3배 높이는 효과</b>가 있으며, 이스라엘이 F-35+Derby 미사일 패키지로 활용한 전략과 동일합니다. 해양 분쟁이 상존하는 동남아 국가들이 주요 타깃입니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z4: L-SAM ═══ -->
+<section id="z4">
+<div class="zone-head"><span class="z-big">04</span>
+  <div class="z-num">SECTION 04</div>
+  <h2>L-SAM — 패트리어트와 THAAD 사이의 공백을 채운다</h2>
+  <p>2024년 11월 개발 완료. 2025년 양산 착수, 2028년 실전 배치. 천궁-II 다음을 잇는 K-방공의 상단 레이어입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="f-tag">L-SAM 개발 현황</div>
+  <h3>L-SAM 타임라인 — 개발완료에서 배치까지</h3>
+
+  <div class="tl">
+    <div class="tl-item active">
+      <div class="ty">2024년 11월 29일</div>
+      <div class="tt">개발 완료 공식 선언</div>
+      <div class="td">방위사업청 발표. 체계 개발 성공, 최종 요격 시험 통과. 한국형 중장거리 지대공 미사일 완성.</div>
+    </div>
+    <div class="tl-item active">
+      <div class="ty">2025년</div>
+      <div class="tt">양산 착수</div>
+      <div class="td">한화에어로스페이스 주도 양산 라인 구축. 초도 물량 한국군 배치 시작.</div>
+    </div>
+    <div class="tl-item future">
+      <div class="ty">2028년 (예정)</div>
+      <div class="tt">실전 배치 완료</div>
+      <div class="td">한국군 전력화 완료. 이후 수출 레퍼런스 확보 → 중동·동남아 마케팅 개시 예상.</div>
+    </div>
+    <div class="tl-item future">
+      <div class="ty">2028년 (착수 목표)</div>
+      <div class="tt">L-SAM-II 후속 개발 착수</div>
+      <div class="td">방어 범위 3~4배 향상, 고고도 요격 능력 추가. 사실상 한국형 THAAD 포지션 목표.</div>
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--steel);--zs:var(--steels)">
+  <div class="f-tag">시스템 비교</div>
+  <h3>L-SAM vs 패트리어트 PAC-3 vs THAAD</h3>
+
+  <table>
+    <thead>
+      <tr><th>비교 항목</th><th>패트리어트 PAC-3</th><th>L-SAM</th><th>THAAD</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>요격 층위</td><td>저~중고도</td>
+        <td><b style="color:var(--accent)">중고도 (공백 담당)</b></td>
+        <td>고고도</td>
+      </tr>
+      <tr>
+        <td>요격 대상</td><td>탄도탄 + 항공기</td>
+        <td><b style="color:var(--accent)">탄도탄 + 항공기 동시</b></td>
+        <td>탄도탄만</td>
+      </tr>
+      <tr>
+        <td>가격 (추정)</td><td>포대당 ~10억$+</td>
+        <td><b style="color:var(--accent)">~3~5억$ (추정)</b></td>
+        <td>포대당 ~30억$+</td>
+      </tr>
+      <tr>
+        <td>공급자</td><td>미국 (레이시온)</td><td>한국 (한화에어로)</td><td>미국 (록히드마틴)</td>
+      </tr>
+      <tr>
+        <td>CAATSA 제재 우려</td>
+        <td><span class="tag-up">없음</span></td>
+        <td><span class="tag-up">없음</span></td>
+        <td><span class="tag-up">없음</span></td>
+      </tr>
+      <tr>
+        <td>납기 대기</td>
+        <td><span class="tag-dn">수년 대기</span></td>
+        <td><span class="tag-up">상대적 빠름</span></td>
+        <td><span class="tag-dn">매우 제한적</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-green" style="margin-top:20px">
+    <div class="c-head">L-SAM이 만드는 수출 기회</div>
+    <div class="c-body">
+      THAAD는 포대당 30억 달러 수준으로 개도국에게 사실상 구매 불가 가격입니다. 패트리어트와 THAAD 사이 공백에 위치한 <b>L-SAM은 중동·동남아 국가에게 "현실적으로 살 수 있는 고고도 방공 대안"</b>이 됩니다. 탄도탄 위협에 노출된 이라크, 사우디, 인도네시아, 필리핀 등이 잠재 고객입니다.
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">L-SAM-II 후속 개발 — 2030년대를 겨냥한 씨앗</div>
+    <p>L-SAM-II는 기존 L-SAM 대비 <b>방어 범위 3~4배 향상, 고고도 요격 능력 추가</b>를 목표로 합니다. 2028년 개발 착수 목표로, 2030년대 중반에 한국형 THAAD 포지션을 노립니다. 수출 대상은 탄도탄 위협이 현실적인 중동·동남아 전역입니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z5: 글로벌 방공 경쟁 ═══ -->
+<section id="z5">
+<div class="zone-head"><span class="z-big">05</span>
+  <div class="z-num">SECTION 05</div>
+  <h2>글로벌 방공 경쟁 구도 — 천궁-II의 좌표</h2>
+  <p>패트리어트·THAAD·S-400·SAMP-T·Arrow·천궁-II. 6개 시스템의 비교로 한국의 포지션을 파악합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--steel);--zs:var(--steels)">
+  <div class="f-tag">글로벌 비교</div>
+  <h3>주요 방공 시스템 경쟁 비교표</h3>
+
+  <table>
+    <thead>
+      <tr><th>시스템</th><th>공급국</th><th>층위</th><th>가격</th><th>제약</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>패트리어트 PAC-3</td><td>미국 (레이시온)</td><td>저~중고도</td>
+        <td><span class="tag-ca">고가</span></td>
+        <td>수출 통제·납기 대기</td>
+      </tr>
+      <tr>
+        <td>THAAD</td><td>미국 (록히드)</td><td>고고도</td>
+        <td><span class="tag-dn">초고가</span></td>
+        <td>포대당 30억$+, 개도국 구매 불가</td>
+      </tr>
+      <tr>
+        <td>S-400</td><td>러시아</td><td>중~고고도</td>
+        <td><span class="tag-up">저렴</span></td>
+        <td><b style="color:var(--down)">CAATSA 제재</b> — 서방 동맹국 차단</td>
+      </tr>
+      <tr>
+        <td>SAMP/T (Aster 30)</td><td>프랑스·이탈리아</td><td>중고도</td>
+        <td><span class="tag-ca">고가</span></td>
+        <td>공급 여력 한정, EU 정치 복잡</td>
+      </tr>
+      <tr>
+        <td>Arrow 3</td><td>이스라엘 (IAI)</td><td>최고고도</td>
+        <td><span class="tag-dn">초고가</span></td>
+        <td>이스라엘 수출 심사, 중동 정치</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><b>천궁-II</b></td><td><b>한국 (한화·LIG)</b></td><td><b>중고도</b></td>
+        <td><span class="tag-up">가격 경쟁력</span></td>
+        <td>생산 능력 확대 중</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="analogy"><b>천궁-II의 빈 자리 채우기:</b> S-400 제재로 구매 의향국들이 대안을 찾고 있습니다. 패트리어트는 비싸고 납기 대기 줄이 깁니다. 천궁-II는 "실전 검증됐고, 합리적 가격이며, 미국 제재 우려 없는" 세 가지 조건을 동시에 만족하는 사실상 유일한 선택지입니다.</div>
+
+  <div class="callout callout-green" style="margin-top:20px">
+    <div class="c-head">구조적 수요 — 왜 지금인가</div>
+    <div class="c-body">
+      <b>① 우크라이나 전쟁 교훈</b> — 방공망 없이는 전쟁을 버틸 수 없다는 현실을 전 세계가 목격. NATO 비회원국들의 방공 투자 급증.<br><br>
+      <b>② 중동 긴장 구조화</b> — 이란 탄도미사일 위협이 상시화. UAE, 사우디, 이라크 모두 다층 방공 구축 필요.<br><br>
+      <b>③ 인도-태평양 긴장</b> — 북한 미사일, 중국 위협으로 한국·일본·대만·필리핀·호주 모두 방공 강화 투자 중. 방공 수요의 구조적 성장 국면.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z6: PGM 시장 진입 ═══ -->
+<section id="z6">
+<div class="zone-head"><span class="z-big">06</span>
+  <div class="z-num">SECTION 06</div>
+  <h2>정밀유도 시장 진입 — 4개 영역의 동시 공략</h2>
+  <p>글로벌 PGM 시장은 2025~2030년 연평균 6~8% 성장. 한국이 진입 가능한 4개 영역을 분석합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="f-tag">PGM 시장 진입</div>
+  <h3>한국 정밀유도무기 4대 진입 영역</h3>
+
+  <div class="pgm-grid" style="--zc:var(--accent)">
+    <div class="pgm-card">
+      <div class="p-cat">영역 ①</div>
+      <h4>지대공 미사일</h4>
+      <ul>
+        <li><b>천궁-II</b> 중동 3개국 82.3억$ 확보</li>
+        <li>중동·동남아 추가 수출 협상 진행 중</li>
+        <li>L-SAM 2028 배치 후 수출 가능</li>
+        <li><b>실전 검증</b>으로 경쟁력 급상승</li>
+      </ul>
+    </div>
+    <div class="pgm-card">
+      <div class="p-cat">영역 ②</div>
+      <h4>대전차 미사일</h4>
+      <ul>
+        <li><b>현궁</b> — 국내 7년 1조 원 양산</li>
+        <li>중동 실전 사용 확인 (후티 격퇴)</li>
+        <li>서방 동급 대비 가격 경쟁력 보유</li>
+        <li>천궁-II 고객사 교차 수출 가능</li>
+      </ul>
+    </div>
+    <div class="pgm-card">
+      <div class="p-cat">영역 ③</div>
+      <h4>공대함 유도탄</h4>
+      <ul>
+        <li><b>해성-II</b> 초음속 신형 2024년 공개</li>
+        <li>KF-21, FA-50 연동 공대함 버전 개발 중</li>
+        <li>KF-21 수출 패키지 번들링 전략</li>
+        <li>동남아 해양 분쟁국 수요 집중</li>
+      </ul>
+    </div>
+    <div class="pgm-card">
+      <div class="p-cat">영역 ④</div>
+      <h4>다연장로켓</h4>
+      <ul>
+        <li><b>천무(KTSSM)</b> — 폴란드 5조 원 계약</li>
+        <li>GPS 유도 정밀 타격 가능</li>
+        <li>지상작전 패키지 (K9+천무) 번들</li>
+        <li>중동·동유럽 후속 수출 협상 진행</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">투자자 관점: PGM 4영역 동시 진입의 의미</div>
+    <p>한국이 동시에 4개 PGM 영역에서 수출 실적 또는 유효한 파이프라인을 확보했다는 것은, <b>단일 품목 의존에서 방산 포트폴리오 수출국으로의 전환</b>을 의미합니다. 이스라엘·프랑스 수준의 종합 방산 수출국 지위에 근접하고 있습니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z7: 투자 시사점 ═══ -->
+<section id="z7">
+<div class="zone-head"><span class="z-big">07</span>
+  <div class="z-num">SECTION 07</div>
+  <h2>투자 시사점 — 한화에어로·LIG넥스원 수혜 구조</h2>
+  <p>방공·정밀 테마의 주된 수혜는 두 기업에 집중됩니다. 수혜 구조와 핵심 리스크를 함께 정리합니다.</p>
+</div>
+
+<div class="co-grid" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="co-card">
+    <div class="ticker">012450 · KRX</div>
+    <h4>한화에어로스페이스</h4>
+    <div class="metrics">
+      <div class="m"><div class="mv">천궁-II</div><div class="ml">체계 주관 업체</div></div>
+      <div class="m"><div class="mv">L-SAM</div><div class="ml">양산 주관</div></div>
+      <div class="m"><div class="mv">해성-II</div><div class="ml">공동 개발</div></div>
+      <div class="m"><div class="mv">천무</div><div class="ml">폴란드 5조</div></div>
+    </div>
+    <div class="highlight"><b>방공 테마 최대 수혜.</b> 천궁-II 3개국 82.3억$ + L-SAM 양산 + 장기 MRO 수익. 수출 OPM 20%+ 구간에 진입 중.</div>
+  </div>
+  <div class="co-card">
+    <div class="ticker">079550 · KRX</div>
+    <h4>LIG넥스원 (→LIG D&amp;A)</h4>
+    <div class="metrics">
+      <div class="m"><div class="mv">천궁-II</div><div class="ml">공동 개발·생산</div></div>
+      <div class="m"><div class="mv">현궁</div><div class="ml">핵심 수익 품목</div></div>
+      <div class="m"><div class="mv">해성</div><div class="ml">유도 부문</div></div>
+      <div class="m"><div class="mv">MRO</div><div class="ml">D&amp;A 전략 공식화</div></div>
+    </div>
+    <div class="highlight"><b>MRO 본격화 전환 중.</b> 사명을 'LIG D&amp;A'로 변경, Defense &amp; After-service 전략 공식화. 중동 수주잔고 ~10조 원. 2026년 1Q 영업이익 +56.1% YoY.</div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accs)">
+  <div class="f-tag">수혜 구조</div>
+  <h3>방공·정밀 테마 수혜 흐름 — 단계별 이벤트</h3>
+
+  <table>
+    <thead>
+      <tr><th>단계</th><th>이벤트</th><th>수혜 기업</th><th>규모/시점</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1단계</td><td>천궁-II 중동 3국 납품 진행</td><td>한화에어로 + LIG넥스원</td><td>82.3억$ / 2022~2027</td></tr>
+      <tr><td>2단계</td><td>UAE 실전 요격 → 추가 수출 협상</td><td>한화에어로 + LIG넥스원</td><td>중동 신규 계약 기대</td></tr>
+      <tr><td>3단계</td><td>MRO 계약 체결 시작</td><td>LIG D&amp;A (넥스원) 주도</td><td>41~82억$ / 20~30년</td></tr>
+      <tr><td>4단계</td><td>L-SAM 양산 (2025~)</td><td>한화에어로 주관</td><td>국내 + 수출 2028~</td></tr>
+      <tr><td>5단계</td><td>현궁·해성-II 수출 가시화</td><td>LIG넥스원 (현궁 주력)</td><td>협상 진행 중</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-gold" style="margin-top:20px">
+    <div class="c-head">핵심 리스크 체크리스트</div>
+    <div class="c-body">
+      <b>① 생산 능력 병목</b> — 수주잔고가 빠르게 쌓이지만 납품 속도는 공장 설비에 의존. 인력·설비 확대에 18~24개월 소요 예상.<br><br>
+      <b>② 중동 지정학 변동</b> — UAE·사우디·이라크의 정치적 안정성이 수출 실행에 영향. 이란 핵 협상 타결 시 위협 인식 약화 가능성.<br><br>
+      <b>③ 경쟁 심화</b> — 패트리어트 납기 개선, 유럽 SAMP/T 증산 시 가격 경쟁 격화 가능.<br><br>
+      <b>④ 환율 리스크</b> — 달러 결제 수출이지만 원화 강세 시 원화 환산 영업이익 희석.
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">투자자를 위한 핵심 체크포인트</div>
+    <p>방공·정밀 테마 투자에서 분기마다 확인해야 할 지표: <b>① 천궁-II 납품 누적 포대 수</b> (계획 대비 진도율), <b>② LIG D&amp;A MRO 계약 수주 건수</b> (본격화 시점), <b>③ 중동 신규 수출 협상 공시</b> (파이프라인 가시화), <b>④ L-SAM 양산 계약 금액 공개</b> (2025년 예상).</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z8: 용어 사전 ═══ -->
+<section id="z8">
+<div class="zone-head"><span class="z-big">08</span>
+  <div class="z-num">SECTION 08</div>
+  <h2>용어 사전 — 방공·정밀유도 핵심 22선</h2>
+  <p>방공 시스템과 정밀유도무기를 이해하는 데 꼭 필요한 용어를 정리합니다.</p>
+</div>
+
+<div class="gloss-sec">한국 시스템</div>
+<div class="gloss">
+  <details>
+    <summary>천궁-II (M-SAM)</summary>
+    <div class="g-body">한국형 중거리 지대공 미사일 시스템. <b>M-SAM(Medium-range Surface-to-Air Missile)</b>의 2세대 버전으로, 탄도탄과 항공기를 동시에 요격할 수 있습니다. UAE·사우디·이라크에 82.3억 달러 수출 계약. 2025년 UAE 실전 요격 성과 보고. 주관 업체: 한화에어로스페이스(체계)·LIG넥스원(유도 부문).</div>
+  </details>
+  <details>
+    <summary>L-SAM</summary>
+    <div class="g-body"><b>장거리 지대공 미사일(Long-range Surface-to-Air Missile)</b>. 패트리어트와 THAAD 사이의 중고도 공백을 채우는 한국형 방공 시스템. 2024년 11월 개발 완료, 2025년 양산 착수, 2028년 실전배치 목표. 탄도탄과 항공기를 동시에 요격 가능한 점이 THAAD(탄도탄 전용)와의 핵심 차이.</div>
+  </details>
+  <details>
+    <summary>L-SAM-II</summary>
+    <div class="g-body">L-SAM의 후속 개발 프로그램. 기존 L-SAM 대비 <b>방어 범위 3~4배 향상, 고고도 요격 능력 추가</b>를 목표로 합니다. 2028년 개발 착수 목표. 2030년대 중반에 한국형 THAAD 포지션을 목표로 하며, 탄도탄 위협에 노출된 중동·동남아가 잠재 수출 대상입니다.</div>
+  </details>
+  <details>
+    <summary>현궁</summary>
+    <div class="g-body">LIG넥스원이 개발한 <b>휴대용 대전차 유도미사일</b>. 국내 7년간 1조 원 규모 양산 계획. 중동 분쟁 지역에서 실전 사용이 확인됐으며, 서방 동급 무기 대비 가격 경쟁력이 있어 수출 가시화 단계. 천궁-II 고객사 교차 수출이 유력한 전략.</div>
+  </details>
+  <details>
+    <summary>비궁</summary>
+    <div class="g-body">LIG넥스원의 <b>보병 휴대형 대공 미사일(MANPADS)</b>. 저고도 항공기·헬기·드론을 요격하는 개인 휴대 시스템. 현궁(대전차)과 함께 보병 화력 패키지를 구성합니다. 우크라이나 전쟁 이후 MANPADS 수요가 폭발적으로 증가했습니다.</div>
+  </details>
+  <details>
+    <summary>해성-II</summary>
+    <div class="g-body">한화에어로스페이스·LIG넥스원이 공동 개발한 <b>신형 초음속 대함 유도탄</b>. 2024년 11월 공개. 마하 초과 속도와 고고도-저고도 혼합 비행으로 요격이 어렵습니다. KF-21·FA-50과 연동하는 공대함 버전 개발 중이며, KF-21 수출 패키지 번들링이 핵심 전략입니다.</div>
+  </details>
+</div>
+
+<div class="gloss-sec">글로벌 시스템</div>
+<div class="gloss">
+  <details>
+    <summary>패트리어트 PAC-3</summary>
+    <div class="g-body">미국 레이시온이 개발한 <b>서방 세계 표준 지대공 미사일 시스템</b>. 가장 넓은 운용국을 보유. PAC-3는 직격(hit-to-kill) 방식 요격. 가격이 높고(포대당 약 10억$+) 납기 대기가 길어 천궁-II에 기회를 제공하고 있습니다.</div>
+  </details>
+  <details>
+    <summary>THAAD</summary>
+    <div class="g-body">미국 록히드마틴의 <b>고고도 탄도탄 방어 시스템(Terminal High Altitude Area Defense)</b>. 고고도에서 탄도탄만 요격 가능(항공기 불가). 포대당 30억 달러 이상으로 개도국 구매가 사실상 불가능합니다. 이 가격 공백이 L-SAM의 수출 기회를 만듭니다.</div>
+  </details>
+  <details>
+    <summary>S-400</summary>
+    <div class="g-body">러시아제 장거리 지대공 미사일 시스템. 성능은 우수하나 <b>CAATSA(미국 적성국 제재법)</b>에 의해 러시아 무기 구매국에 미국의 제재가 부과되어, 서방 동맹국은 구매가 사실상 차단됐습니다. S-400을 검토하던 국가들이 천궁-II 등 대안을 찾고 있습니다.</div>
+  </details>
+  <details>
+    <summary>Arrow 3</summary>
+    <div class="g-body">이스라엘 IAI와 미국 보잉이 공동 개발한 <b>최고고도 탄도미사일 방어 시스템</b>. 대기권 밖(외기권)에서 탄도탄을 요격합니다. 독일에 1·2차 합산 66억 달러 수출. 이스라엘 방공 수출 최대 품목으로, 한국 Arrow 3에 상응하는 시스템은 L-SAM-II입니다.</div>
+  </details>
+  <details>
+    <summary>David's Sling</summary>
+    <div class="g-body">이스라엘 라파엘이 개발한 <b>중고도 방공 시스템</b>. 아이언돔(단거리)과 Arrow(고고도) 사이를 커버하는 중간 레이어. 핀란드에 3.9억 달러 수출, 그리스 패키지 딜에 포함(35억$). 이스라엘의 다층 방공 패키지 판매 전략의 핵심 구성 요소입니다.</div>
+  </details>
+  <details>
+    <summary>아이언돔</summary>
+    <div class="g-body">이스라엘 라파엘이 개발한 <b>단거리 로켓·박격포·드론 요격 시스템</b>. 수십~수백km 이내 위협 대응. 이스라엘-하마스 전쟁에서 수천 발 로켓 요격 성공으로 전 세계적 주목. 이스라엘 방산 브랜드의 원천이자, 한국이 복제해야 할 '실전 검증 마케팅'의 교과서입니다.</div>
+  </details>
+  <details>
+    <summary>SAMP/T (Aster 30)</summary>
+    <div class="g-body">프랑스·이탈리아 공동 개발 <b>중고도 지대공 미사일 시스템</b>. Aster 30 미사일 사용. EU 내에서 패트리어트 대안 포지션. 생산 여력이 한정되어 있고 가격도 높습니다.</div>
+  </details>
+</div>
+
+<div class="gloss-sec">방공·정밀유도 개념 용어</div>
+<div class="gloss">
+  <details>
+    <summary>다층 방공 (Multi-layered Air Defense)</summary>
+    <div class="g-body">단거리→중고도→고고도 층위를 각각 다른 시스템으로 동시에 방어하는 전략. 이스라엘의 아이언돔+David's Sling+Arrow 3가 대표 사례. <b>다층 방공 패키지 구매는 계약 규모가 단일 시스템보다 3~5배 크다</b>는 점에서 방산 수출에서 핵심적 개념입니다.</div>
+  </details>
+  <details>
+    <summary>요격 (Intercept)</summary>
+    <div class="g-body">날아오는 미사일·로켓·항공기를 미사일로 맞추어 무력화하는 행위. 직격(hit-to-kill)과 근폭(proximity fuze) 방식으로 나뉩니다. 요격 성공률이 실전 검증의 핵심 지표이며, 방공 시스템의 수출 가격과 직결됩니다.</div>
+  </details>
+  <details>
+    <summary>실전 검증 (Combat Proven)</summary>
+    <div class="g-body">실제 전투 상황에서 성능이 입증된 무기를 지칭하는 마케팅 개념. 카탈로그 수치와 달리 <b>실제 전쟁에서 성능을 입증한 무기는 구매자의 신뢰도가 비약적으로 높아집니다.</b> 이스라엘 방산의 핵심 브랜드 자산이었으며, 2025년 UAE 요격 사례로 한국도 이 범주에 진입했습니다.</div>
+  </details>
+  <details>
+    <summary>탄도탄 (Ballistic Missile)</summary>
+    <div class="g-body">발사 후 포물선 궤도를 따라 날아가는 미사일. 대기권 밖을 비행하는 단계가 있어 요격이 어렵습니다. 북한, 이란, 예멘(후티) 등의 위협으로 중동·동아시아 국가들이 탄도탄 방어 투자를 빠르게 확대하고 있습니다.</div>
+  </details>
+  <details>
+    <summary>PGM (Precision Guided Munition)</summary>
+    <div class="g-body"><b>정밀유도무기</b>. GPS·레이더·적외선 등을 이용해 목표물을 정밀 타격하는 무기의 총칭. 현궁(대전차), 해성(대함), 천궁(지대공), 천무(다연장)가 모두 PGM 범주에 속합니다. 2025~2030년 연평균 6~8% 성장이 전망되는 고성장 시장입니다.</div>
+  </details>
+  <details>
+    <summary>MANPADS</summary>
+    <div class="g-body"><b>Man-Portable Air Defense System</b>. 보병 1~2인이 어깨에 메고 사용하는 휴대용 대공 미사일. 비궁이 한국형 MANPADS입니다. 저고도 항공기·헬기·드론을 요격하며, 우크라이나 전쟁에서 스팅어 미사일로 대규모 사용되면서 수요가 급증했습니다.</div>
+  </details>
+  <details>
+    <summary>MRO 연금화</summary>
+    <div class="g-body"><b>유지·보수·정비(Maintenance, Repair &amp; Overhaul)</b> 계약을 통해 장기적 수익을 확보하는 전략. 무기 본체를 판매한 후 20~30년 운용 기간 동안 부품·업그레이드·교육 계약을 지속 체결합니다. 이스라엘 방산이 이 모델로 안정적 고수익을 유지하고 있습니다. <b>LIG넥스원이 사명을 LIG D&amp;A(Defense &amp; After-service)로 바꾼 것은 이 전략을 공식화한 것입니다.</b></div>
+  </details>
+  <details>
+    <summary>포대 (Battery)</summary>
+    <div class="g-body">방공 미사일 시스템의 운용 단위. 일반적으로 지휘통제차량, 레이더, 발사대(복수), 탄약으로 구성됩니다. 천궁-II는 포대당 수억 달러 규모이며, UAE·사우디에 각 10개 포대씩 계약되어 대규모 계약이 성사됐습니다.</div>
+  </details>
+</div>
+
+<div class="disclaimer">
+  <b>투자 유의사항:</b> 본 페이지의 내용은 공개된 뉴스·공시·연구자료를 바탕으로 작성된 리서치 참고자료이며, 금융투자상품에 대한 투자 권유나 매수·매도 추천이 아닙니다. 방산 수출 일정·금액은 계약 구조에 따라 변동될 수 있으며, 실전 요격 관련 보도는 미공식 채널을 통한 것으로 공식 확인이 필요합니다. 모든 투자 결정은 본인의 판단과 책임 하에 이루어져야 합니다.
+</div>
+
+<div class="series-nav">
+  <a href="k_defense_theme_engine.html">
+    <div class="sn-label">이전 테마</div>
+    Module A — 엔진·추진<br>국산화의 역전
+  </a>
+  <a href="k_defense_theme_unmanned.html" class="next">
+    <div class="sn-label">다음 테마</div>
+    Module C — 무인화·드론<br>전장의 게임체인저
+  </a>
+</div>
+
+<footer>
+  <p>K-방산 심화 테마 시리즈 &middot; Module B &middot; 방공·정밀 &middot; 2026.06</p>
+  <p style="margin-top:4px">자료 기준일: 2026년 6월 &middot; 본 자료는 투자 권유가 아닙니다</p>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+// ── 스크롤 진행 바 ──
+(function(){
+  var prog = document.getElementById('prog');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    prog.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
+})();
+
+// ── IntersectionObserver: .floor 스크롤 리빌 ──
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.floor').forEach(function(el){ io.observe(el); });
+})();
+
+// ── 스무스 스크롤 (nav 앵커) ──
+document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var target = document.querySelector(a.getAttribute('href'));
+    if(target){
+      var offset = target.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>

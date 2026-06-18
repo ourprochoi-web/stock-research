@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIG넥스원 심층 분석 — 미사일이 만드는 연금 · K-방산 Part 4</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f0ede7; --card:#ffffff; --line:#d8dbd1; --note:#ebe8e0; --chip-bg:#e4e6dc;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--up),var(--gold),var(--up));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(240,237,231,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover{border-color:var(--up);color:var(--up)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#091510 0%,#0d1f17 35%,#0a1c14 65%,#0c1f22 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.4;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 48px,rgba(29,122,89,.09) 48px 49px),
+    repeating-linear-gradient(90deg,transparent 0 48px,rgba(29,122,89,.09) 48px 49px);
+  pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(9,21,16,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:78px 20px 40px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#5dd6a3;font-weight:800}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 15%,#7fe0ba 45%,#fff 75%,#7fe0ba 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#8ab8a4;max-width:630px;margin:0 auto;font-size:16px;line-height:1.75}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.4vw,27px);font-weight:900;color:#7fe0ba;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#6a9e8c;margin-top:5px;line-height:1.45}
+.hero-prop{max-width:660px;margin:32px auto 0}
+.hero-prop .hpl{font-size:11px;color:#5a9e85;letter-spacing:.13em;font-weight:700;margin-bottom:10px;text-align:left}
+.pb-track{display:flex;height:28px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,.06)}
+.pb-seg{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;letter-spacing:.02em;transition:width 1.2s cubic-bezier(.2,.8,.3,1)}
+.pb-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.pb-legend span{font-size:11.5px;color:#6a9e8c;display:flex;align-items:center;gap:5px}
+.pb-legend .dot{width:8px;height:8px;border-radius:50%;flex:none}
+
+/* ═══ LAYOUT ═══ */
+section{padding-top:8px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--up));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.22)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--up));background:var(--zs,var(--ups));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* ═══ TABLE ═══ */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+
+/* ═══ FACTS ═══ */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--ups));border:1px solid color-mix(in srgb,var(--zc,var(--up)) 20%,white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,22px);font-weight:900;color:var(--zc,var(--up));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* ═══ RISK ═══ */
+.risk-list{display:grid;gap:14px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--up)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.08em}
+.risk h4{font-size:15.5px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.8px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* ═══ MATRIX ═══ */
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:560px){.matrix{grid-template-columns:1fr}}
+.mx-cell{border-radius:16px;padding:20px;border:1px solid}
+.mx-cell h4{font-size:15.5px;font-weight:900;margin-bottom:10px}
+.mx-cell .mx-tag{font-size:10px;font-weight:800;padding:2px 8px;border-radius:6px;color:#fff;margin-right:6px}
+.mx-cell ul{list-style:none}
+.mx-cell li{font-size:13.5px;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08);color:var(--sub)}
+.mx-cell li:last-child{border-bottom:none}
+.mx-cell li b{color:var(--ink)}
+.mx-green{background:var(--ups);border-color:#a9d6c3}
+.mx-green h4{color:var(--up)}
+.mx-green .mx-tag{background:var(--up)}
+.mx-red{background:var(--downs);border-color:#e0b0a5}
+.mx-red h4{color:var(--down)}
+.mx-red .mx-tag{background:var(--down)}
+
+/* ═══ CALLOUT ═══ */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-gold .c-head{background:var(--gold)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+.callout-teal .c-head{background:#1d7a59}
+
+/* ═══ INVESTOR VIEW ═══ */
+.view{margin-top:16px;border:1.5px dashed var(--gold-line);background:var(--golds);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a7a4c;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5b5236}
+
+/* ═══ TIMELINE ═══ */
+.tl{position:relative;margin:20px 0 6px;padding-left:28px}
+.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--up);border:2px solid var(--bg)}
+.tl-item.hl::before{background:var(--gold);box-shadow:0 0 0 4px rgba(199,154,47,.2)}
+.tl-item .ty{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em}
+.tl-item .tt{font-size:14.5px;font-weight:800;color:var(--ink)}
+.tl-item .td{font-size:13px;color:var(--sub);margin-top:2px;line-height:1.6}
+
+/* ═══ DEAL CARDS ═══ */
+.deal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:560px){.deal-row{grid-template-columns:1fr}}
+.deal-card{border-radius:16px;padding:18px 14px;text-align:center;position:relative;overflow:hidden}
+.deal-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.deal-card.uae{background:linear-gradient(160deg,#e8f7f2,#f0fbf7);border:1px solid #b8e0cf}
+.deal-card.uae::after{background:var(--up)}
+.deal-card.saudi{background:linear-gradient(160deg,#f7f0db,#faf5e8);border:1px solid var(--gold-line)}
+.deal-card.saudi::after{background:var(--gold)}
+.deal-card.iraq{background:linear-gradient(160deg,#e7eef7,#eef3fb);border:1px solid #c2d0e3}
+.deal-card.iraq::after{background:var(--blue)}
+.deal-card .dc-flag{font-size:26px;margin-bottom:8px}
+.deal-card .dc-country{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--faint);margin-bottom:4px}
+.deal-card .dc-amount{font-size:clamp(19px,4vw,25px);font-weight:900;letter-spacing:-.02em;margin-bottom:6px}
+.deal-card.uae .dc-amount{color:var(--up)}
+.deal-card.saudi .dc-amount{color:var(--gold)}
+.deal-card.iraq .dc-amount{color:var(--blue)}
+.deal-card .dc-note{font-size:11.5px;color:var(--sub);line-height:1.5}
+
+/* ═══ WEAPON GRID ═══ */
+.weapon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
+@media(max-width:580px){.weapon-grid{grid-template-columns:1fr}}
+.wcard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc,var(--up));border-radius:14px;padding:14px 16px;position:relative}
+.wcard .wname{font-size:15px;font-weight:900;margin-bottom:2px}
+.wcard .wtype{font-size:11px;font-weight:700;color:var(--faint);letter-spacing:.07em;margin-bottom:8px}
+.wcard .wstats{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.wcard .ws{background:var(--zs,var(--ups));border-radius:6px;padding:3px 8px;font-size:11px;font-weight:800;color:var(--zc,var(--up))}
+.wcard .wnote{font-size:12.5px;color:var(--sub);line-height:1.55}
+.wcard .badge{position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:999px;letter-spacing:.05em}
+.badge-ex{background:var(--ups);color:var(--up)}
+.badge-dev{background:var(--blues);color:var(--blue)}
+.badge-dom{background:var(--steels);color:var(--steel)}
+.badge-hot{background:#fff0e0;color:#c97520}
+
+/* ═══ MRO FUNNEL ═══ */
+.funnel{display:flex;flex-direction:column;gap:6px;align-items:center;margin:22px 0}
+.funnel-step{border-radius:10px;padding:14px 20px;text-align:center;width:100%;max-width:520px;transition:transform .2s}
+.funnel-step:hover{transform:translateY(-2px)}
+.funnel-step .fs-label{font-size:11px;font-weight:800;letter-spacing:.1em;margin-bottom:4px;opacity:.75}
+.funnel-step .fs-val{font-size:20px;font-weight:900;letter-spacing:-.02em}
+.funnel-step .fs-note{font-size:11.5px;margin-top:3px;opacity:.8}
+.fs1{background:linear-gradient(90deg,#0a1510,#0e2018);color:#7fe0ba;width:100%}
+.fs2{background:linear-gradient(90deg,var(--up),#25a077);color:#fff;width:88%}
+.fs3{background:linear-gradient(90deg,#0f6b4a,var(--up));color:#fff;width:76%}
+.fs4{background:linear-gradient(90deg,var(--gold),#d4aa3f);color:#fff;width:64%}
+.funnel-arrow{font-size:18px;color:var(--faint);margin:-2px 0}
+
+/* ═══ BAR CHART ═══ */
+.bar-chart{display:grid;gap:12px;margin:18px 0}
+.bc-row{display:grid;grid-template-columns:76px 1fr 72px;gap:10px;align-items:center}
+.bc-yr{font-size:12px;font-weight:800;color:var(--faint)}
+.bc-track{background:color-mix(in srgb,var(--zc,var(--up)) 10%,white);border-radius:6px;height:26px;overflow:hidden}
+.bc-fill{height:100%;border-radius:6px;background:var(--zc,var(--up));transition:width 1.4s cubic-bezier(.2,.8,.3,1);width:0%;display:flex;align-items:center;padding-left:10px}
+.bc-fill span{font-size:11px;font-weight:800;color:#fff;white-space:nowrap}
+.bc-val{font-size:13px;font-weight:800;color:var(--ink);text-align:right}
+
+/* ═══ OPM BARS ═══ */
+.opm-grid{display:grid;gap:10px;margin:18px 0}
+.opm-row{display:grid;grid-template-columns:120px 1fr 60px;gap:10px;align-items:center}
+.opm-label{font-size:12px;font-weight:800;color:var(--sub)}
+.opm-track{background:color-mix(in srgb,var(--zc,var(--up)) 10%,white);border-radius:6px;height:22px;overflow:hidden}
+.opm-fill{height:100%;border-radius:6px;background:var(--zc,var(--up));transition:width 1.4s cubic-bezier(.2,.8,.3,1);width:0%}
+.opm-pct{font-size:12.5px;font-weight:900;text-align:right}
+
+/* ═══ OVERVIEW GRID ═══ */
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:560px){.ov-grid{grid-template-columns:1fr}}
+.ov-item{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px}
+.ov-item .oi-label{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em;margin-bottom:5px}
+.ov-item .oi-val{font-size:15px;font-weight:900;color:var(--ink);line-height:1.35}
+.ov-item .oi-sub{font-size:12px;color:var(--sub);margin-top:4px}
+
+/* ═══ HIGHLIGHT BOX ═══ */
+.hbox{background:linear-gradient(135deg,#0d1f17,#163124);border-radius:16px;padding:22px;margin:20px 0;color:#e0f7ee}
+.hbox .hb-label{font-size:11px;font-weight:800;letter-spacing:.18em;color:#5fcba0;margin-bottom:8px}
+.hbox .hb-title{font-size:19px;font-weight:900;color:#b8f0da;letter-spacing:-.02em;margin-bottom:8px}
+.hbox .hb-body{font-size:14px;color:#8dd4b8;line-height:1.75}
+.hbox .hb-body b{color:#e0f7ee}
+
+/* ═══ ANALOGY ═══ */
+.analogy{background:linear-gradient(100deg,var(--ups),#d0eee3);border-left:4px solid var(--up);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#1a4a35}
+.analogy b{color:#0d3224}
+
+/* ═══ GLOSSARY ═══ */
+.gloss{display:grid;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:16px}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* ═══ MISC ═══ */
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px;flex-wrap:wrap}
+.series-nav a{flex:1;min-width:150px;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--up);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}.stats .stat:last-child{grid-column:1/-1}.floor{padding:22px 18px}}
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+</head>
+<body>
+
+<!-- Home Button -->
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid #d8dbd1;border-radius:999px;color:#3c5167;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='#1d7a59'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='#d8dbd1'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 SERIES · PART 4 · 기업 Deep-dive · 2026.06</div>
+    <h1>미사일이 만드는 연금<br>— LIG넥스원</h1>
+    <p class="lede">국내 유도무기 독보적 1위. 천궁-II가 이란 공습을 실전 요격한 날, 중동 수주잔고 10.2조원은 새로운 의미를 갖게 됐습니다. 수주잔고 26.2조, MRO 연금화까지 — 구조를 분해합니다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n" data-count="43069" data-suf="억">0</div>
+        <div class="l">2025년 매출<br>(YoY +31.5%)</div>
+      </div>
+      <div class="stat">
+        <div class="n" data-count="262" data-suf="천억" data-pre="26.">26.0</div>
+        <div class="l">수주잔고<br>(매출의 6.1배)</div>
+      </div>
+      <div class="stat">
+        <div class="n" data-count="20" data-suf="%+">0</div>
+        <div class="l">중동 수출 마진<br>(천궁-II 기준)</div>
+      </div>
+    </div>
+    <div class="hero-prop" id="propbar">
+      <div class="hpl">수주잔고 구성 — 26.2조원</div>
+      <div class="pb-track">
+        <div class="pb-seg" style="background:#1d7a59" data-w="39">중동 39%</div>
+        <div class="pb-seg" style="background:#37588a" data-w="14">기타수출 14%</div>
+        <div class="pb-seg" style="background:#3c5167" data-w="47">내수 47%</div>
+      </div>
+      <div class="pb-legend">
+        <span><span class="dot" style="background:#1d7a59"></span>중동 천궁-II 10.2조</span>
+        <span><span class="dot" style="background:#37588a"></span>기타 수출 ~3.8조</span>
+        <span><span class="dot" style="background:#3c5167"></span>내수 ~12.2조</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#z1">I 기업 개요</a>
+  <a href="#z2">II 재무 분석</a>
+  <a href="#z3">III 천궁-II 사업</a>
+  <a href="#z4">IV MRO 전략</a>
+  <a href="#z5">V 무기 파이프라인</a>
+  <a href="#z6">VI 촉매 &amp; 리스크</a>
+  <a href="#z7">VII 용어사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══ Z1: 기업 개요 ═══ -->
+<section id="z1">
+<div class="zone-head"><span class="z-big">01</span>
+  <div class="z-num" style="color:var(--up)">SECTION 01</div>
+  <h2>기업 개요 — 유도무기의 독점 공급자</h2>
+  <p>LIG넥스원(079550)은 국내 유도무기 분야 독보적 1위입니다. 천궁-II·L-SAM·현궁·해성·해궁·청상어까지 거의 모든 유도무기 체계를 단독 보유합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+  <div class="f-tag">Company Profile</div>
+  <h3>LIG넥스원 (LIG D&amp;A)</h3>
+  <div class="meta">코스피 079550 · 2026년 3월 사명 변경 추진 · 방산업 불가결 노드</div>
+
+  <div class="ov-grid">
+    <div class="ov-item">
+      <div class="oi-label">포지셔닝</div>
+      <div class="oi-val">유도무기 체계주관사 독점</div>
+      <div class="oi-sub">천궁-II·L-SAM·해궁 등 전 계층 방공 포트폴리오</div>
+    </div>
+    <div class="ov-item">
+      <div class="oi-label">사명 변경</div>
+      <div class="oi-val">LIG D&amp;A</div>
+      <div class="oi-sub">Defence &amp; Aerospace — MRO·디지털 방산 확장 신호</div>
+    </div>
+    <div class="ov-item">
+      <div class="oi-label">수주잔고 (2025년 말)</div>
+      <div class="oi-val">26조 2,300억원</div>
+      <div class="oi-sub">수출 53% · 내수 47% — 수출 비중 빠르게 확대 중</div>
+    </div>
+    <div class="ov-item">
+      <div class="oi-label">불가결 노드</div>
+      <div class="oi-val">국내 대안 없음</div>
+      <div class="oi-sub">유도무기 전 체계를 단일 기업이 보유하는 국가는 극소수</div>
+    </div>
+    <div class="ov-item">
+      <div class="oi-label">사업목적 변경 (2025.09)</div>
+      <div class="oi-val">MRO 사업화 준비</div>
+      <div class="oi-sub">'제조·판매'에서 '가공·조립·재생·개조·정비·개량·판매'로</div>
+    </div>
+    <div class="ov-item">
+      <div class="oi-label">ITAR 적용 여부</div>
+      <div class="oi-val">非해당 품목 다수</div>
+      <div class="oi-sub">비궁 등 수출 시 미국 승인 불필요 → 수출 자유도 높음</div>
+    </div>
+  </div>
+
+  <div class="hbox">
+    <div class="hb-label">핵심 경쟁력</div>
+    <div class="hb-title">국내에서 대체 불가능한 유일한 유도무기 체계종합사</div>
+    <div class="hb-body">
+      천궁-II(중고도 방공), L-SAM(고고도), 현궁(대전차), 해성(함대함), 해궁(함대공), 청상어(경어뢰)까지 — <b>방공·대전차·대함·대잠 전 영역</b>을 단 하나의 기업이 커버합니다. 국내에서 LIG넥스원이 없으면 방공망 자체가 성립하지 않습니다. 이 "불가결 노드" 지위가 협상력과 수익성의 구조적 기반입니다.
+    </div>
+  </div>
+
+  <div class="analogy"><b>쉬운 비유:</b> LIG넥스원은 아파트 단지의 유일한 엘리베이터 제조·유지업체와 같습니다. 한 번 설치하면 30년간 정비 계약이 자동으로 따라오고, 다른 업체로 바꾸는 비용이 너무 높아 경쟁이 사실상 불가능합니다.</div>
+</div>
+</section>
+
+<!-- ═══ Z2: 재무 분석 ═══ -->
+<section id="z2">
+<div class="zone-head"><span class="z-big">02</span>
+  <div class="z-num" style="color:var(--gold)">SECTION 02</div>
+  <h2>재무 분석 — 이익 구조의 전환점</h2>
+  <p>매출 +31.5%, 영업이익 +44.5%. 1Q26 영업이익 +56.1% YoY. 수출 비중 증가로 레버리지가 본격화됩니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--gold);--zs:var(--golds)">
+  <div class="f-tag">3개년 실적</div>
+  <h3>매출 · 영업이익 · OPM 추이</h3>
+
+  <table>
+    <tr><th>구분</th><th>2023년</th><th>2024년</th><th>2025년</th><th>YoY</th></tr>
+    <tr><td>매출액 (억원)</td><td>~25,000</td><td>32,763</td><td style="font-weight:900;color:var(--gold)">43,069</td><td><span class="tag-up">+31.5%</span></td></tr>
+    <tr><td>영업이익 (억원)</td><td>~1,540</td><td>2,234</td><td style="font-weight:900;color:var(--gold)">3,229</td><td><span class="tag-up">+44.5%</span></td></tr>
+    <tr><td>영업이익률 (OPM)</td><td>~6.2%</td><td>6.8%</td><td style="font-weight:900;color:var(--gold)">7.5%</td><td><span class="tag-up">+0.7%p</span></td></tr>
+    <tr><td>수출 비중</td><td>~10%</td><td>~15%</td><td style="font-weight:900;color:var(--gold)">21.4%</td><td><span class="tag-up">급등</span></td></tr>
+  </table>
+
+  <div class="bar-chart" style="--zc:var(--gold)" id="finbars">
+    <div class="bc-row">
+      <div class="bc-yr">2023</div>
+      <div class="bc-track"><div class="bc-fill" data-pct="58"><span>~25,000억</span></div></div>
+      <div class="bc-val">25,000</div>
+    </div>
+    <div class="bc-row">
+      <div class="bc-yr">2024</div>
+      <div class="bc-track"><div class="bc-fill" data-pct="76"><span>32,763억</span></div></div>
+      <div class="bc-val">32,763</div>
+    </div>
+    <div class="bc-row">
+      <div class="bc-yr">2025</div>
+      <div class="bc-track"><div class="bc-fill" data-pct="100"><span>43,069억</span></div></div>
+      <div class="bc-val">43,069</div>
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+  <div class="f-tag">2026년 전망</div>
+  <h3>1Q26 +56.1% — 가속화 확인</h3>
+
+  <div class="facts" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="fact"><div class="n">+56.1%</div><div class="l">1Q26 영업이익<br>YoY 증가율</div></div>
+    <div class="fact"><div class="n">8.1%</div><div class="l">2026E OPM<br>(컨센서스)</div></div>
+    <div class="fact"><div class="n">80배</div><div class="l">현재 PER<br>(빅4 중 최고)</div></div>
+  </div>
+
+  <div class="opm-grid" id="opmbars">
+    <div class="opm-row" style="--zc:var(--steel)">
+      <div class="opm-label">2024 OPM</div>
+      <div class="opm-track"><div class="opm-fill" data-pct="68"></div></div>
+      <div class="opm-pct" style="color:var(--steel)">6.8%</div>
+    </div>
+    <div class="opm-row" style="--zc:var(--up)">
+      <div class="opm-label">2025 OPM</div>
+      <div class="opm-track"><div class="opm-fill" data-pct="75"></div></div>
+      <div class="opm-pct" style="color:var(--up)">7.5%</div>
+    </div>
+    <div class="opm-row" style="--zc:var(--gold)">
+      <div class="opm-label">2026E OPM</div>
+      <div class="opm-track"><div class="opm-fill" data-pct="81"></div></div>
+      <div class="opm-pct" style="color:var(--gold)">8.1%</div>
+    </div>
+    <div class="opm-row" style="--zc:var(--up)">
+      <div class="opm-label">중동 수출</div>
+      <div class="opm-track"><div class="opm-fill" data-pct="100"></div></div>
+      <div class="opm-pct" style="color:var(--up)">20%+</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold" style="margin-top:16px">
+    <div class="c-head">PER 80배 — 비싼가, 합리적인가?</div>
+    <div class="c-body">
+      LIG넥스원 PER 80배는 빅4 중 단연 최고입니다. 그러나 다음 맥락에서 해석이 필요합니다.<br><br>
+      <b>1. 이익 급증 가시성:</b> 수주잔고 26.2조원은 연매출의 6.1배. 중동 납품이 본격화되는 2026~2028년 이익 급증이 이미 예약된 상태입니다.<br>
+      <b>2. MRO 연금 미반영:</b> 중동 10.2조원 계약 기준 MRO는 추가 4~5조원. 현재 주가에 MRO 수익은 거의 반영되지 않았습니다.<br>
+      <b>3. 비궁 미국 수출 옵션성:</b> 수출 협상 성사 시 밸류에이션 재평가 트리거입니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z3: 천궁-II 사업 ═══ -->
+<section id="z3">
+<div class="zone-head"><span class="z-big">03</span>
+  <div class="z-num" style="color:var(--up)">SECTION 03</div>
+  <h2>천궁-II 중동 사업 — 실전 검증의 프리미엄</h2>
+  <p>UAE 21.9억$, 사우디 32.5억$, 이라크 27.9억$ — 3국 합산 82.3억 달러(약 10.2조원). 천궁-II는 미사일이 아닌 30년 연금입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+  <div class="f-tag">중동 3국 계약</div>
+  <h3>천궁-II (M-SAM) 수출 현황</h3>
+
+  <div class="deal-row">
+    <div class="deal-card uae">
+      <div class="dc-flag">🇦🇪</div>
+      <div class="dc-country">UAE · 아랍에미리트</div>
+      <div class="dc-amount">3.5조원+</div>
+      <div class="dc-note">2025년 매출 인식 본격화. 이란 공습 실전 요격 성공 후 MRO 협상 진행</div>
+    </div>
+    <div class="deal-card saudi">
+      <div class="dc-flag">🇸🇦</div>
+      <div class="dc-country">사우디아라비아</div>
+      <div class="dc-amount">4.3조원</div>
+      <div class="dc-note">2026년부터 매출 반영 본격화. 3국 중 최대 단일 계약</div>
+    </div>
+    <div class="deal-card iraq">
+      <div class="dc-flag">🇮🇶</div>
+      <div class="dc-country">이라크</div>
+      <div class="dc-amount">3.7조원</div>
+      <div class="dc-note">2026년 이후 매출 반영. 추가 수주 협상 병행 중</div>
+    </div>
+  </div>
+
+  <div class="facts" style="--zc:var(--up);--zs:var(--ups);margin-top:4px">
+    <div class="fact"><div class="n">10.2조</div><div class="l">중동 수주잔고 합계<br>(전체의 39%)</div></div>
+    <div class="fact"><div class="n">82.3억$</div><div class="l">3국 합산<br>달러 기준</div></div>
+    <div class="fact"><div class="n">39%</div><div class="l">전체 수주잔고 중<br>중동 비중</div></div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+  <div class="f-tag">실전 검증</div>
+  <h3>이란 공습 요격 성공 — 게임 체인저</h3>
+
+  <div class="hbox" style="background:linear-gradient(135deg,#220e0e,#3d1212)">
+    <div class="hb-label" style="color:#f5a89a">실전 검증 이벤트</div>
+    <div class="hb-title" style="color:#ffd5d0">천궁-II, 이란 공습을 실전 방어 (2026년)</div>
+    <div class="hb-body" style="color:#e8b8b0">
+      UAE에 납품된 천궁-II가 이란의 실제 공습을 성공적으로 요격했습니다. 전 세계 방공 시스템 구매 담당자들이 가장 중시하는 <b>"실전 검증"</b>을 완수한 것입니다. 미국 패트리엇(PAC-3)이 실전 검증에 수십 년이 걸린 것과 달리, 천궁-II는 도입 직후 실전에서 성능을 입증했습니다. 이 사건 이후 중동 지역 천궁-II 추가 수주 문의가 급증했습니다.
+    </div>
+  </div>
+
+  <div class="callout callout-teal">
+    <div class="c-head">실전 검증이 협상력에 미치는 영향</div>
+    <div class="c-body">
+      무기 시장에서 "실전검증(Combat-proven)"은 협상력을 구조적으로 바꿉니다. 이스라엘 Elbit Systems가 높은 마진을 유지하는 핵심 이유가 실전 검증 프리미엄입니다. 천궁-II가 이 지위를 획득함으로써, <b>① 가격 할인 없이도 계약 체결 가능, ② 중동 외 지역 신규 고객 접근성 대폭 확대, ③ 기존 계약국 MRO 업그레이드 협상력 강화</b>라는 세 가지 효과가 동시에 발생합니다.
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+  <div class="f-tag">수주잔고 분해</div>
+  <h3>26.2조원 구조 분석</h3>
+
+  <table>
+    <tr><th>구분</th><th>규모</th><th>비중</th><th>비고</th></tr>
+    <tr><td>전체 수주잔고</td><td style="font-weight:900;font-size:15px">26조 2,300억</td><td>100%</td><td>연매출 4.3조 대비 <b>약 6.1배</b></td></tr>
+    <tr><td>수출 사업</td><td style="font-weight:900;color:var(--up)">~14조원</td><td><span class="tag-up">53%</span></td><td>중동향 중심, 마진 20%+</td></tr>
+    <tr><td>내수 사업</td><td style="font-weight:900;color:var(--blue)">~12조원</td><td><span class="tag-bl">47%</span></td><td>L-SAM 양산, 국내 방공 등</td></tr>
+    <tr><td>중동 천궁-II</td><td style="font-weight:900;color:var(--gold)">~10.2조원</td><td><span class="tag-ca">39%</span></td><td>UAE + 사우디 + 이라크 합산</td></tr>
+  </table>
+
+  <div class="analogy"><b>쉬운 비유:</b> 수주잔고 26.2조원은 "이미 분양 완판된 아파트 단지"입니다. 공사(생산)만 마치면 자동으로 매출이 인식됩니다. 연매출 대비 6.1배라는 것은 지금 당장 신규 수주가 없어도 <b>2030년까지 일감이 확보</b>된 상태입니다.</div>
+</div>
+</section>
+
+<!-- ═══ Z4: MRO 전략 ═══ -->
+<section id="z4">
+<div class="zone-head"><span class="z-big">04</span>
+  <div class="z-num" style="color:var(--gold)">SECTION 04</div>
+  <h2>MRO 전략 — 미사일이 만드는 30년 연금</h2>
+  <p>무기 구매가는 전체 비용의 30~40%에 불과합니다. 나머지 60~70%(LCC)는 30년간 MRO에서 발생합니다. 중동 10.2조원이 종점이 아닌 시작점인 이유입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--gold);--zs:var(--golds)">
+  <div class="f-tag">LCC 구조</div>
+  <h3>전수명주기비용(LCC) — 천궁-II 기준</h3>
+
+  <div class="funnel" id="mrofunnel">
+    <div class="funnel-step fs1">
+      <div class="fs-label">전체 LCC (30년 수명 기준)</div>
+      <div class="fs-val">~20조원 (중동 3국 추산)</div>
+      <div class="fs-note">구매 + 운용 + 정비 + 성능개량 전체</div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step fs2">
+      <div class="fs-label">구매 단가 (LCC의 30~40%)</div>
+      <div class="fs-val">10.2조원 (기확보 수주잔고)</div>
+      <div class="fs-note">현재 수주잔고에 반영된 금액</div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step fs3">
+      <div class="fs-label">MRO 추정 (LCC의 60~70%)</div>
+      <div class="fs-val">4~5조원 추가 시장</div>
+      <div class="fs-note">현재 주가에 거의 미반영 — 30년에 걸쳐 발생</div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step fs4">
+      <div class="fs-label">사명 변경 + 사업목적 확장으로 포착</div>
+      <div class="fs-val">LIG D&amp;A MRO 사업화</div>
+      <div class="fs-note">2025.09 사업목적에 '정비·개량' 추가 완료</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold" style="margin-top:18px">
+    <div class="c-head">MRO가 구조적으로 중요한 3가지 이유</div>
+    <div class="c-body">
+      <b>1. 전환 비용(Switching Cost):</b> 무기 체계를 도입하면 30년간 동일 제조사에 의존하게 됩니다. UAE가 다른 업체에 MRO를 맡기려면 전체 체계를 교체해야 하므로 사실상 불가능합니다.<br><br>
+      <b>2. 고마진 구조:</b> MRO는 신규 제작 대비 원가 구조가 다릅니다. 부품 수급·기술 독점으로 이익률이 납품 마진보다 높습니다.<br><br>
+      <b>3. 예측 가능한 현금흐름:</b> MRO는 연간 계약 구조로 운영되어, 변동성이 큰 신규 수주와 달리 안정적 반복 매출을 형성합니다.
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+  <div class="f-tag">사명 변경의 의미</div>
+  <h3>LIG D&amp;A — 단순한 브랜딩이 아닙니다</h3>
+
+  <div class="tl">
+    <div class="tl-item">
+      <div class="ty">2025년 9월</div>
+      <div class="tt">사업목적 변경 완료</div>
+      <div class="td">'제조·판매'에서 '가공·조립·재생·개조·정비·개량·판매'로 확장. MRO를 공식 사업으로 등록.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">2026년 3월</div>
+      <div class="tt">사명 변경 추진: LIG D&amp;A</div>
+      <div class="td">Defence &amp; Aerospace. 유도무기 제조사에서 방산 서비스 복합기업으로 정체성 전환 선언.</div>
+    </div>
+    <div class="tl-item hl">
+      <div class="ty">2026~2028 (진행 중)</div>
+      <div class="tt">중동 MRO 계약 본격화 예상</div>
+      <div class="td">UAE 천궁-II 납품 완료 후 MRO 계약 전환. 사우디·이라크 순차 진행 예정.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">2030년대</div>
+      <div class="tt">MRO 연금 구조 완성</div>
+      <div class="td">3국 MRO 동시 운용 시 연간 수천억원 규모의 반복 매출 형성 가능.</div>
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">투자 시사점</div>
+    <p>현재 주가(PER 80배)는 수주잔고 26.2조원의 납품 이익 기대치를 상당 부분 반영합니다. 그러나 <b>MRO 연금(4~5조원 추가 시장)과 비궁 미국 수출 옵션</b>은 아직 본격적으로 반영되지 않았습니다. 2027~2028년 MRO 계약이 공식화될 경우 이익 예측 모델이 상향 조정될 가능성이 있습니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z5: 무기 파이프라인 ═══ -->
+<section id="z5">
+<div class="zone-head"><span class="z-big">05</span>
+  <div class="z-num" style="color:var(--blue)">SECTION 05</div>
+  <h2>무기 포트폴리오 &amp; 파이프라인</h2>
+  <p>천궁-II 외에도 방공·대전차·대함·대잠 전 영역을 커버합니다. 비궁 미국 수출과 해궁 말레이시아 수출이 차기 성장 촉매입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+  <div class="f-tag">전체 포트폴리오</div>
+  <h3>유도무기 체계 현황</h3>
+
+  <table>
+    <tr><th>체계</th><th>유형</th><th>사거리/고도</th><th>수출 현황</th></tr>
+    <tr><td>천궁-II (M-SAM)</td><td>중고도 방공</td><td>40km / 15~20km</td><td><span class="tag-up">수출 중</span> UAE·사우디·이라크</td></tr>
+    <tr><td>L-SAM</td><td>고고도 방공<br>(한국형 패트리엇+)</td><td>100km+</td><td><span class="tag-ca">양산 개시</span> 2025.11 1,639억 계약</td></tr>
+    <tr><td>신궁</td><td>휴대용 대공 (MANPADS)</td><td>7km</td><td><span class="tag-up">수출 완료</span> 다수국</td></tr>
+    <tr><td>현궁</td><td>보병 대전차 (K-ATGM)</td><td>2.5km</td><td><span class="tag-ca">협상 중</span> 국내 + 수출</td></tr>
+    <tr><td>비궁</td><td>경량 대전차</td><td>ITAR 非해당</td><td><span class="tag-ca">협상 중</span> 미국 수출 2026년</td></tr>
+    <tr><td>해궁</td><td>함대공 미사일</td><td>KDX-III 탑재</td><td><span class="tag-up">계약</span> 말레이시아 1,400억원</td></tr>
+    <tr><td>해성</td><td>함대함 미사일</td><td>150km</td><td><span class="tag-bl">국내 양산</span></td></tr>
+    <tr><td>청상어 / 범상어</td><td>경어뢰 / 중어뢰</td><td>대잠 특화</td><td><span class="tag-bl">국내 양산</span></td></tr>
+  </table>
+</div>
+
+<div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+  <div class="f-tag">무기 카드</div>
+  <h3>주요 체계 상세</h3>
+
+  <div class="weapon-grid" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="wcard">
+      <span class="badge badge-ex">수출 중</span>
+      <div class="wname">천궁-II (M-SAM)</div>
+      <div class="wtype">중고도 지대공 미사일</div>
+      <div class="wstats"><span class="ws">사거리 40km</span><span class="ws">고도 15~20km</span></div>
+      <div class="wnote">UAE·사우디·이라크 수출. 이란 공습 실전 요격 성공. 2026년부터 사우디·이라크 매출 본격 반영.</div>
+    </div>
+    <div class="wcard">
+      <span class="badge badge-dev">양산 개시</span>
+      <div class="wname">L-SAM</div>
+      <div class="wtype">고고도 장거리 방공</div>
+      <div class="wstats"><span class="ws">사거리 100km+</span><span class="ws">패트리엇+ 수준</span></div>
+      <div class="wnote">2025년 11월 1,639억원 양산 계약. 국내 전력화 후 중동 수출 검토 예상.</div>
+    </div>
+    <div class="wcard">
+      <span class="badge badge-hot">협상 핵심</span>
+      <div class="wname">비궁</div>
+      <div class="wtype">경량 휴대용 대전차</div>
+      <div class="wstats"><span class="ws">ITAR 非해당</span><span class="ws">미국 협상 중</span></div>
+      <div class="wnote">2026년 미국 수출 협상 진행 중. 성사 시 밸류에이션 재평가 트리거.</div>
+    </div>
+    <div class="wcard">
+      <span class="badge badge-ex">계약 체결</span>
+      <div class="wname">해궁</div>
+      <div class="wtype">함대공 미사일</div>
+      <div class="wstats"><span class="ws">KDX-III 탑재</span><span class="ws">말레이시아</span></div>
+      <div class="wnote">말레이시아 수출 1,400억원. 아세안 함정 방공 수요 확대에 따른 추가 수주 기대.</div>
+    </div>
+    <div class="wcard">
+      <span class="badge badge-dev">협상 중</span>
+      <div class="wname">현궁</div>
+      <div class="wtype">보병 대전차 유도무기</div>
+      <div class="wstats"><span class="ws">사거리 2.5km</span><span class="ws">K-ATGM</span></div>
+      <div class="wnote">국내 전력화 완료. 우크라이나 전쟁 이후 대전차 수요 급증으로 수출 잠재력 보유.</div>
+    </div>
+    <div class="wcard">
+      <span class="badge badge-dom">국내 양산</span>
+      <div class="wname">청상어 / 범상어</div>
+      <div class="wtype">경어뢰 / 중어뢰</div>
+      <div class="wstats"><span class="ws">대잠 특화</span><span class="ws">잠수함 연동</span></div>
+      <div class="wnote">국내 잠수함·구축함 탑재. 한화오션 잠수함 수출 확대 시 동반 수출 기회.</div>
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--caution);--zs:var(--cautions)">
+  <div class="f-tag">비궁 핵심 분석</div>
+  <h3>비궁 미국 수출 — 숨겨진 옵션</h3>
+
+  <div class="callout callout-gold">
+    <div class="c-head">비궁이 특별한 이유</div>
+    <div class="c-body">
+      비궁은 LIG넥스원 무기 포트폴리오 중 <b>ITAR 적용을 받지 않는</b> 핵심 품목입니다. 한국 방산 수출의 최대 병목 중 하나가 ITAR인데, 비궁은 이 장벽이 없습니다.<br><br>
+      <b>미국 수출 협상 배경:</b> 미 육군이 보병급 대전차 화기 현대화 추진 중. 현재 Javelin(레이시온)이 주력이나 공급 부족. 비궁이 보완재로 채택될 경우 <b>미국 시장 진입이라는 상징적·실질적 밸류에이션 이벤트</b>가 됩니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z6: 촉매 & 리스크 ═══ -->
+<section id="z6">
+<div class="zone-head"><span class="z-big">06</span>
+  <div class="z-num" style="color:var(--down)">SECTION 06</div>
+  <h2>핵심 촉매 &amp; 리스크</h2>
+  <p>PER 80배의 주가는 많은 기대를 이미 반영합니다. 무엇이 추가 상승을 이끌고, 무엇이 하방 리스크가 될지 분석합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+  <div class="f-tag">성장 촉매</div>
+  <h3>주가 재평가를 이끌 5대 트리거</h3>
+
+  <table>
+    <tr><th>촉매</th><th>내용</th><th>시기</th><th>영향</th></tr>
+    <tr>
+      <td>중동 MRO 계약</td>
+      <td>UAE 납품 후 첫 MRO 계약 체결</td>
+      <td>2027~2028E</td>
+      <td><span class="tag-up">밸류 상향</span></td>
+    </tr>
+    <tr>
+      <td>비궁 미국 수출</td>
+      <td>ITAR 非해당 — 미국 시장 진입</td>
+      <td>2026~2027E</td>
+      <td><span class="tag-up">재평가</span></td>
+    </tr>
+    <tr>
+      <td>천궁-II 추가 수주</td>
+      <td>제4~5국 중동·아시아 계약</td>
+      <td>2026~2027E</td>
+      <td><span class="tag-up">잔고 30조+</span></td>
+    </tr>
+    <tr>
+      <td>L-SAM 해외 수출</td>
+      <td>패트리엇 대체 후보, 중동·유럽</td>
+      <td>2027~2028E</td>
+      <td><span class="tag-ca">잠재적</span></td>
+    </tr>
+    <tr>
+      <td>OPM 두 자릿수</td>
+      <td>수출 비중 30%+ 전환 시</td>
+      <td>2027~2029E</td>
+      <td><span class="tag-ca">이익 급증</span></td>
+    </tr>
+  </table>
+</div>
+
+<div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+  <div class="f-tag">리스크 분석</div>
+  <h3>하방 요인 — 정직한 평가</h3>
+
+  <div class="risk-list">
+    <div class="risk">
+      <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+      <div>
+        <h4>PER 80배 — 고밸류의 양날</h4>
+        <div class="rdesc">현재 주가는 <b>향후 3~5년간의 이익 급증을 이미 상당 부분 반영</b>합니다. 납품 지연, MRO 계약 지체, 이익 증가 속도 미달 시 밸류에이션 압축(디레이팅) 위험이 높습니다.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+      <div>
+        <h4>중동 편중 지정학 리스크</h4>
+        <div class="rdesc">수출 수주잔고의 73%(UAE+사우디+이라크)가 중동 집중. <b>이란-이스라엘 확전, 사우디-이란 관계 급변, 이라크 내정 불안</b> 등 지역 정세 악화 시 납기 차질 및 계약 지연 가능.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+      <div>
+        <h4>생산 병목 — 수요 따라가기</h4>
+        <div class="rdesc">수주잔고 급증 대비 생산 능력 확장이 문제입니다. <b>유도무기는 반도체·첨단 소재 집약적</b>으로 증설에 수 년이 소요됩니다. 납기 지연이 고객 신뢰와 추가 수주에 영향을 미칩니다.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+      <div>
+        <h4>국내 물량 비중 (47%) 마진 희석</h4>
+        <div class="rdesc">수주잔고의 47%는 내수. 국내 방산은 원가 기반 계약(OPM 2~5%)으로 <b>전사 OPM 개선 속도를 제약</b>합니다. 내수 비중이 줄어드는 속도가 기대치보다 느릴 경우 이익률 개선 실망감이 발생할 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix">
+    <div class="mx-cell mx-green">
+      <h4><span class="mx-tag">강점 · 기회</span></h4>
+      <ul>
+        <li><b>불가결 노드:</b> 국내 대안 없는 독점적 지위</li>
+        <li><b>실전 검증:</b> 이란 공습 요격 → 협상력 급상승</li>
+        <li><b>MRO 연금:</b> 10.2조 계약 → 추가 4~5조원 예약</li>
+        <li><b>ITAR 자유:</b> 비궁 등 독립적 수출 가능</li>
+        <li><b>L-SAM 옵션:</b> 패트리엇 대체재 포지션 가능</li>
+      </ul>
+    </div>
+    <div class="mx-cell mx-red">
+      <h4><span class="mx-tag">약점 · 리스크</span></h4>
+      <ul>
+        <li><b>PER 80배:</b> 기대 미달 시 밸류 압축 구간</li>
+        <li><b>중동 편중:</b> 수출잔고 73% 집중 → 지정학 취약</li>
+        <li><b>생산 병목:</b> 수주 증가 대비 CAPA 제약</li>
+        <li><b>OPM 7.5%:</b> 한화에어로 지상방산(20%)과 격차</li>
+        <li><b>내수 비중:</b> 47%가 저마진 국내 물량</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z7: 용어사전 ═══ -->
+<section id="z7">
+<div class="zone-head"><span class="z-big">07</span>
+  <div class="z-num" style="color:var(--faint)">GLOSSARY</div>
+  <h2>용어사전</h2>
+  <p>LIG넥스원 분석에 등장하는 방산·투자 핵심 용어 해설.</p>
+</div>
+
+<div class="gloss-sec">무기체계 용어</div>
+<div class="gloss">
+  <details><summary>천궁-II (M-SAM)</summary><div class="g-body"><b>Medium-range Surface-to-Air Missile.</b> LIG넥스원이 개발한 중고도 지대공 미사일 체계. 사거리 40~50km, 요격 고도 15~20km. 패트리엇(PAC-2/3)과 유사한 성능을 약 30~40% 저렴한 가격에 제공. 2026년 UAE에서 이란 공습을 실전 방어하며 글로벌 신뢰도 급상승. 중동 3국 수출 계약 합산 10.2조원.</div></details>
+  <details><summary>L-SAM (장거리 지대공 미사일)</summary><div class="g-body"><b>Long-range Surface-to-Air Missile.</b> 천궁-II보다 상위 계층. 사거리 100km+, 고고도 방공 담당. 미국 패트리엇 PAC-3 MSE와 유사한 포지션. 2025년 11월 1,639억원 양산 계약 체결. 향후 중동 수출 후보 품목.</div></details>
+  <details><summary>비궁</summary><div class="g-body">LIG넥스원의 경량 보병 대전차 유도무기. <b>ITAR(미국 무기거래규정) 非해당</b> 품목으로 수출 시 미국 승인 불필요. 2026년 미국 수출 협상 진행 중. 성사 시 밸류에이션 재평가 트리거.</div></details>
+  <details><summary>해궁</summary><div class="g-body">함정 탑재용 지대공 미사일(함대공). 한국 해군 KDX-III(이지스 구축함) 등에 탑재. 말레이시아 수출 계약 1,400억원. 아세안 지역 함정 방공 수요 확대로 추가 수출 잠재력.</div></details>
+  <details><summary>현궁 (K-ATGM)</summary><div class="g-body">한국형 보병 대전차 유도무기. 사거리 2.5km. 발사 후 망각(Fire &amp; Forget) 방식. K-ATGM은 'Korean Anti-Tank Guided Missile'의 약자. 국내 배치 완료 후 수출 협상 중.</div></details>
+  <details><summary>신궁 (MANPADS)</summary><div class="g-body">보병 1~2명이 어깨에 메고 발사하는 휴대용 대공 미사일. 사거리 7km. 저고도 드론 격추에도 활용. 다수 국가 수출 완료.</div></details>
+  <details><summary>유도무기 (Guided Weapon)</summary><div class="g-body">발사 후 목표를 추적·유도하는 미사일·어뢰·폭탄의 총칭. <b>탐색기(Seeker) + 유도컴퓨터 + 조종날개</b>를 갖춰 정밀 타격 가능. LIG넥스원은 지대공·함대함·함대공·대전차·대잠 전 영역 독점 체계를 보유.</div></details>
+  <details><summary>체계주관사</summary><div class="g-body">무기 체계 전체를 총괄하는 방산 기업. 단순 부품 공급이 아니라 <b>체계 통합·시험·양산·수출을 책임</b>지는 최상위 계약자. LIG넥스원은 천궁-II, L-SAM 등의 체계주관사로 하위 협력업체를 관리하고 정부와 직접 계약.</div></details>
+  <details><summary>요격체 (Interceptor)</summary><div class="g-body">미사일을 격추하는 미사일. 천궁-II의 핵심 소모품. 실전 교전 증가 → 요격체 소모 → 재보급 수주 → 추가 매출의 순환 구조가 MRO 연금의 일부입니다.</div></details>
+  <details><summary>TEL (발사대)</summary><div class="g-body"><b>Transporter Erector Launcher.</b> 미사일을 운반·기립·발사하는 이동식 차량. 천궁-II 한 배터리(포대)는 교전통제소(ECS) + 레이더 + 다수의 TEL로 구성. 계약에는 TEL·레이더·통신장비 전체가 포함되므로 단가가 높습니다.</div></details>
+  <details><summary>교전통제소 (ECS)</summary><div class="g-body"><b>Engagement Control Station.</b> 방공 포대의 두뇌. 레이더로 탐지한 표적을 분석하고 요격체를 지정하는 지휘통제 시스템. 소프트웨어 업그레이드 계약이 장기 MRO의 핵심 항목입니다.</div></details>
+</div>
+
+<div class="gloss-sec">재무·투자 용어</div>
+<div class="gloss">
+  <details><summary>MRO (정비·수리·운용지원)</summary><div class="g-body"><b>Maintenance, Repair, Overhaul.</b> 무기 납품 후 20~30년간 받는 정비·부품·소프트웨어 업그레이드·성능개량 계약. 전체 수명주기비용(LCC)의 <b>60~70%</b>가 MRO에서 발생. 천궁-II 중동 10.2조원 납품가 기준 추가 MRO 시장 4~5조원으로 추산.</div></details>
+  <details><summary>LCC (전수명주기비용)</summary><div class="g-body"><b>Life Cycle Cost.</b> 무기 도입(30~40%) + 운용·정비(60~70%)의 전체 비용. MRO가 "30년 연금"이 되는 구조적 이유.</div></details>
+  <details><summary>PER (주가수익비율)</summary><div class="g-body"><b>Price-to-Earnings Ratio.</b> 주가 ÷ 주당순이익. LIG넥스원 PER 80배는 빅4 중 최고. 이익이 빠르게 증가할 것이라는 기대가 반영된 수치. 이익 증가 속도가 기대에 못 미치면 밸류에이션 압축(디레이팅) 위험.</div></details>
+  <details><summary>OPM (영업이익률)</summary><div class="g-body"><b>Operating Profit Margin.</b> 영업이익 ÷ 매출. LIG넥스원 OPM 7.5%는 국내 방산(2~5%)보다 높지만 한화에어로스페이스 지상방산(20%)보다 낮음. 수출 비중 확대 시 구조적 상승 가능.</div></details>
+  <details><summary>수주잔고 (Order Backlog)</summary><div class="g-body">계약 체결 후 <b>아직 납품하지 않은 금액의 합계.</b> LIG넥스원 26.2조원은 연매출 4.3조원의 약 6.1배. 방산 투자 분석의 가장 중요한 선행 지표.</div></details>
+  <details><summary>ITAR (국제무기거래규정)</summary><div class="g-body"><b>International Traffic in Arms Regulations.</b> 미국산 부품이 포함된 무기를 제3국에 수출할 때 미국 국무부 허가 필요. KF-21(GE 엔진)은 ITAR 적용. LIG넥스원 비궁은 ITAR 非해당으로 <b>수출 시 미국 승인 불필요</b> → 수출 자유도 높음.</div></details>
+  <details><summary>불가결 노드 (Indispensable Node)</summary><div class="g-body">해당 기업 없이는 방위 체계 자체가 성립하지 않는 위치. LIG넥스원은 국내 유도무기 전 영역의 체계주관사로, <b>대체 공급자가 국내에 존재하지 않습니다.</b> 이 지위는 가격 협상력과 생존 확실성을 보장하며 장기 투자 근거가 됩니다.</div></details>
+</div>
+</section>
+
+<!-- ═══ 시리즈 네비게이션 ═══ -->
+<div class="series-nav">
+  <a href="k_defense_investment_map.html">
+    <div class="sn-label">← PART 3</div>
+    방산주 투자 지도
+  </a>
+  <a href="k_defense_company_hyundai_rotem.html">
+    <div class="sn-label">← PART 4-2</div>
+    현대로템 심층 분석
+  </a>
+  <a href="k_defense_company_kai.html" style="text-align:right">
+    <div class="sn-label">PART 4-4 →</div>
+    KAI 심층 분석
+  </a>
+</div>
+
+<div class="disclaimer">
+  <b>면책 조항</b><br>
+  본 문서는 공개된 뉴스·증권사 리포트·공시를 기반으로 작성된 <b>투자 참고 자료</b>입니다. 특정 종목의 매수·매도를 권유하지 않으며, 투자 결정은 공식 공시 및 전문 투자 자문을 통해 이루어져야 합니다. 수치는 2026년 6월 기준이며 시장 상황에 따라 변동될 수 있습니다. 계약 규모 일부는 언론 보도 기준의 추정치를 포함합니다.<br><br>
+  분석 기준일: 2026년 6월 19일 · 데이터 출처: 각사 공시·IR·증권사 리포트·방사청 발표·보도
+</div>
+
+<footer>K-방산 시리즈 Part 4 · LIG넥스원 심층 분석 · 2026.06 · Deep Research Archive</footer>
+
+</div><!-- .wrap -->
+
+<script>
+/* ═══ Progress Bar ═══ */
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (window.scrollY / h * 100) + '%';
+}, {passive: true});
+
+/* ═══ Scroll Reveal ═══ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.10 });
+document.querySelectorAll('.floor').forEach(el => io.observe(el));
+
+/* ═══ Count-Up ═══ */
+function countUp(el) {
+  const target = +el.dataset.count;
+  const pre = el.dataset.pre || '';
+  const suf = el.dataset.suf || '';
+  // For large numbers, show abbreviated
+  const isLarge = target > 999;
+  const duration = 1300;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = Math.round(target * ease);
+    el.textContent = pre + (isLarge ? val.toLocaleString() : val) + suf;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+/* ═══ Proportion Bar Animation ═══ */
+const pbIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.pb-seg').forEach(seg => {
+        const w = seg.dataset.w;
+        seg.style.width = '0%';
+        requestAnimationFrame(() => { setTimeout(() => { seg.style.width = w + '%'; }, 60); });
+      });
+      pbIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const pb = document.getElementById('propbar');
+if (pb) pbIO.observe(pb);
+
+/* ═══ Finance Bar Animation ═══ */
+const fbIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.bc-fill').forEach((bar, i) => {
+        bar.style.width = '0%';
+        setTimeout(() => { bar.style.width = bar.dataset.pct + '%'; }, i * 120);
+      });
+      fbIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+const fb = document.getElementById('finbars');
+if (fb) fbIO.observe(fb);
+
+/* ═══ OPM Bar Animation ═══ */
+const ombIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.opm-fill').forEach((bar, i) => {
+        bar.style.width = '0%';
+        setTimeout(() => { bar.style.width = bar.dataset.pct + '%'; }, i * 130);
+      });
+      ombIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+const omb = document.getElementById('opmbars');
+if (omb) ombIO.observe(omb);
+
+/* ═══ MRO Funnel Stagger ═══ */
+const mroIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.funnel-step').forEach((step, i) => {
+        step.style.opacity = '0';
+        step.style.transform = 'translateY(16px)';
+        setTimeout(() => {
+          step.style.transition = 'opacity .5s ease, transform .5s ease';
+          step.style.opacity = '1';
+          step.style.transform = 'none';
+        }, i * 180);
+      });
+      mroIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+const mf = document.getElementById('mrofunnel');
+if (mf) mroIO.observe(mf);
+
+/* ═══ Deal Card Animation ═══ */
+const dealIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.deal-card').forEach((c, i) => {
+        c.style.opacity = '0';
+        c.style.transform = 'scale(0.94)';
+        setTimeout(() => {
+          c.style.transition = 'opacity .4s cubic-bezier(.2,.8,.3,1), transform .4s cubic-bezier(.2,.8,.3,1)';
+          c.style.opacity = '1';
+          c.style.transform = 'scale(1)';
+        }, i * 110);
+      });
+      dealIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.deal-row').forEach(row => dealIO.observe(row));
+
+/* ═══ Weapon Card Hover ═══ */
+document.querySelectorAll('.wcard').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'translateY(-3px)';
+    card.style.boxShadow = '0 8px 24px -8px rgba(29,122,89,.25)';
+    card.style.transition = 'all .2s ease';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.boxShadow = '';
+  });
+});
+
+/* ═══ Smooth Nav Scroll ═══ */
+document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-방산 심화 테마 H — 현지화·생태계 수출</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f0ece7; --card:#ffffff; --line:#d8d0c8; --note:#ece8e1; --chip-bg:#e4ddd5;
+  --terra:#b85c38; --terras:#f5ede8; --terra-line:#ddb09a;
+  --terra-dk:#8c3e22; --terra-lt:#d4875e;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--terra),#d4875e,var(--terra-dk),var(--terra));background-size:200% 100%;width:0%;z-index:99;transition:width .15s;animation:shimmer 4s linear infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+nav{position:sticky;top:0;background:rgba(240,236,231,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover{border-color:var(--terra);color:var(--terra)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#1e150d 0%,#2a1a0e 35%,#1a120a 65%,#0e1219 100%);color:#eef0f2;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.4;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(184,92,56,.08) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(184,92,56,.08) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,rgba(30,21,13,.85),transparent);pointer-events:none}
+/* floating orbs */
+.hero-shell .orb1{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle, rgba(184,92,56,.18) 0%, transparent 70%);top:-100px;right:-80px;pointer-events:none}
+.hero-shell .orb2{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle, rgba(212,135,94,.12) 0%, transparent 70%);bottom:20px;left:-60px;pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:74px 20px 36px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--terra-lt);font-weight:800}
+.hero h1{font-size:clamp(28px,6.8vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1.18;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 10%,#dba590 45%,#e8c4b5 60%,#fff 90%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa0aa;max-width:620px;margin:0 auto;font-size:16px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+@media(max-width:500px){.stats{grid-template-columns:1fr;gap:10px}}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.2vw,26px);font-weight:900;color:#dba590;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#8a9099;margin-top:5px;line-height:1.45}
+
+/* ═══ STAGE BAR ═══ */
+.stage-bar{max-width:660px;margin:32px auto 0;position:relative}
+.sb-label{font-size:11px;color:#7a8090;letter-spacing:.12em;font-weight:700;margin-bottom:10px;text-align:left}
+.sb-track{display:flex;height:34px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.06)}
+.sb-seg{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;letter-spacing:.02em;transition:width 1.2s cubic-bezier(.2,.8,.3,1);padding:0 4px;text-align:center;line-height:1.2}
+.sb-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.sb-legend span{font-size:11.5px;color:#8a9099;display:flex;align-items:center;gap:5px}
+.sb-legend .dot{width:8px;height:8px;border-radius:50%;flex:none}
+
+/* ═══ SECTIONS ═══ */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em}
+.zone-head h2{font-size:clamp(22px,5vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--terra));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.2)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--terra));background:var(--zs,var(--terras));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:21px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* ═══ DATA TABLE ═══ */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+tr:nth-child(even){background:#faf9f7}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+.tag-tr{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--terras);color:var(--terra)}
+
+/* ═══ FACT GRID ═══ */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--terras));border:1px solid color-mix(in srgb, var(--zc,var(--terra)) 20%, white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(14px,3.5vw,21px);font-weight:900;color:var(--zc,var(--terra));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* ═══ STAGE CARDS ═══ */
+.stage-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:580px){.stage-grid{grid-template-columns:1fr}}
+.stage-card{border-radius:16px;padding:20px;border:1px solid}
+.stage-card .sc-num{font-size:11px;font-weight:800;letter-spacing:.14em;margin-bottom:6px}
+.stage-card h4{font-size:16px;font-weight:900;margin-bottom:10px;letter-spacing:-.01em}
+.stage-card ul{list-style:none}
+.stage-card li{font-size:13.2px;padding:4px 0;border-bottom:1px dashed rgba(0,0,0,.07);color:var(--sub)}
+.stage-card li:last-child{border-bottom:none}
+.stage-card li b{color:var(--ink)}
+.sc-1{background:#f5f0eb;border-color:#d8cfc4}.sc-1 .sc-num,.sc-1 h4{color:#7a6a5a}
+.sc-2{background:var(--cautions);border-color:#e0c080}.sc-2 .sc-num,.sc-2 h4{color:var(--caution)}
+.sc-3{background:var(--blues);border-color:#b0c4de}.sc-3 .sc-num,.sc-3 h4{color:var(--blue)}
+.sc-4{background:var(--terras);border-color:var(--terra-line)}.sc-4 .sc-num,.sc-4 h4{color:var(--terra-dk)}
+
+/* ═══ COMPETITOR MATRIX ═══ */
+.comp-matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:600px){.comp-matrix{grid-template-columns:1fr}}
+.comp-card{border-radius:16px;padding:20px 18px;border:1px solid}
+.comp-card .cc-flag{font-size:24px;margin-bottom:8px}
+.comp-card h4{font-size:16px;font-weight:900;margin-bottom:4px}
+.comp-card .cc-sub{font-size:11.5px;color:var(--faint);margin-bottom:12px;font-weight:700;letter-spacing:.06em}
+.comp-card ul{list-style:none}
+.comp-card li{font-size:12.5px;color:var(--sub);padding:3px 0;border-bottom:1px dashed rgba(0,0,0,.07)}
+.comp-card li:last-child{border-bottom:none}
+.comp-card li b{color:var(--ink)}
+.comp-card .cc-str{margin-top:10px;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;line-height:1.5}
+.cc-kor{background:var(--terras);border-color:var(--terra-line)}.cc-kor h4{color:var(--terra-dk)}.cc-kor .cc-str{background:rgba(184,92,56,.12);color:var(--terra-dk)}
+.cc-tur{background:var(--cautions);border-color:#e0c080}.cc-tur h4{color:var(--caution)}.cc-tur .cc-str{background:rgba(179,128,31,.12);color:var(--caution)}
+.cc-isr{background:var(--blues);border-color:#b0c4de}.cc-isr h4{color:var(--blue)}.cc-isr .cc-str{background:rgba(55,88,138,.12);color:var(--blue)}
+
+/* ═══ CALLOUT ═══ */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-terra .c-head{background:var(--terra)}
+.callout-gold .c-head{background:var(--gold)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+
+/* ═══ TIMELINE ═══ */
+.tl{position:relative;margin:20px 0 6px;padding-left:28px}
+.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, var(--terra), var(--terra-lt))}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--terra);border:2px solid var(--bg)}
+.tl-item.active::before{background:var(--up);box-shadow:0 0 0 4px rgba(29,122,89,.2)}
+.tl-item.future::before{background:var(--faint);border-style:dashed}
+.tl-item .ty{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em}
+.tl-item .tt{font-size:14.5px;font-weight:800;color:var(--ink)}
+.tl-item .td{font-size:13px;color:var(--sub);margin-top:2px;line-height:1.6}
+
+/* ═══ RISK / IMPORTANCE LIST ═══ */
+.risk-list{display:grid;gap:14px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--up)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.08em}
+.risk h4{font-size:15.5px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.8px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* ═══ INVESTOR VIEW ═══ */
+.view{margin-top:16px;border:1.5px dashed var(--terra-line);background:var(--terras);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8c5038;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5c3826;line-height:1.7}
+
+/* ═══ ANALOGY / HIGHLIGHT ═══ */
+.analogy{background:linear-gradient(100deg,#f5ede8,#f0e5de);border-left:4px solid var(--terra);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#5c3522}
+.analogy b{color:#3d2010}
+.highlight-box{background:linear-gradient(100deg,#f9f5f0,#f5f0ea);border:1px solid var(--terra-line);border-radius:14px;padding:16px 20px;margin:16px 0;font-size:15px;color:var(--sub);line-height:1.8}
+.highlight-box b{color:var(--ink)}
+
+/* ═══ PROGRESS / BAR ═══ */
+.bar-item{margin:10px 0}
+.bar-item .bi-label{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:5px}
+.bar-item .bi-track{height:10px;background:var(--note);border-radius:99px;overflow:hidden}
+.bar-item .bi-fill{height:100%;border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.3,1);width:0}
+
+/* ═══ GLOSSARY ═══ */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px;transition:box-shadow .2s}
+.gloss details[open]{box-shadow:0 4px 16px rgba(184,92,56,.1);border-color:var(--terra-line)}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px}
+.gloss details[open] summary::after{content:'−'}
+.gloss details[open] summary{color:var(--terra)}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.75}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* ═══ MISC ═══ */
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px;padding-bottom:20px}
+.badge{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:6px;letter-spacing:.04em;vertical-align:middle}
+.badge-terra{background:var(--terras);color:var(--terra-dk)}
+.badge-gold{background:var(--golds);color:#7a5a10}
+.badge-new{background:var(--ups);color:var(--up)}
+.kv-row{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start;font-size:14px;margin:8px 0}
+.kv-row .kv-k{font-weight:800;color:var(--ink);white-space:nowrap}
+.kv-row .kv-v{color:var(--sub)}
+
+@media(max-width:600px){
+  .floor{padding:20px 16px}
+  .stage-grid,.comp-matrix{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+}
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+</head>
+<body>
+
+<!-- HOME BUTTON -->
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--terra)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell" id="hero">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="hero">
+    <div class="eyebrow">K-DEFENSE SERIES · 심화 테마 H · 현지화·생태계 수출 · 2026.06</div>
+    <h1>완제품에서 생태계로<br>K-방산의 현지화 전략</h1>
+    <p class="lede">단순 납품을 넘어 — 공장, 기술이전, MRO, 훈련까지 패키지화하는 K-방산 수출 진화의 현재와 투자 좌표</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">65%</div>
+        <div class="l">EU SAFE 역내부품 요건<br>(유럽의회 70% 추진)</div>
+      </div>
+      <div class="stat">
+        <div class="n">$35B</div>
+        <div class="l">한-UAE 방산산업협력 MOU<br>(2026.3 체결)</div>
+      </div>
+      <div class="stat">
+        <div class="n">2026.2</div>
+        <div class="l">루마니아 H-ACE 유럽공장<br>착공 — 현지화율 80% 목표</div>
+      </div>
+    </div>
+    <!-- Stage Evolution Bar -->
+    <div class="stage-bar floor" style="background:transparent;border:none;padding:0;border-top:none;border-radius:0">
+      <div class="sb-label">K-방산 수출 진화 단계</div>
+      <div class="sb-track" id="stagebar">
+        <div class="sb-seg" style="width:20%;background:#5a4a3a" data-w="20">Stage 1<br>완제품</div>
+        <div class="sb-seg" style="width:22%;background:#8c6040" data-w="22">Stage 2<br>기술이전</div>
+        <div class="sb-seg" style="width:28%;background:var(--terra)" data-w="28">Stage 3<br>현지생산</div>
+        <div class="sb-seg" style="width:30%;background:var(--terra-dk)" data-w="30">Stage 4<br>생태계 수출</div>
+      </div>
+      <div class="sb-legend">
+        <span><span class="dot" style="background:#5a4a3a"></span>완제품 납품 (FMF·G2G)</span>
+        <span><span class="dot" style="background:#8c6040"></span>Offset·기술이전 포함</span>
+        <span><span class="dot" style="background:var(--terra)"></span>합작공장·현지생산</span>
+        <span><span class="dot" style="background:var(--terra-dk)"></span>MRO+탄약+훈련 패키지</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav>
+  <a href="#z1">Ⅰ EU SAFE</a>
+  <a href="#z2">Ⅱ 루마니아 공장</a>
+  <a href="#z3">Ⅲ 폴란드 K2PL</a>
+  <a href="#z4">Ⅳ UAE MOU</a>
+  <a href="#z5">Ⅴ 경쟁국 비교</a>
+  <a href="#z6">Ⅵ 생태계 전환</a>
+  <a href="#z7">Ⅶ 리스크</a>
+  <a href="#z8">Ⅷ 시리즈 총정리</a>
+  <a href="#z9">용어사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══ Z1: EU SAFE ═══ -->
+<section id="z1">
+<div class="zone-head"><span class="z-big">01</span>
+  <div class="z-num" style="color:var(--terra)">SECTION 01</div>
+  <h2>EU SAFE와 Buy European — 현지화의 강제력</h2>
+  <p>유럽이 1,500억유로 방산 펀드에 '역내부품 65% 이상'을 조건으로 달았습니다. 한국 방산이 유럽 공공조달 자금을 쓰려면 현지공장이 필수입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--terra);--zs:var(--terras)">
+  <div class="f-tag">SAFE · 2025.5 EU 이사회 채택</div>
+  <h3>Security Action for Europe — 핵심 구조</h3>
+  <div class="meta">1,500억유로 방산 공동구매 펀드 | 2025년 5월 27일 EU 이사회 최종 채택</div>
+
+  <div class="facts" style="--zc:var(--terra);--zs:var(--terras)">
+    <div class="fact"><div class="n">€1,500억</div><div class="l">SAFE 총 예산<br>(방산 공동구매 펀드)</div></div>
+    <div class="fact"><div class="n">65%</div><div class="l">EU·EEA·우크라이나<br>역내부품 비중 요건</div></div>
+    <div class="fact"><div class="n">€15억</div><div class="l">EDIP — SAFE 파일럿<br>프로그램 예산</div></div>
+  </div>
+
+  <p class="body">SAFE는 단순 보조금이 아닌 <b>공동구매 기금</b>입니다. EU 회원국이 이 자금을 활용해 무기를 구매하려면 계약 품목의 <b>부품 65% 이상이 EU·EEA 또는 우크라이나 원산지</b>여야 합니다. VAT 면제 혜택도 동일한 요건에 연동됩니다.</p>
+
+  <table>
+    <tr><th>구분</th><th>규모</th><th>역내비율 요건</th><th>상태</th></tr>
+    <tr><td>SAFE</td><td>€1,500억</td><td><b style="color:var(--terra)">65%</b> (이사회 안)</td><td><span class="tag-up">2025.5 채택</span></td></tr>
+    <tr><td>EDIP (파일럿)</td><td>€15억</td><td><b style="color:var(--down)">70%</b> (유럽의회 추진)</td><td><span class="tag-ca">협의중</span></td></tr>
+    <tr><td>VAT 면제</td><td>-</td><td>65% 연동</td><td><span class="tag-up">적용</span></td></tr>
+    <tr><td>한국산 K9·K2</td><td>EU 역내 생산無</td><td>현재 0%</td><td><span class="tag-dn">SAFE 자금 불가</span></td></tr>
+  </table>
+
+  <div class="callout callout-terra" style="margin-top:20px">
+    <div class="c-head">한국에 대한 시사점</div>
+    <div class="c-body">
+      루마니아·폴란드 현지공장이 <b>EU 역내 생산 거점</b>으로 기능해야만 SAFE 자금 혜택을 받을 수 있습니다. 현지화율 <b>65~70% 달성이 유럽 시장 접근의 전제조건</b>이 된 셈입니다.<br><br>
+      유럽의회는 이 기준을 <b>70%로 강화</b>하는 방향으로 움직이고 있어, 한국 방산기업의 현지화 속도가 향후 유럽 수주 규모를 직접 결정합니다.
+    </div>
+  </div>
+
+  <div class="analogy"><b>쉬운 비유:</b> SAFE는 마치 "이 쿠폰은 국산 식재료 65% 이상 쓴 음식점에서만 사용 가능"한 상품권입니다. 루마니아·폴란드 공장은 K-방산이 이 쿠폰을 쓸 수 있게 해주는 '인증 주방'입니다.</div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR ANGLE</div>
+    <p>SAFE 요건은 <b>현지화 투자의 강제 트리거</b>입니다. 한화에어로스페이스·현대로템의 해외 공장 투자가 '선택'이 아닌 '유럽 수주 유지의 조건'임을 의미합니다. 루마니아 공장 완공(2028년) 이후 SAFE 자금 연동 수주 규모가 공시될 경우 이를 주목해야 합니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z2: 루마니아 공장 ═══ -->
+<section id="z2">
+<div class="zone-head"><span class="z-big">02</span>
+  <div class="z-num" style="color:var(--terra)">SECTION 02</div>
+  <h2>루마니아 H-ACE 유럽 공장 — 유럽 교두보 착공</h2>
+  <p>한화에어로스페이스의 첫 본격 유럽 생산 거점. 2026년 2월 착공, 2028년 완공 목표로 현지화율 80%를 향해 나아갑니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--terra);--zs:var(--terras)">
+  <div class="f-tag">H-ACE 유럽 · 페트레슈티 공장</div>
+  <h3>루마니아 K9 현지생산 공장 개요</h3>
+  <div class="meta">위치: 루마니아 듬보비차주 페트레슈티 | 한화에어로스페이스 두 번째 해외 생산 거점</div>
+
+  <div class="facts" style="--zc:var(--terra);--zs:var(--terras)">
+    <div class="fact"><div class="n">2026.2</div><div class="l">착공 (착공식 거행)<br>2026년 2~3월</div></div>
+    <div class="fact"><div class="n">80%</div><div class="l">목표 현지화율<br>(루마니아 업체 협력)</div></div>
+    <div class="fact"><div class="n">2,000명</div><div class="l">고용 창출<br>목표 인원</div></div>
+  </div>
+
+  <div class="facts" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="fact"><div class="n">181,055㎡</div><div class="l">공장 부지 면적<br>(첨단 조립라인 포함)</div></div>
+    <div class="fact"><div class="n">1,751m</div><div class="l">주행시험로 길이<br>성능검증시험시설</div></div>
+    <div class="fact"><div class="n">2028년</div><div class="l">완공 목표<br>(착공 후 약 2년)</div></div>
+  </div>
+
+  <!-- 생산 타임라인 -->
+  <h3 style="margin-top:24px">생산 일정 타임라인</h3>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="ty">2026년 2~3월</div>
+      <div class="tt">H-ACE 유럽 공장 착공식</div>
+      <div class="td">루마니아 페트레슈티 부지 착공. 첨단 조립라인 + 성능검증시험시설 + 1,751m 주행시험로 포함 약 181,055㎡ 규모.</div>
+    </div>
+    <div class="tl-item active">
+      <div class="ty">2027년까지</div>
+      <div class="tt">K9A1 초도 18문 — 한국 생산 납품</div>
+      <div class="td">초도 물량은 한국 공장에서 생산 납품. K10 탄약운반장갑차 12대 초도분도 한국 생산.</div>
+    </div>
+    <div class="tl-item future">
+      <div class="ty">2028년 (목표)</div>
+      <div class="tt">루마니아 공장 완공 — 현지 생산 전환</div>
+      <div class="td">이후 K9A1·K10 후속 물량 루마니아 현지 생산 전환. 현지화율 80% 목표 달성. 협력 파트너: 프로 옵티카, Iveco Romania.</div>
+    </div>
+    <div class="tl-item future">
+      <div class="ty">2028년 이후</div>
+      <div class="tt">SAFE 요건 충족 — EU 공조달 자금 연동</div>
+      <div class="td">현지화율 65~70% 달성 시 EU SAFE 자금 활용 가능. NATO 동부 방어선 기반 유럽 방산 허브로 확장.</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>구분</th><th>한국 생산</th><th>루마니아 생산</th><th>비고</th></tr>
+    <tr><td>K9A1 초도</td><td>18문 → 2027년 납품</td><td>-</td><td>현지공장 완공 전</td></tr>
+    <tr><td>K9A1 후속</td><td>-</td><td>페트레슈티 공장</td><td>현지화율 80% 목표</td></tr>
+    <tr><td>K10 초도</td><td>12대</td><td>-</td><td>탄약운반장갑차</td></tr>
+    <tr><td>K10 후속</td><td>-</td><td>현지 생산</td><td>MRO 병행 운영</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    루마니아는 NATO 동부 방어선의 핵심 거점입니다. 이 공장은 단순 생산기지를 넘어 <b>동유럽 전체 K-방산 MRO 허브</b>로 기능할 수 있으며, 에스토니아·불가리아 등 인근 NATO 회원국 추가 수주의 교두보가 됩니다.
+  </div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR ANGLE</div>
+    <p>루마니아 공장 착공은 <b>한화에어로스페이스의 유럽 수주 파이프라인의 내구성</b>을 높이는 인프라 투자입니다. 현지화율 65% 달성 시점(약 2028~2029년)이 SAFE 자금 연동 수주의 전환점이 될 것입니다. 공장 완공·현지화율 공시를 중기 카탈리스트로 주목하세요.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z3: 폴란드 K2PL ═══ -->
+<section id="z3">
+<div class="zone-head"><span class="z-big">03</span>
+  <div class="z-num" style="color:var(--blue)">SECTION 03</div>
+  <h2>폴란드 K2PL·K9PL — 가장 앞선 현지화 사례</h2>
+  <p>180대 K2 계약 중 63대를 폴란드에서 만들고, 3,800개 부품 기술이전까지 — 현지화가 가장 깊이 진행된 계약입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+  <div class="f-tag">K2PL · 현대로템</div>
+  <h3>K2PL (폴란드형 K2 흑표) 현지생산 구조</h3>
+  <div class="meta">총 180대 계약 규모 $6.1B | 폴란드 PGZ 산하 부마르-라베디 공장 협력</div>
+
+  <div class="facts" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="fact"><div class="n">180대</div><div class="l">K2 2차 계약 총 규모<br>($6.1B)</div></div>
+    <div class="fact"><div class="n">63대</div><div class="l">폴란드 부마르-라베디<br>공장 현지 생산</div></div>
+    <div class="fact"><div class="n">3,800개</div><div class="l">기술이전 부품 항목<br>생산·정비 기술 이전</div></div>
+  </div>
+
+  <table>
+    <tr><th>구분</th><th>수량</th><th>생산지</th><th>비고</th></tr>
+    <tr><td>K2 한국 생산분</td><td>117대</td><td>현대로템 (한국)</td><td>납품 진행 중</td></tr>
+    <tr><td>K2PL 현지 생산분</td><td>63대</td><td>부마르-라베디 (폴란드)</td><td>기술이전 후 현지 조립·생산</td></tr>
+    <tr><td>기술이전 항목</td><td colspan="2">약 3,800개 부품 생산·정비 기술</td><td>2025.10 공급망 구축 착수</td></tr>
+    <tr><td>K9PL 2차</td><td>146문</td><td>폴란드 현지 개량 사양</td><td>2026~2027년 납품</td></tr>
+  </table>
+
+  <p class="body" style="margin-top:16px">현대로템은 <b>부마르-라베디 공장 상태 점검 및 공급망 구축 작업</b>을 2025년 10월부터 착수했습니다. K9PL은 폴란드 현지 전자장비·통신체계를 통합한 사양으로, SAFE 요건 충족을 위해 현지화율을 단계적으로 상향할 계획입니다.</p>
+
+  <div class="callout callout-blue">
+    <div class="c-head">폴란드 현지화의 장기 비전</div>
+    <div class="c-body">
+      폴란드는 K2PL의 현지 생산 역량을 확보한 이후 <b>슬로바키아·체코·발트 3국 등 주변국 재수출 허브</b>를 목표로 하고 있습니다. 한국 입장에서 단기 기술 유출 리스크를 감수하는 대신, <b>폴란드가 유럽 내 K-방산 플랫폼의 '총판 거점'</b>이 되는 그림입니다.<br><br>
+      기술이전 3,800개 부품 항목은 역대 최대 규모입니다. 이 과정에서 핵심 시스템(엔진, 복합장갑, 사격통제 핵심 알고리즘)의 기술 유출 방지가 최대 과제입니다.
+    </div>
+  </div>
+
+  <div class="analogy"><b>쉬운 비유:</b> K2PL 기술이전은 마치 맥도날드 본사가 폴란드 파트너에게 "레시피 일부 + 주방 기기 설치법"을 줘서 현지 매장을 운영하게 하는 프랜차이즈 계약과 비슷합니다. 핵심 소스(핵심 기술)는 여전히 본사가 쥐고 있습니다.</div>
+</div>
+</section>
+
+<!-- ═══ Z4: UAE MOU ═══ -->
+<section id="z4">
+<div class="zone-head"><span class="z-big">04</span>
+  <div class="z-num" style="color:var(--gold)">SECTION 04</div>
+  <h2>UAE 방산 MOU $35B — 중동 생태계의 닻</h2>
+  <p>2026년 3월 체결된 한-UAE $35B 방산산업협력 MOU는 단순 수출을 넘어 설계부터 MRO까지 전 주기 파트너십을 선언한 것입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--gold);--zs:var(--golds)">
+  <div class="f-tag">한-UAE 방산 MOU · 2026.3</div>
+  <h3>$35B 방산산업협력 MOU 핵심 내용</h3>
+  <div class="meta">2026년 3월 체결 | 한-UAE 전체 협력 패키지 $65B의 일환</div>
+
+  <div class="facts" style="--zc:var(--gold);--zs:var(--golds)">
+    <div class="fact"><div class="n">$35B</div><div class="l">방산산업협력 MOU<br>(2026년 3월)</div></div>
+    <div class="fact"><div class="n">$65B</div><div class="l">한-UAE 전체<br>협력 패키지 규모</div></div>
+    <div class="fact"><div class="n">전 주기</div><div class="l">설계·개발부터<br>교육·훈련·MRO까지</div></div>
+  </div>
+
+  <table>
+    <tr><th>협력 분야</th><th>내용</th><th>단계</th></tr>
+    <tr><td>KF-21 전투기</td><td>공동개발 + 현지조립 + 차세대 변형기 공동수출</td><td><span class="tag-ca">협의 중</span></td></tr>
+    <tr><td>천궁-II 방공</td><td>긴급 공급(한국 재고 활용) + 현지 MRO 시설 검토</td><td><span class="tag-up">공급 진행</span></td></tr>
+    <tr><td>아부다비 MRO</td><td>아부다비 인근 MRO 센터 구상</td><td><span class="tag-ca">검토 중</span></td></tr>
+    <tr><td>기술이전</td><td>UAE의 현지조립·독자 생산 능력 구축 지원</td><td><span class="tag-ca">협상 중</span></td></tr>
+  </table>
+
+  <p class="body" style="margin-top:16px">UAE는 중동 방산 허브를 목표로 <b>기술이전·현지조립을 강력히 요구</b>하고 있습니다. 2025년 4월 한-UAE 포괄적 협력 공식 합의 이후, 2026년 3월 MOU로 구체화된 것으로, 핵심은 KF-21 공동개발·현지조립과 차세대 변형기 공동수출 구상입니다.</p>
+
+  <div class="callout callout-gold">
+    <div class="c-head">MOU와 실계약의 차이점</div>
+    <div class="c-body">
+      MOU(양해각서)는 법적 구속력이 없는 <b>의향서</b>입니다. $35B은 향후 협상이 완결될 경우 도달할 수 있는 최대치이며, 실제 계약 성사 여부와 규모는 협상 진행에 따라 달라집니다.<br><br>
+      그러나 KF-21 전투기의 경우 인도네시아 사례처럼 공동개발 비용 분담이 복잡하게 얽혀 있어, <b>UAE와의 구체적 계약 체결까지 상당한 협상 기간이 필요</b>할 수 있습니다.
+    </div>
+  </div>
+
+  <div class="analogy"><b>중동 생태계의 의미:</b> UAE MOU는 "한 국가에 무기를 파는 것"이 아니라 "UAE를 중동 방산의 정비·훈련·재수출 허브로 키우는 것"에 한국이 파트너로 참여한다는 선언입니다. 중동 6개국 중 UAE 거점이 완성되면, 나머지 국가 수출 협상에서도 레버리지가 됩니다.</div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR ANGLE</div>
+    <p>단기적으로 MOU 자체보다 <b>천궁-II MRO 센터 확정</b>이 더 빠른 수익 실현 경로입니다. 천궁-II UAE 수출분 MRO 시장은 단독으로 4~5조원 추산됩니다. KF-21 계약 구체화는 2027~2028년 이후를 바라봐야 합니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z5: 경쟁국 비교 ═══ -->
+<section id="z5">
+<div class="zone-head"><span class="z-big">05</span>
+  <div class="z-num" style="color:var(--terra)">SECTION 05</div>
+  <h2>경쟁국 비교 — 한국 vs 튀르키예 vs 이스라엘</h2>
+  <p>납기·가격에서 앞서는 한국, UAV와 이슬람 네트워크의 튀르키예, 첨단·실전검증의 이스라엘. 세 플레이어의 현지화 전략을 비교합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--terra);--zs:var(--terras)">
+  <div class="f-tag">3국 비교 분석</div>
+  <h3>현지화 전략 및 수출 경쟁력 매트릭스</h3>
+  <div class="meta">2025년 기준 방산 수출 실적 및 현지화 전략 비교</div>
+
+  <div class="comp-matrix">
+    <!-- 한국 -->
+    <div class="comp-card cc-kor">
+      <div class="cc-flag">🇰🇷</div>
+      <h4>한국</h4>
+      <div class="cc-sub">수출 $154억 (2025, 역대 최고)</div>
+      <ul>
+        <li><b>현지화율:</b> 루마니아 80%, 폴란드 35%→상향</li>
+        <li><b>전략:</b> G2G + 합작공장 + 기술이전</li>
+        <li><b>강점:</b> 빠른 납기, 가격경쟁력, 정치적 중립</li>
+        <li><b>약점:</b> 핵심기술 유출 우려, EU 인증 미비</li>
+        <li><b>EU 접근:</b> 루마니아·폴란드 공장으로 대응</li>
+      </ul>
+      <div class="cc-str">핵심 경쟁력: 납기 속도 + 가격 + 미·러 비진영 정치적 중립</div>
+    </div>
+    <!-- 튀르키예 -->
+    <div class="comp-card cc-tur">
+      <div class="cc-flag">🇹🇷</div>
+      <h4>튀르키예</h4>
+      <div class="cc-sub">수출 $105억 (2025)</div>
+      <ul>
+        <li><b>현지화율:</b> 국내 84% (세계 최고 내수 현지화)</li>
+        <li><b>전략:</b> 현지생산 JV + 독자 브랜드화</li>
+        <li><b>강점:</b> TB2 UAV 전장 검증, 이슬람 외교</li>
+        <li><b>약점:</b> CAATSA 미국 제재 위험</li>
+        <li><b>EU 접근:</b> 비EU이나 NATO 공조 활용</li>
+      </ul>
+      <div class="cc-str">핵심 경쟁력: TB2 UAV 독자 브랜드 + 이슬람 네트워크 외교</div>
+    </div>
+    <!-- 이스라엘 -->
+    <div class="comp-card cc-isr">
+      <div class="cc-flag">🇮🇱</div>
+      <h4>이스라엘</h4>
+      <div class="cc-sub">수출 $148억 (2024, 역대 최고)</div>
+      <ul>
+        <li><b>현지화율:</b> 기술이전 위주, 현지생산 소극적</li>
+        <li><b>전략:</b> 기술이전 중심, 공장 현지화 낮음</li>
+        <li><b>강점:</b> 전자전·사이버·AI 통합 첨단기술</li>
+        <li><b>약점:</b> 이스라엘-하마스 전쟁 이미지 타격</li>
+        <li><b>EU 접근:</b> 비EU, EDIP 혜택 제한</li>
+      </ul>
+      <div class="cc-str">핵심 경쟁력: 첨단 전자전·사이버·드론 + 실전 검증 극대화</div>
+    </div>
+  </div>
+
+  <table style="margin-top:20px">
+    <tr><th>지표</th><th>한국</th><th>튀르키예</th><th>이스라엘</th></tr>
+    <tr><td>2025년 수출</td><td><b style="color:var(--terra)">$154억</b></td><td>$105억</td><td>$148억</td></tr>
+    <tr><td>현지화율</td><td>루마니아 80%</td><td>국내 84%</td><td>낮음 (기술이전 중심)</td></tr>
+    <tr><td>EU SAFE 대응</td><td><span class="tag-ca">공장 구축 중</span></td><td><span class="tag-dn">비EU 한계</span></td><td><span class="tag-dn">비EU 한계</span></td></tr>
+    <tr><td>UAV 역량</td><td><span class="tag-ca">개발 중</span></td><td><span class="tag-up">TB2 검증</span></td><td><span class="tag-up">헤론 등 선도</span></td></tr>
+    <tr><td>리스크</td><td>기술유출, EU 인증</td><td>CAATSA 제재</td><td>전쟁 이미지 타격</td></tr>
+  </table>
+
+  <div class="callout callout-terra" style="margin-top:20px">
+    <div class="c-head">한국의 차별점: 정치적 중립성</div>
+    <div class="c-body">
+      한국 방산의 가장 강력한 비가시적 경쟁력은 <b>정치적 중립성</b>입니다. 미국 FMS처럼 구매국 내정에 조건을 달거나, 러시아처럼 지정학 리스크를 수반하지 않습니다. <b>이슬람권·아프리카·동남아·유럽 모두</b>에 팔 수 있는 포지셔닝이 K-방산의 중장기 확장성을 뒷받침합니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z6: 생태계 전환 ═══ -->
+<section id="z6">
+<div class="zone-head"><span class="z-big">06</span>
+  <div class="z-num" style="color:var(--terra)">SECTION 06</div>
+  <h2>완제품 → 생태계 수출 전환 — 왜 이 전환이 필요한가</h2>
+  <p>무기를 팔고 끝나던 시대는 끝났습니다. 기술이전·현지생산·MRO·훈련을 묶은 생태계 수출이 K-방산의 장기 수익 구조를 결정합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--terra);--zs:var(--terras)">
+  <div class="f-tag">수출 진화 4단계</div>
+  <h3>K-방산 수출 진화 단계별 구조</h3>
+
+  <div class="stage-grid">
+    <div class="stage-card sc-1">
+      <div class="sc-num">STAGE 1</div>
+      <h4>완제품 수출</h4>
+      <ul>
+        <li><b>방식:</b> FMS·G2G 단순 납품</li>
+        <li><b>수익:</b> 제품 판매 마진 1회</li>
+        <li><b>기술이전:</b> 없음</li>
+        <li><b>관계:</b> 거래 종료 후 종결</li>
+        <li><b>사례:</b> 초기 K9 수출</li>
+      </ul>
+    </div>
+    <div class="stage-card sc-2">
+      <div class="sc-num">STAGE 2</div>
+      <h4>기술이전 포함 수출</h4>
+      <ul>
+        <li><b>방식:</b> Offset·절충교역 의무 이행</li>
+        <li><b>수익:</b> 제품 + 기술이전 로열티</li>
+        <li><b>기술이전:</b> 부분 (부품 생산·정비)</li>
+        <li><b>관계:</b> 중기 파트너십</li>
+        <li><b>사례:</b> 인도 K9 Vajra (L&T)</li>
+      </ul>
+    </div>
+    <div class="stage-card sc-3">
+      <div class="sc-num">STAGE 3</div>
+      <h4>현지생산 협력</h4>
+      <ul>
+        <li><b>방식:</b> JV·합작공장 설립</li>
+        <li><b>수익:</b> 제품 + 공장 운영 + MRO</li>
+        <li><b>기술이전:</b> 대규모 (3,800개 부품)</li>
+        <li><b>관계:</b> 장기 파트너십</li>
+        <li><b>사례:</b> 폴란드 K2PL, 루마니아 K9</li>
+      </ul>
+    </div>
+    <div class="stage-card sc-4">
+      <div class="sc-num">STAGE 4</div>
+      <h4>생태계 수출</h4>
+      <ul>
+        <li><b>방식:</b> 완제품+MRO+탄약+훈련 패키지</li>
+        <li><b>수익:</b> 복리 누적 (수십 년)</li>
+        <li><b>기술이전:</b> 설계~MRO 전 주기</li>
+        <li><b>관계:</b> 생애주기 전반 파트너십</li>
+        <li><b>사례:</b> UAE 방산협력 MOU</li>
+      </ul>
+    </div>
+  </div>
+
+  <table style="margin-top:20px">
+    <tr><th>사례</th><th>단계</th><th>현지화율</th><th>기술이전</th></tr>
+    <tr><td>인도 K9 Vajra</td><td><span class="tag-ca">Stage 3</span></td><td>75%</td><td>L&T 합작, 부분 기술</td></tr>
+    <tr><td>폴란드 K2PL</td><td><span class="tag-tr">Stage 3→4</span></td><td>35%→상향 중</td><td>3,800개 부품 기술이전</td></tr>
+    <tr><td>루마니아 K9</td><td><span class="tag-tr">Stage 3→4</span></td><td>목표 80%</td><td>H-ACE 유럽 공장 착공</td></tr>
+    <tr><td>UAE 방산협력</td><td><span class="tag-tr">Stage 4</span></td><td>현지조립 추진</td><td>설계~MRO 전 주기</td></tr>
+  </table>
+
+  <div class="analogy"><b>왜 생태계 수출인가:</b> 무기체계 총수명비용(LCC)에서 도입비는 30~40%, 운용유지비(MRO·탄약·MLU)는 60~70%를 차지합니다. F-35는 도입비 20%·운용비 80%입니다. <b>수출이 늘수록 MRO 수익이 복리처럼 누적되는 구조</b> — 이것이 K-방산 2.0 전략의 핵심입니다.</div>
+
+  <!-- 현지화율 진행 바 -->
+  <h3 style="margin-top:24px">주요 사례별 현지화율 진행 현황</h3>
+
+  <div class="bar-item">
+    <div class="bi-label"><span>루마니아 H-ACE (목표)</span><span style="color:var(--terra);font-weight:900">80%</span></div>
+    <div class="bi-track"><div class="bi-fill" style="background:var(--terra)" data-w="80"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bi-label"><span>인도 K9 Vajra (달성)</span><span style="color:var(--up);font-weight:900">75%</span></div>
+    <div class="bi-track"><div class="bi-fill" style="background:var(--up)" data-w="75"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bi-label"><span>EU SAFE 최소 요건</span><span style="color:var(--caution);font-weight:900">65%</span></div>
+    <div class="bi-track"><div class="bi-fill" style="background:var(--caution)" data-w="65"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bi-label"><span>EU SAFE 유럽의회 추진</span><span style="color:var(--down);font-weight:900">70%</span></div>
+    <div class="bi-track"><div class="bi-fill" style="background:var(--down)" data-w="70"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bi-label"><span>폴란드 K2PL (현재 진행)</span><span style="color:var(--blue);font-weight:900">35%→</span></div>
+    <div class="bi-track"><div class="bi-fill" style="background:var(--blue)" data-w="35"></div></div>
+  </div>
+
+  <div class="view">
+    <div class="v-head">INVESTOR ANGLE</div>
+    <p>Stage 4(생태계 수출) 진입 여부가 <b>한국 방산기업의 밸류에이션 프리미엄을 결정</b>합니다. 단순 납품은 PER 15~20배 수준이지만, MRO+MLU+탄약 복합 패키지 계약이 쌓이면 장기 현금흐름 가시성이 높아져 PER 30배+ 정당화가 가능해집니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z7: 리스크 ═══ -->
+<section id="z7">
+<div class="zone-head"><span class="z-big">07</span>
+  <div class="z-num" style="color:var(--down)">SECTION 07</div>
+  <h2>핵심 리스크 — 현지화 전략의 그늘</h2>
+  <p>생태계 수출로의 전환은 기회이지만, 기술 유출·현지화 속도·계약 지연 등 실질적 리스크가 동반됩니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+  <div class="f-tag">주요 리스크 분석</div>
+  <h3>현지화 전략의 4대 리스크</h3>
+
+  <div class="risk-list">
+    <div class="risk">
+      <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+      <div>
+        <h4>EU SAFE/EDIP 65~70% 요건 — 현지화 속도 미달</h4>
+        <div class="rdesc">루마니아 공장 완공(2028년) 이전까지 SAFE 자금 활용이 불가합니다. 유럽의회가 요건을 <b>70%로 상향</b>할 경우, 추가 현지화 투자가 필요해져 비용·시간 압박이 커집니다. 현지화율 달성 지연 = 유럽 공공조달 자금 배제 = 수주 감소 직결.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+      <div>
+        <h4>기술 유출 딜레마 — 현지화 확대 vs 핵심 기술 보호</h4>
+        <div class="rdesc">K2PL 3,800개 부품 기술이전은 역대 최대 규모입니다. <b>핵심 시스템(복합장갑, 사격통제 알고리즘, 엔진 설계)의 유출</b>은 경쟁국의 모방·역설계로 이어질 수 있습니다. 현지화 깊이와 기술 보호 사이의 균형이 계약 협상의 핵심 난제입니다.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+      <div>
+        <h4>K2PL·K9PL 협상 지연 — 폴란드 현지생산 요구 강화</h4>
+        <div class="rdesc">폴란드는 현지생산 비율과 기술이전 범위를 계속 확대 요구 중입니다. <b>계약 완결까지 추가 협상 변수</b>가 존재하며, 납기 지연→위약금 발생 가능성이 있습니다. 현대로템의 폴란드 공장 설립 속도도 변수입니다.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+      <div>
+        <h4>UAE MOU의 실계약 전환 불확실성</h4>
+        <div class="rdesc">$35B MOU는 구속력 없는 의향서입니다. KF-21 공동개발은 <b>인도네시아 사례처럼 비용 분담 협상이 장기화</b>될 수 있습니다. UAE의 중동 허브 전략과 한국의 기술이전 한계 사이의 간극이 좁혀지지 않으면 MOU가 실계약으로 전환되지 못할 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-red" style="margin-top:20px">
+    <div class="c-head">기술 유출 시나리오 — 최악의 경우</div>
+    <div class="c-body">
+      K2PL 기술이전 이후 폴란드 또는 제3국이 <b>유사 전차를 독자 개발</b>할 경우, K2의 수출 경쟁력이 잠식될 수 있습니다. 특히 중국·러시아에 기술이 간접 유출되는 시나리오는 방위사업청(DAPA)이 가장 우려하는 리스크입니다. <b>기술이전 항목의 세밀한 분류와 수출통제 체계</b>가 국가적 과제입니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z8: 시리즈 총정리 ═══ -->
+<section id="z8">
+<div class="zone-head"><span class="z-big">08</span>
+  <div class="z-num" style="color:var(--terra)">SECTION 08 · SERIES FINAL</div>
+  <h2>K-방산 시리즈 총정리 — Part 1~4 · Theme A~H</h2>
+  <p>이 페이지는 K-방산 연구 시리즈의 마지막 페이지입니다. 전체 시리즈의 핵심 발견을 한 곳에 집약합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--terra);--zs:var(--terras)">
+  <div class="f-tag" style="background:linear-gradient(110deg,var(--terra),#7a3520);color:#fff">SERIES FINAL · MODULE H · 2026.06</div>
+  <h3>K-방산 연구 시리즈 — 전체 회고</h3>
+  <p class="body">Part 1(산업지도)부터 Part 3(투자지도), Part 4(심화 테마 A~H)까지 이어진 K-방산 연구 시리즈의 핵심 발견을 한 페이지로 정리합니다.</p>
+
+  <div style="font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.1em;margin:22px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)">PART 1~3 · 산업 구조편</div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0 0 6px">
+    <div style="background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:14px;padding:16px 18px">
+      <div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--blue);margin-bottom:4px">PART 1 · 산업지도</div>
+      <div style="font-size:15px;font-weight:900;margin-bottom:6px">K-방산의 구조 해부</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.65">한화·한화에어로·현대로템·LIG넥스원·KAI 5대 축. 수직계열화 구조가 납기 경쟁력의 원천. 방산청(DAPA) 중심 G2G 계약 생태계.</div>
+      <div style="font-size:11.5px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)"><b style="color:var(--sub)">핵심 기업:</b> 한화에어로스페이스, 현대로템, KAI, LIG넥스원</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--line);border-left:4px solid var(--up);border-radius:14px;padding:16px 18px">
+      <div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--up);margin-bottom:4px">PART 2 · 기업편</div>
+      <div style="font-size:15px;font-weight:900;margin-bottom:6px">빅4 + KAI 심층 분석</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.65">한화시스템·한화오션 나눔. KAI의 KF-21 양산 전환. 현대로템 K2PL 수출 파이프라인. LIG넥스원 방공 수출 가속.</div>
+      <div style="font-size:11.5px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)"><b style="color:var(--sub)">핵심 기업:</b> KAI(KF-21), 한화오션(함정), LIG넥스원(방공)</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px">
+      <div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--gold);margin-bottom:4px">PART 3 · 투자지도</div>
+      <div style="font-size:15px;font-weight:900;margin-bottom:6px">밸류에이션과 투자 전략</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.65">수주잔고/시총 배수. NATO 방산비 2% 의무로 구조적 수요 확대. 방산 ETF 접근법. 수익성 vs 수주 모멘텀 구분.</div>
+      <div style="font-size:11.5px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)"><b style="color:var(--sub)">핵심 지표:</b> 수주잔고, 방산비 GDP 비율, 현지화율</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--line);border-left:4px solid var(--steel);border-radius:14px;padding:16px 18px">
+      <div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--steel);margin-bottom:4px">PART 4 소개 · 심화 테마</div>
+      <div style="font-size:15px;font-weight:900;margin-bottom:6px">Theme A~H 구조</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.65">지상·해양·항공·무인·우주·방공·MRO·수출금융·현지화 9개 축으로 K-방산을 입체 분해한 심화 연구 시리즈.</div>
+      <div style="font-size:11.5px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)"><b style="color:var(--sub)">범위:</b> 전술 → 전략 → 생태계 수출까지</div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.1em;margin:30px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)">PART 4 · 심화 테마 A~H 총정리</div>
+
+  <table>
+    <thead>
+      <tr><th>테마</th><th>핵심 포인트</th><th>관련 기업</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A. 지상무기</td><td>K9 자주포 11개국 수출, K2 흑표 유럽 진격. 납기 신뢰도가 경쟁 우위 원천.</td><td>한화에어로, 현대로템</td></tr>
+      <tr><td>B. 해양</td><td>한화오션·HD현대중공업 함정 수출. 잠수함 독자 설계 역량. 호주·캐나다 기회.</td><td>한화오션, HD현대중공업</td></tr>
+      <tr><td>C. 항공</td><td>KF-21 양산 전환(2026~). FA-50 수출 확대. 엔진 국산화 과제.</td><td>KAI, 한화에어로스페이스</td></tr>
+      <tr><td>D. 무인·드론</td><td>무인 전투체계 K-UAV. 튀르키예 TB2와의 시장 경쟁. AI 통합 로드맵.</td><td>KAI, 한화시스템, LIG넥스원</td></tr>
+      <tr><td>E. 우주·위성</td><td>425사업 완성(2025.11), KASA 1.12조 투자. 민간 주도 뉴스페이스 전환.</td><td>한화에어로, KAI, 한화시스템</td></tr>
+      <tr><td>F. MRO</td><td>운용비 60~70% 구조, K9 11개국 MRO 복리 성장. 글로벌 시장 1,357억달러.</td><td>한화에어로, LIG넥스원, 현대로템</td></tr>
+      <tr><td>G. 수출금융</td><td>폴란드 12~16B달러 차관. G2G 트렌드 강화. 한국형 FMS 도입 논의.</td><td>K-Exim, K-SURE, DAPA</td></tr>
+      <tr style="background:var(--terras,#faf0eb)"><td style="color:var(--terra,#b85c38);font-weight:900">H. 현지화</td><td><b>EU SAFE 65~70% 요건. 루마니아 공장 착공. UAE $35B MOU. 생태계 수출 완결.</b></td><td><b>한화에어로, 현대로템, KAI</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-terra" style="margin-top:20px">
+    <div class="c-head">시리즈 전체 핵심 결론</div>
+    <div class="c-body">
+      K-방산은 <b>일회성 수출 붐이 아닙니다.</b> NATO 방산비 의무화, 우크라이나 전쟁 학습 효과, EU Buy European 규제 대응을 위한 현지공장 구축이 결합하여 <b>구조적·복리적 성장 경로</b>가 형성되고 있습니다. 완제품 납품(Stage 1)에서 생태계 수출(Stage 4)로의 전환은 수익 구조를 근본적으로 바꿉니다 — 단건 계약에서 <b>수십 년 MRO·탄약·MLU 반복 수익</b>으로. 투자자는 수주 모멘텀(단기)과 현지화 진척도(장기)를 분리해 평가해야 합니다.
+    </div>
+  </div>
+
+  <div class="view" style="margin-top:16px">
+    <div class="v-head">SERIES FINAL PERSPECTIVE</div>
+    <p>Part 1~4, Theme A~H를 통해 K-방산의 산업 구조·기업 역량·시장 기회·리스크를 체계적으로 분해했습니다. 핵심 투자 변수는 세 가지입니다: <b>(1) 루마니아 공장 완공 시기와 SAFE 요건 충족 여부, (2) 폴란드 K2PL 기술이전 협상 최종 타결 조건, (3) UAE KF-21 공동개발 계약화 여부.</b> 이 세 가지의 진행 상황이 2026~2028년 K-방산 주가의 방향을 결정할 것입니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Z9: 용어사전 ═══ -->
+<section id="z9">
+<div class="zone-head"><span class="z-big">09</span>
+  <div class="z-num" style="color:var(--terra)">SECTION 09</div>
+  <h2>용어사전 — 현지화·생태계 수출 핵심 개념 20+</h2>
+  <p>투자 판단과 뉴스 해석에 필요한 방산 현지화 전문 용어를 정리했습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--terra);--zs:var(--terras)">
+  <div class="f-tag">Glossary · 15개+ 주요 용어</div>
+  <h3>현지화·생태계 수출 핵심 용어집</h3>
+
+  <div class="gloss-sec">EU 정책 관련</div>
+  <div class="gloss">
+    <details>
+      <summary>SAFE (Security Action for Europe)</summary>
+      <div class="g-body"><b>유럽 방위산업 지원 프로그램</b>. EU가 2025년 5월 채택한 1,500억유로 규모의 방산 공동구매 펀드. EU·EEA·우크라이나 원산지 부품 65% 이상을 충족해야만 이 자금을 활용할 수 있다. 유럽의회는 70%로 상향을 추진 중이다. 한국 방산기업에게는 유럽 공공조달 시장 접근의 핵심 관문이다.</div>
+    </details>
+    <details>
+      <summary>Buy European (바이 유러피안)</summary>
+      <div class="g-body">EU 방산 공동구매에서 <b>역내 생산 제품을 우선 조달</b>하는 정책 기조. 미국의 Buy American Act와 유사한 개념으로, SAFE·EDIP 등 EU 방산 펀드에 연동되어 있다. 역내부품 비중 미달 시 VAT 면제 및 공동구매 자금 혜택이 제한된다.</div>
+    </details>
+    <details>
+      <summary>EDIP (European Defence Industry Programme)</summary>
+      <div class="g-body">SAFE의 <b>파일럿(시범) 프로그램</b>으로 규모 15억유로. 유럽의회는 EDIP에서 역내부품 비중을 70%로 요구하고 있어 SAFE(65%)보다 요건이 엄격하다. SAFE 본격 시행 전 선행 테스트 성격이다.</div>
+    </details>
+  </div>
+
+  <div class="gloss-sec">현지화·생산 관련</div>
+  <div class="gloss">
+    <details>
+      <summary>현지화율 (Localization Rate)</summary>
+      <div class="g-body">수출 무기체계에서 <b>구매국 국내에서 생산·조달되는 부품·가치의 비율</b>. 루마니아 H-ACE 공장 목표 현지화율은 80%, 인도 K9 Vajra는 75% 달성. 높을수록 구매국 산업 참여도가 높고, EU SAFE 요건 충족에 유리하다.</div>
+    </details>
+    <details>
+      <summary>기술이전 (ToT — Transfer of Technology)</summary>
+      <div class="g-body"><b>수출국이 구매국에게 무기 생산·정비·개량에 필요한 기술·지식·설비를 이전</b>하는 것. K2PL의 경우 3,800개 부품 항목에 대한 생산·정비 기술이전이 이루어진다. 핵심 기술(복합장갑 설계, AI 사격통제 알고리즘 등)은 이전 대상에서 제외하는 것이 일반적이다.</div>
+    </details>
+    <details>
+      <summary>현지생산 (Local Production)</summary>
+      <div class="g-body">구매국 영토 내 공장에서 무기체계를 <b>직접 조립·제조</b>하는 방식. 단순 최종 조립(Final Assembly)부터 핵심 부품 제작까지 수준이 다양하다. 루마니아 H-ACE 공장은 K9A1을 완전 현지 생산하는 것을 목표로 한다.</div>
+    </details>
+    <details>
+      <summary>H-ACE 유럽 (Hanwha ACE Europe)</summary>
+      <div class="g-body">한화에어로스페이스가 루마니아 페트레슈티에 설립하는 <b>유럽 K9 현지생산 공장</b>. 2026년 2~3월 착공, 2028년 완공 목표. 부지 181,055㎡에 조립라인·성능검증시험시설·1,751m 주행시험로를 포함한다. 한화에어로스페이스의 두 번째 해외 생산 거점(첫 번째: 인도 L&T)이다.</div>
+    </details>
+    <details>
+      <summary>K2PL (K2 Poland)</summary>
+      <div class="g-body">한국 K2 흑표 전차의 <b>폴란드 수출형</b>. 폴란드 요구사항을 반영한 현지화 사양으로 제작되며, 현대로템과 폴란드 PGZ 산하 부마르-라베디(Bumar-Labedy) 공장이 공동 생산한다. 2차 계약 180대 중 63대가 폴란드 현지 생산 예정이다.</div>
+    </details>
+  </div>
+
+  <div class="gloss-sec">계약·금융 관련</div>
+  <div class="gloss">
+    <details>
+      <summary>절충교역 (Offset)</summary>
+      <div class="g-body">방산 수입 시 수출국이 구매국의 <b>산업 참여를 보장</b>하는 조건부 계약. 한국은 1,000만달러 이상 방산물자 수입 시 절충교역 의무가 발생하며, 경쟁계약은 50% 이상, 단독계약은 30% 이상의 절충교역을 요구한다. 수출 시에는 구매국 산업 기반 육성을 위한 기술이전·현지생산이 절충교역 이행 방식이 된다.</div>
+    </details>
+    <details>
+      <summary>산업협력 (Industrial Cooperation · IC)</summary>
+      <div class="g-body">방산 계약에서 <b>구매국 기업이 생산·정비·개발에 참여</b>하도록 보장하는 패키지 조건. 절충교역의 상위 개념으로, 합작법인 설립, 기술이전, 공동개발, 수출 수수료 지급 등 다양한 형태가 있다. 루마니아 K9 계약에서는 프로 옵티카, Iveco Romania 등이 산업협력 파트너로 참여한다.</div>
+    </details>
+    <details>
+      <summary>MOU (Memorandum of Understanding)</summary>
+      <div class="g-body"><b>양해각서</b>. 법적 구속력 없는 협력 의향서. 한-UAE $35B 방산MOU처럼 큰 숫자를 담더라도 실제 계약 성사 여부와 규모는 후속 협상에 따라 달라진다. MOU 체결 → 실시협정(LOA/DAA) → 본계약의 단계를 거친다.</div>
+    </details>
+  </div>
+
+  <div class="gloss-sec">수출 모델 관련</div>
+  <div class="gloss">
+    <details>
+      <summary>공동개발 (Co-development)</summary>
+      <div class="g-body">두 나라 이상이 <b>개발비·기술·인력을 분담해 무기체계를 함께 개발</b>하는 방식. KF-21의 인도네시아 참여가 대표 사례. UAE와의 KF-21 차세대 변형기 구상도 공동개발 방식을 검토 중이다. 비용 분담과 기술 주권 문제로 협상이 복잡해지는 특징이 있다.</div>
+    </details>
+    <details>
+      <summary>라이선스 생산 (License Production)</summary>
+      <div class="g-body">원개발국의 <b>허가(라이선스) 하에 구매국이 무기체계를 생산</b>하는 방식. 합작 생산과 달리 원개발국은 로열티를 받고 기술 주권을 유지하지만, 구매국 현지화율이 높아질수록 경쟁력 유지가 어려워진다.</div>
+    </details>
+    <details>
+      <summary>생태계 수출 (Ecosystem Export)</summary>
+      <div class="g-body">완제품 납품에 그치지 않고 <b>MRO·탄약보충·MLU·훈련·기술지원까지 패키지화</b>하여 수십 년에 걸친 수익을 창출하는 방산 수출 모델. K-방산 2.0 전략의 핵심 개념으로, 무기 수명주기 전반에 걸쳐 지속적 현금흐름을 확보하는 구조다.</div>
+    </details>
+    <details>
+      <summary>MLU (Mid-Life Upgrade)</summary>
+      <div class="g-body">도입 후 10~15년 차에 전자장비·엔진·사격통제 시스템 등을 업그레이드하는 <b>중간 수명연장 사업</b>. K9A2 사양 업그레이드 패키지가 대표 사례. MLU는 MRO 시장과 함께 K-방산의 장기 수익 복리 구조를 구성하는 핵심 축이다.</div>
+    </details>
+    <details>
+      <summary>LCC (Life Cycle Cost · 총수명비용)</summary>
+      <div class="g-body">무기체계의 <b>도입비와 운용유지비를 모두 합산한 총비용</b>. 일반적으로 도입비 30~40%, 운용유지비(MRO·탄약·MLU·훈련) 60~70% 구조이며, F-35는 도입비 20%·운용유지비 80%에 달한다. LCC 관점에서 방산 MRO 시장이 신규 도입 시장보다 2배 이상 규모다.</div>
+    </details>
+  </div>
+
+  <div class="gloss-sec">기관·기업 관련</div>
+  <div class="gloss">
+    <details>
+      <summary>DAPA (Defense Acquisition Program Administration · 방위사업청)</summary>
+      <div class="g-body">한국의 <b>방산 수출 계약 총괄 및 허가 기관</b>이자 G2G 협상 주체. 방산 수출 허가권을 보유하며, 기술이전 범위와 절충교역 이행을 최종 승인한다. 수출금융 기관인 K-Exim·K-SURE와 협력해 수출 패키지를 구성한다.</div>
+    </details>
+    <details>
+      <summary>G2G (Government-to-Government Contract)</summary>
+      <div class="g-body">한국 정부(DAPA)와 구매국 정부 간에 직접 체결되는 <b>정부간 방산 계약</b>. 신뢰성이 높고 국가 보증이 수반되지만 승인 절차가 복잡하고 납기가 느릴 수 있다. UAE 천궁-II, 폴란드 K2·K9 초도 계약이 G2G 방식이다.</div>
+    </details>
+    <details>
+      <summary>PGZ (Polska Grupa Zbrojeniowa)</summary>
+      <div class="g-body">폴란드 최대 <b>국영 방위산업 그룹</b>으로, 산하에 부마르-라베디(K2PL 현지 생산), HSW(K9PL 관련) 등을 포함한다. 폴란드 정부의 방산 현지화 전략 수행 기관으로, K2PL 기술이전의 수령 주체다.</div>
+    </details>
+  </div>
+</div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="series-nav" style="display:flex;justify-content:space-between;gap:12px;margin-top:52px">
+  <a href="k_defense_theme_export_finance.html" style="flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s">
+    <div style="font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px">&larr; PREV &middot; THEME G</div>
+    수출금융&middot;계약구조
+  </a>
+  <a href="k_defense_industry_map.html" style="flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s;text-align:right">
+    <div style="font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px">처음으로 &middot; PART 1-2 &rarr;</div>
+    K-방산 산업구조 &amp; 글로벌 좌표
+  </a>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <b>면책 조항 (Disclaimer)</b><br>
+  본 문서는 공개된 자료(한화그룹 뉴스룸, KASA, EBN, 뉴스1, Breaking Defense, Army Recognition, White &amp; Case, Euronews, The Defense Post, Gulf International Forum 등)를 바탕으로 작성된 <b>순수 교육·정보 목적</b>의 리서치 자료입니다. 특정 주식·ETF·자산에 대한 매수·매도 권유가 아니며, 투자 결과에 대한 법적 책임을 지지 않습니다.<br><br>
+  방산 수출 계약 수치, 현지화율 목표, MOU 규모 등은 공개 발표 자료 기준이며 최종 계약 내용과 다를 수 있습니다. 데이터 기준: 2025~2026년 최신 공개 자료 (작성일 2026-06-19). 모든 투자 판단은 공인된 투자 전문가와 상담 후 본인 책임 하에 결정하시기 바랍니다.
+</div>
+
+<footer>
+  K-DEFENSE SERIES · 심화 테마 H · 현지화·생태계 수출 · 2026.06 · 교육 목적 리서치
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+// Progress bar
+(function(){
+  var bar=document.getElementById('prog');
+  function upd(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(st/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+})();
+
+// Scroll reveal
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');}});
+  },{threshold:.08});
+  document.querySelectorAll('.floor').forEach(function(el){io.observe(el);});
+})();
+
+// Animate progress bars
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.bi-fill[data-w]').forEach(function(b){
+          setTimeout(function(){b.style.width=b.getAttribute('data-w')+'%';},200);
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.floor').forEach(function(el){io.observe(el);});
+})();
+
+// Stage bar animation
+(function(){
+  var bar=document.getElementById('stagebar');
+  if(!bar)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        bar.querySelectorAll('.sb-seg[data-w]').forEach(function(s){
+          s.style.width='0%';
+          setTimeout(function(){s.style.width=s.getAttribute('data-w')+'%';},300);
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.3});
+  io.observe(bar);
+})();
+
+// Number counter for stat .n elements (non-decimal)
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){io.unobserve(e.target);}
+    });
+  },{threshold:.5});
+  document.querySelectorAll('.stat').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>

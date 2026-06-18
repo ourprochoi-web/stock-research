@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무인화·유무인복합 — K-방산 심화 테마 Module C</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f0edf5; --card:#ffffff; --line:#dbd6e8; --note:#ece8f2; --chip-bg:#e4dff0;
+  --accent:#7c5cbf; --accents:#ede8f7; --accent-line:#c8bfe0;
+  --neon:#00d4aa; --neons:#d6f5ef; --neon-line:#9aeadb;
+  --navy:#1a1535;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--neon),var(--accent),var(--neon));width:0%;z-index:99;transition:width .15s}
+
+#home-btn{position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:#3c3060;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s}
+#home-btn:hover{background:#fff;border-color:var(--accent)}
+
+nav{position:sticky;top:0;background:rgba(240,237,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#0e0b1f 0%,#1a1535 40%,#0d1a2e 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.4;background-image:repeating-linear-gradient(0deg,transparent 0 48px,rgba(124,92,191,.08) 48px 49px),repeating-linear-gradient(90deg,transparent 0 48px,rgba(0,212,170,.06) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(14,11,31,.9),transparent);pointer-events:none}
+.orb1{position:absolute;top:-60px;right:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(124,92,191,.18) 0%,transparent 70%);pointer-events:none}
+.orb2{position:absolute;bottom:20px;left:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(0,212,170,.12) 0%,transparent 70%);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:80px 20px 46px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--neon);font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;background:linear-gradient(110deg,#fff 15%,#b99ef5 45%,#00d4aa 65%,#fff 85%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8c0;max-width:640px;margin:0 auto;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:36px auto 0}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:18px 10px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(16px,4vw,24px);font-weight:900;color:#b99ef5;letter-spacing:-.02em;line-height:1.2}
+.stat .neon{color:var(--neon)}
+.stat .l{font-size:11px;color:#8a96b8;margin-top:5px;line-height:1.45}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none;color:var(--accent)}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--accent)}
+.zone-head h2{font-size:clamp(22px,5vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+/* FLOOR CARDS */
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--accent));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(124,92,191,.22)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--accent));background:var(--zs,var(--accents));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--navy);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-ac{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent)}
+.tag-ne{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--neons);color:#009e7f}
+
+/* FACTS GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--accents));border:1px solid var(--accent-line);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(14px,3.5vw,21px);font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-purple .c-head{background:linear-gradient(90deg,var(--accent),#9b7de8)}
+.callout-neon .c-head{background:linear-gradient(90deg,#009e7f,var(--neon))}
+.callout-navy .c-head{background:linear-gradient(90deg,var(--navy),#2a2060)}
+.callout-caution .c-head{background:var(--caution)}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--accent-line);background:var(--accents);border-radius:14px;padding:16px 18px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#6848a8;margin-bottom:6px}
+.view p{font-size:14.3px;color:#3d2d6e;line-height:1.8}
+.view p b{color:#2a1f4e}
+
+/* COMPANY GRID */
+.co-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:600px){.co-grid{grid-template-columns:1fr}}
+.co-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc,var(--accent));border-radius:14px;padding:16px 18px}
+.co-card .ticker{font-size:10.5px;font-weight:800;color:var(--faint);letter-spacing:.06em}
+.co-card h4{font-size:17px;font-weight:900;margin:2px 0 10px;letter-spacing:-.01em}
+.co-card .metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.co-card .m{text-align:center;background:var(--zs,var(--accents));border-radius:10px;padding:8px 4px}
+.co-card .m .mv{font-size:14px;font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em}
+.co-card .m .ml{font-size:10px;color:var(--sub);margin-top:2px}
+.co-card .highlight{font-size:12.8px;color:var(--sub);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.6}
+.co-card .highlight b{color:var(--ink)}
+
+/* TIMELINE */
+.tl{position:relative;margin:20px 0 6px;padding-left:28px}
+.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--neon))}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-item.active::before{background:var(--neon);box-shadow:0 0 0 4px rgba(0,212,170,.2)}
+.tl-item .ty{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.1em}
+.tl-item .tt{font-size:14.5px;font-weight:800;color:var(--ink)}
+.tl-item .td{font-size:13px;color:var(--sub);margin-top:2px;line-height:1.6}
+
+/* AI CHAIN */
+.ai-chain{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:18px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media(max-width:560px){.ai-chain{grid-template-columns:1fr 1fr}}
+.ai-node{padding:16px 12px;text-align:center;background:var(--card);border-right:1px solid var(--line)}
+.ai-node:last-child{border-right:none}
+.ai-node .an-icon{font-size:24px;margin-bottom:8px;display:block}
+.ai-node .an-label{font-size:11.5px;font-weight:900;color:var(--accent);letter-spacing:.04em}
+.ai-node .an-desc{font-size:11px;color:var(--sub);margin-top:4px;line-height:1.5}
+.ai-node.hl{background:linear-gradient(160deg,var(--accents),#f5f0ff)}
+
+/* HIGHLIGHT BOX */
+.hbox{background:linear-gradient(135deg,var(--accents),#f0ebff);border:1px solid var(--accent-line);border-radius:14px;padding:18px 20px;margin:14px 0}
+.hbox .hb-label{font-size:11px;font-weight:900;letter-spacing:.18em;color:var(--accent);margin-bottom:8px}
+.hbox p{font-size:14.8px;color:#3d2d6e;line-height:1.8}
+
+/* RISK LIST */
+.risk-list{display:grid;gap:14px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--neon)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.08em}
+.risk h4{font-size:15.5px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.8px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px;transition:border-color .2s}
+.gloss details[open]{border-color:var(--accent-line)}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px;line-height:1}
+.gloss details[open] summary::after{content:'&#8722;';color:var(--accent)}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.7}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.14em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* SERIES NAV */
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:52px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(124,92,191,.12)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+.sn-next{text-align:right}
+
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px;padding-bottom:20px}
+
+@media(max-width:600px){
+  .floor{padding:22px 18px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .stat:last-child{grid-column:1/-1}
+  table{font-size:12px}
+  td,th{padding:8px}
+}
+@media print{
+  nav,#prog,#home-btn{display:none}
+  .floor{opacity:1;transform:none;break-inside:avoid}
+  .hero-shell{background:#fff;color:var(--ink)}
+  .hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<a href="../" id="home-btn">
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Home
+</a>
+<div id="prog"></div>
+
+<!-- HERO -->
+<div class="hero-shell" id="hero">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="hero">
+    <div class="eyebrow">K-방산 심화 테마 &middot; Module C &middot; Physical AI 연계 &middot; 2026.06</div>
+    <h1>무인화 &mdash; AI가 전장의<br>규칙을 바꾼다</h1>
+    <p class="lede">드론&middot;UCAV&middot;MUM-T에서 Physical AI까지 &mdash; 무인화는 단순 자동화가 아닌 전쟁 패러다임의 교체입니다. 투자자가 알아야 할 글로벌 구도와 한국의 좌표를 정리합니다.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">158<span style="font-size:.55em;opacity:.7">&rarr;</span><span class="neon">228</span><span style="font-size:.48em;font-weight:700;opacity:.8">억$</span></div>
+        <div class="l">군용 드론 시장<br>2025&rarr;2030 (CAGR 7.6%)</div>
+      </div>
+      <div class="stat">
+        <div class="n">89<span style="font-size:.48em;font-weight:700;opacity:.8">억$+</span></div>
+        <div class="l">미국 CCA 프로그램<br>FY2025~2029 예산</div>
+      </div>
+      <div class="stat">
+        <div class="n"><span class="neon">22</span><span style="font-size:.48em;font-weight:700;opacity:.8">억$</span></div>
+        <div class="l">Baykar 2025 수출<br>(역대 최고&middot;매출의 88%)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#z1">&#8544; 글로벌 드론시장</a>
+  <a href="#z2">&#8545; Baykar 사례</a>
+  <a href="#z3">&#8546; 한국 현황</a>
+  <a href="#z4">&#8547; MUM-T &middot; CCA</a>
+  <a href="#z5">&#8548; Physical AI</a>
+  <a href="#z6">&#8549; 윤리&middot;규범</a>
+  <a href="#z7">&#8550; 투자 시사점</a>
+  <a href="#z8">용어사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== S1 글로벌 드론 시장 ===== -->
+<section id="z1">
+<div class="zone-head">
+  <span class="z-big">01</span>
+  <div class="z-num">SECTION 01</div>
+  <h2>글로벌 드론&middot;UAV 시장 규모</h2>
+  <p>우크라이나 전쟁이 입증한 드론의 전략적 가치 &mdash; 시장은 구조적 성장 국면으로 전환됐습니다.</p>
+</div>
+
+<div class="floor visible" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">MARKET SIZE</div>
+  <h3>군용 드론 시장 규모 전망</h3>
+  <p class="meta">MarketsandMarkets &middot; Fortune Business Insights 종합 &middot; 2026.06</p>
+  <table>
+    <tr><th>구분</th><th>2025년 추정</th><th>2030년 전망</th><th>CAGR</th><th>비고</th></tr>
+    <tr>
+      <td>군용 드론<br><small style="color:var(--faint);font-weight:400">MarketsandMarkets</small></td>
+      <td>158억 달러</td><td>228억 달러</td>
+      <td><span class="tag-up">+7.6%</span></td><td>보수적 추정치</td>
+    </tr>
+    <tr>
+      <td>군용 드론<br><small style="color:var(--faint);font-weight:400">Fortune Business</small></td>
+      <td>&mdash;</td><td>더 높은 추정</td>
+      <td><span class="tag-up">+12.2%</span></td><td>공격적 추정치</td>
+    </tr>
+    <tr>
+      <td>전체 드론<br><small style="color:var(--faint);font-weight:400">민&middot;군 합산</small></td>
+      <td>더 큰 규모</td><td>2035년 305억$</td>
+      <td><span class="tag-up">+7.1%</span></td><td>민간 포함</td>
+    </tr>
+  </table>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">GROWTH DRIVERS</div>
+  <h3>구조적 성장 동력 3가지</h3>
+  <div class="facts" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="fact"><div class="n">AI 자율비행</div><div class="l">엣지 AI 칩 탑재로<br>완전 자율화 진입</div></div>
+    <div class="fact"><div class="n">전장 검증</div><div class="l">우크라이나&middot;가자에서<br>전략적 가치 입증</div></div>
+    <div class="fact"><div class="n">수요 다변화</div><div class="l">정찰&middot;전자전&middot;정밀<br>타격 동시 급증</div></div>
+  </div>
+  <div class="callout callout-purple" style="margin-top:20px">
+    <div class="c-head">우크라이나 전장 검증 &mdash; 드론 전쟁의 분수령</div>
+    <div class="c-body">
+      우크라이나-러시아 전쟁은 드론이 현대전의 <b>게임체인저</b>임을 실증했습니다. 터키 TB2 드론은 초기 전투에서 러시아 기갑부대에 치명적 피해를 입혔고, 양측은 FPV(1인칭 시점) 드론을 수천 대 단위로 소모하는 <b>"드론 소모전"</b>에 진입했습니다. 이 전쟁은 &#9312; 저비용 드론의 고가 자산 파괴 능력, &#9313; 군집 운용의 방어 포화 압도, &#9314; 전자전&middot;드론 간 상호작용이라는 세 가지 교훈을 남겼으며, 모든 주요국 방산 예산에 UAV 항목이 급팽창하는 결과를 초래했습니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== S2 Baykar ===== -->
+<section id="z2">
+<div class="zone-head">
+  <span class="z-big">02</span>
+  <div class="z-num">SECTION 02</div>
+  <h2>Baykar 사례 분석</h2>
+  <p>정부 보조금 없이 드론 강국을 만든 터키의 방산 모델 &mdash; 한국 방산 수출 전략의 거울.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">COMPANY PROFILE</div>
+  <h3>Baykar &mdash; 드론 전문 방산의 벤치마크</h3>
+  <p class="meta">터키 민간 방산기업 &middot; Self-funded R&amp;D 모델 &middot; 2025년 매출 25억 달러</p>
+  <div class="facts" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="fact"><div class="n">25억$</div><div class="l">2025년 전체 매출</div></div>
+    <div class="fact"><div class="n">22억$</div><div class="l">2025년 수출액<br>(역대 최고)</div></div>
+    <div class="fact"><div class="n">88%</div><div class="l">수출 비중<br>(매출 대비)</div></div>
+    <div class="fact"><div class="n">36개국</div><div class="l">TB2 수출 협약국</div></div>
+    <div class="fact"><div class="n">2003~</div><div class="l">Self-funded R&amp;D<br>정부 지원 0원</div></div>
+    <div class="fact"><div class="n">1/5~1/10</div><div class="l">서방 경쟁 제품 대비<br>TB2 가격 수준</div></div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">PRODUCT PORTFOLIO</div>
+  <h3>제품 포트폴리오</h3>
+  <table>
+    <tr><th>제품명</th><th>분류</th><th>주요 특징</th><th>수출 현황</th></tr>
+    <tr>
+      <td style="color:var(--accent)">Bayraktar TB2</td>
+      <td><span class="tag-ac">MALE급</span></td>
+      <td>전술 무인기, 가격 대비 성능 압도적. 우크라이나 전쟁 마케팅 효과 극대화</td>
+      <td>36개국 협약</td>
+    </tr>
+    <tr>
+      <td style="color:var(--accent)">Bayraktar Akinci</td>
+      <td><span class="tag-ac">중고도 UCAV</span></td>
+      <td>장기체공, 공격 능력 강화, 위성통신 탑재</td>
+      <td>16개국 협약</td>
+    </tr>
+    <tr>
+      <td style="color:var(--accent)">Bayraktar TB3</td>
+      <td><span class="tag-ac">TB2 개량형</span></td>
+      <td>함상 운용 가능, 접이식 날개</td>
+      <td>인도네시아 1개국</td>
+    </tr>
+    <tr>
+      <td style="color:#009e7f">KIZILELMA</td>
+      <td><span class="tag-ne">무인 전투기</span></td>
+      <td>터키 최초 완전 독자 개발 UCAV, 초음속 목표</td>
+      <td>2026년 실전 배치 목표</td>
+    </tr>
+  </table>
+  <div class="callout callout-neon" style="margin-top:20px">
+    <div class="c-head">비즈니스 모델 핵심 &mdash; Self-funded R&amp;D</div>
+    <div class="c-body">
+      Baykar는 <b>2003년 창업 이래 단 한 번도 정부 R&amp;D 보조금을 받지 않았습니다.</b> 모든 개발 비용을 자체 수익으로 조달하는 이 모델은 &#9312; 개발 속도의 관료적 지연 제거, &#9313; 수출 마케팅의 완전한 자율성, &#9314; 정부 의존 없는 가격 결정권이라는 세 가지 경쟁 우위를 만들었습니다. TB2 1대 가격이 서방 동급 제품의 <b>1/5~1/10 수준</b>인 것은 이 효율적 구조의 직접적 결과입니다.
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:#009e7f;--zs:var(--neons)">
+  <div class="f-tag">KOREA IMPLICATION</div>
+  <h3>한국 방산에 주는 시사점</h3>
+  <div class="tl">
+    <div class="tl-item active">
+      <div class="ty">핵심 공식</div>
+      <div class="tt">독자 개발 + 실전 검증 + 가격 경쟁력</div>
+      <div class="td">신흥 방산 수출국의 3요소 조합. 한국은 KF-21&middot;천무 등에서 독자 개발과 실전 성능을 갖췄으나, 무인기 영역에서 가격 경쟁력이 아직 검증되지 않음.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">마케팅 전략</div>
+      <div class="tt">전장을 쇼룸으로 &mdash; 실전 투입의 홍보 효과</div>
+      <div class="td">우크라이나에 TB2 무상 공급 &rarr; 전 세계 언론 노출 &rarr; 수출 폭발. 한국도 우크라이나 재건&middot;방산 협력에서 유사한 전략적 기회 모색 중.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">구조적 교훈</div>
+      <div class="tt">UCAV 시장 &mdash; 아직 점유율 확보 가능한 초기 단계</div>
+      <div class="td">KIZILELMA 같은 완전 독자 무인전투기 개발이 한국에도 요구됨. KAI의 UCAV 선행연구는 바른 방향이나 속도와 자원 투입이 관건.</div>
+    </div>
+  </div>
+  <div class="callout callout-caution" style="margin-top:16px">
+    <div class="c-head">단서 &mdash; Baykar 성공의 숨은 조건</div>
+    <div class="c-body">
+      Baykar 모델을 단순 복제하기는 어렵습니다. 터키 정부의 <b>전략적 지원(우크라이나 무상 공급 외교, 구매국 금융 지원)</b>이 수면 아래에서 작동했습니다. 한국도 KAI 수출에서 방산 금융&middot;오프셋 패키지를 결합하는 구조가 필요합니다.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== S3 한국 현황 ===== -->
+<section id="z3">
+<div class="zone-head">
+  <span class="z-big">03</span>
+  <div class="z-num">SECTION 03</div>
+  <h2>한국 무인기 현황</h2>
+  <p>KAI&middot;대한항공&middot;한화그룹 &mdash; 3개 축이 각자의 전략으로 무인화 시대를 준비하고 있습니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">KOREAN PLAYERS</div>
+  <h3>주요 기업별 무인기 전략</h3>
+  <div class="co-grid" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="co-card">
+      <div class="ticker">047810 &middot; KRX</div>
+      <h4>KAI 한국항공우주</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv">RQ-101</div><div class="ml">송골매 (국내 첫 군단급)</div></div>
+        <div class="m"><div class="mv">차기 군단급</div><div class="ml">개발 참여 진행 중</div></div>
+        <div class="m"><div class="mv">UCAV</div><div class="ml">선행연구 수행 중</div></div>
+        <div class="m"><div class="mv">VTOL</div><div class="ml">기술 선행연구</div></div>
+      </div>
+      <div class="highlight"><b>AAV 플랫폼</b> 개발로 미래 무인전투기 기반 구축 목표. KF-21 개발 경험을 무인화로 확장하는 로드맵 수립 중.</div>
+    </div>
+    <div class="co-card">
+      <div class="ticker">003490 &middot; KRX</div>
+      <h4>대한항공 항공우주사업부</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv">사단정찰</div><div class="ml">국내 최초 감항인증</div></div>
+        <div class="m"><div class="mv">95%</div><div class="ml">부품 국산화율</div></div>
+        <div class="m"><div class="mv">AI 파일럿</div><div class="ml">2025.10 발표</div></div>
+        <div class="m"><div class="mv">군집비행</div><div class="ml">제어 기술 개발 중</div></div>
+      </div>
+      <div class="highlight">국내 무인기 개발의 <b>역사적 선도 기업.</b> 중고도 무인기, 다목적무인헬기 보유. AI 파일럿 기술이 차기 경쟁력의 핵심.</div>
+    </div>
+  </div>
+  <div class="co-grid" style="--zc:#009e7f;--zs:var(--neons);margin-top:0">
+    <div class="co-card" style="border-left-color:#009e7f">
+      <div class="ticker">012450 + 272210 &middot; KRX</div>
+      <h4>한화 그룹 (에어로+시스템)</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv" style="color:#009e7f;font-size:12px">전략 TF</div><div class="ml">군용 무인기 TF 조직</div></div>
+        <div class="m"><div class="mv" style="color:#009e7f;font-size:12px">AI 드론</div><div class="ml">기술 내재화 협력</div></div>
+        <div class="m"><div class="mv" style="color:#009e7f;font-size:12px">MUM-T</div><div class="ml">네트워크 통합 역량</div></div>
+        <div class="m"><div class="mv" style="color:#009e7f;font-size:12px">LIG 협력</div><div class="ml">AI 드론 공동개발</div></div>
+      </div>
+      <div class="highlight">한화에어로스페이스 주도, 한화시스템&middot;LIG넥스원과 <b>AI 무인기 기술 내재화</b> 협력. 유무인복합 전장 네트워크 통합 역량 구축 중.</div>
+    </div>
+    <div class="co-card" style="border-left-color:var(--blue)">
+      <div class="ticker">079550 &middot; KRX</div>
+      <h4>LIG넥스원 (&rarr;LIG D&amp;A)</h4>
+      <div class="metrics">
+        <div class="m"><div class="mv" style="color:var(--blue);font-size:12px">AI 드론</div><div class="ml">한화&middot;대한항공 협력</div></div>
+        <div class="m"><div class="mv" style="color:var(--blue);font-size:12px">C-UAS</div><div class="ml">드론 대응체계</div></div>
+        <div class="m"><div class="mv" style="color:var(--blue);font-size:12px">MRO</div><div class="ml">무인체계 정비 진출</div></div>
+        <div class="m"><div class="mv" style="color:var(--blue);font-size:12px">사명변경</div><div class="ml">LIG D&amp;A 예정</div></div>
+      </div>
+      <div class="highlight">천궁-II 수출 마진 <b>20% 중반대.</b> 드론 대응체계(C-UAS) 시장 선점 전략 병행. 사명 변경으로 무인&middot;자율 정체성 강화.</div>
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">ROADMAP</div>
+  <h3>한국 무인기 발전 로드맵</h3>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="ty">현재 운용 중</div>
+      <div class="tt">RQ-101 송골매 (KAI) &mdash; 국내 최초 군단급</div>
+      <div class="td">육군 군단 정찰 임무 운용 중. 1990년대 후반 개발, 해상도 제한으로 차기 체계 필요성 대두. 대한항공 사단정찰형에서 국내 최초 무인기 감항인증&middot;부품 95% 국산화 달성.</div>
+    </div>
+    <div class="tl-item active">
+      <div class="ty">개발 진행 중 (2025~)</div>
+      <div class="tt">차기 군단급 UAV, AI 파일럿 기술</div>
+      <div class="td">KAI&middot;대한항공 경쟁&middot;협력 구도. 대한항공 AI 파일럿 기술 2025년 10월 발표. 군집비행 제어 기술 병행 개발. 한화시스템 MUM-T 지휘통제 연구 병행.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">중기 목표 (2030년대 초)</div>
+      <div class="tt">UCAV 전력화, KF-21 Block III MUM-T 연계</div>
+      <div class="td">KAI UCAV 선행연구 &rarr; 체계개발 전환이 관건. KF-21 Block III 이후 단계에서 유무인복합체계 적용 검토 중. 한화시스템 데이터링크&middot;C2 체계 연동이 핵심 변수.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">장기 비전 (2030년대 후반)</div>
+      <div class="tt">완전 자율 무인전투체계 수출</div>
+      <div class="td">KIZILELMA 대응 한국형 UCAV 개발 및 수출 패키지화. 실전 검증&middot;가격 경쟁력&middot;독자 개발 3요소 확보 시 Baykar형 성공 복제 가능.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== S4 MUM-T ===== -->
+<section id="z4">
+<div class="zone-head">
+  <span class="z-big">04</span>
+  <div class="z-num">SECTION 04</div>
+  <h2>MUM-T 유무인복합 &amp; 미국 CCA 프로그램</h2>
+  <p>6세대 전투의 핵심 개념 &mdash; 유인기와 무인기가 AI로 협력하는 시대가 현실이 됩니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">CONCEPT</div>
+  <h3>MUM-T (Manned-Unmanned Teaming) 개념</h3>
+  <div class="callout callout-navy">
+    <div class="c-head">MUM-T 개념 정의</div>
+    <div class="c-body">
+      유인기(조종사 탑승)와 무인기가 <b>AI 기반 협력체계</b>로 임무를 수행하는 복합 작전 개념. 역할 분담이 핵심입니다.<br><br>
+      <b>무인기 담당:</b> 정찰&middot;기만&middot;전자전&middot;소모성 타격&middot;위험 임무 선행<br>
+      <b>유인기 담당:</b> 의사결정, 핵심 타격, 전술 조율, 무인기 지휘
+    </div>
+  </div>
+  <div class="facts" style="--zc:var(--accent);--zs:var(--accents);margin-top:20px">
+    <div class="fact"><div class="n">생존성 &#8593;</div><div class="l">무인기가 위험 구역<br>선진입&middot;정보 수집</div></div>
+    <div class="fact"><div class="n">타격 효율 &#8593;</div><div class="l">유인기는 핵심 목표<br>에만 집중</div></div>
+    <div class="fact"><div class="n">비용 절감</div><div class="l">고가 유인기 소모 대신<br>저비용 무인기 투입</div></div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:#009e7f;--zs:var(--neons)">
+  <div class="f-tag">US CCA PROGRAM</div>
+  <h3>미국 CCA 프로그램 &mdash; 6세대 전투의 설계도</h3>
+  <table>
+    <tr><th>항목</th><th>내용</th></tr>
+    <tr><td>공식 명칭</td><td>Collaborative Combat Aircraft (CCA)</td></tr>
+    <tr><td>예산 (FY2025~2029)</td><td><b>89억 달러 이상</b> &mdash; 단일 무인기 프로그램 역대 최대 규모</td></tr>
+    <tr><td>운용 목적</td><td>F-22&middot;F-35&middot;F-47(차세대 유인기)과 MUM-T 협력 운용</td></tr>
+    <tr><td>핵심 기술</td><td>AI 자율성 패키지 탑재, 저비용&middot;고생존성 설계, 전장 AI 의사결정</td></tr>
+    <tr><td>Increment I 선정</td><td><b>Anduril YFQ-44</b> &mdash; AI&middot;소프트웨어 기업 Anduril의 첫 전투기 수주</td></tr>
+    <tr><td>한국 시사점</td><td>KF-21 Block III 이후 유무인복합체계 적용 검토. 한화시스템 MUM-T 기술 연구 병행 진행</td></tr>
+  </table>
+  <div class="hbox" style="background:linear-gradient(135deg,var(--neons),#e8fff9);border-color:var(--neon-line);margin-top:20px">
+    <div class="hb-label" style="color:#009e7f">ANDURIL YFQ-44 선정의 의미</div>
+    <p style="color:#0a4a3a">Anduril은 소프트웨어&middot;AI 퍼스트 방산 스타트업입니다. YFQ-44 수주는 <b>"방산 = 하드웨어 기업"</b>이라는 공식을 깼습니다. AI 자율성이 항공기 하드웨어보다 더 중요한 경쟁 요소가 된 시대의 도래를 상징합니다. 한국 방산도 AI 소프트웨어 역량을 플랫폼 경쟁력의 핵심으로 내재화해야 합니다.</p>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">KF-21 MUM-T</div>
+  <h3>한국의 MUM-T 적용 경로 &mdash; KF-21 Block III</h3>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="ty">현재 (Block I)</div>
+      <div class="tt">KF-21 보라매 &mdash; 기본 전투기 능력 확보</div>
+      <div class="td">4.5세대+ 전투기. 레이더&middot;미사일&middot;항전체계 독자화. 2026년 양산 진입 목표.</div>
+    </div>
+    <div class="tl-item active">
+      <div class="ty">중기 (Block II)</div>
+      <div class="tt">AESA 레이더 + 스텔스 강화</div>
+      <div class="td">능동위상배열레이더(AESA) 탑재, 적외선추적체계(IRST) 내재화. 5세대 수준 센서퓨전 달성 목표.</div>
+    </div>
+    <div class="tl-item">
+      <div class="ty">장기 (Block III+)</div>
+      <div class="tt">MUM-T 유무인복합 &mdash; AI 윙맨 운용</div>
+      <div class="td">KF-21이 유인 모함, 국산 UCAV가 AI 윙맨으로 협력 운용. 한화시스템 MUM-T 데이터링크&middot;지휘통제 체계 연동이 핵심. 2030년대 후반 목표.</div>
+    </div>
+  </div>
+  <div class="view">
+    <div class="v-head">INVESTOR NOTE &middot; MUM-T 수혜 체인</div>
+    <p>KF-21 Block III MUM-T 실현 시 수혜 기업: <b>KAI</b>(유인기 플랫폼) + <b>한화시스템</b>(지휘통제&middot;데이터링크) + <b>LIG넥스원</b>(탑재 무장&middot;전자전) + 국산 UCAV 개발업체(미결정). 이 체인이 완성되면 수출 패키지로서의 가치도 크게 상승합니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== S5 Physical AI ===== -->
+<section id="z5">
+<div class="zone-head">
+  <span class="z-big">05</span>
+  <div class="z-num">SECTION 05</div>
+  <h2>Physical AI 연계 &mdash; AI 밸류체인 교차점</h2>
+  <p>방산 무인화는 AI 반도체&middot;클라우드 투자 테마와 두 경로로 교차합니다. 이것이 방산-테크 크로스오버 테마의 핵심입니다.</p>
+</div>
+
+<div class="floor" style="--zc:#009e7f;--zs:var(--neons)">
+  <div class="f-tag">PHYSICAL AI CONNECTION</div>
+  <h3>Physical AI와 방산 무인화의 2가지 교차 경로</h3>
+  <div class="ai-chain">
+    <div class="ai-node hl">
+      <span class="an-icon">&#129504;</span>
+      <div class="an-label">엣지 AI 추론</div>
+      <div class="an-desc">드론 탑재 소형<br>고성능 AI 칩<br>실시간 타겟 인식</div>
+    </div>
+    <div class="ai-node">
+      <span class="an-icon">&#9889;</span>
+      <div class="an-label">AI 반도체</div>
+      <div class="an-desc">엔비디아 Jetson<br>맞춤형 ASIC<br>저전력&middot;고성능</div>
+    </div>
+    <div class="ai-node hl">
+      <span class="an-icon">&#128187;</span>
+      <div class="an-label">훈련 인프라</div>
+      <div class="an-desc">전투 시뮬레이션<br>강화학습<br>GPU 클러스터</div>
+    </div>
+    <div class="ai-node">
+      <span class="an-icon">&#127760;</span>
+      <div class="an-label">클라우드/MEC</div>
+      <div class="an-desc">전장 데이터<br>수집&middot;분석<br>모델 배포</div>
+    </div>
+  </div>
+  <div class="callout callout-neon" style="margin-top:20px">
+    <div class="c-head">경로 1 &mdash; 추론 엣지 컴퓨팅</div>
+    <div class="c-body">
+      드론의 자율 타겟 인식&middot;결정에는 <b>소형 고성능 AI 칩이 필수</b>입니다. 드론은 전력&middot;크기&middot;무게 제약으로 데이터센터급 GPU를 탑재할 수 없습니다. 이 틈새를 채우는 것이 <b>엔비디아 Jetson</b> 시리즈(오린&middot;아가트라 등)와 방산 특화 맞춤형 ASIC입니다. 드론 대량 양산은 이 칩들의 수요를 직접 창출합니다. AI 반도체 밸류체인(설계&rarr;파운드리&rarr;후공정)과 방산 무인화가 교차하는 지점입니다.
+    </div>
+  </div>
+  <div class="callout callout-purple" style="margin-top:12px">
+    <div class="c-head">경로 2 &mdash; 모델 훈련 인프라</div>
+    <div class="c-body">
+      자율비행&middot;전술 AI 모델을 훈련시키려면 <b>대규모 GPU 클러스터</b>가 필요합니다. 전투 시뮬레이션 강화학습(Reinforcement Learning), 적대적 환경 시뮬레이션, 대규모 전장 데이터 처리는 클라우드&middot;HPC 인프라 수요를 직접 창출합니다. 미국 국방부가 Microsoft&middot;AWS&middot;Google Cloud와 체결한 수십억 달러 규모의 군 전용 클라우드 계약이 이 경로의 증거입니다.
+    </div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">KEY TECHNOLOGIES</div>
+  <h3>핵심 기술 스택 &mdash; 드론 AI의 구성요소</h3>
+  <table>
+    <tr><th>기술 레이어</th><th>구성 요소</th><th>주요 업체</th><th>방산 적용</th></tr>
+    <tr>
+      <td>엣지 AI 칩</td>
+      <td>Jetson Orin&middot;Agathra<br>맞춤형 ASIC</td>
+      <td>엔비디아, 인텔, 방산 팹리스</td>
+      <td><span class="tag-ne">드론 탑재 추론</span></td>
+    </tr>
+    <tr>
+      <td>자율 비행 SW</td>
+      <td>컴퓨터 비전<br>센서 퓨전, 경로계획</td>
+      <td>Shield AI, AeroVironment</td>
+      <td><span class="tag-ac">CCA&middot;UCAV 핵심</span></td>
+    </tr>
+    <tr>
+      <td>강화학습 환경</td>
+      <td>전투 시뮬레이터<br>Red Team AI</td>
+      <td>Palantir, Anduril, DARPA</td>
+      <td><span class="tag-ac">전술 AI 학습</span></td>
+    </tr>
+    <tr>
+      <td>전장 네트워크</td>
+      <td>데이터링크<br>C2 체계, JADC2</td>
+      <td>L3Harris, 한화시스템</td>
+      <td><span class="tag-ne">MUM-T 지휘</span></td>
+    </tr>
+    <tr>
+      <td>훈련 인프라</td>
+      <td>GPU 클러스터<br>군 전용 클라우드</td>
+      <td>Microsoft Azure Gov, AWS</td>
+      <td><span class="tag-ca">모델 훈련&middot;배포</span></td>
+    </tr>
+  </table>
+  <div class="view">
+    <div class="v-head">CROSS-SECTOR INVESTOR VIEW</div>
+    <p>방산 무인화는 <b>AI 테마 투자자</b>에게도 신호입니다. 드론 대량 양산 &rarr; 엣지 AI 칩 수요 &rarr; 엔비디아&middot;ARM 생태계 수혜. 전투 AI 훈련 &rarr; GPU 클러스터&middot;클라우드 수요 &rarr; 하이퍼스케일러 군사 클라우드 계약 증가. 방산과 AI 반도체 섹터의 <b>밸류에이션 프리미엄 수렴</b>이 진행 중입니다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== S6 윤리·규범 ===== -->
+<section id="z6">
+<div class="zone-head">
+  <span class="z-big">06</span>
+  <div class="z-num">SECTION 06</div>
+  <h2>자율무기 윤리&middot;규범 &mdash; LAWS 논쟁</h2>
+  <p>기술이 앞서 달리고 규범은 뒤따르는 구조 &mdash; 투자자는 규제 불확실성을 리스크 요인으로 반영해야 합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--caution);--zs:var(--cautions)">
+  <div class="f-tag">ETHICS &amp; REGULATION</div>
+  <h3>LAWS &mdash; 치명적 자율무기체계 논쟁</h3>
+  <div class="callout callout-caution">
+    <div class="c-head">LAWS란 무엇인가</div>
+    <div class="c-body">
+      <b>LAWS(Lethal Autonomous Weapons Systems)</b> &mdash; 인간의 감독 없이 스스로 표적을 선택하고 공격을 실행하는 자율 무기체계. <b>킬러 로봇</b>이라고도 불리며, 국제 인도법(IHL)과의 충돌 가능성으로 심각한 윤리 논쟁을 야기합니다. CCW(특정재래식무기금지협약) 프레임워크에서 2014년부터 논의 중이나 법적 구속력 있는 합의는 아직 없습니다.
+    </div>
+  </div>
+  <table style="margin-top:18px">
+    <tr><th>국가&middot;진영</th><th>입장</th><th>실제 행동</th></tr>
+    <tr>
+      <td>미국&middot;영국&middot;이스라엘</td>
+      <td>"의미 있는 인간 통제" 원칙 고수</td>
+      <td>규제 반대, 독자 개발 지속. CCA도 "인간이 최종 결정" 원칙 내포</td>
+    </tr>
+    <tr>
+      <td>중국&middot;러시아</td>
+      <td>독자 개발 지속</td>
+      <td>국제 규제 논의에 소극적. 자율 드론&middot;AI 무기 연구 가속</td>
+    </tr>
+    <tr>
+      <td>EU&middot;독일&middot;오스트리아</td>
+      <td>법적 구속력 있는 금지 조약 요구</td>
+      <td>CCW 프레임워크 내 규제 합의 추진. 현재 교착 상태</td>
+    </tr>
+    <tr>
+      <td>한국</td>
+      <td>명시적 입장 미정</td>
+      <td>동맹국(미국) 기준 따르되, 독자 개발 연구 병행</td>
+    </tr>
+  </table>
+  <div class="risk-list" style="margin-top:20px">
+    <div class="risk">
+      <div class="sev"><div class="dot high"></div><div class="stxt">HIGH</div></div>
+      <div>
+        <h4>국제 조약 갑작스러운 체결</h4>
+        <div class="rdesc">CCW 내에서 LAWS 금지 조약이 급진전될 경우, <b>자율 무기 개발 프로그램 전면 재검토</b> 필요. 투자 자산 가치 훼손 가능성 있음.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot med"></div><div class="stxt">MED</div></div>
+      <div>
+        <h4>동맹국 간 운용 표준 미통일</h4>
+        <div class="rdesc">한국 자율무기 체계가 <b>NATO&middot;미군 LAWS 정책과 충돌</b>할 경우 상호운용성 문제. 수출 시 제약 발생 가능.</div>
+      </div>
+    </div>
+    <div class="risk">
+      <div class="sev"><div class="dot low"></div><div class="stxt">LOW</div></div>
+      <div>
+        <h4>인간 통제 원칙의 역설적 기회</h4>
+        <div class="rdesc">"의미 있는 인간 통제" 요건 강화 시 완전 자율 대신 <b>반자율 체계가 표준화</b>. 오히려 한화시스템 같은 지휘통제체계 업체에 유리한 구조.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== S7 투자 시사점 ===== -->
+<section id="z7">
+<div class="zone-head">
+  <span class="z-big">07</span>
+  <div class="z-num">SECTION 07</div>
+  <h2>투자 시사점 &mdash; 무인화 테마 수혜 기업</h2>
+  <p>무인화&middot;MUM-T&middot;Physical AI 연계 테마에서 한국 방산 기업의 포지션을 정리합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">INVESTMENT VIEW</div>
+  <h3>수혜 기업 분류</h3>
+  <table>
+    <tr><th>기업</th><th>무인화 포지션</th><th>핵심 촉매</th><th>단기 리스크</th></tr>
+    <tr>
+      <td>KAI<br><small style="color:var(--faint);font-weight:400">047810</small></td>
+      <td><span class="tag-ac">플랫폼 제공자</span></td>
+      <td>차기 군단급 UAV 수주, UCAV 체계개발 착수, AAV 수출</td>
+      <td>UCAV 개발 일정 지연, 예산 삭감 리스크</td>
+    </tr>
+    <tr>
+      <td>한화시스템<br><small style="color:var(--faint);font-weight:400">272210</small></td>
+      <td><span class="tag-ne">C2&middot;네트워크</span></td>
+      <td>MUM-T 지휘통제 체계 수주, SAR 위성-드론 표적 데이터 연동</td>
+      <td>전략적 TF 성과 가시화까지 시간 소요</td>
+    </tr>
+    <tr>
+      <td>대한항공<br><small style="color:var(--faint);font-weight:400">003490</small></td>
+      <td><span class="tag-ac">AI 파일럿 선도</span></td>
+      <td>AI 파일럿&middot;군집비행 기술 상용화, 사단정찰 UAV 후속 수출</td>
+      <td>방산 사업부 분리 전 항공여객 실적과 혼재</td>
+    </tr>
+    <tr>
+      <td>LIG넥스원<br><small style="color:var(--faint);font-weight:400">079550</small></td>
+      <td><span class="tag-ne">C-UAS 드론 대응</span></td>
+      <td>드론 방어체계(C-UAS) 글로벌 수요 급증, AI 드론 협력 성과</td>
+      <td>고밸류 PER 80배 &mdash; 기대치 선반영 여부 논란</td>
+    </tr>
+    <tr>
+      <td>한화에어로스페이스<br><small style="color:var(--faint);font-weight:400">012450</small></td>
+      <td><span class="tag-ca">사업 TF 주도</span></td>
+      <td>군용 무인기 TF 성과, 유무인복합 패키지 수출 구현 시 K9과 시너지</td>
+      <td>메인 비즈니스(K9&middot;AS21)와 무인화 우선순위 조율</td>
+    </tr>
+  </table>
+</div>
+
+<div class="floor" style="--zc:#009e7f;--zs:var(--neons)">
+  <div class="f-tag">SCENARIO ANALYSIS</div>
+  <h3>시나리오별 투자 접근</h3>
+  <div class="callout callout-neon">
+    <div class="c-head">강세 시나리오 &mdash; 무인화 패키지 수출 본격화</div>
+    <div class="c-body">
+      KF-21 수출 성사 + MUM-T 국산 UCAV 패키지 동반 수출 &rarr; <b>수주잔고 급증 + 마진 확장</b> 동시 실현. Baykar 모델 복제 성공 시 KAI 밸류에이션 리레이팅 필요. 핵심 트리거: <b>폴란드&middot;인도 KF-21 수출 협상 가속 + UCAV 체계개발 승인.</b>
+    </div>
+  </div>
+  <div class="callout callout-caution" style="margin-top:12px">
+    <div class="c-head">약세 시나리오 &mdash; 글로벌 경쟁 심화</div>
+    <div class="c-body">
+      Baykar&middot;Anduril 등 신흥 강자의 가격&middot;기술 공세로 한국 무인기의 시장 진입 차별화 실패. <b>플랫폼 하드웨어는 저마진 상품화</b>, 소프트웨어&middot;AI 역량 미흡으로 부가가치 이전. KAI의 차별화 부재 시 현재 프리미엄 유지 어려움.
+    </div>
+  </div>
+  <div class="view">
+    <div class="v-head">BOTTOM LINE &middot; 투자 결론</div>
+    <p>무인화 테마의 단기 수혜는 <b>한화시스템</b>(MUM-T C2 체계, SAR 위성 데이터)과 <b>LIG넥스원</b>(C-UAS 드론 방어)이 상대적으로 명확합니다. <b>KAI</b>는 UCAV 개발 진전 여부가 핵심 옵션가치 &mdash; 체계개발 착수 발표 시 재평가 기회. <b>대한항공</b>은 AI 파일럿 기술의 군&middot;민 이중 활용 가능성이 장기 프리미엄 요인이나 방산 사업부 분리 전까지 투자 순도 유의.</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== S8 용어사전 ===== -->
+<section id="z8">
+<div class="zone-head">
+  <span class="z-big">08</span>
+  <div class="z-num">SECTION 08</div>
+  <h2>용어 사전</h2>
+  <p>무인화&middot;AI 방산 투자에 필요한 핵심 용어 20+개를 정리합니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+
+<div class="gloss-sec">UAV &middot; 기체 분류</div>
+<div class="gloss">
+  <details>
+    <summary>UAV (Unmanned Aerial Vehicle) &mdash; 무인 항공기</summary>
+    <div class="g-body">조종사가 탑승하지 않는 무인 항공기의 총칭. <b>드론(Drone)</b>이라는 별칭으로도 불림. 원격 조종(RC), 반자율, 완전 자율 등 자율화 수준에 따라 분류. 군사&middot;민간 양용 시장으로 급성장 중이며, 군사 UAV는 정찰&middot;전자전&middot;타격&middot;군수 지원 등 다양한 임무를 수행.</div>
+  </details>
+  <details>
+    <summary>UCAV (Unmanned Combat Aerial Vehicle) &mdash; 무인 전투기</summary>
+    <div class="g-body">공격 임무가 가능한 무인 전투기. 미사일&middot;폭탄 등 무장을 탑재하고 자율 또는 원격 제어로 표적을 타격. <b>Baykar KIZILELMA</b>, 미국 XQ-58 Valkyrie, 중국 CH-7 등이 대표 사례. CCA 프로그램의 YFQ-44도 UCAV 범주에 해당.</div>
+  </details>
+  <details>
+    <summary>MALE (Medium-Altitude Long-Endurance) &mdash; 중고도 장기체공</summary>
+    <div class="g-body">중고도 장기체공 무인기. 고도 5,000~15,000m 수준, 비행 시간 24~48시간 이상. 전략 정찰과 장기 감시&middot;타격에 적합. <b>Bayraktar TB2</b>가 대표적 MALE급 제품. 미국 MQ-9 Reaper, 이스라엘 Heron 등도 동급.</div>
+  </details>
+  <details>
+    <summary>송골매 (RQ-101) &mdash; 한국 최초 군단급 무인기</summary>
+    <div class="g-body">KAI가 개발한 국내 최초 군단급 전술 무인기. 육군 군단 정찰 임무에 운용 중. <b>1990년대 후반 개발</b>, 현재 후속 차기 군단급 무인기 개발 진행 중. 이름은 한국의 맹금류(송골매)에서 유래.</div>
+  </details>
+  <details>
+    <summary>군집비행 (Swarm Drone) &mdash; 드론 떼 전술</summary>
+    <div class="g-body">다수의 드론이 AI 알고리즘으로 상호 통신하며 협력 임무를 수행하는 기술. 포화 공격(saturation attack)으로 방공망을 압도하거나, 분산 정찰로 넓은 지역을 동시 감시. 단일 지휘 드론이 편대를 지휘하는 <b>계층형 구조</b>가 일반적. 대한항공이 관련 기술 개발 중.</div>
+  </details>
+  <details>
+    <summary>드론 (Drone) &mdash; 무인 비행체 통칭</summary>
+    <div class="g-body">UAV의 구어적 표현. 수벌의 윙윙 소리에서 유래. 소형 FPV 드론부터 MALE급 전술 UAV, UCAV까지 무인 비행체를 포괄. 군사적 맥락에서는 주로 <b>소형 전술 드론</b>(FPV, 가미카제 등)을 지칭.</div>
+  </details>
+</div>
+
+<div class="gloss-sec">전술 개념 &middot; 체계</div>
+<div class="gloss">
+  <details>
+    <summary>MUM-T (Manned-Unmanned Teaming) &mdash; 유무인복합체계</summary>
+    <div class="g-body">유인기와 무인기가 팀을 이뤄 협력 작전을 수행하는 전술 개념. 유인기 조종사가 무인 윙맨 여러 대를 동시 지휘하며, 무인기는 위험 임무&middot;정찰&middot;기만&middot;소모성 타격을 담당. <b>6세대 전투의 핵심 패러다임.</b> 미국 CCA, 영국&middot;호주 Loyal Wingman 등이 대표 프로그램.</div>
+  </details>
+  <details>
+    <summary>CCA (Collaborative Combat Aircraft) &mdash; 협력전투기</summary>
+    <div class="g-body">미 공군의 유무인복합 자율전투기 프로그램. FY2025~2029 예산 89억 달러 이상. <b>F-22&middot;F-35&middot;F-47과 협력 운용</b>하는 AI 자율 무인전투기 개발. Increment I에서 Anduril YFQ-44 선정. AI 자율 판단 무기체계로, "AI 퍼스트 방산"의 상징적 사건.</div>
+  </details>
+  <details>
+    <summary>6세대 전투 (6th-Generation Warfare) &mdash; 차세대 공중전 개념</summary>
+    <div class="g-body">5세대(F-22&middot;F-35 수준 스텔스+네트워크 전투) 이후 차세대 공중전 개념. 핵심: &#9312; MUM-T 유무인복합, &#9313; AI 기반 전술 자율화, &#9314; 네트워크 중심전 심화, &#9315; 극초음속 무기 통합, &#9316; 스텔스 2.0(능동 전자전). <b>F-47(미국)&middot;KF-21 Block III(한국)</b>가 이 방향으로 발전 중.</div>
+  </details>
+  <details>
+    <summary>자율무기 (Autonomous Weapons) &mdash; 자율 판단 무기체계</summary>
+    <div class="g-body">인간의 개입 없이 스스로 표적을 선택하고 공격을 실행할 수 있는 무기체계. 자율화 수준: &#9312; Human-in-the-Loop(인간이 모든 결정), &#9313; Human-on-the-Loop(인간이 개입 가능), &#9314; Human-out-of-the-Loop(완전 자율). 완전 자율 체계가 <b>LAWS</b>에 해당하며 국제 규범 논쟁의 대상.</div>
+  </details>
+</div>
+
+<div class="gloss-sec">Baykar 제품군</div>
+<div class="gloss">
+  <details>
+    <summary>TB2 (Bayraktar TB2) &mdash; 터키 MALE급 전술 무인기</summary>
+    <div class="g-body">Baykar의 대표 MALE급 전술 무인기. <b>가격이 서방 동급 대비 1/5~1/10</b>이며 실전 성능이 우크라이나 전쟁에서 검증됨. 36개국에 수출 협약 체결. 한 대 가격은 약 100~200만 달러 수준으로 추정. 터키어로 "매"를 뜻하는 Bayraktar의 이름을 딴 제품.</div>
+  </details>
+  <details>
+    <summary>Akinci (Bayraktar Akinci) &mdash; 터키 중고도 UCAV</summary>
+    <div class="g-body">Baykar의 대형 UCAV. TB2보다 대형&middot;고성능으로 장기체공&middot;고고도 운용, 위성통신 탑재. <b>16개국에 수출 협약.</b> 레이더&middot;EO/IR 시스템&middot;전자전 장비를 통합한 다임무 체계. "아크인즈"는 터키어로 "약탈자&middot;용맹한 전사"를 의미.</div>
+  </details>
+  <details>
+    <summary>KIZILELMA &mdash; 터키 최초 완전 독자 무인전투기</summary>
+    <div class="g-body">Baykar가 개발 중인 터키 최초 완전 독자 개발 무인전투기(UCAV). 초음속 비행을 목표로 하며 2026년 실전 배치 예정. <b>터키어로 "붉은 사과"</b>를 의미하며, 오스만 제국의 이상적 목표를 상징. AI 기반 자율 전투 능력 탑재 예정.</div>
+  </details>
+</div>
+
+<div class="gloss-sec">AI &middot; 기술</div>
+<div class="gloss">
+  <details>
+    <summary>AI 파일럿 (AI Pilot) &mdash; 인공지능 조종사</summary>
+    <div class="g-body">인간 조종사의 역할을 AI가 수행하는 기술. 센서 데이터 처리&middot;상황 인식&middot;경로 계획&middot;전술 판단을 AI가 자율 수행. <b>대한항공이 2025년 10월 기술 개발을 공개 발표.</b> 완전 자율 비행과 반자율 보조(co-pilot AI) 두 방향으로 개발. 군사 AI 파일럿은 적대적 환경&middot;전자전&middot;전술 기동이 추가 요구사항.</div>
+  </details>
+  <details>
+    <summary>엣지 컴퓨팅 (Edge Computing) &mdash; 현장 분산 처리</summary>
+    <div class="g-body">데이터를 중앙 서버(클라우드)로 보내지 않고 <b>현장(드론&middot;로봇&middot;차량)에서 즉시 처리</b>하는 컴퓨팅 방식. 전장에서 통신 두절&middot;지연&middot;보안 위협 시에도 독립적 판단 가능. 드론 AI의 핵심 요구사항. 엔비디아 Jetson이 대표적 엣지 AI 플랫폼.</div>
+  </details>
+  <details>
+    <summary>Jetson (NVIDIA Jetson) &mdash; 엔비디아 엣지 AI 플랫폼</summary>
+    <div class="g-body">엔비디아의 임베디드 AI 컴퓨팅 플랫폼 시리즈. Jetson Nano&middot;Xavier&middot;Orin&middot;Agathra 등 라인업 보유. <b>드론&middot;로봇&middot;자율주행차에 탑재</b>되어 엣지에서 실시간 AI 추론 수행. 군사용 드론의 자율 표적 인식&middot;회피 기동에 사용. 방산 무인화와 AI 반도체 밸류체인이 교차하는 핵심 제품.</div>
+  </details>
+  <details>
+    <summary>ASIC (Application-Specific Integrated Circuit) &mdash; 맞춤형 반도체</summary>
+    <div class="g-body">특정 용도에 최적화된 맞춤형 반도체 칩. 범용 GPU와 달리 특정 알고리즘에만 맞게 설계되어 <b>전력&middot;성능&middot;크기에서 극도로 최적화</b> 가능. 군사 드론 탑재용 AI 칩에서 Jetson 대체 또는 보완 수단으로 개발 중. 구글 TPU, 애플 Neural Engine이 민간 ASIC의 사례.</div>
+  </details>
+  <details>
+    <summary>강화학습 (Reinforcement Learning) &mdash; AI 훈련 기법</summary>
+    <div class="g-body">에이전트가 환경과 상호작용하며 보상/패널티를 통해 최적 행동 정책을 스스로 학습하는 AI 기법. <b>자율비행&middot;전술 기동&middot;표적 선정</b> 등 드론 AI 훈련에 핵심. 전투 시뮬레이터에서 수백만 번의 가상 임무를 반복하며 최적 전술 학습. 대규모 GPU 클러스터 필요.</div>
+  </details>
+  <details>
+    <summary>Physical AI &mdash; 물리 세계 작동 AI</summary>
+    <div class="g-body">디지털 공간이 아닌 <b>물리적 세계에서 직접 작동하는 AI</b> 시스템의 총칭. 로봇&middot;드론&middot;자율주행차&middot;무인기 등 AI가 물리적 환경을 인식&middot;판단&middot;행동하는 체계. 엔비디아 젠슨 황이 "Physical AI는 다음 AI 혁명"이라 표현. 방산 무인화는 Physical AI의 가장 자원 집약적&middot;고부가가치 응용 분야.</div>
+  </details>
+</div>
+
+<div class="gloss-sec">국제 규범</div>
+<div class="gloss">
+  <details>
+    <summary>LAWS (Lethal Autonomous Weapons Systems) &mdash; 치명적 자율무기</summary>
+    <div class="g-body">인간의 직접 감독 없이 스스로 표적을 선택하고 치명적 공격을 가할 수 있는 자율 무기체계. <b>"킬러 로봇"</b>이라고도 불림. 국제인도법(IHL) 상 민간인 보호 원칙&middot;비례성 원칙과 충돌 우려. CCW 프레임워크에서 2014년부터 논의 중이나 법적 규제 합의 미도달.</div>
+  </details>
+  <details>
+    <summary>CCW (특정재래식무기금지협약) &mdash; 자율무기 규제 협의체</summary>
+    <div class="g-body">Convention on Certain Conventional Weapons. 1983년 발효된 국제 무기 통제 조약. 과도한 피해를 주는 재래식 무기를 규제. 현재 LAWS 관련 <b>전문가그룹(GGE)</b>이 매년 협의 진행. 주요국 간 이해관계 충돌로 LAWS 금지 조약 체결은 요원한 상태.</div>
+  </details>
+</div>
+
+</div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="series-nav">
+  <a href="k_defense_theme_air_defense.html">
+    <div class="sn-label">PREV &middot; MODULE B</div>
+    방공&middot;미사일 방어
+  </a>
+  <a href="k_defense_theme_naval.html" class="sn-next">
+    <div class="sn-label">NEXT &middot; MODULE D</div>
+    함정&middot;해양
+  </a>
+</div>
+
+<div class="disclaimer">
+  <b>투자 유의사항</b> &mdash; 이 문서는 교육&middot;정보 제공 목적으로 작성된 리서치 자료이며, 투자 권유 또는 매매 추천이 아닙니다. 본문의 수치&middot;전망&middot;기업 정보는 공개된 자료를 바탕으로 하나, 변경될 수 있습니다. 방산 투자는 지정학&middot;정책&middot;예산 변수에 민감하며 원금 손실 가능성이 있습니다. 투자 판단은 반드시 개인의 책임 하에 이루어져야 합니다. 최종 작성일: 2026년 6월.
+</div>
+
+<footer>K-방산 심화 테마 &middot; Module C &middot; 무인화&middot;유무인복합 &middot; Physical AI 연계 &copy; 2026</footer>
+
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  var bar = document.getElementById('prog');
+  function upd(){
+    var st = document.documentElement.scrollTop || document.body.scrollTop;
+    var sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', upd, {passive:true});
+})();
+
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.floor').forEach(function(f){ io.observe(f); });
+})();
+
+(function(){
+  document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var t = document.querySelector(this.getAttribute('href'));
+      if(t) window.scrollTo({top: t.getBoundingClientRect().top + window.pageYOffset - 56, behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>풍산 외 소부장 Deep-Dive — K-방산 시리즈 Part 4-6</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f0ede5; --card:#ffffff; --line:#d8d4c8; --note:#eae7de; --chip-bg:#e4e0d4;
+  --accent:#8b6914; --accents:#f5edda; --accent-line:#d4b86a;
+  --bronze:#8b6914; --bronzes:#f5edda;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--caution),var(--up),var(--accent));width:0%;z-index:99;transition:width .15s}
+
+nav{position:sticky;top:0;background:rgba(240,237,229,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover{border-color:var(--accent);color:var(--accent)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#1a1a14 0%,#1e1c10 40%,#161409 100%);color:#eef2e8;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.35;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(139,105,20,.1) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(139,105,20,.1) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(26,26,20,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:74px 20px 36px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:#c9a84c;font-weight:800}
+.hero h1{font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#e8c96a 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa898;max-width:620px;margin:0 auto;font-size:16px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(16px,4.2vw,24px);font-weight:900;color:#e7c77e;letter-spacing:-.02em;line-height:1.2}
+.stat .l{font-size:11.5px;color:#8a9680;margin-top:6px;line-height:1.45}
+
+/* ═══ SECTIONS ═══ */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none;color:var(--ink)}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--accent)}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--accent));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.22)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc,var(--accent));background:var(--zs,var(--accents));padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* ═══ DATA TABLE ═══ */
+.tbl-wrap{overflow-x:auto;margin:18px 0 4px;border-radius:14px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);min-width:480px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:11px 12px;text-align:left}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+tr:nth-child(even) td{background:#fafaf7}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-bl{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--blues);color:var(--blue)}
+.tag-br{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent)}
+
+/* ═══ FACT GRID ═══ */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,var(--accents));border:1px solid color-mix(in srgb, var(--zc,var(--accent)) 20%, white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(14px,3.5vw,20px);font-weight:900;color:var(--zc,var(--accent));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* ═══ CALLOUT ═══ */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-bronze .c-head{background:var(--accent)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+.callout-gold .c-head{background:var(--caution)}
+
+/* ═══ INVESTOR VIEW ═══ */
+.view{margin-top:16px;border:1.5px dashed var(--accent-line);background:var(--bronzes);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#7a6a30;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5a4e25;line-height:1.7}
+
+/* ═══ EXPORT PROGRESS BAR ═══ */
+.export-bar{margin:20px 0 6px}
+.eb-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.eb-label{font-size:12px;font-weight:800;width:136px;flex:none;color:var(--ink)}
+.eb-track{flex:1;height:24px;background:#ede9e0;border-radius:8px;overflow:hidden;position:relative}
+.eb-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;font-size:10px;font-weight:800;color:#fff;transition:width 1.4s cubic-bezier(.2,.8,.3,1);white-space:nowrap;overflow:hidden}
+.eb-val{font-size:11px;color:var(--sub);width:34px;text-align:right;flex:none}
+
+/* ═══ NODE MATRIX ═══ */
+.node-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}
+@media(max-width:560px){.node-grid{grid-template-columns:1fr}}
+.node-card{border-radius:14px;padding:18px;border:1px solid}
+.node-strong{background:var(--ups);border-color:#b0d8c7}
+.node-strong .nc-badge{background:var(--up);color:#fff}
+.node-mid{background:var(--accents);border-color:var(--accent-line)}
+.node-mid .nc-badge{background:var(--accent);color:#fff}
+.node-watch{background:var(--cautions);border-color:#d9b870}
+.node-watch .nc-badge{background:var(--caution);color:#fff}
+.node-grow{background:var(--blues);border-color:#a8c0de}
+.node-grow .nc-badge{background:var(--blue);color:#fff}
+.nc-badge{font-size:10px;font-weight:800;padding:2px 9px;border-radius:6px;display:inline-block;margin-bottom:8px;letter-spacing:.04em}
+.nc-name{font-size:15px;font-weight:900;margin-bottom:3px;color:var(--ink)}
+.nc-type{font-size:12px;color:var(--sub);margin-bottom:8px}
+.nc-desc{font-size:13px;color:var(--sub);line-height:1.6}
+
+/* ═══ RISK LIST ═══ */
+.risk-list{display:grid;gap:12px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--up)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--faint)}
+.risk h4{font-size:15px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.5px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* ═══ GLOSSARY ═══ */
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px;transition:box-shadow .2s}
+.gloss details[open]{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.gloss summary{list-style:none;cursor:pointer;padding:13px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400;font-size:18px;line-height:1}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub);line-height:1.75}
+.gloss .g-body b{color:var(--ink)}
+.gloss-sec{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.14em;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+/* ═══ SERIES NAV ═══ */
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+.series-nav .next{text-align:right}
+
+/* ═══ MISC ═══ */
+.analogy{background:linear-gradient(100deg,#f6edd8,#f3e8c8);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#574010}
+.analogy b{color:#3d2c06}
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px;padding-bottom:20px}
+
+@media(max-width:600px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .floor{padding:22px 18px}
+  .eb-label{width:110px;font-size:11px}
+}
+@media print{
+  nav,#prog{display:none}
+  .floor{opacity:1;transform:none;break-inside:avoid}
+  .hero-shell{background:#fff;color:var(--ink)}
+  .hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<!-- Fixed Home Button -->
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">K-방산 시리즈 · Part 4-6</div>
+    <h1>소부장 — 방산 밸류체인의<br>숨은 노드들</h1>
+    <p class="lede">풍산(탄약) · 빅텍(전자전) · 한화컴포지트 · 이오시스템 · LIG넥스원 생태계<br>NATO 재보급 사이클과 수직계열화 틈새에서 포착되는 2차 수혜 구조</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">3.85조</div>
+        <div class="l">풍산 2025년<br>별도 매출액</div>
+      </div>
+      <div class="stat">
+        <div class="n">11개국</div>
+        <div class="l">K9 자주포<br>수출 국가 수</div>
+      </div>
+      <div class="stat">
+        <div class="n">NATO<br>탄약 부족</div>
+        <div class="l">우크라이나 전쟁 후<br>유럽 재고 소진 지속</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ STICKY NAV ═══════ -->
+<nav>
+  <a href="#overview">풍산 개요</a>
+  <a href="#perf">풍산 실적</a>
+  <a href="#ammo">탄약 사업</a>
+  <a href="#divesture">매각 이슈</a>
+  <a href="#viktek">빅텍</a>
+  <a href="#others">기타 소부장</a>
+  <a href="#compare">기업 비교</a>
+  <a href="#invest">투자 관점</a>
+  <a href="#gloss">용어 사전</a>
+</nav>
+
+<!-- ═══════ SECTION 1: 풍산 개요 ═══════ -->
+<div class="wrap">
+<section id="overview">
+  <div class="zone-head">
+    <div class="z-big">01</div>
+    <div class="z-num">SECTION 01</div>
+    <h2>풍산 — 국내 유일 탄약 전문기업</h2>
+    <p>세계 5위권 탄약 제조사. 방산(탄약)과 신동(동합금 소재)의 두 축으로 운영하며 NATO 규격 인증 기반의 수출 경쟁력을 보유한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">OVERVIEW · 103140</div>
+    <h3>풍산 기업 개요</h3>
+    <p class="meta">코스피 상장 · 탄약·신동 전문 제조 · 2025년 별도 기준</p>
+    <p class="body">풍산(103140)은 <b>국내 유일의 탄약 전문기업</b>이자 세계 5위권 탄약 제조사다. NATO 규격 155mm 포탄 인증을 보유해 동맹국 탄약 공급망에 직접 편입될 수 있는 희귀한 포지션을 점한다. 사업은 크게 <b>방산(탄약)</b>과 <b>신동(동합금 소재)</b>으로 이분된다.</p>
+
+    <div class="facts" style="--zc:var(--accent);--zs:var(--accents)">
+      <div class="fact">
+        <div class="n">세계 5위권</div>
+        <div class="l">탄약 제조<br>글로벌 순위</div>
+      </div>
+      <div class="fact">
+        <div class="n">NATO 인증</div>
+        <div class="l">155mm 포탄<br>NATO 규격 보유</div>
+      </div>
+      <div class="fact">
+        <div class="n">2축 구조</div>
+        <div class="l">방산 31%<br>신동 69%</div>
+      </div>
+      <div class="fact">
+        <div class="n">60~70%</div>
+        <div class="l">방산부문<br>수출 비중</div>
+      </div>
+      <div class="fact">
+        <div class="n">증설 중</div>
+        <div class="l">생산능력<br>지속 확장</div>
+      </div>
+      <div class="fact">
+        <div class="n">독립 유지</div>
+        <div class="l">한화에어로<br>인수 최종 철회</div>
+      </div>
+    </div>
+
+    <div class="analogy"><b>핵심 포지셔닝:</b> 풍산은 탄약이라는 소모성 전쟁 자산의 국내 독점 제조사다. K9 자주포가 팔릴 때마다 그 포탄이 필요하고, NATO 재고가 소진될수록 풍산의 수주가 늘어나는 구조다. 무기 시스템과 달리 탄약은 반복 구매가 발생한다.</div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 2: 풍산 실적 ═══════ -->
+<section id="perf">
+  <div class="zone-head">
+    <div class="z-big">02</div>
+    <div class="z-num">SECTION 02</div>
+    <h2>풍산 실적 — 2025년 기준</h2>
+    <p>매출 3.85조, 방산 vs 신동 2축 구조 분해. 수출이 이익의 대부분을 기여하는 비대칭 수익 구조.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">FINANCIALS · 2025</div>
+    <h3>연간 실적 요약</h3>
+    <p class="meta">2025년 별도 기준 · 억원 단위 · 2026년은 증권사 컨센서스 전망치</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>2025년 실적</th><th>2026년 전망</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>매출액 (별도, 억원)</td>
+            <td><b>38,491</b></td>
+            <td>42,923</td>
+            <td><span class="tag-up">+11.5% YoY 전망</span></td>
+          </tr>
+          <tr>
+            <td>영업이익 (억원)</td>
+            <td><b>2,472</b></td>
+            <td>2,762</td>
+            <td><span class="tag-up">+11.7% 전망</span></td>
+          </tr>
+          <tr>
+            <td>영업이익률</td>
+            <td><b>6.4%</b></td>
+            <td>6.4%</td>
+            <td>안정적 유지</td>
+          </tr>
+          <tr>
+            <td>방산 부문 매출</td>
+            <td><b>11,868억 (31%)</b></td>
+            <td>—</td>
+            <td>탄약 수출 주도</td>
+          </tr>
+          <tr>
+            <td>신동 부문 매출</td>
+            <td><b>26,623억 (69%)</b></td>
+            <td>—</td>
+            <td>구리가격 연동</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-bronze" style="margin-top:20px">
+      <div class="c-head">매출 구조 분해 포인트</div>
+      <div class="c-body">
+        매출 비중은 신동(69%)이 압도하지만, <b>이익 기여는 방산이 역전한다.</b> 방산 수출은 고마진 구조인 반면 신동은 구리 가격에 연동된 원자재 사업이라 이익률이 낮다. 따라서 방산 수출 비중 변화가 전체 수익성을 결정하는 핵심 변수다. <b>수출비중 60~70%의 방산 부문이 실질적으로 기업 가치를 이끄는 엔진</b>이다.
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR NOTE</div>
+      <p>풍산의 PBR·PER 멀티플은 신동 사업의 원자재 기업 성격 때문에 낮게 형성되어 있다. 방산 비중이 높아질수록 리레이팅 가능성이 열린다. 탄약사업부 분리·독립 상장 시나리오가 재부상하면 방산 가치 재평가 계기가 될 수 있다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 3: 탄약 사업 ═══════ -->
+<section id="ammo">
+  <div class="zone-head">
+    <div class="z-big">03</div>
+    <div class="z-num">SECTION 03</div>
+    <h2>풍산 탄약 사업 — NATO 공급망의 핵심 노드</h2>
+    <p>우크라이나 전쟁 이후 유럽 탄약 재고 소진이 가속화되면서 NATO 규격 인증 보유 기업에 구조적 수혜가 집중되고 있다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+    <div class="f-tag">AMMUNITION · DEFENSE</div>
+    <h3>방산(탄약) 사업 상세</h3>
+    <p class="meta">NATO 규격 인증 기반 · 수출 주도 고마진 구조</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>항목</th><th>내용</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>주요 탄약 라인업</td>
+            <td>105mm·155mm 포탄, 20mm·30mm 기관포탄, 소총탄, 박격포탄</td>
+          </tr>
+          <tr>
+            <td>NATO 규격 인증</td>
+            <td>155mm 포탄 NATO 규격 보유 → 동맹국 직접 납품 가능</td>
+          </tr>
+          <tr>
+            <td>수출 비중</td>
+            <td>방산 부문 매출의 <b>60~70%</b> — 수출이 이익 대부분 기여</td>
+          </tr>
+          <tr>
+            <td>우크라이나 연계 수요</td>
+            <td>간접 공급(미국·유럽 동맹국 경유) — 직접 수출은 정책 제한</td>
+          </tr>
+          <tr>
+            <td>NATO 탄약 부족</td>
+            <td>유럽 재고 소진 → 한국·미국 탄약 급수요, 풍산 수주 급증</td>
+          </tr>
+          <tr>
+            <td>생산능력 확대</td>
+            <td>증설 투자 지속 중 — 설비 확장으로 공급 병목 해소 추진</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-green" style="margin-top:20px">
+      <div class="c-head">NATO 탄약 부족의 구조적 배경</div>
+      <div class="c-body">
+        냉전 이후 유럽 각국은 탄약 재고를 축소하며 방산 예산을 삭감해왔다. 우크라이나 전쟁으로 하루 수천 발씩 소모되는 포탄 전쟁이 재현되자 유럽 재고는 급격히 소진되었다. <b>155mm 포탄의 NATO 규격 인증을 보유한 기업은 전 세계적으로 극히 제한적</b>이며 풍산은 그 중 하나다. 설령 NATO 재고가 일부 충족되더라도 <b>비축량 기준 상향 조정이 진행 중</b>이어서 구조적 수요 증가 흐름은 중기 지속이 예상된다.
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">SUPPLY CHAIN VIEW</div>
+      <p>K9 자주포 수출 11개국 확대는 풍산 탄약 수요의 구조적 플로어를 높인다. 포를 산 나라는 탄약을 계속 사야 하기 때문이다. 체계 수출 → 탄약 수요 → 풍산 수주 증가라는 선순환 구조다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 4: 매각 이슈 ═══════ -->
+<section id="divesture">
+  <div class="zone-head">
+    <div class="z-big">04</div>
+    <div class="z-num">SECTION 04</div>
+    <h2>풍산 탄약사업부 매각 이슈</h2>
+    <p>한화에어로스페이스의 인수 시도와 최종 철회. 독립 유지의 전략적 의미를 짚는다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+    <div class="f-tag">M&amp;A · STRATEGY · 2026</div>
+    <h3>한화에어로스페이스 인수 시도 → 철회</h3>
+    <p class="meta">2026년 현재 기준 · 예상 매각가 1.5조원 (최종 불발)</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>단계</th><th>내용</th><th>평가</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>인수 추진 배경</td>
+            <td>한화에어로스페이스: 화약→탄약→자주포 수직계열화 완성 목적</td>
+            <td><span class="tag-bl">전략 논리 명확</span></td>
+          </tr>
+          <tr>
+            <td>예상 거래 규모</td>
+            <td>매각가 약 1.5조원 (인적분할 후 지분 38% 기준)</td>
+            <td><span class="tag-ca">고가 논쟁</span></td>
+          </tr>
+          <tr>
+            <td>최종 결과</td>
+            <td>풍산이 매각 철회 선언 → 한화에어로스페이스 인수 중단</td>
+            <td><span class="tag-dn">불발</span></td>
+          </tr>
+          <tr>
+            <td>독립성 의미</td>
+            <td>풍산 탄약사업부 독립 유지 → 탄약 공급망 다변화 관점 긍정</td>
+            <td><span class="tag-up">공급망 안정</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-red" style="margin-top:20px">
+      <div class="c-head">매각 철회의 전략적 해석</div>
+      <div class="c-body">
+        한화에어로스페이스 입장에서 수직계열화는 매력적이나, <b>풍산 탄약사업부는 단순 부품사가 아니라 독립적 수출 플레이어</b>다. 인수 시 한화 그룹 내 계열사로 편입되어 독립적 수주 행동이 제약될 우려가 있었다. 정부·군 입장에서도 탄약 공급선 다양화가 전략적으로 유리하다. 풍산 입장에서는 <b>독립 유지가 독자 수출 전략을 지속하는 데 유리</b>하다. 향후 탄약사업부 별도 상장 가능성은 여전히 열려 있다.
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">INVESTOR IMPLICATION</div>
+      <p>매각 불발은 단기적으로 주가 이벤트 소멸이지만, 중장기적으로는 풍산의 독립 가치를 재확인한다. 수직계열화 시나리오가 재부상할 경우 인수 프리미엄이 주가에 반영될 수 있는 잠재 옵션은 여전히 존재한다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 5: 빅텍 ═══════ -->
+<section id="viktek">
+  <div class="zone-head">
+    <div class="z-big">05</div>
+    <div class="z-num">SECTION 05</div>
+    <h2>빅텍 — 전자전 장비의 숨은 전문가</h2>
+    <p>잠수함·수상함 전자전 장비와 L-SAM MFR 전원공급장치. KSS-III 잠수함 확장과 연동되는 소부장 수혜주.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+    <div class="f-tag">ELECTRONIC WARFARE · 065450</div>
+    <h3>빅텍 기업 프로파일</h3>
+    <p class="meta">코스닥 상장 · 전자전 장비 전문 · 2025년 실적 기준</p>
+
+    <div class="facts" style="--zc:var(--blue);--zs:var(--blues)">
+      <div class="fact">
+        <div class="n">830억</div>
+        <div class="l">2025년 매출<br>(+16% YoY)</div>
+      </div>
+      <div class="fact">
+        <div class="n">44억</div>
+        <div class="l">영업이익<br>(+140.5%)</div>
+      </div>
+      <div class="fact">
+        <div class="n">5.3%</div>
+        <div class="l">영업이익률<br>급격 개선</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:18px">
+      <table>
+        <thead>
+          <tr><th>항목</th><th>내용</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>주력 제품</td>
+            <td>잠수함용·수상함용 전자전 장비, 군용 전원공급장치</td>
+          </tr>
+          <tr>
+            <td>핵심 이벤트 ①</td>
+            <td>2025년 12월 잠수함용 전자전 장비 <b>최초 양산 출하</b></td>
+          </tr>
+          <tr>
+            <td>핵심 이벤트 ②</td>
+            <td>L-SAM MFR(다기능레이더) 전원공급장치 양산 계약 체결</td>
+          </tr>
+          <tr>
+            <td>성장 동인</td>
+            <td>KSS-III 잠수함 수주 확대 → 한화오션 연동 수혜</td>
+          </tr>
+          <tr>
+            <td>전자전 연계</td>
+            <td>수상함 전자전 장비 납품 확대 — 방산 전자전 생태계 편입</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-blue" style="margin-top:20px">
+      <div class="c-head">KSS-III 연동 수혜 구조</div>
+      <div class="c-body">
+        한화오션이 KSS-III 잠수함 수주를 확보할수록 빅텍의 잠수함용 전자전 장비 물량이 연동 증가한다. <b>잠수함 전자전 장비는 국산화율이 낮아 대안 공급자가 제한적</b>이다. L-SAM MFR 전원공급장치는 장거리 방공 체계 양산과 함께 장기 물량이 확보되는 구조다.
+      </div>
+    </div>
+
+    <div class="view">
+      <div class="v-head">RISK NOTE</div>
+      <p>빅텍은 시가총액 소형주로 유동성 리스크가 있다. 한화오션 잠수함 수주 속도와 L-SAM 양산 일정에 실적이 직결되므로 해당 프로그램 진행 상황을 모니터링해야 한다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 6: 기타 소부장 ═══════ -->
+<section id="others">
+  <div class="zone-head">
+    <div class="z-big">06</div>
+    <div class="z-num">SECTION 06</div>
+    <h2>기타 소부장 — 밸류체인의 숨겨진 레이어</h2>
+    <p>한화컴포지트, 이오시스템, LIG넥스원 2차 협력사 생태계. 체계종합사 뒤에 있는 진짜 병목들.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--caution);--zs:var(--cautions)">
+    <div class="f-tag">COMPOSITE MATERIALS · 한화컴포지트</div>
+    <h3>한화컴포지트 — 복합소재</h3>
+    <p class="meta">한화그룹 계열 · 탄소섬유 복합소재 방탄판·구조재 공급</p>
+    <p class="body">레드백 IFV(보병전투차량)와 KF-21 기체에 <b>탄소섬유 복합소재(CFRP)</b>를 납품한다. 경량화·고강도 소재 국산화 흐름의 수혜를 받으며, 방탄판 수요 증가와 항공기 국산화 병행으로 성장성이 높다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>특성</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>핵심 소재</td><td>탄소섬유 강화 복합소재(CFRP) — 방탄판, 기체 구조재</td></tr>
+          <tr><td>주요 납품처</td><td>레드백 IFV 구조재, KF-21 기체 복합소재</td></tr>
+          <tr><td>국산화 의미</td><td>기존 수입 대체 → 방산 국산화율 향상에 직접 기여</td></tr>
+          <tr><td>성장 동인</td><td>레드백 수출(호주 포함) 물량 확대 시 동반 수혜</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="floor" style="--zc:var(--caution);--zs:var(--cautions)">
+    <div class="f-tag">OPTICS · PRECISION · 이오시스템</div>
+    <h3>이오시스템 — 광학·정밀 장비</h3>
+    <p class="meta">현대로템 협력사 · K2 전차·K808 수출 연동</p>
+    <p class="body">K2 전차에 탑재되는 <b>열상조준경(Thermal Sight)</b>과 <b>전차포수조준경</b>을 독점 공급한다. 야간작전능력의 핵심 부품으로, 대체 국내 공급자가 존재하지 않는 불가결 소부장이다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>특성</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>주력 제품</td><td>열상조준경, 전차포수조준경, 야간 광학 장비</td></tr>
+          <tr><td>연계 체계</td><td>K2 전차 — 현대로템 1차 협력사 포지션</td></tr>
+          <tr><td>수출 수혜</td><td>K2 수출(폴란드·루마니아 등) 시 광학 장비 동반 납품</td></tr>
+          <tr><td>불가결 지위</td><td>국내 유일 열상 조준 광학 전문 업체 — 실질 대안 없음</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="analogy"><b>불가결 노드의 논리:</b> 이오시스템 없이는 K2 전차의 야간 작전이 불가능하다. 체계종합사(현대로템)는 이 부품 없이 전차를 납품할 수 없다. 이것이 소부장의 진짜 가격 협상력이다.</div>
+  </div>
+
+  <div class="floor" style="--zc:var(--caution);--zs:var(--cautions)">
+    <div class="f-tag">2차 벤더 생태계 · LIG넥스원</div>
+    <h3>LIG넥스원 2차 협력업체 생태계</h3>
+    <p class="meta">체계종합 LIG넥스원 → 탐색기·유도컴퓨터·발사체·탄두 세분화</p>
+    <p class="body">LIG넥스원은 천궁-II, 해궁, 비궁 등 유도무기 체계의 <b>체계종합사</b>다. 실제 부품은 수십 개 2차 벤더가 나눠 공급한다. 중동 천궁-II 납품 확대 시 2차 벤더 전체가 물량 동반 증가를 누린다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>구성 요소</th><th>역할</th><th>공급 특성</th></tr></thead>
+        <tbody>
+          <tr><td>탐색기 (Seeker)</td><td>표적 추적·종말 유도</td><td>고도 기술 집약, 대안 제한</td></tr>
+          <tr><td>유도컴퓨터</td><td>비행 경로 실시간 제어</td><td>소프트웨어·하드웨어 통합</td></tr>
+          <tr><td>발사체</td><td>추진력 생성</td><td>화약 기반 — 한화 계열 연동</td></tr>
+          <tr><td>탄두</td><td>최종 파괴력</td><td>안전 규제 진입장벽</td></tr>
+          <tr><td>전자·소프트웨어</td><td>IFF·데이터링크</td><td>사이버·보안 인증 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="view">
+      <div class="v-head">2차 벤더 투자 전략</div>
+      <p>2차 벤더는 직접 수출자가 아니라 체계종합사 수주에 연동된다. 따라서 LIG넥스원·한화에어로스페이스의 수주잔고 증가 속도가 2차 벤더의 실적 선행지표다. 단, 개별 2차 벤더는 거래처 집중 리스크(원청 1~2개사 의존)에 주의해야 한다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 7: 기업 간 비교 ═══════ -->
+<section id="compare">
+  <div class="zone-head">
+    <div class="z-big">07</div>
+    <div class="z-num">SECTION 07</div>
+    <h2>기업 간 비교 스냅샷 — 7사 종합</h2>
+    <p>K-방산 핵심 7개 기업의 재무, 불가결 노드 매트릭스, 수출 벡터, 리스크를 한 화면에 정리한다.</p>
+  </div>
+
+  <!-- 7-1 핵심 재무 비교 -->
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">FINANCIALS SNAPSHOT · 2025년 기준</div>
+    <h3>핵심 재무 비교 (2025년 기준)</h3>
+    <p class="meta">연결 기준 · 조원 단위 · 수주잔고 자사 IR 기준</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>매출(조원)</th>
+            <th>영업이익(조원)</th>
+            <th>영업이익률</th>
+            <th>수주잔고</th>
+            <th>수출비중</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>한화에어로스페이스</td>
+            <td>26.7</td><td>3.09</td>
+            <td><span class="tag-up">11.6%</span></td>
+            <td>~116.8조</td><td>방산 47%</td>
+          </tr>
+          <tr>
+            <td>현대로템</td>
+            <td>5.84</td><td>1.01</td>
+            <td><span class="tag-up">17.2%</span></td>
+            <td>~29.8조</td><td>방산 60%+</td>
+          </tr>
+          <tr>
+            <td>LIG넥스원</td>
+            <td>4.31</td><td>0.32</td>
+            <td><span class="tag-ca">7.5%</span></td>
+            <td>26.2조</td><td>21.4%</td>
+          </tr>
+          <tr>
+            <td>KAI</td>
+            <td>3.70</td><td>0.27</td>
+            <td><span class="tag-ca">7.3%</span></td>
+            <td>27.3조</td><td>완제기 위주</td>
+          </tr>
+          <tr>
+            <td>한화시스템</td>
+            <td>3.66</td><td>0.12</td>
+            <td><span class="tag-dn">3.3%</span></td>
+            <td>~8.2조</td><td>—</td>
+          </tr>
+          <tr>
+            <td>한화오션</td>
+            <td>12.69</td><td>1.11</td>
+            <td><span class="tag-ca">8.7%</span></td>
+            <td>—</td><td>MRO 확대 중</td>
+          </tr>
+          <tr>
+            <td>풍산</td>
+            <td>3.85</td><td>0.25</td>
+            <td><span class="tag-ca">6.4%</span></td>
+            <td>—</td><td>방산 60~70%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 7-2 불가결 노드 매트릭스 -->
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">NODE MATRIX · 불가결 포지셔닝</div>
+    <h3>불가결 노드 프레임 포지셔닝</h3>
+    <p class="meta">병목 여부 및 대안 존재 여부 분석</p>
+
+    <div class="node-grid">
+      <div class="node-card node-strong">
+        <span class="nc-badge">강한 노드 · 국내 독점</span>
+        <div class="nc-name">한화에어로스페이스 (지상방산)</div>
+        <div class="nc-type">K9·K10·천무 체계종합</div>
+        <div class="nc-desc">국내 경쟁자 없음. K9 자주포 11개국 수출의 단독 체계종합사.</div>
+      </div>
+      <div class="node-card node-strong">
+        <span class="nc-badge">강한 노드 · 수출 독점</span>
+        <div class="nc-name">현대로템</div>
+        <div class="nc-type">K2 전차 체계종합</div>
+        <div class="nc-desc">K2 전차 유일 체계종합. 폴란드·루마니아 대규모 수출 독점.</div>
+      </div>
+      <div class="node-card node-strong">
+        <span class="nc-badge">불가결 노드</span>
+        <div class="nc-name">LIG넥스원</div>
+        <div class="nc-type">유도무기 전 체계</div>
+        <div class="nc-desc">국내 유일 유도무기 체계종합. 천궁·해궁·비궁 전량 담당.</div>
+      </div>
+      <div class="node-card node-mid">
+        <span class="nc-badge">공급 병목 · NATO 인증</span>
+        <div class="nc-name">풍산</div>
+        <div class="nc-type">NATO 탄약 공급</div>
+        <div class="nc-desc">유럽 재고 소진으로 공급 병목. 미국·유럽 증산 진행 중이나 단기 대안 제한.</div>
+      </div>
+      <div class="node-card node-mid">
+        <span class="nc-badge">강한 노드 · 레이더 독점</span>
+        <div class="nc-name">한화시스템</div>
+        <div class="nc-type">AESA 레이더·전투체계</div>
+        <div class="nc-desc">수입 대안 존재하나 비용 대폭 증가. 국산 AESA 레이더 유일 공급사.</div>
+      </div>
+      <div class="node-card node-grow">
+        <span class="nc-badge">성장 노드</span>
+        <div class="nc-name">한화오션</div>
+        <div class="nc-type">잠수함·대형함</div>
+        <div class="nc-desc">경쟁: HD현대중공업. 잠수함 수출 초기 단계 — 성장 경로 진입 중.</div>
+      </div>
+      <div class="node-card node-watch">
+        <span class="nc-badge">현재 병목 · ITAR 노출</span>
+        <div class="nc-name">KAI</div>
+        <div class="nc-type">항공기 체계종합</div>
+        <div class="nc-desc">KF-21 수출 ITAR 제약. 독자엔진 개발 전까지 병목 지속.</div>
+      </div>
+      <div class="node-card node-watch">
+        <span class="nc-badge">현재 병목 · 엔진 ITAR</span>
+        <div class="nc-name">한화에어로스페이스 (엔진)</div>
+        <div class="nc-type">GE 면허생산 → 독자엔진</div>
+        <div class="nc-desc">독자엔진(KGEP) 개발로 ITAR 탈출 추진. 2030년대 이후 해소 전망.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7-3 수출 성장 벡터 -->
+  <div class="floor" style="--zc:var(--up);--zs:var(--ups)">
+    <div class="f-tag">EXPORT VECTOR · 수출 구조 전환 진척도</div>
+    <h3>수출 성장 벡터 요약</h3>
+    <p class="meta">방산 수출 비중·수주잔고·구조 전환 종합 평가 (2025년 기준)</p>
+
+    <div class="export-bar" id="exportBars">
+      <div class="eb-row">
+        <div class="eb-label">한화에어로스페이스</div>
+        <div class="eb-track"><div class="eb-fill" data-w="80" style="background:linear-gradient(90deg,var(--up),#2a9d6a);width:0%">수출 47% · 수주잔고 수출 71%</div></div>
+        <div class="eb-val">80%</div>
+      </div>
+      <div class="eb-row">
+        <div class="eb-label">현대로템</div>
+        <div class="eb-track"><div class="eb-fill" data-w="70" style="background:linear-gradient(90deg,var(--up),#2a9d6a);width:0%">방산 수출 60%+ · 폴란드 집중</div></div>
+        <div class="eb-val">70%</div>
+      </div>
+      <div class="eb-row">
+        <div class="eb-label">풍산</div>
+        <div class="eb-track"><div class="eb-fill" data-w="65" style="background:linear-gradient(90deg,var(--accent),#b08020);width:0%">방산 60~70% · NATO 수출</div></div>
+        <div class="eb-val">65%</div>
+      </div>
+      <div class="eb-row">
+        <div class="eb-label">LIG넥스원</div>
+        <div class="eb-track"><div class="eb-fill" data-w="40" style="background:linear-gradient(90deg,var(--caution),#c99030);width:0%">수출 21% · 급증 중</div></div>
+        <div class="eb-val">40%</div>
+      </div>
+      <div class="eb-row">
+        <div class="eb-label">KAI</div>
+        <div class="eb-track"><div class="eb-fill" data-w="30" style="background:linear-gradient(90deg,var(--caution),#c99030);width:0%">완제기 수출 확대 · ITAR 제약</div></div>
+        <div class="eb-val">30%</div>
+      </div>
+      <div class="eb-row">
+        <div class="eb-label">한화시스템</div>
+        <div class="eb-track"><div class="eb-fill" data-w="20" style="background:linear-gradient(90deg,var(--blue),#4a6fa0);width:0%">전투체계 간접 수출</div></div>
+        <div class="eb-val">20%</div>
+      </div>
+      <div class="eb-row">
+        <div class="eb-label">한화오션</div>
+        <div class="eb-track"><div class="eb-fill" data-w="10" style="background:linear-gradient(90deg,var(--blue),#4a6fa0);width:0%">MRO·잠수함 수출 초기</div></div>
+        <div class="eb-val">10%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7-4 리스크 매트릭스 -->
+  <div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+    <div class="f-tag">RISK MATRIX · 핵심 리스크 요약</div>
+    <h3>기업별 핵심 리스크 매트릭스</h3>
+    <p class="meta">2025~2026년 기준 발현 가능성 높은 리스크 상위 2개</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>기업</th><th>1순위 리스크</th><th>2순위 리스크</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>한화에어로스페이스</td><td>원가 상승·한화오션 마진 희석</td><td>폴란드 납품 일정 지연</td></tr>
+          <tr><td>현대로템</td><td>비방산(철도·에코) 마진 악화</td><td>폴란드 편중 — 다음 계약 공백기</td></tr>
+          <tr><td>LIG넥스원</td><td>중동 지정학 불안 (납기 차질)</td><td>이익률 7%대 정체</td></tr>
+          <tr><td>KAI</td><td>ITAR 족쇄 (KF-21 수출 제약)</td><td>5,000억 CB 발행 자금조달 부담</td></tr>
+          <tr><td>한화시스템</td><td>ICT 사업 희석·UAM 상업화 지연</td><td>KF-21 초기 양산 원가 압박</td></tr>
+          <tr><td>한화오션</td><td>캐나다 잠수함 수주 불발 리스크</td><td>상선 사이클 하락</td></tr>
+          <tr><td>풍산</td><td>NATO 재고 충족 후 수요 정상화</td><td>신동부문 구리가격 변동성</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-gold" style="margin-top:20px">
+      <div class="c-head">리스크 공통 패턴</div>
+      <div class="c-body">
+        7개사 모두 <b>수출 집중도 리스크</b>를 공유한다. 폴란드(현대로템·한화에어로스페이스), 중동(LIG넥스원), NATO(풍산) 각각에 수주가 집중된 구조다. 단일 고객·지역 집중은 계약 공백 시 실적 변동성을 크게 높인다. <b>차세대 계약 파이프라인의 지역 다변화 진척도</b>가 중장기 투자에서 가장 중요한 모니터링 지표다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 8: 투자 관점 ═══════ -->
+<section id="invest">
+  <div class="zone-head">
+    <div class="z-big">08</div>
+    <div class="z-num">SECTION 08</div>
+    <h2>투자 관점 — 소부장의 논리</h2>
+    <p>체계종합사 뒤에서 조용히 수혜를 누리는 소부장 투자의 구조적 논리와 선별 기준.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">INVESTMENT THESIS</div>
+    <h3>소부장 투자의 구조적 논리</h3>
+    <p class="meta">2차 수혜 구조 · 불가결 노드 필터 · 집중 리스크 관리</p>
+
+    <div class="callout callout-bronze">
+      <div class="c-head">왜 소부장인가</div>
+      <div class="c-body">
+        체계종합사는 대형주로 이미 시장의 주목을 받는다. 소부장은 <b>체계종합사의 수주 증가를 레버리지로 활용하면서 시가총액이 작아 상대적 상승 여력이 크다.</b> 단, 거래처 집중 리스크와 유동성 리스크를 반드시 체크해야 한다.
+      </div>
+    </div>
+
+    <div class="risk-list" style="margin-top:20px">
+      <div class="risk">
+        <div class="sev"><div class="dot low"></div><div class="stxt">긍정</div></div>
+        <div>
+          <h4>불가결 노드의 가격 협상력</h4>
+          <div class="rdesc">대안 없는 부품사는 원청이 가격 압박을 가하기 어렵다. <b>이오시스템(열상조준경), 빅텍(잠수함 전자전)</b>처럼 국내 유일 공급자 지위는 마진 방어력을 만든다.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot low"></div><div class="stxt">긍정</div></div>
+        <div>
+          <h4>반복 구매 &amp; 소모성 수요</h4>
+          <div class="rdesc">탄약(풍산)은 무기 시스템과 달리 <b>소모품이므로 지속 재구매가 발생</b>한다. 전쟁·훈련이 지속될수록 수요 플로어가 높아진다.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot med"></div><div class="stxt">주의</div></div>
+        <div>
+          <h4>원청사 집중 리스크</h4>
+          <div class="rdesc">대부분의 소부장 기업은 원청 1~2개사에 매출이 집중된다. 원청 수주 공백 시 소부장 실적이 직격탄을 맞는다. <b>다수 체계에 납품하는 기업이 집중 리스크 낮음.</b></div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot med"></div><div class="stxt">주의</div></div>
+        <div>
+          <h4>국산화율 상승의 양면</h4>
+          <div class="rdesc">국산화가 진행될수록 기존 독점 소부장의 경쟁 진입 리스크가 증가할 수 있다. <b>국산화 초기에 진입한 기업은 수혜, 후발 경쟁자 등장 시 마진 희석 주의.</b></div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><div class="dot high"></div><div class="stxt">위험</div></div>
+        <div>
+          <h4>유동성 리스크</h4>
+          <div class="rdesc">소부장 기업은 대부분 코스닥 소형주다. 방산 업황 급변 시 <b>기관·외국인 자금 이탈로 주가 변동성이 대형주 대비 수배</b>에 달한다. 포지션 크기 관리가 필수다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view" style="margin-top:20px">
+      <div class="v-head">소부장 선별 체크리스트</div>
+      <p>① 해당 부품의 대안 공급자가 국내외에 존재하는가 → 없을수록 좋음<br>
+      ② 원청 체계종합사의 수주잔고가 증가하고 있는가 → 수주잔고가 실적 선행지표<br>
+      ③ 수출 체계에 편입되어 있는가 → 국내 단독 납품보다 수출 연동이 성장성 높음<br>
+      ④ 시가총액 대비 적정 이익 멀티플인가 → 소형주 유동성 프리미엄 고려</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION 9: 용어 사전 ═══════ -->
+<section id="gloss">
+  <div class="zone-head">
+    <div class="z-big">09</div>
+    <div class="z-num">SECTION 09</div>
+    <h2>용어 사전</h2>
+    <p>소부장·방산 투자에서 자주 등장하는 핵심 용어 20+ 항목. 클릭해서 상세 설명을 확인한다.</p>
+  </div>
+
+  <div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+    <div class="f-tag">GLOSSARY · 방산 소부장 핵심 용어</div>
+    <h3>핵심 용어 20+</h3>
+
+    <div class="gloss-sec">소재 · 부품 · 장비</div>
+    <div class="gloss">
+      <details>
+        <summary>소부장 (소재·부품·장비)</summary>
+        <div class="g-body">소재(Material), 부품(Parts), 장비(Equipment)의 약칭. <b>체계종합사(완성품 제조사) 뒤에서 핵심 구성 요소를 공급하는 기업군</b>을 총칭한다. 방산 맥락에서는 탄약, 전자전 장비, 광학, 복합소재 등을 공급하는 협력업체를 의미한다.</div>
+      </details>
+      <details>
+        <summary>복합소재 (Composite Material)</summary>
+        <div class="g-body">탄소섬유 강화 플라스틱(CFRP) 등 두 종류 이상의 소재를 결합하여 단독 소재보다 우수한 특성을 구현한 소재. <b>경량화와 고강도를 동시에 달성</b>할 수 있어 항공기 기체, 차량 방탄판, 미사일 구조재에 필수다.</div>
+      </details>
+      <details>
+        <summary>탄소섬유 (Carbon Fiber)</summary>
+        <div class="g-body">탄소 원자가 결정 구조로 배열된 섬유. <b>철보다 강하고 알루미늄보다 가볍다.</b> KF-21 전투기 기체와 레드백 IFV 구조재에 사용된다. 국내 생산 역량 확대가 방산 자급도에 직결된다.</div>
+      </details>
+      <details>
+        <summary>열상조준경 (Thermal Sight)</summary>
+        <div class="g-body">적외선 방사를 감지하여 야간·악천후에도 표적을 식별하는 광학 장비. <b>K2 전차의 야간 전투 능력의 핵심</b>이다. 이오시스템이 국내 유일 공급사 지위를 보유한다. K2 수출 시 반드시 동반 납품된다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">탄약 · 화약</div>
+    <div class="gloss">
+      <details>
+        <summary>155mm 포탄</summary>
+        <div class="g-body">K9 자주포·M109 등 NATO 표준 155mm 구경 자주포에서 발사되는 포탄. <b>NATO 표준 규격으로 회원국 간 상호 운용성이 보장</b>된다. 우크라이나 전쟁에서 하루 수천 발씩 소모되면서 전 세계적 공급 부족을 야기했다. 풍산의 핵심 수출 품목.</div>
+      </details>
+      <details>
+        <summary>NATO 규격 (NATO Standard)</summary>
+        <div class="g-body">북대서양조약기구 회원국이 공통 사용하는 무기·탄약·장비 표준 규격. <b>이 인증 없이는 NATO 회원국에 탄약을 직접 납품할 수 없다.</b> 진입 장벽이 높아 인증 보유 기업은 강력한 경쟁 우위를 갖는다.</div>
+      </details>
+      <details>
+        <summary>뇌관 (Primer / Detonator)</summary>
+        <div class="g-body">화약을 점화하기 위한 기폭 장치. 탄약의 발사 및 폭발 시퀀스에서 첫 번째 화학 반응을 일으킨다. <b>한화 계열이 국내 뇌관 공급망을 장악</b>하고 있어 탄약 생산 업스트림에서 핵심 위치를 점한다.</div>
+      </details>
+      <details>
+        <summary>퓨즈 (Fuze)</summary>
+        <div class="g-body">탄약이 특정 조건(충격·시간·근접)에서 폭발하도록 제어하는 장치. <b>스마트 퓨즈는 다기능 폭발 모드를 지원</b>해 표적 파괴 효율을 높인다. 한화 계열이 주요 공급사다.</div>
+      </details>
+      <details>
+        <summary>신동 (伸銅, Copper Alloy Processing)</summary>
+        <div class="g-body">구리 합금(동합금)을 가공하여 판·봉·관·선 등의 형태로 만드는 산업. 풍산 매출의 69%를 차지하는 사업 부문. <b>탄피 소재로도 사용</b>되어 방산과 연결된다. 구리 가격 변동성이 직접적인 실적 영향 요인이다.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">전자전 · 레이더</div>
+    <div class="gloss">
+      <details>
+        <summary>전자전 (Electronic Warfare, EW)</summary>
+        <div class="g-body">전자기 스펙트럼을 이용한 공격·방어·지원 작전의 총칭. 적 레이더·통신 방해(재밍), 아군 전자장비 보호, 신호 정보 수집이 포함된다. <b>현대전에서 물리적 교전 전에 전자전이 먼저 벌어진다.</b> 빅텍은 잠수함·수상함용 전자전 장비 전문.</div>
+      </details>
+      <details>
+        <summary>MFR (Multi-Function Radar, 다기능레이더)</summary>
+        <div class="g-body">탐색·추적·표적지정·유도를 하나의 레이더 시스템으로 수행하는 장비. <b>L-SAM(장거리 지대공 미사일) 체계의 핵심 구성 요소.</b> 빅텍은 L-SAM MFR에 들어가는 전원공급장치를 공급한다.</div>
+      </details>
+      <details>
+        <summary>탐색기 (Seeker)</summary>
+        <div class="g-body">유도 무기의 종말 단계에서 표적을 추적하는 핵심 부품. 적외선·레이더·레이저 등 다양한 방식이 있다. <b>탐색기 성능이 미사일 명중률을 결정</b>한다. LIG넥스원 유도무기의 2차 벤더가 공급하는 고기술 집약 부품.</div>
+      </details>
+    </div>
+
+    <div class="gloss-sec">경영 · 구조</div>
+    <div class="gloss">
+      <details>
+        <summary>체계종합 (System Integration)</summary>
+        <div class="g-body">복수의 부품·하위 체계를 통합하여 완전한 무기 시스템으로 완성하는 역할. <b>한화에어로스페이스(K9), 현대로템(K2), LIG넥스원(천궁) 등이 체계종합사</b>다. 체계종합사가 2차 벤더 생태계를 이끈다.</div>
+      </details>
+      <details>
+        <summary>수직계열화 (Vertical Integration)</summary>
+        <div class="g-body">원자재→부품→완성품→판매까지 공급망 전 단계를 하나의 그룹이 내재화하는 전략. <b>한화그룹이 화약→탄약→자주포→전투함 체계로 수직계열화를 추진</b>하고 있다. 이익률 향상과 공급망 통제력 확보가 목적이다.</div>
+      </details>
+      <details>
+        <summary>인적분할 (Spin-off via Split)</summary>
+        <div class="g-body">기업의 특정 사업부문을 독립 법인으로 분리하되, 기존 주주에게 신설 법인 주식을 배분하는 방식. <b>풍산 탄약사업부 매각 논의에서 인적분할 후 지분 38% 매각이 거론</b>되었다. 분할 상장 시 방산 사업의 독립적 가치 평가가 가능해진다.</div>
+      </details>
+      <details>
+        <summary>절충교역 (Offset Trade)</summary>
+        <div class="g-body">무기 수입국이 수출국에 대해 반대급부(기술이전, 공동생산, 역수출 등)를 요구하는 조건부 거래. <b>폴란드의 K2·K9 구매 시 한국 기술이전·현지생산 요구</b>가 절충교역의 대표 사례다. 소부장 기업이 폴란드 현지 협력사로 지정될 수 있는 기회이기도 하다.</div>
+      </details>
+      <details>
+        <summary>2차 벤더 (Tier-2 Vendor)</summary>
+        <div class="g-body">체계종합사(Tier-0)→1차 협력사(Tier-1)→<b>2차 협력사(Tier-2)</b>의 공급망 계층 구분. 2차 벤더는 체계종합사와 직접 계약 없이 1차를 통해 납품한다. 상장된 소부장 기업 중 상당수가 2차 벤더 포지션이다.</div>
+      </details>
+      <details>
+        <summary>불가결 노드 (Indispensable Node)</summary>
+        <div class="g-body">공급망에서 대체 불가능한 위치를 점한 기업·부품. <b>해당 노드 없이는 최종 무기 시스템 완성 불가.</b> 불가결 노드는 원청의 가격 압박에 저항력이 있으며 마진이 안정적으로 유지된다. 투자 매력이 높은 소부장 선별 기준.</div>
+      </details>
+      <details>
+        <summary>국산화율 (Localization Rate)</summary>
+        <div class="g-body">무기 시스템을 구성하는 부품 중 국내 생산 비율. <b>KF-21은 현재 65% 수준으로 목표치 80%를 향해 상향 중.</b> 국산화율이 오를수록 국내 소부장 기업의 납품 기회가 늘어난다.</div>
+      </details>
+      <details>
+        <summary>탄약 (Ammunition)</summary>
+        <div class="g-body">발사 또는 폭발을 위해 설계된 무기용 소모품 일체. 포탄·기관총탄·미사일 등을 포함한다. <b>무기 체계 수출 이후 지속적인 재구매가 발생하는 소모성 제품</b>으로 방산 수입의 안정적 흐름을 만든다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 시리즈 내비게이션 ═══════ -->
+<div class="series-nav">
+  <a href="k_defense_company_hanwha_systems_ocean.html">
+    <div class="sn-label">PREV · Part 4-5</div>
+    한화시스템 · 한화오션
+  </a>
+  <a href="k_defense_theme_engine.html" class="next">
+    <div class="sn-label">NEXT · Theme A</div>
+    엔진 국산화 — ITAR 탈출 로드맵
+  </a>
+</div>
+
+<!-- ═══════ DISCLAIMER ═══════ -->
+<div class="disclaimer">
+  <b>면책 고지:</b> 본 자료는 공개 정보(DART 공시, 기업 IR, 증권사 리포트, 언론 보도) 기반의 분석 노트입니다. 투자 권유 또는 매수·매도 추천이 아닙니다. 일부 수치는 증권사 추정치를 포함하며 실제 결과와 다를 수 있습니다. 투자 결정은 본인의 판단과 책임하에 이루어져야 합니다. <b>작성일: 2026년 6월 19일</b>
+</div>
+
+<footer>
+  K-방산 리서치 시리즈 Part 4-6 · 풍산 외 소부장 Deep-Dive<br>
+  공개 정보 기반 분석 노트 — 투자 권유 아님
+</footer>
+
+</div><!-- /.wrap -->
+
+<script>
+// ═══ Progress Bar ═══
+(function(){
+  var bar = document.getElementById('prog');
+  function upd(){
+    var d = document.documentElement, b = document.body;
+    var st = d.scrollTop || b.scrollTop;
+    var h = (d.scrollHeight || b.scrollHeight) - d.clientHeight;
+    bar.style.width = (h > 0 ? (st / h * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', upd, {passive: true});
+  upd();
+})();
+
+// ═══ Scroll Reveal for .floor ═══
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.floor').forEach(function(el){ io.observe(el); });
+})();
+
+// ═══ Export Bar Animation ═══
+(function(){
+  var section = document.getElementById('exportBars');
+  if(!section) return;
+  var fills = section.querySelectorAll('.eb-fill');
+  var triggered = false;
+  var io2 = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !triggered){
+        triggered = true;
+        fills.forEach(function(f, i){
+          setTimeout(function(){
+            f.style.width = f.getAttribute('data-w') + '%';
+          }, i * 90);
+        });
+        io2.disconnect();
+      }
+    });
+  }, {threshold: 0.2});
+  io2.observe(section);
+})();
+
+// ═══ Smooth Scroll for nav anchors ═══
+document.querySelectorAll('nav a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var href = this.getAttribute('href');
+    if(href && href.startsWith('#')){
+      e.preventDefault();
+      var target = document.querySelector(href);
+      if(target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  });
+});
+</script>
+</body>
+</html>
