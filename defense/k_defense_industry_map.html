@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전차는 만들지만 심장은 수입한다 — K-방산 산업구조와 글로벌 좌표</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#edefe9; --card:#ffffff; --line:#d8dbd1; --note:#e7e9e1; --chip-bg:#e4e7dd;
+  /* 전략 톤: 강철·지형 */
+  --steel:#3c5167; --steels:#e8edf2;
+  --apex:#a8392b;  --apexs:#f6e8e5;   /* 미국 — 절대강자 */
+  --tier2:#37588a; --tier2s:#e7eef7;  /* 풀스펙트럼 강국 */
+  --rise:#b3801f;  --rises:#f7f0db;   /* 신흥 특화 주자 */
+  --kr:#1d7a59;    --krs:#e3f2ec;     /* 한국 / 국산화 강점 */
+  --weak:#bd442d;  --weaks:#f8e9e5;   /* 수입의존 병목 */
+  --signal:#c79a2f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--apex),var(--tier2),var(--rise),var(--kr));width:0%;z-index:99}
+nav{position:sticky;top:0;background:rgba(237,239,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* ───────── HERO ───────── */
+.hero-shell{background:radial-gradient(1200px 620px at 50% -8%, #1c2a38 0%, #131c26 52%, #0c131b 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.5;background-image:
+  repeating-linear-gradient(0deg, transparent 0 38px, rgba(120,150,170,.05) 38px 39px),
+  repeating-linear-gradient(90deg, transparent 0 38px, rgba(120,150,170,.05) 38px 39px);
+  pointer-events:none}
+.radar{position:absolute;width:760px;height:760px;left:50%;top:-90px;transform:translateX(-50%);border-radius:50%;pointer-events:none;opacity:.5;
+  background:repeating-radial-gradient(circle at center, transparent 0 58px, rgba(120,160,150,.10) 58px 59px)}
+.radar::after{content:'';position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg, rgba(95,200,150,.22), transparent 28%, transparent 100%)}
+@media (prefers-reduced-motion: no-preference){.radar::after{animation:sweep 7s linear infinite}}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:74px 20px 32px;text-align:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--signal);font-weight:800}
+.hero h1{font-size:clamp(30px,7.4vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 28%,#e7c77e 50%,#fff 72%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero h1 .frag{color:#cdd6df;-webkit-text-fill-color:#cdd6df;font-weight:800}
+.hero p.lede{color:#aab4c1;max-width:600px;margin:0 auto;font-size:16px}
+.stats{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.6vw,28px);font-weight:900;color:#e7c77e;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#9aa6b3;margin-top:5px;line-height:1.45}
+
+/* signature: 권력 사다리 */
+.ladder{position:relative;max-width:680px;margin:34px auto 0;padding:0 4px 50px}
+.ladder .cap{font-size:12.5px;color:#8b96a4;margin-top:10px;text-align:center}
+.bar-row{display:flex;align-items:center;gap:10px;margin:7px 0}
+.bar-row .who{flex:none;width:96px;text-align:right;font-size:12.5px;font-weight:700;color:#c4cdd8}
+.bar-row .who small{display:block;font-size:10px;color:#7f8a98;font-weight:600}
+.bar-track{flex:1;height:22px;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px;transform-origin:left;transform:scaleX(0)}
+.visible .bar-fill{animation:barIn 1.1s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes barIn{to{transform:scaleX(1)}}
+.bar-row .pct{flex:none;width:50px;font-size:12.5px;font-weight:800;color:#e7eaef}
+.bar-row.kr .who{color:#7fe0b6}
+.bar-row.kr .pct{color:#7fe0b6}
+
+/* ───────── sections ───────── */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.06;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease, box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media (hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.3)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22.5px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.analogy{background:linear-gradient(100deg,#f7f0db,#f5ecce);border-left:4px solid var(--signal);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#574813}
+.analogy b{color:#3d3009}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+.fact{background:var(--zs);border:1px solid color-mix(in srgb, var(--zc) 24%, white);border-radius:13px;padding:13px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,21px);font-weight:900;color:var(--zc);letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+.terms{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+details.term{display:inline-block}
+details.term summary{list-style:none;cursor:pointer;font-size:13px;font-weight:700;background:var(--chip-bg);border:1px solid var(--line);padding:6px 13px;border-radius:999px;user-select:none}
+details.term summary::-webkit-details-marker{display:none}
+details.term summary::after{content:' +';color:var(--faint)}
+details.term[open] summary{background:var(--zc);border-color:var(--zc);color:#fff}
+details.term[open] summary::after{content:' −'}
+details.term .def{font-size:14px;background:var(--note);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-top:8px;max-width:600px;color:var(--sub)}
+details.term .def b{color:var(--ink)}
+
+.cos-label{font-size:11px;font-weight:800;color:var(--faint);letter-spacing:.12em;margin-top:16px}
+.cos{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 2px}
+.co{font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:10px}
+.co.kr{border-color:#a9d6c3;background:var(--krs)}
+
+.bottleneck{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14.3px;color:var(--sub);background:var(--note);border-radius:12px;padding:12px 14px}
+.bottleneck .ic{flex:none;width:23px;height:23px;border-radius:50%;background:var(--zc);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:13px}
+.view{margin-top:16px;border:1.5px dashed #bcb39c;background:#f7f3ea;border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#8a7a4c;margin-bottom:6px}
+.view p{font-size:14.3px;color:#5b5236}
+.view .v-note{font-size:11px;color:#a89a73;margin-top:8px}
+
+.diag{margin:20px 0 6px;background:linear-gradient(180deg,#fbfcf9,#f3f5ee);border:1px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center}
+.diag svg{width:100%;height:auto;max-width:680px}
+.diag .cap{font-size:12.5px;color:var(--faint);margin-top:8px}
+.diag text{font-family:'Pretendard',sans-serif}
+
+@media (prefers-reduced-motion: no-preference){
+  .visible .flow-line{stroke-dasharray:8 8;animation:flow 1.1s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-16}}
+  .visible .flow-rev{stroke-dasharray:8 8;animation:flowrev 1.1s linear infinite}
+  @keyframes flowrev{to{stroke-dashoffset:16}}
+  .visible .stk{opacity:0;animation:rise .5s ease forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .visible .grow{transform:scaleY(0);transform-origin:bottom;animation:gw .9s cubic-bezier(.2,.8,.3,1) forwards}
+  @keyframes gw{to{transform:scaleY(1)}}
+  .visible .pulse{animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+}
+
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-s{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--krs);color:var(--kr)}
+.tag-w{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--weaks);color:var(--weak)}
+
+/* node map */
+.nodemap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 4px}
+@media (max-width:560px){.nodemap{grid-template-columns:1fr}}
+.nodecol{border-radius:14px;padding:15px 16px;border:1px solid}
+.nodecol.s{background:var(--krs);border-color:#a9d6c3}
+.nodecol.w{background:var(--weaks);border-color:#e4b4a8}
+.nodecol h4{font-size:14px;font-weight:900;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.nodecol.s h4{color:var(--kr)} .nodecol.w h4{color:var(--weak)}
+.nodecol ul{list-style:none}
+.nodecol li{font-size:13.3px;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08);color:#4a5360}
+.nodecol li:last-child{border-bottom:none}
+.nodecol li b{color:var(--ink)}
+
+/* vectors */
+.vecs{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0 4px}
+.vec{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 17px}
+.vec .vk{flex:none;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.vec .vt{font-size:15.5px;font-weight:900;margin-bottom:3px}
+.vec .vb{font-size:13.8px;color:var(--sub)}
+
+.gloss{display:grid;grid-template-columns:1fr;gap:8px;margin-top:18px}
+.gloss details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.gloss summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:800;font-size:14.3px;display:flex;justify-content:space-between}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:'+';color:var(--faint);font-weight:400}
+.gloss details[open] summary::after{content:'−'}
+.gloss .g-body{padding:0 16px 14px;font-size:14px;color:var(--sub)}
+
+/* ── Part 2: 진영별 기업 지도 ── */
+.partbreak{margin:96px 0 8px;text-align:center;position:relative}
+.partbreak .pb-line{height:1px;background:var(--line);position:absolute;top:54%;left:0;right:0;z-index:0}
+.partbreak .pb-txt{position:relative;display:inline-block;background:var(--bg);padding:0 20px;z-index:1}
+.partbreak .pb-eye{font-size:12px;font-weight:800;letter-spacing:.3em;color:var(--faint)}
+.partbreak .pb-h{font-size:clamp(23px,5.4vw,32px);font-weight:900;letter-spacing:-.02em;margin-top:5px}
+.partbreak .pb-sub{font-size:14px;color:var(--sub);max-width:560px;margin:10px auto 0}
+
+.dossier{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 6px}
+@media (max-width:600px){.dossier{grid-template-columns:1fr}}
+.dcard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc);border-radius:14px;padding:15px 16px 16px;position:relative}
+.dcard .flag{font-size:19px;position:absolute;top:13px;right:14px;line-height:1}
+.dcard .persona{font-size:10.5px;font-weight:800;letter-spacing:.03em;color:var(--zc);text-transform:none}
+.dcard h4{font-size:16.5px;font-weight:900;margin:2px 0;letter-spacing:-.01em;padding-right:26px}
+.dcard .stat{font-size:12px;font-weight:800;color:var(--ink);background:var(--zs);display:inline-block;padding:2px 9px;border-radius:7px;margin:5px 0 9px}
+.dcard .fp{font-size:12.8px;color:var(--sub);line-height:1.62}
+.dcard .fp b{color:var(--ink)}
+.dcard .one{font-size:12.8px;color:#5c5340;background:linear-gradient(100deg,#f7f0db,#f5ecce);margin:10px -16px -16px;padding:9px 16px;border-radius:0 0 11px 11px}
+.dcard .one b{color:#3d3009}
+
+.submodel{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:900;color:var(--zc);margin:4px 0 6px}
+.submodel .badge{font-size:10.5px;background:var(--zc);color:#fff;padding:3px 9px;border-radius:7px;letter-spacing:.04em;font-weight:800}
+.axes3{display:grid;grid-template-columns:1fr;gap:0}
+
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+@media print{nav,#prog,.radar{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero-shell" id="hero">
+  <div class="radar"></div>
+  <div class="hero">
+    <div class="eyebrow">K-DEFENSE · 산업구조 & 글로벌 좌표 · 2026.06</div>
+    <h1><span class="frag">전차는 만들지만</span><br>심장은 수입한다</h1>
+    <p class="lede">한국 방산은 5년 만에 수출이 4배로 뛰며 세계가 주목하는 산업이 됐습니다. 하지만 "누가 무엇을 쥐었는가"라는 권력지도 위에서 한국은 정확히 어디에 서 있을까요. 가장 쉬운 비유부터 글로벌 좌표까지 한 장의 지도로 정리합니다.</p>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="154" data-suf="억$">0</div><div class="l">2025년 방산 수출<br>(전년比 +60%)</div></div>
+      <div class="stat"><div class="n" data-count="2" data-pre="#">0</div><div class="l">유럽 NATO 시장<br>한국 공급국 순위</div></div>
+      <div class="stat"><div class="n" data-count="5" data-suf="개국">0</div><div class="l">전투기 엔진 보유국<br>(한국 미포함)</div></div>
+    </div>
+
+    <div class="ladder floor" id="ladderbox">
+      <div class="bar-row"><div class="who">미국<small>절대강자</small></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#c64a38,#a8392b)"></div></div><div class="pct">42%</div></div>
+      <div class="bar-row"><div class="who">프랑스</div><div class="bar-track"><div class="bar-fill" style="width:24%;background:#4a6fa8"></div></div><div class="pct">~10%</div></div>
+      <div class="bar-row"><div class="who">러시아</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#4a6fa8"></div></div><div class="pct">6.8%</div></div>
+      <div class="bar-row"><div class="who">독일·중국</div><div class="bar-track"><div class="bar-fill" style="width:13%;background:#4a6fa8"></div></div><div class="pct">각 ~5%</div></div>
+      <div class="bar-row kr"><div class="who">한국<small>고속 상승 ↑</small></div><div class="bar-track"><div class="bar-fill" style="width:7%;background:linear-gradient(90deg,#1d7a59,#27a074)"></div></div><div class="pct">~3%</div></div>
+      <div class="cap">세계 무기수출 점유율 (SIPRI, 2021~2025 누계) · 상위 5개국이 70%를 차지하는 초집중 시장</div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#z1">Ⅰ 이상한 산업</a>
+  <a href="#z2">Ⅱ 세계 권력지도</a>
+  <a href="#z3">Ⅲ 한국 밸류체인</a>
+  <a href="#z4">Ⅳ 한국의 좌표</a>
+  <a href="#z5">Ⅴ 전략 벡터</a>
+  <a href="#z6">Ⅵ 미국 5인방</a>
+  <a href="#z7">Ⅶ 풀스펙트럼 3얼굴</a>
+  <a href="#z8">Ⅷ 신흥 특화주자</a>
+  <a href="#z9">Ⅸ 진영 종합</a>
+  <a href="#gloss">용어 사전</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══════ ZONE I ═══════ -->
+<section id="z1" style="--zc:var(--steel);--zs:var(--steels)">
+<div class="zone-head" style="color:var(--steel)">
+  <div class="z-big">Ⅰ</div>
+  <div class="z-num">ZONE Ⅰ · 기초</div>
+  <h2>방산이 이상한 산업인 이유</h2>
+  <p>방산을 모르는 사람도 두 가지만 알면 산업 전체가 보입니다 — 손님이 한 명이라는 것, 그리고 가장 어려운 부품을 누가 쥐었느냐가 권력이라는 것.</p>
+</div>
+
+<div class="floor" style="--zc:var(--steel);--zs:var(--steels)">
+  <span class="f-tag">핵심 ① · 수요독점</span>
+  <h3>손님이 사실상 한 명이다</h3>
+  <div class="meta">국내는 '임대', 수출은 '분양'</div>
+  <div class="analogy">💡 비유: 삼성폰은 수억 명이 사지만, K9 자주포의 국내 손님은 <b>대한민국 정부 한 곳</b>뿐입니다. 세입자가 집주인 한 명에게만 세를 놓는 시장이라 가격을 못 올립니다. 그래서 국내 납품 이익률은 <b>2~5%</b>에 묶여 있습니다. 반면 수출은 여러 나라가 경쟁적으로 사는 공개시장이라 자유롭게 값을 매겨 <b>10% 이상</b>이 나옵니다.</div>
+  <div class="diag">
+  <svg viewBox="0 0 640 220" role="img" aria-label="국내 단일 수요처 대 해외 다수 수요처 비교, 그리고 이익률 차이">
+    <text x="160" y="24" text-anchor="middle" font-size="13.5" font-weight="800" fill="#19212b">국내 — 손님 1명 (수요독점)</text>
+    <rect x="125" y="40" width="70" height="40" rx="8" fill="#dfe6ec" stroke="#8aa0b5"/><text x="160" y="65" text-anchor="middle" font-size="12" fill="#3c5167" font-weight="700">정부</text>
+    <g stroke="#9aa8b6" stroke-width="2" fill="none">
+      <path d="M120 130 L160 88"/><path d="M160 130 L160 88"/><path d="M200 130 L160 88"/>
+    </g>
+    <rect x="100" y="132" width="40" height="26" rx="5" fill="#eef1f4" stroke="#b5c1cd"/><rect x="148" y="132" width="40" height="26" rx="5" fill="#eef1f4" stroke="#b5c1cd"/><rect x="196" y="132" width="40" height="26" rx="5" fill="#eef1f4" stroke="#b5c1cd"/>
+    <text x="160" y="186" text-anchor="middle" font-size="12" fill="#566270">기업들이 한 손님에 매달림</text>
+    <text x="160" y="204" text-anchor="middle" font-size="14" font-weight="900" fill="#bd442d">이익률 2~5%</text>
+
+    <text x="475" y="24" text-anchor="middle" font-size="13.5" font-weight="800" fill="#19212b">해외 — 손님 다수 (공개시장)</text>
+    <rect x="440" y="132" width="70" height="40" rx="8" fill="#e3f2ec" stroke="#1d7a59"/><text x="475" y="157" text-anchor="middle" font-size="12" fill="#1d7a59" font-weight="700">기업</text>
+    <g stroke="#79b79e" stroke-width="2" fill="none">
+      <path d="M400 60 L460 130"/><path d="M450 50 L470 130"/><path d="M500 50 L480 130"/><path d="M550 60 L490 130"/>
+    </g>
+    <rect x="378" y="40" width="44" height="24" rx="5" fill="#eef6f2" stroke="#9ed0bd"/><rect x="430" y="34" width="44" height="24" rx="5" fill="#eef6f2" stroke="#9ed0bd"/><rect x="482" y="34" width="44" height="24" rx="5" fill="#eef6f2" stroke="#9ed0bd"/><rect x="534" y="40" width="44" height="24" rx="5" fill="#eef6f2" stroke="#9ed0bd"/>
+    <text x="475" y="190" text-anchor="middle" font-size="12" fill="#566270">여러 나라가 경쟁적으로 구매</text>
+    <text x="475" y="208" text-anchor="middle" font-size="14" font-weight="900" fill="#1d7a59">이익률 10%+</text>
+  </svg>
+  <div class="cap">같은 무기, 같은 회사라도 '누구에게 파느냐'에 따라 이익률이 2~5배 갈립니다. K-방산 재평가의 본질.</div>
+  </div>
+  <p class="body">2021~2022년 영업이익률 2~5%에 머물던 빅4가 지금은 평균 10%를 넘습니다. <b>현대로템은 4.66% → 17.22%, 한화에어로스페이스는 5% → 11.4%</b>로 뛰었습니다. 무기가 갑자기 좋아진 게 아니라, <b>판매 채널이 '임대(국내)'에서 '분양(수출)'으로 바뀌었기 때문</b>입니다. 한화에어로는 2025년 처음으로 매출의 수출 비중이 50%를 넘겼습니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">2~5%</div><div class="l">국내 납품<br>이익률 상한</div></div>
+    <div class="fact"><div class="n">10%+</div><div class="l">수출 전환 후<br>빅4 평균 이익률</div></div>
+    <div class="fact"><div class="n">40.5조</div><div class="l">2025년 빅4<br>합산 매출</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>수요독점(monopsony)</summary><div class="def">공급자는 여럿인데 <b>구매자가 하나뿐인 시장.</b> 국내 방산은 정부(방위사업청)가 유일 구매자라, 가격을 정부가 사실상 통제합니다 — 이익률이 낮은 근본 이유.</div></details>
+    <details class="term"><summary>G2G / 상업계약</summary><div class="def"><b>G2G</b>(Government-to-Government)는 정부 대 정부 무기거래로, 신뢰·금융지원이 묶여 대형 계약에 많이 쓰입니다. <b>상업계약</b>은 기업이 직접 외국 군과 협상하는 방식입니다.</div></details>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--steel);--zs:var(--steels)">
+  <span class="f-tag">핵심 ② · 밸류체인 권력</span>
+  <h3>누가 '심장'을 쥐었느냐가 권력이다</h3>
+  <div class="meta">무기를 조립하는 나라 ≠ 무기를 지배하는 나라</div>
+  <div class="analogy">💡 비유: 스마트폰은 어느 나라나 조립하지만 최첨단 <b>칩</b>은 몇 나라만 만듭니다. 방산도 똑같습니다. 전차·자주포는 여러 나라가 만들지만 <b>전투기 엔진을 설계·생산할 수 있는 나라는 전 세계 5~6개국</b>(미국·영국·프랑스·러시아·중국)뿐입니다. 한국은 차체 설계·조립·시험은 거의 100% 자력으로 하지만, 가장 어려운 '심장'(엔진)은 미국 GE에서 사옵니다.</div>
+  <p class="body">한국형 전투기 <b>KF-21</b>의 국산화율은 65%(향후 80% 목표)에 이르지만, 엔진만 떼어 보면 다릅니다. GE의 F414 엔진을 면허생산하는 방식이라 <b>엔진 국산화율은 한화 기준 40%, 정부 기준으로는 20%</b> 수준입니다. 항공엔진은 영하 80도와 2,000도를 동시에 견디고 연소기 내벽 두께가 1mm인 '기계공학의 꽃' — 진입장벽이 압도적으로 높습니다.</p>
+  <p class="body">문제는 단순한 기술 자존심이 아닙니다. <b>미국산 엔진이 들어가면 미국 승인 없이는 제3국에 못 팝니다(ITAR).</b> 즉 KF-21·FA-50은 아무리 성능이 좋아도 수출할 때마다 미국의 허락이 필요합니다. <b>가장 어려운 노드를 남이 쥐고 있으면, 그게 곧 수출의 천장이 됩니다.</b> — AI 밸류체인의 '불가결 노드'와 똑같은 논리입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">5~6개국</div><div class="l">전투기 엔진<br>독자 생산 가능국</div></div>
+    <div class="fact"><div class="n">40 / 20%</div><div class="l">KF-21 엔진 국산화율<br>(한화 / 정부 기준)</div></div>
+    <div class="fact"><div class="n">3.3조 · 14년</div><div class="l">독자 엔진 개발<br>정부 사업(2027~)</div></div>
+  </div>
+  <div class="terms">
+    <details class="term"><summary>ITAR</summary><div class="def">미국의 <b>무기·군용기술 수출통제 규정.</b> 미국 부품·기술이 들어간 무기는 미국 정부 승인 없이 제3국에 수출할 수 없습니다. 한국 항공무기 수출의 핵심 족쇄.</div></details>
+    <details class="term"><summary>면허생산</summary><div class="def">설계 도면을 받아 국내에서 부품을 조립·생산하는 방식. 겉으론 국산이지만 <b>핵심 기술·설계권은 원개발사에 있어</b> 정비·수출에 제약이 따릅니다.</div></details>
+    <details class="term"><summary>국산화율</summary><div class="def">무기체계에서 국내 기술·부품이 차지하는 비율. 산정 기준에 따라 숫자가 크게 달라져, 같은 엔진도 40%(전체 공유 기준)~20%(정부 기준)로 갈립니다.</div></details>
+  </div>
+</div>
+</section>
+
+<!-- ═══════ ZONE II ═══════ -->
+<section id="z2" style="--zc:var(--apex);--zs:var(--apexs)">
+<div class="zone-head" style="color:var(--apex)">
+  <div class="z-big">Ⅱ</div>
+  <div class="z-num">ZONE Ⅱ · 글로벌</div>
+  <h2>세계 무기시장 권력지도</h2>
+  <p>무기시장은 반도체보다 더 소수가 지배합니다. 상위 5개국이 전체 수출의 70%. 그 안에 명확한 3개 층위가 있고, 한국은 가장 아래 칸에서 빠르게 올라오는 중입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--apex);--zs:var(--apexs)">
+  <span class="f-tag">3개 층위</span>
+  <h3>절대강자 · 풀스펙트럼 · 신흥 특화주자</h3>
+  <div class="meta">SIPRI 2021~2025 수출 점유율 기준</div>
+  <div class="diag">
+  <svg viewBox="0 0 640 300" role="img" aria-label="세계 무기수출 3개 층위 피라미드: 미국 정점, 풀스펙트럼 강국, 신흥 특화주자">
+    <polygon class="stk" style="animation-delay:.1s" points="320,30 250,110 390,110" fill="#a8392b"/>
+    <text x="320" y="78" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">미국</text>
+    <text x="320" y="98" text-anchor="middle" font-size="11" fill="#f6d9d3">글로벌 42%</text>
+    <polygon class="stk" style="animation-delay:.35s" points="250,114 390,114 440,194 200,194" fill="#37588a"/>
+    <text x="320" y="150" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">풀스펙트럼 강국</text>
+    <text x="320" y="170" text-anchor="middle" font-size="10.5" fill="#dbe6f5">프랑스·러시아·독일·중국·영·이</text>
+    <polygon class="stk" style="animation-delay:.6s" points="200,198 440,198 500,272 140,272" fill="#b3801f"/>
+    <text x="320" y="232" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">신흥 특화주자</text>
+    <text x="320" y="251" text-anchor="middle" font-size="10.5" fill="#f6eccf">한국 · 이스라엘 · 튀르키예</text>
+    <g class="pulse"><circle cx="475" cy="235" r="7" fill="#1d7a59" stroke="#fff" stroke-width="2"/></g>
+    <text x="538" y="232" text-anchor="middle" font-size="11" font-weight="800" fill="#1d7a59">한국</text>
+    <text x="538" y="247" text-anchor="middle" font-size="10" fill="#1d7a59">↑ 상승</text>
+    <text x="80" y="60" font-size="11" fill="#566270">고급 노드</text>
+    <text x="80" y="76" font-size="11" fill="#566270">독점 + 승인권</text>
+    <text x="70" y="262" font-size="11" fill="#566270">가성비 ·</text>
+    <text x="70" y="278" font-size="11" fill="#566270">특정 영역 강점</text>
+  </svg>
+  <div class="cap">위로 갈수록 '고급 노드(엔진·스텔스·장거리미사일)'와 '수출 승인권'을 쥡니다. 한국은 맨 아래 칸에서 위로 밀어 올리는 중.</div>
+  </div>
+  <p class="body">미국의 진짜 힘은 점유율 42%가 아니라 <b>고급 노드의 독점과 승인권</b>입니다. 장거리 지대지 미사일(사거리 250km↑) 수출의 45%가 미국이고, 미국 부품이 든 무기는 미국 허가 없이 못 팝니다. 프랑스·러시아·독일·중국·영국·이탈리아는 전투기·함정·미사일을 자체 보유한 <b>풀스펙트럼 강국</b>. 한국·이스라엘·튀르키예는 특정 영역에서 빠르게 치고 올라오는 <b>신흥 특화주자</b>입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">42%</div><div class="l">미국의 글로벌<br>수출 점유율</div></div>
+    <div class="fact"><div class="n">70%</div><div class="l">상위 5개국<br>합산 점유율</div></div>
+    <div class="fact"><div class="n">45%</div><div class="l">장거리미사일 수출<br>중 미국 비중</div></div>
+  </div>
+  <div class="cos-label">글로벌 체계종합(prime) 기업</div>
+  <div class="cos"><span class="co">🇺🇸 록히드마틴 — F-35</span><span class="co">🇺🇸 RTX(레이시온)</span><span class="co">🇺🇸 보잉·노스럽·GD</span><span class="co">🇬🇧 BAE Systems</span><span class="co">🇫🇷 탈레스·다쏘·나발</span><span class="co">🇮🇹 레오나르도</span><span class="co">🇩🇪 라인메탈</span><span class="co">🇮🇱 엘빗·IAI</span></div>
+  <div class="terms">
+    <details class="term"><summary>SIPRI</summary><div class="def">스톡홀름국제평화연구소. 전 세계 무기 거래·생산을 추적하는 가장 권위 있는 기관으로, 무기수출 순위의 사실상 기준 데이터입니다.</div></details>
+    <details class="term"><summary>체계종합(prime)</summary><div class="def">수많은 부품·구성품을 통합해 완성 무기체계를 만들고 정부와 직접 계약하는 최상위 기업. 록히드마틴, 한화에어로 등이 여기 해당합니다.</div></details>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--apex);--zs:var(--apexs)">
+  <span class="f-tag">규모의 격차</span>
+  <h3>성장률은 세계 최고, 덩치는 아직 소형</h3>
+  <div class="meta">SIPRI 세계 100대 방산기업 (2024년 매출)</div>
+  <p class="body">국가 순위와 별개로 <b>기업 규모로 보면 격차가 더 큽니다.</b> 세계 100대 방산기업 중 미국이 상위 10개 중 6개를 차지합니다. <b>록히드마틴 한 곳의 방산 매출만 600억 달러대</b>인데, 한국 4개사를 다 합쳐도 141억 달러입니다. 다만 성장률은 다른 얘기 — 한국 4사 합산이 1년 새 31% 늘었고, 한화그룹은 42%나 증가했습니다. <b>"규모는 소형, 속도는 최고"</b>가 지금 한국의 위치입니다.</p>
+  <div class="diag">
+  <svg viewBox="0 0 640 200" role="img" aria-label="록히드마틴 한 곳과 한국 4사 합산 방산매출 비교 막대">
+    <text x="40" y="30" font-size="12.5" font-weight="800" fill="#19212b">방산 매출 비교 ($B, 2024)</text>
+    <text x="150" y="88" text-anchor="end" font-size="12" fill="#566270">록히드마틴(1곳)</text>
+    <rect class="grow" x="160" y="68" width="400" height="26" rx="5" fill="#a8392b"/>
+    <text x="572" y="87" font-size="12" font-weight="800" fill="#a8392b">~60+</text>
+    <text x="150" y="138" text-anchor="end" font-size="12" fill="#566270">한국 4사 합산</text>
+    <rect class="grow" x="160" y="118" width="94" height="26" rx="5" fill="#1d7a59"/>
+    <text x="266" y="137" font-size="12" font-weight="800" fill="#1d7a59">14.1</text>
+    <text x="160" y="178" font-size="11" fill="#909aa6">한화 +42% · 한국 4사 +31% (전년比 성장률은 세계 최상위권)</text>
+  </svg>
+  <div class="cap">덩치는 글로벌 1개사에도 못 미치지만, 증가 속도는 가장 빠른 단계.</div>
+  </div>
+  <div class="cos-label">SIPRI 100대 진입 한국 기업</div>
+  <div class="cos"><span class="co kr">🇰🇷 한화 — 국내 1위, 수출 50%+</span><span class="co kr">🇰🇷 한국항공우주(KAI)</span><span class="co kr">🇰🇷 LIG넥스원</span><span class="co kr">🇰🇷 현대로템</span></div>
+  <div class="view"><div class="v-head">분석 노트</div><p>한국의 낮은 절대규모는 약점인 동시에 성장 여력입니다. 글로벌 prime 한 곳이 도달한 매출의 1/4도 안 되는 단계라, 수주잔고(첫 100조원 돌파)가 매출로 전환되는 향후 수년간은 성장률 프리미엄이 정당화될 여지가 있습니다. 단, 그 성장이 '폴란드 한 나라'에 깊게 의존한다는 점이 동시에 따라붙는 리스크입니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ ZONE III ═══════ -->
+<section id="z3" style="--zc:var(--tier2);--zs:var(--tier2s)">
+<div class="zone-head" style="color:var(--tier2)">
+  <div class="z-big">Ⅲ</div>
+  <div class="z-num">ZONE Ⅲ · 국내구조</div>
+  <h2>한국 방산 밸류체인 해부</h2>
+  <p>한국 방산은 4개 층으로 쌓여 있습니다. 그리고 각 도메인마다 사실상 단일 사업자가 지배하는 과점 구조입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--tier2);--zs:var(--tier2s)">
+  <span class="f-tag">4계층</span>
+  <h3>수요 → 체계종합 → 협력업체 → 소재</h3>
+  <div class="meta">위는 두껍고 아래로 갈수록 얇아지는 구조</div>
+  <div class="diag">
+  <svg viewBox="0 0 640 280" role="img" aria-label="한국 방산 4계층 구조: 수요, 체계종합, 협력업체, 소재 부품">
+    <rect class="stk" style="animation-delay:.1s" x="120" y="20" width="400" height="44" rx="8" fill="#2b3f57"/><text x="320" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">수요층</text><text x="320" y="57" text-anchor="middle" font-size="10.5" fill="#bcccdd">국내 방사청(독점) ↔ 해외(자유가격)</text>
+    <rect class="stk" style="animation-delay:.3s" x="120" y="72" width="400" height="44" rx="8" fill="#37588a"/><text x="320" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">체계종합 (Prime)</text><text x="320" y="109" text-anchor="middle" font-size="10.5" fill="#d6e2f3">빅4 + 함정·전자 — 권력 집중</text>
+    <rect class="stk" style="animation-delay:.5s" x="160" y="124" width="320" height="42" rx="8" fill="#5b79a3"/><text x="320" y="143" text-anchor="middle" font-size="12.5" font-weight="800" fill="#fff">협력업체 (1·2차)</text><text x="320" y="159" text-anchor="middle" font-size="10.5" fill="#e0e8f4">부품·구성품 — 생태계 얇음 ⚠</text>
+    <rect class="stk" style="animation-delay:.7s" x="200" y="174" width="240" height="42" rx="8" fill="#8aa0c0"/><text x="320" y="193" text-anchor="middle" font-size="12.5" font-weight="800" fill="#fff">소재·핵심부품</text><text x="320" y="209" text-anchor="middle" font-size="10.5" fill="#eef2f8">엔진·반도체 — 수입의존 병목 ⚠</text>
+    <rect class="stk" style="animation-delay:.9s" x="200" y="232" width="240" height="34" rx="8" fill="none" stroke="#b3801f" stroke-width="1.5" stroke-dasharray="5 4"/><text x="320" y="254" text-anchor="middle" font-size="11.5" font-weight="800" fill="#9a6e1a">R&D 기반 — ADD 국가주도 (재원 77.6% 정부)</text>
+  </svg>
+  <div class="cap">맨 위(체계종합)에 힘이 쏠리고, 아래(협력업체·소재)로 갈수록 얇아지며 수입에 기댑니다.</div>
+  </div>
+  <p class="body">한국 구조의 특징은 <b>체계종합(prime)에 힘이 집중되고 협력업체 생태계가 얇다</b>는 점입니다. R&D 재원의 77.6%가 정부(ADD 국방과학연구소)에서 나오고, 기업 자체 투자는 22.4%에 그칩니다. 국가가 기술을 개발해 체계업체에 넘겨주는 하향식 구조라, 완성품은 강하지만 부품·소재 저변은 상대적으로 취약합니다.</p>
+  <div class="terms">
+    <details class="term"><summary>ADD</summary><div class="def">국방과학연구소. 한국 무기 R&D의 중심으로, 핵심 기술을 개발해 체계업체에 이전합니다. 천궁·현무 등 주요 미사일의 원천이 여기입니다.</div></details>
+    <details class="term"><summary>절충교역(offset)</summary><div class="def">외국 무기를 살 때 <b>기술이전·국내생산·부품수출을 조건으로 끼워넣는 거래.</b> 한국이 기술을 흡수해 온 핵심 통로였습니다.</div></details>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--tier2);--zs:var(--tier2s)">
+  <span class="f-tag">도메인 지도</span>
+  <h3>도메인마다 사실상 단일 사업자</h3>
+  <div class="meta">영역별 체계종합 기업과 주력 무기</div>
+  <table>
+    <tr><th>도메인</th><th>체계종합</th><th>주력 무기</th><th>수출 지위</th></tr>
+    <tr><td>화력·지상</td><td>한화에어로스페이스</td><td>K9 자주포 · 천무 · 레드백</td><td><span class="tag-s">수출 주력</span></td></tr>
+    <tr><td>기동</td><td>현대로템</td><td>K2 전차 · K808 장갑차</td><td><span class="tag-s">폴란드·페루</span></td></tr>
+    <tr><td>유도무기</td><td>LIG넥스원</td><td>천궁-II · 현궁 · 해성</td><td><span class="tag-s">중동 확대</span></td></tr>
+    <tr><td>항공</td><td>KAI</td><td>FA-50 · KF-21 · 수리온</td><td><span class="tag-w">엔진 족쇄</span></td></tr>
+    <tr><td>함정</td><td>한화오션 · HD현대중공업</td><td>호위함 · 잠수함</td><td><span class="tag-w">고부가 약세</span></td></tr>
+    <tr><td>전자·레이더</td><td>한화시스템</td><td>AESA 레이더 · 지휘통제</td><td>서브시스템</td></tr>
+    <tr><td>탄약</td><td>풍산</td><td>탄약 · 신관</td><td>후속군수</td></tr>
+  </table>
+  <p class="body">도메인별로 사실상 한 곳이 지배해 <b>국내 경쟁은 없고 수출에서만 글로벌 경쟁</b>을 합니다. 특히 한화그룹은 화력·항공엔진·전자·함정을 동시에 보유해 가장 수직통합된 플레이어입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--tier2);--zs:var(--tier2s)">
+  <span class="f-tag">★ 핵심 분석 · 국산화 매핑</span>
+  <h3>강한 노드 vs 병목 노드</h3>
+  <div class="meta">한국이 통제권을 쥔 곳 / 남이 쥔 곳</div>
+  <div class="nodemap">
+    <div class="nodecol s">
+      <h4>🟢 강한 노드 (국산화 높음 = 수출 자유)</h4>
+      <ul>
+        <li><b>화력 — K9 자주포</b> · 11개국 도입, 사실상 글로벌 표준</li>
+        <li><b>유도무기</b> · 천궁-II·현궁·해성, LIG넥스원 자체 통제</li>
+        <li><b>AESA 레이더</b> · 2025년 8월 KF-21 전력화, 국산 개발</li>
+        <li><b>탄약</b> · 풍산, 후속군수까지 연계</li>
+      </ul>
+    </div>
+    <div class="nodecol w">
+      <h4>🔴 병목 노드 (수입의존 = 수출 천장)</h4>
+      <ul>
+        <li><b>항공엔진</b> · KF-21=GE F414, FA-50=GE F404 → ITAR 족쇄</li>
+        <li><b>기동 파워팩</b> · K2 1차양산 독일 MTU+렝크, 국산화 내구성 이슈</li>
+        <li><b>군용 반도체·센서</b> · 분산 의존</li>
+        <li><b>특수소재</b> · 내열합금·복합재</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottleneck"><span class="ic">!</span>결정적 통찰: <b>강한 노드(지상·화력)는 2024년 수출의 73%·영업이익의 70%</b>를 차지하며 이미 현금화 중입니다. 반대로 약한 노드(항공엔진)는 미국이 쥐고 있어 KF-21 수출을 막습니다. <b>다음 성장의 병목 = 국산화 병목과 정확히 일치합니다.</b></div>
+  <div class="view"><div class="v-head">분석 노트</div><p>이 매핑이 투자 관점의 출발점입니다. 한국 방산의 큰 그림은 둘로 갈립니다 — ① 이미 강한 노드(지상무기)를 수출로 깊게 빨아먹는 '교두보 심화 플레이', ② 약한 노드(엔진)를 국산화해 항공·해양의 천장을 뚫는 '병목 해소 플레이'. 전자는 현재진행형 현금흐름, 후자는 장기 옵션 성격입니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ ZONE IV ═══════ -->
+<section id="z4" style="--zc:var(--rise);--zs:var(--rises)">
+<div class="zone-head" style="color:var(--rise)">
+  <div class="z-big">Ⅳ</div>
+  <div class="z-num">ZONE Ⅳ · 좌표</div>
+  <h2>그 지도에서 한국의 정확한 위치</h2>
+  <p>세 개의 좌표축으로 찍으면 한국의 위치가 선명해집니다 — 좁지만 강한 교두보, 명확한 특화 영역, 그리고 분명한 천장.</p>
+</div>
+
+<div class="floor" style="--zc:var(--rise);--zs:var(--rises)">
+  <span class="f-tag">좌표 ①</span>
+  <h3>전체로는 신흥, 유럽 시장에선 이미 2위</h3>
+  <div class="analogy">📍 글로벌 5년 누계로는 10위권이지만, <b>유럽 NATO 시장만 떼어 보면 한국이 미국 다음가는 2위 공급국(8.6%)</b>입니다. 이스라엘(7.7%)·프랑스(7.4%)를 제쳤습니다. '폴란드 한 곳에 깊게 박힌' 좁고 강한 교두보죠.</div>
+  <p class="body">미국이 유럽 NATO 무기수입의 58%를 먹는 시장에서 2위라는 건 의미가 큽니다. 동시에 위험도 여기 있습니다 — <b>최근 5년 한국 수출의 약 46%가 폴란드 한 나라</b>입니다. 교두보가 깊은 만큼, 폴란드 물량이 한 고비를 넘으면 성장률이 둔화할 수밖에 없는 구조입니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">2위</div><div class="l">유럽 NATO 시장<br>공급국 순위</div></div>
+    <div class="fact"><div class="n">46%</div><div class="l">5년 수출 중<br>폴란드 비중</div></div>
+    <div class="fact"><div class="n">16개국</div><div class="l">수출 대상국<br>(2022년 7개국)</div></div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--rise);--zs:var(--rises)">
+  <span class="f-tag">좌표 ② · ③</span>
+  <h3>특화 = 가성비 지상무기 / 천장 = 고부가 영역</h3>
+  <p class="body"><b>강점은 재래식 지상무기</b>(자주포·전차·다연장)입니다 — 기술 난도는 중간, 수요는 큰 세그먼트. 경쟁력은 두 가지: 서방 무기보다 <b>30~50% 저렴하고 납기가 빠르다</b>는 것. 남북 대치로 생산라인을 수십 년 안 멈춘 덕에 "지금 당장, 싸게, 많이" 댈 수 있는 게 무기입니다. <b>반대로 전투기 엔진·스텔스·장거리 정밀타격·대형 잠수함 같은 고부가 영역에선 아직 하위권</b>입니다. 2025년 폴란드 잠수함 수주전 고배가 그 증거입니다.</p>
+  <div class="analogy">🧭 한 줄 좌표 (AI 비유): 미국이 파운데이션 노드(엔진=GPU)를 쥔 <b>엔비디아</b>라면, 한국은 <b>강력하지만 핵심 칩은 수입하는 시스템 인티그레이터</b>입니다. 빠르고 싸게 잘 만들지만, 가장 비싼 노드의 통제권은 아직 남의 손에 있는 위치.</div>
+  <div class="terms">
+    <details class="term"><summary>TIV</summary><div class="def">SIPRI가 쓰는 무기 이전 단위. 금액이 아니라 군사적 가치·물량을 환산한 지표로, 국가 간 수출 규모를 비교하는 데 씁니다.</div></details>
+    <details class="term"><summary>파워팩</summary><div class="def">전차의 엔진+변속기를 하나로 묶은 '심장+다리' 모듈. K2 전차는 초기 독일제를 쓰다 국산화했지만 내구성 검증에 오래 걸렸습니다.</div></details>
+  </div>
+</div>
+</section>
+
+<!-- ═══════ ZONE V ═══════ -->
+<section id="z5" style="--zc:var(--kr);--zs:var(--krs)">
+<div class="zone-head" style="color:var(--kr)">
+  <div class="z-big">Ⅴ</div>
+  <div class="z-num">ZONE Ⅴ · 전략</div>
+  <h2>그래서 어디로 가는가 — 3개 벡터</h2>
+  <p>현재 좌표에서 한국 방산이 움직일 방향은 세 갈래입니다. 위로(천장 뚫기), 옆으로(시장 방어), 뒤로(길게 빨아먹기).</p>
+</div>
+
+<div class="floor" style="--zc:var(--kr);--zs:var(--krs)">
+  <span class="f-tag">전략 벡터</span>
+  <h3>위로 · 옆으로 · 뒤로</h3>
+  <div class="vecs">
+    <div class="vec"><div class="vk" style="background:var(--weaks);color:var(--weak)">↑</div><div><div class="vt">위로 — 천장 뚫기</div><div class="vb">엔진 국산화 → 항공·해양 고부가 진입. 정부가 2027년부터 14년·3.3조원을 들여 독자 엔진을 개발. <b>병목 해소 = 곧 수출 천장 제거</b>이자 ITAR 족쇄 탈출.</div></div></div>
+    <div class="vec"><div class="vk" style="background:var(--tier2s);color:var(--tier2)">→</div><div><div class="vt">옆으로 — 시장 방어</div><div class="vb">EU "Buy European"(역내부품 65%) 장벽을 현지생산·기술이전 '생태계 수출'로 우회. 루마니아 K9 공장, 폴란드 K2PL 현지생산, UAE 현지공장 검토.</div></div></div>
+    <div class="vec"><div class="vk" style="background:var(--rises);color:var(--rise)">↺</div><div><div class="vt">뒤로 — 길게 빨아먹기</div><div class="vb">무기 평생비용의 60~70%가 도입 후 30년 정비·부품. 천궁-II 중동 MRO만 4~5조원 추산. <b>한 번 팔면 30년짜리 연금</b>으로 전환하는 후속군수 시장.</div></div></div>
+  </div>
+  <div class="bottleneck"><span class="ic">✓</span>요약: 한국은 <b>좁고 강한 교두보(유럽 지상무기) + 빠른 성장 + 명확한 천장(엔진)</b>이라는 좌표에 있습니다. 세 벡터 중 '위로(엔진)'가 가장 어렵지만 가장 큰 판을 바꿉니다.</div>
+  <div class="view"><div class="v-head">분석 노트 — 다음 단계 예고</div><p>다음 문서(투자 관점)에서는 이 세 벡터를 밸류에이션으로 분해할 예정입니다: ① 교두보 심화 플레이(현금흐름·수주잔고 기반) vs ② 병목 해소 플레이(엔진 국산화 수혜, 한화에어로·두산에너빌리티 등 장기 옵션) 중 어디에 가격 매력이 남아 있는가. 그 뒤 개별기업 deep-dive로 좁혀갑니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ PART 2 ═══════ -->
+<div class="partbreak">
+  <div class="pb-line"></div>
+  <div class="pb-txt">
+    <div class="pb-eye">PART 2</div>
+    <div class="pb-h">세계 방산 진영별 기업 지도</div>
+    <div class="pb-sub">권력지도의 세 칸에는 누가 사는가. 대표 선수들을 한 명씩 카드로 꺼내 봅니다 — 별명과 함께.</div>
+  </div>
+</div>
+
+<!-- ZONE VI · 미국 -->
+<section id="z6" style="--zc:var(--apex);--zs:var(--apexs)">
+<div class="zone-head" style="color:var(--apex)">
+  <div class="z-big">Ⅵ</div>
+  <div class="z-num">ZONE Ⅵ · 절대강자</div>
+  <h2>미국 — 정점의 5인방</h2>
+  <p>흥미로운 사실 하나: 미국 국방부의 1차 계약사는 1990년대 51곳에서 지금 단 5곳으로 줄었습니다. '빅5'가 하늘·바다·우주·미사일을 나눠 가진, 세계에서 가장 압축된 과점입니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--apex);--zs:var(--apexs)">
+  <span class="f-tag">미국 빅5 도시에</span>
+  <h3>엔진까지 쥔 건물주들</h3>
+  <div class="meta">매출의 절반 이상이 순수 방산 · $954B 내수가 떠받침</div>
+  <div class="dossier">
+    <div class="dcard">
+      <span class="flag">🇺🇸</span>
+      <div class="persona">방산계의 '애플'</div>
+      <h4>록히드마틴</h4>
+      <div class="stat">방산 ~$68B · 전체의 96%</div>
+      <div class="fp"><b>F-35</b>(역사상 가장 비싼 무기, 평생비용 $1.7조) · 이지스 전투체계 · THAAD·PAC-3 요격미사일 · 트라이던트 SLBM · 위성</div>
+      <div class="one">한 줄: 미 국방부와 가장 많은 계약 한도를 쥔 <b>부동의 세계 1위</b>.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇺🇸</span>
+      <div class="persona">미사일 백화점 + 남의 심장도 만든다</div>
+      <h4>RTX (레이시온)</h4>
+      <div class="stat">방산 ~$41B · 전체 $80B+</div>
+      <div class="fp"><b>패트리엇·토마호크·AIM-9X</b> 미사일 · 레이더·센서 · 그리고 <b>F-35의 엔진(P&W F135)</b>까지 — 세계 최대 항공·방산기업</div>
+      <div class="one">한 줄: 무기도 팔고 <b>경쟁기의 심장(엔진)</b>도 공급하는 이중 권력.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇺🇸</span>
+      <div class="persona">보이지 않는 것의 장인</div>
+      <h4>노스럽그러먼</h4>
+      <div class="stat">방산 ~$37B · 전체의 89%</div>
+      <div class="fp"><b>B-21 레이더</b> 스텔스폭격기 · <b>센티넬</b> 차세대 ICBM · 우주·위성 — 가장 보이지 않고 가장 전략적인 무기 담당</div>
+      <div class="one">한 줄: 스텔스와 핵억지력이라는 <b>최상위 노드 전문</b>.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇺🇸</span>
+      <div class="persona">바다 밑과 땅 위의 강자</div>
+      <h4>제너럴다이내믹스</h4>
+      <div class="stat">4대 사업부</div>
+      <div class="fp"><b>버지니아·컬럼비아급 핵잠수함</b> · <b>에이브럼스 전차</b> · 방산 IT · 걸프스트림 제트</div>
+      <div class="one">한 줄: 잠수함부터 전차·IT까지 <b>가장 다각화된 빅5</b>.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇺🇸</span>
+      <div class="persona">민항기 회사이자 방산 거인</div>
+      <h4>보잉 디펜스</h4>
+      <div class="stat">대형</div>
+      <div class="fp">전투기(F-15·F/A-18) · 회전익(아파치·치누크) · 우주·위성 · 공중급유기</div>
+      <div class="one">한 줄: 민항기 부진을 <b>방산이 받쳐주는</b> 구조.</div>
+    </div>
+  </div>
+  <div class="bottleneck"><span class="ic">!</span>핵심: 이 5곳은 <b>남에게 의존하는 노드가 사실상 없습니다.</b> 엔진·스텔스·우주·미사일을 다 쥐고, 거기에 'ITAR'라는 수출 승인권까지 가져 동맹국의 무기 수출에도 영향을 미칩니다.</div>
+</div>
+</section>
+
+<!-- ZONE VII · 풀스펙트럼 -->
+<section id="z7" style="--zc:var(--tier2);--zs:var(--tier2s)">
+<div class="zone-head" style="color:var(--tier2)">
+  <div class="z-big">Ⅶ</div>
+  <div class="z-num">ZONE Ⅶ · 풀스펙트럼 강국</div>
+  <h2>'풀스펙트럼'이라는 착시 — 3개의 다른 얼굴</h2>
+  <p>한 칸에 묶였지만 서유럽·러시아·중국은 전혀 다른 산업입니다. 잘나가는 연합군, 고립된 전시공장, 베일에 싸인 거인 — 셋을 나눠 봅니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--tier2);--zs:var(--tier2s)">
+  <div class="submodel"><span class="badge">7-A</span> 서유럽 — 재무장 붐의 수혜</div>
+  <h3>각자 잘하는 걸 들고 모인 연합군</h3>
+  <div class="meta">국가지분 흔함 · 공동 프로그램으로 규모 보완 · EU가 €131B로 밀어줌</div>
+  <div class="dossier">
+    <div class="dcard">
+      <span class="flag">🇬🇧</span>
+      <div class="persona">유럽의 맏형, 미국에서도 돈 번다</div>
+      <h4>BAE Systems</h4>
+      <div class="stat">유럽 최대 · 잔고 £75B+</div>
+      <div class="fp">유로파이터·차세대전투기(GCAP) · <b>AUKUS 잠수함</b> · Type 26 호위함(노르웨이 £10B) · 매출의 45%가 미국</div>
+      <div class="one">한 줄: 유럽·미국 <b>양다리</b>로 가장 안정적인 유럽 prime.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇩🇪</span>
+      <div class="persona">재무장의 화신</div>
+      <h4>Rheinmetall</h4>
+      <div class="stat">€9.9B(+29%) · 잔고 €63.8B</div>
+      <div class="fp"><b>전차·포탄·복서/링스 장갑차</b> · 유럽 최대 탄약공장 건설 중 · <b>자동차 부문 매각하고 순수 방산회사로 변신</b></div>
+      <div class="one">한 줄: 5년 매출 <b>+323%</b>, 우크라이나 전쟁 최대 수혜주.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇮🇹</span>
+      <div class="persona">헬기와 전자의 챔피언</div>
+      <h4>Leonardo</h4>
+      <div class="stat">~€21B · 국가지분</div>
+      <div class="fp">군용 헬기 · 전투 전자장비 · GCAP 파트너 · 2030년 이익 2배 목표</div>
+      <div class="one">한 줄: 우크라 노출이 적어 <b>휴전 리스크 방어력</b>이 높음.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇫🇷</span>
+      <div class="persona">전장의 두뇌 설계자</div>
+      <h4>Thales</h4>
+      <div class="stat">~€20.6B</div>
+      <div class="fp">레이더·센서 · <b>C4ISR(지휘통제)</b> · 우주 · 사이버 · 미사일(MBDA 지분)</div>
+      <div class="one">한 줄: 무기의 '눈과 신경'을 만드는 <b>전자전 강자</b>.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇫🇷</span>
+      <div class="persona">라팔 한 방의 자존심</div>
+      <h4>Dassault</h4>
+      <div class="stat">€6.2B</div>
+      <div class="fp"><b>라팔</b> 전투기(인도·UAE·인니 등 수출 호조) · 비즈니스 제트 · 무인기 뉴런</div>
+      <div class="one">한 줄: 프랑스가 <b>미국 없이도 전투기를 판다</b>는 증거.</div>
+    </div>
+    <div class="dcard">
+      <span class="flag">🇸🇪</span>
+      <div class="persona">스웨덴의 다윗</div>
+      <h4>Saab</h4>
+      <div class="stat">5년 매출 +284%</div>
+      <div class="fp"><b>그리펜</b> 전투기 · 글로벌아이 조기경보기 · A26 잠수함(폴란드 수주) · 대전차무기</div>
+      <div class="one">한 줄: 작지만 <b>전투기·잠수함·미사일을 다 만드는</b> 만능 소국.</div>
+    </div>
+  </div>
+  <div class="bottleneck"><span class="ic">!</span>약점: 나라별로 쪼개져 규모가 분산되고, 공동 전투기 사업 <b>FCAS(프랑스·독일·스페인)는 다쏘 vs 에어버스 주도권 다툼으로 2025년 교착</b>. "함께 만들자"는 말처럼 쉽지 않다는 증거.</div>
+</div>
+
+<div class="floor" style="--zc:var(--tier2);--zs:var(--tier2s)">
+  <div class="submodel"><span class="badge">7-B</span> 러시아 — 제재 고립 + 전시경제</div>
+  <h3>수출길 막힌 전시 공장</h3>
+  <div class="analogy">💡 비유: 가게 손님(수출)은 끊겼는데 <b>안방 식구(자국군)가 전쟁 중이라 공장은 풀가동</b> 중인 상태. 매출은 늘었지만 건강한 성장이 아닙니다.</div>
+  <p class="body">국영 <b>로스텍</b>(칼라시니코프 등 수백 개 기업)과 <b>통합조선공사</b> 합산 방산매출은 $31.2B로 제재에도 23% 늘었지만, 이는 전쟁 내수가 메운 것입니다. 정작 자랑이던 수출은 <b>2012년 세계 30% → 2025년 6%로 추락</b>했습니다. 100% 국가소유에 <b>숙련 인력 부족·부품난</b>이 겹쳐 혁신이 둔화 중이고, 일부 부품을 중국에 기대기 시작했습니다.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">30→6%</div><div class="l">세계 수출 점유율<br>(2012 → 2025)</div></div>
+    <div class="fact"><div class="n">$31.2B</div><div class="l">로스텍+조선공사<br>합산 매출</div></div>
+    <div class="fact"><div class="n">100%</div><div class="l">국가소유<br>(로스텍)</div></div>
+  </div>
+</div>
+
+<div class="floor" style="--zc:var(--tier2);--zs:var(--tier2s)">
+  <div class="submodel"><span class="badge">7-C</span> 중국 — 거대하지만 베일에 싸인 거인</div>
+  <h3>덩치는 산만 한데 속을 알 수 없다</h3>
+  <p class="body">중국은 도메인별 거대 국영기업이 지배합니다 — <b>NORINCO</b>(육상·탄약), <b>AVIC</b>(항공기), <b>CSSC</b>(함정), <b>CETC</b>(레이더·전자), <b>CASC·CASIC</b>(미사일·우주). 그런데 세 가지가 발목을 잡습니다.</p>
+  <div class="dossier">
+    <div class="dcard" style="--zc:var(--weak);--zs:var(--weaks)">
+      <div class="persona">① 대부분 내수</div>
+      <h4>수출은 오히려 후퇴</h4>
+      <div class="fp">세계 수출 점유율이 <b>2023년 9% → 2025년 3% 미만</b>으로 하락. 프랑스·이스라엘·미국에 밀림</div>
+    </div>
+    <div class="dcard" style="--zc:var(--weak);--zs:var(--weaks)">
+      <div class="persona">② 불투명</div>
+      <h4>순수 방산 규모를 모른다</h4>
+      <div class="fp">중국 기업 매출의 <b>평균 70.7%가 비방산</b>(석유화학·기계 등)이라 진짜 방산 규모 산정이 어려움</div>
+    </div>
+    <div class="dcard" style="--zc:var(--weak);--zs:var(--weaks)">
+      <div class="persona">③ 부패 스캔들</div>
+      <h4>NORINCO 매출 -31%</h4>
+      <div class="fp">조달 부패로 계약이 무더기 연기·취소 → 군 현대화 일정 자체가 불확실해짐</div>
+    </div>
+    <div class="dcard" style="--zc:var(--weak);--zs:var(--weaks)">
+      <div class="persona">+ 기술 격차</div>
+      <h4>가성비 시장에 갇힐 위험</h4>
+      <div class="fp">서방과 기술 격차가 남아, 제재국·저가 시장(파키스탄·아프리카) 위주로 굳어질 우려</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ZONE VIII · 신흥 특화주자 -->
+<section id="z8" style="--zc:var(--rise);--zs:var(--rises)">
+<div class="zone-head" style="color:var(--rise)">
+  <div class="z-big">Ⅷ</div>
+  <div class="z-num">ZONE Ⅷ · 신흥 특화주자</div>
+  <h2>한국·이스라엘·튀르키예 — 각자 다른 틈새</h2>
+  <p>같은 '신흥주자'지만 셋은 전혀 다른 노드를 점령했습니다. 한국은 큰 플랫폼, 이스라엘은 비싼 두뇌, 튀르키예는 싼 날개.</p>
+</div>
+
+<div class="floor" style="--zc:var(--rise);--zs:var(--rises)">
+  <span class="f-tag">신흥 3인방 도시에</span>
+  <h3>같은 칸, 다른 전략</h3>
+  <div class="dossier">
+    <div class="dcard" style="--zc:var(--kr);--zs:var(--krs)">
+      <span class="flag">🇰🇷</span>
+      <div class="persona">빠르고 싸고 많이 — 단, 심장은 수입</div>
+      <h4>한국</h4>
+      <div class="stat">4사 $14.1B (+31%)</div>
+      <div class="fp"><b>육상 가성비 플랫폼</b>: K9 자주포·K2 전차·천무. 빠른 납기 + 30~50% 저가가 무기. 엔진·항공 고부가는 약점</div>
+      <div class="one">틈새: <b>큰 플랫폼 · 중간 기술</b> — 대량으로 판다.</div>
+    </div>
+    <div class="dcard" style="--zc:var(--rise);--zs:var(--rises)">
+      <span class="flag">🇮🇱</span>
+      <div class="persona">가장 비싼 물건을 파는 정밀 저격수</div>
+      <h4>이스라엘</h4>
+      <div class="stat">수출 $19.2B 기록 (+30%)</div>
+      <div class="fp"><b>방공·정밀·드론</b>: 아이언돔·Arrow 3·David's Sling·Barak MX. 3대 기업(IAI·Elbit·Rafael)이 수출의 85~90%, 잔고 $90B. 수출 30%가 방공(최고 마진)</div>
+      <div class="one">틈새: <b>작은 플랫폼 · 최고 기술</b> — '실전검증' 도장이 해자.</div>
+    </div>
+    <div class="dcard" style="--zc:var(--rise);--zs:var(--rises)">
+      <span class="flag">🇹🇷</span>
+      <div class="persona">드론으로 판을 흔든 가성비 도전자</div>
+      <h4>튀르키예</h4>
+      <div class="stat">Baykar $1.8B 수출 1위</div>
+      <div class="fp"><b>드론·저가 접근성</b>: Bayraktar(Baykar)·Aselsan(전자)·TAI(KAAN 전투기)·Roketsan(미사일). 약 180개국에 판매</div>
+      <div class="one">틈새: <b>저가 무인기</b> — 누구나 살 수 있는 가격이 무기.</div>
+    </div>
+    <div class="dcard" style="--zc:var(--steel);--zs:var(--steels)">
+      <span class="flag">🪞</span>
+      <div class="persona">한국이 들여다볼 거울</div>
+      <h4>튀르키예의 "세입자 → 집주인"</h4>
+      <div class="fp">튀르키예 드론산업은 원래 <b>이스라엘 드론(IAI Heron) 수입</b>에서 출발 → "정비 서비스가 나쁘다"며 <b>자체 개발로 독립</b>. 에르도안은 이를 "세입자가 집주인이 된다"고 표현</div>
+      <div class="one">시사점: <b>한국 엔진 국산화가 성공하면 그려질 그림</b>의 예고편.</div>
+    </div>
+  </div>
+  <div class="diag">
+  <svg viewBox="0 0 640 380" role="img" aria-label="신흥 방산국 틈새 지도: 가로 기술 고도, 세로 부가가치. 튀르키예 한국 이스라엘 미국 위치">
+    <line x1="80" y1="320" x2="600" y2="320" stroke="#c2c6bc" stroke-width="1.5"/>
+    <line x1="80" y1="320" x2="80" y2="40" stroke="#c2c6bc" stroke-width="1.5"/>
+    <text x="600" y="345" text-anchor="end" font-size="11.5" fill="#566270">기술 고도 / 진입장벽 →</text>
+    <text x="74" y="40" text-anchor="end" font-size="11.5" fill="#566270" transform="rotate(-90 74 40)" style="text-anchor:middle">부가가치·마진 →</text>
+    <!-- Turkey -->
+    <circle class="pulse" cx="195" cy="245" r="11" fill="#b3801f"/>
+    <text x="195" y="275" text-anchor="middle" font-size="12" font-weight="800" fill="#9a6e1a">🇹🇷 튀르키예</text>
+    <text x="195" y="290" text-anchor="middle" font-size="10" fill="#8a7a4c">저가 드론</text>
+    <!-- Korea -->
+    <circle class="pulse" cx="320" cy="215" r="13" fill="#1d7a59" stroke="#fff" stroke-width="2"/>
+    <text x="320" y="245" text-anchor="middle" font-size="12.5" font-weight="900" fill="#1d7a59">🇰🇷 한국</text>
+    <text x="320" y="260" text-anchor="middle" font-size="10" fill="#1d7a59">큰 플랫폼·중간기술</text>
+    <!-- Israel -->
+    <circle class="pulse" cx="455" cy="120" r="12" fill="#b3801f"/>
+    <text x="455" y="105" text-anchor="middle" font-size="12" font-weight="800" fill="#9a6e1a">🇮🇱 이스라엘</text>
+    <text x="455" y="150" text-anchor="middle" font-size="10" fill="#8a7a4c">방공·정밀(고마진)</text>
+    <!-- US -->
+    <circle cx="560" cy="65" r="13" fill="#a8392b"/>
+    <text x="560" y="48" text-anchor="middle" font-size="12" font-weight="800" fill="#a8392b">🇺🇸 미국</text>
+    <text x="560" y="90" text-anchor="middle" font-size="10" fill="#8a4034">정점</text>
+    <!-- arrow Korea -> up-right -->
+    <path class="drawline" d="M335 200 Q400 150 440 130" stroke="#1d7a59" stroke-width="2.5" fill="none" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+    <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1d7a59"/></marker></defs>
+    <text x="410" y="178" font-size="10.5" font-weight="700" fill="#1d7a59">전략 방향: 위로(엔진·정밀)</text>
+  </svg>
+  <div class="cap">한국은 가운데 — 위로(이스라엘·미국 쪽 고부가) 오르거나, 규모로 옆을 넓히거나. 엔진 국산화가 그 '위로' 벡터입니다.</div>
+  </div>
+</div>
+</section>
+
+<!-- ZONE IX · 종합 -->
+<section id="z9" style="--zc:var(--kr);--zs:var(--krs)">
+<div class="zone-head" style="color:var(--kr)">
+  <div class="z-big">Ⅸ</div>
+  <div class="z-num">ZONE Ⅸ · 종합</div>
+  <h2>진영을 가르는 3개 축 + 한국 좌표</h2>
+  <p>규모만 보면 안 됩니다. 진영은 '무엇을 쥐었나·누가 소유하나·어떻게 파나'로 갈립니다.</p>
+</div>
+
+<div class="floor" style="--zc:var(--kr);--zs:var(--krs)">
+  <span class="f-tag">3개 축</span>
+  <h3>진영 비교 한눈에</h3>
+  <table>
+    <tr><th>축</th><th>미국</th><th>풀스펙트럼</th><th>신흥 특화</th></tr>
+    <tr><td>① 통제 노드</td><td>정점(엔진·스텔스·우주)</td><td>풀스펙트럼(자체 보유)</td><td>특정 틈새</td></tr>
+    <tr><td>② 소유구조</td><td>상장 과점</td><td>국가지분 흔함</td><td>혼합</td></tr>
+    <tr><td>③ 수출모델</td><td>동맹 + ITAR 지렛대</td><td>유럽=협업 / 러=고립 / 중=내수·가성비</td><td>공개시장 경쟁</td></tr>
+  </table>
+  <div class="analogy">🧭 한 줄 정리: <b>미국은 "엔진까지 쥔 건물주", 유럽은 "잘나가는 연합 상가", 러시아는 "제재 걸린 전시 공장", 중국은 "베일에 싸인 거인", 그리고 한국·이스라엘·튀르키예는 "각자 다른 틈새의 신흥 강소상점"</b>입니다.</div>
+  <p class="body">진영 비교로 한국을 다시 찍으면 — 규모는 이스라엘($16.2B)과 비슷한 $14.1B에 성장률은 최고지만, 점령한 틈새가 <b>'큰 플랫폼·중간 기술'</b>이라 플랫폼(전차·자주포)은 잘 팔려도 <b>이스라엘이 쥔 고부가 정점(방공·정밀)과 미국이 쥔 엔진은 아직 약합니다.</b></p>
+  <div class="view"><div class="v-head">분석 노트 — 한국의 전략 갈림길</div><p>① <b>이스라엘 모델</b>(고부가 niche로 상승 — 방공·정밀·무인) vs ② <b>규모 모델</b>(플랫폼 대량수출 심화). 튀르키예의 드론 자립("세입자→집주인")은 ①의 가능성을 보여주는 선례이고, 한국 엔진 국산화 사업이 바로 그 '위로 오르는' 벡터입니다. 다음 편(투자 관점)에서 이 둘 중 어디에 밸류에이션 매력이 남아 있는지 분해합니다.</p><div class="v-note">※ 2026년 6월 시점의 사견이며 투자 권유가 아닙니다.</div></div>
+</div>
+</section>
+
+<!-- ═══════ 용어 사전 ═══════ -->
+<section id="gloss">
+<div class="zone-head" style="color:var(--steel)">
+  <div class="z-num" style="color:var(--steel)">APPENDIX</div>
+  <h2>용어 사전</h2>
+  <p>방산 입문자를 위한 핵심 용어 한눈에.</p>
+</div>
+<div class="gloss">
+  <details><summary>수요독점(monopsony)</summary><div class="g-body">구매자가 하나뿐인 시장. 국내 방산은 정부가 유일 구매자라 가격을 통제받아 이익률이 낮습니다.</div></details>
+  <details><summary>ITAR</summary><div class="g-body">미국의 무기·기술 수출통제. 미국 부품이 든 무기는 미국 승인 없이 제3국 수출 불가 — KF-21의 족쇄.</div></details>
+  <details><summary>SIPRI</summary><div class="g-body">스톡홀름국제평화연구소. 전 세계 무기거래 추적의 표준 기관.</div></details>
+  <details><summary>체계종합(prime)</summary><div class="g-body">부품을 통합해 완성 무기를 만들고 정부와 직접 계약하는 최상위 기업.</div></details>
+  <details><summary>G2G</summary><div class="g-body">정부 대 정부 무기거래. 금융지원·신뢰가 묶여 대형 계약에 쓰임.</div></details>
+  <details><summary>절충교역(offset)</summary><div class="g-body">외국 무기 구매 시 기술이전·국내생산을 조건으로 끼우는 거래.</div></details>
+  <details><summary>ADD</summary><div class="g-body">국방과학연구소. 한국 무기 R&D의 중심이자 핵심기술 원천.</div></details>
+  <details><summary>MRO / 후속군수</summary><div class="g-body">정비·수리·운영. 무기 평생비용의 60~70%를 차지하는 '판매 다음 시장'.</div></details>
+  <details><summary>파워팩</summary><div class="g-body">전차의 엔진+변속기 모듈. 전차 국산화의 마지막 관문.</div></details>
+  <details><summary>AESA</summary><div class="g-body">능동위상배열 레이더. 전투기의 핵심 센서로, 한국이 자체 개발해 KF-21에 탑재.</div></details>
+  <details><summary>TIV</summary><div class="g-body">SIPRI의 무기 이전 단위. 금액이 아닌 군사적 가치·물량 환산 지표.</div></details>
+  <details><summary>국산화율</summary><div class="g-body">무기에서 국내 기술·부품 비중. 산정 기준에 따라 숫자가 크게 갈림.</div></details>
+  <details><summary>GCAP / FCAS</summary><div class="g-body">차세대 전투기 공동개발 사업. <b>GCAP</b>=영국·이탈리아·일본, <b>FCAS</b>=프랑스·독일·스페인(주도권 다툼으로 교착).</div></details>
+  <details><summary>MBDA</summary><div class="g-body">유럽 미사일 합작사(BAE·에어버스·레오나르도 공동소유). 유럽 미사일의 핵심 공급원.</div></details>
+  <details><summary>아이언돔 / Arrow / David's Sling</summary><div class="g-body">이스라엘의 다층 방공망. 단거리(아이언돔)→중거리(David's Sling)→장거리(Arrow). 방산 최고 마진 영역.</div></details>
+  <details><summary>Bayraktar(바이락타르)</summary><div class="g-body">튀르키예 Baykar의 무장 드론. 저가·실전검증으로 세계 시장을 흔든 가성비 무인기의 상징.</div></details>
+</div>
+
+<div class="disclaimer">
+<b>읽어두실 점</b> — 이 문서는 한국 방위산업의 구조를 이해하기 위한 교육 자료입니다. 본문의 "분석 노트"는 2026년 6월 시점의 개인적 분석·의견으로 특정 종목의 매수·매도를 권유하지 않으며, 인용 수치(수출액·점유율·국산화율 등)는 출처와 산정 기준에 따라 차이가 있고 이후 변했을 수 있습니다. 일부 수치는 이해를 돕기 위한 어림값입니다. 투자 판단과 책임은 전적으로 투자자 본인에게 있습니다. 주요 출처: SIPRI(2025~2026), 방위사업청, 에프앤가이드.
+</div>
+<footer>전차는 만들지만 심장은 수입한다 · K-방산 산업구조 & 글로벌 좌표 · Part 1–2 · 2026.06 · 다음 편: 투자 관점</footer>
+</section>
+
+</div>
+
+<script>
+// progress bar
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.floor').forEach(f=>io.observe(f));
+
+// count-up stats
+(function(){
+  const els=document.querySelectorAll('.stat .n');
+  const run=el=>{
+    const target=parseFloat(el.dataset.count), pre=el.dataset.pre||'', suf=el.dataset.suf||'', dur=1500, t0=performance.now();
+    const step=t=>{
+      const k=Math.min((t-t0)/dur,1), e=1-Math.pow(1-k,3);
+      el.textContent=pre+Math.round(target*e)+suf;
+      if(k<1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io2=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){run(e.target);io2.unobserve(e.target);}})},{threshold:.6});
+  els.forEach(el=>io2.observe(el));
+})();
+</script>
+</body>
+</html>
