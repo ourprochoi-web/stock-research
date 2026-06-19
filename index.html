@@ -164,6 +164,32 @@ input{font-family:inherit}
 }
 .sec-desc.visible{opacity:1;transform:none;transition:all .7s cubic-bezier(.16,1,.3,1) .2s}
 
+/* collapsible accordion */
+.sec-toggle{
+  cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  user-select:none;-webkit-user-select:none;
+  opacity:0;transform:translateY(20px);
+}
+.sec-toggle.visible{opacity:1;transform:none;transition:all .7s cubic-bezier(.16,1,.3,1)}
+.sec-toggle .sec-label,.sec-toggle .sec-title,.sec-toggle .sec-desc{opacity:1;transform:none}
+.sec-toggle .sec-desc{margin-bottom:0}
+.sec-toggle:hover .sec-chevron{color:#a5b4fc;border-color:rgba(129,140,248,.4)}
+.sec-chevron{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:#4b5570;
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+}
+.sec-toggle.open .sec-chevron{transform:rotate(180deg);color:#a5b4fc;border-color:rgba(129,140,248,.3)}
+.sec-cards-wrap{
+  display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .5s cubic-bezier(.16,1,.3,1);
+}
+.sec-cards-wrap.open{grid-template-rows:1fr}
+.sec-cards-inner{overflow:hidden}
+.sec-count{font-size:14px;font-weight:600;color:#4b5570;margin-left:10px}
+
 /* divider line animation */
 .sec-divider{
   height:1px;max-width:800px;margin:0 auto;
@@ -807,6 +833,7 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       grouped[d.category].push(d);
     });
 
+    var autoExpand = q.length > 0 || currentCat !== '전체';
     var secIdx = 0;
     categories.forEach(function(cat){
       var cfg = SECTIONS[cat] || { cssClass: 'default', title: cat, desc: '', badgeMap: {} };
@@ -838,15 +865,25 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
 
       container.innerHTML +=
         '<div class="section">' +
-          '<div class="sec-label ' + cfg.cssClass + '" data-reveal>' + esc(cfg.title) + '</div>' +
-          '<h2 class="sec-title" data-reveal>' + esc(cat) + '</h2>' +
-          '<p class="sec-desc" data-reveal>' + esc(cfg.desc) + '</p>' +
-          '<div class="cards">' + cardsHtml + '</div>' +
+          '<div class="sec-toggle' + (autoExpand ? ' open' : '') + '" data-reveal>' +
+            '<div>' +
+              '<div class="sec-label ' + cfg.cssClass + '">' + esc(cfg.title) + '</div>' +
+              '<h2 class="sec-title">' + esc(cat) + '<span class="sec-count">' + items.length + '편</span></h2>' +
+              '<p class="sec-desc">' + esc(cfg.desc) + '</p>' +
+            '</div>' +
+            '<div class="sec-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
+          '</div>' +
+          '<div class="sec-cards-wrap' + (autoExpand ? ' open' : '') + '">' +
+            '<div class="sec-cards-inner">' +
+              '<div class="cards">' + cardsHtml + '</div>' +
+            '</div>' +
+          '</div>' +
         '</div>';
       secIdx++;
     });
 
     observeReveal();
+    initToggles();
   }
 
 
@@ -858,6 +895,19 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('[data-reveal]').forEach(function(el){ obs.observe(el); });
+  }
+
+  function initToggles(){
+    var toggles = document.querySelectorAll('.sec-toggle');
+    for(var i = 0; i < toggles.length; i++){
+      (function(tog){
+        tog.addEventListener('click', function(){
+          tog.classList.toggle('open');
+          var wrap = tog.nextElementSibling;
+          if(wrap) wrap.classList.toggle('open');
+        });
+      })(toggles[i]);
+    }
   }
 
 
