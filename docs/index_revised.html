@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ourprochoi · Deep Research Archive</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070b16;color:#e8ecf4;font-family:'Pretendard',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:rgba(129,140,248,.35)}
+  @keyframes floatUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes scrollPulse{0%,100%{opacity:.2;height:30px}50%{opacity:1;height:50px}}
+  @keyframes haloBreathe{0%,100%{opacity:.4;transform:translate(-50%,-50%) scale(1)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.15)}}
+  .fade-seq{opacity:0;animation:floatUp .9s cubic-bezier(.16,1,.3,1) forwards}
+  #hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse 100% 85% at 50% 38%,#101a3a 0%,#0a1124 45%,#070b16 78%)}
+  .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.4px);background-size:30px 30px;-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,black 10%,transparent 70%);mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,black 10%,transparent 70%);opacity:.6}
+  .halo{position:absolute;top:42%;left:50%;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.16),rgba(52,211,153,.05) 40%,transparent 68%);filter:blur(30px);animation:haloBreathe 9s ease-in-out infinite;pointer-events:none}
+  #globeCanvas{width:min(86vw,680px);height:min(86vw,680px);display:block}
+  input{font-family:inherit}
+</style>
+</head>
+<body>
+<section id="hero">
+  <div class="dots"></div>
+  <div class="halo"></div>
+  <div style="position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);pointer-events:none">
+    <canvas id="globeCanvas"></canvas>
+  </div>
+
+  <div id="heroContent" style="position:relative;z-index:3;padding:0 24px;width:100%;max-width:780px;transform:translate(var(--cx,0px),var(--cy,0px))">
+    <div class="fade-seq" style="animation-delay:2.55s;font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#6ee7b7;text-shadow:0 0 20px rgba(110,231,183,.4)">Deep Research Archive</div>
+    <h1 class="fade-seq" style="animation-delay:2.68s;font-size:clamp(36px,6.5vw,64px);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin:18px 0 0;color:#f3f6fc">점을 잇는 곳에<br>구조가 보인다</h1>
+    <p class="fade-seq" style="animation-delay:2.82s;margin:18px auto 0;font-size:clamp(15px,2vw,18px);color:#9aa6bd;max-width:500px">기술·산업·기업을 연결해 돈의 흐름을 읽는 심층 리서치 아카이브</p>
+
+    <div class="fade-seq" style="animation-delay:2.98s;position:relative;width:100%;max-width:560px;margin:36px auto 0">
+      <svg width="19" height="19" viewBox="0 0 16 16" fill="none" style="position:absolute;left:21px;top:50%;transform:translateY(-50%);z-index:2"><circle cx="7" cy="7" r="5" stroke="#a5b4fc" stroke-width="1.5"></circle><path d="M11 11l3 3" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      <input id="search" placeholder="전력 인프라" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(129,140,248,.3);border-radius:16px;padding:19px 66px 19px 54px;font-size:16.5px;color:#e8ecf4;outline:none;box-shadow:0 0 50px -14px rgba(129,140,248,.45),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(10px)">
+      <button id="searchBtn" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:linear-gradient(135deg,#6366f1,#34d399);border:none;border-radius:12px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px -4px rgba(99,102,241,.6)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+    </div>
+
+    <div class="fade-seq" id="chips" style="animation-delay:3.12s;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:20px auto 0;max-width:580px">
+      <span style="font-size:12px;color:#4b5570;align-self:center;margin-right:2px">추천</span>
+    </div>
+
+    <div class="fade-seq" style="animation-delay:3.26s;display:flex;gap:30px;margin-top:38px;align-items:center;justify-content:center">
+      <div style="text-align:center"><div id="statCount" style="font-size:clamp(24px,4vw,32px);font-weight:900;letter-spacing:-.03em;background:linear-gradient(135deg,#a5b4fc,#6ee7b7);-webkit-background-clip:text;background-clip:text;color:transparent">0</div><div style="font-size:12px;color:#4b5570;margin-top:2px">리서치</div></div>
+      <div style="width:1px;height:32px;background:rgba(255,255,255,.1)"></div>
+      <div style="text-align:center"><div id="statThemes" style="font-size:clamp(24px,4vw,32px);font-weight:900;letter-spacing:-.03em;background:linear-gradient(135deg,#a5b4fc,#6ee7b7);-webkit-background-clip:text;background-clip:text;color:transparent">0</div><div style="font-size:12px;color:#4b5570;margin-top:2px">산업 테마</div></div>
+      <div style="width:1px;height:32px;background:rgba(255,255,255,.1)"></div>
+      <div style="text-align:center"><div style="font-size:clamp(24px,4vw,32px);font-weight:900;letter-spacing:-.03em;background:linear-gradient(135deg,#a5b4fc,#6ee7b7);-webkit-background-clip:text;background-clip:text;color:transparent">2026</div><div style="font-size:12px;color:#4b5570;margin-top:2px">Latest</div></div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#4b5570;font-size:11px;letter-spacing:.15em;text-transform:uppercase;z-index:3;opacity:0;animation:floatUp .8s ease forwards 3.7s">
+    <span>아카이브 둘러보기</span>
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,#6366f1,transparent);animation:scrollPulse 2.5s ease-in-out infinite"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var THEMES = ["전력 인프라","GPU","데이터센터","로보틱스","자율주행","밸류체인"];
+
+  // chips
+  var chips = document.getElementById('chips');
+  THEMES.forEach(function(t){
+    var b=document.createElement('button');
+    b.textContent=t;
+    b.style.cssText='font-size:13px;font-weight:500;color:#c7d2e8;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:7px 14px;border-radius:9px;cursor:pointer;font-family:inherit;transition:all .25s';
+    b.onmouseenter=function(){b.style.background='rgba(129,140,248,.16)';b.style.borderColor='rgba(129,140,248,.4)'};
+    b.onmouseleave=function(){b.style.background='rgba(255,255,255,.05)';b.style.borderColor='rgba(255,255,255,.12)'};
+    b.onclick=function(){ document.getElementById('search').value=t; };
+    chips.appendChild(b);
+  });
+
+  // count-up (edit these numbers to match your archive)
+  function countUp(id,target){var el=document.getElementById(id);if(!el)return;var n=0,s=Math.max(1,Math.ceil(target/30));var iv=setInterval(function(){n+=s;if(n>=target){n=target;clearInterval(iv)}el.textContent=n},35);}
+  setTimeout(function(){ countUp('statCount',4); countUp('statThemes',2); }, 2800);
+
+  // safety: ensure copy is visible even if animation is blocked
+  setTimeout(function(){ var els=document.querySelectorAll('#heroContent .fade-seq'); for(var i=0;i<els.length;i++) els[i].style.opacity='1'; }, 4800);
+
+  // ── parallax ──
+  if(!reduced){
+    var hero=document.getElementById('hero'), hc=document.getElementById('heroContent'), tx=0,ty=0,ccx=0,ccy=0;
+    hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;});
+    hero.addEventListener('mouseleave',function(){tx=0;ty=0;});
+    (function loop(){ccx+=(tx-ccx)*.06;ccy+=(ty-ccy)*.06;hc.style.setProperty('--cx',(-ccx*16).toFixed(1)+'px');hc.style.setProperty('--cy',(-ccy*11).toFixed(1)+'px');requestAnimationFrame(loop);})();
+  }
+
+  // ── dynamic connected globe ──
+  var canvas=document.getElementById('globeCanvas'), ctx=canvas.getContext('2d');
+  var N=44, pts=[];
+  for(var i=0;i<N;i++){ var y=1-(i/(N-1))*2; var r=Math.sqrt(Math.max(0,1-y*y)); var th=i*2.399963; pts.push([Math.cos(th)*r,y,Math.sin(th)*r,i*(360/N)]); }
+  var edges=[], seen={};
+  for(var a=0;a<N;a++){
+    var ds=[];
+    for(var b2=0;b2<N;b2++) if(b2!==a){var dx=pts[a][0]-pts[b2][0],dy=pts[a][1]-pts[b2][1],dz=pts[a][2]-pts[b2][2];ds.push([dx*dx+dy*dy+dz*dz,b2]);}
+    ds.sort(function(p,q){return p[0]-q[0];});
+    for(var k=0;k<3;k++){var j=ds[k][1];var key=a<j?a+'-'+j:j+'-'+a;if(!seen[key]){seen[key]=1;edges.push([a,j]);}}
+  }
+  var W,H,cx,cy,R,cam;
+  function resize(){var rc=canvas.getBoundingClientRect();var dpr=window.devicePixelRatio||1;W=rc.width;H=rc.height;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);cx=W/2;cy=H/2;R=W*0.38;cam=R*2.7;}
+  resize(); window.addEventListener('resize',resize);
+
+  var births=pts.map(function(p,i){return (Math.abs(p[1])*0.5+(i%5)/5*0.5)*1.15;});
+  var intro=!reduced;
+  function clamp(x,lo,hi){return Math.max(lo,Math.min(hi,x));}
+  function lerp(p,q,x){return p+(q-p)*x;}
+  function easeOut(x){return 1-Math.pow(1-x,3);}
+  function easeOutBack(x){var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);}
+  var T_ASSEMBLE=1.9,T_IGNITE=2.15,T_RECEDE0=2.45,T_RECEDE1=4.1,BG_ALPHA=0.36,BG_RMUL=0.88;
+  var tilt=-0.34,cosT=Math.cos(tilt),sinT=Math.sin(tilt),start=performance.now();
+
+  function frame(now){
+    var t=(now-start)/1000, gAlpha, Rmul, flash=0, ringP=-1;
+    if(intro){
+      var grow=easeOutBack(clamp(t/T_ASSEMBLE,0,1));
+      var recede=clamp((t-T_RECEDE0)/(T_RECEDE1-T_RECEDE0),0,1);
+      Rmul=grow*lerp(1,BG_RMUL,recede); gAlpha=lerp(1,BG_ALPHA,recede);
+      flash=Math.exp(-Math.pow((t-T_IGNITE)/0.26,2)); ringP=clamp((t-1.7)/0.9,0,1);
+    } else { Rmul=BG_RMUL; gAlpha=BG_ALPHA; }
+    var Reff=R*Rmul, A=t*0.3, cosA=Math.cos(A), sinA=Math.sin(A);
+    ctx.clearRect(0,0,W,H);
+    var born=pts.map(function(p,i){return intro?easeOut(clamp((t-births[i])/0.5,0,1)):1;});
+    var proj=pts.map(function(p){
+      var x=p[0]*cosA+p[2]*sinA, z=-p[0]*sinA+p[2]*cosA, yy=p[1];
+      var y2=yy*cosT-z*sinT, z2=yy*sinT+z*cosT, pf=cam/(cam-z2*Reff);
+      return {sx:cx+x*Reff*pf, sy:cy+y2*Reff*pf, depth:z2, pf:pf, hue:p[3]};
+    });
+    var bright=1+flash*1.1;
+    for(var e=0;e<edges.length;e++){
+      var ea=proj[edges[e][0]], eb=proj[edges[e][1]];
+      var bm=Math.min(born[edges[e][0]],born[edges[e][1]]); if(bm<=0.01) continue;
+      var dep=(ea.depth+eb.depth)/2, al=(0.05+(dep+1)/2*0.34)*bm*gAlpha*bright, hue=(ea.hue+t*26)%360;
+      ctx.strokeStyle='hsla('+hue.toFixed(0)+',88%,70%,'+clamp(al,0,1).toFixed(3)+')';
+      ctx.lineWidth=0.6+(dep+1)/2*1.1;
+      ctx.beginPath(); ctx.moveTo(ea.sx,ea.sy); ctx.lineTo(eb.sx,eb.sy); ctx.stroke();
+    }
+    var order=proj.map(function(p,i){return i;}).sort(function(p,q){return proj[p].depth-proj[q].depth;});
+    for(var o=0;o<order.length;o++){
+      var idx=order[o]; if(born[idx]<=0.01) continue;
+      var p=proj[idx], dep2=(p.depth+1)/2, hue2=(p.hue+t*26)%360;
+      var rad=(1.5+dep2*4)*p.pf*(0.5+born[idx]*0.5)*(1+flash*0.5);
+      var al2=clamp((0.32+dep2*0.62)*born[idx]*gAlpha*bright,0,1);
+      ctx.shadowBlur=12*dep2+4; ctx.shadowColor='hsla('+hue2.toFixed(0)+',92%,66%,'+al2.toFixed(3)+')';
+      ctx.fillStyle='hsla('+hue2.toFixed(0)+',92%,'+(58+dep2*14).toFixed(0)+'%,'+al2.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(p.sx,p.sy,rad,0,Math.PI*2); ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    if(intro && ringP>0 && ringP<1){
+      var rr=Reff*(0.35+ringP*1.35);
+      ctx.strokeStyle='rgba(200,225,255,'+((1-ringP)*0.5).toFixed(3)+')';
+      ctx.lineWidth=2*(1-ringP)+0.5;
+      ctx.beginPath(); ctx.arc(cx,cy,rr,0,Math.PI*2); ctx.stroke();
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
