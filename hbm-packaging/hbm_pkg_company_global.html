@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글로벌 패키징 빅5+ — TSMC·ASE·Amkor·마이크론·Advantest</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#A8B4C4;
+    --accent-2:#FFB13E;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.4;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.25;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* CARDS GRID */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:.3s}
+  .card:hover{border-color:#33456b;transform:translateY(-4px)}.card:hover::before{opacity:1}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card-name{font-size:1.22rem;font-weight:850;letter-spacing:-.02em}
+  .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.mem{background:rgba(168,180,196,.12);color:var(--accent);border:1px solid rgba(168,180,196,.3)}
+  .badge.pkg{background:rgba(56,230,212,.12);color:var(--glow);border:1px solid rgba(56,230,212,.3)}
+  .badge.bond{background:rgba(255,177,62,.12);color:var(--accent-2);border:1px solid rgba(255,177,62,.3)}
+  .badge.test{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .badge.sub{background:rgba(46,196,182,.12);color:#2EC4B6;border:1px solid rgba(46,196,182,.3)}
+  .badge.equip{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .badge.film{background:rgba(255,177,62,.12);color:var(--accent-2);border:1px solid rgba(255,177,62,.3)}
+  .link-line{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .link-line b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .bb{margin-top:16px;background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 14px;font-size:.82rem;color:var(--ink-2);line-height:1.55}
+  .bb b{color:var(--ink);font-weight:650}
+
+  /* PANEL */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:18px}
+
+  /* VALUATION TABLE */
+  .val-table{width:100%;border-collapse:collapse;font-size:.84rem}
+  .val-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  .val-table td{padding:12px 14px;border-bottom:1px solid rgba(35,48,77,.6);vertical-align:middle}
+  .val-table tr:last-child td{border-bottom:none}
+  .val-table tr:hover td{background:rgba(168,180,196,.04)}
+  .rank-num{font-family:var(--mono);font-weight:800;font-size:1rem;color:var(--accent)}
+  .val-co{font-weight:750;letter-spacing:-.01em}
+  .val-fpe{font-family:var(--mono);font-size:.88rem;font-weight:700}
+  .peg-good{color:var(--bull);font-family:var(--mono);font-weight:700}
+  .peg-ok{color:var(--accent-2);font-family:var(--mono);font-weight:700}
+  .peg-warn{color:var(--bear);font-family:var(--mono);font-weight:700}
+  .verdict-good{color:var(--bull);font-size:.78rem;font-weight:650}
+  .verdict-ok{color:var(--accent-2);font-size:.78rem;font-weight:650}
+  .verdict-warn{color:var(--bear);font-size:.78rem;font-weight:650}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* REGION TAG */
+  .region-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg-2);margin-bottom:18px}
+
+  /* SINGLE CARD (BESI) */
+  .card-full{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px;position:relative;overflow:hidden}
+  .card-full::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--glow),transparent);opacity:.7}
+
+  /* MA BADGE */
+  .ma-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--accent-2);border:1px solid rgba(255,177,62,.35);border-radius:6px;padding:4px 9px;background:rgba(255,177,62,.06)}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .cards{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+    .val-table{font-size:.76rem}
+    .val-table th,.val-table td{padding:8px 10px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>HBM·패키징 Part 4-5</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#taiwan">01 / 대만</a>
+      <a href="#us">02 / 미국</a>
+      <a href="#japan">03 / 일본</a>
+      <a href="#europe">04 / 네덜란드</a>
+      <a href="#valuation">05 / 밸류에이션</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">HBM·패키징 시리즈 · Part 4-5 · 2026.06</span>
+    <h1 class="hero-title">글로벌<br><span class="hl">패키징 빅5+</span></h1>
+    <p class="hero-sub">TSMC·ASE·Amkor·마이크론·Advantest 등 글로벌 12개사 — 대만·미국·일본·네덜란드에 걸친 HBM/패키징 밸류체인 핵심 플레이어의 재무·기술·밸류에이션을 심화 분석한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$14~15<span class="u">B</span></div>
+        <div class="lab">TSMC 첨단 패키징 FY26E 매출 추정. CoWoS CAPA 120~130K WPM(연말) + ASP 7nm 웨이퍼 수준. 전체 매출의 10%+로 고마진 사업부 전환 중.</div>
+        <div class="src">SRC: TSMC 어닝콜 · TrendForce 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">70<span class="u">%</span></div>
+        <div class="lab">Advantest 글로벌 ATE 시장점유율. 모든 HBM 모듈·패키지 GPU가 통과하는 "테스트 세금" 구조. FY26E 매출 ¥1.42T (+26% YoY).</div>
+        <div class="src">SRC: Advantest IR · 업계 추정</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">12<span class="u">개사</span></div>
+        <div class="lab">본 리포트 커버리지. 대만 3(TSMC·ASE/SPIL·Unimicron), 미국 4(Micron·Amkor·AMAT·Lam), 일본 4(Advantest·Disco·Ibiden·Ajinomoto), 네덜란드 1(BESI).</div>
+        <div class="src">SRC: HBM·패키징 시리즈 Part 4-5</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>대만 → 미국 → 일본 → 네덜란드 순</div>
+  </div>
+</header>
+
+<!-- §1 대만 -->
+<section class="blk" id="taiwan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;대만 — 패키징의 심장</div>
+      <h2 class="sec-title">CoWoS 독점·OSAT 1위·ABF 기판 1위</h2>
+      <p class="sec-lead">TSMC는 첨단 패키징 절대 군주로 CoWoS CAPA를 연말 120~130K WPM까지 확대한다. ASE/SPIL은 TSMC 외주의 핵심 파트너로 LEAP $3.5B+를 목표한다. Unimicron은 NVIDIA GPU·ASIC ABF 기판 1위로 AI 매출 비중 60%에 달한다.</p>
+    </div>
+
+    <div class="region-tag">🇹🇼 Taiwan · 3개사</div>
+
+    <div class="cards">
+      <!-- TSMC -->
+      <div class="card reveal">
+        <div class="card-top">
+          <div>
+            <div class="card-name">TSMC</div>
+            <div class="ticker">TSM · NYSE / 2330 · TWSE</div>
+          </div>
+          <span class="badge pkg">첨단 패키징</span>
+        </div>
+        <div class="link-line">
+          CoWoS CAPA <b>120~130K WPM</b> (2026 말) → 170K WPM (2027). Q1'26 매출 <b>~$35B</b> (+40.6% YoY). FY26 CAPEX <b>$52~56B</b>, 이 중 10~20%가 첨단 패키징 투자.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Q1'26 매출</div><div class="nv">~$35B</div></div>
+          <div><div class="nk">첨단PKG 매출</div><div class="nv">$14~15B</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">23~30x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">CoWoS 수급갭</div><div class="nv">10~20%</div></div>
+          <div><div class="nk">NVIDIA 예약</div><div class="nv">50%+</div></div>
+          <div><div class="nk">CoWoS ASP</div><div class="nv">7nm급</div></div>
+        </div>
+        <div class="bb">
+          <b>CoPoS 로드맵</b>: 2026.06 파일럿 라인 완공 → 2028 H2 양산 목표. 310×310mm 패널 방식으로 CoWoS 대비 비용 30% 절감·웨이퍼 활용률 90%+ 목표. TSMC가 글로벌·로컬 장비사 <b>이중 평가</b> 진행 중.
+        </div>
+      </div>
+
+      <!-- ASE/SPIL -->
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">ASE / SPIL</div>
+            <div class="ticker">ASX · NYSE / 3711 · TWSE</div>
+          </div>
+          <span class="badge pkg">OSAT #1</span>
+        </div>
+        <div class="link-line">
+          LEAP(첨단 패키징) 2026E <b>$3.5B+</b> 가이던스 (YoY +118%). SPIL 신공장 NT$2.8B 인수(2026.06) — TSMC CoWoS 외주 overflow 대응. SPIL CoWoS 외주 <b>6~8만장/년</b>.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Q1'26 순이익</div><div class="nv">NT$14.2B</div></div>
+          <div><div class="nk">LEAP 2026E</div><div class="nv">$3.5B+</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">28~35x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">LEAP YoY</div><div class="nv">+118%</div></div>
+          <div><div class="nk">2026 CAPEX</div><div class="nv">$8.5B</div></div>
+          <div><div class="nk">EPS 성장</div><div class="nv">+33.9%/yr</div></div>
+        </div>
+        <div class="bb">
+          Q1'26 EPS <b>NT$3.24 사상 최대</b>. TSMC CAPA 120~130K WPM 확대 이후에도 수급갭 10% 잔존 → ASE/SPIL 외주 물량 유지. ATM 부문이 연결 매출의 65%, 영업이익의 <b>90%+</b> 기여.
+        </div>
+      </div>
+
+      <!-- Unimicron -->
+      <div class="card reveal d2" style="grid-column:1/-1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Unimicron</div>
+            <div class="ticker">3037 · TWSE</div>
+          </div>
+          <span class="badge sub">ABF 기판 #1</span>
+        </div>
+        <div class="link-line">
+          ABF 기판 글로벌 M/S <b>22%</b> (1위). NVIDIA GPU용 35%, ASIC(Google TPU·AWS Trainium) 50%+. AI 매출 비중 <b>60%</b> (2025년 40%에서 상승). 2026 CAPEX NT$25B+ (+20%+), ABF CAPA <b>40% 확대</b>.
+        </div>
+        <div class="nums">
+          <div><div class="nk">FY25 매출</div><div class="nv">NT$131.2B</div></div>
+          <div><div class="nk">2026E EPS</div><div class="nv">NT$20.34</div></div>
+          <div><div class="nk">EPS 성장</div><div class="nv">+126% YoY</div></div>
+          <div><div class="nk">ABF M/S</div><div class="nv">22% (#1)</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">~22x</div></div>
+          <div><div class="nk">AI 매출</div><div class="nv">60%</div></div>
+        </div>
+        <div class="bb">
+          유리섬유 부족(2026) + ABF 필름 부족 → <b>가격 추가 인상</b> + 고객사 LTA 체결 러시. BofA Buy 상향, Bernstein "대만 AI 노출도 최상위 — TSMC와 함께 Top pick." EPS +126% 급증으로 <b>Forward P/E ~22x</b> → 성장 대비 밸류에이션 매력 돋보임.
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Taiwan Thesis</div>
+      <p>"대만은 CoWoS·OSAT·ABF 기판 3중 독점으로 패키징 밸류체인의 허브다."
+      <span class="u">TSMC CoWoS는 대체재가 없고, ASE/SPIL은 TSMC 외주의 직접 수혜자이며, Unimicron은 AI 가속기 기판 수요의 최전선에 있다. 세 기업이 동시에 수혜를 받는 구조 — TSMC CAPA가 늘어도 ASE가 받는 외주 물량은 줄지 않고, ABF 기판 부족은 Unimicron 가격 결정력을 강화한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- §2 미국 -->
+<section class="blk" id="us">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;미국 — HBM·패키징 장비·OSAT</div>
+      <h2 class="sec-title">HBM 3위·CoWoS 외주·패키징 장비 양강</h2>
+      <p class="sec-lead">Micron은 HBM4 조기 양산(2026 H2)과 Cloud BU GM 74%로 공격적 성장을 노린다. Amkor는 TSMC 10년 파트너십 체결로 미국 AI 패키징 허브가 됐다. Applied Materials·Lam Research는 패키징 장비 매출 각각 +50%+ 성장(2026)을 전망한다.</p>
+    </div>
+
+    <div class="region-tag">🇺🇸 United States · 4개사</div>
+
+    <div class="cards">
+      <!-- Micron -->
+      <div class="card reveal">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Micron</div>
+            <div class="ticker">MU · NASDAQ</div>
+          </div>
+          <span class="badge mem">HBM #3</span>
+        </div>
+        <div class="link-line">
+          Q2 FY26 매출 <b>$23.86B</b>, EPS $12.07. Q3 FY26 EPS 가이던스 <b>$19.15</b> (사상 최대). Cloud BU GM <b>74%</b>. 2026 HBM 공급 <b>전량 고정가 계약 매진</b>.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Q2 FY26 매출</div><div class="nv">$23.86B</div></div>
+          <div><div class="nk">Cloud BU GM</div><div class="nv">74%</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">5.7~10x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">HBM M/S</div><div class="nv">~21%</div></div>
+          <div><div class="nk">HBM4 대역폭</div><div class="nv">2.8+ TB/s</div></div>
+          <div><div class="nk">전력효율</div><div class="nv">+20% 개선</div></div>
+        </div>
+        <div class="bb">
+          HBM4 <b>30% 저전력</b> 차별화 — 데이터센터 효율 중시 고객 공략. FY26 연간 매출 컨센서스 <b>~$76B</b> (FY25 대비 2배). Forward P/E 5.7~10x는 극단적 저평가처럼 보이나 <b>메모리 사이클 주식 특성 주의</b>.
+        </div>
+      </div>
+
+      <!-- Amkor -->
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Amkor Technology</div>
+            <div class="ticker">AMKR · NASDAQ</div>
+          </div>
+          <span class="badge pkg">TSMC 파트너</span>
+        </div>
+        <div class="link-line">
+          Q1'26 매출 <b>$1,685M</b> (+27% YoY, Q1 사상 최대). 첨단 패키징 <b>$1.4B</b>. TSMC <b>10년 장기 파트너십</b> 체결(2026.06.16) — Arizona 첨단 패키징 허브. CoWoS 외주 배분 <b>~80K WPM</b>.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Q1'26 매출</div><div class="nv">$1,685M</div></div>
+          <div><div class="nk">첨단PKG 매출</div><div class="nv">$1.4B</div></div>
+          <div><div class="nk">2030 목표</div><div class="nv">$11B+</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">Arizona 투자</div><div class="nv">~$2B</div></div>
+          <div><div class="nk">2030 EPS</div><div class="nv">$5+</div></div>
+          <div><div class="nk">NTM EV/EBITDA</div><div class="nv">14.0x</div></div>
+        </div>
+        <div class="bb">
+          TSMC 10년 파트너십 발표 당일 주가 <b>52주 신고가 $96.68</b> 돌파. GM 14.2%로 OSAT 중 낮은 편 — Arizona 초기 투자 비용으로 <b>2027 OPM 1~2%p 희석</b> 전망. 2030 EPS $5 달성 시 현 주가 P/E 급락.
+        </div>
+      </div>
+
+      <!-- Applied Materials -->
+      <div class="card reveal d2">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Applied Materials</div>
+            <div class="ticker">AMAT · NASDAQ</div>
+          </div>
+          <span class="badge equip">패키징 장비 #1</span>
+        </div>
+        <div class="link-line">
+          Q2 FY26 매출 <b>$7.91B</b> (사상 최대, +11% YoY). Non-GAAP EPS <b>$2.86</b> (+20%, 컨센서스 +6.7% beat). 패키징 장비 2026 <b>+50%+</b> 성장. Kinex — BESI와 공동 개발한 업계 최초 통합 하이브리드 본딩 시스템.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Q2 FY26 매출</div><div class="nv">$7.91B</div></div>
+          <div><div class="nk">Q2 GM</div><div class="nv">50%</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">33~50x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">시가총액</div><div class="nv">~$389B</div></div>
+          <div><div class="nk">P/S</div><div class="nv">16x+</div></div>
+          <div><div class="nk">주가 YTD</div><div class="nv">+144%</div></div>
+        </div>
+        <div class="bb">
+          <b>NEXX 인수</b> (ASMPT 대비): 패널 레벨 첨단 패키징 증착 장비 — TSMC CoPoS 시대 선점. <b>BESI 최대 주주</b>로 지분 확보 후 인수 논의 재개(2026 H1). P/S 16x+는 닷컴 버블 수준 초과 — <b>밸류에이션 부담 상당</b>.
+        </div>
+      </div>
+
+      <!-- Lam Research -->
+      <div class="card reveal d3">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Lam Research</div>
+            <div class="ticker">LRCX · NASDAQ</div>
+          </div>
+          <span class="badge equip">TSV/식각</span>
+        </div>
+        <div class="link-line">
+          Q3 FY26 매출 <b>$5.84B</b> (사상 최대, +24% YoY). 4분기 연속 EPS beat. 패키징 장비 2026 <b>+50%+</b> 성장. TSV 식각·TGV·RDL·하이브리드 본딩 전처리에 걸친 20년+ 포지션.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Q3 FY26 매출</div><div class="nv">$5.84B</div></div>
+          <div><div class="nk">주가 YTD</div><div class="nv">+127.2%</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">~30x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">WFE 전망</div><div class="nv">~$140B</div></div>
+          <div><div class="nk">PEG 추정</div><div class="nv">~0.73x</div></div>
+          <div><div class="nk">BESI 인수</div><div class="nv">재개 중</div></div>
+        </div>
+        <div class="bb">
+          <b>BESI 인수 경합</b>: AMAT과 함께 수십억 유로 규모 논의. 2026 미-EU 지정학 이슈로 중단 → 재개. 인수 성공 시 TSV 식각 + 하이브리드 본딩 <b>풀라인업 패키징 장비사</b>로 전환. PEG ~0.73x — 패키징 성장 대비 밸류에이션 합리적.
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">US Thesis</div>
+      <p>"미국은 HBM 3위 도전자, 패키징 외주 허브, 장비 양강의 삼각 구도다."
+      <span class="u">Micron은 HBM4 30% 저전력 차별화로 M/S 25% 목표. Amkor는 TSMC 10년 파트너십으로 미국 내 AI 패키징 완결 생태계의 핵심이 됐다. AMAT·Lam은 패키징 장비 +50%+ 성장을 공유하며 BESI 인수 경쟁을 벌인다 — 이 경쟁의 승자가 하이브리드 본딩 시대의 장비 주도권을 가져간다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- §3 일본 -->
+<section class="blk" id="japan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;일본 — 독점 소재·장비 클러스터</div>
+      <h2 class="sec-title">ATE 70%·다이싱 80%·ABF 필름 95%·ABF 기판 2위</h2>
+      <p class="sec-lead">일본 4개사는 HBM 밸류체인의 숨겨진 독점자들이다. Advantest는 모든 AI칩이 통과하는 ATE 70%, Disco는 HBM 극박화에 필수인 다이싱 80%, Ibiden은 ABF 기판 2위로 ¥500B 투자에 나섰고, Ajinomoto는 ABF 필름 95% 독점으로 50%+ 마진을 누린다.</p>
+    </div>
+
+    <div class="region-tag">🇯🇵 Japan · 4개사</div>
+
+    <div class="cards">
+      <!-- Advantest -->
+      <div class="card reveal">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Advantest</div>
+            <div class="ticker">6857 · TSE</div>
+          </div>
+          <span class="badge test">ATE #1 (70%)</span>
+        </div>
+        <div class="link-line">
+          FY25 매출 <b>¥1.13T</b> (+44.8% YoY), 순이익 ¥375.4B (+132.9%). FY26E 가이던스 <b>¥1.42T</b> (~$9B, +26%). ATE 생산 <b>3,000대 → 5,000대</b>(+67%) 증산 중. 리드타임 6개월+.
+        </div>
+        <div class="nums">
+          <div><div class="nk">FY26E 매출</div><div class="nv">¥1.42T</div></div>
+          <div><div class="nk">ATE M/S</div><div class="nv">70%</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">~41x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">시가총액</div><div class="nv">~¥19T</div></div>
+          <div><div class="nk">FY26E OPM</div><div class="nv">¥627.5B</div></div>
+          <div><div class="nk">생산 램프</div><div class="nv">5,000대</div></div>
+        </div>
+        <div class="bb">
+          <b>"테스트계 ASML"</b>: HBM 스택 8-Hi → 12-Hi → 16-Hi 증가 시 테스트 시간·복잡도 비례 증가 → ATE 수요 구조적 성장. Teradyne(미국)이 2위이나 M/S 격차 압도적. Trailing P/E 125.9x이나 <b>Forward P/E ~41x</b>로 급락 — 이익 급증 반영.
+        </div>
+      </div>
+
+      <!-- Disco -->
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Disco Corporation</div>
+            <div class="ticker">6146 · TSE</div>
+          </div>
+          <span class="badge equip">다이싱 80%</span>
+        </div>
+        <div class="link-line">
+          TTM 매출(2026.03) <b>$2.9B</b>. Q1'26 매출 <b>$838M</b> (+26.9% beat, QoQ +20%), EPS $2.49 (+4.2% beat). R&D 비중 <b>33%</b>. 레이저 소 누적 출하 4,000대+ (2020 이후 3배).
+        </div>
+        <div class="nums">
+          <div><div class="nk">TTM 매출</div><div class="nv">$2.9B</div></div>
+          <div><div class="nk">다이싱 M/S</div><div class="nv">70~80%</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">49.8x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">시가총액</div><div class="nv">~$50B</div></div>
+          <div><div class="nk">R&D 비중</div><div class="nv">33%</div></div>
+          <div><div class="nk">Q1'26 QoQ</div><div class="nv">+20%</div></div>
+        </div>
+        <div class="bb">
+          HBM 다이 극박화(30~50μm)는 Disco <b>Taiko 그라인딩·스텔스 다이싱</b>이 사실상 유일한 솔루션. HBM 스택 수 증가(12→16-Hi) → 다이당 더 얇게 → Disco 장비 수요 증가. R&D 33%는 반도체 장비사 중 <b>최고 수준</b>.
+        </div>
+      </div>
+
+      <!-- Ibiden -->
+      <div class="card reveal d2">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Ibiden</div>
+            <div class="ticker">4062 · TSE</div>
+          </div>
+          <span class="badge sub">ABF 기판 #2</span>
+        </div>
+        <div class="link-line">
+          ABF 기판 글로벌 M/S <b>~18~20%</b>. ¥500B (~$3.2B) <b>사상 최대 투자</b>(FY26~28) — AI 서버용 IC 기판 CAPA <b>2.5배 확대</b>. 1차 양산 FY2027. TTM 매출 $2.76B.
+        </div>
+        <div class="nums">
+          <div><div class="nk">TTM 매출</div><div class="nv">$2.76B</div></div>
+          <div><div class="nk">총 투자</div><div class="nv">¥500B</div></div>
+          <div><div class="nk">Forward P/E</div><div class="nv">~45~50x</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">CAPA 목표</div><div class="nv">2.5배</div></div>
+          <div><div class="nk">1차 양산</div><div class="nv">FY2027</div></div>
+          <div><div class="nk">시가총액</div><div class="nv">~$32.4B</div></div>
+        </div>
+        <div class="bb">
+          ¥500B 투자 = TTM 매출의 <b>116%</b> — AI 확신의 극단적 신호. 주요 고객: Intel, NVIDIA. <b>ABF 필름 확보 리스크</b>: 업사이드 대응 분은 미확보 → Ajinomoto 의존도 노출. 투자 사이클 초기로 <b>FY2027 이익 급증</b> 기대.
+        </div>
+      </div>
+
+      <!-- Ajinomoto -->
+      <div class="card reveal d3">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Ajinomoto</div>
+            <div class="ticker">2802 · TSE</div>
+          </div>
+          <span class="badge film">ABF 필름 95%</span>
+        </div>
+        <div class="link-line">
+          ABF 필름 글로벌 M/S <b>95%+</b>. 전자소재 부문 OPM 50%+. 2026 Q3 가격 <b>+30% 인상</b>. 2026 H1부터 다시 <b>shortage 재진입</b>. FY25 전자소재 영업이익 ¥54.6B (+35%, 전체의 30%).
+        </div>
+        <div class="nums">
+          <div><div class="nk">ABF M/S</div><div class="nv">95%+</div></div>
+          <div><div class="nk">전자소재 OPM</div><div class="nv">50%+</div></div>
+          <div><div class="nk">가격 인상</div><div class="nv">+30%</div></div>
+        </div>
+        <div class="nums" style="margin-top:1px">
+          <div><div class="nk">전자소재 OPM</div><div class="nv">¥54.6B</div></div>
+          <div><div class="nk">전체 이익비중</div><div class="nv">30%</div></div>
+          <div><div class="nk">Trailing P/E</div><div class="nv">41.8x</div></div>
+        </div>
+        <div class="bb">
+          AI칩 기판 레이어 진화: 3+3층(PC용) → 11+11 → <b>13+13층</b> → ABF 소요량 <b>4배+ 증가</b>. "식품회사가 반도체를 지배": 전체 매출의 6%인 전자소재가 영업이익의 <b>30%</b> 담당. 신공장 용지 ¥1.2B 매입, <b>2032년 가동</b> 목표 → 2026~2031 공급 타이트 지속.
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Japan Thesis</div>
+      <p>"일본 4개사는 HBM 스택이 높아질수록 자동으로 수요가 증가하는 구조적 해자를 갖는다."
+      <span class="u">Advantest는 HBM Hi 수가 늘 때마다 테스트 복잡도가 비례 증가하고, Disco는 다이를 더 얇게 갈수록 수요가 늘며, Ibiden·Ajinomoto는 기판 레이어 수 증가의 직접 수혜자다. 스택 수·레이어 수·박화 요건이 진화할수록 4개사 전체의 TAM이 자동 확장된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- §4 네덜란드 -->
+<section class="blk" id="europe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;네덜란드 — 하이브리드 본딩의 왕</div>
+      <h2 class="sec-title">BESI — M&A 경합의 중심, 수주 5분기 연속 신기록</h2>
+      <p class="sec-lead">BE Semiconductor(BESI)는 하이브리드 본딩 장비에서 압도적 포지션을 가진 글로벌 유일 플레이어다. Q1'26 수주 €269.7M으로 사상 최대를 경신했고, Applied Materials·Lam Research가 수십억 유로 규모의 인수를 경합하고 있다.</p>
+    </div>
+
+    <div class="region-tag">🇳🇱 Netherlands · 1개사</div>
+
+    <div class="card-full reveal">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:24px">
+        <div>
+          <div style="font-size:1.5rem;font-weight:900;letter-spacing:-.03em">BESI <span style="font-size:.9rem;font-weight:600;color:var(--ink-3)">(BE Semiconductor Industries)</span></div>
+          <div style="font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:4px">BESI · Euronext Amsterdam</div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge bond">하이브리드 본딩 #1</span>
+            <span class="ma-badge">M&A 타깃</span>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase">Q1'26 수주 (사상 최대)</div>
+          <div style="font-family:var(--mono);font-size:2.2rem;font-weight:900;color:var(--accent);margin-top:4px">€269.7M</div>
+          <div style="font-size:.8rem;color:var(--ink-2)">YoY 2배+ · QoQ +7.7%</div>
+        </div>
+      </div>
+
+      <div class="nums" style="grid-template-columns:repeat(6,1fr)">
+        <div><div class="nk">Q1'26 매출</div><div class="nv">€184.9M</div></div>
+        <div><div class="nk">Q1'26 수주</div><div class="nv">€269.7M</div></div>
+        <div><div class="nk">Q2'26 가이던스</div><div class="nv">+30~40%</div></div>
+        <div><div class="nk">장기 매출 목표</div><div class="nv">€1.7~2.2B</div></div>
+        <div><div class="nk">장기 OPM 목표</div><div class="nv">45~55%</div></div>
+        <div><div class="nk">Forward P/E</div><div class="nv">~35~40x</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px">
+        <div>
+          <div style="font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">하이브리드 본딩 성장</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem">
+              <span style="color:var(--ink-2)">2023 하이브리드 본딩 매출</span>
+              <span style="font-family:var(--mono);font-weight:700">€36M</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem">
+              <span style="color:var(--ink-2)">2026E 하이브리드 본딩 매출</span>
+              <span style="font-family:var(--mono);font-weight:700;color:var(--bull)">€476M</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem">
+              <span style="color:var(--ink-2)">3년 성장배수</span>
+              <span style="font-family:var(--mono);font-weight:800;color:var(--accent)">13.2배</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem">
+              <span style="color:var(--ink-2)">전체 매출 비중(2026E)</span>
+              <span style="font-family:var(--mono);font-weight:700">~1/3</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:9px 0;font-size:.84rem">
+              <span style="color:var(--ink-2)">하이브리드 본더 고객사</span>
+              <span style="font-family:var(--mono);font-weight:700">20개사</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:12px">M&A 경합 타임라인</div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:.82rem">
+              <span style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);min-width:56px">2025 H1</span>
+              <span style="color:var(--ink-2)">AMAT·Lam 수십억 유로 인수 논의 시작</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:.82rem">
+              <span style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);min-width:56px">2025 H2</span>
+              <span style="color:var(--ink-2)">AMAT, BESI <b style="color:var(--ink)">최대 주주</b>로 지분 확보</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:.82rem">
+              <span style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);min-width:56px">2026 초</span>
+              <span style="color:var(--ink-2)">미-EU 지정학(그린란드) 이슈로 논의 중단</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:.82rem">
+              <span style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);min-width:56px">2026 H1</span>
+              <span style="color:var(--ink-2)"><b style="color:var(--accent)">논의 재개</b>, Morgan Stanley 자문사 선임</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:.82rem">
+              <span style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);min-width:56px">현재</span>
+              <span style="color:var(--ink-2)">BESI "<b style="color:var(--ink)">독립 경영 유지</b>" 선호 표명</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb" style="margin-top:22px">
+        <b>2028년 하이브리드 본딩 시장 ~$2B 전망</b> (TrendForce): 2028년 HBM 공정의 36%가 하이브리드 본딩 전환 시 BESI 매출 €1B+ 가능. M&A 인수 프리미엄 잠재력 <b>+30~50%</b>. 인수 불발 시에도 독립 성장 시나리오 — 장기 OPM 목표 45~55%는 소프트웨어급 마진.
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">BESI Thesis</div>
+      <p>"하이브리드 본딩은 TCB를 대체하는 다음 세대 — BESI는 그 전환의 유일한 수혜자다."
+      <span class="u">수주 5분기 연속 신기록, 하이브리드 본더 고객 20개사(로직·메모리·포토닉스·모바일 전방위), 3년 만에 13.2배 성장. AMAT·Lam의 인수 경합은 하이브리드 본딩 기술 가치의 방증이다. 인수되면 30~50% 프리미엄, 독립 유지해도 2028년 시장 €2B의 지배적 플레이어 — 어느 시나리오든 업사이드가 크다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- §5 크로스 밸류에이션 -->
+<section class="blk" id="valuation">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;크로스 밸류에이션 — PEG 기반 순위</div>
+      <h2 class="sec-title">12개사 Forward P/E · 이익성장률 · PEG 비교</h2>
+      <p class="sec-lead">PEG(= Forward P/E ÷ 이익성장률)는 성장 대비 밸류에이션 매력을 단순화한 지표다. PEG &lt;1.0은 성장 대비 저평가 신호이며, PEG &gt;2.0은 밸류에이션 부담을 의미한다. 단, 메모리 사이클 주식(Micron)은 PEG 자체보다 사이클 위치가 더 중요하다.</p>
+    </div>
+
+    <div class="panel reveal">
+      <h3>밸류에이션 매력도 순위 (Forward P/E 기준 — 낮을수록 유리)</h3>
+      <div class="ph-sub">기준일: 2026.06 · 추정치 포함 · 투자 조언 아님</div>
+      <div style="overflow-x:auto">
+        <table class="val-table">
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>기업</th>
+              <th>국가</th>
+              <th>Forward P/E</th>
+              <th>이익성장률</th>
+              <th>PEG 추정</th>
+              <th>판단</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="rank-num">1</span></td>
+              <td><span class="val-co">Micron</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">MU</span></td>
+              <td>🇺🇸</td>
+              <td><span class="val-fpe">5.7~10x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+100%+</td>
+              <td><span class="peg-good">&lt;0.1x</span></td>
+              <td><span class="verdict-good">극단적 저평가</span><br><span style="font-size:.72rem;color:var(--ink-3)">사이클 주식 주의</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">2</span></td>
+              <td><span class="val-co">Unimicron</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">3037</span></td>
+              <td>🇹🇼</td>
+              <td><span class="val-fpe">~22x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+126%</td>
+              <td><span class="peg-good">~0.17x</span></td>
+              <td><span class="verdict-good">성장 대비 저평가</span><br><span style="font-size:.72rem;color:var(--ink-3)">비한국 기판 최적</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">3</span></td>
+              <td><span class="val-co">TSMC</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">TSM</span></td>
+              <td>🇹🇼</td>
+              <td><span class="val-fpe">23~30x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+30%+</td>
+              <td><span class="peg-good">~0.8x</span></td>
+              <td><span class="verdict-good">합리적 프리미엄</span><br><span style="font-size:.72rem;color:var(--ink-3)">CoWoS 독점 반영</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">4</span></td>
+              <td><span class="val-co">Amkor</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">AMKR</span></td>
+              <td>🇺🇸</td>
+              <td><span class="val-fpe">~25x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+33%</td>
+              <td><span class="peg-good">~0.76x</span></td>
+              <td><span class="verdict-good">파트너십 프리미엄</span><br><span style="font-size:.72rem;color:var(--ink-3)">TSMC 10년 계약</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">5</span></td>
+              <td><span class="val-co">ASE/SPIL</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">ASX</span></td>
+              <td>🇹🇼</td>
+              <td><span class="val-fpe">28~35x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+34%</td>
+              <td><span class="peg-ok">~0.9x</span></td>
+              <td><span class="verdict-ok">LEAP 성장 반영</span><br><span style="font-size:.72rem;color:var(--ink-3)">+118% 성장 반영</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">6</span></td>
+              <td><span class="val-co">Lam Research</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">LRCX</span></td>
+              <td>🇺🇸</td>
+              <td><span class="val-fpe">~30x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+41%</td>
+              <td><span class="peg-good">~0.73x</span></td>
+              <td><span class="verdict-good">패키징 +50% 잠재력</span><br><span style="font-size:.72rem;color:var(--ink-3)">BESI 인수 시 재평가</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">7</span></td>
+              <td><span class="val-co">Applied Materials</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">AMAT</span></td>
+              <td>🇺🇸</td>
+              <td><span class="val-fpe">33~50x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+20%</td>
+              <td><span class="peg-warn">~2.0x</span></td>
+              <td><span class="verdict-warn">밸류에이션 부담</span><br><span style="font-size:.72rem;color:var(--ink-3)">P/S 16x+ 주의</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">8</span></td>
+              <td><span class="val-co">Ajinomoto</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">2802</span></td>
+              <td>🇯🇵</td>
+              <td><span class="val-fpe">~35x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+35%</td>
+              <td><span class="peg-ok">~1.0x</span></td>
+              <td><span class="verdict-ok">독점 프리미엄 적정</span><br><span style="font-size:.72rem;color:var(--ink-3)">ABF 95% 독점</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">9</span></td>
+              <td><span class="val-co">BESI</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">BESI</span></td>
+              <td>🇳🇱</td>
+              <td><span class="val-fpe">~35~40x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+50%+</td>
+              <td><span class="peg-good">~0.7x</span></td>
+              <td><span class="verdict-good">M&A 프리미엄 미반영</span><br><span style="font-size:.72rem;color:var(--ink-3)">+30~50% 업사이드 가능</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">10</span></td>
+              <td><span class="val-co">Advantest</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">6857</span></td>
+              <td>🇯🇵</td>
+              <td><span class="val-fpe">~41x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+26%</td>
+              <td><span class="peg-ok">~1.6x</span></td>
+              <td><span class="verdict-ok">독점 프리미엄</span><br><span style="font-size:.72rem;color:var(--ink-3)">ATE 70%, 대안 부재</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">11</span></td>
+              <td><span class="val-co">Ibiden</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">4062</span></td>
+              <td>🇯🇵</td>
+              <td><span class="val-fpe">~45~50x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+30%E</td>
+              <td><span class="peg-warn">~1.5x</span></td>
+              <td><span class="verdict-warn">투자 사이클 초기</span><br><span style="font-size:.72rem;color:var(--ink-3)">이익 FY2027 후행</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-num">12</span></td>
+              <td><span class="val-co">Disco</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">6146</span></td>
+              <td>🇯🇵</td>
+              <td><span class="val-fpe">49.8x</span></td>
+              <td style="font-family:var(--mono);font-size:.84rem">+20%E</td>
+              <td><span class="peg-warn">~2.5x</span></td>
+              <td><span class="verdict-warn">밸류에이션 풀</span><br><span style="font-size:.72rem;color:var(--ink-3)">독점이나 이미 반영</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:18px;font-size:.78rem;color:var(--ink-3);line-height:1.6">
+        * PEG = Forward P/E ÷ 이익성장률(%). PEG &lt;1.0 = 성장 대비 저평가 신호 / PEG &gt;2.0 = 밸류에이션 부담. 모든 수치는 공시·애널리스트 컨센서스 기반 추정치로 실제와 다를 수 있음. 투자 조언 아님.
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Valuation Verdict</div>
+      <p>"PEG &lt;1.0 클러스터: Micron·Unimicron·TSMC·Amkor·Lam·BESI — 성장 대비 저평가 기업군."
+      <span class="u">Micron은 극단적 저평가처럼 보이나 메모리 사이클 주식 특성상 P/E 하락이 '저평가'가 아닌 '피크 신호'일 수 있다. 가장 매력적인 조합은 Unimicron(EPS +126%, Forward P/E 22x)과 BESI(하이브리드 본딩 13.2배 성장 + M&A 프리미엄 미반영). Applied Materials(P/S 16x+)와 Disco(PEG ~2.5x)는 독점 해자에도 밸류에이션 부담이 상당하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="hbm_pkg_company_samsung.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 13L5 8l5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 4-4 — 삼성전자·삼성전기</div>
+      </div>
+    </a>
+    <a href="hbm_pkg_theme_cowos.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Theme A — CoWoS 기술전쟁</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">HBM·패키징 시리즈 — Part 4-5: 글로벌 패키징 빅5+</div>
+      <div class="src-list">
+        DATA · TSMC 6-K · ASE IR · Amkor IR · Micron IR · Advantest IR<br>
+        BESI IR · Ibiden IR · TrendForce · DIGITIMES · SemiAnalysis<br>
+        PitchBook · CompaniesMarketCap · GuruFocus · Simply Wall St<br>
+        TipRanks · StockAnalysis · BigGo Finance · Meyka · SEC EDGAR<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

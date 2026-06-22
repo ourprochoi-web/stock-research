@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HPSP·리노공업·테크윙·한화세미텍·ISC — 열처리 독점과 소켓의 숨은 해자</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#48D597;
+    --accent-2:#FFB13E;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.6}50%{opacity:.6}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(72,213,151,.06);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:.3s}
+  .card:hover{border-color:#1e3d2a;transform:translateY(-4px)}.card:hover::before{opacity:1}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card-name{font-size:1.22rem;font-weight:850;letter-spacing:-.02em}
+  .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.ann{background:rgba(72,213,151,.12);color:var(--accent);border:1px solid rgba(72,213,151,.3)}
+  .badge.sock{background:rgba(56,230,212,.12);color:var(--glow);border:1px solid rgba(56,230,212,.3)}
+  .badge.hdl{background:rgba(255,177,62,.12);color:var(--accent-2);border:1px solid rgba(255,177,62,.3)}
+  .badge.bond{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .link-line{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .link-line b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .nums-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums-2 div{background:var(--bg-2);padding:13px 12px}
+
+  /* BULL / BEAR BOX */
+  .bb{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  .bb-box{border-radius:12px;padding:18px 16px}
+  .bb-box.bull{background:rgba(72,213,151,.06);border:1px solid rgba(72,213,151,.2)}
+  .bb-box.bear{background:rgba(255,107,107,.06);border:1px solid rgba(255,107,107,.2)}
+  .bb-box .bbt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+  .bb-box.bull .bbt{color:var(--bull)}
+  .bb-box.bear .bbt{color:var(--bear)}
+  .bb-box ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .bb-box ul li{font-size:.84rem;color:var(--ink-2);line-height:1.45;padding-left:14px;position:relative}
+  .bb-box.bull ul li::before{content:"↑";position:absolute;left:0;color:var(--bull);font-size:.74rem}
+  .bb-box.bear ul li::before{content:"↓";position:absolute;left:0;color:var(--bear);font-size:.74rem}
+
+  /* PANEL / COMPARE */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .cmp-row{display:grid;grid-template-columns:1.4fr repeat(5,1fr);gap:1px;background:var(--line);border-radius:10px;overflow:hidden;margin-top:10px}
+  .cmp-row > div{background:var(--bg-2);padding:13px 14px;font-size:.83rem}
+  .cmp-row.head > div{background:var(--surface-2);font-family:var(--mono);font-size:.7rem;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+  .cmp-row .label{color:var(--ink-2)}
+  .cmp-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink)}
+  .cmp-val.hi{color:var(--bull)}
+  .cmp-val.mid{color:var(--accent-2)}
+  .cmp-val.lo{color:var(--ink-3)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* MOAT TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(72,213,151,.1);color:var(--accent);border:1px solid rgba(72,213,151,.25);margin:2px}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .cards{grid-template-columns:1fr}
+    .cards-3{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .bb{grid-template-columns:1fr}
+    .cmp-row{grid-template-columns:1fr;border-radius:10px}
+    .cmp-row.head{display:none}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>HBM·패키징 Part 4-3</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#hpsp">01 / HPSP</a>
+      <a href="#leeno">02 / 리노공업</a>
+      <a href="#others">03 / 기타 3사</a>
+      <a href="#compare">04 / 비교</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">HBM·패키징 시리즈 · Part 4-3 · 2026.06</span>
+    <h1 class="hero-title">숨은 해자들<br><span class="hl">열처리·소켓·핸들러</span></h1>
+    <p class="hero-sub">고압수소어닐링 세계 독점(HPSP), OPM 47%의 니치 소켓(리노공업), HBM 3사 동시 공급 핸들러(테크윙), SK하이닉스 2차 TC본더(한화세미텍), 실리콘 러버 소켓 파이오니어(ISC) — HBM 슈퍼사이클의 숨은 수혜자 5개사를 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">세계<span class="u">유일</span></div>
+        <div class="lab">HPSP 고압수소어닐링 장비 독점. SK하이닉스 HBM 공정 필수 공정. 시총 ~$3.8B. 2026E OPM 51%.</div>
+        <div class="src">SRC: HPSP IR / PitchBook 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">47<span class="u">%</span></div>
+        <div class="lab">리노공업 2026E 영업이익률. 반도체 소부장 중 최고 수준. 포고핀 소켓 글로벌 M/S 30%+. 영업이익 ₩200.5B 돌파 전망.</div>
+        <div class="src">SRC: 리노공업 IR / 뉴스핌 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">+170<span class="u">%</span></div>
+        <div class="lab">테크윙 2026E 매출 YoY 성장률(₩435.2B). 영업이익 +503.4%. HBM 메이커 3사 모두 큐브프로버 공급하는 유일 상장사.</div>
+        <div class="src">SRC: 알파스퀘어 컨센서스 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>숨은 해자를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 HPSP -->
+<section class="blk" id="hpsp">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;HPSP — 고압수소어닐링 세계 독점</div>
+      <h2 class="sec-title">대체재 없는 공정 독점, 그러나 YEST 리스크</h2>
+      <p class="sec-lead">HPSP가 보유한 고압수소어닐링(High-Pressure Hydrogen Annealing) 장비는 HBM TC 본딩 후 계면 결함을 제거하는 필수 공정이다. 현재 세계에서 유일하게 양산 공급 가능한 기업이며, SK하이닉스 HBM 공정에 독점 공급 중이다.</p>
+    </div>
+
+    <div class="cards reveal">
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">HPSP</div>
+            <div class="ticker">403870.KQ · 시총 ~$3.8B</div>
+          </div>
+          <span class="badge ann">고압어닐링 독점</span>
+        </div>
+        <p class="link-line">고압수소어닐링 장비 <b>세계 유일</b> 공급사. HBM TC 본딩 후 계면 결함 제거·전기적 특성 개선에 필수. SK하이닉스 독점 공급(매출 의존도 80%+ 추정). 2026E 매출 <b>₩241B (+39%)</b>, 영업이익 <b>₩124B (+38%)</b>. 상저하고 패턴 — Q2~Q4 HBM4 양산 본격화에 수요 집중.</p>
+        <div class="nums">
+          <div><div class="nk">시총</div><div class="nv">~$3.8B</div></div>
+          <div><div class="nk">2026E OPM</div><div class="nv tnum">51%</div></div>
+          <div><div class="nk">Fwd P/E</div><div class="nv tnum">29.7x</div></div>
+          <div><div class="nk">2026E 매출</div><div class="nv">₩241B</div></div>
+          <div><div class="nk">YoY</div><div class="nv tnum" style="color:var(--bull)">+39%</div></div>
+          <div><div class="nk">2027E Fwd P/E</div><div class="nv tnum">24.2x</div></div>
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">매출 추이 · 가이던스</div>
+            <div class="ticker">연간 기준 / HPSP IR · FnGuide</div>
+          </div>
+        </div>
+        <p class="link-line">2024~2025년 <b>₩173B 정체 구간</b> 이후, 2026E ₩241B으로 회복 반등. Q1'26은 부진(매출 YoY -13.4%, 영업이익 YoY -25.2%) — 메모리·파운드리 CAPEX 조정 영향. 그러나 <b>HBM4 양산 본격화(Q2~Q4)</b>가 실적 회복의 트리거. 삼성전자 대량 납품은 공정 특성 차이로 제한적 전망.</p>
+        <div class="nums">
+          <div><div class="nk">2024 실적</div><div class="nv">₩173B</div></div>
+          <div><div class="nk">2025 실적</div><div class="nv">₩173B</div></div>
+          <div><div class="nk">2026E 가이던스</div><div class="nv" style="color:var(--bull)">₩241B</div></div>
+          <div><div class="nk">Q1'26 매출</div><div class="nv">₩31.8B</div></div>
+          <div><div class="nk">Q1'26 OPM</div><div class="nv tnum">~44%</div></div>
+          <div><div class="nk">목표주가</div><div class="nv">₩45,000</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:22px">
+      <div class="card-name" style="margin-bottom:6px">기술 해자 · YEST 리스크 · 고객 다변화</div>
+      <p class="link-line" style="margin-top:0">고압수소어닐링은 HBM3E/HBM4 TC 본딩 후 <b>계면 dangling bond 제거</b> — 소자 전기특성 수율 직결. 현재 경쟁사는 <b>예스티(YEST)</b> 단 한 곳. HPSP vs YEST 간 특허 침해 소송 및 특허 무효 심판 교차 진행 중. SK하이닉스의 공급망 다변화 차원의 YEST 검토 보도 → 주가 변동성 요인. 신규 수요처로 <b>NAND 300L+ 고단 적층</b>, 마이크론 1b 공정 전환 등이 중장기 성장 동력.</p>
+      <div class="bb">
+        <div class="bb-box bull">
+          <div class="bbt">Bull — 해자 유지 근거</div>
+          <ul>
+            <li>세계 유일 양산 공급 — 대체 불가 단기 독점</li>
+            <li>HBM4 양산 본격화로 Q2~Q4 강한 상저하고</li>
+            <li>NAND 300L+ 고단 적층 신규 수요 가시화</li>
+            <li>마이크론 1b 공정 전환 잠재 고객 확대</li>
+            <li>2027E Forward P/E 24.2x — 성장 대비 합리적</li>
+          </ul>
+        </div>
+        <div class="bb-box bear">
+          <div class="bbt">Bear — 리스크 요인</div>
+          <ul>
+            <li>YEST 특허 소송 — 독점 해자 약화 중기 리스크</li>
+            <li>SK하이닉스 매출 의존도 80%+ — 단일 고객 집중</li>
+            <li>삼성전자 대량 납품 어렵다는 업계 분석 존재</li>
+            <li>Q1'26 매출 YoY -13.4% — 전반기 부진 확인</li>
+            <li>Forward P/E 29.7x — YEST 리스크 반영 시 부담</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">HPSP Verdict</div>
+      <p>"독점이 맞다 — 단, 소송 결과가 해자의 수명을 결정한다."
+      <span class="u">HPSP의 고압수소어닐링 독점은 단기적으로 훼손되기 어렵다. HBM4 양산 본격화(2026 H2)에 따른 수요 회복 + NAND 고단화 수요 가시화는 실적 상저하고의 근거다. 그러나 YEST와의 특허 소송 결과가 중기 밸류에이션의 핵심 변수다. 독점 프리미엄을 Forward PER 29.7x로 살 수 있는 구간은 소송 불확실성이 해소되기 전까지는 조건부 포지션이 적절하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 리노공업 -->
+<section class="blk" id="leeno">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;리노공업 — OPM 47%의 니치 소켓 독점</div>
+      <h2 class="sec-title">포고핀 30%, HBM4 미세 피치 대응이 해자를 강화한다</h2>
+      <p class="sec-lead">리노공업은 반도체 테스트에 쓰이는 포고핀 소켓 글로벌 M/S 30%+를 보유한 니치 독점 기업이다. OPM 47%는 국내 반도체 소부장 기업 중 최고 수준이며, HBM4의 미세 피치 전환은 오히려 기술 장벽을 높여 해자를 강화한다.</p>
+    </div>
+
+    <div class="cards reveal">
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">리노공업</div>
+            <div class="ticker">058470.KQ · 포고핀 소켓 M/S 30%+</div>
+          </div>
+          <span class="badge sock">테스트 소켓</span>
+        </div>
+        <p class="link-line">반도체 번인·파이널 테스트용 <b>포고핀 소켓</b> 세계 1위권(M/S 30%+). SK하이닉스·삼성전자·마이크론 HBM 3사 모두에 공급. 2026E 영업이익 <b>₩200.5B</b> 돌파 — 소부장 역대급 실적. <b>OPM 47%</b>는 니치 독점 프리미엄의 결과. 생산능력 <b>2배 확대</b> 투자 집행 중.</p>
+        <div class="nums">
+          <div><div class="nk">포고핀 M/S</div><div class="nv tnum">30%+</div></div>
+          <div><div class="nk">2026E OPM</div><div class="nv tnum">47%</div></div>
+          <div><div class="nk">Fwd P/E</div><div class="nv tnum">25.8~30x</div></div>
+          <div><div class="nk">2026E 매출</div><div class="nv">₩429.5B</div></div>
+          <div><div class="nk">YoY</div><div class="nv tnum" style="color:var(--bull)">+19%</div></div>
+          <div><div class="nk">목표주가</div><div class="nv">₩70,000</div></div>
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">HBM4 미세 피치 대응 기술</div>
+            <div class="ticker">범프 피치 로드맵 / 리노공업·업계</div>
+          </div>
+        </div>
+        <p class="link-line">HBM 세대 전환마다 <b>범프 피치 미세화</b>: HBM3E 28~30μm → HBM4 20~25μm → HBM4E 15μm 이하. 미세 피치 전환은 테스트 소켓 정밀도 요구를 대폭 상승시키며 — <b>기술 진입 장벽을 오히려 높인다</b>. WMCM(Wafer-Level Multi-Chip Module) 패키징 도입(2026 H2)으로 소켓 <b>단가 상승</b> 효과 기대.</p>
+        <div class="nums">
+          <div><div class="nk">HBM3E 피치</div><div class="nv">28~30μm</div></div>
+          <div><div class="nk">HBM4 피치</div><div class="nv">20~25μm</div></div>
+          <div><div class="nk">HBM4E 피치</div><div class="nv">&lt;15μm</div></div>
+          <div><div class="nk">2024 실적</div><div class="nv">₩361B</div></div>
+          <div><div class="nk">2025 추정</div><div class="nv">₩361B</div></div>
+          <div><div class="nk">2026E</div><div class="nv" style="color:var(--bull)">₩429.5B</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:22px">
+      <div class="card-name" style="margin-bottom:6px">수익성 해자 · 구조적 수혜 메커니즘 · 밸류에이션</div>
+      <p class="link-line" style="margin-top:0">HBM 스택 수 증가(8-Hi → 12-Hi → 16-Hi)에 따라 <b>테스트 시간이 비례 증가</b> → 소켓 소모량 구조적 증가. 3대 HBM 제조사 모두 공급하는 고객 다변화가 SK하이닉스 단일 고객 리스크를 해소. OPM 47% + Forward PER 25~30x는 니치 독점 소부장 중 <b>성장 대비 가장 합리적</b>인 밸류에이션 구간으로 평가.</p>
+      <div class="bb">
+        <div class="bb-box bull">
+          <div class="bbt">Bull — 구조적 수혜 근거</div>
+          <ul>
+            <li>HBM4E 미세 피치(15μm↓) 전환 시 기술 해자 강화</li>
+            <li>스택 수 증가(16-Hi) → 테스트 시간 비례 증가</li>
+            <li>HBM 3사(SK·삼성·마이크론) 모두 공급 — 고객 다변화</li>
+            <li>생산능력 2배 투자 → 중장기 매출 증가 기반</li>
+            <li>WMCM 패키징 도입으로 단가 상승 기대</li>
+          </ul>
+        </div>
+        <div class="bb-box bear">
+          <div class="bbt">Bear — 리스크 요인</div>
+          <ul>
+            <li>미세 피치 기술 대응 실패 시 경쟁사에 M/S 잠식</li>
+            <li>HBM 수요 둔화 시 테스트 물량 직격</li>
+            <li>Forward PER 30x는 성장률(+19%) 대비 부담 있음</li>
+            <li>글로벌 소켓 경쟁사(일본·미국) 미세 피치 진입 가능성</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">리노공업 Verdict</div>
+      <p>"OPM 47% + HBM4 미세 피치 전환 = 해자가 두꺼워지는 구간"
+      <span class="u">리노공업은 단순 수혜주가 아니다. HBM 세대 전환마다 미세 피치 기술 요구가 높아지면서 기존 공급사의 기술 장벽이 오히려 강화되는 구조다. OPM 47%는 수익성 관점에서 한미반도체(52%)에 이어 국내 소부장 2위 수준이며, 안정적 성장(YoY +19%)과 결합하면 PER 25~30x는 상당히 합리적인 구간이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 테크윙·한화세미텍·ISC -->
+<section class="blk" id="others">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;테크윙·한화세미텍·ISC — 3사 프로파일</div>
+      <h2 class="sec-title">+170% 핸들러, 2nd 본더, 러버소켓 파이오니어</h2>
+      <p class="sec-lead">테크윙은 HBM 3사 모두에 큐브프로버를 공급하는 유일 상장사로 2026E 매출 +170.8%의 폭발 성장이 전망된다. 한화세미텍은 SK하이닉스 TC본더 2차 벤더, ISC는 실리콘 러버 소켓 세계 최초 상용화 기업이다.</p>
+    </div>
+
+    <div class="cards-3 reveal">
+      <!-- 테크윙 -->
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">테크윙</div>
+            <div class="ticker">089030.KQ · HBM 핸들러</div>
+          </div>
+          <span class="badge hdl">큐브프로버</span>
+        </div>
+        <p class="link-line">HBM 메이커 <b>3사(SK·삼성·마이크론) 모두</b>에 큐브프로버 공급하는 유일 상장사. HBM4 성능 향상에 따라 큐브프로버 수요 구조적 확대. 메모리 핸들러 단일 품목 2026E 매출 <b>₩119.7B (+203.2%)</b>.</p>
+        <div class="nums-2">
+          <div><div class="nk">2026E 매출</div><div class="nv">₩435.2B</div></div>
+          <div><div class="nk">YoY</div><div class="nv tnum" style="color:var(--bull)">+170.8%</div></div>
+          <div><div class="nk">2026E OP</div><div class="nv">₩95.6B</div></div>
+          <div><div class="nk">OP YoY</div><div class="nv tnum" style="color:var(--bull)">+503.4%</div></div>
+        </div>
+        <p class="link-line" style="margin-top:14px;font-size:.8rem">Forward P/E ~30x. 실적 변동성 높아 Q2~Q4 실적 확인 후 본격 포지션 권고. 핸들러 OPM ~22% — 소켓·어닐링 대비 낮은 마진 구조.</p>
+      </div>
+
+      <!-- 한화세미텍 -->
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">한화세미텍</div>
+            <div class="ticker">한화비전 489790.KS 자회사</div>
+          </div>
+          <span class="badge bond">TC본더 2nd</span>
+        </div>
+        <p class="link-line">TC본더 M/S <b>3.2%</b>(2025 기준, 한미반도체 71.2% vs 세메스 13.1%). SK하이닉스 발주 — 한미반도체와 함께 HBM용 TC본더 <b>₩96B 공동 수주</b>(2026.01). <b>2nd 벤더</b>로서 공급망 다변화 수혜 포지션.</p>
+        <div class="nums-2">
+          <div><div class="nk">TC본더 M/S</div><div class="nv tnum">3.2%</div></div>
+          <div><div class="nk">한미반도체 M/S</div><div class="nv tnum">71.2%</div></div>
+          <div><div class="nk">공동 수주</div><div class="nv">₩96B</div></div>
+          <div><div class="nk">하이브리드 본딩</div><div class="nv">개발 중</div></div>
+        </div>
+        <p class="link-line" style="margin-top:14px;font-size:.8rem">하이브리드 본딩 장비 개발 중 — HBM4E/HBM5 전환 시 선점 기회. 비상장(한화비전 연결) 특성상 직접 투자 접근 제한적.</p>
+      </div>
+
+      <!-- ISC -->
+      <div class="card reveal d2">
+        <div class="card-top">
+          <div>
+            <div class="card-name">ISC</div>
+            <div class="ticker">095340.KQ · 러버소켓</div>
+          </div>
+          <span class="badge sock">번인 소켓</span>
+        </div>
+        <p class="link-line"><b>세계 최초</b> 실리콘 러버 소켓(iSC) 상용화 기업. HBM 패키징 후 번인 테스트용 소켓 공급. 2026E 매출 <b>₩314.2B (+43% YoY)</b>, 영업이익 ₩100.4B (OPM 32%).</p>
+        <div class="nums-2">
+          <div><div class="nk">2026E 매출</div><div class="nv">₩314.2B</div></div>
+          <div><div class="nk">YoY</div><div class="nv tnum" style="color:var(--bull)">+43%</div></div>
+          <div><div class="nk">2026E OPM</div><div class="nv tnum">32%</div></div>
+          <div><div class="nk">목표주가</div><div class="nv">₩300,000</div></div>
+        </div>
+        <p class="link-line" style="margin-top:14px;font-size:.8rem">하이스피드 번인 테스터·모듈 테스터 등 고부가 장비로 확장. HBM용 DRAM 세정 케미컬 신사업 진입. 자율주행·휴머노이드 칩 테스트 비메모리 다변화.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">3사 공통 포인트</div>
+      <p>"수요 구조는 좋다 — 그러나 실적 변동성과 밸류에이션은 개별 확인이 필요하다."
+      <span class="u">테크윙·ISC는 HBM 테스트 슈퍼사이클의 직접 수혜주이며 2026E 성장률이 인상적이다. 다만 테크윙은 Q2~Q4 실적 확인이 선결 조건이고, 한화세미텍은 비상장 특성과 M/S 3.2%라는 현실을 직시해야 한다. ISC의 OPM 32%와 신사업 확장은 중장기 재평가 요인이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 크로스 비교 -->
+<section class="blk" id="compare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;크로스 밸류에이션 비교</div>
+      <h2 class="sec-title">5개사 — 수익성·성장·밸류 한눈에</h2>
+      <p class="sec-lead">HPSP·리노공업·테크윙·한화세미텍·ISC의 2026E 실적 컨센서스, OPM, Forward P/E, 핵심 해자, 밸류체인 위치를 비교한다.</p>
+    </div>
+
+    <div class="panel reveal">
+      <h3>5개사 크로스 밸류에이션 (2026E 기준)</h3>
+      <div class="ph-sub">매출·영업이익 단위: 한국 기업 ₩B / 수익성·밸류에이션 기준</div>
+
+      <div class="cmp-row head">
+        <div>기업</div>
+        <div>2026E 매출</div>
+        <div>YoY</div>
+        <div>OPM</div>
+        <div>Fwd P/E</div>
+        <div>핵심 해자</div>
+      </div>
+      <div class="cmp-row">
+        <div class="label" style="font-weight:700;color:var(--ink)">HPSP</div>
+        <div class="cmp-val">₩241B</div>
+        <div class="cmp-val hi">+39%</div>
+        <div class="cmp-val hi">51%</div>
+        <div class="cmp-val mid">29.7x</div>
+        <div class="cmp-val" style="font-size:.75rem">고압수소어닐링 독점</div>
+      </div>
+      <div class="cmp-row">
+        <div class="label" style="font-weight:700;color:var(--ink)">리노공업</div>
+        <div class="cmp-val">₩429.5B</div>
+        <div class="cmp-val mid">+19%</div>
+        <div class="cmp-val hi">47%</div>
+        <div class="cmp-val mid">25.8~30x</div>
+        <div class="cmp-val" style="font-size:.75rem">포고핀 소켓 M/S 30%+</div>
+      </div>
+      <div class="cmp-row">
+        <div class="label" style="font-weight:700;color:var(--ink)">테크윙</div>
+        <div class="cmp-val">₩435.2B</div>
+        <div class="cmp-val hi">+170.8%</div>
+        <div class="cmp-val mid">22%</div>
+        <div class="cmp-val mid">~30x</div>
+        <div class="cmp-val" style="font-size:.75rem">HBM 큐브프로버 3사 독점</div>
+      </div>
+      <div class="cmp-row">
+        <div class="label" style="font-weight:700;color:var(--ink)">한화세미텍</div>
+        <div class="cmp-val lo">비상장</div>
+        <div class="cmp-val lo">—</div>
+        <div class="cmp-val lo">—</div>
+        <div class="cmp-val lo">—</div>
+        <div class="cmp-val" style="font-size:.75rem">TC본더 2nd 벤더</div>
+      </div>
+      <div class="cmp-row">
+        <div class="label" style="font-weight:700;color:var(--ink)">ISC</div>
+        <div class="cmp-val">₩314.2B</div>
+        <div class="cmp-val mid">+43%</div>
+        <div class="cmp-val mid">32%</div>
+        <div class="cmp-val lo">—</div>
+        <div class="cmp-val" style="font-size:.75rem">실리콘 러버 소켓 파이오니어</div>
+      </div>
+    </div>
+
+    <div class="panel reveal d1" style="margin-top:22px">
+      <h3>수익성 서열 — OPM 비교</h3>
+      <div class="ph-sub">2026E OPM 기준 / 한국 반도체 소부장 내 위치</div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="font-family:var(--mono);font-size:.8rem;color:var(--ink-2);min-width:80px">HPSP</div>
+          <div style="flex:1;height:28px;border-radius:6px;overflow:hidden;background:var(--bg)">
+            <div style="height:100%;width:51%;background:linear-gradient(90deg,var(--accent),rgba(72,213,151,.4));border-radius:6px;display:flex;align-items:center;padding-left:10px;font-family:var(--mono);font-size:.75rem;font-weight:700;color:#080B14">51%</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="font-family:var(--mono);font-size:.8rem;color:var(--ink-2);min-width:80px">리노공업</div>
+          <div style="flex:1;height:28px;border-radius:6px;overflow:hidden;background:var(--bg)">
+            <div style="height:100%;width:47%;background:linear-gradient(90deg,var(--accent),rgba(72,213,151,.4));border-radius:6px;display:flex;align-items:center;padding-left:10px;font-family:var(--mono);font-size:.75rem;font-weight:700;color:#080B14">47%</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="font-family:var(--mono);font-size:.8rem;color:var(--ink-2);min-width:80px">ISC</div>
+          <div style="flex:1;height:28px;border-radius:6px;overflow:hidden;background:var(--bg)">
+            <div style="height:100%;width:32%;background:linear-gradient(90deg,var(--accent-2),rgba(255,177,62,.3));border-radius:6px;display:flex;align-items:center;padding-left:10px;font-family:var(--mono);font-size:.75rem;font-weight:700;color:#080B14">32%</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="font-family:var(--mono);font-size:.8rem;color:var(--ink-2);min-width:80px">테크윙</div>
+          <div style="flex:1;height:28px;border-radius:6px;overflow:hidden;background:var(--bg)">
+            <div style="height:100%;width:22%;background:linear-gradient(90deg,var(--ink-3),rgba(94,107,134,.3));border-radius:6px;display:flex;align-items:center;padding-left:10px;font-family:var(--mono);font-size:.75rem;font-weight:700;color:var(--ink-2)">22%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel reveal d2" style="margin-top:22px">
+      <h3>밸류체인 위치 · 해자 유형 · 리스크 등급</h3>
+      <div class="ph-sub">HBM 밸류체인 STAGE 04~05 집중</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+        <span class="moat-tag">HPSP · STAGE 04 · 공정독점</span>
+        <span class="moat-tag">리노공업 · STAGE 05 · 니치독점 M/S30%</span>
+        <span class="moat-tag">테크윙 · STAGE 05 · 3사 동시공급</span>
+        <span class="moat-tag">한화세미텍 · STAGE 04 · 2nd 벤더</span>
+        <span class="moat-tag">ISC · STAGE 05 · 기술 파이오니어</span>
+      </div>
+      <div style="margin-top:18px;font-size:.84rem;color:var(--ink-2);line-height:1.65">
+        <b style="color:var(--ink)">핵심 모니터링 포인트:</b> ① HPSP-YEST 특허 소송 결과 (독점 해자 지속성 판가름) · ② 테크윙·ISC Q2~Q3 실적 확인 (상저하고 실현 여부) · ③ 리노공업 생산능력 2배 확장의 매출 기여 시점 · ④ 한화세미텍 하이브리드 본딩 장비 양산 일정
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">크로스 밸류에이션 Verdict</div>
+      <p>"수익성은 HPSP·리노공업, 성장률은 테크윙·ISC, 옵션성은 한화세미텍"
+      <span class="u">5개사 중 <b>리노공업</b>이 성장률(+19%)·OPM(47%)·밸류에이션(PER 25~30x)의 조합에서 가장 균형적이다. <b>HPSP</b>는 독점 프리미엄이 강하나 YEST 소송이 중기 불확실성. <b>테크윙</b>은 +170% 성장이 압도적이나 실적 변동성이 크다. <b>ISC</b>는 안정적 성장(+43%) + 신사업 확장의 중장기 재평가 스토리. <b>한화세미텍</b>은 비상장 한계와 낮은 M/S(3.2%)로 직접 투자보다 한화비전 연결 관점에서 접근.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="hbm_pkg_company_hanmi_semi.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 4-2 — 한미반도체</div>
+      </div>
+    </a>
+    <a href="hbm_pkg_company_samsung.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 4-4 — 삼성전자·삼성전기</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">HBM·패키징 시리즈 — Part 4-3: HPSP·리노공업·테크윙·한화세미텍·ISC</div>
+      <div class="src-list">
+        DATA · HPSP IR · 리노공업 IR · 알파스퀘어 · 삼성POP · 한투증권<br>
+        뉴스핌 · FnGuide · PitchBook · TechInsights · 디일렉 · 블로터<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

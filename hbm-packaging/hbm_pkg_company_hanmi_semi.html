@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한미반도체 — TC본더 71%의 곡괭이 장수</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#FF8C42;
+    --accent-2:#FFB13E;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.6}50%{opacity:.6}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:18ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--accent-2) 55%,#fff6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* PANEL / BARS */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .bars{display:flex;align-items:flex-end;gap:36px;height:230px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar{width:100%;max-width:96px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar.b1{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar.b2{background:linear-gradient(180deg,var(--accent),#c05a1a);box-shadow:0 0 40px -8px var(--accent)}
+  .bar.b3{background:linear-gradient(180deg,#8b3a00,#2b1800)}
+  .bar .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.92rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+  .barcol .cap{font-size:.72rem;color:var(--ink-3);margin-top:2px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--accent);min-width:100px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* TECH GRID */
+  .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .tech-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .tech-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.7}
+  .tech-card .tc-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .tech-card h3{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+  .fw-row .fw-accent{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--accent);min-width:70px;text-align:right}
+
+  /* VALUATION */
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .nums .nv.accent{color:var(--accent)}
+  .val-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-top:8px}
+  .val-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .val-panel h3{font-size:1.02rem;font-weight:750;margin-bottom:18px}
+
+  /* BULL/BEAR */
+  .timeline{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .tcard .th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .tcard.bull .th{color:var(--bull)}.tcard.bear .th{color:var(--bear)}
+  .tcard h3{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:12px 0 4px}
+  .tcard .tp{font-size:.88rem;color:var(--ink-2);margin-top:10px;line-height:1.6}
+  .tcard .picks{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+  .tcard .picks span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:7px;padding:5px 10px;color:var(--ink)}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* RISK BOX */
+  .risk-box{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--bear);border-radius:0 16px 16px 0;padding:24px 28px;margin-top:22px}
+  .risk-box .rg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--bear);text-transform:uppercase;margin-bottom:10px}
+  .risk-box p{font-size:.92rem;color:var(--ink-2);line-height:1.6}
+  .risk-box p b{color:var(--ink)}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .tech-grid{grid-template-columns:1fr}
+    .val-grid{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr}
+    .nums{grid-template-columns:repeat(2,1fr)}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>HBM·패키징 Part 4-2</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#earnings">01 / 실적·수주</a>
+      <a href="#tech">02 / TC본더 기술</a>
+      <a href="#valuation">03 / 밸류에이션</a>
+      <a href="#verdict">04 / Bull/Bear</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">HBM·패키징 시리즈 · Part 4-2 · 2026.06</span>
+    <h1 class="hero-title">한미반도체<br><span class="hl">TC본더 71%의 곡괭이</span></h1>
+    <p class="hero-sub">골드러시에서 돈 버는 건 금을 캐는 사람이 아니라 곡괭이를 파는 사람이다. HBM 슈퍼사이클의 수혜는 메모리 제조사를 넘어 그 뒤를 받치는 장비사로 흐른다. 한미반도체는 TC본더 글로벌 71%로 그 곡괭이를 거의 독점한다 — Q1'26 어닝쇼크 이후의 회복 경로와 하이브리드 본딩 전환 리스크를 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">71.2<span class="u">%</span></div>
+        <div class="lab">TC본더 글로벌 시장 M/S (2025 매출 기준). 북미(마이크론 등) 고객 90% 독점. 경쟁사 세메스 13.1%, 한화세미텍 3.2% — 독점적 해자.</div>
+        <div class="src">SRC: TechInsights 2025</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">16.6<span class="u">%</span></div>
+        <div class="lab">Q1'26 영업이익률 (어닝쇼크). 매출 ₩50.9B(YoY -65.5%), 영업이익 ₩8.46B(YoY -87.9%). HBM3E→HBM4 세대 전환 공백이 원인.</div>
+        <div class="src">SRC: CBC뉴스·한경 2026.05</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">Wide<span class="u" style="font-size:.5em;vertical-align:middle"> 2026H2</span></div>
+        <div class="lab">Wide TC Bonder HBM5/6 대응 차세대 장비 출시 예정. HBM4용 TC Bonder 4는 2025.07 양산 개시. 하이브리드 본딩 전환에 대한 한미의 전략적 대응.</div>
+        <div class="src">SRC: 한미반도체 2026.02 선공개</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>실적·기술·리스크를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 EARNINGS -->
+<section class="blk" id="earnings">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;실적·수주 — 쇼크와 회복의 구조</div>
+      <h2 class="sec-title">Q1'26 어닝쇼크, 그 다음이 문제다</h2>
+      <p class="sec-lead">Q1'26 영업이익 -87.9%는 한미반도체 역사상 최대 분기 충격이다. 그러나 이 쇼크는 사업 구조의 붕괴가 아니라 HBM3E→HBM4 세대 전환 공백에서 비롯된 일시적 이벤트다. 연간 컨센서스 ₩1.08T는 Q2~Q4 급격한 회복을 전제한다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>분기별 매출 추이</h3>
+        <div class="ph-sub">단위: ₩B / 한미반도체 IR·컨센서스</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar b1" data-h="80%"><span class="val tnum">₩145.8B</span></div>
+            <div class="yr">Q1'25</div><div class="cap">OPM 47.7%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b2" data-h="100%"><span class="val tnum">₩178B+</span></div>
+            <div class="yr">Q2'25</div><div class="cap">HBM3E 피크</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="90%"><span class="val tnum">₩160B+</span></div>
+            <div class="yr">Q3'25</div><div class="cap">감소 시작</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b3" data-h="47%"><span class="val tnum">₩83B</span></div>
+            <div class="yr">Q4'25</div><div class="cap">OPM ~33%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b3" data-h="29%"><span class="val tnum">₩50.9B</span></div>
+            <div class="yr">Q1'26</div><div class="cap">어닝쇼크</div>
+          </div>
+        </div>
+        <div class="foot">Q1'26 매출 ₩50.9B는 Q1'25 대비 <b>YoY -65.5%</b>, Q4'25 대비 QoQ -38.7%. HBM3E용 TC본더 투자 일단락 후 HBM4용 장비 매출이 아직 반영되지 않은 <b>세대 전환기 공백</b>이 직접 원인. 아시아 매출 ₩1,458B(Q1'25) → ₩498B(Q1'26)으로 65.8% 급감.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>2026 연간 전망 — 회복 시나리오</h3>
+        <div class="ph-sub">컨센서스 기준 · 소뮤어·EBN</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">₩1.08T</div>
+            <div class="mt"><b>2026E 연결 매출</b> (+64% YoY). Q1'26 쇼크에도 컨센서스 유지 → <b>Q2~Q4에 집중 납품</b> 전제. HBM4용 TC Bonder 4의 본격 납품이 Q2'26부터 시작 기대. <span style="color:var(--ink-3)">(소뮤어·EBN)</span></div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">₩564B</div>
+            <div class="mt"><b>2026E 연결 영업이익</b> (+52% YoY). OPM 회복 ~52% 전망. 별도 기준은 매출 ₩801B(+39%), 영업이익 ₩401.5B(+60%) — 연결·별도 차이 주의. <span style="color:var(--ink-3)">(소뮤어·EBN)</span></div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">₩44.2B</div>
+            <div class="mt"><b>SK하이닉스 HBM4용 TC본더 수주</b>. 2026.01 SK하이닉스가 한미반도체+한화세미텍에 ₩96B 추가 발주 집행. SK하이닉스 M/S 50% → <b>60% 상향</b> 전망. <span style="color:var(--ink-3)">(헤럴드경제·디일렉)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Earnings Thesis</div>
+      <p>"Q1'26 쇼크는 파산이 아니라 세대 교체기의 진공이다."
+      <span class="u">한미반도체의 실적은 HBM 세대 전환 타이밍과 구조적으로 연동된다. HBM3E용 장비 발주 소화 완료 → HBM4용 장비 발주 개시까지의 공백 구간이 Q4'25~Q1'26에 집중되었다. TC Bonder 4(HBM4 전용)의 SK하이닉스 납품이 Q2'26부터 본격화되면 실적은 급반등 구조다. 핵심 모니터링 포인트는 Q2'26 실적 — 회복 확인이 되면 연간 가이던스 신뢰도가 회복된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 TECH -->
+<section class="blk" id="tech">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;TC본더 기술 — 독점의 근거와 위협</div>
+      <h2 class="sec-title">71% 독점의 기술적 토대와 하이브리드 본딩 리스크</h2>
+      <p class="sec-lead">한미반도체의 TC본더는 HBM 다이를 12단으로 열압착 접합하는 장비다. 수십 년 축적된 정밀 열압착 노하우와 SK하이닉스·마이크론과의 공동 개발 관계가 해자의 핵심이다. 그러나 HBM5 이상에서 예고된 하이브리드 본딩 전환은 이 독점의 지속 가능성에 질문을 던진다.</p>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-card reveal">
+        <div class="tc-label">TC Bonder 제품 라인업</div>
+        <h3>3세대 로드맵 — HBM3E → HBM4 → HBM5/6</h3>
+        <div class="fw-row"><span class="fw-label">TC Bonder 3 (HBM3E용)</span><span class="fw-val">양산 완료</span></div>
+        <div class="fw-row"><span class="fw-label">TC Bonder 4 (HBM4용)</span><span class="fw-accent">2025.07 양산 개시</span></div>
+        <div class="fw-row"><span class="fw-label">Wide TC Bonder (HBM5/6용)</span><span class="fw-accent">2026 H2 출시</span></div>
+        <div class="fw-row"><span class="fw-label">하이브리드 본더 공장 (인천)</span><span class="fw-val">₩1,000억 투자</span></div>
+        <div class="fw-row"><span class="fw-label">글로벌 M/S (TCB)</span><span class="fw-accent">71.2%</span></div>
+        <div class="fw-row"><span class="fw-label">북미(마이크론) M/S</span><span class="fw-accent">90%</span></div>
+        <div style="margin-top:16px;font-size:.82rem;color:var(--ink-2);line-height:1.55">Wide TC Bonder는 다이 면적을 확대해 발열과 대역폭을 동시에 개선하는 차세대 장비다. HBM5/6의 '와이드 HBM' 규격에 대응하며, 하이브리드 본딩 전환 리스크에 대한 한미반도체의 전략적 대안이다.</div>
+      </div>
+
+      <div class="tech-card reveal d1">
+        <div class="tc-label">경쟁 구도</div>
+        <h3>TCB 시장 구조 vs 하이브리드 본딩 선두</h3>
+        <div class="fw-row"><span class="fw-label">한미반도체 (TCB)</span><span class="fw-accent">71.2%</span></div>
+        <div class="fw-row"><span class="fw-label">세메스 (삼성그룹, TCB)</span><span class="fw-val">13.1%</span></div>
+        <div class="fw-row"><span class="fw-label">한화세미텍 (TCB 후발)</span><span class="fw-val">3.2%</span></div>
+        <div class="fw-row"><span class="fw-label">BESI (하이브리드 본딩)</span><span class="fw-val" style="color:var(--bear)">HB 선두</span></div>
+        <div class="fw-row"><span class="fw-label">ASMPT (TCB+HB 추격)</span><span class="fw-val">추격자</span></div>
+        <div class="fw-row"><span class="fw-label">Applied Materials (Kinex)</span><span class="fw-val" style="color:var(--bear)">HB 도전자</span></div>
+        <div style="margin-top:16px;font-size:.82rem;color:var(--ink-2);line-height:1.55">TCB 시장에서는 독점적이나, 하이브리드 본딩 시장에서는 BESI가 선두다. BESI Q1'26 수주 €269.7M (2x YoY) — 하이브리드 본딩 전환 모멘텀 확인. Applied Materials·Lam Research의 BESI 인수 시도도 진행 중.</div>
+      </div>
+    </div>
+
+    <div class="risk-box reveal">
+      <div class="rg">Theme B — 하이브리드 본딩 전환 리스크</div>
+      <p><b>HBM4(2026): TCB 주류 유지 확정.</b> JEDEC 두께 규격 완화로 마이크로범프가 HBM4에서도 사용된다. 한미반도체 TC Bonder 4의 양산 수혜 구간.<br><br>
+      <b>HBM4E(2027~2028): 혼재 구간 진입.</b> 15μm 이하 피치에서 솔더 범프의 물리적 한계(브릿징 리스크) 도달. HBM4E 16-Hi 일부에 하이브리드 본딩 도입 시작. 한미는 TC본더로 16-Hi까지 대응 가능하다고 주장하나, BESI는 이 구간에서 수주 폭증 중.<br><br>
+      <b>HBM5(2028~2029): 하이브리드 본딩 사실상 의무화.</b> 20-Hi 스택, 10μm 미만 피치 → TCB의 기술적 한계. 한미반도체가 인천에 ₩1,000억 하이브리드 본더 공장을 투자하는 이유. 하이브리드 본딩 내재화 성공 여부가 <b>2028년 이후 한미반도체의 해자를 결정하는 핵심 변수</b>다.</p>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:24px">
+      <div class="tg">Tech Thesis</div>
+      <p>"2027년까지는 TCB 독점, 2028년 이후는 전환 대응력이 승패를 가른다."
+      <span class="u">HBM4 사이클(2026~2027)에서 TC Bonder 4는 한미반도체의 71% 해자를 유지하며 실적 회복을 견인한다. Wide TC Bonder(HBM5/6용) 2026 H2 출시는 TCB 기술의 수명 연장을 의미한다. 그러나 HBM5 시대(2028~2029)에는 하이브리드 본딩이 사실상 의무화된다. 인천 ₩1,000억 투자로 내재화를 추진 중이나, BESI가 이미 시장을 선도하는 상황. 2027~2028년 하이브리드 본딩 내재화의 성공 여부가 한미반도체 장기 투자 테제의 결정적 갈림길이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 VALUATION -->
+<section class="blk" id="valuation">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;밸류에이션 — 쇼크 이후의 가격 판정</div>
+      <h2 class="sec-title">Forward P/E 29.8x — 독점 프리미엄인가, 전환 리스크 할인인가</h2>
+      <p class="sec-lead">Q1'26 쇼크 이후 시장은 한미반도체를 두 가지 시각으로 본다. 하나는 "TC본더 독점이 HBM4 사이클에서 재확인될 것"이라는 낙관론, 다른 하나는 "하이브리드 본딩 전환이 예상보다 빠를 수 있다"는 경계론이다. 현재 Forward P/E 29.8x는 그 중간에 걸쳐 있다.</p>
+    </div>
+
+    <div class="val-grid">
+      <div class="val-panel reveal">
+        <h3>핵심 밸류에이션 지표</h3>
+        <div class="nums">
+          <div>
+            <div class="nk">시가총액</div>
+            <div class="nv">~₩35T</div>
+          </div>
+          <div>
+            <div class="nk">Trailing P/E</div>
+            <div class="nv accent">44.6x</div>
+          </div>
+          <div>
+            <div class="nk">Forward P/E (2026E)</div>
+            <div class="nv accent">29.8x</div>
+          </div>
+          <div>
+            <div class="nk">2026E 매출</div>
+            <div class="nv">₩1,080B</div>
+          </div>
+          <div>
+            <div class="nk">2026E 영업이익</div>
+            <div class="nv">₩564.5B</div>
+          </div>
+          <div>
+            <div class="nk">2026E OPM</div>
+            <div class="nv">~52%</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;font-size:.84rem;color:var(--ink-2);line-height:1.6">
+          <b style="color:var(--ink)">Trailing PER 44.6x 부담:</b> Q1'26 어닝쇼크로 TTM EPS가 급감하면서 후행 배수가 고평가 구간으로 이동. 그러나 Forward PER 29.8x는 2026 연간 회복을 반영 시 상당히 완화된 수치다.<br><br>
+          <b style="color:var(--ink)">핵심 전제:</b> Forward PER 29.8x의 신뢰도는 Q2'26 실적에서 TC Bonder 4 납품이 확인되느냐에 달려 있다. 회복이 확인되면 29.8x는 독점 장비사 프리미엄으로 정당화될 수 있다.
+        </div>
+      </div>
+
+      <div class="val-panel reveal d1">
+        <h3>동종 기업 밸류에이션 비교</h3>
+        <div class="fw-row"><span class="fw-label">한미반도체 (TCB 71%)</span><span class="fw-accent">29.8x</span></div>
+        <div class="fw-row"><span class="fw-label">HPSP (수소어닐링 독점)</span><span class="fw-val">29.7x</span></div>
+        <div class="fw-row"><span class="fw-label">리노공업 (포고핀 30%+)</span><span class="fw-val">25.8~30x</span></div>
+        <div class="fw-row"><span class="fw-label">테크윙 (큐브프로버)</span><span class="fw-val">~30x</span></div>
+        <div class="fw-row"><span class="fw-label">BESI (하이브리드 본딩)</span><span class="fw-val" style="color:var(--bear)">~35x</span></div>
+        <div style="margin-top:16px;font-size:.82rem;color:var(--ink-2);line-height:1.55">한국 후공정 독점 소부장 그룹 내에서 한미반도체의 29.8x는 중간 수준이다. BESI가 하이브리드 본딩 전환 프리미엄으로 더 높은 배수를 받는 것은 시장이 이미 기술 전환 리스크를 한미에 반영하고 있다는 신호다.</div>
+        <div class="nums" style="margin-top:20px">
+          <div>
+            <div class="nk">2025 실적 매출</div>
+            <div class="nv">₩659B</div>
+          </div>
+          <div>
+            <div class="nk">2025 영업이익</div>
+            <div class="nv">₩371B</div>
+          </div>
+          <div>
+            <div class="nk">2025 OPM</div>
+            <div class="nv">~56%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 BULL/BEAR -->
+<section class="blk" id="verdict">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;Bull vs Bear — 투자 판정</div>
+      <h2 class="sec-title">조건부 긍정 — 회복 확인과 전환 대응이 전제</h2>
+      <p class="sec-lead">한미반도체는 단순한 경기 민감 장비주가 아니다. TC본더 71% 독점이라는 구조적 해자가 존재하지만, 하이브리드 본딩 전환이라는 기술적 불연속 리스크도 공존한다. Bull과 Bear 시나리오 모두 충분한 근거를 갖추고 있다.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tcard bull reveal">
+        <div class="th">● Bull Case — 강세 근거</div>
+        <h3>HBM 스택 증가 + 독점 유지</h3>
+        <div class="tp">
+          HBM4(12-Hi)→HBM4E(16-Hi)→HBM5(20-Hi) 스택 수 증가는 TC본더 투입 수량의 구조적 증가를 의미한다. 스택 4개 추가 = TC본더 수요 ~25~30% 증가 효과.<br><br>
+          TC Bonder 4(HBM4용) 납품이 Q2'26부터 본격화 시 연간 ₩1.08T 회복 가능. SK하이닉스 M/S 60%로 확대 + 마이크론 북미 90% 유지는 수주 가시성 제공.<br><br>
+          Wide TC Bonder(HBM5/6용) 2026 H2 출시 성공 시, 하이브리드 본딩 전환 전 추가 세대 수혜 확보. 인천 ₩1,000억 하이브리드 본더 투자로 전환 후에도 생존 기반 마련.
+        </div>
+        <div class="picks">
+          <span>스택 증가 수요↑</span>
+          <span>TC Bonder 4 납품</span>
+          <span>Wide TCB 2026H2</span>
+          <span>SK하이닉스 M/S 60%</span>
+          <span>북미 90% 유지</span>
+        </div>
+      </div>
+
+      <div class="tcard bear reveal d1">
+        <div class="th">● Bear Case — 위협 근거</div>
+        <h3>하이브리드 본딩 조기 전환 + 실적 변동성</h3>
+        <div class="tp">
+          하이브리드 본딩 전환이 2027~2028년으로 앞당겨질 경우 (SK하이닉스 HBM4E에서 조기 적용), TC본더 수요 감소 직격. BESI 수주 2x YoY 폭증은 고객사가 이미 하이브리드 본딩을 준비 중임을 시사.<br><br>
+          Q1'26 어닝쇼크는 세대 전환기마다 반복 가능한 구조적 패턴이다. HBM4E→HBM5 전환기(2027~2028)에도 동일한 실적 공백이 발생할 수 있다. 연간 OPM 변동 폭(16%~56%)이 너무 커 예측 가능성이 낮다.<br><br>
+          세메스(삼성그룹) 13.1%의 추격이 삼성전자 HBM4 CAPA 확대와 맞물려 가속될 경우 M/S 압박 가능.
+        </div>
+        <div class="picks">
+          <span>HB 전환 조기화</span>
+          <span>BESI 수주 폭증</span>
+          <span>세대 공백 반복</span>
+          <span>세메스 M/S 추격</span>
+          <span>실적 변동성</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Verdict</div>
+      <p>"2027년까지 조건부 긍정, 2028년 이후는 하이브리드 본딩 내재화 성공 여부가 관건."
+      <span class="u">Q2'26 실적에서 TC Bonder 4 납품 회복이 확인되면 연간 ₩1.08T 가이던스 신뢰도가 복원되고, Forward P/E 29.8x는 독점 장비사 프리미엄으로 정당화된다. 그러나 2028년 HBM5 전환 시점에서 인천 하이브리드 본더 공장의 경쟁력이 BESI 대비 인증되지 않으면, "TCB 독점주"에서 "구 기술 기업"으로의 재평가 리스크가 상존한다. 핵심 모니터링: ① Q2'26 TC Bonder 4 납품 실적, ② Wide TC Bonder 수주 발표, ③ 하이브리드 본더 고객사 인증 진척.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="hbm_pkg_company_sk_hynix.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 4-1 — SK하이닉스</div>
+      </div>
+    </a>
+    <a href="hbm_pkg_company_hpsp_lino.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 4-3 — HPSP·리노공업 외</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">HBM·패키징 시리즈 — Part 4-2: 한미반도체</div>
+      <div class="src-list">
+        DATA · 소뮤어 · EBN뉴스 · TrendForce · BESI IR<br>
+        CBC뉴스 · 한국경제 · 헤럴드경제 · 디일렉 · 블로터<br>
+        TechInsights · Counterpoint Research · Semi Engineering<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // bar heights
+  window.addEventListener('load',()=>{
+    document.querySelectorAll('.bar').forEach(b=>{
+      requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK하이닉스 — HBM의 왕좌</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#E84545;
+    --accent-2:#FFB13E;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* PANEL / BARS */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .bars{display:flex;align-items:flex-end;gap:28px;height:220px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar{width:100%;max-width:96px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar.b1{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar.b2{background:linear-gradient(180deg,var(--accent),#8b1515);box-shadow:0 0 40px -8px var(--accent)}
+  .bar .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.88rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+  .barcol .cap{font-size:.72rem;color:var(--ink-3);margin-top:2px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* MINI ROWS */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--accent);min-width:118px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* NUMS GRID */
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+
+  /* TABLE */
+  .data-table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:8px}
+  .data-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;background:var(--bg-2)}
+  .data-table td{padding:11px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table td:first-child{font-family:var(--mono);font-size:.82rem;color:var(--ink-3)}
+  .data-table td b{color:var(--ink);font-weight:650}
+  .data-table tr.hl-row td{background:rgba(232,69,69,.06)}
+  .data-table tr.hl-row td:first-child{color:var(--accent)}
+
+  /* HBM ROADMAP */
+  .roadmap{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+  .rmap-row{display:flex;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s}
+  .rmap-row:hover{border-color:var(--accent);box-shadow:0 0 24px -8px var(--accent)}
+  .rmap-gen{font-family:var(--mono);font-weight:800;font-size:1.1rem;min-width:110px;display:flex;align-items:center;justify-content:center;padding:18px 14px;background:var(--surface-2);letter-spacing:-.01em}
+  .rmap-gen.active{background:linear-gradient(135deg,rgba(232,69,69,.2),rgba(232,69,69,.05));color:var(--accent)}
+  .rmap-gen.sample{background:linear-gradient(135deg,rgba(255,177,62,.15),rgba(255,177,62,.04));color:var(--accent-2)}
+  .rmap-gen.future{color:var(--ink-3)}
+  .rmap-body{padding:18px 22px;flex:1}
+  .rmap-body .rb-top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .rmap-body h4{font-size:1rem;font-weight:750;letter-spacing:-.01em}
+  .rmap-status{font-family:var(--mono);font-size:.64rem;padding:3px 9px;border-radius:5px;font-weight:600;white-space:nowrap}
+  .rmap-status.prod{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .rmap-status.samp{background:rgba(255,177,62,.12);color:var(--accent-2);border:1px solid rgba(255,177,62,.3)}
+  .rmap-status.upcoming{background:rgba(94,107,134,.12);color:var(--ink-3);border:1px solid var(--line)}
+  .rmap-body p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .rmap-specs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .rmap-specs span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:2px 7px;background:var(--bg)}
+
+  /* CAPEX GRID */
+  .capex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .capex-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .capex-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.7}
+  .capex-card .cc-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .capex-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+  .capex-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .capex-row:last-child{border-bottom:none}
+  .capex-row .cr-label{color:var(--ink-2)}
+  .capex-row .cr-val{font-family:var(--mono);font-weight:700;font-size:.84rem;color:var(--ink)}
+
+  /* TIMELINE / TCARD */
+  .timeline{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .tcard .th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .tcard.bull .th{color:var(--bull)}.tcard.bear .th{color:var(--bear)}
+  .tcard h3{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:12px 0 4px}
+  .tcard .tp{font-size:.88rem;color:var(--ink-2);margin-top:10px;line-height:1.6}
+  .tcard .picks{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+  .tcard .picks span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:7px;padding:5px 10px;color:var(--ink)}
+
+  /* KILL CRITERIA */
+  .kill-box{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-top:22px}
+  .kill-box h4{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bear);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .kill-box h4::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--bear);box-shadow:0 0 8px var(--bear);flex-shrink:0}
+  .kill-list{display:flex;flex-direction:column;gap:10px}
+  .kill-item{display:flex;gap:12px;align-items:flex-start;font-size:.84rem}
+  .kill-item .ki{font-family:var(--mono);font-weight:700;color:var(--bear);min-width:22px;font-size:.8rem}
+  .kill-item span{color:var(--ink-2);line-height:1.5}
+  .kill-item span b{color:var(--ink);font-weight:650}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr}
+    .capex-grid{grid-template-columns:1fr}
+    .nums{grid-template-columns:1fr 1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>HBM·패키징 Part 4-1</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#earnings">01 / 실적</a>
+      <a href="#hbm">02 / HBM 전략</a>
+      <a href="#capex">03 / CAPEX</a>
+      <a href="#valuation">04 / 밸류에이션</a>
+      <a href="#verdict">05 / Bull·Bear</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">HBM·패키징 시리즈 · Part 4-1 · 2026.06</span>
+    <h1 class="hero-title">SK하이닉스<br><span class="hl">HBM의 왕좌</span></h1>
+    <p class="hero-sub">HBM 매출 점유율 57%, NVIDIA 1차 벤더, OPM 72% — 슈퍼사이클의 최대 수혜자가 기록한 분기 매출 ₩52.6T의 의미와 앞으로의 지속 가능성을 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">₩52.6<span class="u">T</span></div>
+        <div class="lab">Q1'26 분기 매출 — 창사 이래 최대 분기 기록. QoQ +60%, YoY +198%. 비수기(Q1)임에도 AI 인프라 투자 확대로 수요 강세 지속.</div>
+        <div class="src">SRC: SK hynix Q1'26 IR</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">57<span class="u">%</span></div>
+        <div class="lab">글로벌 HBM 매출 M/S — NVIDIA 1차 벤더이자 3년간 수요가 생산능력을 초과. 삼성 22%, 마이크론 21% 대비 압도적 선두.</div>
+        <div class="src">SRC: Counterpoint Research 2025 Q3</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">6.4<span class="u">x</span></div>
+        <div class="lab">Forward P/E — 사이클 주식 특성상 낮은 PER은 피크 신호로 해석될 수 있으나, 3년 수요 초과 + HBM4 프리미엄은 통상 사이클과 다른 구조.</div>
+        <div class="src">SRC: StockAnalysis 2026.06</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>실적 추이부터 밸류에이션까지</div>
+  </div>
+</header>
+
+<!-- 01 EARNINGS -->
+<section class="blk" id="earnings">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;실적 추이 — 슈퍼사이클이 만드는 숫자</div>
+      <h2 class="sec-title">분기 매출 50조 돌파, OPM 72%</h2>
+      <p class="sec-lead">HBM 슈퍼사이클이 SK하이닉스의 손익계산서를 완전히 바꿨다. Q1'26은 비수기임에도 창사 이래 최대 분기 실적을 기록했다. HBM·고용량 서버 DRAM·eSSD 등 고부가가치 제품 믹스 개선이 핵심 드라이버다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>분기 매출 추이</h3>
+        <div class="ph-sub">단위: 조원 / 분기 · SK하이닉스 IR</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar b1" data-h="18%"><span class="val tnum">₩9T</span></div>
+            <div class="yr">Q1'24</div><div class="cap">저점 구간</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="38%"><span class="val tnum">₩19T</span></div>
+            <div class="yr">Q3'24</div><div class="cap">HBM3E 성장</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="56%"><span class="val tnum">₩29T</span></div>
+            <div class="yr">Q4'25</div><div class="cap">전년비 +75%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b2" data-h="95%"><span class="val tnum">₩52.6T</span></div>
+            <div class="yr">Q1'26</div><div class="cap">창사 최대</div>
+          </div>
+        </div>
+        <div class="foot">Q1'26 QoQ +60% — 계절적 비수기에도 AI 서버 인프라 투자로 수요 강세. <b>HBM이 DRAM 매출의 40%+ 차지</b>하며 ASP 전반 상향 견인.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>Q1'26 핵심 지표</h3>
+        <div class="ph-sub">단위: 조원 · Q1'26 실적</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">₩37.6T</div>
+            <div class="mt"><b>영업이익</b> — OPM 72%. 순이익 ₩40.35T, 순이익률 77%. EBITDA ₩41.3T, EBITDA 마진 <b>79%</b>. 창사 이래 영업이익·이익률 동시 최고 기록.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">40%+</div>
+            <div class="mt">DRAM 매출 내 <b>HBM 비중</b>. AI 서버 수요로 비중 지속 확대 중. 고용량 서버 DRAM 모듈·eSSD 등 고부가가치 믹스 개선 병행.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">3년</div>
+            <div class="mt">경영진이 재확인한 <b>HBM 수요 > 생산능력</b> 기간 (Q1'26 어닝콜). 2026년 HBM 생산분은 <b>전량 사전 계약 완료</b>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:24px">
+      <div class="panel">
+        <h3>분기별 주요 재무 지표</h3>
+        <div class="ph-sub">출처: SK하이닉스 IR, Counterpoint Research</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>분기</th>
+              <th>매출</th>
+              <th>영업이익</th>
+              <th>OPM</th>
+              <th>HBM M/S</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q1'24</td>
+              <td><b>₩9.0T</b></td>
+              <td>₩2.4T</td>
+              <td>27%</td>
+              <td>~69%</td>
+              <td>HBM3E 공급 시작</td>
+            </tr>
+            <tr>
+              <td>Q3'24</td>
+              <td><b>₩19.1T</b></td>
+              <td>₩7.0T</td>
+              <td>37%</td>
+              <td>~69%</td>
+              <td>HBM3E 본격화</td>
+            </tr>
+            <tr>
+              <td>Q4'25</td>
+              <td><b>₩29T+</b></td>
+              <td>₩~17T</td>
+              <td>~59%</td>
+              <td>~57%</td>
+              <td>삼성·마이크론 HBM3E 양산 본격화</td>
+            </tr>
+            <tr class="hl-row">
+              <td>Q1'26</td>
+              <td><b>₩52.58T</b></td>
+              <td>₩37.61T</td>
+              <td><b>72%</b></td>
+              <td><b>57~58%</b></td>
+              <td>창사 이래 최대 분기 실적</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Earnings Insight</div>
+      <p>"Q1'26 OPM 72%는 단순한 사이클 피크가 아니다."
+      <span class="u">HBM M/S가 69%→57%로 하락했음에도 절대 영업이익은 오히려 급증했다. 이는 HBM4 전환에 따른 ASP 프리미엄 + 고용량 서버 DRAM 믹스 개선이 M/S 희석을 완전히 상쇄했다는 의미다. 순현금 ₩35T, 총부채 ₩19.3T로 재무건전성 또한 최상위 수준이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 HBM STRATEGY -->
+<section class="blk" id="hbm">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;HBM 전략 — 세대 전환 로드맵과 NVIDIA 관계</div>
+      <h2 class="sec-title">HBM3E → HBM4 → HBM4E, 세대 리더십 유지</h2>
+      <p class="sec-lead">SK하이닉스는 HBM3E에서 쌓은 NVIDIA 1차 벤더 포지션을 HBM4로 이어받았다. HBM4E 샘플 출하(2026.06.18)까지 완료하며 세대 전환 주도권을 지켜가고 있다.</p>
+    </div>
+
+    <div class="roadmap reveal">
+      <div class="rmap-row">
+        <div class="rmap-gen">HBM3E</div>
+        <div class="rmap-body">
+          <div class="rb-top">
+            <h4>HBM3E — 슈퍼사이클의 시작</h4>
+            <span class="rmap-status prod">양산 중</span>
+          </div>
+          <p>NVIDIA H200·B200·GB200에 탑재. 12-Hi 36GB, 1.2 TB/s. 2026 계약가 +20% 인상 합의(NVIDIA H200/ASIC 수요). 삼성이 ~30% 할인 공세를 펼쳤으나 SK하이닉스는 계약가 유지 — 가격 결정력 증명.</p>
+          <div class="rmap-specs">
+            <span>1.2 TB/s</span><span>36 GB 12-Hi</span><span>9.6 Gbps</span><span>계약가 +20%</span>
+          </div>
+        </div>
+      </div>
+      <div class="rmap-row">
+        <div class="rmap-gen active">HBM4</div>
+        <div class="rmap-body">
+          <div class="rb-top">
+            <h4>HBM4 — NVIDIA Rubin 1차 벤더</h4>
+            <span class="rmap-status prod">2026.02 양산</span>
+          </div>
+          <p>2026년 2월 양산 시작, NVIDIA Rubin(R100) 플랫폼 탑재. 2026년 HBM4 생산분 전량 사전 계약 완료. ASP는 HBM3E 대비 30%+ 프리미엄. OpenAI Stargate 프로젝트: 삼성+SK하이닉스에 월 90만장 DRAM 웨이퍼 계약 포함.</p>
+          <div class="rmap-specs">
+            <span>2+ TB/s</span><span>36 GB 12-Hi</span><span>12 Gbps</span><span>ASP +30%+</span><span>Rubin R100</span>
+          </div>
+        </div>
+      </div>
+      <div class="rmap-row">
+        <div class="rmap-gen sample">HBM4E</div>
+        <div class="rmap-body">
+          <div class="rb-top">
+            <h4>HBM4E — 4TB/s, 삼성 대비 기술 우위 확인</h4>
+            <span class="rmap-status samp">2026.06.18 샘플 출하</span>
+          </div>
+          <p>2026년 6월 18일 12-Hi HBM4E 샘플 출하 완료. 16Gbps, ~4TB/s — 삼성(2026.05.29 출하, 3.6TB/s) 대비 대역폭 우위. 전력효율 20%+ 개선. 삼성이 "6개월 선행"을 주장했으나, SK하이닉스가 3주 후 더 높은 대역폭으로 대응하며 기술 리더십 재확인.</p>
+          <div class="rmap-specs">
+            <span>~4 TB/s</span><span>48 GB 12-Hi</span><span>16 Gbps</span><span>전력효율 +20%</span><span>Rubin Ultra</span>
+          </div>
+        </div>
+      </div>
+      <div class="rmap-row">
+        <div class="rmap-gen future">HBM5</div>
+        <div class="rmap-body">
+          <div class="rb-top">
+            <h4>HBM5 — 차세대 로드맵</h4>
+            <span class="rmap-status upcoming">2028E</span>
+          </div>
+          <p>16-Hi 이상 스택, 하이브리드 본딩 전환 전망. TCB(열압착본딩)에서 하이브리드 본딩으로의 전환이 HBM5 세대에서 본격화될 것으로 예상. 현재 내부 로드맵 공개 미확정.</p>
+          <div class="rmap-specs">
+            <span>16-Hi 예정</span><span>하이브리드 본딩 전환</span><span>2028E</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">HBM Strategy Insight</div>
+      <p>NVIDIA와의 3년 장기계약이 매출 가시성의 핵심이다.
+      <span class="u">SK하이닉스가 NVIDIA 1차 벤더 포지션을 유지하는 구조적 이유는 두 가지다. 첫째, HBM3E부터 HBM4까지 삼성보다 빠른 수율 안정화와 신뢰성. 둘째, 2026년 생산분 전량 사전 계약이라는 수요 가시성. HBM4E 기술 우위(4TB/s vs 3.6TB/s)는 이 포지션을 HBM4E 세대까지 연장할 근거다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 CAPEX -->
+<section class="blk" id="capex">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;CAPEX·생산능력 — 용인 M15X와 HBM 전용 라인</div>
+      <h2 class="sec-title">M15X 팹 가속, 2026 CAPEX ₩30T+</h2>
+      <p class="sec-lead">SK하이닉스는 HBM4/HBM4E 수요에 대응하기 위해 용인 M15X 팹 건설을 가속하고 있다. 2026년 CAPEX는 전년(₩30.2T) 대비 추가 상향 가능성이 있으며, AI 메모리 노드 및 첨단 패키징에 집중 투자 중이다.</p>
+    </div>
+
+    <div class="capex-grid">
+      <div class="capex-card reveal">
+        <div class="cc-label">용인 M15X 팹</div>
+        <h3>차세대 HBM 생산 거점</h3>
+        <div class="capex-row"><span class="cr-label">팹 상태</span><span class="cr-val">가속 건설 중</span></div>
+        <div class="capex-row"><span class="cr-label">EUV 장비 확보</span><span class="cr-val">진행 중</span></div>
+        <div class="capex-row"><span class="cr-label">대응 세대</span><span class="cr-val">HBM4 / HBM4E</span></div>
+        <div class="capex-row"><span class="cr-label">위치</span><span class="cr-val">용인 반도체 클러스터</span></div>
+        <div class="capex-row"><span class="cr-label">투자 우선순위</span><span class="cr-val">HBM 전용 CAPA 증설</span></div>
+      </div>
+
+      <div class="capex-card reveal d1">
+        <div class="cc-label">CAPEX 계획</div>
+        <h3>연간 투자 규모</h3>
+        <div class="capex-row"><span class="cr-label">2025 CAPEX (실적)</span><span class="cr-val">₩30.2T</span></div>
+        <div class="capex-row"><span class="cr-label">2026 CAPEX (계획)</span><span class="cr-val">₩30T+ (상향 가능)</span></div>
+        <div class="capex-row"><span class="cr-label">집중 영역</span><span class="cr-val">AI 메모리·첨단 패키징</span></div>
+        <div class="capex-row"><span class="cr-label">EUV 스캐너</span><span class="cr-val">확보 · Q1'26 주요 항목</span></div>
+        <div class="capex-row"><span class="cr-label">순현금</span><span class="cr-val">₩35T</span></div>
+      </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:22px">
+      <h3>HBM 수주잔고 및 장기계약</h3>
+      <div class="ph-sub">출처: SK하이닉스 어닝콜, 업계 추정</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>내용</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HBM 장기공급계약</td>
+            <td><b>NVIDIA 등 주요 고객사와 3년 이상 장기 계약</b></td>
+            <td>어닝콜 공식 확인</td>
+          </tr>
+          <tr class="hl-row">
+            <td>2026년 HBM 생산분</td>
+            <td><b>전량 사전 계약 완료</b> — 매출 가시성 극대화</td>
+            <td>업계 추정</td>
+          </tr>
+          <tr>
+            <td>OpenAI Stargate</td>
+            <td>삼성+SK하이닉스에 <b>월 90만장 DRAM 웨이퍼 계약</b></td>
+            <td>업계 보도</td>
+          </tr>
+          <tr>
+            <td>HBM4 양산</td>
+            <td><b>2026.02</b> 양산 시작 — NVIDIA Rubin R100 탑재</td>
+            <td>SK하이닉스 공식</td>
+          </tr>
+          <tr>
+            <td>HBM4E 샘플</td>
+            <td><b>2026.06.18</b> 12-Hi 샘플 출하 (16Gbps, ~4TB/s)</td>
+            <td>TrendForce</td>
+          </tr>
+          <tr>
+            <td>수요 > CAPA</td>
+            <td>향후 <b>3년간</b> HBM 수요가 생산능력 초과</td>
+            <td>어닝콜 재확인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 VALUATION -->
+<section class="blk" id="valuation">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;밸류에이션 — Forward P/E 6.4x의 해석</div>
+      <h2 class="sec-title">사이클 주식의 낮은 PER — 기회인가 함정인가</h2>
+      <p class="sec-lead">SK하이닉스 Forward P/E 6.4x는 표면상 매력적이다. 그러나 사이클 주식에서 PER 하락은 피크 신호이기도 하다. 3년 수요 초과라는 구조적 변수가 이 역설을 어떻게 해소하는지가 핵심이다.</p>
+    </div>
+
+    <div class="panel reveal">
+      <h3>밸류에이션 멀티플 요약</h3>
+      <div class="ph-sub">기준일: 2026.06.22 / 출처: StockAnalysis, SK하이닉스 IR, TradingKey</div>
+      <div class="nums" style="grid-template-columns:repeat(3,1fr)">
+        <div>
+          <div class="nk">Trailing P/E</div>
+          <div class="nv">19.6x</div>
+        </div>
+        <div>
+          <div class="nk">Forward P/E</div>
+          <div class="nv" style="color:var(--accent)">6.4x</div>
+        </div>
+        <div>
+          <div class="nk">EV/EBITDA</div>
+          <div class="nv">15.7x</div>
+        </div>
+        <div>
+          <div class="nk">시가총액</div>
+          <div class="nv">₩2,000T+</div>
+        </div>
+        <div>
+          <div class="nk">주가 (KRX)</div>
+          <div class="nv">₩2,944,000</div>
+        </div>
+        <div>
+          <div class="nk">순현금</div>
+          <div class="nv" style="color:var(--bull)">₩35T</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:22px">
+      <div class="panel reveal">
+        <h3>멀티플 해석 프레임</h3>
+        <div class="ph-sub">강세론 vs 약세론</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum" style="color:var(--bull)">긍정</div>
+            <div class="mt"><b>Forward P/E 6.4x = 저평가</b>. 3년 수요 초과 + HBM4 프리미엄 + 전량 선계약은 통상적 메모리 사이클과 구조적으로 다름. 순현금 ₩35T, 부채 ₩19.3T로 재무 건전성 최상.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="color:var(--bear)">주의</div>
+            <div class="mt"><b>낮은 PER = 피크 신호</b> 가능성. 과거 DRAM 피크(2018)에서도 PER이 낮았다. 삼성의 30% 할인 공세 + CAPA 확대 + CXMT 중기 위협이 ASP를 점진적으로 압박.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="color:var(--ink-2)">판단</div>
+            <div class="mt"><b>보유 유효, 신규매수 신중</b>. 3군(보유 유효, 신규매수 NO) 판단 유지. HBM4E 기술 우위 + 계약 가시성은 인정하나, OPM 72%의 지속 가능성은 별도로 검증 필요.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>Forward 추정치 근거</h3>
+        <div class="ph-sub">2026E 연간 추정</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">₩200T+</div>
+            <div class="mt"><b>2026E 연간 매출 추정</b> — Q1'26 분기 ₩52.6T를 기준으로 하반기까지 HBM4 물량 확대. 연간 운영 레버리지 극대화 구간.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">₩140T+</div>
+            <div class="mt"><b>2026E 연간 영업이익 추정</b> — OPM 70%+ 수준 유지 전제. HBM4 ASP 30%+ 프리미엄 + 계약가 유지가 핵심 변수.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">70%+</div>
+            <div class="mt"><b>2026E OPM 유지 전제</b> — HBM4 전환 수율 안정화 속도 + 삼성의 가격 공세 강도가 실제 마진에 영향. Q2'26 이후 ASP 추이가 핵심 확인 변수.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 05 VERDICT -->
+<section class="blk" id="verdict">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;Bull · Bear + 리스크</div>
+      <h2 class="sec-title">슈퍼사이클 지속 vs 마진 피크 통과</h2>
+      <p class="sec-lead">실적과 기술 리더십은 의심의 여지가 없다. 논쟁은 지금이 HBM 사이클의 중간인지 후반인지, 그리고 OPM 72%가 1~2년 후에도 유지 가능한지에 있다.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tcard bull reveal">
+        <div class="th">● Bull Case — 슈퍼사이클 지속</div>
+        <h3>수요 구조적, 공급 부족</h3>
+        <div class="tp">AI 모델 파라미터 매년 10배 성장 → HBM 수요 구조적. HBM4 전환 수율 불안정 + CoWoS 10~20% 부족 → 공급 타이트 지속. HBM4 ASP 30%+ 프리미엄, 계약가 +20% 인상 확정. 2026년 생산분 전량 선계약 완료로 매출 가시성 극대화. NVIDIA·하이퍼스케일러 3년+ 장기 커밋. HBM4E 기술 우위(4TB/s) 재확인.</div>
+        <div class="picks"><span>HBM4 전량 선계약</span><span>ASP +30%+</span><span>3년 수요 초과</span><span>HBM4E 4TB/s</span><span>CoWoS 병목</span></div>
+      </div>
+      <div class="tcard bear reveal d1">
+        <div class="th">● Bear Case — 마진 피크 우려</div>
+        <h3>공급 확대와 ASP 하락 압력</h3>
+        <div class="tp">삼성 CAPA +47%(17만→25만 WPM) + SK하이닉스 M15X + 마이크론 확대 → 공급 확대 가속. 삼성의 ~30% 할인 공세 → 평균 ASP 하락 압력. Forward P/E 6.4x — 사이클 주식의 낮은 PER은 피크 시그널. CXMT HBM3 진입(2027~2028)은 저가 시장 잠식 중기 위협. AI 모델 경량화·추론 최적화로 HBM 소요량 감소 가능성.</div>
+        <div class="picks"><span>삼성 CAPA +47%</span><span>삼성 30% 할인</span><span>Forward PER 6.4x</span><span>CXMT 중기 위협</span></div>
+      </div>
+    </div>
+
+    <div class="kill-box reveal">
+      <h4>Kill Criteria — 테제를 무너뜨리는 조건</h4>
+      <div class="kill-list">
+        <div class="kill-item">
+          <div class="ki">K1</div>
+          <span><b>HBM ASP 분기 -15% 이상 연속 하락</b> — 삼성 할인 전략이 계약가까지 전이될 경우 OPM 72%의 구조적 훼손. 모니터링: 분기 HBM ASP, TrendForce 월간 가격.</span>
+        </div>
+        <div class="kill-item">
+          <div class="ki">K2</div>
+          <span><b>NVIDIA가 삼성을 1차 벤더로 승격</b> — HBM4E 공급 다변화 전략의 일환으로 삼성 비중 확대 시 SK하이닉스 프리미엄 훼손. 모니터링: NVIDIA 파트너십 공시, 어닝콜 발언.</span>
+        </div>
+        <div class="kill-item">
+          <div class="ki">K3</div>
+          <span><b>AI CAPEX 사이클 조정</b> — MSFT·GOOGL·META·AMZN 중 2개 이상이 CAPEX 가이던스를 10%+ 하향 시 HBM 수요 경로 변화. 모니터링: 분기 CAPEX 발표.</span>
+        </div>
+        <div class="kill-item">
+          <div class="ki">K4</div>
+          <span><b>M15X 건설 지연 + HBM4 수율 쇼크</b> — 공급 차질이 장기화될 경우 역설적으로 계약 불이행 리스크. 모니터링: 어닝콜 CAPEX 진행 상황 업데이트.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Final Verdict</div>
+      <p>"HBM의 왕좌를 지키는 자, 그러나 영원한 왕좌는 없다."
+      <span class="u">SK하이닉스는 현재 HBM 슈퍼사이클의 최대 수혜자이며, Forward P/E 6.4x는 이익 추정치의 신뢰성이 높다면 매력적인 밸류에이션이다. 그러나 OPM 72%는 반도체 역사상 전례가 드문 수준으로, 지속 가능성에 대한 진지한 검토가 필요하다. 보유 포지션은 유효하나, 신규매수는 HBM4E 계약 체결 및 Q2'26 ASP 데이터 확인 이후로 미루는 것이 합리적이다. 포지션을 통해 HBM 산업 전체를 소유하는 효율적인 방법이기도 하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="hbm_pkg_investment_map.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 3 — 투자 지도</div>
+      </div>
+    </a>
+    <a href="hbm_pkg_company_hanmi_semi.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 4-2 — 한미반도체</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">HBM·패키징 시리즈 — Part 4-1: SK하이닉스 — HBM의 왕좌</div>
+      <div class="src-list">
+        DATA · SK hynix Q1'26 IR · CNBC · StorageNewsletter · NineScrolls<br>
+        TrendForce · Counterpoint Research · StockAnalysis · TradingKey<br>
+        SK하이닉스 어닝콜 Q1'26 · 디일렉 · 작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // bar heights
+  window.addEventListener('load',()=>{
+    document.querySelectorAll('.bar').forEach(b=>{
+      requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

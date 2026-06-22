@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoWoS/InFO/SoIC 패키징 기술전쟁 — HBM·패키징 Theme A</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#8B5CF6;
+    --accent-2:#FFB13E;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* PANELS / FW-GRID */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* COMPARISON TABLE */
+  .cmp-table{width:100%;border-collapse:collapse;margin-top:8px}
+  .cmp-table th{background:var(--surface-2);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  .cmp-table td{padding:12px 16px;font-size:.86rem;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top;line-height:1.5}
+  .cmp-table td:first-child{color:var(--ink);font-weight:650;font-size:.84rem}
+  .cmp-table tr:last-child td{border-bottom:none}
+  .cmp-table tr:hover td{background:rgba(139,92,246,.04)}
+  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:8px}
+  .badge-sm{display:inline-block;font-family:var(--mono);font-size:.62rem;padding:2px 7px;border-radius:5px;font-weight:600}
+  .badge-sm.main{background:rgba(139,92,246,.15);color:var(--accent);border:1px solid rgba(139,92,246,.3)}
+  .badge-sm.alt{background:rgba(56,230,212,.12);color:var(--glow);border:1px solid rgba(56,230,212,.3)}
+  .badge-sm.now{background:rgba(255,177,62,.12);color:var(--accent-2);border:1px solid rgba(255,177,62,.3)}
+
+  /* CARDS (bull/bear) */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:.3s}
+  .card:hover{border-color:#33456b;transform:translateY(-4px)}.card:hover::before{opacity:1}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card-name{font-size:1.22rem;font-weight:850;letter-spacing:-.02em}
+  .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .badge.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .badge.neu{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .link-line{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .link-line b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+
+  /* TIMELINE (vertical) */
+  .tl{position:relative;padding-left:40px;margin-top:20px}
+  .tl::before{content:"";position:absolute;left:16px;top:0;bottom:0;width:2px;background:var(--line)}
+  .tl-item{position:relative;margin-bottom:28px}
+  .tl-item::before{content:"";position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+  .tl-item.current::before{box-shadow:0 0 12px var(--accent)}
+  .tl-year{font-family:var(--mono);font-size:.76rem;color:var(--accent);letter-spacing:.08em;font-weight:700}
+  .tl-text{font-size:.88rem;color:var(--ink-2);margin-top:4px;line-height:1.55}
+  .tl-text b{color:var(--ink);font-weight:650}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .cards{grid-template-columns:1fr}
+    .fw-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+    .cmp-table{font-size:.78rem}
+    .cmp-table th,.cmp-table td{padding:10px 12px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>HBM·패키징 Theme A</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#compare">01 / CoWoS 비교</a>
+      <a href="#competition">02 / 경쟁 구도</a>
+      <a href="#copos">03 / CoPoS·패널</a>
+      <a href="#timeline">04 / CAPA 전쟁</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">HBM·패키징 시리즈 · Theme A · 2026.06</span>
+    <h1 class="hero-title">패키징<br><span class="hl">기술전쟁</span></h1>
+    <p class="hero-sub">CoWoS-S·-L·-R, InFO, SoIC — TSMC가 사실상 독점 중인 AI 첨단 패키징 시장에 Intel EMIB과 삼성 I-Cube4가 도전장을 내밀고 있다. 수급갭 10~20%, 리드타임 52~78주, 그리고 2028~29년 CoPoS 양산까지 — 기술 전쟁의 지형을 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">120~130<span class="u">K WPM</span></div>
+        <div class="lab">CoWoS CAPA 2026년 말 전망. 2024년 35K WPM 대비 3.5~4배 급증. 그래도 수급갭은 10% 잔존.</div>
+        <div class="src">SRC: TrendForce 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">80<span class="u">%+</span></div>
+        <div class="lab">TSMC CoWoS 시장 독점 비중. NVIDIA가 2026 할당의 50%+를 예약. 대안은 Intel EMIB뿐.</div>
+        <div class="src">SRC: SiliconAnalysts 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2028<span class="u">~29</span></div>
+        <div class="lab">CoPoS(패널 레벨) 양산 목표. 2026.06 파일럿 라인 완공. 실리콘 웨이퍼 → 유리 패널 전환의 원년.</div>
+        <div class="src">SRC: TrendForce 2026.04</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>기술 구조를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 CoWoS COMPARE -->
+<section class="blk" id="compare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;CoWoS-S / -L / -R 비교</div>
+      <h2 class="sec-title">세 가지 CoWoS, 세 가지 전략</h2>
+      <p class="sec-lead">TSMC CoWoS는 단일 기술이 아니다. Standard·Large·Redistribution 세 변종이 각기 다른 고객과 비용 구간을 커버하며, 2026년을 기점으로 CoWoS-L이 주력으로 부상하고 있다.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>CoWoS-S <span class="badge-sm alt">Standard</span></th>
+            <th>CoWoS-L <span class="badge-sm now">Large · 주력</span></th>
+            <th>CoWoS-R <span class="badge-sm main">Redistribution</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>구조</td>
+            <td>단일 실리콘 인터포저 위에 다이 배치</td>
+            <td>LSI 기술로 복수 인터포저 세그먼트 접합 (3,000mm²+)</td>
+            <td>RDL 인터포저 + 유기 기판 기반</td>
+          </tr>
+          <tr>
+            <td>인터포저 크기</td>
+            <td>1~2 레티클</td>
+            <td>5.5 레티클 (2026) → 9.5 (2027) → <b>14 레티클 (2028)</b></td>
+            <td>2~3 레티클</td>
+          </tr>
+          <tr>
+            <td>적용 칩</td>
+            <td>NVIDIA H100, AMD MI300X (레거시)</td>
+            <td><b>NVIDIA Blackwell (B200/GB200), Rubin (R100)</b></td>
+            <td>Broadcom, 통신/엣지 컴퓨팅</td>
+          </tr>
+          <tr>
+            <td>비용</td>
+            <td>$300~500 / 칩</td>
+            <td><b>$900~1,000 / 칩 (Rubin급)</b></td>
+            <td>저가 (유기 기판 기반)</td>
+          </tr>
+          <tr>
+            <td>핵심 장점</td>
+            <td>검증된 양산성, 높은 수율</td>
+            <td>초대면적, 다수 HBM 스택 통합</td>
+            <td>비용 효율, 범용성</td>
+          </tr>
+          <tr>
+            <td>2026 방향성</td>
+            <td>레거시 유지 (축소 추세)</td>
+            <td><b>본격 양산 — 수익 중심축 전환</b></td>
+            <td>통신/ASIC 중심 유지</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fw-grid" style="margin-top:24px">
+      <div class="fw-card reveal">
+        <div class="fw-num">CoWoS-S 포인트</div>
+        <h3>안정된 검증 기술</h3>
+        <div class="fw-row"><span class="fw-label">인터포저 크기</span><span class="fw-val">1~2 레티클</span></div>
+        <div class="fw-row"><span class="fw-label">대표 고객</span><span class="fw-val">H100, MI300X</span></div>
+        <div class="fw-row"><span class="fw-label">단가</span><span class="fw-val">$300~500</span></div>
+        <div class="fw-row"><span class="fw-label">2026 비중</span><span class="fw-val" style="color:var(--ink-3)">축소 추세</span></div>
+      </div>
+      <div class="fw-card reveal d1">
+        <div class="fw-num">CoWoS-L 포인트</div>
+        <h3>2026년 주력 — 초대면적</h3>
+        <div class="fw-row"><span class="fw-label">레티클 확장</span><span class="fw-val">5.5x→14x</span></div>
+        <div class="fw-row"><span class="fw-label">웨이퍼 ASP</span><span class="fw-val">7nm급 근접</span></div>
+        <div class="fw-row"><span class="fw-label">단가</span><span class="fw-val">$900~1,000</span></div>
+        <div class="fw-row"><span class="fw-label">2026 수율</span><span class="fw-val" style="color:var(--bull)">난항 해소</span></div>
+      </div>
+      <div class="fw-card reveal d2">
+        <div class="fw-num">CoWoS-R 포인트</div>
+        <h3>비용 효율 — 범용 시장</h3>
+        <div class="fw-row"><span class="fw-label">웨이퍼 이용률</span><span class="fw-val">더 높음</span></div>
+        <div class="fw-row"><span class="fw-label">대표 고객</span><span class="fw-val">Broadcom, 통신</span></div>
+        <div class="fw-row"><span class="fw-label">상대 비용</span><span class="fw-val">저가</span></div>
+        <div class="fw-row"><span class="fw-label">2026 비중</span><span class="fw-val" style="color:var(--ink-2)">틈새 유지</span></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Tech Insight</div>
+      <p>"CoWoS-L 웨이퍼 ASP가 7nm 파운드리 웨이퍼에 근접하고 있다."
+      <span class="u">패키징이 단순 후공정이 아닌 고부가 제조 공정으로 격상된 신호다. 2026년 TSMC 전체 매출 중 첨단 패키징 비중이 10%+로 올라서며, CoWoS-L 수율 안정화와 함께 패키징이 TSMC의 새로운 마진 드라이버로 자리잡고 있다. (TrendForce 2026.04)</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 COMPETITION -->
+<section class="blk" id="competition">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;경쟁 구도 — Intel EMIB vs 삼성 I-Cube4</div>
+      <h2 class="sec-title">TSMC 독점에 균열이 생기는가</h2>
+      <p class="sec-lead">CoWoS CAPA 부족이 장기화되면서 인텔 EMIB가 대안으로 부상했다. 삼성 I-Cube4는 자사 에코시스템 중심의 수직통합 전략을 구사한다. 세 플레이어의 포지션을 해부한다.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Intel EMIB</div>
+            <div class="ticker">Embedded Multi-die Interconnect Bridge · 2.5D</div>
+          </div>
+          <span class="badge bull">도전 강세</span>
+        </div>
+        <div class="link-line">
+          <b>비용 우위가 핵심 무기.</b> EMIB은 CoWoS 대비 비용이 크게 낮고 웨이퍼 이용률이 ~90%로 높다. CoWoS 레티클 한계(대면적) 문제를 임베디드 브릿지로 우회하는 구조. Amazon, Cisco, SpaceX, Tesla가 채택하며 ASIC·커스텀칩 시장에서 급성장. MediaTek이 CoWoS+EMIB 이중 전략을 채택한 것이 상징적 사례.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>EMIB-T(Thick) 2026년 팹 롤아웃.</b> Intel 18A 파운드리 고객에게 패키징 번들 제공을 추진 중이며, 레티클 스케일은 6x→8x(2026) → 12x+(2028)로 확장 예정.
+        </div>
+        <div class="link-line" style="margin-top:12px;color:var(--bear)">
+          <b>한계:</b> NVIDIA·AMD 최고성능 AI 가속기는 여전히 CoWoS-L 선호 — 초대면적 인터포저 + HBM 다수 스택 통합에서 EMIB 대비 우위. Intel 18A 파운드리 성공 여부가 EMIB 가치의 핵심 변수.
+        </div>
+        <div class="nums">
+          <div><div class="nk">웨이퍼 이용률</div><div class="nv">~90%</div></div>
+          <div><div class="nk">레티클 (2028)</div><div class="nv">12x+</div></div>
+          <div><div class="nk">vs CoWoS 비용</div><div class="nv">크게 저가</div></div>
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">삼성 I-Cube4 / FOPLP</div>
+            <div class="ticker">2.5D 실리콘 인터포저 · 자사 에코시스템</div>
+          </div>
+          <span class="badge neu">제한적</span>
+        </div>
+        <div class="link-line">
+          <b>자사 HBM 패키징에 집중.</b> I-Cube4는 HBM 4개 스택 통합 구조로 HBM3E/HBM4에 적용. 기술적으로는 CoWoS와 유사하나 CAPA·수율·고객 기반에서 현저한 격차 존재. NVIDIA·AMD가 TSMC CoWoS에 집중하면서 삼성은 자사 Exynos + 2·3티어 고객 대응에 집중.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>FOPLP 차별화 전략.</b> 삼성은 플라스틱 패널을 고수하는 반면 TSMC는 유리 패널(CoPoS)을 추진 — 소재 접근법의 차이가 수율·비용에 미치는 영향은 아직 미검증. SAINT(3D) 기술은 SoIC 대항으로 개발 중.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>파운드리 시너지 전략.</b> 삼성 파운드리(GAA 2nm) + I-Cube 패키징 번들로 Intel과 유사한 '원스톱' 서비스 제공 시도. 파운드리 수율 개선이 패키징 경쟁력의 전제 조건.
+        </div>
+        <div class="nums">
+          <div><div class="nk">HBM 스택</div><div class="nv">4개</div></div>
+          <div><div class="nk">주요 적용</div><div class="nv">Exynos</div></div>
+          <div><div class="nk">글로벌 경쟁력</div><div class="nv">제한적</div></div>
+        </div>
+      </div>
+
+      <div class="card reveal d2">
+        <div class="card-top">
+          <div>
+            <div class="card-name">TSMC CoWoS</div>
+            <div class="ticker">CoWoS-S/-L/-R + SoIC · 사실상 독점</div>
+          </div>
+          <span class="badge bull">독점 강세</span>
+        </div>
+        <div class="link-line">
+          <b>대체 불가 포지션 유지.</b> 2026년 CoWoS CAPA 120~130K WPM으로 확대되어도 수급갭 10% 잔존. NVIDIA가 50%+ 예약하고 나면 AMD·Broadcom·Google은 사실상 EMIB 등 대안을 모색할 수밖에 없는 구조.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>SoIC(3D)로 영역 확장.</b> AMD MI300 시리즈에 적용된 SoIC는 Die-to-Wafer 3D 스태킹으로 CoWoS의 2.5D와 함께 TSMC 패키징 포트폴리오의 두 축. 12 다이 스택까지 검증 완료.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>외주 생태계 구축.</b> Amkor ~80K WPM, SPIL 6~8만장 외주 배분. 자체 CAPA만으로는 수요를 감당할 수 없어 OSAT 생태계를 활용하는 수직통합+외주 혼합 모델.
+        </div>
+        <div class="nums">
+          <div><div class="nk">CAPA 2026말</div><div class="nv">120~130K</div></div>
+          <div><div class="nk">NVIDIA 예약</div><div class="nv">50%+</div></div>
+          <div><div class="nk">리드타임</div><div class="nv">52~78주</div></div>
+        </div>
+      </div>
+
+      <div class="card reveal d3">
+        <div class="card-top">
+          <div>
+            <div class="card-name">OSAT — Amkor / ASE·SPIL</div>
+            <div class="ticker">CoWoS 외주 파트너 · 간접 수혜</div>
+          </div>
+          <span class="badge bull">외주 수혜</span>
+        </div>
+        <div class="link-line">
+          <b>CoWoS CAPA 부족의 직접 수혜자.</b> TSMC CoWoS 수요를 자체 CAPA로 감당하지 못하면서 Amkor(~80K WPM)와 ASE/SPIL(6~8만장)이 외주 물량을 흡수. SPIL은 2026.06 NT$2.8B 규모 공장을 추가 인수하며 TSMC overflow 대응 가속.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>Amkor Q1'26 매출 $1,685M(+27% YoY), Q1 사상 최대.</b> TSMC Arizona 팹과 연계한 미국 내 첨단 패키징 허브 구축 중. 10년 파트너십으로 물량 가시성 확보.
+        </div>
+        <div class="link-line" style="margin-top:12px">
+          <b>ASE/SPIL 2026 첨단 패키징(LEAP) 가이던스 $3.5B+.</b> 기존 대비 10% 상향. OSAT 시장에서 첨단 패키징 비중이 구조적으로 높아지는 흐름.
+        </div>
+        <div class="nums">
+          <div><div class="nk">Amkor 외주</div><div class="nv">~80K WPM</div></div>
+          <div><div class="nk">Amkor Q1'26</div><div class="nv">$1,685M</div></div>
+          <div><div class="nk">SPIL LEAP</div><div class="nv">$3.5B+</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Competition Verdict</div>
+      <p>"EMIB는 진짜 대안이다 — 단, ASIC/커스텀칩 시장에서."
+      <span class="u">최고성능 AI 가속기(NVIDIA Blackwell·Rubin)는 2028년까지 CoWoS-L 독점 구조가 유지될 것으로 보인다. 그러나 ASIC·커스텀칩·통신 칩 시장에서 EMIB의 비용 우위(CoWoS 대비 큰 폭 저가, 웨이퍼 이용률 90%)는 실질적이다. MediaTek의 이중 전략이 그 증거다. 삼성 I-Cube4는 자사 에코시스템 밖에서의 경쟁력이 아직 검증되지 않았다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 CoPoS -->
+<section class="blk" id="copos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;CoPoS·패널 레벨 — 차세대 패키징</div>
+      <h2 class="sec-title">실리콘 웨이퍼에서 유리 패널로</h2>
+      <p class="sec-lead">CoPoS(Chip-on-Panel-on-Substrate)는 CoWoS의 CAPA·비용 한계를 극복하기 위한 TSMC의 중장기 해법이다. 2026년 6월 파일럿 라인이 완공되었고, 2028~29년 양산을 목표로 한다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card reveal">
+        <div class="fw-num">CoPoS 개요</div>
+        <h3>유리 패널 기반 패키징</h3>
+        <div class="fw-row"><span class="fw-label">정의</span><span class="fw-val" style="font-size:.72rem">유리 패널 위에 칩 배치→기판 실장</span></div>
+        <div class="fw-row"><span class="fw-label">파일럿 라인</span><span class="fw-val" style="color:var(--bull)">2026.06 완공</span></div>
+        <div class="fw-row"><span class="fw-label">양산 목표</span><span class="fw-val">2028~2029</span></div>
+        <div class="fw-row"><span class="fw-label">vs CoWoS</span><span class="fw-val">대면적·비용 개선</span></div>
+      </div>
+      <div class="fw-card reveal d1">
+        <div class="fw-num">핵심 장점</div>
+        <h3>왜 유리 패널인가</h3>
+        <div class="fw-row"><span class="fw-label">면적 효율</span><span class="fw-val" style="color:var(--bull)">웨이퍼 대비 높음</span></div>
+        <div class="fw-row"><span class="fw-label">치수 안정성</span><span class="fw-val">유리 = 더 안정</span></div>
+        <div class="fw-row"><span class="fw-label">비용</span><span class="fw-val">단위 비용 절감</span></div>
+        <div class="fw-row"><span class="fw-label">워피지</span><span class="fw-val" style="color:var(--bull)">실질적 개선</span></div>
+      </div>
+      <div class="fw-card reveal d2">
+        <div class="fw-num">삼성 대비 차이</div>
+        <h3>소재 전략의 분기점</h3>
+        <div class="fw-row"><span class="fw-label">TSMC 선택</span><span class="fw-val">유리 패널</span></div>
+        <div class="fw-row"><span class="fw-label">삼성 선택</span><span class="fw-val">플라스틱 패널</span></div>
+        <div class="fw-row"><span class="fw-label">결과 검증</span><span class="fw-val" style="color:var(--accent-2)">아직 미완</span></div>
+        <div class="fw-row"><span class="fw-label">삼성 기술명</span><span class="fw-val">FOPLP</span></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">CoPoS Thesis</div>
+      <p>"2028~2029 CoPoS 양산은 패키징 CAPA 병목을 구조적으로 완화한다."
+      <span class="u">현재 CoWoS CAPA 부족이 만들어내는 수급 프리미엄과 리드타임 52~78주가 TSMC의 가장 강력한 해자다. CoPoS 양산이 현실화되면 이 구조적 병목이 완화되기 시작한다. 투자 타이밍 관점에서, TSMC·CoWoS 관련 포지션은 CoPoS 양산 진도에 따라 2027년 후반부터 점진적 재평가가 필요하다. 파일럿 라인 수율 데이터가 핵심 선행 지표다. (TrendForce 2026.04)</span></p>
+    </div>
+
+    <div class="panel reveal" style="margin-top:24px">
+      <h3>CoPoS vs CoWoS — 포지셔닝 정리</h3>
+      <div class="ph-sub">단기 vs 중장기 / 웨이퍼 vs 패널</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px">
+        <div>
+          <div style="font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.1em;margin-bottom:12px">CoWoS (현재 주력)</div>
+          <div style="font-size:.88rem;color:var(--ink-2);line-height:1.65">
+            실리콘 웨이퍼 기반 · 검증된 양산성 · NVIDIA 전용에 가까운 구조<br>
+            CoWoS-L 레티클 5.5x → 14x 로드맵 (2026~2028)<br>
+            수급갭 10~20% 지속 → 가격결정력 유지<br>
+            14 레티클 이상에서 비용·수율 한계 도달 가능
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--mono);font-size:.72rem;color:var(--glow);letter-spacing:.1em;margin-bottom:12px">CoPoS (2028~29 목표)</div>
+          <div style="font-size:.88rem;color:var(--ink-2);line-height:1.65">
+            유리 패널 기반 · 대면적 확장 용이 · 단위 비용 절감<br>
+            14 레티클 이상 초대면적 패키지, 차세대 GPU/ASIC<br>
+            치수 안정성 → 워피지 문제 근본 해결<br>
+            2026년 파일럿 수율이 양산 일정 좌우
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 TIMELINE -->
+<section class="blk" id="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;CAPA 전쟁 타임라인</div>
+      <h2 class="sec-title">35K WPM에서 200K+로</h2>
+      <p class="sec-lead">CoWoS CAPA는 2024년 말 35K WPM에서 2026년 말 120~130K WPM으로 3.5~4배 급증한다. 그래도 수급갭은 좁혀질 뿐 해소되지 않는다. 외주 확대, CoPoS 전환까지 — 용량 전쟁의 전체 타임라인을 추적한다.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+      <div class="reveal">
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-year">2024 말</div>
+            <div class="tl-text"><b>35K WPM</b> — Blackwell 양산 시작과 동시에 심각한 CAPA 부족. 수급갭 20%+, 리드타임 52~78주로 급등. NVIDIA가 전체 CoWoS의 절반 이상을 점유.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2025 말</div>
+            <div class="tl-text"><b>~70~80K WPM</b> — 전년 대비 CAPA 2배 확대. Amkor·SPIL 외주 가속. 수급갭 20%+ 유지. 인텔 EMIB이 대안 수요를 흡수하기 시작.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2026 초</div>
+            <div class="tl-text"><b>~110K WPM</b> — Rubin(R100) 양산 준비 본격화. NVIDIA 2026 할당 50%+ 예약 완료. 수급갭 20% 수준 지속. CoWoS-L 수율 난항 대부분 해소.</div>
+          </div>
+          <div class="tl-item current">
+            <div class="tl-year">2026 말 (목표)</div>
+            <div class="tl-text"><b>120~130K WPM</b> — 신규 라인 가동 + Amkor/SPIL 외주 확대. 수급갭 <b>10%로 축소</b>. CoWoS-L이 전체 수익의 중심축. Amkor ~80K WPM 외주 배분. (TrendForce 2026.06)</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2027</div>
+            <div class="tl-text"><b>170K WPM</b> — CoPoS 파일럿 → 양산 준비 단계. 수급 균형 접근. 레티클 9.5x 확장. 수급갭 추가 축소, 일부 고객 EMIB 전환 병행.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2028~2029</div>
+            <div class="tl-text"><b>200K+ WPM (추정)</b> — CoPoS 양산, 패널 레벨 전환. 레티클 14x 도달. 구조적 병목 완화 시작. CAPA 균형~소폭 과잉 전환 가능성. 투자 타이밍 주의 구간.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <div class="panel" style="margin-bottom:22px">
+          <h3>외주 구조 — 수치로 보기</h3>
+          <div class="ph-sub">TSMC 자체 + OSAT 외주 배분</div>
+          <div class="fw-row"><span class="fw-label">TSMC 자체 (2026)</span><span class="fw-val">120~130K WPM</span></div>
+          <div class="fw-row"><span class="fw-label">Amkor 외주</span><span class="fw-val">~80K WPM</span></div>
+          <div class="fw-row"><span class="fw-label">SPIL 외주</span><span class="fw-val">6~8만장</span></div>
+          <div class="fw-row"><span class="fw-label">외주 비중</span><span class="fw-val" style="color:var(--accent)">구조적 증가</span></div>
+          <div class="fw-row"><span class="fw-label">NVIDIA 예약</span><span class="fw-val" style="color:var(--accent-2)">50%+</span></div>
+          <div style="margin-top:16px;font-size:.82rem;color:var(--ink-2);line-height:1.55">TSMC 자체 CAPA만으로는 수요를 감당할 수 없어 외주 비중이 구조적으로 증가. SPIL은 2026.06 NT$2.8B 공장 추가 인수. 발주 선행성: 2025년 발주 물량이 2027~2028년에 납품.</div>
+        </div>
+
+        <div class="panel">
+          <h3>수급갭 시나리오</h3>
+          <div class="ph-sub">강세 vs 기본 vs 약세</div>
+          <div class="fw-row"><span class="fw-label" style="color:var(--bull)">강세 (Bull)</span><span class="fw-val" style="color:var(--bull)">2028년까지 갭 지속</span></div>
+          <div class="fw-row"><span class="fw-label">기본 (Base)</span><span class="fw-val">2027 균형 접근</span></div>
+          <div class="fw-row"><span class="fw-label" style="color:var(--bear)">약세 (Bear)</span><span class="fw-val" style="color:var(--bear)">CoPoS 조기 전환</span></div>
+          <div style="margin-top:16px;font-size:.82rem;color:var(--ink-2);line-height:1.55">강세 근거: AI CAPEX 지속 + NVIDIA Rubin Ultra 수요. 약세 근거: EMIB 채택 가속 + CoPoS 파일럿 수율 조기 안정화. 기본 시나리오에서 패키징 가격 결정력은 2027년까지 유효.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">CAPA War Verdict</div>
+      <p>"CAPA는 3배 늘지만, 수요는 더 빠르게 늘었다 — 그래서 갭이 좁혀질 뿐 사라지지 않는다."
+      <span class="u">2024년 35K → 2026년 120~130K WPM으로 CoWoS CAPA가 3.5~4배 급증한다. 그러나 CoWoS 수요도 370K(2024) → 1.0M 웨이퍼(2026)로 2.7배 성장하며 공급을 압도한다. 결과는 수급갭 축소(20% → 10%)이지 해소가 아니다. TSMC의 가격 결정력과 리드타임 프리미엄은 2027~2028년까지 구조적으로 유지된다. CoPoS 양산(2028~29)이 진짜 구조 변화의 기점이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="hbm_pkg_company_global.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 4-5 — 글로벌 빅5+</div>
+      </div>
+    </a>
+    <a href="hbm_pkg_theme_hybrid_bonding.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Theme B — 하이브리드 본딩</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">HBM·패키징 시리즈 — Theme A: CoWoS/InFO/SoIC 패키징 기술전쟁</div>
+      <div class="src-list">
+        DATA · TrendForce · SiliconAnalysts · ChipStrat · LoveChip · AMI Next<br>
+        Tom's Hardware · DIGITIMES · SemiconductorX · 36Kr · FinancialContent<br>
+        TSMC · Amkor IR · ASE/SPIL · Intel · 삼성전자<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
