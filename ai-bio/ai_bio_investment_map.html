@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="글로벌 7사+한국 5사 크로스 밸류에이션, P/S 4.2x~55.7x, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵">
+<meta name="keywords" content="AI바이오,밸류에이션,Tempus,Guardant,Recursion,삼성바이오,루닛,크로스밸류에이션">
+<meta property="og:title" content="AI 바이오 투자 지도 — 12사 크로스 밸류에이션">
+<meta property="og:description" content="글로벌 7사+한국 5사 크로스 밸류에이션, P/S 4.2x~55.7x, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_investment_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI 바이오 투자 지도 — 12사 크로스 밸류에이션">
+<meta name="twitter:description" content="글로벌 7사+한국 5사 크로스 밸류에이션, P/S 4.2x~55.7x, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_investment_map.html">
+<title>AI 바이오 투자 지도 — 12사 크로스 밸류에이션</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f59e0b;
+    --accent-2:#fbbf24;
+    --glow:#fcd34d;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(252,211,77,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* FRAMEWORK GRID */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:80px;text-align:right}
+
+  /* VALUE MAP / CHAIN */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* VALMAP GRID */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right;white-space:nowrap}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+  .valrow .vgrowth.bear{color:var(--bear)}
+  .valrow .vgrowth.low{color:var(--ink-2)}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* CALENDAR */
+  .calendar{margin-top:28px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .cal-head{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+  .cal-row{display:flex;align-items:flex-start;gap:16px;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6)}
+  .cal-row:last-child{border-bottom:none}
+  .cal-date{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);font-weight:700;min-width:80px}
+  .cal-co{font-weight:700;font-size:.88rem;margin-bottom:2px}
+  .cal-desc{font-size:.82rem;color:var(--ink-2);line-height:1.4}
+  .cal-impact{font-family:var(--mono);font-size:.68rem;margin-top:4px}
+  .cal-impact.high{color:var(--bull)}
+  .cal-impact.vhigh{color:var(--accent)}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+  /* VAL THESIS BOX */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(245,158,11,.05),rgba(251,191,36,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* BADGE */
+  .badge{display:inline-block;font-family:var(--mono);font-size:.62rem;padding:2px 7px;border-radius:4px;margin:2px}
+  .badge-green{background:rgba(34,197,94,.12);color:var(--bull);border:1px solid rgba(34,197,94,.25)}
+  .badge-amber{background:rgba(245,158,11,.12);color:var(--accent);border:1px solid rgba(245,158,11,.25)}
+  .badge-red{background:rgba(239,68,68,.12);color:var(--bear);border:1px solid rgba(239,68,68,.25)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI 바이오 투자 지도 — 12사 크로스 밸류에이션",
+  "description": "글로벌 7사+한국 5사 크로스 밸류에이션, P/S 4.2x~55.7x, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {"@type":"Person","name":"ourprochoi"},
+  "publisher": {"@type":"Organization","name":"ourprochoi Research Archive"},
+  "mainEntityOfPage": {"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_investment_map.html"}
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fcd34d;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(252,211,77,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI 바이오 시리즈 Part 2</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#valmap">01 / 밸류 맵</a>
+      <a href="#matrix">02 / 성장-밸류 매트릭스</a>
+      <a href="#portfolio">03 / 포트폴리오</a>
+      <a href="#risks">04 / 리스크 히트맵</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 바이오 시리즈 · Part 2 · 2026.06</span>
+    <h1 class="hero-title">12사 크로스<br><span class="hl">밸류에이션 지도</span></h1>
+    <p class="hero-sub">Tempus·Guardant·Recursion·Insilico·Schrödinger — 글로벌 7사와 삼성바이오·셀트리온·루닛·뷰노·에임메드 — 한국 5사의 P/S·성장률을 하나의 좌표계로 비교한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">4.2~55.7<span class="u">x</span></div>
+        <div class="lab">P/S 배수 스펙트럼(2026E). Schrödinger 4.2x(최저) ~ Insilico 55.7x(최고). 13배 이상 격차.</div>
+        <div class="src">SRC: SEC·DART·HKEX 공시, MacroTrends 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">0.14~2.23</div>
+        <div class="lab">PEG-유사 비율(P/S ÷ 성장률). 뷰노 0.14(최저·리스크), 셀트리온·루닛 0.17. Insilico 2.23(최고평가).</div>
+        <div class="src">SRC: 각사 2026E 가이던스, 증권사 컨센서스</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">4<span class="u">단계</span></div>
+        <div class="lab">수익화 단계 분류. Stage 1 Pre-revenue ~ Stage 4 Profitable Scale. 단계별 밸류에이션 방법론 상이.</div>
+        <div class="src">SRC: BiopharmaVantage 2026 Valuation Guide</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>밸류에이션 지도를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 VALMAP -->
+<section class="blk" id="valmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;밸류 맵 — 12사 크로스 밸류에이션</div>
+      <h2 class="sec-title">하나의 좌표계로 보는 글로벌 7사 + 한국 5사</h2>
+      <p class="sec-lead">2026년 6월 기준 AI 바이오/헬스케어 12사의 P/S, 매출 성장률, 수익성을 단일 프레임으로 비교한다. 통화: 글로벌 7사 USD, 한국 5사 KRW.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>글로벌 7사 (USD) · 한국 5사 (KRW) · 2026E 기준</div>
+      <div class="valmap">
+        <!-- 고평가 구간 -->
+        <div>
+          <div class="valcol-head">고평가 구간 · P/S 13x+</div>
+          <div class="valrow">
+            <div class="vname">Insilico Medicine<span class="vticker">3696.HK · Stage 1</span></div>
+            <div class="vstats"><div class="vps">55.7x P/S</div><div class="vgrowth bear">매출 -34.5%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Recursion<span class="vticker">RXRX · Stage 1</span></div>
+            <div class="vstats"><div class="vps">20.2x P/S</div><div class="vgrowth bear">매출 -56% Q1</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">삼성바이오로직스<span class="vticker">207940.KS · Stage 4</span></div>
+            <div class="vstats"><div class="vps">14.5x P/S</div><div class="vgrowth">+30% FY2025</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Guardant Health<span class="vticker">GH · Stage 3</span></div>
+            <div class="vstats"><div class="vps">13.3x P/S</div><div class="vgrowth">+48% Q1 2026</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">루닛<span class="vticker">328130.KQ · Stage 2</span></div>
+            <div class="vstats"><div class="vps">7.7x P/S</div><div class="vgrowth">+45% FY2025</div></div>
+          </div>
+        </div>
+        <!-- 적정 구간 -->
+        <div>
+          <div class="valcol-head">적정 구간 · P/S 5~13x</div>
+          <div class="valrow">
+            <div class="vname">Veracyte<span class="vticker">VCYT · Stage 4</span></div>
+            <div class="vstats"><div class="vps">7.2x P/S</div><div class="vgrowth">+21% Q1 2026</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">셀트리온<span class="vticker">068270.KS · Stage 3</span></div>
+            <div class="vstats"><div class="vps">5.7x P/S</div><div class="vgrowth">+33% FY2025</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Tempus AI<span class="vticker">TEM · Stage 3</span></div>
+            <div class="vstats"><div class="vps">5.6x P/S</div><div class="vgrowth">+25% 2026E</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">뷰노<span class="vticker">338220.KQ · Stage 2</span></div>
+            <div class="vstats"><div class="vps">4.0x P/S</div><div class="vgrowth">+29% FY2025</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Schrödinger<span class="vticker">SDGR · Stage 2</span></div>
+            <div class="vstats"><div class="vps">4.2x P/S</div><div class="vgrowth low">+7% 2026E</div></div>
+          </div>
+        </div>
+        <!-- N/A 비상장 -->
+        <div>
+          <div class="valcol-head">N/A · 비상장 / 참고</div>
+          <div class="valrow">
+            <div class="vname">PathAI<span class="vticker">비상장 · Series C 2021</span></div>
+            <div class="vstats"><div class="vps">N/A</div><div class="vgrowth low">$1~2B 추정</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">에임메드<span class="vticker">비상장 · DTx</span></div>
+            <div class="vstats"><div class="vps">N/A</div><div class="vgrowth low">250억원</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">PEG-유사 최저<span class="vticker">뷰노 0.14 · 리스크 내재</span></div>
+            <div class="vstats"><div class="vps">0.14</div><div class="vgrowth bear">신의료기술 리스크</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">PEG-유사 매력<span class="vticker">셀트리온·루닛 0.17</span></div>
+            <div class="vstats"><div class="vps">0.17</div><div class="vgrowth">성장 대비 저평가</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">PEG-유사 최고<span class="vticker">Insilico 2.23</span></div>
+            <div class="vstats"><div class="vps">2.23</div><div class="vgrowth bear">임상 프리미엄 과다</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">Valuation Insight</div>
+      <p><b>P/S 스펙트럼 13배 격차는 성장 단계·파이프라인 가치·데이터 해자의 차이를 반영한다.</b> Insilico 55.7x는 세계 최초 AI 신약 임상 프리미엄. 삼성바이오 14.5x는 CDMO 독점적 지위 프리미엄. 반면 Schrödinger 4.2x는 현금($406M) 대비 시가총액이 낮아 잠재적 저평가 — Bunsen 출시와 Ajax 엑시트가 촉매.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 MATRIX -->
+<section class="blk" id="matrix">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;성장-밸류에이션 매트릭스</div>
+      <h2 class="sec-title">4분면으로 보는 투자 포지셔닝</h2>
+      <p class="sec-lead">X축(매출 성장률) × Y축(P/S 배수)의 4분면으로 12사를 포지셔닝하고 투자 시사점을 도출한다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- 분면 I: 고성장+고밸류 -->
+      <div class="fw-card reveal">
+        <div class="fw-num">I분면 — 고성장 + 고밸류</div>
+        <h3>모멘텀 플레이</h3>
+        <div class="theme-market">성장률 30%+ · P/S 10x+ · 진입 타이밍 관리 필수</div>
+        <div class="theme-body">시장이 강한 성장 기대를 이미 가격에 반영. 성장 둔화 또는 실망 데이터 시 밸류에이션 급락 리스크 내재.</div>
+        <div class="fw-row"><span class="fw-label">Guardant Health (GH)</span><span class="fw-val" style="color:var(--accent)">13.3x · +48%</span></div>
+        <div class="fw-row"><span class="fw-label">삼성바이오로직스</span><span class="fw-val" style="color:var(--accent)">14.5x · +30%</span></div>
+        <div class="fw-row"><span class="fw-label">루닛</span><span class="fw-val" style="color:var(--accent)">7.7x · +45%</span></div>
+        <div class="theme-highlight">Shield 검사 건수 +389% YoY, 삼성바이오 수주잔고 $21.4B — 모멘텀 기반 정당화 가능. 루닛은 가장 매력적인 구간 진입 중.</div>
+      </div>
+
+      <!-- 분면 II: 저성장+고밸류 -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">II분면 — 저성장 + 고밸류</div>
+        <h3>파이프라인 옵션 가치</h3>
+        <div class="theme-market">파이프라인 rNPV 정당화 · 임상 실패 시 급락</div>
+        <div class="theme-body">성장 둔화에도 높은 P/S 유지 — 파이프라인 옵션 가치 또는 과대 평가 가능성. 임상 성공 시 기업 가치 폭발 재평가.</div>
+        <div class="fw-row"><span class="fw-label">Insilico Medicine</span><span class="fw-val" style="color:var(--bear)">55.7x · -34.5%</span></div>
+        <div class="fw-row"><span class="fw-label">Recursion Pharma</span><span class="fw-val" style="color:var(--bear)">20.2x · -56%</span></div>
+        <div class="theme-highlight">Insilico: 세계 최초 AI 신약 서사 + Servier $888M 파트너십. Recursion: 현금 $665M 런웨이 2028. 고위험·고수익 — 적극형 포트폴리오 용도.</div>
+      </div>
+
+      <!-- 분면 III: 고성장+저밸류 -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">III분면 — 고성장 + 저밸류</div>
+        <h3>가장 매력적인 투자 영역</h3>
+        <div class="theme-market">PEG-유사 최저권 · 성장 지속 시 밸류에이션 재평가</div>
+        <div class="theme-body">높은 성장률 대비 낮은 P/S — 성장이 지속되면 밸류에이션 재평가 강력. 시장이 아직 충분히 인식하지 못한 구간.</div>
+        <div class="fw-row"><span class="fw-label">셀트리온 (PEG 0.17)</span><span class="fw-val" style="color:var(--bull)">5.7x · +33%</span></div>
+        <div class="fw-row"><span class="fw-label">Tempus AI (PEG 0.22)</span><span class="fw-val" style="color:var(--bull)">5.6x · +25%</span></div>
+        <div class="fw-row"><span class="fw-label">루닛 (PEG 0.17)</span><span class="fw-val" style="color:var(--bull)">7.7x · +45%</span></div>
+        <div class="theme-highlight">셀트리온: 짐펜트라 미국 침투 가속 + PER 37배(섹터 42배 할인). Tempus: 조정 EBITDA 흑자 전환 임박. 루닛: FDA 승인 임박 + EBITDA 이중 촉매.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Matrix Verdict</div>
+      <p>"PEG-유사 0.17~0.22 구간(셀트리온·루닛·Tempus)이 밸류에이션 매력과 성장률을 동시에 충족한다."
+      <span class="u">Schrödinger(4.2x, +7%)는 IV분면(저성장+저밸류) — 가치 함정인가 턴어라운드인가. Bunsen AI 코-사이언티스트 출시(2026)와 Ajax Therapeutics 엑시트($23억 매각 5.8% 지분)가 2026~2027년 핵심 촉매. 시가총액($900M)이 현금($406M)의 2.2배에 불과 — 소프트웨어+파이프라인 가치가 $494M에 내재.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 PORTFOLIO -->
+<section class="blk" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;3종 포트폴리오 구성안</div>
+      <h2 class="sec-title">투자 성향별 AI 바이오 포트폴리오</h2>
+      <p class="sec-lead">보수형·균형형·적극형 3가지 포트폴리오 구성안. 공통 전제: 상장 10사, 2~5년 중장기, PathAI·에임메드 비상장 제외.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- 보수형 -->
+      <div class="fw-card reveal">
+        <div class="fw-num">Conservative · 보수형</div>
+        <h3>자본 보전 우선</h3>
+        <div class="theme-market">예상 수익률 12~18% · Bear case -15~20%</div>
+        <div class="theme-body">흑자 기업 75% 비중. 적자 성장주 최소화. 안정적 수익 프로파일 우선.</div>
+        <div class="fw-row"><span class="fw-label">Veracyte (VCYT)</span><span class="fw-val">30%</span></div>
+        <div class="fw-row"><span class="fw-label">삼성바이오로직스</span><span class="fw-val">25%</span></div>
+        <div class="fw-row"><span class="fw-label">셀트리온</span><span class="fw-val">20%</span></div>
+        <div class="fw-row"><span class="fw-label">Tempus AI (TEM)</span><span class="fw-val">15%</span></div>
+        <div class="fw-row"><span class="fw-label">Schrödinger (SDGR)</span><span class="fw-val">10%</span></div>
+        <div class="theme-highlight">Veracyte: GAAP 흑자·EBITDA 30.8%·NCCN 독점 해자. 삼성바이오: OPM 46.2% 세계 최고 CDMO. 적합 대상: 보수적 기관·은퇴 포트폴리오.</div>
+      </div>
+
+      <!-- 균형형 -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">Balanced · 균형형</div>
+        <h3>성장과 안정의 균형</h3>
+        <div class="theme-market">예상 수익률 18~28% · Bear case -25~35%</div>
+        <div class="theme-body">고성장주(GH+루닛 32%) + 안정 자산 병행. 중간 수준 변동성 감내.</div>
+        <div class="fw-row"><span class="fw-label">Guardant Health (GH)</span><span class="fw-val">20%</span></div>
+        <div class="fw-row"><span class="fw-label">Tempus AI (TEM)</span><span class="fw-val">18%</span></div>
+        <div class="fw-row"><span class="fw-label">셀트리온</span><span class="fw-val">15%</span></div>
+        <div class="fw-row"><span class="fw-label">Veracyte (VCYT)</span><span class="fw-val">15%</span></div>
+        <div class="fw-row"><span class="fw-label">루닛</span><span class="fw-val">12%</span></div>
+        <div class="fw-row"><span class="fw-label">삼성바이오 + SDGR</span><span class="fw-val">20%</span></div>
+        <div class="theme-highlight">Shield 채택 가속·Tempus EBITDA 흑자·루닛 FDA 촉매 — 3개의 독립 이벤트 드리븐 잠재력. 적합: 중장기 개인투자자.</div>
+      </div>
+
+      <!-- 적극형 -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Aggressive · 적극형</div>
+        <h3>최대 수익 추구</h3>
+        <div class="theme-market">예상 수익률 30~50%+ · Bear case -40~55%</div>
+        <div class="theme-body">Pre-revenue 비중 27%(RXRX+Insilico). 임상·규제 이벤트 집중. 고변동성 감내 필수.</div>
+        <div class="fw-row"><span class="fw-label">Guardant Health (GH)</span><span class="fw-val">22%</span></div>
+        <div class="fw-row"><span class="fw-label">루닛</span><span class="fw-val">18%</span></div>
+        <div class="fw-row"><span class="fw-label">Recursion (RXRX)</span><span class="fw-val">15%</span></div>
+        <div class="fw-row"><span class="fw-label">Insilico Medicine</span><span class="fw-val">12%</span></div>
+        <div class="fw-row"><span class="fw-label">Tempus AI</span><span class="fw-val">12%</span></div>
+        <div class="fw-row"><span class="fw-label">뷰노 + 셀트리온 + SDGR</span><span class="fw-val">21%</span></div>
+        <div class="theme-highlight">루닛 PEG 0.17 + FDA 이중 촉매. Recursion TUPELO Ph2 데이터(2026 Q3~Q4). Insilico Rentosertib Phase III 개시. 적합: 고위험 선호 전문 투자자.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Portfolio Verdict</div>
+      <p>"포트폴리오 핵심은 데이터 해자(Tempus·Guardant)를 앵커로, K-바이오(삼바·루닛)를 알파 소스로, AI 신약(Recursion·Insilico)을 옵션으로 구성하는 것이다."
+      <span class="u">보수형은 GAAP 흑자 기업 중심 — Veracyte·삼성바이오·셀트리온. 균형형은 Shield·EBITDA·FDA 3개 이벤트를 통한 멀티 촉매. 적극형은 TUPELO 데이터·Rentosertib Ph3·루닛 FDA의 독립 이벤트 리스크-리워드를 동시에 취한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 RISKS -->
+<section class="blk" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;리스크 히트맵 + 투자 캘린더</div>
+      <h2 class="sec-title">4축 리스크 매핑과 2026H2 이벤트</h2>
+      <p class="sec-lead">규제·기술·재무·경쟁 4축으로 12사의 리스크를 정량화하고, 2026년 하반기 주요 투자 이벤트를 정리한다.</p>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 히트맵 — 종합 점수 (12점 만점)</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">낮음</div>
+          <div class="rt">
+            <b>삼성바이오(5) · Veracyte(6)</b>
+            <span>삼성바이오: cGMP 안정·30년 기술·대규모 흑자·WuXi 경쟁(2). Veracyte: 수가 의존(2)·FDA 완료(1)·GAAP 흑자(1)·Exact Sciences 경쟁(2). 두 기업이 섹터 내 가장 낮은 종합 리스크를 보유.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">중간</div>
+          <div class="rt">
+            <b>Tempus(7) · 셀트리온(8) · Schrödinger(8)</b>
+            <span>Tempus: HIPAA/데이터 규제(2)·GAAP 손실(2)·Foundation Medicine 경쟁(2). 셀트리온: PBM 등재(2)·AI 신약 미검증(2)·바이오시밀러 가격전쟁(3). Schrödinger: AlphaFold3 위협(2)·지속 적자(2)·오픈소스 경쟁(3).</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">높음</div>
+          <div class="rt">
+            <b>루닛(10) · 뷰노(10) · PathAI(10)</b>
+            <span>루닛: FDA PMA 심사(3)·지속 적자·유증(3)·Google Health 경쟁(3). 뷰노: 신의료기술 평가(3)·FDA 재신청(2)·소형 적자(3). PathAI: FDA 미승인(2)·비상장 유동성(3)·Roche 인하우스화(3).</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">매우 높음</div>
+          <div class="rt">
+            <b>Recursion(11) · Insilico(11)</b>
+            <span>Recursion: FDA IND(2)·임상 실패(3)·연 $450M 소진(3)·글로벌 AI 경쟁(3). Insilico: 미중 지정학(3)·Phase III 실패(3)·IPO 현금(2)·Recursion 등 경쟁(3). 두 기업 모두 임상 성공 여부가 기업 가치 전체를 결정.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calendar reveal">
+      <div class="cal-head">2026년 하반기 주요 투자 이벤트 캘린더</div>
+      <div class="cal-row">
+        <div class="cal-date">2026 Q3</div>
+        <div>
+          <div class="cal-co">Recursion — TUPELO Phase 2 중간 데이터</div>
+          <div class="cal-desc">REC-4881(FAP) Phase 1b/2 폴립 감소 데이터 발표 예상. 긍정 시 Roche/Sanofi 마일스톤 수령 촉매.</div>
+          <div class="cal-impact vhigh">영향도: 매우 높음 · 긍정 +30~50% / 부정 -30~40%</div>
+        </div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">2026 Q3</div>
+        <div>
+          <div class="cal-co">Tempus AI · Guardant Health — Q2 2026 실적</div>
+          <div class="cal-desc">Tempus 조정 EBITDA 흑자 지속 확인 / Guardant Shield 검사 건수·선별 마진 추이.</div>
+          <div class="cal-impact high">영향도: 높음 · 흑자 확인 시 +10~15%</div>
+        </div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">2026 Q3~Q4</div>
+        <div>
+          <div class="cal-co">루닛 — Lunit INSIGHT Risk FDA 510(k) 승인</div>
+          <div class="cal-desc">Breakthrough Device 지정 가속 심사 중. FDA 510(k) 승인 결과 발표 예정.</div>
+          <div class="cal-impact vhigh">영향도: 매우 높음 · 승인 +20~30% / 지연 -10~15%</div>
+        </div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">2026 Q3~Q4</div>
+        <div>
+          <div class="cal-co">Schrödinger — Bunsen AI 코-사이언티스트 출시</div>
+          <div class="cal-desc">AI 에이전틱 시스템 정식 출시 + Ajax Therapeutics $23억 매각 건 5.8% 지분 현금화 예상.</div>
+          <div class="cal-impact high">영향도: 높음 · 출시+엑시트 확인 시 +10~20%</div>
+        </div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">2026 H2</div>
+        <div>
+          <div class="cal-co">Insilico — Rentosertib 경구제 Phase III 개시</div>
+          <div class="cal-desc">IPF Phase III 시험 공식 개시 발표. Servier $888M 파트너십 마일스톤 수령 연동.</div>
+          <div class="cal-impact vhigh">영향도: 매우 높음 · 개시 확인 +15~25%</div>
+        </div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">2027 Q1</div>
+        <div>
+          <div class="cal-co">뷰노 — DeepCARS 신의료기술 평가유예 종료</div>
+          <div class="cal-desc">2027년 3월 신의료기술 정식 인정 vs 불인정 결정. 섹터 내 최대 이진(binary) 이벤트.</div>
+          <div class="cal-impact vhigh">영향도: 결정적 · 인정 +40~60% / 불인정 -30~50%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="ai_bio_overview.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 1 — AI 바이오 산업 지도</div>
+      </div>
+    </a>
+    <a href="ai_bio_company_global.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 3 — 글로벌 7사 Deep Dive</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 바이오 시리즈 — Part 2: 투자 지도</div>
+      <div class="src-list">
+        DATA · SEC 10-K/10-Q/8-K (각사 Q1 2026) · DART 전자공시 · HKEX 공시<br>
+        CompaniesMarketCap · MacroTrends · StockAnalysis · Investing.com · 알파스퀘어<br>
+        BiopharmaVantage 2026 Valuation Guide · Eqvista · Qubit Capital · 키움/DS투자/삼성증권 리포트<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur)cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{navLinks.classList.toggle('open');});
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{navLinks.classList.remove('open');});
+  });
+</script>
+</body>
+</html>

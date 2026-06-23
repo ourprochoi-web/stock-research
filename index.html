@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI 인프라·HBM 패키징·방산·AI 소프트웨어 산업의 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
-<meta name="keywords" content="AI,HBM,패키징,방산,밸류체인,투자,리서치,GPU,데이터센터,전력">
+<meta name="description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 65편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
+<meta name="keywords" content="AI,HBM,패키징,방산,밸류체인,투자,리서치,GPU,로봇,GLP-1,AI바이오,우주경제,SpaceX">
 <meta property="og:title" content="ourprochoi · Deep Research Archive">
-<meta property="og:description" content="AI 인프라·HBM 패키징·방산·AI 소프트웨어 산업의 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
+<meta property="og:description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 65편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="ourprochoi Research Archive">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ourprochoi · Deep Research Archive">
-<meta name="twitter:description" content="AI 인프라·HBM 패키징·방산·AI 소프트웨어 산업의 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
+<meta name="twitter:description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 65편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
 <link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/">
 <title>ourprochoi · Deep Research Archive</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -165,6 +165,8 @@ input{font-family:inherit}
 .sec-label.ai-sw{color:#38bdf8}.sec-label.ai-sw::before{background:#38bdf8}
 .sec-label.robot{color:#f97316}.sec-label.robot::before{background:#f97316}
 .sec-label.glp1{color:#ec4899}.sec-label.glp1::before{background:#ec4899}
+.sec-label.ai-bio{color:#10b981}.sec-label.ai-bio::before{background:#10b981}
+.sec-label.space{color:#a78bfa}.sec-label.space::before{background:#a78bfa}
 
 .sec-title{
   font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.03em;
@@ -331,11 +333,11 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
   "@context":"https://schema.org",
   "@type":"WebSite",
   "name":"ourprochoi · Deep Research Archive",
-  "description":"AI 인프라·HBM 패키징·방산 산업의 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.",
+  "description":"AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 65편 심층 리서치 아카이브.",
   "url":"https://ourprochoi-web.github.io/stock-research/",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
-  "dateModified":"2026-06-22"
+  "dateModified":"2026-06-23"
 }
 </script>
 </head>
@@ -396,6 +398,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     <button class="cat-btn" data-cat="AI SW">AI SW</button>
     <button class="cat-btn" data-cat="로봇">로봇</button>
     <button class="cat-btn" data-cat="GLP-1">GLP-1</button>
+    <button class="cat-btn" data-cat="AI 바이오">AI 바이오</button>
+    <button class="cat-btn" data-cat="우주 경제">우주 경제</button>
   </div>
   <span id="stickyResultCount"></span>
 </div>
@@ -601,6 +605,16 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     'GLP-1': {
       cssClass: 'glp1', title: 'GLP-1 · Obesity',
       desc: 'GLP-1 수용체 작용제 $95-200B(2030E) — Novo·Lilly 듀오폴리, 차세대 도전자, 밸류체인 분해, 숏 테시스',
+      badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '기업 분석': 'badge-company', '심화 테마': 'badge-theme' }
+    },
+    'AI 바이오': {
+      cssClass: 'ai-bio', title: 'AI Bio · Healthcare',
+      desc: 'AI 헬스케어 $22.5B→$164.1B(CAGR 48.6%) — AI 신약개발·정밀의료·디지털 치료제, 글로벌 7사+한국 5사 크로스 밸류에이션',
+      badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '기업 분석': 'badge-company', '심화 테마': 'badge-theme' }
+    },
+    '우주 경제': {
+      cssClass: 'space', title: 'Space Economy',
+      desc: '글로벌 우주 경제 $626B→$1T — SpaceX IPO $2.18T, Starship $100/kg, 메가 컨스텔레이션, 다운스트림 데이터',
       badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '기업 분석': 'badge-company', '심화 테마': 'badge-theme' }
     }
   };
@@ -977,6 +991,90 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       date: "2026-06-23", category: "GLP-1", type: "심화 테마", series: "GLP-1",
       desc: "경쟁 심화 20+ 후보물질, 안전성(근육 손실·자살 충동), 특허 만료, Novo 디레이팅, 보험 커버리지 한계, 중단률 50%+",
       tags: ["경쟁","특허만료","안전성","디레이팅","중단률","바이오시밀러","숏테시스"]
+    },
+    {
+      title: "AI가 바이오를 만났을 때 — $164B 헬스케어 혁명",
+      file: "ai-bio/ai_bio_overview.html",
+      date: "2026-06-23", category: "AI 바이오", type: "산업 개관", series: "AI 바이오",
+      desc: "AI 헬스케어 시장 $22.5B→$164.1B(CAGR 48.6%), 신약개발→진단→정밀의료→디지털 치료제 밸류체인 맵, 5대 투자 테마",
+      tags: ["AI바이오","AI헬스케어","AI신약개발","정밀의료","디지털치료제","Tempus AI","Recursion"]
+    },
+    {
+      title: "AI 바이오 12사 크로스 밸류에이션 — 투자 지도",
+      file: "ai-bio/ai_bio_investment_map.html",
+      date: "2026-06-23", category: "AI 바이오", type: "투자 지도", series: "AI 바이오",
+      desc: "AI 바이오/헬스케어 글로벌 7사+한국 5사 크로스 밸류에이션, P/S 비교, 포트폴리오 구성안, 리스크 히트맵",
+      tags: ["밸류에이션","Guardant Health","Tempus AI","루닛","삼성바이오로직스","포트폴리오"]
+    },
+    {
+      title: "AI 바이오 글로벌 7사 심층 분석 — Recursion·Tempus·Guardant",
+      file: "ai-bio/ai_bio_company_global.html",
+      date: "2026-06-23", category: "AI 바이오", type: "기업 분석", series: "AI 바이오",
+      desc: "Recursion, Tempus AI, Insilico Medicine, Schrödinger, Veracyte, Guardant Health, PathAI — AI 플랫폼 경쟁력, 실적, 밸류에이션",
+      tags: ["Recursion","Tempus AI","Insilico","Guardant Health","Veracyte","Schrödinger","PathAI"]
+    },
+    {
+      title: "AI 바이오 한국 5사 심층 분석 — 삼성바이오·루닛·뷰노",
+      file: "ai-bio/ai_bio_company_kr.html",
+      date: "2026-06-23", category: "AI 바이오", type: "기업 분석", series: "AI 바이오",
+      desc: "삼성바이오로직스 OPM 45.4%, 셀트리온 매출 4.0조, 루닛 +53%, 뷰노, 에임메드 — 한국 AI 바이오 5사 심층 분석",
+      tags: ["삼성바이오로직스","셀트리온","루닛","뷰노","에임메드","AI진단","바이오시밀러"]
+    },
+    {
+      title: "AI 신약개발 혁명 — 173개 임상 파이프라인의 진실",
+      file: "ai-bio/ai_bio_theme_drug_discovery.html",
+      date: "2026-06-23", category: "AI 바이오", type: "심화 테마", series: "AI 바이오",
+      desc: "AI Drug Discovery $1.4B→$14.4B, 173개 임상 파이프라인, Phase I 성공률 80-90%, FDA AI 가이드라인, Insilico·Recursion 사례",
+      tags: ["AI신약개발","임상파이프라인","Insilico Medicine","Recursion","FDA","AI Drug Discovery"]
+    },
+    {
+      title: "정밀의료·디지털 치료제 — $110B 유전체 + $43B DTx 융합",
+      file: "ai-bio/ai_bio_theme_precision_digital.html",
+      date: "2026-06-23", category: "AI 바이오", type: "심화 테마", series: "AI 바이오",
+      desc: "정밀의료 $110B→$213B, 디지털 치료제 $10.2B→$43B, AI 진단·유전체·SaaS 밸류체인, Tempus·Guardant·Veracyte",
+      tags: ["정밀의료","디지털치료제","유전체","Tempus AI","Guardant Health","Veracyte","DTx"]
+    },
+    {
+      title: "우주 경제 산업구조와 투자 좌표",
+      file: "space/space_overview.html",
+      date: "2026-06-23", category: "우주 경제", type: "산업 개관", series: "우주 경제",
+      desc: "글로벌 우주 경제 $626B→$1T, 발사 비용 97% 절감, Starlink 1,030만 구독, 3대 테마(발사·위성군·다운스트림) 투자 좌표",
+      tags: ["우주경제","SpaceX","Starlink","위성","발사체","Rocket Lab","우주산업"]
+    },
+    {
+      title: "우주 경제 12사 크로스 밸류에이션 — 투자 지도",
+      file: "space/space_investment_map.html",
+      date: "2026-06-23", category: "우주 경제", type: "투자 지도", series: "우주 경제",
+      desc: "SpaceX $2.18T, Rocket Lab $687B 등 글로벌 7사+한국 5사 크로스 밸류에이션, 포트폴리오 구성안, SpaceX IPO 분석",
+      tags: ["밸류에이션","SpaceX","Rocket Lab","한화에어로스페이스","포트폴리오","IPO"]
+    },
+    {
+      title: "우주 경제 글로벌 7사 심층 분석 — SpaceX·Rocket Lab·Planet",
+      file: "space/space_company_global.html",
+      date: "2026-06-23", category: "우주 경제", type: "기업 분석", series: "우주 경제",
+      desc: "SpaceX, Rocket Lab, Planet Labs, Iridium, AST SpaceMobile, L3Harris, Redwire — 사업구조, 실적, 밸류에이션 심층 분석",
+      tags: ["SpaceX","Rocket Lab","Planet Labs","Iridium","AST SpaceMobile","L3Harris","Redwire"]
+    },
+    {
+      title: "우주 경제 한국 5사 심층 분석 — 한화에어로·이노스페이스·쎄트렉아이",
+      file: "space/space_company_kr.html",
+      date: "2026-06-23", category: "우주 경제", type: "기업 분석", series: "우주 경제",
+      desc: "한화에어로스페이스 58조, 이노스페이스, 쎄트렉아이 수주 3,100억, 한화시스템 SAR, AP위성 — 한국 우주 5사 분석",
+      tags: ["한화에어로스페이스","이노스페이스","쎄트렉아이","한화시스템","AP위성","한국우주"]
+    },
+    {
+      title: "발사 혁명·메가 위성군 — Starship $100/kg과 5만기 위성 시대",
+      file: "space/space_theme_launch_constellation.html",
+      date: "2026-06-23", category: "우주 경제", type: "심화 테마", series: "우주 경제",
+      desc: "Starship 완전재사용 $100/kg 목표, 위성 메가 컨스텔레이션 5만기, 발사 비용 97% 절감의 투자 시사점",
+      tags: ["Starship","Falcon9","Neutron","Starlink","발사비용","메가컨스텔레이션","위성인터넷"]
+    },
+    {
+      title: "우주 다운스트림 데이터 경제 — 위성 데이터가 만드는 $100B+ 시장",
+      file: "space/space_theme_downstream.html",
+      date: "2026-06-23", category: "우주 경제", type: "심화 테마", series: "우주 경제",
+      desc: "위성 지구관측 데이터, SAR·광학·통신 융합, AI 분석 플랫폼, Planet Labs·쎄트렉아이의 데이터 경제 전략",
+      tags: ["위성데이터","지구관측","SAR","Planet Labs","쎄트렉아이","우주데이터","위성AI"]
     }
   ];
 

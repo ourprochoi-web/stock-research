@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SpaceX $2.18T IPO·Rocket Lab Neutron·Planet Labs AI위성·Iridium·AST SpaceMobile·L3Harris·Redwire 7개사 심층 분석">
+<meta name="keywords" content="SpaceX,Rocket Lab,Planet Labs,Iridium,AST SpaceMobile,L3Harris,Redwire,우주경제">
+<meta property="og:title" content="우주 경제 글로벌 7社 딥다이브">
+<meta property="og:description" content="SpaceX $2.18T IPO·Rocket Lab Neutron·Planet Labs AI위성·Iridium·AST SpaceMobile·L3Harris·Redwire 7개사 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/space/space_company_global.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="우주 경제 글로벌 7社 딥다이브">
+<meta name="twitter:description" content="SpaceX $2.18T IPO·Rocket Lab Neutron·Planet Labs AI위성·Iridium·AST SpaceMobile·L3Harris·Redwire 7개사 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/space/space_company_global.html">
+<title>우주 경제 글로벌 7社 딥다이브</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#38bdf8;
+    --accent-2:#7dd3fc;
+    --glow:#bae6fd;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,189,248,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* FRAMEWORK GRID */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(56,189,248,.1);color:var(--accent);border:1px solid rgba(56,189,248,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(56,189,248,.05),rgba(125,211,252,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "우주 경제 글로벌 7社 딥다이브",
+  "description": "SpaceX $2.18T IPO·Rocket Lab Neutron·Planet Labs AI위성·Iridium·AST SpaceMobile·L3Harris·Redwire 7개사 심층 분석",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/space/space_company_global.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>우주 경제 시리즈 Part 3</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#launch-leaders">01 / SpaceX·Rocket Lab</a>
+      <a href="#data-comms">02 / Planet·Iridium</a>
+      <a href="#frontier">03 / AST·L3Harris·Redwire</a>
+      <a href="#risks">04 / 리스크</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">우주 경제 시리즈 · Part 3 · 2026.06</span>
+    <h1 class="hero-title">우주 경제 글로벌 7社<br><span class="hl">딥다이브</span></h1>
+    <p class="hero-sub">SpaceX·Rocket Lab·Planet Labs·Iridium·AST SpaceMobile·L3Harris·Redwire — 우주 경제 밸류체인 전 구간을 커버하는 7개사의 재무·전략·밸류에이션을 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$187<span class="u">억</span></div>
+        <div class="lab">SpaceX FY2025 추정 매출. Starlink 61% 비중. 165회 발사. IPO 가격 $135 기준 시총 $2.18T.</div>
+        <div class="src">SRC: SpaceX S-1</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">+63.5<span class="u">%</span></div>
+        <div class="lab">Rocket Lab Q1 2026 매출 성장률. $602M 연환산 매출. Neutron 백로그 $2.2B. 소형 발사체 시장 독주.</div>
+        <div class="src">SRC: Rocket Lab IR</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">+42<span class="u">%</span></div>
+        <div class="lab">Planet Labs Q1 FY2027 매출 성장률. $297M 연환산. 200+ 위성, Pelican AI 분석 플랫폼 상용화.</div>
+        <div class="src">SRC: Planet Labs IR</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>7개사를 해부하기</div>
+  </div>
+</header>
+
+<!-- 01 LAUNCH LEADERS -->
+<section class="blk" id="launch-leaders">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;발사 리더 — SpaceX · Rocket Lab</div>
+      <h2 class="sec-title">발사 시장의 과점 — 점유율 98%의 두 회사</h2>
+      <p class="sec-lead">SpaceX는 글로벌 발사 시장의 70%+를 점유하고, Rocket Lab은 소형 위성 시장의 압도적 1위다. 두 회사가 합산 98%의 상업 발사 시장을 사실상 장악하고 있다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- SpaceX 제품 -->
+      <div class="fw-card reveal">
+        <div class="fw-num">SpaceX — 핵심 사업부</div>
+        <h3>SpaceX 재무·사업 구조</h3>
+        <div class="fw-row"><span class="fw-label">FY2025 추정 매출</span><span class="fw-val" style="color:var(--bull)">$187억</span></div>
+        <div class="fw-row"><span class="fw-label">Starlink 매출 비중</span><span class="fw-val" style="color:var(--bull)">61%</span></div>
+        <div class="fw-row"><span class="fw-label">Starlink 추정 매출</span><span class="fw-val" style="color:var(--bull)">$114억</span></div>
+        <div class="fw-row"><span class="fw-label">2025 발사 횟수</span><span class="fw-val">165회</span></div>
+        <div class="fw-row"><span class="fw-label">Falcon 9 가격</span><span class="fw-val">$6,700만/회</span></div>
+        <div class="fw-row"><span class="fw-label">IPO 공모가</span><span class="fw-val" style="color:var(--accent)">$135</span></div>
+        <div class="fw-row"><span class="fw-label">IPO 기준 시총</span><span class="fw-val" style="color:var(--bull)">$2.18T</span></div>
+        <div class="fw-row"><span class="fw-label">Starlink 구독자</span><span class="fw-val">1,200만+</span></div>
+        <div class="theme-highlight">Starlink 독립 IPO 가능성이 잠재적 주가 촉매. Starshield(군용) 수익 비공개지만 US Gov 최대 고객. Dragon 화물/승무원 NASA 계약 안정적.</div>
+      </div>
+
+      <!-- SpaceX Starship -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">SpaceX — Starship 프로그램</div>
+        <h3>Starship — 게임체인저 로켓</h3>
+        <div class="fw-row"><span class="fw-label">페이로드 (LEO)</span><span class="fw-val">150톤</span></div>
+        <div class="fw-row"><span class="fw-label">발사 목표 비용</span><span class="fw-val" style="color:var(--bull)">$100/kg</span></div>
+        <div class="fw-row"><span class="fw-label">IFT 성공 횟수</span><span class="fw-val" style="color:var(--bull)">7/12회</span></div>
+        <div class="fw-row"><span class="fw-label">Super Heavy 회수</span><span class="fw-val" style="color:var(--bull)">Mechazilla</span></div>
+        <div class="fw-row"><span class="fw-label">상업 발사 목표</span><span class="fw-val" style="color:var(--accent)">2026H1</span></div>
+        <div class="fw-row"><span class="fw-label">NASA Artemis 계약</span><span class="fw-val">달 착륙선</span></div>
+        <div class="fw-row"><span class="fw-label">국방부 계약</span><span class="fw-val">Point-to-Point</span></div>
+        <div class="theme-highlight">Starship 성공 시 SpaceX 매출 2030년 $500억+ 가능(Morgan Stanley 낙관 시나리오). 실패·지연 시 단기 IPO 디레이팅 리스크.</div>
+      </div>
+
+      <!-- Rocket Lab -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Rocket Lab — 소형 발사체 1위</div>
+        <h3>Rocket Lab 재무·Neutron</h3>
+        <div class="fw-row"><span class="fw-label">Q1 2026 매출</span><span class="fw-val" style="color:var(--bull)">$150.5M</span></div>
+        <div class="fw-row"><span class="fw-label">Q1 YoY 성장</span><span class="fw-val" style="color:var(--bull)">+63.5%</span></div>
+        <div class="fw-row"><span class="fw-label">연환산 매출</span><span class="fw-val">$602M</span></div>
+        <div class="fw-row"><span class="fw-label">수주 잔고(Backlog)</span><span class="fw-val" style="color:var(--bull)">$2.2B</span></div>
+        <div class="fw-row"><span class="fw-label">Neutron 목표 비행</span><span class="fw-val" style="color:var(--accent)">2026 Q4</span></div>
+        <div class="fw-row"><span class="fw-label">Neutron 페이로드</span><span class="fw-val">13톤 LEO</span></div>
+        <div class="fw-row"><span class="fw-label">Electron 누적 발사</span><span class="fw-val">65+회</span></div>
+        <div class="fw-row"><span class="fw-label">우주시스템 매출 비중</span><span class="fw-val">~50%</span></div>
+        <div class="theme-highlight">우주시스템(위성 부품·서비스) 비중 확대로 발사 비즈니스 의존도 분산. Neutron은 SpaceX Falcon 9과 직접 경쟁 — 성공 시 멀티플 재평가.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Thesis — 발사 리더</div>
+      <p>"SpaceX IPO는 우주 경제 투자의 가장 큰 이벤트다."
+      <span class="u">SpaceX P/S 116.6x는 단순 발사 비즈니스가 아니라 Starlink SaaS + Starship 플랫폼 + 군용 계약의 복합 밸류에이션이다. Rocket Lab은 '소형 발사체 + 우주시스템' 이중 구조로 성장 지속성이 높지만, Neutron 지연 시 P/S 114x 유지 어렵다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 DATA + COMMS -->
+<section class="blk" id="data-comms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;데이터 + 통신 — Planet Labs · Iridium</div>
+      <h2 class="sec-title">위성 데이터 구독 경제의 두 모델</h2>
+      <p class="sec-lead">Planet Labs는 일일 지구 전체 촬영 + AI 분석 플랫폼으로 '데이터 SaaS' 모델을 개척했다. Iridium은 66위성 LEO 독점 모바일 위성 통신으로 안정적 FCF를 창출한다. 두 회사는 우주 다운스트림 경제의 서로 다른 성공 방정식을 보여준다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Planet Labs -->
+      <div class="fw-card reveal">
+        <div class="fw-num">Planet Labs — 지구 관측 SaaS</div>
+        <h3>Planet Labs 재무·전략</h3>
+        <div class="fw-row"><span class="fw-label">Q1 FY2027 매출</span><span class="fw-val" style="color:var(--bull)">$74.3M</span></div>
+        <div class="fw-row"><span class="fw-label">YoY 성장</span><span class="fw-val" style="color:var(--bull)">+42%</span></div>
+        <div class="fw-row"><span class="fw-label">연환산 매출</span><span class="fw-val">$297M</span></div>
+        <div class="fw-row"><span class="fw-label">운용 위성 수</span><span class="fw-val">200+ 기</span></div>
+        <div class="fw-row"><span class="fw-label">일일 촬영 면적</span><span class="fw-val">전 지구</span></div>
+        <div class="fw-row"><span class="fw-label">Pelican AI 해상도</span><span class="fw-val" style="color:var(--bull)">30cm급</span></div>
+        <div class="fw-row"><span class="fw-label">구독 ARR 비중</span><span class="fw-val" style="color:var(--bull)">90%+</span></div>
+        <div class="fw-row"><span class="fw-label">주요 고객</span><span class="fw-val" style="font-size:.7rem">US Gov·민간기업</span></div>
+        <div class="theme-highlight">Pelican 위성 30cm 해상도 + AI 분석은 상업 위성 최고 수준. US Gov 계약 비중 40%+가 안정적 기반. NRO·NASIC 계약 확대가 성장 촉매.</div>
+      </div>
+
+      <!-- Planet Labs 전략 -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">Planet Labs — Pelican AI 플랫폼</div>
+        <h3>AI 분석 플랫폼 경쟁력</h3>
+        <div class="theme-market">단순 영상 → AI 인사이트 플랫폼으로 진화</div>
+        <div class="theme-body">Pelican 세대: 30cm 해상도 광학·SAR 복합. AI 분석 레이어: 변화 감지·물체 탐지·농업 수확량 예측·공급망 모니터링. 구독 단가 상승(ARPU 증가)이 매출 성장을 견인. 경쟁사 대비 데이터 축적량 최대 — 8년+ 연속 일일 전구 촬영 아카이브.</div>
+        <div class="theme-players">
+          <span>Pelican 30cm</span>
+          <span>SAR 통합</span>
+          <span>AI 분석</span>
+          <span>구독 SaaS</span>
+        </div>
+        <div class="theme-highlight">AI 분석 레이어가 경쟁 차별화의 핵심. 단순 영상 판매에서 인사이트 구독으로 전환 시 마진 구조 개선. 2027~2028 흑자 전환 가시성 증가.</div>
+      </div>
+
+      <!-- Iridium -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Iridium — LEO 모바일 독점</div>
+        <h3>Iridium 재무·경쟁 해자</h3>
+        <div class="fw-row"><span class="fw-label">FY2025 매출</span><span class="fw-val" style="color:var(--bull)">$872M</span></div>
+        <div class="fw-row"><span class="fw-label">운용 위성</span><span class="fw-val">66기 LEO</span></div>
+        <div class="fw-row"><span class="fw-label">커버리지</span><span class="fw-val">전 지구 100%</span></div>
+        <div class="fw-row"><span class="fw-label">FCF 마진</span><span class="fw-val" style="color:var(--bull)">30%+</span></div>
+        <div class="fw-row"><span class="fw-label">배당 지급</span><span class="fw-val" style="color:var(--bull)">연 $0.56</span></div>
+        <div class="fw-row"><span class="fw-label">P/S</span><span class="fw-val" style="color:var(--ink-2)">5.3x</span></div>
+        <div class="fw-row"><span class="fw-label">NEXT 세대</span><span class="fw-val" style="color:var(--ink-3)">2030년대 교체</span></div>
+        <div class="fw-row"><span class="fw-label">주요 시장</span><span class="fw-val" style="font-size:.7rem">해운·항공·군</span></div>
+        <div class="theme-highlight">주파수 라이선스(L-Band)는 규제로 보호된 독점 자산 — 신규 진입자 복제 불가. 해운·항공·군 계약은 장기 갱신 구조. Starlink 경쟁 우려가 있으나 저지연·고신뢰 틈새에서 방어력 확인.</div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">Data + Comms Insight</div>
+      <p><b>Planet Labs와 Iridium은 '우주 다운스트림 경제'의 두 가지 성공 모델을 보여준다.</b> Planet은 고성장+아직 적자 구조(P/S 37.7x), Iridium은 안정 FCF+배당 구조(P/S 5.3x). 성장 투자자에게는 Planet, 인컴 투자자에게는 Iridium이 적합하다. 두 회사 모두 발사 비용 하락의 수혜를 위성 데이터/서비스로 전환하는 데 성공한 사례.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 FRONTIER -->
+<section class="blk" id="frontier">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;프런티어 — AST SpaceMobile · L3Harris · Redwire</div>
+      <h2 class="sec-title">D2D 혁명 · 방산 통합 · 달 인프라</h2>
+      <p class="sec-lead">AST SpaceMobile은 스마트폰 직접 연결(D2D)로 통신 시장을 뒤흔들고 있다. L3Harris는 방산 통합으로 우주 시스템 1위 방산 기업으로 자리잡았다. Redwire는 달 인프라와 우주 제조로 뉴스페이스의 새 프런티어를 개척한다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- AST SpaceMobile -->
+      <div class="fw-card reveal">
+        <div class="fw-num">AST SpaceMobile — D2D 혁명</div>
+        <h3>AST SpaceMobile 재무·전략</h3>
+        <div class="fw-row"><span class="fw-label">MNO 파트너 수</span><span class="fw-val" style="color:var(--bull)">50개사+</span></div>
+        <div class="fw-row"><span class="fw-label">현금 보유</span><span class="fw-val" style="color:var(--bull)">$3.5B</span></div>
+        <div class="fw-row"><span class="fw-label">EV/Revenue</span><span class="fw-val" style="color:var(--bear)">138x</span></div>
+        <div class="fw-row"><span class="fw-label">BlueBird 위성 수</span><span class="fw-val">60+기</span></div>
+        <div class="fw-row"><span class="fw-label">T-Mobile 파트너십</span><span class="fw-val" style="color:var(--bull)">미국 D2D</span></div>
+        <div class="fw-row"><span class="fw-label">AT&T 파트너십</span><span class="fw-val" style="color:var(--bull)">확장 중</span></div>
+        <div class="fw-row"><span class="fw-label">커버 가능 인구</span><span class="fw-val" style="font-size:.7rem">62억 명</span></div>
+        <div class="fw-row"><span class="fw-label">상업 서비스</span><span class="fw-val" style="color:var(--accent)">2026 본격화</span></div>
+        <div class="theme-highlight">D2D TAM $250B+. 스마트폰 기기 교체 없이 기존 핸드셋에서 위성 통신 제공 — 진입 장벽이 가장 낮다. 그러나 EV/Rev 138x는 성공 시나리오가 거의 전부 반영된 가격.</div>
+      </div>
+
+      <!-- L3Harris -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">L3Harris — 방산 우주 시스템 1위</div>
+        <h3>L3Harris 재무·경쟁력</h3>
+        <div class="fw-row"><span class="fw-label">FY2025 매출</span><span class="fw-val" style="color:var(--bull)">$219억</span></div>
+        <div class="fw-row"><span class="fw-label">P/S</span><span class="fw-val" style="color:var(--bull)">3.0x</span></div>
+        <div class="fw-row"><span class="fw-label">영업이익률 (OPM)</span><span class="fw-val" style="color:var(--bull)">15.9%</span></div>
+        <div class="fw-row"><span class="fw-label">Aerojet 통합</span><span class="fw-val" style="color:var(--bull)">완료</span></div>
+        <div class="fw-row"><span class="fw-label">우주시스템 사업부</span><span class="fw-val">$6B+ 매출</span></div>
+        <div class="fw-row"><span class="fw-label">주요 계약</span><span class="fw-val" style="font-size:.7rem">NRO·NGA·DoD</span></div>
+        <div class="fw-row"><span class="fw-label">배당 수익률</span><span class="fw-val" style="color:var(--bull)">1.8%</span></div>
+        <div class="fw-row"><span class="fw-label">자사주 매입</span><span class="fw-val" style="color:var(--bull)">$3B+ 집행</span></div>
+        <div class="theme-highlight">Aerojet 통합으로 엔진+위성+센서+통신 완전 수직 통합 달성. 방산 우주 분야 1위 사업자. P/S 3.0x는 방산 프레임 할인 — 우주 순수 플레이 대비 50~90% 저평가.</div>
+      </div>
+
+      <!-- Redwire -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Redwire — 달 인프라 · 우주 제조</div>
+        <h3>Redwire 재무·Moon 전략</h3>
+        <div class="fw-row"><span class="fw-label">FY2025 매출</span><span class="fw-val">$335M</span></div>
+        <div class="fw-row"><span class="fw-label">P/S</span><span class="fw-val" style="color:var(--ink-2)">8.5x</span></div>
+        <div class="fw-row"><span class="fw-label">Mason 달 착륙선</span><span class="fw-val" style="color:var(--bull)">NASA 계약</span></div>
+        <div class="fw-row"><span class="fw-label">ISS 실험 모듈</span><span class="fw-val" style="color:var(--bull)">다수 운용</span></div>
+        <div class="fw-row"><span class="fw-label">3D 프린팅 우주</span><span class="fw-val" style="color:var(--accent)">선두</span></div>
+        <div class="fw-row"><span class="fw-label">태양전지 어레이</span><span class="fw-val">Roll-Out Solar</span></div>
+        <div class="fw-row"><span class="fw-label">Artemis 수혜</span><span class="fw-val" style="color:var(--bull)">직접 수혜</span></div>
+        <div class="fw-row"><span class="fw-label">바이오파운드리</span><span class="fw-val" style="color:var(--accent)">우주 의약품</span></div>
+        <div class="theme-highlight">달 경제 $100B+(2040E) 성장의 인프라 수혜. NASA Artemis·Gateway·상업 달 착륙 프로그램 모두 Redwire 부품 탑재. 소규모(P/S 8.5x)이나 달 경제 열리면 배수 성장 가능.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Thesis — 프런티어 3사</div>
+      <p>"D2D·달 경제·방산 통합 — 세 가지 다른 리스크/리워드 프로파일."
+      <span class="u">AST SpaceMobile은 EV/Rev 138x의 All-or-Nothing 베팅. 성공 시 3-5x, 실패 시 -70%+. L3Harris는 방산 안정+우주 옵션이 무료로 붙은 P/S 3.0x의 가치주. Redwire는 달 경제 도래 시 가장 큰 구조적 수혜자이나, 2030년대까지 인내가 필요하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 RISKS -->
+<section class="blk" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;리스크 — 7사 공통·개별 리스크</div>
+      <h2 class="sec-title">글로벌 7사에 내재된 여섯 가지 리스크</h2>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 체크리스트</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt">
+            <b>SpaceX Starship 상업화 지연</b>
+            <span>IFT 성공률 7/12회, FAA 인증 미완료. 상업 발사 2026H1 목표 지연 시 IPO 밸류에이션 $2.18T 유지 어렵. SpaceX 주가 하락은 RKLB·PL 동반 약세 유발. 모니터링: FAA 라이선스, IFT 비행 결과.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt">
+            <b>AST SpaceMobile 기술·재무 리스크</b>
+            <span>BlueBird 대형 위성 안테나 기술 미검증(상업 스케일). EV/Rev 138x는 매출 제로 수준에서 책정된 밸류에이션. $3.5B 현금이 소진되기 전 상업화 필수. 모니터링: 실사용자 연결 품질, 분기 매출.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt">
+            <b>Planet Labs 흑자 전환 지연</b>
+            <span>+42% 성장에도 여전히 영업적자. ARR 성장 둔화 시 P/S 37.7x 멀티플 압축. 경쟁사(BlackSky·Satellogic·Umbra) 가격 경쟁 심화. 모니터링: 분기 매출 성장률, 영업이익 방향성.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R4</div>
+          <div class="rt">
+            <b>방산 예산 삭감 리스크</b>
+            <span>L3Harris·Redwire 매출의 60-70%가 US Gov/DoD. 미국 정부 예산 협상 지연, DOGE 국방 지출 삭감 검토 시 수주 지연. 모니터링: 미 국방예산안, 상원 세출위 동향.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R5</div>
+          <div class="rt">
+            <b>Rocket Lab Neutron 경쟁 지연</b>
+            <span>Neutron 2026Q4 목표, 이미 1-2회 지연 전력. SpaceX·ULA·Blue Origin 대형 발사체 경쟁 심화. Neutron 지연 시 중형 발사체 계약이 경쟁사로 이탈. 모니터링: Rocket Lab 분기 IR, Neutron 개발 마일스톤.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R6</div>
+          <div class="rt">
+            <b>지정학·수출 통제 리스크</b>
+            <span>ITAR(국제무기거래규정)·EAR 강화로 위성 기술 수출 제한. 중국·러시아 분쟁 고조 시 위성 통신 군사화 논란. Planet Labs 중국 시장 접근 제한 이미 작용 중. 모니터링: 미 국무부 ITAR 업데이트.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal" style="margin-top:32px">
+      <div class="vt-tag">Final Thesis</div>
+      <p><b>7사를 하나의 포트폴리오로 볼 때, 리스크/리워드 비대칭이 가장 큰 기업은 L3Harris다.</b> P/S 3.0x·OPM 15.9%·Aerojet 통합 완료·방산 안정 현금흐름에 우주 시스템 성장 옵션이 무료로 붙어있다. SpaceX·ASTS는 높은 기대치가 이미 반영된 가격. Planet Labs는 흑자 전환이 가시화되는 2027~2028년이 진입 시점이 될 수 있다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="space_investment_map.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 2 — 투자 지도</div>
+      </div>
+    </a>
+    <a href="space_company_korea.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 4 — 한국 기업 분석</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">우주 경제 시리즈 — Part 3: 글로벌 7사 분석</div>
+      <div class="src-list">
+        SpaceX S-1 · Rocket Lab IR Q1 2026 · Planet Labs IR Q1 FY2027<br>
+        Iridium IR · AST SpaceMobile IR · L3Harris IR · Redwire IR<br>
+        Morgan Stanley · Goldman Sachs · Quilty Space · Orbital Radar<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

@@ -33,10 +33,12 @@ stock-research/
 ├── ai-sw/                  ← AI 소프트웨어 (HTML 8개)
 ├── robot/                  ← 로봇/휴머노이드 (HTML 8개)
 ├── glp1/                   ← GLP-1 비만치료 (HTML 6개)
+├── ai-bio/                 ← AI 바이오/헬스케어 (HTML 6개)
+├── space/                  ← 우주 경제 (HTML 6개)
 └── README.md
 ```
 
-## 완성된 리서치 시리즈 (9개, 리서치 MD 34개+, HTML 53편+)
+## 완성된 리서치 시리즈 (11개, 리서치 MD 34개+, HTML 65편+)
 
 ### 1. AI 인프라 시리즈 (8 MD + 3 HTML)
 - `data/research_ai_power_*.md` — 글로벌/한국 기업, 크로스 밸류에이션, 테마 (SMR, 가스터빈, 송배전, 냉각)
@@ -49,11 +51,15 @@ stock-research/
 ### 3. K-방산 시리즈 (16 HTML)
 - `defense/*.html` — 산업 지도, 투자 지도, 기업 6사, 테마 8편
 
-### 4. AI 바이오 시리즈 (4 MD)
+### 4. AI 바이오 시리즈 (4 MD + 6 HTML)
 - `data/research_ai_bio_*.md` — 글로벌 7사 + 한국 5사 + 밸류에이션 + 테마
+- `ai-bio/*.html` — Overview, Investment Map, Company Global, Company KR, Theme Drug Discovery, Theme Precision/Digital
+- 액센트 컬러: #10b981 (emerald)
 
-### 5. 우주 경제 시리즈 (4 MD)
+### 5. 우주 경제 시리즈 (4 MD + 6 HTML)
 - `data/research_space_*.md` — 글로벌 7사+ + 한국 5사 + 밸류에이션 + 테마
+- `space/*.html` — Overview, Investment Map, Company Global, Company KR, Theme Launch/Constellation, Theme Downstream
+- 액센트 컬러: #a78bfa (violet)
 
 ### 6. AI 소프트웨어 레이어 시리즈 (4 MD + 8 HTML)
 - `data/research_ai_sw_*.md` — 글로벌 7사 + 한국 5사 + 밸류에이션 + 테마
@@ -145,8 +151,9 @@ GitHub Pages가 자동 배포됨.
 | AI SW | `ai-sw` | 스카이블루 (#38bdf8) |
 | 로봇 | `robot` | 오렌지 (#f97316) |
 | GLP-1 | `glp1` | 핑크 (#ec4899) |
+| AI 바이오 | `ai-bio` | 에메랄드 (#10b981) |
+| 우주 경제 | `space` | 바이올렛 (#a78bfa) |
 | 반도체 | `semiconductor` | 보라 (#7c3aed) — 예비 |
-| 바이오 | `biotech` | 레드 (#dc2626) — 예비 |
 | 에너지 | `energy` | 앰버 (#a16207) — 예비 |
 
 ## 페이지 기능

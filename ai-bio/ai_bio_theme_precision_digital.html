@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="정밀의료 $110B→$213B, 액체생검·NGS·CRISPR·AI 융합, DTx·Ambient AI SaaS, 한국 MFDS 급여 전환">
+<meta name="keywords" content="정밀의료,유전체,CRISPR,액체생검,디지털치료제,DTx,Ambient AI,루닛,뷰노">
+<meta property="og:title" content="정밀의료에서 디지털 치료제까지 — AI 바이오 시리즈 Theme B">
+<meta property="og:description" content="정밀의료 $110B→$213B, 액체생검·NGS·CRISPR·AI 융합, DTx·Ambient AI SaaS, 한국 MFDS 급여 전환">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_theme_precision_digital.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="정밀의료에서 디지털 치료제까지 — AI 바이오 시리즈 Theme B">
+<meta name="twitter:description" content="정밀의료 $110B→$213B, 액체생검·NGS·CRISPR·AI 융합, DTx·Ambient AI SaaS, 한국 MFDS 급여 전환">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_theme_precision_digital.html">
+<title>정밀의료에서 디지털 치료제까지 — AI 바이오 시리즈 Theme B</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#6366f1;
+    --accent-2:#818cf8;
+    --glow:#a5b4fc;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(165,180,252,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* FRAMEWORK GRID */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(99,102,241,.1);color:var(--accent);border:1px solid rgba(99,102,241,.25);margin:2px}
+
+  /* MARKET SIZE GRID */
+  .mkt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  .mkt-card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .mkt-card .mkt-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .mkt-card .mkt-from{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--ink-2)}
+  .mkt-card .mkt-arrow{font-family:var(--mono);color:var(--accent);margin:0 8px}
+  .mkt-card .mkt-to{font-family:var(--mono);font-size:1.4rem;font-weight:800;color:var(--ink)}
+  .mkt-card .mkt-cagr{font-family:var(--mono);font-size:.72rem;color:var(--bull);margin-top:8px}
+  .mkt-card .mkt-year{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);margin-top:4px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(99,102,241,.05),rgba(129,140,248,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* KOREA HIGHLIGHT BOX */
+  .kr-box{margin-top:28px;background:linear-gradient(120deg,rgba(99,102,241,.08),rgba(165,180,252,.04));border:1px solid rgba(99,102,241,.3);border-radius:16px;padding:28px 32px}
+  .kr-box .kr-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .kr-box h4{font-size:1.05rem;font-weight:800;margin-bottom:14px}
+  .kr-box .kr-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .kr-box .kr-body b{color:var(--ink)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .mkt-grid{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "정밀의료에서 디지털 치료제까지 — AI 바이오 시리즈 Theme B",
+  "description": "정밀의료 $110B→$213B, 액체생검·NGS·CRISPR·AI 융합, DTx·Ambient AI SaaS, 한국 MFDS 급여 전환",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_theme_precision_digital.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI 바이오 시리즈 Theme B</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#precision">01 / 정밀의료</a>
+      <a href="#dtx">02 / 디지털 치료제</a>
+      <a href="#saas">03 / 의료 AI SaaS</a>
+      <a href="#risks">04 / 리스크</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 바이오 시리즈 · Theme B · 2026.06</span>
+    <h1 class="hero-title">정밀의료에서<br><span class="hl">디지털 치료제까지</span></h1>
+    <p class="hero-sub">NGS·액체생검·CRISPR·AI가 융합된 $213B 정밀의료 시장, CAGR 28%의 DTx, Ambient AI SaaS — 의료의 소프트웨어화가 만들어내는 세 가지 거대한 투자 기회를 분석한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$213<span class="u">B</span></div>
+        <div class="lab">2030년 정밀의료 시장 · CAGR 14%. 2024년 $110B에서 2030년 $213B. NGS·AI·다중오믹스 융합 드라이버.</div>
+        <div class="src">SRC: Precedence Research</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$43<span class="u">B</span></div>
+        <div class="lab">2030년 디지털 치료제 시장 · CAGR 28%. 2024년 $10.2B에서 $43B. 독일 DiGA 성공모델이 글로벌 확산 촉매.</div>
+        <div class="src">SRC: Grand View Research</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">단 2<span class="u">개</span></div>
+        <div class="lab">FDA Category 1 CPT 코드 AI 영상진단 보험수가. 수천 개 AI 의료기기 중 수가 확보 극소수 — 병목 핵심.</div>
+        <div class="src">SRC: Radiology Business</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>의료의 소프트웨어화를 분석하기</div>
+  </div>
+</header>
+
+<!-- 01 정밀의료 -->
+<section class="blk" id="precision">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01 정밀의료 — NGS·AI·CRISPR·액체생검의 융합</span></div>
+      <h2 class="sec-title">$110B → $213B — 유전체-AI 융합이 만드는 의료 혁명</h2>
+      <p class="sec-lead">차세대 염기서열 분석(NGS), 액체생검, CRISPR 유전자 편집, AI 다중오믹스 분석이 하나의 정밀의료 생태계로 융합되고 있다. Casgevy 첫 유전자치료제 승인과 Guardant Shield 암조기진단이 시장을 열고 있다.</p>
+    </div>
+
+    <!-- 시장 규모 카드 -->
+    <div class="mkt-grid reveal">
+      <div class="mkt-card">
+        <div class="mkt-label">정밀의료 전체</div>
+        <div><span class="mkt-from">$110B</span><span class="mkt-arrow">→</span><span class="mkt-to">$213B</span></div>
+        <div class="mkt-cagr">CAGR 14%</div>
+        <div class="mkt-year">2024 → 2030 · Precedence Research</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-label">NGS 시장</div>
+        <div><span class="mkt-from">$16B</span><span class="mkt-arrow">→</span><span class="mkt-to">$38B</span></div>
+        <div class="mkt-cagr">CAGR 15.4%</div>
+        <div class="mkt-year">2024 → 2030 · MarketsandMarkets</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-label">액체생검 시장</div>
+        <div><span class="mkt-from">$5.9B</span><span class="mkt-arrow">→</span><span class="mkt-to">$22B</span></div>
+        <div class="mkt-cagr">CAGR 24.7%</div>
+        <div class="mkt-year">2024 → 2030 · Grand View Research</div>
+      </div>
+    </div>
+
+    <div class="fw-grid" style="margin-top:32px">
+      <!-- Card 1: NGS·AI 융합 -->
+      <div class="fw-card reveal">
+        <div class="fw-num">NGS + AI 융합</div>
+        <h3>Illumina-Tempus · NGS AI 생태계</h3>
+        <div class="theme-market">Illumina $2.7B 시총 → Tempus AI NASDAQ 상장 $200M+ ARR</div>
+        <div class="fw-row"><span class="fw-label">Illumina 지배력</span><span class="fw-val" style="color:var(--bull)">NGS M/S ~80%</span></div>
+        <div class="fw-row"><span class="fw-label">NovaSeq X 출력</span><span class="fw-val">16T 염기/run</span></div>
+        <div class="fw-row"><span class="fw-label">WGS 비용 추세</span><span class="fw-val" style="color:var(--bull)">$200 이하 목표</span></div>
+        <div class="fw-row"><span class="fw-label">Tempus AI ARR</span><span class="fw-val" style="color:var(--bull)">$200M+</span></div>
+        <div class="fw-row"><span class="fw-label">Tempus 데이터</span><span class="fw-val" style="font-size:.7rem">종양학 다중오믹스</span></div>
+        <div class="fw-row"><span class="fw-label">AI 임상 활용</span><span class="fw-val" style="font-size:.7rem">약물 반응 예측</span></div>
+        <div class="theme-highlight">Illumina WGS $200 목표 달성 시 인구 규모 유전체 스크리닝이 현실화. Tempus는 종양학 데이터레이크 + AI — 빅파마의 임상시험 최적화 파트너로 빠르게 성장.</div>
+        <div class="theme-players">
+          <span>Illumina</span><span>Tempus AI</span><span>NGS M/S80%</span><span>다중오믹스</span>
+        </div>
+      </div>
+
+      <!-- Card 2: CRISPR -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">CRISPR — Casgevy 시대 개막</div>
+        <h3>CRISPR 치료제 — 첫 승인 이후</h3>
+        <div class="theme-market">Casgevy (겸상적혈구·베타지중해빈혈) FDA·EMA 승인</div>
+        <div class="fw-row"><span class="fw-label">Casgevy 가격</span><span class="fw-val" style="color:var(--bear)">$2.2M/치료</span></div>
+        <div class="fw-row"><span class="fw-label">치료 효과</span><span class="fw-val" style="color:var(--bull)">임상적 완치율 94%</span></div>
+        <div class="fw-row"><span class="fw-label">개발사</span><span class="fw-val" style="font-size:.7rem">Vertex+CRISPR Tx</span></div>
+        <div class="fw-row"><span class="fw-label">차세대 in vivo</span><span class="fw-val" style="font-size:.7rem">Intellia·Prime Bio</span></div>
+        <div class="fw-row"><span class="fw-label">AI+CRISPR 융합</span><span class="fw-val" style="color:var(--accent)">가이드RNA 설계 AI</span></div>
+        <div class="fw-row"><span class="fw-label">Base Editing AI</span><span class="fw-val" style="font-size:.7rem">Prime Medicine</span></div>
+        <div class="theme-highlight">Casgevy는 시작점 — in vivo CRISPR(신체 내 직접 편집)이 2027-2030년 등장하면 적용 가능 질환이 수천 개로 확대. AI 가이드RNA 설계가 편집 정확도와 안전성의 핵심 변수.</div>
+        <div class="theme-players">
+          <span>Casgevy</span><span>in vivo CRISPR</span><span>Intellia</span><span>Base Editing</span>
+        </div>
+      </div>
+
+      <!-- Card 3: 액체생검 -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">액체생검 — 조기진단 AI</div>
+        <h3>Guardant Shield · 다중암조기검진</h3>
+        <div class="theme-market">Guardant Shield · 대장암 CMS 급여 $1,495</div>
+        <div class="fw-row"><span class="fw-label">Guardant Shield 가격</span><span class="fw-val" style="color:var(--bull)">$1,495</span></div>
+        <div class="fw-row"><span class="fw-label">CMS 급여 적용</span><span class="fw-val" style="color:var(--bull)">2024년 취득</span></div>
+        <div class="fw-row"><span class="fw-label">대장암 민감도</span><span class="fw-val" style="color:var(--bull)">83%</span></div>
+        <div class="fw-row"><span class="fw-label">다중암검진(MCED)</span><span class="fw-val" style="font-size:.7rem">Grail Galleri</span></div>
+        <div class="fw-row"><span class="fw-label">Galleri 암 종류</span><span class="fw-val">50개+</span></div>
+        <div class="fw-row"><span class="fw-label">AI 역할</span><span class="fw-val" style="font-size:.7rem">ctDNA 패턴 분류</span></div>
+        <div class="theme-highlight">액체생검은 암조기진단의 게임체인저 — 조직생검 없이 혈액으로 암 스크리닝. AI ctDNA 분류 알고리즘이 특이도·민감도의 핵심. CMS 급여 확대가 시장 확산의 병목.</div>
+        <div class="theme-players">
+          <span>Guardant Health</span><span>Grail</span><span>ctDNA</span><span>MCED</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Thesis — 정밀의료</div>
+      <p>"정밀의료는 '암호화된 유전체 정보를 AI가 해독하는 시대'로 진입했다."
+      <span class="u">WGS $200 달성, CRISPR 첫 승인, 액체생검 CMS 급여 — 세 가지 이정표가 2024-2026년에 동시 달성되었다. 다중오믹스 AI 분석이 환자 개개인의 최적 치료를 예측하는 '개인 맞춤 의학'이 실현 단계에 진입. 투자 핵심은 NGS 플랫폼 주도권(Illumina)과 데이터레이크 AI(Tempus·Foundation Medicine).</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 디지털 치료제 -->
+<section class="blk" id="dtx">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02 디지털 치료제 (DTx) — $10.2B → $43B, CAGR 28%</span></div>
+      <h2 class="sec-title">독일 DiGA 성공 모델이 한국·미국으로 확산된다</h2>
+      <p class="sec-lead">앱으로 처방받는 치료제 — 디지털 치료제(DTx) 시장이 연 28%로 성장 중이다. FDA RTM 코드, 독일 DiGA, 한국 에임메드 솜즈까지 글로벌 수가 체계가 정비되고 있다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Card 1: DTx 시장 개요 -->
+      <div class="fw-card reveal">
+        <div class="fw-num">DTx 시장 구조</div>
+        <h3>디지털 치료제 시장 구조</h3>
+        <div class="theme-market">$10.2B(2024) → $43B(2030) · CAGR 28%</div>
+        <div class="fw-row"><span class="fw-label">2024 시장 규모</span><span class="fw-val">$10.2B</span></div>
+        <div class="fw-row"><span class="fw-label">2030 시장 규모</span><span class="fw-val" style="color:var(--bull)">$43B</span></div>
+        <div class="fw-row"><span class="fw-label">CAGR</span><span class="fw-val" style="color:var(--bull)">28%</span></div>
+        <div class="fw-row"><span class="fw-label">최대 질환군</span><span class="fw-val" style="font-size:.72rem">정신건강·당뇨·호흡기</span></div>
+        <div class="fw-row"><span class="fw-label">FDA 허가 DTx 수</span><span class="fw-val">80개+</span></div>
+        <div class="fw-row"><span class="fw-label">독일 DiGA 등재 수</span><span class="fw-val" style="color:var(--bull)">54개</span></div>
+        <div class="fw-row"><span class="fw-label">주요 수가 국가</span><span class="fw-val" style="font-size:.7rem">독일·미국·일본·한국</span></div>
+        <div class="theme-highlight">DTx의 핵심 성공 조건은 '허가 + 수가 + 처방 인프라' 3박자. 독일은 DiGA로 3박자를 가장 빠르게 완성 — 글로벌 벤치마크 모델.</div>
+      </div>
+
+      <!-- Card 2: 글로벌 수가 모델 -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">글로벌 수가 모델 비교</div>
+        <h3>DTx 급여 체계 — 독일 vs 미국 vs 한국</h3>
+        <div class="theme-body">
+          <b style="color:var(--ink)">독일 DiGA:</b> 연 €400/환자 보험 급여. 허가 후 즉시 12개월 임시 수가, 이후 효과 검증 후 확정. 54개 등재, 모델 국가<br><br>
+          <b style="color:var(--ink)">미국 FDA RTM:</b> Remote Therapeutic Monitoring CPT 코드 98975-98977. 정신건강·호흡기·근골격계 DTx 대상. 월 $50-150 수가<br><br>
+          <b style="color:var(--ink)">일본 PMDA:</b> 고혈압·니코틴 중독 DTx 2021년 급여. 연 수가 $300-500<br><br>
+          <b style="color:var(--ink)">한국 MFDS:</b> 에임메드 솜즈 2023년 허가. 건강보험 급여 신청 중. 수가 확보 2026년 예상
+        </div>
+        <div class="theme-highlight">독일 DiGA의 성공 비결은 '먼저 허가-급여, 나중에 효과 검증' 모델. 한국은 반대 접근(먼저 효과 검증, 나중에 급여) → 시간 지연. 한국 제도 개혁이 에임메드 투자의 핵심 변수.</div>
+      </div>
+
+      <!-- Card 3: 선두 DTx 기업 -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">선두 DTx 기업 포트폴리오</div>
+        <h3>글로벌 DTx 선두 기업</h3>
+        <div class="theme-body">
+          <b style="color:var(--ink)">Pear Therapeutics (파산→참고):</b> reSET(약물남용)·reSET-O(오피오이드) 첫 FDA DTx. 수가 확보 실패로 2023년 파산 — 수가의 중요성 역설적 증명<br><br>
+          <b style="color:var(--ink)">Mahana Therapeutics:</b> Rejoyn 우울증 DTx FDA De Novo. RTM 수가 적용<br><br>
+          <b style="color:var(--ink)">Freespira:</b> PTSD·공황장애 DTx 미군 급여. PTSD 5주 치료 프로그램<br><br>
+          <b style="color:var(--ink)">EndeavorRx (Akili):</b> ADHD 소아 DTx FDA 허가. 게임 기반 치료
+        </div>
+        <div class="theme-highlight">Pear Therapeutics 파산 사례가 DTx 투자의 핵심 교훈 — 허가만으로는 충분하지 않다. 수가 확보, 처방 의사 교육, 환자 순응도가 동시에 해결되어야 사업화 가능.</div>
+      </div>
+    </div>
+
+    <!-- 한국 DTx 특별 박스 -->
+    <div class="kr-box reveal">
+      <div class="kr-tag">한국 DTx 현황 — MFDS · 건강보험</div>
+      <h4>에임메드 솜즈 이후 — 한국 DTx 생태계 전망</h4>
+      <div class="kr-body">
+        <b>2023년:</b> 에임메드 솜즈 식약처 허가 → 한국 1호 불면증 DTx. <b>2024년:</b> 루닛·뷰노 등 추가 AI 의료기기 허가 확대. 혁신의료기기 지정 시 80일 내 시장 진입 가능. <b>2025-2026년:</b> 건강보험 급여 수가 협상 진행 중. 독일 DiGA처럼 '임시 급여' 제도 도입 논의. <b>핵심 리스크:</b> 한국 건강보험 수가 협상은 급여화 결정까지 평균 2-3년 소요. 에임메드·뷰노·루닛 모두 수가 확보 전까지 B2B 병원 계약 모델로 수익 창출 중. <b>전망:</b> 2026년 혁신의료기기 급여 트랙 신설 시 DTx 수가 경로 단축 가능.
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">DTx 투자 관점</div>
+      <p><b>DTx 투자는 "허가 → 수가 → 처방 → 수익"의 4단계 지연 구조를 이해해야 한다.</b> 에임메드는 현재 1단계(허가) 완료, 2단계(수가) 진입 중. 수가 확보 후 처방 네트워크 구축까지 2-3년 추가 소요. 장기 투자 관점에서 독일 DiGA 모델이 한국에 이식되는 '제도 개혁 모멘텀'이 핵심 촉매.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 의료 AI SaaS -->
+<section class="blk" id="saas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03 의료 AI SaaS — Ambient AI · 영상진단 · 한국 MFDS</span></div>
+      <h2 class="sec-title">Nuance DAX $600-800/월 · 루닛 SCOPE · Aidoc 31개 FDA</h2>
+      <p class="sec-lead">의사의 문서 작업을 AI가 대체하는 Ambient AI SaaS, 영상진단 AI의 병원 침투, 한국 MFDS 혁신의료기기 80일 즉시 진입 — 의료 AI가 실제 수익을 창출하는 세 가지 모델을 분석한다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Card 1: Ambient AI -->
+      <div class="fw-card reveal">
+        <div class="fw-num">Ambient AI SaaS — 의사 문서 자동화</div>
+        <h3>Nuance DAX · Abridge — Ambient AI</h3>
+        <div class="theme-market">의료 AI SaaS $37.2B(2024) → $91B(2030) · CAGR 16%</div>
+        <div class="fw-row"><span class="fw-label">Nuance DAX Copilot</span><span class="fw-val" style="color:var(--bull)">$600-800/월</span></div>
+        <div class="fw-row"><span class="fw-label">DAX 도입 병원</span><span class="fw-val" style="color:var(--bull)">700개+</span></div>
+        <div class="fw-row"><span class="fw-label">문서 시간 절감</span><span class="fw-val" style="color:var(--bull)">50-70%</span></div>
+        <div class="fw-row"><span class="fw-label">Abridge KLAS 순위</span><span class="fw-val" style="color:var(--bull)">#1 (2025)</span></div>
+        <div class="fw-row"><span class="fw-label">Suki AI</span><span class="fw-val" style="font-size:.72rem">EHR 통합 음성 AI</span></div>
+        <div class="fw-row"><span class="fw-label">시장 CAGR</span><span class="fw-val" style="color:var(--bull)">16%</span></div>
+        <div class="theme-highlight">의사 번아웃의 주 원인이 '차트 작업 과부하(진료 시간의 35%)'. DAX가 이를 해결하면 생산성 30-40% 향상 → 의사당 ROI $100K+/년 → 병원 도입 가속.</div>
+        <div class="theme-players">
+          <span>Nuance DAX</span><span>Abridge</span><span>Suki AI</span><span>Ambient AI</span>
+        </div>
+      </div>
+
+      <!-- Card 2: AI 영상진단 -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">AI 영상진단 — Aidoc · Viz.ai · 루닛</div>
+        <h3>AI 영상진단 — 31개 FDA 허가, 수가 2개</h3>
+        <div class="theme-market">AI 영상진단 $1.3B(2024) → $4.8B(2030) · CAGR 24%</div>
+        <div class="fw-row"><span class="fw-label">Aidoc FDA 510(k) 수</span><span class="fw-val" style="color:var(--bull)">31개</span></div>
+        <div class="fw-row"><span class="fw-label">Aidoc 도입 병원</span><span class="fw-val">1,000개+</span></div>
+        <div class="fw-row"><span class="fw-label">Viz.ai 뇌졸중 효과</span><span class="fw-val" style="color:var(--bull)">66분 단축</span></div>
+        <div class="fw-row"><span class="fw-label">Viz.ai FDA 허가</span><span class="fw-val" style="color:var(--bull)">De Novo 취득</span></div>
+        <div class="fw-row"><span class="fw-label">루닛 SCOPE 성장</span><span class="fw-val" style="color:var(--bull)">+159% YoY</span></div>
+        <div class="fw-row"><span class="fw-label">FDA Cat.1 CPT 코드</span><span class="fw-val" style="color:var(--bear)">단 2개</span></div>
+        <div class="theme-highlight">AI 영상진단의 딜레마: FDA 허가 수천 개, 보험 수가 단 2개. 수가 병목이 수익화의 구조적 장벽. 병원 SaaS 직계약(Aidoc 모델) 또는 FDA De Novo 취득 후 APC 코드가 현실적 경로.</div>
+        <div class="theme-players">
+          <span>Aidoc31개FDA</span><span>Viz.ai</span><span>루닛SCOPE</span><span>CPT수가2개</span>
+        </div>
+      </div>
+
+      <!-- Card 3: 한국 MFDS -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">한국 MFDS 혁신의료기기 트랙</div>
+        <h3>한국 식약처 — 80일 즉시 시장 진입</h3>
+        <div class="theme-market">혁신의료기기 지정 → 80일 신속심사 → 즉시 시장 진입</div>
+        <div class="fw-row"><span class="fw-label">혁신의료기기 심사 기간</span><span class="fw-val" style="color:var(--bull)">80일 (일반 320일)</span></div>
+        <div class="fw-row"><span class="fw-label">AI 의료기기 허가 수</span><span class="fw-val" style="color:var(--bull)">200개+ (2024)</span></div>
+        <div class="fw-row"><span class="fw-label">루닛 혁신의료기기</span><span class="fw-val" style="color:var(--bull)">다수 지정</span></div>
+        <div class="fw-row"><span class="fw-label">뷰노 혁신의료기기</span><span class="fw-val" style="color:var(--bull)">DeepCARS 등</span></div>
+        <div class="fw-row"><span class="fw-label">병목 구간</span><span class="fw-val" style="color:var(--bear)">허가 후 급여화</span></div>
+        <div class="fw-row"><span class="fw-label">급여 전환 소요</span><span class="fw-val" style="color:var(--bear)">평균 2-3년</span></div>
+        <div class="theme-highlight">한국은 AI 의료기기 허가 속도 세계 최상위권. 그러나 급여 전환이 2-3년 지연 → 허가 후 수익화까지 간격. 2026년 'AI 의료기기 신속 급여 트랙' 신설이 논의 중 — 확정 시 루닛·뷰노 수익화 가속.</annot>
+        <div class="theme-players">
+          <span>혁신의료기기80일</span><span>급여전환2-3년</span><span>루닛</span><span>뷰노</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Thesis — 의료 AI SaaS</div>
+      <p>"의료 AI의 수익화 전쟁은 지금 막 시작됐다 — 수가 확보가 진정한 해자다."
+      <span class="u">Nuance DAX $600-800/월은 의료 AI SaaS의 가격 앵커를 설정했다. AI 영상진단은 FDA 허가 1,000개 시대에도 수가는 2개뿐 — 허가보다 수가가 훨씬 어렵다. 한국의 루닛·뷰노가 FDA Category 1 CPT 코드 또는 미국 민간보험 커버리지를 확보하는 시점이 글로벌 AI 의료기기 기업으로의 전환점.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 리스크 -->
+<section class="blk" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04 리스크</span></div>
+      <h2 class="sec-title">정밀의료·DTx·AI SaaS의 네 가지 구조적 리스크</h2>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 체크리스트</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt">
+            <b>수가 미확보 — 수익화 병목</b>
+            <span>AI 의료기기·DTx 모두 허가 이후 급여 전환이 최대 병목. FDA CPT 코드 2개, 한국 신의료기술 평가 2-3년. 수가 없이는 병원 대량 도입 불가 → 매출 성장 제약. 모니터링: FDA Category 1 CPT 코드 신규 지정, 한국 HIRA 결정.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt">
+            <b>개인정보·데이터 규제 강화</b>
+            <span>유전체 데이터(HIPAA, 한국 생명윤리법), 의료 AI 훈련 데이터 출처 투명성, GDPR 적용 등 데이터 규제가 강화될수록 정밀의료·DTx AI의 훈련 데이터 확보가 어려워짐. 모니터링: 23andMe 파산 이후 유전체 데이터 규제 동향.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt">
+            <b>빅테크 경쟁 — 구글·애플·아마존</b>
+            <span>Google Health AI(Med-PaLM 2), Apple Health Records, Amazon Comprehend Medical이 의료 AI SaaS 직접 경쟁. 자본·데이터 인프라 우위로 가격 경쟁 심화 가능. 모니터링: 빅테크 의료 AI 파트너십 및 M&A 동향.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R4</div>
+          <div class="rt">
+            <b>한국 급여 전환 지연 — K-AI 의료기기 투자 리스크</b>
+            <span>루닛·뷰노·에임메드 모두 국내 급여화 전 B2B SaaS/병원계약 모델로 생존. 급여 전환 지연 시 흑자 전환 시점이 1-2년 추가 지연. 해외 FDA PMA/CMS 급여 확보가 국내 의존도를 낮추는 유일한 대안. 모니터링: 루닛 FDA PMA 심사 결과.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="ai_bio_theme_drug_discovery.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Theme A — AI 신약개발 혁명</div>
+      </div>
+    </a>
+    <a href="ai_bio_industry_map.html">
+      <div>
+        <div class="sn-label">Next → (처음으로)</div>
+        <div class="sn-title">Part 1 — AI 바이오 산업 지도</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 바이오 시리즈 — Theme B: 정밀의료·디지털 치료제</div>
+      <div class="src-list">
+        Precedence Research · Grand View Research · MarketsandMarkets<br>
+        FDA · MFDS(식약처) · Guardant Health IR · Illumina IR · Tempus AI<br>
+        Nuance/Microsoft · Aidoc · Viz.ai · Abridge · 에임메드 IR<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

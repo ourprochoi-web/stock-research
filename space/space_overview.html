@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="우주 경제 $626B→$1T(2034), 발사 비용 혁명(Starship $10/kg), 메가 컨스텔레이션(Starlink 1200만), 다운스트림 데이터 경제">
+<meta name="keywords" content="우주경제,SpaceX,Starship,Starlink,발사비용,메가컨스텔레이션,위성데이터">
+<meta property="og:title" content="우주 경제 산업 지도 — $626B에서 $1T로, 3대 구조적 기회">
+<meta property="og:description" content="우주 경제 $626B→$1T(2034), 발사 비용 혁명(Starship $10/kg), 메가 컨스텔레이션(Starlink 1200만), 다운스트림 데이터 경제">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/space/space_overview.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="우주 경제 산업 지도 — $626B에서 $1T로, 3대 구조적 기회">
+<meta name="twitter:description" content="우주 경제 $626B→$1T(2034), 발사 비용 혁명(Starship $10/kg), 메가 컨스텔레이션(Starlink 1200만), 다운스트림 데이터 경제">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/space/space_overview.html">
+<title>우주 경제 산업 지도 — $626B에서 $1T로, 3대 구조적 기회</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#a78bfa;
+    --accent-2:#c4b5fd;
+    --glow:#ddd6fe;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(167,139,250,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+  .valrow .vgrowth.low{color:var(--ink-2)}
+
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(167,139,250,.05),rgba(196,181,253,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "우주 경제 산업 지도 — $626B에서 $1T로, 3대 구조적 기회",
+  "description": "우주 경제 $626B→$1T(2034), 발사 비용 혁명(Starship $10/kg), 메가 컨스텔레이션(Starlink 1200만), 다운스트림 데이터 경제",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {"@type": "Person","name": "ourprochoi"},
+  "publisher": {"@type": "Organization","name": "ourprochoi Research Archive"},
+  "mainEntityOfPage": {"@type": "WebPage","@id": "https://ourprochoi-web.github.io/stock-research/space/space_overview.html"}
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>우주 경제 시리즈 Part 1</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#macro">01 / 매크로</a>
+      <a href="#themes">02 / 3대 테마</a>
+      <a href="#valuechain">03 / 밸류체인</a>
+      <a href="#risks">04 / 리스크</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">우주 경제 시리즈 · Part 1 · 2026.06</span>
+    <h1 class="hero-title">$626B에서<br><span class="hl">$1T 우주 경제로</span></h1>
+    <p class="hero-sub">발사 비용 혁명·메가 컨스텔레이션·다운스트림 데이터 — 세 가지 구조적 변화가 동시에 임계점을 향해 수렴한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$626<span class="u">B</span>→$1T</div>
+        <div class="lab">글로벌 우주 경제 시장 규모. 2025년 $626B에서 2034년 $1T 돌파 전망. McKinsey/WEF는 2035년 $1.8T 추정.</div>
+        <div class="src">SRC: Orbital Radar · McKinsey/WEF 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$10<span class="u">/kg</span></div>
+        <div class="lab">SpaceX Starship 장기 발사 비용 목표. Falcon 9($2,720/kg) 대비 99.6% 추가 절감. 2026년 H2 궤도 페이로드 배송 목표.</div>
+        <div class="src">SRC: SpaceX S-1 · New Space Economy 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">1,200<span class="u">만+</span></div>
+        <div class="lab">Starlink 구독자 수(2026년 6월). 155개국 서비스, 연 +33% 성장. 2026년 말 1,680만 구독자 전망(Quilty Space).</div>
+        <div class="src">SRC: Quilty Space · ValueAddVC 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>우주 경제 구조를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 MACRO -->
+<section class="blk" id="macro">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;우주 경제 매크로 — 시장 규모와 성장 구조</div>
+      <h2 class="sec-title">$626B 시장, 세 가지 구조적 변화의 수렴</h2>
+      <p class="sec-lead">우주 경제는 2025년 $626B 규모에 도달했다. 발사 비용 혁명, 메가 컨스텔레이션 경쟁, 다운스트림 데이터 경제가 동시에 임계점을 향해 수렴하며 2034년 $1T 시장을 향해 나아간다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card reveal">
+        <div class="fw-num">시장 규모</div>
+        <h3>우주 경제 성장 궤적</h3>
+        <div class="theme-market">$613B(2024) → $626B(2025) → $1T(2034E)</div>
+        <div class="theme-body">SIA 2025 보고서 기준 위성 제조 매출 $200억(+17% YoY), 궤도 위성 11,539기(2020년 대비 3.4배). 상업 위성 산업이 전체의 71% 차지. CAGR 약 8%. 2030년 시장 전망 $647~770억(Morgan Stanley·Goldman Sachs 컨센서스).</div>
+        <div class="theme-players">
+          <span>Starlink $11.4B</span>
+          <span>SIA $626B</span>
+          <span>Morgan Stanley</span>
+          <span>Goldman Sachs</span>
+        </div>
+        <div class="theme-highlight">McKinsey/WEF는 2035년 $1.8T 전망. 발사 비용 하락이 위성 경제성을 근본 개선해 신규 시장 창출 가속.</div>
+      </div>
+
+      <div class="fw-card reveal d1">
+        <div class="fw-num">성장 드라이버</div>
+        <h3>5대 구조적 성장 동력</h3>
+        <div class="theme-market">재사용 발사체 · AI 데이터 · 방산 예산 · 민간 상업화</div>
+        <div class="theme-body">① Starlink·Kuiper 등 LEO 위성 광대역 폭발적 확대 ② AI·지구관측 데이터 수요(Planet Labs +42% YoY) ③ 방산·국가안보 우주 예산 급증(Space Force, NATO) ④ 재사용 발사체 기반 발사 비용 90%+ 절감 ⑤ 달·화성 탐사 상업화(Artemis, Starship 인프라)</div>
+        <div class="theme-players">
+          <span>Planet Labs</span>
+          <span>Space Force</span>
+          <span>Artemis</span>
+          <span>Starship</span>
+        </div>
+        <div class="theme-highlight">2024년 말 위성 제조 매출 $200억(+17% YoY). 발사 서비스는 SpaceX가 글로벌 점유율 약 70% 장악(2025년 165회 발사).</div>
+      </div>
+
+      <div class="fw-card reveal d2">
+        <div class="fw-num">세그먼트 분해</div>
+        <h3>업·미드·다운스트림 TAM</h3>
+        <div class="theme-market">업스트림 $137B · 미드스트림 $88B · 다운스트림 $214B</div>
+        <div class="theme-body">업스트림(발사체·위성 제조): $1,370억(31.2%), CAGR ~8%. 미드스트림(궤도 인프라·운용): $880억(20%), CAGR ~8.4%. 다운스트림(데이터·서비스): $2,140억(48.8%), CAGR ~7%. 다운스트림이 전체 절반 차지. 마진율은 다운스트림 50~80%로 최고.</div>
+        <div class="theme-players">
+          <span>SpaceX(업스트림)</span>
+          <span>Iridium(미드)</span>
+          <span>Planet Labs(다운)</span>
+          <span>L3Harris</span>
+        </div>
+        <div class="theme-highlight">다운스트림은 SaaS화 진행 중. 투자 관점에서 스케일링 시 마진 급격 확대 가능한 소프트웨어 플랫폼 기업이 장기 멀티플 프리미엄 수혜.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Macro Thesis</div>
+      <p>"우주 경제는 단일 이벤트가 아닌 세 가지 구조적 변화의 복합 플라이휠이다."
+      <span class="u">발사 비용 하락이 위성 배포를 가속화하고, 위성 수 증가가 다운스트림 데이터 밀도를 높이며, 데이터 수익이 재투자되어 더 많은 위성을 올린다. SpaceX는 이 플라이휠의 중심에서 업스트림(Starship)·미드스트림(Starlink)·다운스트림(D2C·Starshield)을 수직 통합하고 있다. 2026년은 세 가지 테마가 동시에 임계점에 근접하는 역사적 구간이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 THEMES -->
+<section class="blk" id="themes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;3대 테마 개요 — 발사·컨스텔레이션·다운스트림</div>
+      <h2 class="sec-title">세 가지 구조적 변화가 동시에 임계점을 향한다</h2>
+      <p class="sec-lead">테마 A(발사 비용 혁명), 테마 B(메가 컨스텔레이션), 테마 C(다운스트림 데이터 경제)는 독립적이지 않다. 각 테마는 서로를 강화하는 상호 연결 구조다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card reveal">
+        <div class="fw-num">Theme A</div>
+        <h3>발사 비용 혁명</h3>
+        <div class="theme-market">Shuttle $54,500/kg → Falcon 9 $2,720/kg → Starship $10/kg 목표</div>
+        <div class="theme-body">Falcon 9 재사용으로 Shuttle 대비 95% 절감. Starship 완전재사용 달성 시 $10/kg 목표. 2023년 IFT-1부터 2026년 기준 12회 발사, IFT-10(2025.8.26)이 첫 전면 성공. 발사 비용 $100/kg 이하 달성 시 우주 제조·관광·궤도 서비스가 일제히 열린다.</div>
+        <div class="theme-players">
+          <span>SpaceX Starship</span>
+          <span>Falcon 9 재사용</span>
+          <span>Rocket Lab Neutron</span>
+          <span>누리호</span>
+        </div>
+        <div class="theme-highlight">우주 제조 시장: 2025년 $12.1억 → 2030년 $35.1억(CAGR 23.7%). 발사 비용 혁명이 이 모든 신규 시장의 전제 조건.</div>
+      </div>
+
+      <div class="fw-card reveal d1">
+        <div class="fw-num">Theme B</div>
+        <h3>메가 컨스텔레이션</h3>
+        <div class="theme-market">Starlink 10,413기 · Kuiper 329기+ · Guowang 163기</div>
+        <div class="theme-body">Starlink 구독자 1,200만+(155개국), 2025년 매출 $11.4B. ARPU: $99(2023) → $66(Q1 2026), 하락 추세나 해상·항공 고ARPU 세그먼트가 구원 투수. Amazon Leo FCC 마감 2026.7.30. 중국 Guowang+Qianfan 계획 위성 28,000기+.</div>
+        <div class="theme-players">
+          <span>Starlink(1,200만)</span>
+          <span>Amazon Leo</span>
+          <span>Guowang</span>
+          <span>OneWeb 648기</span>
+        </div>
+        <div class="theme-highlight">LEO 핵심 우위: 저지연(20~40ms). GEO 600ms 대비 실시간 애플리케이션 구조적 우위. 주파수·궤도 ITU 선착순 선점이 핵심 해자.</div>
+      </div>
+
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Theme C</div>
+        <h3>다운스트림 데이터 경제</h3>
+        <div class="theme-market">위성 데이터 서비스 $12.1B → $29.6B(2030E), CAGR 16.3%</div>
+        <div class="theme-body">지구 관측(Planet Labs 200기, +42% YoY Q1 FY2027), 위성 IoT(Iridium 253만 구독자), D2D(AST SpaceMobile 50개 MNO·30억명 접근 인구), 금융 대안 데이터(원유 재고·농산물 작황·ESG) 4개 축. 위성 데이터 광의 시장 2035년 $118.7B(CAGR 17.8%).</div>
+        <div class="theme-players">
+          <span>Planet Labs(EO)</span>
+          <span>Iridium(IoT)</span>
+          <span>AST SpaceMobile(D2D)</span>
+          <span>Maxar</span>
+        </div>
+        <div class="theme-highlight">AI + 위성 데이터 결합이 가장 빠른 성장 예상 영역. Planet Labs Pelican-4에 NVIDIA Jetson Orin 탑재, AI On-Satellite 80% 물체 탐지 정확도 달성.</div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">Theme Interconnection</div>
+      <p><b>세 테마는 단방향 플라이휠로 연결된다.</b> 발사 비용 하락(A) → 위성 배포 가속(B) → 데이터 밀도·빈도 증가(C) → 수익 창출 재투자 → 더 많은 위성 → 비용 추가 절감. SpaceX가 이 플라이휠의 핵심으로 세 축 모두에서 경쟁 우위를 보유한다. 경쟁자들이 단일 테마에 집중하는 동안 SpaceX는 수직 통합으로 해자를 확장한다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 VALUE CHAIN -->
+<section class="blk" id="valuechain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;밸류체인 맵 — 업스트림·미드스트림·다운스트림</div>
+      <h2 class="sec-title">발사체에서 위성 데이터까지, 3단계 가치사슬</h2>
+      <p class="sec-lead">우주 경제 밸류체인은 업스트림(발사·제조) → 미드스트림(궤도 인프라·운용) → 다운스트림(데이터·서비스)으로 구성된다. 각 단계마다 진입 장벽, 마진 구조, 투자 특성이 다르다.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>업스트림(발사·제조) → 미드스트림(궤도 인프라) → 다운스트림(데이터·서비스)</div>
+      <div class="valmap">
+        <div>
+          <div class="valcol-head">업스트림 (발사·제조)</div>
+          <div class="valrow">
+            <div class="vname">SpaceX<span class="vticker">SPCX · Falcon 9·Starship</span></div>
+            <div class="vstats"><div class="vps">$187억 매출</div><div class="vgrowth">발사 165회/年</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Rocket Lab<span class="vticker">RKLB · Electron+Neutron</span></div>
+            <div class="vstats"><div class="vps">$602M</div><div class="vgrowth">+38% YoY</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">한화에어로스페이스<span class="vticker">012450 · 누리호 체계종합</span></div>
+            <div class="vstats"><div class="vps">수주잔고 30조원</div><div class="vgrowth">기술 이전 완료</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Redwire<span class="vticker">RDW · 우주 하드웨어</span></div>
+            <div class="vstats"><div class="vps">$335M</div><div class="vgrowth">달 기지 인프라</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">이노스페이스<span class="vticker">462350 · 한빛나노</span></div>
+            <div class="vstats"><div class="vps">소형 발사체</div><div class="vgrowth low">재발사 준비 중</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="valcol-head">미드스트림 (궤도 인프라)</div>
+          <div class="valrow">
+            <div class="vname">Starlink (SpaceX)<span class="vticker">메가 컨스텔레이션 10,413기</span></div>
+            <div class="vstats"><div class="vps">$11.4B</div><div class="vgrowth">구독자 1,200만+</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Amazon Leo<span class="vticker">구 Kuiper · 329기+</span></div>
+            <div class="vstats"><div class="vps">FCC 마감 7/30</div><div class="vgrowth low">서비스 준비 중</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Iridium<span class="vticker">IRDM · 66기 극궤도</span></div>
+            <div class="vstats"><div class="vps">$872M</div><div class="vgrowth">배당 2~3%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">AST SpaceMobile<span class="vticker">ASTS · BlueBird D2D</span></div>
+            <div class="vstats"><div class="vps">FY2026 $150~200M</div><div class="vgrowth">MNO 50개+</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Eutelsat OneWeb<span class="vticker">GEO+LEO 하이브리드</span></div>
+            <div class="vstats"><div class="vps">648기 운용</div><div class="vgrowth">차세대 440기 발주</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="valcol-head">다운스트림 (데이터·서비스)</div>
+          <div class="valrow">
+            <div class="vname">Planet Labs<span class="vticker">PL · 지구 관측 SaaS</span></div>
+            <div class="vstats"><div class="vps">$297~301M</div><div class="vgrowth">잔고 $906M(+80%)</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">L3Harris<span class="vticker">LHX · 방산 우주 시스템</span></div>
+            <div class="vstats"><div class="vps">$219억</div><div class="vgrowth">OPM 15.9%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">BlackSky<span class="vticker">BKSY · 고해상도 광학</span></div>
+            <div class="vstats"><div class="vps">$107M</div><div class="vgrowth">정부 계약 91%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">쎄트렉아이<span class="vticker">099320 · 위성 데이터</span></div>
+            <div class="vstats"><div class="vps">수주 3,100억원</div><div class="vgrowth">+30% 성장</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Spire Global<span class="vticker">SPIR · 기상·해상·항공</span></div>
+            <div class="vstats"><div class="vps">$800M 시총</div><div class="vgrowth">RF 신호 특화</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">Valuation Insight</div>
+      <p><b>밸류체인별 투자 특성: 진입 장벽 높을수록 마진 낮고, 다운스트림일수록 SaaS 마진 높음.</b> 업스트림 마진율 15~35%, 미드스트림 40~65%, 다운스트림 50~80%. 투자 기회는 단기 수익화 가능한 다운스트림과 Neutron·Starship 등 기술 검증 이벤트를 가진 업스트림의 하이브리드 접근이 유효하다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 RISKS -->
+<section class="blk" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;리스크 — 우주 경제 투자의 킬 시나리오</div>
+      <h2 class="sec-title">여섯 가지 구조적 리스크</h2>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>섹터 전체 리스크 체크리스트</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt">
+            <b>발사 실패 꼬리 리스크</b>
+            <span>위성 발사는 여전히 기술적 위험 내포. 메가 컨스텔레이션 구축 중 대규모 위성 소실 시 주가 치명타. 이노스페이스 2025.12 발사 실패가 실례. 모니터링: 발사 성공률·보험 요율</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt">
+            <b>주파수·궤도 자원 고갈</b>
+            <span>LEO 궤도 포화 근접 시 추가 컨스텔레이션 배포 규제·물리적 제약. ITU 선착순 원칙으로 SpaceX가 광범위한 주파수 선점. 중국 Guowang과 SpaceX 주파수 중첩 분쟁 예상.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt">
+            <b>지정학 리스크 — ASAT·GPS 재밍</b>
+            <span>미·중 갈등이 위성 통신 표준·주파수 분쟁·위성 요격(ASAT) 리스크로 전이 가능. 러시아의 GPS 재밍 이미 현실화(우크라이나·핀란드). 한국 기업은 방산 수출 정치 리스크 추가 노출.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R4</div>
+          <div class="rt">
+            <b>수익성 실현 지연</b>
+            <span>대부분의 우주 기업이 막대한 자본 소각 중. AST SpaceMobile EV/Rev 138x, Rocket Lab EV/Rev ~100x. 금리 상승 환경에서 장기 현금 흐름 할인 가치 급락 가능. Starlink ARPU $99→$66 하락이 SpaceX 수익성 압박.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R5</div>
+          <div class="rt">
+            <b>Starship 개발 지연</b>
+            <span>2026년 H2 궤도 페이로드 배송 목표 미달 시 SpaceX 밸류에이션 기반(EV/Rev 107x) 훼손. Starlink v2 Full 대량 배치 계획도 지연. 섹터 전체의 비교 배수 재조정 가능. 모니터링: Starship Flight 13+ 결과</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R6</div>
+          <div class="rt">
+            <b>우주 쓰레기 — 케슬러 신드롬</b>
+            <span>10,000기+ 위성이 LEO 점령 시 충돌 연쇄 반응 위험 증가. ESA는 2030년대 LEO 물체 밀도가 임계점 근접 경고. FCC 5년 내 대기권 재진입 의무(2023년~). 특정 궤도대 수십 년 사용 불능 극단 시나리오.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="space_company_kr.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 6 — 한국 우주 기업 분석</div>
+      </div>
+    </a>
+    <a href="space_investment_map.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 2 — 12사 크로스 밸류에이션 지도</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">우주 경제 시리즈 — Part 1: 산업 지도</div>
+      <div class="src-list">
+        DATA · SIA 2025 Annual Report · Orbital Radar · McKinsey/WEF Space Economy<br>
+        SpaceX S-1(SEC 2026.05) · Quilty Space · ValueAddVC · Fortune Business Insights<br>
+        New Space Economy · Grand View Research · GMInsights<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
