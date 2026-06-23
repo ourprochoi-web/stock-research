@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="글로벌 로봇 시장 $38B→$152B(GS), BOM $20K 목표, 3대 테마(경제학/AI두뇌/서플라이체인) 구조와 12사 크로스 밸류에이션 투자 프레임워크">
+<meta name="keywords" content="로봇,휴머노이드,Optimus,Figure AI,액추에이터,감속기,밸류에이션">
+<meta property="og:title" content="기계가 걷기 시작한다 — 로봇·휴머노이드 산업구조와 투자 좌표">
+<meta property="og:description" content="글로벌 로봇 시장 $38B→$152B(GS), BOM $20K 목표, 3대 테마(경제학/AI두뇌/서플라이체인) 구조와 12사 크로스 밸류에이션 투자 프레임워크">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/robot/robot_overview.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="기계가 걷기 시작한다 — 로봇·휴머노이드 산업구조와 투자 좌표">
+<meta name="twitter:description" content="글로벌 로봇 시장 $38B→$152B(GS), BOM $20K 목표, 3대 테마(경제학/AI두뇌/서플라이체인) 구조와 12사 크로스 밸류에이션 투자 프레임워크">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/robot/robot_overview.html">
+<title>로봇·휴머노이드 산업구조와 투자 좌표 — 기계가 걷기 시작한다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* FRAMEWORK GRID */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+  .fw-row .fw-stars{color:var(--accent-2);font-family:var(--mono);font-size:.78rem;min-width:80px;text-align:right}
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* VALUE MAP / CHAIN */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* VALMAP GRID */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+  .valrow .vgrowth.low{color:var(--ink-2)}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VALUATION THESIS BOX */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "기계가 걷기 시작한다 — 로봇·휴머노이드 산업구조와 투자 좌표",
+  "description": "글로벌 로봇 시장 $38B→$152B(GS), BOM $20K 목표, 3대 테마(경제학/AI두뇌/서플라이체인) 구조와 12사 크로스 밸류에이션 투자 프레임워크",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/robot/robot_overview.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>로봇 시리즈 Part 1</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#themes">01 / 3대 테마</a>
+      <a href="#valchain">02 / 밸류체인 맵</a>
+      <a href="#framework">03 / 투자 프레임워크</a>
+      <a href="#risks">04 / 리스크</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">로봇 시리즈 · Part 1 · 2026.06</span>
+    <h1 class="hero-title">기계가<br><span class="hl">걷기 시작한다</span></h1>
+    <p class="hero-sub">BOM $20K 목표, Foundation Model, 감속기 서플라이체인 — 로봇/휴머노이드 산업 3대 투자 테마의 시장 구조, 밸류체인, 12사 크로스 밸류에이션을 조감한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$38→152<span class="u">B</span></div>
+        <div class="lab">2035년 휴머노이드 로봇 시장 전망(GS). 2025 출하량 13,318대에서 140만대로 급증.</div>
+        <div class="src">SRC: Goldman Sachs 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$20<span class="u">K</span></div>
+        <div class="lab">BOM 하락 목표. 2025년 $32-80K에서 연 40% 속도로 하락 중. Tesla Optimus 소비자가 목표.</div>
+        <div class="src">SRC: GS / RoboZaps 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$39<span class="u">B</span></div>
+        <div class="lab">Figure AI Series C 밸류에이션. 18개월 만에 15배 상승. BMW 공장 실증 성과.</div>
+        <div class="src">SRC: Figure AI 2025.09</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>3대 테마를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 THEMES -->
+<section class="blk" id="themes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;3대 테마 — 로봇 산업의 성장 엔진</div>
+      <h2 class="sec-title">경제학·AI 두뇌·서플라이체인, 세 축이 시장을 만든다</h2>
+      <p class="sec-lead">로봇 산업은 단일 섹터가 아니다. 휴머노이드 경제학이 대중화 경로를 결정하고, Foundation Model이 범용 지능을 부여하며, 부품 서플라이체인이 원가와 공급의 병목을 풀어야 상용화가 완성된다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Theme A -->
+      <div class="fw-card reveal">
+        <div class="fw-num">Theme A — 휴머노이드 경제학</div>
+        <h3>휴머노이드 경제학</h3>
+        <div class="theme-market">$1B → $38B (CAGR ~137%)</div>
+        <div class="theme-body">BOM $80K→$17K(2030), 연 40% 하락, Tesla $20K 목표. Goldman Sachs ROI 분석: 제조업 도입 시 인건비 대비 회수 기간 8-12개월. 대규모 생산이 단가 하락의 핵심 레버.</div>
+        <div class="theme-players">
+          <span>Tesla Optimus</span>
+          <span>Figure AI</span>
+          <span>Agility Digit</span>
+          <span>BD Atlas</span>
+        </div>
+        <div class="theme-highlight">2025년 출하 13,318대(+480%), 발표-상용화 평균 3-5년 지연 패턴. BOM vs 판매가 혼동 주의: BOM $17K ≠ 판매가 $20K.</div>
+      </div>
+
+      <!-- Theme B -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">Theme B — Foundation Model</div>
+        <h3>Foundation Model</h3>
+        <div class="theme-market">범용 로봇 두뇌의 탄생</div>
+        <div class="theme-body">VLA 모델이 태스크별 프로그래밍을 대체. NVIDIA GR00T N1 오픈소스로 업계 표준화 가속. Physical Intelligence π0 Flow Matching 기반 고난도 양손 조작 SOTA 달성.</div>
+        <div class="theme-players">
+          <span>NVIDIA Isaac</span>
+          <span>π0</span>
+          <span>RT-2/Gemini</span>
+          <span>Helix 02</span>
+          <span>Tesla FSD→Optimus</span>
+        </div>
+        <div class="theme-highlight">Sim-to-Real GPU 수요 급증, 학습에 수천~수만 GPU-시간 소요. NVIDIA가 로봇 AI 개발 플랫폼 전체 장악 전략 실행 중.</div>
+      </div>
+
+      <!-- Theme C -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Theme C — 부품 서플라이체인</div>
+        <h3>부품 서플라이체인</h3>
+        <div class="theme-market">$52.3M → $580M (CAGR 46.3%)</div>
+        <div class="theme-body">감속기 일본 과점(Harmonic+Nabtesco 60%+), 중국 Leaderdrive 추격(-30~40%), 한국 SBB/SPG 진입. 액추에이터가 전체 BOM의 40-50% 차지하며 원가 절감의 핵심 레버.</div>
+        <div class="theme-players">
+          <span>Harmonic Drive</span>
+          <span>Nabtesco</span>
+          <span>Leaderdrive</span>
+          <span>현대모비스</span>
+          <span>SBB테크</span>
+        </div>
+        <div class="theme-highlight">액추에이터 통합 트렌드 — 감속기+모터+드라이버 일체형 모듈화. 전통 부품 공급사 협상력 약화 리스크 병존.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Thesis</div>
+      <p>"3가지 테마가 동시에 진행될 때 상용화 티핑포인트에 도달한다."
+      <span class="u">경제학(BOM $20K)·AI 두뇌(Foundation Model)·부품(감속기 원가 하락)이 2028~2030년 사이 수렴할 때 대중화가 완성된다. 현재는 세 축이 각각 독립적으로 진행 중이며, 어느 하나가 지연되면 전체 상용화 타임라인이 후퇴한다. 투자는 각 테마의 진행 속도를 분기별로 교차 검증하는 방식이 핵심이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 VALUE CHAIN MAP -->
+<section class="blk" id="valchain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;통합 밸류체인 — Layer 0~4</div>
+      <h2 class="sec-title">원자재에서 최종 수요까지, 5단계 밸류체인</h2>
+      <p class="sec-lead">로봇 산업 밸류체인은 원자재(Layer 0)부터 최종 수요(Layer 4)까지 5단계로 구성된다. 투자 접근은 Layer별 진입 시점과 리스크 프로파일이 다르다.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>Layer 1~3 핵심 플레이어 / 밸류체인 포지셔닝</div>
+      <div class="valmap">
+        <!-- Column 1 -->
+        <div>
+          <div class="valcol-head">핵심 부품 (Layer 1)</div>
+          <div class="valrow">
+            <div class="vname">Harmonic Drive SE<span class="vticker">감속기 — 일본</span></div>
+            <div class="vstats"><div class="vps">글로벌 1위</div><div class="vgrowth">하모닉 특허 기반</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Nabtesco<span class="vticker">감속기 — 일본</span></div>
+            <div class="vstats"><div class="vps">RV 글로벌 1위</div><div class="vgrowth">산업용 로봇 60%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Leaderdrive<span class="vticker">감속기 — 중국 A주</span></div>
+            <div class="vstats"><div class="vps">일본 대비 -30%</div><div class="vgrowth">+47% YoY</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">현대모비스<span class="vticker">액추에이터 — 한국</span></div>
+            <div class="vstats"><div class="vps">Atlas 공급</div><div class="vgrowth">CES 2026 발표</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">SBB테크놀로지<span class="vticker">감속기 — 한국</span></div>
+            <div class="vstats"><div class="vps">7종 하모닉</div><div class="vgrowth">국산화 진입</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">센서 (LiDAR/포스/토크)<span class="vticker">Hesai, ATI, Bosch</span></div>
+            <div class="vstats"><div class="vps">소형화 중</div><div class="vgrowth low">양손 조작 필수</div></div>
+          </div>
+        </div>
+        <!-- Column 2 -->
+        <div>
+          <div class="valcol-head">컴퓨트/AI (Layer 2)</div>
+          <div class="valrow">
+            <div class="vname">NVIDIA<span class="vticker">GR00T N1 / Omniverse</span></div>
+            <div class="vstats"><div class="vps">플랫폼 표준</div><div class="vgrowth">Isaac Sim 생태계</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Physical Intelligence<span class="vticker">π0 — Flow Matching</span></div>
+            <div class="vstats"><div class="vps">$400M+ 조달</div><div class="vgrowth">양손 조작 SOTA</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Google DeepMind<span class="vticker">RT-2 / Gemini Robotics</span></div>
+            <div class="vstats"><div class="vps">55B 파라미터</div><div class="vgrowth">제로샷 62%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Figure AI<span class="vticker">Helix 02</span></div>
+            <div class="vstats"><div class="vps">픽셀→토크</div><div class="vgrowth">자체 모델 전환</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Tesla<span class="vticker">FSD→Optimus AI</span></div>
+            <div class="vstats"><div class="vps">Dojo 수퍼컴</div><div class="vgrowth">비용 분산 구조</div></div>
+          </div>
+        </div>
+        <!-- Column 3 -->
+        <div>
+          <div class="valcol-head">로봇 OEM (Layer 3)</div>
+          <div class="valrow">
+            <div class="vname">Tesla Optimus<span class="vticker">$20K 목표</span></div>
+            <div class="vstats"><div class="vps">공장 내부 배포</div><div class="vgrowth">2026 말 외부 판매</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Figure 03<span class="vticker">$39B 가치평가</span></div>
+            <div class="vstats"><div class="vps">BMW 파일럿</div><div class="vgrowth">BotQ 제조 가동</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Agility Digit<span class="vticker">$250K</span></div>
+            <div class="vstats"><div class="vps">Amazon 창고</div><div class="vgrowth">파일럿 단계</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">BD Atlas<span class="vticker">현대 인수</span></div>
+            <div class="vstats"><div class="vps">전동화 전환</div><div class="vgrowth">현대모비스 공급</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">AGIBOT / UBTech<span class="vticker">중국</span></div>
+            <div class="vstats"><div class="vps">중국 공급망</div><div class="vgrowth">저가 경쟁 선도</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">Valuation Insight</div>
+      <p><b>Layer 1 (핵심 부품)</b>이 가장 이른 투자 가능 구간이다. Leaderdrive·Harmonic Drive SE·현대모비스는 이미 수익을 내며 출하량 증가가 직결된다. <b>Layer 2 (GPU·AI 플랫폼)</b>는 NVIDIA를 통해 근거리 수혜가 가능하며, Sim-to-Real 학습 수요가 GPU 수요를 구조적으로 끌어올린다. <b>Layer 3 (OEM)</b>는 Tesla 상장주를 통한 옵션성 노출이 현실적이고, 순수 로봇 OEM은 중기(2027~2030) 상용화 확인 후 진입이 안전하다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 FRAMEWORK -->
+<section class="blk" id="framework">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;투자 프레임워크 — 3대 축</div>
+      <h2 class="sec-title">성장성·해자·밸류에이션을 동시에 충족하는 구간</h2>
+      <p class="sec-lead">세 가지 조건을 동시에 충족하는 구간에 투자 기회가 있다. 고성장이라도 해자가 없으면 경쟁에 잠식되고, 해자가 있어도 밸류에이션이 극단적이면 비대칭성이 사라진다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Growth -->
+      <div class="fw-card reveal">
+        <div class="fw-num">Condition 01</div>
+        <h3>성장성 (Growth)</h3>
+        <div class="fw-row"><span class="fw-label">로보티즈</span><span class="fw-stars">+105% YoY</span></div>
+        <div class="fw-row"><span class="fw-label">두산 (로봇부문 E)</span><span class="fw-stars">+79% E</span></div>
+        <div class="fw-row"><span class="fw-label">레인보우로보틱스</span><span class="fw-stars">+76%</span></div>
+        <div class="fw-row"><span class="fw-label">Teradyne (로봇 테스트)</span><span class="fw-stars">+87%</span></div>
+        <div class="fw-row"><span class="fw-label">ISRG (수술 로봇)</span><span class="fw-stars">+23%</span></div>
+        <div class="fw-row"><span class="fw-label">Leaderdrive</span><span class="fw-stars">+47% YoY</span></div>
+      </div>
+
+      <!-- Moat -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">Condition 02</div>
+        <h3>해자 (Moat)</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+          <span class="moat-tag">ISRG · 설치기반 11,395대</span>
+          <span class="moat-tag">Fanuc · CNC 50% 점유</span>
+          <span class="moat-tag">Tesla · FSD 플라이휠</span>
+          <span class="moat-tag">NVIDIA · 플랫폼 독점</span>
+          <span class="moat-tag">UR · 코봇 40%</span>
+          <span class="moat-tag">Harmonic · 특허 기반</span>
+          <span class="moat-tag">Nabtesco · OEM 수십년 관계</span>
+        </div>
+        <div style="font-size:.82rem;color:var(--ink-2);line-height:1.55">해자가 가장 강한 구간은 <b style="color:var(--ink)">기술 특허 + 장기 OEM 관계</b>가 동시에 작동하는 기업이다. ISRG·NVIDIA·Harmonic Drive SE가 이 조건을 가장 잘 충족한다.</div>
+      </div>
+
+      <!-- Valuation -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Condition 03</div>
+        <h3>밸류에이션 (P/S÷성장률)</h3>
+        <div class="fw-row"><span class="fw-label">Teradyne</span><span class="fw-val" style="color:var(--bull)">0.04</span></div>
+        <div class="fw-row"><span class="fw-label">Symbotic</span><span class="fw-val" style="color:var(--bull)">0.08</span></div>
+        <div class="fw-row"><span class="fw-label">로보티즈</span><span class="fw-val" style="color:var(--bull)">0.48</span></div>
+        <div class="fw-row"><span class="fw-label">ISRG</span><span class="fw-val" style="color:var(--ink-2)">0.71</span></div>
+        <div class="fw-row"><span class="fw-label">레인보우로보틱스</span><span class="fw-val" style="color:var(--bear)">50~182x P/S</span></div>
+        <div style="font-size:.76rem;color:var(--ink-3);margin-top:12px;line-height:1.5">낮을수록 성장 대비 저평가. 한국 소형주(P/S 50~182x)는 극단적 프리미엄 구간으로 주의.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Framework Verdict</div>
+      <p>"성장·해자·밸류에이션 3축을 동시에 충족하는 구간에서 비대칭을 찾아라."
+      <span class="u">Teradyne·Symbotic은 P/S÷성장률이 가장 낮은 구간으로 저평가 비대칭이 존재한다. ISRG는 성장·해자·밸류에이션 균형이 가장 좋은 구간에 위치한다. 한국 소형주(레인보우·로보티즈)는 성장 테마 수혜는 있지만 P/S 50~182x의 극단적 프리미엄으로 신규 진입보다 기존 보유자의 차익 실현 구간에 가깝다. Layer 1 부품사(Leaderdrive·현대모비스)가 성장 가시성과 밸류에이션의 균형이 가장 좋은 선택지다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 RISKS -->
+<section class="blk" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;리스크 — 무엇이 이 테제를 깨는가</div>
+      <h2 class="sec-title">다섯 가지 킬 시나리오</h2>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 체크리스트</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt">
+            <b>상용화 타이밍 지연</b>
+            <span>발표 후 3-5년 지연 패턴 반복. Tesla Optimus 2023년 공장 투입 목표 → 2026 현재도 내부 테스트 중. 가이던스보다 실제 출하량 데이터 우선 검증 필수.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt">
+            <b>BOM 하락 속도 불확실</b>
+            <span>연 40% 하락이 지속될 보장 없음. 배터리 에너지 밀도 한계(1~8시간 구동), 고난도 액추에이터 국산화 지연 시 BOM 목표 달성 후퇴. 분기별 부품 ASP 추적 필요.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt">
+            <b>한국 소형주 밸류에이션</b>
+            <span>P/S 50~182x 극단적 프리미엄. 상용화 지연 또는 Tesla 가격 파괴 시 멀티플 압축으로 주가 60~80% 하락 가능. 실적 가시성 없는 구간에서의 고배수 진입은 비대칭이 역방향.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R4</div>
+          <div class="rt">
+            <b>경쟁 구도 변화</b>
+            <span>Tesla가 $20K 가격 파괴 달성 시 중소 로봇 OEM 압박. 중국 AGIBOT·UBTech의 저가 물량 공세로 글로벌 부품 단가 추가 하락 → 일본 부품사 마진 압박 가능.</span>
+          </div>
+        </div>
+        <div class="ritem" style="grid-column:1/-1">
+          <div class="ri">R5</div>
+          <div class="rt">
+            <b>규제·지정학 리스크</b>
+            <span>미·중 기술 패권 경쟁으로 중국 감속기·부품사 공급망 차단 시나리오(ECCN 분류 강화). 희토류 마그넷 중국 독점에 따른 원자재 리스크. 로봇 안전 인증 법적 공백 — 인간과의 공동 작업 환경 규제 불확실성. EU·미국 로봇 안전 기준 강화 시 OEM 개발 비용 급증.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="robot_theme_supply_chain.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 8 — 부품 서플라이체인</div>
+      </div>
+    </a>
+    <a href="robot_investment_map.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 2 — 로봇 투자 지도</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">로봇 시리즈 — Part 1: 산업구조와 투자 좌표</div>
+      <div class="src-list">
+        DATA · Goldman Sachs · Yole Group · RoboZaps · NVIDIA · ABI Research<br>
+        MarketsandMarkets · SEC · DART · 증권사 리포트<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="네이버 AI 팩토리·카카오 카나나·솔트룩스 LUXIA·코난테크놀로지 법률AI·셀바스AI 메디아나 — 한국 AI SW 5사 심층 투자 리서치">
+<meta name="keywords" content="네이버,카카오,솔트룩스,코난테크놀로지,셀바스AI,한국AI,HyperCLOVA,카나나">
+<meta property="og:title" content="한국 AI SW 5사 — 네이버 · 카카오 · 솔트룩스 · 코난테크놀로지 · 셀바스AI">
+<meta property="og:description" content="네이버 AI 팩토리·카카오 카나나·솔트룩스 LUXIA·코난테크놀로지 법률AI·셀바스AI 메디아나 — 한국 AI SW 5사 심층 투자 리서치">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_kr.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="한국 AI SW 5사 — 네이버 · 카카오 · 솔트룩스 · 코난테크놀로지 · 셀바스AI">
+<meta name="twitter:description" content="네이버 AI 팩토리·카카오 카나나·솔트룩스 LUXIA·코난테크놀로지 법률AI·셀바스AI 메디아나 — 한국 AI SW 5사 심층 투자 리서치">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_kr.html">
+<title>한국 AI SW 5사 — 네이버 · 카카오 · 솔트룩스 · 코난테크놀로지 · 셀바스AI</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#38bdf8;
+    --accent-2:#a78bfa;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* COMPANY BADGE */
+  .co-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--ink-3);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:5px 12px;margin-bottom:20px}
+  .co-badge .ticker{color:var(--accent);font-weight:700}
+
+  /* PANEL / BARS */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .bars{display:flex;align-items:flex-end;gap:28px;height:200px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar{width:100%;max-width:96px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar.b1{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar.b2{background:linear-gradient(180deg,var(--accent),#0c7ab0);box-shadow:0 0 40px -8px var(--accent)}
+  .bar.b3{background:linear-gradient(180deg,var(--accent-2),#6d4fd4);box-shadow:0 0 40px -8px var(--accent-2)}
+  .bar .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.82rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+  .barcol .cap{font-size:.72rem;color:var(--ink-3);margin-top:2px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* MINI ROWS */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--accent);min-width:118px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* NUMS GRID */
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+
+  /* TABLE */
+  .data-table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:8px}
+  .data-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;background:var(--bg-2)}
+  .data-table td{padding:11px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table td:first-child{font-family:var(--mono);font-size:.82rem;color:var(--ink-3)}
+  .data-table td b{color:var(--ink);font-weight:650}
+  .data-table tr.hl-row td{background:rgba(56,189,248,.06)}
+  .data-table tr.hl-row td:first-child{color:var(--accent)}
+  .data-table tr.warn-row td{background:rgba(255,107,107,.05)}
+  .data-table tr.warn-row td:first-child{color:var(--bear)}
+
+  /* CAPEX GRID */
+  .capex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .capex-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .capex-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.7}
+  .capex-card .cc-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .capex-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+  .capex-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .capex-row:last-child{border-bottom:none}
+  .capex-row .cr-label{color:var(--ink-2)}
+  .capex-row .cr-val{font-family:var(--mono);font-weight:700;font-size:.84rem;color:var(--ink)}
+
+  /* TIMELINE / TCARD */
+  .timeline{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .tcard .th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .tcard.bull .th{color:var(--bull)}.tcard.bear .th{color:var(--bear)}
+  .tcard h3{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:12px 0 4px}
+  .tcard .tp{font-size:.88rem;color:var(--ink-2);margin-top:10px;line-height:1.6}
+  .tcard .picks{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+  .tcard .picks span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:7px;padding:5px 10px;color:var(--ink)}
+
+  /* COMPANY CARDS — 3사 */
+  .trio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  .trio-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+  .trio-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.6}
+  .trio-card .tc-ticker{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .trio-card h3{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .trio-stat{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(35,48,77,.5);font-size:.82rem}
+  .trio-stat:last-child{border-bottom:none}
+  .trio-stat .ts-label{color:var(--ink-3);font-family:var(--mono);font-size:.72rem}
+  .trio-stat .ts-val{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:.84rem}
+  .trio-tag{margin-top:16px;display:flex;flex-wrap:wrap;gap:5px}
+  .trio-tag span{font-family:var(--mono);font-size:.62rem;border:1px solid var(--line);border-radius:5px;padding:2px 8px;color:var(--ink-2);background:var(--bg)}
+
+  /* BIG COMPARE TABLE */
+  .compare-wrap{overflow-x:auto;margin-top:8px}
+  .compare-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:780px}
+  .compare-table th{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;background:var(--bg-2);white-space:nowrap}
+  .compare-table th.co-hd{color:var(--accent)}
+  .compare-table td{padding:10px 12px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top;font-size:.82rem}
+  .compare-table tr:last-child td{border-bottom:none}
+  .compare-table td:first-child{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);font-weight:600;white-space:nowrap}
+  .compare-table td b{color:var(--ink);font-weight:650}
+  .compare-table td.co-cell{font-weight:700;color:var(--ink)}
+  .compare-table tr:hover td{background:rgba(56,189,248,.03)}
+
+  /* ROADMAP */
+  .roadmap{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+  .rmap-row{display:flex;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s}
+  .rmap-row:hover{border-color:var(--accent);box-shadow:0 0 24px -8px var(--accent)}
+  .rmap-gen{font-family:var(--mono);font-weight:800;font-size:1rem;min-width:110px;display:flex;align-items:center;justify-content:center;padding:18px 14px;background:var(--surface-2);letter-spacing:-.01em;color:var(--ink-3)}
+  .rmap-gen.active{background:linear-gradient(135deg,rgba(56,189,248,.2),rgba(56,189,248,.05));color:var(--accent)}
+  .rmap-gen.warn{background:linear-gradient(135deg,rgba(255,107,107,.15),rgba(255,107,107,.04));color:var(--bear)}
+  .rmap-body{padding:18px 22px;flex:1}
+  .rmap-body .rb-top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .rmap-body h4{font-size:1rem;font-weight:750;letter-spacing:-.01em}
+  .rmap-status{font-family:var(--mono);font-size:.64rem;padding:3px 9px;border-radius:5px;font-weight:600;white-space:nowrap}
+  .rmap-status.good{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .rmap-status.mid{background:rgba(167,139,250,.12);color:var(--accent-2);border:1px solid rgba(167,139,250,.3)}
+  .rmap-status.bad{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .rmap-body p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .rmap-specs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .rmap-specs span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:2px 7px;background:var(--bg)}
+
+  /* KILL CRITERIA */
+  .kill-box{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-top:22px}
+  .kill-box h4{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bear);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .kill-box h4::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--bear);box-shadow:0 0 8px var(--bear);flex-shrink:0}
+  .kill-list{display:flex;flex-direction:column;gap:10px}
+  .kill-item{display:flex;gap:12px;align-items:flex-start;font-size:.84rem}
+  .kill-item .ki{font-family:var(--mono);font-weight:700;color:var(--bear);min-width:22px;font-size:.8rem}
+  .kill-item span{color:var(--ink-2);line-height:1.5}
+  .kill-item span b{color:var(--ink);font-weight:650}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr}
+    .capex-grid{grid-template-columns:1fr}
+    .trio-grid{grid-template-columns:1fr}
+    .nums{grid-template-columns:1fr 1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "한국 AI SW 5사 — 네이버 · 카카오 · 솔트룩스 · 코난테크놀로지 · 셀바스AI",
+  "description": "네이버 AI 팩토리·카카오 카나나·솔트룩스 LUXIA·코난테크놀로지 법률AI·셀바스AI 메디아나 — 한국 AI SW 5사 심층 투자 리서치",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_kr.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI SW 시리즈 Part 6</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#naver">01 / 네이버</a>
+      <a href="#kakao">02 / 카카오</a>
+      <a href="#smallcap">03 / 중소형 3사</a>
+      <a href="#compare">04 / 5사 비교</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI SW 시리즈 · Part 6 · 2026.06</span>
+    <h1 class="hero-title">한국 AI SW<br><span class="hl">5사 투자 리서치</span></h1>
+    <p class="hero-sub">네이버 AI 팩토리, 카카오 에이전틱 AI, 솔트룩스 LUXIA, 코난테크놀로지 법률AI, 셀바스AI 메디아나 — 대형 플랫폼 2사와 중소형 AI 전문 3사의 사업구조·실적·투자 포인트를 분석한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">12<span class="u">조원</span></div>
+        <div class="lab">네이버 FY2025 매출 — 사상 최대 기록. YoY +12.1%. 영업이익 2.2조, OPM 18.3%. AI 광고 기여도 50%+ 달성.</div>
+        <div class="src">SRC: 네이버 FY2025 IR</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">4,800<span class="u">만</span></div>
+        <div class="lab">카카오톡 MAU — 한국 인구의 95%. 압도적 AI 배포 채널. 에이전틱 AI 전환의 핵심 해자이자 카나나 2.5의 실전 배포 창구.</div>
+        <div class="src">SRC: 카카오 Q1'26 IR</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">PEG<span class="u"> 0.18</span></div>
+        <div class="lab">네이버 PEG 유사 지표 — PER 20x, EPS 성장률 +12%. 섹터 최저 평가 구간. 컨센서스 목표가 대비 상승여력 32~58%.</div>
+        <div class="src">SRC: 증권사 컨센서스 2026.06</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>네이버부터 셀바스AI까지 5사 심층 분석</div>
+  </div>
+</header>
+
+<!-- 01 NAVER -->
+<section class="blk" id="naver">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;네이버 (035420.KS) — 한국 AI의 기함</div>
+      <h2 class="sec-title">AI 팩토리·서치GPT·풀스택 수직통합</h2>
+      <p class="sec-lead">국내 유일 모델+인프라+서비스 풀스택 AI 기업. FY2025 매출 12조원 달성 후 엔비디아 합작 AI 팩토리와 서치GPT 광고 수익화로 밸류에이션 리레이팅을 추진 중이다.</p>
+    </div>
+
+    <div class="reveal" style="margin-bottom:24px">
+      <span class="co-badge"><span class="ticker">035420.KS</span>&nbsp;·&nbsp;코스피&nbsp;·&nbsp;시총 34.8조원</span>
+    </div>
+
+    <!-- 사업구조 -->
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>FY2025 부문별 매출</h3>
+        <div class="ph-sub">단위: 억원 / 연간 · 네이버 IR</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar b2" data-h="100%"><span class="val tnum">4.17조</span></div>
+            <div class="yr">서치</div><div class="cap">+5.6%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b2" data-h="88%"><span class="val tnum">3.69조</span></div>
+            <div class="yr">커머스</div><div class="cap">+26.2%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="46%"><span class="val tnum">1.90조</span></div>
+            <div class="yr">콘텐츠</div><div class="cap">+5.7%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="41%"><span class="val tnum">1.69조</span></div>
+            <div class="yr">핀테크</div><div class="cap">+12.1%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="14%"><span class="val tnum">5,878억</span></div>
+            <div class="yr">클라우드</div><div class="cap">+4.3%</div>
+          </div>
+        </div>
+        <div class="foot">커머스 +26.2%가 가장 강한 성장. 클라우드/엔터프라이즈 AI 매출(서비스 부문) <b>+35.6% YoY</b>. AI가 광고 매출 성장의 <b>50%+ 기여</b>.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>AI 경쟁력 핵심 지표</h3>
+        <div class="ph-sub">2026년 6월 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">1GW</div>
+            <div class="mt"><b>AI 팩토리 최종 목표</b> — 엔비디아 합작. 세종 '각' 55MW(2027)→200MW(2028)→1GW. 삼성증권 추정 2032년 매출 잠재력 <b>23.7조원</b>.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">+137%</div>
+            <div class="mt">AI 브리핑 도입 후 <b>'더보기' 클릭률</b> 급증. 체류시간 +10.4%. 서치GPT Ocean LLM 기반, 광고 수익화 3~4분기 개시 예정.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">옴니</div>
+            <div class="mt"><b>HyperCLOVA X 옴니모달</b> — 2026년 6월 공개. 텍스트·이미지·음성 통합. CLOVA Studio B2B API + 금융·공공·커머스 엔터프라이즈 공급.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 실적 테이블 -->
+    <div class="reveal" style="margin-top:24px">
+      <div class="panel">
+        <h3>실적 추이</h3>
+        <div class="ph-sub">출처: 네이버 IR · 인베스트조선 · 디일렉</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>기간</th>
+              <th>매출</th>
+              <th>영업이익</th>
+              <th>OPM</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FY2024</td>
+              <td><b>10조7,299억</b></td>
+              <td>1조9,794억</td>
+              <td>18.4%</td>
+              <td>기저</td>
+            </tr>
+            <tr class="hl-row">
+              <td>FY2025</td>
+              <td><b>12조350억</b></td>
+              <td>2조2,081억</td>
+              <td><b>18.3%</b></td>
+              <td>사상 최대 / YoY +12.1%</td>
+            </tr>
+            <tr>
+              <td>Q1'25</td>
+              <td><b>2조7,869억</b></td>
+              <td>5,054억</td>
+              <td>18.1%</td>
+              <td>기저</td>
+            </tr>
+            <tr class="hl-row">
+              <td>Q1'26</td>
+              <td><b>3조2,411억</b></td>
+              <td>5,418억</td>
+              <td><b>16.7%</b></td>
+              <td>YoY +16.3% / AI 인프라 투자 확대로 OPM 소폭 하락</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 밸류에이션 -->
+    <div class="reveal" style="margin-top:24px">
+      <div class="nums" style="grid-template-columns:repeat(3,1fr)">
+        <div><div class="nk">시가총액</div><div class="nv">34.8조원</div></div>
+        <div><div class="nk">PER</div><div class="nv" style="color:var(--accent)">20x</div></div>
+        <div><div class="nk">PBR</div><div class="nv">1.2x</div></div>
+        <div><div class="nk">PSR</div><div class="nv">2.9x</div></div>
+        <div><div class="nk">현재주가</div><div class="nv">222,000원</div></div>
+        <div><div class="nk">컨센서스 목표가</div><div class="nv" style="color:var(--bull)">294K~350K원</div></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Investment Thesis</div>
+      <p>"PER 20x — 카카오(29x)·구글(25x) 대비 섹터 저평가 구간."
+      <span class="u">국내 유일 풀스택 AI(모델+인프라+서비스) 기업이 PER 20배에 거래된다. AI 팩토리(엔비디아 합작, 1GW 로드맵)와 서치GPT 광고 수익화가 동시에 가시화될 경우 밸류에이션 리레이팅 잠재력이 가장 크다. 현재주가 222,000원 대비 컨센서스 상승여력 32~58%. 단기 촉매: Q3'26 서치GPT 광고 수익화 공시.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 KAKAO -->
+<section class="blk" id="kakao">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;카카오 (035720.KS) — 플랫폼 독점력 × AI 에이전트</div>
+      <h2 class="sec-title">카나나 2.5 × 카카오톡 4,800만 MAU</h2>
+      <p class="sec-lead">한국 인구 95%가 쓰는 카카오톡이 에이전틱 AI 플랫폼으로 진화 중이다. FY2025 영업이익 +48%, Q1'26 +66% 급증 — 구조적 수익성 개선과 AI 수익화 원년 선언이 겹친 터닝포인트.</p>
+    </div>
+
+    <div class="reveal" style="margin-bottom:24px">
+      <span class="co-badge"><span class="ticker">035720.KS</span>&nbsp;·&nbsp;코스피&nbsp;·&nbsp;시총 18.8조원</span>
+    </div>
+
+    <!-- 사업구조 -->
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>Q1'26 부문별 매출</h3>
+        <div class="ph-sub">단위: 억원 / 분기 · 카카오 IR</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar b3" data-h="100%"><span class="val tnum">7,594억</span></div>
+            <div class="yr">콘텐츠</div><div class="cap">+5%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b3" data-h="67%"><span class="val tnum">5,065억</span></div>
+            <div class="yr">플랫폼 기타</div><div class="cap">+30%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b3" data-h="45%"><span class="val tnum">3,384억</span></div>
+            <div class="yr">톡비즈 광고</div><div class="cap">+16%</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b1" data-h="36%"><span class="val tnum">2,700억</span></div>
+            <div class="yr">커머스</div><div class="cap">+1%</div>
+          </div>
+        </div>
+        <div class="foot">플랫폼 기타(모빌리티·페이) +30%가 최대 성장 동인. 톡비즈 커머스 +1%는 정체 구간. <b>전체 합계 1.94조 +11% YoY.</b></div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>카나나 2.5 기술 차별점</h3>
+        <div class="ph-sub">150B 파라미터 · 에이전틱 AI 최적화</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">150B</div>
+            <div class="mt"><b>카나나 2.5 파라미터</b> — 동급 규모 국내외 LLM 중 에이전틱 AI 실행 성능 1위 주장. 플래닝·펑션 콜에서 파라미터 크기 10% 미만으로 SOTA급 성능.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">-40%</div>
+            <div class="mt"><b>학습 비용</b> — 한국어 토크나이저 압축 효율 국내외 공개 모델 1위. 추론 속도 <b>+60% 개선</b>. 인프라 비용 구조적 우위.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1,100만</div>
+            <div class="mt"><b>챗GPT 포 카카오</b> 누적 가입자. OpenAI 제휴. 카나나 in 카카오톡 AI 응답 긍정 평가 약 <b>80%</b> (2026.04 기준).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 실적 추이 -->
+    <div class="reveal" style="margin-top:24px">
+      <div class="panel">
+        <h3>수익성 구조적 개선 추이</h3>
+        <div class="ph-sub">출처: 카카오 IR · 딜사이트 · 글로벌이코노믹</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>기간</th>
+              <th>매출</th>
+              <th>영업이익</th>
+              <th>OPM</th>
+              <th>YoY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FY2024</td>
+              <td><b>7조8,637억</b></td>
+              <td>4,944억</td>
+              <td>6.3%</td>
+              <td>기저</td>
+            </tr>
+            <tr class="hl-row">
+              <td>FY2025</td>
+              <td><b>8조991억</b></td>
+              <td>7,320억</td>
+              <td><b>9.0%</b></td>
+              <td>영업이익 +48%</td>
+            </tr>
+            <tr>
+              <td>Q1'25</td>
+              <td><b>1조7,510억</b></td>
+              <td>1,275억</td>
+              <td>7.3%</td>
+              <td>기저</td>
+            </tr>
+            <tr class="hl-row">
+              <td>Q1'26</td>
+              <td><b>1조9,421억</b></td>
+              <td>2,114억</td>
+              <td><b>10.9%</b></td>
+              <td>영업이익 +66%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 밸류에이션 -->
+    <div class="reveal" style="margin-top:24px">
+      <div class="nums" style="grid-template-columns:repeat(3,1fr)">
+        <div><div class="nk">시가총액</div><div class="nv">18.8조원</div></div>
+        <div><div class="nk">PER (FY2026E)</div><div class="nv">29x</div></div>
+        <div><div class="nk">52주 고점 대비</div><div class="nv" style="color:var(--bear)">-49%</div></div>
+        <div><div class="nk">현재주가</div><div class="nv">36,800원</div></div>
+        <div><div class="nk">컨센서스 목표가</div><div class="nv" style="color:var(--bull)">81,300원</div></div>
+        <div><div class="nk">상승여력</div><div class="nv" style="color:var(--bull)">+121%</div></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Investment Thesis</div>
+      <p>"컨센서스 상승여력 121% — 에이전틱 AI 수익화가 촉매."
+      <span class="u">카카오톡 4,800만 MAU라는 배포 채널은 한국에서 복제 불가능하다. OPM 6.3%→9.0%→10.9%의 구조적 개선, 카나나 2.5의 학습비용 우위는 AI 인프라 비용 부담을 최소화하며 서비스 수익화를 가속할 수 있는 구조다. 다만 PER 29배를 정당화하려면 카나나 in 카카오톡의 실제 ARPU 기여 데이터가 선행되어야 한다. 52주 최저가 부근에서의 기다림이 필요한 중기 포지션.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 SMALLCAP -->
+<section class="blk" id="smallcap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;중소형 AI 전문 3사 — 솔트룩스 · 코난테크놀로지 · 셀바스AI</div>
+      <h2 class="sec-title">공공AI 수혜·법률AI 트리플크라운·의료AI 융합</h2>
+      <p class="sec-lead">정부 AI·AX 예산 3배 확대(966억→2,849억)의 직접 수혜주 3사. 기술력 vs 적자 지속이라는 극단적 긴장 속에서 흑자 전환 가시성이 투자의 핵심 기준이다.</p>
+    </div>
+
+    <!-- 3사 카드 -->
+    <div class="trio-grid">
+      <div class="trio-card reveal">
+        <div class="tc-ticker">304100.KQ · 솔트룩스</div>
+        <h3>LUXIA LLM<br>Hugging Face 세계 1위</h3>
+        <div class="trio-stat"><span class="ts-label">FY2025 매출</span><span class="ts-val">416억 (-9.3%)</span></div>
+        <div class="trio-stat"><span class="ts-label">영업손실</span><span class="ts-val" style="color:var(--bear)">-80억</span></div>
+        <div class="trio-stat"><span class="ts-label">Q1'26 매출</span><span class="ts-val" style="color:var(--bull)">89억 (+55.1%)</span></div>
+        <div class="trio-stat"><span class="ts-label">시총 / PSR</span><span class="ts-val">2,942억 / 7.1x</span></div>
+        <div class="trio-stat"><span class="ts-label">연속 적자</span><span class="ts-val" style="color:var(--bear)">5년</span></div>
+        <div class="trio-tag">
+          <span>LUXIA 350B↓ 1위</span><span>소버린 AI</span><span>다이퀘스트 상장</span><span>결손금 401억</span>
+        </div>
+      </div>
+
+      <div class="trio-card reveal d1">
+        <div class="tc-ticker">402030.KQ · 코난테크놀로지</div>
+        <h3>법률AI<br>트리플 크라운</h3>
+        <div class="trio-stat"><span class="ts-label">FY2025 매출</span><span class="ts-val">340억 (+29%)</span></div>
+        <div class="trio-stat"><span class="ts-label">영업손실</span><span class="ts-val" style="color:var(--bear)">-99억</span></div>
+        <div class="trio-stat"><span class="ts-label">LLM 매출</span><span class="ts-val" style="color:var(--bull)">88억 (8배↑)</span></div>
+        <div class="trio-stat"><span class="ts-label">시총 / PSR</span><span class="ts-val">1,933억 / 5.7x</span></div>
+        <div class="trio-stat"><span class="ts-label">연속 적자</span><span class="ts-val" style="color:var(--bear)">4년</span></div>
+        <div class="trio-tag">
+          <span>대법원 145억</span><span>법제처 65.5억</span><span>AI+ 인증 최초</span><span>공공 81%</span>
+        </div>
+      </div>
+
+      <div class="trio-card reveal d2">
+        <div class="tc-ticker">108860.KQ · 셀바스AI</div>
+        <h3>AI 솔루션 + 메디아나<br>의료기기 복합</h3>
+        <div class="trio-stat"><span class="ts-label">FY2025 매출</span><span class="ts-val">1,148억 (+2%)</span></div>
+        <div class="trio-stat"><span class="ts-label">영업이익</span><span class="ts-val" style="color:var(--bull)">12.8억 (OPM 1.1%)</span></div>
+        <div class="trio-stat"><span class="ts-label">메디아나 매출</span><span class="ts-val" style="color:var(--bull)">648억 (+13%)</span></div>
+        <div class="trio-stat"><span class="ts-label">시총 / PSR</span><span class="ts-val">2,842억 / 2.5x</span></div>
+        <div class="trio-stat"><span class="ts-label">2026E 가이던스</span><span class="ts-val" style="color:var(--bull)">메디아나 +61%</span></div>
+        <div class="trio-tag">
+          <span>삼성서울병원 33과</span><span>STT 98%</span><span>PMD 북미 +60%</span><span>AED 유럽 +65%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 솔트룩스 상세 -->
+    <div class="reveal" style="margin-top:48px">
+      <div class="roadmap">
+        <div class="rmap-row">
+          <div class="rmap-gen active">솔트룩스</div>
+          <div class="rmap-body">
+            <div class="rb-top">
+              <h4>LUXIA — 기술 1위, 상업화 지연</h4>
+              <span class="rmap-status mid">흑자 전환 과제</span>
+            </div>
+            <p>350B 이하 Hugging Face 세계 1위, 누적 다운로드 45만회. 20년 NLP·지식그래프 결합으로 환각 최소화. 한전원자력연료 51억원 소버린 AI 수주. 2026년 영업 파이프라인 500~600억원. 다이퀘스트(AICC 시장 1위) 코스닥 상장 추진이 유일한 재무 개선 이벤트. 구버(Goover) SaaS 3년 누적 매출 4억, 손실 71억의 수익화 실패는 신뢰 훼손 리스크.</p>
+            <div class="rmap-specs">
+              <span>LUXIA 세계 1위</span><span>지식그래프 결합</span><span>파이프라인 500~600억</span><span>다이퀘스트 IPO</span><span>결손금 401억</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmap-row">
+          <div class="rmap-gen active">코난테크</div>
+          <div class="rmap-body">
+            <div class="rb-top">
+              <h4>법률AI 독점 — 대법원+법제처+법원 트리플 크라운</h4>
+              <span class="rmap-status mid">수주 인식 대기</span>
+            </div>
+            <p>코난LLM + AI 검색. 한국표준협회 AI+ 인증 국내 LLM 최초. 대법원 145억(4년) + 법제처 65.5억(550일) = 210억원 대형 수주. 2026년 Q4 매출 인식 예정. LLM 매출 11억→88억 8배 성장. 일회성 매출 75억 역기저 + 공공 81% 집중이 구조적 취약점. 법률 AI 도메인 해자는 국내 최강이나 민간 확장이 장기 과제.</p>
+            <div class="rmap-specs">
+              <span>대법원 145억</span><span>법제처 65.5억</span><span>LLM 매출 8배</span><span>AI+ 인증 최초</span><span>공공 81%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmap-row">
+          <div class="rmap-gen" style="color:var(--bull)">셀바스AI</div>
+          <div class="rmap-body">
+            <div class="rb-top">
+              <h4>메디아나 성장 + STT/TTS 의료AI</h4>
+              <span class="rmap-status good">연간 흑자 · 메디아나 2026E +261%</span>
+            </div>
+            <p>국내 5개 AI 중소형 기업 중 유일 1,000억대 매출+흑자+해외 고성장 동시 달성. Selvy MediVoice 삼성서울병원 33개 과 도입, 의학 용어 98% 정확도. 메디아나 PMD 북미 +60%, AED 유럽 +65%. 2026E 메디아나 가이던스 매출 1,061억(+61%), 영업이익 217억(+262%). 가이던스 달성 시 연결 PER 14~17배로 합리적 전환. 순수 AI보다 헬스케어 성장주 관점 적합.</p>
+            <div class="rmap-specs">
+              <span>메디아나 2026E +61%</span><span>STT 98%</span><span>삼성서울병원 33과</span><span>PMD 북미</span><span>AED 유럽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3사 리스크 -->
+    <div class="kill-box reveal">
+      <h4>중소형 3사 공통 리스크 체크리스트</h4>
+      <div class="kill-list">
+        <div class="kill-item">
+          <div class="ki">R1</div>
+          <span><b>솔트룩스 — 결손금 401억 누적·5년 적자</b>: 자본 잠식 경계선 접근. 500~600억 파이프라인의 실제 수주 전환 여부가 2H'26 핵심 변수. 다이퀘스트 상장 지연 시 재무 개선 시나리오 유일 이벤트 소멸.</span>
+        </div>
+        <div class="kill-item">
+          <div class="ki">R2</div>
+          <span><b>코난테크 — 일회성 공백 75억 역기저</b>: 국군재정관리단 74.8억 2025년 일시 인식 → 2026년 역기저. 검색 매출 구조적 감소(-30.8%). 대법원·법제처 수주 매출 인식 시점이 실질 성장률 판단의 핵심.</span>
+        </div>
+        <div class="kill-item">
+          <div class="ki">R3</div>
+          <span><b>셀바스AI — 메디아나 과의존·AI 매출 정체</b>: 연결 매출 56%가 의료기기. 메디아나 실적 미달 시 연결 전체 훼손. OpenAI Whisper·구글 STT 무료 확산이 AI 솔루션 TAM을 압박. "AI 기업" 프리미엄과 실체 간 괴리 지속.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 COMPARE -->
+<section class="blk" id="compare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;5사 종합 비교</div>
+      <h2 class="sec-title">대형 플랫폼 2사 vs 공공AI·의료AI 중소형 3사</h2>
+      <p class="sec-lead">네이버·카카오는 안정적 수익 기반 위의 AI 리레이팅 스토리, 중소형 3사는 고위험·고수익 AI 퓨어플레이 포지션이다. 흑자 여부와 수익화 가시성이 멀티플의 가장 큰 결정 요인이다.</p>
+    </div>
+
+    <!-- 핵심 재무 비교 테이블 -->
+    <div class="panel reveal">
+      <h3>핵심 재무·밸류에이션 비교</h3>
+      <div class="ph-sub">기준: FY2025 / Q1'26 · 2026년 6월 기준</div>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th class="co-hd">네이버</th>
+              <th class="co-hd">카카오</th>
+              <th class="co-hd">솔트룩스</th>
+              <th class="co-hd">코난테크</th>
+              <th class="co-hd">셀바스AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>티커</td>
+              <td>035420.KS</td>
+              <td>035720.KS</td>
+              <td>304100.KQ</td>
+              <td>402030.KQ</td>
+              <td>108860.KQ</td>
+            </tr>
+            <tr>
+              <td>시가총액</td>
+              <td class="co-cell"><b>34.8조</b></td>
+              <td class="co-cell"><b>18.8조</b></td>
+              <td class="co-cell"><b>2,942억</b></td>
+              <td class="co-cell"><b>1,933억</b></td>
+              <td class="co-cell"><b>2,842억</b></td>
+            </tr>
+            <tr class="hl-row">
+              <td>FY2025 매출</td>
+              <td><b>12조350억</b></td>
+              <td><b>8조991억</b></td>
+              <td><b>416억</b></td>
+              <td><b>340억</b></td>
+              <td><b>1,148억</b></td>
+            </tr>
+            <tr>
+              <td>FY2025 성장률</td>
+              <td><b>+12.1%</b></td>
+              <td>+3%</td>
+              <td style="color:var(--bear)">-9.3%</td>
+              <td><b>+29%</b></td>
+              <td>+2%</td>
+            </tr>
+            <tr>
+              <td>FY2025 OPM</td>
+              <td><b>18.3%</b></td>
+              <td>9.0%</td>
+              <td style="color:var(--bear)">-19.2%</td>
+              <td style="color:var(--bear)">-29.1%</td>
+              <td>1.1%</td>
+            </tr>
+            <tr>
+              <td>Q1'26 매출 YoY</td>
+              <td><b>+16.3%</b></td>
+              <td>+11%</td>
+              <td style="color:var(--bull)">+55.1%</td>
+              <td>미공시</td>
+              <td>+0.8%</td>
+            </tr>
+            <tr class="hl-row">
+              <td>PSR</td>
+              <td><b>2.9x</b></td>
+              <td>2.3x</td>
+              <td>7.1x</td>
+              <td>5.7x</td>
+              <td>2.5x</td>
+            </tr>
+            <tr>
+              <td>PER</td>
+              <td><b>20x</b></td>
+              <td>29x</td>
+              <td colspan="2" style="text-align:center;color:var(--ink-3)">N/A (적자)</td>
+              <td style="color:var(--ink-3)">N/A</td>
+            </tr>
+            <tr>
+              <td>AI 핵심 자산</td>
+              <td>HyperCLOVA X</td>
+              <td>카나나 2.5</td>
+              <td>LUXIA LLM</td>
+              <td>코난LLM</td>
+              <td>Selvy STT</td>
+            </tr>
+            <tr class="hl-row">
+              <td>투자 포인트</td>
+              <td>AI팩토리·저평가</td>
+              <td>에이전틱·턴어라운드</td>
+              <td>기술 vs 적자</td>
+              <td>법률AI·수주</td>
+              <td>메디아나 성장</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bull/Bear 2사 -->
+    <div class="timeline" style="margin-top:32px">
+      <div class="tcard bull reveal">
+        <div class="th">● 대형 플랫폼 — 네이버 + 카카오</div>
+        <h3>AI 리레이팅 스토리</h3>
+        <div class="tp">네이버: PER 20x 저평가 + AI 팩토리(1GW) + 서치GPT 광고 수익화. 풀스택 AI 기업 단 하나. 카카오: 카카오톡 4,800만 MAU의 에이전틱 AI 플랫폼 전환 + OPM 구조적 개선(6.3%→10.9%). 두 기업 모두 안정적 수익 기반 위에 AI 성장 옵션이 탑재된 구조. 컨센서스 상승여력 네이버 32~58%, 카카오 121%.</div>
+        <div class="picks"><span>네이버 AI팩토리</span><span>서치GPT 광고</span><span>카카오 MAU 해자</span><span>카나나 2.5</span><span>OPM 개선</span></div>
+      </div>
+      <div class="tcard bear reveal d1">
+        <div class="th">● 중소형 AI — 솔트룩스·코난·셀바스</div>
+        <h3>기술 vs 재무 리스크</h3>
+        <div class="tp">솔트룩스: LUXIA 세계 1위 기술 + 5년 연속 적자(결손금 401억) 극단적 괴리. 코난: 법률AI 트리플크라운 + 4년 적자 + 일회성 공백 75억. 셀바스AI: 5사 중 유일 안정 흑자 + 메디아나 성장 + AI보다 의료기기 비중 우위. 공통: 흑자 전환 확인 전 진입은 고위험. 정부 AX 예산 3배(966억→2,849억)는 구조적 테일윈드.</div>
+        <div class="picks"><span>정부 AX 3배</span><span>흑자 전환 필수</span><span>셀바스 메디아나</span><span>코난 수주 인식</span></div>
+      </div>
+    </div>
+
+    <!-- 시나리오별 선호주 -->
+    <div class="reveal" style="margin-top:32px">
+      <div class="panel">
+        <h3>투자 시나리오별 선호주</h3>
+        <div class="ph-sub">시나리오 × 최선호 · 차선호</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>시나리오</th>
+              <th>최선호</th>
+              <th>차선호</th>
+              <th>핵심 근거</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hl-row">
+              <td>AI 인프라 슈퍼사이클</td>
+              <td><b>네이버</b></td>
+              <td>—</td>
+              <td>AI 팩토리 유일 수혜, 엔비디아 합작</td>
+            </tr>
+            <tr>
+              <td>AI 에이전트 대중화</td>
+              <td><b>카카오</b></td>
+              <td>네이버</td>
+              <td>카카오톡 4,800만 MAU 배포력</td>
+            </tr>
+            <tr>
+              <td>공공 AI 전환(AX)</td>
+              <td><b>코난테크</b></td>
+              <td>솔트룩스</td>
+              <td>대법원·법제처 트리플크라운 레퍼런스</td>
+            </tr>
+            <tr>
+              <td>의료 AI 성장</td>
+              <td><b>셀바스AI</b></td>
+              <td>—</td>
+              <td>메디아나 2026E +61%, STT 의료AI 융합</td>
+            </tr>
+            <tr>
+              <td>고위험 AI 퓨어플레이</td>
+              <td><b>솔트룩스</b></td>
+              <td>코난테크</td>
+              <td>흑자 전환 확인 후 진입 권장</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Sector Verdict</div>
+      <p>"한국 AI SW — 대형 저평가 2사, 공백 메우는 중소형 3사."
+      <span class="u">네이버(PER 20x)는 한국 인터넷 섹터에서 가장 매력적인 밸류에이션 + AI 옵션이다. 카카오(컨센서스 +121%)는 에이전틱 AI 수익화 확인 시 가장 큰 주가 모멘텀을 가진다. 중소형 3사는 정부 AX 예산 3배 확대라는 구조적 테일윈드 아래 공공 AI 전환 테마의 순수 플레이이나, 적자 지속 기업에 대한 PSR 5~7배는 수익화 가시성 확보 전까지 투자 리스크가 크다. 셀바스AI만이 1,000억대 매출 + 흑자 + 해외 성장의 세 조건을 동시 충족한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="ai_sw_company_crwd_ddog_snow.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 5 — CrowdStrike·Datadog·Snowflake</div>
+      </div>
+    </a>
+    <a href="ai_sw_theme_agent_vertical.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 7 — Agentic AI + Vertical AI SaaS</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI SW 시리즈 — Part 6: 한국 AI SW 5사 투자 리서치</div>
+      <div class="src-list">
+        DATA · 네이버 FY2025·Q1'26 IR · 카카오 FY2025·Q1'26 IR<br>
+        DART 공시 · 삼성증권·하나증권·유진투자·메리츠증권·키움증권·한화투자증권<br>
+        디일렉 · 인베스트조선 · 디지털데일리 · 이데일리 · 헬로티<br>
+        뉴스핌 · 더벨 · 바이라인네트워크 · 테크42 · FnGuide<br>
+        작성 기준일 · 2026.06.23
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // bar heights
+  window.addEventListener('load',()=>{
+    document.querySelectorAll('.bar').forEach(b=>{
+      requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

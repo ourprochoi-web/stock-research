@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="글로벌 6사+한국 5사 크로스 밸류에이션, P/E·EV/Revenue 비교, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵">
+<meta name="keywords" content="GLP-1,밸류에이션,Novo Nordisk,Eli Lilly,한미약품,크로스 밸류에이션,투자 지도">
+<meta property="og:title" content="GLP-1 투자 지도 — 크로스 밸류에이션">
+<meta property="og:description" content="글로벌 6사+한국 5사 크로스 밸류에이션, P/E·EV/Revenue 비교, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/glp1/glp1_investment_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GLP-1 투자 지도 — 크로스 밸류에이션">
+<meta name="twitter:description" content="글로벌 6사+한국 5사 크로스 밸류에이션, P/E·EV/Revenue 비교, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/glp1/glp1_investment_map.html">
+<title>GLP-1 투자 지도 — 크로스 밸류에이션</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#ec4899;
+    --accent-2:#a78bfa;
+    --glow:#f472b6;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(244,114,182,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* FRAMEWORK GRID */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+  .fw-row .fw-stars{color:var(--accent-2);font-family:var(--mono);font-size:.78rem;min-width:80px;text-align:right}
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(236,72,153,.1);color:var(--accent);border:1px solid rgba(236,72,153,.25);margin:2px}
+
+  /* VALUE MAP / CHAIN */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* VALMAP GRID */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+  .valrow .vgrowth.low{color:var(--ink-2)}
+  .valrow .vgrowth.neg{color:var(--bear)}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* CALENDAR */
+  .cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  .cal-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .cal-item .cal-date{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--glow);text-transform:uppercase;margin-bottom:8px}
+  .cal-item .cal-event{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .cal-item .cal-sub{font-size:.8rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VALUATION THESIS BOX */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(236,72,153,.05),rgba(167,139,250,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+    .cal-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GLP-1 투자 지도 — 크로스 밸류에이션",
+  "description": "글로벌 6사+한국 5사 크로스 밸류에이션, P/E·EV/Revenue 비교, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/glp1/glp1_investment_map.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>GLP-1 시리즈 Part 2</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#valmap">01 / 밸류맵</a>
+      <a href="#matrix">02 / 매트릭스</a>
+      <a href="#portfolio">03 / 포트폴리오</a>
+      <a href="#risks">04 / 리스크·캘린더</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">GLP-1 시리즈 · Part 2 · 2026.06</span>
+    <h1 class="hero-title">11사 크로스<br><span class="hl">밸류에이션 지도</span></h1>
+    <p class="hero-sub">Novo·Lilly·Amgen·Viking·Roche·Structure — 글로벌 6사와 한미·디앤디·펩트론·인벤티지랩·알테오젠 — 한국 5사의 P/E·EV/Revenue·성장률을 하나의 좌표계로 비교한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">P/E 11~45<span class="u">x</span></div>
+        <div class="lab">GLP-1 기업 P/E 레인지. Novo 22x(디레이팅)~Lilly 45x(프리미엄). 밸류에이션 스프레드가 역대 최대.</div>
+        <div class="src">SRC: Bloomberg 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">58<span class="u">%</span></div>
+        <div class="lab">Eli Lilly 미국 GLP-1 처방 M/S. Novo 42%에서 역전. Q1'26 기준.</div>
+        <div class="src">SRC: IQVIA 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">20<span class="u">+</span></div>
+        <div class="lab">GLP-1 Phase 2-3 후보물질 수. Pfizer·AZ·Amgen·Viking·Roche 등 대형사 본격 진입.</div>
+        <div class="src">SRC: Citeline Pipeline</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>밸류 맵을 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 VALMAP -->
+<section class="blk" id="valmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;밸류 맵 — 11사 크로스 포지셔닝</div>
+      <h2 class="sec-title">P/E × 매출성장률로 좌표를 잡아라</h2>
+      <p class="sec-lead">11개 기업을 밸류에이션 구간별로 3단계 분류. 프리미엄 GLP-1 대형주는 P/E 기준, Pure Play 바이오텍은 파이프라인 가치, 밸류체인 기업은 EV/Revenue로 평가한다.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>밸류에이션 구간 기준 분류 / P/E·시총·성장률</div>
+      <div class="valmap">
+        <!-- GLP-1 대형주 -->
+        <div>
+          <div class="valcol-head">GLP-1 대형주 (P/E 기준)</div>
+          <div class="valrow">
+            <div class="vname">Eli Lilly<span class="vticker">LLY</span></div>
+            <div class="vstats"><div class="vps">P/E 45x</div><div class="vgrowth">+56% YoY</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Novo Nordisk<span class="vticker">NVO</span></div>
+            <div class="vstats"><div class="vps">P/E 22x</div><div class="vgrowth neg">-5~-13%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Amgen<span class="vticker">AMGN</span></div>
+            <div class="vstats"><div class="vps">P/E 15x</div><div class="vgrowth">+9%</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Roche<span class="vticker">RHHBY</span></div>
+            <div class="vstats"><div class="vps">P/E 16x</div><div class="vgrowth">+5%</div></div>
+          </div>
+        </div>
+        <!-- Pure Play 바이오텍 -->
+        <div>
+          <div class="valcol-head">Pure Play 바이오텍 (파이프라인)</div>
+          <div class="valrow">
+            <div class="vname">Viking<span class="vticker">VKTX</span></div>
+            <div class="vstats"><div class="vps">Phase 3</div><div class="vgrowth low">~$8B 시총</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">Structure<span class="vticker">GPCR</span></div>
+            <div class="vstats"><div class="vps">Phase 2</div><div class="vgrowth low">~$3B 시총</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">한미약품<span class="vticker">128940</span></div>
+            <div class="vstats"><div class="vps">P/E 25x</div><div class="vgrowth">2026H2 출시</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">디앤디파마텍<span class="vticker">347770</span></div>
+            <div class="vstats"><div class="vps">Phase 2</div><div class="vgrowth low">소형</div></div>
+          </div>
+        </div>
+        <!-- 밸류체인·DDS -->
+        <div>
+          <div class="valcol-head">밸류체인·DDS (EV/Revenue)</div>
+          <div class="valrow">
+            <div class="vname">알테오젠<span class="vticker">196170</span></div>
+            <div class="vstats"><div class="vps">P/E 100x+</div><div class="vgrowth low">SC 플랫폼</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">펩트론<span class="vticker">087010</span></div>
+            <div class="vstats"><div class="vps">서방형 DDS</div><div class="vgrowth low">pre-clinical</div></div>
+          </div>
+          <div class="valrow">
+            <div class="vname">인벤티지랩<span class="vticker">329020</span></div>
+            <div class="vstats"><div class="vps">마이크로스피어</div><div class="vgrowth low">유한양행 협력</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">Valuation Insight</div>
+      <p>밸류에이션 비대칭이 가장 큰 구간 — <b>Novo Nordisk(P/E 22x)</b>은 CagriSema FDA 승인+실적 반등 시 P/E 30x+ 리레이팅 여지. <b>Amgen(P/E 15x)</b>은 MariTide Phase 3 결과가 무료 옵션. <b>Eli Lilly(P/E 45x)</b>는 성장이 프리미엄을 정당화하나 실적 미스 시 다중 압축 위험이 가장 크다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 MATRIX -->
+<section class="blk" id="matrix">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;성장-밸류 매트릭스</div>
+      <h2 class="sec-title">성장률과 밸류에이션의 교차점에서 비대칭을 찾아라</h2>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Card 1 -->
+      <div class="fw-card reveal">
+        <div class="fw-num">구간 A</div>
+        <h3>High Growth + Premium Valuation</h3>
+        <div class="theme-market">성장 최고 / 밸류에이션 최고</div>
+        <div class="fw-row"><span class="fw-label">Eli Lilly (LLY)</span><span class="fw-val">P/E 45x, +56%</span></div>
+        <div class="fw-row"><span class="fw-label">Viking (VKTX)</span><span class="fw-val">N/A, Phase 3</span></div>
+        <div class="theme-highlight">성장이 멈추면 가장 큰 하락. 실적 미스 시 P/E 30x→ -33% 다운사이드. Pure option play — Viking은 임상 성공 시 다중 리레이팅.</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">구간 B</div>
+        <h3>Moderate Growth + Value Zone</h3>
+        <div class="theme-market">리레이팅 시 비대칭 가장 큼</div>
+        <div class="fw-row"><span class="fw-label">Novo Nordisk</span><span class="fw-val">P/E 22x, 디레이팅</span></div>
+        <div class="fw-row"><span class="fw-label">Amgen</span><span class="fw-val">P/E 15x, MariTide 옵션</span></div>
+        <div class="fw-row"><span class="fw-label">한미약품</span><span class="fw-val">P/E 25x, 국내 출시</span></div>
+        <div class="theme-highlight">CagriSema·경구Wegovy 촉매 / 기존 사업 안정+GLP-1 무료 콜 / Novo P/E 22x→30x = +36% 업사이드.</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">구간 C</div>
+        <h3>Pure Option / Pre-Revenue</h3>
+        <div class="theme-market">All-or-nothing</div>
+        <div class="fw-row"><span class="fw-label">Structure (GPCR)</span><span class="fw-val">경구 소분자 Ph.2</span></div>
+        <div class="fw-row"><span class="fw-label">디앤디파마텍</span><span class="fw-val">경구 GLP-1 Ph.2</span></div>
+        <div class="fw-row"><span class="fw-label">펩트론 / 인벤티지랩</span><span class="fw-val">DDS 기술</span></div>
+        <div class="theme-highlight">Structure -15.3% 체중 감소 데이터 보유. 임상 성공 시 3-5x, 실패 시 -70%+. 소규모 비중으로 옵션 접근.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Framework Verdict</div>
+      <p>"리스크 대비 보상이 가장 유리한 구간은 '디레이팅 후 촉매 대기' 기업이다."
+      <span class="u">Novo Nordisk은 P/E 22x에서 CagriSema FDA 승인이라는 명확한 촉매를 기다리고 있다. Amgen은 P/E 15x에 MariTide가 무료 옵션으로 붙어있다. 반면 Lilly P/E 45x는 '완벽한 실적'이 이미 반영된 가격이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 PORTFOLIO -->
+<section class="blk" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;3종 포트폴리오 — 투자 성향별 배분</div>
+      <h2 class="sec-title">공격형·균형형·밸류체인 — 세 가지 접근법</h2>
+    </div>
+
+    <div class="fw-grid">
+      <!-- Card A -->
+      <div class="fw-card reveal">
+        <div class="fw-num">포트폴리오 A</div>
+        <h3>공격형 — GLP-1 성장 극대화</h3>
+        <div class="fw-row"><span class="fw-label">Eli Lilly</span><span class="fw-val" style="color:var(--accent)">40%</span></div>
+        <div class="fw-row"><span class="fw-label">Viking</span><span class="fw-val" style="color:var(--accent)">20%</span></div>
+        <div class="fw-row"><span class="fw-label">한미약품</span><span class="fw-val" style="color:var(--accent)">20%</span></div>
+        <div class="fw-row"><span class="fw-label">디앤디파마텍</span><span class="fw-val" style="color:var(--accent)">10%</span></div>
+        <div class="fw-row"><span class="fw-label">펩트론</span><span class="fw-val" style="color:var(--accent)">10%</span></div>
+        <div class="theme-highlight">리스크: P/E 극단, 임상 실패 시 급락. 리워드: GLP-1 시장 성장에 최대 노출.</div>
+      </div>
+
+      <!-- Card B -->
+      <div class="fw-card reveal d1">
+        <div class="fw-num">포트폴리오 B</div>
+        <h3>균형형 — 대형주 + 옵션</h3>
+        <div class="fw-row"><span class="fw-label">Eli Lilly</span><span class="fw-val" style="color:var(--accent)">30%</span></div>
+        <div class="fw-row"><span class="fw-label">Novo Nordisk</span><span class="fw-val" style="color:var(--accent)">25%</span></div>
+        <div class="fw-row"><span class="fw-label">Amgen</span><span class="fw-val" style="color:var(--accent)">15%</span></div>
+        <div class="fw-row"><span class="fw-label">한미약품</span><span class="fw-val" style="color:var(--accent)">15%</span></div>
+        <div class="fw-row"><span class="fw-label">알테오젠</span><span class="fw-val" style="color:var(--accent)">15%</span></div>
+        <div class="theme-highlight">핵심: Novo 디레이팅 반등 + Lilly 성장 + Amgen 옵션 + 한미 국내 출시 + 알테오젠 플랫폼.</div>
+      </div>
+
+      <!-- Card C -->
+      <div class="fw-card reveal d2">
+        <div class="fw-num">포트폴리오 C</div>
+        <h3>밸류체인 — 곡괭이 전략</h3>
+        <div class="fw-row"><span class="fw-label">삼성바이오로직스</span><span class="fw-val" style="color:var(--ink-2)">CDMO</span></div>
+        <div class="fw-row"><span class="fw-label">Bachem</span><span class="fw-val" style="color:var(--ink-2)">펩타이드 CDMO</span></div>
+        <div class="fw-row"><span class="fw-label">Ypsomed</span><span class="fw-val" style="color:var(--ink-2)">디바이스</span></div>
+        <div class="fw-row"><span class="fw-label">인벤티지랩</span><span class="fw-val" style="color:var(--ink-2)">DDS</span></div>
+        <div class="fw-row"><span class="fw-label">펩트론</span><span class="fw-val" style="color:var(--ink-2)">서방형</span></div>
+        <div class="theme-highlight">핵심: GLP-1 시장 성장 시 밸류체인 전체 수혜, 종목 리스크 분산. 경구 소분자 전환 리스크 헤지 필요.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 RISKS -->
+<section class="blk" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;리스크 히트맵 + 이벤트 캘린더</div>
+      <h2 class="sec-title">무엇을 감시하고, 언제 확인하는가</h2>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 히트맵</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt">
+            <b>Lilly P/E 45x 멀티플 압축</b>
+            <span>실적 미스 시 -20~30% 급락 가능. 2021 SaaS 버블 때 고P/E 60-80% 하락 사례. 모니터링: Q2'26 실적, 가이던스.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt">
+            <b>임상 실패 리스크</b>
+            <span>MariTide/VK2735/CagriSema Phase 3 실패 시 관련 종목 급락. 한미·디앤디 Phase 2 결과도 양방향 촉매. 모니터링: Phase 3 결과 발표일.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt">
+            <b>경구 소분자 전환</b>
+            <span>Orforglipron 성공 시 주사제 시장 잠식 + 펩타이드 CDMO 수요 감소. Bachem/CordenPharma/삼성바이오 영향. 모니터링: Orforglipron FDA 승인.</span>
+          </div>
+        </div>
+        <div class="ritem" style="grid-column:1/-1">
+          <div class="ri">R4</div>
+          <div class="rt">
+            <b>한국 소형주 유동성</b>
+            <span>디앤디·펩트론·인벤티지랩 적자 바이오텍. 시총 ₩200-500B, 일평균 거래대금 제한적, 임상 결과에 따른 극단적 변동성. 모니터링: 분기 자금 현황.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:52px;margin-bottom:0">
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem)">이벤트 캘린더</h2>
+    </div>
+
+    <div class="cal-grid reveal">
+      <div class="cal-item">
+        <div class="cal-date">2026 H1</div>
+        <div class="cal-event">디앤디파마텍 DD01 Ph.2</div>
+        <div class="cal-sub">48주 결과 발표 — 양방향 촉매</div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date">2026 Q2</div>
+        <div class="cal-event">Lilly orforglipron FDA</div>
+        <div class="cal-sub">비만 적응증 NDA 제출 — 경구 소분자 게임체인저</div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date">2026 H2</div>
+        <div class="cal-event">한미약품 에페글레나타이드</div>
+        <div class="cal-sub">국내 출시 — 한미약품 GLP-1 첫 상업화</div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date">2026 Q3</div>
+        <div class="cal-event">Viking VK2735</div>
+        <div class="cal-sub">유지투여 Phase 1 결과 — 경구 제형 데이터</div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date">2026 중</div>
+        <div class="cal-event">CagriSema FDA / Roche Enith / Pfizer</div>
+        <div class="cal-sub">CagriSema FDA 심사 + Roche Enith Phase 3 + Pfizer Phase 3 10개</div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date">2027 Q1+</div>
+        <div class="cal-event">Amgen MariTide Phase 3</div>
+        <div class="cal-sub">결과 발표 — Amgen P/E 15x 리레이팅 핵심 촉매</div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date">2027 H1</div>
+        <div class="cal-event">Viking VANQUISH Phase 3</div>
+        <div class="cal-sub">결과 발표 — Viking 시총 리레이팅 결정적 이벤트</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="glp1_overview.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Part 1 — 산업구조와 투자 좌표</div>
+      </div>
+    </a>
+    <a href="glp1_company_novo_lilly.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">Part 3 — Novo·Lilly 듀오폴리</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">GLP-1 시리즈 — Part 2: 투자 지도</div>
+      <div class="src-list">
+        DATA · Bloomberg · IQVIA · Citeline · Goldman Sachs · JP Morgan<br>
+        Novo Nordisk IR · Eli Lilly IR · Amgen IR · Viking IR<br>
+        SEC 10-K · DART · 증권사 리포트<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

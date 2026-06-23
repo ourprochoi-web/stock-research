@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="감속기 일본 과점(Harmonic/Nabtesco), 중국 Leaderdrive 추격, 한국 SBB/SPG/현대모비스, 액추에이터 통합 트렌드 — 부품 밸류체인 심층 분석">
+<meta name="keywords" content="감속기,액추에이터,Harmonic Drive,Nabtesco,Leaderdrive,SBB테크놀로지,현대모비스,휴머노이드 부품,서플라이체인">
+<meta property="og:title" content="심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지">
+<meta property="og:description" content="감속기 일본 과점(Harmonic/Nabtesco), 중국 Leaderdrive 추격, 한국 SBB/SPG/현대모비스, 액추에이터 통합 트렌드 — 부품 밸류체인 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/robot/robot_theme_supply_chain.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지">
+<meta name="twitter:description" content="감속기 일본 과점(Harmonic/Nabtesco), 중국 Leaderdrive 추격, 한국 SBB/SPG/현대모비스, 액추에이터 통합 트렌드 — 부품 밸류체인 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/robot/robot_theme_supply_chain.html">
+<title>심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지",
+  "description": "감속기 일본 과점(Harmonic/Nabtesco), 중국 Leaderdrive 추격, 한국 SBB/SPG/현대모비스, 액추에이터 통합 트렌드 — 부품 밸류체인 심층 분석",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/robot/robot_theme_supply_chain.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>로봇 시리즈 Part 8</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#structure">01 / 밸류체인 구조</a>
+      <a href="#japan">02 / 일본 독점</a>
+      <a href="#china">03 / 중국 추격</a>
+      <a href="#korea">04 / 한국 진입</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">로봇 시리즈 · Part 8 · 2026.06</span>
+    <h1 class="hero-title">감속기에서<br><span class="hl">액추에이터까지</span></h1>
+    <p class="hero-sub">일본의 감속기 독점, 중국 Leaderdrive의 추격, 한국 부품사의 진입 — 휴머노이드 상용화의 진짜 병목인 하드웨어 부품 서플라이체인을 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">60<span class="u">%+</span></div>
+        <div class="lab">일본 3사(Harmonic+Nabtesco+스미토모) 감속기 점유율</div>
+        <div class="src">SRC: Intel Market Research</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">+47<span class="u">%</span></div>
+        <div class="lab">Leaderdrive 2025 매출 성장. Tesla Optimus 60% 공급 목표.</div>
+        <div class="src">SRC: Leaderdrive IR</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">46.3<span class="u">%</span></div>
+        <div class="lab">휴머노이드 감속기 시장 CAGR(2025-2032)</div>
+        <div class="src">SRC: Intel Market Research</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>밸류체인을 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 STRUCTURE -->
+<section class="blk" id="structure">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;밸류체인 구조 — 원자재에서 OEM까지</div>
+      <h2 class="sec-title">8단계 서플라이체인, 감속기가 병목을 만든다</h2>
+      <p class="sec-lead">휴머노이드 로봇 상용화의 병목은 소프트웨어가 아니라 하드웨어 부품의 원가·공급·품질이다. 감속기는 전체 BOM의 최대 40~60%를 차지하며, 이 한 부품이 휴머노이드 대량 생산의 속도를 결정한다.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>원자재 → OEM 8단계 밸류체인 / 화살표 방향은 가치 흐름</div>
+      <div class="flow-chain">
+        <div class="flow-node">
+          <div class="fn-label">Layer 0 · 원자재</div>
+          <h4>희토류 마그넷 · 특수강</h4>
+          <p>네오디뮴 자석(중국 독점), 고탄소 특수강, 반도체 웨이퍼. 공급 집중 리스크 최상단.</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M10 16l-4-4M10 16l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="flow-node">
+          <div class="fn-label">Layer 1 · 핵심 정밀 부품</div>
+          <h4>감속기 (Reducer)</h4>
+          <p>하모닉(최고 정밀, 소형관절) · 사이클로이드(높은 토크, 대형) · RV(매우 높은 토크, 산업 베이스) · 행성(범용). 시장 규모: $52.3M(2025) → $580M(2032E), CAGR 46.3%.</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M10 16l-4-4M10 16l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="flow-node">
+          <div class="fn-label">Layer 2 · 구동 부품</div>
+          <h4>모터 · 드라이버</h4>
+          <p>프레임리스 토크 모터(회전형), 서보모터, 행성 롤러 스크류(선형). 드라이버(모터 컨트롤러·인버터)가 전력 변환을 담당.</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M10 16l-4-4M10 16l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="flow-node">
+          <div class="fn-label">Layer 3 · 통합 모듈</div>
+          <h4>액추에이터 모듈 (감속기+모터+드라이버)</h4>
+          <p>BOM의 40~51% 차지. Tesla Optimus 대당 28개(회전 14+선형 14). 모듈 통합이 부가가치의 핵심.</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M10 16l-4-4M10 16l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="flow-node">
+          <div class="fn-label">Layer 4 · 인식 · 전력</div>
+          <h4>센서 · 배터리 · 컴퓨트</h4>
+          <p>비전(Intel RealSense) · LiDAR(Hesai) · 포스/토크(ATI) · IMU(Bosch) · 촉각(GelSight). 배터리 1~8시간 구동. AI 칩·엣지 GPU가 엣지 추론 담당.</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M10 16l-4-4M10 16l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="flow-node">
+          <div class="fn-label">Layer 5 · 완성품</div>
+          <h4>로봇 OEM</h4>
+          <p>Tesla Optimus · Figure 03 · Boston Dynamics Atlas · 현대 로보틱스 · AGIBOT · UBTech. 부품 통합 역량과 AI 소프트웨어가 경쟁력을 결정.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal" style="margin-top:36px">
+      <div class="vt-tag">구조 인사이트</div>
+      <p><b>감속기 단가가 BOM 하락의 속도를 결정한다.</b> 일본 3사의 과점이 유지되는 한, BOM $20K 목표는 중국·한국 대체재의 신뢰성 검증이 선결 조건이다. OEM이 액추에이터를 자체 개발할수록 전통 부품사 협상력은 구조적으로 약화된다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 JAPAN -->
+<section class="blk" id="japan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;일본 독점 — 수십 년의 기술 해자</div>
+      <h2 class="sec-title">Harmonic·Nabtesco·스미토모, 60%+ 과점의 구조</h2>
+      <p class="sec-lead">일본 기업은 수십 년의 기술 축적과 특허 장벽으로 글로벌 감속기 시장을 과점한다. 이 구조는 휴머노이드 BOM 상승의 핵심 원인이자, 동시에 진입 기업의 가장 높은 장벽이다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card reveal">
+        <div class="fw-num">Japan 01</div>
+        <h3>Harmonic Drive SE <span class="badge badge-jp">일본</span></h3>
+        <div class="theme-market">글로벌 하모닉 드라이브 1위</div>
+        <div class="theme-body">변형파(Strain Wave) 감속기 원천 기술 보유. 수십 년 OEM 관계로 구축된 신뢰도와 특허 기반 성능 벤치마크. 소형 관절에서 최고 정밀도. 휴머노이드 로봇 소형 관절의 사실상 표준.</div>
+        <div class="theme-highlight">특허 기반 성능 벤치마크 · 수십 년 글로벌 OEM 신뢰도 · 일반 산업용 하모닉 시장 $18.5억(2025) → $45억(2034E)</div>
+      </div>
+
+      <div class="fw-card reveal d1">
+        <div class="fw-num">Japan 02</div>
+        <h3>Nabtesco <span class="badge badge-jp">일본</span></h3>
+        <div class="theme-market">글로벌 RV·사이클로이드 1위</div>
+        <div class="theme-body">글로벌 산업용 로봇 생산량의 약 60%에 감속기를 공급. RV(Rotary Vector) 감속기 최고 토크 밀도로 산업 로봇 베이스 관절의 표준. 사이클로이드 드라이브로 대형 관절 커버.</div>
+        <div class="theme-highlight">글로벌 산업 로봇 60% 공급 · 산업용 수요 안정 · 휴머노이드 전환 리스크 모니터링 필요</div>
+      </div>
+
+      <div class="fw-card reveal d2">
+        <div class="fw-num">Japan 03</div>
+        <h3>일본 과점의 취약점</h3>
+        <div class="theme-market">Harmonic + Nabtesco + 스미토모 합산 60%+</div>
+        <div class="theme-body">과점 구조는 안정적이나 세 가지 구조적 취약점이 존재한다. 공급 집중 리스크(지진·자연재해 취약), 고가 정책 지속(BOM 상승 주범), 납기 장기화(휴머노이드 스케일업 병목).</div>
+        <div class="theme-players">
+          <span>공급 집중(지진)</span>
+          <span>고가 정책</span>
+          <span>납기 장기화</span>
+        </div>
+        <div class="theme-highlight">취약점이 곧 중국·한국 대체재의 기회 창이다. 단, 신뢰성 검증 2~3년은 필수 기간.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:36px">
+      <table>
+        <thead>
+          <tr>
+            <th>감속기 유형</th>
+            <th>정밀도</th>
+            <th>토크 밀도</th>
+            <th>주요 용도</th>
+            <th>대표 기업</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>하모닉 드라이브 (Strain Wave)</td>
+            <td>최고</td>
+            <td>중간</td>
+            <td>소형 관절, 휴머노이드</td>
+            <td>Harmonic Drive SE <span class="badge badge-jp">일본</span> · Leaderdrive <span class="badge badge-cn">중국</span></td>
+          </tr>
+          <tr>
+            <td>사이클로이드</td>
+            <td>높음</td>
+            <td>높음</td>
+            <td>산업용 로봇 대형 관절</td>
+            <td>Nabtesco <span class="badge badge-jp">일본</span> · 신코 <span class="badge badge-cn">중국</span></td>
+          </tr>
+          <tr>
+            <td>RV (Rotary Vector)</td>
+            <td>높음</td>
+            <td>매우 높음</td>
+            <td>산업용 로봇 베이스</td>
+            <td>Nabtesco <span class="badge badge-jp">일본</span> · 중대력덕 <span class="badge badge-cn">중국</span></td>
+          </tr>
+          <tr>
+            <td>행성 감속기</td>
+            <td>중간</td>
+            <td>높음</td>
+            <td>범용 자동화</td>
+            <td>다수 (범용 시장)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 CHINA -->
+<section class="blk" id="china">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;중국 추격 — 가격과 물량 전략</div>
+      <h2 class="sec-title">Leaderdrive, 일본 대비 -30~40% 가격으로 Tesla를 잡다</h2>
+      <p class="sec-lead">중국 감속기 기업들은 가격 경쟁과 물량 전략으로 일본 과점에 도전하고 있다. Leaderdrive는 Tesla Optimus의 핵심 공급사로 부상하며, 글로벌 시장에서 일본과 2위를 놓고 경쟁한다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card reveal" style="grid-column:1/span 2">
+        <div class="fw-num">China 01 — 핵심 플레이어</div>
+        <h3>Leaderdrive (绿的谐波) <span class="badge badge-cn">중국 A주</span></h3>
+        <div class="theme-market">2025 매출 5.7억 위안 (+47% YoY) · 순이익 +100%+</div>
+        <div class="theme-body">중국 하모닉 드라이브 1위, 글로벌 2위. Tesla Optimus 주요 공급사로 선정되어 Optimus 감속기 시장의 60% 공급을 목표로 한다. 일본 Harmonic Drive SE 대비 30~40% 저렴한 가격이 핵심 경쟁력. Agibot, UBTech 등 중국 주요 휴머노이드 기업도 고객으로 확보.</div>
+        <div class="theme-players">
+          <span>Tesla Optimus 공급사</span>
+          <span>중국 A주 상장</span>
+          <span>일본 대비 -30~40%</span>
+          <span>창업자 형제 억만장자</span>
+          <span>주가 +40% 1년</span>
+        </div>
+        <div class="theme-highlight">투자 포인트: 상장사 직접 접근 가능. 단, 고평가(휴머노이드 기대 선반영) 주의. 분기 매출·수주 잔고가 핵심 모니터링 지표.</div>
+      </div>
+
+      <div class="fw-card reveal d1">
+        <div class="fw-num">China 02 — RV 시장</div>
+        <h3>남통진캉 · 중대력덕 <span class="badge badge-cn">중국</span></h3>
+        <div class="theme-market">중국 RV 감속기 30%+ 점유</div>
+        <div class="theme-body">RV 감속기 분야에서 남통진캉(Nantong Zhenkang)과 중대력덕(Zhongda Leader)이 합산 30%+ 점유율로 중국 조립 산업용 로봇 시장을 공급 중.</div>
+        <div class="theme-highlight">산업용 로봇 대형 관절 수요 안정 · 휴머노이드 확장 시 RV 수요 동반 성장 기대</div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal" style="margin-top:36px">
+      <div class="vt-tag">China Insight</div>
+      <p>중국 감속기의 구조적 우위는 <b>가격(-30~40%)과 물량 대응력</b>이다. Tesla가 Leaderdrive를 선택한 것은 단순 비용 절감이 아니라, 일본 의존도 분산과 대량 생산 스케일업을 동시에 해결하는 전략적 선택이다. 단, 신뢰성·내구성 미검증이 남은 과제이며, 미중 수출 규제 시나리오도 배제할 수 없다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 KOREA -->
+<section class="blk" id="korea">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;한국 진입 — 국산화와 액추에이터 통합</div>
+      <h2 class="sec-title">SBB·SPG·현대모비스, 그리고 액추에이터 내재화 트렌드</h2>
+      <p class="sec-lead">한국은 감속기 원천 기술 부족을 인정하면서도, 대기업 내재화와 전문 부품사 육성으로 진입을 시도 중이다. CES 2026 이후 액추에이터가 한국 부품 산업의 핵심 진입 포인트로 부상했다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>분류</th>
+            <th>로봇 부품 역할</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SBB테크놀로지 <span class="badge badge-kr">국내</span></td>
+            <td>감속기 전문사</td>
+            <td>7종 하모닉 감속기 개발. 현대 로보틱스랩에 공급 중. 일본산 대비 저가.</td>
+          </tr>
+          <tr>
+            <td>SPG <span class="badge badge-kr">국내</span></td>
+            <td>모터·감속기</td>
+            <td>현대 로보틱스랩 프로토타입에 감속기 공급. 모터와 감속기 동시 공급 역량.</td>
+          </tr>
+          <tr>
+            <td>현대모비스 <span class="badge badge-kr">현대차그룹</span></td>
+            <td>액추에이터</td>
+            <td>Boston Dynamics Atlas 차세대형에 전동 액추에이터 공급 (CES 2026 발표). 유압→전동 전환의 핵심 수혜.</td>
+          </tr>
+          <tr>
+            <td>삼성전자 <span class="badge badge-kr">대기업</span></td>
+            <td>부품 내재화</td>
+            <td>휴머노이드 AI 및 부품 내재화 전략 추진 중. 구체 제품 미공개. 잠재 대형 플레이어.</td>
+          </tr>
+          <tr>
+            <td>현대 로보틱스 <span class="badge badge-kr">현대차그룹</span></td>
+            <td>로봇 OEM</td>
+            <td>국산 감속기(SBB테크·SPG) 탑재한 모바일 양팔 로봇 개발 중. 국산화 테마의 수직 통합 사례.</td>
+          </tr>
+          <tr>
+            <td>삼익THK <span class="badge badge-kr">국내</span></td>
+            <td>정밀 기계</td>
+            <td>THK(일본) 합작사 기반. 리니어 가이드·볼스크류 등 정밀 부품. 선형 액추에이터 구성 요소 공급.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:72px;margin-bottom:32px">
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.8vw,2rem)">액추에이터 통합 트렌드: 자체 설계가 표준이 된다</h2>
+      <p class="sec-lead">최신 휴머노이드 트렌드는 감속기·모터·드라이버·센서를 하나의 모듈로 통합하는 것이다. 이 흐름이 전통 부품 공급사의 협상력을 구조적으로 약화시킨다.</p>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card reveal">
+        <div class="fw-num">OEM 자체 설계</div>
+        <h3>Tesla Optimus</h3>
+        <div class="theme-market">회전 14개 + 선형 14개 = 28개 액추에이터</div>
+        <div class="theme-body">회전형: 프레임리스 토크 모터 + 하모닉 드라이브 + 센서 일체형. 선형형: 행성 롤러 스크류. 완전 자체 설계로 외부 공급망 의존도 최소화. 내재화가 BOM 하락의 핵심 레버.</div>
+        <div class="theme-players">
+          <span>자체 설계 일체형</span>
+          <span>28개 액추에이터</span>
+          <span>Dojo 슈퍼컴 학습</span>
+        </div>
+      </div>
+
+      <div class="fw-card reveal d1">
+        <div class="fw-num">자체 설계 추세</div>
+        <h3>Figure AI · Boston Dynamics</h3>
+        <div class="theme-market">Figure 자체 설계 / BD 유압→전동 전환</div>
+        <div class="theme-body">Figure AI는 OpenAI 협업 종료 후 자체 Helix AI와 통합된 액추에이터 제어 시스템을 개발. Boston Dynamics Atlas는 유압 시스템을 전동으로 전환하며 현대 모비스 전동 액추에이터를 채택 — 한국 부품사의 가장 직접적인 진입 증거.</div>
+        <div class="theme-players">
+          <span>Figure 자체 Helix</span>
+          <span>BD 유압→전동</span>
+          <span>현대모비스 공급</span>
+        </div>
+      </div>
+
+      <div class="fw-card reveal d2">
+        <div class="fw-num">통합 트렌드의 의미</div>
+        <h3>부품사 협상력 재편</h3>
+        <div class="theme-market">전통 단품 공급사 → 모듈 통합 기업으로 권력 이동</div>
+        <div class="theme-body">전통 부품 공급사(감속기 단품)의 협상력이 구조적으로 약화된다. 액추에이터 모듈 통합 역량을 가진 기업이 부가가치를 독점하고, OEM이 자체 개발을 확대할수록 외부 감속기 수요는 점진적으로 감소한다.</div>
+        <div class="theme-highlight">생존 전략: 단품 → 모듈 공급으로 전환, 또는 신뢰성 인증으로 일본 점유율 대체.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:36px">
+      <div class="tg">Korea Thesis</div>
+      <p>"한국 부품사의 진입 가능성은 현실화되고 있으나, 검증 기간이 변수다."
+      <span class="u">현대모비스의 Atlas 액추에이터 공급은 한국 부품사가 글로벌 로봇 OEM에 납품할 수 있다는 가장 강력한 증거다. SBB테크·SPG의 감속기는 국산화 테마의 단기 트리거 역할이 가능하지만, 정밀 감속기의 신뢰성·내구성 검증(통상 2~3년)이 중기 병목으로 작용할 것이다. 삼성전자의 부품 내재화 전략이 구체화되는 시점이 한국 로봇 부품 섹터의 다음 큰 촉매다.</span></p>
+    </div>
+
+    <!-- RISK -->
+    <div class="risk reveal" style="margin-top:56px">
+      <h3><span class="rd"></span>리스크 — 이 테제를 깰 수 있는 시나리오</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt">
+            <b>기술 격차</b>
+            <span>국산·중국산 감속기의 정밀도·내구성 미검증. 신뢰성 인증 2~3년은 필수 기간. 검증 실패 시 일본 의존 장기화.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt">
+            <b>액추에이터 내재화</b>
+            <span>Tesla·Figure 등 OEM의 자체 개발 확대로 외부 부품 수요 구조적 축소. 공급사 협상력 약화 가속.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt">
+            <b>수출 규제</b>
+            <span>미·중 기술 패권 갈등으로 중국 부품(Leaderdrive 등)의 글로벌 공급 차단 시나리오. 중국산 채택 OEM에 공급망 쇼크 발생.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R4</div>
+          <div class="rt">
+            <b>원자재 (희토류)</b>
+            <span>네오디뮴 마그넷의 중국 의존도 90%+. 희토류 수출 규제·가격 급등 시 전체 모터·감속기 BOM 상승.</span>
+          </div>
+        </div>
+        <div class="ritem" style="grid-column:1/-1">
+          <div class="ri">R5</div>
+          <div class="rt">
+            <b>과잉 투자 (중국 보조금 기반 가격 붕괴)</b>
+            <span>중국 정부 보조금 기반 과잉 생산으로 감속기 가격이 붕괴되면, 일본·한국 부품사의 수익성이 동시에 훼손된다. 중국 태양광·배터리 사이클의 반복 가능성 경계 필요.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="robot_theme_economics_ai.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Part 7</div>
+        <div class="sn-title">경제학과 Foundation Model</div>
+      </div>
+    </a>
+    <a href="robot_overview.html">
+      <div>
+        <div class="sn-label">Part 1 →</div>
+        <div class="sn-title">산업구조와 투자 좌표</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">로봇 시리즈 — Part 8: 부품 서플라이체인</div>
+      <div class="src-list">
+        DATA · Intel Market Research · Goldman Sachs · Leaderdrive IR · Korea Herald<br>
+        The Elec · Humanoid.guide · Gasgoo · Yole Group · RoboZaps<br>
+        DART · 증권사 리포트 (삼성증권 · 하나증권 · 키움증권)<br>
+        작성 기준일 · 2026.06
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

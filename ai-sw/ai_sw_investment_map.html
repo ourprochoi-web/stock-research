@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI 소프트웨어 글로벌 7사 + 한국 5사 크로스 밸류에이션, 3종 포트폴리오, 리스크 히트맵, 이벤트 캘린더">
+<meta name="keywords" content="AI SW 투자,밸류에이션,포트폴리오,Palantir,ServiceNow,Salesforce,CrowdStrike,네이버">
+<meta property="og:title" content="AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션">
+<meta property="og:description" content="AI 소프트웨어 글로벌 7사 + 한국 5사 크로스 밸류에이션, 3종 포트폴리오, 리스크 히트맵, 이벤트 캘린더">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_investment_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션">
+<meta name="twitter:description" content="AI 소프트웨어 글로벌 7사 + 한국 5사 크로스 밸류에이션, 3종 포트폴리오, 리스크 히트맵, 이벤트 캘린더">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_investment_map.html">
+<title>AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#38bdf8;
+    --accent-2:#a78bfa;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.38;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.22;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,189,248,.06);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* PANEL */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:20px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* VALUATION TABLE */
+  .val-table{width:100%;border-collapse:collapse;margin-top:8px}
+  .val-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .val-table td{padding:13px 14px;font-size:.86rem;border-bottom:1px solid rgba(35,48,77,.6);vertical-align:top}
+  .val-table tr:last-child td{border-bottom:none}
+  .val-table tr:hover td{background:rgba(56,189,248,.04)}
+  .val-table .company{font-weight:750;color:var(--ink)}
+  .val-table .ticker{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);margin-top:2px}
+  .val-table .mono-val{font-family:var(--mono);font-weight:700;font-size:.88rem}
+  .val-table .bull{color:var(--bull)}
+  .val-table .bear{color:var(--bear)}
+  .val-table .neutral{color:var(--ink-2)}
+  .val-table .accent{color:var(--accent)}
+
+  /* HORIZONTAL BAR */
+  .hbar-wrap{margin-top:22px;display:flex;flex-direction:column;gap:14px}
+  .hbar-row{display:flex;align-items:center;gap:12px}
+  .hbar-label{font-size:.82rem;color:var(--ink-2);min-width:130px;flex-shrink:0}
+  .hbar-track{flex:1;height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden;position:relative}
+  .hbar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.4s cubic-bezier(.2,.8,.2,1);width:0}
+  .hbar-val{font-family:var(--mono);font-size:.76rem;color:var(--ink);min-width:52px;text-align:right;flex-shrink:0}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* QUADRANT MATRIX */
+  .quadrant-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:8px}
+  .quad{background:var(--surface);padding:28px;position:relative;min-height:180px}
+  .quad::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+  .quad.q1::before{background:linear-gradient(90deg,var(--bear),transparent)}
+  .quad.q2::before{background:linear-gradient(90deg,var(--accent-2),transparent)}
+  .quad.q3::before{background:linear-gradient(90deg,var(--bull),transparent)}
+  .quad.q4::before{background:linear-gradient(90deg,var(--ink-3),transparent)}
+  .quad-label{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  .quad.q1 .quad-label{color:var(--bear)}
+  .quad.q2 .quad-label{color:var(--accent-2)}
+  .quad.q3 .quad-label{color:var(--bull)}
+  .quad.q4 .quad-label{color:var(--ink-3)}
+  .quad h4{font-size:1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .quad .q-stocks{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .q-stock{font-family:var(--mono);font-size:.7rem;padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--ink-2);background:var(--bg-2)}
+  .q-stock.hi{color:var(--bull);border-color:rgba(72,213,151,.3);background:rgba(72,213,151,.06)}
+  .q-stock.warn{color:var(--bear);border-color:rgba(255,107,107,.3);background:rgba(255,107,107,.06)}
+  .q-stock.accent{color:var(--accent);border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.06)}
+  .q-stock.purple{color:var(--accent-2);border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.06)}
+  .quad .q-note{font-size:.82rem;color:var(--ink-2);margin-top:12px;line-height:1.5}
+  .quad-axis{display:flex;justify-content:space-between;align-items:center;padding:10px 0;margin-top:4px}
+  .quad-axis .ax-label{font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
+
+  /* PEG TABLE */
+  .peg-tag{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;padding:3px 8px;border-radius:5px;font-weight:600;text-transform:uppercase}
+  .peg-tag.best{background:rgba(72,213,151,.14);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .peg-tag.low{background:rgba(56,189,248,.12);color:var(--accent);border:1px solid rgba(56,189,248,.3)}
+  .peg-tag.fair{background:rgba(157,169,194,.1);color:var(--ink-2);border:1px solid rgba(157,169,194,.2)}
+  .peg-tag.high{background:rgba(255,107,107,.1);color:var(--bear);border:1px solid rgba(255,107,107,.25)}
+  .peg-tag.na{background:rgba(94,107,134,.1);color:var(--ink-3);border:1px solid rgba(94,107,134,.2)}
+
+  /* PORTFOLIO TABS */
+  .port-tabs{display:flex;gap:6px;margin-bottom:24px}
+  .port-tab{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;padding:9px 18px;border-radius:9px;border:1px solid var(--line);color:var(--ink-2);background:var(--surface);cursor:pointer;transition:.2s;text-transform:uppercase}
+  .port-tab.active{color:var(--accent);border-color:var(--accent);background:rgba(56,189,248,.08)}
+  .port-panel{display:none}
+  .port-panel.active{display:block}
+  .port-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .port-meta h3{font-size:1.18rem;font-weight:800;letter-spacing:-.02em}
+  .port-meta .pm-sub{font-size:.86rem;color:var(--ink-2);margin-top:5px}
+  .port-badge{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;padding:8px 16px;border-radius:10px;text-align:center;flex-shrink:0}
+  .port-badge.aggressive{background:rgba(255,107,107,.1);color:var(--bear);border:1px solid rgba(255,107,107,.25)}
+  .port-badge.balanced{background:rgba(56,189,248,.1);color:var(--accent);border:1px solid rgba(56,189,248,.25)}
+  .port-badge.conservative{background:rgba(72,213,151,.1);color:var(--bull);border:1px solid rgba(72,213,151,.25)}
+  .port-badge .pb-num{font-size:1.18rem;font-weight:800;display:block;margin-top:2px}
+  .alloc-table{width:100%;border-collapse:collapse}
+  .alloc-table th{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .alloc-table td{padding:11px 12px;font-size:.84rem;border-bottom:1px solid rgba(35,48,77,.5);vertical-align:middle}
+  .alloc-table tr:last-child td{border-bottom:none}
+  .alloc-table tr:hover td{background:rgba(56,189,248,.03)}
+  .alloc-bar-cell{width:120px}
+  .alloc-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .weight-num{font-family:var(--mono);font-weight:700;font-size:.88rem;color:var(--accent)}
+
+  /* RISK HEATMAP */
+  .risk-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.8rem}
+  .risk-table th{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:9px 10px;text-align:center;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .risk-table th:first-child{text-align:left}
+  .risk-table td{padding:10px 10px;border-bottom:1px solid rgba(35,48,77,.5);text-align:center;vertical-align:middle}
+  .risk-table tr:last-child td{border-bottom:none}
+  .risk-table tr:hover td{background:rgba(56,189,248,.03)}
+  .risk-table td:first-child{text-align:left}
+  .risk-table .comp{font-weight:750;color:var(--ink);font-size:.84rem}
+  .risk-table .tick{font-family:var(--mono);font-size:.66rem;color:var(--ink-3)}
+  .r-cell{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:6px;min-width:52px}
+  .r-high{background:rgba(255,107,107,.15);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .r-mid{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.3)}
+  .r-low{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .score-cell{font-family:var(--mono);font-weight:800;font-size:.88rem}
+  .score-danger{color:var(--bear)}.score-warn{color:#fbbf24}.score-ok{color:var(--bull)}
+  .grade-cell{font-family:var(--mono);font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:5px}
+  .grade-h{background:rgba(255,107,107,.15);color:var(--bear)}
+  .grade-mh{background:rgba(251,191,36,.12);color:#fbbf24}
+  .grade-m{background:rgba(157,169,194,.1);color:var(--ink-2)}
+  .grade-l{background:rgba(72,213,151,.12);color:var(--bull)}
+
+  /* TIMELINE */
+  .timeline-wrap{margin-top:8px}
+  .tl-year{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding:10px 0 14px;border-bottom:1px solid var(--line);margin-bottom:20px}
+  .tl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:36px}
+  .tl-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative;overflow:hidden}
+  .tl-item::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent)}
+  .tl-item.kr::before{background:var(--bull)}
+  .tl-item.high::before{background:var(--bear)}
+  .tl-date{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .tl-item.kr .tl-date{color:var(--bull)}
+  .tl-item.high .tl-date{color:var(--bear)}
+  .tl-co{font-weight:750;font-size:.94rem;margin-bottom:4px}
+  .tl-ev{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+  .tl-impact{display:inline-block;font-family:var(--mono);font-size:.64rem;margin-top:8px;padding:3px 8px;border-radius:5px;background:rgba(56,189,248,.1);color:var(--accent);border:1px solid rgba(56,189,248,.2)}
+  .tl-item.kr .tl-impact{background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)}
+  .tl-item.high .tl-impact{background:rgba(255,107,107,.1);color:var(--bear);border-color:rgba(255,107,107,.2)}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .hero-stats{grid-template-columns:1fr}
+    .quadrant-grid{grid-template-columns:1fr}
+    .tl-grid{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+    .val-table{font-size:.78rem}
+    .val-table th,.val-table td{padding:8px 9px}
+    .risk-table{font-size:.74rem}
+    .risk-table th,.risk-table td{padding:7px 7px}
+    .port-tabs{flex-wrap:wrap}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션",
+  "description": "AI 소프트웨어 글로벌 7사 + 한국 5사 크로스 밸류에이션, 3종 포트폴리오, 리스크 히트맵, 이벤트 캘린더",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_investment_map.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI SW 시리즈 Part 2</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#valuation">01 / 크로스 밸류에이션</a>
+      <a href="#matrix">02 / 성장 매트릭스</a>
+      <a href="#portfolio">03 / 포트폴리오</a>
+      <a href="#risk">04 / 리스크 히트맵</a>
+      <a href="#timing">05 / 타이밍</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI SW 시리즈 · Part 2 · 2026.06</span>
+    <h1 class="hero-title">12사 크로스 밸류에이션<br><span class="hl">투자 지도</span></h1>
+    <p class="hero-sub">글로벌 7사 + 한국 5사의 성장-밸류에이션 매트릭스, 포트폴리오 구성안 3종, 리스크 히트맵, 이벤트 캘린더를 제시한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">12<span class="u">사</span></div>
+        <div class="lab">글로벌 7사(MSFT·PLTR·CRM·CRWD·NOW·SNOW·DDOG) + 한국 5사(네이버·카카오·솔트룩스·코난·셀바스AI) 크로스 분석</div>
+        <div class="src">SRC: SEC 10-K/10-Q · DART · StockAnalysis 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">0.18<span class="u">x</span></div>
+        <div class="lab">네이버 PEG-유사 비율 (P/S ÷ 매출성장률) — AI SW 섹터 12사 중 최저평가. Salesforce(0.29), ServiceNow(0.32)가 글로벌 내 최우량 밸류.</div>
+        <div class="src">SRC: DART · StockAnalysis · MacroTrends</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">50<span class="u">x</span> → 2.3<span class="u">x</span></div>
+        <div class="lab">P/S 밸류에이션 격차 22배. Palantir 50x에서 카카오 2.3x까지 — AI 퓨어플레이 프리미엄 vs. 플랫폼 할인 구조의 극단적 이분화.</div>
+        <div class="src">SRC: StockAnalysis · CompaniesMarketCap</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>밸류에이션 지도를 따라가기</div>
+  </div>
+</header>
+
+<!-- 01 CROSS VALUATION -->
+<section class="blk" id="valuation">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;크로스 밸류에이션</div>
+      <h2 class="sec-title">글로벌 7사 + 한국 5사 핵심 지표</h2>
+      <p class="sec-lead">P/S·Forward P/E·매출 성장률·AI 매출 비중을 한 화면에서 비교한다. 글로벌과 한국 기업의 밸류에이션 구조적 차이와 AI 프리미엄 반영 수준을 가려낸다.</p>
+    </div>
+
+    <!-- Global 7 Table -->
+    <div class="panel reveal" style="padding:0;overflow:hidden;margin-bottom:22px">
+      <div style="padding:20px 24px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px">
+        <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)">Global 7</span>
+        <span style="font-size:.84rem;color:var(--ink-2)">미국 상장 AI SW 기업 핵심 재무 지표 (USD)</span>
+      </div>
+      <table class="val-table">
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>시가총액</th>
+            <th>매출 (TTM)</th>
+            <th>P/S</th>
+            <th>Forward P/E</th>
+            <th>매출성장률</th>
+            <th>AI 매출비중</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="company">Microsoft</div><div class="ticker">MSFT · NASDAQ</div></td>
+            <td><span class="mono-val">$2.73T</span></td>
+            <td><span class="mono-val">$330B</span></td>
+            <td><span class="mono-val neutral">8.3x</span></td>
+            <td><span class="mono-val neutral">~21x</span></td>
+            <td><span class="mono-val bull">+18%</span></td>
+            <td><span class="mono-val" style="color:var(--ink-2)">~11%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Palantir</div><div class="ticker">PLTR · NYSE</div></td>
+            <td><span class="mono-val">$321B</span></td>
+            <td><span class="mono-val">$6.5B</span></td>
+            <td><span class="mono-val bear">50x</span></td>
+            <td><span class="mono-val bear">~83x</span></td>
+            <td><span class="mono-val bull">+85%</span></td>
+            <td><span class="mono-val bull">~100%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Salesforce</div><div class="ticker">CRM · NYSE</div></td>
+            <td><span class="mono-val">$175B</span></td>
+            <td><span class="mono-val">$46B</span></td>
+            <td><span class="mono-val accent">3.8x</span></td>
+            <td><span class="mono-val accent">~16x</span></td>
+            <td><span class="mono-val neutral">+13%</span></td>
+            <td><span class="mono-val" style="color:var(--ink-2)">~3%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">CrowdStrike</div><div class="ticker">CRWD · NASDAQ</div></td>
+            <td><span class="mono-val">$174B</span></td>
+            <td><span class="mono-val">$5.1B</span></td>
+            <td><span class="mono-val bear">34x</span></td>
+            <td><span class="mono-val bear">~138x</span></td>
+            <td><span class="mono-val bull">+26%</span></td>
+            <td><span class="mono-val" style="color:var(--ink-2)">~30%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">ServiceNow</div><div class="ticker">NOW · NYSE</div></td>
+            <td><span class="mono-val">$105B</span></td>
+            <td><span class="mono-val">$15B</span></td>
+            <td><span class="mono-val accent">7.0x</span></td>
+            <td><span class="mono-val accent">~24x</span></td>
+            <td><span class="mono-val bull">+22%</span></td>
+            <td><span class="mono-val" style="color:var(--ink-2)">~4%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Snowflake</div><div class="ticker">SNOW · NYSE</div></td>
+            <td><span class="mono-val">$83B</span></td>
+            <td><span class="mono-val">$5.0B</span></td>
+            <td><span class="mono-val bear">16x</span></td>
+            <td><span class="mono-val bear">~107x</span></td>
+            <td><span class="mono-val bull">+34%</span></td>
+            <td><span class="mono-val" style="color:var(--ink-2)">~15%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Datadog</div><div class="ticker">DDOG · NASDAQ</div></td>
+            <td><span class="mono-val">$81B</span></td>
+            <td><span class="mono-val">$4.0B</span></td>
+            <td><span class="mono-val bear">18.3x</span></td>
+            <td><span class="mono-val bear">~95x</span></td>
+            <td><span class="mono-val bull">+32%</span></td>
+            <td><span class="mono-val" style="color:var(--ink-2)">~20%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Korean 5 Table -->
+    <div class="panel reveal d1" style="padding:0;overflow:hidden;margin-bottom:22px">
+      <div style="padding:20px 24px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px">
+        <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bull)">Korean 5</span>
+        <span style="font-size:.84rem;color:var(--ink-2)">국내 AI SW 기업 핵심 재무 지표 (KRW)</span>
+      </div>
+      <table class="val-table">
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>시가총액</th>
+            <th>FY2025 매출</th>
+            <th>PSR</th>
+            <th>PER</th>
+            <th>PBR</th>
+            <th>매출성장률</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="company">네이버</div><div class="ticker">035420.KS · KOSPI</div></td>
+            <td><span class="mono-val">34.8조원</span></td>
+            <td><span class="mono-val">12조350억</span></td>
+            <td><span class="mono-val accent">2.9x</span></td>
+            <td><span class="mono-val accent">~20x</span></td>
+            <td><span class="mono-val neutral">~1.2x</span></td>
+            <td><span class="mono-val bull">+16.3%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">카카오</div><div class="ticker">035720.KS · KOSPI</div></td>
+            <td><span class="mono-val">18.8조원</span></td>
+            <td><span class="mono-val">8조991억</span></td>
+            <td><span class="mono-val accent">2.3x</span></td>
+            <td><span class="mono-val neutral">~29x</span></td>
+            <td><span class="mono-val neutral">~1.82x</span></td>
+            <td><span class="mono-val neutral">+11%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">솔트룩스</div><div class="ticker">304100.KQ · KOSDAQ</div></td>
+            <td><span class="mono-val">2,942억</span></td>
+            <td><span class="mono-val">416억</span></td>
+            <td><span class="mono-val neutral">7.1x</span></td>
+            <td><span class="mono-val bear">N/A (적자)</span></td>
+            <td><span class="mono-val neutral">~3.48x</span></td>
+            <td><span class="mono-val bear">-9.3%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">코난테크놀로지</div><div class="ticker">402030.KQ · KOSDAQ</div></td>
+            <td><span class="mono-val">1,933억</span></td>
+            <td><span class="mono-val">340억</span></td>
+            <td><span class="mono-val neutral">5.7x</span></td>
+            <td><span class="mono-val bear">N/A (적자)</span></td>
+            <td><span class="mono-val neutral">~7.84x</span></td>
+            <td><span class="mono-val bull">+29%</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">셀바스AI</div><div class="ticker">108860.KQ · KOSDAQ</div></td>
+            <td><span class="mono-val">2,842억</span></td>
+            <td><span class="mono-val">1,148억</span></td>
+            <td><span class="mono-val accent">2.5x</span></td>
+            <td><span class="mono-val" style="color:var(--ink-3)">N/A</span></td>
+            <td><span class="mono-val neutral">~3.12x</span></td>
+            <td><span class="mono-val neutral">+2%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P/S Bar Chart -->
+    <div class="panel reveal d2">
+      <h3>P/S 배수 비교 — 12사 전체</h3>
+      <div class="ph-sub">낮을수록 매출 대비 저평가 (성장률과 함께 해석 필요)</div>
+      <div class="hbar-wrap">
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">Palantir</span><div class="hbar-track"><div class="hbar-fill" data-w="100%"></div></div><span class="hbar-val" style="color:var(--bear)">50x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">CrowdStrike</span><div class="hbar-track"><div class="hbar-fill" data-w="68%"></div></div><span class="hbar-val" style="color:var(--bear)">34x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">Datadog</span><div class="hbar-track"><div class="hbar-fill" data-w="36.6%"></div></div><span class="hbar-val">18.3x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">Snowflake</span><div class="hbar-track"><div class="hbar-fill" data-w="32%"></div></div><span class="hbar-val">16x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">Microsoft</span><div class="hbar-track"><div class="hbar-fill" data-w="16.6%"></div></div><span class="hbar-val">8.3x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">솔트룩스</span><div class="hbar-track"><div class="hbar-fill" data-w="14.2%"></div></div><span class="hbar-val">7.1x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">ServiceNow</span><div class="hbar-track"><div class="hbar-fill" data-w="14%"></div></div><span class="hbar-val" style="color:var(--accent)">7.0x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">코난테크놀로지</span><div class="hbar-track"><div class="hbar-fill" data-w="11.4%"></div></div><span class="hbar-val">5.7x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">Salesforce</span><div class="hbar-track"><div class="hbar-fill" data-w="7.6%"></div></div><span class="hbar-val" style="color:var(--accent)">3.8x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">네이버</span><div class="hbar-track"><div class="hbar-fill" data-w="5.8%"></div></div><span class="hbar-val" style="color:var(--bull)">2.9x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">셀바스AI</span><div class="hbar-track"><div class="hbar-fill" data-w="5%"></div></div><span class="hbar-val" style="color:var(--bull)">2.5x</span></div>
+        <div class="hbar-row"><span class="hbar-label" style="min-width:150px">카카오</span><div class="hbar-track"><div class="hbar-fill" data-w="4.6%"></div></div><span class="hbar-val" style="color:var(--bull)">2.3x</span></div>
+      </div>
+      <div class="foot">Palantir 50x ↔ 카카오 2.3x — 22배 격차. 글로벌 AI 퓨어플레이 기업이 극단적 프리미엄을 받는 반면, 한국 대형 플랫폼은 AI 매출 비중이 낮아 AI 프리미엄이 제한적이다. 단순 P/S 비교보다 성장률 대비 적정성(PEG-유사 비율)으로 판단해야 한다.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Valuation Cross-Read</div>
+      <p>"P/S 숫자만 보면 오판한다 — 성장률과 함께 읽어야 한다."
+      <span class="u">Salesforce P/S 3.8x는 10년 중간값 7.6x 대비 50% 할인이다. ServiceNow P/E 24x는 22% 성장 대비 합리적이다. 반면 CrowdStrike P/S 34x는 성장률 26% 대비 1.31배 고평가다. 한국 기업 중 네이버(0.18)·코난(0.20)·카카오(0.21)가 성장 대비 가장 저렴하나, 코난과 카카오는 각각 구조적 적자 리스크와 AI 수익화 불확실성이 할인 원인이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 GROWTH MATRIX -->
+<section class="blk" id="matrix">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;성장 매트릭스</div>
+      <h2 class="sec-title">성장-밸류에이션 4분면 분석</h2>
+      <p class="sec-lead">X축 매출 성장률 × Y축 P/S 배수로 12개 기업을 4분면에 배치한다. 가장 매력적인 투자 영역은 고성장+저밸류(III분면)이며, ServiceNow·네이버·Salesforce·코난이 이에 해당한다.</p>
+    </div>
+
+    <!-- 4 Quadrant -->
+    <div class="quadrant-grid reveal">
+      <div class="quad q2">
+        <div class="quad-label">II. 저성장 + 고밸류 (좌상단)</div>
+        <h4>프리미엄 정당화 약함</h4>
+        <p class="q-note">성장 둔화에도 높은 P/S — 기술 프리미엄 또는 과대 평가. PSR 7.1x이나 매출 감소(-9.3%) + 5년 적자 지속.</p>
+        <div class="q-stocks">
+          <span class="q-stock warn">솔트룩스 7.1x / -9.3%</span>
+        </div>
+      </div>
+      <div class="quad q1">
+        <div class="quad-label">I. 고성장 + 고밸류 (우상단)</div>
+        <h4>모멘텀 플레이</h4>
+        <p class="q-note">높은 성장률과 높은 P/S — 시장이 강한 성장 기대를 이미 가격에 반영. 성장 둔화 시 밸류에이션 급락 리스크. 신규 진입보다 보유자 트레일링 스탑 전략.</p>
+        <div class="q-stocks">
+          <span class="q-stock warn">Palantir 50x/+85%</span>
+          <span class="q-stock warn">CrowdStrike 34x/+26%</span>
+          <span class="q-stock">Datadog 18.3x/+32%</span>
+          <span class="q-stock">Snowflake 16x/+34%</span>
+        </div>
+      </div>
+      <div class="quad q4">
+        <div class="quad-label">IV. 저성장 + 저밸류 (좌하단)</div>
+        <h4>턴어라운드 or 가치함정</h4>
+        <p class="q-note">낮은 성장과 낮은 P/S. 카카오는 에이전틱 AI 수익화가 턴어라운드 촉매, 셀바스AI는 메디아나(의료기기) +61% 성장이 관건.</p>
+        <div class="q-stocks">
+          <span class="q-stock">카카오 2.3x/+11%</span>
+          <span class="q-stock">셀바스AI 2.5x/+2%</span>
+        </div>
+      </div>
+      <div class="quad q3">
+        <div class="quad-label">III. 고성장 + 저밸류 (우하단) — 가장 매력적</div>
+        <h4>잠재적 저평가 구간</h4>
+        <p class="q-note">높은 성장률 대비 낮은 P/S — 성장 지속 시 밸류에이션 리레이팅 기대. 섹터 내 최우량 리스크-리워드 영역.</p>
+        <div class="q-stocks">
+          <span class="q-stock hi">ServiceNow 7x/+22%</span>
+          <span class="q-stock hi">Salesforce 3.8x/+13%</span>
+          <span class="q-stock hi">네이버 2.9x/+16%</span>
+          <span class="q-stock hi">코난 5.7x/+29%</span>
+          <span class="q-stock accent">Microsoft 8.3x/+18%</span>
+        </div>
+      </div>
+    </div>
+    <div class="quad-axis">
+      <span class="ax-label">← 저성장</span>
+      <span class="ax-label" style="color:var(--accent)">X축 = 매출 성장률</span>
+      <span class="ax-label">고성장 →</span>
+    </div>
+
+    <!-- PEG-유사 매트릭스 -->
+    <div class="panel reveal d1" style="padding:0;overflow:hidden;margin-top:28px">
+      <div style="padding:20px 24px 16px;border-bottom:1px solid var(--line)">
+        <h3 style="margin:0">PEG-유사 매트릭스 — P/S ÷ 매출성장률</h3>
+        <div style="font-size:.84rem;color:var(--ink-2);margin-top:5px">낮을수록 성장 대비 저평가 / 1.0 이상은 과프리미엄</div>
+      </div>
+      <table class="val-table">
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>P/S</th>
+            <th>매출 성장률</th>
+            <th>P/S ÷ 성장률</th>
+            <th>평가</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="company">네이버</div><div class="ticker">035420.KS</div></td>
+            <td><span class="mono-val">2.9x</span></td>
+            <td><span class="mono-val bull">16.3%</span></td>
+            <td><span class="mono-val bull">0.18</span></td>
+            <td><span class="peg-tag best">매우 저평가</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">코난테크놀로지</div><div class="ticker">402030.KQ</div></td>
+            <td><span class="mono-val">5.7x</span></td>
+            <td><span class="mono-val bull">29%</span></td>
+            <td><span class="mono-val bull">0.20</span></td>
+            <td><span class="peg-tag best">매우 저평가*</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">카카오</div><div class="ticker">035720.KS</div></td>
+            <td><span class="mono-val">2.3x</span></td>
+            <td><span class="mono-val neutral">11%</span></td>
+            <td><span class="mono-val bull">0.21</span></td>
+            <td><span class="peg-tag best">매우 저평가*</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Salesforce</div><div class="ticker">CRM</div></td>
+            <td><span class="mono-val">3.8x</span></td>
+            <td><span class="mono-val neutral">13%</span></td>
+            <td><span class="mono-val accent">0.29</span></td>
+            <td><span class="peg-tag low">저평가</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">ServiceNow</div><div class="ticker">NOW</div></td>
+            <td><span class="mono-val">7.0x</span></td>
+            <td><span class="mono-val bull">22%</span></td>
+            <td><span class="mono-val accent">0.32</span></td>
+            <td><span class="peg-tag low">저평가</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Microsoft</div><div class="ticker">MSFT</div></td>
+            <td><span class="mono-val">8.3x</span></td>
+            <td><span class="mono-val bull">18%</span></td>
+            <td><span class="mono-val">0.46</span></td>
+            <td><span class="peg-tag fair">적정</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Snowflake</div><div class="ticker">SNOW</div></td>
+            <td><span class="mono-val">16x</span></td>
+            <td><span class="mono-val bull">34%</span></td>
+            <td><span class="mono-val">0.47</span></td>
+            <td><span class="peg-tag fair">적정</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Datadog</div><div class="ticker">DDOG</div></td>
+            <td><span class="mono-val">18.3x</span></td>
+            <td><span class="mono-val bull">32%</span></td>
+            <td><span class="mono-val">0.57</span></td>
+            <td><span class="peg-tag fair">적정~소폭 고평가</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">Palantir</div><div class="ticker">PLTR</div></td>
+            <td><span class="mono-val">50x</span></td>
+            <td><span class="mono-val bull">85%</span></td>
+            <td><span class="mono-val">0.59</span></td>
+            <td><span class="peg-tag fair">적정 (성장률 반영)</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">셀바스AI</div><div class="ticker">108860.KQ</div></td>
+            <td><span class="mono-val">2.5x</span></td>
+            <td><span class="mono-val neutral">2%</span></td>
+            <td><span class="mono-val bear">1.25</span></td>
+            <td><span class="peg-tag high">고평가 (저성장)</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">CrowdStrike</div><div class="ticker">CRWD</div></td>
+            <td><span class="mono-val">34x</span></td>
+            <td><span class="mono-val bull">26%</span></td>
+            <td><span class="mono-val bear">1.31</span></td>
+            <td><span class="peg-tag high">고평가</span></td>
+          </tr>
+          <tr>
+            <td><div class="company">솔트룩스</div><div class="ticker">304100.KQ</div></td>
+            <td><span class="mono-val">7.1x</span></td>
+            <td><span class="mono-val bear">-9.3%</span></td>
+            <td><span class="mono-val bear">N/A</span></td>
+            <td><span class="peg-tag high">고평가 (매출 감소)</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="padding:14px 20px;font-size:.78rem;color:var(--ink-3);border-top:1px solid var(--line)">* 코난테크놀로지(적자+일회성 매출 역기저), 카카오(AI 수익화 미증명)는 낮은 PEG-유사 비율의 원인이 구조적 할인임에 유의</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Matrix Verdict</div>
+      <p>"III분면(고성장+저밸류)이 가장 매력적인 투자 영역이다."
+      <span class="u">ServiceNow(0.32)·Salesforce(0.29)는 글로벌 AI SW 섹터 내 성장 대비 가장 저렴한 기업이다. 네이버(0.18)는 섹터 전체 최저 PEG-유사 비율을 기록하지만, AI 수익화 시차가 단기 촉매 부재를 설명한다. AI 팩토리 세종 '각' 55MW 가동 가시화 시 리레이팅 기대.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 PORTFOLIO -->
+<section class="blk" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;포트폴리오</div>
+      <h2 class="sec-title">스타일별 포트폴리오 구성안 3종</h2>
+      <p class="sec-lead">공격형(최대 수익 추구)·균형형(성장-안정 혼합)·보수형(자본 보전 우선) 세 가지 시나리오로 12사 포트폴리오를 구성한다. 글로벌:한국 비율과 흑자 기업 비중을 핵심 조절 변수로 삼는다.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="port-tabs">
+        <button class="port-tab active" data-tab="aggressive">공격형</button>
+        <button class="port-tab" data-tab="balanced">균형형</button>
+        <button class="port-tab" data-tab="conservative">보수형</button>
+      </div>
+
+      <!-- Aggressive -->
+      <div class="port-panel active" id="tab-aggressive">
+        <div class="panel" style="padding:0;overflow:hidden">
+          <div style="padding:24px;border-bottom:1px solid var(--line)">
+            <div class="port-header">
+              <div class="port-meta">
+                <h3>공격형 포트폴리오 (Aggressive)</h3>
+                <div class="pm-sub">최대 수익 추구 · 높은 변동성 감내 · 고성장 AI 모멘텀 집중 · 글로벌:한국 = 67:33</div>
+              </div>
+              <div class="port-badge aggressive">예상 연환산 수익률<span class="pb-num">25~50%+</span></div>
+            </div>
+          </div>
+          <table class="alloc-table">
+            <thead>
+              <tr>
+                <th>기업</th>
+                <th>비중</th>
+                <th>배분</th>
+                <th>핵심 근거</th>
+                <th>핵심 리스크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="font-weight:750">Palantir</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">PLTR</div></td>
+                <td><span class="weight-num">18%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:90%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">Rule of 40 = 145, U.S. 상업 +133%, AI SW 최강 모멘텀</td>
+                <td style="font-size:.8rem;color:var(--bear)">P/S 50x 극단적 프리미엄</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Snowflake</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">SNOW</div></td>
+                <td><span class="weight-num">15%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:75%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">34% 고성장 + AI 플랫폼 전환, $6.2B 파트너십 매출 가시성</td>
+                <td style="font-size:.8rem;color:var(--bear)">Databricks IPO 리스크</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Datadog</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">DDOG</div></td>
+                <td><span class="weight-num">12%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:60%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">AI Observability 선점, LLM 스팬 QoQ 3배 성장</td>
+                <td style="font-size:.8rem;color:var(--bear)">P/S 18.3x, SBC 부담</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">CrowdStrike</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">CRWD</div></td>
+                <td><span class="weight-num">12%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:60%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">사이버보안 AI 독보적 포지션, 7월 4:1 주식분할 유동성 확대</td>
+                <td style="font-size:.8rem;color:var(--bear)">P/S 34x, Forward P/E 138x</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">코난테크놀로지</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">402030.KQ</div></td>
+                <td><span class="weight-num">10%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:50%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">LLM 매출 8배 성장, 대법원·법제처 210억 수주 파이프라인</td>
+                <td style="font-size:.8rem;color:var(--bear)">4년 적자, 일회성 공백</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Salesforce</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">CRM</div></td>
+                <td><span class="weight-num">10%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:50%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">극단적 저밸류 + AI 리레이팅 잠재력, 밸류 앵커 역할</td>
+                <td style="font-size:.8rem;color:var(--bear)">성장 둔화 13%</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">네이버</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">035420.KS</div></td>
+                <td><span class="weight-num">8%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:40%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">AI 팩토리 수조원 규모 신사업, PER 20배 저평가 구간</td>
+                <td style="font-size:.8rem;color:var(--bear)">AI 인프라 CAPEX 부담</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">솔트룩스</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">304100.KQ</div></td>
+                <td><span class="weight-num">8%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:40%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">LUXIA 세계 1위, 다이퀘스트 상장 이벤트, 공공AI 수주</td>
+                <td style="font-size:.8rem;color:var(--bear)">5년 적자, 결손금 401억</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">셀바스AI</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">108860.KQ</div></td>
+                <td><span class="weight-num">7%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:35%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">메디아나 2026E 매출 +61%/영업이익 +262% 가이던스</td>
+                <td style="font-size:.8rem;color:var(--bear)">의료기기 의존, AI 정체</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Balanced -->
+      <div class="port-panel" id="tab-balanced">
+        <div class="panel" style="padding:0;overflow:hidden">
+          <div style="padding:24px;border-bottom:1px solid var(--line)">
+            <div class="port-header">
+              <div class="port-meta">
+                <h3>균형형 포트폴리오 (Balanced)</h3>
+                <div class="pm-sub">성장과 안정의 균형 · 중간 수준 변동성 · 흑자 기업 비중 72% · 글로벌:한국 = 72:28</div>
+              </div>
+              <div class="port-badge balanced">예상 연환산 수익률<span class="pb-num">18~30%</span></div>
+            </div>
+          </div>
+          <table class="alloc-table">
+            <thead>
+              <tr>
+                <th>기업</th>
+                <th>비중</th>
+                <th>배분</th>
+                <th>핵심 근거</th>
+                <th>핵심 리스크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="font-weight:750">Salesforce</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">CRM</div></td>
+                <td><span class="weight-num">15%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:100%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">밸류 투자 핵심, P/S 3.8x + Agentforce $1.2B. AI 가치 미반영</td>
+                <td style="font-size:.8rem;color:var(--bear)">매출 성장 13% 둔화</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">ServiceNow</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">NOW</div></td>
+                <td><span class="weight-num">15%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:100%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">합리적 밸류에이션(P/E 24x) + AI 워크플로 선도</td>
+                <td style="font-size:.8rem;color:var(--bear)">환율 영향, 경쟁 심화</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Snowflake</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">SNOW</div></td>
+                <td><span class="weight-num">12%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:80%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">34% 성장, OpenAI·AWS $6.2B 파트너십, 데이터+AI 통합</td>
+                <td style="font-size:.8rem;color:var(--bear)">Databricks 경쟁, GAAP 적자</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">네이버</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">035420.KS</div></td>
+                <td><span class="weight-num">12%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:80%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">PEG-유사 0.18 섹터 최저평가, AI 팩토리 중장기 성장</td>
+                <td style="font-size:.8rem;color:var(--bear)">AI 수익화 시차</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Microsoft</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">MSFT</div></td>
+                <td><span class="weight-num">12%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:80%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">포트폴리오 안정화 역할, AI 풀스택 리더, 배당주</td>
+                <td style="font-size:.8rem;color:var(--bear)">CAPEX $190B ROI 불확실</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Datadog</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">DDOG</div></td>
+                <td><span class="weight-num">10%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:67%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">AI 인프라 관측소, LLM 스팬 3배 성장, 구조적 AI 수혜</td>
+                <td style="font-size:.8rem;color:var(--bear)">P/S 18.3x 프리미엄</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">카카오</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">035720.KS</div></td>
+                <td><span class="weight-num">8%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:53%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">에이전틱 AI 대중화 테마, 카톡 4,800만 MAU 배포 채널</td>
+                <td style="font-size:.8rem;color:var(--bear)">AI 수익화 미증명</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">CrowdStrike</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">CRWD</div></td>
+                <td><span class="weight-num">8%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:53%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">사이버보안 AI 선도, BSOD 완전 회복, ARR $5.5B</td>
+                <td style="font-size:.8rem;color:var(--bear)">P/S 34x 부담</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">코난테크놀로지</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">402030.KQ</div></td>
+                <td><span class="weight-num">8%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:53%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">법률AI 트리플 크라운, LLM 매출 8배, PEG-유사 0.20</td>
+                <td style="font-size:.8rem;color:var(--bear)">적자, 공공 의존 81%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Conservative -->
+      <div class="port-panel" id="tab-conservative">
+        <div class="panel" style="padding:0;overflow:hidden">
+          <div style="padding:24px;border-bottom:1px solid var(--line)">
+            <div class="port-header">
+              <div class="port-meta">
+                <h3>보수형 포트폴리오 (Conservative)</h3>
+                <div class="pm-sub">자본 보전 우선 · 안정적 수익 성장 · 흑자 기업 100% · 글로벌:한국 = 65:35</div>
+              </div>
+              <div class="port-badge conservative">예상 연환산 수익률<span class="pb-num">12~20%</span></div>
+            </div>
+          </div>
+          <table class="alloc-table">
+            <thead>
+              <tr>
+                <th>기업</th>
+                <th>비중</th>
+                <th>배분</th>
+                <th>핵심 근거</th>
+                <th>핵심 리스크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="font-weight:750">Microsoft</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">MSFT</div></td>
+                <td><span class="weight-num">25%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:100%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">AI 런레이트 $37B, Forward P/E 21x, GAAP 흑자, 배당주 — 가장 안전한 AI 베팅</td>
+                <td style="font-size:.8rem;color:var(--bear)">CAPEX $190B ROI 불확실</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">ServiceNow</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">NOW</div></td>
+                <td><span class="weight-num">20%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:80%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">Forward P/E 24x 합리적, 22% 성장, Now Assist $1.5B 궤적</td>
+                <td style="font-size:.8rem;color:var(--bear)">Armis 인수 통합 리스크</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">Salesforce</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">CRM</div></td>
+                <td><span class="weight-num">20%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:80%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">P/S 3.8x (10년 중간값 50% 할인), Agentforce $1.2B(+205%)</td>
+                <td style="font-size:.8rem;color:var(--bear)">13% 저성장 우려</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">네이버</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">035420.KS</div></td>
+                <td><span class="weight-num">20%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:80%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">PER 20배 저평가, 12조원 매출 안정성, AI 팩토리 리레이팅 잠재력</td>
+                <td style="font-size:.8rem;color:var(--bear)">AI 투자 비용 압박, 수익화 시차</td>
+              </tr>
+              <tr>
+                <td><div style="font-weight:750">카카오</div><div style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3)">035720.KS</div></td>
+                <td><span class="weight-num">15%</span></td>
+                <td class="alloc-bar-cell"><div class="alloc-bar" style="width:60%"></div></td>
+                <td style="font-size:.82rem;color:var(--ink-2)">영업이익률 구조 개선(10.9%), 52주 최저가 부근, 컨센서스 상승여력 121%</td>
+                <td style="font-size:.8rem;color:var(--bear)">PER 29배, AI 수익화 불확실</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:28px">
+      <div class="tg">Portfolio Thesis</div>
+      <p>"밸류체인 분산, 지역 분산, 스타일 분산."
+      <span class="u">공격형은 AI 퓨어플레이(PLTR·SNOW·DDOG)와 한국 소형 성장주(코난·솔트룩스)를 집중 편입해 모멘텀을 극대화한다. 균형형은 Salesforce·ServiceNow의 저PEG 밸류 앵커 위에 AI 인프라 수혜주를 올린다. 보수형은 MSFT·NOW·CRM·네이버 4개 흑자 대형주에 집중하여 AI 테마 노출을 유지하면서 변동성을 최소화한다. 공통 핵심: Salesforce(0.29)·ServiceNow(0.32)는 3개 포트폴리오 모두에 편입할 수 있는 최고 PEG-유사 글로벌 종목이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 RISK HEATMAP -->
+<section class="blk" id="risk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;리스크 히트맵</div>
+      <h2 class="sec-title">5축 리스크 매핑 — 12사 전체</h2>
+      <p class="sec-lead">경쟁·밸류에이션·규제·기술·실행 5개 축으로 12사의 리스크를 3단계(높음/중간/낮음)로 채점한다. 점수가 낮을수록 리스크 부담이 적다. ServiceNow(7/15)가 가장 낮고, 솔트룩스·코난(11/15)이 가장 높다.</p>
+    </div>
+
+    <div class="panel reveal" style="padding:0;overflow:hidden">
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;min-width:120px">기업</th>
+            <th>경쟁</th>
+            <th>밸류에이션</th>
+            <th>규제</th>
+            <th>기술</th>
+            <th>실행</th>
+            <th>종합</th>
+            <th>등급</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="comp">ServiceNow</div><div class="tick">NOW</div></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-ok">7/15</span></td>
+            <td><span class="grade-cell grade-l">낮음</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">Microsoft</div><div class="tick">MSFT</div></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-ok">8/15</span></td>
+            <td><span class="grade-cell grade-m">중간</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">Salesforce</div><div class="tick">CRM</div></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-ok">8/15</span></td>
+            <td><span class="grade-cell grade-m">중간</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">Datadog</div><div class="tick">DDOG</div></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="score-cell score-ok">8/15</span></td>
+            <td><span class="grade-cell grade-m">중간</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">네이버</div><div class="tick">035420.KS</div></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-ok">9/15</span></td>
+            <td><span class="grade-cell grade-m">중간</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">Snowflake</div><div class="tick">SNOW</div></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-ok">9/15</span></td>
+            <td><span class="grade-cell grade-m">중간</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">카카오</div><div class="tick">035720.KS</div></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-warn">10/15</span></td>
+            <td><span class="grade-cell grade-mh">중상</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">CrowdStrike</div><div class="tick">CRWD</div></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-warn">10/15</span></td>
+            <td><span class="grade-cell grade-mh">중상</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">Palantir</div><div class="tick">PLTR</div></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-warn">10/15</span></td>
+            <td><span class="grade-cell grade-mh">중상</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">셀바스AI</div><div class="tick">108860.KQ</div></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="score-cell score-warn">10/15</span></td>
+            <td><span class="grade-cell grade-mh">중상</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">솔트룩스</div><div class="tick">304100.KQ</div></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="score-cell score-danger">11/15</span></td>
+            <td><span class="grade-cell grade-h">높음</span></td>
+          </tr>
+          <tr>
+            <td><div class="comp">코난테크놀로지</div><div class="tick">402030.KQ</div></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-low">낮음</span></td>
+            <td><span class="r-cell r-mid">중간</span></td>
+            <td><span class="r-cell r-high">높음</span></td>
+            <td><span class="score-cell score-danger">11/15</span></td>
+            <td><span class="grade-cell grade-h">높음</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Risk legend -->
+    <div class="panel reveal d1" style="margin-top:22px">
+      <h3>리스크 축별 핵심 시나리오</h3>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px">
+        <div style="display:flex;gap:12px">
+          <div style="font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:28px">V1</div>
+          <div><b style="display:block;font-size:.9rem;margin-bottom:3px">AI 멀티플 압축</b><span style="font-size:.82rem;color:var(--ink-2)">금리 인상·경기 둔화 시 Palantir·CrowdStrike·Datadog 직격. 성장 프리미엄이 가장 높은 종목이 가장 크게 조정된다.</span></div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <div style="font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:28px">V2</div>
+          <div><b style="display:block;font-size:.9rem;margin-bottom:3px">오픈소스 LLM 확산</b><span style="font-size:.82rem;color:var(--ink-2)">LLaMA·Mistral 등 오픈소스 LLM이 솔트룩스·코난의 독자 LLM 경쟁력을 잠식. 한국 AI 퓨어플레이 전체 리레이팅 하방 압력.</span></div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <div style="font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:28px">V3</div>
+          <div><b style="display:block;font-size:.9rem;margin-bottom:3px">빅테크 번들링 확대</b><span style="font-size:.82rem;color:var(--ink-2)">MS Copilot의 ServiceNow·Salesforce 영역 침식, AWS 빌트인 모니터링의 Datadog 시장 잠식. 경쟁 리스크 가장 현실적인 시나리오.</span></div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <div style="font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:28px">V4</div>
+          <div><b style="display:block;font-size:.9rem;margin-bottom:3px">AI 수익화 기대 미달</b><span style="font-size:.82rem;color:var(--ink-2)">카카오 카나나 2.5 출시 후 실질 수익화 지표 부재 시 디레이팅. 솔트룩스·코난 흑자 전환 지연 시 자본 잠식 우려.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Risk Verdict</div>
+      <p>"밸류에이션이 낮을수록 리스크도 낮은 것이 아니다 — 구조적 리스크와 밸류에이션 리스크를 분리해야 한다."
+      <span class="u">ServiceNow(7/15)는 P/E 24x로 높지 않은 밸류에이션에 구조적 리스크도 낮아 AI SW 섹터 내 리스크-리워드 최우량 종목이다. 반면 솔트룩스·코난(11/15)은 PSR이 낮아 보이지만 5년·4년 적자 + 오픈소스 LLM 경쟁 + 공공 의존이라는 구조적 리스크가 크다. 공격형 포트폴리오에서 이 두 종목의 편입 비중 합산 16%는 리스크 한도로 인식하고, 흑자 전환 확인 시 상향 조정이 합리적이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 05 TIMING -->
+<section class="blk" id="timing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;타이밍</div>
+      <h2 class="sec-title">투자 타이밍 캘린더 — 2026 H2~2027</h2>
+      <p class="sec-lead">실적 발표·제품 출시·기업 이벤트 타임라인으로 투자 시점을 정밀화한다. 2026 Q3는 8개 이벤트가 집중된 최대 변동성 구간이며, 2027 Q1은 밸류에이션 리레이팅 여부를 결정하는 분기다.</p>
+    </div>
+
+    <div class="timeline-wrap reveal">
+      <div class="tl-year">2026년 7~8월 — 글로벌 실적 시즌 + CRWD 주식분할</div>
+      <div class="tl-grid">
+        <div class="tl-item high">
+          <div class="tl-date">Jul 2026</div>
+          <div class="tl-co">CrowdStrike (CRWD)</div>
+          <div class="tl-ev">4:1 주식분할 (7/2 기준). 소매 투자자 접근성 개선, 유동성 확대. 분할 전후 단기 모멘텀 플레이 기회.</div>
+          <span class="tl-impact">분할 후 단기 +5~10%</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Jul 2026</div>
+          <div class="tl-co">Microsoft (MSFT)</div>
+          <div class="tl-ev">Q4 FY26 실적 발표. AI 런레이트 $40B+ 달성 여부, CAPEX ROI 업데이트가 핵심. Azure 성장률 40%+ 유지 확인.</div>
+          <span class="tl-impact">서프라이즈 시 +5~8%</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Aug 2026</div>
+          <div class="tl-co">Palantir (PLTR)</div>
+          <div class="tl-ev">Q2 2026 실적. U.S. 상업 성장률 유지 여부 (+133% 기저 부담). 성장 둔화 신호가 가장 위험한 이벤트.</div>
+          <span class="tl-impact" style="background:rgba(255,107,107,.1);color:var(--bear);border-color:rgba(255,107,107,.2)">성장 둔화 시 -15~25%</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Aug 2026</div>
+          <div class="tl-co">ServiceNow (NOW)</div>
+          <div class="tl-ev">Q2 2026 실적. Now Assist ACV $1B 돌파 여부, Armis 인수 통합 진행 현황. $1B 임박 시 리레이팅 가능성.</div>
+          <span class="tl-impact">$1B 돌파 시 +8~12%</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Aug 2026</div>
+          <div class="tl-co">Salesforce (CRM)</div>
+          <div class="tl-ev">Q2 FY27 실적. Agentforce ARR 궤적, Agentic Work Units 성장 확인. $1.5B ARR 달성 시 P/S 리레이팅 가능성 극대화.</div>
+          <span class="tl-impact">$1.5B ARR 시 +10~15%</span>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Aug~Sep 2026</div>
+          <div class="tl-co">Datadog (DDOG) · Snowflake (SNOW)</div>
+          <div class="tl-ev">DDOG Q2: AI Observability 매출 기여도 확대, GPU 모니터링 성장. SNOW Q2: Cortex AI 매출화, NRR 126% 유지 여부.</div>
+          <span class="tl-impact">각각 실적 서프라이즈 시 +8~12%</span>
+        </div>
+      </div>
+
+      <div class="tl-year">2026년 Q3~Q4 — 한국 기업 이벤트 집중</div>
+      <div class="tl-grid">
+        <div class="tl-item kr">
+          <div class="tl-date">2026 Q3~Q4</div>
+          <div class="tl-co">카카오 (035720.KS)</div>
+          <div class="tl-ev">카나나 2.5 (150B 파라미터) 정식 공개. 에이전틱 AI 성능 검증. 카카오톡 4,800만 MAU 기반 배포 속도가 핵심 지표.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">시장 반응 +10~20%</span>
+        </div>
+        <div class="tl-item kr">
+          <div class="tl-date">2026 Q4</div>
+          <div class="tl-co">솔트룩스 (304100.KQ)</div>
+          <div class="tl-ev">다이퀘스트 코스닥 상장 추진. 상장 성공 시 지분가치 현실화. 솔트룩스 시총 대비 업사이드 최대 이벤트.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">상장 성공 시 +20~30%</span>
+        </div>
+        <div class="tl-item kr">
+          <div class="tl-date">2026 Q4</div>
+          <div class="tl-co">코난테크놀로지 (402030.KQ)</div>
+          <div class="tl-ev">대법원 145억 + 법제처 65.5억 수주 매출 인식 개시. 역기저 효과 해소 후 순매출 성장 전환 여부 확인.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">매출 인식 시 +10~15%</span>
+        </div>
+        <div class="tl-item kr">
+          <div class="tl-date">2026 연말</div>
+          <div class="tl-co">셀바스AI (108860.KQ)</div>
+          <div class="tl-ev">메디아나 FY2026 가이던스(매출 1,061억, 영업이익 +262%) 달성 여부 확정. 헬스케어 성장주 관점의 재평가 촉매.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">달성 시 +15~20%</span>
+        </div>
+      </div>
+
+      <div class="tl-year">2027년 — 밸류에이션 결정적 분기</div>
+      <div class="tl-grid">
+        <div class="tl-item">
+          <div class="tl-date">2027 Q1</div>
+          <div class="tl-co">Salesforce (CRM)</div>
+          <div class="tl-ev">FY27 연간 실적 — Agentforce ARR $3B 목표 달성 여부. 달성 시 AI 소프트웨어 섹터 최대 밸류에이션 리레이팅 이벤트.</div>
+          <span class="tl-impact">달성 시 밸류 리레이팅 +15~25%</span>
+        </div>
+        <div class="tl-item kr">
+          <div class="tl-date">2027 상반기</div>
+          <div class="tl-co">네이버 (035420.KS)</div>
+          <div class="tl-ev">AI 팩토리 세종 '각' 55MW 가동 개시 — GPUaaS 매출 본격화. 확인 시 PER 20배 저평가 해소 리레이팅 기대.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">가동 확인 시 +15~25%</span>
+        </div>
+        <div class="tl-item kr">
+          <div class="tl-date">2027</div>
+          <div class="tl-co">솔트룩스 (304100.KQ)</div>
+          <div class="tl-ev">흑자 전환 여부 (6년 적자 탈출 가능성). 달성 시 AI 소프트웨어 소형주 최대 촉매. LUXIA + 구버 + 다이퀘스트 시너지 수치화.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">흑자 달성 시 +30~50%</span>
+        </div>
+        <div class="tl-item kr">
+          <div class="tl-date">2027</div>
+          <div class="tl-co">코난테크놀로지 (402030.KQ)</div>
+          <div class="tl-ev">흑자 전환 + 민간 시장 확장 성과. 법률AI·검색AI 외 사업 다각화가 공공 의존도 리스크 해소의 핵심.</div>
+          <span class="tl-impact" style="background:rgba(72,213,151,.1);color:var(--bull);border-color:rgba(72,213,151,.2)">흑자 전환 시 +20~30%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Timing Verdict</div>
+      <p>"2026 Q3 실적 시즌이 투자 전략의 첫 번째 검문소다."
+      <span class="u">2026년 7~9월에 CRWD 분할·MSFT·PLTR·NOW·CRM·DDOG·SNOW 실적이 집중된다. 이 시즌에서 Palantir 성장 둔화 신호가 나오면 AI 모멘텀 종목 전반의 멀티플 조정을 유발할 수 있다. 반면 Salesforce Agentforce $1.5B ARR과 ServiceNow Now Assist $1B 돌파가 동시에 확인되면, 저PEG-유사 종목군의 강한 리레이팅 기회가 열린다. 한국 기업은 2026 Q4~2027 Q1이 진짜 결정 구간이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="ai_sw_overview.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">Prev</div>
+        <div class="sn-title">Part 1 — 산업구조와 투자 좌표</div>
+      </div>
+    </a>
+    <a href="ai_sw_company_msft_pltr.html">
+      <div style="text-align:right">
+        <div class="sn-label">Next</div>
+        <div class="sn-title">Part 3 — Microsoft · Palantir</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI SW 시리즈 — Part 2: 12사 크로스 밸류에이션 투자 지도</div>
+      <div class="src-list">
+        SEC 10-K/10-Q · DART 전자공시 · StockAnalysis · MacroTrends · CompaniesMarketCap · 증권사 리포트<br>
+        Microsoft FY26 Q3 IR · Palantir Q1 2026 Business Update · ServiceNow Q1 2026 IR<br>
+        Salesforce Q1 FY27 Earnings · CrowdStrike Q1 FY27 IR · Datadog Q1 2026 IR<br>
+        Snowflake Q1 FY27 SEC · 네이버 Q1 2026 IR · 카카오 Q1 2026 IR · DART 전자공시<br>
+        작성 기준일 · 2026.06.23
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·애널리스트 컨센서스를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // horizontal bar widths (animate on load)
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hbar-fill').forEach(b => {
+      requestAnimationFrame(() => { b.style.width = b.dataset.w; });
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .14, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // active nav highlight
+  const secs = [...document.querySelectorAll('section.blk')];
+  const navA = [...document.querySelectorAll('.nav-links a')];
+  const spy = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) {
+      navA.forEach(a => a.style.color = '');
+      const id = e.target.id; const cur = navA.find(a => a.getAttribute('href') === '#' + id);
+      if (cur) cur.style.color = 'var(--ink)';
+    }});
+  }, { threshold: .3 });
+  secs.forEach(s => spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { navLinks.classList.remove('open'); });
+  });
+
+  // portfolio tabs
+  document.querySelectorAll('.port-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.port-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.port-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

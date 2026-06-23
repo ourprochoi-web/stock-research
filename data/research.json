@@ -178,5 +178,203 @@
     "type": "심화 테마",
     "series": "K-방산",
     "desc": "EU SAFE 65% 역내조달, 루마니아 공장 80% 현지화율, UAE $35B MOU — 생산거점 수출 전략"
+  },
+  {
+    "title": "AI 소프트웨어 레이어 산업구조와 투자 좌표",
+    "file": "ai-sw/ai_sw_overview.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "산업 개관",
+    "series": "AI SW",
+    "desc": "AI 에이전트 $53B, Vertical AI SaaS CAGR 36.5%, AI 보안 $134B — 3대 테마 구조와 12사 크로스 밸류에이션 투자 프레임워크"
+  },
+  {
+    "title": "AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션",
+    "file": "ai-sw/ai_sw_investment_map.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "투자 지도",
+    "series": "AI SW",
+    "desc": "글로벌 7사 + 한국 5사 크로스 밸류에이션, 3종 포트폴리오, 리스크 히트맵, 이벤트 캘린더"
+  },
+  {
+    "title": "Microsoft · Palantir — AI 플랫폼의 양극단",
+    "file": "ai-sw/ai_sw_company_msft_pltr.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "기업 분석",
+    "series": "AI SW",
+    "desc": "Microsoft AI 런레이트 $37B, Palantir Rule of 40 = 145 — AI 풀스택 vs 온톨로지 플랫폼 비교 분석"
+  },
+  {
+    "title": "ServiceNow · Salesforce — 엔터프라이즈 AI 워크플로우",
+    "file": "ai-sw/ai_sw_company_now_crm.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "기업 분석",
+    "series": "AI SW",
+    "desc": "ServiceNow Now Assist ACV $600M, Salesforce Agentforce $1.2B ARR — 워크플로우 AI 양대 진영 비교"
+  },
+  {
+    "title": "CrowdStrike · Datadog · Snowflake — 보안 · 옵저버빌리티 · 데이터",
+    "file": "ai-sw/ai_sw_company_crwd_ddog_snow.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "기업 분석",
+    "series": "AI SW",
+    "desc": "Charlotte AI 자율 보안, LLM Observability 선점, Cortex AI 데이터 레이크하우스 — 3축 기업 분석"
+  },
+  {
+    "title": "한국 AI SW 5사 — 네이버 · 카카오 · 솔트룩스 · 코난테크놀로지 · 셀바스AI",
+    "file": "ai-sw/ai_sw_company_kr.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "기업 분석",
+    "series": "AI SW",
+    "desc": "네이버 AI 팩토리, 카카오 카나나, 솔트룩스 LUXIA, 코난테크 법률AI, 셀바스AI 메디아나 — 5사 심층 분석"
+  },
+  {
+    "title": "심화 테마 A+B — Agentic AI 혁명과 Vertical AI SaaS",
+    "file": "ai-sw/ai_sw_theme_agent_vertical.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "심화 테마",
+    "series": "AI SW",
+    "desc": "AI 에이전트 $53B 시장, MCP/A2A 표준화, Vertical AI CAGR 36.5%, 데이터 플라이휠 — 두 테마 통합 분석"
+  },
+  {
+    "title": "심화 테마 C — AI 보안: 지능을 지키는 방패",
+    "file": "ai-sw/ai_sw_theme_security.html",
+    "date": "2026-06-23",
+    "category": "AI SW",
+    "type": "심화 테마",
+    "series": "AI SW",
+    "desc": "AI 사이버보안 $134B, 침투→피해 51초, AI vs AI 군비경쟁 — CrowdStrike·Palo Alto·SentinelOne 투자 분석"
+  },
+  {
+    "title": "로봇·휴머노이드 산업구조와 투자 좌표",
+    "file": "robot/robot_overview.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "산업 개관",
+    "series": "로봇",
+    "desc": "글로벌 로봇 시장 $38B→$152B, BOM $20K 목표, 3대 테마(경제학/AI두뇌/서플라이체인) 구조와 Layer 0-4 밸류체인 맵"
+  },
+  {
+    "title": "로봇 투자 지도 — 12사 크로스 밸류에이션",
+    "file": "robot/robot_investment_map.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "투자 지도",
+    "series": "로봇",
+    "desc": "글로벌 7사 + 한국 5사 크로스 밸류에이션, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵, 투자 캘린더"
+  },
+  {
+    "title": "Tesla · Figure AI · Agility — 휴머노이드 3강",
+    "file": "robot/robot_company_tsla_figure_agility.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "기업 분석",
+    "series": "로봇",
+    "desc": "Optimus Gen3 1000대+, BOM $50-80K→$15-22K, Figure $39B Series C, Digit $250K RoboFab 10K/yr"
+  },
+  {
+    "title": "ISRG · Symbotic — 수술로봇과 창고 자동화",
+    "file": "robot/robot_company_isrg_symbotic.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "기업 분석",
+    "series": "로봇",
+    "desc": "da Vinci 11,395대 설치, Q1 +23%, P/E 44x / Symbotic $22.7B 백로그, GAAP 흑자전환"
+  },
+  {
+    "title": "Fanuc · ABB · Teradyne/UR — 산업 자동화의 거인들",
+    "file": "robot/robot_company_fanuc_abb_teradyne.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "기업 분석",
+    "series": "로봇",
+    "desc": "Fanuc CNC 50% 글로벌, ¥7.42T / ABB 로봇 SoftBank 매각 / UR 코봇 40% 점유율"
+  },
+  {
+    "title": "한국 로봇 5사 + K-휴머노이드 얼라이언스",
+    "file": "robot/robot_company_kr.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "기업 분석",
+    "series": "로봇",
+    "desc": "현대차·BD(Atlas 전동식), 레인보우(삼성 35%, RB-Y1), 두산(P/S 182x), 뉴로메카(MaaS), 로보티즈(Dynamixel)"
+  },
+  {
+    "title": "심화 테마 A+B — 휴머노이드 경제학과 Foundation Model",
+    "file": "robot/robot_theme_economics_ai.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "심화 테마",
+    "series": "로봇",
+    "desc": "BOM 하락 3대 드라이버, 노동력 대체 경제학, GR00T N1/π0/RT-2/Helix 02, Sim-to-Real, FSD→Optimus 전이"
+  },
+  {
+    "title": "심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지",
+    "file": "robot/robot_theme_supply_chain.html",
+    "date": "2026-06-23",
+    "category": "로봇",
+    "type": "심화 테마",
+    "series": "로봇",
+    "desc": "감속기 일본 과점(Harmonic/Nabtesco), 중국 Leaderdrive 추격, 한국 SBB/SPG/현대모비스, 액추에이터 통합 트렌드"
+  },
+  {
+    "title": "GLP-1 산업구조와 투자 좌표",
+    "file": "glp1/glp1_overview.html",
+    "date": "2026-06-23",
+    "category": "GLP-1",
+    "type": "산업 개관",
+    "series": "GLP-1",
+    "desc": "GLP-1 수용체 작용제 $95-200B(2030E), 적응증 확대 로드맵, API→제형→디바이스→유통 밸류체인 맵, 투자 프레임워크"
+  },
+  {
+    "title": "GLP-1 투자 지도 — 크로스 밸류에이션",
+    "file": "glp1/glp1_investment_map.html",
+    "date": "2026-06-23",
+    "category": "GLP-1",
+    "type": "투자 지도",
+    "series": "GLP-1",
+    "desc": "글로벌 6사+한국 5사 크로스 밸류에이션, P/E·EV/Revenue 비교, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵"
+  },
+  {
+    "title": "Novo Nordisk · Eli Lilly — 비만약 듀오폴리",
+    "file": "glp1/glp1_company_novo_lilly.html",
+    "date": "2026-06-23",
+    "category": "GLP-1",
+    "type": "기업 분석",
+    "series": "GLP-1",
+    "desc": "Novo Ozempic+Wegovy $30B+, CagriSema 22.7%, Lilly Mounjaro $8.7B +125%, Zepbound $4.1B, FY26E $82-85B — 듀오폴리 심층 분석"
+  },
+  {
+    "title": "Amgen · Viking · Roche — 차세대 도전자들 + 한국 기업",
+    "file": "glp1/glp1_company_challengers.html",
+    "date": "2026-06-23",
+    "category": "GLP-1",
+    "type": "기업 분석",
+    "series": "GLP-1",
+    "desc": "Amgen MariTide 월1회, Viking VK2735, Roche CT-388 -22.5%, 한미약품·디앤디파마텍·펩트론·인벤티지랩·알테오젠"
+  },
+  {
+    "title": "심화 테마 A — 밸류체인 분해: 펩타이드 CDMO에서 오토인젝터까지",
+    "file": "glp1/glp1_theme_value_chain.html",
+    "date": "2026-06-23",
+    "category": "GLP-1",
+    "type": "심화 테마",
+    "series": "GLP-1",
+    "desc": "펩타이드 CDMO Bachem M/S 17%, 삼성바이오 $280M, Ypsomed CHF 5억, DDS 기술, 원료 공급 병목, 한국 부품사 기회"
+  },
+  {
+    "title": "심화 테마 B — 숏 테시스: $100B 시장의 그림자",
+    "file": "glp1/glp1_theme_risks.html",
+    "date": "2026-06-23",
+    "category": "GLP-1",
+    "type": "심화 테마",
+    "series": "GLP-1",
+    "desc": "경쟁 심화 20+ 후보물질, 안전성(근육 손실·자살 충동), 특허 만료, Novo 디레이팅, 보험 커버리지 한계, 중단률 50%+"
   }
 ]
