@@ -22,6 +22,8 @@ stock-research/
 │   ├── research_ai_bio_*.md        (4개)
 │   ├── research_robot_*.md         (4개)
 │   ├── research_space_*.md         (4개)
+│   ├── research_ai_sw_*.md         (4개)
+│   ├── research_ai_framework_*.md  (2개)
 │   └── research_new_topic_*.md     (3개, 로드맵)
 ├── ai-infra/               ← AI 인프라 (HTML 3개)
 ├── hbm-packaging/          ← HBM/패키징 (HTML 11개)
@@ -30,7 +32,7 @@ stock-research/
 └── README.md
 ```
 
-## 완성된 리서치 시리즈 (6개, 리서치 MD 24개+)
+## 완성된 리서치 시리즈 (8개, 리서치 MD 30개+)
 
 ### 1. AI 전력 인프라 시리즈 (8 MD)
 - 글로벌/한국 기업 재무 심화, 크로스 밸류에이션, 테마 분석 (SMR, 가스터빈, 송배전, 냉각)
@@ -62,15 +64,15 @@ stock-research/
 - `data/research_space_investment.md` — 크로스 밸류에이션 프레임워크
 - `data/research_space_themes.md` — 발사 비용 혁명 + 메가 컨스텔레이션 + 다운스트림 골드러시
 
-## 예정된 리서치
+### 7. AI 소프트웨어 레이어 시리즈 (4 MD, ~3,145줄) — 2026-06-23
+- `data/research_ai_sw_companies_global.md` — 글로벌 7사 (Microsoft, Palantir, ServiceNow, Salesforce, CrowdStrike, Datadog, Snowflake)
+- `data/research_ai_sw_companies_kr.md` — 한국 5사 (네이버, 카카오, 솔트룩스, 코난테크놀로지, 셀바스AI)
+- `data/research_ai_sw_investment.md` — 크로스 밸류에이션 프레임워크
+- `data/research_ai_sw_themes.md` — AI 에이전트 + Vertical AI SaaS + AI 보안/사이버보안
 
-### 7. AI 소프트웨어 레이어 — 에이전트·엔터프라이즈 AI 투자 지도
-- AI Agent, Vertical SaaS, 코딩 자동화, AI 보안
-- Microsoft, Palantir, ServiceNow + 한국 AI SW주
-
-### 7-1. AI 투자 의사결정 프레임워크 — 돈의 흐름·병목·해자·비대칭성
-- 병목, 해자, 비대칭성 3대 조건 / 소버린 AI / 닷컴버블 비교
-- 소스: `data/note-ai-money-flow_20260618.md`
+### 8. AI 투자 의사결정 프레임워크 (2 MD, ~1,416줄) — 2026-06-23
+- `data/research_ai_framework_money_flow.md` — AI 밸류체인 돈의 흐름 종합 분석 (빅테크 CapEx → 5개 구간, 60종목 크로스맵)
+- `data/research_ai_framework_selection.md` — 투자 종목 선별 프레임워크 (3대 조건, 60종목 스코어카드, 닷컴 비교, 포트폴리오 가이드)
 
 ## 향후 후보
 
