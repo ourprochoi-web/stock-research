@@ -90,14 +90,14 @@
 
 ## 6. 이벤트 캘린더 (2026-2027)
 
-| 시기 | 이벤트 | 기업 |
-|------|--------|------|
-| 2026 Q2 | orforglipron 비만 글로벌 FDA 제출 | Eli Lilly |
-| 2026 H1 | DD01 Phase 2 48주 결과 | 디앤디파마텍 |
-| 2026 H2 | 에페글레나타이드 국내 출시 | 한미약품 |
-| 2026 Q3 | VK2735 유지 투여 Phase 1 결과 | Viking Therapeutics |
-| 2026 중 | CagriSema FDA 심사 | Novo Nordisk |
-| 2026 중 | CT-388 Phase 3(Enith1, Enith2) 진행 | Roche |
-| 2026 중 | Phase 3 10개 시험 진행 | Pfizer |
-| 2027 Q1+ | MariTide Phase 3 결과 예상 | Amgen |
-| 2027 H1 | VANQUISH Phase 3 결과 예상 | Viking Therapeutics |
+| 시기 | 이벤트 | 기업 | 검증 테제 (3축 프레임워크) |
+|------|--------|------|------------------------|
+| 2026 H1 | DD01 Phase 2 48주 결과 | 디앤디파마텍 | **축1: 글루카곤 추가** — MASH+에너지소비 테제. 바이너리 |
+| 2026 Q2 | orforglipron 비만 글로벌 FDA 제출 | Eli Lilly | **축3: 소분자 경구** — 펩타이드 대체 가능성. CDMO 밸류체인 영향 |
+| 2026 H2 | 에페글레나타이드 국내 출시 | 한미약품 | **축1: 순수 GLP-1** — 가성비·한국 시장 선점 |
+| 2026 Q3 | VK2735 유지 투여 Phase 1 결과 | Viking Therapeutics | **축1: GIP agonist** — 장기 유지 효과 검증 |
+| 2026 중 | CagriSema FDA 심사 | Novo Nordisk | **축1: 아밀린 추가** — 22.7%가 충분한가. Novo 리레이팅 분기점 |
+| 2026 중 | CT-388 Phase 3(Enith1, Enith2) 진행 | Roche | **축1+3: biased GIP agonist** — 신호편향 차별화 |
+| 2026 중 | Phase 3 10개 시험 진행 | Pfizer | 후발 대형사 진입 — 경쟁 심화 지표 |
+| 2027 Q1+ | MariTide Phase 3 결과 예상 | Amgen | **축2: GIP 차단** — 가장 반직관적, 변동성 최대. P/E 리레이팅 촉매 |
+| 2027 H1 | VANQUISH Phase 3 결과 예상 | Viking Therapeutics | **축1: GIP agonist 제3자** — 빅2 외 포지셔닝 검증. 바이너리 |
