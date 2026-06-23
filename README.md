@@ -23,54 +23,52 @@ stock-research/
 │   ├── research_robot_*.md         (4개)
 │   ├── research_space_*.md         (4개)
 │   ├── research_ai_sw_*.md         (4개)
+│   ├── research_glp1_*.md          (4개)
 │   ├── research_ai_framework_*.md  (2개)
 │   └── research_new_topic_*.md     (3개, 로드맵)
 ├── ai-infra/               ← AI 인프라 (HTML 3개)
 ├── hbm-packaging/          ← HBM/패키징 (HTML 11개)
 ├── defense/                ← K-방산 (HTML 16개)
 ├── physical-ai/            ← Physical AI (HTML 1개)
+├── ai-sw/                  ← AI 소프트웨어 (HTML 8개)
+├── robot/                  ← 로봇/휴머노이드 (HTML 8개)
+├── glp1/                   ← GLP-1 비만치료 (HTML 6개)
 └── README.md
 ```
 
-## 완성된 리서치 시리즈 (8개, 리서치 MD 30개+)
+## 완성된 리서치 시리즈 (9개, 리서치 MD 34개+, HTML 53편+)
 
-### 1. AI 전력 인프라 시리즈 (8 MD)
-- 글로벌/한국 기업 재무 심화, 크로스 밸류에이션, 테마 분석 (SMR, 가스터빈, 송배전, 냉각)
-- `data/research_ai_power_*.md`
+### 1. AI 인프라 시리즈 (8 MD + 3 HTML)
+- `data/research_ai_power_*.md` — 글로벌/한국 기업, 크로스 밸류에이션, 테마 (SMR, 가스터빈, 송배전, 냉각)
+- `ai-infra/*.html` — AI 밸류체인 가이드, 딥다이브, 전력 인프라 투자 지도
 
 ### 2. HBM/패키징 시리즈 (4 MD + 11 HTML)
-- 글로벌/한국 기업 재무 심화, 테마 분석 (CoWoS, 하이브리드 본딩, HBM4)
 - `data/research_hbm_pkg_*.md`, `hbm-packaging/*.html`
+- 글로벌/한국 기업, 테마 (CoWoS, 하이브리드 본딩, HBM4, 기판, 메모리 사이클)
 
 ### 3. K-방산 시리즈 (16 HTML)
-- 한국 방산 밸류체인, 기업 심화, 투자 지도
-- `defense/*.html`
+- `defense/*.html` — 산업 지도, 투자 지도, 기업 6사, 테마 8편
 
-### 4. AI 바이오 시리즈 (4 MD, ~2,820줄) — 2026-06-23
-- `data/research_ai_bio_companies_global.md` — 글로벌 7사 (Recursion-Exscientia, Tempus AI, Insilico Medicine, Schrodinger, Veracyte, Guardant Health, PathAI)
-- `data/research_ai_bio_companies_kr.md` — 한국 5사 (삼성바이오로직스, 셀트리온, 루닛, 뷰노, 에임메드)
-- `data/research_ai_bio_investment.md` — 크로스 밸류에이션 프레임워크
-- `data/research_ai_bio_themes.md` — AI 신약개발 + 정밀의료 + 디지털치료제
+### 4. AI 바이오 시리즈 (4 MD)
+- `data/research_ai_bio_*.md` — 글로벌 7사 + 한국 5사 + 밸류에이션 + 테마
 
-### 5. 로봇/휴머노이드 시리즈 (4 MD, ~2,515줄) — 2026-06-23
-- `data/research_robot_companies_global.md` — 글로벌 7사+ (Tesla/Optimus, Figure AI, Agility, Fanuc, ABB, ISRG, Symbotic)
-- `data/research_robot_companies_kr.md` — 한국 5사 (현대차/BD, 레인보우, 두산, 뉴로메카, 로보티즈)
-- `data/research_robot_investment.md` — 크로스 밸류에이션 프레임워크
-- `data/research_robot_themes.md` — 휴머노이드 경제학 + 로봇 두뇌 + 부품 서플라이체인
+### 5. 우주 경제 시리즈 (4 MD)
+- `data/research_space_*.md` — 글로벌 7사+ + 한국 5사 + 밸류에이션 + 테마
 
-### 6. 우주 경제 시리즈 (4 MD, ~2,885줄) — 2026-06-23
-- `data/research_space_companies_global.md` — 글로벌 7사+ (SpaceX, Rocket Lab, Planet Labs, Iridium, AST SpaceMobile, L3Harris, Redwire)
-- `data/research_space_companies_kr.md` — 한국 5사 (한화에어로스페이스, 이노스페이스, 쎄트렉아이, 한화시스템, AP위성)
-- `data/research_space_investment.md` — 크로스 밸류에이션 프레임워크
-- `data/research_space_themes.md` — 발사 비용 혁명 + 메가 컨스텔레이션 + 다운스트림 골드러시
+### 6. AI 소프트웨어 레이어 시리즈 (4 MD + 8 HTML)
+- `data/research_ai_sw_*.md` — 글로벌 7사 + 한국 5사 + 밸류에이션 + 테마
+- `ai-sw/*.html` — Overview, Investment Map, MSFT/PLTR, NOW/CRM, CRWD/DDOG/SNOW, KR, Agent/Vertical, Security
 
-### 7. AI 소프트웨어 레이어 시리즈 (4 MD, ~3,145줄) — 2026-06-23
-- `data/research_ai_sw_companies_global.md` — 글로벌 7사 (Microsoft, Palantir, ServiceNow, Salesforce, CrowdStrike, Datadog, Snowflake)
-- `data/research_ai_sw_companies_kr.md` — 한국 5사 (네이버, 카카오, 솔트룩스, 코난테크놀로지, 셀바스AI)
-- `data/research_ai_sw_investment.md` — 크로스 밸류에이션 프레임워크
-- `data/research_ai_sw_themes.md` — AI 에이전트 + Vertical AI SaaS + AI 보안/사이버보안
+### 7. 로봇/휴머노이드 시리즈 (4 MD + 8 HTML)
+- `data/research_robot_*.md` — 글로벌 7사+ + 한국 5사 + 밸류에이션 + 테마
+- `robot/*.html` — Overview, Investment Map, TSLA/Figure/Agility, ISRG/Symbotic, FANUC/ABB/Teradyne, KR, Economics/AI, Supply Chain
 
-### 8. AI 투자 의사결정 프레임워크 (2 MD, ~1,416줄) — 2026-06-23
+### 8. GLP-1 비만치료제 시리즈 (4 MD + 6 HTML)
+- `data/research_glp1_*.md` — 산업 개관/테마, 투자, 글로벌 기업, 한국 기업
+- `glp1/*.html` — Overview, Investment Map, Novo/Lilly, Challengers+KR, Value Chain, Risks
+- 액센트 컬러: #ec4899 (pink)
+
+### 9. AI 투자 의사결정 프레임워크 (2 MD)
 - `data/research_ai_framework_money_flow.md` — AI 밸류체인 돈의 흐름 종합 분석 (빅테크 CapEx → 5개 구간, 60종목 크로스맵)
 - `data/research_ai_framework_selection.md` — 투자 종목 선별 프레임워크 (3대 조건, 60종목 스코어카드, 닷컴 비교, 포트폴리오 가이드)
 
@@ -78,9 +76,9 @@ stock-research/
 
 | # | 주제 | 키워드 |
 |---|------|--------|
-| 8 | 에너지 전환/2차전지 | LG엔솔, 삼성SDI, 전고체, ESS |
-| 9 | AI 반도체 설계 | NVIDIA vs Broadcom ASIC, FuriosaAI, Rebellions |
-| 10 | K-조선/해양플랜트 | HD한국조선, 한화오션, LNG운반선 |
+| 10 | 에너지 전환/2차전지 | LG엔솔, 삼성SDI, 전고체, ESS |
+| 11 | AI 반도체 설계 | NVIDIA vs Broadcom ASIC, FuriosaAI, Rebellions |
+| 12 | K-조선/해양플랜트 | HD한국조선, 한화오션, LNG운반선 |
 
 ---
 
@@ -143,6 +141,10 @@ GitHub Pages가 자동 배포됨.
 |---------|-----------|------|
 | AI 인프라 | `ai-infra` | 인디고 (#818cf8) |
 | Physical AI | `physical-ai` | 에메랄드 (#34d399) |
+| 방산 | `defense` | 앰버 (#fbbf24) |
+| AI SW | `ai-sw` | 스카이블루 (#38bdf8) |
+| 로봇 | `robot` | 오렌지 (#f97316) |
+| GLP-1 | `glp1` | 핑크 (#ec4899) |
 | 반도체 | `semiconductor` | 보라 (#7c3aed) — 예비 |
 | 바이오 | `biotech` | 레드 (#dc2626) — 예비 |
 | 에너지 | `energy` | 앰버 (#a16207) — 예비 |
