@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="한국 GPU 인프라 260,000장, Stanford HAI 3위, AI 특허 밀도 세계 1위, 소버린 AI 5사 $390M — K-AI G3 전략 심층 분석">
+<meta name="keywords" content="한국AI,소버린AI,GPU,Stanford HAI,AI특허,Naver,SK텔레콤,LG AI Research,Upstage">
+<meta property="og:title" content="한국 AI G3 — 소버린 AI 260,000 GPU의 도전">
+<meta property="og:description" content="한국 GPU 인프라 260,000장, Stanford HAI 3위, AI 특허 밀도 세계 1위, 소버린 AI 5사 $390M — K-AI G3 전략 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_korea_g3_sovereign_ai.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="한국 AI G3 — 소버린 AI 260,000 GPU의 도전">
+<meta name="twitter:description" content="한국 GPU 인프라 260,000장, Stanford HAI 3위, AI 특허 밀도 세계 1위, 소버린 AI 5사 $390M — K-AI G3 전략 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_korea_g3_sovereign_ai.html">
+<title>한국 AI G3 — 소버린 AI 260,000 GPU의 도전</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#a855f7;
+    --accent-2:#c084fc;
+    --glow:#e879f9;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--glow),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(232,121,249,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- TABLE ---------- */
+  .ptable{width:100%;border-collapse:collapse;margin-top:8px}
+  .ptable th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:12px 16px;border-bottom:1px solid var(--line);text-align:left;background:var(--bg-2)}
+  .ptable td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .ptable tr:last-child td{border-bottom:none}
+  .ptable tr:hover td{background:rgba(168,85,247,.04)}
+  .ptable td:first-child{color:var(--ink);font-weight:650}
+  .ptable .hl-row td{background:rgba(168,85,247,.07);color:var(--ink)}
+  .ptable .hl-row td:first-child{color:var(--accent);font-weight:750}
+  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:8px}
+
+  /* ---------- VAL THESIS ---------- */
+  .val-thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .val-thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .val-thesis p{font-size:clamp(1.05rem,1.8vw,1.3rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .val-thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- FW GRID ---------- */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-grid.cols2{grid-template-columns:repeat(2,1fr)}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:.3s}
+  .fw-card:hover{border-color:#3d2a60;transform:translateY(-4px)}
+  .fw-card:hover::before{opacity:1}
+  .fw-card .fc-tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(168,85,247,.3);background:rgba(168,85,247,.08);border-radius:7px;padding:4px 9px;display:inline-block;margin-bottom:14px}
+  .fw-card .fc-tag.green{color:var(--bull);border-color:rgba(72,213,151,.3);background:rgba(72,213,151,.07)}
+  .fw-card .fc-tag.amber{color:#FFB13E;border-color:rgba(255,177,62,.3);background:rgba(255,177,62,.08)}
+  .fw-card .fc-tag.red{color:var(--bear);border-color:rgba(255,107,107,.3);background:rgba(255,107,107,.07)}
+  .fw-card h3{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fw-card .fc-num{font-family:var(--mono);font-size:1.8rem;font-weight:800;color:var(--accent);letter-spacing:-.02em;margin-bottom:6px}
+  .fw-card p{font-size:.86rem;color:var(--ink-2);line-height:1.6}
+  .fw-card ul{margin-top:10px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+  .fw-card ul li{font-size:.84rem;color:var(--ink-2);padding-left:14px;position:relative;line-height:1.5}
+  .fw-card ul li::before{content:"·";position:absolute;left:0;color:var(--accent-2)}
+  .fw-card .fc-sub{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);margin-top:10px;letter-spacing:.02em}
+
+  /* ---------- COMPARE ROW ---------- */
+  .cmp-row{display:flex;gap:10px;margin-top:6px;align-items:center}
+  .cmp-label{font-size:.78rem;color:var(--ink-3);min-width:90px;font-family:var(--mono)}
+  .cmp-bar-wrap{flex:1;background:var(--bg-2);border-radius:4px;height:6px;overflow:hidden}
+  .cmp-bar{height:100%;border-radius:4px;background:var(--accent)}
+  .cmp-bar.dim{background:var(--line)}
+  .cmp-val{font-family:var(--mono);font-size:.78rem;color:var(--ink-2);min-width:52px;text-align:right}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- SERIES NAV ---------- */
+  .series-nav{margin-top:64px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .snav-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px;flex:1;min-width:220px;transition:.3s}
+  .snav-item:hover{border-color:rgba(168,85,247,.4);background:var(--surface-2)}
+  .snav-item .sn-dir{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .snav-item .sn-title{font-size:.92rem;font-weight:700;color:var(--ink-2)}
+  .snav-item:hover .sn-title{color:var(--ink)}
+
+  /* ---------- RISK ---------- */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .fw-grid.cols2{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "한국 AI G3 — 소버린 AI 260,000 GPU의 도전",
+  "description": "한국 GPU 인프라 260,000장, Stanford HAI 3위, AI 특허 밀도 세계 1위, 소버린 AI 5사 $390M — K-AI G3 전략 심층 분석",
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-06-25",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/ai_korea_g3_sovereign_ai.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI 인프라 · AI G3 소버린 AI</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#gpu">01 / GPU 인프라</a>
+      <a href="#stanford">02 / Stanford HAI</a>
+      <a href="#sovereign">03 / 소버린 AI 5사</a>
+      <a href="#yeda">04 / Yeda 모델</a>
+      <a href="#implications">05 / 투자 시사점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 인프라 시리즈 · Part 4 · 2026.06</span>
+    <h1 class="hero-title">한국 AI G3 —<br><span class="hl">소버린 AI의 도전</span></h1>
+    <p class="hero-sub">260,000 GPU, Stanford HAI 3위, AI 특허 밀도 세계 1위 — 한국은 미국·중국에 이어 AI G3로 도약할 수 있는가. GPU 인프라 13배 확장, 소버린 AI 5사 경쟁, Yeda 기술이전 벤치마크를 통해 한국 AI 전략의 기회와 구조적 약점을 분석한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">260<span class="u">,000</span> GPUs</div>
+        <div class="lab">20K→260K 확장. 삼성·SK·현대·네이버·정부 AI 팩토리. NVIDIA APEC 2025.</div>
+        <div class="src">SRC: NVIDIA/APEC</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">#1<span class="u"> AI 특허 밀도</span></div>
+        <div class="lab">14.31/10만명. 룩셈부르크 12.25, 중국 6.95, 미국 4.68 대비 압도적 1위. 2년 연속.</div>
+        <div class="src">SRC: Stanford HAI 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">10.1<span class="u">조원</span></div>
+        <div class="lab">2026 AI R&D 예산. +57.8% YoY. 국가 R&D의 28.6%. OECD 최고 증가율.</div>
+        <div class="src">SRC: MSIT 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>한국 AI 전략을 분석하기</div>
+  </div>
+</header>
+
+<!-- ================= 01 GPU 인프라 ================= -->
+<section class="blk" id="gpu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;GPU 인프라 — 20,000에서 260,000으로</div>
+      <h2 class="sec-title">13배 확장: 한국의 AI 팩토리 경쟁</h2>
+      <p class="sec-lead">Jensen Huang의 APEC 2025 방한 이후 한국 주요 기업들이 일제히 대규모 GPU 구매 계획을 발표했다. 삼성·SK·현대·네이버·정부까지 총 260,000개 이상의 NVIDIA GPU가 2025–2026년에 한국에 배치된다.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="ptable">
+        <thead>
+          <tr>
+            <th>기업/기관</th>
+            <th>GPU 규모</th>
+            <th>GPU 종류</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>삼성전자</td>
+            <td>50,000+</td>
+            <td>NVIDIA Blackwell</td>
+            <td>AI 팩토리 구축, Stargate HBM LOI</td>
+          </tr>
+          <tr>
+            <td>SK Group</td>
+            <td>50,000+</td>
+            <td>NVIDIA</td>
+            <td>SK하이닉스 HBM 연계, Stargate LOI</td>
+          </tr>
+          <tr>
+            <td>현대자동차</td>
+            <td>50,000</td>
+            <td>NVIDIA Blackwell</td>
+            <td>Physical AI·로봇 연구 집중</td>
+          </tr>
+          <tr>
+            <td>NAVER Cloud</td>
+            <td>60,000+</td>
+            <td>NVIDIA</td>
+            <td>HyperCLOVA X 학습·추론 인프라</td>
+          </tr>
+          <tr>
+            <td>정부/NHN/Kakao</td>
+            <td>50,000+</td>
+            <td>NVIDIA</td>
+            <td>국가 AI 컴퓨팅 센터, 공공 AI 팩토리</td>
+          </tr>
+          <tr class="hl-row">
+            <td>합계</td>
+            <td>260,000+</td>
+            <td>—</td>
+            <td>2025–2026 배치 목표</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="tg">글로벌 CEO 방한 러시</div>
+      <p>Jensen Huang · Sam Altman · Lisa Su — 한국은 AI 공급망의 핵심 결절점이다.
+      <span class="u"><b>Jensen Huang (NVIDIA)</b>: 2025년 10월 APEC 방한에서 260,000 GPU 공급 발표, 2026년 6월 재방한. 한국을 "AI 팩토리의 핵심 파트너"로 지칭. <b>Sam Altman (OpenAI)</b>: 삼성·SK 방문, Stargate Korea 프로젝트의 HBM 공급 LOI 체결. <b>Lisa Su (AMD)</b>: 2026년 3월 첫 한국 방문, 삼성 HBM4 협력 논의 — AMD와의 경쟁 구도가 한국 HBM 수급에 프리미엄을 부여한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 Stanford HAI ================= -->
+<section class="blk" id="stanford">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;Stanford HAI — AI 지수에서 본 한국</div>
+      <h2 class="sec-title">AI G3의 증거: Notable Models 3위, 특허 밀도 1위</h2>
+      <p class="sec-lead">Stanford HAI AI Index 2026은 한국을 AI 기술 강국으로 공식 인정한다. 그러나 특허 밀도 세계 1위와 AI 인재 35위라는 역설적 갭이 구조적 약점을 드러낸다.</p>
+    </div>
+
+    <div class="fw-grid reveal">
+      <div class="fw-card">
+        <div class="fc-tag">Notable AI Models</div>
+        <div class="fc-num">8</div>
+        <h3>주목할 만한 AI 모델 — 글로벌 3위</h3>
+        <p>Stanford HAI 2026 기준 한국 Notable AI Models 8개(당초 5개에서 상향 수정). 미국·중국에 이어 세계 3위. 해당 모델 목록:</p>
+        <ul>
+          <li>Upstage Solar Pro 2 (31B)</li>
+          <li>LG EXAONE 4.0 (32B)</li>
+          <li>LG EXAONE Deep (32B)</li>
+          <li>LG EXAONE 3.0 / 3.5</li>
+          <li>NC AI VARCO</li>
+          <li>SK텔레콤 A.X K1</li>
+          <li>Naver HyperCLOVA X SEED</li>
+        </ul>
+        <div class="fc-sub">SRC: Stanford HAI AI Index 2026</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag amber">AI 특허 역설</div>
+        <div class="fc-num">#1 / #35</div>
+        <h3>AI 특허 밀도 1위 vs 인재 35위</h3>
+        <p>AI 특허 밀도에서 한국은 세계 1위이지만, AI 인재 순위는 35위로 극단적 격차가 존재한다.</p>
+        <div style="margin-top:16px">
+          <div class="cmp-row">
+            <div class="cmp-label">한국</div>
+            <div class="cmp-bar-wrap"><div class="cmp-bar" style="width:100%"></div></div>
+            <div class="cmp-val">14.31</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">룩셈부르크</div>
+            <div class="cmp-bar-wrap"><div class="cmp-bar dim" style="width:86%;background:var(--accent-2)"></div></div>
+            <div class="cmp-val">12.25</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">중국</div>
+            <div class="cmp-bar-wrap"><div class="cmp-bar dim" style="width:49%;background:var(--ink-3)"></div></div>
+            <div class="cmp-val">6.95</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">미국</div>
+            <div class="cmp-bar-wrap"><div class="cmp-bar dim" style="width:33%;background:var(--ink-3)"></div></div>
+            <div class="cmp-val">4.68</div>
+          </div>
+        </div>
+        <div class="fc-sub" style="margin-top:14px">특허/10만명 기준. AI 인재 35위는 해외 두뇌 유출 및 임금 경쟁력 문제를 반영.</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag green">Physical AI 제조 강점</div>
+        <div class="fc-num">6위</div>
+        <h3>제조 수출국 강점 — Physical AI 준비도</h3>
+        <p>한국은 글로벌 수출 6위($683.8B)이며 AI 칩의 핵심 소재인 반도체가 $141.9B(+43.9%)로 최대 수출 품목이다.</p>
+        <ul>
+          <li>반도체 수출 $141.9B (+43.9% YoY)</li>
+          <li>HBM 메모리 — AI GPU의 핵심 부품</li>
+          <li>CES 2026 Innovation Awards 60%</li>
+          <li>로봇·자율주행 Physical AI 기반 제조</li>
+          <li>현대 SPOT 로봇 + NVIDIA Physical AI</li>
+        </ul>
+        <div class="fc-sub">SRC: Stanford HAI 2026 · 산업부 2026</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">G3 전략 테제</div>
+      <p>"특허 양은 세계 1위, 인재 질은 세계 35위 — 이 역설을 해소하는 것이 한국 AI G3 전략의 핵심 과제다."
+      <span class="u">260,000 GPU 인프라와 소버린 AI 5사 $390M 프로젝트는 하드웨어 병목을 제거하는 작업이다. 그러나 AI 인재 #35 순위가 보여주듯 소프트 인프라(인재·생태계·기업화)의 격차가 G3 도약의 진짜 장벽이다. GPU는 돈으로 빠르게 살 수 있어도, 세계 수준의 AI 연구자는 그렇지 않다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 소버린 AI 5사 ================= -->
+<section class="blk" id="sovereign">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;소버린 AI 5사 — $390M 국가 AI 모델 경쟁</div>
+      <h2 class="sec-title">탈락제 평가: 한국 AI 주권의 베팅</h2>
+      <p class="sec-lead">한국 정부는 $390M(약 5,300억원)을 투입해 소버린 AI 모델을 선정하는 탈락제 평가를 진행 중이다. Phase 1을 통과한 기업들이 2026년 6월까지 Phase 2 평가를 받고 있으며, 이는 한국 최초의 국가급 LLM 선발전이다.</p>
+    </div>
+
+    <div class="fw-grid reveal" style="grid-template-columns:repeat(2,1fr)">
+      <div class="fw-card">
+        <div class="fc-tag green">Phase 1 통과</div>
+        <h3>Naver HyperCLOVA X</h3>
+        <p>한국 최대 인터넷 기업 Naver의 소버린 AI 모델. 한국어 특화 LLM의 선구자.</p>
+        <ul>
+          <li><b>THINK 32B</b> — 주력 추론 모델</li>
+          <li><b>KoBALT-700</b> — 한국어 벤치마크 48.9점</li>
+          <li><b>SEED 8B Omni</b> — 멀티모달(텍스트·이미지·음성)</li>
+          <li>MoE(Mixture of Experts) 아키텍처</li>
+          <li>60,000+ GPU 자체 인프라 기반</li>
+        </ul>
+        <div class="fc-sub">소버린 AI 프로젝트 Phase 1 통과 · Phase 2 진행 중</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag green">Phase 1 통과</div>
+        <h3>LG AI Research EXAONE</h3>
+        <p>LG그룹의 AI 연구소가 개발한 소버린 AI 모델. 글로벌 벤치마크에서 강세.</p>
+        <ul>
+          <li><b>EXAONE 4.0 (32B)</b> — 플래그십 모델</li>
+          <li><b>EXAONE Deep (32B)</b> — 하이브리드 추론</li>
+          <li>글로벌 오픈소스 모델 Top 10 진입</li>
+          <li>B2B 엔터프라이즈 적용 케이스 다수</li>
+          <li>의료·법률·제조 특화 파인튜닝</li>
+        </ul>
+        <div class="fc-sub">소버린 AI 프로젝트 Phase 1 통과 · Phase 2 진행 중</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag green">Phase 1 통과</div>
+        <h3>SK텔레콤 A.X K1</h3>
+        <p>SK텔레콤이 개발한 통신 특화 AI 모델. 한국어 처리 효율성 강조.</p>
+        <ul>
+          <li><b>A.X K1</b> — 플래그십 한국어 LLM</li>
+          <li>한국어 처리 효율 경쟁사 대비 33% 우수</li>
+          <li>통신 네트워크 최적화 특화</li>
+          <li>고객 서비스·기업 AI 어시스턴트 배포</li>
+          <li>통신 인프라와 AI의 수직 통합</li>
+        </ul>
+        <div class="fc-sub">소버린 AI 프로젝트 Phase 1 통과 · Phase 2 진행 중</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag amber">유일한 스타트업</div>
+        <h3>Upstage Solar</h3>
+        <p>한국 AI 스타트업으로 소버린 AI 5사 중 유일한 비대기업. 유니콘 지위 달성.</p>
+        <ul>
+          <li><b>Solar Pro 2 (31B)</b> — 글로벌 Top 10</li>
+          <li>기업 가치 $1B+ 유니콘 달성</li>
+          <li>Hugging Face 오픈LLM 리더보드 최상위</li>
+          <li>Document AI 특화 (OCR + LLM 통합)</li>
+          <li>IPO 준비 중 — 가장 주목받는 AI 스타트업</li>
+        </ul>
+        <div class="fc-sub">소버린 AI 프로젝트 참여 · 스타트업 유일 대표</div>
+      </div>
+
+      <div class="fw-card" style="grid-column:1/-1;max-width:540px">
+        <div class="fc-tag">소버린 5사</div>
+        <h3>NC AI VARCO</h3>
+        <p>엔씨소프트(게임 대기업)의 AI 연구 부문이 개발한 모델. 게임·엔터테인먼트 특화 강점에서 출발해 범용 LLM으로 확장 중.</p>
+        <ul>
+          <li><b>VARCO LLM</b> — 한국어 특화 범용 모델</li>
+          <li>게임 NPC AI·시나리오 생성 원천 기술</li>
+          <li>창의적 콘텐츠 생성 특화 (게임→엔터→미디어)</li>
+          <li>NC 게임 서비스 내 AI 적용으로 실전 검증</li>
+        </ul>
+        <div class="fc-sub">소버린 AI 프로젝트 5사 중 1사</div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal" style="margin-top:32px">
+      <div class="tg">소버린 AI 프로젝트 현황</div>
+      <p>$390M · 탈락제 평가 · Phase 2 (2026.06 마감)
+      <span class="u">한국 정부는 약 $390M(5,300억원)을 투입해 국가 소버린 AI 모델을 선정하는 경쟁적 평가를 진행하고 있다. 1차 평가(Phase 1)에서 Naver·LG·SK텔레콤이 통과했으며, Upstage·NC AI도 경쟁 중이다. Phase 2 평가는 2026년 6월까지 진행되며, 최종 선정된 모델은 공공 서비스·국방·의료 등 국가 핵심 인프라에 적용된다. 이 프로젝트는 단순한 보조금이 아닌 한국 AI 생태계의 선택과 집중을 의미한다 — 탈락한 기업은 국가 생태계에서 배제될 수 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 Yeda 기술이전 모델 ================= -->
+<section class="blk" id="yeda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;Yeda 기술이전 모델 — 한국 TTO의 벤치마크</div>
+      <h2 class="sec-title">와이즈만→Yeda: 한국 대학이 배워야 할 것</h2>
+      <p class="sec-lead">이스라엘 바이즈만 과학연구소의 기술이전기구 Yeda Research and Development는 연구자 1인당 최고 로열티 수입을 기록하는 세계 최고의 TTO다. 한국의 기술이전 역량과 비교하면 구조적 격차가 분명하다.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="ptable">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>Yeda / 바이즈만 (이스라엘)</th>
+            <th>한국 대표 TTO (KAIST 등)</th>
+            <th>격차 평가</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>연구자 1인당 로열티</td>
+            <td>글로벌 최고 수준</td>
+            <td>KAIST ~8.1억 KRW/년</td>
+            <td>바이즈만 연구자 수 대비 절대 우위</td>
+          </tr>
+          <tr>
+            <td>기술이전 성사율</td>
+            <td>세계 최고 수준</td>
+            <td>약 37.9%</td>
+            <td>한국은 성사율보다 건수 증가에 집중</td>
+          </tr>
+          <tr>
+            <td>누적 스핀오프</td>
+            <td>120+ 기업 창업</td>
+            <td>성장 중 (공식 집계 다양)</td>
+            <td>Yeda 모델은 스타 창업에 집중</td>
+          </tr>
+          <tr>
+            <td>매출 집중도</td>
+            <td>3건 발명이 수익의 80–90%</td>
+            <td>분산형 (건당 소액 다수)</td>
+            <td>핵심 Few→Many 전략 차이</td>
+          </tr>
+          <tr>
+            <td>대표 성과</td>
+            <td>Copaxone (MS치료제) 등 블록버스터</td>
+            <td>특정 분야 기술이전 증가세</td>
+            <td>블록버스터 부재 — 한국의 과제</td>
+          </tr>
+          <tr>
+            <td>TTO 독립성</td>
+            <td>완전 독립 법인, 영리 운영</td>
+            <td>대학 내 부속 기관 (대부분)</td>
+            <td>독립성·속도·보상 체계 차이</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="tg">한국 TTO 기회와 과제</div>
+      <p>AI 특허 밀도 세계 1위 — 그런데 수익화는 누가 하는가?
+      <span class="u">한국은 AI 특허 밀도 세계 1위이지만, 이 특허들이 실제 상업적 가치로 전환되는 비율은 훨씬 낮다. Yeda 모델의 핵심은 '모든 특허를 팔려 하지 않는다'는 선택과 집중이다 — 소수의 블록버스터 기술에 자원을 집중하고 스핀오프를 통해 기업 가치를 극대화한다. 한국의 260,000 GPU 인프라와 소버린 AI 5사 투자가 AI 분야의 '코팍손(Copaxone) 모멘트'를 만들기 위해서는 TTO 혁신과 딥테크 스타트업 생태계 강화가 병행돼야 한다. AI G3는 인프라 투자만으로 달성되지 않는다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 투자 시사점 ================= -->
+<section class="blk" id="implications">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;투자 시사점 — 한국 AI G3 전략의 기회와 리스크</div>
+      <h2 class="sec-title">어디에 베팅할 것인가</h2>
+      <p class="sec-lead">260,000 GPU 인프라와 소버린 AI 5사 프로젝트가 만들어낼 투자 기회를 단기·중기·리스크로 구분해 분석한다. 한국 AI G3 전략의 실행 강도와 구조적 약점을 함께 본다.</p>
+    </div>
+
+    <div class="fw-grid reveal">
+      <div class="fw-card">
+        <div class="fc-tag green">단기 · 향후 6–12개월</div>
+        <h3>GPU 인프라 수혜주</h3>
+        <p>260,000 GPU 발주가 이미 확정된 구간. 하드웨어 공급망 직접 수혜가 가장 빠르게 나타난다.</p>
+        <ul>
+          <li><b>삼성전자</b> — HBM4 공급, Blackwell용 HBM3E 양산</li>
+          <li><b>SK하이닉스</b> — HBM 시장 점유율 50%+, 가격 결정력</li>
+          <li><b>Upstage</b> — 소버린 AI 유일 스타트업, IPO 준비 주목</li>
+          <li>NVIDIA 파트너 시스템 통합사 (국내 클라우드)</li>
+        </ul>
+        <div class="fc-sub">GPU 발주 확정 → HBM 수요 → 메모리 가격 회복 사이클</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag amber">중기 · 향후 1–3년</div>
+        <h3>소버린 AI 생태계 수혜</h3>
+        <p>소버린 AI 평가 결과 발표 후 최종 선정 기업에 자원이 집중된다. Phase 2 결과가 게임 체인저.</p>
+        <ul>
+          <li><b>Naver</b> — HyperCLOVA X 공공 채택 확대</li>
+          <li><b>LG AI Research / LG그룹</b> — EXAONE B2B 상용화</li>
+          <li><b>SK텔레콤</b> — A.X K1 통신 AI 수직 통합</li>
+          <li>AI 팩토리 인프라 구축사 (클라우드·데이터센터)</li>
+          <li>Upstage Solar Pro 2 — 글로벌 클라우드 API 판매</li>
+        </ul>
+        <div class="fc-sub">소버린 AI 선정 → 공공 조달 → 상용 확산의 3단계 모멘텀</div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fc-tag red">리스크 프레임워크</div>
+        <h3>구조적 약점과 외부 위험</h3>
+        <p>한국 AI G3 전략에는 실행 위험과 외부 변수가 공존한다. 낙관론과 함께 반드시 점검해야 할 요소들.</p>
+        <ul>
+          <li><b>인재 #35 역설</b> — 특허 1위·인재 35위의 구조적 갭</li>
+          <li><b>실행 위험</b> — 정부 프로젝트의 일정·예산 조정 가능성</li>
+          <li><b>지정학 리스크</b> — 미국·중국 AI 디커플링 속 한국의 포지션</li>
+          <li><b>반도체 집중도</b> — HBM 2사 의존, 다변화 한계</li>
+          <li><b>모델 상용화 갭</b> — 소버린 AI → 실제 B2B 수익 전환 불확실</li>
+        </ul>
+        <div class="fc-sub">GPU 인프라는 필요조건. 생태계·인재·상용화가 충분조건.</div>
+      </div>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 심층 분석 — 무엇이 한국 AI G3 테제를 깨는가</h3>
+      <div class="risk-grid">
+        <div class="ritem"><div class="ri">R1</div><div class="rt"><b>인재 #35 paradox</b><span>AI 특허 밀도 1위이지만 AI 연구자 글로벌 인재 순위는 35위. 두뇌 유출이 지속되면 인프라 투자가 외국 연구자에게 혜택을 준다.</span></div></div>
+        <div class="ritem"><div class="ri">R2</div><div class="rt"><b>소버린 AI 실행 리스크</b><span>$390M 투자 이후 Phase 2 선정이 지연되거나, 선정된 모델이 공공 조달에서 실제 채택되지 않을 경우 투자 효과가 반감된다.</span></div></div>
+        <div class="ritem"><div class="ri">R3</div><div class="rt"><b>미·중 AI 디커플링</b><span>한국은 반도체 수출(미국 동맹)과 중국 시장(최대 교역국) 사이에서 포지셔닝이 어렵다. 미국의 반도체 수출통제 강화 시 한국 기업 직격.</span></div></div>
+        <div class="ritem"><div class="ri">R4</div><div class="rt"><b>GPU 투자 ROI 불확실</b><span>260,000 GPU 배치가 실제 상업적 AI 서비스·수출 수익으로 전환되는 경로가 명확하지 않다. 인프라 과잉 투자 위험.</span></div></div>
+      </div>
+    </div>
+
+    <!-- Series Nav -->
+    <div class="series-nav reveal">
+      <a href="ai_valuechain_deep_dive_20260611.html" class="snav-item">
+        <div class="sn-dir">← Prev · Part 3</div>
+        <div class="sn-title">AI 밸류체인 심화 분석</div>
+      </a>
+      <div class="snav-item" style="opacity:.4;cursor:default">
+        <div class="sn-dir">Next · Part 5 →</div>
+        <div class="sn-title">준비 중</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">한국 AI G3 — 소버린 AI의 도전</div>
+      <div class="src-list">
+        DATA · Stanford HAI AI Index 2026 · NVIDIA APEC 2025 · MSIT 2026<br>
+        과학기술정보통신부 AI R&D 예산 2026 · 소버린 AI 5사 공식 발표 및 IR<br>
+        Yeda Research and Development 연간보고서 · KAIST TTO 공시<br>
+        작성 기준일 · 2026.06.25
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·전략 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·공개 자료를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
