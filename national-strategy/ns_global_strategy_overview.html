@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="일본 370조엔·미국 CHIPS $52.7B+IRA $369B+Stargate $500B·EU €843B·한국 150조·대만 TSMC $165B — 5개국 국가 전략 투자 규모·구조·재정건전성 총괄 비교">
+<meta name="keywords" content="국가전략,370조엔,CHIPS Act,IRA,Stargate,EU Chips Act,ReArm Europe,K-칩스,TSMC,투자비교">
+<meta property="og:title" content="370조엔 vs $921B vs €843B — 5개국 국가 전략 투자 총괄 비교">
+<meta property="og:description" content="일본 370조엔·미국 CHIPS $52.7B+IRA $369B+Stargate $500B·EU €843B·한국 150조·대만 TSMC $165B — 5개국 국가 전략 투자 규모·구조·재정건전성 총괄 비교">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_global_strategy_overview.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="370조엔 vs $921B vs €843B — 5개국 국가 전략 투자 총괄 비교">
+<meta name="twitter:description" content="일본 370조엔·미국 CHIPS $52.7B+IRA $369B+Stargate $500B·EU €843B·한국 150조·대만 TSMC $165B — 5개국 국가 전략 투자 규모·구조·재정건전성 총괄 비교">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_global_strategy_overview.html">
+<title>370조엔 vs $921B vs €843B — 5개국 국가 전략 투자 총괄 비교</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;        /* 레드 — 국가 전략 */
+    --current:#f87171;     /* 라이트 레드 */
+    --glow:#fca5a5;        /* 핑크 글로우 */
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* bar compare */
+  .bars{display:flex;align-items:flex-end;gap:24px;height:210px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar-item{width:100%;max-width:76px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar-item.b-dark{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar-item.b-accent{background:linear-gradient(180deg,var(--volt),#b91c1c);box-shadow:0 0 40px -8px var(--volt)}
+  .bar-item.b-peak{background:linear-gradient(180deg,var(--current),#ef4444);box-shadow:0 0 40px -8px var(--current)}
+  .bar-item .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.88rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--ink-2);text-align:center}
+  .barcol .cap{font-size:.7rem;color:var(--ink-3);margin-top:2px;text-align:center}
+
+  /* mini rows */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:100px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* thesis */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{color:var(--ink);font-weight:600}
+  .td-accent{color:var(--volt)!important;font-family:var(--mono);font-weight:700}
+  .td-current{color:var(--current)!important;font-family:var(--mono);font-weight:700}
+  .td-glow{color:var(--glow)!important;font-family:var(--mono);font-weight:700}
+  tbody tr:hover td{background:rgba(239,68,68,.03)}
+
+  /* ---------- SHARE CARDS ---------- */
+  .share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .scard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}
+  .scard .sc-flag{font-size:1.8rem;margin-bottom:10px}
+  .scard .sc-name{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
+  .scard .sc-pct{font-family:var(--mono);font-weight:800;font-size:2.2rem;letter-spacing:-.03em;margin:12px 0 6px}
+  .scard .sc-pct.jp{color:var(--volt)}
+  .scard .sc-pct.us{color:var(--current)}
+  .scard .sc-pct.eu{color:var(--glow)}
+  .scard .sc-pct.kr{color:var(--bull)}
+  .scard .sc-pct.tw{color:var(--ink-2)}
+  .scard .sc-sub{font-size:.8rem;color:var(--ink-3);font-family:var(--mono)}
+  .scard .sc-detail{margin-top:14px;font-size:.82rem;color:var(--ink-2);line-height:1.55;text-align:left;border-top:1px solid var(--line);padding-top:14px}
+
+  /* ---------- CYCLE COMPARE ---------- */
+  .cycle-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .ccard .cc-era{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .ccard h3{font-size:1.18rem;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+  .ccard.current{border-color:var(--volt);border-width:1px}
+  .ccard.current h3{color:var(--volt)}
+  .stat-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.5)}
+  .stat-row:last-child{border-bottom:none}
+  .stat-row .sk{font-size:.85rem;color:var(--ink-2)}
+  .stat-row .sv{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--ink)}
+  .stat-row .sv.hi{color:var(--volt)}
+
+  /* ---------- DEMAND DRIVERS ---------- */
+  .drivers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  .driver{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .driver .dnum{font-family:var(--mono);font-weight:800;font-size:1.8rem;color:var(--volt);line-height:1}
+  .driver h4{font-size:.98rem;font-weight:750;margin:8px 0 6px;letter-spacing:-.01em}
+  .driver p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- PRICE TABLE ---------- */
+  .price-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px}
+  .price-panel h3{font-size:1.02rem;font-weight:750;margin-bottom:20px}
+
+  /* ---------- IMPLICATION BOX ---------- */
+  .impl-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .impl-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .impl-card .ic-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:10px}
+  .impl-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .impl-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .impl-card ul li{font-size:.88rem;color:var(--ink-2);line-height:1.55;padding-left:16px;position:relative}
+  .impl-card ul li::before{content:"→";position:absolute;left:0;color:var(--volt);font-family:var(--mono);font-weight:700}
+  .impl-card ul li b{color:var(--ink)}
+
+  /* ---------- FUND SOURCE GRID ---------- */
+  .fund-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  .fund-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .fund-card .fc-country{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+  .fund-card h4{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fund-card .fc-bar-wrap{display:flex;gap:4px;height:12px;border-radius:6px;overflow:hidden;margin-bottom:12px}
+  .fund-card .fc-seg{height:100%}
+  .fund-card .fc-legend{display:flex;gap:16px;flex-wrap:wrap}
+  .fund-card .fc-item{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--ink-2)}
+  .fund-card .fc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .fund-card .fc-note{margin-top:12px;font-size:.8rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px;line-height:1.55}
+
+  /* ---------- CHIPS GRID ---------- */
+  .chips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+  .chip-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .chip-card .cc-co{font-size:.8rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:8px}
+  .chip-card .cc-amt{font-family:var(--mono);font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--volt)}
+  .chip-card .cc-name{font-size:.82rem;font-weight:700;margin-top:6px}
+  .chip-card .cc-note{font-size:.74rem;color:var(--ink-3);margin-top:4px}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .cycle-grid{grid-template-columns:1fr}
+    .drivers{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .fund-grid{grid-template-columns:1fr}
+    .chips-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-stats{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "370조엔 vs $921B vs €843B — 5개국 국가 전략 투자 총괄 비교",
+  "description": "일본 370조엔·미국 CHIPS $52.7B+IRA $369B+Stargate $500B·EU €843B·한국 150조·대만 TSMC $165B — 5개국 국가 전략 투자 규모·구조·재정건전성 총괄 비교",
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-06-25",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_global_strategy_overview.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>국가 전략 총괄 비교</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#overview">01 / 규모 비교</a>
+      <a href="#japan">02 / 일본</a>
+      <a href="#usa">03 / 미국</a>
+      <a href="#eu">04 / EU</a>
+      <a href="#korea-taiwan">05 / 한국·대만</a>
+      <a href="#fiscal">06 / 재정·시장</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · 산업 개관 · 2026.06 기준</span>
+    <h1 class="hero-title">5개국 국가 전략<br>투자 <span class="hl">총괄 비교</span></h1>
+    <p class="hero-sub">370조엔 vs $921B vs €843B — 일본·미국·EU·한국·대만이 벌이는 기술 패권·방위 자립·산업 재건의 구조적 투자 전쟁</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">¥370<span class="u">조</span></div>
+        <div class="lab">일본 다카이치 내각 14년 투자 계획. 17개 전략 분야 62개 제품·기술. 확인 221조 + 미확인 149조.</div>
+        <div class="src">SRC: 일본 경제산업성 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$921<span class="u">B</span></div>
+        <div class="lab">미국 CHIPS $52.7B + IRA $369B + Stargate $500B 합산. SoftBank·OpenAI·Oracle 주도 민간 포함.</div>
+        <div class="src">SRC: DoC / DoE / White House</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">€843<span class="u">B</span></div>
+        <div class="lab">EU Chips Act €43B + ReArm Europe €800B. SAFE €150B 대출 + 재정유연성 €650B. NATO 5% GDP 목표.</div>
+        <div class="src">SRC: European Commission 2025</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>전략을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 OVERVIEW ================= -->
+<section class="blk" id="overview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;투자 규모 비교</div>
+      <h2 class="sec-title">5개국 국가 전략 투자 — 규모·구조·기간 총괄</h2>
+      <p class="sec-lead">일본의 ¥370조는 GDP 대비 국가채무 248.7% 위에서 선언됐다. 미국의 $921B는 보조금·세액공제·민간자본이 섞인 복합 구조다. 숫자보다 구조가 중요하다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>5개국 국가 전략 투자 총괄 비교표</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>국가</th>
+              <th>주요 전략</th>
+              <th>규모</th>
+              <th>기간</th>
+              <th>성격</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇯🇵 일본</td>
+              <td>370조엔 국가 투자 로드맵 (17개 분야)</td>
+              <td class="td-accent">¥370조 (~$2.3T)</td>
+              <td>2026–2040</td>
+              <td>정부+민간 ~50:50, 221조 확인</td>
+            </tr>
+            <tr>
+              <td>🇺🇸 미국</td>
+              <td>CHIPS Act + IRA + Stargate</td>
+              <td class="td-current">$921B</td>
+              <td>2022–2029</td>
+              <td>보조금+세액공제+민간자본</td>
+            </tr>
+            <tr>
+              <td>🇪🇺 EU</td>
+              <td>EU Chips Act + ReArm Europe</td>
+              <td class="td-glow">€843B</td>
+              <td>2023–2030</td>
+              <td>SAFE €150B 대출 + 재정유연성 €650B</td>
+            </tr>
+            <tr>
+              <td>🇰🇷 한국</td>
+              <td>국가성장펀드 + K-칩스 + 방산</td>
+              <td class="td-accent">₩150조+α</td>
+              <td>2025–2030</td>
+              <td>세액공제 20%(대기업) + 정책금융</td>
+            </tr>
+            <tr>
+              <td>🇹🇼 대만</td>
+              <td>TSMC 글로벌 fab 전략</td>
+              <td class="td-current">$165B(미국)+구마모토+드레스덴</td>
+              <td>2020–2030</td>
+              <td>TSMC 민간 주도 + 정부 인센티브</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>투자 규모 시각화 — 절대 규모 비교</h3>
+        <div class="ph-sub">일본 ¥370조 = ~$2.3T 기준 / 상대 비율</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar-item b-accent" data-h="100%"><span class="val tnum">¥370조</span></div>
+            <div class="yr">일본</div><div class="cap">~$2.3T</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-peak" data-h="40%"><span class="val tnum">$921B</span></div>
+            <div class="yr">미국</div><div class="cap">CHIPS+IRA+Stargate</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-dark" data-h="37%"><span class="val tnum">€843B</span></div>
+            <div class="yr">EU</div><div class="cap">Chips+ReArm</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-dark" data-h="14%"><span class="val tnum">₩150조</span></div>
+            <div class="yr">한국</div><div class="cap">성장펀드+α</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-dark" data-h="8%"><span class="val tnum">$165B+</span></div>
+            <div class="yr">대만</div><div class="cap">TSMC 미국</div>
+          </div>
+        </div>
+        <div class="foot">일본 ¥370조는 명목 환율 기준 ~$2.3T로 단일 국가 전략 투자 계획으로는 역사상 최대 규모다. 다만 확인된 투자는 221조, 나머지 149조는 민간 유인 목표치다.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>정부 vs 민간 자금 구조</h3>
+        <div class="ph-sub">재원 성격별 비중</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">🇯🇵</div>
+            <div class="mt"><b>일본 ~50:50</b> — 정부 보조금·세제 지원과 민간 투자 목표가 혼재. 라피더스 등 정부 직접 지원 포함.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">🇺🇸</div>
+            <div class="mt"><b>미국 복합 구조</b> — CHIPS 직접 보조금 + IRA 세액공제 + Stargate 민간자본($500B). 실질 정부 지출은 $421B 이하.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">🇪🇺</div>
+            <div class="mt"><b>EU SAFE 대출</b> — €150B 저리 대출 + 재정규약 유연화 €650B. 직접 보조금 아닌 채무 조달이 중심.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">🇰🇷</div>
+            <div class="mt"><b>한국 세액공제</b> — 대기업 20%, 중소기업 30% 세액공제. 700조원 반도체 계획(2032) 중 정책금융 비중 높음.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 테제</div>
+      <p>370조엔은 숫자가 아니라 구조다 — 17개 분야를 관통하는 일본의 '산업 국가' 선언.
+      <span class="u">미국은 $921B으로 기술 패권을, EU는 €800B으로 방위 자립을, 한국은 HBM·방산·AI로 틈새 독주를 노린다. 5개국의 투자 경쟁은 단순 보조금 레이스가 아니라, 재정건전성·민간 자금 동원력·기술 집중도가 결정하는 구조적 게임이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 JAPAN ================= -->
+<section class="blk" id="japan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;일본 370조엔</div>
+      <h2 class="sec-title">17개 전략 분야, 62개 제품·기술 — 일본의 산업 국가 선언</h2>
+      <p class="sec-lead">다카이치 내각의 ¥370조 계획은 단순 반도체 지원이 아니다. AI·에너지·바이오·콘텐츠·방위를 아우르는 '산업 국가 일본' 재건 로드맵이다. 라피더스와 TSMC 구마모토가 핵심 앵커다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>17개 전략 분야 투자 배분 (주요 항목)</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>분야</th>
+              <th>투자 규모</th>
+              <th>세부 내역</th>
+              <th>전략적 의미</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AI·반도체</td>
+              <td class="td-accent">101.6조엔</td>
+              <td>반도체 68조 / 피지컬AI 10.5조</td>
+              <td>370조 전체의 27% — 최대 단일 분야</td>
+            </tr>
+            <tr>
+              <td>DC·배터리</td>
+              <td class="td-current">32.7조엔</td>
+              <td>데이터센터 + 차세대 전지</td>
+              <td>AI 인프라 확장과 전동화 대응</td>
+            </tr>
+            <tr>
+              <td>통신</td>
+              <td class="td-current">29조엔</td>
+              <td>6G·위성통신·해저케이블</td>
+              <td>국가 통신 인프라 자립</td>
+            </tr>
+            <tr>
+              <td>콘텐츠</td>
+              <td class="td-glow">~30조엔</td>
+              <td>게임 24.5조 포함</td>
+              <td>일본 소프트파워 산업화</td>
+            </tr>
+            <tr>
+              <td>바이오</td>
+              <td class="td-glow">20.8조엔</td>
+              <td>신약·재생의료·농업 바이오</td>
+              <td>고령화 대응 + 수출 산업화</td>
+            </tr>
+            <tr>
+              <td>방위</td>
+              <td class="td-glow">4.3조엔</td>
+              <td>방위산업 육성 지원</td>
+              <td>NATO 연계 방산 수출 기반</td>
+            </tr>
+            <tr>
+              <td>핵융합</td>
+              <td class="td-glow">3조엔</td>
+              <td>ITERc 참여 + 자국 R&amp;D</td>
+              <td>차세대 에너지 기술 선점</td>
+            </tr>
+            <tr>
+              <td>확인 소계</td>
+              <td class="td-accent">221조엔</td>
+              <td>정부 직접 지원 확정분</td>
+              <td>전체 370조의 59.7%</td>
+            </tr>
+            <tr>
+              <td>미확인(민간 목표)</td>
+              <td>149조엔</td>
+              <td>민간 유인 목표치</td>
+              <td>세제·보조금으로 유인하는 민간 투자</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cycle-grid reveal" style="margin-top:24px">
+      <div class="ccard current">
+        <div class="cc-era">핵심 프로젝트 A</div>
+        <h3>라피더스 — 2nm GAA 반도체</h3>
+        <div class="stat-row"><span class="sk">정부 누적 지원</span><span class="sv hi">1.7조엔</span></div>
+        <div class="stat-row"><span class="sk">기술 파트너</span><span class="sv">IBM / imec</span></div>
+        <div class="stat-row"><span class="sk">2nm GAA 전기 작동</span><span class="sv hi">2025년 7월 예정</span></div>
+        <div class="stat-row"><span class="sk">양산 목표</span><span class="sv">2027년</span></div>
+        <div class="stat-row"><span class="sk">공장 위치</span><span class="sv">홋카이도 치토세</span></div>
+        <div class="stat-row"><span class="sk">리스크</span><span class="sv">수율·고객·자금조달 불확실</span></div>
+      </div>
+      <div class="ccard">
+        <div class="cc-era">핵심 프로젝트 B</div>
+        <h3>TSMC 구마모토 — 첨단 파운드리 거점</h3>
+        <div class="stat-row"><span class="sk">1공장 양산 개시</span><span class="sv">2024년 12월</span></div>
+        <div class="stat-row"><span class="sk">1공장 공정</span><span class="sv">12/16/22/28nm</span></div>
+        <div class="stat-row"><span class="sk">2공장 목표 공정</span><span class="sv hi">3nm (2028 예정)</span></div>
+        <div class="stat-row"><span class="sk">일본 정부 보조금</span><span class="sv hi">1.2조엔</span></div>
+        <div class="stat-row"><span class="sk">합작 파트너</span><span class="sv">소니·덴소·도요타</span></div>
+        <div class="stat-row"><span class="sk">전략적 의의</span><span class="sv">반도체 공급망 다변화</span></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">일본 전략 평가</div>
+      <p>라피더스의 성패가 일본 반도체 자립의 시험대다.
+      <span class="u">370조엔 중 AI·반도체가 101.6조(27%)로 최대다. 그러나 라피더스 2nm 양산(2027)은 TSMC·삼성의 현재 기술보다 1세대 뒤다. 일본의 진짜 강점은 소재·장비 생태계(신에쓰화학, 도쿄일렉트론)와 TSMC를 끌어들인 구마모토 전략이다. 370조는 선언이고, 구마모토는 현실이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 USA ================= -->
+<section class="blk" id="usa">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;미국 $921B</div>
+      <h2 class="sec-title">CHIPS $52.7B + IRA $369B + Stargate $500B — 기술 패권의 3축</h2>
+      <p class="sec-lead">미국의 전략은 단일 계획이 아닌 세 가지 레이어다. 반도체 제조 복원(CHIPS), 에너지 전환 세액공제(IRA), AI 인프라 민간 자본(Stargate). 관세 장벽까지 더해 공급망 재편을 강제한다.</p>
+    </div>
+
+    <div class="sec-eyebrow reveal" style="margin-bottom:18px"><span class="ln"></span>CHIPS Act — 주요 기업별 보조금 배분</div>
+    <div class="chips-grid reveal">
+      <div class="chip-card">
+        <div class="cc-co">INTEL</div>
+        <div class="cc-amt">$7.86B</div>
+        <div class="cc-name">인텔</div>
+        <div class="cc-note">오하이오·아리조나·뉴멕시코</div>
+      </div>
+      <div class="chip-card">
+        <div class="cc-co">TSMC</div>
+        <div class="cc-amt">$6.6B</div>
+        <div class="cc-name">TSMC 애리조나</div>
+        <div class="cc-note">2/3nm N2A, 아리조나 피닉스</div>
+      </div>
+      <div class="chip-card">
+        <div class="cc-co">SAMSUNG</div>
+        <div class="cc-amt">$4.7B</div>
+        <div class="cc-name">삼성 텍사스</div>
+        <div class="cc-note">테일러 파운드리 확장</div>
+      </div>
+      <div class="chip-card">
+        <div class="cc-co">MICRON</div>
+        <div class="cc-amt">$6.165B</div>
+        <div class="cc-name">마이크론</div>
+        <div class="cc-note">아이다호·뉴욕 DRAM</div>
+      </div>
+    </div>
+
+    <div class="drivers" style="margin-top:24px">
+      <div class="driver reveal">
+        <div class="dnum">$52.7B</div>
+        <h4>CHIPS Act — 반도체 제조 복원</h4>
+        <p>직접 보조금 $39B + R&amp;D $13.2B. 인텔·TSMC·삼성·마이크론에 집중 배분. 미국 내 첨단 반도체 생산 비율 0% → 20% 목표(2030). 투자 세액공제 25% 추가 혜택.</p>
+      </div>
+      <div class="driver reveal d1">
+        <div class="dnum">$369B</div>
+        <h4>IRA — 에너지·기후 세액공제</h4>
+        <p>인플레이션감축법(2022). 배터리·태양광·풍력·EV 세액공제. 한국 LG에너지·삼성SDI·SK온 북미 배터리 공장 세액공제 직접 수혜. 유럽은 자국 자본 이탈 우려로 CBAM 도입.</p>
+      </div>
+      <div class="driver reveal d2">
+        <div class="dnum">$500B</div>
+        <h4>Stargate — AI 인프라 민간 자본</h4>
+        <p>SoftBank·OpenAI·Oracle 컨소시엄. 텍사스·뉴멕시코·오하이오 AI 데이터센터 및 인프라. 4년간 $500B 민간 약정. GPU 클러스터, 에너지 인프라, AI 연구소 포함.</p>
+      </div>
+      <div class="driver reveal d3">
+        <div class="dnum">~25%</div>
+        <h4>관세 — 공급망 강제 재편</h4>
+        <p>중국산 반도체 관세 ~24-30%. AI칩 수출통제 및 25% 관세 검토. 중국 의존도 감축 + 동맹국 공급망 재편 강제. 한국·대만 기업의 미국 투자 유인 역할.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">미국 전략 평가</div>
+      <p>$921B의 절반은 민간 약정 — 실질 정부 지출은 다르다.
+      <span class="u">Stargate $500B은 SoftBank·Oracle 민간 약정으로 실제 정부 지출이 아니다. 실질적 재정 투입은 CHIPS $52.7B + IRA 세액공제 $369B(추산). IRA의 한국 배터리 기업 수혜(LG에너지·삼성SDI·SK온)는 미국 전략이 동맹 생산 네트워크를 통해 작동한다는 증거다. 관세와 CHIPS의 결합이 진짜 공급망 재편 동력이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 EU ================= -->
+<section class="blk" id="eu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;EU €843B</div>
+      <h2 class="sec-title">EU Chips Act €43B + ReArm Europe €800B — 반도체와 방위의 이중 전선</h2>
+      <p class="sec-lead">EU는 두 개의 전선에서 동시에 싸운다. 반도체 제조 점유율 회복(Chips Act)과 전략적 방위 자립(ReArm Europe). 두 전선 모두 실현 가능성에 의문이 제기되고 있다.</p>
+    </div>
+
+    <div class="cycle-grid reveal">
+      <div class="ccard">
+        <div class="cc-era">반도체 전선</div>
+        <h3>EU Chips Act €43B</h3>
+        <div class="stat-row"><span class="sk">목표</span><span class="sv">2030년 글로벌 점유율 10% → 20%</span></div>
+        <div class="stat-row"><span class="sk">유럽감사원 평가</span><span class="sv hi">"달성 불가"</span></div>
+        <div class="stat-row"><span class="sk">Intel 마그데부르크</span><span class="sv">€30B+ 취소 (2025.7)</span></div>
+        <div class="stat-row"><span class="sk">TSMC 드레스덴 ESMC</span><span class="sv">28/22nm+16/12nm</span></div>
+        <div class="stat-row"><span class="sk">TSMC 드레스덴 양산</span><span class="sv hi">2027년 목표</span></div>
+        <div class="stat-row"><span class="sk">실질 진전</span><span class="sv">소수 프로젝트에 집중</span></div>
+      </div>
+      <div class="ccard current">
+        <div class="cc-era">방위 전선</div>
+        <h3>ReArm Europe €800B</h3>
+        <div class="stat-row"><span class="sk">SAFE (특별 목적 대출)</span><span class="sv hi">€150B 저리 대출</span></div>
+        <div class="stat-row"><span class="sk">재정규약 유연화</span><span class="sv hi">€650B 추가 여력</span></div>
+        <div class="stat-row"><span class="sk">NATO GDP 목표</span><span class="sv">5% (2025 헤이그)</span></div>
+        <div class="stat-row"><span class="sk">트리거</span><span class="sv">우크라이나 전쟁 + 트럼프 NATO 의구심</span></div>
+        <div class="stat-row"><span class="sk">독일 방위예산</span><span class="sv">GDP 2% → 3.5%+</span></div>
+        <div class="stat-row"><span class="sk">수혜 섹터</span><span class="sv">항공·방산·사이버보안</span></div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>TSMC 드레스덴 ESMC — EU의 현실적 반도체 희망</h3>
+        <div class="ph-sub">European Semiconductor Manufacturing Company</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">28nm</div>
+            <div class="mt"><b>주력 공정 — 28/22nm 및 16/12nm</b>. 차량용·산업용 반도체 수요 대응. 첨단 로직이 아닌 성숙 공정 거점.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2027</div>
+            <div class="mt"><b>양산 목표</b> — EU·TSMC·NXP·Infineon·보쉬 합작. 유럽 자동차 공급망에 반도체 공급 안정성 부여.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">Intel</div>
+            <div class="mt"><b>마그데부르크 €30B 취소 (2025.7)</b> — EU Chips Act 목표 달성에 최대 차질. 유럽 내 첨단 로직 공장 공백 심화.</div>
+          </div>
+        </div>
+        <div class="foot">EU 감사원은 2030년 점유율 20% 목표가 "달성 불가"라고 공식 경고했다. 현실적 성과는 성숙 공정 거점 확보와 차량용 반도체 공급망 안정화에 집중될 것으로 보인다.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>ReArm Europe — 방위 자립의 재정 구조</h3>
+        <div class="ph-sub">€800B 재원 분해</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">€150B</div>
+            <div class="mt"><b>SAFE 대출</b> — EU 연대 채권 발행. 회원국에 저금리 방위 투자 자금 공급. 상환 의무 있음.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">€650B</div>
+            <div class="mt"><b>재정규약 유연화</b> — GDP 대비 방위비 초과 지출 허용. 실질 추가 재정 투입이 아닌 규제 완화 성격.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">5%</div>
+            <div class="mt"><b>NATO GDP 목표 (2025 헤이그)</b> — 독일이 GDP 3.5%+로 가장 빠르게 증액. 폴란드·발트 3국 이미 3%+ 수준.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">EU 전략 평가</div>
+      <p>€800B의 실체는 대출·규제 완화 — 직접 재정이 아니다.
+      <span class="u">ReArm Europe €800B은 직접 지출이 아닌 SAFE 대출(€150B)과 재정규약 예외 허용(€650B)의 합산이다. EU Chips Act는 Intel 마그데부르크 취소로 첨단 로직 야망이 좌절됐다. 현실적 성과는 TSMC 드레스덴(성숙 공정)과 방위 섹터 투자 확대다. 숫자의 절반은 의지 선언이고, 절반은 실제 자금이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 KOREA TAIWAN ================= -->
+<section class="blk" id="korea-taiwan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;한국·대만</div>
+      <h2 class="sec-title">HBM·방산·AI로 틈새 독주 vs TSMC 70% 파운드리 독점</h2>
+      <p class="sec-lead">한국은 HBM·방산 수출·AI 인프라 3축으로 대국 사이에서 틈새를 공략한다. 대만 TSMC는 글로벌 파운드리 70% 점유로 모든 국가 전략의 핵심 변수다.</p>
+    </div>
+
+    <div class="share-grid reveal">
+      <div class="scard" style="border-color:var(--volt)">
+        <div class="sc-flag">🇰🇷</div>
+        <div class="sc-name">한국 — K-칩스 + 방산</div>
+        <div class="sc-pct kr">150조</div>
+        <div class="sc-sub">국가성장펀드 (7개 전략 분야)</div>
+        <div class="sc-detail">
+          <b>K-칩스 세액공제:</b> 대기업 20%, 중소기업 30%, 2027년까지 연장<br>
+          <b>700조 반도체 계획</b> (2032년까지)<br>
+          <b>AI G3:</b> GPU 5만개+, 국가 AI 위원회<br>
+          <b>방산 수출 $154B</b> (2025 누적 목표)<br>
+          재정건전성 GDP 대비 국가채무 ~50%
+        </div>
+      </div>
+      <div class="scard">
+        <div class="sc-flag">🇹🇼</div>
+        <div class="sc-name">대만 — TSMC 글로벌 전략</div>
+        <div class="sc-pct tw">70%</div>
+        <div class="sc-sub">글로벌 파운드리 시장 점유율</div>
+        <div class="sc-detail">
+          <b>N2 양산:</b> 2025년 Q4 (2nm GAA)<br>
+          <b>A14:</b> 1.4nm 목표 2028<br>
+          <b>미국 fab:</b> $165B 투자 약정<br>
+          <b>구마모토:</b> 일본 fab (소니·덴소 합작)<br>
+          <b>드레스덴 ESMC:</b> 유럽 fab 2027
+        </div>
+      </div>
+      <div class="scard">
+        <div class="sc-flag">🇰🇷</div>
+        <div class="sc-name">한국 HBM — AI 메모리 독주</div>
+        <div class="sc-pct kr">HBM</div>
+        <div class="sc-sub">SK하이닉스·삼성 양대 공급사</div>
+        <div class="sc-detail">
+          <b>HBM3E:</b> SK하이닉스 Nvidia 독점 공급<br>
+          <b>HBM4:</b> 2025년 하반기 양산 시작<br>
+          <b>경쟁자:</b> 마이크론 진입 중<br>
+          <b>삼성:</b> HBM3E 수율 개선 경쟁<br>
+          AI 서버 당 HBM 탑재 용량 증가 추세
+        </div>
+      </div>
+    </div>
+
+    <div class="drivers" style="margin-top:24px">
+      <div class="driver reveal">
+        <div class="dnum">700조</div>
+        <h4>한국 반도체 메가클러스터 (2032)</h4>
+        <p>용인·평택·화성을 잇는 세계 최대 반도체 클러스터. 삼성·SK하이닉스 중심으로 300개 팹리스·소재·장비 기업 집적. 2032년까지 700조원 투자 계획. 정부 세제·인프라 지원.</p>
+      </div>
+      <div class="driver reveal d1">
+        <div class="dnum">$154B</div>
+        <h4>한국 방산 수출 (2025 목표)</h4>
+        <p>K2 전차·K9 자주포·FA-50 경전투기가 폴란드·루마니아·UAE 등에 수출. ReArm Europe 특수 직접 수혜. 방산 수출 목표 2025년 $154B(누적). 한국이 세계 4위 방산 수출국 도약 추진.</p>
+      </div>
+      <div class="driver reveal d2">
+        <div class="dnum">5만+</div>
+        <h4>한국 AI G3 — GPU 인프라 구축</h4>
+        <p>국가 AI 위원회 설치. GPU 5만개+ 클러스터 목표. 공공·민간 AI 인프라 확충. AI G3(글로벌 3위) 목표 선언. Nvidia H100/H200 조달 경쟁에서 정부 지원 보장.</p>
+      </div>
+      <div class="driver reveal d3">
+        <div class="dnum">N2</div>
+        <h4>TSMC — 2nm GAA 양산 2025 Q4</h4>
+        <p>N2 공정(2nm GAA) 2025년 Q4 양산 개시. Apple·Nvidia·AMD 고객 확보. A14(1.4nm) 2028년 목표. 대만 본토 fab 집중 + 글로벌 복제 전략. 지정학적 리스크(양안 긴장)가 최대 변수.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">한국·대만 전략 평가</div>
+      <p>한국의 재정건전성 ~50%는 전략적 자산이다.
+      <span class="u">일본 248.7%, 미국 ~120%+의 국가채무 대비 한국 ~50%는 추가 정책 여력이 가장 크다는 의미다. TSMC 70% 파운드리 독점은 모든 국가 전략의 공급망 취약점이자 대만의 최강 협상 카드다. 한국은 HBM·방산·AI G3로 '대국 사이 틈새'에서 고부가가치 집중 전략을 구사한다. 지정학 리스크가 높을수록 한국·대만의 전략적 가치는 높아진다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 FISCAL ================= -->
+<section class="blk" id="fiscal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;재정건전성·시장 반응</div>
+      <h2 class="sec-title">일본 248.7% vs 한국 ~50% — 재정 기반이 다르다</h2>
+      <p class="sec-lead">투자 규모만큼 재정 기반이 중요하다. 일본 248.7%, 미국 ~120%+ 국가채무 대비 한국 ~50%는 구조적으로 유리한 위치다. 시장은 일본의 재정 공격성에 닛케이 역대 최고로 반응했다.</p>
+    </div>
+
+    <div class="cycle-grid reveal">
+      <div class="ccard">
+        <div class="cc-era">재정건전성 비교</div>
+        <h3>GDP 대비 국가채무</h3>
+        <div class="stat-row"><span class="sk">🇯🇵 일본</span><span class="sv hi">248.7% — 선진국 최고</span></div>
+        <div class="stat-row"><span class="sk">🇺🇸 미국</span><span class="sv">~122% (2025 추정)</span></div>
+        <div class="stat-row"><span class="sk">🇪🇺 EU 평균</span><span class="sv">~90% (독일 63%, 이탈리아 140%+)</span></div>
+        <div class="stat-row"><span class="sk">🇰🇷 한국</span><span class="sv hi">~50% — 가장 낮음</span></div>
+        <div class="stat-row"><span class="sk">🇹🇼 대만</span><span class="sv">~30% (TSMC 세금 덕분)</span></div>
+        <div class="stat-row"><span class="sk">일본 10년 금리</span><span class="sv hi">2.67% (2026 기준)</span></div>
+      </div>
+      <div class="ccard current">
+        <div class="cc-era">시장 반응 — 일본 증시</div>
+        <h3>닛케이 72,353 — 역대 최고</h3>
+        <div class="stat-row"><span class="sk">닛케이 수준</span><span class="sv hi">72,353 (7거래일 연속 사상 최고)</span></div>
+        <div class="stat-row"><span class="sk">도쿄일렉트론</span><span class="sv hi">+10% (370조 발표 후)</span></div>
+        <div class="stat-row"><span class="sk">외국인 순매수</span><span class="sv hi">16조엔 (2026 H1 누적)</span></div>
+        <div class="stat-row"><span class="sk">엔화</span><span class="sv">약세 기조 지속</span></div>
+        <div class="stat-row"><span class="sk">수혜 섹터</span><span class="sv">반도체 장비·소재·AI 인프라</span></div>
+        <div class="stat-row"><span class="sk">한국 코스피</span><span class="sv">방산·HBM 종목 강세</span></div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>재정건전성과 투자 여력 — 구조적 비교</h3>
+        <div class="ph-sub">국가채무 비율 ↓ = 추가 재정 여력 ↑</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar-item b-accent" data-h="100%"><span class="val tnum">248%</span></div>
+            <div class="yr">일본</div><div class="cap">최고 부채</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-dark" data-h="49%"><span class="val tnum">122%</span></div>
+            <div class="yr">미국</div><div class="cap">중간</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-dark" data-h="36%"><span class="val tnum">90%</span></div>
+            <div class="yr">EU</div><div class="cap">평균</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-peak" data-h="20%"><span class="val tnum">~50%</span></div>
+            <div class="yr">한국</div><div class="cap">최저 수준</div>
+          </div>
+          <div class="barcol">
+            <div class="bar-item b-dark" data-h="12%"><span class="val tnum">~30%</span></div>
+            <div class="yr">대만</div><div class="cap">재정 우량</div>
+          </div>
+        </div>
+        <div class="foot">재정건전성이 낮을수록 추가 국가 전략 투자 여력이 크다. 한국(~50%)과 대만(~30%)은 재정 공간이 가장 넓다. 일본(248.7%)은 370조 투자 선언에도 10년 금리(2.67%)로 부담이 누적된다.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>일본 시장 반응 — 자금 흐름 분석</h3>
+        <div class="ph-sub">370조 발표 후 주요 시장 지표</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">72K+</div>
+            <div class="mt"><b>닛케이 225</b> — 72,353 포인트. 7거래일 연속 사상 최고. 370조 발표 + 엔화 약세 + 외국인 매수 삼중 호재.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">+10%</div>
+            <div class="mt"><b>도쿄일렉트론 급등</b> — 반도체 장비 최대 수혜. 라피더스·TSMC 구마모토 장비 공급 기대. 신에쓰화학·JSR도 동반 상승.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">16조</div>
+            <div class="mt"><b>외국인 순매수 16조엔</b> (2026 H1 누적) — 워런 버핏 5대 상사 투자 이후 외국인 일본 주식 재평가. 구조적 유입 흐름.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="impl-grid reveal" style="margin-top:8px">
+      <div class="impl-card">
+        <div class="ic-tag">재정 리스크</div>
+        <h3>투자 규모의 그림자</h3>
+        <ul>
+          <li><b>일본 금리 리스크:</b> 248.7% 국가채무 + 10년 금리 2.67%. 금리 상승이 지속되면 370조 재원 조달 비용 급증.</li>
+          <li><b>미국 재정 적자:</b> GDP 대비 적자 ~6-7% 지속. Stargate 민간 약정 실현 여부 불확실. CHIPS 지연 사례 다수.</li>
+          <li><b>EU 분절화:</b> 회원국 재정 역량 편차 극심. 독일·네덜란드 vs 이탈리아·스페인. SAFE 대출 활용도 불균등.</li>
+          <li><b>한국 정치 리스크:</b> 재정준칙 논쟁 지속. 세액공제 확대가 세수 감소로 연결될 수 있음.</li>
+        </ul>
+      </div>
+      <div class="impl-card">
+        <div class="ic-tag">투자 기회</div>
+        <h3>5개국 전략에서 찾는 수혜 구조</h3>
+        <ul>
+          <li><b>일본 반도체 소재·장비:</b> 도쿄일렉트론·신에쓰화학·SCREEN. 370조 AI·반도체 101.6조 직접 수혜.</li>
+          <li><b>한국 HBM·방산:</b> SK하이닉스 HBM4, 한화에어로스페이스·LIG넥스원. ReArm Europe 수출 직접 연결.</li>
+          <li><b>TSMC 공급망:</b> ASML(EUV 독점)·어플라이드머티리얼즈·램리서치. 모든 국가의 첨단 fab 필수 장비.</li>
+          <li><b>AI 인프라:</b> 데이터센터 전력·냉각·네트워크. Stargate + 일본 DC 32.7조 + 한국 AI G3 복합 수요.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">최종 투자 테제</div>
+      <p>5개국 전략 경쟁의 진짜 수혜자는 소재·장비·인프라다.
+      <span class="u">어느 국가가 반도체 fab을 짓든, AI 인프라를 확충하든, ASML의 EUV·도쿄일렉트론의 식각 장비·한국의 HBM이 필요하다. 국가 전략 투자 경쟁은 장비·소재 업체에게 독점적 수요를 보장한다. 재정건전성 기준으로는 한국(~50%)과 대만(~30%)이 추가 정책 여력이 가장 크다. 다음 5년의 투자 지도는 각국의 '구조'가 결정한다 — 숫자가 아니라.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">국가 전략 총괄 비교 — 산업 개관</div>
+      <div class="src-list">
+        DATA · 일본 경제산업성 · 미국 DoC/CHIPS Program Office · European Commission · 한국 산업통상자원부<br>
+        TSMC 공시 · Clarkson Research · IMF Fiscal Monitor 2025 · Bloomberg · Nikkei Asia<br>
+        작성 기준일 · 2026.06.25
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 국가 전략 투자 현황 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+// bar heights
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.bar-item').forEach(b=>{
+    requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+  });
+});
+// scroll reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// active nav
+const secs=[...document.querySelectorAll('section.blk')];
+const navA=[...document.querySelectorAll('.nav-links a')];
+const spy=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){
+    navA.forEach(a=>a.style.color='');
+    const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+    if(cur) cur.style.color='var(--ink)';
+  }});
+},{threshold:.4});
+secs.forEach(s=>spy.observe(s));
+// mobile nav
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.querySelector('.nav-links');
+navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

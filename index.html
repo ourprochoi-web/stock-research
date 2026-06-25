@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 67편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
+<meta name="description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제·조선·국가 전략 — 13개 시리즈 75편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
 <meta name="keywords" content="AI,HBM,패키징,방산,밸류체인,투자,리서치,GPU,로봇,GLP-1,AI바이오,우주경제,SpaceX">
 <meta property="og:title" content="ourprochoi · Deep Research Archive">
-<meta property="og:description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 67편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
+<meta property="og:description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제·조선·국가 전략 — 13개 시리즈 75편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="ourprochoi Research Archive">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ourprochoi · Deep Research Archive">
-<meta name="twitter:description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 67편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
+<meta name="twitter:description" content="AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제·조선·국가 전략 — 13개 시리즈 75편 심층 리서치 아카이브. 밸류체인 분석, 기업 심화, 투자 지도.">
 <link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/">
 <title>ourprochoi · Deep Research Archive</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -167,6 +167,8 @@ input{font-family:inherit}
 .sec-label.glp1{color:#ec4899}.sec-label.glp1::before{background:#ec4899}
 .sec-label.ai-bio{color:#10b981}.sec-label.ai-bio::before{background:#10b981}
 .sec-label.space{color:#a78bfa}.sec-label.space::before{background:#a78bfa}
+.sec-label.shipbuilding{color:#06b6d4}.sec-label.shipbuilding::before{background:#06b6d4}
+.sec-label.national-strategy{color:#ef4444}.sec-label.national-strategy::before{background:#ef4444}
 
 .sec-title{
   font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.03em;
@@ -333,7 +335,7 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
   "@context":"https://schema.org",
   "@type":"WebSite",
   "name":"ourprochoi · Deep Research Archive",
-  "description":"AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제 — 11개 시리즈 67편 심층 리서치 아카이브.",
+  "description":"AI 인프라·HBM·방산·AI SW·로봇·GLP-1·AI 바이오·우주 경제·조선·국가 전략 — 13개 시리즈 75편 심층 리서치 아카이브.",
   "url":"https://ourprochoi-web.github.io/stock-research/",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
@@ -400,6 +402,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     <button class="cat-btn" data-cat="GLP-1">GLP-1</button>
     <button class="cat-btn" data-cat="AI 바이오">AI 바이오</button>
     <button class="cat-btn" data-cat="우주 경제">우주 경제</button>
+    <button class="cat-btn" data-cat="조선">조선</button>
+    <button class="cat-btn" data-cat="국가 전략">국가 전략</button>
   </div>
   <span id="stickyResultCount"></span>
 </div>
@@ -420,7 +424,7 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ═══════ THEMES & CHIPS ═══════ */
-  var THEMES = ["전력 인프라","GPU","데이터센터","로보틱스","자율주행","밸류체인","방산","GLP-1","비만치료"];
+  var THEMES = ["전력 인프라","GPU","데이터센터","로보틱스","자율주행","밸류체인","방산","GLP-1","비만치료","국가전략","반도체패권"];
   var chips = document.getElementById('chips');
   var heroSearch = document.getElementById('heroSearch');
   var stickyInput = document.getElementById('stickyInput');
@@ -616,6 +620,16 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       cssClass: 'space', title: 'Space Economy',
       desc: '글로벌 우주 경제 $626B→$1T — SpaceX IPO $2.18T, Starship $100/kg, 메가 컨스텔레이션, 다운스트림 데이터',
       badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '기업 분석': 'badge-company', '심화 테마': 'badge-theme' }
+    },
+    '조선': {
+      cssClass: 'shipbuilding', title: 'K-Shipbuilding',
+      desc: 'K-조선 Big 3 실적 해부·LNG $71.3B·방산 수출·그린 전환 — 4편 시리즈',
+      badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '심화 테마': 'badge-theme' }
+    },
+    '국가 전략': {
+      cssClass: 'national-strategy', title: 'National Strategy',
+      desc: '일본 370조엔·미국 $921B·EU €843B·한국·대만 — 5개국 국가 전략 투자 비교, 반도체 패권, AI·방산 교차점, K-전략 로드맵',
+      badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '심화 테마': 'badge-theme' }
     }
   };
 
@@ -1089,6 +1103,62 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       date: "2026-06-23", category: "우주 경제", type: "심화 테마", series: "우주 경제",
       desc: "위성 지구관측 데이터, SAR·광학·통신 융합, AI 분석 플랫폼, Planet Labs·쎄트렉아이의 데이터 경제 전략",
       tags: ["위성데이터","지구관측","SAR","Planet Labs","쎄트렉아이","우주데이터","위성AI"]
+    },
+    {
+      title: "세계 조선의 새로운 좌표 — 슈퍼사이클 2.0과 한국의 프리미엄",
+      file: "shipbuilding/k_ship_industry_overview.html",
+      date: "2026-06-25", category: "조선", type: "산업 개관", series: "K-조선",
+      desc: "2024 글로벌 수주 $204B, Clarkson Price Index 2008 피크의 99%, 한국 CGT 점유율 21% — 350개 조선소 시대의 구조적 슈퍼사이클 분석",
+      tags: ["조선","슈퍼사이클","Clarkson","CGT","IMO","신조가격","사이클"]
+    },
+    {
+      title: "K-조선 투자 지도 — Big 3 실적 해부와 HD현대 그룹 프리미엄",
+      file: "shipbuilding/k_ship_investment_map.html",
+      date: "2026-06-25", category: "조선", type: "투자 지도", series: "K-조선",
+      desc: "Big 3 합산 매출 41조·영업이익 4.07조, HD현대일렉트릭 OPM 27.6%, 수주잔고 $138B — 재무 해부와 밸류에이션 프레임워크",
+      tags: ["HD현대중공업","한화오션","삼성중공업","HD현대일렉트릭","수주잔고","밸류에이션","소부장"]
+    },
+    {
+      title: "LNG 캐리어 $71.3B — AI 전력이 바다 위 수주로 이어지는 구조",
+      file: "shipbuilding/k_ship_theme_lng_ai_nexus.html",
+      date: "2026-06-25", category: "조선", type: "심화 테마", series: "K-조선",
+      desc: "한국 LNG 캐리어 66% 점유율/$71.3B, 카타르 $13.4B 메가오더, AI DC 전력→가스→LNG 넥서스, GTT Mark III, 플로팅 SMR",
+      tags: ["LNG캐리어","카타르","GTT","AI전력","데이터센터","SMR","해상풍력","가스"]
+    },
+    {
+      title: "방산 조선과 그린 전환 — 캐나다 $80B, 암모니아 퍼스트무버의 두 축",
+      file: "shipbuilding/k_ship_theme_defense_green.html",
+      date: "2026-06-25", category: "조선", type: "심화 테마", series: "K-조선",
+      desc: "캐나다 CPSP $80B CAD 잠수함, 필리핀·폴란드·KDDX 7.8조, 세계 최초 암모니아선 2026.4, IMO 2050 넷제로 — 방산+그린 투자 축",
+      tags: ["방산조선","CPSP","캐나다","잠수함","암모니아","이중연료","IMO","KDDX"]
+    },
+    {
+      title: "370조엔 vs $921B vs €843B — 5개국 국가 전략 투자 총괄 비교",
+      file: "national-strategy/ns_global_strategy_overview.html",
+      date: "2026-06-25", category: "국가 전략", type: "산업 개관", series: "국가 전략",
+      desc: "일본 370조엔·미국 CHIPS $52.7B+IRA $369B+Stargate $500B·EU €843B·한국 150조·대만 TSMC $165B — 5개국 투자 규모·구조·재정건전성 총괄 비교",
+      tags: ["국가전략","370조엔","CHIPS Act","IRA","Stargate","EU Chips Act","ReArm Europe","K-칩스","TSMC"]
+    },
+    {
+      title: "반도체 패권 전쟁 — 68조엔·$52.7B·K-칩스·TSMC 70% 독점의 지정학",
+      file: "national-strategy/ns_semiconductor_war.html",
+      date: "2026-06-25", category: "국가 전략", type: "투자 지도", series: "국가 전략",
+      desc: "일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS $52.7B, 한국 K-칩스 20%, 대만 TSMC 70% 독점 — 반도체 패권 전쟁 투자 지도",
+      tags: ["반도체","라피더스","TSMC","CHIPS Act","K-칩스","HBM","EUV","ASML","파운드리"]
+    },
+    {
+      title: "AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점",
+      file: "national-strategy/ns_ai_defense_nexus.html",
+      date: "2026-06-25", category: "국가 전략", type: "심화 테마", series: "국가 전략",
+      desc: "Stargate $500B vs 한국 GPU 5만개, ReArm Europe €800B vs K-방산 $154B, K-콘텐츠 Netflix 8-9%, 일본 게임 24.5조엔 — 반도체 너머 5대 전장 분석",
+      tags: ["Stargate","ReArm Europe","K-방산","K-콘텐츠","AI인프라","바이오","핵융합","관세"]
+    },
+    {
+      title: "한국이 지켜야 할 것, 빼앗아야 할 것 — 5개국 경쟁 속 K-전략 로드맵",
+      file: "national-strategy/ns_korea_impact_strategy.html",
+      date: "2026-06-25", category: "국가 전략", type: "심화 테마", series: "국가 전략",
+      desc: "HBM 78% 독주·방산 $154B·AI G3 — 5개국 국가 전략 경쟁 속 한국의 위협·기회·병목·모니터링 지표 종합 분석",
+      tags: ["한국전략","HBM","K-방산","AI G3","라피더스","TSMC","ASML","반도체엔지니어","K-칩스"]
     }
   ];
 

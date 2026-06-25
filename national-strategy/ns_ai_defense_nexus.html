@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stargate $500B vs 한국 GPU 5만개, ReArm Europe €800B vs K-방산 $154B, K-콘텐츠 Netflix 8-9%, 일본 게임 24.5조엔 — 반도체 너머 5대 전장 분석">
+<meta name="keywords" content="Stargate,ReArm Europe,K-방산,K-콘텐츠,AI인프라,바이오,핵융합,관세,국가전략">
+<meta property="og:title" content="AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점">
+<meta property="og:description" content="Stargate $500B vs 한국 GPU 5만개, ReArm Europe €800B vs K-방산 $154B, K-콘텐츠 Netflix 8-9%, 일본 게임 24.5조엔 — 반도체 너머 5대 전장 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_ai_defense_nexus.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점">
+<meta name="twitter:description" content="Stargate $500B vs 한국 GPU 5만개, ReArm Europe €800B vs K-방산 $154B, K-콘텐츠 Netflix 8-9%, 일본 게임 24.5조엔 — 반도체 너머 5대 전장 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_ai_defense_nexus.html">
+<title>AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;        /* 레드 — 전략 교차점 */
+    --current:#f87171;     /* 라이트 레드 */
+    --glow:#fca5a5;        /* 글로우 핑크 */
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#3d2020;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(239,68,68,.12);color:var(--volt);border:1px solid rgba(239,68,68,.3)}
+  .ic-tag.pink{background:rgba(248,113,113,.12);color:var(--current);border:1px solid rgba(248,113,113,.3)}
+  .ic-tag.rose{background:rgba(252,165,165,.12);color:var(--glow);border:1px solid rgba(252,165,165,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.korea{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.usa{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.eu{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.japan{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.purple{color:#a78bfa}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(252,165,165,.04));
+    border:1px solid rgba(239,68,68,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점",
+  "description": "Stargate $500B vs 한국 GPU 5만개, ReArm Europe €800B vs K-방산 $154B, K-콘텐츠 Netflix 8-9%, 일본 게임 24.5조엔 — 반도체 너머 5대 전장 분석",
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-06-25",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_ai_defense_nexus.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fca5a5;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(252,165,165,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>반도체 너머의 교차점</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#ai-infra">01 / AI 인프라</a>
+      <a href="#defense">02 / 방산</a>
+      <a href="#content">03 / 콘텐츠</a>
+      <a href="#bio-energy">04 / 바이오·에너지</a>
+      <a href="#macro">05 / 관세·환율</a>
+      <a href="#nexus">06 / 교차점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">반도체 너머의<br>국가 전략 <span class="hl">교차점</span></h1>
+    <p class="hero-sub">AI 인프라·방산·콘텐츠·바이오·에너지 — 5개국 투자가 교차하는 5대 전장</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$500<span class="u">B</span></div>
+        <div class="lab">Stargate AI 인프라 투자. SoftBank+OpenAI+Oracle 컨소시엄, 2025-2029년 집행. 텍사스 에이빌린 기함 포함 7GW 데이터센터 용량 목표.</div>
+        <div class="src">SRC: Stargate Project 2025</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">€800<span class="u">B</span></div>
+        <div class="lab">ReArm Europe 방위 투자. EU SAFE €150B 대출 + 재정유연성 4년간 €650B. 미사일 방어·드론·사이버·탄약 집중.</div>
+        <div class="src">SRC: EU Council 2025.5</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">8–9<span class="u">%</span></div>
+        <div class="lab">K-콘텐츠 Netflix 글로벌 시청 비중. 미국 다음 세계 2위. 비미국 500위 작품 중 한국 작품 85편(17%).</div>
+        <div class="src">SRC: Netflix 2025</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5대 전장을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 AI INFRA ================= -->
+<section class="blk" id="ai-infra">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;AI 인프라 경쟁</div>
+      <h2 class="sec-title">Stargate $500B vs 한국 GPU 5만개+</h2>
+      <p class="sec-lead">미국 Stargate가 $500B 규모의 AI 인프라 레이스를 선언한 가운데, 한국은 국가 AI 위원회(이재명 대통령 주재) 체제 아래 GPU 5만개+, AI G3 도약을 목표로 공격적 자원 배분에 나서고 있다. 반도체 수출을 넘어 AI 인프라 자체가 국가 전략 경쟁의 무대가 됐다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>Stargate 프로젝트 핵심 수치</h3>
+        <div class="ph-sub">SoftBank + OpenAI + Oracle · 2025-2029</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$500B</div>
+            <div class="mt"><b>총 투자 규모</b> — SoftBank·OpenAI·Oracle 컨소시엄. 텍사스 에이빌린 기함 캠퍼스를 포함해 5개 신규 데이터센터 사이트 구축 추진.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">7 GW</div>
+            <div class="mt"><b>목표 데이터센터 용량</b> — Oracle이 그 중 4.5 GW를 담당. NVIDIA GB200 NVL72 랙은 2025년 6월부터 납품 개시.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">5개사</div>
+            <div class="mt"><b>NVIDIA 파트너십</b> — 삼성·SK하이닉스·현대차 각 5만개 AI 팩토리 프로젝트 발표. HBM 공급사인 한국 메모리가 핵심 수혜.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">GB200</div>
+            <div class="mt"><b>NVIDIA GB200 랙</b> 2025.6 납품 개시. Blackwell 아키텍처 기반, 추론 성능 H100 대비 30배 향상. HBM3E 탑재.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>한국 AI 인프라 전략</h3>
+        <div class="ph-sub">국가 AI 위원회 · AI G3 목표</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">5만+</div>
+            <div class="mt"><b>한국 GPU 확보 목표</b> — 국가 AI 위원회(이재명 대통령) 주관. AI G3 도약 전략의 핵심 지표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1.46조</div>
+            <div class="mt"><b>AI GPU 조달 예산(원)</b> — 13,000개 1차 조달. 국가성장펀드 150조원 중 AI 분야 배정 포함.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">150조</div>
+            <div class="mt"><b>국가성장펀드 규모(원)</b> — AI·반도체·바이오·에너지 등 7대 분야 집중 투자. 민간 매칭 구조.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">IPCEI</div>
+            <div class="mt"><b>EU AI 인프라</b> — IPCEI CIC(공동유럽이익 중요 프로젝트). 분산 구조, 미통합 상태로 Stargate 대비 응집력 약함.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>국가·프로젝트</th>
+            <th>규모</th>
+            <th>GPU/인프라 목표</th>
+            <th>주요 파트너</th>
+            <th>단계</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">미국 Stargate</td>
+            <td><span class="num-td">$500B</span></td>
+            <td>7 GW (Oracle 4.5 GW)</td>
+            <td>SoftBank·OpenAI·Oracle·NVIDIA</td>
+            <td>진행 중 (2025-2029)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">한국 국가AI계획</td>
+            <td><span class="num-td">150조원+</span></td>
+            <td>GPU 5만개+ (AI G3)</td>
+            <td>삼성·SK·현대차 + NVIDIA</td>
+            <td>위원회 설립, 조달 개시</td>
+          </tr>
+          <tr>
+            <td class="hl-td">EU IPCEI CIC</td>
+            <td><span class="num-td">€수십B</span></td>
+            <td>분산 클라우드 인프라</td>
+            <td>회원국 분산 구조</td>
+            <td>미통합, 진행 중</td>
+          </tr>
+          <tr>
+            <td class="hl-td">일본 AI 인프라</td>
+            <td><span class="num-td">미확인</span></td>
+            <td>NVIDIA 협력 인프라</td>
+            <td>NVIDIA + 일본 대기업</td>
+            <td>발표 단계</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 한국 수치는 국가성장펀드·AI 조달 예산 합산 추정. 일본 AI 인프라 투자 규모는 공식 확인 전.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>AI 인프라 경쟁은 HBM 수요를 직접 창출한다.
+      <span class="u">Stargate $500B과 한국 국가AI계획이 맞물리면서, NVIDIA GB200 랙의 HBM3E 수요가 삼성·SK하이닉스의 중장기 메모리 수출을 뒷받침한다. AI 인프라 자체가 반도체 수출보다 상위 국가 전략 레이어로 부상했으며, 한국은 HBM 공급자이자 AI 팩토리 파트너라는 이중 포지션을 확보하고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 DEFENSE ================= -->
+<section class="blk" id="defense">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;방산 투자 전환</div>
+      <h2 class="sec-title">ReArm Europe €800B vs K-방산 $154B</h2>
+      <p class="sec-lead">NATO 5% GDP 목표(2025 헤이그)와 ReArm Europe €800B 프로그램이 글로벌 방위 산업의 구조적 수요를 만들고 있다. K-방산은 $154B(2025년) 수출을 기록하며 이 수요의 핵심 수혜자로 자리잡았다.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="icard reveal">
+        <span class="ic-tag red">ReArm Europe / Readiness 2030</span>
+        <h3>€800B 방위 투자 패키지</h3>
+        <div class="ic-body"><b>SAFE(Security Action for Europe) €150B</b>: EU 직접 대출 프로그램, 2025년 5월 이사회 채택. 미사일 방어·드론·사이버·탄약 등 핵심 역량 집중.<br><br><b>재정유연성 €650B</b>: 연간 GDP 1.5%p 방위비 초과 허용, 4년간 재정준칙 면제. 31개 EU 회원국 적용.<br><br>SAFE 65% 역내 조달 조건 — 비EU 기업의 직접 수혜에 제한이 있으나, 기술·부품 협력으로 우회 가능.</div>
+        <div class="ic-nums">
+          <div><div class="nk">SAFE 대출</div><div class="nv">€150B</div></div>
+          <div><div class="nk">재정유연성</div><div class="nv">€650B</div></div>
+          <div><div class="nk">채택</div><div class="nv">2025.5</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">K-방산 수출 현황</span>
+        <h3>$154B(2025) → $270B+(2026 전망)</h3>
+        <div class="ic-body"><b>4대 방산기업(한화·현대로템·LIG넥스원·KAI) 합산 무기 매출 $141B, +31% 성장.</b><br><br>Hanwha Defense: SIPRI 24위→21위 상승, 매출 42% 급증. 자주포(K9), 전차(K2), 호위함(FFX) 등 체계 수출이 주도.<br><br>한국 국방예산 R&D $40B(+19.4%) — 수출형 방산과 R&D 투자의 선순환 구조가 형성 중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">2025 수출</div><div class="nv">$154B</div></div>
+          <div><div class="nk">2026 전망</div><div class="nv">$270B+</div></div>
+          <div><div class="nk">R&D 증가</div><div class="nv">+19.4%</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal">
+        <span class="ic-tag rose">NATO 5% GDP 목표</span>
+        <h3>2025 헤이그 정상회의 — 31/32개국 합의</h3>
+        <div class="ic-body">2025년 헤이그 NATO 정상회의에서 <b>방위비 GDP 5% 목표</b>가 31/32개국의 합의로 채택됐다. 기존 2% 목표 대비 2.5배 확대.<br><br>일본은 GDP 2% 방위비 목표(4.3조엔) 달성을 위해 F-35, 이지스함, 토마호크 미사일 조달을 확대 중.<br><br>유럽 회원국들의 대규모 방위비 증가는 K-방산 체계(자주포·전차·항공)의 중기 수출 파이프라인을 뒷받침한다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">NATO 목표</div><div class="nv">GDP 5%</div></div>
+          <div><div class="nk">일본 목표</div><div class="nv">GDP 2%</div></div>
+          <div><div class="nk">일본 예산</div><div class="nv">4.3조엔</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag muted">Hanwha Defense SIPRI 순위 상승</span>
+        <h3>24위 → 21위, 매출 +42%</h3>
+        <div class="ic-body">SIPRI 2025 무기 매출 순위에서 <b>Hanwha가 24위에서 21위로 3계단 상승</b>. 매출 42% 급증, 총 무기 매출 $80B 수준.<br><br>K9 Thunder 자주포의 폴란드·노르웨이·루마니아·호주·이집트 등 다국가 수주가 성장을 주도. 2026년 이후 K2 전차·FA-50 경전투기 추가 수출 협상 진행 중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">SIPRI 순위</div><div class="nv">21위</div></div>
+          <div><div class="nk">매출 성장</div><div class="nv">+42%</div></div>
+          <div><div class="nk">무기 매출</div><div class="nv">~$80B</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-wrap reveal" style="margin-top:32px">
+      <div class="compare-header">
+        <div>방산 항목</div>
+        <div>한국</div>
+        <div>미국/NATO</div>
+        <div>일본</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">방위비 규모</div>
+        <div><span class="cr-num">~$450B</span><br><span style="font-size:.78rem;color:var(--ink-3)">국방예산 기준</span></div>
+        <div><span class="cr-num blue">GDP 5%</span><br><span style="font-size:.78rem;color:var(--ink-3)">NATO 목표 (31개국)</span></div>
+        <div><span class="cr-num purple">4.3조엔</span><br><span style="font-size:.78rem;color:var(--ink-3)">GDP 2% 목표</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">R&D 투자</div>
+        <div><span class="cr-num">$40B</span><br><span style="font-size:.78rem;color:var(--ink-3)">+19.4% 증가</span></div>
+        <div><span class="cr-num blue">SAFE €150B</span><br><span style="font-size:.78rem;color:var(--ink-3)">EU 공동 대출</span></div>
+        <div><span class="cr-num purple">확대 중</span><br><span style="font-size:.78rem;color:var(--ink-3)">F-35·이지스 조달</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">수출 포지션</div>
+        <div><span class="cr-num">$154B</span><br><span style="font-size:.78rem;color:var(--ink-3)">2025년 K-방산 수출</span></div>
+        <div><span class="cr-num blue">역내 조달 65%</span><br><span style="font-size:.78rem;color:var(--ink-3)">SAFE 역내 조달 조건</span></div>
+        <div><span class="cr-num purple">수입 의존</span><br><span style="font-size:.78rem;color:var(--ink-3)">수출 소규모</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">주요 품목</div>
+        <div>K9 자주포·K2 전차·FA-50</div>
+        <div>미사일 방어·드론·사이버</div>
+        <div>F-35·토마호크·이지스</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>ReArm Europe은 K-방산의 중기 성장 동력이다.
+      <span class="u">SAFE €150B의 65% 역내 조달 조건은 직접 수혜를 제한하지만, 유럽 GDP 1.5% 재정유연성으로 풀리는 €650B은 K9·K2·FA-50의 추가 수주로 이어지는 파이프라인을 강화한다. Hanwha의 SIPRI 21위 부상은 K-방산이 글로벌 방위산업 판에서 독립적인 플레이어로 인정받기 시작했음을 의미한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 CONTENT ================= -->
+<section class="blk" id="content">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;콘텐츠 산업 경쟁</div>
+      <h2 class="sec-title">K-콘텐츠 Netflix 8-9% vs J-콘텐츠 게임 24.5조엔</h2>
+      <p class="sec-lead">K-팝·K-드라마 대 J-애니·J-게임. 한국과 일본은 콘텐츠 IP를 국가 전략 수출 산업으로 육성하고 있다. Netflix 플랫폼에서 K-콘텐츠는 이미 미국 다음 2위를 굳혔고, 일본은 게임·애니메이션 24.5조엔 시장으로 맞선다.</p>
+    </div>
+
+    <div class="share-grid">
+      <div class="share-box reveal">
+        <h3>Netflix 글로벌 시청 비중 (국적별)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">미국</span><span class="pct">1위 (압도적)</span></div>
+            <div class="sbar-track"><div class="sbar-fill usa" data-w="85%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">한국 (K-콘텐츠)</span><span class="pct">8-9% · 2위</span></div>
+            <div class="sbar-track"><div class="sbar-fill korea" data-w="43%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">영국</span><span class="pct">3위</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="25%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">일본 (J-콘텐츠)</span><span class="pct">4-5% · 4위</span></div>
+            <div class="sbar-track"><div class="sbar-fill japan" data-w="22%"></div></div>
+          </div>
+        </div>
+        <div class="panel foot" style="margin-top:20px;background:transparent;border:none;padding:16px 0 0">
+          비미국 500위 작품 중 <b>한국 작품 85편(17%)</b>. Netflix 한국 투자 <b>$25B(2024-2028)</b>.
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>K-콘텐츠 vs J-콘텐츠 구조</h3>
+        <div class="ph-sub">플랫폼 · IP 전략 비교</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$6.3B</div>
+            <div class="mt"><b>Netflix 한국 매출(2024)</b> — 2020년 $3.56B 대비 77% 성장. 한국이 Netflix 전체 매출의 핵심 비한국어권 시장.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">24.5조엔</div>
+            <div class="mt"><b>일본 게임 시장(2033년 전망)</b> — 콘솔·모바일·PC 합산. 닌텐도·소니 IP 생태계가 핵심.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~30조엔</div>
+            <div class="mt"><b>일본 콘텐츠 전체</b> — 애니메이션·만화(망가)·게임 합산. 글로벌 IP 라이선스 수입이 성장 엔진.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">IP화</div>
+            <div class="mt">한국 강점: <b>K-팝·K-드라마 플랫폼</b>. 일본 강점: <b>애니메이션·게임·망가</b>. 두 나라 모두 IP 글로벌화 전략 강화.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="future-grid" style="margin-top:28px">
+      <div class="fcard fc-red reveal">
+        <div class="fc-tag">● K-콘텐츠 성장 동력</div>
+        <h3>Netflix $25B 투자 + 플랫폼 IP화</h3>
+        <div class="fc-body">Netflix는 2024-2028년 한국에 <b>$25B(약 34조원)을 투자</b>하기로 확약했다. K-드라마·K-팝·K-영화 콘텐츠가 한국 수출 경제의 신흥 강점으로 부상하면서, 콘텐츠 IP를 글로벌 플랫폼 위에서 수익화하는 구조가 고도화되고 있다.<br><br>비미국권 500위 작품 중 한국 작품이 <b>85편(17%)</b>을 차지하며, 콘텐츠 소프트 파워가 실질적인 외화 수익으로 전환되고 있다.</div>
+        <div class="fc-note">Netflix 한국 매출 성장률 77%(2020→2024). K-콘텐츠 투자 수익률(ROI)은 한국 투자 $25B 대비 구독자·광고 매출 창출 효과로 측정.</div>
+      </div>
+
+      <div class="fcard fc-pink reveal d1">
+        <div class="fc-tag">● J-콘텐츠 전략</div>
+        <h3>게임 24.5조엔 + 애니 글로벌 IP</h3>
+        <div class="fc-body">일본은 <b>게임·애니메이션·만화(망가)</b>의 글로벌 IP 라이선스를 핵심 전략으로 삼는다. 닌텐도(마리오·젤다·포켓몬), 소니(PlayStation IP), 반다이남코·코에이테크모 등의 IP가 유니버설 스튜디오·영화·스트리밍으로 확장 중.<br><br>일본 콘텐츠 전체 시장 규모 <b>~30조엔</b>은 게임(24.5조엔)+애니메이션+망가를 합산한 수치로, 2033년까지 지속 성장 전망.</div>
+        <div class="fc-note">K-팝·K-드라마 vs J-애니·J-게임 구도는 플랫폼(Netflix vs 자체 IP)과 수익화 방식(구독 vs 라이선스)의 차이로 귀결된다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 BIO ENERGY ================= -->
+<section class="blk" id="bio-energy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;바이오·에너지</div>
+      <h2 class="sec-title">삼성바이오 OPM 45% vs 일본 핵융합 3조엔</h2>
+      <p class="sec-lead">한국은 바이오의약품 CMO 글로벌 1위(삼성바이오로직스 OPM 45.4%)와 바이오시밀러(셀트리온)로 제약 가치사슬을 장악 중이다. 일본은 ADC(항체-약물 접합체) 선도와 핵융합 3조엔 투자로 에너지·바이오 양면에서 차세대를 준비한다.</p>
+    </div>
+
+    <div class="info-grid-3">
+      <div class="icard reveal">
+        <span class="ic-tag red">삼성바이오로직스</span>
+        <h3>CMO 글로벌 1위 · OPM 45.4%</h3>
+        <div class="ic-body">위탁 생산(CMO/CDMO) 분야 글로벌 1위권. <b>영업이익률(OPM) 45.4%</b>는 제조업 중 최상위 수준으로, 바이오 공정 기술력과 대규모 CAPA가 결합된 결과다.<br><br>4공장 증설 완료(18만 리터), 5공장 건설 중. 글로벌 빅파마의 바이오 아웃소싱 확대 트렌드가 구조적 수혜다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">OPM</div><div class="nv">45.4%</div></div>
+          <div><div class="nk">CAPA</div><div class="nv">60만L+</div></div>
+          <div><div class="nk">순위</div><div class="nv">글로벌 1위권</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">셀트리온 + 한국 바이오</span>
+        <h3>바이오시밀러 + R&D 2.12조원</h3>
+        <div class="ic-body">셀트리온은 <b>바이오시밀러(허쥬마·베그젤마·짐펜트라)</b>로 미국·유럽 시장을 공략. 허쥬마(트라스투주맙 BS)는 미국 시장점유율 10%+ 달성.<br><br>한국 정부 바이오 R&D <b>2.12조원(2025)</b> 투자. 국가성장펀드 7대 분야에 바이오 포함. AI 신약개발(Co-Scientist) 접목으로 파이프라인 가속화.</div>
+        <div class="ic-nums">
+          <div><div class="nk">바이오 R&D</div><div class="nv">2.12조원</div></div>
+          <div><div class="nk">BS 시장</div><div class="nv">글로벌 확대</div></div>
+          <div><div class="nk">AI 접목</div><div class="nv">Co-Scientist</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d2">
+        <span class="ic-tag rose">일본 바이오·에너지</span>
+        <h3>ADC 선도 + 핵융합 3조엔</h3>
+        <div class="ic-body"><b>아스텔라스·다이이치산쿄</b>가 ADC(항체-약물 접합체) 기술에서 글로벌 선도. 다이이치산쿄의 엔허투(HER2 ADC)는 블록버스터 항암제로 부상.<br><br>일본 바이오의약 시장 <b>20.8조엔</b>. 에너지 분야: 핵융합 <b>3조엔</b> 투자 계획, DC·배터리 <b>32.7조엔</b> 시장. 이차전지 경쟁에서 한국·중국과 삼파전.</div>
+        <div class="ic-nums">
+          <div><div class="nk">바이오의약</div><div class="nv">20.8조엔</div></div>
+          <div><div class="nk">핵융합</div><div class="nv">3조엔</div></div>
+          <div><div class="nk">DC·배터리</div><div class="nv">32.7조엔</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>분야</th>
+            <th>한국</th>
+            <th>일본</th>
+            <th>글로벌 트렌드</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">바이오CMO</td>
+            <td><span class="num-td">글로벌 1위권</span> (삼성바이오)</td>
+            <td>후발, 자국 시장 중심</td>
+            <td>아웃소싱 확대, 빅파마 CDMO 의존 증가</td>
+          </tr>
+          <tr>
+            <td class="hl-td">바이오시밀러</td>
+            <td><span class="num-td">US·EU 공략</span> (셀트리온)</td>
+            <td>소규모</td>
+            <td>특허 만료 블록버스터 급증 (2026-2030)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ADC</td>
+            <td>후발 진입 중</td>
+            <td><span class="num-td amber">글로벌 선도</span> (다이이치산쿄)</td>
+            <td>차세대 항암 핵심 모달리티</td>
+          </tr>
+          <tr>
+            <td class="hl-td">이차전지</td>
+            <td>LG엔솔·삼성SDI·SK온</td>
+            <td>파나소닉·도요타</td>
+            <td>EV 둔화 → ESS·전력망 배터리 수요 전환</td>
+          </tr>
+          <tr>
+            <td class="hl-td">핵융합</td>
+            <td>ITER 참여, 국내 K-STAR</td>
+            <td><span class="num-td amber">3조엔</span> 독자 투자</td>
+            <td>2030년대 상용화 목표 경쟁</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 한국 국가성장펀드 7대 분야: 반도체·AI·재생에너지·반도체전력·이차전지·바이오·우주. 일본 수치는 정부 발표 및 산업 전망 기준.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 MACRO ================= -->
+<section class="blk" id="macro">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;관세·환율·지정학</div>
+      <h2 class="sec-title">트럼프 2기 관세 + 엔 반전 + 대만 리스크</h2>
+      <p class="sec-lead">트럼프 2기 관세(중국 24-30%, AI 반도체 25%), 엔화 30%+ 하락 후 반전(BOJ 1.0%), 대만-중국 군사 긴장($10T 손실 추산) — 세 가지 거시 변수가 한국 수출 산업의 가격 경쟁력과 리스크 프로파일을 동시에 재편하고 있다.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="icard reveal">
+        <span class="ic-tag red">트럼프 2기 관세 체계</span>
+        <h3>AI 반도체 25% + 중국 ~24-30%</h3>
+        <div class="ic-body"><b>AI 반도체 관세 25%(2026.1 시행)</b> — GPU·HBM 등 첨단 반도체 대상. 미 상무장관은 최대 100% 관세 경고를 발령했으나 실제 시행 수위는 협상 변수.<br><br><b>중국 ~24-30%</b> 기본 관세 — 제조업 전반 대중 수입품. 한국 기업의 중국 생산기지 이전 유인을 높이는 동시에, 中 우회 수출 리스크 관리 필요.<br><br>기타 국가 10% 기본 관세 적용 중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">AI 반도체</div><div class="nv">25%</div></div>
+          <div><div class="nk">중국 기본</div><div class="nv">24-30%</div></div>
+          <div><div class="nk">기타</div><div class="nv">10%</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">엔화 환율 전환</span>
+        <h3>BOJ 1.0% 금리 → 엔 강세 전환</h3>
+        <div class="ic-body">BOJ가 2026년 6월 기준금리를 <b>1.0%로 인상</b>하면서 엔화가 달러 대비 30%+ 하락 국면에서 반등 전환.<br><br><b>원/100엔 980원 수준(21개월 최고)</b> — 원화 강세·엔화 강세 동반 구도. 한국 수출 가격 경쟁력에 복합적 영향.<br><br>산업별 영향: <b>반도체 장비(-) · 조선(-) · 방산(미미)</b>. 반도체 장비·정밀기계 수입 비용 증가가 주 우려.</div>
+        <div class="ic-nums">
+          <div><div class="nk">BOJ 금리</div><div class="nv">1.0%</div></div>
+          <div><div class="nk">원/100엔</div><div class="nv">~980원</div></div>
+          <div><div class="nk">고점 대비</div><div class="nv">21개월 최고</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal">
+        <span class="ic-tag rose">대만-중국 지정학 리스크</span>
+        <h3>Bloomberg $10T 손실 추산</h3>
+        <div class="ic-body"><b>중국 군용기 32대 훈련(최근 사례)</b> — 대만해협 긴장이 반복적으로 고조. Bloomberg는 대만 분쟁 시나리오에서 <b>글로벌 경제 $10T(약 1경 4천조원) 손실</b>을 추산.<br><br>TSMC 첨단 파운드리 집중 리스크로 인해 삼성·인텔의 대안 파운드리 역할 기대가 높아지는 구조적 기회. 반도체 공급망 다변화 정책이 가속화될 가능성.</div>
+        <div class="ic-nums">
+          <div><div class="nk">GDP 손실</div><div class="nv">$10T</div></div>
+          <div><div class="nk">군용기</div><div class="nv">32대</div></div>
+          <div><div class="nk">수혜</div><div class="nv">삼성 파운드리</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag muted">산업별 관세·환율 영향 매트릭스</span>
+        <h3>수혜·피해 정리</h3>
+        <div class="ic-body">
+          <b>반도체(메모리):</b> AI 반도체 관세 25% → HBM 공급가 인상 → 단기 마진 유리, 중장기 수요 변동성.<br><br>
+          <b>반도체 장비:</b> 엔 강세 → 일본산 장비 수입 비용 상승. 부정적.<br><br>
+          <b>조선:</b> 달러 선가 상승 vs 엔 강세(경쟁 완화). 중립~소폭 부정.<br><br>
+          <b>방산:</b> 관세·환율 영향 미미. 수출계약 USD 기준으로 환율 중립.<br><br>
+          <b>K-콘텐츠:</b> 관세 무관, 플랫폼 USD 수익으로 원화 강세 시 소폭 불리.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 NEXUS ================= -->
+<section class="blk" id="nexus">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;교차점 시사점</div>
+      <h2 class="sec-title">5대 전장의 교차 — 한국의 포지션</h2>
+      <p class="sec-lead">AI 인프라·방산·콘텐츠·바이오·에너지 5개 전장에서 한국은 각기 다른 수준의 교두보를 확보했다. 각 전장의 규모가 수백조 원대로 커지는 만큼 자원 배분 전략의 우선순위 설정이 핵심 과제다.</p>
+    </div>
+
+    <div class="future-grid">
+      <div class="fcard fc-red reveal">
+        <div class="fc-tag">● AI 인프라 → 메모리 수출</div>
+        <h3>Stargate $500B → HBM 수요 직결</h3>
+        <div class="fc-body">AI 인프라 투자 → <b>HBM·NAND 수요 증가 → 한국 메모리 수출 확대</b>. NVIDIA GB200의 HBM3E 탑재가 삼성·SK하이닉스의 직접 수혜 경로.<br><br>동시에 한국이 AI 팩토리 파트너로서 Stargate 생태계에 진입하면, 메모리 공급자를 넘어 AI 인프라 협력자 지위를 확보하는 업사이드가 생긴다.</div>
+        <div class="fc-note">모니터링 지표: NVIDIA HBM 조달 규모, Stargate 사이트별 한국 장비·부품 투입 비율, 삼성·SK HBM3E 수주 공시.</div>
+      </div>
+
+      <div class="fcard fc-pink reveal d1">
+        <div class="fc-tag">● 방산 투자 → K-방산 수출</div>
+        <h3>ReArm €800B → 파이프라인 강화</h3>
+        <div class="fc-body">유럽 방위비 확대 → <b>K9·K2·FA-50 추가 수주 파이프라인</b>. SAFE 65% 역내조달 조건은 변수이지만, GDP 1.5% 재정유연성 €650B이 직접 발주로 이어질 여지가 크다.<br><br>NATO 5% GDP 목표 채택으로 31개국의 동시적 방위비 확대가 단기 수요 스파이크를 만들고 있다. K-방산은 가격·납기 경쟁력으로 이 창(window)을 선점 중.</div>
+        <div class="fc-note">모니터링 지표: 폴란드·루마니아·에스토니아 추가 계약 동향, SAFE 역내조달 조건 협상 결과, Hanwha SIPRI 순위 변동.</div>
+      </div>
+
+      <div class="fcard fc-rose reveal">
+        <div class="fc-tag">● 콘텐츠 → IP 플랫폼화</div>
+        <h3>Netflix 8-9% → IP 수익화 전략</h3>
+        <div class="fc-body">K-콘텐츠의 Netflix 점유율 유지·확대를 위해서는 <b>IP의 플랫폼화 전략</b>이 필수. 일본처럼 게임·테마파크·굿즈로 IP 수익화 생태계를 구축하는 것이 다음 단계.<br><br>Netflix $25B 투자가 단순 콘텐츠 제작을 넘어 한국 IP의 글로벌 프랜차이즈화로 이어지는 구조가 필요하다.</div>
+        <div class="fc-note">모니터링 지표: Netflix 한국 콘텐츠 시청 비중(분기별), 한국 게임·IP 해외 라이선스 매출, 스튜디오드래곤·HYBE 글로벌 수익.</div>
+      </div>
+
+      <div class="fcard fc-bull reveal d1">
+        <div class="fc-tag">● 환율 → 수출 경쟁력</div>
+        <h3>원화 안정 + 엔 강세 → 가격 유리</h3>
+        <div class="fc-body">엔화 강세 전환은 한국의 경쟁 상대인 일본 수출품 가격을 높여 <b>한국 수출 상대 가격 경쟁력을 개선</b>한다. 조선·방산·철강 분야에서 한-일 경쟁이 완화되는 효과.<br><br>단, 반도체 장비·정밀부품의 일본 수입 비용 증가는 소재·장비 국산화 속도를 높이는 유인으로도 작용한다.</div>
+        <div class="fc-note">모니터링 지표: BOJ 추가 금리 인상 일정, 원/엔 환율 980원 이탈 여부, 한국 반도체 장비 수입 단가 변동.</div>
+      </div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:40px">
+      <div class="indcard">
+        <div class="ind-num">HBM3E</div>
+        <div class="ind-lab">NVIDIA GB200 랙 납품량과 삼성·SK 수주</div>
+        <div class="ind-tag">AI 인프라 지표</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">K9/K2</div>
+        <div class="ind-lab">유럽 자주포·전차 추가 계약 공시</div>
+        <div class="ind-tag">방산 지표</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">Netflix</div>
+        <div class="ind-lab">K-콘텐츠 시청 비중 분기별 변동</div>
+        <div class="ind-tag">콘텐츠 지표</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">BOJ</div>
+        <div class="ind-lab">BOJ 추가 인상 일정·원/100엔 방향성</div>
+        <div class="ind-tag">환율 지표</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">대만</div>
+        <div class="ind-lab">대만해협 긴장 지수·TSMC 공급망 이슈</div>
+        <div class="ind-tag">지정학 지표</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">반도체는 시작이다 — 국가 전략 투자는 AI·방산·콘텐츠·에너지로 확산 중이다.</div>
+      <div class="bt-body">
+        <b>Stargate $500B과 ReArm Europe €800B은 반도체 보조금 경쟁의 다음 단계를 보여준다.</b> 반도체가 국가 기술 패권의 상징이었다면, 이제 AI 인프라·방위 체계·콘텐츠 IP·바이오·핵융합 에너지가 각각 수백조 원 규모의 독립된 전장으로 분화되고 있다.<br><br>
+        <b>한국은 HBM·방산 수출·K-콘텐츠에서 이미 교두보를 확보했지만,</b> 각 전장의 규모가 커지는 만큼 정부·민간 공동의 자원 배분 전략이 절실하다. 국가성장펀드 150조원과 AI 위원회의 구심력이 5개 전장을 동시에 공략하는 협업 구조로 기능할 수 있을지가 향후 5년의 핵심 변수다.<br><br>
+        투자자 관점에서는 <b>AI 인프라(HBM·전력), 방산(K9·K2·FA-50 수출), 바이오CMO(삼성바이오로직스)</b> 세 축이 가장 선명한 수혜 경로를 가지며, 콘텐츠·에너지는 IP 플랫폼화와 핵융합 상용화 진전에 따라 레버리지가 달라진다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점</div>
+      <div class="src-list">
+        DATA · Stargate Project (2025) · EU Council SAFE (2025.5) · SIPRI Arms Industry Database (2025)<br>
+        Netflix Korea Investment Report · BOJ Monetary Policy Meeting (2026.6) · Bloomberg Taiwan Risk Estimate<br>
+        한국 국방부·산업부 보도자료 · 삼성바이오로직스·셀트리온 IR · NVIDIA Partner Announcement<br>
+        작성 기준일 · 2026.06.25
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

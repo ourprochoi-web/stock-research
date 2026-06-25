@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS Act $52.7B(Intel·TSMC·Samsung), 한국 K-칩스 20%, 대만 TSMC 70% 독점 — 반도체 패권 전쟁 투자 지도">
+<meta name="keywords" content="반도체,라피더스,TSMC,CHIPS Act,K-칩스,HBM,EUV,ASML,파운드리,메모리">
+<meta property="og:title" content="반도체 패권 전쟁 — 68조엔·$52.7B·K-칩스·TSMC 70% 독점의 지정학">
+<meta property="og:description" content="일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS Act $52.7B(Intel·TSMC·Samsung), 한국 K-칩스 20%, 대만 TSMC 70% 독점 — 반도체 패권 전쟁 투자 지도">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_semiconductor_war.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="반도체 패권 전쟁 — 68조엔·$52.7B·K-칩스·TSMC 70% 독점의 지정학">
+<meta name="twitter:description" content="일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS Act $52.7B(Intel·TSMC·Samsung), 한국 K-칩스 20%, 대만 TSMC 70% 독점 — 반도체 패권 전쟁 투자 지도">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_semiconductor_war.html">
+<title>반도체 패권 전쟁 — 68조엔·$52.7B·K-칩스·TSMC 70% 독점의 지정학</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;
+    --current:#f87171;
+    --glow:#fca5a5;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{color:var(--ink);font-weight:600}
+  .td-accent{color:var(--volt)!important;font-family:var(--mono);font-weight:700}
+  .td-gold{color:var(--current)!important;font-family:var(--mono);font-weight:700}
+  .td-glow{color:var(--glow)!important;font-family:var(--mono);font-weight:700}
+  .td-bull{color:var(--bull)!important;font-family:var(--mono);font-weight:700}
+  .td-bear{color:var(--bear)!important;font-family:var(--mono);font-weight:700}
+  .td-total{color:var(--ink)!important;font-family:var(--mono);font-weight:800;background:rgba(239,68,68,.06)!important}
+  tbody tr:hover td{background:rgba(239,68,68,.03)}
+
+  /* ---------- PANELS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:20px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- COMPANY CARDS ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:24px}
+  .comp-card.featured{border-color:var(--volt)}
+  .comp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}
+  .comp-name{font-size:1.3rem;font-weight:850;letter-spacing:-.03em}
+  .comp-ticker{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-top:4px}
+  .comp-badge{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;padding:6px 12px;border-radius:8px;font-weight:700;text-transform:uppercase;white-space:nowrap;background:rgba(239,68,68,.1);color:var(--volt);border:1px solid rgba(239,68,68,.3)}
+  .comp-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:20px}
+  .comp-nums div{background:var(--bg-2);padding:14px 12px}
+  .comp-nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .comp-nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .comp-nums .nv.accent{color:var(--volt)}
+  .comp-nums .nv.gold{color:var(--current)}
+  .comp-body{font-size:.9rem;color:var(--ink-2);line-height:1.65}
+  .comp-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- SUPPLY CHAIN ---------- */
+  .sc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+  .sc-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .sc-item .si-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--volt);margin-bottom:8px}
+  .sc-item h4{font-size:.98rem;font-weight:750;letter-spacing:-.01em;margin-bottom:10px}
+  .sc-item p{font-size:.84rem;color:var(--ink-2);line-height:1.6}
+  .sc-item p b{color:var(--ink)}
+
+  /* ---------- RISK GRID ---------- */
+  .risk-wrap{margin-top:28px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk-wrap h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk-wrap h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- MINI STATS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:100px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- COUNTRY CARDS ---------- */
+  .country-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+  .country-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .country-card.featured{border-color:var(--volt)}
+  .country-card .cc-flag{font-size:1.6rem;margin-bottom:12px}
+  .country-card .cc-name{font-size:1.1rem;font-weight:850;letter-spacing:-.02em;margin-bottom:4px}
+  .country-card .cc-amt{font-family:var(--mono);font-weight:800;font-size:1.5rem;color:var(--volt);letter-spacing:-.02em;margin-bottom:14px}
+  .country-card .cc-row{display:flex;justify-content:space-between;font-size:.82rem;padding:6px 0;border-bottom:1px solid rgba(35,48,77,.4)}
+  .country-card .cc-row:last-of-type{border-bottom:none}
+  .country-card .cc-row .ck{color:var(--ink-3)}
+  .country-card .cc-row .cv{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .country-card .cc-row .cv.hi{color:var(--volt)}
+  .country-card .cc-note{margin-top:12px;font-size:.8rem;color:var(--ink-2);line-height:1.5;border-top:1px solid var(--line);padding-top:10px}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap{display:flex;flex-direction:column;gap:0;margin-top:8px}
+  .rm-item{display:flex;gap:20px;align-items:flex-start;position:relative;padding-bottom:28px}
+  .rm-item:last-child{padding-bottom:0}
+  .rm-left{display:flex;flex-direction:column;align-items:center;flex:0 0 72px}
+  .rm-year{font-family:var(--mono);font-weight:800;font-size:.84rem;color:var(--volt);white-space:nowrap}
+  .rm-line{flex:1;width:1px;background:var(--line);margin-top:8px}
+  .rm-item:last-child .rm-line{display:none}
+  .rm-dot{width:10px;height:10px;border-radius:50%;background:var(--volt);box-shadow:0 0 10px var(--volt);flex-shrink:0;margin-top:2px}
+  .rm-right{padding-top:0}
+  .rm-right b{display:block;font-weight:750;font-size:.96rem;margin-bottom:4px}
+  .rm-right span{font-size:.85rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- CHIP GRANT TABLE ---------- */
+  .grant-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;margin-top:24px}
+  .grant-card h3{font-size:1.02rem;font-weight:750;margin-bottom:16px}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .comp-nums{grid-template-columns:repeat(2,1fr)}
+    .sc-grid{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .country-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "반도체 패권 전쟁 — 68조엔·$52.7B·K-칩스·TSMC 70% 독점의 지정학",
+  "description": "일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS Act $52.7B(Intel·TSMC·Samsung), 한국 K-칩스 20%, 대만 TSMC 70% 독점 — 반도체 패권 전쟁 투자 지도",
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-06-25",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_semiconductor_war.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>반도체 패권 전쟁</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#global-map">01 / 투자 지도</a>
+      <a href="#japan">02 / 일본 68조엔</a>
+      <a href="#chips-act">03 / 미국 CHIPS</a>
+      <a href="#korea">04 / 한국 K-칩스</a>
+      <a href="#tsmc">05 / 대만 TSMC</a>
+      <a href="#bottleneck">06 / 글로벌 병목</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · 투자 지도 · 2026.06 기준</span>
+    <h1 class="hero-title">반도체 패권<br><span class="hl">전쟁</span></h1>
+    <p class="hero-sub">68조엔·$52.7B·K-칩스·TSMC 70% 독점 — 5개국 반도체 보조금 경쟁과 3대 기술 병목의 지정학</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">68<span class="u">조엔</span></div>
+        <div class="lab">일본 반도체 투자. 라피더스 2nm 파일럿 라인 가동 + TSMC 구마모토 3nm 2028 목표.</div>
+        <div class="src">SRC: 일본 경제산업성 · 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$52.7<span class="u">B</span></div>
+        <div class="lab">미국 CHIPS Act 직접 보조금. Intel $7.86B, TSMC $6.6B, Samsung $4.7B, Micron $6.165B.</div>
+        <div class="src">SRC: US DOC CHIPS Office · 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">70<span class="u">%</span></div>
+        <div class="lab">TSMC 글로벌 파운드리 점유율 (TrendForce). 전년 64%에서 상승. N2 양산 2025 Q4 예정.</div>
+        <div class="src">SRC: TrendForce · 2026.06</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>반도체 전쟁 지도 탐색하기</div>
+  </div>
+</header>
+
+<!-- ================= 01 글로벌 투자 지도 ================= -->
+<section class="blk" id="global-map">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;글로벌 반도체 투자 지도</div>
+      <h2 class="sec-title">5개국 반도체 전략 — 보조금 경쟁의 실체</h2>
+      <p class="sec-lead">미국·일본·한국·대만·EU가 동시에 반도체 자국화를 추진 중이다. 규모는 크지만 각국의 포지셔닝과 약점이 판이하게 다르다. 누가 기술 병목을 통제하느냐가 패권을 결정한다.</p>
+    </div>
+
+    <div class="panel reveal">
+      <h3>5개국 반도체 전략 비교</h3>
+      <div class="ph-sub">2026년 6월 기준 / 각국 공식 발표 + 브로커 추정</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>국가</th>
+              <th>투자 규모</th>
+              <th>핵심 포지셔닝</th>
+              <th>강점</th>
+              <th>약점</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>일본</td>
+              <td class="td-accent">68조엔</td>
+              <td>소재·장비 강자 + 라피더스 2nm</td>
+              <td>ASML·도쿄일렉트론 공급망, TSMC 유치</td>
+              <td class="td-bear">설계·제조 생태계 약화, 양산 수율 미검증</td>
+            </tr>
+            <tr>
+              <td>미국</td>
+              <td class="td-accent">$52.7B+ITC $24B</td>
+              <td>설계(팹리스) + 첨단 파운드리 유치</td>
+              <td>Nvidia·Apple·Qualcomm 팹리스 생태계</td>
+              <td class="td-bear">제조 생산성 회복에 수년, 인건비 3~4배</td>
+            </tr>
+            <tr>
+              <td>한국</td>
+              <td class="td-accent">K-칩스+700조</td>
+              <td>HBM·DRAM 글로벌 1위</td>
+              <td>SK하이닉스 HBM3E 독주, AI 메모리 78%</td>
+              <td class="td-bear">로직 설계 취약, 엔지니어 5.6만명 부족</td>
+            </tr>
+            <tr>
+              <td>대만</td>
+              <td class="td-accent">TSMC $165B+</td>
+              <td>파운드리 70% 독점</td>
+              <td>N2 최선단 공정, CoWoS 패키징 독점</td>
+              <td class="td-bear">지정학 리스크, 분쟁 시 $10T 손실 추산</td>
+            </tr>
+            <tr>
+              <td>EU</td>
+              <td class="td-gold">€43B</td>
+              <td>성숙 공정 + 자동차용 반도체</td>
+              <td>ASML EUV 독점(네덜란드), IMEC 연구</td>
+              <td class="td-bear">선단 공정 부재, 20% 목표 달성 불투명</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">*투자 규모는 직접 보조금+세액공제+민간투자 합산 기준. EU Chips Act €43B는 공공·민간 혼합. 한국 700조는 2032년까지 민간투자 목표.</div>
+    </div>
+
+    <div class="sc-grid reveal" style="margin-top:24px">
+      <div class="sc-item">
+        <div class="si-tag">핵심 병목 / 장비</div>
+        <h4>ASML EUV — 연간 48~80대</h4>
+        <p>극자외선(EUV) 노광 장비는 <b>ASML이 전세계 독점 공급</b>. 2025년 연간 출하량 48대. 고NA EUV(대당 ~$3.8억)는 2027년 10대 계획. 수요 대비 공급이 구조적으로 부족하다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">핵심 병목 / 패키징</div>
+        <h4>CoWoS — TSMC 완전 예약</h4>
+        <p>AI 칩 집적 패키징의 핵심인 <b>CoWoS(Chip-on-Wafer-on-Substrate)</b>는 TSMC가 사실상 독점. 수요 연간 +113% 성장. Nvidia·AMD 전량 예약으로 신규 진입 불가.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">핵심 병목 / 메모리</div>
+        <h4>HBM3E — SK하이닉스·삼성 78%</h4>
+        <p>AI GPU에 필수적인 <b>HBM(High Bandwidth Memory)</b>는 SK하이닉스 61% + 삼성 17% = 78% 합산 점유율. Nvidia GB200 NVL72 전량이 한국산 HBM3E에 의존.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">지정학 리스크</div>
+        <h4>대만 해협 — $10T 충격 시나리오</h4>
+        <p>블룸버그 이코노믹스 추산: 대만 분쟁 시 글로벌 GDP <b>$10조 손실</b>. TSMC 공급 중단 시 Nvidia·Apple·AMD 전 제품 라인 타격. 각국 자국 생산 내재화가 지정학 리스크의 직접 반응.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 테제</div>
+      <p>반도체 전쟁의 본질은 보조금 경쟁이 아니라 '기술 병목의 통제'다.
+      <span class="u">ASML EUV 연간 48~80대, TSMC CoWoS 완전 예약, HBM3E 수급 타이트 — 이 세 병목을 누가 확보하느냐가 반도체 패권을 결정한다. 한국은 HBM·메모리에서 78% 합산 점유율로 독주하지만, 파운드리에서 라피더스·구마모토가 가동되는 2027-2028년이 분수령이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 일본 68조엔 ================= -->
+<section class="blk" id="japan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;일본 68조엔</div>
+      <h2 class="sec-title">라피더스 2nm + TSMC 구마모토 — 반도체 부활 프로젝트</h2>
+      <p class="sec-lead">일본은 반도체 점유율 1980년대 50%에서 2022년 9%로 추락한 뒤 68조엔을 투입해 반도체 부활을 선언했다. 라피더스와 TSMC 구마모토가 두 축이다.</p>
+    </div>
+
+    <div class="comp-card featured reveal">
+      <div class="comp-header">
+        <div>
+          <div class="comp-name">라피더스 (Rapidus)</div>
+          <div class="comp-ticker">비상장 / 정부+민간 32사 컨소시엄</div>
+        </div>
+        <span class="comp-badge">2nm GAA / IIM-1 파일럿 라인</span>
+      </div>
+      <div class="comp-nums">
+        <div><div class="nk">정부 누적 보조금</div><div class="nv accent">1.7조엔</div></div>
+        <div><div class="nk">민간 참여사</div><div class="nv">32개사</div></div>
+        <div><div class="nk">파일럿 라인 가동</div><div class="nv gold">2025.4 IIM-1</div></div>
+        <div><div class="nk">2nm GAA 전기 작동</div><div class="nv">2025.7.18 확인</div></div>
+      </div>
+      <div class="comp-body">
+        <b>2nm GAA 트랜지스터 전기 작동 확인 (2025.7.18):</b> 라피더스의 핵심 마일스톤. 다만 전기 작동 확인은 양산과 거리가 있다. <b>양산 목표는 2027년</b>이나 수율·경제성은 아직 미검증 단계다. IBM과의 기술 협력으로 미국 AlbanyNanoTech 연구소에서 공동 개발 중. 홋카이도 치토세 IIM-1 파일럿 라인이 2025년 4월 가동 시작했으며, 웨이퍼 처리 능력과 수율 확보가 2026-2027년 핵심 과제다.
+      </div>
+    </div>
+
+    <div class="comp-card reveal">
+      <div class="comp-header">
+        <div>
+          <div class="comp-name">TSMC 구마모토 JASM</div>
+          <div class="comp-ticker">TSMC 일본 자회사 (JASM) / Sony·Denso 지분 참여</div>
+        </div>
+        <span class="comp-badge">1공장 12/16nm · 2공장 3nm(2028)</span>
+      </div>
+      <div class="comp-nums">
+        <div><div class="nk">1공장 양산 시작</div><div class="nv accent">2024.12</div></div>
+        <div><div class="nk">1공장 공정</div><div class="nv">12/16nm</div></div>
+        <div><div class="nk">2공장 목표</div><div class="nv gold">3nm / 2028</div></div>
+        <div><div class="nk">정부 보조금 합산</div><div class="nv">1.2조엔</div></div>
+      </div>
+      <div class="comp-body">
+        <b>JASM 1공장</b>은 2024년 12월 양산을 시작했으며 Sony 이미지센서·Denso 자동차용 MCU 등 일본 수요를 흡수한다. <b>2공장</b>은 3nm 공정을 목표로 2028년 가동을 계획 중이며 추가 보조금 협상이 진행 중이다. 일본 정부는 JASM 1·2공장 합산 <b>1.2조엔</b>의 보조금을 확정했다. 일본 반도체 점유율: 1980s 50% → 2022년 9% → 2040년 40조엔 매출 목표.
+      </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:24px">
+      <h3>일본 반도체 68조엔 — 투자 구성</h3>
+      <div class="ph-sub">AI·반도체 합산 101.6조엔 중 반도체 단독 68조엔</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>금액</th>
+              <th>주요 내용</th>
+              <th>상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>라피더스 정부 보조금</td>
+              <td class="td-accent">1.7조엔 누적</td>
+              <td>2nm GAA, IIM-1 파일럿 라인, IBM 협력</td>
+              <td class="td-bull">집행 중</td>
+            </tr>
+            <tr>
+              <td>JASM 1·2공장 보조금</td>
+              <td class="td-accent">1.2조엔</td>
+              <td>1공장 12/16nm 가동, 2공장 3nm 2028</td>
+              <td class="td-bull">1공장 양산 중</td>
+            </tr>
+            <tr>
+              <td>소재·장비 R&amp;D</td>
+              <td class="td-gold">별도 배정</td>
+              <td>도쿄일렉트론·신에츠화학 공급망 강화</td>
+              <td>진행 중</td>
+            </tr>
+            <tr>
+              <td>전력 인프라</td>
+              <td class="td-gold">별도 배정</td>
+              <td>홋카이도 치토세 전력망 확장</td>
+              <td>구축 중</td>
+            </tr>
+            <tr>
+              <td>합계 (반도체 단독)</td>
+              <td class="td-total">~68조엔</td>
+              <td>AI·반도체 합산 101.6조엔의 반도체 파트</td>
+              <td class="td-total">진행 중</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">주요 과제: 라피더스 양산 수율 달성(2027년)·JASM 2공장 3nm 보조금 최종 확정·인력 확보. 일본 반도체 기업: 도쿄일렉트론(TEL)·신에츠화학·JSR·스미토모화학은 소재·장비 글로벌 공급망에서 이미 확고한 위치.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">일본 리스크 요인</div>
+      <p>2027년 양산 목표 — 수율과 경제성이 관건이다.
+      <span class="u">라피더스의 2nm 전기 작동 확인은 기술적 증명의 첫 단계일 뿐이다. 파운드리 경쟁력은 수율(양산 가능한 정상 칩 비율)과 단위 비용으로 결정된다. TSMC는 N2 공정에서 이미 양산 준비를 마쳤고, 라피더스는 2027년에야 양산을 목표로 한다. 2년의 격차와 TSMC 대비 열위한 생태계가 경쟁력의 핵심 변수다. 단, 일본 소재·장비 기업(TEL·신에츠·JSR)은 어떤 시나리오에서도 수혜를 누린다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 미국 CHIPS Act ================= -->
+<section class="blk" id="chips-act">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;미국 CHIPS Act</div>
+      <h2 class="sec-title">$52.7B 직접 보조금 — Intel·TSMC·Samsung·Micron</h2>
+      <p class="sec-lead">2022년 통과된 CHIPS and Science Act는 $52.7B의 직접 보조금과 25% ITC 세액공제($24B)로 구성된다. 미국 본토 첨단 파운드리 재건이 목표다.</p>
+    </div>
+
+    <div class="grant-card reveal">
+      <h3>CHIPS Act 주요 수혜 기업별 확정 보조금</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>기업</th>
+              <th>확정 금액</th>
+              <th>공장 위치</th>
+              <th>공정/용도</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Intel</td>
+              <td class="td-accent">$7.86B</td>
+              <td>애리조나·오하이오·오리건</td>
+              <td>Intel 18A / 첨단 로직</td>
+              <td class="td-glow">$5.7B 조기 집행</td>
+            </tr>
+            <tr>
+              <td>TSMC</td>
+              <td class="td-accent">$6.6B</td>
+              <td>애리조나 피닉스</td>
+              <td>N4P·N3·N2 / GigaFab</td>
+              <td>2024 Q4 $1.5B 수령</td>
+            </tr>
+            <tr>
+              <td>Samsung</td>
+              <td class="td-gold">$4.7B</td>
+              <td>텍사스 테일러</td>
+              <td>2nm 파운드리</td>
+              <td class="td-bear">양산 지연으로 조정</td>
+            </tr>
+            <tr>
+              <td>Micron</td>
+              <td class="td-accent">$6.165B</td>
+              <td>뉴욕·아이다호</td>
+              <td>DRAM / HBM</td>
+              <td class="td-bull">DRAM 40% 온쇼어링</td>
+            </tr>
+            <tr>
+              <td>GlobalFoundries</td>
+              <td class="td-gold">$1.5B</td>
+              <td>뉴욕·버몬트</td>
+              <td>성숙 공정 / 국방</td>
+              <td>미군·항공우주 특수</td>
+            </tr>
+            <tr>
+              <td>기타</td>
+              <td class="td-gold">~$26B</td>
+              <td>전국</td>
+              <td>패키징·소재·R&amp;D</td>
+              <td>NSF 연구 펀드 포함</td>
+            </tr>
+            <tr>
+              <td>합계</td>
+              <td class="td-total">$52.7B</td>
+              <td colspan="3" class="td-total">직접 보조금 + 25% ITC $24B(10년 누적) 별도</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sc-grid reveal" style="margin-top:8px">
+      <div class="sc-item">
+        <div class="si-tag">CHIPS 가드레일</div>
+        <h4>중국 투자 10년 금지 + 자사주 제한</h4>
+        <p>CHIPS Act 수혜 기업은 <b>10년간 중국 내 첨단 반도체 투자 불가</b>. 자사주 매입도 제한된다. Samsung·SK하이닉스·TSMC의 중국 공장 증설이 사실상 봉쇄됐다. 위반 시 보조금 전액 반환 조항.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">관세 충격</div>
+        <h4>AI 반도체 25% + 중국 실효세율 ~24-30%</h4>
+        <p>AI 반도체에 <b>25% 관세</b> 부과. 중국산 반도체 실효세율 ~24-30%. TSMC 애리조나 생산 칩은 관세 면제 — 미국 본토 투자를 강제하는 경제적 유인이다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">TSMC 애리조나</div>
+        <h4>GigaFab 6개 팹, 총 $165B</h4>
+        <p>TSMC는 애리조나에 <b>6개 팹, $165B</b>을 투자 계획. 1팹(N4P) 2025년 양산, 2팹(N3) 2028년, 3팹(N2) 2030년 목표. 인건비가 대만의 3~4배로 수익성 도전이 남아 있다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">Intel 18A</div>
+        <h4>Foundry 재건 — 2026년이 증명의 해</h4>
+        <p>Intel은 자체 팹리스 분리와 <b>Intel Foundry Services</b> 독립으로 구조 재편 중. 18A 공정이 2026년에 고객 양산에 진입할 경우 TSMC·Samsung과의 3파전이 가시화된다. $7.86B 보조금은 이 도박의 국가 지원이다.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">미국 CHIPS 핵심 논거</div>
+      <p>보조금은 지렛대다 — 핵심은 생태계 이전 가능 여부다.
+      <span class="u">$52.7B 보조금으로 팹을 미국에 지을 수 있다. 그러나 반도체 공급망은 팹 하나가 아니라 소재·장비·화학·인력·R&amp;D의 복합체다. 대만은 이를 수십 년에 걸쳐 구축했다. TSMC 애리조나 단가가 대만 대비 25~30% 높은 이유다. 미국 CHIPS의 진짜 성과는 2028-2030년에 판가름 난다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 한국 K-칩스 & HBM ================= -->
+<section class="blk" id="korea">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;한국 K-칩스 &amp; HBM</div>
+      <h2 class="sec-title">세액공제 20% + HBM3E 독주 — AI 메모리 78%</h2>
+      <p class="sec-lead">한국은 세계 1위 메모리 포지션을 기반으로 AI 시대의 핵심 부품인 HBM에서 독보적인 입지를 구축했다. K-칩스 세액공제와 700조 계획이 이를 뒷받침한다.</p>
+    </div>
+
+    <div class="comp-card featured reveal">
+      <div class="comp-header">
+        <div>
+          <div class="comp-name">K-칩스 세제 지원</div>
+          <div class="comp-ticker">K-Chips Act / 조세특례제한법 개정 · 2027년까지 연장</div>
+        </div>
+        <span class="comp-badge">대기업 20% · 중소 30% · 700조 계획</span>
+      </div>
+      <div class="comp-nums">
+        <div><div class="nk">대기업 세액공제</div><div class="nv accent">20%</div></div>
+        <div><div class="nk">중소기업 공제</div><div class="nv accent">30%</div></div>
+        <div><div class="nk">2025년 정책금융</div><div class="nv gold">14조원</div></div>
+        <div><div class="nk">700조 기한</div><div class="nv">2032년까지</div></div>
+      </div>
+      <div class="comp-body">
+        <b>700조 반도체 계획:</b> 2032년까지 민간 주도 700조원 반도체 투자 목표. 핵심은 용인 반도체 클러스터 — <b>팹 16개, 2047년 완공</b> 예정의 세계 최대 반도체 산업단지다. SK하이닉스가 120조원을 투자해 첨단 D램 팹을 구축하고, 삼성전자가 파운드리 팹을 추가 증설한다. <b>2025년 정책금융 14조원</b>은 중소 소부장 업체 지원에 집중된다.
+      </div>
+    </div>
+
+    <div class="comp-card reveal">
+      <div class="comp-header">
+        <div>
+          <div class="comp-name">SK하이닉스 HBM 독주</div>
+          <div class="comp-ticker">KRX 000660 / HBM3E AI 메모리 세계 1위</div>
+        </div>
+        <span class="comp-badge">HBM 61% · 시총 삼성 추월 2026.6.22</span>
+      </div>
+      <div class="comp-nums">
+        <div><div class="nk">HBM 시장점유율</div><div class="nv accent">61%</div></div>
+        <div><div class="nk">삼성 HBM 점유율</div><div class="nv">17%</div></div>
+        <div><div class="nk">한국 합산</div><div class="nv gold">78%</div></div>
+        <div><div class="nk">시총 역전일</div><div class="nv">2026.6.22</div></div>
+      </div>
+      <div class="comp-body">
+        <b>HBM3E AI 메모리 세계 1위:</b> SK하이닉스는 Nvidia H100·H200·GB200 GPU의 HBM 주공급사다. 2026년 6월 22일 SK하이닉스 시가총액이 삼성전자를 추월하는 역사적 역전이 발생했다 — AI 반도체 투자 붐이 HBM 수혜를 직접 반영한 결과다. <b>Micron은 HBM 22%</b>로 미국 유일의 HBM 생산자이나 기술 격차가 남아 있다. HBM4는 2025년 하반기 SK하이닉스가 선행 양산 예정.
+      </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:24px">
+      <h3>용인 반도체 클러스터 — 세계 최대 반도체 산업단지</h3>
+      <div class="ph-sub">경기도 용인 / 2022년 발표 · 2047년 완공 목표</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>규모</td>
+              <td>총면적 7.1km², 팹 16개 (삼성·SK하이닉스 및 소부장)</td>
+            </tr>
+            <tr>
+              <td>SK하이닉스 투자</td>
+              <td class="td-accent">120조원 (D램·HBM 팹 4개 이상)</td>
+            </tr>
+            <tr>
+              <td>삼성전자 평택</td>
+              <td class="td-gold">EUV 기반 첨단 파운드리·메모리 복합 클러스터</td>
+            </tr>
+            <tr>
+              <td>완공 목표</td>
+              <td>2047년 (팹 순차 가동 2026년부터)</td>
+            </tr>
+            <tr>
+              <td>전력 수요</td>
+              <td class="td-bear">최대 7GW (한국 전체 발전 설비의 ~7%)</td>
+            </tr>
+            <tr>
+              <td>고용 창출</td>
+              <td class="td-bull">직간접 30만 명 이상 (2047년 기준)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">전력 인프라: 팹 16개 풀 가동 시 전력 7GW는 한국 전체의 약 7%. 한국전력(KEPCO) 그리드 확장과 연계 필수. 인력: 반도체 엔지니어 2031년까지 5만 6천명 부족 추산.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">한국 반도체 포지션</div>
+      <p>HBM 왕좌는 확보 — 파운드리가 약한 고리다.
+      <span class="u">SK하이닉스의 HBM3E 독주와 삼성의 DRAM 양산 능력은 AI 인프라 투자 수혜의 직접적인 경로다. 그러나 파운드리에서 삼성 GAP 4/3nm의 수율 회복이 더디고, TSMC 대비 2세대 격차가 유지되는 한 한국은 '메모리 왕국' 포지션을 벗어나기 어렵다. 2027년 HBM4 전환이 다음 분수령이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 대만 TSMC ================= -->
+<section class="blk" id="tsmc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;대만 TSMC</div>
+      <h2 class="sec-title">파운드리 70% 독점 — N2→A14→sub-1nm 로드맵</h2>
+      <p class="sec-lead">TSMC는 글로벌 파운드리 시장의 70%를 독점한다. 2nm부터 sub-1nm까지 이어지는 기술 로드맵은 수년간의 기술적 해자를 의미한다.</p>
+    </div>
+
+    <div class="comp-card featured reveal">
+      <div class="comp-header">
+        <div>
+          <div class="comp-name">TSMC (台灣積體電路製造)</div>
+          <div class="comp-ticker">NYSE: TSM / TWSE: 2330 / 시가총액 ~$1조</div>
+        </div>
+        <span class="comp-badge">파운드리 70% / 선단 공정 독점</span>
+      </div>
+      <div class="comp-nums">
+        <div><div class="nk">파운드리 점유율</div><div class="nv accent">70%</div></div>
+        <div><div class="nk">Nvidia 매출 비중</div><div class="nv">19%</div></div>
+        <div><div class="nk">Apple 매출 비중</div><div class="nv">17%</div></div>
+        <div><div class="nk">GigaFab 총투자</div><div class="nv gold">$165B+</div></div>
+      </div>
+      <div class="comp-body">
+        <b>주요 고객 의존도:</b> Nvidia 19%, Apple 17%, Qualcomm 8%, AMD 7%. AI 붐으로 Nvidia 비중이 빠르게 확대 중이다. CoWoS 패키징 수요 연간 +113% 성장으로 후공정 캐파 확장이 최우선 과제. <b>N3(3nm) 공정</b>은 2023년 양산 시작, 이미 Apple M3·Nvidia Blackwell에 적용됐다. 2025 Q4 N2 양산 시작 예정으로 GAA 트랜지스터 도입.
+      </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:24px">
+      <h3>TSMC 기술 로드맵 — N2에서 sub-1nm까지</h3>
+      <div class="ph-sub">2025~2030년 공정 마일스톤 / TSMC 공식 발표 기준</div>
+      <div class="roadmap" style="margin-top:24px">
+        <div class="rm-item">
+          <div class="rm-left">
+            <div class="rm-year">2025 Q4</div>
+            <div class="rm-dot"></div>
+            <div class="rm-line"></div>
+          </div>
+          <div class="rm-right">
+            <b>N2 (2nm) 양산 시작</b>
+            <span>GAA(Gate-All-Around) 트랜지스터 도입. Apple A19 Pro·Nvidia 차세대 GPU에 우선 공급. N3 대비 성능 +10-15%, 전력 -25-30%.</span>
+          </div>
+        </div>
+        <div class="rm-item">
+          <div class="rm-left">
+            <div class="rm-year">2026 H2</div>
+            <div class="rm-dot"></div>
+            <div class="rm-line"></div>
+          </div>
+          <div class="rm-right">
+            <b>N2P (2nm Enhanced) 양산</b>
+            <span>N2 대비 성능 추가 최적화. 고객 볼륨 확대. CoWoS-L 패키징과 결합해 HPC·AI 가속기에 공급.</span>
+          </div>
+        </div>
+        <div class="rm-item">
+          <div class="rm-left">
+            <div class="rm-year">2028</div>
+            <div class="rm-dot"></div>
+            <div class="rm-line"></div>
+          </div>
+          <div class="rm-right">
+            <b>A14 (1.4nm) 양산 목표</b>
+            <span>Angstrom 시대 진입. 백면배선(Backside Power Delivery) 도입. Intel 18A·Samsung GAP 2nm와 본격 3파전 예상 구간.</span>
+          </div>
+        </div>
+        <div class="rm-item">
+          <div class="rm-left">
+            <div class="rm-year">2029+</div>
+            <div class="rm-dot"></div>
+            <div class="rm-line"></div>
+          </div>
+          <div class="rm-right">
+            <b>sub-1nm / A10 이하 R&amp;D</b>
+            <span>나노시트·CFET(Complementary FET) 연구 단계. 고NA EUV(~$3.8억/대) 도입 필수. 물리적 한계에 근접하는 공정. 2030년대 초반 상용화 전망.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sc-grid reveal" style="margin-top:24px">
+      <div class="sc-item">
+        <div class="si-tag">CoWoS 패키징</div>
+        <h4>수요 +113% — 공급이 따라오지 못한다</h4>
+        <p>TSMC CoWoS는 HBM+GPU 다이를 하나의 패키지에 결합하는 선진 패키징 기술. <b>Nvidia GB200 전량이 CoWoS-L 의존</b>. 2025년 수요 연간 +113% 성장. TSMC 외 대안 없어 병목이 지속된다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">지정학 리스크</div>
+        <h4>대만 해협 분쟁 시 $10T 손실</h4>
+        <p>블룸버그 추산 대만 분쟁 시 글로벌 GDP <b>$10조 손실</b>. TSMC는 이에 대응해 일본·미국·독일 분산화를 추진 중이나 2030년까지는 대만 집중도가 압도적으로 높다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">미국 GigaFab</div>
+        <h4>$165B·6개 팹 — 원가 25~30% 프리미엄</h4>
+        <p>애리조나 총 $165B, 6개 팹. 1팹 N4P 2025 양산, 2팹 N3 2028, 3팹 N2 2030 목표. 대만 대비 인건비가 3~4배로 <b>단가 25~30% 프리미엄</b>이 불가피하다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">독일 드레스덴</div>
+        <h4>€10B / ESMC — 자동차용 성숙 공정</h4>
+        <p>TSMC·NXP·인피니온·보쉬 합작 ESMC가 드레스덴에 €10B 투자. 22/28nm 성숙 공정으로 자동차·산업용 수요 타깃. EU의 반도체 자립 전략에 부응.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">TSMC 투자 포인트</div>
+      <p>선단 공정 독점 + CoWoS 병목 = 구조적 가격 결정권.
+      <span class="u">TSMC의 N2 이후 로드맵은 2030년까지 선단 공정 독점을 보장한다. AI 수요로 Nvidia 매출 비중이 빠르게 확대되는 구조에서, CoWoS 캐파를 통제하는 TSMC는 AI 인프라 투자의 최종 수혜자다. 단, 분산화 비용(미국·일본·EU 팹의 단가 프리미엄)이 장기 마진을 압박한다. 지정학 리스크는 보험 프리미엄처럼 상존한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 글로벌 병목 ================= -->
+<section class="blk" id="bottleneck">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;글로벌 병목</div>
+      <h2 class="sec-title">ASML EUV · 인력 · 전력 — 반도체 확장의 세 한계</h2>
+      <p class="sec-lead">반도체 보조금이 쏟아지지만 현실적인 확장 속도는 세 가지 병목이 결정한다. 장비(ASML EUV), 인력(엔지니어 부족), 전력 인프라 — 세 병목이 모두 구조적 제약이다.</p>
+    </div>
+
+    <div class="comp-card featured reveal">
+      <div class="comp-header">
+        <div>
+          <div class="comp-name">ASML — EUV 장비 글로벌 독점</div>
+          <div class="comp-ticker">NASDAQ: ASML / ASML Holding N.V. · 네덜란드</div>
+        </div>
+        <span class="comp-badge">EUV 독점 / 연간 48대 출하</span>
+      </div>
+      <div class="comp-nums">
+        <div><div class="nk">전세계 EUV 가동 대수</div><div class="nv accent">314대</div></div>
+        <div><div class="nk">2025 출하 계획</div><div class="nv">48대</div></div>
+        <div><div class="nk">한국 매출 비중</div><div class="nv gold">45%</div></div>
+        <div><div class="nk">고NA EUV 단가</div><div class="nv">~$3.8억/대</div></div>
+      </div>
+      <div class="comp-body">
+        <b>EUV 사용처 분류:</b> 전체 EUV 사용량의 51%가 메모리(HBM 수요 급증 반영), 49%가 로직. 한국은 ASML 매출의 <b>45%</b>를 차지하는 최대 고객 — SK하이닉스와 삼성전자의 HBM·D램 EUV 전환이 주도한다. 고NA EUV(High-NA EUV)는 <b>2027년 10대 출하 계획</b>이나 대당 ~$3.8억(EUV 구형 $1.9억의 2배)로 비용이 급등한다. ASML은 대중 수출 금지로 중국 선단 공정 접근을 원천 차단 중이다.
+      </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:24px">
+      <h3>EUV 장비 수급 현황 — 국가별 배분</h3>
+      <div class="ph-sub">2025년 기준 / ASML 공식 보고 + 업계 추정</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>국가/지역</th>
+              <th>EUV 대수 추정</th>
+              <th>주요 고객</th>
+              <th>특이사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>한국</td>
+              <td class="td-accent">~145대 (46%)</td>
+              <td>삼성전자·SK하이닉스</td>
+              <td class="td-bull">HBM EUV 수요 급증, ASML 최대 고객</td>
+            </tr>
+            <tr>
+              <td>대만</td>
+              <td class="td-accent">~110대 (35%)</td>
+              <td>TSMC</td>
+              <td>N2·A14 로드맵에 추가 수요 예정</td>
+            </tr>
+            <tr>
+              <td>미국</td>
+              <td class="td-gold">~35대 (11%)</td>
+              <td>Intel·TSMC 애리조나</td>
+              <td>CHIPS Act로 추가 발주 증가 중</td>
+            </tr>
+            <tr>
+              <td>일본</td>
+              <td class="td-gold">~15대 (5%)</td>
+              <td>JASM·라피더스(예정)</td>
+              <td>라피더스 2nm 양산 시 대량 발주 예정</td>
+            </tr>
+            <tr>
+              <td>중국</td>
+              <td class="td-bear">0대 (수출 금지)</td>
+              <td>SMIC·화웨이</td>
+              <td class="td-bear">EUV 접근 불가, DUV만 허용</td>
+            </tr>
+            <tr>
+              <td>기타 (EU 등)</td>
+              <td class="td-gold">~9대 (3%)</td>
+              <td>인텔 이스라엘·TSMC 드레스덴(예정)</td>
+              <td>소량 배분</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">*대수 추정은 업계 추산치로 실제와 차이 가능. ASML은 국가별 배분을 공개하지 않음. 한국·대만의 합산 EUV 보유 비중 ~81%는 선단 공정 집중을 반영.</div>
+    </div>
+
+    <div class="sc-grid reveal" style="margin-top:8px">
+      <div class="sc-item">
+        <div class="si-tag">인력 / 한국</div>
+        <h4>반도체 엔지니어 2031년까지 5.6만명 부족</h4>
+        <p>한국 반도체 산업 인력 수요 vs 공급 격차: <b>2031년 5만 6천명 부족</b>(반도체산업협회). AI 인재 연봉 $500K+로 인재 유출 가속. 한국 AI 인재 지수 <b>13위</b>(Tortoise Media). 이공계 기피 현상이 구조적 병목을 심화.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">인력 / 미국</div>
+        <h4>미국 팹 인건비 — 대만의 3~4배</h4>
+        <p>TSMC 애리조나 반도체 엔지니어 연봉 <b>$120K~$180K</b> (대만 $40K~$60K). 문화·언어 장벽으로 대만 파견 엔지니어 조기 귀국 사례 다수. CHIPS Act가 인력 교육 예산 $11B을 별도 배정한 이유다.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">전력 인프라</div>
+        <h4>팹+데이터센터 전력 수요 폭증</h4>
+        <p>첨단 파운드리 팹 1개당 전력 수요 <b>~1GW</b>. 용인 클러스터 16개 팹 기준 최대 7GW. 데이터센터+팹 동시 확장으로 전력망 부족이 한국·미국·대만 공통 제약. 원전 르네상스와 직결된 투자 포인트.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">중국 봉쇄</div>
+        <h4>SMIC DUV 7nm — 미중 기술전쟁의 전선</h4>
+        <p>중국 SMIC는 ASML DUV(심자외선)를 활용한 <b>멀티패터닝으로 7nm 상당 공정 구현</b>. 화웨이 Kirin 9000S에 적용. 단, EUV 없이는 4nm 이하 진입 불가 — 기술 격차가 2~3세대로 확대 중. 중국 내 $143B 투자에도 원천 기술 병목이 해소되지 않는다.</p>
+      </div>
+    </div>
+
+    <div class="risk-wrap reveal">
+      <h3><span class="rd"></span>반도체 패권 전쟁 — 5대 불확실성</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">U1</div>
+          <div class="rt">
+            <b>라피더스 2027 양산 수율</b>
+            <span>전기 작동 확인이 양산을 보장하지 않는다. 2nm 수율 달성 실패 시 일본 68조엔의 핵심 논거가 흔들린다. 2026-2027년이 검증의 해.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">U2</div>
+          <div class="rt">
+            <b>Intel 18A 파운드리 성패</b>
+            <span>$7.86B CHIPS 수혜의 전제는 Intel 18A 고객 양산 성공. 실패 시 미국 파운드리 재건 계획 전면 수정 불가피. 2026년이 결정적 해.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">U3</div>
+          <div class="rt">
+            <b>미중 반도체 규제 에스컬레이션</b>
+            <span>EUV 수출 금지에 더해 HBM·CoWoS 관련 추가 규제 가능성. 삼성·SK하이닉스·TSMC의 중국 내 기존 공장 운영에 직접 영향.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">U4</div>
+          <div class="rt">
+            <b>AI 설비투자 사이클 둔화</b>
+            <span>HBM·CoWoS 수요의 근본은 AI 인프라 투자다. 하이퍼스케일러 capex 둔화 시 HBM3E 수급이 급격히 완화될 수 있다. 2026-2027년 AI 투자 모멘텀 유지 여부 주시.</span>
+          </div>
+        </div>
+        <div class="ritem">
+          <div class="ri">U5</div>
+          <div class="rt">
+            <b>대만 해협 지정학</b>
+            <span>블룸버그 $10T 손실 시나리오. 가능성이 낮더라도 꼬리 리스크(tail risk)로 상시 존재. TSMC 분산화가 가속될수록 단가 상승 압력이 커진다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">결론 — 반도체 전쟁의 투자 지도</div>
+      <p>병목을 통제하는 자가 패권을 쥔다.
+      <span class="u">ASML EUV 연간 48대 출하는 전세계 선단 파운드리 확장 속도를 결정한다. TSMC CoWoS는 AI GPU의 물리적 한계다. SK하이닉스 HBM3E는 AI 학습의 메모리 병목이다. 이 세 병목 중 한국이 하나(HBM)를, TSMC가 둘(선단 공정·CoWoS)을 통제한다. 보조금은 이 병목을 우회하려는 시도지만, 기술 생태계는 수십 년의 축적이 필요하다. 2027-2028년 라피더스·Intel 18A의 양산 성패가 반도체 패권 지도를 다시 그릴 마지막 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">반도체 패권 전쟁 — 투자 지도</div>
+      <div class="src-list">
+        DATA · TrendForce · ASML Annual Report · US DOC CHIPS Office · 일본 경제산업성 (METI)<br>
+        SK하이닉스·삼성전자·TSMC IR · 반도체산업협회 · Bloomberg Economics · Tortoise AI Index<br>
+        작성 기준일 · 2026.06.25
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·국가 전략 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

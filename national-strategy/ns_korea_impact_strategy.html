@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HBM 78% 독주·방산 $154B·AI G3 — 5개국 국가 전략 경쟁 속 한국의 위협·기회·병목·모니터링 지표 종합 분석">
+<meta name="keywords" content="한국전략,HBM,K-방산,AI G3,라피더스,TSMC,ASML,반도체엔지니어,K-칩스,국가전략">
+<meta property="og:title" content="한국이 지켜야 할 것, 빼앗아야 할 것 — 5개국 경쟁 속 K-전략 로드맵">
+<meta property="og:description" content="HBM 78% 독주·방산 $154B·AI G3 — 5개국 국가 전략 경쟁 속 한국의 위협·기회·병목·모니터링 지표 종합 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_korea_impact_strategy.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="한국이 지켜야 할 것, 빼앗아야 할 것 — 5개국 경쟁 속 K-전략 로드맵">
+<meta name="twitter:description" content="HBM 78% 독주·방산 $154B·AI G3 — 5개국 국가 전략 경쟁 속 한국의 위협·기회·병목·모니터링 지표 종합 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_korea_impact_strategy.html">
+<title>한국이 지켜야 할 것, 빼앗아야 할 것 — 5개국 경쟁 속 K-전략 로드맵</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;
+    --current:#f87171;
+    --glow:#fca5a5;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANEL / THESIS ---------- */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- DUAL COL GRID ---------- */
+  .dual-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:8px}
+  .dual-grid-even{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.5rem;color:var(--current);min-width:120px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- FACT CARDS ---------- */
+  .fact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .fact .fk{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:10px}
+  .fact .fv{font-family:var(--mono);font-weight:800;font-size:1.55rem;color:var(--ink);letter-spacing:-.02em;line-height:1.1}
+  .fact .fd{margin-top:10px;font-size:.84rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  thead th{background:var(--surface-2);padding:14px 18px;text-align:left;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--line)}
+  thead th:first-child{border-radius:16px 0 0 0}
+  thead th:last-child{border-radius:0 16px 0 0}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody td{padding:14px 18px;color:var(--ink-2);vertical-align:top;line-height:1.55}
+  tbody td:first-child{font-weight:700;color:var(--ink);font-size:.84rem}
+  tbody tr:hover td{background:rgba(239,68,68,.04)}
+  .hl-cell{color:var(--volt)!important;font-weight:700}
+  .hl-green{color:#4ade80!important;font-weight:700}
+  .hl-yellow{color:#facc15!important;font-weight:700}
+
+  /* ---------- THREAT / OPPORTUNITY CARDS ---------- */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .card-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .threat-card{background:var(--surface);border:1px solid rgba(239,68,68,.35);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+  .threat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent)}
+  .threat-card .tk{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:10px}
+  .threat-card h4{font-size:.98rem;font-weight:750;margin-bottom:10px;letter-spacing:-.01em}
+  .threat-card p{font-size:.84rem;color:var(--ink-2);line-height:1.6}
+  .threat-card p b{color:var(--ink)}
+  .threat-card .badge{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.62rem;padding:4px 10px;border-radius:100px;background:rgba(239,68,68,.1);color:var(--volt);border:1px solid rgba(239,68,68,.3);letter-spacing:.05em}
+
+  .oppo-card{background:var(--surface);border:1px solid rgba(74,222,128,.25);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+  .oppo-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#4ade80,transparent)}
+  .oppo-card .ok{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#4ade80;margin-bottom:10px}
+  .oppo-card h4{font-size:.98rem;font-weight:750;margin-bottom:10px;letter-spacing:-.01em}
+  .oppo-card p{font-size:.84rem;color:var(--ink-2);line-height:1.6}
+  .oppo-card p b{color:var(--ink)}
+  .oppo-card .badge{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.62rem;padding:4px 10px;border-radius:100px;background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.3);letter-spacing:.05em}
+
+  /* ---------- BOTTLENECK PANELS ---------- */
+  .bottle-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:8px}
+  .bottle{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative}
+  .bottle .bnum{font-family:var(--mono);font-weight:900;font-size:2.8rem;color:rgba(239,68,68,.18);position:absolute;top:18px;right:22px;letter-spacing:-.04em;line-height:1}
+  .bottle .btag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--volt);margin-bottom:12px}
+  .bottle h4{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+  .bottle .bitem{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.85rem}
+  .bottle .bitem .bi{color:var(--volt);font-weight:700;min-width:18px;font-family:var(--mono);font-size:.78rem;margin-top:1px}
+  .bottle .bitem span{color:var(--ink-2);line-height:1.55}
+  .bottle .bitem b{color:var(--ink)}
+
+  /* ---------- MONITOR TABLE ---------- */
+  .monitor-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px}
+  .monitor-row{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 26px;display:flex;gap:24px;align-items:flex-start}
+  .monitor-row .midx{font-family:var(--mono);font-weight:900;font-size:1.6rem;color:rgba(239,68,68,.25);min-width:40px;line-height:1}
+  .monitor-row .mc{flex:1}
+  .monitor-row .mc h4{font-size:.98rem;font-weight:750;margin-bottom:6px;letter-spacing:-.01em}
+  .monitor-row .mc p{font-size:.85rem;color:var(--ink-2);line-height:1.6}
+  .monitor-row .mc p b{color:var(--volt)}
+
+  /* ---------- IMPLICATIONS TABLE GRID ---------- */
+  .impl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+  .impl-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .impl-card .ik{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .impl-card .ik .ln{flex:1;height:1px;background:var(--line)}
+  .impl-card h3{font-size:1.05rem;font-weight:750;margin-bottom:10px;letter-spacing:-.01em}
+  .impl-card p{font-size:.87rem;color:var(--ink-2);line-height:1.6}
+  .impl-card p b{color:var(--ink)}
+
+  /* ---------- YEN TABLE ---------- */
+  .yen-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .yen-panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .yen-panel h4{font-size:1rem;font-weight:750;margin-bottom:16px;letter-spacing:-.01em}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .dual-grid{grid-template-columns:1fr}
+    .dual-grid-even{grid-template-columns:1fr}
+    .fact-grid{grid-template-columns:1fr 1fr}
+    .card-grid{grid-template-columns:1fr 1fr}
+    .card-grid-2{grid-template-columns:1fr}
+    .bottle-grid{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .yen-grid{grid-template-columns:1fr}
+    .monitor-row{flex-direction:column;gap:10px}
+    .hero-stats{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){
+    .fact-grid{grid-template-columns:1fr}
+    .card-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "한국이 지켜야 할 것, 빼앗아야 할 것 — 5개국 경쟁 속 K-전략 로드맵",
+  "description": "HBM 78% 독주·방산 $154B·AI G3 — 5개국 국가 전략 경쟁 속 한국의 위협·기회·병목·모니터링 지표 종합 분석",
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-06-25",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_korea_impact_strategy.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>K-전략 로드맵</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#compete">01 / 한일 경쟁</a>
+      <a href="#threat">02 / 위협</a>
+      <a href="#oppo">03 / 기회</a>
+      <a href="#bottleneck">04 / 병목</a>
+      <a href="#yen">05 / 엔 효과</a>
+      <a href="#monitor">06 / 모니터링</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">한국이 지켜야 할 것<br><span class="hl">빼앗아야</span> 할 것</h1>
+    <p class="hero-sub">5개국 국가 전략 경쟁 속 K-전략의 위협·기회·병목 총정리</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">78<span class="u">%</span></div>
+        <div class="lab">HBM 합산 점유율. SK하이닉스 61% + 삼성 17%. 일본·대만 경쟁 부재. AI 반도체 수요 직결.</div>
+        <div class="src">SRC: TrendForce · 2026.Q1</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$154B</div>
+        <div class="lab">K-방산 수출 (2025). $270B+ 전망 (2026). 글로벌 9-10위권에서 급속 상승 중.</div>
+        <div class="src">SRC: KDIA · SIPRI · 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">56,000<span class="u">명</span></div>
+        <div class="lab">반도체 엔지니어 부족 전망 (2031). 의대 선호 이탈률 179%. 최대 구조적 병목.</div>
+        <div class="src">SRC: 반도체산업협회 · 교육부 · 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <div class="bar"></div>
+      SCROLL TO EXPLORE
+    </div>
+  </div>
+</header>
+
+<!-- ================= 01: 한일 직접 경쟁 ================= -->
+<section class="blk" id="compete">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="idx">01</span><span class="ln"></span>KOREA-JAPAN COMPETITION</div>
+      <h2 class="sec-title">한일 직접 경쟁 5대 영역</h2>
+      <p class="sec-lead">반도체·파운드리·소재·콘텐츠·로봇 — 한국과 일본은 5개 핵심 산업에서 직접 충돌 중이다. 분야별 현황과 판정.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>영역</th>
+            <th>한국</th>
+            <th>일본</th>
+            <th>판정</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>메모리</td>
+            <td>삼성 HBM·DRAM, SK하이닉스 HBM3E 세계 1위</td>
+            <td>르네사스·키옥시아 (NAND)</td>
+            <td class="hl-green">한국 압도</td>
+          </tr>
+          <tr>
+            <td>파운드리/로직</td>
+            <td>삼성 파운드리 3위권</td>
+            <td>라피더스 2nm + TSMC 구마모토 3nm</td>
+            <td class="hl-yellow">일본 도전 중</td>
+          </tr>
+          <tr>
+            <td>소재·부품·장비</td>
+            <td>한일 관계 개선 후 협력 확대</td>
+            <td>포토레지스트·불화수소 글로벌 1위</td>
+            <td class="hl-cell">일본 강점</td>
+          </tr>
+          <tr>
+            <td>콘텐츠</td>
+            <td>Netflix 8-9% (2위), K-팝·K-드라마</td>
+            <td>게임 24.5조엔, 애니·만화</td>
+            <td>한국 OTT / 일본 게임</td>
+          </tr>
+          <tr>
+            <td>로봇 밀도</td>
+            <td>1,012대/만명 (세계 1위)</td>
+            <td>419대/만명, 로봇 제조국 1위</td>
+            <td>한국 수요 / 일본 공급</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dual-grid-even" style="margin-top:24px">
+      <div class="panel reveal d1">
+        <h3>바이오 제약</h3>
+        <div class="ph-sub">BIOPHARMA COMPETITION</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk">KR</div>
+            <div class="mt"><b>삼성바이오로직스</b> — 바이오CDMO 글로벌 1위. 인천 송도 4공장 가동. 수주잔고 $5B+. 셀트리온 바이오시밀러 미국 점유율 확대.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk" style="color:var(--ink-3)">JP</div>
+            <div class="mt"><b>아스텔라스·다이이치산쿄</b> — ADC(항체약물접합체) 기술력. 다이이치 Enhertu HER2 글로벌 표준. 오노약품 PD-1 원천 특허.</div>
+          </div>
+        </div>
+        <div class="foot">판정: 위탁생산(CMO)은 한국 우위 / 신약 R&amp;D·ADC는 일본 우위</div>
+      </div>
+      <div class="panel reveal d2">
+        <h3>조선</h3>
+        <div class="ph-sub">SHIPBUILDING HEAD-TO-HEAD</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk">66%</div>
+            <div class="mt"><b>한국 Big 3 LNG 선박 점유율.</b> HD현대·한화오션·삼성중공업. FSRU·LNG운반선 수주 독점. KDDX 차기구축함 자력 설계.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk" style="color:var(--ink-3)">JP</div>
+            <div class="mt"><b>일본 중소형 선박 특화.</b> 이마바리조선 벌크·탱커 경쟁력. 아시아 역내 발주 수주. 정부 보조금으로 그린십 전환 추진.</div>
+          </div>
+        </div>
+        <div class="foot">판정: LNG·대형 선박은 한국 독주 / 중소형·역내는 일본 경쟁</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02: 위협 분석 ================= -->
+<section class="blk" id="threat">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="idx">02</span><span class="ln"></span>THREAT ANALYSIS</div>
+      <h2 class="sec-title">위협 분석 — 지금 막아야 할 6가지</h2>
+      <p class="sec-lead">라피더스·TSMC·보조금 격차·관세 압박 — 한국이 능동적으로 대응하지 않으면 2027-2028년 구조적 열위가 고착된다.</p>
+    </div>
+
+    <div class="card-grid reveal">
+      <div class="threat-card">
+        <div class="tk">THREAT 01 · 파운드리</div>
+        <h4>라피더스 2nm 양산 (2027)</h4>
+        <p>일본 정부 <b>3조엔 보조금</b>을 등에 업고 IBM 협력으로 2nm 공정 개발 중. 2027년 양산 성공 시 삼성 파운드리와 직접 경쟁 구도 형성. 고객 이탈 리스크 현실화.</p>
+        <span class="badge">2027 양산 목표</span>
+      </div>
+      <div class="threat-card">
+        <div class="tk">THREAT 02 · 파운드리</div>
+        <h4>TSMC 구마모토 2공장 3nm (2028)</h4>
+        <p>TSMC 구마모토 <b>1공장(12nm, 2024 가동)</b>에 이어 2공장 3nm 2028년 가동 예정. 삼성 파운드리 3nm 고객의 일본 내 대안 확보 → 비용·지정학 분산 압력.</p>
+        <span class="badge">2028 가동 예정</span>
+      </div>
+      <div class="threat-card">
+        <div class="tk">THREAT 03 · 보조금</div>
+        <h4>한·일 반도체 보조금 격차</h4>
+        <p>TSMC 구마모토 <b>1.2조엔</b> + 라피더스 <b>3조엔</b> = 총 4.2조엔. K-칩스법 공공지원 규모 압도. 미국 CHIPS Act $52.7B와도 격차. 삼성·SK 투자 유인 구조 열위.</p>
+        <span class="badge">일본 4.2조엔 vs K-칩스</span>
+      </div>
+      <div class="threat-card">
+        <div class="tk">THREAT 04 · 콘텐츠</div>
+        <h4>일본 370조엔 콘텐츠 30조 목표</h4>
+        <p>일본 정부 2033년까지 <b>콘텐츠 산업 30조엔</b> 육성 목표. 애니·게임·만화 IP 글로벌화 본격 투자. K-콘텐츠 투자 규모 대비 <b>10배 이상</b> 자금력.</p>
+        <span class="badge">JP 투자 10배 격차</span>
+      </div>
+      <div class="threat-card">
+        <div class="tk">THREAT 05 · 방산</div>
+        <h4>EU SAFE 65% 역내조달 규정</h4>
+        <p>EU 방위산업 강화 계획(SAFE) — <b>역내 조달 65% 이상</b> 의무화 추진 시 K-방산 유럽 시장 진입 구조적 장벽. 폴란드·루마니아 수출 잔고에 영향.</p>
+        <span class="badge">유럽 시장 장벽</span>
+      </div>
+      <div class="threat-card">
+        <div class="tk">THREAT 06 · 통상</div>
+        <h4>미국 관세 100% 경고 및 fab 투자 압박</h4>
+        <p>트럼프 행정부 반도체 관세 <b>100% 경고</b>. 삼성·SK 미국 현지 fab 투자 강제 압박. 비용 구조 악화 + 국내 투자 여력 분산. 애리조나 투자 가속 불가피.</p>
+        <span class="badge">미국 fab 강제 투자</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03: 기회 분석 ================= -->
+<section class="blk" id="oppo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>OPPORTUNITY ANALYSIS</div>
+      <h2 class="sec-title">기회 분석 — 지금 잡아야 할 6가지</h2>
+      <p class="sec-lead">HBM 독주·방산 성장·재정 여력 — 한국이 선제적으로 자원을 집중하면 2027-2028년 이전 격차를 결정적으로 벌릴 수 있다.</p>
+    </div>
+
+    <div class="card-grid reveal">
+      <div class="oppo-card">
+        <div class="ok">OPPO 01 · 메모리</div>
+        <h4>HBM 78% 독주 — AI 수혜 직결</h4>
+        <p>SK하이닉스 <b>61%</b> + 삼성 <b>17%</b> = 78% 합산. 일본·대만 HBM 경쟁 능력 부재. 엔비디아 H100·H200·B200 모두 한국산 HBM. AI 인프라 투자 폭증 수혜.</p>
+        <span class="badge">경쟁자 없음</span>
+      </div>
+      <div class="oppo-card">
+        <div class="ok">OPPO 02 · AI 인프라</div>
+        <h4>일본 370조엔 AI·DC 투자 수혜</h4>
+        <p>일본 정부·민간 <b>370조엔 AI·데이터센터 투자</b> 계획. 소프트뱅크·NTT·KDDI DC 확장. 모두 HBM·NAND 수요로 귀결 → 한국 메모리 직수혜 구조.</p>
+        <span class="badge">간접 수혜 구조</span>
+      </div>
+      <div class="oppo-card">
+        <div class="ok">OPPO 03 · 방산</div>
+        <h4>유럽 재무장 $800B → K-방산 기회</h4>
+        <p>유럽 방위비 GDP 3% 목표 → <b>$800B+</b> 지출 확대. K2 전차·K9 자주포·FA-50 가격 경쟁력 + 납기 강점. 폴란드·루마니아·노르웨이 추가 수주 가시화.</p>
+        <span class="badge">$800B 유럽 재무장</span>
+      </div>
+      <div class="oppo-card">
+        <div class="ok">OPPO 04 · 환율</div>
+        <h4>엔 강세 전환 — 수출 경쟁력 개선</h4>
+        <p>BOJ 금리 인상(0.75% → 1.0%) → 엔 강세 전환. 원/100엔 <b>980원(21개월 최고)</b>. 엔 약세 기간 일본에 뺏겼던 가전·디스플레이 가격 경쟁력 회복 국면.</p>
+        <span class="badge">BOJ 금리 인상 기조</span>
+      </div>
+      <div class="oppo-card">
+        <div class="ok">OPPO 05 · 재정</div>
+        <h4>재정 여력 — 한국 ~50% vs 일본 249%</h4>
+        <p>GDP 대비 국가채무 한국 <b>~50%</b> vs 일본 <b>249%</b>. 미국 122%·중국 84% 대비도 여유. 반도체 보조금·R&amp;D 적극 투자 재정 여력 최대 비대칭 무기.</p>
+        <span class="badge">재정 비대칭 우위</span>
+      </div>
+      <div class="oppo-card">
+        <div class="ok">OPPO 06 · 시총</div>
+        <h4>SK하이닉스 시총 삼성 추월</h4>
+        <p>2025년 SK하이닉스 시총이 삼성전자를 추월. AI 메모리 프리미엄 시장 인정. <b>HBM4 양산 선점</b>이 차기 밸류에이션 결정 변수. 마이크론 히로시마(2028) 대비 선점 필수.</p>
+        <span class="badge">AI 프리미엄 인정</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04: 글로벌 병목 ================= -->
+<section class="blk" id="bottleneck">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="idx">04</span><span class="ln"></span>GLOBAL BOTTLENECKS</div>
+      <h2 class="sec-title">글로벌 병목 3가지</h2>
+      <p class="sec-lead">ASML EUV·반도체 엔지니어·전력 인프라 — 이 세 가지 공급 제약이 K-전략의 실현 속도를 결정한다.</p>
+    </div>
+
+    <div class="bottle-grid reveal">
+      <div class="bottle">
+        <div class="bnum">01</div>
+        <div class="btag">EQUIPMENT</div>
+        <h4>ASML EUV 쿼터</h4>
+        <div class="bitem"><span class="bi">·</span><span>전세계 <b>314대 가동</b>, 연간 48~80대 출하</span></div>
+        <div class="bitem"><span class="bi">·</span><span>한국 매출 <b>45%</b> (메모리 중심)</span></div>
+        <div class="bitem"><span class="bi">·</span><span>고NA EUV 대당 <b>~$3.8억</b></span></div>
+        <div class="bitem"><span class="bi">·</span><span>메모리용 51% (HBM 수요)</span></div>
+        <div class="bitem"><span class="bi">·</span><span>공식 쿼터 없지만 대만(1위)·한국(2위)·미국(3위) 집중</span></div>
+        <div class="bitem"><span class="bi">!</span><span style="color:var(--volt)"><b>중국 우회 논란 2026.6 보도</b> — 수출통제 재강화 가능성</span></div>
+      </div>
+      <div class="bottle">
+        <div class="bnum">02</div>
+        <div class="btag">TALENT</div>
+        <h4>반도체 엔지니어 부족</h4>
+        <div class="bitem"><span class="bi">·</span><span><b>2031년까지 56,000명</b> 부족 전망</span></div>
+        <div class="bitem"><span class="bi">·</span><span>의대 선호 이탈률 <b>179%</b></span></div>
+        <div class="bitem"><span class="bi">·</span><span>AI 인재 지수 세계 <b>13위</b></span></div>
+        <div class="bitem"><span class="bi">·</span><span>AI 연구자 연봉 <b>$500K+</b></span></div>
+        <div class="bitem"><span class="bi">·</span><span>대책: AI 인재 양성 <b>1.4조원</b> 투입 계획</span></div>
+        <div class="bitem"><span class="bi">!</span><span style="color:var(--volt)"><b>구조적 해결 불가</b> — 단기 외국인 우수 인재 유치 병행 필수</span></div>
+      </div>
+      <div class="bottle">
+        <div class="bnum">03</div>
+        <div class="btag">INFRASTRUCTURE</div>
+        <h4>전력 인프라</h4>
+        <div class="bitem"><span class="bi">·</span><span>데이터센터 + 팹 전력 수요 <b>폭증</b></span></div>
+        <div class="bitem"><span class="bi">·</span><span>한국 국가성장펀드 <b>7대 분야</b>에 전력·에너지 인프라 포함</span></div>
+        <div class="bitem"><span class="bi">·</span><span>미국 Stargate: 전력 허가가 <b>최대 병목</b></span></div>
+        <div class="bitem"><span class="bi">·</span><span>삼성 평택 4공장 전력 확보 승인 지연</span></div>
+        <div class="bitem"><span class="bi">·</span><span>SMR·핵융합 장기 해법 — 2030년대 이후</span></div>
+        <div class="bitem"><span class="bi">!</span><span style="color:var(--volt)"><b>단기 병목</b> — 재생에너지 가속 + 전력망 확충 병행 필요</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05: 엔 약세 효과 ================= -->
+<section class="blk" id="yen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="idx">05</span><span class="ln"></span>YEN DYNAMICS</div>
+      <h2 class="sec-title">엔 약세·강세 효과와 산업별 영향</h2>
+      <p class="sec-lead">BOJ 금리 인상으로 엔 강세 전환 중. 과거 엔 약세 시 한국이 입었던 손실이 역전되는 국면을 분석한다.</p>
+    </div>
+
+    <div class="yen-grid reveal">
+      <div class="yen-panel">
+        <h4>BOJ 금리 경로 및 환율</h4>
+        <div class="tbl-wrap" style="margin-top:0;border:none">
+          <table>
+            <thead>
+              <tr><th>시점</th><th>BOJ 기준금리</th><th>원/100엔</th><th>비고</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2020-2022</td><td>-0.1%</td><td>880-920원</td><td>엔 초약세</td></tr>
+              <tr><td>2024.03</td><td>0%</td><td>890원</td><td>마이너스금리 종료</td></tr>
+              <tr><td>2025.12</td><td>0.75%</td><td>940원</td><td>점진 인상</td></tr>
+              <tr><td class="hl-green">2026.06.16</td><td class="hl-green">1.0%</td><td class="hl-green">980원</td><td class="hl-green">21개월 최고</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="yen-panel">
+        <h4>산업별 영향도 (엔 약세 기준)</h4>
+        <div class="tbl-wrap" style="margin-top:0;border:none">
+          <table>
+            <thead>
+              <tr><th>산업</th><th>엔 약세 시 영향</th><th>비고</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>반도체 장비·소재</td><td class="hl-cell">부정적</td><td>대일 소재 의존</td></tr>
+              <tr><td>조선</td><td class="hl-cell">부정적</td><td>일본 경쟁사 가격↓</td></tr>
+              <tr><td>가전·디스플레이</td><td class="hl-cell">부정적</td><td>시장 중복 감소</td></tr>
+              <tr><td>방산 수출</td><td>미미</td><td>달러 계약 주도</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:28px">
+      <div class="tg">CURRENT STATUS · 2026.06</div>
+      <p>
+        현재 BOJ 1.0% 인상으로 <b>엔 강세 전환</b> 진행 중. 원/100엔 980원(21개월 최고)은 반도체 소재·조선·가전 분야에서 한국 수출 가격 경쟁력이 회복되는 신호다.
+        <span class="u">단, 엔 강세는 양날의 검 — 대일 소재 수입 가격도 동반 상승. 반도체 핵심 소재(포토레지스트·불화수소) 일본 의존도 축소가 병행 과제.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06: 모니터링 + 정책 ================= -->
+<section class="blk" id="monitor">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="idx">06</span><span class="ln"></span>MONITORING &amp; POLICY</div>
+      <h2 class="sec-title">핵심 모니터링 5대 지표 + 정책 시사점</h2>
+      <p class="sec-lead">라피더스·TSMC·환율·HBM4·대만 리스크 — 이 5개 지표가 K-전략의 승패를 결정한다.</p>
+    </div>
+
+    <div class="monitor-grid reveal">
+      <div class="monitor-row">
+        <div class="midx">01</div>
+        <div class="mc">
+          <h4>라피더스 2027년 양산 달성 여부</h4>
+          <p><b>실패 시</b> 위협 대폭 감소. <b>성공 시</b> 삼성 파운드리 고객 이탈 가속. 현재 기술 격차(IBM 협력 불구 수율 미지수) 감안 시 2027년 완전 양산은 낙관 불가. 분기별 진척도 모니터링 필수.</p>
+        </div>
+      </div>
+      <div class="monitor-row">
+        <div class="midx">02</div>
+        <div class="mc">
+          <h4>TSMC 구마모토 2공장 3nm 수율</h4>
+          <p>2028년 가동 예정. <b>삼성 파운드리의 가장 현실적 위협</b>. TSMC 구마모토 1공장 12nm 수율 안정화 속도가 2공장 3nm 로드맵의 선행 지표. 삼성 파운드리 수율 개선이 경쟁 전제.</p>
+        </div>
+      </div>
+      <div class="monitor-row">
+        <div class="midx">03</div>
+        <div class="mc">
+          <h4>엔달러 환율 — 140엔 이하 주목</h4>
+          <p><b>140엔 이하</b> 진입 시 한국 수출 경쟁력 재검토 국면. 현재 145-150엔 구간에서 점진 강세. BOJ 추가 인상(1.25-1.5%) 시 130엔대 가능. 조선·가전 분야 수출 단가 조정 시나리오 준비 필요.</p>
+        </div>
+      </div>
+      <div class="monitor-row">
+        <div class="midx">04</div>
+        <div class="mc">
+          <h4>SK하이닉스 HBM4 양산 시기</h4>
+          <p>마이크론 히로시마 <b>HBM4 생산(2028)</b> 대비 선점이 필수. SK하이닉스 2026 하반기 HBM4 샘플, 2027 양산 목표. 삼성의 HBM4 수율 회복 병행 여부가 78% 점유율 유지 관건.</p>
+        </div>
+      </div>
+      <div class="monitor-row">
+        <div class="midx">05</div>
+        <div class="mc">
+          <h4>대만-중국 군사 충돌 리스크</h4>
+          <p>TSMC 차질 시 <b>기회이자 위기</b>. 단기: 반도체 공급 대란 → 한국 메모리 수혜. 중기: 한국도 지정학 위험권 → 삼성·SK 해외 분산 압력. 이중 시나리오 대비 필수. TSMC 생산 중단 1주일 = 전세계 반도체 공급망 6개월 차질 추정.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:52px;margin-bottom:20px;font-size:1.3rem;font-weight:800;letter-spacing:-.02em" class="reveal">정책 시사점</h3>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>영역</th>
+            <th>현황 비교</th>
+            <th>권고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>파운드리 보조금</td>
+            <td>한국 K-칩스 &lt; 일본 4.2조엔, 미국 CHIPS $52.7B</td>
+            <td class="hl-green">삼성 파운드리 지원 확대 — 골든타임 2026-2027</td>
+          </tr>
+          <tr>
+            <td>2nm 이하 수율</td>
+            <td>삼성 GAA 2022 도입 但 수율 미달</td>
+            <td class="hl-green">수율 R&amp;D 집중 + ASML 고NA EUV 조기 확보</td>
+          </tr>
+          <tr>
+            <td>콘텐츠 IP</td>
+            <td>한류 글로벌 BUT 일본 24.5조엔 추격</td>
+            <td class="hl-green">IP 플랫폼화 — 저작권 수익 구조 구축</td>
+          </tr>
+          <tr>
+            <td>재정 여력 활용</td>
+            <td>한국 ~50% vs 일본 249% vs 미국 122%</td>
+            <td class="hl-green">적극 반도체·AI 보조금 — 라피더스(2027) 前 집중</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- THESIS BOX -->
+    <div class="thesis reveal" style="margin-top:32px">
+      <div class="tg">K-STRATEGY THESIS · 2026.06</div>
+      <p>
+        한국의 전략적 선택지는 '방어할 것'과 '공격할 것'의 분리에 달려 있다.
+        <b>HBM 78%·방산 수출·AI G3</b>는 지금 지켜야 할 교두보다. <b>파운드리 보조금 확대·콘텐츠 IP 플랫폼·반도체 인재 확보</b>는 지금 빼앗아야 할 영역이다.
+        <span class="u">한국의 GDP 대비 채무비율 ~50%는 일본 249% 대비 최대의 비대칭 무기 — 재정 여력을 적극 활용할 '골든타임'은 라피더스 양산(2027)과 TSMC 구마모토 가동(2028) 이전이다.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div>
+        <div class="foot-brand">ourprochoi Research Archive</div>
+        <p class="disc" style="margin-top:12px">
+          본 리포트는 공개된 데이터 및 보도자료를 기반으로 작성된 리서치 아카이브입니다. 투자 권유·매매 추천이 아니며, 모든 투자 판단과 책임은 투자자 본인에게 있습니다.
+          데이터는 작성 시점(2026-06-25) 기준이며 이후 변경될 수 있습니다.
+        </p>
+        <div class="src-list">
+          SRC: TrendForce Q1 2026 · KDIA 2026.06 · SIPRI 2026 · BOJ 금리결정 2026.06.16<br>
+          ASML Annual Report 2025 · 반도체산업협회 2026 · EU SAFE Draft 2026<br>
+          산업통상자원부 K-칩스법 · 일본 경제산업성 반도체전략 2025
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.06em">NATIONAL STRATEGY</div>
+        <div style="font-family:var(--mono);font-size:.72rem;color:var(--volt);margin-top:6px;letter-spacing:.04em">심화 테마 · 2026.06.25</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV TOGGLE
+  const btn = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // REVEAL ON SCROLL
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
