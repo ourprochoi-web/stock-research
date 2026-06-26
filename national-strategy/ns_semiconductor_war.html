@@ -267,7 +267,7 @@
   "headline": "반도체 패권 전쟁 — 68조엔·$52.7B·K-칩스·TSMC 70% 독점의 지정학",
   "description": "일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS Act $52.7B(Intel·TSMC·Samsung), 한국 K-칩스 20%, 대만 TSMC 70% 독점 — 반도체 패권 전쟁 투자 지도",
   "datePublished": "2026-06-25",
-  "dateModified": "2026-06-25",
+  "dateModified": "2026-06-26",
   "author": {
     "@type": "Person",
     "name": "ourprochoi"
@@ -453,7 +453,7 @@
         <span class="comp-badge">2nm GAA / IIM-1 파일럿 라인</span>
       </div>
       <div class="comp-nums">
-        <div><div class="nk">정부 누적 보조금</div><div class="nv accent">1.7조엔</div></div>
+        <div><div class="nk">정부 누적 보조금</div><div class="nv accent">2.35조엔</div></div>
         <div><div class="nk">민간 참여사</div><div class="nv">32개사</div></div>
         <div><div class="nk">파일럿 라인 가동</div><div class="nv gold">2025.4 IIM-1</div></div>
         <div><div class="nk">2nm GAA 전기 작동</div><div class="nv">2025.7.18 확인</div></div>
@@ -498,7 +498,7 @@
           <tbody>
             <tr>
               <td>라피더스 정부 보조금</td>
-              <td class="td-accent">1.7조엔 누적</td>
+              <td class="td-accent">2.35조엔 누적</td>
               <td>2nm GAA, IIM-1 파일럿 라인, IBM 협력</td>
               <td class="td-bull">집행 중</td>
             </tr>
@@ -964,8 +964,99 @@
       <div class="sc-item">
         <div class="si-tag">중국 봉쇄</div>
         <h4>SMIC DUV 7nm — 미중 기술전쟁의 전선</h4>
-        <p>중국 SMIC는 ASML DUV(심자외선)를 활용한 <b>멀티패터닝으로 7nm 상당 공정 구현</b>. 화웨이 Kirin 9000S에 적용. 단, EUV 없이는 4nm 이하 진입 불가 — 기술 격차가 2~3세대로 확대 중. 중국 내 $143B 투자에도 원천 기술 병목이 해소되지 않는다.</p>
+        <p>SMIC는 DUV 멀티패터닝으로 <b>7nm 양산(수율 20~40%) + 5nm 파일럿(수율 ~33%)</b>을 달성. Kirin 9030에 N+3(5nm급) 적용. 그러나 EUV 없이 3nm 이하 진입 불가 — 자급률 목표 70% vs 실제 ~33%. 아래 상세 분석 참조.</p>
       </div>
+    </div>
+
+    <div class="panel reveal" style="margin-top:24px">
+      <h3>중국 반도체 자급률 — 발표 vs 현실</h3>
+      <div class="ph-sub">2026년 6월 기준 / 서방 분석 기관 종합 추정</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>중국 발표/목표</th>
+              <th>실제 추정</th>
+              <th>격차</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>반도체 자급률 (2025)</td>
+              <td class="td-accent">70%</td>
+              <td class="td-bear">~33%</td>
+              <td>-37%p</td>
+            </tr>
+            <tr>
+              <td>반도체 자급률 (2030)</td>
+              <td class="td-accent">80%</td>
+              <td>40~50% 전망</td>
+              <td>-30~40%p</td>
+            </tr>
+            <tr>
+              <td>최첨단 공정</td>
+              <td>5nm 돌파 선언</td>
+              <td class="td-bear">파일럿 수율 ~33%, 비용 +50%</td>
+              <td>질적 격차 큼</td>
+            </tr>
+            <tr>
+              <td>Ascend 910C 성능</td>
+              <td>H100 대등</td>
+              <td class="td-bear">H100 대비 60% (단칩)</td>
+              <td>30~40% 열위</td>
+            </tr>
+            <tr>
+              <td>장비 자급률</td>
+              <td>50% 목표</td>
+              <td class="td-bull">35% (목표 초과 달성)</td>
+              <td>-15%p (리소그래피 제외)</td>
+            </tr>
+            <tr>
+              <td>EDA 자급률</td>
+              <td>빠른 성장</td>
+              <td class="td-bear">~10%</td>
+              <td>70~80%p 열위</td>
+            </tr>
+            <tr>
+              <td>DUV 리소그래피</td>
+              <td>국산화 추진</td>
+              <td class="td-bear">ASML 대비 15~20년 격차</td>
+              <td>SMEE 2008년 수준</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">자급률 정의에 따라 수치 상이: 중국 내 생산 기준 시 외국 기업(TSMC 중국법인, SK하이닉스 우시) 포함 여부로 달라짐. 서방 기관(IC Insights, TrendForce, IRU-MIRU) 추정 종합.</div>
+    </div>
+
+    <div class="sc-grid reveal" style="margin-top:18px">
+      <div class="sc-item">
+        <div class="si-tag">공정 기술</div>
+        <h4>SMIC 7nm 수율 20~40%, 5nm 파일럿 ~33%</h4>
+        <p>SMIC N+2(7nm급) 수율 <b>20~40%</b>(TechInsights). N+3(5nm급)은 SAQP(4중 패터닝)으로 EUV 없이 달성했으나 수율 <b>~33%</b>, 단가 TSMC 대비 <b>+50%</b>. DUV 한계로 3nm 이하 진입 사실상 불가.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">AI 칩</div>
+        <h4>Ascend 910C — H100 대비 60%, 수량으로 보완</h4>
+        <p>DeepSeek 실측 기준 단칩 추론 성능 <b>H100의 60%</b>. Huawei CloudMatrix 384(910C×384개)로 대규모 병렬 극복 시도하나 전력 소비 <b>3.9배</b>. 2025년 81.2만 개 출하, 2026년 160만 개 목표. HBM 공급(CXMT)이 핵심 병목.</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">장비 자급</div>
+        <h4>국산화율 35% — 리소그래피만 15~20년 격차</h4>
+        <p>장비 전체 자급률 2024년 14%→2025년 <b>35%</b>로 목표(30%) 초과. NAURA 세계 5위. 그러나 SMEE DUV는 <b>ASML 2008년 수준</b>. ASML CEO "10~15년 뒤처짐", 중국 자체 분석 "15~20년".</p>
+      </div>
+      <div class="sc-item">
+        <div class="si-tag">빅펀드 3기</div>
+        <h4>3,440억 위안($47.5B) — 장비·소재·HBM 집중</h4>
+        <p>빅펀드 3기 <b>344억 위안($47.5B)</b> 2024.5 설립, 2024.12 운영 개시. 초기 공개 투자 4건. 투자 우선순위: 첨단 장비(ASML 대체), HBM(CXMT), EDA(Empyrean 6%), 포토레지스트. $295B AI DC 계획은 국산칩 80% 의무화 포함.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:18px">
+      <div class="tg">중국 자급률 핵심 판단</div>
+      <p>성숙 노드에서는 진짜 경쟁력, 첨단 노드에서는 "가능하되 비효율적" — 리소그래피가 최종 한계선이다.
+      <span class="u">28nm 이상 성숙 노드에서 중국은 글로벌 수준에 근접했다. 그러나 5nm 이하에서 수율 33%, 비용 +50%는 상업적 경쟁력의 부재를 의미한다. Ascend 910C는 수량으로 질적 열세를 보완하려 하지만 CANN 소프트웨어 생태계가 CUDA 대비 명백히 열위다. 가장 취약한 고리는 리소그래피(15~20년 격차)와 EDA(10%)로, 이 분야의 구조적 해외 의존은 수년 내 해소 불가능하다.</span></p>
     </div>
 
     <div class="risk-wrap reveal">
@@ -1025,7 +1116,7 @@
       <div class="src-list">
         DATA · TrendForce · ASML Annual Report · US DOC CHIPS Office · 일본 경제산업성 (METI)<br>
         SK하이닉스·삼성전자·TSMC IR · 반도체산업협회 · Bloomberg Economics · Tortoise AI Index<br>
-        작성 기준일 · 2026.06.25
+        작성 기준일 · 2026.06.26
       </div>
     </div>
     <div class="disc">

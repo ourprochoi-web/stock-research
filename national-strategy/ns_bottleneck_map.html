@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CoWoS 패키징 갭 10%·전력 120GW·인력 100만 부족·HBM $54.6B·EUV 80대 한계 — $4.6T 투자 약정의 집행을 제한하는 5대 구조적 병목 심층 분석">
+<meta name="keywords" content="CoWoS,병목,전력인프라,HBM,EUV,ASML,반도체,AI,데이터센터,SMR,인력부족,패키징">
+<meta property="og:title" content="$4.6T 투자의 5대 병목 — CoWoS·전력·인력·HBM·EUV 구조적 병목 분석">
+<meta property="og:description" content="CoWoS 패키징 갭 10%·전력 120GW·인력 100만 부족·HBM $54.6B·EUV 80대 한계 — $4.6T 투자 약정의 집행을 제한하는 5대 구조적 병목 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_bottleneck_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="$4.6T 투자의 5대 병목 — CoWoS·전력·인력·HBM·EUV 구조적 병목 분석">
+<meta name="twitter:description" content="CoWoS 패키징 갭 10%·전력 120GW·인력 100만 부족·HBM $54.6B·EUV 80대 한계 — $4.6T 투자 약정의 집행을 제한하는 5대 구조적 병목 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_bottleneck_map.html">
+<title>$4.6T 투자의 5대 병목 — CoWoS·전력·인력·HBM·EUV 구조적 병목 분석</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;        /* 레드 — 국가 전략 */
+    --current:#f87171;     /* 라이트 레드 */
+    --glow:#fca5a5;        /* 핑크 글로우 */
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* bar compare */
+  .bars{display:flex;align-items:flex-end;gap:24px;height:210px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar-item{width:100%;max-width:76px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar-item.b-dark{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar-item.b-accent{background:linear-gradient(180deg,var(--volt),#b91c1c);box-shadow:0 0 40px -8px var(--volt)}
+  .bar-item.b-peak{background:linear-gradient(180deg,var(--current),#ef4444);box-shadow:0 0 40px -8px var(--current)}
+  .bar-item .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.88rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--ink-2);text-align:center}
+  .barcol .cap{font-size:.7rem;color:var(--ink-3);margin-top:2px;text-align:center}
+
+  /* mini rows */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:100px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* thesis */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{color:var(--ink);font-weight:600}
+  .td-accent{color:var(--volt)!important;font-family:var(--mono);font-weight:700}
+  .td-current{color:var(--current)!important;font-family:var(--mono);font-weight:700}
+  .td-glow{color:var(--glow)!important;font-family:var(--mono);font-weight:700}
+  tbody tr:hover td{background:rgba(239,68,68,.03)}
+  tbody tr.bold-row td{color:var(--ink);font-weight:700}
+
+  /* ---------- SHARE CARDS ---------- */
+  .share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .share-grid.four{grid-template-columns:repeat(4,1fr)}
+  .scard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}
+  .scard .sc-flag{font-size:1.8rem;margin-bottom:10px}
+  .scard .sc-name{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
+  .scard .sc-pct{font-family:var(--mono);font-weight:800;font-size:2.2rem;letter-spacing:-.03em;margin:12px 0 6px}
+  .scard .sc-pct.jp{color:var(--volt)}
+  .scard .sc-pct.us{color:var(--current)}
+  .scard .sc-pct.eu{color:var(--glow)}
+  .scard .sc-pct.kr{color:var(--bull)}
+  .scard .sc-pct.tw{color:var(--ink-2)}
+  .scard .sc-pct.cn{color:#f59e0b}
+  .scard .sc-sub{font-size:.8rem;color:var(--ink-3);font-family:var(--mono)}
+  .scard .sc-detail{margin-top:14px;font-size:.82rem;color:var(--ink-2);line-height:1.55;text-align:left;border-top:1px solid var(--line);padding-top:14px}
+
+  /* ---------- CYCLE COMPARE ---------- */
+  .cycle-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .ccard .cc-era{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .ccard h3{font-size:1.18rem;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+  .ccard.current{border-color:var(--volt);border-width:1px}
+  .ccard.current h3{color:var(--volt)}
+  .stat-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.5)}
+  .stat-row:last-child{border-bottom:none}
+  .stat-row .sk{font-size:.85rem;color:var(--ink-2)}
+  .stat-row .sv{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--ink)}
+  .stat-row .sv.hi{color:var(--volt)}
+
+  /* ---------- DEMAND DRIVERS ---------- */
+  .drivers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  .driver{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .driver .dnum{font-family:var(--mono);font-weight:800;font-size:1.8rem;color:var(--volt);line-height:1}
+  .driver h4{font-size:.98rem;font-weight:750;margin:8px 0 6px;letter-spacing:-.01em}
+  .driver p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- PRICE TABLE ---------- */
+  .price-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px}
+  .price-panel h3{font-size:1.02rem;font-weight:750;margin-bottom:20px}
+
+  /* ---------- IMPLICATION BOX ---------- */
+  .impl-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .impl-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .impl-card .ic-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:10px}
+  .impl-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .impl-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .impl-card ul li{font-size:.88rem;color:var(--ink-2);line-height:1.55;padding-left:16px;position:relative}
+  .impl-card ul li::before{content:"→";position:absolute;left:0;color:var(--volt);font-family:var(--mono);font-weight:700}
+  .impl-card ul li b{color:var(--ink)}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap{margin-top:8px;display:flex;flex-direction:column;gap:0}
+  .rm-item{display:flex;gap:24px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(35,48,77,.5);position:relative}
+  .rm-item:last-child{border-bottom:none}
+  .rm-year{font-family:var(--mono);font-weight:800;font-size:1.1rem;color:var(--volt);min-width:80px;line-height:1.2;padding-top:2px}
+  .rm-body{flex:1}
+  .rm-body .rm-title{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .rm-body .rm-desc{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .rm-dot{position:relative}
+  .rm-dot::before{content:"";position:absolute;left:79px;top:8px;bottom:-22px;width:1px;background:var(--line)}
+  .rm-item:last-child .rm-dot::before{display:none}
+
+  /* ---------- SEVERITY BADGE ---------- */
+  .sev-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:100px}
+  .sev-9{background:rgba(239,68,68,.15);color:var(--volt);border:1px solid rgba(239,68,68,.3)}
+  .sev-8{background:rgba(248,113,113,.12);color:var(--current);border:1px solid rgba(248,113,113,.25)}
+  .sev-7{background:rgba(252,165,165,.10);color:var(--glow);border:1px solid rgba(252,165,165,.2)}
+  .sev-6{background:rgba(72,213,151,.10);color:var(--bull);border:1px solid rgba(72,213,151,.2)}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .share-grid.four{grid-template-columns:1fr 1fr}
+    .cycle-grid{grid-template-columns:1fr}
+    .drivers{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "$4.6T 투자의 5대 병목 — CoWoS·전력·인력·HBM·EUV 구조적 병목 분석",
+  "description": "CoWoS 패키징 갭 10%·전력 120GW·인력 100만 부족·HBM $54.6B·EUV 80대 한계 — $4.6T 투자 약정의 집행을 제한하는 5대 구조적 병목 심층 분석",
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_bottleneck_map.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>병목 지도</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#overview">01 / 개관</a>
+      <a href="#cowos">02 / CoWoS</a>
+      <a href="#power">03 / 전력</a>
+      <a href="#talent">04 / 인력</a>
+      <a href="#hbm">05 / HBM</a>
+      <a href="#euv">06 / EUV</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · 병목 지도 · 2026.06 기준</span>
+    <h1 class="hero-title">$4.6T 투자의<br>5대 <span class="hl">병목</span></h1>
+    <p class="hero-sub">CoWoS 패키징·전력 인프라·인력 부족·HBM 공급·EUV 장비 — $4.6T 약정이 집행되지 못하는 5대 구조적 병목 분석</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">~10<span class="u">%</span></div>
+        <div class="lab">CoWoS 공급-수요 갭 (2026년 말). TSMC CEO "2026년 내 극도로 타이트, 완전 소진 상태" 직접 확인.</div>
+        <div class="src">SRC: TrendForce · 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">120<span class="u">GW</span></div>
+        <div class="lab">미국 AI 데이터센터 2030년 전력 수요. 2025년 41GW 대비 3배. 전력망 연계 대기 1,500GW 초과.</div>
+        <div class="src">SRC: IEA · BNP Paribas</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">100<span class="u">만+</span></div>
+        <div class="lab">2030년 글로벌 반도체 엔지니어 부족. TSMC Arizona 50% 대만 파견. Rapidus 연 300명 증원 계획.</div>
+        <div class="src">SRC: Deloitte · SEMI</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5대 병목 심층 분석</div>
+  </div>
+</header>
+
+<!-- ================= 01 OVERVIEW ================= -->
+<section class="blk" id="overview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;5대 병목 개관</div>
+      <h2 class="sec-title">심각도 9/10 CoWoS부터 6/10 EUV까지 — 투자 집행의 물리적 한계</h2>
+      <p class="sec-lead">$4.6T 투자 약정 대비 실제 집행 속도를 결정하는 것은 보조금이 아니라 물리적 병목이다. 5개 병목을 심각도 순으로 추적한다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>5대 병목 심각도 순위</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>병목</th>
+              <th>심각도</th>
+              <th>핵심 수치</th>
+              <th>해소 예상</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1위</td>
+              <td>CoWoS 패키징</td>
+              <td><span class="sev-badge sev-9">9/10</span></td>
+              <td class="td-accent">공급-수요 갭 ~10%</td>
+              <td>2027년 중반</td>
+            </tr>
+            <tr>
+              <td>2위</td>
+              <td>전력 인프라</td>
+              <td><span class="sev-badge sev-8">8/10</span></td>
+              <td class="td-current">120GW(2030)</td>
+              <td>2030년+ (구조적)</td>
+            </tr>
+            <tr>
+              <td>3위</td>
+              <td>인력 부족</td>
+              <td><span class="sev-badge sev-7">7/10</span></td>
+              <td class="td-glow">글로벌 100만 명 부족</td>
+              <td>2030년 이후</td>
+            </tr>
+            <tr>
+              <td>4위</td>
+              <td>HBM 공급</td>
+              <td><span class="sev-badge sev-7">7/10</span></td>
+              <td class="td-glow">SK하이닉스 62% 독점</td>
+              <td>2026년 H2 (부분)</td>
+            </tr>
+            <tr>
+              <td>5위</td>
+              <td>EUV 장비</td>
+              <td><span class="sev-badge sev-6">6/10</span></td>
+              <td>연간 최대 80대</td>
+              <td>2027~2028년</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 테제</div>
+      <p>GPU 출하를 직접 제한하는 CoWoS가 당면 최대 병목이다 — 2027년 중반까지 타이트 지속.
+      <span class="u">전력은 변압기 리드타임 5년으로 2030년대까지 구조적. HBM은 삼성 Nvidia 자격 취득으로 빠르게 완화 중.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 COWOS ================= -->
+<section class="blk" id="cowos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;CoWoS 패키징 <span style="margin-left:8px"><span class="sev-badge sev-9">심각도 9/10</span></span></div>
+      <h2 class="sec-title">3년간 10배 확장에도 수요가 앞선다 — GPU 출하를 막는 패키징 병목</h2>
+      <p class="sec-lead">TSMC CoWoS는 Nvidia GPU의 핵심 패키징 공정이다. Capa가 빠르게 늘고 있지만 수요 증가 속도가 더 가파르다. TSMC CEO가 "2026년 완전 소진"을 직접 확인했다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>CoWoS Capa 추이</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>시점</th>
+              <th>TSMC Capa</th>
+              <th>수요</th>
+              <th>갭</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023말</td>
+              <td>13 KWPM</td>
+              <td>18 KWPM</td>
+              <td class="td-accent">~28%</td>
+            </tr>
+            <tr>
+              <td>2024말</td>
+              <td>35 KWPM</td>
+              <td>50 KWPM</td>
+              <td class="td-accent">~30%</td>
+            </tr>
+            <tr>
+              <td>2025말</td>
+              <td>75 KWPM</td>
+              <td>90 KWPM</td>
+              <td class="td-current">~17%</td>
+            </tr>
+            <tr>
+              <td>2026말</td>
+              <td>130 KWPM (목표)</td>
+              <td>145 KWPM</td>
+              <td class="td-glow">~10%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="drivers reveal" style="margin-top:24px">
+      <div class="driver">
+        <div class="dnum">10배</div>
+        <h4>3년간 CoWoS Capa 확장</h4>
+        <p>2023→2026: 13→130 KWPM. 업계 역대 가장 빠른 패키징 Capa 증설. 그러나 수요 증가 속도가 더 가파르다.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">360만</div>
+        <h4>Nvidia B200/GB200 백로그</h4>
+        <p>2026년 중반까지 완판 상태. CoWoS 제약이 GPU 출하를 직접 제한. AI 서버 납기 지연의 핵심 원인.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">50-60K</div>
+        <h4>OSAT 파트너 추가 Capa</h4>
+        <p>Amkor, ASE가 TSMC 외 CoWoS 유사 패키징 50-60K KWPM 추가 공급. 2026 하반기~2027 순차 가동.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">2027</div>
+        <h4>병목 해소 예상 시점</h4>
+        <p>TSMC 목표대로라면 2027년 중반 수급 균형. 단, 수요가 추가 증가할 경우 지속 타이트. CoWoS-L, CoWoS-R 차세대 전환 예정.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">CoWoS 병목 핵심</div>
+      <p>CoWoS는 단순한 패키징이 아니라 GPU 공급 병목의 물리적 실체다.
+      <span class="u">TSMC CEO CC Wei가 2026 AGM에서 "CoWoS 수요를 완전히 충족하지 못한다"고 직접 인정. 2026년 말 ~10% 갭은 수백만 대 GPU 출하 지연을 의미한다. Amkor·ASE OSAT 파트너 확대가 유일한 단기 완충책이지만 TSMC 대비 기술 격차 존재.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 POWER ================= -->
+<section class="blk" id="power">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;전력 인프라 <span style="margin-left:8px"><span class="sev-badge sev-8">심각도 8/10</span></span></div>
+      <h2 class="sec-title">2030년 120GW — 변압기 5년 리드타임이 만드는 구조적 병목</h2>
+      <p class="sec-lead">AI 데이터센터 전력 수요가 폭발적으로 증가하고 있지만 전력망 인프라는 따라가지 못한다. 변압기 리드타임 5년, 전력망 접속 대기 1,500GW — 2030년대까지 지속될 구조적 병목이다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>GW 수요 전망</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>연도</th>
+              <th>미국 DC</th>
+              <th>글로벌 DC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022</td>
+              <td>17 GW</td>
+              <td>30 GW</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>41 GW</td>
+              <td>75 GW</td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td class="td-current">~55 GW</td>
+              <td class="td-current">~95 GW</td>
+            </tr>
+            <tr>
+              <td>2030</td>
+              <td class="td-accent">120 GW</td>
+              <td class="td-accent">200 GW</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>Stargate & 전력망 병목</h3>
+        <div class="ph-sub">단기 전력 공급 현황</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">10GW</div>
+            <div class="mt"><b>Stargate 전력 계획</b> — 총 $500B 프로젝트, 현재 ~7GW 계획 확정. Abilene 텍사스 허브 기반. 태양광·가스·SMR 복합 조달.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1,500GW</div>
+            <div class="mt"><b>전력망 연계 대기</b> — 미국 전력망 접속 신청 누적 대기. 실제 가동까지 DC 허브 4-7년 소요. 인허가·송전망 최대 병목.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">5년</div>
+            <div class="mt"><b>변압기 리드타임</b> — 대형 전력 변압기 주문~납품 5년. 전력망 병목의 핵심 하드웨어 제약. 국내 생산 능력 부족.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">4-7년</div>
+            <div class="mt"><b>DC 허브 전력망 접속</b> — 신규 데이터센터의 전력망 연계 인허가~접속 완료 기간. 노던버지니아·피닉스·텍사스 모두 포화.</div>
+          </div>
+        </div>
+        <div class="foot">전력은 단기에 해결 불가능한 구조적 병목이다. 인허가, 하드웨어 제약, 용량 한계가 모두 5년 이상 시간축이다.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>SMR 타임라인</h3>
+        <div class="ph-sub">소형모듈원자로 현실적 가동 시점</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">2030+</div>
+            <div class="mt"><b>TerraPower Natrium</b> — 빌 게이츠 후원. 와이오밍 건설 중. 345MW. 2030년 이후 가동 목표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2030s</div>
+            <div class="mt"><b>NuScale VOYGR</b> — 유일한 NRC 인증 SMR 설계. 루마니아 프로젝트 진행. 미국 내 2030년대 가동.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2030</div>
+            <div class="mt"><b>Kairos Power</b> — Google 오프테이크 계약. 플루오르 소금 냉각 방식. 2030년 첫 상업 가동 목표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2030</div>
+            <div class="mt"><b>Oklo Aurora</b> — Sam Altman 이사장. 마이크로 원자로. 아이다호 부지 확보. 2030년 목표.</div>
+          </div>
+        </div>
+        <div class="foot">SMR 조건부 오프테이크 45GW(2025~현재). 그러나 2030년 전 실가동 예상 용량은 1.5GW 이하. 기대와 현실의 간극이 크다.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">전력 병목 핵심</div>
+      <p>전력은 2030년대까지 해소되지 않는 구조적 병목이다.
+      <span class="u">변압기 5년 리드타임, 전력망 접속 4-7년 대기, SMR 2030년 이후 가동 — 세 가지 제약이 겹쳐 단기 해결이 불가능하다. AI 데이터센터는 현재 가스발전·태양광·기존 핵발전 재가동으로 수요를 충당하는 상황. 전력 인프라 기업(변압기, 송전망, 발전)이 AI 투자의 숨은 수혜자다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 TALENT ================= -->
+<section class="blk" id="talent">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;인력 부족 <span style="margin-left:8px"><span class="sev-badge sev-7">심각도 7/10</span></span></div>
+      <h2 class="sec-title">2030년 100만 명 부족 — fab 건설보다 빠르게 증가하는 인력 수요</h2>
+      <p class="sec-lead">전 세계적으로 동시 다발적으로 fab이 건설되면서 반도체 엔지니어 부족이 심화되고 있다. Deloitte는 2030년까지 글로벌 100만 명 이상 부족을 전망한다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>지역별 인력 부족 현황</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>지역</th>
+              <th>부족 인원</th>
+              <th>주요 원인</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>미국</td>
+              <td class="td-accent">76,000명</td>
+              <td>STEM 배출 &lt; fab 수요</td>
+            </tr>
+            <tr>
+              <td>유럽</td>
+              <td class="td-current">100,000명+</td>
+              <td>인텔·TSMC 드레스덴 동시 확장</td>
+            </tr>
+            <tr>
+              <td>아태</td>
+              <td class="td-glow">200,000명+</td>
+              <td>TSMC, Rapidus 경쟁</td>
+            </tr>
+            <tr class="bold-row">
+              <td>합계</td>
+              <td class="td-accent">1,000,000명+</td>
+              <td>2030년까지 (Deloitte)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="drivers reveal" style="margin-top:24px">
+      <div class="driver">
+        <div class="dnum">50%</div>
+        <h4>TSMC Arizona 대만 파견</h4>
+        <p>TSMC Arizona 직원의 약 50%가 대만에서 파견. 3년 계약 만료 후 귀국 문제 반복. 현지 인력 양성 속도가 수요를 못 따라감.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">2030-31</div>
+        <h4>Intel Ohio 가동 재조정</h4>
+        <p>원래 2025 목표였던 인텔 오하이오 fab이 2030-2031로 재조정. 재정 압박과 함께 인력 조달 문제도 주요 원인 중 하나.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">400명+</div>
+        <h4>Rapidus 현재 인력</h4>
+        <p>일본 Rapidus 현재 약 400명. 연 300명 증원 계획. 파일럿 라인 2025.4 가동, 2nm GAA 2025.7 동작 확인. 2027 양산 목표.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">2030+</div>
+        <h4>인력 갭 해소 예상</h4>
+        <p>미국·일본·EU 모두 반도체 인력 양성 프로그램 시작. 그러나 엔지니어 양성에 4-6년 소요. 2030년 이후에야 2/3 수준 해소 가능.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">인력 병목 핵심</div>
+      <p>fab은 빠르게 짓지만 엔지니어는 빠르게 만들 수 없다.
+      <span class="u">CHIPS Act·EU Chips Act 모두 인력 양성 조항을 포함하지만 대학 배출 속도는 fab 가동 속도를 따라가지 못한다. TSMC의 대만 파견 모델이 단기 해법이지만 지속 가능성에 한계가 있다. 반도체 교육·인력 양성 기업이 숨은 수혜자다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 HBM ================= -->
+<section class="blk" id="hbm">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;HBM 공급 <span style="margin-left:8px"><span class="sev-badge sev-7">심각도 7/10</span></span></div>
+      <h2 class="sec-title">SK하이닉스 62% 독점 → 삼성 진입으로 빠르게 완화 중</h2>
+      <p class="sec-lead">HBM은 AI GPU의 필수 메모리다. SK하이닉스 독점 구조에서 삼성·Micron이 진입하면서 공급 병목이 가장 빠르게 완화되는 섹터다. 그러나 HBM4 세대 전환 수율 리스크가 잔존한다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>HBM 시장점유율 Q2 2026</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>공급사</th>
+              <th>점유율</th>
+              <th>주요 고객</th>
+              <th>HBM4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SK하이닉스</td>
+              <td class="td-accent">62%</td>
+              <td>Nvidia, AMD</td>
+              <td class="td-current">양산 중</td>
+            </tr>
+            <tr>
+              <td>Micron</td>
+              <td class="td-current">21%</td>
+              <td>Nvidia, AMD, Google</td>
+              <td>HBM4 2026 H2</td>
+            </tr>
+            <tr>
+              <td>삼성</td>
+              <td class="td-glow">17%</td>
+              <td>Google TPU, AMD</td>
+              <td>양산 개시 2026.02</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cycle-grid" style="margin-top:24px">
+      <div class="ccard current reveal">
+        <div class="cc-era">HBM 세대 전환</div>
+        <h3>HBM3E → HBM4 → HBM4E 로드맵</h3>
+        <div class="stat-row"><span class="sk">HBM3E (현재 주력)</span><span class="sv hi">12-Hi 양산 중</span></div>
+        <div class="stat-row"><span class="sk">HBM4 (SK하이닉스)</span><span class="sv hi">양산 중</span></div>
+        <div class="stat-row"><span class="sk">HBM4 (삼성)</span><span class="sv">2026.02 양산 개시</span></div>
+        <div class="stat-row"><span class="sk">HBM4 (Micron)</span><span class="sv">2026 H2</span></div>
+        <div class="stat-row"><span class="sk">HBM4E</span><span class="sv">2027 이후</span></div>
+      </div>
+      <div class="ccard reveal d1">
+        <div class="cc-era">시장 규모 & 리스크</div>
+        <h3>HBM 시장 현황</h3>
+        <div class="stat-row"><span class="sk">HBM 시장 규모</span><span class="sv hi">$54.6B (YoY +58%)</span></div>
+        <div class="stat-row"><span class="sk">삼성 HBM4 수율</span><span class="sv">~50% (DDR5 70% 대비)</span></div>
+        <div class="stat-row"><span class="sk">삼성 Nvidia 자격</span><span class="sv hi">HBM3E 취득 완료</span></div>
+        <div class="stat-row"><span class="sk">AI 서버당 HBM</span><span class="sv">증가 추세</span></div>
+        <div class="stat-row"><span class="sk">병목 해소 예상</span><span class="sv">2026 H2 (부분)</span></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">HBM 병목 핵심</div>
+      <p>HBM은 5개 병목 중 가장 빠르게 완화되는 섹터다.
+      <span class="u">삼성이 Nvidia HBM3E 자격을 취득하고 양산에 진입하면서 SK하이닉스 독점 구조가 완화되고 있다. HBM4 수율 ~50%는 잔존 리스크지만 세대 전환이 수급 균형을 돕는다. $54.6B(+58%) 시장 성장과 함께 2026 H2에 부분 해소가 예상된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 EUV ================= -->
+<section class="blk" id="euv">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;EUV 장비 <span style="margin-left:8px"><span class="sev-badge sev-6">심각도 6/10</span></span></div>
+      <h2 class="sec-title">연간 최대 80대 — ASML의 물리적 생산 한계가 만드는 병목</h2>
+      <p class="sec-lead">EUV 노광 장비는 ASML이 사실상 독점한다. 연간 최대 80대라는 생산 한계와 €38.8B 백로그가 병목을 형성하고 있다. High-NA EUV는 2028년 이후 양산 적용.</p>
+    </div>
+
+    <div class="impl-grid">
+      <div class="impl-card reveal">
+        <div class="ic-tag">EUV 공급 현황</div>
+        <h3>ASML EUV 출하 & 한계</h3>
+        <ul>
+          <li><b>2025 출하</b> — EUV 노광기 48대. 생산 Capa 확장 중이지만 부품 공급망이 병목.</li>
+          <li><b>2026 목표</b> — 60대. 부품 조달·조립 인력 확장으로 점진 증가.</li>
+          <li><b>최대 한계</b> — 연간 ~80대. 광학계·진공 시스템 부품 공급 제약. 단기 돌파 어려움.</li>
+          <li><b>리드타임</b> — 주문~납품 12-18개월. 첨단 fab 계획의 필수 선행 조건.</li>
+        </ul>
+      </div>
+      <div class="impl-card reveal d1">
+        <div class="ic-tag">High-NA EUV</div>
+        <h3>차세대 High-NA EUV 현황</h3>
+        <ul>
+          <li><b>연간 생산</b> — 20대 미만. 기존 EUV 대비 훨씬 복잡한 광학계.</li>
+          <li><b>백로그</b> — €38.8B. 모든 주요 파운드리·메모리 사전 주문 완료.</li>
+          <li><b>양산 적용</b> — 2028년 이후. TSMC·삼성·인텔 모두 2028+ 로드맵.</li>
+          <li><b>가격</b> — 대당 $380M+. 기존 EUV($200M) 대비 2배 가까운 가격.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-panel reveal" style="margin-top:24px">
+      <h3>EUV 출하 추이 & 전망</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>연도</th>
+              <th>EUV 출하</th>
+              <th>High-NA</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024</td>
+              <td>44대</td>
+              <td>2대 (시범)</td>
+              <td>인텔 최초 High-NA 도입</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>48대</td>
+              <td>5대 미만</td>
+              <td>주문 백로그 누적</td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td class="td-current">60대 (목표)</td>
+              <td class="td-current">10-15대</td>
+              <td>Capa 확장 진행</td>
+            </tr>
+            <tr>
+              <td>2027~</td>
+              <td class="td-accent">최대 ~80대</td>
+              <td class="td-accent">20대 미만</td>
+              <td>물리적 생산 한계</td>
+            </tr>
+            <tr>
+              <td>2028+</td>
+              <td>~80대 유지</td>
+              <td class="td-glow">양산 적용</td>
+              <td>High-NA 주력 전환 시작</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">EUV 병목 핵심</div>
+      <p>EUV는 첨단 반도체 생산의 필수 공정이지만 5개 병목 중 상대적으로 완화 중인 섹터다.
+      <span class="u">연간 80대 한계는 단기 극복 어렵지만 DUV(ArF 이머전) 병용으로 일부 완충 가능. High-NA EUV는 2028년 이후 양산 적용으로 2nm 이하 공정에서 핵심이 된다. ASML의 €38.8B 백로그는 2027-2028년까지 안정적 매출을 보장한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= CONCLUSION ROADMAP ================= -->
+<section class="blk" id="conclusion">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">07</span>&nbsp;병목 해소 로드맵</div>
+      <h2 class="sec-title">2026~2030+ — 5대 병목 해소 타임라인</h2>
+      <p class="sec-lead">5대 병목은 동시에 해소되지 않는다. 가장 빠른 HBM(2026 H2)부터 가장 느린 전력(2030년대 구조적)까지 — 타임라인을 추적한다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>병목 해소 로드맵</h3>
+      <div class="roadmap">
+        <div class="rm-item rm-dot">
+          <div class="rm-year">2026 H2</div>
+          <div class="rm-body">
+            <div class="rm-title">HBM 부분 완화 · CoWoS 갭 10%→5% 진행</div>
+            <div class="rm-desc">삼성 HBM3E Nvidia 공급 본격화, Micron HBM4 진입으로 SK하이닉스 독점 완화. OSAT Amkor·ASE CoWoS 유사 패키징 추가로 Nvidia GPU 출하 병목 소폭 개선.</div>
+          </div>
+        </div>
+        <div class="rm-item rm-dot">
+          <div class="rm-year">2027</div>
+          <div class="rm-body">
+            <div class="rm-title">EUV 80대/년 달성 · Rapidus 양산 · CoWoS 균형</div>
+            <div class="rm-desc">ASML EUV 연간 80대 목표 도달. Rapidus 2nm GAA 양산 개시(일본 반도체 재건 이정표). TSMC CoWoS 수급 균형 예상 시점. CoWoS 갭 ~5% 이하로 진입.</div>
+          </div>
+        </div>
+        <div class="rm-item rm-dot">
+          <div class="rm-year">2028</div>
+          <div class="rm-body">
+            <div class="rm-title">High-NA EUV 양산 적용 · 2nm 이하 본격화</div>
+            <div class="rm-desc">TSMC·삼성 High-NA EUV 양산 적용 시작. 2nm 이하 공정 확산. ASML High-NA 백로그 소화 시작. EUV 병목 사실상 해소.</div>
+          </div>
+        </div>
+        <div class="rm-item rm-dot">
+          <div class="rm-year">2029</div>
+          <div class="rm-body">
+            <div class="rm-title">SMR 첫 상업 가동 · 전력 부분 완화</div>
+            <div class="rm-desc">Kairos Power·Oklo 등 소형 SMR 첫 상업 가동 목표. 실질 기여 용량은 1-2GW 수준에 불과하나 상징적 이정표. 전력망 신규 접속 점진 증가.</div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <div class="rm-year">2030+</div>
+          <div class="rm-body">
+            <div class="rm-title">인력 갭 2/3 해소 · 전력은 구조적 장기 과제</div>
+            <div class="rm-desc">반도체 인력 양성 프로그램 효과 본격화 — 100만 명 갭 중 2/3 수준 해소 예상. 단, 전력 인프라는 변압기·전력망 제약으로 2030년대도 구조적 병목 지속. AI 전력 수요가 공급 확장을 계속 앞설 가능성 높음.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">최종 병목 테제</div>
+      <p>5대 병목 중 전력만이 2030년 이후에도 지속되는 구조적 병목이다.
+      <span class="u">CoWoS는 2027년, HBM은 2026 H2, EUV는 2027-2028년에 각각 해소 또는 완화된다. 인력 갭은 2030년에 2/3 수준까지 개선된다. 전력 인프라만이 변압기 리드타임·전력망 인허가·SMR 지연으로 2030년대까지 구조적으로 지속된다. $4.6T 투자의 장기 집행 속도는 결국 전력 병목에 의해 결정된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">병목 지도 — 국가 전략 시리즈</div>
+      <div class="src-list">
+        DATA · TrendForce · ASML Annual Report · IEA Energy and AI · Deloitte · SEMI<br>
+        BNP Paribas · TSMC AGM 2026.06 · Bloomberg · CNBC · Tom's Hardware<br>
+        작성 기준일 · 2026.06.26
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 국가 전략 투자 흐름 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// active nav
+const secs=[...document.querySelectorAll('section.blk')];
+const navA=[...document.querySelectorAll('.nav-links a')];
+const spy=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){
+    navA.forEach(a=>a.style.color='');
+    const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+    if(cur) cur.style.color='var(--ink)';
+  }});
+},{threshold:.4});
+secs.forEach(s=>spy.observe(s));
+// mobile nav
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.querySelector('.nav-links');
+navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

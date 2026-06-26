@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Amazon $200B·Microsoft $190B·Alphabet $185B·Meta $135B — Big Tech 4사 2026 Capex ~$725B의 AI 매출 전환 증거, FCF 영향, 자체 칩 전환, Bull vs Bear 심층 분석">
+<meta name="keywords" content="Big Tech,Capex,ROI,Amazon,Microsoft,Alphabet,Meta,AI매출,FCF,Trainium,TPU,Maia,MTIA">
+<meta property="og:title" content="~$725B 투자 vs 수익 증거 — Big Tech Capex ROI 추적">
+<meta property="og:description" content="Amazon $200B·Microsoft $190B·Alphabet $185B·Meta $135B — Big Tech 4사 2026 Capex ~$725B의 AI 매출 전환 증거, FCF 영향, 자체 칩 전환, Bull vs Bear 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_bigtech_capex_roi.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="~$725B 투자 vs 수익 증거 — Big Tech Capex ROI 추적">
+<meta name="twitter:description" content="Amazon $200B·Microsoft $190B·Alphabet $185B·Meta $135B — Big Tech 4사 2026 Capex ~$725B의 AI 매출 전환 증거, FCF 영향, 자체 칩 전환, Bull vs Bear 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_bigtech_capex_roi.html">
+<title>~$725B 투자 vs 수익 증거 — Big Tech Capex ROI 추적</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;
+    --current:#f87171;
+    --glow:#fca5a5;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* mini rows */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:100px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* thesis */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{color:var(--ink);font-weight:600}
+  .td-accent{color:var(--volt)!important;font-family:var(--mono);font-weight:700}
+  .td-current{color:var(--current)!important;font-family:var(--mono);font-weight:700}
+  .td-glow{color:var(--glow)!important;font-family:var(--mono);font-weight:700}
+  tbody tr:hover td{background:rgba(239,68,68,.03)}
+  tbody tr.bold-row td{color:var(--ink);font-weight:700}
+
+  /* ---------- SHARE CARDS ---------- */
+  .share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .scard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}
+  .scard .sc-name{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
+  .scard .sc-pct{font-family:var(--mono);font-weight:800;font-size:2.2rem;letter-spacing:-.03em;margin:12px 0 6px}
+  .scard .sc-pct.amzn{color:var(--volt)}
+  .scard .sc-pct.msft{color:var(--current)}
+  .scard .sc-pct.goog{color:var(--glow)}
+  .scard .sc-pct.meta{color:var(--bull)}
+  .scard .sc-sub{font-size:.8rem;color:var(--ink-3);font-family:var(--mono)}
+  .scard .sc-detail{margin-top:14px;font-size:.82rem;color:var(--ink-2);line-height:1.55;text-align:left;border-top:1px solid var(--line);padding-top:14px}
+
+  /* ---------- CYCLE COMPARE ---------- */
+  .cycle-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .ccard .cc-era{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .ccard h3{font-size:1.18rem;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+  .ccard.bull{border-color:var(--bull);border-width:1px}
+  .ccard.bull h3{color:var(--bull)}
+  .ccard.bear{border-color:var(--bear);border-width:1px}
+  .ccard.bear h3{color:var(--bear)}
+  .stat-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.5)}
+  .stat-row:last-child{border-bottom:none}
+  .stat-row .sk{font-size:.85rem;color:var(--ink-2)}
+  .stat-row .sv{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--ink)}
+  .stat-row .sv.hi{color:var(--volt)}
+  .stat-row .sv.bull{color:var(--bull)}
+  .stat-row .sv.bear{color:var(--bear)}
+
+  /* ---------- DRIVERS ---------- */
+  .drivers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  .driver{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .driver .dnum{font-family:var(--mono);font-weight:800;font-size:1.8rem;color:var(--volt);line-height:1}
+  .driver h4{font-size:.98rem;font-weight:750;margin:8px 0 6px;letter-spacing:-.01em}
+  .driver p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- PRICE TABLE ---------- */
+  .price-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px}
+  .price-panel h3{font-size:1.02rem;font-weight:750;margin-bottom:20px}
+
+  /* ---------- IMPLICATION BOX ---------- */
+  .impl-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .impl-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .impl-card .ic-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:10px}
+  .impl-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .impl-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .impl-card ul li{font-size:.88rem;color:var(--ink-2);line-height:1.55;padding-left:16px;position:relative}
+  .impl-card ul li::before{content:"\2192";position:absolute;left:0;color:var(--volt);font-family:var(--mono);font-weight:700}
+  .impl-card ul li b{color:var(--ink)}
+
+  /* ---------- CHIP GRID ---------- */
+  .chip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+  .chip-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .chip-card .cc-company{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:8px}
+  .chip-card h3{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .chip-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .chip-card ul li{font-size:.84rem;color:var(--ink-2);line-height:1.5;padding-left:14px;position:relative}
+  .chip-card ul li::before{content:"\2022";position:absolute;left:0;color:var(--ink-3)}
+  .chip-card ul li b{color:var(--ink);font-weight:650}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr 1fr}
+    .cycle-grid{grid-template-columns:1fr}
+    .drivers{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .chip-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "~$725B 투자 vs 수익 증거 — Big Tech Capex ROI 추적",
+  "description": "Amazon $200B·Microsoft $190B·Alphabet $185B·Meta $135B — Big Tech 4사 2026 Capex ~$725B의 AI 매출 전환 증거, FCF 영향, 자체 칩 전환, Bull vs Bear 심층 분석",
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_bigtech_capex_roi.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>Big Tech Capex ROI</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#overview">01 / 개관</a>
+      <a href="#revenue">02 / AI 매출</a>
+      <a href="#fcf">03 / FCF</a>
+      <a href="#custom-chip">04 / 자체 칩</a>
+      <a href="#sustainability">05 / 지속 가능성</a>
+      <a href="#implication">06 / 시사점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · BIG TECH CAPEX · Q1 2026 기준</span>
+    <h1 class="hero-title">~$725B<br><span class="hl">투자 vs 수익</span></h1>
+    <p class="hero-sub">Amazon·Microsoft·Alphabet·Meta 4사의 2026 Capex 애널리스트 추정 합산 ~$725B — AI 매출 전환 증거와 FCF 압박을 추적한다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">~$725<span class="u">B</span></div>
+        <div class="lab">Big Tech 4사 2026 Capex 합계(애널리스트 추정). 개별사 가이던스 합산 기준 ~$710B.</div>
+        <div class="src">SRC: Tom's Hardware · 각사 가이던스</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$37<span class="u">B</span></div>
+        <div class="lab">Microsoft AI 연간 런레이트. YoY +123% 성장. 4사 중 가장 강력한 수익 전환 증거.</div>
+        <div class="src">SRC: MSFT Q3 FY2026 · GeekWire</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">-95<span class="u">%</span></div>
+        <div class="lab">Amazon Q1 2026 FCF. $26B→$1.2B. AI 인프라 투자로 인한 구조적 현금흐름 압박.</div>
+        <div class="src">SRC: Amazon 8-K · 24/7 Wall St</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>투자 vs 수익 심층 분석</div>
+  </div>
+</header>
+
+<!-- ================= 01 OVERVIEW ================= -->
+<section class="blk" id="overview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;투자 개관</div>
+      <h2 class="sec-title">4사 합산 ~$725B — 사상 최대 인프라 투자 사이클</h2>
+      <p class="sec-lead">Big Tech 4사의 2026년 Capex는 애널리스트 추정 합산 ~$725B(개별 가이던스 합산 ~$710B)으로 전년 대비 +51% 증가. AI 인프라 투자가 역사적 수준을 경신하고 있다.</p>
+    </div>
+
+    <div class="share-grid reveal">
+      <div class="scard">
+        <div class="sc-name">Amazon</div>
+        <div class="sc-pct amzn tnum">$200B</div>
+        <div class="sc-sub">2026E CAPEX</div>
+        <div class="sc-detail">Q1 Capex $44.2B. AWS $37.6B (+28% YoY). 수주 잔고 $244B (+40% YoY). Trainium3 대규모 배포 예정.</div>
+      </div>
+      <div class="scard">
+        <div class="sc-name">Microsoft</div>
+        <div class="sc-pct msft tnum">$190B</div>
+        <div class="sc-sub">2026E CAPEX</div>
+        <div class="sc-detail">Q1 Capex ~$21B. Azure +40% YoY. AI 런레이트 $37B (+123%). 클라우드 총 $54.5B — 최초 단분기 $50B 돌파.</div>
+      </div>
+      <div class="scard">
+        <div class="sc-name">Alphabet</div>
+        <div class="sc-pct goog tnum">$185B</div>
+        <div class="sc-sub">2026E CAPEX ($180-190B)</div>
+        <div class="sc-detail">Q1 Capex $35.7B. Cloud $20B (+63% YoY, 4사 최고 성장률). 수주 잔고 >$460B (분기 대비 ~2배). Gemini 16B 토큰/분.</div>
+      </div>
+      <div class="scard">
+        <div class="sc-name">Meta</div>
+        <div class="sc-pct meta tnum">$135B</div>
+        <div class="sc-sub">2026E CAPEX ($125-145B)</div>
+        <div class="sc-detail">Q1 Capex $19.8B. 총 매출 $56.3B (+33% YoY). AI 광고 전환율 +6%. Meta AI MAU 10억. Llama 다운로드 10억 건.</div>
+      </div>
+    </div>
+
+    <div class="price-panel reveal" style="margin-top:24px">
+      <h3>4사 종합 비교 (Q1 2026 기준)</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>지표</th>
+              <th>Amazon</th>
+              <th>Microsoft</th>
+              <th>Alphabet</th>
+              <th>Meta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q1 매출</td>
+              <td>$181.5B</td>
+              <td>$82.9B</td>
+              <td>$109.9B</td>
+              <td>$56.3B</td>
+            </tr>
+            <tr>
+              <td>핵심 AI/Cloud 매출</td>
+              <td class="td-current">$37.6B (AWS)</td>
+              <td class="td-current">$34.7B (IC)</td>
+              <td class="td-current">$20B (Cloud)</td>
+              <td>광고 기반 간접</td>
+            </tr>
+            <tr>
+              <td>AI/Cloud 성장률</td>
+              <td class="td-accent">+28% (AWS)</td>
+              <td class="td-accent">+40% (Azure)</td>
+              <td class="td-accent">+63% (Cloud)</td>
+              <td class="td-accent">+33% (총 매출)</td>
+            </tr>
+            <tr>
+              <td>Q1 Capex</td>
+              <td>$44.2B</td>
+              <td>~$21B</td>
+              <td>$35.7B</td>
+              <td>$19.8B</td>
+            </tr>
+            <tr>
+              <td>2026E 총 Capex</td>
+              <td class="td-accent">$200B</td>
+              <td class="td-accent">$190B</td>
+              <td class="td-accent">$180-190B</td>
+              <td class="td-accent">$125-145B</td>
+            </tr>
+            <tr>
+              <td>Q1 FCF</td>
+              <td class="td-accent">$1.2B (-95%)</td>
+              <td>~$15B</td>
+              <td>~$12B</td>
+              <td>$12.4B</td>
+            </tr>
+            <tr>
+              <td>AI 특화 지표</td>
+              <td>Bedrock +170% QoQ</td>
+              <td>AI $37B 런레이트</td>
+              <td>16B 토큰/분</td>
+              <td>6% 광고 전환율 개선</td>
+            </tr>
+            <tr>
+              <td>자체 칩 성숙도</td>
+              <td class="td-glow">Trainium3 (높음)</td>
+              <td>Maia (지연)</td>
+              <td class="td-glow">TPU v6-v7 (최고)</td>
+              <td class="td-glow">MTIA 100-200 (높음)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 테제</div>
+      <p>~$725B은 "버블"이 아니라 "투자 시차(Investment Lag)" 국면이다.
+      <span class="u">수주 잔고(AWS $244B + Google $460B), AI 매출 가속(MS +123%, Google Cloud +63%), 토큰 처리량 폭발(Bedrock Q1 > 역대 누적)은 수요가 실재한다는 증거다. 그러나 FCF 붕괴와 부채 급증은 2027-2028년까지 수익 전환이 가속화되지 않으면 현실화될 재무적 리스크다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 REVENUE ================= -->
+<section class="blk" id="revenue">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;AI 매출 추적</div>
+      <h2 class="sec-title">MS $37B 런레이트, Google +63%, AWS +28% — 수익 전환의 조기 증거</h2>
+      <p class="sec-lead">Big Tech 4사의 AI/클라우드 매출은 가속 성장 중이다. 투자가 수익으로 전환되고 있다는 "조기 증거"는 명백하다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>Microsoft — 가장 강력한 수익 전환</h3>
+        <div class="ph-sub">Q3 FY2026 · 2026.04 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$37B</div>
+            <div class="mt"><b>AI 연간 런레이트</b> — YoY +123% 성장. 4사 중 가장 구체적인 AI 수익화 지표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">+40%</div>
+            <div class="mt"><b>Azure + AI 통합 성장률</b> — CC 기준 +39%. 3분기 연속 38-40% 가속화 구간 유지.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$54.5B</div>
+            <div class="mt"><b>클라우드 총 매출</b> — 사상 최초 단분기 $50B 돌파. 총 매출 $82.9B (+18% YoY).</div>
+          </div>
+        </div>
+        <div class="foot">Azure 분기별 성장: Q1 +40% → Q2 +39% → Q3 +40%. 수요가 공급 용량을 초과하는 상태 지속.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>Google Cloud — 4사 최고 성장률</h3>
+        <div class="ph-sub">Q1 2026 · 2026.04 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">+63%</div>
+            <div class="mt"><b>Cloud 매출 성장률</b> — $20B 돌파. 4사 중 가장 높은 성장률.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">>$460B</div>
+            <div class="mt"><b>수주 잔고</b> — 분기 대비 약 2배 증가. 사상 최대. 다년도 수요 파이프라인 확보.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">16B</div>
+            <div class="mt"><b>Gemini API 토큰/분</b> — 전분기 대비 +60%. Gemini MAU 7.5억 명(2025년 말).</div>
+          </div>
+        </div>
+        <div class="foot">전체 Alphabet 매출 $109.9B (+22% YoY, 컨센서스 $3B 초과). Gemini 구독 매출 2025년 $1.2B (4배 성장).</div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>AWS — 15분기 최고 성장 속도</h3>
+        <div class="ph-sub">Q1 2026 · 2026.04 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">+28%</div>
+            <div class="mt"><b>AWS YoY 성장률</b> — 15분기 중 최고. 매출 $37.59B. 연간 런레이트 ~$150B.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">+170%</div>
+            <div class="mt"><b>Bedrock 고객 지출</b> — 전 분기 대비 +170%. Bedrock 처리 토큰: Q1 누적 > 역대 모든 연도 합산.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$244B</div>
+            <div class="mt"><b>수주 잔고</b> — +40% YoY, +22% 분기 대비. 다년도 수요 가시성 확보.</div>
+          </div>
+        </div>
+        <div class="foot">커스텀 칩 사업(Graviton+Trainium+Nitro) 연간 런레이트 $20B+ 초과, 세 자릿수 YoY 성장.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>Meta — AI 광고 전환율 최초 정량 공시</h3>
+        <div class="ph-sub">Q1 2026 · 2026.04 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">+33%</div>
+            <div class="mt"><b>총 매출 성장률</b> — $56.31B. 컨센서스 초과. 2025년 연간 $200.97B (+22%).</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">+6%</div>
+            <div class="mt"><b>AI 광고 전환율 개선</b> — Lattice/GEM 도구 효과. 최초 정량적 공시.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10억+</div>
+            <div class="mt"><b>Meta AI MAU</b> — 2025.10 돌파. Llama 다운로드 10억 건(2025.03).</div>
+          </div>
+        </div>
+        <div class="foot">Q1 FCF $12.4B (전년 $13.7B에서 소폭 감소). 직접 AI 매출 분리 미비 — 광고 매출 내 간접 효과 측정.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">AI 매출 핵심</div>
+      <p>투자가 수익으로 전환되고 있다는 "조기 증거"는 명백하다.
+      <span class="u">Microsoft AI $37B 런레이트(+123% YoY)는 가장 강력한 수익화 증거다. AWS Bedrock 토큰 처리량(Q1 > 역대 누적)은 수요 실재를 확인한다. Google Cloud +63%와 $460B 수주 잔고는 수요 파이프라인이 건재함을 보여준다. 다만 각사의 "AI 매출" 정의가 상이하여 직접 비교에 한계가 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 FCF ================= -->
+<section class="blk" id="fcf">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;FCF 영향</div>
+      <h2 class="sec-title">합산 FCF $237B→$120B — Amazon -95%, 부채 $400B+ 발행</h2>
+      <p class="sec-lead">AI 인프라 투자 급증으로 4사 합산 Free Cash Flow가 급감하고 있다. Amazon의 Q1 FCF -95%가 상징적이다. 2026년 $400B 이상 신규 부채 발행이 예정되어 있다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>4사 합산 FCF 추이</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>연도</th>
+              <th>합산 FCF</th>
+              <th>변동</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024</td>
+              <td>~$237B</td>
+              <td>—</td>
+              <td>Capex 투자 본격화 이전</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>~$200B</td>
+              <td class="td-current">-$37B (-15.6%)</td>
+              <td>Capex 급증 시작</td>
+            </tr>
+            <tr>
+              <td>2026E</td>
+              <td class="td-accent">~$120B 이하</td>
+              <td class="td-accent">-$80B (-40%)</td>
+              <td>Capex ~$710B 집행에 따른 급감</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>Amazon FCF 붕괴</h3>
+        <div class="ph-sub">Q1 2026 기준 · 가장 극적인 사례</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$1.2B</div>
+            <div class="mt"><b>Q1 2026 FCF</b> — 전년 동기 $26B에서 -95%. 구조적 현금흐름 압박의 상징.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">-$17B</div>
+            <div class="mt"><b>Morgan Stanley 2026 전망</b> — 연간 FCF 마이너스 전환 예측.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">-$28B</div>
+            <div class="mt"><b>Bank of America 2026 전망</b> — 더 비관적 시나리오. $200B Capex의 무게.</div>
+          </div>
+        </div>
+        <div class="foot">Capex/Revenue 비율: 2024년 ~8% → 2026E ~29%. 영업현금흐름 대부분이 인프라로 재투자.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>Capex/Revenue 비율 급등</h3>
+        <div class="ph-sub">3년간 변화 추이</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>회사</th>
+                <th>2024</th>
+                <th>2025</th>
+                <th>2026E</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amazon</td>
+                <td>~8%</td>
+                <td>~18%</td>
+                <td class="td-accent">~29%</td>
+              </tr>
+              <tr>
+                <td>Microsoft</td>
+                <td>~18%</td>
+                <td>~32%</td>
+                <td class="td-accent">~61%</td>
+              </tr>
+              <tr>
+                <td>Alphabet</td>
+                <td>~17%</td>
+                <td>~21%</td>
+                <td class="td-accent">~46%</td>
+              </tr>
+              <tr>
+                <td>Meta</td>
+                <td>~22%</td>
+                <td>~34%</td>
+                <td class="td-accent">~54%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="foot">Microsoft Capex/Operating Cash Flow 비율 50% 초과. 영업현금흐름의 약 90%가 인프라 재투자.</div>
+      </div>
+    </div>
+
+    <div class="drivers reveal">
+      <div class="driver">
+        <div class="dnum">$400B+</div>
+        <h4>2026 신규 부채 발행</h4>
+        <p>4사 합산 2026년 $400B+ 신규 채권 발행 예정. 2025년 $165B 대비 2배 이상. 금리 환경 변화 시 이자 부담 급증 리스크.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">$59B</div>
+        <h4>Meta 부채 급증</h4>
+        <p>Meta 부채: $29B(2024)→$59B(2025). Alphabet: $11B→$47B. 현금 부자 Big Tech도 차입에 의존하기 시작.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">$121B</div>
+        <h4>2025 하이퍼스케일러 채권</h4>
+        <p>2025년 하이퍼스케일러 채권 발행 $121B — 2020년 $40B 대비 3배. 자본시장 의존도 급격히 상승.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">-90%</div>
+        <h4>Barclays: Meta FCF 전망</h4>
+        <p>Barclays: 2026년 Meta FCF -90% 수준. 2027-2028년 FCF 마이너스 전환 가능성 모델링. Capex 지속 가능성 의문.</p>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">FCF 핵심</div>
+      <p>단기 재무 압박은 현실이며, FCF 마이너스 전환 리스크가 존재한다.
+      <span class="u">Amazon Q1 FCF $26B→$1.2B(-95%)는 구조적 현금흐름 압박의 상징이다. 4사 합산 FCF $237B→$200B→$120B 이하로 하락 중이며, $400B+ 신규 부채는 금리 리스크를 키운다. 데이터센터 투자는 10-20년 내용연수로 단년도 FCF 비교가 미래 수익을 과소평가할 수 있으나, 2027-2028년까지 수익 전환이 증명되지 않으면 재무 스트레스가 현실화된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 CUSTOM CHIP ================= -->
+<section class="blk" id="custom-chip">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;자체 칩 전환</div>
+      <h2 class="sec-title">Trainium·TPU·Maia·MTIA — Nvidia 공존 속 자체 칩 가속</h2>
+      <p class="sec-lead">Big Tech 4사 모두 자체 AI 칩을 개발·배포하고 있다. 절대 대체가 아닌 "공존·보완" 구조이나, 장기적으로 Nvidia 의존도를 낮추며 마진을 개선하는 전략이다.</p>
+    </div>
+
+    <div class="chip-grid">
+      <div class="chip-card reveal">
+        <div class="cc-company">Amazon</div>
+        <h3>Trainium — 가장 성숙한 자체 칩</h3>
+        <ul>
+          <li><b>Trainium3</b> — 2026 H2 대규모 배포. UltraServer당 144칩. 단일 앱 최대 100만 칩.</li>
+          <li><b>성능</b> — 전세대 대비 컴퓨팅 +4.4배, 에너지 효율 +4배.</li>
+          <li><b>비용 절감</b> — GPU 대비 최대 50% (AWS 초기 테스트 기준).</li>
+          <li><b>런레이트</b> — 커스텀 칩 사업(Graviton+Trainium+Nitro) 연간 $20B+.</li>
+          <li><b>Trainium4</b> — NVLink Fusion 지원으로 Nvidia와 공존 전략.</li>
+        </ul>
+      </div>
+
+      <div class="chip-card reveal d1">
+        <div class="cc-company">Google</div>
+        <h3>TPU — 가장 오래된 자체 칩 프로그램</h3>
+        <ul>
+          <li><b>TPU v6 (Trillium)</b> — 현재 생산 중.</li>
+          <li><b>TPU v7 (Ironwood)</b> — 2025.04 발표. 4,614 FP8 TFLOPS, HBM3E 192GB, 7.37TB/s.</li>
+          <li><b>TPU v8</b> — Broadcom(AX Sunfish, 훈련) + MediaTek(Zebrafish, 추론) 이중 공급.</li>
+          <li><b>Cloud 내 비중</b> — 추론 워크로드의 약 35% 추정.</li>
+        </ul>
+      </div>
+
+      <div class="chip-card reveal d2">
+        <div class="cc-company">Microsoft</div>
+        <h3>Maia — 설계 변경으로 지연</h3>
+        <ul>
+          <li><b>Maia 200</b> — OpenAI 설계 변경 요청으로 약 6개월 지연.</li>
+          <li><b>Cobalt 200 (ARM CPU)</b> — Azure 데이터센터 현재 운영 중.</li>
+          <li><b>Azure 내 활용</b> — 제한적. 지연으로 Nvidia 의존도 여전히 높음.</li>
+          <li><b>4사 중 자체 칩 가장 뒤처진 상태</b> — Nvidia 의존 지속.</li>
+        </ul>
+      </div>
+
+      <div class="chip-card reveal d3">
+        <div class="cc-company">Meta</div>
+        <h3>MTIA — 추론 중심 빠른 배포</h3>
+        <ul>
+          <li><b>MTIA 100·200</b> — Facebook/Instagram 추론 현재 배포 중. 수십만 칩.</li>
+          <li><b>Nvidia 대체율</b> — 추론 워크로드 약 40% 추정.</li>
+          <li><b>MTIA 300-500</b> — 2027년까지 로드맵. MTIA 400: 6 PFLOPS FP8, 288GB HBM.</li>
+          <li><b>Llama 생태계</b> — 오픈소스 모델과 자체 칩 시너지.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-panel reveal" style="margin-top:24px">
+      <h3>Nvidia 데이터센터 매출 — 자체 칩에도 불구하고 동반 성장</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>지표</th>
+              <th>수치</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q1 FY2027 DC 매출</td>
+              <td class="td-accent">$75.2B</td>
+              <td>단분기 사상 최고, +92% YoY</td>
+            </tr>
+            <tr>
+              <td>하이퍼스케일러 비중</td>
+              <td>~50%</td>
+              <td>2026년부터 별도 보고 체계 도입</td>
+            </tr>
+            <tr>
+              <td>보고 체계 변경</td>
+              <td>"하이퍼스케일러" + "ACIE"</td>
+              <td>AI Clouds / Industrial / Enterprise 분리</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">자체 칩 핵심</div>
+      <p>자체 칩 전환이 가속화되고 있으나 Nvidia 수요도 동반 성장 — "공존·보완" 구조다.
+      <span class="u">Amazon Trainium(50% 비용 절감)과 Google TPU(추론 35%)가 가장 성숙하다. Meta MTIA는 추론 40% 대체를 달성했고, Microsoft Maia만 지연 중이다. 그러나 Nvidia DC 매출 $75.2B(+92%)이 보여주듯 자체 칩은 절대 대체가 아닌 전체 파이 확대 속 비중 조정이다. 장기적으로 자체 칩 비중 증가는 Big Tech 마진 구조를 개선할 핵심 요인이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 SUSTAINABILITY ================= -->
+<section class="blk" id="sustainability">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;지속 가능성</div>
+      <h2 class="sec-title">2027년 $1T 돌파 유력 — Bull vs Bear, 두 가지 시나리오</h2>
+      <p class="sec-lead">Evercore·BofA는 2027년 합산 Capex $1T 돌파를 전망한다. 현재 투자 사이클이 지속 가능한지 — Bull Case와 Bear Case로 나눠 분석한다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>Capex 성장률 감속 전망 (Allianz Trade)</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>연도</th>
+              <th>Capex YoY 성장률</th>
+              <th>추정 합산 Capex</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025</td>
+              <td class="td-accent">+81%</td>
+              <td>~$470B</td>
+            </tr>
+            <tr>
+              <td>2026E</td>
+              <td class="td-current">+51%</td>
+              <td>~$710B (가이던스)</td>
+            </tr>
+            <tr>
+              <td>2027E</td>
+              <td class="td-glow">+13%</td>
+              <td>$1T+ (Evercore·BofA)</td>
+            </tr>
+            <tr>
+              <td>2028E</td>
+              <td>~+5%</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>2029E</td>
+              <td>~-5%</td>
+              <td>감속 시작</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cycle-grid" style="margin-top:24px">
+      <div class="ccard bull reveal">
+        <div class="cc-era">BULL CASE</div>
+        <h3>지속 성장론 — 수요가 투자를 정당화</h3>
+        <div class="stat-row"><span class="sk">수주 잔고 가시성</span><span class="sv bull">AWS $244B + Google $460B</span></div>
+        <div class="stat-row"><span class="sk">AI 매출 가속</span><span class="sv bull">MS $37B +123% / GC +63%</span></div>
+        <div class="stat-row"><span class="sk">Bedrock 토큰 폭발</span><span class="sv bull">Q1 > 역대 누적</span></div>
+        <div class="stat-row"><span class="sk">가격 결정력</span><span class="sv bull">AI 프리미엄 가격</span></div>
+        <div class="stat-row"><span class="sk">자체 칩 비용 절감</span><span class="sv bull">Trainium 50% 절감</span></div>
+        <div class="stat-row"><span class="sk">Goldman Sachs</span><span class="sv bull">"AI 슈퍼사이클"</span></div>
+      </div>
+
+      <div class="ccard bear reveal d1">
+        <div class="cc-era">BEAR CASE</div>
+        <h3>버블 우려론 — FCF 붕괴와 부채 급증</h3>
+        <div class="stat-row"><span class="sk">FCF 붕괴</span><span class="sv bear">Amazon -95% / 합산 급감</span></div>
+        <div class="stat-row"><span class="sk">부채 의존</span><span class="sv bear">$400B+ 신규 차입</span></div>
+        <div class="stat-row"><span class="sk">ROI 지연</span><span class="sv bear">DC 수익 12-36개월 시차</span></div>
+        <div class="stat-row"><span class="sk">주주 압박</span><span class="sv bear">Meta 캡엑스 발표 후 -6%</span></div>
+        <div class="stat-row"><span class="sk">수익화 불확실성</span><span class="sv bear">많은 AI 파일럿 단계</span></div>
+        <div class="stat-row"><span class="sk">Barclays</span><span class="sv bear">Meta 27-28 FCF 마이너스</span></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">지속 가능성 핵심</div>
+      <p>성장률은 감속하지만 절대 금액은 계속 증가 — 2027년 $1T 돌파가 유력하다.
+      <span class="u">Capex YoY 성장률은 2025년 +81%에서 2029년 ~-5%로 감속하지만, 절대 금액은 2027년 $1T을 돌파할 전망이다. Alphabet CFO가 2027년 "significantly increase" 가이던스를 공식 발표했고, Barclays는 현 컨센서스가 $225B 과소추정 가능성을 경고했다. Bull Case(수주 잔고·매출 가속)와 Bear Case(FCF 붕괴·부채)가 공존하는 상태에서, 2027-2028년 수익 전환 속도가 최종 판단의 분기점이 된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 IMPLICATION ================= -->
+<section class="blk" id="implication">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;투자 시사점</div>
+      <h2 class="sec-title">버블이 아닌 투자 시차 — 2027-2028년이 분기점</h2>
+      <p class="sec-lead">~$725B 투자의 핵심 결론은 "AI Bubble이 아닌 Investment Lag"이다. 수익 전환 증거는 존재하지만 FCF 리스크도 현실이다. 투자자별 관점에서 시사점을 정리한다.</p>
+    </div>
+
+    <div class="impl-grid">
+      <div class="impl-card reveal">
+        <div class="ic-tag">성장주 투자자</div>
+        <h3>AI 매출 가속에 베팅</h3>
+        <ul>
+          <li><b>Microsoft</b> — AI 런레이트 $37B, +123% YoY. 가장 명확한 수익화 증거 보유.</li>
+          <li><b>Google Cloud</b> — +63% 성장률, $460B 수주 잔고. 가장 빠른 성장.</li>
+          <li><b>수주 잔고</b> — AWS $244B + Google $460B는 다년도 수요 가시성.</li>
+          <li><b>핵심 리스크</b> — 밸류에이션 프리미엄이 이미 반영. 수익 전환 속도가 기대에 못 미칠 경우 조정.</li>
+        </ul>
+      </div>
+      <div class="impl-card reveal d1">
+        <div class="ic-tag">가치주 투자자</div>
+        <h3>FCF 회복 타이밍에 주목</h3>
+        <ul>
+          <li><b>Amazon</b> — FCF -95%가 바닥이라면 2027-2028년 회복 시 가장 큰 반등 잠재력.</li>
+          <li><b>Capex 감속</b> — 2028-2029년 성장률 +5%→-5%로 감속 시 FCF 회복 가시화.</li>
+          <li><b>부채 모니터링</b> — $400B+ 신규 차입의 이자 비용이 FCF 회복 속도를 결정.</li>
+          <li><b>핵심 리스크</b> — Barclays Meta 2027-2028 FCF 마이너스 시나리오. 예상보다 긴 회복 기간.</li>
+        </ul>
+      </div>
+      <div class="impl-card reveal d2">
+        <div class="ic-tag">공급망 투자자</div>
+        <h3>인프라 수혜주 추적</h3>
+        <ul>
+          <li><b>Nvidia</b> — DC 매출 $75.2B(+92%). 자체 칩에도 동반 성장. 수요 > 공급 지속.</li>
+          <li><b>전력 인프라</b> — 변압기·송전망·발전 기업. AI 투자의 숨은 수혜자.</li>
+          <li><b>ASML</b> — EUV 백로그 €38.8B. 2027-2028년까지 안정적 매출.</li>
+          <li><b>자체 칩 공급망</b> — Broadcom(TPU·커스텀 ASIC), TSMC(패키징).</li>
+        </ul>
+      </div>
+      <div class="impl-card reveal d3">
+        <div class="ic-tag">리스크 관리</div>
+        <h3>모니터링 필수 지표</h3>
+        <ul>
+          <li><b>FCF 전환점</b> — Amazon 연간 FCF가 양수로 전환되는 시점이 핵심 시그널.</li>
+          <li><b>Capex 가이던스</b> — 분기별 가이던스 상향/유지/하향이 투자 사이클 방향 결정.</li>
+          <li><b>AI 매출 비중</b> — 전체 매출 대비 AI 직접 매출 비중 증가 속도.</li>
+          <li><b>금리 환경</b> — $400B+ 부채 발행시 금리 상승 시 이자 부담 급증.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">최종 판단</div>
+      <p>"AI Bubble"이 아닌 "투자 시차(Investment Lag)" 국면 — 2027-2028년이 최종 분기점이다.
+      <span class="u">수주 잔고(AWS $244B + Google $460B)와 AI 매출 성장(MS +123%, GC +63%)은 Bull Case를 지지한다. FCF 붕괴(Amazon -95%)와 부채 급증($400B+)은 Bear Case의 핵심이다. 데이터센터 투자는 10-20년 내용연수로 현시점 ROI 계산은 미래 수익을 과소평가하지만, 2027-2028년까지 수익 전환이 가속화되지 않으면 재무적 스트레스가 현실화될 수 있다. [LIMITATION: 각사 AI 매출 정의 상이, 수주 잔고 전환 속도·마진 미확인, 자체 칩 성능은 기업 자체 발표 기준]</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">Big Tech Capex ROI — 국가 전략 시리즈</div>
+      <div class="src-list">
+        DATA · Microsoft Q3 FY2026 8-K · AWS Q1 2026 Earnings · Alphabet Q1 2026 · Meta Q1 2026<br>
+        Tom's Hardware · CNBC · Morgan Stanley · Bank of America · Barclays · Goldman Sachs<br>
+        GeekWire · 24/7 Wall St · Futurum · DataCenterKnowledge · Allianz Trade<br>
+        작성 기준일 · 2026.06.26
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 Big Tech AI 인프라 투자 분석을 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. ~$725B은 애널리스트 추정 합산 기준이며, 개별사 가이던스 합산은 ~$710B입니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// active nav
+const secs=[...document.querySelectorAll('section.blk')];
+const navA=[...document.querySelectorAll('.nav-links a')];
+const spy=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){
+    navA.forEach(a=>a.style.color='');
+    const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+    if(cur) cur.style.color='var(--ink)';
+  }});
+},{threshold:.4});
+secs.forEach(s=>spy.observe(s));
+// mobile nav
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.querySelector('.nav-links');
+navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+});
+</script>
+</body>
+</html>
