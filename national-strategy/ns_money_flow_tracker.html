@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CHIPS Act $33.7B·Stargate $400B+·일본 JASM $20B·중국 $295B·Big Tech $725B — 6개국 정부 투자 집행률과 기업 자본지출 $2T+ 흐름 추적">
+<meta name="keywords" content="투자흐름,CHIPS Act,Stargate,TSMC,Nvidia,Big Tech,Capex,데이터센터,반도체,투자집행">
+<meta property="og:title" content="$2T의 행방 — 6개국 투자 집행 × Big Tech $725B Capex 흐름 추적">
+<meta property="og:description" content="CHIPS Act $33.7B·Stargate $400B+·일본 JASM $20B·중국 $295B·Big Tech $725B — 6개국 정부 투자 집행률과 기업 자본지출 $2T+ 흐름 추적">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_money_flow_tracker.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="$2T의 행방 — 6개국 투자 집행 × Big Tech $725B Capex 흐름 추적">
+<meta name="twitter:description" content="CHIPS Act $33.7B·Stargate $400B+·일본 JASM $20B·중국 $295B·Big Tech $725B — 6개국 정부 투자 집행률과 기업 자본지출 $2T+ 흐름 추적">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_money_flow_tracker.html">
+<title>$2T의 행방 — 6개국 투자 집행 × Big Tech $725B Capex 흐름 추적</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;        /* 레드 — 국가 전략 */
+    --current:#f87171;     /* 라이트 레드 */
+    --glow:#fca5a5;        /* 핑크 글로우 */
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* bar compare */
+  .bars{display:flex;align-items:flex-end;gap:24px;height:210px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar-item{width:100%;max-width:76px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar-item.b-dark{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar-item.b-accent{background:linear-gradient(180deg,var(--volt),#b91c1c);box-shadow:0 0 40px -8px var(--volt)}
+  .bar-item.b-peak{background:linear-gradient(180deg,var(--current),#ef4444);box-shadow:0 0 40px -8px var(--current)}
+  .bar-item .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.88rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--ink-2);text-align:center}
+  .barcol .cap{font-size:.7rem;color:var(--ink-3);margin-top:2px;text-align:center}
+
+  /* mini rows */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:100px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* thesis */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{color:var(--ink);font-weight:600}
+  .td-accent{color:var(--volt)!important;font-family:var(--mono);font-weight:700}
+  .td-current{color:var(--current)!important;font-family:var(--mono);font-weight:700}
+  .td-glow{color:var(--glow)!important;font-family:var(--mono);font-weight:700}
+  tbody tr:hover td{background:rgba(239,68,68,.03)}
+  tbody tr.bold-row td{color:var(--ink);font-weight:700}
+
+  /* ---------- SHARE CARDS ---------- */
+  .share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .share-grid.four{grid-template-columns:repeat(4,1fr)}
+  .scard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}
+  .scard .sc-flag{font-size:1.8rem;margin-bottom:10px}
+  .scard .sc-name{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
+  .scard .sc-pct{font-family:var(--mono);font-weight:800;font-size:2.2rem;letter-spacing:-.03em;margin:12px 0 6px}
+  .scard .sc-pct.jp{color:var(--volt)}
+  .scard .sc-pct.us{color:var(--current)}
+  .scard .sc-pct.eu{color:var(--glow)}
+  .scard .sc-pct.kr{color:var(--bull)}
+  .scard .sc-pct.tw{color:var(--ink-2)}
+  .scard .sc-pct.cn{color:#f59e0b}
+  .scard .sc-sub{font-size:.8rem;color:var(--ink-3);font-family:var(--mono)}
+  .scard .sc-detail{margin-top:14px;font-size:.82rem;color:var(--ink-2);line-height:1.55;text-align:left;border-top:1px solid var(--line);padding-top:14px}
+
+  /* ---------- CYCLE COMPARE ---------- */
+  .cycle-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .ccard .cc-era{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .ccard h3{font-size:1.18rem;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+  .ccard.current{border-color:var(--volt);border-width:1px}
+  .ccard.current h3{color:var(--volt)}
+  .stat-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.5)}
+  .stat-row:last-child{border-bottom:none}
+  .stat-row .sk{font-size:.85rem;color:var(--ink-2)}
+  .stat-row .sv{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--ink)}
+  .stat-row .sv.hi{color:var(--volt)}
+
+  /* ---------- DEMAND DRIVERS ---------- */
+  .drivers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  .driver{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .driver .dnum{font-family:var(--mono);font-weight:800;font-size:1.8rem;color:var(--volt);line-height:1}
+  .driver h4{font-size:.98rem;font-weight:750;margin:8px 0 6px;letter-spacing:-.01em}
+  .driver p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- PRICE TABLE ---------- */
+  .price-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px}
+  .price-panel h3{font-size:1.02rem;font-weight:750;margin-bottom:20px}
+
+  /* ---------- IMPLICATION BOX ---------- */
+  .impl-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .impl-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .impl-card .ic-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--volt);margin-bottom:10px}
+  .impl-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .impl-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .impl-card ul li{font-size:.88rem;color:var(--ink-2);line-height:1.55;padding-left:16px;position:relative}
+  .impl-card ul li::before{content:"→";position:absolute;left:0;color:var(--volt);font-family:var(--mono);font-weight:700}
+  .impl-card ul li b{color:var(--ink)}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .share-grid.four{grid-template-columns:1fr 1fr}
+    .cycle-grid{grid-template-columns:1fr}
+    .drivers{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "$2T의 행방 — 6개국 투자 집행 × Big Tech $725B Capex 흐름 추적",
+  "description": "CHIPS Act $33.7B·Stargate $400B+·일본 JASM $20B·중국 $295B·Big Tech $725B — 6개국 정부 투자 집행률과 기업 자본지출 $2T+ 흐름 추적",
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_money_flow_tracker.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>투자 흐름 추적기</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#flow">01 / 머니 플로우</a>
+      <a href="#government">02 / 정부 집행</a>
+      <a href="#bigtech">03 / Big Tech Capex</a>
+      <a href="#semiconductor">04 / 반도체 Capex</a>
+      <a href="#beneficiary">05 / 최종 수혜</a>
+      <a href="#implication">06 / 투자 시사점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">NATIONAL STRATEGY · 투자 지도 · 2026.06 기준</span>
+    <h1 class="hero-title">$2T의 행방<br>투자 흐름 <span class="hl">추적기</span></h1>
+    <p class="hero-sub">정부 계획 → 기업 집행 → 실제 지출 — 6개국 $4.6T 투자 약정이 어디로 흘러가는지 추적한다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$725<span class="u">B</span></div>
+        <div class="lab">Big Tech 4사 2026 Capex 합산. Amazon $200B + Microsoft $190B + Alphabet $185B + Meta $135B.</div>
+        <div class="src">SRC: Q1'26 Earnings Calls</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$56<span class="u">B</span></div>
+        <div class="lab">TSMC 2026 Capex. 전년 대비 +27-40%. 2nm 전환·Arizona·일본 확장.</div>
+        <div class="src">SRC: TSMC Q4'25 Guidance</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$193.7<span class="u">B</span></div>
+        <div class="lab">Nvidia FY2026 데이터센터 매출. 전년 대비 +68%. Big Tech Capex의 최종 도착지.</div>
+        <div class="src">SRC: Nvidia FY2026 10-K</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>돈의 흐름을 따라가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 FLOW ================= -->
+<section class="blk" id="flow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;머니 플로우 개관</div>
+      <h2 class="sec-title">$4.6T 투자 약정의 흐름도 — 정부 → 기업 → 장비 → 최종 수혜</h2>
+      <p class="sec-lead">6개국 정부 투자 계획은 보조금·세액공제·국채를 통해 기업으로 흘러간다. 기업은 그 돈으로 fab을 짓고, GPU를 사고, 데이터센터를 세운다. 최종 수혜자는 장비·소재·인프라 기업이다.</p>
+    </div>
+
+    <div class="price-panel reveal">
+      <h3>6개국 투자 → 집행 흐름 추적표</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>국가</th>
+              <th>프로그램</th>
+              <th>약정 규모</th>
+              <th>실 집행/진행</th>
+              <th>주요 수혜 기업</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇺🇸 미국</td>
+              <td>CHIPS Act</td>
+              <td class="td-accent">$33.7B (어워드)</td>
+              <td>Intel $2.2B 수령, TSMC 마일스톤 기반, 24/161 마일스톤 완료</td>
+              <td>Intel·TSMC·Samsung·Micron</td>
+            </tr>
+            <tr>
+              <td>🇺🇸 미국</td>
+              <td>Stargate</td>
+              <td class="td-accent">$500B (약정)</td>
+              <td class="td-current">$400B+ 커밋, Abilene 2동 운영중, 6개 추가 캠퍼스</td>
+              <td>OpenAI·SoftBank·Oracle</td>
+            </tr>
+            <tr>
+              <td>🇯🇵 일본</td>
+              <td>JASM(TSMC)</td>
+              <td class="td-accent">$20B+ (누적)</td>
+              <td class="td-current">Fab1 양산중(4nm), Fab2 3nm 건설중, 보조금 $4.62B</td>
+              <td>TSMC·Sony·Denso·Toyota</td>
+            </tr>
+            <tr>
+              <td>🇯🇵 일본</td>
+              <td>라피더스</td>
+              <td class="td-accent">¥1.7조 (보조금)</td>
+              <td>2nm GAA 개발중, 2027 양산 목표</td>
+              <td>IBM·imec 기술 파트너</td>
+            </tr>
+            <tr>
+              <td>🇨🇳 중국</td>
+              <td>6대 네트워크</td>
+              <td class="td-accent">$295B (계획)</td>
+              <td>초기 단계, 국산칩 보안 심사 9개 카테고리 통과</td>
+              <td>Huawei·China Mobile·China Telecom</td>
+            </tr>
+            <tr>
+              <td>🇪🇺 EU</td>
+              <td>EU Chips Act</td>
+              <td class="td-accent">€43B (목표)</td>
+              <td>€3.7B 5개 파일럿라인 커밋, 예산 85% 약정</td>
+              <td>ESMC(Dresden)·STMicro</td>
+            </tr>
+            <tr>
+              <td>🇰🇷 한국</td>
+              <td>K-칩스</td>
+              <td class="td-accent">150조+</td>
+              <td class="td-current">SK 103조(3년), 삼성 110조(2026), 용인 클러스터</td>
+              <td>SK하이닉스·삼성전자</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 발견</div>
+      <p>약정과 집행 사이의 간극이 핵심이다 — CHIPS Act $33.7B 어워드 중 실 수령은 일부, Stargate $500B 중 실 인프라는 Abilene 2동.
+      <span class="u">정부 투자는 '발표 효과'와 '실 집행'이 다르다. CHIPS Act는 마일스톤 기반으로 건설·양산 달성 후 지급한다. Stargate는 민간 약정으로 실현율이 가변적이다. 일본 JASM과 한국 삼성·SK는 민간 기업이 직접 투자를 집행하므로 실현율이 가장 높다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 GOVERNMENT ================= -->
+<section class="blk" id="government">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;정부 투자 집행 추적</div>
+      <h2 class="sec-title">CHIPS Act 15% vs JASM 100% — 집행률이 말하는 것</h2>
+      <p class="sec-lead">같은 '투자 계획'이라도 구조에 따라 집행 속도가 완전히 다르다. 마일스톤 기반(미국), 민간 직접 투자(일본·한국), 국채 기반(중국), 대출·규제 완화(EU).</p>
+    </div>
+
+    <div class="cycle-grid">
+      <div class="ccard current reveal">
+        <div class="cc-era">빠른 집행</div>
+        <h3>민간 직접 투자 — 일본·한국·대만</h3>
+        <div class="stat-row"><span class="sk">TSMC JASM Fab1</span><span class="sv hi">양산 중 (2024.12~)</span></div>
+        <div class="stat-row"><span class="sk">TSMC Arizona Fab1</span><span class="sv hi">양산 중 ($514M 수익)</span></div>
+        <div class="stat-row"><span class="sk">SK하이닉스 용인</span><span class="sv">Phase 1 내년 초 완공</span></div>
+        <div class="stat-row"><span class="sk">삼성 110조</span><span class="sv">2026 단년 집행 시작</span></div>
+        <div class="stat-row"><span class="sk">TSMC 2026 Capex</span><span class="sv hi">$52-56B 사상 최대</span></div>
+      </div>
+      <div class="ccard reveal d1">
+        <div class="cc-era">느린 집행</div>
+        <h3>보조금·국채 기반 — 미국·중국·EU</h3>
+        <div class="stat-row"><span class="sk">CHIPS Act</span><span class="sv">24/161 마일스톤 완료 (~15%)</span></div>
+        <div class="stat-row"><span class="sk">Stargate</span><span class="sv">$400B 커밋 vs 2동 운영</span></div>
+        <div class="stat-row"><span class="sk">중국 $295B</span><span class="sv">초안 단계(미확정)</span></div>
+        <div class="stat-row"><span class="sk">EU Chips Act</span><span class="sv">Bruegel "언더딜리버"</span></div>
+        <div class="stat-row"><span class="sk">Intel 마그데부르크</span><span class="sv">€30B 취소</span></div>
+      </div>
+    </div>
+
+    <div class="drivers reveal">
+      <div class="driver">
+        <div class="dnum">15%</div>
+        <h4>CHIPS Act 마일스톤 진행률</h4>
+        <p>161개 마일스톤 중 24개 완료. 건설·양산 달성 후 단계별 지급. Intel $2.2B 선수령. TSMC·Samsung은 마일스톤 기반 진행 중.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">$400B+</div>
+        <h4>Stargate 커밋 현황</h4>
+        <p>SoftBank $41B 투자 완료. Abilene 캠퍼스 2동 운영(450K GPU 목표). 6개 추가 캠퍼스 개발 중. OpenAI 자체칩 Titan(Broadcom, TSMC 3nm) 2H26 양산.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">100%</div>
+        <h4>JASM·한국 — 민간 직접 집행</h4>
+        <p>TSMC 구마모토 Fab1 양산중. SK하이닉스 Q1'26 매출 52.6조, OPM 72% 사상 최고. 삼성 110조 반도체 투자(역대 최대). 민간 자금이므로 집행 속도 가장 빠름.</p>
+      </div>
+      <div class="driver">
+        <div class="dnum">초안</div>
+        <h4>중국·EU — 구조적 지연</h4>
+        <p>중국 $295B은 NDRC 초안 단계로 미확정. EU Chips Act는 €43B 목표 대비 실 동원 자금 부족(Bruegel 평가). Intel 마그데부르크 취소가 최대 차질.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 BIG TECH ================= -->
+<section class="blk" id="bigtech">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;Big Tech Capex $725B</div>
+      <h2 class="sec-title">Amazon $200B · Microsoft $190B · Alphabet $185B · Meta $135B — AI에 베팅한 $725B</h2>
+      <p class="sec-lead">2026년 Big Tech 4사의 자본지출 합계는 $725B으로 전년 대비 +77%. 2027년에는 $1T을 돌파할 전망이다. 이 돈은 어디로 가는가.</p>
+    </div>
+
+    <div class="share-grid four reveal">
+      <div class="scard">
+        <div class="sc-flag">🟠</div>
+        <div class="sc-name">Amazon</div>
+        <div class="sc-pct us">$200B</div>
+        <div class="sc-sub">2026 Capex</div>
+        <div class="sc-detail">AWS 데이터센터 확장·자체칩 Trainium3·Graviton4. 2026 FCF 마이너스 전환 전망. Project Rainier(Anthropic) 포함.</div>
+      </div>
+      <div class="scard">
+        <div class="sc-flag">🔵</div>
+        <div class="sc-name">Microsoft</div>
+        <div class="sc-pct jp">$190B</div>
+        <div class="sc-sub">2026 Capex</div>
+        <div class="sc-detail">Azure AI 확장·Stargate 참여·Nvidia GPU 최대 고객(~19% NVDA 매출). OpenAI 파트너십 인프라.</div>
+      </div>
+      <div class="scard">
+        <div class="sc-flag">🟢</div>
+        <div class="sc-name">Alphabet</div>
+        <div class="sc-pct eu">$185B</div>
+        <div class="sc-sub">2026 Capex</div>
+        <div class="sc-detail">자체칩 TPU v6·Google Cloud $460B 계약 잔고. DC 건설 가속. DeepMind 인프라 투자.</div>
+      </div>
+      <div class="scard">
+        <div class="sc-flag">🟣</div>
+        <div class="sc-name">Meta</div>
+        <div class="sc-pct kr">$135B</div>
+        <div class="sc-sub">2026 Capex</div>
+        <div class="sc-detail">Llama 모델 인프라·Nvidia GPU(~9% NVDA 매출). 자체 MTIA 칩 개발. Reality Labs 병행.</div>
+      </div>
+    </div>
+
+    <div class="price-panel reveal" style="margin-top:24px">
+      <h3>Big Tech Capex → 지출처 분해</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>기업</th>
+              <th>2026 Capex</th>
+              <th>전년비</th>
+              <th>Nvidia GPU</th>
+              <th>자체 칩</th>
+              <th>DC 건설</th>
+              <th>기타</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Amazon</td>
+              <td class="td-accent">$200B</td>
+              <td>+77%</td>
+              <td>Trainium 전환 중</td>
+              <td>Trainium3·Graviton4</td>
+              <td>대규모 확장</td>
+              <td>Anthropic 투자</td>
+            </tr>
+            <tr>
+              <td>Microsoft</td>
+              <td class="td-current">$190B</td>
+              <td>+77%</td>
+              <td>최대 고객 (~19%)</td>
+              <td>Maia</td>
+              <td>Azure 확장</td>
+              <td>Stargate 참여</td>
+            </tr>
+            <tr>
+              <td>Alphabet</td>
+              <td class="td-glow">$185B</td>
+              <td>+77%</td>
+              <td>일부</td>
+              <td>TPU v6 (핵심)</td>
+              <td>$460B 잔고</td>
+              <td>DeepMind</td>
+            </tr>
+            <tr>
+              <td>Meta</td>
+              <td>$135B</td>
+              <td>+77%</td>
+              <td>주요 고객 (~9%)</td>
+              <td>MTIA</td>
+              <td>Llama 인프라</td>
+              <td>Reality Labs</td>
+            </tr>
+            <tr class="bold-row">
+              <td>합계</td>
+              <td class="td-accent">$725B</td>
+              <td>+77% YoY</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>2027 $1T+ 전망</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Big Tech 투자 테제</div>
+      <p>$725B의 최대 수혜자는 Nvidia다 — 그러나 자체 칩 전환이 가속되고 있다.
+      <span class="u">Microsoft(~19%)·Meta(~9%)가 Nvidia 매출의 핵심이다. 그러나 Google TPU·Amazon Trainium·OpenAI Titan 등 자체 칩 전환이 가속되면서, Nvidia 의존도는 점진적으로 감소할 전망이다. 2026년 Nvidia DC 매출 $193.7B(FY26)의 상당 부분이 이 4사에서 발생한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 SEMICONDUCTOR ================= -->
+<section class="blk" id="semiconductor">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;반도체 기업 Capex</div>
+      <h2 class="sec-title">TSMC $56B · 삼성 $73B — 반도체 Capex 역대 최대의 행방</h2>
+      <p class="sec-lead">글로벌 반도체 Capex가 $200B를 돌파했다. TSMC와 삼성의 역대 최대 투자가 어디에 집행되는지 추적한다.</p>
+    </div>
+
+    <div class="cycle-grid">
+      <div class="ccard current reveal">
+        <div class="cc-era">파운드리 왕</div>
+        <h3>TSMC — $52-56B Capex 분해</h3>
+        <div class="stat-row"><span class="sk">첨단 공정 (2nm 전환)</span><span class="sv hi">70-80% ($36-45B)</span></div>
+        <div class="stat-row"><span class="sk">스페셜티 공정</span><span class="sv">~10% ($5-6B)</span></div>
+        <div class="stat-row"><span class="sk">어드밴스드 패키징</span><span class="sv">10-20% ($5-11B)</span></div>
+        <div class="stat-row"><span class="sk">Arizona (미국)</span><span class="sv">$165B 장기계획 중 진행</span></div>
+        <div class="stat-row"><span class="sk">구마모토 (일본)</span><span class="sv">Fab1 양산·Fab2 3nm 건설</span></div>
+        <div class="stat-row"><span class="sk">2026 Capex 전년비</span><span class="sv hi">+27-40% 사상 최대</span></div>
+      </div>
+      <div class="ccard reveal d1">
+        <div class="cc-era">메모리+파운드리</div>
+        <h3>삼성 — 110조원($73B) Capex 분해</h3>
+        <div class="stat-row"><span class="sk">메모리 (HBM·DRAM·NAND)</span><span class="sv">최대 비중</span></div>
+        <div class="stat-row"><span class="sk">파운드리 (GAA 2nm)</span><span class="sv">확장 투자</span></div>
+        <div class="stat-row"><span class="sk">R&amp;D</span><span class="sv">포함</span></div>
+        <div class="stat-row"><span class="sk">전년 대비</span><span class="sv hi">+128% 역대 최대</span></div>
+        <div class="stat-row"><span class="sk">용인 클러스터</span><span class="sv">SK하이닉스와 병행</span></div>
+        <div class="stat-row"><span class="sk">SK하이닉스 Q1'26</span><span class="sv hi">매출 52.6조·OPM 72%</span></div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>TSMC 글로벌 fab 지도 — 돈이 가는 곳</h3>
+        <div class="ph-sub">2026년 기준 주요 팹 현황</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">N2</div>
+            <div class="mt"><b>대만 본토</b> — 2nm GAA 2025 Q4 양산 시작. Apple·Nvidia·AMD 주요 고객. 전체 Capex 70-80%가 여기에 집중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$165B</div>
+            <div class="mt"><b>Arizona</b> — Fab1 양산중(4nm, $514M 수익). Fab2 3nm 2027 양산. 12개 fab+4개 패키징 확장 검토. CHIPS Act $6.6B.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">3nm</div>
+            <div class="mt"><b>구마모토 JASM</b> — Fab1 양산(28/16nm). Fab2 3nm 건설중. Sony·Denso·Toyota 합작. 일본 보조금 ¥1.2조.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">ESMC</div>
+            <div class="mt"><b>드레스덴</b> — 28/22nm+16/12nm. NXP·Infineon·보쉬 합작. 2027 양산 목표. 유럽 차량용 반도체.</div>
+          </div>
+        </div>
+        <div class="foot">TSMC의 $52-56B Capex는 대만 본토 2nm에 70-80%가 집중된다. 해외 fab은 보조금 수혜로 비용을 분산하는 구조다.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>한국 반도체 — HBM이 돈을 번다</h3>
+        <div class="ph-sub">SK하이닉스·삼성 투자 현황</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">72%</div>
+            <div class="mt"><b>SK하이닉스 Q1'26 OPM</b> — 매출 52.6조원으로 분기 사상 최초 50조 돌파. 영업이익률 72%로 창사 이래 최고. HBM이 수익 엔진.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">103조</div>
+            <div class="mt"><b>SK그룹 3년 투자 계획</b> — 2028년까지 AI·반도체·주주환원. 용인 클러스터 Phase 1 내년 초 완공.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">110조</div>
+            <div class="mt"><b>삼성 반도체 2026 Capex</b> — 역대 최대 단년 투자. 메모리·파운드리·R&D 포함. HBM3E 수율 개선 집중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">HBM4</div>
+            <div class="mt"><b>차세대</b> — 2025 하반기 양산 시작. AI 서버당 HBM 탑재량 증가 추세. 글로벌 AI 반도체 시장 2028년 $133B 전망.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 BENEFICIARY ================= -->
+<section class="blk" id="beneficiary">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;최종 수혜 체인</div>
+      <h2 class="sec-title">돈의 최종 도착지 — 장비·소재·전력·냉각</h2>
+      <p class="sec-lead">어느 국가가 투자하든, 어느 기업이 fab을 짓든, 최종적으로 돈이 도착하는 곳은 같다. EUV 장비, 반도체 소재, AI 가속기, 전력 인프라.</p>
+    </div>
+
+    <div class="impl-grid">
+      <div class="impl-card reveal">
+        <div class="ic-tag">장비·소재</div>
+        <h3>반도체 장비 — 독점 수혜 구조</h3>
+        <ul>
+          <li><b>ASML</b> — EUV 95%+ 독점. 대당 $200M+. 모든 국가의 첨단 fab에 필수. 연간 600대+ 출하.</li>
+          <li><b>도쿄일렉트론·Applied Materials·Lam Research</b> — 식각·증착·세정 장비 70% 점유. 일본 370조 직접 수혜.</li>
+          <li><b>KLA Corporation</b> — 반도체 검사·계측 장비. 수율 관리의 핵심. 공정 미세화로 중요도 증가.</li>
+          <li><b>신에쓰화학·SUMCO</b> — 실리콘 웨이퍼 양대 공급사. 모든 반도체의 원재료. 일본 소재 생태계의 핵심.</li>
+        </ul>
+      </div>
+      <div class="impl-card reveal d1">
+        <div class="ic-tag">AI 인프라</div>
+        <h3>데이터센터 인프라 — $725B의 도착지</h3>
+        <ul>
+          <li><b>Nvidia</b> — FY26 DC 매출 $193.7B. Big Tech 4사가 핵심 고객. GPU는 AI 인프라의 중심축.</li>
+          <li><b>전력 인프라</b> — AI DC 전력 수요 폭증. SMR·가스터빈·송배전 장비. Stargate 단독 ~10GW 규모.</li>
+          <li><b>냉각 시스템</b> — 액침냉각·직접 칩 냉각 수요 급증. AI 칩 발열 증가로 필수 인프라.</li>
+          <li><b>네트워크 장비</b> — 고대역폭 인터커넥트(InfiniBand, Ethernet). DC 내부 연결. Broadcom·Arista 수혜.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">최종 수혜 테제</div>
+      <p>6개국 $4.6T 투자 경쟁의 유일한 확실성은 장비·소재 독점 기업이다.
+      <span class="u">ASML은 EUV를 독점하고, 도쿄일렉트론은 식각을 지배하고, 신에쓰화학은 웨이퍼를 공급한다. 어느 국가가 이기든, 어느 기업이 fab을 짓든, 이들의 장비·소재 없이는 반도체를 만들 수 없다. Nvidia는 AI 인프라의 핵심이지만 자체 칩 경쟁이 리스크다. 장비·소재는 대체재가 없다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 IMPLICATION ================= -->
+<section class="blk" id="implication">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;투자 시사점</div>
+      <h2 class="sec-title">머니 플로우가 가리키는 투자 기회와 리스크</h2>
+      <p class="sec-lead">$4.6T 투자 흐름을 추적한 결과, 확실한 수혜 구조와 숨겨진 리스크가 보인다.</p>
+    </div>
+
+    <div class="impl-grid">
+      <div class="impl-card reveal">
+        <div class="ic-tag">확실한 수혜</div>
+        <h3>머니 플로우 상 확정 수혜자</h3>
+        <ul>
+          <li><b>반도체 장비 Big 5</b> — ASML·도쿄일렉트론·Applied Materials·Lam Research·KLA. 6개국 모두의 fab 건설에 필수. 대체재 없음.</li>
+          <li><b>SK하이닉스 HBM</b> — AI 서버 필수 메모리. Nvidia 독점 공급. Q1'26 OPM 72%. HBM4 양산 시작.</li>
+          <li><b>TSMC</b> — 파운드리 70% 독점. $52-56B Capex 사상 최대. 모든 자체 칩(TPU·Trainium·Titan)도 TSMC에서 생산.</li>
+          <li><b>전력 인프라</b> — AI DC 전력 수요 폭증. 발전·송배전·냉각. 국가 불문 공통 수요.</li>
+        </ul>
+      </div>
+      <div class="impl-card reveal d1">
+        <div class="ic-tag">숨겨진 리스크</div>
+        <h3>머니 플로우 상 리스크 포인트</h3>
+        <ul>
+          <li><b>약정 ≠ 집행</b> — CHIPS Act 15% 마일스톤, Stargate 민간 약정, 중국 초안 단계. 발표 숫자를 액면 그대로 믿지 말 것.</li>
+          <li><b>Nvidia 고객 집중</b> — Big Tech 4사에 매출 40%+ 집중. 자체 칩 전환 가속 시 매출 다변화 리스크.</li>
+          <li><b>Big Tech FCF 압박</b> — $725B Capex로 Amazon FCF 마이너스 전환 전망. ROI 증명 압박 가중.</li>
+          <li><b>지정학 불확실성</b> — 미중 칩 전쟁 심화, 대만 양안 리스크, 관세 변동. 공급망 재편 비용 증가.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:24px">
+      <div class="tg">최종 투자 테제</div>
+      <p>돈의 흐름을 따라가면 답이 보인다 — 장비·소재·HBM이 6개국 투자 전쟁의 진짜 수혜자다.
+      <span class="u">6개국 정부가 $4.6T을 약정하고, Big Tech가 $725B을 집행하고, 반도체 기업이 $200B을 투자한다. 이 모든 돈이 최종적으로 도착하는 곳은 ASML의 EUV, 도쿄일렉트론의 식각 장비, SK하이닉스의 HBM, 그리고 전력 인프라다. 약정과 집행의 간극을 인식하고, 최종 수혜 체인에 집중하는 것이 이 흐름에서 추출할 수 있는 핵심 투자 통찰이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">투자 흐름 추적기 — 투자 지도</div>
+      <div class="src-list">
+        DATA · CHIPS Program Office · TSMC / Samsung / SK하이닉스 공시 · Nvidia FY2026 10-K<br>
+        Amazon / Microsoft / Alphabet / Meta Q1'26 Earnings · Bloomberg · CNBC · Tom's Hardware<br>
+        NDRC · European Commission · 일본 경제산업성 · Bruegel 2026<br>
+        작성 기준일 · 2026.06.26
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 국가 전략 투자 흐름 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+// bar heights
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.bar-item').forEach(b=>{
+    requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+  });
+});
+// scroll reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// active nav
+const secs=[...document.querySelectorAll('section.blk')];
+const navA=[...document.querySelectorAll('.nav-links a')];
+const spy=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){
+    navA.forEach(a=>a.style.color='');
+    const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+    if(cur) cur.style.color='var(--ink)';
+  }});
+},{threshold:.4});
+secs.forEach(s=>spy.observe(s));
+// mobile nav
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.querySelector('.nav-links');
+navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+});
+</script>
+</body>
+</html>
