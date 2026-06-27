@@ -36,10 +36,11 @@ stock-research/
 ├── glp1/                   ← GLP-1 비만치료 (HTML 6개)
 ├── ai-bio/                 ← AI 바이오/헬스케어 (HTML 6개)
 ├── space/                  ← 우주 경제 (HTML 6개)
+├── shipbuilding/           ← K-조선/해양 (HTML 4개)
 └── README.md
 ```
 
-## 완성된 리서치 시리즈 (11개, 리서치 MD 44개+, HTML 74편)
+## 완성된 리서치 시리즈 (12개, 리서치 MD 44개+, HTML 78편)
 
 ### 1. AI 인프라 시리즈 (8 MD + 5 HTML)
 - `data/research_ai_power_*.md` — 글로벌/한국 기업, 크로스 밸류에이션, 테마 (SMR, 가스터빈, 송배전, 냉각)
@@ -85,13 +86,15 @@ stock-research/
 ### 11. Physical AI (1 HTML)
 - `physical-ai/*.html` — Physical AI 밸류체인 개관
 
+### 12. K-조선/해양 시리즈 (4 HTML)
+- `shipbuilding/*.html` — 산업 개관, 투자 지도, LNG·AI 넥서스, 방산·그린 테마
+
 ## 향후 후보
 
 | # | 주제 | 키워드 |
 |---|------|--------|
 | 10 | 에너지 전환/2차전지 | LG엔솔, 삼성SDI, 전고체, ESS |
 | 11 | AI 반도체 설계 | NVIDIA vs Broadcom ASIC, FuriosaAI, Rebellions |
-| 12 | K-조선/해양플랜트 | HD한국조선, 한화오션, LNG운반선 |
 
 ---
 
