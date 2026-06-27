@@ -26,9 +26,10 @@ stock-research/
 │   ├── research_glp1_*.md          (4개)
 │   ├── research_ai_framework_*.md  (2개)
 │   └── research_new_topic_*.md     (3개, 로드맵)
-├── ai-infra/               ← AI 인프라 (HTML 3개)
+├── ai-infra/               ← AI 인프라 (HTML 5개)
 ├── hbm-packaging/          ← HBM/패키징 (HTML 11개)
 ├── defense/                ← K-방산 (HTML 16개)
+├── national-strategy/      ← 국가 전략·AI 인프라 병목 (HTML 7개)
 ├── physical-ai/            ← Physical AI (HTML 1개)
 ├── ai-sw/                  ← AI 소프트웨어 (HTML 8개)
 ├── robot/                  ← 로봇/휴머노이드 (HTML 8개)
@@ -38,11 +39,11 @@ stock-research/
 └── README.md
 ```
 
-## 완성된 리서치 시리즈 (11개, 리서치 MD 34개+, HTML 65편+)
+## 완성된 리서치 시리즈 (11개, 리서치 MD 44개+, HTML 74편)
 
-### 1. AI 인프라 시리즈 (8 MD + 3 HTML)
+### 1. AI 인프라 시리즈 (8 MD + 5 HTML)
 - `data/research_ai_power_*.md` — 글로벌/한국 기업, 크로스 밸류에이션, 테마 (SMR, 가스터빈, 송배전, 냉각)
-- `ai-infra/*.html` — AI 밸류체인 가이드, 딥다이브, 전력 인프라 투자 지도
+- `ai-infra/*.html` — AI 밸류체인 가이드, 딥다이브, 전력 인프라 투자 지도, 핵융합 에코시스템, 한국 AI 주권
 
 ### 2. HBM/패키징 시리즈 (4 MD + 11 HTML)
 - `data/research_hbm_pkg_*.md`, `hbm-packaging/*.html`
@@ -77,6 +78,12 @@ stock-research/
 ### 9. AI 투자 의사결정 프레임워크 (2 MD)
 - `data/research_ai_framework_money_flow.md` — AI 밸류체인 돈의 흐름 종합 분석 (빅테크 CapEx → 5개 구간, 60종목 크로스맵)
 - `data/research_ai_framework_selection.md` — 투자 종목 선별 프레임워크 (3대 조건, 60종목 스코어카드, 닷컴 비교, 포트폴리오 가이드)
+
+### 10. 국가 전략 시리즈 (7 HTML)
+- `national-strategy/*.html` — 6개국 AI·반도체 국가 전략 개관, 한국 영향 전략, 반도체 전쟁, AI·방산 넥서스, 병목 지도, 투자 흐름 추적기, Big Tech Capex ROI
+
+### 11. Physical AI (1 HTML)
+- `physical-ai/*.html` — Physical AI 밸류체인 개관
 
 ## 향후 후보
 
