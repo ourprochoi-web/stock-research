@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Claude Code $2.5B ARR·Devin $26B·Cursor SpaceX $60B·MCP 97M 다운로드·SaaSpocalypse $285B 충격 — Agentic AI 생태계 전면 분석">
+<meta name="keywords" content="에이전트AI,Claude Code,Cursor,Devin,Agentforce,MCP,A2A,SaaSpocalypse,LangChain,CrewAI,AI에이전트,코딩에이전트">
+<meta property="og:title" content="Agentic AI 생태계 — 코딩 에이전트에서 SaaSpocalypse까지">
+<meta property="og:description" content="Claude Code $2.5B ARR·Devin $26B·Cursor SpaceX $60B·MCP 97M 다운로드·SaaSpocalypse $285B 충격 — Agentic AI 생태계 전면 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_theme_agentic_ai.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Agentic AI 생태계 — 코딩 에이전트에서 SaaSpocalypse까지">
+<meta name="twitter:description" content="Claude Code $2.5B ARR·Devin $26B·Cursor SpaceX $60B·MCP 97M 다운로드·SaaSpocalypse $285B 충격 — Agentic AI 생태계 전면 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_theme_agentic_ai.html">
+<title>Agentic AI 생태계 — 코딩 에이전트에서 SaaSpocalypse까지</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#38bdf8;
+    --current:#7dd3fc;
+    --glow:#bae6fd;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(186,230,253,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:rgba(56,189,248,.25);transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(56,189,248,.12);color:var(--volt);border:1px solid rgba(56,189,248,.3)}
+  .ic-tag.pink{background:rgba(125,211,252,.12);color:var(--current);border:1px solid rgba(125,211,252,.3)}
+  .ic-tag.rose{background:rgba(186,230,253,.12);color:var(--glow);border:1px solid rgba(186,230,253,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.sky{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.blue{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.purple{background:linear-gradient(90deg,#a78bfa,#c4b5fd)}
+  .sbar-fill.other{background:var(--ink-3)}
+  .sbar-fill.bull-fill{background:linear-gradient(90deg,var(--bull),#86efac)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:var(--current)}
+  .compare-row .cr-num.bear{color:var(--bear)}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(186,230,253,.04));
+    border:1px solid rgba(56,189,248,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- BULL / BEAR BOXES ---------- */
+  .bb-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .bb-box{border-radius:18px;padding:30px}
+  .bb-box.bull-box{background:linear-gradient(135deg,rgba(72,213,151,.08),rgba(134,239,172,.04));border:1px solid rgba(72,213,151,.3)}
+  .bb-box.bear-box{background:linear-gradient(135deg,rgba(255,107,107,.08),rgba(255,107,107,.04));border:1px solid rgba(255,107,107,.3)}
+  .bb-box .bb-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+  .bb-box.bull-box .bb-tag{color:var(--bull)}
+  .bb-box.bear-box .bb-tag{color:var(--bear)}
+  .bb-box h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .bb-list{display:flex;flex-direction:column;gap:10px}
+  .bb-item{font-size:.88rem;color:var(--ink-2);line-height:1.55;padding-left:16px;position:relative}
+  .bb-item::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%}
+  .bb-box.bull-box .bb-item::before{background:var(--bull)}
+  .bb-box.bear-box .bb-item::before{background:var(--bear)}
+  .bb-item b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .bb-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Agentic AI 생태계 — 코딩 에이전트에서 SaaSpocalypse까지",
+  "description": "Claude Code $2.5B ARR·Devin $26B·Cursor SpaceX $60B·MCP 97M 다운로드·SaaSpocalypse $285B 충격 — Agentic AI 생태계 전면 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_theme_agentic_ai.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#bae6fd;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(186,230,253,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>Agentic AI · 생태계</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#coding-agents">01 / 코딩 에이전트</a>
+      <a href="#enterprise-agents">02 / 엔터프라이즈</a>
+      <a href="#protocols">03 / 프로토콜</a>
+      <a href="#market-vc">04 / 시장·VC</a>
+      <a href="#saaspocalypse">05 / SaaSpocalypse</a>
+      <a href="#investment-thesis">06 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI SW · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">Agentic AI<br><span class="hl">생태계</span></h1>
+    <p class="hero-sub">코딩 에이전트에서 SaaSpocalypse까지 — AI 에이전트가 소프트웨어 산업의 구조를 재편하고 있다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$47<span class="u">B</span></div>
+        <div class="lab">Anthropic ARR (2026.05, 런레이트). 코딩 에이전트 $6B+ 포함. $965B 밸류에이션으로 IPO 비밀 신청.</div>
+        <div class="src">SRC: Anthropic Series H IR · 2026.05</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$148<span class="u">B</span></div>
+        <div class="lab">AI 코딩 에이전트 시장 2034E. CAGR 55.2%. 2025년 기준 $7.4B에서 10년간 20배 성장 전망.</div>
+        <div class="src">SRC: MarketsandMarkets · Mordor Intelligence</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$285<span class="u">B</span></div>
+        <div class="lab">SaaSpocalypse 48시간 시총 증발 (2026.01). 30일간 $2T 소실. AI 에이전트의 per-seat SaaS 대체 공포.</div>
+        <div class="src">SRC: Bloomberg · 2026.01</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 CODING AGENTS ================= -->
+<section class="blk" id="coding-agents">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;코딩 에이전트</div>
+      <h2 class="sec-title">Claude Code $2.5B · Cursor $60B 인수 — 역대 최단 스케일링</h2>
+      <p class="sec-lead">코딩 에이전트는 Agentic AI의 최초·최대 수익화 영역이다. GA 출시 6개월 만에 $1B ARR을 달성한 Claude Code, 3년 만에 $4B+ ARR을 기록한 Cursor, 1,230% YoY로 폭증한 Devin이 시장을 이끈다. AI 코딩 에이전트 시장은 2034년 $148B(CAGR 55.2%)로 전망된다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>플레이어</th>
+            <th>ARR (최신)</th>
+            <th>밸류에이션</th>
+            <th>특이사항</th>
+            <th>시점</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">Claude Code (Anthropic)</td>
+            <td><span class="num-td">$2.5B</span></td>
+            <td>$965B (전사)</td>
+            <td>GA 출시 6개월→$1B, 3개월→$2.5B. 역대 최단 SaaS 성장.</td>
+            <td>2026.02</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Cursor (Anysphere)</td>
+            <td><span class="num-td">$4B+</span></td>
+            <td>$60B (SpaceX 인수)</td>
+            <td>설립 3년·$2B ARR — B2B 역사상 최단 기록. 2026.06.16 SpaceX 인수 발표.</td>
+            <td>2026.06</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Devin (Cognition AI)</td>
+            <td><span class="num-td">$492M</span></td>
+            <td>$26B (post-money)</td>
+            <td>YoY 1,230% 성장. Windsurf 잔여자산 ~$250M 인수로 ARR 2배 점프.</td>
+            <td>2026.05</td>
+          </tr>
+          <tr>
+            <td class="hl-td">GitHub Copilot (MS)</td>
+            <td><span class="num-td">~$848M</span></td>
+            <td>—</td>
+            <td>유료 구독 4.7M. Fortune 100 ~90% 도입. YoY 유료 성장 75%.</td>
+            <td>2026.01</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Bolt (StackBlitz)</td>
+            <td><span class="num-td">$40M</span></td>
+            <td>—</td>
+            <td>"프롬프트→풀스택 앱" 4.5개월 만에 $40M ARR.</td>
+            <td>2025</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* Claude Code·Cursor·Devin ARR은 업계 보도/추정치 기반. 공식 감사 재무제표 아님. GitHub Copilot ARR은 구독자 x 평균 단가 역산 추정.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">Claude Code</span>
+        <h3>역대 최단 SaaS 성장 궤적</h3>
+        <div class="ic-body">2025년 5월 GA 출시 이후 <b>6개월 만에 $1B ARR 달성</b> — ChatGPT보다 빠른 역대 최단 기록. 이후 3개월 만에 $2.5B로 2.5배 성장. 하루 약 $96M의 연환산 매출이 추가되는 속도이며, ARR이 약 6주마다 2배로 성장하는 전례 없는 궤적.<br><br>
+        주요 고객: <b>Netflix, Spotify, KPMG, L'Oreal, Salesforce</b>. 매출의 절반 이상이 엔터프라이즈에서 발생. AWS가 $35B 매출에 도달하는 데 13년 걸린 것과 대비된다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">ARR (2026.02)</div><div class="nv">$2.5B</div></div>
+          <div><div class="nk">Anthropic 기여</div><div class="nv">~20%</div></div>
+          <div><div class="nk">GA 이후</div><div class="nv">9개월</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Cursor (Anysphere)</span>
+        <h3>B2B 최단 $2B ARR · SpaceX $60B 인수</h3>
+        <div class="ic-body">설립 약 3년 만에 $2B ARR — <b>B2B 역사상 최단 기록</b>. 2026년 초 $4B+ ARR 달성. 2026년 말 $6B+ 가이던스 제시.<br><br>
+        <b>2026.06.16 SpaceX 인수 발표</b>: 전주식 거래 $60B. AI 개발 도구 역사상 최대 M&A. SpaceX IPO 직후 진행. xAI 통합 전략의 일환, 3Q 2026 클로즈 예상.<br><br>
+        Series E: <b>a16z, Thrive Capital 공동 리드, Nvidia 전략적 참여</b>. $2B 규모, 오버서브스크라이브.</div>
+        <div class="ic-nums">
+          <div><div class="nk">ARR</div><div class="nv">$4B+</div></div>
+          <div><div class="nk">인수가</div><div class="nv">$60B</div></div>
+          <div><div class="nk">2026E ARR</div><div class="nv">$6B+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Devin (Cognition AI)</span>
+        <h3>YoY 1,230% · Windsurf 인수로 ARR 2배</h3>
+        <div class="ic-body">2025.05 $37M → 2026.05 <b>$492M ARR</b>. YoY 1,230% 성장. 2026.05 $1B Series B+ 조달, post-money 밸류에이션 $26B.<br><br>
+        <b>Windsurf(Codeium) 인수</b>: OpenAI $3B 제안 유효기간 만료 → Google $2.4B reverse-acquihire(CEO 등 핵심 인력) → Cognition이 잔여 자산 <b>~$250M에 인수</b>(2025.12). 인수 후 ARR 2배, 엔터프라이즈 ARR 30%+ 상승.<br><br>
+        Cognition 코드의 <b>90%가 Devin이 작성</b> — AI-first 개발의 극단적 사례.</div>
+        <div class="ic-nums">
+          <div><div class="nk">ARR</div><div class="nv">$492M</div></div>
+          <div><div class="nk">YoY 성장</div><div class="nv">1,230%</div></div>
+          <div><div class="nk">밸류에이션</div><div class="nv">$26B</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">GitHub Copilot · Bolt · 기타</span>
+        <h3>시장 점유 42% Copilot · 4.5개월 $40M Bolt</h3>
+        <div class="ic-body"><b>GitHub Copilot</b>: 유료 구독자 4.7M(YoY +75%), Fortune 100 ~90% 도입, 도입 기업 50,000+. AI 코딩 유료 시장 점유율 42%. 개발자 태스크 완료 속도 <b>55% 향상</b>(4,800명 연구), 코드의 평균 46% 생성(Java 61%).<br><br>
+        <b>Bolt(StackBlitz)</b>: "프롬프트→풀스택 앱" 브라우저 도구. 4.5개월 만에 <b>$40M ARR</b>.<br><br>
+        <b>Replit Agent 3</b>: 이전 대비 "10배 자율성", 50+ 언어, 앱 생성·테스트·배포 일체형.<br>
+        <b>Vercel v0</b>: 생성 UI가 경량 리뷰만으로 프로덕션 배포 수준 달성.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Copilot 유료 구독</div><div class="nv">4.7M</div></div>
+          <div><div class="nk">Bolt ARR</div><div class="nv">$40M</div></div>
+          <div><div class="nk">시장 CAGR</div><div class="nv">55.2%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>코딩 에이전트는 AI 수익화의 최전선이며, 성장 속도는 역대 어떤 SaaS보다 빠르다.
+      <span class="u">Claude Code·Cursor·Devin 세 플레이어의 합산 ARR이 2026년 기준 $7B+를 넘어서고 있다. 특히 Cursor의 SpaceX $60B 인수는 코딩 에이전트가 단순 개발 도구를 넘어 전략적 AI 인프라로 자리매김했음을 시사한다. 시장은 2034년 $148B(CAGR 55.2%)로 전망되며, 현재는 초기 성장 단계다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 ENTERPRISE AGENTS ================= -->
+<section class="blk" id="enterprise-agents">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;엔터프라이즈 에이전트</div>
+      <h2 class="sec-title">Agentforce $800M · M365 Copilot 20M seats</h2>
+      <p class="sec-lead">기존 엔터프라이즈 SW 대기업들이 AI 에이전트를 핵심 성장 엔진으로 전환하고 있다. Salesforce Agentforce ARR 169% YoY, Microsoft M365 Copilot 단일 분기 +5M seats, ServiceNow AI 목표 50% 상향이 그 증거다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>플레이어</div>
+        <div>AI 매출</div>
+        <div>성장률</div>
+        <div>핵심 지표</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Salesforce Agentforce</div>
+        <div><span class="cr-num">~$800M ARR</span></div>
+        <div><span class="cr-num">YoY 169%</span></div>
+        <div>거래 29,000+, AWU 24억 처리</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Microsoft M365 Copilot</div>
+        <div><span class="cr-num">~$7.2B ARR</span></div>
+        <div><span class="cr-num">YoY 160%</span></div>
+        <div>유료 시트 20M, Fortune 500 60%+</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">ServiceNow Now Assist</div>
+        <div><span class="cr-num">$750M ACV</span></div>
+        <div><span class="cr-num">$1M+ YoY 130%</span></div>
+        <div>2026 AI 목표 $1B → $1.5B 상향</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">SAP Joule</div>
+        <div><span class="cr-num">—</span></div>
+        <div><span class="cr-num amber">40+ 에이전트</span></div>
+        <div>2,400+ 스킬, 200+ 특화 에이전트</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">Salesforce Agentforce</span>
+        <h3>AWU 과금 모델 — per-seat SaaS 대체 실험</h3>
+        <div class="ic-body">FY26 Q4(2026.01) 기준 Agentforce ARR <b>~$800M, YoY 169%</b>. AI 관련 ARR(Agentforce + Data 360) $2.9B+ 달성, YoY 200%+.<br><br>
+        <b>Atlas 추론 엔진</b>: 자율적 계획·실행·피드백. Agentic Work Units(AWU) 24억 처리. 토큰 소비량 ~20조.<br><br>
+        Top 100 딜의 <b>75%+ 가 Agentforce + Data 360 동시 포함</b>. 프로덕션 배포 계정 QoQ 50% 증가.<br><br>
+        과금 모델: 대화당 과금 → <b>AWU 기반 과금</b>으로 전환 중. SaaS per-seat 모델 대체 실험의 선봉.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Agentforce ARR</div><div class="nv">~$800M</div></div>
+          <div><div class="nk">AWU 처리</div><div class="nv">24억</div></div>
+          <div><div class="nk">거래 수</div><div class="nv">29,000+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Microsoft M365 Copilot</span>
+        <h3>단일 분기 +5M seats · Fortune 500 60%+ 도입</h3>
+        <div class="ic-body">FY26 Q3(2026.04) 유료 시트 <b>20M — 단일 분기 최대 +5M</b>. FY26 Q2 대비 160% YoY 성장.<br><br>
+        Fortune 500의 <b>60%+가 각 10,000 시트 이상</b> 계약. 추정 연환산 매출 ~$7.2B. Copilot 관련 전체 매출 $14B+(연환산).<br><br>
+        <b>Copilot Studio</b>: 자연어로 에이전트를 생성하는 노코드 빌더. Microsoft Agent 365와 통합하여 에이전트 거버넌스·비용·성과 통합 대시보드 제공.<br><br>
+        과금 $30/user/월(연간 커밋). "에이전트를 쓸지 말지가 아니라, 얼마나 의도적으로 투입할 것인가"가 2026 핵심 포지셔닝.</div>
+        <div class="ic-nums">
+          <div><div class="nk">유료 시트</div><div class="nv">20M</div></div>
+          <div><div class="nk">추정 ARR</div><div class="nv">~$7.2B</div></div>
+          <div><div class="nk">Fortune 500</div><div class="nv">60%+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">ServiceNow Now Assist</span>
+        <h3>$750M ACV · 목표 50% 상향 · Moveworks $3B 인수</h3>
+        <div class="ic-body">2026 Q1 Now Assist ACV <b>$750M</b>. $1M+ ACV 고객 YoY 130%+ 성장. 기대 이상의 도입 속도로 2026 AI 매출 목표를 <b>$1B → $1.5B(+50% 상향)</b>.<br><br>
+        <b>Moveworks ~$3B 인수</b>: 자연어 AI 플랫폼 역량 확보. 직원 자기서비스, IT 자동화, 엔터프라이즈 검색을 ServiceNow 플랫폼에 통합.<br><br>
+        2030 구독 매출 목표 <b>$30B+</b>. 전체 IT/HR/운영 워크플로우를 AI 에이전트로 자동화하는 "통합 플랫폼" 전략.</div>
+        <div class="ic-nums">
+          <div><div class="nk">ACV</div><div class="nv">$750M</div></div>
+          <div><div class="nk">2026 AI 목표</div><div class="nv">$1.5B</div></div>
+          <div><div class="nk">2030 목표</div><div class="nv">$30B+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">SAP Joule</span>
+        <h3>40+ 에이전트 · 2,400+ 스킬 · Joule Studio GA</h3>
+        <div class="ic-body">2026년 기준 <b>40+ AI 에이전트, 2,400+ Joule 스킬</b> 제공 — 18개월 전 대비 비약적 확대.<br><br>
+        <b>Joule Studio</b>: GA 출시(2026 Q1). 자연어 기반 에이전트 빌더. <b>SAP Autonomous Suite</b>: 50+ 도메인별 Joule Assistant, 200+ 특화 에이전트 오케스트레이션. 재무·공급망·조달·HR·CX 전 영역 커버.<br><br>
+        <b>파트너십</b>: Anthropic(Claude 기반 HR·조달 에이전트), AWS, Google Cloud, Microsoft와 에이전트 간 상호운용성 확보. 멀티 클라우드, 멀티 LLM 전략.</div>
+        <div class="ic-nums">
+          <div><div class="nk">AI 에이전트</div><div class="nv">40+</div></div>
+          <div><div class="nk">Joule 스킬</div><div class="nv">2,400+</div></div>
+          <div><div class="nk">특화 에이전트</div><div class="nv">200+</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>엔터프라이즈 AI 에이전트는 per-seat 과금의 종말을 실험하고 있다.
+      <span class="u">Salesforce의 AWU 기반 과금 전환은 AI 에이전트가 사람을 대체할 경우 per-seat SaaS 모델이 붕괴할 수 있음을 인식한 선제적 대응이다. Microsoft(20M seats·$7.2B ARR)는 규모, Salesforce(169% YoY)는 속도, ServiceNow(50% 목표 상향)는 침투율로 각각 차별화하고 있다. 엔터프라이즈 에이전트 전쟁은 이제 시작 단계다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 PROTOCOLS ================= -->
+<section class="blk" id="protocols">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;프로토콜 &amp; 인프라</div>
+      <h2 class="sec-title">MCP 10K+ 서버 · 97M 다운로드 — AI의 USB-C</h2>
+      <p class="sec-lead">AI 에이전트 생태계의 배관(plumbing)이 완성되고 있다. MCP(도구 연결)와 A2A(에이전트 간 통신)가 표준화되고, LangChain·CrewAI·MS Agent Framework 1.0이 오케스트레이션 레이어를 형성하고 있다.</p>
+    </div>
+
+    <div class="info-grid reveal">
+      <div class="icard">
+        <span class="ic-tag red">MCP (Model Context Protocol)</span>
+        <h3>10K+ 서버 · 97M 다운로드 · Linux Foundation 이관</h3>
+        <div class="ic-body">Anthropic이 2024.11.25 오픈소스 출시. 공개 서버 <b>10,000+</b>(2025.12). 월간 SDK 다운로드 <b>97M+(Python + TypeScript)</b>. GitHub 리포지토리(mcp-server 토픽) 15,926개(2026.05).<br><br>
+        프로덕션 도입 기업 <b>41%</b>(SW 조직 조사 대상, Stacklok 2026).<br><br>
+        <b>거버넌스 전환</b>: 2025.12 Anthropic이 MCP를 Linux Foundation 산하 <b>Agentic AI Foundation에 기부</b>. Anthropic, Block, OpenAI 공동 설립. HTTP/TCP/IP와 같은 공유 인프라로 포지셔닝.<br><br>
+        <b>플랫폼 지원</b>: ChatGPT, Cursor, Gemini, Microsoft Copilot, VS Code 등 주요 플랫폼 모두 지원.</div>
+        <div class="ic-nums">
+          <div><div class="nk">공개 서버</div><div class="nv">10,000+</div></div>
+          <div><div class="nk">SDK 다운로드/월</div><div class="nv">97M+</div></div>
+          <div><div class="nk">프로덕션 도입</div><div class="nv">41%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">A2A (Agent-to-Agent Protocol)</span>
+        <h3>150+ 조직 · GitHub 22K 스타 · Google 주도</h3>
+        <div class="ic-body">Google 주도 출시(2025). 참여 조직 <b>150+</b>(2026.04). GitHub 스타 <b>22,000+</b>.<br><br>
+        프로덕션 SDK: <b>Python, JS, Java, Go, .NET 5개 언어</b> 지원.<br><br>
+        <b>MCP vs A2A</b>: MCP는 에이전트↔도구 간 연결(도구 호출), A2A는 에이전트↔에이전트 간 통신(업무 위임·협업). 상호 보완적 관계. Linux Foundation 산하 관리. Google, Microsoft, AWS 딥 통합.<br><br>
+        <b>적용 수직</b>: 공급망, 금융서비스, 보험, IT 운영 등에서 교차 벤더·교차 환경 자율 시스템 조율에 활용.</div>
+        <div class="ic-nums">
+          <div><div class="nk">참여 조직</div><div class="nv">150+</div></div>
+          <div><div class="nk">GitHub 스타</div><div class="nv">22,000+</div></div>
+          <div><div class="nk">SDK 언어</div><div class="nv">5개</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid-3 reveal" style="margin-top:22px">
+      <div class="icard">
+        <span class="ic-tag rose">LangChain / LangGraph</span>
+        <h3>$1.25B 밸류에이션 · Fortune 500 35%</h3>
+        <div class="ic-body">월간 다운로드 <b>90M</b>(LangChain + LangGraph 합산). Fortune 500 도입률 35%. LangSmith 트레이스 볼륨 YoY 12배.<br><br>
+        <b>$125M Series B, 밸류에이션 $1.25B</b>(2025.10). IVP 리드, Sequoia·Benchmark·CapitalG 참여.<br><br>
+        주요 고객: Replit, Clay, Harvey, Rippling, Cloudflare, Workday, Cisco. LangChain 1.0 + LangGraph 1.0 안정 버전 출시.</div>
+        <div class="ic-nums">
+          <div><div class="nk">월 다운로드</div><div class="nv">90M</div></div>
+          <div><div class="nk">밸류에이션</div><div class="nv">$1.25B</div></div>
+          <div><div class="nk">F500 도입</div><div class="nv">35%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">CrewAI</span>
+        <h3>47,800 GitHub 스타 · F500 절반 사용</h3>
+        <div class="ic-body">GitHub 스타 <b>47,800</b>(2026.04). PyPI 다운로드 27M+. 12개월 실행 횟수 <b>~2B</b>.<br><br>
+        펀딩: $18M Series A + 추가 총 <b>~$44.5M</b>. Insight Partners 리드, Andrew Ng, Craft Ventures 참여.<br><br>
+        Fortune 500의 절반 가까이가 사용. 150 엔터프라이즈 베타 고객(2024). 멀티에이전트 협업에 특화된 프레임워크.</div>
+        <div class="ic-nums">
+          <div><div class="nk">GitHub 스타</div><div class="nv">47,800</div></div>
+          <div><div class="nk">12개월 실행</div><div class="nv">~2B</div></div>
+          <div><div class="nk">PyPI 다운로드</div><div class="nv">27M+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">MS Agent Framework 1.0</span>
+        <h3>AutoGen + Semantic Kernel 통합 · 2026.04 출시</h3>
+        <div class="ic-body">2026.04.03 <b>Agent Framework 1.0 출시</b>: AutoGen 심플 에이전트 추상화 + Semantic Kernel 엔터프라이즈 기능(세션 상태·미들웨어·텔레메트리) + 그래프 기반 멀티에이전트 워크플로우 통합.<br><br>
+        .NET, Python 지원. MIT 라이선스 오픈소스. <b>A2A·AG-UI·MCP 프로토콜 모두 지원</b>. Azure 배포 시 scale-to-zero 과금(유휴 시 무과금).<br><br>
+        AutoGen·Semantic Kernel은 메인터넌스 모드 전환.</div>
+        <div class="ic-nums">
+          <div><div class="nk">출시</div><div class="nv">2026.04</div></div>
+          <div><div class="nk">언어</div><div class="nv">.NET/Python</div></div>
+          <div><div class="nk">프로토콜</div><div class="nv">A2A+MCP</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>MCP + A2A = AI 에이전트의 TCP/IP 레이어 완성.
+      <span class="u">MCP의 Linux Foundation 이관은 특정 벤더 종속 없이 전체 생태계가 표준을 공유하는 인터넷 프로토콜 모델을 재현한다. 프로덕션 MCP 도입율 41%는 이미 임계점을 넘었으며, SaaS 기업들이 MCP 서버를 지원하지 않으면 AI 에이전트 생태계에서 소외될 위험이 현실화되고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 MARKET & VC ================= -->
+<section class="blk" id="market-vc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;시장 규모 &amp; VC</div>
+      <h2 class="sec-title">AI 에이전트 $5.25B → $294.7B(2035) · VC $2.9B(2025)</h2>
+      <p class="sec-lead">AI 에이전트 시장은 2024년 $5.25B에서 2035년 $294.7B로 11년간 56배 성장이 전망된다. VC 투자는 2025년 $2.9B(+93%)로 급증했으며, Gartner는 2026년 말까지 엔터프라이즈 앱의 40%가 AI 에이전트를 내장할 것으로 예측한다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>연도</th>
+            <th>AI 에이전트 시장</th>
+            <th>성장률/비고</th>
+            <th>출처</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2024</td>
+            <td><span class="num-td">$5.25B</span></td>
+            <td>—</td>
+            <td>기준년도</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025</td>
+            <td><span class="num-td">$7.84B</span></td>
+            <td>+49% YoY</td>
+            <td>MarketsandMarkets</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2026E</td>
+            <td><span class="num-td">$10.9~12.1B</span></td>
+            <td>Gartner 범위</td>
+            <td>Gartner 2026</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2030E</td>
+            <td><span class="num-td">$52.6B</span></td>
+            <td>CAGR 46.3%</td>
+            <td>MarketsandMarkets</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2035E</td>
+            <td><span class="num-td">$294.7B</span></td>
+            <td>11년간 56배</td>
+            <td>Precedence Research</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 시장 정의에 따라 규모가 2배 이상 차이 날 수 있음. AI 에이전트 vs AI 코드 도구 vs 전체 GenAI 시장 구분 주의.</div>
+    </div>
+
+    <div class="macro-grid reveal" style="margin-top:32px">
+      <div class="panel">
+        <h3>VC 투자 트렌드 — Agentic AI 특화</h3>
+        <div class="ph-sub">2024~2026 · 딜 수 · 스테이지 분포</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$1.5B</div>
+            <div class="mt"><b>2024년 투자 (31건)</b> — Agentic AI 특화. 시장 형성 초기 단계. Seed+Series A가 여전히 주류.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$2.9B</div>
+            <div class="mt"><b>2025년 투자 (50건)</b> — YoY 93% 증가. Series B 이후가 77%로 확대. 시장 성숙화 신호.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$1.1B</div>
+            <div class="mt"><b>2026년 1~5월 (29건)</b> — 전년 동기 대비 2배 자본, 3배 딜 활동. 메가라운드 집중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$109B</div>
+            <div class="mt"><b>미국 전체 AI 민간 투자 (2024)</b> — 그 중 GenAI/Agentic AI $33.9B(YoY +18.7%).</div>
+          </div>
+        </div>
+        <div class="foot">* CB Insights 기준. Agentic AI 특화 딜만 집계. 전체 AI VC 포함 시 규모 대폭 상이.</div>
+      </div>
+
+      <div class="panel">
+        <h3>Gartner 예측 & 프로덕션 격차</h3>
+        <div class="ph-sub">2026 전망 · 현실 격차 · ROI 실태</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">40%</div>
+            <div class="mt"><b>Gartner: 2026년 말까지 엔터프라이즈 앱의 40%가 AI 에이전트 내장</b> (2025년 &lt;5% 대비). 단, 전체 앱 vs 신규/업데이트 앱 기준 주의.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">80%</div>
+            <div class="mt"><b>실제 2026 Q1</b>: 신규/업데이트 앱의 80%가 최소 1개 AI 에이전트 탑재 (2024년 33% 대비). 빠른 도입 속도.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">31%</div>
+            <div class="mt"><b>프로덕션 배포 기업</b>: 최소 1개 AI 에이전트를 프로덕션 운영 중. 업종별: 은행·보험 47%, 헬스케어 18%, 정부 14%.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">3.7x</div>
+            <div class="mt"><b>ROI</b>: IDC/Microsoft 기준 GenAI 투자 $1당 평균 3.7배 수익. 단, IBM 서베이에서는 25%만 기대 ROI 달성 — 측정 기준 상이.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:32px">
+      <div class="indcard">
+        <div class="ind-num">$294B</div>
+        <div class="ind-lab">AI 에이전트 시장<br>2035E</div>
+        <div class="ind-tag">Precedence Research</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">$2.9B</div>
+        <div class="ind-lab">Agentic AI VC<br>투자 (2025)</div>
+        <div class="ind-tag">CB Insights</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">40%</div>
+        <div class="ind-lab">Gartner 예측<br>앱 에이전트 내장</div>
+        <div class="ind-tag">2026년 말</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">46.3%</div>
+        <div class="ind-lab">AI 에이전트 시장<br>CAGR (2030E)</div>
+        <div class="ind-tag">MarketsandMarkets</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">3.7x</div>
+        <div class="ind-lab">GenAI 투자<br>평균 ROI</div>
+        <div class="ind-tag">IDC/Microsoft</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>Agentic AI 시장은 성장 속도보다 프로덕션 전환율이 더 중요한 지표다.
+      <span class="u">VC 투자 $2.9B(+93%)와 GitHub 배포율 80%는 공급 측면의 과열 신호다. 반면 기업 수준의 실제 프로덕션 배포는 31%에 그치며, ROI 달성률도 25%(IBM 기준)에 불과하다. 이 격차가 좁혀지는 속도가 시장 성숙의 핵심 지표이며, Gartner의 "2027년 Agentic AI 프로젝트 40% 취소" 경고는 이 갭에서 비롯된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 SAASPOCALYPSE ================= -->
+<section class="blk" id="saaspocalypse">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;SaaSpocalypse &amp; M&amp;A</div>
+      <h2 class="sec-title">$285B / 48h 증발 · $2T / 30일 · SpaceX-Cursor $60B</h2>
+      <p class="sec-lead">2026년 1월, AI 에이전트가 기존 SaaS 워크플로우를 대체할 수 있다는 인식이 확산되며 48시간 내 SaaS 시총 $285B이 증발했다. 30일 누적으로는 $2T 소실. 동시에 AI 네이티브 기업들의 M&A는 역대 최고 속도로 진행되고 있다.</p>
+    </div>
+
+    <div class="future-grid reveal">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● SaaSpocalypse 충격</div>
+        <h3>$285B / 48시간 · $2T / 30일</h3>
+        <div class="fc-body"><b>트리거</b>: 2026년 1월 Anthropic의 Claude Cowork·Claude Code 출시 → AI 에이전트가 기존 SaaS 워크플로우를 대체할 수 있다는 인식 확산.<br><br>
+        <b>시장 충격</b>: 48시간 내 SaaS 기업 시가총액 <b>$285B 증발</b>. 30일간 <b>$2T 시총 소실</b>.<br><br>
+        <b>최대 피해</b>: Atlassian(-35%), Salesforce(-28%) — 태스크 트래킹·데이터 입력·고객 로깅 등 AI 에이전트 자동화에 가장 취약한 워크플로우.<br><br>
+        <b>핵심 위협</b>: per-seat SaaS 과금 모델의 존재론적 위기. AI 에이전트가 태스크 수준 업무를 처리하면 human seat 수요 감소.</div>
+        <div class="fc-note">SaaSpocalypse는 2026.02 용어 등장. $285B 48h 충격은 다수 매체 보도이나 정확한 산정 기준은 불명확. $2T 30일 소실도 산정 기준 주의 필요.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 반론 — SaaS의 생존 조건</div>
+        <h3>선택적 언번들링 · 데이터 모트 · 컴플라이언스</h3>
+        <div class="fc-body">SaaS가 AI 에이전트에 완전 대체되지 않는 이유:<br><br>
+        <b>컴플라이언스·보안·감사 추적</b>: 금융·의료·법률 등 규제 산업의 워크플로우는 AI 에이전트가 단독으로 대체하기 어렵다.<br><br>
+        <b>데이터 모트·네트워크 효과</b>: 고유 데이터셋, 사용자 네트워크, 수직 통합을 보유한 플랫폼은 AI 에이전트를 오히려 레버리지로 활용.<br><br>
+        <b>선택적 언번들링(Selective Unbundling)</b>: 단순 반복 태스크만 AI 에이전트가 대체, 복잡한 워크플로우는 SaaS 내에서 AI 에이전트를 내장하는 형태로 공존. 이것이 가장 유력한 시나리오.</div>
+        <div class="fc-note">Salesforce Agentforce의 AWU 과금 전환은 SaaS가 AI 에이전트와 경쟁하는 것이 아니라 내장하는 방향으로 진화하는 현실을 보여준다.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>인수자</th>
+            <th>대상</th>
+            <th>금액</th>
+            <th>시점</th>
+            <th>전략적 의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">SpaceX</td>
+            <td>Cursor (Anysphere)</td>
+            <td><span class="num-td">$60B</span></td>
+            <td>2026.06</td>
+            <td>AI 개발 도구 역대 최대 M&A. xAI 통합 전략.</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Google</td>
+            <td>Windsurf 핵심 인력</td>
+            <td><span class="num-td">$2.4B</span></td>
+            <td>2025</td>
+            <td>Reverse-acquihire. CEO·공동창업자 영입.</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Cognition AI</td>
+            <td>Windsurf 잔여자산</td>
+            <td><span class="num-td">~$250M</span></td>
+            <td>2025.12</td>
+            <td>Devin과 통합. ARR 2배 점프.</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ServiceNow</td>
+            <td>Moveworks</td>
+            <td><span class="num-td">~$3B</span></td>
+            <td>2025~2026</td>
+            <td>자연어 AI 플랫폼 역량 확보.</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Alphabet</td>
+            <td>Wiz</td>
+            <td><span class="num-td">$32B</span></td>
+            <td>2025~2026</td>
+            <td>클라우드 보안 + AI 통합.</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Palo Alto Networks</td>
+            <td>CyberArk</td>
+            <td><span class="num-td">$25B</span></td>
+            <td>2025~2026</td>
+            <td>ID 보안 + AI 에이전트 보안 레이어.</td>
+          </tr>
+          <tr>
+            <td class="hl-td">OpenAI</td>
+            <td>Io (AI 디바이스)</td>
+            <td><span class="num-td">$6.5B</span></td>
+            <td>2026</td>
+            <td>1년차 스타트업. 에이전트 하드웨어 진출.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* CB Insights: 2026 Q1 AI M&A 266건, YoY 90% 증가. $500M+ 전략적 딜의 ~50%가 AI 네이티브 기업 (2024년 25% 대비).</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>SaaSpocalypse는 공포이고, 사실은 AI 에이전트가 SaaS를 대체가 아닌 재편하고 있다.
+      <span class="u">단순 반복 워크플로우(태스크 트래킹, 데이터 입력, 고객 로깅)는 AI 에이전트가 실질적으로 대체하고 있다. 그러나 컴플라이언스·보안·심층 통합 영역은 AI 에이전트를 내장한 SaaS가 강화되는 방향이다. Salesforce의 AWU 과금 전환과 ServiceNow의 $1.5B 목표 상향은 이 재편의 수혜자가 AI를 빠르게 내장한 레거시 플랫폼임을 보여준다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">Bull vs Bear — 에이전트 침투율 vs 40% 프로젝트 취소</h2>
+      <p class="sec-lead">Agentic AI 생태계의 투자 논점은 성장률(Bull) vs 실행 격차(Bear)의 구도다. 코딩 에이전트·엔터프라이즈 에이전트·프로토콜 표준화의 삼각형이 강세론의 근거이며, 40% 프로젝트 취소·ROI 25% 달성률·SaaS 과잉 공포가 약세론을 형성한다.</p>
+    </div>
+
+    <div class="bb-grid reveal">
+      <div class="bb-box bull-box">
+        <div class="bb-tag">BULL CASE · 강세 논점</div>
+        <h3>에이전트 침투율 상승 + 프로토콜 표준화</h3>
+        <div class="bb-list">
+          <div class="bb-item"><b>코딩 에이전트 폭발적 성장</b>: Claude Code·Cursor·Devin 합산 $7B+ ARR, CAGR 55.2% 시장. "소프트웨어가 소프트웨어를 만드는" 재귀적 구조가 개발 비용을 수십 배 절감.</div>
+          <div class="bb-item"><b>프로토콜 표준화 완성</b>: MCP(10K+ 서버, 97M 다운로드) + A2A(150+ 조직)가 사실상 표준으로 정착. TCP/IP처럼 전체 생태계의 배관이 완성되는 단계. 생태계 락인 효과.</div>
+          <div class="bb-item"><b>엔터프라이즈 수요 실증</b>: M365 Copilot 20M seats, Agentforce 29,000+ 거래, ServiceNow 목표 50% 상향 — 공시 기반 수요 증거. 과금 모델 혁신(AWU)이 TAM 확장.</div>
+          <div class="bb-item"><b>Gartner 40% 내장 예측</b>: 2026년 말 기준 엔터프라이즈 앱 40% 에이전트 내장. 신규 앱 기준 이미 80% 달성. 임계점 돌파 신호.</div>
+          <div class="bb-item"><b>M&A 가속</b>: 2026 Q1 AI M&A 266건(YoY 90%), SpaceX $60B·Wiz $32B·CyberArk $25B. 전략적 가치 재평가 사이클 진입.</div>
+        </div>
+      </div>
+
+      <div class="bb-box bear-box">
+        <div class="bb-tag">BEAR CASE · 약세 논점</div>
+        <h3>40% 프로젝트 취소 · ROI 25% 달성 · SaaS 과잉 공포</h3>
+        <div class="bb-list">
+          <div class="bb-item"><b>Gartner 40% 취소 경고</b>: 2027년까지 Agentic AI 프로젝트의 40%+ 취소 위험. 현재 프로덕션 배포 31%·ROI 달성 25%의 실행 격차가 버블 붕괴 트리거.</div>
+          <div class="bb-item"><b>ROI 달성 25% (IBM 서베이)</b>: IDC/MS의 3.7배 ROI 주장과 달리, IBM CEO 서베이에서는 25%만 기대 ROI 달성. 측정 기준 상이하나 과잉 기대 우려.</div>
+          <div class="bb-item"><b>SaaS 과잉 공포</b>: SaaSpocalypse $285B 충격은 실제 비즈니스 모델 전환을 앞서간 공포다. 컴플라이언스·보안 SaaS는 AI 에이전트가 단독 대체 불가. 공포가 선가격을 과도하게 끌어내렸다 반론도 유효.</div>
+          <div class="bb-item"><b>밸류에이션 과열</b>: Cursor $60B(ARR $4B 대비 15x), Cognition $26B(ARR $492M 대비 53x). 비상장 AI 네이티브 기업 밸류에이션은 감사 재무제표 없는 추정치 기반.</div>
+          <div class="bb-item"><b>시장 집중 리스크</b>: Claude Code·Cursor·Copilot 상위 3개가 코딩 에이전트 시장을 과점. 플랫폼 의존도 심화 시 후발 플레이어·SaaS 벤더 협상력 약화.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-grid reveal" style="margin-top:32px">
+      <div class="share-box">
+        <h3>코딩 에이전트 ARR 비중 (추정, 2026.06)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Cursor (Anysphere)</span><span class="pct">$4B+</span></div>
+            <div class="sbar-track"><div class="sbar-fill sky" data-w="85%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Claude Code (Anthropic)</span><span class="pct">$2.5B</span></div>
+            <div class="sbar-track"><div class="sbar-fill sky" data-w="55%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">GitHub Copilot (Microsoft)</span><span class="pct">~$848M</span></div>
+            <div class="sbar-track"><div class="sbar-fill blue" data-w="22%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Devin (Cognition AI)</span><span class="pct">$492M</span></div>
+            <div class="sbar-track"><div class="sbar-fill purple" data-w="14%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Bolt (StackBlitz)</span><span class="pct">$40M</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="4%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="share-box">
+        <h3>엔터프라이즈 에이전트 AI 매출 (2026, 추정)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Microsoft M365 Copilot</span><span class="pct">~$7.2B ARR</span></div>
+            <div class="sbar-track"><div class="sbar-fill blue" data-w="90%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Salesforce Agentforce</span><span class="pct">~$800M ARR</span></div>
+            <div class="sbar-track"><div class="sbar-fill sky" data-w="28%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">ServiceNow Now Assist</span><span class="pct">$750M ACV</span></div>
+            <div class="sbar-track"><div class="sbar-fill purple" data-w="26%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">SAP Joule</span><span class="pct">비공개</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="10%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">Agentic AI는 소프트웨어 산업의 구조를 재편하고 있으며, 재편의 속도는 시장의 예상을 앞서고 있다.</div>
+      <div class="bt-body">
+        <b>코딩 에이전트($148B, CAGR 55.2%)·엔터프라이즈 에이전트(40% 앱 내장)·프로토콜 표준화(MCP+A2A)의 세 가지 레이어가 동시에 성숙하면서</b> 소프트웨어 생산·소비·과금 방식이 동시에 변화하고 있다. 이것은 인터넷이 인쇄 미디어를 바꾼 것처럼 느린 변화가 아니라, 모바일이 피처폰을 교체한 것처럼 빠른 교체다.<br><br>
+        투자자 관점에서 가장 중요한 세 가지: <b>(1) MCP 생태계에서 서버·클라이언트 양쪽을 장악한 플랫폼</b>은 윈도우·iOS처럼 구조적 우위를 가진다. <b>(2) AWU 기반 과금으로 전환에 성공한 기업</b>은 per-seat 한계를 넘어 TAM을 기하급수적으로 확장할 수 있다. <b>(3) 코딩 에이전트의 재귀적 성장</b>(AI가 AI 도구를 개발) 구조는 소프트웨어 개발 비용 곡선을 뒤바꾼다.<br><br>
+        <b>주요 리스크</b>: Gartner의 "40% 프로젝트 취소" 경고, ROI 달성 25%의 실행 격차, 비상장 밸류에이션 과열($26B~$60B 범위의 추정치 기반 수치). SaaSpocalypse $285B 충격은 재편의 속도에 대한 시장의 공포이며, 실제 대체 범위는 훨씬 선택적이다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">Agentic AI 생태계 — 코딩 에이전트에서 SaaSpocalypse까지</div>
+      <div class="src-list">
+        DATA · Anthropic IR / Series H 공시 (2026.05) · Cognition AI 공식 (TechCrunch 2026.05)<br>
+        Anysphere / SEC 공시 · CNBC · Bloomberg (2026.06) · Microsoft FY26 Q3 IR (2026.04)<br>
+        Salesforce FY26 Q4 IR (2026.01) · ServiceNow IR (2026 Q1) · Linux Foundation PR<br>
+        Gartner 2026 · CB Insights 2026 Q1 · MarketsandMarkets · Precedence Research<br>
+        Mordor Intelligence · IDC/Microsoft ROI Study · IBM CEO Survey 2026<br>
+        Stacklok MCP Survey 2026 · 작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 특히 비상장 기업(Anthropic·Cursor·Cognition AI)의 매출 수치는 공식 감사 재무제표가 아닌 보도·추정치 기반입니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

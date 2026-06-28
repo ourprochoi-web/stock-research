@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EU CBAM 2026 본격과세·EU ETS EUR 81→EUR 126(2030)·K-ETS 10배 격차·DAC $400-1000/t→$300·그린수소 $4.50→$1.50(2030) — 기후테크 & 탄소시장 투자 분석">
+<meta name="keywords" content="CBAM,EU ETS,탄소시장,DAC,직접공기포집,그린수소,K-ETS,기후테크,탄소크레딧,Climeworks,Occidental,전해조,탄소중립">
+<meta property="og:title" content="기후테크 & 탄소시장 — EU CBAM·DAC·그린수소 투자 지도">
+<meta property="og:description" content="EU CBAM 2026 본격과세·EU ETS EUR 81→EUR 126(2030)·K-ETS 10배 격차·DAC $400-1000/t→$300·그린수소 $4.50→$1.50(2030) — 기후테크 & 탄소시장 투자 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/energy_climate_tech_carbon.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="기후테크 & 탄소시장 — EU CBAM·DAC·그린수소 투자 지도">
+<meta name="twitter:description" content="EU CBAM 2026 본격과세·EU ETS EUR 81→EUR 126(2030)·K-ETS 10배 격차·DAC $400-1000/t→$300·그린수소 $4.50→$1.50(2030) — 기후테크 & 탄소시장 투자 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/energy_climate_tech_carbon.html">
+<title>기후테크 & 탄소시장 — EU CBAM·DAC·그린수소 투자 지도</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#22c55e;
+    --current:#4ade80;
+    --glow:#86efac;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(134,239,172,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#1a3d20;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(34,197,94,.12);color:var(--volt);border:1px solid rgba(34,197,94,.3)}
+  .ic-tag.pink{background:rgba(74,222,128,.12);color:var(--current);border:1px solid rgba(74,222,128,.3)}
+  .ic-tag.rose{background:rgba(134,239,172,.12);color:var(--glow);border:1px solid rgba(134,239,172,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.green{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.amber{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.blue{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.rose{background:linear-gradient(90deg,#ec4899,#f9a8d4)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row.col3{grid-template-columns:1.4fr 1fr 1fr}
+  .compare-header.col3{grid-template-columns:1.4fr 1fr 1fr}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.bear{color:var(--bear)}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(134,239,172,.04));
+    border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header.col3,.compare-row.col3{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "기후테크 & 탄소시장 — EU CBAM·DAC·그린수소 투자 지도",
+  "description": "EU CBAM 2026 본격과세·EU ETS EUR 81→EUR 126(2030)·K-ETS 10배 격차·DAC $400-1000/t→$300·그린수소 $4.50→$1.50(2030) — 기후테크 & 탄소시장 투자 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/energy/energy_climate_tech_carbon.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#86efac;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(134,239,172,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>기후테크 · 탄소시장</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#carbon-market">01 / 탄소 시장</a>
+      <a href="#dac">02 / DAC</a>
+      <a href="#green-hydrogen">03 / 그린수소</a>
+      <a href="#korea-climate">04 / 한국</a>
+      <a href="#investment-thesis">05 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">에너지 전환 · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">기후테크 &<br>탄소시장 <span class="hl">투자 지도</span></h1>
+    <p class="hero-sub">EU CBAM 본격 과세, DAC 상용화, 그린수소 비용 혁신 — 탄소가격이 투자 지형을 재편한다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">EUR <span style="font-size:.85em">81</span></div>
+        <div class="lab">EU ETS 탄소가격 /tCO2 (2026 최고치). 2027년 EUR 100 돌파 전망, 2030 컨센서스 EUR 126.</div>
+        <div class="src">SRC: EU Commission ETS 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$4.<span style="font-size:.75em">50</span></div>
+        <div class="lab">그린수소 비용 /kg (2026, 무보조). 목표 $1.50 by 2030 — 비용 격차가 핵심 투자 리스크.</div>
+        <div class="src">SRC: IEA / DOE Earthshot 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">10<span class="u">x</span></div>
+        <div class="lab">K-ETS vs EU ETS 탄소가격 격차. KRW 7,000 (EUR ~6) vs EUR 72-81 — CBAM 수출 비용 직결.</div>
+        <div class="src">SRC: 한국거래소 · EU ETS 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 CARBON MARKET ================= -->
+<section class="blk" id="carbon-market">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;탄소 시장</div>
+      <h2 class="sec-title">EU ETS EUR 81 → EUR 126(2030) · CBAM 본격 과세</h2>
+      <p class="sec-lead">2026년은 EU ETS 개혁의 변곡점이다. CBAM 본격 과세 시행, 무상할당 축소, K-ETS와의 10배 격차가 한국 수출 기업에 구조적 비용 압력으로 작용한다. 자발적 탄소시장은 EUR 25B에서 2035년 EUR 150B으로 CAGR 20.6% 성장이 전망된다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>시스템</th>
+            <th>현재가 (2026)</th>
+            <th>2030 전망</th>
+            <th>주요 변화</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">EU ETS</td>
+            <td><span class="num-td">EUR 72-81/t</span></td>
+            <td>EUR 126/t</td>
+            <td>무상할당 2026 30% → 2030 0%</td>
+            <td>2026년 2월 최고치 EUR 81.35</td>
+          </tr>
+          <tr>
+            <td class="hl-td">EU CBAM</td>
+            <td><span class="num-td">2026.01 과세</span></td>
+            <td>범위 확대</td>
+            <td>6개 업종 → 2028년 하류제품</td>
+            <td>철강/알루미늄/시멘트/수소/전력/비료</td>
+          </tr>
+          <tr>
+            <td class="hl-td">K-ETS</td>
+            <td><span class="num-td">KRW 7,000</span></td>
+            <td>미정</td>
+            <td>4기(2026-2030) 총 25.37억 tCO2e</td>
+            <td>EU 대비 10배 저평가 (EUR ~6)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">VCM (자발적)</td>
+            <td><span class="num-td">EUR 25B</span></td>
+            <td>EUR 150B</td>
+            <td>CAGR 20.6% (2025~2035)</td>
+            <td>고등급 300%+ 프리미엄</td>
+          </tr>
+          <tr>
+            <td class="hl-td">글로벌 규제 탄소시장</td>
+            <td><span class="num-td">~USD 9,500억</span></td>
+            <td>—</td>
+            <td>12억 tCO2e+ 규제 범위</td>
+            <td>EU ETS 비중 ~40%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* EU ETS 2030 EUR 126은 주요 기관 중위 전망. K-ETS KRW 7,000은 한국거래소 KAU26 기준 잠정치 (검증 필요). VCM EUR 25B~150B: CAGR 20.6%.</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>EU CBAM 한국 수출 영향</h3>
+        <div class="ph-sub">철강·알루미늄·수소 수출 비용 분석</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$5.88B</div>
+            <div class="mt"><b>2026~2034 누적 CBAM 비용 추정</b> — 반도체·LNG까지 CBAM 확대 시 한국 기술 산업 고가 시나리오. KITA(무역협회)·POSCO·KOSA 강력 반발 중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$63.92</div>
+            <div class="mt"><b>EU ETS vs K-ETS 탄소가격 격차</b> /tCO2e — K-ETS 실질 가격(EUR ~6)과 EU ETS(EUR ~72) 간 절대 격차. CBAM 부담의 근본 원인.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2028년</div>
+            <div class="mt"><b>CBAM 2028년 확대 제안</b> — 철강·알루미늄 집약적 하류 제품으로 범위 확장 예정. 완성차·기계 부품 수출 기업 영향권 진입 가능성.</div>
+          </div>
+        </div>
+        <div class="foot">* CBAM $5.88B은 IEEFA 고가 시나리오. ETS 가격 가정 및 배출계수에 따라 크게 변동 가능. 원문 대조 필요.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>자발적 탄소시장(VCM) 품질 계층화</h3>
+        <div class="ph-sub">고등급 vs 저등급 · EUR 40-90/t 범위</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">300%+</div>
+            <div class="mt"><b>고등급 탄소크레딧 프리미엄</b> — ICVCM Core Carbon Principles + Sylvera/BeZero/Calyx A-band 등급 획득 시 저등급 대비 3배+ 가격 프리미엄 형성.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">EUR 60-90</div>
+            <div class="mt"><b>2028년 고등급 혼합 포트폴리오</b> /t 전망. 현재 EUR 40-60에서 상승. ICVCM+3자 평가(A등급) 가산 EUR 5-15/t 추가.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">97건</div>
+            <div class="mt"><b>파리협정 제6.2조 양자 협정</b> (59개국 간, 2025.3 기준). 스위스-태국 간 ITMO 최초 이전(2024.1) 완료 — 단 유일 완료 사례.</div>
+          </div>
+        </div>
+        <div class="foot">* VCM 수치는 MSCI Carbon Markets / BloombergNEF 추정. 정의 차이로 소스 간 편차 존재.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>EU ETS 연도</th>
+            <th>가격 범위</th>
+            <th>무상할당</th>
+            <th>CBAM 연계</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2026</td>
+            <td><span class="num-td">EUR 72-81/t</span></td>
+            <td>30% (비대상 업종)</td>
+            <td>본격 과세 시행</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2027E</td>
+            <td><span class="num-td">EUR 100/t+</span></td>
+            <td>20%</td>
+            <td>ETS2 도입 준비</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2030E</td>
+            <td><span class="num-td">EUR 126/t</span></td>
+            <td>0% (무상할당 종료)</td>
+            <td>하류 제품 CBAM 확대</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 2026 평균 EUR 85/t 전망(Enerdata/BNEF). 실현가 vs 선물가 구분 필요. 2030 EUR 126은 중위 컨센서스.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>탄소가격 격차가 한국 수출 기업의 구조적 리스크다.
+      <span class="u">K-ETS KRW 7,000(EUR ~6) vs EU ETS EUR 72-81의 10배 격차는 CBAM 하에서 한국 철강·알루미늄 수출에 직접 비용으로 전가된다. EU ETS 2030 EUR 126 경로에서 격차는 더욱 확대된다. CBAM 적용 범위가 반도체·LNG까지 확장될 경우 한국 기술 산업 전반이 영향권에 들어온다. K-ETS 가격 현실화 없이는 CBAM 방어가 불가능하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 DAC ================= -->
+<section class="blk" id="dac">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;DAC 직접공기포집</div>
+      <h2 class="sec-title">Climeworks 36K톤 · Stratos 500K톤 · $400-1000→$300(2030)</h2>
+      <p class="sec-lead">직접공기포집(DAC)은 현재 $400-1,000/톤의 고비용 기술이지만, 규모의 경제와 기술 혁신을 통해 2030년 $100-300/톤 목표를 추구한다. Microsoft·Stripe·Shopify 등 주요 기업들이 장기 구매계약(offtake)으로 초기 수요를 창출하고 있다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>플레이어</div>
+        <div>프로젝트</div>
+        <div>용량</div>
+        <div>현황</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Climeworks (스위스)</div>
+        <div>Mammoth, 아이슬란드</div>
+        <div><span class="cr-num">36,000 톤/년</span></div>
+        <div>72모듈 중 12개 가동 (2025.6)</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">1PointFive / Occidental</div>
+        <div>Stratos, 텍사스</div>
+        <div><span class="cr-num">500,000 톤/년</span></div>
+        <div>2025년 말 가동 개시</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">1PointFive 확장</div>
+        <div>South Texas DAC Hub</div>
+        <div><span class="cr-num">500K→100만+ 톤</span></div>
+        <div>King Ranch, Kleberg County</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">CarbonCapture / Bison</div>
+        <div>와이오밍 (중단)</div>
+        <div><span class="cr-num">중단</span></div>
+        <div>DC 재생에너지 경쟁으로 포기</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">Climeworks — Mammoth</span>
+        <h3>Gen-3 기술 + 루이지애나 Cypress</h3>
+        <div class="ic-body">Mammoth는 설계 용량 <b>연 36,000톤 CO2</b> 포집, 현재 72모듈 중 12개 가동 중(2025.6 기준). 현재 비용 <b>~$1,000/톤</b>으로 고비용이나 2030년 $300-350/톤 목표.<br><br>Gen-3 기술은 2024년 6월 스위스 테스트 시설에서 풀스케일 검증 완료. 다음 플랜트인 <b>루이지애나 Project Cypress</b>는 2026년 착공 예정(DOE $6억 지원). 메가톤급 확장의 핵심 거점.</div>
+        <div class="ic-nums">
+          <div><div class="nk">설계 용량</div><div class="nv">36K톤/년</div></div>
+          <div><div class="nk">현재 비용</div><div class="nv">~$1,000/t</div></div>
+          <div><div class="nk">2030 목표</div><div class="nv">$300-350/t</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Occidental / 1PointFive — Stratos</span>
+        <h3>500K톤 · Carbon Engineering 액체 용매</h3>
+        <div class="ic-body">Stratos(서부 텍사스)는 연 <b>500,000톤 CO2 포집</b> 목표로 2025년 말 상업 가동 개시 예정. Carbon Engineering의 액체 용매(liquid solvent) DAC 기술 적용.<br><br>DOE 지원금 최대 <b>$5억(OCED)</b>, 초기 $5,000만 집행. <b>ADNOC XRG와 합작투자(JV)</b> 검토 합의 — 중동 자본 유입으로 자금 조달 다각화. South Texas DAC Hub는 100만톤+ 규모로 확장 계획.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Stratos 용량</div><div class="nv">500K톤</div></div>
+          <div><div class="nk">DOE 지원</div><div class="nv">최대 $5억</div></div>
+          <div><div class="nk">기술</div><div class="nv">액체용매</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">기업 구매계약 (Offtake)</span>
+        <h3>Microsoft · Stripe · Shopify 선구매</h3>
+        <div class="ic-body">DAC 초기 수요는 탄소중립 공약을 가진 대기업 구매계약이 지탱한다. <b>Microsoft</b>는 2030년 탄소 네거티브 목표 달성을 위해 Climeworks·1PointFive와 장기 offtake 계약 체결. <b>Stripe + Shopify</b>는 Frontier Climate 펀드를 통해 DAC 등 제거 기술에 수억 달러 공약.<br><br>기업 구매계약은 초기 설비 자금 확보와 가격 하락 경로 검증의 이중 역할. 기업 넷제로 공약의 신뢰성이 DAC 시장 성장의 핵심 전제.</div>
+        <div class="ic-nums">
+          <div><div class="nk">시장 CAGR</div><div class="nv">28.4%</div></div>
+          <div><div class="nk">2034 규모</div><div class="nv">~$187-200억</div></div>
+          <div><div class="nk">DAC 비중</div><div class="nv">12.7%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bear">Project Bison 중단 — DAC vs AI DC</span>
+        <h3>청정에너지 경쟁 현실화 첫 사례</h3>
+        <div class="ic-body">CarbonCapture Inc의 <b>Project Bison</b>(와이오밍)은 2030년 500만톤 목표를 내세웠으나 개발 중단. 와이오밍 재생에너지를 <b>AI 데이터센터와 DAC가 경합</b>하면서 경제성 확보 실패.<br><br>DOE 지원금 <b>$1,250만</b> 확보에도 불구하고 새 입지 이전 협의 중. <b>DAC와 AI DC 간 청정에너지 경쟁</b>이 현실화된 최초 사례로 기록됨. DAC 입지 선정 시 전력원 확보가 핵심 변수로 부상.</div>
+        <div class="ic-nums">
+          <div><div class="nk">상태</div><div class="nv">중단</div></div>
+          <div><div class="nk">원인</div><div class="nv">DC 경쟁</div></div>
+          <div><div class="nk">DOE 보조</div><div class="nv">$1,250만</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>시점</th>
+            <th>DAC 비용 범위</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">현재 (2026)</td>
+            <td><span class="num-td">$400-1,000/t</span></td>
+            <td>Climeworks ~$1,000, 1PointFive 목표 $400대</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2030 목표</td>
+            <td><span class="num-td">$100-300/t</span></td>
+            <td>DOE 목표 $300 이하, Climeworks $300-350</td>
+          </tr>
+          <tr>
+            <td class="hl-td">장기 전망</td>
+            <td><span class="num-td">$100/t 이하</span></td>
+            <td>규모의 경제 + Gen-3 기술 성숙 시</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* CCUS 전체 시장 2026 $53억 → 2034 $187-200억 (CAGR 16.8-18%). DAC 하위 부문 CAGR 28.4%. DOE Regional DAC Hubs 예산 $35억(BIL 기반).</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>DAC는 고비용이지만 불가역적 성장 궤도에 있다.
+      <span class="u">현재 $400-1,000/톤은 자발적 탄소시장 고등급 가격(EUR 60-90/t)보다 5~10배 비싸다. 그러나 규모의 경제와 Gen-3 기술이 2030년 $100-300/톤으로 수렴할 경우 VCM 고등급 프리미엄 구간과 겹치기 시작한다. Project Bison 중단은 DAC의 재생에너지 의존성과 AI DC와의 경쟁이라는 새로운 리스크를 부각시켰다. DOE Hub 집행 시한과 OBBBA 45Q 유지가 핵심 모니터링 포인트.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 GREEN HYDROGEN ================= -->
+<section class="blk" id="green-hydrogen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;그린수소</div>
+      <h2 class="sec-title">비용 $4.50-6.50 → $1.50(2030) · 전해조 $16.9B(2034)</h2>
+      <p class="sec-lead">그린수소의 현재 생산 비용(무보조 $4.50-6.50/kg)은 목표(2030년 $1.50/kg)와 3배 이상 차이 난다. EU REPowerEU 10Mt(2030) 목표, 한국 수소경제 활성화 정책, 전해조 시장 $5.6B→$28.9B(2033 CAGR 24.8%) 성장이 투자 지형을 형성한다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header col3">
+        <div>시점 / 조건</div>
+        <div>비용 범위</div>
+        <div>비고</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">2026 현재 (무보조)</div>
+        <div><span class="cr-num bear">$4.50-6.50/kg</span></div>
+        <div>유럽 기준 $7.23/kg, 가동률 ~30% 제약</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">2026 (IRA 보조 포함)</div>
+        <div><span class="cr-num amber">$1.50-3.50/kg</span></div>
+        <div>45V PTC 적용, 가동률 조건 충족 시</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">DOE Earthshot 2026</div>
+        <div><span class="cr-num">$2/kg 목표</span></div>
+        <div>Hydrogen Energy Earthshot 중간 목표</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">DOE Earthshot 2031</div>
+        <div><span class="cr-num">$1/kg 목표</span></div>
+        <div>최종 목표 — 현실과 괴리 극심</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">2030 최적 지역 (중동/호주/칠레)</div>
+        <div><span class="cr-num">EUR 2-3/kg</span></div>
+        <div>태양광 원가 우위 + 용지 확보 용이</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">글로벌 전해조 파이프라인</span>
+        <h3>2026년 설치 8.52GW · 2030 FID 20GW</h3>
+        <div class="ic-body"><b>2026년 글로벌 전해조 설치 용량: 8.52GW</b> (아시아태평양 주도). 2030년 파이프라인은 FID 완료 기준 ~20GW이나, 발표 기준 54GW, 조기 단계 포함 시 230-520GW로 급격히 확대된다.<br><br>IEA NZE 시나리오 필요 용량(2030년 560GW)과의 괴리가 극심하다. 제조 역량은 2030년 165GW/년+(기업 발표 기준)으로 과잉 공급 구조지만 실제 FID 전환율이 관건.<br><br><b>전해조 시장 규모:</b> 2024년 $5.6억 → 2033년 $28.9억 (CAGR 24.8%)</div>
+        <div class="ic-nums">
+          <div><div class="nk">2026 설치</div><div class="nv">8.52GW</div></div>
+          <div><div class="nk">2030 FID</div><div class="nv">~20GW</div></div>
+          <div><div class="nk">시장 CAGR</div><div class="nv">24.8%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">EU REPowerEU 10Mt(2030)</span>
+        <h3>Clean Industrial Deal + IAA 2026</h3>
+        <div class="ic-body">EU REPowerEU 계획은 2030년 <b>국내 생산 5Mt + 수입 5Mt = 총 10Mt 그린수소</b> 목표를 설정했다. 2026년 3월 발의된 <b>Industrial Accelerator Act(IAA)</b>는 EUR 1,000억+ 동원, "Made in EU" 저탄소 요건 공공조달 의무화를 포함한다.<br><br>에너지 비용 절감 목표: 2025년 EUR 450억 → 2030년 연 EUR 1,300억. 단 현실적 달성 가능성에 대한 시장 회의론이 상당하다. FID 전환율이 목표 달성의 핵심 지표.</div>
+        <div class="ic-nums">
+          <div><div class="nk">EU 목표</div><div class="nv">10Mt/2030</div></div>
+          <div><div class="nk">IAA 자금</div><div class="nv">EUR 1,000억+</div></div>
+          <div><div class="nk">비용 절감</div><div class="nv">EUR 1,300억/년</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>한국 수소경제 활성화 로드맵</h3>
+        <div class="ph-sub">2026~2050 공급 목표 · 5대 재벌 USD 380억</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">390만t</div>
+            <div class="mt"><b>2030년 수소 공급 목표</b> — 수소차 20만대, 충전소 450기+. 인천 1.6GW 해상풍력+그린수소 단지 추진 중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">93%</div>
+            <div class="mt"><b>2050년 그린수소 비율 목표</b> — 탄소중립 시나리오 기준. 현재 수준에서 급격한 기술·인프라 전환 요구.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$380억</div>
+            <div class="mt"><b>5대 재벌 수소 기술 투자 (2030년까지)</b> — 현대차그룹·SK·포스코·한화·효성 등 수소 인접 인프라 포함 $860억+ (재계 전체).</div>
+          </div>
+        </div>
+        <div class="foot">* $380억은 개별 기업별 내역 분해 필요. 발표 기준이며 실제 집행액은 별도 추적 필요.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>그린수소 기업 현황</h3>
+        <div class="ph-sub">Plug Power · Nel ASA · 두산퓨얼셀</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">+2.4%</div>
+            <div class="mt"><b>Plug Power Q4 2025 매출총이익률</b> — 2024년 -122.5%에서 흑전. 2025년 매출 $7.1억(+12.9%). Project Quantum Leap으로 연간 비용 $1.5-2억 절감 목표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">-31%</div>
+            <div class="mt"><b>Nel ASA 2025년 매출</b> NOK 9.63억 (-31%). 신규 수주 -73% 하락. 가압 알칼라인 전해조(30bar) 신제품 출시, 목표 원가 $1,450/kW.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">SOFC</div>
+            <div class="mt"><b>두산퓨얼셀</b> — 2025년 매출 KRW 4,548억(+10.5%), 영업손실 KRW -1,057억. SOFC 스택 양산 2025.7 개시. AI DC 시장 타겟, Ceres Power SOEC 협력.</div>
+          </div>
+        </div>
+        <div class="foot">* 두산퓨얼셀 수치는 감사보고서 원문 대조 필요. 창사 이래 최대 적자 구조에서 SOFC 상용화가 관건.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>그린수소 비용 격차가 투자 이론의 핵심 균열이다.
+      <span class="u">무보조 $4.50-6.50/kg vs 목표 $1.50(2030)는 단순 비용 하락 곡선이 아니라 가동률·전력비·전해조 원가·인증 요건의 복합 함수다. OBBBA로 45V 수소 PTC가 2028년 만료될 경우 미국 그린수소 경제성이 급격히 악화된다. EU는 목표 야심 차지만 FID 전환율이 실망스럽다. 한국은 $380억 재벌 투자 공약과 실제 집행 사이의 간극 모니터링이 필요하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 KOREA CLIMATE ================= -->
+<section class="blk" id="korea-climate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;한국 기후정책</div>
+      <h2 class="sec-title">K-ETS 4기 · CBAM $5.88B · RE100 12% · NDC 40%</h2>
+      <p class="sec-lead">한국은 2022년 탄소중립녹색성장기본법 시행으로 법적 근거를 마련했으나, 헌법재판소 위헌 판결(2024.8)로 2026년 3월까지 연도별 감축 경로 법제화가 요구됐다. K-ETS 가격 현실화, CBAM 대응, RE100 조달(현재 12%)이 기업 과제로 부상했다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>정책</th>
+            <th>현황</th>
+            <th>목표 / 기한</th>
+            <th>주요 과제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">K-ETS 4기</td>
+            <td><span class="num-td">KRW 7,000/t</span></td>
+            <td>25.37억 tCO2e (2026-2030)</td>
+            <td>EU 대비 10배 저가 · 가격 현실화 필요</td>
+          </tr>
+          <tr>
+            <td class="hl-td">NDC 감축 목표</td>
+            <td>2018년 대비 -40%</td>
+            <td>2030년</td>
+            <td>헌재 2026.3 연도별 경로 법제화 명령</td>
+          </tr>
+          <tr>
+            <td class="hl-td">RE100 / K-RE100</td>
+            <td>183사 가입 · <span class="num-td">12%</span> 조달</td>
+            <td>글로벌 평균 53%</td>
+            <td>녹색프리미엄 98% 독점 · PPA 확대 필요</td>
+          </tr>
+          <tr>
+            <td class="hl-td">CBAM 대응</td>
+            <td><span class="num-td">$5.88B</span> 누적 비용</td>
+            <td>2026-2034</td>
+            <td>반도체/LNG 확대 시 기술산업 전반</td>
+          </tr>
+          <tr>
+            <td class="hl-td">부문별 2035 목표</td>
+            <td>전력 69-75%</td>
+            <td>수송/건물/폐기물 50%+</td>
+            <td>2018년 대비 감축률</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* RE100 조달 12%는 한국 내 기준. 글로벌 RE100 가입 기업 평균 53%와 비교 시 심각한 격차. 조달 어려움 호소 기업 38.3%(2024) — 2022년 대비 80% 증가.</div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● K-ETS 4기 구조</div>
+        <h3>수량 기반 K-MSR · 발전 유상할당 확대</h3>
+        <div class="fc-body"><b>K-ETS 4기(2026-2030)</b>: 총 배출 상한 25.37억 tCO2e(5년간). 2025년 11월 승인.<br><br>유상할당 비율: <b>발전 부문 대폭 확대</b> (발전/비발전 2개 부문으로 단순화). 시장안정화장치는 기존 비례적 방식에서 <b>수량 기반 K-MSR(시장안정화예비분)로 전환</b>.<br><br>KRW 7,000은 2021년 KRW 40,000 대비 급락 수준. 가격 신호 기능 상실 상태에서 감축 인센티브 부재가 구조적 문제.</div>
+        <div class="fc-note">K-ETS 가격 KRW 7,000은 한국거래소 KAU26 최신 거래가 직접 확인 필요. 보고서 작성 기준 잠정치.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● RE100 · K-RE100 현황</div>
+        <h3>12% 조달 · 녹색프리미엄 98% 독점</h3>
+        <div class="fc-body"><b>한국 RE100 가입 기업 ~183사</b>. 재생에너지 조달 비율 <b>한국 내 12%</b> (글로벌 RE100 평균 53%).<br><br>조달 어려움 호소 기업 <b>38.3%(2024년)</b> ← 2022년 대비 80% 증가. 핵심 장벽: 제한된 공급, 독점 전력시장, 높은 부대비용, 불투명한 가격.<br><br><b>녹색프리미엄이 조달 수단의 98% 독점</b> — 국제 수준의 PPA(전력구매계약) 확대가 불가피하다. 삼성전자·SK하이닉스 등 글로벌 공급망 RE100 요구 기업에 직접 영향.</div>
+        <div class="fc-note">RE100 183사·12% 조달은 RE100 공식 사이트 vs Korea Times 보도 교차 검증 필요.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 헌법재판소 결정</div>
+        <h3>2024.8 위헌 판결 · 2026.3 법제화 명령</h3>
+        <div class="fc-body">2024년 8월 헌법재판소는 <b>탄소중립녹색성장기본법 일부 위헌 판결</b> — 2031~2049년 연도별 감축 경로 미설정이 기본권 침해라고 결정.<br><br><b>2026년 3월까지 연도별 감축 경로 법제화 명령</b>. 중간 목표 부재로 기업 장기 투자 계획 수립 어려움.<br><br>부문별 2035 감축 목표: <b>전력 69-75%</b>, 수송/건물/폐기물 각 50%+. 탄소중립 법적 로드맵 완성 여부가 한국 기후정책 신뢰성의 핵심 지표.</div>
+        <div class="fc-note">2026.3 법제화 기한 준수 여부 모니터링 필요. 미이행 시 추가 헌법 소송 가능성.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● CBAM 대응 전략</div>
+        <h3>K-ETS 가격 현실화 · 저탄소 기술 투자</h3>
+        <div class="fc-body">CBAM 하에서 한국 수출 기업의 경쟁력은 <b>K-ETS 가격 현실화 속도</b>에 달려 있다. EU ETS-K-ETS 격차($63.92/tCO2e)가 수출 비용으로 전가될 경우 철강·알루미늄 산업 수익성 직격.<br><br>단기 대응: <b>저탄소 공정 투자</b>(포스코 수소환원제철, 한국철강협회 로드맵), <b>탄소크레딧 조달</b>(VCM 고등급 구매), <b>재생에너지 전력 조달 인증</b>.<br><br>POSCO·KOSA·KITA 업계 강력 반발에도 불구하고 CBAM 면제는 WTO 협상 전략으로 병행 추진 필요.</div>
+        <div class="fc-note">반도체/LNG까지 CBAM 확대 시 한국 기술 산업 비용 $5.88B(고가 시나리오). IEEFA 원문 가정 확인 필요.</div>
+      </div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:32px">
+      <div class="indcard">
+        <div class="ind-num">KRW7천</div>
+        <div class="ind-lab">K-ETS 현재가<br>/tCO2</div>
+        <div class="ind-tag">EUR ~6</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">10x</div>
+        <div class="ind-lab">EU ETS vs K-ETS<br>탄소가격 격차</div>
+        <div class="ind-tag">$63.92/tCO2e</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">12%</div>
+        <div class="ind-lab">한국 RE100<br>조달 비율</div>
+        <div class="ind-tag">글로벌 평균 53%</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">183사</div>
+        <div class="ind-lab">한국 RE100<br>가입 기업</div>
+        <div class="ind-tag">조달 12% 불과</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">-40%</div>
+        <div class="ind-lab">NDC 감축 목표<br>(2018 대비, 2030)</div>
+        <div class="ind-tag">헌재 경로 법제화</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>한국은 기후 규제 압력과 실행 역량 사이의 격차가 가장 크다.
+      <span class="u">NDC 40%, K-ETS 4기, 탄소중립 법적 목표를 설정했지만 RE100 조달 12%, K-ETS 가격 KRW 7,000, 녹색프리미엄 98% 독점은 실행 공백을 드러낸다. CBAM이 한국 수출에 본격 영향을 미치는 2027-2028년까지 K-ETS 가격 현실화와 PPA 시장 개방이 이뤄지지 않으면 구조적 비용 압력이 누적된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">Bull: CBAM 확산 · 탄소가격 상승 vs Bear: 비용 격차 · 정책 불확실</h2>
+      <p class="sec-lead">기후테크 & 탄소시장 투자는 규제 강화(CBAM·ETS)와 기술 성숙(DAC·그린수소)이라는 강력한 구조적 동력을 보유하지만, 그린수소 비용 격차와 OBBBA 정책 전환이 핵심 하방 리스크로 작용한다. 2025년 Climate-tech VC+성장 투자 $405억(+8%)이 이 시장의 모멘텀을 반영한다.</p>
+    </div>
+
+    <div class="future-grid reveal">
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● BULL CASE</div>
+        <h3>CBAM 규제 확산 + 탄소가격 상승</h3>
+        <div class="fc-body"><b>EU CBAM이 글로벌 탄소 규제 확산의 촉매</b>가 되고 있다. 영국·캐나다·호주가 유사 제도 도입을 검토 중이며, EU ETS 2030 EUR 126 경로가 확실해질수록 탄소가격 리스크 헤지 수요가 급증한다.<br><br><b>DAC 기술 성숙:</b> Climeworks Gen-3 + Stratos 상용화가 실증되면 $300/톤 이하 비용 구간이 열리고, VCM 고등급 크레딧과 경쟁 가능해진다. Microsoft·Stripe 구매계약이 수요 기반 확보.<br><br><b>Climate-tech VC $405억(2025), 원자력 VC 3년 +1,234%</b> — 자본 유입이 기술 성숙을 가속.</div>
+        <div class="fc-note">CBAM 확산 속도 + EU ETS 실현가 vs 선물가 괴리가 핵심 모니터링 지표.</div>
+      </div>
+
+      <div class="fcard fc-bear">
+        <div class="fc-tag">● BEAR CASE</div>
+        <h3>그린수소 비용 격차 + OBBBA 정책 후퇴</h3>
+        <div class="fc-body"><b>그린수소 무보조 $4.50-6.50/kg</b>는 천연가스 기반 그레이수소($0.50-3.00/kg) 대비 2~8배 비싸다. 2030년 $1.50 목표 달성 가능성에 대한 회의론이 지속되며 FID 전환율이 실망스럽다.<br><br><b>OBBBA 정책 불확실성:</b> EV 세액공제 2025.9.30 종료, 풍력/태양광 PTC/ITC 2027 만료, 45V 수소 PTC 2028 만료. 미국 H1 2025 에너지 전환 투자 -36% 급감이 정책 공백의 실물 충격을 보여준다.<br><br><b>K-ETS 가격 무력화:</b> KRW 7,000은 탄소 감축 인센티브 제공 실패. 기업들이 감축보다 배출권 구매를 선호하는 구조가 고착될 위험.</div>
+        <div class="fc-note">OBBBA 45V 만료일 2028.1.1은 IRC 원문 최종 확인 필요. 그레이수소 vs 그린수소 원가 비교는 천연가스 가격에 민감.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>투자 영역</th>
+            <th>핵심 드라이버</th>
+            <th>핵심 리스크</th>
+            <th>시계</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">EU ETS 배출권</td>
+            <td>EUR 126(2030) 경로, CBAM 연계</td>
+            <td>경기 침체 시 EUA 가격 급락</td>
+            <td>2026-2030</td>
+          </tr>
+          <tr>
+            <td class="hl-td">VCM 고등급 크레딧</td>
+            <td>ICVCM 품질 기준 강화 + 기업 넷제로</td>
+            <td>표준 분열, 그린워싱 위험</td>
+            <td>2026-2030</td>
+          </tr>
+          <tr>
+            <td class="hl-td">DAC (직접공기포집)</td>
+            <td>DOE Hub, 기업 offtake, Gen-3 기술</td>
+            <td>비용 $300 이하 달성 불확실</td>
+            <td>2028-2035</td>
+          </tr>
+          <tr>
+            <td class="hl-td">그린수소 / 전해조</td>
+            <td>EU REPowerEU, 한국 재벌 투자</td>
+            <td>비용 격차, 45V 만료, 가동률</td>
+            <td>2028-2035</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Climate-tech VC</td>
+            <td>$405억/년, 원자력 +1,234%</td>
+            <td>OBBBA 보조금 축소, 선별 심화</td>
+            <td>2026-2030</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* Climate-tech VC $405억은 BNEF vs PitchBook 정의 차이 존재. 원자력 VC +1,234%(3년)는 2025 $24억 / 유니콘 4개 기준.</div>
+    </div>
+
+    <div class="share-grid reveal" style="margin-top:32px">
+      <div class="share-box">
+        <h3>탄소시장 지역별 비중 (글로벌 규제 탄소시장 ~$9,500억)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">EU ETS</span><span class="pct">~40%</span></div>
+            <div class="sbar-track"><div class="sbar-fill green" data-w="80%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">중국 ETS</span><span class="pct">~25%</span></div>
+            <div class="sbar-track"><div class="sbar-fill amber" data-w="50%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">미국 (캘리포니아 등)</span><span class="pct">~15%</span></div>
+            <div class="sbar-track"><div class="sbar-fill blue" data-w="30%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">한국 K-ETS</span><span class="pct">~5%</span></div>
+            <div class="sbar-track"><div class="sbar-fill rose" data-w="10%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">기타 (캐나다·일본 등)</span><span class="pct">~15%</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="30%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>OBBBA 정책 변경 요약 (2025.7.4 서명)</h3>
+        <div class="ph-sub">IRA 대비 기후테크 관련 주요 변경</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum" style="color:var(--volt);font-size:1rem">유지</div>
+            <div class="mt"><b>45Q 탄소포집, 45X 첨단제조(풍력 제외), 45Z 청정연료, 45U 원자력</b> — ESS·DAC·핵심광물 제조 지원 유지.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="color:var(--bear);font-size:1rem">만료</div>
+            <div class="mt"><b>EV 30D/25E 2025.9.30 종료, 풍력/태양광 45/48 2027.12.31, 45V 수소 PTC 2028.1.1</b> — 그린수소 투자 급제동 가능성.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="color:var(--current);font-size:1rem">신설</div>
+            <div class="mt"><b>FEOC 제한</b> — 중국/러시아/북한/이란 관련 기업 세액공제 배제. 한국 배터리·수소 기업 공급망 재편 촉진.</div>
+          </div>
+        </div>
+        <div class="foot">* 45V 수소 국내 함량 요건: 2026년 45% → 2027년 50% → 2028년 55%. IRC 원문 대조 필요.</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">탄소가격이 투자 지형을 재편한다 — CBAM·ETS·DAC·그린수소 4개 축의 교차점</div>
+      <div class="bt-body">
+        <b>EU ETS EUR 81→EUR 126(2030) 경로와 CBAM 2026 본격 과세는 탄소 가격을 숨겨진 비용에서 명시적 투자 결정 변수로 전환시켰다.</b> K-ETS KRW 7,000과 EU ETS EUR 81의 10배 격차는 한국 수출 기업의 CBAM 부담으로 직접 전가되며, 격차 해소 없이는 구조적 경쟁력 훼손이 불가피하다.<br><br>
+        <b>DAC는 고비용(현재 $400-1,000/톤)이지만 방향성은 명확하다.</b> Climeworks Gen-3 + Stratos 상용화, DOE Hub $11억 집행이 2028-2030년 비용 변곡점을 만들 가능성이 있다. 다만 Project Bison 중단이 보여주듯 AI DC와의 청정에너지 경쟁이 새로운 리스크로 부상했다.<br><br>
+        <b>그린수소 비용 $4.50→$1.50(2030) 목표는 가장 도전적인 가정이다.</b> 전해조 시장 CAGR 24.8%, 한국 재벌 $380억 투자, EU REPowerEU 10Mt 목표가 동력을 제공하지만 OBBBA 45V 2028 만료와 낮은 가동률이 현실적 제약이다. 투자자 관점에서 그린수소는 2028년 이후 비용 데이터 실증 이후 선별 진입이 합리적이다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">기후테크 & 탄소시장 — EU CBAM·DAC·그린수소 투자 지도</div>
+      <div class="src-list">
+        DATA · EU Commission CBAM & EU ETS 공식 발표 · IEA World Energy Outlook 2025<br>
+        Climeworks IR & Mammoth 프로젝트 보고서 · Occidental / 1PointFive Stratos IR<br>
+        IRENA Green Hydrogen Report 2026 · DOE Hydrogen Energy Earthshot<br>
+        환경부 K-ETS 4기 계획 · 산업통상자원부 수소경제 로드맵<br>
+        KITA(한국무역협회) CBAM 영향 분석 · BloombergNEF Climate-tech Investment 2025<br>
+        헌법재판소 2024.8 기본법 판결 · World Bank State and Trends of Carbon Pricing 2026<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="중국 AI 생태계 — DeepSeek $590B·Qwen 10억 다운로드·AI칩 자급률 41%·화웨이 Ascend·미중 AI 경쟁 투자 분석">
+<meta name="keywords" content="DeepSeek,중국AI,Qwen,화웨이Ascend,AI칩자급,미중경쟁,수출통제,SMIC,Kimi,ByteDance,Doubao">
+<meta property="og:title" content="중국 AI 생태계 — DeepSeek $590B에서 칩 자급률 41%까지">
+<meta property="og:description" content="중국 AI 생태계 — DeepSeek $590B·Qwen 10억 다운로드·AI칩 자급률 41%·화웨이 Ascend·미중 AI 경쟁 투자 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_china_ai_ecosystem.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="중국 AI 생태계 — DeepSeek $590B에서 칩 자급률 41%까지">
+<meta name="twitter:description" content="중국 AI 생태계 — DeepSeek $590B·Qwen 10억 다운로드·AI칩 자급률 41%·화웨이 Ascend·미중 AI 경쟁 투자 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_china_ai_ecosystem.html">
+<title>중국 AI 생태계 — DeepSeek $590B에서 칩 자급률 41%까지</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#ef4444;
+    --current:#f87171;
+    --glow:#fca5a5;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(252,165,165,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#3d1a1a;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(239,68,68,.12);color:var(--volt);border:1px solid rgba(239,68,68,.3)}
+  .ic-tag.pink{background:rgba(248,113,113,.12);color:var(--current);border:1px solid rgba(248,113,113,.3)}
+  .ic-tag.rose{background:rgba(252,165,165,.12);color:var(--glow);border:1px solid rgba(252,165,165,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.china{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.usa{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.korea{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.other{background:var(--ink-3)}
+  .sbar-fill.huawei{background:linear-gradient(90deg,var(--volt),var(--current))}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(252,165,165,.04));
+    border:1px solid rgba(239,68,68,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- BULL/BEAR THESIS ---------- */
+  .bb-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .bb-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .bb-card.bull-card{border-left:3px solid var(--bull)}
+  .bb-card.bear-card{border-left:3px solid var(--bear)}
+  .bb-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+  .bb-card.bull-card .bb-label{color:var(--bull)}
+  .bb-card.bear-card .bb-label{color:var(--bear)}
+  .bb-card h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .bb-list{display:flex;flex-direction:column;gap:12px}
+  .bb-item{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .bb-item .bi{font-family:var(--mono);font-weight:800;font-size:.82rem;flex-shrink:0;margin-top:1px}
+  .bb-card.bull-card .bb-item .bi{color:var(--bull)}
+  .bb-card.bear-card .bb-item .bi{color:var(--bear)}
+  .bb-item b{color:var(--ink);font-weight:650}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{display:flex;flex-direction:column;gap:0;margin-top:8px}
+  .tl-row{display:grid;grid-template-columns:130px 1fr;gap:0;border-left:2px solid var(--line);margin-left:16px}
+  .tl-row:last-child .tl-body{border-bottom:none}
+  .tl-date{font-family:var(--mono);font-size:.74rem;color:var(--volt);font-weight:700;padding:18px 0 18px 20px;position:relative;white-space:nowrap}
+  .tl-date::before{content:"";position:absolute;left:-7px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:var(--volt);border:2px solid var(--bg)}
+  .tl-body{padding:14px 0 14px 24px;border-bottom:1px solid var(--line)}
+  .tl-title{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .tl-desc{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .bb-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+    .tl-row{grid-template-columns:100px 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "중국 AI 생태계 — DeepSeek $590B에서 칩 자급률 41%까지",
+  "description": "중국 AI 생태계 — DeepSeek $590B·Qwen 10억 다운로드·AI칩 자급률 41%·화웨이 Ascend·미중 AI 경쟁 투자 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/national-strategy/ns_china_ai_ecosystem.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fca5a5;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(252,165,165,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>중국 AI · 생태계</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#china-llm">01 / LLM 생태계</a>
+      <a href="#chip-self-sufficiency">02 / 칩 자급화</a>
+      <a href="#ai-applications">03 / AI 응용</a>
+      <a href="#us-china-rivalry">04 / 미중 경쟁</a>
+      <a href="#china-policy">05 / 정책</a>
+      <a href="#investment-thesis">06 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">국가 전략 · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">중국 AI 생태계<br><span class="hl">DeepSeek $590B</span><br>칩 자급 41%</h1>
+    <p class="hero-sub">오픈소스 혁신, 하드웨어 자립, 산업화 — 중국 AI가 세계를 재편하고 있다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$590<span class="u">B</span></div>
+        <div class="lab">DeepSeek 기업가치 (V4 Pro, 중국 AI 선두). 외부 투자 $74억, MIT 라이선스 공개 모델로 글로벌 충격파.</div>
+        <div class="src">SRC: DeepSeek 공식 · 36Kr 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">41<span class="u">%</span></div>
+        <div class="lab">중국 AI칩 자급률 (2025, 유닛 기준 사상 최초). NVIDIA 중국 M/S 95%→55% 급락. 국산 출하 165만 개.</div>
+        <div class="src">SRC: IndexBox · TrendForce 2025</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">10<span class="u">억</span></div>
+        <div class="lab">Qwen 다운로드 (오픈소스 모델 글로벌 50%+). Apache 2.0, 119개 언어 지원으로 글로벌 개발자 생태계 장악.</div>
+        <div class="src">SRC: Alibaba Cloud 커뮤니티 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 CHINA LLM ================= -->
+<section class="blk" id="china-llm">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;중국 LLM 생태계</div>
+      <h2 class="sec-title">DeepSeek에서 Doubao까지 — 7개 플레이어</h2>
+      <p class="sec-lead">DeepSeek V4 Pro(MIT, ~96% 저비용), Qwen3.5(10억 다운로드), Kimi $200B 밸류에이션, ByteDance Doubao MAU 2.26억. 중국 LLM은 오픈소스·가격 파괴·산업화 세 축으로 글로벌 경쟁을 재편하고 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업 / 모델</th>
+            <th>최신 모델</th>
+            <th>핵심 지표</th>
+            <th>라이선스</th>
+            <th>현황</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">DeepSeek</td>
+            <td>V4 Pro (2026.04)</td>
+            <td><span class="num-td">$590B</span> 기업가치, 1.6T 파라미터, SWE-bench 80.6%</td>
+            <td>MIT</td>
+            <td>글로벌 프론티어급, 인력 270명</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Alibaba / Qwen</td>
+            <td>Qwen3.5 (2026.02)</td>
+            <td><span class="num-td">~10억</span> 다운로드, 397B MoE, 262K 컨텍스트</td>
+            <td>Apache 2.0</td>
+            <td>오픈소스 생태계 장악, 글로벌 50%+</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Moonshot / Kimi</td>
+            <td>K2.6 (2026)</td>
+            <td><span class="num-td">$200B</span> 밸류에이션, ARR $2억, OpenRouter 사용량 2위</td>
+            <td>상용</td>
+            <td>6개월 5배 밸류에이션 성장</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ByteDance / Doubao</td>
+            <td>Doubao Seed 2.0 (2026.02)</td>
+            <td><span class="num-td">2.26억</span> MAU, AIME 2025 98.3점, 글로벌 4위</td>
+            <td>상용</td>
+            <td>중국 AI 챗봇 1위, 멀티모달 통합</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Zhipu AI (Z.ai)</td>
+            <td>GLM-5.2 (2026.06)</td>
+            <td><span class="num-td">~$70B</span> 기업가치, 매출 YoY +132%, 홍콩 IPO</td>
+            <td>상용</td>
+            <td>중국 최초 AI 상장사, 엔터프라이즈 집중</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Baichuan (百川)</td>
+            <td>Baichuan 4</td>
+            <td>법률·금융·의료 특화, 기업가치 $30억</td>
+            <td>상용</td>
+            <td>헬스케어 피벗, IPO 2027 계획</td>
+          </tr>
+          <tr>
+            <td class="hl-td">01.AI (이카이푸)</td>
+            <td>Yi 시리즈</td>
+            <td>DeepSeek 기반 솔루션 전환</td>
+            <td>혼합</td>
+            <td>자체 학습 중단 → 플랫폼 전환</td>
+          </tr>
+          <tr>
+            <td class="hl-td">MiniMax</td>
+            <td>MiniMax-01</td>
+            <td>텍스트·비디오·음성 통합, 4M 컨텍스트</td>
+            <td>상용</td>
+            <td>롱컨텍스트 특화, 해외 API 공격적 확장</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 2026.06 기준. 기업가치는 최근 조달 라운드 기준. 비상장사 수치는 미디어 보도 추정치.</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>DeepSeek — 기술 혁신 상세</h3>
+        <div class="ph-sub">V3 → R1 → V4 Pro 진화 · 2024~2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">V3</div>
+            <div class="mt"><b>671B 파라미터 (MoE, 37B active)</b> — 14.8T 토큰 학습, 128K 컨텍스트. MIT 라이선스로 공개해 오픈웨이트 최고 성능 벤치마크 달성.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">R1</div>
+            <div class="mt"><b>AIME 2024 86.7%, Codeforces 96.3 퍼센타일</b> — OpenAI o1과 동등 성능을 출력 토큰당 <b>~96% 저비용</b>으로 달성. 강화학습 기반 추론 특화.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">V4</div>
+            <div class="mt"><b>1.6T 파라미터 (49B active), 1M 컨텍스트</b> — DeepSeek Sparse Attention(DSA) 도입. 단일 토큰 FLOPs 27%, KV캐시 10% 수준 압축. 가격 GPT-5.2 대비 4배 저렴.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>중국 LLM 경쟁 구도</h3>
+        <div class="ph-sub">Tier 분류 · 핵심 추세</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum" style="font-size:.95rem">Tier-1</div>
+            <div class="mt"><b>DeepSeek · Qwen · ByteDance Doubao</b> — 글로벌 프론티어급 성능, 오픈소스 생태계 장악, MAU·자본·인프라 결합.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="font-size:.95rem">Tier-2</div>
+            <div class="mt"><b>Moonshot/Kimi · Zhipu</b> — 가장 빠른 밸류에이션 성장(6개월 5배), 중국 최초 상장 AI사. 엔터프라이즈 수익화 초기.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="font-size:.95rem">Tier-3</div>
+            <div class="mt"><b>Baichuan · 01.AI · MiniMax</b> — 니치 특화 또는 플랫폼 전환. 가격 경쟁 극심화로 자체 학습 포기 사례 등장.</div>
+          </div>
+        </div>
+        <div class="foot">핵심 추세: 오픈소스 디폴트화, GPT 대비 4~50배 저렴한 가격, 추론 비용 최적화가 경쟁의 핵심.</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">DeepSeek 생태계</span>
+        <h3>270명이 만든 글로벌 충격파</h3>
+        <div class="ic-body">핵심 R&D 인력 <b>270명</b>. 2026년 각 팀 2배 확충 계획. 창업자 량원펑이 개인적으로 <b>~$30억</b> 출자. V4 Pro-Max SWE-bench Verified <b>80.6%</b> — 오픈 웨이트 모델 최고점, Gemini 3.1 Pro와 동률.<br><br>가격 경쟁력이 핵심 무기다. V4 Pro 입력 $0.435/M, 출력 $0.87/M — GPT-5.2 대비 <b>약 4배 저렴</b>. 저비용 고성능 전략이 글로벌 AI 가격 기준을 재설정하고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">기업가치</div><div class="nv">$590B</div></div>
+          <div><div class="nk">R&D 인력</div><div class="nv">270명</div></div>
+          <div><div class="nk">SWE-bench</div><div class="nv">80.6%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Qwen 오픈소스 전략</span>
+        <h3>다운로드 10억 — 글로벌 50% 점유</h3>
+        <div class="ic-body">Qwen3(2025.04): Dense(0.6~32B) + MoE(235B-A22B) 하이브리드 — 최초로 전통 LLM + 동적 추론을 결합. <b>36T 토큰</b> 학습, <b>119개 언어</b> 지원.<br><br>Qwen3.5(2026.02): 397B MoE, 17B active, 256 전문가, <b>262K 컨텍스트</b>. Apache 2.0 라이선스로 전 세계 개발자 생태계가 Qwen 기반으로 재편 중이다. Hugging Face 다운로드 글로벌 오픈소스의 <b>50%+ 점유</b>.</div>
+        <div class="ic-nums">
+          <div><div class="nk">다운로드</div><div class="nv">~10억</div></div>
+          <div><div class="nk">언어 지원</div><div class="nv">119개</div></div>
+          <div><div class="nk">컨텍스트</div><div class="nv">262K</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>중국 LLM은 성능·가격·오픈소스 삼중 공세로 글로벌 AI 구도를 뒤흔들고 있다.
+      <span class="u">DeepSeek의 MIT 라이선스 공개와 GPT 대비 4배 저렴한 가격은 글로벌 AI 비용 기준을 재설정했다. Qwen 10억 다운로드는 오픈소스 생태계의 중심이 중국으로 이동했음을 보여준다. 7개 플레이어가 동시에 최전선을 형성하는 중국 LLM 생태계는 미국 빅테크와의 경쟁 구도를 근본적으로 복잡하게 만들고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 CHIP SELF-SUFFICIENCY ================= -->
+<section class="blk" id="chip-self-sufficiency">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;화웨이 Ascend & 칩 자급화</div>
+      <h2 class="sec-title">NVIDIA 95%→55% 급락 — 국산 41% 사상 최초</h2>
+      <p class="sec-lead">미국 제재로 NVIDIA 중국 AI칩 점유율이 95%→55%로 40pp 급락한 동안, 국산 AI칩은 41% 점유율을 달성했다. 화웨이 Ascend 910C, CloudMatrix 384, SMIC 7nm 양산이 중국 반도체 자급화의 핵심축이다.</p>
+    </div>
+
+    <div class="share-grid reveal">
+      <div class="share-box">
+        <h3>중국 AI칩 시장 점유율 변화 (유닛 기준)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">NVIDIA (제재 이전)</span><span class="pct">~95%</span></div>
+            <div class="sbar-track"><div class="sbar-fill usa" data-w="95%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">NVIDIA (2025 현재)</span><span class="pct">~55%</span></div>
+            <div class="sbar-track"><div class="sbar-fill usa" data-w="55%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">국산 AI칩 (2025)</span><span class="pct">41%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="41%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">화웨이 Ascend</span><span class="pct">~20%</span></div>
+            <div class="sbar-track"><div class="sbar-fill huawei" data-w="20%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">T-Head (알리바바)</span><span class="pct">~6%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="6%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Cambricon</span><span class="pct">~4%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="4%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>화웨이 Ascend 로드맵</h3>
+        <div class="ph-sub">910C → 950PR → 950DT · 2025~2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum" style="font-size:.92rem">910C</div>
+            <div class="mt"><b>SMIC 7nm, HBM3 128GB, 320 TFLOPS(FP16)</b> — H100 대비 60~70% 성능. 단, 메모리는 H100(80GB) 대비 1.6배 우위. 2025년 출하 20~30만 개.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="font-size:.92rem">950PR</div>
+            <div class="mt"><b>2026 Q1</b> — HiBL 1.0(자체 저비용 HBM) 탑재. 원가 저감과 HBM 자급화를 동시 추진하는 중간 스텝.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum" style="font-size:.92rem">950DT</div>
+            <div class="mt"><b>2026 Q4</b> — HiZQ 2.0 HBM 144GB, 메모리 BW 4 TB/s, 인터커넥트 2 TB/s(910C 대비 2.5배). 2026년 출하 60만 개 목표(2배 증산).</div>
+          </div>
+        </div>
+        <div class="foot">* 런정페이: "우리 칩은 미국 대비 아직 한 세대 뒤처져 있다" (2025.09). 솔직한 자기 인식.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>비교 항목</th>
+            <th>화웨이 CloudMatrix 384</th>
+            <th>NVIDIA NVL72</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">구성</td>
+            <td>Ascend 910 NPU 384개 + Kunpeng CPU 192개</td>
+            <td>H100 72개</td>
+            <td>클러스터 스케일</td>
+          </tr>
+          <tr>
+            <td class="hl-td">피크 컴퓨트 (BF16)</td>
+            <td><span class="num-td">~300 PFLOPS</span></td>
+            <td>~180 PFLOPS</td>
+            <td><span class="num-td">+66% 우위</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">HBM 용량</td>
+            <td><span class="num-td">48 TB</span></td>
+            <td>~13 TB</td>
+            <td><span class="num-td">3.6배 우위</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">메모리 BW</td>
+            <td><span class="num-td">2배+ 우위</span></td>
+            <td>기준</td>
+            <td>클러스터 합산 기준</td>
+          </tr>
+          <tr>
+            <td class="hl-td">전력소모</td>
+            <td>559 kW</td>
+            <td>~200 kW</td>
+            <td>전력 효율 열위</td>
+          </tr>
+          <tr>
+            <td class="hl-td">가격</td>
+            <td>~800만 위안</td>
+            <td>—</td>
+            <td>NVIDIA 동급 대비 ~3배 고가</td>
+          </tr>
+          <tr>
+            <td class="hl-td">1.6T 파라미터 학습</td>
+            <td><span class="num-td">성공 (MFU 30%+)</span></td>
+            <td>기준</td>
+            <td>1,500+ 스텝 무중단</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* CloudMatrix 384는 개별 칩 성능 열위를 수백 개 클러스터링으로 보완하는 중국식 접근법. 가격·전력 효율은 NVIDIA 대비 열위. Huawei WAIC 2025 발표 및 다수 매체 보도 기준.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">SMIC — 7nm 양산 / 5nm 추격</span>
+        <h3>중국 최대 파운드리의 한계와 돌파</h3>
+        <div class="ic-body">2025 H1 매출 $44.56억, YoY <b>+22%</b>. 순이익 $3.21억, <b>+35.6%</b>.<br><br><b>7nm</b>: 안정적 양산, 월 ~3만 매. 2026년 2배 증설 계획. EUV 없이 DUV 멀티패터닝으로 달성 — 제조 원가 TSMC 대비 <b>~50% 높음</b>.<br><br><b>5nm</b>: 파일럿 라인 가동, 수율 <b>20% 미만</b>. 화웨이·알리바바 차세대 AI 프로세서용 2026년 양산 목표. EUV 부재라는 구조적 제약이 핵심 병목.</div>
+        <div class="ic-nums">
+          <div><div class="nk">7nm 월산</div><div class="nv">~3만매</div></div>
+          <div><div class="nk">5nm 수율</div><div class="nv">&lt;20%</div></div>
+          <div><div class="nk">매출 성장</div><div class="nv">+22%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">CXMT — DRAM 자급의 핵심</span>
+        <h3>월 29만 매 → 글로벌 4위 DRAM 업체</h3>
+        <div class="ic-body">2024 초 월 10만 매 → 2025 말 월 <b>29만 매</b>(약 3배). 2026 말 <b>35만 매/월</b> 전망 → 글로벌 DRAM 캐파의 약 <b>17%</b> 도달.<br><br><b>DDR5-8000, LPDDR5X-10667</b> 자체 개발 시연. <b>HBM3 자체 생산</b>: 2026년 말까지 국산 HBM3 양산 목표 — Naura, Maxwell 등 국내 장비 업체와 어셈블리 생태계 구축. HBM 자급 성공 시 SK하이닉스 HBM 프리미엄에 장기 리스크.</div>
+        <div class="ic-nums">
+          <div><div class="nk">월 생산</div><div class="nv">29만매</div></div>
+          <div><div class="nk">글로벌</div><div class="nv">4위</div></div>
+          <div><div class="nk">HBM3</div><div class="nv">2026말</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid-3 reveal" style="margin-top:24px">
+      <div class="icard">
+        <span class="ic-tag rose">Cambricon (寒武纪)</span>
+        <h3>7년 적자 → 2025 첫 흑전</h3>
+        <div class="ic-body">매출 YoY <b>+453%</b>. M/S 4%(2025) → <b>9%</b>(2026) 목표. 강제 대체 수요의 최대 수혜주. 정부 조달 리스트에 국산 AI칩 9종 최초 등재.</div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag rose">Biren (壁仞)</span>
+        <h3>홍콩 IPO, 시총 ~$120억</h3>
+        <div class="ic-body">BR106 시리즈, SMIC 제조, 수출통제 기준 이하 설계. <b>알리바바·DeepSeek V3 추론</b> 지원. 2026 초 홍콩 IPO 시총 ~HK$900억.</div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag rose">Enflame (燧原)</span>
+        <h3>텐센트 전속 칩 공급자</h3>
+        <div class="ic-body">텐센트 <b>20% 지분</b>, 매출의 <b>72%</b> 텐센트향. 사실상 텐센트 전속 칩 공급자. 상장 통해 R&D 자금 확보 중.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>중국 AI칩 자급률 41%는 제재의 역설적 결과다.
+      <span class="u">NVIDIA의 H20 전면 금지(2025.04)가 결정적 촉매가 됐다. 화웨이 Ascend가 시장을 주도하고, Cambricon·Biren·Enflame이 뒤따르며 생태계가 형성되고 있다. 개별 칩 성능은 NVIDIA 대비 열위이지만, CloudMatrix 384처럼 수백 개를 클러스터링하는 중국식 접근법이 성능 격차를 부분적으로 좁히고 있다. 2026년 60만 개 출하 목표와 국산 칩 의무화 정책이 자급률 50%+ 달성의 핵심 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 AI APPLICATIONS ================= -->
+<section class="blk" id="ai-applications">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;AI 응용 산업화</div>
+      <h2 class="sec-title">자율주행·휴머노이드·드론 — AI 실전 배치</h2>
+      <p class="sec-lead">BYD God's Eye 250만 대 출하, 로보택시 1,700만 회 탑승, 글로벌 휴머노이드 90%, 드론 배달 전국 면허. 중국 AI는 실험실을 벗어나 산업 현장에서 실전 검증 단계에 진입했다.</p>
+    </div>
+
+    <div class="info-grid reveal">
+      <div class="icard">
+        <span class="ic-tag red">BYD — God's Eye 자율주행</span>
+        <h3>전 차종 ADAS 무료 탑재 · 250만 대</h3>
+        <div class="ic-body">2025.02 "인텔리전트 드라이빙 포 올(智驾平权)" 전략 — <b>전 차종에 ADAS 기본 탑재(추가 비용 없음)</b>. 자율주행을 프리미엄 옵션에서 기본 기능으로 민주화.<br><br>God's Eye 장착 차량 누적 출하 <b>250만 대</b>(2025 말), 일일 유효 주행데이터 <b>1.5억 km</b>. DeepSeek AI 통합: ADAS 최상위 버전에 DeepSeek 모델 적용. R&D 인력 5,000명+, 향후 투자 <b>1,000억 위안($143억)</b>.</div>
+        <div class="ic-nums">
+          <div><div class="nk">출하 누계</div><div class="nv">250만대</div></div>
+          <div><div class="nk">일 주행데이터</div><div class="nv">1.5억km</div></div>
+          <div><div class="nk">R&D 투자</div><div class="nv">1,000억¥</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Baidu Apollo Go — 로보택시</span>
+        <h3>누적 1,700만 회 탑승 · 글로벌 확장</h3>
+        <div class="ic-body">중국 내 <b>~20개 도시</b> 운영. 누적 탑승 <b>1,700만 회</b>(2025.10). Q3 2025 완전 무인 자율주행 탑승 <b>310만 회</b>. 누적 자율주행 거리 <b>2.4억 km</b>.<br><br><b>글로벌 확장</b>: Uber 다년간 파트너십(수천 대 규모 해외 배치), 아부다비 상업 무인택시 영업허가, Lyft와 제휴(2026년 독일·영국 진출 예정), 스위스 PostBus 협력. 국내 선전 기반으로 해외 진출을 동시 추진하는 독특한 전략.</div>
+        <div class="ic-nums">
+          <div><div class="nk">누적 탑승</div><div class="nv">1,700만</div></div>
+          <div><div class="nk">운영 도시</div><div class="nv">~20개</div></div>
+          <div><div class="nk">자율주행</div><div class="nv">2.4억km</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:22px">
+      <div class="icard">
+        <span class="ic-tag rose">휴머노이드 — 글로벌 90%</span>
+        <h3>AgiBot 5,168대 · 중국이 세계를 리드</h3>
+        <div class="ic-body">중국 휴머노이드 로봇 제조사들이 <b>글로벌 출하의 90%</b>를 차지. AgiBot(아기봇)이 <b>5,168대</b>로 단일 기업 최대 생산 기록.<br><br>스마트 제조 공장 배치가 핵심 응용 — 전기차·배터리·전자 조립 라인에 투입. 정부의 AI+ 행동계획에 따른 제조업 자동화 보조금이 수요를 견인. 2025년 중국 휴머노이드 시장 규모 빠른 성장 중. Boston Dynamics·Figure AI 등 미국 경쟁사 대비 가격 경쟁력에서 압도적 우위.</div>
+        <div class="ic-nums">
+          <div><div class="nk">글로벌 M/S</div><div class="nv">~90%</div></div>
+          <div><div class="nk">AgiBot</div><div class="nv">5,168대</div></div>
+          <div><div class="nk">주요 응용</div><div class="nv">스마트제조</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">Meituan — 드론 배달 전국 면허</span>
+        <h3>세계 최초 단일 기업 전국 상업 드론 허가</h3>
+        <div class="ic-body">2025.04: CAAC(중국 민항총국)로부터 <b>전국 물류 드론 운영 면허</b> 취득 — 전 세계 최초로 단일 기업이 한 국가 전역에서 상업 드론 배달 허가.<br><br>2025.12 기준: <b>65개 노선</b>, 누적 주문 <b>74만 건</b>(선전·베이징·상하이·광저우·홍콩·두바이). M-Drone 4L: 허사이 고체 LiDAR 장착, 위성·시각 신호 없이 <b>야간 완전 자율 비행</b> 가능. 중국 저공경제 시장: 2025년 <b>1.5조 위안</b>, 2035년 <b>3.5조 위안</b> 전망.</div>
+        <div class="ic-nums">
+          <div><div class="nk">운영 노선</div><div class="nv">65개</div></div>
+          <div><div class="nk">누적 주문</div><div class="nv">74만건</div></div>
+          <div><div class="nk">저공경제</div><div class="nv">1.5조¥</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:32px">
+      <div class="indcard">
+        <div class="ind-num">250만</div>
+        <div class="ind-lab">BYD God's Eye<br>장착 차량 (2025)</div>
+        <div class="ind-tag">BYD IR</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">1,700만</div>
+        <div class="ind-lab">Apollo Go<br>누적 탑승 횟수</div>
+        <div class="ind-tag">Baidu 2025.10</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">90%</div>
+        <div class="ind-lab">중국 휴머노이드<br>글로벌 점유율</div>
+        <div class="ind-tag">2025 기준</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">74만</div>
+        <div class="ind-lab">Meituan 드론<br>누적 배달 주문</div>
+        <div class="ind-tag">2025.12</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">2.26억</div>
+        <div class="ind-lab">Doubao<br>월간 활성 사용자</div>
+        <div class="ind-tag">MAU, 2026</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>중국 AI 응용은 데이터와 산업화의 결합으로 선순환을 만들고 있다.
+      <span class="u">BYD의 일 1.5억 km 주행 데이터, Apollo Go의 2.4억 km 자율주행 데이터, Meituan의 드론 배달 전국 면허는 중국 AI가 규모와 데이터에서 글로벌 경쟁자를 압도하고 있음을 보여준다. 정부 허가 체계의 빠른 의사결정과 내수 시장 규모(14억 명)가 실전 배치를 가속화하는 핵심 변수다. 미국의 DJI 제재(FCC 등재)는 이 경쟁 우위에 대한 반응이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 US-CHINA RIVALRY ================= -->
+<section class="blk" id="us-china-rivalry">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;미중 AI 경쟁 & 제재</div>
+      <h2 class="sec-title">수출 통제 → 자급화 가속 → 기술 양분화</h2>
+      <p class="sec-lead">2022년 바이든 1차 제재부터 2025년 H20 전면 금지까지 — 미국의 수출 통제가 강화될수록 중국의 기술 자립이 가속화되는 역설이 심화되고 있다. 디리스킹 vs 디커플링 논쟁 속에 글로벌 반도체·AI 공급망이 이중화되고 있다.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl-row">
+        <div class="tl-date">2022.10</div>
+        <div class="tl-body">
+          <div class="tl-title">바이든 1차 수출통제</div>
+          <div class="tl-desc">A100·H100 등 고성능 AI 칩 대중 수출 제한. 첫 번째 광범위한 반도체 제재 조치.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2023.10</div>
+        <div class="tl-body">
+          <div class="tl-title">바이든 2차 — H800 확대</div>
+          <div class="tl-desc">다운그레이드 칩(H800)까지 확대. FDPR(Foreign Direct Product Rule) 강화로 제3국 우회 차단.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2024.12</div>
+        <div class="tl-body">
+          <div class="tl-title">바이든 3차 — Entity List 140개사</div>
+          <div class="tl-desc">Entity List 140개사 추가. HBM 규제, FDPR 범위 확대. AI Diffusion Framework 발표.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2025.04</div>
+        <div class="tl-body">
+          <div class="tl-title">트럼프 H20 전면 금지</div>
+          <div class="tl-desc">다운그레이드 칩 H20까지 완전 차단. NVIDIA 중국 매출에 직접 타격. 국산 AI칩 대체 수요 폭발적 증가.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2025.12</div>
+        <div class="tl-body">
+          <div class="tl-title">부분 완화 발표</div>
+          <div class="tl-desc">일부 칩의 승인 고객 직접 판매 허용. 전면 금지에서 선별적 통제로의 미세 조정.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2026.01</div>
+        <div class="tl-body">
+          <div class="tl-title">BIS 최종 규칙 — 개별 심사 전환</div>
+          <div class="tl-desc">대중 수출 심사 기준을 '거부 추정'에서 '개별 심사'로 전환. 동맹국 협력 강화 병행.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-wrap reveal" style="margin-top:32px">
+      <div class="compare-header">
+        <div>비교 항목</div>
+        <div>미국 진영</div>
+        <div>중국 진영</div>
+        <div>현황</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">최고 AI 칩</div>
+        <div><span class="cr-num blue">NVIDIA H200/B200</span></div>
+        <div>Huawei Ascend 910C</div>
+        <div>미국 5배 성능 우위 (CFR)</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">클러스터 전략</div>
+        <div><span class="cr-num blue">NVL72 (H100 72개)</span></div>
+        <div><span class="cr-num">CloudMatrix 384 (910 384개)</span></div>
+        <div>메모리·컴퓨트 중국 우위</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">파운드리</div>
+        <div><span class="cr-num blue">TSMC 2nm (독점)</span></div>
+        <div>SMIC 7nm (5nm 추격)</div>
+        <div>기술 격차 2세대+</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">소프트웨어 생태계</div>
+        <div><span class="cr-num blue">CUDA (10년 해자)</span></div>
+        <div>CANN/torch_npu (오픈소싱)</div>
+        <div>중국 내 제한적 대체 가능</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">AI 모델 성능</div>
+        <div><span class="cr-num blue">GPT-5.2, Gemini 3.1</span></div>
+        <div><span class="cr-num">DeepSeek V4 Pro, Qwen3.5</span></div>
+        <div>격차 빠르게 축소 중</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">오픈소스 생태계</div>
+        <div>Llama 4 (Meta)</div>
+        <div><span class="cr-num">Qwen3.5 (50%+ M/S)</span></div>
+        <div>중국이 오픈소스 주도</div>
+      </div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 컴퓨트 갭 분석</div>
+        <h3>현재 5배 격차 — 2027년 17배?</h3>
+        <div class="fc-body"><b>현재 격차</b>: 미국 최고 AI 칩 대비 Huawei 최고 칩의 총 처리 성능 약 <b>5배 열위</b> (CFR 전망).<br><br><b>CFR 전망</b>: 2027년까지 격차 <b>17배로 확대</b> 가능 — 미국이 B200·B300 시리즈를 계속 출시하는 동안 Huawei 로드맵이 이를 따라잡지 못할 경우.<br><br>중국의 대응: 개별 칩 성능 열위를 <b>수백 개 클러스터링</b>으로 보완. 저가 에너지(태양광·풍력) + 전기료 보조금 활용. DeepSeek의 소프트웨어 효율 혁신으로 하드웨어 의존도 저감.</div>
+        <div class="fc-note">Huawei 2025 생산량은 NVIDIA 대비 극소 비율(수십만 개 수준). 미국 관리들의 추정. 실제 출하는 미공개.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 기술 양분화(Bifurcation)</div>
+        <h3>미·중 병행 생태계 고착화</h3>
+        <div class="fc-body">미국 제재 → 중국 국산화 가속 → NVIDIA 중국 M/S <b>40pp 급락</b> → 중국 독자 생태계 형성의 악순환(미국 관점)이 고착화되고 있다.<br><br>베이징: 신규 국가 자금 데이터센터에 <b>국산 칩 독점 사용</b> 지침. 중국, 2026년 세계 최대 <b>IC 웨이퍼 제조국</b> 부상 전망.<br><br>글로벌 공급망 이중화: 미국·동맹(TSMC·삼성) vs 중국(SMIC·CXMT) <b>병행 체제</b> 고착화 추세.</div>
+        <div class="fc-note">디커플링(완전 분리)보다 디리스킹(위험 관리)이 현실적이라는 서방 주류 의견. 그러나 H20 전면 금지는 사실상 디커플링 수준.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● NVIDIA 영향</div>
+        <h3>중국 매출 하락 — $5.5B 손실 경고</h3>
+        <div class="fc-body">NVIDIA는 H20 금지 발표 직후 <b>$5.5B 재고 손실</b> 경고를 발표. 중국 데이터센터 매출이 급감.<br><br>NVIDIA 매출에서 중국 비중은 제재 이전 ~22%에서 <b>한 자릿수 %대</b>로 하락. 대체 시장(미국·유럽·중동·동남아)으로 수요가 재편 중이지만, 중국 시장의 절대적 규모(AI DC 투자 연 $40B+)는 대체 불가능한 손실.<br><br>역설적으로 제재가 Ascend를 키워 장기적으로 더 강력한 경쟁자를 만들 수 있다.</div>
+        <div class="fc-note">$5.5B 재고 손실은 NVIDIA 자체 보고. 중국 매출 비중 하락폭은 분기별 IR 기준.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 중국의 소프트웨어 대응</div>
+        <h3>CANN 오픈소싱 + DeepSeek 효율 혁신</h3>
+        <div class="fc-body">Huawei 2025.08 <b>CANN 오픈소싱</b> + <b>torch_npu</b> 플러그인 공개 → 기존 PyTorch 코드를 Ascend에서 구동 가능. CUDA 생태계 종속성 일부 해소.<br><br>DeepSeek의 소프트웨어 효율 혁신(Sparse Attention, MoE 최적화)이 <b>하드웨어 의존도를 낮추는</b> 새로운 경쟁 변수로 부상. 칩이 약해도 모델이 효율적이면 경쟁 가능하다는 패러다임 전환.<br><br>중국식 접근법: 하드웨어 격차를 소프트웨어 + 클러스터 스케일 + 가격으로 보완.</div>
+        <div class="fc-note">소프트웨어 효율 혁신이 하드웨어 격차를 영구적으로 보완할 수 있는지는 여전히 논쟁 중. LLM 학습(pre-training)은 여전히 최고 성능 칩이 유리.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>수출 통제는 중국 AI 자립의 가장 강력한 촉매가 됐다.
+      <span class="u">NVIDIA 중국 M/S 95%→55% 급락과 국산 AI칩 41% 달성은 동전의 양면이다. 미국의 제재 강화 → 중국 자급화 가속 → 기술 양분화 고착화의 구조가 형성됐다. 단기적으로 중국은 하드웨어 격차(현재 5배)를 소프트웨어 효율화(DeepSeek)와 클러스터 스케일(CloudMatrix)로 메우고 있다. 장기적으로는 이 격차가 확대될지 축소될지가 향후 3~5년 AI 패권의 핵심 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 CHINA POLICY ================= -->
+<section class="blk" id="china-policy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;중국 AI 정책</div>
+      <h2 class="sec-title">AI+ 행동계획 · 반도체 대기금 $47.5B</h2>
+      <p class="sec-lead">중국 국무원의 AI+ 행동계획, 반도체 3차 대기금 $47.5B(~3,440억 위안), 국산 칩 의무화, 생성형 AI 관리방안까지 — 중국 AI 정책은 육성과 규제의 이중 구조로 설계됐다.</p>
+    </div>
+
+    <div class="info-grid reveal">
+      <div class="icard">
+        <span class="ic-tag red">AI+ 행동계획</span>
+        <h3>제조·교육·헬스케어·금융 전방위 AI화</h3>
+        <div class="ic-body">중국 국무원이 발표한 <b>AI+ 행동계획</b>은 전통 산업과 AI의 결합을 국가 과제로 설정. 제조업 AI화(스마트 팩토리), 교육 AI, 헬스케어 AI, 금융 AI를 4대 우선순위로 지정.<br><br>지방정부들이 AI 스타트업에 <b>보조금·세제 혜택·데이터 제공</b>을 패키지로 지원. 국유기업의 AI 도입에 KPI를 부여해 수요를 인위적으로 창출. 신규 국가 자금 투입 데이터센터에 <b>국산 칩 독점 사용</b> 지침 발표 — Cambricon, 화웨이 Ascend 수혜.</div>
+        <div class="ic-nums">
+          <div><div class="nk">4대 분야</div><div class="nv">제조·교육·헬스·금융</div></div>
+          <div><div class="nk">국산칩 의무</div><div class="nv">신규DC</div></div>
+          <div><div class="nk">조달등재</div><div class="nv">9종</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">반도체 3차 대기금 $47.5B</span>
+        <h3>빅펀드 III — 역대 최대 반도체 투자</h3>
+        <div class="ic-body">중국 국가 IC 산업투자기금(大基金) 3기 — 규모 <b>~3,440억 위안($47.5B)</b>. 역대 최대 반도체 국가 펀드.<br><br>투자 우선순위: <b>장비(NAURA·AMEC 등)</b> → <b>소재(광자·포토레지스트)</b> → <b>선단 파운드리(SMIC 5nm)</b> → <b>HBM 자급(CXMT)</b> 순서. 장비 자급이 최우선 과제 — EUV 장비 없이 DUV로 한계 극복하는 SMIC의 제약을 국내 장비 개발로 해소하려는 전략.<br><br>$295B 규모 <b>국산 칩 의무화(Domestic Chip Mandate)</b> 추진 보도.</div>
+        <div class="ic-nums">
+          <div><div class="nk">기금 규모</div><div class="nv">$47.5B</div></div>
+          <div><div class="nk">1순위</div><div class="nv">반도체 장비</div></div>
+          <div><div class="nk">의무화</div><div class="nv">$295B</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:22px">
+      <div class="icard">
+        <span class="ic-tag rose">생성형 AI 관리방안</span>
+        <h3>규제: AI 혁신 허용 + 사회 안정 우선</h3>
+        <div class="ic-body">2023년 발효된 <b>생성형 AI 서비스 관리 잠정방안</b> — 중국 정부의 AI 규제 철학: <b>"혁신 촉진 + 위험 관리 병행"</b>.<br><br>핵심 조항: 생성 콘텐츠의 사실 기반 원칙, 개인정보 보호, 지식재산권 준수, 국가안보·사회 안정 우선. AI 서비스 제공 시 정부 <b>사전 등록·심사</b> 필수.<br><br>실제 적용에서는 대형 AI 기업(DeepSeek·알리바바·바이두)에 유연하게 운용되는 경향. 규제보다 산업 육성이 현재 정책의 실질적 우선순위.</div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">민관 협력 모델</span>
+        <h3>국유기업 수요 + 민간 혁신의 결합</h3>
+        <div class="ic-body">중국 AI 정책의 핵심 설계: <b>국유기업이 수요를 창출하고, 민간 기업이 공급을 담당</b>. 화웨이·SMIC는 정책 수혜, DeepSeek·알리바바·바이두·바이트댄스는 시장 경쟁.<br><br>데이터: 정부가 공공 데이터(의료·교통·금융)를 기업에 제공. 금융: 대기금 + 지방 국유 VC + 민간 VC의 3층 구조. 인재: 해외 유학파 귀국 인센티브(천인계획 후속 프로그램). Zhipu AI(국유 대학 칭화대 산하)가 기술 민관 협력의 대표 사례.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>중국 AI 정책은 자금 규모보다 실행 구조가 핵심이다.
+      <span class="u">$47.5B 대기금 III와 $295B 의무화는 숫자 자체보다 국가가 AI 반도체 공급망 전체를 설계하겠다는 의지의 표현이다. 장비 → 소재 → 파운드리 → 메모리 순서의 투자 우선순위는 결국 EUV 의존도를 줄이고 독자 제조 생태계를 구축하겠다는 장기 전략이다. 규제(생성형 AI 관리방안)는 혁신을 억제하지 않는 선에서 설계돼 있어, 현재는 '육성'이 '규제'를 압도하는 구조다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">Bull vs Bear — 기술 자립 vs 제재 리스크</h2>
+      <p class="sec-lead">중국 AI 생태계는 기술 자립 가속(Bull)과 미국 제재 심화(Bear)의 대립 구도다. 가격 경쟁력과 내수 시장 규모가 Bull의 핵심 논거이고, GPU 접근 제한·기술 천장·데이터 규제가 Bear의 핵심 논거다.</p>
+    </div>
+
+    <div class="bb-grid reveal">
+      <div class="bb-card bull-card">
+        <div class="bb-label">BULL CASE</div>
+        <h3>기술 자립 · 가격 경쟁력 · 내수 시장</h3>
+        <div class="bb-list">
+          <div class="bb-item">
+            <span class="bi">01</span>
+            <div><b>기술 자립 가속</b> — AI칩 자급률 41% 달성(사상 최초). 화웨이 CloudMatrix 384가 클러스터 규모에서 NVIDIA를 능가. DeepSeek·Qwen의 소프트웨어 효율 혁신이 하드웨어 격차를 보완.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">02</span>
+            <div><b>가격 경쟁력</b> — DeepSeek V4 Pro가 GPT-5.2 대비 4배 저렴. Qwen3.5 Apache 2.0 무료 공개. AI 서비스 단가 하락으로 B2B 도입 장벽 대폭 낮아짐.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">03</span>
+            <div><b>내수 거대 시장</b> — 14억 인구, 제조업 GDP 비중 27%, 스마트 제조 수요. 로보택시·드론배달·휴머노이드 전국 배치 규제 최단기 승인 사례 축적.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">04</span>
+            <div><b>정책 드라이브</b> — 대기금 III $47.5B, AI+ 행동계획, 국산 칩 의무화 $295B. 국유기업 AI 도입 KPI가 수요를 인위적으로 창출.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">05</span>
+            <div><b>오픈소스 생태계</b> — Qwen 다운로드 10억, 전 세계 오픈소스 AI의 50%+. 개발자 생태계 장악이 장기 플랫폼 경쟁에서 결정적 우위.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-card bear-card">
+        <div class="bb-label">BEAR CASE</div>
+        <h3>제재 심화 · GPU 접근 제한 · 기술 천장</h3>
+        <div class="bb-list">
+          <div class="bb-item">
+            <span class="bi">01</span>
+            <div><b>미국 제재 강화</b> — H20 전면 금지에서 장비(EUV)·소재·인력까지 확대 가능. 동맹국(일본·네덜란드) 동참으로 우회 경로도 차단 중. Entity List 지속 확대.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">02</span>
+            <div><b>GPU 접근 제한</b> — 최고 성능 칩 없이는 차세대 프론티어 모델 학습이 제약. CloudMatrix 384의 전력 소모 559kW vs 효율 격차. CFR 전망 2027년 컴퓨트 갭 17배.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">03</span>
+            <div><b>기술 천장</b> — SMIC 5nm 수율 20% 미만, EUV 부재로 구조적 한계. HBM 자급(CXMT)은 2026년 말 목표로 아직 미완. 파운드리 원가 TSMC 대비 50% 고가.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">04</span>
+            <div><b>데이터 규제 리스크</b> — 국가 데이터 안보법, 개인정보보호법이 해외 기업 협력을 제한. 중국 AI 기업의 글로벌 데이터 활용 제약. 서방의 중국 AI 서비스 사용 금지 가능성.</div>
+          </div>
+          <div class="bb-item">
+            <span class="bi">05</span>
+            <div><b>지정학 리스크 프리미엄</b> — 대만 리스크, 미중 관계 악화 시 모든 전망이 무효화. 중국 AI 기업의 해외 상장·자금조달 제한 심화. 서방 투자자의 중국 노출 축소 추세.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>투자 영역</th>
+            <th>핵심 플레이어</th>
+            <th>기회 요인</th>
+            <th>리스크</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">LLM / AI 플랫폼</td>
+            <td>알리바바 (Qwen), ByteDance</td>
+            <td><span class="num-td">오픈소스 생태계 장악, 글로벌 API 수익화</span></td>
+            <td>상장 제한, 미국 사용 금지 확대</td>
+          </tr>
+          <tr>
+            <td class="hl-td">AI 반도체</td>
+            <td>Cambricon, Biren (상장)</td>
+            <td><span class="num-td">국산 의무화, 강제 대체 수요 급증</span></td>
+            <td>화웨이 독점, 수율·원가 열위</td>
+          </tr>
+          <tr>
+            <td class="hl-td">파운드리 / 메모리</td>
+            <td>SMIC, CXMT</td>
+            <td><span class="num-td">대기금 III 수혜, 웨이퍼 캐파 확대</span></td>
+            <td>EUV 부재, 수율 저조, 서방 장비 제한</td>
+          </tr>
+          <tr>
+            <td class="hl-td">자율주행 / 로보택시</td>
+            <td>BYD, Baidu, 웨이모(미)</td>
+            <td><span class="num-td">데이터 1.5억km/일, 규제 우호적 환경</span></td>
+            <td>수익화 일정, 글로벌 진출 규제 장벽</td>
+          </tr>
+          <tr>
+            <td class="hl-td">휴머노이드 / 드론</td>
+            <td>AgiBot, Meituan, DJI</td>
+            <td><span class="num-td">글로벌 90% M/S, 가격 경쟁력</span></td>
+            <td>미국 Entity List, FCC 차단 확대 가능성</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 비상장사(DeepSeek·Moonshot 등)는 직접 투자 접근성 제한적. 알리바바(BABA) 등 상장사 통한 간접 노출이 현실적.</div>
+    </div>
+
+    <div class="big-thesis reveal">
+      <div class="bt-tag">SYNTHESIS · 핵심 관점</div>
+      <div class="bt-title">중국 AI는 제재의 역설 — 압박이 강할수록 자립이 빨라진다.</div>
+      <div class="bt-body">
+        <b>중국 AI 생태계는 외부 압박과 내부 혁신이 동시에 작동하는 독특한 구조다.</b> NVIDIA H20 전면 금지가 국산 AI칩 41%를 만들었고, 서방의 LLM 접근 제한이 DeepSeek·Qwen의 MIT 오픈소스 공세를 낳았다. 미국의 수출 통제는 역설적으로 중국 AI 생태계의 가장 강력한 성장 촉매가 됐다.<br><br>
+        <b>단기(1~2년)</b>: 국산 AI칩 의무화와 대기금 III가 Cambricon·Biren·SMIC의 매출을 견인. Qwen·DeepSeek API가 글로벌 B2B 시장에서 가격 파괴 경쟁을 주도. CloudMatrix 384가 대형 LLM 학습의 국산 대안으로 정착.<br><br>
+        <b>중기(3~5년)</b>: CXMT HBM3 자급 성공 여부, SMIC 5nm 수율 개선 속도가 기술 천장의 높이를 결정. DeepSeek V5 이후 모델이 최고 성능 칩 없이도 GPT-6급 성능에 도달할 수 있는지가 핵심 변수. 컴퓨트 갭이 <b>5배→17배로 확대</b>되면 소프트웨어 혁신만으로는 보완 한계 도달.<br><br>
+        투자자 관점: <b>상장된 중국 AI 수혜주(알리바바·SMIC·Cambricon)의 밸류에이션 프리미엄이 지정학 리스크 디스카운트를 이길 수 있는가</b>가 핵심 판단 기준이다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">중국 AI 생태계 — DeepSeek $590B에서 칩 자급률 41%까지</div>
+      <div class="src-list">
+        DATA · DeepSeek 공식 기술 보고서·모델 카드 · Alibaba Cloud 커뮤니티 블로그<br>
+        Moonshot AI / TechCrunch / Yahoo Finance 라운드 공시<br>
+        화웨이 Ascend 공시 · WAIC 2025 발표 자료 · NVIDIA IR (H20 금지 관련)<br>
+        미 상무부 BIS 수출통제 규칙 · CFR AI 컴퓨트 갭 분석<br>
+        CSIS 미중 기술 경쟁 보고서 · 중국 국무원 AI+ 행동계획<br>
+        IndexBox · TrendForce · SemiAnalysis (AI칩 점유율)<br>
+        BYD IR · Baidu Apollo Go 공식 · CAAC 공고 · 홍콩 거래소 Zhipu AI 상장 서류<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 중국 관련 수치는 비공개 기업이 다수여서 미디어 추정치에 의존하며, 검증이 제한될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

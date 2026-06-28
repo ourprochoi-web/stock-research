@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="미국 BTC 현물 ETF AUM $80.4B·IBIT $62B·RWA 토큰화 $40B+·BlackRock BUIDL $2.5B·한국 가상자산 이용자보호법·업비트 65%+ 점유 — 디지털 자산 투자 종합 분석">
+<meta name="keywords" content="비트코인ETF,BTC ETF,IBIT,BlackRock,RWA토큰화,스테이블코인,CBDC,가상자산,업비트,토큰증권,STO,디지털자산">
+<meta property="og:title" content="디지털 자산 투자 지도 — BTC ETF $80B·RWA 토큰화·한국 가상자산법">
+<meta property="og:description" content="미국 BTC 현물 ETF AUM $80.4B·IBIT $62B·RWA 토큰화 $40B+·BlackRock BUIDL $2.5B·한국 가상자산 이용자보호법·업비트 65%+ 점유 — 디지털 자산 투자 종합 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/digital-assets/da_investment_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="디지털 자산 투자 지도 — BTC ETF $80B·RWA 토큰화·한국 가상자산법">
+<meta name="twitter:description" content="미국 BTC 현물 ETF AUM $80.4B·IBIT $62B·RWA 토큰화 $40B+·BlackRock BUIDL $2.5B·한국 가상자산 이용자보호법 — 디지털 자산 투자 종합 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/digital-assets/da_investment_map.html">
+<title>디지털 자산 투자 지도 — BTC ETF $80B·RWA 토큰화·한국 가상자산법</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#f59e0b;
+    --current:#fbbf24;
+    --glow:#fde68a;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(253,230,138,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:rgba(245,158,11,.25);transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(245,158,11,.12);color:var(--volt);border:1px solid rgba(245,158,11,.3)}
+  .ic-tag.pink{background:rgba(251,191,36,.12);color:var(--current);border:1px solid rgba(251,191,36,.3)}
+  .ic-tag.rose{background:rgba(253,230,138,.12);color:var(--glow);border:1px solid rgba(253,230,138,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.gold{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.silver{background:linear-gradient(90deg,#94a3b8,#cbd5e1)}
+  .sbar-fill.green{background:linear-gradient(90deg,var(--bull),#6ee7b7)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:var(--current)}
+  .compare-row .cr-num.green{color:var(--bull)}
+  .compare-row .cr-num.red{color:var(--bear)}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(253,230,138,.04));
+    border:1px solid rgba(245,158,11,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- BULL/BEAR COMPARE ---------- */
+  .bb-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .bb-card{border-radius:18px;padding:30px}
+  .bb-card.bull-card{background:linear-gradient(135deg,rgba(72,213,151,.08),rgba(72,213,151,.03));border:1px solid rgba(72,213,151,.3)}
+  .bb-card.bear-card{background:linear-gradient(135deg,rgba(255,107,107,.08),rgba(255,107,107,.03));border:1px solid rgba(255,107,107,.3)}
+  .bb-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+  .bb-card.bull-card h3{color:var(--bull)}
+  .bb-card.bear-card h3{color:var(--bear)}
+  .bb-list{display:flex;flex-direction:column;gap:12px}
+  .bb-item{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--ink-2);line-height:1.55}
+  .bb-item b{color:var(--ink);font-weight:650}
+  .bb-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+  .bull-card .bb-dot{background:var(--bull)}
+  .bear-card .bb-dot{background:var(--bear)}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .bb-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "디지털 자산 투자 지도 — BTC ETF $80B·RWA 토큰화·한국 가상자산법",
+  "description": "미국 BTC 현물 ETF AUM $80.4B·IBIT $62B·RWA 토큰화 $40B+·BlackRock BUIDL $2.5B·한국 가상자산 이용자보호법·업비트 65%+ 점유 — 디지털 자산 투자 종합 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/digital-assets/da_investment_map.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fde68a;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(253,230,138,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>디지털 자산 · 투자 지도</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#btc-etf">01 / ETF</a>
+      <a href="#institutional">02 / 기관 채택</a>
+      <a href="#rwa">03 / RWA 토큰화</a>
+      <a href="#cbdc-stablecoin">04 / CBDC·스테이블</a>
+      <a href="#korea-digital">05 / 한국</a>
+      <a href="#investment-thesis">06 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">디지털 자산 · 투자 지도 · 2026.06 기준</span>
+    <h1 class="hero-title">BTC ETF $80B<br>기관 시대 <span class="hl">개막</span></h1>
+    <p class="hero-sub">ETF 기관화·RWA 토큰화·규제 명확화 — 디지털 자산의 메인스트림 전환점을 분석한다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$80.4<span class="u">B</span></div>
+        <div class="lab">미국 BTC 현물 ETF AUM. IBIT $62B(49% 점유). 2026년 6월 기준 기관 채택 가속.</div>
+        <div class="src">SRC: iShares / SEC 공시 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$40<span class="u">B+</span></div>
+        <div class="lab">RWA 토큰화 시장 (국채·부동산·사모). 2030년 $16T~$30T 전망, CAGR 53%+.</div>
+        <div class="src">SRC: RWA.xyz / BCG / Ripple 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$64<span class="u">K</span></div>
+        <div class="lab">비트코인 현재가 (~$64,232). 시총 $1.74T, 도미넌스 59%. 2026.06.27 기준.</div>
+        <div class="src">SRC: CoinGecko 2026.06.27</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 BTC/ETH ETF ================= -->
+<section class="blk" id="btc-etf">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;BTC/ETH 현물 ETF</div>
+      <h2 class="sec-title">BTC ETF AUM $80.4B — IBIT 49% 독주</h2>
+      <p class="sec-lead">2024년 1월 승인된 미국 BTC 현물 ETF는 역대 가장 빠른 자산 축적 속도로 AUM $80.4B를 달성했다. BlackRock IBIT($62B)가 전체의 49%를 점유하며, 기관 투자자의 사실상 디폴트 BTC 노출 수단이 됐다. ETH ETF는 AUM $12~13B로 BTC의 약 1/6 수준에 그친다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>ETF 상품</th>
+            <th>운용사</th>
+            <th>AUM</th>
+            <th>점유율</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">IBIT</td>
+            <td>BlackRock</td>
+            <td><span class="num-td">~$62B</span></td>
+            <td>~49%</td>
+            <td>기관 채택 사실상 표준, 연기금·SWF 디폴트</td>
+          </tr>
+          <tr>
+            <td class="hl-td">FBTC</td>
+            <td>Fidelity</td>
+            <td><span class="num-td">~$20B+</span></td>
+            <td>~25%</td>
+            <td>소매 중심, 리테일 투자자 선호</td>
+          </tr>
+          <tr>
+            <td class="hl-td">기타 BTC ETF</td>
+            <td>Ark, Invesco 등</td>
+            <td><span class="num-td">~$18B</span></td>
+            <td>~26%</td>
+            <td>Grayscale GBTC 포함</td>
+          </tr>
+          <tr>
+            <td class="hl-td">BTC ETF 합계</td>
+            <td>—</td>
+            <td><span class="num-td">$80.4B</span></td>
+            <td>100%</td>
+            <td>2026.06 기준. 2025년 누적 순유입 $6.96B</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ETHA (ETH)</td>
+            <td>BlackRock</td>
+            <td><span class="num-td">~$6.5B</span></td>
+            <td>—</td>
+            <td>ETH ETF 최대. 누적 유입 $11.9B</td>
+          </tr>
+          <tr>
+            <td class="hl-td">전체 ETH ETF</td>
+            <td>—</td>
+            <td><span class="num-td">~$12~13B</span></td>
+            <td>—</td>
+            <td>피크 $30.6B(2025 중반) 대비 하락</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* iShares 공식 공시 · SEC EDGAR 13F · SoSoValue 대시보드 기준. 2026.06 기준.</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>BTC ETF 누적 흐름 — 2024~2026</h3>
+        <div class="ph-sub">순유입 / 유출 주요 이벤트</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">+$6.96B</div>
+            <div class="mt"><b>2025년 누적 순유입</b> — 연기금·패밀리오피스·기업 재무담당이 IBIT를 통해 지속적으로 BTC 비중을 확대.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">-$4.4B</div>
+            <div class="mt"><b>2026년 5~6월 순유출</b> — 5/15~6/3 역대 최장 13일 연속 유출 기록. 이후 반등. 변동성 구간 확인.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$80.4B</div>
+            <div class="mt"><b>최종 AUM</b> — 1년 반 만에 달성. 금 ETF GLD가 $80B 도달까지 5년 소요된 것과 비교하면 역대급 속도.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>ETH ETF vs BTC ETF 격차</h3>
+        <div class="ph-sub">기관 선호도 비교</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">1/6</div>
+            <div class="mt"><b>ETH ETF AUM 대비 BTC ETF</b> — $12~13B vs $80.4B. 기관 투자자의 BTC 선호가 압도적.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">높음</div>
+            <div class="mt"><b>ETH ETF 변동성</b> — AUM이 $30.6B(2025 중반) → $10.7B 급락 후 반등 → $12~13B로 재하락. BTC 대비 불안정.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">스테이킹</div>
+            <div class="mt"><b>ETH 현물 ETF 스테이킹 미지원</b> — SEC 규제상 스테이킹 수익 배제. ETH 보유 유인 일부 희석.</div>
+          </div>
+        </div>
+        <div class="foot">* BTC ETF는 "가치 저장" 내러티브가 명확한 반면, ETH는 "유틸리티 토큰"으로 기관 분류가 복잡하다.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>BTC ETF는 기관 채택의 마찰 제거 장치다.
+      <span class="u">BlackRock IBIT가 AUM $62B(49%)로 1년 반 만에 금 ETF GLD와 동등한 규모에 도달했다. ETF 구조는 연기금·기부금·보험사가 BTC를 직접 보관 없이 포트폴리오에 편입할 수 있게 했다. ETH ETF는 스테이킹 미지원과 높은 변동성으로 BTC 대비 기관 수요 격차가 크다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 INSTITUTIONAL ================= -->
+<section class="blk" id="institutional">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;기관 채택</div>
+      <h2 class="sec-title">BlackRock 1~2% 권고 · SWF 체계적 매입</h2>
+      <p class="sec-lead">BlackRock이 어드바이저 포트폴리오에 BTC 1~2% 리스크 버짓을 공식 권고하면서 기관 채택이 임계점을 넘었다. MicroStrategy(847,363 BTC)를 필두로 연기금·SWF·기업이 BTC 보유 기반을 확대하고 있으며, 기관 투자자의 86%가 BTC를 전략 자산으로 분류하고 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기관</th>
+            <th>BTC 보유 / 노출</th>
+            <th>방식</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">MicroStrategy (Strategy)</td>
+            <td><span class="num-td">847,363 BTC</span></td>
+            <td>직접 보유</td>
+            <td>취득원가 ~$54.35B. 2026.06.22 기준</td>
+          </tr>
+          <tr>
+            <td class="hl-td">아부다비 Mubadala SWF</td>
+            <td>IBIT 820만주 ($436.9M)</td>
+            <td>ETF</td>
+            <td>2025.02 기준. 중동 SWF 최초 공개 BTC ETF 배분</td>
+          </tr>
+          <tr>
+            <td class="hl-td">노르웨이 GPFG</td>
+            <td>9,573 BTC ($837M) 간접</td>
+            <td>간접 (Strategy 주식)</td>
+            <td>직접 BTC 보유 아님. Strategy 지분 통해 81% 간접 노출</td>
+          </tr>
+          <tr>
+            <td class="hl-td">부탄 SWF</td>
+            <td>10,635 BTC ($1B+)</td>
+            <td>직접 보유</td>
+            <td>2025.02 기준. 국가 GDP 대비 높은 BTC 비중</td>
+          </tr>
+          <tr>
+            <td class="hl-td">룩셈부르크 FSIL</td>
+            <td>AUM 1% (~$9M)</td>
+            <td>BTC ETF 배분</td>
+            <td>유럽 SWF 최초 BTC ETF 공식 배분</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* SEC Form 13F · 각 기관 공시 · Bitbo Treasuries 트래커 기준. 간접 보유는 ETF·주식 경유 포함.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">BlackRock 권고</span>
+        <h3>포트폴리오 1~2% BTC 리스크 버짓</h3>
+        <div class="ic-body">BlackRock이 어드바이저 포트폴리오에 <b>BTC 1~2% 비중</b>을 공식 권고했다. 이는 단순한 의견이 아닌, 세계 최대 자산운용사가 BTC를 포트폴리오 자산으로 공식 인정한 것이다.<br><br>CEO Larry Fink은 2025.12 NYT DealBook에서 "SWF가 $120K, $100K, $80K대에서 체계적으로 BTC를 매입 중"이라고 공개 언급했다. 전 세계 SWF 총 자산 <b>$14T+</b>의 1%만 BTC로 유입돼도 시장 구조에 유의미한 영향을 미친다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">권고 비중</div><div class="nv">1~2%</div></div>
+          <div><div class="nk">SWF 총자산</div><div class="nv">$14T+</div></div>
+          <div><div class="nk">기관 BTC 채택</div><div class="nv">86%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">MicroStrategy (Strategy)</span>
+        <h3>847,363 BTC — 기업 BTC 보유 1위</h3>
+        <div class="ic-body">MicroStrategy는 2025년 <b>$25.3B 자본 조달</b>(미국 상장기업 최대 주식 발행 2년 연속)을 통해 BTC 매입을 지속했다. 현재 847,363 BTC 보유로 글로벌 기업 중 압도적 1위다.<br><br>Strategy의 BTC 보유 전략은 단순 투자를 넘어 <b>'비트코인 재무 전략'</b>의 새로운 기업 모델로 자리잡았다. 다수 소규모 상장사들이 이 모델을 모방하고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">보유량</div><div class="nv">847,363</div></div>
+          <div><div class="nk">취득원가</div><div class="nv">~$54.35B</div></div>
+          <div><div class="nk">자본 조달</div><div class="nv">$25.3B</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">연기금·기부금</span>
+        <h3>미국 연기금·대학 기부금 BTC ETF 편입</h3>
+        <div class="ic-body">미국 주요 주 연기금(위스콘신·미시간·플로리다 등)과 대학 기부금(MIT·하버드·예일 등 다수)이 BTC ETF를 포트폴리오에 편입하기 시작했다.<br><br>IRA 자기주도 계좌를 통한 BTC ETF 투자가 허용되면서 <b>개인 연금 계좌</b>를 통한 소매 투자자의 BTC 노출도 급증했다. 기관 투자자의 <b>86%</b>가 BTC를 전략적 "가치 저장" 자산으로 배분하고 있다고 보고했다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">기관 채택률</div><div class="nv">86%</div></div>
+          <div><div class="nk">분류</div><div class="nv">가치저장</div></div>
+          <div><div class="nk">IRA 가능</div><div class="nv">Yes</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">4년 사이클 변화</span>
+        <h3>반감기 → 기관 시대 패러다임 전환</h3>
+        <div class="ic-body">2024년 4월 반감기(보상 3.125 BTC)로 공급 충격이 발생했으나, 기존 4년 사이클 패러다임은 약화되고 있다. <b>Grayscale</b>은 2026년을 "기관 시대의 여명(Dawn of the Institutional Era)"으로 규정했다.<br><br>Cathie Wood(ARK)·Matt Hougan(Bitwise) 등 주요 분석가도 ETF 기관화·규제 수용·블록체인 메인스트림 통합에 의해 전통적 4년 사이클이 구조적으로 변화하고 있다고 진단한다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">반감기</div><div class="nv">2024.04</div></div>
+          <div><div class="nk">보상</div><div class="nv">3.125 BTC</div></div>
+          <div><div class="nk">사이클</div><div class="nv">약화</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>기관 채택은 임계점을 넘었다.
+      <span class="u">BlackRock의 1~2% 공식 권고, SWF의 체계적 매입, MicroStrategy 847,363 BTC 보유는 BTC가 투기 자산에서 기관 포트폴리오 자산으로 전환했음을 보여준다. 전 세계 SWF $14T+의 1% 배분만으로도 BTC 시장에 유의미한 구조 변화가 발생한다. 다만 기관 채택률 86%의 원출처 검증이 필요하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 RWA ================= -->
+<section class="blk" id="rwa">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;RWA 토큰화</div>
+      <h2 class="sec-title">토큰화 국채 $15.2B → 전체 RWA $40B+ — 2030 $16T</h2>
+      <p class="sec-lead">실물자산(RWA) 토큰화가 온체인 DeFi TVL을 최초로 추월하며 구조적 자금 흐름 전환을 알렸다. BlackRock BUIDL $2.5B, Hashnote USYC $3.0B 등 토큰화 미국 국채 시장은 $15.2B(76개 상품)로 2년 만에 9배 성장했다. 2030년 $16T~$30T 전망이 현실화될 경우 DeFi 생태계의 근본적 재편이 일어난다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>상품명</th>
+            <th>운용사</th>
+            <th>AUM</th>
+            <th>체인</th>
+            <th>특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">BUIDL</td>
+            <td>BlackRock</td>
+            <td><span class="num-td">~$2.5B</span></td>
+            <td>ETH·Arb·Avax·Polygon</td>
+            <td>최초 대형 기관 토큰화 국채. Binance 담보 등록(2025.11)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">USYC</td>
+            <td>Hashnote / Circle</td>
+            <td><span class="num-td">~$3.0B</span></td>
+            <td>멀티체인</td>
+            <td>온체인 최대 국채 상품. 실시간 결제</td>
+          </tr>
+          <tr>
+            <td class="hl-td">BENJI</td>
+            <td>Franklin Templeton</td>
+            <td><span class="num-td">~$2.05B</span></td>
+            <td>Stellar·Polygon</td>
+            <td>블록체인 네이티브 머니마켓펀드 선구자</td>
+          </tr>
+          <tr>
+            <td class="hl-td">USDY</td>
+            <td>Ondo Finance</td>
+            <td><span class="num-td">~$2.1B</span></td>
+            <td>멀티체인</td>
+            <td>APY 4.65%. SEC 조사 혐의 없이 종결(2026 초)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">토큰화 국채 합계</td>
+            <td>76개 상품</td>
+            <td><span class="num-td">$15.2B</span></td>
+            <td>—</td>
+            <td>2026.05 기준. 2024년 초 $1.7B 대비 9배 성장</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* RWA.xyz 대시보드 · Securitize 공시 · CoinReporter 기준. 2026.05 기준.</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>RWA 자산 유형별 현황</h3>
+        <div class="ph-sub">국채 · 부동산 · 사모 · 탄소 크레딧</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$15.2B</div>
+            <div class="mt"><b>토큰화 미국 국채</b> — 가장 빠르게 성장하는 세그먼트. 24/7 즉시 정산, 프로그래머블 수익 기능이 기관 수요를 끌어들임.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~$20B</div>
+            <div class="mt"><b>부동산 토큰화</b> — 2025년 기준. BCG 전망 2030년 $3.2T(전체 부동산 AUM의 15%). 상업용 부동산·리츠 토큰화가 주도.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$26.4B</div>
+            <div class="mt"><b>온체인 RWA 총 TVL</b> — 2026년 중반. 3년간 308% 성장. DeFi TVL 최초 추월 시점에서 구조적 전환 확인.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>2030년 RWA 시장 전망</h3>
+        <div class="ph-sub">기관·리서치 컨센서스</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$18.9T</div>
+            <div class="mt"><b>BCG/Ripple 전망</b> — 2030년. CAGR ~53%. 국채·주식·부동산·사모·탄소 크레딧 전방위 토큰화 시나리오.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$30T</div>
+            <div class="mt"><b>Standard Chartered 전망</b> — 2030년 상단 시나리오. 규제 명확화와 기관 온체인 인프라 성숙 가정.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$100B+</div>
+            <div class="mt"><b>2026년 말 TVL 전망</b> — Centrifuge·Hashdex 등 업계 전망. 현재 $26.4B 대비 약 4배 성장 시나리오.</div>
+          </div>
+        </div>
+        <div class="foot">* 장기 시장 전망치는 낙관적 가정을 포함. 실제 성장은 규제·인프라 성숙도에 좌우된다.</div>
+      </div>
+    </div>
+
+    <div class="compare-wrap reveal" style="margin-top:32px">
+      <div class="compare-header">
+        <div>구분</div>
+        <div>전통 국채 펀드</div>
+        <div>토큰화 국채 (BUIDL)</div>
+        <div>DeFi 네이티브</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">정산 속도</div>
+        <div>T+2일</div>
+        <div><span class="cr-num">24/7 즉시</span></div>
+        <div><span class="cr-num">즉시</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">운영 시간</div>
+        <div>주 5일 영업시간</div>
+        <div><span class="cr-num">365일 24/7</span></div>
+        <div><span class="cr-num">365일 24/7</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">담보 활용</div>
+        <div>제한적</div>
+        <div><span class="cr-num">Binance 담보 등록</span></div>
+        <div>DeFi 프로토콜 담보</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">규제 지위</div>
+        <div><span class="cr-num">명확</span></div>
+        <div><span class="cr-num amber">SEC 승인 경로</span></div>
+        <div>불명확</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>RWA 토큰화는 TradFi와 DeFi의 융합이다.
+      <span class="u">스테이블코인(결제 레일) → 토큰화 국채(온체인 수익) → RWA 전반(부동산·채권·사모) 순서로 기관 진입이 확대되는 구조다. BlackRock BUIDL이 Binance 담보로 등록된 사건은 전통 금융과 DeFi의 최초 공식 연결 이정표다. 다만 $18T~$30T 전망은 5~10년 장기 낙관 시나리오이며 규제 진행 속도에 크게 의존한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 CBDC & STABLECOIN ================= -->
+<section class="blk" id="cbdc-stablecoin">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;CBDC &amp; 스테이블코인</div>
+      <h2 class="sec-title">USDT $158B+ · USDC $60B+ · 디지털 달러 vs 위안</h2>
+      <p class="sec-lead">스테이블코인 시총이 2026년 5월 사상 최고치 $323B를 기록했다. 미국은 GENIUS Act(2025.07)로 스테이블코인을 규제하는 방향을 택했고, 중국은 e-CNY 누적 거래액 16.7조 위안($2.3T)으로 세계 최대 CBDC 실험을 진행 중이다. EU는 디지털 유로를 2029년 발행 목표로 준비하고 있다.</p>
+    </div>
+
+    <div class="share-grid">
+      <div class="share-box reveal">
+        <h3>스테이블코인 시장 점유율 (2026.05)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">USDT (Tether)</span><span class="pct">58.6%</span></div>
+            <div class="sbar-track"><div class="sbar-fill gold" data-w="90%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">USDC (Circle)</span><span class="pct">24.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill silver" data-w="41%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">DAI / USDS</span><span class="pct">5.5%</span></div>
+            <div class="sbar-track"><div class="sbar-fill green" data-w="10%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">기타 스테이블</span><span class="pct">11.9%</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="20%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>스테이블코인 주요 지표</h3>
+        <div class="ph-sub">시총 · 성장률 · 규제 · 2026.05</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$323B</div>
+            <div class="mt"><b>스테이블코인 총 시총</b> — 2026.05 사상 최고. USDT $189.6B(~60%), USDC $77.6B(2025년 73% 성장).</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">73%</div>
+            <div class="mt"><b>USDC 2025년 성장률</b> — USDT 36% 대비 2배. GENIUS Act 규제 친화성이 기관 USDC 선호를 강화.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1:1</div>
+            <div class="mt"><b>GENIUS Act 준비금 의무</b> — 2025.07.18 서명. 스테이블코인 1:1 준비금 의무화. 스테이블코인 성장 = 미국 국채 수요 창출 구조.</div>
+          </div>
+        </div>
+        <div class="foot">* 스테이블코인 시총 $323B × 준비금 비율 = 수천억 달러 규모 미국 국채 구조적 수요.</div>
+      </div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 디지털 위안 (e-CNY)</div>
+        <h3>34억 건 · 16.7조 위안 — 세계 최대 CBDC</h3>
+        <div class="fc-body"><b>누적 거래 34억 건</b>, 거래 금액 16.7조 위안(~$2.3T). 2023년 대비 800%+ 성장. 다른 모든 CBDC 합계를 압도하는 실적.<br><br><b>2026년 핵심 변화</b>: PBOC, 세계 최초 이자부 CBDC 전환. 예금 지위 부여, 연 0.05% 이자 지급. 리테일 → 크로스보더(mBridge) → 이자부 전환 순서로 단계적 확장.<br><br>mBridge 크로스보더 결제 $55.49B 처리. e-CNY 비중 95%+ 독점.</div>
+        <div class="fc-note">e-CNY는 위안화 국제화 전략의 핵심 도구. 달러 결제망(SWIFT) 우회 가능성이 지정학적 리스크다.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 미국 CBDC 금지</div>
+        <h3>트럼프 CBDC 행정명령 → 스테이블코인 전략</h3>
+        <div class="fc-body">2025.01 트럼프 대통령, <b>CBDC 금지 행정명령</b>(EO 14178) 서명. 연준 Powell, 재임 중 CBDC 발행 불가 선언. 의회 CBDC 금지 법안 2026.06 상원 승인.<br><br><b>대안 전략</b>: CBDC 대신 스테이블코인 규제(GENIUS Act)로 디지털 달러 생태계 구축. USDT·USDC 준비금 통한 국채 수요 창출이 핵심 메커니즘.</div>
+        <div class="fc-note">EU(CBDC 추진) vs 미국(스테이블코인 선택) — 디지털 화폐 패러다임의 구조적 분기.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 디지털 유로</div>
+        <h3>2029년 발행 목표 — 독일·프랑스·이탈리아 파일럿</h3>
+        <div class="fc-body">현재 준비 단계. 규제 프레임워크 채택 <b>2026년 중</b> 예상. 파일럿 거래 2027년 중반, 최초 발행 <b>2029년</b> 목표.<br><br>독일·프랑스·이탈리아 2025년 파일럿 동시 시작. G20 중 미국 제외 14개국이 CBDC 파일럿 단계 진행 중.</div>
+        <div class="fc-note">디지털 유로 출시가 2029년으로 지연된 것은 개인정보 보호 논쟁과 금융 시스템 안정성 우려 때문이다.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● MiCA & GENIUS Act</div>
+        <h3>글로벌 스테이블코인 규제 명확화</h3>
+        <div class="fc-body">EU <b>MiCA</b>: 2024년 시행. 스테이블코인 발행자 준비금·감사 의무. USDT 일부 거래소 상장폐지 촉발.<br><br>미국 <b>GENIUS Act</b>(2025.07): 1:1 준비금 의무, 발행자 자격 은행·비은행 금융기관 한정. USDC 성장(73%) 가속의 핵심 원인.<br><br>규제 명확화 → 기관 채택 확대 → 시총 성장의 선순환 구조.</div>
+        <div class="fc-note">GENIUS Act 이후 JPMorgan·Bank of America 등 대형 은행이 자체 스테이블코인 발행 계획을 공개 검토 중이다.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>스테이블코인은 디지털 달러 전략의 핵심 무기다.
+      <span class="u">미국이 CBDC를 금지하고 스테이블코인을 선택한 것은 달러 패권 유지의 전략적 결정이다. USDT·USDC 시총 $323B의 준비금 대부분이 미국 국채로 운용되며, 스테이블코인 성장 = 미국 국채 수요 창출의 구조적 메커니즘이 형성됐다. e-CNY의 이자부 전환은 달러 중심 결제망에 대한 중국의 가장 공격적인 도전이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 KOREA DIGITAL ================= -->
+<section class="blk" id="korea-digital">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;한국 디지털 자산</div>
+      <h2 class="sec-title">가상자산 이용자보호법 · 업비트 65% · STO 2027</h2>
+      <p class="sec-lead">한국은 2024년 7월 가상자산 이용자보호법 시행으로 규제 기반을 마련했다. 업비트(65~72%)·빗썸(25~31%) 양강 구도 하에 전통 금융기관(삼성·하나·미래에셋)이 거래소 지분을 취득하며 합법화가 가속되고 있다. 토큰증권(STO) 본격 시행과 가상자산 과세(2027)가 예정돼 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>법률·정책</th>
+            <th>현황</th>
+            <th>시행 시점</th>
+            <th>핵심 내용</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">가상자산이용자보호법</td>
+            <td><span class="num-td amber">시행 중</span></td>
+            <td>2024.07</td>
+            <td>시세조종·불공정거래 금지, 콜드월렛 80%+, 핫월렛 5% 보험 의무</td>
+          </tr>
+          <tr>
+            <td class="hl-td">디지털자산기본법 (DABA)</td>
+            <td>국회 심의 중</td>
+            <td>2025.06 발의</td>
+            <td>발행·공시·스테이블코인 통합 규제. 스테이블코인 발행 자격 논쟁 교착</td>
+          </tr>
+          <tr>
+            <td class="hl-td">가상자산 과세</td>
+            <td>확정(3차 연기 후)</td>
+            <td><span class="num-td">2027.01</span></td>
+            <td>연 250만원 초과 양도차익 22%. 4차 연기 가능성 배제 불가</td>
+          </tr>
+          <tr>
+            <td class="hl-td">토큰증권(STO) 규제</td>
+            <td>하위법령 확정 전</td>
+            <td><span class="num-td">2027.02</span></td>
+            <td>자본시장법 개정 연계. Samsung SDS-KSD 플랫폼 구축 목표</td>
+          </tr>
+          <tr>
+            <td class="hl-td">CBDC (프로젝트 한강)</td>
+            <td>2단계 파일럿 중</td>
+            <td>2026 하반기</td>
+            <td>9개 은행 참여. 지갑 81,000개, 거래 114,880건(1단계)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 금융위원회·금융감독원 공식 발표 · 기획재정부 보도자료 기준. 2026.06 기준.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">업비트 / Dunamu</span>
+        <h3>국내 점유율 65~72% — 전통 금융 지분 참여</h3>
+        <div class="ic-body">업비트 H1 2025 거래대금 <b>KRW 833조 (~$642B)</b>. 일평균 현물 거래량 $2~4B. 빗썸(25~31%)과 합산 96% 과점 구조.<br><br><b>전통 금융 지분 취득</b>: 삼성 계열사 4% 합산 취득(~$408M), 하나은행 6.55%, 한화투자증권 3.90% 승인. 미래에셋컨설팅: Korbit 92.06% 인수 계약.<br><br>전통 금융기관의 크립토 거래소 지분 참여 → 업계 합법화·주류화의 가장 강력한 신호.</div>
+        <div class="ic-nums">
+          <div><div class="nk">점유율</div><div class="nv">65~72%</div></div>
+          <div><div class="nk">H1 거래대금</div><div class="nv">$642B</div></div>
+          <div><div class="nk">하나은행 지분</div><div class="nv">6.55%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">토큰증권(STO)</span>
+        <h3>Samsung SDS × KSD — 2027.02 인프라 완성</h3>
+        <div class="ic-body">Samsung SDS와 KSD(한국예탁결제원) 계약: 토큰증권 플랫폼 구축·운영 2027.02 완료 목표. KSD 전자증권 계좌 + 블록체인 분산원장 연결 구조.<br><br><b>KRX 주도 KDX 컨소시엄</b>: BDACS가 유일 VASP 및 핵심 커스터디 파트너. BitGo Korea: 하나금융그룹+SK텔레콤 공동 투자. KODA: 기관용 커스터디 선두. Kbank: Ripple Custody 기관용 지갑 구축(2026.04).</div>
+        <div class="ic-nums">
+          <div><div class="nk">시행 예정</div><div class="nv">2027.02</div></div>
+          <div><div class="nk">플랫폼</div><div class="nv">삼성SDS-KSD</div></div>
+          <div><div class="nk">법적 근거</div><div class="nv">자본시장법</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">CBDC — 프로젝트 한강</span>
+        <h3>9개 은행 2단계 파일럿 · 2026 하반기</h3>
+        <div class="ic-body">1단계 실적(2025): 지갑 81,000개, 거래 114,880건, 전환 16.4억원. 2단계 참여 은행 9개(KB·신한·우리·하나·농협·IBK·BNK부산+경남·iM).<br><br>한은 공식 표현: "CBDC와 스테이블코인 중간 단계". 도매형 CBDC 레이어 위에 원화 연동 예금 토큰 시범. 소상공인 결제 수수료 절감 및 AI 기반 자동 결제 연동 목표.</div>
+        <div class="ic-nums">
+          <div><div class="nk">참여 은행</div><div class="nv">9개</div></div>
+          <div><div class="nk">1단계 거래</div><div class="nv">114,880건</div></div>
+          <div><div class="nk">2단계</div><div class="nv">2026 하반기</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">과세 일정 및 리스크</span>
+        <h3>2027.01 시행 · 4차 연기 가능성 모니터링</h3>
+        <div class="ic-body">2020년 법 통과 후 3차례 연기 끝에 <b>2027.01 시행 확정</b>. 연 250만원 초과 양도차익 22% 세율. 국세청 AI 분석 시스템 2026.03 착수, 2027년 거래소·블록체인 데이터 수집 계획.<br><br>에어드롭·스테이킹·하드포크·렌딩·마이닝 과세 기준 미확정 상태. 4차 연기 가능성 배제 불가. 과세 시행 여부가 단기 거래 패턴에 영향을 미칠 수 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">시행</div><div class="nv">2027.01</div></div>
+          <div><div class="nk">세율</div><div class="nv">22%</div></div>
+          <div><div class="nk">공제</div><div class="nv">250만원</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>한국 디지털 자산 시장은 합법화 가속 단계다.
+      <span class="u">전통 금융기관(삼성·하나·미래에셋)의 거래소 지분 참여는 업계 주류화의 가장 강력한 신호다. 가상자산이용자보호법 시행 → STO 2027 → 과세 2027의 규제 로드맵이 명확해졌다. 업비트 KRW 833조 H1 거래대금은 한국이 글로벌 주요 가상자산 시장임을 확인한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">Bull — ETF 기관화 · RWA 성장 · 규제 명확화</h2>
+      <p class="sec-lead">BTC ETF $80.4B AUM, RWA 토큰화 $15.2B(2년간 9배), GENIUS Act·MiCA 규제 명확화가 Bull 근거다. 반면 BTC 가격 고변동성, 규제 리스크 잔존, 4년 반감기 사이클 약화, RWA 장기 시나리오의 불확실성이 Bear 시나리오를 지지한다.</p>
+    </div>
+
+    <div class="bb-grid reveal">
+      <div class="bb-card bull-card">
+        <h3>Bull Case — 3가지 구조적 드라이버</h3>
+        <div class="bb-list">
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>ETF 기관화 완성</b> — BlackRock IBIT $62B, 연기금·SWF·기업 재무 참여. 1년 반 만에 GLD(5년 소요)와 동등한 AUM. 기관 수요는 구조적이며 단기 가격 변동에 덜 민감하다.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>RWA 토큰화 성장</b> — 토큰화 국채 $15.2B, 온체인 RWA $26.4B. DEX TVL 최초 추월. BUIDL Binance 담보 등록으로 TradFi-DeFi 연결 확인. 2030 $16T~$30T 시장으로의 확장 경로.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>규제 명확화</b> — GENIUS Act(미국), MiCA(EU), 한국 가상자산이용자보호법. 스테이블코인 법제화로 기관 채택 마찰 감소. 규제 → 기관 → 유동성 선순환 구조.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>공급 제약 + 반감기</b> — 2024년 4월 반감기로 신규 공급 절반 감소. 기관이 구조적으로 매입하는 상황에서 공급 감소는 장기 가격 지지 요인.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>SWF·국가 BTC 전략</b> — 부탄·아부다비 Mubadala·룩셈부르크 SWF 참여. SWF $14T+의 소규모 배분도 시장 구조에 유의미한 영향. 미국 전략 비트코인 비축 논의 진행 중.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-card bear-card">
+        <h3>Bear Case — 4가지 구조적 리스크</h3>
+        <div class="bb-list">
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>고변동성 지속</b> — BTC는 전통 자산 대비 여전히 5~10배 높은 변동성. 2026년 5~6월 BTC ETF 13일 연속 순유출($4.4B)이 보여주듯, 기관 채택에도 불구하고 단기 급락 위험 상존.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>규제 리스크 잔존</b> — 한국 과세 4차 연기 가능성, DABA 스테이블코인 발행 자격 교착, 토큰화 자산 법적 분류 불명확. 규제 역행 시나리오(미국 CBDC 금지 패턴 참고).</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>4년 사이클 약화</b> — 기관화로 반감기 기반 사이클이 약화됨. ETF 자금 흐름이 가격 주도권을 갖게 되며, 과거 패턴에 기반한 가격 예측 모델의 신뢰도 하락.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>RWA $16T~$30T 불확실성</b> — 장기 전망치는 낙관적 가정 의존. 법적 소유권 문제, 크로스보더 규제 조화, 온체인 오라클 신뢰성, 스마트컨트랙트 보안 등 해결해야 할 인프라 과제 다수.</div>
+          </div>
+          <div class="bb-item">
+            <div class="bb-dot"></div>
+            <div><b>e-CNY 지정학 리스크</b> — 중국 e-CNY mBridge 확산(95% 점유)은 달러 결제망 우회 가능성. 미·중 지정학 격화 시 디지털 자산 시장에 광범위한 영향.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:32px">
+      <div class="indcard">
+        <div class="ind-num">$80.4B</div>
+        <div class="ind-lab">BTC 현물 ETF<br>총 AUM</div>
+        <div class="ind-tag">2026.06</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">59%</div>
+        <div class="ind-lab">BTC 도미넌스<br>(시장 내 점유)</div>
+        <div class="ind-tag">2026.06.27</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">$15.2B</div>
+        <div class="ind-lab">토큰화 국채<br>시장 규모</div>
+        <div class="ind-tag">76개 상품</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">$323B</div>
+        <div class="ind-lab">스테이블코인<br>총 시총</div>
+        <div class="ind-tag">2026.05 최고</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">146</div>
+        <div class="ind-lab">CBDC 탐색<br>국가 수</div>
+        <div class="ind-tag">GDP 98%</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">디지털 자산은 투기에서 기관 인프라로 전환 중이다 — ETF·RWA·규제가 삼각 지지대다.</div>
+      <div class="bt-body">
+        <b>BTC ETF $80.4B AUM, RWA 토큰화 $15.2B(2년 9배 성장), GENIUS Act·MiCA 규제 명확화는 동일한 메가트렌드의 세 축이다.</b> BlackRock의 BTC 1~2% 공식 권고, SWF 체계적 매입, MicroStrategy 847,363 BTC 보유는 기관 채택이 임계점을 넘었음을 보여준다.<br><br>
+        <b>스테이블코인 $323B → 미국 국채 구조적 수요 창출</b>의 메커니즘은 디지털 자산이 기존 금융 시스템과 불가역적으로 통합되고 있음을 의미한다. BUIDL의 Binance 담보 등록, RWA 토큰화가 DEX TVL을 추월한 사건은 TradFi와 DeFi의 경계가 허물어지는 이정표다.<br><br>
+        투자자 관점에서는 <b>ETF 기관화(IBIT 49% 독주), RWA CAGR 53%+, 규제 명확화 선순환</b> 세 가지가 핵심 투자 테마다. 다만 BTC 고변동성, RWA 장기 전망의 불확실성, e-CNY 지정학 리스크는 지속적 모니터링이 필요한 구조적 리스크다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">디지털 자산 투자 지도 — BTC ETF $80B · RWA 토큰화 · 한국 가상자산법</div>
+      <div class="src-list">
+        DATA · BlackRock/Fidelity ETF 공시 · SEC EDGAR 13F · iShares 공식 페이지<br>
+        Chainalysis Crypto Report 2026 · Grayscale "Dawn of the Institutional Era"<br>
+        RWA.xyz 대시보드 · Securitize 공시 · BCG/Ripple RWA 보고서 2026<br>
+        PBOC e-CNY 공식 발표 · IMF CBDC Tracker · Congress.gov (GENIUS Act, CBDC 금지법)<br>
+        금융위원회 · 금융감독원(FSS) · 기획재정부 보도자료 · 한국은행 프로젝트 한강<br>
+        CoinGecko · DefiLlama · SoSoValue BTC ETF 대시보드<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목·코인의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 디지털 자산은 가격 변동성이 매우 높으며 원금 손실이 발생할 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

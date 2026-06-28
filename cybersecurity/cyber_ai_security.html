@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CrowdStrike $174B·Charlotte AI·PANW CyberArk $25B 인수·AI 피싱 82.6%·AI SOC 자동화 — 사이버보안 플랫폼 전쟁과 AI 무장 투자 분석">
+<meta name="keywords" content="사이버보안,CrowdStrike,PANW,Zscaler,AI보안,Charlotte AI,XSIAM,CyberArk,Wiz,AhnLab,Genians,AI피싱,딥페이크,SOC자동화">
+<meta property="og:title" content="사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도">
+<meta property="og:description" content="CrowdStrike $174B·Charlotte AI·PANW CyberArk $25B 인수·AI 피싱 82.6%·AI SOC 자동화 — 사이버보안 플랫폼 전쟁과 AI 무장 투자 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/cybersecurity/cyber_ai_security.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도">
+<meta name="twitter:description" content="CrowdStrike $174B·Charlotte AI·PANW CyberArk $25B 인수·AI 피싱 82.6%·AI SOC 자동화 — 사이버보안 플랫폼 전쟁과 AI 무장 투자 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/cybersecurity/cyber_ai_security.html">
+<title>사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#e11d48;
+    --current:#fb7185;
+    --glow:#fda4af;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(253,164,175,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:rgba(225,29,72,.35);transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(225,29,72,.12);color:var(--volt);border:1px solid rgba(225,29,72,.3)}
+  .ic-tag.pink{background:rgba(251,113,133,.12);color:var(--current);border:1px solid rgba(251,113,133,.3)}
+  .ic-tag.rose{background:rgba(253,164,175,.12);color:var(--glow);border:1px solid rgba(253,164,175,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.crimson{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.usa{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.korea{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.bull{color:var(--bull)}
+
+  /* ---------- COMPARE 3-COL ---------- */
+  .compare-header.c3{grid-template-columns:1.6fr 1fr 1fr}
+  .compare-row.c3{grid-template-columns:1.6fr 1fr 1fr}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(225,29,72,.08),rgba(253,164,175,.04));
+    border:1px solid rgba(225,29,72,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .compare-header.c3,.compare-row.c3{grid-template-columns:1fr 1fr}
+    .compare-header.c3 div:nth-child(3),.compare-row.c3 div:nth-child(3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도",
+  "description": "CrowdStrike $174B·Charlotte AI·PANW CyberArk $25B 인수·AI 피싱 82.6%·AI SOC 자동화 — 사이버보안 플랫폼 전쟁과 AI 무장 투자 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/cybersecurity/cyber_ai_security.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fda4af;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(253,164,175,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>사이버보안 · AI</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#global-companies">01 / 글로벌 기업</a>
+      <a href="#ai-attack-defense">02 / AI 공격·방어</a>
+      <a href="#security-ma">03 / M&A·투자</a>
+      <a href="#korea-security">04 / 한국</a>
+      <a href="#investment-thesis">05 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">사이버보안 · 산업 개관 · 2026.06 기준</span>
+    <h1 class="hero-title">플랫폼 전쟁<br>AI <span class="hl">무장</span></h1>
+    <p class="hero-sub">사이버보안은 AI를 무기로 쓰는 공격자와 AI로 방어하는 플랫폼의 전쟁이 되었다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$174<span class="u">B</span></div>
+        <div class="lab">CrowdStrike 시총 (AI 보안 1위). Charlotte AI + AIDR ARR +250%. 4:1 분할 예정.</div>
+        <div class="src">SRC: CRWD IR 2026.06</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$25<span class="u">B</span></div>
+        <div class="lab">PANW-CyberArk 인수 (2026.02 완료). 역대 최대 사이버보안 M&A. 아이덴티티 보안 제패.</div>
+        <div class="src">SRC: PANW IR 2026.02</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">82.6<span class="u">%</span></div>
+        <div class="lab">AI 피싱 이메일 비중. AI 작성 피싱 성공률 54% vs 인간 12% — 4.5배 격차.</div>
+        <div class="src">SRC: IBM / Hoxhunt 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 GLOBAL COMPANIES ================= -->
+<section class="blk" id="global-companies">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;글로벌 보안 기업</div>
+      <h2 class="sec-title">플랫폼화 + AI 무장 — $248B 시장의 지배자들</h2>
+      <p class="sec-lead">글로벌 사이버보안 시장 $248B(2026E). CrowdStrike·PANW·Zscaler 3강이 AI SOC·제로트러스트·플랫폼 통합으로 경쟁하는 구도다. Google의 Wiz $32B 인수는 클라우드 보안 판도를 재편했다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>시가총액</th>
+            <th>핵심 AI 제품</th>
+            <th>최근 성장</th>
+            <th>핵심 지표</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">CrowdStrike (CRWD)</td>
+            <td><span class="num-td">$174B</span></td>
+            <td>Charlotte AI, AIDR, AgentWorks</td>
+            <td>매출 YoY +22%, FCF $296M 역대 최고</td>
+            <td>AIDR ARR +250%</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Palo Alto (PANW)</td>
+            <td><span class="num-td">$127~247B</span></td>
+            <td>XSIAM, Cortex AI</td>
+            <td>NGS ARR $5.6B(+32%), RPO $15.8B</td>
+            <td>XSIAM 470사, MTTR →10분</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Zscaler (ZS)</td>
+            <td><span class="num-td">~$20B</span></td>
+            <td>AI Protect, SPLX</td>
+            <td>매출 YoY +26%, AI Security ARR $400M</td>
+            <td>비GAAP 영업이익률 22%+</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Fortinet (FTNT)</td>
+            <td><span class="num-td">~$104B</span></td>
+            <td>FortiAI, Security Fabric</td>
+            <td>매출 YoY +20%, 제품 +41%</td>
+            <td>FY2026 가이던스 $7.71~7.87B</td>
+          </tr>
+          <tr>
+            <td class="hl-td">SentinelOne (S)</td>
+            <td><span class="num-td">~$5.7B</span></td>
+            <td>Purple AI, Data Solutions</td>
+            <td>FY2026 매출 $1B+ 첫 돌파 (+22%)</td>
+            <td>Purple AI 라이선스 어태치 50%+</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Wiz (Google)</td>
+            <td><span class="num-td">$32B</span></td>
+            <td>CNAPP, 멀티클라우드 스캔</td>
+            <td>ARR $1B+ 돌파, 2026.03 완료</td>
+            <td>Google 역사상 최대 인수</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 시가총액 2026.06 기준. PANW 변동폭은 출처별 편차로 범위 표기. Zscaler는 2026.06.22 나스닥100 퇴출.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">CrowdStrike</span>
+        <h3>Charlotte AI · AI 보안 왕좌</h3>
+        <div class="ic-body"><b>Charlotte AI</b>는 생성형+에이전트 AI 기반 SOC 자동화 어시스턴트로 FedRAMP High 인가를 취득했다. <b>AgentWorks Ecosystem</b>은 AWS·NVIDIA·OpenAI와 공동 개발한 노코드 보안 에이전트 빌더 플랫폼이다.<br><br><b>AIDR(AI Detection &amp; Response)</b>의 ARR이 전 분기 대비 250%+ 급증하며 AI 전용 탐지·대응 시장을 선도하고 있다. FY2026 매출 가이던스는 $4.75~4.81B, Q3 FCF $296M(역대 분기 최고). 2026년 7월 2일 4:1 주식 분할 예정.</div>
+        <div class="ic-nums">
+          <div><div class="nk">시총</div><div class="nv">$174B</div></div>
+          <div><div class="nk">AIDR ARR</div><div class="nv">+250%</div></div>
+          <div><div class="nk">FCF</div><div class="nv">$296M</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Palo Alto Networks</span>
+        <h3>XSIAM + CyberArk $25B — 플랫폼 제왕</h3>
+        <div class="ic-body"><b>XSIAM(AI-Powered SOC)</b>은 고객 470사 돌파, YoY 150%+ 성장. 배치 고객 60%+가 MTTR을 수일/수주에서 <b>10분 미만</b>으로 단축했다. NGS ARR $5.6B(+32%), RPO $15.8B(+24%)로 멀티타워 대형 계약이 가속화 중이다.<br><br><b>CyberArk $25B 인수</b>(2026.02 완료)로 아이덴티티 보안 + AI 에이전트 권한 관리를 확보했다. 에이전트 AI 시대 "agentic AI"의 특권 접근 관리에 핵심 포지셔닝. <b>Chronosphere $3.35B</b> 인수로 옵저버빌리티까지 확장.</div>
+        <div class="ic-nums">
+          <div><div class="nk">NGS ARR</div><div class="nv">$5.6B</div></div>
+          <div><div class="nk">XSIAM</div><div class="nv">470사</div></div>
+          <div><div class="nk">RPO</div><div class="nv">$15.8B</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Zscaler</span>
+        <h3>AI Security ARR $400M — Zero Trust 대표주</h3>
+        <div class="ic-body"><b>AI Security ARR $400M</b>을 목표 대비 3분기 조기 달성(Q1 FY2026). 3대 성장 축은 AI Security·Zero Trust Everywhere·Data Security다.<br><br><b>SPLX 인수</b>로 AI 자산 발견·자동 레드팀 역량 확보(shift-left AI 보안). <b>Red Canary(~$675M)</b> 인수로 MDR 역량 내재화. <b>Zscaler AI Protect</b>는 AI 자산 관리·AI 접근 보안·AI 레드팀을 통합한다. 단, 2026.05.27 주가 31.5% 급락, 나스닥100 지수 퇴출(2026.06.22) — 밸류에이션 리스크 주목.</div>
+        <div class="ic-nums">
+          <div><div class="nk">AI Security</div><div class="nv">$400M</div></div>
+          <div><div class="nk">매출 성장</div><div class="nv">+26%</div></div>
+          <div><div class="nk">영업이익률</div><div class="nv">22%+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">Wiz · Fortinet · SentinelOne</span>
+        <h3>클라우드·네트워크·엔드포인트 3각편대</h3>
+        <div class="ic-body"><b>Wiz($32B, Google)</b>: CNAPP 분야 선두, 멀티클라우드 스캔. Google 역사상 최대 M&A(Motorola $12.5B의 2.6배). Google은 Wiz 브랜드 및 멀티클라우드 커밋먼트를 유지한다.<br><br><b>Fortinet</b>: FortiAI를 통한 Security Fabric AI 통합. Q1 2026 제품 매출 +41% YoY — 하드웨어 사이클 회복과 AI 보안 어플라이언스 수요 동시 수혜. FY2026 가이던스 $7.71~7.87B.<br><br><b>SentinelOne</b>: Purple AI 라이선스 어태치 50%+ 달성. Cloudflare와 전략적 얼라이언스. $1B ARR 첫 돌파로 성장성 입증, 다만 IPO 이후 ~47% 주가 하락 중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Wiz</div><div class="nv">$32B</div></div>
+          <div><div class="nk">FTNT 제품</div><div class="nv">+41%</div></div>
+          <div><div class="nk">S ARR</div><div class="nv">$1B+</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>사이버보안은 AI 플랫폼 전쟁이다.
+      <span class="u">CRWD·PANW·ZS 3강은 모두 "AI SOC 자동화 → 플랫폼 통합 → 고객 락인"이라는 동일한 전략을 구사한다. CyberArk $25B·Wiz $32B·Cisco-Splunk $28B 대형 M&A가 보여주듯, 이 시장은 통합(platformization)이 핵심 경쟁 벡터다. 아이덴티티 보안과 AI 에이전트 권한 관리가 차세대 전장이 되고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 AI ATTACK DEFENSE ================= -->
+<section class="blk" id="ai-attack-defense">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;AI 공격·방어 양면</div>
+      <h2 class="sec-title">AI vs AI — 사이버전의 새로운 전장</h2>
+      <p class="sec-lead">AI는 공격자에게는 피싱 자동화·딥페이크 사기·취약점 발굴 무기가 되고, 방어자에게는 SOC 자동화·위협 탐지·MTTR 단축 도구가 됐다. AI vs AI 군비경쟁이 사이버보안 시장의 가장 강력한 성장 드라이버다.</p>
+    </div>
+
+    <div class="indicator-grid reveal">
+      <div class="indcard">
+        <div class="ind-num">82.6%</div>
+        <div class="ind-lab">AI 피싱<br>이메일 비중</div>
+        <div class="ind-tag">2026 산업 조사</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">4.5x</div>
+        <div class="ind-lab">AI 피싱<br>성공률 배수</div>
+        <div class="ind-tag">54% vs 12%</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">1,300%</div>
+        <div class="ind-lab">딥페이크 사기<br>시도 증가</div>
+        <div class="ind-tag">Pindrop 2024</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">10,000+</div>
+        <div class="ind-lab">Mythos 발견<br>취약점 (1개월)</div>
+        <div class="ind-tag">Anthropic 2026</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">80%+</div>
+        <div class="ind-lab">AI SOC<br>알림 감소율</div>
+        <div class="ind-tag">Analyst Workload</div>
+      </div>
+    </div>
+
+    <div class="macro-grid reveal" style="margin-top:32px">
+      <div class="panel">
+        <h3>AI 기반 공격 벡터</h3>
+        <div class="ph-sub">피싱 · 딥페이크 · LLM 익스플로잇 · 2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">82.6%</div>
+            <div class="mt"><b>AI 피싱 폭증</b> — AI 피싱 성공률 54% vs 인간 12%(4.5배). 2025년 말 한 달간 5%→56%(14배) 급등. 전체 소셜엔지니어링의 80%+ 가 AI 기반(ENISA 2025).</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1,300%</div>
+            <div class="mt"><b>딥페이크 사기</b> — 콘택트센터 딥페이크 시도 1,300%+ 증가(Pindrop 2024). 비디오 딥페이크 46% 지배. 2027년 피해 추산 $40B. CEO 사기·음성 사기 급증.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">LLM01</div>
+            <div class="mt"><b>프롬프트 인젝션</b> — OWASP LLM01:2025. 시스템 프롬프트 분리 불가 악용. MCP(Model Context Protocol) 확산으로 에이전트 공격 표면이 "모델"에서 "도구 체인"으로 확장.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1/6</div>
+            <div class="mt"><b>공격자 AI 활용</b> — 사이버 침해의 16.7%가 공격자 AI 활용(IBM 2025). 모델 포이즈닝, 학습 데이터 백도어 매립, RAG 기반 민감정보 추출 등 새로운 위협 카테고리 부상.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>AI 방어 — SOC 혁명</h3>
+        <div class="ph-sub">MTTR 단축 · 자동화 · 절감 효과 · 2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">10분</div>
+            <div class="mt"><b>MTTR 수주→10분</b> — PANW XSIAM 배치 고객 60%+ 달성. 전통적 SOC의 평균 탐지-대응 수주~수개월을 10분 미만으로 압축.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">80%</div>
+            <div class="mt"><b>알림 자동 분류</b> — AI SOC 분석가 워크로드 80%+ 감소. 일평균 10,000건+ 알림, 오탐률 50%+, 미조사 40%를 AI가 자율 트리아지.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$1.9M</div>
+            <div class="mt"><b>침해 비용 절감</b> — AI/자동화 고도입 기업이 건당 $1.9M 절감, 침해 생애주기 80일 단축(IBM 2025). AI SOC ROI의 핵심 지표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">30%</div>
+            <div class="mt"><b>에이전트 AI SOC</b> — Gartner "AI SOC Agents" 공식 카테고리 지정(2025.06). 2026년 말 대기업 SOC 워크플로 30%+ 가 에이전트 AI로 실행 예상.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">Anthropic Mythos — AI 레드팀</span>
+        <h3>10,000+ 취약점 · 90.6% 진양성률</h3>
+        <div class="ic-body">Anthropic의 <b>Mythos</b>는 AI 기반 자율 공격 보안 에이전트다. 100개 CVE 대상 권한 상승 익스플로잇 성공률 <b>50%+</b>, 첫 달 고/치명 취약점 <b>10,000건+</b> 발견, 진양성률 <b>90.6%</b>로 인간 버그바운티를 압도했다.<br><br><b>FreeBSD 17년 묵은 RCE 취약점(CVE-2026-4747)</b>을 완전 자율 발견·익스플로잇. Anthropic HackerOne 버그바운티는 2026.05 공개 전환(최대 $15,000/건 보상).<br><br>투자 시사점: Mythos의 공격 역량은 방어 플랫폼(CRWD·PANW 등) 수요를 더욱 가속화하는 양면 드라이버다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">권한 상승</div><div class="nv">50%+</div></div>
+          <div><div class="nk">취약점</div><div class="nv">10K+</div></div>
+          <div><div class="nk">진양성률</div><div class="nv">90.6%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">AI SOC 플랫폼 경쟁</span>
+        <h3>Charlotte · XSIAM · Purple AI — 3강 대결</h3>
+        <div class="ic-body">AI SOC 시장은 <b>Charlotte AI(CRWD)</b>, <b>XSIAM(PANW)</b>, <b>Purple AI(SentinelOne)</b> 3강 체제로 수렴 중이다. Stellar Cyber·Exaforce 등 순수 AI SOC 스타트업도 빠르게 부상하고 있다.<br><br><b>Charlotte AI AgentWorks</b>: AWS·NVIDIA·OpenAI와 공동 개발한 노코드 에이전트 빌더 — SOC 분석가가 코딩 없이 보안 에이전트를 빌드할 수 있다.<br><br>방어 패러다임은 "예방 전용"에서 <b>"침해 가정(assume breach) + 심층 방어"</b>로 전환 중이다. AI 에이전트 시대 공격 표면의 "도구 체인" 확장에 대응하는 새로운 아키텍처가 요구된다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">CRWD</div><div class="nv">Charlotte</div></div>
+          <div><div class="nk">PANW</div><div class="nv">XSIAM</div></div>
+          <div><div class="nk">S</div><div class="nv">Purple AI</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>AI는 공격·방어 양쪽을 동시에 강화하는 무기다.
+      <span class="u">AI 피싱 성공률 54% vs 인간 12%는 기존 보안 인식 교육을 무력화하며, MCP 확산은 에이전트 공격 표면을 기하급수적으로 확대한다. 그러나 동시에 AI SOC가 MTTR을 수주→10분으로 압축하고 침해 비용을 $1.9M 절감한다. Mythos 같은 공격적 AI 역량의 등장이 역설적으로 방어 플랫폼 수요를 더 키우는 구조다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 SECURITY M&A ================= -->
+<section class="blk" id="security-ma">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;보안 M&A · 투자</div>
+      <h2 class="sec-title">2025~2026 M&A $100B+ — 통합의 시대</h2>
+      <p class="sec-lead">2025년 사이버보안 M&A는 426건, 금액 기준 YoY +270% 급증. PANW-CyberArk $25B·Google-Wiz $32B·Cisco-Splunk $28B가 대표 메가딜. 아이덴티티 보안이 2025~2026 M&A의 핵심 테마로 부상했다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>딜</th>
+            <th>금액</th>
+            <th>완료 시점</th>
+            <th>의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">Google → Wiz</td>
+            <td><span class="num-td">$32B</span></td>
+            <td>2026.03.11</td>
+            <td>Google 역사상 최대, 클라우드 보안(CNAPP)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Palo Alto → CyberArk</td>
+            <td><span class="num-td">$25B</span></td>
+            <td>2026.02 완료</td>
+            <td>역대 최대 보안 M&A, 아이덴티티·에이전트 AI 권한 관리</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Cisco → Splunk</td>
+            <td><span class="num-td">$28B</span></td>
+            <td>2024.03 완료</td>
+            <td>SIEM/옵저버빌리티 통합</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ServiceNow → Armis</td>
+            <td><span class="num-td">$7.75B</span></td>
+            <td>2026.04 완료</td>
+            <td>OT/IoT/의료기기 사이버 노출 관리</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Thoma Bravo → Darktrace</td>
+            <td><span class="num-td">$5.3B</span></td>
+            <td>2024.10</td>
+            <td>AI 기반 자율 방어 PE 인수</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Palo Alto → Chronosphere</td>
+            <td><span class="num-td">$3.35B</span></td>
+            <td>2025~2026</td>
+            <td>옵저버빌리티 확장</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Zscaler → Red Canary + SPLX</td>
+            <td><span class="num-td">$692M</span></td>
+            <td>FY2026 Q1</td>
+            <td>MDR 역량 내재화 + AI 보안 shift-left</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 2025년 M&A: 426건(YoY +22% 건수, +270% 금액). 2026 Q1: 총 $47B 딜 밸류. 아이덴티티가 핵심 테마.</div>
+    </div>
+
+    <div class="share-grid reveal" style="margin-top:32px">
+      <div class="share-box">
+        <h3>VC 투자 추이 — 사이버보안 펀딩</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2021 (피크)</span><span class="pct">~$21B</span></div>
+            <div class="sbar-track"><div class="sbar-fill crimson" data-w="100%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2022</span><span class="pct">~$16B</span></div>
+            <div class="sbar-track"><div class="sbar-fill crimson" data-w="76%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2023</span><span class="pct">~$8B</span></div>
+            <div class="sbar-track"><div class="sbar-fill crimson" data-w="38%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2024</span><span class="pct">$9.5B</span></div>
+            <div class="sbar-track"><div class="sbar-fill crimson" data-w="45%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2025 (반등 최강)</span><span class="pct">$14B+</span></div>
+            <div class="sbar-track"><div class="sbar-fill crimson" data-w="67%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2026 Q1</span><span class="pct">$4.62B</span></div>
+            <div class="sbar-track"><div class="sbar-fill crimson" data-w="22%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>M&A 전략 지도</h3>
+        <div class="ph-sub">아이덴티티 · 클라우드 · AI SOC · 2025~2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$14B+</div>
+            <div class="mt"><b>2025 VC 투자</b> — YoY +47%. 2021 피크 이후 최강 펀딩 연도. 초기(Series A/B) $7.5B(+63%). AI x 보안 교차점이 핵심 드라이버.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$940M</div>
+            <div class="mt"><b>Cyera 메가라운드</b> — AI 데이터 보안. Saviynt $700M(AI 에이전트 아이덴티티, $3B 밸류). 대형 라운드가 AI 보안 스타트업 집중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">426건</div>
+            <div class="mt"><b>2025 M&A 폭증</b> — YoY +22%(건수), +270%(금액). 아이덴티티·OT보안·클라우드 네이티브가 핵심 3대 테마. 통합 플랫폼 선호 가속.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$47B</div>
+            <div class="mt"><b>2026 Q1 딜 밸류</b> — 단일 분기로 역대 최대 수준. 메가딜 완결이 하반기 통합 시너지로 연결되는지 여부가 주가 촉매.</div>
+          </div>
+        </div>
+        <div class="foot">* VC 투자: SecurityWeek·Crunchbase 기준. 사이버보안 정의 범위에 따라 $10~18B 편차 가능.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>통합(Platformization)이 이 시장의 핵심 경쟁 벡터다.
+      <span class="u">CyberArk $25B·Wiz $32B·Cisco-Splunk $28B는 모두 "단일 보안 스택"을 향한 레이스다. 분산된 벤더 30~50개를 쓰던 기업들이 플랫폼 3~5개로 압축하면서 대형 플랫폼 벤더가 압도적 수혜를 입는 구조다. 아이덴티티 보안은 에이전트 AI 시대의 새로운 경계(perimeter)가 되면서 M&A 최대 테마로 부상했다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 KOREA SECURITY ================= -->
+<section class="blk" id="korea-security">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;한국 보안 기업</div>
+      <h2 class="sec-title">18.6조원 시장 · AhnLab · Genians</h2>
+      <p class="sec-lead">한국 정보보호 산업은 2024년 18조 6,000억원(YoY +10.5%)으로 성장했다. AhnLab이 통합 플랫폼(PLUS) 전략, Genians이 NAC/ZTNA 선도. K-사이버보안 정책이 2026년 AI 전환을 가속 중이다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>2025 매출</th>
+            <th>성장률</th>
+            <th>핵심 제품/전략</th>
+            <th>특이사항</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">안랩 (A053800)</td>
+            <td><span class="num-td">2,677억원</span></td>
+            <td>+2.7%</td>
+            <td>AhnLab PLUS, AhnLab AI PLUS, XTG</td>
+            <td>영업이익 +20.2%, 당기순이익 +59%</td>
+          </tr>
+          <tr>
+            <td class="hl-td">지니언스 (A263860)</td>
+            <td><span class="num-td">545억원</span></td>
+            <td>+9.8%</td>
+            <td>NAC, ZTNA 플랫폼</td>
+            <td>19년 연속 흑자, 2026E 영업이익률 19.1%</td>
+          </tr>
+          <tr>
+            <td class="hl-td">SK쉴더스</td>
+            <td>—</td>
+            <td>—</td>
+            <td>융합보안, 물리·정보보안 통합</td>
+            <td>한국 최대 종합 보안 기업</td>
+          </tr>
+          <tr>
+            <td class="hl-td">시큐레터 (A418250)</td>
+            <td>—</td>
+            <td>-17.2%</td>
+            <td>MARS SLCDR (CDR + 리버스엔지니어링)</td>
+            <td>SaaS 전환, SECaaS "디스암 서비스" 출시</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 2026E 지니언스 매출 601억(+16%), 영업이익 115억(+53%) — 증권사 컨센서스 기반.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">안랩 (AhnLab)</span>
+        <h3>AhnLab PLUS — 통합 AI 플랫폼</h3>
+        <div class="ic-body"><b>AhnLab PLUS</b>: 엔드포인트·네트워크·클라우드·보안운영을 하나로 통합한 플랫폼 전략. 글로벌 Big 3(CRWD·PANW·ZS)의 "platformization"을 한국 환경에 적용.<br><br><b>AhnLab AI PLUS</b>: 머신러닝 → 생성형 AI → 에이전트 AI 순차 적용. 탐지~대응 자율화를 추진 중이다. <b>AhnLab XTG</b>: 차세대 네트워크 통합 보안 솔루션, 2025 상반기 베스트굿 선정.<br><br>2025년 영업이익 +20.2%, 당기순이익 +59%로 수익성이 크게 개선됐다. 2026 CYBERSEC 대만 전시회 참가 — 동남아·대만 해외 확장 시도.</div>
+        <div class="ic-nums">
+          <div><div class="nk">매출</div><div class="nv">2,677억</div></div>
+          <div><div class="nk">영업이익</div><div class="nv">+20.2%</div></div>
+          <div><div class="nk">순이익</div><div class="nv">+59%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">지니언스 (Genians)</span>
+        <h3>NAC 19년 연속 흑자 · ZTNA 확장</h3>
+        <div class="ic-body">국내 <b>NAC(Network Access Control) 시장 선도</b> 기업으로 19년 연속 흑자를 기록하고 있다. 2027년 정보보호 공시 의무가 전 상장사로 확대되면 2026년부터 NAC 도입 기업이 수천 개 추가될 것으로 전망된다.<br><br><b>2026E 전망</b>: 매출 601억(+16%), 영업이익 115억(+53%), 영업이익률 19.1%. NAC/ZTNA 솔루션 매출 511억(+18%)이 성장 주도. <b>ZTNA(제로 트러스트 네트워크 접근)</b> 제품 라인 확장으로 원격근무·클라우드 전환 수요를 흡수 중이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">2025E 매출</div><div class="nv">545억</div></div>
+          <div><div class="nk">2026E 매출</div><div class="nv">601억</div></div>
+          <div><div class="nk">영업이익률</div><div class="nv">19.1%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="macro-grid reveal" style="margin-top:32px">
+      <div class="panel">
+        <h3>한국 정보보호 시장 현황</h3>
+        <div class="ph-sub">시장 규모 · 인력 · 기업 수 · 2024~2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">18.6조</div>
+            <div class="mt"><b>2024 정보보호 산업 규모</b> — YoY +10.5%. 수출 1조 8,700억(+11.4%). 정보보호 기업 수 1,780개(+4.2%).</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">6.6조</div>
+            <div class="mt"><b>2026E 물리보안 시장</b> — 6조 5,994억원 전망. 정보보안·물리보안 융합 트렌드. SK쉴더스가 융합보안 대표 주자.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">4.8M</div>
+            <div class="mt"><b>글로벌 인력 공백</b> — ISC2 2025: 글로벌 미충원 보안 직무 480만명(YoY +19%). 아태가 340만명으로 최대. AI SOC 자동화가 유일한 현실적 대안.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2027</div>
+            <div class="mt"><b>정보보호 공시 의무 확대</b> — 2027년 전 상장사 적용. Genians·안랩 등 국내 보안 기업의 구조적 성장 트리거. 공공 조달 수요도 동반 확대 예상.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>K-사이버보안 국가 전략</h3>
+        <div class="ph-sub">국가안보실 · 과기정통부 · KISA · 2024~2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">2024</div>
+            <div class="mt"><b>국가 사이버안보 전략</b> — 국안실·국정원·외교부·국방부·과기정통부·경찰청 합동. 비전: 사이버공간의 자유·인권·법치 수호 + 글로벌 중추국가.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">AI</div>
+            <div class="mt"><b>AI 전환 과제</b> — 2026년 AI 대전환 시대 사이버보안을 필수 인프라로 지정. 부처 간 역할 분산 및 기술·인력·예산 부족이 실행 과제.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">KISA</div>
+            <div class="mt"><b>KISA 사이버위협 대응</b> — 연간 침해사고 신고 급증. AI 기반 피싱·딥페이크·랜섬웨어에 대한 실시간 대응 체계 강화 추진.</div>
+          </div>
+        </div>
+        <div class="foot">* 한국 정보보호 18.6조원 — KISIA 공식 발표 기준. 세부 분류(정보보안 vs 물리보안)에 따라 수치 상이.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>한국 보안 시장은 규제 촉발 + AI 전환의 구조적 성장 국면이다.
+      <span class="u">2027년 정보보호 공시 의무 전 상장사 확대는 수천 개 기업의 NAC·EDR·MDR 도입을 강제한다. AhnLab·Genians의 국내 시장 지배력은 이 수요를 직접 흡수할 수 있는 위치다. 다만 글로벌 빅3 대비 AI R&D 규모 격차가 중장기 경쟁력 리스크로 남아 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">Bull vs Bear — AI 무장 경쟁의 투자 지도</h2>
+      <p class="sec-lead">전체 사이버보안 CAGR 9.1%이지만 AI 사이버보안 세그먼트는 CAGR 24.4%로 2.7배 빠르다. 2030년 $93.8~104.6B 전망. 플랫폼화·규제 수혜가 Bull, 고밸류에이션·CrowdStrike 사태 교훈이 Bear의 핵심 논거다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header c3">
+        <div>시장 지표</div>
+        <div>2024~2025</div>
+        <div>2030 전망</div>
+      </div>
+      <div class="compare-row c3">
+        <div class="cr-label">전체 사이버보안 시장</div>
+        <div>$227.6B (2025)</div>
+        <div><span class="cr-num">$351.9B</span></div>
+      </div>
+      <div class="compare-row c3">
+        <div class="cr-label">AI 사이버보안 세그먼트</div>
+        <div>$25.4B (2024)</div>
+        <div><span class="cr-num">$93.8~104.6B</span></div>
+      </div>
+      <div class="compare-row c3">
+        <div class="cr-label">AI 보안 CAGR</div>
+        <div>24.4~27.8%</div>
+        <div><span class="cr-num">전체의 2.7배</span></div>
+      </div>
+      <div class="compare-row c3">
+        <div class="cr-label">북미 AI 보안 점유</div>
+        <div><span class="cr-num">31.5%</span></div>
+        <div>글로벌 최대</div>
+      </div>
+      <div class="compare-row c3">
+        <div class="cr-label">글로벌 인력 부족</div>
+        <div><span class="cr-num">4.8M명</span></div>
+        <div>AI SOC 수요 드라이버</div>
+      </div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● BULL 논거 1</div>
+        <h3>AI 무장 경쟁 — 수요는 구조적</h3>
+        <div class="fc-body"><b>AI 피싱 82.6%·딥페이크 1,300%+·에이전트 AI 공격 표면 확대</b>는 보안 지출을 강제하는 구조적 위협이다. "보안 예산 삭감"은 없다 — 실제 침해 발생 시 건당 비용이 AI SOC 도입 비용을 압도하기 때문.<br><br>IBM 2025: AI/자동화 고도입 기업 침해 건당 $1.9M 절감, 80일 단축. CIO들이 AI SOC에 투자해야 하는 ROI가 이미 증명됐다.<br><br>Gartner "AI SOC Agents" 공식 카테고리 지정(2025.06) — 시장 표준화가 구매 의사결정을 가속화한다.</div>
+        <div class="fc-note">AI vs AI 군비경쟁은 멈추지 않는다. 공격이 고도화될수록 방어 지출도 구조적으로 늘어난다.</div>
+      </div>
+
+      <div class="fcard fc-red">
+        <div class="fc-tag">● BEAR 논거 1</div>
+        <h3>밸류에이션 고점 — CrowdStrike July 2024</h3>
+        <div class="fc-body"><b>CRWD $174B(PS ~36배)</b>는 최고 성장률 기업에도 높은 멀티플이다. 2024년 7월 CrowdStrike 소프트웨어 업데이트 결함으로 전 세계 850만 대 Windows 시스템 다운 — 단일 실수로 항공·금융·의료 시스템 마비.<br><br>이는 보안 플랫폼의 "단일 장애점" 리스크를 전 세계에 노출시켰다. 플랫폼 통합(platformization)의 역설 — 의존도가 높을수록 장애 파급력도 커진다.<br><br>Zscaler 나스닥100 퇴출(2026.06.22), 주가 31.5% 단일일 하락 — 보안 주식의 변동성 리스크.</div>
+        <div class="fc-note">CrowdStrike July 2024는 보안 플랫폼 단일 의존의 위험을 상기시킨다. 통합의 역설.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● BULL 논거 2</div>
+        <h3>플랫폼화 + 규제 수혜 — 이중 모멘텀</h3>
+        <div class="fc-body"><b>플랫폼화</b>: 기업들이 30~50개 분산 벤더를 3~5개 플랫폼으로 압축하는 흐름. 대형 플랫폼(CRWD·PANW·ZS·FTNT)이 독식 구조로 수렴 중이다. PANW RPO $15.8B(+24%)가 이를 증명한다.<br><br><b>규제 수혜</b>: EU AI Act·NIS2 Directive·SEC 사이버보안 공시 의무(2023)·한국 정보보호 공시 확대(2027). 규제가 보안 지출을 강제하는 바닥 수요를 형성한다.<br><br><b>아이덴티티 보안</b>: 에이전트 AI 시대 새로운 경계(perimeter). CyberArk $25B 인수 후 PANW가 이 시장을 선제 장악했다.</div>
+        <div class="fc-note">규제와 플랫폼 통합은 대형 벤더에게 비선형적 성장을 만들어주는 복합 드라이버다.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● BEAR 논거 2</div>
+        <h3>통합 리스크 + 인력 부족 + 오픈소스 위협</h3>
+        <div class="fc-body"><b>통합 리스크</b>: CyberArk $25B·Wiz $32B·Chronosphere $3.35B 등 대형 M&A 통합의 실패 가능성. 문화·기술·인력 통합 실패 시 단기 실적 압박.<br><br><b>인력 공백</b>: 글로벌 미충원 보안 직무 480만명. 경제적 압박·예산 삭감이 #1 충원 장애 요인(ISC2 2025). AI SOC가 대안이나, 구현 지연 시 서비스 품질 저하 리스크.<br><br><b>오픈소스/자체 구축 위협</b>: 빅테크(Google·Microsoft·AWS)가 자체 AI 보안 기능을 플랫폼에 내재화. 독립 보안 벤더의 TAM이 잠식될 수 있다. Microsoft Security ARR 이미 $20B+.</div>
+        <div class="fc-note">빅테크의 보안 내재화는 독립 보안 벤더에게 가장 과소평가된 장기 위협이다.</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">사이버보안은 AI 시대의 필수 인프라다 — AI SOC·플랫폼화·아이덴티티 3축 수혜.</div>
+      <div class="bt-body">
+        <b>AI 사이버보안 세그먼트 CAGR 24.4%는 전체 IT 지출 성장률의 3~4배다.</b> AI 피싱 82.6%·딥페이크 1,300%+ 증가·MCP 에이전트 공격 표면 확대는 보안 지출을 더 이상 "선택"이 아닌 "생존 비용"으로 만들었다. 인력 부족(480만명)이 AI SOC 자동화를 강제하고, 규제(NIS2·SEC·한국 2027 공시)가 바닥 수요를 형성한다.<br><br>
+        <b>플랫폼 통합 전쟁의 승자</b>는 CrowdStrike(Charlotte AI + AIDR)·Palo Alto Networks(XSIAM + CyberArk)·Zscaler(Zero Trust + AI Protect) 3강이 유력하다. 아이덴티티 보안은 에이전트 AI 시대의 새로운 필수 레이어로 부상했다.<br><br>
+        <b>리스크</b>: CRWD $174B·ZS 나스닥100 퇴출 등 밸류에이션 과열 구간과 CrowdStrike July 2024 사태가 보여준 "플랫폼 단일 의존 리스크"를 항상 병행 모니터링해야 한다. Microsoft Security ARR $20B+는 독립 벤더의 TAM 잠식 위협으로 장기 리스크다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도</div>
+      <div class="src-list">
+        DATA · CrowdStrike IR (FY2026 Q3) · Palo Alto Networks IR (FY2026 Q4) · Zscaler IR (FY2026 Q2)<br>
+        Fortinet IR (Q1 2026) · SentinelOne IR (FY2026) · Gartner Cybersecurity 2025~2026<br>
+        IDC Worldwide Security Spending Guide 2026 · MarketsandMarkets AI in Cybersecurity 2030<br>
+        KISA 정보보호 실태조사 2024 · 과기정통부 정보보호 산업 통계 2024<br>
+        AhnLab IR 2025 · Genians IR 2025~2026 · ISC2 Cybersecurity Workforce Study 2025<br>
+        IBM Security X-Force Threat Intelligence Index 2025 · Hoxhunt Phishing Report 2026<br>
+        Anthropic red.anthropic.com Mythos 보고서 2026 · SecurityWeek VC 투자 분석 2025<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

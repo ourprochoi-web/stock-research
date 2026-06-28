@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Google Willow 105q 에러보정 돌파·CHIPS Act $20.1B·상장사 P/S 836배 — 양자컴퓨팅 하드웨어·유니콘·정책·한국 전략 투자 지도">
+<meta name="keywords" content="양자컴퓨팅,퀀텀,Google Willow,IBM,IonQ,Quantinuum,Rigetti,PsiQuantum,CHIPS Act,PQC,양자암호,한국양자전략">
+<meta property="og:title" content="양자컴퓨팅 투자 지도 — 에러 보정 돌파에서 $20B CHIPS Act까지">
+<meta property="og:description" content="Google Willow 105q 에러보정 돌파·CHIPS Act $20.1B·상장사 P/S 836배 — 양자컴퓨팅 하드웨어·유니콘·정책·한국 전략 투자 지도">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/quantum/quantum_investment_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="양자컴퓨팅 투자 지도 — 에러 보정 돌파에서 $20B CHIPS Act까지">
+<meta name="twitter:description" content="Google Willow 105q 에러보정 돌파·CHIPS Act $20.1B·상장사 P/S 836배 — 양자컴퓨팅 하드웨어·유니콘·정책·한국 전략 투자 지도">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/quantum/quantum_investment_map.html">
+<title>양자컴퓨팅 투자 지도 — 에러 보정 돌파에서 $20B CHIPS Act까지</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#6366f1;
+    --current:#818cf8;
+    --glow:#c7d2fe;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(199,210,254,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  td .num-td.bear{color:var(--bear)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:rgba(99,102,241,.35);transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(99,102,241,.12);color:var(--volt);border:1px solid rgba(99,102,241,.3)}
+  .ic-tag.pink{background:rgba(129,140,248,.12);color:var(--current);border:1px solid rgba(129,140,248,.3)}
+  .ic-tag.rose{background:rgba(199,210,254,.12);color:var(--glow);border:1px solid rgba(199,210,254,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.indigo{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.purple{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+  .sbar-fill.blue{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.teal{background:linear-gradient(90deg,#14b8a6,#2dd4bf)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.bear{color:var(--bear)}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(199,210,254,.04));
+    border:1px solid rgba(99,102,241,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "양자컴퓨팅 투자 지도 — 에러 보정 돌파에서 $20B CHIPS Act까지",
+  "description": "Google Willow 105q 에러보정 돌파·CHIPS Act $20.1B·상장사 P/S 836배 — 양자컴퓨팅 하드웨어·유니콘·정책·한국 전략 투자 지도",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/quantum/quantum_investment_map.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#c7d2fe;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(199,210,254,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>양자컴퓨팅 · 투자 지도</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#hardware">01 / 하드웨어</a>
+      <a href="#startups">02 / 유니콘</a>
+      <a href="#quantum-ai">03 / 양자×AI</a>
+      <a href="#policy-market">04 / 정책·시장</a>
+      <a href="#korea-quantum">05 / 한국</a>
+      <a href="#investment-thesis">06 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">양자컴퓨팅 · 투자 지도 · 2026.06 기준</span>
+    <h1 class="hero-title">에러 보정 돌파<br><span class="hl">$20B CHIPS</span><br>양자 지도</h1>
+    <p class="hero-sub">Google Willow가 30년 난제를 깼다. 이제 $20B 국가 자금이 쏟아진다 — 그러나 상장사 P/S는 836배다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">105<span class="u">q</span></div>
+        <div class="lab">Google Willow 큐비트 — 에러 보정 임계값 최초 돌파. 물리 큐비트 스케일업 시마다 에러율 절반 감소. 1995년 Peter Shor 이론 제안 이후 30년 난제 해결.</div>
+        <div class="src">SRC: Google AI Blog, 2024.12</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$20.1<span class="u">B</span></div>
+        <div class="lab">CHIPS Act 양자 패키지 — 9개사 LOI, 2026.05 발표. GlobalFoundries $3.75B + IBM $10B + 컴퓨팅 7사 각 $1억. 양자-반도체 이중 투자 구조.</div>
+        <div class="src">SRC: DOE CHIPS Act / NIST, 2026.05</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">P/S <span class="u">836x</span></div>
+        <div class="lab">Rigetti 밸류에이션 — 연매출 $710만 대비 시총 $71억. IonQ 109배·D-Wave 791배. 양자 상장사 전체 합산 매출 ~$1.6억으로 NVIDIA 1일 매출($3.3억)의 절반.</div>
+        <div class="src">SRC: Rigetti / IonQ / D-Wave IR, 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 HARDWARE ================= -->
+<section class="blk" id="hardware">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;양자 하드웨어</div>
+      <h2 class="sec-title">Google Willow · IBM 100K · 상장 4사</h2>
+      <p class="sec-lead">2024년 Google Willow의 에러 보정 임계값 돌파로 양자컴퓨팅의 패러다임이 바뀌었다. IBM은 2033년 100K 큐비트를 향한 모듈형 로드맵을 실행 중이고, IonQ·Quantinuum·Rigetti·D-Wave는 각자의 기술 방식으로 상업 시장을 공략하고 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>주요 시스템</th>
+            <th>큐비트</th>
+            <th>FY2025 매출</th>
+            <th>P/S</th>
+            <th>2026 YTD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">Google (비상장)</td>
+            <td>Willow</td>
+            <td><span class="num-td">105q</span></td>
+            <td>비공개</td>
+            <td>—</td>
+            <td>에러보정 임계값 돌파</td>
+          </tr>
+          <tr>
+            <td class="hl-td">IBM (비상장 사업부)</td>
+            <td>Heron 156q → Kookaburra 1,386q</td>
+            <td><span class="num-td">→ 100K</span></td>
+            <td>비공개</td>
+            <td>—</td>
+            <td>CHIPS Act $10B LOI 수령</td>
+          </tr>
+          <tr>
+            <td class="hl-td">IonQ (IONQ)</td>
+            <td>Tempo 100q (KISTI 납품)</td>
+            <td><span class="num-td">256q</span></td>
+            <td><span class="num-td">$1억+</span></td>
+            <td>109x</td>
+            <td class="num-td">+16%</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Quantinuum (QNT)</td>
+            <td>H2 / Helios</td>
+            <td><span class="num-td">56q</span></td>
+            <td>$3,100만</td>
+            <td>~IPO</td>
+            <td>2026.06 나스닥 IPO</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Rigetti (RGTI)</td>
+            <td>Ankaa-3 / Cepheus-1</td>
+            <td><span class="num-td">84q → 108q</span></td>
+            <td>$710만</td>
+            <td><span class="num-td bear">836x</span></td>
+            <td class="num-td bear">-10%</td>
+          </tr>
+          <tr>
+            <td class="hl-td">D-Wave (QBTS)</td>
+            <td>Advantage (어닐링)</td>
+            <td><span class="num-td">5,000+q</span></td>
+            <td>$2,460만</td>
+            <td><span class="num-td bear">791x</span></td>
+            <td class="num-td bear">-9%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 매출 = FY2025 실적. IonQ = Q1 FY2026 $6,470만 YoY +755%, FY2026E $2.6~2.7억. P/S = 2026.06 기준.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">Google Willow</span>
+        <h3>30년 난제 돌파 — 에러 보정 임계값 이하</h3>
+        <div class="ic-body"><b>105큐비트 초전도 프로세서</b> — Santa Barbara 전용 팹 제조. 핵심 성과는 큐비트 수 스케일업 시마다 에러율이 절반으로 감소하는 "임계값 이하(below threshold)" 달성이다. 1995년 Peter Shor 이론 이후 30년간 아무도 못 한 것.<br><br>RCS 벤치마크: <b>5분 내 완료</b> vs 슈퍼컴퓨터 10²⁵년 추정. T1 코히런스 시간 ~100μs(구세대 Sycamore 대비 5배), 게이트 에러율 2배 개선. 2025년 외부 연구자에 QPU 오픈 액세스.</div>
+        <div class="ic-nums">
+          <div><div class="nk">큐비트</div><div class="nv">105q</div></div>
+          <div><div class="nk">에러 감소</div><div class="nv">÷2/스케일</div></div>
+          <div><div class="nk">T1 개선</div><div class="nv">5배</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">IBM 로드맵</span>
+        <h3>Heron 156q → Kookaburra → 100K (2033)</h3>
+        <div class="ic-body">IBM은 단일칩 대형화 대신 <b>모듈형 아키텍처</b>로 전략을 피벗했다. Heron 156q가 현재 기반이고, Kookaburra(1,386q)는 3개 칩 연결 시 4,158q 시스템으로 확장된다.<br><br>회로 처리 능력: 2026 7,500게이트 → 2027 10,000 → 2028 15,000. 장기 목표는 <b>2033년 100K큐비트 양자 중심 슈퍼컴퓨터</b>. CHIPS Act $10억 LOI로 300mm 초전도 웨이퍼 양산 팹 설립 예정.</div>
+        <div class="ic-nums">
+          <div><div class="nk">현재</div><div class="nv">156q</div></div>
+          <div><div class="nk">2025</div><div class="nv">1,386q</div></div>
+          <div><div class="nk">2033E</div><div class="nv">100Kq</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">IonQ (이온 트랩)</span>
+        <h3>Q1 FY2026 +755% — 3사 중 유일 플러스</h3>
+        <div class="ic-body">Q1 FY2026 매출 <b>$6,470만(+755% YoY)</b>, FY2026 가이던스 $2.6~2.7억. 현금 ~$31억 보유. Cambridge 대 256q 납품, KISTI 100q Tempo 설치, DARPA·SDA 국방 프로젝트 수주.<br><br>SK텔레콤과 지분 교환($2.5억 규모)으로 아시아 파이프라인 확보. <b>P/S 109배</b>는 3사 중 가장 낮은 수준이나 여전히 극단적. Adj. EBITDA 적자 $3.1~3.3억 예상.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Q1 성장</div><div class="nv">+755%</div></div>
+          <div><div class="nk">현금</div><div class="nv">$31억</div></div>
+          <div><div class="nk">P/S</div><div class="nv">109x</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">Quantinuum (IPO)</span>
+        <h3>QV 33,554,432 — 2026.06 나스닥 상장</h3>
+        <div class="ic-body">H2 프로세서: <b>56큐비트 이온 트랩(이터븀), QV 2²⁵ = 33,554,432</b>. 1큐비트 충실도 99.99%+, 2큐비트 99.9%+ — 동급 대비 초전도 방식을 능가. Helios 차세대는 경쟁사 대비 QV 16,000배.<br><br>2026.06.04 나스닥 상장(QNT). 공모가 $60/주, <b>$16.8억 조달</b>, 기업가치 ~$127억. Honeywell ~49.1% 지분 보유. 2025 매출 $3,100만(초기 단계).</div>
+        <div class="ic-nums">
+          <div><div class="nk">QV</div><div class="nv">2²⁵</div></div>
+          <div><div class="nk">IPO 조달</div><div class="nv">$16.8억</div></div>
+          <div><div class="nk">기업가치</div><div class="nv">$127억</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bear">Rigetti (경고)</span>
+        <h3>Ankaa-3 84q — P/S 836배 극단적 밸류</h3>
+        <div class="ic-body">Ankaa-3(84q, 2큐비트 충실도 99.5%), Cepheus-1(108q, Amazon Braket GA). Lyra 336q는 2026년 말 목표, 99.7% 충실도로 <b>Narrow Quantum Advantage</b> 최초 경로 확보 주장.<br><br>그러나 FY2025 매출 <b>$710만(YoY -34%)</b>, 순손실 $2.16억. CHIPS Act $1억 LOI 수령. 인도 C-DAC $840만 수출. <b>P/S 836배</b>는 현재 매출 대비 극단적 투기 밸류에이션.</div>
+        <div class="ic-nums">
+          <div><div class="nk">매출</div><div class="nv">$710만</div></div>
+          <div><div class="nk">P/S</div><div class="nv bear" style="color:var(--bear)">836x</div></div>
+          <div><div class="nk">YoY</div><div class="nv bear" style="color:var(--bear)">-34%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">D-Wave (어닐링)</span>
+        <h3>5,000+큐비트 · +179% 성장 · Nature 우월성</h3>
+        <div class="ic-body">양자 어닐링 방식으로 <b>상용 최적화 문제 특화</b>. Advantage2 사용량 +314% YoY. 2025년 Nature 논문: 자성 물질 시뮬레이션에서 고전 슈퍼컴퓨터 대비 <b>100만 년 → 수분</b> 단축.<br><br>FY2025 매출 $2,460만(+179%), 매출총이익률 82.6%. Q1 2026 수주 $3,340만(+2,000% YoY). Yale 스핀아웃 Quantum Circuits(QCI) <b>$5.5억 인수</b>로 게이트 모델에도 진출.</div>
+        <div class="ic-nums">
+          <div><div class="nk">매출 성장</div><div class="nv">+179%</div></div>
+          <div><div class="nk">GP마진</div><div class="nv">82.6%</div></div>
+          <div><div class="nk">Q1 수주</div><div class="nv">+2,000%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>Google Willow의 임계값 돌파는 양자컴퓨팅의 방향 전환점이다.
+      <span class="u">에러 보정이 이제 이론에서 실험으로 넘어왔다. IBM의 100K 로드맵, IonQ의 폭발적 성장, Quantinuum의 최고 충실도 — 모두 각기 다른 방식으로 상업 우위를 다투고 있다. 그러나 5개 기술 방식(초전도·이온트랩·중성원자·포토닉·어닐링)이 병존하는 상황에서 승자는 아직 미확정이다. D-Wave의 어닐링은 범용 양자가 아니라 최적화 특화라는 점을 구분해야 한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 STARTUPS ================= -->
+<section class="blk" id="startups">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;비상장 유니콘</div>
+      <h2 class="sec-title">PsiQuantum $7B · Xanadu SPAC · Pasqal 1,000q</h2>
+      <p class="sec-lead">포토닉·중성원자·캣큐비트 방식의 비상장 유니콘들이 2025~2026년 대규모 자금을 조달하며 다음 세대 양자 경쟁에 가담했다. VC 투자는 Q1 2025~Q1 2026 사이 $46억+ 역대 최대를 기록했다.</p>
+    </div>
+
+    <div class="info-grid reveal">
+      <div class="icard">
+        <span class="ic-tag red">PsiQuantum (포토닉)</span>
+        <h3>$70억 밸류 · GlobalFoundries 300mm 웨이퍼</h3>
+        <div class="ic-body">실리콘 포토닉스 방식 — <b>GlobalFoundries Fab 8(Malta, NY)에서 300mm 웨이퍼 기반 양자칩 대량 생산</b>. 호주 정부 $6.2억 AUD 보조금으로 브리즈번 유틸리티 규모 양자 사이트 착공.<br><br>Omega 칩셋(2025.02, Nature): 단광자 소스 + 초전도 검출기 + BTO 광 스위치 통합, 칩-칩 간 <b>250m 양자 인터커넥트</b>(표준 텔레콤 광섬유). BlackRock·Temasek 투자. CHIPS Act $1억 LOI. 목표: 100만 큐비트 내결함성 양자컴퓨터.</div>
+        <div class="ic-nums">
+          <div><div class="nk">밸류</div><div class="nv">$70억</div></div>
+          <div><div class="nk">라운드</div><div class="nv">$10억</div></div>
+          <div><div class="nk">인터커넥트</div><div class="nv">250m</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Xanadu (포토닉 SPAC)</span>
+        <h3>최초 포토닉 상장 — 나스닥 XNDU</h3>
+        <div class="ic-body">2026.03 SPAC 합병으로 나스닥·TSX 동시 상장(XNDU) — <b>최초의 포토닉 양자컴퓨팅 상장사</b>. PIPE로 $2.75억 조달, AMD 및 캐나다 기관투자자 참여.<br><br>캐나다 정부 Quantum Champions Program 비희석 자금 지원. PennyLane 오픈소스 QML 프레임워크로 개발자 생태계 구축. 포토닉 방식은 상온 작동 가능성이 장점이나 아직 대규모 얽힘 제어가 과제.</div>
+        <div class="ic-nums">
+          <div><div class="nk">상장</div><div class="nv">XNDU</div></div>
+          <div><div class="nk">PIPE</div><div class="nv">$2.75억</div></div>
+          <div><div class="nk">방식</div><div class="nv">포토닉</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Pasqal (중성원자)</span>
+        <h3>1,000q 달성 → 2026년 10,000q 목표</h3>
+        <div class="ic-body">프랑스 기반 중성원자 방식. 2024년 <b>1,000큐비트 달성</b>, 2026년 10,000큐비트 로드맵. 상업 매출 EUR 1,650만(YoY +371%), 보조금 포함 총 매출 EUR 2,370만(2025).<br><br>중성원자 방식은 이온 트랩과 달리 큐비트를 2D/3D 배열로 자유롭게 재배치 가능 — 특정 알고리즘에서 구조적 장점. 2026.02 기준 EUR 2억 라운드 추진 중(유니콘 밸류 목표).</div>
+        <div class="ic-nums">
+          <div><div class="nk">큐비트</div><div class="nv">1,000q</div></div>
+          <div><div class="nk">매출 성장</div><div class="nv">+371%</div></div>
+          <div><div class="nk">2026 목표</div><div class="nv">10Kq</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">QuEra (중성원자)</span>
+        <h3>96 논리큐비트 세계 기록 — Harvard/MIT</h3>
+        <div class="ic-body">Harvard·MIT 스핀아웃. $2.3억 조달(Google·SoftBank·Valor Equity). 2026.01 Nature: <b>448 물리 원자에서 [[16,6,4]] 코드로 96 논리큐비트 생성</b> + 임계값 이하 에러 억제 세계 기록.<br><br>Google·SoftBank 전략 투자. NVIDIA도 2025.09 투자(금액 미공개). 중성원자 방식으로 QuEra와 Pasqal이 이온트랩·초전도에 도전하는 구도. 논리큐비트 세계 기록은 현실적 양자 어드밴티지 경로에서 의미가 크다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">논리큐비트</div><div class="nv">96개</div></div>
+          <div><div class="nk">조달</div><div class="nv">$2.3억</div></div>
+          <div><div class="nk">투자자</div><div class="nv">Google</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal d1" style="margin-top:22px">
+      <div class="icard">
+        <span class="ic-tag red">Alice &amp; Bob (캣큐비트)</span>
+        <h3>비트플립 수명 1시간 — 물리→논리 15:1</h3>
+        <div class="ic-body">프랑스 기반, 보소닉 인코딩 캣큐비트 방식. 핵심 우위: <b>비트플립 에러 자율 억제 — 물리→논리 큐비트 비율 약 15:1</b>(경쟁 방식 ~1,000:1 대비 획기적).<br><br>Boson 4(2025.09): 비트플립 수명 <b>1시간 초과</b>(2024년 7분 → 2025년 1시간+). Elevator Codes(2026.01): 에러율 10,000배 감소 입증. 2026.04 EUR 1.3억 추가 조달 → 누적 EUR 2.3억+, 직원 200명+.</div>
+        <div class="ic-nums">
+          <div><div class="nk">비트플립 수명</div><div class="nv">1시간+</div></div>
+          <div><div class="nk">오버헤드</div><div class="nv">15:1</div></div>
+          <div><div class="nk">누적 조달</div><div class="nv">EUR 2.3억</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">기타 신규 유니콘</span>
+        <h3>Photonic $2B · QuantWare · Atom Computing</h3>
+        <div class="ic-body"><b>Photonic (캐나다)</b>: 실리콘 스핀 광자 방식. 2026.06 $2억 조달, 밸류에이션 <b>$20억</b>. 실리콘 포토닉스의 CMOS 호환성 + 장거리 양자 네트워크 결합 접근.<br><br><b>QuantWare (네덜란드)</b>: Series B $1.78억 — 세계 최대 양자 오픈 아키텍처 전용 팹 건설. <b>Quantum Motion (영국)</b>: Series C $1.6억(DCVC 리드). <b>Atom Computing (중성원자)</b>: 1,180 물리큐비트, CHIPS Act $1억 LOI, Microsoft Azure 협업으로 ~50 논리큐비트 에러보정 제공.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Photonic</div><div class="nv">$20억</div></div>
+          <div><div class="nk">QuantWare</div><div class="nv">$1.78억</div></div>
+          <div><div class="nk">Atom Q</div><div class="nv">1,180q</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>VC $46억+ 역대 최대 — 그러나 기술 방식의 승자는 미확정이다.
+      <span class="u">초전도·이온트랩·중성원자·포토닉·캣큐비트 5개 방식이 병존하며 각자 "우리가 답이다"라고 주장한다. 포토닉(PsiQuantum·Xanadu·Photonic)은 상온 작동·광섬유 네트워크 통합을 내세우고, 중성원자(QuEra·Pasqal)는 논리큐비트 세계 기록을 앞세운다. Alice & Bob의 15:1 오버헤드는 에러보정 경쟁에서 패러다임 전환 가능성이 있으나 아직 소규모 시스템에서만 입증됐다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 QUANTUM-AI ================= -->
+<section class="blk" id="quantum-ai">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;양자×AI 교차점</div>
+      <h2 class="sec-title">신약 20배 · JPMorgan $10B · PQC NIST 완료</h2>
+      <p class="sec-lead">양자와 AI의 교차점은 세 축으로 수렴하고 있다. QML(양자 머신러닝)은 초기 도메인 특화 배치 단계, 신약 발견과 금융 최적화는 파일럿에서 실증으로, 포스트양자암호(PQC)는 이미 표준화가 완료됐다.</p>
+    </div>
+
+    <div class="indicator-grid reveal">
+      <div class="indcard">
+        <div class="ind-num">20x</div>
+        <div class="ind-lab">AstraZeneca×IonQ<br>신약 속도 향상</div>
+        <div class="ind-tag">Amazon Braket, 2025</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">$10B</div>
+        <div class="ind-lab">JPMorgan<br>전략 기술 펀드</div>
+        <div class="ind-tag">양자 27개 분야 포함</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">3종</div>
+        <div class="ind-lab">NIST PQC 표준<br>FIPS 203/204/205</div>
+        <div class="ind-tag">2024.08 확정</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">36%</div>
+        <div class="ind-lab">QML 시장<br>CAGR</div>
+        <div class="ind-tag">2030E $1.63억</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">2027</div>
+        <div class="ind-lab">미국 NSS<br>PQC 전환 의무</div>
+        <div class="ind-tag">국가안보시스템</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">QML (양자 머신러닝)</span>
+        <h3>초기 도메인 특화 배치 단계</h3>
+        <div class="ic-body">Quantum AI 시장 2025년 ~$4.74억 → 2026년 ~$6.38억. QML 세부 시장 <b>CAGR 36.4%</b>, 2030년 $1.63억 전망.<br><br>현 단계: 연구 논문을 벗어나 <b>초기 도메인 특화 배치</b> — 하이브리드 양자-고전 워크플로 중심. 신약 발견(BASF/Evotec), 금융(포트폴리오 최적화), 물류(Siemens/Deutsche Bahn) 적용 중. <b>현실 인식 필수</b>: 대부분의 실용 시나리오에서 아직 QML이 고전 시스템을 능가하지 못함. 노이즈·제한 큐비트·학습 난제 잔존.</div>
+        <div class="ic-nums">
+          <div><div class="nk">시장 2025</div><div class="nv">$4.74억</div></div>
+          <div><div class="nk">CAGR</div><div class="nv">36.4%</div></div>
+          <div><div class="nk">2030E</div><div class="nv">$1.63억</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">신약 발견 & 소재 과학</span>
+        <h3>AstraZeneca 20배 · IBM-Moderna 303원자</h3>
+        <div class="ic-body"><b>AstraZeneca × IonQ</b>(Amazon Braket): 실제 신약 발견 워크플로에서 <b>20배 속도 향상</b> 입증(2025, 주요 제약사 최초).<br><br><b>IBM × Moderna/Cleveland Clinic</b>(2026.03): 세계 최초 양자-고전 하이브리드로 303원자 미니단백질(Trp-cage) 전자구조 시뮬레이션. <b>D-Wave × Shionogi</b>: 고전 ML 대비 유망 분자 후보 <b>10배</b> 증가. Roche·Sanofi·Takeda·Boehringer·Merck 등 글로벌 제약사 전략 참여. 신약 발견 양자 시장 2025 $1.26억 → 2035 $6.38억(CAGR 17.9%).</div>
+        <div class="ic-nums">
+          <div><div class="nk">AZ-IonQ</div><div class="nv">20배</div></div>
+          <div><div class="nk">D-Wave</div><div class="nv">10배↑</div></div>
+          <div><div class="nk">2035E</div><div class="nv">$6.38억</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">금융 최적화</span>
+        <h3>JPMorgan $10B · Goldman 축소 · 모두 파일럿</h3>
+        <div class="ic-body"><b>JPMorgan Chase</b>: 양자를 27개 전략 기술 하위 분야로 지정, <b>$100억 전략 기술 펀드</b> 편성. MBS 가격 산정에 양자 알고리즘 통합, 정확도 ~28% 향상(2025).<br><br><b>Goldman Sachs</b>: QSP 기반 양자 몬테카를로로 T-게이트 16배·논리큐비트 4배 절감 내부 연구. 그러나 <b>2026.04 내부 양자 프로그램 축소</b>(Bloomberg) — "현재로서는 제한적 실용성" 판단. <b>핵심 현실</b>: 주요 은행 중 라이브 금융 운용 완전 배치 사례 없음.</div>
+        <div class="ic-nums">
+          <div><div class="nk">JPM 펀드</div><div class="nv">$100억</div></div>
+          <div><div class="nk">MBS 정확도</div><div class="nv">+28%</div></div>
+          <div><div class="nk">포트폴리오 최적 2034</div><div class="nv">$24.2억</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">포스트양자암호 (PQC)</span>
+        <h3>NIST FIPS 203/204/205 확정 — 2027 의무 전환</h3>
+        <div class="ic-body"><b>NIST PQC 표준화 완료</b>(2024.08): FIPS 203(ML-KEM), FIPS 204(ML-DSA), FIPS 205(SLH-DSA) — 격자·해시 기반 3종. HQC(코드 기반) 2025.03 5번째 선정으로 수학적 다양성 확보.<br><br><b>이행 기한</b>: 2027.01까지 미국 국가안보시스템(NSS) 양자안전 전환 의무화. NIST 전문가 합의 — RSA 등 기존 암호가 <b>2030년까지 취약</b>해질 가능성. <b>투자 기회</b>: PQC 마이그레이션 수요는 확정적 — 양자 하드웨어와 달리 타임라인 불확실성 없음.</div>
+        <div class="ic-nums">
+          <div><div class="nk">표준</div><div class="nv">FIPS 3종</div></div>
+          <div><div class="nk">의무 기한</div><div class="nv">2027.01</div></div>
+          <div><div class="nk">위협 타임라인</div><div class="nv">~2030</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>PQC는 지금 당장 투자할 수 있는 확정 기회 — QML은 아직 파일럿이다.
+      <span class="u">양자-AI 교차점에서 투자 시계열이 다르다. PQC 마이그레이션 수요는 NIST 표준 확정으로 타임라인이 확정됐다 — 2027 NSS 의무, 2030 위협 현실화. 반면 QML과 신약 발견은 AstraZeneca 20배 같은 인상적인 숫자가 나오지만 특정 워크플로 한정이며 범용 확장성은 미검증이다. Goldman Sachs의 내부 프로그램 축소는 성숙한 금융회사가 내린 냉정한 평가다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 POLICY & MARKET ================= -->
+<section class="blk" id="policy-market">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;정책 & 시장</div>
+      <h2 class="sec-title">$16B~$36B (2025) → $73B~$202B (2030)</h2>
+      <p class="sec-lead">양자컴퓨팅 시장은 리서치 기관별로 2~3배 편차가 있으나, CAGR 34~42%와 2030년 최소 $70억+에는 합의가 있다. 미국 CHIPS Act $20.1억, EU EUR 10억, 중국 $15억+, 일본 JPY 1.05조가 각국 국가 투자로 쏟아지고 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>연도</th>
+            <th>시장 규모</th>
+            <th>소스</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2025</td>
+            <td><span class="num-td">$16억~$36억</span></td>
+            <td>Grand View / MarketsandMarkets</td>
+            <td>정의 방식에 따라 2배+ 편차</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2026</td>
+            <td><span class="num-td">$19억~$20억</span></td>
+            <td>Grand View / Fortune BI</td>
+            <td>IonQ FY2026E $2.7억 혼자 비중 큼</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2028</td>
+            <td><span class="num-td">~$30억</span></td>
+            <td>QED-C (2026 대비 2배)</td>
+            <td>QED-C 업계 컨소시엄 추정</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2030E</td>
+            <td><span class="num-td">$73억~$202억</span></td>
+            <td>BCC Research / MarketsandMarkets</td>
+            <td>CAGR 34~42%, 3배 편차 주의</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2035E</td>
+            <td><span class="num-td">$194억</span></td>
+            <td>Precedence Research</td>
+            <td>하드웨어+SW+서비스 포함</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 시장 정의(하드웨어만 vs SW/서비스 포함)에 따라 동일 연도에 2~3배 편차 발생. 공통 합의: CAGR 34~42%, 2030 최소 $70억+.</div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 미국 CHIPS Act</div>
+        <h3>$20.13억 · 9개사 LOI · 2026.05</h3>
+        <div class="fc-body"><b>양자 파운드리</b>: GlobalFoundries $3.75억(PsiQuantum 양자칩 양산) + IBM $10억(300mm 초전도 웨이퍼 팹) = $13.75억.<br><br><b>양자 컴퓨팅 7사</b>: Atom Computing, D-Wave, Diraq(호주, $3,800만), Infleqtion, PsiQuantum, Quantinuum, Rigetti — 각 $1억.<br><br>NQIRA 2026: 상원 상무위 만장일치. NIST 연간 $8,500만(FY2026~2030). 누적 공공 투자 <b>$567억</b>(2025년까지).</div>
+        <div class="fc-note">CHIPS Act 양자 패키지는 반도체 전쟁과 동일한 구도다 — 글로벌 파운드리 확보 + 미국 컴퓨팅 기업 보조금 지원의 이중 전략.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● EU Quantum Flagship</div>
+        <h3>EUR 10억 · 2018~2028 · 5대 축</h3>
+        <div class="fc-body">2018~2028년 <b>EUR 10억</b> 프로그램. 양자컴퓨팅·통신·센싱·시뮬레이션 전 분야 커버.<br><br>2025.07 전략: 연구혁신 / 양자인프라 / EU 양자 생태계 / 우주·이중용도 / 양자 인력 5대 축. 개별국: 프랑스(Alice & Bob, Pasqal), 네덜란드(QuantWare), 독일·핀란드 강세.<br><br>Q1 2025 양자 VC의 <b>47.5%가 유럽 스타트업</b>(전년 대비 +16.5%p) — 유럽 비중이 빠르게 상승 중.</div>
+        <div class="fc-note">유럽은 규제 프레임워크(GDPR 등)를 양자 분야에도 선제 적용 예정 — EU AI Act 패턴 반복 가능성.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 중국 양자 전략</div>
+        <h3>$15억+ · 국가 주도 · 서방과 구조적 차이</h3>
+        <div class="fc-body">추정 투자 <b>$15억+</b>(공식 집계 없음, 서방 전문가 추정). 허페이 국가양자정보과학연구소 + CAS 산하 팀 + 상용 기업 삼각 구조.<br><br>USTC(Pan Jianwei 팀): Micius 양자위성, Jiuzhang 포토닉 우월성, Zuchongzhi 66큐비트. 스핀아웃: Origin Quantum, QuantumCTek, CIQTEK. 2025 기술 펀드 $1,380억 중 양자 포함(배분 비공개). <b>특징</b>: VC 생태계 미성숙, 국가 자원 집중도 최고 수준.</div>
+        <div class="fc-note">중국 투자 $15억+는 미국 CHIPS Act $20억과 유사하나, 국가 R&D는 공표하지 않는 경향 — 실제 규모가 더 클 가능성.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 일본 양자 전략</div>
+        <h3>JPY 1.05조 · RIKEN 256q → 10Kq 로드맵</h3>
+        <div class="fc-body">2025년 "양자 산업화 원년" 선포. JPY <b>1.05조(~$70억)</b> 양자 전용 투자. 2025~2030 인프라·차세대칩·R&D에 10조엔+($650억) 배정.<br><br>RIKEN-Fujitsu: 256큐비트 초전도(2025.04) → 2026년 말 1,000큐비트 → 2030년 10,000큐비트+. <b>NVIDIA 협업</b>: Blackwell GPU 2,140기 → 세계 최대 양자-고전 하이브리드. Q-STAR: Toyota·NEC·Hitachi·Fujitsu 등 112개 기업 연합. 2030 목표: 양자 사용자 1,000만 명, 시장 ~50조엔.</div>
+        <div class="fc-note">일본의 NVIDIA Blackwell 2,140기 도입은 GPU-QPU 하이브리드 국가 전략의 가장 구체적인 실행 사례다.</div>
+      </div>
+    </div>
+
+    <div class="share-grid reveal" style="margin-top:32px">
+      <div class="share-box">
+        <h3>VC 투자 추이 ($억)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2023</span><span class="pct">$7.9억~$16억</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="17%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2024</span><span class="pct">$19억~$26억</span></div>
+            <div class="sbar-track"><div class="sbar-fill purple" data-w="42%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2025 Q1</span><span class="pct">$12.5억 (Q1 단독)</span></div>
+            <div class="sbar-track"><div class="sbar-fill indigo" data-w="56%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">2025 9개월</span><span class="pct">$37.7억</span></div>
+            <div class="sbar-track"><div class="sbar-fill indigo" data-w="82%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Q1 2025~Q1 2026</span><span class="pct">$46억+ 역대 최대</span></div>
+            <div class="sbar-track"><div class="sbar-fill indigo" data-w="100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>국가별 양자 투자 규모 비교</h3>
+        <div class="ph-sub">공공 투자 기준 · 2025~2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$567억</div>
+            <div class="mt"><b>미국 누적 공공 투자</b> — 2025년까지. CHIPS Act 양자 $20억은 이 중 가장 최근 패키지.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$70억</div>
+            <div class="mt"><b>일본 JPY 1.05조</b> — 양자 전용 투자. 추가 10조엔+ 인프라 패키지 포함 시 $650억 규모.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$15억+</div>
+            <div class="mt"><b>중국 추정</b> — 공식 집계 없음. 국가 주도 집중으로 실제 규모 더 클 가능성.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">EUR 10억</div>
+            <div class="mt"><b>EU Quantum Flagship</b> — 2018~2028년 10년 프로그램. 개별국 추가 투자 별도.</div>
+          </div>
+        </div>
+        <div class="foot">* 모든 수치는 공시·발표 기준 추정. 중국은 비공개 성격상 하한 추정치임.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>양자 시장 전망은 편차가 크다 — 그러나 국가 투자는 확정됐다.
+      <span class="u">2030년 시장 $73억~$202억의 3배 편차는 시장 정의 차이와 기술 타임라인 불확실성을 반영한다. 그러나 미국 CHIPS Act $20.1억, 일본 $70억, EU EUR 10억, 중국 $15억+의 국가 자금은 이미 집행 중이다. 이 자금이 어디로 흐르는지 — 파운드리(GF·IBM), 컴퓨팅(IonQ·Rigetti·PsiQuantum), 알고리즘 — 가 투자 방향의 핵심 단서다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 KOREA ================= -->
+<section class="blk" id="korea-quantum">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;한국 양자 전략</div>
+      <h2 class="sec-title">KRW 3조 · 양자과학기술법 · IonQ-KISTI</h2>
+      <p class="sec-lead">한국은 2025년 양자과학기술법 시행으로 양자전략위원회를 출범시키고 2030년까지 KRW 3조원($23억)을 투입한다. IonQ-KISTI 100큐비트 Tempo 설치와 SK텔레콤-IonQ 지분 교환으로 실행력을 보여줬다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>항목</div>
+        <div>현황</div>
+        <div>목표/기한</div>
+        <div>비고</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">총 투자 규모</div>
+        <div>$1.4억 (2024 예산)</div>
+        <div><span class="cr-num">KRW 3조 ($23억)</span></div>
+        <div>2030년까지. 2025 $2.5억+(+50% YoY)</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">법적 기반</div>
+        <div>양자과학기술법 시행</div>
+        <div><span class="cr-num">양자전략위원회 가동</span></div>
+        <div>2025.03 첫 회의</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">양자 하드웨어</div>
+        <div>IonQ 100q Tempo (KISTI)</div>
+        <div><span class="cr-num">1,000큐비트 목표</span></div>
+        <div>NVIDIA NVQLink 통합 MOU (2026.03)</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">암호 / 보안</div>
+        <div>삼성 PQC 보안칩 (CES 2026)</div>
+        <div><span class="cr-num">국가 PQC 표준 수립</span></div>
+        <div>AIMer 알고리즘 PQC 공모전 우승</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">통신 / 네트워크</div>
+        <div>SK텔레콤 IonQ 지분 교환</div>
+        <div><span class="cr-num">AI DC QKD/PQC 통합</span></div>
+        <div>지분 교환 규모 ~$2.5억</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">인력 / 산업</div>
+        <div>—</div>
+        <div><span class="cr-num">전문인력 1만명 · 기업 2,000개</span></div>
+        <div>2035년까지</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">IonQ × KISTI — 세계 최초급 하이브리드</span>
+        <h3>100큐비트 Tempo + NVIDIA NVQLink 통합</h3>
+        <div class="ic-body">KISTI(한국과학기술정보연구원)에 <b>IonQ 100큐비트 Tempo 시스템</b> 설치. 단순 QPU 도입이 아니라 <b>NVIDIA NVQLink 통합 MOU(2026.03)</b>를 체결해 양자-GPU 하이브리드 환경을 구축하는 것이 핵심.<br><br>이는 한국이 세계 최초급 <b>하이브리드 양자-AI 컴퓨팅</b> 환경을 확보함을 의미한다. 일본 RIKEN의 NVIDIA Blackwell 2,140기 도입과 같은 맥락의 국가 전략.</div>
+        <div class="ic-nums">
+          <div><div class="nk">시스템</div><div class="nv">100q Tempo</div></div>
+          <div><div class="nk">파트너</div><div class="nv">NVIDIA</div></div>
+          <div><div class="nk">MOU</div><div class="nv">2026.03</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">SK텔레콤 × IonQ 지분 교환</span>
+        <h3>~$2.5억 규모 · QKD+PQC 이중 방어</h3>
+        <div class="ic-body">SK텔레콤은 <b>ID Quantique 지분 ↔ IonQ 주식</b> 교환으로 양자 생태계에 깊이 진입했다. 교환 규모 약 $2.5억. ID Quantique는 QKD(양자 키 분배) 전문 기업으로, SKT는 통신망에 QKD 상용화를 추진 중.<br><br>AI 데이터센터에 <b>QKD + PQC 이중 방어</b> 구조를 적용하는 것이 SKT의 양자 보안 전략. IonQ 투자를 통해 컴퓨팅 하드웨어에도 연결점 확보.</div>
+        <div class="ic-nums">
+          <div><div class="nk">규모</div><div class="nv">~$2.5억</div></div>
+          <div><div class="nk">IDQ</div><div class="nv">QKD 전문</div></div>
+          <div><div class="nk">전략</div><div class="nv">QKD+PQC</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Samsung — PQC 보안칩 & AIMer</span>
+        <h3>CES 2026 PQC 칩 · 국내 공모전 우승</h3>
+        <div class="ic-body">Samsung SDS-KAIST 공동 개발 <b>"AIMer" 알고리즘</b>이 한국 국가 PQC 공모전 디지털 서명 부문 우승. Samsung은 CES 2026에서 <b>PQC 보안칩</b>을 공개했다.<br><br>삼성의 PQC 전략은 NIST FIPS 표준과 국내 표준을 동시에 지원하는 방향. 모바일·스마트홈·자동차 반도체에 PQC 내장이 중기 로드맵이다. 반도체-보안의 교차점에서 삼성의 포지셔닝은 양자 위협에 대한 선제적 대응.</div>
+        <div class="ic-nums">
+          <div><div class="nk">알고리즘</div><div class="nv">AIMer</div></div>
+          <div><div class="nk">공모전</div><div class="nv">우승</div></div>
+          <div><div class="nk">제품</div><div class="nv">PQC 보안칩</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">한국 vs 미국 투자 비교</span>
+        <h3>KRW 3조($23억) vs CHIPS Act $20.1억</h3>
+        <div class="ic-body">절대 규모로 보면 한국 KRW 3조($23억, 2030년까지)와 미국 CHIPS Act 양자 패키지 $20.1억이 비슷해 보인다. 그러나 <b>미국 누적 공공 투자는 $567억</b>이며, 여기에 민간 VC $46억+가 추가된다.<br><br><b>핵심 관건</b>: 절대 규모보다 <b>속도와 집중도</b>. 한국은 하드웨어 자체 개발보다 IonQ·NVIDIA와의 협력을 통한 <b>사용자 생태계 선점</b>과 PQC 보안 분야 집중이 현실적 전략이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">한국</div><div class="nv">KRW 3조</div></div>
+          <div><div class="nk">미국 누적</div><div class="nv">$567억</div></div>
+          <div><div class="nk">격차</div><div class="nv">약 25배</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>한국의 양자 전략은 자체 개발보다 생태계 연결에 집중해야 한다.
+      <span class="u">KRW 3조는 규모가 크지만 미국($567억)·일본($70억 양자 전용)과 격차가 있다. IonQ-KISTI 100q Tempo + NVIDIA NVQLink는 한국이 '하드웨어 개발국'보다 '우수 사용자 국가'로 포지셔닝하는 전략의 실행이다. 삼성의 PQC, SKT의 QKD+PQC 이중 방어는 양자 위협 대비의 가장 확실한 단기 수익 경로다. 1,000큐비트 자체 개발 목표는 2030년 타임라인이 빡빡하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">P/S 100~800배 경고 · VC $46B+ · 승자 미확정</h2>
+      <p class="sec-lead">양자컴퓨팅 투자의 핵심은 기회와 리스크의 비대칭이다. 상장사 P/S 100~800배는 극단적 투기 밸류에이션이고, 합산 매출은 NVIDIA 1일 매출의 절반이다. 그러나 국가 자금이 확정됐고 에러 보정 돌파라는 기술 이정표가 나왔다.</p>
+    </div>
+
+    <div class="indicator-grid reveal">
+      <div class="indcard">
+        <div class="ind-num">~$1.6억</div>
+        <div class="ind-lab">상장 양자사<br>합산 연매출</div>
+        <div class="ind-tag">NVIDIA 1일 매출 절반</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">$46억+</div>
+        <div class="ind-lab">VC 투자<br>(역대 최대)</div>
+        <div class="ind-tag">Q1 2025~Q1 2026</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">5개</div>
+        <div class="ind-lab">기술 방식<br>병존</div>
+        <div class="ind-tag">승자 미확정</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">836x</div>
+        <div class="ind-lab">Rigetti P/S<br>(최고치)</div>
+        <div class="ind-tag">D-Wave 791x · IonQ 109x</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">2028~</div>
+        <div class="ind-lab">전문가 합의<br>어드밴티지</div>
+        <div class="ind-tag">기업 주장 2026~2027</div>
+      </div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-bear">
+        <div class="fc-tag">● 리스크: 밸류에이션</div>
+        <h3>P/S 100~800배 — 매출 대비 극단적</h3>
+        <div class="fc-body">상장 양자 3사의 FY2025 매출 합산: IonQ $1억+ + Rigetti $710만 + D-Wave $2,460만 = <b>약 $1.3억</b>. 여기에 Quantinuum IPO로 합산 ~$1.6억.<br><br>이는 <b>NVIDIA 1일 매출($3.3억)의 절반</b> 수준이다. 그럼에도 Rigetti 시총 $71억(P/S 836배), D-Wave P/S 791배. 주가 일간 10~15% 등락, 50%+ 급락 반복. <b>양자 우월성의 상업적 입증 전까지 투기적 성격 불변</b>.</div>
+        <div class="fc-note">이온Q/RGTI/QBTS 보유자라면: 매출 성장 추이, 현금 소진 속도, CHIPS Act 자금 집행 여부를 분기별로 추적해야 한다.</div>
+      </div>
+
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 리스크: 기술 방식</div>
+        <h3>5개 방식 병존 — 다수 도태 가능</h3>
+        <div class="fc-body">초전도(Google·IBM·Rigetti) / 이온트랩(IonQ·Quantinuum) / 중성원자(QuEra·Pasqal·Atom) / 포토닉(PsiQuantum·Xanadu·Photonic) / 캣큐비트(Alice & Bob) — <b>5가지 기술 방식이 병존</b>하며 모두 "우리가 답이다"를 주장.<br><br>역사적으로 하드웨어 경쟁의 수렴은 1~2개 방식으로 집중된다. 단 양자는 응용 도메인별로 최적 방식이 다를 수 있어 PC vs Mac 단일 경쟁과 다를 수도 있다.</div>
+        <div class="fc-note">포트폴리오 접근이 합리적 — 단일 방식 집중 투자보다 ETF·여러 방식에 분산하거나 생태계(클라우드 제공자, 알고리즘) 레이어를 공략.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 기회: 어드밴티지 타임라인</div>
+        <h3>기업 주장 2026~2027 vs 전문가 합의 2028~2033</h3>
+        <div class="fc-body">IBM·Google은 <b>2026~2027년 양자 어드밴티지</b>를 주장한다. 대다수 독립 전문가는 <b>2028~2033년</b>을 현실적 타임라인으로 본다. 2~7년의 갭이 존재.<br><br>그러나 Google Willow의 에러 보정 임계값 달성은 이 갭을 줄이는 방향이다. D-Wave는 이미 어닐링 특화 도메인에서 <b>Nature 논문</b>으로 우월성을 입증했다(범용 어드밴티지는 아님). IonQ의 폭발적 성장(+755%)은 틈새 시장에서 실제 수요가 있음을 증명.</div>
+        <div class="fc-note">어드밴티지 주장을 검증하는 기준: 학술 논문(독립 검증)인가, 기업 자체 발표인가, 특수 문제 한정인가 범용인가를 구분해야 한다.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 기회: PQC 확정 수요</div>
+        <h3>양자 하드웨어와 달리 PQC는 지금 당장</h3>
+        <div class="fc-body">양자 하드웨어의 상업 우위는 불확실하지만, <b>PQC 마이그레이션 수요는 확정됐다</b>. NIST 표준 3종(+HQC) 확정, 2027 NSS 의무 전환, 2030 기존 암호 위협 타임라인.<br><br>투자 경로: 삼성 PQC 보안칩(반도체), SKT QKD(통신), 사이버보안 기업(Cloudflare·Palo Alto Networks PQC 통합), 클라우드(AWS KMS PQC 지원). <b>양자 리스크 헤지 수단이 동시에 투자 기회</b>. 타임라인 불확실성 없이 집행 가능한 포지션.</div>
+        <div class="fc-note">PQC 관련 기업: Cloudflare(TLS PQC), AWS/GCP/Azure(KMS PQC), 국내 삼성SDS-KAIST AIMer, SKT ID Quantique.</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">양자컴퓨팅: "Google이 이정표를 세웠지만, 상업 우위는 2028년 이후다 — 지금은 PQC와 생태계 레이어를 사라"</div>
+      <div class="bt-body">
+        <b>Google Willow의 에러 보정 임계값 달성(2024.12)은 진짜 기술 이정표다.</b> 30년간 아무도 못 한 것을 해냈다. CHIPS Act $20.1억, VC $46억+ 역대 최대, 각국 $15~567억 국가 투자 — 모든 지표가 양자 생태계의 임계질량에 도달하고 있음을 시사한다.<br><br>
+        그러나 <b>상장사 P/S 100~800배는 현재 매출($1.6억 합산) 대비 극단적이다.</b> 5개 기술 방식이 병존하며 승자가 미확정이고, 전문가 합의 타임라인은 2028~2033년이다. 기업들의 2026~2027년 주장과는 2~7년의 갭이 있다.<br><br>
+        <b>3가지 투자 구분이 필요하다:</b> (1) <b>PQC — 지금 당장</b>: NIST 표준 확정, 2027 의무화, 타임라인 불확실성 없음. (2) <b>생태계 레이어 — 중기</b>: IonQ 같은 클라우드 QPU 서비스, 알고리즘 SW, CHIPS Act 수혜 파운드리. (3) <b>하드웨어 직접 투자 — 투기</b>: P/S 100~800배, 기술 방식 선택 위험, 소수의 고위험 배팅. 포지션 사이즈를 그에 맞게 조정해야 한다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">양자컴퓨팅 투자 지도 — 에러 보정 돌파에서 $20B CHIPS Act까지</div>
+      <div class="src-list">
+        DATA · Google AI Blog (Willow, 2024.12) · IBM Quantum Blog (Heron·Kookaburra 로드맵)<br>
+        IonQ IR Q1 FY2026 · Quantinuum IPO 공시 (QNT, 2026.06) · Rigetti IR FY2025<br>
+        D-Wave IR FY2025 · Q1 2026 수주 공시 · PsiQuantum 공식 (Omega 칩셋, 2025.02)<br>
+        NIST FIPS 203/204/205 (2024.08) · DOE CHIPS Act 양자 패키지 (2026.05)<br>
+        MSIT 양자전략위원회 · 과학기술정보통신부 양자과학기술법<br>
+        Nature (QuEra 96 논리큐비트, 2026.01 · D-Wave 우월성, 2025)<br>
+        MarketsandMarkets · Grand View Research · The Quantum Insider<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. P/S 밸류에이션 등 투자 관련 경고는 참고용이며, 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

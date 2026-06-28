@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DC-SMR 파이프라인 45GW·우라늄 $101/lb·Linglong One 세계 최초 SMR 상업가동·빅테크 원자력 PPA·SMR 기업 분석 — 에너지 전환 투자 분석">
+<meta name="keywords" content="SMR,소형모듈원자로,원자력,AI데이터센터,NuScale,TerraPower,X-energy,우라늄,Linglong One,i-SMR,ADVANCE Act">
+<meta property="og:title" content="SMR·원자력 for AI — 데이터센터 전력의 핵심 기저전원">
+<meta property="og:description" content="DC-SMR 파이프라인 45GW·우라늄 $101/lb·Linglong One 세계 최초 SMR 상업가동·빅테크 원자력 PPA·SMR 기업 분석 — 에너지 전환 투자 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/energy_smr_nuclear_ai.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SMR·원자력 for AI — 데이터센터 전력의 핵심 기저전원">
+<meta name="twitter:description" content="DC-SMR 파이프라인 45GW·우라늄 $101/lb·Linglong One 세계 최초 SMR 상업가동·빅테크 원자력 PPA·SMR 기업 분석 — 에너지 전환 투자 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/energy_smr_nuclear_ai.html">
+<title>SMR·원자력 for AI — 데이터센터 전력의 핵심 기저전원</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#22c55e;
+    --current:#4ade80;
+    --glow:#86efac;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(134,239,172,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#1a3d20;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(34,197,94,.12);color:var(--volt);border:1px solid rgba(34,197,94,.3)}
+  .ic-tag.pink{background:rgba(74,222,128,.12);color:var(--current);border:1px solid rgba(74,222,128,.3)}
+  .ic-tag.rose{background:rgba(134,239,172,.12);color:var(--glow);border:1px solid rgba(134,239,172,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(134,239,172,.04));
+    border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SMR·원자력 for AI — 데이터센터 전력의 핵심 기저전원",
+  "description": "DC-SMR 파이프라인 45GW·우라늄 $101/lb·Linglong One 세계 최초 SMR 상업가동·빅테크 원자력 PPA·SMR 기업 분석 — 에너지 전환 투자 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/energy/energy_smr_nuclear_ai.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#86efac;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(134,239,172,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>SMR · 원자력 for AI</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#bigtech-nuclear">01 / 빅테크</a>
+      <a href="#smr-companies">02 / SMR 기업</a>
+      <a href="#china-russia">03 / 중국·러시아</a>
+      <a href="#market-policy">04 / 시장·정책</a>
+      <a href="#investment-thesis">05 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">에너지 전환 · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">SMR·원자력<br>for <span class="hl">AI</span></h1>
+    <p class="hero-sub">소형모듈원자로가 AI 데이터센터 기저전력의 핵심으로 부상하고 있다 — 빅테크 PPA 45GW, 세계 최초 상업 SMR 가동 목전</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">45<span class="u">GW</span></div>
+        <div class="lab">DC-SMR 파이프라인 (2026 중반). 2024년 말 25GW에서 불과 18개월 만에 2배 급성장.</div>
+        <div class="src">SRC: IEA 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$101<span class="u">/lb</span></div>
+        <div class="lab">우라늄 스팟가 (2026.01). 전월 대비 +25%, 2년 만에 $100 재돌파. 구조적 공급 부족 심화.</div>
+        <div class="src">SRC: UxC·Cameco 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2026<span class="u">H1</span></div>
+        <div class="lab">Linglong One 세계 최초 상업 SMR 가동 목표. 중국 CNNC ACP100, 125MWe. 미국보다 先점.</div>
+        <div class="src">SRC: CNNC·WNN 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 BIGTECH NUCLEAR ================= -->
+<section class="blk" id="bigtech-nuclear">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;빅테크 원자력 계약</div>
+      <h2 class="sec-title">Google · AWS · Microsoft · Meta — 원자력 PPA 경쟁</h2>
+      <p class="sec-lead">빅테크 4사가 합산 수십 GW의 원자력 전력구매계약을 체결하며, 원자력이 AI 데이터센터의 24/7 무탄소 기저전력으로 자리 잡고 있다. Google은 세계 최초 기업-SMR PPA를, Microsoft는 Three Mile Island 재가동으로 835MW를 확보했다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>계약 상대</th>
+            <th>용량</th>
+            <th>PPA 가격</th>
+            <th>가동 목표</th>
+            <th>현황</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">Google</td>
+            <td>Kairos Power</td>
+            <td><span class="num-td">500MW</span></td>
+            <td>$100~115/MWh</td>
+            <td>2035년 단계적</td>
+            <td>TVA 3자 PPA 체결 (2025.8), 세계 최초 기업-SMR</td>
+          </tr>
+          <tr>
+            <td class="hl-td">AWS</td>
+            <td>Talen Energy (Susquehanna)</td>
+            <td><span class="num-td">480MW</span></td>
+            <td>미공개</td>
+            <td>FERC 불허</td>
+            <td>2024.11 FERC 2-1 거부, 2026.3 재심 기각. 제5순회법원 항소 중</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Microsoft</td>
+            <td>Constellation (TMI Unit 1)</td>
+            <td><span class="num-td">835MW</span></td>
+            <td>미공개</td>
+            <td>2027년 조기 가동</td>
+            <td>20년 PPA. DOE $10억 대출 보증. 인력 65%+ 확보, 터빈 시운전 완료</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Meta</td>
+            <td>Oklo / TerraPower / Vistra</td>
+            <td><span class="num-td">6.6GW</span></td>
+            <td>미공개</td>
+            <td>2030~2032년</td>
+            <td>2026.1 발표. Oklo 1.2GW + TerraPower 2.8GW(최대 4GW) + Vistra</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Oracle</td>
+            <td>미공개 SMR 벤더</td>
+            <td><span class="num-td">1GW+</span></td>
+            <td>미공개</td>
+            <td>미공개</td>
+            <td>Larry Ellison 발표. 3기 SMR 기반 DC. 건축 허가 취득 완료</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* AWS-Talen FERC 거부 사례는 co-location 모델의 규제 리스크를 명시적으로 드러냄. 이후 빅테크는 SMR 신규 건설 또는 별도 PPA 방식으로 전환. Google PPA 가격 $100~115/MWh는 업계 추정치, 공식 미공개.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">Google · Kairos Power</span>
+        <h3>세계 최초 기업-SMR PPA — 500MW</h3>
+        <div class="ic-body">2024년 10월 체결, <b>2025년 8월 Kairos-TVA-Google 3자 PPA</b> — 미국 유틸리티가 Gen IV 원자로 전력을 구매하는 최초 사례.<br><br>Hermes 2 (Oak Ridge, <b>50MW</b>, 2030년 개시) → 이후 4개 발전소에 75MW 원자로 2기씩(총 7기) 단계적 배치. Kairos KP-FHR 기술: TRISO 연료 + FLiBe 용융염 냉각. TVA 그리드 통해 Google DC 2개소에 간접 전력 공급.</div>
+        <div class="ic-nums">
+          <div><div class="nk">총 용량</div><div class="nv">500MW</div></div>
+          <div><div class="nk">1호기</div><div class="nv">50MW</div></div>
+          <div><div class="nk">가동</div><div class="nv">2030년</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bear">AWS · Talen — FERC 거부</span>
+        <h3>co-location 규제 리스크 현실화</h3>
+        <div class="ic-body">Susquehanna 원전(1.92GW PWR) 인접 부지에서 "behind-the-meter" 방식으로 AWS DC에 최대 <b>480MW</b> 직접 공급하는 구조였으나, <b>2024년 11월 FERC 2-1 투표로 거부</b>.<br><br>이유: 전력요금 인상 우려 + 그리드 안정성. <b>2026년 3월 재심도 기각</b>, 현재 제5순회법원 항소 진행 중. 빅테크의 원전 co-location 전략 전면 재검토 계기.</div>
+        <div class="ic-nums">
+          <div><div class="nk">계획 용량</div><div class="nv">480MW</div></div>
+          <div><div class="nk">FERC 결정</div><div class="nv">거부</div></div>
+          <div><div class="nk">항소</div><div class="nv">5순회</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Microsoft · Constellation TMI</span>
+        <h3>835MW — Three Mile Island 재가동</h3>
+        <div class="ic-body">2024년 9월, Constellation이 Microsoft와 <b>20년 PPA</b> 체결. TMI Unit 1을 "Crane Clean Energy Center"로 리브랜딩, 재가동 총비용 약 <b>$16억</b>. DOE <b>$10억 대출 보증</b> 승인(2025.11).<br><br>2026년 6월 기준 인력 <b>65%+ 확보</b>, 메인 제너레이터·터빈 시운전 성공. <b>2027년 조기 가동</b> 가능성 보도(당초 2028년 목표). Constellation 2026 Q1 EPS $2.74, 매출 $111억, 원전 총 용량 약 31.7GW.</div>
+        <div class="ic-nums">
+          <div><div class="nk">용량</div><div class="nv">835MW</div></div>
+          <div><div class="nk">PPA 기간</div><div class="nv">20년</div></div>
+          <div><div class="nk">가동</div><div class="nv">2027E</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Meta 6.6GW · Oracle 1GW+</span>
+        <h3>원자력 빅딜 — Oklo·TerraPower 포함</h3>
+        <div class="ic-body"><b>Meta</b>: 2026년 1월, Oklo(1.2GW) + TerraPower(2.8GW, 최대 4GW) + Vistra로 총 <b>6.6GW</b> 원자력 계약 발표.<br>- Oklo: Pike County, Ohio. Aurora 75MW x 16기, 206에이커. Phase 1 (150MW) 2030 목표<br>- TerraPower: Natrium 원자로 8기 합의, 2032년 초기 인도<br><br><b>Oracle</b>: Larry Ellison, 3기 SMR 구동 1GW+ DC 구축 발표. 건축 허가 취득 완료. 구체적 벤더·일정 미공개.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Meta</div><div class="nv">6.6GW</div></div>
+          <div><div class="nk">Oklo</div><div class="nv">1.2GW</div></div>
+          <div><div class="nk">Oracle</div><div class="nv">1GW+</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>빅테크의 원자력 계약은 선택이 아닌 필수가 됐다.
+      <span class="u">Google·Microsoft·Meta가 합산 7GW 이상의 원자력 PPA를 체결한 것은 24/7 무탄소 기저전력 없이 AI DC의 RE100 목표와 전력 안정성을 동시에 달성할 수 없기 때문이다. AWS-Talen FERC 거부는 co-location 규제 리스크를 현실화했으나, 이는 빅테크의 원자력 수요를 꺾지 않고 오히려 SMR 신규 건설 계약으로 방향을 전환시켰다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 SMR COMPANIES ================= -->
+<section class="blk" id="smr-companies">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;SMR 기업 분석</div>
+      <h2 class="sec-title">NuScale · TerraPower · X-energy — SMR 플레이어 지형도</h2>
+      <p class="sec-lead">미국 SMR 레이스는 TerraPower(2026.3 NRC 건설 허가, 착공 완료)가 선두이며, X-energy(IPO $11억, Nasdaq 상장)가 뒤를 잇는다. NuScale은 NRC 인증을 보유하나 실질 건설 미착수 상태다. 영국·캐나다·일본 기업도 가세하며 SMR 경쟁 구도가 다변화되고 있다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>기업 / 기술</div>
+        <div>인허가 현황</div>
+        <div>상업 규모</div>
+        <div>주요 계약</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">NuScale (VOYGR)</div>
+        <div><span class="cr-num">NRC SDA 취득</span><br>US460 77MWe 승인</div>
+        <div>77MWe/유닛<br>VOYGR-12: 924MWe</div>
+        <div>루마니아·테네시 협상중</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">TerraPower (Natrium)</div>
+        <div><span class="cr-num">건설 허가 취득</span><br>2026.3 NRC 승인</div>
+        <div>345MW (피크 500MW)<br>나트륨 냉각 고속로</div>
+        <div>Meta 8기 2.8GW, Wyoming 착공</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">X-energy (Xe-100)</div>
+        <div>건설허가 신청<br>NRC 심사 18개월</div>
+        <div>80MWe/유닛<br>HTGR TRISO 연료</div>
+        <div>Dow Chemical Seadrift 4기</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Rolls-Royce SMR</div>
+        <div>GDA 3단계 진행<br>UK 정부 선정</div>
+        <div>470MW PWR</div>
+        <div>GBE-N 입찰 통과, 체코 수출 추진</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">GE Hitachi BWRX-300</div>
+        <div><span class="cr-num">건설 허가 취득</span><br>캐나다 2025.5</div>
+        <div>300MW BWR</div>
+        <div>온타리오 Darlington 2030 목표</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Kairos Power (Hermes)</div>
+        <div><span class="cr-num">최초 선진 원자로</span><br>NRC 건설 허가</div>
+        <div>50→75MW (FHR)</div>
+        <div>Google 500MW, DOE HALEU 계약</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">Holtec SMR-300</div>
+        <div>설계 심사 진행</div>
+        <div>300MWe (이중유닛 680MWe)</div>
+        <div>DOE $4억 "Tier 1 First Mover" 수상</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">NuScale — 미국 최초 NRC 인증</span>
+        <h3>설계인증 보유, 건설은 미착수</h3>
+        <div class="ic-body">2023년 1월 NRC 최초 SMR 설계인증(SDA) 획득. 상향 출력 US460(77MWe)도 NRC 승인 완료. 그러나 Idaho CFPP 프로젝트는 <b>2023년 11월 취소</b> — 지자체 유틸리티 비용 상승 우려.<br><br><b>2026 Q1 재무</b>: 매출 $56.5만(YoY -96%), 순손실 $4,400만. 주가 $10.12, 시총 <b>$36.9억</b>. 루마니아·테네시 협상 중이나 구속력 있는 계약 미체결. VOYGR-12 (924MWe) NRC 심사 중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">시총</div><div class="nv">$36.9억</div></div>
+          <div><div class="nk">출력</div><div class="nv">77MWe</div></div>
+          <div><div class="nk">순손실</div><div class="nv">$4,400만</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">TerraPower — Natrium 착공</span>
+        <h3>40년 만 최초 비경수로 건설 허가</h3>
+        <div class="ic-body">2026년 3월 4일, NRC <b>Part 50 건설 허가 승인</b> — 약 10년 심사, 40년 이상 만의 최초 비경수로 상업 원자로. <b>2026년 4월 23일</b> Wyoming 주 Kemmerer 공식 착공. 건설 기간 42개월, <b>2031년 완공</b> 목표, 약 1,600명 건설 인력.<br><br>나트륨 냉각 고속로 <b>345MW + 용융염 ESS</b> → 피크 시 <b>500MW</b>. Bill Gates 설립. Meta 8기 2.8GW(최대 4GW) 계약.</div>
+        <div class="ic-nums">
+          <div><div class="nk">기준 출력</div><div class="nv">345MW</div></div>
+          <div><div class="nk">피크</div><div class="nv">500MW</div></div>
+          <div><div class="nk">완공</div><div class="nv">2031E</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">X-energy — 역대 최대 원자력 IPO</span>
+        <h3>$11억 IPO · Nasdaq XE · Dow 계약</h3>
+        <div class="ic-body">2026년 4월 24일 Nasdaq 상장(티커: XE). IPO 가격 <b>$23/주</b>, 공모액 약 <b>$11억</b> — 역대 최대 원자력 IPO. 상장일 31% 급등, 시총 <b>$120억</b>.<br><br>Texas Seadrift(Dow Chemical) 4-유닛 Xe-100 HTGR 건설 추진. 2025.3 NRC 건설 허가 신청(심사 18개월). <b>2030년</b> 상업운전 목표. TRISO-X 연료 공장(TX-1): Oak Ridge 건설 중, <b>2028 상반기</b> 완공. 2026.2 Part 70 핵연료 제조 라이선스 취득.</div>
+        <div class="ic-nums">
+          <div><div class="nk">IPO 규모</div><div class="nv">$11억</div></div>
+          <div><div class="nk">시총</div><div class="nv">$120억</div></div>
+          <div><div class="nk">Dow 가동</div><div class="nv">2030E</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">GEH·Kairos·Holtec — 다자 경쟁</span>
+        <h3>캐나다 착공 · 영국 선정 · DOE $4억</h3>
+        <div class="ic-body"><b>GE Hitachi BWRX-300</b>: 캐나다 Ontario Power Generation, Darlington 부지. 2025.5 건설 허가 취득, <b>2030년 가동</b> 목표 — 서방 최초 상업 그리드 규모 SMR. TVA 배치용 DOE $4억 지원 확보.<br><br><b>Kairos Power</b>: 2025년 5월 Oak Ridge Hermes 착공 (NRC 건설 허가 최초 선진 원자로). Hermes 2 (50MW) 착공 완료. DOE HALEU 연료 계약.<br><br><b>Holtec SMR-300</b>: DOE $4억 "Tier 1 First Mover" 수상. Michigan Palisades에 680MWe(이중유닛) 계획.</div>
+        <div class="ic-nums">
+          <div><div class="nk">GEH 가동</div><div class="nv">2030E</div></div>
+          <div><div class="nk">Kairos</div><div class="nv">착공 완료</div></div>
+          <div><div class="nk">Holtec DOE</div><div class="nv">$4억</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>TerraPower·GEH가 선두, X-energy IPO로 자본 조달 완료 — 2030년 첫 상업 SMR 가동 현실화.
+      <span class="u">NRC 건설 허가와 실제 착공을 모두 달성한 기업은 TerraPower(Natrium, Wyoming)와 GE Hitachi(BWRX-300, 캐나다)뿐이다. X-energy의 $11억 IPO는 원자력 섹터로의 자본 유입을 상징한다. NuScale은 선구자였으나 첫 프로젝트 취소 이후 실제 건설로의 전환이 과제다. SMR 상업화의 임계점은 2030~2031년에 집중돼 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 CHINA RUSSIA ================= -->
+<section class="blk" id="china-russia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;중국·러시아 SMR</div>
+      <h2 class="sec-title">Linglong One — 세계 최초 상업 SMR, 중국이 先점</h2>
+      <p class="sec-lead">중국 CNNC의 Linglong One(ACP100, 125MWe)이 2026년 상반기 세계 최초 육상 상업 SMR 가동을 목표로 하고 있다. HTR-PM은 이미 Gen IV 원자로 최초 상업 운전 중이며, 러시아 RITM-200은 극지 쇄빙선에서 검증됐다. 중국은 2025년 4월 10기 신규 원자로도 추가 승인했다.</p>
+    </div>
+
+    <div class="macro-grid reveal">
+      <div class="panel">
+        <h3>Linglong One (ACP100) — 세계 최초 육상 상업 SMR</h3>
+        <div class="ph-sub">하이난성 Changjiang · 125MWe · CNNC</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">125<br><span style="font-size:.7rem">MWe</span></div>
+            <div class="mt"><b>가압경수로(PWR) 기반</b> — CNNC 개발 ACP100 설계. 2021년 7월 착공, 58개월 건설 기간으로 2026년 상반기 상업운전 목표. 연간 약 <b>10억 kWh</b> 생산, 52.6만 가구 전력 공급.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2026<br><span style="font-size:.7rem">H1</span></div>
+            <div class="mt"><b>냉수 기능 시험 완료 (2025.10)</b>, 비핵 증기 터빈 시험 1회 통과 (2025.12). 최종 시운전 결과에 따라 일정 변동 가능하나 기술적으로 목표 달성 가시권.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">先점</div>
+            <div class="mt"><b>미국 유일 NRC 인증 SMR(NuScale)이 건설 미착수</b>인 상황에서 중국이 실질 상업 운전으로 SMR 레이스 선도. 한국 i-SMR의 "종이 기술" 위험 경고 배경.</div>
+          </div>
+        </div>
+        <div class="foot">* 중국은 핵 프로젝트 세부 정보를 제한적으로 공개. WNN(World Nuclear News) 및 CNNC 공식 발표 기반.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>HTR-PM / RITM-200 현황</h3>
+        <div class="ph-sub">Gen IV 세계 최초 상업 운전 · 극지 해상 원전</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">HTR<br><span style="font-size:.7rem">PM</span></div>
+            <div class="mt"><b>산둥성 Shidao Bay</b> — 고온가스냉각 페블층(HTGR). 250MWt x 2기 → 단일 <b>210MWe</b> 터빈. 2021.12 최초 발전, <b>2023년 말 상업운전</b>. Gen IV 최초 상업 운전 사례. 2025년 양 원자로 풀파워 도달.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">RITM<br><span style="font-size:.7rem">200</span></div>
+            <div class="mt"><b>러시아 쇄빙선 탑재</b> — 다수 핵추진 쇄빙선 운영 중 (2026.5 기준). Baimskaya 구리 광산용 해상 원전 2기 추가 건설 중(2026 목표). Akademik Lomonosov(35MWe x 2기) 2020년부터 Chukotka 전력 공급.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>원자로</th>
+            <th>국가·개발사</th>
+            <th>용량</th>
+            <th>기술 유형</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">Linglong One (ACP100)</td>
+            <td>중국 CNNC</td>
+            <td><span class="num-td">125MWe</span></td>
+            <td>가압경수로(PWR)</td>
+            <td>2026H1 상업운전 목표</td>
+          </tr>
+          <tr>
+            <td class="hl-td">HTR-PM</td>
+            <td>중국 CGNPC/INET</td>
+            <td><span class="num-td">210MWe</span></td>
+            <td>고온가스냉각(HTGR)</td>
+            <td>2023년 말 상업운전 개시</td>
+          </tr>
+          <tr>
+            <td class="hl-td">RITM-200</td>
+            <td>러시아 Rosatom</td>
+            <td><span class="num-td">50MWe</span></td>
+            <td>가압경수로(PWR)</td>
+            <td>쇄빙선 운영 중, 해상 원전 건설 중</td>
+          </tr>
+          <tr>
+            <td class="hl-td">HPR1000 Hualong One x10</td>
+            <td>중국 CGN/CNNC</td>
+            <td><span class="num-td">1,200MWe</span></td>
+            <td>Gen III+ PWR</td>
+            <td>2025.4 국무원 10기 신규 승인</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 중국 2025년 4월 국무원 신규 승인: Fangchenggang III, Haiyang III, Sanmen III, Taishan II, Xiapu I 등. 각 1,200MWe급 Hualong One 기반.</div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:32px">
+      <div class="indcard">
+        <div class="ind-num">125MWe</div>
+        <div class="ind-lab">Linglong One<br>세계 최초 상업 SMR</div>
+        <div class="ind-tag">2026H1 목표</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">210MWe</div>
+        <div class="ind-lab">HTR-PM<br>Gen IV 최초 상업 운전</div>
+        <div class="ind-tag">2023년 개시</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">10기</div>
+        <div class="ind-lab">중국 신규<br>원자로 승인</div>
+        <div class="ind-tag">2025.4 국무원</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">3종</div>
+        <div class="ind-lab">러시아 SMR<br>시스템 운영 중</div>
+        <div class="ind-tag">2026.5 기준</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">58개월</div>
+        <div class="ind-lab">Linglong One<br>건설 기간</div>
+        <div class="ind-tag">착공 2021.7</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>중국이 SMR 실용화 레이스를 선도하고 있다 — HTR-PM은 이미 Gen IV 상업 운전 중.
+      <span class="u">중국은 HTR-PM(Gen IV 세계 최초 상업 운전, 2023년) + Linglong One(육상 SMR 세계 최초 상업 가동 목전) + 10기 신규 대형 원자로 승인(2025.4)으로 원자력 트리플 플레이를 구사하고 있다. 러시아 RITM-200은 극지 환경에서 SMR 기술 신뢰성을 이미 검증했다. 서방 SMR 기업들은 2030년대 초에나 첫 상업 운전이 가능해, 중국과의 현실화 격차가 뚜렷하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 MARKET POLICY ================= -->
+<section class="blk" id="market-policy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;시장·정책</div>
+      <h2 class="sec-title">SMR $70B~$187B(2040) · ADVANCE Act · 우라늄 $101/lb</h2>
+      <p class="sec-lead">글로벌 SMR 시장은 2040년 최대 $187억 규모로 전망되며, 미국 ADVANCE Act·DOE $9B+ 지원, EU 2억 유로 보증, 한국 SMR 특별법이 각국 정책 경쟁을 심화시키고 있다. 우라늄 시장은 구조적 공급 부족으로 $101/lb를 돌파하며 상류 투자 매력도가 높아졌다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>출처</th>
+            <th>기준년도</th>
+            <th>시장 규모</th>
+            <th>목표년도</th>
+            <th>CAGR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">MarketsandMarkets</td>
+            <td>2026</td>
+            <td>$70.6억</td>
+            <td>2040</td>
+            <td><span class="num-td">7.2%</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">Market.us</td>
+            <td>2025</td>
+            <td>$35억</td>
+            <td>2035</td>
+            <td><span class="num-td">14.8%</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">Research Nester</td>
+            <td>2024</td>
+            <td>$1.59억</td>
+            <td>2035</td>
+            <td><span class="num-td">42.3%</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">Polaris</td>
+            <td>2025</td>
+            <td>$66.6억</td>
+            <td>2035</td>
+            <td><span class="num-td">5.1%</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">DC-SMR 파이프라인</td>
+            <td>2024 말</td>
+            <td>25GW</td>
+            <td>2026 중반</td>
+            <td><span class="num-td">45GW (+80%)</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* SMR 시장 규모 전망 출처별 편차 극심: "SMR 시장"의 정의(장비/건설/운영 포함 범위)와 배치 시나리오 낙관/보수 가정 차이가 원인. DC-SMR 파이프라인 45GW는 IEA 보고서 기반 (2026년 중반 기준).</div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 미국 ADVANCE Act</div>
+        <h3>NRC 규제 혁신 · DOE $9B+</h3>
+        <div class="fc-body"><b>ADVANCE Act (2024)</b>: 선진 원자력 기술 배치 가속화법. NRC의 기술 포용적(technology-inclusive) 규제 프레임워크 개발 촉진. Part 53 최종 규칙 확정.<br><br><b>DOE 지원 합산</b>:<br>- Gen III+ SMR 배치용 $9억 공모 (2025.3)<br>- TVA (BWRX-300) + Holtec $8억 First Mover (2025.12)<br>- 8개 기업 $9,400만 추가 배치 지원<br>- Constellation TMI $10억 대출 보증<br><br>용량 목표: 2024년 약 <b>100GW → 2050년 400GW</b> (4배).</div>
+        <div class="fc-note">예산 리스크: 2026 회계연도 DOE 원자력에너지실 $4억 삭감 제안 — 의회 심의 중.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● EU SMR 전략</div>
+        <h3>2030년대 초 첫 SMR · 2억 유로 보증</h3>
+        <div class="fc-body">2026년 3월, EU 집행위원회 SMR 전략 채택. <b>EU 최초 SMR 2030년대 초 배치</b> 목표. <b>2억 유로</b> 투자 보증 도입.<br><br>2050년 SMR 용량 전망: <b>17~53GW</b> (EU 전력 공급의 4~12%). 원자로 함대 유지/확장에 <b>2,410억 유로</b> 투자 필요.<br><br>EU Taxonomy 원자력 포함 (2023년 확정, 법원 합법 판결). Net-Zero Industry Act (2024), Industrial Accelerator Act에도 반영. Rolls-Royce SMR 체코 수출 추진 중.</div>
+        <div class="fc-note">EU Taxonomy 원자력 포함으로 ESG 펀드의 원자력 투자 가능성 열림. 프랑스 주도 원자력 연합이 확대 중.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 한국 i-SMR</div>
+        <h3>170MWe · 2035 목표 · 특별법 통과</h3>
+        <div class="fc-body"><b>i-SMR</b>: 혁신형 소형모듈원자로, <b>170MWe</b> 일체형 가압경수로. KHNP/KAERI 컨소시엄. 2023~2025년 개념/기본 설계 완료 → NSSC SDA 신청 준비 중 (<b>2028년 SDA</b>, <b>2035년 상업운전</b> 목표).<br><br><b>SMR 특별법</b> (2026.2 국회 통과). 5개년 기본계획 + 촉진위원회. 2030년까지 국산 SMR 3종 핵심기술에 <b>1조 2,000억원</b> 투자.<br><br>2026.5 KEPCO/KHNP 통합 수출 체계, '원전 수출 촉진법' 연내 입법 추진. 체코/필리핀 패키지 수출 전략.</div>
+        <div class="fc-note">"한국 i-SMR이 세계 최초 SDA를 받았지만 중국 ACP100이 먼저 상업운전 시, 종이 기술 위험" — 서울경제 보도(2026.4).</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 우라늄 시장</div>
+        <h3>$101/lb 돌파 · 구조적 공급 부족</h3>
+        <div class="fc-body"><b>2026.01 스팟가 $101.41/lb</b> — 전월 대비 +25%, 2년 만에 $100 재돌파. Goldman Sachs 2026년 말 전망: $91/lb.<br><br><b>수급 불균형</b>: 2025년 생산 약 1.73억 lb vs 1차 수요 약 2.04억 lb → 구조적 공급 부족. 2030년 이후 격차 확대 전망.<br><br>미국 국내 생산 2025 Q3 <b>44% 감소</b> (32.9만 lb, 6개 시설 가동). Kazatomprom 2026년 생산량 하향. 하류(원전 운영)에서 상류(우라늄 채굴) 테마로 <b>자본 재이동</b>.</div>
+        <div class="fc-note">지정학적 변수: 러시아 우라늄 수출 제재, 카자흐스탄 감산 발표가 추가 상방 촉매. $91/lb GS 전망은 보수적일 수 있음.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>원자력 정책이 전 세계 동시다발로 가속화되고 있다 — 우라늄 상류가 수혜 테마.
+      <span class="u">미국 ADVANCE Act·DOE $9B+, EU 2억 유로 보증, 한국 SMR 특별법이 2024~2026년에 집중됐다. DC-SMR 파이프라인이 25GW→45GW로 18개월 만에 배증한 것은 정책 신호와 빅테크 PPA 모멘텀이 복합 작용한 결과다. 우라늄 시장은 구조적 공급 부족(생산 1.73억 lb vs 수요 2.04억 lb)으로 상류 채굴 기업의 수익 모멘텀이 강화되고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 INVESTMENT THESIS ================= -->
+<section class="blk" id="investment-thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;투자 논점</div>
+      <h2 class="sec-title">DC-SMR 45GW · 원전 100→400GW · DC 전력 485→950TWh</h2>
+      <p class="sec-lead">SMR·원자력 투자 테마는 단기 모멘텀과 장기 구조 모두 강력하다. 빅테크 PPA 경쟁, DC 전력 수요 2배 확대, 우라늄 공급 부족의 3중 드라이버가 동시에 작동하고 있다. 그러나 원전 건설 지연 패턴, 규제 리스크, 우라늄 지정학 변수는 지속 모니터링이 필요하다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>지표</th>
+            <th>현재 (2024~2026)</th>
+            <th>목표 (2030~2035)</th>
+            <th>드라이버</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">DC-SMR 파이프라인</td>
+            <td><span class="num-td">25GW → 45GW</span> (2024말→2026중반)</td>
+            <td>100GW+ (추정)</td>
+            <td>빅테크 PPA 경쟁, 무탄소 기저전력 수요</td>
+          </tr>
+          <tr>
+            <td class="hl-td">미국 원전 용량 목표</td>
+            <td>~100GW (2024)</td>
+            <td><span class="num-td">400GW (2050)</span></td>
+            <td>ADVANCE Act, DOE 지원, RE100 정책</td>
+          </tr>
+          <tr>
+            <td class="hl-td">글로벌 DC 전력 소비</td>
+            <td>485 TWh (2025)</td>
+            <td><span class="num-td">950 TWh (2030)</span></td>
+            <td>AI DC 폭발적 증가, 미국 DC 33→120GW</td>
+          </tr>
+          <tr>
+            <td class="hl-td">우라늄 스팟가</td>
+            <td>$101/lb (2026.01)</td>
+            <td>$91/lb (GS) ~ $120/lb+ (강세)</td>
+            <td>공급 부족(1.73억 vs 2.04억 lb), 지정학</td>
+          </tr>
+          <tr>
+            <td class="hl-td">EU 원자력 2050E</td>
+            <td>약 100GW (현재 가동)</td>
+            <td><span class="num-td">17~53GW SMR 추가</span></td>
+            <td>EU SMR 전략, Taxonomy 포함, 탄소중립</td>
+          </tr>
+          <tr>
+            <td class="hl-td">AI DC 전력 2034E</td>
+            <td>485 TWh (2025)</td>
+            <td><span class="num-td">1,600 TWh (2034)</span></td>
+            <td>AI 모델 훈련/추론 전력 4배, 데이터 폭증</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* DC 전력 수치는 IEA World Energy Outlook 2025 기준. AI DC 1,600TWh(2034)는 IEA 상위 시나리오. SMR 시장 규모 전망 편차(출처별 $35억~$187억)에 유의.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">하류 — 원전 운영사</span>
+        <h3>Constellation · Vistra · 한국수력원자력</h3>
+        <div class="ic-body"><b>Constellation Energy</b>: 31.7GW 원전 운영, TMI 재가동 + Microsoft 20년 PPA. 2026 Q1 EPS $2.74, 매출 $111억. 시총 ~$970억.<br><br>빅테크 PPA 체결로 장기 수익 가시성이 대폭 향상. 원전 재가동(TMI, Palisades)·수명 연장(LTA) 트렌드가 기존 운영사에 추가 가치를 부여.<br><br>한국수력원자력: 체코·필리핀 대형 원전 + i-SMR 패키지 수출 전략 — 국내 상장 부재로 직접 투자 어려우나 연계 밸류체인(두산에너빌리티 등) 활용 가능.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Constellation</div><div class="nv">31.7GW</div></div>
+          <div><div class="nk">시총</div><div class="nv">~$970억</div></div>
+          <div><div class="nk">EPS Q1</div><div class="nv">$2.74</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">상류 — 우라늄 채굴</span>
+        <h3>Cameco · Kazatomprom · NexGen</h3>
+        <div class="ic-body">우라늄 시장 구조적 공급 부족: 생산 1.73억 lb vs 수요 2.04억 lb. 2026.01 스팟가 <b>$101.41/lb</b> 돌파.<br><br><b>Cameco</b>: 캐나다 최대 우라늄 생산사. Cigar Lake·McArthur River 복귀로 생산 확대. 글로벌 공급 부족 직접 수혜.<br><br>하류(원전 운영) 테마에서 상류(채굴/공급)로 자본 재이동 트렌드 뚜렷. 러시아 제재·카자흐 감산이 추가 촉매. SMR 가동 증가 → 연료 수요 → 우라늄 가격 상승의 순환 구조.</div>
+        <div class="ic-nums">
+          <div><div class="nk">스팟가</div><div class="nv">$101/lb</div></div>
+          <div><div class="nk">공급</div><div class="nv">1.73억lb</div></div>
+          <div><div class="nk">수요</div><div class="nv">2.04억lb</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">순수 SMR 플레이</span>
+        <h3>X-energy(XE) · NuScale(SMR) · TerraPower</h3>
+        <div class="ic-body"><b>X-energy(XE)</b>: 2026.4 Nasdaq 상장, IPO $11억 역대 최대 원자력 IPO. 시총 $120억. Dow Seadrift 4기 계약(2030 목표). TRISO-X 연료 공장 2028 완공 예정.<br><br><b>NuScale(SMR)</b>: 시총 $36.9억, 주가 $10.12. NRC 인증 보유 유일 기업이나 첫 프로젝트 취소 후 실질 계약 미체결 상태. 고위험·고변동성.<br><br><b>TerraPower</b>: 비상장(Bill Gates, Google 등 투자). 가장 진도 앞선 미국 SMR. 2031년 상업 운전 시 기업가치 급등 기대.</div>
+        <div class="ic-nums">
+          <div><div class="nk">X-energy</div><div class="nv">$120억</div></div>
+          <div><div class="nk">NuScale</div><div class="nv">$36.9억</div></div>
+          <div><div class="nk">TerraPower</div><div class="nv">비상장</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bear">리스크 요인</span>
+        <h3>건설 지연 · FERC 규제 · 예산 삭감</h3>
+        <div class="ic-body"><b>원전 건설 지연 패턴</b>: TerraPower 2031년 완공 목표는 역사적 지연 패턴 감안 시 2032~2033년 가능성. X-energy 2030년 Dow 가동도 NRC 심사 + 건설 고려 시 낙관적.<br><br><b>FERC 규제</b>: AWS-Talen co-location 거부 사례 → 원전 옆 DC 구조가 규제 장벽에 직면. 추가 FERC 판결이 빅테크 전략 전체에 파급 가능.<br><br><b>예산 리스크</b>: DOE 원자력에너지실 $4억 삭감 제안(2026 회계연도). Oklo Aurora NRC 인허가 미취득 상태에서 Meta 2030 목표는 매우 공격적.</div>
+        <div class="ic-nums">
+          <div><div class="nk">지연 리스크</div><div class="nv">高</div></div>
+          <div><div class="nk">FERC</div><div class="nv">모니터</div></div>
+          <div><div class="nk">DOE 삭감</div><div class="nv">$4억</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">SMR·원자력은 AI 전력 인프라의 유일한 24/7 무탄소 기저전원이며, 빅테크 PPA 45GW는 수요 확실성의 역사적 전환점이다.</div>
+      <div class="bt-body">
+        <b>DC 전력 485→950TWh(2030) 확대는 재생에너지만으로는 대응 불가능하다.</b> 태양광·풍력의 간헐성 문제를 극복하며 24/7 무탄소를 보장하는 유일한 답이 원자력이다. 빅테크 4사(Google·Microsoft·Meta·Oracle)의 합산 원자력 PPA는 이미 수십 GW 규모에 달했고, DC-SMR 파이프라인은 18개월 만에 25GW→45GW로 배증했다.<br><br>
+        <b>투자 레이어는 세 단계로 구분된다.</b> 단기(2026~2028)는 우라늄 상류 — 구조적 공급 부족과 $101/lb 스팟가 모멘텀. 중기(2028~2032)는 하류 원전 운영사 — Constellation 등 기존 원전 재가동·수명 연장과 빅테크 장기 PPA의 수혜. 장기(2030+)는 순수 SMR 플레이 — TerraPower·X-energy·Kairos가 첫 상업 운전에 성공하는 시점에 기업가치 재평가.<br><br>
+        <b>핵심 리스크는 건설 지연과 규제 불확실성이다.</b> 원전 건설의 역사적 지연 패턴, AWS-Talen FERC 거부 사례가 보여주는 co-location 규제 리스크, DOE 예산 삭감 가능성을 지속 모니터링해야 한다. 중국 Linglong One이 2026년 H1에 세계 최초 상업 SMR 가동에 성공한다면, 서방 SMR 산업에 대한 정책·자본 압박이 오히려 가속화될 수 있다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">SMR·원자력 for AI — 데이터센터 전력의 핵심 기저전원</div>
+      <div class="src-list">
+        DATA · IEA World Energy Outlook 2025 · NRC 건설 허가 공식 문서<br>
+        DOE 원자력 지원 프로그램 공식 발표 · FERC Docket 공식 결정문<br>
+        Google/Microsoft/Meta 공식 보도자료 · Constellation Energy IR<br>
+        TerraPower/X-energy/Kairos Power IR · NuScale Power 2026 Q1 10-Q<br>
+        CNNC·WNN (World Nuclear News) · 산업통상자원부 SMR 정책 발표<br>
+        UxC·Cameco 우라늄 시장 보고서 · EU 집행위 SMR 전략 문서<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight (scroll spy)
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
