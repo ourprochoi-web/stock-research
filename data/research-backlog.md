@@ -190,6 +190,57 @@
 
 ---
 
+## 리포트 추가 시 업데이트 체크리스트
+
+> **신규 HTML 보고서 추가 시 반드시 업데이트해야 하는 파일 목록.**
+> 누락 시 검색 노출 누락, 카테고리 필터 미작동, AI 크롤러 미인식 등 발생.
+
+### 필수 (매 보고서마다)
+
+| # | 파일 | 위치 | 작업 |
+|---|------|------|------|
+| 1 | **신규 HTML 보고서** | `{시리즈}/` | SEO 메타 태그 + `<meta name="robots" content="index, follow">` + JSON-LD 포함 |
+| 2 | **`index.html`** — DATA 배열 | `var DATA = [...]` (~L661) | 새 항목 추가 (title, file, date, category, type, series, desc, tags) |
+| 3 | **`index.html`** — `<noscript>` 블록 | `<noscript>` (~L420) | 해당 카테고리 `<ul>` 안에 새 `<li>` 추가 (AI 크롤러용 정적 링크) |
+| 4 | **`sitemap.xml`** | `<urlset>` | 새 `<url>` 항목 추가 (loc, lastmod, priority 0.8) |
+| 5 | **`llms-full.txt`** | 해당 시리즈 섹션 | 새 보고서 링크 + 설명 1줄 추가 |
+
+### 조건부 (해당 시에만)
+
+| # | 파일 | 조건 | 작업 |
+|---|------|------|------|
+| 6 | **`index.html`** — SECTIONS | 새 시리즈 신설 시 | `var SECTIONS = {}`에 새 카테고리 추가 |
+| 7 | **`index.html`** — cat-btn | 새 시리즈 신설 시 | `<button class="cat-btn">` 추가 |
+| 8 | **`index.html`** — meta description | 총 편수 변동 시 | "17개 시리즈 92편" 숫자 갱신 (3곳: meta desc, og:desc, twitter:desc) |
+| 9 | **`index.html`** — JSON-LD | 총 편수 변동 시 | JSON-LD description 숫자 갱신 |
+| 10 | **`llms.txt`** | 시리즈 구조 변경 시 | 시리즈 요약 텍스트 갱신 |
+| 11 | **`robots.txt`** | 변경 없음 (자동 커버) | — |
+| 12 | **`data/research-backlog.md`** | 리서치 상태 변경 시 | 현황 요약 숫자 갱신 |
+| 13 | **새 디렉토리** | 새 시리즈 신설 시 | `mkdir {시리즈명}/` |
+
+### 보고서 HTML 필수 구성 요소
+
+```
+<head>
+  <meta name="viewport" ...>
+  <meta name="robots" content="index, follow">        ← AI 크롤러 인덱싱
+  <meta name="description" content="...">
+  <meta name="keywords" content="...">
+  <meta property="og:title/description/type/url/locale/site_name">
+  <meta name="twitter:card/title/description">
+  <link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/{path}">
+  <script type="application/ld+json">{ Article schema }</script>
+</head>
+```
+
+### 홈페이지 네이밍 참고
+
+현재 URL: `ourprochoi-web.github.io/stock-research/`
+- 커스텀 도메인 연결 시 GitHub Pages CNAME 설정 + DNS A/CNAME 레코드 추가
+- 도메인 변경 시 `canonical`, `og:url`, `sitemap.xml`, `llms.txt` 내 base URL 일괄 교체 필요
+
+---
+
 ## 현황 요약
 
 | 지표 | 수치 |
