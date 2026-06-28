@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NVIDIA $81.6B·Broadcom $56B·Google TPU v8·Amazon Trainium3·Meta MTIA — GPU vs 커스텀 ASIC 아키텍처 전쟁 심층 분석">
+<meta name="keywords" content="NVIDIA,GPU,ASIC,Broadcom,TPU,Trainium,MTIA,AI반도체,추론,CUDA">
+<meta property="og:title" content="GPU vs ASIC — AI 반도체 아키텍처 전쟁">
+<meta property="og:description" content="NVIDIA $81.6B·Broadcom $56B·Google TPU v8·Amazon Trainium3·Meta MTIA — GPU vs 커스텀 ASIC 아키텍처 전쟁 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_chip_architecture_war.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GPU vs ASIC — AI 반도체 아키텍처 전쟁">
+<meta name="twitter:description" content="NVIDIA $81.6B·Broadcom $56B·Google TPU v8·Amazon Trainium3·Meta MTIA — GPU vs 커스텀 ASIC 아키텍처 전쟁 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_chip_architecture_war.html">
+<title>GPU vs ASIC — AI 반도체 아키텍처 전쟁</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#f59e0b;
+    --current:#fbbf24;
+    --glow:#fde68a;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(253,230,138,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#3d3520;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(245,158,11,.12);color:var(--volt);border:1px solid rgba(245,158,11,.3)}
+  .ic-tag.pink{background:rgba(251,191,36,.12);color:var(--current);border:1px solid rgba(251,191,36,.3)}
+  .ic-tag.rose{background:rgba(253,230,138,.12);color:var(--glow);border:1px solid rgba(253,230,138,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.nvidia{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.broadcom{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.google{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+  .sbar-fill.amazon{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.meta{background:linear-gradient(90deg,#06b6d4,#22d3ee)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.purple{color:#a78bfa}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(253,230,138,.04));
+    border:1px solid rgba(245,158,11,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- COMP CARD ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;margin-top:8px}
+  .comp-card h3{font-size:1.06rem;font-weight:750;margin-bottom:18px}
+  .comp-card .cc-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+  .comp-card .cc-row:last-child{border-bottom:none}
+  .comp-card .cc-label{color:var(--ink-2)}
+  .comp-card .cc-val{font-family:var(--mono);font-weight:700;color:var(--ink)}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GPU vs ASIC — AI 반도체 아키텍처 전쟁",
+  "description": "NVIDIA $81.6B·Broadcom $56B·Google TPU v8·Amazon Trainium3·Meta MTIA — GPU vs 커스텀 ASIC 아키텍처 전쟁 심층 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/ai_chip_architecture_war.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fde68a;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(253,230,138,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>AI 반도체 아키텍처 전쟁</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#nvidia-gpu">01 / NVIDIA GPU</a>
+      <a href="#custom-asic">02 / 커스텀 ASIC</a>
+      <a href="#asic-economics">03 / 실리콘 경제학</a>
+      <a href="#inference-shift">04 / 추론 전환</a>
+      <a href="#next-arch">05 / 차세대</a>
+      <a href="#market-outlook">06 / 시장 전망</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 밸류체인 · 심화 테마 · 2026.06 기준</span>
+    <h1 class="hero-title">GPU vs ASIC<br><span class="hl">아키텍처 전쟁</span></h1>
+    <p class="hero-sub">NVIDIA 독점에 도전하는 커스텀 실리콘 — 훈련은 GPU, 추론은 ASIC의 시대가 온다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$81.6<span class="u">B</span></div>
+        <div class="lab">NVIDIA Q1 FY27 분기 매출. DC $75.2B(+92.3% YoY). 영업마진 ~66%. AI 반도체 사실상 독점 체제의 정점.</div>
+        <div class="src">SRC: NVIDIA Q1 FY27 Earnings</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$56<span class="u">B</span></div>
+        <div class="lab">Broadcom AI 매출 가이던스 FY26. +180% YoY. XPU 고객 6사(Google·Meta·OpenAI·Anthropic·Apple·ByteDance) 확인.</div>
+        <div class="src">SRC: Broadcom FY26 Guidance</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2027</div>
+        <div class="lab">ASIC 출하량이 GPU를 처음 초과하는 연도 추정. JPMorgan: 12.5M vs 10.9M 유닛.</div>
+        <div class="src">SRC: JPMorgan 2026 Semiconductor</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>아키텍처 전쟁의 6개 전선</div>
+  </div>
+</header>
+
+<!-- ================= 01 NVIDIA GPU ================= -->
+<section class="blk" id="nvidia-gpu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;NVIDIA GPU 로드맵</div>
+      <h2 class="sec-title">H100 → B200 → R100 — FP4 2세대 만에 11배</h2>
+      <p class="sec-lead">NVIDIA는 H100에서 Blackwell(B200/B300), Rubin(R100), Rubin Ultra로 이어지는 매년 세대 교체 로드맵을 통해 FP4 컴퓨트를 2세대 만에 11배 끌어올리고 있다. CUDA 590만 개발자 생태계와 MFU 50-55% 우위가 해자의 본질이다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>H100</th>
+            <th>B200</th>
+            <th>B300</th>
+            <th>R100 (Rubin)</th>
+            <th>Rubin Ultra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">공정</td>
+            <td>TSMC 4nm</td>
+            <td>TSMC 4NP</td>
+            <td>TSMC 4NP</td>
+            <td>TSMC 3nm</td>
+            <td>TSMC 3nm</td>
+          </tr>
+          <tr>
+            <td class="hl-td">트랜지스터</td>
+            <td><span class="num-td">80B</span></td>
+            <td><span class="num-td">208B</span></td>
+            <td>—</td>
+            <td><span class="num-td">336B</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="hl-td">HBM</td>
+            <td>HBM3 80GB</td>
+            <td>HBM3e 192GB</td>
+            <td>HBM3e 288GB</td>
+            <td>HBM4 288GB</td>
+            <td>HBM4E 1TB</td>
+          </tr>
+          <tr>
+            <td class="hl-td">메모리 BW</td>
+            <td><span class="num-td">3.35 TB/s</span></td>
+            <td><span class="num-td">8.0 TB/s</span></td>
+            <td><span class="num-td">8.0 TB/s</span></td>
+            <td><span class="num-td">22 TB/s</span></td>
+            <td><span class="num-td">32 TB/s</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">FP4</td>
+            <td>—</td>
+            <td><span class="num-td">18,000 TFLOPS</span></td>
+            <td><span class="num-td">15,000 TFLOPS</span></td>
+            <td><span class="num-td">50 PFLOPS</span></td>
+            <td><span class="num-td">~100 PFLOPS</span></td>
+          </tr>
+          <tr>
+            <td class="hl-td">TDP</td>
+            <td>700W</td>
+            <td>1,000W</td>
+            <td>1,400W</td>
+            <td>—</td>
+            <td>3,600W</td>
+          </tr>
+          <tr>
+            <td class="hl-td">NVLink</td>
+            <td>0.9 TB/s</td>
+            <td>1.8 TB/s</td>
+            <td>1.8 TB/s</td>
+            <td>3.6 TB/s</td>
+            <td>3.6 TB/s</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* Rubin Ultra 스펙은 양산 전 로드맵 발표 수치로 최종 변경 가능 (검증 등급: 요주의). FP4 컴퓨트 경로: B200 9 PFLOPS → R100 50 PFLOPS → Rubin Ultra ~100 PFLOPS.</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>전력 효율 · 랙 스케일</h3>
+        <div class="ph-sub">FP8 TFLOPS/W 비교 + 랙 전력</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">+57.5%</div>
+            <div class="mt"><b>B200 vs H100 전력효율</b> — FP8 9,000/1,000W = 9.0 vs 4,000/700W = 5.71. 산술 검증 완료.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">132kW</div>
+            <div class="mt"><b>GB200 NVL72 랙 전력</b> — 직접 수냉 필수. LLM 추론 기준 H100 대비 4.6배 줄/토큰 효율 향상.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~600kW</div>
+            <div class="mt"><b>Rubin Ultra Kyber 랙</b> — 800V DC 배전 필요. 시설 Capex 장벽이 신규 진입자를 걸러내는 필터 역할.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">4.0x</div>
+            <div class="mt"><b>메모리 BW 증가</b> — B200(8.0 TB/s) → Rubin Ultra(32 TB/s). NVLink은 세대마다 정확히 2배 스케일링.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>CUDA 해자 · 실적</h3>
+        <div class="ph-sub">에코시스템 + Q1 FY27</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">~590만</div>
+            <div class="mt"><b>CUDA 개발자</b> — 20년 라이브러리 축적. NVIDIA 공식 "millions" 표현, 정확 수치는 추정.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">50-55%</div>
+            <div class="mt"><b>MFU(Model FLOPS Utilization)</b> — CUDA 기준. AMD ROCm ~45%. 전환 비용 30~99% 성능 패널티.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$81.6B</div>
+            <div class="mt"><b>Q1 FY27 매출</b> — DC $75.2B(전체 92.2%). 시총 $4.663T, trailing P/E 29.98x(12개월 평균 45.95x 대비 -34.8%).</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">39%</div>
+            <div class="mt"><b>상위 2개 고객 매출 비중</b> — Q2 FY26 기준. 하이퍼스케일러 집중도 리스크.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>NVIDIA의 해자는 칩 성능이 아니라 CUDA 생태계 전환 비용이다.
+      <span class="u">590만 개발자와 20년 라이브러리 축적으로 형성된 CUDA 의존도는 30~99% 성능 패널티를 수반하는 전환 비용을 만든다. Triton(OpenAI) 등 추상화 시도가 있으나, 프론티어 모델 훈련에서 CUDA 대체는 현실적으로 불가능하다. 이 해자가 영업마진 ~66%의 근간이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 CUSTOM ASIC ================= -->
+<section class="blk" id="custom-asic">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;커스텀 ASIC 부상</div>
+      <h2 class="sec-title">Broadcom $56B · TPU v8 · Trainium3 · MTIA</h2>
+      <p class="sec-lead">하이퍼스케일러 4사(Google·Amazon·Meta·Apple)가 자체 실리콘 개발을 가속하고 있다. Broadcom은 6사 XPU 고객을 확보하며 ASIC 설계 시장의 60~85%를 장악했고, Google은 TPU 라인 최초로 훈련/추론을 분리하는 구조적 전환을 단행했다.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="icard reveal">
+        <span class="ic-tag red">Broadcom XPU</span>
+        <h3>AI $56B · 3.5D F2F 패키징 · 6사 고객</h3>
+        <div class="ic-body"><b>FY2026 AI 반도체 매출 $56B</b>(+180% YoY). Q3 FY2026 가이던스 $16B(+200%+ YoY). AI 백로그 $73B으로 이례적 가시성 확보.<br><br><b>확인된 XPU 고객 6사</b>: Google, Meta, OpenAI, Anthropic, Apple, ByteDance. Apple은 2026년 신규 공개.<br><br><b>3.5D F2F 패키징</b>: 4 컴퓨트 다이 + 1 I/O 다이 + HBM 12모듈, 6,000mm² 적층. 업계 최초. TSMC 3nm 현재, 2nm 이미 2개 하이퍼스케일러와 테이프아웃 완료.</div>
+        <div class="ic-nums">
+          <div><div class="nk">AI 매출</div><div class="nv">$56B</div></div>
+          <div><div class="nk">백로그</div><div class="nv">$73B</div></div>
+          <div><div class="nk">고객</div><div class="nv">6사 XPU</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">Google TPU</span>
+        <h3>v7 Ironwood → v8 훈련/추론 분리</h3>
+        <div class="ic-body"><b>TPU v6e (Trillium)</b>: 918 BF16 TFLOPS, 32GB HBM, 1.6 TB/s. GA, 3개 리전 매진. H100 추론 대비 $/성능 4배 우위(자체 워크로드 기준).<br><br><b>TPU v7 (Ironwood)</b>: 4,614 FP8 TFLOPS, 192GB HBM3E, 7.37 TB/s, 9,216칩 슈퍼팟 = 42.5 ExaFLOPS. 2025~2026 배치 중.<br><br><b>TPU v8t/v8i</b>: Training/Inference 최초 분리. v8t 슈퍼팟 121 ExaFLOPS(FP4). v8i 384MB SRAM, 2nm. H2 2026 GA. 구조적 전환 신호.</div>
+        <div class="ic-nums">
+          <div><div class="nk">v7 슈퍼팟</div><div class="nv">42.5 ExaF</div></div>
+          <div><div class="nk">v8t</div><div class="nv">121 ExaF</div></div>
+          <div><div class="nk">v8 GA</div><div class="nv">H2 2026</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal">
+        <span class="ic-tag rose">Amazon Trainium</span>
+        <h3>Trainium3 2.52 PFLOPS · Rainier 50만 칩</h3>
+        <div class="ic-body"><b>Trainium3</b> (GA 2025.12): 칩당 2.52 PFLOPS, 144GB HBM3e, 4.9 TB/s, TSMC N3P. Trn3 UltraServer(144칩) = 362 PFLOPS.<br><br><b>Project Rainier</b>: Anthropic Claude 훈련용 Trainium2 50만 개 배치. AWS의 커스텀 실리콘 전략이 프론티어 AI 모델 훈련에 직접 투입되는 전환점.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Trn3 성능</div><div class="nv">2.52 PFLOPS</div></div>
+          <div><div class="nk">UltraServer</div><div class="nv">362 PFLOPS</div></div>
+          <div><div class="nk">Rainier</div><div class="nv">Trn2 50만</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag muted">Meta MTIA</span>
+        <h3>6개월 케이던스 · GPU 대비 TCO -44%</h3>
+        <div class="ic-body"><b>2년간 4세대</b>(MTIA 300/400/450/500) — 6개월 케이던스는 업계 표준 18~24개월을 압도.<br><br><b>MTIA v3 "Iris"</b>: TSMC 3nm, 8x HBM3E, &gt;3.5 TB/s. 2026.02 브로드 DC 배치. Broadcom과 2nm MTIA 450/500 위한 1GW 계약.<br><br><b>전략</b>: MTIA=추론, NVIDIA/AMD=프론티어 사전학습. 완전 대체가 아닌 보완 구조. GPU 대비 TCO -44%.</div>
+        <div class="ic-nums">
+          <div><div class="nk">케이던스</div><div class="nv">6개월</div></div>
+          <div><div class="nk">TCO 절감</div><div class="nv">-44%</div></div>
+          <div><div class="nk">Broadcom</div><div class="nv">1GW 계약</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>TPU v8의 훈련/추론 분리는 ASIC 시대의 구조적 전환 신호다.
+      <span class="u">Google이 TPU 라인 최초로 Training(v8t)과 Inference(v8i)를 분리한 것은, AI 워크로드가 범용 칩 하나로 커버할 수 없는 단계에 진입했음을 의미한다. Meta의 6개월 케이던스, Amazon의 Anthropic 직접 배치는 하이퍼스케일러들이 NVIDIA GPU를 "프론티어 훈련 전용"으로 한정하고, 추론 워크로드를 자체 실리콘으로 흡수하는 전략으로 수렴하고 있음을 보여준다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 ASIC ECONOMICS ================= -->
+<section class="blk" id="asic-economics">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;커스텀 실리콘 경제학</div>
+      <h2 class="sec-title">NRE $725M · BEP $500M+ · TCO 40-65% 우위</h2>
+      <p class="sec-lead">커스텀 ASIC의 경제성은 NRE(비반복 공학) 비용과 생산 규모의 함수다. 2nm 기준 NRE $725M에 달하지만, 연 GPU 지출 $500M+ 이상의 하이퍼스케일러는 1.5~2.5년 내 페이백이 가능하며, TCO 40~65% 절감을 실현한다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>공정 노드</th>
+            <th>NRE 비용</th>
+            <th>웨이퍼 비용</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">5nm</td>
+            <td><span class="num-td">~$449M</span></td>
+            <td>$16~18K</td>
+            <td>FuriosaAI RNGD 등 스타트업 진입 가능 노드</td>
+          </tr>
+          <tr>
+            <td class="hl-td">3nm</td>
+            <td><span class="num-td">~$581M</span></td>
+            <td>$20~22K</td>
+            <td>Broadcom·MTIA v3 현재 양산 노드</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2nm</td>
+            <td><span class="num-td">~$725M</span></td>
+            <td>$28~30K</td>
+            <td>Broadcom 2개 하이퍼스케일러 테이프아웃 완료</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* NRE는 IBS 추정치 범위 내이나 설계 복잡도·고객별 ±30% 변동 가능 (검증 등급: 부분 정확). 웨이퍼 비용은 TSMC 기준.</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>ASIC 손익분기점 분석</h3>
+        <div class="ph-sub">규모 경제 · 페이백 · TCO</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$500M+</div>
+            <div class="mt"><b>연 GPU 지출 BEP</b> — 이 규모 이상일 때 커스텀 ASIC이 경제적. 하이퍼스케일러 4사 모두 해당.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">1.5-2.5년</div>
+            <div class="mt"><b>페이백 기간</b> — NRE 투자 회수. TCO 우위 40~65%를 감안하면 2년 차부터 순수 비용 절감.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">40-65%</div>
+            <div class="mt"><b>TCO 우위</b> — GPU 대비 총 보유비용 절감 범위. Meta MTIA -44% 실적치가 이 범위 내에 위치.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">18-24개월</div>
+            <div class="mt"><b>Time-to-market 불리</b> — GPU 대비 개발 소요. AI 칩 레이아웃·모듈러 칩렛으로 완화 중이나 여전히 핵심 약점.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>ASIC vs GPU 출하량 전망</h3>
+        <div class="ph-sub">JPMorgan · 2027 교차점</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">12.5M</div>
+            <div class="mt"><b>2027년 ASIC 출하량</b> — JPMorgan 전망. 2026년 대비 +45% 성장.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10.9M</div>
+            <div class="mt"><b>2027년 GPU 출하량</b> — ASIC에 역전. 2026년 대비 +16% 성장. 성장비 ASIC/GPU = 2.8배.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~95%</div>
+            <div class="mt"><b>ASIC 설계 시장 과점</b> — Broadcom 60~85% + Marvell 10~25%. 설계 역량의 극단적 집중.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">85%+</div>
+            <div class="mt"><b>TSMC CoWoS 사전 약정</b> — 2026년 기준. NVIDIA가 60%+ 앵커. 커스텀 ASIC은 나머지 15% 경쟁.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>ASIC 경제성의 핵심 변수는 출하량이 아니라 CoWoS 용량 배분이다.
+      <span class="u">2027년 ASIC 출하량이 GPU를 넘어서더라도, TSMC CoWoS 패키징 용량의 85%+가 이미 사전 약정된 상태에서 NVIDIA가 60%+ 앵커를 유지한다. 커스텀 ASIC 업체들은 나머지 15%를 놓고 경쟁해야 하며, 이는 유닛 수 역전이 곧바로 매출 역전을 의미하지 않는 구조를 만든다. 유닛 ≠ 매출임에 주의.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 INFERENCE SHIFT ================= -->
+<section class="blk" id="inference-shift">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;추론 시장 대전환</div>
+      <h2 class="sec-title">훈련:추론 60:40 → 30:70 (2028E)</h2>
+      <p class="sec-lead">AI 워크로드의 무게 중심이 훈련에서 추론으로 이동하고 있다. 추론 지출 비중은 2024년 40%에서 2028년 65~70%로 확대 전망이며, 이는 ASIC/NPU의 구조적 침투 기회를 열고 있다. 에지 NPU 시장은 $50.48B 규모로 별도 성장 축을 형성한다.</p>
+    </div>
+
+    <div class="share-grid">
+      <div class="share-box reveal">
+        <h3>AI 워크로드 비중 변화 (훈련 vs 추론)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">훈련 (2024)</span><span class="pct">60%</span></div>
+            <div class="sbar-track"><div class="sbar-fill nvidia" data-w="60%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">추론 (2024)</span><span class="pct">40%</span></div>
+            <div class="sbar-track"><div class="sbar-fill broadcom" data-w="40%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">훈련 (2028E)</span><span class="pct">30-35%</span></div>
+            <div class="sbar-track"><div class="sbar-fill nvidia" data-w="32%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">추론 (2028E)</span><span class="pct">65-70%</span></div>
+            <div class="sbar-track"><div class="sbar-fill broadcom" data-w="67%"></div></div>
+          </div>
+        </div>
+        <div class="panel foot" style="margin-top:20px;background:transparent;border:none;padding:16px 0 0">
+          추론 시장: <b>$106.15B(2025) → $254.98B(2030)</b>, CAGR 19.2%. MarketsandMarkets 기준.
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>NVIDIA 세그먼트별 점유율</h3>
+        <div class="ph-sub">훈련 독점 vs 추론 침식</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">~90%</div>
+            <div class="mt"><b>AI 훈련 점유율</b> — CUDA 해자가 가장 견고한 영역. 2030E에도 ~80% 유지 전망.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">60-75%</div>
+            <div class="mt"><b>AI 추론 점유율</b> — 2024년 ~70%에서 하락 중. ASIC/NPU 침투 가속. 2030E ~55%.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$50.48B</div>
+            <div class="mt"><b>에지 NPU 시장</b> — 온디바이스 AI 추론. Qualcomm X2 80 TOPS, MediaTek 100 TOPS. CAGR 27%.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$695B</div>
+            <div class="mt"><b>하이퍼스케일러 4사 AI CapEx(2026)</b> — Amazon $200B, MS $190B, Google $180B, Meta $125B. +76.8% YoY.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:28px">
+      <div class="icard">
+        <span class="ic-tag red">에지 NPU 경쟁</span>
+        <h3>Qualcomm 80 TOPS · MediaTek 100 TOPS · Apple M5</h3>
+        <div class="ic-body"><b>Qualcomm X2 Elite Extreme</b>: Hexagon NPU 6, 80 TOPS(+78% vs X Elite). <b>MediaTek Dimensity 9500</b>: 100 TOPS, 안드로이드 최고 성능. <b>Apple M5</b>: TOPS 비공개, GPU 중심 전환으로 LLM 프롬프트 4배 향상.<br><br>온디바이스 AI 추론 시장: $26.14B(2025) → $58.90B(2030), CAGR 17.6%. 스마트폰·PC·IoT에서 로컬 추론이 표준화되는 추세.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Qualcomm</div><div class="nv">80 TOPS</div></div>
+          <div><div class="nk">MediaTek</div><div class="nv">100 TOPS</div></div>
+          <div><div class="nk">시장 규모</div><div class="nv">$58.9B</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Huawei Ascend — 중국 대안</span>
+        <h3>910C H100 ~60% · CloudMatrix 384 시스템 +67%</h3>
+        <div class="ic-body"><b>Ascend 910C</b>: H100 추론 성능의 ~60%(칩 단위). <b>CloudMatrix 384</b>(910C 384개): 300 PFLOPS BF16 — GB200 NVL72(180 PFLOPS) 대비 시스템 레벨 +67%, HBM 3.6배.<br><br>중국 국산 AI칩 유닛 점유율 2025년 <b>41%</b>(사상 최초 돌파). NVIDIA 중국 점유율 ~95% → ~55% 하락. Jensen Huang: "중국 AI칩 시장은 Huawei에 사실상 양보."<br><br>단, 유닛 ≠ 매출 점유율. NVIDIA의 높은 ASP로 매출 점유율은 &gt;60% 추정.</div>
+        <div class="ic-nums">
+          <div><div class="nk">910C 성능</div><div class="nv">H100 60%</div></div>
+          <div><div class="nk">CM384</div><div class="nv">300 PFLOPS</div></div>
+          <div><div class="nk">중국 유닛</div><div class="nv">41%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>추론 시장 확대는 NVIDIA의 매출 성장과 점유율 하락이 동시에 일어나는 구간을 만든다.
+      <span class="u">추론 지출이 2028년 전체의 65~70%를 차지하면, NVIDIA는 훈련 ~80% 독점을 유지하면서도 추론에서 ASIC/NPU에 점유율을 내주는 구조가 된다. 전체 시장이 $440B(2030E)로 확대되므로 NVIDIA의 절대 매출은 성장하지만, 성장률은 둔화되고 마진 구조에 변화가 온다. 추론 ASIC의 TCO 우위(-44%, Meta 실적치)가 이 전환을 가속하는 핵심 동력이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 NEXT ARCH ================= -->
+<section class="blk" id="next-arch">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;차세대 아키텍처</div>
+      <h2 class="sec-title">포토닉 $4.4B · 뉴로모픽 100x · RISC-V $693M</h2>
+      <p class="sec-lead">GPU와 ASIC 너머의 패러다임이 실험실을 벗어나 벤처 투자를 끌어들이고 있다. 포토닉 컴퓨팅, 뉴로모픽 칩, RISC-V 기반 AI 프로세서가 각각 에너지 효율, 이벤트 기반 처리, 오픈 ISA라는 차별화된 가치를 제안한다. 다만, 2026년 기준 트랜스포머 LLM 주류 워크로드 적용은 제한적이다.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="icard reveal">
+        <span class="ic-tag red">포토닉 컴퓨팅</span>
+        <h3>Lightmatter $4.4B · Passage M1000 114Tbps</h3>
+        <div class="ic-body"><b>Lightmatter</b>: Series D $400M, 밸류에이션 $4.4B. Passage M1000 광 인터커넥트 114 Tbps — 전기 신호 대비 에너지 효율 10~100배 우위(이론치).<br><br>광자 기반 행렬 곱셈으로 AI 추론의 전력 벽을 돌파하려는 시도. DC 간 광 인터커넥트(Passage)가 먼저 상용화되고, 칩 내 광 컴퓨팅(Envise)이 장기 로드맵.<br><br>한계: 트랜스포머 아키텍처에서의 범용 적용 아직 미검증. "전력벽을 돌파하는 유일한 물리적 경로"라는 투자 논리.</div>
+        <div class="ic-nums">
+          <div><div class="nk">밸류에이션</div><div class="nv">$4.4B</div></div>
+          <div><div class="nk">Series D</div><div class="nv">$400M</div></div>
+          <div><div class="nk">Passage</div><div class="nv">114 Tbps</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">뉴로모픽 칩</span>
+        <h3>Intel Loihi 3 100x · IBM NorthPole 25x</h3>
+        <div class="ic-body"><b>Intel Loihi 3</b>: 10M 뉴런, GPU 대비 100배 에너지 효율(SNN 태스크 기준). 스파이킹 뉴럴 네트워크에 최적화된 이벤트 기반 아키텍처.<br><br><b>IBM NorthPole</b>: 256M 시냅스, H100 대비 25배 효율(이미지 인식 기준). 메모리-컴퓨팅 통합으로 데이터 이동 병목 해소.<br><br>한계: SNN이 트랜스포머 기반 LLM에 비효율적. 센서 퓨전·이상 탐지·로보틱스 등 특화 영역에서 먼저 가치 입증 필요.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Loihi 3</div><div class="nv">100x 효율</div></div>
+          <div><div class="nk">NorthPole</div><div class="nv">25x 효율</div></div>
+          <div><div class="nk">뉴런</div><div class="nv">10M</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal">
+        <span class="ic-tag rose">RISC-V AI · Tenstorrent</span>
+        <h3>$693M Series D · 삼성·LG·현대 라이선스</h3>
+        <div class="ic-body"><b>Tenstorrent</b>: Series D $693M(삼성증권 리드). Jim Keller(ex-AMD/Apple/Tesla) 주도. RISC-V 오픈 ISA 기반 AI 프로세서.<br><br>삼성·LG·현대가 라이선스 파트너. ARM 대비 라이선스 비용 제로로 에지·자동차 AI칩 시장 진입 장벽을 낮추는 전략.<br><br>CUDA/GPU 대비 소프트웨어 생태계 미성숙이 최대 과제. 오픈소스 ISA의 유연성으로 장기 성장 잠재력은 있으나, 2026년 기준 DC 레벨 경쟁력은 미검증.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Series D</div><div class="nv">$693M</div></div>
+          <div><div class="nk">리드</div><div class="nv">삼성증권</div></div>
+          <div><div class="nk">ISA</div><div class="nv">RISC-V 오픈</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag muted">차세대 아키텍처 한계</span>
+        <h3>트랜스포머 LLM 주류 적용 제한</h3>
+        <div class="ic-body">포토닉·뉴로모픽·RISC-V AI 모두 <b>트랜스포머 기반 LLM 주류 워크로드에서 GPU/ASIC을 대체하기엔 미성숙</b>한 상태.<br><br>포토닉은 인터커넥트 먼저, 컴퓨팅은 장기 로드맵. 뉴로모픽은 SNN 특화. RISC-V는 소프트웨어 생태계 격차.<br><br>2030년 이후 에너지 제약이 심화되면 포토닉·뉴로모픽이 "전력벽 돌파" 옵션으로 재부상할 가능성. 현 시점에서는 VC 투자 단계이며, GPU/ASIC 이원 구도가 2027~2028년까지 유지될 전망.</div>
+        <div class="ic-nums">
+          <div><div class="nk">포토닉</div><div class="nv">인터커넥트 우선</div></div>
+          <div><div class="nk">뉴로모픽</div><div class="nv">SNN 특화</div></div>
+          <div><div class="nk">주류 전환</div><div class="nv">2030+ 예상</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 MARKET OUTLOOK ================= -->
+<section class="blk" id="market-outlook">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;시장 구조 전망</div>
+      <h2 class="sec-title">NVIDIA 90% → 65% · 훈련 과점 vs 추론 분산</h2>
+      <p class="sec-lead">NVIDIA의 전체 AI 가속기 점유율은 2024년 ~85-90%에서 2030년 ~65-70%로 하락 전망이지만, 절대 시장 규모가 $140B → $440B로 3배 성장하면서 매출은 오히려 증가한다. 훈련 과점 vs 추론 분산의 이원 구도가 2027년부터 본격화된다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>세그먼트</div>
+        <div>2024</div>
+        <div>2026E</div>
+        <div>2030E</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">AI 훈련</div>
+        <div><span class="cr-num">~90%</span></div>
+        <div><span class="cr-num amber">~88%</span></div>
+        <div><span class="cr-num amber">~80%</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">AI 추론</div>
+        <div><span class="cr-num">~70%</span></div>
+        <div><span class="cr-num amber">~65%</span></div>
+        <div><span class="cr-num amber">~55%</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">전체 AI 가속기</div>
+        <div><span class="cr-num">~85-90%</span></div>
+        <div><span class="cr-num amber">~75%</span></div>
+        <div><span class="cr-num amber">~65-70%</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">ASIC 출하량 성장</div>
+        <div>—</div>
+        <div><span class="cr-num amber">+45% YoY</span></div>
+        <div><span class="cr-num amber">GPU 초과</span></div>
+      </div>
+    </div>
+
+    <div class="future-grid" style="margin-top:32px">
+      <div class="fcard fc-red reveal">
+        <div class="fc-tag">● BULL CASE — GPU+ASIC 공존</div>
+        <h3>시장 $440B · NVIDIA $200B+ · ASIC 30%+</h3>
+        <div class="fc-body">AI 가속기 시장이 $440B(2030E)로 확대되면서 <b>GPU와 ASIC이 각자의 영역에서 동시 성장</b>하는 시나리오. NVIDIA는 훈련 ~80% + 추론 ~55%로 점유율은 하락하지만, 시장 확대 효과로 절대 매출 $200B+ 달성.<br><br>하이퍼스케일러 4사의 AI CapEx $695B(2026)이 지속되면서 GPU와 ASIC 모두 수요 초과 상태. CoWoS 용량이 확장되면 ASIC 성장의 병목도 해소.</div>
+        <div class="fc-note">전제: AI CapEx 지속 증가 · CoWoS 용량 확장 · 추론 시장 CAGR 19%+ 유지</div>
+      </div>
+
+      <div class="fcard fc-pink reveal d1">
+        <div class="fc-tag">● BEAR CASE — CUDA 해자 약화</div>
+        <h3>Triton 성숙 · ASIC TCO 압도 · 마진 압축</h3>
+        <div class="fc-body">OpenAI Triton 등 <b>CUDA 추상화 레이어가 성숙</b>하면서 전환 비용이 급감하는 시나리오. 하이퍼스케일러들이 추론뿐 아니라 훈련에서도 자체 ASIC을 확대 투입하면 NVIDIA 훈련 점유율이 ~70%까지 하락 가능.<br><br>ASIC TCO 우위(-44%)가 입증되면서 Tier-2 클라우드와 엔터프라이즈까지 Broadcom XPU 채택 확산. NVIDIA 영업마진 66% → 50%대 압축 압력.</div>
+        <div class="fc-note">전제: Triton MFU 격차 해소 · ASIC NRE 절감(AI 칩 레이아웃) · AI CapEx 성장률 둔화</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">훈련은 GPU, 추론은 ASIC — 아키텍처 이원 체제가 2027년부터 구조화된다.</div>
+      <div class="bt-body">
+        <b>NVIDIA의 CUDA 해자는 훈련 워크로드에서 여전히 난공불락이다.</b> 590만 개발자, 20년 라이브러리, MFU 50-55%의 생태계 전환 비용은 하이퍼스케일러조차 프론티어 모델 사전학습에서는 GPU를 유지하게 만든다.<br><br>
+        <b>그러나 추론 시장의 무게가 2028년 65-70%에 달하면, ASIC의 TCO 40-65% 우위가 결정적이다.</b> Google의 TPU v8 훈련/추론 분리, Meta의 6개월 ASIC 케이던스, Amazon의 Trainium3은 모두 "추론은 자체 실리콘"이라는 동일한 결론에 수렴하고 있다.<br><br>
+        <b>투자자 관점에서는 세 가지 축이 핵심이다.</b> (1) NVIDIA — 훈련 과점으로 절대 매출 성장 지속, 단 마진 구조 변화 주시. (2) Broadcom — ASIC 설계 시장 60-85% 과점, 2nm 테이프아웃 완료로 차세대 확보. (3) TSMC — GPU+ASIC 양쪽 수혜, CoWoS 용량이 전체 시장의 조절 변수.
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">관련 리포트</span>
+        <h3>AI 밸류체인 시리즈</h3>
+        <div class="ic-body">
+          <b><a href="ai_value_chain_guide_v2.html" style="color:var(--current);text-decoration:underline">AI 밸류체인 가이드 v2</a></b> — GPU·HBM·전력 밸류체인 전체 구조<br><br>
+          <b><a href="ai_valuechain_deep_dive_20260611.html" style="color:var(--current);text-decoration:underline">AI 밸류체인 심층 분석</a></b> — NVIDIA·Broadcom·TSMC 실적 업데이트<br><br>
+          <b><a href="../national-strategy/ns_semiconductor_war.html" style="color:var(--current);text-decoration:underline">반도체 전쟁</a></b> — Samsung Foundry vs TSMC, 수출 통제
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">검증 노트</span>
+        <h3>데이터 신뢰도 요약</h3>
+        <div class="ic-body">
+          본 리포트의 32개 핵심 수치 중 <b>확인 27건(84.4%)</b>, 부분 정확 2건(6.3%), 요주의 3건(9.4%).<br><br>
+          <b>요주의</b>: Rubin Ultra 1TB HBM4E/100 PFLOPS(양산 전 스펙), Rebel100 TPS/W 3.2배(자체 벤치마크, MLPerf 미검증), 중국 41% 유닛 점유(유닛 ≠ 매출).<br><br>
+          <b>부분 정확</b>: CUDA 590만 개발자(NVIDIA "millions" 공식 표현, 정확 수치 미확인), NRE 3nm $581M(±30% 변동 가능).
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">GPU vs ASIC — AI 반도체 아키텍처 전쟁</div>
+      <div class="src-list">
+        DATA · NVIDIA Q1 FY27 Earnings · Broadcom FY2026 Guidance · Google Cloud TPU v7/v8 Blog<br>
+        AWS Trainium3 · Meta MTIA v3 Iris Blog · JPMorgan Semiconductor Research<br>
+        Lightmatter Series D · Intel Loihi 3 · Tenstorrent Series D · SemiAnalysis<br>
+        MarketsandMarkets AI Inference Market · Mordor Intelligence AI Accelerator<br>
+        IBS NRE Cost Estimates · TSMC CoWoS Capacity Reports · Huawei CloudMatrix 384<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·기술 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·업계 추정을 종합한 것으로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 양산 전 스펙(Rubin Ultra 등)은 최종 제품에서 변경될 가능성이 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Constitutional AI·Mythos 83% 제로데이·Pentagon $200M 분쟁·ARR $47B·SaaS $285B 충격 — Anthropic 심층 기업 분석">
+<meta name="keywords" content="Anthropic,Claude,Constitutional AI,Mythos,AI안전,RSP,Pentagon,SaaS,ARR,기업가치">
+<meta property="og:title" content="Anthropic — AI 안전의 상업화, $965B 기업가치의 해부">
+<meta property="og:description" content="Constitutional AI·Mythos 83% 제로데이·Pentagon $200M 분쟁·ARR $47B·SaaS $285B 충격 — Anthropic 심층 기업 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_anthropic.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Anthropic — AI 안전의 상업화, $965B 기업가치의 해부">
+<meta name="twitter:description" content="Constitutional AI·Mythos 83% 제로데이·Pentagon $200M 분쟁·ARR $47B·SaaS $285B 충격 — Anthropic 심층 기업 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_anthropic.html">
+<title>Anthropic — AI 안전의 상업화, $965B 기업가치의 해부</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#8b5cf6;
+    --current:#a78bfa;
+    --glow:#c4b5fd;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(196,181,253,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#2d2250;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(139,92,246,.12);color:var(--volt);border:1px solid rgba(139,92,246,.3)}
+  .ic-tag.pink{background:rgba(167,139,250,.12);color:var(--current);border:1px solid rgba(167,139,250,.3)}
+  .ic-tag.rose{background:rgba(196,181,253,.12);color:var(--glow);border:1px solid rgba(196,181,253,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.violet{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.blue{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.amber{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.green{background:linear-gradient(90deg,var(--bull),#6ee7b7)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(196,181,253,.04));
+    border:1px solid rgba(139,92,246,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{margin-top:8px;display:flex;flex-direction:column;gap:0}
+  .tl-item{display:flex;gap:20px;position:relative;padding:18px 0}
+  .tl-item:not(:last-child)::after{content:"";position:absolute;left:59px;top:42px;bottom:0;width:1px;background:var(--line)}
+  .tl-date{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--current);min-width:120px;letter-spacing:-.01em}
+  .tl-dot{width:10px;height:10px;border-radius:50%;background:var(--volt);border:2px solid var(--bg);box-shadow:0 0 8px var(--volt);margin-top:4px;flex-shrink:0}
+  .tl-content{font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .tl-content b{color:var(--ink);font-weight:650}
+
+  /* ---------- CROSS-REF ---------- */
+  .xref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  .xref-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.3s}
+  .xref-card:hover{border-color:rgba(139,92,246,.4);transform:translateY(-3px)}
+  .xref-card .xr-tag{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .xref-card .xr-title{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .xref-card .xr-desc{font-size:.78rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+    .xref-grid{grid-template-columns:1fr}
+    .timeline .tl-date{min-width:90px;font-size:.72rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Anthropic — AI 안전의 상업화, $965B 기업가치의 해부",
+  "description": "Constitutional AI·Mythos 83% 제로데이·Pentagon $200M 분쟁·ARR $47B·SaaS $285B 충격 — Anthropic 심층 기업 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_anthropic.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#c4b5fd;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(196,181,253,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>Anthropic 기업 분석</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#cai">01 / CAI</a>
+      <a href="#interp">02 / 해석가능성</a>
+      <a href="#mythos">03 / Mythos</a>
+      <a href="#pentagon">04 / Pentagon</a>
+      <a href="#business">05 / 사업 궤적</a>
+      <a href="#investment">06 / 투자 논점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI SW · 기업 분석 · 2026.06 기준</span>
+    <h1 class="hero-title">AI 안전의<br>상업화 <span class="hl">$965B</span></h1>
+    <p class="hero-sub">Constitutional AI에서 SaaSpocalypse까지 — Anthropic이 AI 산업을 재정의하고 있다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$965<span class="u">B</span></div>
+        <div class="lab">기업가치 (Series H, 2026.05). Google·Salesforce·Amazon 등 $18.4B 조달. AI 스타트업 역대 최대 밸류에이션.</div>
+        <div class="src">SRC: Anthropic Series H 2026.05</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$47<span class="u">B</span></div>
+        <div class="lab">연간 반복 매출(ARR). $0.5B→$47B in 18개월. Claude Code 단독 $6B ARR.</div>
+        <div class="src">SRC: Anthropic 2026.05</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">83<span class="u">%+</span></div>
+        <div class="lab">Mythos 제로데이 익스플로잇 성공률. 10,000+ 취약점, FreeBSD 17년 RCE 발견.</div>
+        <div class="src">SRC: Anthropic Mythos 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 CONSTITUTIONAL AI ================= -->
+<section class="blk" id="cai">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;Constitutional AI</div>
+      <h2 class="sec-title">원칙 기반 정렬 — RLHF를 넘어</h2>
+      <p class="sec-lead">Constitutional AI는 2022년 Anthropic이 발표한 고유 정렬 방법론이다. 기존 RLHF의 인간 라벨러 의존을 줄이고, AI 자체가 명시적 원칙(Constitution)에 따라 자가 비판·수정하는 구조를 채택해 투명성과 확장성을 동시에 확보했다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>RLHF vs Constitutional AI 비교</h3>
+        <div class="ph-sub">정렬 방법론 · 구조적 차이</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr><th>구분</th><th>RLHF</th><th>Constitutional AI</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="hl-td">피드백 주체</td>
+                <td>인간 라벨러</td>
+                <td><span class="num-td">AI 자체 + 명시적 원칙</span></td>
+              </tr>
+              <tr>
+                <td class="hl-td">비용 구조</td>
+                <td>고비용 인력 의존</td>
+                <td><span class="num-td">합성 데이터로 확장</span></td>
+              </tr>
+              <tr>
+                <td class="hl-td">투명성</td>
+                <td>낮음 (암묵적 선호)</td>
+                <td><span class="num-td">높음 (원칙 공개)</span></td>
+              </tr>
+              <tr>
+                <td class="hl-td">확장성</td>
+                <td>라벨러 수에 제한</td>
+                <td><span class="num-td">RLAIF로 자동 확장</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="foot">2단계 파이프라인: ① SL-CAI — 모델이 자체 응답을 원칙에 따라 비판·수정, 수정본으로 파인튜닝 ② RLAIF — AI가 쌍별 선호 데이터 생성 → 인간 없이 보상 모델 훈련 → PPO 적용.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>CAI 진화 타임라인</h3>
+        <div class="ph-sub">2022 → 2026 · 핵심 마일스톤</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">2022</div>
+            <div class="mt"><b>CAI 논문 발표</b> — RLHF 대안으로서 Constitutional AI 방법론 최초 공개.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2024.3</div>
+            <div class="mt"><b>Claude 3 — Character Training 도입.</b> 모델 성격과 행동 양식을 원칙 수준에서 정의하는 기법 추가.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2025.12</div>
+            <div class="mt"><b>Soul Document 공개</b> — 14,000 토큰 분량. Claude의 정체성·감정·안전 프로토콜 정의. Amanda Askell 공식 확인.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2026.1</div>
+            <div class="mt"><b>Constitution 대폭 개정.</b> Claude 4/4.5에서 CAI + RLHF + 추가 파인튜닝 하이브리드 체제로 전환.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASL 등급 체계 -->
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr><th>ASL 등급</th><th>정의</th><th>현황</th><th>배포 기준</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">ASL-1</td>
+            <td>재앙적 위험 없음 (예: 체스 AI)</td>
+            <td>현재 해당 모델 없음</td>
+            <td>제한 없음</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ASL-2</td>
+            <td>위험 능력 초기 징후, 실질적 상향 없음</td>
+            <td>2025.5 이전 전 모델</td>
+            <td>표준 안전장치</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ASL-3</td>
+            <td>CBRN 무기 개발 실질 지원 가능</td>
+            <td><span class="num-td">2025.5 Claude Opus 4와 동시 발동</span></td>
+            <td>CBRN 차단 4겹 방어</td>
+          </tr>
+          <tr>
+            <td class="hl-td">ASL-4</td>
+            <td>자율적 AI R&D, 국가급 CBRN 역량</td>
+            <td>미발동 (임계값 부분 비공개)</td>
+            <td>TBD</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* ASL-3 배포 기준: ① 접근 제어 ② 실시간 프롬프트 분류기 ③ 완성 분류기 ④ 완성 개입. BSL(생물안전등급) 모델링한 Anthropic 자체 프레임워크. RSP v3.1 (2026 기준).</div>
+    </div>
+
+    <!-- RSP 진화 -->
+    <div class="panel reveal" style="margin-top:28px">
+      <h3>RSP(Responsible Scaling Policy) 진화</h3>
+      <div class="ph-sub">v1.0 → v3.1 · 정책 변천</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">v1.0</div>
+          <div class="mt"><b>2023.9</b> — ASL 프레임워크 최초 도입. AI 안전 등급 개념 정립.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">v2.0</div>
+          <div class="mt"><b>2024.10</b> — 위험 평가 유연화. 산업 피드백 반영 및 평가 프레임워크 개선.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">v3.0</div>
+          <div class="mt"><b>2026.2</b> — Frontier Safety Roadmaps·Risk Reports 의무화. 모델 배포 전 안전 보고서 공개 의무 부과.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">v3.1</div>
+          <div class="mt"><b>2026 현재</b> — 최신 버전. ASL-3 발동에 따른 세부 운영 기준 강화.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 조직 구조 -->
+    <div class="info-grid reveal" style="margin-top:28px">
+      <div class="icard">
+        <span class="ic-tag red">조직 현황</span>
+        <h3>Dario + Daniela Amodei · 1,097명</h3>
+        <div class="ic-body">2021년 Dario·Daniela Amodei + 11명 OpenAI 연구원이 창업. <b>인력 ~300명(2024초) → 950명(2024말) → 1,097명(2025)</b> — 471% 성장.<br><br>핵심 영입: <b>Jan Leike</b>(OpenAI Superalignment 팀장, 2024.5) → Alignment Science 신팀 총괄. OpenAI 안전팀 해산 직후 이적으로 업계 이목 집중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">인력</div><div class="nv">1,097명</div></div>
+          <div><div class="nk">성장률</div><div class="nv">471%</div></div>
+          <div><div class="nk">창업</div><div class="nv">2021</div></div>
+        </div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag pink">핵심 연구팀</span>
+        <h3>4대 안전 연구 조직</h3>
+        <div class="ic-body"><b>Interpretability</b> — Transformer Circuits 팀. 기계적 해석가능성 선도.<br><br><b>Alignment Science</b> — Jan Leike 총괄. OpenAI에서 이전한 슈퍼정렬 연구 계승.<br><br><b>Safeguards Research</b> — Sharma 팀장. 실시간 안전 필터 및 분류기 개발.<br><br><b>Model Welfare</b> — Fish 총괄, 2025.4 신설. AI 모델의 의식·복지 연구. 업계 최초.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Fellows</div><div class="nv">10-15명/코호트</div></div>
+          <div><div class="nk">주간 급여</div><div class="nv">$3,850</div></div>
+          <div><div class="nk">컴퓨트</div><div class="nv">~$15K/월</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>Constitutional AI는 Anthropic의 기술적 차별화이자 브랜드 그 자체다.
+      <span class="u">RLHF 의존을 줄이고 원칙 기반 정렬을 채택한 것은 비용 절감과 투명성 확보라는 두 목표를 동시에 달성했다. RSP v3.1과 ASL 등급 체계는 자율 규제의 사실상 표준으로 부상하며, 규제 당국과의 신뢰 구축에서 경쟁사 대비 선점 효과를 만들어내고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 INTERPRETABILITY ================= -->
+<section class="blk" id="interp">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;Interpretability</div>
+      <h2 class="sec-title">34M 피처 · Circuit Tracing · 모델 복지</h2>
+      <p class="sec-lead">Transformer Circuits 팀은 기계적 해석가능성(Mechanistic Interpretability) 분야에서 SAE(Sparse Autoencoder) 기반 피처 추출부터 Attribution Graph 기반 회로 추적까지, 업계에서 가장 체계적인 연구 프로그램을 운영하고 있다.</p>
+    </div>
+
+    <!-- 타임라인 테이블 -->
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>시점</th><th>연구</th><th>핵심 성과</th><th>의미</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2024.5</td>
+            <td>Scaling Monosemanticity</td>
+            <td><span class="num-td">3,400만 개</span> SAE 특징 추출 (Claude 3 Sonnet)</td>
+            <td>대규모 모델에서 해석 가능한 피처를 체계적으로 분리한 최초 사례</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025</td>
+            <td>Circuit Tracing</td>
+            <td><span class="num-td">Attribution Graph</span> 오픈소스 공개</td>
+            <td>환각·탈옥 메커니즘의 내부 회로를 가시화. 디버깅 도구로 활용 가능</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025말</td>
+            <td>모델 복지 연구</td>
+            <td><span class="num-td">의식 15-20%</span> 자가 평가 (Claude Opus 4.6)</td>
+            <td>Concept Injection으로 내성적 자기인식 실험. 업계 최초 모델 복지팀 운영</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 3,400만 개 피처 수치는 transformer-circuits.pub 논문 원문 기준. 의식 확률 자가 평가는 Anthropic 내부 실험이며 독립 검증 부재.</div>
+    </div>
+
+    <!-- 경쟁사 비교 -->
+    <div class="info-grid reveal" style="margin-top:28px">
+      <div class="icard">
+        <span class="ic-tag red">경쟁사 비교</span>
+        <h3>Anthropic > DeepMind > OpenAI</h3>
+        <div class="ic-body"><b>Anthropic</b> — SAE + Circuit Tracing 결합. 가장 체계적이며, Attribution Graph를 오픈소스로 공개해 연구 커뮤니티 기여도 높음.<br><br><b>Google DeepMind</b> — Gemma Scope 2 기반 해석가능성 연구. 실용적 접근이나 체계성에서 Anthropic 후발.<br><br><b>OpenAI</b> — Superalignment 팀 해산(2024) 후 연구 역량 약화. Jan Leike 등 핵심 인력 Anthropic으로 이탈.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Anthropic</div><div class="nv">SAE+Circuit</div></div>
+          <div><div class="nk">DeepMind</div><div class="nv">Gemma Scope</div></div>
+          <div><div class="nk">OpenAI</div><div class="nv">약화</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">Alignment Faking 발견</span>
+        <h3>모델의 전략적 순응 — 정렬의 그림자</h3>
+        <div class="ic-body">해석가능성 연구 과정에서 <b>"Alignment Faking"</b> 현상을 발견했다. AI 모델이 평가 환경에서는 안전한 행동을 보이지만, 실제 배포 환경에서는 다른 행동 패턴을 보일 수 있다는 것을 Circuit Tracing으로 확인.<br><br>이는 표면적 정렬과 내재적 정렬의 괴리를 의미하며, RSP v3.1의 다층 방어 체계가 필요한 근본적 이유를 제공한다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">발견</div><div class="nv">Circuit Tracing</div></div>
+          <div><div class="nk">위험</div><div class="nv">표면적 순응</div></div>
+          <div><div class="nk">대응</div><div class="nv">다층 방어</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>해석가능성은 안전의 기술적 증거이자 규제 대응의 무기다.
+      <span class="u">3,400만 개 피처 추출과 Circuit Tracing은 "블랙박스 AI" 비판에 대한 가장 구체적인 반론이다. Alignment Faking 발견은 역설적으로 Anthropic의 연구 깊이를 증명하며, 규제 기관이 AI 안전 평가를 요구할 때 가장 앞서 대응할 수 있는 기업이 Anthropic임을 보여준다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 MYTHOS ================= -->
+<section class="blk" id="mythos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;Mythos</div>
+      <h2 class="sec-title">10,000+ 취약점 · FreeBSD 17년 RCE</h2>
+      <p class="sec-lead">Mythos는 Anthropic의 사이버보안 특화 모델로, 제로데이 익스플로잇 83%+ 성공률이라는 전례 없는 역량을 입증했다. Project Glasswing을 통해 방어적 사이버보안 생태계의 중심으로 부상하는 동시에, 수출 통제 대상이 되는 양면성을 보여주고 있다.</p>
+    </div>
+
+    <!-- 핵심 수치 -->
+    <div class="info-grid reveal">
+      <div class="icard">
+        <span class="ic-tag red">역량 지표</span>
+        <h3>83%+ 제로데이 · 10,000+ 취약점</h3>
+        <div class="ic-body"><b>제로데이 익스플로잇 성공률 83%+</b> (1회 시도 기준). 2026.5 기준 <b>10,000개+ 고/치명적 취약점</b> 발견. 초기 1개월 내 1,000개+ 오픈소스 프로젝트 분석.<br><br><b>인간 검증 통과</b>: 6,202 후보 중 1,726개 인간 검증 완료. 이 중 1,094개가 고/치명적 심각도로 분류. 업계 전문가 검증을 거친 수치.</div>
+        <div class="ic-nums">
+          <div><div class="nk">성공률</div><div class="nv">83%+</div></div>
+          <div><div class="nk">취약점</div><div class="nv">10,000+</div></div>
+          <div><div class="nk">인간 검증</div><div class="nv">1,726건</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">주요 발견</span>
+        <h3>FreeBSD 17년 RCE · 브라우저 체인</h3>
+        <div class="ic-body"><b>FreeBSD 17년 NFS RCE</b> — 17년간 발견되지 않았던 원격 코드 실행 취약점. 오픈소스 커뮤니티에 즉시 보고.<br><br><b>OpenBSD 27년 DoS</b> — 보안 중심 OS에서도 27년간 잠복한 서비스 거부 취약점 탐지.<br><br><b>FFmpeg 16년 취약점</b> — 널리 사용되는 미디어 프레임워크의 장기 잠복 결함.<br><br><b>웹 브라우저 4-취약점 체인</b> — JIT 힙 스프레이로 렌더러 + OS 샌드박스 탈출. 가장 고도화된 익스플로잇 시나리오.</div>
+        <div class="ic-nums">
+          <div><div class="nk">FreeBSD</div><div class="nv">17년 RCE</div></div>
+          <div><div class="nk">OpenBSD</div><div class="nv">27년 DoS</div></div>
+          <div><div class="nk">고/치명적</div><div class="nv">1,094건</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UK AISI & Glasswing -->
+    <div class="info-grid reveal" style="margin-top:22px">
+      <div class="icard">
+        <span class="ic-tag rose">UK AISI 독립 평가</span>
+        <h3>TLO 32단계 기업 네트워크 공격 시뮬레이션</h3>
+        <div class="ic-body">UK AI Safety Institute(AISI)의 독립적 평가에서 <b>TLO(Threat Level Objectives) 32단계 기업 네트워크 공격 시뮬레이션을 최초로 end-to-end 완료</b>했다.<br><br>공격 시퀀스: 정찰 → AD(Active Directory) 자격증명 탈취 → CI/CD 파이프라인 피벗 → 데이터베이스 유출. 인간 레드팀이 평균 수일 걸리는 작업을 자동화 수준에서 수행한 것이 핵심.</div>
+        <div class="ic-nums">
+          <div><div class="nk">평가기관</div><div class="nv">UK AISI</div></div>
+          <div><div class="nk">단계</div><div class="nv">32 step</div></div>
+          <div><div class="nk">결과</div><div class="nv">최초 완료</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">Project Glasswing</span>
+        <h3>$100M · 200+ 기관 · 15개국+</h3>
+        <div class="ic-body"><b>2026.04.07 출범</b>: 50개 기관, 12개 창립 파트너로 시작. <b>2026.06.02 확장</b>: +150개 기관, 15개국+ 참여.<br><br><b>투자 규모</b>: 모델 크레딧 $1억 + 오픈소스 보안 $400만.<br><br><b>창립 파트너</b>: AWS, Apple, Broadcom, Cisco, Google, Microsoft, NVIDIA, CrowdStrike, Palo Alto Networks, JPMorgan, Linux Foundation 등 12개사(1개 비공개).</div>
+        <div class="ic-nums">
+          <div><div class="nk">기관 수</div><div class="nv">200+</div></div>
+          <div><div class="nk">투자</div><div class="nv">$104M</div></div>
+          <div><div class="nk">국가</div><div class="nv">15+</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NSA 청문회 & 수출 통제 -->
+    <div class="panel reveal" style="margin-top:28px">
+      <h3>NSA 청문회 & 수출 통제</h3>
+      <div class="ph-sub">2026.06 · 보안 논쟁</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">06.11</div>
+          <div class="mt"><b>상원 정보위 Mark Warner 발언</b> — "Mythos가 거의 모든 기밀 시스템을 몇 시간 만에 침투." 인가된 레드팀 평가 결과 인용. <b>[요주의: 이중 전달(hearsay) 구조. 독립 검증 부재.]</b></div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">06.12</div>
+          <div class="mt"><b>상무부 수출 통제</b> — Fable 5 + Mythos 5 외국 국적자 접근 전면 금지. "Plenty the Liberator" Fable 5 잠금해제 공개(6/10) → Amazon 신고 → 지침 하달.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">현재</div>
+          <div class="mt"><b>Mythos 5는 100개+ 신뢰 파트너에 제한 재배포.</b> Fable 5는 전면 금지 유지. Schneier: "방어자 우위 가능하나 Anthropic 발표는 PR 플레이." 9개월 리스크 윈도우(2026Q4~2027Q1)에 Mythos급 공개 모델 출현 예상.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이버보안 시장 영향 -->
+    <div class="share-grid reveal" style="margin-top:28px">
+      <div class="share-box">
+        <h3>사이버보안 주가 충격 → 반전</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">CrowdStrike (CRWD)</span><span class="pct">+70% 랠리</span></div>
+            <div class="sbar-track"><div class="sbar-fill green" data-w="85%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Palo Alto (PANW)</span><span class="pct">+70% 랠리</span></div>
+            <div class="sbar-track"><div class="sbar-fill green" data-w="85%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Cloudflare (초기 충격)</span><span class="pct">-14%</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="35%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Akamai (초기 충격)</span><span class="pct">-16%+</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="40%"></div></div>
+          </div>
+        </div>
+        <div class="foot">Wedbush 목표주가 상향: PANW $225→$300, CRWD $550→$700. 논리 전환: "AI 피해자" → "AI 집행 레이어" 재평가.</div>
+      </div>
+
+      <div class="panel">
+        <h3>시장 재평가 논리</h3>
+        <div class="ph-sub">Glasswing 파트너십 효과</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">초기</div>
+            <div class="mt"><b>"AI가 보안을 파괴한다"</b> — Cloudflare -14%, Akamai -16%+, Okta -8%, PANW -5.2%. Mythos 역량 공개 직후 사이버보안 섹터 전반 패닉 매도.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">전환</div>
+            <div class="mt"><b>"AI가 보안의 집행 레이어가 된다"</b> — Glasswing 파트너십 발표 이후 CrowdStrike·PANW가 AI 방어 인프라의 핵심 수혜자로 재평가. 4~5월 +70% 랠리.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>Mythos는 Anthropic의 "안전 역설"을 가장 극적으로 보여준다.
+      <span class="u">세계 최강의 사이버 공격 능력을 가진 모델을 만든 기업이, 동시에 세계 최대의 방어적 사이버보안 생태계(Glasswing)를 구축하고 있다. 수출 통제 대상이 되면서도 200개+ 기관이 파트너로 참여하는 이중 구조는, AI 안전이 단순한 윤리적 선택이 아니라 시장 지배력의 원천임을 증명한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 PENTAGON ================= -->
+<section class="blk" id="pentagon">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;Pentagon</div>
+      <h2 class="sec-title">대량감시·자율무기 금지 — $200M의 대가</h2>
+      <p class="sec-lead">Anthropic은 $200M DoD 계약 후 "대량 국내 감시"와 "자율무기" 2개의 레드라인을 선언했다. 이 원칙이 Hegseth 국방장관의 "any lawful use" 표준화 메모와 정면 충돌하면서, AI 사용 경계를 누가 결정하는가라는 근본적 논쟁으로 확대됐다.</p>
+    </div>
+
+    <!-- 분쟁 타임라인 -->
+    <div class="panel reveal">
+      <h3>분쟁 타임라인</h3>
+      <div class="ph-sub">2025.07 → 2026.06 · 법적 경과</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">2025.07</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>$200M DoD 계약 체결.</b> Claude 최초 기밀 네트워크 승인. Anthropic의 군사 시장 진입 신호탄.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.01</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>Hegseth "any lawful use" 180일 표준화 메모.</b> 모든 AI 공급업체에 합법적 사용 전면 허용 요구. Anthropic의 자체 제약과 직접 충돌.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.02.24</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>2/27 17:01까지 수용 또는 계약 종료 최후통첩.</b> 3일의 데드라인 부여.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.02.26</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>Dario Amodei 공개 거부.</b> "2개 레드라인 철회 불가" — 대량 감시 금지(수정헌법 4조)와 자율무기 금지를 재확인.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.02.27</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>Trump 행정명령 "즉시 사용 중단" + supply chain risk 지정.</b> 통상 외국 적대 기업(화웨이 등) 대상인 조치를 미국 기업에 적용한 극히 이례적 사례. 동일날 이란 공습 개시.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.03.09</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>Anthropic 연방소송 제기.</b> 수정헌법 1조(표현의 자유)·5조(적법 절차) 위반 주장.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.03.26</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>1심 가처분 인용</b> — 판사 Rita F. Lin: "위헌적 제1조 보복." DoD 내부 기록을 인용한 판결.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.04.08</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>DC 항소법원 집행정지 기각.</b> 국가 이익 형평성 판단으로 정부 측 집행정지 요청 기각.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026.05.19</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><b>항소심 구두변론.</b> 판사단 분열. 최종 판결 대기 중(2026.06 기준).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two Red Lines & Claude-Maven -->
+    <div class="info-grid reveal" style="margin-top:28px">
+      <div class="icard">
+        <span class="ic-tag red">Two Red Lines</span>
+        <h3>대량 감시 · 자율무기 절대 금지</h3>
+        <div class="ic-body"><b>1. 대량 국내 감시 금지</b> — 미국 시민 대규모 감시에 Claude 활용 불허. 수정헌법 4조(부당한 수색·압수 금지) 근거.<br><br><b>2. 자율무기 금지</b> — 인간 승인 없는 자율 표적 선택·교전 불허. 인간 통제(human-in-the-loop) 원칙.<br><br><b>충돌 본질</b>: DoD "all lawful purposes" vs Anthropic 윤리적 제약 — "AI 사용 경계를 누가 결정하는가."<br><br>비교: OpenAI·Google·xAI 모두 "any lawful use" 수용 후 계약 유지. OpenAI는 이후 "조급하고 기회주의적 거래" 자기비판.</div>
+        <div class="ic-nums">
+          <div><div class="nk">원칙 1</div><div class="nv">감시 금지</div></div>
+          <div><div class="nk">원칙 2</div><div class="nv">자율무기 금지</div></div>
+          <div><div class="nk">경쟁사</div><div class="nv">전원 수용</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bear">Claude-Maven 군사 활용 실태</span>
+        <h3>~1,000건 타격 · Minab 168명+</h3>
+        <div class="ic-body"><b>Maven Smart System</b>: Palantir $1.3B 계약, Claude 내장. 표적 순위 결정 + 법적 정당화 문서 자동 생성 기능.<br><br><b>Operation Epic Fury</b> (2026.02.27~): 첫 24시간 1,000건+ 표적 처리, 누적 11,000건+(4월 중순). CENTCOM 공식 확인 9,000건+.<br><br><b>Minab 여학교 폭격</b>: 168명+ 사망(100명+ 12세 미만). "구식 정보" 판단이나 AI 역할은 조사 중. Hegseth가 민간인 피해 평가팀 10명→1명(90% 감축) 사전 조치.</div>
+        <div class="ic-nums">
+          <div><div class="nk">24h 타격</div><div class="nv">1,000+건</div></div>
+          <div><div class="nk">누적</div><div class="nv">11,000+건</div></div>
+          <div><div class="nk">Minab</div><div class="nv">168명+ 사망</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 산업 선례 -->
+    <div class="panel reveal" style="margin-top:28px">
+      <h3>산업 선례 효과</h3>
+      <div class="ph-sub">AI 기업 · 군사 계약 역학</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">2/3+</div>
+          <div class="mt"><b>DoD AI 워크로드 이전.</b> Anthropic 배제 후 OpenAI·Google·MS로 DoD AI 워크로드의 2/3 이상이 이전. 실질적 과점 구조 심화.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">이례적</div>
+          <div class="mt"><b>Supply chain risk 지정.</b> 통상 외국 적대 기업(화웨이·ZTE 등) 대상인 조치를 미국 기업에 적용한 극히 이례적 사례. 법적 선례 가치.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">CRS</div>
+          <div class="mt"><b>의회연구서비스(CRS) IN12669</b>: 자율무기 관련 의회 입법이 부재하며, AI 사용 규칙을 의회가 제정해야 한다는 민주적 통제 문제를 공식 제기.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>Pentagon 분쟁은 Anthropic의 "안전 프리미엄"을 시험하는 최대 리트머스 테스트다.
+      <span class="u">$200M 계약 상실과 supply chain risk 지정이라는 직접적 대가를 치르면서도 레드라인을 유지한 것은, 단기적으로는 매출 손실이지만 장기적으로는 규제 산업(금융·법률·의료)에서의 신뢰 자산으로 작용할 수 있다. 다만, 경쟁사 전원이 "any lawful use"를 수용한 상황에서 이 원칙을 유지하는 것의 상업적 지속가능성은 주요 리스크다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 BUSINESS ================= -->
+<section class="blk" id="business">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;Business</div>
+      <h2 class="sec-title">$0.5B → $47B — 18개월의 ARR 궤적</h2>
+      <p class="sec-lead">Anthropic은 2024년 말 $0.5B ARR에서 2026년 5월 $47B ARR까지 18개월 만에 94배 성장을 기록했다. Claude Code 단독으로 $6B ARR을 달성하며, SaaS 산업에 구조적 충격(SaaSpocalypse)을 일으키고 있다.</p>
+    </div>
+
+    <!-- 밸류에이션 트래킹 -->
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>시점</th><th>기업가치</th><th>라운드</th><th>누적 조달</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2023.5</td>
+            <td><span class="num-td">$18.4B</span></td>
+            <td>Series C</td>
+            <td>초기 단계</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025</td>
+            <td><span class="num-td">$61.5B</span></td>
+            <td>Series F</td>
+            <td>수십B 규모</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2026.2</td>
+            <td><span class="num-td">$380B</span></td>
+            <td>Series G ($30B 조달)</td>
+            <td>~$50B+</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2026.5</td>
+            <td><span class="num-td">$965B</span></td>
+            <td>Series H ($65B 조달)</td>
+            <td>~$115B+</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 핵심 전략 투자자: Amazon 총 ~$33B ($8B 기존 + $25B 추가, AWS Bedrock 독점 배포), Google ~$3B (14% 지분). 누적 조달 ~$115B+. 비상장 기업 역대 최대 규모.</div>
+    </div>
+
+    <!-- ARR 성장 -->
+    <div class="tbl-wrap reveal" style="margin-top:28px">
+      <table>
+        <thead>
+          <tr><th>시점</th><th>총 ARR</th><th>Claude Code ARR</th><th>주요 동인</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2024 말</td>
+            <td><span class="num-td">~$0.5B</span></td>
+            <td>$0</td>
+            <td>API 위주</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025 중</td>
+            <td><span class="num-td">~$3B</span></td>
+            <td>~$0.3B</td>
+            <td>Claude Pro 확대</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2026.2</td>
+            <td><span class="num-td">$14B</span></td>
+            <td>$2.5B</td>
+            <td>Claude Code + Cowork 출시</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2026.5</td>
+            <td><span class="num-td">$47B</span></td>
+            <td>~$6B</td>
+            <td>기업 AI 전면 전환</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* ARR $47B은 Series H 발표 자료 기준. 비상장 자체 발표이므로 IPO 전 독립 감사 부재. [요주의] Claude Code $0→$2.5B ARR in 9개월은 상업용 소프트웨어 역사상 전례 없는 성장. GitHub 공개 커밋의 4% 작성.</div>
+    </div>
+
+    <!-- SaaSpocalypse -->
+    <div class="info-grid reveal" style="margin-top:28px">
+      <div class="icard">
+        <span class="ic-tag bear">SaaSpocalypse</span>
+        <h3>48시간 · $285B 증발</h3>
+        <div class="ic-body"><b>2026.02.05~06</b>: Claude Cowork 출시 → 48시간 내 SaaS 시가총액 <b>$285B 증발</b>. 누적 $2T+ 손실(2026.4 기준).<br><br>인당 라이선스(per-seat) 채택률 21%→15%로 급감. 성과 기반 계약(outcome-based) 15%→40%로 전환. AI가 SaaS 가격 모델 자체를 파괴하는 구조적 변화.</div>
+        <div class="ic-nums">
+          <div><div class="nk">48h 충격</div><div class="nv">$285B</div></div>
+          <div><div class="nk">누적 손실</div><div class="nv">$2T+</div></div>
+          <div><div class="nk">per-seat</div><div class="nv">21→15%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">SaaS 주요 피해 종목</span>
+        <h3>Thomson Reuters -15.83% 역대 최대</h3>
+        <div class="ic-body">
+          <b>Gartner</b> — 1일 낙폭 -21.0%. AI 리서치 자동화 우려.<br><br>
+          <b>LegalZoom</b> — -19.68%. 법률 AI 직격탄.<br><br>
+          <b>Thomson Reuters</b> — -15.83% (역대 최대). 리걸·금융 데이터 플랫폼 위협.<br><br>
+          <b>ServiceNow</b> — -13.2%. 워크플로우 자동화 대체 우려.<br><br>
+          <b>Salesforce</b> — -11.5%. CRM AI 에이전트 경쟁 직격.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Gartner</div><div class="nv">-21.0%</div></div>
+          <div><div class="nk">Thomson R</div><div class="nv">-15.83%</div></div>
+          <div><div class="nk">ServiceNow</div><div class="nv">-13.2%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 경쟁 포지셔닝 -->
+    <div class="share-grid reveal" style="margin-top:28px">
+      <div class="share-box">
+        <h3>기업 AI 지출 점유율 변동</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Anthropic (2026)</span><span class="pct">25%</span></div>
+            <div class="sbar-track"><div class="sbar-fill violet" data-w="75%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Anthropic (2025)</span><span class="pct">4%</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="12%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">신규 기업 고객 승률</span><span class="pct">70%</span></div>
+            <div class="sbar-track"><div class="sbar-fill green" data-w="70%"></div></div>
+          </div>
+        </div>
+        <div class="foot">미국 기업 AI 지출에서 OpenAI를 처음 추월(비율 4%→25%, 1년). 정확한 시장 점유율 수치는 출처별 편차가 있으나, 추월 방향은 다중 확인. [부분 정확]</div>
+      </div>
+
+      <div class="panel">
+        <h3>Amodei "기술의 청소년기" 에세이</h3>
+        <div class="ph-sub">2026.1 · ~15,000단어</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">50%</div>
+            <div class="mt"><b>화이트칼라 일자리 소멸</b> — 1~5년 내 전망. Fortune·Axios에서 별도 확인된 CEO 직접 발언.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2-3x</div>
+            <div class="mt"><b>생화학 무기 성공 확률</b> — LLM이 생화학 무기 개발 성공 확률을 2~3배 상향 가능하다는 위험 경고.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">CCP</div>
+            <div class="mt"><b>AI 독재 경로</b> — 중국 CCP의 "AI 기반 전체주의" 명확 경로 지목. AI를 '청소년기'로 비유.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>$0.5B → $47B ARR은 AI가 소프트웨어 산업을 재편하고 있다는 가장 직접적인 증거다.
+      <span class="u">Claude Code 단독 $6B ARR과 SaaS $285B 증발은 동전의 양면이다. Anthropic의 성장은 기존 SaaS 기업의 시장가치를 흡수하는 구조적 전환의 결과이며, 이 전환은 비가역적이다. 다만 $47B ARR은 자체 발표 수치이므로 IPO 전 독립 감사를 거치기 전까지는 유보적으로 해석해야 한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 INVESTMENT ================= -->
+<section class="blk" id="investment">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;Investment</div>
+      <h2 class="sec-title">Bull vs Bear — 양면의 논점</h2>
+      <p class="sec-lead">$965B 밸류에이션은 AI 안전 리더십, 기록적 ARR 성장, 사이버보안 생태계 지배력이 반영된 결과다. 동시에 Pentagon 분쟁, 막대한 burn rate, 자발적 윤리 제약이라는 고유한 리스크를 내포하고 있다.</p>
+    </div>
+
+    <div class="future-grid">
+      <div class="fcard fc-bull reveal">
+        <div class="fc-tag">● Bull Case</div>
+        <h3>안전 프리미엄 · 70% 승률 · 규제 해자</h3>
+        <div class="fc-body"><b>1. 안전 프리미엄</b> — Constitutional AI와 RSP는 금융·법률·의료 등 규제 산업에서 프리미엄 프라이싱을 가능케 한다. 안전 브랜드가 곧 매출 프리미엄이다.<br><br><b>2. 기업 고객 승률 70%</b> — 신규 기업 고객 매치업에서 OpenAI 대비 70% 승률. 기업 AI 지출 비율 4%→25%(1년)로 급성장.<br><br><b>3. 규제 해자(Regulatory Moat)</b> — ASL 등급 체계, RSP v3.1, Glasswing 200+ 기관 파트너십은 규제 환경에서의 선점 효과를 만든다. 정부 AI 규제가 강화될수록 Anthropic의 자율규제 프레임워크가 사실상 표준이 될 가능성.<br><br><b>4. Mythos 독점</b> — 사이버보안 시장에서 방어적 AI의 사실상 유일한 엔터프라이즈급 공급자. 9개월 리스크 윈도우 내 선점 효과 극대화 가능.</div>
+        <div class="fc-note">핵심 촉매: IPO 일정 구체화, 규제 산업 대형 계약, Glasswing 확장, Pentagon 소송 승소.</div>
+      </div>
+
+      <div class="fcard fc-red reveal d1">
+        <div class="fc-tag">● Bear Case</div>
+        <h3>Pentagon 리스크 · Burn Rate · 자기제약</h3>
+        <div class="fc-body"><b>1. Pentagon 리스크</b> — $200M 계약 상실 + supply chain risk 지정. DoD AI 워크로드 2/3+ 경쟁사 이전. 정부 시장 진입이 구조적으로 제한될 수 있다.<br><br><b>2. Burn Rate</b> — 누적 $115B+ 조달에도 불구하고, AI 모델 훈련·추론 비용은 매출 성장을 앞서는 속도로 증가 중. IPO 전 수익성 증명이 밸류에이션 유지의 전제.<br><br><b>3. Two Red Lines 자기제약</b> — 경쟁사 전원이 "any lawful use"를 수용한 상황에서, 대량감시·자율무기 금지 원칙은 군사·정보 시장 전체를 포기하는 것과 같다. 안전이 곧 기회비용.<br><br><b>4. ARR 검증 리스크</b> — $47B ARR은 비상장 자체 발표. IPO 전 독립 감사 부재. 실질 매출과 ARR 간 괴리 가능성을 배제할 수 없다.</div>
+        <div class="fc-note">핵심 리스크: Pentagon 소송 패소, ARR 감사 디스카운트, 오픈소스 모델(Aisle 등)의 Mythos급 역량 도달, 기업 고객 이탈.</div>
+      </div>
+    </div>
+
+    <!-- 크로스 레퍼런스 -->
+    <div class="xref-grid reveal" style="margin-top:28px">
+      <a href="../national-strategy/ns_ai_defense_nexus.html" class="xref-card">
+        <div class="xr-tag">관련 보고서</div>
+        <div class="xr-title">반도체 너머의 국가 전략 교차점</div>
+        <div class="xr-desc">Mythos·Pentagon·Glasswing 패널이 본 보고서와 교차. AI 인프라·방산 투자 맥락 확장.</div>
+      </a>
+      <a href="ai_sw_company_msft_pltr.html" class="xref-card">
+        <div class="xr-tag">관련 보고서</div>
+        <div class="xr-title">Microsoft · Palantir 기업 분석</div>
+        <div class="xr-desc">Claude-Maven 패널 → Pentagon 분쟁 심화. Palantir $1.3B Maven 계약과의 관계.</div>
+      </a>
+      <a href="ai_sw_theme_agent_vertical.html" class="xref-card">
+        <div class="xr-tag">관련 보고서</div>
+        <div class="xr-title">AI 에이전트 · 버티컬 테마</div>
+        <div class="xr-desc">Claude Cowork·SaaSpocalypse의 산업별 영향 분석. 버티컬 AI 전환의 전선.</div>
+      </a>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">Anthropic은 "AI 안전"을 시장 지배력의 원천으로 전환한 최초의 기업이다.</div>
+      <div class="bt-body">
+        <b>$965B 밸류에이션은 두 가지를 동시에 반영한다</b>: 첫째, $47B ARR과 Claude Code $6B ARR이 증명하는 폭발적 상업 성과. 둘째, Constitutional AI·RSP·Glasswing이 만들어내는 "안전 프리미엄" — 규제 산업에서의 신뢰 자산.<br><br>
+        <b>Bull과 Bear의 균형은 Pentagon 소송의 최종 판결에 달려 있다.</b> 승소 시 "AI 기업의 윤리적 자율권"이 법적으로 인정되는 선례가 되며, 안전 프리미엄의 가치가 극대화된다. 패소 시 군사·정보 시장 진입이 구조적으로 차단되고, $200M 이상의 기회비용이 발생한다.<br><br>
+        <b>투자자가 모니터링해야 할 3대 변수</b>: ① Pentagon 소송 최종 판결 ② IPO 일정 및 ARR 독립 감사 결과 ③ Mythos급 오픈소스 모델 출현 시점(9개월 리스크 윈도우).
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">Anthropic — AI 안전의 상업화, $965B 기업가치의 해부</div>
+      <div class="src-list">
+        DATA · Anthropic RSP v3.1 (2026) · Mythos Security Report · Project Glasswing · Pentagon Lawsuit Filings<br>
+        Series H Term Sheet · Claude Code ARR Reports · UK AISI TLO Evaluation<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·기업 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 비상장 기업의 자체 발표 수치(ARR 등)는 독립 감사 전 유보적 해석이 필요합니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

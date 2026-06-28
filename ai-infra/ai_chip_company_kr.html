@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FuriosaAI RNGD 512 TOPS·Rebellions Rebel100 2 PFLOPS·DeepX 에지 AI·Samsung 2nm — 한국 AI 반도체 생태계 심층 분석">
+<meta name="keywords" content="FuriosaAI,Rebellions,DeepX,삼성파운드리,RNGD,Rebel100,NPU,한국AI반도체">
+<meta property="og:title" content="FuriosaAI·Rebellions·DeepX — 한국 AI 반도체 기업 분석">
+<meta property="og:description" content="FuriosaAI RNGD 512 TOPS·Rebellions Rebel100 2 PFLOPS·DeepX 에지 AI·Samsung 2nm — 한국 AI 반도체 생태계 심층 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_chip_company_kr.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FuriosaAI·Rebellions·DeepX — 한국 AI 반도체 기업 분석">
+<meta name="twitter:description" content="FuriosaAI RNGD 512 TOPS·Rebellions Rebel100 2 PFLOPS·DeepX 에지 AI·Samsung 2nm — 한국 AI 반도체 생태계 심층 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_chip_company_kr.html">
+<title>FuriosaAI·Rebellions·DeepX — 한국 AI 반도체 기업 분석</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#f59e0b;
+    --current:#fbbf24;
+    --glow:#fde68a;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(253,230,138,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#3d3520;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(245,158,11,.12);color:var(--volt);border:1px solid rgba(245,158,11,.3)}
+  .ic-tag.pink{background:rgba(251,191,36,.12);color:var(--current);border:1px solid rgba(251,191,36,.3)}
+  .ic-tag.rose{background:rgba(253,230,138,.12);color:var(--glow);border:1px solid rgba(253,230,138,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- COMP CARD ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;margin-top:8px}
+  .comp-card h3{font-size:1.06rem;font-weight:750;margin-bottom:18px}
+  .comp-card .cc-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+  .comp-card .cc-row:last-child{border-bottom:none}
+  .comp-card .cc-label{color:var(--ink-2)}
+  .comp-card .cc-val{font-family:var(--mono);font-weight:700;color:var(--ink)}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.purple{color:#a78bfa}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(253,230,138,.04));
+    border:1px solid rgba(245,158,11,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FuriosaAI·Rebellions·DeepX — 한국 AI 반도체 기업 분석",
+  "description": "FuriosaAI RNGD 512 TOPS·Rebellions Rebel100 2 PFLOPS·DeepX 에지 AI·Samsung 2nm — 한국 AI 반도체 생태계 심층 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/ai_chip_company_kr.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#fde68a;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(253,230,138,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>한국 AI 반도체</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#furiosa">01 / FuriosaAI</a>
+      <a href="#rebellions">02 / Rebellions</a>
+      <a href="#deepx">03 / DeepX</a>
+      <a href="#samsung-foundry">04 / Samsung Foundry</a>
+      <a href="#policy">05 / 정책·전망</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 밸류체인 · 기업 분석 · 2026.06 기준</span>
+    <h1 class="hero-title">K-AI<br>반도체 <span class="hl">도전자</span></h1>
+    <p class="hero-sub">FuriosaAI·Rebellions·DeepX — NVIDIA 독점에 도전하는 한국 AI 칩 생태계</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">512<span class="u"> TOPS</span></div>
+        <div class="lab">FuriosaAI RNGD INT8 성능. 5nm TSMC. H100 대비 랙 밀도 3.5배. Meta $800M 인수 제안 거절.</div>
+        <div class="src">SRC: FuriosaAI 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2<span class="u"> PFLOPS</span></div>
+        <div class="lab">Rebellions Rebel100. 쿼드 칩렛 NPU, Samsung SF4X. ISSCC 2026 발표. Pre-IPO $2.34B.</div>
+        <div class="src">SRC: Rebellions ISSCC 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">51<span class="u">조</span></div>
+        <div class="lab">정부 AI+반도체 예산. AI 30조 + 반도체 21조 + 반도체 특별회계 2조(2027년 가동).</div>
+        <div class="src">SRC: 산업부 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>한국 AI 반도체 생태계를 따라</div>
+  </div>
+</header>
+
+<!-- ================= 01 FURIOSAAI ================= -->
+<section class="blk" id="furiosa">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;FuriosaAI</div>
+      <h2 class="sec-title">RNGD 512 TOPS · Meta $800M 거절 · 2027 IPO</h2>
+      <p class="sec-lead">퓨리오사AI는 RNGD(Renegade) 칩으로 H100 대비 3.5배 랙 밀도를 실현하며 추론 전용 NPU 시장에서 독자 행보를 선언했다. Meta의 $800M 인수 제안을 거절하고 2027년 $1B+ IPO를 목표로 Series D를 진행 중이다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <h3>RNGD(Renegade) 스펙 카드</h3>
+      <div class="cc-row"><span class="cc-label">공정</span><span class="cc-val">TSMC 5nm</span></div>
+      <div class="cc-row"><span class="cc-label">INT8 성능</span><span class="cc-val">512 TOPS</span></div>
+      <div class="cc-row"><span class="cc-label">TDP</span><span class="cc-val">180W</span></div>
+      <div class="cc-row"><span class="cc-label">랙 밀도 vs H100</span><span class="cc-val">3.5x (3kW vs ~10kW/서버)</span></div>
+      <div class="cc-row"><span class="cc-label">EXAONE 전력효율</span><span class="cc-val">2.25x 우위 (LG AI Research 기준)</span></div>
+      <div class="cc-row"><span class="cc-label">창업자</span><span class="cc-val">백준호 (ex-AMD/Samsung)</span></div>
+    </div>
+
+    <div class="info-grid" style="margin-top:24px">
+      <div class="icard reveal">
+        <span class="ic-tag red">전략 · 고객</span>
+        <h3>LG EXAONE 앵커 · KT·SKT 배치</h3>
+        <div class="ic-body"><b>LG AI Research(EXAONE)</b>가 앵커 고객으로, EXAONE 추론 기준 2.25배 전력효율 우위를 검증. KT·SKT DC에도 배치 중.<br><br>추론 전용 NPU로 포지셔닝하여 NVIDIA GPU의 훈련 영역과 직접 경쟁을 회피하는 전략. CUDA 대신 자체 SDK(FuriosaAI SDK)를 제공하며, 한국 텔코·AI 기업 중심의 초기 시장을 공략.</div>
+        <div class="ic-nums">
+          <div><div class="nk">앵커</div><div class="nv">LG EXAONE</div></div>
+          <div><div class="nk">배치</div><div class="nv">KT·SKT</div></div>
+          <div><div class="nk">효율</div><div class="nv">2.25x</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">펀딩 · IPO</span>
+        <h3>Meta $800M 거절 · Series D · 2027 IPO $1B+</h3>
+        <div class="ic-body"><b>2025.03</b>: Meta가 $800M 인수를 제안했으나 거절. 독립 기업으로서의 장기 가치를 선택한 결정으로, TechCrunch 확인.<br><br><b>Series D</b> $300~500M 진행 중. <b>2027년 IPO</b> 목표, 밸류에이션 $1B+ 전망.<br><br>리스크: 고객 다변화 부족(LG·KT·SKT 한국 중심). CUDA 생태계 대비 자체 SDK 도입 장벽. 글로벌 하이퍼스케일러 수주가 밸류에이션 레벨업 관건.</div>
+        <div class="ic-nums">
+          <div><div class="nk">Meta 거절</div><div class="nv">$800M</div></div>
+          <div><div class="nk">Series D</div><div class="nv">$300-500M</div></div>
+          <div><div class="nk">IPO 목표</div><div class="nv">2027</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>FuriosaAI의 가치는 Meta 거절이 증명한 독립 의지와 추론 특화 전략에 있다.
+      <span class="u">$800M 인수 거절은 창업팀이 단기 수익보다 독립적 AI 칩 플랫폼 구축을 선택했음을 의미한다. 추론 시장이 2028년 전체의 65-70%로 확대되는 메가트렌드 속에서, RNGD의 3.5배 랙 밀도와 2.25배 전력효율은 DC 운영자에게 실질적 TCO 절감을 제안한다. 단, 글로벌 고객 다변화 없이는 $1B+ IPO 밸류에이션을 정당화하기 어렵다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 REBELLIONS ================= -->
+<section class="blk" id="rebellions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;Rebellions</div>
+      <h2 class="sec-title">Rebel100 2 PFLOPS · ISSCC 2026 · Pre-IPO $2.34B</h2>
+      <p class="sec-lead">리벨리온은 Sapeon 합병을 완료하고 Rebel100으로 ISSCC 2026 무대에 섰다. 쿼드 칩렛 아키텍처로 2 PFLOPS를 달성했으며, JPMorgan 주관으로 KOSPI IPO를 준비 중이다. 15개월 만에 밸류에이션이 2.75배 상승했다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <h3>Rebel100 스펙 카드</h3>
+      <div class="cc-row"><span class="cc-label">성능</span><span class="cc-val">2 PFLOPS</span></div>
+      <div class="cc-row"><span class="cc-label">아키텍처</span><span class="cc-val">쿼드 칩렛 NPU</span></div>
+      <div class="cc-row"><span class="cc-label">공정</span><span class="cc-val">Samsung SF4X</span></div>
+      <div class="cc-row"><span class="cc-label">메모리</span><span class="cc-val">144GB HBM3E, 4.8 TB/s</span></div>
+      <div class="cc-row"><span class="cc-label">vs H100 TPS/W</span><span class="cc-val">3.2x 우위 (자체 발표*)</span></div>
+      <div class="cc-row"><span class="cc-label">vs H200</span><span class="cc-val">동급 성능 (자체 발표*)</span></div>
+    </div>
+
+    <div class="info-grid" style="margin-top:24px">
+      <div class="icard reveal">
+        <span class="ic-tag red">ISSCC 2026 · 기술</span>
+        <h3>쿼드 칩렛 · Samsung SF4X · 2nm 로드맵</h3>
+        <div class="ic-body"><b>ISSCC 2026</b>에서 Rebel100을 공식 발표. 쿼드 칩렛 아키텍처로 NPU 확장성을 입증하며 Tom's Hardware 등 글로벌 매체 주목.<br><br><b>Samsung SF4X</b> 파운드리 파트너십. TSMC 대안으로서 삼성 첨단 공정의 첫 주요 AI 칩 고객.<br><br><b>차세대 REBEL</b>: Samsung Foundry SF2(2nm)로 개발 중. 2nm 노드에서 삼성 파운드리와의 협업이 심화.</div>
+        <div class="ic-nums">
+          <div><div class="nk">ISSCC</div><div class="nv">2026 발표</div></div>
+          <div><div class="nk">파운드리</div><div class="nv">Samsung SF4X</div></div>
+          <div><div class="nk">차세대</div><div class="nv">SF2 (2nm)</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">IPO · 밸류에이션</span>
+        <h3>Pre-IPO $2.34B · KOSPI Q3 2026 · JPMorgan</h3>
+        <div class="ic-body"><b>총 투자 $850M+</b>. Sapeon 합병 후 밸류에이션이 $929M → $2.34B로 <b>15개월 만에 2.75배</b> 상승(2026.03, TechCrunch·Bloomberg 확인).<br><br><b>KOSPI IPO</b> Q3 2026 예비심사 진행 중, JPMorgan 주관. 한국 AI 반도체 최초 대형 IPO 사례가 될 전망.<br><br>리스크: Rebel100 성능은 자체 발표이며 <b>MLPerf 독립 검증 미완</b>. 투자 판단 시 독립 벤치마크 결과 확인 필요(검증 등급: 요주의).</div>
+        <div class="ic-nums">
+          <div><div class="nk">Pre-IPO</div><div class="nv">$2.34B</div></div>
+          <div><div class="nk">총 투자</div><div class="nv">$850M+</div></div>
+          <div><div class="nk">IPO 주관</div><div class="nv">JPMorgan</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>Rebellions의 IPO 성공 여부는 MLPerf 독립 검증이 결정한다.
+      <span class="u">Pre-IPO $2.34B과 JPMorgan 주관은 글로벌 투자자들의 기대를 반영하지만, Rebel100의 H100 대비 TPS/W 3.2배 우위는 자체 벤치마크 기준이다. ISSCC 2026 발표는 기술 발표이지 성능 인증이 아니다. MLPerf 등 독립 검증이 IPO 전에 완료되어야 밸류에이션 정당화가 가능하다. Samsung SF4X 파운드리 파트너십은 삼성에게도 첨단 AI 칩 레퍼런스를 제공하는 상호 이익 구조다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 DEEPX ================= -->
+<section class="blk" id="deepx">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;DeepX</div>
+      <h2 class="sec-title">DX-M1 25 TOPS · 에지 AI · 현대차 파트너십</h2>
+      <p class="sec-lead">DeepX는 DC가 아닌 에지 AI에 특화된 전략으로 차별화한다. DX-M1은 25 TOPS를 3~5W에서 구현하며, 현대/기아 Robotics LAB 파트너십으로 물리적 AI(로봇·팩토리) 시장을 공략한다. Samsung SF2(2nm) 최초 상업 고객이라는 점도 주목할 만하다.</p>
+    </div>
+
+    <div class="icard reveal" style="margin-top:8px">
+      <span class="ic-tag red">DX-M1 · 에지 AI 특화</span>
+      <h3>25 TOPS at 3-5W · Samsung 5nm · 로봇·팩토리</h3>
+      <div class="ic-body"><b>DX-M1</b>: 25 TOPS, Samsung 5nm, 3~5W TDP. DC 칩 대비 극단적 전력효율로 에지 디바이스(로봇·스마트팩토리·자동차)에 최적화.<br><br><b>현대/기아 Robotics LAB</b> 앵커 파트너. 현대차그룹의 로봇·자율주행 전략과 연계된 에지 AI NPU 공급.<br><br><b>DX-M2</b>: 2nm Samsung SF2로 양산 예정(2027). Samsung Foundry SF2의 최초 상업 고객으로, 삼성의 2nm 양산 역량 검증 역할도 수행.<br><br><b>IPO</b> 2026년 계획, 밸류에이션 ~$700M. FuriosaAI·Rebellions과 달리 에지 AI 특화로 DC 시장 경쟁을 우회.</div>
+      <div class="ic-nums">
+        <div><div class="nk">DX-M1</div><div class="nv">25 TOPS</div></div>
+        <div><div class="nk">TDP</div><div class="nv">3-5W</div></div>
+        <div><div class="nk">DX-M2 공정</div><div class="nv">SF2 (2nm)</div></div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:24px">
+      <div class="panel reveal">
+        <h3>에지 AI NPU 시장 포지션</h3>
+        <div class="ph-sub">DC 회피 · 물리적 AI 타겟</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$58.9B</div>
+            <div class="mt"><b>온디바이스 AI 추론 시장(2030E)</b> — CAGR 17.6%. DeepX가 타겟하는 에지 NPU 시장의 총 규모.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">CAGR 27%</div>
+            <div class="mt"><b>에지 AI 가속기 성장률</b> — 클라우드/DC(75%)보다 CAGR이 높은 최고 성장 세그먼트.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">현대/기아</div>
+            <div class="mt"><b>Robotics LAB 파트너</b> — 로봇·자율주행·스마트팩토리 에지 AI NPU 공급. 물리적 AI 수직 통합.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>Samsung SF2 최초 상업 고객</h3>
+        <div class="ph-sub">2nm 양산 검증 역할</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">2027</div>
+            <div class="mt"><b>DX-M2 양산 목표</b> — Samsung SF2(2nm) 공정. 삼성 파운드리의 2nm 상업 역량 최초 검증.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~$700M</div>
+            <div class="mt"><b>IPO 밸류에이션</b> — 2026년 IPO 계획. 에지 AI 특화 NPU 기업으로서의 프리미엄 반영.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">에지 특화</div>
+            <div class="mt"><b>DC 시장과 비경쟁</b> — FuriosaAI(DC 추론), Rebellions(DC 훈련/추론)과 시장 영역이 겹치지 않음.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 SAMSUNG FOUNDRY ================= -->
+<section class="blk" id="samsung-foundry">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;Samsung Foundry</div>
+      <h2 class="sec-title">3nm 수율 50% vs TSMC 90% — 62.7pp 점유율 격차</h2>
+      <p class="sec-lead">삼성 파운드리는 글로벌 점유율 7.3%로 TSMC(70.2%)와 62.7pp 격차를 보이고 있다. 3nm 수율 ~50%는 TSMC ~90%와 40pp 차이로 고객 이탈의 근본 원인이다. 2nm(SF2)를 2025.11 양산 개시하며 반전을 노린다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>항목</div>
+        <div>Samsung Foundry</div>
+        <div>TSMC</div>
+        <div>격차</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">글로벌 점유율 (Q2 2025)</div>
+        <div><span class="cr-num">7.3%</span></div>
+        <div><span class="cr-num blue">70.2%</span></div>
+        <div><span class="cr-num amber">62.7pp</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">3nm 수율</div>
+        <div><span class="cr-num">~50%</span></div>
+        <div><span class="cr-num blue">~90%</span></div>
+        <div><span class="cr-num amber">~40pp</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">2nm 양산</div>
+        <div><span class="cr-num">2025.11 (SF2)</span></div>
+        <div><span class="cr-num blue">2025 (N2)</span></div>
+        <div>수율 55-60% vs TBD</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">AI 칩 고객</div>
+        <div>Rebellions·DeepX·Tesla</div>
+        <div><span class="cr-num blue">NVIDIA·Broadcom·Apple</span></div>
+        <div>헤드라인 격차</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">헤드라인 계약</div>
+        <div><span class="cr-num">Tesla AI6 $16.5B</span></div>
+        <div><span class="cr-num blue">CoWoS 85%+ 약정</span></div>
+        <div>삼성 단일 대형, TSMC 다수</div>
+      </div>
+    </div>
+
+    <div class="info-grid" style="margin-top:28px">
+      <div class="icard reveal">
+        <span class="ic-tag red">3nm 수율 격차 문제</span>
+        <h3>50% vs 90% — 고객 이탈의 근본</h3>
+        <div class="ic-body">삼성 3nm 수율 ~50%는 TSMC ~90%와 <b>40pp 격차</b>. 이는 동일 설계에서 삼성이 TSMC 대비 거의 절반의 양품만 생산한다는 의미로, 고객에게 직접적인 비용 불이익을 발생시킨다.<br><br>Design-Reuse, TrendForce 등 복수 소스에서 확인된 수치. 이 수율 격차가 고객 이탈(Qualcomm, NVIDIA 등이 TSMC 선호)의 근본 원인이며, 점유율 62.7pp 격차로 귀결된다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">삼성 3nm</div><div class="nv">~50%</div></div>
+          <div><div class="nk">TSMC 3nm</div><div class="nv">~90%</div></div>
+          <div><div class="nk">격차</div><div class="nv">40pp</div></div>
+        </div>
+      </div>
+
+      <div class="icard reveal d1">
+        <span class="ic-tag pink">2nm SF2 · 반전 시도</span>
+        <h3>2025.11 양산 · 수율 55-60% · Tesla $16.5B</h3>
+        <div class="ic-body"><b>SF2(2nm)</b>: 2025.11 양산 개시, 수율 55~60%(개선 추세). TrendForce 확인. TSMC N2 대비 선행 여부 불확실이나, 2nm 양산 자체가 기술력 입증.<br><br><b>Tesla AI6 $16.5B 계약</b>: 삼성 파운드리의 헤드라인 고객 확보. 자동차 AI칩 양산으로 TSMC 대안 수요를 흡수.<br><br>DeepX DX-M2, Rebellions REBEL 등 한국 AI 반도체 기업들이 SF2 고객으로 파이프라인 형성 중.</div>
+        <div class="ic-nums">
+          <div><div class="nk">SF2 양산</div><div class="nv">2025.11</div></div>
+          <div><div class="nk">수율</div><div class="nv">55-60%</div></div>
+          <div><div class="nk">Tesla</div><div class="nv">$16.5B</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>삼성 파운드리의 반전은 수율 격차 해소 없이는 불가능하다.
+      <span class="u">Tesla $16.5B과 Rebellions·DeepX 파트너십은 삼성 파운드리에 긍정적이지만, 3nm 40pp 수율 격차가 해소되지 않으면 TSMC 대안이 아닌 "차선책"으로 남는다. 2nm SF2에서 수율 55-60%는 3nm 대비 개선이지만, TSMC N2가 80%+ 수율을 달성할 경우 격차는 다시 벌어진다. 대만 지정학 리스크(Bloomberg $10T 손실 추산)가 삼성에 유일한 구조적 기회를 제공하지만, 이는 통제 불가능한 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 POLICY & OUTLOOK ================= -->
+<section class="blk" id="policy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;K-NVIDIA 정책 & 전망</div>
+      <h2 class="sec-title">AI 30조 + 반도체 21조 · 700조 생태계 · IPO 파이프라인</h2>
+      <p class="sec-lead">정부는 K-NVIDIA 이니셔티브로 AI 30조 + 반도체 21조원을 배정하고, 반도체 생태계 700조원(~2047년) 로드맵을 발표했다. 반도체 특별회계 2조원은 2027년부터 가동된다. 그러나 공공기관이 여전히 NVIDIA를 선택하는 현실이 정책 실효성의 시험대다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>정부 AI·반도체 예산 구조</h3>
+        <div class="ph-sub">국가성장펀드 150조 중 배정</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">30조</div>
+            <div class="mt"><b>AI 분야 배정</b> — 국가성장펀드 150조원 중. GPU 5만개+ 확보, AI G3 도약 전략 포함.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">21조</div>
+            <div class="mt"><b>반도체 분야 배정</b> — 파운드리·메모리·후공정·소재장비. Samsung Foundry 2nm 지원 포함.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10.1조</div>
+            <div class="mt"><b>2026년 AI 예산</b> — $7.27B, +57.8% YoY. 전년 대비 대폭 확대.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2조</div>
+            <div class="mt"><b>반도체 특별회계</b> — 2027년 가동 예정. 반도체 인력·인프라·R&D 전용 재원.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>장기 로드맵 & 한계</h3>
+        <div class="ph-sub">700조 생태계 · K-NVIDIA 실효성</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">700조</div>
+            <div class="mt"><b>반도체 생태계 총 투자</b> — $534B, ~2047년 목표. 정부+민간 합산. 20년+ 장기 로드맵.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">150조</div>
+            <div class="mt"><b>국가성장펀드</b> — AI·반도체·바이오·에너지 등 7대 분야. 민간 매칭 구조.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">한계</div>
+            <div class="mt"><b>공공기관 NVIDIA 선택</b> — K-NVIDIA 정책에도 불구, 공공기관이 성능·생태계 이유로 여전히 NVIDIA GPU 조달. 정책 실효성 시험대.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="future-grid" style="margin-top:32px">
+      <div class="fcard fc-red reveal">
+        <div class="fc-tag">● BULL CASE — K-AI 칩 생태계 성공</div>
+        <h3>IPO 3사 성공 · 삼성 수율 회복 · 글로벌 수주</h3>
+        <div class="fc-body">FuriosaAI(2027)·Rebellions(2026 Q3)·DeepX(2026) <b>3사 IPO가 모두 성공</b>하며 한국 AI 반도체 생태계의 자본 선순환 구조가 형성되는 시나리오.<br><br>삼성 파운드리 2nm 수율이 70%+로 개선되어 TSMC 대안으로 인정받고, Rebellions·DeepX의 차세대 칩이 SF2에서 양산. 정부 51조 투자가 인력·인프라로 실질 전환되면서 K-AI 칩 생태계가 NVIDIA 독점의 틈새를 파고든다.<br><br>추론 시장 확대(2028E 65-70%)가 한국 NPU 기업에 구조적 기회를 제공하는 타이밍 일치.</div>
+        <div class="fc-note">전제: MLPerf 독립 검증 성공 · 삼성 수율 70%+ · 글로벌 하이퍼스케일러 수주 1건+</div>
+      </div>
+
+      <div class="fcard fc-pink reveal d1">
+        <div class="fc-tag">● BEAR CASE — CUDA 벽 + 수율 정체</div>
+        <h3>NVIDIA 독점 유지 · 삼성 격차 지속 · IPO 부진</h3>
+        <div class="fc-body">CUDA 생태계 전환 비용(30~99% 패널티)이 한국 NPU의 글로벌 고객 확보를 차단하는 시나리오. <b>K-AI 칩이 한국 시장에 갇히면</b> 밸류에이션 정당화가 어렵다.<br><br>삼성 파운드리 3nm 수율 격차(40pp)가 2nm에서도 해소되지 않으면 Rebellions·DeepX의 차세대 칩 경쟁력에 직접 타격. TSMC 의존도가 다시 높아지면서 K-AI 칩의 비용 구조 불리.<br><br>공공기관이 K-NVIDIA 정책에도 NVIDIA를 선택하는 패턴이 반복되면 정책 신뢰도 하락.</div>
+        <div class="fc-note">전제: CUDA 대체 불가 · 삼성 수율 60% 정체 · 글로벌 수주 실패 · 공공조달 NVIDIA 지속</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">한국 AI 반도체의 성패는 "추론 시장 타이밍"과 "삼성 수율"의 교차점에 달려있다.</div>
+      <div class="bt-body">
+        <b>FuriosaAI·Rebellions·DeepX 3사는 각각 DC 추론·DC 훈련/추론·에지 AI로 분업 구조를 형성하고 있다.</b> NVIDIA와 정면 대결이 아닌 추론 특화·에지 특화·삼성 파운드리 연계라는 우회 전략으로 글로벌 시장에 접근한다.<br><br>
+        <b>추론 시장이 2028년 전체의 65-70%로 확대되는 메가트렌드가 한국 NPU에 구조적 기회를 제공한다.</b> NVIDIA의 추론 점유율이 ~70% → ~55%로 하락하는 구간에서, 한국 NPU가 TCO 우위(FuriosaAI 2.25x 효율, Rebellions TPS/W 3.2x)를 글로벌 시장에서 입증할 수 있느냐가 관건이다.<br><br>
+        <b>삼성 파운드리의 수율 회복은 한국 AI 칩 생태계 전체의 기반 인프라다.</b> Rebellions(SF4X→SF2)·DeepX(SF2)가 삼성 공정에 의존하는 만큼, 3nm 40pp 수율 격차가 2nm에서 해소되지 않으면 칩 설계가 아무리 좋아도 양산 경쟁력이 확보되지 않는다. 정부 51조 투자의 실질적 효과는 이 수율 격차 해소에 집중되어야 한다.<br><br>
+        <b>투자자 관점에서 Rebellions IPO(Q3 2026)가 한국 AI 반도체 생태계의 첫 시험대다.</b> MLPerf 독립 검증, 글로벌 고객 수주, 삼성 파운드리 수율 — 세 가지가 모두 충족되어야 IPO가 K-AI 칩 생태계의 신호탄이 된다. 하나라도 실패하면 밸류에이션 재평가가 불가피하다.
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">관련 리포트</span>
+        <h3>AI 반도체 시리즈</h3>
+        <div class="ic-body">
+          <b><a href="ai_chip_architecture_war.html" style="color:var(--current);text-decoration:underline">GPU vs ASIC — 아키텍처 전쟁</a></b> — NVIDIA·Broadcom·TPU·Trainium 글로벌 구도<br><br>
+          <b><a href="../national-strategy/ns_semiconductor_war.html" style="color:var(--current);text-decoration:underline">반도체 전쟁</a></b> — Samsung vs TSMC, 수출 통제, 지정학
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">검증 노트</span>
+        <h3>데이터 신뢰도 요약</h3>
+        <div class="ic-body">
+          한국 AI 반도체 관련 8건 검증 중 <b>확인 6건(75%)</b>, 요주의 1건(12.5%), 확인 1건(12.5%).<br><br>
+          <b>요주의</b>: Rebel100 H100 대비 TPS/W 3.2배 — 자체 발표 벤치마크, MLPerf 독립 검증 미완. 투자 판단 시 주의 필요.<br><br>
+          <b>확인</b>: FuriosaAI RNGD 512 TOPS(furiosa.ai 공식), Meta $800M 거절(TechCrunch), Rebellions $2.34B(Bloomberg), Samsung 3nm 수율 50%(Design-Reuse), SF2 양산 2025.11(TrendForce), K-NVIDIA 51조(UPI·Seoul Economic Daily).
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">FuriosaAI·Rebellions·DeepX — 한국 AI 반도체 기업 분석</div>
+      <div class="src-list">
+        DATA · FuriosaAI RNGD Specs (furiosa.ai) · TechCrunch Meta $800M (2025.03)<br>
+        Tom's Hardware ISSCC 2026 Rebellions · Bloomberg Pre-IPO $2.34B (2026.03)<br>
+        Design-Reuse Samsung 3nm Yield · TrendForce SF2 양산 (2025.11)<br>
+        UPI K-NVIDIA Policy · Seoul Economic Daily · 산업부 보도자료<br>
+        HPCwire FuriosaAI RNGD · NVIDIA Q1 FY27 · JPMorgan Semiconductor Research<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·기업 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·업계 추정을 종합한 것으로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. Rebel100 성능은 자체 벤치마크 기준이며 MLPerf 등 독립 검증이 미완료된 상태입니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

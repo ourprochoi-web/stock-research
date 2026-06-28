@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="글로벌 ESS $24B→$285B(CAGR 42%)·AI DC 전력 220→800TWh·LFP vs NMC·CATL 35%·IRA $35/kWh — 에너지 전환 투자 분석">
+<meta name="keywords" content="ESS,에너지저장,AI데이터센터,전력,LFP,NMC,CATL,BYD,IRA,2차전지">
+<meta property="og:title" content="ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관">
+<meta property="og:description" content="글로벌 ESS $24B→$285B(CAGR 42%)·AI DC 전력 220→800TWh·LFP vs NMC·CATL 35%·IRA $35/kWh — 에너지 전환 투자 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/energy_ess_ai_power.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관">
+<meta name="twitter:description" content="글로벌 ESS $24B→$285B(CAGR 42%)·AI DC 전력 220→800TWh·LFP vs NMC·CATL 35%·IRA $35/kWh — 에너지 전환 투자 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/energy_ess_ai_power.html">
+<title>ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#22c55e;
+    --current:#4ade80;
+    --glow:#86efac;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(134,239,172,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#1a3d20;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(34,197,94,.12);color:var(--volt);border:1px solid rgba(34,197,94,.3)}
+  .ic-tag.pink{background:rgba(74,222,128,.12);color:var(--current);border:1px solid rgba(74,222,128,.3)}
+  .ic-tag.rose{background:rgba(134,239,172,.12);color:var(--glow);border:1px solid rgba(134,239,172,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.china{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.usa{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.korea{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(134,239,172,.04));
+    border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관",
+  "description": "글로벌 ESS $24B→$285B(CAGR 42%)·AI DC 전력 220→800TWh·LFP vs NMC·CATL 35%·IRA $35/kWh — 에너지 전환 투자 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/energy/energy_ess_ai_power.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#86efac;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(134,239,172,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>ESS · AI DC 전력</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#ess-market">01 / ESS 시장</a>
+      <a href="#ai-dc-power">02 / AI DC 전력</a>
+      <a href="#lfp-nmc">03 / LFP vs NMC</a>
+      <a href="#ess-share">04 / 시장 점유</a>
+      <a href="#investment">05 / 투자·정책</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">에너지 전환 · 산업 개관 · 2026.06 기준</span>
+    <h1 class="hero-title">ESS $285B<br>AI 전력 <span class="hl">교차점</span></h1>
+    <p class="hero-sub">에너지 저장이 AI 데이터센터 전력의 핵심 인프라가 되고 있다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">$285<span class="u">B</span></div>
+        <div class="lab">글로벌 ESS 시장 2030E. $24B→$285B, CAGR 42%. 2025년 최초 100GW 연간 설치 돌파.</div>
+        <div class="src">SRC: BloombergNEF 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">67<span class="u">%</span></div>
+        <div class="lab">AI DC 연계 ESS CAGR (2024-2030). 전체 ESS 성장률의 1.6배.</div>
+        <div class="src">SRC: Wood Mackenzie 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$2.3<span class="u">T</span></div>
+        <div class="lab">글로벌 에너지 전환 투자 (2025). 역대 최대. ESS +48% YoY 최고 성장률.</div>
+        <div class="src">SRC: BNEF 2025</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 ESS MARKET ================= -->
+<section class="blk" id="ess-market">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;ESS 시장 구조</div>
+      <h2 class="sec-title">$24B → $285B — ESS 12배 성장</h2>
+      <p class="sec-lead">글로벌 에너지 저장 시스템(ESS) 시장은 2023년 $24B에서 2030년 $285B로 CAGR 42% 성장이 전망된다. 2025년 최초 연간 100GW 설치를 돌파하며, 전 에너지 분야 중 최고 성장률(+48% YoY)을 기록하고 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>연도</th>
+            <th>설치량 (GWh)</th>
+            <th>시장 가치</th>
+            <th>DC 연계 비중</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2023</td>
+            <td><span class="num-td">85 GWh</span></td>
+            <td>$24B</td>
+            <td>2.5%</td>
+            <td>기준년도</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2024</td>
+            <td><span class="num-td">158 GWh</span></td>
+            <td>$42B</td>
+            <td>3.8%</td>
+            <td>+86% YoY</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025E</td>
+            <td><span class="num-td">230 GWh</span></td>
+            <td>$63B</td>
+            <td>5.5%</td>
+            <td>100GW 설치 돌파 (112GW/307GWh)</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2030E</td>
+            <td><span class="num-td">1,000 GWh</span></td>
+            <td>$285B</td>
+            <td>16.0%</td>
+            <td>CAGR 42%, 12배 성장</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* BNEF Energy Storage Outlook 2025 기준. 100GW 시대 보고서 확인 (Agent A·C·D 교차 검증).</div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>용도별 ESS 구성</h3>
+        <div class="ph-sub">그리드 · C&I · 주거용 · 2024 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">72%</div>
+            <div class="mt"><b>그리드 스케일 ESS</b> — 유틸리티급 대형 프로젝트. 재생에너지 간헐성 보완 및 주파수 조정이 주 용도. 중국이 전체 그리드 ESS의 60%+ 차지.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">18%</div>
+            <div class="mt"><b>C&I(상업·산업용)</b> — 피크 셰이빙, 수요 요금 관리, 비상 전원. AI DC 연계 ESS가 가장 빠르게 성장하는 세그먼트.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10%</div>
+            <div class="mt"><b>주거용(Residential)</b> — 가정용 태양광+ESS 연동. 독일·호주·일본이 주도. Tesla Powerwall이 대표 제품.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>지역별 ESS 설치 비중</h3>
+        <div class="ph-sub">중국 독주 · 글로벌 분포 · 2024</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">60%+</div>
+            <div class="mt"><b>중국</b> — 정부 의무 설치 정책, LFP 원가 우위, CATL·BYD 수직 통합. 2024년 단일 국가로 100GWh+ 설치.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~18%</div>
+            <div class="mt"><b>미국</b> — IRA ITC 30% 수혜. 캘리포니아·텍사스가 80%+ 집중. Moss Landing(2.8GWh) 세계 최대 단일 사이트.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~12%</div>
+            <div class="mt"><b>유럽</b> — 독일·영국·이탈리아 중심. 재생에너지 비중 확대에 따른 그리드 안정화 수요 급증.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">~10%</div>
+            <div class="mt"><b>기타(한국·호주·일본)</b> — 한국: 10차 전력수급계획에 ESS 확대 포함. 호주: 가정용 ESS 보급률 세계 최고 수준.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>ESS는 에너지 전환의 최고 성장 세그먼트다.
+      <span class="u">+48% YoY 성장률은 재생에너지(+6%), 원자력(-3%), 수소(-8%)를 압도한다. 2025년 100GW 연간 설치 돌파는 ESS가 실험적 기술에서 유틸리티 필수 인프라로 전환했음을 의미한다. 중국의 60%+ 설치 집중은 공급망 의존도 리스크이기도 하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 AI DC POWER ================= -->
+<section class="blk" id="ai-dc-power">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;AI DC 전력 교차점</div>
+      <h2 class="sec-title">DC 전력 220 → 800 TWh — ESS가 브리지</h2>
+      <p class="sec-lead">AI 데이터센터의 전력 소비가 2023년 220TWh에서 2030년 800TWh로 3.6배 확대되면서, DC 연계 ESS가 CAGR 67%로 성장하고 있다. ESS는 피크 셰이빙·UPS 대체·송전 병목 해소의 핵심 브리지 역할을 맡는다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>연도</th>
+            <th>글로벌 DC 전력 (TWh)</th>
+            <th>AI DC 비중</th>
+            <th>DC 연계 ESS (MW)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">2023</td>
+            <td><span class="num-td">220 TWh</span></td>
+            <td>9%</td>
+            <td>500 MW</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2025E</td>
+            <td><span class="num-td">300 TWh</span></td>
+            <td>18%</td>
+            <td>1,800 MW</td>
+          </tr>
+          <tr>
+            <td class="hl-td">2030E</td>
+            <td><span class="num-td">800 TWh</span></td>
+            <td>30~50%</td>
+            <td>18,000 MW</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 2030E AI DC 비중 50%는 IEA 상위 시나리오. IEA 공식 표현은 "AI+크립토 2026년 DC 전력 소비 2배". 30~50% 범위가 합리적 (요주의 항목 A5).</div>
+    </div>
+
+    <div class="compare-wrap reveal" style="margin-top:32px">
+      <div class="compare-header">
+        <div>비교 항목</div>
+        <div>디젤 발전기</div>
+        <div>ESS (IRA 미적용)</div>
+        <div>ESS + IRA 30%</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">100MW / 15년 TCO</div>
+        <div>$310M</div>
+        <div><span class="cr-num">$90M (-71%)</span></div>
+        <div><span class="cr-num">$70M (-77%)</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">500MW / 15년 TCO</div>
+        <div>$1,550M</div>
+        <div><span class="cr-num">$450M (-71%)</span></div>
+        <div><span class="cr-num">$351M (-77%)</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">1GW / 15년 TCO</div>
+        <div>$3,100M</div>
+        <div><span class="cr-num">$900M (-71%)</span></div>
+        <div><span class="cr-num">$702M (-77%)</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">손익분기 가동 시간</div>
+        <div>기준</div>
+        <div><span class="cr-num">연 ~120시간</span></div>
+        <div><span class="cr-num">연 ~80시간</span></div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">피크 셰이빙</span>
+        <h3>DC 전력비 30~40% 절감</h3>
+        <div class="ic-body">AI 훈련 워크로드는 <b>피크-투-어버리지 비율이 2.5~3.0배</b>에 달한다. ESS로 피크를 깎으면 전력 계약 용량을 줄여 수요 요금(demand charge)을 절감할 수 있다. 하이퍼스케일러들이 DC 현장에 100MWh+ ESS를 배치하는 이유다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">피크 비율</div><div class="nv">2.5~3.0x</div></div>
+          <div><div class="nk">절감 효과</div><div class="nv">30~40%</div></div>
+          <div><div class="nk">DC-ESS CAGR</div><div class="nv">67%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">UPS 대체</span>
+        <h3>디젤 UPS → LFP ESS 전환</h3>
+        <div class="ic-body">기존 DC 비상전원(UPS)은 디젤 발전기에 의존했으나, <b>TCO -71% 우위</b>와 탄소 규제 강화로 LFP ESS가 빠르게 대체하고 있다. ESS는 UPS 역할뿐 아니라 그리드 서비스(주파수 조정) 수익까지 창출해 이중 경제성을 확보한다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">TCO 절감</div><div class="nv">-71%</div></div>
+          <div><div class="nk">IRA 추가</div><div class="nv">-77%</div></div>
+          <div><div class="nk">BEP</div><div class="nv">~80시간/년</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>AI DC 전력 폭증이 ESS의 가장 빠른 성장 채널이다.
+      <span class="u">DC 연계 ESS CAGR 67%는 전체 ESS 성장률(42%)의 1.6배다. 디젤 대비 TCO -71%는 경제성만으로도 전환이 불가역적임을 보여주며, IRA 30% 적용 시 손익분기점이 연 80시간 가동으로 낮아진다. 다만 DC-ESS 전용 CAGR은 공개 소스가 제한적이며 Agent 추정치 성격이 있다 (요주의 항목 A4).</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 LFP vs NMC ================= -->
+<section class="blk" id="lfp-nmc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;LFP vs NMC 기술 분기</div>
+      <h2 class="sec-title">$52 vs $68/kWh — ESS의 사실상 표준</h2>
+      <p class="sec-lead">LFP(리튬인산철)는 ESS 채택률 92%로 사실상 표준이 됐다. 셀 원가 $52/kWh, 사이클 수명 8,000회의 압도적 경제성이 NMC(니켈-망간-코발트)를 밀어냈다. 에너지 밀도 trade-off가 유일한 약점이지만, ESS는 무게보다 비용이 핵심이다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header">
+        <div>비교 항목</div>
+        <div>LFP</div>
+        <div>NMC 811</div>
+        <div>격차</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">셀 원가 (2025)</div>
+        <div><span class="cr-num">$52/kWh</span></div>
+        <div>$68/kWh</div>
+        <div><span class="cr-num">LFP -24%</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">사이클 수명</div>
+        <div><span class="cr-num">8,000회</span></div>
+        <div>2,500회</div>
+        <div><span class="cr-num">LFP 3.2배</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">ESS 채택률 (2024)</div>
+        <div><span class="cr-num">92%</span></div>
+        <div>6%</div>
+        <div><span class="cr-num">LFP 압도</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">에너지 밀도</div>
+        <div>160 Wh/kg</div>
+        <div><span class="cr-num amber">270 Wh/kg</span></div>
+        <div><span class="cr-num amber">NMC +69%</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">2030E 원가 전망</div>
+        <div><span class="cr-num">$30/kWh</span></div>
+        <div>$40/kWh</div>
+        <div><span class="cr-num">격차 유지</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">열안정성</div>
+        <div><span class="cr-num">우수</span></div>
+        <div>보통</div>
+        <div>LFP 안전 우위</div>
+      </div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:32px">
+      <div class="indcard">
+        <div class="ind-num">$52</div>
+        <div class="ind-lab">LFP 셀 원가<br>/kWh (2025)</div>
+        <div class="ind-tag">BNEF·S&P</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">92%</div>
+        <div class="ind-lab">ESS LFP<br>채택률</div>
+        <div class="ind-tag">2024</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">8,000</div>
+        <div class="ind-lab">LFP 사이클<br>수명 (회)</div>
+        <div class="ind-tag">vs NMC 2,500</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">62%</div>
+        <div class="ind-lab">LFP 글로벌<br>점유율 (2025E)</div>
+        <div class="ind-tag">2020년 28%</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">$30</div>
+        <div class="ind-lab">LFP 2030E<br>원가 전망</div>
+        <div class="ind-tag">/kWh</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">LFP 승리 요인</span>
+        <h3>원가 + 수명 + 안전성 삼박자</h3>
+        <div class="ic-body">ESS는 EV와 달리 <b>무게·부피보다 $/kWh와 사이클 수명이 핵심</b>이다. LFP의 셀 원가 $52/kWh는 NMC $68 대비 24% 저렴하고, 사이클 수명 8,000회는 3.2배 길다. CATL TENER(12,000사이클)까지 등장하면서 LFP 우위가 확대 중이다.<br><br>배터리 팩 비용은 2013~2025년간 <b>82.6% 절감</b>(연 13.6% 하락). LFP 글로벌 점유율은 2020년 28%에서 2025E <b>62%로 역전</b>됐다.</div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">NMC의 남은 영역</span>
+        <h3>에너지 밀도가 필수인 용도</h3>
+        <div class="ic-body">NMC 811의 <b>270 Wh/kg 에너지 밀도</b>는 LFP(160 Wh/kg) 대비 69% 높다. 장거리 EV·항공·선박 등 무게 제약이 큰 응용에서는 NMC/NCA가 여전히 필수다.<br><br>그러나 ESS 시장에서 NMC 채택률은 <b>6%까지 하락</b>했고, 2030E 원가도 $40/kWh로 LFP $30와의 격차가 유지될 전망이다. ESS에서 NMC의 반등 가능성은 제한적이다.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>LFP는 ESS의 사실상 표준이며, 이 전환은 불가역적이다.
+      <span class="u">CATL·BYD가 LFP 기반 ESS로 시장을 장악한 것은 기술 승리가 아니라 경제성 승리다. 한국 배터리 3사(LGES·삼성SDI·SK온)는 LFP 라인 증설을 서두르고 있으나, 중국 대비 2~3년의 양산 경험 격차가 있다. LG에너지솔루션의 Tesla LFP 5.9조 계약(2027~2030)은 이 격차를 줄이기 위한 핵심 수단이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 ESS SHARE ================= -->
+<section class="blk" id="ess-share">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;시장 점유 & 경쟁 구도</div>
+      <h2 class="sec-title">CATL 35% · BYD 18% — 중국 61% 독주</h2>
+      <p class="sec-lead">ESS 시장은 CATL(35%)·BYD(18%)·Sungrow(8%)의 중국 3사가 합산 61%로 압도한다. Tesla(9%)가 비중국 최대이며, 한국 2사(삼성SDI 5.5%+LGES 5.0%)는 합산 10.5%에 그친다. 기술력은 인정받지만 규모의 경제에서 열세다.</p>
+    </div>
+
+    <div class="share-grid">
+      <div class="share-box reveal">
+        <h3>ESS 글로벌 시장 점유율 (2024)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">CATL (中)</span><span class="pct">35.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="90%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">BYD (中)</span><span class="pct">18.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="52%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Tesla (美)</span><span class="pct">9.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill usa" data-w="28%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Sungrow (中)</span><span class="pct">8.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="24%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Fluence (美)</span><span class="pct">7.5%</span></div>
+            <div class="sbar-track"><div class="sbar-fill usa" data-w="22%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Samsung SDI (韓)</span><span class="pct">5.5%</span></div>
+            <div class="sbar-track"><div class="sbar-fill korea" data-w="18%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">LG에너지솔루션 (韓)</span><span class="pct">5.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill korea" data-w="16%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>국적별 합산 점유율</h3>
+        <div class="ph-sub">중국 · 미국 · 한국 · 2024 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">61%</div>
+            <div class="mt"><b>중국 3사 합산</b> — CATL(35%)+BYD(18%)+Sungrow(8%). LFP 원가 우위와 정부 의무 설치 정책이 규모의 경제를 만들었다.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">16.5%</div>
+            <div class="mt"><b>미국 2사 합산</b> — Tesla(9%)+Fluence(7.5%). IRA 수혜로 미국 내 설치 확대 중. Tesla Megapack 2XL 3.9MWh가 대표 제품.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10.5%</div>
+            <div class="mt"><b>한국 2사 합산</b> — 삼성SDI(5.5%)+LGES(5.0%). 삼성 SBB3.0 4MWh(195Wh/kg), LGES RESU Flex가 주력. LFP 전환이 과제.</div>
+          </div>
+        </div>
+        <div class="foot">* SNE Research 2024 연간 통계 기준. ESS 전용 점유율로 EV 배터리 점유율과 별도.</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">CATL — TENER 5MWh</span>
+        <h3>ESS 절대 1위 · 12,000사이클</h3>
+        <div class="ic-body">CATL의 <b>TENER 5MWh</b>는 단일 컨테이너 기준 업계 최대 용량이며, <b>12,000사이클 수명</b>은 경쟁사 대비 50% 이상 길다. ESS 사업은 +80% CAGR로 성장하며 CATL 전체 매출에서 비중이 빠르게 확대 중이다.<br><br>2024년 CATL 순이익 507억 위안, 순이익률 14.1%. ESS가 차세대 성장 엔진으로 EV 둔화를 상쇄하고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">점유율</div><div class="nv">35.0%</div></div>
+          <div><div class="nk">TENER</div><div class="nv">5MWh</div></div>
+          <div><div class="nk">사이클</div><div class="nv">12,000</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">BYD — MC Cube 372kWh</span>
+        <h3>수직 통합 유일 플레이어</h3>
+        <div class="ic-body">BYD는 <b>배터리-EV-반도체 수직 통합</b>의 유일한 글로벌 플레이어다. ESS(MC Cube 372kWh)와 EV(2024년 427만대, +41.3%)를 동시에 공급하며 규모의 경제를 극대화하고 있다.<br><br>Blade Battery(LFP) 기반의 ESS는 안전성과 원가 우위를 동시에 확보했으며, 유럽·중동·동남아 시장 확대가 빠르게 진행 중이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">점유율</div><div class="nv">18.0%</div></div>
+          <div><div class="nk">MC Cube</div><div class="nv">372kWh</div></div>
+          <div><div class="nk">EV 판매</div><div class="nv">427만대</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Tesla — Megapack 2XL</span>
+        <h3>비중국 최대 · Lathrop 공장</h3>
+        <div class="ic-body"><b>Megapack 2XL 3.9MWh</b>는 비중국 ESS 제품 중 최대 용량이다. 캘리포니아 Lathrop 전용 공장에서 양산하며, 호주·유럽·미국 유틸리티 프로젝트에 대규모 공급 중.<br><br>Tesla Energy 부문은 2025년 매출 $10B+ 전망, 자동차 부문 대비 마진이 높아 실적 기여도가 빠르게 상승하고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">점유율</div><div class="nv">9.0%</div></div>
+          <div><div class="nk">Megapack</div><div class="nv">3.9MWh</div></div>
+          <div><div class="nk">생산</div><div class="nv">Lathrop</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">한국 2사 — 전환 과제</span>
+        <h3>삼성SDI SBB3.0 + LGES RESU Flex</h3>
+        <div class="ic-body">삼성SDI의 <b>SBB3.0 4MWh(195Wh/kg)</b>는 NMC 기반으로 에너지 밀도에서 차별화를 시도하지만, ESS 시장의 92% LFP 채택률 앞에서 주류가 되기 어렵다.<br><br>LGES는 2026년 ESS 매출 <b>전년비 3배 확대</b> 목표를 제시했으며, Tesla LFP 계약(5.9조)을 통해 LFP 역량을 빠르게 확보 중이다. 한국 2사 합산 10.5%에서 점유율 확대가 관건이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">삼성SDI</div><div class="nv">5.5%</div></div>
+          <div><div class="nk">LGES</div><div class="nv">5.0%</div></div>
+          <div><div class="nk">합산</div><div class="nv">10.5%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>ESS 시장은 중국 61% 독주 구도다.
+      <span class="u">CATL·BYD·Sungrow의 LFP 원가 우위와 중국 내수 60%+ 집중은 단기간에 뒤집기 어렵다. 한국 2사(10.5%)는 NMC→LFP 전환 속도와 IRA 수혜를 활용한 북미 시장 공략이 점유율 확대의 열쇠다. Tesla(9%)와의 경쟁에서도 기술 차별화가 필요한 상황이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 INVESTMENT ================= -->
+<section class="blk" id="investment">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;투자 흐름 & 정책</div>
+      <h2 class="sec-title">$2.3T 에너지 전환 · IRA $35/kWh</h2>
+      <p class="sec-lead">2025년 글로벌 에너지 전환 투자가 $2.3조로 사상 최대를 기록했다. 청정에너지 : 화석연료 투자 비율이 역사적 2:1 크로스오버를 달성한 가운데, ESS는 +48% YoY로 전 분야 최고 성장률을 보이고 있다. IRA Sec.45X($35+$10/kWh)와 OBBBA 리스크가 투자 방향을 좌우한다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>분야</th>
+            <th>투자액</th>
+            <th>YoY 성장</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">전동화 수송 (EV)</td>
+            <td><span class="num-td">$893B</span></td>
+            <td>+11%</td>
+            <td>최대 단일 분야</td>
+          </tr>
+          <tr>
+            <td class="hl-td">재생에너지</td>
+            <td><span class="num-td">$690B</span></td>
+            <td>+6%</td>
+            <td>태양광·풍력</td>
+          </tr>
+          <tr>
+            <td class="hl-td">그리드 인프라</td>
+            <td><span class="num-td">$483B</span></td>
+            <td>+9%</td>
+            <td>송전·배전망</td>
+          </tr>
+          <tr>
+            <td class="hl-td">에너지 저장 (ESS)</td>
+            <td><span class="num-td">$77B</span></td>
+            <td><span class="num-td">+48%</span></td>
+            <td>전 분야 최고 성장률</td>
+          </tr>
+          <tr>
+            <td class="hl-td">원자력 (SMR)</td>
+            <td><span class="num-td">$36B</span></td>
+            <td>-3%</td>
+            <td>정체</td>
+          </tr>
+          <tr>
+            <td class="hl-td">수소</td>
+            <td><span class="num-td">$7.3B</span></td>
+            <td>-8%</td>
+            <td>감소</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* BNEF 2025 에너지 전환 투자 보고서 기준. 지역별: 중국 ~$900B(44%) > 유럽 ~$370B > 미국 ~$280B.</div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● IRA / AMPC 현황</div>
+        <h3>$35+$10/kWh 세액공제</h3>
+        <div class="fc-body"><b>IRA Sec.45X</b>: 셀 $35/kWh + 모듈 $10/kWh 세액공제. 미국 내 배터리 제조 기업에 직접 현금 수혜.<br><br><b>IRA Sec.48E</b>: 독립형 ESS ITC 30% (보너스 포함 최대 50%). ESS 설치 경제성을 획기적으로 개선.<br><br>한국 3사 AMPC 수혜 합산 <b>~2조 2,000억원/년</b>(2024 기준). LG에너지솔루션: AMPC = 영업이익의 <b>121%</b>(없으면 적자).</div>
+        <div class="fc-note">AMPC 의존도 121%는 LG에너지솔루션이 보조금 없이는 적자 구조임을 의미한다. 정책 변동에 극도로 민감한 수익 구조.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● OBBBA 리스크</div>
+        <h3>"중국 물질적 지원" 배제 조항</h3>
+        <div class="fc-body"><b>OBBBA(2025.7.4)</b>: Sec.45X는 유지하되, "중국 물질적 지원" 배제 조항이 신설됐다. 문제는 중국산 흑연 음극재 의존도 <b>70~80%</b>로, AMPC 적격성이 저촉될 수 있다는 점이다.<br><br>중국 흑연 가공 점유율 <b>~90%</b>, 희토류 ~85%, 코발트 ~75%, 리튬 ~65%. IEA에 따르면 탈중국화에 최소 <b>5~7년</b>이 소요된다.</div>
+        <div class="fc-note">OBBBA 배제 조항의 구체적 적용 범위는 아직 확정 전. White & Case 법률 분석 참조. 한국 3사 AMPC 수혜에 직접 영향.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 미국 투자 급감</div>
+        <h3>H1 2025 -36% · 정책 공백</h3>
+        <div class="fc-body">미국 에너지 전환 투자는 H1 2025 <b>-36% 급감</b>했다. IRA 불확실성과 OBBBA 입법 전 정책 공백이 주요 원인.<br><br>그러나 글로벌 전체는 <b>+8% 성장</b>(중국 44% 주도)으로 미국 감소분을 상쇄했다. 청정에너지 : 화석연료 투자 비율은 <b>2:1 크로스오버</b>를 달성, 2015년 0.77배에서 역사적 전환점을 지났다.</div>
+        <div class="fc-note">미국 -36%는 정책 불확실성의 결과이지 수요 감소의 신호가 아니다. IRA 확정 후 반등 기대.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 한국 에너지 정책</div>
+        <h3>10차 전력수급계획 · K-RE100</h3>
+        <div class="fc-body"><b>10차 전력수급계획</b>(2036 목표): 원전 34.6%, 재생에너지 30.6%, 석탄 14.4%. 재생에너지 확대에 따른 ESS 수요 구조적 증가 전망.<br><br><b>K-RE100</b>: 녹색프리미엄이 98% 독점. PPA(전력구매계약) 확대 필요.<br><br><b>한전</b>: 2022년 -24.4조 역대 최대 적자 → 2025E +15조 역대 최대 이익. 그러나 부채 <b>206.2조원</b>으로 구조적 정상화에 5~7년 소요.</div>
+        <div class="fc-note">한전 부채 206.2조원은 전력요금 정상화 속도에 좌우된다. 산업용 전력요금 인상은 정치적으로 민감한 사안.</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">ESS는 AI 전력 인프라의 필수 브리지이며, $285B 시장은 시작에 불과하다.</div>
+      <div class="bt-body">
+        <b>글로벌 ESS 시장 $24B→$285B(CAGR 42%)와 AI DC 전력 220→800TWh 확대는 동일한 메가트렌드의 양면이다.</b> ESS는 AI DC의 피크 셰이빙·UPS 대체·송전 병목 해소라는 세 가지 역할을 동시에 수행하며, TCO -71% 경제성으로 디젤을 빠르게 대체하고 있다.<br><br>
+        <b>LFP가 ESS의 사실상 표준(92%)이 되면서</b>, CATL·BYD의 중국 3사 61% 독주가 구조화됐다. 한국 2사(10.5%)는 LFP 전환과 IRA AMPC 수혜를 통해 북미 시장을 공략해야 하지만, OBBBA 흑연 배제 조항이 새로운 리스크로 부상했다.<br><br>
+        투자자 관점에서는 <b>ESS 최고 성장률(+48% YoY), AI DC 연계 CAGR 67%, IRA $35+$10/kWh 세액공제</b> 세 가지가 핵심 투자 테마다. 다만 AMPC 의존도 121%(LGES)와 중국 원자재 지배(흑연 90%)는 구조적 리스크로 모니터링이 필요하다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관</div>
+      <div class="src-list">
+        DATA · BloombergNEF Energy Storage Outlook 2025 · IEA World Energy Investment 2025<br>
+        IEA Global Critical Minerals Outlook 2025 · BNEF $2.3조 에너지 전환 투자 보고서<br>
+        SNE Research ESS 시장 점유율 2024 · Wood Mackenzie DC 전력 전망<br>
+        White & Case OBBBA IRA 변경 분석 · S&P Global 리튬 2026 전망<br>
+        산업통상자원부 10차 전력수급기본계획 · LG에너지솔루션·삼성SDI IR<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

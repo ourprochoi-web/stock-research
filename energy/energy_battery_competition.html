@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CATL+BYD 55.7% vs 한국 3사 18.8%·LG에너지솔루션 23.6조·삼성SDI 전고체 2027H2·전고체 레이스·원자재 리스크 — 2차전지 기업 분석">
+<meta name="keywords" content="LG에너지솔루션,삼성SDI,CATL,BYD,전고체배터리,2차전지,LFP,배터리,IRA">
+<meta property="og:title" content="LG에너지솔루션·삼성SDI vs CATL·BYD — 글로벌 배터리 경쟁 지도">
+<meta property="og:description" content="CATL+BYD 55.7% vs 한국 3사 18.8%·LG에너지솔루션 23.6조·삼성SDI 전고체 2027H2·전고체 레이스·원자재 리스크 — 2차전지 기업 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/energy_battery_competition.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LG에너지솔루션·삼성SDI vs CATL·BYD — 글로벌 배터리 경쟁 지도">
+<meta name="twitter:description" content="CATL+BYD 55.7% vs 한국 3사 18.8%·LG에너지솔루션 23.6조·삼성SDI 전고체 2027H2·전고체 레이스·원자재 리스크 — 2차전지 기업 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/energy_battery_competition.html">
+<title>LG에너지솔루션·삼성SDI vs CATL·BYD — 글로벌 배터리 경쟁 지도</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#22c55e;
+    --current:#4ade80;
+    --glow:#86efac;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(134,239,172,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#1a3d20;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(34,197,94,.12);color:var(--volt);border:1px solid rgba(34,197,94,.3)}
+  .ic-tag.pink{background:rgba(74,222,128,.12);color:var(--current);border:1px solid rgba(74,222,128,.3)}
+  .ic-tag.rose{background:rgba(134,239,172,.12);color:var(--glow);border:1px solid rgba(134,239,172,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.china{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.usa{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.korea{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.japan{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.purple{color:#a78bfa}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(134,239,172,.04));
+    border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- COMP CARD ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px;margin-top:8px}
+  .comp-card h3{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .comp-card .cc-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LG에너지솔루션·삼성SDI vs CATL·BYD — 글로벌 배터리 경쟁 지도",
+  "description": "CATL+BYD 55.7% vs 한국 3사 18.8%·LG에너지솔루션 23.6조·삼성SDI 전고체 2027H2·전고체 레이스·원자재 리스크 — 2차전지 기업 분석",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/energy/energy_battery_competition.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#86efac;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(134,239,172,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>배터리 경쟁 지도</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#lges">01 / LG에너지솔루션</a>
+      <a href="#sdi">02 / 삼성SDI</a>
+      <a href="#global">03 / 글로벌 경쟁</a>
+      <a href="#solid-state">04 / 전고체</a>
+      <a href="#materials">05 / 원자재·공급망</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">에너지 전환 · 기업 분석 · 2026.06 기준</span>
+    <h1 class="hero-title">배터리<br>경쟁 <span class="hl">지도</span></h1>
+    <p class="hero-sub">CATL+BYD 55.7% vs 한국 3사 18.8% — 글로벌 2차전지 패권의 축이 이동하고 있다</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">55.7<span class="u">%</span></div>
+        <div class="lab">CATL+BYD 글로벌 배터리 점유율 (2025). CATL 38.7%, BYD 17.0%. 중국 5사 합산 61%+.</div>
+        <div class="src">SRC: SNE Research 2025</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">23.6<span class="u">조</span></div>
+        <div class="lab">LG에너지솔루션 매출 (2025). 영업이익 1.34조 턴어라운드. Tesla LFP 5.9조 계약.</div>
+        <div class="src">SRC: LGES IR 2025</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2027<span class="u">H2</span></div>
+        <div class="lab">삼성SDI 전고체 배터리 양산 목표. 한국 3사 최선두. 900Wh/L.</div>
+        <div class="src">SRC: SDI IR 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>5개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 LGES ================= -->
+<section class="blk" id="lges">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;LG에너지솔루션</div>
+      <h2 class="sec-title">매출 23.6조 · Tesla LFP 5.9조 계약</h2>
+      <p class="sec-lead">LG에너지솔루션은 2025년 매출 23조 6,718억원, 영업이익 1조 3,461억원(+133.9% YoY)으로 턴어라운드에 성공했다. Tesla LFP 3년 계약 5.9조원과 ESS 매출 3배 확대 전략이 차세대 성장 동력이다. 다만 2026Q1 다시 적자 전환되며 실적 변동성은 잔존한다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <h3>LG에너지솔루션 (373220.KS) — 핵심 실적</h3>
+      <div class="cc-sub">2025년 연간 · 턴어라운드 확인</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">23.67조</div>
+          <div class="mt"><b>2025년 매출</b> — 영업이익 1조 3,461억원, +133.9% YoY 턴어라운드. EV 배터리 수요 회복과 AMPC 수혜가 동시에 작용.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">14억</div>
+          <div class="mt"><b>2025Q2 AMPC 제외 자체 흑자</b> — 6분기 만에 처음. 보조금 없이도 이익을 낼 수 있다는 구조적 신호. 단, 일시적 요인 가능성도 존재.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">5.94조</div>
+          <div class="mt"><b>Tesla LFP 3년 계약</b>(2027~2030) — LFP 역량 확보를 위한 전략적 계약. Tesla 외 4~5개 OEM 고객 다변화 병행.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">290GWh+</div>
+          <div class="mt"><b>북미 CAPA</b> — 미시간·오하이오·애리조나·테네시 4개 사이트. IRA AMPC 수혜 극대화를 위한 북미 집중 전략.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">~1.4조</div>
+          <div class="mt"><b>IRA AMPC 연간 수혜</b>(2024 기준) — 영업이익의 121%. AMPC 없으면 적자 전환. 정책 의존도가 핵심 리스크.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">ESS 3배 확대 전략</span>
+        <h3>2026년 ESS 매출 전년비 3배</h3>
+        <div class="ic-body">LG에너지솔루션은 2026년 ESS 매출을 전년비 <b>3배 확대</b>하겠다는 목표를 제시했다. RESU Flex 제품으로 북미·유럽 시장을 공략하며, 그리드 스케일 ESS 수주 확대에 집중하고 있다.<br><br>ESS 시장의 LFP 전환(채택률 92%)에 맞춰 Tesla LFP 계약이 ESS 역량 확보의 가속기 역할을 할 것으로 기대된다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">ESS 목표</div><div class="nv">3배 확대</div></div>
+          <div><div class="nk">주력 제품</div><div class="nv">RESU Flex</div></div>
+          <div><div class="nk">ESS 점유</div><div class="nv">5.0%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">2026Q1 리스크</span>
+        <h3>영업손실 2,078억원 · AMPC -43%</h3>
+        <div class="ic-body">2026Q1 다시 영업손실 2,078억원으로 적자 전환. AMPC가 전분기비 <b>-43% 급감</b>한 것이 주요 원인이다. EV 수요의 분기별 변동성과 AMPC 의존 구조가 맞물린 결과.<br><br>AMPC = 영업이익의 <b>121%</b>라는 구조는 IRA 정책 변동(OBBBA 등)에 극도로 취약하다는 것을 의미한다. 자체 수익성 확보가 중기 핵심 과제다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">2026Q1</div><div class="nv">-2,078억</div></div>
+          <div><div class="nk">AMPC 변동</div><div class="nv">-43% QoQ</div></div>
+          <div><div class="nk">AMPC 비중</div><div class="nv">OP의 121%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>LG에너지솔루션의 턴어라운드는 확인됐지만, AMPC 의존 구조는 해소되지 않았다.
+      <span class="u">2025년 OP 1.34조의 121%가 AMPC다. Tesla LFP 5.9조 계약과 ESS 3배 확대가 자체 수익성을 끌어올릴 수 있는지가 2027년까지의 핵심 관전 포인트다. 290GWh+ 북미 CAPA는 IRA 수혜 극대화의 기반이지만, OBBBA 흑연 배제 조항은 이 구조 전체를 흔들 수 있는 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 SAMSUNG SDI ================= -->
+<section class="blk" id="sdi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;삼성SDI</div>
+      <h2 class="sec-title">전고체 2027H2 · 바닥 통과 신호</h2>
+      <p class="sec-lead">삼성SDI는 2025년 창사 최대 적자(영업손실 1조 7,224억원)를 기록했지만, 2026Q1 손실이 64.2% 감소하며 바닥 통과 신호를 보이고 있다. 전고체 배터리 2027H2 양산 목표는 한국 3사 최선두이며, 전자재료 사업(OPM 14.7%)이 수익 안전판 역할을 한다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <h3>삼성SDI (006400.KS) — 핵심 실적</h3>
+      <div class="cc-sub">2025년 연간 · 적자 바닥 통과</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">-1.72조</div>
+          <div class="mt"><b>2025년 영업손실</b> — 창사 최대 적자. EV 수요 둔화, 유럽·북미 가동률 저하가 주요 원인. 그러나 2026Q1 손실 64.2% 감소로 바닥 통과 신호.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">2027H2</div>
+          <div class="mt"><b>전고체 배터리 양산 목표</b> — 황화물계 전해질 기반, 900Wh/L. 한국 3사 최선두. 단, 양산 전 스펙이며 낙관 시나리오 (출처별 차이 가능).</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">14.7%</div>
+          <div class="mt"><b>전자재료 OPM</b> — 반도체·디스플레이 소재 사업. 배터리 적자를 상쇄하는 수익 안전판. 안정적 마진 구조가 삼성SDI의 체질적 강점.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">1.6조</div>
+          <div class="mt"><b>IRA AMPC 2027년 전망</b> — 3년 누계 2조 9,000억원. GM JV·Stellantis JV 가동률에 의존. OBBBA 변수 미반영 (부분 정확, 항목 D4).</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">LFP·46파이</div>
+          <div class="mt"><b>2026년 양산 개시</b> — LFP 라인과 46파이 원통형 배터리 동시 양산. Tesla·BMW·GM 등 고객 대응. ESS와 EV 양면 전략.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-wrap reveal" style="margin-top:32px">
+      <div class="compare-header">
+        <div>비교 항목</div>
+        <div>LG에너지솔루션</div>
+        <div>삼성SDI</div>
+        <div>우위</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">IRA 수혜 규모</div>
+        <div><span class="cr-num">~1.4조/년</span></div>
+        <div>~0.5조/년 (2024)</div>
+        <div><span class="cr-num">LGES (~2.7배)</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">전고체 기술</div>
+        <div>2028~2030</div>
+        <div><span class="cr-num amber">2027H2</span></div>
+        <div><span class="cr-num amber">SDI (2년 선행)</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">ESS 성장</div>
+        <div><span class="cr-num">2026 매출 3배</span></div>
+        <div>SBB3.0 확대</div>
+        <div><span class="cr-num">LGES</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">고객 다변화</div>
+        <div><span class="cr-num">Tesla 신규 + 4~5 OEM</span></div>
+        <div>GM·Stellantis JV</div>
+        <div><span class="cr-num">LGES</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">수익성 안전판</div>
+        <div>없음 (AMPC 의존)</div>
+        <div><span class="cr-num amber">전자재료 OPM 14.7%</span></div>
+        <div><span class="cr-num amber">SDI</span></div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>삼성SDI의 핵심 가치는 전고체 2027H2와 전자재료 안전판의 조합이다.
+      <span class="u">창사 최대 적자(-1.72조)를 기록했지만, 전자재료 OPM 14.7%가 체질적 완충 역할을 한다. 전고체 2027H2가 계획대로 진행되면 LG에너지솔루션 대비 2년 선행 우위를 확보하게 되나, 양산 전 스펙이므로 보수적 접근이 필요하다. 2027년 AMPC 1.6조 전망은 Stellantis JV 가동률과 OBBBA에 좌우된다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 GLOBAL COMPETITION ================= -->
+<section class="blk" id="global">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;글로벌 경쟁 — CATL·BYD</div>
+      <h2 class="sec-title">CATL 38.7% + BYD 17.0% = 55.7%</h2>
+      <p class="sec-lead">글로벌 EV 배터리 시장은 CATL+BYD 합산 55.7%(2025E)로 집중도가 심화되고 있다(HHI 2,103). 한국 3사(LGES+삼성SDI+SK온)의 합산 점유율은 2023년 23.5%에서 2025E 18.8%로 하락하며, 구조적 역풍에 직면해 있다.</p>
+    </div>
+
+    <div class="share-grid">
+      <div class="share-box reveal">
+        <h3>글로벌 EV 배터리 점유율 (2025E)</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">CATL (中)</span><span class="pct">38.7%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="90%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">BYD (中)</span><span class="pct">17.0%</span></div>
+            <div class="sbar-track"><div class="sbar-fill china" data-w="44%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">LG에너지솔루션 (韓)</span><span class="pct">~12%</span></div>
+            <div class="sbar-track"><div class="sbar-fill korea" data-w="31%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">삼성SDI (韓)</span><span class="pct">~4%</span></div>
+            <div class="sbar-track"><div class="sbar-fill korea" data-w="12%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">SK온 (韓)</span><span class="pct">~3%</span></div>
+            <div class="sbar-track"><div class="sbar-fill korea" data-w="9%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">Panasonic (日)</span><span class="pct">~5%</span></div>
+            <div class="sbar-track"><div class="sbar-fill japan" data-w="14%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">기타 중국 5사+</span><span class="pct">~20%</span></div>
+            <div class="sbar-track"><div class="sbar-fill other" data-w="50%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>점유율 추이 — 한국 3사 하락</h3>
+        <div class="ph-sub">2023 → 2025E · 구조적 역풍</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">23.5%</div>
+            <div class="mt"><b>한국 3사 2023년</b> — LGES+삼성SDI+SK온 합산. NMC 프리미엄으로 유럽·북미 시장 주도.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">18.8%</div>
+            <div class="mt"><b>한국 3사 2025E</b> — 4.7%p 하락. BYD·CATL의 LFP 가격 공세와 중국 내수 EV 폭발 성장이 원인.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2,103</div>
+            <div class="mt"><b>HHI (허핀달 지수)</b> — "집중" 구간 진입. CATL 단독 38.7%로 시장 지배력이 과도한 수준.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">55.7%</div>
+            <div class="mt"><b>CATL+BYD 합산</b> — 2사가 과반을 넘겼다. 중국 5사 합산 61%+로 중국 집중도가 더욱 심화.</div>
+          </div>
+        </div>
+        <div class="foot">* SNE Research 2025E 전망 기준. EV 배터리 점유율로 ESS 별도.</div>
+      </div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">CATL — 1조 위안 매출</span>
+        <h3>38.7% · 순이익률 14.1%</h3>
+        <div class="ic-body">CATL은 2024년 <b>순이익 507억 위안, 순이익률 14.1%</b>를 기록했다. ESS(TENER) +80% CAGR 성장이 EV 둔화를 상쇄하며, 배터리+ESS 양면에서 절대적 1위를 유지하고 있다.<br><br>Shenxing(신행) 초고속 충전 LFP, TENER 5MWh ESS(12,000사이클), 나트륨이온 등 <b>차세대 기술 리더십</b>도 동시에 확보 중이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">점유율</div><div class="nv">38.7%</div></div>
+          <div><div class="nk">순이익률</div><div class="nv">14.1%</div></div>
+          <div><div class="nk">ESS CAGR</div><div class="nv">+80%</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">BYD — 수직 통합</span>
+        <h3>17.0% · 배터리-EV-반도체</h3>
+        <div class="ic-body">BYD는 <b>배터리-EV-반도체 수직 통합</b> 유일 플레이어다. 2024년 EV+PHEV <b>427만대(+41.3%)</b> 판매. Blade Battery(LFP) 기반 원가 우위로 가격 전쟁을 주도하고 있다.<br><br>자체 EV 판매가 배터리 수요를 보장하는 구조로, 외부 고객 의존도가 낮다는 것이 CATL 대비 차별점이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">점유율</div><div class="nv">17.0%</div></div>
+          <div><div class="nk">EV 판매</div><div class="nv">427만대</div></div>
+          <div><div class="nk">성장률</div><div class="nv">+41.3%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>한국 3사 점유율 23.5%→18.8% 하락은 구조적 현상이다.
+      <span class="u">CATL+BYD의 LFP 가격 공세와 중국 내수 EV 427만대(+41.3%) 성장이 한국 3사의 NMC 프리미엄을 잠식하고 있다. 한국 3사의 반격 카드는 IRA AMPC 수혜(합산 ~2.2조/년)에 기반한 북미 시장 방어와 전고체·46파이 기술 차별화다. 그러나 OBBBA 흑연 배제 조항은 이 방어선의 근간을 흔들 수 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 SOLID STATE ================= -->
+<section class="blk" id="solid-state">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;전고체 배터리 레이스</div>
+      <h2 class="sec-title">Toyota 2027-28 · SDI 2027H2 · $180 프리미엄</h2>
+      <p class="sec-lead">전고체 배터리는 차세대 게임체인저로 주목받지만, 2030E 팩 비용 $180/kWh는 LFP $75의 2.4배 프리미엄이다. 대중 EV 10% 침투는 2035년 이전에 달성하기 어렵다는 것이 현실적 전망이며, 프리미엄 EV·특수 용도가 초기 시장이 될 것이다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>기업</th>
+            <th>전해질</th>
+            <th>양산 목표</th>
+            <th>에너지 밀도</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">토요타</td>
+            <td>황화물계</td>
+            <td><span class="num-td">2027~2028</span></td>
+            <td>1,000 Wh/L</td>
+            <td>파일럿 진행</td>
+          </tr>
+          <tr>
+            <td class="hl-td">삼성SDI</td>
+            <td>황화물계</td>
+            <td><span class="num-td">2027H2</span></td>
+            <td>900 Wh/L</td>
+            <td>한국 3사 최선두</td>
+          </tr>
+          <tr>
+            <td class="hl-td">LG에너지솔루션</td>
+            <td>폴리머+황화물</td>
+            <td><span class="num-td amber">2028~2030</span></td>
+            <td>미공개</td>
+            <td>R&D</td>
+          </tr>
+          <tr>
+            <td class="hl-td">QuantumScape</td>
+            <td>산화물 세라믹</td>
+            <td><span class="num-td amber">2026~2027</span></td>
+            <td>380 Wh/kg</td>
+            <td>현금 12.5개월 *</td>
+          </tr>
+          <tr>
+            <td class="hl-td">Solid Power</td>
+            <td>황화물계</td>
+            <td>2028+</td>
+            <td>미공개</td>
+            <td>BMW 파트너</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* QuantumScape 현금 runway 12.5개월은 2026.06 분석 시점 기준. 추가 자본조달·VW 지원으로 변동 가능 (요주의 항목 E3). 모든 양산 목표는 양산 전 스펙으로 지연 가능성 존재.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">비용 프리미엄 문제</span>
+        <h3>$180 vs $75/kWh — 2.4배 격차</h3>
+        <div class="ic-body">2030E 전고체 팩 비용은 <b>$180/kWh</b>로 LFP $75/kWh의 <b>2.4배 프리미엄</b>이 잔존할 전망이다. 대중 EV 10% 침투는 2035년 이전에 달성하기 어렵다는 것이 BNEF·McKinsey의 공통 분석이다.<br><br>초기 시장은 <b>프리미엄 EV(포르쉐·BMW), 군사·우주 특수 용도</b>에 한정될 가능성이 높다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">전고체</div><div class="nv">$180/kWh</div></div>
+          <div><div class="nk">LFP</div><div class="nv">$75/kWh</div></div>
+          <div><div class="nk">프리미엄</div><div class="nv">2.4배</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">배터리 수요 전망</span>
+        <h3>935→4,650 GWh · CAGR 25.8%</h3>
+        <div class="ic-body">글로벌 배터리 수요는 2023년 935 GWh에서 2030년 <b>4,650 GWh(CAGR 25.8%)</b>로 전망된다. ESS가 CAGR 37.9%로 EV(CAGR 23%)를 상회하며 가장 빠른 성장 세그먼트다.<br><br>배터리 팩 비용은 2013~2025년간 <b>82.6% 절감</b>(연 13.6% 하락). 원가 하락이 수요 폭발의 핵심 동력이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">2030E 수요</div><div class="nv">4,650 GWh</div></div>
+          <div><div class="nk">CAGR</div><div class="nv">25.8%</div></div>
+          <div><div class="nk">팩 비용 절감</div><div class="nv">-82.6%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="macro-grid reveal" style="margin-top:32px">
+      <div class="panel">
+        <h3>전고체 vs 기존 배터리 타임라인</h3>
+        <div class="ph-sub">2026 → 2035 · 단계적 침투</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">2026-27</div>
+            <div class="mt"><b>B-샘플 · 파일럿</b> — QS B-sample 출하, 토요타·삼성SDI 파일럿 라인 가동. 양산 검증 단계.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2027-28</div>
+            <div class="mt"><b>소량 양산 개시</b> — 삼성SDI 2027H2, 토요타 2027-28. 프리미엄 EV·특수 용도 한정. 수율과 비용이 핵심 변수.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2030E</div>
+            <div class="mt"><b>팩 비용 $180/kWh</b> — LFP $75 대비 2.4배 프리미엄. 대중 시장 침투는 제한적. 연 ~5% EV 적용 전망.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2035E</div>
+            <div class="mt"><b>10% 침투 가능 시점</b> — 원가 하락과 양산 경험 축적 이후. 대중 EV 10% 달성은 낙관적 시나리오에서도 2035년 전후.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>전고체의 진짜 가치</h3>
+        <div class="ph-sub">에너지 밀도 · 안전성 · 충전 속도</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">900+</div>
+            <div class="mt"><b>Wh/L 에너지 밀도</b> — 기존 NMC(500~600)의 1.5~2배. 주행거리 700km+ 가능. EV 항속거리 불안(range anxiety) 해소의 열쇠.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10분</div>
+            <div class="mt"><b>80% 충전 목표</b> — 고체 전해질의 이온 전도도 향상으로 초고속 충전 가능. 토요타 "10분 충전 1,200km" 목표 제시.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">비연소</div>
+            <div class="mt"><b>안전성 혁신</b> — 액체 전해질 제거로 열폭주(thermal runaway) 리스크 근본 해소. 화재 사고 제로를 목표.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>전고체는 게임체인저지만, $180 프리미엄이 해소되기 전까지 대중 시장 침투는 제한적이다.
+      <span class="u">삼성SDI의 2027H2 최선두 타임라인은 기술 리더십의 증거지만, 양산 수율과 비용 절감이 핵심 변수다. 토요타의 1,000Wh/L 목표와 경쟁하는 구도에서, 한국 배터리 3사의 전고체 역량이 2030년대 글로벌 점유율 반등의 관건이 될 것이다. 다만 모든 양산 목표는 양산 전 스펙이며, 지연 가능성을 감안해야 한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 RAW MATERIALS ================= -->
+<section class="blk" id="materials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;원자재 & 공급망 리스크</div>
+      <h2 class="sec-title">리튬 -88% V자 · 흑연 90% 중국 지배</h2>
+      <p class="sec-lead">배터리 원자재 시장은 2022년 고점에서 급락 후 V자 반등 조짐을 보이고 있다. 리튬 탄산리튬은 490,000→58,400→170,000 CNY/mt. 그러나 중국의 흑연 음극재 가공 점유율 ~90%, 희토류 ~85%는 탈중국화 5~7년이 필요한 구조적 리스크다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>원자재</th>
+            <th>2022 고점</th>
+            <th>2025 저점</th>
+            <th>2026 Q1</th>
+            <th>변화</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">리튬 탄산리튬 (CNY/mt)</td>
+            <td>490,000</td>
+            <td>58,400</td>
+            <td><span class="num-td">170,000</span></td>
+            <td>-88% → V자 반등</td>
+          </tr>
+          <tr>
+            <td class="hl-td">니켈 ($/t)</td>
+            <td>33,000</td>
+            <td>15,350</td>
+            <td><span class="num-td">~16,000</span></td>
+            <td>-52%</td>
+          </tr>
+          <tr>
+            <td class="hl-td">코발트 ($/lb)</td>
+            <td>36</td>
+            <td>10.98</td>
+            <td><span class="num-td">~12</span></td>
+            <td>-67%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* S&P Global, SMM, Guangzhou Futures 기준. 리튬 2026년 10.9만 mt LCE 공급 과잉이나 축소 추세. Agent C·D 교차 검증.</div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 중국 공급망 지배</div>
+        <h3>흑연 90% · 희토류 85%</h3>
+        <div class="fc-body">중국의 배터리 원자재 정제·가공 점유율은 압도적이다:<br><br><b>흑연 음극재 ~90%</b> — OBBBA "중국 물질적 지원" 배제 조항과 직접 충돌. IRA AMPC 적격성 저촉 가능.<br><b>희토류 ~85%</b> — 영구자석 모터·풍력발전기 핵심 소재.<br><b>코발트 ~75%</b> — 콩고 채굴의 75%를 중국 기업이 통제.<br><b>리튬 ~65%</b> — 호주 채굴이지만 정제는 중국 집중.<br><b>니켈 황산염 ~60%</b> — 인도네시아 광산+중국 제련소 구조.</div>
+        <div class="fc-note">IEA Global Critical Minerals Outlook 2025: 탈중국화 최소 5~7년 소요. 대체 공급망 구축에는 광산 개발(3~5년)+제련소 건설(2~3년)이 필요.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 리튬 V자 반등</div>
+        <h3>-88% 후 170,000 CNY/mt 회복</h3>
+        <div class="fc-body">리튬 탄산리튬은 2022년 490,000에서 2025년 58,400 CNY/mt으로 <b>-88% 급락</b> 후, 2026 Q1 170,000으로 V자 반등 중이다.<br><br>2026년에도 <b>10.9만 mt LCE 공급 과잉</b>이 전망되나, 과잉 폭은 축소 추세다. 채굴 기업들의 감산·폐광 결정이 공급 조절의 핵심 변수다.<br><br>니켈(-52%)·코발트(-67%)는 여전히 바닥권. LFP 전환으로 니켈·코발트 수요 자체가 구조적으로 감소하고 있다.</div>
+        <div class="fc-note">리튬 V자 반등은 ESS 수요 폭발과 EV 회복이 동시에 작용한 결과. 2027년 공급-수요 균형 전환 가능성.</div>
+      </div>
+
+      <div class="fcard fc-bear">
+        <div class="fc-tag">● OBBBA 흑연 리스크</div>
+        <h3>AMPC 적격성 저촉 가능</h3>
+        <div class="fc-body">OBBBA(2025.7.4)의 "중국 물질적 지원" 배제 조항은 <b>흑연 음극재 의존도 70~80%</b>인 한국 배터리 3사에 직접적 위협이다.<br><br>한국 3사 AMPC 수혜 합산 <b>~2조 2,000억원/년</b>이 흑연 적격성 판정에 따라 축소·상실될 수 있다. LG에너지솔루션의 AMPC가 영업이익의 121%인 점을 감안하면, 이 리스크는 기업 존속급 사안이다.</div>
+        <div class="fc-note">OBBBA 배제 조항의 구체적 적용 범위는 미확정. White & Case·Miller & Chevalier 법률 분석 참조. 최악 시나리오와 현실 간 간극 존재.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 탈중국 공급망 구축</div>
+        <h3>5~7년 · 호주·칠레·캐나다</h3>
+        <div class="fc-body">IEA는 중국 원자재 의존도 해소에 <b>최소 5~7년</b>이 필요하다고 분석한다. 대안 공급망 구축 방향:<br><br><b>리튬</b>: 호주·칠레·아르헨티나 직접 정제 투자.<br><b>흑연</b>: 모잠비크·캐나다·합성 흑연(전기로) 전환.<br><b>니켈</b>: 인도네시아 HPAL 직접 투자, 호주 광산 확대.<br><b>코발트</b>: LFP 전환으로 수요 자체를 감축하는 전략.</div>
+        <div class="fc-note">IRA·OBBBA가 만든 정책 환경이 탈중국 공급망 투자를 가속화하고 있지만, 광산→정제→양극재 전체 밸류체인 구축에는 상당 기간 필요.</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">배터리 경쟁의 축은 기술에서 공급망·정책으로 이동하고 있다.</div>
+      <div class="bt-body">
+        <b>CATL+BYD 55.7% vs 한국 3사 18.8%의 격차는 기술력이 아니라 LFP 원가 우위, 중국 내수 규모, 수직 통합의 결과다.</b> 한국 3사의 NMC 프리미엄 전략은 LFP 점유율 62% 역전 앞에서 재편이 불가피하며, LG에너지솔루션의 Tesla LFP 5.9조 계약은 이 전환의 출발점이다.<br><br>
+        <b>전고체 배터리(삼성SDI 2027H2, 토요타 2027-28)는 2030년대 판도를 바꿀 잠재력이 있지만,</b> $180 vs $75/kWh 프리미엄이 해소되기 전까지는 대중 시장 침투가 제한적이다. 기술 리더십 확보와 양산 수율 달성이 동시에 필요하다.<br><br>
+        가장 시급한 리스크는 <b>OBBBA 흑연 배제 조항</b>이다. 중국 흑연 ~90% 의존 구조에서 한국 3사의 AMPC ~2.2조/년 수혜가 흔들릴 수 있으며, 이는 LG에너지솔루션(AMPC = OP 121%)에게는 기업 존속급 사안이다. 탈중국 공급망 5~7년 구축과 IRA 정책 안정성이 한국 배터리 산업의 중기 운명을 결정할 것이다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">LG에너지솔루션·삼성SDI vs CATL·BYD — 글로벌 배터리 경쟁 지도</div>
+      <div class="src-list">
+        DATA · SNE Research 글로벌 배터리 점유율 2025 · LG에너지솔루션 2025 실적발표(inside.lgensol.com)<br>
+        삼성SDI 2026Q1 실적발표(samsungsdi.co.kr) · BloombergNEF 배터리 가격 추적<br>
+        IEA Global Critical Minerals Outlook 2025 · S&P Global 리튬 2026 전망<br>
+        White & Case OBBBA IRA 변경 분석 · Miller & Chevalier 법률 해석<br>
+        BNEF Energy Storage Outlook 2025 · McKinsey 전고체 배터리 전망<br>
+        한국일보·전자신문·시사오늘·IP Daily 특허 분석<br>
+        작성 기준일 · 2026.06.28
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

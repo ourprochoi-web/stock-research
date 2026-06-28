@@ -446,19 +446,19 @@
         <div class="mc-tag">NVIDIA · 오픈소스</div>
         <h4>Isaac GR00T N1</h4>
         <div class="mc-body">세계 최초 오픈 휴머노이드 파운데이션 모델. 파지, 양팔 물체 이동, 팔 간 물체 전달, 멀티스텝 장기 태스크 지원. Isaac Sim·Cosmos·Omniverse와 완전 통합. ABB, AGIBOT, Agility, Figure, YASKAWA 등 파트너.</div>
-        <div class="mc-stat">CES 2026 발표 · 상용 출시 · 오픈소스로 업계 표준화 가속</div>
+        <div class="mc-stat">GR00T N1.5: DreamGen 38.3%(vs N1 13.1%), Apache 2.0 오픈소스. N1.7: 로봇 민첩성 최초 스케일링 법칙 발견, EgoScale 2만시간 인간 비디오</div>
       </div>
       <div class="model-card reveal d1">
         <div class="mc-tag">Physical Intelligence · 상업 API</div>
         <h4>π0 (pi-zero)</h4>
         <div class="mc-body">Flow Matching 기반 액션 생성. 노이즈에서 액션 분포로의 연속 벡터장 학습. 세탁물 접기·식탁 정리·샌드위치 제작 등 고난도 양손 조작 태스크에서 타 모델 미달성 수준 구현. $4B+ 누적 조달.</div>
-        <div class="mc-stat">비오픈웨이트 · 엔터프라이즈 상업 API 제공 · Series B 포함</div>
+        <div class="mc-stat">π0.5: RoboChallenge 43.7% SOTA. π0.6: MEM(Memory-Enhanced Manipulation) 장기 계획. $4B+ 누적 조달</div>
       </div>
       <div class="model-card reveal d2">
         <div class="mc-tag">Google DeepMind · 연구 단계</div>
         <h4>RT-2 / Gemini Robotics</h4>
-        <div class="mc-body">PaLI-X(55B) 기반 VLA 모델. 로봇 액션을 텍스트 토큰으로 변환하여 웹 데이터와 로봇 궤적을 동시 학습. 새로운 물체 62% 제로샷 성공률, 새로운 배경 55%. 2026년 Gemini Robotics로 업그레이드.</div>
-        <div class="mc-stat">55B 파라미터 · 제로샷 일반화 62% · 언어 명령 기반 조작</div>
+        <div class="mc-body">PaLI-X(55B) 기반 VLA 모델. 로봇 액션을 텍스트 토큰으로 변환하여 웹 데이터와 로봇 궤적을 동시 학습. 새로운 물체 62% 제로샷 성공률, 새로운 배경 55%. Gemini Robotics 1.5: 15개 벤치마크 SOTA, >2x 일반화 성능, 크로스 임바디먼트 전이 달성.</div>
+        <div class="mc-stat">Gemini Robotics 1.5 · 15개 벤치마크 SOTA · 크로스 임바디먼트 전이</div>
       </div>
       <div class="model-card reveal d3">
         <div class="mc-tag">Figure AI · 배포 중</div>
@@ -475,8 +475,8 @@
       <div class="model-card reveal d1">
         <div class="mc-tag">NVIDIA · 합성 데이터</div>
         <h4>Cosmos 3.0</h4>
-        <div class="mc-body">월드 파운데이션 모델. 시뮬레이션 데이터 합성 생성으로 로봇 학습 데이터 부족 문제를 해결한다. Omniverse와 결합하여 도메인 랜덤화·디지털 트윈을 통한 Sim-to-Real 파이프라인 완성.</div>
-        <div class="mc-stat">합성 데이터 생성 · Omniverse 통합 · 도메인 랜덤화 지원</div>
+        <div class="mc-body">월드 파운데이션 모델. Cosmos 3: 20조 멀티모달 토큰, ~10억 이미지, 4억 비디오 학습. 2025.06.01 정식 출시. Omniverse와 결합하여 도메인 랜덤화·디지털 트윈을 통한 Sim-to-Real 파이프라인 완성.</div>
+        <div class="mc-stat">Cosmos 3 · 20조 토큰 · 2025.06 정식 출시 · Omniverse 통합</div>
       </div>
     </div>
 
@@ -584,6 +584,11 @@
         <div class="sim-tag">Physical Intelligence · Figure</div>
         <h4>모방 학습 (Imitation Learning)</h4>
         <p>인간 시연 데이터로부터 정책 학습. π0는 Flow Matching으로 고난도 양손 조작 구현. Figure Helix 02는 1인칭 인간 행동 영상을 수집하여 제로샷 전이. 강화학습(RL) 대비 샘플 효율이 높다.</p>
+      </div>
+      <div class="sim-card reveal d2">
+        <div class="sim-tag">DexFlyWheel · Sim-to-Real 전이</div>
+        <h4>3회 반복 16.5% → 78.3% 실세계 성공률</h4>
+        <p>시뮬레이션에서 학습한 손재주(dexterous) 정책을 실제 로봇에 전이. 궤적 다양성 25배 증대로 3회 반복 만에 성공률 16.5%→78.3% 달성. Sim-to-Real 갭 극복의 최신 진전.</p>
       </div>
     </div>
 
