@@ -17,7 +17,7 @@
 | HBM | HBM3 80GB | HBM3e 192GB | HBM3e 288GB | HBM4 288GB | HBM4E 1TB |
 | 메모리 BW | 3.35 TB/s | 8.0 TB/s | 8.0 TB/s | 22 TB/s | 32 TB/s |
 | FP8 | 4,000 TFLOPS | 9,000 TFLOPS | 7,000 TFLOPS | — | — |
-| FP4 | — | 18,000 TFLOPS | 15,000 TFLOPS | 50 PFLOPS | ~100 PFLOPS |
+| FP4 | — | 9,000 TFLOPS | 15,000 TFLOPS | 50 PFLOPS | ~100 PFLOPS |
 | TDP | 700W | 1,000W | 1,400W | — | 3,600W |
 | NVLink | 0.9 TB/s | 1.8 TB/s | 1.8 TB/s | 3.6 TB/s | 3.6 TB/s |
 
