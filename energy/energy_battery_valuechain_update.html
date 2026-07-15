@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="에코프로비엠·포스코퓨처엠·엘앤에프·LG에너지솔루션·삼성SDI — 한국 2차전지 밸류체인 12개사 1Q26 실적·주가·밸류에이션 종합 분석">
+<meta name="keywords" content="에코프로비엠,포스코퓨처엠,엘앤에프,LG에너지솔루션,삼성SDI,2차전지,양극재,음극재,분리막,전해질,ESS,배터리">
+<meta property="og:title" content="2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도">
+<meta property="og:description" content="에코프로비엠·포스코퓨처엠·엘앤에프·LG에너지솔루션·삼성SDI — 한국 2차전지 밸류체인 12개사 1Q26 실적·주가·밸류에이션 종합 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/energy_battery_valuechain_update.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도">
+<meta name="twitter:description" content="에코프로비엠·포스코퓨처엠·엘앤에프·LG에너지솔루션·삼성SDI — 한국 2차전지 밸류체인 12개사 1Q26 실적·주가·밸류에이션 종합 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/energy_battery_valuechain_update.html">
+<title>2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#22c55e;
+    --current:#4ade80;
+    --glow:#86efac;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(134,239,172,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  td .num-td.bear{color:var(--bear)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#1a3d20;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(34,197,94,.12);color:var(--volt);border:1px solid rgba(34,197,94,.3)}
+  .ic-tag.pink{background:rgba(74,222,128,.12);color:var(--current);border:1px solid rgba(74,222,128,.3)}
+  .ic-tag.rose{background:rgba(134,239,172,.12);color:var(--glow);border:1px solid rgba(134,239,172,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .ic-tag.bear{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.green{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.teal{background:linear-gradient(90deg,var(--current),var(--glow))}
+  .sbar-fill.amber{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.blue{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.purple{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+  .sbar-fill.muted{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard.fc-bear .fc-tag{color:var(--bear)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+  .compare-row .cr-num.purple{color:#a78bfa}
+  .compare-row .cr-num.bear{color:var(--bear)}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(134,239,172,.04));
+    border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- COMP CARD ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px;margin-top:8px}
+  .comp-card h3{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .comp-card .cc-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+
+  /* ---------- BAR CHART ---------- */
+  .bar-chart{margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px}
+  .bar-chart h3{font-size:1.02rem;font-weight:750;margin-bottom:6px}
+  .bar-chart .bc-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:28px}
+  .bc-rows{display:flex;flex-direction:column;gap:18px}
+  .bc-row{display:flex;flex-direction:column;gap:8px}
+  .bc-label{display:flex;justify-content:space-between;align-items:baseline}
+  .bc-label .bc-name{font-size:.9rem;color:var(--ink-2);font-weight:600}
+  .bc-label .bc-val{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--volt)}
+  .bc-track{height:12px;background:var(--line);border-radius:6px;overflow:hidden}
+  .bc-fill{height:100%;border-radius:6px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bc-fill.f1{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .bc-fill.f2{background:linear-gradient(90deg,var(--current),var(--volt))}
+  .bc-fill.f3{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .bc-note{margin-top:20px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    nav,a[href="../"]{display:none}
+    .hero{min-height:auto;page-break-after:always}
+    section.blk{page-break-inside:avoid}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도",
+  "description": "에코프로비엠·포스코퓨처엠·엘앤에프·LG에너지솔루션·삼성SDI — 한국 2차전지 밸류체인 12개사 1Q26 실적·주가·밸류에이션 종합 분석",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/energy/energy_battery_valuechain_update.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#86efac;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(134,239,172,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>2차전지 밸류체인</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#summary">01 / 요약</a>
+      <a href="#price">02 / 주가 현황</a>
+      <a href="#cell">03 / 셀 메이커</a>
+      <a href="#cathode">04 / 양극재</a>
+      <a href="#other">05 / 음극재·분리막·전해질</a>
+      <a href="#themes">06 / 투자 테마</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">기업 분석 · 에너지 전환 시리즈 #5 · 2026.07.16 기준</span>
+    <h1 class="hero-title">2차전지<br><span class="hl">밸류체인</span><br>투자 지도</h1>
+    <p class="hero-sub">한국 배터리 소재 12개사 밸류에이션 · 1Q26 실적 · 주가 · ESS 전환 수혜 종합 분석</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">12<span class="u">개사</span></div>
+        <div class="lab">한국 2차전지 밸류체인 핵심 기업 총정리. 양극재·음극재·분리막·전해질·셀 메이커 전 구간 커버.</div>
+        <div class="src">SRC: 각사 IR · 2026.07.15 기준</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">저점<span class="u">통과</span></div>
+        <div class="lab">양극재 3사(에코프로비엠·포스코퓨처엠·엘앤에프) 1Q26 실적 회복세 진입. 저점 통과 신호 확인.</div>
+        <div class="src">SRC: 각사 1Q26 실적발표</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">ESS<span class="u">전환</span></div>
+        <div class="lab">ESS/BESS 수요가 EV 수요 둔화를 대체하는 핵심 성장 동력. 셀 메이커 적자 속 방향성 전환 가속.</div>
+        <div class="src">SRC: BNEF ESS Outlook 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 EXECUTIVE SUMMARY ================= -->
+<section class="blk" id="summary">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;Executive Summary</div>
+      <h2 class="sec-title">한국 2차전지 밸류체인 현 위치 총정리</h2>
+      <p class="sec-lead">양극재 3사는 저점을 통과하고 있고, 셀 메이커는 적자 속에서도 ESS로 방향을 틀고 있다. 분리막은 구조조정 중이며, ESS/BESS 수요가 EV 둔화를 대체하는 핵심 성장 동력으로 부상했다.</p>
+    </div>
+
+    <div class="info-grid reveal">
+      <div class="icard">
+        <span class="ic-tag red">양극재 3사</span>
+        <h3>에코프로비엠·포스코퓨처엠·엘앤에프 — 저점 통과</h3>
+        <div class="ic-body">1Q26 실적 회복세 진입. <b>엘앤에프</b>가 매출 +103%, OI 1,173억으로 3사 중 가장 강한 반등을 기록했다. 에코프로비엠은 OI +332% YoY, 포스코퓨처엠은 흑자 전환. 헝가리·대구·베트남 현지 생산 기지가 탈중국 공급망 재편의 거점이 되고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">에코프로비엠 OI</div><div class="nv">+332% YoY</div></div>
+          <div><div class="nk">엘앤에프 매출</div><div class="nv">+103% YoY</div></div>
+          <div><div class="nk">포스코퓨처엠</div><div class="nv">흑자 전환</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bear">셀 메이커 3사</span>
+        <h3>LG에너지솔루션·삼성SDI·SK온 — 적자 but ESS 전환</h3>
+        <div class="ic-body">3사 모두 1Q26 영업적자 지속. <b>LG에너지솔루션</b> -2,078억, <b>삼성SDI</b> -1,556억(YoY 64.2% 축소), <b>SK온</b> -3,492억(QoQ -20.8% 축소). 삼성SDI는 전고체 2027H2 순항 중. ESS 전환이 방향성을 제시하고 있으며, 단기 적자 속에서도 구조적 회복 기반이 마련되고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">LG에너지솔루션</div><div class="nv">-2,078억</div></div>
+          <div><div class="nk">삼성SDI</div><div class="nv">-1,556억</div></div>
+          <div><div class="nk">SK온</div><div class="nv">-3,492억</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">분리막</span>
+        <h3>SK아이이테크 — 구조조정 중, 회복 시간 필요</h3>
+        <div class="ic-body">1Q26 매출 432억(YoY -26%), OPM -174%로 여전히 깊은 적자. 증평공장 가동 중단, 중국 공장 매각을 진행 중이며 폴란드 공장에 역량을 재집중하고 있다. <b>빠라도 2026H2 이후 회복 가능</b>할 것으로 전망되며, 현 시점은 회복보다 비용 구조 개선에 집중하는 국면이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">매출 YoY</div><div class="nv">-26%</div></div>
+          <div><div class="nk">OPM</div><div class="nv">-174%</div></div>
+          <div><div class="nk">회복 예상</div><div class="nv">2026H2+</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">ESS 수혜</span>
+        <h3>전해질·음극재 — ESS 수요 전환 최대 수혜</h3>
+        <div class="ic-body"><b>엔켐</b>은 ESS용 전해액 수요 확대로 직접 수혜를 받고 있다. <b>솔브레인</b>은 반도체 소재 다변화로 방어적 포지션을 유지하며 PER 15.93배로 상대적 저평가권에 있다. <b>대주전자재료</b>는 실리콘 음극재(Si-anode) 차세대 수혜주로, 전고체·고에너지 밀도 배터리 전환 시 부각될 소재다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">솔브레인 PER</div><div class="nv">15.93x</div></div>
+          <div><div class="nk">엔켐</div><div class="nv">ESS 전해액</div></div>
+          <div><div class="nk">대주전자재료</div><div class="nv">Si-anode</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 관점</div>
+      <p>ESS 전환이 한국 2차전지 밸류체인의 구조적 변곡점이다.
+      <span class="u">EV 수요 둔화로 타격을 받은 셀 메이커와 양극재 3사가 ESS를 통해 새로운 성장 경로를 찾고 있다. 엘앤에프의 ESS용 LFP 국내 최초 양산, LG에너지솔루션의 ESS 매출 3배 목표, SK온의 ESS 전환 선언이 같은 방향을 가리킨다. 탈중국 공급망 재편·전고체 로드맵·AMPC 정책 불확실성이 세 가지 핵심 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 PRICE TABLE ================= -->
+<section class="blk" id="price">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;주가 현황</div>
+      <h2 class="sec-title">12개사 종가 · 시총 · 밸류에이션 (2026.07.15)</h2>
+      <p class="sec-lead">한국 2차전지 밸류체인 12개 핵심 종목의 2026년 7월 15일 종가 기준 주가·시가총액·PER·PBR 현황. 양극재 3사와 소재주 중심으로 강한 반등이 나타나고 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>종목명</th>
+            <th>코드</th>
+            <th>종가</th>
+            <th>등락률</th>
+            <th>시총</th>
+            <th>PER(추정)</th>
+            <th>PBR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">LG에너지솔루션</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">373220</span></td>
+            <td><span class="num-td">335,000</span></td>
+            <td><span class="num-td">+4.04%</span></td>
+            <td>78.4조</td>
+            <td><span class="num-td bear">-208.98</span></td>
+            <td>3.54</td>
+          </tr>
+          <tr>
+            <td class="hl-td">삼성SDI</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">006400</span></td>
+            <td><span class="num-td">454,000</span></td>
+            <td><span class="num-td">+6.20%</span></td>
+            <td>36.6조</td>
+            <td>105.48</td>
+            <td>1.58</td>
+          </tr>
+          <tr>
+            <td class="hl-td">SK이노베이션</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">096770</span></td>
+            <td><span class="num-td">117,000</span></td>
+            <td><span class="num-td">+11.53%</span></td>
+            <td>19.8조</td>
+            <td>9.60</td>
+            <td>0.83</td>
+          </tr>
+          <tr>
+            <td class="hl-td">LG화학</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">051910</span></td>
+            <td><span class="num-td">264,500</span></td>
+            <td><span class="num-td">+3.73%</span></td>
+            <td>18.7조</td>
+            <td><span class="num-td bear">-608.05</span></td>
+            <td>0.59</td>
+          </tr>
+          <tr>
+            <td class="hl-td">포스코퓨처엠</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">003670</span></td>
+            <td><span class="num-td">153,200</span></td>
+            <td><span class="num-td">+6.17%</span></td>
+            <td>13.6조</td>
+            <td>557.09</td>
+            <td>3.29</td>
+          </tr>
+          <tr>
+            <td class="hl-td">에코프로비엠</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">247540</span></td>
+            <td><span class="num-td">120,900</span></td>
+            <td><span class="num-td">+7.37%</span></td>
+            <td>11.8조</td>
+            <td>323.26</td>
+            <td>6.62</td>
+          </tr>
+          <tr>
+            <td class="hl-td">에코프로</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">086520</span></td>
+            <td><span class="num-td">86,400</span></td>
+            <td><span class="num-td">+9.23%</span></td>
+            <td>11.7조</td>
+            <td><span style="color:var(--ink-3)">N/A</span></td>
+            <td>5.32</td>
+          </tr>
+          <tr>
+            <td class="hl-td">엘앤에프</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">066970</span></td>
+            <td><span class="num-td">95,100</span></td>
+            <td><span class="num-td">+4.74%</span></td>
+            <td>3.9조</td>
+            <td><span class="num-td bear">-167.14</span></td>
+            <td>5.57</td>
+          </tr>
+          <tr>
+            <td class="hl-td">솔브레인</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">357780</span></td>
+            <td><span class="num-td">306,500</span></td>
+            <td><span class="num-td">+0.66%</span></td>
+            <td>2.4조</td>
+            <td><span class="num-td amber">15.93</span></td>
+            <td>2.16</td>
+          </tr>
+          <tr>
+            <td class="hl-td">대주전자재료</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">078600</span></td>
+            <td><span class="num-td">82,200</span></td>
+            <td><span class="num-td">+7.73%</span></td>
+            <td>1.3조</td>
+            <td><span style="color:var(--ink-3)">N/A</span></td>
+            <td>4.90</td>
+          </tr>
+          <tr>
+            <td class="hl-td">SK아이이테크놀로지</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">361610</span></td>
+            <td><span class="num-td">14,540</span></td>
+            <td><span class="num-td">+2.83%</span></td>
+            <td>1.2조</td>
+            <td><span class="num-td bear">-5.31</span></td>
+            <td>0.46</td>
+          </tr>
+          <tr>
+            <td class="hl-td">엔켐</td>
+            <td><span style="font-family:var(--mono);font-size:.82rem;color:var(--ink-3)">348370</span></td>
+            <td><span class="num-td">21,400</span></td>
+            <td><span class="num-td">+7.32%</span></td>
+            <td>4,689억</td>
+            <td><span style="color:var(--ink-3)">N/A</span></td>
+            <td>0.97</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 2026.07.15 종가 기준. PER·PBR은 증권사 컨센서스 추정치. 적자 종목은 PER 음수 표기. N/A는 추정치 미산출 종목.</div>
+    </div>
+
+    <div class="indicator-grid reveal" style="margin-top:36px">
+      <div class="indcard">
+        <div class="ind-num">78.4조</div>
+        <div class="ind-lab">LG에너지솔루션 시총 (1위)</div>
+        <div class="ind-tag">PBR 3.54</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">+11.5%</div>
+        <div class="ind-lab">SK이노베이션 당일 최강 등락</div>
+        <div class="ind-tag">PER 9.60</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">6.62</div>
+        <div class="ind-lab">에코프로비엠 PBR (양극재 최고)</div>
+        <div class="ind-tag">323.26x PER</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">15.93</div>
+        <div class="ind-lab">솔브레인 PER (섹터 최저)</div>
+        <div class="ind-tag">방어적 저평가</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">0.46</div>
+        <div class="ind-lab">SK아이이테크 PBR (최저)</div>
+        <div class="ind-tag">구조조정 중</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 CELL MAKERS ================= -->
+<section class="blk" id="cell">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;셀 메이커 — 3사 실적 분석</div>
+      <h2 class="sec-title">적자 지속 but ESS 전환 가속</h2>
+      <p class="sec-lead">LG에너지솔루션·삼성SDI·SK온 3사 모두 1Q26 영업적자를 기록했다. 그러나 삼성SDI는 64.2% YoY 적자 축소, SK온은 QoQ -20.8% 축소로 바닥 통과 신호가 나타나고 있다. ESS 전환이 공통 방향성이다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <h3>LG에너지솔루션 (373220) — 1Q26 실적</h3>
+      <div class="cc-sub">매출 6.56조 · 영업손실 -2,078억 · 적자 전환</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">6.56조</div>
+          <div class="mt"><b>1Q26 매출</b> — YoY -2.5%. EV 파우치 물량 감소와 북미 ESS 램프업 비용이 동시에 작용. 계절적 비수기 영향도 가세.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">-2,078억</div>
+          <div class="mt"><b>영업손실</b> — 적자 전환. AMPC 전분기비 급감이 주요 원인. AMPC 배제 시 적자 폭 더욱 확대. AMPC = 영업이익의 121% 구조적 의존 지속.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">ESS 3배</div>
+          <div class="mt"><b>2026년 ESS 매출 전년비 3배 목표</b> — 북미·유럽 그리드 스케일 ESS 수주 확대. LFP 전환과 맞물려 Tesla LFP 계약 실행 개시.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">AMPC 리스크</div>
+          <div class="mt"><b>OBBBA 흑연 배제 조항</b> — 중국 흑연 의존 구조 하에서 AMPC 적격성 저촉 가능. 연간 수혜 ~1.4조가 흔들릴 수 있는 기업 존속급 리스크.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card reveal" style="margin-top:24px">
+      <h3>삼성SDI (006400) — 1Q26 실적</h3>
+      <div class="cc-sub">매출 3.58조(+12.6%) · 영업손실 -1,556억 · 적자 축소 64.2% YoY</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">3.58조</div>
+          <div class="mt"><b>1Q26 매출</b> — YoY +12.6%. 3사 중 유일한 매출 증가. 전자재료 사업 OPM 14.7% 방어로 구조적 안전판 작동.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">-1,556억</div>
+          <div class="mt"><b>영업손실</b> — YoY 64.2% 축소. 바닥 통과 신호. 전자재료 OP +210억이 배터리 적자를 부분 상쇄. 창사 최대 적자(-1.72조, 2025) 이후 뚜렷한 회복세.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">2027H2</div>
+          <div class="mt"><b>전고체 배터리 양산 목표</b> — S라인 파일럿 가동, BMW 실증 진행 중. 한국 3사 최선두. 황화물계 전해질, 900Wh/L. 순항 확인.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">+210억</div>
+          <div class="mt"><b>전자재료 사업 OP</b> — 반도체·디스플레이 소재. 배터리 사이클과 독립적으로 이익 방어. 이것이 삼성SDI의 구조적 차별점.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card reveal" style="margin-top:24px">
+      <h3>SK온 (SK이노베이션 096770) — 1Q26 실적</h3>
+      <div class="cc-sub">영업손실 -3,492억 · QoQ -20.8% 축소 · ESS 전환 방향성 확인</div>
+      <div class="mini">
+        <div class="minirow">
+          <div class="mk tnum">-3,492억</div>
+          <div class="mt"><b>1Q26 영업손실</b> — 적자 지속이지만 QoQ -20.8% 축소. 3사 중 절대 적자 규모 최대. SK이노베이션 합산 PER 9.60배는 회복 기대감 반영.</div>
+        </div>
+        <div class="minirow">
+          <div class="mk tnum">ESS 전환</div>
+          <div class="mt"><b>방향성 확인</b> — EV 수요 둔화 대응으로 ESS 공략 확대. 북미 공장 가동률 개선과 ESS 물량 확대가 적자 축소의 핵심 경로.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-wrap reveal" style="margin-top:32px">
+      <div class="compare-header">
+        <div>비교 항목</div>
+        <div>LG에너지솔루션</div>
+        <div>삼성SDI</div>
+        <div>SK온</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">1Q26 영업손익</div>
+        <div><span class="cr-num bear">-2,078억</span></div>
+        <div><span class="cr-num amber">-1,556억</span></div>
+        <div><span class="cr-num bear">-3,492억</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">YoY 손익 변동</div>
+        <div>적자 전환</div>
+        <div><span class="cr-num">-64.2% 축소</span></div>
+        <div>QoQ -20.8% 축소</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">전고체 로드맵</div>
+        <div>2028~2030</div>
+        <div><span class="cr-num">2027H2 (최선두)</span></div>
+        <div>미확정</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">ESS 전략</div>
+        <div><span class="cr-num">매출 3배 목표</span></div>
+        <div>SBB3.0 확대</div>
+        <div>방향성 확인</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-label">수익성 안전판</div>
+        <div>없음 (AMPC 의존)</div>
+        <div><span class="cr-num">전자재료 OPM 14.7%</span></div>
+        <div>없음</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>셀 메이커 3사는 모두 ESS를 다음 성장 동력으로 지목하고 있다.
+      <span class="u">삼성SDI는 전고체 2027H2 + 전자재료 안전판의 조합으로 바닥 통과가 가장 뚜렷하다. LG에너지솔루션은 AMPC 의존 구조 해소가 중기 핵심 과제이며, OBBBA 흑연 배제 조항이 가장 큰 단기 리스크다. SK온은 절대 적자 폭이 크지만 QoQ 축소 추세가 확인됐다. 3사 공통적으로 ESS 전환 속도가 회복 타임라인을 좌우할 것이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 CATHODE ================= -->
+<section class="blk" id="cathode">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;양극재 3사 — 저점 통과 신호</div>
+      <h2 class="sec-title">에코프로비엠 · 포스코퓨처엠 · 엘앤에프</h2>
+      <p class="sec-lead">양극재 3사의 1Q26 실적은 일제히 회복 신호를 보내고 있다. 특히 엘앤에프는 매출 +103%, OI 1,173억으로 가장 강한 반등을 기록했다. 탈중국 생산 기지 확보와 ESS용 LFP 전환이 다음 성장 동력이다.</p>
+    </div>
+
+    <div class="info-grid-3 reveal">
+      <div class="icard">
+        <span class="ic-tag red">에코프로비엠 (247540)</span>
+        <h3>OI +332% YoY · 하이니켈 유럽</h3>
+        <div class="ic-body">1Q26 예상 영업이익 <b>98억원(+332% YoY)</b>으로 회복세 뚜렷. 헝가리 공장은 국내 최초 유럽 현지 양극재 공장으로, 하이니켈 연 <b>5.4만 톤</b> 생산 체제를 갖추고 있다.<br><br>전고체 배터리용 양극재 개발도 병행 중으로, 삼성SDI의 2027H2 전고체 로드맵과 연결되는 소재 수혜가 기대된다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">1Q26 OI</div><div class="nv">98억</div></div>
+          <div><div class="nk">OI 성장</div><div class="nv">+332%</div></div>
+          <div><div class="nk">헝가리 CAPA</div><div class="nv">5.4만톤</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">포스코퓨처엠 (003670)</span>
+        <h3>1조 149억 음극재 계약 · EV/EBITDA 63.3x</h3>
+        <div class="ic-body">1Q26 예상 영업이익 <b>58억원(흑자 전환)</b>. 인조흑연 음극재 <b>1조 149억원 장기 공급계약(2027~2032)</b>을 체결해 탈중국 수혜를 직접 확보했다.<br><br>LFP 양극재와 베트남 5만 톤 생산 기지도 구축 중. EV/EBITDA 63.3배로 상대적 프리미엄이 높으나, 인조흑연 계약이 재평가의 촉매다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">1Q26 OI</div><div class="nv">58억</div></div>
+          <div><div class="nk">음극재 계약</div><div class="nv">1조 149억</div></div>
+          <div><div class="nk">EV/EBITDA</div><div class="nv">63.3x</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag bull">엘앤에프 (066970)</span>
+        <h3>매출 +103% · OI 1,173억 · ESS LFP 최초</h3>
+        <div class="ic-body">1Q26 <b>매출 7,396억(+103% YoY), 영업이익 1,173억</b>으로 양극재 3사 중 가장 강한 반등. 테슬라향 수요 회복과 ESS 물량 확대가 동시에 작용했다.<br><br><b>ESS용 LFP 양극재 국내 최초</b>(대구 공장, 연 6만 톤) 생산을 개시했다. EV/EBITDA 27.1배로 3사 중 상대적 저평가권이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">1Q26 매출</div><div class="nv">7,396억</div></div>
+          <div><div class="nk">OI</div><div class="nv">1,173억</div></div>
+          <div><div class="nk">EV/EBITDA</div><div class="nv">27.1x</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EV/EBITDA bar chart -->
+    <div class="bar-chart reveal" style="margin-top:32px">
+      <h3>양극재 3사 EV/EBITDA 비교 (배)</h3>
+      <div class="bc-sub">높을수록 시장이 고성장을 기대. 엘앤에프는 실적 반등 대비 상대적 저평가.</div>
+      <div class="bc-rows">
+        <div class="bc-row">
+          <div class="bc-label">
+            <span class="bc-name">에코프로비엠 (247540)</span>
+            <span class="bc-val">79.3x</span>
+          </div>
+          <div class="bc-track"><div class="bc-fill f1" data-w="100%"></div></div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">
+            <span class="bc-name">포스코퓨처엠 (003670)</span>
+            <span class="bc-val">63.3x</span>
+          </div>
+          <div class="bc-track"><div class="bc-fill f2" data-w="79.8%"></div></div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">
+            <span class="bc-name">엘앤에프 (066970)</span>
+            <span class="bc-val">27.1x</span>
+          </div>
+          <div class="bc-track"><div class="bc-fill f3" data-w="34.2%"></div></div>
+        </div>
+      </div>
+      <div class="bc-note">* 컨센서스 기준 EV/EBITDA. 높은 배수는 성장 기대를 반영하나, 실적 실망 시 디레이팅 리스크 존재. 엘앤에프의 낮은 배수는 ESS LFP 실적 반영 전 저평가 가능성을 시사.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>양극재 3사 모두 저점을 통과하고 있지만 밸류에이션 스펙트럼이 넓다.
+      <span class="u">엘앤에프(EV/EBITDA 27.1배)는 ESS용 LFP 국내 최초와 +103% 매출 반등에도 불구하고 가장 낮은 배수로 거래되고 있어 상대적 기회를 제공한다. 에코프로비엠(79.3배)은 헝가리 하이니켈과 전고체 소재 잠재력을 반영한 프리미엄이다. 포스코퓨처엠(63.3배)의 1조 149억 인조흑연 계약은 탈중국 공급망 수혜의 직접적 증거다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 OTHER MATERIALS ================= -->
+<section class="blk" id="other">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;음극재 · 분리막 · 전해질</div>
+      <h2 class="sec-title">탈중국 수혜 vs 구조조정 중 — 차별화 국면</h2>
+      <p class="sec-lead">소재 세그먼트는 양극재와 달리 차별화가 심하다. 인조흑연·실리콘 음극재는 탈중국 수혜, 분리막(SK아이이테크)은 구조조정 중이며 회복에 시간이 필요하다. 전해질은 ESS 수요 확대로 반등 기회가 열리고 있다.</p>
+    </div>
+
+    <div class="share-grid reveal">
+      <div class="share-box">
+        <h3>음극재 — 탈중국 핵심 수혜 세그먼트</h3>
+        <div class="share-bars">
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">포스코퓨처엠 — 인조흑연 (탈중국 수혜)</span><span class="pct">장기계약 확보</span></div>
+            <div class="sbar-track"><div class="sbar-fill green" data-w="85%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">대주전자재료 — 실리콘 음극재 (차세대)</span><span class="pct">성장 잠재력</span></div>
+            <div class="sbar-track"><div class="sbar-fill teal" data-w="65%"></div></div>
+          </div>
+          <div class="sbar-row">
+            <div class="sbar-label"><span class="co">중국 천연흑연 (현재 지배적)</span><span class="pct">~90% 점유</span></div>
+            <div class="sbar-track"><div class="sbar-fill muted" data-w="90%"></div></div>
+          </div>
+        </div>
+        <div class="panel foot" style="margin-top:20px;border:none;background:none;padding:16px 0 0;border-top:1px solid var(--line)">
+          <b>포스코퓨처엠</b>은 인조흑연 음극재 1조 149억원 장기 공급계약(2027~2032)으로 탈중국 대체 수혜를 직접 확보했다. <b>대주전자재료</b>는 실리콘 음극재(Si-anode)로 전고체·고에너지밀도 배터리 전환 시 가장 큰 수혜가 예상되는 차세대 소재주다.
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>전해질 — ESS 수요 전환 수혜</h3>
+        <div class="ph-sub">솔브레인 · 엔켐 · ESS 전환 직결</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">PER 15.93</div>
+            <div class="mt"><b>솔브레인(357780)</b> — 섹터 내 가장 낮은 PER. 반도체 소재 다변화로 배터리 사이클 독립적 수익 방어. 방어적 포지션.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">ESS 전해액</div>
+            <div class="mt"><b>엔켐(348370)</b> — ESS용 전해액 수요 확대의 직접 수혜주. PBR 0.97배(장부가 이하)로 회복 시 상승 여력. 시총 4,689억으로 소형주 변동성 존재.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">방향성</div>
+            <div class="mt"><b>전해질 세그먼트 공통</b> — ESS/BESS 수요 폭발이 전해액 수요를 직접 견인. EV 대비 사이클 안정성 높아 2026H2 이후 구조적 수혜 기대.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-bear">
+        <div class="fc-tag">● 분리막 — 구조조정 중</div>
+        <h3>SK아이이테크 (361610) — 회복 2026H2+</h3>
+        <div class="fc-body">1Q26 매출 432억(YoY <b>-26%</b>), OPM <b>-174%</b>. 배터리 섹터 내 가장 깊은 적자 상태다.<br><br><b>증평공장 가동 중단</b> — 국내 과잉 생산 설비 구조 조정. <b>중국 공장 매각</b> 진행 중 — 중국 LFP 전환에 따른 분리막 수요 감소 대응. <b>폴란드 재집중</b> — 유럽 하이니켈 NMC 분리막 수요에 집중하는 방향으로 선회.<br><br>회복 가능 시점: 빨라도 2026H2, 보수적으로는 2027.</div>
+        <div class="fc-note">PBR 0.46배 — 자산 가치 이하에서 거래 중. 회복 시 밸류 되돌림 기대 가능하나, 구조적 수요 감소(LFP 전환 → 분리막 단순화)가 장기 불확실성.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 음극재 · 실리콘 — 차세대 성장</div>
+        <h3>대주전자재료 (078600) — Si-anode 잠재력</h3>
+        <div class="fc-body">실리콘 음극재(Si-anode)는 흑연 대비 에너지 밀도를 <b>4~10배</b> 향상시킬 수 있는 차세대 소재다. 전고체 배터리, 고에너지밀도 파우치 배터리 전환이 가속화될수록 실리콘 음극재 수요가 동반 확대된다.<br><br>대주전자재료는 국내에서 실리콘 음극재를 양산하는 유일한 상장사에 해당하며, <b>삼성SDI·LG에너지솔루션향 공급</b>이 성장 경로다. 단, 현재는 초기 단계로 실적 기여 본격화는 2027년 이후 예상.</div>
+        <div class="fc-note">PBR 4.90배 — 성장 기대가 이미 일부 반영. 전고체 양산 지연 시 디레이팅 리스크 존재. 장기 관점의 성장주로 접근 필요.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 솔브레인 — 방어적 저평가</div>
+        <h3>PER 15.93배 · 반도체 소재 다변화</h3>
+        <div class="fc-body">솔브레인(357780)은 전해질 소재와 반도체 식각액·CMP 슬러리를 동시에 공급하는 <b>이중 구조</b>로, 배터리 사이클 하락에도 반도체 소재 사업이 완충한다.<br><br>섹터 내 <b>PER 15.93배</b>는 LG에너지솔루션(-208.98), 에코프로비엠(323.26), 포스코퓨처엠(557.09) 대비 압도적 저평가다. 배터리 사이클 저점 구간에서 상대적 밸류 매력이 높다.</div>
+        <div class="fc-note">PBR 2.16배 — 섹터 대비 합리적 수준. 반도체 소재 사업 비중이 높아 HBM·AI 가속기 수요 확대 시 추가 재평가 가능.</div>
+      </div>
+
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 엔켐 — ESS 직접 수혜</div>
+        <h3>ESS 전해액 · PBR 0.97배 · 시총 4,689억</h3>
+        <div class="fc-body">엔켐(348370)은 ESS용 전해액 특화 공급사로, <b>ESS/BESS 수요 폭발</b>의 직접 수혜를 받는 포지션이다. 글로벌 ESS 시장이 2030년 CAGR 37.9%로 성장한다고 가정하면, 전해액 수요도 동일 속도로 확대된다.<br><br><b>PBR 0.97배</b>(장부가 이하)는 현재 실적 부진이 반영된 결과이나, ESS 수요 개화 시 가장 빠른 주가 반응이 예상되는 소형 성장주다.</div>
+        <div class="fc-note">시총 4,689억 — 소형주 유동성 제한. 기관 수급 변동성 크고, 단기 변동폭이 넓다. 리스크 허용 투자자 관점.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 THEMES ================= -->
+<section class="blk" id="themes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;핵심 투자 테마 (2026 H2)</div>
+      <h2 class="sec-title">5가지 구조적 테마와 리스크</h2>
+      <p class="sec-lead">2026년 하반기 한국 2차전지 밸류체인을 움직일 5가지 핵심 테마. ESS 전환과 탈중국 수혜가 긍정적 촉매이며, 원자재 변동성과 AMPC 정책 불확실성이 핵심 리스크다.</p>
+    </div>
+
+    <div class="future-grid reveal">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 테마 1</div>
+        <h3>ESS/BESS → EV 대체 성장 동력</h3>
+        <div class="fc-body">EV 수요 둔화로 타격받은 한국 배터리 밸류체인이 <b>ESS/BESS</b>에서 대체 성장 동력을 찾고 있다. 글로벌 ESS 수요 CAGR 37.9%(2023~2030E)가 EV CAGR 23%를 크게 상회한다.<br><br>수혜 순서: <b>엔켐(전해액) → 엘앤에프(LFP 양극재) → LG에너지솔루션(ESS 셀) → 포스코퓨처엠(LFP 양극재+음극재)</b>. ESS 물량 램프업 속도가 회복 타임라인의 핵심 변수다.</div>
+        <div class="fc-note">LG에너지솔루션 ESS 매출 3배 목표 달성 여부가 2026H2 섹터 주가의 핵심 촉매가 될 전망.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 테마 2</div>
+        <h3>탈중국 공급망 재편 수혜</h3>
+        <div class="fc-body">중국 흑연 ~90%, 희토류 ~85% 지배 구조에서의 탈출이 IRA·OBBBA 정책의 핵심이다. 한국 소재 기업들이 이 재편의 수혜자가 될 수 있다.<br><br><b>포스코퓨처엠</b>의 인조흑연 1조 149억 계약이 가장 직접적 증거. <b>에코프로비엠</b>의 헝가리 공장(유럽 현지 생산)도 탈중국 공급망 구축의 일환이다. 탈중국화에 5~7년이 필요하다는 IEA 분석대로라면, 전환 기간 내내 공급망 재편 수혜주가 주목받을 것이다.</div>
+        <div class="fc-note">OBBBA 흑연 배제 조항은 리스크이자 동시에 탈중국 음극재 수요를 창출하는 양면성이 있다.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 테마 3</div>
+        <h3>전고체 2027 로드맵 본격화</h3>
+        <div class="fc-body">삼성SDI의 전고체 <b>2027H2 양산 목표</b>가 순항 중(S라인 파일럿, BMW 실증). 한국 3사 최선두로, 글로벌 경쟁에서 토요타(2027~28)와 맞붙는 구도.<br><br>전고체 로드맵이 구체화될수록 <b>에코프로비엠(전고체용 양극재), 대주전자재료(Si-anode), 솔브레인(전해질 관련)</b> 소재주가 동반 재평가될 가능성이 있다. 단, 양산 전 스펙이며 지연 가능성은 항상 존재한다.</div>
+        <div class="fc-note">2026H2 중 삼성SDI의 전고체 진행 상황 업데이트가 소재주 주가의 단기 촉매로 기능할 가능성이 높다.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 테마 4</div>
+        <h3>원자재 변동성 — 리튬 급반등 후 재하락</h3>
+        <div class="fc-body">리튬 탄산리튬은 2022년 490,000 CNY/mt 고점 → 58,400 저점 → 170,000 V자 반등 후 재하락 국면. 2026년 10.9만 mt LCE 공급 과잉이 지속되나 과잉 폭은 축소 추세.<br><br>원자재 가격 안정(재하락)은 양극재 3사의 <b>재고 평가손 감소 + 스프레드 확대</b>로 이어지며 실적 회복의 배경이 된다. 니켈(-52%)·코발트(-67%)는 LFP 전환으로 구조적 수요 감소 중.</div>
+        <div class="fc-note">2027년 리튬 공급-수요 균형 전환 전망. 그 이전까지 원자재 변동성이 양극재 스프레드 압박 요인으로 잔존한다.</div>
+      </div>
+
+      <div class="fcard fc-bear">
+        <div class="fc-tag">● 테마 5</div>
+        <h3>AMPC 정책 불확실성 — 최대 리스크</h3>
+        <div class="fc-body">OBBBA(2025.7.4) 흑연 배제 조항이 한국 배터리 3사의 <b>AMPC 수혜 ~2조 2,000억원/년</b>을 위협한다. LG에너지솔루션의 경우 AMPC = 영업이익의 121%로, 이 리스크는 기업 존속급 사안이다.<br><br>구체적 적용 범위는 미확정이나, 중국 흑연 의존도 70~80%를 단기에 해소하기 어려운 구조에서 최악 시나리오가 현실화될 경우 섹터 전반적 디레이팅이 불가피하다. 정책 명확화가 최우선 관찰 포인트다.</div>
+        <div class="fc-note">White & Case·Miller & Chevalier의 OBBBA 법률 분석 지속 모니터링 필요. 조항 세부 적용 범위 확정 시기가 주가 변동의 핵심 일정이다.</div>
+      </div>
+
+      <div class="fcard fc-red">
+        <div class="fc-tag">● 종합</div>
+        <h3>2026H2 밸류체인 투자 우선순위</h3>
+        <div class="fc-body">리스크·리턴 관점 투자 우선순위 제안:<br><br><b>1순위 (성장+밸류)</b>: 엘앤에프 — EV/EBITDA 27.1배, ESS LFP 최초, 1Q26 최강 실적 반등.<br><b>2순위 (방어+저평가)</b>: 솔브레인 — PER 15.93배, 반도체 다변화 안전판.<br><b>3순위 (탈중국 수혜)</b>: 포스코퓨처엠 — 1조 149억 인조흑연 계약.<br><b>4순위 (전고체 로드맵)</b>: 에코프로비엠 — 헝가리+전고체 소재.<br><b>관찰 대기</b>: SK아이이테크(구조조정 완료 확인 후), 엔켐(ESS 수요 본격화 확인 후).</div>
+        <div class="fc-note">이 순위는 투자 제안이 아니며, 각 종목별 투자 판단과 책임은 투자자 본인에게 있습니다.</div>
+      </div>
+    </div>
+
+    <div class="big-thesis reveal" style="margin-top:40px">
+      <div class="bt-tag">THESIS · 핵심 관점</div>
+      <div class="bt-title">한국 2차전지 밸류체인의 저점 통과는 확인됐지만, ESS 전환 속도와 AMPC 정책이 회복 경로를 결정한다.</div>
+      <div class="bt-body">
+        <b>양극재 3사(에코프로비엠 OI +332%, 엘앤에프 매출 +103%, 포스코퓨처엠 흑자 전환)의 1Q26 데이터는 밸류체인 저점 통과를 확인해준다.</b> 그러나 셀 메이커 3사는 여전히 적자 중이며, 분리막은 구조조정 국면이다. 회복의 질과 속도는 종목별로 크게 다르다.<br><br>
+        <b>ESS/BESS 전환이 구조적 변곡점이다.</b> EV 수요 둔화를 ESS가 대체하는 속도가 밸류체인 전반의 이익 회복 타임라인을 결정한다. 엘앤에프의 국내 최초 ESS용 LFP 양산, LG에너지솔루션의 ESS 3배 목표가 이 전환의 선행 지표다.<br><br>
+        가장 시급한 모니터링 포인트는 <b>OBBBA 흑연 조항 세부 적용 범위 확정</b>이다. 한국 3사 AMPC ~2.2조/년의 운명이 여기에 달려 있으며, 정책 명확화 전까지 섹터 밸류에이션 상단은 제한된다. 탈중국 공급망 구축(5~7년)과 전고체 2027 로드맵이 장기 복원의 두 축이다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도</div>
+      <div class="src-list">
+        DATA · 각사 1Q26 실적발표 (2026.05) · LG에너지솔루션 IR (inside.lgensol.com)<br>
+        삼성SDI IR (samsungsdi.co.kr) · SK이노베이션 IR · 포스코퓨처엠 IR · 에코프로비엠 IR<br>
+        엘앤에프 IR · 솔브레인 IR · SK아이이테크놀로지 IR · 엔켐 IR<br>
+        BloombergNEF Energy Storage Outlook 2026 · IEA Global Critical Minerals Outlook 2025<br>
+        S&P Global 리튬 전망 2026 · White & Case OBBBA IRA 변경 분석<br>
+        BNEF Battery Price Survey 2025 · 증권사 컨센서스 (FnGuide 집계)<br>
+        작성 기준일 · 2026.07.16
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표·증권사 추정치를 종합한 것으로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar and bc-fill widths animate on reveal
+  const fillObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w], .bc-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        fillObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box, .bar-chart').forEach(el=>fillObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

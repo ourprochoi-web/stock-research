@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="BESS 450GWh·TerraPower NRC 착공·EU ETS EUR 81·AI DC 565TWh — 에너지 전환 2026 H2 투자 최신 분석">
+<meta name="keywords" content="ESS,BESS,SMR,원자력,TerraPower,탄소시장,EU ETS,CBAM,AI데이터센터,전력,그린수소,재생에너지">
+<meta property="og:title" content="에너지 전환 2026 H2 업데이트 — ESS·SMR·탄소시장·AI DC 전력">
+<meta property="og:description" content="BESS 450GWh·TerraPower NRC 착공·EU ETS EUR 81·AI DC 565TWh — 에너지 전환 2026 H2 투자 최신 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/energy_transition_update_2h26.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="에너지 전환 2026 H2 업데이트 — ESS·SMR·탄소시장·AI DC 전력">
+<meta name="twitter:description" content="BESS 450GWh·TerraPower NRC 착공·EU ETS EUR 81·AI DC 565TWh — 에너지 전환 2026 H2 투자 최신 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/energy_transition_update_2h26.html">
+<title>에너지 전환 2026 H2 업데이트 — ESS·SMR·탄소시장·AI DC 전력</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#22c55e;
+    --current:#4ade80;
+    --glow:#86efac;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(134,239,172,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:18ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- PANELS & MACROS ---------- */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- MINI ROWS ---------- */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--current);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:8px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  thead tr{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:14px 16px;text-align:left;white-space:nowrap}
+  tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+  tbody tr:hover{background:var(--surface)}
+  td{padding:14px 16px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  td.hl-td{color:var(--ink);font-weight:650}
+  td .num-td{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  td .num-td.amber{color:var(--current)}
+  .tbl-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+
+  /* ---------- INFO CARDS ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .info-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .icard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:.3s}
+  .icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .icard:hover{border-color:#1a3d20;transform:translateY(-4px)}
+  .icard:hover::before{opacity:1}
+  .icard .ic-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;display:inline-block;margin-bottom:16px}
+  .ic-tag.red{background:rgba(34,197,94,.12);color:var(--volt);border:1px solid rgba(34,197,94,.3)}
+  .ic-tag.pink{background:rgba(74,222,128,.12);color:var(--current);border:1px solid rgba(74,222,128,.3)}
+  .ic-tag.rose{background:rgba(134,239,172,.12);color:var(--glow);border:1px solid rgba(134,239,172,.3)}
+  .ic-tag.muted{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .ic-tag.bull{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .icard h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .icard .ic-body{font-size:.88rem;color:var(--ink-2);line-height:1.6}
+  .icard .ic-body b{color:var(--ink);font-weight:650}
+  .icard .ic-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:18px}
+  .icard .ic-nums div{background:var(--bg-2);padding:13px 12px}
+  .icard .ic-nums .nk{font-family:var(--mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .icard .ic-nums .nv{font-family:var(--mono);font-weight:750;font-size:.96rem;margin-top:5px;color:var(--ink)}
+
+  /* ---------- SHARE BARS ---------- */
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .share-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .share-box h3{font-size:1rem;font-weight:750;margin-bottom:20px}
+  .share-bars{display:flex;flex-direction:column;gap:12px}
+  .sbar-row{display:flex;flex-direction:column;gap:6px}
+  .sbar-label{display:flex;justify-content:space-between;font-size:.85rem}
+  .sbar-label .co{color:var(--ink-2)}
+  .sbar-label .pct{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  .sbar-track{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+  .sbar-fill{height:100%;border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .sbar-fill.china{background:linear-gradient(90deg,var(--volt),var(--glow))}
+  .sbar-fill.usa{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+  .sbar-fill.korea{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .sbar-fill.other{background:var(--ink-3)}
+
+  /* ---------- FUTURE/RISK CARDS ---------- */
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .fcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .fcard .fc-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .fcard.fc-red .fc-tag{color:var(--volt)}
+  .fcard.fc-pink .fc-tag{color:var(--current)}
+  .fcard.fc-rose .fc-tag{color:var(--glow)}
+  .fcard.fc-bull .fc-tag{color:var(--bull)}
+  .fcard h3{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .fcard .fc-body{font-size:.88rem;color:var(--ink-2);line-height:1.65}
+  .fcard .fc-body b{color:var(--ink);font-weight:650}
+  .fcard .fc-note{margin-top:14px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.74rem;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .compare-header{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .compare-header div{padding:14px 18px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--line);transition:.2s}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row:hover{background:var(--surface)}
+  .compare-row div{padding:16px 18px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .compare-row .cr-label{color:var(--ink);font-weight:650;font-size:.88rem}
+  .compare-row .cr-num{font-family:var(--mono);font-weight:700;color:var(--volt)}
+  .compare-row .cr-num.blue{color:#60a5fa}
+  .compare-row .cr-num.amber{color:#fbbf24}
+
+  /* ---------- COMPARE 3-COL ---------- */
+  .compare-header.col3{grid-template-columns:1.6fr 1fr 1fr}
+  .compare-row.col3{grid-template-columns:1.6fr 1fr 1fr}
+
+  /* ---------- INDICATOR ROW ---------- */
+  .indicator-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  .indcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .indcard .ind-num{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--volt);letter-spacing:-.02em}
+  .indcard .ind-lab{font-size:.78rem;color:var(--ink-2);margin-top:8px;line-height:1.4}
+  .indcard .ind-tag{margin-top:10px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em}
+
+  /* ---------- BIG THESIS BOX ---------- */
+  .big-thesis{margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(134,239,172,.04));
+    border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:42px 48px;position:relative;overflow:hidden}
+  .big-thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--volt),var(--glow),var(--current))}
+  .big-thesis .bt-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--volt);text-transform:uppercase;margin-bottom:20px}
+  .big-thesis .bt-title{font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--ink);margin-bottom:20px}
+  .big-thesis .bt-body{font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--ink-2);line-height:1.75}
+  .big-thesis .bt-body b{color:var(--ink);font-weight:650}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .share-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .info-grid-3{grid-template-columns:1fr}
+    .future-grid{grid-template-columns:1fr}
+    .indicator-grid{grid-template-columns:repeat(2,1fr)}
+    .compare-header,.compare-row{grid-template-columns:1fr 1fr}
+    .compare-header div:nth-child(n+3),.compare-row div:nth-child(n+3){display:none}
+    .compare-header.col3,.compare-row.col3{grid-template-columns:1fr 1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .big-thesis{padding:28px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "에너지 전환 2026 H2 업데이트 — ESS·SMR·탄소시장·AI DC 전력",
+  "description": "BESS 450GWh·TerraPower NRC 착공·EU ETS EUR 81·AI DC 565TWh — 에너지 전환 2026 H2 투자 최신 분석",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/energy/energy_transition_update_2h26.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#86efac;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(134,239,172,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>에너지 전환 2026 H2</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#bess">01 / BESS</a>
+      <a href="#smr">02 / SMR</a>
+      <a href="#ai-dc">03 / AI DC</a>
+      <a href="#carbon">04 / 탄소시장</a>
+      <a href="#policy">05 / 정책</a>
+      <a href="#hydrogen">06 / 수소</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">심화 테마 · 에너지 전환 시리즈 #6 (업데이트) · 2026-07-16</span>
+    <h1 class="hero-title">에너지 전환<br>2026 <span class="hl">H2 업데이트</span></h1>
+    <p class="hero-sub">BESS 450GWh·TerraPower 착공·EU ETS EUR 81·AI DC 565TWh — 에너지 전환 투자 최신 분석</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">450<span class="u">+ GWh</span></div>
+        <div class="lab">글로벌 BESS 2026 연간 전망. H1 +27% YoY. BYD가 Tesla 제치고 #1 통합사 등극.</div>
+        <div class="src">SRC: BloombergNEF / Wood Mackenzie 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">565<span class="u">TWh</span></div>
+        <div class="lab">AI DC 전력 소비 2026E (+26% YoY). 가스터빈 behind-the-meter 101GW 발표.</div>
+        <div class="src">SRC: IEA / Gartner 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">EUR 80<span class="u">.89</span></div>
+        <div class="lab">EU ETS 탄소가격 (7/15). CBAM 완전 시행. VCM 신뢰성 위기 심화.</div>
+        <div class="src">SRC: EU ETS 2026.07.15 기준</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>6개 섹션을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= EXECUTIVE SUMMARY ================= -->
+<section class="blk" id="exec-summary">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">00</span>&nbsp;Executive Summary</div>
+      <h2 class="sec-title">2026 H2 에너지 전환 — 6대 핵심 업데이트</h2>
+      <p class="sec-lead">TerraPower 역사적 착공, BESS 글로벌 +27%, AI DC 전력 565 TWh, EU ETS EUR 80.89, IRA One Big Beautiful Bill 변경, 한국 i-SMR 진척. 에너지 전환의 속도가 가속되고 있다.</p>
+    </div>
+
+    <div class="info-grid-3 reveal">
+      <div class="icard">
+        <span class="ic-tag red">BESS / ESS</span>
+        <h3>글로벌 +27% YoY</h3>
+        <div class="ic-body">H1 2026 글로벌 BESS <b>+27% YoY</b>. 연간 <b>450+ GWh</b> 전망(중국 204·US 49·유럽 35·기타 36). <b>BYD</b>가 Tesla 제치고 글로벌 #1 ESS 통합사 등극. CATL TENER 9MWh, BYD HaoHan 14.5MWh 신제품으로 단위 용량 경쟁 심화.</div>
+        <div class="ic-nums">
+          <div><div class="nk">H1 성장</div><div class="nv">+27%</div></div>
+          <div><div class="nk">연간 전망</div><div class="nv">450+ GWh</div></div>
+          <div><div class="nk">중국 점유</div><div class="nv">76%</div></div>
+        </div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag pink">SMR / 원자력</span>
+        <h3>TerraPower 착공 — 40년 만에</h3>
+        <div class="ic-body">NRC 건설허가 <b>2026.03.04</b>(40년 만에 최초 비경수로 허가). <b>2026.04.23 착공</b>(Kemmerer, WY). 345MWe base/500MWe peak. Rolls-Royce SMR UK 3기 정식 계약. 한국 <b>i-SMR 표준설계인가</b> 신청(2026.02).</div>
+        <div class="ic-nums">
+          <div><div class="nk">착공</div><div class="nv">2026.04</div></div>
+          <div><div class="nk">용량</div><div class="nv">345MWe</div></div>
+          <div><div class="nk">완공</div><div class="nv">2030</div></div>
+        </div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag rose">AI DC 전력</span>
+        <h3>565 TWh — 가스 101GW 발표</h3>
+        <div class="ic-body">AI DC 전력 <b>565 TWh(+26% YoY)</b>, 2030년 1,200 TWh 전망. Behind-the-meter 가스터빈 <b>101 GW 발표</b>. FERC Section 206 명령(2026.06.18)으로 대형 부하 계통 연결 가속. Gartner: AI 서버 전력 2027년 기존 DC 초과.</div>
+        <div class="ic-nums">
+          <div><div class="nk">2026E</div><div class="nv">565TWh</div></div>
+          <div><div class="nk">가스 BTM</div><div class="nv">101GW</div></div>
+          <div><div class="nk">2030E</div><div class="nv">1,200TWh</div></div>
+        </div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag bull">탄소시장</span>
+        <h3>EU ETS EUR 80.89 · CBAM 시행</h3>
+        <div class="ic-body">EU ETS <b>EUR 80.89/tCO2</b>(7/15). CBAM <b>2026.01.01 완전 시행</b>, Q2 인증서 EUR 75.28. 자발적 탄소시장(VCM)은 기업 기후 약속 +227% vs 리타이어먼트 -7%로 신뢰성 위기.</div>
+        <div class="ic-nums">
+          <div><div class="nk">EU ETS</div><div class="nv">EUR 80.89</div></div>
+          <div><div class="nk">CBAM Q2</div><div class="nv">EUR 75.28</div></div>
+          <div><div class="nk">VCM 리타이어</div><div class="nv">-7%</div></div>
+        </div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag muted">IRA 변경</span>
+        <h3>One Big Beautiful Bill 서명</h3>
+        <div class="ic-body"><b>2025.07.04 서명</b>. 풍력·태양광 ITC/PTC: <b>2026.07.05 이후 착공분 단계적 폐지</b>. EV 크레딧 종료. <b>보존</b>: 원자력(45U), CCS(45Q), 청정연료(45Z 2년 연장), 첨단제조(45X). EPA GGRF $200억 보조금 종료.</div>
+        <div class="ic-nums">
+          <div><div class="nk">서명</div><div class="nv">2025.07.04</div></div>
+          <div><div class="nk">풍·태양광</div><div class="nv">PTC 폐지</div></div>
+          <div><div class="nk">원자력·CCS</div><div class="nv">유지</div></div>
+        </div>
+      </div>
+      <div class="icard">
+        <span class="ic-tag red">한국 에너지</span>
+        <h3>11차 계획 · 해상풍력 조정</h3>
+        <div class="ic-body"><b>11차 전력수급기본계획</b>: 원자력 31.8%(2030)→35.6%(2038). 해상풍력 14.3GW→10.5GW 하향. <b>전북 800MW 해상풍력</b> 우선협상자 선정(2026.06.29, KHNP 컨소시엄). i-SMR 표준설계인가 신청(2026.02).</div>
+        <div class="ic-nums">
+          <div><div class="nk">원자력 2038</div><div class="nv">35.6%</div></div>
+          <div><div class="nk">해상풍력</div><div class="nv">10.5GW</div></div>
+          <div><div class="nk">전북 해풍</div><div class="nv">800MW</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 01 BESS ================= -->
+<section class="blk" id="bess">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;ESS/BESS 시장 업데이트</div>
+      <h2 class="sec-title">450+ GWh 전망 — BYD가 Tesla 추월</h2>
+      <p class="sec-lead">2026년 글로벌 BESS 시장은 H1 +27% YoY로 성장하며 연간 450+ GWh를 향하고 있다. BYD HaoHan 14.5MWh 제품이 Tesla Megapack의 3배 용량으로 시장 판도를 바꾸고, CATL TENER 9MWh도 신세대 고용량 경쟁에 참전했다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>지역</th>
+            <th>2026 전망 (GWh)</th>
+            <th>비중</th>
+            <th>주요 특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">중국</td>
+            <td><span class="num-td">204 GWh</span></td>
+            <td>45%</td>
+            <td>정부 의무 설치 정책, LFP 원가 우위</td>
+          </tr>
+          <tr>
+            <td class="hl-td">미국</td>
+            <td><span class="num-td">49 GWh</span></td>
+            <td>11%</td>
+            <td>Q1 9.7GWh 사상 최대(+32% YoY), IRA 수혜</td>
+          </tr>
+          <tr>
+            <td class="hl-td">유럽</td>
+            <td><span class="num-td">35 GWh</span></td>
+            <td>8%</td>
+            <td>그리드 안정화 수요, CBAM 연계</td>
+          </tr>
+          <tr>
+            <td class="hl-td">기타</td>
+            <td><span class="num-td">36 GWh</span></td>
+            <td>8%</td>
+            <td>한국·호주·중동·동남아</td>
+          </tr>
+          <tr>
+            <td class="hl-td">중국 외 기타 합계</td>
+            <td><span class="num-td">246+ GWh</span></td>
+            <td>55%</td>
+            <td>H1 글로벌 +27% YoY 성장 견인</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* BloombergNEF / Wood Mackenzie H1 2026 데이터. 연간 전망치 450+ GWh 기준.</div>
+    </div>
+
+    <div class="info-grid reveal" style="margin-top:32px">
+      <div class="icard">
+        <span class="ic-tag red">CATL TENER</span>
+        <h3>9 MWh/unit — 5년 무열화 보증</h3>
+        <div class="ic-body">CATL TENER는 <b>단일 컨테이너 9 MWh</b>로 업그레이드(이전 세대 5MWh 대비 80% 증가). <b>5년 무열화 보증</b>이 최초 도입돼 운영 리스크가 대폭 감소한다. LFP 기반 12,000사이클로 20년 이상 운영 수명이 가능하며, 표준 40ft 컨테이너 폼팩터로 설치 단순화.<br><br>CATL ESS 부문은 2025년 +80% CAGR 성장하며 EV 둔화를 상쇄 중이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">용량</div><div class="nv">9 MWh</div></div>
+          <div><div class="nk">보증</div><div class="nv">5년 무열화</div></div>
+          <div><div class="nk">사이클</div><div class="nv">12,000</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag pink">BYD HaoHan</span>
+        <h3>14.5 MWh/unit — Megapack의 3배</h3>
+        <div class="ic-body">BYD HaoHan(好漢)은 <b>14.5 MWh/unit</b>으로 Tesla Megapack 3(5 MWh)의 <b>3배 용량</b>을 하나의 시스템에 구현했다. BYD 블레이드 배터리 기반 LFP로 안전성과 원가 우위를 동시 확보.<br><br>이 제품의 출시로 BYD는 <b>글로벌 ESS 통합사 #1</b>로 Tesla를 앞질렀다. 유럽·중동·동남아 대규모 그리드 ESS 프로젝트에 공격적으로 수주하고 있다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">용량</div><div class="nv">14.5 MWh</div></div>
+          <div><div class="nk">vs Megapack</div><div class="nv">3배</div></div>
+          <div><div class="nk">글로벌 순위</div><div class="nv">#1</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag rose">Tesla Megapack 3</span>
+        <h3>5 MWh/unit — H2 2026 출하 개시</h3>
+        <div class="ic-body">Tesla Megapack 3는 <b>5 MWh/unit</b>(Megapack 2XL 3.9MWh 대비 +28% 증가). <b>H2 2026 출하 시작</b>. 캘리포니아 Lathrop 공장에서 양산. 하이퍼스케일러·유틸리티 장기 계약 다수 확보.<br><br>Tesla Energy 부문은 2025년 처음으로 분기 흑자를 기록했으며, 자동차 부문 대비 마진이 높아 Tesla 기업가치의 핵심 성장 동력으로 부상 중이다.</div>
+        <div class="ic-nums">
+          <div><div class="nk">용량</div><div class="nv">5 MWh</div></div>
+          <div><div class="nk">출하</div><div class="nv">H2 2026</div></div>
+          <div><div class="nk">생산</div><div class="nv">Lathrop</div></div>
+        </div>
+      </div>
+
+      <div class="icard">
+        <span class="ic-tag muted">중국 기업 76% 점유</span>
+        <h3>공급망 집중 리스크 vs 원가 우위</h3>
+        <div class="ic-body">중국 기업들이 글로벌 BESS 시장의 <b>76%</b>를 점유. CATL·BYD·Sungrow·CATL-affiliated 시스템 통합사들이 원가와 규모 모두에서 압도적이다.<br><br>미국은 IRA 45X·48E 세액공제를 활용해 국내 생산을 촉진 중이지만, 핵심 소재(흑연 90%·리튬 65%·코발트 75%)는 여전히 중국 의존. <b>탈중국화에 최소 5~7년</b>(IEA) 소요 전망.</div>
+        <div class="ic-nums">
+          <div><div class="nk">중국 점유</div><div class="nv">76%</div></div>
+          <div><div class="nk">흑연 의존</div><div class="nv">90%</div></div>
+          <div><div class="nk">탈중국화</div><div class="nv">5-7년</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>BESS 시장은 단위 용량 경쟁이 급격히 심화되고 있다.
+      <span class="u">BYD HaoHan 14.5MWh vs Tesla Megapack 3 5MWh 격차(3배)는 중국 제조사의 원가·규모 우위가 제품 사양으로도 가시화되고 있음을 보여준다. US Q1 9.7GWh 사상 최대 기록은 IRA 수혜가 실제 설치로 이어지고 있다는 증거다. 중국 기업 76% 점유는 공급망 리스크이자 원가 효율성의 현실이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 SMR ================= -->
+<section class="blk" id="smr">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;SMR / 원자력 진척</div>
+      <h2 class="sec-title">TerraPower 착공 — 40년 만의 역사적 이정표</h2>
+      <p class="sec-lead">2026년은 SMR 역사의 분수령이다. TerraPower Natrium이 NRC 건설허가와 함께 2026.04 착공하며 40년 만에 최초 비경수로 건설이 시작됐다. 영국 Rolls-Royce, 미국 NuScale/TVA, 빅테크 원자력 약정이 동시 진행 중이다.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-header col3">
+        <div>프로젝트</div>
+        <div>상태 / 일정</div>
+        <div>용량 / 기술</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">TerraPower Natrium (미국)</div>
+        <div><span class="cr-num">착공 2026.04.23</span></div>
+        <div>345 MWe base / 500 MWe peak · 나트륨냉각고속로+용융염저장</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">Rolls-Royce SMR (영국)</div>
+        <div><span class="cr-num">계약 2026.04.13</span></div>
+        <div>470 MWe × 3기 · Wylfa, Anglesey · GDA Step 3 완료 2026.08 예정</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">NuScale / ENTRA1-TVA (미국)</div>
+        <div>비구속 합의</div>
+        <div>최대 6 GW · 미국 남동부 7개 주</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">Google-Kairos (미국)</div>
+        <div><span class="cr-num">500 MW fleet deal</span></div>
+        <div>최초 기업 SMR 플릿 딜 · 빅테크 10+ GW 약정</div>
+      </div>
+      <div class="compare-row col3">
+        <div class="cr-label">한국 i-SMR</div>
+        <div><span class="cr-num">표준설계인가 신청 2026.02</span></div>
+        <div>170 MWe × 4 = 680 MWe · SDA 완료 2028 목표 · 준공 ~2035</div>
+      </div>
+    </div>
+
+    <div class="macro-grid" style="margin-top:32px">
+      <div class="panel reveal">
+        <h3>TerraPower Natrium — 기술 개요</h3>
+        <div class="ph-sub">나트륨냉각고속로 + 용융염 열저장 · Kemmerer WY</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">345<br><span style="font-size:.9rem">MWe</span></div>
+            <div class="mt"><b>기저 출력 (Base)</b> — 나트륨냉각고속로(SFR) 기반 안정적 전력 공급. 경수로 대비 연료 효율 6배, 기존 원자력 폐연료봉 재활용 가능.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">500<br><span style="font-size:.9rem">MWe</span></div>
+            <div class="mt"><b>피크 출력 (Peak)</b> — 용융염(molten salt) 열저장 시스템으로 전력 수요 급증 시 추가 5.5~7시간 출력 증대. 재생에너지 간헐성 보완에 최적화.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2030</div>
+            <div class="mt"><b>완공 목표</b> — NRC 최초 비경수로 건설허가(2026.03.04). 빌 게이츠가 설립한 TerraPower와 Warren Buffett이 투자한 PacifiCorp의 협력 프로젝트.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>빅테크 원자력 약정 현황</h3>
+        <div class="ph-sub">합산 10+ GW · 기업 직접 SMR 구매</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">500<br><span style="font-size:.9rem">MW</span></div>
+            <div class="mt"><b>Google-Kairos</b> — 최초 기업 SMR 플릿 딜. 고온가스로(HTGR) 기반 Kairos Power와 계약. 데이터센터 24/7 무탄소 전력 공급 목표.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">10+<br><span style="font-size:.9rem">GW</span></div>
+            <div class="mt"><b>빅테크 합산</b> — Microsoft, Amazon, Meta, Google이 원자력 직접 구매 계약 또는 의향서 확보. AI DC 24/7 청정 전력의 유일한 해법으로 원자력 재평가 중.</div>
+          </div>
+        </div>
+        <div class="foot">한국 i-SMR: 170MWe × 4유닛 = 680MWe 모듈러 설계. SDA(표준설계인가) 완료 목표 2028, 첫 준공 ~2035. 수출 플랫폼 목표.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>2026년은 SMR이 개념에서 착공으로 넘어간 원년이다.
+      <span class="u">TerraPower의 NRC 허가와 착공은 40년 만의 비경수로 허가라는 규제 장벽 돌파를 의미한다. 빅테크 10+ GW 원자력 약정은 AI DC 전력 수요가 SMR 시장의 핵심 수요처로 부상했음을 보여준다. 한국 i-SMR은 2026.02 표준설계인가 신청으로 상용화 레이스에 참전했으나, 첫 준공이 ~2035로 TerraPower 2030 대비 5년 늦다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 AI DC ================= -->
+<section class="blk" id="ai-dc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;AI 데이터센터 전력</div>
+      <h2 class="sec-title">565 TWh (+26%) — 가스 101GW Behind-the-Meter</h2>
+      <p class="sec-lead">AI DC 전력 소비가 2025년 447TWh에서 2026년 565TWh(+26% YoY)로 급증하고 있다. 계통 연결 대기(5년+)를 우회한 behind-the-meter 자체 발전소 101GW 발표가 에너지 시장 지형을 바꾸고 있다.</p>
+    </div>
+
+    <div class="indicator-grid reveal">
+      <div class="indcard">
+        <div class="ind-num">447</div>
+        <div class="ind-lab">AI DC 전력 2025<br>(TWh)</div>
+        <div class="ind-tag">기준년도</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">565</div>
+        <div class="ind-lab">AI DC 전력 2026E<br>(TWh +26%)</div>
+        <div class="ind-tag">IEA 2026</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">1,200</div>
+        <div class="ind-lab">AI DC 전력 2030E<br>(TWh)</div>
+        <div class="ind-tag">2030 전망</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">101</div>
+        <div class="ind-lab">BTM 가스터빈<br>발표량 (GW)</div>
+        <div class="ind-tag">behind-the-meter</div>
+      </div>
+      <div class="indcard">
+        <div class="ind-num">132</div>
+        <div class="ind-lab">AI DC 전력 수요<br>2026E (GW)</div>
+        <div class="ind-tag">104GW→132GW</div>
+      </div>
+    </div>
+
+    <div class="future-grid reveal" style="margin-top:32px">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● Behind-the-Meter 가스</div>
+        <h3>101GW 발표 — 계통 우회 전략</h3>
+        <div class="fc-body"><b>가스터빈 계통 연결 리드타임: 18-24개월</b> vs 계통 신규 연결 5년+. 빅테크들이 전력망 대기를 우회해 자체 발전소를 직접 짓는 BTM 전략을 채택. 발표된 BTM 프로젝트만 <b>101 GW</b>.<br><br><b>GE Vernova</b> 백로그 100GW, 2031년까지 완판. 터빈 단가 $250M+(3년간 300%↑). Q1 수주 $18.3B(+71% YoY). <b>Siemens Energy</b> 잔고 €154B(DC 비중 25%+).</div>
+        <div class="fc-note">가스터빈 터빈 단가 $250M+ 상승은 공급 병목의 직접적 신호. GE Vernova 2031 완판은 사실상 신규 주문 마감에 가깝다.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● FERC Section 206</div>
+        <h3>대형 부하 계통 연결 가속 명령</h3>
+        <div class="fc-body">FERC가 <b>2026.06.18 Section 206 명령</b>을 발동해 6개 지역 그리드 운영자(ISO/RTO)에 대형 부하(데이터센터 등) 계통 연결 프로세스 가속을 요구.<br><br>기존 계통 연결 대기 기간 5년+에서 단축 압력. 빅테크의 <b>BTM 가스터빈 + 계통 연결 가속</b>을 동시에 추진하는 이중 전략이 확산되고 있다.</div>
+        <div class="fc-note">FERC 명령의 실제 효과는 각 ISO/RTO의 이행 속도에 따라 편차가 클 수 있다.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● Gartner 전망</div>
+        <h3>AI 서버 전력 2027년 기존 DC 초과</h3>
+        <div class="fc-body">Gartner 예측: AI 서버 전력 소비가 <b>2027년 기존 데이터센터 하드웨어를 초과</b>. AI 추론(inference) 워크로드 확산이 주요 동인.<br><br>AI 훈련(training)에서 추론으로 무게 중심이 이동하면서, 24/7 상시 고전력 수요가 피크 중심에서 <b>기저 부하(baseload)</b>로 성격이 전환되고 있다. 이는 간헐적 재생에너지 대비 원자력·가스의 전략적 가치를 더욱 높인다.</div>
+        <div class="fc-note">AI 추론 전력 = 고정 기저 부하. 재생에너지+ESS보다 원자력·가스가 경쟁력 있는 전원으로 재평가.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 한국 AI DC 전력</div>
+        <h3>18.4GW(2030) — 전기국가 비전</h3>
+        <div class="fc-body">한국 정부 '전기국가 비전': AIDC 전력 수요 <b>18.4GW(2030년)</b>, 재생에너지 100GW 확보 계획.<br><br><b>SK AI DC 1,000조원</b> 투자 발표. <b>GS그룹 동해 2.4GW</b>, <b>네이버 세종 1GW+α</b> DC 클러스터 조성. 지역별 차등 전기요금제 도입으로 AIDC 인근 ESS 피크 셰이빙 경제성 강화.</div>
+        <div class="fc-note">한국 AI DC 전력 수요 18.4GW는 현재 한국 최대 전력 수요(90GW대)의 약 20%에 해당하는 대규모 추가 부하다.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>AI DC 전력 수요가 기존 에너지 인프라의 한계를 넘어서고 있다.
+      <span class="u">565TWh → 1,200TWh(2030E) 경로는 AI 추론 워크로드 확산으로 기저 부하 성격이 강화되고 있다. BTM 가스 101GW 발표는 재생에너지+ESS만으로는 AI DC 수요를 충당할 수 없다는 산업계의 현실 인식이다. GE Vernova 2031 완판, 터빈 단가 300% 급등은 가스터빈 공급 병목을 의미하며, 조기 계약이 없는 기업은 2032년 이후에나 발전소 완공이 가능하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 CARBON ================= -->
+<section class="blk" id="carbon">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;탄소시장 — EU ETS · CBAM · VCM</div>
+      <h2 class="sec-title">EU ETS EUR 80.89 · CBAM 완전 시행</h2>
+      <p class="sec-lead">EU ETS 탄소가격이 EUR 80.89/tCO2(7/15)를 유지하며 기업 투자 결정에 실질적 영향을 미치고 있다. CBAM이 2026.01.01 완전 시행으로 전환되며 철강·알루미늄·시멘트·전력 수입에 탄소비용이 부과된다. 자발적 탄소시장(VCM)은 신뢰성 위기에 직면했다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>EU ETS + CBAM 현황</h3>
+        <div class="ph-sub">탄소가격 · 국경조정 · 2026 기준</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">EUR<br>80.89</div>
+            <div class="mt"><b>EU ETS 탄소가격 (2026.07.15)</b> — 2023년 EUR 100 돌파 후 조정. MSR(시장안정화예비비) 작동으로 EUR 75-90 밴드 형성. 2030년 EUR 150+ 전망(EC 추정).</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">EUR<br>75.28</div>
+            <div class="mt"><b>CBAM 인증서 Q2 가격</b> — 2026.01.01 완전 시행. 철강·알루미늄·시멘트·전력·비료·수소 수입품에 부과. EU ETS와 연동되나 별도 거래 메커니즘.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2026</div>
+            <div class="mt"><b>CBAM 완전 시행</b> — 전환 기간(2023-2025) 종료. 한국 기업 수출 영향: 철강(포스코·현대제철), 알루미늄 제품 등 탄소비용 EUR/tCO2 부담 현실화.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>VCM — 자발적 탄소시장 위기</h3>
+        <div class="ph-sub">신뢰성 위기 · 품질 격차 · 2025 데이터</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">-7%</div>
+            <div class="mt"><b>VCM 리타이어먼트 2025</b> — 크레딧 실제 폐기량이 전년 대비 -7% 감소. 품질 논란으로 수요 위축.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">+227%</div>
+            <div class="mt"><b>기업 기후 약속 증가</b> — 같은 기간 기업 Net-Zero/탄소중립 약속은 +227% 급증. 수요(약속)와 실제 사용(리타이어)의 역주행 — 신뢰성 위기의 핵심.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">질 &gt; 양</div>
+            <div class="mt"><b>시장 구조 전환</b> — ICE·CME 등 거래소 기반 검증 크레딧 수요 급증. 선도 기업들은 제거(removal) 크레딧과 회피(avoidance) 크레딧을 구분해 조달 전략 수립 중.</div>
+          </div>
+        </div>
+        <div class="foot">* ICVCM Core Carbon Principles(CCP) 레이블 도입으로 품질 기준 표준화 중. 2026년 CCP 레이블 크레딧 프리미엄 거래 시작.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>탄소시장 유형</th>
+            <th>현황 가격</th>
+            <th>2025 대비</th>
+            <th>한국 기업 영향</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">EU ETS</td>
+            <td><span class="num-td">EUR 80.89/tCO2</span></td>
+            <td>7/15 기준</td>
+            <td>CBAM으로 대EU 수출 제품 탄소비용 직접 부과</td>
+          </tr>
+          <tr>
+            <td class="hl-td">CBAM 인증서</td>
+            <td><span class="num-td">EUR 75.28/tCO2</span></td>
+            <td>Q2 기준</td>
+            <td>철강·알루미늄·시멘트 수출 기업 비용 증가</td>
+          </tr>
+          <tr>
+            <td class="hl-td">한국 K-ETS</td>
+            <td><span class="num-td">KRW ~8,500/tCO2</span></td>
+            <td>EUR 5.4 수준</td>
+            <td>EU ETS 대비 15배 낮아 CBAM 추가비용 불가피</td>
+          </tr>
+          <tr>
+            <td class="hl-td">VCM (자발적)</td>
+            <td><span class="num-td">$3~25/tCO2</span></td>
+            <td>품질별 큰 편차</td>
+            <td>CCP 레이블 기준 미충족 크레딧 가치 급락</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* EU ETS 7/15 기준. K-ETS 근사치. VCM 가격은 크레딧 유형·품질별 큰 편차.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>CBAM 완전 시행은 한국 기업에 실제 탄소비용이 부과되는 원년이다.
+      <span class="u">EU ETS EUR 80.89 vs K-ETS KRW ~8,500(EUR ~5.4)의 15배 가격 격차는 한국 대EU 수출 기업이 CBAM으로 추가 탄소비용을 지불해야 함을 의미한다. 포스코·현대제철 등 철강 기업의 대EU 수출분은 2026년부터 실제 인증서 구매 부담이 발생한다. VCM 신뢰성 위기는 기업이 고품질 제거 크레딧과 실질 감축으로 전략을 전환하는 계기가 되고 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 POLICY ================= -->
+<section class="blk" id="policy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;에너지 정책 · 재생에너지</div>
+      <h2 class="sec-title">IRA 재편 · 한국 11차 계획 · 모듈 $0.09/W</h2>
+      <p class="sec-lead">One Big Beautiful Bill(2025.07.04)이 풍력·태양광 세액공제를 단계적 폐지하면서 미국 청정에너지 투자 지형이 재편됐다. 한국은 11차 전력수급기본계획으로 원자력 확대·해상풍력 하향 조정 방향을 확정했다. 태양광 모듈 가격은 $0.09-0.11/W로 역사적 저점에 도달했다.</p>
+    </div>
+
+    <div class="future-grid reveal">
+      <div class="fcard fc-red">
+        <div class="fc-tag">● One Big Beautiful Bill (미국)</div>
+        <h3>풍·태양광 PTC/ITC 단계적 폐지</h3>
+        <div class="fc-body"><b>서명: 2025.07.04</b><br><br><b>폐지 (2026.07.05 이후 착공분)</b><br>· 풍력 PTC (Section 45) — 단계적 폐지<br>· 태양광 ITC (Section 48E) — 단계적 폐지<br>· EV 세액공제 (30D) — 종료<br>· EPA GGRF $200억 그린 보조금 종료<br><br><b>유지·강화</b><br>· 원자력 (Section 45U) — 기존 원전 생산 크레딧 유지<br>· CCS (Section 45Q) — 탄소포집 크레딧 유지<br>· 청정연료 (Section 45Z) — 2년 연장<br>· 첨단제조 (Section 45X) — AMPC 유지 (배터리 등)</div>
+        <div class="fc-note">45X 유지는 한국 배터리 3사 AMPC 수혜 지속 의미. 단, "중국 물질적 지원" 배제 조항 적용 리스크 잔존.</div>
+      </div>
+
+      <div class="fcard fc-pink">
+        <div class="fc-tag">● 한국 11차 전력수급기본계획</div>
+        <h3>원자력 35.6%(2038) · 해상풍력 하향</h3>
+        <div class="fc-body"><b>원자력 확대</b><br>· 2030: 31.8% → 2038: 35.6%<br>· 신한울 3·4호기 건설 재개<br>· i-SMR 상용화 목표 포함<br><br><b>해상풍력 하향 조정</b><br>· 기존 목표 14.3GW → 조정 10.5GW<br>· 전북 800MW KHNP 컨소시엄 우선협상(2026.06.29)<br><br><b>재생에너지 전반</b><br>· 태양광·육상풍력은 계속 확대<br>· 계통 보강·ESS 연계 의무화 강화<br>· 지역별 차등 전기요금 도입</div>
+        <div class="fc-note">해상풍력 14.3→10.5GW 하향은 계통 연결·주민 수용성 문제 반영. 그러나 전북 800MW 착수는 실행력 회복의 신호.</div>
+      </div>
+
+      <div class="fcard fc-rose">
+        <div class="fc-tag">● 태양광 모듈 가격</div>
+        <h3>$0.09-0.11/W — 역사적 저점</h3>
+        <div class="fc-body">태양광 모듈 가격 <b>$0.09-0.11/W</b> (2010년 $1.80 대비 -95%). 양면(bifacial) 모듈 침투율 유틸리티 신규 설치의 40%+.<br><br><b>LCOE 현황</b><br>· 태양광: $14-55/MWh<br>· 육상풍력: $26-50/MWh<br>· 해상풍력: $80-130/MWh<br><br>태양광 LCOE $14/MWh는 천연가스 복합화력($40-70)보다 저렴한 지역이 확산 중이다. 단, 계통 비용·저장 비용 미포함 기준.</div>
+        <div class="fc-note">미국 IRA 풍·태양광 PTC 폐지 영향으로 2026.07 이후 신규 착공이 급감할 가능성. 단기 모듈 가격 추가 하락 압력.</div>
+      </div>
+
+      <div class="fcard fc-bull">
+        <div class="fc-tag">● 전북 800MW 해상풍력</div>
+        <h3>KHNP 컨소시엄 우선협상 선정</h3>
+        <div class="fc-body">2026.06.29, 산업통상자원부가 전북 새만금 인근 <b>800MW 해상풍력</b> 우선협상대상자로 <b>KHNP(한국수력원자력) 컨소시엄</b>을 선정.<br><br>한국 최대 단일 해상풍력 프로젝트. KHNP의 해상풍력 진출은 원자력 중심 공기업이 재생에너지로 포트폴리오를 다각화하는 상징적 사건이다.<br><br>완공 시 국내 해상풍력 누적 설치의 약 50%에 해당하는 대규모 프로젝트.</div>
+        <div class="fc-note">KHNP 컨소시엄 구성과 사업계획서는 협상 단계에서 확정. 2026년 내 본계약 체결이 목표.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>미국 풍·태양광 세액공제 폐지와 원자력·CCS 유지는 에너지 투자 지형을 재편했다.
+      <span class="u">OBBBA의 ITC/PTC 단계적 폐지는 미국 재생에너지 신규 착공 급감을 예고하지만, 기존 설치·운영 자산은 영향 없다. 원자력(45U)·CCS(45Q)·첨단제조(45X) 크레딧 유지는 한국 배터리 AMPC와 빅테크 SMR 투자에는 호재다. 태양광 모듈 $0.09/W는 중국 제조 과잉으로 인한 구조적 저가이며, 미국 관세 정책과 무관하게 글로벌 프로젝트 경제성은 개선 중이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 HYDROGEN ================= -->
+<section class="blk" id="hydrogen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;그린수소 — 현실과 과제</div>
+      <h2 class="sec-title">$3-6/kg — 그레이 대비 2-5배, 경제성 미달</h2>
+      <p class="sec-lead">그린수소 생산원가는 $3-6/kg으로 그레이 수소($1.2-1.5/kg)의 2-5배 수준이다. 사우디 NEOM 프로젝트(2GW PEM, $84억)가 80-90% 완공되며 가장 앞선 대형 프로젝트가 됐지만, 보조금 없이는 아직 경제성이 확보되지 않는다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>NEOM 그린수소 프로젝트</h3>
+        <div class="ph-sub">사우디아라비아 · ACWA Power · Air Products</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">2 GW</div>
+            <div class="mt"><b>PEM 전해조 용량</b> — 프로톤교환막(PEM) 전해조 기반. 태양광+풍력 재생에너지로 전기 분해. 세계 최대 그린수소 프로젝트.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$84억</div>
+            <div class="mt"><b>총 투자비</b> — ACWA Power(사우디), Air Products(미국), NEOM(사우디 PIF) 공동 투자. 80-90% 완공 단계. 암모니아로 전환해 수출 예정.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">80~90%</div>
+            <div class="mt"><b>완공률</b> — 2026 기준. 최초 그린 암모니아 생산 및 수출 임박. 미국·유럽향 탄소중립 연료로 공급 목표.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>그린수소 경제성 현황</h3>
+        <div class="ph-sub">생산원가 비교 · 보조금 의존 · 2026</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">$3-6<br><span style="font-size:.9rem">/kg</span></div>
+            <div class="mt"><b>그린수소 생산원가</b> — 재생에너지 가격·전해조 효율에 따라 지역별 편차 큼. 중동·칠레·호주 일부 지역에서 $3/kg대 달성 가능.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">$1.2~1.5<br><span style="font-size:.9rem">/kg</span></div>
+            <div class="mt"><b>그레이 수소(천연가스 개질) 원가</b> — 그린 대비 2-5배 저렴. 탄소 포집(CCS) 결합 블루 수소는 $1.5-2.5/kg. 보조금 없이 그린이 경쟁하기 어렵다.</div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">2030</div>
+            <div class="mt"><b>경제성 달성 목표 시점</b> — 전해조 규모화(200GW+ 글로벌 생산), 재생에너지 원가 추가 하락 시 $2/kg 목표. 현재 진행 중인 대형 프로젝트들의 가격 발견 데이터가 관건.</div>
+          </div>
+        </div>
+        <div class="foot">* IRA 45V 그린수소 세액공제($3/kg 최대)가 유지됐으나, 적격 전력 기준이 엄격해 실제 수혜는 제한적.</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap reveal" style="margin-top:32px">
+      <table>
+        <thead>
+          <tr>
+            <th>수소 유형</th>
+            <th>생산 방식</th>
+            <th>원가 ($/kg)</th>
+            <th>탄소 강도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hl-td">그레이 수소</td>
+            <td>천연가스 SMR</td>
+            <td><span class="num-td amber">$1.2-1.5</span></td>
+            <td>9-12 kgCO2/kg H2</td>
+          </tr>
+          <tr>
+            <td class="hl-td">블루 수소</td>
+            <td>천연가스 SMR + CCS</td>
+            <td><span class="num-td amber">$1.5-2.5</span></td>
+            <td>1-3 kgCO2/kg H2</td>
+          </tr>
+          <tr>
+            <td class="hl-td">그린 수소 (현재)</td>
+            <td>재생에너지 + 전해조</td>
+            <td><span class="num-td">$3-6</span></td>
+            <td>&lt;0.5 kgCO2/kg H2</td>
+          </tr>
+          <tr>
+            <td class="hl-td">그린 수소 (2030E)</td>
+            <td>재생에너지 + 전해조 대규모화</td>
+            <td><span class="num-td">$2-3</span></td>
+            <td>&lt;0.5 kgCO2/kg H2</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* IEA / BloombergNEF 2026 추정. 지역별 재생에너지 원가 편차로 실제 수치는 크게 다를 수 있음.</div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">핵심 포인트</div>
+      <p>그린수소는 보조금 없이 아직 비경쟁적이다. 2030년까지 기다려야 한다.
+      <span class="u">그린수소 $3-6/kg vs 그레이 $1.2-1.5/kg의 2-5배 원가 격차는 대규모 보조금(IRA 45V, EU Hydrogen Bank)이 없는 한 시장 경쟁력이 없다. NEOM 80-90% 완공은 기술적 실현 가능성을 입증하지만, 경제성 검증은 암모니아 판매 가격이 확정돼야 가능하다. IRA 45V의 엄격한 적격 기준은 미국 내 그린수소 실제 생산을 제한하는 요인이 되고 있다.</span></p>
+    </div>
+
+    <!-- BIG THESIS -->
+    <div class="big-thesis reveal">
+      <div class="bt-tag">SYNTHESIS · 2026 H2 에너지 전환 종합 관점</div>
+      <div class="bt-title">에너지 전환의 속도가 기술에서 인프라 병목으로 이동했다.</div>
+      <div class="bt-body">
+        <b>2026 H2 에너지 전환의 핵심은 수요의 폭증이 아니라 공급 인프라의 병목이다.</b> AI DC 전력 565TWh는 숫자가 아닌 현실이다. 가스터빈 BTM 101GW 발표, GE Vernova 2031 완판, BESS 450GWh 급증이 모두 같은 방향을 가리킨다 — 전력 인프라가 AI 수요를 따라가지 못하고 있다.<br><br>
+        <b>TerraPower 착공과 빅테크 10+ GW 원자력 약정은</b> AI DC 24/7 무탄소 기저 전력의 유일한 해법으로 원자력이 재부상했음을 의미한다. IRA OBBBA의 원자력·CCS 크레딧 유지와 풍·태양광 폐지는 이 방향을 제도적으로 확인해준다.<br><br>
+        <b>EU ETS EUR 80.89와 CBAM 완전 시행</b>은 탄소비용이 이제 기업 손익에 직접 반영되는 단계에 진입했음을 뜻한다. 한국 기업의 대EU 수출 경쟁력은 K-ETS 가격(EUR ~5)과 EU ETS(EUR 80+)의 15배 격차를 어떻게 메우느냐에 달려 있다.<br><br>
+        투자자 관점에서 <b>3대 핵심 테마</b>는: (1) BESS — 450GWh 시장에서 BTM·AI DC 연계 고성장 세그먼트, (2) 원자력/SMR — TerraPower 착공으로 촉발된 SMR 밸류체인 재평가, (3) 가스터빈 — GE Vernova·Siemens Energy의 공급 병목 수혜. 그린수소와 순수 재생에너지(풍·태양광 단독)는 정책 역풍과 원가 과제로 2026년에는 상대적 열위다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">에너지 전환 2026 H2 업데이트 — ESS·SMR·탄소시장·AI DC 전력</div>
+      <div class="src-list">
+        DATA · BloombergNEF Energy Storage Outlook 2026 · IEA World Energy Investment 2026<br>
+        IEA Data Centres and Energy report 2026 · Wood Mackenzie BESS Market Outlook H1 2026<br>
+        NRC TerraPower Natrium 건설허가 (2026.03.04) · TerraPower 착공 보도자료 (2026.04.23)<br>
+        Rolls-Royce SMR UK 계약 발표 (2026.04.13) · FERC Section 206 명령 (2026.06.18)<br>
+        EU ETS 가격 데이터 (2026.07.15) · EU CBAM 시행 규정 2026.01 · ICVCM CCP 기준<br>
+        Gartner AI DC 전력 전망 2026 · GE Vernova Q1 2026 실적 발표<br>
+        산업통상자원부 11차 전력수급기본계획 · 전북 해상풍력 우선협상자 선정 보도자료 (2026.06.29)<br>
+        One Big Beautiful Bill 서명본 (2025.07.04) · NEOM Green Hydrogen Complex 프로젝트 공시<br>
+        작성 기준일 · 2026-07-16
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·거시 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도·정부 발표를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // sbar widths animate on reveal
+  const sbarObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.sbar-fill[data-w]').forEach(b=>{
+          requestAnimationFrame(()=>{ b.style.width = b.dataset.w; });
+        });
+        sbarObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.share-box').forEach(el=>sbarObs.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id;
+      const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
