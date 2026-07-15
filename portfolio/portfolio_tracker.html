@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드">
+<meta name="keywords" content="포트폴리오,트래커,P&L,SK하이닉스,삼성전자,ETF,AI반도체,투자,대시보드">
+<meta property="og:title" content="포트폴리오 트래커 — ourprochoi Research">
+<meta property="og:description" content="v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 대시보드">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="포트폴리오 트래커 — ourprochoi Research">
+<meta name="twitter:description" content="v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 대시보드">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html">
+<title>포트폴리오 트래커 — ourprochoi Research</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root {
+  --bg:#070b16; --card:#0f1422; --card-border:#1a2035;
+  --text:#e8ecf4; --sub:#8899aa; --faint:#7a8694;
+  --gold:#c79a2f; --gold-dim:rgba(199,154,47,.15);
+  --green:#2ecc71; --green-dim:rgba(46,204,113,.12);
+  --red:#e74c3c; --red-dim:rgba(231,76,60,.12);
+  --blue:#3498db; --blue-dim:rgba(52,152,219,.12);
+  --purple:#9b59b6; --purple-dim:rgba(155,89,182,.12);
+  --cyan:#1abc9c; --cyan-dim:rgba(26,188,156,.12);
+  --orange:#e67e22; --orange-dim:rgba(230,126,34,.12);
+  --line:#1e2a40;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(199,154,47,.3)}
+.mono{font-family:'JetBrains Mono','SF Mono','Fira Code',monospace;font-variant-numeric:tabular-nums}
+
+/* ═══ PROGRESS BAR ═══ */
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--green),var(--blue),var(--gold));width:0%;z-index:99;transition:width .15s}
+
+/* ═══ NAV ═══ */
+nav{position:sticky;top:0;z-index:90;background:rgba(7,11,22,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover,nav a.active{background:var(--gold-dim);color:var(--gold);border-color:var(--gold)}
+nav a:focus-visible,.back-top:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ═══ WRAP ═══ */
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#0a1020 0%,#0f1a35 40%,#070b16 100%);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.2;background-image:repeating-linear-gradient(0deg,transparent 0 60px,rgba(199,154,47,.06) 60px 61px),repeating-linear-gradient(90deg,transparent 0 60px,rgba(199,154,47,.06) 60px 61px);pointer-events:none}
+.hero{position:relative;max-width:860px;margin:0 auto;padding:80px 20px 50px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.hero .updated{font-size:12px;color:var(--sub);margin-top:4px}
+.hero h1{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin:16px 0 14px;background:linear-gradient(110deg,#fff 20%,#e7c77e 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero .lede{color:var(--sub);max-width:640px;margin:0 auto;font-size:16px;line-height:1.7}
+
+/* ═══ HERO VALUE ═══ */
+.hero-value{margin:28px 0 8px}
+.hero-value .total{font-size:clamp(32px,7vw,52px);font-weight:900;letter-spacing:-.03em}
+.hero-value .pnl{font-size:clamp(16px,3vw,22px);font-weight:800;margin-top:4px}
+.hero-value .pnl.up{color:var(--green)} .hero-value .pnl.down{color:var(--red)} .hero-value .pnl.flat{color:var(--sub)}
+
+/* ═══ SUMMARY STATS ═══ */
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:700px;margin:32px auto 0}
+.summary-stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 10px;text-align:center}
+.summary-stat .num{font-size:20px;font-weight:900;letter-spacing:-.02em}
+.summary-stat .num.gold{color:var(--gold)} .summary-stat .num.green{color:var(--green)} .summary-stat .num.red{color:var(--red)}
+.summary-stat .label{font-size:11.5px;color:var(--sub);margin-top:2px;font-weight:600}
+
+/* ═══ DISCLAIMER ═══ */
+.disclaimer{background:var(--red-dim);border:1px solid rgba(231,76,60,.25);border-radius:12px;padding:16px 20px;margin:0 0 32px;font-size:13px;color:var(--sub);line-height:1.6}
+.disclaimer strong{color:var(--red)}
+
+/* ═══ SECTION HEADERS ═══ */
+.sec-head{margin:48px 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:22px;font-weight:900;letter-spacing:-.02em}
+.sec-head .sub{font-size:13px;color:var(--sub);margin-top:4px}
+
+/* ═══ CARDS ═══ */
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px;margin-bottom:16px}
+
+/* ═══ TABLE ═══ */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{text-align:left;font-weight:700;color:var(--sub);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th.r{text-align:right}
+tbody td{padding:8px 10px;border-bottom:1px solid rgba(30,42,64,.4);white-space:nowrap}
+tbody td.r{text-align:right}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(255,255,255,.02)}
+tfoot td{padding:10px 10px;border-top:2px solid var(--line);font-weight:900;white-space:nowrap}
+tfoot td.r{text-align:right}
+td.green{color:var(--green)} td.red{color:var(--red)} td.gold{color:var(--gold)}
+
+/* ═══ PHASE ROADMAP ═══ */
+.phase-bar{display:flex;gap:4px;margin:12px 0;height:40px;border-radius:10px;overflow:hidden}
+.phase-seg{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;letter-spacing:.02em;transition:flex .3s}
+.phase-seg.active{background:var(--gold);color:var(--bg)}
+.phase-seg.planned{background:rgba(255,255,255,.05);color:var(--faint);border:1px dashed rgba(255,255,255,.1)}
+.phase-labels{display:flex;gap:4px;margin-top:6px}
+.phase-labels .ph-label{font-size:11px;color:var(--sub);text-align:center}
+
+/* ═══ DONUT CHART ═══ */
+.donut-wrap{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center}
+.donut-svg{width:200px;height:200px;flex-shrink:0}
+.donut-legend{display:flex;flex-direction:column;gap:8px}
+.donut-legend .leg-item{display:flex;align-items:center;gap:8px;font-size:13px}
+.donut-legend .leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.donut-legend .leg-pct{color:var(--sub);font-size:12px;margin-left:auto;padding-left:16px}
+
+/* ═══ COLLAPSIBLE ═══ */
+.collapse-toggle{cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px}
+.collapse-toggle .chevron{font-size:14px;color:var(--faint);transition:transform .25s;flex:none;width:18px;text-align:center}
+.collapse-toggle[aria-expanded="false"] .chevron{transform:rotate(-90deg)}
+.collapse-body{display:grid;grid-template-rows:1fr;transition:grid-template-rows .3s ease}
+.collapse-body[data-collapsed="true"]{grid-template-rows:0fr}
+.collapse-body-inner{overflow:hidden}
+
+/* ═══ BACK TO TOP ═══ */
+.back-top{position:fixed;bottom:24px;right:24px;background:var(--gold);color:var(--bg);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;text-decoration:none;opacity:0;transition:opacity .3s;z-index:80;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.back-top.show{opacity:1}
+
+/* ═══ FOOTER ═══ */
+footer{text-align:center;padding:40px 20px;font-size:12px;color:var(--faint);border-top:1px solid var(--line)}
+footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)}
+
+/* ═══ LOADING ═══ */
+.loading{text-align:center;padding:40px;color:var(--sub);font-size:14px}
+.loading .spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin-right:8px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ═══ ERROR ═══ */
+.error-box{background:var(--red-dim);border:1px solid rgba(231,76,60,.25);border-radius:12px;padding:16px 20px;margin:16px 0;font-size:13px;color:var(--sub)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px){
+  body{font-size:15px}
+  .summary-grid{grid-template-columns:repeat(2,1fr)}
+  .donut-wrap{flex-direction:column}
+  .donut-svg{width:180px;height:180px}
+}
+@media(max-width:480px){
+  .hero{padding:60px 16px 40px}
+  .hero h1{font-size:24px}
+  .hero-value .total{font-size:28px}
+  .hero-value .pnl{font-size:15px}
+  .summary-grid{gap:8px}
+  .summary-stat{padding:12px 6px}
+  .summary-stat .num{font-size:16px}
+  .card{padding:14px}
+  .phase-bar{height:32px}
+  .phase-seg{font-size:10px}
+}
+
+/* ═══ PRINT ═══ */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav,#prog,.back-top,.hero-shell::before{display:none}
+  .hero-shell{background:#fff;border-bottom:2px solid #000}
+  .hero h1{background:none;color:#000;-webkit-background-clip:unset;animation:none}
+  .hero .eyebrow,.hero .lede,.hero .updated{color:#444}
+  .hero-value .total{color:#000}
+  .summary-stat{border-color:#ccc;background:#f8f8f8}
+  .summary-stat .num{color:#000!important}
+  .card{background:#f9f9f9;border-color:#ddd;break-inside:avoid}
+  a{color:#000!important}
+  a[href]::after{content:" (" attr(href) ")";font-size:9pt;color:#666}
+  nav a[href]::after{content:none}
+  .disclaimer{background:#fee;border-color:#c00}
+  .collapse-body[data-collapsed="true"]{grid-template-rows:1fr!important}
+  .collapse-toggle .chevron{display:none}
+}
+
+/* ═══ REDUCED MOTION ═══ */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .back-top{opacity:1}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"포트폴리오 트래커 — v7.2 Phase 0 실매수 대시보드",
+  "description":"v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드",
+  "datePublished":"2026-07-14",
+  "dateModified":"2026-07-16",
+  "author":{"@type":"Person","name":"ourprochoi"},
+  "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html"}
+}
+</script>
+</head>
+<body>
+<div id="prog"></div>
+
+<nav>
+  <a href="../index.html">← 아카이브</a>
+  <a href="#overview" class="active">개요</a>
+  <a href="#holdings">보유 종목</a>
+  <a href="#allocation">배분</a>
+  <a href="#roadmap">로드맵</a>
+  <a href="portfolio_evolution_chronicle.html" style="border-style:dashed">크로니클</a>
+</nav>
+
+<div class="hero-shell">
+  <div class="hero">
+    <div class="eyebrow">Portfolio Tracker</div>
+    <h1>v7.2 포트폴리오 트래커</h1>
+    <p class="lede">Phase 0 실매수 기반 — 투자 현황 · P&L · 클러스터 배분 대시보드</p>
+    <div class="hero-value">
+      <div class="total mono" id="heroTotal">—</div>
+      <div class="pnl flat mono" id="heroPnl">데이터 로딩 중…</div>
+    </div>
+    <p class="updated" id="heroUpdated"></p>
+
+    <div class="summary-grid">
+      <div class="summary-stat">
+        <div class="num gold mono" id="statInvested">—</div>
+        <div class="label">총 투자금</div>
+      </div>
+      <div class="summary-stat">
+        <div class="num mono" id="statCurrent">—</div>
+        <div class="label">현재 평가액</div>
+      </div>
+      <div class="summary-stat">
+        <div class="num mono" id="statPnl">—</div>
+        <div class="label">손익</div>
+      </div>
+      <div class="summary-stat">
+        <div class="num mono" id="statCash">—</div>
+        <div class="label">현금 비중</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="disclaimer">
+    <strong>⚠ 투자 면책</strong> — 이 페이지는 개인 투자 기록이며 투자 권유가 아닙니다. 모든 투자 판단과 그에 따른 결과는 투자자 본인에게 있습니다.
+  </div>
+
+  <!-- ═══ HOLDINGS TABLE ═══ -->
+  <section id="holdings">
+    <div class="sec-head">
+      <h2>보유 종목</h2>
+      <div class="sub">Phase 0 실매수 · 수수료 포함 원가 기준</div>
+    </div>
+    <div class="card">
+      <div id="holdingsLoading" class="loading"><span class="spinner"></span>현재가 로딩 중…</div>
+      <div id="holdingsTable" style="display:none">
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>종목</th>
+                <th class="r">수량</th>
+                <th class="r">매수단가</th>
+                <th class="r">현재가</th>
+                <th class="r">평가액</th>
+                <th class="r">손익</th>
+                <th class="r">손익률</th>
+                <th class="r">비중</th>
+              </tr>
+            </thead>
+            <tbody id="holdingsBody"></tbody>
+            <tfoot id="holdingsFoot"></tfoot>
+          </table>
+        </div>
+      </div>
+      <div id="holdingsError" style="display:none"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ALLOCATION CHART ═══ -->
+  <section id="allocation">
+    <div class="sec-head">
+      <h2>클러스터 배분</h2>
+      <div class="sub">투자금 기준 자산 배분 비중</div>
+    </div>
+    <div class="card">
+      <div class="donut-wrap" id="donutWrap">
+        <svg class="donut-svg" viewBox="0 0 200 200" id="donutChart"></svg>
+        <div class="donut-legend" id="donutLegend"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PHASE ROADMAP ═══ -->
+  <section id="roadmap">
+    <div class="sec-head">
+      <h2>배치 로드맵</h2>
+      <div class="sub">Phase 0 투자 완료 · 향후 배치 계획</div>
+    </div>
+    <div class="card">
+      <div class="collapse-toggle" aria-expanded="true" onclick="toggleCollapse(this)">
+        <span class="chevron">▼</span>
+        <strong>Phase 진행 상황</strong>
+      </div>
+      <div class="collapse-body" data-collapsed="false">
+        <div class="collapse-body-inner">
+          <div class="phase-bar" style="margin-top:16px">
+            <div class="phase-seg active" style="flex:2.47">Phase 0<br><span class="mono" style="font-size:11px">2.47억</span></div>
+            <div class="phase-seg planned" style="flex:2.5">Phase 1<br><span style="font-size:11px">~2.5억</span></div>
+            <div class="phase-seg planned" style="flex:2.5">Phase 2<br><span style="font-size:11px">~2.5억</span></div>
+            <div class="phase-seg planned" style="flex:2.5">Phase 3<br><span style="font-size:11px">~2.5억</span></div>
+          </div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:var(--sub)">
+            <div><strong style="color:var(--gold)">Phase 0</strong> — 7/14 실매수 완료. AI 반도체 + 전력 클러스터 집중.</div>
+            <div><strong style="color:var(--faint)">Phase 1~3</strong> — 시장 상황에 따라 순차 배치. 섹터 분산 확대.</div>
+          </div>
+
+          <div style="margin-top:20px">
+            <table style="font-size:13px">
+              <thead>
+                <tr><th>Phase</th><th>상태</th><th>규모</th><th>전략</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong style="color:var(--gold)">Phase 0</strong></td><td style="color:var(--green)">✓ 완료</td><td class="mono">2.47억</td><td>AI 반도체 핵심 + 전력 인프라</td></tr>
+                <tr><td style="color:var(--faint)">Phase 1</td><td style="color:var(--sub)">대기</td><td class="mono">~2.5억</td><td>방산·로봇·바이오 분산</td></tr>
+                <tr><td style="color:var(--faint)">Phase 2</td><td style="color:var(--sub)">대기</td><td class="mono">~2.5억</td><td>글로벌 테마 확장</td></tr>
+                <tr><td style="color:var(--faint)">Phase 3</td><td style="color:var(--sub)">대기</td><td class="mono">~2.5억</td><td>기회 포착 · 리밸런싱</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OVERVIEW / INVESTMENT THESIS ═══ -->
+  <section id="overview">
+    <div class="sec-head">
+      <h2>투자 개요</h2>
+      <div class="sub">v7.2 포트폴리오 Phase 0 구성 근거</div>
+    </div>
+    <div class="card">
+      <div class="collapse-toggle" aria-expanded="true" onclick="toggleCollapse(this)">
+        <span class="chevron">▼</span>
+        <strong>클러스터 구성</strong>
+      </div>
+      <div class="collapse-body" data-collapsed="false">
+        <div class="collapse-body-inner" style="padding-top:12px;font-size:14px;color:var(--sub);line-height:1.7">
+          <div style="margin-bottom:12px"><strong style="color:var(--text)">A. AI 반도체 핵심 (40%)</strong> — SK하이닉스 + 삼성전자. HBM·DRAM 사이클 수혜, AI 서버 메모리 수요 폭증.</div>
+          <div style="margin-bottom:12px"><strong style="color:var(--text)">B. AI 반도체 ETF (20%)</strong> — SOL AI반도체TOP2+. 개별 종목 리스크 분산, AI 반도체 테마 광역 노출.</div>
+          <div style="margin-bottom:12px"><strong style="color:var(--text)">C. 글로벌 AI (20%)</strong> — TIME 글로벌AI. NVIDIA·MSFT·GOOGL 등 글로벌 AI 대형주 바스켓.</div>
+          <div><strong style="color:var(--text)">D. AI 전력 인프라 (20%)</strong> — KODEX AI전력핵심설비. 데이터센터 전력·냉각·설비 밸류체인.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<a href="#" class="back-top" id="backTop" aria-label="맨 위로">↑</a>
+
+<footer>
+  <p>ourprochoi Research Archive · 개인 투자 기록 · 투자 권유 아님</p>
+  <p style="margin-top:6px" id="footerUpdated"></p>
+  <p style="margin-top:8px"><a href="../index.html">← 리서치 아카이브로 돌아가기</a></p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ═══ HOLDINGS DATA (수수료 포함 원가 하드코딩) ═══ */
+  var HOLDINGS = [
+    { name:'SK하이닉스',      ticker:'000660', cluster:'A', qty:26,   avgPrice:1902000, fee:69232,  totalCost:49521232  },
+    { name:'삼성전자',        ticker:'005930', cluster:'A', qty:190,  avgPrice:264000,  fee:70224,  totalCost:50230224  },
+    { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:2600, avgPrice:18800,   fee:68432,  totalCost:48948432  },
+    { name:'TIME 글로벌AI',   ticker:'456600', cluster:'C', qty:770,  avgPrice:64987,   fee:70056,  totalCost:50110116  },
+    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1400, avgPrice:34379,  fee:67384,  totalCost:48199149  }
+  ];
+
+  var TOTAL_INVESTED = 247009153;
+  var CASH_REMAINING = 1753000000; /* 17.53억 */
+  var TOTAL_PORTFOLIO = TOTAL_INVESTED + CASH_REMAINING; /* 투자 + 현금 */
+
+  var CLUSTER_COLORS = {
+    A: 'var(--blue)',
+    B: 'var(--green)',
+    C: 'var(--purple)',
+    D: 'var(--orange)'
+  };
+  var CLUSTER_NAMES = {
+    A: 'AI 반도체 핵심',
+    B: 'AI 반도체 ETF',
+    C: '글로벌 AI',
+    D: 'AI 전력 인프라'
+  };
+  var CLUSTER_CSS_COLORS = {
+    A: '#3498db',
+    B: '#2ecc71',
+    C: '#9b59b6',
+    D: '#e67e22'
+  };
+
+  var fmt = new Intl.NumberFormat('ko-KR');
+  function fmtWon(n){ return fmt.format(Math.round(n)) + '원'; }
+  function fmtPct(n){ return (n >= 0 ? '+' : '') + n.toFixed(2) + '%'; }
+  function fmtWonShort(n){
+    var abs = Math.abs(n);
+    if(abs >= 1e8) return (n/1e8).toFixed(2) + '억';
+    if(abs >= 1e4) return fmt.format(Math.round(n/1e4)) + '만';
+    return fmt.format(Math.round(n));
+  }
+  function pnlClass(n){ return n > 0 ? 'green' : n < 0 ? 'red' : ''; }
+
+  /* ═══ FETCH PRICES ═══ */
+  fetch('data/prices.json')
+    .then(function(r){
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(data){ render(data); })
+    .catch(function(err){
+      document.getElementById('holdingsLoading').style.display = 'none';
+      var errBox = document.getElementById('holdingsError');
+      errBox.style.display = 'block';
+      errBox.innerHTML = '<div class="error-box">현재가 데이터를 불러올 수 없습니다. <code>portfolio/data/prices.json</code> 파일을 확인하세요.<br><small>' + err.message + '</small></div>';
+      renderDonut(HOLDINGS.map(function(h){ return { name:h.name, cluster:h.cluster, value:h.totalCost }; }));
+    });
+
+  function render(priceData){
+    var updated = priceData.updated || '—';
+    var prices = priceData.prices || {};
+
+    /* ═══ COMPUTE P&L ═══ */
+    var totalCurrentValue = 0;
+    var rows = HOLDINGS.map(function(h){
+      var currentPrice = prices[h.name] || h.avgPrice;
+      var currentValue = h.qty * currentPrice;
+      var pnl = currentValue - h.totalCost;
+      var pnlPct = (pnl / h.totalCost) * 100;
+      totalCurrentValue += currentValue;
+      return {
+        name: h.name,
+        cluster: h.cluster,
+        qty: h.qty,
+        avgPrice: h.avgPrice,
+        currentPrice: currentPrice,
+        currentValue: currentValue,
+        totalCost: h.totalCost,
+        pnl: pnl,
+        pnlPct: pnlPct
+      };
+    });
+
+    var totalPnl = totalCurrentValue - TOTAL_INVESTED;
+    var totalPnlPct = (totalPnl / TOTAL_INVESTED) * 100;
+    var totalWithCash = totalCurrentValue + CASH_REMAINING;
+    var cashPct = (CASH_REMAINING / totalWithCash) * 100;
+
+    /* ═══ HERO ═══ */
+    document.getElementById('heroTotal').textContent = fmtWonShort(totalWithCash) + '원';
+    var pnlEl = document.getElementById('heroPnl');
+    pnlEl.textContent = (totalPnl >= 0 ? '+' : '') + fmtWonShort(totalPnl) + '원 (' + fmtPct(totalPnlPct) + ')';
+    pnlEl.className = 'pnl mono ' + (totalPnl > 0 ? 'up' : totalPnl < 0 ? 'down' : 'flat');
+
+    document.getElementById('heroUpdated').textContent = '기준일: ' + updated + ' · 매수일: 2026-07-14';
+
+    /* ═══ SUMMARY STATS ═══ */
+    document.getElementById('statInvested').textContent = fmtWonShort(TOTAL_INVESTED) + '원';
+    document.getElementById('statCurrent').textContent = fmtWonShort(totalCurrentValue) + '원';
+    var statPnlEl = document.getElementById('statPnl');
+    statPnlEl.textContent = (totalPnl >= 0 ? '+' : '') + fmtWonShort(totalPnl) + '원';
+    statPnlEl.className = 'num mono ' + pnlClass(totalPnl);
+    document.getElementById('statCash').textContent = cashPct.toFixed(1) + '%';
+
+    /* ═══ HOLDINGS TABLE ═══ */
+    var tbody = document.getElementById('holdingsBody');
+    var html = '';
+    rows.forEach(function(r){
+      var weightPct = (r.currentValue / totalCurrentValue * 100).toFixed(1);
+      var cls = pnlClass(r.pnl);
+      html += '<tr>'
+        + '<td><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:' + CLUSTER_CSS_COLORS[r.cluster] + ';margin-right:6px;vertical-align:middle"></span>' + r.name + '</td>'
+        + '<td class="r mono">' + fmt.format(r.qty) + '</td>'
+        + '<td class="r mono">' + fmt.format(r.avgPrice) + '</td>'
+        + '<td class="r mono">' + fmt.format(r.currentPrice) + '</td>'
+        + '<td class="r mono">' + fmtWonShort(r.currentValue) + '</td>'
+        + '<td class="r mono ' + cls + '">' + (r.pnl >= 0 ? '+' : '') + fmtWonShort(r.pnl) + '</td>'
+        + '<td class="r mono ' + cls + '">' + fmtPct(r.pnlPct) + '</td>'
+        + '<td class="r mono">' + weightPct + '%</td>'
+        + '</tr>';
+    });
+    tbody.innerHTML = html;
+
+    /* tfoot */
+    var footCls = pnlClass(totalPnl);
+    document.getElementById('holdingsFoot').innerHTML =
+      '<tr>'
+      + '<td colspan="4" style="font-weight:900">합계</td>'
+      + '<td class="r mono" style="font-weight:900">' + fmtWonShort(totalCurrentValue) + '</td>'
+      + '<td class="r mono ' + footCls + '" style="font-weight:900">' + (totalPnl >= 0 ? '+' : '') + fmtWonShort(totalPnl) + '</td>'
+      + '<td class="r mono ' + footCls + '" style="font-weight:900">' + fmtPct(totalPnlPct) + '</td>'
+      + '<td class="r mono" style="font-weight:900">100%</td>'
+      + '</tr>';
+
+    document.getElementById('holdingsLoading').style.display = 'none';
+    document.getElementById('holdingsTable').style.display = 'block';
+
+    /* ═══ DONUT ═══ */
+    renderDonut(rows.map(function(r){ return { name:r.name, cluster:r.cluster, value:r.totalCost }; }));
+
+    /* ═══ FOOTER ═══ */
+    document.getElementById('footerUpdated').textContent = '가격 기준일: ' + updated;
+  }
+
+  /* ═══ DONUT CHART (pure SVG) ═══ */
+  function renderDonut(items){
+    /* aggregate by cluster */
+    var clusters = {};
+    items.forEach(function(it){
+      if(!clusters[it.cluster]) clusters[it.cluster] = { name: CLUSTER_NAMES[it.cluster], value:0, color: CLUSTER_CSS_COLORS[it.cluster] };
+      clusters[it.cluster].value += it.value;
+    });
+    var segments = Object.keys(clusters).map(function(k){ return clusters[k]; });
+    var total = segments.reduce(function(s,c){ return s + c.value; }, 0);
+
+    var svg = document.getElementById('donutChart');
+    var cx = 100, cy = 100, r = 80, strokeW = 28;
+    var circumference = 2 * Math.PI * r;
+    var offset = 0;
+    var svgHTML = '';
+
+    segments.forEach(function(seg){
+      var pct = seg.value / total;
+      var dash = pct * circumference;
+      var gap = circumference - dash;
+      svgHTML += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" '
+        + 'stroke="' + seg.color + '" stroke-width="' + strokeW + '" '
+        + 'stroke-dasharray="' + dash + ' ' + gap + '" '
+        + 'stroke-dashoffset="' + (-offset) + '" '
+        + 'transform="rotate(-90 ' + cx + ' ' + cy + ')" '
+        + 'style="opacity:.85"/>';
+      offset += dash;
+    });
+
+    /* center text */
+    svgHTML += '<text x="' + cx + '" y="' + (cy - 6) + '" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="900" font-family="Pretendard,sans-serif">' + fmtWonShort(total) + '</text>';
+    svgHTML += '<text x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" fill="var(--sub)" font-size="11" font-family="Pretendard,sans-serif">투자 원금</text>';
+    svg.innerHTML = svgHTML;
+
+    /* legend */
+    var legend = document.getElementById('donutLegend');
+    var legHTML = '';
+    segments.forEach(function(seg){
+      var pct = (seg.value / total * 100).toFixed(1);
+      legHTML += '<div class="leg-item">'
+        + '<span class="leg-dot" style="background:' + seg.color + '"></span>'
+        + '<span>' + seg.name + '</span>'
+        + '<span class="leg-pct mono">' + pct + '%</span>'
+        + '</div>';
+    });
+    legend.innerHTML = legHTML;
+  }
+
+  /* ═══ COLLAPSIBLE ═══ */
+  window.toggleCollapse = function(el){
+    var expanded = el.getAttribute('aria-expanded') === 'true';
+    el.setAttribute('aria-expanded', !expanded);
+    var body = el.nextElementSibling;
+    body.setAttribute('data-collapsed', expanded);
+  };
+
+  /* ═══ PROGRESS BAR ═══ */
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById('prog').style.width = Math.min(pct, 100) + '%';
+
+    var btn = document.getElementById('backTop');
+    btn.classList.toggle('show', h.scrollTop > 400);
+  });
+
+  /* ═══ NAV ACTIVE ═══ */
+  var navLinks = document.querySelectorAll('nav a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if(sec) sections.push({ el:sec, link:a });
+  });
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY + 80;
+    var active = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= scrollY) active = s;
+    });
+    navLinks.forEach(function(a){ a.classList.remove('active'); });
+    if(active) active.link.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>

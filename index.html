@@ -1461,6 +1461,13 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       date: "2026-07-04", category: "K-뷰티", type: "섹터 종합", series: "K-뷰티",
       desc: "K-뷰티 수출 $11.4B 세계 2위, 탈중국 성공, 에이피알·파마리서치·실리콘투·코스맥스 8종목 밸류에이션 분석 — K-뷰티 섹터 투자 지도",
       tags: ["K뷰티","화장품","수출","에이피알","파마리서치","실리콘투","코스맥스","ODM","인디뷰티"]
+    },
+    {
+      title: "포트폴리오 진화 크로니클 — v3→v6.1 의사결정 전체 기록",
+      file: "portfolio/portfolio_evolution_chronicle.html",
+      date: "2026-07-07", category: "포트폴리오", type: "크로니클", series: "포트폴리오",
+      desc: "금융기관용 포트폴리오 v3→v6.1 진화 크로니클 — 95편 리서치 기반 의사결정 과정, 시장 환경 변화, 개별→ETF 하이브리드 구조 전환의 전체 기록",
+      tags: ["포트폴리오","의사결정","크로니클","ETF","하이브리드","밸류에이션","매크로"]
     }
   ];
 
@@ -1719,6 +1726,13 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
   }, 2800);
 
   runFilter();
+
+  /* ═══════ HIDDEN SHORTCUT ═══════ */
+  document.addEventListener('keydown', function(e){
+    if(e.shiftKey && e.key === 'T'){
+      window.location.href = 'portfolio/portfolio_tracker.html';
+    }
+  });
 })();
 </script>
 </body>
