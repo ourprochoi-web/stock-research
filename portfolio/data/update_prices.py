@@ -52,7 +52,29 @@ def main():
             updated = date
         print(f"  ✓ {name} ({code}) → {close:>12,}원  {direction} {change} ({ratio}%)")
 
-    result = {"updated": updated, "prices": prices}
+    # Preserve existing etfHoldings if present
+    existing_holdings = {}
+    if os.path.exists(OUTPUT):
+        try:
+            with open(OUTPUT, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+                existing_holdings = existing.get("etfHoldings", {})
+        except Exception:
+            pass
+
+    # Extract update time from first ticker's localTradedAt
+    updated_time = ""
+    for name, code in TICKERS.items():
+        data = fetch_price(code)
+        if data and data.get("localTradedAt"):
+            t = data["localTradedAt"]  # e.g. "2026-07-15T16:10:20+09:00"
+            updated_time = t[11:16] + " KST" if len(t) > 16 else ""
+            break
+
+    result = {"updated": updated, "updatedTime": updated_time, "prices": prices}
+    if existing_holdings:
+        result["etfHoldings"] = existing_holdings
+
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
         f.write("\n")
