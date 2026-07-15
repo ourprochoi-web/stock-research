@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="금융기관용 포트폴리오 v3→v6.1 진화 크로니클 — 95편 리서치 기반 의사결정 과정, 시장 환경 변화, 구조 전환의 전체 기록">
+<meta name="keywords" content="포트폴리오,의사결정,크로니클,밸류에이션,ETF,하이브리드,매크로,리서치">
+<meta property="og:title" content="포트폴리오 진화 크로니클 — ourprochoi Research">
+<meta property="og:description" content="금융기관용 포트폴리오 v3→v6.1 진화 크로니클 — 95편 리서치 기반 의사결정 과정의 전체 기록">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_evolution_chronicle.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="포트폴리오 진화 크로니클 — ourprochoi Research">
+<meta name="twitter:description" content="금융기관용 포트폴리오 v3→v6.1 진화 크로니클 — 95편 리서치 기반 의사결정 과정의 전체 기록">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_evolution_chronicle.html">
+<title>포트폴리오 진화 크로니클 — ourprochoi Research</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root {
+  --bg:#070b16; --card:#0f1422; --card-border:#1a2035;
+  --text:#e8ecf4; --sub:#8899aa; --faint:#7a8694;
+  --gold:#c79a2f; --gold-dim:rgba(199,154,47,.15);
+  --green:#2ecc71; --green-dim:rgba(46,204,113,.12);
+  --red:#e74c3c; --red-dim:rgba(231,76,60,.12);
+  --blue:#3498db; --blue-dim:rgba(52,152,219,.12);
+  --purple:#9b59b6; --purple-dim:rgba(155,89,182,.12);
+  --cyan:#1abc9c; --cyan-dim:rgba(26,188,156,.12);
+  --orange:#e67e22; --orange-dim:rgba(230,126,34,.12);
+  --line:#1e2a40; --timeline:#1a2744;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(199,154,47,.3)}
+
+/* ═══ PROGRESS BAR ═══ */
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--green),var(--blue),var(--gold));width:0%;z-index:99;transition:width .15s}
+
+/* ═══ NAV ═══ */
+nav{position:sticky;top:0;z-index:90;background:rgba(7,11,22,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover,nav a.active{background:var(--gold-dim);color:var(--gold);border-color:var(--gold)}
+nav a:focus-visible,.back-top:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+nav a.ext{border-style:dashed}
+
+/* ═══ WRAP ═══ */
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#0a1020 0%,#0f1a35 40%,#070b16 100%);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.2;background-image:repeating-linear-gradient(0deg,transparent 0 60px,rgba(199,154,47,.06) 60px 61px),repeating-linear-gradient(90deg,transparent 0 60px,rgba(199,154,47,.06) 60px 61px);pointer-events:none}
+.hero{position:relative;max-width:860px;margin:0 auto;padding:80px 20px 50px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.hero .updated{font-size:12px;color:var(--sub);margin-top:4px}
+.hero h1{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin:16px 0 14px;background:linear-gradient(110deg,#fff 20%,#e7c77e 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero .lede{color:var(--sub);max-width:640px;margin:0 auto;font-size:16px;line-height:1.7}
+
+/* ═══ SUMMARY STATS ═══ */
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:700px;margin:32px auto 0}
+.summary-stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 10px;text-align:center}
+.summary-stat .num{font-size:22px;font-weight:900;color:var(--gold);letter-spacing:-.02em}
+.summary-stat .label{font-size:11.5px;color:var(--sub);margin-top:2px;font-weight:600}
+
+/* ═══ DISCLAIMER ═══ */
+.disclaimer{background:var(--red-dim);border:1px solid rgba(231,76,60,.25);border-radius:12px;padding:16px 20px;margin:0 0 32px;font-size:13px;color:var(--sub);line-height:1.6}
+.disclaimer strong{color:var(--red)}
+
+/* ═══ SECTION HEADERS ═══ */
+.sec-head{margin:56px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:24px;font-weight:900;letter-spacing:-.02em}
+.sec-head .sub{font-size:13px;color:var(--sub);margin-top:4px}
+
+/* ═══ TIMELINE ═══ */
+.timeline{position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--timeline),var(--faint))}
+
+.version-block{position:relative;margin-bottom:48px}
+.version-block::before{content:'';position:absolute;left:-33px;top:8px;width:16px;height:16px;border-radius:50%;border:3px solid var(--gold);background:var(--bg);z-index:2}
+.version-block.latest{margin-bottom:64px}
+.version-block.latest::before{background:var(--gold);box-shadow:0 0 12px rgba(199,154,47,.5)}
+
+/* ═══ VERSION HEADER (collapsible) ═══ */
+.v-toggle{cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.v-toggle .chevron{font-size:14px;color:var(--faint);transition:transform .25s;flex:none;width:18px;text-align:center}
+.v-toggle[aria-expanded="false"] .chevron{transform:rotate(-90deg)}
+.v-tags{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.v-tag{display:inline-block;font-size:13px;font-weight:900;padding:3px 12px;border-radius:999px;letter-spacing:.03em}
+.v-tag.gold{background:var(--gold-dim);color:var(--gold)}
+.v-tag.green{background:var(--green-dim);color:var(--green)}
+.v-tag.blue{background:var(--blue-dim);color:var(--blue)}
+.v-tag.purple{background:var(--purple-dim);color:var(--purple)}
+.v-tag.cyan{background:var(--cyan-dim);color:var(--cyan)}
+.v-tag.red{background:var(--red-dim);color:var(--red)}
+.v-tag.orange{background:var(--orange-dim);color:var(--orange)}
+.v-date{font-size:13px;color:var(--sub);font-weight:600}
+
+.v-title{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.v-subtitle{font-size:14px;color:var(--sub);line-height:1.6;margin-bottom:16px}
+
+/* collapsible body */
+.v-body{display:grid;grid-template-rows:1fr;transition:grid-template-rows .3s ease}
+.v-body[data-collapsed="true"]{grid-template-rows:0fr}
+.v-body-inner{overflow:hidden}
+
+/* ═══ CARDS ═══ */
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px;margin-bottom:16px}
+.card-label{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.card-label.gold{color:var(--gold)} .card-label.green{color:var(--green)}
+.card-label.blue{color:var(--blue)} .card-label.red{color:var(--red)}
+.card-label.purple{color:var(--purple)} .card-label.cyan{color:var(--cyan)}
+
+/* ═══ METRICS ROW ═══ */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.metric{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.metric .val{font-size:18px;font-weight:900;letter-spacing:-.02em}
+.metric .lbl{font-size:11px;color:var(--sub);margin-top:2px;font-weight:600}
+.metric.up .val{color:var(--green)} .metric.down .val{color:var(--red)} .metric.neutral .val{color:var(--gold)}
+
+/* ═══ TABLE ═══ */
+.tbl-wrap{overflow-x:auto;margin:8px 0;background:linear-gradient(90deg,var(--card) 30%,transparent),linear-gradient(270deg,var(--card) 30%,transparent),linear-gradient(90deg,rgba(255,255,255,.06),transparent 15px),linear-gradient(270deg,rgba(255,255,255,.06),transparent 15px);background-size:40px 100%,40px 100%,15px 100%,15px 100%;background-position:left,right,left,right;background-repeat:no-repeat;background-attachment:local,local,scroll,scroll}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{text-align:left;font-weight:700;color:var(--sub);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+tbody td{padding:8px 10px;border-bottom:1px solid rgba(30,42,64,.4);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.bold{font-weight:700} td.green{color:var(--green)} td.red{color:var(--red)} td.gold{color:var(--gold)}
+
+/* ═══ CHANGE BADGES ═══ */
+.change{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;letter-spacing:.02em}
+.change.add{background:var(--green-dim);color:var(--green)}
+.change.remove{background:var(--red-dim);color:var(--red)}
+.change.modify{background:var(--blue-dim);color:var(--blue)}
+.change.new{background:var(--gold-dim);color:var(--gold)}
+
+/* ═══ CONTEXT BOX ═══ */
+.context-box{background:rgba(255,255,255,.02);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin:12px 0;font-size:14px;line-height:1.65;color:var(--sub)}
+.context-box strong{color:var(--text)}
+
+/* ═══ EVOLUTION FLOW ═══ */
+.evo-scroll{overflow-x:auto;padding-bottom:8px}
+.evo-flow{display:flex;align-items:center;gap:8px;min-width:max-content;padding:4px 0}
+.evo-node{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;text-align:center;min-width:80px}
+.evo-node.active{border-color:var(--gold);color:var(--gold)}
+.evo-detail{font-size:11.5px;color:var(--sub);line-height:1.3;margin-top:2px}
+.evo-arrow{color:var(--faint);font-size:14px}
+
+/* ═══ DECISION ITEM ═══ */
+.decision{display:flex;gap:12px;margin:8px 0;font-size:14px;line-height:1.6}
+.decision .icon{flex:none;font-size:16px;margin-top:2px}
+.decision .content{flex:1}
+.decision .content strong{color:var(--text)}
+.decision .content span{color:var(--sub)}
+
+/* ═══ SVG CHARTS ═══ */
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.chart-box{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:16px}
+.chart-box .chart-title{font-size:11px;font-weight:800;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.chart-box svg{width:100%;height:auto;display:block}
+
+/* ═══ STACKED BAR ═══ */
+.stack-row{display:flex;align-items:center;gap:10px;margin:6px 0}
+.stack-label{font-size:12px;font-weight:700;color:var(--sub);width:36px;flex:none;text-align:right}
+.stack-bar{flex:1;height:22px;border-radius:6px;overflow:hidden;display:flex;background:rgba(255,255,255,.03)}
+.stack-bar .seg{height:100%;transition:width .4s ease}
+.seg-indiv{background:var(--blue)}
+.seg-etf{background:var(--green)}
+.seg-cash{background:rgba(255,255,255,.08)}
+.stack-legend{display:flex;gap:14px;margin-top:10px;font-size:11px;color:var(--sub)}
+.stack-legend span::before{content:'';display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:middle}
+.stack-legend .l-indiv::before{background:var(--blue)} .stack-legend .l-etf::before{background:var(--green)} .stack-legend .l-cash::before{background:rgba(255,255,255,.15)}
+
+/* ═══ BACK TO TOP ═══ */
+.back-top{position:fixed;bottom:24px;right:24px;background:var(--gold);color:var(--bg);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;text-decoration:none;opacity:0;transition:opacity .3s;z-index:80;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.back-top.show{opacity:1}
+
+/* ═══ FOOTER ═══ */
+footer{text-align:center;padding:40px 20px;font-size:12px;color:var(--faint);border-top:1px solid var(--line)}
+footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px){
+  body{font-size:15px}
+  .summary-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-row{grid-template-columns:1fr}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .timeline{padding-left:30px}
+  .version-block::before{left:-23px;width:12px;height:12px}
+  .timeline::before{left:10px}
+}
+@media(max-width:480px){
+  .hero{padding:60px 16px 40px}
+  .hero h1{font-size:24px}
+  .summary-grid{gap:8px}
+  .summary-stat{padding:12px 6px}
+  .summary-stat .num{font-size:18px}
+  .card{padding:14px}
+  .timeline{padding-left:24px}
+  .version-block::before{left:-19px;width:10px;height:10px;border-width:2px}
+  .timeline::before{left:8px}
+}
+
+/* ═══ PRINT ═══ */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav,#prog,.back-top,.hero-shell::before{display:none}
+  .hero-shell{background:#fff;border-bottom:2px solid #000}
+  .hero h1{background:none;color:#000;-webkit-background-clip:unset;animation:none}
+  .hero .eyebrow,.hero .lede,.hero .updated{color:#444}
+  .summary-stat{border-color:#ccc;background:#f8f8f8}
+  .summary-stat .num{color:#000}
+  .card{background:#f9f9f9;border-color:#ddd;break-inside:avoid}
+  .timeline::before{background:#999}
+  .version-block::before{border-color:#666;background:#fff}
+  .v-body[data-collapsed="true"]{grid-template-rows:1fr!important}
+  .v-toggle .chevron{display:none}
+  a{color:#000!important}
+  a[href]::after{content:" (" attr(href) ")";font-size:9pt;color:#666}
+  nav a[href]::after{content:none}
+  .disclaimer{background:#fee;border-color:#c00}
+  .seg-indiv{background:#369} .seg-etf{background:#396} .seg-cash{background:#ddd}
+  .v-tag{border:1px solid #999;background:#eee!important;color:#333!important}
+}
+
+/* ═══ REDUCED MOTION ═══ */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .back-top{opacity:1}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"포트폴리오 진화 크로니클 — v3에서 v6.1까지",
+  "description":"금융기관용 포트폴리오 v3→v6.1 진화 크로니클 — 95편 리서치 기반 의사결정 과정, 시장 환경 변화, 구조 전환의 전체 기록",
+  "datePublished":"2026-07-07",
+  "dateModified":"2026-07-07",
+  "author":{"@type":"Person","name":"ourprochoi"},
+  "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_evolution_chronicle.html"}
+}
+</script>
+</head>
+<body>
+<div id="prog" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<nav aria-label="Version navigation">
+  <a href="../index.html" class="ext">Archive Home</a>
+  <!-- NAV: Add new version link here (before v6.1) -->
+  <a href="#latest">v6.1 Latest</a>
+  <a href="#v6">v6</a>
+  <a href="#v5">v5</a>
+  <a href="#etf-study">ETF Study</a>
+  <a href="#v4">v4</a>
+  <a href="#v3">v3</a>
+  <a href="#insights">Insights</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero-shell">
+<div class="hero">
+  <div class="eyebrow">ourprochoi Research · Portfolio Chronicle</div>
+  <div class="updated">Last updated: 2026-07-07</div>
+  <h1>포트폴리오 진화 크로니클</h1>
+  <p class="lede">
+    95편 리서치 기반, 6번의 버전 업그레이드.
+    v3 초기 구성부터 v6.1 매크로 리스크 반영까지 —
+    5일간의 의사결정 과정과 시장 환경 변화의 전체 기록.
+  </p>
+  <!-- HERO_STATS: Update counts when adding new version -->
+  <div class="summary-grid">
+    <div class="summary-stat"><div class="num">6</div><div class="label">버전</div></div>
+    <div class="summary-stat"><div class="num">95+</div><div class="label">리서치 기반</div></div>
+    <div class="summary-stat"><div class="num">5일</div><div class="label">진화 기간</div></div>
+    <div class="summary-stat"><div class="num">130+</div><div class="label">최종 노출 종목</div></div>
+  </div>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+
+<!-- ═══ DISCLAIMER ═══ -->
+<div class="disclaimer" role="note">
+  <strong>Disclaimer</strong> — 본 문서는 투자 권유가 아닌 <strong>분석 프로세스의 기록</strong>입니다. 각 버전 시점의 데이터와 판단을 있는 그대로 기록하며, 특정 종목의 매수·매도를 권유하지 않습니다. 모든 투자 판단과 그에 따른 결과는 투자자 본인에게 있습니다. 과거의 분석과 판단이 미래 수익을 보장하지 않습니다.
+</div>
+
+<!-- ═══ EVOLUTION OVERVIEW ═══ -->
+<section>
+<div class="sec-head" id="evolution">
+  <h2>Evolution Map</h2>
+  <div class="sub">v3 → v6.1 구조 변화 한눈에 보기</div>
+</div>
+
+<div class="evo-scroll">
+<div class="evo-flow" role="list" aria-label="Version evolution">
+  <div class="evo-node" role="listitem">v3<div class="evo-detail">11종목<br>개별 60%</div></div>
+  <div class="evo-arrow" aria-hidden="true">→</div>
+  <div class="evo-node" role="listitem">v4<div class="evo-detail">12종목<br>+ESS</div></div>
+  <div class="evo-arrow" aria-hidden="true">→</div>
+  <div class="evo-node" role="listitem">ETF Study<div class="evo-detail">ETF 전환<br>검토</div></div>
+  <div class="evo-arrow" aria-hidden="true">→</div>
+  <div class="evo-node" role="listitem">v5<div class="evo-detail">15종목<br>+K-뷰티</div></div>
+  <div class="evo-arrow" aria-hidden="true">→</div>
+  <div class="evo-node" role="listitem">v6<div class="evo-detail">6+7 ETF<br>하이브리드</div></div>
+  <div class="evo-arrow" aria-hidden="true">→</div>
+  <div class="evo-node active" role="listitem">v6.1<div class="evo-detail" style="color:var(--gold)">매크로<br>리스크 반영</div></div>
+</div>
+</div>
+
+<!-- SUMMARY TABLE: Add new version row at top of tbody -->
+<div class="card" style="margin-top:20px">
+  <div class="card-label gold">핵심 구조 변화</div>
+  <div class="tbl-wrap">
+  <table aria-label="버전별 핵심 구조 변화">
+    <thead><tr><th>버전</th><th>날짜</th><th>포지션</th><th>현금</th><th>해외</th><th>클러스터</th><th>핵심 전환</th></tr></thead>
+    <tbody>
+    <tr><td class="bold gold">v6.1</td><td>7/7</td><td>13개</td><td>51%</td><td>~14%</td><td>9개</td><td>진입시점 후퇴, Phase 0 신설</td></tr>
+    <tr><td class="bold">v6</td><td>7/5</td><td>13개</td><td>51%</td><td>~14%</td><td>9개</td><td>개별→ETF 하이브리드 전환</td></tr>
+    <tr><td class="bold">v5</td><td>7/5</td><td>15개</td><td>40%</td><td>7%</td><td>8개</td><td>+K-뷰티 4종목</td></tr>
+    <tr><td class="bold">v4</td><td>7/3</td><td>12개</td><td>38%</td><td>10%</td><td>7개</td><td>+LG에너지솔루션 (2차전지/ESS)</td></tr>
+    <tr><td class="bold">v3</td><td>7/2 이전</td><td>11개</td><td>40%</td><td>10%</td><td>6개</td><td>딥다이브 3건 반영, +전력/AI SW</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ═══ SVG CHARTS ═══ -->
+<div class="chart-row">
+  <!-- Stacked Bar: Portfolio Composition -->
+  <div class="chart-box">
+    <div class="chart-title">포트폴리오 구성 변화</div>
+    <div class="stack-row"><div class="stack-label">v3</div><div class="stack-bar"><div class="seg seg-indiv" style="width:60%"></div><div class="seg seg-etf" style="width:0%"></div><div class="seg seg-cash" style="width:40%"></div></div></div>
+    <div class="stack-row"><div class="stack-label">v4</div><div class="stack-bar"><div class="seg seg-indiv" style="width:62%"></div><div class="seg seg-etf" style="width:0%"></div><div class="seg seg-cash" style="width:38%"></div></div></div>
+    <div class="stack-row"><div class="stack-label">v5</div><div class="stack-bar"><div class="seg seg-indiv" style="width:60%"></div><div class="seg seg-etf" style="width:0%"></div><div class="seg seg-cash" style="width:40%"></div></div></div>
+    <div class="stack-row"><div class="stack-label">v6</div><div class="stack-bar"><div class="seg seg-indiv" style="width:24%"></div><div class="seg seg-etf" style="width:25%"></div><div class="seg seg-cash" style="width:51%"></div></div></div>
+    <div class="stack-row"><div class="stack-label">v6.1</div><div class="stack-bar"><div class="seg seg-indiv" style="width:24%"></div><div class="seg seg-etf" style="width:25%"></div><div class="seg seg-cash" style="width:51%"></div></div></div>
+    <div class="stack-legend">
+      <span class="l-indiv">개별</span>
+      <span class="l-etf">ETF</span>
+      <span class="l-cash">현금</span>
+    </div>
+  </div>
+
+  <!-- Sparklines: Key Metrics -->
+  <div class="chart-box">
+    <div class="chart-title">핵심 지표 추이</div>
+    <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid -->
+      <line x1="40" y1="10" x2="40" y2="120" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <line x1="95" y1="10" x2="95" y2="120" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <line x1="150" y1="10" x2="150" y2="120" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <line x1="205" y1="10" x2="205" y2="120" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+
+      <!-- Cash % line (40, 38, 40, 51, 51) → y: 68, 74, 68, 35, 35 -->
+      <polyline points="40,68 95,74 150,68 205,35 245,35" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="40" cy="68" r="3" fill="rgba(255,255,255,.4)"/>
+      <circle cx="95" cy="74" r="3" fill="rgba(255,255,255,.4)"/>
+      <circle cx="150" cy="68" r="3" fill="rgba(255,255,255,.4)"/>
+      <circle cx="205" cy="35" r="4" fill="rgba(255,255,255,.6)"/>
+      <circle cx="245" cy="35" r="4" fill="rgba(255,255,255,.6)"/>
+      <text x="248" y="32" font-size="9" fill="rgba(255,255,255,.5)" font-family="Pretendard">51%</text>
+      <text x="14" y="64" font-size="8" fill="rgba(255,255,255,.3)" font-family="Pretendard">현금</text>
+
+      <!-- Position count line (11, 12, 15, 13, 13) → y: 100, 96, 84, 92, 92 -->
+      <polyline points="40,100 95,96 150,84 205,92 245,92" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="40" cy="100" r="3" fill="var(--gold)"/>
+      <circle cx="95" cy="96" r="3" fill="var(--gold)"/>
+      <circle cx="150" cy="84" r="3" fill="var(--gold)"/>
+      <circle cx="205" cy="92" r="3" fill="var(--gold)"/>
+      <circle cx="245" cy="92" r="3" fill="var(--gold)"/>
+      <text x="248" y="89" font-size="9" fill="var(--gold)" font-family="Pretendard">13</text>
+      <text x="8" y="104" font-size="8" fill="var(--gold)" font-family="Pretendard">포지션</text>
+
+      <!-- Cluster count line (6, 7, 8, 9, 9) → y: 50, 43, 36, 29, 29 (inverted for visual) -->
+      <polyline points="40,50 95,43 150,36 205,29 245,29" fill="none" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="245" cy="29" r="3" fill="var(--cyan)"/>
+      <text x="248" y="26" font-size="9" fill="var(--cyan)" font-family="Pretendard">9</text>
+      <text x="2" y="52" font-size="8" fill="var(--cyan)" font-family="Pretendard">클러스터</text>
+
+      <!-- X-axis labels -->
+      <text x="40" y="135" font-size="9" fill="var(--sub)" text-anchor="middle" font-family="Pretendard">v3</text>
+      <text x="95" y="135" font-size="9" fill="var(--sub)" text-anchor="middle" font-family="Pretendard">v4</text>
+      <text x="150" y="135" font-size="9" fill="var(--sub)" text-anchor="middle" font-family="Pretendard">v5</text>
+      <text x="205" y="135" font-size="9" fill="var(--sub)" text-anchor="middle" font-family="Pretendard">v6</text>
+      <text x="245" y="135" font-size="9" fill="var(--gold)" text-anchor="middle" font-weight="700" font-family="Pretendard">v6.1</text>
+    </svg>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TIMELINE
+     ═══════════════════════════════════════════════════════════ -->
+<section>
+<div class="sec-head"><h2>Version History</h2><div class="sub">최신 → 과거 순</div></div>
+
+<div class="timeline" role="list" aria-label="Portfolio version timeline">
+
+<!-- === INSERT NEW VERSION ABOVE THIS LINE ===
+     Update checklist for new version:
+     1. Add nav link in <nav> (before "v6.1 Latest", update "Latest" label)
+     2. Update HERO_STATS (version count, date range)
+     3. Add evo-node in .evo-flow (move .active class)
+     4. Add row in SUMMARY TABLE (top of tbody)
+     5. Add stacked bar row in chart
+     6. Update sparkline SVG data points
+     7. Add version-block here (move "latest" class from previous)
+     8. Update JSON-LD dateModified
+     9. Update <footer> and .hero .updated dates
+     Color rotation: red→green→blue→cyan→purple→gold→orange→(repeat)
+-->
+
+<!-- ═══ v6.1 ═══ -->
+<article class="version-block latest" id="latest" role="listitem" style="scroll-margin-top:60px">
+  <div class="v-toggle" role="button" aria-expanded="true" tabindex="0">
+    <span class="chevron" aria-hidden="true">▼</span>
+    <div class="v-tags">
+      <span class="v-tag red">v6.1</span>
+      <span class="v-tag gold">LATEST</span>
+      <span class="v-date">2026-07-07</span>
+    </div>
+  </div>
+  <div class="v-title">매크로 리스크 반영 — "구조는 유지, 타이밍은 대폭 후퇴"</div>
+  <div class="v-subtitle">
+    KOSPI -18.4% 급락(ATH 9,385→7,656), 신용잔고 38.5조 사상 최고, BOK 금리인상 임박.<br>
+    종목·비중은 v6 유지하되 전 포지션 진입 시점을 7/21 이후로 연기. Phase 0(순수 관망) 신설.
+  </div>
+
+  <div class="v-body">
+  <div class="v-body-inner">
+
+  <div class="card">
+    <div class="card-label red">시장 환경</div>
+    <div class="metrics">
+      <div class="metric down"><div class="val">7,656</div><div class="lbl">KOSPI (-18.4%)</div></div>
+      <div class="metric down"><div class="val">38.5조</div><div class="lbl">신용잔고 (사상 최고)</div></div>
+      <div class="metric down"><div class="val">-157.3조</div><div class="lbl">외국인 YTD 순매도</div></div>
+      <div class="metric down"><div class="val">1,522</div><div class="lbl">USD/KRW</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label gold">핵심 의사결정</div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F6D1;</div><div class="content"><strong>Phase 0 신설 (7/7~7/20)</strong><br><span>BOK 7/16 금리 결정 + 마진콜 사이클 관찰을 위한 순수 관망 기간. 매수 0%.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F6E1;</div><div class="content"><strong>독립 섹터 우선 진입</strong><br><span>방산·K-뷰티(시장 상관 0.3 이하)를 Phase 1(7/21~)에 선행 편입. 반도체·AI는 Phase 3(9월~)로 후퇴.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x26A0;</div><div class="content"><strong>SK하이닉스 9월 이후 연기</strong><br><span>외국인 매도의 90%가 삼성+SK하이닉스 집중. 마진 캐스케이드 위험이 가장 큰 종목을 가장 늦게 편입.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4CA;</div><div class="content"><strong>주간 모니터링 대시보드 신설</strong><br><span>신용잔고/외국인/BOK/VKOSPI/환율/유가 6지표에 Phase 진행/중단 임계값 설정.</span></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-label blue">포트폴리오 구조 (v6과 동일)</div>
+    <div class="metrics">
+      <div class="metric neutral"><div class="val">24%</div><div class="lbl">개별 6종목</div></div>
+      <div class="metric neutral"><div class="val">25%</div><div class="lbl">ETF 7종</div></div>
+      <div class="metric neutral"><div class="val">51%</div><div class="lbl">현금</div></div>
+      <div class="metric neutral"><div class="val">130+</div><div class="lbl">실질 노출</div></div>
+    </div>
+    <div class="context-box">
+      <strong>분석 방법론:</strong> 4-에이전트 Bull/Bear 매크로 토론 + 5대 한국 시장 붕괴 역사 패턴 분석(2000 IT, 2008 GFC, 2020 COVID, 2022 금리인상, 2024 캐리 트레이드). 확률 가중 시나리오 산출 → 2022형 그라인딩 베어 45% 확률로 최다.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label purple">5단계 진입 스케줄</div>
+    <div class="tbl-wrap">
+    <table aria-label="v6.1 5단계 진입 스케줄">
+      <thead><tr><th>Phase</th><th>기간</th><th>배치</th><th>대상</th><th>진입 조건</th></tr></thead>
+      <tbody>
+      <tr><td class="bold red">P0</td><td>7/7~7/20</td><td>0%</td><td>관망</td><td>BOK 7/16 결정 대기</td></tr>
+      <tr><td class="bold green">P1</td><td>7/21~7/31</td><td>10%</td><td>현대로템, 실리콘투, TIME방산</td><td>독립 섹터, 즉시</td></tr>
+      <tr><td class="bold blue">P2</td><td>8월 초~중순</td><td>15%</td><td>한화에어로 1차, 네이버, 조선, 전력</td><td>Q2 실적 확인</td></tr>
+      <tr><td class="bold purple">P3</td><td>9월~</td><td>15%</td><td>SK하이닉스 40%, 반도체, AI SW, GLP-1</td><td>외국인 매도 둔화 + 신용 33조↓</td></tr>
+      <tr><td class="bold gold">P4</td><td>10~11월</td><td>9%</td><td>SK하이닉스 60%, TIME AI</td><td>NVIDIA 실적 + 시장 안정</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  </div></div><!-- /v-body -->
+</article>
+
+
+<!-- ═══ v6 ═══ -->
+<article class="version-block" id="v6" role="listitem" style="scroll-margin-top:60px">
+  <div class="v-toggle" role="button" aria-expanded="false" tabindex="0">
+    <span class="chevron" aria-hidden="true">▼</span>
+    <div class="v-tags">
+      <span class="v-tag green">v6</span>
+      <span class="v-date">2026-07-05</span>
+    </div>
+  </div>
+  <div class="v-title">하이브리드 전환 — 개별 6종목 + ETF 7종</div>
+  <div class="v-subtitle">
+    v5의 15종목 관리 부담 → 확신도 최상위 6종목만 유지, 나머지 ETF 전환.
+    Planner-Architect-Critic 3자 합의 2라운드.
+  </div>
+
+  <div class="v-body" data-collapsed="true">
+  <div class="v-body-inner">
+
+  <div class="card">
+    <div class="card-label green">핵심 의사결정</div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F504;</div><div class="content"><strong>개별→ETF 대규모 전환</strong><br><span>HD현대중공업→TIGER 조선, HD현대일렉트릭→KODEX 전력, ServiceNow/Microsoft→SOL AI SW, Novo Nordisk→KODEX 비만. 9종목이 4개 ETF로 흡수.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F310;</div><div class="content"><strong>글로벌 방산/AI인프라 ETF 신규</strong><br><span>TIME 글로벌AI(5%), TIME 글로벌방산(3%). 해외 42종목 전수 검토 결과 세후 수익률에서 ETF 경유가 우위.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4B0;</div><div class="content"><strong>현금 40%→51%</strong><br><span>LG에너지솔루션 미편입(적자 지속), 해외 개별종목 제거 → 현금 비중 자연 증가.</span></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-label blue">구조 변화</div>
+    <div class="metrics">
+      <div class="metric neutral"><div class="val">15→6</div><div class="lbl">개별 종목 축소</div></div>
+      <div class="metric up"><div class="val">0→7</div><div class="lbl">ETF 신규</div></div>
+      <div class="metric up"><div class="val">130+</div><div class="lbl">실질 노출 종목</div></div>
+      <div class="metric up"><div class="val">~14%</div><div class="lbl">해외 비중 (7%→)</div></div>
+    </div>
+    <div class="tbl-wrap" style="margin-top:14px">
+    <table aria-label="v5→v6 종목 전환 내역">
+      <thead><tr><th>구분</th><th>v5 (개별)</th><th>v6 (하이브리드)</th><th>변경</th></tr></thead>
+      <tbody>
+      <tr><td>HD현대중공업 8%</td><td>개별</td><td>TIGER 조선 ETF 5% 내 25%</td><td><span class="change modify">ETF 전환</span></td></tr>
+      <tr><td>한화오션 3%</td><td>개별</td><td>TIGER 조선 ETF 5% 내 28%</td><td><span class="change modify">ETF 전환</span></td></tr>
+      <tr><td>ServiceNow 3%</td><td>개별</td><td>SOL AI SW 3% 내 12.6%</td><td><span class="change modify">ETF 전환</span></td></tr>
+      <tr><td>Microsoft 2%</td><td>개별</td><td>SOL AI SW 3% 내 14.3%</td><td><span class="change modify">ETF 전환</span></td></tr>
+      <tr><td>HD현대일렉트릭 2%</td><td>개별</td><td>KODEX 전력 3% 내 24%</td><td><span class="change modify">ETF 전환</span></td></tr>
+      <tr><td>Novo Nordisk 2%</td><td>개별</td><td>KODEX 비만 3% 내 25%</td><td><span class="change modify">ETF 전환</span></td></tr>
+      <tr><td>LG에너지솔루션 2%</td><td>개별</td><td>미편입</td><td><span class="change remove">제거</span></td></tr>
+      <tr><td>TIME 글로벌AI 5%</td><td>—</td><td>ETF 신규</td><td><span class="change new">신규</span></td></tr>
+      <tr><td>TIME 글로벌방산 3%</td><td>—</td><td>ETF 신규</td><td><span class="change new">신규</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  </div></div>
+</article>
+
+
+<!-- ═══ v5 ═══ -->
+<article class="version-block" id="v5" role="listitem" style="scroll-margin-top:60px">
+  <div class="v-toggle" role="button" aria-expanded="false" tabindex="0">
+    <span class="chevron" aria-hidden="true">▼</span>
+    <div class="v-tags">
+      <span class="v-tag blue">v5</span>
+      <span class="v-date">2026-07-05</span>
+    </div>
+  </div>
+  <div class="v-title">K-뷰티 편입 — 8번째 독립 클러스터</div>
+  <div class="v-subtitle">
+    K-뷰티 8편 심층 리서치 완료. 6월 수출 $1.34B(월간 사상 최고, +42.5% YoY).
+    실리콘투·파마리서치 핵심 편입.
+  </div>
+
+  <div class="v-body" data-collapsed="true">
+  <div class="v-body-inner">
+
+  <div class="card">
+    <div class="card-label blue">핵심 의사결정</div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F338;</div><div class="content"><strong>K-뷰티 독립 클러스터 신설 (7%)</strong><br><span>실리콘투 3%(PEG 0.31), 파마리서치 2%(OPM 40%), 코스맥스 1%(바닥 확인 후), 에이피알 1%(Q2 확인 후).</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4C9;</div><div class="content"><strong>배분 정규화: 현금 38%→40%</strong><br><span>코어40/위성20/현금40 정규 구조 확립. K-뷰티 추가분은 기존 종목 비중 미세 조정으로 흡수.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F50D;</div><div class="content"><strong>전 종목 7/3 현재가 밸류에이션 재산정</strong><br><span>리서치 시점 가격 vs 7/3 시장가 비교 컬럼 신설. SK하이닉스 -5.4%, 삼성전자 -10.5% 가격 변화 반영.</span></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-label purple">K-뷰티 종목 상세</div>
+    <div class="tbl-wrap">
+    <table aria-label="v5 K-뷰티 편입 종목">
+      <thead><tr><th>종목</th><th>비중</th><th>Fwd PER</th><th>PEG</th><th>OPM</th><th>편입 근거</th></tr></thead>
+      <tbody>
+      <tr><td class="bold">실리콘투</td><td>3%</td><td>9.3x</td><td class="green">0.31</td><td>18.4%</td><td>K-뷰티 유통 플랫폼, 매출 8.5배 성장(4년)</td></tr>
+      <tr><td class="bold">파마리서치</td><td>2%</td><td>15~17x</td><td>0.63</td><td class="green">40.0%</td><td>리쥬란 독점, 글로벌 미용시장 진출</td></tr>
+      <tr><td>코스맥스</td><td>1%</td><td>14x</td><td>~0.7</td><td>8.2%</td><td>ODM 1위, 141K 바닥 확인 후 편입</td></tr>
+      <tr><td>에이피알</td><td>1%</td><td>22.5x</td><td>0.37</td><td>23.9%</td><td>Target/Walmart 셀스루 확인 후</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  </div></div>
+</article>
+
+
+<!-- ═══ ETF Study ═══ -->
+<article class="version-block" id="etf-study" role="listitem" style="scroll-margin-top:60px">
+  <div class="v-toggle" role="button" aria-expanded="false" tabindex="0">
+    <span class="chevron" aria-hidden="true">▼</span>
+    <div class="v-tags">
+      <span class="v-tag cyan">ETF Study</span>
+      <span class="v-date">2026-07-02</span>
+    </div>
+  </div>
+  <div class="v-title">ETF 전환 검토 — 개별 vs ETF 체계적 비교</div>
+  <div class="v-subtitle">
+    개별 종목 모니터링 부담 문제 제기. ETF 전환 시 분산 효과, MTM 안정성, 테마 확장성 분석.
+    이 스터디가 v6 하이브리드 전환의 이론적 기반.
+  </div>
+
+  <div class="v-body" data-collapsed="true">
+  <div class="v-body-inner">
+
+  <div class="card">
+    <div class="card-label cyan">핵심 발견</div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4A1;</div><div class="content"><strong>확신 4종목 외 ETF 대체 가능</strong><br><span>기준: (1) 확신도 최상위 (2) ETF에 원하지 않는 종목 포함 (3) ETF 대체 불가. 한화에어로/현대로템/SK하이닉스/네이버만 통과.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4CA;</div><div class="content"><strong>실질 노출 12→130+ 확대</strong><br><span>7개 ETF 편입 시 자동 분산. 월별 MTM 변동 ±2.5~4% → ±1.5~3%로 축소 예상.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F3AF;</div><div class="content"><strong>액티브 ETF 알파 가능성</strong><br><span>TIMEFOLIO 등 액티브 ETF의 벤치마크 대비 초과수익 추구 가능. 분기별 포트 변경 모니터링 필요.</span></div></div>
+  </div>
+
+  <div class="context-box">
+    <strong>역할:</strong> 이 ETF 스터디는 별도 버전이 아닌 <strong>v4→v6 전환의 브릿지 문서</strong>. v4(개별 12종목)에서 바로 v6(하이브리드)로 가기엔 근거가 부족했기에, 체계적 비교 분석을 먼저 수행.
+  </div>
+
+  </div></div>
+</article>
+
+
+<!-- ═══ v4 ═══ -->
+<article class="version-block" id="v4" role="listitem" style="scroll-margin-top:60px">
+  <div class="v-toggle" role="button" aria-expanded="false" tabindex="0">
+    <span class="chevron" aria-hidden="true">▼</span>
+    <div class="v-tags">
+      <span class="v-tag purple">v4</span>
+      <span class="v-date">2026-07-03</span>
+    </div>
+  </div>
+  <div class="v-title">2차전지/ESS 편입 — LG에너지솔루션</div>
+  <div class="v-subtitle">
+    2차전지 섹터 리뷰 추가. ESS 수주 모멘텀(DTE 2.4조 + Tesla 5.9조)을 근거로 LG에너지솔루션 조건부 편입.<br>
+    v3의 11종목 → 12종목. 7번째 독립 클러스터(2차전지/ESS) 추가.
+  </div>
+
+  <div class="v-body" data-collapsed="true">
+  <div class="v-body-inner">
+
+  <div class="card">
+    <div class="card-label purple">핵심 의사결정</div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F50B;</div><div class="content"><strong>LG에너지솔루션 2% 편입 (ESS 모멘텀)</strong><br><span>DTE Energy 2.4조 + Tesla 5.9조 수주. 적자 기업이므로 2% 제한. Q2 적자 폭 -1,500억 이내 확인 조건. FEOC/관세로 K-배터리 구조적 수혜.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4B5;</div><div class="content"><strong>현금 40%→38%</strong><br><span>LG에너지솔루션 2% 추가 편입분만큼 현금 축소. 기존 종목 비중 변경 없음.</span></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-label blue">포트폴리오 구조</div>
+    <div class="metrics">
+      <div class="metric neutral"><div class="val">12개</div><div class="lbl">종목 (11→12)</div></div>
+      <div class="metric neutral"><div class="val">7개</div><div class="lbl">클러스터 (6→7)</div></div>
+      <div class="metric neutral"><div class="val">38%</div><div class="lbl">현금 (40%→38%)</div></div>
+      <div class="metric neutral"><div class="val">10%</div><div class="lbl">해외 비중</div></div>
+    </div>
+  </div>
+
+  </div></div>
+</article>
+
+
+<!-- ═══ v3 ═══ -->
+<article class="version-block" id="v3" role="listitem" style="scroll-margin-top:60px">
+  <div class="v-toggle" role="button" aria-expanded="false" tabindex="0">
+    <span class="chevron" aria-hidden="true">▼</span>
+    <div class="v-tags">
+      <span class="v-tag gold">v3</span>
+      <span class="v-date">~2026-07-02</span>
+    </div>
+  </div>
+  <div class="v-title">딥다이브 반영 — 전력 인프라 + AI SW 확장</div>
+  <div class="v-subtitle">
+    SK하이닉스 사이클 리스크, ServiceNow AI 수익화, HD현대일렉트릭 전력 병목 — 3건 딥다이브 결과 반영.<br>
+    코어 40% / 위성 20% / 현금 40% 기본 구조 확립. 6개 클러스터.
+  </div>
+
+  <div class="v-body" data-collapsed="true">
+  <div class="v-body-inner">
+
+  <div class="card">
+    <div class="card-label gold">핵심 의사결정</div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4BB;</div><div class="content"><strong>ServiceNow 4% 신규 편입 (AI SaaS 수익화 선두)</strong><br><span>Now Assist ACV $600~750M, Forward P/E 24x (자사 평균 91x의 1/4). SaaSpocalypse 센티먼트로 낙폭 과대. 리스크 히트맵 12사 중 최저.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x26A1;</div><div class="content"><strong>HD현대일렉트릭 2% 신규 편입 (전력 병목)</strong><br><span>AI DC 전력 병목이 5대 병목 중 가장 장기 지속(2030년대+). 765kV 과점, OPM 25%+, 수주잔고 $6.73B. 기존 포트폴리오와 독립 클러스터.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4C9;</div><div class="content"><strong>SK하이닉스 7%→5% 비중 축소 (사이클 리스크)</strong><br><span>딥다이브: OPM 72%는 전례 없는 수준. 2018년 DRAM 피크 후 -50% 선례. 삼성 CAPA +50%, CXMT HBM3 진입. 분할매수로 전환.</span></div></div>
+    <div class="decision"><div class="icon" aria-hidden="true">&#x1F4DD;</div><div class="content"><strong>삼성전자 4%→2% 축소</strong><br><span>HBM3E 양산 지연 리스크. SK하이닉스 대비 기술 열위 반영. 축소 후 Q2 잠정실적 확인 대기.</span></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-label blue">포트폴리오 구조 (v3 최종)</div>
+    <div class="metrics">
+      <div class="metric neutral"><div class="val">11개</div><div class="lbl">종목</div></div>
+      <div class="metric neutral"><div class="val">6개</div><div class="lbl">클러스터</div></div>
+      <div class="metric neutral"><div class="val">40%</div><div class="lbl">현금</div></div>
+      <div class="metric neutral"><div class="val">10%</div><div class="lbl">해외 비중</div></div>
+    </div>
+    <div class="tbl-wrap" style="margin-top:14px">
+    <table aria-label="v3 포트폴리오 구성">
+      <thead><tr><th>클러스터</th><th>종목</th><th>비중</th><th>v2 대비 변경</th></tr></thead>
+      <tbody>
+      <tr><td>A. 방산</td><td>한화에어로 12%, 현대로템 10%</td><td>22%</td><td>—</td></tr>
+      <tr><td>B. 조선</td><td>HD현대중공업 10%, 한화오션 4%</td><td>14%</td><td>—</td></tr>
+      <tr><td>C. HBM/반도체</td><td>SK하이닉스 5%, 삼성전자 2%</td><td>7%</td><td>7%→5%, 4%→2% <span class="change remove">축소</span></td></tr>
+      <tr><td>D. AI SW</td><td>ServiceNow 4%, 네이버 5%, Microsoft 4%</td><td>13%</td><td>ServiceNow <span class="change add">신규</span></td></tr>
+      <tr><td>E. 전력인프라</td><td>HD현대일렉트릭 2%</td><td>2%</td><td><span class="change new">클러스터 신설</span></td></tr>
+      <tr><td>F. GLP-1</td><td>Novo Nordisk 2%</td><td>2%</td><td>—</td></tr>
+      <tr><td colspan="2"><strong>투자 합계 / 현금</strong></td><td><strong>60% / 40%</strong></td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  </div></div>
+</article>
+
+</div><!-- /timeline -->
+</section>
+
+
+<!-- ═══ EVOLUTION INSIGHTS ═══ -->
+<section id="insights" style="scroll-margin-top:60px">
+<div class="sec-head">
+  <h2>Evolution Insights</h2>
+  <div class="sub">6번의 버전에서 관찰된 패턴</div>
+</div>
+
+<div class="card">
+  <div class="card-label gold">반복된 패턴</div>
+  <div class="decision"><div class="icon" aria-hidden="true">1</div><div class="content"><strong>리서치 깊이가 깊어질수록 포지션 수는 수렴했다</strong><br><span>v3(11개)→v4(12개)→v5(15개, K-뷰티 폭발)→v6(13개, ETF 통합). 확신이 높아질수록 핵심 종목만 남기고 나머지는 ETF로 위임하는 방향으로 수렴.</span></div></div>
+  <div class="decision"><div class="icon" aria-hidden="true">2</div><div class="content"><strong>현금 비중은 계속 높아졌다</strong><br><span>v3(40%)→v4(38%, 일시 감소)→v5(40%)→v6(51%). 분석이 깊어지면서 불확실성에 대한 존중이 커짐. "모른다"를 인정하는 것이 현금으로 표현됨.</span></div></div>
+  <div class="decision"><div class="icon" aria-hidden="true">3</div><div class="content"><strong>매크로는 항상 뒤늦게 온다</strong><br><span>v3~v6까지 바텀업 밸류에이션에 집중. v6.1에서야 KOSPI -18.4% 급락이라는 매크로 충격을 반영. 좋은 종목이어도 시장 환경이 나쁘면 진입 타이밍이 모든 것을 바꾼다.</span></div></div>
+  <div class="decision"><div class="icon" aria-hidden="true">4</div><div class="content"><strong>독립 드라이버가 있는 섹터가 가장 강했다</strong><br><span>방산(수출 계약), K-뷰티(수출 성장)는 KOSPI 방향과 무관. v6.1에서 이들을 가장 먼저 편입하기로 한 것은 이 관찰의 직접적 반영.</span></div></div>
+  <div class="decision"><div class="icon" aria-hidden="true">5</div><div class="content"><strong>구조를 바꾸는 것보다 타이밍을 바꾸는 것이 더 자주 필요했다</strong><br><span>v6→v6.1은 종목·비중 변경 없이 진입 시점만 조정. 포트폴리오의 "무엇을"은 느리게, "언제"는 빠르게 변해야 한다.</span></div></div>
+</div>
+
+<!-- ═══ METHODOLOGY ═══ -->
+<div class="card" style="margin-top:24px">
+  <div class="card-label green">분석 방법론 진화</div>
+  <div class="tbl-wrap">
+  <table aria-label="버전별 분석 방법론 진화">
+    <thead><tr><th>버전</th><th>리서치</th><th>프레임워크 추가</th><th>검증 방법</th></tr></thead>
+    <tbody>
+    <tr><td class="bold">v3</td><td>~60편</td><td>딥다이브 3건 (SK하이닉스/ServiceNow/전력)</td><td>4인 토론 + 딥다이브</td></tr>
+    <tr><td class="bold">v4</td><td>~80편</td><td>+ 2차전지 섹터 리뷰</td><td>섹터 리뷰 + 조건부 편입</td></tr>
+    <tr><td class="bold">v5</td><td>~95편</td><td>+ K-뷰티 8편 심층</td><td>리서치 시점 vs 현재가 비교</td></tr>
+    <tr><td class="bold">v6</td><td>95편+</td><td>+ ETF 스터디 + 해외 42종목 + 세금 분석</td><td>Planner-Architect-Critic 3자 합의</td></tr>
+    <tr><td class="bold gold">v6.1</td><td>95편+</td><td>+ 매크로 4-에이전트 토론 + 역사 패턴 5건</td><td>Bull/Bear 토론 + 시나리오 확률</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</section>
+
+</div><!-- /wrap -->
+
+<a href="#" class="back-top" id="btt" aria-label="Back to top">&uarr;</a>
+
+<footer>
+  <p>
+    <a href="../index.html">ourprochoi Research Archive</a> · Portfolio Evolution Chronicle
+    <br>Last updated: 2026-07-07 · All analysis reflects the data and judgment at each version's timestamp
+  </p>
+</footer>
+
+<script>
+/* ═══ Consolidated scroll handler (rAF throttled) ═══ */
+let ticking = false;
+function onScroll() {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const h = document.documentElement;
+      const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+      const prog = document.getElementById('prog');
+      prog.style.width = pct + '%';
+      prog.setAttribute('aria-valuenow', Math.round(pct));
+
+      document.getElementById('btt').classList.toggle('show', window.scrollY > 600);
+
+      const sects = ['latest','v6','v5','etf-study','v4','v3','insights','evolution'];
+      let current = '';
+      for (const id of sects) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 120) current = id;
+      }
+      document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* ═══ Collapsible version blocks ═══ */
+document.querySelectorAll('.v-toggle').forEach(toggle => {
+  function flip() {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    const body = toggle.closest('.version-block').querySelector('.v-body');
+    if (body) body.dataset.collapsed = String(expanded);
+  }
+  toggle.addEventListener('click', flip);
+  toggle.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+});
+
+/* Expand version block when navigating via anchor */
+window.addEventListener('hashchange', () => {
+  const id = location.hash.slice(1);
+  const block = document.getElementById(id);
+  if (block && block.classList.contains('version-block')) {
+    const toggle = block.querySelector('.v-toggle');
+    if (toggle && toggle.getAttribute('aria-expanded') === 'false') {
+      toggle.setAttribute('aria-expanded', 'true');
+      const body = block.querySelector('.v-body');
+      if (body) body.dataset.collapsed = 'false';
+    }
+  }
+});
+/* Also run on initial load */
+if (location.hash) window.dispatchEvent(new HashChangeEvent('hashchange'));
+</script>
+</body>
+</html>
