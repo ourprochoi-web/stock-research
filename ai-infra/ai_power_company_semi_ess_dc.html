@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="전력반도체(SiC/GaN) 국산화, ESS $435B 시장, DC 냉각 $59.8B 시장 — 발전·송배전 너머 전력 밸류체인의 마지막 1마일을 분석한 투자 리서치">
+<meta name="keywords" content="전력반도체,SiC,GaN,ESS,PCS,냉각,액침냉각,DB하이텍,KEC,씨에스윈드,두산퓨얼셀,풍력,연료전지,데이터센터">
+<meta property="og:title" content="전력반도체·ESS·냉각 — 전력 밸류체인의 라스트마일">
+<meta property="og:description" content="SiC/GaN 국산화, ESS $435B 시장, DC 냉각 $59.8B — 발전·송배전 너머 전력의 마지막 1마일">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_company_semi_ess_dc.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="전력반도체·ESS·냉각 — 전력 밸류체인의 라스트마일">
+<meta name="twitter:description" content="SiC/GaN 국산화, ESS $435B 시장, DC 냉각 $59.8B — 발전·송배전 너머 전력의 마지막 1마일">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_company_semi_ess_dc.html">
+<title>전력반도체·ESS·냉각 — 전력 밸류체인의 라스트마일</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#A78BFA;
+    --current:#38BDF8;
+    --glow:#C084FC;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(192,132,252,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- FACT GRID ---------- */
+  .fact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:24px}
+  .fact-grid.cols3{grid-template-columns:repeat(3,1fr)}
+  .fitem{background:var(--surface);padding:24px 20px}
+  .fitem .fv{font-family:var(--mono);font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--ink)}
+  .fitem .fv .fu{color:var(--volt);font-size:.6em;font-weight:600}
+  .fitem .fl{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .fitem .fs{margin-top:6px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3)}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- CONTENDER GRID ---------- */
+  .contender-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
+  .contender-grid.cols2{grid-template-columns:repeat(2,1fr)}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .ccard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .ccard:hover{border-color:#33456b;transform:translateY(-4px)}
+  .ccard:hover::before{opacity:1}
+  .ccard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .ccard-name{font-size:1.18rem;font-weight:850;letter-spacing:-.02em}
+  .ccard .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.semi{background:rgba(167,139,250,.12);color:var(--volt);border:1px solid rgba(167,139,250,.3)}
+  .badge.ess{background:rgba(56,189,248,.12);color:var(--current);border:1px solid rgba(56,189,248,.3)}
+  .badge.wind{background:rgba(192,132,252,.12);color:var(--glow);border:1px solid rgba(192,132,252,.3)}
+  .badge.fuel{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .badge.cool{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .badge.ctx{background:rgba(94,107,134,.12);color:var(--ink-3);border:1px solid var(--line)}
+  .link-line{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .link-line b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .bb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .bb .b{border-radius:11px;padding:14px;font-size:.83rem;line-height:1.5}
+  .bb .bull{background:rgba(72,213,151,.07);border:1px solid rgba(72,213,151,.22)}
+  .bb .bear{background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.22)}
+  .bb .bh{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .bb .bull .bh{color:var(--bull)}.bb .bear .bh{color:var(--bear)}
+  .bb .b span{color:var(--ink-2)}
+  .kill{margin-top:18px;border-top:1px dashed var(--line);padding-top:15px;font-size:.82rem;color:var(--ink-2);display:flex;gap:10px}
+  .kill .kk{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bear);white-space:nowrap;padding-top:2px;font-weight:700}
+
+  /* ---------- COMP CARD (full width) ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:24px;position:relative;overflow:hidden}
+  .comp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),var(--glow),transparent);opacity:.6}
+  .comp-card .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .comp-card .card-name{font-size:1.3rem;font-weight:850;letter-spacing:-.02em}
+  .comp-card .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+  table.comp-tbl{width:100%;border-collapse:collapse;font-size:.84rem}
+  table.comp-tbl thead{background:var(--surface-2)}
+  table.comp-tbl th{text-align:left;padding:14px 16px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600;border-bottom:1px solid var(--line)}
+  table.comp-tbl td{padding:14px 16px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+  table.comp-tbl tr:last-child td{border-bottom:none}
+  table.comp-tbl td:first-child{color:var(--ink);font-weight:700}
+  table.comp-tbl .mono-val{font-family:var(--mono);font-weight:700;color:var(--ink)}
+  table.comp-tbl .tag-s{font-family:var(--mono);font-size:.66rem;padding:3px 7px;border-radius:5px;display:inline-block}
+  table.comp-tbl .tag-semi{background:rgba(167,139,250,.12);color:var(--volt);border:1px solid rgba(167,139,250,.25)}
+  table.comp-tbl .tag-ess{background:rgba(56,189,248,.12);color:var(--current);border:1px solid rgba(56,189,248,.25)}
+  table.comp-tbl .tag-wind{background:rgba(192,132,252,.12);color:var(--glow);border:1px solid rgba(192,132,252,.25)}
+  table.comp-tbl .tag-fuel{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.25)}
+  table.comp-tbl .tag-cool{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+
+  /* ---------- RISK ---------- */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .contender-grid{grid-template-columns:1fr}
+    .contender-grid.cols2{grid-template-columns:1fr}
+    .fact-grid{grid-template-columns:repeat(2,1fr)}
+    .fact-grid.cols3{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .bb{grid-template-columns:1fr}
+    table.comp-tbl{font-size:.78rem}
+    table.comp-tbl th,table.comp-tbl td{padding:10px 12px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "전력반도체·ESS·냉각 — 전력 밸류체인의 라스트마일",
+  "description": "SiC/GaN 국산화, ESS $435B 시장, DC 냉각 $59.8B — 발전·송배전 너머 전력의 마지막 1마일을 분석한 투자 리서치",
+  "datePublished": "2026-07-23",
+  "dateModified": "2026-07-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_company_semi_ess_dc.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>전력 밸류체인 라스트마일</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#lastmile">01 / 라스트마일</a>
+      <a href="#powersemi">02 / 전력반도체</a>
+      <a href="#ess">03 / ESS</a>
+      <a href="#wind">04 / 풍력</a>
+      <a href="#fuelcell">05 / 연료전지</a>
+      <a href="#cooling">06 / 냉각</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 전력 인프라 · 전력반도체·ESS·냉각 · 2026.07 기준</span>
+    <h1 class="hero-title"><span class="hl">전력반도체·ESS·냉각</span><br>전력 밸류체인의 라스트마일</h1>
+    <p class="hero-sub">SiC/GaN 국산화, ESS $435B 시장, DC 냉각 $59.8B — 발전·송배전 너머 전력의 마지막 1마일. 전력을 만들고 보내는 것만으로는 부족하다. 변환하고, 저장하고, 냉각해야 비로소 AI가 작동한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">OPM 22<span class="u">%</span></div>
+        <div class="lab">DB하이텍 2026E 영업이익률. 국내 유일 SiC/GaN 대규모 파운드리, 2027 본격 양산으로 전력반도체 국산화 선도.</div>
+        <div class="src">SRC: DB하이텍 IR · 컨센서스</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$435<span class="u">B</span></div>
+        <div class="lab">글로벌 ESS 시장 2030E. 배터리+PCS+EMS 통합 저장 없이는 신재생도, 분산전원도 작동하지 않는다.</div>
+        <div class="src">SRC: Allied Market Research</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">$59.8<span class="u">B</span></div>
+        <div class="lab">글로벌 DC 냉각 시장 2034E. 랙당 150kW → 1MW 시대, 액체냉각이 선택 아닌 필수재로 전환.</div>
+        <div class="src">SRC: IMARC 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>라스트마일을 따라가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 LASTMILE ================= -->
+<section class="blk" id="lastmile">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;라스트마일 — 왜 중요한가</div>
+      <h2 class="sec-title">발전에서 냉각까지, 전력의 완결</h2>
+      <p class="sec-lead">전력은 발전소에서 만들어져 송배전망으로 운반된 후, 데이터센터 안에서 변환·저장·냉각이라는 마지막 단계를 거친다. 발전과 송배전은 대형주 중심으로 시장이 주목한 반면, 이 '라스트마일' 구간에는 아직 가시성이 낮은 중소형 플레이어들이 있다.</p>
+    </div>
+
+    <div class="fact-grid reveal">
+      <div class="fitem">
+        <div class="fv tnum">$16.2<span class="fu">B</span></div>
+        <div class="fl">SiC/GaN 전력반도체 글로벌 시장 2034E. CAGR 26.1%로 전력 밸류체인 내 가장 빠른 성장.</div>
+        <div class="fs">Fortune Business Insights</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">5,586<span class="fu">억</span></div>
+        <div class="fl">한국 배전망 ESS 정부 지원금(2026~2030). AI 기반 배전망 ESS 구축 사업으로 PCS 시장 개화.</div>
+        <div class="fs">산업부 2026</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">57<span class="fu">%</span></div>
+        <div class="fl">수랭식 냉각시스템 비중 2026E. 2024년 23%에서 급등 — 골드만삭스 전망.</div>
+        <div class="fs">Goldman Sachs</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">7,500<span class="fu">억</span></div>
+        <div class="fl">정부 차세대 전력반도체 투자(국비+민간). 부산 8인치 SiC 공공팹 등 인프라 구축.</div>
+        <div class="fs">산업부 2026.06</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"발전과 송배전은 뉴스가 됐고, 라스트마일은 아직 아니다."
+      <span class="u">HD현대일렉트릭·LS일렉트릭·두산에너빌리티 등 대형 전력주는 이미 시장이 가격에 반영했다. 그러나 전력이 실제로 'AI를 돌리는' 마지막 구간 — SiC/GaN으로 전력을 변환하고, ESS로 저장하고, 액체로 열을 식히는 단계 — 은 아직 실적 인식 전이거나 시장의 주목을 받기 시작한 초입이다. 이 시차가 리스크이자 기회다. 정부는 2026년 6월 차세대 전력반도체에 최대 7,500억원을 투입하겠다고 발표했고, 배전망 ESS에 5,586억원 지원을 시작했다. 라스트마일에 정책 자금이 흐르기 시작한 것이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 POWERSEMI ================= -->
+<section class="blk" id="powersemi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;SiC/GaN 전력반도체 — 전력 변환의 혁명</div>
+      <h2 class="sec-title">전력을 '바꾸는' 반도체</h2>
+      <p class="sec-lead">AI 서버는 AC 전원을 받아 DC로 변환하고, 전압을 올리고 내리는 과정에서 전력반도체를 거친다. SiC(탄화규소)·GaN(질화갈륨)은 기존 실리콘 대비 전력 손실을 절반 이하로 줄이고 고온·고전압에 강하다. EV·신재생·DC 전환이 맞물리며 시장은 CAGR 26%로 폭발 중이다.</p>
+    </div>
+
+    <div class="contender-grid reveal">
+      <!-- DB하이텍 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">DB하이텍</div><div class="ticker">KRX 000990 · 시총 2.77조</div></div>
+          <span class="badge semi">SiC/GaN 파운드리</span>
+        </div>
+        <div class="link-line">국내 유일 대규모 아날로그·전력반도체 파운드리. <b>2026년 4Q SiC/GaN 초도물량</b> 생산, <b>2027년 본격 양산</b> 목표. 2025년 다수 고객 MPW(다품종 시험 생산) 완료. 8인치 fab에서 중국 fabless 수요까지 흡수하며 <b>가동률 90%+ 유지</b>.</div>
+        <div class="nums">
+          <div><div class="nk">2026E 매출</div><div class="nv tnum">1.60조</div></div>
+          <div><div class="nk">2026E 영익</div><div class="nv tnum">3,553억</div></div>
+          <div><div class="nk">2026E OPM</div><div class="nv tnum">22.2%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>국내 유일 SiC/GaN 양산 파운드리 → 정부 7,500억 지원 직접 수혜. 8인치 fab 중국 경쟁사 부재. 2025년 매출 +23.5%, 영익 +45.3%로 이미 성장 궤도.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>SiC/GaN 양산까지 1~2년 시차. 8인치 레거시 fab의 차세대 전환 투자 부담. 시총 2.77조에 이미 기대감 일부 반영.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>SiC/GaN 초도 일정 지연 / 8인치 가동률 하락 / 중국 fab 경쟁 심화.</div>
+      </div>
+
+      <!-- KEC -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">KEC</div><div class="ticker">KRX 092220 · 시총 2,843억</div></div>
+          <span class="badge semi">SiC MOSFET</span>
+        </div>
+        <div class="link-line"><b>글로벌 2개사만</b> 보유한 1,200V급 Trench-type 고전압 SiC MOSFET 기술 확보(국책과제). 삼성전자·LG전자·현대모비스 등 주요 고객. 부산 테크노파크에서 공정 70% 내재화, <b>나머지 30% 외주</b>. EV·서버 전력변환 수요 확대.</div>
+        <div class="nums">
+          <div><div class="nk">연매출</div><div class="nv tnum">~2,200억</div></div>
+          <div><div class="nk">1Q26</div><div class="nv" style="font-size:.84rem">영업적자</div></div>
+          <div><div class="nk">SiC 경쟁</div><div class="nv" style="font-size:.84rem">글로벌 2社</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>Infineon·Rohm과 어깨를 나란히 하는 SiC MOSFET 기술. EV·DC 전환으로 고전압 전력반도체 수요 구조적 성장. 정부 전력반도체 육성 정책 수혜.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>영업적자 지속 — 중국 Si 반도체 가격경쟁 + 대규모 설비투자 부담. SiC 양산까지 추가 투자 필요. 매출 규모 대비 시총 부담.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>SiC 양산 일정 추가 지연 / 중국 가격경쟁으로 Si 사업 수익성 악화 / 자본 소진.</div>
+      </div>
+
+      <!-- 다원시스 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">다원시스</div><div class="ticker">KRX 068240 · 시총 966억</div></div>
+          <span class="badge semi">특수전원장치</span>
+        </div>
+        <div class="link-line">전동차 전원장치, 플라즈마 전원, <b>핵융합 전원장치</b> 등 특수 전력변환 기술 보유. SMR·핵융합 등 미래 에너지 원천기술과 연결. 2025년 매출 <b>-62.8% YoY</b>, 영업적자 전환으로 턴어라운드 불확실.</div>
+        <div class="nums">
+          <div><div class="nk">2025 매출</div><div class="nv" style="font-size:.84rem">-62.8%</div></div>
+          <div><div class="nk">손익</div><div class="nv" style="font-size:.84rem">적자전환</div></div>
+          <div><div class="nk">시총</div><div class="nv tnum">966억</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>핵융합·SMR 전원장치라는 유일무이한 기술. 미래 에너지 전환기에 re-rating 옵션.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>매출 급감·적자, 실적 가시성 매우 낮음. 테마성 변동에 주의.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>핵융합·SMR 관련 수주 무기한 지연 / 기존 전동차 매출 추가 감소.</div>
+      </div>
+    </div>
+
+    <div class="fact-grid cols3 reveal">
+      <div class="fitem">
+        <div class="fv tnum">$1.43<span class="fu">B</span></div>
+        <div class="fl">한국 SiC/GaN 시장 2025년. 2033년 $6.27B으로 CAGR 20.3% 성장 전망.</div>
+        <div class="fs">Transpire Insight</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">2,601<span class="fu">억</span></div>
+        <div class="fl">정부 화합물반도체 R&D 투자(2025~2031). 부산 8인치 SiC 공공팹 포함.</div>
+        <div class="fs">산업부 2026</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">26.1<span class="fu">%</span></div>
+        <div class="fl">글로벌 SiC/GaN 시장 CAGR(2026~2034). EV+DC전환+신재생이 3대 동력.</div>
+        <div class="fs">Fortune BI</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"전력을 만드는 건 대형주, 변환하는 건 중소형주."
+      <span class="u">SiC/GaN은 EV·AI DC·신재생 인버터·ESS PCS의 공통 분모다. 시장은 연 26% 성장하지만 국산화는 아직 초기 — DB하이텍이 2027년 양산을 시작해야 비로소 한국에 '전력반도체 파운드리'가 생긴다. KEC는 글로벌 2개사만 가진 SiC MOSFET 기술을 보유했으나 적자를 벗어나지 못했다. 기술력은 확보했으나 양산·수익화까지의 시차가 핵심 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 ESS ================= -->
+<section class="blk" id="ess">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;ESS·PCS — 저장이 없으면 신재생도 없다</div>
+      <h2 class="sec-title">전력을 '담는' 인프라</h2>
+      <p class="sec-lead">태양광·풍력은 날씨에 따라 출력이 변한다. ESS(에너지저장장치)가 이 간헐성을 보완한다. ESS의 핵심은 배터리+BMS+PCS+EMS 통합 — 이 중 DC/AC 변환을 담당하는 PCS(전력변환장치)가 전력반도체의 직접 수요처다. 한국 배전망 ESS 시장은 정부 지원 5,586억원을 등에 업고 2026년부터 본격 개화한다.</p>
+    </div>
+
+    <div class="fact-grid reveal">
+      <div class="fitem">
+        <div class="fv tnum">$435<span class="fu">B</span></div>
+        <div class="fl">글로벌 ESS 시장 2030E. 2020년 $188.5B에서 CAGR 8.3%로 성장.</div>
+        <div class="fs">Allied Market Research</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">128<span class="fu">MW</span></div>
+        <div class="fl">2026 AI 기반 배전망 ESS 1차 사업 규모(32개 배전선로). 640MWh 저장용량.</div>
+        <div class="fs">산업부 2026.07</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">60<span class="fu">%</span></div>
+        <div class="fl">HD현대플라스포 PCS 점유율(1차 사업 기준). 32개 중 19개 배전선로 공급.</div>
+        <div class="fs">전기신문 2026</div>
+      </div>
+      <div class="fitem">
+        <div class="fv tnum">5,586<span class="fu">억</span></div>
+        <div class="fl">배전망 ESS 정부 지원 총액(2026~2030). PCS 시장 성장의 직접적 촉매.</div>
+        <div class="fs">산업부 2026</div>
+      </div>
+    </div>
+
+    <div class="contender-grid cols2 reveal">
+      <!-- ESS PCS 구조 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">ESS PCS 시장 구조</div><div class="ticker">HD현대플라스포 · 효성중공업 양분</div></div>
+          <span class="badge ess">PCS 듀오폴리</span>
+        </div>
+        <div class="link-line">배전망 ESS의 PCS 시장은 <b>HD현대플라스포</b>와 <b>효성중공업</b>이 사실상 양분한다. 1차 사업에서 HD현대플라스포가 60%를 가져갔고, 효성중공업이 나머지를 차지. <b>LS일렉트릭</b>은 EMS(에너지관리시스템) 영역에서 존재감. 비상장 <b>데스틴파워</b>는 수소연료전지 인버터 전문으로 두산퓨얼셀과 공동개발 레퍼런스 보유.</div>
+        <div class="nums">
+          <div><div class="nk">HD현대플라스포</div><div class="nv" style="font-size:.84rem">PCS 60%</div></div>
+          <div><div class="nk">효성중공업</div><div class="nv" style="font-size:.84rem">PCS 나머지</div></div>
+          <div><div class="nk">데스틴파워</div><div class="nv" style="font-size:.84rem">비상장</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>정부 5,586억 지원 + 신재생 의무화로 ESS 수요 구조적. PCS 과점 구조에서 판가·마진 방어력.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>HD현대플라스포·효성중공업 모두 대형 그룹사 내 사업부 — 순수 ESS 플레이어로의 투자 집중도 낮음. 배터리 화재 리스크.</span></div>
+        </div>
+      </div>
+
+      <!-- 에스에너지 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">에스에너지</div><div class="ticker">KRX 095910 · 시총 268~751억</div></div>
+          <span class="badge ess">태양광+ESS+수소</span>
+        </div>
+        <div class="link-line">태양전지 모듈 제조, 태양광 발전시스템 설치, <b>수소연료전지</b>, 발전소 유지보수를 겸하는 복합 에너지 기업. ESS와 태양광을 통합하는 시스템 공급사로 포지셔닝. 소형주이나 태양광-ESS-수소 세 축을 모두 보유한 점이 차별점.</div>
+        <div class="nums">
+          <div><div class="nk">사업영역</div><div class="nv" style="font-size:.84rem">태양광+ESS</div></div>
+          <div><div class="nk">시총</div><div class="nv" style="font-size:.84rem">268~751억</div></div>
+          <div><div class="nk">상장</div><div class="nv" style="font-size:.84rem">2007 코스닥</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>태양광+ESS+수소 세 축 복합. 정부 신재생·ESS 정책 수혜. 소형주 re-rating 가능성.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>시총 극소형, 유동성 리스크. 태양광 모듈 가격 하락 압박. 실적 안정성 검증 필요.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>태양광 모듈 가격 급락 / ESS 수주 부재 / 수소 사업 실체 미확인.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 WIND ================= -->
+<section class="blk" id="wind">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;풍력 — 해상풍력의 한국 챔피언</div>
+      <h2 class="sec-title">바람을 전기로 바꾸는 기업</h2>
+      <p class="sec-lead">해상풍력은 가장 안정적인 재생에너지 중 하나다. TSMC가 대만 하이롱(Hai Long) 1GW+ 30년 PPA를 체결한 것처럼, 제조업 RE100의 실현 모델이 되고 있다. 한국 정부도 재생에너지 100GW 목표를 내세웠고, 전기국가 비전에서 해상풍력을 핵심 축으로 지목했다.</p>
+    </div>
+
+    <div class="contender-grid cols2 reveal">
+      <!-- 씨에스윈드 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">씨에스윈드</div><div class="ticker">KRX 112610 · 시총 1.7조</div></div>
+          <span class="badge wind">풍력타워 글로벌 1위</span>
+        </div>
+        <div class="link-line"><b>글로벌 풍력타워 시장 점유율 약 15%</b>로 세계 1위. 타워뿐 아니라 해상풍력 하부구조물(Monopile·Transition Piece), 베어링까지 생산. 한국·베트남·미국·포르투갈 등 글로벌 거점 운영. 자회사 씨에스윈드오프쇼어의 <b>뉴저지·독일향 대규모 수주</b>로 2026년 매출 수직 상승 전망.</div>
+        <div class="nums">
+          <div><div class="nk">2026E 매출</div><div class="nv tnum">2.85조</div></div>
+          <div><div class="nk">2026E 영익</div><div class="nv tnum">3,338억</div></div>
+          <div><div class="nk">글로벌 M/S</div><div class="nv tnum">~15%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>풍력타워 글로벌 1위 + 해상풍력 하부구조물 확장. 2025 1Q 흑자전환, 2026E 매출 3조 시대. 미·유럽 해상풍력 발주 수혜.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>풍력 산업 전체 정책 민감도. 미국 IRA/관세 변수. 해상풍력 프로젝트 지연 리스크.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>해상풍력 프로젝트 대량 취소 / 미국 IRA 풍력 보조금 축소 / 원자재 급등으로 마진 악화.</div>
+      </div>
+
+      <!-- 유니슨 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">유니슨</div><div class="ticker">KRX 018000 · 소형주</div></div>
+          <span class="badge wind">국내 풍력 전문</span>
+        </div>
+        <div class="link-line">국내 풍력발전 설비 제조·설치 전문기업. 정부 해상풍력 육성 정책 기대감으로 <b>2025년 52주 신고가</b> 달성. 한국 전기국가 비전의 재생에너지 100GW 목표에서 해상풍력이 핵심 축 — 국내 풍력 업체로서 직접 정책 수혜 기대.</div>
+        <div class="nums">
+          <div><div class="nk">사업</div><div class="nv" style="font-size:.84rem">풍력설비</div></div>
+          <div><div class="nk">시장</div><div class="nv" style="font-size:.84rem">국내 중심</div></div>
+          <div><div class="nk">시총</div><div class="nv" style="font-size:.84rem">수백억</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>정부 해상풍력 100GW 목표의 직접 수혜. 국내 풍력 설비 업체 희소가치.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>극소형주, 실적 가시성 낮음. 해외 대비 경쟁력 입증 필요. 테마성 변동.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>해상풍력 정책 후퇴 / 대형 프로젝트 수주 실패 / 기술 경쟁력 부족으로 해외 진출 무산.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"해상풍력은 RE100의 현실이 되고 있다."
+      <span class="u">TSMC의 30년 PPA, 애플의 공급업체 200사+ RE100 요구, 한국 전기국가 비전의 재생에너지 100GW — 해상풍력은 '의무'가 되어가고 있다. 씨에스윈드는 글로벌 1위라는 위치에서 이 수요를 흡수하며 2026년 매출 3조 시대를 열고 있다. 다만 풍력 산업은 정책·보조금에 민감하고, 프로젝트 단위 발주의 변동성이 크다는 점을 감안해야 한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 FUELCELL ================= -->
+<section class="blk" id="fuelcell">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;연료전지·수소 — 분산발전의 게임체인저</div>
+      <h2 class="sec-title">전력망 없이도 전기를 만든다</h2>
+      <p class="sec-lead">전력망을 기다리지 못하는 빅테크가 선택한 '즉시 가용 전원'이 연료전지다. Bloom Energy가 미국에서 behind-the-meter 시장을 개척한 것처럼, 한국에서는 두산퓨얼셀이 청정수소 의무화 제도를 기반으로 분산발전 시장을 선점하고 있다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <div class="card-top">
+        <div><div class="card-name">두산퓨얼셀</div><div class="ticker">KRX 336260 · 국내 발전용 연료전지 1위</div></div>
+        <span class="badge fuel">연료전지 · 수소발전</span>
+      </div>
+      <div class="link-line">국내 발전용 연료전지 <b>시장점유율 1위</b>. 청정수소발전 의무화제도 시행으로 수소발전 입찰시장이 본격 활성화되며 <b>1Q26 매출 1,448억원(+45.2% YoY)</b>, 영업손실 -12.9억원으로 <b>적자 대폭 축소(-88.8%)</b>. 2025년 하반기 중저온형 SOFC 양산을 시작해 기존 PAFC와 조합한 최적화 솔루션 제공 가능. 분산에너지 수요 증가와 청정수소 의무화가 구조적 성장 동력.</div>
+      <div class="nums">
+        <div><div class="nk">1Q26 매출</div><div class="nv tnum">1,448억</div></div>
+        <div><div class="nk">1Q26 YoY</div><div class="nv tnum">+45.2%</div></div>
+        <div><div class="nk">적자 축소</div><div class="nv tnum">-88.8%</div></div>
+      </div>
+      <div class="bb">
+        <div class="b bull"><div class="bh">▲ Bull</div><span>청정수소 의무화 → 수소발전 입찰 활성화. 1Q26 매출 +45%, 적자 -89% 축소. SOFC 양산으로 제품 라인업 강화. 분산전원 수요 구조적 성장.</span></div>
+        <div class="b bear"><div class="bh">▼ Bear</div><span>여전히 영업적자. 수소 인프라 구축 지연 시 수요 현실화 시차. 모회사 두산에너빌리티 밸류 부담. 정책 의존도 높음.</span></div>
+      </div>
+      <div class="kill"><span class="kk">KILL</span>청정수소 의무화 정책 후퇴·완화 / 흑자전환 시점 반복 지연 / 수소 인프라 구축 지연.</div>
+    </div>
+
+    <div class="fact-grid cols3 reveal">
+      <div class="fitem">
+        <div class="fv tnum">+45.2<span class="fu">%</span></div>
+        <div class="fl">두산퓨얼셀 1Q26 매출 YoY 증가율. 청정수소 의무화 + 분산에너지 수요 반영.</div>
+        <div class="fs">DART 2026.04</div>
+      </div>
+      <div class="fitem">
+        <div class="fv">SOFC+PAFC</div>
+        <div class="fl">2025년 하반기 중저온형 SOFC 양산 시작. 기존 PAFC와 조합해 최적화 솔루션 제공.</div>
+        <div class="fs">두산퓨얼셀 IR</div>
+      </div>
+      <div class="fitem">
+        <div class="fv">청정수소</div>
+        <div class="fl">청정수소발전 의무화제도 시행 — 수소발전 입찰시장 본격 개화의 정책 기반.</div>
+        <div class="fs">산업부 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 COOLING ================= -->
+<!-- 2026.07.25 샌프란시스코 AI 서밋 업데이트 -->
+<section class="blk" style="padding-top:48px;padding-bottom:48px">
+  <div class="wrap">
+    <div class="thesis reveal" style="border-left:3px solid var(--current);background:linear-gradient(135deg,rgba(255,177,62,.10) 0%,rgba(18,26,46,.95) 100%);">
+      <div class="tg" style="background:var(--current);color:#080B14;letter-spacing:.06em">2026.07.25 업데이트 — 샌프란시스코 AI 서밋</div>
+      <p style="margin-bottom:.6rem"><b>AIDC 18.4GW · SKT AI 팩토리 — 냉각·ESS·전력반도체 수요 폭증</b>
+      <span class="u" style="display:block;margin-top:.5rem">
+        <b>&#183; AIDC 18.4GW(2035E) 신설</b> — 울산·동해·세종 등 거점 AIDC 대형화. 고밀도 AI 서버 냉각(액침·수냉) 수요 및 계통 안정용 대형 ESS 발주 급증 예상.<br>
+        <b>&#183; SKT-엔비디아 DSX AI 팩토리</b> — 국내 구축 후 아시아 확대. 전력변환·UPS·ESS·전력반도체 수요 직접 발생.<br>
+        <b>&#183; 3대 메가프로젝트 4,755조</b> — 반도체 팹·AIDC 동시 확장 → SiC/GaN 전력반도체·액침냉각·모듈러 ESS 수요 구조적 상향.
+      </span></p>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="cooling">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;DC 냉각·투자 시사점</div>
+      <h2 class="sec-title">열을 잡아야 AI가 산다</h2>
+      <p class="sec-lead">AI 랙 한 대가 150kW를 소비하고 다음 세대는 1MW/랙으로 간다. 기존 공냉으로는 한계 — 수냉(D2C)을 거쳐 액침냉각으로의 전환이 가속되고 있다. 골드만삭스는 수랭식 비중이 2024년 23%에서 2026년 57%로 급등할 것으로 전망한다.</p>
+    </div>
+
+    <div class="contender-grid cols2 reveal">
+      <!-- 케이엔솔 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">케이엔솔</div><div class="ticker">KRX 053080</div></div>
+          <span class="badge cool">액침냉각</span>
+        </div>
+        <div class="link-line">반도체 클린룸·2차전지 드라이룸 전문에서 <b>액침냉각 사업으로 확장</b>. 삼성전자·SK하이닉스·마이크론 등 주요 반도체 고객의 D램 증설 사이클과 맞물려 <b>액침냉각 최대 수혜주</b>로 평가. 기존 클린룸/환경제어 기술을 DC 냉각에 적용하는 기술 전이 모델.</div>
+        <div class="nums">
+          <div><div class="nk">기존사업</div><div class="nv" style="font-size:.84rem">클린룸/드라이룸</div></div>
+          <div><div class="nk">확장</div><div class="nv" style="font-size:.84rem">액침냉각</div></div>
+          <div><div class="nk">고객</div><div class="nv" style="font-size:.84rem">삼성/SK/마이크론</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>반도체 클린룸 → DC 액침냉각 기술 전이. 주요 반도체 고객 기반 확보. DC 냉각 시장 CAGR 13%+.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>액침냉각 매출 비중 아직 미미. DC향 실적 가시성 낮음. 표준 미확립 리스크.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>빅테크 표준 냉각 채택에서 배제 / 액침냉각 매출 인식 지연.</div>
+      </div>
+
+      <!-- GST -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">GST</div><div class="ticker">KRX 083450</div></div>
+          <span class="badge cool">IDC 냉각시스템</span>
+        </div>
+        <div class="link-line">인터넷 데이터센터(IDC)용 <b>액침냉각 시스템</b> 사업 본격 진출. 삼성전자·SK하이닉스 등에 제품 공급 레퍼런스 확보. 기존 반도체 장비 기술을 DC 열관리 시스템으로 전환. 고밀도 AI 서버의 열 관리 솔루션 수요 급증에 대응.</div>
+        <div class="nums">
+          <div><div class="nk">사업영역</div><div class="nv" style="font-size:.84rem">IDC 냉각</div></div>
+          <div><div class="nk">기술</div><div class="nv" style="font-size:.84rem">액침냉각</div></div>
+          <div><div class="nk">고객</div><div class="nv" style="font-size:.84rem">삼성/SK</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>IDC 냉각 전문 포지셔닝. 삼성·SK 공급 레퍼런스. AI DC 열관리 $59.8B 시장 수혜.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>아직 초기 단계, 실적 기여 미미. 글로벌 대형 냉각업체(Vertiv·Schneider)와 경쟁.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>DC 냉각 수주 공백 / 빅테크 글로벌 벤더 선정에서 국내사 배제.</div>
+      </div>
+    </div>
+
+    <!-- 전체 종목 비교 테이블 -->
+    <div class="tbl-wrap reveal">
+      <table class="comp-tbl">
+        <thead>
+          <tr>
+            <th>종목</th>
+            <th>코드</th>
+            <th>밸류체인</th>
+            <th>시총</th>
+            <th>핵심 포인트</th>
+            <th>손익</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DB하이텍</td>
+            <td class="mono-val">000990</td>
+            <td><span class="tag-s tag-semi">전력반도체</span></td>
+            <td class="mono-val">2.77조</td>
+            <td>SiC/GaN 파운드리 2027 양산, OPM 22%</td>
+            <td style="color:var(--bull)">흑자</td>
+          </tr>
+          <tr>
+            <td>KEC</td>
+            <td class="mono-val">092220</td>
+            <td><span class="tag-s tag-semi">전력반도체</span></td>
+            <td class="mono-val">2,843억</td>
+            <td>글로벌 2社 SiC MOSFET, 1200V Trench</td>
+            <td style="color:var(--bear)">적자</td>
+          </tr>
+          <tr>
+            <td>다원시스</td>
+            <td class="mono-val">068240</td>
+            <td><span class="tag-s tag-semi">전력반도체</span></td>
+            <td class="mono-val">966억</td>
+            <td>특수전원(핵융합/SMR), 매출 급감</td>
+            <td style="color:var(--bear)">적자</td>
+          </tr>
+          <tr>
+            <td>에스에너지</td>
+            <td class="mono-val">095910</td>
+            <td><span class="tag-s tag-ess">ESS</span></td>
+            <td class="mono-val">268~751억</td>
+            <td>태양광+ESS+수소 복합에너지</td>
+            <td style="color:var(--ink-3)">소형</td>
+          </tr>
+          <tr>
+            <td>씨에스윈드</td>
+            <td class="mono-val">112610</td>
+            <td><span class="tag-s tag-wind">풍력</span></td>
+            <td class="mono-val">1.7조</td>
+            <td>풍력타워 글로벌 1위, 2026E 매출 2.85조</td>
+            <td style="color:var(--bull)">흑전</td>
+          </tr>
+          <tr>
+            <td>유니슨</td>
+            <td class="mono-val">018000</td>
+            <td><span class="tag-s tag-wind">풍력</span></td>
+            <td class="mono-val">수백억</td>
+            <td>국내 풍력전문, 정책 수혜 기대</td>
+            <td style="color:var(--ink-3)">소형</td>
+          </tr>
+          <tr>
+            <td>두산퓨얼셀</td>
+            <td class="mono-val">336260</td>
+            <td><span class="tag-s tag-fuel">연료전지</span></td>
+            <td class="mono-val">-</td>
+            <td>국내 1위, 1Q26 +45%, 적자 -89% 축소</td>
+            <td style="color:var(--bear)">적자축소</td>
+          </tr>
+          <tr>
+            <td>케이엔솔</td>
+            <td class="mono-val">053080</td>
+            <td><span class="tag-s tag-cool">냉각</span></td>
+            <td class="mono-val">-</td>
+            <td>클린룸→액침냉각 전환, 삼성/SK 고객</td>
+            <td style="color:var(--ink-3)">초기</td>
+          </tr>
+          <tr>
+            <td>GST</td>
+            <td class="mono-val">083450</td>
+            <td><span class="tag-s tag-cool">냉각</span></td>
+            <td class="mono-val">-</td>
+            <td>IDC 액침냉각 진출, 삼성/SK 공급</td>
+            <td style="color:var(--ink-3)">초기</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 리스크 그리드 -->
+    <div class="risk reveal">
+      <h3><span class="rd"></span>리스크 요인 — 라스트마일의 함정</h3>
+      <div class="risk-grid">
+        <div class="ritem"><div class="ri">R1</div><div class="rt"><b>양산 시차 리스크</b><span>SiC/GaN·액침냉각 모두 기술은 확보했으나 양산·수익화까지 1~3년의 시차가 있다. 기대감과 실적의 간극이 크다.</span></div></div>
+        <div class="ritem"><div class="ri">R2</div><div class="rt"><b>정책 의존도</b><span>ESS 보조금, 청정수소 의무화, 풍력 IRA — 라스트마일 종목 대부분이 정책 촉매에 의존한다. 정책 후퇴 시 투자 논거가 무너진다.</span></div></div>
+        <div class="ritem"><div class="ri">R3</div><div class="rt"><b>글로벌 경쟁·표준화</b><span>전력반도체는 Infineon·Wolfspeed, 냉각은 Vertiv·Schneider가 지배. 국내 중소형사의 글로벌 경쟁력 입증이 관건.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 전력 인프라 시리즈 — 전력반도체·ESS·냉각 분석</div>
+      <div class="src-list">
+        DATA · DB하이텍 IR · KEC IR · 씨에스윈드 IR · 두산퓨얼셀 IR<br>
+        DART 공시 · 에너지경제연구원 · BloombergNEF<br>
+        산업통상자원부 (전력반도체 7,500억 · 배전망 ESS 5,586억 · 전기국가 비전)<br>
+        Fortune Business Insights · Allied Market Research · IMARC Group · Goldman Sachs<br>
+        전기신문 (배전망 ESS PCS 시장) · Transpire Insight (한국 SiC/GaN 시장)<br>
+        작성 기준일 · 2026.07.23
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

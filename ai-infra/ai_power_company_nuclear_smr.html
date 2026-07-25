@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="체코 두코바니 수주, 신한울 3·4호기, 제11차 전기본 원전 2기 증설 — 설계부터 배관까지 K-원전 밸류체인 10개사 분해 분석">
+<meta name="keywords" content="원전,SMR,한전기술,비에이치아이,우진,한전KPS,금화피에스시,SNT에너지,오르비텍,성광벤드,원전수출,소형모듈원자로">
+<meta property="og:title" content="원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주">
+<meta property="og:description" content="체코 두코바니 수주, 신한울 3·4호기, 제11차 전기본 원전 2기 증설 — 설계부터 배관까지 K-원전 밸류체인 10개사 분해 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_company_nuclear_smr.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주">
+<meta name="twitter:description" content="체코 두코바니 수주, 신한울 3·4호기, 제11차 전기본 원전 2기 증설 — 설계부터 배관까지 K-원전 밸류체인 10개사 분해 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_company_nuclear_smr.html">
+<title>원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#4ADE80;        /* 뉴클리어 그린 */
+    --current:#FBBF24;     /* 골드 */
+    --glow:#34D399;        /* 에메랄드 글로우 */
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(52,211,153,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- FACT GRID ---------- */
+  .fact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:28px}
+  .fact-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .fitem{background:var(--surface);padding:24px 20px}
+  .fitem .fk{font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+  .fitem .fv{font-family:var(--mono);font-weight:750;font-size:1.1rem;margin-top:8px;color:var(--ink);letter-spacing:-.01em}
+  .fitem .fd{font-size:.78rem;color:var(--ink-2);margin-top:6px;line-height:1.45}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:28px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- COMP CARD ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px;margin-top:8px;position:relative;overflow:hidden}
+  .comp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),var(--glow),transparent)}
+  .comp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .comp-name{font-size:1.5rem;font-weight:900;letter-spacing:-.02em}
+  .comp-ticker{font-family:var(--mono);font-size:.78rem;color:var(--ink-3);margin-top:4px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.nuc{background:rgba(74,222,128,.12);color:var(--volt);border:1px solid rgba(74,222,128,.3)}
+  .badge.bop{background:rgba(251,191,36,.12);color:var(--current);border:1px solid rgba(251,191,36,.3)}
+  .badge.inst{background:rgba(52,211,153,.12);color:var(--glow);border:1px solid rgba(52,211,153,.3)}
+  .badge.maint{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .badge.pipe{background:rgba(74,222,128,.12);color:var(--volt);border:1px solid rgba(74,222,128,.3)}
+  .comp-desc{margin-top:18px;font-size:.94rem;color:var(--ink-2);line-height:1.6}
+  .comp-desc b{color:var(--ink);font-weight:650}
+
+  /* ---------- CONTENDER GRID ---------- */
+  .contender-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .contender-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+  .ccard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .ccard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .ccard:hover{border-color:#33456b;transform:translateY(-4px)}
+  .ccard:hover::before{opacity:1}
+  .ccard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .ccard-name{font-size:1.22rem;font-weight:850;letter-spacing:-.02em}
+  .ccard-ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .ccard-desc{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .ccard-desc b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .bb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .bb .b{border-radius:11px;padding:14px;font-size:.83rem;line-height:1.5}
+  .bb .bull{background:rgba(72,213,151,.07);border:1px solid rgba(72,213,151,.22)}
+  .bb .bear{background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.22)}
+  .bb .bh{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .bb .bull .bh{color:var(--bull)}.bb .bear .bh{color:var(--bear)}
+  .bb .b span{color:var(--ink-2)}
+  .kill{margin-top:18px;border-top:1px dashed var(--line);padding-top:15px;font-size:.82rem;color:var(--ink-2);display:flex;gap:10px}
+  .kill .kk{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bear);white-space:nowrap;padding-top:2px;font-weight:700}
+
+  /* ---------- IMPL GRID ---------- */
+  .impl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+  .impl-item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .impl-item .ii-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--glow);margin-bottom:10px}
+  .impl-item h4{font-size:1.05rem;font-weight:750;margin-bottom:8px}
+  .impl-item p{font-size:.86rem;color:var(--ink-2);line-height:1.55}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:28px;border:1px solid var(--line);border-radius:16px}
+  .tbl-wrap table{width:100%;border-collapse:collapse;font-size:.84rem}
+  .tbl-wrap thead{background:var(--surface)}
+  .tbl-wrap th{padding:14px 16px;text-align:left;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--line);white-space:nowrap}
+  .tbl-wrap td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
+  .tbl-wrap tr:last-child td{border-bottom:none}
+  .tbl-wrap tr:hover td{background:rgba(74,222,128,.03)}
+  .tbl-wrap td:first-child{color:var(--ink);font-weight:650}
+  .tbl-wrap .mono-cell{font-family:var(--mono);font-weight:600;color:var(--ink)}
+  .tbl-wrap .green{color:var(--volt)}
+  .tbl-wrap .gold{color:var(--current)}
+
+  /* ---------- RISK GRID ---------- */
+  .risk{margin-top:28px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fact-grid{grid-template-columns:repeat(2,1fr)}
+    .contender-grid{grid-template-columns:1fr}
+    .contender-grid.cols-4{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .bb{grid-template-columns:1fr}
+    .tbl-wrap{margin-left:-24px;margin-right:-24px;border-radius:0;border-left:none;border-right:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주",
+  "description": "체코 두코바니 수주, 신한울 3·4호기, 제11차 전기본 원전 2기 증설 — 설계부터 배관까지 K-원전 밸류체인 10개사 분해 분석",
+  "datePublished": "2026-07-23",
+  "dateModified": "2026-07-23",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_company_nuclear_smr.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>원전·SMR 밸류체인</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#renaissance">01 / 르네상스</a>
+      <a href="#design">02 / 설계</a>
+      <a href="#bop">03 / BOP</a>
+      <a href="#instrumentation">04 / 계측</a>
+      <a href="#maintenance">05 / 정비</a>
+      <a href="#piping">06 / 배관</a>
+      <a href="#map">07 / 투자지도</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 전력 인프라 · 원전·SMR · 2026.07 기준</span>
+    <h1 class="hero-title"><span class="hl">원전·SMR 밸류체인</span><br>K-원전 르네상스의 숨은 수혜주</h1>
+    <p class="hero-sub">체코 두코바니 수주, 신한울 3·4호기, 제11차 전기본 원전 2기 증설 — 설계부터 배관까지 10개사 밸류체인 분해</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">10<span class="u">개사</span></div>
+        <div class="lab">원전 밸류체인 전 구간 — 설계·EPC, BOP·열교환, 계측·제어, 정비·검사, 배관·구조물까지 핵심 기업을 분해한다.</div>
+        <div class="src">SRC: ourprochoi Research</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">1.73<span class="u">조</span></div>
+        <div class="lab">한전기술 2025년 신규 수주(역대 최대). 체코 두코바니 종합설계 1.25조 + 원자로계통설계 0.37조 등 해외 원전 수출 본격화.</div>
+        <div class="src">SRC: 한전기술 공시 2025</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">PER 5<span class="u">x</span></div>
+        <div class="lab">금화피에스시 — 매출 3,402억에 시총 2,004억. 원전 배관·구조물 전문 기업으로 밸류에이션 매력이 가장 뚜렷한 구간.</div>
+        <div class="src">SRC: FnGuide 2026.07</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>밸류체인을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 RENAISSANCE ================= -->
+<section class="blk" id="renaissance">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;K-원전 르네상스 — 왜 지금인가</div>
+      <h2 class="sec-title">원전의 귀환, 이번에는 진짜다</h2>
+      <p class="sec-lead">탈원전 정책의 종료, 글로벌 에너지 안보 재편, AI 데이터센터의 24시간 무탄소 베이스로드 수요 — 세 축이 동시에 작동하며 원전은 '과거의 기술'에서 '미래 인프라의 핵심'으로 위상이 역전됐다.</p>
+    </div>
+
+    <div class="fact-grid reveal">
+      <div class="fitem">
+        <div class="fk">체코 두코바니</div>
+        <div class="fv tnum">26조원</div>
+        <div class="fd">한수원, 2025.06 본계약 체결. APR1000 2기, 187억 달러. UAE 바라카 이후 두 번째 수출 — 유럽 최초 K-원전.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">신한울 3·4호기</div>
+        <div class="fv tnum">2.8GW</div>
+        <div class="fd">10년 만의 국내 신규 원전 건설 계획. 2032~2033년 준공 목표. 설계·BOP·계측·배관 전 밸류체인에 물량 파급.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">11차 전기본</div>
+        <div class="fv">2038 원전 35%</div>
+        <div class="fd">2025.02 확정. 2038년 전원믹스 목표: 원전 35.2%, 재생 29.2%. 신규 원전 2기 추가 건설 방침 포함.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">빅테크 SMR PPA</div>
+        <div class="fv tnum">9.8GW+</div>
+        <div class="fd">2026.05 기준 Google·MS·Amazon·Meta가 체결한 원전 PPA 누적 13건, 총 9.8GW+. AI DC용 무탄소 베이스로드 확보 경쟁.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"원전은 AI 시대의 베이스로드 인프라다."
+      <span class="u">AI 데이터센터는 24시간 일정한 전력(베이스로드)을 요구한다. 태양광·풍력은 간헐성 때문에 단독으로 이 역할을 할 수 없고, 가스터빈은 탄소를 배출한다. 원전은 24시간 무탄소 전력을 공급하는 유일한 대안이다. Google은 Kairos Power와 500MW SMR 계약을, MS는 Three Mile Island 835MW 재가동($16B, 20년)을 추진하며 '원전 직결 DC'의 문을 열었다. 한국은 체코 26조 수출로 K-원전 르네상스를 실증했고, i-SMR(170MW)은 2026.02 표준설계인가를 신청해 2034년 상업운전을 목표한다. 대형 원전·SMR·수출·정비가 동시에 돌아가는 슈퍼사이클이 시작됐다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 DESIGN ================= -->
+<section class="blk" id="design">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;설계·EPC — 원전의 두뇌</div>
+      <h2 class="sec-title">한전기술 — 설계 없이는 원전도 없다</h2>
+      <p class="sec-lead">원전 밸류체인의 최상류. 한전기술은 APR-1400/APR1000 설계 독점 보유 기업으로, 한국이 원전을 수출할 때마다 가장 먼저 매출이 인식되는 pure player다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <div class="comp-top">
+        <div>
+          <div class="comp-name">한전기술</div>
+          <div class="comp-ticker">KRX 052690 · 시총 6.1조</div>
+        </div>
+        <span class="badge nuc">원전 설계 Pure Player</span>
+      </div>
+      <div class="comp-desc">국내 유일 원전 종합설계 전문기업. <b>APR-1400</b>(두코바니·바라카)과 차세대 <b>APR1000</b> 설계를 독점 보유한다. 2025년 신규 수주 <b>1.73조원</b>(역대 최대) — 체코 두코바니 5·6호기 종합설계 1.25조, 원자로계통설계 0.37조 등. 체코 매출은 2026년부터 본격 인식되기 시작하며, 신한울 3·4호기 설계 물량도 파이프라인에 포함된다. 2025년 매출 -9%, 영업이익 -50%로 실적 저점을 통과 중이나, <b>2026E 매출 6,183억(+19%)</b>, <b>영업이익 748억(+111%)</b>으로 반등이 전망된다.</div>
+    </div>
+
+    <div class="fact-grid cols-3 reveal d1">
+      <div class="fitem">
+        <div class="fk">2025 신규수주</div>
+        <div class="fv tnum">1.73조</div>
+        <div class="fd">역대 최대. 체코 종합설계 1.25조 + 원자로계통설계 0.37조 등.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">2026E 매출</div>
+        <div class="fv tnum">6,183억</div>
+        <div class="fd">YoY +19%. 체코 사전 착수 설계용역 매출 본격 인식 시점.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">2026E OPM</div>
+        <div class="fv tnum">12.1%</div>
+        <div class="fd">영업이익 748억(+111% YoY). 2025년 실적 저점 통과 후 레버리지 구간 진입.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal d2">
+      <div class="tg">Investment Angle</div>
+      <p>"K-원전 수출 = 한전기술 매출"
+      <span class="u">한국이 원전을 수출할 때마다 설계 매출이 자동으로 따라온다. 체코(26조), 폴란드(웨스팅하우스·한수원 협력), 사우디·동남아 잠재 파이프라인까지 감안하면 향후 5~10년간 수주 파이프라인이 구조적으로 두텁다. 리스크는 수주 시점과 매출 인식 간 시차(2~3년), 그리고 해외 프로젝트의 정치·인허가 변수다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 BOP ================= -->
+<section class="blk" id="bop">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;BOP·열교환 — 원전의 몸통</div>
+      <h2 class="sec-title">보조기기에서 수주잔고 2조까지</h2>
+      <p class="sec-lead">원자로 외부의 보조기기(BOP), 배열회수보일러(HRSG), 열교환기는 원전·가스복합 발전소 건설에 반드시 필요한 중간재다. 수주잔고가 곧 향후 매출의 예고편이다.</p>
+    </div>
+
+    <div class="contender-grid reveal">
+      <!-- BHI -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">비에이치아이</div><div class="ccard-ticker">KRX 083650</div></div>
+          <span class="badge bop">HRSG·원전 BOP</span>
+        </div>
+        <div class="ccard-desc">HRSG(배열회수보일러)와 원전 BOP(보조기기) 국산화 선도. <b>2025년 매출 7,741억(+91% YoY)</b>, 영업이익 755억(+245%). 2024년 신규수주 1.48조, 2025년 <b>1.8조(해외 1.6조)</b>, 2026년 가이던스 <b>2조</b>. 신한울 3·4호기 BOP <b>1,500억 수주</b>(2026년부터 매출 기여). <b>웨스팅하우스 폴란드</b> 원전 프로젝트 참여로 해외 물량 확대.</div>
+        <div class="nums">
+          <div><div class="nk">2025 매출</div><div class="nv tnum">7,741억</div></div>
+          <div><div class="nk">2026E 수주</div><div class="nv tnum">2조</div></div>
+          <div><div class="nk">영업이익률</div><div class="nv tnum">9.7%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>수주잔고 2조 가이던스 → 2027~2028 매출 1조 이상 가시권. 원전+HRSG 양축으로 글로벌 에너지 투자 수혜.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>해외 프로젝트 일정 변동 리스크. 매출 급증 대비 수익성(OPM ~10%) 개선 속도가 관건.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>해외 수주 파이프라인(폴란드·체코) 지연 / 신한울 BOP 매출 인식 시점 밀림.</div>
+      </div>
+
+      <!-- SNT에너지 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">SNT에너지</div><div class="ccard-ticker">KRX 100840 · 시총 2.7조</div></div>
+          <span class="badge bop">공랭식 열교환기</span>
+        </div>
+        <div class="ccard-desc">Oil/Gas 정제·석유화학 플랜트용 <b>공랭식 열교환기</b> 전문. 전체 매출의 80% 이상이 열교환기. 복합화력·원자력 발전소용 복수기·배열회수보일러도 공급. <b>2025년 1Q 매출 +87% YoY</b>, 영업이익 <b>+328% YoY</b>로 급격한 실적 성장. LNG 인프라·원전 연관 사업 확장 중.</div>
+        <div class="nums">
+          <div><div class="nk">1Q25 매출 성장</div><div class="nv tnum">+87%</div></div>
+          <div><div class="nk">1Q25 영익 성장</div><div class="nv tnum">+328%</div></div>
+          <div><div class="nk">시총</div><div class="nv tnum">2.7조</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>LNG 인프라+원전 동시 수혜. 1Q 실적이 연간 가이던스 상향을 견인할 가능성.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>Oil/Gas 플랜트 사이클에 민감. 시총 2.7조 대비 실적 지속성 검증 필요.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>글로벌 LNG 프로젝트 발주 둔화 / 원전향 열교환기 수주가 기대치에 못 미칠 때.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal d1">
+      <div class="tg">Thesis</div>
+      <p>"BOP와 열교환기는 원전·가스발전의 '보이지 않는 필수재'다."
+      <span class="u">원전 건설비에서 원자로(NSSS) 외의 BOP·보조설비가 차지하는 비중은 40% 이상이다. 비에이치아이의 수주잔고 2조 가이던스는 2027~2028년 매출로 전환될 가시성이 높은 숫자이며, SNT에너지는 LNG+원전 크로스오버로 수혜 범위가 넓다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 INSTRUMENTATION ================= -->
+<section class="blk" id="instrumentation">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;계측·제어 — 원전의 신경계</div>
+      <h2 class="sec-title">노심의 온도를 재는 독점 기업들</h2>
+      <p class="sec-lead">원전 계측기(ICI)와 계측제어 시스템(I&C)은 원자로 안전의 핵심이다. 기술 진입장벽이 극도로 높아 소수 기업이 독점적 지위를 유지하며, i-SMR 개발 참여로 미래 성장의 열쇠를 쥐고 있다.</p>
+    </div>
+
+    <div class="contender-grid reveal">
+      <!-- 우진 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">우진</div><div class="ccard-ticker">KRX 105840</div></div>
+          <span class="badge inst">원전 계측기 독점</span>
+        </div>
+        <div class="ccard-desc">1980년 설립, 국내 원전 <b>노내핵계측기(ICI) 독점적 공급</b> 지위. 한수원과 ICI 공급계약 체결(102.9억, 2025.11~2026.11). <b>i-SMR(혁신형 소형모듈원자로) 개발 사업 참여</b>로 차세대 원전 계측기 시장까지 확장. 기업가치제고계획: <b>배당성향 40% 이상</b> 유지, SMR R&D 투자 확대. 2025년 배당금 총 60억(배당성향 69%).</div>
+        <div class="nums">
+          <div><div class="nk">ICI 공급계약</div><div class="nv tnum">102.9억</div></div>
+          <div><div class="nk">배당성향</div><div class="nv tnum">40%+</div></div>
+          <div><div class="nk">2025 매출성장</div><div class="nv tnum">+6.9%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>ICI 독점 + i-SMR 참여. 원전 가동 수가 늘어날수록 교체·신규 물량이 자동 증가하는 구조. 배당 매력(40%+).</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>매출 성장률 한 자릿수. SMR 상업운전(2034년)까지 긴 대기 기간. 내수 의존도 높음.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>i-SMR 개발 일정 지연(2028 설계인가 → 2034 상업운전) / ICI 국산화 대안 기업 등장.</div>
+      </div>
+
+      <!-- 우진엔텍 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">우진엔텍</div><div class="ccard-ticker">KRX 457550 · 시총 2.0조</div></div>
+          <span class="badge inst">원전 계측제어 I&C</span>
+        </div>
+        <div class="ccard-desc">우진 그룹 계열, <b>원전 계측제어(I&C) 시스템 정비</b> 전문. 새울 3·4호기 시운전 정비를 담당 중이며, 2026~2027년 준공에 맞춰 물량 확대 예상. 신한울 3·4호기 계측제어 정비 물량도 파이프라인에 있다. 고리 1호기 <b>해체 모니터링 시스템</b> 개발로 원전 해체 시장 진출. 2024.01 상장.</div>
+        <div class="nums">
+          <div><div class="nk">시총</div><div class="nv tnum">2.0조</div></div>
+          <div><div class="nk">핵심 사업</div><div class="nv" style="font-size:.82rem">I&C 정비</div></div>
+          <div><div class="nk">해체 진출</div><div class="nv" style="font-size:.82rem">고리 1호기</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>신규 원전 건설(신한울 3·4) → 계측제어 정비 장기 물량 확보. 해체 시장 선점. SMR 테마.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>시총 2조 대비 실적 규모가 아직 작음. 밸류에이션 검증 필요. 상장 후 주가 변동성 큼.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>시총 대비 실적 괴리가 축소되지 않을 때 / 해체 시장 진출이 테마에 그칠 때.</div>
+      </div>
+    </div>
+
+    <div class="fact-grid cols-3 reveal d1">
+      <div class="fitem">
+        <div class="fk">i-SMR 설계인가</div>
+        <div class="fv">2028년 목표</div>
+        <div class="fd">2026.02 표준설계인가 신청 완료. 170MW급 가압경수로 기반. 2034년 상업운전 목표.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">SMR 규제 로드맵</div>
+        <div class="fv">2030년 완성</div>
+        <div class="fd">원자력안전위원회, 2026.02 'SMR 규제체계 구축 로드맵' 발표. 단계적 규제 틀 개편.</div>
+      </div>
+      <div class="fitem">
+        <div class="fk">계측기 교체 주기</div>
+        <div class="fv">5~7년</div>
+        <div class="fd">원전 가동 중 주기적 교체 필수. 가동 원전 26기 x 교체 주기 = 안정적 반복 매출.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 MAINTENANCE ================= -->
+<section class="blk" id="maintenance">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;정비·검사 — 원전의 수호자</div>
+      <h2 class="sec-title">26기 원전이 돌아가려면 정비가 필수다</h2>
+      <p class="sec-lead">원전은 건설보다 운영 기간이 40~80년으로 훨씬 길다. 정기적 계획예방정비(O/H), 비파괴검사(ISI), 경정비는 안전 규제상 생략할 수 없는 반복 매출이다.</p>
+    </div>
+
+    <div class="contender-grid cols-4 reveal">
+      <!-- 한전KPS -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">한전KPS</div><div class="ccard-ticker">KRX 051600 · 시총 2.37조</div></div>
+          <span class="badge maint">원전 정비 독점</span>
+        </div>
+        <div class="ccard-desc">원전 26기 중 <b>16기 단독 정비</b> 독점. 2026년 계획예방정비 대상 <b>20기</b>(2025년 13기에서 확대). 제11차 전기본에 따른 원전 2기 추가 건설 시 장기 정비 물량 확보. <b>안정적 매출·배당</b> 매력.</div>
+        <div class="nums">
+          <div><div class="nk">매출</div><div class="nv tnum">1.56조</div></div>
+          <div><div class="nk">원전 독점정비</div><div class="nv tnum">16기</div></div>
+          <div><div class="nk">2026 O/H 대상</div><div class="nv tnum">20기</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>16기 독점정비 + 2026년 O/H 20기로 물량 증가. 신규 원전 건설 시 장기 정비 계약 자동 연장.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>화력부문 민간 참여 확대로 경쟁 심화. 2025년 3Q 영익 -28% — 비용 증가 압박.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>원전 정비 독점 지위 약화(민간 개방 확대) / 원전 가동률 하락.</div>
+      </div>
+
+      <!-- 일진파워 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">일진파워</div><div class="ccard-ticker">KRX 094820</div></div>
+          <span class="badge maint">원전·화력 정비</span>
+        </div>
+        <div class="ccard-desc">1990년 설립, 발전설비·산업플랜트 정비 및 제조. 원전 경정비(월성·한빛 상주)와 화력 정비 양축 보유. <b>2025년 3Q 매출 +22.8%, 영익 +88.1%</b>. <b>2024.03 아부다비에 현지법인 설립</b> — UAE <b>바라카 원전</b> 정비 해외 진출 레퍼런스.</div>
+        <div class="nums">
+          <div><div class="nk">3Q25 매출성장</div><div class="nv tnum">+22.8%</div></div>
+          <div><div class="nk">3Q25 영익성장</div><div class="nv tnum">+88.1%</div></div>
+          <div><div class="nk">해외 진출</div><div class="nv" style="font-size:.82rem">UAE 바라카</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>바라카 해외 정비 레퍼런스. 국내 원전 정비 물량 증가 + 화력 안정 매출.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>소형주 특유의 유동성 리스크. 해외 사업 초기 비용 부담.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>바라카 정비 매출 본격화 시점 지연 / 국내 정비 경쟁 심화.</div>
+      </div>
+
+      <!-- 오르비텍 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">오르비텍</div><div class="ccard-ticker">KRX 046120 · 시총 4,039억</div></div>
+          <span class="badge maint">원전 ISI·해체</span>
+        </div>
+        <div class="ccard-desc">원자력 <b>비파괴검사(ISI)</b> 전문. 매출의 61.6%가 원자력 및 ISI 사업. 한울 1호기 사용 후 핵연료 운반용기 사용검사 수주(13억). 원전 <b>해체 기술</b> 보유로 고리 1호기 해체 시장 진출 기대. 항공사업부 겸영.</div>
+        <div class="nums">
+          <div><div class="nk">시총</div><div class="nv tnum">4,039억</div></div>
+          <div><div class="nk">원자력 매출비중</div><div class="nv tnum">61.6%</div></div>
+          <div><div class="nk">성장 축</div><div class="nv" style="font-size:.82rem">ISI+해체</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>ISI 전문 + 해체 기술 확보. 원전 가동 기간(40~80년) 전 주기에 걸친 서비스 역량.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>해체 시장은 아직 초기. 항공사업과의 시너지 불확실.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>원전 해체 시장 실현이 예상보다 느릴 때 / ISI 경쟁사 진입.</div>
+      </div>
+
+      <!-- 한전산업 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">한전산업</div><div class="ccard-ticker">KRX 130660</div></div>
+          <span class="badge maint">발전설비 운전·정비</span>
+        </div>
+        <div class="ccard-desc">한국전력 설립 자회사(2003 민영화, 2010 상장). <b>발전설비 운전/정비</b>(매출 ~65%)와 전기계기 검침/송달(~20%). 원전 BOP 보조설비 정비도 수행. 신규 원전 건설 시 운전·정비 장기 수주 기반 확보. <b>체코 원전 추가 수주 기대감</b>으로 신고가 경신.</div>
+        <div class="nums">
+          <div><div class="nk">발전사업 비중</div><div class="nv tnum">~65%</div></div>
+          <div><div class="nk">검침사업 비중</div><div class="nv tnum">~20%</div></div>
+          <div><div class="nk">3Q25 매출성장</div><div class="nv tnum">+5.7%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>신규 원전 건설 = 장기 운전·정비 계약. 한전 계열로 원전 물량 자동 배분.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>3Q25 영익 -78% — 비용 관리 이슈. 매출 성장 대비 수익성 저조.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>수익성 개선 없이 매출만 성장할 때 / 한전 계열 구조조정 이슈.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 PIPING ================= -->
+<section class="blk" id="piping">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;배관·구조물 — 원전의 골격</div>
+      <h2 class="sec-title">PER 5배의 밸류, 무차입의 안정</h2>
+      <p class="sec-lead">발전소 배관 설치, 관이음쇠(피팅), 철골 구조물은 원전·화력·LNG 플랜트 건설의 물리적 뼈대다. 화려한 테마에 가려져 있지만, 실적 대비 밸류에이션이 가장 매력적인 구간이다.</p>
+    </div>
+
+    <div class="contender-grid reveal">
+      <!-- 금화피에스시 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">금화피에스시</div><div class="ccard-ticker">KRX 036190 · 시총 2,004억</div></div>
+          <span class="badge pipe">원전 배관·구조물</span>
+        </div>
+        <div class="ccard-desc">1981년 설립, 발전소 <b>기계/배관 공사 전문</b>. 1995년 민간 최초 발전정비 진출. 화력·원자력·복합화력 발전소의 배관설치·기계설치·철골설치, 석유화학·LNG·환경설비 공사까지 아우르는 종합 플랜트 시공사. 매출 <b>3,402억</b>에 시총 2,004억 — <b>PER 5.01배</b>로 원전 밸류체인 내 가장 저평가된 구간.</div>
+        <div class="nums">
+          <div><div class="nk">매출</div><div class="nv tnum">3,402억</div></div>
+          <div><div class="nk">PER</div><div class="nv tnum">5.01x</div></div>
+          <div><div class="nk">시총</div><div class="nv tnum">2,004억</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>PER 5배 — 원전 밸류체인 내 밸류에이션 매력 최상. 신한울 3·4호기 배관 물량 기대.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>건설업 특성상 프로젝트 사이클 변동 큼. 저PER이 지속되는 데는 구조적 이유(마진·성장 가시성)가 있을 수 있음.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>원전 신규 건설 일정 지연 → 배관 물량 공백 / OPM 하락 추세.</div>
+      </div>
+
+      <!-- 성광벤드 -->
+      <div class="ccard">
+        <div class="ccard-top">
+          <div><div class="ccard-name">성광벤드</div><div class="ccard-ticker">KRX 014620</div></div>
+          <span class="badge pipe">관이음쇠·무차입</span>
+        </div>
+        <div class="ccard-desc">용접용 관이음쇠(Elbow·Tee·Reducer) 전문. 석유/화학 플랜트, 조선/해양, <b>발전플랜트 배관</b>에 공급. <b>부채비율 8.5%</b>, <b>순현금 1,075억</b>(무차입 경영). 2026E 매출 2,762억(+12.4%), 영업이익 526억(+25.4%, <b>OPM 19%</b>). <b>미국 LNG 터미널 대형 프로젝트</b> 발주 수혜 — 스테인리스·합금강 피팅으로 2026년부터 턴어라운드.</div>
+        <div class="nums">
+          <div><div class="nk">순현금</div><div class="nv tnum">1,075억</div></div>
+          <div><div class="nk">2026E OPM</div><div class="nv tnum">19.0%</div></div>
+          <div><div class="nk">부채비율</div><div class="nv tnum">8.5%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">▲ Bull</div><span>무차입 + 순현금 1,075억의 재무 안정성. 미국 LNG + 원전 배관 양축. OPM 19%로 수익성 우수.</span></div>
+          <div class="b bear"><div class="bh">▼ Bear</div><span>1Q26 매출 -7.2%, 영익 -38.9% — 분기 변동성 존재. LNG 프로젝트 발주 시점에 의존.</span></div>
+        </div>
+        <div class="kill"><span class="kk">KILL</span>미국 LNG 프로젝트 발주 지연 / 환율·원자재 원가 압박 심화.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal d1">
+      <div class="tg">Thesis</div>
+      <p>"배관은 원전 건설비의 숨은 바닥이다."
+      <span class="u">원전 건설에서 배관·구조물 공사는 물리적으로 생략할 수 없는 공정이다. 금화피에스시의 PER 5배는 '원전 테마'가 설계·계측 등 상류에 집중되면서 생긴 밸류에이션 미스프라이싱일 수 있다. 성광벤드는 순현금 1,075억이라는 다운사이드 프로텍션과 미국 LNG 발주라는 트리거를 동시에 갖춘 안정형 플레이. 다만 건설업 특유의 프로젝트 사이클 변동성은 감안해야 한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 07 MAP ================= -->
+<!-- 2026.07.25 샌프란시스코 AI 서밋 업데이트 -->
+<section class="blk" style="padding-top:48px;padding-bottom:48px">
+  <div class="wrap">
+    <div class="thesis reveal" style="border-left:3px solid var(--glow);background:linear-gradient(135deg,rgba(56,230,212,.10) 0%,rgba(18,26,46,.95) 100%);">
+      <div class="tg" style="background:var(--glow);color:#080B14;letter-spacing:.06em">2026.07.25 업데이트 — 샌프란시스코 AI 서밋</div>
+      <p style="margin-bottom:.6rem"><b>AIDC 18.4GW + 이재명 'AI 선언' — 원전·SMR 역할 재부각</b>
+      <span class="u" style="display:block;margin-top:.5rem">
+        <b>&#183; AIDC 18.4GW 전력 수요(2035E)</b> — 24시간 무정전·탄소중립 요건을 동시에 충족할 수 있는 전원은 원전/SMR. 재생에너지만으로는 한계, 원전 비중 확대 불가피.<br>
+        <b>&#183; 이재명 'AI 선언'</b> — "재생에너지+원전 기반 전력 인프라 확충" 명시. 원전 르네상스 정책 기조 지속 확인.<br>
+        <b>&#183; 3대 메가프로젝트 4,755조</b> — AIDC 집중 전력 수요를 위한 에너지믹스에 SMR 도입 가속. 한전기술·비에이치아이·우진 i-SMR 수혜 파이프라인 강화.
+      </span></p>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="map">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">07</span>&nbsp;밸류체인 투자 지도</div>
+      <h2 class="sec-title">10개사를 한 눈에 — 어디를, 왜 볼 것인가</h2>
+      <p class="sec-lead">설계 → BOP → 계측 → 정비 → 배관, 원전 밸류체인 5단계에 걸친 10개사의 핵심 지표를 비교하고, 리스크를 정리한다.</p>
+    </div>
+
+    <!-- 비교 테이블 -->
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>밸류체인</th>
+            <th>종목명</th>
+            <th>코드</th>
+            <th>시총</th>
+            <th>핵심 지표</th>
+            <th>성장 트리거</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="gold">설계·EPC</td>
+            <td>한전기술</td>
+            <td class="mono-cell">052690</td>
+            <td class="mono-cell">6.1조</td>
+            <td>수주 1.73조(역대 최대)</td>
+            <td>체코 두코바니, 신한울 설계</td>
+          </tr>
+          <tr>
+            <td class="gold" rowspan="2">BOP·열교환</td>
+            <td>비에이치아이</td>
+            <td class="mono-cell">083650</td>
+            <td class="mono-cell">~1조</td>
+            <td>매출 +91%, 수주 2조 가이던스</td>
+            <td>신한울 BOP, 웨스팅 폴란드</td>
+          </tr>
+          <tr>
+            <td>SNT에너지</td>
+            <td class="mono-cell">100840</td>
+            <td class="mono-cell">2.7조</td>
+            <td>1Q 매출 +87%, 영익 +328%</td>
+            <td>LNG 열교환기, 원전 복수기</td>
+          </tr>
+          <tr>
+            <td class="green" rowspan="2">계측·제어</td>
+            <td>우진</td>
+            <td class="mono-cell">105840</td>
+            <td class="mono-cell">~4,000억</td>
+            <td>ICI 독점, 배당 40%+</td>
+            <td>i-SMR 참여, ICI 교체수요</td>
+          </tr>
+          <tr>
+            <td>우진엔텍</td>
+            <td class="mono-cell">457550</td>
+            <td class="mono-cell">2.0조</td>
+            <td>I&C 정비 전문</td>
+            <td>새울·신한울, 해체 시장</td>
+          </tr>
+          <tr>
+            <td rowspan="4">정비·검사</td>
+            <td>한전KPS</td>
+            <td class="mono-cell">051600</td>
+            <td class="mono-cell">2.37조</td>
+            <td>16기 독점정비, O/H 20기</td>
+            <td>11차 전기본 원전 추가</td>
+          </tr>
+          <tr>
+            <td>일진파워</td>
+            <td class="mono-cell">094820</td>
+            <td class="mono-cell">~2,000억</td>
+            <td>매출 +22.8%, 영익 +88.1%</td>
+            <td>UAE 바라카 해외 정비</td>
+          </tr>
+          <tr>
+            <td>오르비텍</td>
+            <td class="mono-cell">046120</td>
+            <td class="mono-cell">4,039억</td>
+            <td>ISI 비파괴검사 전문</td>
+            <td>원전 해체, 항공 확장</td>
+          </tr>
+          <tr>
+            <td>한전산업</td>
+            <td class="mono-cell">130660</td>
+            <td class="mono-cell">~2,500억</td>
+            <td>발전설비 운전정비</td>
+            <td>신규 원전 장기 계약</td>
+          </tr>
+          <tr>
+            <td class="green" rowspan="2">배관·구조물</td>
+            <td>금화피에스시</td>
+            <td class="mono-cell">036190</td>
+            <td class="mono-cell">2,004억</td>
+            <td class="green">PER 5x, 매출 3,402억</td>
+            <td>신한울 배관, 발전소 증설</td>
+          </tr>
+          <tr>
+            <td>성광벤드</td>
+            <td class="mono-cell">014620</td>
+            <td class="mono-cell">~3,500억</td>
+            <td>순현금 1,075억, OPM 19%</td>
+            <td>미국 LNG, 원전 배관</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 투자 관점 impl-grid -->
+    <div class="impl-grid reveal d1">
+      <div class="impl-item">
+        <div class="ii-tag">관점 A — 실적 가시성</div>
+        <h4>수주잔고가 곧 매출</h4>
+        <p>한전기술(수주 1.73조), 비에이치아이(가이던스 2조), 한전KPS(O/H 20기). 수주잔고가 향후 2~3년 매출을 선행한다. 가장 높은 실적 가시성.</p>
+      </div>
+      <div class="impl-item">
+        <div class="ii-tag">관점 B — 밸류에이션 매력</div>
+        <h4>숫자가 말하는 저평가</h4>
+        <p>금화피에스시(PER 5x), 성광벤드(순현금 1,075억·OPM 19%), 우진(배당 40%+). 테마 열기가 상류(설계·계측)에 집중되면서 하류(배관)에 미스프라이싱 발생.</p>
+      </div>
+      <div class="impl-item">
+        <div class="ii-tag">관점 C — 미래 옵션</div>
+        <h4>SMR·해체라는 장기 트리거</h4>
+        <p>우진(i-SMR 참여), 우진엔텍(해체 모니터링), 오르비텍(해체 기술). 2030년대 상업화 목표인 SMR과 고리 1호기 해체는 장기 옵션 가치를 부여한다.</p>
+      </div>
+    </div>
+
+    <!-- 리스크 -->
+    <div class="risk reveal d2">
+      <h3><span class="rd"></span>리스크 요인 — 무엇이 이 테제를 깨는가</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">R1</div>
+          <div class="rt"><b>정책 변화</b><span>정권 교체에 따른 에너지 정책 전환(탈원전 회귀). 11차 전기본의 원전 증설 목표가 후퇴할 가능성.</span></div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R2</div>
+          <div class="rt"><b>원전 건설 지연</b><span>인허가·부지 확보·지역 수용성 문제로 신한울 3·4호기 등 프로젝트 일정이 밀릴 때. 배관·BOP 등 하류 매출에 직접 타격.</span></div>
+        </div>
+        <div class="ritem">
+          <div class="ri">R3</div>
+          <div class="rt"><b>밸류에이션 과열</b><span>우진엔텍(시총 2조)·SNT에너지(2.7조) 등 실적 대비 시총이 높은 종목은 실적 미스 시 급락 리스크.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 전력 인프라 시리즈 — 원전·SMR 밸류체인 분석</div>
+      <div class="src-list">
+        DATA · 한전기술 IR · 비에이치아이 IR · 우진 IR · 한전KPS IR · DART 공시<br>
+        한국수력원자력(KHNP) · 원자력안전위원회 · World Nuclear Association<br>
+        산업통상자원부 제11차 전력수급기본계획 (2025.02.21)<br>
+        SNT에너지 IR · 금화피에스시 IR · 성광벤드 IR · 일진파워 IR · 오르비텍 IR<br>
+        작성 기준일 · 2026.07.23
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

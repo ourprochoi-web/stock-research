@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="산일전기·일진전기·비에이치아이·효성중공업·한전KPS — 전력 밸류체인 위치, 품목 차이, 사업 구조 비교와 투자 시사점">
+<meta name="keywords" content="산일전기,일진전기,비에이치아이,효성중공업,한전KPS,전력,변압기,HRSG,원전정비,투자지도">
+<meta property="og:title" content="K-전력 TOP 5 — 밸류체인 비교 투자 지도">
+<meta property="og:description" content="산일전기·일진전기·비에이치아이·효성중공업·한전KPS — 전력 밸류체인 위치, 품목 차이, 사업 구조 비교와 투자 시사점">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_top5_picks.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="K-전력 TOP 5 — 밸류체인 비교 투자 지도">
+<meta name="twitter:description" content="산일전기·일진전기·비에이치아이·효성중공업·한전KPS — 전력 밸류체인 위치, 품목 차이, 사업 구조 비교와 투자 시사점">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_power_top5_picks.html">
+<title>K-전력 TOP 5 — 밸류체인 비교 투자 지도</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --volt:#14B8A6;
+    --current:#F43F5E;
+    --glow:#2DD4BF;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,11,20,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow),0 0 4px var(--glow)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;
+    color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+            mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);
+    opacity:.45;
+  }
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;
+    background:radial-gradient(circle,var(--volt),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;
+    background:radial-gradient(circle,var(--current),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}
+  .spark:nth-child(5){top:58%;animation-delay:1.8s}
+  .spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--glow);border:1px solid var(--line);
+    padding:7px 14px;border-radius:100px;background:rgba(45,212,191,.05);margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:14ch;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(105deg,var(--volt),var(--glow) 55%,var(--current));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--volt);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}
+  .sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- FACT GRID ---------- */
+  .fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:8px}
+  .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .fact .fnum{font-family:var(--mono);font-weight:800;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink)}
+  .fact .fnum .fu{color:var(--volt);font-size:.62em}
+  .fact .flab{margin-top:10px;font-size:.86rem;color:var(--ink-2);line-height:1.5}
+  .fact .fsrc{margin-top:8px;font-family:var(--mono);font-size:.64rem;color:var(--ink-3)}
+
+  /* ---------- THESIS ---------- */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);
+    border-left:3px solid var(--current);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--current);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* ---------- COMP CARD ---------- */
+  .comp-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px;position:relative;overflow:hidden}
+  .comp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),var(--glow),transparent)}
+  .comp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  .comp-name{font-size:1.35rem;font-weight:850;letter-spacing:-.02em}
+  .comp-ticker{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.teal{background:rgba(20,184,166,.12);color:var(--volt);border:1px solid rgba(20,184,166,.3)}
+  .badge.rose{background:rgba(244,63,94,.12);color:var(--current);border:1px solid rgba(244,63,94,.3)}
+  .badge.cyan{background:rgba(45,212,191,.12);color:var(--glow);border:1px solid rgba(45,212,191,.3)}
+  .comp-desc{margin-top:18px;font-size:.92rem;color:var(--ink-2);line-height:1.6}
+  .comp-desc b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:22px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+
+  /* ---------- CONTENDER GRID ---------- */
+  .contender-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:8px}
+  .contender{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .contender::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--volt),transparent);opacity:0;transition:.3s}
+  .contender:hover{border-color:#33456b;transform:translateY(-4px)}
+  .contender:hover::before{opacity:1}
+  .cont-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .cont-name{font-size:1.15rem;font-weight:850;letter-spacing:-.02em}
+  .cont-ticker{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);margin-top:3px}
+  .cont-desc{margin-top:16px;font-size:.88rem;color:var(--ink-2);line-height:1.55;flex:1}
+  .cont-desc b{color:var(--ink);font-weight:650}
+
+  /* ---------- BB (BULL/BEAR) ---------- */
+  .bb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .bb .b{border-radius:11px;padding:14px;font-size:.83rem;line-height:1.5}
+  .bb .bull{background:rgba(72,213,151,.07);border:1px solid rgba(72,213,151,.22)}
+  .bb .bear{background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.22)}
+  .bb .bh{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .bb .bull .bh{color:var(--bull)}.bb .bear .bh{color:var(--bear)}
+  .bb .b span{color:var(--ink-2)}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:8px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+  table.cmp{width:100%;border-collapse:collapse;font-size:.86rem;min-width:720px}
+  table.cmp thead{background:var(--bg-2)}
+  table.cmp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
+    padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap}
+  table.cmp td{padding:14px 16px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:middle}
+  table.cmp tbody tr:last-child td{border-bottom:none}
+  table.cmp tbody tr:hover{background:rgba(20,184,166,.04)}
+  table.cmp .tn{color:var(--ink);font-weight:700}
+  table.cmp .mono-cell{font-family:var(--mono);font-weight:600;color:var(--ink);letter-spacing:-.01em}
+  table.cmp .hl-cell{color:var(--glow);font-weight:700}
+  .tbl-foot{padding:14px 16px;font-size:.78rem;color:var(--ink-3);border-top:1px solid var(--line)}
+
+  /* ---------- VALUE CHAIN FLOW ---------- */
+  .vc-flow{display:flex;align-items:stretch;gap:0;margin-top:8px;overflow-x:auto;padding-bottom:12px}
+  .vc-step{flex:1;min-width:140px;background:var(--surface);border:1px solid var(--line);padding:20px 16px;position:relative;text-align:center}
+  .vc-step:first-child{border-radius:16px 0 0 16px}
+  .vc-step:last-child{border-radius:0 16px 16px 0}
+  .vc-step:not(:last-child)::after{content:"";position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:0;height:0;border-left:10px solid var(--volt);border-top:8px solid transparent;border-bottom:8px solid transparent;z-index:2}
+  .vc-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--volt);font-weight:700}
+  .vc-companies{margin-top:10px;font-size:.82rem;color:var(--ink-2);line-height:1.6}
+  .vc-companies b{color:var(--ink);font-weight:650;display:block}
+
+  /* ---------- IMPL / RISK GRID ---------- */
+  .impl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:8px}
+  .impl{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .impl .itag{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  .impl .itag.bull-tag{color:var(--bull)}
+  .impl .itag.bear-tag{color:var(--bear)}
+  .impl .itag.neutral-tag{color:var(--volt)}
+  .impl h4{font-size:1rem;font-weight:750;margin-bottom:8px}
+  .impl p{font-size:.86rem;color:var(--ink-2);line-height:1.55}
+  .impl p b{color:var(--ink);font-weight:650}
+
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fact-grid{grid-template-columns:1fr}
+    .contender-grid{grid-template-columns:1fr}
+    .impl-grid{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .bb{grid-template-columns:1fr}
+    .vc-flow{flex-direction:column}
+    .vc-step{border-radius:12px!important;min-width:auto}
+    .vc-step:not(:last-child)::after{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "K-전력 TOP 5 — 밸류체인 비교 투자 지도",
+  "description": "산일전기·일진전기·비에이치아이·효성중공업·한전KPS — 전력 밸류체인 위치, 품목 차이, 사업 구조 비교와 투자 시사점",
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>K-전력 TOP 5 비교</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#valuechain">01 / 밸류체인</a>
+      <a href="#transformer-trio">02 / 변압기 3사</a>
+      <a href="#sanil-vs-hyosung">03 / 전압 비교</a>
+      <a href="#bhi">04 / BHI</a>
+      <a href="#kepco-kps">05 / 한전KPS</a>
+      <a href="#crossmap">06 / 종합 비교</a>
+      <a href="#portfolio">07 / 투자 시사점</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 전력 인프라 · TOP 5 · 밸류체인 비교</span>
+    <h1 class="hero-title">K-전력 TOP 5<br><span class="hl">밸류체인 비교 투자 지도</span></h1>
+    <p class="hero-sub">발전 → 송전 → 변전 → 정비 — 같은 슈퍼사이클, 다른 포지션. 3개 에이전트(성장/모멘텀, 밸류/리스크, 매크로/사이클)의 교차 분석으로 선정한 K-전력 인프라 TOP 5의 밸류체인 위치와 상호 관계를 해부한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">5<span class="u"> 사</span></div>
+        <div class="lab">성장/모멘텀·밸류/리스크·매크로/사이클 3관점 교차 분석으로 선정한 K-전력 인프라 핵심 기업</div>
+        <div class="src">SRC: 3-에이전트 교차 분석</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">3~15<span class="u"> 년</span></div>
+        <div class="lab">전력 슈퍼사이클 잔여 기간. 변압기 3~5년, 원전·HRSG 8~15년. 품목별로 사이클 타이밍이 다르다.</div>
+        <div class="src">SRC: IEA · IAEA · 업계 전망</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">9~24<span class="u"> x PER</span></div>
+        <div class="lab">TOP 5 PER 레인지. 일진전기 9x(저평가)부터 산일전기 24x(프리미엄)까지. 밸류체인 포지션에 따라 시장이 부여한 프리미엄이 다르다.</div>
+        <div class="src">SRC: FY26E 컨센서스</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>밸류체인을 따라 내려가기</div>
+  </div>
+</header>
+
+<!-- ================= 01 VALUECHAIN ================= -->
+<section class="blk reveal" id="valuechain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;전력이 흐르는 길</div>
+      <h2 class="sec-title">발전 → 송전 → 변전 → 배전 → 소비</h2>
+      <p class="sec-lead">전력 밸류체인은 연료에서 전기를 만들어(발전), 고압으로 멀리 보내고(송전), 전압을 낮추어(변전), 건물과 가정에 분배(배전)하는 흐름이다. 5개 기업은 이 흐름의 서로 다른 지점에 자리하고 있다.</p>
+    </div>
+
+    <div class="vc-flow reveal">
+      <div class="vc-step">
+        <div class="vc-label">발전</div>
+        <div class="vc-companies"><b>비에이치아이</b>HRSG·원전 BOP<br><b>한전KPS</b>원전 정비</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-label">송전</div>
+        <div class="vc-companies"><b>효성중공업</b>765kV 초고압<br><b>일진전기</b>UHV 케이블</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-label">변전</div>
+        <div class="vc-companies"><b>산일전기</b>66~154kV<br><b>효성중공업</b>345~765kV<br><b>일진전기</b>변압기+케이블</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-label">배전</div>
+        <div class="vc-companies"><b>산일전기</b>배전변압기<br>DC향 직납</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-label">운영·정비</div>
+        <div class="vc-companies"><b>한전KPS</b>원전 24기<br>독점 정비권</div>
+      </div>
+    </div>
+
+    <div class="fact-grid" style="margin-top:22px">
+      <div class="fact reveal">
+        <div class="fnum" style="font-size:1.1rem;color:var(--volt)">발전 — BHI·한전KPS</div>
+        <div class="flab">비에이치아이는 가스터빈 뒤에 붙는 HRSG(배열회수보일러)로 발전소를 만들고, 한전KPS는 원전 24기를 수십 년간 정비한다. 전력의 '시작점'에 위치한 두 기업.</div>
+      </div>
+      <div class="fact reveal d1">
+        <div class="fnum" style="font-size:1.1rem;color:var(--volt)">송전·변전 — 효성·산일·일진</div>
+        <div class="flab">효성중공업은 765kV 초고압 변압기로 장거리 송전, 산일전기는 66~154kV 배전변압기로 최종 분배, 일진전기는 변압기와 케이블을 동시 커버하며 양쪽에 걸친다.</div>
+      </div>
+      <div class="fact reveal d2">
+        <div class="fnum" style="font-size:1.1rem;color:var(--current)">핵심 차이</div>
+        <div class="flab">같은 '전력주'라도 품목·고객·사이클이 다르다. 변압기 3사는 3~5년 사이클에 민감하고, 원전(BHI·KPS)은 8~15년 장기 구조적 성장. 밸류체인 분산이 곧 포트폴리오 전략이다.</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"같은 전력 슈퍼사이클, 다른 리스크-리턴 프로파일"
+      <span class="u">5개 기업은 모두 전력 슈퍼사이클의 수혜주이지만, 밸류체인 상 위치에 따라 사이클 길이·마진 구조·성장 드라이버가 완전히 다르다. 변압기 3사는 AI DC 수요+노후 교체의 3~5년 사이클, BHI·한전KPS는 원전 르네상스의 8~15년 장기 사이클에 위치한다. '전력주'를 하나의 바스켓으로 묶지 말고, 밸류체인 포지션별로 분산하는 것이 핵심이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 02 TRANSFORMER TRIO ================= -->
+<section class="blk reveal" id="transformer-trio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;변압기 3사 — 같은 품목, 다른 전장</div>
+      <h2 class="sec-title">산일 OPM 37% vs 효성 백로그 15조 vs 일진 PER 9x</h2>
+      <p class="sec-lead">세 기업 모두 '변압기'를 만들지만, 제품 등급·고객 유형·지역 노출·마진 구조가 완전히 다르다. 산일전기는 배전변압기로 미국 직수출, 효성중공업은 765kV 초고압 대형 변압기, 일진전기는 변압기+케이블의 이중 사업 구조를 가진다.</p>
+    </div>
+
+    <div class="contender-grid">
+      <div class="contender reveal">
+        <div class="cont-top">
+          <div>
+            <div class="cont-name">산일전기</div>
+            <div class="cont-ticker">KRX 062040</div>
+          </div>
+          <span class="badge teal">OPM 37% · 배전변압기</span>
+        </div>
+        <div class="cont-desc">
+          66~154kV 배전/발전용 변압기 전문. 매출 80%+ 수출, 미국 비중 약 75%. <b>OPM 37%</b>로 업종 최고 수익성. 신재생 인프라에서 <b>AI DC 직접 납품</b>으로 피벗 중. Bloom Energy 503억 DC용 변압기 수주.<br><br>
+          1Q26 매출 1,503억(+52%), 수주잔고 3,905억. 고점 대비 <b>-46%</b> 조정 구간.
+        </div>
+        <div class="nums">
+          <div><div class="nk">PER(FY26E)</div><div class="nv tnum">~24x</div></div>
+          <div><div class="nk">OPM</div><div class="nv tnum">37%</div></div>
+          <div><div class="nk">수주잔고</div><div class="nv tnum">3,905억</div></div>
+          <div><div class="nk">고점 대비</div><div class="nv tnum" style="color:var(--bear)">-46%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">Bull</div><span>OPM 37% 업종 최고. DC향 피벗으로 제2 성장 곡선. Bloom Energy SOFC 확장 시 수주 레버리지.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>마진 피크 우려. PER 24x 밸류 부담. Bloom 단일 고객 의존. 관세 변동 리스크.</span></div>
+        </div>
+      </div>
+
+      <div class="contender reveal d1">
+        <div class="cont-top">
+          <div>
+            <div class="cont-name">효성중공업</div>
+            <div class="cont-ticker">KRX 298040</div>
+          </div>
+          <span class="badge rose">765kV · 백로그 15조</span>
+        </div>
+        <div class="cont-desc">
+          <b>765kV 초고압 대형 변압기</b> 국내 유일 생산사. 수주잔고 15.1조원으로 K-전력기기 중 최대. 미국 Memphis 공장 가동으로 현지 생산 체제 구축. 2024년 매출 7.99조(+12.5%), 영업이익 5,419억(OPM 6.8%).<br><br>
+          중전기(변압기·차단기) 외에 건설·산업기계 부문도 보유. 건설PF 리스크와 지배구조 디스카운트가 밸류에이션을 억누르고 있다. 고점 대비 <b>-40%</b>.
+        </div>
+        <div class="nums">
+          <div><div class="nk">PER(FY26E)</div><div class="nv tnum">~30-52x</div></div>
+          <div><div class="nk">OPM(중전기)</div><div class="nv tnum">11-20%</div></div>
+          <div><div class="nk">수주잔고</div><div class="nv tnum">15.1조</div></div>
+          <div><div class="nk">고점 대비</div><div class="nv tnum" style="color:var(--bear)">-40%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">Bull</div><span>765kV 국내 독점. 백로그 15조 사상 최대. Memphis 미국 현지 생산으로 관세 회피. 글로벌 초고압 수요 구조적 증가.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>건설PF 리스크. 지배구조 디스카운트. PER 30-52x 비중전기 실적 혼재. 대형 프로젝트 실행 리스크.</span></div>
+        </div>
+      </div>
+
+      <div class="contender reveal d2">
+        <div class="cont-top">
+          <div>
+            <div class="cont-name">일진전기</div>
+            <div class="cont-ticker">KRX 103590</div>
+          </div>
+          <span class="badge cyan">변압기+케이블 · PER 9x</span>
+        </div>
+        <div class="cont-desc">
+          <b>초고압변압기와 초고압케이블을 동시에 보유</b>한 종합 중전기 기업. 변압기(345kV급)와 전력케이블(HVDC 포함)을 모두 생산하는 국내 유일 기업으로, 밸류체인 수직 통합 구조가 강점.<br><br>
+          수주잔고 2.6조원. PER 9~12x로 변압기 3사 중 가장 저평가. 다만 <b>2023년 담합 과징금 수사</b> 이슈와 주식 오버행 리스크가 디스카운트 요인. 고점 대비 <b>-59%</b>.
+        </div>
+        <div class="nums">
+          <div><div class="nk">PER(FY26E)</div><div class="nv tnum">9-12x</div></div>
+          <div><div class="nk">OPM</div><div class="nv tnum">~10%</div></div>
+          <div><div class="nk">수주잔고</div><div class="nv tnum">2.6조</div></div>
+          <div><div class="nk">고점 대비</div><div class="nv tnum" style="color:var(--bear)">-59%</div></div>
+        </div>
+        <div class="bb">
+          <div class="b bull"><div class="bh">Bull</div><span>PER 9x 밸류 매력. 변압기+케이블 수직통합 유일. HVDC 케이블 성장 잠재력. 고점 대비 -59% 낙폭 과대.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>담합수사 리스크. 주식 오버행. OPM 10%로 수익성 열위. 변압기·케이블 모두 경쟁 심화.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"세 기업의 변압기는 다른 변압기다"
+      <span class="u">산일전기의 배전변압기(66~154kV)와 효성중공업의 초고압 변압기(765kV)는 크기·단가·리드타임·고객이 완전히 다른 시장이다. 산일은 개당 수십억, 효성은 개당 수백억~천억 단위. 일진전기는 양쪽에 걸치면서도 케이블이라는 별도 수익원을 가진다. '변압기주'로 한 데 묶지 말고, 전압 등급과 고객 구조로 나눠 봐야 한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 03 SANIL VS HYOSUNG ================= -->
+<section class="blk reveal" id="sanil-vs-hyosung">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;154kV vs 765kV — 전압이 가르는 시장</div>
+      <h2 class="sec-title">배전변압기와 초고압 변압기는 다른 산업이다</h2>
+      <p class="sec-lead">산일전기의 주력인 66~154kV 배전변압기와 효성중공업의 345~765kV 초고압 변압기는 제품 크기, 단가, 리드타임, 고객 유형이 완전히 달라 사실상 다른 시장에서 경쟁한다. 일진전기는 양쪽에 걸쳐 있다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr><th>비교 항목</th><th>산일전기 (66~154kV)</th><th>효성중공업 (345~765kV)</th><th>일진전기 (양쪽 커버)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="tn">전압 등급</td><td class="mono-cell">66~154kV</td><td class="mono-cell">345~765kV</td><td class="mono-cell">154~345kV</td></tr>
+          <tr><td class="tn">용도</td><td>배전·발전소 내 변압기</td><td>초고압 송전·변전소</td><td>변압기+전력 케이블</td></tr>
+          <tr><td class="tn">단가</td><td>수억~수십억/기</td><td class="hl-cell">수백억~천억/기</td><td>수십억~수백억</td></tr>
+          <tr><td class="tn">리드타임</td><td>6~18개월</td><td class="hl-cell">3~5년</td><td>1~3년</td></tr>
+          <tr><td class="tn">주요 고객</td><td>신재생 EPC, DC 디벨로퍼</td><td>유틸리티(한전, 미국 TSO)</td><td>한전, 유틸리티, 발전사</td></tr>
+          <tr><td class="tn">미국 현지생산</td><td>없음 (직수출)</td><td>Memphis 공장</td><td>없음 (직수출)</td></tr>
+          <tr><td class="tn">경쟁 강도</td><td>중 (중국 진입 가능)</td><td>낮음 (진입장벽 극히 높음)</td><td>중~고 (담합 이슈)</td></tr>
+          <tr><td class="tn">OPM</td><td class="hl-cell">37%</td><td>11~20%</td><td>~10%</td></tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 효성중공업 OPM은 중전기 부문 기준, 연결 기준 6.8%. 건설·산업기계 부문 혼재</div>
+    </div>
+
+    <div class="fact-grid reveal" style="margin-top:22px">
+      <div class="fact">
+        <div class="fnum tnum">37<span class="fu"> % vs 11%</span></div>
+        <div class="flab">산일전기 OPM 37%는 배전변압기 시장의 구조적 공급 부족이 만든 가격 결정력의 증거. 효성중공업은 건설PF 혼재로 연결 OPM 6.8%에 그치지만, 중전기 단독으로는 11~20%.</div>
+        <div class="fsrc">SRC: 각사 IR · 증권사 추정</div>
+      </div>
+      <div class="fact d1">
+        <div class="fnum tnum">765<span class="fu"> kV</span></div>
+        <div class="flab">효성중공업이 생산하는 765kV 초고압 변압기는 국내 유일. 전 세계적으로도 ABB(히타치), Siemens Energy, GE Vernova와 소수만 생산 가능한 초고진입장벽 제품이다.</div>
+        <div class="fsrc">SRC: 효성중공업 IR</div>
+      </div>
+      <div class="fact d2">
+        <div class="fnum" style="font-size:1.1rem;color:var(--glow)">일진 = 두 시장의 교집합</div>
+        <div class="flab">일진전기는 변압기(345kV급)와 전력케이블(HVDC 포함)을 모두 생산하는 유일한 기업. 초고압 변압기 시장과 케이블 시장 양쪽에 걸쳐 밸류체인 커버리지가 가장 넓다.</div>
+        <div class="fsrc">SRC: 일진전기 사업보고서</div>
+      </div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"전압 등급이 시장을 가른다"
+      <span class="u">산일전기의 배전변압기 시장(66~154kV)과 효성중공업의 초고압 변압기 시장(765kV)은 경쟁사·고객·사이클이 다르다. 배전변압기는 볼륨 게임(많은 수, 낮은 단가, 빠른 턴)이고, 초고압은 프로젝트 게임(소수, 높은 단가, 긴 리드타임). 산일의 37% OPM은 전자의 구조적 쇼티지에서 나왔고, 효성의 15조 백로그는 후자의 초장기 수주에서 나왔다. 둘 다 쇼티지 수혜이지만 리스크-리턴이 완전히 다르다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 04 BHI ================= -->
+<section class="blk reveal" id="bhi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;전력의 시작점 — HRSG와 원전 BOP</div>
+      <h2 class="sec-title">비에이치아이 — 발전소를 만드는 기업</h2>
+      <p class="sec-lead">변압기가 전력을 '보내는' 기기라면, HRSG와 원전 BOP는 전력을 '만드는' 설비다. 비에이치아이는 전력 밸류체인의 가장 앞단에서 발전소의 핵심 설비를 공급한다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <div class="comp-top">
+        <div>
+          <div class="comp-name">비에이치아이 (BHI)</div>
+          <div class="comp-ticker">KRX 083650 · 시총 약 4,900억</div>
+        </div>
+        <span class="badge rose">HRSG 세계1위 · 원전 BOP</span>
+      </div>
+      <div class="comp-desc">
+        <b>HRSG(Heat Recovery Steam Generator, 배열회수보일러) 세계 시장점유율 1위</b> 기업. 가스터빈으로 전기를 생산한 뒤 남은 배기열로 증기를 만들어 추가 발전하는 핵심 설비를 생산한다. 쉽게 말해, 가스터빈 뒤에 붙어서 발전소 효율을 30% → 60%+로 끌어올리는 보일러다.<br><br>
+        <b>원전 BOP(Balance of Plant)</b>도 확대 중. 원전의 핵심인 원자로(NSSS) 외 나머지 보조기기 — 터빈발전기, 배관, 열교환기 등을 공급한다. 체코 원전(두코바니 2기), 루마니아 원전(체르나보다 2기) 등 해외 원전 프로젝트에서 BOP 수주가 가시화되고 있다.<br><br>
+        2024년 매출 4,610억(+91% YoY), 영업이익 580억(OPM 12.6%). 수주잔고는 <b>2.4조 → 3.35조</b>로 확대 추세. 다만 FX 파생상품 변동성이 실적 노이즈를 만드는 구조적 약점이 있다. 고점 대비 <b>-65%</b>.
+      </div>
+      <div class="nums">
+        <div><div class="nk">PER(FY26E)</div><div class="nv tnum">~22.6x</div></div>
+        <div><div class="nk">OPM</div><div class="nv tnum">12.6%</div></div>
+        <div><div class="nk">수주잔고</div><div class="nv tnum">2.4조→3.35조</div></div>
+        <div><div class="nk">사이클 잔여</div><div class="nv tnum">8-15년</div></div>
+        <div><div class="nk">매출 YoY</div><div class="nv tnum" style="color:var(--bull)">+91%</div></div>
+        <div><div class="nk">고점 대비</div><div class="nv tnum" style="color:var(--bear)">-65%</div></div>
+      </div>
+    </div>
+
+    <div class="fact-grid reveal" style="margin-top:22px">
+      <div class="fact">
+        <div class="fnum" style="font-size:1.1rem;color:var(--volt)">HRSG란?</div>
+        <div class="flab">가스터빈(GE·Siemens) 뒤에 붙는 배열회수보일러. 가스터빈만으로는 효율 30%대이지만, HRSG를 달면 복합발전으로 60%+로 올라간다. AI 데이터센터 자가발전에서도 가스터빈+HRSG 조합이 핵심이다.</div>
+        <div class="fsrc">SRC: BHI IR · 업계 구조</div>
+      </div>
+      <div class="fact d1">
+        <div class="fnum" style="font-size:1.1rem;color:var(--volt)">원전 BOP란?</div>
+        <div class="flab">원자로(NSSS)를 제외한 발전소 나머지 전부 — 터빈발전기, 배관, 냉각기, 열교환기, 보조기기. 원전 1기 건설비 중 BOP가 40~50%를 차지한다. BHI는 이 BOP 패키지를 납품한다.</div>
+        <div class="fsrc">SRC: BHI 사업보고서</div>
+      </div>
+      <div class="fact d2">
+        <div class="fnum" style="font-size:1.1rem;color:var(--glow)">변압기 3사와의 관계</div>
+        <div class="flab">BHI가 HRSG·BOP로 발전소를 만들면 → 효성·산일·일진의 변압기로 전력을 송출한다. BHI의 수주가 늘면 → 변압기 수요도 후행적으로 증가하는 구조.</div>
+        <div class="fsrc">SRC: 전력 밸류체인 구조</div>
+      </div>
+    </div>
+
+    <div class="bb reveal" style="margin-top:22px">
+      <div class="b bull"><div class="bh">Bull</div><span>HRSG 글로벌 1위. 원전 BOP 수주 가시화(체코·루마니아). 사이클 잔여 8~15년으로 가장 긴 성장 활주로. 매출 +91% 성장세.</span></div>
+      <div class="b bear"><div class="bh">Bear</div><span>FX 파생 변동성 — 실적 노이즈 구조적. OPM 12.6%로 마진 개선 여지 필요. 고점 대비 -65% 낙폭. 원전 수주 실제 매출 인식까지 시간 필요.</span></div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"전력의 시작점에서 가장 긴 사이클을 보유"
+      <span class="u">BHI는 AI DC 자가발전(가스터빈+HRSG)과 글로벌 원전 르네상스(BOP) 양쪽에서 수혜를 받는 유일한 기업이다. 변압기 3사의 사이클(3~5년)보다 2~3배 긴 8~15년의 성장 활주로를 가졌다. 다만 FX 파생 변동성이 분기 실적의 가시성을 떨어뜨리는 약점이 있어, '방향은 맞지만 변동성을 감내해야 하는' 유형의 투자다. 고점 대비 -65%는 이 단점이 과도하게 반영된 결과일 수 있다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 05 KEPCO KPS ================= -->
+<section class="blk reveal" id="kepco-kps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;발전소 수명의 수호자</div>
+      <h2 class="sec-title">한전KPS — 원전 24기 유일 정비권</h2>
+      <p class="sec-lead">한전KPS는 전력을 '만들거나' '보내는' 기업이 아니라, 발전소가 안전하게 운영되도록 '지키는' 기업이다. 원전 24기의 유일한 정비권을 보유한 사실상의 독점 사업자다.</p>
+    </div>
+
+    <div class="comp-card reveal">
+      <div class="comp-top">
+        <div>
+          <div class="comp-name">한전KPS</div>
+          <div class="comp-ticker">KRX 051600 · 시총 약 1.8조</div>
+        </div>
+        <span class="badge teal">원전 정비 독점 · 배당 3-4%</span>
+      </div>
+      <div class="comp-desc">
+        한국 원전 24기의 <b>유일한 계획예방정비(OH, Overhaul) 수행사</b>. 3.5년 주기로 원전 1기를 완전 분해·검사·재조립하는 정비를 수행한다. 연간 약 20기의 정비를 실시하며, 원전 운영 기간(최소 40~60년) 동안 안정적으로 반복 발생하는 수익 구조.<br><br>
+        '수주'가 아닌 <b>'운영 독점'</b>의 가치가 핵심. 두산에너빌리티·비에이치아이가 만든 원전을 한전KPS가 수십 년간 정비한다. 원전 신규 건설이 늘수록 정비 대상도 자동으로 늘어나는 구조.<br><br>
+        2024년 매출 1.65조, 영업이익 1,735억(OPM 10.5%). 배당수익률 <b>3~4%</b>로 전력주 중 유일한 배당 매력. 루마니아 원전 정비 수주 485억원으로 해외 정비 시장도 열고 있다. 고점 대비 <b>-32%</b>.
+      </div>
+      <div class="nums">
+        <div><div class="nk">PER(FY26E)</div><div class="nv tnum">~20x</div></div>
+        <div><div class="nk">OPM</div><div class="nv tnum">10.5%</div></div>
+        <div><div class="nk">배당수익률</div><div class="nv tnum" style="color:var(--bull)">3-4%</div></div>
+        <div><div class="nk">정비 대상</div><div class="nv tnum">원전 24기</div></div>
+        <div><div class="nk">루마니아 수주</div><div class="nv tnum">485억</div></div>
+        <div><div class="nk">고점 대비</div><div class="nv tnum" style="color:var(--bear)">-32%</div></div>
+      </div>
+    </div>
+
+    <div class="fact-grid reveal" style="margin-top:22px">
+      <div class="fact">
+        <div class="fnum" style="font-size:1.1rem;color:var(--volt)">정비(OH)란?</div>
+        <div class="flab">3.5년 주기로 원전 1기를 완전 정지 → 원자로 헤드 개방 → 핵연료 교체 → 기기 분해 검사 → 재조립하는 대규모 작업. 1회 정비에 수백억원, 수개월이 소요된다. 원전 운영의 법적 필수 절차.</div>
+        <div class="fsrc">SRC: 한전KPS IR</div>
+      </div>
+      <div class="fact d1">
+        <div class="fnum" style="font-size:1.1rem;color:var(--glow)">BHI·두산과의 관계</div>
+        <div class="flab">두산에너빌리티·비에이치아이가 원전 기기를 제작·납품하면, 한전KPS가 이를 40~60년간 정비한다. 원전 1기 생애주기에서 건설보다 정비 비용이 더 크다. 건설은 1회, 정비는 수십 회.</div>
+        <div class="fsrc">SRC: 업계 라이프사이클 비용 구조</div>
+      </div>
+      <div class="fact d2">
+        <div class="fnum tnum">3~4<span class="fu"> %</span></div>
+        <div class="flab">배당수익률. TOP 5 중 유일하게 의미 있는 배당을 지급한다. 독점 정비권 기반의 안정적 현금흐름이 배당의 원천. 성장보다 안정을 원하는 투자자에게 매력적.</div>
+        <div class="fsrc">SRC: DART 공시 · 배당 이력</div>
+      </div>
+    </div>
+
+    <div class="bb reveal" style="margin-top:22px">
+      <div class="b bull"><div class="bh">Bull</div><span>원전 24기 독점 정비권 — 진입장벽 절대적. 배당 3-4%. 원전 신규 건설 시 정비 대상 자동 확대. 루마니아 해외 수주로 해외 시장 개척 시작.</span></div>
+      <div class="b bear"><div class="bh">Bear</div><span>성장 천장 — 국내 원전 24기 한정. OPM 10.5%로 마진 확장 제한적. 공기업 특성상 경영 효율화 한계. 해외 수주 규모 아직 작음.</span></div>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"수주가 아닌 운영 독점의 가치"
+      <span class="u">한전KPS의 핵심 가치는 '수주잔고'가 아니라 '독점 정비권'이다. 원전 24기는 40~60년간 3.5년 주기로 정비가 반복되고, 이 정비를 수행할 수 있는 기업은 한전KPS뿐이다. 변압기 3사처럼 수주 사이클에 민감하지 않고, BHI처럼 FX 변동에 흔들리지도 않는다. 다만 성장의 천장이 분명한 기업이기에, '폭발적 성장'이 아닌 '안정적 현금흐름+배당'을 원하는 투자자에게 적합하다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 06 CROSSMAP ================= -->
+<section class="blk reveal" id="crossmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">06</span>&nbsp;5사 종합 비교</div>
+      <h2 class="sec-title">크로스 밸류에이션 테이블</h2>
+      <p class="sec-lead">PER·OPM·수주잔고·사이클 잔여·배당·리스크까지 — 5개 기업을 하나의 테이블에서 비교한다.</p>
+    </div>
+
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr><th>항목</th><th>산일전기</th><th>일진전기</th><th>비에이치아이</th><th>효성중공업</th><th>한전KPS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="tn">티커</td><td class="mono-cell">062040</td><td class="mono-cell">103590</td><td class="mono-cell">083650</td><td class="mono-cell">298040</td><td class="mono-cell">051600</td></tr>
+          <tr><td class="tn">밸류체인</td><td>변전·송전</td><td>변전·송전·케이블</td><td>발전(HRSG·원전BOP)</td><td>변전·송전(초고압)</td><td>발전 정비</td></tr>
+          <tr><td class="tn">주력 제품</td><td>배전/발전용 변압기</td><td>초고압변압기+케이블</td><td>HRSG·원전보조기기</td><td>765kV 변압기</td><td>원전 계획예방정비</td></tr>
+          <tr><td class="tn">PER(FY26E)</td><td class="mono-cell">~24x</td><td class="mono-cell hl-cell">9-12x</td><td class="mono-cell">~22.6x</td><td class="mono-cell">~30-52x</td><td class="mono-cell">~20x</td></tr>
+          <tr><td class="tn">OPM</td><td class="mono-cell hl-cell">37%</td><td class="mono-cell">~10%</td><td class="mono-cell">~12.6%</td><td class="mono-cell">~11-20%</td><td class="mono-cell">~10.5%</td></tr>
+          <tr><td class="tn">수주잔고</td><td class="mono-cell">3,905억</td><td class="mono-cell">2.6조</td><td class="mono-cell">2.4조→3.35조</td><td class="mono-cell hl-cell">15.1조</td><td class="mono-cell">485억(루마니아)</td></tr>
+          <tr><td class="tn">고점 대비</td><td style="color:var(--bear)">-46%</td><td style="color:var(--bear)">-59%</td><td style="color:var(--bear)">-65%</td><td style="color:var(--bear)">-40%</td><td style="color:var(--bear)">-32%</td></tr>
+          <tr><td class="tn">사이클 잔여</td><td>3-5년</td><td>3-5년</td><td class="hl-cell">8-15년</td><td>3-5년</td><td class="hl-cell">8-15년</td></tr>
+          <tr><td class="tn">배당수익률</td><td>미미</td><td>미미</td><td>미미</td><td>0.3%</td><td class="hl-cell">3-4%</td></tr>
+          <tr><td class="tn">핵심 리스크</td><td>마진 피크</td><td>담합수사·오버행</td><td>FX파생 변동성</td><td>건설PF·지배구조</td><td>성장 천장</td></tr>
+        </tbody>
+      </table>
+      <div class="tbl-foot">* 수치는 FY2026E 컨센서스 기준 추정치. 효성중공업 PER은 건설부문 혼재로 범위가 넓음</div>
+    </div>
+
+    <div class="fact-grid reveal" style="margin-top:22px">
+      <div class="fact">
+        <div class="fnum" style="font-size:1.1rem;color:var(--bull)">밸류 관점 1위</div>
+        <div class="flab"><b>일진전기 PER 9x</b> — 5사 중 가장 저평가. 다만 담합수사·오버행이라는 이유 있는 디스카운트. 이 리스크가 해소되면 리레이팅 여지가 가장 크다.</div>
+      </div>
+      <div class="fact d1">
+        <div class="fnum" style="font-size:1.1rem;color:var(--bull)">수익성 관점 1위</div>
+        <div class="flab"><b>산일전기 OPM 37%</b> — 변압기 업종에서 이 수준의 OPM은 이례적. 구조적 공급 부족이 만든 가격 결정력의 직접 증거. 다만 피크 마진 리스크도 동시에 존재.</div>
+      </div>
+      <div class="fact d2">
+        <div class="fnum" style="font-size:1.1rem;color:var(--bull)">사이클 관점 1위</div>
+        <div class="flab"><b>BHI·한전KPS 8~15년</b> — 원전 르네상스의 수혜로 가장 긴 성장 활주로. 변압기 3사의 3~5년 사이클 대비 구조적 장기 성장이 가능.</div>
+      </div>
+    </div>
+
+    <!-- 5사 Bull/Bear 요약 -->
+    <div class="contender-grid reveal" style="margin-top:22px">
+      <div class="contender">
+        <div class="cont-name" style="color:var(--volt)">산일전기</div>
+        <div class="bb" style="margin-top:12px">
+          <div class="b bull"><div class="bh">Bull</div><span>OPM 37% 최고 수익성. DC 피벗 제2 성장 곡선.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>마진 피크. PER 24x 밸류 부담.</span></div>
+        </div>
+      </div>
+      <div class="contender">
+        <div class="cont-name" style="color:var(--volt)">일진전기</div>
+        <div class="bb" style="margin-top:12px">
+          <div class="b bull"><div class="bh">Bull</div><span>PER 9x 최저 밸류. 변압기+케이블 유일 수직통합.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>담합수사. 오버행. OPM 10%.</span></div>
+        </div>
+      </div>
+      <div class="contender">
+        <div class="cont-name" style="color:var(--current)">비에이치아이</div>
+        <div class="bb" style="margin-top:12px">
+          <div class="b bull"><div class="bh">Bull</div><span>HRSG 세계1위. 원전BOP. 사이클 8-15년.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>FX파생 변동. -65% 낙폭.</span></div>
+        </div>
+      </div>
+      <div class="contender">
+        <div class="cont-name" style="color:var(--current)">효성중공업</div>
+        <div class="bb" style="margin-top:12px">
+          <div class="b bull"><div class="bh">Bull</div><span>765kV 독점. 백로그 15조. Memphis.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>건설PF. 지배구조. PER 30-52x.</span></div>
+        </div>
+      </div>
+      <div class="contender">
+        <div class="cont-name" style="color:var(--glow)">한전KPS</div>
+        <div class="bb" style="margin-top:12px">
+          <div class="b bull"><div class="bh">Bull</div><span>원전 독점정비. 배당 3-4%. 루마니아 수주.</span></div>
+          <div class="b bear"><div class="bh">Bear</div><span>성장 천장. OPM 10.5%. 공기업 한계.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= 07 PORTFOLIO ================= -->
+<section class="blk reveal" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">07</span>&nbsp;투자 시사점</div>
+      <h2 class="sec-title">밸류체인 포지션별 포트폴리오 전략</h2>
+      <p class="sec-lead">5개 기업의 밸류체인 위치·사이클 길이·리스크-리턴 프로파일이 다르므로, 투자 성향에 따라 조합 전략이 달라져야 한다.</p>
+    </div>
+
+    <div class="impl-grid reveal">
+      <div class="impl">
+        <div class="itag bull-tag">공격형 — 성장 극대화</div>
+        <h4>산일전기 + 비에이치아이</h4>
+        <p>OPM 37%의 수익성(산일) + HRSG/원전BOP의 긴 사이클(BHI). 두 기업은 밸류체인에서 겹치지 않으므로 자연스러운 분산. <b>반등 시 레버리지가 가장 크지만</b>, 고점 대비 -46%/-65% 낙폭으로 변동성도 큰 조합.</p>
+      </div>
+      <div class="impl">
+        <div class="itag neutral-tag">밸런스형 — 리스크-리턴 균형</div>
+        <h4>일진전기 + 한전KPS</h4>
+        <p>PER 9x의 밸류(일진) + 배당 3-4%의 안정성(KPS). 변압기+케이블(일진)과 원전 정비(KPS)로 사이클 분산. <b>하방 방어와 상방 모두 확보</b>하는 조합. 일진의 담합수사 해소 시 리레이팅 보너스.</p>
+      </div>
+      <div class="impl">
+        <div class="itag bear-tag">수비형 — 하방 방어 우선</div>
+        <h4>한전KPS + 일진전기</h4>
+        <p>독점 정비권 기반 안정 수익(KPS) + 밸류체인 최저 PER(일진). <b>베어마켓 지속 시 하방 리스크가 가장 적은</b> 조합. KPS 배당으로 하락장에서도 현금흐름 확보. 공격적 성장보다 자본 보전 우선.</p>
+      </div>
+      <div class="impl">
+        <div class="itag neutral-tag">풀 커버리지 — 밸류체인 분산</div>
+        <h4>산일 + 일진 + BHI + KPS</h4>
+        <p>변전(산일) + 송전/케이블(일진) + 발전(BHI) + 정비(KPS)로 <b>밸류체인 전 구간 분산</b>. 효성중공업은 건설PF 리스크 해소 후 편입 검토. 사이클 타이밍 차이를 활용한 시간 분산 투자.</p>
+      </div>
+    </div>
+
+    <div class="risk reveal">
+      <h3><span class="rd"></span>공통 리스크 체크리스트</h3>
+      <div class="risk-grid">
+        <div class="ritem">
+          <div class="ri">01</div>
+          <div class="rt"><b>글로벌 경기 둔화</b><span>AI DC 투자 지연 → 변압기 수주 둔화. 전력 수요 성장률 하향 시 5사 모두 영향. 다만 원전(BHI·KPS)은 경기 민감도 상대적으로 낮음.</span></div>
+        </div>
+        <div class="ritem">
+          <div class="ri">02</div>
+          <div class="rt"><b>미국 관세·통상 정책</b><span>한국산 변압기·케이블 관세 부과 시 산일·일진 직격. 효성은 Memphis 현지 생산으로 일부 회피 가능. BHI·KPS는 상대적 무관.</span></div>
+        </div>
+        <div class="ritem">
+          <div class="ri">03</div>
+          <div class="rt"><b>공급 과잉 전환</b><span>중국산 변압기 진입, 글로벌 CAPA 증설로 2028~29년 이후 공급 정상화 가능성. OPM 37%(산일)은 피크 마진일 수 있다.</span></div>
+        </div>
+        <div class="ritem">
+          <div class="ri">04</div>
+          <div class="rt"><b>원전 정책 변동</b><span>탈원전 정책 회귀 시 BHI·한전KPS 직격. 현재 글로벌 원전 르네상스 추세이나, 정치적 변수는 항상 존재.</span></div>
+        </div>
+        <div class="ritem">
+          <div class="ri">05</div>
+          <div class="rt"><b>개별 기업 리스크</b><span>일진 담합수사, 효성 건설PF, BHI FX파생, 산일 마진 피크, KPS 성장 천장 — 각사 고유 리스크를 밸류체인 분산으로 희석.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2026.07.25 샌프란시스코 AI 서밋 업데이트 -->
+    <div class="thesis reveal" style="border-left:3px solid var(--bull);background:linear-gradient(135deg,rgba(72,213,151,.10) 0%,rgba(18,26,46,.95) 100%);margin-bottom:32px;">
+      <div class="tg" style="background:var(--bull);color:#080B14;letter-spacing:.06em">2026.07.25 업데이트 — 샌프란시스코 AI 서밋</div>
+      <p style="margin-bottom:.6rem"><b>AIDC 18.4GW 공식화 — K-전력 TOP5 성장성 재평가 트리거</b>
+      <span class="u" style="display:block;margin-top:.5rem">
+        <b>&#183; AIDC 18.4GW(2035E)</b> — 한국 내 AI 데이터센터 전력 수요가 기존 전망을 2~3배 초과. K-전력 5사의 국내 수주 파이프라인 구조적 상향 조정 근거 마련.<br>
+        <b>&#183; 3대 메가프로젝트 4,755조 본격 착수</b> — 변압기(산일·일진)·케이블(일진)·원전BOP(BHI)·정비(KPS) 全 밸류체인 동시 수혜. 사이클 연장 카탈리스트.<br>
+        <b>&#183; 이재명 'AI 선언' + SKT-엔비디아 AI 팩토리</b> — 정부·민간 양축의 AIDC 투자 의지 확인. 수주 가시성 향상 → 밸류에이션 재평가 여지.
+      </span></p>
+    </div>
+
+    <div class="thesis reveal">
+      <div class="tg">Thesis</div>
+      <p>"밸류체인 분산이 곧 포트폴리오 전략"
+      <span class="u">K-전력 TOP 5는 같은 슈퍼사이클에 속하지만, 밸류체인 포지션에 따라 사이클 길이·마진·리스크가 다르다. 이 차이를 이해하고 활용하는 것이 핵심이다. 변압기(3~5년)와 원전(8~15년)의 사이클 차이는 시간 분산의 기회이며, OPM 37%(산일)과 배당 3-4%(KPS)의 차이는 성장-안정 스펙트럼에서의 선택이다. '전력주 올인'이 아니라, '밸류체인 포지션별 분산'이 최적 전략이다.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">AI 전력 인프라 시리즈 — K-전력 TOP 5 밸류체인 비교</div>
+      <div class="src-list">
+        DATA · 산일전기 IR · 일진전기 IR · 비에이치아이 IR<br>
+        효성중공업 IR · 한전KPS IR<br>
+        DART 공시 · Bloomberg · 증권사 리포트<br>
+        IEA Energy &amp; AI · IAEA · POWER Magazine<br>
+        작성 기준일 · 2026.07.24
+      </div>
+    </div>
+    <div class="disc">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 모든 수치는 공시·언론 보도를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.4});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
