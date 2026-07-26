@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="마이크론×메타 공동 백서(DCPerf) 해부 — LPDDR5X·SOCAMM2가 AI 데이터센터의 차세대 서버 메모리로 부상. SKU1/SKU2 벤치마크, 전력 -75%, 용량 vs 속도, 메모리 프리미엄 지속가능성.">
+<meta name="keywords" content="LPDDR5X,SOCAMM2,DCPerf,서버메모리,마이크론,메타,DDR5,HBM,저전력,데이터센터,메모리프리미엄">
+<meta property="og:title" content="메모리가 방정식을 바꿀 때 — LPDDR5X·SOCAMM2 서버 메모리의 부상">
+<meta property="og:description" content="마이크론×메타 DCPerf 백서 해부 — LPDDR5X·SOCAMM2가 HBM 너머 CPU측 저전력·고용량 서버 메모리로. SKU1/SKU2 벤치마크, 전력 -75%, 프리미엄 지속가능성.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/hbm-packaging/hbm_pkg_theme_lpddr5x_socamm.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="메모리가 방정식을 바꿀 때 — LPDDR5X·SOCAMM2 서버 메모리의 부상">
+<meta name="twitter:description" content="마이크론×메타 DCPerf 백서 해부 — LPDDR5X·SOCAMM2가 HBM 너머 CPU측 저전력·고용량 서버 메모리로. 용량 vs 속도, 전력 -75%, 프리미엄 지속가능성.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/hbm-packaging/hbm_pkg_theme_lpddr5x_socamm.html">
+<title>메모리가 방정식을 바꿀 때 — LPDDR5X·SOCAMM2 서버 메모리의 부상</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#F59E0B;
+    --accent-2:#FFB13E;
+    --glow:#38E6D4;
+    --bull:#48D597;
+    --bear:#FF6B6B;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(56,230,212,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* MACRO GRID */
+  .macro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:8px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .panel h3{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;margin-bottom:6px}
+  .panel .ph-sub{font-size:.84rem;color:var(--ink-3);font-family:var(--mono);margin-bottom:24px}
+  .panel .foot{margin-top:22px;font-size:.82rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+
+  /* BARS */
+  .bars{display:flex;align-items:flex-end;gap:28px;height:230px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar{width:100%;max-width:96px;border-radius:9px 9px 0 0;position:relative;transition:height 1.4s cubic-bezier(.2,.8,.2,1)}
+  .bar.b-past{background:linear-gradient(180deg,#2b3a5c,#1a2540)}
+  .bar.b-now{background:linear-gradient(180deg,var(--accent),#a36200);box-shadow:0 0 40px -8px var(--accent)}
+  .bar.b-low{background:linear-gradient(180deg,#2a3050,#1a2040)}
+  .bar .val{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--mono);font-weight:700;font-size:.88rem}
+  .barcol .yr{margin-top:12px;font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+  .barcol .cap{font-size:.72rem;color:var(--ink-3);margin-top:2px;text-align:center}
+
+  /* MINI */
+  .mini{display:flex;flex-direction:column;gap:18px}
+  .minirow{display:flex;gap:16px;align-items:flex-start}
+  .minirow .mk{font-family:var(--mono);font-weight:800;font-size:1.4rem;color:var(--accent);min-width:110px;letter-spacing:-.02em;line-height:1.1}
+  .minirow .mt{font-size:.9rem;color:var(--ink-2)}
+  .minirow .mt b{color:var(--ink);font-weight:650}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:.3s}
+  .card:hover{border-color:#33456b;transform:translateY(-4px)}.card:hover::before{opacity:1}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card-name{font-size:1.22rem;font-weight:850;letter-spacing:-.02em}
+  .ticker{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:3px}
+  .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;padding:5px 10px;border-radius:7px;white-space:nowrap;text-transform:uppercase;font-weight:600}
+  .badge.amber{background:rgba(245,158,11,.12);color:var(--accent);border:1px solid rgba(245,158,11,.3)}
+  .badge.bull-b{background:rgba(72,213,151,.12);color:var(--bull);border:1px solid rgba(72,213,151,.3)}
+  .badge.bear-b{background:rgba(255,107,107,.12);color:var(--bear);border:1px solid rgba(255,107,107,.3)}
+  .badge.neutral{background:rgba(157,169,194,.12);color:var(--ink-2);border:1px solid var(--line)}
+  .link-line{margin-top:16px;font-size:.9rem;color:var(--ink-2);line-height:1.55}
+  .link-line b{color:var(--ink);font-weight:650}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+  .nums div{background:var(--bg-2);padding:13px 12px}
+  .nums .nk{font-family:var(--mono);font-size:.64rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+  .nums .nv{font-family:var(--mono);font-weight:750;font-size:.98rem;margin-top:5px;color:var(--ink);letter-spacing:-.01em}
+  .bb{margin-top:16px;font-size:.84rem;color:var(--ink-2);line-height:1.6}
+  .bb b{color:var(--ink)}
+
+  /* TIMELINE */
+  .timeline{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
+  .tcard .th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .tcard.bull .th{color:var(--bull)}.tcard.bear .th{color:var(--bear)}.tcard.base .th{color:var(--accent)}
+  .tcard h3{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:12px 0 4px}
+  .tcard .tp{font-size:.88rem;color:var(--ink-2);margin-top:10px;line-height:1.6}
+  .tcard .picks{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+  .tcard .picks span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:7px;padding:5px 10px;color:var(--ink)}
+
+  /* CYCLE BOX */
+  .cycle-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px}
+  .cycle-box h3{font-size:1.12rem;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .cycle-bar{display:flex;gap:2px;border-radius:10px;overflow:hidden;height:42px;margin-bottom:18px}
+  .cycle-seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:600;transition:.3s;flex:1}
+  .cycle-seg.past{background:#1a2540;color:var(--ink-3)}
+  .cycle-seg.now{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#080B14;flex:1.5;border-radius:4px;box-shadow:0 0 20px rgba(245,158,11,.3)}
+  .cycle-seg.future{background:var(--surface-2);color:var(--ink-3)}
+  .cycle-label{font-size:.84rem;color:var(--ink-2);line-height:1.6}
+  .cycle-label b{color:var(--ink);font-weight:650}
+
+  /* COMPARE TABLE */
+  .compare-wrap{margin-top:8px;overflow-x:auto}
+  .compare-table{width:100%;border-collapse:collapse;font-size:.85rem}
+  .compare-table th{background:var(--surface-2);color:var(--ink-2);font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+  .compare-table th:first-child{color:var(--ink-3)}
+  .compare-table td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top;line-height:1.5}
+  .compare-table td:first-child{font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--ink-3);white-space:nowrap}
+  .compare-table tr:last-child td{border-bottom:none}
+  .compare-table .good{color:var(--bull);font-weight:650}
+  .compare-table .warn{color:var(--accent);font-weight:650}
+  .compare-table .bad{color:var(--bear);font-weight:650}
+  .compare-table .neutral-c{color:var(--ink)}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .macro-grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+    .nums{grid-template-columns:1fr 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "메모리가 방정식을 바꿀 때 — LPDDR5X·SOCAMM2 서버 메모리의 부상",
+  "description": "마이크론×메타 공동 백서(DCPerf) 해부 — LPDDR5X·SOCAMM2가 HBM 너머 CPU측 저전력·고용량 서버 메모리로 부상. SKU1/SKU2 벤치마크, 전력 -75%, 용량 vs 속도, 메모리 프리미엄 지속가능성.",
+  "datePublished": "2026-07-26",
+  "dateModified": "2026-07-26",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/hbm-packaging/hbm_pkg_theme_lpddr5x_socamm.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.background='rgba(15,19,34,.95)';this.style.borderColor='rgba(165,180,252,.4)'" onmouseout="this.style.background='rgba(15,19,34,.85)';this.style.borderColor='rgba(255,255,255,.12)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>HBM·패키징 Theme E</div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="#bench">01 / 벤치마크</a>
+      <a href="#workload">02 / AI·웹 워크로드</a>
+      <a href="#capacity">03 / 용량의 반전</a>
+      <a href="#invest">04 / 투자 지도</a>
+      <a href="#premium">05 / 프리미엄</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="spark"></div><div class="spark"></div><div class="spark"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">HBM·패키징 시리즈 · Theme E · 2026.07</span>
+    <h1 class="hero-title">메모리가 방정식을<br>바꿀 때 <span class="hl">LPDDR5X·SOCAMM2</span></h1>
+    <p class="hero-sub">마이크론과 메타가 실제 데이터센터 워크로드(DCPerf)로 LPDDR5X를 검증했다. AI 메모리 수요는 HBM과 서버 DDR5에만 있지 않다 — CPU 측 고용량·저전력 메모리 LPDDR5X와 모듈형 SOCAMM2가 하이퍼스케일 서버 메모리의 새로운 후보로 부상한다.</p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="num tnum">-75<span class="u">%</span></div>
+        <div class="lab">LPDDR5X의 DRAM 전력이 DDR5 대비 최대 낮아질 수 있는 폭(마이크론 기존 분석 인용). Tensor Rebatching 실행 중 LPDDR5X는 전체 시스템 전력의 6.8%만 소비.</div>
+        <div class="src">SRC: Micron × Meta DCPerf 백서 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">2<span class="u">TB</span></div>
+        <div class="lab">256GB SOCAMM2 모듈로 구성 가능한 CPU 소켓당 최대 LPDDR5X 용량(로드맵). LPDDR5X 속도는 9600MT/s 이상으로 확장 전망 — 적용 워크로드 지속 확대.</div>
+        <div class="src">SRC: Micron 로드맵 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="num tnum">38.75<span class="u">×</span></div>
+        <div class="lab">SparkBench 셔플 중심 구간에서 용량 2배 시스템(SKU1)이 속도 우위 시스템(SKU2)보다 빨랐던 최대 배수. 데이터 분석에선 속도보다 '용량'이 SSD 접근을 없애며 성능을 지배.</div>
+        <div class="src">SRC: Micron × Meta DCPerf 백서 2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span class="bar"></span>백서 심층 해부</div>
+  </div>
+</header>
+
+<!-- 01 BENCHMARK -->
+<section class="blk" id="bench">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;벤치마크 셋업 — DCPerf로 서버 메모리를 시험대에</div>
+      <h2 class="sec-title">속도의 SKU2, 용량의 SKU1</h2>
+      <p class="sec-lead">메타는 실제 데이터센터의 주요 워크로드를 반영한 오픈소스 벤치마크 DCPerf를 개발했다. 마이크론과 메타는 이를 이용해 메모리 대역폭·지연시간·용량·전력 효율 네 가지 축에서 LPDDR5X의 서버 적용 가능성을 평가했다.</p>
+    </div>
+
+    <div class="cycle-box reveal">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="3" y="8" width="18" height="8" rx="1"/><path d="M7 8v8M11 8v8M15 8v8"/></svg>
+        평가 대상 — 소켓당 72코어 ARM CPU 시스템 2종
+      </h3>
+      <div class="cycle-bar">
+        <div class="cycle-seg past">SKU1 · 용량 지향<br><span style="font-size:.6rem;opacity:.85">1TB / 6400MT/s</span></div>
+        <div class="cycle-seg now">4가지 축 비교<br><span style="font-size:.6rem">대역폭·지연·용량·전력</span></div>
+        <div class="cycle-seg future">SKU2 · 속도 지향<br><span style="font-size:.6rem;opacity:.85">512GB / 8533MT/s</span></div>
+      </div>
+      <div class="cycle-label"><b>같은 CPU, 다른 메모리 구성.</b> SKU1은 용량에, SKU2는 속도·대역폭에 초점을 맞춘 대칭 실험으로, 데이터센터 워크로드에서 '메모리 속도'와 '메모리 용량'이 각각 어떤 효과를 내는지를 분리해 보여준다.</div>
+    </div>
+
+    <div style="margin-top:32px" class="reveal d1">
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>구성 항목</th>
+              <th>SKU1 — 용량 지향</th>
+              <th>SKU2 — 속도 지향</th>
+              <th>초점</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CPU</td>
+              <td>소켓당 72코어 ARM (2소켓)</td>
+              <td>소켓당 72코어 ARM (2소켓)</td>
+              <td class="neutral-c">동일</td>
+            </tr>
+            <tr>
+              <td>소켓당 용량</td>
+              <td class="warn">512GB</td>
+              <td>256GB</td>
+              <td class="warn">SKU1 2배</td>
+            </tr>
+            <tr>
+              <td>시스템 전체 용량</td>
+              <td class="warn">1TB</td>
+              <td>512GB</td>
+              <td class="warn">SKU1 2배</td>
+            </tr>
+            <tr>
+              <td>속도</td>
+              <td>6400 MT/s</td>
+              <td class="good">8533 MT/s</td>
+              <td class="good">SKU2 +33%</td>
+            </tr>
+            <tr>
+              <td>랭크 구성</td>
+              <td>4랭크 LPDDR5X</td>
+              <td>2랭크 LPDDR5X</td>
+              <td class="neutral-c">—</td>
+            </tr>
+            <tr>
+              <td>강점 워크로드</td>
+              <td>데이터 분석(Spark) — SSD 스필 방지</td>
+              <td>AI 전처리·웹 서비스 — 대역폭·지연</td>
+              <td class="warn">워크로드 의존</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:32px">
+      <div class="tg">Setup Insight</div>
+      <p>"이번 비교의 핵심은 LPDDR5X 대 DDR5가 아니라, LPDDR5X 안에서 속도와 용량의 트레이드오프다."
+      <span class="u">두 SKU 모두 LPDDR5X이며, DDR5와의 직접 비교는 대부분 마이크론의 기존 전력 분석 인용에 근거한다. 따라서 이 백서는 "LPDDR5X가 DDR5를 즉시 대체한다"가 아니라, 모듈형 SOCAMM2 폼팩터로 정비성 문제가 해소된 지금, 특정 워크로드에서 어떤 LPDDR5X 구성이 최적인지를 실증한 자료로 읽는 것이 정확하다. SOCAMM2는 기존 LPDDR의 납땜(solder-down) 구조와 정비성 한계를 해소해 하이퍼스케일 데이터센터에서 LPDDR5X를 현실적 선택지로 만든다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 02 WORKLOAD -->
+<section class="blk" id="workload">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;AI 파이프라인 · 웹 서비스 · 전력</div>
+      <h2 class="sec-title">빠른 메모리가 값하는 곳</h2>
+      <p class="sec-lead">데이터 이동이 많은 AI 전처리와 웹 서비스에서는 8533MT/s의 SKU2가 분명한 우위를 보였다. 대역폭·IPC·꼬리 지연이 개선되며 CPU가 가속기에 데이터를 공급하는 병목이 완화됐고, 전력 부담은 오히려 낮았다.</p>
+    </div>
+
+    <div class="macro-grid">
+      <div class="panel reveal">
+        <h3>SKU2(8533) vs SKU1(6400) — AI 파이프라인 개선폭</h3>
+        <div class="ph-sub">Tensor Rebatching / 데이터 역직렬화</div>
+        <div class="bars">
+          <div class="barcol">
+            <div class="bar b-now" data-h="52%"><span class="val tnum">+13%</span></div>
+            <div class="yr">DRAM 대역폭</div><div class="cap">Rebatching</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b-now" data-h="44%"><span class="val tnum">+11%</span></div>
+            <div class="yr">처리량</div><div class="cap">Rebatching</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b-low" data-h="40%"><span class="val tnum">-10%</span></div>
+            <div class="yr">배치당 시간</div><div class="cap">Rebatching</div>
+          </div>
+          <div class="barcol">
+            <div class="bar b-now" data-h="72%"><span class="val tnum">+18%</span></div>
+            <div class="yr">IPC</div><div class="cap">역직렬화</div>
+          </div>
+        </div>
+        <div class="foot"><b>가속기 공급 병목 완화</b> — Tensor Rebatching에서 SKU2는 실제 DRAM 대역폭이 13% 높았고 처리량은 11% 증가, 배치당 처리시간은 10% 감소했다. 데이터 역직렬화에서는 대역폭 6%, 사이클당 명령 처리량(IPC)이 18% 향상 — CPU가 메모리를 기다리는 시간이 줄었다는 의미.</div>
+      </div>
+
+      <div class="panel reveal d1">
+        <h3>지연시간 · 전력 효율</h3>
+        <div class="ph-sub">MediaWiki P99 / LPDDR5X 전력 비중</div>
+        <div class="mini">
+          <div class="minirow">
+            <div class="mk tnum">~9%</div>
+            <div class="mt"><b>MediaWiki P99 읽기 지연 단축</b> — 메타 웹 서비스를 모사한 테스트에서 8533 구성이 6400 대비 P99 메모리 읽기 지연을 12~20밀리초(약 9%) 단축. 평균이 아닌 <b>꼬리 지연</b>이 줄며 더 높은 동시접속에서 초당 요청 처리량 확대. <span style="color:var(--ink-3)">(DCPerf MediaWiki)</span></div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">6.8%</div>
+            <div class="mt"><b>시스템 전력 중 LPDDR5X 비중</b> — Tensor Rebatching 실행 중 LPDDR5X가 소비한 전력은 전체 시스템 전력의 6.8%에 불과. 높은 대역폭을 확보하면서도 전력·냉각 부담을 크게 늘리지 않는다. <span style="color:var(--ink-3)">(Micron × Meta)</span></div>
+          </div>
+          <div class="minirow">
+            <div class="mk tnum">-75%</div>
+            <div class="mt"><b>DRAM 전력 절감(vs DDR5)</b> — 보고서는 기존 마이크론 분석을 인용해 LPDDR5X의 DRAM 전력이 DDR5보다 최대 75% 낮을 수 있다고 설명. 서버 한 대를 넘어 데이터센터 전체의 전력비·총소유비용(TCO)을 낮추는 지렛대. <span style="color:var(--ink-3)">(Micron 기존 분석 인용)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:32px">
+      <div class="tg">Workload Verdict</div>
+      <p>"전력당 대역폭이 강점 — AI 전처리·웹 서비스는 LPDDR5X의 홈그라운드다."
+      <span class="u">데이터 이동이 많은 AI 데이터 파이프라인과 요청이 집중되는 웹 서비스에서는 높은 대역폭과 낮은 꼬리 지연이 직접적인 처리량 개선으로 이어진다. 동시에 LPDDR5X는 시스템 전력의 한 자릿수 비중만 차지하고 DRAM 전력은 DDR5 대비 최대 75% 낮아, 전력·냉각이 증설의 핵심 제약이 된 데이터센터에서 '성능당 전력'이라는 전략적 가치를 갖는다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 03 CAPACITY -->
+<section class="blk" id="capacity">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;용량의 반전 — 데이터 분석은 다른 규칙을 쓴다</div>
+      <h2 class="sec-title">속도보다 용량이 지배할 때</h2>
+      <p class="sec-lead">반면 데이터 분석 작업에서는 메모리 속도보다 용량이 훨씬 중요했다. 충분한 용량이 SSD 접근 자체를 없애면서, 속도 우위를 압도하는 성능 격차가 발생했다.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-top">
+          <div>
+            <div class="card-name">SparkBench — 용량 2배의 힘</div>
+            <div class="ticker">SKU1(1TB) vs SKU2(512GB)</div>
+          </div>
+          <span class="badge amber">용량 지배</span>
+        </div>
+        <div class="nums">
+          <div><div class="nk">표준 부하</div><div class="nv">×2.82</div></div>
+          <div><div class="nk">3배 부하</div><div class="nv">×3.45</div></div>
+          <div><div class="nk">셔플 구간</div><div class="nv">×38.75</div></div>
+        </div>
+        <div class="bb">
+          <b>메커니즘</b>: 메모리 용량이 두 배인 SKU1은 셔플 데이터와 OS 페이지 캐시를 DRAM에 유지해 데이터가 SSD로 밀려나는 현상(스필)을 방지했다. 그 결과 표준 부하·3배 부하에서 처리량이 각각 약 2.82배·3.45배 높았고, 표준 부하의 셔플 중심 구간에서는 최대 38.75배의 속도 차이가 발생했다.
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">SKU2의 한계 — 속도가 구제하지 못한다</div>
+            <div class="ticker">메모리 부족 → SSD 왕복</div>
+          </div>
+          <span class="badge bear-b">SSD 스필</span>
+        </div>
+        <div class="bb" style="margin-top:16px">
+          <b>병목의 이동</b>: 메모리가 부족한 SKU2는 데이터를 SSD에 기록하거나 반복적으로 다시 읽어야 했다. 이 SSD 왕복이 지배 변수가 되면서, 8533MT/s의 높은 메모리 속도에도 불구하고 전체 실행시간이 크게 증가했다.<br><br>
+          <b>시사점</b>: 워크로드가 워킹셋을 DRAM에 담을 수 있느냐가 임계점이다. 임계점 아래에서는 대역폭이, 임계점을 넘으면 용량이 성능을 결정한다. 데이터 분석은 후자에 속한다.
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:32px">
+      <div class="tg">Capacity Verdict</div>
+      <p>"AI 서버 메모리를 전송속도만으로 판단해선 안 된다."
+      <span class="u">데이터 이동이 많은 AI 전처리·웹 서비스에는 높은 대역폭과 낮은 지연이 중요하지만, Spark 같은 데이터 분석에서는 충분한 용량으로 SSD 접근 자체를 제거하는 것이 훨씬 큰 성능 향상을 가져왔다. 바로 이 지점에서 소켓당 최대 2TB까지 확장되는 256GB SOCAMM2 로드맵이 의미를 갖는다 — LPDDR5X는 '빠른 메모리'이자 동시에 '값싸게 커지는 메모리'로 서버 워크로드의 두 축을 모두 겨냥한다.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 04 INVEST -->
+<section class="blk" id="invest">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">04</span>&nbsp;투자 지도 — 메모리 TAM의 3분화</div>
+      <h2 class="sec-title">HBM 너머로 넓어지는 메모리 시장</h2>
+      <p class="sec-lead">투자 관점에서 이 백서의 핵심은, AI 메모리 수요가 HBM과 전통적 서버 DDR5에만 집중되지 않고 CPU 측 고용량·저전력 메모리인 LPDDR5X와 모듈형 SOCAMM2로도 확장될 가능성을 보여준다는 점이다.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Micron</div>
+            <div class="ticker">MU · LPDDR5X·SOCAMM2 선도</div>
+          </div>
+          <span class="badge bull-b">직접 수혜</span>
+        </div>
+        <div class="bb">
+          <b>포지션</b>: 메타와의 공동 검증을 주도하며 SOCAMM/SOCAMM2 모듈형 폼팩터와 저전력 서버 메모리 내러티브를 선점. HBM에 이어 <b>CPU 측 메모리</b>에서도 AI 데이터센터 레퍼런스를 확보하면 매출 믹스가 다변화된다.<br><br>
+          <b>로드맵</b>: LPDDR5X 9600MT/s 이상, 256GB SOCAMM2로 소켓당 최대 2TB — 적용 가능 워크로드 확대.
+        </div>
+      </div>
+
+      <div class="card reveal d1">
+        <div class="card-top">
+          <div>
+            <div class="card-name">삼성전자 · SK하이닉스</div>
+            <div class="ticker">005930 · 000660 · LPDDR·모듈 기회</div>
+          </div>
+          <span class="badge amber">확장 기회</span>
+        </div>
+        <div class="bb">
+          <b>포지션</b>: 모바일 LPDDR 강자인 한국 메모리 3사에게 LPDDR5X의 서버 진입은 기존 강점의 새 수요처. HBM(고마진) + 서버 DDR5 + <b>LPDDR5X/SOCAMM2</b>로 제품 포트폴리오가 3분화되며, 전력제약 데이터센터향 저전력 메모리 수요를 흡수할 여지.<br><br>
+          <b>연결</b>: 미국 프론티어 AI 기업들이 한국의 고성능 메모리 공급·제조 역량과 손잡는 흐름(SF AI 서밋)과 정합.
+        </div>
+      </div>
+
+      <div class="card reveal d2">
+        <div class="card-top">
+          <div>
+            <div class="card-name">SOCAMM2 모듈 생태계</div>
+            <div class="ticker">모듈·소켓·기판·정비성</div>
+          </div>
+          <span class="badge neutral">파생 수혜</span>
+        </div>
+        <div class="bb" style="margin-top:16px">
+          <b>구조 전환</b>: 납땜형 LPDDR → 모듈형 SOCAMM2로의 전환은 모듈 조립·소켓·기판·정비성(serviceability) 밸류체인에 새 수요를 만든다. 하이퍼스케일러가 요구하는 현장 교체·업그레이드 가능성이 채택의 전제.<br><br>
+          <b>관전 포인트</b>: 표준화 진행, 모듈 벤더 라인업, 소켓/커넥터 공급사.
+        </div>
+      </div>
+
+      <div class="card reveal d3">
+        <div class="card-top">
+          <div>
+            <div class="card-name">전력·TCO 앵글</div>
+            <div class="ticker">데이터센터 증설 제약 완화</div>
+          </div>
+          <span class="badge bull-b">구조적 순풍</span>
+        </div>
+        <div class="bb" style="margin-top:16px">
+          <b>테제</b>: 전력 공급과 냉각이 데이터센터 증설의 핵심 제약으로 부상한 상황에서, 성능당 전력 효율이 높은 LPDDR의 전략적 중요성이 커진다. DRAM 전력 최대 -75%는 서버 단위를 넘어 데이터센터 전체 전력비·TCO를 낮추는 지렛대.<br><br>
+          <b>주의</b>: DDR5 대비 전력 우위는 대부분 기존 마이크론 분석 인용 — 실측 확대가 검증 포인트.
+        </div>
+      </div>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:32px">
+      <div class="tg">Investment Verdict</div>
+      <p>"LPDDR는 더 이상 모바일·엣지 전용 메모리가 아니다."
+      <span class="u">9600MT/s 이상의 속도와 소켓당 2TB SOCAMM2가 현실화되면 LPDDR5X는 하이퍼스케일 범용 컴퓨팅과 AI 플랫폼의 주요 서버 메모리 후보로 자리 잡을 수 있다. 다만 이번 성능 비교의 대부분이 서로 다른 두 LPDDR5X 시스템 사이에서 이뤄졌고 DDR5와의 직접 비교는 주로 인용에 근거한 만큼, "즉시 대체"보다 "특정 AI·분석 워크로드에서 LPDDR5X·SOCAMM2의 채택 근거가 강화됐다"로 해석하는 것이 적절하다.
+      <br><br>▸ 함께 읽기 — <a href="hbm_pkg_theme_memory_cycle.html" style="color:var(--accent)">메모리 사이클 판정(Theme C)</a> · <a href="hbm_pkg_investment_map.html" style="color:var(--accent)">HBM/패키징 투자 지도</a></span></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- 05 PREMIUM -->
+<section class="blk" id="premium">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">05</span>&nbsp;카운터포인트 — 물량은 팔렸다, 남은 논쟁은 프리미엄</div>
+      <h2 class="sec-title">TAM은 넓어진다. 그러나 프리미엄은?</h2>
+      <p class="sec-lead">LPDDR5X·SOCAMM2는 메모리 수요의 저변을 넓힌다(강세). 그러나 2026년 하반기 시장의 진짜 질문은 '수요의 존재'가 아니라 '프리미엄의 지속가능성'으로 이동했다. AI 트레이드 냉각 국면에서 부상한 반대 논리를 균형 있게 반영한다. <span style="color:var(--ink-3)">(KK Kontemporaries "빛을 잃은 AI 투자 열풍" 종합, 채권 관련 수치는 2차 인용)</span></p>
+    </div>
+
+    <div style="margin-top:8px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="reveal">
+      <div class="card">
+        <div class="card-top" style="margin-bottom:14px">
+          <div>
+            <div class="card-name" style="font-size:1rem">경고음 ①</div>
+            <div class="ticker">DC 대출 조건 악화</div>
+          </div>
+          <span class="badge bear-b">신용</span>
+        </div>
+        <div class="bb" style="margin-top:0">웰링턴($1.3T AUM) 사모 크레딧이 AI DC 건설 대출을 대체로 거절. 4~5년 전 스프레드 400bp+/LTV 60~70% → 현재 advance rate 일부 90%, 스프레드 ~200bp로 압축. <b>같은 리스크에 절반의 보상.</b> 테마가 아니라 '가격'을 거절. 핵심 집중 항목은 계약 종료 후 자산의 대체가치(터미널 밸류).</div>
+      </div>
+      <div class="card">
+        <div class="card-top" style="margin-bottom:14px">
+          <div>
+            <div class="card-name" style="font-size:1rem">경고음 ②</div>
+            <div class="ticker">집중도 리스크</div>
+          </div>
+          <span class="badge bear-b">채권 집중</span>
+        </div>
+        <div class="bb" style="margin-top:0">바클레이즈(7/23): 6대 테크가 美 IG 회사채 DTS의 <b>8.6%</b>(6대 은행 7.3%). 원금 기준 하이퍼스케일러 부채는 시장의 ~4%인데 리스크 기여는 8.6% — 만기 장기화 때문(BofA: 최근 12개월 발행의 ~43%가 10년 초과). 크레센트 J.Fekete: "가장 큰 리스크는 신용의 질이 아니라 집중도."</div>
+      </div>
+      <div class="card">
+        <div class="card-top" style="margin-bottom:14px">
+          <div>
+            <div class="card-name" style="font-size:1rem">경고음 ③</div>
+            <div class="ticker">듀레이션·수요 냉각</div>
+          </div>
+          <span class="badge bear-b">발행시장</span>
+        </div>
+        <div class="bb" style="margin-top:0">최우량 등급 하이퍼스케일러 장기물 일부가 BB 스프레드에 근접. 테크 우량채 스프레드 연초 76bp → 7/23 89bp. 아마존 $250억 발행 냉랭, 6월 스페이스X 채권 유통시장 조기 약세, 블랙록의 메타 엘패소 캠퍼스용 ~$123억 채권 수요 부진.</div>
+      </div>
+    </div>
+
+    <div class="cycle-box reveal d1" style="margin-top:24px">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        전달 경로 — 크레딧이 메모리 프리미엄을 흔드는 법
+      </h3>
+      <div class="cycle-bar">
+        <div class="cycle-seg past">신용시장 자금 여력<br><span style="font-size:.6rem;opacity:.85">DC 대출·채권</span></div>
+        <div class="cycle-seg now">고객 선급금 여력·협상력<br><span style="font-size:.6rem">선급금 = 부채 대체재</span></div>
+        <div class="cycle-seg future">메모리 프리미엄<br><span style="font-size:.6rem;opacity:.85">계약 갱신 가격</span></div>
+      </div>
+      <div class="cycle-label"><b>메모리 장기공급계약의 선급금이 연결고리다.</b> 빅테크 메모리 장기공급계약에는 계약금액 일부가 선급금(조 단위 현금)으로 선입금되는데, 이 현금은 GPU 구매·DC 건설·칩담보대출과 같은 자금 풀에서 나온다. 컴퓨트 인프라 금융에서 고객 선지급은 부채 조달의 <b>대체재</b>로 취급된다. 따라서 신용시장의 자금 여력이 고객의 선급금 여력·협상력을 좌우하고, 이것이 결국 메모리가 받는 프리미엄을 결정한다. 계약 기간 내 현금흐름은 확보돼 있으나, 문제는 계약이 끝난 뒤 갱신 가격이다 — <b>계약 기간은 방패가 아니라 유예다.</b></div>
+    </div>
+
+    <div class="thesis reveal d2" style="margin-top:24px;border-left-color:var(--bull)">
+      <div class="tg" style="color:var(--bull)">강세 촉매 — 그래도 수요는 유효하다</div>
+      <p style="font-size:1rem;font-weight:600">"메모리는 여전히 병목이고 AI 방향은 유효하다. 물량은 이미 팔렸다."
+      <span class="u">
+        · <b>오픈소스 추론 분산</b> — 추론 수요가 단일 서버에서 개별 단말·사용자로 분산될수록 전체 하드웨어 절대 소요량은 오히려 폭증. LPDDR5X의 CPU측 고용량·저전력 특성과 정합.<br>
+        · <b>프론티어 모델의 성능 도약</b> — Opus 5 등 가격 인상은 최소화하면서 성능이 비약한 모델이 컴퓨팅 자산 수요를 추가로 견인.<br>
+        · <b>미-한 메모리 파트너십</b> — SF AI 서밋에서 확인되듯 미국 프론티어 모델 기업들이 한국의 독보적 고성능 메모리 공급·제조 역량과 손잡는 흐름.<br>
+        · <b>한국 리레이팅 요인</b> — 상법 개정·거버넌스 개선을 통한 코리아 디스카운트 해소, 삼성·SK의 막대한 현금(firepower)을 활용한 전략적 M&A·신사업.
+      </span></p>
+    </div>
+
+    <div class="thesis reveal d3" style="margin-top:24px">
+      <div class="tg">Premium Verdict</div>
+      <p>"남은 논쟁은 프리미엄이다 — 단기는 차입 용이성, 장기는 모델 희소성."
+      <span class="u">LPDDR5X·SOCAMM2는 메모리 수요의 TAM을 넓히지만(본 리포트), 시장이 다시 열광하는 진짜 촉매는 "얼마나 높은 프리미엄을 지속적으로 인정받는가"이며 이는 멀티플 리레이팅의 결정적 조건이다. 프리미엄의 운명은 두 가지에 달려 있다 — 단기적으로는 고객이 얼마나 쉽게 돈을 빌리는가(분기 단위로 되돌아온다), 장기적으로는 모델의 희소성이 정책적으로 방어되는가(수년에 걸쳐 움직이고 잘 되돌아오지 않는다). 딥시크발 저가 모델 확산은 후자에 압력을 가하는 변수다. 결론: 상반기가 '쏠림 탑승'의 시기였다면, 하반기는 '투자 다변화'와 AI를 실제 비즈니스에 접목해 이익을 증명하는 기업 선별의 국면이다.
+      <br><br>▸ 관련 — <a href="../national-strategy/ns_china_ai_ecosystem.html" style="color:var(--accent)">중국 AI 생태계 — 딥시크 량원펑 미팅</a> · <a href="../national-strategy/ns_korea_impact_strategy.html" style="color:var(--accent)">K-전략 — 삼성·SK 슈퍼딜</a></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES NAV -->
+<div class="wrap">
+  <div class="series-nav">
+    <a href="hbm_pkg_theme_substrate.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="sn-label">← Prev</div>
+        <div class="sn-title">Theme D — 기판·소재</div>
+      </div>
+    </a>
+    <a href="hbm_pkg_investment_map.html">
+      <div>
+        <div class="sn-label">Next →</div>
+        <div class="sn-title">HBM/패키징 투자 지도</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-flex">
+    <div>
+      <div class="foot-brand">HBM·패키징 시리즈 — Theme E: LPDDR5X·SOCAMM2 서버 메모리의 부상</div>
+      <div class="src-list">
+        DATA · Micron × Meta 공동 백서 "When memory changes the equation"<br>
+        Meta DCPerf (오픈소스 벤치마크) · Micron 로드맵/IR · Tensor Rebatching·MediaWiki·SparkBench 결과<br>
+        KK Kontemporaries "빛을 잃은 AI 투자 열풍" (2026.07.26, 05장 카운터포인트)<br>
+        Bloomberg · Barclays · BofA · Wellington Management · Crescent Capital (채권시장 수치, 2차 인용)<br>
+        SF AI 서밋 (2026.07) · 삼성·SK 장기공급계약<br>
+        작성 기준일 · 2026.07.26<br>
+        ▸ 원문: micron.com/about/blog/memory/dram/when-memory-changes-the-equation
+      </div>
+    </div>
+    <div class="disc-foot">
+      본 문서는 산업·종목 이해를 돕기 위한 리서치 자료이며, 특정 종목의 매수·매도를 권유하는 투자자문이 아닙니다. 05장의 채권시장 관련 수치는 외부 블로그(KK Kontemporaries)를 통한 2차 인용으로, 원출처(Bloomberg·Barclays·BofA 등) 대비 오차가 있을 수 있습니다. 모든 수치는 공시·언론·백서를 종합한 추정치로 실제와 다를 수 있고, 작성 시점 이후 변동될 수 있습니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // bar heights
+  window.addEventListener('load',()=>{
+    document.querySelectorAll('.bar').forEach(b=>{
+      requestAnimationFrame(()=>{ b.style.height = b.dataset.h; });
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // active nav highlight
+  const secs=[...document.querySelectorAll('section.blk')];
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      navA.forEach(a=>a.style.color='');
+      const id=e.target.id; const cur=navA.find(a=>a.getAttribute('href')==='#'+id);
+      if(cur) cur.style.color='var(--ink)';
+    }});
+  },{threshold:.3});
+  secs.forEach(s=>spy.observe(s));
+
+  // mobile nav toggle
+  const navToggle=document.getElementById('navToggle');
+  const navLinks=document.querySelector('.nav-links');
+  navToggle.addEventListener('click',()=>{ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{ navLinks.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
