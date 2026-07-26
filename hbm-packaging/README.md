@@ -31,6 +31,7 @@
 | B | `hbm_pkg_theme_hybrid_bonding.html` | 2026-06-22 | 2026-06-22 | 발행 완료 |
 | C | `hbm_pkg_theme_memory_cycle.html` | 2026-06-22 | 2026-06-22 | 발행 완료 |
 | D | `hbm_pkg_theme_substrate.html` | 2026-06-22 | 2026-06-22 | 발행 완료 |
+| E | `hbm_pkg_theme_lpddr5x_socamm.html` | 2026-07-26 | 2026-07-26 | 발행 완료 |
 
 ---
 
@@ -43,3 +44,4 @@
 | 2026-06-22 | Opus 리뷰 반영 — CRITICAL 2건, HIGH 4건, MEDIUM 4건 수정 (CoWoS CAPA 통일, 시장규모 역전 설명, 밸류체인 정합성 보강 등) |
 | 2026-06-22 | Phase 1 리서치 MD 3개 추가 완료 — 한국 기업 심화(627줄), 글로벌 기업 심화(716줄), 테마 심화(540줄). overview MD와 수치 정합성 검증 완료. 삼성전기 유리기판 양산 시점 2026→2027 조정 반영 |
 | 2026-06-22 | **Phase 2 HTML 11편 전체 발행 완료** — Part 1-2 overview, Part 3 투자지도, Part 4-1~4-5 기업 분석 7편, Theme A~D 심화 테마 4편. 다크 테마 디자인 시스템, 파트별 고유 악센트 컬러 11색, 시리즈 nav 순환 체인, index.html DATA 배열 등록 완료 |
+| 2026-07-26 | **Theme E 추가 발행** — `hbm_pkg_theme_lpddr5x_socamm.html`(마이크론×메타 DCPerf 백서·NVIDIA Vera Rubin SOCAMM2 3사 전쟁·심텍 밸류체인·KK 블로그 프리미엄 카운터포인트, 6개 섹션). index.html/sitemap/llms-full 등록 완료 |

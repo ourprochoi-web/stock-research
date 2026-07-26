@@ -42,6 +42,7 @@
 | B | `hbm_pkg_theme_hybrid_bonding.html` | 하이브리드 본딩: HBM의 다음 관문 | 2028 HBM 공정의 36%, 범프리스 전환 | Bond Cyan `#38E6D4` |
 | C | `hbm_pkg_theme_memory_cycle.html` | 메모리 사이클 판정: CXMT 위협과 가격 피크 | 공급과잉 vs 슈퍼사이클, 중국 진입 | Cycle Amber `#F59E0B` |
 | D | `hbm_pkg_theme_substrate.html` | 기판/소재: ABF·글라스코어·CCL | Ajinomoto 독점, 글라스 전환 2026~2030 | Substrate Teal `#2EC4B6` |
+| E | `hbm_pkg_theme_lpddr5x_socamm.html` | LPDDR5X·SOCAMM2 서버 메모리의 부상 | 마이크론×메타 DCPerf 백서·NVIDIA Vera Rubin 3사 전쟁·심텍 밸류체인·프리미엄 카운터포인트 | Cycle Amber `#F59E0B` |
 
 ---
 
@@ -106,6 +107,7 @@ Part 4-1 (sk_hynix) → 4-2 (hanmi_semi) → 4-3 (hpsp_lino)
   → 4-4 (samsung) → 4-5 (global)
   ↓
 Theme A (cowos) → B (hybrid_bonding) → C (memory_cycle) → D (substrate)
+  → E (lpddr5x_socamm)
   ↓
   → Part 1-2로 순환
 ```
@@ -154,6 +156,7 @@ Theme A (cowos) → B (hybrid_bonding) → C (memory_cycle) → D (substrate)
 | Theme B 하이브리드 본딩 | Bond Cyan | `#38E6D4` |
 | Theme C 메모리 사이클 | Cycle Amber | `#F59E0B` |
 | Theme D 기판 | Substrate Teal | `#2EC4B6` |
+| Theme E LPDDR5X·SOCAMM2 | Cycle Amber | `#F59E0B` |
 
 ---
 
@@ -183,3 +186,4 @@ Theme A (cowos) → B (hybrid_bonding) → C (memory_cycle) → D (substrate)
 | 날짜 | 작업 |
 |------|------|
 | 2026-06-22 | 로드맵 문서 생성, Part 1-2 리서치 MD 착수 |
+| 2026-07-26 | Theme E(`hbm_pkg_theme_lpddr5x_socamm.html`) 추가 — LPDDR5X·SOCAMM2 서버 메모리, NVIDIA Vera Rubin 3사 전쟁, 심텍 국내 밸류체인, KK 블로그 프리미엄 카운터포인트 |
