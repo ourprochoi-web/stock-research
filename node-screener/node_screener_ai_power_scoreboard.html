@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<meta name="description" content="AI 전력 밸류체인 62개 기능·76개 기업 5축 스코어링 병목 분석">
+<meta name="keywords" content="AI전력,스코어보드,병목,밸류체인,변압기,가스터빈,송배전,데이터센터,SMR">
+<meta property="og:title" content="AI 전력 밸류체인 병목 스코어보드">
+<meta property="og:description" content="AI 전력 밸류체인 62개 기능·76개 기업 5축 스코어링 병목 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/node-screener/node_screener_ai_power_scoreboard.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI 전력 밸류체인 병목 스코어보드">
+<meta name="twitter:description" content="AI 전력 밸류체인 62개 기능·76개 기업 5축 스코어링 병목 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/node-screener/node_screener_ai_power_scoreboard.html">
+<title>AI 전력 밸류체인 병목 스코어보드 — ourprochoi Research</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#080B14;--bg-2:#0C1120;--surface:#121A2E;--surface-2:#16203A;
+  --line:#23304D;--ink:#EAEFFA;--ink-2:#9DA9C2;--ink-3:#5E6B86;
+  --accent:#D4A843;--accent-2:#FFB13E;--glow:#38E6D4;
+  --bull:#48D597;--bear:#FF6B6B;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+  --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);background:var(--surface)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px}
+
+/* HERO */
+.hero{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+.glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+.glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+.spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+.spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+@keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+.hero-in{position:relative;z-index:2;padding:120px 0 80px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(212,168,67,.06);margin-bottom:28px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.hstat{background:var(--bg-2);padding:26px 22px}
+.hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em}
+.hstat .num .u{color:var(--accent);font-size:.62em}
+.hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2)}
+.scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+.scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+.scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+@keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* SECTIONS */
+section.blk{padding:108px 0;scroll-margin-top:60px}
+.sec-head{margin-bottom:52px;max-width:60ch}
+.sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+.sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+.sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+.divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+/* PANEL / TABLE */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+.val-table{width:100%;border-collapse:collapse}
+.val-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:nowrap}
+.val-table td{padding:11px 14px;font-size:.84rem;border-bottom:1px solid rgba(35,48,77,.6);vertical-align:middle}
+.val-table tr:last-child td{border-bottom:none}
+.val-table tr:hover td{background:rgba(212,168,67,.04)}
+.val-table .fn-name{font-weight:750;color:var(--ink);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.val-table .stage-tag{font-family:var(--mono);font-size:.66rem;color:var(--ink-3);max-width:160px}
+.val-table .rk{text-align:center;font-family:var(--mono);font-weight:700;color:var(--ink-3)}
+.val-table .tk{font-family:var(--mono);font-size:.74rem;color:var(--ink-3)}
+.val-table .contrib{font-size:.78rem;color:var(--ink-2);max-width:260px}
+.total-val{font-family:var(--mono);font-weight:800;font-size:.92rem;color:var(--ink)}
+
+/* AXIS MINI-BAR */
+.axis-td{min-width:68px}
+.axis-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .8s cubic-bezier(.2,.8,.2,1);margin-bottom:3px}
+.axis-bar.penalty{background:var(--bear)}
+.axis-val{font-family:var(--mono);font-size:.74rem;font-weight:600}
+
+/* GT BADGE */
+.gt-badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.06em;color:var(--accent);background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);border-radius:4px;padding:2px 5px;text-transform:uppercase}
+
+/* RARR */
+.rarr-hi{color:var(--bear);font-weight:700}
+.rarr-md{color:var(--accent);font-weight:700}
+.rarr-lo{color:var(--ink-3)}
+
+/* STAGE CARDS */
+.stage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:8px}
+.stage-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+.stage-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent)}
+.stage-num{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.stage-title{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.stage-avg{font-family:var(--mono);font-size:.82rem;color:var(--ink-2);margin-bottom:14px}
+.stage-fns{display:flex;flex-wrap:wrap;gap:6px}
+.stage-fn{font-family:var(--mono);font-size:.68rem;padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--ink-2);background:var(--bg-2)}
+.stage-fn.hi{color:var(--accent);border-color:rgba(212,168,67,.3);background:rgba(212,168,67,.06)}
+
+/* CALIBRATION */
+.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cal-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.cal-card .ck{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+.cal-card .cv{font-family:var(--mono);font-weight:800;font-size:1.8rem;margin-top:8px;letter-spacing:-.02em}
+.cal-card .cv.pass{color:var(--bull)}
+.cal-card .cv.fail{color:var(--bear)}
+.pass-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:5px}
+.pass-tag.ok{color:var(--bull);background:rgba(72,213,151,.12);border:1px solid rgba(72,213,151,.3)}
+.pass-tag.fail{color:var(--bear);background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+.disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+.foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem;margin-bottom:12px}
+.foot-ts{margin-top:16px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3)}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+  .hero-stats,.cal-grid{grid-template-columns:1fr}
+  .stage-grid{grid-template-columns:1fr}
+  .val-table th,.val-table td{padding:8px 8px;font-size:.76rem}
+  .axis-td{min-width:55px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI 전력 밸류체인 병목 스코어보드",
+  "description": "AI 전력 밸류체인 62개 기능·76개 기업 5축 스코어링 병목 분석",
+  "datePublished": "2026-07-27",
+  "dateModified": "2026-07-27",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/node-screener/node_screener_ai_power_scoreboard.html"
+  }
+}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:Pretendard,sans-serif;font-size:13px;font-weight:600;transition:all .2s"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav><div class="wrap nav-in">
+<div class="brand"><span class="dot"></span>노드 스크리너 &middot; AI 전력</div>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="#fn-rank">01 / 기능</a>
+<a href="#co-rank">02 / 기업</a>
+<a href="#cal">03 / 검증</a>
+<a href="#stages">04 / 단계</a>
+</div></div></nav>
+
+<header class="hero"><div class="hero-bg">
+<div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div>
+<div class="spark"></div><div class="spark"></div><div class="spark"></div>
+</div><div class="wrap hero-in">
+<span class="eyebrow">노드 스크리너 &middot; AI 전력 &middot; 2026.07</span>
+<h1 class="hero-title">병목<br><span class="hl">스코어보드</span></h1>
+<p class="hero-sub">AI 전력 밸류체인 62개 기능 노드를 5축 스코어링으로 분석한 불가결 병목 랭킹</p>
+<div class="hero-stats">
+<div class="hstat"><div class="num">62<span class="u">개</span></div><div class="lab">Function 노드</div></div>
+<div class="hstat"><div class="num">100<span class="u">%</span></div><div class="lab">Recall@20%</div></div>
+<div class="hstat"><div class="num">100<span class="u">%</span></div><div class="lab">최고 RaRR</div></div>
+</div>
+<div class="scroll-cue"><div class="bar"></div>SCROLL</div>
+</div></header>
+
+<section id="fn-rank" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">01</span><span class="ln"></span>FUNCTION RANKING</div>
+<h2 class="sec-title">기능별 병목 점수</h2>
+<p class="sec-lead">S1 구조 &middot; S2 대체 장벽 &middot; S3 경제성 &middot; S4 수요 내구성 &middot; S5 감점을 합산한 종합 스코어. GT 노드는 <span class="gt-badge">GT</span> 배지 표시.</p>
+</div>
+<div class="panel reveal d1" style="overflow-x:auto">
+<table class="val-table score-table"><thead><tr>
+<th style="text-align:center">#</th><th>Function</th><th>Stage</th>
+<th>S1 구조</th><th>S2 장벽</th><th>S3 경제</th><th>S4 수요</th>
+<th>S5 감점</th><th>Total</th><th>RaRR</th>
+</tr></thead><tbody>
+<tr><td class="rk">1</td><td><div class="fn-name">스팀터빈·발전기</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="89"></div><span class="axis-val">17.9</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="69"></div><span class="axis-val">13.9</span></td><td class="axis-td"><div class="axis-bar" data-w="87"></div><span class="axis-val">13.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">74.9</td><td><span class="rarr-lo">11%</span></td></tr>
+<tr><td class="rk">2</td><td><div class="fn-name">초고압 변압기</div></td><td class="stage-tag">송배전·변압기</td><td class="axis-td"><div class="axis-bar" data-w="92"></div><span class="axis-val">18.3</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.0</span></td><td class="axis-td"><div class="axis-bar" data-w="79"></div><span class="axis-val">11.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">67.7</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">3</td><td><div class="fn-name">SMR 기자재 제조</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">25.1</span></td><td class="axis-td"><div class="axis-bar" data-w="56"></div><span class="axis-val">11.1</span></td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">12.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">66.9</td><td><span class="rarr-lo">11%</span></td></tr>
+<tr><td class="rk">4</td><td><div class="fn-name">계통연계 <span class="gt-badge">GT</span></div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.5</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.0</span></td><td class="axis-td"><div class="axis-bar" data-w="66"></div><span class="axis-val">9.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">66.0</td><td><span class="rarr-lo">6%</span></td></tr>
+<tr><td class="rk">4</td><td><div class="fn-name">한국 전력정책</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.5</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.0</span></td><td class="axis-td"><div class="axis-bar" data-w="66"></div><span class="axis-val">9.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">66.0</td><td><span class="rarr-lo">6%</span></td></tr>
+<tr><td class="rk">6</td><td><div class="fn-name">HVDC 송전</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">17.1</span></td><td class="axis-td"><div class="axis-bar" data-w="83"></div><span class="axis-val">24.9</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="90"></div><span class="axis-val">13.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">65.3</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">7</td><td><div class="fn-name">변압기 제조</div></td><td class="stage-tag">송배전·변압기</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.2</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.1</span></td><td class="axis-td"><div class="axis-bar" data-w="63"></div><span class="axis-val">9.4</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">65.2</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">8</td><td><div class="fn-name">가스터빈 장기서비스(LTSA)</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="89"></div><span class="axis-val">17.8</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="32"></div><span class="axis-val">6.4</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">12.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">64.5</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">냉각 + 전력</div></td><td class="stage-tag">송배전·변압기</td><td class="axis-td"><div class="axis-bar" data-w="92"></div><span class="axis-val">18.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="31"></div><span class="axis-val">6.3</span></td><td class="axis-td"><div class="axis-bar" data-w="82"></div><span class="axis-val">12.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">64.5</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">10</td><td><div class="fn-name">초고압 변압기 <span class="gt-badge">GT</span></div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="62"></div><span class="axis-val">18.7</span></td><td class="axis-td"><div class="axis-bar" data-w="48"></div><span class="axis-val">9.6</span></td><td class="axis-td"><div class="axis-bar" data-w="94"></div><span class="axis-val">14.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">60.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">10</td><td><div class="fn-name">에너지 장비 니어쇼어링</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="62"></div><span class="axis-val">18.7</span></td><td class="axis-td"><div class="axis-bar" data-w="48"></div><span class="axis-val">9.6</span></td><td class="axis-td"><div class="axis-bar" data-w="94"></div><span class="axis-val">14.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">60.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">12</td><td><div class="fn-name">가스터빈 발전 <span class="gt-badge">GT</span></div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="86"></div><span class="axis-val">17.3</span></td><td class="axis-td"><div class="axis-bar" data-w="43"></div><span class="axis-val">13.0</span></td><td class="axis-td"><div class="axis-bar" data-w="56"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar" data-w="98"></div><span class="axis-val">14.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">56.3</td><td><span class="rarr-lo">16%</span></td></tr>
+<tr><td class="rk">13</td><td><div class="fn-name">DC 전력 인프라 통합</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="92"></div><span class="axis-val">18.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="25"></div><span class="axis-val">5.0</span></td><td class="axis-td"><div class="axis-bar" data-w="68"></div><span class="axis-val">10.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">56.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">14</td><td><div class="fn-name">가스터빈 제조 (OEM)</div></td><td class="stage-tag">발전 장비</td><td class="axis-td"><div class="axis-bar" data-w="89"></div><span class="axis-val">17.9</span></td><td class="axis-td"><div class="axis-bar" data-w="43"></div><span class="axis-val">13.0</span></td><td class="axis-td"><div class="axis-bar" data-w="51"></div><span class="axis-val">10.3</span></td><td class="axis-td"><div class="axis-bar" data-w="95"></div><span class="axis-val">14.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">55.4</td><td><span class="rarr-lo">19%</span></td></tr>
+<tr><td class="rk">15</td><td><div class="fn-name">Behind-the-Meter 발전</div></td><td class="stage-tag">대안 발전</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.5</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="26"></div><span class="axis-val">5.2</span></td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">8.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">55.1</td><td><span class="rarr-md">20%</span></td></tr>
+<tr><td class="rk">16</td><td><div class="fn-name">크로스 밸류에이션 분석</div></td><td class="stage-tag">투자 프레임워크</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="22"></div><span class="axis-val">6.7</span></td><td class="axis-td"><div class="axis-bar" data-w="70"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">15.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">53.9</td><td><span class="rarr-md">36%</span></td></tr>
+<tr><td class="rk">17</td><td><div class="fn-name">UPS·배전반</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="94"></div><span class="axis-val">18.8</span></td><td class="axis-td"><div class="axis-bar" data-w="41"></div><span class="axis-val">12.3</span></td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="74"></div><span class="axis-val">11.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">52.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">18</td><td><div class="fn-name">UPS·배전</div></td><td class="stage-tag">송배전·변압기</td><td class="axis-td"><div class="axis-bar" data-w="65"></div><span class="axis-val">13.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="26"></div><span class="axis-val">5.2</span></td><td class="axis-td"><div class="axis-bar" data-w="69"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">51.2</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">19</td><td><div class="fn-name">방향성 전기강판(GOES)</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="66"></div><span class="axis-val">13.2</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="45"></div><span class="axis-val">8.9</span></td><td class="axis-td"><div class="axis-bar" data-w="39"></div><span class="axis-val">5.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">50.4</td><td><span class="rarr-lo">5%</span></td></tr>
+<tr><td class="rk">20</td><td><div class="fn-name">원전 발전</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="89"></div><span class="axis-val">17.8</span></td><td class="axis-td"><div class="axis-bar" data-w="23"></div><span class="axis-val">7.0</span></td><td class="axis-td"><div class="axis-bar" data-w="54"></div><span class="axis-val">10.7</span></td><td class="axis-td"><div class="axis-bar" data-w="97"></div><span class="axis-val">14.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">50.0</td><td><span class="rarr-md">20%</span></td></tr>
+<tr><td class="rk">21</td><td><div class="fn-name">PPA 중개·구조화</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="75"></div><span class="axis-val">14.9</span></td><td class="axis-td"><div class="axis-bar" data-w="82"></div><span class="axis-val">24.5</span></td><td class="axis-td"><div class="axis-bar" data-w="19"></div><span class="axis-val">3.7</span></td><td class="axis-td"><div class="axis-bar" data-w="53"></div><span class="axis-val">8.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">48.7</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">22</td><td><div class="fn-name">핵연료 공급 (HALEU/TRISO)</div></td><td class="stage-tag">연료 공급</td><td class="axis-td"><div class="axis-bar" data-w="77"></div><span class="axis-val">15.5</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="18"></div><span class="axis-val">3.5</span></td><td class="axis-td"><div class="axis-bar" data-w="42"></div><span class="axis-val">6.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">48.3</td><td><span class="rarr-hi">57%</span></td></tr>
+<tr><td class="rk">23</td><td><div class="fn-name">소형모듈원전(SMR)</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">16.7</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">7.2</span></td><td class="axis-td"><div class="axis-bar" data-w="51"></div><span class="axis-val">10.1</span></td><td class="axis-td"><div class="axis-bar" data-w="89"></div><span class="axis-val">13.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">47.4</td><td><span class="rarr-lo">10%</span></td></tr>
+<tr><td class="rk">24</td><td><div class="fn-name">대형 원전 운영</div></td><td class="stage-tag">원자력 발전</td><td class="axis-td"><div class="axis-bar" data-w="73"></div><span class="axis-val">14.6</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">19.2</span></td><td class="axis-td"><div class="axis-bar" data-w="22"></div><span class="axis-val">4.4</span></td><td class="axis-td"><div class="axis-bar" data-w="55"></div><span class="axis-val">8.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">46.5</td><td><span class="rarr-lo">11%</span></td></tr>
+<tr><td class="rk">25</td><td><div class="fn-name">선진 원자로 (Gen IV)</div></td><td class="stage-tag">원자력 발전</td><td class="axis-td"><div class="axis-bar" data-w="71"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">25.1</span></td><td class="axis-td"><div class="axis-bar" data-w="12"></div><span class="axis-val">2.5</span></td><td class="axis-td"><div class="axis-bar" data-w="47"></div><span class="axis-val">7.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">46.2</td><td><span class="rarr-md">33%</span></td></tr>
+<tr><td class="rk">26</td><td><div class="fn-name">800V DC 아키텍처</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="89"></div><span class="axis-val">17.9</span></td><td class="axis-td"><div class="axis-bar" data-w="21"></div><span class="axis-val">6.4</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.0</span></td><td class="axis-td"><div class="axis-bar" data-w="77"></div><span class="axis-val">11.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">45.8</td><td><span class="rarr-lo">14%</span></td></tr>
+<tr><td class="rk">27</td><td><div class="fn-name">SMR 개발·제조</div></td><td class="stage-tag">원자력 발전</td><td class="axis-td"><div class="axis-bar" data-w="86"></div><span class="axis-val">17.3</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.0</span></td><td class="axis-td"><div class="axis-bar" data-w="73"></div><span class="axis-val">10.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">45.5</td><td><span class="rarr-lo">13%</span></td></tr>
+<tr><td class="rk">28</td><td><div class="fn-name">SOFC 연료전지</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="81"></div><span class="axis-val">16.1</span></td><td class="axis-td"><div class="axis-bar" data-w="62"></div><span class="axis-val">18.5</span></td><td class="axis-td"><div class="axis-bar" data-w="22"></div><span class="axis-val">4.4</span></td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">7.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">44.2</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">29</td><td><div class="fn-name">원전 설계·엔지니어링</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="68"></div><span class="axis-val">13.6</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">7.4</span></td><td class="axis-td"><div class="axis-bar" data-w="48"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">43.2</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">30</td><td><div class="fn-name">연료전지 자가발전</div></td><td class="stage-tag">대안 발전</td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">16.8</span></td><td class="axis-td"><div class="axis-bar" data-w="42"></div><span class="axis-val">12.5</span></td><td class="axis-td"><div class="axis-bar" data-w="25"></div><span class="axis-val">5.0</span></td><td class="axis-td"><div class="axis-bar" data-w="58"></div><span class="axis-val">8.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">40.5</td><td><span class="rarr-md">20%</span></td></tr>
+<tr><td class="rk">31</td><td><div class="fn-name">전력케이블</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="62"></div><span class="axis-val">12.3</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="38"></div><span class="axis-val">7.5</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">5.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">40.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">32</td><td><div class="fn-name">전선·케이블·송전 인프라</div></td><td class="stage-tag">송배전·변압기</td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.8</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="38"></div><span class="axis-val">7.5</span></td><td class="axis-td"><div class="axis-bar" data-w="32"></div><span class="axis-val">4.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">40.2</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">33</td><td><div class="fn-name">자가발전(BTM)</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="77"></div><span class="axis-val">15.4</span></td><td class="axis-td"><div class="axis-bar" data-w="22"></div><span class="axis-val">6.5</span></td><td class="axis-td"><div class="axis-bar" data-w="40"></div><span class="axis-val">8.0</span></td><td class="axis-td"><div class="axis-bar" data-w="71"></div><span class="axis-val">10.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">38.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">액체냉각(수냉·액침)</div></td><td class="stage-tag">Stage 04 냉각</td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">16.7</span></td><td class="axis-td"><div class="axis-bar" data-w="20"></div><span class="axis-val">6.1</span></td><td class="axis-td"><div class="axis-bar" data-w="29"></div><span class="axis-val">5.8</span></td><td class="axis-td"><div class="axis-bar" data-w="61"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">37.8</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">35</td><td><div class="fn-name">DC 개발</div></td><td class="stage-tag">EPC·개발</td><td class="axis-td"><div class="axis-bar" data-w="69"></div><span class="axis-val">13.8</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="9"></div><span class="axis-val">1.7</span></td><td class="axis-td"><div class="axis-bar" data-w="45"></div><span class="axis-val">6.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">37.3</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">36</td><td><div class="fn-name">장주기 에너지저장</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="65"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="8"></div><span class="axis-val">1.6</span></td><td class="axis-td"><div class="axis-bar" data-w="31"></div><span class="axis-val">4.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">37.1</td><td><span class="rarr-hi">100%</span></td></tr>
+<tr><td class="rk">37</td><td><div class="fn-name">철공기전지(Iron-Air)</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="65"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="8"></div><span class="axis-val">1.6</span></td><td class="axis-td"><div class="axis-bar" data-w="29"></div><span class="axis-val">4.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">36.9</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">38</td><td><div class="fn-name">에너지 거래 플랫폼</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="11"></div><span class="axis-val">2.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="26"></div><span class="axis-val">3.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">36.0</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">39</td><td><div class="fn-name">그리드 스케일 BESS</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="69"></div><span class="axis-val">13.8</span></td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">18.0</span></td><td class="axis-td"><div class="axis-bar" data-w="9"></div><span class="axis-val">1.8</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">34.7</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">40</td><td><div class="fn-name">전력반도체(SiC/GaN)</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="73"></div><span class="axis-val">14.6</span></td><td class="axis-td"><div class="axis-bar" data-w="61"></div><span class="axis-val">18.4</span></td><td class="axis-td"><div class="axis-bar" data-w="10"></div><span class="axis-val">2.0</span></td><td class="axis-td"><div class="axis-bar" data-w="44"></div><span class="axis-val">6.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">34.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">41</td><td><div class="fn-name">온사이트 가스 발전</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="48"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="15"></div><span class="axis-val">3.0</span></td><td class="axis-td"><div class="axis-bar" data-w="35"></div><span class="axis-val">5.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">33.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">42</td><td><div class="fn-name">유틸리티 운영</div></td><td class="stage-tag">전력 운영</td><td class="axis-td"><div class="axis-bar" data-w="11"></div><span class="axis-val">2.1</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="34"></div><span class="axis-val">5.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">32.7</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">43</td><td><div class="fn-name">원전 PPA</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="67"></div><span class="axis-val">13.4</span></td><td class="axis-td"><div class="axis-bar" data-w="23"></div><span class="axis-val">6.9</span></td><td class="axis-td"><div class="axis-bar" data-w="17"></div><span class="axis-val">3.4</span></td><td class="axis-td"><div class="axis-bar" data-w="56"></div><span class="axis-val">8.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">32.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">44</td><td><div class="fn-name">왕복엔진 제조</div></td><td class="stage-tag">발전 장비</td><td class="axis-td"><div class="axis-bar" data-w="53"></div><span class="axis-val">10.6</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="9"></div><span class="axis-val">1.9</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">31.6</td><td><span class="rarr-hi">50%</span></td></tr>
+<tr><td class="rk">45</td><td><div class="fn-name">EPC·개발</div></td><td class="stage-tag">EPC·개발</td><td class="axis-td"><div class="axis-bar" data-w="53"></div><span class="axis-val">10.6</span></td><td class="axis-td"><div class="axis-bar" data-w="80"></div><span class="axis-val">24.0</span></td><td class="axis-td"><div class="axis-bar" data-w="14"></div><span class="axis-val">2.8</span></td><td class="axis-td"><div class="axis-bar" data-w="40"></div><span class="axis-val">6.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">28.5</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">46</td><td><div class="fn-name">하이퍼스케일러 (최종 수요)</div></td><td class="stage-tag">최종 수요</td><td class="axis-td"><div class="axis-bar" data-w="31"></div><span class="axis-val">6.1</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">7.2</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="81"></div><span class="axis-val">12.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">25.4</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">47</td><td><div class="fn-name">하이퍼스케일러 (최종 수요)</div></td><td class="stage-tag">최종 수요</td><td class="axis-td"><div class="axis-bar" data-w="31"></div><span class="axis-val">6.1</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">7.2</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.4</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">24.7</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">48</td><td><div class="fn-name">AI Labs (최종 수요)</div></td><td class="stage-tag">최종 수요</td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">12.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">19.1</span></td><td class="axis-td"><div class="axis-bar" data-w="3"></div><span class="axis-val">0.7</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">7.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">24.3</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">49</td><td><div class="fn-name">냉각 유체</div></td><td class="stage-tag">Stage 04 냉각</td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="4"></div><span class="axis-val">0.8</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">24.1</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">49</td><td><div class="fn-name">HVDC 장거리 송전 프로젝트</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="4"></div><span class="axis-val">0.8</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">24.1</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">재생에너지(태양광·풍력)</div></td><td class="stage-tag">Stage 01 발전</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">차단기</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">HVDC 버스웨이·800V DC</div></td><td class="stage-tag">Stage 03 DC 전력 인프라</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">공냉 냉각</div></td><td class="stage-tag">Stage 04 냉각</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">배전 변압기</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">DC 모라토리엄·NIMBY</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">희토류 공급망</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">용량시장</div></td><td class="stage-tag">Stage 02 송배전</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">가스 공급</div></td><td class="stage-tag">가스 공급</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">우라늄 채굴·공급</div></td><td class="stage-tag">연료 공급</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">SMR 정책·규제</div></td><td class="stage-tag">정책·규제</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">51</td><td><div class="fn-name">SMR 건설 (EPC)</div></td><td class="stage-tag">EPC·건설</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="24"></div><span class="axis-val">3.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">3.6</td><td><span class="rarr-lo">—</span></td></tr>
+</tbody></table></div>
+<p style="margin-top:16px;font-size:.82rem;color:var(--ink-3)">총 62개 function &middot; 76개 company &middot; 87개 edge</p>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="co-rank" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">02</span><span class="ln"></span>COMPANY RANKING</div>
+<h2 class="sec-title">기업별 스코어</h2>
+<p class="sec-lead">기업이 수행하는 기능(function)의 점수를 점유율(share) 가중 평균하여 배분.</p>
+</div>
+<div class="panel reveal d1" style="overflow-x:auto">
+<table class="val-table"><thead><tr>
+<th style="text-align:center">#</th><th>Company</th><th>Ticker</th>
+<th>Score</th><th>기여 Functions (Top 3)</th>
+</tr></thead><tbody>
+<tr><td class="rk">1</td><td style="font-weight:750">Hitachi</td><td class="tk">—</td><td class="total-val">66.9</td><td class="contrib">SMR 기자재 제조</td></tr>
+<tr><td class="rk">2</td><td style="font-weight:750">한전(KEPCO)</td><td class="tk">015760</td><td class="total-val">61.9</td><td class="contrib">계통연계, 크로스 밸류에이션 분석, 한국 전력정책</td></tr>
+<tr><td class="rk">3</td><td style="font-weight:750">HD현대일렉트릭</td><td class="tk">267260</td><td class="total-val">60.6</td><td class="contrib">초고압 변압기, 크로스 밸류에이션 분석, 에너지 장비 니어쇼어링</td></tr>
+<tr><td class="rk">4</td><td style="font-weight:750">효성중공업</td><td class="tk">—</td><td class="total-val">60.4</td><td class="contrib">에너지 장비 니어쇼어링, 초고압 변압기</td></tr>
+<tr><td class="rk">5</td><td style="font-weight:750">GE Vernova</td><td class="tk">GEV</td><td class="total-val">59.1</td><td class="contrib">가스터빈 발전, 가스터빈 장기서비스(LTSA), HVDC 송전</td></tr>
+<tr><td class="rk">6</td><td style="font-weight:750">두산에너빌리티</td><td class="tk">034020</td><td class="total-val">57.8</td><td class="contrib">가스터빈 발전, 스팀터빈·발전기, 원전 발전</td></tr>
+<tr><td class="rk">7</td><td style="font-weight:750">LS일렉트릭</td><td class="tk">010120</td><td class="total-val">56.4</td><td class="contrib">초고압 변압기, UPS·배전반, 800V DC 아키텍처</td></tr>
+<tr><td class="rk">8</td><td style="font-weight:750">Siemens Energy</td><td class="tk">—</td><td class="total-val">55.8</td><td class="contrib">가스터빈 발전, 가스터빈 제조 (OEM)</td></tr>
+<tr><td class="rk">9</td><td style="font-weight:750">Mitsubishi Power</td><td class="tk">—</td><td class="total-val">55.4</td><td class="contrib">가스터빈 제조 (OEM)</td></tr>
+<tr><td class="rk">10</td><td style="font-weight:750">대한전선</td><td class="tk">001440</td><td class="total-val">53.2</td><td class="contrib">전력케이블, HVDC 송전, 크로스 밸류에이션 분석</td></tr>
+<tr><td class="rk">11</td><td style="font-weight:750">Vertiv</td><td class="tk">VRT</td><td class="total-val">50.9</td><td class="contrib">UPS·배전반, 800V DC 아키텍처, 액체냉각(수냉·액침)</td></tr>
+<tr><td class="rk">12</td><td style="font-weight:750">POSCO</td><td class="tk">—</td><td class="total-val">50.4</td><td class="contrib">방향성 전기강판(GOES)</td></tr>
+<tr><td class="rk">13</td><td style="font-weight:750">EDF</td><td class="tk">—</td><td class="total-val">50.0</td><td class="contrib">원전 발전</td></tr>
+<tr><td class="rk">14</td><td style="font-weight:750">Eaton</td><td class="tk">ETN</td><td class="total-val">49.3</td><td class="contrib">UPS·배전반, 액체냉각(수냉·액침), 800V DC 아키텍처</td></tr>
+<tr><td class="rk">15</td><td style="font-weight:750">한전기술</td><td class="tk">052690</td><td class="total-val">49.0</td><td class="contrib">원전 설계·엔지니어링, 크로스 밸류에이션 분석, 원전 발전</td></tr>
+<tr><td class="rk">16</td><td style="font-weight:750">Schneider Electric</td><td class="tk">SU.PA</td><td class="total-val">48.9</td><td class="contrib">UPS·배전반, 액체냉각(수냉·액침), 크로스 밸류에이션 분석</td></tr>
+<tr><td class="rk">17</td><td style="font-weight:750">LevelTen Energy</td><td class="tk">—</td><td class="total-val">48.7</td><td class="contrib">PPA 중개·구조화</td></tr>
+<tr><td class="rk">18</td><td style="font-weight:750">Centrus</td><td class="tk">—</td><td class="total-val">48.3</td><td class="contrib">핵연료 공급 (HALEU/TRISO)</td></tr>
+<tr><td class="rk">19</td><td style="font-weight:750">Vistra</td><td class="tk">VST</td><td class="total-val">47.8</td><td class="contrib">원전 발전, 원전 PPA, 가스터빈 발전</td></tr>
+<tr><td class="rk">20</td><td style="font-weight:750">Holtec International</td><td class="tk">—</td><td class="total-val">47.8</td><td class="contrib">원전 발전, SMR 개발·제조</td></tr>
+<tr><td class="rk">21</td><td style="font-weight:750">한국수력원자력(KHNP)</td><td class="tk">—</td><td class="total-val">47.6</td><td class="contrib">원전 발전, 소형모듈원전(SMR), SMR 개발·제조</td></tr>
+<tr><td class="rk">22</td><td style="font-weight:750">NuScale Power</td><td class="tk">—</td><td class="total-val">47.4</td><td class="contrib">소형모듈원전(SMR)</td></tr>
+<tr><td class="rk">23</td><td style="font-weight:750">X-energy</td><td class="tk">XE</td><td class="total-val">47.0</td><td class="contrib">소형모듈원전(SMR), SMR 개발·제조, 핵연료 공급 (HALEU/TRISO)</td></tr>
+<tr><td class="rk">24</td><td style="font-weight:750">Talen Energy</td><td class="tk">—</td><td class="total-val">46.5</td><td class="contrib">대형 원전 운영</td></tr>
+<tr><td class="rk">25</td><td style="font-weight:750">Constellation Energy</td><td class="tk">—</td><td class="total-val">46.5</td><td class="contrib">대형 원전 운영</td></tr>
+<tr><td class="rk">26</td><td style="font-weight:750">Rolls-Royce SMR</td><td class="tk">—</td><td class="total-val">46.4</td><td class="contrib">소형모듈원전(SMR), SMR 개발·제조</td></tr>
+<tr><td class="rk">27</td><td style="font-weight:750">TerraPower</td><td class="tk">—</td><td class="total-val">46.4</td><td class="contrib">소형모듈원전(SMR), SMR 개발·제조, 선진 원자로 (Gen IV)</td></tr>
+<tr><td class="rk">28</td><td style="font-weight:750">Kairos Power</td><td class="tk">—</td><td class="total-val">46.4</td><td class="contrib">소형모듈원전(SMR), SMR 개발·제조, 선진 원자로 (Gen IV)</td></tr>
+<tr><td class="rk">29</td><td style="font-weight:750">Constellation Energy</td><td class="tk">CEG</td><td class="total-val">46.2</td><td class="contrib">원전 발전, 원전 PPA, 크로스 밸류에이션 분석</td></tr>
+<tr><td class="rk">30</td><td style="font-weight:750">NVIDIA</td><td class="tk">—</td><td class="total-val">45.8</td><td class="contrib">800V DC 아키텍처</td></tr>
+<tr><td class="rk">31</td><td style="font-weight:750">Delta Electronics</td><td class="tk">—</td><td class="total-val">45.8</td><td class="contrib">800V DC 아키텍처</td></tr>
+<tr><td class="rk">32</td><td style="font-weight:750">Bloom Energy</td><td class="tk">BE</td><td class="total-val">45.6</td><td class="contrib">SOFC 연료전지, 자가발전(BTM), 800V DC 아키텍처</td></tr>
+<tr><td class="rk">33</td><td style="font-weight:750">NuScale Power</td><td class="tk">—</td><td class="total-val">45.5</td><td class="contrib">SMR 개발·제조</td></tr>
+<tr><td class="rk">34</td><td style="font-weight:750">Oklo</td><td class="tk">—</td><td class="total-val">45.5</td><td class="contrib">SMR 개발·제조</td></tr>
+<tr><td class="rk">35</td><td style="font-weight:750">GE Hitachi</td><td class="tk">—</td><td class="total-val">45.5</td><td class="contrib">SMR 개발·제조</td></tr>
+<tr><td class="rk">36</td><td style="font-weight:750">CNNC</td><td class="tk">—</td><td class="total-val">45.5</td><td class="contrib">SMR 개발·제조</td></tr>
+<tr><td class="rk">37</td><td style="font-weight:750">KAERI</td><td class="tk">—</td><td class="total-val">45.5</td><td class="contrib">SMR 개발·제조</td></tr>
+<tr><td class="rk">38</td><td style="font-weight:750">두산퓨얼셀</td><td class="tk">—</td><td class="total-val">44.2</td><td class="contrib">SOFC 연료전지</td></tr>
+<tr><td class="rk">39</td><td style="font-weight:750">FuelCell Energy</td><td class="tk">—</td><td class="total-val">40.5</td><td class="contrib">연료전지 자가발전</td></tr>
+<tr><td class="rk">40</td><td style="font-weight:750">LS에코에너지</td><td class="tk">229640</td><td class="total-val">40.2</td><td class="contrib">전선·케이블·송전 인프라</td></tr>
+<tr><td class="rk">41</td><td style="font-weight:750">SK E&amp;S</td><td class="tk">—</td><td class="total-val">38.0</td><td class="contrib">자가발전(BTM)</td></tr>
+<tr><td class="rk">42</td><td style="font-weight:750">Trane Technologies</td><td class="tk">—</td><td class="total-val">37.8</td><td class="contrib">액체냉각(수냉·액침)</td></tr>
+<tr><td class="rk">43</td><td style="font-weight:750">Ecolab</td><td class="tk">—</td><td class="total-val">37.8</td><td class="contrib">액체냉각(수냉·액침)</td></tr>
+<tr><td class="rk">44</td><td style="font-weight:750">Crusoe Energy</td><td class="tk">—</td><td class="total-val">37.4</td><td class="contrib">철공기전지(Iron-Air), 자가발전(BTM)</td></tr>
+<tr><td class="rk">45</td><td style="font-weight:750">Nscale</td><td class="tk">—</td><td class="total-val">37.3</td><td class="contrib">DC 개발</td></tr>
+<tr><td class="rk">46</td><td style="font-weight:750">Form Energy</td><td class="tk">—</td><td class="total-val">37.0</td><td class="contrib">철공기전지(Iron-Air), 장주기 에너지저장</td></tr>
+<tr><td class="rk">47</td><td style="font-weight:750">Williams Companies</td><td class="tk">WMB</td><td class="total-val">35.5</td><td class="contrib">온사이트 가스 발전, 자가발전(BTM)</td></tr>
+<tr><td class="rk">48</td><td style="font-weight:750">Tesla Energy</td><td class="tk">—</td><td class="total-val">35.3</td><td class="contrib">그리드 스케일 BESS, 에너지 거래 플랫폼</td></tr>
+<tr><td class="rk">49</td><td style="font-weight:750">CATL</td><td class="tk">—</td><td class="total-val">34.7</td><td class="contrib">그리드 스케일 BESS</td></tr>
+<tr><td class="rk">50</td><td style="font-weight:750">BYD</td><td class="tk">—</td><td class="total-val">34.7</td><td class="contrib">그리드 스케일 BESS</td></tr>
+<tr><td class="rk">51</td><td style="font-weight:750">LG에너지솔루션</td><td class="tk">—</td><td class="total-val">34.7</td><td class="contrib">그리드 스케일 BESS</td></tr>
+<tr><td class="rk">52</td><td style="font-weight:750">삼성SDI</td><td class="tk">—</td><td class="total-val">34.7</td><td class="contrib">그리드 스케일 BESS</td></tr>
+<tr><td class="rk">53</td><td style="font-weight:750">Fluence Energy</td><td class="tk">—</td><td class="total-val">34.7</td><td class="contrib">그리드 스케일 BESS</td></tr>
+<tr><td class="rk">54</td><td style="font-weight:750">Infineon</td><td class="tk">—</td><td class="total-val">34.1</td><td class="contrib">전력반도체(SiC/GaN)</td></tr>
+<tr><td class="rk">55</td><td style="font-weight:750">Wolfspeed</td><td class="tk">—</td><td class="total-val">34.1</td><td class="contrib">전력반도체(SiC/GaN)</td></tr>
+<tr><td class="rk">56</td><td style="font-weight:750">STMicroelectronics</td><td class="tk">—</td><td class="total-val">34.1</td><td class="contrib">전력반도체(SiC/GaN)</td></tr>
+<tr><td class="rk">57</td><td style="font-weight:750">onsemi</td><td class="tk">—</td><td class="total-val">34.1</td><td class="contrib">전력반도체(SiC/GaN)</td></tr>
+<tr><td class="rk">58</td><td style="font-weight:750">Oracle</td><td class="tk">—</td><td class="total-val">33.1</td><td class="contrib">SOFC 연료전지, 자가발전(BTM), 하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">59</td><td style="font-weight:750">TVA</td><td class="tk">—</td><td class="total-val">32.7</td><td class="contrib">유틸리티 운영</td></tr>
+<tr><td class="rk">60</td><td style="font-weight:750">Ontario Power Generation</td><td class="tk">—</td><td class="total-val">32.7</td><td class="contrib">유틸리티 운영</td></tr>
+<tr><td class="rk">61</td><td style="font-weight:750">Caterpillar</td><td class="tk">CAT</td><td class="total-val">31.6</td><td class="contrib">왕복엔진 제조</td></tr>
+<tr><td class="rk">62</td><td style="font-weight:750">Google</td><td class="tk">—</td><td class="total-val">29.9</td><td class="contrib">원전 PPA, 장주기 에너지저장, 하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">63</td><td style="font-weight:750">Bechtel</td><td class="tk">—</td><td class="total-val">28.5</td><td class="contrib">EPC·개발</td></tr>
+<tr><td class="rk">64</td><td style="font-weight:750">Fluor</td><td class="tk">—</td><td class="total-val">28.5</td><td class="contrib">EPC·개발</td></tr>
+<tr><td class="rk">65</td><td style="font-weight:750">Amazon</td><td class="tk">—</td><td class="total-val">28.4</td><td class="contrib">원전 PPA, 하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">66</td><td style="font-weight:750">Microsoft</td><td class="tk">—</td><td class="total-val">27.4</td><td class="contrib">원전 PPA, 하이퍼스케일러 (최종 수요), 하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">67</td><td style="font-weight:750">Meta</td><td class="tk">—</td><td class="total-val">27.4</td><td class="contrib">원전 PPA, 하이퍼스케일러 (최종 수요), 하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">68</td><td style="font-weight:750">AWS</td><td class="tk">—</td><td class="total-val">25.4</td><td class="contrib">하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">69</td><td style="font-weight:750">Dow Chemical</td><td class="tk">—</td><td class="total-val">25.4</td><td class="contrib">하이퍼스케일러 (최종 수요)</td></tr>
+<tr><td class="rk">70</td><td style="font-weight:750">OpenAI</td><td class="tk">—</td><td class="total-val">24.3</td><td class="contrib">AI Labs (최종 수요)</td></tr>
+<tr><td class="rk">71</td><td style="font-weight:750">Anthropic</td><td class="tk">—</td><td class="total-val">24.3</td><td class="contrib">AI Labs (최종 수요)</td></tr>
+<tr><td class="rk">72</td><td style="font-weight:750">xAI</td><td class="tk">—</td><td class="total-val">24.3</td><td class="contrib">AI Labs (최종 수요)</td></tr>
+<tr><td class="rk">73</td><td style="font-weight:750">SK엔무브</td><td class="tk">—</td><td class="total-val">24.1</td><td class="contrib">냉각 유체</td></tr>
+<tr><td class="rk">74</td><td style="font-weight:750">Invenergy</td><td class="tk">—</td><td class="total-val">24.1</td><td class="contrib">HVDC 장거리 송전 프로젝트</td></tr>
+<tr><td class="rk">75</td><td style="font-weight:750">Quanta Services</td><td class="tk">—</td><td class="total-val">24.1</td><td class="contrib">HVDC 장거리 송전 프로젝트</td></tr>
+<tr><td class="rk">76</td><td style="font-weight:750">3M</td><td class="tk">—</td><td class="total-val">24.1</td><td class="contrib">냉각 유체</td></tr>
+</tbody></table></div>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="cal" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>CALIBRATION</div>
+<h2 class="sec-title">캘리브레이션 검증</h2>
+<p class="sec-lead">Ground Truth 정답 노드의 랭크 위치와 Leave-One-Out 교차 검증 결과.</p>
+</div>
+<div class="reveal d1">
+<div class="cal-grid"><div class="cal-card"><div class="ck">Recall@20%</div><div class="cv pass">100%</div></div><div class="cal-card"><div class="ck">LOO 통과</div><div class="cv pass">3/3</div></div><div class="cal-card"><div class="ck">Gate 판정</div><div class="cv pass">PASS</div></div></div>
+<div class="panel" style="margin-top:24px;overflow-x:auto"><h3 style="font-size:.92rem;font-weight:750;margin-bottom:16px">LOO 교차 검증 상세</h3><table class="val-table"><thead><tr><th>GT Node</th><th>Resolved</th><th>Rank</th><th>Rank%</th><th>Pass</th></tr></thead><tbody>
+<tr><td style="font-weight:700">fn_power_transformer</td><td class="tk">fn_ehv_transformer</td><td style="text-align:center" class="mono">10</td><td style="text-align:center" class="mono">16%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_gas_turbine</td><td class="tk">fn_gas_turbine</td><td style="text-align:center" class="mono">12</td><td style="text-align:center" class="mono">19%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_grid_interconnection</td><td class="tk">fn_grid_interconnection</td><td style="text-align:center" class="mono">4</td><td style="text-align:center" class="mono">6%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+</tbody></table></div>
+</div>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="stages" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">04</span><span class="ln"></span>STAGE DISTRIBUTION</div>
+<h2 class="sec-title">단계별 병목 분포</h2>
+<p class="sec-lead">밸류체인 공정 단계별 기능 그룹핑. 상위 20% 기능은 골드 태그.</p>
+</div>
+<div class="reveal d1">
+<div class="stage-grid">
+<div class="stage-card reveal d1"><div class="stage-num">Stage 01 · 5개 기능</div><div class="stage-title">송배전·변압기</div><div class="stage-avg">평균 점수 57.8</div><div class="stage-fns"><span class="stage-fn hi">초고압 변압기 (68)</span><span class="stage-fn hi">변압기 제조 (65)</span><span class="stage-fn hi">냉각 + 전력 (65)</span><span class="stage-fn">UPS·배전 (51)</span><span class="stage-fn">전선·케이블·송전 인프라 (40)</span></div></div>
+<div class="stage-card reveal d2"><div class="stage-num">Stage 02 · 1개 기능</div><div class="stage-title">투자 프레임워크</div><div class="stage-avg">평균 점수 53.9</div><div class="stage-fns"><span class="stage-fn">크로스 밸류에이션 분석 (54)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 03 · 2개 기능</div><div class="stage-title">대안 발전</div><div class="stage-avg">평균 점수 47.8</div><div class="stage-fns"><span class="stage-fn">Behind-the-Meter 발전 (55)</span><span class="stage-fn">연료전지 자가발전 (41)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 04 · 3개 기능</div><div class="stage-title">원자력 발전</div><div class="stage-avg">평균 점수 46.1</div><div class="stage-fns"><span class="stage-fn">대형 원전 운영 (46)</span><span class="stage-fn">선진 원자로 (Gen IV) (46)</span><span class="stage-fn">SMR 개발·제조 (45)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 05 · 13개 기능</div><div class="stage-title">Stage 01 발전</div><div class="stage-avg">평균 점수 45.7</div><div class="stage-fns"><span class="stage-fn hi">스팀터빈·발전기 (75)</span><span class="stage-fn hi">SMR 기자재 제조 (67)</span><span class="stage-fn hi">가스터빈 장기서비스(LTSA) (65)</span><span class="stage-fn hi">가스터빈 발전 (56)</span><span class="stage-fn">원전 발전 (50)</span><span class="stage-fn">PPA 중개·구조화 (49)</span><span class="stage-fn">소형모듈원전(SMR) (47)</span><span class="stage-fn">원전 설계·엔지니어링 (43)</span><span class="stage-fn">자가발전(BTM) (38)</span><span class="stage-fn">에너지 거래 플랫폼 (36)</span><span class="stage-fn">온사이트 가스 발전 (33)</span><span class="stage-fn">원전 PPA (32)</span><span class="stage-fn">재생에너지(태양광·풍력) (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 06 · 2개 기능</div><div class="stage-title">발전 장비</div><div class="stage-avg">평균 점수 43.5</div><div class="stage-fns"><span class="stage-fn">가스터빈 제조 (OEM) (55)</span><span class="stage-fn">왕복엔진 제조 (32)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 07 · 9개 기능</div><div class="stage-title">Stage 03 DC 전력 인프라</div><div class="stage-avg">평균 점수 38.4</div><div class="stage-fns"><span class="stage-fn">DC 전력 인프라 통합 (56)</span><span class="stage-fn">UPS·배전반 (53)</span><span class="stage-fn">800V DC 아키텍처 (46)</span><span class="stage-fn">SOFC 연료전지 (44)</span><span class="stage-fn">장주기 에너지저장 (37)</span><span class="stage-fn">철공기전지(Iron-Air) (37)</span><span class="stage-fn">그리드 스케일 BESS (35)</span><span class="stage-fn">전력반도체(SiC/GaN) (34)</span><span class="stage-fn">HVDC 버스웨이·800V DC (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 08 · 13개 기능</div><div class="stage-title">Stage 02 송배전</div><div class="stage-avg">평균 점수 34.7</div><div class="stage-fns"><span class="stage-fn hi">계통연계 (66)</span><span class="stage-fn hi">한국 전력정책 (66)</span><span class="stage-fn hi">HVDC 송전 (65)</span><span class="stage-fn hi">초고압 변압기 (60)</span><span class="stage-fn hi">에너지 장비 니어쇼어링 (60)</span><span class="stage-fn">방향성 전기강판(GOES) (50)</span><span class="stage-fn">전력케이블 (40)</span><span class="stage-fn">HVDC 장거리 송전 프로젝트 (24)</span><span class="stage-fn">차단기 (4)</span><span class="stage-fn">배전 변압기 (4)</span><span class="stage-fn">DC 모라토리엄·NIMBY (4)</span><span class="stage-fn">희토류 공급망 (4)</span><span class="stage-fn">용량시장 (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 09 · 2개 기능</div><div class="stage-title">EPC·개발</div><div class="stage-avg">평균 점수 32.9</div><div class="stage-fns"><span class="stage-fn">DC 개발 (37)</span><span class="stage-fn">EPC·개발 (28)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 10 · 1개 기능</div><div class="stage-title">전력 운영</div><div class="stage-avg">평균 점수 32.7</div><div class="stage-fns"><span class="stage-fn">유틸리티 운영 (33)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 11 · 2개 기능</div><div class="stage-title">연료 공급</div><div class="stage-avg">평균 점수 26.0</div><div class="stage-fns"><span class="stage-fn">핵연료 공급 (HALEU/TRISO) (48)</span><span class="stage-fn">우라늄 채굴·공급 (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 12 · 3개 기능</div><div class="stage-title">최종 수요</div><div class="stage-avg">평균 점수 24.8</div><div class="stage-fns"><span class="stage-fn">하이퍼스케일러 (최종 수요) (25)</span><span class="stage-fn">하이퍼스케일러 (최종 수요) (25)</span><span class="stage-fn">AI Labs (최종 수요) (24)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 13 · 3개 기능</div><div class="stage-title">Stage 04 냉각</div><div class="stage-avg">평균 점수 21.8</div><div class="stage-fns"><span class="stage-fn">액체냉각(수냉·액침) (38)</span><span class="stage-fn">냉각 유체 (24)</span><span class="stage-fn">공냉 냉각 (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 14 · 1개 기능</div><div class="stage-title">가스 공급</div><div class="stage-avg">평균 점수 3.6</div><div class="stage-fns"><span class="stage-fn">가스 공급 (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 15 · 1개 기능</div><div class="stage-title">정책·규제</div><div class="stage-avg">평균 점수 3.6</div><div class="stage-fns"><span class="stage-fn">SMR 정책·규제 (4)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 16 · 1개 기능</div><div class="stage-title">EPC·건설</div><div class="stage-avg">평균 점수 3.6</div><div class="stage-fns"><span class="stage-fn">SMR 건설 (EPC) (4)</span></div></div>
+</div>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="foot-brand">ourprochoi Research</div>
+<p class="disc-foot">본 보고서는 투자 권유가 아닌 연구 목적의 자료입니다. 포함된 정보의 정확성이나 완전성을 보장하지 않으며, 투자 의사결정의 책임은 투자자 본인에게 있습니다.</p>
+<p class="foot-ts">데이터: 밸류체인 그래프 + ground_truth.yaml &middot; 생성: 2026-07-27 08:51 &middot; 노드 스크리너 v1.0</p>
+</div></footer>
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+  var barObs=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.axis-bar').forEach(function(b){
+          b.style.width=b.getAttribute('data-w')+'%';
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.05});
+  document.querySelectorAll('.score-table').forEach(function(el){barObs.observe(el)});
+
+  var secs=document.querySelectorAll('section.blk');
+  var navAs=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120;
+    secs.forEach(function(s,i){
+      if(s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y){
+        navAs.forEach(function(a){a.classList.remove('active')});
+        if(navAs[i])navAs[i].classList.add('active');
+      }
+    });
+  });
+
+  var btn=document.getElementById('navToggle');
+  var lnk=document.querySelector('.nav-links');
+  if(btn&&lnk){
+    btn.addEventListener('click',function(){lnk.classList.toggle('open')});
+    lnk.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){lnk.classList.remove('open')});
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<meta name="description" content="HBM 밸류체인 49개 기능·30개 기업 5축 스코어링 병목 분석">
+<meta name="keywords" content="HBM,패키징,스코어보드,병목,밸류체인,SK하이닉스,TSMC,CoWoS,TC본딩,한미반도체">
+<meta property="og:title" content="HBM 밸류체인 병목 스코어보드">
+<meta property="og:description" content="HBM 밸류체인 49개 기능·30개 기업 5축 스코어링 병목 분석">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/node-screener/node_screener_hbm_scoreboard.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HBM 밸류체인 병목 스코어보드">
+<meta name="twitter:description" content="HBM 밸류체인 49개 기능·30개 기업 5축 스코어링 병목 분석">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/node-screener/node_screener_hbm_scoreboard.html">
+<title>HBM 밸류체인 병목 스코어보드 — ourprochoi Research</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#080B14;--bg-2:#0C1120;--surface:#121A2E;--surface-2:#16203A;
+  --line:#23304D;--ink:#EAEFFA;--ink-2:#9DA9C2;--ink-3:#5E6B86;
+  --accent:#D4A843;--accent-2:#FFB13E;--glow:#38E6D4;
+  --bull:#48D597;--bear:#FF6B6B;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+  --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);background:var(--surface)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px}
+
+/* HERO */
+.hero{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+.glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+.glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.28;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+.spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+.spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+@keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+.hero-in{position:relative;z-index:2;padding:120px 0 80px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(212,168,67,.06);margin-bottom:28px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+h1.hero-title .hl{background:linear-gradient(105deg,var(--accent),var(--glow) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.hstat{background:var(--bg-2);padding:26px 22px}
+.hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em}
+.hstat .num .u{color:var(--accent);font-size:.62em}
+.hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2)}
+.scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+.scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+.scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--accent);animation:loadbar 2.4s ease-in-out infinite}
+@keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* SECTIONS */
+section.blk{padding:108px 0;scroll-margin-top:60px}
+.sec-head{margin-bottom:52px;max-width:60ch}
+.sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+.sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+.sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+.divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+/* PANEL / TABLE */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+.val-table{width:100%;border-collapse:collapse}
+.val-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:nowrap}
+.val-table td{padding:11px 14px;font-size:.84rem;border-bottom:1px solid rgba(35,48,77,.6);vertical-align:middle}
+.val-table tr:last-child td{border-bottom:none}
+.val-table tr:hover td{background:rgba(212,168,67,.04)}
+.val-table .fn-name{font-weight:750;color:var(--ink);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.val-table .stage-tag{font-family:var(--mono);font-size:.66rem;color:var(--ink-3);max-width:160px}
+.val-table .rk{text-align:center;font-family:var(--mono);font-weight:700;color:var(--ink-3)}
+.val-table .tk{font-family:var(--mono);font-size:.74rem;color:var(--ink-3)}
+.val-table .contrib{font-size:.78rem;color:var(--ink-2);max-width:260px}
+.total-val{font-family:var(--mono);font-weight:800;font-size:.92rem;color:var(--ink)}
+
+/* AXIS MINI-BAR */
+.axis-td{min-width:68px}
+.axis-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .8s cubic-bezier(.2,.8,.2,1);margin-bottom:3px}
+.axis-bar.penalty{background:var(--bear)}
+.axis-val{font-family:var(--mono);font-size:.74rem;font-weight:600}
+
+/* GT BADGE */
+.gt-badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.06em;color:var(--accent);background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);border-radius:4px;padding:2px 5px;text-transform:uppercase}
+
+/* RARR */
+.rarr-hi{color:var(--bear);font-weight:700}
+.rarr-md{color:var(--accent);font-weight:700}
+.rarr-lo{color:var(--ink-3)}
+
+/* STAGE CARDS */
+.stage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:8px}
+.stage-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+.stage-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent)}
+.stage-num{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.stage-title{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.stage-avg{font-family:var(--mono);font-size:.82rem;color:var(--ink-2);margin-bottom:14px}
+.stage-fns{display:flex;flex-wrap:wrap;gap:6px}
+.stage-fn{font-family:var(--mono);font-size:.68rem;padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--ink-2);background:var(--bg-2)}
+.stage-fn.hi{color:var(--accent);border-color:rgba(212,168,67,.3);background:rgba(212,168,67,.06)}
+
+/* CALIBRATION */
+.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cal-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.cal-card .ck{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+.cal-card .cv{font-family:var(--mono);font-weight:800;font-size:1.8rem;margin-top:8px;letter-spacing:-.02em}
+.cal-card .cv.pass{color:var(--bull)}
+.cal-card .cv.fail{color:var(--bear)}
+.pass-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:5px}
+.pass-tag.ok{color:var(--bull);background:rgba(72,213,151,.12);border:1px solid rgba(72,213,151,.3)}
+.pass-tag.fail{color:var(--bear);background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+.disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+.foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem;margin-bottom:12px}
+.foot-ts{margin-top:16px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3)}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+  .hero-stats,.cal-grid{grid-template-columns:1fr}
+  .stage-grid{grid-template-columns:1fr}
+  .val-table th,.val-table td{padding:8px 8px;font-size:.76rem}
+  .axis-td{min-width:55px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "HBM 밸류체인 병목 스코어보드",
+  "description": "HBM 밸류체인 49개 기능·30개 기업 5축 스코어링 병목 분석",
+  "datePublished": "2026-07-27",
+  "dateModified": "2026-07-27",
+  "author": {
+    "@type": "Person",
+    "name": "ourprochoi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ourprochoi Research Archive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ourprochoi-web.github.io/stock-research/node-screener/node_screener_hbm_scoreboard.html"
+  }
+}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:Pretendard,sans-serif;font-size:13px;font-weight:600;transition:all .2s"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav><div class="wrap nav-in">
+<div class="brand"><span class="dot"></span>노드 스크리너 &middot; HBM</div>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+<div class="nav-links">
+<a href="#fn-rank">01 / 기능</a>
+<a href="#co-rank">02 / 기업</a>
+<a href="#cal">03 / 검증</a>
+<a href="#stages">04 / 단계</a>
+</div></div></nav>
+
+<header class="hero"><div class="hero-bg">
+<div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div>
+<div class="spark"></div><div class="spark"></div><div class="spark"></div>
+</div><div class="wrap hero-in">
+<span class="eyebrow">노드 스크리너 &middot; HBM &middot; 2026.07</span>
+<h1 class="hero-title">병목<br><span class="hl">스코어보드</span></h1>
+<p class="hero-sub">HBM 밸류체인 49개 기능 노드를 5축 스코어링으로 분석한 불가결 병목 랭킹</p>
+<div class="hero-stats">
+<div class="hstat"><div class="num">49<span class="u">개</span></div><div class="lab">Function 노드</div></div>
+<div class="hstat"><div class="num">100<span class="u">%</span></div><div class="lab">Recall@20%</div></div>
+<div class="hstat"><div class="num">66<span class="u">%</span></div><div class="lab">최고 RaRR</div></div>
+</div>
+<div class="scroll-cue"><div class="bar"></div>SCROLL</div>
+</div></header>
+
+<section id="fn-rank" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">01</span><span class="ln"></span>FUNCTION RANKING</div>
+<h2 class="sec-title">기능별 병목 점수</h2>
+<p class="sec-lead">S1 구조 &middot; S2 대체 장벽 &middot; S3 경제성 &middot; S4 수요 내구성 &middot; S5 감점을 합산한 종합 스코어. GT 노드는 <span class="gt-badge">GT</span> 배지 표시.</p>
+</div>
+<div class="panel reveal d1" style="overflow-x:auto">
+<table class="val-table score-table"><thead><tr>
+<th style="text-align:center">#</th><th>Function</th><th>Stage</th>
+<th>S1 구조</th><th>S2 장벽</th><th>S3 경제</th><th>S4 수요</th>
+<th>S5 감점</th><th>Total</th><th>RaRR</th>
+</tr></thead><tbody>
+<tr><td class="rk">1</td><td><div class="fn-name">ABF 기판 <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="87"></div><span class="axis-val">17.3</span></td><td class="axis-td"><div class="axis-bar" data-w="98"></div><span class="axis-val">29.3</span></td><td class="axis-td"><div class="axis-bar" data-w="63"></div><span class="axis-val">12.6</span></td><td class="axis-td"><div class="axis-bar" data-w="88"></div><span class="axis-val">13.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">72.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">2</td><td><div class="fn-name">CoWoS 패키징 <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar" data-w="98"></div><span class="axis-val">14.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">68.2</td><td><span class="rarr-hi">67%</span></td></tr>
+<tr><td class="rk">2</td><td><div class="fn-name">CoPoS (패널 레벨 패키징)</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar" data-w="98"></div><span class="axis-val">14.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">68.2</td><td><span class="rarr-hi">67%</span></td></tr>
+<tr><td class="rk">2</td><td><div class="fn-name">CoWoS-S (Standard) 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar" data-w="98"></div><span class="axis-val">14.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">68.2</td><td><span class="rarr-hi">67%</span></td></tr>
+<tr><td class="rk">2</td><td><div class="fn-name">CoWoS-R (Redistribution) 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="93"></div><span class="axis-val">18.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar" data-w="98"></div><span class="axis-val">14.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">68.2</td><td><span class="rarr-hi">67%</span></td></tr>
+<tr><td class="rk">6</td><td><div class="fn-name">하이브리드 본딩</div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="71"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="82"></div><span class="axis-val">24.7</span></td><td class="axis-td"><div class="axis-bar" data-w="68"></div><span class="axis-val">13.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">15.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">67.5</td><td><span class="rarr-lo">12%</span></td></tr>
+<tr><td class="rk">7</td><td><div class="fn-name">TC 본딩 (열압착 본딩) <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.8</span></td><td class="axis-td"><div class="axis-bar" data-w="99"></div><span class="axis-val">29.8</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="80"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">66.2</td><td><span class="rarr-lo">11%</span></td></tr>
+<tr><td class="rk">8</td><td><div class="fn-name">고압 수소 어닐링 <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="69"></div><span class="axis-val">13.9</span></td><td class="axis-td"><div class="axis-bar" data-w="97"></div><span class="axis-val">29.1</span></td><td class="axis-td"><div class="axis-bar" data-w="69"></div><span class="axis-val">13.8</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">65.7</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">ATE (자동테스트장비) <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">다이싱/그라인딩 (웨이퍼 박형화)</div></td><td class="stage-tag">STAGE 01</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">스텔스 다이싱 (레이저) <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 01</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">메모리 테스트</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">SoC 테스트</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">테스트 소켓 (포고핀) <span class="gt-badge">GT</span></div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">9</td><td><div class="fn-name">핸들러 (큐브프로버)</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.7</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="64"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar" data-w="76"></div><span class="axis-val">11.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">16</td><td><div class="fn-name">CoWoS-L (Large) 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="82"></div><span class="axis-val">24.5</span></td><td class="axis-td"><div class="axis-bar" data-w="48"></div><span class="axis-val">9.6</span></td><td class="axis-td"><div class="axis-bar" data-w="90"></div><span class="axis-val">13.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">63.2</td><td><span class="rarr-hi">67%</span></td></tr>
+<tr><td class="rk">17</td><td><div class="fn-name">HBM DRAM 웨이퍼</div></td><td class="stage-tag">STAGE 01</td><td class="axis-td"><div class="axis-bar" data-w="75"></div><span class="axis-val">14.9</span></td><td class="axis-td"><div class="axis-bar" data-w="82"></div><span class="axis-val">24.5</span></td><td class="axis-td"><div class="axis-bar" data-w="70"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="78"></div><span class="axis-val">11.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">62.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">18</td><td><div class="fn-name">패키징 장비 (증착/CMP)</div></td><td class="stage-tag">크로스 스테이지</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="47"></div><span class="axis-val">7.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">59.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">18</td><td><div class="fn-name">Kinex 하이브리드 본딩 시스템</div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="47"></div><span class="axis-val">7.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">59.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">18</td><td><div class="fn-name">NEXX 패널 레벨 증착 장비</div></td><td class="stage-tag">크로스 스테이지</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="47"></div><span class="axis-val">7.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">59.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">18</td><td><div class="fn-name">증착/CMP/패널 장비 (크로스 스테이지)</div></td><td class="stage-tag">크로스 스테이지</td><td class="axis-td"><div class="axis-bar" data-w="91"></div><span class="axis-val">18.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="60"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="47"></div><span class="axis-val">7.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">59.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">22</td><td><div class="fn-name">Wide TC Bonder (HBM5/6용)</div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="65"></div><span class="axis-val">13.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="66"></div><span class="axis-val">13.2</span></td><td class="axis-td"><div class="axis-bar" data-w="39"></div><span class="axis-val">5.8</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">59.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">23</td><td><div class="fn-name">첨단 패키징 (CoWoS/InFO/SoIC)</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="88"></div><span class="axis-val">17.6</span></td><td class="axis-td"><div class="axis-bar" data-w="62"></div><span class="axis-val">18.6</span></td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.1</span></td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">12.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">55.3</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">23</td><td><div class="fn-name">범핑 (마이크로 범프/플립칩)</div></td><td class="stage-tag">STAGE 02</td><td class="axis-td"><div class="axis-bar" data-w="88"></div><span class="axis-val">17.6</span></td><td class="axis-td"><div class="axis-bar" data-w="62"></div><span class="axis-val">18.6</span></td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.1</span></td><td class="axis-td"><div class="axis-bar" data-w="84"></div><span class="axis-val">12.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="10"></div><span class="axis-val">-2.5</span></td><td class="total-val">55.3</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">25</td><td><div class="fn-name">TSV/TGV 식각</div></td><td class="stage-tag">크로스 스테이지</td><td class="axis-td"><div class="axis-bar" data-w="71"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">5.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">54.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">25</td><td><div class="fn-name">하이브리드 본딩 전처리 (표면 활성화/세정)</div></td><td class="stage-tag">크로스 스테이지</td><td class="axis-td"><div class="axis-bar" data-w="71"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">5.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">54.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">25</td><td><div class="fn-name">TSV 식각/하이브리드 본딩 장비 (크로스 스테이지)</div></td><td class="stage-tag">크로스 스테이지</td><td class="axis-td"><div class="axis-bar" data-w="71"></div><span class="axis-val">14.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">11.9</span></td><td class="axis-td"><div class="axis-bar" data-w="37"></div><span class="axis-val">5.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">54.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">28</td><td><div class="fn-name">I-Cube4 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="72"></div><span class="axis-val">14.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">8.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">47.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">28</td><td><div class="fn-name">I-Cube 패키징 (삼성)</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="72"></div><span class="axis-val">14.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">8.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">47.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">28</td><td><div class="fn-name">삼성 FOPLP 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="72"></div><span class="axis-val">14.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">8.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">47.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">28</td><td><div class="fn-name">삼성 SAINT 3D 적층</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="72"></div><span class="axis-val">14.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="46"></div><span class="axis-val">9.2</span></td><td class="axis-td"><div class="axis-bar" data-w="59"></div><span class="axis-val">8.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">47.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">32</td><td><div class="fn-name">EMIB/Foveros 패키징 (인텔)</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="53"></div><span class="axis-val">10.7</span></td><td class="axis-td"><div class="axis-bar" data-w="80"></div><span class="axis-val">24.0</span></td><td class="axis-td"><div class="axis-bar" data-w="34"></div><span class="axis-val">6.9</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">7.3</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="30"></div><span class="axis-val">-7.5</span></td><td class="total-val">41.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">33</td><td><div class="fn-name">글라스코어 기판</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="43"></div><span class="axis-val">8.5</span></td><td class="axis-td"><div class="axis-bar" data-w="81"></div><span class="axis-val">24.2</span></td><td class="axis-td"><div class="axis-bar" data-w="50"></div><span class="axis-val">10.0</span></td><td class="axis-td"><div class="axis-bar" data-w="86"></div><span class="axis-val">12.9</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">40.6</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">와이어본더 (범용 패키징)</div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">39.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">하이브리드 본딩 장비</div></td><td class="stage-tag">STAGE 04</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">39.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">러버소켓/번인 테스트</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">39.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">HBM용 DRAM 세정 케미컬</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">39.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">하이스피드 번인 테스터</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">39.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">34</td><td><div class="fn-name">모듈 테스터</div></td><td class="stage-tag">STAGE 05</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.7</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">4.0</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">39.1</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">40</td><td><div class="fn-name">인텔 Foveros 3D 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="5"></div><span class="axis-val">1.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="51"></div><span class="axis-val">7.7</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">38.7</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">41</td><td><div class="fn-name">FC-BGA 기판</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="45"></div><span class="axis-val">9.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.8</span></td><td class="axis-td"><div class="axis-bar" data-w="14"></div><span class="axis-val">2.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">36.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">41</td><td><div class="fn-name">MLCC (적층세라믹콘덴서)</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="45"></div><span class="axis-val">9.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="49"></div><span class="axis-val">9.8</span></td><td class="axis-td"><div class="axis-bar" data-w="14"></div><span class="axis-val">2.1</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">36.0</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">43</td><td><div class="fn-name">LEAP 첨단 패키징</div></td><td class="stage-tag">STAGE 03</td><td class="axis-td"><div class="axis-bar" data-w="5"></div><span class="axis-val">1.1</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="31"></div><span class="axis-val">4.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">35.7</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">44</td><td><div class="fn-name">OSAT (외주 패키징/범핑)</div></td><td class="stage-tag">STAGE 02</td><td class="axis-td"><div class="axis-bar" data-w="53"></div><span class="axis-val">10.7</span></td><td class="axis-td"><div class="axis-bar" data-w="85"></div><span class="axis-val">25.5</span></td><td class="axis-td"><div class="axis-bar" data-w="27"></div><span class="axis-val">5.5</span></td><td class="axis-td"><div class="axis-bar" data-w="31"></div><span class="axis-val">4.6</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">31.2</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">45</td><td><div class="fn-name">고성능 IC 패키지 기판</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="52"></div><span class="axis-val">10.4</span></td><td class="axis-td"><div class="axis-bar" data-w="100"></div><span class="axis-val">30.0</span></td><td class="axis-td"><div class="axis-bar" data-w="12"></div><span class="axis-val">2.5</span></td><td class="axis-td"><div class="axis-bar" data-w="10"></div><span class="axis-val">1.5</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="60"></div><span class="axis-val">-15.0</span></td><td class="total-val">29.4</td><td><span class="rarr-lo">0%</span></td></tr>
+<tr><td class="rk">46</td><td><div class="fn-name">실리콘 인터포저</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="8"></div><span class="axis-val">1.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">1.2</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">46</td><td><div class="fn-name">CCL (동박적층판)</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="8"></div><span class="axis-val">1.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">1.2</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">46</td><td><div class="fn-name">동박 소재</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="8"></div><span class="axis-val">1.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">1.2</td><td><span class="rarr-lo">—</span></td></tr>
+<tr><td class="rk">46</td><td><div class="fn-name">유리섬유 소재</div></td><td class="stage-tag">STAGE 06</td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="0"></div><span class="axis-val">0.0</span></td><td class="axis-td"><div class="axis-bar" data-w="8"></div><span class="axis-val">1.2</span></td><td class="axis-td"><div class="axis-bar penalty" data-w="0"></div><span class="axis-val">-0.0</span></td><td class="total-val">1.2</td><td><span class="rarr-lo">—</span></td></tr>
+</tbody></table></div>
+<p style="margin-top:16px;font-size:.82rem;color:var(--ink-3)">총 49개 function &middot; 30개 company &middot; 58개 edge</p>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="co-rank" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">02</span><span class="ln"></span>COMPANY RANKING</div>
+<h2 class="sec-title">기업별 스코어</h2>
+<p class="sec-lead">기업이 수행하는 기능(function)의 점수를 점유율(share) 가중 평균하여 배분.</p>
+</div>
+<div class="panel reveal d1" style="overflow-x:auto">
+<table class="val-table"><thead><tr>
+<th style="text-align:center">#</th><th>Company</th><th>Ticker</th>
+<th>Score</th><th>기여 Functions (Top 3)</th>
+</tr></thead><tbody>
+<tr><td class="rk">1</td><td style="font-weight:750">Unimicron</td><td class="tk">3037.TW</td><td class="total-val">72.4</td><td class="contrib">ABF 기판</td></tr>
+<tr><td class="rk">2</td><td style="font-weight:750">Ajinomoto</td><td class="tk">2802.T</td><td class="total-val">72.4</td><td class="contrib">ABF 기판</td></tr>
+<tr><td class="rk">3</td><td style="font-weight:750">AT&amp;S</td><td class="tk">ATS.VI</td><td class="total-val">72.4</td><td class="contrib">ABF 기판</td></tr>
+<tr><td class="rk">4</td><td style="font-weight:750">Shinko Electric Industries</td><td class="tk">6967.T</td><td class="total-val">72.4</td><td class="contrib">ABF 기판</td></tr>
+<tr><td class="rk">5</td><td style="font-weight:750">Nan Ya PCB</td><td class="tk">8046.TW</td><td class="total-val">72.4</td><td class="contrib">ABF 기판</td></tr>
+<tr><td class="rk">6</td><td style="font-weight:750">BESI</td><td class="tk">BESI.AS</td><td class="total-val">67.5</td><td class="contrib">하이브리드 본딩</td></tr>
+<tr><td class="rk">7</td><td style="font-weight:750">ASMPT</td><td class="tk">0522.HK</td><td class="total-val">66.8</td><td class="contrib">TC 본딩 (열압착 본딩), 하이브리드 본딩</td></tr>
+<tr><td class="rk">8</td><td style="font-weight:750">세메스</td><td class="tk">—</td><td class="total-val">66.2</td><td class="contrib">TC 본딩 (열압착 본딩)</td></tr>
+<tr><td class="rk">9</td><td style="font-weight:750">HPSP</td><td class="tk">403870.KQ</td><td class="total-val">65.7</td><td class="contrib">고압 수소 어닐링</td></tr>
+<tr><td class="rk">10</td><td style="font-weight:750">예스티(YEST)</td><td class="tk">—</td><td class="total-val">65.7</td><td class="contrib">고압 수소 어닐링</td></tr>
+<tr><td class="rk">11</td><td style="font-weight:750">TSMC</td><td class="tk">TSM</td><td class="total-val">63.8</td><td class="contrib">CoWoS 패키징, CoPoS (패널 레벨 패키징), 첨단 패키징 (CoWoS/InFO/SoIC)</td></tr>
+<tr><td class="rk">12</td><td style="font-weight:750">Advantest</td><td class="tk">6857.T</td><td class="total-val">63.4</td><td class="contrib">ATE (자동테스트장비), 메모리 테스트, SoC 테스트</td></tr>
+<tr><td class="rk">13</td><td style="font-weight:750">Disco Corporation</td><td class="tk">6146.T</td><td class="total-val">63.4</td><td class="contrib">다이싱/그라인딩 (웨이퍼 박형화), 스텔스 다이싱 (레이저)</td></tr>
+<tr><td class="rk">14</td><td style="font-weight:750">리노공업</td><td class="tk">058470.KQ</td><td class="total-val">63.4</td><td class="contrib">테스트 소켓 (포고핀)</td></tr>
+<tr><td class="rk">15</td><td style="font-weight:750">테크윙</td><td class="tk">089030.KQ</td><td class="total-val">63.4</td><td class="contrib">핸들러 (큐브프로버)</td></tr>
+<tr><td class="rk">16</td><td style="font-weight:750">Micron</td><td class="tk">MU</td><td class="total-val">62.6</td><td class="contrib">HBM DRAM 웨이퍼</td></tr>
+<tr><td class="rk">17</td><td style="font-weight:750">SK하이닉스</td><td class="tk">000660.KS</td><td class="total-val">62.6</td><td class="contrib">HBM DRAM 웨이퍼</td></tr>
+<tr><td class="rk">18</td><td style="font-weight:750">CXMT</td><td class="tk">—</td><td class="total-val">62.6</td><td class="contrib">HBM DRAM 웨이퍼</td></tr>
+<tr><td class="rk">19</td><td style="font-weight:750">한미반도체</td><td class="tk">042700.KQ</td><td class="total-val">62.3</td><td class="contrib">TC 본딩 (열압착 본딩), Wide TC Bonder (HBM5/6용)</td></tr>
+<tr><td class="rk">20</td><td style="font-weight:750">Applied Materials</td><td class="tk">AMAT</td><td class="total-val">59.6</td><td class="contrib">패키징 장비 (증착/CMP), Kinex 하이브리드 본딩 시스템, NEXX 패널 레벨 증착 장비</td></tr>
+<tr><td class="rk">21</td><td style="font-weight:750">Lam Research</td><td class="tk">LRCX</td><td class="total-val">54.0</td><td class="contrib">TSV/TGV 식각, 하이브리드 본딩 전처리 (표면 활성화/세정), TSV 식각/하이브리드 본딩 장비 (크로스 스테이지)</td></tr>
+<tr><td class="rk">22</td><td style="font-weight:750">MediaTek</td><td class="tk">2454.TW</td><td class="total-val">52.3</td><td class="contrib">CoWoS-L (Large) 패키징, EMIB/Foveros 패키징 (인텔)</td></tr>
+<tr><td class="rk">23</td><td style="font-weight:750">Ibiden</td><td class="tk">4062.T</td><td class="total-val">50.9</td><td class="contrib">ABF 기판, 고성능 IC 패키지 기판</td></tr>
+<tr><td class="rk">24</td><td style="font-weight:750">삼성전자</td><td class="tk">005930.KS</td><td class="total-val">48.2</td><td class="contrib">HBM DRAM 웨이퍼, I-Cube4 패키징, I-Cube 패키징 (삼성)</td></tr>
+<tr><td class="rk">25</td><td style="font-weight:750">Amkor Technology</td><td class="tk">AMKR</td><td class="total-val">47.3</td><td class="contrib">OSAT (외주 패키징/범핑), 첨단 패키징 (CoWoS/InFO/SoIC), 범핑 (마이크로 범프/플립칩)</td></tr>
+<tr><td class="rk">26</td><td style="font-weight:750">삼성전기</td><td class="tk">009150.KS</td><td class="total-val">46.2</td><td class="contrib">FC-BGA 기판, 글라스코어 기판, MLCC (적층세라믹콘덴서)</td></tr>
+<tr><td class="rk">27</td><td style="font-weight:750">ASE/SPIL</td><td class="tk">ASX</td><td class="total-val">44.4</td><td class="contrib">OSAT (외주 패키징/범핑), LEAP 첨단 패키징, 범핑 (마이크로 범프/플립칩)</td></tr>
+<tr><td class="rk">28</td><td style="font-weight:750">인텔</td><td class="tk">INTC</td><td class="total-val">40.2</td><td class="contrib">EMIB/Foveros 패키징 (인텔), 인텔 Foveros 3D 패키징, 글라스코어 기판</td></tr>
+<tr><td class="rk">29</td><td style="font-weight:750">한화세미텍</td><td class="tk">—</td><td class="total-val">39.5</td><td class="contrib">와이어본더 (범용 패키징), TC 본딩 (열압착 본딩), 하이브리드 본딩 장비</td></tr>
+<tr><td class="rk">30</td><td style="font-weight:750">ISC</td><td class="tk">095340.KQ</td><td class="total-val">39.1</td><td class="contrib">러버소켓/번인 테스트, 하이스피드 번인 테스터, 모듈 테스터</td></tr>
+</tbody></table></div>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="cal" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>CALIBRATION</div>
+<h2 class="sec-title">캘리브레이션 검증</h2>
+<p class="sec-lead">Ground Truth 정답 노드의 랭크 위치와 Leave-One-Out 교차 검증 결과.</p>
+</div>
+<div class="reveal d1">
+<div class="cal-grid"><div class="cal-card"><div class="ck">Recall@20%</div><div class="cv pass">100%</div></div><div class="cal-card"><div class="ck">LOO 통과</div><div class="cv pass">7/7</div></div><div class="cal-card"><div class="ck">Gate 판정</div><div class="cv pass">PASS</div></div></div>
+<div class="panel" style="margin-top:24px;overflow-x:auto"><h3 style="font-size:.92rem;font-weight:750;margin-bottom:16px">LOO 교차 검증 상세</h3><table class="val-table"><thead><tr><th>GT Node</th><th>Resolved</th><th>Rank</th><th>Rank%</th><th>Pass</th></tr></thead><tbody>
+<tr><td style="font-weight:700">fn_cowos_packaging</td><td class="tk">fn_cowos_packaging</td><td style="text-align:center" class="mono">2</td><td style="text-align:center" class="mono">4%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_tc_bonding</td><td class="tk">fn_tc_bonding</td><td style="text-align:center" class="mono">7</td><td style="text-align:center" class="mono">14%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_hydrogen_annealing</td><td class="tk">fn_hydrogen_annealing</td><td style="text-align:center" class="mono">8</td><td style="text-align:center" class="mono">16%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_abf_substrate_film</td><td class="tk">fn_abf_substrate_film</td><td style="text-align:center" class="mono">1</td><td style="text-align:center" class="mono">2%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_ate_test</td><td class="tk">fn_test_ate</td><td style="text-align:center" class="mono">9</td><td style="text-align:center" class="mono">18%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_dicing_grinding</td><td class="tk">fn_dicing_grinding</td><td style="text-align:center" class="mono">9</td><td style="text-align:center" class="mono">18%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+<tr><td style="font-weight:700">fn_pogo_pin_socket</td><td class="tk">fn_pogo_pin_socket</td><td style="text-align:center" class="mono">9</td><td style="text-align:center" class="mono">18%</td><td style="text-align:center"><span class="pass-tag ok">PASS</span></td></tr>
+</tbody></table></div>
+</div>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="stages" class="blk"><div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="idx">04</span><span class="ln"></span>STAGE DISTRIBUTION</div>
+<h2 class="sec-title">단계별 병목 분포</h2>
+<p class="sec-lead">밸류체인 공정 단계별 기능 그룹핑. 상위 20% 기능은 골드 태그.</p>
+</div>
+<div class="reveal d1">
+<div class="stage-grid">
+<div class="stage-card reveal d1"><div class="stage-num">Stage 01 · 3개 기능</div><div class="stage-title">STAGE 01</div><div class="stage-avg">평균 점수 63.2</div><div class="stage-fns"><span class="stage-fn hi">다이싱/그라인딩 (웨이퍼 박형화) (63)</span><span class="stage-fn hi">스텔스 다이싱 (레이저) (63)</span><span class="stage-fn">HBM DRAM 웨이퍼 (63)</span></div></div>
+<div class="stage-card reveal d2"><div class="stage-num">Stage 02 · 6개 기능</div><div class="stage-title">크로스 스테이지</div><div class="stage-avg">평균 점수 56.8</div><div class="stage-fns"><span class="stage-fn">패키징 장비 (증착/CMP) (60)</span><span class="stage-fn">NEXX 패널 레벨 증착 장비 (60)</span><span class="stage-fn">증착/CMP/패널 장비 (크로스 스테이지) (60)</span><span class="stage-fn">TSV/TGV 식각 (54)</span><span class="stage-fn">하이브리드 본딩 전처리 (표면 활성화/세정) (54)</span><span class="stage-fn">TSV 식각/하이브리드 본딩 장비 (크로스 스테이지) (54)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 03 · 7개 기능</div><div class="stage-title">STAGE 04</div><div class="stage-avg">평균 점수 56.7</div><div class="stage-fns"><span class="stage-fn hi">하이브리드 본딩 (67)</span><span class="stage-fn hi">TC 본딩 (열압착 본딩) (66)</span><span class="stage-fn hi">고압 수소 어닐링 (66)</span><span class="stage-fn">Kinex 하이브리드 본딩 시스템 (60)</span><span class="stage-fn">Wide TC Bonder (HBM5/6용) (60)</span><span class="stage-fn">와이어본더 (범용 패키징) (39)</span><span class="stage-fn">하이브리드 본딩 장비 (39)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 04 · 13개 기능</div><div class="stage-title">STAGE 03</div><div class="stage-avg">평균 점수 53.6</div><div class="stage-fns"><span class="stage-fn hi">CoWoS 패키징 (68)</span><span class="stage-fn hi">CoPoS (패널 레벨 패키징) (68)</span><span class="stage-fn hi">CoWoS-S (Standard) 패키징 (68)</span><span class="stage-fn hi">CoWoS-R (Redistribution) 패키징 (68)</span><span class="stage-fn">CoWoS-L (Large) 패키징 (63)</span><span class="stage-fn">첨단 패키징 (CoWoS/InFO/SoIC) (55)</span><span class="stage-fn">I-Cube4 패키징 (47)</span><span class="stage-fn">I-Cube 패키징 (삼성) (47)</span><span class="stage-fn">삼성 FOPLP 패키징 (47)</span><span class="stage-fn">삼성 SAINT 3D 적층 (47)</span><span class="stage-fn">EMIB/Foveros 패키징 (인텔) (41)</span><span class="stage-fn">인텔 Foveros 3D 패키징 (39)</span><span class="stage-fn">LEAP 첨단 패키징 (36)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 05 · 9개 기능</div><div class="stage-title">STAGE 05</div><div class="stage-avg">평균 점수 52.6</div><div class="stage-fns"><span class="stage-fn hi">ATE (자동테스트장비) (63)</span><span class="stage-fn hi">메모리 테스트 (63)</span><span class="stage-fn hi">SoC 테스트 (63)</span><span class="stage-fn hi">테스트 소켓 (포고핀) (63)</span><span class="stage-fn hi">핸들러 (큐브프로버) (63)</span><span class="stage-fn">러버소켓/번인 테스트 (39)</span><span class="stage-fn">HBM용 DRAM 세정 케미컬 (39)</span><span class="stage-fn">하이스피드 번인 테스터 (39)</span><span class="stage-fn">모듈 테스터 (39)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 06 · 2개 기능</div><div class="stage-title">STAGE 02</div><div class="stage-avg">평균 점수 43.3</div><div class="stage-fns"><span class="stage-fn">범핑 (마이크로 범프/플립칩) (55)</span><span class="stage-fn">OSAT (외주 패키징/범핑) (31)</span></div></div>
+<div class="stage-card reveal d3"><div class="stage-num">Stage 07 · 9개 기능</div><div class="stage-title">STAGE 06</div><div class="stage-avg">평균 점수 24.3</div><div class="stage-fns"><span class="stage-fn hi">ABF 기판 (72)</span><span class="stage-fn">글라스코어 기판 (41)</span><span class="stage-fn">FC-BGA 기판 (36)</span><span class="stage-fn">MLCC (적층세라믹콘덴서) (36)</span><span class="stage-fn">고성능 IC 패키지 기판 (29)</span><span class="stage-fn">실리콘 인터포저 (1)</span><span class="stage-fn">CCL (동박적층판) (1)</span><span class="stage-fn">동박 소재 (1)</span><span class="stage-fn">유리섬유 소재 (1)</span></div></div>
+</div>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="foot-brand">ourprochoi Research</div>
+<p class="disc-foot">본 보고서는 투자 권유가 아닌 연구 목적의 자료입니다. 포함된 정보의 정확성이나 완전성을 보장하지 않으며, 투자 의사결정의 책임은 투자자 본인에게 있습니다.</p>
+<p class="foot-ts">데이터: 밸류체인 그래프 + ground_truth.yaml &middot; 생성: 2026-07-27 08:50 &middot; 노드 스크리너 v1.0</p>
+</div></footer>
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+  var barObs=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.axis-bar').forEach(function(b){
+          b.style.width=b.getAttribute('data-w')+'%';
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.05});
+  document.querySelectorAll('.score-table').forEach(function(el){barObs.observe(el)});
+
+  var secs=document.querySelectorAll('section.blk');
+  var navAs=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120;
+    secs.forEach(function(s,i){
+      if(s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y){
+        navAs.forEach(function(a){a.classList.remove('active')});
+        if(navAs[i])navAs[i].classList.add('active');
+      }
+    });
+  });
+
+  var btn=document.getElementById('navToggle');
+  var lnk=document.querySelector('.nav-links');
+  if(btn&&lnk){
+    btn.addEventListener('click',function(){lnk.classList.toggle('open')});
+    lnk.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){lnk.classList.remove('open')});
+    });
+  }
+})();
+</script>
+</body>
+</html>
