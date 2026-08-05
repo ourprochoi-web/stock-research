@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="ourprochoi 리서치 아카이브 업데이트 로그 — 주별 업데이트 내역, 근거 데이터, 변경 사항 추적. 108편 리서치 페이퍼 변경 이력.">
+<meta name="keywords" content="업데이트로그,changelog,리서치,AI,HBM,반도체,어닝,IB리서치">
+<meta property="og:title" content="Update Log — ourprochoi Research Archive">
+<meta property="og:description" content="108편 리서치 페이퍼 주별 업데이트 이력 — 어떤 데이터가, 어떤 근거로, 어떤 페이퍼에 반영되었는지 추적합니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/update_log.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Update Log — ourprochoi Research Archive">
+<meta name="twitter:description" content="108편 리서치 페이퍼 주별 업데이트 이력 추적">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/update_log.html">
+<title>Update Log — ourprochoi Research Archive</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,sans-serif;
+  background:#070b16;
+  color:#e8ecf4;
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(129,140,248,.35)}
+a{color:#818cf8;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── HEADER ── */
+.log-header{
+  padding:60px 24px 40px;
+  text-align:center;
+  background:linear-gradient(180deg,#0e1428 0%,#070b16 100%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.log-header h1{
+  font-size:clamp(1.6rem,4vw,2.4rem);
+  font-weight:800;
+  background:linear-gradient(135deg,#818cf8,#34d399);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+.log-header .sub{color:#94a3b8;font-size:14px}
+.back-link{
+  display:inline-block;
+  margin-top:16px;
+  padding:6px 18px;
+  border:1px solid rgba(129,140,248,.3);
+  border-radius:20px;
+  font-size:13px;
+  color:#818cf8;
+  transition:all .2s;
+}
+.back-link:hover{background:rgba(129,140,248,.1);text-decoration:none}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  display:flex;
+  justify-content:center;
+  gap:32px;
+  padding:20px 24px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  flex-wrap:wrap;
+}
+.stat{text-align:center}
+.stat .num{font-size:28px;font-weight:800;color:#818cf8}
+.stat .lbl{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+
+/* ── CONTAINER ── */
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* ── WEEK SECTION ── */
+.week{
+  margin:40px 0;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(255,255,255,.015);
+}
+.week-head{
+  padding:20px 24px;
+  background:rgba(129,140,248,.04);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.week-head h2{
+  font-size:18px;
+  font-weight:700;
+  color:#e8ecf4;
+}
+.week-badge{
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:12px;
+  font-weight:600;
+}
+.badge-amber{background:rgba(251,191,36,.15);color:#fbbf24}
+.badge-blue{background:rgba(59,130,246,.15);color:#60a5fa}
+.badge-green{background:rgba(52,211,153,.15);color:#34d399}
+.badge-purple{background:rgba(168,85,247,.15);color:#a855f7}
+
+/* ── DAY ENTRY ── */
+.day{
+  padding:20px 24px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.day:last-child{border-bottom:none}
+.day-date{
+  font-size:13px;
+  font-weight:700;
+  color:#818cf8;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.day-date::before{
+  content:'';
+  width:8px;height:8px;
+  background:#818cf8;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+/* ── UPDATE ENTRY ── */
+.upd{
+  margin:8px 0;
+  padding:12px 16px;
+  border-left:3px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.02);
+  border-radius:0 8px 8px 0;
+}
+.upd.data{border-left-color:#fbbf24}
+.upd.editorial{border-left-color:#3b82f6}
+.upd.new{border-left-color:#34d399}
+.upd.portfolio{border-left-color:#a855f7}
+
+.upd-title{
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:4px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.upd-title .tag{
+  font-size:10px;
+  padding:2px 7px;
+  border-radius:4px;
+  font-weight:600;
+  flex-shrink:0;
+}
+.tag-data{background:rgba(251,191,36,.15);color:#fbbf24}
+.tag-editorial{background:rgba(59,130,246,.15);color:#60a5fa}
+.tag-new{background:rgba(52,211,153,.15);color:#34d399}
+.tag-portfolio{background:rgba(168,85,247,.15);color:#a855f7}
+
+.upd-body{font-size:13px;color:#94a3b8;line-height:1.6}
+.upd-body b{color:#cbd5e1;font-weight:600}
+.upd-source{
+  margin-top:6px;
+  font-size:11px;
+  color:#475569;
+  font-family:'SF Mono',monospace;
+}
+
+/* ── LEGEND ── */
+.legend{
+  display:flex;gap:20px;
+  padding:16px 24px;
+  border-top:1px solid rgba(255,255,255,.06);
+  flex-wrap:wrap;
+}
+.legend-item{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;color:#64748b;
+}
+.legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+
+/* ── FOOTER ── */
+.log-footer{
+  text-align:center;
+  padding:40px 24px;
+  color:#475569;
+  font-size:12px;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+
+@media(max-width:600px){
+  .stats-bar{gap:16px}
+  .stat .num{font-size:22px}
+  .week-head{padding:14px 16px}
+  .day{padding:14px 16px}
+  .upd{padding:10px 12px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Update Log — ourprochoi Research Archive",
+  "description":"108편 리서치 페이퍼 주별 업데이트 이력 추적",
+  "author":{"@type":"Person","name":"ourprochoi"},
+  "datePublished":"2026-08-06",
+  "dateModified":"2026-08-06",
+  "publisher":{"@type":"Organization","name":"ourprochoi Research"}
+}
+</script>
+</head>
+<body>
+
+<header class="log-header">
+  <h1>Update Log</h1>
+  <p class="sub">108편 리서치 아카이브 — 주별 업데이트 이력 &amp; 근거 추적</p>
+  <a href="index.html" class="back-link">&larr; 아카이브로 돌아가기</a>
+</header>
+
+<div class="stats-bar">
+  <div class="stat"><div class="num">108</div><div class="lbl">총 페이퍼</div></div>
+  <div class="stat"><div class="num">45+</div><div class="lbl">업데이트 횟수</div></div>
+  <div class="stat"><div class="num">8</div><div class="lbl">커밋 (7월~)</div></div>
+  <div class="stat"><div class="num">19</div><div class="lbl">시리즈</div></div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>데이터 업데이트</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>편집자 주 (비판적 분석)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div>신규 페이퍼</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#a855f7"></div>포트폴리오</div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WEEK: 8/4 ~ 8/6 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="week" id="w20260804">
+<div class="week-head">
+  <h2>W32 · 2026.08.04 — 08.06</h2>
+  <span class="week-badge badge-amber">12편 업데이트</span>
+  <span class="week-badge badge-blue">3편 편집자 주</span>
+  <span class="week-badge badge-purple">v9.4</span>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.08.06 — Round 3: 편집자 주 + IB 컨센서스</div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 메모리 사이클 · Big Tech Capex · Q2 어닝 — 크리티컬 리뷰</div>
+    <div class="upd-body">IB 데이터를 비판적으로 분석. <b>JPM SK하이닉스 TP 300만→275만 실질 하향</b>, <b>Citi CROCI 28% 후행지표 한계</b>, <b>HBM4 Scale-Out = SK 기술 리드 축소</b>, <b>노보 ZEUS 실패 과소평가</b>, <b>심텍 SOCAMM 사이클 리스크</b>. Gavin Baker 포지션 바이어스 주의.</div>
+    <div class="upd-source">commit: b3e286c · 3 files changed, +79 lines</div>
+  </div>
+
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 9편 IB 컨센서스 데이터 (BofA · Goldman · Citi · JPM · Stifel · DB · Meritz)</div>
+    <div class="upd-body">
+      <b>Big Tech Capex:</b> BofA CY26 $860B→CY27 $1.2T, Goldman AI $1.019T, MS cloud $1.2T, Citi CROCI 28%, DeepMind 개편, Meta Muse<br>
+      <b>메모리 사이클:</b> JPM TP 275만/CAPEX 187조, Stifel Buy/$240, Gavin Baker LTA, Citi MLCC 가격인상, SK증권 NAND +50-60%<br>
+      <b>MSFT·Palantir:</b> Citi TP $245, DB Buy 업그레이드 TP $200, JPM "AI upcycle not over"<br>
+      <b>중국 AI:</b> CXMT 2nd fab 600K/mo, HP/Asus/Acer CXMT 채용, AMEC 테스트, Qwen3.8-Max, ByteDance 증류 거부<br>
+      <b>반도체 패권:</b> AMEC 한국 테스트, Citi Advantest 42,000¥, Bernstein 희토류<br>
+      <b>HBM 스코어보드:</b> Citi HBM4 scale-out 8-Hi, Meritz 1.6T 광트랜시버<br>
+      <b>AI 밸류체인:</b> Bernstein 서버 $1T, JPM Ibiden OP 269B¥, BofA AI 서버 $420B<br>
+      <b>Q2 어닝:</b> AMD DC $6.72B +107%, 노보노디스크 위고비필, 심텍 SOCAMM 2,300억
+    </div>
+    <div class="upd-source">commit: 946bfaf · 11 files, +417 lines · sources: BofA, Goldman, MS, Citi, JPM, Stifel, DB, Meritz, SK증권, Bernstein, Reuters, Nikkei Asia</div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.08.06 — Round 2: Q2 실적 + 컨콜 반영</div>
+
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 12편 Q2 실적 · 컨콜 · IB 데이터</div>
+    <div class="upd-body">
+      <b>SK하이닉스:</b> Q2 OP 76% OPM, HBM 매출 비중 확대<br>
+      <b>삼성전자·삼성전기:</b> Q2 컨콜 full 반영<br>
+      <b>Q2 어닝 종합:</b> 매크로 스태그플레이션(Kashkari/ADP 44K/ISM 70.3), Eli Lilly GLP-1 orforglipron, 국내(효성/에이피알/알테오젠)<br>
+      <b>Big Tech Capex:</b> Anthropic 자체칩 + Google Trillium, MSFT Azure 70% OpenAI, Bezos $4B<br>
+      <b>MSFT·Palantir:</b> Palantir Q2 $1.94B +93%, Rule of 155<br>
+      <b>메모리 사이클:</b> CXMT 가격 고수 테제 반전(purple), Sandisk FQ4 OPM 84.6%, MLCC BB 1.72<br>
+      <b>AI 밸류체인:</b> Ibiden ABF OPM 27.6%, Taiyo Yuden, Nitto Boseki T-Glass OPM 38.7%<br>
+      <b>AI 전력:</b> 효성중공업 Q2 OPM 20%+수주+51%, SK텔레콤 AIDC +92.5%<br>
+      <b>에이피알:</b> Q2 매출 +134%, 가이던스 3조원, NA +261%, 유진증권 TP 530,000원<br>
+      <b>한화에어로:</b> Q2 실적 리뷰, Granit34 섹터 선호도<br>
+      <b>Anthropic:</b> 자체칩 조직 공식 출범 + Samsung foundry<br>
+      <b>중국 AI:</b> CXMT 가격 반전
+    </div>
+    <div class="upd-source">commit: c9b6571 · 14 files, +764 lines</div>
+  </div>
+
+  <div class="upd portfolio">
+    <div class="upd-title"><span class="tag tag-portfolio">PORTFOLIO</span> v9.4: 비대칭 비율 현행화 + 독립 드라이버</div>
+    <div class="upd-body">SK하이닉스 비대칭 3.6:1→1.3:1, 삼성 역전 0.4:1. CXMT 테제 반전, NAND 슈퍼사이클, AI 인프라 소재 동시 업사이클 반영. 팔란티어 Q2 독립 드라이버 후보 테이블 추가.</div>
+    <div class="upd-source">portfolio_recommendation_v9_202607.md · v9.4 section</div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WEEK: 7/28 ~ 8/2 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="week" id="w20260728">
+<div class="week-head">
+  <h2>W31 · 2026.07.28 — 08.02</h2>
+  <span class="week-badge badge-amber">22편 업데이트</span>
+  <span class="week-badge badge-purple">v9.1~v9.3</span>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.08.02 — IB 신규 데이터 + CXMT LPDDR6</div>
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 5편 업데이트: DB·GS·UBS·JPM·Citi IB 데이터</div>
+    <div class="upd-body"><b>CXMT LPDDR6 양산</b> 확인, <b>LTA 마진 압축 테제</b> 정립 (SK하이닉스 OPM 76% peak), 시장 급반등 7/31 반영. Goldman HBM +87% YoY, Citi WFE $150B→$200B.</div>
+    <div class="upd-source">commit: 501f8c7 · sources: DB, Goldman Sachs, UBS, JPM, Citi</div>
+  </div>
+  <div class="upd portfolio">
+    <div class="upd-title"><span class="tag tag-portfolio">PORTFOLIO</span> v9.3: LTA 마진 테제 + 시장 급반등 반영</div>
+    <div class="upd-body">급반등 후 비대칭 비율 재계산. 현금 비중 76.6% 유지 판단.</div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.31 — Amazon Q2 / Apple F3Q / CAPEX $750B</div>
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 6편 업데이트: Amazon·Apple 실적 반영</div>
+    <div class="upd-body"><b>Amazon Q2:</b> AWS +42%, CAPEX $33.3B/Q(연환산 $133B). <b>Apple F3Q:</b> Services +20%, iPhone +4%. 빅테크 5사 합산 CAPEX $750B 돌파.</div>
+    <div class="upd-source">commit: 98a986d · 6편 + index/sitemap</div>
+  </div>
+  <div class="upd portfolio">
+    <div class="upd-title"><span class="tag tag-portfolio">PORTFOLIO</span> v9.2: Amazon CAPEX 반영</div>
+    <div class="upd-body">Amazon CAPEX 급증 → AI 인프라 밸류체인 구조적 수요 재확인.</div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.30 — Q2 어닝 첫 배치 (MSFT·META·삼성·SK하이닉스)</div>
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 11편 Q2 어닝/컨콜/IB 데이터 리프레시</div>
+    <div class="upd-body"><b>MSFT:</b> Azure +43%, $100B 런레이트. <b>META:</b> CAPEX $130-145B→$68-73B. <b>SK하이닉스:</b> Q2 OP, HBM 매출 비중. <b>삼성전자:</b> Q2 컨콜. Goldman HBM +87% YoY 전망.</div>
+    <div class="upd-source">commit: 4a5c898 · 11편 + index/sitemap</div>
+  </div>
+  <div class="upd portfolio">
+    <div class="upd-title"><span class="tag tag-portfolio">PORTFOLIO</span> v9.1: META 데이터 보정 + MSFT vs META ROI 분기 테이블</div>
+    <div class="upd-source">commit: 036dc31</div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WEEK: 7/21 ~ 7/27 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="week" id="w20260721">
+<div class="week-head">
+  <h2>W30 · 2026.07.21 — 07.27</h2>
+  <span class="week-badge badge-green">15편 신규+업데이트</span>
+  <span class="week-badge badge-amber">Q2 데이터 리프레시</span>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.27 — K-뷰티 + Q2 어닝 종합 + 방산/국가전략 대규모 리프레시</div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> Q2 2026 어닝 시즌 종합 리뷰 (108편)</div>
+    <div class="upd-body">빅테크 5사 Q2 실적 종합, AI CAPEX 트렌드, 메모리 사이클 포지셔닝.</div>
+    <div class="upd-source">commit: 86a1f0f</div>
+  </div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> K-뷰티 기업분석 4편 + 노드스크리너 2편</div>
+    <div class="upd-body">에이피알, 브이티, 실리콘투, 코스맥스 기업 심화 + HBM 스코어보드, 방산 스코어보드.</div>
+    <div class="upd-source">commit: 71531df</div>
+  </div>
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 방산 16편 + 국가전략 6편 + HBM 3편 + AI인프라 6편 Q2 리프레시</div>
+    <div class="upd-body">31편 대규모 Q2 2026 데이터 업데이트. 업데이트 블록 통합 정리.</div>
+    <div class="upd-source">commit: 9d10cf7</div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.25 — K-바이오 + AI 전력 5편 + SF AI 서밋</div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> K-바이오 편입 후보 4-Factor 스코어카드 (103편)</div>
+    <div class="upd-body">알테오젠, 삼성바이오, 에스티팜 등 4-Factor 비대칭 프레임워크 적용.</div>
+    <div class="upd-source">commit: 9c5f8a5</div>
+  </div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> 삼성바이오로직스 × PolyPeptide CDMO 전략 분석 (102편)</div>
+    <div class="upd-source">commit: ab636cb</div>
+  </div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> AI 전력 기업 분석 5편 — 변압기·케이블·원전·전력반도체·TOP5 (97~101편)</div>
+    <div class="upd-body">효성중공업, LS ELECTRIC, HD현대일렉, 두산에너빌리티, AI 전력 TOP5.</div>
+    <div class="upd-source">commit: 85e9d75</div>
+  </div>
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> SF AI 서밋 반영: HBM 4편 + 국가전략 4편 + AI 인프라 2편 + GLP-1 3편</div>
+    <div class="upd-body"><b>SK-엔비디아 730조 장기공급</b>, 삼성 HBM4E, 이재명 4대 비전.</div>
+    <div class="upd-source">commits: 754b526, 1376500, 2ca02c9</div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.21 — MASGA 한미 조선 동맹</div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> MASGA 한미 $150B 조선 동맹 리서치 (96편)</div>
+    <div class="upd-source">commit: 0842d48</div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WEEK: 7/14 ~ 7/20 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="week" id="w20260714">
+<div class="week-head">
+  <h2>W29 · 2026.07.14 — 07.20</h2>
+  <span class="week-badge badge-green">2편 신규</span>
+  <span class="week-badge badge-amber">플랫폼 개선</span>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.16 — 2차전지 + 포트폴리오 트래커</div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> 2차전지 밸류체인 + 에너지 전환 H2 업데이트 (95편)</div>
+    <div class="upd-source">commit: d87439c</div>
+  </div>
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 플랫폼: ETF 구성종목 표시 + 가격 자동 업데이트 + 포트폴리오 트래커</div>
+    <div class="upd-body">GitHub Actions 기반 포트폴리오 가격 자동 업데이트. Shift+T 단축키 한글 IME 호환 수정.</div>
+    <div class="upd-source">commits: ab7d447, f83758c, 97fbaae, 8c77266</div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WEEK: 7/1 ~ 7/6 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="week" id="w20260701">
+<div class="week-head">
+  <h2>W27 · 2026.07.01 — 07.06</h2>
+  <span class="week-badge badge-green">1편 신규</span>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.07.04 — K-뷰티 시리즈 론칭</div>
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> K-뷰티 섹터 종합 리서치 — 18번째 시리즈 (93편)</div>
+    <div class="upd-body">K-뷰티 섹터 전체 분석. 에이피알, 브이티, 실리콘투, 코스맥스, 한국콜마 포함.</div>
+    <div class="upd-source">commit: 1affb81</div>
+  </div>
+</div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer class="log-footer">
+  <p>ourprochoi Research Archive · Update Log</p>
+  <p>최종 업데이트 · 2026.08.06 · 이 페이지는 리서치 아카이브의 변경 이력을 투명하게 추적합니다.</p>
+</footer>
+
+</body>
+</html>
