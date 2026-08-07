@@ -213,7 +213,7 @@ a:hover{text-decoration:underline}
   "description":"108편 리서치 페이퍼 주별 업데이트 이력 추적",
   "author":{"@type":"Person","name":"ourprochoi"},
   "datePublished":"2026-08-06",
-  "dateModified":"2026-08-06",
+  "dateModified":"2026-08-07",
   "publisher":{"@type":"Organization","name":"ourprochoi Research"}
 }
 </script>
@@ -228,7 +228,7 @@ a:hover{text-decoration:underline}
 
 <div class="stats-bar">
   <div class="stat"><div class="num">108</div><div class="lbl">총 페이퍼</div></div>
-  <div class="stat"><div class="num">45+</div><div class="lbl">업데이트 횟수</div></div>
+  <div class="stat"><div class="num">52+</div><div class="lbl">업데이트 횟수</div></div>
   <div class="stat"><div class="num">8</div><div class="lbl">커밋 (7월~)</div></div>
   <div class="stat"><div class="num">19</div><div class="lbl">시리즈</div></div>
 </div>
@@ -247,10 +247,74 @@ a:hover{text-decoration:underline}
 <!-- ═══════════════════════════════════════════════════ -->
 <section class="week" id="w20260804">
 <div class="week-head">
-  <h2>W32 · 2026.08.04 — 08.06</h2>
-  <span class="week-badge badge-amber">12편 업데이트</span>
-  <span class="week-badge badge-blue">3편 편집자 주</span>
-  <span class="week-badge badge-purple">v9.4</span>
+  <h2>W32 · 2026.08.04 — 08.07</h2>
+  <span class="week-badge badge-amber">19편 업데이트</span>
+  <span class="week-badge badge-blue">8편 편집자 주</span>
+  <span class="week-badge badge-purple">v9.4 → v10.1</span>
+</div>
+
+<div class="day">
+  <div class="day-date">2026.08.07 — Round 5: Q2 후반부 어닝 + 멀티플 디레이팅 진단 + 검증/정정</div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">CORRECTION</span> 🔴 기 게재 수치 오류 정정 — SanDisk "OPM 84.6%" → GM 84.6% / OPM 78.5%</div>
+    <div class="upd-body">2026.08.04자로 기록한 <b>"SanDisk FQ4 OPM 84.6% — 키옥시아 F1Q OPM 79.5% 상회"</b>는 <b>매출총이익률을 영업이익률로 오기</b>한 것이다. 공시 확인 결과 84.6%는 GM이며, GAAP 영업이익 $7,037M / 매출 $8,965M = <b>OPM 78.5%</b>(non-GAAP 79.2%). 따라서 <b>키옥시아 79.5%를 상회하지 않으며</b>, 애초에 서로 다른 계정을 비교한 것이었다. 메모리 사이클 편 본문·타임라인, Q2 어닝 종합 편, 포트폴리오 v10.1에 정정 반영. 결론(반도체 업계 최상위권 마진)은 유지.</div>
+    <div class="upd-source">verified: SanDisk FQ4 2026 Press Release (2026.08.05) · investor.sandisk.com</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 핵심 발견: "추정치는 올리고 목표주가는 내린다" — 섹터 전반 멀티플 디레이팅</div>
+    <div class="upd-body">
+      개별 리포트가 아니라 <b>6건을 교차 대조했을 때만 보이는 패턴</b>. <b>5건이 "추정 상향 + TP 하향(또는 동결)"</b>:<br>
+      · Citi SanDisk — FY28 EPS <b>+19%</b> 상향, TP $2,500→$2,100(<b>-16%</b>)<br>
+      · Piper SpaceX — 2027 매출 <b>+37%</b> 상향, 배수 <b>20→12배</b>, TP $156→$140<br>
+      · Citi WDC — 배수 24→23배, TP $800→$740(<b>-7.5%</b>)<br>
+      · JPM Datadog — TP $320→$305(<b>-4.7%</b>)<br>
+      · BofA Palantir — 2035E EBITDA <b>+9%</b> 상향분을 배수 14→13배로 <b>전량 상계</b>, TP $255 동결<br>
+      BofA는 이를 <b>"AI 관련주 전반의 밸류에이션 디레이팅"</b>이라 명시. → 앞서 기록한 <b>BofA "좋은 뉴스가 안 통하는 시장"</b> 및 <b>비대칭 축소</b> 관찰을 독립적으로 뒷받침. <b>업사이드가 실적이 아니라 멀티플 회복에서 나오는 국면</b>으로 촉매 우선순위 재정렬.
+    </div>
+    <div class="upd-source">sources: BofA, Citi ×3, JPMorgan ×2, Piper Sandler (2026.08.04-07)</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 7편 편집자 주 신규 — 반론·바이어스·검증 포인트</div>
+    <div class="upd-body">
+      <b>메모리 사이클:</b> LTA는 하방 고정 대신 상방 포기 = 진폭 축소·가시성↑·스팟 업사이드 상실 ("LTA=무조건 호재" 프레이밍 재검토). NAND 피크아웃 트리거를 <b>ASP 둔화→GM 정체→OPM 하락 3단계</b>로 세분화(현재 ①단계). Citi 하우스 내부 온도차(DRAM 길게/NAND 짧게).<br>
+      <b>SK하이닉스:</b> 목표주가 분산 <b>2.0배</b>(Citi 310만 ~ Susquehanna 153.5만). Scale-Out 8-Hi는 고단 적층 해자 희석 — 순수 호재 아님. "환원 발표 = 경영진 신뢰도 프록시" 양날 해석.<br>
+      <b>삼성전자:</b> 비대칭 역전 종목에서 자사주는 <b>하방 방어 장치</b> — 채점 기준 사전 고정(FCF 50% 재확인=역촉매 / 100%·44조+=비대칭 재산정). CAPEX 가이던스 동반 하향 여부 병행 확인.<br>
+      <b>Palantir:</b> TP $255는 <b>2035년</b> EBITDA 기준(듀레이션 9년). TCV "+271%"는 듀레이션 가중 지표 — 공시 명목은 <b>+153%</b>. 프랑스 DGSI 대체 = 정치 논리가 전환비용을 무력화한 첫 사례.<br>
+      <b>Datadog:</b> 사용량 감소 원인 3가설(비용 최적화/자체 구축/워크로드 감소) 미확정 — 단정 금지. 증분 기준 고객 집중도는 공개 지표에 안 보였음.<br>
+      <b>Big Tech Capex:</b> 구글 사례는 메모리·전력 테제엔 <b>보강</b>, "CAPEX 1위=경쟁력 1위" 프레임엔 <b>반증</b>. 단 구글 고유 구조(모델+클라우드 겸업)이므로 업계 일반화는 과잉.<br>
+      <b>Eli Lilly:</b> 보장 확대는 볼륨↑/순가격↓ 양날. "80% 주사제 선택"은 경구 전환 테제에 역풍. CMS 단일 정책 의존 리스크.<br>
+      <b>2차전지:</b> "10가지 이유" 중 확정 사실 1개·전망 5개·<b>미확정 정책 4개</b>. AMPC/OBBBA 리스크 누락(동일 법안의 수혜만 인용). 리튬 반등은 기존 스프레드 분석과 상충.
+    </div>
+    <div class="upd-source">7 files · 편집자 주 블록 신규</div>
+  </div>
+
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 7편 데이터 리프레시 — Q2 후반부 어닝 6종 + 주주환원 + 컴퓨트 병목</div>
+    <div class="upd-body">
+      <b>메모리 사이클:</b> WDC F4Q26 GM 54.4%·EPS $3.56·TB당 가격 +10%대 후반, LTA 2030~31 연장(JPM TP $715 / Citi $740). SanDisk NBM 8건·가중평균 4년·FY28 비트 66% 선점·계약마진 80%+·$140억 자사주(Citi TP $2,100). ⚠ F1Q27 매출 가이던스 $105.5억 &lt; 컨센 $107.4억 = ASP 둔화 조기 신호<br>
+      <b>SK하이닉스:</b> Citi TP 310만원 유지·26E/27E OP +4%/+3% 상향·"업사이클 2회 초"(2001~07 NAND 사이클 대비 DRAM·NAND 동시 견인). HBM Scale-Out 시스템당 GPU 72→576개·HBM 20.7→110.6TB(<b>+434%</b>, GPU당은 -33%). Citi "3Q 실적 전 환원안 발표 전망"<br>
+      <b>삼성전자:</b> 삼성+하이닉스 연말 순현금 <b>$2,630억</b>(NVIDIA $1,020억의 2.6배·M7 6사 합계 초과) vs FCF 50% 환원 언급(마이크론 FCF 100%). ACT 임시주총+<b>$320억 자사주</b> 요구 캠페인. 삼성 "곧(very soon) 공유". 주가 6월 고점 대비 삼성 -37%·하이닉스 -48%<br>
+      <b>Palantir:</b> Q2 매출 +93%·미국 상업 +149%·TCV $21.3억(+153%)·고객당 TTM $350만(+76%)·$100만+ 계약 220건. 미 정부 +90%, NGC2 주관사 록히드→<b>안두릴</b>(팔란티어는 데이터 계층). 엔비디아 공동 소버린 AI 운영환경(네모트론). NATO MSS 완전 인증 vs 프랑스 DGSI 대체. BofA TP $255 유지<br>
+      <b>Datadog:</b> Q2 매출 $11.21억(+36%, 사상 최대 QoQ 증가액 $1.15억)·PF OPM 22.9%·FCF $2.787억·ARR $10만+ 4,720개(전체 ARR 91%)·RUM ARR $2억. <b>최대 고객 사용량 감소 → Q3 QoQ +11%→약 2%</b>, 주가 <b>-15.6% 사상 최대 일간 낙폭</b>. JPM TP $305<br>
+      <b>Big Tech Capex:</b> 구글 TPU 3중 배정 경쟁(자체 학습/자체 제품/클라우드 고객). Anthropic <b>최대 100만 TPU·1GW+</b>. <b>Google Cloud +82%</b>. DeepMind 장기 기여자 Ioannis Antonoglou 등 이탈<br>
+      <b>Eli Lilly:</b> Q2 매출 <b>$230억(+48%)</b>·Mounjaro+Zepbound $149억(+$63억)·글로벌 Mounjaro $99억(+91%)·미국 Zepbound $49.3억(+44%)·non-GAAP EPS $8.38(컨센 $6.01). FY26 $850~870억 상향. CMS Medicare GLP-1 Bridge 월 $50·신규 유입 60~70%·주사제 80%<br>
+      <b>SpaceX:</b> 상장 후 첫 실적 — Q2 매출 $78억(+92%)·adj EBITDA $35억(+191%)·GM 55%·증분 마진 77%·<b>순손실 $5.41억</b>. Q2 캐펙스 $183.7억 중 <b>AI 캐펙스 $158.3억(매출의 2배)</b>. CFO "12월까지 $1,000억 런레이트, 최대 동력은 AI 컴퓨트 임대". 락업 <b>8/6자 9.115억 주(~$1,230억)</b> 해제. Piper TP $140<br>
+      <b>2차전지/ESS:</b> 미래에셋 김철중 강세 콜 — OBBBA 북미 ESS 탈중국 가속·적격 소재 shortage·업체별 순환 수주·IAA 유럽 각형 LFP·넥스테라 2030~32 ESS 수주잔고 발표 개시
+    </div>
+    <div class="upd-source">7 files changed · sources: BofA, Citi ×3, JPMorgan ×2, Piper Sandler, Reuters/LSEG, CNBC, Eli Lilly IR, SanDisk IR, WDC IR, SpaceX IR, Palantir 8-K, Datadog IR, 미래에셋증권, CMS</div>
+  </div>
+
+  <div class="upd portfolio">
+    <div class="upd-title"><span class="tag tag-portfolio">PORTFOLIO</span> v10 · v10.1: 4-Way 디베이트 확정 + 촉매 체계 재정렬</div>
+    <div class="upd-body">
+      <b>v10 (8/7 1차):</b> Bull/Bear/Independent/Critic 4개 병렬 토론 → 고배당 원점 재검토. KB금융 1.0억(방어) + 에이피알 1.0-1.2억(성장) <b>2-Tier 확정</b>, SKT·삼성화재우 보류, 현금 55-58%. 에이피알 스탑 -12%(FDA 바이너리 리스크).<br>
+      <b>v10.1 (8/7 2차):</b> 구성은 <b>변경 없음</b>. 대신 ① <b>촉매 체계 재정렬</b> — "디레이팅 중단 사건"(주주환원·ISM Prices 하락·금리 경로)을 최상위 신설, 실적 beat 단독은 불충분 ② <b>주주환원 촉매 신설 + 사전 채점표 고정</b>(FCF 50% 재확인=역촉매 / 70-80%+복수년=중립~긍정 / 100%·44조+=비대칭 재산정) ③ <b>NAND 트리거 3단계화</b> ④ <b>2차전지/ESS Factor 5 불채택</b>(북미 ESS=데이터센터 전력 직결, AI 상관 0.4~0.6 추정) ⑤ PLTR·DDOG·SPCX·LLY <b>전원 패스</b> ⑥ <b>매수 직전 당일가로 비대칭 재계산 의무화</b>(아카이브 기준가 7/30 고정 문제). 비대칭·확률은 v10 유지.
+    </div>
+    <div class="upd-source">portfolio_recommendation_v9_202607.md · v10 + v10.1 sections</div>
+  </div>
 </div>
 
 <div class="day">
@@ -289,7 +353,7 @@ a:hover{text-decoration:underline}
       <b>Q2 어닝 종합:</b> 매크로 스태그플레이션(Kashkari/ADP 44K/ISM 70.3), Eli Lilly GLP-1 orforglipron, 국내(효성/에이피알/알테오젠)<br>
       <b>Big Tech Capex:</b> Anthropic 자체칩 + Google Trillium, MSFT Azure 70% OpenAI, Bezos $4B<br>
       <b>MSFT·Palantir:</b> Palantir Q2 $1.94B +93%, Rule of 155<br>
-      <b>메모리 사이클:</b> CXMT 가격 고수 테제 반전(purple), Sandisk FQ4 OPM 84.6%, MLCC BB 1.72<br>
+      <b>메모리 사이클:</b> CXMT 가격 고수 테제 반전(purple), Sandisk FQ4 <s>OPM 84.6%</s> <b style="color:#f87171">→ GM 84.6% / OPM 78.5% (2026.08.07 정정)</b>, MLCC BB 1.72<br>
       <b>AI 밸류체인:</b> Ibiden ABF OPM 27.6%, Taiyo Yuden, Nitto Boseki T-Glass OPM 38.7%<br>
       <b>AI 전력:</b> 효성중공업 Q2 OPM 20%+수주+51%, SK텔레콤 AIDC +92.5%<br>
       <b>에이피알:</b> Q2 매출 +134%, 가이던스 3조원, NA +261%, 유진증권 TP 530,000원<br>
@@ -466,7 +530,7 @@ a:hover{text-decoration:underline}
 
 <footer class="log-footer">
   <p>ourprochoi Research Archive · Update Log</p>
-  <p>최종 업데이트 · 2026.08.06 · 이 페이지는 리서치 아카이브의 변경 이력을 투명하게 추적합니다.</p>
+  <p>최종 업데이트 · 2026.08.07 · 이 페이지는 리서치 아카이브의 변경 이력을 투명하게 추적합니다.</p>
 </footer>
 
 </body>
