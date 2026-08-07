@@ -1,2 +1,7 @@
 .DS_Store
 .omc/
+
+# 환경변수 / 시크릿
+.env
+.env.*
+!.env.example
