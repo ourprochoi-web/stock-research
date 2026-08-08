@@ -161,7 +161,9 @@ input{font-family:inherit}
 }
 .sec-label.visible{opacity:1;transform:none;transition:all .7s cubic-bezier(.16,1,.3,1)}
 .sec-label::before{content:'';width:24px;height:2px;border-radius:1px}
-.sec-label.ai-infra{color:#818cf8}.sec-label.ai-infra::before{background:#818cf8}
+.sec-label.recently-updated{color:#7dd3fc}
+  .sec-label.recently-updated::before{background:#7dd3fc}
+  .sec-label.ai-infra{color:#818cf8}.sec-label.ai-infra::before{background:#818cf8}
 .sec-label.physical-ai{color:#34d399}.sec-label.physical-ai::before{background:#34d399}
 .sec-label.defense{color:#c79a2f}.sec-label.defense::before{background:#c79a2f}
 .sec-label.ai-sw{color:#38bdf8}.sec-label.ai-sw::before{background:#38bdf8}
@@ -841,14 +843,16 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드",
       file: "ai-infra/ai_value_chain_guide_v2.html",
-      date: "2026-08-06", category: "AI 인프라", type: "산업 개관", series: "AI 밸류체인",
+      date: "2026-08-06",
+      updated: "2026-08-09", category: "AI 인프라", type: "산업 개관", series: "AI 밸류체인",
       desc: "전력 인프라부터 GPU, 모델, 서비스까지 AI 밸류체인 전 구간을 체계적으로 정리한 투자 가이드. Ibiden ABF, Taiyo Yuden MLCC, Nitto Boseki T-Glass, 일본 공작기계",
       tags: ["전력","GPU","데이터센터","밸류체인","클라우드","모델","ABF","MLCC","T-Glass","일본공작기계","Ibiden","Taiyo Yuden"]
     },
     {
       title: "AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다",
       file: "ai-infra/ai_power_infra_investment_map.html",
-      date: "2026-08-06", category: "AI 인프라", type: "투자 지도", series: "AI 밸류체인",
+      date: "2026-08-06",
+      updated: "2026-08-08", category: "AI 인프라", type: "투자 지도", series: "AI 밸류체인",
       desc: "AI 가동에 필요한 전력 인프라 — 발전·송배전·냉각·전력반도체의 투자 기회를 체계적으로 매핑한 투자 지도. 효성중공업 Q2, SK텔레콤 AIDC",
       tags: ["전력","송배전","냉각","전력반도체","발전","SMR","효성중공업","SK텔레콤","AIDC"]
     },
@@ -862,133 +866,153 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "한국 AI G3 — 소버린 AI 260,000 GPU의 도전",
       file: "ai-infra/ai_korea_g3_sovereign_ai.html",
-      date: "2026-07-27", category: "AI 인프라", type: "심화 테마", series: "AI 밸류체인",
+      date: "2026-07-27",
+      updated: "2026-08-08", category: "AI 인프라", type: "심화 테마", series: "AI 밸류체인",
       desc: "한국 GPU 인프라 260,000장, Stanford HAI 3위, AI 특허 밀도 세계 1위, 소버린 AI 5사 $390M — K-AI G3 전략 심층 분석",
       tags: ["한국AI","소버린AI","GPU","Stanford HAI","AI특허","Naver","SK텔레콤","Upstage"]
     },
     {
       title: "핵융합 에너지 생태계 — CFS $6.65B, Google 200MW, KSTAR 48초의 시대",
       file: "ai-infra/ai_fusion_energy_ecosystem.html",
-      date: "2026-06-25", category: "AI 인프라", type: "심화 테마", series: "AI 전력 공급",
+      date: "2026-06-25",
+      updated: "2026-06-28", category: "AI 인프라", type: "심화 테마", series: "AI 전력 공급",
       desc: "CFS $6.65B 투자, Google 200MW PPA, KSTAR 48초 세계기록, 민간 핵융합 53사, 페로브스카이트 34.85% — AI 시대 에너지 혁명",
       tags: ["핵융합","CFS","SPARC","Google PPA","KSTAR","페로브스카이트","SMR","에너지"]
     },
     {
       title: "변압기·송배전 — K-전력기기 슈퍼사이클의 최전방",
       file: "ai-infra/ai_power_company_transformer_grid.html",
-      date: "2026-07-23", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
+      date: "2026-07-23",
+      updated: "2026-08-08", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
       desc: "산일전기 OPM 37%·제룡전기 북미 88%·지투파워 관급 M/S 1위 — 변압기·수배전반 중소형 전력기기 기업 분석과 대형사 비교 투자 지도",
       tags: ["변압기","산일전기","제룡전기","지투파워","HD현대일렉트릭","효성중공업","수배전반","전력기기"]
     },
     {
       title: "전선·케이블 — AI가 끌어올린 구리 슈퍼사이클",
       file: "ai-infra/ai_power_company_cable_wire.html",
-      date: "2026-08-07", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
       desc: "구리 사상 최고가·콩고 공급망 이슈, 단 LME 재고량 동반 확인 프레임 — 수주잔고 11.6조 사상 최대·DC 구리수요 47.5만톤·대한전선 HVDC·가온전선 초고압·일진전기 종합 중전기 — 전선·케이블 기업 분석",
       tags: ["구리","LME","재고량","콩고","전선","케이블","대한전선","가온전선","일진전기","대원전선","HVDC","구리"]
     },
     {
       title: "원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주",
       file: "ai-infra/ai_power_company_nuclear_smr.html",
-      date: "2026-07-23", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
+      date: "2026-07-23",
+      updated: "2026-08-08", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
       desc: "한전기술 수주 1.73조·비에이치아이 매출 +91%·우진 계측기 독점·금화피에스시 PER 5x — 원전·SMR 밸류체인 10개사 분석",
       tags: ["원전","SMR","한전기술","비에이치아이","우진","한전KPS","체코원전","i-SMR"]
     },
     {
       title: "전력반도체·ESS·냉각 — 전력 밸류체인의 라스트마일",
       file: "ai-infra/ai_power_company_semi_ess_dc.html",
-      date: "2026-07-27", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
+      date: "2026-07-27",
+      updated: "2026-08-09", category: "AI 인프라", type: "기업 분석", series: "AI 전력 공급",
       desc: "DB하이텍 SiC/GaN 2027 양산·씨에스윈드 풍력 글로벌 1위·두산퓨얼셀 적자축소 — 전력반도체·ESS·신재생·DC냉각 기업 분석",
       tags: ["전력반도체","SiC","GaN","DB하이텍","ESS","씨에스윈드","두산퓨얼셀","냉각"]
     },
     {
       title:"K-전력 TOP 5 — 밸류체인 비교 투자 지도",
-      file:"ai-infra/ai_power_top5_picks.html",
-      date:"2026-07-24",category:"AI 인프라",type:"투자 지도",series:"AI 전력 공급",
+      file: "ai-infra/ai_power_top5_picks.html",
+      date: "2026-07-24",
+      updated: "2026-08-08",
+      category: "AI 인프라", type: "투자 지도", series: "AI 전력 공급",
       desc:"산일전기·일진전기·비에이치아이·효성중공업·한전KPS — 전력 밸류체인 위치·품목 차이·사업 구조 비교와 3관점 교차 분석 투자 시사점",
       tags:["산일전기","일진전기","비에이치아이","효성중공업","한전KPS","전력","변압기","HRSG","원전정비","투자지도"]
     },
     {
       title: "후공정이 전공정을 잡아먹는 시대 — HBM·패키징 산업구조와 투자 좌표",
       file: "hbm-packaging/hbm_pkg_overview.html",
-      date: "2026-06-22", category: "AI 인프라", type: "산업 개관", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-08-08", category: "AI 인프라", type: "산업 개관", series: "HBM·패키징",
       desc: "HBM 매크로 수요 $98B, 6단계 후공정 밸류체인, 병목·해자·비대칭성 투자 프레임워크, 사이클 판정",
       tags: ["HBM","패키징","CoWoS","밸류체인","메모리","후공정"]
     },
     {
       title: "HBM/패키징 투자 지도 — 크로스 밸류에이션",
       file: "hbm-packaging/hbm_pkg_investment_map.html",
-      date: "2026-06-22", category: "AI 인프라", type: "투자 지도", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-08-08", category: "AI 인프라", type: "투자 지도", series: "HBM·패키징",
       desc: "한국 9사·글로벌 12사 크로스 밸류에이션, PEG 랭킹, 밸류체인 단계별 종목 배치, 시간축 포트폴리오",
       tags: ["밸류에이션","PEG","투자지도","포트폴리오","HBM","패키징"]
     },
     {
       title: "SK하이닉스 — HBM의 왕좌",
       file: "hbm-packaging/hbm_pkg_company_sk_hynix.html",
-      date: "2026-08-07", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
+      date: "2026-08-07",
+      updated: "2026-08-09", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
       desc: "Q2'26 매출 ₩79.3T, OPM 76%, HBM M/S 48% — Citi TP 310만원·Morgan Stanley 2주 만에 약세→강세 전환(EPS +13%, 60%+ 상방), 8/7 종가 142.2만·목표주가 레인지 전체 아래, 분기배당 375원, 솔리다임 IPO설·ADR 종료·레버리지 ETF 이탈 — HBM 슈퍼사이클 최대 수혜주 심층 분석",
       tags: ["SK하이닉스","HBM","DRAM","메모리","M15X","NVIDIA","Citi","주주환원","ScaleOut","순현금","목표주가","MorganStanley","솔리다임","ADR","레버리지ETF"]
     },
     {
       title: "삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성",
       file: "hbm-packaging/hbm_pkg_company_samsung.html",
-      date: "2026-08-07", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
       desc: "삼성전자 Q2'26 확정 실적 — OP 89.5조(+1,814% YoY) beat, HBM4 3배 확대, 공급부족 2028 확인. 순현금 $2,630억·ACT 임시주총+$320억 자사주 요구·삼성 \"곧 공유\" — 주주환원 채점 기준. 삼성전기 FC-BGA·유리기판 분석.",
       tags: ["삼성전자","삼성전기","HBM","FC-BGA","유리기판","MLCC","주주환원","자사주","ACT","순현금","행동주의"]
     },
     {
       title: "한미반도체 — TC본더 71%의 곡괭이 장수",
       file: "hbm-packaging/hbm_pkg_company_hanmi_semi.html",
-      date: "2026-06-22", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-06-28", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
       desc: "TC본더 글로벌 M/S 71.2%, Q1'26 어닝쇼크, Wide TC Bonder 2026 H2, 하이브리드 본딩 전환 리스크",
       tags: ["한미반도체","TC본더","HBM","본딩","장비","하이브리드본딩"]
     },
     {
       title: "HPSP·리노공업·테크윙·한화세미텍·ISC — 열처리 독점과 소켓의 숨은 해자",
       file: "hbm-packaging/hbm_pkg_company_hpsp_lino.html",
-      date: "2026-06-22", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-06-28", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
       desc: "HPSP 수소어닐링 독점, 리노공업 OPM 47%, 테크윙 +170% 성장, ISC 러버소켓 — 5개 중소형주 분석",
       tags: ["HPSP","리노공업","테크윙","ISC","한화세미텍","소켓","어닐링"]
     },
     {
       title: "글로벌 패키징 빅5+ — TSMC·ASE·Amkor·마이크론·Advantest",
       file: "hbm-packaging/hbm_pkg_company_global.html",
-      date: "2026-06-22", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-06-28", category: "AI 인프라", type: "기업 분석", series: "HBM·패키징",
       desc: "대만·미국·일본·네덜란드 12개 글로벌 기업 재무·밸류에이션 심층 분석, PEG 크로스 랭킹",
       tags: ["TSMC","Advantest","BESI","Amkor","마이크론","Disco","글로벌"]
     },
     {
       title: "CoWoS/InFO/SoIC 패키징 기술전쟁",
       file: "hbm-packaging/hbm_pkg_theme_cowos.html",
-      date: "2026-06-22", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-06-28", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
       desc: "CoWoS-S/-L/-R 비교, Intel EMIB vs 삼성 I-Cube4, CoPoS 차세대, CAPA 전쟁 35K→200K WPM",
       tags: ["CoWoS","InFO","SoIC","TSMC","패키징","CoPoS","EMIB"]
     },
     {
       title: "하이브리드 본딩 — HBM의 다음 관문",
       file: "hbm-packaging/hbm_pkg_theme_hybrid_bonding.html",
-      date: "2026-06-22", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
+      date: "2026-06-22",
+      updated: "2026-06-28", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
       desc: "TCB→하이브리드 본딩 전환 로드맵, 피치 35→<10μm, BESI vs 한미 vs AMAT, $2B 시장(2028)",
       tags: ["하이브리드본딩","TCB","BESI","한미반도체","피치","HBM5"]
     },
     {
       title: "메모리 사이클 판정 — CXMT 위협과 가격 피크",
       file: "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
-      date: "2026-08-07", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
+      date: "2026-08-07",
+      updated: "2026-08-09", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
       desc: "2018 vs 현재 사이클 비교, HBM ASP 동향, CXMT LPDDR6 12800Mbps·HBM3E 진입(2027-28), LTA 마진 압축 테제, CXMT 가격 고수 테제 반전, Sandisk FQ4 GM 84.6%/OPM 78.5%(정정), WDC LTA 2030-31·SanDisk NBM 8건, Citi HBM Scale-Out +434%, 순현금 $2,630억 주주환원, 멀티플 디레이팅 국면, NAND 피크아웃 3단계 트리거, Goldman 수급 2027 정점(DRAM -5.9%/HBM -6.0%/NAND -4.6%), Wells Fargo NVL72 BOM 1GW당 메모리 +43%·네트워킹 -11%, WDC/SanDisk 컨콜 원문, TrendForce Rubin Ultra HBM 다운스펙(288→192GB -33%), Morgan Stanley 약세→강세 전환, 수급 시나리오 분석",
       tags: ["메모리사이클","CXMT","ASP","DRAM","가격","수급","중국","LTA","키옥시아","MLCC","Sandisk","NAND","WesternDigital","NBM","ScaleOut","디레이팅","주주환원","GoldmanSachs","WellsFargo","VeraRubin","NVL72","BOM","수급밸런스","TrendForce","RubinUltra","MorganStanley","HBM4"]
     },
     {
       title: "기판/소재 — ABF·글라스코어·CCL",
       file: "hbm-packaging/hbm_pkg_theme_substrate.html",
-      date: "2026-08-07", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "AI 인프라", type: "심화 테마", series: "HBM·패키징",
       desc: "Ajinomoto ABF 필름 95% 독점, 유리기판 전환, ABF 기판 Big 5, 삼성전기 FC-BGA 심화 — 한국 PCB 3사 Q2: 대덕전자 영업이익 35배·심텍 10배·티엘비 +86%, SOCAMM(Vera CPU 모듈) 심텍 점유율 50% 목표, 대만 BT기판 축소에 따른 주문 이전 효과",
       tags: ["ABF","기판","유리기판","Ajinomoto","삼성전기","Unimicron","소재","대덕전자","심텍","티엘비","PCB","SOCAMM","BT기판","FC-BGA"]
     },
     {
       title: "피지컬 AI 투자 지도 — 두뇌는 수렴하고, 몸은 갈라진다",
       file: "physical-ai/physical-ai-investment-map_1.html",
-      date: "2026-06-01", category: "Physical AI", type: "투자 지도", series: null,
+      date: "2026-06-01",
+      updated: "2026-06-30", category: "Physical AI", type: "투자 지도", series: null,
       desc: "로보틱스·자율주행·드론 등 피지컬 AI 영역의 HW/SW 구조를 분석하고 투자 기회를 매핑",
       tags: ["로보틱스","자율주행","드론","휴머노이드","센서","액추에이터"]
     },
@@ -1009,14 +1033,16 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "한화에어로스페이스 딥다이브 — K-방산의 심장",
       file: "defense/k_defense_company_hanwha_aero.html",
-      date: "2026-08-06", category: "방산", type: "기업 분석", series: "K-방산",
+      date: "2026-08-06",
+      updated: "2026-08-08", category: "방산", type: "기업 분석", series: "K-방산",
       desc: "매출 26.7조, 지상 OPM 20.4%, 수주잔고 116.8조, Q2 실적 리뷰, Granit34 섹터 선호도 — K-방산 1위 플랫폼 기업의 사업구조·재무·성장 벡터 심층 분석",
       tags: ["한화에어로","방산","K9","천무","수주잔고","지상무기","OPM","Q2실적","Granit34"]
     },
     {
       title: "현대로템 기업 심층 분석 — 궤도 위의 르네상스",
       file: "defense/k_defense_company_hyundai_rotem.html",
-      date: "2026-07-27", category: "방산", type: "기업 분석", series: "K-방산",
+      date: "2026-07-27",
+      updated: "2026-08-08", category: "방산", type: "기업 분석", series: "K-방산",
       desc: "K2 전차·장갑차 수출 붐, OPM 17.2% 달성, 방산수주 10.5조 — 디펜스와 레일솔루션 투트랙 분석",
       tags: ["현대로템","K2","전차","장갑차","방산","수출","폴란드"]
     },
@@ -1058,7 +1084,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "심화 테마 B — 방공·정밀유도: 하늘의 방패",
       file: "defense/k_defense_theme_air_defense.html",
-      date: "2026-07-27", category: "방산", type: "심화 테마", series: "K-방산",
+      date: "2026-07-27",
+      updated: "2026-08-08", category: "방산", type: "심화 테마", series: "K-방산",
       desc: "천궁-II 수출 $82.3B, 이스라엘 벤치마크 $148B, L-SAM 개발 완료 — 방공·미사일 시장 심층 분석",
       tags: ["방공","천궁","미사일","L-SAM","정밀유도","아이언돔","방어"]
     },
@@ -1107,35 +1134,40 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "AI 소프트웨어 레이어 산업구조와 투자 좌표",
       file: "ai-sw/ai_sw_overview.html",
-      date: "2026-08-07", category: "AI SW", type: "산업 개관", series: "AI SW",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "AI SW", type: "산업 개관", series: "AI SW",
       desc: "Hassabis DeepMind CEO 사임·Jeff Dean 퇴사·Gemini 3.5 지연·알파벳 -4%, Anthropic 매출 $47B run-rate 흑자전환 국면 — AI 에이전트 $53B, Vertical AI SaaS CAGR 36.5%, AI 보안 $134B — 3대 테마 구조와 12사 크로스 밸류에이션 투자 프레임워크",
       tags: ["Hassabis","Gemini","DeepMind","Anthropic","프런티어모델","AI소프트웨어","에이전트","Vertical AI","보안","SaaS","밸류에이션"]
     },
     {
       title: "AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션",
       file: "ai-sw/ai_sw_investment_map.html",
-      date: "2026-06-23", category: "AI SW", type: "투자 지도", series: "AI SW",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI SW", type: "투자 지도", series: "AI SW",
       desc: "글로벌 7사 + 한국 5사 크로스 밸류에이션, 3종 포트폴리오, 리스크 히트맵, 이벤트 캘린더",
       tags: ["밸류에이션","포트폴리오","Palantir","ServiceNow","Salesforce","CrowdStrike","네이버"]
     },
     {
       title: "Microsoft · Palantir — AI 플랫폼의 양극단",
       file: "ai-sw/ai_sw_company_msft_pltr.html",
-      date: "2026-08-07", category: "AI SW", type: "기업 분석", series: "AI SW",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "AI SW", type: "기업 분석", series: "AI SW",
       desc: "Microsoft Q4 FY2026: Azure +43% $100B 돌파, Copilot 3,000만 시트, EPS $4.74, MSFT AI 70% OpenAI — Palantir Q2 $1.94B +93%·미국 상업 +149%·TCV $21.3억, BofA TP $255 유지(2035E EBITDA 13배·듀레이션 9년), 소버린 AI·엔비디아 네모트론, 프랑스 DGSI 대체 리스크. 두 AI 플랫폼 심층 비교",
       tags: ["Microsoft","Palantir","MSFT","PLTR","Copilot","AIP","Azure","OpenAI","Q2실적","BofA","소버린AI","네모트론","NGC2","디레이팅"]
     },
     {
       title: "ServiceNow · Salesforce — 엔터프라이즈 AI 워크플로우",
       file: "ai-sw/ai_sw_company_now_crm.html",
-      date: "2026-06-23", category: "AI SW", type: "기업 분석", series: "AI SW",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI SW", type: "기업 분석", series: "AI SW",
       desc: "ServiceNow Now Assist ACV $600M, Salesforce Agentforce $1.2B ARR — 워크플로우 AI 양대 진영 비교",
       tags: ["ServiceNow","Salesforce","NOW","CRM","Agentforce","Now Assist"]
     },
     {
       title: "CrowdStrike · Datadog · Snowflake — 보안 · 옵저버빌리티 · 데이터",
       file: "ai-sw/ai_sw_company_crwd_ddog_snow.html",
-      date: "2026-08-07", category: "AI SW", type: "기업 분석", series: "AI SW",
+      date: "2026-08-07",
+      updated: "2026-08-09", category: "AI SW", type: "기업 분석", series: "AI SW",
       desc: "Charlotte AI 자율 보안, LLM Observability 선점, Cortex AI 데이터 레이크하우스 — Datadog Q2 매출 $11.21억 +36% 사상 최대 beat에도 최대 고객 사용량 감소로 주가 -15.6% 사상 최대 낙폭, JPM TP $320→$305. AI 네이티브 단일 고객 집중 리스크 — 3축 기업 분석",
       tags: ["CrowdStrike","Datadog","Snowflake","CRWD","DDOG","SNOW","보안","옵저버빌리티","Q2실적","JPMorgan","AI네이티브","고객집중"]
     },
@@ -1149,119 +1181,136 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "심화 테마 A+B — Agentic AI 혁명과 Vertical AI SaaS",
       file: "ai-sw/ai_sw_theme_agent_vertical.html",
-      date: "2026-06-23", category: "AI SW", type: "심화 테마", series: "AI SW",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI SW", type: "심화 테마", series: "AI SW",
       desc: "AI 에이전트 $53B 시장, MCP/A2A 표준화, Vertical AI CAGR 36.5%, 데이터 플라이휠 — 두 테마 통합 분석",
       tags: ["AI에이전트","Agentic AI","Vertical AI","MCP","멀티에이전트","Harvey AI"]
     },
     {
       title: "심화 테마 C — AI 보안: 지능을 지키는 방패",
       file: "ai-sw/ai_sw_theme_security.html",
-      date: "2026-06-23", category: "AI SW", type: "심화 테마", series: "AI SW",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI SW", type: "심화 테마", series: "AI SW",
       desc: "AI 사이버보안 $134B, 침투→피해 51초, AI vs AI 군비경쟁 — CrowdStrike·Palo Alto·SentinelOne 투자 분석",
       tags: ["AI보안","사이버보안","CrowdStrike","Charlotte AI","Palo Alto","XSIAM"]
     },
     {
       title: "로봇·휴머노이드 산업구조와 투자 좌표",
       file: "robot/robot_overview.html",
-      date: "2026-06-23", category: "로봇", type: "산업 개관", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "로봇", type: "산업 개관", series: "로봇",
       desc: "글로벌 로봇 시장 $38B→$152B, BOM $20K 목표, 3대 테마(경제학/AI두뇌/서플라이체인) 구조와 Layer 0-4 밸류체인 맵",
       tags: ["로봇","휴머노이드","밸류체인","BOM","Tesla","NVIDIA","Foundation Model"]
     },
     {
       title: "로봇 투자 지도 — 12사 크로스 밸류에이션",
       file: "robot/robot_investment_map.html",
-      date: "2026-06-23", category: "로봇", type: "투자 지도", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-30", category: "로봇", type: "투자 지도", series: "로봇",
       desc: "글로벌 7사 + 한국 5사 크로스 밸류에이션, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵, 투자 캘린더",
       tags: ["밸류에이션","포트폴리오","Tesla","ISRG","Symbotic","레인보우","두산","로보티즈"]
     },
     {
       title: "Tesla · Figure AI · Agility — 휴머노이드 3강",
       file: "robot/robot_company_tsla_figure_agility.html",
-      date: "2026-06-23", category: "로봇", type: "기업 분석", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "로봇", type: "기업 분석", series: "로봇",
       desc: "Optimus Gen3 1000대+, BOM $50-80K→$15-22K, Figure $39B Series C, Digit $250K RoboFab 10K/yr",
       tags: ["Tesla","Optimus","Figure AI","Agility","Digit","휴머노이드","BOM"]
     },
     {
       title: "ISRG · Symbotic — 수술로봇과 창고 자동화",
       file: "robot/robot_company_isrg_symbotic.html",
-      date: "2026-06-23", category: "로봇", type: "기업 분석", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "로봇", type: "기업 분석", series: "로봇",
       desc: "da Vinci 11,395대 설치, Q1 +23%, P/E 44x / Symbotic $22.7B 백로그, GAAP 흑자전환",
       tags: ["ISRG","Symbotic","da Vinci","수술로봇","창고자동화","Walmart"]
     },
     {
       title: "Fanuc · ABB · Teradyne/UR — 산업 자동화의 거인들",
       file: "robot/robot_company_fanuc_abb_teradyne.html",
-      date: "2026-06-23", category: "로봇", type: "기업 분석", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "로봇", type: "기업 분석", series: "로봇",
       desc: "Fanuc CNC 50% 글로벌, ¥7.42T / ABB 로봇 SoftBank 매각 / UR 코봇 40% 점유율",
       tags: ["Fanuc","ABB","Teradyne","Universal Robots","코봇","산업로봇","CNC"]
     },
     {
       title: "한국 로봇 5사 + K-휴머노이드 얼라이언스",
       file: "robot/robot_company_kr.html",
-      date: "2026-06-23", category: "로봇", type: "기업 분석", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-30", category: "로봇", type: "기업 분석", series: "로봇",
       desc: "현대차·BD(Atlas 전동식), 레인보우(삼성 35%, RB-Y1), 두산(P/S 182x), 뉴로메카(MaaS), 로보티즈(Dynamixel)",
       tags: ["현대차","Boston Dynamics","레인보우","두산로보틱스","뉴로메카","로보티즈","K-휴머노이드"]
     },
     {
       title: "심화 테마 A+B — 휴머노이드 경제학과 Foundation Model",
       file: "robot/robot_theme_economics_ai.html",
-      date: "2026-06-23", category: "로봇", type: "심화 테마", series: "로봇",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "로봇", type: "심화 테마", series: "로봇",
       desc: "BOM 하락 3대 드라이버, 노동력 대체 경제학, GR00T N1/π0/RT-2/Helix 02, Sim-to-Real, FSD→Optimus 전이",
       tags: ["BOM","경제학","Foundation Model","GR00T","π0","Sim-to-Real","VLA"]
     },
     {
       title: "심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지",
       file: "robot/robot_theme_supply_chain.html",
-      date: "2026-08-07", category: "로봇", type: "심화 테마", series: "로봇",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "로봇", type: "심화 테마", series: "로봇",
       desc: "유니트리 IPO 공모가 150.80위안·시총 610억 위안·PER 219배(비경상)/103배(순이익)·DeepSeek 등 국가자본 참여, 중국 4족로봇 세계 80% — 감속기 일본 과점(Harmonic/Nabtesco), 중국 Leaderdrive 추격, 한국 SBB/SPG/현대모비스, 액추에이터 통합 트렌드",
       tags: ["유니트리","UnitreeIPO","4족로봇","STAR마켓","DeepSeek","감속기","액추에이터","Harmonic Drive","Leaderdrive","서플라이체인","부품","국산화"]
     },
     {
       title: "GLP-1 산업구조와 투자 좌표",
       file: "glp1/glp1_overview.html",
-      date: "2026-06-23", category: "GLP-1", type: "산업 개관", series: "GLP-1",
+      date: "2026-06-23",
+      updated: "2026-07-25", category: "GLP-1", type: "산업 개관", series: "GLP-1",
       desc: "GLP-1 수용체 작용제 $95-200B(2030E), 적응증 확대 로드맵, API→제형→디바이스→유통 밸류체인 맵, 투자 프레임워크",
       tags: ["GLP-1","비만치료제","Ozempic","Wegovy","Mounjaro","밸류체인","투자"]
     },
     {
       title: "GLP-1 투자 지도 — 크로스 밸류에이션",
       file: "glp1/glp1_investment_map.html",
-      date: "2026-06-23", category: "GLP-1", type: "투자 지도", series: "GLP-1",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "GLP-1", type: "투자 지도", series: "GLP-1",
       desc: "글로벌 6사+한국 5사 크로스 밸류에이션, P/E·EV/Revenue 비교, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵",
       tags: ["밸류에이션","포트폴리오","Novo Nordisk","Eli Lilly","Amgen","Viking","한미약품"]
     },
     {
       title: "Novo Nordisk · Eli Lilly — 비만약 듀오폴리",
       file: "glp1/glp1_company_novo_lilly.html",
-      date: "2026-08-07", category: "GLP-1", type: "기업 분석", series: "GLP-1",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "GLP-1", type: "기업 분석", series: "GLP-1",
       desc: "Novo Ozempic+Wegovy $30B+, CagriSema 22.7% — Lilly Q2 2026 매출 $230억 +48%, Mounjaro+Zepbound $149억(+$63억), FY26 가이던스 $850-870억 상향, CMS Medicare GLP-1 Bridge 월 $50·신규 유입 60-70%·주사제 선택 80% — 보장 확대의 순매출 양면성 분석",
       tags: ["Novo Nordisk","Eli Lilly","Ozempic","Wegovy","Mounjaro","Zepbound","CagriSema","Medicare","CMS","보험보장","Orforglipron","Q2실적"]
     },
     {
       title: "Amgen · Viking · Roche — 차세대 도전자들 + 한국 기업",
       file: "glp1/glp1_company_challengers.html",
-      date: "2026-06-23", category: "GLP-1", type: "기업 분석", series: "GLP-1",
+      date: "2026-06-23",
+      updated: "2026-07-25", category: "GLP-1", type: "기업 분석", series: "GLP-1",
       desc: "Amgen MariTide 월1회, Viking VK2735, Roche CT-388 -22.5%, 한미약품·디앤디파마텍·펩트론·인벤티지랩·알테오젠",
       tags: ["Amgen","Viking","Roche","한미약품","디앤디파마텍","펩트론","인벤티지랩","알테오젠"]
     },
     {
       title: "심화 테마 A — 밸류체인 분해: 펩타이드 CDMO에서 오토인젝터까지",
       file: "glp1/glp1_theme_value_chain.html",
-      date: "2026-06-23", category: "GLP-1", type: "심화 테마", series: "GLP-1",
+      date: "2026-06-23",
+      updated: "2026-07-25", category: "GLP-1", type: "심화 테마", series: "GLP-1",
       desc: "펩타이드 CDMO Bachem M/S 17%, 삼성바이오 $280M, Ypsomed CHF 5억, DDS 기술, 원료 공급 병목, 한국 부품사 기회",
       tags: ["CDMO","Bachem","삼성바이오","Ypsomed","DDS","펩타이드","오토인젝터"]
     },
     {
       title: "심화 테마 B — 숏 테시스: $100B 시장의 그림자",
       file: "glp1/glp1_theme_risks.html",
-      date: "2026-06-23", category: "GLP-1", type: "심화 테마", series: "GLP-1",
+      date: "2026-06-23",
+      updated: "2026-06-30", category: "GLP-1", type: "심화 테마", series: "GLP-1",
       desc: "경쟁 심화 20+ 후보물질, 안전성(근육 손실·자살 충동), 특허 만료, Novo 디레이팅, 보험 커버리지 한계, 중단률 50%+",
       tags: ["경쟁","특허만료","안전성","디레이팅","중단률","바이오시밀러","숏테시스"]
     },
     {
       title: "삼성바이오로직스 × PolyPeptide — CDMO 플랫폼 확장 전략",
       file: "glp1/glp1_company_samsung_biologics.html",
-      date: "2026-07-25", category: "GLP-1", type: "기업 분석", series: "GLP-1",
+      date: "2026-07-25",
+      updated: "2026-08-08", category: "GLP-1", type: "기업 분석", series: "GLP-1",
       desc: "삼성바이오로직스 OPM 45%, 845KL 글로벌 1위 CDMO — PolyPeptide CHF 14.6억 인수로 GLP-1 펩타이드 시장 진출. 딜 구조·PolyPeptide 재무·4대 시너지·글로벌 CDMO 경쟁 구도·Bull/Bear 분석",
       tags: ["삼성바이오로직스","PolyPeptide","CDMO","펩타이드","GLP-1","비만치료제","M&A","바이오의약품","ADC","BIOSECURE"]
     },
@@ -1275,77 +1324,88 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "AI가 바이오를 만났을 때 — $164B 헬스케어 혁명",
       file: "ai-bio/ai_bio_overview.html",
-      date: "2026-06-23", category: "AI 바이오", type: "산업 개관", series: "AI 바이오",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI 바이오", type: "산업 개관", series: "AI 바이오",
       desc: "AI 헬스케어 시장 $22.5B→$164.1B(CAGR 48.6%), 신약개발→진단→정밀의료→디지털 치료제 밸류체인 맵, 5대 투자 테마",
       tags: ["AI바이오","AI헬스케어","AI신약개발","정밀의료","디지털치료제","Tempus AI","Recursion"]
     },
     {
       title: "AI 바이오 12사 크로스 밸류에이션 — 투자 지도",
       file: "ai-bio/ai_bio_investment_map.html",
-      date: "2026-06-23", category: "AI 바이오", type: "투자 지도", series: "AI 바이오",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI 바이오", type: "투자 지도", series: "AI 바이오",
       desc: "AI 바이오/헬스케어 글로벌 7사+한국 5사 크로스 밸류에이션, P/S 비교, 포트폴리오 구성안, 리스크 히트맵",
       tags: ["밸류에이션","Guardant Health","Tempus AI","루닛","삼성바이오로직스","포트폴리오"]
     },
     {
       title: "AI 바이오 글로벌 7사 심층 분석 — Recursion·Tempus·Guardant",
       file: "ai-bio/ai_bio_company_global.html",
-      date: "2026-06-23", category: "AI 바이오", type: "기업 분석", series: "AI 바이오",
+      date: "2026-06-23",
+      updated: "2026-06-30", category: "AI 바이오", type: "기업 분석", series: "AI 바이오",
       desc: "Recursion, Tempus AI, Insilico Medicine, Schrödinger, Veracyte, Guardant Health, PathAI — AI 플랫폼 경쟁력, 실적, 밸류에이션",
       tags: ["Recursion","Tempus AI","Insilico","Guardant Health","Veracyte","Schrödinger","PathAI"]
     },
     {
       title: "AI 바이오 한국 5사 심층 분석 — 삼성바이오·루닛·뷰노",
       file: "ai-bio/ai_bio_company_kr.html",
-      date: "2026-06-23", category: "AI 바이오", type: "기업 분석", series: "AI 바이오",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "AI 바이오", type: "기업 분석", series: "AI 바이오",
       desc: "삼성바이오로직스 OPM 45.4%, 셀트리온 매출 4.0조, 루닛 +53%, 뷰노, 에임메드 — 한국 AI 바이오 5사 심층 분석",
       tags: ["삼성바이오로직스","셀트리온","루닛","뷰노","에임메드","AI진단","바이오시밀러"]
     },
     {
       title: "AI 신약개발 혁명 — 173개 임상 파이프라인의 진실",
       file: "ai-bio/ai_bio_theme_drug_discovery.html",
-      date: "2026-06-25", category: "AI 바이오", type: "심화 테마", series: "AI 바이오",
+      date: "2026-06-25",
+      updated: "2026-06-28", category: "AI 바이오", type: "심화 테마", series: "AI 바이오",
       desc: "AI Drug Discovery $1.4B→$14.4B, 173개 임상 파이프라인, Phase I 성공률 80-90%, Co-Scientist·Isomorphic Labs·AlphaFold, FDA AI 가이드라인",
       tags: ["AI신약개발","임상파이프라인","Insilico Medicine","Recursion","Co-Scientist","Isomorphic Labs","AlphaFold","FDA"]
     },
     {
       title: "정밀의료·디지털 치료제 — $110B 유전체 + $43B DTx 융합",
       file: "ai-bio/ai_bio_theme_precision_digital.html",
-      date: "2026-06-23", category: "AI 바이오", type: "심화 테마", series: "AI 바이오",
+      date: "2026-06-23",
+      updated: "2026-08-08", category: "AI 바이오", type: "심화 테마", series: "AI 바이오",
       desc: "정밀의료 $110B→$213B, 디지털 치료제 $10.2B→$43B, AI 진단·유전체·SaaS 밸류체인, Tempus·Guardant·Veracyte",
       tags: ["정밀의료","디지털치료제","유전체","Tempus AI","Guardant Health","Veracyte","DTx"]
     },
     {
       title: "우주 경제 산업구조와 투자 좌표",
       file: "space/space_overview.html",
-      date: "2026-06-23", category: "우주 경제", type: "산업 개관", series: "우주 경제",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "우주 경제", type: "산업 개관", series: "우주 경제",
       desc: "글로벌 우주 경제 $626B→$1T, 발사 비용 97% 절감, Starlink 1,030만 구독, 3대 테마(발사·위성군·다운스트림) 투자 좌표",
       tags: ["우주경제","SpaceX","Starlink","위성","발사체","Rocket Lab","우주산업"]
     },
     {
       title: "우주 경제 12사 크로스 밸류에이션 — 투자 지도",
       file: "space/space_investment_map.html",
-      date: "2026-06-23", category: "우주 경제", type: "투자 지도", series: "우주 경제",
+      date: "2026-06-23",
+      updated: "2026-06-30", category: "우주 경제", type: "투자 지도", series: "우주 경제",
       desc: "SpaceX $2.18T, Rocket Lab $687B 등 글로벌 7사+한국 5사 크로스 밸류에이션, 포트폴리오 구성안, SpaceX IPO 분석",
       tags: ["밸류에이션","SpaceX","Rocket Lab","한화에어로스페이스","포트폴리오","IPO"]
     },
     {
       title: "우주 경제 글로벌 7사 심층 분석 — SpaceX·Rocket Lab·Planet",
       file: "space/space_company_global.html",
-      date: "2026-06-23", category: "우주 경제", type: "기업 분석", series: "우주 경제",
+      date: "2026-06-23",
+      updated: "2026-06-30", category: "우주 경제", type: "기업 분석", series: "우주 경제",
       desc: "SpaceX, Rocket Lab, Planet Labs, Iridium, AST SpaceMobile, L3Harris, Redwire — 사업구조, 실적, 밸류에이션 심층 분석",
       tags: ["SpaceX","Rocket Lab","Planet Labs","Iridium","AST SpaceMobile","L3Harris","Redwire"]
     },
     {
       title: "우주 경제 한국 5사 심층 분석 — 한화에어로·이노스페이스·쎄트렉아이",
       file: "space/space_company_kr.html",
-      date: "2026-06-23", category: "우주 경제", type: "기업 분석", series: "우주 경제",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "우주 경제", type: "기업 분석", series: "우주 경제",
       desc: "한화에어로스페이스 58조, 이노스페이스, 쎄트렉아이 수주 3,100억, 한화시스템 SAR, AP위성 — 한국 우주 5사 분석",
       tags: ["한화에어로스페이스","이노스페이스","쎄트렉아이","한화시스템","AP위성","한국우주"]
     },
     {
       title: "발사 혁명·메가 위성군 — Starship $100/kg과 5만기 위성 시대",
       file: "space/space_theme_launch_constellation.html",
-      date: "2026-06-23", category: "우주 경제", type: "심화 테마", series: "우주 경제",
+      date: "2026-06-23",
+      updated: "2026-08-09", category: "우주 경제", type: "심화 테마", series: "우주 경제",
       desc: "Starship 완전재사용 $100/kg 목표, 위성 메가 컨스텔레이션 5만기, 발사 비용 97% 절감의 투자 시사점",
       tags: ["Starship","Falcon9","Neutron","Starlink","발사비용","메가컨스텔레이션","위성인터넷"]
     },
@@ -1359,49 +1419,56 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "우주 다운스트림 데이터 경제 — 위성 데이터가 만드는 $100B+ 시장",
       file: "space/space_theme_downstream.html",
-      date: "2026-06-23", category: "우주 경제", type: "심화 테마", series: "우주 경제",
+      date: "2026-06-23",
+      updated: "2026-06-28", category: "우주 경제", type: "심화 테마", series: "우주 경제",
       desc: "위성 지구관측 데이터, SAR·광학·통신 융합, AI 분석 플랫폼, Planet Labs·쎄트렉아이의 데이터 경제 전략",
       tags: ["위성데이터","지구관측","SAR","Planet Labs","쎄트렉아이","우주데이터","위성AI"]
     },
     {
       title: "세계 조선의 새로운 좌표 — 슈퍼사이클 2.0과 한국의 프리미엄",
       file: "shipbuilding/k_ship_industry_overview.html",
-      date: "2026-06-25", category: "조선", type: "산업 개관", series: "K-조선",
+      date: "2026-06-25",
+      updated: "2026-08-08", category: "조선", type: "산업 개관", series: "K-조선",
       desc: "2024 글로벌 수주 $204B, Clarkson Price Index 2008 피크의 99%, 한국 CGT 점유율 21% — 350개 조선소 시대의 구조적 슈퍼사이클 분석",
       tags: ["조선","슈퍼사이클","Clarkson","CGT","IMO","신조가격","사이클"]
     },
     {
       title: "K-조선 투자 지도 — Big 3 실적 해부와 HD현대 그룹 프리미엄",
       file: "shipbuilding/k_ship_investment_map.html",
-      date: "2026-06-25", category: "조선", type: "투자 지도", series: "K-조선",
+      date: "2026-06-25",
+      updated: "2026-06-28", category: "조선", type: "투자 지도", series: "K-조선",
       desc: "Big 3 합산 매출 41조·영업이익 4.07조, HD현대일렉트릭 OPM 27.6%, 수주잔고 $138B — 재무 해부와 밸류에이션 프레임워크",
       tags: ["HD현대중공업","한화오션","삼성중공업","HD현대일렉트릭","수주잔고","밸류에이션","소부장"]
     },
     {
       title: "LNG 캐리어 $71.3B — AI 전력이 바다 위 수주로 이어지는 구조",
       file: "shipbuilding/k_ship_theme_lng_ai_nexus.html",
-      date: "2026-06-25", category: "조선", type: "심화 테마", series: "K-조선",
+      date: "2026-06-25",
+      updated: "2026-06-28", category: "조선", type: "심화 테마", series: "K-조선",
       desc: "한국 LNG 캐리어 66% 점유율/$71.3B, 카타르 $13.4B 메가오더, AI DC 전력→가스→LNG 넥서스, GTT Mark III, 플로팅 SMR",
       tags: ["LNG캐리어","카타르","GTT","AI전력","데이터센터","SMR","해상풍력","가스"]
     },
     {
       title: "방산 조선과 그린 전환 — 캐나다 $80B, 암모니아 퍼스트무버의 두 축",
       file: "shipbuilding/k_ship_theme_defense_green.html",
-      date: "2026-06-25", category: "조선", type: "심화 테마", series: "K-조선",
+      date: "2026-06-25",
+      updated: "2026-06-28", category: "조선", type: "심화 테마", series: "K-조선",
       desc: "캐나다 CPSP $80B CAD 잠수함, 필리핀·폴란드·KDDX 7.8조, 세계 최초 암모니아선 2026.4, IMO 2050 넷제로 — 방산+그린 투자 축",
       tags: ["방산조선","CPSP","캐나다","잠수함","암모니아","이중연료","IMO","KDDX"]
     },
     {
       title: "MASGA — 한미 $150B 조선 동맹과 K-조선의 미국 상륙",
       file: "shipbuilding/k_ship_theme_masga_us_alliance.html",
-      date: "2026-07-21", category: "조선", type: "심화 테마", series: "K-조선",
+      date: "2026-07-21",
+      updated: "2026-08-08", category: "조선", type: "심화 테마", series: "K-조선",
       desc: "MASGA 정책, 한미 $150B 조선 협력, 한화 필리조선소 NSMV→MRIV $1.4B→NGLS $5.85B, HD현대-HII 파트너십 — 미국 조선업 재건과 K-조선 수혜 분석",
       tags: ["MASGA","필리조선소","MRIV","NGLS","Golden Defender","한화오션","HD현대","HII","미국조선","골든돔"]
     },
     {
       title: "370조엔 vs $921B vs $295B — 6개국 국가 전략 투자 총괄 비교",
       file: "national-strategy/ns_global_strategy_overview.html",
-      date: "2026-07-27", category: "국가 전략", type: "산업 개관", series: "국가 전략",
+      date: "2026-07-27",
+      updated: "2026-08-08", category: "국가 전략", type: "산업 개관", series: "국가 전략",
       desc: "일본 370조엔·미국 $921B·중국 $295B(2조 위안)·EU €843B·한국 4,755조 3대 메가프로젝트·대만 TSMC $165B — 6개국 투자 규모·구조·재정건전성 총괄 비교",
       tags: ["국가전략","370조엔","CHIPS Act","IRA","Stargate","EU Chips Act","ReArm Europe","3대메가프로젝트","TSMC","중국","데이터센터","Huawei"]
     },
@@ -1415,7 +1482,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학",
       file: "national-strategy/ns_semiconductor_war.html",
-      date: "2026-08-06", category: "국가 전략", type: "투자 지도", series: "국가 전략",
+      date: "2026-08-06",
+      updated: "2026-08-08", category: "국가 전략", type: "투자 지도", series: "국가 전략",
       desc: "일본 반도체 68조엔(라피더스 2nm+TSMC 구마모토 3nm), 미국 CHIPS Act $52.7B(Intel·TSMC·Samsung), 한국 4,755조 3대 메가프로젝트, 2배 ETF 예탁금 3,000만·거래량 -50% 규제, 외국인 7.2조 역대 순매수 — 반도체 패권 전쟁 투자 지도",
       tags: ["반도체","라피더스","TSMC","CHIPS Act","3대메가프로젝트","HBM","EUV","ASML","파운드리","2배ETF","AMEC","CXMT팹"]
     },
@@ -1429,35 +1497,40 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "~$750B 투자 vs 수익 증거 — Big Tech Capex ROI 추적",
       file: "national-strategy/ns_bigtech_capex_roi.html",
-      date: "2026-08-07", category: "국가 전략", type: "심화 테마", series: "국가 전략",
+      date: "2026-08-07",
+      updated: "2026-08-09", category: "국가 전략", type: "심화 테마", series: "국가 전략",
       desc: "Amazon $220B·Microsoft $255-260B·Alphabet $185B·Meta $130-145B — Big Tech 4사 2026 Capex ~$750B, 구글 컴퓨트 병목·Anthropic 100만 TPU·Google Cloud +82%, Hassabis DeepMind CEO 사임·Jeff Dean 퇴사·Gemini 3.5 지연, BIS \"Shadow Borrowing\" 오프밸런스시트 리스 $820B+·MSFT $338.7B·5사 $1.2T·사모신용 $800B — AI 매출 전환 증거, Bull vs Bear 심층 분석",
       tags: ["Big Tech","Capex","ROI","Amazon","Microsoft","Alphabet","Meta","AI매출","FCF","TPU","자체칩","Anthropic","컴퓨트부족","DeepMind","GoogleCloud","인력이탈","ShadowBorrowing","오프밸런스시트","BIS","Moodys","리스","사모신용","Hassabis","Gemini"]
     },
     {
       title: "AI 인프라 $500B·방산 €800B — 반도체 너머의 국가 전략 교차점",
       file: "national-strategy/ns_ai_defense_nexus.html",
-      date: "2026-06-25", category: "국가 전략", type: "심화 테마", series: "국가 전략",
+      date: "2026-06-25",
+      updated: "2026-06-28", category: "국가 전략", type: "심화 테마", series: "국가 전략",
       desc: "Stargate $500B vs 한국 GPU 5만개, ReArm Europe €800B vs K-방산 $154B, K-콘텐츠 Netflix 8-9%, 일본 게임 24.5조엔 — 반도체 너머 5대 전장 분석",
       tags: ["Stargate","ReArm Europe","K-방산","K-콘텐츠","AI인프라","바이오","핵융합","관세"]
     },
     {
       title: "한국이 지켜야 할 것, 빼앗아야 할 것 — 6개국 경쟁 속 K-전략 로드맵",
       file: "national-strategy/ns_korea_impact_strategy.html",
-      date: "2026-07-27", category: "국가 전략", type: "심화 테마", series: "국가 전략",
+      date: "2026-07-27",
+      updated: "2026-08-08", category: "국가 전략", type: "심화 테마", series: "국가 전략",
       desc: "4,755조 3대 메가프로젝트·HBM 78% 독주·피지컬AI 1강·로봇 3강 — 6개국 국가 전략 경쟁 속 한국의 위협·기회·병목·모니터링 지표 종합 분석",
       tags: ["한국전략","HBM","3대메가프로젝트","4755조","피지컬AI","로봇3강","TSMC","ASML","반도체엔지니어"]
     },
     {
       title: "Anthropic — AI 안전의 상업화, $965B 기업가치의 해부",
       file: "ai-sw/ai_sw_company_anthropic.html",
-      date: "2026-08-06", category: "AI SW", type: "기업 분석", series: "AI SW",
+      date: "2026-08-06",
+      updated: "2026-08-08", category: "AI SW", type: "기업 분석", series: "AI SW",
       desc: "Constitutional AI·Mythos 83% 제로데이·Pentagon $200M 분쟁·ARR $47B·SaaS $285B 충격·자체칩 조직 공식 출범·Samsung foundry — Anthropic 심층 기업 분석",
       tags: ["Anthropic","Claude","Constitutional AI","Mythos","AI안전","RSP","Pentagon","SaaS","ARR","자체칩","삼성파운드리"]
     },
     {
       title: "ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관",
       file: "energy/energy_ess_ai_power.html",
-      date: "2026-08-07", category: "에너지 전환", type: "산업 개관", series: "에너지 전환",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "에너지 전환", type: "산업 개관", series: "에너지 전환",
       desc: "Fluence FY3Q26 수주 $14.4억·백로그 $64억 사상 최대·DC 파이프라인 16GWh(+35% QoQ)에도 가이던스 하향(제조 실행 병목) — 글로벌 ESS $24B→$285B(CAGR 42%)·AI DC 전력 220→800TWh·LFP vs NMC·CATL 35%·IRA $35/kWh — 에너지 전환 투자 분석",
       tags: ["Fluence","데이터센터ESS","BTM","SmartStack","ERCOT","ESS","에너지저장","AI데이터센터","전력","LFP","NMC","CATL","BYD","IRA"]
     },
@@ -1478,7 +1551,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "FuriosaAI·Rebellions·DeepX — 한국 AI 반도체 기업 분석",
       file: "ai-infra/ai_chip_company_kr.html",
-      date: "2026-06-28", category: "AI 인프라", type: "기업 분석", series: "AI 밸류체인",
+      date: "2026-06-28",
+      updated: "2026-06-30", category: "AI 인프라", type: "기업 분석", series: "AI 밸류체인",
       desc: "FuriosaAI RNGD 512 TOPS·Rebellions Rebel100 2 PFLOPS·DeepX 에지 AI·Samsung 2nm — 한국 AI 반도체 생태계 심층 분석",
       tags: ["FuriosaAI","Rebellions","DeepX","삼성파운드리","RNGD","Rebel100","NPU","한국AI반도체"]
     },
@@ -1492,7 +1566,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "SMR·원자력 for AI — 데이터센터 전력의 핵심 기저전원",
       file: "energy/energy_smr_nuclear_ai.html",
-      date: "2026-06-28", category: "에너지 전환", type: "심화 테마", series: "에너지 전환",
+      date: "2026-06-28",
+      updated: "2026-06-30", category: "에너지 전환", type: "심화 테마", series: "에너지 전환",
       desc: "Google-Kairos 500MW·Microsoft-TMI 835MW·Meta 6.6GW·TerraPower NRC 허가·Linglong One 세계 최초·i-SMR — SMR 원자력 투자 분석",
       tags: ["SMR","원자력","데이터센터","전력","Google","Microsoft","TerraPower","NuScale","X-energy","우라늄"]
     },
@@ -1520,7 +1595,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "중국 AI 생태계 — DeepSeek $590B에서 칩 자급률 41%까지",
       file: "national-strategy/ns_china_ai_ecosystem.html",
-      date: "2026-08-06", category: "국가 전략", type: "심화 테마", series: null,
+      date: "2026-08-06",
+      updated: "2026-08-08", category: "국가 전략", type: "심화 테마", series: null,
       desc: "중국 AI 생태계 — DeepSeek $590B·Qwen 10억 다운로드·AI칩 자급률 41%·CXMT LPDDR6 12800Mbps·화웨이 Ascend·CXMT 가격 반전·Anthropic 삼성 파운드리·미중 AI 경쟁 투자 분석",
       tags: ["중국AI","DeepSeek","Qwen","화웨이","Ascend","자급률","미중경쟁","NVIDIA","CXMT","삼성파운드리","Anthropic"]
     },
@@ -1534,7 +1610,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도",
       file: "energy/energy_battery_valuechain_update.html",
-      date: "2026-08-07", category: "에너지 전환", type: "기업 분석", series: "에너지 전환",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "에너지 전환", type: "기업 분석", series: "에너지 전환",
       desc: "에코프로비엠·포스코퓨처엠·엘앤에프·LG에너지솔루션·삼성SDI — 한국 2차전지 밸류체인 12개사 1Q26 실적·주가·밸류에이션 종합 분석. 미래에셋 \"2차전지/ESS 10가지 이유\" 근거 등급 분류(확정 1·전망 5·미확정 정책 4), 북미 ESS 수주 사이클, AMPC/OBBBA 리스크 누락 지적",
       tags: ["에코프로비엠","포스코퓨처엠","엘앤에프","LG에너지솔루션","삼성SDI","2차전지","양극재","음극재","분리막","전해질","ESS","북미ESS","OBBBA","AMPC","리튬","미래에셋","IAA"]
     },
@@ -1555,7 +1632,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "우주 산업 2026 업데이트 — SpaceX $1.77T IPO·Starship V3·한국 KASA",
       file: "space/space_update_2026.html",
-      date: "2026-08-07", category: "우주 경제", type: "심화 테마", series: null,
+      date: "2026-08-07",
+      updated: "2026-08-09", category: "우주 경제", type: "심화 테마", series: null,
       desc: "SpaceX IPO $1.77T·Starlink $114B·Starship V3 200t·KASA 1조 예산·누리호 4호기 — 상장 후 첫 실적: Q2 매출 $78억 +92%, adj EBITDA $35억 +191%, AI 캐펙스 $158억(매출의 2배), 12월 $1,000억 런레이트 공언, 락업 9.1억 주 해제, 파이퍼 TP $156→$140(배수 20→12배)",
       tags: ["SpaceX","IPO","Starlink","Starship","KASA","누리호","Blue Origin","우주방산","Q2실적","AI컴퓨트","락업해제","PiperSandler","캐펙스"]
     },
@@ -1569,35 +1647,40 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "에이피알 딥다이브 — 메디큐브 글로벌 D2C 플랫폼",
       file: "k-beauty/k_beauty_company_apr.html",
-      date: "2026-08-06", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
+      date: "2026-08-06",
+      updated: "2026-08-08", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
       desc: "에이피알(278470) 심층 분석 — 메디큐브 AGE-R 600만대, Q1 2026 매출 +123%, Q2 실적 +134%, 가이던스 3조원, OPM 25.7%, 미국 Target·Walmart·Ulta 동시 진출",
       tags: ["에이피알","APR","메디큐브","AGE-R","뷰티디바이스","DTC","아마존","틱톡","Q2실적","가이던스"]
     },
     {
       title: "실리콘투 딥다이브 — K-뷰티 해외 직구 플랫폼",
       file: "k-beauty/k_beauty_company_silicon2.html",
-      date: "2026-07-25", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
+      date: "2026-07-25",
+      updated: "2026-07-27", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
       desc: "실리콘투(257720) 심층 분석 — 175개국 K-뷰티 수출 플랫폼, 매출 1.12조(+61%), Forward PER 9.3x, 유럽 36% 비중",
       tags: ["실리콘투","StyleKorean","K뷰티","수출","유통","플랫폼","유럽","조선미녀"]
     },
     {
       title: "파마리서치 딥다이브 — 리쥬란 글로벌 확장",
       file: "k-beauty/k_beauty_company_pharmaresearch.html",
-      date: "2026-07-25", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
+      date: "2026-07-25",
+      updated: "2026-07-27", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
       desc: "파마리서치(214450) 심층 분석 — 리쥬란 PN 글로벌 독점, OPM 40%, 제5공장 착공으로 캐파 5-10배 확장",
       tags: ["파마리서치","리쥬란","PN","PDRN","의료기기","화장품","세포라"]
     },
     {
       title: "대형주·ODM 딥다이브 — 코스맥스·한국콜마·아모레·LG생건",
       file: "k-beauty/k_beauty_company_largecap_odm.html",
-      date: "2026-07-25", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
+      date: "2026-07-25",
+      updated: "2026-07-27", category: "K-뷰티", type: "기업 분석", series: "K-뷰티",
       desc: "K-뷰티 대형주·ODM 4사 심층 분석 — 코스맥스 글로벌 1위, 한국콜마 OPM 최고, 아모레 탈중국, LG생건 턴어라운드",
       tags: ["코스맥스","한국콜마","아모레퍼시픽","LG생활건강","ODM","화장품","대형주"]
     },
     {
       title: "HBM 밸류체인 병목 스코어보드",
       file: "node-screener/node_screener_hbm_scoreboard.html",
-      date: "2026-08-06", category: "HBM 패키징", type: "스코어보드", series: "노드 스크리너",
+      date: "2026-08-06",
+      updated: "2026-08-09", category: "HBM 패키징", type: "스코어보드", series: "노드 스크리너",
       desc: "HBM 밸류체인 49개 기능·30개 기업 5축 스코어링 병목 분석, NAND 슈퍼사이클, MLCC/ABF 소재",
       tags: ["HBM","패키징","스코어보드","병목","밸류체인","CoWoS","TC본딩","한미반도체","TSMC","NAND","MLCC","ABF"]
     },
@@ -1611,21 +1694,24 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "포트폴리오 진화 크로니클 — v3→v6.1 의사결정 전체 기록",
       file: "portfolio/portfolio_evolution_chronicle.html",
-      date: "2026-07-07", category: "포트폴리오", type: "크로니클", series: "포트폴리오",
+      date: "2026-07-07",
+      updated: "2026-08-08", category: "포트폴리오", type: "크로니클", series: "포트폴리오",
       desc: "금융기관용 포트폴리오 v3→v6.1 진화 크로니클 — 95편 리서치 기반 의사결정 과정, 시장 환경 변화, 개별→ETF 하이브리드 구조 전환의 전체 기록",
       tags: ["포트폴리오","의사결정","크로니클","ETF","하이브리드","밸류에이션","매크로"]
     },
     {
       title: "Q2 2026 어닝 시즌 종합 리뷰 — 전 섹터 실적 크로스 분석",
       file: "market/q2_2026_earnings_overview.html",
-      date: "2026-08-07", category: "마켓 리뷰", type: "어닝 리뷰", series: "마켓 리뷰",
+      date: "2026-08-07",
+      updated: "2026-08-08", category: "마켓 리뷰", type: "어닝 리뷰", series: "마켓 리뷰",
       desc: "9월 금리인상 확률 61.9%로 매크로 프레임 전환·Goldman KOSPI 12,000 격차·BIS 그림자차입 $820B·NVIDIA Rubin Ultra HBM -33%·Morgan Stanley 강세전환 — 삼성전자 OP 89.5조·SK하이닉스 OPM 76%·MSFT Azure +43%·Meta $60.8B·Amazon AWS +37%·Apple $109.4B·키옥시아 OPM 79.5%·KOSPI +17.91% V자 반등·외국인 7.2조·매크로 스태그플레이션·국내 기업 Q2·AI 인프라 소재 — 후반부 어닝 6종(LLY·PLTR·DDOG·WDC·SNDK·SPCX) 전원 beat에도 목표주가 줄하향, \"추정치는 올리고 목표주가는 내린다\" 멀티플 디레이팅 진단 — Q2 2026 어닝 시즌 크로스섹터 종합 분석",
       tags: ["금리인상","FedWatch","GoldmanKOSPI","ShadowBorrowing","RubinUltra","MorganStanley","어닝시즌","Q2","삼성전자","SK하이닉스","NVIDIA","방산","K-뷰티","바이오","매크로","KOSPI","키옥시아","스태그플레이션","Eli Lilly","AI인프라소재","Palantir","Datadog","WesternDigital","SanDisk","SpaceX","디레이팅","주주환원"]
     },
     {
       title: "Update Log — 주별 업데이트 이력 & 근거 추적",
       file: "update_log.html",
-      date: "2026-08-06", category: "마켓 리뷰", type: "로그", series: "마켓 리뷰",
+      date: "2026-08-06",
+      updated: "2026-08-09", category: "마켓 리뷰", type: "로그", series: "마켓 리뷰",
       desc: "108편 리서치 아카이브 주별 업데이트 이력 — 어떤 데이터가, 어떤 근거로, 어떤 페이퍼에 반영되었는지 추적. 앰버(데이터) vs 블루(편집자 주) 구분.",
       tags: ["업데이트로그","changelog","데이터추적","IB리서치"]
     }
@@ -1718,7 +1804,7 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
         '<h3>' + esc(d.title) + '</h3>' +
         '<p class="r-desc">' + esc(d.desc) + '</p>' +
         (d.tags && d.tags.length ? '<div class="r-tags">' + d.tags.map(function(t){ return '<span class="r-tag">' + esc(t) + '</span>'; }).join('') + '</div>' : '') +
-        '<div class="r-date">' + esc(d.date) + '</div>' +
+        '<div class="r-date">' + esc(d.date) + (d.updated ? ' <span style="color:#7dd3fc">· 갱신 ' + esc(d.updated.slice(5).replace('-','.')) + '</span>' : '') + '</div>' +
       '</div>' +
       '<div class="arrow">' +
         '<svg width="16" height="16" viewBox="0 0 16 16" fill="none">' +
@@ -1759,6 +1845,35 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       }
       grouped[d.category].push(d);
     });
+
+    /* ═══ 최근 업데이트 스트립 — 카테고리와 무관하게 본문이 마지막으로 바뀐 순 ═══ */
+    if(filtered.length > 3){
+      var recent = filtered.slice().sort(function(a, b){
+        return (b.updated || b.date).localeCompare(a.updated || a.date);
+      }).slice(0, 12);
+      var rHtml = '';
+      recent.forEach(function(d, i){
+        var rcfg = SECTIONS[d.category] || { cssClass: 'default', title: d.category, desc: '', badgeMap: {} };
+        rHtml += renderCard(d, rcfg, i);
+      });
+      container.innerHTML +=
+        '<div class="section">' +
+          '<div class="sec-toggle open" data-reveal>' +
+            '<div>' +
+              '<div class="sec-label recently-updated">Recently Updated</div>' +
+              '<h2 class="sec-title">최근 업데이트<span class="sec-count">' + recent.length + '편</span></h2>' +
+              '<p class="sec-desc">본문이 마지막으로 바뀐 순서입니다. 카테고리와 무관하며, 아래 분류별 목록과 중복됩니다.</p>' +
+            '</div>' +
+            '<div class="sec-chevron"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
+          '</div>' +
+          '<div class="sec-cards-wrap open">' +
+            '<div class="sec-cards-inner">' +
+              '<div class="cards">' + rHtml + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="sec-divider" data-reveal></div>';
+    }
 
     var autoExpand = q.length > 0 || currentCat !== '전체';
     var secIdx = 0;

@@ -20,6 +20,7 @@ from datetime import date
 PAT = re.compile(r'("dateModified"\s*:\s*")([^"]*)(")')
 TIMELINE = re.compile(r"▸\s*20\d\d[.\-]\d\d[.\-]\d\d")
 LOG = "update_log.html"
+INDEX = "index.html"
 
 
 def run(*args):
@@ -42,6 +43,56 @@ def added_timeline_entries(path):
     return [ln[1:].strip() for ln in diff
             if ln.startswith("+") and not ln.startswith("+++")
             and TIMELINE.search(ln)]
+
+
+def sync_index_updated(pages):
+    """index.html DATA 의 updated 를 각 페이지의 실제 dateModified 로 맞춘다.
+
+    date 는 건드리지 않는다 — 시리즈 카드가 date 오름차순으로 정렬되므로
+    바꾸면 Part 순서가 깨진다. updated 는 '최근 업데이트' 목록 전용이다.
+
+    지시로는 실패한다는 것이 실측으로 확인됐다: 2026-08-09 시점에
+    DATA 의 date 가 실제 dateModified 와 113편 중 80편이 어긋나 있었다.
+    새 저장소를 만들지 않고 기존 index.html 안에서만 동기화한다.
+    """
+    try:
+        with open(INDEX, encoding="utf-8") as fh:
+            text = fh.read()
+    except OSError:
+        return []
+
+    changed = []
+    for page in pages:
+        if page == INDEX:
+            continue
+        try:
+            with open(page, encoding="utf-8") as fh:
+                real = PAT.search(fh.read())
+        except OSError:
+            continue
+        if not real:
+            continue
+        real = real.group(2)[:10]
+
+        entry = re.compile(
+            r'(      file: "' + re.escape(page) + r'",\n'
+            r'      date: "(\d{4}-\d{2}-\d{2})",)'
+            r'(\n      updated: "\d{4}-\d{2}-\d{2}",)?'
+        )
+        m = entry.search(text)
+        if not m:
+            continue
+        want = "" if real == m.group(2) else f'\n      updated: "{real}",'
+        if (m.group(3) or "") == want:
+            continue
+        text = text[:m.start()] + m.group(1) + want + text[m.end():]
+        changed.append(page)
+
+    if changed:
+        with open(INDEX, "w", encoding="utf-8") as fh:
+            fh.write(text)
+        subprocess.run(["git", "add", INDEX], check=True)
+    return changed
 
 
 def check_update_log(staged):
@@ -104,6 +155,14 @@ def main():
             fh.write(text[:m.start(2)] + today + text[m.end(2):])
         subprocess.run(["git", "add", f], check=True)
         touched.append(f)
+
+    # index.html 이 부분 스테이징이면 건드리지 않는다(위 partial 과 같은 이유).
+    if INDEX not in partial:
+        synced = sync_index_updated([f for f in staged if f not in partial])
+        if synced:
+            print(f"[pre-commit] index DATA updated 동기화 {len(synced)}편")
+    elif INDEX in staged:
+        print(f"[pre-commit] {INDEX} 부분 스테이징이라 updated 동기화 건너뜀")
 
     if touched:
         print(f"[pre-commit] dateModified → {today} ({len(touched)}편)")

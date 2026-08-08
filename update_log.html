@@ -302,6 +302,19 @@ a:hover{text-decoration:underline}
   </div>
 
 
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> index 최상단에 <b>"최근 업데이트"</b> 신설 — 그런데 정렬 기준부터 틀려 있었다</div>
+    <div class="upd-body">
+      "최신 갱신순으로 먼저 보이게" 하려고 정렬을 보니 <b>index는 이미 날짜 내림차순이었다.</b> 문제는 <b>그 뒤에 카테고리로 묶어서</b> 렌더링하는 구조라 <b>최신 글이 자기 카테고리 안에 묻힌다</b>는 것이었다.<br>
+      <b>🔴 더 큰 문제는 정렬 키였다.</b> DATA의 <b>date가 실제 JSON-LD dateModified와 113편 중 80편이 어긋나 있었다.</b> 그대로 날짜순으로 세웠으면 <b>순서가 틀린 목록</b>이 나왔을 것이다 — 예: 발사 혁명 편은 DATA <b>2026-06-23</b>인데 실제로는 <b>오늘 갱신</b>됐다.<br>
+      → <b>date는 건드리지 않고</b> <b>updated</b>를 별도 필드로 뒀다. <b>시리즈 카드가 date 오름차순으로 정렬되므로 date를 바꾸면 Part 1~6 순서가 깨진다.</b> updated는 최신순 목록 전용이다. <b>83편에 주입</b>했고 드리프트는 0건이다.<br>
+      → 최상단 <b>"최근 업데이트" 스트립 12편</b>(카테고리 무관, 검색·필터에 연동). 카드에는 <b>date 옆에 "· 갱신 MM.DD"</b>를 함께 표기해 <b>작성일과 갱신일을 구분</b>했다.<br>
+      → <b>재드리프트 방지를 위해 훅을 확장했다</b>(§H 예외 4번째). 스테이징된 페이지의 dateModified를 읽어 index DATA의 updated에 반영하고 index를 함께 스테이징한다. <b>updated == date면 필드를 지운다.</b> 새 저장소는 만들지 않았다 — 기존 index.html 안에서만 움직인다. <b>단위 테스트 3종(값 불일치·필드 부재·date와 동일) 전부 통과.</b><br>
+      → 부수 정리: DATA 항목 <b>1편이 압축형 표기</b>(<code>file:"</code>, 공백 없음)라 정규식에서 빠져 있었다. 표준형으로 통일했다 — <b>파싱 도구마다 112편/113편으로 갈리던 원인</b>이다.
+    </div>
+    <div class="upd-source">index.html DATA · .githooks/pre-commit · CLAUDE.md §H</div>
+  </div>
+
   <div class="upd editorial">
     <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> §0 규칙5 결함 <b>8편 자체 검출·해소</b> — 고쳐놓고 상단 날짜를 안 올렸다</div>
     <div class="upd-body">
