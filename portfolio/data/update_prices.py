@@ -9,12 +9,38 @@ import json
 import urllib.request
 import os
 
+# 보유 종목 (portfolio_tracker.html 이 이 이름들을 참조한다 — 이름 변경 금지)
 TICKERS = {
     "SK하이닉스": "000660",
     "삼성전자": "005930",
     "SOL AI반도체TOP2+": "0167A0",
     "TIME 글로벌AI": "456600",
     "KODEX AI전력핵심설비": "487240",
+}
+
+# 리서치 페이지에서 주가·목표주가·배수를 인용하는 종목.
+# 2026-08-08 추가 — 본문 산문에 박힌 가격이 낡는 것을 대조하기 위한 참조용이며,
+# 보유 여부와 무관하다. 종목코드는 전부 API 응답의 stockName 과 대조해 검증했다.
+WATCH = {
+    "한화에어로스페이스": "012450",
+    "삼성전기": "009150",
+    "한미반도체": "042700",
+    "HPSP": "403870",
+    "HD현대일렉트릭": "267260",
+    "효성중공업": "298040",
+    "LS ELECTRIC": "010120",
+    "두산에너빌리티": "034020",
+    "대한전선": "001440",
+    "일진전기": "103590",
+    "현대로템": "064350",
+    "에이피알": "278470",
+    "삼성바이오로직스": "207940",
+    "심텍": "222800",
+    "대덕전자": "353200",
+    "LG에너지솔루션": "373220",
+    "포스코퓨처엠": "003670",
+    "엘앤에프": "066970",
+    "KB금융": "105560",
 }
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -37,7 +63,7 @@ def main():
     prices = {}
     updated = ""
 
-    for name, code in TICKERS.items():
+    for name, code in {**TICKERS, **WATCH}.items():
         data = fetch_price(code)
         if not data:
             continue
