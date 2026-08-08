@@ -213,7 +213,7 @@ a:hover{text-decoration:underline}
   "description":"108편 리서치 페이퍼 주별 업데이트 이력 추적",
   "author":{"@type":"Person","name":"ourprochoi"},
   "datePublished":"2026-08-06",
-  "dateModified":"2026-08-07",
+  "dateModified":"2026-08-08",
   "publisher":{"@type":"Organization","name":"ourprochoi Research"}
 }
 </script>
@@ -247,12 +247,77 @@ a:hover{text-decoration:underline}
 <!-- ═══════════════════════════════════════════════════ -->
 <section class="week" id="w20260804">
 <div class="week-head">
-  <h2>W32 · 2026.08.04 — 08.07</h2>
-  <span class="week-badge badge-amber">34편 업데이트</span>
+  <h2>W32 · 2026.08.04 — 08.08</h2>
+  <span class="week-badge badge-amber">44편 업데이트</span>
   <span class="week-badge badge-blue">18편 편집자 주</span>
   <span class="week-badge badge-purple">v9.4 → v10.3</span>
+  <span class="week-badge badge-green">구조 개편 16편</span>
 </div>
 
+<div class="day">
+  <div class="day-date">2026.08.08 — Round 9: Tier 1 rewrite 10편 · dateModified 91편 · 본문 수정 원칙 확정</div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> Tier 1 10편 구조 개편 — 판단을 맨 위로, 누적 블록을 "최근 변경"으로</div>
+    <div class="upd-body">
+      업데이트가 5블록 이상 쌓여 <b>상단 테제와 모순될 위험이 실재하는</b> 10편을 CLAUDE.md §0 형식으로 다시 썼다. 상단에 <b>현재 판단(T1~T5 + 반증 조건 + 다음 검증)</b>을 고정하고, 하단 누적 블록을 <b>최근 변경 3~5건</b>으로 압축했다. 정보는 지우지 않고 옮겼다 — 편집자 주에 있던 분석은 테제·리스크 항목으로 승격했고, 시간순 이력은 footer 타임라인에 남겼다.<br>
+      · 대상: 삼성전자 · SK하이닉스 · MSFT/팔란티어 · AI 전력 인프라 투자지도 · 노보노디스크/일라이릴리 · 로봇 부품 · 기판/소재 · 우주 2026 · 2차전지/ESS · AI 밸류체인 가이드<br>
+      · 검증: 16편(핫 6편 + Tier 1 10편) 전체 태그 균형 정상, 깨진 앵커 0건
+    </div>
+    <div class="upd-source">CLAUDE.md §0 · 커밋 42d0d15 · 7ac1c92 · 39028ad · 7045d68 · af6ce77 · 7fc096f</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">CORRECTION</span> 🔴 SK하이닉스 — 기준가 현행화, 그리고 <b>비대칭 3.6:1 폐기</b></div>
+    <div class="upd-body">
+      하단에 <b>"본 페이지 기준가 노후화"</b>라고 경고해 두고 정작 본문의 <b>₩1,403,000 · -52% · 비대칭 3.6:1</b>은 그대로 둔 상태였다(CLAUDE.md B1 위반). 8/7 종가 <b>₩1,422,000 · 52주 최고 대비 -52.4%</b>로 본문 8곳을 현행화했다.<br>
+      <b>🔑 비대칭 3.6:1은 갱신이 아니라 폐기했다</b> — 이 비율은 하방을 커버리지 최저 목표가로 잡아 산출한 값인데, 현재가가 <b>최저 목표가(Susquehanna 153.5만)보다도 8% 낮아</b> 하방을 정의할 기준점 자체가 사라졌다. 기준가만 갈아끼우면 비율이 커져 <b>더 매력적으로 보이는 착시</b>가 생기므로, 비율을 다시 만들지 않고 <b>정책 스톱로스 ₩1,200,000</b>을 하방 기준으로 명시하는 방식으로 대체했다.<br>
+      → Kill Criteria <b>K3 강등 · K4 폐기</b>를 포트폴리오 부록 A 판정과 동기화. 페이지와 포트폴리오가 서로 다른 트리거를 들고 있던 상태 해소
+    </div>
+    <div class="upd-source">DART 분기배당 공시 (2026.08.07 15:57) · 포트폴리오 v10.3 부록 A</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 본문이 안 고쳐지는 이유는 탐지 실패가 아니었다</div>
+    <div class="upd-body">
+      Tier 1에서 반복된 실패 양상은 예상과 달랐다. <b>모든 경우에 이미 "본문이 낡았다"고 써 놨었다</b> — SK하이닉스 "기준가 노후화", 노보/릴리 "R3의 전제가 흔들렸다", 로봇 "부품 내재화 90%는 한국 부품사에 부정적", 기판 "숨겨진 비대칭의 소재를 좁혀야". <b>알면서 안 고친 것</b>이다.<br>
+      → 그래서 탐지 도구가 아니라 <b>금지 규칙</b>을 세웠다: <b>"본문이 낡았다"고 쓰는 것 자체를 금지한다.</b> 경고를 쓸 만큼 알면 고칠 만큼 아는 것이고, 그 자리에서 못 고치면 페이지에 묻지 말고 <b>막힌 것으로 보고</b>한다.<br>
+      → 이번 10편에서는 실제로 본문을 고쳤다 — 노보/릴리 <b>R3 하향 · R4 방향 전환</b>, 로봇 <b>한국 테제 적용 시장을 미국·일본 OEM으로 축소</b>, 기판 <b>Final Verdict 소재를 ABF·글라스코어로 한정</b>, 우주 <b>SpaceX를 우주 클러스터에서 AI 인프라 클러스터로 재분류</b>
+    </div>
+    <div class="upd-source">CLAUDE.md §B · §I 판정 주의</div>
+  </div>
+
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 페이지 안에서 충돌하던 수치 3건 — 병기 규칙으로 고정</div>
+    <div class="upd-body">
+      한쪽을 고르지 않고 <b>기준을 붙여 병기</b>했다(CLAUDE.md A5). 대조하지 못한 것을 확정치처럼 쓰지 않기 위해서다.<br>
+      · <b>AI 전력 인프라</b> — 같은 "3대 메가프로젝트"가 7/25 <b>최대 4,755조원</b>(민관 합산) vs 7/27 <b>1,461조원+α</b>(메리츠). <b>3.3배 차이</b>, 기준 미확인 → 어느 쪽도 단독 인용 금지<br>
+      · <b>로봇</b> — 유니트리 PER <b>219배</b>(비경상 제외 순이익 2.78억 위안) vs <b>103배</b>(순이익 5.91억 위안). 둘 다 맞으므로 기준 없는 인용 금지<br>
+      · <b>기판/소재</b> — SOCAMM 연간 매출 추정이 키움 <b>2,300억</b> vs 대신 계열 <b>약 1,400억</b>으로 <b>1.6배</b> 편차
+    </div>
+    <div class="upd-source">각 페이지 T5 · 원 리포트 대조</div>
+  </div>
+
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> JSON-LD dateModified 91편 일괄 교정 + 재발 방지 훅</div>
+    <div class="upd-body">
+      예상(29편)보다 훨씬 많은 <b>91편</b>이 어긋나 있었다. 각 파일의 git 최종 수정일로 맞췄고, 커밋 전 diff를 검증해 <b>날짜 문자열 91줄만</b> 바뀌고 본문 오염이 없음을 확인했다.<br>
+      <b>훅(<code>.githooks/pre-commit</code>)은 내용이 바뀐 커밋에만 날짜를 찍는다.</b> 날짜 줄만 바뀐 커밋까지 오늘로 찍으면 "날짜를 고쳤으니 갱신일이 오늘"이라는 순환이 되어, 6월에 쓰고 손대지 않은 글이 오늘 갱신된 것처럼 보이기 때문이다. 실제로 이 일괄 커밋에서 91편 전부를 "날짜 줄만 바뀜"으로 정확히 판정해 값을 보존했다.<br>
+      → 부수 수정: AI 전력 인프라 편 §02의 <code>class=”u”</code> <b>곡선 따옴표</b>(저장소 전체 1건) — 속성으로 파싱되지 않아 해당 문단에 CSS가 적용되지 않던 버그
+    </div>
+    <div class="upd-source">CLAUDE.md §H 예외 1 · 커밋 6a0ddef</div>
+  </div>
+
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> 이 로그가 빠지면 커밋이 막힌다 — update_log 동기화 검사</div>
+    <div class="upd-body">
+      <b>이번 Tier 1 커밋 6개 중 update_log.html을 갱신한 것은 0개였다.</b> §F3이 "페이지 수정 + DATA + sitemap + update_log를 한 커밋으로"라고 못박은 지 하루 만에 6/6으로 어겼다. 죽은 층은 언제나 <b>다른 파일에 한 번 더 써야 하는 층</b>이다(§H의 6개 방치 사례와 같은 패턴).<br>
+      → 훅에 <b>검사</b>를 추가했다. 페이지 footer에 <code>▸ 날짜</code> 항목이 새로 추가됐는데 update_log.html이 함께 스테이징되지 않으면 <b>커밋을 막는다</b>. 훅이 내용을 생성하지는 않는다 — 요약은 판단이 필요하기 때문이다.<br>
+      → 이력 층을 <b>정본 기준으로 정리</b>했다: 읽는 화면은 <b>현재 판단 + 최근 변경 3~5건 + 정정 이력</b>(틀린 것만), 추적은 <b>footer 타임라인</b>(페이지별 정본) + <b>이 로그</b>(크로스 뷰), 원본은 <b>git</b>
+    </div>
+    <div class="upd-source">CLAUDE.md §H 예외 3 · §F3</div>
+  </div>
+</div>
 <div class="day">
   <div class="day-date">2026.08.07 — Round 8: 매크로 프레임 전환 · KOSPI 목표 격차 · 잔여 8편 마감</div>
 

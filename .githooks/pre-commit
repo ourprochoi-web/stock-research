@@ -18,6 +18,8 @@ import sys
 from datetime import date
 
 PAT = re.compile(r'("dateModified"\s*:\s*")([^"]*)(")')
+TIMELINE = re.compile(r"▸\s*20\d\d[.\-]\d\d[.\-]\d\d")
+LOG = "update_log.html"
 
 
 def run(*args):
@@ -34,6 +36,40 @@ def content_changed(path):
     return any("dateModified" not in ln for ln in body)
 
 
+def added_timeline_entries(path):
+    """이번 커밋에서 footer 타임라인 '▸ 날짜' 항목이 새로 붙었는가."""
+    diff = run("git", "diff", "--cached", "-U0", "--", path).splitlines()
+    return [ln[1:].strip() for ln in diff
+            if ln.startswith("+") and not ln.startswith("+++")
+            and TIMELINE.search(ln)]
+
+
+def check_update_log(staged):
+    """§F3 — 페이지에 날짜 항목을 남겼으면 update_log.html 도 같이 커밋한다.
+
+    지시만으로는 Tier 1 커밋 6개에서 6/6 누락됐다. 죽는 층은 언제나
+    '다른 파일에 한 번 더 써야 하는 층'이라, 여기서는 막는 쪽을 택한다.
+    훅이 내용을 쓰지는 않는다 — 무엇이 왜 바뀌었는지는 판단이 필요하다.
+    """
+    if LOG in staged:
+        return 0
+    flagged = [(f, added_timeline_entries(f)) for f in staged if f != LOG]
+    flagged = [(f, e) for f, e in flagged if e]
+    if not flagged:
+        return 0
+
+    print(f"\n[pre-commit] 막힘 — {LOG} 이 함께 스테이징되지 않았습니다.\n")
+    print("  아래 페이지에 날짜 항목이 새로 붙었습니다:")
+    for f, entries in flagged:
+        print(f"    · {f}")
+        for e in entries[:2]:
+            print(f"        {e[:96]}")
+    print(f"\n  CLAUDE.md §F3: 페이지 수정 + DATA + sitemap + {LOG} 를 한 커밋으로.")
+    print(f"  {LOG} 에 같은 내용을 남기고 `git add {LOG}` 후 다시 커밋하세요.")
+    print("  이 커밋에 로그가 필요 없다면 `git commit --no-verify`.\n")
+    return 1
+
+
 def main():
     today = date.today().isoformat()
     staged = [f for f in run("git", "diff", "--cached", "--name-only",
@@ -41,6 +77,9 @@ def main():
               if f.endswith(".html")]
     if not staged:
         return 0
+
+    if check_update_log(staged):
+        return 1
 
     # 인덱스와 워킹트리가 다른 파일 = 부분 스테이징. 제외한다.
     partial = set(run("git", "diff", "--name-only").splitlines())
