@@ -301,6 +301,16 @@ a:hover{text-decoration:underline}
     <div class="upd-source">CLAUDE.md A2 · A5 · A6 · B4</div>
   </div>
 
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> §0 규칙5 결함 <b>1건 자체 검출·해소</b> — 고쳐놓고 상단 날짜를 안 올렸다</div>
+    <div class="upd-body">
+      Part 6 신설 커밋 직후 규칙5 점검(<b>상단 테제 날짜 &lt; 페이지 최신 갱신일 → 결함</b>)을 돌려 <b>결함 1건</b>을 찾았다. <a href="space/space_update_2026.html#now">우주 2026 편</a>의 Vulcan 표기를 정정하면서 <b>본문은 고쳤는데 상단 "현재 판단" 날짜는 2026.08.08에 그대로 두었고</b>, 훅이 dateModified를 08.09로 찍으면서 <b>테제일 &lt; 갱신일</b>이 됐다.<br>
+      → 상단 날짜를 <b>08.09</b>로 올리고 <b>최근 변경을 1건 → 2건</b>으로 늘려 이번 정정을 항목으로 남겼다. <b>T1~T5는 바꾸지 않았다</b> — 전부 SpaceX의 AI 인프라 재분류·재무 구조에 관한 것이고 이번 정정은 경쟁사 발사 일정에 관한 것이라 <b>테제와 무관하다는 판정 자체를 명시</b>했다.<br>
+      → <b>이것이 규칙5가 실제로 잡아낸 첫 사례다.</b> grep 한 줄로 검출된다는 §0의 주장이 맞았고, <b>손댄 페이지의 상단 날짜를 올리는 것을 잊는 것</b>이 실제 실패 양상임이 확인됐다.
+    </div>
+    <div class="upd-source">CLAUDE.md §0 규칙5 · .githooks/pre-commit</div>
+  </div>
 </div>
 <div class="day">
   <div class="day-date">2026.08.08 — Round 9: Tier 1 rewrite 10편 · dateModified 91편 · 본문 수정 원칙 확정</div>
