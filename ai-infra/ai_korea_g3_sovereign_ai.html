@@ -261,11 +261,13 @@
     <div class="brand"><span class="dot"></span>AI 인프라 · AI G3 소버린 AI</div>
     <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
     <div class="nav-links">
+      <a href="#now" style="color:var(--accent)">▎현재 판단</a>
       <a href="#gpu">01 / GPU 인프라</a>
       <a href="#stanford">02 / Stanford HAI</a>
       <a href="#sovereign">03 / 소버린 AI 5사</a>
       <a href="#yeda">04 / Yeda 모델</a>
       <a href="#implications">05 / 투자 시사점</a>
+      <a href="#recent">최근 변경</a>
     </div>
   </div>
 </nav>
@@ -304,6 +306,43 @@
     <div class="scroll-cue"><span class="bar"></span>한국 AI 전략을 분석하기</div>
   </div>
 </header>
+
+<!-- ═══════ 현재 판단 (최상단 고정) ═══════ -->
+<section class="blk" id="now" style="padding:40px 0 8px">
+  <div class="wrap">
+    <div class="thesis reveal" style="border-left-color:var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.08),var(--surface))">
+      <div class="tg" style="color:var(--accent);display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <span>▎현재 판단 · 2026.08.08</span>
+        <span style="font-size:.72em;font-weight:500;color:var(--ink-3)">작성 2026.06.30 · 최종 갱신 2026.08.08</span>
+        <a href="#recent" style="font-size:.72em;color:#60a5fa;text-decoration:none">🔵 최근 변경 3건</a>
+      </div>
+      <p style="font-size:1.05rem;font-weight:700;margin-bottom:.6rem">"한국 네오클라우드의 경쟁력은 GPU 대수가 아니라 <em>조달 금리</em>다."</p>
+      <span class="u">
+        <b>T1. 이 층에서 승부를 가르는 것은 GPU 대수가 아니라 <u>자본 비용</u>이다.</b> CoreWeave의 선순위 사채가 연 <b>9.25~9.75%</b>(DDTL은 SOFR+2.25~4.5%)인 반면 네이버는 ESG채권 <b>1.5%</b>, 사무라이 본드 1~2%, 유로/달러채 <b>3.75~4.375%</b>다. <b>약 5~6%p 격차</b>는 1GW 규모에서 <b>연간 수천억원의 이자비용 차이</b>를 만든다. 같은 GPU를 사도 같은 사업이 아니다 — <b>한국 네오클라우드를 평가할 때 GPU 대수보다 먼저 볼 것은 차입 조건</b>이다.<br><br>
+        <b>T2. 네이버 AI 팩토리 모델에서 <u>금융비용은 가정이 아니라 결정 변수</u>다.</b> MW당 매출 <b>200억원</b>, 평균 PUE <b>1.2</b>, 금융비용 <b>6%</b>를 가정할 때 2032E 매출 <b>14조원</b> / 영업이익 <b>3.4조원</b> / 세전이익 2.0조원이 나오고, 2027년 100MW에서 2032년 <b>1GW</b>로 단계 확장한다. 여기서 <b>금융비용 6%가 흔들리면 영업이익이 아니라 세전이익부터 무너진다</b> — T1의 조달 우위가 이 모델의 전제다. 엔비디아는 JV가 아니라 <b>네이버 주식 724만주를 유상증자로 직접 취득($1B)</b>했고, 네이버는 자사주 490만주 소각으로 희석을 방어했다 — <b>JV 대비 연결 실적 반영에 유리한 구조</b>다.<br><br>
+        <b>T3. 부지·전력·냉각이 이미 확보됐는지가 실행 리스크를 가른다.</b> 네이버는 <b>죽전(퍼시픽) 100MW + 삼송(이지스) 80MW</b>를 임차 확보했고, 특히 <b>삼송은 수랭식이 완비</b>돼 B200/B300 Blackwell 세대 GPU의 필수 요건을 충족한다. <b>공랭식 부지는 차세대 GPU를 못 받는다</b>는 점에서 이는 규모가 아니라 <b>자격</b>의 문제다. SK는 <b>SK하이퍼</b>(2026.07.24 설립, 2030년까지 7,500억원 출자 약정)로 총 15GW 목표 중 <b>1단계 5GW(2029년~)</b>에 착수했다 — 정부 2035년 <b>18.4GW</b> 목표의 핵심 축이다.<br><br>
+        <b>T4. SK텔레콤의 할인은 크지만, 그 자체가 촉매는 아니다.</b> SOTP로 영업가치 20,588억 + 비영업자산(Anthropic 4,241 + SK브로드밴드 4,751 + 기타 3,330) − 순차입금 8,422 = TP <b>115,000원</b>이며 적용 <b>EV/EBITDA 5.5배</b>는 Equinix 60배+·Digital Realty 40배+ 대비 <b>극단적 할인</b>이다. 다만 할인 자체는 오래 지속될 수 있다 — <b>멀티플 격차 축소의 방아쇠는 AIDC 사업의 실적 가시화</b>이지 할인율이 아니다. 삼성SDS는 CAPEX가 2026E 7,000억 → 2027E <b>2조 7,000억</b> → 2028E <b>3조원</b>으로 급증하며 구미 AIDC(60MW+60MW 옵션, 2029년 오픈)에 들어간다 — <b>그룹사 캡티브 수요</b> 덕에 수익화가 빠르다는 것이 차별점이다(TP 250,000원).<br><br>
+        <b>T5. ⚠ 이 페이지 안의 두 메가프로젝트 수치는 <u>주체가 다르다</u>.</b> §05의 <b>4,755조원 = 삼성 2,655조 + SK 2,100조</b>(민간 약정)이고, 7/27 메리츠 블록의 <b>1,461조원+α = 정부 발표 금액</b>이다. <b>국가 간 비교(미국 $4.6T·중국 $3.9T)에는 정부 발표 기준</b>을 쓴다 — 그 둘이 국가 단위 집계이기 때문이다. <span style="color:#f87171">2026.08.08 정정 이전 이 페이지는 같은 블록에서 두 수치를 혼용해 한국 규모를 3.3배 과대 표기하고 있었다.</span>
+      </span>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:16px;border-left-color:#3b82f6;background:rgba(59,130,246,.05)">
+      <div class="tg" style="color:#3b82f6">반증 조건 · 다음 검증</div>
+      <span class="u">
+        · T1 → CoreWeave 등 미국 네오클라우드가 <b>조달 금리를 한국 수준으로 낮추거나</b>, 금리 격차에도 불구하고 마진이 대등하게 나옴<br>
+        · T2 → 네이버 AI 팩토리의 <b>실제 금융비용이 6%를 크게 상회</b>하거나, MW당 매출 200억원 가정이 하향됨<br>
+        · T3 → 수랭식 미완비 부지에서도 <b>차세대 GPU 배치가 이뤄짐</b>, 또는 SK하이퍼 1단계 5GW 일정이 지연<br>
+        · T4 → AIDC 실적이 가시화됐는데도 <b>SKT 멀티플이 5.5배에 머무름</b> (할인의 원인이 AIDC가 아니었음)<br>
+        · T5 → 정부가 두 수치를 <b>하나로 통합 발표</b>함<br><br>
+        <b>다음 검증 — 날짜가 아니라 이벤트</b><br>
+        · <b>네이버 AI 팩토리 자금조달 조건 공시</b> — 브룩필드 우선협상 결과와 실제 금리 (T1·T2의 동시 판정)<br>
+        · <b>삼송·죽전 가동 개시와 GPU 세대</b> — 수랭식 요건이 실제로 작동하는지 (T3)<br>
+        · <b>SK하이퍼 1단계 5GW 착공</b> (T3) · <b>SKT AIDC 분기 실적 분리 공시</b> (T4)<br>
+        · <b>삼성SDS 구미 AIDC 진척</b> — 2027E CAPEX 2.7조 집행 여부
+      </span>
+    </div>
+  </div>
+</section>
 
 <!-- ================= 01 GPU 인프라 ================= -->
 <section class="blk" id="gpu">
@@ -681,43 +720,19 @@
       </div>
     </div>
 
-    <!-- 2026.07.25 샌프란시스코 AI 서밋 업데이트 -->
-    <div class="thesis reveal" style="border-left:3px solid var(--accent);background:linear-gradient(135deg,rgba(168,85,247,.10) 0%,rgba(18,26,46,.95) 100%);margin-top:48px;">
-      <div class="tg" style="background:var(--accent);color:#fff;letter-spacing:.06em">2026.07.25 업데이트 — 샌프란시스코 AI 서밋</div>
-      <p style="margin-bottom:.6rem"><b>소버린 AI 전략 강화 확인</b>
-      <span class="u" style="display:block;margin-top:.5rem">
-        <b>&#183; 이재명 'AI 선언'</b> — "대체불가 AI 공급망 핵심 국가" 천명, 재생에너지+원전 기반 전력 인프라 확충·소버린 AI 공급망 내재화 가속화 공식화.<br>
-        <b>&#183; 혹 탄(브로드컴 CEO)</b> — "한국 소버린 AI에 적극 기여" 발언, 글로벌 빅테크의 K-소버린 AI 생태계 참여 의지 재확인.<br>
-        <b>&#183; 앤트로픽 CEO</b> — "한국 기업과의 협력을 최우선 순위로 삼겠다" 발언, AI 모델 공급망 다변화 수혜.<br>
-        <b>&#183; SKT-엔비디아</b> — DSX 플랫폼 기반 AI 전용 팩토리 국내 구축·내년 가동 후 아시아 확대. 소버린 AI 인프라 구체화.
-      </span></p>
-    </div>
+    <!-- ═══════ 최근 변경 ═══════ -->
+    <div class="thesis reveal" id="recent" style="margin-top:24px;scroll-margin-top:70px;border-left-color:#60a5fa;background:linear-gradient(120deg,rgba(96,165,250,.06),var(--surface))">
+      <div class="tg" style="color:#60a5fa">▎최근 변경 · 3건</div>
+      <span class="u">
+        <b>2026.07.27 — 메리츠 After AI 9: 지능제조업</b> <span style="color:var(--ink-3)">→ T3·T4·T5</span><br>
+        <b>SK하이퍼 설립</b>(7/24) — SK그룹 AIDC 사업개발 전문회사로 2030년까지 <b>7,500억원 출자 약정</b>, 총 15GW 목표 중 1단계 <b>5GW(2029년~)</b> 착수. <b>엔비디아 → 네이버 직접 지분투자 $1B</b> — 기존 JV 예상과 달리 네이버 주식 724만주를 유상증자로 취득했고 네이버는 자사주 490만주 소각으로 희석을 방어했다(연결 실적 반영에 유리). 2028년까지 <b>$9B</b> AI 팩토리 투자, 브룩필드가 12주간 우선협상자로 자금조달 진행. <b>NHN GPUaaS</b>는 국가 AI 컴퓨팅 사업에서 <b>B200 7,720장</b>을 배정받았고 2Q26 클라우드가 YoY 57% 성장하며 흑자 전환(2028E 지배순이익 2천억, Fwd PER 6배). <b>삼성SDS Buy 신규</b>(TP 250,000원, +19.3%). <span style="color:var(--ink-3)">3대 메가프로젝트는 <b>정부 발표 1,461조원+α</b>로 기록 — §05의 4,755조(민간 약정)와 주체가 다르다(T5).</span><br><br>
 
-    <!-- 2026.07.27 재무 모델 상세 업데이트 -->
-    <div class="thesis reveal" style="border-left:3px solid var(--bull);background:linear-gradient(135deg,rgba(72,213,151,.08) 0%,rgba(18,26,46,.95) 100%);margin-top:24px;">
-      <div class="tg" style="background:var(--bull);color:#fff;letter-spacing:.06em">2026.07.27 추가 — 네오클라우드 재무 모델 & 자금조달 격차</div>
-      <p style="margin-bottom:.6rem"><b>네이버 AI 팩토리 재무 모델 + 한국 사업자의 구조적 자금조달 우위</b>
-      <span class="u" style="display:block;margin-top:.5rem">
-        <b>&#183; 네이버 AI Factory 재무 모델 상세</b> — MW당 매출 <b>200억원</b>, 평균 PUE 1.2, 금융비용 6%. 2032E 매출 14조원 / OP 3.4조원 / 세전이익 2.0조원. 2027년 100MW → 2032년 1GW 단계 확장.<br>
-        <b>&#183; 코어위브 vs 네이버 자금조달 격차</b> — CoreWeave 선순위 사채 연 <b>9.25~9.75%</b>, DDTL SOFR+2.25~4.5% vs 네이버 ESG채권 1.5%, 사무라이 본드 1~2%, 유로/달러채 <b>3.75~4.375%</b>. 약 5~6%p 금리 격차 → 1GW 규모에서 연간 수천억원의 이자비용 차이. <b>한국 네오클라우드의 구조적 자금조달 우위</b>가 경쟁 핵심 차별점.<br>
-        <b>&#183; 네이버 DC 임차 확보</b> — 죽전(퍼시픽) 100MW + 삼송(이지스) 80MW. 삼송 사이트는 <b>수랭식</b> 완비로 B200/B300 Blackwell 세대 GPU 필수 요건 충족.<br>
-        <b>&#183; SK텔레콤 SOTP 밸류에이션</b> — 영업가치 20,588억원 + 비영업자산(Anthropic 4,241 + SK브로드밴드 4,751 + 기타 3,330) - 순차입금 8,422 = TP <b>115,000원</b>. EV/EBITDA 5.5배 적용 — Equinix 60배+, Digital Realty 40배+ 대비 극단적 할인. AIDC 사업 가시화 시 멀티플 격차 축소가 핵심 리레이팅 촉매.<br>
-        <b>&#183; 삼성SDS CAPEX 궤적</b> — 2026E 700십억원 → 2027E <b>2,700십억원</b> → 2028E <b>3,000십억원</b>. 구미 AIDC 건설(60MW+60MW 확장 옵션, 2029년 오픈) 투자 본격화. 그룹사 캡티브 수요 기반 빠른 수익화. TP 250,000원.
-      </span></p>
-    </div>
+        <b>2026.07.27 — 네오클라우드 재무 모델 &amp; 자금조달 격차</b> <span style="color:var(--ink-3)">→ T1·T2·T3 신설</span><br>
+        네이버 AI Factory 모델은 MW당 매출 <b>200억원</b>·평균 PUE <b>1.2</b>·금융비용 <b>6%</b> 가정에서 2032E 매출 14조원 / OP 3.4조원 / 세전이익 2.0조원이며 2027년 100MW → 2032년 <b>1GW</b> 확장이다. 핵심은 <b>조달 금리 격차</b> — CoreWeave 선순위 사채 <b>9.25~9.75%</b> vs 네이버 유로/달러채 <b>3.75~4.375%</b>로 <b>5~6%p</b> 차이가 1GW 규모에서 연간 수천억원의 이자비용을 가른다. 부지는 <b>죽전 100MW + 삼송 80MW</b>를 확보했고 삼송은 <b>수랭식 완비</b>로 B200/B300 요건을 충족한다. <b>SK텔레콤 SOTP TP 115,000원</b>(EV/EBITDA 5.5배 — Equinix 60배+ 대비 극단적 할인). <b>삼성SDS CAPEX</b> 2026E 7,000억 → 2027E 2.7조 → 2028E 3조원.<br><br>
 
-    <!-- 2026.07.27 메리츠 After AI 9 업데이트 -->
-    <div class="thesis reveal" style="border-left:3px solid var(--accent);background:linear-gradient(135deg,rgba(168,85,247,.10) 0%,rgba(18,26,46,.95) 100%);margin-top:24px;">
-      <div class="tg" style="background:var(--accent);color:#fff;letter-spacing:.06em">2026.07.27 업데이트 — 메리츠 After AI 9: 지능제조업</div>
-      <p style="margin-bottom:.6rem"><b>한국 네오클라우드 개막 + SK하이퍼 설립 — AI G3 인프라 실행 가속</b>
-      <span class="u" style="display:block;margin-top:.5rem">
-        <b>&#183; SK하이퍼 설립(7/24)</b> — SK그룹 AIDC 사업개발 전문회사 출범. 2030년까지 7,500억원 출자 약정. SK그룹 중장기 총 15GW AIDC 목표 중 1단계 5GW(2029년~) 실행 착수. 정부 2035년 18.4GW 목표의 핵심 축.<br>
-        <b>&#183; 엔비디아 → 네이버 직접 지분투자 $1B</b> — 기존 JV 예상과 달리 엔비디아가 네이버 주식 724만주를 유상증자로 취득($1B). 네이버 자사주 490만주 소각으로 희석 방어. AI 팩토리 사업 전체의 네이버 연결 실적 반영 가능(JV 대비 유리한 구조). 2028년까지 $9B AI 팩토리 투자 — 브룩필드가 12주간 우선협상자로 자금조달 진행. 2027년 100MW → 2032년 1GW. 2032E 매출 14조원·OP 3.4조원 추정.<br>
-        <b>&#183; NHN GPUaaS 본격화</b> — 국가 AI 컴퓨팅 사업 1조원 중 1조원 배정, B200 7,720장. 2Q26 클라우드 YoY 57% 성장·흑자전환. 2028E 지배순이익 2천억원, Fwd PER 6배.<br>
-        <b>&#183; 삼성SDS Buy 신규</b> — 구미 AIDC 60MW(+60MW 가능), 2029년 오픈. 그룹사 캡티브 수요 기반 빠른 수익화. TP 250,000원(+19.3%).<br>
-        <b>&#183; 3대 메가프로젝트 — 정부 발표 금액 1,461조원+α</b>(향후 10년) — GDP 대비 투자 비중 30년만에 20% 상회 전망. <span style="color:#f87171">※ 본 페이지 §05의 <b>4,755조원</b>은 <b>삼성 2,655조 + SK 2,100조의 민간 약정 합계</b>로 <b>주체가 다른 별개 수치</b>다. 같은 항목으로 놓고 비교하지 말 것.</span> 경제 체질 전환: 기술제조업 → 지능제조업. AIDC 특별법(인허가 간소화·분산지역특구) + 국민성장펀드 6월 누적 47% DC향 집행.<br>
-        <b>&#183; 중국 六張網 $3.9T — 글로벌 AI 인프라 3국 경쟁</b> — 15차 5개년(2026-2030) 총 ~27조위안. 算力网(AI 컴퓨팅) 5.7조위안($830B), 국산 칩 80% 의무화(화웨이 Ascend), AI DC $295B 국채 투입, 우후 '중국판 Stargate' $37B 클러스터. 미국 $4.6T·한국 <b>1,461조원</b>·중국 $3.9T <span style="color:#f87171">[2026.08.08 정정: 기존 "한국 4,755조"는 <b>민간 약정</b>이라 국가 단위 집계인 미·중 수치와 대응하지 않는다. 국가 간 비교에는 <b>정부 발표 금액</b>을 쓴다]</span> — 세 축의 경쟁이 HBM·전력·패키징 병목을 글로벌 차원에서 동시 가중. 한국은 AI Diffusion Tier 1 + HBM 공급 독점으로 3국 경쟁의 교차점에 위치.
-      </span></p>
+        <b>2026.07.25 — 샌프란시스코 AI 서밋</b> <span style="color:var(--ink-3)">→ 본문 §03 병합</span><br>
+        이재명 'AI 선언'으로 재생에너지+원전 기반 전력 인프라 확충과 소버린 AI 공급망 내재화가 공식화됐다. <b>혹 탄(브로드컴 CEO)</b>이 "한국 소버린 AI에 적극 기여", <b>앤트로픽 CEO</b>가 "한국 기업과의 협력을 최우선 순위로" 발언했다. <b>SKT–엔비디아</b>는 DSX 플랫폼 기반 AI 전용 팩토리를 국내 구축 후 아시아로 확대한다.
+      </span>
     </div>
 
     <!-- Series Nav -->
@@ -745,7 +760,9 @@
         Yeda Research and Development 연간보고서 · KAIST TTO 공시<br>
         산업통상부 3대 메가프로젝트 보도자료 (2026.06.29)<br>
         메리츠증권 After AI 시리즈 9 — 지능제조업 (2026.07.27)<br>
-        작성 기준일 · 2026.06.30 (2026.07.27 업데이트)
+        작성 기준일 · 2026.06.30 · 최종 갱신 2026.08.08<br>
+        ▸ 2026.07.27: 메리츠 After AI 9 — SK하이퍼 설립·엔비디아 네이버 지분투자 $1B·NHN GPUaaS·삼성SDS Buy 신규<br>
+        ▸ 2026.08.08: 구조 개편 — 상단 "현재 판단"(T1~T5·반증 조건) 신설, 하단 3블록을 "최근 변경 3건"으로 압축. <b>조달 금리 5~6%p 격차를 T1의 핵심 변수로 승격</b>(GPU 대수보다 차입 조건이 먼저), 수랭식 부지를 규모가 아니라 자격 문제로 T3에 정리. <b>같은 블록에서 혼용되던 4,755조(민간 약정)와 1,461조(정부 발표)를 T5에서 분리</b><br>
       </div>
     </div>
     <div class="disc">
