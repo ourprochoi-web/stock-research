@@ -73,6 +73,27 @@ def fetch_price(code):
         return None
 
 
+def fetch_fundamentals(code):
+    """국내 종목의 컨센서스 지표 — basic 과 다른 엔드포인트다.
+
+    2026-08-08: '해외 시세는 확보할 수 없다'고 적었다가 재시도해서 찾았다.
+    integration 은 시총·추정PER·추정EPS·52주 최고/최저를 준다.
+    배수 검증(A7)의 분모가 여기서 나온다 — basic 만으로는 가격밖에 없어
+    '배수가 맞는지'를 판정할 수 없었다.
+    """
+    url = f"https://m.stock.naver.com/api/stock/{code}/integration"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            d = json.loads(resp.read())
+    except Exception:
+        return None
+    info = {i.get("key"): i.get("value")
+            for i in (d.get("totalInfos") or []) if isinstance(i, dict)}
+    want = ("시총", "추정PER", "추정EPS", "PER", "EPS", "52주 최고", "52주 최저")
+    return {k: info[k] for k in want if k in info} or None
+
+
 def fetch_us(sym):
     """해외 종목 — 국내와 엔드포인트가 다르다."""
     url = f"https://api.stock.naver.com/stock/{sym}/basic"
@@ -104,6 +125,13 @@ def main():
         if not updated:
             updated = date
         print(f"  ✓ {name} ({code}) → {close:>12,}원  {direction} {change} ({ratio}%)")
+
+    # 국내 종목 컨센서스 지표 — 배수(A7) 검증의 분모
+    fundamentals = {}
+    for name, code in {**TICKERS, **WATCH}.items():
+        fd = fetch_fundamentals(code)
+        if fd:
+            fundamentals[name] = fd
 
     # 해외 종목 — 배수 검증용 (가격 + 상장주식수로 시총까지 산출)
     us = {}
@@ -143,7 +171,7 @@ def main():
             updated_time = t[11:16] + " KST" if len(t) > 16 else ""
             break
 
-    result = {"updated": updated, "updatedTime": updated_time, "prices": prices, "us": us}
+    result = {"updated": updated, "updatedTime": updated_time, "prices": prices, "fundamentals": fundamentals, "us": us}
     if existing_holdings:
         result["etfHoldings"] = existing_holdings
 
