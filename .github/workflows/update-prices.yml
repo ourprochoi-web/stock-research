@@ -6,6 +6,12 @@ on:
     - cron: '30 7 * * 1-5'
   workflow_dispatch: # 수동 실행 가능
 
+# 2026-08-08: permissions 블록이 없어 기본 read-only 토큰으로 동작했고,
+# git push 가 403 으로 실패해 2026-07-16 이후 한 번도 커밋되지 않았다.
+# 출처(네이버 금융 API)도 스크립트도 정상이었고 고장난 것은 이 선언 하나였다.
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest

@@ -522,6 +522,24 @@ a:hover{text-decoration:underline}
     </div>
     <div class="upd-source">유진투자증권 이해니 · 현대로템 2Q26 실적(2026.07.24) · 삼성바이오 공시</div>
   </div>
+
+  <div class="upd new">
+    <div class="upd-title"><span class="tag tag-new">NEW</span> 시세 파이프라인 복구 — <b>출처가 아니라 권한 한 줄이 문제였다</b></div>
+    <div class="upd-body">
+      "국내 시세 출처를 연구해야 하나"라는 질문에서 출발했는데, <b>이미 있고 지금도 작동한다</b>는 것이 결론이다.<br>
+      · <b>출처</b>: 네이버 금융 API(<code>m.stock.naver.com/api/stock/{code}/basic</code>) — 무료·키 불필요. 직접 호출해 <b>정상 응답 확인</b>.<br>
+      · <b>스크립트</b>: <code>portfolio/data/update_prices.py</code> — 끝까지 정상 동작 확인.<br>
+      · <b>고장난 곳</b>: <code>.github/workflows/update-prices.yml</code>에 <b><code>permissions: contents: write</code> 선언이 없었다.</b> 기본 read-only 토큰으로 돌아 <b><code>git push</code>가 403</b>으로 실패했고, 그래서 2026-07-16 이후 <b>Actions 봇 커밋이 단 한 건도 없다.</b> §H가 기록한 "3주간 커밋 0건"의 실제 원인이다.<br>
+      → <b>2줄 수정으로 복구.</b> 새로 만든 것은 없다.<br><br>
+      <b>🔑 3주치 공백이 채워지면서 드러난 것</b> — <code>prices.json</code>이 <b>2026-07-15에 멈춰 있었다.</b> 갱신하니 이렇다.<br>
+      · SK하이닉스 2,082,000 → <b>1,422,000</b> <b>(-31.7%)</b> &nbsp;·&nbsp; 삼성전자 279,500 → <b>231,000</b> (-17.4%)<br>
+      · <b>SOL AI반도체TOP2+ 20,600 → 15,210 (-26.2%)</b> &nbsp;·&nbsp; TIME 글로벌AI -11.7% &nbsp;·&nbsp; KODEX AI전력핵심설비 -3.6%<br>
+      <b>SOL은 포트폴리오가 "즉시 스톱로스 매도"를 지시했던 종목</b>이다(트리거 -15.48% 돌파). CLAUDE.md <b>E4</b>가 "8일 미집행"으로 기록한 그 액션이며, <b>그 이후 구간에서 이 ETF는 7/15 종가 대비 -26.2% 하락했다.</b> <span style="color:var(--ink-3)">⚠ 스톱로스 -15.48%는 평단 대비이고 -26.2%는 7/15 종가 대비이므로 <b>기준이 다르다</b> — 두 수치를 더해 "추가 손실"로 계산하지 말 것(A5).</span><br>
+      → <b>시세 자동화의 값어치는 대시보드가 아니라 여기에 있다.</b> 가격이 멈추면 <b>미집행 액션의 비용이 보이지 않는다.</b><br><br>
+      <b>남은 한계</b> — 이 파이프라인은 <code>prices.json</code>을 채우고 그 파일은 <b>숨김 대시보드 1곳</b>에서만 쓰인다. 오늘 발견한 실제 오류들(한화에어로 PER·목표가, SK하이닉스 기준가)은 전부 <b>본문 산문에 박힌 가격</b>이었고 <b>자동화로는 못 고친다.</b> 산문 가격은 A5(값+기준+시점)로 라벨링하는 수밖에 없다.
+    </div>
+    <div class="upd-source">네이버 금융 API 직접 호출 검증 (2026.08.08) · prices.json 기준일 2026-08-07</div>
+  </div>
 </div>
 <div class="day">
   <div class="day-date">2026.08.07 — Round 8: 매크로 프레임 전환 · KOSPI 목표 격차 · 잔여 8편 마감</div>
