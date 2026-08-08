@@ -317,6 +317,47 @@ a:hover{text-decoration:underline}
     </div>
     <div class="upd-source">CLAUDE.md §H 예외 3 · §F3</div>
   </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">CORRECTION</span> 🔴 Tier 분류 자체가 틀렸다 — 블록 수는 신뢰할 수 있는 기준이 아니었다</div>
+    <div class="upd-body">
+      Tier 2·3 목록을 <b>업데이트 블록 개수</b>로 뽑았는데, 페이지마다 업데이트 마크업 규약이 다르다는 것을 확인했다 — hanwha_aero는 <code>&lt;section&gt;</code> 통째, k_beauty_apr은 <code>z-num/f-tag</code>, china_ai는 <code>fc-tag</code> 미니블록. 정규식이 페이지마다 다른 것을 세고 있었다.<br>
+      <b>🔑 가장 큰 누락</b> — <code>ns_china_ai_ecosystem.html</code>은 <b>7/20 이후 갱신 11회</b>로 아카이브 전체에서 가장 많이 손댄 페이지인데 Tier 3으로 분류돼 있었다. Tier 1 어느 편보다도 많다.<br>
+      → 기준을 <b>CLAUDE.md §0 규칙 5</b>(상단 기준일 vs 페이지 최신 날짜)와 <b>7/20 이후 갱신 횟수</b>로 교체. 재분류 결과 <b>Tier 2 = 16편</b>.
+    </div>
+    <div class="upd-source">measured: 규칙 5 검출기 · 날짜 분포 실측 (2026.08.08)</div>
+  </div>
+
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> 남은 80편 실측 — 모순은 거의 없고, <b>반증 조건이 없다</b></div>
+    <div class="upd-body">
+      Tier 3를 일괄 작업할지 판단하기 위해 남은 80편을 전수 측정했다.<br>
+      · <b>규칙 5 결함(상단 기준일 &lt; 최신 날짜): 4편뿐.</b> 이유는 <b>74편이 날짜를 하나만 갖고 있어서</b>다 — 한 번 쓰고 손댄 적이 없으니 모순이 쌓일 수가 없다. §0 규칙 6의 <b>"업데이트가 안 쌓인 페이지는 모순도 안 쌓였다"</b>가 실측으로 확인됐다.<br>
+      · <b>반증 조건 보유: 80편 중 4편.</b> §0 규칙 2 기준으로 보면 <b>76편이 테제가 아니라 감상을 싣고 있다.</b><br>
+      → 즉 Tier 3 작업의 성격은 "모순 해소"가 아니라 <b>"감상 → 테제 전환"</b>이다. 다른 종류의 일이므로 별도로 판단한다.
+    </div>
+    <div class="upd-source">measured: 80편 전수 (2026.08.08)</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 중국 AI 생태계 — 8/2 "메모리 가격 하방" 전망 <b>철회</b></div>
+    <div class="upd-body">
+      한 페이지 안에서 <b>8/2와 8/5가 정반대</b>였다. 8/2는 CXMT LPDDR6 양산 임박을 근거로 <b>"메모리 가격 하방 압력"</b>을 적었는데, 8/5에는 CXMT가 Apple LPDDR5X 협상에서 <b>삼성·하이닉스보다 높은 가격</b>을 고수하다 결렬됐다.<br>
+      → <b>8/2의 가격 하방 전망을 철회</b>하고, CXMT를 <b>"저가 파괴자"가 아니라 "기술 경쟁자"</b>로 재규정했다(T2). 동시에 물량 확장은 그대로이므로(제2 베이징 팹 월 600K 웨이퍼, HP·Asus·Acer 채용 개시) <b>단기 불리시·중기 베어리시</b>로 분리해 T3에 고정했다. <b>둘을 같은 방향으로 읽으면 반드시 틀린다.</b><br>
+      → 六張網 블록은 뉴스가 아니라 <b>인프라 규모의 정본</b>이므로 본문화했다 — $295B는 算力网 직접 DC만이고 六張網 전체는 ~27조 위안($3.9T)이다(T5).
+    </div>
+    <div class="upd-source">업계 소스 (2026.08.05) · Reuters · Nikkei Asia · NDRC</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 반도체 전쟁 — 7월 폭락은 펀더멘털이 아니라 <b>레버리지 구조 이벤트</b></div>
+    <div class="upd-body">
+      홍콩 CSOP SK하이닉스 2배 ETF(운용자산 한때 <b>23조원</b>, 세계 최대 단일종목 레버리지 ETF)의 리밸런싱이 증폭기로 작동해 <b>KOSPI 7/28–29 이틀 연속 서킷브레이커(역대 최초)</b>를 만들었다. Goldman 추정 개인 레버리지 <b>120만 계좌 마진콜 · 50만+ 강제 청산</b>(한국 성인 3.4%).<br>
+      <b>반대 방향으로도 같은 크기로 작동했다</b> — 규제 후 거래량 <b>-50%</b>, 7/31 외국인 <b>7.2조원 단일일 역대 최대 순매수</b>, KOSPI 5,594 → 6,595(<b>+17.91%</b>).<br>
+      → <b>이 구간의 지수 변동을 반도체 펀더멘털 신호로 읽지 않는다</b>를 T3으로 고정. 함께 Citi의 <b>"장비 &gt; 반도체"</b> outperform 신호를 T4로, 삼성·SK하이닉스의 중국 AMEC 장비 테스트와 희토류+로보틱스 전략물자화를 T5로 신설했다.
+    </div>
+    <div class="upd-source">Citi Korea Flow (2026.08.01) · 금감원 · Goldman Sachs · Reuters · Bernstein</div>
+  </div>
 </div>
 <div class="day">
   <div class="day-date">2026.08.07 — Round 8: 매크로 프레임 전환 · KOSPI 목표 격차 · 잔여 8편 마감</div>
