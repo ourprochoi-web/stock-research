@@ -27,6 +27,62 @@
     "엘앤에프": 90200,
     "KB금융": 175800
   },
+  "us": {
+    "Palantir": {
+      "price": 172.01,
+      "symbol": "PLTR.O",
+      "shares": 2403058480,
+      "mcapB": 413.4
+    },
+    "CrowdStrike": {
+      "price": 214.42,
+      "symbol": "CRWD.O",
+      "shares": 1018322132,
+      "mcapB": 218.3
+    },
+    "Datadog": {
+      "price": 233.93,
+      "symbol": "DDOG.O",
+      "shares": 359075024,
+      "mcapB": 84.0
+    },
+    "Snowflake": {
+      "price": 330.49,
+      "symbol": "SNOW.K",
+      "shares": 346600000,
+      "mcapB": 114.5
+    },
+    "Microsoft": {
+      "price": 499.99,
+      "symbol": "MSFT.O",
+      "shares": 7425545491,
+      "mcapB": 3712.7
+    },
+    "Eli Lilly": {
+      "price": 1185.71,
+      "symbol": "LLY",
+      "shares": 941357065,
+      "mcapB": 1116.2
+    },
+    "Novo Nordisk ADR": {
+      "price": 47.26,
+      "symbol": "NVO",
+      "shares": 3350805520,
+      "mcapB": 158.4
+    },
+    "Salesforce": {
+      "price": 192.74,
+      "symbol": "CRM",
+      "shares": 819000000,
+      "mcapB": 157.9
+    },
+    "ServiceNow": {
+      "price": 124.88,
+      "symbol": "NOW",
+      "shares": 1033862000,
+      "mcapB": 129.1
+    }
+  },
   "etfHoldings": {
     "SOL AI반도체TOP2+": {
       "asOf": "2026-07-14",

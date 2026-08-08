@@ -43,6 +43,21 @@ WATCH = {
     "KB금융": "105560",
 }
 
+# 해외 종목 — 리서치 페이지에서 배수·기준가를 인용하는 종목.
+# 2026-08-08 추가. 엔드포인트가 국내(m.stock)와 다르다: api.stock.naver.com/stock/{SYM}/basic
+# 접미사는 NASDAQ=.O, NYSE=무접미사 또는 .K (심볼별로 다르므로 검증된 값만 넣는다)
+WATCH_US = {
+    "Palantir": "PLTR.O",
+    "CrowdStrike": "CRWD.O",
+    "Datadog": "DDOG.O",
+    "Snowflake": "SNOW.K",
+    "Microsoft": "MSFT.O",
+    "Eli Lilly": "LLY",
+    "Novo Nordisk ADR": "NVO",
+    "Salesforce": "CRM",
+    "ServiceNow": "NOW",
+}
+
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT = os.path.join(SCRIPT_DIR, "prices.json")
 
@@ -55,6 +70,18 @@ def fetch_price(code):
             return json.loads(resp.read())
     except Exception as e:
         print(f"  ✗ {code} — {e}")
+        return None
+
+
+def fetch_us(sym):
+    """해외 종목 — 국내와 엔드포인트가 다르다."""
+    url = f"https://api.stock.naver.com/stock/{sym}/basic"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read())
+    except Exception as e:
+        print(f"  \u2717 {sym} — {e}")
         return None
 
 
@@ -78,6 +105,25 @@ def main():
             updated = date
         print(f"  ✓ {name} ({code}) → {close:>12,}원  {direction} {change} ({ratio}%)")
 
+    # 해외 종목 — 배수 검증용 (가격 + 상장주식수로 시총까지 산출)
+    us = {}
+    for name, sym in WATCH_US.items():
+        d = fetch_us(sym)
+        if not d:
+            continue
+        try:
+            px = float(str(d["closePrice"]).replace(",", ""))
+        except (KeyError, ValueError):
+            continue
+        cnt = d.get("countOfListedStock")
+        rec = {"price": px, "symbol": sym}
+        if cnt:
+            rec["shares"] = int(cnt)
+            rec["mcapB"] = round(px * int(cnt) / 1e9, 1)
+        us[name] = rec
+        mc = f"  시총 ${rec['mcapB']:,}B" if "mcapB" in rec else ""
+        print(f"  \u2713 {name} ({sym}) \u2192 ${px:>10,.2f}{mc}")
+
     # Preserve existing etfHoldings if present
     existing_holdings = {}
     if os.path.exists(OUTPUT):
@@ -97,7 +143,7 @@ def main():
             updated_time = t[11:16] + " KST" if len(t) > 16 else ""
             break
 
-    result = {"updated": updated, "updatedTime": updated_time, "prices": prices}
+    result = {"updated": updated, "updatedTime": updated_time, "prices": prices, "us": us}
     if existing_holdings:
         result["etfHoldings"] = existing_holdings
 
