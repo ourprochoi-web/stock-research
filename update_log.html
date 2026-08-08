@@ -379,6 +379,20 @@ a:hover{text-decoration:underline}
     </div>
     <div class="upd-source">한화에어로 7/27 프리뷰 · 8/6 리뷰 · Granit34</div>
   </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">CORRECTION</span> 🔴 C1급 — 4,755조 vs 1,461조는 <b>오류가 아니라 주체의 차이</b>였다 (내 판단 정정 포함)</div>
+    <div class="upd-body">
+      <b>무엇이 틀렸나</b> — 오늘 오전 AI 전력 인프라·전선 두 편에 <b>"3.3배 차이, 기준 미확인 → 어느 쪽도 단독 인용 금지"</b>라고 적었다. <b>이것이 틀렸다.</b> 기준은 저장소 안에 이미 문서화돼 있었고, <b>CLAUDE.md A4(새 수치 쓰기 전 grep)</b>를 실행하지 않은 채 "미확인"으로 단정한 것이 원인이다.<br>
+      · <b>4,755조원 = 삼성 2,655조 + SK 2,100조</b> — <b>민간 2개 그룹의 투자 약정 합계</b> (출처: <code>data/research_mega_project_3axes.md</code>)<br>
+      · <b>1,461조원+α = 정부 발표 금액</b>(향후 10년) (출처: <code>docs/지능제조업_정리.md</code>)<br>
+      → 즉 <b>같은 것을 다르게 센 게 아니라 서로 다른 돈</b>이다. 두 수치를 나란히 놓고 "어느 쪽이 맞나"를 묻는 것 자체가 잘못된 질문이었다.<br><br>
+      <b>무너진 결론 — 진짜 오류는 다른 곳에 있었다</b> — <code>ai_korea_g3_sovereign_ai.html</code>의 <b>같은 업데이트 블록 안</b>에 "3대 메가프로젝트 <b>1,461조원</b>"과 "미국 $4.6T·한국 <b>4,755조</b>·중국 $3.9T"가 함께 있었다. 특히 <b>국가 간 비교에 민간 약정(4,755조)을 넣은 것</b>은 사실 오류다 — 미국 $4.6T와 중국 $3.9T는 프로그램·국가 단위 집계여서 대응 항목이 <b>정부 발표 금액(1,461조)</b>이기 때문이다. <b>한국 규모를 3.3배 과대 표기</b>한 셈이다.<br><br>
+      <b>전파 범위</b> — <code>grep</code>으로 4,755조 <b>21곳</b> / 1,461조 <b>10곳</b>을 확인하고 읽어서 판정했다. 3국 비교를 쓰는 나머지 3곳(<code>ns_korea_impact_strategy</code>·<code>ns_money_flow_tracker</code>·<code>ns_bottleneck_map</code>)은 모두 <b>정부 발표 금액을 올바르게 사용</b>하고 있어 수정 대상이 아니었다. 오류는 g3_sovereign 1곳뿐이었고, 나머지는 <b>내가 오늘 잘못 적은 "기준 미확인" 서술 2곳</b>이었다.<br><br>
+      <b>재발 방지</b> — 같은 이름("3대 메가프로젝트")으로 불리는 수치가 둘이면 <b>금액이 아니라 주체를 먼저 확인</b>한다. 그리고 <b>"기준 미확인"이라고 쓰기 전에 A4의 grep을 반드시 실행한다</b> — 확인하지 않은 것과 확인할 수 없는 것은 다르며, 전자를 후자처럼 적으면 그 자체가 오류다.
+    </div>
+    <div class="upd-source">data/research_mega_project_3axes.md · docs/지능제조업_정리.md · grep 전수 (2026.08.08)</div>
+  </div>
 </div>
 <div class="day">
   <div class="day-date">2026.08.07 — Round 8: 매크로 프레임 전환 · KOSPI 목표 격차 · 잔여 8편 마감</div>
