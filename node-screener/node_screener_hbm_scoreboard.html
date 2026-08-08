@@ -161,7 +161,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
   "headline": "HBM 밸류체인 병목 스코어보드",
   "description": "HBM 밸류체인 49개 기능·30개 기업 5축 스코어링 병목 분석",
   "datePublished": "2026-07-27",
-  "dateModified": "2026-08-06",
+  "dateModified": "2026-08-07",
   "author": {
     "@type": "Person",
     "name": "ourprochoi"
@@ -184,10 +184,13 @@ footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
 <div class="brand"><span class="dot"></span>노드 스크리너 &middot; HBM</div>
 <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
 <div class="nav-links">
+<a href="#now" style="color:var(--accent)">▎현재 판단</a>
 <a href="#fn-rank">01 / 기능</a>
 <a href="#co-rank">02 / 기업</a>
 <a href="#cal">03 / 검증</a>
 <a href="#stages">04 / 단계</a>
+<a href="#recent">최근 변경</a>
+<a href="#corrections" style="color:#f87171">정정 1</a>
 </div></div></nav>
 
 <header class="hero"><div class="hero-bg">
@@ -204,6 +207,32 @@ footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
 </div>
 <div class="scroll-cue"><div class="bar"></div>SCROLL</div>
 </div></header>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ═══════ 현재 판단 (최상단 고정) ═══════ -->
+<section id="now" class="blk" style="padding:40px 0 8px"><div class="wrap">
+<div class="panel reveal" style="border-left:3px solid var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.08),rgba(255,255,255,.02))">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px">
+    <span style="font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase">▎현재 판단 · 2026.08.07</span>
+    <span style="font-size:.72rem;color:var(--ink-3)">작성 2026.06 · 최종 갱신 2026.08.07</span>
+    <a href="#corrections" style="font-size:.72rem;color:#f87171;text-decoration:none">🔴 정정 1건</a>
+    <a href="#recent" style="font-size:.72rem;color:#60a5fa;text-decoration:none">🔵 최근 변경 4건</a>
+  </div>
+  <p style="font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:12px">"HBM4는 양산에 진입했고, 사이클은 <em>메모리 전체</em>로 확장됐다."</p>
+  <p style="font-size:.92rem;color:var(--ink-2);line-height:1.75">
+    <b style="color:var(--ink)">T1. HBM4는 양산 궤도에 올랐다.</b> SK하이닉스가 Q2말 출하를 개시하고 <b>수율 80%+</b>로 HBM3E 성숙 수준에 근접했으며, 3Q부터 본격 확대 국면이다. 삼성전자도 <b>HBM4 3Q 매출 QoQ 3배+</b>를 가이던스로 제시해 하반기 경쟁이 재점화된다. HBM4E는 1cnm 샘플 공급 완료·2027 양산 예정, iHBM(냉각 통합형)은 HBM5 적용 전망.<br><br>
+    <b style="color:var(--ink)">T2. 사이클이 DRAM에서 메모리 전체로 확장됐다.</b> SanDisk FQ4 매출 <b>$8.965B(+372% YoY)</b>, <b>GM 84.6%·OPM 78.5%</b>. 키옥시아 F2Q 가이던스 OPM도 79.5%로 상향. AI 학습·추론 데이터 저장 + 체크포인팅 + RAG 워크로드가 <b>Enterprise SSD 수요</b>를 끌어올린다. → 다만 <b>NAND는 DRAM과 지속성이 다르다</b>(아래 T4).<br><br>
+    <b style="color:var(--ink)">T3. 밸류체인 전체가 동시 강세다.</b> Taiyo Yuden MLCC BB ratio <b>1.72(역대 최고)</b>, Ibiden ABF 기판 OPM 27.6%·가이던스 +41%. MLCC BB는 메모리 수요의 2~3개월 선행지표이므로 향후 2~3분기 강한 출하를 시사한다.<br><br>
+    <b style="color:var(--ink)">T4. 🔴 그러나 Scale-Out 전환은 절반만 검증됐다.</b> Citi의 HBM 총수요 <b>+434%</b>는 <b>(GPU당 -33%) × (시스템당 GPU 8배)</b>의 곱이다. TrendForce의 Rubin Ultra 다운스펙(288→192GB)으로 <b>앞의 항은 사실 확인</b>됐으나 <b>뒤의 항은 여전히 가정</b>이다. 총수요 보합에도 대수 <b>최소 1.5배</b>가 필요하다. 그리고 8-Hi 중심으로 표준이 이동하면 <b>SK하이닉스의 고단 적층 해자가 희석</b>된다.<br><br>
+    <b style="color:var(--ink)">T5. NAND 피크아웃은 3단계로 본다.</b> ① ASP 상승률 둔화 → ② GM 정체 → ③ OPM 하락. <b>현재 ①단계</b>다(SanDisk F1Q27 매출 가이던스 $105.5억 &lt; 컨센 $107.4억, 사유 "가격 상승 폭 완만화"). GM 가이던스는 83~85%로 컨센 79.3%를 크게 상회해 <b>마진 훼손은 아직 없다</b>.
+  </p>
+  <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-2);line-height:1.7">
+    <b style="color:#60a5fa">반증 조건</b> — T1: HBM4 수율이 80% 아래로 후퇴 · T2: 키옥시아·SanDisk OPM 5pp+ 하락 · T4: NVIDIA 랙 출하 대수 가이던스 1.5배 미만 · T5: GM 가이던스가 컨센과 수렴<br>
+    <b style="color:#60a5fa">다음 검증</b> — <b>2026.08.27 NVIDIA Q2</b>(시스템 구성·랙 출하) · 차기 SanDisk·키옥시아 실적(NAND ②단계 진입 여부) · 삼성 HBM4 3Q 실적(QoQ 3배 달성 여부)
+  </div>
+</div>
+</div></section>
 
 <section id="fn-rank" class="blk"><div class="wrap">
 <div class="sec-head reveal">
@@ -368,165 +397,42 @@ footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
 <p class="sec-lead">2026.07.30 기준 HBM4 양산·수율·삼성전자 경쟁력 업데이트.</p>
 </div>
 
-<!-- 2026.07.30 업데이트 블록 -->
-<div class="panel reveal d1" style="margin-bottom:28px;border-left:3px solid var(--accent)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-  <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase">UPDATE · 2026.07.30</span>
-</div>
-<p style="font-size:.9rem;color:var(--ink-2);line-height:1.7">Q2 2026 어닝 시즌 확인: SK하이닉스 HBM4 양산 출하 개시(Q2말) 및 수율 80%+ 달성이 실적으로 확인됨. 3Q부터 HBM4 본격 확대 국면. 삼성전자 역시 HBM4 3Q 매출 QoQ 3배+ 확대를 가이던스로 제시, 하반기 HBM 경쟁 구도 본격화.</p>
+<!-- ═══════ 최근 변경 ═══════ -->
+<div class="panel reveal d1" id="recent" style="margin-bottom:28px;border-left:3px solid var(--glow)">
+  <div style="font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--glow);text-transform:uppercase;margin-bottom:12px">▎최근 변경 · 4건</div>
+  <p style="font-size:.9rem;color:var(--ink-2);line-height:1.75">
+    <b style="color:var(--ink)">2026.08.07 · TrendForce — NVIDIA Rubin Ultra HBM 다운스펙</b><br>
+    &nbsp;&nbsp;12-Hi HBM4e 원안에서 <b>4개 안으로 확대 평가</b>(8-Hi HBM4e / 12-Hi HBM4 / 8-Hi HBM4). 8-Hi HBM4 채택 시 <b>192GB로 현행 288GB 대비 -33%</b> — Citi가 제시한 "GPU당 -33%"와 일치한다. 사유는 <b>2027년 DRAM 부족에 따른 HBM 웨이퍼 캐파 제한</b>과 12-Hi HBM4e 검증·수율 불확실성으로, <b>가격 저항이 아니라 공급 제약</b>이다. → <b>T4 신설</b><br><br>
+
+    <b style="color:var(--ink)">2026.08.06 · HBM4 Scale-Out 전환 + 1.6T 광트랜시버</b><br>
+    &nbsp;&nbsp;Citi는 HBM 부족으로 AI 칩 제조사가 <b>스케일업 → 스케일아웃</b>으로 이동한다고 전망(시스템당 GPU 72→576개, 총 HBM 20.7→110.6TB). 메리츠는 1.6T 광트랜시버를 <b>대역폭 병목 해소의 다른 축</b>으로 지목. ⚠ 단 <b>Wells Fargo NVL72 BOM은 전력 1GW당 네트워킹이 -11% 감소</b>함을 보여줘, 최대 수혜는 네트워킹이 아니라 <b>메모리(1GW당 +43%)</b>로 정정됐다.<br><br>
+
+    <b style="color:var(--ink)">2026.08.05 · MLCC·ABF 소재 동반 업사이클</b><br>
+    &nbsp;&nbsp;Taiyo Yuden MLCC BB ratio <b>1.72(역대 최고)</b>, 무라타 1.47. Ibiden ABF 기판 OPM <b>27.6%</b>·가이던스 +41%. MLCC BB는 메모리·반도체 수요의 <b>2~3개월 선행지표</b>이므로 향후 2~3분기 강한 출하를 시사한다. 삼성전기 직접 수혜. → <b>T3 신설</b><br><br>
+
+    <b style="color:var(--ink)">2026.08.04~06 · NAND 수퍼사이클 — 메모리 전체로 확장</b><br>
+    &nbsp;&nbsp;SanDisk FQ4 매출 <b>$8.965B(+372% YoY)</b>, <b>GM 84.6% / OPM 78.5%</b>, Datacenter +437%. 키옥시아 F2Q 가이던스 OPM 79.5%(기존 75%). Enterprise SSD 수요 폭발 + LTA 프리미엄 + 엔저. → <b>T2 신설, 정정 ①</b><br>
+    &nbsp;&nbsp;⚠ 단 SanDisk F1Q27 매출 가이던스 <b>$105.5억 &lt; 컨센 $107.4억</b>이며 사유는 "가격 상승 폭 완만화" — <b>NAND 피크아웃 ①단계</b> 신호다. → <b>T5 신설</b><br><br>
+
+    <b style="color:var(--ink)">2026.07.30 · HBM4 양산 진입 + 삼성 경쟁력 회복</b><br>
+    &nbsp;&nbsp;SK하이닉스 HBM4 Q2말 출하 개시·<b>수율 80%+</b>·Q2 OPM 76% 사상 최고. 삼성전자 <b>HBM4 3Q 매출 QoQ 3배+</b> 가이던스, 하반기 HBM4가 삼성 HBM 매출의 60%+ 전망. HBM4E 1cnm 샘플 완료·2027 양산, iHBM 개발 중(열저항 30%↓). → <b>T1 신설</b><br><br>
+
+    <span style="color:var(--ink-3)">전체 아카이브 변경 이력은 <a href="../update_log.html" style="color:var(--accent)">업데이트 로그</a>.</span>
+  </p>
 </div>
 
-<div class="reveal d1">
-<div class="stage-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
-
-<!-- HBM4 -->
-<div class="stage-card reveal d1">
-  <div class="stage-num">HBM4 · 현황</div>
-  <div class="stage-title">HBM4 양산 램프</div>
-  <div class="stage-fns" style="flex-direction:column;gap:8px">
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 양산 출하 시작 (Q2말), 3Q 본격 확대</div>
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 수율 80%+ — HBM3E 성숙 수준 근접</div>
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> SK하이닉스 Q2 OPM <span style="color:var(--accent);font-weight:700">76%</span> 사상 최고</div>
-  </div>
-</div>
-
-<!-- HBM4E -->
-<div class="stage-card reveal d2">
-  <div class="stage-num">HBM4E · 개발 진행</div>
-  <div class="stage-title">HBM4E 로드맵</div>
-  <div class="stage-fns" style="flex-direction:column;gap:8px">
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--accent);font-weight:700">●</span> 1cnm 샘플 공급 완료</div>
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--accent);font-weight:700">●</span> 양산 예정: <span style="font-family:var(--mono)">2027</span></div>
-  </div>
-</div>
-
-<!-- iHBM -->
-<div class="stage-card reveal d3">
-  <div class="stage-num">iHBM · 차세대 개발 중</div>
-  <div class="stage-title">iHBM (냉각 통합형)</div>
-  <div class="stage-fns" style="flex-direction:column;gap:8px">
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--ink-3);font-weight:700">●</span> 개발 중 · HBM5 적용 전망</div>
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--ink-3);font-weight:700">●</span> 냉각 통합 구조, 열저항 <span style="color:var(--bull);font-weight:700">30%↓</span></div>
-  </div>
-</div>
-
-<!-- 삼성전자 HBM -->
-<div class="stage-card reveal d3">
-  <div class="stage-num">삼성전자 HBM · 경쟁력 회복</div>
-  <div class="stage-title">삼성 HBM4 하반기 전망</div>
-  <div class="stage-fns" style="flex-direction:column;gap:8px">
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--accent);font-weight:700">●</span> HBM4 3Q 매출 QoQ <span style="color:var(--bull);font-weight:700">3배+</span> 확대 전망</div>
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--accent);font-weight:700">●</span> 하반기 HBM4가 삼성 HBM 전체 매출 <span style="color:var(--bull);font-weight:700">60%+</span></div>
-    <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--accent);font-weight:700">●</span> HBM M/S 하반기 전체 DRAM M/S 수준 회복 목표</div>
-  </div>
-</div>
-
-</div>
-</div>
-
-<!-- 2026.08.04-06 업데이트 블록 -->
-<div class="panel reveal d1" style="margin-top:28px;margin-bottom:28px;border-left:3px solid var(--accent)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-  <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase">UPDATE · 2026.08.04–06</span>
-</div>
-<p style="font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:12px">NAND 수퍼사이클 — HBM과 동반 상승</p>
-<p style="font-size:.9rem;color:var(--ink-2);line-height:1.7;margin-bottom:16px">Sandisk FQ4 매출 $8.965B (+372% YoY), <b>매출총이익률(GM) 84.6%·영업이익률(OPM) 78.5%</b> 기록. 키옥시아 F2Q 가이던스 OPM 79.5%(기존 75%에서 상향) — <span style="color:#f87171">[2026.08.07 정정: 최초 게재 시 84.6%를 영업이익률로 표기했으나 매출총이익률이며, 키옥시아 OPM 79.5%와는 서로 다른 계정이므로 "상회" 비교는 성립하지 않는다]</span>. Enterprise SSD 수요 폭발 — AI 학습/추론 데이터 저장 + 체크포인팅 + RAG 워크로드가 견인. HBM 수퍼사이클이 NAND까지 확장: DRAM(HBM) + NAND(Enterprise SSD) = 메모리 전체 수퍼사이클 진입 확인.</p>
-<div class="stage-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:8px">
-  <div class="stage-card reveal d1">
-    <div class="stage-num">Sandisk FQ4</div>
-    <div class="stage-title">NAND 역대 최고 실적</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 매출 <span style="color:var(--accent);font-weight:700">$8.965B</span> (+372% YoY)</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 매출총이익률(GM) <span style="color:var(--accent);font-weight:700">84.6%</span> / 영업이익률(OPM) <span style="color:var(--accent);font-weight:700">78.5%</span> — 업계 최상위권 <span style="color:#f87171;font-size:.92em">[08.07 정정]</span></div>
-    </div>
-  </div>
-  <div class="stage-card reveal d2">
-    <div class="stage-num">키옥시아 F2Q 가이던스</div>
-    <div class="stage-title">OPM 상향</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> OPM <span style="color:var(--accent);font-weight:700">79.5%</span> (기존 75%에서 상향)</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> Enterprise SSD 수요 폭발적 증가</div>
-    </div>
-  </div>
-  <div class="stage-card reveal d3">
-    <div class="stage-num">메모리 전체 수퍼사이클</div>
-    <div class="stage-title">DRAM + NAND 동반 업사이클</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> AI 학습·추론 데이터 저장 + 체크포인팅 + RAG 워크로드</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> HBM(DRAM) + Enterprise SSD(NAND) = 메모리 전체 수혜</div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="panel reveal d2" style="margin-bottom:28px;border-left:3px solid var(--glow)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-  <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--glow);text-transform:uppercase">UPDATE · 2026.08.05</span>
-</div>
-<p style="font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:12px">MLCC·ABF 소재 동반 업사이클 — HBM 밸류체인 전체 강세</p>
-<p style="font-size:.9rem;color:var(--ink-2);line-height:1.7;margin-bottom:16px">Taiyo Yuden MLCC BB ratio 1.72(역대 최고) — AI서버 전방 수요 선행지표 확인. Ibiden ABF 기판 OPM 27.6%, 가이던스 +41% — GPU·HBM 연결 소재 전 방위 수혜. 시사점: HBM 밸류체인 전체가 동시 업사이클 진행 → 스코어보드 전 항목 강세.</p>
-<div class="stage-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:8px">
-  <div class="stage-card reveal d1">
-    <div class="stage-num">Taiyo Yuden MLCC</div>
-    <div class="stage-title">AI서버 선행지표 역대 최고</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> BB ratio <span style="color:var(--accent);font-weight:700">1.72</span> — 역대 최고</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> AI서버 전방 수요 선행지표</div>
-    </div>
-  </div>
-  <div class="stage-card reveal d2">
-    <div class="stage-num">Ibiden ABF 기판</div>
-    <div class="stage-title">GPU·HBM 연결 소재 수혜</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> OPM <span style="color:var(--accent);font-weight:700">27.6%</span></div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 가이던스 <span style="color:var(--bull);font-weight:700">+41%</span> — GPU·HBM 연결 소재 전방위 수혜</div>
-    </div>
-  </div>
-  <div class="stage-card reveal d3">
-    <div class="stage-num">밸류체인 시사점</div>
-    <div class="stage-title">스코어보드 전 항목 강세</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> HBM 밸류체인 전체 동시 업사이클</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> MLCC(수동소자) → ABF(기판) → HBM(메모리) 전 항목 강세</div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- 2026.08.06 업데이트 블록 -->
-<div class="panel reveal d1" style="margin-top:28px;margin-bottom:28px;border-left:3px solid var(--accent)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-  <span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase">UPDATE · 2026.08.06</span>
-</div>
-<p style="font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:12px">HBM4 아키텍처 전환 시그널 — Scale-Up → Scale-Out</p>
-<p style="font-size:.9rem;color:var(--ink-2);line-height:1.7;margin-bottom:16px">Citi: HBM4에서 12-Hi → 8-Hi 스택 전환 가능성 제기. 수율 중시 전략으로 "Scale-out이 scale-up보다 경제적" — SK하이닉스 유리한 포지셔닝. JPM: SK하이닉스 HBM4 8-Hi 우선 양산 확인, CAPEX 187조원(↑from 175조)으로 상향. Meritz: 1.6T 광트랜시버가 HBM과 함께 AI 인프라 대역폭 병목 해소의 양축.</p>
-<div class="stage-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:8px">
-  <div class="stage-card reveal d1">
-    <div class="stage-num">Citi Research</div>
-    <div class="stage-title">HBM Scale-Up → Scale-Out 전환</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 12-Hi 스택 → <span style="color:var(--accent);font-weight:700">8-Hi 스택</span> 전환 가능성</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> 수율 중시 전략 — "Scale-out이 scale-up보다 경제적"</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> <span style="color:var(--accent);font-weight:700">SK하이닉스</span> 유리한 포지셔닝</div>
-    </div>
-  </div>
-  <div class="stage-card reveal d2">
-    <div class="stage-num">JPMorgan</div>
-    <div class="stage-title">SK하이닉스 HBM4 8-Hi 양산 확인</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> CAPEX <span style="color:var(--accent);font-weight:700">187조원</span> (↑ 175조원에서 상향)</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> HBM4 8-Hi 우선 양산 후 12-Hi 점진 전환</div>
-    </div>
-  </div>
-  <div class="stage-card reveal d3">
-    <div class="stage-num">Meritz</div>
-    <div class="stage-title">1.6T 광트랜시버 — 병목 해소 양축</div>
-    <div class="stage-fns" style="flex-direction:column;gap:8px">
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> AI 인프라 대역폭 확장</div>
-      <div style="font-size:.84rem;color:var(--ink-2)"><span style="color:var(--bull);font-weight:700">●</span> HBM + <span style="color:var(--accent);font-weight:700">1.6T 광트랜시버</span> = 병목 해소 양축</div>
-    </div>
-  </div>
-</div>
+<!-- ═══════ 정정 이력 ═══════ -->
+<div class="panel reveal d1" id="corrections" style="margin-bottom:28px;border-left:3px solid #f87171;background:linear-gradient(120deg,rgba(248,113,113,.06),rgba(255,255,255,.02))">
+  <div style="font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:#f87171;text-transform:uppercase;margin-bottom:12px">▎정정 이력 · 1건</div>
+  <p style="font-size:.9rem;color:var(--ink-2);line-height:1.75">
+    <b style="color:#f87171">🔴 C1급 (사실 오류) · 2026.08.07</b> — <b style="color:var(--ink)">SanDisk FQ4 "영업이익률 84.6%" → GM 84.6% / OPM 78.5%</b><br>
+    &nbsp;&nbsp;<b style="color:var(--ink)">무엇이 틀렸나</b>: 2026.08.04자 기재에서 <b>매출총이익률을 영업이익률로 오기</b>했다. GAAP 영업이익 $7,037M ÷ 매출 $8,965M = <b>78.5%</b>(non-GAAP 79.2%)다.<br>
+    &nbsp;&nbsp;<b style="color:var(--ink)">무너진 결론</b>: 비교 대상이던 키옥시아 <b>"OPM 79.5%"</b>와 서로 다른 계정을 비교한 것이므로 <b>"반도체 사상 최고"·"키옥시아 상회"라는 서술이 성립하지 않는다</b>. 업계 최상위권이라는 결론 자체는 유지된다.<br>
+    &nbsp;&nbsp;<b style="color:var(--ink)">전파 범위</b>: 본 편 2곳 · 메모리 사이클 편 · Q2 어닝 종합 편 · 포트폴리오 v10.1 — <b>전수 정정 완료</b><br>
+    &nbsp;&nbsp;<b style="color:var(--ink)">⚠ 발견 지연</b>: 본 편은 <b>untracked 도구 디렉토리</b>에 있어 최초 정정 전파에서 <b>누락</b>됐고, 하루 뒤 grep 전수 검색으로 발견됐다. 정정 시 <b>추적되지 않는 파일까지 검색 범위에 포함</b>해야 한다.<br>
+    &nbsp;&nbsp;<b style="color:var(--ink)">재발 방지</b>: 마진 지표는 원문에서 분자·분모를 함께 읽고 직접 나눈다. GM/OPM 라벨을 복사하지 않는다.<br><br>
+    <span style="color:var(--ink-3)">정정 등급 — <b>C1</b>: 당시에도 틀렸고 투자판단에 영향 · <b>C2</b>: 당시엔 맞았으나 노후화 · <b>C3</b>: 자체 추론이 후속 데이터로 반증</span>
+  </p>
 </div>
 
 </div></section>
