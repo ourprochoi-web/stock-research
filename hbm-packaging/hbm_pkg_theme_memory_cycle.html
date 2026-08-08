@@ -223,7 +223,7 @@
   "headline": "메모리 사이클 판정 — CXMT 위협과 가격 피크",
   "description": "2018 vs 현재 사이클 비교, HBM ASP 동향, CXMT HBM3E 진입(2027-28), 수급 시나리오 분석",
   "datePublished": "2026-06-22",
-  "dateModified": "2026-08-06",
+  "dateModified": "2026-08-07",
   "author": {
     "@type": "Person",
     "name": "ourprochoi"
@@ -248,10 +248,13 @@
     <div class="brand"><span class="dot"></span>HBM·패키징 Theme C</div>
     <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
     <div class="nav-links">
+      <a href="#now" style="color:var(--accent)">▎현재 판단</a>
       <a href="#history">01 / 사이클 비교</a>
       <a href="#asp">02 / ASP 동향</a>
       <a href="#cxmt">03 / CXMT</a>
       <a href="#scenarios">04 / 시나리오</a>
+      <a href="#recent">최근 변경</a>
+      <a href="#corrections" style="color:#f87171">정정 2</a>
     </div>
   </div>
 </nav>
@@ -290,6 +293,44 @@
     <div class="scroll-cue"><span class="bar"></span>사이클 심층 분석</div>
   </div>
 </header>
+
+<!-- ═══════ 현재 판단 (최상단 고정) ═══════ -->
+<section class="blk" id="now" style="padding:40px 0 8px">
+  <div class="wrap">
+    <div class="thesis reveal" style="border-left-color:var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.08),var(--surface))">
+      <div class="tg" style="color:var(--accent);display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <span>▎현재 판단 · 2026.08.07</span>
+        <span style="font-size:.72em;font-weight:500;color:var(--ink-3)">작성 2026.06.27 · 최종 갱신 2026.08.07</span>
+        <a href="#corrections" style="font-size:.72em;color:#f87171;text-decoration:none">🔴 정정 2건</a>
+        <a href="#recent" style="font-size:.72em;color:#60a5fa;text-decoration:none">🔵 최근 변경 5건</a>
+      </div>
+      <p style="font-size:1.05rem;font-weight:700;margin-bottom:.6rem">"사이클은 봉인됐다 — 봉인의 성격은 <em>LTA 계약</em>이다."</p>
+      <span class="u">
+        <b>T1. 하방은 계약으로 고정됐고, 그 대가로 상방을 포기했다.</b> SCA·NBM·LTA 3중 구조가 과거 사이클과 결정적으로 다른 방어를 만들었다(Micron SCA 16건, SanDisk NBM 가중평균 4년·FY28 비트 66%, WDC LTA 2030~31년). 다만 LTA는 <b>하방(가동률·물량)을 고정하는 대신 상방(스팟 초과이익)을 포기</b>하는 계약이다. 진폭 축소·가시성 상승·업사이드 상실이 동시에 일어난다. <b>"LTA 확대 = 무조건 호재"로 읽지 말 것.</b><br><br>
+        <b>T2. 공급부족 정점은 2027년이다.</b> Goldman 수급 밸런스 기준 DRAM <b>-5.9%</b>·HBM <b>-6.0%</b>·NAND <b>-4.6%</b>가 2027년 정점이며 2028년은 -3.9%/-4.3%/-3.0%로 완화된다. <b>완화는 부족폭 축소이지 과잉 전환이 아니다.</b> Citi의 "업사이클 2회 초"와는 시간축이 4~5년 어긋나며, 본 편은 <b>Goldman을 기본값·Citi를 상방 시나리오</b>로 배치한다.<br><br>
+        <b>T3. "CXMT = 저가 공세"라는 하방 전제는 반전됐다.</b> CXMT는 Apple LPDDR5X 협상에서 <b>삼성·SK하이닉스보다 높은 가격을 고수</b>하다 결렬됐다(IPO 이후 수익성 중시 전환). 다만 2nd fab 600K/월 확장은 진행 중이라 <b>단기 불리시·중기 베어리시</b>의 모순이 남는다.<br><br>
+        <b>T4. NAND는 DRAM과 분리해서 봐야 한다.</b> 세 독립 출처가 같은 방향을 가리킨다 — Citi의 하우스 내 온도차(SK하이닉스엔 "2회 초", SanDisk엔 "가격 환경 단명 가능성"), SanDisk F1Q27 가이던스의 컨센 하회("가격 상승 폭 완만화"), Goldman 수급에서 NAND가 셋 중 가장 얕은 부족. <b>NAND 익스포저를 DRAM과 동일한 지속성으로 가정하지 말 것.</b><br><br>
+        <b>T5. Scale-Out 논리는 절반만 검증됐다.</b> Citi의 "+434%"는 <b>(GPU당 HBM -33%) × (시스템당 GPU 8배)</b>의 곱이다. TrendForce의 Rubin Ultra 다운스펙(288→192GB)으로 <b>앞의 항은 사실 확인</b>됐으나 <b>뒤의 항은 여전히 가정</b>이다. <b>확인된 것은 감소 요인, 미확인은 증가 요인</b>이며, 총수요 보합에도 GPU 대수 최소 1.5배가 필요하다.
+      </span>
+    </div>
+
+    <div class="thesis reveal" style="margin-top:16px;border-left-color:#3b82f6;background:rgba(59,130,246,.05)">
+      <div class="tg" style="color:#3b82f6">반증 조건 · 다음 검증</div>
+      <span class="u">
+        <b>이 판단이 틀렸음을 보여줄 것</b><br>
+        · T2 → 2027년 부족폭이 <b>-3% 미만</b>으로 축소되거나, 2028년이 공급 <b>과잉</b>으로 전환<br>
+        · T3 → CXMT가 Apple 외 고객(중국 OEM 등)에 <b>저가 공급</b>을 재개<br>
+        · T4 → NAND 부족폭이 DRAM을 <b>역전</b><br>
+        · T5 → NVIDIA 랙 출하 대수 가이던스가 <b>1.5배 미만</b><br><br>
+        <b>다음 검증 시점</b><br>
+        · <b>2026.08.27 NVIDIA Q2</b> — T5의 GPU 대수 가정, 시스템 구성 공식 발표<br>
+        · <b>SK하이닉스 3Q 실적 이전</b> — 주주환원 프로그램 발표 여부(Citi 전망)<br>
+        · <b>차기 SanDisk·키옥시아 실적</b> — NAND 3단계 중 ②단계(GM 정체) 진입 여부<br>
+        · <b>WDC F3Q27</b> — 40TB ePMR이 니어라인 EB 50% 도달했는데도 EB 성장 25% 미만이면 "제품 전환기 믹스" 설명 기각
+      </span>
+    </div>
+  </div>
+</section>
 
 <!-- 01 HISTORY -->
 <section class="blk" id="history">
@@ -566,7 +607,10 @@
     <div class="thesis reveal" style="margin-top:32px">
       <div class="tg">CXMT Verdict</div>
       <p>"DRAM에서는 이미 현실적 위협. HBM은 중기(2028+) 저가 시장 잠식 리스크."
-      <span class="u">CXMT는 DRAM 점유율 8~10%(Q1'26), IPO $85B으로 규모의 경제를 확보했다. 그러나 HBM3E 양산은 비트 밀도 격차(0.239 vs 0.32+ Gb/mm²)와 TSV 수율 문제로 2027~2028이 현실적이며, 이 시점에서 한국 업체는 HBM4/4E로 세대 이동 완료. MATCH Act 통과 시 DUV 장비·서비스 차단으로 2029+ 추가 지연 가능. 직접 경쟁보다 저가 HBM3E 시장의 분리가 더 현실적 결과다. 다만 DDR4 반값 공세 선례 + Apple 구매 검토(FT)를 감안하면 범용 DRAM에서의 가격 파괴는 이미 진행 중 — HBM 확산 시 지속 모니터링 필요.</span></p>
+      <span class="u">CXMT는 DRAM 점유율 8~10%(Q1'26), IPO $85B으로 규모의 경제를 확보했다. 그러나 HBM3E 양산은 비트 밀도 격차(0.239 vs 0.32+ Gb/mm²)와 TSV 수율 문제로 2027~2028이 현실적이며, 이 시점에서 한국 업체는 HBM4/4E로 세대 이동 완료. MATCH Act 통과 시 DUV 장비·서비스 차단으로 2029+ 추가 지연 가능. 직접 경쟁보다 저가 HBM3E 시장의 분리가 더 현실적 결과다.<br><br>
+      <b style="color:var(--accent)">[2026.08.07 갱신 — 위협의 <em>성격</em>이 바뀌었다]</b> 위 판정의 전제는 "CXMT = 저가 공세"였다. 그런데 <b>CXMT는 Apple LPDDR5X 납품 협상에서 삼성·SK하이닉스보다 높은 가격을 고수하다 결렬</b>됐다(2026.08.05). IPO 이후 수익성 중시 경영으로 전환하며 <b>가격 파괴자 역할을 스스로 포기</b>한 것이다. 이로써 중국발 가격 파괴를 핵심 전제로 삼던 Bear 시나리오의 근거가 구조적으로 약화됐고, 삼성·하이닉스의 Conv DRAM·LPDDR 계약 ASP 방어에는 긍정적이다.<br>
+      <b>단, 위협 자체가 사라진 것은 아니다.</b> ① <b>2nd fab 600K/월 확장</b>이 진행 중이고 HP·Asus·Acer가 CXMT를 채용하기 시작했다 ② <b>LPDDR6 12800Mbps 양산이 임박</b>해 DRAM 3사 → 4사 체제가 현실화된다 ③ 삼성·SK가 중국 <b>AMEC 장비를 테스트</b>하는 것은 미국 수출통제의 실효성에 균열이 생기고 있다는 신호다. 즉 <b>단기 불리시(가격) · 중기 베어리시(물량)</b>의 모순이 남아 있으며, 이 둘은 서로 다른 시점에 작용한다.<br>
+      <b>모니터링</b>: CXMT의 프리미엄 전략이 Apple 외 고객(중국 OEM·화웨이)에도 적용되는지 — 선별적 전략이라면 저가 공세는 아직 유효하다. → <b>상단 T3</b> 참조. 다만 DDR4 반값 공세 선례 + Apple 구매 검토(FT)를 감안하면 범용 DRAM에서의 가격 파괴는 이미 진행 중 — HBM 확산 시 지속 모니터링 필요.</span></p>
     </div>
 
     <!-- 2026.07.30 Goldman CXMT 평가 업데이트 -->
@@ -641,334 +685,46 @@
       <b>결론 수정</b>: "사이클은 봉인됐다"는 유지하되, <b>봉인의 성격이 LTA 계약</b>임이 확인됐다(WDC 2030~31 연장, SanDisk NBM 4년·FY28 비트 66%). LTA는 <b>하방을 고정하는 대신 상방(스팟 초과이익)을 포기</b>하는 계약이므로, 진폭 축소·가시성 상승·업사이드 상실이 동시에 일어난다. "LTA 확대 = 무조건 호재"로 읽지 말 것.</span></p>
     </div>
 
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.07.25 업데이트 — 샌프란시스코 AI 서밋</div>
-      <p style="font-size:1rem;font-weight:600">SK-엔비디아 파트너십으로 HBM 3년+ 장기 수요 구조 추가 강화
+    <!-- ═══════ 최근 변경 ═══════ -->
+    <div class="thesis reveal" id="recent" style="margin-top:32px;border-left-color:var(--glow)">
+      <div class="tg" style="color:var(--glow)">▎최근 변경 · 5건</div>
       <span class="u">
-        · SK-엔비디아 5,000억 달러(730조원) 파트너십 — HBM·AI팩토리·데이터센터 전방위 협력 발표. SCA/LTA 구조 위에 국가간 협력 레이어까지 추가되며 HBM 수요 봉인 구조 심화.<br>
-        · 삼성·SK하이닉스, 美 빅테크와 대규모 장기 메모리 공급계약 동시 발표 — 수급 부족 신호 지속. 조기 공급 과잉 전환(2027 H1 Bear 시나리오) 현실화 가능성 추가 축소.<br>
-        · 반도체 800조 + HBM 패키징 81조 메가프로젝트 — 한국 공급망 안정성 강화. 공급 차질 리스크 프리미엄 감소로 사이클 연장 지지.<br>
-        · 판정 업데이트: 기본 시나리오(2027 H2~2028 H1 완만한 전환) 유지, Bull 시나리오 확률 소폭 상향.
-      </span></p>
-    </div>
+        <b>2026.08.07 · Rubin Ultra 다운스펙 → Scale-Out 절반 검증</b> <span class="badge amber">TrendForce</span><br>
+        &nbsp;&nbsp;NVIDIA가 Rubin Ultra HBM 구성을 12-Hi HBM4e 원안에서 4개 안으로 확대 평가. 8-Hi HBM4 채택 시 <b>192GB로 현행 288GB 대비 -33%</b> — Citi가 제시한 "GPU당 -33%"와 소수점까지 일치한다. 사유는 <b>2027년 DRAM 부족에 따른 HBM 웨이퍼 캐파 제한</b>과 12-Hi HBM4e 수율 불확실성으로, <b>가격 저항이 아니라 공급 제약</b>이다. → <b>T5 신설</b><br><br>
 
-    <!-- 2026.07.27 메리츠 After AI 9 업데이트 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.07.27 업데이트 — 메리츠 After AI 9: 메모리 사이클 진보</div>
-      <p style="font-size:1rem;font-weight:600">'선주문-후생산' 구조 전환 — 메모리 사이클 순환성 구조적 감소
-      <span class="u">
-        · AI DC 프로젝트 착수 시 메모리 수요를 선확보하는 '선주문-후생산' 구조로 전환 — 기존 '선생산-후판매'의 공급부족→과잉생산 주기를 깨뜨리며, 메모리 특유의 주기성(Periodicity)을 연장하고 순환성(Cyclicity)을 감소시킨다. 로직/시스템 반도체의 실적 예측 가시성·판가 안정성이 메모리에도 적용 → 밸류에이션 리레이팅 근거.<br>
-        · LTA·파트너십(지분교환, JV)을 통한 수요 '창출' — 파트너사 AI DC가 중장기 대규모 고정 메모리 수요를 만들어내며, 생산-수요 예측치 격차를 축소. 장기 영업레버리지 극대화 구조.<br>
-        · 공급부족 심화 전망 — 2027E DRAM 충족률 올해 70% 후반 → 70%로 추가 쇼티지. NAND 올해 80% → 75%. 클린룸 부족으로 내년말까지 극심한 공급부족 심화.<br>
-        · SK하이닉스 2Q26E — OP 60.1조원(OPM 76%), 세전이익 101조원(코스피 사상최초 100조 돌파). 키옥시아 SPC1 매각이익 ~40조원 포함. ADR 전환 7/29 개시.<br>
-        · 삼성전자 2Q26P — OP 89.4조원. 브로드컴 2,000억달러 협약(HBM+파운드리). HBM4 공급가 주도. 연말 100조원 주주환원 가시화.<br>
-        · <b>삼성전자 2Q26P 사업부별 분해</b>: DS 충당전 100조+·메모리 92조, LSI/파운드리 적자 2조원 초반으로 축소, <b>MX -1.0조 영업적자 전환</b> → aggregate 89.4조원 뒤의 구조적 양극화 (스마트폰 부진 vs 반도체 호조).<br>
-        · SK하이닉스 <b>키옥시아 SPC2 전환사채</b>: 전환 시 14%대 지분 → 추가 업사이드 옵션 보유 중. (현재 SPC1 ~40조 매각이익이 주요 반영분, SPC2는 미전환 상태로 잠재 가치)<br>
-        · <b>메모리 OPM 장기 추이</b>: 삼성 메모리 2026E <b>51.7%</b> → 2027E <b>59.0%</b> / SK하이닉스 DRAM 2026E <b>83%</b> → 2027E <b>87%</b> — 양사 모두 OPM 확대 경로 확인. 마진 피크 통과보다 확장 구간 지속 가능성 상향.
-      </span></p>
-    </div>
+        <b>2026.08.07 · Goldman 수급 정점 2027 + Wells Fargo 랙 BOM</b> <span class="badge amber">Goldman · Wells Fargo</span><br>
+        &nbsp;&nbsp;Goldman이 세 시장 공통 정점을 2027년으로 제시(DRAM -5.9%·HBM -6.0%·NAND -4.6%). Wells Fargo NVL72 BOM은 Vera Rubin 랙당 총비용 +97%, <b>메모리 +128%</b>(비중 26.6→30.8%), 스토리지 +150%, 네트워킹 +37%. 단 <b>IT 전력 1GW당으로는 네트워킹만 -11% 감소</b>(랙 수 11,832→7,420, -37%)하고 <b>메모리는 +43% 순증</b> — 전력 제약 하 최대 수혜는 메모리다. → <b>T2 확정, 정정 ②</b><br><br>
 
-    <!-- 2026.07.30 메인 업데이트 블록 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--glow)">
-      <div class="tg" style="color:var(--glow)">2026.07.30 업데이트 — Goldman 메모리 전망 + KOSPI -40% 수급 폭락</div>
-      <p style="font-size:1rem;font-weight:600">실적 사상 최강 — 그러나 수급 메커니즘에 의한 기술적 과잉 낙폭
-      <span class="u">
-        · <b>Goldman HBM ASP +87% YoY</b> (컨센서스 52% 상회) — CXMT 단/중기 위협 제한적(EUV 격차 7~10년). 수급 분석 기준 HBM 가격 내년 2배 가능. Conv DRAM도 3Q/4Q 두자릿수 QoQ 성장 지속 전망.<br>
-        · <b>Q2 실적 — 사상 최고</b>: SK하이닉스 매출 79.32조·OPM 76% 사상 최고, 컨센서스 하향 185→180조. 삼성전자 매출 171.5조·OPM 52.2%·OP 89.5조 beat. 3Q SK하이닉스 영업이익 80조+ 전망.<br>
-        · <b>IB 밸류에이션 양극단</b>: UBS SK하이닉스 TP 300만원(Bull extreme) vs Susquehanna Neutral TP 250만→153.5만(Bear extreme) — 2배 격차가 시장의 핵심 논쟁을 대표. Susquehanna 2Q DRAM ASP miss는 믹스 이슈(고부가 하반기 이연)이지 근본 가격 문제 아님. 삼성·마이크론 HBM 참여 확대로 M/S 점진 하락 기본 가정. TP 산출: 2027 EPS 3배·BV 2배 — 매우 보수적 멀티플 적용.<br>
-        · <b>KOSPI 고점 대비 -40%, SK하이닉스 -52%, 삼성전자 -40%+</b> — 하락 원인은 펀더멘털이 아닌 수급 메커니즘: 2배 ETF 리밸런싱 + 디레버리징 연쇄. Goldman: 120만 마진콜 계좌, 50만+ 강제 청산 추산. JPM: 디레버리징 90% 완료 — 수급 충격 후반부 진입.<br>
-        · <b>판정</b>: 실적은 사상 최강이나 수급 쇼크에 의한 기술적 과잉 낙폭. 펀더멘털 훼손 없음. 디레버리징 완료 국면에서 실적과 주가 괴리 해소 가능성 주목.
-      </span></p>
-    </div>
+        <b>2026.08.07 · WDC·SanDisk 컨퍼런스콜 — LTA 체제의 실제 언어</b> <span class="badge amber">각사 IR</span><br>
+        &nbsp;&nbsp;WDC: LTA를 2029년에서 <b>2030·2031년까지</b> 협의 중이며 <b>"고객들이 먼저 장기계약을 요구"</b>. 결정적으로 <b>"논의의 초점은 수요 자체가 아니라 LTA 가격 체계와 상업적 계약 구조"</b>. SanDisk: <b>"3~4분기 전만 해도 분기 단위 계약 → 지금은 4년 이상 가시성"</b>, 단 수급 균형 시점은 <b>"훨씬 더 복잡한 문제"</b>라며 유보. → <b>T1 확정</b><br><br>
 
-    <!-- 2026.07.30 IB 밸류에이션 양극단 상세 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--accent)">
-      <div class="tg" style="color:var(--accent)">2026.07.30 IB 밸류에이션 논쟁 — UBS 300만 vs Susquehanna 153.5만</div>
-      <p style="font-size:1rem;font-weight:600">SK하이닉스 TP 2배 격차 — 시장 핵심 논쟁의 양극단
-      <span class="u">
-        · <b>UBS — TP 300만원 (Bull extreme)</b>: HBM 수요 구조·LTA 봉인·AI 투자 가속 반영. 현 주가 대비 대폭 상승 여력 제시.<br>
-        · <b>Susquehanna — Neutral, TP 250만→153.5만 하향 (Bear extreme)</b>: 2Q DRAM ASP miss를 믹스 이슈(고부가 제품 하반기 이연)로 해석하되, 삼성·마이크론 HBM 참여 확대로 SK하이닉스 M/S 점진 하락을 기본 가정. TP 산출 기반: 2027 EPS 3배·BV 2배로 매우 보수적 멀티플 적용 — EPS·BV 모두 역대 최고치 추정에도 멀티플을 낮게 잡아 TP를 압박하는 구조.<br>
-        · <b>2배 격차의 시사점</b>: 동일한 실적 추정을 놓고 멀티플을 어떻게 보느냐(사이클 주식 vs 구조적 성장주)에 따라 TP가 2배 갈린다. 이 논쟁이 현 구간 주가 변동성의 핵심 원천.
-      </span></p>
-    </div>
+        <b>2026.08.07 · 삼성·SK하이닉스 순현금 $2,630억 — 주주환원이 촉매축으로</b> <span class="badge amber">Reuters·LSEG</span><br>
+        &nbsp;&nbsp;양사 연말 합산 순현금이 NVIDIA($1,020억)의 <b>2.6배</b>이자 NVIDIA 제외 M7 6사 합계를 상회. 그러나 환원은 <b>FCF 50%</b> 언급에 그쳐 마이크론(FCF 100%)과 대비된다. ACT가 삼성에 임시주총 + <b>$320억 자사주</b>를 요구. Citi는 SK하이닉스가 <b>3Q 실적 발표 이전</b> 환원안을 공개할 것으로 전망. <b>주가의 병목은 실적이 아니라 자본배분</b>이다.<br><br>
 
-    <!-- 2026.07.30 KOSPI 폭락 수급 분석 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bear)">
-      <div class="tg" style="color:var(--bear)">2026.07.30 KOSPI 폭락 메커니즘 — 펀더멘털 아닌 수급 쇼크</div>
-      <p style="font-size:1rem;font-weight:600">KOSPI -40%, SK하이닉스 -52% — 디레버리징 90% 완료(JPM)
-      <span class="u">
-        · <b>낙폭 규모</b>: KOSPI 고점 대비 -40%, SK하이닉스 -52%, 삼성전자 -40%+ — 외형상 사이클 피크 우려처럼 보이나 실제 원인은 수급 메커니즘.<br>
-        · <b>하락 원인 분해</b>: ① 2배 레버리지 ETF 리밸런싱 — 지수 하락 시 기계적 매도 강제 발생. ② 마진콜 + 강제 청산 디레버리징 연쇄 — Goldman 추산 120만 마진콜 계좌, 50만+ 강제 청산. 두 메커니즘이 동시에 작동하며 펀더멘털과 무관한 기술적 과매도 발생.<br>
-        · <b>JPM: 디레버리징 90% 완료</b> — 수급 쇼크가 후반부에 진입했음을 시사. 추가 강제 매도 여력 제한적. 실적과 주가의 괴리 해소 국면 가능성 주목.<br>
-        · <b>CXMT 뉴스 촉매</b>: CXMT IPO + DUV 자체 개발 뉴스(7/28)가 서킷브레이커 트리거. 그러나 Goldman 등은 CXMT의 첨단 메모리 위협을 단/중기 제한적으로 평가 — 촉매와 펀더멘털 영향을 분리해야 함.
-      </span></p>
-    </div>
+        <b>2026.08.06 · IB 신규 커버리지 + 멀티플 디레이팅 국면</b> <span class="badge amber">JPM·Stifel·Citi·SK증권</span><br>
+        &nbsp;&nbsp;JPM SK하이닉스 OW·TP 275만(CAPEX 187조), Stifel Buy 신규·TP $240, SK증권 NAND ASP +50~60% QoQ. 그러나 같은 주 IB 6건 중 <b>5건이 "추정치 상향 + 목표주가 하향(또는 동결)"</b>이었고 BofA는 이를 <b>"AI 관련주 전반의 밸류에이션 디레이팅"</b>이라 명시했다. <b>업사이드는 실적이 아니라 멀티플 회복에서 나온다.</b><br><br>
 
-    <!-- 2026.07.31 NAND 수급 & 메모리 ASP 상승 교차 검증 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.07.31 업데이트 — NAND 수급 &amp; 메모리 ASP 상승 교차 검증</div>
-      <p style="font-size:1rem;font-weight:600">키옥시아 실적·LTA + 애플 F3Q26 — 수요 측에서 메모리 ASP 상승 thesis 최종 교차 검증
-      <span class="u">
-        <b>1. 키옥시아 실적 &amp; LTA (JPM 투자자 피드백)</b><br>
-        · <b>F1Q 영업이익 miss, F2Q로 물량 이연</b> — F1Q 어닝 쇼크는 분기 간 이연 이슈이며, F2Q 영업이익 증가는 <b>가격 상승</b>이 주도 (비트 그로스 제한적).<br>
-        · <b>NAND LTA 커버리지 50% 목표</b> — CY27-28 계약 논의 진행 중. 장기 공급계약 구조가 NAND 가격 하방을 봉인하는 방향으로 진화.<br>
-        · <b>AI 추론 수요: 오픈소스 + 프론티어 모델 양측의 토큰 소비 증가</b> — 추론·에이전틱 AI를 <b>"초기(incipient)"</b> 단계로 규정 → 수요 상방 여지 구조적으로 잔존.<br>
-        · <b>자사주 매입 8,000억엔 깜짝 발표</b>, 50% 주주환원 기조 — 키옥시아 경영진의 수익 가시성 자신감 신호.<br>
-        · <b>YMTC 그린필드 캐파 램프업 주시</b> — CXMT와 유사한 중국 공급 리스크. CY27에도 NAND 공급 타이트함 지속 가이던스 (삼성전자와 동일 메시지).<br><br>
-        <b>2. 애플 F3Q26 — 메모리 비용 상승 = ASP 상승 직접 확인</b><br>
-        · <b>F4Q 총마진 가이던스 47~48%</b> (160bp 하락) — 하락 원인의 대부분이 <b>메모리 비용 상승</b>으로 귀결.<br>
-        · Mac·iPad 평균 <b>20% 가격 인상</b>에도 마진 압박 지속 — 메모리 ASP 상승폭이 제품가 인상을 상쇄할 만큼 큼을 시사.<br>
-        · <b>시사점</b>: 세계 최대 메모리 구매자(애플)가 메모리 ASP 상승을 공식 확인 → SK하이닉스·삼성전자 NAND/DRAM 가격 상승 thesis를 최종 수요 측에서 교차 검증.
-      </span></p>
-    </div>
-
-    <!-- 2026.08.02 업데이트 블록 -->
-
-    <!-- CXMT LPDDR6 돌파 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bear)">
-      <div class="tg" style="color:var(--bear)">2026.08.02 업데이트 — CXMT LPDDR6 양산 임박 (업계 소스 8/1)</div>
-      <p style="font-size:1rem;font-weight:600">CXMT LPDDR6 12800Mbps 돌파 — DRAM 경쟁 3사→4사 체제 현실화
-      <span class="u">
-        · <b>LPDDR6 12800Mbps 양산 임박</b> — 기존 LPDDR5X까지만 도달했던 CXMT가 최신세대 LPDDR6 진입. 모바일 DRAM 최첨단 스펙 공략 본격화.<br>
-        · <b>DRAM 경쟁 구도 변화</b>: 삼성·SK하이닉스·마이크론 3사 과점 체제 → 4사 경쟁 체제 현실화 가속. 범용 DRAM 가격 하방 압력 요인으로 직결.<br>
-        · <b>메모리 가격 함의</b>: HBM·DDR5 첨단 영역은 여전히 기술 격차로 보호되나, 모바일 DRAM(LPDDR) 시장에서 ASP 경쟁 심화 불가피. 중기 Conv DRAM 가격 하방 압박 증가.<br>
-        · <b>주시 포인트</b>: 양산 수율·고객 인증(스마트폰 OEM) 진행 속도. 삼성·SK하이닉스의 LPDDR6 가격 방어 전략 변화 모니터링.
-      </span></p>
-    </div>
-
-    <!-- 키옥시아 F1Q OPM 업데이트 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.08.02 업데이트 — 키옥시아 F1Q OPM 75%→79.5% (JPM 8/1)</div>
-      <p style="font-size:1rem;font-weight:600">키옥시아 F1Q 실적 서프라이즈 — LTA 확대가 ASP 안정화, 그러나 마진 피크 신호 동반
-      <span class="u">
-        · <b>Revenue ¥761.8B (+46% YoY)</b>, OPM 79.5% (기존 추정 75% 상회) — NAND 업황 회복 강도 예상 초과.<br>
-        · <b>LTA(Long-Term Agreement) 비중 확대로 ASP 안정</b> — 스팟 노출 축소 → 단기 가격 변동성 완충. 218L 기술 볼륨 램프, NAND 비트 +13% QoQ 실현.<br>
-        · <b>그러나 LTA = 마진 축소 = 새 사이클 진입 신호 (윤지호 테제)</b>: LTA 확대는 ASP 하방을 잠그는 동시에 스팟 상방도 포기하는 구조. 공급 과잉 우려가 싹틀 때 생산자가 택하는 방어적 계약 방식 — 사이클 후반부 패턴과 일치.<br>
-        · <b>판정</b>: NAND 실적은 상단 서프라이즈. 단, LTA 비중 추가 확대 여부가 2027 사이클 전환 조기 경보 지표.
-      </span></p>
-    </div>
-
-    <!-- UBS 메모리 지출 전망 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--glow)">
-      <div class="tg" style="color:var(--glow)">2026.08.02 업데이트 — UBS 2027E 글로벌 메모리 지출 $761B (UBS 8/1)</div>
-      <p style="font-size:1rem;font-weight:600">2027E 메모리 반도체 지출 $761B — HBM이 DRAM 매출 40%+ 차지
-      <span class="u">
-        · <b>2027E 글로벌 메모리 반도체 지출 $761B</b> — AI 인프라 투자 확대에 따른 메모리 수요 급증을 반영한 UBS 전망치.<br>
-        · <b>HBM이 DRAM 매출 40%+ 차지</b> — HBM이 DRAM 산업의 수익 구조를 근본적으로 재편. Conv DRAM 비중 상대적 축소로 HBM 프리미엄 구조 지속.<br>
-        · <b>가격 vs 물량 분리 분석 필요</b>: $761B 성장의 드라이버가 ASP 상승(가격)인지 비트 그로스(물량)인지에 따라 수익성 프로파일이 달라짐. HBM ASP 하락+물량 폭증 조합 시 매출 성장 vs 마진 압축 괴리 구간 진입 가능.<br>
-        · <b>함의</b>: 시장 총량 성장은 확실하나 점유율·ASP·마진 경쟁은 심화. SK하이닉스의 HBM 점유율 방어가 핵심 변수.
-      </span></p>
-    </div>
-
-    <!-- 마이크론 타이완 파업 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--accent)">
-      <div class="tg" style="color:var(--accent)">2026.08.02 업데이트 — 마이크론 타이완 파업 가능성 (Bloomberg 8/1)</div>
-      <p style="font-size:1rem;font-weight:600">마이크론 타이완 공장 노조 파업 — 단기 DRAM/NAND 수급 타이트 요인
-      <span class="u">
-        · <b>마이크론 타이완 공장 노조 파업 가능성</b> — Bloomberg 8/1 보도. 실제 파업 시 마이크론 DRAM/NAND 생산 차질 직결.<br>
-        · <b>단기 수급 타이트 요인</b>: 마이크론은 글로벌 DRAM 3위(점유율 ~22%), 타이완 공장 가동 중단 시 DDR5·LPDDR5X 공급 감소 → 스팟 가격 상방 지지.<br>
-        · <b>메모리 가격 상방 지지</b>: CXMT LPDDR6 가격 하방 압력과 반대 방향의 단기 수급 이벤트. 두 요인의 상쇄 효과로 DRAM 가격 횡보 시나리오 강화.<br>
-        · <b>주시 포인트</b>: 파업 실현 여부·기간·영향 공장 규모. 마이크론 공급 차질이 SK하이닉스·삼성전자 수주 이전으로 연결될 경우 단기 수혜 요인.
-      </span></p>
-    </div>
-
-    <!-- LTA 마진 압축 테제 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bear)">
-      <div class="tg" style="color:var(--bear)">2026.08.02 업데이트 — LTA 마진 압축 테제 (윤지호 전략 8/1)</div>
-      <p style="font-size:1rem;font-weight:600">"LTA = 마진 축소 = 새 사이클" — 2018 사이클 데자뷔
-      <span class="u">
-        · <b>핵심 테제</b>: "LTA = 마진 축소 = 새 사이클" — LTA(장기공급계약) 비중 확대가 단기적으로 ASP를 안정시키는 것처럼 보이나, 실질적으로는 공급자가 가격 하락을 선제 인정하는 구조적 전환.<br>
-        · <b>SK하이닉스 OPM 76% = 피크 수준</b>: Q2'26 사상 최고 영업이익률(76%). LTA 계약 갱신 시기가 도래하면 스팟 가격보다 낮은 계약 단가로 마진 하락 불가피. 피크 마진 통과 신호로 해석 가능.<br>
-        · <b>2018 사이클 유사성</b>: 2017~2018 고마진 구간 → LTA 계약 확대(고객 안정 확보 목적) → 2019 마진 급락(-47% ASP). 현 구간이 2018년 LTA 확대 국면과 구조적으로 유사.<br>
-        · <b>판정</b>: Bull thesis(수요 구조적 성장)와 Bear thesis(LTA 마진 압축)가 공존하는 구간. 실적 성장 지속 vs 마진 피크 통과 — 사이클 후반부 특유의 불확실성 구간 진입.
-      </span></p>
-    </div>
-
-    <!-- 2026.08.05 CXMT 가격 고수 — 테제 반전 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:#a855f7;background:linear-gradient(120deg,rgba(168,85,247,.06),var(--surface))">
-      <div class="tg" style="color:#a855f7">&#9651; 테제 반전 — 2026.08.05 업데이트 · CXMT 가격 전략 180도 전환</div>
-      <p style="font-size:1rem;font-weight:600">CXMT, Apple LPDDR5X 납품 협상에서 삼성·하이닉스보다 <em>높은</em> 가격 고수 → 협상 결렬
-      <span class="u">
-        · <b>기존 시장 인식 (수정 전)</b>: "CXMT = 저가 공세 → 범용 DRAM 가격 하방 압력 요인." DDR4 반값 공세 선례에서 비롯된 핵심 Bear 테제.<br>
-        · <b>새로운 현실 (8/5 기준)</b>: CXMT는 Apple LPDDR5X 납품 가격 협상에서 삼성·SK하이닉스보다 <b>높은 가격을 고수</b>하다 협상 결렬. 저가 전략이 아닌 프리미엄 가격 전략을 채택.<br>
-        · <b>테제 반전 근거</b>: CXMT IPO($85B) 이후 수익성 중시 경영으로 전환. 주주 가치·OPM 방어를 위해 판가를 낮추지 않겠다는 명시적 신호. "가격 파괴자" 역할을 스스로 포기.<br>
-        · <b>공급 과잉 테제 약화</b>: 가격 전쟁이 아닌 기술·품질 경쟁 구도로 전환. 중국발 가격 파괴가 핵심 전제였던 Bear 시나리오의 근거가 구조적으로 약화됨.<br>
-        · <b>삼성·SK하이닉스 ASP 함의</b>: 경쟁자가 스스로 가격 상단을 지지하는 구도 → 삼성·하이닉스 Conv DRAM·LPDDR 계약 ASP 방어에 긍정적. 단기 가격 하방 압력 완화.<br>
-        · <b>모니터링 포인트</b>: CXMT의 프리미엄 전략이 Apple 외 고객(화웨이·중국 OEM)에도 적용되는지, 또는 전략적 선별인지 확인 필요. IPO 락업 해제 이후 수익성 압박 변화 주시.
-      </span></p>
-    </div>
-
-    <!-- 2026.08.04 SanDisk FQ4 2026 — NAND 수퍼사이클 확인 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.08.04 업데이트 — SanDisk FQ4 2026 실적 (8/4)</div>
-      <p style="font-size:1rem;font-weight:600">매출 $8.965B · <b>매출총이익률(GM) 84.6%</b> · 영업이익률 78~79% 분기 사상 최대 — 메모리 전체 수퍼사이클로 테제 확장
-      <span class="u">
-        · <b>매출 $8.965B (+372% YoY, +51% QoQ)</b> — 분기 기준 역대 최대 매출. Datacenter 부문 +437%가 성장을 견인. 고부가 고객 믹스 전환 + 판가 상승 이중 효과.<br>
-        · <b>⚠ 지표 정정 (2026.08.07)</b>: 본 리포트는 최초 게재 시 <b>84.6%를 "영업이익률"로 표기했으나, 이는 매출총이익률(Gross Margin)</b>이다. 실제 영업이익은 GAAP 기준 $7,037M → <b>OPM 78.5%</b>(non-GAAP 79.2%). 비교 대상이던 키옥시아 F1Q "OPM 79.5%"와는 <b>서로 다른 계정을 비교한 오류</b>였다. 정정 후에도 GM 84.6%·OPM 78.5%는 반도체 업계 최상위권이라는 결론 자체는 유지되나, "키옥시아를 상회"라는 서술은 성립하지 않는다.<br>
-        · <b>드라이버</b>: Enterprise SSD 수요 폭발 + LTA(장기공급계약) 프리미엄 + 엔화 약세 효과(달러 환산 매출 증폭) 삼중 호재.<br>
-        · <b>테제 확장</b>: 기존 "DRAM만 수퍼사이클" 인식 → <b>"메모리 전체(DRAM + NAND) 수퍼사이클"</b>로 업그레이드. NAND도 DC·AI 추론 KV캐시 수요가 구조적 수급 타이트를 만들고 있음을 실적으로 확인.<br>
-        · <b>함의</b>: SanDisk GM 84.6%/OPM 78.5% → SK하이닉스·삼성전자의 NAND 부문 이익 개선 경로 재확인. 키옥시아 SPC2 전환사채 행사가치(SK하이닉스) 잠재 업사이드 상향.
-      </span></p>
-    </div>
-
-    <!-- 2026.08.05 MLCC BB ratio 역대 최고 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--glow)">
-      <div class="tg" style="color:var(--glow)">2026.08.05 업데이트 — MLCC BB ratio 역대 최고 (8/5)</div>
-      <p style="font-size:1rem;font-weight:600">Taiyo Yuden BB ratio 1.72 역대 최고치 — 전방산업 수요 폭발 선행 시그널
-      <span class="u">
-        · <b>Taiyo Yuden MLCC BB(Book-to-Bill) ratio 1.72</b> — 역대 최고치 경신. 무라타 BB ratio도 1.47로 이미 높은 수준을 유지 중.<br>
-        · <b>수요 구조</b>: AI서버용 고용량 MLCC 수요 급증 + 전장(자동차)용 MLCC 동시 호황. 두 수요처의 동반 강세가 기록적 BB ratio를 만들어냄.<br>
-        · <b>선행지표 의미</b>: MLCC BB ratio는 메모리·반도체 수요의 2~3개월 선행지표. BB 1.72는 향후 2~3분기 강한 출하 성장을 시사 — 메모리 수요 지속성 교차 검증.<br>
-        · <b>삼성전기 수혜</b>: 삼성전기는 국내 최대 MLCC 생산업체. AI서버·전장 동시 호황 국면에서 직접 수혜. 고용량 MLCC 믹스 개선으로 ASP·OPM 동반 상승 가능.<br>
-        · <b>모니터링 포인트</b>: BB ratio 피크 시점이 반도체 수요 피크와 얼마나 차이나는지(리드타임 분석). 무라타·TDK 등 경쟁사 BB ratio 추이와 비교해 섹터 전체 방향성 점검.
-      </span></p>
-    </div>
-
-    <!-- 2026.08.06 IB 신규 커버리지 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.06),var(--surface))">
-      <div class="tg" style="color:var(--accent)">&#9650; 2026.08.06 IB 신규 커버리지 — JPM·Stifel·Citi·SK증권·Gavin Baker</div>
-      <p style="font-size:1rem;font-weight:600">SK하이닉스 OW·Buy 신규 / NAND ASP +50~60% QoQ 전망 / MLCC 가격 인상 시사 — Bull 테제 재확인
-      <span class="u">
-        · <b>JPM SK하이닉스: OW 유지, TP 275만원</b> — CAPEX 187조원(↑from 175조), HBM4 8-Hi 양산 확인. "HBM 독주 지속." <span class="badge amber">JPMorgan</span><br>
-        · <b>Stifel SK하이닉스: Buy 신규, TP $240</b> — "메모리 슈퍼사이클의 최대 수혜자." HBM 점유율 50%+ 유지 전망. <span class="badge amber">Stifel</span><br>
-        · <b>Gavin Baker: LTA 게임 이론</b> — "NVIDIA는 credit wrapper. 메모리 LTA는 게임 이론적으로 마진 보호 최적 전략. OPM 고점 유지 가능." <span class="badge amber">Gavin Baker (Atreides Management)</span><br>
-        · <b>Citi 무라타: MLCC 가격 인상 검토</b> — BB ratio 기록적 수준. AI 서버용 MLCC 수요 폭증으로 가격 인상 시사. <span class="badge amber">Citi</span><br>
-        · <b>SK증권: NAND ASP +50~60% QoQ</b> — 공급 타이트 + AI 서버 수요. CY26 하반기 가격 급등 전망. <span class="badge amber">SK증권</span>
-      </span></p>
-    </div>
-
-    <!-- 편집자 주: IB 데이터 크리티컬 리뷰 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:#3b82f6;background:linear-gradient(120deg,rgba(59,130,246,.06),var(--surface))">
-      <div class="tg" style="color:#3b82f6">&#9432; 편집자 주: IB 데이터 크리티컬 리뷰</div>
-      <p style="font-size:1rem;font-weight:600">위 IB 커버리지 해석 시 유의할 반론 및 바이어스 점검</p>
-      <span class="u">
-        · <b>JPM TP 300만→275만 하향 주의</b> — CAPEX 175조→187조 상향과 동시에 TP를 낮춘 것은 투자 확대가 ROE를 압축한다는 판단. "OW 유지"만 보면 긍정적이지만, 실제로는 밸류에이션 부담을 인정한 시그널.<br>
-        · <b>HBM4 Scale-Out = SK하이닉스 기술 리드 축소 가능성</b> — Citi의 12-Hi→8-Hi 전환 전망은 SK의 적층 수율 우위를 약화시키는 방향. "SK에 유리"라는 프레이밍은 재검토 필요.<br>
-        · <b>Gavin Baker 포지션 바이어스</b> — "NVIDIA = credit wrapper" 논리는 자극적이지만, Baker는 short position 보유 가능성. LTA 게임 이론은 타당하나, NVIDIA 밸류에이션 프레임 전환 주장은 포지션 바이어스 감안할 것.<br>
-        · <b>NAND ASP +50-60%: 지속 가능성</b> — SK증권 전망은 공급 타이트 기반이나, CXMT 2배 확장(600K/월) 완료 시 DRAM→NAND 공급 과잉 전이 리스크 존재.
+        <span style="color:var(--ink-3)">그 이전 변경 이력은 하단 <b>Disclosure 타임라인</b>(2026.07.21~) 참조. 전체 아카이브 변경 이력은 <a href="../update_log.html" style="color:var(--accent)">업데이트 로그</a>.</span>
       </span>
     </div>
 
-    <!-- 2026.08.07 LTA 체제 정착 — WDC·SanDisk·SK하이닉스 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.06),var(--surface))">
-      <div class="tg" style="color:var(--accent)">&#9650; 2026.08.07 업데이트 — LTA/NBM 체제 정착: 사이클이 "계약"으로 고정되기 시작했다</div>
-      <p style="font-size:1rem;font-weight:600">WDC 2030~2031 LTA · SanDisk NBM 8건(가중평균 4년, FY28 비트의 66%) · Citi SK하이닉스 TP 310만원 — 메모리 사이클의 <em>변동성</em>이 계약으로 흡수되는 국면
+    <!-- ═══════ 정정 이력 ═══════ -->
+    <div class="thesis reveal" id="corrections" style="margin-top:24px;border-left-color:#f87171;background:linear-gradient(120deg,rgba(248,113,113,.06),var(--surface))">
+      <div class="tg" style="color:#f87171">▎정정 이력 · 2건</div>
       <span class="u">
-        · <b>Western Digital F4Q26</b> — 매출 $3.747B(+44% YoY, 컨센 $3.684B 상회), GM <b>54.4%</b>(가이던스 51~52% 대폭 상회, +1,300bp YoY), OPM 44.2%, EPS $3.56. F1Q27 가이던스 매출 $41억±1억·GM 55~56%·EPS $4.00±0.15 — 전 항목 beat&raise. 혼합 TB당 가격 <b>+10%대 후반 YoY</b>(시게이트 +11% 상회). <span class="badge amber">JPMorgan · Citi</span><br>
-        · <b>단, 엑사바이트 출하는 목표 미달</b> — F4Q26·F1Q27 모두 장기 목표 +25%를 하회(총 출하 231EB, Visible Alpha 컨센 242EB 하회). 회사·IB 공통 설명은 <b>수요·수율이 아닌 제품 전환기 믹스</b> — 40TB ePMR이 F1Q27부터 램프해 F3Q27에 니어라인 EB의 50% 도달, 44TB HAMR CY27 상반기, 50TB ePMR CY27 하반기.<br>
-        · <b>LTA 기간이 2030~2031년까지 연장</b> — WDC 경영진은 유닛 증설 없이 고용량 전환만으로 EB CAGR 25%+를 충당한다는 방침 재확인. 하이퍼스케일 데이터의 <b>약 80%가 여전히 HDD</b>에 저장. JPM TP $715 유지(OW), Citi TP $800→<b>$740</b> 하향(Buy 유지, FY28 EPS 23배).<br>
-        · <b>SanDisk NBM 8건 체결</b> — 데이터센터·OEM 고객 대상, <b>가중평균 계약기간 4년</b>. 해당 물량이 FY27 비트의 50%, FY28 비트의 <b>약 66%</b>를 선점. 계약 마진 최소 80%+, FCF 마진 50%+ 유지 전망, <b>$140억 규모 추가 자사주 매입 승인</b>. Citi TP $2,500→<b>$2,100</b> 하향(Buy 유지, CY27 EPS 9배).<br>
-        · <b>Citi SK하이닉스 TP 310만원 유지 · 26E/27E OP +4%/+3% 상향</b> — "현 AI 메모리 업사이클은 아직 2회 초." 2001~2007 NAND 장기 업사이클과 유사하되, 당시는 NAND 단독인 반면 <b>지금은 DRAM·NAND 동시 견인</b>이라 상회 가능. 고객사 3~5년 LTA 추진이 근거. <span class="badge amber">Citi</span><br>
-        · <b>HBM 부족 → Scale-Up에서 Scale-Out으로</b> — GPU당 HBM 탑재량은 낮추되 시스템당 GPU를 72개→<b>576개(8배)</b>로 확대. 결과적으로 AI 시스템당 총 HBM 용량은 20.7TB→<b>110.6TB(+434%)</b>. GPU당 HBM은 0.288TB→0.192TB로 <b>-33%</b>이지만, 총량은 5.3배. <span class="badge amber">Citi</span>
-      </span></p>
-    </div>
+        <b>🔴 C1급 (사실 오류) · 2026.08.07</b> — <b>SanDisk FQ4 "OPM 84.6%" → GM 84.6% / OPM 78.5%</b><br>
+        &nbsp;&nbsp;<b>무엇이 틀렸나</b>: 2026.08.04자 기재에서 <b>매출총이익률을 영업이익률로 오기</b>했다. GAAP 영업이익 $7,037M ÷ 매출 $8,965M = <b>78.5%</b>(non-GAAP 79.2%)다.<br>
+        &nbsp;&nbsp;<b>무너진 결론</b>: 비교 대상이던 키옥시아 F1Q "OPM 79.5%"와 <b>서로 다른 계정을 비교</b>한 것이므로 <b>"키옥시아를 상회"라는 서술이 성립하지 않는다</b>. "반도체 업계 최상위권 마진"이라는 결론 자체는 유지된다.<br>
+        &nbsp;&nbsp;<b>전파 범위</b>: 본 편 · Q2 어닝 종합 편 · node-screener HBM 스코어보드 · 포트폴리오 v10.1 — <b>4곳 전수 정정 완료</b><br>
+        &nbsp;&nbsp;<b>재발 방지</b>: 마진 지표는 원문에서 분자·분모를 함께 읽고 직접 나눈다. GM/OPM 라벨을 복사하지 않는다.<br><br>
 
-    <!-- 2026.08.07 주주환원 — $2,630억 순현금 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.08.07 업데이트 — 삼성·SK하이닉스 순현금 $2,630억: 주주환원이 새로운 촉매축으로</div>
-      <p style="font-size:1rem;font-weight:600">연말 합산 순현금 $263B = NVIDIA($102B)의 2.6배, M7 나머지 6사 합계 초과 — 사상 최대 실적에도 주가는 고점 대비 -37~48%
-      <span class="u">
-        · <b>순현금 규모</b> — LSEG 데이터 기준 삼성전자+SK하이닉스 연말 순현금 <b>$2,630억</b>. NVIDIA 예상 순현금 $1,020억의 2.6배이며, NVIDIA를 제외한 M7 나머지 6개사 현금 합계도 상회. <span class="badge amber">Reuters (2026.08.05)</span><br>
-        · <b>환원 정책 격차</b> — 양사 모두 <b>FCF의 50%</b> 환원 언급에 머무름. 반면 마이크론은 지난 6월 <b>FCF의 100%</b> 환원을 발표. 애플·TSMC 대비로도 환원 수준이 낮아 '코리아 디스카운트' 불만과 결합.<br>
-        · <b>회사 측 발언</b> — SK하이닉스: "기록적 현금 창출력을 바탕으로 투자와 재무건전성을 유지하면서도 <b>주주환원을 의미 있게 확대할 수 있다</b>고 본다." 삼성전자: 올해 및 이후 환원 정책을 논의 중이며 <b>"곧(very soon)"</b> 세부 내용을 공유하겠다.<br>
-        · <b>주주 행동주의</b> — 개인투자자 플랫폼 ACT가 삼성전자에 <b>임시주주총회 소집 + $320억 규모 자사주 매입</b>을 요구하는 캠페인 개시. 일부 투자자는 임직원 성과급 제한 등 경영 효율성 요구까지 확대.<br>
-        · <b>Citi 전망</b> — SK하이닉스가 <b>3분기 실적 발표 이전에</b> 주주환원 프로그램을 공개할 것으로 예상. LTA 선급금으로 중장기 실적 가시성이 확보된 만큼 건설적 전망과 함께 제시될 것.<br>
-        · <b>시그널 해석</b> — 투자자·애널리스트 공통 지적: "환원 계획을 제시하지 못한다는 것은 경영진 스스로 <b>AI 호황의 지속성을 확신하지 못한다는 신호</b>로 읽힌다." 즉 환원 발표 자체가 사이클 지속성에 대한 경영진의 신뢰도 프록시가 된다.
-      </span></p>
-    </div>
+        <b>🔵 C3급 (자체 추론 철회) · 2026.08.07</b> — <b>"Scale-Out 최대 수혜는 네트워킹"</b><br>
+        &nbsp;&nbsp;<b>무엇을 주장했나</b>: 2026.08.07 1차 편집자 주에서 <b>"Scale-Out 전환의 최대 수혜는 HBM이 아니라 네트워킹(1.6T 광트랜시버·스위치)일 수 있다"</b>고 적었다. 자체 추론이었다.<br>
+        &nbsp;&nbsp;<b>무엇이 반증했나</b>: Wells Fargo NVL72 BOM. 랙당 네트워킹은 +37%지만 <b>IT 전력 1GW당으로는 -11% 감소</b>한다. Vera Rubin의 전력 효율 개선으로 1GW를 채우는 랙 수가 <b>11,832 → 7,420(-37%)</b>로 줄어 랙당 증가분이 상쇄되기 때문이다. 반면 메모리는 랙당 +128%가 랙 수 감소를 압도해 <b>1GW당 +43% 순증</b>.<br>
+        &nbsp;&nbsp;<b>수정된 판단</b>: 전력 제약 하에서 최대 수혜는 <b>네트워킹이 아니라 메모리</b>다. SK하이닉스에 우호적인 방향으로 정정.<br>
+        &nbsp;&nbsp;<b>전파 범위</b>: 본 편 · SK하이닉스 편 · 포트폴리오 v10.1 — <b>3곳 전수 정정 완료</b><br><br>
 
-    <!-- 편집자 주 2026.08.07 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:#3b82f6;background:linear-gradient(120deg,rgba(59,130,246,.06),var(--surface))">
-      <div class="tg" style="color:#3b82f6">&#9432; 편집자 주 (2026.08.07): "추정치는 올리고 목표주가는 내린다" — 멀티플 디레이팅 국면</div>
-      <p style="font-size:1rem;font-weight:600">8/4~8/6 발간된 IB 리포트 5건을 교차 대조하면, 개별 종목 논리가 아니라 <em>섹터 전체의 밸류에이션 배수 축소</em>라는 공통 패턴이 나온다.</p>
-      <span class="u">
-        · <b>패턴 확인</b> — Citi SanDisk: FY28 EPS <b>+19% 상향</b>했으나 TP $2,500→$2,100(<b>-16%</b>). Citi WDC: 멀티플 24배→23배, TP $800→$740(<b>-7.5%</b>). BofA 팔란티어: 2035E EBITDA $47.5B→$51.8B(<b>+9%</b>) 상향에도 멀티플 14배→13배로 상쇄해 TP $255 <b>유지</b>. 파이퍼 샌들러 SpaceX: 2027 매출 추정 +37% 상향에도 멀티플 20배→12배(<b>-40%</b>), TP $156→$140. JPM 데이터독: TP $320→$305.<br>
-        · <b>함의</b> — 5건 중 4건이 <b>"추정치 상향 + 목표주가 하향"</b>이라는 동일 구조다. 이는 개별 기업 펀더멘털 훼손이 아니라, <b>IB들이 AI 관련주 전반에 적용하는 할인율을 높이고 있다</b>는 뜻이다. BofA는 팔란티어 노트에서 이를 "AI 관련주 전반의 밸류에이션 디레이팅"이라고 명시했다.<br>
-        · <b>본 리서치 테제와의 정합성</b> — 이 패턴은 앞서 기록한 <b>"좋은 뉴스가 안 통하는 시장"</b>(BofA 7대 우려)과 <b>비대칭 비율 축소</b> 관찰을 독립적으로 뒷받침한다. 실적이 좋아져도 목표주가가 안 오르면, 업사이드는 <b>실적이 아니라 멀티플이 회복될 때</b> 나온다. 따라서 향후 촉매의 우선순위는 "다음 분기 실적 beat"보다 <b>"디레이팅을 멈출 사건"</b>(주주환원 발표, 금리 경로 확인, ISM Prices 하락)에 있다.<br>
-        · <b>⚠ SanDisk — NAND 피크아웃 조기 경보</b> — 본 리포트의 모니터링 트리거는 "SanDisk/키옥시아 OPM 5pp+ 하락"이었으나, 그보다 <b>먼저 온 신호는 가이던스 매출</b>이다. F1Q27 매출 가이던스 중간값 $105.5억은 컨센서스 $107.4억을 <b>하회</b>했고, 사유는 명시적으로 "<b>가격 상승 폭이 다소 완만해졌다</b>"이다. GM 가이던스(83~85%)는 여전히 컨센(79.3%)을 크게 상회하므로 마진 훼손은 아직 없다 — 즉 <b>ASP 상승률의 2차 미분이 먼저 꺾이는</b> 전형적 사이클 후반 패턴의 초기 형태다. 트리거를 "OPM 하락" 단독에서 <b>"ASP 상승률 둔화 → GM 정체 → OPM 하락"의 3단계</b>로 세분화할 것을 권고한다.<br>
-        · <b>⚠ Citi 스스로가 제시한 반론</b> — Citi는 SanDisk Buy를 유지하면서도 리스크 항목에 "<b>현재 가동률이 낮은 산업 캐파가 짧은 시간 내 공급과잉으로 반전될 수 있어, 가격 인상의 이상적 환경이 단명할 가능성</b>"을 명기했다. 같은 하우스가 SK하이닉스에는 "업사이클 2회 초"라고 쓰는 것과 병치하면, <b>DRAM은 길게 NAND는 짧게</b> 보는 내부 온도차가 읽힌다. NAND 익스포저(키옥시아 SPC2 전환사채 등)를 DRAM과 동일한 지속성으로 가정하지 말 것.<br>
-        · <b>⚠ LTA의 양면성 — 이미 기록한 경고와 충돌 점검</b> — 본 리포트는 7/31 시점에 윤지호 전략의 "<b>LTA = 마진 축소 = 새 사이클 시작</b>" 경고를 기록했다. 그런데 이번 WDC(2030~31년)·SanDisk(가중평균 4년, FY28 비트 66%) 데이터는 LTA 커버리지가 <b>더 확대</b>됐음을 보여준다. 두 해석은 양립 가능하다: LTA는 <b>하방(가동률·물량)을 고정하는 대신 상방(스팟 가격 초과이익)을 포기</b>하는 계약이다. 따라서 LTA 확대는 ① 사이클 <b>진폭</b> 축소 ② 실적 <b>가시성</b> 상승 ③ 스팟 급등 국면의 <b>업사이드 상실</b>을 동시에 의미한다. "LTA 확대 = 무조건 호재"로 읽는 프레이밍은 재검토 대상이다.<br>
-        · <b>⚠ Scale-Out 434%의 해석 주의</b> — Citi 수치는 <b>서로 다른 세대의 시스템 구성을 비교</b>한 것(72 GPU → 576 GPU)이지, 동일 시스템의 증분이 아니다. GPU당 HBM은 오히려 -33%다. 즉 <b>HBM 총수요는 시스템 판매량 가정에 전적으로 의존</b>하며, 576-GPU 시스템이 실제로 그 비율로 팔린다는 전제가 깨지면 434%는 성립하지 않는다. 다만 부수 효과로 <b>GPU 간 인터커넥트(1.6T 광트랜시버·스위치) 수요는 훨씬 더 가파르게</b> 증가한다 — Scale-Out 전환의 최대 수혜는 HBM이 아니라 네트워킹일 수 있다.<br>
-        · <b>🔴 정정 — "Scale-Out 최대 수혜는 네트워킹"이라는 본 편집부 추론은 틀렸다</b> — 같은 날 편집자 주에서 <b>"Scale-Out 전환의 최대 수혜는 HBM이 아니라 네트워킹일 수 있다"</b>고 적었으나, Wells Fargo의 NVL72 부품 원가 명세서(BOM)가 이를 <b>반증</b>한다. 랙당으로는 네트워킹이 +37% 증가하지만, <b>IT 전력 1GW당 기준으로는 $92.97억 → $82.63억으로 오히려 -11% 감소</b>한다. 이유는 Vera Rubin의 랙당 성능·전력 효율이 크게 개선돼 <b>같은 1GW를 채우는 데 필요한 랙 수가 약 37% 줄기</b> 때문이다(1GW당 총비용 ÷ 랙당 총비용 = 약 11,832랙 → 약 7,420랙). 랙당 +37%가 랙 수 -37%에 상쇄된다. <b>반면 메모리는 랙당 +128%로 랙 수 감소를 압도해, 1GW당 기준으로도 약 +43% 증가한다.</b> 즉 <b>전력 제약 하에서 가장 크게 늘어나는 항목이 메모리</b>이며, 이는 네트워킹이 아니라 <b>HBM·LPDDR에 유리한 구조</b>다. 추론을 철회하고 이 방향으로 수정한다.<br>
-        · <b>⚠ WDC 엑사바이트 미달을 "믹스"로만 처리해도 되는가</b> — 회사·JPM·Citi가 모두 동일하게 "제품 전환기 믹스"로 설명하는데, 이는 <b>반증하기 어려운 설명</b>이다. 검증 포인트는 F3Q27이다: 40TB ePMR이 예정대로 니어라인 EB의 50%에 도달했는데도 EB 성장률이 25%를 밑돈다면, 믹스가 아니라 <b>수요 또는 수율</b> 문제였던 것이다. 이 시점을 명시적 체크포인트로 등록할 것.
-      </span>
-    </div>
-
-    <!-- 2026.08.07 (2차) Goldman 수급 + 컨콜 원문 + 랙 BOM -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.06),var(--surface))">
-      <div class="tg" style="color:var(--accent)">&#9650; 2026.08.07 (2차) — Goldman 수급 밸런스: <em>2027년이 공급부족 정점</em></div>
-      <p style="font-size:1rem;font-weight:600">DRAM·HBM·NAND 세 시장 모두 2027년에 부족이 정점을 찍고 2028년 완화 — 다만 완화 후에도 <em>여전히 부족</em>
-      <span class="u">
-        <b>수급 밸런스 (마이너스 = 공급 부족)</b> <span class="badge amber">Goldman Sachs</span><br>
-        · <b>DRAM</b>: 2025 <b>-1.4%</b> → 2026 <b>-5.0%</b> → <b>2027 -5.9% (정점)</b> → 2028 -3.9%<br>
-        · <b>HBM</b>: 2025 <b>-3.4%</b> → 2026 <b>-5.4%</b> → <b>2027 -6.0% (정점·최대 부족)</b> → 2028 -4.3%<br>
-        · <b>NAND</b>: 2025 <b>-0.6%</b> → 2026 <b>-4.4%</b> → <b>2027 -4.6% (정점)</b> → 2028 -3.0%<br>
-        · <b>해석 ①</b> — 2027년이 세 시장 공통 정점이며, HBM이 -6.0%로 가장 심각하고 <b>NAND가 -4.6%로 가장 여유</b>롭다. 부족 심화 폭도 NAND(2025 -0.6% 출발)가 가장 완만하다.<br>
-        · <b>해석 ②</b> — 2028년 "완화"는 <b>흑자→적자 전환이 아니라 부족폭 축소</b>다. -3.0~-4.3%는 여전히 공급 부족 구간이므로, 2028년이 곧 사이클 붕괴를 뜻하지 않는다.
-      </span></p>
-    </div>
-
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bull)">
-      <div class="tg" style="color:var(--bull)">2026.08.07 (2차) — WDC·SanDisk 컨퍼런스콜 원문: LTA 체제 전환의 실제 언어</div>
-      <p style="font-size:1rem;font-weight:600">"논의의 초점은 <em>수요 자체가 아니라</em> LTA의 가격 체계와 상업적 계약 구조" — 수요는 이미 확정 국면
-      <span class="u">
-        · <b>Western Digital</b> — "지난번에는 한 대형 고객과 <b>2029년까지</b> 이어지는 LTA를 체결했다고 말씀드렸으나, 현재는 <b>2030년·2031년까지</b> 이어지는 새로운 LTA 체결을 활발히 협의 중." 그리고 결정적으로: <b>"현재 고객들과 주로 논의하고 있는 부분은 '수요 자체'가 아니라, 앞으로의 LTA 가격 체계와 상업적 계약 구조를 어떻게 설계할 것인지에 관한 사항입니다."</b><br>
-        · <b>변화의 방향성</b> — "이러한 변화는 상당 부분 <b>고객들이 먼저 장기 계약을 요구</b>하고 있기 때문." 공급자가 밀어붙인 것이 아니라 <b>수요자가 물량을 선점</b>하려는 구조다.<br>
-        · <b>SanDisk</b> — "<b>불과 3~4분기 전만 해도 이 시장은 대부분 분기 단위 계약</b>으로 운영됐습니다. 그러나 지금은 향후 <b>4년 이상의 수요를 가시적으로 확보</b>하고 있으며, 고객들은 향후 <b>5년치 수요에 대해 장기 계약</b>을 체결하고 있습니다."<br>
-        · <b>SanDisk의 유보</b> — 다만 "공급이 언제 충분히 늘어나 모든 고객이 원하는 물량을 원하는 가격에 확보하느냐"는 질문에는 <b>"훨씬 더 복잡한 문제"</b>라며 명확한 균형 시점을 제시하지 않았다. "저희가 가장 어려움을 겪었던 부분은 <b>5년, 10년 후의 진정한 수요</b>가 얼마나 될지를 파악하는 것"이라고 인정.<br>
-        · <b>결론</b> — 경영진 스스로 <b>장기 계약이 수급 조절의 주 메커니즘</b>이 될 것이라고 규정했다. 즉 앞으로 이 산업의 가격은 스팟이 아니라 <b>계약 구조</b>가 결정한다.
-      </span></p>
-    </div>
-
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--glow)">
-      <div class="tg" style="color:var(--glow)">2026.08.07 (2차) — Wells Fargo NVL72 BOM: 전력 1GW당 <em>메모리만</em> 늘어난다</div>
-      <p style="font-size:1rem;font-weight:600">Vera Rubin NVL72 vs GB300 NVL72 — 랙당 총비용 +97%, 그런데 항목별 증가율이 극단적으로 갈린다
-      <span class="u">
-        <b>랙당 기준</b> <span class="badge amber">Wells Fargo</span><br>
-        · <b>총비용</b>: $4,234,524 → <b>$8,341,971 (+97%)</b><br>
-        · <b>컴퓨팅</b>: $1,664,331 → $3,593,237 <b>(+116%)</b>, 비중 39.3% → <b>43.1%</b><br>
-        · <b>메모리(HBM+LPDDR)</b>: $1,125,669 → $2,569,875 <b>(+128%)</b>, 비중 26.6% → <b>30.8%</b><br>
-        · <b>스토리지</b>: $59,024 → $147,559 <b>(+150%, 항목 중 최고 증가율)</b><br>
-        · <b>네트워킹</b>: $629,500 → $859,300 (+37%)<br>
-        <b>IT 전력 1GW당 기준 — 여기서 그림이 완전히 달라진다</b><br>
-        · <b>총비용</b>: $50,101M → <b>$61,895M (+24%)</b><br>
-        · <b>네트워킹</b>: $9,297M → <b>$8,263M (-11%)</b> ← 유일하게 <b>감소</b><br>
-        · <b>메모리(본 편집부 산출)</b>: 약 $13,320M → 약 $19,070M <b>(+43%)</b><br>
-        · <b>산출 근거</b>: 1GW당 총비용 ÷ 랙당 총비용 = 랙 수. GB300 약 <b>11,832랙</b> → Vera Rubin 약 <b>7,420랙</b>(<b>-37%</b>). 랙당 메모리 +128%가 랙 수 -37%를 압도해 순증 +43%. 반면 네트워킹은 랙당 +37%가 랙 수 감소에 상쇄돼 순감소.<br>
-        · <b>함의</b> — AI 데이터센터의 진짜 제약이 <b>전력</b>이라면, 전력 단위당 가치가 가장 크게 올라가는 항목이 <b>메모리</b>다. 스토리지도 랙 수 감소를 감안해 1GW당 약 +57%로 강하다 — NAND·엔터프라이즈 SSD에 우호적.
-      </span></p>
-    </div>
-
-    <!-- 2026.08.07 (3차) NVIDIA Rubin Ultra 다운스펙 -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:var(--bear);background:linear-gradient(120deg,rgba(248,113,113,.06),var(--surface))">
-      <div class="tg" style="color:var(--bear)">&#9660; 2026.08.07 (3차) — NVIDIA Rubin Ultra HBM 다운스펙: Citi Scale-Out 논리의 <em>전반부만</em> 사실로 확인됐다</div>
-      <p style="font-size:1rem;font-weight:600">"Ultra"인데 전작보다 메모리가 적어질 수 있다 — 원인은 가격 저항이 아니라 <em>2027년 DRAM 부족</em>
-      <span class="u">
-        · <b>TrendForce (2026.08.04)</b> — NVIDIA가 3분기부터 Rubin Ultra의 HBM 구성을 <b>당초 12-Hi HBM4e 설계에서 4개 안으로 확대 평가</b> 중: 8-Hi HBM4e / 12-Hi HBM4 / 8-Hi HBM4. <b>최종 사양은 미결정.</b><br>
-        · <b>🔴 숫자가 정확히 일치한다</b> — 8-Hi HBM4를 택하면 온패키지 메모리는 <b>192GB</b>로, 현행 Vera Rubin GPU의 <b>288GB 대비 -33%</b>다. <b>Citi가 제시한 "GPU당 HBM 탑재량 -33%"(0.288TB → 0.192TB)와 소수점까지 같은 수치</b>다. 즉 Citi의 Scale-Out 시나리오는 추정이 아니라 <b>이미 진행 중인 사실</b>이었다.<br>
-        · <b>다운스펙 사유 — 수요 위축이 아니다</b> — TrendForce가 명시한 이유는 ① <b>2027년 예상되는 전반적 DRAM 부족</b>으로 메모리 업체가 HBM 생산에 배정할 수 있는 웨이퍼 캐파가 제한됨 ② <b>12-Hi HBM4e의 검증 일정과 수율 램프업 불확실성</b>. <b>가격 저항이 아니라 공급 제약</b>이다.<br>
-        · <b>Goldman 수급표와 교차 검증</b> — TrendForce가 지목한 "2027년 DRAM 부족"은 Goldman이 제시한 <b>2027년 DRAM -5.9%·HBM -6.0% 공급부족 정점</b>과 정확히 같은 시점을 가리킨다. 서로 다른 두 기관이 <b>같은 해를 병목으로 지목</b>했다.<br>
-        · <b>"Ultra"의 역설</b> — 상위 제품이 전작보다 메모리가 적어지는 것은 이례적이며, <b>HBM이 AI 가속기 설계의 실질적 제약 조건이 됐다</b>는 것을 제품 스펙으로 증명한다. <span class="badge amber">TrendForce 2026.08.04</span>
-      </span></p>
-    </div>
-
-    <!-- 편집자 주 (2차) -->
-    <div class="thesis reveal" style="margin-top:24px;border-left-color:#3b82f6;background:linear-gradient(120deg,rgba(59,130,246,.06),var(--surface))">
-      <div class="tg" style="color:#3b82f6">&#9432; 편집자 주 (2026.08.07 2차): Citi "2회 초" vs Goldman "2027 정점" — 두 하우스가 충돌한다</div>
-      <span class="u">
-        · <b>🔴 정면 충돌</b> — Citi는 같은 주에 <b>"AI 메모리 업사이클은 아직 2회 초"</b>라며 2001~2007년의 7년 NAND 사이클에 비유했다. 그런데 Goldman 수급 데이터는 <b>2027년 정점, 2028년 완화</b>를 제시한다. 야구 비유를 그대로 쓰면 <b>Goldman 기준으로 지금은 2회가 아니라 6~7회</b>다. 두 하우스의 시간축이 <b>4~5년 어긋난다</b>.<br>
-        · <b>어느 쪽이 검증 가능한가</b> — Citi의 "2회 초"는 <b>서사</b>이고 Goldman의 수급표는 <b>숫자</b>다. 그리고 숫자는 매 분기 반증 가능하다. 본 편집부는 <b>Goldman 프레임을 기본값</b>으로 삼고 Citi를 상방 시나리오로 배치할 것을 권고한다. 단 Goldman도 2028년에 <b>여전히 -3.0~-4.3% 부족</b>을 전망한다는 점은 놓치지 말 것 — <b>정점 통과 ≠ 사이클 종료</b>다.<br>
-        · <b>NAND 온도차가 세 번째 출처로 확인됐다</b> — ① Citi가 SK하이닉스에는 "2회 초", SanDisk 리스크에는 "가격 인상 환경 단명 가능성"을 병기 ② SanDisk F1Q27 가이던스 매출이 컨센 하회(ASP 둔화 ①단계) ③ 이제 Goldman 수급에서 <b>NAND 부족폭이 2027년에도 -4.6%로 셋 중 가장 얕다</b>. <b>독립적 출처 세 개가 같은 방향</b>을 가리키므로, NAND 익스포저(키옥시아 SPC2 전환사채 등)를 DRAM과 동일한 지속성으로 평가하지 말라는 기존 권고를 <b>신뢰도 상향</b>해 유지한다.<br>
-        · <b>WDC 발언이 LTA 해석을 확정했다</b> — 본 편집부는 <b>"LTA는 하방(가동률·물량)을 고정하는 대신 상방(스팟 초과이익)을 포기하는 계약"</b>이라고 해석했는데, WDC 경영진이 <b>"논의의 초점은 수요 자체가 아니라 가격 체계와 상업적 계약 구조"</b>라고 직접 말했다. 수요 협상은 끝났고 <b>가격 조건 협상이 남았다</b>는 뜻이며, 이는 해당 해석과 정확히 일치한다. 따라서 향후 실적 변동의 주 원인은 <b>수요량이 아니라 계약 가격 구조</b>가 된다 — 컨콜에서 물량 가이던스보다 <b>계약 갱신 조건</b>을 먼저 볼 것.<br>
-        · <b>⚠ SanDisk의 솔직한 유보를 무시하지 말 것</b> — "4년 이상 가시성"이 헤드라인이지만, 같은 답변에서 경영진은 수급 균형 시점에 대해 <b>"훨씬 더 복잡한 문제"</b>라며 답을 피했고 <b>"5년·10년 후의 진정한 수요 파악이 가장 어려웠다"</b>고 인정했다. 즉 <b>가시성이 개선된 것은 계약이지 수요의 실체가 아니다</b>. 계약은 고객의 예측에 기반하며, 고객의 예측이 틀리면 계약은 재협상 대상이 된다.<br>
-        · <b>⚠ "고객이 먼저 요구한다"의 양면</b> — 강세 근거로 인용되지만, 고객이 5년치를 선점하려 서두르는 것은 <b>지금 가격이 앞으로 더 오를 것이라고 고객이 믿기 때문</b>이다. 고객의 기대가 꺾이는 순간 신규 LTA 체결 속도가 먼저 둔화된다. <b>LTA 신규 체결 건수·기간이 가장 선행하는 심리 지표</b>이므로 분기마다 추적할 것.<br>
-        · <b>🔴 결정적 대비 — 같은 고객이 칩은 길게, 부동산은 짧게 계약한다</b> — Moody's에 따르면 하이퍼스케일러의 <b>데이터센터 리스 기간이 전통적 10~15년에서 1~6년으로 단축</b>되고 있다. 그런데 <b>메모리 LTA는 정반대로</b> 움직인다 — WDC는 2029년에서 <b>2030·2031년으로 연장</b>했고, SanDisk 고객은 <b>5년치</b>를 선점하며, 양사 모두 <b>"고객이 먼저 요구한다"</b>고 증언한다. <b>동일한 구매자가 두 자산군에 정반대 계약 전략을 쓰고 있다.</b><br>
-        &nbsp;&nbsp;&nbsp;해석은 둘 중 하나다: ⓐ <b>칩은 부족해서 선점해야 하고 부동산은 상대적으로 구하기 쉽다</b>(공급 격차) ⓑ <b>칩은 대체 불가하고 부동산은 대체 가능하다</b>(교체 비용 격차). <b>어느 쪽이든 메모리의 희소성을 반증한다</b> — 이는 본 시리즈의 공급부족 테제를 <b>구매자 행동으로 교차 검증</b>한 것이며, Goldman 수급표(2027 정점)나 IB 목표주가보다 <b>덜 조작 가능한 증거</b>다.<br>
-        &nbsp;&nbsp;&nbsp;<b>동시에 경고이기도 하다</b> — 하이퍼스케일러가 부동산에서 유연성을 확보했다는 것은 <b>수요가 꺾일 때 가장 먼저 버릴 수 있는 것이 부동산</b>이라는 뜻이다. 따라서 AI 조정 시 타격 순서는 <b>① 데이터센터 REIT·개발업자·사모신용 → ② 전력기기·ESS → ③ 메모리(LTA로 시차 보호)</b>가 된다. 메모리가 안전하다는 뜻이 아니라 <b>충격이 늦게 도착한다</b>는 뜻이고, 그 시차가 곧 대응 시간이다. 단 LTA도 <b>갱신 시점에는 재협상 대상</b>이므로 시차는 계약 잔여기간만큼만 유효하다.<br>
-        · <b>🔴 가장 중요 — Citi 논리의 <em>절반만</em> 검증됐고, 검증되지 않은 절반이 전부를 결정한다</b> — Citi의 "+434%"는 두 개의 곱이다: <b>(GPU당 HBM -33%) × (시스템당 GPU 72→576개, 8배)</b>. TrendForce의 Rubin Ultra 다운스펙 보도로 <b>앞의 항(-33%)은 288GB→192GB로 사실 확인</b>됐다. 그러나 <b>뒤의 항(GPU 대수 8배)은 여전히 가정</b>이며, 어떤 1차 자료도 이를 확인하지 않았다.<br>
-        &nbsp;&nbsp;&nbsp;<b>이 비대칭이 리스크다.</b> 확인된 것은 <b>감소 요인</b>이고, 미확인인 것은 <b>증가 요인</b>이다. 만약 576-GPU 시스템이 예상만큼 팔리지 않으면 남는 것은 <b>GPU당 -33%뿐</b>이다. 산술적으로, 총 HBM 수요가 보합을 유지하려면 시스템당 GPU가 <b>최소 1.5배</b> 늘어야 하고, +434%를 달성하려면 <b>8배</b>가 필요하다. <b>1.5배와 8배 사이의 어디냐가 이 테제의 전부</b>다.<br>
-        &nbsp;&nbsp;&nbsp;검증 방법: NVIDIA의 <b>차기 시스템 구성 공식 발표</b>와 <b>랙 출하 대수 가이던스</b>. 그전까지 "+434%"를 확정 수치로 인용하지 말 것.<br>
-        · <b>랙 BOM은 Citi Scale-Out 논리를 다른 차원에서 교차 검증한다</b> — Citi의 +434%는 <b>시스템 단위</b>(GPU 72개→576개) 비교이고, Wells Fargo는 <b>랙 단위</b>(GB300 NVL72 → Vera Rubin NVL72) 비교다. 측정 축이 다른데 <b>메모리 비중 상승이라는 결론이 일치</b>한다. 서로 독립적인 두 증거이므로 교차 검증 가치가 높다. 다만 두 수치를 <b>더하거나 비교하지는 말 것</b> — 차원이 다르다.
+        <span style="color:var(--ink-3)">정정 등급 — <b>C1</b>: 당시에도 틀렸고 투자판단에 영향 · <b>C2</b>: 당시엔 맞았으나 노후화 · <b>C3</b>: 자체 추론이 후속 데이터로 반증</span>
       </span>
     </div>
   </div>
@@ -1014,7 +770,7 @@
         SanDisk FY4Q26 컨퍼런스콜 · Western Digital FY4Q26 컨퍼런스콜 (2026.08.06)<br>
         Goldman Sachs 메모리 수급 밸런스 (2026.08.06) · Wells Fargo NVIDIA NVL72 BOM (2026.08.06)<br>
         TrendForce "DRAM Supply to Remain Tight in 2027" (2026.08.04) · Morgan Stanley Shawn Kim (2026.08.07)<br>
-        작성 기준일 · 2026.06 (2026.08.07 업데이트)<br>
+        작성 기준일 · 2026.06.27 · 최종 갱신 2026.08.07 (본문 rewrite)<br>
         ▸ 2026.07.21: CXMT IPO 기업가치 $85B·212x 청약·Q1'26 매출 RMB 508B($7B) 반영, MATCH Act DUV 금지·150일 동맹 조율 추가, HBM3→HBM3E 메타 보정 — CXMT 상하이거래소 IPO 공시 · 미 상원 MATCH Act · Micron SCA<br>
         ▸ 2026.07.25: 샌프란시스코 AI 서밋 — SK-엔비디아 5,000억 달러 파트너십, 삼성·하이닉스 빅테크 장기공급계약, Bull 시나리오 확률 소폭 상향 반영<br>
         ▸ 2026.07.27: 메리츠 After AI 9 + 2Q26 어닝 — '선주문-후생산' 구조 전환, 2027E DRAM 충족률 70% 쇼티지, SK하이닉스 세전이익 101조원(키옥시아 SPC1 ~40조·SPC2 옵션), 삼성전자 2Q26P 사업부별 분해(MX 적자전환), 메모리 OPM 장기 추이(삼성 2027E 59%·SK하이닉스 DRAM 2027E 87%) 반영<br>
