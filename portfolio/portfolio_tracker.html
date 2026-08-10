@@ -190,7 +190,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   "headline":"포트폴리오 트래커 — v7.2 Phase 0 실매수 대시보드",
   "description":"v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드",
   "datePublished":"2026-07-14",
-  "dateModified":"2026-07-16",
+  "dateModified":"2026-08-10",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html"}
@@ -381,17 +381,25 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
 (function(){
   'use strict';
 
-  /* ═══ HOLDINGS DATA (수수료 포함 원가 하드코딩) ═══ */
+  /* ═══ HOLDINGS DATA ═══
+     정본: portfolio_recommendation_v9_202607.md § v10.2 (2026.08.07 실계좌 확인)
+     [2026.08.10 전면 교체] 종전 데이터(2026.07.16자)는 6종목 중 5종목의 수량·평단이
+     실계좌와 어긋났고, 삼성전자 레거시 1,300주(평가액 3.06억)가 통째로 누락돼 있었다.
+     ⚠ 평단의 수수료 포함 여부가 확인되지 않았다(A5) — v10.2가 기재한 손익률은
+        qty×평단으로 역산한 값보다 일관되게 0.2~0.4%p 유리하다(SK하이닉스 -15.98% vs
+        역산 -16.31%, SOL -15.07% vs -15.23%). 스톱로스 판정은 두 기준 모두 발동이므로
+        결론은 같으나, 경계선 근처에서는 기준을 확정한 뒤 판정한다. fee는 미확인이라 0. */
   var HOLDINGS = [
-    { name:'SK하이닉스',      ticker:'000660', cluster:'A', qty:26,   avgPrice:1902000, fee:69232,  totalCost:49521232  },
-    { name:'삼성전자',        ticker:'005930', cluster:'A', qty:190,  avgPrice:264000,  fee:70224,  totalCost:50230224  },
-    { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:2600, avgPrice:18800,   fee:68432,  totalCost:48948432  },
-    { name:'TIME 글로벌AI',   ticker:'456600', cluster:'C', qty:770,  avgPrice:64987,   fee:70056,  totalCost:50110116  },
-    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1400, avgPrice:34379,  fee:67384,  totalCost:48199149  }
+    { name:'SK하이닉스',        ticker:'000660', cluster:'A', qty:54,   avgPrice:1699046, fee:0, totalCost:91748484 },
+    { name:'삼성전자 (레거시)',  ticker:'005930', cluster:'A', qty:1300, avgPrice:72600,   fee:0, totalCost:94380000, priceKey:'삼성전자', legacy:true },
+    { name:'삼성전자 (신규)',    ticker:'005930', cluster:'A', qty:383,  avgPrice:238157,  fee:0, totalCost:91214131, priceKey:'삼성전자' },
+    { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:3600, avgPrice:17801,   fee:0, totalCost:64083600 },
+    { name:'TIME 글로벌AI',     ticker:'456600', cluster:'C', qty:1040, avgPrice:62807,   fee:0, totalCost:65319280 },
+    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1880, avgPrice:33630, fee:0, totalCost:63224400 }
   ];
 
-  var TOTAL_INVESTED = 247009153;
-  var CASH_REMAINING = 1753000000; /* 17.53억 */
+  var TOTAL_INVESTED = 469969895;   /* 매입원가 계 — 활성 375,589,895 + 레거시 94,380,000 */
+  var CASH_REMAINING = 1349000000;  /* 13.49억 (v10.2) */
   var TOTAL_PORTFOLIO = TOTAL_INVESTED + CASH_REMAINING; /* 투자 + 현금 */
 
   var CLUSTER_COLORS = {
@@ -446,7 +454,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
     /* ═══ COMPUTE P&L ═══ */
     var totalCurrentValue = 0;
     var rows = HOLDINGS.map(function(h){
-      var currentPrice = prices[h.name] || h.avgPrice;
+      var currentPrice = prices[h.priceKey || h.name] || h.avgPrice;
       var currentValue = h.qty * currentPrice;
       var pnl = currentValue - h.totalCost;
       var pnlPct = (pnl / h.totalCost) * 100;
@@ -454,6 +462,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
       return {
         name: h.name,
         cluster: h.cluster,
+        legacy: !!h.legacy,
         qty: h.qty,
         avgPrice: h.avgPrice,
         currentPrice: currentPrice,
@@ -469,6 +478,13 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
     var totalWithCash = totalCurrentValue + CASH_REMAINING;
     var cashPct = (CASH_REMAINING / totalWithCash) * 100;
 
+    /* 레거시(삼성전자 1,300주)가 전체 수익률을 떠받치고 있어 총수익률만 보면 착시가 생긴다.
+       v10.2의 핵심 경고이므로 활성 포트 수익률을 항상 함께 노출한다. */
+    var actCost = 0, actValue = 0;
+    rows.forEach(function(r){ if (!r.legacy) { actCost += r.totalCost; actValue += r.currentValue; } });
+    var actPnl = actValue - actCost;
+    var actPnlPct = actCost ? (actPnl / actCost) * 100 : 0;
+
     /* ═══ HERO ═══ */
     document.getElementById('heroTotal').textContent = fmtWonShort(totalWithCash) + '원';
     var pnlEl = document.getElementById('heroPnl');
@@ -476,7 +492,9 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
     pnlEl.className = 'pnl mono ' + (totalPnl > 0 ? 'up' : totalPnl < 0 ? 'down' : 'flat');
 
     var heroTime = priceData.updatedTime ? ' ' + priceData.updatedTime : '';
-    document.getElementById('heroUpdated').textContent = '기준일: ' + updated + heroTime + ' · 매수일: 2026-07-14';
+    document.getElementById('heroUpdated').textContent = '기준일: ' + updated + heroTime
+      + ' · 포지션 기준 2026-08-07 실계좌(v10.2)'
+      + ' · 레거시 제외 활성 포트 ' + fmtPct(actPnlPct) + ' (전체 스톱로스 -10%)';
 
     /* ═══ SUMMARY STATS ═══ */
     document.getElementById('statInvested').textContent = fmtWonShort(TOTAL_INVESTED) + '원';
