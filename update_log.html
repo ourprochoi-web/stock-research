@@ -254,6 +254,33 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">2026.08.11 — Round 17: §H 다섯 번째 예외 — sitemap을 훅으로 고정</div>
+
+  <div class="upd data">
+    <div class="upd-title"><span class="tag tag-data">DATA</span> <b>같은 문장이 지시한 네 가지 중 강제된 것만 살아남았다</b></div>
+    <div class="upd-body">
+      §F3은 <i>"페이지 수정 + DATA + sitemap + update_log를 <b>한 커밋</b>으로"</i>라고 지시한다. 오늘 측정해 보니 <b>네 가지의 운명이 정확히 갈려 있었다.</b><br><br>
+      <table style="width:100%;border-collapse:collapse;font-size:.93em;margin:8px 0">
+        <tr style="border-bottom:1px solid rgba(255,255,255,.15)"><th style="text-align:left;padding:4px 8px">§F3이 지시한 것</th><th style="text-align:left;padding:4px 8px">강제 여부</th><th style="text-align:left;padding:4px 8px">실측 드리프트</th></tr>
+        <tr><td style="padding:4px 8px">페이지 <code>dateModified</code></td><td style="padding:4px 8px">훅</td><td style="padding:4px 8px"><b>0%</b></td></tr>
+        <tr><td style="padding:4px 8px">index DATA <code>updated</code></td><td style="padding:4px 8px">훅</td><td style="padding:4px 8px"><b>0%</b></td></tr>
+        <tr><td style="padding:4px 8px"><code>update_log.html</code></td><td style="padding:4px 8px">훅(차단)</td><td style="padding:4px 8px"><b>0%</b></td></tr>
+        <tr style="background:rgba(248,113,113,.08)"><td style="padding:4px 8px"><code>sitemap.xml</code> <code>lastmod</code></td><td style="padding:4px 8px"><b>없음</b></td><td style="padding:4px 8px"><b style="color:#f87171">84/113 = 74%</b></td></tr>
+      </table>
+      <b>🔑 이것이 "지시로는 실패한다"의 <u>대조군 있는 증거</u>다.</b> 규칙의 문장 하나, 작성자 한 명, 같은 기간 — <b>다른 것은 강제 여부뿐이었고 결과가 0%와 74%로 갈렸다.</b> §H가 "새 도구를 만들지 말라"고 하면서도 훅만 예외로 둔 이유가 여기서 다시 확인된다.<br><br>
+      <b>사용자 판단으로 다섯 번째 예외를 신설했다.</b> 스테이징된 페이지의 <code>dateModified</code>를 읽어 <code>sitemap.xml</code>의 해당 <code>&lt;lastmod&gt;</code>에 반영하고 함께 스테이징한다. <b>index DATA 예외와 성질이 같다 — 새 저장소를 만들지 않고 기존 파일 안에서만 움직인다.</b><br>
+      &nbsp;&nbsp;· <code>dateModified</code>가 <b>없는</b> 페이지(<code>index.html</code> 등)는 건드리지 않는다 — <b>비교할 기준이 없으면 맞출 것도 없다</b><br>
+      &nbsp;&nbsp;· <code>priority</code>·<code>&lt;loc&gt;</code> 순서는 손대지 않는다<br>
+      &nbsp;&nbsp;· <b>부분 스테이징이면 건너뛴다</b>(기존 훅과 같은 이유 — 스테이징 안 한 변경이 커밋에 끌려온다)<br>
+      &nbsp;&nbsp;· <b>덤: §F2 미등록 경고.</b> 스테이징된 페이지가 sitemap에 없으면 알린다. <b>막지는 않는다</b> — 훅은 "빠졌다"만 말하고 판정은 사람이 한다<br><br>
+      <b>테스트는 양쪽 경로를 다 돌렸다</b> — ① 실제 페이지를 고쳐 스테이징 → <code>dateModified 2026-08-09 → 08-11</code>과 <code>lastmod</code>가 함께 이동, ② sitemap에 없는 임시 페이지 → 경고 출력 후 통과(차단 없음). 둘 다 확인 후 되돌렸다.<br><br>
+      <b>⚠ 예외를 늘리는 기준도 같이 적어 뒀다</b> — <b>"편하다"가 아니라 실측된 실패율</b>이며, <b>대조군이 있는 형태가 아니면 늘리지 않는다.</b> 이 기준이 없으면 §H는 "훅은 예외"라는 말로 무한히 넓어진다.
+    </div>
+    <div class="upd-source">files: .githooks/pre-commit · CLAUDE.md §H·§I · 테스트 2경로 검증 완료</div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">2026.08.11 — Round 16: 미래에셋 87p 정독 — 네트워크 층에 처음으로 크기가 붙었다</div>
 
   <div class="upd research">

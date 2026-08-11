@@ -21,6 +21,8 @@ PAT = re.compile(r'("dateModified"\s*:\s*")([^"]*)(")')
 TIMELINE = re.compile(r"▸\s*20\d\d[.\-]\d\d[.\-]\d\d")
 LOG = "update_log.html"
 INDEX = "index.html"
+SITEMAP = "sitemap.xml"
+BASE = "https://ourprochoi-web.github.io/stock-research/"
 
 
 def run(*args):
@@ -95,6 +97,59 @@ def sync_index_updated(pages):
     return changed
 
 
+def sync_sitemap_lastmod(pages):
+    """sitemap.xml 의 lastmod 를 각 페이지의 실제 dateModified 로 맞춘다.
+
+    §H 가 허용한 다섯 번째 예외. index DATA updated 와 같은 종류이고 같은
+    이유다 — §F3 이 "페이지 + DATA + sitemap + update_log 를 한 커밋으로"
+    라고 지시하는데, 2026-08-11 측정 결과 113편 중 84편이 어긋나 있었다.
+    훅이 강제하는 셋(dateModified · index updated · update_log)은 전부 0이고
+    강제되지 않는 sitemap 만 74% 가 무너졌다. 지시로는 실패한다.
+
+    새 저장소를 만들지 않고 기존 sitemap.xml 안에서만 동기화한다.
+    dateModified 가 없는 페이지(index.html 등)는 건드리지 않는다 —
+    비교할 기준이 없으면 맞출 것도 없다.
+
+    반환: (동기화된 페이지, sitemap 에 항목이 없는 페이지)
+    """
+    try:
+        with open(SITEMAP, encoding="utf-8") as fh:
+            text = fh.read()
+    except OSError:
+        return [], []
+
+    changed, missing = [], []
+    for page in pages:
+        try:
+            with open(page, encoding="utf-8") as fh:
+                real = PAT.search(fh.read())
+        except OSError:
+            continue
+        if not real:  # JSON-LD 가 없는 페이지는 대상이 아니다
+            continue
+        real = real.group(2)[:10]
+
+        entry = re.compile(
+            r"(<loc>" + re.escape(BASE + page) + r"</loc>\s*<lastmod>)"
+            r"(\d{4}-\d{2}-\d{2})"
+            r"(</lastmod>)"
+        )
+        m = entry.search(text)
+        if not m:
+            missing.append(page)
+            continue
+        if m.group(2) == real:
+            continue
+        text = text[:m.start(2)] + real + text[m.end(2):]
+        changed.append(page)
+
+    if changed:
+        with open(SITEMAP, "w", encoding="utf-8") as fh:
+            fh.write(text)
+        subprocess.run(["git", "add", SITEMAP], check=True)
+    return changed, missing
+
+
 def check_update_log(staged):
     """§F3 — 페이지에 날짜 항목을 남겼으면 update_log.html 도 같이 커밋한다.
 
@@ -163,6 +218,20 @@ def main():
             print(f"[pre-commit] index DATA updated 동기화 {len(synced)}편")
     elif INDEX in staged:
         print(f"[pre-commit] {INDEX} 부분 스테이징이라 updated 동기화 건너뜀")
+
+    # sitemap.xml 도 부분 스테이징이면 건드리지 않는다(위와 같은 이유).
+    if SITEMAP not in set(run("git", "diff", "--name-only").splitlines()):
+        synced, missing = sync_sitemap_lastmod(
+            [f for f in staged if f not in partial and f != INDEX])
+        if synced:
+            print(f"[pre-commit] sitemap lastmod 동기화 {len(synced)}편")
+        if missing:
+            print(f"[pre-commit] ⚠ sitemap 에 항목이 없습니다 ({len(missing)}편) "
+                  "— §F2: 등록 안 하면 만들지 않은 것입니다")
+            for f in missing[:3]:
+                print(f"    · {f}")
+    else:
+        print(f"[pre-commit] {SITEMAP} 부분 스테이징이라 lastmod 동기화 건너뜀")
 
     if touched:
         print(f"[pre-commit] dateModified → {today} ({len(touched)}편)")
