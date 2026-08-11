@@ -8,6 +8,8 @@ GitHub Actions cron으로 자동화 가능.
 import json
 import urllib.request
 import os
+import sys
+from datetime import datetime, timedelta
 
 # 보유 종목 (portfolio_tracker.html 이 이 이름들을 참조한다 — 이름 변경 금지)
 TICKERS = {
@@ -41,6 +43,11 @@ WATCH = {
     "포스코퓨처엠": "003670",
     "엘앤에프": "066970",
     "KB금융": "105560",
+    # 2026-08-11 추가 — 이 둘은 오늘 KILL 조건·판정 이벤트가 걸린 종목이다.
+    # HD현대중공업: Corban 선수금 20%(약 1,912억) 수령 여부가 1차 관문.
+    # HD현대마린솔루션: 육상발전 LTSA(2031년~ 연 500억 근접)가 붙는 쪽.
+    "HD현대중공업": "329180",
+    "HD현대마린솔루션": "443060",
 }
 
 # 해외 종목 — 리서치 페이지에서 배수·기준가를 인용하는 종목.
@@ -56,7 +63,17 @@ WATCH_US = {
     "Novo Nordisk ADR": "NVO",
     "Salesforce": "CRM",
     "ServiceNow": "NOW",
+    # 2026-08-11 추가 — 이 셋은 채점표가 걸려 있다.
+    # AI 밸류체인 T7 / 메모리 사이클 C3급 철회의 범위 축소를 판정하는 조건이
+    # "FY27 매출 ANET +56% · CSCO +21% · CRDO +106%" 이므로 기준가가 필요하다.
+    "Arista Networks": "ANET.K",
+    "Cisco Systems": "CSCO.O",
+    "Credo Technology": "CRDO.O",
 }
+
+# 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
+# 판정되지 않는다 — 저점 시점이 종목마다 다르기 때문이다(A7-0).
+PERIODS = (("1W", 7), ("1M", 30), ("3M", 91), ("6M", 182), ("1Y", 365))
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT = os.path.join(SCRIPT_DIR, "prices.json")
@@ -94,6 +111,56 @@ def fetch_fundamentals(code):
     return {k: info[k] for k in want if k in info} or None
 
 
+def fetch_returns(code, foreign=False):
+    """기간 수익률 — 차트 엔드포인트 한 번으로 1W~1Y 를 전부 만든다.
+
+    2026-08-11 추가. 그날 "최근 순환매가 안 온 섹터"를 물었는데 답할 수 없었다.
+    prices.json 에는 현재가·당일등락·52주 고저만 있었고, 52주 고저로는
+    판정되지 않는다 — **저점이 언제였는지가 종목마다 다르기 때문**이다(A7-0).
+    같은 "저점 대비 +30%"라도 저점이 지난달이면 순환매가 온 것이고
+    작년이면 안 온 것인데, 그 구분이 데이터에 없었다.
+
+    엔드포인트는 국내/해외가 다르다(domestic/foreign). 둘 다 일봉 배열을
+    주므로 기준일 종가 대비로 계산한다. 거래일이 아닌 날은 그 이전
+    마지막 거래일로 대체한다 — 휴장일에 None 이 되는 것을 막는다.
+    """
+    kind = "foreign" if foreign else "domestic"
+    end = datetime.now()
+    start = end - timedelta(days=420)
+    url = (f"https://api.stock.naver.com/chart/{kind}/item/{code}/day"
+           f"?startDateTime={start:%Y%m%d}0000&endDateTime={end:%Y%m%d}0000")
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            rows = json.loads(resp.read())
+    except Exception:
+        return None
+    series = []
+    for r in rows:
+        try:
+            series.append((str(r["localDate"]), float(r["closePrice"])))
+        except (KeyError, TypeError, ValueError):
+            continue
+    if len(series) < 2:
+        return None
+    series.sort()
+    last_date, last_close = series[-1]
+
+    out = {"asOf": f"{last_date[:4]}-{last_date[4:6]}-{last_date[6:]}"}
+    base = datetime.strptime(last_date, "%Y%m%d")
+    for label, days in PERIODS:
+        target = (base - timedelta(days=days)).strftime("%Y%m%d")
+        prior = [c for d, c in series if d <= target]
+        if not prior:  # 상장 기간이 그 구간보다 짧다 — 없는 것을 0으로 적지 않는다
+            continue
+        out[label] = round((last_close / prior[-1] - 1) * 100, 1)
+
+    ytd = [c for d, c in series if d < f"{last_date[:4]}0101"]
+    if ytd:
+        out["YTD"] = round((last_close / ytd[-1] - 1) * 100, 1)
+    return out
+
+
 def fetch_us(sym):
     """해외 종목 — 국내와 엔드포인트가 다르다."""
     url = f"https://api.stock.naver.com/stock/{sym}/basic"
@@ -110,6 +177,7 @@ def main():
     print("포트폴리오 현재가 업데이트 중...\n")
     prices = {}
     updated = ""
+    updated_time = ""
 
     for name, code in {**TICKERS, **WATCH}.items():
         data = fetch_price(code)
@@ -124,6 +192,8 @@ def main():
         prices[name] = close
         if not updated:
             updated = date
+            t = data.get("localTradedAt", "")  # "2026-08-11T16:10:20+09:00"
+            updated_time = t[11:16] + " KST" if len(t) > 16 else ""
         print(f"  ✓ {name} ({code}) → {close:>12,}원  {direction} {change} ({ratio}%)")
 
     # 국내 종목 컨센서스 지표 — 배수(A7) 검증의 분모
@@ -152,6 +222,17 @@ def main():
         mc = f"  시총 ${rec['mcapB']:,}B" if "mcapB" in rec else ""
         print(f"  \u2713 {name} ({sym}) \u2192 ${px:>10,.2f}{mc}")
 
+    # 기간 수익률 — 52주 고저로는 "언제 올랐는가"를 알 수 없다(A7-0)
+    returns = {}
+    for name, code in {**TICKERS, **WATCH}.items():
+        r = fetch_returns(code)
+        if r:
+            returns[name] = r
+    for name, sym in WATCH_US.items():
+        r = fetch_returns(sym, foreign=True)
+        if r:
+            returns[name] = r
+
     # Preserve existing etfHoldings if present
     existing_holdings = {}
     if os.path.exists(OUTPUT):
@@ -162,16 +243,28 @@ def main():
         except Exception:
             pass
 
-    # Extract update time from first ticker's localTradedAt
-    updated_time = ""
-    for name, code in TICKERS.items():
-        data = fetch_price(code)
-        if data and data.get("localTradedAt"):
-            t = data["localTradedAt"]  # e.g. "2026-07-15T16:10:20+09:00"
-            updated_time = t[11:16] + " KST" if len(t) > 16 else ""
-            break
+    # ── 빈 결과 방어 ──────────────────────────────────────────────
+    # 2026-08-11 추가. 2026-08-10 봇 커밋이 prices 24→0 · fundamentals 24→0 ·
+    # us 9→0 으로 파일을 통째로 비웠고, updated 도 빈 문자열이었는데
+    # **그대로 커밋됐다**. 스크립트가 실패를 exit 0 으로 삼켰기 때문이다.
+    # 워크플로는 멀쩡했다 — 고장난 것은 "무조건 쓴다"는 이 자리였다.
+    #
+    # 보유 종목은 portfolio_tracker.html 이 직접 참조하므로 하나라도 빠지면
+    # 쓰지 않고 실패시킨다. **낡은 파일이 남는 편이 빈 파일보다 낫다** —
+    # 낡은 것은 기준일로 드러나지만 빈 것은 화면에서 그냥 사라진다.
+    missing = [n for n in TICKERS if n not in prices]
+    if missing or not updated:
+        print(f"\n✗ 중단 — 파일을 쓰지 않습니다.")
+        if missing:
+            print(f"  보유 종목 수집 실패 {len(missing)}건: {', '.join(missing)}")
+        if not updated:
+            print("  기준일을 확보하지 못했습니다.")
+        print("  기존 prices.json 은 그대로 둡니다(빈 파일로 덮지 않는다).")
+        return 1
 
-    result = {"updated": updated, "updatedTime": updated_time, "prices": prices, "fundamentals": fundamentals, "us": us}
+    result = {"updated": updated, "updatedTime": updated_time,
+              "prices": prices, "fundamentals": fundamentals,
+              "returns": returns, "us": us}
     if existing_holdings:
         result["etfHoldings"] = existing_holdings
 
@@ -179,9 +272,13 @@ def main():
         json.dump(result, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
+    total = len({**TICKERS, **WATCH}) + len(WATCH_US)
     print(f"\n완료: {OUTPUT}")
-    print(f"기준일: {updated}")
+    print(f"기준일: {updated} {updated_time}")
+    print(f"수집: 국내 시세 {len(prices)} · 컨센 {len(fundamentals)} · "
+          f"해외 {len(us)} · 기간수익률 {len(returns)}/{total}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
