@@ -8,6 +8,7 @@ GitHub Actions cron으로 자동화 가능.
 import json
 import urllib.request
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta
@@ -166,6 +167,17 @@ def fetch_returns(code, foreign=False):
     return out
 
 
+def mcap_won(text):
+    """'74조 5,284억' 같은 표기를 원 단위 숫자로. 못 읽으면 None."""
+    if not text:
+        return None
+    s = str(text).replace(",", "").replace(" ", "")
+    m = re.match(r"(?:(\d+)조)?(?:(\d+)억)?", s)
+    if not m or not (m.group(1) or m.group(2)):
+        return None
+    return int(m.group(1) or 0) * 10**12 + int(m.group(2) or 0) * 10**8
+
+
 def fetch_flows(code):
     """투자자별 순매수와 외국인 보유율 — 국내 종목만 제공된다.
 
@@ -314,6 +326,17 @@ def main():
         fl = fetch_flows(code)
         if fl:
             flows[name] = fl
+
+    # 순매수의 **크기**를 시총 대비로 환산한다.
+    # 2026-08-12 추가 — 주수만으로는 크기를 비교할 수 없다. 삼성전자 208만 주와
+    # 심텍 208만 주는 같은 숫자이지 같은 크기가 아니다(A7-0: 분모를 붙인다).
+    # 보유율 변화를 쓰지 않는 이유는 **분모가 함께 움직이기 때문**이다 —
+    # 실제로 삼성전자는 외국인 순매도인데 보유율은 올랐다(2026-08-12 실측).
+    for name, fl in flows.items():
+        px = prices.get(name)
+        mc = mcap_won((fundamentals.get(name) or {}).get("시총"))
+        if px and mc:
+            fl["netPctOfMcap"] = round(fl["foreign"] * px / mc * 100, 3)
 
     # Preserve existing etfHoldings if present
     existing_holdings = {}
