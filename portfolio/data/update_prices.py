@@ -79,6 +79,7 @@ WATCH = {
     # ⚠ LIG넥스원은 사명이 "LIG디펜스앤에어로스페이스"로 바뀌어 있다(079550).
     #    아카이브 16편은 전부 옛 사명으로 쓰여 있다 — §A3 계열(조직 정보는 재사용 금지).
     "한화시스템": "272210",
+    "한화오션": "042660",
     "LIG디펜스앤에어로스페이스": "079550",
     "풍산": "103140",
     "한국항공우주": "047810",
@@ -108,6 +109,12 @@ WATCH_US = {
     # 2026-08-12 — 메모리 테제의 핵심 비교 대상인데 추적이 없었다.
     # "한국 낙폭이 미국의 2배"라는 주장을 검증하려면 이 종목이 필요하다.
     "Micron": "MU.O",
+    # ── 2026-08-12 추가. 셋 다 아카이브가 이미 판단을 걸어둔 곳이다.
+    # CoreWeave는 AI 밸류체인 T4의 정본 사례(이자비용 = 조정 영업이익의 5.0배)인데
+    # 4편이 인용하면서 추적이 없었다. Nebius는 MW당 ACV를 공개한 유일한 비교군이라
+    # HD현대 온사이트 건의 MW당 단가와 같은 축에서 볼 수 있다(§A7-0).
+    "CoreWeave": "CRWV.O",
+    "Nebius": "NBIS.O",
 }
 
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
@@ -297,6 +304,72 @@ def fetch_us(sym):
         return None
 
 
+def fetch_us_fundamentals(sym):
+    """해외 종목의 분기 실적 + 컨센서스.
+
+    2026-08-12 추가. 그전까지 해외는 price/shares/mcap 3필드뿐이라
+    배수도 마진도 계산할 수 없었고, 그래서 스크리닝에서 미국이 통째로
+    빠졌다. "해외는 데이터가 없다"고 전제했으나 실제로는 열려 있었다
+    (CLAUDE.md §G — 확인하지 않은 것을 확인할 수 없는 것처럼 적지 않는다).
+
+    ⚠ columns 딕셔너리의 키 순서는 trTitleList 순서와 다르다.
+    반드시 trTitleList의 key로 뽑아야 분기가 어긋나지 않는다(§A5).
+    """
+    base = f"https://api.stock.naver.com/stock/{sym}"
+    hdr = {"User-Agent": "Mozilla/5.0"}
+
+    def get(path):
+        try:
+            req = urllib.request.Request(base + path, headers=hdr)
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                return json.loads(resp.read())
+        except Exception:
+            return None
+
+    out = {}
+    q = get("/finance/quarter")
+    if q and q.get("trTitleList") and q.get("rowList"):
+        keys = [x["key"] for x in q["trTitleList"]]
+        titles = [x["title"] for x in q["trTitleList"]]
+        rows = {r["title"]: r["columns"] for r in q["rowList"]}
+
+        def series(label):
+            vals = []
+            for k in keys:
+                c = rows.get(label, {}).get(k)
+                if not c:
+                    vals.append(None)
+                    continue
+                try:
+                    vals.append(float(str(c["value"]).replace(",", "")))
+                except ValueError:
+                    vals.append(None)
+            return vals
+
+        ebit, rev = series("EBIT"), series("매출액")
+        out["unit"] = q.get("unit")
+        out["quarters"] = titles
+        if ebit[-1] is not None:
+            out["EBIT"] = ebit[-1]
+        if rev[-1] is not None:
+            out["매출액"] = rev[-1]
+        if ebit[-1] is not None and rev[-1]:
+            out["OPM"] = round(ebit[-1] / rev[-1] * 100, 1)
+        # 같은 분기 4개 전 = 전년 동기. 흑자 전환은 배수가 무의미하므로 뺀다.
+        if len(ebit) >= 5 and ebit[0] and ebit[-1] is not None and ebit[0] > 0:
+            out["EBIT_YoY"] = round((ebit[-1] / ebit[0] - 1) * 100, 1)
+
+    c = get("/consensus")
+    if c:
+        for src, dst in (("priceTargetMean", "목표주가"),
+                         ("priceTargetHigh", "목표주가_최고"),
+                         ("priceTargetLow", "목표주가_최저"),
+                         ("recommMean", "투자의견")):
+            if c.get(src):
+                out[dst] = c[src]
+    return out or None
+
+
 def main():
     print("포트폴리오 현재가 업데이트 중...\n")
     prices = {}
@@ -342,9 +415,15 @@ def main():
         if cnt:
             rec["shares"] = int(cnt)
             rec["mcapB"] = round(px * int(cnt) / 1e9, 1)
+        fd = fetch_us_fundamentals(sym)
+        if fd:
+            rec.update(fd)
         us[name] = rec
         mc = f"  시총 ${rec['mcapB']:,}B" if "mcapB" in rec else ""
-        print(f"  \u2713 {name} ({sym}) \u2192 ${px:>10,.2f}{mc}")
+        opm = f"  OPM {rec['OPM']}%" if "OPM" in rec else ""
+        tp = f"  TP {rec['목표주가']}" if "목표주가" in rec else ""
+        print(f"  \u2713 {name} ({sym}) \u2192 ${px:>10,.2f}{mc}{opm}{tp}")
+        time.sleep(PAUSE)
 
     # 기간 수익률 — 52주 고저로는 "언제 올랐는가"를 알 수 없다(A7-0)
     returns = {}
