@@ -24,6 +24,17 @@ INDEX = "index.html"
 SITEMAP = "sitemap.xml"
 BASE = "https://ourprochoi-web.github.io/stock-research/"
 
+# sitemap 미등록 경고에서 제외한다.
+# 기준은 "빠뜨린 것"과 "안 올린 것"의 구분이다 — §F2 는 새 페이지를 등재하라는
+# 규칙이지 모든 HTML 을 검색에 노출하라는 규칙이 아니다.
+# portfolio_tracker.html 은 읽히려고 만든 글이 아니라 실계좌 수량·평단을 담은
+# 조회용 화면이고(§J1 의 첫 단계가 이 데이터를 본다), sitemap 의 목적인
+# "검색 노출"과 용도가 다르다. 파일은 이미 배포돼 있으므로 접근이 막히는 것도
+# 아니고, 등재만 하지 않는다.
+# 여기에 추가할 때는 같은 기준을 통과해야 한다 — "읽는 사람이 아니라 내가 보는
+# 화면인가". 편의로 늘리면 §F2 가 무력해진다.
+SITEMAP_EXEMPT = {"portfolio/portfolio_tracker.html"}
+
 
 def run(*args):
     return subprocess.run(args, capture_output=True, text=True).stdout
@@ -136,7 +147,8 @@ def sync_sitemap_lastmod(pages):
         )
         m = entry.search(text)
         if not m:
-            missing.append(page)
+            if page not in SITEMAP_EXEMPT:
+                missing.append(page)
             continue
         if m.group(2) == real:
             continue
