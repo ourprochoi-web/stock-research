@@ -190,7 +190,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   "headline":"포트폴리오 트래커 — v7.2 Phase 0 실매수 대시보드",
   "description":"v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드",
   "datePublished":"2026-07-14",
-  "dateModified":"2026-08-10",
+  "dateModified":"2026-08-12",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html"}
@@ -205,6 +205,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   <a href="#overview" class="active">개요</a>
   <a href="#holdings">보유 종목</a>
   <a href="#allocation">배분</a>
+  <a href="#lookthrough">룩스루</a>
   <a href="#etf-holdings">ETF 구성</a>
   <a href="#roadmap">로드맵</a>
   <a href="portfolio_evolution_chronicle.html" style="border-style:dashed">크로니클</a>
@@ -292,6 +293,15 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
         <div class="donut-legend" id="donutLegend"></div>
       </div>
     </div>
+  </section>
+
+  <!-- ═══ LOOK-THROUGH ═══ -->
+  <section id="lookthrough">
+    <div class="sec-head">
+      <h2>룩스루 익스포저</h2>
+      <div class="sub">ETF 안에 들어 있는 종목까지 <b>실질 노출</b>로 환산한다 — 이름이 아니라 내용으로 센다</div>
+    </div>
+    <div class="card" id="lookthroughWrap"></div>
   </section>
 
   <!-- ═══ ETF HOLDINGS ═══ -->
@@ -549,6 +559,116 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
     /* ═══ ETF HOLDINGS ═══ */
     var etfH = priceData.etfHoldings || {};
     renderEtfHoldings(etfH);
+
+    /* ═══ LOOK-THROUGH ═══ */
+    renderLookthrough(rows, etfH, totalCurrentValue);
+  }
+
+  /* 룩스루 버킷 — 2026-08-12 신설.
+     "메모리 비중을 늘릴까"를 물었을 때 지금 비중부터 계산이 안 됐다.
+     ETF를 이름으로만 세고 있었기 때문이다(SOL AI반도체TOP2+ 의 3분의 2가 메모리).
+     삼성전자를 통째로 메모리로 세는 것은 DART 2Q26 실적으로 정당화된다 —
+     영업이익이 1년에 19.1배(4.7조 → 89.5조)이고 비메모리를 분기 12조로
+     후하게 잡아도 메모리가 영업이익의 86.6%다. 매출이 아니라 이익 기준으로 센다. */
+  var LOOKTHROUGH = {
+    '메모리': ['SK하이닉스','삼성전자','SK스퀘어','Kioxia Holdings','Seagate','Western Digital','SanDisk'],
+    'AI 전력·기자재': ['효성중공업','HD현대일렉트릭','LS ELECTRIC','LS','대한전선','산일전기','일진전기','가온전선'],
+    '반도체 장비·부품': ['삼성전기','이수페타시스','원익IPS','대덕전자','피에스케이','브이엠','테스','ASML','Intel','AMD','NVIDIA'],
+    'AI SW·기타': ['Snowflake','NASDAQ 100 선물']
+  };
+
+  function renderLookthrough(rows, etfH, totalValue){
+    var wrap = document.getElementById('lookthroughWrap');
+    if(!wrap || !totalValue) return;
+
+    /* 직접 보유 + ETF 룩스루를 버킷별로 합산 */
+    var buckets = {}, hidden = [];
+    Object.keys(LOOKTHROUGH).forEach(function(k){ buckets[k] = { direct:0, viaEtf:0 }; });
+
+    rows.forEach(function(r){
+      var etf = etfH[r.name];
+      if(etf && etf.top){
+        /* ETF — 구성종목 비중만큼 각 버킷에 배분 */
+        etf.top.forEach(function(h){
+          Object.keys(LOOKTHROUGH).forEach(function(k){
+            if(LOOKTHROUGH[k].indexOf(h.name) >= 0){
+              var amt = r.currentValue * h.weight / 100;
+              buckets[k].viaEtf += amt;
+              hidden.push({ etf:r.name, name:h.name, weight:h.weight, amt:amt, bucket:k });
+            }
+          });
+        });
+      } else {
+        /* 직접 보유 */
+        var key = r.name.replace(/\s*\(.*\)\s*/,'').trim();
+        Object.keys(LOOKTHROUGH).forEach(function(k){
+          if(LOOKTHROUGH[k].indexOf(key) >= 0) buckets[k].direct += r.currentValue;
+        });
+      }
+    });
+
+    var order = Object.keys(LOOKTHROUGH).map(function(k){
+      var b = buckets[k]; return { k:k, direct:b.direct, viaEtf:b.viaEtf, tot:b.direct+b.viaEtf };
+    }).filter(function(x){ return x.tot > 0; }).sort(function(a,b){ return b.tot - a.tot; });
+
+    var classified = order.reduce(function(s,x){ return s + x.tot; }, 0);
+    var unclassified = Math.max(0, totalValue - classified);
+    var mem = buckets['메모리'] || {direct:0,viaEtf:0};
+    var memTot = mem.direct + mem.viaEtf;
+
+    var html = '';
+    /* 헤드라인 */
+    html += '<div style="display:flex;flex-wrap:wrap;gap:22px;align-items:baseline;margin-bottom:16px">'
+          + '<div><div style="font-size:12px;color:var(--sub);letter-spacing:.06em">메모리 룩스루 비중</div>'
+          + '<div style="font-size:38px;font-weight:900;line-height:1.1">' + (memTot/totalValue*100).toFixed(1) + '%</div></div>'
+          + '<div style="font-size:13px;color:var(--sub);line-height:1.7">'
+          + '직접 <b>' + fmtWonShort(mem.direct) + '</b> (' + (mem.direct/totalValue*100).toFixed(1) + '%)'
+          + ' &nbsp;+&nbsp; ETF 경유 <b>' + fmtWonShort(mem.viaEtf) + '</b> (' + (mem.viaEtf/totalValue*100).toFixed(1) + '%)'
+          + '<br><span style="color:var(--sub)">ETF를 이름으로만 세면 <b>' + (mem.viaEtf/totalValue*100).toFixed(1) + '%p</b>가 보이지 않는다</span>'
+          + '</div></div>';
+
+    /* 버킷 바 */
+    html += '<table style="width:100%;border-collapse:collapse;font-size:13.5px">';
+    html += '<tr style="color:var(--sub);font-size:12px"><th style="text-align:left;padding:6px 4px">버킷</th><th style="text-align:right;padding:6px 4px">직접</th><th style="text-align:right;padding:6px 4px">ETF 경유</th><th style="text-align:right;padding:6px 4px">합계</th><th style="text-align:right;padding:6px 4px">비중</th></tr>';
+    order.forEach(function(x){
+      html += '<tr style="border-top:1px solid rgba(255,255,255,.07)">'
+           + '<td style="padding:7px 4px"><b>' + x.k + '</b></td>'
+           + '<td style="text-align:right;padding:7px 4px">' + (x.direct ? fmtWonShort(x.direct) : '—') + '</td>'
+           + '<td style="text-align:right;padding:7px 4px">' + (x.viaEtf ? fmtWonShort(x.viaEtf) : '—') + '</td>'
+           + '<td style="text-align:right;padding:7px 4px"><b>' + fmtWonShort(x.tot) + '</b></td>'
+           + '<td style="text-align:right;padding:7px 4px"><b>' + (x.tot/totalValue*100).toFixed(1) + '%</b></td></tr>';
+    });
+    if(unclassified > 0){
+      html += '<tr style="border-top:1px solid rgba(255,255,255,.07);color:var(--sub)">'
+           + '<td style="padding:7px 4px">미분류</td><td colspan="2"></td>'
+           + '<td style="text-align:right;padding:7px 4px">' + fmtWonShort(unclassified) + '</td>'
+           + '<td style="text-align:right;padding:7px 4px">' + (unclassified/totalValue*100).toFixed(1) + '%</td></tr>';
+    }
+    html += '</table>';
+
+    /* ETF 안에 숨어 있던 것 */
+    if(hidden.length){
+      hidden.sort(function(a,b){ return b.amt - a.amt; });
+      html += '<div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.09)">'
+           + '<div style="font-size:12px;color:var(--sub);margin-bottom:8px;letter-spacing:.04em">ETF 안에 들어 있어 종목 목록에는 안 보이는 것</div>'
+           + '<div style="display:flex;flex-wrap:wrap;gap:6px">';
+      hidden.forEach(function(h){
+        html += '<span style="font-size:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:999px;padding:4px 10px">'
+             + h.name + ' <b>' + h.weight.toFixed(1) + '%</b> <span style="color:var(--sub)">· ' + h.etf.replace('KODEX ','').replace('SOL ','').replace('TIME ','') + '</span></span>';
+      });
+      html += '</div></div>';
+    }
+
+    /* 왜 이 화면에 있는가 */
+    html += '<div style="margin-top:14px;font-size:12.5px;color:var(--sub);line-height:1.75;border-top:1px solid rgba(255,255,255,.07);padding-top:12px">'
+         + '<b>왜 이 표가 필요한가</b> — 2026.08.12에 "메모리 비중을 늘릴까"를 물었을 때 <b>지금 비중부터 계산이 안 됐다.</b> '
+         + 'ETF를 이름으로만 세고 있었기 때문이다(SOL AI반도체TOP2+ 의 3분의 2가 메모리, TIME 글로벌AI 의 약 4분의 1이 스토리지).<br>'
+         + '<b>삼성전자를 통째로 메모리로 세는 근거</b>: DART 2Q26 실적 기준 영업이익이 1년에 <b>19.1배</b>(4조 6,761억 → 89조 4,924억)이고, '
+         + '비메모리를 분기 12조로 후하게 잡아도 <b>메모리가 영업이익의 86.6%</b>다. <b>매출이 아니라 이익 기준으로 센다</b> — 주가는 이익을 따라간다. '
+         + '<span style="color:var(--warn,#f59e0b)">반증: 부문별 공시에서 비메모리 분기 영업이익이 15조를 넘으면 이 계산은 과대다.</span>'
+         + '</div>';
+
+    wrap.innerHTML = html;
   }
 
   function renderEtfHoldings(etfH){
