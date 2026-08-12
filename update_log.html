@@ -254,6 +254,46 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">2026.08.12 — 레거시 B안 확정 + 규칙의 구멍 발견: 섹터 상한이 없다</div>
+
+  <div class="upd portfolio">
+    <div class="upd-title"><span class="tag tag-portfolio">PORTFOLIO</span> ✅ <b>미결 판단 종결 — 레거시는 B안(제외)</b>, 다만 처리 방식을 바꿔 일관성을 회복했다</div>
+    <div class="upd-body">
+      <b>사용자 판단으로 삼성전자 레거시 1,300주를 AI 우산 상한 계산에서 제외한다.</b><br><br>
+      <table style="width:100%;border-collapse:collapse;font-size:.95em;margin:8px 0">
+        <tr style="border-bottom:1px solid rgba(255,255,255,.15)"><th style="text-align:left;padding:5px 8px">기준 (총자산 20.50억 = 주식 7.01 + 현금 13.49)</th><th style="text-align:right;padding:5px 8px">AI 우산</th><th style="text-align:right;padding:5px 8px">상한 25%</th></tr>
+        <tr><td style="padding:5px 8px">A안 레거시 포함</td><td style="text-align:right;padding:5px 8px"><b>34.20%</b></td><td style="text-align:right;padding:5px 8px">🔴 초과 +9.20%p</td></tr>
+        <tr style="background:rgba(34,197,94,.08)"><td style="padding:5px 8px"><b>B안 레거시 제외 ← 확정</b></td><td style="text-align:right;padding:5px 8px"><b>17.99%</b></td><td style="text-align:right;padding:5px 8px">✅ 여력 <b>7.01%p = 1.44억</b></td></tr>
+      </table>
+      <b>🔑 8/10이 이 선택에 미리 경고를 걸어 뒀다</b> — <i>"'총수익률은 레거시 착시'라고 경고하면서 상한 계산에서는 빼는 것은 <b>일관되지 않다</b>."</i> <b>그 지적이 맞다. 그래서 "빼는" 대신 처리 방식을 바꿨다.</b><br><br>
+      <b>레거시를 <u>관리 대상 밖 자산으로 분리</u>하고, 수익률·비중·상한을 전부 활성 기준으로 통일한다.</b><br>
+      &nbsp;&nbsp;· 총수익률 정본 = <b>활성 기준 -1.8%</b>(레거시 포함 +49.2%는 참고치)<br>
+      &nbsp;&nbsp;· 비중·상한 = 활성 기준<br>
+      &nbsp;&nbsp;· 레거시는 별도 라인으로 표시하되 <b>어느 계산에도 들어가지 않는다</b><br>
+      <b>문제였던 것은 "빼는 것"이 아니라 "어떤 계산엔 넣고 어떤 계산엔 빼는 것"이었다.</b><br><br>
+      <b style="color:var(--caution)">성립 조건</b>: 레거시가 <b>정말로 관리 대상 밖</b>이어야 한다 — <b>매도 계획이 없고 리밸런싱 대상이 아닐 것.</b> 언젠가 팔 자산이면 상한에서 빼면 안 된다. <b>이 전제가 깨지면 A안으로 돌아간다.</b><br>
+      <b>기록해 둘 사실</b>: 레거시는 총자산의 <b>16.20%</b>로 <b>개별 종목 한도 7.5%의 2배를 넘는다.</b> 관리 대상 밖이면 한도도 적용되지 않지만 <b>크기는 남긴다.</b>
+    </div>
+    <div class="upd-source">기준일 2026-08-12 종가 · 트래커 로직으로 재현 검증</div>
+  </div>
+
+  <div class="upd editorial">
+    <div class="upd-title"><span class="tag tag-editorial">EDITORIAL</span> 🔴 <b>그리고 규칙의 구멍이 드러났다 — 단일 섹터 상한이 없다</b></div>
+    <div class="upd-body">
+      <b>여력이 7.01%p(1.44억) 생겼는데, 활성 포트폴리오의 63.4%가 이미 메모리다.</b><br><br>
+      <b>"AI 우산에 여력이 있다"와 "메모리 집중도가 높다"가 <u>동시에 참</u>인 이유는 —</b><br>
+      &nbsp;&nbsp;· <b>AI 우산 상한 25%</b>는 <b>AI 전체</b>를 묶고<br>
+      &nbsp;&nbsp;· <b>개별 종목 한도 7.5% / ETF 5%</b>는 <b>종목</b>만 보고<br>
+      &nbsp;&nbsp;· <b>그 사이의 "섹터"가 비어 있다</b><br><br>
+      <b>🔑 룩스루로 세기 전에는 이 구멍이 보이지 않았다 — ETF가 섹터 집중을 가려 줬기 때문이다.</b> SOL AI반도체TOP2+ 는 ETF 한도 5% 안에 있지만 <b>그 3분의 2가 메모리</b>이고, 개별 종목으로 세면 안 잡힌다.<br>
+      <b>즉 "모든 한도를 지키면서 단일 섹터에 63%가 쏠릴 수 있다."</b><br><br>
+      <b>단일 섹터 상한을 둘지는 미결 판단으로 남긴다</b>(§J6 — 비중 정책은 사용자가 정한다). <b>다만 이 구멍의 크기는 화면에 붙였다</b> — 트래커 룩스루 섹션에 <b>정책 한도 표</b>를 넣고 메모리 행의 한도 칸에 <b>"없음"</b>이라고 적었다. <b>§H대로 화면에 없으면 이 발견은 오늘로 죽는다.</b>
+    </div>
+    <div class="upd-source">트래커 룩스루 섹션에 정책 한도 표 추가 · 미결 판단 신규 1건</div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">2026.08.12 — [미검증] 2건 당일 해소: 반증 조건이 기각됐고, 손실의 정체가 드러났다</div>
 
   <div class="upd editorial">
