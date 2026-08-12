@@ -9,6 +9,7 @@ import json
 import urllib.request
 import os
 import sys
+import time
 from datetime import datetime, timedelta
 
 # 보유 종목 (portfolio_tracker.html 이 이 이름들을 참조한다 — 이름 변경 금지)
@@ -74,6 +75,10 @@ WATCH_US = {
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
 # 판정되지 않는다 — 저점 시점이 종목마다 다르기 때문이다(A7-0).
 PERIODS = (("1W", 7), ("1M", 30), ("3M", 91), ("6M", 182), ("1Y", 365))
+
+# 호출 간격(초). 2026-08-12에 같은 스크립트를 짧은 간격으로 여러 번 돌렸더니
+# 레이트리밋에 걸려 returns 29/38 · flows 0 으로 **부분 실패**했다.
+PAUSE = 0.15
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT = os.path.join(SCRIPT_DIR, "prices.json")
@@ -161,6 +166,76 @@ def fetch_returns(code, foreign=False):
     return out
 
 
+def fetch_flows(code):
+    """투자자별 순매수와 외국인 보유율 — 국내 종목만 제공된다.
+
+    2026-08-11 추가. **쓰는 규칙을 먼저 정해 두고 넣는다.**
+
+    아카이브는 "무엇이 참인가"(테제)만 판정하고 **"왜 아직 가격에 없는가"를
+    판정할 축이 없었다.** 2026-08-11 방산이 정확히 그 공백이었다 — 실적이
+    컨센 36% 상회인데 3M -15.6%였고, 인용할 수 있는 것은 "자금이 먼저 다른
+    섹터로 간다"는 ③ 전문가 판단뿐이었다. 수급은 그것을 ①로 바꾼다.
+
+    **그러나 수급을 테제로 승격시키면 안 된다(§E3).** "외국인이 팔았다"는
+    ① 사실이지만 "그래서 하락한다"는 ③이고 대부분 **사후 서사**가 된다.
+    판정할 수 없는 트리거는 만들지 않기로 했으므로 용도를 좁힌다:
+
+        수급은 T(테제)에 넣지 않는다.
+        이미 판정된 테제가 **가격과 어긋날 때만** 기록한다.
+        가격과 수급이 같은 방향이면 적지 않는다 — 정보가 없다(§B4와 같은 논리).
+
+    실측이 그 이유를 보여준다(2026-08-11, 10거래일):
+      SK하이닉스 1M -33.7% / 외국인 -268만주·보유율 -1.34%p  → 방향 일치, 정보 없음
+      한화에어로 1M +12.1% / 외국인 +6만주·보유율 +0.21%p    → 방향 일치, 정보 없음
+      현대로템   1M -19.6% / 외국인 **+87만주·보유율 +0.83%p** → **어긋남. 여기가 정보다**
+
+    이 함수는 사실만 모은다. 무엇을 의미하는지는 사람이 판정한다.
+    """
+    url = f"https://m.stock.naver.com/api/stock/{code}/trend"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        time.sleep(PAUSE)
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            rows = json.loads(resp.read())
+    except Exception:
+        return None
+    if not rows:
+        return None
+
+    def q(v):
+        try:
+            return int(str(v).replace(",", "").replace("+", ""))
+        except (TypeError, ValueError):
+            return 0
+
+    def pct(v):
+        try:
+            return float(str(v).replace("%", ""))
+        except (TypeError, ValueError):
+            return None
+
+    dates = sorted(str(r.get("bizdate", "")) for r in rows if r.get("bizdate"))
+    if not dates:
+        return None
+    newest = max(rows, key=lambda r: str(r.get("bizdate", "")))
+    oldest = min(rows, key=lambda r: str(r.get("bizdate", "")))
+    hr_new, hr_old = pct(newest.get("foreignerHoldRatio")), pct(oldest.get("foreignerHoldRatio"))
+
+    out = {
+        "days": len(rows),
+        "from": f"{dates[0][:4]}-{dates[0][4:6]}-{dates[0][6:]}",
+        "to": f"{dates[-1][:4]}-{dates[-1][4:6]}-{dates[-1][6:]}",
+        "foreign": sum(q(r.get("foreignerPureBuyQuant")) for r in rows),
+        "organ": sum(q(r.get("organPureBuyQuant")) for r in rows),
+        "individual": sum(q(r.get("individualPureBuyQuant")) for r in rows),
+    }
+    if hr_new is not None:
+        out["holdRatio"] = hr_new
+        if hr_old is not None:
+            out["holdRatioChange"] = round(hr_new - hr_old, 2)
+    return out
+
+
 def fetch_us(sym):
     """해외 종목 — 국내와 엔드포인트가 다르다."""
     url = f"https://api.stock.naver.com/stock/{sym}/basic"
@@ -233,6 +308,13 @@ def main():
         if r:
             returns[name] = r
 
+    # 수급 — 국내만 제공된다. 쓰는 규칙은 fetch_flows 주석에 있다.
+    flows = {}
+    for name, code in {**TICKERS, **WATCH}.items():
+        fl = fetch_flows(code)
+        if fl:
+            flows[name] = fl
+
     # Preserve existing etfHoldings if present
     existing_holdings = {}
     if os.path.exists(OUTPUT):
@@ -252,6 +334,35 @@ def main():
     # 보유 종목은 portfolio_tracker.html 이 직접 참조하므로 하나라도 빠지면
     # 쓰지 않고 실패시킨다. **낡은 파일이 남는 편이 빈 파일보다 낫다** —
     # 낡은 것은 기준일로 드러나지만 빈 것은 화면에서 그냥 사라진다.
+    # 섹션이 기존보다 크게 줄면 그 섹션만 기존 값을 유지한다.
+    # 2026-08-12 추가 — 어제 만든 가드는 "전부 실패"만 막았고 **부분 실패는
+    # 그대로 통과했다**. 레이트리밋으로 returns 29/38 · flows 0 이 됐는데
+    # 보유 종목 시세는 멀쩡해서 파일이 덮였다. 같은 원칙을 섹션마다 적용한다 —
+    # **낡은 값이 남는 편이 사라지는 것보다 낫다.** 단 어느 섹션이 낡았는지
+    # 파일에 남긴다. 낡은 것을 최신인 척 두는 것이 §A5 가 금지하는 것이다.
+    stale = {}
+    if os.path.exists(OUTPUT):
+        try:
+            with open(OUTPUT, "r", encoding="utf-8") as fh:
+                prev = json.load(fh)
+        except Exception:
+            prev = {}
+        for key, fresh in (("returns", returns), ("flows", flows),
+                           ("fundamentals", fundamentals), ("us", us)):
+            old = prev.get(key) or {}
+            if len(old) > len(fresh) * 1.2 and len(old) > 0:
+                print(f"  ⚠ {key}: {len(fresh)}건만 수집됨(기존 {len(old)}건) "
+                      f"— 기존 값을 유지합니다")
+                if key == "returns":
+                    returns = old
+                elif key == "flows":
+                    flows = old
+                elif key == "fundamentals":
+                    fundamentals = old
+                else:
+                    us = old
+                stale[key] = prev.get("updated", "?")
+
     missing = [n for n in TICKERS if n not in prices]
     if missing or not updated:
         print(f"\n✗ 중단 — 파일을 쓰지 않습니다.")
@@ -264,7 +375,9 @@ def main():
 
     result = {"updated": updated, "updatedTime": updated_time,
               "prices": prices, "fundamentals": fundamentals,
-              "returns": returns, "us": us}
+              "returns": returns, "flows": flows, "us": us}
+    if stale:
+        result["staleSections"] = stale  # 이 섹션들은 updated 날짜가 아니다
     if existing_holdings:
         result["etfHoldings"] = existing_holdings
 
@@ -276,7 +389,7 @@ def main():
     print(f"\n완료: {OUTPUT}")
     print(f"기준일: {updated} {updated_time}")
     print(f"수집: 국내 시세 {len(prices)} · 컨센 {len(fundamentals)} · "
-          f"해외 {len(us)} · 기간수익률 {len(returns)}/{total}")
+          f"해외 {len(us)} · 기간수익률 {len(returns)}/{total} · 수급 {len(flows)}")
     return 0
 
 
