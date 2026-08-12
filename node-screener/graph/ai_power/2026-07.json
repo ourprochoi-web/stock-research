@@ -1,0 +1,3301 @@
+{
+  "meta": {
+    "chain": "ai_power",
+    "year_month": "2026-07",
+    "source_files": [
+      "research_ai_power_companies_global.md",
+      "research_ai_power_companies_kr.md",
+      "research_ai_power_part12_overview.md",
+      "research_ai_power_part3_investment.md",
+      "research_ai_power_themes_AB.md",
+      "research_ai_power_themes_CD.md",
+      "research_ai_power_themes_extra.md",
+      "research_gas_turbine_ai_power.md",
+      "research_smr_nuclear_ai_power.md"
+    ],
+    "created": null
+  },
+  "functions": [
+    {
+      "id": "fn_gas_turbine",
+      "name": "가스터빈 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_power",
+      "name": "원전 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_ppa",
+      "name": "원전 PPA",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_ltsa_service",
+      "name": "가스터빈 장기서비스(LTSA)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_ups_pdu",
+      "name": "UPS·배전반",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_800v_dc",
+      "name": "800V DC 아키텍처",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_sofc",
+      "name": "SOFC 연료전지",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_btm_generation",
+      "name": "자가발전(BTM)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_liquid_cooling",
+      "name": "액체냉각(수냉·액침)",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_hvdc",
+      "name": "HVDC 송전",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_ehv_transformer",
+      "name": "초고압 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_cross_valuation",
+      "name": "크로스 밸류에이션 분석",
+      "chain": "ai_power",
+      "stage": "투자 프레임워크"
+    },
+    {
+      "id": "fn_smr_manufacturing",
+      "name": "SMR 기자재 제조",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_steam_turbine",
+      "name": "스팀터빈·발전기",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_power_cable",
+      "name": "전력케이블",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_grid_interconnection",
+      "name": "계통연계",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_nuclear_engineering",
+      "name": "원전 설계·엔지니어링",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_cooling_fluid",
+      "name": "냉각 유체",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_smr",
+      "name": "소형모듈원전(SMR)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_renewable_energy",
+      "name": "재생에너지(태양광·풍력)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_onsite_gas_generation",
+      "name": "온사이트 가스 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_circuit_breaker",
+      "name": "차단기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_power_semiconductor",
+      "name": "전력반도체(SiC/GaN)",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_hvdc_busway",
+      "name": "HVDC 버스웨이·800V DC",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_air_cooling",
+      "name": "공냉 냉각",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_distribution_transformer",
+      "name": "배전 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_dc_power_infra",
+      "name": "DC 전력 인프라 통합",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_dc_nimby",
+      "name": "DC 모라토리엄·NIMBY",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_hvdc_transmission",
+      "name": "HVDC 장거리 송전 프로젝트",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_rare_earth_supply",
+      "name": "희토류 공급망",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_goes_supply",
+      "name": "방향성 전기강판(GOES)",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_nearshoring",
+      "name": "에너지 장비 니어쇼어링",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_bess",
+      "name": "그리드 스케일 BESS",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_long_duration_ess",
+      "name": "장주기 에너지저장",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_iron_air_battery",
+      "name": "철공기전지(Iron-Air)",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_ppa_brokerage",
+      "name": "PPA 중개·구조화",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_kr_power_policy",
+      "name": "한국 전력정책",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_capacity_market",
+      "name": "용량시장",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_energy_trading",
+      "name": "에너지 거래 플랫폼",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_gas_turbine_oem",
+      "name": "가스터빈 제조 (OEM)",
+      "chain": "ai_power",
+      "stage": "발전 장비"
+    },
+    {
+      "id": "fn_reciprocating_engine",
+      "name": "왕복엔진 제조",
+      "chain": "ai_power",
+      "stage": "발전 장비"
+    },
+    {
+      "id": "fn_fuel_cell",
+      "name": "연료전지 자가발전",
+      "chain": "ai_power",
+      "stage": "대안 발전"
+    },
+    {
+      "id": "fn_ups_distribution",
+      "name": "UPS·배전",
+      "chain": "ai_power",
+      "stage": "송배전·변압기"
+    },
+    {
+      "id": "fn_cooling_power",
+      "name": "냉각 + 전력",
+      "chain": "ai_power",
+      "stage": "송배전·변압기"
+    },
+    {
+      "id": "fn_transformer",
+      "name": "변압기 제조",
+      "chain": "ai_power",
+      "stage": "송배전·변압기"
+    },
+    {
+      "id": "fn_ultra_high_voltage_transformer",
+      "name": "초고압 변압기",
+      "chain": "ai_power",
+      "stage": "송배전·변압기"
+    },
+    {
+      "id": "fn_cable_transmission",
+      "name": "전선·케이블·송전 인프라",
+      "chain": "ai_power",
+      "stage": "송배전·변압기"
+    },
+    {
+      "id": "fn_epc",
+      "name": "EPC·개발",
+      "chain": "ai_power",
+      "stage": "EPC·개발"
+    },
+    {
+      "id": "fn_dc_development",
+      "name": "DC 개발",
+      "chain": "ai_power",
+      "stage": "EPC·개발"
+    },
+    {
+      "id": "fn_hyperscaler",
+      "name": "하이퍼스케일러 (최종 수요)",
+      "chain": "ai_power",
+      "stage": "최종 수요"
+    },
+    {
+      "id": "fn_ai_lab",
+      "name": "AI Labs (최종 수요)",
+      "chain": "ai_power",
+      "stage": "최종 수요"
+    },
+    {
+      "id": "fn_gas_supply",
+      "name": "가스 공급",
+      "chain": "ai_power",
+      "stage": "가스 공급"
+    },
+    {
+      "id": "fn_behind_the_meter",
+      "name": "Behind-the-Meter 발전",
+      "chain": "ai_power",
+      "stage": "대안 발전"
+    },
+    {
+      "id": "fn_smr_development",
+      "name": "SMR 개발·제조",
+      "chain": "ai_power",
+      "stage": "원자력 발전"
+    },
+    {
+      "id": "fn_large_nuclear_operation",
+      "name": "대형 원전 운영",
+      "chain": "ai_power",
+      "stage": "원자력 발전"
+    },
+    {
+      "id": "fn_nuclear_fuel_supply",
+      "name": "핵연료 공급 (HALEU/TRISO)",
+      "chain": "ai_power",
+      "stage": "연료 공급"
+    },
+    {
+      "id": "fn_uranium_supply",
+      "name": "우라늄 채굴·공급",
+      "chain": "ai_power",
+      "stage": "연료 공급"
+    },
+    {
+      "id": "fn_hyperscaler_demand",
+      "name": "하이퍼스케일러 (최종 수요)",
+      "chain": "ai_power",
+      "stage": "최종 수요"
+    },
+    {
+      "id": "fn_smr_policy",
+      "name": "SMR 정책·규제",
+      "chain": "ai_power",
+      "stage": "정책·규제"
+    },
+    {
+      "id": "fn_utility_operation",
+      "name": "유틸리티 운영",
+      "chain": "ai_power",
+      "stage": "전력 운영"
+    },
+    {
+      "id": "fn_advanced_reactor",
+      "name": "선진 원자로 (Gen IV)",
+      "chain": "ai_power",
+      "stage": "원자력 발전"
+    },
+    {
+      "id": "fn_smr_epc",
+      "name": "SMR 건설 (EPC)",
+      "chain": "ai_power",
+      "stage": "EPC·건설"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_ge_vernova",
+      "name": "GE Vernova",
+      "ticker": "GEV",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "매출 | $9.3B | $8.0B | +16%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ltsa_service",
+          "share": null,
+          "evidence": [
+            "서비스 매출 비중: **~68%** (2023 기준)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "Electrification 부문 수주 $7.1B (+86% organic)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "시가총액 | **$266.5B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": [
+            "가스터빈 세계 1위",
+            "GE Vernova (대형 가스터빈 1위)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_constellation",
+      "name": "Constellation Energy",
+      "ticker": "CEG",
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "용량 | **835 MWe**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ppa_brokerage",
+          "share": null,
+          "evidence": [
+            "PPA 직접 제공 + 유틸리티 서비스"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_vistra",
+      "name": "Vistra",
+      "ticker": "VST",
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "**Meta** | **2,609 MW** | 20년"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "Cogentrix 인수 규모 | **$4.7B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "EV/EBITDA | **10.8x**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_large_nuclear_operation",
+          "share": null,
+          "evidence": [
+            "Vistra**: 기존 원전 전력 계약 체결"
+          ],
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "id": "co_vertiv",
+      "name": "Vertiv",
+      "ticker": "VRT",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "NVIDIA의 **공식 레퍼런스 아키텍처 파트너**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Vertiv (통합 1위)"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E | **~50x** (50.41)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cooling_power",
+          "share": null,
+          "evidence": [
+            "Vertiv (냉각 + 전력)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_bloom_energy",
+      "name": "Bloom Energy",
+      "ticker": "BE",
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "총 매출 | **$751.1M** | $326.0M | **+130%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "계통 연계 없이 온사이트 발전 가능"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "전 제품 라인 800V DC 레디"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_fuel_cell",
+          "share": 0.14,
+          "evidence": [
+            "Bloom Energy (SOFC 연료전지, 14% M/S)",
+            "DC 전력 M/S | **14%** (behind-the-meter)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_behind_the_meter",
+          "share": 0.14,
+          "evidence": [
+            "DC 전력 M/S | **14%** (behind-the-meter)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_eaton",
+      "name": "Eaton",
+      "ticker": "ETN",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Boyd Thermal 인수 — 액체냉각 통합"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 레퍼런스 아키텍처 출시"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_dc_power_infra",
+          "share": null,
+          "evidence": [
+            "Eaton (DC 전력 인프라 1위)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_schneider",
+      "name": "Schneider Electric",
+      "ticker": "SU.PA",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "**+11.2% organic**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Motivair (미국 액체냉각 전문사)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_distribution",
+          "share": null,
+          "evidence": [
+            "Schneider Electric (UPS · 배전)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_microsoft",
+      "name": "Microsoft",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "20년 PPA 계약자 | **Microsoft** (데이터센터 전력)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": [
+            "Hyperscaler (MS, Meta, Amazon, Oracle, Google)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": [
+            "Constellation Energy가 Microsoft와 **20년** PPA 체결"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_meta",
+      "name": "Meta",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "**Meta** | **2,609 MW** | 20년 | Comanche"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": [
+            "Hyperscaler (MS, Meta, Amazon, Oracle, Google)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": [
+            "Meta — 6.6GW 원자력 확보 계획",
+            "Oklo / TerraPower / Vistra**와 총 **6.6GW** 원자력 전력 계약"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_amazon",
+      "name": "Amazon",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "(AWS)** | **1,200 MW** | 20년 | Comanche"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": [
+            "Hyperscaler (MS, Meta, Amazon, Oracle, Google)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_oracle",
+      "name": "Oracle",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Oracle의 2.45 GW 오프그리드 AI 캠퍼스(뉴멕시코)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "연료전지 BTM 집중 전략"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": [
+            "Hyperscaler (MS, Meta, Amazon, Oracle, Google)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": [
+            "3기 SMR로 구동되는 **1GW+** 데이터센터 구축 계획 발표"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_nvidia",
+      "name": "NVIDIA",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "NVIDIA Rubin Ultra 플랫폼 기반"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_doosan_enerbility",
+      "name": "두산에너빌리티",
+      "ticker": "034020",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "연결 매출 | 4조 2,611억원 | +13.7%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_steam_turbine",
+          "share": null,
+          "evidence": [
+            "**370MW급 스팀터빈·발전기 4기** 공급계약"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "체코 두코바니(스팀터빈 3,200억)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_manufacturing",
+          "share": null,
+          "evidence": [
+            "Rolls-Royce SMR 핵심 기자재 파트너 공식 선정"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "12개월 선행 P/B | **8.69배**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "Rolls-Royce SMR 합류 (Wylfa·Temelín)"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": [
+            "두산에너빌리티 (K-가스터빈, 380MW)",
+            "한국 유일의 대형 가스터빈 제조사"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hd_hyundai",
+      "name": "HD현대일렉트릭",
+      "ticker": "267260",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "매출 | 1조 365억원"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Target PER | **36.2배**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nearshoring",
+          "share": null,
+          "evidence": [
+            "$200M 투자, CAPA"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ultra_high_voltage_transformer",
+          "share": null,
+          "evidence": [
+            "초고압 변압기, 북미 시장"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_ls_electric",
+      "name": "LS일렉트릭",
+      "ticker": "010120",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "매출 | 1조 3,766억원 | **+33%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "배전반 매출 | 3,563억원 | +79%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "**누적 DC향 수주** | **~1조원+**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Target PER 55배, 목표주가 100만원"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nearshoring",
+          "share": null,
+          "evidence": [
+            "인프라 거점 | **2026년 완공** | - HD현대일렉트릭 미국 매출:"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_transformer",
+          "share": null,
+          "evidence": [
+            "LS일렉트릭 (한국 · 변압기)",
+            "DC 전력 인프라, 변압기, 배전"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kepco",
+      "name": "한전(KEPCO)",
+      "ticker": "015760",
+      "functions": [
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "**영업이익** | **13조 5,200억원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "부채 205조 구조 → EV 기준 평가 시 고부채 디스카운트"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "fn": "fn_kr_power_policy",
+          "share": null,
+          "evidence": [
+            "------| | 총 부채 | **206.2조 원** ($139.2B) | Korea Herald | | 일일 이자 비용"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kepco_enc",
+      "name": "한전기술",
+      "ticker": "052690",
+      "functions": [
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "매출 | **5,188억원** | -8.9%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "2027E PER | **약 30배**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "한전·한전기술 (그리드 뿌리)"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    {
+      "id": "co_taihan",
+      "name": "대한전선",
+      "ticker": "001440",
+      "functions": [
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "매출 | **1조 834억원** | **+26.6%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "640kV급 HVDC"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "**132.74배** (업종 평균 83.61배 대비 프리미엄)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_sk_enmove",
+      "name": "SK엔무브",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "GRC(Green Revolution Cooling)에 **2,500만 달러(약 334억원) 지분 투자**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_siemens_energy",
+      "name": "Siemens Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "판매 대수: 100기 (FY24) → **194기 (FY25)**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": [
+            "Siemens Energy (유럽 1위)",
+            "유럽 최대 에너지 장비"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_nuscale",
+      "name": "NuScale Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "NRC 설계인증 1호. 모듈 77 MWe"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_terrapower",
+      "name": "TerraPower",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "Natrium SFR 345 MW"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "NRC가 Part 50 건설 허가 승인",
+            "나트륨 냉각 고속로 345MW + 용융염 에너지 저장 시스템"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_advanced_reactor",
+          "share": null,
+          "evidence": [
+            "40년 이상 만에 최초의 비경수로 상업 원자로"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kairos_power",
+      "name": "Kairos Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "불소염냉각 고온로. Hermes 테스트로 건설 착수"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "Kairos Power와 세계 최초 기업-SMR 전력구매계약(PPA) 체결",
+            "Kairos의 KP-FHR 기술은 TRISO 연료 + 불화염(FLiBe) 용융염 냉각 방식"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_advanced_reactor",
+          "share": null,
+          "evidence": [
+            "NRC 건설 허가를 받은 **최초의 선진 원자로**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_x_energy",
+      "name": "X-energy",
+      "ticker": "XE",
+      "functions": [
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "Xe-100 HTGR 320 MW"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "Nasdaq 상장 (티커: XE). IPO 가격 **$23/주**",
+            "4-유닛 Xe-100 HTGR 건설 추진"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_fuel_supply",
+          "share": null,
+          "evidence": [
+            "TRISO-X 연료 공장 (TX-1)",
+            "미국 최초 선진핵연료 상업 제조 시설 건설 중"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_infineon",
+      "name": "Infineon",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "NVIDIA MGX 에코시스템 합류 (2026.05)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_wolfspeed",
+      "name": "Wolfspeed",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "세계 최초 10kV SiC MOSFET (2026.03.06)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_stmicro",
+      "name": "STMicroelectronics",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": 0.326,
+          "evidence": [
+            "STMicro 32.6% (#1)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_onsemi",
+      "name": "onsemi",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "onsemi (#2)"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_williams",
+      "name": "Williams Companies",
+      "ticker": "WMB",
+      "functions": [
+        {
+          "fn": "fn_onsite_gas_generation",
+          "share": null,
+          "evidence": [
+            "Williams $5.1B"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "~ 2028년 | | | 총 합산 ISO 용량 | **2,500 MW+** | | | 계약 기간 | 10~12.5년 장기"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_rolls_royce_smr",
+      "name": "Rolls-Royce SMR",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "470 MWe PWR."
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "**470MW** PWR 설계",
+            "ONR 설계 평가(GDA) 3단계 진행 중"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_holtec",
+      "name": "Holtec International",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "Holtec International | | 출력 | 800 MWe | | 재가동 목표 | 당초 2025년 말 → **2026년"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "DOE로부터 **$4억** \"Tier 1 First Mover\" 자금 수상",
+            "SMR-300 이중유닛 **680MWe** (PIONEER 1&2)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_khnp",
+      "name": "한국수력원자력(KHNP)",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "선정(2024.07). EPC 계약 체결. 총 **기당 $8.6B** | | 착공 예정 | **2029년** | | 첫"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr",
+          "share": null,
+          "evidence": [
+            "170 MWe 일체형 PWR"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "KHNP/KAERI 컨소시엄 개발"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_edf",
+      "name": "EDF",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "6기 EPR2 신규 건설"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_google",
+      "name": "Google",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "Kairos Power"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_long_duration_ess",
+          "share": null,
+          "evidence": [
+            "Form Energy 30 GWh"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": [
+            "Hyperscaler (MS, Meta, Amazon, Oracle, Google)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": [
+            "Google이 Kairos Power와 세계 최초 기업-SMR 전력구매계약(PPA) 체결"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hitachi",
+      "name": "Hitachi",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_manufacturing",
+          "share": null,
+          "evidence": [
+            "BWRX-300 내부 부품 자국 공급"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_delta_electronics",
+      "name": "Delta Electronics",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 배치 이미"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_trane",
+      "name": "Trane Technologies",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Trane → LiquidStack"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ecolab",
+      "name": "Ecolab",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Ecolab → CoolIT Systems"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_invenergy",
+      "name": "Invenergy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hvdc_transmission",
+          "share": null,
+          "evidence": [
+            "Grain Belt Express"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_quanta_services",
+      "name": "Quanta Services",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hvdc_transmission",
+          "share": null,
+          "evidence": [
+            "Quanta Services + Kiewit Energy에"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_3m",
+      "name": "3M",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "2025년 말 생산 중단"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_catl",
+      "name": "CATL",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_bess",
+          "share": 0.304,
+          "evidence": [
+            "글로벌 BESS 시장 점유율"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_byd",
+      "name": "BYD",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_bess",
+          "share": null,
+          "evidence": [
+            "BYD가 2025년 출하량 기준으로 **Tesla를 추월하여 글로벌"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_tesla_energy",
+      "name": "Tesla Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_bess",
+          "share": null,
+          "evidence": [
+            "2025 ESS 배포"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_energy_trading",
+          "share": null,
+          "evidence": [
+            "AI 기반 에너지 거래 플랫폼"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_lg_energy_solution",
+      "name": "LG에너지솔루션",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_bess",
+          "share": null,
+          "evidence": [
+            "2026 ESS 셀 생산 목표"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_samsung_sdi",
+      "name": "삼성SDI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_bess",
+          "share": null,
+          "evidence": [
+            "영업손실 1.72조 원"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_fluence",
+      "name": "Fluence Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_bess",
+          "share": null,
+          "evidence": [
+            "FY2026 매출 가이던스"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_form_energy",
+      "name": "Form Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_iron_air_battery",
+          "share": null,
+          "evidence": [
+            "100시간 방전 가능"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_long_duration_ess",
+          "share": null,
+          "evidence": [
+            "웨스트버지니아 웨어턴 양산 시설 가동"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_levelten",
+      "name": "LevelTen Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ppa_brokerage",
+          "share": null,
+          "evidence": [
+            "PPA 가격 인덱스 발행, 마켓플레이스 운영"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hyosung",
+      "name": "효성중공업",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nearshoring",
+          "share": null,
+          "evidence": [
+            "| | **효성중공업** | 멤피스, 테네시 | 연 130기 → 200기(2026 초) → **250기+**(2027)."
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "미국 최대 규모 목표"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_sk_es",
+      "name": "SK E&S",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "국내 최대 민간 LNG 발전사"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_doosan_fuelcell",
+      "name": "두산퓨얼셀",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "AI DC 자가발전용 SOFC·PAFC"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_posco",
+      "name": "POSCO",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_goes_supply",
+          "share": null,
+          "evidence": [
+            "POSCO·Nippon Steel"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_crusoe",
+      "name": "Crusoe Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_iron_air_battery",
+          "share": null,
+          "evidence": [
+            "Form Energy + Crusoe 12 GWh 계약"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "AI 데이터센터 전용 장주기 ESS"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_mitsubishi_power",
+      "name": "Mitsubishi Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": [
+            "Mitsubishi Power (효율 1위)",
+            "M701JAC: 세계 최고 효율 GTCC 터빈"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_caterpillar",
+      "name": "Caterpillar",
+      "ticker": "CAT",
+      "functions": [
+        {
+          "fn": "fn_reciprocating_engine",
+          "share": null,
+          "evidence": [
+            "Caterpillar (왕복엔진 + 에어로데리버티브)",
+            "G3500 시리즈: DC 전용 왕복엔진 플랫폼"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_fuelcell_energy",
+      "name": "FuelCell Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_fuel_cell",
+          "share": null,
+          "evidence": [
+            "FuelCell Energy (MCFC)"
+          ],
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "id": "co_ls_eco_energy",
+      "name": "LS에코에너지",
+      "ticker": "229640",
+      "functions": [
+        {
+          "fn": "fn_cable_transmission",
+          "share": null,
+          "evidence": [
+            "전선·케이블, 송전 인프라"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_bechtel",
+      "name": "Bechtel",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_epc",
+          "share": null,
+          "evidence": [
+            "Bechtel, Fluor (대형 EPC)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_fluor",
+      "name": "Fluor",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_epc",
+          "share": null,
+          "evidence": [
+            "Bechtel, Fluor (대형 EPC)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_nscale",
+      "name": "Nscale",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_dc_development",
+          "share": null,
+          "evidence": [
+            "DC 개발사 (Nscale, QTS, Vantage 등)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_openai",
+      "name": "OpenAI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ai_lab",
+          "share": null,
+          "evidence": [
+            "AI Labs (OpenAI, Anthropic, xAI)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_anthropic",
+      "name": "Anthropic",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ai_lab",
+          "share": null,
+          "evidence": [
+            "AI Labs (OpenAI, Anthropic, xAI)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_xai",
+      "name": "xAI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ai_lab",
+          "share": null,
+          "evidence": [
+            "AI Labs (OpenAI, Anthropic, xAI)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_tva",
+      "name": "TVA",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_utility_operation",
+          "share": null,
+          "evidence": [
+            "TVA 그리드에 전력 공급하며",
+            "Kairos-TVA-Google 3자 PPA 체결"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_aws",
+      "name": "AWS",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": [
+            "AWS가 Talen Energy의 Susquehanna 원전"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_talen_energy",
+      "name": "Talen Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_large_nuclear_operation",
+          "share": null,
+          "evidence": [
+            "Talen Energy의 Susquehanna 원전(총 **1.92GW** PWR)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_constellation_energy",
+      "name": "Constellation Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_large_nuclear_operation",
+          "share": null,
+          "evidence": [
+            "Constellation Energy가 Microsoft와 **20년** PPA 체결",
+            "원전 총 용량 약 **31.7GW**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_nuscale_power",
+      "name": "NuScale Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "NuScale Power Module이 미국 최초 SMR 설계 인증(SDA) 획득",
+            "상향 출력 **77MWe** (US460) 설계도 NRC 승인 완료"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_oklo",
+      "name": "Oklo",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "Pike County, Ohio에 **1.2GW** 원자력 캠퍼스 개발",
+            "Aurora Powerhouse 75MW 원자로 16기"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ge_hitachi",
+      "name": "GE Hitachi",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "**BWRX-300** (300MW BWR) 건설",
+            "서방 세계 최초 상업 그리드 규모 SMR"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_opg",
+      "name": "Ontario Power Generation",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_utility_operation",
+          "share": null,
+          "evidence": [
+            "Ontario Power Generation이 Darlington 부지에"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_dow_chemical",
+      "name": "Dow Chemical",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": [
+            "Dow Chemical 프로젝트",
+            "Texas Seadrift 석유화학 플랜트에 4-유닛 Xe-100"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_centrus",
+      "name": "Centrus",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_fuel_supply",
+          "share": null,
+          "evidence": [
+            "Centrus가 HALEU 공급"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_cnnc",
+      "name": "CNNC",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "**125MWe** 가압경수로(PWR). CNNC 개발"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kaeri",
+      "name": "KAERI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": [
+            "KHNP/KAERI 컨소시엄 개발"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_constellation",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "용량 | **835 MWe** | — | | 투자 규모 | **$1.6B**",
+        "Microsoft 20년",
+        "TMI 835 MW"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "TMI 재가동 원전 전력 공급, PJM 2031 지연 가능"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**Meta** | **2,609 MW** | 20년 | Comanche",
+        "Meta 6.6 GW 원전 포트폴리오 일부",
+        "Vistra**: 기존 원전 전력 계약 체결 (규모 미공개)"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Comanche Peak + PJM 원전 전력"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_amazon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "(AWS)** | **1,200 MW** | 20년 | Comanche"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Comanche Peak 원전 전력"
+    },
+    {
+      "from": "co_vertiv",
+      "to": "co_nvidia",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "공식 레퍼런스 아키텍처 파트너",
+        "Vertiv + NVIDIA 공동 개발 완료"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "800V DC 아키텍처 공동 개발"
+    },
+    {
+      "from": "co_bloom_energy",
+      "to": "co_oracle",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Oracle 계약 (2026) | **2.8 GW**",
+        "2.8 GW SOFC",
+        "**Oracle** | Stargate Jupiter, 뉴멕시코 | Bloom Energy"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "2.45 GW 오프그리드 AI 캠퍼스 전력"
+    },
+    {
+      "from": "co_vertiv",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Vertiv·Schneider와 직접 경쟁",
+        "전력+냉각 원스톱"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "DC 전력 인프라 경쟁"
+    },
+    {
+      "from": "co_eaton",
+      "to": "co_schneider",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "인수 금액 | **$850M** (75% 지분)",
+        "Boyd Thermal $9.55B 인수"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "액체냉각 M&A 경쟁"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_constellation",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Forward P/E",
+        "발전 유틸리티 중 가장 저평가"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "발전 유틸리티 동종 비교"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_hd_hyundai",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "GE Vernova·Siemens Energy의 가스터빈 증산"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "Stage 01-02 한국 전력기기 경쟁 관계"
+    },
+    {
+      "from": "co_hd_hyundai",
+      "to": "co_ls_electric",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "초고압 변압기 시장에서 HD현대일렉트릭과 직접 경쟁",
+        "765kV 초고압 변압기 북미"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "한국 초고압 변압기 3사 경쟁 관계"
+    },
+    {
+      "from": "co_kepco_enc",
+      "to": "co_doosan_enerbility",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "두코바니 5·6호기 스팀터빈·발전기·터빈제어시스템"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "한전기술 A/E 설계 + 두산 기자재 공급 협력"
+    },
+    {
+      "from": "co_kepco",
+      "to": "co_kepco_enc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "한전기술 | Stage 01 원전설계"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "한수원-한전기술 원전 A/E 파트너 구조"
+    },
+    {
+      "from": "co_ls_electric",
+      "to": "co_bloom_energy",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "블룸에너지 DC용 연료전지 설비"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "LS일렉트릭이 Bloom Energy DC용 배전반·연계 설비 공급"
+    },
+    {
+      "from": "co_taihan",
+      "to": "co_kepco",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "전북 새만금~경기 화성, 약 220km"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "대한전선 서해안 HVDC 에너지 고속도로 공급 유력"
+    },
+    {
+      "from": "co_constellation",
+      "to": "co_ge_vernova",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "Calpine **$21.84B** 인수(SEC 8-K) → 합산 **60 GW**"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Constellation은 발전자산 보유사, GEV는 터빈 공급사"
+    },
+    {
+      "from": "co_bloom_energy",
+      "to": "co_vertiv",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "800V DC 에코시스템 H2 2026",
+        "800V DC 에코시스템"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "둘 다 800V DC 생태계 참여"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_ge_vernova",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "380MW급 가스터빈 7기 수주 (~₩1.2T",
+        "(업사이즈). 시초가 $30.11, 종가 $29.20 (+27%) | | 현재 주가 | ~$21.40 (IPO 후 하락."
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "두산은 자체 가스터빈 제조, GEV와 경쟁 관계"
+    },
+    {
+      "from": "co_hd_hyundai",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "HD현대 OPM(24.9%) > Eaton 세그먼트(22.7%)"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "동일 밸류체인 경쟁 관계(송배전)"
+    },
+    {
+      "from": "co_ls_electric",
+      "to": "co_schneider",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "LS일렉(55x) vs Schneider(26.4x)"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "동일 밸류체인 경쟁 관계, PER 2배 격차"
+    },
+    {
+      "from": "co_vertiv",
+      "to": "co_bloom_energy",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "800V DC 전환은 2H 2026~2027년 초"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "800V DC 생태계 동시 참여"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_rolls_royce_smr",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "핵심 기자재 파트너 선정"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-05",
+      "substitutable": false,
+      "note": "RPV 등 핵섬 주요 기자재 사전제작"
+    },
+    {
+      "from": "co_kairos_power",
+      "to": "co_google",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "공급) | | Google 계약 | 6~7기 SMR로 **500 MW 전력 공급** (2030년 첫 완공, 2035년 전체)",
+        "Google이 Kairos Power와 세계 최초 기업-SMR 전력구매계약(PPA) 체결",
+        "총 **500MW** 원자력 용량을 2035년까지"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "2030년 첫 완공, 2035년 전체"
+    },
+    {
+      "from": "co_x_energy",
+      "to": "co_amazon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "2039년까지 최대"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "시리즈C-1 $500M 투자 포함"
+    },
+    {
+      "from": "co_terrapower",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Meta의 6.6 GW 원전 포트폴리오 일부",
+        "**8기** Natrium 원자로 건설 합의 → 총 **2.8GW** 기저전력"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "Meta 원전 포트폴리오 일부"
+    },
+    {
+      "from": "co_khnp",
+      "to": "co_doosan_enerbility",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "주기기 ₩2.9조 계약"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "APR1400 원전 주기기 공급"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_siemens_energy",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "(업사이즈). 시초가 $30.11, 종가 $29.20 (+27%) | | 현재 주가 | ~$21.40 (IPO 후 하락."
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "가스터빈 시장 내 경쟁 관계"
+    },
+    {
+      "from": "co_hitachi",
+      "to": "co_doosan_enerbility",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "단기(3~5년)는 두산 대체 불가. 중장기(5~10년)는 일본 자본력으로"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "한-일 SMR 기자재 경쟁 관계"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_nuscale",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "NuScale·TerraPower·Rolls-Royce SMR·X-Energy 등 전방위"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "NuScale SMR 기자재 공급 파트너"
+    },
+    {
+      "from": "co_edf",
+      "to": "co_constellation",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "유럽 내 대형 원전 신규 발주의 유일한 사례"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "EDF EPR2(유럽) vs Constellation TMI(미국) — 글로벌 원전 르네상스 양대 축"
+    },
+    {
+      "from": "co_eaton",
+      "to": "co_vertiv",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "DC 전력+냉각 원스톱"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "DC 전력 인프라 경쟁 관계"
+    },
+    {
+      "from": "co_schneider",
+      "to": "co_vertiv",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Motivair $850M 인수"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "DC 전력+냉각 경쟁 관계"
+    },
+    {
+      "from": "co_quanta_services",
+      "to": "co_invenergy",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Quanta Services + Kiewit Energy에"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Grain Belt Express 시공 계약"
+    },
+    {
+      "from": "co_infineon",
+      "to": "co_nvidia",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "NVIDIA MGX 에코시스템 합류 (2026.05)"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "800VDC 랙용 Si/SiC/GaN 공급"
+    },
+    {
+      "from": "co_trane",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "원스톱 | - **2026년 M&A 빅뱅**: 3월에만 3건의 주요 냉각"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "액체냉각 M&A 동시 참여 경쟁 관계"
+    },
+    {
+      "from": "co_3m",
+      "to": "co_sk_enmove",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "3M 철수로 액침냉각유체 공백 수혜"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "3M Novec 생산 중단 → SK엔무브 PAO 기반 액침유 대체 공급 기회"
+    },
+    {
+      "from": "co_delta_electronics",
+      "to": "co_vertiv",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "800V DC 배치 이미 시작"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "800V DC 아키텍처 생태계 동시 참여 — Delta 선행 배치, Vertiv H2 2026 출시"
+    },
+    {
+      "from": "co_ecolab",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Ecolab → CoolIT Systems 인수"
+      ],
+      "confidence": 0.6,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "액체냉각 M&A 경쟁 — Ecolab(CoolIT), Eaton(Boyd Thermal) 동시 인수"
+    },
+    {
+      "from": "co_stmicro",
+      "to": "co_infineon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "STMicro 32.6% → Infineon 추격 속도"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SiC 전력반도체 시장 #1(32.6%) vs #3 경쟁 관계"
+    },
+    {
+      "from": "co_wolfspeed",
+      "to": "co_infineon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "10kV SiC MOSFET 출시"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SiC 시장 내 경쟁 — Wolfspeed 10kV 세계 최초 vs Infineon 3.3kV CoolSiC"
+    },
+    {
+      "from": "co_onsemi",
+      "to": "co_infineon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "#2 시장지위"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SiC 시장 #2 vs #3 경쟁 관계"
+    },
+    {
+      "from": "co_form_energy",
+      "to": "co_crusoe",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Crusoe 12 GWh"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "AI DC 전용 장주기 ESS 공급"
+    },
+    {
+      "from": "co_form_energy",
+      "to": "co_google",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Google/Xcel 30 GWh"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "100시간 장주기 저장 AI DC 탈탄소화"
+    },
+    {
+      "from": "co_lg_energy_solution",
+      "to": "co_catl",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "미국 시장 반사이익"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "FEOC 규정으로 CATL 미국 진출 제한, LGES 수혜"
+    },
+    {
+      "from": "co_fluence",
+      "to": "co_catl",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "서방 유일 대형 BESS 통합사"
+      ],
+      "confidence": 0.6,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "FEOC 준수 서방 BESS 업체 vs 중국 CATL"
+    },
+    {
+      "from": "co_williams",
+      "to": "co_constellation",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "2027년 첫 전력 | | BTM 가스 발전 PPA | **Williams**,"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "BTM 가스발전과 원전 PPA 양축 전력 조달"
+    },
+    {
+      "from": "co_posco",
+      "to": "co_hd_hyundai",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "POSCO (방향성 전기강판 국내 생산)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "GOES 공급 → HD현대 초고압 변압기 핵심 소재"
+    },
+    {
+      "from": "co_posco",
+      "to": "co_hyosung",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "POSCO (방향성 전기강판 국내 생산)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "GOES 공급 → 효성중공업 변압기 핵심 소재"
+    },
+    {
+      "from": "co_hyosung",
+      "to": "co_hd_hyundai",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "HD현대(앨라배마), 효성(멤피스) — 현지 CAPA"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "미국 변압기 시장 내 한국 니어쇼어링 경쟁 관계"
+    },
+    {
+      "from": "co_doosan_fuelcell",
+      "to": "co_bloom_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "LS일렉트릭·두산퓨얼셀·LG에너지솔루션"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "BTM 연료전지 시장 내 경쟁 (두산 SOFC·PAFC vs Bloom SOFC)"
+    },
+    {
+      "from": "co_sk_es",
+      "to": "co_kepco",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "국내 최대 민간 LNG 발전사"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "한전 전력시장에 LNG 발전 전력 판매, DC 직접 PPA 허용 시 최대 수혜"
+    },
+    {
+      "from": "co_byd",
+      "to": "co_catl",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "CATL 다음 2위 → Tesla 추월"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "글로벌 BESS 시장 #1(CATL 30.4%) vs #2(BYD) 경쟁 관계"
+    },
+    {
+      "from": "co_byd",
+      "to": "co_tesla_energy",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Tesla를 추월하여 글로벌 2위"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "BESS 출하량 경쟁 — BYD가 2025년 Tesla를 추월하여 글로벌 #2"
+    },
+    {
+      "from": "co_samsung_sdi",
+      "to": "co_catl",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "미국 시장 반사이익"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "FEOC 규정으로 CATL 미국 진출 제한 → 삼성SDI 미국 시장 반사이익"
+    },
+    {
+      "from": "co_samsung_sdi",
+      "to": "co_lg_energy_solution",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "SBB 2.0 LFP 미국 양산 개시"
+      ],
+      "confidence": 0.6,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "한국 BESS 업체 — 삼성SDI SBB 2.0 vs LGES 미국 50% 점유 목표, 동일 FEOC 수혜"
+    },
+    {
+      "from": "co_levelten",
+      "to": "co_constellation",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "LevelTen**, Constellation"
+      ],
+      "confidence": 0.6,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "PPA 마켓플레이스(LevelTen) vs PPA 직접 제공(Constellation) — DC 전력 중개 생태계"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**Microsoft** | 텍사스 DC | GE Vernova 7기 | 2.7 GW"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "GE Vernova 가스터빈 7기 2.7GW 공급"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_xai",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**xAI (머스크)** | Colossus 1, 테네시 | GE Vernova"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "xAI Colossus 1 가스터빈 27기 1,498MW"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_openai",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**OpenAI** | Stargate, 텍사스 | GE Vernova | ~1 GW"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "OpenAI Stargate 프로젝트 ~1GW"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_xai",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**xAI (추정)** | 미국 | 두산에너빌리티 380MW급"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-03",
+      "substitutable": false,
+      "note": "380MW급 7기 약 2.7GW, 1.2조원 계약 (xAI 추정)"
+    },
+    {
+      "from": "co_caterpillar",
+      "to": "co_nscale",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**Nscale (MS/NVIDIA)** | 웨스트버지니아 | Caterpillar G3500"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Caterpillar G3500 왕복엔진 2GW 공급 (MS/NVIDIA)"
+    },
+    {
+      "from": "co_nscale",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Nscale 2 GW (MS/NVIDIA 웨스트버지니아) 수주"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "Nscale DC 개발 → MS/NVIDIA 웨스트버지니아 2GW"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_siemens_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "납기 예약 | **2030~2031년까지 완료**"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "GEV 2031년까지 완판 → Siemens 등 대안 OEM 선택 가능성"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_ge_vernova",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "한국 유일의 대형 가스터빈 제조사"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "GEV 대형 터빈 대안으로 두산 380MW급 경쟁"
+    },
+    {
+      "from": "co_mitsubishi_power",
+      "to": "co_ge_vernova",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "Mitsubishi Power (효율 1위)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 OEM 3강 경쟁 (GEV 1위 vs MHI 효율 1위)"
+    },
+    {
+      "from": "co_mitsubishi_power",
+      "to": "co_siemens_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "Mitsubishi Power (효율 1위)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 OEM 3강 경쟁 (Siemens 유럽 1위 vs MHI 효율 1위)"
+    },
+    {
+      "from": "co_fuelcell_energy",
+      "to": "co_bloom_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "FuelCell Energy (MCFC)"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "BTM 연료전지 시장 경쟁 (MCFC vs Bloom SOFC 14% M/S)"
+    },
+    {
+      "from": "co_schneider",
+      "to": "co_eaton",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "Schneider Electric (UPS · 배전)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "DC 전력 인프라 경쟁 (UPS·배전 세그먼트). co_schneider와 동일 엔티티 — 중복 주의"
+    },
+    {
+      "from": "co_ls_eco_energy",
+      "to": "co_ls_electric",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "전선·케이블, 송전 인프라"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "LS그룹 계열사. 전선·케이블(에코에너지) + 배전기기(일렉트릭) 통합 수혜"
+    },
+    {
+      "from": "co_bechtel",
+      "to": "co_ge_vernova",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Bechtel, Fluor (대형 EPC)"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 발전소 EPC 시공 (GEV 터빈 설치)"
+    },
+    {
+      "from": "co_fluor",
+      "to": "co_ge_vernova",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Bechtel, Fluor (대형 EPC)"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 발전소 EPC 시공 (GEV 터빈 설치)"
+    },
+    {
+      "from": "co_anthropic",
+      "to": "co_openai",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "OpenAI·Anthropic만 **10 GW+** 임차 계약"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "AI Labs 전력 수요 양대 축. 각각 10GW+ 임차 계약"
+    },
+    {
+      "from": "co_kairos_power",
+      "to": "co_tva",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Kairos-TVA-Google 3자 PPA 체결"
+      ],
+      "confidence": 1.0,
+      "asof": "2025-08",
+      "substitutable": false,
+      "note": "TVA 그리드 경유 Google DC에 간접 전력 공급"
+    },
+    {
+      "from": "co_talen_energy",
+      "to": "co_aws",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "AWS가 Talen Energy의 Susquehanna 원전",
+        "behind-the-meter\" 방식으로 전력을 직접 공급"
+      ],
+      "confidence": 0.5,
+      "asof": "2024-11",
+      "substitutable": false,
+      "note": "FERC 거부로 중단. 초기 300MW→480MW 확대 추진했으나 재심도 기각"
+    },
+    {
+      "from": "co_constellation_energy",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Constellation Energy가 Microsoft와 **20년** PPA 체결",
+        "TMI Unit 1을 재가동하여 **835MW** 무탄소 전력 공급"
+      ],
+      "confidence": 1.0,
+      "asof": "2024-09",
+      "substitutable": false,
+      "note": "TMI Unit 1 재가동, 835MW, 20년 PPA, Crane Clean Energy Center"
+    },
+    {
+      "from": "co_oklo",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Oklo / TerraPower / Vistra**와 총 **6.6GW** 원자력 전력 계약",
+        "Pike County, Ohio에 **1.2GW** 원자력 캠퍼스 개발"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-01",
+      "substitutable": false,
+      "note": "1.2GW 원자력 캠퍼스, Aurora 75MW x 16기, Phase 1 150MW 2030년 목표"
+    },
+    {
+      "from": "co_centrus",
+      "to": "co_oklo",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Centrus가 HALEU 공급"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Oklo Aurora용 HALEU 핵연료 공급"
+    },
+    {
+      "from": "co_ge_hitachi",
+      "to": "co_opg",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Ontario Power Generation이 Darlington 부지에 **BWRX-300**"
+      ],
+      "confidence": 1.0,
+      "asof": "2025-05",
+      "substitutable": false,
+      "note": "BWRX-300 (300MW), 2030년 가동 목표, 서방 최초 상업 SMR"
+    },
+    {
+      "from": "co_x_energy",
+      "to": "co_dow_chemical",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Texas Seadrift 석유화학 플랜트에 4-유닛 Xe-100 HTGR 건설 추진"
+      ],
+      "confidence": 1.0,
+      "asof": "2025-03",
+      "substitutable": false,
+      "note": "Xe-100 4기, 2030년 상업운전 목표, NRC 건설 허가 신청"
+    },
+    {
+      "from": "co_nuscale_power",
+      "to": "co_nuscale_power",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "미국 최초 SMR 설계 인증(SDA) 획득"
+      ],
+      "confidence": 1.0,
+      "asof": "2023-01",
+      "substitutable": false,
+      "note": "NRC SDA 인증 보유, 단 CFPP 프로젝트 취소 경험"
+    },
+    {
+      "from": "co_kaeri",
+      "to": "co_khnp",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "KHNP/KAERI 컨소시엄 개발",
+        "혁신형 소형모듈원자로, **170MWe** 일체형 가압경수로"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "i-SMR 170MWe 공동 개발, 2035년 상업운전 목표"
+    },
+    {
+      "from": "co_cnnc",
+      "to": "co_cnnc",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "세계 최초 육상 상업 SMR",
+        "**2026년 상반기** 상업운전 개시 목표"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Linglong One (ACP100) 125MWe, 하이난성, 세계 최초 상업 SMR"
+    },
+    {
+      "from": "co_x_energy",
+      "to": "co_kairos_power",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "TRISO-X 연료 공장 (TX-1)",
+        "연간 5톤 우라늄, 70만 TRISO 페블 생산"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "X-energy의 TRISO-X 공장이 TRISO 연료 생산 — Kairos도 TRISO 연료 사용"
+    },
+    {
+      "from": "co_holtec",
+      "to": "co_ge_hitachi",
+      "type": "qualification",
+      "share": null,
+      "evidence": [
+        "Holtec (SMR-300)에 **$8억** \"First Mover\" 자금 배정"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "DOE Tier 1 First Mover 동시 선정 (GE-Hitachi BWRX-300 vs Holtec SMR-300)"
+    },
+    {
+      "from": "co_hd_hyundai",
+      "to": "co_kepco",
+      "type": "supply",
+      "confidence": 0.9,
+      "substitutable": false,
+      "share": null,
+      "evidence": [
+        "HD현대일렉트릭 765kV 초고압 변압기 한전 송배전 설비 공급 — 한전 15년 113조 송배전 투자 핵심 장비 납품사",
+        "research_ai_power_companies_kr.md §4.1 — 한전 CAPEX 113조원(2024~2038)"
+      ],
+      "asof": "2026-07"
+    },
+    {
+      "from": "co_ls_electric",
+      "to": "co_kepco",
+      "type": "supply",
+      "confidence": 0.8,
+      "substitutable": true,
+      "share": null,
+      "evidence": [
+        "LS일렉트릭 송배전 토탈 솔루션(초고압변압기+배전반+차단기) 한전 공급",
+        "research_ai_power_part12_overview.md §2.3 — LS일렉트릭 토탈 솔루션"
+      ],
+      "asof": "2026-07"
+    },
+    {
+      "from": "co_kepco",
+      "to": "co_khnp",
+      "type": "supply",
+      "confidence": 0.9,
+      "substitutable": false,
+      "share": null,
+      "evidence": [
+        "한전은 KHNP 원전의 계통연계(grid interconnection) 제공 — 원전 발전량 송전 유일 경로",
+        "research_ai_power_companies_kr.md §4 — 한전-한수원 송전 체계"
+      ],
+      "asof": "2026-07"
+    },
+    {
+      "from": "co_kepco",
+      "to": "co_doosan_enerbility",
+      "type": "supply",
+      "confidence": 0.7,
+      "substitutable": false,
+      "share": null,
+      "evidence": [
+        "가스터빈/원전 발전소는 한전 계통연계를 통해 전력 판매 — 계통연계 큐 병목이 발전소 가동 지연 유발",
+        "research_ai_power_themes_CD.md §C-3 — 계통연계 큐 병목"
+      ],
+      "asof": "2026-07"
+    }
+  ]
+}

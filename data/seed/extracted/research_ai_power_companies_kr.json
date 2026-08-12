@@ -1,0 +1,749 @@
+{
+  "functions": [
+    {
+      "id": "fn_gas_turbine",
+      "name": "가스터빈 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_power",
+      "name": "원전 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_smr_manufacturing",
+      "name": "SMR 기자재 제조",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_steam_turbine",
+      "name": "스팀터빈·발전기",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_ehv_transformer",
+      "name": "초고압 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_ups_pdu",
+      "name": "UPS·배전반",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_800v_dc",
+      "name": "800V DC 아키텍처",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_power_cable",
+      "name": "전력케이블",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_hvdc",
+      "name": "HVDC 송전",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_grid_interconnection",
+      "name": "계통연계",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_nuclear_engineering",
+      "name": "원전 설계·엔지니어링",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_cooling_fluid",
+      "name": "냉각 유체",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_cross_valuation",
+      "name": "크로스 밸류에이션 분석",
+      "chain": "ai_power",
+      "stage": "투자 프레임워크"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_doosan_enerbility",
+      "name": "두산에너빌리티",
+      "ticker": "034020",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "연결 매출 | 4조 2,611억원 | +13.7%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "영업이익 | 2,335억원 | +63.9%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "24조 1,343억원, 사상 최고치"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "xAI 7기(1.2조) + 스팀터빈"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "글로벌 누적 | 23기"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "2038년 목표 | **105기**"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "**2026년 외국인 순매수 1위** 종목"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_steam_turbine",
+          "share": null,
+          "evidence": [
+            "**370MW급 스팀터빈·발전기 4기** 공급계약"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_steam_turbine",
+          "share": null,
+          "evidence": [
+            "북미 시장 스팀터빈 **최초** 수주"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "체코 두코바니(스팀터빈 3,200억)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_manufacturing",
+          "share": null,
+          "evidence": [
+            "Rolls-Royce SMR 핵심 기자재 파트너 공식 선정"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_smr_manufacturing",
+          "share": null,
+          "evidence": [
+            "영국 **Wylfa** SMR + 체코 **Temelín** SMR"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "12개월 선행 P/B | **8.69배**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "컨센서스 목표주가 | 15만 2,214원"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hd_hyundai_electric",
+      "name": "HD현대일렉트릭",
+      "ticker": "267260",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "매출 | 1조 365억원"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "**17억 9,700만 달러** (+34.6% YoY)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "**78억 8,800만 달러** (+17.2% QoQ)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "765kV 초고압 변압기 글로벌 소수 공급사"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "765kV 변압기·리액터 24대, **2,778억원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "초고압(765kV급) 200t 이상: **60억~130억원/대**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "2027년까지 슬롯 완전 매진"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "CAPA 증가 | 기존 연 100대 → **최대 150대** (+50%)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "준공 후 연간 **약 2,000억원** 추가 매출 기대"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "북미 매출 비중 2024년 30% → 2026년 추정 47%"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Target PER | **36.2배**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ls_electric",
+      "name": "LS일렉트릭",
+      "ticker": "010120",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "매출 | 1조 3,766억원 | **+33%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "영업이익 | 1,266억원 | **+45%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "초고압 변압기 수주잔고 | **3조 1,000억원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "북미 매출 | **약 3,000억원** | **+80%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "초고압 변압기 매출 | — | +83%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "배전반 매출 | 3,563억원 | +79%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "블룸에너지 DC용 연료전지 설비 | 3,190억원"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "미국 DC 38kV 마이크로그리드 배전반 | 960억원"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "**누적 DC향 수주** | **~1조원+**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Target PER 55배, 목표주가 100만원"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kepco",
+      "name": "한전(KEPCO)",
+      "ticker": "015760",
+      "functions": [
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "**영업이익** | **13조 5,200억원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "약 19조 7,000억원 (증권사 컨센서스)"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "연결 총부채 | **205조 7,000억원** (사상 최대)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "연간 이자비용 | **4조 3,000억원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "송배전 설비 투자 | **113조원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "2027년 말까지 90.5조 → 2028년 36.2조로 급감"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "부채 205조 구조 → EV 기준 평가 시 고부채 디스카운트"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_kepco_enc",
+      "name": "한전기술",
+      "ticker": "052690",
+      "functions": [
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "매출 | **5,188억원** | -8.9%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "영업이익 | **317억원** | -55.4%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "체코 두코바니 5·6호기 설계 매출 개시"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "매출 | **5,917억원**"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "영업이익 | **744억원**"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "원자력 부문 매출: 전년비 +38% (1,037억원)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "2027E PER | **약 30배**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_taihan",
+      "name": "대한전선",
+      "ticker": "001440",
+      "functions": [
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "매출 | **1조 834억원** | **+26.6%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "영업이익 | **604억원** | **+122.9%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "Q1'26 말 수주잔고: **3조 8,273억원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "매출 | **3조 6,400억원** | 역대 최대"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "640kV급 HVDC"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "해저2공장 = 해저1공장 대비 **약 5배** 생산능력"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "180m 높이 수직연속압출 시스템"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "약 220km, 왕복 2회선"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "투자 규모 | **총 1조원**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "**132.74배** (업종 평균 83.61배 대비 프리미엄)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "FY2028E PER | **68.4배**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "목표주가 | 46,000원"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_sk_enmove",
+      "name": "SK엔무브",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "GRC(Green Revolution Cooling)에 **2,500만 달러(약 334억원) 지분 투자**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "MOU — 액침냉각 공급망 공동 구축 목표"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "**공기냉각 대비 전력 37% 절감** 확인"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "SKT 납품 개시 예정 (냉각유 제품명: ZIC-GC2)"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "SK이노베이션 자회사)로 분기 실적이 공개되지 않음"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "2040년 **40조원+**"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_hd_hyundai_electric",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "GE Vernova·Siemens Energy의 가스터빈 증산"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "Stage 01-02 한국 전력기기 경쟁 관계"
+    },
+    {
+      "from": "co_hd_hyundai_electric",
+      "to": "co_ls_electric",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "초고압 변압기 시장에서 HD현대일렉트릭과 직접 경쟁"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "한국 초고압 변압기 3사 경쟁 관계"
+    },
+    {
+      "from": "co_kepco_enc",
+      "to": "co_doosan_enerbility",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "두코바니 5·6호기 스팀터빈·발전기·터빈제어시스템"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "한전기술 A/E 설계 + 두산 기자재 공급 협력"
+    },
+    {
+      "from": "co_kepco",
+      "to": "co_kepco_enc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "한전기술 | Stage 01 원전설계"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "한수원-한전기술 원전 A/E 파트너 구조"
+    },
+    {
+      "from": "co_ls_electric",
+      "to": "co_bloom_energy",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "블룸에너지 DC용 연료전지 설비"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "LS일렉트릭이 Bloom Energy DC용 배전반·연계 설비 공급"
+    },
+    {
+      "from": "co_taihan",
+      "to": "co_kepco",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "전북 새만금~경기 화성, 약 220km"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "대한전선 서해안 HVDC 에너지 고속도로 공급 유력"
+    }
+  ]
+}

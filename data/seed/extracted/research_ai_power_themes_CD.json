@@ -1,0 +1,863 @@
+{
+  "functions": [
+    {
+      "id": "fn_ehv_transformer",
+      "name": "초고압 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_distribution_transformer",
+      "name": "배전 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_power_cable",
+      "name": "전력케이블",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_hvdc",
+      "name": "HVDC 송전",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_grid_interconnection",
+      "name": "계통연계",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_800v_dc",
+      "name": "800V DC 아키텍처",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_ups_pdu",
+      "name": "UPS·배전반",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_power_semiconductor",
+      "name": "전력반도체(SiC/GaN)",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_liquid_cooling",
+      "name": "액체냉각(수냉·액침)",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_cooling_fluid",
+      "name": "냉각 유체",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_sofc",
+      "name": "SOFC 연료전지",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_btm_generation",
+      "name": "자가발전(BTM)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_dc_nimby",
+      "name": "DC 모라토리엄·NIMBY",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_hvdc_transmission",
+      "name": "HVDC 장거리 송전 프로젝트",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_hd_hyundai_electric",
+      "name": "HD현대일렉트릭",
+      "ticker": "267260",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "Q1 2026 영업이익"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "Q1 2026 신규 수주"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "78억 8,800만"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "765kV 초고압 변압기 북미"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "+17.2% | | 앨라배마 제2공장 | 투자 약 **2억 달러** (2,981억 원) | 2만 9,000㎡, 준공"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "추가 매출 ~2,000억 원/년"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "1730억 원 규모 초고압 변압기 공급 계약"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ls_electric",
+      "name": "LS일렉트릭",
+      "ticker": "010120",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "3조 1,024억 원"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "Q1 2026 북미 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "북미 DC 마이크로그리드향 직류(DC) 제품 수주"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "초고압변압기 + DC 배전 토탈 솔루션"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_taihan",
+      "name": "대한전선",
+      "ticker": "001440",
+      "functions": [
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "Q1 2026 영업이익"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "QoQ +13% | | 초고압변압기 수주잔고 | **3조 1,024억 원** | 전체 수주잔고의 55% | |"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "당진 해저케이블 2공장"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "미국 수주 320kV HVDC 케이블"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "2027년 상반기 가동"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_vertiv",
+      "name": "Vertiv",
+      "ticker": "VRT",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "백로그 $12.45B (+81% YoY)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 풀 제품라인"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "Vertiv + NVIDIA 공동 개발 완료"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "DC 전력+냉각 원스톱"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Adj OPM 20.8% (+430bps)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_eaton",
+      "name": "Eaton",
+      "ticker": "ETN",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC 수주 +240%, DC 매출 +50% YoY"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 레퍼런스 아키텍처 출시"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Eaton → Boyd Thermal 인수"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "액체냉각 매출 $1.5B 즉시 추가"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_schneider",
+      "name": "Schneider Electric",
+      "ticker": "SU.PA",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC = 매출의 24%"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Schneider → Motivair 인수"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_bloom_energy",
+      "name": "Bloom Energy",
+      "ticker": "BE",
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "------|------|------| | 총 백로그 | **~$20B** | Bloom Energy | | 90일 내 수주"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Energy | | 90일 내 수주 (2026 초) | **$7.65B** (DC 관련) | EnkiAI | | FY2026"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "FY2026 매출 가이던스"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출 성장"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "(+267% QoQ)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Bloom Energy | | Oracle 수주 | **2.8 GW** 연료전지 — 대규모 단일 계약 | TradingKey"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "온사이트 전력 전략 채택"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "SOFC가 본질적으로 DC 발전"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "보완 관계 | | 배포 기간 | **1년 미만** | 5–7년 (주문~설치)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_delta_electronics",
+      "name": "Delta Electronics",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 배치 이미"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_stmicro",
+      "name": "STMicroelectronics",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": 0.326,
+          "evidence": [
+            "STMicroelectronics** | 시장 점유율 **32.6%** (#1) | Semiconductor Today"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_infineon",
+      "name": "Infineon",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "NVIDIA MGX 에코시스템 합류 (2026.05)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "3.3kV CoolSiC 양산"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "→ €2.5B (2027E, +67%)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_wolfspeed",
+      "name": "Wolfspeed",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "10kV SiC MOSFET 출시"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "DC 매출 QoQ +50%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "200mm Mohawk Valley 팹 전환 완료"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_onsemi",
+      "name": "onsemi",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_power_semiconductor",
+          "share": null,
+          "evidence": [
+            "#2 시장지위 | 업계"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_sk_enmove",
+      "name": "SK엔무브",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "PAO 기반 액침유"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_trane",
+      "name": "Trane Technologies",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Trane → LiquidStack"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ecolab",
+      "name": "Ecolab",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Ecolab → CoolIT Systems"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_invenergy",
+      "name": "Invenergy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hvdc_transmission",
+          "share": null,
+          "evidence": [
+            "Grain Belt Express"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc_transmission",
+          "share": null,
+          "evidence": [
+            "Grain Belt Express | | 용량 | **5,000 MW** | Grain Belt Express | | 시공사"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_quanta_services",
+      "name": "Quanta Services",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hvdc_transmission",
+          "share": null,
+          "evidence": [
+            "Quanta Services + Kiewit Energy에"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_nvidia",
+      "name": "NVIDIA",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 아키텍처"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_3m",
+      "name": "3M",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "2025년 말 생산 중단"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_vertiv",
+      "to": "co_nvidia",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "Vertiv + NVIDIA 공동 개발 완료"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "800V DC 아키텍처 공동 개발 파트너"
+    },
+    {
+      "from": "co_eaton",
+      "to": "co_vertiv",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "DC 전력+냉각 원스톱"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "DC 전력 인프라 경쟁 관계"
+    },
+    {
+      "from": "co_schneider",
+      "to": "co_vertiv",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Motivair $850M 인수"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "DC 전력+냉각 경쟁 관계"
+    },
+    {
+      "from": "co_bloom_energy",
+      "to": "co_vertiv",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "800V DC 에코시스템"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SOFC DC 출력 + 800V DC 인프라 연결"
+    },
+    {
+      "from": "co_quanta_services",
+      "to": "co_invenergy",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Quanta Services + Kiewit Energy에"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Grain Belt Express 시공 계약"
+    },
+    {
+      "from": "co_infineon",
+      "to": "co_nvidia",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "NVIDIA MGX 에코시스템 합류 (2026.05)"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "800VDC 랙용 Si/SiC/GaN 공급"
+    },
+    {
+      "from": "co_hd_hyundai_electric",
+      "to": "co_ls_electric",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "765kV 초고압 변압기 북미"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "한국 초고압 변압기 시장 내 경쟁 관계"
+    },
+    {
+      "from": "co_trane",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "원스톱 | - **2026년 M&A 빅뱅**: 3월에만 3건의 주요 냉각"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "액체냉각 M&A 동시 참여 경쟁 관계"
+    },
+    {
+      "from": "co_3m",
+      "to": "co_sk_enmove",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "3M 철수로 액침냉각유체 공백 수혜"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "3M Novec 생산 중단 → SK엔무브 PAO 기반 액침유 대체 공급 기회"
+    },
+    {
+      "from": "co_delta_electronics",
+      "to": "co_vertiv",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "800V DC 배치 이미 시작"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "800V DC 아키텍처 생태계 동시 참여 — Delta 선행 배치, Vertiv H2 2026 출시"
+    },
+    {
+      "from": "co_ecolab",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Ecolab → CoolIT Systems 인수"
+      ],
+      "confidence": 0.6,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "액체냉각 M&A 경쟁 — Ecolab(CoolIT), Eaton(Boyd Thermal) 동시 인수"
+    },
+    {
+      "from": "co_stmicro",
+      "to": "co_infineon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "STMicro 32.6% → Infineon 추격 속도"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SiC 전력반도체 시장 #1(32.6%) vs #3 경쟁 관계"
+    },
+    {
+      "from": "co_wolfspeed",
+      "to": "co_infineon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "10kV SiC MOSFET 출시"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SiC 시장 내 경쟁 — Wolfspeed 10kV 세계 최초 vs Infineon 3.3kV CoolSiC"
+    },
+    {
+      "from": "co_onsemi",
+      "to": "co_infineon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "#2 시장지위"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "SiC 시장 #2 vs #3 경쟁 관계"
+    }
+  ]
+}

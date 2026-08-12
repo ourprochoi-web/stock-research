@@ -1,0 +1,781 @@
+{
+  "functions": [
+    {
+      "id": "fn_cowos_s",
+      "name": "CoWoS-S (Standard) 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_cowos_l",
+      "name": "CoWoS-L (Large) 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_cowos_r",
+      "name": "CoWoS-R (Redistribution) 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_intel_emib",
+      "name": "인텔 EMIB 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_intel_foveros",
+      "name": "인텔 Foveros 3D 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_samsung_icube4",
+      "name": "삼성 I-Cube4 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_samsung_foplp",
+      "name": "삼성 FOPLP 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_samsung_saint",
+      "name": "삼성 SAINT 3D 적층",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_copos",
+      "name": "CoPoS (패널 레벨 패키징)",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_tc_bonding",
+      "name": "TC 본딩 (열압착 본딩)",
+      "chain": "hbm",
+      "stage": "STAGE 04"
+    },
+    {
+      "id": "fn_hybrid_bonding",
+      "name": "하이브리드 본딩",
+      "chain": "hbm",
+      "stage": "STAGE 04"
+    },
+    {
+      "id": "fn_kinex_hybrid_bonding",
+      "name": "Kinex 하이브리드 본딩 시스템",
+      "chain": "hbm",
+      "stage": "STAGE 04"
+    },
+    {
+      "id": "fn_tsv_etch",
+      "name": "TSV 식각",
+      "chain": "hbm",
+      "stage": "크로스 스테이지"
+    },
+    {
+      "id": "fn_hybrid_bonding_pretreat",
+      "name": "하이브리드 본딩 전처리",
+      "chain": "hbm",
+      "stage": "크로스 스테이지"
+    },
+    {
+      "id": "fn_hbm_wafer",
+      "name": "HBM DRAM 웨이퍼",
+      "chain": "hbm",
+      "stage": "STAGE 01"
+    },
+    {
+      "id": "fn_abf_film",
+      "name": "ABF 필름 소재",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_abf_substrate",
+      "name": "ABF 기판",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_glass_core_substrate",
+      "name": "글라스코어 기판",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_fc_bga",
+      "name": "FC-BGA 기판",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_ccl",
+      "name": "CCL (동박적층판)",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_copper_foil",
+      "name": "동박 소재",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_glass_fiber",
+      "name": "유리섬유 소재",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_tsmc",
+      "name": "TSMC",
+      "ticker": "TSM",
+      "functions": [
+        {
+          "fn": "fn_cowos_s",
+          "share": null,
+          "evidence": [
+            "CoWoS-S (Standard)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cowos_l",
+          "share": null,
+          "evidence": [
+            "CoWoS-L이 주류로 부상"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cowos_r",
+          "share": null,
+          "evidence": [
+            "CoWoS-R (Redistribution)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_copos",
+          "share": null,
+          "evidence": [
+            "2026년 6월 파일럿 라인 완공"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_intel",
+      "name": "인텔",
+      "ticker": "INTC",
+      "functions": [
+        {
+          "fn": "fn_intel_emib",
+          "share": null,
+          "evidence": [
+            "인텔 EMIB이 대안으로 급부상"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_intel_foveros",
+          "share": null,
+          "evidence": [
+            " | 3D (다이-투-다이 직접 본딩)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_glass_core_substrate",
+          "share": null,
+          "evidence": [
+            " | 2026 H2~2027 초"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_samsung",
+      "name": "삼성전자",
+      "ticker": "005930.KS",
+      "functions": [
+        {
+          "fn": "fn_samsung_icube4",
+          "share": null,
+          "evidence": [
+            " | 2.5D 실리콘 인터포저 기반"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_samsung_foplp",
+          "share": null,
+          "evidence": [
+            " | 팬아웃 패널 레벨 패키징"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_samsung_saint",
+          "share": null,
+          "evidence": [
+            " | 삼성 독자 3D 적층 기술"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "fn": "fn_hbm_wafer",
+          "share": 0.22,
+          "evidence": [
+            "삼성 파운드리(GAA 2nm) + I-Cube"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hanmi",
+      "name": "한미반도체",
+      "ticker": "042700.KQ",
+      "functions": [
+        {
+          "fn": "fn_tc_bonding",
+          "share": 0.712,
+          "evidence": [
+            "글로벌 M/S **71.2%** (2025)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_besi",
+      "name": "BESI",
+      "ticker": "BESI.AS",
+      "functions": [
+        {
+          "fn": "fn_hybrid_bonding",
+          "share": null,
+          "evidence": [
+            "하이브리드 본딩 **선두**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_applied_materials",
+      "name": "Applied Materials",
+      "ticker": "AMAT",
+      "functions": [
+        {
+          "fn": "fn_kinex_hybrid_bonding",
+          "share": null,
+          "evidence": [
+            "Kinex 하이브리드 본딩 시스템 | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_lam_research",
+      "name": "Lam Research",
+      "ticker": "LRCX",
+      "functions": [
+        {
+          "fn": "fn_tsv_etch",
+          "share": null,
+          "evidence": [
+            "TSV 식각 + 하이브리드 본딩 전처리 | "
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hybrid_bonding_pretreat",
+          "share": null,
+          "evidence": [
+            "20년+ 첨단 패키징 경력"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_asmpt",
+      "name": "ASMPT",
+      "ticker": "0522.HK",
+      "functions": [
+        {
+          "fn": "fn_tc_bonding",
+          "share": null,
+          "evidence": [
+            " | TCB + 하이브리드 본더 | "
+          ],
+          "confidence": 0.7
+        },
+        {
+          "fn": "fn_hybrid_bonding",
+          "share": null,
+          "evidence": [
+            " | TCB + 하이브리드 본더 | "
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_skhynix",
+      "name": "SK하이닉스",
+      "ticker": "000660.KS",
+      "functions": [
+        {
+          "fn": "fn_hbm_wafer",
+          "share": 0.57,
+          "evidence": [
+            "SK하이닉스 M/S 50→60%"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_micron",
+      "name": "마이크론",
+      "ticker": "MU",
+      "functions": [
+        {
+          "fn": "fn_hbm_wafer",
+          "share": 0.21,
+          "evidence": [
+            "Micron은 2026년 HBM 전량 고정가 매진"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_cxmt",
+      "name": "CXMT",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hbm_wafer",
+          "share": null,
+          "evidence": [
+            " | 2026년 말 → "
+          ],
+          "confidence": 0.3
+        }
+      ]
+    },
+    {
+      "id": "co_ajinomoto",
+      "name": "Ajinomoto",
+      "ticker": "2802.T",
+      "functions": [
+        {
+          "fn": "fn_abf_film",
+          "share": 0.95,
+          "evidence": [
+            "Ajinomoto ABF 필름 글로벌 M/S | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_unimicron",
+      "name": "Unimicron",
+      "ticker": "3037.TW",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": 0.22,
+          "evidence": [
+            "Unimicron "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ibiden",
+      "name": "Ibiden",
+      "ticker": "4062.T",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": 0.18,
+          "evidence": [
+            " | 일본 | ~18% (추정)"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_ats",
+      "name": "AT&S",
+      "ticker": "ATS.VI",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": 0.12,
+          "evidence": [
+            " | 오스트리아 | ~12% (추정)"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_nanya_pcb",
+      "name": "Nan Ya PCB",
+      "ticker": "8046.TW",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": 0.11,
+          "evidence": [
+            " | 대만 | ~11% (추정)"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_shinko",
+      "name": "Shinko",
+      "ticker": "6967.T",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": 0.11,
+          "evidence": [
+            " | 일본 | ~11% (추정)"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_samsung_electro",
+      "name": "삼성전기",
+      "ticker": "009150.KS",
+      "functions": [
+        {
+          "fn": "fn_fc_bga",
+          "share": null,
+          "evidence": [
+            "FC-BGA 매출 | "
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_glass_core_substrate",
+          "share": null,
+          "evidence": [
+            "글라스코어 기판 | "
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "co_mediatek",
+      "name": "MediaTek",
+      "ticker": "2454.TW",
+      "functions": [
+        {
+          "fn": "fn_cowos_l",
+          "share": null,
+          "evidence": [
+            "MediaTek이 CoWoS + EMIB 이중 전략을 채택"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "fn": "fn_intel_emib",
+          "share": null,
+          "evidence": [
+            "MediaTek이 CoWoS + EMIB 이중 전략을 채택"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_tsmc",
+      "to": "co_intel",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "인텔 EMIB이 대안으로 급부상"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "CoWoS CAPA 부족으로 EMIB이 대안 기술로 경쟁"
+    },
+    {
+      "from": "co_mediatek",
+      "to": "co_tsmc",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "MediaTek이 CoWoS + EMIB 이중 전략을 채택"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "MediaTek CoWoS 패키징 의존"
+    },
+    {
+      "from": "co_mediatek",
+      "to": "co_intel",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "MediaTek이 CoWoS + EMIB 이중 전략을 채택"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "MediaTek EMIB 이중 전략"
+    },
+    {
+      "from": "co_applied_materials",
+      "to": "co_besi",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "Applied Materials·Lam Research"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "BESI 인수 경합 — AMAT 입찰"
+    },
+    {
+      "from": "co_lam_research",
+      "to": "co_besi",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "Lam Research"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "BESI 인수 경합 — Lam 입찰"
+    },
+    {
+      "from": "co_hanmi",
+      "to": "co_skhynix",
+      "type": "supply",
+      "share": 0.6,
+      "evidence": [
+        "SK하이닉스 M/S 50→60%"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "HBM4용 TC본더 공급"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_skhynix",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        " 하이브리드 본더 "
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 채택 가능성 (Bernstein)"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_samsung",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        " 하이브리드 본더 "
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 채택 가능성"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_micron",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        " 하이브리드 본더 "
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 채택 가능성"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_unimicron",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "95% 독점 + 50%+ 마진 + 30% 가격 인상"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 to 기판 1위"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_ibiden",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "**95%+** (사실상 독점)"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 to 기판 2위"
+    },
+    {
+      "from": "co_unimicron",
+      "to": "co_tsmc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "NVIDIA GPU ABF 35%, ASIC 50%+"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "ABF 기판 공급 (NVIDIA GPU/ASIC 경유)"
+    },
+    {
+      "from": "co_ibiden",
+      "to": "co_intel",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Fujitsu 계열, Intel 패키징 핵심 벤더"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "ABF 기판 공급"
+    },
+    {
+      "from": "co_samsung_electro",
+      "to": "co_samsung",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "글로벌 유일한 복합 해자"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "FC-BGA + MLCC 번들 공급"
+    },
+    {
+      "from": "co_cxmt",
+      "to": "co_skhynix",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "CXMT가 HBM3 양산에 성공하더라도"
+      ],
+      "confidence": 0.3,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "CXMT HBM3 진입 시 SK하이닉스 저가 시장 잠식 가능"
+    },
+    {
+      "from": "co_hanmi",
+      "to": "co_besi",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "TCB에서 하이브리드 본딩으로의 전환"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "2028+ 본딩 기술 전환 시 한미반도체→BESI 전환 리스크"
+    },
+    {
+      "from": "co_shinko",
+      "to": "co_intel",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Fujitsu 계열, Intel 패키징 핵심 벤더"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "Shinko는 ABF 기판 5위, Intel 패키징 핵심 벤더"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_ats",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "95% 독점 + 50%+ 마진 + 30% 가격 인상"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — AT&S는 ABF 기판 3위 (~12%)"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_shinko",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "95% 독점 + 50%+ 마진 + 30% 가격 인상"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — Shinko는 ABF 기판 5위 (~11%)"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_nanya_pcb",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "95% 독점 + 50%+ 마진 + 30% 가격 인상"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — Nan Ya는 ABF 기판 4위 (~11%)"
+    }
+  ]
+}

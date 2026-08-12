@@ -1,0 +1,988 @@
+{
+  "functions": [
+    {
+      "id": "fn_gas_turbine",
+      "name": "가스터빈 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_power",
+      "name": "원전 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_ppa",
+      "name": "원전 PPA",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_ltsa_service",
+      "name": "가스터빈 장기서비스(LTSA)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_ups_pdu",
+      "name": "UPS·배전반",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_800v_dc",
+      "name": "800V DC 아키텍처",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_sofc",
+      "name": "SOFC 연료전지",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_btm_generation",
+      "name": "자가발전(BTM)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_liquid_cooling",
+      "name": "액체냉각(수냉·액침)",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_hvdc",
+      "name": "HVDC 송전",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_ehv_transformer",
+      "name": "초고압 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_cross_valuation",
+      "name": "크로스 밸류에이션 분석",
+      "chain": "ai_power",
+      "stage": "투자 프레임워크"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_ge_vernova",
+      "name": "GE Vernova",
+      "ticker": "GEV",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "매출 | $9.3B | $8.0B | +16%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "수주 | $18.3B | $10.7B | +71% organic"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "총 백로그 | $163B"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "가스터빈 백로그 (Q1'26 말) | **100 GW**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "Q1 중기 가스터빈 출하 | **25기** (+32% YoY)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "현재 (2025) | ~10 GW"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "$200B 백로그 달성 목표 | **2027년**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "Q4'25 대비 **+10–20%** 추가 상승"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_ltsa_service",
+          "share": null,
+          "evidence": [
+            "서비스 매출 비중: **~68%** (2023 기준)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ltsa_service",
+          "share": null,
+          "evidence": [
+            "장기 서비스 계약(LTA) → 설치 후 20–30년간 GEV 독점 유지보수"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "Electrification 부문 수주 $7.1B (+86% organic)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "Q1 2026 단독: **$2.4B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "시가총액 | **$266.5B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "EV/EBITDA | ~85.6x | LTM 기준"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "매출 **$44.5–$45.5B**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_constellation",
+      "name": "Constellation Energy",
+      "ticker": "CEG",
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "2026.01.07"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "인수 후 합산 발전 용량"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "32.4 GW, 21개 발전소, 24기 원자로"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "용량 | **835 MWe**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "계통연계 2031년 가능성"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "20년 PPA 계약자 | **Microsoft**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "애널리스트 평균 목표가 | **$367**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Adj. Operating EPS 가이던스 | **$11.00–$12.00**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_vistra",
+      "name": "Vistra",
+      "ticker": "VST",
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "현재 운영 총 용량 | ~**41 GW**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "원전 6.4 GW, **용량 계수 95–98%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "**Meta** | **2,609 MW** | 20년"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "**Amazon (AWS)** | **1,200 MW** | 20년"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "**합계 PPA** | **~3.8 GW**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "Cogentrix 인수 규모 | **$4.7B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "EV/EBITDA | **10.8x**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "FY26 Adj. EBITDA 가이던스 | **$6.8B–$7.6B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "애널리스트 목표가 | $225 (+41%)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_vertiv",
+      "name": "Vertiv",
+      "ticker": "VRT",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Adj. Diluted EPS | — | — | **+83% YoY**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Adj. OPM | **20.8%** | ~16.5% | **+430bps**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "미주(Americas) 매출 | — | — | **+44% YoY"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q4 2025 수주 YoY | **+252%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 백로그 | **$12.45B** (+81% YoY)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "NVIDIA의 **공식 레퍼런스 아키텍처 파트너**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 풀 제품 라인 상용 출시"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "**NVIDIA Omniverse DSX Blueprint**와 통합된"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Vertiv (통합 1위)"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E | **~50x** (50.41)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "매출 | **$13,250M–$13,750M**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Adj. EPS | **$6.30–$6.40**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_bloom_energy",
+      "name": "Bloom Energy",
+      "ticker": "BE",
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "총 매출 | **$751.1M** | $326.0M | **+130%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Non-GAAP 총마진 | 31.5%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "수주잔고(백로그) | **~$20B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "파이프라인 (잠재 기회) | **4 GW**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Oracle 계약 (2026) | **2.8 GW** (1.2 GW 진행 중)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "AEP 공급 계약 | **1 GW**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "FY26 매출 가이던스"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "연간 생산 능력 목표 | **2 GW** (2026년 말까지)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "계통 연계 없이 온사이트 발전 가능"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "전 제품 라인 800V DC 레디"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "기존 AC 배전 대비 TCO **15–30% 절감**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "1년 전 대비 +1,628%(!!"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "시가총액 | **~$93.6B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "고객 집중 | Q1 2026 기준 Customer 1 = **매출의 50%**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_eaton",
+      "name": "Eaton",
+      "ticker": "ETN",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "EA 부문 매출 YoY | **+20%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "EA 부문 마진 | **25.6%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC 수주 YoY | **+240%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "전기 백로그 YoY | **+48%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC = 2025 전체 매출 비중 | **21%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Boyd Thermal 인수 — 액체냉각 통합"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "매출 2배+, 백로그 6개월 만에 2배"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "액체냉각 사업 총규모 (Boyd 포함) | **~$1.7B**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "NVIDIA가 공동 개발한 **800V DC 전력 아키텍처**"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "FY26 Adj. EPS"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_schneider",
+      "name": "Schneider Electric",
+      "ticker": "SU.PA",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "**+11.2% organic**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC = 그룹 매출 비중 | **24%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC/네트워크 = 주문 비중 | **~30%**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "Systems 세그먼트 성장 | **+16%** organic"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Motivair (미국 액체냉각 전문사)"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Q1 2026 매출 기여 | **+€92M (+1.1%)**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward P/E"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "시가총액 | **~€174B (~$190B)**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "EV/EBITDA | **20.3x**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Adj. EBITA 성장 | **+10%–+15% organic**"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_microsoft",
+      "name": "Microsoft",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "20년 PPA 계약자 | **Microsoft** (데이터센터 전력)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_meta",
+      "name": "Meta",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "**Meta** | **2,609 MW** | 20년 | Comanche"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_amazon",
+      "name": "Amazon",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "(AWS)** | **1,200 MW** | 20년 | Comanche"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_oracle",
+      "name": "Oracle",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "Oracle의 2.45 GW 오프그리드 AI 캠퍼스(뉴멕시코)"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_nvidia",
+      "name": "NVIDIA",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "NVIDIA Rubin Ultra 플랫폼 기반"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_constellation",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "용량 | **835 MWe** | — | | 투자 규모 | **$1.6B**"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "TMI 재가동 원전 전력 공급, PJM 2031 지연 가능"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "**Meta** | **2,609 MW** | 20년 | Comanche"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Comanche Peak + PJM 원전 전력"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_amazon",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "(AWS)** | **1,200 MW** | 20년 | Comanche"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Comanche Peak 원전 전력"
+    },
+    {
+      "from": "co_vertiv",
+      "to": "co_nvidia",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "공식 레퍼런스 아키텍처 파트너"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "800V DC 아키텍처 공동 개발"
+    },
+    {
+      "from": "co_bloom_energy",
+      "to": "co_oracle",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Oracle 계약 (2026) | **2.8 GW**"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "2.45 GW 오프그리드 AI 캠퍼스 전력"
+    },
+    {
+      "from": "co_vertiv",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Vertiv·Schneider와 직접 경쟁"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "DC 전력 인프라 경쟁"
+    },
+    {
+      "from": "co_eaton",
+      "to": "co_schneider",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "인수 금액 | **$850M** (75% 지분)"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "액체냉각 M&A 경쟁"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_constellation",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "Forward P/E"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "발전 유틸리티 동종 비교"
+    }
+  ]
+}

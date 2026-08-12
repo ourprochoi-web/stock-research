@@ -1,0 +1,12 @@
+calibration:
+  chain: hbm
+  converged: true
+  last_run: '2026-07-27T08:51:11.169048'
+  mean_rank_pct: 0.131
+  recall_at_20: 1.0
+scoring:
+  s1_structure: 20.0
+  s2_barrier: 30.0
+  s3_economics: 20
+  s4_demand: 15
+  s5_penalty: -25

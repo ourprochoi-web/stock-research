@@ -1,0 +1,787 @@
+{
+  "functions": [
+    {
+      "id": "fn_advanced_packaging",
+      "name": "첨단 패키징 (CoWoS/InFO/SoIC)",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_cowos",
+      "name": "CoWoS 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_copos",
+      "name": "CoPoS (패널 레벨 패키징)",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_osat",
+      "name": "OSAT (외주 패키징/범핑)",
+      "chain": "hbm",
+      "stage": "STAGE 02"
+    },
+    {
+      "id": "fn_leap",
+      "name": "LEAP 첨단 패키징",
+      "chain": "hbm",
+      "stage": "STAGE 03"
+    },
+    {
+      "id": "fn_hbm_wafer",
+      "name": "HBM DRAM 웨이퍼",
+      "chain": "hbm",
+      "stage": "STAGE 01"
+    },
+    {
+      "id": "fn_abf_substrate",
+      "name": "ABF 기판",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_abf_film",
+      "name": "ABF 필름 소재",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_hybrid_bonding",
+      "name": "하이브리드 본딩",
+      "chain": "hbm",
+      "stage": "STAGE 04"
+    },
+    {
+      "id": "fn_test_ate",
+      "name": "ATE (자동테스트장비)",
+      "chain": "hbm",
+      "stage": "STAGE 05"
+    },
+    {
+      "id": "fn_wafer_thinning",
+      "name": "다이싱/그라인딩 (웨이퍼 박형화)",
+      "chain": "hbm",
+      "stage": "STAGE 01"
+    },
+    {
+      "id": "fn_packaging_equipment",
+      "name": "패키징 장비 (증착/CMP)",
+      "chain": "hbm",
+      "stage": "크로스 스테이지"
+    },
+    {
+      "id": "fn_kinex_hybrid_bonding",
+      "name": "Kinex 하이브리드 본딩 시스템",
+      "chain": "hbm",
+      "stage": "STAGE 04"
+    },
+    {
+      "id": "fn_nexx_panel_deposition",
+      "name": "NEXX 패널 레벨 증착 장비",
+      "chain": "hbm",
+      "stage": "크로스 스테이지"
+    },
+    {
+      "id": "fn_tsv_etch",
+      "name": "TSV/TGV 식각",
+      "chain": "hbm",
+      "stage": "크로스 스테이지"
+    },
+    {
+      "id": "fn_hybrid_bonding_pretreat",
+      "name": "하이브리드 본딩 전처리 (표면 활성화/세정)",
+      "chain": "hbm",
+      "stage": "크로스 스테이지"
+    },
+    {
+      "id": "fn_stealth_dicing",
+      "name": "스텔스 다이싱 (레이저)",
+      "chain": "hbm",
+      "stage": "STAGE 01"
+    },
+    {
+      "id": "fn_taiko_grinding",
+      "name": "Taiko 그라인딩",
+      "chain": "hbm",
+      "stage": "STAGE 01"
+    },
+    {
+      "id": "fn_ic_package_substrate",
+      "name": "고성능 IC 패키지 기판",
+      "chain": "hbm",
+      "stage": "STAGE 06"
+    },
+    {
+      "id": "fn_memory_test",
+      "name": "메모리 테스트",
+      "chain": "hbm",
+      "stage": "STAGE 05"
+    },
+    {
+      "id": "fn_soc_test",
+      "name": "SoC 테스트",
+      "chain": "hbm",
+      "stage": "STAGE 05"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_tsmc",
+      "name": "TSMC",
+      "ticker": "TSM",
+      "functions": [
+        {
+          "fn": "fn_cowos",
+          "share": null,
+          "evidence": [
+            "CoWoS CAPA (월) | 35K WPM (2024) → "
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_copos",
+          "share": null,
+          "evidence": [
+            "CoPoS 파일럿 라인 완공 (Visionchip 자회사)"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_advanced_packaging",
+          "share": null,
+          "evidence": [
+            "첨단 패키징 매출 비중 | ~8% (2025) → "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ase_spil",
+      "name": "ASE/SPIL",
+      "ticker": "ASX",
+      "functions": [
+        {
+          "fn": "fn_osat",
+          "share": null,
+          "evidence": [
+            "OSAT 세계 1위, TSMC 첨단 패키징 외주 핵심"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_leap",
+          "share": null,
+          "evidence": [
+            "2026E LEAP 매출 가이던스 | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_unimicron",
+      "name": "Unimicron",
+      "ticker": "3037.TW",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": 0.22,
+          "evidence": [
+            "ABF 기판 글로벌 M/S | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_micron",
+      "name": "Micron",
+      "ticker": "MU",
+      "functions": [
+        {
+          "fn": "fn_hbm_wafer",
+          "share": 0.21,
+          "evidence": [
+            "HBM 글로벌 M/S | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_amkor",
+      "name": "Amkor Technology",
+      "ticker": "AMKR",
+      "functions": [
+        {
+          "fn": "fn_osat",
+          "share": null,
+          "evidence": [
+            "CoWoS 외주의 핵심, TSMC 10년 파트너"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_advanced_packaging",
+          "share": null,
+          "evidence": [
+            "Q1'26 첨단 패키징 매출 | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_applied_materials",
+      "name": "Applied Materials",
+      "ticker": "AMAT",
+      "functions": [
+        {
+          "fn": "fn_packaging_equipment",
+          "share": null,
+          "evidence": [
+            "패키징 장비 최강자"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_kinex_hybrid_bonding",
+          "share": null,
+          "evidence": [
+            "완전 통합형 Die-to-Wafer"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nexx_panel_deposition",
+          "share": null,
+          "evidence": [
+            "NEXX 인수 | ASMPT로부터 인수"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_lam_research",
+      "name": "Lam Research",
+      "ticker": "LRCX",
+      "functions": [
+        {
+          "fn": "fn_tsv_etch",
+          "share": null,
+          "evidence": [
+            "TSV 식각 | **핵심 포지션**"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_hybrid_bonding_pretreat",
+          "share": null,
+          "evidence": [
+            "하이브리드 본딩 전처리 | 표면 활성화·세정"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_advantest",
+      "name": "Advantest",
+      "ticker": "6857.T",
+      "functions": [
+        {
+          "fn": "fn_test_ate",
+          "share": 0.7,
+          "evidence": [
+            "글로벌 ATE M/S | "
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_memory_test",
+          "share": 0.65,
+          "evidence": [
+            "메모리 테스트 M/S | "
+          ],
+          "confidence": 0.8
+        },
+        {
+          "fn": "fn_soc_test",
+          "share": 0.4,
+          "evidence": [
+            "SoC 테스트 M/S | 35~45%"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "id": "co_disco",
+      "name": "Disco Corporation",
+      "ticker": "6146.T",
+      "functions": [
+        {
+          "fn": "fn_wafer_thinning",
+          "share": 0.75,
+          "evidence": [
+            "정밀 다이싱·그라인딩 M/S | "
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_stealth_dicing",
+          "share": null,
+          "evidence": [
+            "스텔스 다이싱 | 레이저 기반 내부 가공"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_taiko_grinding",
+          "share": null,
+          "evidence": [
+            "Disco의 Taiko 그라인딩·스텔스 다이싱이 사실상 "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ibiden",
+      "name": "Ibiden",
+      "ticker": "4062.T",
+      "functions": [
+        {
+          "fn": "fn_abf_substrate",
+          "share": null,
+          "evidence": [
+            "ABF 기판 2위, AI 서버 핵심 공급자"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_ic_package_substrate",
+          "share": null,
+          "evidence": [
+            "AI 서버·HPC용 고성능 IC 패키지 기판 "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ajinomoto",
+      "name": "Ajinomoto",
+      "ticker": "2802.T",
+      "functions": [
+        {
+          "fn": "fn_abf_film",
+          "share": 0.95,
+          "evidence": [
+            "ABF 필름 글로벌 M/S | "
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_besi",
+      "name": "BESI",
+      "ticker": "BESI.AS",
+      "functions": [
+        {
+          "fn": "fn_hybrid_bonding",
+          "share": null,
+          "evidence": [
+            "하이브리드 본딩의 왕, M&A 경합의 중심"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_tsmc",
+      "to": "co_amkor",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        " (2026.06.16 발표)"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "TSMC-Amkor 10년 첨단 패키징 파트너십, Arizona 허브"
+    },
+    {
+      "from": "co_tsmc",
+      "to": "co_ase_spil",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "TSMC CoWoS 외주의 핵심 파트너"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "CoWoS 외주: SPIL 6~8만장/년"
+    },
+    {
+      "from": "co_amkor",
+      "to": "co_tsmc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "CoWoS 외주 배분 | "
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Amkor CoWoS 외주 80K WPM"
+    },
+    {
+      "from": "co_unimicron",
+      "to": "co_tsmc",
+      "type": "supply",
+      "share": 0.35,
+      "evidence": [
+        "NVIDIA GPU용 ABF M/S | "
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "NVIDIA GPU용 ABF 기판 35% (TSMC 경유)"
+    },
+    {
+      "from": "co_unimicron",
+      "to": "co_micron",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "ASIC(Google TPU, AWS Trainium) ABF M/S | "
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "ASIC용 ABF 기판 공급 (간접)"
+    },
+    {
+      "from": "co_ibiden",
+      "to": "co_intel",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "주요 고객 | Intel, NVIDIA"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "IC 패키지 기판 공급"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_unimicron",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "ABF 필름 글로벌 M/S | "
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_ibiden",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "가이던스 분의 ABF 필름은 확보했으나"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — Ibiden이 업사이드 분 미확보 언급"
+    },
+    {
+      "from": "co_applied_materials",
+      "to": "co_besi",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        " (본딩 정밀도 <10nm)"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Kinex 공동 개발 파트너십 + BESI 인수 입찰"
+    },
+    {
+      "from": "co_lam_research",
+      "to": "co_besi",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "Lam Research와 함께 "
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "BESI 인수 경합"
+    },
+    {
+      "from": "co_applied_materials",
+      "to": "co_tsmc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "TSMC가 글로벌 장비사(AMAT, TEL 등)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "CoPoS 파일럿 라인 장비 경합"
+    },
+    {
+      "from": "co_disco",
+      "to": "co_skhynix",
+      "type": "supply",
+      "share": 0.75,
+      "evidence": [
+        "HBM 웨이퍼 극박화 | **30~50um**"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Taiko 그라인딩/스텔스 다이싱 필수 공정"
+    },
+    {
+      "from": "co_disco",
+      "to": "co_samsung",
+      "type": "supply",
+      "share": 0.75,
+      "evidence": [
+        "정밀 다이싱·그라인딩 M/S | "
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "HBM 웨이퍼 극박화 장비 공급"
+    },
+    {
+      "from": "co_disco",
+      "to": "co_micron",
+      "type": "supply",
+      "share": 0.75,
+      "evidence": [
+        "정밀 다이싱·그라인딩 M/S | "
+      ],
+      "confidence": 0.9,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "HBM 웨이퍼 극박화 장비 공급"
+    },
+    {
+      "from": "co_advantest",
+      "to": "co_skhynix",
+      "type": "supply",
+      "share": 0.7,
+      "evidence": [
+        "모든 HBM 모듈·패키지 GPU가 Advantest 장비 통과"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ATE 장비 공급 — 모든 칩 통과"
+    },
+    {
+      "from": "co_advantest",
+      "to": "co_samsung",
+      "type": "supply",
+      "share": 0.7,
+      "evidence": [
+        "모든 HBM 모듈·패키지 GPU가 Advantest 장비 통과"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ATE 장비 공급"
+    },
+    {
+      "from": "co_advantest",
+      "to": "co_micron",
+      "type": "supply",
+      "share": 0.7,
+      "evidence": [
+        "모든 HBM 모듈·패키지 GPU가 Advantest 장비 통과"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "ATE 장비 공급"
+    },
+    {
+      "from": "co_micron",
+      "to": "co_tsmc",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        " (NVIDIA Vera Rubin용)"
+      ],
+      "confidence": 0.7,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "Micron HBM4 다이 TSMC 패키징 의존 (추정)"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_tsmc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "로직(TSMC, 인텔)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 고객 — TSMC"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_intel",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "로직(TSMC, 인텔)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 고객 — 인텔"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_skhynix",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "메모리(SK, 삼성, 마이크론)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 고객"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_samsung",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "메모리(SK, 삼성, 마이크론)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 고객"
+    },
+    {
+      "from": "co_besi",
+      "to": "co_micron",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "메모리(SK, 삼성, 마이크론)"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "하이브리드 본더 고객"
+    },
+    {
+      "from": "co_lam_research",
+      "to": "co_tsmc",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "TSV 식각 | **핵심 포지션**"
+      ],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "TSV/TGV 식각 장비 공급"
+    },
+    {
+      "from": "co_asmpt",
+      "to": "co_applied_materials",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "ASMPT로부터 인수 — **패널 레벨 첨단 패키징 증착 장비**"
+      ],
+      "confidence": 1.0,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "Applied Materials가 ASMPT의 NEXX 사업부(패널 레벨 증착 장비)를 인수"
+    },
+    {
+      "from": "co_shinko",
+      "to": "co_intel",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "AI 서버·HPC용 고성능 IC 패키지 기판"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "Shinko는 Fujitsu 계열, Intel 패키징 핵심 벤더"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_ats",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "ABF 필름 글로벌 M/S"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — AT&S는 ABF 기판 3위"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_shinko",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "ABF 필름 글로벌 M/S"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — Shinko는 ABF 기판 5위"
+    },
+    {
+      "from": "co_ajinomoto",
+      "to": "co_nanya_pcb",
+      "type": "supply",
+      "share": 0.95,
+      "evidence": [
+        "ABF 필름 글로벌 M/S"
+      ],
+      "confidence": 0.9,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "ABF 필름 독점 공급 — Nan Ya는 ABF 기판 4위"
+    }
+  ]
+}

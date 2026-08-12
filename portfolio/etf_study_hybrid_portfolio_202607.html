@@ -1,0 +1,3184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETF 스터디 & 하이브리드 포트폴리오 (v4) — ourprochoi Research</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f0ede7; --card:#ffffff; --line:#d8dbd1; --note:#ebe8e0; --chip-bg:#e4e6dc;
+  --gold:#c79a2f; --golds:#f7f0db; --gold-line:#e8d5a0;
+  --navy:#1c2a3e;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+  --accent:#c79a2f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ═══ PROGRESS BAR ═══ */
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--up),var(--blue),var(--gold));width:0%;z-index:99;transition:width .15s}
+
+/* ═══ NAV ═══ */
+nav{position:sticky;top:0;background:rgba(240,237,231,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap;transition:all .2s}
+nav a:hover{background:var(--chip-bg);color:var(--ink)}
+
+/* ═══ WRAP ═══ */
+.wrap{max-width:820px;margin:0 auto;padding:0 20px 100px}
+
+/* ═══ HERO ═══ */
+.hero-shell{background:linear-gradient(170deg,#1a1f2e 0%,#2e6b8a 40%,#162232 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.35;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(199,154,47,.07) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(199,154,47,.07) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(22,34,50,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:820px;margin:0 auto;padding:74px 20px 36px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--gold);font-weight:800}
+.hero .version{display:inline-block;background:var(--gold);color:#1a1f2e;font-size:11px;font-weight:900;padding:3px 10px;border-radius:999px;margin-left:8px;letter-spacing:.05em}
+.hero h1{font-size:clamp(28px,6.8vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#e7c77e 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8b8;max-width:660px;margin:0 auto;font-size:15.5px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.6vw,28px);font-weight:900;color:#e7c77e;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#8a96a6;margin-top:5px;line-height:1.45}
+
+/* ═══ CONTENT SECTIONS ═══ */
+section{padding-top:10px}
+.zone-head{margin:58px 0 6px;position:relative}
+.zone-head h2{font-size:clamp(22px,5vw,30px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:8px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 26px;margin:22px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.25)}}
+
+/* ═══ HEADINGS inside cards ═══ */
+.content-body h2{font-size:clamp(22px,5vw,30px);font-weight:900;letter-spacing:-.02em;color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:58px 0 14px}
+.content-body h3{font-size:18.5px;font-weight:800;color:var(--navy);margin:32px 0 10px;padding-left:14px;border-left:4px solid var(--accent)}
+.content-body h4{font-size:16px;font-weight:700;color:var(--steel);margin:22px 0 8px}
+
+/* ═══ TABLES ═══ */
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:13.3px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px 12px;text-align:left;font-weight:700;white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#f8f8f5}
+td:first-child{font-weight:700;white-space:nowrap}
+td strong{color:var(--up)}
+
+/* ═══ BLOCKQUOTE ═══ */
+blockquote{border-left:4px solid var(--accent);margin:16px 0;padding:12px 18px;background:var(--note);border-radius:0 12px 12px 0;font-size:15px;color:var(--sub)}
+blockquote strong{color:var(--ink)}
+
+/* ═══ LISTS ═══ */
+ul,ol{margin:8px 0;padding-left:24px}
+li{margin:4px 0;font-size:15.5px;line-height:1.7}
+li strong{color:var(--ink)}
+
+/* ═══ CODE ═══ */
+code{font-family:'SF Mono',Menlo,monospace;font-size:13px;background:var(--chip-bg);padding:2px 6px;border-radius:5px}
+pre{background:#f6f8fa;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:12px;overflow-x:auto;margin:12px 0}
+
+/* ═══ HR ═══ */
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ═══ LINKS ═══ */
+a{color:var(--blue);text-decoration:none;font-weight:600}
+a:hover{text-decoration:underline}
+
+/* ═══ BADGES ═══ */
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+
+/* ═══ BACK TO TOP ═══ */
+.btt{position:fixed;bottom:28px;right:28px;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:20px;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;z-index:80;display:flex;align-items:center;justify-content:center}
+.btt.show{opacity:1}
+
+/* ═══ FOOTER ═══ */
+.site-footer{text-align:center;padding:40px 20px;font-size:13px;color:var(--faint);border-top:1px solid var(--line);margin-top:60px}
+
+/* ═══ PRINT ═══ */
+@media print{
+  body{background:#fff;font-size:10pt}
+  .hero-shell{background:#1c2a3e!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  nav,#prog,.btt{display:none!important}
+  .floor{opacity:1!important;transform:none!important;box-shadow:none!important;break-inside:avoid;border:1px solid #ddd}
+  .wrap{max-width:100%;padding:0 10px}
+  .table-wrap{overflow:visible}
+  table{font-size:9pt}
+  th{background:#333!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:#333}
+  a::after{content:" (" attr(href) ")";font-size:8pt;color:#888}
+}
+
+/* ═══ RESPONSIVE — TABLET ═══ */
+@media(max-width:768px){
+  body{font-size:15px;line-height:1.7}
+  .wrap{max-width:100%;padding:0 16px 80px}
+  .hero{padding:56px 16px 28px}
+  .hero h1{font-size:clamp(24px,6vw,36px)}
+  .hero p.lede{font-size:14px}
+  .stats{gap:8px}
+  .stat{padding:12px 6px}
+  .stat .n{font-size:20px}
+  .stat .l{font-size:10.5px}
+  .content-body h2{font-size:22px;margin:40px 0 12px}
+  .content-body h3{font-size:16.5px;margin:24px 0 8px}
+  .content-body h4{font-size:14.5px}
+  .floor{padding:22px 18px;border-radius:14px;margin:16px 0}
+  li{font-size:14.5px}
+  blockquote{padding:10px 14px;font-size:14px}
+  nav{padding:8px 12px;gap:6px}
+  nav a{font-size:11.5px;padding:5px 10px}
+}
+
+/* ═══ RESPONSIVE — MOBILE ═══ */
+@media(max-width:480px){
+  body{font-size:14.5px;line-height:1.65}
+  .wrap{padding:0 10px 60px}
+  .hero{padding:44px 14px 22px}
+  .hero .eyebrow{font-size:10px;letter-spacing:.18em}
+  .hero h1{font-size:clamp(20px,5.5vw,28px);margin:10px 0 10px}
+  .hero p.lede{font-size:13px}
+  .stats{grid-template-columns:1fr;gap:6px;margin-top:20px}
+  .stat{padding:10px 8px;border-radius:12px;display:flex;align-items:center;gap:10px;text-align:left}
+  .stat .n{font-size:18px;min-width:80px}
+  .stat .l{font-size:10px;margin-top:0}
+  .content-body h2{font-size:19px;margin:32px 0 10px}
+  .content-body h3{font-size:15.5px;margin:20px 0 6px;padding-left:10px;border-left-width:3px}
+  .content-body h4{font-size:13.5px;margin:16px 0 6px}
+  .floor{padding:16px 12px;border-radius:12px;margin:12px 0}
+  li{font-size:13.5px}
+  p{font-size:13.5px}
+  blockquote{padding:8px 10px;font-size:13px;margin:10px 0}
+  nav{padding:6px 8px;gap:4px}
+  nav a{font-size:10.5px;padding:4px 8px}
+  .btt{width:38px;height:38px;font-size:16px;bottom:16px;right:16px}
+  .site-footer{font-size:11px;padding:24px 12px}
+}
+
+/* ═══ RESPONSIVE — TABLE MOBILE ═══ */
+@media(max-width:768px){
+  .table-wrap{margin:10px -10px;border-radius:10px;border-left:none;border-right:none}
+  table{font-size:11.5px;min-width:500px}
+  th{font-size:10px;padding:8px 6px;letter-spacing:.03em}
+  td{padding:7px 6px;font-size:11px}
+  td:first-child{white-space:normal;min-width:70px}
+}
+
+/* ═══ RESPONSIVE — TABLE CARD MODE (very small) ═══ */
+@media(max-width:400px){
+  table{min-width:420px}
+  th{font-size:9px;padding:6px 4px}
+  td{padding:5px 4px;font-size:10px}
+  .table-wrap{margin:8px -6px;border-radius:8px}
+  /* Scroll hint shadow */
+  .table-wrap{
+    background:
+      linear-gradient(to right, var(--card) 30%, transparent),
+      linear-gradient(to left, var(--card) 30%, transparent),
+      linear-gradient(to right, rgba(0,0,0,.12), transparent 40px),
+      linear-gradient(to left, rgba(0,0,0,.12), transparent 40px);
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-size: 20px 100%, 20px 100%, 20px 100%, 20px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<div class="hero-shell">
+<div class="hero">
+  <div class="eyebrow">ETF STUDY & HYBRID PORTFOLIO <span class="version">v4</span></div>
+  <h1>ETF 스터디 & 하이브리드 포트폴리오</h1>
+  <p class="lede">테마별 ETF 심층 비교 · TIMEFOLIO 액티브 분석 · AGIX 심층 분석 · 개별 4종목 + ETF 7종 하이브리드</p>
+  <div class="stats"><div class="stat"><div class="n">10~20억</div><div class="l">투자 규모</div></div>
+<div class="stat"><div class="n">개별 20%</div><div class="l">ETF 40% · 현금 40%</div></div>
+<div class="stat"><div class="n">130+종목</div><div class="l">실질 분산 노출</div></div></div>
+</div>
+</div>
+
+<nav>
+  <a href="#sec-1">Overview</a>
+  <a href="#sec-1">1. ETF 전환 배경</a>
+  <a href="#sec-2">2. 테마별 ETF 분석</a>
+  <a href="#sec-3">3. TIMEFOLIO 전체 라인…</a>
+  <a href="#sec-4">4. v4 하이브리드 포트폴리오</a>
+  <a href="#sec-5">5. v3 → v4 변경 추적</a>
+  <a href="#sec-6">6. 클러스터 분석</a>
+  <a href="#sec-7">7. 비용 분석</a>
+  <a href="#sec-8">8. 진입 타이밍</a>
+  <a href="#sec-9">9. 리밸런싱 규칙</a>
+  <a href="#sec-10">10. 모니터링 체크리스트</a>
+  <a href="#sec-11">부록 A: Anthropic 투자…</a>
+  <a href="#sec-12">부록 B: 주요 ETF 성과 비교…</a>
+  <a href="#sec-13">부록 C: AGIX ETF 심층 분석</a>
+</nav>
+
+<div class="wrap">
+<div class="content-body">
+<hr />
+<section id="sec-1"><h2 id="sec-1">1. ETF 전환 배경</h2>
+<h3 id="etf">왜 ETF를 검토하는가?</h3>
+<ul>
+<li><strong>관리 부담 축소:</strong> 개별 12종목 모니터링 → 4종목 + ETF 자동 리밸런싱</li>
+<li><strong>분산 효과:</strong> 실질 노출 종목 12개 → 130개+</li>
+<li><strong>월별 MTM 안정:</strong> ETF 내 분산으로 개별 종목 이벤트 충격 완화</li>
+<li><strong>테마 확장:</strong> Anthropic 간접 노출, 글로벌 방산, GLP-1 듀얼 등 개별로 어려운 포지션 확보</li>
+<li><strong>액티브 알파:</strong> TIMEFOLIO 등 액티브 ETF로 인덱스 대비 초과수익 추구</li>
+</ul>
+<h3 id="_1">개별 종목 유지 기준</h3>
+<p>다음 조건을 <strong>모두 충족</strong>하는 종목만 개별 보유:
+1. 확신도 최상위 (Top pick급)
+2. ETF 대체 시 원하지 않는 종목이 포함됨 (예: LIG디펜스앤에어로스페이스)
+3. 또는 ETF로 대체 불가 (예: 네이버)</p>
+<p>→ <strong>현대로템, 한화에어로스페이스, SK하이닉스, 네이버</strong> 4종목 선정</p>
+<hr />
+</section><section id="sec-2"><h2 id="sec-2">2. 테마별 ETF 분석</h2>
+<h3 id="2-1-k-etf">2-1. K-방산 ETF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>운용사</th>
+<th>보수</th>
+<th>AUM</th>
+<th>유형</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PLUS K방산</strong></td>
+<td>449450</td>
+<td>한화자산운용</td>
+<td>0.45%</td>
+<td>1.24조</td>
+<td>패시브</td>
+<td>한화에어로 21%, 현대로템 19%, KAI 15%</td>
+</tr>
+<tr>
+<td>TIGER K방산&amp;우주</td>
+<td>463250</td>
+<td>미래에셋</td>
+<td>0.45%</td>
+<td>6,815억</td>
+<td>패시브</td>
+<td>KAI 25% 1위, <strong>LIG디펜스앤에어로스페이스 18%</strong></td>
+</tr>
+<tr>
+<td>KODEX 방산TOP10</td>
+<td>0080G0</td>
+<td>삼성자산운용</td>
+<td>0.45%</td>
+<td>-</td>
+<td>패시브</td>
+<td>방산 특화, 우주 제외</td>
+</tr>
+<tr>
+<td>SOL K방산</td>
+<td>490480</td>
+<td>신한자산운용</td>
+<td>0.45%</td>
+<td>~881억+</td>
+<td>패시브</td>
+<td>15종목, AI 키워드 선정</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>PLUS K방산 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>한화에어로스페이스</td>
+<td>21.19%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>한화오션</td>
+<td>19.48%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>현대로템</td>
+<td>19.06%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>한국항공우주(KAI)</td>
+<td>15.09%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>LIG디펜스앤에어로스페이스</td>
+<td>14.39%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>한화시스템</td>
+<td>7.71%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>풍산</td>
+<td>1.60%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>STX엔진</td>
+<td>0.66%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>판단:</strong> TIGER는 LIG디펜스앤에어로스페이스 18% 편입 → 패스. PLUS K방산이 현 포트와 가장 유사하나, 개별 확신 종목(현대로템·한화에어로)을 직접 보유하므로 <strong>국내 방산 ETF는 편입하지 않음</strong>. 대신 글로벌 방산을 TIMEFOLIO로 커버.</p>
+<hr />
+<h3 id="2-2-k-etf">2-2. K-조선 ETF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>운용사</th>
+<th>보수</th>
+<th>AUM</th>
+<th>유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TIGER 조선TOP10</strong></td>
+<td>494670</td>
+<td>미래에셋</td>
+<td><strong>0.35%</strong></td>
+<td>1.59조</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td>SOL 조선TOP3플러스</td>
+<td>466920</td>
+<td>신한자산운용</td>
+<td>0.45%</td>
+<td>2.02조</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td>KODEX K조선TOP10</td>
+<td>0115D0</td>
+<td>삼성자산운용</td>
+<td>0.45%</td>
+<td>1,118억</td>
+<td>패시브</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>TIGER 조선TOP10 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>한화오션</td>
+<td>27.89%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HD현대중공업</td>
+<td>24.54%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HD한국조선해양</td>
+<td>20.86%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>삼성중공업</td>
+<td>18.09%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>한화엔진</td>
+<td>3.02%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>SOL 조선TOP3플러스 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>삼성중공업</td>
+<td>26.38%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>한화오션</td>
+<td>24.73%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HD현대중공업</td>
+<td>24.64%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>HD한국조선해양</td>
+<td>15.33%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>한화엔진</td>
+<td>2.29%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>비교:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>TIGER</th>
+<th>SOL</th>
+<th>KODEX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보수</td>
+<td><strong>0.35% (최저)</strong></td>
+<td>0.45%</td>
+<td>0.45%</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td>1.59조</td>
+<td><strong>2.02조 (최대)</strong></td>
+<td>1,118억</td>
+</tr>
+<tr>
+<td>1위 종목</td>
+<td>한화오션 28%</td>
+<td>삼성중공업 26%</td>
+<td>한화오션 24%</td>
+</tr>
+<tr>
+<td>배당</td>
+<td>분기</td>
+<td>연 1회(4월)</td>
+<td>분기</td>
+</tr>
+<tr>
+<td>1년 수익률</td>
+<td>+115.46%</td>
+<td>+115.85%</td>
+<td>신규</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>선정: TIGER 조선TOP10</strong> — 보수 최저(0.35%), HD현대중공업+한화오션 합산 52%로 기존 포트 방향성 일치, 삼성중공업·KSOE까지 자동 분산.</p>
+<hr />
+<h3 id="2-3-hbm-etf">2-3. HBM/반도체 ETF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>운용사</th>
+<th>보수</th>
+<th>AUM</th>
+<th>유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER 반도체TOP10</td>
+<td>396500</td>
+<td>미래에셋</td>
+<td>0.45%</td>
+<td>13.5조</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td><strong>ACE AI반도체TOP3+</strong></td>
+<td>469150</td>
+<td>한국투자</td>
+<td><strong>0.30%</strong></td>
+<td>6,490억</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td>KODEX AI반도체TOP2+</td>
+<td>395160</td>
+<td>삼성자산운용</td>
+<td>0.45%</td>
+<td>-</td>
+<td>패시브</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>ACE AI반도체TOP3+ 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SK하이닉스</td>
+<td>27.85%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>삼성전자</td>
+<td>25.59%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>한미반도체</td>
+<td>20.65%</td>
+</tr>
+<tr>
+<td>4~20</td>
+<td>소부장 17종목</td>
+<td>각 ~1.47%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>TIGER 반도체TOP10 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SK하이닉스</td>
+<td>26.20%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>삼성전자</td>
+<td>23.94%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>한미반도체</td>
+<td>17.93%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>리노공업</td>
+<td>6.64%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DB하이텍</td>
+<td>5.56%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>이오테크닉스</td>
+<td>5.16%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>비교:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>ACE TOP3+</th>
+<th>TIGER TOP10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보수</td>
+<td><strong>0.30% (최저)</strong></td>
+<td>0.45%</td>
+</tr>
+<tr>
+<td>TOP3 집중도</td>
+<td><strong>74%</strong></td>
+<td>68%</td>
+</tr>
+<tr>
+<td>소부장 분산</td>
+<td>17종목</td>
+<td>7종목</td>
+</tr>
+<tr>
+<td>1년 수익률</td>
+<td>+346%</td>
+<td>+391%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>선정: ACE AI반도체TOP3+</strong> — SK하이닉스는 개별 보유하므로 이 ETF는 <strong>삼성전자·한미반도체·이수페타시스 등 소부장 커버</strong> 용도. 보수 0.30%로 최저.</p>
+<p><strong>중복 유의:</strong> SK하이닉스가 개별(5%) + ETF 내(28% × 5% = 1.4%) 합산 ~6.4% 노출. 의도된 오버웨이트.</p>
+<hr />
+<h3 id="2-4-ai-sw-anthropic-etf">2-4. AI SW / Anthropic 노출 ETF</h3>
+<h4 id="_2">한국 상장</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>운용사</th>
+<th>보수</th>
+<th>AUM</th>
+<th>유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SOL 미국AI소프트웨어</strong></td>
+<td>481180</td>
+<td>신한자산운용</td>
+<td>0.45%</td>
+<td>~1,359억</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td>KODEX 미국AI테크TOP10</td>
+<td>485540</td>
+<td>삼성자산운용</td>
+<td>0.30%</td>
+<td>-</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td>TIGER 미국AI빅테크10</td>
+<td>490090</td>
+<td>미래에셋</td>
+<td>0.30%</td>
+<td>~2,231억</td>
+<td>패시브</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>SOL 미국AI소프트웨어 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+<th>Anthropic 연결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Palantir</td>
+<td>22.86%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Microsoft</td>
+<td>14.26%</td>
+<td>OpenAI 투자자</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ServiceNow</td>
+<td>12.55%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Salesforce</strong></td>
+<td><strong>10.97%</strong></td>
+<td><strong>Anthropic 투자자</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Snowflake</td>
+<td>10.13%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AppLovin</td>
+<td>8.44%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Palo Alto Networks</td>
+<td>7.92%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MongoDB</td>
+<td>5.59%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Datadog</td>
+<td>4.79%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Confluent</td>
+<td>2.48%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="anthropic">미국 상장 — Anthropic 직접 보유</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>티커</th>
+<th>운용사</th>
+<th>보수</th>
+<th>AUM</th>
+<th>Anthropic 보유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AGIX</strong></td>
+<td>AGIX</td>
+<td>KraneShares</td>
+<td>0.99%</td>
+<td>$807M</td>
+<td><strong>직접 1.61%</strong></td>
+</tr>
+<tr>
+<td>DXYZ</td>
+<td>DXYZ</td>
+<td>Destiny Tech</td>
+<td>CEF</td>
+<td>-</td>
+<td>17.92% (비유동적)</td>
+</tr>
+<tr>
+<td>CHAT</td>
+<td>CHAT</td>
+<td>Roundhill</td>
+<td>0.75%</td>
+<td>$2.01B</td>
+<td>간접 (GOOGL 5.2%)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>AGIX 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>NVIDIA</td>
+<td>4.09%</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>SpaceX (SPCX)</td>
+<td>3.51%</td>
+<td><strong>6/12 상장</strong> — IPO $135→현재 $171</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Alphabet</td>
+<td>3.44%</td>
+<td>Anthropic 투자자</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Astera Labs</td>
+<td>3.18%</td>
+<td>AI 인터커넥트</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Meta</td>
+<td>3.16%</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Microsoft</td>
+<td>3.16%</td>
+<td>OpenAI 투자자</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Apple</td>
+<td>2.93%</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Amazon</td>
+<td>2.83%</td>
+<td>Anthropic 최대 투자자</td>
+</tr>
+<tr>
+<td>9</td>
+<td>TSMC</td>
+<td>2.71%</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>AMD</td>
+<td>2.69%</td>
+<td></td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Anthropic (비상장)</strong></td>
+<td><strong>1.61%</strong></td>
+<td><strong>직접 보유</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Anthropic 간접 노출 비교:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>Anthropic 직접</th>
+<th>투자자 간접(GOOGL+AMZN+CRM)</th>
+<th>합산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AGIX</td>
+<td>1.61%</td>
+<td>~9.5%</td>
+<td><strong>~11%</strong></td>
+</tr>
+<tr>
+<td>KODEX 미국AI테크TOP10</td>
+<td>0%</td>
+<td>~20% (GOOGL 12%+AMZN 8%)</td>
+<td>~20%</td>
+</tr>
+<tr>
+<td>SOL 미국AI소프트웨어</td>
+<td>0%</td>
+<td>~11% (CRM 11%)</td>
+<td>~11%</td>
+</tr>
+<tr>
+<td>CHAT</td>
+<td>0%</td>
+<td>~10% (GOOGL 5%+CRM 5%)</td>
+<td>~10%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>선정: SOL 미국AI소프트웨어</strong> — ServiceNow(12.6%)를 자동 커버하면서 Salesforce(Anthropic 투자자 11%), Palantir, Snowflake로 AI SW 밸류체인 전체 확장. 원화 매매 가능.</p>
+<p><strong>AGIX는 선택적:</strong> 한국 증권사 매수 가능 여부 확인 필요. Anthropic IPO 대기 자금(현금)으로 대체 가능.</p>
+<hr />
+<h3 id="2-5-etf">2-5. 전력 인프라 ETF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>운용사</th>
+<th>보수</th>
+<th>AUM</th>
+<th>유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KODEX AI전력핵심설비</strong></td>
+<td>487240</td>
+<td>삼성자산운용</td>
+<td>0.39%</td>
+<td>2.77조</td>
+<td>패시브</td>
+</tr>
+<tr>
+<td>TIGER 글로벌AI전력인프라</td>
+<td>491010</td>
+<td>미래에셋</td>
+<td>-</td>
+<td>8,779억</td>
+<td>액티브</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>KODEX AI전력핵심설비 상위 종목:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>효성중공업</td>
+<td>~26%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HD현대일렉트릭</td>
+<td>~24%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LS ELECTRIC</td>
+<td>~19%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>LS</td>
+<td>~10%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>대한전선</td>
+<td>~7%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>가온전선</td>
+<td>~5%</td>
+</tr>
+<tr>
+<td>7~11</td>
+<td>산일전기, 일진전기 등</td>
+<td>~9%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>선정: KODEX AI전력핵심설비</strong> — HD현대일렉트릭(24%) + 효성중공업 + LS ELECTRIC까지 전력 11사 자동 분산. 기존 포트의 HD현대일렉트릭(2%) + 두산에너빌리티(2%)를 이 ETF 하나로 대체.</p>
+<hr />
+<h3 id="2-6-glp-1-etf">2-6. GLP-1 / 바이오 ETF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>운용사</th>
+<th>보수</th>
+<th>유형</th>
+<th>GLP-1 노출</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KODEX 비만치료제TOP2+</strong></td>
+<td>476070</td>
+<td>삼성자산운용</td>
+<td>0.45%</td>
+<td>패시브</td>
+<td>Novo 25% + Lilly 25%</td>
+</tr>
+<tr>
+<td>TIGER 비만치료제TOP2+</td>
+<td>476690</td>
+<td>미래에셋</td>
+<td>0.45%</td>
+<td>패시브</td>
+<td>Novo 25% + Lilly 25% (월배당)</td>
+</tr>
+<tr>
+<td>RISE 글로벌비만산업TOP2+</td>
+<td>-</td>
+<td>KB자산운용</td>
+<td>0.35%</td>
+<td>패시브</td>
+<td>Novo + Lilly</td>
+</tr>
+<tr>
+<td>TIME 글로벌바이오액티브</td>
+<td>485810</td>
+<td>타임폴리오</td>
+<td>0.80%</td>
+<td>액티브</td>
+<td>Eli Lilly 14%, 글로벌 바이오</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>KODEX 비만치료제TOP2+ 구조:</strong>
+- Novo Nordisk + Eli Lilly 각 25% (합산 50%)
+- 나머지 8종목: GLP-1 파이프라인 기업 (시총 가중)
+- 분기 리밸런싱</p>
+<p><strong>선정: KODEX 비만치료제TOP2+</strong> — Novo 단일 보유(v3: 2%)를 Novo+Lilly 듀얼(합산 50%)로 확장. Eli Lilly는 Mounjaro/Zepbound로 Novo와 함께 GLP-1 양대 축.</p>
+<hr />
+<h3 id="2-7-timefolio-etf">2-7. TIMEFOLIO 액티브 ETF</h3>
+<p>TIMEFOLIO는 한국 최대 액티브 ETF 전문 운용사. 2026년 6월 기준 19개 ETF, 총 AUM <strong>10조 1,074억 원</strong>.</p>
+<h4 id="etf-1-time-ai">선정 ETF ①: TIME 글로벌AI인공지능액티브</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코드</td>
+<td>456600</td>
+</tr>
+<tr>
+<td>보수</td>
+<td>0.80%</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td><strong>2.82조</strong> (TIMEFOLIO 최대)</td>
+</tr>
+<tr>
+<td>유형</td>
+<td>액티브 (글로벌 AI 인프라 전반)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>상위 종목 (2026.07.01):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Intel</td>
+<td>6.82%</td>
+<td>CPU/파운드리 전환</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AMD</td>
+<td>6.75%</td>
+<td>AI GPU 경쟁자</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Kioxia</td>
+<td>6.16%</td>
+<td>NAND/메모리</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Seagate</td>
+<td>5.66%</td>
+<td>AI 스토리지</td>
+</tr>
+<tr>
+<td>5</td>
+<td>NVIDIA</td>
+<td>4.49%</td>
+<td>AI 칩</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Western Digital</td>
+<td>4.46%</td>
+<td>AI 스토리지</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Snowflake</td>
+<td>4.15%</td>
+<td>AI 데이터</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ARM Holdings</td>
+<td>3.70%</td>
+<td>칩 설계 IP</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Qualcomm</td>
+<td>3.69%</td>
+<td>엣지 AI</td>
+</tr>
+<tr>
+<td>10</td>
+<td>SanDisk</td>
+<td>3.14%</td>
+<td>스토리지</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>특징:</strong> NVIDIA를 4.49%로 절제하고, Intel·AMD·스토리지(Kioxia·Seagate·WD)를 오버웨이트하는 독자적 액티브 판단. 인덱스 ETF와 포트 구성이 상당히 다름. 국내 반도체 ETF(ACE)와 <strong>겹침 거의 없음</strong> (글로벌 vs 국내).</p>
+<p><strong>편입 이유:</strong>
+- 국내 포트에 없는 <strong>글로벌 AI 인프라</strong> 전체 커버
+- SK하이닉스(개별) + ACE반도체(국내 소부장) + TIME AI(글로벌) = AI 풀 밸류체인
+- TIMEFOLIO의 액티브 운용 역량으로 인덱스 대비 알파 추구</p>
+<hr />
+<h4 id="etf-2-time">선정 ETF ②: TIME 글로벌우주테크&amp;방산액티브</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코드</td>
+<td>478150</td>
+</tr>
+<tr>
+<td>보수</td>
+<td>0.80%</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td><strong>3,054억</strong></td>
+</tr>
+<tr>
+<td>유형</td>
+<td>액티브 (글로벌 항공우주·방산)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>상위 종목 (2026.07.01):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Rocket Lab</td>
+<td>15.18%</td>
+<td>우주 발사체</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Planet Labs</td>
+<td>10.18%</td>
+<td>위성 데이터</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Honeywell</td>
+<td>8.02%</td>
+<td>항공 방산 복합</td>
+</tr>
+<tr>
+<td>4</td>
+<td>RTX Corp</td>
+<td>4.82%</td>
+<td>레이시온(미사일)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Howmet Aerospace</td>
+<td>4.48%</td>
+<td>항공 소재</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GE Aerospace</td>
+<td>4.09%</td>
+<td>항공 엔진</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Moog Inc</td>
+<td>3.99%</td>
+<td>정밀 제어</td>
+</tr>
+<tr>
+<td>8</td>
+<td>General Dynamics</td>
+<td>3.59%</td>
+<td>방산 대형주</td>
+</tr>
+<tr>
+<td>9</td>
+<td>AST SpaceMobile</td>
+<td>3.36%</td>
+<td>위성 통신</td>
+</tr>
+<tr>
+<td>10</td>
+<td>L3Harris</td>
+<td>3.26%</td>
+<td>방산 전자</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>특징:</strong> 국내 방산주 <strong>0% 편입</strong> — 한국 방산(개별: 현대로템·한화에어로)과 <strong>겹침 완전 제로</strong>. 미국·유럽 방산 대형주 + 우주 스타트업(Rocket Lab·Planet Labs) 혼합.</p>
+<p><strong>편입 이유:</strong>
+- 한국 방산 개별종목과 <strong>완벽한 지역 분산</strong> (K-방산 + 글로벌 방산)
+- 우주 테마(Rocket Lab, AST SpaceMobile)는 개별 매수 어려운 영역
+- RTX·General Dynamics 등 미국 방산주로 지정학 헤지</p>
+<hr />
+<h3 id="2-8-etf">2-8. 미편입 ETF 및 사유</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER K방산&amp;우주</td>
+<td>LIG디펜스앤에어로스페이스 18% 편입 — 제외 의사</td>
+</tr>
+<tr>
+<td>PLUS K방산</td>
+<td>개별 종목으로 이미 커버 (현대로템·한화에어로)</td>
+</tr>
+<tr>
+<td>TIGER 반도체TOP10</td>
+<td>ACE TOP3+가 보수 더 저렴(0.30% vs 0.45%)</td>
+</tr>
+<tr>
+<td>TIME 미국나스닥100액티브</td>
+<td>TIME 글로벌AI와 종목 겹침 다수</td>
+</tr>
+<tr>
+<td>TIME 차이나AI테크</td>
+<td>중국 리스크, 기존 포트와 테마 불일치</td>
+</tr>
+<tr>
+<td>TIME K바이오액티브</td>
+<td>국내 바이오 → GLP-1 테마와 불일치</td>
+</tr>
+<tr>
+<td>AGIX (미국상장)</td>
+<td>한국 증권사 접근성 미확인 → 현금으로 Anthropic IPO 대기</td>
+</tr>
+<tr>
+<td>KODEX 미국AI테크TOP10</td>
+<td>SOL AI SW가 Anthropic 간접 노출 + AI SW 특화로 더 적합</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section><section id="sec-3"><h2 id="sec-3">3. TIMEFOLIO 전체 라인업 참고</h2>
+<p>총 19개 ETF, AUM 합산 10.1조 (2026.06.22 기준). 전 ETF 보수 0.80% (글로벌탑픽만 0.06%).</p>
+<h3 id="11">해외 (11개)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>AUM</th>
+<th>테마</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIME 미국나스닥100액티브</td>
+<td>426030</td>
+<td>2.94조</td>
+<td>미국 테크</td>
+</tr>
+<tr>
+<td><strong>TIME 글로벌AI인공지능액티브</strong></td>
+<td><strong>456600</strong></td>
+<td><strong>2.82조</strong></td>
+<td><strong>글로벌 AI</strong></td>
+</tr>
+<tr>
+<td>TIME 차이나AI테크액티브</td>
+<td>0043Y0</td>
+<td>4,834억</td>
+<td>중국 AI</td>
+</tr>
+<tr>
+<td><strong>TIME 글로벌우주테크&amp;방산액티브</strong></td>
+<td><strong>478150</strong></td>
+<td><strong>3,054억</strong></td>
+<td><strong>글로벌 방산</strong></td>
+</tr>
+<tr>
+<td>TIME 글로벌바이오액티브</td>
+<td>485810</td>
+<td>1,190억</td>
+<td>글로벌 바이오</td>
+</tr>
+<tr>
+<td>TIME 미국S&amp;P500액티브</td>
+<td>426020</td>
+<td>1,185억</td>
+<td>미국 대형주</td>
+</tr>
+<tr>
+<td>TIME 글로벌탑픽액티브</td>
+<td>0113D0</td>
+<td>854억</td>
+<td>EMP (보수 0.06%)</td>
+</tr>
+<tr>
+<td>TIME 글로벌휴머노이드로봇산업액티브</td>
+<td>0185L0</td>
+<td>730억</td>
+<td>로봇</td>
+</tr>
+<tr>
+<td>TIME 글로벌소비트렌드액티브</td>
+<td>494180</td>
+<td>-</td>
+<td>글로벌 소비</td>
+</tr>
+<tr>
+<td>TIME 미국나스닥100채권혼합50</td>
+<td>0019K0</td>
+<td>-</td>
+<td>혼합</td>
+</tr>
+<tr>
+<td>TIME 미국달러다우존스액티브</td>
+<td>-</td>
+<td>-</td>
+<td>달러/다우</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8">국내 (8개)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>AUM</th>
+<th>테마</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIME Korea플러스배당액티브</td>
+<td>441800</td>
+<td>9,604억</td>
+<td>배당</td>
+</tr>
+<tr>
+<td>TIME 코스닥액티브</td>
+<td>0162Y0</td>
+<td>3,651억</td>
+<td>코스닥</td>
+</tr>
+<tr>
+<td>TIME K바이오액티브</td>
+<td>463050</td>
+<td>2,898억</td>
+<td>국내 바이오</td>
+</tr>
+<tr>
+<td>TIME 코스피액티브</td>
+<td>385720</td>
+<td>477억</td>
+<td>코스피</td>
+</tr>
+<tr>
+<td>TIME Korea밸류업액티브</td>
+<td>495060</td>
+<td>296억</td>
+<td>밸류업</td>
+</tr>
+<tr>
+<td>TIME K신재생에너지액티브</td>
+<td>404120</td>
+<td>-</td>
+<td>신재생</td>
+</tr>
+<tr>
+<td>TIME K혁신액티브</td>
+<td>-</td>
+<td>-</td>
+<td>혁신</td>
+</tr>
+<tr>
+<td>TIME K컬처액티브</td>
+<td>410870</td>
+<td>-</td>
+<td>문화</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section><section id="sec-4"><h2 id="sec-4">4. v4 하이브리드 포트폴리오 — 최종안</h2>
+<h3 id="_3">설계 원칙</h3>
+<ol>
+<li><strong>확신 4종목만 개별 보유</strong> — 나머지는 ETF로 분산</li>
+<li><strong>TIMEFOLIO 액티브 2개</strong> — 글로벌 AI + 글로벌 방산</li>
+<li><strong>현금 40% 유지</strong> — 월별 MTM 방어 + Anthropic IPO 대기</li>
+<li><strong>테마 겹침 최소화</strong> — 국내 개별 + 국내 ETF + 글로벌 ETF 3층 구조</li>
+</ol>
+<h3 id="20">포트폴리오 구성 (20억 기준)</h3>
+<h4 id="20-40">개별 종목 — 20% (4.0억)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>종목</th>
+<th>비중</th>
+<th>금액</th>
+<th>진입 시점</th>
+<th>핵심 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현대로템</td>
+<td>6%</td>
+<td>1.2억</td>
+<td>7월 즉시</td>
+<td>Top pick, PEG 0.29, OPM 17.2%, K2 폴란드</td>
+</tr>
+<tr>
+<td>한화에어로스페이스</td>
+<td>6%</td>
+<td>1.2억</td>
+<td>7월 즉시</td>
+<td>방산 대장주, 잔고 116.8조, Fwd PER 31.7x</td>
+</tr>
+<tr>
+<td>SK하이닉스</td>
+<td>5%</td>
+<td>1.0억</td>
+<td>분할 (40/30/30)</td>
+<td>HBM M/S 57%, Fwd PER 6.4x, 사이클 직접 관리</td>
+</tr>
+<tr>
+<td>네이버</td>
+<td>3%</td>
+<td>0.6억</td>
+<td>7월 즉시</td>
+<td>독립 클러스터, PEG 0.18, ETF 대체 불가</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="etf-40-80">ETF — 40% (8.0억)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>비중</th>
+<th>금액</th>
+<th>보수</th>
+<th>커버 영역</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER 조선TOP10</td>
+<td>494670</td>
+<td>8%</td>
+<td>1.6억</td>
+<td>0.35%</td>
+<td>HD현대중공업·한화오션·삼성중공업·KSOE</td>
+</tr>
+<tr>
+<td><strong>TIME 글로벌AI인공지능액티브</strong></td>
+<td>456600</td>
+<td><strong>8%</strong></td>
+<td>1.6억</td>
+<td>0.80%</td>
+<td>Intel·AMD·NVDA·ARM — 글로벌 AI 인프라</td>
+</tr>
+<tr>
+<td>ACE AI반도체TOP3+</td>
+<td>469150</td>
+<td>5%</td>
+<td>1.0억</td>
+<td>0.30%</td>
+<td>삼성전자·한미반도체 + 소부장 17종목</td>
+</tr>
+<tr>
+<td>SOL 미국AI소프트웨어</td>
+<td>481180</td>
+<td>5%</td>
+<td>1.0억</td>
+<td>0.45%</td>
+<td>ServiceNow·Salesforce·Palantir·Snowflake</td>
+</tr>
+<tr>
+<td>KODEX AI전력핵심설비</td>
+<td>487240</td>
+<td>4%</td>
+<td>0.8억</td>
+<td>0.39%</td>
+<td>HD현대일렉트릭·효성중공업·LS ELECTRIC</td>
+</tr>
+<tr>
+<td><strong>TIME 글로벌우주테크&amp;방산액티브</strong></td>
+<td>478150</td>
+<td><strong>4%</strong></td>
+<td>0.8억</td>
+<td>0.80%</td>
+<td>RTX·Honeywell·Rocket Lab — 글로벌 방산</td>
+</tr>
+<tr>
+<td>KODEX 비만치료제TOP2+</td>
+<td>476070</td>
+<td>3%</td>
+<td>0.6억</td>
+<td>0.45%</td>
+<td>Novo Nordisk·Eli Lilly + GLP-1 파이프라인</td>
+</tr>
+<tr>
+<td><em>(선택) AGIX</em></td>
+<td><em>미국상장</em></td>
+<td><em>3%</em></td>
+<td><em>0.6억</em></td>
+<td><em>0.99%</em></td>
+<td><em>Anthropic 직접 1.63% — 접근성 확인 후</em></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="40-80">현금 — 40% (8.0억)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>운용</th>
+<th>비율</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MMF/단기채</td>
+<td>35%</td>
+<td>연 3%+ 이자수익</td>
+</tr>
+<tr>
+<td>대기 현금</td>
+<td>5%</td>
+<td>Anthropic IPO / 급락 시 추가 매수</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="agix">합산 (AGIX 미편입 시)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>비중</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개별 종목 4개</td>
+<td>20%</td>
+<td>4.0억</td>
+</tr>
+<tr>
+<td>ETF 7개</td>
+<td>37%</td>
+<td>7.4억</td>
+</tr>
+<tr>
+<td>현금</td>
+<td>43%</td>
+<td>8.6억</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>20.0억</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="agix_1">합산 (AGIX 편입 시)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>비중</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개별 종목 4개</td>
+<td>20%</td>
+<td>4.0억</td>
+</tr>
+<tr>
+<td>ETF 8개</td>
+<td>40%</td>
+<td>8.0억</td>
+</tr>
+<tr>
+<td>현금</td>
+<td>40%</td>
+<td>8.0억</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>20.0억</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section><section id="sec-5"><h2 id="sec-5">5. v3 → v4 변경 추적</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>v3 (개별종목)</th>
+<th>v4 (하이브리드)</th>
+<th>변경 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>종목/ETF 수</td>
+<td>개별 11종목</td>
+<td>개별 4 + ETF 7~8</td>
+<td>관리 축소</td>
+</tr>
+<tr>
+<td>실질 노출 종목</td>
+<td>11개</td>
+<td><strong>130개+</strong></td>
+<td>ETF 통한 자동 분산</td>
+</tr>
+<tr>
+<td>HD현대중공업 10%</td>
+<td>개별</td>
+<td><strong>TIGER 조선 ETF 8%</strong> 내 24.5%</td>
+<td>삼성중공업·KSOE 추가 분산</td>
+</tr>
+<tr>
+<td>한화오션 4%</td>
+<td>개별</td>
+<td><strong>TIGER 조선 ETF 8%</strong> 내 27.9%</td>
+<td>상동</td>
+</tr>
+<tr>
+<td>삼성전자 2%</td>
+<td>개별</td>
+<td><strong>ACE 반도체 ETF 5%</strong> 내 25.6%</td>
+<td>한미반도체·소부장 자동 편입</td>
+</tr>
+<tr>
+<td>ServiceNow 4%</td>
+<td>개별</td>
+<td><strong>SOL AI SW 5%</strong> 내 12.6%</td>
+<td>Salesforce·Palantir 추가</td>
+</tr>
+<tr>
+<td>HD현대일렉트릭 2%</td>
+<td>개별</td>
+<td><strong>KODEX 전력 4%</strong> 내 24%</td>
+<td>효성·LS 등 전력 11사 분산</td>
+</tr>
+<tr>
+<td>Novo Nordisk 2%</td>
+<td>개별</td>
+<td><strong>KODEX 비만 3%</strong> 내 25%</td>
+<td>Eli Lilly 자동 추가</td>
+</tr>
+<tr>
+<td>Microsoft 4%</td>
+<td>개별</td>
+<td>SOL AI SW(14.3%) + TIME AI로 분산</td>
+<td>단일 종목 리스크 제거</td>
+</tr>
+<tr>
+<td>한미반도체 3%</td>
+<td>개별</td>
+<td>ACE 반도체 ETF 내 20.7%</td>
+<td>소부장 분산</td>
+</tr>
+<tr>
+<td>글로벌 방산</td>
+<td><strong>없음</strong></td>
+<td><strong>TIME 방산 4% (신규)</strong></td>
+<td>RTX·Honeywell·Rocket Lab</td>
+</tr>
+<tr>
+<td>글로벌 AI 인프라</td>
+<td><strong>없음</strong></td>
+<td><strong>TIME AI 8% (신규)</strong></td>
+<td>Intel·AMD·ARM·Kioxia</td>
+</tr>
+<tr>
+<td>Anthropic 노출</td>
+<td><strong>없음</strong></td>
+<td>SOL(CRM 11%) + AGIX(직접 1.63%)</td>
+<td>Anthropic 생태계 간접 진입</td>
+</tr>
+<tr>
+<td>Eli Lilly</td>
+<td><strong>없음</strong></td>
+<td>KODEX 비만 내 25%</td>
+<td>GLP-1 듀얼 확보</td>
+</tr>
+<tr>
+<td>TIMEFOLIO</td>
+<td><strong>0개</strong></td>
+<td><strong>2개</strong> (AI + 방산)</td>
+<td>액티브 알파 추구</td>
+</tr>
+<tr>
+<td>가중평균 보수</td>
+<td>0%</td>
+<td>~0.50%</td>
+<td>연 ~200만원(10억 기준)</td>
+</tr>
+<tr>
+<td>월별 MTM 범위</td>
+<td>±2.5~4%</td>
+<td><strong>±2.0~3.5%</strong></td>
+<td>분산 효과로 변동 축소</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section><section id="sec-6"><h2 id="sec-6">6. 클러스터 분석 — v4 (8개 클러스터)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>클러스터</th>
+<th>구성</th>
+<th>합산 비중</th>
+<th>드라이버</th>
+<th>동시 하락 시나리오</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. K-방산</strong></td>
+<td>한화에어로(6%)+현대로템(6%)</td>
+<td>12%</td>
+<td>지정학, 수출</td>
+<td>평화 무드</td>
+</tr>
+<tr>
+<td><strong>B. K-조선</strong></td>
+<td>TIGER 조선 ETF</td>
+<td>8%</td>
+<td>LNG, 신조선가</td>
+<td>발주 절벽</td>
+</tr>
+<tr>
+<td><strong>C. HBM/반도체</strong></td>
+<td>SK하이닉스(5%)+ACE반도체(5%)</td>
+<td>10%</td>
+<td>AI CAPEX</td>
+<td>HBM ASP 하락</td>
+</tr>
+<tr>
+<td><strong>D. AI SW</strong></td>
+<td>SOL AI소프트웨어</td>
+<td>5%</td>
+<td>AI 수익화</td>
+<td>금리 인상, SaaS 센티먼트</td>
+</tr>
+<tr>
+<td><strong>E. 전력 인프라</strong></td>
+<td>KODEX AI전력</td>
+<td>4%</td>
+<td>DC 전력 수요</td>
+<td>DC 투자 급감</td>
+</tr>
+<tr>
+<td><strong>F. GLP-1</strong></td>
+<td>KODEX 비만치료제</td>
+<td>3%</td>
+<td>비만 약물 시장</td>
+<td>FDA 리스크</td>
+</tr>
+<tr>
+<td><strong>G. 글로벌 AI 인프라</strong> <em>(신규)</em></td>
+<td>TIME 글로벌AI</td>
+<td>8%</td>
+<td>글로벌 AI CAPEX</td>
+<td>AI 버블 붕괴</td>
+</tr>
+<tr>
+<td><strong>H. 글로벌 방산</strong> <em>(신규)</em></td>
+<td>TIME 글로벌방산</td>
+<td>4%</td>
+<td>미국/유럽 방산 지출</td>
+<td>국방비 삭감</td>
+</tr>
+<tr>
+<td><strong>I. 독립</strong></td>
+<td>네이버</td>
+<td>3%</td>
+<td>국내 플랫폼</td>
+<td>국내 경기</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>v3→v4 분산 개선:</strong> 6개→<strong>9개 클러스터</strong>. 글로벌 AI 인프라(G), 글로벌 방산(H) 신규 추가. 국내 편중(v3: 해외 10%) → v4: <strong>글로벌 비중 ~20%</strong> (TIME AI 8% + TIME 방산 4% + SOL AI SW 5% + KODEX 비만 3%).</p>
+<hr />
+</section><section id="sec-7"><h2 id="sec-7">7. 비용 분석</h2>
+<h3 id="etf-10">ETF 보수 비용 (연간, 10억 투자 기준)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>투자금액</th>
+<th>보수</th>
+<th>연간 비용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER 조선TOP10</td>
+<td>0.8억</td>
+<td>0.35%</td>
+<td>28만원</td>
+</tr>
+<tr>
+<td>TIME 글로벌AI</td>
+<td>0.8억</td>
+<td>0.80%</td>
+<td>64만원</td>
+</tr>
+<tr>
+<td>ACE AI반도체TOP3+</td>
+<td>0.5억</td>
+<td>0.30%</td>
+<td>15만원</td>
+</tr>
+<tr>
+<td>SOL 미국AI소프트웨어</td>
+<td>0.5억</td>
+<td>0.45%</td>
+<td>22.5만원</td>
+</tr>
+<tr>
+<td>KODEX AI전력핵심설비</td>
+<td>0.4억</td>
+<td>0.39%</td>
+<td>15.6만원</td>
+</tr>
+<tr>
+<td>TIME 글로벌방산</td>
+<td>0.4억</td>
+<td>0.80%</td>
+<td>32만원</td>
+</tr>
+<tr>
+<td>KODEX 비만치료제TOP2+</td>
+<td>0.3억</td>
+<td>0.45%</td>
+<td>13.5만원</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>3.7억</strong></td>
+<td><strong>가중 0.51%</strong></td>
+<td><strong>~191만원</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>연간 보수 총액 ~191만원 (10억 기준). 20억이면 ~382만원. 개별 종목 대비 추가 비용이지만, 130개+ 종목 분산 + 리밸런싱 자동화 + 액티브 알파 대비 합리적 수준.</p>
+<h3 id="timefolio-080">TIMEFOLIO 보수 0.80%의 정당성</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIMEFOLIO AUM 성장</td>
+<td>1조(2025.01) → 10.1조(2026.06) — 10배</td>
+</tr>
+<tr>
+<td>TIME 글로벌AI AUM</td>
+<td>2.82조 (TIMEFOLIO 최대)</td>
+</tr>
+<tr>
+<td>비교지수 대비</td>
+<td>독자 종목 선정 (NVDA 4.5%로 절제, Intel·스토리지 오버웨이트)</td>
+</tr>
+<tr>
+<td>패시브와 차이</td>
+<td>인덱스 복제가 아닌 실질 액티브 운용</td>
+</tr>
+</tbody>
+</table></div>
+<p>보수 0.80%가 패시브(0.30~0.45%) 대비 높지만, 10조 규모로 성장한 시장 검증 + 인덱스와 실질적으로 다른 포트 구성을 고려하면 비용 대비 가치가 있다고 판단.</p>
+<hr />
+</section><section id="sec-8"><h2 id="sec-8">8. 진입 타이밍</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>시점</th>
+<th>대상</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1차 (7월)</strong></td>
+<td>즉시</td>
+<td>현대로템, 한화에어로, 네이버, SK하이닉스(40%), TIGER조선, TIME방산</td>
+<td>~5.4억</td>
+</tr>
+<tr>
+<td><strong>2차 (8월)</strong></td>
+<td>Q2 실적 시즌</td>
+<td>SOL AI SW, ACE반도체, SK하이닉스(30%), KODEX전력</td>
+<td>~2.4억</td>
+</tr>
+<tr>
+<td><strong>3차 (9~10월)</strong></td>
+<td>NVIDIA GTC 후</td>
+<td>TIME 글로벌AI, KODEX비만, SK하이닉스(30%)</td>
+<td>~2.7억</td>
+</tr>
+<tr>
+<td><strong>Anthropic IPO</strong></td>
+<td>TBD</td>
+<td>AGIX 또는 직접 매수</td>
+<td>현금 중 1~3%</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section><section id="sec-9"><h2 id="sec-9">9. 리밸런싱 규칙</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>조건</th>
+<th>액션</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개별 종목 ±20% 등락</td>
+<td>원래 비중으로 트리밍/추가 매수</td>
+</tr>
+<tr>
+<td>ETF 클러스터 합산 ±15%</td>
+<td>클러스터 내 리밸런싱</td>
+</tr>
+<tr>
+<td>분기 리뷰 (1/4/7/10월)</td>
+<td>전체 포트 비중 점검, ETF 구성종목 변동 확인</td>
+</tr>
+<tr>
+<td>SK하이닉스 OPM &lt; 60%</td>
+<td>개별 비중 5%→3% 축소, ACE반도체 비중 확대 검토</td>
+</tr>
+<tr>
+<td>Anthropic IPO 확정</td>
+<td>현금 중 2~3% 직접 배분, AGIX 불필요 시 매도</td>
+</tr>
+<tr>
+<td>TIMEFOLIO 비교지수 대비 -5%p 이상 언더퍼폼 (2분기 연속)</td>
+<td>패시브 대안으로 교체 검토</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section><section id="sec-10"><h2 id="sec-10">10. 모니터링 체크리스트</h2>
+<h3 id="_4">월간</h3>
+<ul>
+<li>[ ] ETF 7개 NAV 변동 및 기준가 확인</li>
+<li>[ ] TIMEFOLIO 2개 포트 구성 변경 여부 (월간 PDF 확인)</li>
+<li>[ ] 개별 4종목 뉴스·공시 점검</li>
+<li>[ ] 현금 비중 40% 유지 여부</li>
+</ul>
+<h3 id="_5">분기</h3>
+<ul>
+<li>[ ] ETF 보유종목 리밸런싱 내역 확인 (특히 ACE반도체, SOL AI SW)</li>
+<li>[ ] TIMEFOLIO 비교지수 대비 성과 점검</li>
+<li>[ ] SK하이닉스 분기 실적 → 개별 vs ETF 비중 조정 판단</li>
+<li>[ ] Anthropic 기업가치·IPO 진행 상황 확인</li>
+<li>[ ] 포트폴리오 전체 상관관계 재점검</li>
+</ul>
+<h3 id="_6">이벤트 기반</h3>
+<ul>
+<li>[ ] NVIDIA GTC / 실적 발표 → TIME AI + ACE반도체 영향 점검</li>
+<li>[ ] 방산 수출 계약 뉴스 → 개별 방산 + TIME 글로벌방산 영향</li>
+<li>[ ] GLP-1 FDA 승인/데이터 → KODEX 비만치료제 점검</li>
+<li>[ ] Anthropic IPO S-1 공개 → AGIX 편입 또는 직접 매수 결정</li>
+</ul>
+<hr />
+</section><section id="sec-11"><h2 id="sec-11">부록 A: Anthropic 투자 경로 정리</h2>
+<p>Anthropic은 비상장(2026.07 기준). IPO S-1 비밀 제출 보도 있음 (밸류에이션 ~$965B).</p>
+<h3 id="_7">상장사를 통한 간접 노출</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>투자자</th>
+<th>Anthropic 지분</th>
+<th>투자 규모</th>
+<th>포트 내 노출 경로</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon</td>
+<td>~21%</td>
+<td>$8B+</td>
+<td>SOL AI SW ETF 내 미포함 (SW 특화)</td>
+</tr>
+<tr>
+<td>Alphabet</td>
+<td>~14%</td>
+<td>~$2B</td>
+<td>SOL AI SW ETF 내 미포함</td>
+</tr>
+<tr>
+<td>Salesforce</td>
+<td>소량</td>
+<td>~$500M</td>
+<td><strong>SOL AI SW ETF 내 11%</strong></td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>전략투자</td>
+<td>미공개</td>
+<td>TIME 글로벌AI ETF 내 4.5%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="etf_1">ETF를 통한 직접/간접 노출</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>포트 내</th>
+<th>Anthropic 직접</th>
+<th>투자자 간접</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOL 미국AI소프트웨어</td>
+<td>5%</td>
+<td>0%</td>
+<td>CRM 11%</td>
+</tr>
+<tr>
+<td>TIME 글로벌AI</td>
+<td>8%</td>
+<td>0%</td>
+<td>NVDA 4.5%</td>
+</tr>
+<tr>
+<td>AGIX (선택)</td>
+<td>3%</td>
+<td><strong>1.63%</strong></td>
+<td>GOOGL+AMZN ~6.4%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="anthropic_1">포트 전체 Anthropic 생태계 노출</h3>
+<ul>
+<li>SOL 5% × CRM 11% = 0.55%p</li>
+<li>TIME AI 8% × NVDA 4.5% = 0.36%p</li>
+<li>(AGIX 3% × 직접 1.63% = 0.05%p)</li>
+<li><strong>합산: ~0.9~1.0%p</strong> (20억 기준 약 1,800~2,000만원 상당)</li>
+</ul>
+<p>→ Anthropic IPO 시 직접 매수(현금 2~3%)로 노출 확대가 가장 효과적.</p>
+<h3 id="anthropic-202605">Anthropic 주식 양도 무효화 이슈 (2026.05)</h3>
+<p><strong>배경:</strong> 2026년 5월 12일, Anthropic은 공식 성명을 통해 이사회 미승인 주식 거래를 <strong>void(무효)</strong> 선언.</p>
+<blockquote>
+<p>"이사회 승인 없이 이루어진 Anthropic 주식의 매매·양도는 void이며, 당사 장부에 기록되지 않는다."</p>
+</blockquote>
+<p><strong>무효 대상 (비인가 플랫폼 8곳):</strong>
+- Open Door Partners, Unicorns Exchange, Pachamama, Lionheart Ventures
+- Hiive, Forge Global, Sydecar, Upmarket</p>
+<p><strong>핵심 제한:</strong>
+- SPV(특수목적법인)를 통한 지분 취득 일체 불허
+- 포워드 계약을 통한 간접 노출도 무효
+- "Void"는 델라웨어 회사법상 가장 강력한 법적 입장 — 형평법상 구제 수단도 차단</p>
+<p><strong>AGIX는 무효 대상이 아닌 이유:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>무효 대상 (SPV/세컨더리)</th>
+<th>AGIX (KraneShares)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>취득 경로</td>
+<td>세컨더리 마켓, SPV, 포워드</td>
+<td><strong>2025.02 공식 펀딩 라운드 직접 참여</strong></td>
+</tr>
+<tr>
+<td>이사회 승인</td>
+<td>없음</td>
+<td><strong>있음</strong></td>
+</tr>
+<tr>
+<td>Cap table 등재</td>
+<td>미인정</td>
+<td><strong>인정 (직접 등재)</strong></td>
+</tr>
+<tr>
+<td>법적 지위</td>
+<td><strong>Void (무효)</strong></td>
+<td><strong>유효</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>AGIX는 Anthropic의 capitalization table에 직접 등재된 적법한 투자자. Anthropic의 무효화 경고(2026.05) 이후에도 AGIX의 Anthropic 보유 비중(2.91%)은 정상 유지되고 있으며, 2026년 6월에도 투자자들이 Anthropic IPO 앞두고 AGIX에 유입 중(<a href="https://www.fool.com/investing/2026/06/24/before-anthropics-ipo-investors-are-loading-up-on/">Motley Fool 2026.06.24</a>).</p>
+<p><strong>주의:</strong> DXYZ(Destiny Tech100)는 SPV를 통해 Anthropic $100M 편입(2026.02) — Anthropic의 void 선언 대상에 해당할 수 있는 법적 리스크 존재. AGIX와 구조적으로 다름.</p>
+<p><em>출처: <a href="https://techcrunch.com/2026/05/12/anthropic-warns-investors-against-secondary-platforms-offering-access-to-its-shares/">TechCrunch 2026.05.12</a>, <a href="https://www.axios.com/2026/05/13/anthropic-alarm-secondary-shares">Axios 2026.05.13</a>, <a href="https://kraneshares.com/how-this-ai-etf-agix-was-able-to-invest-in-anthropic-ahead-of-a-potential-2026-ipo/">KraneShares 공식</a></em></p>
+<hr />
+<h3 id="agix_2">AGIX 프리미엄/디스카운트 분석</h3>
+<p>AGIX는 <strong>오픈엔드 ETF</strong>로, 폐쇄형 펀드(DXYZ)와 달리 AP(Authorized Participant) 차익거래 메커니즘이 작동. 시장가가 NAV에서 크게 벗어나지 않음.</p>
+<p><strong>현재 거래 상황 (2026.07 기준):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>AGIX (오픈엔드 ETF)</th>
+<th>DXYZ (폐쇄형 펀드)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시장가</td>
+<td>$46.89 (06/30)</td>
+<td>변동 심함</td>
+</tr>
+<tr>
+<td>NAV</td>
+<td>$46.81 (06/30)</td>
+<td>$24.56 (2026.03말)</td>
+</tr>
+<tr>
+<td>프리미엄</td>
+<td><strong>+0.17%</strong></td>
+<td><strong>수십~수백% 변동</strong></td>
+</tr>
+<tr>
+<td>Anthropic 비중</td>
+<td>1.61%</td>
+<td>17.92%</td>
+</tr>
+<tr>
+<td>구조</td>
+<td>오픈엔드 → AP 차익거래</td>
+<td>폐쇄형 → 수급에 좌우</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td>$807M</td>
+<td>소규모</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>판단:</strong>
+- AGIX는 프리미엄 +0.17%로 <strong>사실상 NAV 수준에서 매수 가능</strong> — "Anthropic 프리미엄"이 시장가에 과도하게 반영되어 있지 않음
+- 이는 오픈엔드 구조의 장점: 수요가 몰려도 AP가 신규 좌수를 생성해서 가격을 NAV로 수렴시킴
+- 반면 DXYZ는 폐쇄형이라 투기 심리에 따라 NAV 대비 수백% 프리미엄으로 거래되기도 함 → 비추
+- <strong>다만 비상장 자산(Anthropic 등) 평가는 운용사 밸류에이션 위원회의 주관적 판단에 의존</strong> — NAV 자체의 정확성에 내재적 불확실성 존재 (SpaceX는 6/12 IPO로 상장 전환 완료)</p>
+<p><strong>비상장 자산 평가 방법론:</strong>
+- AGIX는 다중 소스 기반 밸류에이션 위원회(committee-driven) 방식 사용
+- 최근 펀딩 라운드 가격, 비교 기업 배수, 시장 동향 등을 종합적으로 반영
+- SEC 규정에 따라 일일 NAV 산출 의무 충족
+- <strong>리스크:</strong> 비상장 자산의 실현 가치가 평가 가치와 상이할 수 있음 (특히 Anthropic IPO 가격이 현재 평가보다 낮을 경우)</p>
+<p><em>출처: <a href="https://seekingalpha.com/article/4883061-agix-report-card-private-stock-exposure-contribute-etf-performance">Seeking Alpha — AGIX Report Card</a>, <a href="https://kraneshares.com/how-to-unlock-private-markets-with-hybrid-etfs/">KraneShares 공식</a></em></p>
+<hr />
+</section><section id="sec-12"><h2 id="sec-12">부록 B: 주요 ETF 성과 비교 (2026 YTD)</h2>
+<h3 id="ai-etf">미국 상장 AI ETF</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>YTD</th>
+<th>1년</th>
+<th>AUM</th>
+<th>보수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMH (반도체)</td>
+<td>+72.3%</td>
+<td>+123.2%</td>
+<td>$65.1B</td>
+<td>0.35%</td>
+</tr>
+<tr>
+<td>CHAT (Gen AI)</td>
+<td>+58.6%</td>
+<td>+97.2%</td>
+<td>$2.01B</td>
+<td>0.75%</td>
+</tr>
+<tr>
+<td>ARTY (iShares AI)</td>
+<td>+51.9%</td>
+<td>+78.5%</td>
+<td>$3.75B</td>
+<td>0.47%</td>
+</tr>
+<tr>
+<td>AGIX (Public-Private AI)</td>
+<td>+28.85%</td>
+<td>+50.41%</td>
+<td>$807M</td>
+<td>0.99%</td>
+</tr>
+<tr>
+<td>AIQ (Global X AI)</td>
+<td>+25.1%</td>
+<td>+45.8%</td>
+<td>$10.5B</td>
+<td>0.68%</td>
+</tr>
+<tr>
+<td>IGV (SW)</td>
+<td>-11.7%</td>
+<td>-14.7%</td>
+<td>$15.9B</td>
+<td>0.39%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="etf_2">한국 상장 테마 ETF (포트 편입 대상)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>코드</th>
+<th>1년 수익률</th>
+<th>AUM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER 조선TOP10</td>
+<td>494670</td>
+<td>+115%</td>
+<td>1.59조</td>
+</tr>
+<tr>
+<td>ACE AI반도체TOP3+</td>
+<td>469150</td>
+<td>+346%</td>
+<td>6,490억</td>
+</tr>
+<tr>
+<td>KODEX AI전력핵심설비</td>
+<td>487240</td>
+<td>-</td>
+<td>2.77조</td>
+</tr>
+<tr>
+<td>SOL 미국AI소프트웨어</td>
+<td>481180</td>
+<td>-</td>
+<td>1,359억</td>
+</tr>
+<tr>
+<td>PLUS K방산</td>
+<td>449450</td>
+<td>+26%</td>
+<td>1.24조</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<hr />
+</section><section id="sec-13"><h2 id="sec-13">부록 C: AGIX ETF 심층 분석</h2>
+<blockquote>
+<p><strong>조사일:</strong> 2026-07-02 | <strong>데이터 기준:</strong> 2026-06-30 (KraneShares 공식)</p>
+</blockquote>
+<h3 id="c-1">C-1. 펀드 개요</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정식명</td>
+<td>KraneShares Public-Private AI &amp; Technology ETF</td>
+</tr>
+<tr>
+<td>티커</td>
+<td>AGIX</td>
+</tr>
+<tr>
+<td>거래소</td>
+<td>NASDAQ</td>
+</tr>
+<tr>
+<td>설정일</td>
+<td>2024-07-17 (약 2년)</td>
+</tr>
+<tr>
+<td>벤치마크</td>
+<td>Solactive Etna Artificial General Intelligence Index</td>
+</tr>
+<tr>
+<td>운용사</td>
+<td>KraneShares (Krane Funds Advisors, LLC)</td>
+</tr>
+<tr>
+<td>보수</td>
+<td>0.99%</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td><strong>$807M</strong> (≈1.1조원)</td>
+</tr>
+<tr>
+<td>발행 좌수</td>
+<td>17,250,002</td>
+</tr>
+<tr>
+<td>총 보유 종목</td>
+<td>67~68개</td>
+</tr>
+<tr>
+<td>구조</td>
+<td><strong>오픈엔드 ETF</strong> (AP 차익거래 → 프리미엄 억제)</td>
+</tr>
+<tr>
+<td>배당</td>
+<td>연 1회 — $0.44 (2025.12), $0.11 (2024.12)</td>
+</tr>
+<tr>
+<td>펀드 유입</td>
+<td>YTD Flows-to-AUM <strong>+414%</strong> (상위 10%)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>핵심 차별점:</strong> 80% 이상을 공개시장 AI·기술주에 투자하되, <strong>비상장 AI 기업(Anthropic 등)에 직접 투자</strong>하는 하이브리드 구조. SpaceX는 6/12 IPO로 상장 전환 완료 — AGIX가 Pre-IPO 단계에서 취득한 지분이 상장 후 유동성을 확보한 성공 사례. 현재 비상장 포지션은 Anthropic 중심으로 약 3%.</p>
+<hr />
+<h3 id="c-2">C-2. 수익률 &amp; 리스크</h3>
+<h4 id="nav-06302026">수익률 (NAV 기준, 06/30/2026)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>기간</th>
+<th>AGIX</th>
+<th>Nasdaq 100 참고</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3개월</td>
+<td><strong>+44.70%</strong></td>
+<td>—</td>
+<td>AI 랠리 수혜</td>
+</tr>
+<tr>
+<td>YTD</td>
+<td><strong>+28.85%</strong></td>
+<td>~+22%</td>
+<td>벤치마크 대비 +2.3%p</td>
+</tr>
+<tr>
+<td>1년</td>
+<td><strong>+50.41%</strong></td>
+<td>~+32%</td>
+<td></td>
+</tr>
+<tr>
+<td>설정 이후 (연환산)</td>
+<td><strong>+38.96%</strong></td>
+<td>—</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="_8">리스크 지표</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>지표</th>
+<th>수치</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Beta</strong> (vs S&amp;P 500)</td>
+<td>1.49~1.71</td>
+<td>시장 대비 1.5배 민감 → 하락장에 주의</td>
+</tr>
+<tr>
+<td><strong>Alpha</strong> (연환산)</td>
+<td><strong>+6.58%</strong></td>
+<td>S&amp;P 500 대비 유의미한 초과수익</td>
+</tr>
+<tr>
+<td><strong>Sharpe Ratio</strong> (1Y)</td>
+<td><strong>1.98~2.20</strong></td>
+<td>우수한 위험 대비 수익</td>
+</tr>
+<tr>
+<td><strong>연간 변동성</strong></td>
+<td>25.5~29.6%</td>
+<td>테크 집중형 ETF 수준</td>
+</tr>
+<tr>
+<td><strong>R²</strong> (vs S&amp;P 500)</td>
+<td>65~76%</td>
+<td>독자적 움직임 24~35%</td>
+</tr>
+<tr>
+<td><strong>공매도 비율</strong></td>
+<td>0.0%</td>
+<td>숏 포지션 거의 없음</td>
+</tr>
+<tr>
+<td><strong>Max Drawdown</strong> (설정 이후)</td>
+<td>약 -18%</td>
+<td>2025.Q1 글로벌 테크 조정 시</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="_9">비상장 자산 수익 기여도</h4>
+<blockquote>
+<p>AGIX 설정 이후 총 수익의 <strong>21.69%가 비상장/Pre-IPO 자산 배분에서 발생</strong> — SpaceX(6/12 상장 완료, +27%), Anthropic 등의 밸류에이션 상향에 기인. Pre-IPO → 상장 전환 시 가치 실현이 이 펀드의 핵심 알파 소스.</p>
+</blockquote>
+<p><em>출처: <a href="https://portfolioslab.com/symbol/AGIX">PortfoliosLab</a></em></p>
+<hr />
+<h3 id="c-3">C-3. 전체 보유 구조</h3>
+<h4 id="_10">섹터 배분</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>섹터</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Technology</td>
+<td><strong>66.9~74.5%</strong></td>
+</tr>
+<tr>
+<td>Communication Services</td>
+<td>11.9~13.6%</td>
+</tr>
+<tr>
+<td>Consumer Discretionary</td>
+<td>5.3~9.2%</td>
+</tr>
+<tr>
+<td>Financial Services</td>
+<td>3.4~5.8%</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>1.0~2.4%</td>
+</tr>
+<tr>
+<td>Industrials</td>
+<td>1.1~2.3%</td>
+</tr>
+<tr>
+<td>Utilities</td>
+<td>1.3%</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="_11">지역 배분</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>지역</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>미국</td>
+<td><strong>76.6~86.0%</strong></td>
+</tr>
+<tr>
+<td>대만</td>
+<td>4.5%</td>
+</tr>
+<tr>
+<td>네덜란드</td>
+<td>4.2%</td>
+</tr>
+<tr>
+<td>한국</td>
+<td>2.9%</td>
+</tr>
+<tr>
+<td>캐나다</td>
+<td>2.9%</td>
+</tr>
+<tr>
+<td>영국</td>
+<td>2.8%</td>
+</tr>
+<tr>
+<td>신흥국 합계</td>
+<td>7.4%</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="top-15-0630">Top 15 보유 종목 (06/30 기준)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목</th>
+<th>비중</th>
+<th>구분</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>NVIDIA</strong> (NVDA)</td>
+<td>4.09%</td>
+<td>상장</td>
+<td>AI 칩</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>SpaceX</strong> (SPCX)</td>
+<td>3.51%</td>
+<td><strong>상장</strong> (6/12 IPO)</td>
+<td>IPO $135 → 현재 $171, 시총 $2.25T</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Alphabet</strong> (GOOGL)</td>
+<td>3.44%</td>
+<td>상장</td>
+<td>Anthropic 투자자 (14%)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Astera Labs</strong> (ALAB)</td>
+<td>3.18%</td>
+<td>상장</td>
+<td>AI 인터커넥트</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Meta</strong> (META)</td>
+<td>3.16%</td>
+<td>상장</td>
+<td>Llama 오픈소스</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Microsoft</strong> (MSFT)</td>
+<td>3.16%</td>
+<td>상장</td>
+<td>OpenAI 투자자</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Apple</strong> (AAPL)</td>
+<td>2.93%</td>
+<td>상장</td>
+<td>Apple Intelligence</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Amazon</strong> (AMZN)</td>
+<td>2.83%</td>
+<td>상장</td>
+<td>Anthropic 최대투자자 (21%)</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>TSMC</strong> (TSM)</td>
+<td>2.71%</td>
+<td>상장</td>
+<td>AI 반도체 파운드리</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>AMD</strong></td>
+<td>2.69%</td>
+<td>상장</td>
+<td>MI300X AI 가속기</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Broadcom</strong> (AVGO)</td>
+<td>2.54%</td>
+<td>상장</td>
+<td>커스텀 AI칩·네트워킹</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Anthropic</strong></td>
+<td><strong>1.61%</strong></td>
+<td><strong>비상장</strong></td>
+<td><strong>직접 보유 (공식 펀딩라운드)</strong></td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Ayar Labs</strong></td>
+<td>0.61%</td>
+<td><strong>비상장</strong></td>
+<td>광학 인터커넥트</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Nuro</strong></td>
+<td>0.50%</td>
+<td><strong>비상장</strong></td>
+<td>자율주행 배달</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>Polymarket</strong></td>
+<td>0.25%</td>
+<td><strong>비상장</strong></td>
+<td>예측시장 플랫폼</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>비상장 합산: ~2.97%</strong> (Anthropic 1.61% + Ayar Labs 0.61% + Nuro 0.50% + Polymarket 0.25%)
+<strong>구(舊) 비상장 → 상장 전환:</strong> SpaceX 3.51% (6/12 IPO 완료, SPCX)</p>
+<blockquote>
+<p>SpaceX IPO는 AGIX의 Pre-IPO 전략이 실현된 첫 사례 — IPO 가격 $135 대비 현재 $171로 약 +27% 상승. Anthropic IPO 시에도 유사한 가치 실현이 기대됨.
+나머지 ~52종목은 mid-cap AI 인프라/어플리케이션 기업으로 구성. Nasdaq 100과의 <strong>종목 중복률이 낮아</strong> (IVES 47.7%, CHAT 41.1%, AIQ 37.6% 수준) 전통 지수 대비 독자적 알파 생성 구조.</p>
+</blockquote>
+<hr />
+<h3 id="c-4-nasdaq-100">C-4. Nasdaq 100 대비 차별화</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>AGIX</th>
+<th>Nasdaq 100 (QQQ)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>종목 수</td>
+<td>67~68</td>
+<td>100</td>
+</tr>
+<tr>
+<td>비상장 포함</td>
+<td><strong>O</strong> (Anthropic 등 ~3%)</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Mag-7 합산 비중</td>
+<td>~22%</td>
+<td>~45%+</td>
+</tr>
+<tr>
+<td>PEG Ratio</td>
+<td><strong>Nasdaq 대비 10% 할인</strong></td>
+<td>기준</td>
+</tr>
+<tr>
+<td>Mid-cap AI 비중</td>
+<td>높음 (Astera Labs 등)</td>
+<td>낮음</td>
+</tr>
+<tr>
+<td>1개월 종목별 성과</td>
+<td><strong>78%가 Nasdaq 100 상회</strong></td>
+<td>기준</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>요약:</strong> AGIX는 Mag-7 과집중을 피하면서, mid-cap AI 리더 + 비상장 Pre-IPO 종목으로 차별화. 이것이 Nasdaq 100 대비 초과수익의 주요 원천.</p>
+<hr />
+<h3 id="c-5">C-5. 거래 비용 &amp; 유동성</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>수치</th>
+<th>판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일평균 거래대금</td>
+<td><strong>$25M</strong> (54.3만주)</td>
+<td>충분 — 기관 블록 매매 가능</td>
+</tr>
+<tr>
+<td>30일 중간 Bid-Ask Spread</td>
+<td><strong>0.29%</strong> (공식) / 0.19% (평균)</td>
+<td>양호</td>
+</tr>
+<tr>
+<td>프리미엄/디스카운트</td>
+<td><strong>+0.17%</strong> (06/30)</td>
+<td>사실상 NAV 매수</td>
+</tr>
+<tr>
+<td>회전율</td>
+<td>2.8%</td>
+<td>매우 낮음 — 장기보유 전략</td>
+</tr>
+<tr>
+<td>총 보유비용 (TCO)</td>
+<td>~1.18% (보수 0.99% + 스프레드)</td>
+<td><strong>동종 평균 0.43% 대비 높음</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>주의:</strong> 보수 0.99%는 순수 인덱스 ETF 대비 2~3배 수준. 그러나 비상장 자산 접근 비용, 밸류에이션 위원회 운용비, AP 구조 유지비 등이 포함된 것으로, <strong>비상장 노출 프리미엄</strong>으로 이해해야 함.</p>
+<p><strong>10억 기준 연간 비용:</strong>
+- 보수: 10억 × 0.99% = <strong>990만원</strong>
+- 스프레드 (1회 왕복): 10억 × 0.29% × 2 = ~580만원
+- 실질 1년차 비용: ~1,570만원 (이후 연간 990만원)</p>
+<hr />
+<h3 id="c-6">C-6. 밸류에이션</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>지표</th>
+<th>AGIX</th>
+<th>Nasdaq 100</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward P/E</td>
+<td><strong>43.1</strong></td>
+<td>~28</td>
+</tr>
+<tr>
+<td>Forward P/B</td>
+<td>6.5x</td>
+<td>~8x</td>
+</tr>
+<tr>
+<td>PEG</td>
+<td><strong>Nasdaq 대비 -10%</strong></td>
+<td>기준</td>
+</tr>
+<tr>
+<td>ROE</td>
+<td>17.4%</td>
+<td>~35%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>해석:</strong> P/E 43은 절대적으로 높지만, 이는 비상장 자산(수익 미발생)의 영향이 큼. PEG 기준으로는 Nasdaq 대비 오히려 할인 — 고성장 AI 기업의 이익 증가율이 가격에 충분히 반영되지 않은 것으로 판단.</p>
+<hr />
+<h3 id="c-7">C-7. 비상장 자산 심층 분석</h3>
+<h4 id="anthropic-161">Anthropic (비중 1.61%)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>취득 경로</td>
+<td><strong>2025.02 공식 Series C 펀딩 라운드 직접 참여</strong></td>
+</tr>
+<tr>
+<td>이사회 승인</td>
+<td><strong>있음</strong> — Cap table 직접 등재</td>
+</tr>
+<tr>
+<td>현재 밸류에이션</td>
+<td>~$61.5B (2025.03 라운드 기준) → IPO 시 $100B+ 전망</td>
+</tr>
+<tr>
+<td>법적 리스크</td>
+<td><strong>없음</strong> — 2026.05 void 선언 대상 아님 (부록 A 참조)</td>
+</tr>
+<tr>
+<td>포트 기여도</td>
+<td>AGIX 3% 편입 시 → Anthropic 실질 노출 0.048%p</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="spacex-351">SpaceX (비중 3.51%) — 상장 완료</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>취득 경로</td>
+<td>공식 펀딩 + xAI 합병 후 지분 전환</td>
+</tr>
+<tr>
+<td>IPO</td>
+<td><strong>2026.06.12 NASDAQ 상장 (SPCX)</strong></td>
+</tr>
+<tr>
+<td>IPO 가격</td>
+<td>$135/주 → 첫날 종가 $160.95 (+19%)</td>
+</tr>
+<tr>
+<td>현재 가격</td>
+<td><strong>$170.86</strong> (07/01) — 시총 $2.25T (미국 6위)</td>
+</tr>
+<tr>
+<td>AGIX 수익 기여</td>
+<td>Pre-IPO 취득 → 상장 후 +27% 실현 — <strong>하이브리드 전략의 첫 성공 사례</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="ayar-labs-061">Ayar Labs (비중 0.61%)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사업</td>
+<td>광학 I/O 칩렛 — AI 데이터센터 인터커넥트 혁신</td>
+</tr>
+<tr>
+<td>투자자</td>
+<td>Intel Capital, NVIDIA</td>
+</tr>
+<tr>
+<td>테마</td>
+<td>AI 인프라 병목(전력·대역폭) 해소 핵심 기업</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="nuro-050">Nuro (비중 0.50%)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사업</td>
+<td>자율주행 배달 로봇</td>
+</tr>
+<tr>
+<td>현황</td>
+<td>미국 도시 시범 운영 확대 중</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="polymarket-025">Polymarket (비중 0.25%)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사업</td>
+<td>블록체인 기반 예측시장 플랫폼</td>
+</tr>
+<tr>
+<td>현황</td>
+<td>2024 미 대선 이후 거래량 급증</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>비상장 밸류에이션 방법론:</strong>
+- AGIX는 다중 소스 기반 <strong>밸류에이션 위원회(committee-driven)</strong> 방식
+- 최근 펀딩 라운드 가격, 비교 기업 배수, 시장 동향 종합 반영
+- SEC 규정에 따라 <strong>일일 NAV 산출 의무</strong> 충족
+- <strong>리스크:</strong> IPO 시 실현 가격이 현재 평가보다 낮을 수 있음</p>
+<hr />
+<h3 id="c-8-etf">C-8. 경쟁 ETF 비교</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th><strong>AGIX</strong></th>
+<th>CHAT</th>
+<th>AIQ</th>
+<th>SMH</th>
+<th>ARTY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운용사</td>
+<td>KraneShares</td>
+<td>Roundhill</td>
+<td>Global X</td>
+<td>VanEck</td>
+<td>iShares</td>
+</tr>
+<tr>
+<td>보수</td>
+<td>0.99%</td>
+<td>0.75%</td>
+<td>0.68%</td>
+<td>0.35%</td>
+<td>0.47%</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td>$807M</td>
+<td>$2.01B</td>
+<td>$10.5B</td>
+<td>$65.1B</td>
+<td>$3.75B</td>
+</tr>
+<tr>
+<td>비상장 포함</td>
+<td><strong>O</strong> (~3%)</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Anthropic 직접</td>
+<td><strong>1.61%</strong></td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>SpaceX (SPCX)</td>
+<td><strong>3.51%</strong> (IPO 전 취득)</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>상장 후 편입 가능</td>
+</tr>
+<tr>
+<td>YTD</td>
+<td>+28.85%</td>
+<td>+58.6%</td>
+<td>+25.1%</td>
+<td>+72.3%</td>
+<td>+51.9%</td>
+</tr>
+<tr>
+<td>종목 중복 (AGIX 대비)</td>
+<td>—</td>
+<td>41.1%</td>
+<td>37.6%</td>
+<td>낮음</td>
+<td>중간</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>AGIX만의 포지션:</strong> Anthropic 등 비상장 AI 기업 직접 보유 + SpaceX Pre-IPO 취득 후 상장 수혜 실현. CHAT/AIQ/SMH는 순수 상장 종목만 편입 → Pre-IPO 알파 불가.</p>
+<p><strong>YTD 성과가 CHAT·SMH 대비 낮은 이유:</strong> 비상장 자산은 일일 시가 반영이 아닌 위원회 평가 기반 → 단기 랠리에서 상장 종목 대비 NAV 반응 지연. 다만, IPO 이벤트 시 한 번에 NAV 점프 가능.</p>
+<hr />
+<h3 id="c-9">C-9. 한국 투자자 접근성</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>상세</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매매 가능 여부</td>
+<td>미국 NASDAQ 상장 → <strong>해외주식 계좌로 매매 가능</strong></td>
+</tr>
+<tr>
+<td>주요 증권사</td>
+<td>키움, 미래에셋, NH투자, 삼성증권 등</td>
+</tr>
+<tr>
+<td>세금</td>
+<td>양도소득세 22% (250만원 공제), 배당소득세 15.4%</td>
+</tr>
+<tr>
+<td>환율 리스크</td>
+<td><strong>있음</strong> — 원/달러 환율 변동에 직접 노출</td>
+</tr>
+<tr>
+<td>최소 매수</td>
+<td>1주 (~$46.89 = ~6.5만원)</td>
+</tr>
+<tr>
+<td>거래 시간</td>
+<td>미국장 (한국 23:30~06:00, 서머타임 22:30~05:00)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="c-10">C-10. 투자 판단 요약</h3>
+<h4 id="bull-case">강점 (Bull Case)</h4>
+<ol>
+<li><strong>Pre-IPO 노출 + 실현 트랙레코드</strong> — SpaceX Pre-IPO 취득 → 6/12 상장 후 +27% 실현 완료. Anthropic도 동일 전략 기대</li>
+<li><strong>비상장 알파:</strong> 설정 이후 수익의 21.69%가 비상장 배분에서 발생</li>
+<li><strong>오픈엔드 구조:</strong> 프리미엄 +0.17%로 NAV 매수 가능 (DXYZ의 수백% 프리미엄과 대조적)</li>
+<li><strong>Nasdaq 100 저중복:</strong> Mag-7 과집중 회피, mid-cap AI 알파</li>
+<li><strong>Sharpe 2.0+, Alpha +6.58%:</strong> 위험 대비 수익 우수</li>
+<li><strong>Fund Flow +414% YTD:</strong> 기관 수요 강력</li>
+</ol>
+<h4 id="bear-case">약점 (Bear Case)</h4>
+<ol>
+<li><strong>보수 0.99%</strong> — 동종 평균(0.43%)의 2배 이상</li>
+<li><strong>Beta 1.5~1.7</strong> — 하락장에서 S&amp;P 500 대비 50~70% 더 떨어짐</li>
+<li><strong>비상장 밸류에이션 불확실성</strong> — IPO 가격 &lt; 현재 평가 리스크</li>
+<li><strong>설정 2년차</strong> — 장기 트랙레코드 부재</li>
+<li><strong>ETF Research Center "AVOID" 등급</strong> — 밸류에이션 기반 정량 평가에서 저평가</li>
+<li><strong>Tech 67~75% 집중</strong> — 섹터 분산 부족</li>
+</ol>
+<h4 id="_12">최종 판단</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>추천</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic IPO 전 (2026~2027)</td>
+<td><strong>매수 유효</strong> — Pre-IPO 노출 프리미엄 정당화</td>
+</tr>
+<tr>
+<td>Anthropic IPO 후</td>
+<td>재평가 — IPO 직접 매수 가능 시 AGIX 비중 축소 검토</td>
+</tr>
+<tr>
+<td>포트 내 역할</td>
+<td>위성(Satellite) 3% — 현금 40%의 일부를 전환하는 형태</td>
+</tr>
+<tr>
+<td>진입 시점</td>
+<td>Beta 1.5+ → 시장 조정 시(-10% 이상) 분할 매수 권장</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>출처: <a href="https://kraneshares.com/agix/">KraneShares 공식</a>, <a href="https://www.etfrc.com/AGIX">ETF Research Center</a>, <a href="https://stockanalysis.com/etf/agix/holdings/">StockAnalysis</a>, <a href="https://portfolioslab.com/symbol/AGIX">PortfoliosLab</a>, <a href="https://kraneshares.com/how-agixs-low-nasdaq-100-overlap-unlocked-ai-driven-outperformance/">KraneShares — Low Nasdaq Overlap</a></em></p>
+<hr />
+<p><em>본 문서는 기존 portfolio_recommendation_202607.md (v3)의 후속 버전으로, ETF 전환 검토 및 v4 하이브리드 포트폴리오를 포함합니다.</em>
+<em>참고: v3 문서의 4인 토론, 딥다이브 분석, 이벤트 캘린더, 정책 리스크 분석은 그대로 유효하며 본 문서와 병행 참조하시기 바랍니다.</em></p></section>
+</div>
+</div>
+
+<footer class="site-footer">
+  ourprochoi Research Archive &middot; 2026-07-02 &middot; 본 자료는 투자 참고용이며, 투자 판단의 최종 책임은 투자자 본인에게 있습니다.
+</footer>
+
+<button class="btt" aria-label="Back to top">&uarr;</button>
+
+<script>
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('prog').style.width=pct+'%';
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+},{threshold:.08});
+document.querySelectorAll('.floor').forEach(el=>obs.observe(el));
+
+// Back to top
+const btt=document.querySelector('.btt');
+window.addEventListener('scroll',()=>{
+  btt.classList.toggle('show',window.scrollY>600);
+});
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Active nav highlight
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120) current=s.id;
+  });
+  navLinks.forEach(a=>{
+    a.style.background=a.getAttribute('href')==='#'+current?'var(--chip-bg)':'var(--card)';
+    a.style.color=a.getAttribute('href')==='#'+current?'var(--ink)':'var(--sub)';
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+{
+  "functions": [
+    {
+      "id": "fn_gas_turbine",
+      "name": "가스터빈 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_power",
+      "name": "원전 발전",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_ppa",
+      "name": "원전 PPA",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_sofc",
+      "name": "SOFC 연료전지",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_btm_generation",
+      "name": "자가발전(BTM)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_ehv_transformer",
+      "name": "초고압 변압기",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_power_cable",
+      "name": "전력케이블",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_hvdc",
+      "name": "HVDC 송전",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_ups_pdu",
+      "name": "UPS·배전반",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_800v_dc",
+      "name": "800V DC 아키텍처",
+      "chain": "ai_power",
+      "stage": "Stage 03 DC 전력 인프라"
+    },
+    {
+      "id": "fn_liquid_cooling",
+      "name": "액체냉각(수냉·액침)",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_cooling_fluid",
+      "name": "냉각 유체",
+      "chain": "ai_power",
+      "stage": "Stage 04 냉각"
+    },
+    {
+      "id": "fn_grid_interconnection",
+      "name": "계통연계",
+      "chain": "ai_power",
+      "stage": "Stage 02 송배전"
+    },
+    {
+      "id": "fn_smr",
+      "name": "소형모듈원전(SMR)",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_nuclear_engineering",
+      "name": "원전 설계·엔지니어링",
+      "chain": "ai_power",
+      "stage": "Stage 01 발전"
+    },
+    {
+      "id": "fn_cross_valuation",
+      "name": "크로스 밸류에이션 분석",
+      "chain": "ai_power",
+      "stage": "투자 프레임워크"
+    }
+  ],
+  "companies": [
+    {
+      "id": "co_ge_vernova",
+      "name": "GE Vernova",
+      "ticker": "GEV",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "백로그 $163B, 100GW"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward PER ~60x, EV/EBITDA ~85.6x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_doosan_enerbility",
+      "name": "두산에너빌리티",
+      "ticker": "034020",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "수주잔고 24.1조원"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "가스터빈+원전+SMR 트리플 모멘텀"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "P/B 8.69x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_constellation",
+      "name": "Constellation Energy",
+      "ticker": "CEG",
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "60GW 포트폴리오, EPS+20%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_ppa",
+          "share": null,
+          "evidence": [
+            "Forward PER 21.8x"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "PJM 지연 리스크"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_vistra",
+      "name": "Vistra",
+      "ticker": "VST",
+      "functions": [
+        {
+          "fn": "fn_nuclear_power",
+          "share": null,
+          "evidence": [
+            "발전 유틸리티 중 최저 PER"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "fn": "fn_gas_turbine",
+          "share": null,
+          "evidence": [
+            "41GW, Meta 2.6GW PPA"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward PER 17.5x, EV/EBITDA 10.8x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hd_hyundai_electric",
+      "name": "HD현대일렉트릭",
+      "ticker": "267260",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "OPM 24.9%, 수주 +34.6%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Target PER 36.2x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ls_electric",
+      "name": "LS일렉트릭",
+      "ticker": "010120",
+      "functions": [
+        {
+          "fn": "fn_ehv_transformer",
+          "share": null,
+          "evidence": [
+            "Q1'26 YoY 매출성장"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC향 수주 ~1조원+"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Target PER 55x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_taihan",
+      "name": "대한전선",
+      "ticker": "001440",
+      "functions": [
+        {
+          "fn": "fn_hvdc",
+          "share": null,
+          "evidence": [
+            "HVDC 해저케이블"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_power_cable",
+          "share": null,
+          "evidence": [
+            "Q1 +26.6%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "PER 133x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_vertiv",
+      "name": "Vertiv",
+      "ticker": "VRT",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "NVIDIA 레퍼런스, B/B 2.9x"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "800V DC 파워"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "전력+냉각 원스톱"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward PER ~50x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_bloom_energy",
+      "name": "Bloom Energy",
+      "ticker": "BE",
+      "functions": [
+        {
+          "fn": "fn_sofc",
+          "share": null,
+          "evidence": [
+            "백로그 $20B, Q1 +130%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_btm_generation",
+          "share": null,
+          "evidence": [
+            "SOFC 자가발전"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_800v_dc",
+          "share": null,
+          "evidence": [
+            "SOFC+800VDC 직접출력"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward PER ~115-140x, P/S 27x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_eaton",
+      "name": "Eaton",
+      "ticker": "ETN",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC수주 +240%"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Boyd Thermal"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward PER 31.8x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_schneider",
+      "name": "Schneider Electric",
+      "ticker": "SU.PA",
+      "functions": [
+        {
+          "fn": "fn_ups_pdu",
+          "share": null,
+          "evidence": [
+            "DC 24%"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_liquid_cooling",
+          "share": null,
+          "evidence": [
+            "Motivair 액체냉각"
+          ],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "Forward PER 26.4x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kepco",
+      "name": "한전(KEPCO)",
+      "ticker": "015760",
+      "functions": [
+        {
+          "fn": "fn_grid_interconnection",
+          "share": null,
+          "evidence": [
+            "부채 205조"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "CAPEX 113조"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_kepco_enc",
+      "name": "한전기술",
+      "ticker": "052690",
+      "functions": [
+        {
+          "fn": "fn_nuclear_engineering",
+          "share": null,
+          "evidence": [
+            "체코 1.6조 설계 매출"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "fn": "fn_cross_valuation",
+          "share": null,
+          "evidence": [
+            "2027E PER ~30x"
+          ],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_sk_enmove",
+      "name": "SK엔무브",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_fluid",
+          "share": null,
+          "evidence": [
+            "SK이노베이션(096770)을 통한 간접 노출만 가능"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_hd_hyundai_electric",
+      "to": "co_eaton",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "HD현대 OPM(24.9%) > Eaton 세그먼트(22.7%)"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "동일 밸류체인 경쟁 관계(송배전)"
+    },
+    {
+      "from": "co_ls_electric",
+      "to": "co_schneider",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "LS일렉(55x) vs Schneider(26.4x)"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "동일 밸류체인 경쟁 관계, PER 2배 격차"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_constellation",
+      "type": "supply",
+      "share": null,
+      "evidence": [
+        "발전 유틸리티 중 가장 저평가"
+      ],
+      "confidence": 0.4,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "발전 유틸리티 동종 비교 관계"
+    },
+    {
+      "from": "co_vertiv",
+      "to": "co_bloom_energy",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": [
+        "800V DC 전환은 2H 2026~2027년 초"
+      ],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "800V DC 생태계 동시 참여"
+    }
+  ]
+}

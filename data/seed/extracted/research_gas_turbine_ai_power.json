@@ -1,0 +1,528 @@
+{
+  "functions": [
+    {"id": "fn_gas_turbine_oem", "name": "가스터빈 제조 (OEM)", "chain": "ai_power", "stage": "발전 장비"},
+    {"id": "fn_reciprocating_engine", "name": "왕복엔진 제조", "chain": "ai_power", "stage": "발전 장비"},
+    {"id": "fn_fuel_cell", "name": "연료전지 자가발전", "chain": "ai_power", "stage": "대안 발전"},
+    {"id": "fn_dc_power_infra", "name": "DC 전력 인프라 (배전·변압기)", "chain": "ai_power", "stage": "송배전·변압기"},
+    {"id": "fn_ups_distribution", "name": "UPS·배전", "chain": "ai_power", "stage": "송배전·변압기"},
+    {"id": "fn_cooling_power", "name": "냉각 + 전력", "chain": "ai_power", "stage": "송배전·변압기"},
+    {"id": "fn_transformer", "name": "변압기 제조", "chain": "ai_power", "stage": "송배전·변압기"},
+    {"id": "fn_ultra_high_voltage_transformer", "name": "초고압 변압기", "chain": "ai_power", "stage": "송배전·변압기"},
+    {"id": "fn_cable_transmission", "name": "전선·케이블·송전 인프라", "chain": "ai_power", "stage": "송배전·변압기"},
+    {"id": "fn_epc", "name": "EPC·개발", "chain": "ai_power", "stage": "EPC·개발"},
+    {"id": "fn_dc_development", "name": "DC 개발", "chain": "ai_power", "stage": "EPC·개발"},
+    {"id": "fn_hyperscaler", "name": "하이퍼스케일러 (최종 수요)", "chain": "ai_power", "stage": "최종 수요"},
+    {"id": "fn_ai_lab", "name": "AI Labs (최종 수요)", "chain": "ai_power", "stage": "최종 수요"},
+    {"id": "fn_gas_supply", "name": "가스 공급", "chain": "ai_power", "stage": "가스 공급"},
+    {"id": "fn_behind_the_meter", "name": "Behind-the-Meter 발전", "chain": "ai_power", "stage": "대안 발전"}
+  ],
+  "companies": [
+    {
+      "id": "co_ge_vernova",
+      "name": "GE Vernova",
+      "ticker": "GEV",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": ["가스터빈 세계 1위", "GE Vernova (대형 가스터빈 1위)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_siemens_energy",
+      "name": "Siemens Energy",
+      "ticker": "ENR",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": ["Siemens Energy (유럽 1위)", "유럽 최대 에너지 장비"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_mitsubishi_power",
+      "name": "Mitsubishi Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": ["Mitsubishi Power (효율 1위)", "M701JAC: 세계 최고 효율 GTCC 터빈"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_doosan_enerbility",
+      "name": "두산에너빌리티",
+      "ticker": "034020.KS",
+      "functions": [
+        {
+          "fn": "fn_gas_turbine_oem",
+          "share": null,
+          "evidence": ["두산에너빌리티 (K-가스터빈, 380MW)", "한국 유일의 대형 가스터빈 제조사"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_caterpillar",
+      "name": "Caterpillar",
+      "ticker": "CAT",
+      "functions": [
+        {
+          "fn": "fn_reciprocating_engine",
+          "share": null,
+          "evidence": ["Caterpillar (왕복엔진 + 에어로데리버티브)", "G3500 시리즈: DC 전용 왕복엔진 플랫폼"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_bloom_energy",
+      "name": "Bloom Energy",
+      "ticker": "BE",
+      "functions": [
+        {
+          "fn": "fn_fuel_cell",
+          "share": 0.14,
+          "evidence": ["Bloom Energy (SOFC 연료전지, 14% M/S)", "DC 전력 M/S | **14%** (behind-the-meter)"],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_behind_the_meter",
+          "share": 0.14,
+          "evidence": ["DC 전력 M/S | **14%** (behind-the-meter)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_fuelcell_energy",
+      "name": "FuelCell Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_fuel_cell",
+          "share": null,
+          "evidence": ["FuelCell Energy (MCFC)"],
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "id": "co_eaton",
+      "name": "Eaton",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_dc_power_infra",
+          "share": null,
+          "evidence": ["Eaton (DC 전력 인프라 1위)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_schneider_electric",
+      "name": "Schneider Electric",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ups_distribution",
+          "share": null,
+          "evidence": ["Schneider Electric (UPS · 배전)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_vertiv",
+      "name": "Vertiv",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_cooling_power",
+          "share": null,
+          "evidence": ["Vertiv (냉각 + 전력)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ls_electric",
+      "name": "LS일렉트릭",
+      "ticker": "010120",
+      "functions": [
+        {
+          "fn": "fn_transformer",
+          "share": null,
+          "evidence": ["LS일렉트릭 (한국 · 변압기)", "DC 전력 인프라, 변압기, 배전"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_hd_hyundai_electric",
+      "name": "HD현대일렉트릭",
+      "ticker": "267260",
+      "functions": [
+        {
+          "fn": "fn_ultra_high_voltage_transformer",
+          "share": null,
+          "evidence": ["초고압 변압기, 북미 시장"],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_ls_eco_energy",
+      "name": "LS에코에너지",
+      "ticker": "229640",
+      "functions": [
+        {
+          "fn": "fn_cable_transmission",
+          "share": null,
+          "evidence": ["전선·케이블, 송전 인프라"],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_bechtel",
+      "name": "Bechtel",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_epc",
+          "share": null,
+          "evidence": ["Bechtel, Fluor (대형 EPC)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_fluor",
+      "name": "Fluor",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_epc",
+          "share": null,
+          "evidence": ["Bechtel, Fluor (대형 EPC)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_nscale",
+      "name": "Nscale",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_dc_development",
+          "share": null,
+          "evidence": ["DC 개발사 (Nscale, QTS, Vantage 등)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_microsoft",
+      "name": "Microsoft",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": ["Hyperscaler (MS, Meta, Amazon, Oracle, Google)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_meta",
+      "name": "Meta",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": ["Hyperscaler (MS, Meta, Amazon, Oracle, Google)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_amazon",
+      "name": "Amazon",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": ["Hyperscaler (MS, Meta, Amazon, Oracle, Google)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_oracle",
+      "name": "Oracle",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": ["Hyperscaler (MS, Meta, Amazon, Oracle, Google)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_google",
+      "name": "Google",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler",
+          "share": null,
+          "evidence": ["Hyperscaler (MS, Meta, Amazon, Oracle, Google)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_openai",
+      "name": "OpenAI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ai_lab",
+          "share": null,
+          "evidence": ["AI Labs (OpenAI, Anthropic, xAI)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_anthropic",
+      "name": "Anthropic",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ai_lab",
+          "share": null,
+          "evidence": ["AI Labs (OpenAI, Anthropic, xAI)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_xai",
+      "name": "xAI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_ai_lab",
+          "share": null,
+          "evidence": ["AI Labs (OpenAI, Anthropic, xAI)"],
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_ge_vernova",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**Microsoft** | 텍사스 DC | GE Vernova 7기 | 2.7 GW"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "GE Vernova 가스터빈 7기 2.7GW 공급"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_xai",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**xAI (머스크)** | Colossus 1, 테네시 | GE Vernova"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "xAI Colossus 1 가스터빈 27기 1,498MW"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_openai",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**OpenAI** | Stargate, 텍사스 | GE Vernova | ~1 GW"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "OpenAI Stargate 프로젝트 ~1GW"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_xai",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**xAI (추정)** | 미국 | 두산에너빌리티 380MW급"],
+      "confidence": 0.8,
+      "asof": "2026-03",
+      "substitutable": false,
+      "note": "380MW급 7기 약 2.7GW, 1.2조원 계약 (xAI 추정)"
+    },
+    {
+      "from": "co_caterpillar",
+      "to": "co_nscale",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**Nscale (MS/NVIDIA)** | 웨스트버지니아 | Caterpillar G3500"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Caterpillar G3500 왕복엔진 2GW 공급 (MS/NVIDIA)"
+    },
+    {
+      "from": "co_bloom_energy",
+      "to": "co_oracle",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**Oracle** | Stargate Jupiter, 뉴멕시코 | Bloom Energy"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Bloom Energy SOFC 연료전지 2.8GW 계약, 1.2GW 배치 중"
+    },
+    {
+      "from": "co_nscale",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Nscale 2 GW (MS/NVIDIA 웨스트버지니아) 수주"],
+      "confidence": 0.8,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "Nscale DC 개발 → MS/NVIDIA 웨스트버지니아 2GW"
+    },
+    {
+      "from": "co_ge_vernova",
+      "to": "co_siemens_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["납기 예약 | **2030~2031년까지 완료**"],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "GEV 2031년까지 완판 → Siemens 등 대안 OEM 선택 가능성"
+    },
+    {
+      "from": "co_doosan_enerbility",
+      "to": "co_ge_vernova",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["한국 유일의 대형 가스터빈 제조사"],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": true,
+      "note": "GEV 대형 터빈 대안으로 두산 380MW급 경쟁"
+    },
+    {
+      "from": "co_mitsubishi_power",
+      "to": "co_ge_vernova",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["Mitsubishi Power (효율 1위)"],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 OEM 3강 경쟁 (GEV 1위 vs MHI 효율 1위)"
+    },
+    {
+      "from": "co_mitsubishi_power",
+      "to": "co_siemens_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["Mitsubishi Power (효율 1위)"],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 OEM 3강 경쟁 (Siemens 유럽 1위 vs MHI 효율 1위)"
+    },
+    {
+      "from": "co_fuelcell_energy",
+      "to": "co_bloom_energy",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["FuelCell Energy (MCFC)"],
+      "confidence": 0.5,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "BTM 연료전지 시장 경쟁 (MCFC vs Bloom SOFC 14% M/S)"
+    },
+    {
+      "from": "co_schneider_electric",
+      "to": "co_eaton",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["Schneider Electric (UPS · 배전)"],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "DC 전력 인프라 경쟁 (UPS·배전 세그먼트). co_schneider와 동일 엔티티 — 중복 주의"
+    },
+    {
+      "from": "co_ls_eco_energy",
+      "to": "co_ls_electric",
+      "type": "supply",
+      "share": null,
+      "evidence": ["전선·케이블, 송전 인프라"],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": false,
+      "note": "LS그룹 계열사. 전선·케이블(에코에너지) + 배전기기(일렉트릭) 통합 수혜"
+    },
+    {
+      "from": "co_bechtel",
+      "to": "co_ge_vernova",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Bechtel, Fluor (대형 EPC)"],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 발전소 EPC 시공 (GEV 터빈 설치)"
+    },
+    {
+      "from": "co_fluor",
+      "to": "co_ge_vernova",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Bechtel, Fluor (대형 EPC)"],
+      "confidence": 0.7,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "가스터빈 발전소 EPC 시공 (GEV 터빈 설치)"
+    },
+    {
+      "from": "co_anthropic",
+      "to": "co_openai",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["OpenAI·Anthropic만 **10 GW+** 임차 계약"],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "AI Labs 전력 수요 양대 축. 각각 10GW+ 임차 계약"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+# ground_truth.yaml — 리서치 데이터 기반 병목 노드 정답지
+# 스코어링 캘리브레이션용: 이 노드들이 상위 20%에 위치해야 함
+# 출처: data/research_hbm_pkg_*.md, data/research_ai_power_*.md
+# 작성일: 2026-07-25
+
+# === HBM 체인 병목 노드 ===
+
+- id: fn_cowos_packaging
+  name: "CoWoS 첨단 패키징"
+  chain: hbm
+  stage: "첨단 패키징 (STAGE 03)"
+  dominant_player: "TSMC"
+  rationale: |
+    2.5D/3D 패키징 사실상 독점. 수급갭 20%(2026 초)→10%(2026 말).
+    리드타임 52~78주. NVIDIA 할당 50%+. 대안 부재.
+    수요 ~1.0M 웨이퍼 vs 공급 120~130K WPM.
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §2.4 TSMC CoWoS 핵심 병목"
+    - "TrendForce 2026.06.15 — 수급갭 10~20%"
+
+- id: fn_tc_bonding
+  name: "TC 본딩 (열압착 본딩)"
+  chain: hbm
+  stage: "TC 본딩 (STAGE 04)"
+  dominant_player: "한미반도체"
+  rationale: |
+    TC본더 글로벌 M/S 71.2%, 북미 90%. HBM 스택 수(8→12→16-Hi) 증가에
+    비례해 본더 수요 증가. 세대 전환기(HBM3E→HBM4) 장비 교체 수요.
+    경쟁사(BESI 하이브리드 본딩, Shibaura) 추격 중이나 격차 유지.
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §2.5 TC 본딩"
+    - "research_hbm_pkg_companies_kr.md — §3 한미반도체 M/S 71.2%"
+    - "TechInsights 2025"
+
+- id: fn_hydrogen_annealing
+  name: "고압수소어닐링"
+  chain: hbm
+  stage: "TC 본딩 (STAGE 04)"
+  dominant_player: "HPSP"
+  rationale: |
+    고압수소어닐링 장비 세계 유일 공급사. SK하이닉스 독점 공급.
+    HBM 다이 적층 후 수율·신뢰성 핵심 공정.
+    리스크: 대체 벤더(YEST) 검토 보도 존재.
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §2.5 HPSP 독점"
+    - "research_hbm_pkg_companies_kr.md — §4 HPSP"
+
+- id: fn_abf_substrate_film
+  name: "ABF 필름 (기판 소재)"
+  chain: hbm
+  stage: "기판 (STAGE 06)"
+  dominant_player: "Ajinomoto"
+  rationale: |
+    ABF 필름 글로벌 M/S 95%+ 사실상 독점. 50%+ 마진, 30% 가격 인상.
+    FC-BGA 기판의 필수 절연 소재. 대체재 부재.
+    "밸류체인에서 가장 은밀한 해자".
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §Ajinomoto ABF 필름 95% 독점"
+
+- id: fn_ate_test
+  name: "ATE (자동테스트장비)"
+  chain: hbm
+  stage: "테스트 (STAGE 05)"
+  dominant_player: "Advantest"
+  rationale: |
+    글로벌 ATE M/S ~70%, 메모리 테스트 M/S 60~70%.
+    HBM 스택 수 증가로 테스트 시간·복잡도 비례 증가.
+    HBM 전용 테스트 시스템(T5835) 주도.
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §Advantest ATE M/S 70%"
+
+- id: fn_dicing_grinding
+  name: "웨이퍼 다이싱/그라인딩"
+  chain: hbm
+  stage: "웨이퍼 (STAGE 01 후처리)"
+  dominant_player: "Disco"
+  rationale: |
+    정밀 다이싱·그라인딩 M/S 70~80% 사실상 독점.
+    HBM 다이 박형화(TSV 공정 전 웨이퍼 그라인딩) 필수 장비.
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §Disco M/S 70~80%"
+
+- id: fn_pogo_pin_socket
+  name: "포고핀 테스트 소켓"
+  chain: hbm
+  stage: "테스트 (STAGE 05)"
+  dominant_player: "리노공업"
+  rationale: |
+    포고핀 소켓 글로벌 M/S 30%+. 미세 피치 기술 장벽.
+    HBM4 미세 범프 피치(20~25μm) 대응 가능한 소수 업체.
+    니치 마켓 독점.
+  evidence:
+    - "research_hbm_pkg_part12_overview.md — §3.2 리노공업 니치 마켓 독점"
+    - "research_hbm_pkg_companies_kr.md — §5 리노공업"
+
+# === AI 전력 체인 병목 노드 ===
+
+- id: fn_power_transformer
+  name: "초고압 변압기"
+  chain: ai_power
+  stage: "송배전 (STAGE 02)"
+  dominant_player: "HD현대일렉트릭/산일전기"
+  rationale: |
+    변압기 리드타임 2~4년, 수주잔고 사상 최대(산일전기 수주잔고 11.6조).
+    AI DC 전력 수요 폭증에 송배전 인프라가 물리적 병목.
+    글로벌 변압기 공급 부족 구조적 지속.
+  evidence:
+    - "research_ai_power_themes_CD.md — 테마 C 송배전 병목: 변압기"
+    - "research_ai_power_part12_overview.md — §3.1 병목 심각도"
+
+- id: fn_gas_turbine
+  name: "대형 가스터빈 (CCGT)"
+  chain: ai_power
+  stage: "발전 (STAGE 01)"
+  dominant_player: "GE Vernova/Siemens Energy"
+  rationale: |
+    CCGT 리드타임 5~7년. GE Vernova 백로그 100 GW(~10년치),
+    Siemens Energy 2028년까지 매진. SMR/원전이 2030+ 전에는
+    가스터빈이 유일한 대규모 브릿지 전원.
+    판가 2019 대비 ~3배($600/kW).
+  evidence:
+    - "research_ai_power_part12_overview.md — §2.2 가스터빈 슈퍼사이클"
+    - "research_gas_turbine_ai_power.md"
+    - "research_ai_power_themes_AB.md — 테마 B 가스터빈"
+
+- id: fn_grid_interconnection
+  name: "계통연계 (Grid Interconnection)"
+  chain: ai_power
+  stage: "송배전 (STAGE 02)"
+  dominant_player: "유틸리티/규제기관"
+  rationale: |
+    미국 DC의 절반이 전력 확보 실패로 지연.
+    계통연계 큐 평균 대기 5년. 이 병목이 BTM(자가발전) 트렌드를 가속.
+    물리적·제도적 병목이 동시에 존재.
+  evidence:
+    - "research_ai_power_themes_CD.md — §C-3 계통연계 큐 병목"
+    - "research_ai_power_part12_overview.md — §2.3 계통연계 큐 병목"

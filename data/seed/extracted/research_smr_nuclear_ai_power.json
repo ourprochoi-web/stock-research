@@ -1,0 +1,500 @@
+{
+  "functions": [
+    {"id": "fn_smr_development", "name": "SMR 개발·제조", "chain": "ai_power", "stage": "원자력 발전"},
+    {"id": "fn_large_nuclear_operation", "name": "대형 원전 운영", "chain": "ai_power", "stage": "원자력 발전"},
+    {"id": "fn_nuclear_fuel_supply", "name": "핵연료 공급 (HALEU/TRISO)", "chain": "ai_power", "stage": "연료 공급"},
+    {"id": "fn_uranium_supply", "name": "우라늄 채굴·공급", "chain": "ai_power", "stage": "연료 공급"},
+    {"id": "fn_nuclear_ppa", "name": "원자력 PPA (전력구매계약)", "chain": "ai_power", "stage": "전력 거래"},
+    {"id": "fn_hyperscaler_demand", "name": "하이퍼스케일러 (최종 수요)", "chain": "ai_power", "stage": "최종 수요"},
+    {"id": "fn_smr_policy", "name": "SMR 정책·규제", "chain": "ai_power", "stage": "정책·규제"},
+    {"id": "fn_utility_operation", "name": "유틸리티 운영", "chain": "ai_power", "stage": "전력 운영"},
+    {"id": "fn_advanced_reactor", "name": "선진 원자로 (Gen IV)", "chain": "ai_power", "stage": "원자력 발전"},
+    {"id": "fn_smr_epc", "name": "SMR 건설 (EPC)", "chain": "ai_power", "stage": "EPC·건설"}
+  ],
+  "companies": [
+    {
+      "id": "co_kairos_power",
+      "name": "Kairos Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["Kairos Power와 세계 최초 기업-SMR 전력구매계약(PPA) 체결", "Kairos의 KP-FHR 기술은 TRISO 연료 + 불화염(FLiBe) 용융염 냉각 방식"],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_advanced_reactor",
+          "share": null,
+          "evidence": ["NRC 건설 허가를 받은 **최초의 선진 원자로**"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_google",
+      "name": "Google",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": ["Google이 Kairos Power와 세계 최초 기업-SMR 전력구매계약(PPA) 체결"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_tva",
+      "name": "TVA",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_utility_operation",
+          "share": null,
+          "evidence": ["TVA 그리드에 전력 공급하며", "Kairos-TVA-Google 3자 PPA 체결"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_aws",
+      "name": "AWS",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": ["AWS가 Talen Energy의 Susquehanna 원전"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_talen_energy",
+      "name": "Talen Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_large_nuclear_operation",
+          "share": null,
+          "evidence": ["Talen Energy의 Susquehanna 원전(총 **1.92GW** PWR)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_constellation_energy",
+      "name": "Constellation Energy",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_large_nuclear_operation",
+          "share": null,
+          "evidence": ["Constellation Energy가 Microsoft와 **20년** PPA 체결", "원전 총 용량 약 **31.7GW**"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_microsoft",
+      "name": "Microsoft",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": ["Constellation Energy가 Microsoft와 **20년** PPA 체결"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_meta",
+      "name": "Meta",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": ["Meta — 6.6GW 원자력 확보 계획", "Oklo / TerraPower / Vistra**와 총 **6.6GW** 원자력 전력 계약"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_oracle",
+      "name": "Oracle",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": ["3기 SMR로 구동되는 **1GW+** 데이터센터 구축 계획 발표"],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_nuscale_power",
+      "name": "NuScale Power",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["NuScale Power Module이 미국 최초 SMR 설계 인증(SDA) 획득", "상향 출력 **77MWe** (US460) 설계도 NRC 승인 완료"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_terrapower",
+      "name": "TerraPower",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["NRC가 Part 50 건설 허가 승인", "나트륨 냉각 고속로 345MW + 용융염 에너지 저장 시스템"],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_advanced_reactor",
+          "share": null,
+          "evidence": ["40년 이상 만에 최초의 비경수로 상업 원자로"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_x_energy",
+      "name": "X-energy",
+      "ticker": "XE",
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["Nasdaq 상장 (티커: XE). IPO 가격 **$23/주**", "4-유닛 Xe-100 HTGR 건설 추진"],
+          "confidence": 1.0
+        },
+        {
+          "fn": "fn_nuclear_fuel_supply",
+          "share": null,
+          "evidence": ["TRISO-X 연료 공장 (TX-1)", "미국 최초 선진핵연료 상업 제조 시설 건설 중"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_oklo",
+      "name": "Oklo",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["Pike County, Ohio에 **1.2GW** 원자력 캠퍼스 개발", "Aurora Powerhouse 75MW 원자로 16기"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_vistra",
+      "name": "Vistra",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_large_nuclear_operation",
+          "share": null,
+          "evidence": ["Vistra**: 기존 원전 전력 계약 체결"],
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "id": "co_rolls_royce_smr",
+      "name": "Rolls-Royce SMR",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["**470MW** PWR 설계", "ONR 설계 평가(GDA) 3단계 진행 중"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_ge_hitachi",
+      "name": "GE Hitachi",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["**BWRX-300** (300MW BWR) 건설", "서방 세계 최초 상업 그리드 규모 SMR"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_holtec",
+      "name": "Holtec",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["DOE로부터 **$4억** \"Tier 1 First Mover\" 자금 수상", "SMR-300 이중유닛 **680MWe** (PIONEER 1&2)"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_opg",
+      "name": "Ontario Power Generation",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_utility_operation",
+          "share": null,
+          "evidence": ["Ontario Power Generation이 Darlington 부지에"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_dow_chemical",
+      "name": "Dow Chemical",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_hyperscaler_demand",
+          "share": null,
+          "evidence": ["Dow Chemical 프로젝트", "Texas Seadrift 석유화학 플랜트에 4-유닛 Xe-100"],
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "id": "co_centrus",
+      "name": "Centrus",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_nuclear_fuel_supply",
+          "share": null,
+          "evidence": ["Centrus가 HALEU 공급"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_cnnc",
+      "name": "CNNC",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["**125MWe** 가압경수로(PWR). CNNC 개발"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_khnp",
+      "name": "KHNP",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["KHNP/KAERI 컨소시엄 개발"],
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "co_kaeri",
+      "name": "KAERI",
+      "ticker": null,
+      "functions": [
+        {
+          "fn": "fn_smr_development",
+          "share": null,
+          "evidence": ["KHNP/KAERI 컨소시엄 개발"],
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "co_kairos_power",
+      "to": "co_google",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Google이 Kairos Power와 세계 최초 기업-SMR 전력구매계약(PPA) 체결", "총 **500MW** 원자력 용량을 2035년까지"],
+      "confidence": 1.0,
+      "asof": "2024-10",
+      "substitutable": false,
+      "note": "500MW PPA, 2035년까지 단계적 배치"
+    },
+    {
+      "from": "co_kairos_power",
+      "to": "co_tva",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Kairos-TVA-Google 3자 PPA 체결"],
+      "confidence": 1.0,
+      "asof": "2025-08",
+      "substitutable": false,
+      "note": "TVA 그리드 경유 Google DC에 간접 전력 공급"
+    },
+    {
+      "from": "co_talen_energy",
+      "to": "co_aws",
+      "type": "supply",
+      "share": null,
+      "evidence": ["AWS가 Talen Energy의 Susquehanna 원전", "behind-the-meter\" 방식으로 전력을 직접 공급"],
+      "confidence": 0.5,
+      "asof": "2024-11",
+      "substitutable": false,
+      "note": "FERC 거부로 중단. 초기 300MW→480MW 확대 추진했으나 재심도 기각"
+    },
+    {
+      "from": "co_constellation_energy",
+      "to": "co_microsoft",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Constellation Energy가 Microsoft와 **20년** PPA 체결", "TMI Unit 1을 재가동하여 **835MW** 무탄소 전력 공급"],
+      "confidence": 1.0,
+      "asof": "2024-09",
+      "substitutable": false,
+      "note": "TMI Unit 1 재가동, 835MW, 20년 PPA, Crane Clean Energy Center"
+    },
+    {
+      "from": "co_oklo",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Oklo / TerraPower / Vistra**와 총 **6.6GW** 원자력 전력 계약", "Pike County, Ohio에 **1.2GW** 원자력 캠퍼스 개발"],
+      "confidence": 1.0,
+      "asof": "2026-01",
+      "substitutable": false,
+      "note": "1.2GW 원자력 캠퍼스, Aurora 75MW x 16기, Phase 1 150MW 2030년 목표"
+    },
+    {
+      "from": "co_terrapower",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": ["**8기** Natrium 원자로 건설 합의 → 총 **2.8GW** 기저전력"],
+      "confidence": 1.0,
+      "asof": "2026-01",
+      "substitutable": false,
+      "note": "8기 Natrium, 2.8GW 기저 (ESS 포함 4GW), 2032년 초기 인도"
+    },
+    {
+      "from": "co_vistra",
+      "to": "co_meta",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Vistra**: 기존 원전 전력 계약 체결 (규모 미공개)"],
+      "confidence": 0.5,
+      "asof": "2026-01",
+      "substitutable": true,
+      "note": "기존 원전 전력 계약, 규모 미공개"
+    },
+    {
+      "from": "co_centrus",
+      "to": "co_oklo",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Centrus가 HALEU 공급"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Oklo Aurora용 HALEU 핵연료 공급"
+    },
+    {
+      "from": "co_ge_hitachi",
+      "to": "co_opg",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Ontario Power Generation이 Darlington 부지에 **BWRX-300**"],
+      "confidence": 1.0,
+      "asof": "2025-05",
+      "substitutable": false,
+      "note": "BWRX-300 (300MW), 2030년 가동 목표, 서방 최초 상업 SMR"
+    },
+    {
+      "from": "co_x_energy",
+      "to": "co_dow_chemical",
+      "type": "supply",
+      "share": null,
+      "evidence": ["Texas Seadrift 석유화학 플랜트에 4-유닛 Xe-100 HTGR 건설 추진"],
+      "confidence": 1.0,
+      "asof": "2025-03",
+      "substitutable": false,
+      "note": "Xe-100 4기, 2030년 상업운전 목표, NRC 건설 허가 신청"
+    },
+    {
+      "from": "co_nuscale_power",
+      "to": "co_nuscale_power",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["미국 최초 SMR 설계 인증(SDA) 획득"],
+      "confidence": 1.0,
+      "asof": "2023-01",
+      "substitutable": false,
+      "note": "NRC SDA 인증 보유, 단 CFPP 프로젝트 취소 경험"
+    },
+    {
+      "from": "co_kaeri",
+      "to": "co_khnp",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": ["KHNP/KAERI 컨소시엄 개발", "혁신형 소형모듈원자로, **170MWe** 일체형 가압경수로"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "i-SMR 170MWe 공동 개발, 2035년 상업운전 목표"
+    },
+    {
+      "from": "co_cnnc",
+      "to": "co_cnnc",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["세계 최초 육상 상업 SMR", "**2026년 상반기** 상업운전 개시 목표"],
+      "confidence": 1.0,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "Linglong One (ACP100) 125MWe, 하이난성, 세계 최초 상업 SMR"
+    },
+    {
+      "from": "co_x_energy",
+      "to": "co_kairos_power",
+      "type": "tech_dependency",
+      "share": null,
+      "evidence": ["TRISO-X 연료 공장 (TX-1)", "연간 5톤 우라늄, 70만 TRISO 페블 생산"],
+      "confidence": 0.5,
+      "asof": "2026-06",
+      "substitutable": false,
+      "note": "X-energy의 TRISO-X 공장이 TRISO 연료 생산 — Kairos도 TRISO 연료 사용"
+    },
+    {
+      "from": "co_holtec",
+      "to": "co_ge_hitachi",
+      "type": "qualification",
+      "share": null,
+      "evidence": ["Holtec (SMR-300)에 **$8억** \"First Mover\" 자금 배정"],
+      "confidence": 0.8,
+      "asof": "2026-07",
+      "substitutable": true,
+      "note": "DOE Tier 1 First Mover 동시 선정 (GE-Hitachi BWRX-300 vs Holtec SMR-300)"
+    }
+  ]
+}
