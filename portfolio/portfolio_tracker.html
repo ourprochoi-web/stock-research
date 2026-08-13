@@ -28,7 +28,9 @@
   --blue:#3498db; --blue-dim:rgba(52,152,219,.12);
   --purple:#9b59b6; --purple-dim:rgba(155,89,182,.12);
   --cyan:#1abc9c; --cyan-dim:rgba(26,188,156,.12);
-  --orange:#e67e22; --orange-dim:rgba(230,126,34,.12);
+  --pink: #ec4899;
+    --teal: #14b8a6;
+    --orange:#e67e22; --orange-dim:rgba(230,126,34,.12);
   --line:#1e2a40;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -190,7 +192,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   "headline":"포트폴리오 트래커 — v7.2 Phase 0 실매수 대시보드",
   "description":"v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드",
   "datePublished":"2026-07-14",
-  "dateModified":"2026-08-12",
+  "dateModified":"2026-08-14",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html"}
@@ -405,24 +407,33 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
     { name:'삼성전자 (신규)',    ticker:'005930', cluster:'A', qty:383,  avgPrice:238157,  fee:0, totalCost:91214131, priceKey:'삼성전자' },
     { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:3600, avgPrice:17801,   fee:0, totalCost:64083600 },
     { name:'TIME 글로벌AI',     ticker:'456600', cluster:'C', qty:1040, avgPrice:62807,   fee:0, totalCost:65319280 },
-    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1880, avgPrice:33630, fee:0, totalCost:63224400 }
+    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1880, avgPrice:33630, fee:0, totalCost:63224400 },
+    /* 2026-08-13 신규 편입 — 투자자 집행. 수수료 포함 원가 기준.
+       현대백화점: 매수 논거 = 자산가치 + 소비 섹터 강세 + 외국인 소비 증가(투자자 진술).
+                  ⚠ 아카이브 인용 0편이었다 — 테제를 이 논거 위에 새로 세운다. */
+    { name:'현대백화점',           ticker:'069960', cluster:'E', qty:250, avgPrice:99362,   fee:34876, totalCost:24875376 },
+    { name:'삼성바이오로직스',      ticker:'207940', cluster:'F', qty:17,  avgPrice:1549529, fee:36885, totalCost:26378878 }
   ];
 
-  var TOTAL_INVESTED = 469969895;   /* 매입원가 계 — 활성 375,589,895 + 레거시 94,380,000 */
-  var CASH_REMAINING = 1349000000;  /* 13.49억 (v10.2) */
+  var TOTAL_INVESTED = 521224149;   /* 매입원가 계 — 활성 426,844,149 + 레거시 94,380,000 (2026-08-13 신규 2종 51,254,254 반영) */
+  var CASH_REMAINING = 1297745746;  /* 12.98억 — 13.49억에서 2026-08-13 집행분 51,254,254 차감 */
   var TOTAL_PORTFOLIO = TOTAL_INVESTED + CASH_REMAINING; /* 투자 + 현금 */
 
   var CLUSTER_COLORS = {
     A: 'var(--blue)',
     B: 'var(--green)',
     C: 'var(--purple)',
-    D: 'var(--orange)'
+    D: 'var(--orange)',
+    E: 'var(--pink)',
+    F: 'var(--teal)'
   };
   var CLUSTER_NAMES = {
     A: 'AI 반도체 핵심',
     B: 'AI 반도체 ETF',
     C: '글로벌 AI',
-    D: 'AI 전력 인프라'
+    D: 'AI 전력 인프라',
+    E: '소비·자산가치',
+    F: 'CDMO·바이오'
   };
   var CLUSTER_CSS_COLORS = {
     A: '#3498db',
