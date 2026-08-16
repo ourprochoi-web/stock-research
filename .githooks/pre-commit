@@ -33,7 +33,16 @@ BASE = "https://ourprochoi-web.github.io/stock-research/"
 # 아니고, 등재만 하지 않는다.
 # 여기에 추가할 때는 같은 기준을 통과해야 한다 — "읽는 사람이 아니라 내가 보는
 # 화면인가". 편의로 늘리면 §F2 가 무력해진다.
-SITEMAP_EXEMPT = {"portfolio/portfolio_tracker.html"}
+SITEMAP_EXEMPT = {
+    "portfolio/portfolio_tracker.html",
+    # 2026-08-18 추가. 같은 기준을 통과한다 — "읽는 사람이 아니라 내가 보는 화면인가".
+    # 판정 대기판은 41개 페이지에 흩어진 판정 조건 중 날짜/이벤트가 특정된 것만
+    # 모은 운영 화면이다. 검색 노출이 목적이 아니라 "무엇이 언제 판정되는가"를
+    # 한 화면에서 보려고 만들었고, 내용은 전부 각 페이지의 반증 조건에서 온다.
+    # (섹터 지도 board/sector_map.html 은 반대다 — 읽히려고 만든 입구이므로
+    #  sitemap 에 등재한다.)
+    "board/judgment_board.html",
+}
 
 
 def run(*args):

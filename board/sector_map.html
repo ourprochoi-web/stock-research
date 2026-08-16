@@ -1,0 +1,214 @@
+<title>섹터 지도 — 어디에 판단이 있고 어디가 비어 있는가</title>
+<style>
+:root{
+  --ground:#F2F3F1; --card:#FFFFFF; --line:#D3D7D4;
+  --ink:#16201E; --ink-2:#4A5654; --ink-3:#7B8785;
+  --deep:#1F5E5A; --mid:#4E8B86; --pale:#A9C6C3; --empty:#DCE0DE;
+  --flag:#9A5B12; --flag-bg:#F5E9D8;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0E1413; --card:#161E1D; --line:#293433;
+  --ink:#E3E9E7; --ink-2:#A0ADAB; --ink-3:#71807D;
+  --deep:#5FB3AC; --mid:#3D7C77; --pale:#255652; --empty:#212B2A;
+  --flag:#D9A15C; --flag-bg:#2E2313;
+}}
+:root[data-theme="dark"]{
+  --ground:#0E1413; --card:#161E1D; --line:#293433;
+  --ink:#E3E9E7; --ink-2:#A0ADAB; --ink-3:#71807D;
+  --deep:#5FB3AC; --mid:#3D7C77; --pale:#255652; --empty:#212B2A;
+  --flag:#D9A15C; --flag-bg:#2E2313;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:44px 22px 90px}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--deep)}
+h1{font-size:clamp(27px,4.2vw,40px);line-height:1.13;letter-spacing:-.026em;font-weight:800;margin:12px 0 0;text-wrap:balance}
+.sub{color:var(--ink-2);margin:14px 0 0;max-width:60ch;font-size:16.5px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;padding:13px 15px;background:var(--card);border:1px solid var(--line);border-radius:4px;font-size:13px;color:var(--ink-2);align-items:center}
+.sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+.sw.f{background:var(--deep)} .sw.e{background:var(--empty);border:1px solid var(--line)}
+
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;margin-top:12px;overflow:hidden}
+.tot .c{background:var(--card);padding:12px 14px}
+.tot .l{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.tot .v{font-family:var(--mono);font-size:24px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tot .v small{font-size:14px;color:var(--ink-3);font-weight:400}
+
+h2{font-size:18px;font-weight:750;letter-spacing:-.015em;margin:42px 0 6px}
+.h2n{color:var(--ink-2);font-size:14.5px;margin:0 0 16px;max-width:62ch}
+
+.sec{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:15px 17px;margin-bottom:11px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}
+.sh .nm{font-weight:750;font-size:17px;letter-spacing:-.015em}
+.sh .rt{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.sh .rt b{color:var(--deep)}
+.sh .dt{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-left:auto}
+.grid{display:flex;flex-wrap:wrap;gap:3px;margin:10px 0 0}
+.g{width:13px;height:13px;border-radius:2px;background:var(--empty);border:1px solid transparent}
+.g.on{background:var(--deep)}
+.g.on.b{background:var(--mid)}
+.th{margin:11px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.55;border-left:2px solid var(--pale);padding-left:12px}
+.th b{color:var(--ink);font-weight:650}
+.meta{margin-top:9px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:5px 15px}
+.meta .warn{color:var(--flag)}
+
+.thin{opacity:.72}
+.thin .sh .nm{font-weight:700}
+
+.note{border-left:2px solid var(--flag);background:var(--flag-bg);padding:12px 15px;border-radius:0 4px 4px 0;margin:16px 0;font-size:14.5px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+:root[data-theme="dark"] .note,:root:not([data-theme="light"]) .note{color:var(--ink-2)}
+
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.8}
+</style>
+
+<div class="wrap">
+<div class="kicker">섹터 지도 · 2026.08.18 기준</div>
+<h1>어디에 판단이 있고<br>어디가 비어 있는가</h1>
+<p class="sub">이 아카이브는 페이지 수가 아니라 <b>판단의 개수</b>로 센다. 114편 중 <b>현재 판단(테제 + 반증 조건)이 붙은 것은 40편</b>이고, 나머지는 아직 배경 지도다. 어느 쪽인지 숨기지 않는 게 이 지도의 목적이다.</p>
+
+<div class="legend">
+  <span><span class="sw f"></span>판단이 붙은 편</span>
+  <span><span class="sw e"></span>배경 지도 — 사실은 정리됐으나 테제가 없다</span>
+  <span style="color:var(--ink-3)">칸 하나 = 페이지 하나</span>
+</div>
+
+<div class="tot">
+  <div class="c"><div class="l">전체</div><div class="v">114<small>편</small></div></div>
+  <div class="c"><div class="l">판단 보유</div><div class="v" style="color:var(--deep)">40<small>편 · 35%</small></div></div>
+  <div class="c"><div class="l">테제</div><div class="v">181<small>개</small></div></div>
+  <div class="c"><div class="l">미검증 태그</div><div class="v" style="color:var(--flag)">51</div></div>
+  <div class="c"><div class="l">추적 종목</div><div class="v">75<small>국내48·해외27</small></div></div>
+</div>
+
+<h2>판단이 깊은 곳</h2>
+<p class="h2n">새 정보가 계속 들어오는 섹터다. 여기서부터 읽는 것이 빠르다.</p>
+
+<div class="sec">
+  <div class="sh"><span class="nm">AI 인프라</span><span class="rt"><b>8</b>/12편 · 테제 36</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>병목은 부품이 아니라 돈이다</b> — 그리고 병목을 메우는 주체가 <b>금융기관에서 칩 공급자 자신으로</b> 옮겨갔다. 엔비디아 CDS 상승 · 브로드컴 잔존가치 보증 $300억 · 오하이오 보증 축소가 같은 주에 확인됐다.</p>
+  <div class="meta"><span>전력 · 밸류체인 · 전선 · 원전 · ESS</span><span class="warn">미검증 20 — 전 섹터 최다</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">메모리 · HBM</span><span class="rt"><b>5</b>/11편 · 테제 23</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>하방은 계약으로 고정됐고, 그 대가로 상방을 포기했다.</b> SanDisk 장기계약 $940억·가중평균 4년+·물량 2/3 확보, AMAT 8분기 롤링 포캐스트 — <b>수요자가 공급자의 변동성을 떠안는 계약</b>이 같은 주에 두 층에서 나왔다.</p>
+  <div class="meta"><span>사이클 · 삼성 · SK하이닉스 · 기판 · 스코어보드</span><span class="warn">미검증 10</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">국가전략</span><span class="rt"><b>5</b>/8편 · 테제 25</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>국가별 차이는 규모가 아니라 주도자에서 나온다</b> — 미국은 민간 주도, 중국은 국채 기반. 여기에 <b>수용도</b>가 세 번째 항으로 붙었다(2026 Stanford AI Index: 중국 84% vs 미국 38%, <b>46%p 격차</b>).</p>
+  <div class="meta"><span>반도체 패권 · 중국 생태계 · 병목 지도 · 한국 전략</span><span>미검증 0</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">AI 소프트웨어</span><span class="rt"><b>4</b>/10편 · 테제 20</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th">기업 구매 기준이 <b>「Tokenmaxxing」에서 「지능 단위당 비용」으로</b> 옮겨간다. 245개 질문 실측에서 <b>리스트 가격 순서와 실제 비용 순서가 뒤집혔다</b> — 오퍼스 4.8은 단가가 키미 K3의 1.67배인데 총비용은 0.50배다.</p>
+  <div class="meta"><span>Anthropic · MSFT·팔란티어 · 에이전트 · 투자지도</span><span class="warn">미검증 3</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">방산</span><span class="rt"><b>4</b>/16편 · 테제 17</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th">미 대통령 각서가 전제를 바꿨으나 <b>판정 시점이 90일 뒤로 이동</b>했다 — <b>「명단」은 비공개가 아니라 아직 존재하지 않는다</b>. 한화오션은 검사 4개를 전부 통과했는데 <b>수주잔고는 4사 중 유일하게 감소</b>했다.</p>
+  <div class="meta"><span>편수는 가장 많은데 판단 비율은 25%로 최저</span><span>미검증 1</span></div>
+</div>
+
+<h2>판단이 시작된 곳</h2>
+<p class="h2n">테제는 섰지만 아직 얇다. 새 정보가 들어오면 빠르게 두꺼워지는 구간이다.</p>
+
+<div class="sec">
+  <div class="sh"><span class="nm">바이오 · GLP-1</span><span class="rt"><b>3</b>/8편 · 테제 13</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>세 엔진의 확실성 등급이 다르다 — 이것을 먼저 분리한다.</b> CDMO 구조적 성장 + PolyPeptide 턴어라운드 + BIOSECURE 수혜를 하나로 묶으면 가장 약한 고리가 가려진다.</p>
+  <div class="meta"><span>삼성바이오 · 노보/릴리 · K바이오 후보</span><span class="warn">미검증 4</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">K뷰티</span><span class="rt"><b>2</b>/5편 · 테제 9</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th">추적 41종목 중 <b>유일하게 3M 전 종목 플러스</b>인 섹터다. 그리고 <b>「층이 낮을수록 싸다」가 아니라 「마진이 아직 오르는 층이 비싸고, 피크를 지난 층이 싸다」</b>로 결론을 고쳤다 — 실리콘투 OPM 피크는 2024다.</p>
+  <div class="meta"><span>섹터 · 에이피알 · 파마리서치</span><span class="warn">미검증 6</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">우주</span><span class="rt"><b>2</b>/8편 · 테제 10</span><span class="dt">08.18</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>SpaceX를 우주가 아니라 AI 인프라로 분류한다.</b> 그 분류가 물리적 형태로 제시됐고 <b>병목이 방열 하나로 좁혀진다</b> — 지상의 전력·물·인허가가 사라지는 대신 <b>냉각 용량이 발사체 질량 예산에 묶인다</b>.</p>
+  <div class="meta"><span>2026 업데이트 · 계약 구조 · 발사·위성 · 다운스트림</span><span class="warn">미검증 2</span></div>
+</div>
+
+<div class="sec">
+  <div class="sh"><span class="nm">에너지 · 2차전지</span><span class="rt"><b>2</b>/6편 · 테제 10</span><span class="dt">08.10</span></div>
+  <div class="grid"><i class="g on"></i><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>밸류체인 저점 통과는 데이터로 확인됐지만 회복의 질은 층마다 다르다.</b> 에코프로비엠 영업이익 +332%, 엘앤에프 매출 +103%, 포스코퓨처엠 흑자전환 — 같은 「회복」이 아니다.</p>
+  <div class="meta"><span>2차전지 · ESS · SMR · 기후</span><span>미검증 0</span></div>
+</div>
+
+<div class="sec thin">
+  <div class="sh"><span class="nm">소비</span><span class="rt"><b>1</b>/1편 · 테제 4</span><span class="dt">08.14</span></div>
+  <div class="grid"><i class="g on"></i></div>
+  <p class="th">2Q26 컨센 대비가 갈리는데 <b>축은 「채널」이 아니라 「면세 노출」</b>이다. 신세계·이마트를 채우니 처음 읽기가 틀렸음이 드러났다.</p>
+  <div class="meta"><span>가장 최근에 만들어진 섹터 — 실제 편입이 계기였다</span></div>
+</div>
+
+<div class="sec thin">
+  <div class="sh"><span class="nm">로봇</span><span class="rt"><b>1</b>/8편 · 테제 5</span><span class="dt">08.08</span></div>
+  <div class="grid"><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>중국 시장은 한국 부품사에 열리지 않는다.</b> 「글로벌 로봇 OEM에 국산 부품 납품」이라는 원래 테제가 세계 출하 1위 시장에서 막힌다.</p>
+  <div class="meta"><span>8편 중 1편 — 지도는 두꺼운데 판단이 얇다</span></div>
+</div>
+
+<div class="sec thin">
+  <div class="sh"><span class="nm">조선</span><span class="rt"><b>1</b>/5편 · 테제 5</span><span class="dt">08.08</span></div>
+  <div class="grid"><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th"><b>필리조선소는 미국 내 유일한 K-조선 거점이고 그 지위 자체가 해자다.</b> ⚠ 다만 이 판단은 <b>08.08자</b>이고, 그 뒤 <b>필리가 한화시스템 60%+한화오션 40% JV이며 1H26 반기순손실 565억</b>임이 확인됐다 — <b>갱신 대기</b>.</p>
+  <div class="meta"><span class="warn">최신 발견이 아직 반영되지 않은 섹터</span><span class="warn">미검증 2</span></div>
+</div>
+
+<div class="sec thin">
+  <div class="sh"><span class="nm">AI 바이오</span><span class="rt"><b>1</b>/6편 · 테제 4</span><span class="dt">08.12</span></div>
+  <div class="grid"><i class="g on"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div>
+  <p class="th">밸류에이션 스펙트럼이 <b>13배 벌어져 있다</b>는 것은 같은 산업으로 묶여 있지 않다는 뜻이다. 판정은 <b>Recursion 임상 리드아웃</b>에 걸려 있다.</p>
+  <div class="meta"><span class="warn">미검증 3</span></div>
+</div>
+
+<h2>아직 배경 지도인 곳</h2>
+<p class="h2n">사실은 정리됐지만 테제가 없다. <b>새 정보가 들어오면 그때 만든다</b> — 배치할 곳이 없는데 미리 만들지 않는 것이 이 아카이브의 규칙이다.</p>
+
+<div class="sec thin">
+  <div class="sh"><span class="nm">피지컬 AI</span><span class="rt">0/2편</span><span class="dt">—</span></div>
+  <div class="grid"><i class="g"></i><i class="g"></i></div>
+</div>
+<div class="sec thin">
+  <div class="sh"><span class="nm">양자</span><span class="rt">0/1편</span><span class="dt">—</span></div>
+  <div class="grid"><i class="g"></i></div>
+  <p class="th">IonQ는 <b>매출 $65M · OPM −419.8%</b>로 <b>규모가 판정 대상이 아니다</b>. 그래서 추적만 하고 테제를 세우지 않았다.</p>
+</div>
+
+<div class="note">
+<b>🔴 지도를 읽는 법 하나.</b> <b>편수와 판단이 비례하지 않는다.</b>
+<b>방산은 16편으로 가장 두꺼운데 판단은 4편(25%)</b>이고, <b>AI 인프라는 12편 중 8편(67%)</b>이다.
+<b>두꺼운 섹터가 깊은 섹터는 아니다</b> — 페이지는 사실을 모으면 늘어나지만, 판단은 <b>반증 조건을 걸 수 있을 때만</b> 생긴다.
+</div>
+
+<div class="note">
+<b>🟠 그리고 미검증 51건은 결함이 아니라 <b>미룬 일의 목록</b>이다.</b>
+AI 인프라에 <b>20건</b>이 몰려 있는데, 그 섹터가 가장 활발해서다 —
+<b>「확인하지 않은 것」과 「확인할 수 없는 것」을 구분해 앞쪽에만 태그를 단다</b>. 태그가 없으면 다음에도 안 본다.
+</div>
+
+<footer>
+전체 114편 · 판단 보유 40편(35%) · 테제 181개 · 미검증 태그 51건<br>
+추적 종목 국내 48 · 해외 27 · 시세 기준일 2026.08.14<br>
+각 섹터의 대표 테제는 <b>가장 최근 갱신된 페이지의 T1</b>이다
+</footer>
+</div>

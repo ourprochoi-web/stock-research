@@ -1,0 +1,339 @@
+<title>판정 대기판 — ourprochoi Research</title>
+<style>
+:root{
+  --ground:#EEF1F4; --card:#FFFFFF; --sunk:#E3E8ED;
+  --ink:#141A21; --ink-2:#4B5764; --ink-3:#7A8794; --line:#CBD3DB;
+  --now:#9A5B12; --now-bg:#F6E8D5;
+  --hold:#3F5468; --hold-bg:#DFE6EC;
+  --open:#7A8794; --open-bg:#E6EAEE;
+  --keep:#25635F; --warn:#9A5B12; --drop:#993229;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0D1218; --card:#151D25; --sunk:#1C262F;
+  --ink:#E2E8EE; --ink-2:#9FADBA; --ink-3:#6E7E8C; --line:#26333F;
+  --now:#E0A34A; --now-bg:#33270F;
+  --hold:#8FA6B8; --hold-bg:#1B242D;
+  --open:#6E7E8C; --open-bg:#182028;
+  --keep:#5FA6A0; --warn:#E0A34A; --drop:#D9695E;
+}}
+:root[data-theme="dark"]{
+  --ground:#0D1218; --card:#151D25; --sunk:#1C262F;
+  --ink:#E2E8EE; --ink-2:#9FADBA; --ink-3:#6E7E8C; --line:#26333F;
+  --now:#E0A34A; --now-bg:#33270F;
+  --hold:#8FA6B8; --hold-bg:#1B242D;
+  --open:#6E7E8C; --open-bg:#182028;
+  --keep:#5FA6A0; --warn:#E0A34A; --drop:#D9695E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:40px 22px 90px}
+
+/* head */
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--now)}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.14;letter-spacing:-.025em;font-weight:800;margin:12px 0 0;text-wrap:balance}
+.sub{color:var(--ink-2);margin:12px 0 0;max-width:62ch;font-size:16px}
+
+/* status strip */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;margin:26px 0 0;overflow:hidden}
+.cell{background:var(--card);padding:12px 14px}
+.cell .lb{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.cell .vl{font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:-.02em;margin-top:3px;font-variant-numeric:tabular-nums}
+.cell .nt{font-size:11.5px;color:var(--ink-3);margin-top:2px;line-height:1.4}
+.cell.hot .vl{color:var(--now)}
+.cell.ok .vl{color:var(--keep)}
+
+h2{font-size:19px;font-weight:750;letter-spacing:-.015em;margin:44px 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .cnt{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);font-weight:400}
+.h2note{color:var(--ink-2);font-size:14px;margin:0 0 14px;max-width:64ch}
+
+/* timeline */
+.tl{position:relative;padding-left:112px}
+@media(max-width:640px){.tl{padding-left:0}}
+.tl::before{content:"";position:absolute;left:96px;top:6px;bottom:6px;width:1px;background:var(--line)}
+@media(max-width:640px){.tl::before{display:none}}
+.ev{position:relative;margin-bottom:14px}
+.ev .when{position:absolute;left:-112px;top:14px;width:88px;text-align:right;font-family:var(--mono);font-size:12px;line-height:1.35;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.ev .when b{display:block;font-size:13px;color:var(--ink)}
+@media(max-width:640px){.ev .when{position:static;width:auto;text-align:left;margin-bottom:5px}}
+.ev::before{content:"";position:absolute;left:-17px;top:20px;width:9px;height:9px;border-radius:50%;background:var(--hold);border:2px solid var(--ground)}
+.ev.now::before{background:var(--now);box-shadow:0 0 0 3px var(--now-bg)}
+.ev.open::before{background:transparent;border:2px solid var(--open)}
+@media(max-width:640px){.ev::before{display:none}}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:15px 17px}
+.ev.now .card{border-color:var(--now)}
+.card-h{display:flex;flex-wrap:wrap;gap:7px 11px;align-items:baseline;margin-bottom:3px}
+.card-h .t{font-weight:700;font-size:16px;letter-spacing:-.012em}
+.chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;padding:2px 6px;border-radius:2px;background:var(--hold-bg);color:var(--hold);flex:none;white-space:nowrap}
+.chip.now{background:var(--now-bg);color:var(--now)}
+.chip.open{background:var(--open-bg);color:var(--open)}
+.src{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-left:auto}
+.q{color:var(--ink-2);font-size:14.5px;margin:6px 0 0}
+.q b{color:var(--ink);font-weight:650}
+
+/* branches */
+.br{margin-top:11px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.br .row{background:var(--card);display:grid;grid-template-columns:min-content 1fr;gap:11px;padding:8px 11px;align-items:start}
+.br .k{font-family:var(--mono);font-size:11px;white-space:nowrap;padding-top:2px;font-weight:650}
+.br .row.keep .k{color:var(--keep)}
+.br .row.warn .k{color:var(--warn)}
+.br .row.drop .k{color:var(--drop)}
+.br .v{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.br .v b{color:var(--ink);font-weight:650}
+
+/* position block */
+.pos{background:var(--sunk);border-radius:4px;padding:15px 17px;margin-top:10px}
+.pos .pr{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink-2);margin-bottom:8px}
+.pos .pr b{color:var(--ink)}
+.pos p{margin:7px 0 0;font-size:14px;color:var(--ink-2)}
+.pos p b{color:var(--ink)}
+
+.open-q{border-left:2px solid var(--warn);padding:3px 0 3px 14px;margin:12px 0;font-size:14.5px;color:var(--ink-2)}
+.open-q b{color:var(--ink)}
+
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.75}
+</style>
+
+<div class="wrap">
+<div class="kicker">판정 대기판 · 2026.08.18 기준</div>
+<h1>무엇이 언제 판정되는가</h1>
+<p class="sub">아카이브 41개 페이지에 흩어진 판정 조건 146건 중 <b>날짜나 이벤트가 특정된 것</b>만 모았다. 각 항목은 어느 테제를 판정하며, 결과가 어느 쪽이든 <b>다음에 무엇을 하는지</b>까지 적혀 있다.</p>
+
+<div class="strip">
+  <div class="cell hot"><div class="lb">30일 내</div><div class="vl">5</div><div class="nt">확정 날짜가 붙은 것</div></div>
+  <div class="cell"><div class="lb">날짜 미정</div><div class="vl">7</div><div class="nt">이벤트로만 걸림</div></div>
+  <div class="cell"><div class="lb">현재 판단</div><div class="vl">40<span style="font-size:14px;color:var(--ink-3)">/114</span></div><div class="nt">테제 보유 페이지 35%</div></div>
+  <div class="cell"><div class="lb">미검증</div><div class="vl">50</div><div class="nt">태그가 달린 미룬 확인</div></div>
+  <div class="cell ok"><div class="lb">규칙5 결함</div><div class="vl">0</div><div class="nt">10편 검출 → 해소</div></div>
+</div>
+
+<h2>확정 날짜가 붙은 것 <span class="cnt">7건</span></h2>
+<p class="h2note">날짜가 있으니 잊히지 않는다. 문제는 나머지 쪽이다.</p>
+
+<div class="tl">
+
+  <div class="ev now">
+    <div class="when"><b>수일 내</b>제출 임박</div>
+    <div class="card">
+      <div class="card-h"><span class="chip now">임박</span><span class="t">Lumentum FY26 10-K</span><span class="src">AI 밸류체인 T4</span></div>
+      <p class="q">광 순수 플레이를 피하는 진짜 이유가 <b>고객 집중도</b>였는데, 그 항목이 <b>32% → 38%로 악화</b>됐다. 이번 10-K가 그 뒤를 잇는 첫 확인이다.</p>
+      <div class="br">
+        <div class="row drop"><div class="k">38% 초과</div><div class="v">집중이 계속 심화된다 — <b>「순수 플레이는 고객 집중을 사는 것」이 굳어진다</b></div></div>
+        <div class="row keep"><div class="k">38% 미만</div><div class="v">하이퍼스케일러 외 저변이 넓어지는 중. <b>Not Rated 사유 하나가 실제로 약해진다</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev now">
+    <div class="when"><b>08.27</b>Q2 FY27</div>
+    <div class="card">
+      <div class="card-h"><span class="chip now">임박</span><span class="t">Marvell 2분기 실적</span><span class="src">AI 밸류체인 T4</span></div>
+      <p class="q">회사가 <b>FY27 interconnect &gt;70% 성장</b>(custom &gt;20%)을 전망했다. 애널리스트가 든 「공유」 논거는 매출이 <b>not material</b>로 확인됐으므로, 이 종목이 서는 축은 <b>인터커넥트 하나</b>다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">70% 궤도</div><div class="v">인터커넥트 축이 성립. <b>ASIC(커스텀)은 회사 스스로 더 느린 축이라 말한다</b>는 점을 유지</div></div>
+        <div class="row drop"><div class="k">궤도 이탈</div><div class="v">이 종목을 세울 축이 사라진다 — <b>「공유」는 이미 매출 0이고 커스텀은 &gt;20%뿐</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev now">
+    <div class="when"><b>09.01</b>FY26 Q4</div>
+    <div class="card">
+      <div class="card-h"><span class="chip now">임박</span><span class="t">Palo Alto Networks 연간 실적</span><span class="src">AI SW 투자지도</span></div>
+      <p class="q">직전 분기 <b>GAAP OPM −6.1%</b>는 CyberArk $210억 인수 회계로 <b>잔차 0으로 설명</b>됐다. 다만 <b>상각이 FY2027에 오히려 1.69배로 커지고 FY2040까지 이어진다</b>.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">28.5%+</div><div class="v">non-GAAP OPM이 가이드 하단을 회복 — <b>희석이 일시적이었다</b></div></div>
+        <div class="row warn"><div class="k">미달</div><div class="v">인수 사업 마진이 구조적으로 낮다는 뜻. <b>FY26 가이드를 이미 1%p 내렸다</b></div></div>
+        <div class="row drop"><div class="k">RPO 유기 &lt;5%</div><div class="v">유일한 감속 신호가 확인된다 — <b>ARR 유기 +16.1%·매출 +14.2% 대비 이미 최저</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev now">
+    <div class="when"><b>09월 초</b>FQ3 FY26</div>
+    <div class="card">
+      <div class="card-h"><span class="chip now">임박</span><span class="t">Ciena 3분기 실적</span><span class="src">AI 밸류체인 T4</span></div>
+      <p class="q">클라우드 비중이 <b>38 → 40 → 42 → 42 → 46%</b>로 5개 분기 연속 올랐고, 이번 분기에 <b>통신사 10% 고객이 처음 명단에서 탈락</b>했다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">46% 초과</div><div class="v">전환이 이어진다. 다만 <b>「통신사가 발목」이 아니라 「통신사도 +28% 크는데 클라우드가 더 빨리 큰다」</b>가 정확한 서술</div></div>
+        <div class="row warn"><div class="k">46% 이하</div><div class="v">5개 분기 추세가 처음 꺾인다 — <b>광 계층 판정 전체를 재검토</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev now">
+    <div class="when"><b>09월</b>IPO</div>
+    <div class="card">
+      <div class="card-h"><span class="chip now">임박</span><span class="t">SB Energy 상장</span><span class="src">AI 밸류체인 T1</span></div>
+      <p class="q">오하이오 10GW 개발사다. 엔비디아가 <b>$15억을 IPO에 넣기로</b> 협상 중이며(별도 $15억은 계약 체결 시), 조달 목표는 <b>최소 $50억</b>이다.</p>
+      <div class="br">
+        <div class="row warn"><div class="k">참여 확인</div><div class="v">칩 공급자가 <b>신용 지원 + 지분</b> 두 경로로 같은 프로젝트에 들어간다 — <b>CDS가 벌어진 이유의 직접 증거</b></div></div>
+        <div class="row keep"><div class="k">불참·축소</div><div class="v">엔비디아가 익스포저를 줄이는 중. <b>보증 축소($2,500억 → $1,000~1,200억)와 같은 방향</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev">
+    <div class="when"><b>10.06</b>Investor Day</div>
+    <div class="card">
+      <div class="card-h"><span class="chip">대기</span><span class="t">Marvell 투자자의 날</span><span class="src">AI 칩 아키텍처</span></div>
+      <p class="q">현재 유효한 중기 목표는 <b>2025년 6월 값이고 14개월 됐다</b> — 커스텀 점유율 <b>2024년 13% → 2028년 20%</b>. 그 사이 Celestial·XConn 인수와 NVIDIA 제휴가 있었다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">목표 유지</div><div class="v">ASIC 설계 2인자(<b>점유율 10~25%</b>) 지위가 확인된다</div></div>
+        <div class="row warn"><div class="k">목표 하향</div><div class="v">브로드컴 60~85%와의 격차가 벌어진다 — <b>「~95% 과점」의 배분이 바뀐다</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev">
+    <div class="when"><b>10.29</b>NASA 발표</div>
+    <div class="card">
+      <div class="card-h"><span class="chip">대기</span><span class="t">Artemis III HLS 가속안</span><span class="src">우주 Part 6</span></div>
+      <p class="q">착륙선이 <b>Starship HLS</b>인지 <b>Blue Moon</b>인지 갈린다. <b>「SpaceX 단독」 전제는 이미 무효</b>다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">Starship</div><div class="v">발사 캐던스 전제가 유지된다</div></div>
+        <div class="row drop"><div class="k">Blue Moon</div><div class="v">「2공급자」 조달 목표가 다시 작동 — <b>1995년 설계가 2024년 사고 원인으로 지목된 그 구조</b></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2>날짜가 없고 이벤트로만 걸린 것 <span class="cnt">7건</span></h2>
+<p class="h2note">이쪽이 잊히기 쉽다. 날짜 리마인더가 없으니 <b>그 종목을 언급하는 순간</b>이 유일한 확인 시점이다.</p>
+
+<div class="tl">
+
+  <div class="ev open">
+    <div class="when">3Q26 실적</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">한화오션 수주잔고</span><span class="src">한화시스템·오션 T4</span></div>
+      <p class="q">검사 4개를 전부 통과했는데 <b>선행지표가 정반대</b>다 — 잔고 <b>33.008조로 4사 중 유일하게 감소</b>(-1.487조), 신규수주는 경쟁사의 1/4, <b>특수선 신규수주 0건</b>.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">증가</div><div class="v">KDDX 8,380억이 첫 재료. <b>「지금 실적 좋음」과 「미래 물량 감소」의 모순이 해소</b></div></div>
+        <div class="row drop"><div class="k">또 감소</div><div class="v">배수가 싼 이유가 확인된다 — <b>§A7의 미래 분자(수주) 버전</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev open">
+    <div class="when">3Q26 실적</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">Anthropic 분기 매출</span><span class="src">앤스로픽 T5</span></div>
+      <p class="q">2Q26 <b>$115억</b>에서 4Q26 연환산 $1,000억이 되려면 <b>두 분기 연속 QoQ +47%</b>가 필요하다. 실적 QoQ는 <b>+501% → +143%</b>로 감쇠 중이나 문턱은 훨씬 낮다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">≥ +47%</div><div class="v">IPO 밸류 $2조의 전제가 유지된다(2028E 기준 <b>10.0~10.5x</b>)</div></div>
+        <div class="row warn"><div class="k">+30~47%</div><div class="v">2026년 말이 $800~1,000억에 그침 — <b>$2조가 2029년으로 밀린다</b></div></div>
+        <div class="row drop"><div class="k">&lt; +30%</div><div class="v">전망 상향 자체가 기각. <b>그때 $2조는 2028E 기준 19.4x</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev open">
+    <div class="when">3Q26 실적</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">한국콜마 진도율</span><span class="src">K뷰티 T3</span></div>
+      <p class="q">검사 ①②③은 통과했으나 <b>④ 배수는 미충족</b>(주가가 52주 고점 −5.1%)이다. <b>「싸서」가 아니라 「실적이 좋아서」 성립하는 종목</b>이라 판정 변수를 배수가 아니라 진도율로 고정했다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">−5%p 이내</div><div class="v">전년 진도율 55.7% 대비 유지 — 논거 존속</div></div>
+        <div class="row drop"><div class="k">−5%p 초과</div><div class="v">밴드 상단에서는 <b>「그래도 싸다」는 방어선이 없다</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev open">
+    <div class="when">다음 분기</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">CrowdStrike 수익성 전환</span><span class="src">AI SW 투자지도</span></div>
+      <p class="q">FY29 목표까지 <b>영업이익률만 4.5~8.5%p</b> 남았는데 <b>FCF 마진은 이미 하단에 0.2%p 차</b>로 붙었고 비용 3줄은 전부 범위 안이다. 남은 격차는 <b>SBC(매출의 22.9%)</b>에서 나와야 한다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">OPM 상승</div><div class="v">「플랫폼 통합이 수익성으로 전환」이 시작됨</div></div>
+        <div class="row warn"><div class="k">정체</div><div class="v">SBC가 구조적이라는 뜻 — <b>non-GAAP 조정액의 90.9%</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev open">
+    <div class="when">공시 시</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">HD현대중공업 선수금 수령</span><span class="src">AI 전력 인프라 T4</span></div>
+      <p class="q">8월 Corban 계약(<b>9,560억</b>)의 <b>선수금 20%(약 1,912억)</b> 별도 공시. 계약이 <b>조건부에서 확정으로</b> 넘어가는지를 판정한다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">수령</div><div class="v">「온사이트 발전 한국 진입」이 확정된다</div></div>
+        <div class="row drop"><div class="k">미수령</div><div class="v">논거의 <b>절반이 사라진다</b> — 4월 Aperion 6,271억만 남는다</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev open">
+    <div class="when">계약 체결</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">엔비디아·오픈AI 오하이오 계약</span><span class="src">AI 밸류체인 T1</span></div>
+      <p class="q">보증 금액과 단계 구조가 공시된다. <b>관계자 진술이 엇갈려</b> 지금은 「초기 5GW $1,000~1,200억」만 기록 중이다. <b>플랫폼 총액이 $5,000억인지 $500억인지도 여기서 갈린다</b>(10배 이견).</p>
+      <div class="br">
+        <div class="row warn"><div class="k">축소 확인</div><div class="v">칩 공급자가 리스크를 덜어내는 방향 — <b>CDS 상승과 정합적</b></div></div>
+        <div class="row keep"><div class="k">2단계 구조</div><div class="v">「애초부터 그랬다」는 진술이 맞았던 것 — <b>축소로 읽은 것이 오독</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev open">
+    <div class="when">Flight 14</div>
+    <div class="card">
+      <div class="card-h"><span class="chip open">미정</span><span class="t">Starship 궤도 비행 + 상단 캐치</span><span class="src">우주 2026 T1</span></div>
+      <p class="q">궤도 데이터센터의 <b>「연 1,000회+ 발사」 전제의 선행 조건</b>이자 Part 5 <b>$100/kg</b> 전제의 직접 판정이다.</p>
+      <div class="br">
+        <div class="row keep"><div class="k">성공</div><div class="v">궤도 DC가 계획에서 설계 단계로 — 다음 확인은 <b>스타링크 차세대 사양의 kW급 폐열 처리 능력</b></div></div>
+        <div class="row drop"><div class="k">실패·지연</div><div class="v">발사 캐던스 전제가 무너진다. <b>궤도 DC 논의 전체가 후순위</b></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2>더 먼 것 <span class="cnt">3건</span></h2>
+<p class="h2note">지금 행동을 바꾸지는 않지만 걸어 둔 것이다.</p>
+<div class="tl">
+  <div class="ev">
+    <div class="when"><b>2027.02.01</b>가동 목표</div>
+    <div class="card">
+      <div class="card-h"><span class="chip">대기</span><span class="t">Green Chile 파이프라인</span><span class="src">AI 전력 인프라</span></div>
+      <p class="q">Oracle Project Jupiter(Bloom <b>2.5GW</b>)에 가스를 공급한다. <b>5개월 반 연기</b>됐고 원인은 뉴멕시코 공공토지위원회의 <b>두 차례 거절</b>이다. <b>「온사이트 = 빠르다」가 조건부</b>임을 판정한다.</p>
+    </div>
+  </div>
+  <div class="ev">
+    <div class="when"><b>2027.02</b>FY26 10-K</div>
+    <div class="card">
+      <div class="card-h"><span class="chip">대기</span><span class="t">Vertiv 백로그 프린트 재개</span><span class="src">AI 전력 인프라</span></div>
+      <p class="q">2026년 1분기부터 <b>수주·백로그·book-to-bill 공시를 명시적 정책으로 중단</b>했다. <b>걸어둔 판정 지표를 회사가 안 준다</b>는 뜻이고, 다음 프린트가 여기다.</p>
+    </div>
+  </div>
+  <div class="ev">
+    <div class="when"><b>2027 Q1</b>FY28 1분기</div>
+    <div class="card">
+      <div class="card-h"><span class="chip">대기</span><span class="t">Marvell 상각 절벽</span><span class="src">AI 밸류체인 T4</span></div>
+      <p class="q">상각이 <b>분기 $200M → $73M</b>으로 떨어지는지. <b>[추론]</b> 정체는 Inphi($3,600M ÷ 6년, 2027년 4월 만료)다 — <b>안 내려오면 이 추론이 틀렸다</b>. ⚠ IPR&amp;D $1,297M은 스케줄에 없어 <b>줄었다 다시 오른다</b>.</p>
+    </div>
+  </div>
+</div>
+
+<h2>포지션과 판단이 어긋난 지점</h2>
+<p class="h2note">§J3 — 묻지 않아도 먼저 말해야 하는 것.</p>
+<div class="pos">
+  <div class="pr"><span>SK하이닉스 <b>1,645,000원</b></span><span>1M <b>−21.0%</b></span><span>3M <b>−9.6%</b></span></div>
+  <div class="pr"><span>삼성전자 <b>274,500원</b></span><span>1M <b>−1.8%</b></span><span>3M <b>+1.5%</b></span></div>
+  <p><b>룩스루 메모리 80.7%</b> · AI 우산 <b>17.99%</b>(활성 기준, 상한 25% → 여력 <b>7.01%p</b>)</p>
+  <p><b>🔴 여력이 있는데 활성 포트폴리오의 63.4%가 이미 메모리다.</b> 「AI 우산 여력이 있다」와 「메모리 집중도가 높다」가 동시에 참인 이유는 <b>우산 상한 25%는 있는데 단일 섹터 상한이 없기 때문</b>이다 — 우산은 AI 전체를 묶고 개별 한도는 종목만 보므로 <b>그 사이의 「섹터」가 비어 있다</b>.</p>
+</div>
+
+<div class="open-q"><b>미결 ①</b> — SOL AI반도체TOP2+의 <b>§E5 무조건 매도 라인이 미설정</b>이다. 스톱로스를 오버라이드했으면 재량 없는 가격선을 함께 정해야 하는데 그 자리가 비어 있다.</div>
+<div class="open-q"><b>미결 ②</b> — <b>단일 섹터 상한 신설 여부</b>. 위 공백을 메울지 말지는 투자 판단이라 결정하지 않는다(§J6).</div>
+
+<footer>
+판정 조건 146건 · 41개 페이지에서 추출 · 날짜/이벤트가 특정된 17건만 수록<br>
+시세 기준일 2026.08.14 · 문서 2026.08.18 · 현재 판단 보유 40/114편<br>
+결과 분기 표기 — <span style="color:var(--keep)">유지</span> / <span style="color:var(--warn)">경고</span> / <span style="color:var(--drop)">철회</span>
+</footer>
+</div>
