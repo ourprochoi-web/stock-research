@@ -1,0 +1,378 @@
+<title>데이터센터 종합 지도 — 아카이브가 아는 것 전부</title>
+<meta name="description" content="AI 데이터센터를 9개 층으로 종합. 각 층의 정본 위치·핵심 수치·판정 조건과 비어 있는 곳을 함께 표시한다.">
+<meta name="keywords" content="데이터센터,AI 인프라,전력,냉각,HBM,광 트랜시버,REIT,AIDC,캐펙스">
+<meta property="og:title" content="데이터센터 종합 지도 — 아카이브가 아는 것 전부">
+<meta property="og:description" content="AI 데이터센터를 9개 층으로 종합. 각 층의 정본 위치·핵심 수치·판정 조건과 비어 있는 곳을 함께 표시한다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_datacenter_full_map.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="데이터센터 종합 지도">
+<meta name="twitter:description" content="AI 데이터센터 9개 층 종합 — 정본 위치·핵심 수치·판정 조건·빈 곳">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_datacenter_full_map.html">
+<style>
+:root{
+  --ground:#F2F3F1; --card:#FFFFFF; --line:#D3D7D4;
+  --ink:#16201E; --ink-2:#4A5654; --ink-3:#7B8785;
+  --deep:#1F5E5A; --mid:#4E8B86; --pale:#A9C6C3; --empty:#DCE0DE;
+  --flag:#9A5B12; --flag-bg:#F5E9D8;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0E1413; --card:#161E1D; --line:#293433;
+  --ink:#E3E9E7; --ink-2:#A0ADAB; --ink-3:#71807D;
+  --deep:#5FB3AC; --mid:#3D7C77; --pale:#255652; --empty:#212B2A;
+  --flag:#D9A15C; --flag-bg:#2E2313;
+}}
+:root[data-theme="dark"]{
+  --ground:#0E1413; --card:#161E1D; --line:#293433;
+  --ink:#E3E9E7; --ink-2:#A0ADAB; --ink-3:#71807D;
+  --deep:#5FB3AC; --mid:#3D7C77; --pale:#255652; --empty:#212B2A;
+  --flag:#D9A15C; --flag-bg:#2E2313;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:44px 22px 90px}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--deep)}
+h1{font-size:clamp(27px,4.2vw,40px);line-height:1.13;letter-spacing:-.026em;font-weight:800;margin:12px 0 0;text-wrap:balance}
+.sub{color:var(--ink-2);margin:14px 0 0;max-width:60ch;font-size:16.5px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;padding:13px 15px;background:var(--card);border:1px solid var(--line);border-radius:4px;font-size:13px;color:var(--ink-2);align-items:center}
+.sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+.sw.f{background:var(--deep)} .sw.e{background:var(--empty);border:1px solid var(--line)}
+
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;margin-top:12px;overflow:hidden}
+.tot .c{background:var(--card);padding:12px 14px}
+.tot .l{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.tot .v{font-family:var(--mono);font-size:24px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tot .v small{font-size:14px;color:var(--ink-3);font-weight:400}
+
+h2{font-size:18px;font-weight:750;letter-spacing:-.015em;margin:42px 0 6px}
+.h2n{color:var(--ink-2);font-size:14.5px;margin:0 0 16px;max-width:62ch}
+
+.sec{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:15px 17px;margin-bottom:11px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}
+.sh .nm{font-weight:750;font-size:17px;letter-spacing:-.015em}
+.sh .rt{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.sh .rt b{color:var(--deep)}
+.sh .dt{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-left:auto}
+.grid{display:flex;flex-wrap:wrap;gap:3px;margin:10px 0 0}
+.g{width:13px;height:13px;border-radius:2px;background:var(--empty);border:1px solid transparent}
+.g.on{background:var(--deep)}
+.g.on.b{background:var(--mid)}
+.th{margin:11px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.55;border-left:2px solid var(--pale);padding-left:12px}
+.th b{color:var(--ink);font-weight:650}
+.meta{margin-top:9px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:5px 15px}
+.meta .warn{color:var(--flag)}
+
+.thin{opacity:.72}
+.thin .sh .nm{font-weight:700}
+
+.note{border-left:2px solid var(--flag);background:var(--flag-bg);padding:12px 15px;border-radius:0 4px 4px 0;margin:16px 0;font-size:14.5px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+:root[data-theme="dark"] .note,:root:not([data-theme="light"]) .note{color:var(--ink-2)}
+
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.8}
+</style>
+<style>
+.layer{background:var(--card);border:1px solid var(--line);border-radius:5px;margin:16px 0;overflow:hidden}
+.lh{display:flex;align-items:baseline;gap:11px;padding:15px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.lnum{font-family:var(--mono);font-size:11px;color:var(--deep);font-weight:700;letter-spacing:.08em}
+.lname{font-size:17px;font-weight:750;letter-spacing:-.012em}
+.lsrc{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-left:auto}
+.lbody{padding:15px 18px}
+.row{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:7px 0;border-top:1px dashed var(--line);align-items:start}
+.row:first-child{border-top:none}
+.rk{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.06em;padding-top:2px;text-transform:uppercase}
+.rv{font-size:14.5px;line-height:1.62}
+.n{font-family:var(--mono);font-weight:700;color:var(--deep)}
+.new{display:inline-block;background:var(--flag-bg);color:var(--flag);font-family:var(--mono);font-size:9.5px;padding:1px 5px;border-radius:2px;letter-spacing:.06em;vertical-align:1px;margin-right:5px;font-weight:700}
+.gap{border-color:var(--flag)}
+.gap .lh{background:var(--flag-bg)}
+.gap .lname{color:var(--flag)}
+table.t{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0}
+table.t th{text-align:left;padding:5px 7px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;font-weight:600}
+table.t td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t tr:last-child td{border-bottom:none}
+.num{text-align:right;font-family:var(--mono)}
+.note{font-size:12.5px;color:var(--ink-3);margin-top:9px;line-height:1.6}
+h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--deep);margin:38px 0 4px;font-weight:700}
+.foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.7}
+a{color:var(--deep)}
+</style>
+
+<div class="wrap">
+<div class="kicker">ourprochoi Research · AI Infra</div>
+<h1>데이터센터 종합 지도</h1>
+<p class="sub">아카이브 <b>22편</b>에 흩어져 있는 데이터센터 관련 판단을 <b>9개 층</b>으로 모았다.
+각 층마다 <b>정본이 어디인지 · 지금 값이 무엇인지 · 무엇이 판정하는지</b>를 적고,
+<b>비어 있는 층</b>은 그렇게 표시한다. 새 정본을 만들지 않는다(§B5) — 이 문서는 <b>참조 지도</b>다.</p>
+
+<div class="legend">
+  <span><span class="sw f"></span>정본이 있는 층</span>
+  <span><span class="sw e"></span>아카이브가 비어 있는 층</span>
+  <span><span class="new">NEW</span>2026.08.18 배치에서 들어온 것</span>
+  <span style="margin-left:auto;font-family:var(--mono);font-size:11px">기준 2026.08.18</span>
+</div>
+
+<h2 class="sec">수요에서 운영까지</h2>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">01</span><span class="lname">수요 · 캐펙스</span><span class="lsrc">정본 → ns_bigtech_capex_roi</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">지금 값</div><div class="rv">
+      <span class="new">NEW</span>하이퍼스케일러 5사 <b>분기 합산 캐펙스</b>가 2년 전 <span class="n">$970억</span> → <span class="n">$2,480억</span>.
+      컨센서스는 FY26 약 <span class="n">$7,960억</span> · FY27 약 <span class="n">$1.1조</span>다.<br>
+      <span class="new">NEW</span>CSP <b>RPO·수주잔고 합계 <span class="n">$2.3조</span></b>(전년비 <span class="n">3.5배</span>).
+      글로벌 컴퓨트 공급 부족은 2026년 <span class="n">70,496MW</span> → 2031년 <span class="n">278,603MW</span>로 확대 전망.
+    </div></div>
+    <div class="row"><div class="rk">판정</div><div class="rv">
+      아카이브 <b>빅테크 CAPEX ROI 편 T3</b>가 <b>Citi CROCI 28%를 「액면 그대로 쓸 수 없다」고 기각</b>해 뒀다.
+      <b>경보 지표는 CAPEX가 아니라 크레딧</b>으로 옮겨져 있다(→ 02층).
+    </div></div>
+    <div class="row"><div class="rk">등급</div><div class="rv">③ — 증권사 집계·컨센서스. <b>개별 회사 캐펙스는 ①(10-Q)</b>이나 <b>합산·전망은 ③</b>이다.</div></div>
+  </div>
+</div>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">02</span><span class="lname">자금 조달 — 이 층이 현재 병목이다</span><span class="lsrc">정본 → ai_value_chain_guide_v2 T1</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">테제</div><div class="rv">
+      <b>「병목은 부품이 아니라 돈이고, 메우는 주체가 금융기관에서 <u>칩 공급자 자신</u>으로 옮겨갔다」</b>
+    </div></div>
+    <div class="row"><div class="rk">가격 축</div><div class="rv">
+      <b>엔비디아 CDS 스프레드가 상승</b>했다 — 순현금 기업의 부도 보험료가 벌어질 이유는 <b>떠안은 익스포저</b>뿐이다.
+      <b>⚠ bp 값·기준일이 없어 방향만 기록</b>한다(무료 경로 3곳 404, 시도 기록 있음).
+    </div></div>
+    <div class="row"><div class="rk">공급자 부담</div><div class="rv">
+      <span class="new">NEW</span><b>브로드컴 10-Q에 <code>residual value guarantee</code>는 <u>0건</u></b>이고,
+      대신 <i>"we <b>have entered into</b> ... backstop or a guarantee"</i>로 <b>실재만 인정하고 금액을 안 낸다</b>.
+      울프리서치 <span class="n">$300억</span>은 여전히 ③.<br>
+      찾다가 나온 것 — <b>Purchase Commitments <span class="n">$1,281.1억</span></b>(2027 $552.1 · 2028 $728.7억)로
+      <b>분기 영업이익 $107.88억의 11.9배</b>가 2년 안에 지출 약정으로 걸려 있다.
+    </div></div>
+    <div class="row"><div class="rk">자본비용</div><div class="rv">
+      <b>코어위브 선순위 사채 <span class="n">9.25~9.75%</span></b>(DDTL은 SOFR+2.25~4.5%) vs
+      <b>네이버 ESG채 <span class="n">1.5%</span> · 사무라이본드 1~2% · 유로/달러채 3.75~4.375%</b>.
+      <b>5~6%p 격차는 1GW 규모에서 연간 수천억원의 이자비용 차이</b>다.
+    </div></div>
+    <div class="row"><div class="rk">판정</div><div class="rv">
+      <b>다음 10-Q의 우발부채·신용공여 약정 잔액 × 같은 기간 CDS 방향</b>(2×2 채점표).
+      회사가 스스로 <i>"novel or deferred payment models"</i>라 적었다 — <b>「컴퓨팅을 금융자산으로」가 공급자 자신의 리스크 서술에 있다</b>.
+    </div></div>
+  </div>
+</div>
+
+<div class="layer gap">
+  <div class="lh"><span class="lnum">03</span><span class="lname">부지 · 인허가 — 아카이브에 정본이 없다</span><span class="lsrc">이 지도가 처음 모음</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">새 사실</div><div class="rv">
+      <span class="new">NEW</span><b>뉴욕주가 7월 14일 <u>50MW 이상 하이퍼스케일 데이터센터에 1년 모라토리엄</u></b>을 도입했다.<br>
+      <span class="new">NEW</span><b>텍사스 주지사가 수자원·전력망 영향 감사를 위해 신규 승인을 중단</b>했고, <b>다수 주에서 건설 취소·보류</b>가 이어진다.
+    </div></div>
+    <div class="row"><div class="rk">기존 기록</div><div class="rv">
+      <b>전력 인프라 편 T3</b>가 같은 축을 이미 갖고 있다 —
+      <b>텍사스 <span class="n">1,800개</span> 프로젝트 · <span class="n">474GW</span> 초과 대기</b>이고 <b>신규 요청의 약 90%가 데이터센터</b>다.
+      그래서 <b>「확정된 전력 공급 시점을 가진 사이트」의 가치가 오른다</b>.
+    </div></div>
+    <div class="row"><div class="rk">함의</div><div class="rv">
+      <b>공급 제약은 신규 진입자에게 비용이고 <u>기존 허브 보유자에게는 가격 결정력</u>이다</b> — 04층(전력)과 08층(REIT)이 여기서 갈린다.
+      <b>아카이브는 이 축을 전력 편의 하위 항목으로만 갖고 있어 <u>인허가 자체를 추적하는 지표가 없다</u></b>.
+    </div></div>
+    <div class="row"><div class="rk">빈 곳</div><div class="rv"><b>주별 인허가 상태를 세는 지표가 없다.</b> 모라토리엄 해제·연장 여부가 판정 이벤트가 될 수 있으나 <b>걸어두지 않았다</b>.</div></div>
+  </div>
+</div>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">04</span><span class="lname">전력 — 아카이브에서 가장 두꺼운 층</span><span class="lsrc">정본 → ai_power_infra_investment_map</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">테제</div><div class="rv">
+      <b>T1 「병목은 여전히 전력」</b> — IEA조차 <i>"더 공격적인 수요 시나리오를 제약하는 것은 <b>칩이 아니라 발전·송전·기자재 밸류체인</b>"</i>이라 명시한다.
+      변압기·가스터빈 리드타임이 수년 단위이고 빅테크는 전력망을 기다리지 못해 <b>가스 발전소를 직접 짓는다</b>.
+    </div></div>
+    <div class="row"><div class="rk">국내</div><div class="rv">
+      <b>AIDC 수요 2029년 <span class="n">8.4GW</span> → 2035년 <span class="n">18.4GW</span></b>로 기존 전력망 증설 수요의 <b>2~3배</b>.
+      <b>🔴 그런데 T2가 「그것을 받을 <u>한전의 재무</u>가 새 병목」</b>이라 판정한다 — 수요는 확정에 가깝고 공급 측이 문제다.
+    </div></div>
+    <div class="row"><div class="rk">실적</div><div class="rv">
+      <b>증명된 구간</b> — 효성중공업 Q2 매출 <b>1.29조(+27% YoY) · OPM 20.0%(역대 최고) · 수주잔고 +51%</b>,
+      Bloom Energy Q2 매출 <b>$10.65억(+166%) · OPM 22.5% · 백로그 ~$200억</b>, 산일전기 <b>OPM 37.1%</b>(섹터 최고).<br>
+      <b>아직 아닌 구간</b>과 섞지 않는다(T4).
+    </div></div>
+    <div class="row"><div class="rk">추적</div><div class="rv">
+      <b>수주가 아니라 <u>판가와 북미 비중</u></b>(변압기 T3). 케이블은 <b>수주잔고의 「질」</b>(HVDC·초고압·해저 비중)이고,
+      <b>구리는 가격이 아니라 재고</b>를 본다 — <b>원가의 약 90%</b>라 상승이 매출을 키우고 마진을 깎는다.
+    </div></div>
+    <div class="row"><div class="rk">⚠ 주의</div><div class="rv">
+      <b>ESS는 AI 비상관 분산 자산이 아니다</b> — Fluence 파이프라인 증가의 주원인이 <b>명시적으로 데이터센터 수요</b>였다.
+      그리고 <b>병목이 수요에서 <u>공급 실행</u>으로 이동</b>했다 — ESS 제조시설조차 <b>전력망 연결을 못 받아</b> 램프업이 밀렸다(ERCOT).
+    </div></div>
+  </div>
+</div>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">05</span><span class="lname">냉각 — 「규모」가 아니라 「자격」의 문제</span><span class="lsrc">정본 → ai_power_company_semi_ess_dc</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">핵심</div><div class="rv">
+      <b>수랭식이 B200/B300 Blackwell 세대의 <u>필수 요건</u></b>이다 — <b>공랭식 부지는 차세대 GPU를 못 받는다</b>.
+      <b>즉 이것은 규모가 아니라 <u>자격</u>의 문제</b>이며, 부지를 세는 단위가 MW가 아니라 <b>「수랭 가능한 MW」</b>여야 한다는 뜻이다.
+    </div></div>
+    <div class="row"><div class="rk">궤도</div><div class="rv">
+      궤도 데이터센터에서는 <b>병목이 방열로 바뀐다</b> — 대류·전도가 불가능해 <b>복사 방출만</b> 남는다.
+      제시된 해법은 <b>「위성 전체를 방열판으로 + 암모니아 순환」</b>이고,
+      자세 제어가 <b>「태양은 추적하되 칩은 그늘에 둔다」</b>라 <b>발전과 방열이 한 축으로 동시에 결정</b>된다.
+      <b>지상의 병목(전력·물·인허가) 셋이 사라지고 방열 하나로 대체되는데, 바뀐 병목이 더 쉬운지는 아직 모른다.</b>
+    </div></div>
+    <div class="row"><div class="rk">판정</div><div class="rv">스타링크 차세대 사양에 <b>kW급 이상 폐열 처리 능력</b>이 명시되는가 · Starship Flight 14 궤도 비행</div></div>
+  </div>
+</div>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">06</span><span class="lname">컴퓨트 · 메모리</span><span class="lsrc">정본 → hbm_pkg_theme_memory_cycle</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">HBM 수요</div><div class="rv">
+      <span class="new">NEW</span><b>2028년 고객사 수요 계획</b>: 브로드컴 <span class="n">350~400</span> · 엔비디아 <span class="n">300</span> · 구글 <span class="n">200</span> · AMD <span class="n">100</span>억Gb
+      = <b>합계 950~1,000억Gb</b>인데 <b>Gartner 시장 전체 전망은 550억Gb</b> — <b><span class="n">1.73~1.82배</span> 초과</b>다.<br>
+      <b>커머디티:HBM Trade Ratio = 3~4:1</b>이라 HBM 전환은 <b>커머디티 DRAM을 3~4배 속도로 줄인다</b>.
+    </div></div>
+    <div class="row"><div class="rk">탑재량</div><div class="rv">
+      <span class="new">NEW</span>GPU당 HBM은 <b>GB300 → VR200에서 288GB로 변동 없음</b>, VR-Ultra가 <b>256GB HBM4e</b>인데
+      <b>HBM4e 가격은 70~100% 상승</b>. <b>Rubin Ultra가 12단(288GB) 대신 8단(192GB)을 검토</b>하는 사유가
+      발열 + <b>HBM 수급 차질</b>이다 — <b>사양을 낮추는 것은 수요가 줄어서가 아니라 공급이 안 따라와서다</b>.
+    </div></div>
+    <div class="row"><div class="rk">NAND</div><div class="rv">
+      <span class="new">NEW</span><b>3Q26 ASP +30~34% · 4Q +15%</b>이고 그 안에서 <b>eSSD +50%+ vs 컨슈머 +20%</b>로 갈린다.
+      <b>원인이 수요가 아니라 공급</b>이다 — <b>삼성 eSSD 비중 40% → 60%+</b> 전환으로 컨슈머 공급이 먼저 줄었다.<br>
+      <b>KV 캐시</b>가 2030년 AI DC NAND 수요의 <b>25~35%</b>로 가장 빠르게 성장하는 워크로드.
+    </div></div>
+    <div class="row"><div class="rk">⚠ 갈림</div><div class="rv">
+      <b>트렌드포스는 여전히 NAND ASP에 부정적</b>이다. 같은 기관이 서버 DRAM은 +13~18%로 본다 —
+      <b>「메모리 가격」을 하나로 묶어 쓰지 않는다. 판정은 3Q26 실적의 제품별 ASP가 한다.</b>
+    </div></div>
+    <div class="row"><div class="rk">HBF</div><div class="rv">
+      HBM 수준 읽기 대역폭에 <b>8~16배 용량</b>. 첫 다이 테이프아웃 완료, <b>샘플 2027</b>, Meta 컨소시엄 합류.
+      <b>⚠ 어느 재무 모델에도 들어 있지 않다</b>(상방이지만 배수의 분모에 없다).
+      <b>삼성·SK도 2027 하반기 샘플링 예정이라 독점 기술이 아니다</b> — Citi는 <b>tier 1.5</b>로 규정.
+    </div></div>
+  </div>
+</div>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">07</span><span class="lname">네트워크 · 광 — 층마다 관측 가능성이 다르다</span><span class="lsrc">정본 → ai_value_chain_guide_v2</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">3개 층</div><div class="rv">
+      <table class="t">
+        <tr><th>층</th><th>대표</th><th>공시 품질</th><th>지금 값</th></tr>
+        <tr><td><b>ⓐ 모듈</b></td><td>루멘텀 · 코히런트</td><td><b>줄고 있다</b></td>
+          <td>루멘텀 FY26 매출 <b>$30.14억(+83.2%)</b> · GM 41.7% · <b>Customer A 26.6%</b><br>
+          코히런트 D&amp;C <b>+40%</b> — <b>버티컬 금액은 미공시</b></td></tr>
+        <tr><td><b>ⓑ 커넥터·소재</b></td><td>TE · 코닝 · 암페놀</td><td><b>A / B / C</b></td>
+          <td>TE DDN <b>$813M</b>(세그먼트 32% · 전사 15.76%) — <b>금액·비중·성장률 전부 10-Q</b><br>
+          코닝은 사유만, 암페놀은 콜 구두</td></tr>
+        <tr><td><b>ⓒ 기판</b></td><td>JX금속 · 스미토모전기</td><td><b>캐파·가격 공개</b></td>
+          <td><span class="new">NEW</span>InP 각 <b>약 40%</b> · 캐파 FY27말 2.5배 → <b>FY29말 8.5배</b> · 연 15~30% 가격 인상 가정</td></tr>
+      </table>
+      <div class="note">🔑 <b>「AI 수혜를 어떻게 확인하는가」의 답이 층마다 다르고, 아래로 갈수록 오히려 잘 보인다.</b>
+      모듈층은 루멘텀이 단일 보고부문으로, 코히런트가 버티컬 미공시로 가면서 <b>관측 가능성이 줄었다</b> —
+      버티브 백로그 공시 중단 · 이튼 megaproject 트래커 소멸과 같은 방향의 <b>세 번째 사례</b>다.</div>
+    </div></div>
+    <div class="row"><div class="rk">CPO/NPO</div><div class="rv">
+      <span class="new">NEW</span><b>NPO가 CPO 대비 25% 낮은 복잡도로 85% 효익</b>을 낸다.
+      CPO는 단일 고객 집중인 반면 <b>NPO는 약 6건</b>. 매출은 <b>C4Q26 $5,000만~1억 → C1Q27 $1억 돌파</b> 예상.<br>
+      <b>CPO의 스케일업 크로스오버는 2031년경</b>이라 <b>플러거블이 이번 십년 내내 구조적으로 중요</b>하다.
+    </div></div>
+    <div class="row"><div class="rk">판정</div><div class="rv">
+      <b>TE Digital data networks의 금액·비중이 어디까지 가는가</b>(성장률만 보면 기저효과에 흔들린다) ·
+      <b>JX금속이 InP 장기계약을 체결·공시하는가</b>
+    </div></div>
+  </div>
+</div>
+
+<div class="layer gap">
+  <div class="lh"><span class="lnum">08</span><span class="lname">운영 · REIT — 판단이 0편이다</span><span class="lsrc">비교용 인용만 3편</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">아카이브</div><div class="rv">
+      <b>Equinix·Digital Realty에 <u>현재 판단이 없다</u></b>. 세 편에 나오지만 전부 <b>SKT SOTP의 비교 대상</b>으로만
+      — <i>"적용 EV/EBITDA 5.5배는 <b>Equinix 60배+ · Digital Realty 40배+</b> 대비 극단적 할인"</i>.<br>
+      <b>🔴 그 값에 기준일이 없고, HSBC는 <u>P/AFFO 27.5배</u>를 쓴다 — 지표 자체가 다르다</b>(§A7-0).
+      <b>REIT에서 EV/EBITDA와 P/AFFO를 섞으면 배수 비교가 성립하지 않는다.</b>
+    </div></div>
+    <div class="row"><div class="rk">새 사실</div><div class="rv">
+      <span class="new">NEW</span><b>DLR</b>이 장기 코어FFO 주당 성장 가이던스를 <b>「최소 중반 한 자릿수」 → 「최소 두 자릿수」</b>로 상향.
+      <b>2Q26 대형 블록(1MW 초과) 갱신 임대료 <span class="n">+66.7%</span></b>이고,
+      100% 지분 기준 <b>3.1GW 중 1.4GW(45%) 건설 중</b> · 순레버리지 <b>4.7배</b>(목표 5.5배 하회).<br>
+      <span class="new">NEW</span><b>EQIX</b>가 2027~29 매출 목표를 <b>+300bp 올려 10~13%</b>, AFFO 주당 성장을 <b>5~9% → 9~12%</b>로 상향하면서
+      <b>리테일 DC 캐펙스를 중간값 기준 약 71% 확대</b>했다.
+      <b>🔑 통상 투자 확대는 단기 실적에 부담인데 <u>캐펙스 증가와 AFFO 추정 상향이 동시에</u> 나타났다</b> — 가격 결정력이 상쇄한 것이다.
+    </div></div>
+    <div class="row"><div class="rk">빈 곳</div><div class="rv">
+      <b>두 종목 다 시세 추적 밖</b>이고 <b>판단·반증 조건이 없다</b>.
+      <b>그런데 03층(부지 제약)과 04층(전력)의 수혜가 이 층으로 흐른다</b> — <b>아카이브가 원인은 갖고 결과를 안 갖고 있다</b>.
+    </div></div>
+  </div>
+</div>
+
+<div class="layer">
+  <div class="lh"><span class="lnum">09</span><span class="lname">국내 — 여기는 자본비용이 승부를 가른다</span><span class="lsrc">정본 → ai_korea_g3_sovereign_ai</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">테제</div><div class="rv">
+      <b>T1 「이 층에서 승부를 가르는 것은 GPU 대수가 아니라 <u>자본 비용</u>」</b> — 02층의 5~6%p 격차가 여기서 결정적이다.
+    </div></div>
+    <div class="row"><div class="rk">네이버 모델</div><div class="rv">
+      <b>MW당 매출 200억원 · 평균 PUE 1.2 · 금융비용 6%</b> 가정 시
+      <b>2032E 매출 14조 / 영업이익 3.4조 / 세전이익 2.0조</b>이고 <b>2027년 100MW → 2032년 1GW</b> 단계 확장.
+      <b>금융비용 6%가 흔들리면 영업이익이 흔들린다 — 가정이 아니라 결정 변수다.</b>
+    </div></div>
+    <div class="row"><div class="rk">부지</div><div class="rv">
+      죽전(퍼시픽) <b>100MW</b> + 삼송(이지스) <b>80MW</b> 임차 확보. <b>삼송은 수랭식 완비</b>라 05층의 「자격」을 충족한다.
+    </div></div>
+    <div class="row"><div class="rk">⚠ 주의</div><div class="rv">
+      <b>메가프로젝트 금액은 주체를 붙여 쓴다</b> — <b>4,755조원 = 삼성 2,655 + SK 2,100(민간 약정)</b>이고
+      <b>1,461조원+α = 정부 발표</b>다. <b>3.3배 차이는 오류가 아니라 주체의 차이</b>이며,
+      국가 간 비교(미국 $4.6T · 중국 $3.9T)에는 <b>정부 발표 기준</b>을 쓴다.
+    </div></div>
+  </div>
+</div>
+
+<h2 class="sec">이 지도가 드러낸 것</h2>
+<div class="layer">
+  <div class="lbody">
+    <div class="row"><div class="rk">비어 있는 층</div><div class="rv">
+      <b>03 부지·인허가</b>와 <b>08 운영·REIT</b> 둘이다.
+      <b>공통점은 「원인은 갖고 결과를 안 갖고 있다」</b>는 것 —
+      아카이브는 <b>전력 병목과 인허가 지연을 상세히 추적하면서, 그 제약의 수혜가 흐르는 곳(기존 허브 보유자)에는 판단이 없다</b>.
+    </div></div>
+    <div class="row"><div class="rk">관측 가능성</div><div class="rv">
+      <b>층에 따라 정반대 방향으로 움직인다.</b>
+      광 모듈층은 <b>줄어들고</b>(루멘텀 단일 부문 전환 · 코히런트 버티컬 미공시 · 버티브 백로그 중단 · 이튼 트래커 소멸),
+      기판층은 <b>늘어난다</b>(캐파 배수와 가격 인상률이 함께 공개).
+      <b>「AI 수혜를 확인할 수 있는가」는 종목이 아니라 층의 성질이다.</b>
+    </div></div>
+    <div class="row"><div class="rk">지표 혼용</div><div class="rv">
+      <b>REIT 배수에서 EV/EBITDA(60배+)와 P/AFFO(27.5배)가 같은 문장에서 쓰이고 있었다.</b>
+      <b>§A7-0대로 분모를 밝히지 않으면 비교가 성립하지 않는다</b> — 08층의 첫 작업은 <b>지표 정의를 고르는 것</b>이다.
+    </div></div>
+  </div>
+</div>
+
+<div class="foot">
+<b>이 문서의 성격</b> — 새 정본을 만들지 않는다(§B5). 각 수치의 정본은 위에 적힌 편이며,
+여기서 값이 어긋나면 <b>정본 쪽이 맞다</b>.<br>
+<b>등급</b> — ① 공시 원문(SEC 10-Q/10-K · DART) · ② 회사 제시·미확인 · ③ 증권사·업계 전망.
+<b>전망치는 전부 ③</b>이고, <b>「NEW」 표시는 2026.08.18 IB 배치에서 들어온 것</b>이다.<br>
+<b>기준일</b> — 배수·주가는 <b>2026.08.18</b>, 기간수익률은 <b>2026.08.14</b>, 분기 실적은 <b>2Q26 확정</b>.<br>
+<b>작성 2026.08.18 · ourprochoi Research</b>
+</div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+"headline":"데이터센터 종합 지도 — 아카이브가 아는 것 전부",
+"description":"AI 데이터센터를 9개 층으로 종합. 각 층의 정본 위치·핵심 수치·판정 조건과 비어 있는 곳을 함께 표시한다.",
+"datePublished":"2026-08-18","dateModified":"2026-08-18",
+"author":{"@type":"Organization","name":"ourprochoi Research"},
+"publisher":{"@type":"Organization","name":"ourprochoi Research"},
+"mainEntityOfPage":"https://ourprochoi-web.github.io/stock-research/ai-infra/ai_datacenter_full_map.html"}
+</script>
