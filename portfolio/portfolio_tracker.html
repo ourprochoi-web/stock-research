@@ -192,7 +192,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   "headline":"포트폴리오 트래커 — v7.2 Phase 0 실매수 대시보드",
   "description":"v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드",
   "datePublished":"2026-07-14",
-  "dateModified":"2026-08-20",
+  "dateModified":"2026-08-21",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html"}
@@ -490,14 +490,21 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   var HOLDINGS = [
     { name:'SK하이닉스',        ticker:'000660', cluster:'A', qty:54,   avgPrice:1699046, fee:0, totalCost:91748484 },
     { name:'삼성전자 (레거시)',  ticker:'005930', cluster:'A', qty:1300, avgPrice:72600,   fee:0, totalCost:94380000, priceKey:'삼성전자', legacy:true },
-    { name:'삼성전자 (신규)',    ticker:'005930', cluster:'A', qty:383,  avgPrice:238157,  fee:0, totalCost:91214131, priceKey:'삼성전자' },
+    { name:'삼성전자 (신규)',    ticker:'005930', cluster:'A', qty:496,  avgPrice:244927,  fee:42318, totalCost:121483949, priceKey:'삼성전자' },
     { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:3600, avgPrice:17801,   fee:0, totalCost:64083600 },
-    { name:'TIME 글로벌AI',     ticker:'456600', cluster:'C', qty:1040, avgPrice:62807,   fee:0, totalCost:65319280 },
+    { name:'TIME 글로벌AI',     ticker:'456600', cluster:'C', qty:520,  avgPrice:62807,   fee:0, totalCost:32659640 },
     { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1880, avgPrice:33630, fee:0, totalCost:63224400 },
     /* 2026-08-13 신규 편입 — 투자자 집행. 수수료 포함 원가 기준.
        현대백화점: 매수 논거 = 자산가치 + 소비 섹터 강세 + 외국인 소비 증가(투자자 진술).
                   ⚠ 아카이브 인용 0편이었다 — 테제를 이 논거 위에 새로 세운다. */
     { name:'현대백화점',           ticker:'069960', cluster:'E', qty:250, avgPrice:99362,   fee:34876, totalCost:24875376 },
+    /* 2026-08-20 체결(결제 08-24) — 미래에셋 매매보고서 기준. 투자자 집행.
+       파마리서치: 신규 편입 170주 @412,000, 정산 70,138,056 → 평단 412,577원(수수료 포함).
+                 ⚠ 아카이브에 편은 있으나 <현재 판단 0편>이었다 — 같은 날 T1~T3 신설.
+       삼성전자(신규): +113주 @267,500 → 383주 496주, 평단 238,157 244,927원.
+       TIME 글로벌AI: -520주 @58,096(가중) → 1,040주 520주(정확히 절반).
+                 실현손익 -2,491,739원(-7.63%). 평단은 불변. */
+    { name:'파마리서치',           ticker:'214450', cluster:'E', qty:170, avgPrice:412577,  fee:98056, totalCost:70138056 },
     { name:'삼성바이오로직스',      ticker:'207940', cluster:'F', qty:17,  avgPrice:1549529, fee:36885, totalCost:26378878 }
   ];
 
