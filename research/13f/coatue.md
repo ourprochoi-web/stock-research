@@ -1,40 +1,59 @@
-# 코투(필립 라퐁) — 13F 2026 Q2 분석
+# 코투 — 13F 2026 Q1 → Q2 변화
 
-- **기준일** 2026-06-30 · **공시일** 2026-08-14 · **지연** 45일
-- **주식 평가액** $48.6B · **종목 수** 63 · **옵션** 0건 $0.0B
-- **신고 단위** 달러 ⚠ 펀드마다 다르다 — 정규화함
-- **Top10 집중도** 63%
+- **규모** $29.1B → **$48.6B** (+67.4%)
+- **종목** 59 → 63 · **신규** 9 · **청산** 5 · **증량** 8 · **감량** 17
+- **회전율** 23%
 
-## 상위 보유 × 아카이브 판단 보유 여부
+> ⚠ 증감은 **주식 수** 기준이다. `value`로 재면 주가 변동이 섞인다(§A7-0).
 
-| # | 종목 | 평가액 | 비중 | 아카이브 판단 |
-|---|---|---|---|---|
-| 1 | TAIWAN SEMICONDUCTOR MANUFAC | $4.26B | 8.8% | 🔴 **없음** |
-| 2 | 램리서치 | $4.09B | 8.4% | ✅ `ai_value_chain_guide_v2.html` |
-| 3 | 마이크론 | $3.63B | 7.5% | ✅ `ai_korea_g3_sovereign_ai.html` |
-| 4 | SPACE EXPLORATION TECHN CORP | $3.17B | 6.5% | 🔴 **없음** |
-| 5 | 어플라이드머티리얼즈 | $3.05B | 6.3% | ✅ `ns_global_strategy_overview.html` |
-| 6 | GE Vernova | $3.01B | 6.2% | ✅ `energy_ess_ai_power.html` |
-| 7 | 아마존 | $2.82B | 5.8% | ✅ `ai_sw_company_anthropic.html` |
-| 8 | 브로드컴 | $2.21B | 4.5% | ✅ `ai_sw_investment_map.html` |
-| 9 | 이튼 | $2.12B | 4.4% | ✅ `ai_datacenter_full_map.html` |
-| 10 | 알파벳 | $2.06B | 4.2% | ✅ `ai_sw_overview.html` |
-| 11 | 인텔 | $1.69B | 3.5% | ✅ `ai_sw_company_crwd_ddog_snow.html` |
-| 12 | Cerebras | $1.55B | 3.2% | 🔴 **없음** |
-| 13 | 메타 | $1.42B | 2.9% | ✅ `ai_sw_company_msft_pltr.html` |
-| 14 | EQUINIX INC | $1.33B | 2.7% | 🔴 **없음** |
-| 15 | NVIDIA | $1.21B | 2.5% | ✅ `ai_sw_investment_map.html` |
+## 🆕 신규 편입
 
-## 🔴 공백 — 비중 2% 이상인데 판단 0편 (4건, 합산 21.2%)
+| 종목 | 2Q 비중 | 아카이브 판단 |
+|---|---|---|
+| SPACE EXPLORATION TECHN CORP | 6.52% | ✅ |
+| INTEL CORP | 3.47% | 🔴 없음 |
+| CEREBRAS SYSTEMS INC | 3.19% | 🔴 없음 |
+| FORGENT POWER SOLUTIONS INC | 2.35% | 🔴 없음 |
+| HUT 8 CORP | 2.31% | 🔴 없음 |
+| BOOZ ALLEN HAMILTON HLDG COR | 0.14% | 🔴 없음 |
+| ADVANCED MICRO DEVICES INC | 0.11% | 🔴 없음 |
+| COMFORT SYS USA INC | 0.07% | 🔴 없음 |
+| ARGAN INC | 0.06% | 🔴 없음 |
 
-- **TAIWAN SEMICONDUCTOR MANUFAC** 8.8%
-- **SPACE EXPLORATION TECHN CORP** 6.5%
-- **Cerebras** 3.2%
-- **EQUINIX INC** 2.7%
+## ❌ 전량 청산
 
-## 한계(§J12)
+| 종목 | 1Q 비중 |
+|---|---|
+| VISA INC | 0.75% |
+| CHIME FINL INC | 0.65% |
+| SOLSTICE ADVANCED MATLS INC | 0.43% |
+| C H ROBINSON WORLDWIDE IN | 0.33% |
+| ISHARES BITCOIN TRUST ETF | 0.01% |
 
-- **45일 지연** — 이 포지션은 2026-06-30 시점이다
-- **롱 온리** — 공매도는 나오지 않는다
-- **분기말 스냅샷** — 분기 중 매매는 흔적이 없다
-- **분모** — 위 비중은 **주식만**(옵션 제외) 기준. 옵션 포함 시 달라진다
+## ⬆ 증량 (주식 수)
+
+| 종목 | 주수 변화 | 2Q 비중 |
+|---|---|---|
+| MICRON TECHNOLOGY INC | **+1794%** | 7.46% |
+| AMAZON COM INC | **+49%** | 5.80% |
+| BROADCOM INC | **+6%** | 4.54% |
+| EATON CORP PLC | **+5%** | 4.35% |
+| ALPHABET INC | **+6%** | 4.23% |
+| EQUINIX INC | **+17%** | 2.73% |
+| MICROSOFT CORP | **+18%** | 2.25% |
+| CARVANA CO | **+381%** | 0.44% |
+
+## ⬇ 감량 (주식 수)
+
+| 종목 | 주수 변화 | 1Q 비중 |
+|---|---|---|
+| TAIWAN SEMICONDUCTOR MANUFAC | **-4%** | 10.80% |
+| LAM RESEARCH CORP | **-6%** | 7.39% |
+| APPLIED MATLS INC | **-20%** | 6.17% |
+| META PLATFORMS INC | **-10%** | 5.54% |
+| NVIDIA CORPORATION | **-4%** | 3.80% |
+| NETFLIX INC. | **-32%** | 2.28% |
+| ASML HLDG NV | **-40%** | 2.26% |
+| APPLOVIN CORP | **-9%** | 1.77% |
+| INTUITIVE SURGICAL INC | **-7%** | 1.36% |
+| SYNOPSYS INC | **-58%** | 1.04% |

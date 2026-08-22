@@ -1,46 +1,71 @@
-# 듀케인(스탠리 드러켄밀러) — 13F 2026 Q2 분석
+# 드러켄밀러 — 13F 2026 Q1 → Q2 변화
 
-- **기준일** 2026-06-30 · **공시일** 2026-08-14 · **지연** 45일
-- **주식 평가액** $4.4B · **종목 수** 85 · **옵션** 9건 $0.9B
-- **신고 단위** 천$ ⚠ 펀드마다 다르다 — 정규화함
-- **Top10 집중도** 53%
+- **규모** $2.9B → **$4.4B** (+48.2%)
+- **종목** 65 → 85 · **신규** 43 · **청산** 23 · **증량** 14 · **감량** 10
+- **회전율** 88%
 
-## 상위 보유 × 아카이브 판단 보유 여부
+> ⚠ 증감은 **주식 수** 기준이다. `value`로 재면 주가 변동이 섞인다(§A7-0).
 
-| # | 종목 | 평가액 | 비중 | 아카이브 판단 |
-|---|---|---|---|---|
-| 1 | Natera | $0.86B | 19.9% | 🔴 **없음** |
-| 2 | Taiwan Semiconductor Manufac | $0.28B | 6.5% | 🔴 **없음** |
-| 3 | ST마이크로 | $0.23B | 5.3% | 🔴 **없음** |
-| 4 | Insmed | $0.15B | 3.5% | 🔴 **없음** |
-| 5 | 폭스 | $0.14B | 3.3% | ✅ `ai_value_chain_guide_v2.html` |
-| 6 | YPF | $0.14B | 3.3% | 🔴 **없음** |
-| 7 | 아마존 | $0.13B | 3.0% | ✅ `ai_sw_company_anthropic.html` |
-| 8 | Bbb Foods Inc | $0.12B | 2.8% | 🔴 **없음** |
-| 9 | 알파벳 | $0.12B | 2.8% | ✅ `ai_sw_overview.html` |
-| 10 | iShares(ETF) | $0.12B | 2.7% | 🔴 **없음** |
-| 11 | 시게이트 | $0.12B | 2.7% | ✅ `ai_value_chain_guide_v2.html` |
-| 12 | 유나이티드항공 | $0.11B | 2.5% | 🔴 **없음** |
-| 13 | Sea | $0.11B | 2.4% | ✅ `k_ship_theme_masga_us_alliance.html` |
-| 14 | Cdw Corp | $0.10B | 2.4% | 🔴 **없음** |
-| 15 | Newamsterdam Pharma Company | $0.10B | 2.4% | 🔴 **없음** |
+## 🆕 신규 편입
 
-## 🔴 공백 — 비중 2% 이상인데 판단 0편 (10건, 합산 51.2%)
+| 종목 | 2Q 비중 | 아카이브 판단 |
+|---|---|---|
+| FOX CORP | 3.32% | 🔴 없음 |
+| ALPHABET INC | 2.76% | 🔴 없음 |
+| CDW CORP | 2.40% | 🔴 없음 |
+| BITDEER TECHNOLOGIES GROUP | 1.49% | 🔴 없음 |
+| DELTA AIR LINES INC | 1.30% | 🔴 없음 |
+| FLUOR CORP | 1.18% | 🔴 없음 |
+| D R HORTON INC | 1.12% | 🔴 없음 |
+| ADVANCED MICRO DEVICES INC | 0.97% | 🔴 없음 |
+| PALO ALTO NETWORKS INC | 0.91% | 🔴 없음 |
+| HUT 8 CORP | 0.83% | 🔴 없음 |
+| CAVCO INDS INC DEL | 0.56% | 🔴 없음 |
+| HYPERLIQUID STRATEGIES INC | 0.53% | 🔴 없음 |
 
-- **Natera** 19.9%
-- **Taiwan Semiconductor Manufac** 6.5%
-- **ST마이크로** 5.3%
-- **Insmed** 3.5%
-- **YPF** 3.3%
-- **Bbb Foods Inc** 2.8%
-- **iShares(ETF)** 2.7%
-- **유나이티드항공** 2.5%
-- **Cdw Corp** 2.4%
-- **Newamsterdam Pharma Company** 2.4%
+## ❌ 전량 청산
 
-## 한계(§J12)
+| 종목 | 1Q 비중 |
+|---|---|
+| BROADCOM INC | 2.06% |
+| OPTION CARE HEALTH INC | 1.71% |
+| FIGURE TECHNOLOGY SOLUTIO | 1.33% |
+| RESTAURANT BRANDS INTL INC | 1.14% |
+| LATTICE SEMICONDUCTOR CORP | 1.02% |
+| HUMANA INC | 0.81% |
+| TWILIO INC | 0.78% |
+| JABIL INC | 0.74% |
+| ISHARES S&AMP;P GSCI COMMODITY- | 0.71% |
+| BLOOM ENERGY CORP | 0.63% |
+| INTEL CORP | 0.62% |
+| CLOUDFLARE INC | 0.37% |
 
-- **45일 지연** — 이 포지션은 2026-06-30 시점이다
-- **롱 온리** — 공매도는 나오지 않는다
-- **분기말 스냅샷** — 분기 중 매매는 흔적이 없다
-- **분모** — 위 비중은 **주식만**(옵션 제외) 기준. 옵션 포함 시 달라진다
+## ⬆ 증량 (주식 수)
+
+| 종목 | 주수 변화 | 2Q 비중 |
+|---|---|---|
+| NATERA INC | **+4%** | 19.86% |
+| TAIWAN SEMICONDUCTOR MANUFAC | **+19%** | 6.47% |
+| STMICROELECTRONICS N V | **+19%** | 5.34% |
+| INSMED INC | **+23%** | 3.49% |
+| AMAZON COM INC | **+1083%** | 2.96% |
+| SEAGATE TECHNOLOGY HLDNGS PL | **+141%** | 2.70% |
+| UNITED AIRLS HLDGS INC | **+203%** | 2.48% |
+| REVOLUTION MEDICINES INC | **+27%** | 1.72% |
+| CRH PLC | **+47%** | 1.36% |
+| CLEVELAND-CLIFFS INC NEW | **+82%** | 0.91% |
+
+## ⬇ 감량 (주식 수)
+
+| 종목 | 주수 변화 | 1Q 비중 |
+|---|---|---|
+| YPF SOCIEDAD ANONIMA | **-3%** | 5.09% |
+| BBB FOODS INC | **-7%** | 3.74% |
+| ALCOA CORP | **-88%** | 3.37% |
+| WOODWARD INC | **-68%** | 2.58% |
+| TEVA PHARMACEUTICAL INDS LTD | **-74%** | 2.44% |
+| ROKU INC | **-75%** | 2.42% |
+| GLOBAL X FDS | **-15%** | 1.23% |
+| SANDISK CORP | **-9%** | 0.83% |
+| WABTEC | **-40%** | 0.81% |
+| ARM HOLDINGS PLC | **-74%** | 0.55% |
