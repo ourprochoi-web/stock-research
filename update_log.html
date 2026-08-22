@@ -254,6 +254,27 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🔴 2026.08.22 — 미래 날짜 결함 3편이 6일간 검출되지 않았다 (§0 규칙5 보강)</div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> 🔴 <b>§0 규칙5를 양방향으로 검사한다</b></div>
+    <div class="upd-body">
+      13F 페이퍼를 만들며 <b>작업 시각(23:49)이 자정을 넘길 것으로 보고 08.23을 선반영</b>해 적었다.
+      <b>틀렸다 — 아직 22일이었고 dateModified(08-22)보다 판단 날짜(08.23)가 미래가 됐다.</b>
+      16건을 교정했다.<br><br>
+      <b>🔑 그 과정에서 검사식을 양방향으로 고쳤더니 <u>기존 결함 3편</u>이 추가로 잡혔다</b> —
+      <code>ai_sw_company_msft_pltr</code> · <code>q2_2026_earnings_overview</code> · <code>ns_semiconductor_war</code>가
+      <b>08-16 커밋인데 판단 날짜는 08.18</b>이었다.<br><br>
+      <b>§0 규칙5는 「판단 날짜 &lt; dateModified」만 결함으로 정의했다.</b>
+      <b>반대 방향(판단이 미래)은 <u>정의에 없어서 6일간 아무도 못 봤다</u>.</b>
+      <b>측정 명령을 CLAUDE.md에 양방향으로 박았다.</b>
+      <span style="color:var(--ink-3)">세 편의 판단 날짜를 실제 최종 갱신일(08-16)로 되돌렸다 —
+      날짜를 <b>앞으로</b> 옮기려면 「오늘 테제를 확인했다」가 필요하지만, <b>뒤로</b> 되돌리는 것은 사실 교정이라 그 조건이 붙지 않는다.</span>
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🆕 2026.08.22 — 13F 리서치 페이퍼 신설: 「대가들이 보는 곳과 내가 안 보는 곳」</div>
 
   <div class="upd">

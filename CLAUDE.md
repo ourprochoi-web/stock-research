@@ -1004,6 +1004,22 @@ footer 타임라인 21편 / update_log 8편). 층을 늘리지 말고 **역할�
 **새 저장소를 만들지 않는다 — 세는 명령 한 줄이다.**
 
 ```
+# §0 규칙5 — <양방향>으로 검사한다 (2026-08-22 보강)
+#   기존 검사는 「판단 < dateModified」만 봤는데, 반대(판단이 <미래>)도 결함이다.
+#   실측: 미래 날짜 3편이 6일간 검출되지 않았다(08-16 커밋인데 판단 08.18).
+python3 - <<'EOF'
+import glob,io,re
+for f in glob.glob('*/*.html'):
+    if 'update_log' in f: continue
+    s=io.open(f,encoding='utf8',errors='ignore').read()
+    dm=re.search(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"',s)
+    tj=re.search(r'현재 판단 · (\d{4})\.(\d{2})\.(\d{2})',s)
+    if dm and tj:
+        d2=f"{tj.group(1)}-{tj.group(2)}-{tj.group(3)}"
+        if d2<dm.group(1): print('과거',f,d2,dm.group(1))
+        if d2>dm.group(1): print('🔴미래',f,d2,dm.group(1))
+EOF
+
 # [미검증] — update_log 제외 (본문만)
 grep -ro '\[미검증\]' --include='*.html' --exclude=update_log.html . | wc -l
 
