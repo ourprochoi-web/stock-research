@@ -621,6 +621,34 @@ PER은 낮다. 그래서 **PER의 높낮이를 밸류에이션 판정에 그대�
 
 **F1.** HTML 수정 시 그 파일의 JSON-LD `dateModified`를 오늘 날짜로 고친다. *(pre-commit 훅이 강제)*
 **F2.** 새 페이지는 `index.html` DATA + `sitemap.xml`에 등록한다. 등록 안 하면 만들지 않은 것이다.
+**F2-1. 🔴 새 카테고리를 만들면 <u>세 곳</u>을 함께 고친다 — 등록만으로는 화면에 안 나온다.** *(2026-08-23 신설 — 실측)*
+
+**§F2는 「index.html DATA + sitemap.xml에 등록하라」고만 정했고 <u>스키마를 확인하라</u>도, 「새 카테고리면 무엇을 더 해야 한다」도 없다.**
+그래서 13F 페이퍼를 등재했는데 **모바일에 제목 없는 빈 섹션(「2편」)이 떴고, 사용자가 화면에서 발견했다.**
+
+> **실측(2026-08-23)**: 원인이 둘이었다 — ⓐ 렌더링은 `file`을 읽는데 **`url`로 넣었다**(링크 미작동)
+> ⓑ `cat:"리서치"`가 **SECTIONS에 없어** 라벨·설명 없이 `default`로 떨어졌다.
+> **내 검수는 `grep -c '13f_2026q2'`로 <u>존재 여부만</u> 봤고 <u>렌더링 여부</u>는 안 봤다.**
+
+| 고칠 곳 | 무엇을 |
+|---|---|
+| **① `var DATA`** | 필드는 **`file`**(`url` 아님)·`title`·`desc`·`cat`·`badge`·`date`·`tags` |
+| **② `var SECTIONS`** | 키가 `cat` 값과 **정확히 일치**해야 한다. `cssClass`·`title`(영문)·`desc`·`badgeMap` |
+| **③ CSS** | `.sec-label.{cssClass}` 색 + `::before` 배경. **없으면 default로 떨어진다** |
+
+**검사식 — 「등록됐나」가 아니라 「렌더링되나」를 본다:**
+```
+python3 -c "
+import re,io;s=io.open('index.html',encoding='utf8').read()
+cats=set(re.findall(r'cat:\s*"([^"]+)"',s))
+secs=set(re.findall(r\"\\n\\s+'([^']+)'\\s*:\\s*\\{\\s*\\n\\s+cssClass\",s))
+print('SECTIONS 미등록:', cats-secs or '✅')
+print('url 오용:', re.findall(r'url:\s*"[^"]+\.html"',s) or '✅')"
+```
+
+**이것은 §I의 「sitemap 84/113」과 같은 형태다 — <u>지시는 있는데 검사가 없는 자리</u>.**
+**그리고 §H가 적은 「살아남은 것은 사람이 매일 보는 것뿐」이 그대로 작동했다 — 스크립트가 못 잡은 것을 화면이 잡았다.**
+
 **F3.** 페이지 수정 + DATA + sitemap + update_log를 **한 커밋**으로. 쪼개면 드리프트가 생긴다. 단 **C1급 정정만 별도 커밋**(추적성).
 *(pre-commit 훅이 강제 — footer에 `▸ 날짜`를 남기면 update_log 없이는 커밋이 막힌다)*
 **F4.** index DATA의 `desc`는 **120자 이내**. 카드는 스캔용이지 초록이 아니다.
