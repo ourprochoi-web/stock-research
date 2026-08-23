@@ -859,13 +859,21 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     },
     '마켓 리뷰': {
       cssClass: 'market-review', title: 'Market Review',
-      desc: '어닝 시즌 종합 리뷰 — 전 섹터 실적·서프라이즈·매크로·하반기 전망 크로스 분석',
+      desc: '시장 전체를 한 번에 보는 글 — 어닝 시즌 종합, 그리고 지수·낙폭·섹터 순서 같은 시장 구조',
       badgeMap: { '어닝 리뷰': 'badge-overview' }
     }
   };
 
   /* ═══════ DATA ═══════ */
   var DATA = [
+    {
+      title: "한국 시장 2026 — 고점 대비 −41.3%인데 YTD는 +11.2%다",
+      desc: "추적 65종목의 고점·낙폭·연초 대비를 한 표에. 섹터가 순서대로 꺾였고(바이오 1월→조선·방산 4월→전력 5월→소부장·메모리 6월→K뷰티 8월) 먼저 꺾인 것일수록 YTD가 나쁘다.",
+      category: "마켓 리뷰", type: "어닝 리뷰",
+      file: "market/kr_drawdown_2026.html",
+      date: "2026-08-23",
+      tags: ["KOSPI","KOSDAQ","고점 대비","낙폭","섹터 로테이션","K뷰티","전력 기자재","포트폴리오 리스크"]
+    },
         {
       title: "13F 2026 Q2 — 대가 8인의 분기 변화",
       file: "research/13f_2026q2.html",
@@ -1758,7 +1766,8 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     {
       title: "소비 섹터 — 강세는 채널별로 갈린다",
       file: "consumer/consumer_sector_department.html",
-      date: "2026-08-14", category: "소비", type: "섹터 분석", series: "소비",
+      date: "2026-08-14",
+      updated: "2026-08-23", category: "소비", type: "섹터 분석", series: "소비",
       desc: "백화점·면세·편의점 2Q26 확정 실적 대조 — 소비 강세는 채널로 갈린다. 자산가치를 PBR÷ROE로 정의",
       tags: ["소비","백화점","현대백화점","신세계","롯데쇼핑","호텔신라","면세","편의점","자산가치","PBR"]
     },
