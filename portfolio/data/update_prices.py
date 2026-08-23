@@ -138,6 +138,12 @@ WATCH = {
 # 2026-08-08 추가. 엔드포인트가 국내(m.stock)와 다르다: api.stock.naver.com/stock/{SYM}/basic
 # 접미사는 NASDAQ=.O, NYSE=무접미사 또는 .K (심볼별로 다르므로 검증된 값만 넣는다)
 WATCH_US = {
+    "Talen": "TLN.O",
+    "AEP": "AEP.O",
+    "NiSource": "NI",
+    "Xcel Energy": "XEL.O",
+    "Constellation Energy": "CEG.O",
+
     "Palantir": "PLTR.O",
     "CrowdStrike": "CRWD.O",
     "Datadog": "DDOG.O",
