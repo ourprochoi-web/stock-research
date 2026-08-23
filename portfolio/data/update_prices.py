@@ -240,6 +240,8 @@ WATCH_US = {
     "Visa": "V",                    # 결제 — 비AI 대조군
     "Mastercard": "MA",
     "Berkshire Hathaway B": "BRKb",
+    # 2026-08-23 (3) — AI 바이오 T3(파이프라인 이벤트가 지표) 사례
+    "Moderna": "MRNA.O",
 }
 
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
