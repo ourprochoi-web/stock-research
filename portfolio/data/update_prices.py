@@ -402,6 +402,79 @@ def fetch_flows(code):
     return out
 
 
+def fetch_rates():
+    """미국 금리 — 할인율 축(CLAUDE.md §J13-1).
+
+    2026-08-23 추가. 아카이브가 금리를 211회 언급하면서 판단 블록에는
+    0편이었다. DR Horton NPM(13.5%→8.6%→9.8%)도, 코어위브 조달금리
+    9.25~9.75%도 기준점 없이 적혀 있었다 — 무위험 금리가 없으면
+    스프레드를 못 낸다.
+
+    ⚠ 모기지는 주간(목요일), 국채·연방기금은 일간이라 관측 빈도가 다르다.
+    창(window)은 인덱스가 아니라 <날짜>로 잡아야 한다 — 인덱스로 잡으면
+    모기지 1개월이 국채 1주일이 된다(§A5).
+    """
+    import datetime as _dt
+    series = {"DGS10": "10년 국채", "DGS2": "2년 국채",
+              "MORTGAGE30US": "30년 모기지", "DFF": "연방기금(실효)"}
+    # ⚠ FRED는 "Mozilla/5.0"을 차단한다(타임아웃). 연락처가 든 UA만 통과한다.
+    #    2026-08-23 실측 — 같은 URL이 UA만 바꾸면 성공/타임아웃으로 갈렸다.
+    hdr = {"User-Agent": "ourprochoi Research kenchoi@keywestaim.com"}
+    out = {"asof": "", "levels": {}, "changes": {}, "spreads": {}}
+    rows_by_id = {}
+    for sid in series:
+        try:
+            req = urllib.request.Request(
+                f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", headers=hdr)
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                text = resp.read().decode()
+        except Exception as e:
+            print(f"  \u2717 FRED {sid} — {e}")
+            continue
+        rows = []
+        for line in text.strip().split("\n")[1:]:
+            parts = line.split(",")
+            if len(parts) == 2 and parts[1] not in (".", ""):
+                rows.append((parts[0], float(parts[1])))
+        if rows:
+            rows_by_id[sid] = rows
+
+    if "DGS10" not in rows_by_id:
+        return None
+
+    def value_on_or_before(rows, target):
+        best = None
+        for d, v in rows:
+            if d <= target:
+                best = v
+            else:
+                break
+        return best
+
+    for sid, rows in rows_by_id.items():
+        end = _dt.date.fromisoformat(rows[-1][0])
+        out["asof"] = max(out["asof"], rows[-1][0])
+        out["levels"][sid] = rows[-1][1]
+        ch = {}
+        for label, days in (("1M", 30), ("3M", 91), ("6M", 182), ("1Y", 365)):
+            prior = value_on_or_before(rows, (end - _dt.timedelta(days=days)).isoformat())
+            if prior is not None:
+                ch[label] = round(rows[-1][1] - prior, 2)
+        out["changes"][sid] = ch
+
+    L = out["levels"]
+    if "DGS2" in L:
+        out["spreads"]["curve_10y_2y"] = round(L["DGS10"] - L["DGS2"], 2)
+    if "MORTGAGE30US" in L:
+        out["spreads"]["mortgage_over_10y"] = round(L["MORTGAGE30US"] - L["DGS10"], 2)
+    if "DFF" in L:
+        out["spreads"]["term_10y_over_ff"] = round(L["DGS10"] - L["DFF"], 2)
+
+    print(f"  \u2713 금리 → 10y {L.get('DGS10')}% · 모기지 {L.get('MORTGAGE30US')}% · "
+          f"FF {L.get('DFF')}%  (커브 {out['spreads'].get('curve_10y_2y'):+.2f}%p, {out['asof']})")
+    return out
+
+
 def fetch_fx():
     """USD/KRW 종가 시계열 — 해외 배정의 환 노출을 재기 위한 축(CLAUDE.md §J13).
 
@@ -567,6 +640,7 @@ def main():
 
     # 환율 — 해외 배정의 환 노출 축 (§J13)
     fx = fetch_fx()
+    rates = fetch_rates()
 
     # 해외 종목 — 배수 검증용 (가격 + 상장주식수로 시총까지 산출)
     us = {}
@@ -685,6 +759,8 @@ def main():
               "returns": returns, "flows": flows, "us": us}
     if fx:
         result["fx"] = fx    # §J13 — 해외 배정의 환 노출 축
+    if rates:
+        result["rates"] = rates    # §J13-1 — 할인율 축
     if stale:
         result["staleSections"] = stale  # 이 섹션들은 updated 날짜가 아니다
     if existing_holdings:
