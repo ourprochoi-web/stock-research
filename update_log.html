@@ -254,6 +254,47 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🆕 2026.08.23 — <b>판정 대기판 갱신</b> · 🔴 <b>3편에 viewport 태그가 없었다</b></div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag">운영</span> <b>판정 대기판 — 3Q26 한 분기에 채점표 14건이 몰렸다</b></div>
+    <div class="upd-body">
+      대기판이 <b>08.18 기준</b>으로 멈춰 있었는데, 그 사이 <b>미국 6개 층 17개사 · 미국 방산 4사 · 13F 9펀드 · 환율 · 금리</b> 축이 신설되며
+      <b>같은 분기에 판정되는 조건이 한꺼번에 생겼다</b>. <b>전부 회사가 스스로 낸 숫자(가이던스·잔고·인력)에 걸었으므로 해석의 여지 없이 판정된다</b>(§R4).<br><br>
+
+      <b>근시일 3건 신설</b> — <b>08.24 삼성전자 자사주 15조 매입 개시</b>(⚠ <u>임직원 보상용이고 확정된 소각은 0원</u>) ·
+      <b>08.26 NVIDIA F2Q27</b>(상위 3고객 54%가 더 오르는가 + 루빈 울트라 HBM 288 vs 192GB) ·
+      <b>09.02 브로드컴 FY26 3Q</b>(구글 향 비중이 줄었는가 — 줄면 물량 이동, 안 줄면 <b>−$257.7B는 디레이팅</b>).<br><br>
+
+      <b>3Q26 배치 14건</b> — Vertiv 유기 +34%(<b>표에서 유일한 가속</b>) · RTX 유기 +4.2%(<b>「상향」인데 감속</b>) ·
+      Cheniere $2.01B · Corning $4.9B(<b>4년 19% CAGR 공약의 첫 분기</b>) · Freeport 7.5억 lb + <b>그때의 단가</b> ·
+      Lockheed Aeronautics 잔고·F-35 인도 · Northrop 자금배정률 50% · Cerebras SBC 제외 GPM · ST GM 37.0% ·
+      소부장 3사 ΔOPM · Quanta 잔고 증가율 · <b>2027.02 Quanta·Comfort 인력 수</b> · <b>11월 중순 3Q26 13F</b>.<br><br>
+
+      <b>🟢 포지션 블록도 고쳤다 — <u>AI 우산 상한 25% 폐지</u>가 반영돼 있지 않았다.</b>
+      대기판이 여전히 <b>「여력 7.01%p」</b>와 <b>「미결 ② 단일 섹터 상한」</b>을 띄우고 있었다.
+      <b>둘 다 2026.08.23에 종결</b>됐고 <b>미결 투자 판단은 1건(SOL §E5 매도 라인)으로 줄었다</b>.
+      룩스루도 <b>80.7% → 74.3%(주식 기준) · 30.9%(총자산 기준)</b>로 갱신했고, <b>환율·금리 축</b>을 같은 블록에 넣었다.
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag">운영</span> 🔴 <b>3편에 <code>viewport</code>·<code>charset</code> 태그가 아예 없었다 — 모바일이 깨진다</b></div>
+    <div class="upd-body">
+      대기판을 고치다 <b>head에 <code>&lt;title&gt;</code>부터 시작하는 것</b>을 보고 전수 검사했더니
+      <b><code>ai-infra/ai_datacenter_full_map.html</code> · <code>board/judgment_board.html</code> · <code>board/sector_map.html</code> 3편</b>에
+      <b><code>&lt;meta name="viewport"&gt;</code>와 <code>&lt;meta charset&gt;</code>가 둘 다 없었다</b>.<br>
+      <b>viewport가 없으면 모바일이 980px 데스크톱 폭으로 렌더링돼 축소되고, CSS의 <code>@media(max-width:640px)</code> 분기가 <u>작동하지 않는다</u></b> —
+      <b>대기판은 그 분기에서 타임라인 레이아웃을 통째로 바꾸므로 모바일에서 레이아웃이 깨진 상태였다</b>.
+      <b><code>ai_datacenter_full_map</code>은 index·sitemap에 등재된 공개 페이지</b>인데도 같은 상태였다.<br><br>
+      <b>🔑 이것은 §F2-1과 같은 형태다 — <u>「등록됐나」는 검사하는데 「제대로 렌더링되나」는 검사하지 않는 자리</u>.</b>
+      그때는 <b>사용자가 화면에서 발견</b>했고 이번엔 다른 작업 중에 우연히 걸렸다.
+      <b>검사식을 한 줄 더 박는다</b> — <code>for f in */*.html; do grep -c 'name="viewport"' $f; done</code>.
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🆕 2026.08.23 — <b>2순위(사업의 실체) 완결</b>: 가이던스 · 잔고의 질 · 인력</div>
 
   <div class="upd">
