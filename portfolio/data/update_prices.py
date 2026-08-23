@@ -225,6 +225,21 @@ WATCH_US = {
     "Astera Labs": "ALAB.O",
     "Tesla": "TSLA.O",
     "X-Energy": "XE.O",
+    # ── 2026-08-23 (2) 층별 비교용 — AI 내부의 <비어 있는 층> + 비AI 후보 ──
+    # 「메모리 말고 AI 안에서 어디를 볼까」에 답하려면 층마다 실측이 있어야 한다.
+    # 구리·EPC·가스 상류는 아카이브가 수요 측 근거만 갖고 공급 측이 비어 있었다.
+    "Freeport-McMoRan": "FCX",      # 구리 — 아카이브 「1MW당 27톤·부족 33만톤」의 상류
+    "GE Vernova": "GEV",            # 가스터빈·그리드
+    "Quanta Services": "PWR",       # 전력 EPC(송배전 시공)
+    "Comfort Systems": "FIX",       # 데이터센터 기계설비 시공
+    "Vulcan Materials": "VMC",      # 골재 — DC 건설 상류(비AI 대조군)
+    "Targa Resources": "TRGP.K",    # 미드스트림 가스
+    "Cheniere Energy": "LNG",       # LNG
+    "Williams": "WMB",              # 가스 파이프라인
+    "Lockheed Martin": "LMT",       # 방산 — 진짜 AI 밖 대조군
+    "Visa": "V",                    # 결제 — 비AI 대조군
+    "Mastercard": "MA",
+    "Berkshire Hathaway B": "BRKb",
 }
 
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
