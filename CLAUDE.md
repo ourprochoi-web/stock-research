@@ -636,14 +636,27 @@ PER은 낮다. 그래서 **PER의 높낮이를 밸류에이션 판정에 그대�
 | **② `var SECTIONS`** | 키가 `cat` 값과 **정확히 일치**해야 한다. `cssClass`·`title`(영문)·`desc`·`badgeMap` |
 | **③ CSS** | `.sec-label.{cssClass}` 색 + `::before` 배경. **없으면 default로 떨어진다** |
 
-**검사식 — 「등록됐나」가 아니라 「렌더링되나」를 본다:**
+**🔴 그리고 <u>이 규칙의 첫 검사식이 틀린 필드를 보고 있었다</u>.** *(2026-08-23 재수정 — 같은 날 발견)*
+
+**렌더러가 읽는 것은 <u>`category`</u>인데 내 검사식은 `cat`을 셌다.** 그래서 「미등록 ✅ 없음」이 나왔는데
+**실제로는 그 2건이 `d.category === undefined`로 떨어져 <u>여전히 제목 없는 섹션</u>이었다** —
+**사용자가 본 화면은 고쳐지지 않았고 나는 고쳤다고 보고했다.**
+`ai_datacenter_full_map`은 **08-18부터 5일간** 같은 상태였다.
+
+> **필드는 `category`·`file`·`type`(선택 `series`·`updated`)이며 `cat`·`url`·`badge`는 <u>렌더러가 읽지 않는다</u>.**
+> 진짜 검사는 **DATA를 실제로 `eval`해서 `d.category`를 꺼내는 것**이다 — 소스를 정규식으로 훑으면 필드명 오류가 안 잡힌다.
+> 고친 검사로 다시 세니 **미등록 카테고리가 3개 더 나왔다**(소비 · HBM 패키징 · 포트폴리오).
+
+**검사식 — 소스를 훑지 말고 <u>DATA를 실행</u>한다:**
 ```
-python3 -c "
-import re,io;s=io.open('index.html',encoding='utf8').read()
-cats=set(re.findall(r'cat:\s*"([^"]+)"',s))
-secs=set(re.findall(r\"\\n\\s+'([^']+)'\\s*:\\s*\\{\\s*\\n\\s+cssClass\",s))
-print('SECTIONS 미등록:', cats-secs or '✅')
-print('url 오용:', re.findall(r'url:\s*"[^"]+\.html"',s) or '✅')"
+node -e "
+const t=require('fs').readFileSync('index.html','utf8');
+eval('var D='+t.match(/var DATA = \[[\s\S]*?\n  \];/)[0].replace(/^var DATA = /,'').replace(/;\$/,''));
+const secs=(t.match(/\n\s+'([^']+)'\s*:\s*\{\s*\n\s+cssClass/g)||[]).map(x=>x.match(/'([^']+)'/)[1]);
+console.log('category 누락:', D.filter(d=>!d.category).map(d=>d.title));
+console.log('file 누락:', D.filter(d=>!d.file).map(d=>d.title));
+console.log('SECTIONS 미등록:', [...new Set(D.map(d=>d.category))].filter(c=>!secs.includes(c)));
+"
 ```
 
 **이것은 §I의 「sitemap 84/113」과 같은 형태다 — <u>지시는 있는데 검사가 없는 자리</u>.**
