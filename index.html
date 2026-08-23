@@ -176,7 +176,7 @@ input{font-family:inherit}
 .sec-label.energy{color:#22c55e}.sec-label.energy::before{background:#22c55e}
 .sec-label.quantum{color:#7c3aed}.sec-label.quantum::before{background:#7c3aed}
 .sec-label.cybersecurity{color:#f43f5e}.sec-label.cybersecurity::before{background:#f43f5e}
-  .sec-label.research{color:#f59e0b}.sec-label.hbm-pkg{color:#0ea5e9}.sec-label.hbm-pkg::before{background:#0ea5e9}.sec-label.portfolio{color:#10b981}.sec-label.portfolio::before{background:#10b981}.sec-label.consumer{color:#ec4899}.sec-label.consumer::before{background:#ec4899}.sec-label.research::before{background:#f59e0b}
+  .sec-label.research{color:#f59e0b}.sec-label.payments{color:#6366f1}.sec-label.payments::before{background:#6366f1}.sec-label.hbm-pkg{color:#0ea5e9}.sec-label.hbm-pkg::before{background:#0ea5e9}.sec-label.portfolio{color:#10b981}.sec-label.portfolio::before{background:#10b981}.sec-label.consumer{color:#ec4899}.sec-label.consumer::before{background:#ec4899}.sec-label.research::before{background:#f59e0b}
 .sec-label.digital-assets{color:#eab308}.sec-label.digital-assets::before{background:#eab308}
 .sec-label.k-beauty{color:#e8529a}.sec-label.k-beauty::before{background:#e8529a}
 .sec-label.market-review{color:#14b8a6}.sec-label.market-review::before{background:#14b8a6}
@@ -757,6 +757,11 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
 
   /* ═══════ CONFIG ═══════ */
   var SECTIONS = {
+    '결제': {
+      cssClass: 'payments', title: 'Payments',
+      desc: '결제 네트워크 — 사이클이 아닌 고마진 층. 성장 엔진과 규제 리스크를 함께 본다',
+      badgeMap: { '기업 분석': 'badge-company', '섹터': 'badge-theme' }
+    },
     'HBM 패키징': {
       cssClass: 'hbm-pkg', title: 'HBM & Packaging',
       desc: '메모리 사이클과 후공정 — 계약 구조·캐펙스·소부장까지 한 줄로 잇는다',
@@ -868,6 +873,22 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       updated: "2026-08-23", category: "리서치", type: "분기 리뷰",
       desc: "버핏·드러켄밀러·테퍼 등 8개 펀드의 Q1→Q2 변화를 주식 수로 분해. SpaceX 5:0 만장일치, 브로드컴·마이크론은 정면 충돌.",
       tags: ["13F","버핏","드러켄밀러","테퍼","애크먼","타이거글로벌","코투","Altimeter","SpaceX","Cerebras","브로드컴","마이크론","공백지도","SEC"]
+    },
+    {
+      title: "미국 방산 4사 — 「AI 밖」인데 가장 집중된 층",
+      file: "defense/us_defense_primes.html",
+      date: "2026-08-23",
+      category: "방산", type: "기업 분석",
+      desc: "록히드·노스롭·GD·RTX SEC 실측. 미 정부가 68~82%로 AI 칩(54%·45%)보다 집중돼 있다.",
+      tags: ["록히드마틴","노스롭그루먼","General Dynamics","RTX","미국 방산","수주잔고","THAAD","F-35","고객 집중도","SEC"]
+    },
+    {
+      title: "비자·마스터카드 — 사이클이 아닌데 마진이 높은 유일한 층",
+      file: "payments/us_payment_networks.html",
+      date: "2026-08-23",
+      category: "결제", type: "기업 분석",
+      desc: "OPM 64.4%/60.2%인데 성장은 +14%대로 완만. 마스터카드 성장의 41.2%가 부가서비스이고 비자는 인센티브가 매출보다 빨리 는다.",
+      tags: ["비자","Visa","마스터카드","Mastercard","결제 네트워크","부가서비스","고객 인센티브","크로스보더","규제","SEC"]
     },
     {
       title: "메모리 옆에 무엇을 둘 것인가 — 미국 6개 층 17개사 실측",
