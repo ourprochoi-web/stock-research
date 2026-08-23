@@ -120,7 +120,7 @@ b.hl{color:var(--red)}b.hb{color:var(--blue)}b.hg{color:var(--grn)}
   <div class="tw"><table>
   <tr><th>체결</th><th>종목</th><th>내용</th><th class="r">금액 구간</th><th>아카이브 대조</th></tr>
   <tr style="background:#f2fbf7"><td>2026-05-29</td><td><b>Intel</b></td><td>콜 200계약 · 행사가 $50 · 만기 <b>2027-03-19</b></td><td class="r">$1.0M~$5.0M</td><td><b class="hg">ⓐ 대조 — 13F에서 3곳 매수. 같은 방향</b></td></tr>
-  <tr style="background:#fffbf2"><td>2026-05-29</td><td><b>Uber</b></td><td>콜 200계약 · 행사가 $50 · 만기 <b>2027-03-19</b></td><td class="r">$0.5M~$1.0M</td><td><b class="ha">ⓑ 공백 지도 — 어제 「만들지 않음」으로 판정. <u>두 번째 신호</u></b></td></tr>
+  <tr style="background:#fffbf2"><td>2026-05-29</td><td><b>Uber</b></td><td>콜 200계약 · 행사가 $50 · 만기 <b>2027-03-19</b></td><td class="r">$0.5M~$1.0M</td><td><b class="ha">ⓑ 두 번째 신호 → <u>08-23 재판정 완료(아래)</u></b></td></tr>
   <tr><td>2025-12~2026-01</td><td>알파벳·아마존</td><td>콜 매수 + 현물 일부 매도·기부</td><td class="r">구간 다수</td><td class="g">기존 보유의 롤오버 성격</td></tr>
   </table></div>
   <div class="ok"><b>🔑 여기에만 있는 정보가 <u>행사가와 만기</u>다.</b>
@@ -134,6 +134,37 @@ b.hl{color:var(--red)}b.hb{color:var(--blue)}b.hg{color:var(--grn)}
   <b>⚠ 그리고 두 종목이 <u>행사가·만기가 동일</u>하다 — <u>개별 종목 뷰가 아니라 레버리지 방식일 수 있다</u> [추론].
   <u>반증</u>: 다음 PTR에서 종목마다 행사가·만기가 갈리면 개별 뷰가 맞다.</b><br>
   <b>⚠ 「따라 산다」로 쓰지 않는 것은 13F와 같다</b>(§J6).</div>
+
+  <h3 style="margin:20px 0 6px;font-size:1.02rem">③ 우버 재판정 — <b class="hl">보류를 유지하되 이유가 바뀐다</b></h3>
+  <p>어제 판정은 <b>「보류 — 자율주행 편에 Waymo 축은 있으나 <u>플랫폼이 자율주행을 어떻게 수익화하나</u>가 없다. 한 분기 더 본다」</b>였다.
+  <b>펠로시 콜이 두 번째 신호이므로 「한 분기」를 기다리지 않고 10-Q를 열었다</b>(§J9).</p>
+  <div class="warn"><b>🔴 그 과정에서 내가 한 번 틀렸다 — <u>컬럼 순서</u>다(§A5).</b>
+  대차대조표 줄만 보고 <b>「지분법 투자가 $37.7억 → $2.87억으로 92.4% 급감」</b>이라 읽었는데,
+  <b>주석 3의 헤더가 <i>"As of December 31, 2025 | June 30, 2026"</i></b>이라
+  <b>실제로는 $2.87억 → $37.7억으로 <u>13.1배 증가</u>다. 정확히 반대다.</b>
+  <b>원인도 명시돼 있다 — <u>Delivery Hero 추가 지분을 현금 $23억에 사서 지분율 24.99%</u>가 되며
+  시가평가에서 지분법으로 전환됐다(재분류 $25.17억).</b>
+  <b>🔑 즉 이번 분기에 우버가 크게 쓴 곳은 자율주행이 아니라 <u>음식 배달</u>이다.</b></div>
+  <div class="tw"><table>
+  <tr><th>투자 (공정가치, $M)</th><th class="r">2025-12-31</th><th class="r">2026-06-30</th><th class="r">변화</th></tr>
+  <tr><td>Didi — 비상장·승차공유</td><td class="r">3,011</td><td class="r">1,900</td><td class="r">−36.9%</td></tr>
+  <tr><td>Grab — 상장·승차공유</td><td class="r">2,674</td><td class="r">2,020</td><td class="r">−24.5%</td></tr>
+  <tr style="background:#f2fbf7"><td><b>Aurora — 상장·자율주행</b></td><td class="r">1,252</td><td class="r"><b>1,763</b></td><td class="r"><b>+40.8%</b></td></tr>
+  <tr><td>기타(비상장+상장)</td><td class="r">2,122</td><td class="r">3,076</td><td class="r">+45.0%</td></tr>
+  <tr><td><b>투자 합계</b></td><td class="r">9,178</td><td class="r">8,759</td><td class="r">−4.6%</td></tr>
+  </table></div>
+  <p><b>🔑 승차공유 지분은 줄고 <u>자율주행만 늘었다</u>. 그리고 <u>Aurora 클래스A의 담보 비율이 48% → 61%</u>로 올랐다</b>(2028 교환사채 담보).
+  <b>⚠ 다만 이 값들은 <u>공정가치라 변화 = 가격 + 거래</u>이고 이 표로는 못 가른다</b>(§A7-0).
+  <b>담보 비율 상승만은 가격이 아니라 <u>계약 변경</u>이므로 거래가 있었다는 신호다 [추론].</b></p>
+  <div class="amb" style="background:#fffbf2;border:1px solid #f0e0bd;border-radius:9px;padding:14px 16px;margin:12px 0;font-size:.9rem">
+  <b>🔑 판정 — <u>보류를 유지하되 이유를 바꾼다</u>.</b>
+  <b>어제는 「자료가 없다」였고 오늘은 <u>「자료가 있는데 그것이 수익화가 아니라 <b>투자 포지션</b>이다」</u>다.</b>
+  10-Q는 자율주행 <b>매출을 분리 공시하지 않고 위험요인에만 서술</b>하지만,
+  <b>「얼마를 걸었나」는 공시한다</b>(Aurora $17.63억 · 담보 61%).<br>
+  <b>즉 우버는 <u>자율주행을 사업으로 하는 회사가 아니라 그 옵션을 보유한 회사</u>로 읽어야 한다.</b>
+  <b>그러면 배치처는 자율주행 편이 아니라 <u>「플랫폼이 기술 전환에 어떻게 헤지하나」</u>라는 축인데, 그 축이 아카이브에 없다.</b>
+  <b>그래서 <u>지금 만들지 않고 버린 이유를 적는다</u>(§B4·§A6-1).
+  다시 열 조건: <u>우버가 AV 관련 매출·건수를 분리 공시하거나, Aurora 지분을 실제로 매매(담보 비율 외 변동)한 것이 확인될 때</u>.</b></div>
 </div>
 
 <div class="card">
