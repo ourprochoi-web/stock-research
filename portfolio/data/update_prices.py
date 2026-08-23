@@ -242,6 +242,10 @@ WATCH_US = {
     "Berkshire Hathaway B": "BRKb",
     # 2026-08-23 (3) — AI 바이오 T3(파이프라인 이벤트가 지표) 사례
     "Moderna": "MRNA.O",
+    # 2026-08-23 (4) — 방산 4사 비교 완성(록히드만 있었다)
+    "Northrop Grumman": "NOC",
+    "RTX Corp": "RTX",
+    "General Dynamics": "GD",
 }
 
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
