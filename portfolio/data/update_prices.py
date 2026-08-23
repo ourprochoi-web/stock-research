@@ -207,6 +207,24 @@ WATCH_US = {
     # 관측하려면 양쪽이 다 있어야 한다(§A7-0 — 한쪽만 보면 방향만 알고 크기를 모른다).
     "Broadcom": "AVGO.O",
     "Western Digital": "WDC.O",
+    # ── 2026-08-23 추가 (§J13 미국 배정 검토) ──
+    # 판단은 있는데 시세 추적 밖이던 14종목. 비교표를 만들려면 같은 창의
+    # 가격·실적이 있어야 하는데 오늘 만든 판단(Vistra·NRG·Hut8·Bitdeer·
+    # Cerebras·ST마이크로·X-Energy)이 전부 수집 밖이었고 메가캡 6개도 없었다.
+    "Cerebras": "CBRS.O",
+    "Alphabet": "GOOGL.O",
+    "Meta Platforms": "META.O",
+    "Amazon": "AMZN.O",
+    "TSMC ADR": "TSM",
+    "Oracle": "ORCL.K",
+    "Vistra": "VST",
+    "NRG Energy": "NRG",
+    "Hut 8": "HUT.O",
+    "Bitdeer": "BTDR.O",
+    "STMicroelectronics": "STM",
+    "Astera Labs": "ALAB.O",
+    "Tesla": "TSLA.O",
+    "X-Energy": "XE.O",
 }
 
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
