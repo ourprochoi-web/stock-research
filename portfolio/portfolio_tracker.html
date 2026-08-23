@@ -207,6 +207,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   <a href="#overview" class="active">개요</a>
   <a href="#holdings">보유 종목</a>
   <a href="#allocation">배분</a>
+  <a href="#fx-allocation">해외 배정</a>
   <a href="#lookthrough">룩스루</a>
   <a href="#etf-holdings">ETF 구성</a>
   <a href="#roadmap">로드맵</a>
@@ -298,6 +299,52 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   </section>
 
   <!-- ═══ LOOK-THROUGH ═══ -->
+  <section id="fx-allocation">
+    <div class="sec-head">
+      <h2>🆕 해외 배정 — 종목 + 환, 두 결정이다</h2>
+      <div class="sub">2026.08.23 신설 · CLAUDE.md §J13 — 환은 방향을 판정하지 않고 <b>크기만</b> 기록한다</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #b3261e">
+      <b style="color:#b3261e;font-size:1.02em">✅ 2026.08.23 — 「AI 우산 상한 25%」를 폐지했다 (사용자 결정)</b><br><br>
+      미국 주식 5억 배정을 검토하며 계산하니 <b>AI 안에 넣으면 18.53% → 42.34%로 상한을 17.34%p 초과</b>했다
+      (시가 기준 총자산 <b>21.01억</b>, 2026-08-21 종가).
+      그리고 <b>아카이브가 판단을 가진 미국 종목 43개가 거의 전부 AI 우산 안</b>이라
+      <b>아카이브를 근거로 고르면 자동으로 걸리는 구조</b>였다.
+      사용자 판단은 <b>"상한을 열자. 크게 신경쓰지 않아"</b>다.
+      <b>「단일 섹터 상한 신설 여부」도 함께 종결</b>된다 — 상위 상한이 없는데 하위 상한만 두는 것은 성립하지 않는다.<br><br>
+      <b>🔴 그래서 잃는 것을 적어 둔다.</b> 상한은 <b>「얼마나 더 담을 수 있나」에 답하던 유일한 축</b>이었다.
+      폐지하면 그 질문에 <b>아카이브가 답할 근거가 없어진다</b> —
+      앞으로 비중 질문에는 <b>분모와 현재 비중까지만 주고 판정은 하지 않는다</b>(§J6-1).
+      <b>⚠ 이것은 규칙의 실패가 아니라 용도 변경이다</b> — 상한은 <b>집행 규율</b>이었고 아카이브의 일은 <b>테제·반증 조건·채점표</b>다.
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <b style="font-size:1.02em">🔑 환 노출의 크기 — 종목을 고르기 전에 먼저 본다</b>
+      <div class="sub" style="margin:6px 0 12px">USD/KRW <b>1,388.00원</b> (2026-08-21 매매기준율) · 실측 720일</div>
+      <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9em">
+      <tr style="background:#f0f2f5"><th style="padding:6px 10px;text-align:left">환율 시나리오</th><th style="padding:6px 10px;text-align:right">USD/KRW</th><th style="padding:6px 10px;text-align:right">5억의 원화 평가</th><th style="padding:6px 10px;text-align:right">손익</th></tr>
+      <tr><td style="padding:5px 10px">3년 최저 재현</td><td style="padding:5px 10px;text-align:right">1,290</td><td style="padding:5px 10px;text-align:right">464,697,406</td><td style="padding:5px 10px;text-align:right;color:#b3261e">−35,302,594</td></tr>
+      <tr><td style="padding:5px 10px">−5%</td><td style="padding:5px 10px;text-align:right">1,319</td><td style="padding:5px 10px;text-align:right">475,000,000</td><td style="padding:5px 10px;text-align:right;color:#b3261e">−25,000,000</td></tr>
+      <tr style="background:#eef1f4"><td style="padding:5px 10px"><b>현재</b></td><td style="padding:5px 10px;text-align:right"><b>1,388</b></td><td style="padding:5px 10px;text-align:right"><b>500,000,000</b></td><td style="padding:5px 10px;text-align:right">—</td></tr>
+      <tr><td style="padding:5px 10px">+5%</td><td style="padding:5px 10px;text-align:right">1,457</td><td style="padding:5px 10px;text-align:right">525,000,000</td><td style="padding:5px 10px;text-align:right;color:#059669">+25,000,000</td></tr>
+      <tr><td style="padding:5px 10px">3년 최고 재현</td><td style="padding:5px 10px;text-align:right">1,560</td><td style="padding:5px 10px;text-align:right">561,779,539</td><td style="padding:5px 10px;text-align:right;color:#059669">+61,779,539</td></tr>
+      </table></div>
+      <div style="margin-top:12px">
+      <b>🔑 3년 실측 폭이 1,290~1,560으로 20.9%다.</b> 같은 폭이 재현되면 5억에서
+      <b>원화 손익이 −3,530만 ~ +6,178만 범위</b>로 움직인다 — <b>웬만한 종목 알파보다 크다</b>.<br><br>
+      <b>⚠ 그런데 창을 바꾸면 그림이 바뀐다(§A5)</b> —
+      <b>1M −6.37% · 3M −7.34%</b>로 원화가 빠르게 강해졌는데 <b>1Y는 −0.25%로 제자리</b>이고
+      <b>3년 중앙값(1,393)과는 −0.36% 차이</b>다. <b>「싸다/비싸다」로 판정할 근거가 없다</b>.<br><br>
+      <b>🔴 그래서 방향은 판정하지 않는다.</b> 금리차·경상수지·연준 경로 중 <b>아카이브에 판단이 하나도 없다</b>.
+      <b>§J8(수급)과 같은 처리다 — 테제에 넣지 않고 크기만 기록한다.</b><br>
+      <span style="color:#6b7280;font-size:.9em">수집: <code>api.stock.naver.com/marketindex/exchange/FX_USDKRW/prices</code>(무키, 720일).
+      <b>매매기준율(closePrice)과 현찰 살 때(cashBuyValue)는 다른 값이므로 섞지 않는다</b>(§A5).
+      <code>update_prices.py</code>에 <code>fetch_fx()</code>로 상시 수집에 넣었다.</span>
+      </div>
+    </div>
+  </section>
+
   <section id="lookthrough">
     <div class="sec-head">
       <h2>룩스루 익스포저</h2>

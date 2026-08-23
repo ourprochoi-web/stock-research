@@ -384,6 +384,61 @@ def fetch_flows(code):
     return out
 
 
+def fetch_fx():
+    """USD/KRW 종가 시계열 — 해외 배정의 환 노출을 재기 위한 축(CLAUDE.md §J13).
+
+    2026-08-23 추가. 그전까지 prices.json에 환율이 없어서 "미국 주식에
+    얼마를 넣을까"를 물었을 때 종목만 답하고 환은 답할 수 없었다.
+    5억 기준 3년 실측 폭(1,290~1,560)이 원화 손익 −3,530만~+6,178만이므로
+    웬만한 종목 알파보다 크다.
+
+    ⚠ closePrice(매매기준율)와 cashBuyValue(현찰 살 때)는 다른 값이다.
+    섞으면 §A5 위반이므로 둘 다 담되 이름을 구분해 둔다.
+    """
+    base = "https://api.stock.naver.com/marketindex/exchange/FX_USDKRW/prices"
+    hdr = {"User-Agent": "Mozilla/5.0", "Referer": "https://m.stock.naver.com/"}
+    rows = []
+    for page in range(1, 13):          # 60 × 12 ≈ 3년
+        try:
+            req = urllib.request.Request(f"{base}?page={page}&pageSize=60", headers=hdr)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                chunk = json.loads(resp.read())
+        except Exception as e:
+            print(f"  \u2717 FX page {page} — {e}")
+            break
+        if not chunk:
+            break
+        for x in chunk:
+            try:
+                rows.append((x["localTradedAt"][:10], float(x["closePrice"].replace(",", ""))))
+            except (KeyError, ValueError):
+                continue
+    if not rows:
+        return None
+    rows = sorted(set(rows))
+    cur_date, cur = rows[-1]
+
+    def back(n):
+        return rows[max(0, len(rows) - 1 - n)][1]
+
+    vals = [v for _, v in rows]
+    out = {
+        "pair": "USD/KRW",
+        "close": cur,
+        "asof": cur_date,
+        "days": len(rows),
+        "returns": {},
+        "range": {"min": min(vals), "max": max(vals),
+                  "median": sorted(vals)[len(vals) // 2]},
+    }
+    for label, n in (("1W", 5), ("1M", 22), ("3M", 66), ("6M", 132), ("1Y", 252)):
+        if len(rows) > n:
+            out["returns"][label] = round(cur / back(n) - 1, 4)
+    print(f"  \u2713 USD/KRW → {cur:,.2f}원 ({cur_date}, {len(rows)}일)  "
+          f"1M {out['returns'].get('1M', 0):+.2%} · 1Y {out['returns'].get('1Y', 0):+.2%}")
+    return out
+
+
 def fetch_us(sym):
     """해외 종목 — 국내와 엔드포인트가 다르다."""
     url = f"https://api.stock.naver.com/stock/{sym}/basic"
@@ -491,6 +546,9 @@ def main():
         fd = fetch_fundamentals(code)
         if fd:
             fundamentals[name] = fd
+
+    # 환율 — 해외 배정의 환 노출 축 (§J13)
+    fx = fetch_fx()
 
     # 해외 종목 — 배수 검증용 (가격 + 상장주식수로 시총까지 산출)
     us = {}
@@ -607,6 +665,8 @@ def main():
     result = {"updated": updated, "updatedTime": updated_time,
               "prices": prices, "fundamentals": fundamentals,
               "returns": returns, "flows": flows, "us": us}
+    if fx:
+        result["fx"] = fx    # §J13 — 해외 배정의 환 노출 축
     if stale:
         result["staleSections"] = stale  # 이 섹션들은 updated 날짜가 아니다
     if existing_holdings:
