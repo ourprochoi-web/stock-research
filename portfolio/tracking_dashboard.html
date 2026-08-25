@@ -207,37 +207,98 @@ function render(d){
   }
   H+=`</div></section>`;
 
-  /* ── 5. 전체 표 ─────────────────────────────────── */
-  H+=`<section><h2><span class="n">05</span>전체 추적 종목</h2>
-  <details><summary>국내 ${nKR}종목 펼치기 — 종가 · 추정PER · 창별 수익률 · 수급</summary>
-  <div class="tw" style="margin-top:10px;max-height:640px;overflow-y:auto"><table><thead><tr>
-  <th>종목</th><th class="num">종가</th><th class="num">시총</th><th class="num">추정PER</th>
-  <th class="num">1W</th><th class="num">1M</th><th class="num">3M</th><th class="num">1Y</th><th class="num">순매수/시총</th></tr></thead><tbody>`;
+  /* ── 5. 전체 표 (통합 · 정렬 · 검색) ──────────── */
+  const ALL=[];
   for(const n of Object.keys(kr)){
     const r=rt[n]||{}, f=fu[n]||{}, fw=fl[n]||{};
-    H+=`<tr><td>${n}</td><td class="num">${num(kr[n])}</td><td class="num mut" style="font-size:.76rem">${f['시총']||'—'}</td>
-    <td class="num mut">${f['추정PER']||'—'}</td>
-    ${['1W','1M','3M','1Y'].map(k=>`<td class="num ${cls(r[k])}">${F(r[k])}</td>`).join('')}
-    <td class="num ${cls(fw.netPctOfMcap)}">${F(fw.netPctOfMcap,2)}</td></tr>`;
+    const mc=(f['시총']||'').replace(/,/g,'');
+    let mcv=null; const mm=mc.match(/(?:(\d+(?:\.\d+)?)조)?\s*(\d+(?:\.\d+)?)?억?/);
+    if(mm) mcv=(parseFloat(mm[1]||0)*10000)+(parseFloat(mm[2]||0));
+    ALL.push({n, mk:'KR', px:kr[n], mcap:mcv||null, mcapTxt:f['시총']||'—',
+      val:f['추정PER']?f['추정PER']+'':'—', valNum:parseFloat(f['추정PER'])||null,
+      w:r['1W'],m:r['1M'],q:r['3M'],h:r['6M'],y:r['1Y'],ytd:r['YTD'],
+      flow:fw.netPctOfMcap!=null?fw.netPctOfMcap:null, tp:null, gap:null});
   }
-  H+=`</tbody></table></div></details>
-  <details><summary>해외 ${nUS}종목 펼치기 — 종가 · 시총 · OPM · 목표주가</summary>
-  <div class="tw" style="margin-top:10px;max-height:640px;overflow-y:auto"><table><thead><tr>
-  <th>종목</th><th>티커</th><th class="num">종가</th><th class="num">시총($B)</th><th class="num">OPM</th>
-  <th class="num">1M</th><th class="num">3M</th><th class="num">1Y</th><th class="num">목표주가</th><th class="num">괴리</th></tr></thead><tbody>`;
   for(const [n,v] of Object.entries(us)){
-    const r=rt[n]||{}, tp=v['목표주가'], gap=(tp&&v.price)?(tp/v.price-1)*100:null;
-    H+=`<tr><td>${n}</td><td class="mut" style="font-size:.76rem">${v.symbol||''}</td>
-    <td class="num">${num(v.price)}</td><td class="num mut">${v.mcapB!=null?F(v.mcapB,0,false):'—'}</td>
-    <td class="num mut">${v.OPM!=null?F(v.OPM,1,false)+'%':'—'}</td>
-    ${['1M','3M','1Y'].map(k=>`<td class="num ${cls(r[k])}">${F(r[k])}</td>`).join('')}
-    <td class="num mut">${tp?num(tp):'—'}</td><td class="num ${cls(gap)}">${F(gap)}${gap!=null?'%':''}</td></tr>`;
+    const r=rt[n]||{}, tp=v['목표주가'];
+    ALL.push({n, mk:'US', px:v.price, mcap:v.mcapB!=null?v.mcapB*1000:null,
+      mcapTxt:v.mcapB!=null?'$'+F(v.mcapB,0,false)+'B':'—',
+      val:v.OPM!=null?F(v.OPM,1,false)+'%':'—', valNum:v.OPM!=null?v.OPM:null,
+      w:r['1W'],m:r['1M'],q:r['3M'],h:r['6M'],y:r['1Y'],ytd:r['YTD'],
+      flow:null, tp:tp||null, gap:(tp&&v.price)?(tp/v.price-1)*100:null, sym:v.symbol});
   }
-  H+=`</tbody></table></div></details>
-  <div class="rule">⚠ 해외 <b>목표주가·투자의견</b>은 ③ 전문가 판단이며 <b>낡을 수 있다</b> — 괴리가 크게 마이너스면 목표가 미갱신을 의심한다(§A7).
-  <br>⚠ 국내 <b>추정PER</b>은 컨센서스 기반이다. 확정 실적과 다를 수 있으므로 인용 전 <code>isConsensus</code>를 확인한다(§A1-1).</div></section>`;
+  H+=`<section><h2><span class="n">05</span>전체 추적 종목 <span style="color:var(--ink3);font-weight:400;font-size:.8rem">${ALL.length}</span></h2>
+  <div class="sub">국내 ${nKR} + 해외 ${nUS}를 <b>한 표</b>로 합쳤다. <b>헤더를 누르면 정렬</b>되고 검색은 종목명·티커에 걸린다.
+  국내는 <b>추정PER</b>(컨센 기반 — §A1-1), 해외는 <b>OPM</b>이 「지표」 칸에 들어간다.
+  <b>서로 다른 값이므로 두 시장을 이 칸으로 비교하지 않는다(§A7-0).</b></div>
+  <div style="display:flex;gap:9px;flex-wrap:wrap;margin-bottom:11px;align-items:center">
+    <input id="q" placeholder="종목·티커 검색" style="flex:1;min-width:180px;background:var(--surf);border:1px solid var(--line);
+      border-radius:8px;padding:8px 12px;color:var(--ink);font-family:inherit;font-size:.85rem;outline:none">
+    <div id="mkf" style="display:flex;gap:5px">
+      ${['전체','국내','해외'].map((t,i)=>`<button data-mk="${['','KR','US'][i]}" class="mkb${i===0?' on':''}"
+        style="background:${i===0?'var(--acc)':'var(--surf)'};color:${i===0?'#0B0F1A':'var(--ink2)'};border:1px solid var(--line);
+        border-radius:7px;padding:7px 13px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit">${t}</button>`).join('')}
+    </div>
+    <span id="cnt" class="note"></span>
+  </div>
+  <div class="tw" style="max-height:none"><table id="tbl"><thead><tr>
+    ${[['n','종목',''],['mk','장',''],['px','종가','num'],['mcap','시총','num'],['valNum','지표','num'],
+       ['w','1W','num'],['m','1M','num'],['q','3M','num'],['h','6M','num'],['y','1Y','num'],['ytd','YTD','num'],
+       ['flow','수급','num'],['gap','TP괴리','num']]
+      .map(([k,l,c])=>`<th class="${c}" data-k="${k}" style="cursor:pointer;user-select:none">${l}<span class="ar" style="opacity:.35"></span></th>`).join('')}
+  </tr></thead><tbody id="tb"></tbody></table></div>
+  <div class="rule">⚠ 해외 <b>목표주가</b>는 ③ 전문가 판단이며 <b>낡을 수 있다</b> — 괴리가 크게 마이너스면 미갱신을 의심한다(§A7).
+  <br>⚠ 국내 <b>추정PER</b>은 컨센서스 기반이라 확정 실적과 다를 수 있다. 인용 전 <code>isConsensus</code>를 확인한다(§A1-1).
+  <br>⚠ 이 표에는 <b>「이 종목에 판단이 있는가」가 없다</b> — 그 정본은 <a href="../board/sector_map.html">섹터 지도</a>다.
+  <b>index DATA의 <code>tags</code>로 매칭을 시도했으나 <u>64%(87/135)</u>에 그쳤다</b>(소부장 7사 등이 전부 누락).
+  <b>매핑 파일을 새로 만들면 <code>research.json</code>(42편 등록 / 실제 112편)의 전철을 밟으므로 만들지 않는다(§H).</b></div>
+  </section>`;
 
   document.getElementById('root').innerHTML = H;
+
+  /* ── 정렬 · 검색 · 필터 ── */
+  let sortK='q', sortA=true, mkSel='', q='';
+  const tb=document.getElementById('tb');
+  function paint(){
+    let v=ALL.filter(x=>(!mkSel||x.mk===mkSel) &&
+      (!q || x.n.toLowerCase().includes(q) || (x.sym||'').toLowerCase().includes(q)));
+    v.sort((a,b)=>{
+      let A=a[sortK], B=b[sortK];
+      if(sortK==='n'||sortK==='mk') return sortA? String(A).localeCompare(String(B)) : String(B).localeCompare(String(A));
+      A=(A==null||isNaN(A))?(sortA?Infinity:-Infinity):A; B=(B==null||isNaN(B))?(sortA?Infinity:-Infinity):B;
+      return sortA? A-B : B-A;
+    });
+    tb.innerHTML = v.map(x=>`<tr>
+      <td><b>${x.n}</b>${x.sym?` <span class="mut" style="font-size:.72rem">${x.sym}</span>`:''}</td>
+      <td><span class="tag ${x.mk==='KR'?'t-warn':'t-ok'}">${x.mk}</span></td>
+      <td class="num">${num(x.px)}</td>
+      <td class="num mut" style="font-size:.76rem">${x.mcapTxt}</td>
+      <td class="num mut">${x.val}</td>
+      ${['w','m','q','h','y','ytd'].map(k=>`<td class="num ${cls(x[k])}">${F(x[k])}</td>`).join('')}
+      <td class="num ${cls(x.flow)}">${x.flow!=null?F(x.flow,2):'—'}</td>
+      <td class="num ${cls(x.gap)}">${x.gap!=null?F(x.gap,0):'—'}</td></tr>`).join('');
+    document.getElementById('cnt').textContent = v.length+' / '+ALL.length+'종목';
+    document.querySelectorAll('#tbl th').forEach(th=>{
+      const a=th.querySelector('.ar');
+      if(a) a.textContent = th.dataset.k===sortK ? (sortA?' ▲':' ▼') : '';
+    });
+  }
+  document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{
+    const k=th.dataset.k;
+    if(k===sortK) sortA=!sortA; else {sortK=k; sortA=(k==='n'||k==='mk');}
+    paint();
+  }));
+  document.getElementById('q').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();paint();});
+  document.querySelectorAll('.mkb').forEach(b=>b.addEventListener('click',()=>{
+    mkSel=b.dataset.mk;
+    document.querySelectorAll('.mkb').forEach(o=>{
+      const on=o===b;
+      o.style.background=on?'var(--acc)':'var(--surf)';
+      o.style.color=on?'#0B0F1A':'var(--ink2)';
+    });
+    paint();
+  }));
+  paint();
 }
 </script>
 </body>
