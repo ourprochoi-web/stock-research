@@ -295,7 +295,7 @@
   "headline": "GPU vs ASIC — AI 반도체 아키텍처 전쟁",
   "description": "NVIDIA $81.6B·Broadcom $56B·Google TPU v8·Amazon Trainium3·Meta MTIA — GPU vs 커스텀 ASIC 아키텍처 전쟁 심층 분석",
   "datePublished": "2026-06-28",
-  "dateModified": "2026-08-25",
+  "dateModified": "2026-08-26",
   "author": {
     "@type": "Person",
     "name": "ourprochoi"
@@ -331,7 +331,7 @@
 </nav>
 <div class="wrap">
 <div id="now" style="scroll-margin-top:70px;margin:22px 0 6px;padding:20px 22px;border-left:5px solid #b3261e;border-radius:10px;background:linear-gradient(120deg,rgba(179,38,30,.06),#fff);box-shadow:0 1px 3px rgba(0,0,0,.05)">
-  <div style="font-weight:900;color:#b3261e;margin-bottom:4px">▎현재 판단 · 2026.08.25</div>
+  <div style="font-weight:900;color:#b3261e;margin-bottom:4px">▎현재 판단 · 2026.08.26</div>
   <div style="font-size:.82em;color:#909aa6;margin-bottom:12px">본 편은 아키텍처를 나열해 왔으나 <b>판단이 0편</b>이었다.
   13F 2026 Q2 대조에서 <b>4개 펀드가 동시에 Cerebras를 신규 편입</b>한 것이 드러나 판단을 세운다(§J9).
   재무 기준일 <b>2026-06-30(SEC 10-Q)</b>.</div>
@@ -344,6 +344,31 @@
   <b>GPM 격차가 5.1배</b>다.
   <b>⚠ 단 Cerebras 14.4%는 <u>IPO 주식보상이 매출원가에 $15.4M 실린 값</u>이며, 되돌리면 23.0%로 격차는 <u>3.2배</u>다(T2).</b>
   <b>3.2배로 줄여도 결론은 같다 — 웨이퍼 스케일 프로세서와 커넥티비티 실리콘을 같은 「AI 칩」으로 세면 층을 틀린다.</b><br>
+  <b style="color:#b45309">🔴 [2026.08.26 — <u>하루 만에 <b>정반대 방향</b>이 왔다. T1의 「층」은 회사가 아니라 <b>수직 통합의 깊이</b>다</u>]</b>
+  <b>어제 「깨진 층을 GPU 진영이 사서 자기 랙에 넣었다」(Groq 3 LPX)고 적었는데,
+  <u>오늘 오픈AI가 <b>자체 추론칩 Jalapeño</b>의 첫 벤치마크를 공개</u>했다. <b>흡수가 아니라 <u>이탈</u>이다.</b></b><br>
+  &nbsp;&nbsp;<b>🔴 그런데 <u>같은 발표 안에서 배율이 70배 갈린다</u>(§A5) — 조건을 붙이지 않으면 인용이 곧 오류다.</b><br>
+  &nbsp;&nbsp;<b>· <u>「최대 처리량 기준 와트당 성능」</u> → GB200/GB300 대비 <b>1.5~1.9배</b> · 엔드투엔드 지연 <b>1.7~3.6배 낮음</b> · 사용자당 디코딩 <b>2.7·4.1·3.8배</b></b><br>
+  &nbsp;&nbsp;<b>· <u>「기존 GPU의 최고 디코딩 속도와 <b>동일한 TBT</b> 기준 mixed tokens/s/kW」</u> → GPT-OSS <b>53.7배</b> · DeepSeek R1 <b>104.3배</b> · Kimi K2.5 <b>56.1배</b></b><br>
+  &nbsp;&nbsp;<b>🔑 두 값의 비가 <u>35.8~54.9배</u>다. 뒤쪽은 <u>「저지연 인터랙티브」라는 특정 운영점</u>의 값이고 범용 성능이 아니다.
+  <b>본 편은 앞쪽(1.5~1.9배)만 값으로 쓰고, 뒤쪽은 <u>운영점을 붙여서만</u> 인용한다.</b></b><br>
+  &nbsp;&nbsp;<b>🔴 그리고 <u>비교 대상이 최신 칩이 아니다</u> — <b>「베라 루빈과는 비교 테스트가 이루어지지 않았다」</b>고 보도가 명시한다.
+  <b>GB200/GB300은 <u>이전 세대</u>이고, 본 편이 T1에서 다루는 경쟁 구도는 <u>VR200 이후</u>다. <u>세대를 맞추지 않은 비교는 층 판정에 쓸 수 없다</u>.</b></b><br>
+  &nbsp;&nbsp;<b>🔑 그래서 <u>T1의 「층」 정의를 다시 좁힌다</u>.</b>
+  <b>어제는 「회사가 아니라 랙 안의 역할」이라 했는데, 이틀 사이의 두 사건은 <u>같은 역할(추론 가속)</u>이 <b>NVIDIA 안(Groq LPX)</b>과 <b>NVIDIA 밖(Jalapeño)</b>에 동시에 생긴 것이다.</b>
+  <b>→ 층을 가르는 것은 역할도 회사도 아니라 <u><b>수직 통합의 깊이</b></u>다 — <u>모델·칩·랙을 한 주체가 설계하는가</u>.</b><br>
+  &nbsp;&nbsp;<b>· 오픈AI는 <u>칩·메모리·네트워크·소프트웨어·랙을 통합 설계</u>하고 <b>KV cache와 모델 상태를 로컬에 유지</b>해 데이터 이동을 줄였다고 밝힌다 — <u>Prefill과 Decode의 서로 다른 병목을 하나의 아키텍처에서</u> 처리한다는 주장이다.</b><br>
+  &nbsp;&nbsp;<b>· <u>설계~tapeout 9개월</u>이고 <b>Codex·GPT-Astra로 3개 오픈웨이트 모델을 2개월에 최적화</b>, <u>일부 연산 블록에서 AI 생성 코드가 인간 대비 1.5~1.8배</u>라 한다(③ — 회사 자기 진술, 검증 불가).</b><br>
+  &nbsp;&nbsp;<b>· <u>올해 말 자체 인프라 배포</u> · Gen 2 개발 중 · Gen 3 설계 · <b>NVIDIA 등 외부 가속기는 계속 병행</b>.
+  <b>🔑 마지막 항목이 중요하다 — <u>대체가 아니라 <b>병행</b></u>이라고 회사가 스스로 말한다.</b></b><br>
+  &nbsp;&nbsp;<b>📌 판정 조건 — <u>「Gen 1이 오픈AI 자체 추론 물량의 몇 %를 가져가는가」</u>.
+  <u>공개되지 않으면 판정 불가</u>이고, 그러면 대리 지표는 <b>오픈AI의 NVIDIA 발주 변화</b>다.
+  <b>⚠ 후자는 엔비디아 실적에서 고객 집중도로 간접 관측된다 — 오늘 밤 F2Q27이 첫 관측점이다.</b></b><br>
+  &nbsp;&nbsp;<b>⚠ <u>브로드컴 공동 개발</u>이라는 전언이 있는데 <u>원문에서 확인하지 못했다</u>(② 미확인).
+  <b>사실이면 본 아카이브의 <u>브로드컴 9/2 채점표(「구글 향 매출 비중이 줄었는가」)</u>에 <b>제3의 고객</b>이 붙는 것이므로 등급을 올려야 한다.</b></b><br>
+  &nbsp;&nbsp;<span style="opacity:.75"><b>⚠ 시도 기록(§G)</b> — <code>openai.com/index/jalapeno-first-results</code> 원문을 <b>WebFetch와 브라우저 UA curl 두 경로로 시도했으나 둘 다 HTTP 403</b>이었다.
+  <b><code>robots.txt</code>는 <u><code>User-agent: * / Allow: /</code></u>로 명시 허용</b>이므로 정책 거부가 아니라 <b>CDN 봇 필터</b>다.
+  <b>따라서 위 수치는 전부 <u>2차 전언</u>이며, 파운드리·공정 노드·브로드컴 참여는 <u>확인되지 않았다</u>.</b></span><br><br>
   <b style="color:#dc2626">🔵 [2026.08.25 — <u>T1의 다음 단계가 왔다: NVIDIA가 추론 전용 층을 자기 안으로 흡수했다</u>]</b>
   <b>2026-08-24 NVIDIA가 <u>Groq 3 LPX</u>를 「본격 양산(full production)」으로 발표했다. 「interactive AI inference accelerator」이며
   <u>Vera Rubin NVL72의 추론 성능을 확장</u>한다. 실측 지표는 <u>Gemma 4 31B·10만 토큰 컨텍스트에서 초당 3,400 출력 토큰</u>(기록)과
