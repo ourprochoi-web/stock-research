@@ -267,6 +267,27 @@ a{color:var(--deep)}
       <span class="new">NEW</span>GPU당 HBM은 <b>GB300 → VR200에서 288GB로 변동 없음</b>, VR-Ultra가 <b>256GB HBM4e</b>인데
       <b>HBM4e 가격은 70~100% 상승</b>. <b>Rubin Ultra가 12단(288GB) 대신 8단(192GB)을 검토</b>하는 사유가
       발열 + <b>HBM 수급 차질</b>이다 — <b>사양을 낮추는 것은 수요가 줄어서가 아니라 공급이 안 따라와서다</b>.
+      <br><br><b style="color:#dc2626">🔵 [2026.08.25 — <u>Hot Chips 2026에서 이 채점표의 <b>부품</b>이 확인됐고, 세 용량이 전부 <b>정수 스택</b>으로 떨어진다</u>]</b><br>
+      <b>삼성(한상욱)이 <u>HBM4E 16Gbps/pin 출하 준비</u>를 확인했다 — 5월 말부터 <u>14Gbps</u> 출하 중이고 HBM4 현행은 <u>11.7Gbps</u>다.
+      제품은 <u>12단 48GB</u>가 현재이고 <b>「향후 고객 요구사항에 <u>8단 32GB</u>와 <u>16단 64GB</u>도 포함될 예정」</b>이라 밝혔다.
+      SK하이닉스는 같은 자리에서 <u>HBM4 16단 인증 절차 진행 중</u>이라 밝혔고 <b>HBM3E 기준 16단 두께가 12단 대비 <u>+7.6%</u>에 그친다</b>고 했다.</b><br>
+      <b>🔑 이 부품 스펙을 채점표 용량에 나눠 보면 <u>셋 다 정수</u>다 —
+      <u>288GB = 12단 48GB × 6스택</u> · <u>192GB = 8단 32GB × 6스택</u> · <u>256GB = 16단 64GB × 4스택</u>.
+      우연이 아니라 <b>삼성이 말한 세 제품이 정확히 이 세 시나리오의 부품</b>이고,
+      <u>「8단 32GB를 준비한다」는 것은 192GB 안이 도면 위에 실재한다는 뜻</u>이다.</b><br>
+      <b>🔴 그래서 <u>메모리와 후공정이 보는 분모가 갈린다</u>(§A7-0):</b><br>
+      &nbsp;&nbsp;<b>· <u>DRAM 다이 수</u> — 288GB 72개 → 192GB <u>48개(−33.3%)</u> · 256GB <u>64개(−11.1%)</u></b><br>
+      &nbsp;&nbsp;<b>· <u>스택 수</u> — 288GB 6개 → 192GB <u>6개(변화 없음)</u> · 256GB <u>4개(−33.3%)</u></b><br>
+      <b>즉 <u>「192GB로 낮추면」 다이가 33% 줄고 스택은 그대로</u>이며, <u>「VR-Ultra 256GB」는 다이가 11%만 주는데 스택이 33% 준다</u>.
+      <u>본딩·패키징의 분모는 스택 수이고 DRAM 웨이퍼의 분모는 다이 수</u>이므로 <b>같은 사양 변경이 두 층에 정반대 크기로 걸린다</b>.
+      <u>「대당 HBM 소모량」을 하나의 숫자로 말하면 이 갈림이 사라진다.</u></b><br>
+      <b>⚠ 속도 향상도 같은 방향이다 — 스택당 대역폭이 <u>11.7Gbps 3.00 TB/s → 14Gbps 3.58 → 16Gbps 4.10 TB/s</u>이므로
+      <u>같은 총대역폭 목표라면 필요 스택이 14 → 16Gbps에서 12.5% 줄어든다</u>.
+      <b>삼성 16Gbps와 SK 16단은 성능 뉴스이면서 동시에 <u>대당 스택 수 축소</u> 뉴스다.</b></b><br>
+      <b>📌 판정: <u>8/26 NVIDIA F2Q27 콜에서 루빈 울트라의 <b>스택 구성(단수 × 스택 수)</b>이 언급되는가</u>.
+      <u>용량만 말하면 판정 불가이고 단수가 나와야 두 층의 분모가 갈린다.</u></b><br>
+      <span style="opacity:.72">A6 ① — Hot Chips 2026 Advance Program(삼성 한상욱) · SK하이닉스 발표. 대역폭은 <b>2,048핀 기준으로 직접 계산</b>했다(§A2).
+      <b>⚠ 「288/192/256」 자체는 본 아카이브가 이전에 기록한 값이며 NVIDIA 공식 확정이 아니다(② 등급).</b></span>
     </div></div>
     <div class="row"><div class="rk">NAND</div><div class="rv">
       <span class="new">NEW</span><b>3Q26 ASP +30~34% · 4Q +15%</b>이고 그 안에서 <b>eSSD +50%+ vs 컨슈머 +20%</b>로 갈린다.
@@ -483,7 +504,7 @@ a{color:var(--deep)}
 {"@context":"https://schema.org","@type":"Article",
 "headline":"데이터센터 종합 지도 — 아카이브가 아는 것 전부",
 "description":"AI 데이터센터를 9개 층으로 종합. 각 층의 정본 위치·핵심 수치·판정 조건과 비어 있는 곳을 함께 표시한다.",
-"datePublished":"2026-08-18","dateModified":"2026-08-23",
+"datePublished":"2026-08-18","dateModified":"2026-08-25",
 "author":{"@type":"Organization","name":"ourprochoi Research"},
 "publisher":{"@type":"Organization","name":"ourprochoi Research"},
 "mainEntityOfPage":"https://ourprochoi-web.github.io/stock-research/ai-infra/ai_datacenter_full_map.html"}
