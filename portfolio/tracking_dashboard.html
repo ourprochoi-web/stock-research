@@ -110,39 +110,72 @@ function render(d){
 
   let H='';
 
-  /* ── 1. §J8 수급 계기판 ─────────────────────────── */
+  /* ── 1. §J8 수급 계기판 (2026-08-25 개정 — 문턱 0.3% → 1.0%, 0.3%는 11월까지 병행) ── */
+  const TH_MAIN=1.0, TH_LEGACY=0.3;
   const rows=[]; let aligned=0, nodata=0;
   for(const [n,f] of Object.entries(fl)){
     const r = rt[n]||{}, p=f.netPctOfMcap, w=r['1W'], m=r['1M'];
     if(p==null||w==null||m==null){nodata++;continue;}
     const opp = (p>0&&w<0&&m<0)||(p<0&&w>0&&m>0);
     if(!opp){aligned++;continue;}
-    if(Math.abs(p)>=0.3) rows.push({n,p,w,m,t:r['3M'],near:false});
-    else if(Math.abs(p)>=0.2) rows.push({n,p,w,m,t:r['3M'],near:true});
+    if(Math.abs(p)>=TH_LEGACY) rows.push({n,p,w,m,t:r['3M'],main:Math.abs(p)>=TH_MAIN});
   }
   rows.sort((a,b)=>Math.abs(b.p)-Math.abs(a.p));
-  const hot = rows.filter(x=>!x.near), near = rows.filter(x=>x.near);
+  const hot = rows.filter(x=>x.main), legacy = rows.filter(x=>!x.main);
   const win = (Object.values(fl)[0]||{});
+  const absv = Object.values(fl).map(f=>f.netPctOfMcap).filter(x=>x!=null).map(Math.abs).sort((a,b)=>b-a);
+  const medv = absv.length ? (absv.length%2 ? absv[(absv.length-1)/2] : (absv[absv.length/2-1]+absv[absv.length/2])/2) : null;
+  const pctAbove = th => absv.length ? absv.filter(x=>x>=th).length/absv.length*100 : 0;
+
+  const trow = x => {
+    const dir = x.p>0 ? '외국인이 <b>사는데</b> 빠진다' : '외국인이 <b>파는데</b> 오른다';
+    return `<tr><td><b>${x.n}</b></td><td class="num ${cls(x.p)}">${F(x.p,2)}%</td>
+      <td class="num ${cls(x.w)}">${F(x.w)}%</td><td class="num ${cls(x.m)}">${F(x.m)}%</td>
+      <td class="num ${cls(x.t)}">${F(x.t)}%</td><td class="mut" style="font-size:.78rem">${dir}</td></tr>`;
+  };
+  const thead = `<thead><tr><th>종목</th><th class="num">순매수/시총</th><th class="num">1W</th><th class="num">1M</th><th class="num">3M</th><th>읽는 법</th></tr></thead>`;
 
   H += `<section><h2><span class="n">01</span>🔴 §J8 수급 계기판</h2>
-  <div class="sub">외국인 순매수 ÷ 시총(${win.days||10}거래일 · ${win.from||''}~${win.to||''})이 <b>±0.3%</b>를 넘으면서
+  <div class="sub">외국인 순매수 ÷ 시총(${win.days||10}거래일 · ${win.from||''}~${win.to||''})이 <b>±${TH_MAIN.toFixed(1)}%</b>를 넘으면서
   <b>1주·1개월 수익률이 <u>둘 다 반대</u></b>인 종목. <b>방향이 일치하면 적지 않는다 — 정보가 없기 때문이다.</b>
   <br>대상 ${Object.keys(fl).length-nodata}종목 · 방향 일치 <b>${aligned}</b>(제외) · 데이터 없음 ${nodata} · <b class="dn">문턱 통과 ${hot.length}건</b></div>`;
 
-  if(hot.length){
-    H+=`<div class="tw"><table><thead><tr><th>종목</th><th class="num">순매수/시총</th><th class="num">1W</th><th class="num">1M</th><th class="num">3M</th><th>읽는 법</th></tr></thead><tbody>`;
-    for(const x of hot){
-      const dir = x.p>0 ? '외국인이 <b>사는데</b> 빠진다' : '외국인이 <b>파는데</b> 오른다';
-      H+=`<tr><td><b>${x.n}</b></td><td class="num ${cls(x.p)}">${F(x.p,2)}%</td>
-      <td class="num ${cls(x.w)}">${F(x.w)}%</td><td class="num ${cls(x.m)}">${F(x.m)}%</td>
-      <td class="num ${cls(x.t)}">${F(x.t)}%</td><td class="mut" style="font-size:.78rem">${dir}</td></tr>`;
-    }
-    H+=`</tbody></table></div>`;
-  } else H+=`<div class="card mut">문턱을 넘은 종목이 없다.</div>`;
+  H += hot.length
+    ? `<div class="tw"><table>${thead}<tbody>${hot.map(trow).join('')}</tbody></table></div>`
+    : `<div class="card mut">문턱을 넘은 종목이 없다.</div>`;
 
-  if(near.length) H+=`<div class="note" style="margin-top:9px">⚠ 문턱 근접(0.2~0.3%) ${near.length}건 — ${near.map(x=>x.n+' '+F(x.p,2)+'%').join(' · ')}</div>`;
-  H+=`<div class="rule">폐기 조건 — 이 계기판이 잡은 건이 <b>3개월 안에 가격으로 수렴하지 않으면 규칙 자체를 폐기</b>한다(§J8·§E3).
-  <br>쓰지 않는 것: 외국인 <b>보유율 변화</b>(분모가 함께 움직인다 — §A7).</div></section>`;
+  H += `<div class="rule" style="margin-top:10px">🔴 <b>2026-08-25 개정 — 문턱을 <u>0.3% → 1.0%</u>로 올렸다(§J8-1).</b>
+  <b>제정 당시(08-12) 0.3%는 26종목 중 3건 = <u>상위 11.5%</u>였는데, 오늘은 ${absv.length}종목 중 ${absv.filter(x=>x>=TH_LEGACY).length}건 = <u>상위 ${pctAbove(TH_LEGACY).toFixed(0)}%</u>이고
+  중앙값이 <u>${F(medv,3,false)}%</u>다 — <b>문턱이 곧 중앙값이라 크기를 거르지 못했다</b>.</b>
+  <b>현재 1.0%는 상위 ${pctAbove(TH_MAIN).toFixed(1)}%다.</b>
+  <br><b>📌 「N건 중 M건」으로 정한 문턱은 표본이 바뀌면 재측정한다 — 문턱은 <u>비율</u>이지 상수가 아니다.</b></div>`;
+
+  /* 병행 추적 — 원래 폐기 조건이 살아있는 채로 판정되려면 0.3% batch도 봐야 한다 */
+  H += `<details style="margin-top:12px"><summary>📎 병행 추적 — 종전 문턱 0.3~1.0% 구간 ${legacy.length}건 <span class="mut">(2026-11-12 폐기 판정용)</span></summary>
+  <div class="note" style="margin:9px 0">문턱을 바꾸면 <b>표본이 달라져 폐기 조건 판정이 흔들린다</b>.
+  <b>원래 걸었던 조건이 살아있는 채로 판정되도록 0.3% batch를 11월까지 함께 추적한다.</b>
+  <b>「축이 유효한가」는 11월에 판정하고, 「문턱이 크기를 거르는가」는 이미 틀렸다 — 둘은 다른 질문이다.</b></div>`
+  + (legacy.length ? `<div class="tw"><table>${thead}<tbody>${legacy.map(trow).join('')}</tbody></table></div>` : `<div class="card mut">해당 없음</div>`)
+  + `</details>`;
+
+  /* 첫 batch 고정 추적 — 폐기 조건의 실제 대상 */
+  const B1=[{n:'대한전선',p0:-0.41,w0:2.8,m0:3.4},{n:'현대로템',p0:0.71,w0:-3.6,m0:-16.2},{n:'에이피알',p0:-0.42,w0:6.9,m0:0.5}];
+  const dleft=Math.round((new Date('2026-11-12')-new Date(d.updated))/864e5);
+  H += `<div style="margin-top:12px"><div class="kv" style="margin-bottom:7px">첫 batch(2026-08-12) 고정 추적 · 폐기 시한까지 D-${dleft}</div>
+  <div class="tw"><table><thead><tr><th>종목</th><th class="num">당시 순매수</th><th class="num">당시 1W</th><th class="num">현재 순매수</th><th class="num">1W</th><th class="num">3M</th><th>판정</th></tr></thead><tbody>`;
+  let conv=0;
+  for(const b of B1){
+    const r=rt[b.n]||{}, f=fl[b.n]||{}, p=f.netPctOfMcap, w=r['1W'];
+    let v='—', vc='mut';
+    if(p!=null&&w!=null){ const ok=(b.p0>0&&w>0)||(b.p0<0&&w<0); v=ok?'🟢 수렴':'🔴 미수렴'; vc=ok?'up':'dn'; if(ok)conv++; }
+    H+=`<tr><td><b>${b.n}</b></td><td class="num ${cls(b.p0)}">${F(b.p0,2)}%</td><td class="num ${cls(b.w0)}">${F(b.w0)}%</td>
+    <td class="num ${cls(p)}">${F(p,2)}%</td><td class="num ${cls(w)}">${F(w)}%</td><td class="num ${cls(r['3M'])}">${F(r['3M'])}%</td>
+    <td class="${vc}"><b>${v}</b></td></tr>`;
+  }
+  H+=`</tbody></table></div>
+  <div class="rule">폐기 조건 — 이 계기판이 잡은 건이 <b>3개월 안에 가격으로 수렴하지 않으면 규칙 자체를 폐기</b>한다(§J8·§E3).
+  <b>현재 ${conv}/3 수렴.</b> <b>⚠ 에이피알은 「미수렴」이 아니라 <u>반대</u>다 — 순매도인데 올랐고 지금은 순매수로 전환하며 더 오른다. <u>수급이 가격을 따라갔다</u>.</b>
+  <br>쓰지 않는 것: 외국인 <b>보유율 변화</b>(분모가 함께 움직인다 — §A7).</div></div></section>`;
 
   /* ── 2. §J13 환율·금리 ─────────────────────────── */
   const fx=d.fx||{}, ra=d.rates||{};
