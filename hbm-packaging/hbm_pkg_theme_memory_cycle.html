@@ -223,7 +223,7 @@
   "headline": "메모리 사이클 판정 — CXMT 위협과 가격 피크",
   "description": "2018 vs 현재 사이클 비교, HBM ASP 동향, CXMT HBM3E 진입(2027-28), 수급 시나리오 분석",
   "datePublished": "2026-06-22",
-  "dateModified": "2026-08-25",
+  "dateModified": "2026-08-26",
   "author": {
     "@type": "Person",
     "name": "ourprochoi"
@@ -299,7 +299,7 @@
   <div class="wrap">
     <div class="thesis reveal" style="border-left-color:var(--accent);background:linear-gradient(120deg,rgba(245,158,11,.08),var(--surface))">
       <div class="tg" style="color:var(--accent);display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-        <span>▎현재 판단 · 2026.08.25</span>
+        <span>▎현재 판단 · 2026.08.26</span>
         <span style="font-size:.72em;font-weight:500;color:var(--ink-3)">작성 2026.06.27 · 최종 갱신 2026.08.20</span>
         <a href="#corrections" style="font-size:.72em;color:#f87171;text-decoration:none">🔴 정정 3건</a>
         <a href="#recent" style="font-size:.72em;color:#60a5fa;text-decoration:none">🔵 최근 변경 5건</a>
@@ -650,6 +650,31 @@
       <div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;과거 사이클 비교 — 2018 vs 현재</div>
       <h2 class="sec-title">구조는 달라졌다. 그러나 면역은 아니다</h2>
       <p class="sec-lead">2017~2019 DRAM 사이클과 2024~2026 HBM 사이클은 수요 구조·가격 결정·공급 탄력성에서 결정적으로 다르다. 그러나 "이번엔 다르다"는 논리가 늘 맞았던 것은 아니다.<br><br>
+  <b style="color:#dc2626">🔴 [2026.08.26 — <u>디스펙 채점표의 <b>대수 항에 처음 숫자가 붙었고, 상쇄에 못 미친다</b></u>]</b><br>
+  <b>미즈호가 SemiAnalysis(더그 오러플린)와의 만찬 내용을 전했다(2026.08.25).</b>
+  <b>본 편은 2026.08.12에 <u>「대당 소모량 단독으로는 판정이 안 된다 → 대당 × 대수(총 비트)로 본다」</u>고 채점표를 교체해 뒀는데,
+  <u>대수 쪽에 값이 없었다</u>. 오늘 그 값이 왔다 — <b>「GPU당 DRAM 탑재량 감소가 GPU/ASIC 출하를 <u>20~30% 더</u> 늘릴 수 있다」</b>.</b><br>
+  &nbsp;&nbsp;<b>🔑 대입하면 <u>상쇄되지 않는다</u> — 288GB → 192GB는 <u>−33.3%</u>이고, 이를 상쇄하려면 대수가 <u>+50%</u> 늘어야 한다.
+  <b>+20%면 HBM 비트 −20.0% · +30%면 −13.3%</b>다.</b>
+  <b>⚠ 그리고 SemiAnalysis는 <u>「4~8단」</u>이라 했다 — <b>4단(96GB 가정)이면 −66.7%이고 대수 +30%로도 총 비트 −56.7%</b>다.</b><br>
+  &nbsp;&nbsp;<b>🔴 그런데 미즈호는 같은 숫자를 <u>반대로</u> 읽는다</b> — <b>「총 DRAM 비트 수요 증가」와 「GPU/ASIC 마진 개선」</b>이라 쓴다.
+  <b>모순이 아니라 <u>분모가 다르다</u>(§A7-0).</b><br>
+  &nbsp;&nbsp;<b>· 내 계산의 분모는 <u>HBM 비트</u>다 → <u>−13~20%</u></b><br>
+  &nbsp;&nbsp;<b>· 미즈호의 분모는 <u>총 DRAM 비트</u>다 → <b>놓인 HBM 캐파가 커머디티로 가면 본 편 T2의 교환비율(<u>3~5:1</u>)만큼 비트가 불어난다</b>
+  (대수 +20% 시 커머디티 <b>+60~100%p</b> 상당). <b>SemiAnalysis 자신이 「교환 비율 제약이 완화되면 플래너 DDR5/LPDDR5 공급이 증가」한다고 말한다.</b></b><br>
+  &nbsp;&nbsp;<b>🔑 <u>그래서 둘 다 참일 수 있고, 그렇다면 판정은 비트가 아니라 <b>금액</b>이 한다</u>.</b>
+  <b>본 편이 기록한 <u>HBM 계약가 GB당 $32(SK하이닉스→엔비디아)</u>가 커머디티의 x배일 때,
+  <u>교환비율과 가격비가 같으면 금액이 정확히 상쇄되고 가격비가 더 크면 금액은 줄어든다</u>.</b><br>
+  &nbsp;&nbsp;<b>📌 채점표를 셋으로 쪼갠다 — <u>① HBM 비트 ② 커머디티 비트 ③ 합산 금액</u>.
+  <b>「비트로 세면 늘고 금액으로 세면 줄 수 있다」</b>이고, <u>메모리 3사 실적을 판정하는 것은 ③</u>이다.</b><br>
+  &nbsp;&nbsp;<b>🟢 그리고 <u>「검토 중」이 처음 <b>실제 사례</b>로 바뀌었다</u> — <b>「GOOGL이 TPUv8의 HBM3e를 8단으로 축소했다」</b>(미즈호 공급망 점검).
+  <b>본 편의 디스펙 항목은 지금까지 전부 ②(검토·전언)였는데 <u>이것은 특정 제품·특정 단수의 실행 사례</u>다.</b>
+  <b>⚠ 단 TPUv8은 HBM3e이고 루빈 울트라는 HBM4e다 — <u>같은 칸에 넣지 않는다</u>(§A5).</b></b><br>
+  &nbsp;&nbsp;<b>⚠ 나머지는 등급이 낮다</b> — <b>「파인만 디스펙 50% 가능성」·「16/20단·하이브리드 본딩 불확실」은 ③</b>이고,
+  <b>미즈호는 이 때문에 <u>MU $1,375→$1,300 · SNDK $1,900→$1,875 · AMAT $650→$590 · LRCX $370→$365 · MKSI $360→$330</u>으로 목표가를 낮췄다</b>(전부 Outperform 유지).
+  <b>목표가는 ③이므로 값으로 쓰지 않고 <u>「같은 하우스가 목표가를 낮출 만큼은 봤다」</u>는 방향만 받는다.</b><br>
+  <span style="opacity:.75">A6 — ① GOOGL TPUv8 8단 축소(공급망 점검) · ② 4~8단 제한·교환비율 5:1 확장 · ③ 파인만 50%·목표가.
+  <b>본 편이 T2에 적어 둔 교환비율은 <u>3:1 → 4:1</u>이었고 오늘 <u>3~5:1</u>로 범위가 넓어졌다 — 둘 다 적는다(§A5).</b></span><br><br>
   <b style="color:#dc2626">🔵 [2026.08.25 — <u>골드만 CHIPS IV가 CXMT를 커버리지 개시했고, 본 편의 Bear 논거 하나를 <b>약화</b>시킨다</u>]</b><br>
   <b>본 편과 아카이브 4편이 <u>「CXMT HBM3 진입(2027~28)이 저가 시장을 잠식」</u>을 Bear 논거로 써 왔다.
   <u>골드만은 반대 방향을 제시한다</u> — <b>CXMT는 2028년에도 <u>중국 HBM 수요의 40%</u>만 커버하고,
