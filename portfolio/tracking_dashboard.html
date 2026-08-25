@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>추적 계기판 — ourprochoi Research</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{--bg:#080B14;--bg2:#0C1120;--surf:#121A2E;--surf2:#16203A;--line:#23304D;
+      --ink:#EAEFFA;--ink2:#9DA9C2;--ink3:#5E6B86;--acc:#F59E0B;--bull:#48D597;--bear:#FF6B6B;
+      --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard',-apple-system,sans-serif;
+     line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(160deg,var(--bg2),var(--bg));border-bottom:1px solid var(--line);padding:26px 0 22px;margin-bottom:26px}
+h1{font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc)}
+.meta{color:var(--ink2);font-size:.86rem;margin-top:8px;font-family:var(--mono)}
+.back{color:#a5b4fc;text-decoration:none;font-size:.82rem;font-weight:600}
+section{margin-top:34px}
+h2{font-size:1.06rem;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;
+   padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:6px}
+h2 .n{font-family:var(--mono);font-size:.72rem;color:var(--acc);letter-spacing:.1em}
+.sub{color:var(--ink2);font-size:.82rem;margin:8px 0 14px;line-height:1.6}
+.sub b{color:var(--ink)}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.kv{font-family:var(--mono);font-size:.8rem;color:var(--ink2);letter-spacing:.06em;text-transform:uppercase}
+.big{font-family:var(--mono);font-size:1.62rem;font-weight:700;letter-spacing:-.02em;margin:5px 0 3px;font-variant-numeric:tabular-nums}
+.note{color:var(--ink3);font-size:.75rem;line-height:1.5}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surf)}
+th{background:var(--surf2);color:var(--ink2);font-weight:600;text-align:left;padding:9px 11px;
+   font-size:.74rem;letter-spacing:.05em;white-space:nowrap;position:sticky;top:0}
+td{padding:8px 11px;border-top:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+td.num,th.num{text-align:right;font-family:var(--mono)}
+tbody tr:hover{background:rgba(255,255,255,.03)}
+.up{color:var(--bull)}.dn{color:var(--bear)}.mut{color:var(--ink3)}
+.tag{display:inline-block;padding:2px 7px;border-radius:5px;font-size:.7rem;font-weight:700;font-family:var(--mono)}
+.t-hot{background:rgba(255,107,107,.15);color:var(--bear)}
+.t-warn{background:rgba(245,158,11,.15);color:var(--acc)}
+.t-ok{background:rgba(72,213,151,.13);color:var(--bull)}
+details{margin-top:12px}
+summary{cursor:pointer;color:var(--ink2);font-size:.85rem;padding:9px 12px;background:var(--surf);
+        border:1px solid var(--line);border-radius:9px;user-select:none}
+summary:hover{color:var(--ink)}
+.rule{color:var(--ink3);font-size:.74rem;font-family:var(--mono);margin-top:8px;line-height:1.6}
+a{color:#a5b4fc}
+.err{background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.35);border-radius:10px;padding:14px 16px;color:var(--bear);font-size:.86rem}
+@media(max-width:640px){.big{font-size:1.32rem}h1{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<div style="background:#0C1120;border-bottom:1px solid #23304D;padding:9px 0;font-family:'Pretendard',sans-serif;font-size:.78rem">
+<div style="max-width:1180px;margin:0 auto;padding:0 20px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+<span style="color:#5E6B86;font-family:ui-monospace,monospace;letter-spacing:.08em">운영 화면</span>
+<a href="../portfolio/portfolio_tracker.html" style="color:#a5b4fc;text-decoration:none">포지션</a>
+<a href="../portfolio/tracking_dashboard.html" style="color:#F59E0B;text-decoration:none">추적 계기판</a>
+<a href="../board/judgment_board.html" style="color:#a5b4fc;text-decoration:none">판정 대기판</a>
+<a href="../board/sector_map.html" style="color:#a5b4fc;text-decoration:none">섹터 지도</a>
+<span style="color:#5E6B86;margin-left:auto">홈에서 <b style="color:#9DA9C2">Shift+T/D/J/M</b></span>
+</div></div>
+
+
+<header><div class="wrap">
+  <a href="../" class="back">← 아카이브 홈</a>
+  <h1 style="margin-top:9px"><span class="dot"></span>추적 계기판</h1>
+  <div class="meta" id="meta">불러오는 중…</div>
+  <div class="note" style="margin-top:9px">
+    이 화면은 <b>새 데이터를 만들지 않는다</b> — <code>data/prices.json</code> 하나만 읽어 <b>§J3의 「먼저 말해야 하는 것」</b>을 위로 올린다(§H).
+    수치의 정본은 각 리서치 페이지이고 여기서는 <b>계산만</b> 한다.
+  </div>
+</div></header>
+
+<div class="wrap" id="root"><div class="card">불러오는 중…</div></div>
+
+<script>
+const F = (v,d=1,s=true)=> v==null||isNaN(v) ? '—' : (s&&v>0?'+':'')+Number(v).toFixed(d);
+const cls = v => v==null||isNaN(v) ? 'mut' : v>0?'up':v<0?'dn':'mut';
+const num = n => n==null||isNaN(n) ? '—' : Number(n).toLocaleString();
+
+// 판정 이벤트 — 정본은 board/judgment_board.html. 여기는 참조 한 줄(§B5).
+const EVENTS = [
+  {d:'2026-08-26', t:'NVIDIA F2Q27', w:'루빈 울트라 <b>스택 구성(단수 × 스택 수)</b>이 언급되는가 — 용량만 말하면 판정 불가'},
+  {d:'2026-08-27', t:'SK하이닉스 인디애나 착공 · 삼성SDI 대금', w:'SDC 지분 5% 양도 예정일'},
+  {d:'2026-09-02', t:'브로드컴 실적', w:'구글 향 매출 비중이 줄었는가(마벨/브로드컴 채점표)'},
+  {d:'2026-10-31', t:'3Q26 실적 시즌', w:'Cerebras SBC 제외 GPM · ST GM 37.0% · 소부장 3사 ΔOPM 부호 · 로보티즈 2Q 흑자 유지'},
+  {d:'2026-11-15', t:'3Q26 13F', w:'§J12 공백 지도 재측정 — 새 공백이 안 나오면 이 축은 §E3대로 폐기'}
+];
+
+fetch('data/prices.json').then(r=>r.json()).then(render).catch(e=>{
+  document.getElementById('root').innerHTML =
+    '<div class="err"><b>prices.json 을 읽지 못했다.</b><br>'+e+
+    '<br><span class="note">로컬 파일로 열면 브라우저가 fetch 를 막는다 — <code>python3 -m http.server</code> 로 띄우거나 배포본에서 본다.</span></div>';
+});
+
+function render(d){
+  const kr = d.prices||{}, us = d.us||{}, fl = d.flows||{}, rt = d.returns||{}, fu = d.fundamentals||{};
+  const nKR = Object.keys(kr).length, nUS = Object.keys(us).length;
+  const today = new Date().toISOString().slice(0,10);
+  const stale = d.updated && d.updated < today;
+
+  document.getElementById('meta').innerHTML =
+    `기준 <b>${d.updated||'?'}</b> ${d.updatedTime||''} · 국내 ${nKR} · 해외 ${nUS} · 합계 <b>${nKR+nUS}</b>종목`
+    + (stale?` · <span class="dn">D+${Math.round((new Date(today)-new Date(d.updated))/864e5)}</span>`:'');
+
+  let H='';
+
+  /* ── 1. §J8 수급 계기판 ─────────────────────────── */
+  const rows=[]; let aligned=0, nodata=0;
+  for(const [n,f] of Object.entries(fl)){
+    const r = rt[n]||{}, p=f.netPctOfMcap, w=r['1W'], m=r['1M'];
+    if(p==null||w==null||m==null){nodata++;continue;}
+    const opp = (p>0&&w<0&&m<0)||(p<0&&w>0&&m>0);
+    if(!opp){aligned++;continue;}
+    if(Math.abs(p)>=0.3) rows.push({n,p,w,m,t:r['3M'],near:false});
+    else if(Math.abs(p)>=0.2) rows.push({n,p,w,m,t:r['3M'],near:true});
+  }
+  rows.sort((a,b)=>Math.abs(b.p)-Math.abs(a.p));
+  const hot = rows.filter(x=>!x.near), near = rows.filter(x=>x.near);
+  const win = (Object.values(fl)[0]||{});
+
+  H += `<section><h2><span class="n">01</span>🔴 §J8 수급 계기판</h2>
+  <div class="sub">외국인 순매수 ÷ 시총(${win.days||10}거래일 · ${win.from||''}~${win.to||''})이 <b>±0.3%</b>를 넘으면서
+  <b>1주·1개월 수익률이 <u>둘 다 반대</u></b>인 종목. <b>방향이 일치하면 적지 않는다 — 정보가 없기 때문이다.</b>
+  <br>대상 ${Object.keys(fl).length-nodata}종목 · 방향 일치 <b>${aligned}</b>(제외) · 데이터 없음 ${nodata} · <b class="dn">문턱 통과 ${hot.length}건</b></div>`;
+
+  if(hot.length){
+    H+=`<div class="tw"><table><thead><tr><th>종목</th><th class="num">순매수/시총</th><th class="num">1W</th><th class="num">1M</th><th class="num">3M</th><th>읽는 법</th></tr></thead><tbody>`;
+    for(const x of hot){
+      const dir = x.p>0 ? '외국인이 <b>사는데</b> 빠진다' : '외국인이 <b>파는데</b> 오른다';
+      H+=`<tr><td><b>${x.n}</b></td><td class="num ${cls(x.p)}">${F(x.p,2)}%</td>
+      <td class="num ${cls(x.w)}">${F(x.w)}%</td><td class="num ${cls(x.m)}">${F(x.m)}%</td>
+      <td class="num ${cls(x.t)}">${F(x.t)}%</td><td class="mut" style="font-size:.78rem">${dir}</td></tr>`;
+    }
+    H+=`</tbody></table></div>`;
+  } else H+=`<div class="card mut">문턱을 넘은 종목이 없다.</div>`;
+
+  if(near.length) H+=`<div class="note" style="margin-top:9px">⚠ 문턱 근접(0.2~0.3%) ${near.length}건 — ${near.map(x=>x.n+' '+F(x.p,2)+'%').join(' · ')}</div>`;
+  H+=`<div class="rule">폐기 조건 — 이 계기판이 잡은 건이 <b>3개월 안에 가격으로 수렴하지 않으면 규칙 자체를 폐기</b>한다(§J8·§E3).
+  <br>쓰지 않는 것: 외국인 <b>보유율 변화</b>(분모가 함께 움직인다 — §A7).</div></section>`;
+
+  /* ── 2. §J13 환율·금리 ─────────────────────────── */
+  const fx=d.fx||{}, ra=d.rates||{};
+  H+=`<section><h2><span class="n">02</span>💱 §J13 환율 · 금리</h2>
+  <div class="sub"><b>방향은 판정하지 않는다.</b> 쓰는 것은 셋뿐 — ① 레벨과 기준일 ② <b>여러 창의 변화</b>(창을 바꾸면 그림이 정반대다) ③ 크기·스프레드.</div>
+  <div class="grid g2">`;
+  if(fx.close!=null){
+    const r=fx.returns||{}, rg=fx.range||{};
+    H+=`<div class="card"><div class="kv">${fx.pair||'USD/KRW'} · ${fx.asof||''}</div>
+    <div class="big">${num(fx.close)}</div>
+    <div class="note">${['1W','1M','3M','6M','1Y'].map(k=>`${k} <b class="${cls(r[k])}">${F(r[k]*100,2)}%</b>`).join(' · ')}</div>
+    <div class="note" style="margin-top:7px">${fx.days||0}일 실측 폭 ${num(rg.min)} ~ ${num(rg.max)} · 중앙값 ${num(rg.median)}
+    ${rg.median?`(현재가 중앙값 대비 <b class="${cls(fx.close/rg.median-1)}">${F((fx.close/rg.median-1)*100,2)}%</b>)`:''}</div>
+    <div class="note" style="margin-top:7px">⚠ 5억 배정 시 폭 재현 가정 원화 손익 범위:
+    <b>${rg.min&&rg.max?F((5e8/fx.close*rg.min-5e8)/1e4,0,false)+'만 ~ '+F((5e8/fx.close*rg.max-5e8)/1e4,0)+'만원':'—'}</b></div></div>`;
+  }
+  if(ra.levels){
+    const L=ra.levels, C=ra.changes||{};
+    const lab={DGS10:'미 10년물',DGS2:'미 2년물',MORTGAGE30US:'30년 모기지',DFF:'연방기금'};
+    H+=`<div class="card"><div class="kv">FRED · ${ra.asof||''}</div><table style="margin-top:8px"><tbody>`;
+    for(const k of Object.keys(L)){
+      const c=C[k]||{};
+      H+=`<tr><td>${lab[k]||k}</td><td class="num"><b>${F(L[k],2,false)}%</b></td>
+      <td class="num ${cls(c['1M'])}" style="font-size:.76rem">1M ${F(c['1M'],2)}</td>
+      <td class="num ${cls(c['3M'])}" style="font-size:.76rem">3M ${F(c['3M'],2)}</td>
+      <td class="num ${cls(c['1Y'])}" style="font-size:.76rem">1Y ${F(c['1Y'],2)}</td></tr>`;
+    }
+    H+=`</tbody></table>
+    <div class="note" style="margin-top:9px">⚠ 모기지는 <b>주간(목)</b>, 국채·연방기금은 <b>일간</b>이라 창을 <b>인덱스가 아니라 날짜</b>로 잡는다(§J13-1).</div>`;
+    if(L.MORTGAGE30US&&L.DGS10) H+=`<div class="note" style="margin-top:6px">모기지 − 10년물 스프레드 <b>${F(L.MORTGAGE30US-L.DGS10,2,false)}%p</b></div>`;
+    H+=`</div>`;
+  }
+  H+=`</div></section>`;
+
+  /* ── 3. 임박 판정 이벤트 ────────────────────────── */
+  H+=`<section><h2><span class="n">03</span>📌 임박한 판정 이벤트</h2>
+  <div class="sub">정본은 <a href="../board/judgment_board.html">판정 대기판</a>이고 여기는 <b>가까운 것만</b> 띄운다(§B5).</div>
+  <div class="tw"><table><thead><tr><th class="num">D-</th><th>날짜</th><th>이벤트</th><th>무엇을 판정하나</th></tr></thead><tbody>`;
+  for(const e of EVENTS){
+    const dd=Math.round((new Date(e.d)-new Date(today))/864e5);
+    const tg = dd<0?'t-ok':dd<=2?'t-hot':dd<=14?'t-warn':'';
+    H+=`<tr><td class="num"><span class="tag ${tg}">${dd<0?'지남':'D-'+dd}</span></td>
+    <td class="mut">${e.d}</td><td><b>${e.t}</b></td><td class="mut" style="white-space:normal;font-size:.8rem">${e.w}</td></tr>`;
+  }
+  H+=`</tbody></table></div></section>`;
+
+  /* ── 4. 창별 수익률 극단 ────────────────────────── */
+  const all=Object.entries(rt).filter(([n,r])=>r&&r['3M']!=null).map(([n,r])=>({n,...r}));
+  all.sort((a,b)=>a['3M']-b['3M']);
+  const med = a => {const s=a.slice().sort((x,y)=>x-y);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;};
+  const m3=med(all.map(x=>x['3M'])), m1y=med(all.filter(x=>x['1Y']!=null).map(x=>x['1Y']));
+  H+=`<section><h2><span class="n">04</span>📊 창별 수익률 극단</h2>
+  <div class="sub">추적 <b>${all.length}</b>종목 · 3M 중앙값 <b class="${cls(m3)}">${F(m3)}%</b> · 1Y 중앙값 <b class="${cls(m1y)}">${F(m1y)}%</b>.
+  <b>창을 바꾸면 그림이 바뀌므로 하나만 쓰지 않는다(§A5).</b></div>
+  <div class="grid g2">`;
+  for(const [tit,arr] of [['🔻 3개월 하위 12',all.slice(0,12)],['🔺 3개월 상위 12',all.slice(-12).reverse()]]){
+    H+=`<div class="tw"><table><thead><tr><th>${tit}</th><th class="num">1W</th><th class="num">1M</th><th class="num">3M</th><th class="num">1Y</th></tr></thead><tbody>`;
+    for(const x of arr) H+=`<tr><td>${x.n}</td><td class="num ${cls(x['1W'])}">${F(x['1W'])}</td>
+    <td class="num ${cls(x['1M'])}">${F(x['1M'])}</td><td class="num ${cls(x['3M'])}"><b>${F(x['3M'])}</b></td>
+    <td class="num ${cls(x['1Y'])}">${F(x['1Y'])}</td></tr>`;
+    H+=`</tbody></table></div>`;
+  }
+  H+=`</div></section>`;
+
+  /* ── 5. 전체 표 ─────────────────────────────────── */
+  H+=`<section><h2><span class="n">05</span>전체 추적 종목</h2>
+  <details><summary>국내 ${nKR}종목 펼치기 — 종가 · 추정PER · 창별 수익률 · 수급</summary>
+  <div class="tw" style="margin-top:10px;max-height:640px;overflow-y:auto"><table><thead><tr>
+  <th>종목</th><th class="num">종가</th><th class="num">시총</th><th class="num">추정PER</th>
+  <th class="num">1W</th><th class="num">1M</th><th class="num">3M</th><th class="num">1Y</th><th class="num">순매수/시총</th></tr></thead><tbody>`;
+  for(const n of Object.keys(kr)){
+    const r=rt[n]||{}, f=fu[n]||{}, fw=fl[n]||{};
+    H+=`<tr><td>${n}</td><td class="num">${num(kr[n])}</td><td class="num mut" style="font-size:.76rem">${f['시총']||'—'}</td>
+    <td class="num mut">${f['추정PER']||'—'}</td>
+    ${['1W','1M','3M','1Y'].map(k=>`<td class="num ${cls(r[k])}">${F(r[k])}</td>`).join('')}
+    <td class="num ${cls(fw.netPctOfMcap)}">${F(fw.netPctOfMcap,2)}</td></tr>`;
+  }
+  H+=`</tbody></table></div></details>
+  <details><summary>해외 ${nUS}종목 펼치기 — 종가 · 시총 · OPM · 목표주가</summary>
+  <div class="tw" style="margin-top:10px;max-height:640px;overflow-y:auto"><table><thead><tr>
+  <th>종목</th><th>티커</th><th class="num">종가</th><th class="num">시총($B)</th><th class="num">OPM</th>
+  <th class="num">1M</th><th class="num">3M</th><th class="num">1Y</th><th class="num">목표주가</th><th class="num">괴리</th></tr></thead><tbody>`;
+  for(const [n,v] of Object.entries(us)){
+    const r=rt[n]||{}, tp=v['목표주가'], gap=(tp&&v.price)?(tp/v.price-1)*100:null;
+    H+=`<tr><td>${n}</td><td class="mut" style="font-size:.76rem">${v.symbol||''}</td>
+    <td class="num">${num(v.price)}</td><td class="num mut">${v.mcapB!=null?F(v.mcapB,0,false):'—'}</td>
+    <td class="num mut">${v.OPM!=null?F(v.OPM,1,false)+'%':'—'}</td>
+    ${['1M','3M','1Y'].map(k=>`<td class="num ${cls(r[k])}">${F(r[k])}</td>`).join('')}
+    <td class="num mut">${tp?num(tp):'—'}</td><td class="num ${cls(gap)}">${F(gap)}${gap!=null?'%':''}</td></tr>`;
+  }
+  H+=`</tbody></table></div></details>
+  <div class="rule">⚠ 해외 <b>목표주가·투자의견</b>은 ③ 전문가 판단이며 <b>낡을 수 있다</b> — 괴리가 크게 마이너스면 목표가 미갱신을 의심한다(§A7).
+  <br>⚠ 국내 <b>추정PER</b>은 컨센서스 기반이다. 확정 실적과 다를 수 있으므로 인용 전 <code>isConsensus</code>를 확인한다(§A1-1).</div></section>`;
+
+  document.getElementById('root').innerHTML = H;
+}
+</script>
+</body>
+</html>

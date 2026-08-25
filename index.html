@@ -2176,9 +2176,18 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
   document.addEventListener('keydown', function(e){
     var tag = (document.activeElement || {}).tagName;
     if(tag === 'INPUT' || tag === 'TEXTAREA') return;
-    if(e.shiftKey && e.code === 'KeyT'){
+    /* 운영 화면 — 읽히려고 만든 글이 아니라 내가 보는 화면이다(§H·SITEMAP_EXEMPT 기준).
+       진입 경로가 하나뿐이면 나머지는 죽는다 — 2026.08.25에 대기판·섹터지도가
+       실제로 링크 0개였던 것을 발견하고 넷으로 늘렸다. */
+    var OPS = {
+      KeyT: 'portfolio/portfolio_tracker.html',   /* 포지션 */
+      KeyD: 'portfolio/tracking_dashboard.html',  /* 추적 계기판 */
+      KeyJ: 'board/judgment_board.html',          /* 판정 대기판 */
+      KeyM: 'board/sector_map.html'               /* 섹터 지도 */
+    };
+    if(e.shiftKey && OPS[e.code]){
       e.preventDefault();
-      window.location.href = 'portfolio/portfolio_tracker.html';
+      window.location.href = OPS[e.code];
     }
   });
 })();

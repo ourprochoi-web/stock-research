@@ -42,6 +42,11 @@ SITEMAP_EXEMPT = {
     # (섹터 지도 board/sector_map.html 은 반대다 — 읽히려고 만든 입구이므로
     #  sitemap 에 등재한다.)
     "board/judgment_board.html",
+    # 2026-08-25 추가. 같은 기준을 통과한다 — "읽는 사람이 아니라 내가 보는 화면인가".
+    # 추적 계기판은 data/prices.json 하나만 읽어 §J8 수급 문턱·§J13 환율금리·
+    # 임박 판정 이벤트·창별 극단을 계산해 띄우는 운영 화면이다. 새 데이터를
+    # 만들지 않고 이미 수집 중인 것을 렌더링만 한다(§H).
+    "portfolio/tracking_dashboard.html",
 }
 
 

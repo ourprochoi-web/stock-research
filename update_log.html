@@ -254,6 +254,57 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">📟 2026.08.25 (12) — <b>추적 계기판 신설</b> · 그런데 <u>운영 화면 2개는 진입 경로가 0개였다</u></div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag">포트폴리오</span> 📟 <b>수집 135종목 중 74%가 어떤 화면에도 없었다</b></div>
+    <div class="upd-body">
+      <b>「추적 종목이 너무 많지 않나」는 질문에서 출발해 세어 보니, 많은 게 문제가 아니었다.</b><br>
+      <b>수집 135종목(국내 65 · 해외 70) 중 <u>화면에 이름이 있는 것은 35종목</u></b>이고 <b>나머지 100종목(74%)은 아무 데도 없었다</b>.
+      <b>데이터 키 8개 중 <u>4개는 읽는 화면이 0개</u></b>였다 — <code>fundamentals</code> · <code>returns</code> · <code>flows</code> · <code>fx</code> · <code>rates</code>.<br><br>
+      <b>🔴 특히 아픈 게 둘이다.</b>
+      <b>§J8 수급 계기판</b>은 <u>「3개월 안에 수렴 안 하면 규칙 자체를 폐기」</u>라는 판정 조건까지 걸어 뒀는데 <b>볼 화면이 없어 손으로 세고 있었다</b>(08-12 4건 · 08-19 9건).
+      <b>§J13 환율·금리</b>도 08-23에 축을 세우고 <b>수집만</b> 하고 있었다.<br>
+      <b>🔑 §H가 말한 그대로다 — 「살아남은 것은 index·sitemap 둘뿐이고, 차이는 스키마 품질이 아니라 <u>사람이 매일 보느냐</u>였다」.
+      그리고 74%라는 비율이 §H가 5번째 예외를 만든 근거(sitemap 84/113 = 74%)와 <u>같다</u>.</b>
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag">포트폴리오</span> ✅ <b>만든 것은 수집이 아니라 화면이다 — 새 저장소 0개</b></div>
+    <div class="upd-body">
+      <b><code>portfolio/tracking_dashboard.html</code></b> — <b><code>data/prices.json</code> 하나만 읽는다</b>. 새 파일도 새 수집도 없다(§H).<br>
+      <b>① §J8 수급 계기판</b> — 문턱(|순매수/시총| ≥ 0.3% + 1W·1M 둘 다 반대)을 <b>기계 계산</b>한다.
+      <u>오늘 62종목 중 방향 일치 43건은 제외되고 <b>10건 통과</b></u>(티엘비 −3.42% · 엘앤에프 −1.89% · 브이엠 +1.48% …).
+      <b>손으로 세던 08-19의 9건과 같은 자릿수다.</b><br>
+      <b>② §J13 환율·금리</b> — 창별 변화·실측 폭·모기지 스프레드. <b>방향은 판정하지 않는다.</b><br>
+      <b>③ 임박 판정 이벤트</b> — D-카운트. <b>정본은 대기판이고 여기는 참조다(§B5).</b><br>
+      <b>④ 창별 수익률 극단</b> · <b>⑤ 전체 135종목</b>(접어둠).<br><br>
+      <b>⚠ 검수를 <u>「존재하나」가 아니라 「렌더링되나」</u>로 했다(§F2-1의 교훈)</b> —
+      <b>실제 <code>prices.json</code>으로 <code>render()</code>를 돌려 <u>54,486자 · 5섹션 · 6표 · 184행</u>이 나오고
+      <u>undefined·NaN 누출 0</u>인 것을 확인했다.</b>
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag">리서치</span> 🔴 <b>덤으로 잡힌 것이 더 크다 — 운영 화면 2개는 도달할 방법이 없었다</b></div>
+    <div class="upd-body">
+      링크를 전수 조사하니 <b>진입 경로가 이랬다</b>:<br>
+      · <b>포지션 트래커</b> — index의 <u>숨겨진 단축키 <b>Shift+T</b></u> 하나<br>
+      · <b>🔴 판정 대기판</b> — <b>링크 0개</b>. update_log 언급뿐<br>
+      · <b>🔴 섹터 지도</b> — <b>링크 0개</b><br><br>
+      <b>§H가 예언한 죽음이 이미 진행 중이었다.</b> <b>「사람이 안 보는 구조는 죽는다」인데, 볼 방법 자체가 없었다.</b><br>
+      <b>🔑 고친 방식은 <u>새 구조를 만들지 않는 것</u>이다</b> — 기존 <b>숨겨진 단축키 블록을 <code>Shift+T/D/J/M</code> 넷으로 확장</b>하고,
+      <b>운영 화면 4개가 서로를 링크</b>하게 했다. <u>한 곳에 닿으면 나머지도 닿는다.</u>
+      <b>새 인덱스도 새 레지스트리도 만들지 않았다.</b><br>
+      <b>결과: 진입 경로가 <u>0개 → 4~7개</u></b>(대기판 5 · 섹터지도 5 · 계기판 4 · 트래커 7).<br>
+      <b>⚠ <code>tracking_dashboard.html</code>은 <u>SITEMAP_EXEMPT</u>에 넣었다 — 기준은 그대로다:
+      <u>「읽는 사람이 아니라 내가 보는 화면인가」</u>(§H).</b>
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🔒 2026.08.25 (11) — <b>사이버 T2에 ⓐ 확인</b> · 그런데 <u>목표가 7개 중 5개가 현재가보다 낮다</u></div>
 
   <div class="upd">
