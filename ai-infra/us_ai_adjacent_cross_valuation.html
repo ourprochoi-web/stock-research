@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="미국 AI 인접 17사를 6축 매력도로 채점. EPC 22.8이 1위이고 구리 7.9·방산 9.0이 최하위다. 배수와 질의 관계가 섹터마다 부호가 다르다.">
+<meta name="keywords" content="미국 AI 인접,크로스 밸류에이션,Quanta,Comfort Systems,Vertiv,Amphenol,Cheniere,Targa,Freeport,Lockheed,Visa,Mastercard,질 대비 가격,섹터 로테이션">
+<meta property="og:title" content="미국 AI 인접 6섹터 크로스 밸류에이션 — 로테이션 도착지가 매력도 하위권이다">
+<meta property="og:description" content="미국 AI 인접 17사를 6축 매력도로 채점. EPC 22.8이 1위이고 구리 7.9·방산 9.0이 최하위다. 배수와 질의 관계가 섹터마다 부호가 다르다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/us_ai_adjacent_cross_valuation.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="미국 AI 인접 6섹터 크로스 밸류에이션 — 로테이션 도착지가 매력도 하위권이다">
+<meta name="twitter:description" content="미국 AI 인접 17사를 6축 매력도로 채점. EPC 22.8이 1위이고 구리 7.9·방산 9.0이 최하위다. 배수와 질의 관계가 섹터마다 부호가 다르다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/us_ai_adjacent_cross_valuation.html">
+<title>미국 AI 인접 6섹터 크로스 밸류에이션 — 로테이션 도착지가 매력도 하위권이다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"미국 AI 인접 6섹터 크로스 밸류에이션 — 로테이션 도착지가 매력도 하위권이다","description":"미국 AI 인접 17사를 6축 매력도로 채점. EPC 22.8이 1위이고 구리 7.9·방산 9.0이 최하위다. 배수와 질의 관계가 섹터마다 부호가 다르다.","url":"https://ourprochoi-web.github.io/stock-research/ai-infra/us_ai_adjacent_cross_valuation.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>미국 AI 인접 · 크로스 밸류에이션</div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 섹터</a><a href="#s2">02 / 질 대비 가격</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">미국 AI 인접 6섹터 · 2026.08.28 종가 · 17사</span>
+    <h1 class="hero-title">「AI에서 갈아타라」의<br><span class="hl">도착지가 하위권이다</span></h1>
+    <p class="hero-sub"><b>17사를 6축으로 채점하니 섹터 순위가 <u>EPC 22.8 &gt; 결제 16.4 &gt; 기자재 15.7 &gt; 가스 14.3 &gt; 방산 9.0 &gt; 구리 7.9</u>다. <b>흔히 제시되는 로테이션 도착지 셋(LMT·TRGP·FCX)이 <u>16위 · 12위 · 17위</u></b>이고, <u>애널 여력도 FCX −6.6%(이미 목표가 초과) · TRGP +3.6%</u>로 좁다. <b>「비싼 것을 팔고 싼 데로 간다」가 성립하지 않는다.</b></b></p>
+    <div class="hero-stats"><div class="hstat"><div class="num tnum">22.8<span class="u">/30</span></div><div class="lab">EPC 매력도 중앙값 — <b>구리 7.9의 2.9배</b></div><div class="src">SRC: 6축 30점 · 분기 확정 실적 + 애널 컨센</div></div><div class="hstat"><div class="num tnum">+0.846<span class="u"></span></div><div class="lab"><b>방산 안에서만</b> 배수 vs 매력도 — 전체는 <b>+0.186</b></div><div class="src">SRC: §J8-3 — 섹터를 빼고 다시 잰다</div></div><div class="hstat"><div class="num tnum">−6.6<span class="u">%</span></div><div class="lab">FCX 애널 여력 — <b>컨센 목표가를 이미 넘었다</b></div><div class="src">SRC: 목표주가 $73.26 vs 종가 $78.42</div></div><div class="hstat"><div class="num tnum">0.14<span class="u"></span></div><div class="lab">Cheniere 질 대비 가격 — <b>🔴 인용 보류</b>(§A2)</div><div class="src">SRC: OPM 74.8%의 분자 분해 전</div></div></div>
+  </div>
+</header>
+
+
+<section id="now" class="blk"><div class="wrap">
+<div style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.9">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎현재 판단 · 2026.08.29 <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 신설 · <a href="us_ai_adjacent_sectors.html#now">AI 인접 6섹터 편</a>의 실측을 배수와 교차</span></div>
+<b style="font-size:1.05em">한 문장 — <u>「AI 캐펙스에서 <b>나가라</b>」는 맞을 수 있어도, <b>많이 제시되는 도착지 셋이 매력도 하위권</b>이다.</u></b><br><br>
+
+<b>T1. 🔑 <u>섹터 매력도 순위가 <b>실적 순위와 같다</b></u> — <b>EPC 22.8 &gt; 결제 16.4 &gt; 기자재 15.7 &gt; 가스 14.3 &gt; 방산 9.0 &gt; 구리 7.9</b>(중앙값).</b><br>
+&nbsp;&nbsp;<b>EPC는 <u>분기 영업이익 YoY 중앙값 <b>+86.6%</b></u>인데 방산 <b>+1.9%</b> · 구리 <b>−18.4%</b>다.</b>
+<b>본 아카이브 T3가 <i>「성장은 EPC가 압도적이고 그 성장이 잔고로 확인된다」</i>고 적은 것이 <u>배수·애널 축을 붙여도 유지된다</u>.</b><br><br>
+
+<b>T2. 🔴🔴 <u>「AI에서 방산·가스·구리로 갈아타라」의 <b>도착지 셋이 17사 중 12·16·17위</b></u>다.</b><br>
+&nbsp;&nbsp;<b><u>LMT 8.1(16위) · FCX 7.9(<b>최하위</b>) · TRGP 12.3(12위)</u>이고, 반대로 <b>「줄이라」는 쪽인 Quanta 22.8(2위) · Comfort 22.7(3위)</b>다.</b><br>
+&nbsp;&nbsp;<b>🔑 <u>「비싼 것을 팔고 싼 데로 간다」도 성립하지 않는다</u> —
+<b>애널 여력이 <u>FCX <b>−6.6%</b>(이미 컨센 목표가 초과) · TRGP <b>+3.6%</b></u>인데 <u>Comfort +34.4% · Quanta +27.0%</u></b>다.</b><br>
+&nbsp;&nbsp;<b>· <u>FCX</u> — 아카이브 T5가 <i>「구리는 이 표에서 <b>유일하게 역성장</b>」</i>이라 판정했고, <b>단위 마진은 $3.41 → $4.20/lb(+23.2%)로 <u>올랐으며</u> 줄어든 것은 물량, 그 손실의 절반이 <u>구리가 아니라 금(−76.4%)</u></b>이다.
+<u>논거는 살아 있는데 <b>가격은 이미 반영했고 실적은 아직 안 왔다</b></u><br>
+· <u>LMT</u> — 아카이브 T4: <b>영업이익 급증은 기저효과</b>(Aeronautics −$98M → +$760M 스윙이 전사 증가분의 50%)이고 <b>잔고 +19.0%는 전부 미사일</b>(MFC +88.4% / Aeronautics −8.5% / <u>F-35 인도 97대 → 51대</u>), 그 증가의 원인이 <b>THAAD 미확정계약(UCA)</b>이다.
+<b>4사 중 <u>투자의견 3.58로 최저</u>이고 분기 영업이익 <u>−11.0%</u></b>다<br>
+· <u>TRGP</u> — 셋 중 <b>논거가 가장 멀쩡</b>하다(+18.4% · OPM 27.8%). 다만 <u>같은 가스 층에 Williams(+23.8%)와 Cheniere(+69.6%)가 있다</u></b><br>
+&nbsp;&nbsp;<b>⚠ <u>그리고 이 셋 중 둘은 <b>AI 캐펙스 논거로 정당화된다</b></u>(FCX = AI DC 구리 · TRGP = AI 전력용 가스) — <b>로테이션이 아니라 <u>같은 테마의 다른 층</u>이고, 분산 효과는 생각보다 작다</b>.</b><br><br>
+
+<b>T3. 🟣 <u>「질이 나쁠수록 싸다」가 <b>방산 안에서만</b> 성립한다</u> — <b>§J8-3</b>.</b><br>
+&nbsp;&nbsp;<b>17사 전체로는 배수 vs 매력도가 <b>r = +0.186</b>(관계 없음)인데, <u>방산 4사를 빼면 <b>+0.023</b>으로 사라지고 <b>방산 안에서만 재면 +0.846</b></u>이다.</b>
+<b>반대로 <u>가스 안에서는 <b>−0.818</b></u>로 부호가 뒤집힌다.</b><br>
+&nbsp;&nbsp;<b>🔑 <u>즉 <b>「배수와 질의 관계」 자체가 섹터마다 다르다</b></u> — <b>17사를 한 표에 놓고 하나의 회귀를 돌리면 그 사실이 지워진다</b>(§J8-3).</b><br><br>
+
+<b>T4. 🔴 <u>Cheniere는 <b>표의 1위인데 인용을 보류한다</b></u>(§A2).</b><br>
+&nbsp;&nbsp;<b>매력도 <b>23.5로 1위</b>이고 <b>P/EBIT 3.4배</b>라 질 대비 가격이 <b>0.14</b> — <u>2위(TE 0.86)의 6분의 1</u>이다. <b>너무 좋아서 의심스럽다</b>.</b><br>
+&nbsp;&nbsp;<b>분기 <u>영업이익 $4,290M ÷ 매출 $5,732M = <b>74.8%</b></u>인데, <b>LNG 액화 사업에서 이 마진은 구조적으로 나오기 어렵다</b> —
+<u>파생상품 평가손익이 영업단에 섞였을 가능성이 크다 <span style="color:#f59e0b">[추론]</span></u>.</b><br>
+&nbsp;&nbsp;<b>그리고 아카이브 T8이 이미 경고했다 — <i>「Cheniere는 가이던스를 크게 올렸는데 <u>하반기 함의가 상반기의 91~103%</u>」</i>.</b>
+<b>→ <u>10-Q 라인아이템으로 분자를 분해하기 전까지 <b>0.14를 「가장 싸다」로 쓰지 않는다</b></u>. <b>반증: 파생 평가익을 빼도 OPM이 50%를 넘으면 이 값은 살아난다</b>.</b><br><br>
+
+<b>T5. ⚠ <u>이 표에는 <b>순환논리가 한 조각 들어 있다</b></u> — 스스로 밝힌다.</b><br>
+&nbsp;&nbsp;<b><u>애널 여력 vs 매력도가 r = +0.527 (t = +2.40, 5% 유의)</u>인데, <b>매력도 6축 중 둘(애널 확신 · 애널 여력)이 이미 애널 컨센</b>이다.</b>
+<b><u>즉 「애널이 좋게 보는 종목을 애널이 좋게 본다」의 일부가 섞여 있다</u>.</b><br>
+&nbsp;&nbsp;<b>🔑 <u>그래서 이 페이지의 6축은 <b>등급 ①이 4개, ③이 2개</b></u>다 —
+<a href="../hbm-packaging/kr_semi_equip_cross_valuation.html#now">소부장 편(6/6 ①)</a>보다 약하고 <a href="../hbm-packaging/hbm_pkg_investment_map.html#now">HBM 편(4/6)</a>과 같다.
+<b>미국은 국내와 달리 <u>부채·분기 OPM 시계열을 같은 무키 경로로 못 받아서</u> 두 축을 애널 컨센으로 대체했다</b>.</b>
+
+<div id="falsify" style="margin-top:16px;padding-top:14px;border-top:1px dashed rgba(249,115,22,.4)">
+<b style="color:var(--accent)">반증 조건 · 다음 검증</b><br>
+<b>· <b>T1 →</b> <u>EPC 분기 영업이익 YoY가 방산 수준(+10% 이하)으로 내려오면</u> 섹터 순위가 무너진다<br>
+· <b>T2 →</b> <u>FCX 3Q26 영업이익이 플러스로 돌아서면</u> 「AI 구리 수요와 실적이 안 만났다」가 해소된다. <b>LMT는 F-35 인도량 회복이 판정</b>한다<br>
+· <b>T3 →</b> <u>방산 4사에서 배수 vs 매력도가 <b>+0.846에서 0 근처로</b> 내려가면</u> 「방산만 다르다」가 사라진다<br>
+· <b>T4 →</b> <u>Cheniere 10-Q에서 파생 평가익을 제외한 OPM이 50%를 넘으면</u> 0.14가 값이 된다. <b>못 넘으면 표에서 내린다</b><br>
+· <b>T5 →</b> <u>SEC XBRL로 17사 부채·분기 OPM 시계열을 받으면</u> 애널 축 둘을 ① 축으로 교체한다 — <b>그때 이 표를 다시 돌린다</b></b><br>
+<b>다음 검증 — <u>3Q26 실적</u> · <u>Cheniere 라인아이템 분해</u> · <u>SEC XBRL <code>companyconcept</code>로 축 교체</u></b>
+</div>
+</div>
+</div></section>
+
+<section id="s1" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;섹터</div>
+<h2 class="sec-title">01 · 6섹터 중앙값 — 실적 순위와 매력도 순위가 같다</h2></div>
+<div class="panel" style="padding:0;overflow:auto"><table class="val-table">
+<thead><tr><th>섹터</th><th>OPM<br>중앙값</th><th>영업이익 YoY<br>중앙값</th><th>P/EBIT<br>중앙값</th><th>매력도<br>중앙값</th><th>질 대비<br>가격</th><th>구성</th></tr></thead>
+<tbody>
+<tr><td><b style="color:#22c55e">EPC</b> <span style="color:var(--ink-3);font-size:.85em">n=2</span></td><td class="tnum">12.2%</td><td class="tnum" style="color:#22c55e">+86.6%</td><td class="tnum">28.8</td><td class="tnum"><b>22.8</b></td><td class="tnum">1.27</td><td style="font-size:.82em">PWR · FIX</td></tr>
+<tr><td><b style="color:#a78bfa">결제</b> <span style="color:var(--ink-3);font-size:.85em">n=2</span></td><td class="tnum">64.0%</td><td class="tnum" style="color:#22c55e">+14.9%</td><td class="tnum">22.8</td><td class="tnum"><b>16.4</b></td><td class="tnum">1.39</td><td style="font-size:.82em">MA · V</td></tr>
+<tr><td><b style="color:#60a5fa">기자재</b> <span style="color:var(--ink-3);font-size:.85em">n=5</span></td><td class="tnum">19.4%</td><td class="tnum" style="color:#22c55e">+26.4%</td><td class="tnum">26.5</td><td class="tnum"><b>15.7</b></td><td class="tnum">1.73</td><td style="font-size:.82em">APH · VRT · TEL · ETN · GLW</td></tr>
+<tr><td><b style="color:#f59e0b">가스</b> <span style="color:var(--ink-3);font-size:.85em">n=3</span></td><td class="tnum">38.3%</td><td class="tnum" style="color:#22c55e">+23.8%</td><td class="tnum">12.6</td><td class="tnum"><b>14.3</b></td><td class="tnum">1.02</td><td style="font-size:.82em">LNG · WMB · TRGP.K</td></tr>
+<tr><td><b style="color:#94a3b8">방산</b> <span style="color:var(--ink-3);font-size:.85em">n=4</span></td><td class="tnum">11.9%</td><td class="tnum" style="color:#22c55e">+1.9%</td><td class="tnum">17.6</td><td class="tnum"><b>9.0</b></td><td class="tnum">1.80</td><td style="font-size:.82em">RTX · GD · NOC · LMT</td></tr>
+<tr><td><b style="color:#ef4444">구리</b> <span style="color:var(--ink-3);font-size:.85em">n=1</span></td><td class="tnum">28.2%</td><td class="tnum" style="color:#ef4444">-18.4%</td><td class="tnum">14.2</td><td class="tnum"><b>7.9</b></td><td class="tnum">1.81</td><td style="font-size:.82em">FCX</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section id="s2" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;질 대비 가격</div>
+<h2 class="sec-title">02 · 배수 ÷ 비즈니스 질 — 17사 전수</h2>
+<p class="sec-lead"><b>배수는 <u>시총 ÷ (분기 영업이익 × 4)</u>이고, 매력도는 6축 30점이다.</b>
+<b>🔴 <u>T3대로 섹터를 섞어 읽지 않는다</u> — <b>같은 표 안에서도 방산과 가스는 배수·질 관계의 부호가 반대</b>다.</b></p></div>
+<div class="panel" style="padding:0;overflow:auto"><table class="val-table">
+<thead><tr><th>종목<div style="font-weight:400;text-transform:none;letter-spacing:0">섹터 · 티커</div></th>
+<th>마진<br>수준</th><th>마진<br>방향</th><th>고객<br>다변화</th><th>매출<br>가시성</th><th>애널<br>확신</th><th>애널<br>여력</th>
+<th>매력도<br>/30</th><th>P/EBIT</th><th>질 대비<br>가격</th><th>TP<br>여력</th></tr></thead>
+<tbody>
+<tr><td><b>Cheniere Energy</b><div style="font-size:.72em;color:#f59e0b">가스 · LNG</div></td><td class="tnum">5.0</td><td class="tnum">3.9</td><td class="tnum">5.0</td><td class="tnum">4.0</td><td class="tnum">4.4</td><td class="tnum">1.2</td><td class="tnum"><b>23.5</b></td><td class="tnum">3.4</td><td class="tnum" style="color:#22c55e"><b>0.14</b></td><td class="tnum">+8.7%</td></tr>
+<tr><td><b>Quanta Services</b><div style="font-size:.72em;color:#22c55e">EPC · PWR</div></td><td class="tnum">0.5</td><td class="tnum">4.8</td><td class="tnum">5.0</td><td class="tnum">5.0</td><td class="tnum">3.6</td><td class="tnum">3.9</td><td class="tnum"><b>22.8</b></td><td class="tnum">32.2</td><td class="tnum" style="color:var(--ink)"><b>1.41</b></td><td class="tnum">+27.0%</td></tr>
+<tr><td><b>Comfort Systems</b><div style="font-size:.72em;color:#22c55e">EPC · FIX</div></td><td class="tnum">1.1</td><td class="tnum">4.8</td><td class="tnum">2.0</td><td class="tnum">5.0</td><td class="tnum">4.9</td><td class="tnum">4.9</td><td class="tnum"><b>22.7</b></td><td class="tnum">25.5</td><td class="tnum" style="color:var(--ink)"><b>1.12</b></td><td class="tnum">+34.4%</td></tr>
+<tr><td><b>Amphenol</b><div style="font-size:.72em;color:#60a5fa">기자재 · APH</div></td><td class="tnum">2.0</td><td class="tnum">4.6</td><td class="tnum">5.0</td><td class="tnum">2.0</td><td class="tnum">3.9</td><td class="tnum">2.6</td><td class="tnum"><b>20.1</b></td><td class="tnum">19.1</td><td class="tnum" style="color:#22c55e"><b>0.95</b></td><td class="tnum">+18.4%</td></tr>
+<tr><td><b>Mastercard</b><div style="font-size:.72em;color:#a78bfa">결제 · MA</div></td><td class="tnum">4.1</td><td class="tnum">0.9</td><td class="tnum">2.0</td><td class="tnum">4.0</td><td class="tnum">3.8</td><td class="tnum">1.7</td><td class="tnum"><b>16.5</b></td><td class="tnum">22.6</td><td class="tnum" style="color:var(--ink)"><b>1.37</b></td><td class="tnum">+11.7%</td></tr>
+<tr><td><b>Vertiv</b><div style="font-size:.72em;color:#60a5fa">기자재 · VRT</div></td><td class="tnum">1.3</td><td class="tnum">2.3</td><td class="tnum">2.0</td><td class="tnum">3.5</td><td class="tnum">4.0</td><td class="tnum">3.3</td><td class="tnum"><b>16.4</b></td><td class="tnum">40.8</td><td class="tnum" style="color:#ef4444"><b>2.49</b></td><td class="tnum">+22.9%</td></tr>
+<tr><td><b>Visa</b><div style="font-size:.72em;color:#a78bfa">결제 · V</div></td><td class="tnum">4.4</td><td class="tnum">0.7</td><td class="tnum">2.0</td><td class="tnum">4.0</td><td class="tnum">3.9</td><td class="tnum">1.3</td><td class="tnum"><b>16.3</b></td><td class="tnum">23.0</td><td class="tnum" style="color:var(--ink)"><b>1.41</b></td><td class="tnum">+9.0%</td></tr>
+<tr><td><b>TE Connectivity</b><div style="font-size:.72em;color:#60a5fa">기자재 · TEL</div></td><td class="tnum">1.4</td><td class="tnum">1.2</td><td class="tnum">5.0</td><td class="tnum">2.0</td><td class="tnum">3.0</td><td class="tnum">3.1</td><td class="tnum"><b>15.7</b></td><td class="tnum">13.5</td><td class="tnum" style="color:#22c55e"><b>0.86</b></td><td class="tnum">+21.8%</td></tr>
+<tr><td><b>Eaton</b><div style="font-size:.72em;color:#60a5fa">기자재 · ETN</div></td><td class="tnum">1.2</td><td class="tnum">0.7</td><td class="tnum">5.0</td><td class="tnum">3.0</td><td class="tnum">3.6</td><td class="tnum">1.9</td><td class="tnum"><b>15.4</b></td><td class="tnum">26.5</td><td class="tnum" style="color:var(--ink)"><b>1.73</b></td><td class="tnum">+13.3%</td></tr>
+<tr><td><b>Corning</b><div style="font-size:.72em;color:#60a5fa">기자재 · GLW</div></td><td class="tnum">1.2</td><td class="tnum">1.5</td><td class="tnum">2.0</td><td class="tnum">2.0</td><td class="tnum">3.7</td><td class="tnum">4.0</td><td class="tnum"><b>14.4</b></td><td class="tnum">41.4</td><td class="tnum" style="color:#ef4444"><b>2.88</b></td><td class="tnum">+28.1%</td></tr>
+<tr><td><b>Williams</b><div style="font-size:.72em;color:#f59e0b">가스 · WMB</div></td><td class="tnum">2.6</td><td class="tnum">1.3</td><td class="tnum">2.0</td><td class="tnum">3.0</td><td class="tnum">3.5</td><td class="tnum">2.0</td><td class="tnum"><b>14.3</b></td><td class="tnum">19.4</td><td class="tnum" style="color:var(--ink)"><b>1.35</b></td><td class="tnum">+13.9%</td></tr>
+<tr><td><b>Targa Resources</b><div style="font-size:.72em;color:#f59e0b">가스 · TRGP.K</div></td><td class="tnum">1.9</td><td class="tnum">1.0</td><td class="tnum">2.0</td><td class="tnum">3.0</td><td class="tnum">3.9</td><td class="tnum">0.5</td><td class="tnum"><b>12.3</b></td><td class="tnum">12.6</td><td class="tnum" style="color:var(--ink)"><b>1.02</b></td><td class="tnum">+3.6%</td></tr>
+<tr><td><b>RTX Corp</b><div style="font-size:.72em;color:#94a3b8">방산 · RTX</div></td><td class="tnum">0.9</td><td class="tnum">1.4</td><td class="tnum">3.0</td><td class="tnum">3.0</td><td class="tnum">2.7</td><td class="tnum">0.9</td><td class="tnum"><b>11.9</b></td><td class="tnum">21.3</td><td class="tnum" style="color:var(--ink)"><b>1.78</b></td><td class="tnum">+6.1%</td></tr>
+<tr><td><b>General Dynamics</b><div style="font-size:.72em;color:#94a3b8">방산 · GD</div></td><td class="tnum">0.7</td><td class="tnum">0.7</td><td class="tnum">1.5</td><td class="tnum">3.0</td><td class="tnum">2.4</td><td class="tnum">1.4</td><td class="tnum"><b>9.7</b></td><td class="tnum">17.6</td><td class="tnum" style="color:#ef4444"><b>1.82</b></td><td class="tnum">+9.9%</td></tr>
+<tr><td><b>Northrop Grumman</b><div style="font-size:.72em;color:#94a3b8">방산 · NOC</div></td><td class="tnum">0.7</td><td class="tnum">0.0</td><td class="tnum">0.5</td><td class="tnum">2.0</td><td class="tnum">2.5</td><td class="tnum">2.7</td><td class="tnum"><b>8.4</b></td><td class="tnum">17.7</td><td class="tnum" style="color:#ef4444"><b>2.10</b></td><td class="tnum">+19.2%</td></tr>
+<tr><td><b>Lockheed Martin</b><div style="font-size:.72em;color:#94a3b8">방산 · LMT</div></td><td class="tnum">0.9</td><td class="tnum">0.0</td><td class="tnum">1.0</td><td class="tnum">2.5</td><td class="tnum">1.9</td><td class="tnum">1.8</td><td class="tnum"><b>8.1</b></td><td class="tnum">12.3</td><td class="tnum" style="color:var(--ink)"><b>1.51</b></td><td class="tnum">+12.4%</td></tr>
+<tr><td><b>Freeport-McMoRan</b><div style="font-size:.72em;color:#ef4444">구리 · FCX</div></td><td class="tnum">1.9</td><td class="tnum">0.0</td><td class="tnum">2.0</td><td class="tnum">1.0</td><td class="tnum">3.0</td><td class="tnum">0.0</td><td class="tnum"><b>7.9</b></td><td class="tnum">14.2</td><td class="tnum" style="color:#ef4444"><b>1.81</b></td><td class="tnum">-6.6%</td></tr>
+</tbody></table></div>
+<div class="panel" style="margin-top:20px">
+<p style="line-height:1.9"><b>채점 기준 — <u>①이 4개, ③이 2개</u>다(T5).</b><br>
+<b>· <u>마진 수준</u> = 분기 OPM ÷ 74.8% × 5 &nbsp;<span style="color:var(--ink-3)">①</span> &nbsp;· <u>마진 방향</u> = 분기 영업이익 YoY ÷ 90% 상한 × 5 &nbsp;<span style="color:var(--ink-3)">①</span><br>
+· <u>고객 다변화</u> &nbsp;<span style="color:var(--ink-3)">① 공시 기반</span> — <b>5점 「10% 이상 고객 없음」 명시</b>(Quanta·Amphenol·Eaton·TE·Cheniere) ·
+<b>2점 미공시</b> · 방산은 미 정부 비중으로 <b>RTX 3.0(38%) · GD 1.5(68%) · LMT 1.0(72%) · NOC 0.5(80~82%)</b><br>
+· <u>매출 가시성</u> &nbsp;<span style="color:var(--ink-3)">①·②</span> — <b>5점 잔고 공시 + 12개월 인식 70%</b>(Quanta·Comfort) · <b>4점 장기계약·반복매출</b> ·
+<b>3점 이하 방산</b>(잔고 2.4~3.1배이나 <u>12개월 30%</u>) · <b>1점 상품가격 노출</b>(FCX)<br>
+· <u>애널 확신</u> = 투자의견 &nbsp;<span style="color:#f59e0b">③</span> &nbsp;· <u>애널 여력</u> = TP ÷ 현재가 − 1 &nbsp;<span style="color:#f59e0b">③</span></b></p>
+<p style="line-height:1.9;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)"><b>🔴 한계.</b><br>
+<b>· <b>축 둘이 애널 컨센</b>이라 <u>순환논리가 섞인다</u>(T5). <b>SEC XBRL로 교체하는 것이 다음 작업</b>이다<br>
+· <b>P/EBIT은 <u>분기 × 4</u></b>다. 계절성이 큰 곳(EPC·가스)에서 왜곡된다(§A5)<br>
+· <b>EV/EBIT이 아니다</b>(순차입금 미차감). <u>가스·EPC처럼 차입이 큰 층은 실제로 더 비싸다</u><br>
+· <b>Cheniere OPM 74.8%는 <u>인용 보류</u></b>다(T4 · §A2)<br>
+· <b>가중치가 균등</b>하고, <u>섹터 간 점수를 직접 비교하는 것은 이 표의 용도가 아니다</u>(T3)</b></p>
+</div>
+</div></section>
+
+
+<footer>
+  <div class="wrap">
+    <p><b>ourprochoi Research Archive</b> · 미국 AI 인접 · 크로스 밸류에이션</p>
+    <p class="note" style="margin-top:12px">▸ 2026.08.29 — 신설. 미국 AI 인접 6섹터 17사 크로스 밸류에이션. <b>섹터 매력도 순위가 실적 순위와 같다</b>(EPC 1위 · 구리 최하위). <b>🔴 배수와 질의 관계가 섹터마다 부호가 다르다</b> — 방산 안에서 +0.846, 가스 안에서 −0.818(§J8-3). <b>Cheniere OPM 74.8%는 §A2로 인용 보류</b>했다.</p>
+    <p class="note" style="margin-top:8px">가격·컨센 기준 <b>2026.08.28</b> · 실적 기준 <b>각 사 최근 분기</b>(대부분 2026-06-30 종료) · P/EBIT = 시총 ÷ (분기 영업이익 × 4) · ⚠ EV/EBIT이 아니고 계절성을 보정하지 않았다.</p>
+    <p style="margin-top:16px"><a href="../index.html">← 아카이브 홈</a> · <a href="us_ai_adjacent_sectors.html">AI 인접 6섹터 딥리서치</a> · <a href="../defense/us_defense_primes.html">미국 방산 4사</a> · <a href="kr_power_cross_valuation.html">전력 크로스 지도</a> · <a href="../hbm-packaging/kr_semi_equip_cross_valuation.html">소부장 크로스 지도</a></p>
+  </div>
+</footer>
+<script>
+var nt=document.getElementById('navToggle');
+if(nt)nt.addEventListener('click',function(){document.querySelector('.nav-links').classList.toggle('open');});
+</script>
+</body>
+</html>

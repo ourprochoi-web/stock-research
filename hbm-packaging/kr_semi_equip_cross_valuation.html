@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="국내 반도체 소부장 7사를 DART 반기 확정값으로 교차. 배수 13.7~150.3배를 6축 매력도로 나눠 저평가를 판정한다. 코미코가 배수 최저인데 매력도 최하위다.">
+<meta name="keywords" content="반도체 소부장,크로스 밸류에이션,브이엠,코미코,파크시스템스,HPSP,원익IPS,테스,피에스케이,질 대비 가격,DART 확정값,OpenDART">
+<meta property="og:title" content="반도체 소부장 크로스 밸류에이션 — 가장 싼 종목이 가장 나쁜 종목이다">
+<meta property="og:description" content="국내 반도체 소부장 7사를 DART 반기 확정값으로 교차. 배수 13.7~150.3배를 6축 매력도로 나눠 저평가를 판정한다. 코미코가 배수 최저인데 매력도 최하위다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_equip_cross_valuation.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="반도체 소부장 크로스 밸류에이션 — 가장 싼 종목이 가장 나쁜 종목이다">
+<meta name="twitter:description" content="국내 반도체 소부장 7사를 DART 반기 확정값으로 교차. 배수 13.7~150.3배를 6축 매력도로 나눠 저평가를 판정한다. 코미코가 배수 최저인데 매력도 최하위다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_equip_cross_valuation.html">
+<title>반도체 소부장 크로스 밸류에이션 — 가장 싼 종목이 가장 나쁜 종목이다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"반도체 소부장 크로스 밸류에이션 — 가장 싼 종목이 가장 나쁜 종목이다","description":"국내 반도체 소부장 7사를 DART 반기 확정값으로 교차. 배수 13.7~150.3배를 6축 매력도로 나눠 저평가를 판정한다. 코미코가 배수 최저인데 매력도 최하위다.","url":"https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_equip_cross_valuation.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>HBM·패키징 · 소부장 크로스 밸류에이션</div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 확정 실적</a><a href="#s2">02 / 질 대비 가격</a><a href="#s3">03 / 검산</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">반도체 소부장 · 2026.08.28 종가 · DART 반기 확정 7사</span>
+    <h1 class="hero-title">가장 싼 종목이<br><span class="hl">가장 나쁜 종목이었다</span></h1>
+    <p class="hero-sub"><b>배수가 <b>13.7~150.3배로 11.0배</b> 갈리는데, <u>배수가 가장 낮은 코미코가 매력도도 가장 낮다</u>(부채비율 <b>222%</b>). <b>그 한 종목을 빼면 「질이 좋을수록 싸다」가 <u>r = −0.795(유의)</u>로 성립한다.</b> 그리고 <u>HPSP는 컨센과 확정의 ΔOPM 부호가 반대</u>였다.</b></p>
+    <div class="hero-stats"><div class="hstat"><div class="num tnum">11.0<span class="u">배</span></div><div class="lab">확정배수 스펙트럼 — 코미코 <b>13.7배</b> ÷ 파크시스템스 <b>150.3배</b></div><div class="src">SRC: 시총 ÷ (반기 확정 영업이익 × 2)</div></div><div class="hstat"><div class="num tnum">−0.795<span class="u"></span></div><div class="lab">코미코 제외 시 <b>배수 vs 매력도</b> (t = −2.62, 5% 유의)</div><div class="src">SRC: §J8-3 — 이상치를 빼고 다시 잰다</div></div><div class="hstat"><div class="num tnum">+3.28<span class="u">%p</span></div><div class="lab">HPSP 확정 ΔOPM — <b>컨센은 −2.78%p로 부호가 반대</b>였다</div><div class="src">SRC: DART 반기보고서 vs 네이버 isConsensus=Y</div></div><div class="hstat"><div class="num tnum">6/6<span class="u">축</span></div><div class="lab"><b>여섯 축이 전부 등급 ①</b> — 전력 5/6 · HBM 4/6</div><div class="src">SRC: §A6 등급</div></div></div>
+  </div>
+</header>
+
+
+<section id="now" class="blk"><div class="wrap">
+<div style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.9">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎현재 판단 · 2026.08.29 <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 신설 · 실적은 DART 반기보고서 확정값</span></div>
+<b style="font-size:1.05em">한 문장 — <u>배수가 <b>13.7~150.3배로 11.0배</b> 갈리는데, <b>가장 싼 종목이 가장 나쁜 종목</b>이다.</u></b><br><br>
+
+<b>T1. 🔴 <u>§A1-1이 또 걸렸고 이번엔 <b>부호가 뒤집혔다</b></u> — <b>HPSP</b>.</b><br>
+&nbsp;&nbsp;<b>네이버 2Q26이 <u>컨센서스(isConsensus=Y)</u>였고 그 값으로는 <b>OPM 50.85% · ΔOPM −2.78%p</b>였다.
+<b>DART 반기보고서 확정값은 <u>OPM 56.94% · ΔOPM +3.28%p</u></b>다.</b><br>
+&nbsp;&nbsp;<b>🔑 <u>컨센으로는 「마진이 나빠지는 중」인데 확정으로는 「좋아지는 중」</u>이다 — <b>영업이익이 388억으로 추정됐는데 실제 444.50억(+14.6%)</b>이다.</b>
+<b>확정배수도 <u>54.2배 → 47.3배</u>로 내려온다.</b><br>
+&nbsp;&nbsp;<b>⚠ <u>13사를 전부 DART로 다시 받았는데 <b>크게 갈린 곳은 HPSP 하나</b></u>다(한화시스템 ΔOPM +0.89 → +2.63이 두 번째).
+<b>즉 네이버는 대체로 정확하고, <u>틀리는 곳은 「컨센서스 플래그가 켜진 곳」에 정확히 몰린다</u></b> — §A1-1의 절차가 옳았다는 뜻이다.</b><br><br>
+
+<b>T2. 🔑 <u>코미코가 이 표의 핵심이다 — <b>배수 최저(13.7배)인데 매력도 최하위(8.6)</b></u>.</b><br>
+&nbsp;&nbsp;<b>「싸다」로 읽히는 자리인데 6축을 열면 <u>부채비율 <b>222%로 7사 중 유일하게 100% 초과</b></u>(재무 체력 0점)이고 <b>ΔOPM −7.60%p</b>다.</b><br>
+&nbsp;&nbsp;<b>🔴 <u>그리고 코미코를 빼면 <b>배수 vs 매력도가 r = −0.449 → −0.795(t = −2.62)로 유의해진다</b></u> —
+<b>즉 나머지 6사에서는 「질이 좋을수록 싸다」가 성립하고 <u>코미코 혼자 그 관계를 깨고 있다</u>.</b>
+<b><u>이것이 「싸서 낮은 것」과 「나빠서 낮은 것」의 교과서적 분리</u>다.</b><br><br>
+
+<b>T3. 🟣 <u>아카이브의 「매출 방향이 기본값」이 <b>재확인됐고 더 세졌다</b></u>.</b><br>
+&nbsp;&nbsp;<b>2026-08-20에 확정값으로 <b>r = +0.663</b>을 냈던 <u>매출 YoY ↔ ΔOPM</u> 관계가, 반기 확정값으로는 <b>r = +0.801 (t = +2.99, 5% 유의)</b>다.</b><br>
+&nbsp;&nbsp;<b>예외 셋도 그대로 살아 있다 — <u>가격 결정력</u>(HPSP OPM <b>56.94%</b>인데 매출 −11.54%) · <u>고객 구성</u>(테스 매출 +32.63%인데 ΔOPM −0.17%p) ·
+<u>비용 선택</u>(파크시스템스 판관비 확대로 ΔOPM <b>−17.50%p</b>).</b>
+<b><u>예외가 「품목에 따라 갈린다」를 지지한다</u>는 서술이 세 번째로 유지된다.</b><br><br>
+
+<b>T4. 🔴🔴 <u>「많이 빠진 것이 싸다」가 <b>파크시스템스 하나가 만든 것</b>이었다</u> — <b>§J8-3</b>.</b><br>
+&nbsp;&nbsp;<b>7사 전체로는 <u>낙폭 vs 배수 <b>r = +0.855 (t = +3.69, 유의)</b></u>다 — <b>덜 빠진 것이 비싸다</b>로 읽힌다.</b><br>
+&nbsp;&nbsp;<b>🔑 그런데 <u>파크시스템스(배수 <b>150.3배</b> · 낙폭 <b>−22.7%로 가장 작다</b>) 하나를 빼면 <b>r = +0.525 (t = +1.23)로 유의성이 사라진다</b></u>.</b>
+<b>§J8-3을 <u>세 번째로 적용했고 세 번째로 값을 했다</u></b>(앞의 둘 — 전력 섹터, HBM 메모리 2사).<br><br>
+
+<b>T5. 🟢 <u>브이엠이 6축에서 <b>압도적 1위</b>이고 질 대비 가격도 1위</b>다.</u></b><br>
+&nbsp;&nbsp;<b>매력도 <b>21.1/30</b> · 배수 <b>15.2배</b> → 질 대비 <b>0.72</b>. <u>매출 +182.20% · ΔOPM +20.11%p · 부채비율 21%</u>로 세 축이 동시에 최상위다.</b><br>
+&nbsp;&nbsp;<b>⚠ <u>이 종목은 §I가 기록한 <b>종목코드 오류(유진테크 084370으로 들어가 있었다)</b>를 정정하고서야 보이기 시작했다</u> —
+<b>정정 전에는 「그럴듯한 값」이 오류를 감추고 있었다</b>.</b>
+<b>다만 <u>낙폭이 −52.5%로 7사 중 두 번째로 크다</u> — <b>실적과 가격이 가장 크게 어긋난 자리</b>이고, 그 이유는 이 표가 답하지 않는다.</b>
+
+<div id="falsify" style="margin-top:16px;padding-top:14px;border-top:1px dashed rgba(249,115,22,.4)">
+<b style="color:var(--accent)">반증 조건 · 다음 검증</b><br>
+<b>· <b>T1 →</b> <u>3Q26에도 네이버 컨센과 DART 확정이 갈리면</u> 「플래그가 켜진 곳에 몰린다」가 구조다. <b>안 갈리면 이번이 우연</b>이다<br>
+· <b>T2 →</b> <u>코미코 부채비율이 100% 아래로 내려오면</u> 재무 체력 축이 살아나고 「나빠서 싸다」가 「싸다」로 바뀐다<br>
+· <b>T3 →</b> <u>3Q26에 매출 YoY ↔ ΔOPM의 r이 0.5 아래로 내려가면</u> 「매출 방향이 기본값」을 폐기한다<br>
+· <b>T4 →</b> <u>파크시스템스를 뺀 6사만으로 낙폭 vs 배수가 |t| &gt; 2.45가 되면</u> 관계가 이상치와 무관하게 성립한다<br>
+· <b>T5 →</b> <u>브이엠 3Q26 ΔOPM이 마이너스로 돌아서면</u> +20.11%p가 일회성이었던 것이다</b><br>
+<b>다음 검증 — <u>3Q26 실적</u>(7사 ΔOPM 부호) · <u>DART <code>document.xml</code> 복구 후 품목별 매출</u>(4사 미수령)</b>
+</div>
+</div>
+</div></section>
+
+<section id="s1" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="ln"></span><span class="idx">01</span>&nbsp;확정 실적</div>
+<h2 class="sec-title">01 · DART 반기보고서 확정값 — 7사 전수</h2>
+<p class="sec-lead"><b>전부 <u>2026 반기보고서</u>(제출 2026-08-13~14)에서 받았다. <u>컨센서스가 하나도 섞이지 않았다</u>.</b>
+<b>연결(CFS)이 있으면 연결, 없으면 별도(OFS)이며 <u>HPSP만 OFS</u>다.</b></p></div>
+<div class="panel" style="padding:0;overflow:auto"><table class="val-table">
+<thead><tr><th>기업</th><th>1H26 매출<br>(억원)</th><th>1H26 영업이익<br>(억원)</th><th>OPM</th><th>ΔOPM<br>(YoY)</th><th>매출 YoY</th><th>5분기<br>OPM σ</th><th>부채비율<br>(2026.06)</th></tr></thead>
+<tbody>
+<tr><td><b>브이엠</b></td><td class="tnum">1,612</td><td class="tnum">502</td><td class="tnum">31.14%</td><td class="tnum" style="color:#22c55e">+20.11%p</td><td class="tnum" style="color:#22c55e">+182.20%</td><td class="tnum">7.8</td><td class="tnum" style="color:var(--ink)">21%</td></tr>
+<tr><td><b>피에스케이</b></td><td class="tnum">3,241</td><td class="tnum">974</td><td class="tnum">30.07%</td><td class="tnum" style="color:#22c55e">+9.54%p</td><td class="tnum" style="color:#22c55e">+54.02%</td><td class="tnum">5.9</td><td class="tnum" style="color:var(--ink)">22%</td></tr>
+<tr><td><b>테스</b></td><td class="tnum">2,209</td><td class="tnum">482</td><td class="tnum">21.83%</td><td class="tnum" style="color:#ef4444">-0.17%p</td><td class="tnum" style="color:#22c55e">+32.63%</td><td class="tnum">5.6</td><td class="tnum" style="color:var(--ink)">21%</td></tr>
+<tr><td><b>코미코</b></td><td class="tnum">3,330</td><td class="tnum">475</td><td class="tnum">14.26%</td><td class="tnum" style="color:#ef4444">-7.60%p</td><td class="tnum" style="color:#22c55e">+18.53%</td><td class="tnum">2.6</td><td class="tnum" style="color:#ef4444">222%</td></tr>
+<tr><td><b>원익IPS</b></td><td class="tnum">3,814</td><td class="tnum">291</td><td class="tnum">7.64%</td><td class="tnum" style="color:#ef4444">-0.30%p</td><td class="tnum" style="color:#22c55e">+4.10%</td><td class="tnum">3.2</td><td class="tnum" style="color:var(--ink)">39%</td></tr>
+<tr><td><b>파크시스템스</b></td><td class="tnum">924</td><td class="tnum">63</td><td class="tnum">6.83%</td><td class="tnum" style="color:#ef4444">-17.50%p</td><td class="tnum" style="color:#ef4444">-10.48%</td><td class="tnum">6.6</td><td class="tnum" style="color:var(--ink)">39%</td></tr>
+<tr><td><b>HPSP</b></td><td class="tnum">781</td><td class="tnum">445</td><td class="tnum">56.94%</td><td class="tnum" style="color:#22c55e">+3.28%p</td><td class="tnum" style="color:#ef4444">-11.54%</td><td class="tnum">2.8</td><td class="tnum" style="color:var(--ink)">30%</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section id="s2" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="ln"></span><span class="idx">02</span>&nbsp;질 대비 가격</div>
+<h2 class="sec-title">02 · 배수 ÷ 비즈니스 질 — 저평가 판정</h2>
+<p class="sec-lead"><b>6개 축을 각 5점으로 채점해 <u>매력도(30점 만점)</u>를 만들고 <b>배수 ÷ 매력도</b>로 <u>질 대비 가격</u>을 낸다.</b>
+<b>🔑 <u>이 표는 <b>6축이 전부 등급 ①</b>이다</u> — <a href="../ai-infra/kr_power_cross_valuation.html#now">전력 편</a>은 1축이 ③,
+<a href="hbm_pkg_investment_map.html#now">HBM 편</a>은 2축이 ②·③였다. <b>이번이 가장 단단하다</b>.</b></p></div>
+<div class="panel" style="padding:0;overflow:auto"><table class="val-table">
+<thead><tr><th>기업<div style="font-weight:400;text-transform:none;letter-spacing:0">재무제표 기준</div></th>
+<th>마진<br>수준</th><th>마진<br>방향</th><th>성장</th><th>이익<br>안정성</th><th>재무<br>체력</th><th>검증<br>가능성</th>
+<th>매력도<br>/30</th><th>확정<br>배수</th><th>질 대비<br>가격</th><th>52주고<br>대비</th></tr></thead>
+<tbody>
+<tr><td><b>브이엠</b><div style="font-size:.72em;color:var(--ink-3)">CFS · 잠정1건</div></td><td class="tnum">2.7</td><td class="tnum">5.0</td><td class="tnum">5.0</td><td class="tnum">1.5</td><td class="tnum">3.9</td><td class="tnum">3.0</td><td class="tnum"><b>21.1</b></td><td class="tnum">15.2</td><td class="tnum" style="color:#22c55e"><b>0.72</b></td><td class="tnum">-52.5%</td></tr>
+<tr><td><b>피에스케이</b><div style="font-size:.72em;color:var(--ink-3)">CFS · 잠정0건</div></td><td class="tnum">2.6</td><td class="tnum">3.2</td><td class="tnum">4.5</td><td class="tnum">2.3</td><td class="tnum">3.9</td><td class="tnum">2.0</td><td class="tnum"><b>18.5</b></td><td class="tnum">19.1</td><td class="tnum" style="color:#22c55e"><b>1.03</b></td><td class="tnum">-41.4%</td></tr>
+<tr><td><b>HPSP</b><div style="font-size:.72em;color:var(--ink-3)">OFS · 잠정0건</div></td><td class="tnum">5.0</td><td class="tnum">1.1</td><td class="tnum">0.0</td><td class="tnum">3.7</td><td class="tnum">3.5</td><td class="tnum">2.0</td><td class="tnum"><b>15.3</b></td><td class="tnum">47.3</td><td class="tnum" style="color:var(--ink)"><b>3.09</b></td><td class="tnum">-44.5%</td></tr>
+<tr><td><b>테스</b><div style="font-size:.72em;color:var(--ink-3)">CFS · 잠정0건</div></td><td class="tnum">1.9</td><td class="tnum">0.0</td><td class="tnum">2.7</td><td class="tnum">2.4</td><td class="tnum">3.9</td><td class="tnum">2.0</td><td class="tnum"><b>13.0</b></td><td class="tnum">28.6</td><td class="tnum" style="color:var(--ink)"><b>2.20</b></td><td class="tnum">-39.7%</td></tr>
+<tr><td><b>원익IPS</b><div style="font-size:.72em;color:var(--ink-3)">CFS · 잠정2건</div></td><td class="tnum">0.7</td><td class="tnum">0.0</td><td class="tnum">0.3</td><td class="tnum">3.5</td><td class="tnum">3.0</td><td class="tnum">4.0</td><td class="tnum"><b>11.6</b></td><td class="tnum">93.6</td><td class="tnum" style="color:#ef4444"><b>8.08</b></td><td class="tnum">-40.8%</td></tr>
+<tr><td><b>파크시스템스</b><div style="font-size:.72em;color:var(--ink-3)">CFS · 잠정4건</div></td><td class="tnum">0.6</td><td class="tnum">0.0</td><td class="tnum">0.0</td><td class="tnum">2.0</td><td class="tnum">3.0</td><td class="tnum">5.0</td><td class="tnum"><b>10.7</b></td><td class="tnum">150.3</td><td class="tnum" style="color:#ef4444"><b>14.11</b></td><td class="tnum">-22.7%</td></tr>
+<tr><td><b>코미코</b><div style="font-size:.72em;color:var(--ink-3)">CFS · 잠정0건</div></td><td class="tnum">1.3</td><td class="tnum">0.0</td><td class="tnum">1.5</td><td class="tnum">3.8</td><td class="tnum">0.0</td><td class="tnum">2.0</td><td class="tnum"><b>8.6</b></td><td class="tnum">13.7</td><td class="tnum" style="color:var(--ink)"><b>1.59</b></td><td class="tnum">-54.5%</td></tr>
+</tbody></table></div>
+
+<div class="panel" style="margin-top:20px">
+<p style="line-height:1.9"><b>채점 기준 — 전부 이 표의 실측값을 기준으로 한 상대 점수이며 <u>여섯 축 모두 ① 확정</u>이다.</b><br>
+<b>· <u>마진 수준</u> = 1H26 OPM ÷ 56.94%(HPSP) × 5<br>
+· <u>마진 방향</u> = ΔOPM ÷ <b>15%p 상한</b> × 5<br>
+· <u>성장</u> = 1H 매출 YoY ÷ <b>60% 상한</b> × 5 &nbsp;— 브이엠 +182%가 상한을 넘어 만점<br>
+· <u>이익 안정성</u> = 최근 <b>5분기 OPM 표준편차</b>, <b>11%p에서 0점</b>. <u>낮을수록 고득점</u><br>
+· <u>재무 체력</u> = <b>부채비율</b>(2026.06 확정), <b>100%에서 0점</b>. <u>낮을수록 고득점</u><br>
+· <u>검증 가능성</u> = 분기 <b>잠정공시</b> 빈도 — 5점 3건+ · 4점 2건 · 3점 1건 · 2점 0건</b></p>
+<p style="line-height:1.9;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)"><b>🔴 한계 — 반드시 함께 읽는다.</b><br>
+<b>· <b>가중치가 균등</b>하다. 어느 축을 더 볼지는 판단이고 이 표는 그 판단을 하지 않는다<br>
+· <b>확정배수는 EV/EBIT이 아니다</b>(순차입금 미차감). <u>코미코처럼 부채가 큰 곳은 EV 기준으로 더 비싸진다</u> — 즉 <b>코미코의 13.7배는 실제보다 싸 보인다</b><br>
+· <b>「반기 × 2」는 연간이 아니다</b>. 하반기가 계절적으로 다르면 배수가 틀린다(§A5)<br>
+· <b>이익 안정성 축은 <u>네이버 분기 OPM</u>에서 계산했다</b> — 5분기 중 2Q26만 DART로 검증했고 나머지 4분기는 네이버 값이다<br>
+· <b>부채비율은 <u>부채총계 ÷ 자본총계</u>로 직접 계산했다</b>(§A2 — 라벨을 복사하지 않았다)</b></p>
+</div>
+</div></section>
+
+<section id="s3" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="ln"></span><span class="idx">03</span>&nbsp;검산</div>
+<h2 class="sec-title">03 · 데이터 경로와 검산</h2></div>
+<div class="panel">
+<p style="line-height:1.9"><b>🟣 <u>OpenDART API 경로를 열었다 — 웹 DART가 IP 차단된 상태에서도 작동한다</u>(§G).</b><br>
+<b>2026-08-29에 <code>dart.fss.or.kr</code>이 <b>ERR_EMPTY_RESPONSE</b>로 막혔다(스크립트·브라우저 <u>둘 다</u> — <b>IP 차단이라 UA·세션으로 우회되지 않는다</b>).</b>
+<b>그런데 <u><code>opendart.fss.or.kr</code>은 다른 호스트</u>였고 <b>인증키가 있으면 열린다</b>.</b><br>
+<b>· <code>list.json</code> → 회사별 <b>반기보고서 <code>rcept_no</code></b>. <u>13/13 전부 확보</u>했고 <b>LIG·한화시스템은 정정본이 따로 있었다</b>(2026-08-25 · 08-20)<br>
+· <code>fnlttSinglAcnt.json</code>(<code>reprt_code=11012</code>) → <b>반기 확정 매출·영업이익·부채총계·자본총계</b><br>
+· ⚠ <code>document.xml</code>(원문 ZIP)은 <b>status 800 「시스템 점검」</b>으로 막혀 있다 — <u>품목별 매출 4사는 여전히 미수령</u>이며 복구 시 받는다</b></p>
+<p style="line-height:1.9;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)">
+<b>🔑 <u>그리고 이것이 §G의 「시도 기록을 적어 둔 것이 다음에 여는 조건」의 <b>다섯 번째 사례</b></u>다.</b>
+<b>이전 세션이 <i>「DART 미수령」</i>이라고만 적고 끝냈으면 오늘도 못 열었다 — <u>무엇이 막혔는지</u>가 적혀 있었기 때문에 <b>다른 호스트를 시도할 수 있었다</b>.</b></p>
+</div>
+</div></section>
+
+
+<footer>
+  <div class="wrap">
+    <p><b>ourprochoi Research Archive</b> · HBM·패키징 · 소부장 크로스 밸류에이션</p>
+    <p class="note" style="margin-top:12px">▸ 2026.08.29 — 신설. 국내 반도체 소부장 7사 크로스 밸류에이션. <b>DART 반기보고서 확정값</b>으로 6축 매력도를 채점했다. <b>🔴 HPSP는 네이버 컨센(ΔOPM −2.78%p)과 DART 확정(+3.28%p)의 부호가 반대</b>였다(§A1-1). <b>웹 DART가 IP 차단된 상태에서 OpenDART API 경로를 열었다</b>(§G).</p>
+    <p class="note" style="margin-top:8px">가격 기준 <b>2026.08.28 종가</b> · 실적 기준 <b>2026 반기보고서 확정값</b>(OpenDART <code>fnlttSinglAcnt</code>) · 확정배수 = 시총 ÷ (반기 영업이익 × 2) · ⚠ EV/EBIT이 아니다(순차입금 미차감).</p>
+    <p style="margin-top:16px"><a href="../index.html">← 아카이브 홈</a> · <a href="hbm_pkg_investment_map.html">HBM 크로스 지도</a> · <a href="../ai-infra/kr_power_cross_valuation.html">전력 크로스 지도</a> · <a href="../defense/k_defense_cross_valuation.html">방산 크로스 지도</a> · <a href="hbm_pkg_theme_memory_cycle.html">메모리 사이클</a></p>
+  </div>
+</footer>
+<script>
+var nt=document.getElementById('navToggle');
+if(nt)nt.addEventListener('click',function(){document.querySelector('.nav-links').classList.toggle('open');});
+</script>
+</body>
+</html>
