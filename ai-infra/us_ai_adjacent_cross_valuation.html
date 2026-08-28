@@ -221,7 +221,7 @@
 <nav><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>미국 AI 인접 · 크로스 밸류에이션</div>
   <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
-  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 섹터</a><a href="#s2">02 / 질 대비 가격</a></div>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 섹터</a><a href="#s2">02 / 질 대비 가격</a><a href="#biz">B / 비즈니스 질</a></div>
 </div></nav>
 
 <header class="hero">
@@ -277,6 +277,30 @@
 <b><u>「확인할 수 없다」가 아니라 「이 경로로는 안 열린다」</u>로 적는다 — <b>10-Q 본문 파싱이라는 다른 경로가 남아 있다</b>.</b><br>
 &nbsp;&nbsp;<b>⚠ <u>분기 종료일이 회사마다 다르다</u> — <b>대부분 2026-06-30인데 Corning·Visa는 2026-03-31, GD는 2026-04-05</b>다.
 <b><u>TTM이라 창 길이는 같지만 끝점이 최대 3개월 어긋난다</u>(§A5).</b>
+
+<b>T6. 🔴🔴 <u>파생 평가손실은 <b>비즈니스에 영향이 없다</b> — 내 「TTM 수정」이 <b>더 틀린 값</b>을 만들었다</u>
+<span style="font-size:.8em;color:#b3261e">(2026.08.29 재정정 · 사용자 지적)</span>.</b><br>
+&nbsp;&nbsp;<b>T1에서 <i>「분기 × 4가 틀렸으니 TTM으로 바꿨다」</i>고 했는데, 그것은 <u>노이즈를 <b>평활</b>했을 뿐 <b>여전히 포함</b></u>하고 있었다.</b>
+<b><u>파생 평가손익은 <b>현금이 움직이지 않고 기초 사업(액화 스프레드·계약 물량)이 그대로</b></u>이며, <b>다음 분기에 반대로 뒤집힌다</b>.</b><br>
+&nbsp;&nbsp;<b>실제로 뒤집혔다 — <b>2025-12 <u>+$2,215M</u> → 2026-03 <u>−$5,457M</u></b>이고, <b>2026-03의 영업적자 −$3,488M은 <u>전부 이 평가손실</u></b>이다.
+<u>걷어내면 <b>+$1,969M 흑자(OPM 33.6%)</b></u>다.</b><br>
+&nbsp;&nbsp;<b>🔑 <u>같은 회사에 세 값이 나온다</u> —</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>· 초판 <b>분기 × 4</b> → OPM <b>74.8%</b> · P/EBIT <b>3.4배</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;· 수정판 <b>TTM 보고</b> → OPM <b>29.9%</b> · P/EBIT <b>9.0배</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;· <u>정답 <b>파생 제외 TTM</b></u> → OPM <b style="color:#22c55e">45.0%</b> · P/EBIT <b style="color:#22c55e">6.0배</b></b><br>
+&nbsp;&nbsp;<b>🔴 <u>초판의 74.8%가 수정판의 29.9%보다 <b>오히려 진실에 가까웠다</b></u> — <b>내 수정은 방향이 맞았는데 값은 더 나빠졌다</b>.</b><br>
+&nbsp;&nbsp;<b>⚠ <u>다만 이 45.0%도 <b>부분 조정</b></u>이다 — <b>2025-09·2026-06 분기는 파생 항목이 XBRL에 태깅되지 않았다</b>.
+<b><u>완전한 값은 10-Q 본문 라인아이템을 봐야 나온다</u>(§G — 「확인할 수 없다」가 아니라 「XBRL에 없다」).</b></b><br>
+&nbsp;&nbsp;<b>🟢 <u>그리고 이것이 <b>Cheniere 하나의 문제</b>임을 확인했다</u> — <b>16사 분기 영업이익의 변동계수를 재니 Cheniere가 <u>1.92</u>로 압도적</b>이고
+<b>2위 Freeport가 0.31</b>이다. <b><u>나머지 14사는 0.25 이하로, 비경상 혼입을 의심할 근거가 없다</u>.</b></b><br><br>
+
+<b>T7. 🔑 <u>그래서 원칙을 바꾼다 — <b>계정을 세기 전에 「이 계정이 비즈니스의 무엇을 반영하는가」를 먼저 판정</b>한다</u>.</b><br>
+&nbsp;&nbsp;<b>§A2는 <i>「분자·분모를 원문에서 읽고 <b>직접 나눠라</b>」</i>인데, <u>여기서 필요했던 것은 그 앞 단계</u>다 —
+<b><u>직접 나눠도, 분자가 사업을 반영하지 않으면 값이 아니다</u></b>.</b><br>
+&nbsp;&nbsp;<b>구분해야 하는 것 세 가지 — <b>① 현금이 움직였나</b>(파생 평가손익은 아니다) ·
+<b>② 반복되나</b>(평가손익은 다음 분기에 뒤집힌다) · <b>③ 사업의 능력을 반영하나</b>(가스 가격이지 액화 능력이 아니다).</b><br>
+&nbsp;&nbsp;<b>🔑 <u>같은 논리가 <b>B절 「현금 전환」 축</b>에도 걸린다</u> — <b>반기 OCF가 음수인 회사가 여럿</b>인데,
+<b>방산·조선은 <u>선수금 수령 시점</u>에 따라 반기 단위로 크게 흔들린다</b>. <b><u>그래서 B절은 「방향만 읽고 크기는 읽지 않는다」고 한계에 적었다</u>.</b></b>
 
 <div id="falsify" style="margin-top:16px;padding-top:14px;border-top:1px dashed rgba(249,115,22,.4)">
 <b style="color:var(--accent)">반증 조건 · 다음 검증</b><br>
@@ -381,6 +405,52 @@
 </div>
 </div></section>
 
+
+
+<section id="biz" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="ln"></span><span class="idx">B</span>&nbsp;비즈니스 질</div>
+<h2 class="sec-title">B · 재무 성과가 아니라 <u>비즈니스 질</u> — 25점</h2>
+<p class="sec-lead"><b>🔴 <u>지금까지의 축은 이름이 「비즈니스 매력도」였지만 실제로는 <b>손익계산서를 여섯 번 센 것</b></u>이었다(사용자 지적).</b>
+<b>재무 성과는 <u>「과거에 얼마나 잘했나」</u>이고, 비즈니스 질은 <u>「이 우위가 얼마나 오래 갈까」</u>다.</b>
+<b>다섯 축을 <u>따로</u> 세워 <b>재무 성과와 분리해서</b> 본다.</b></p></div>
+<div class="panel" style="padding:0;overflow:auto"><table class="val-table">
+<thead><tr><th>기업<div style="font-weight:400;text-transform:none;letter-spacing:0">해자·고객 구조</div></th>
+<th>GPM</th><th>ROIC</th><th>CapEx<br>÷매출</th><th>현금전환<br>OCF÷영익</th>
+<th>가격<br>결정력</th><th>자본<br>효율</th><th>자본<br>경량성</th><th>현금<br>전환</th><th>해자·<br>고객</th>
+<th>비즈니스 질<br>/25</th><th>배수</th><th>질 대비<br>가격</th><th style="color:var(--ink-3)">재무<br>성과</th></tr></thead>
+<tbody>
+<tr><td><b>TE Connectivity</b><div style="font-size:.72em;color:var(--ink-3)">10-K 3개년 명시</div></td><td class="tnum">36.1%</td><td class="tnum">16.3%</td><td class="tnum">4.9%</td><td class="tnum" style="color:var(--ink)">110%</td><td class="tnum">3.8</td><td class="tnum">1.5</td><td class="tnum">3.8</td><td class="tnum">4.6</td><td class="tnum">5.0</td><td class="tnum"><b>18.6</b></td><td class="tnum">15.4</td><td class="tnum" style="color:#22c55e"><b>0.82</b></td><td class="tnum" style="color:var(--ink-3)">18.6</td></tr>
+<tr><td><b>Comfort Systems</b><div style="font-size:.72em;color:var(--ink-3)">RPO 1.25배 · 10% 고객 없음</div></td><td class="tnum">25.7%</td><td class="tnum">44.1%</td><td class="tnum">2.5%</td><td class="tnum" style="color:var(--ink)">53%</td><td class="tnum">2.7</td><td class="tnum">4.0</td><td class="tnum">4.4</td><td class="tnum">2.2</td><td class="tnum">5.0</td><td class="tnum"><b>18.3</b></td><td class="tnum">29.0</td><td class="tnum" style="color:var(--ink)"><b>1.58</b></td><td class="tnum" style="color:var(--ink-3)">23.0</td></tr>
+<tr><td><b>Vertiv</b><div style="font-size:.72em;color:var(--ink-3)">미공시</div></td><td class="tnum">38.0%</td><td class="tnum">23.1%</td><td class="tnum">2.6%</td><td class="tnum" style="color:var(--ink)">114%</td><td class="tnum">4.0</td><td class="tnum">2.1</td><td class="tnum">4.4</td><td class="tnum">4.7</td><td class="tnum">3.0</td><td class="tnum"><b>18.2</b></td><td class="tnum">45.5</td><td class="tnum" style="color:var(--ink)"><b>2.50</b></td><td class="tnum" style="color:var(--ink-3)">18.7</td></tr>
+<tr><td><b>Mastercard</b><div style="font-size:.72em;color:var(--ink-3)">2사 과점 · 네트워크 효과</div></td><td class="tnum">—</td><td class="tnum">54.5%</td><td class="tnum">1.5%</td><td class="tnum" style="color:var(--ink)">74%</td><td class="tnum">0.0</td><td class="tnum">5.0</td><td class="tnum">4.6</td><td class="tnum">3.1</td><td class="tnum">5.0</td><td class="tnum"><b>17.7</b></td><td class="tnum">25.5</td><td class="tnum" style="color:var(--ink)"><b>1.44</b></td><td class="tnum" style="color:var(--ink-3)">21.2</td></tr>
+<tr><td><b>Amphenol</b><div style="font-size:.72em;color:var(--ink-3)">10-K 3개년 「10% 고객 없음」</div></td><td class="tnum">38.5%</td><td class="tnum">17.0%</td><td class="tnum">3.2%</td><td class="tnum" style="color:var(--ink)">57%</td><td class="tnum">4.0</td><td class="tnum">1.6</td><td class="tnum">4.2</td><td class="tnum">2.4</td><td class="tnum">5.0</td><td class="tnum"><b>17.1</b></td><td class="tnum">24.9</td><td class="tnum" style="color:var(--ink)"><b>1.45</b></td><td class="tnum" style="color:var(--ink-3)">22.2</td></tr>
+<tr><td><b>Quanta Services</b><div style="font-size:.72em;color:var(--ink-3)">잔고 +41.2% · 10% 고객 없음</div></td><td class="tnum">15.5%</td><td class="tnum">10.0%</td><td class="tnum">2.1%</td><td class="tnum" style="color:var(--ink)">122%</td><td class="tnum">1.6</td><td class="tnum">0.9</td><td class="tnum">4.5</td><td class="tnum">5.0</td><td class="tnum">5.0</td><td class="tnum"><b>17.0</b></td><td class="tnum">43.6</td><td class="tnum" style="color:var(--ink)"><b>2.57</b></td><td class="tnum" style="color:var(--ink-3)">20.1</td></tr>
+<tr><td><b>Visa</b><div style="font-size:.72em;color:var(--ink-3)">2사 과점 · 네트워크 효과</div></td><td class="tnum">—</td><td class="tnum">37.1%</td><td class="tnum">3.3%</td><td class="tnum" style="color:var(--ink)">95%</td><td class="tnum">0.0</td><td class="tnum">3.4</td><td class="tnum">4.2</td><td class="tnum">4.0</td><td class="tnum">5.0</td><td class="tnum"><b>16.5</b></td><td class="tnum">27.1</td><td class="tnum" style="color:var(--ink)"><b>1.64</b></td><td class="tnum" style="color:var(--ink-3)">18.9</td></tr>
+<tr><td><b>Cheniere Energy</b><div style="font-size:.72em;color:var(--ink-3)">장기 인수계약 · 10% 고객 없음</div></td><td class="tnum">47.8%</td><td class="tnum">17.5%</td><td class="tnum">12.4%</td><td class="tnum" style="color:var(--ink)">93%</td><td class="tnum">5.0</td><td class="tnum">1.6</td><td class="tnum">1.9</td><td class="tnum">3.9</td><td class="tnum">4.0</td><td class="tnum"><b>16.4</b></td><td class="tnum">9.1</td><td class="tnum" style="color:#22c55e"><b>0.55</b></td><td class="tnum" style="color:var(--ink-3)">16.3</td></tr>
+<tr><td><b>Targa Resources</b><div style="font-size:.72em;color:var(--ink-3)">장기 처리계약 · 미공시</div></td><td class="tnum">43.2%</td><td class="tnum">13.3%</td><td class="tnum">20.2%</td><td class="tnum" style="color:var(--ink)">118%</td><td class="tnum">4.5</td><td class="tnum">1.2</td><td class="tnum">0.0</td><td class="tnum">4.9</td><td class="tnum">3.0</td><td class="tnum"><b>13.7</b></td><td class="tnum">16.1</td><td class="tnum" style="color:#22c55e"><b>1.18</b></td><td class="tnum" style="color:var(--ink-3)">12.7</td></tr>
+<tr><td><b>Lockheed Martin</b><div style="font-size:.72em;color:var(--ink-3)">미 정부 72%</div></td><td class="tnum">11.8%</td><td class="tnum">26.5%</td><td class="tnum">2.6%</td><td class="tnum" style="color:var(--ink)">64%</td><td class="tnum">1.2</td><td class="tnum">2.4</td><td class="tnum">4.3</td><td class="tnum">2.7</td><td class="tnum">1.0</td><td class="tnum"><b>11.7</b></td><td class="tnum">14.2</td><td class="tnum" style="color:var(--ink)"><b>1.22</b></td><td class="tnum" style="color:var(--ink-3)">13.1</td></tr>
+<tr><td><b>General Dynamics</b><div style="font-size:.72em;color:var(--ink-3)">미 정부 68%</div></td><td class="tnum">—</td><td class="tnum">14.0%</td><td class="tnum">2.4%</td><td class="tnum" style="color:var(--ink)">104%</td><td class="tnum">0.0</td><td class="tnum">1.3</td><td class="tnum">4.4</td><td class="tnum">4.3</td><td class="tnum">1.5</td><td class="tnum"><b>11.5</b></td><td class="tnum">18.7</td><td class="tnum" style="color:var(--ink)"><b>1.62</b></td><td class="tnum" style="color:var(--ink-3)">13.5</td></tr>
+<tr><td><b>RTX Corp</b><div style="font-size:.72em;color:var(--ink-3)">미 정부 38% · 상업 절반</div></td><td class="tnum">—</td><td class="tnum">8.7%</td><td class="tnum">3.3%</td><td class="tnum" style="color:var(--ink)">85%</td><td class="tnum">0.0</td><td class="tnum">0.8</td><td class="tnum">4.2</td><td class="tnum">3.5</td><td class="tnum">3.0</td><td class="tnum"><b>11.5</b></td><td class="tnum">27.2</td><td class="tnum" style="color:var(--ink)"><b>2.37</b></td><td class="tnum" style="color:var(--ink-3)">14.5</td></tr>
+<tr><td><b>Corning</b><div style="font-size:.72em;color:var(--ink-3)">미공시</div></td><td class="tnum">36.4%</td><td class="tnum">10.6%</td><td class="tnum">—</td><td class="tnum" style="color:var(--ink)">88%</td><td class="tnum">3.8</td><td class="tnum">1.0</td><td class="tnum">0.0</td><td class="tnum">3.7</td><td class="tnum">3.0</td><td class="tnum"><b>11.5</b></td><td class="tnum">52.0</td><td class="tnum" style="color:#ef4444"><b>4.54</b></td><td class="tnum" style="color:var(--ink-3)">16.0</td></tr>
+<tr><td><b>Freeport-McMoRan</b><div style="font-size:.72em;color:var(--ink-3)">상품가격 노출 · 미공시</div></td><td class="tnum">27.1%</td><td class="tnum">16.2%</td><td class="tnum">16.6%</td><td class="tnum" style="color:var(--ink)">68%</td><td class="tnum">2.8</td><td class="tnum">1.5</td><td class="tnum">0.8</td><td class="tnum">2.8</td><td class="tnum">1.5</td><td class="tnum"><b>9.5</b></td><td class="tnum">15.8</td><td class="tnum" style="color:var(--ink)"><b>1.66</b></td><td class="tnum" style="color:var(--ink-3)">11.6</td></tr>
+<tr><td><b>Williams</b><div style="font-size:.72em;color:var(--ink-3)">장기 수송계약 · 미공시</div></td><td class="tnum">—</td><td class="tnum">8.6%</td><td class="tnum">41.7%</td><td class="tnum" style="color:var(--ink)">125%</td><td class="tnum">0.0</td><td class="tnum">0.8</td><td class="tnum">0.0</td><td class="tnum">5.0</td><td class="tnum">3.0</td><td class="tnum"><b>8.8</b></td><td class="tnum">19.3</td><td class="tnum" style="color:var(--ink)"><b>2.20</b></td><td class="tnum" style="color:var(--ink-3)">14.6</td></tr>
+<tr><td><b>Northrop Grumman</b><div style="font-size:.72em;color:var(--ink-3)">미 정부 80~82%</div></td><td class="tnum">—</td><td class="tnum">11.9%</td><td class="tnum">3.2%</td><td class="tnum" style="color:var(--ink)">71%</td><td class="tnum">0.0</td><td class="tnum">1.1</td><td class="tnum">4.2</td><td class="tnum">2.9</td><td class="tnum">0.5</td><td class="tnum"><b>8.7</b></td><td class="tnum">16.9</td><td class="tnum" style="color:var(--ink)"><b>1.93</b></td><td class="tnum" style="color:var(--ink-3)">9.3</td></tr>
+</tbody></table></div>
+<div class="panel" style="margin-top:20px">
+<p style="line-height:1.9"><b>채점 기준 — 다섯 축 전부 <u>원문 실측</u>이고 만점 기준은 <b>GPM 47.8%(Cheniere) · ROIC 54.5%(Mastercard) · CapEx 20% · 현금전환 120%</b>다.</b><br>
+<b>· <u>가격 결정력</u> = <b>매출총이익률(GPM)</b> — <u>OPM은 판관비가 섞여 「가격을 올릴 수 있나」를 못 본다</u><br>
+· <u>자본 효율</u> = <b>ROIC = 영업이익×(1−유효세율) ÷ (자본총계 + 차입금)</b> — <u>이 아카이브에 그동안 <b>ROIC가 한 번도 없었다</b></u><br>
+· <u>자본 경량성</u> = <b>유형자산 취득 ÷ 매출</b>, 낮을수록 고득점 — <u>같은 매출을 만드는 데 얼마를 태워야 하나</u><br>
+· <u>현금 전환</u> = <b>영업활동 현금흐름 ÷ 영업이익</b> — <u>이익이 진짜 현금이 되는가</u><br>
+· <u>해자·고객</u> = M/S·독점·고객 구조 <span style="color:#f59e0b">등급 ②·③</span> — <b>다섯 축 중 이것만 실측이 아니다</b></b></p>
+<p style="line-height:1.9;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)"><b>🔴 한계 — 계정을 그대로 믿지 않는다.</b><br>
+<b>· <b>현금 전환은 <u>반기 기준이라 계절성에 크게 흔들린다</u></b>. 선수금·운전자본 사이클이 큰 업종에서 <u>음수가 곧 「나쁜 사업」은 아니다</u> — <b>방향만 읽고 크기는 읽지 않는다</b><br>
+· <b>ROIC는 <u>반기 영업이익 × 2</u>로 연환산했다</b>. 계절성이 크면 왜곡된다(§A5)<br>
+· <b>GPM은 <u>회사마다 매출원가 구성이 다르다</u></b> — 감가상각을 원가에 넣는 곳과 판관비에 넣는 곳이 갈린다. <b>섹터 안에서만 비교한다</b><br>
+· <b>CapEx는 <u>일회성 증설·신사옥이 섞인다</u></b> — <b>한 반기만 보고 「자본집약적」이라 단정하지 않는다</b><br>
+· <b>해자·고객 축이 ②·③</b>이라 <u>25점 중 5점(20%)이 미확정</u>이다</b></p>
+</div>
+</div></section>
 
 <footer>
   <div class="wrap">
