@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="SK하이닉스·삼성·마이크론 11개 팹의 착공·반입·양산 시점을 소부장 12사의 공정 단계와 맞물렸다. 발주에는 순서가 있고, 2027년에 5개 팹이 동시에 반입 구간에 들어간다.">
+<meta name="keywords" content="메모리 팹 증설,M15X,M17,평택 P4,평택 P5,테일러,인디애나,마이크론 아이다호,소부장,공정 단계,증착,식각,세정,CCSS,장비 반입">
+<meta property="og:title" content="한·미 메모리 팹 증설 지도 — 어느 단계에 누가 들어가나">
+<meta property="og:description" content="SK하이닉스·삼성·마이크론 11개 팹의 착공·반입·양산 시점을 소부장 12사의 공정 단계와 맞물렸다. 발주에는 순서가 있고, 2027년에 5개 팹이 동시에 반입 구간에 들어간다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_fab_timeline.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="한·미 메모리 팹 증설 지도 — 어느 단계에 누가 들어가나">
+<meta name="twitter:description" content="SK하이닉스·삼성·마이크론 11개 팹의 착공·반입·양산 시점을 소부장 12사의 공정 단계와 맞물렸다. 발주에는 순서가 있고, 2027년에 5개 팹이 동시에 반입 구간에 들어간다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_fab_timeline.html">
+<title>한·미 메모리 팹 증설 지도 — 어느 단계에 누가 들어가나</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"한·미 메모리 팹 증설 지도 — 어느 단계에 누가 들어가나","description":"SK하이닉스·삼성·마이크론 11개 팹의 착공·반입·양산 시점을 소부장 12사의 공정 단계와 맞물렸다. 발주에는 순서가 있고, 2027년에 5개 팹이 동시에 반입 구간에 들어간다.","url":"https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_fab_timeline.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>한·미 메모리 팹 증설 지도</div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 팹 타임라인</a><a href="#s2">02 / 공정 단계</a><a href="#s3">03 / 발주 순서</a><a href="#s4">04 / 한계</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">팹 11개 × 소부장 12사 · 2026.08.29 · 등급 병기</span>
+    <h1 class="hero-title">발주에는<br><span class="hl">순서가 있다</span></h1>
+    <p class="hero-sub">아카이브는 <b>캐펙스 총액</b>은 갖고 있는데 <u>그 돈이 어느 단계로 언제 흘러가는지</u>를 답할 축이 없었다. 팹 <b>11개</b>의 착공·반입·양산 시점을 소부장 <b>12사</b>의 공정 단계와 맞물리면 <b>인프라 → 장비 → 소재 → 패키징</b> 순서가 나오고, <b><u>2027년에 5개 팹이 동시에 장비 반입 구간</u></b>에 들어간다.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num tnum">5<span class="u">개 팹</span></div><div class="lab">2027년에 <b>동시에 장비 반입·양산</b> 구간 — M15X · 평택 P4 Ph2 · P5 Ph1 · 테일러 Fab1 · 아이다호1</div><div class="src">SRC: 컨콜·언론 (② 등급)</div></div>
+      <div class="hstat"><div class="num tnum">4<span class="u">사</span></div><div class="lab">전공정 <b>증착(CVD·ALD)</b>에 몰린 소부장 — 원익IPS·주성·테스·유진테크</div><div class="src">SRC: DART 2026 반기보고서 주요 제품</div></div>
+      <div class="hstat"><div class="num tnum">2029<span class="u">~30</span></div><div class="lab">미국 팹 양산 시점 — 인디애나 · 테일러 Fab2 · 마이크론 뉴욕. <b>지금 실적과 무관하다</b></div><div class="src">SRC: 기공식·컨콜</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="now">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎현재 판단 · 2026.08.29</div>
+  <h2 class="sec-title">캐펙스가 아니라 「단계와 시점」으로 본다</h2>
+  <p class="sec-lead">작성 2026.08.29 · 최종 갱신 2026.08.29 · 🔴 정정 0 · 🔵 최근 0<br>
+  <b>기준</b> — 팹 일정은 <b>컨콜·기공식·언론(① · ②)</b>, 공정 단계는 <b>DART 2026 반기보고서 「주요 제품」(①)</b>. <u>두 축의 등급이 다르므로 칸마다 표기한다</u>(§A6).<br>
+  <b>한 문장</b> — <u>같은 캐펙스라도 팹의 단계에 따라 돈이 닿는 회사가 다르고, 그 순서는 예측이 아니라 <b>공정의 물리적 순서</b>다.</u></p></div>
+
+  <div class="panel">
+    <p><b>T1. 발주는 팹 안에서 순서가 있다 — 인프라 → 장비 → 소재 → 패키징.</b><br>
+    DART 「주요 제품」으로 12사를 분류하면 <u>같은 「소부장」이 아니다</u>. <b>에스티아이는 장비사가 아니라 인프라</b>다 — 매출의 <b>85.6%가 CCSS(중앙약품공급시스템)</b>로 <i>「반도체 전공정에 필요한 Chemical을 생산장비로 공급하는 full automatic system」</i>이며 <b>클린룸 조성 단계</b>에 들어간다. 그 다음이 <b>장비</b>(증착·식각·세정·어닐링), 양산이 시작되면 <b>소재</b>(솔브레인 HF·BOE·CMP Slurry 85%)가 반복 매출로 붙고, HBM은 마지막에 <b>패키징</b>(한미반도체 본딩 89.3% · 피에스케이홀딩스 Descum·Reflow)이 온다. <b>반증</b> — 에스티아이 매출이 팹 착공보다 장비 반입에 연동되면 이 순서가 틀린 것이다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T2. 2027년이 분기점이다 — 한·미 5개 팹이 동시에 반입·양산 구간에 들어간다.</b><br>
+    <b>SK하이닉스 청주 M15X</b>(2026.03 첫 반입 → 2027 초 가동, <i>「내년이 사실상 원년」</i>) · <b>삼성 평택 P4 Ph2</b>(가동 준비 완료 2027 상반기) · <b>평택 P5 Ph1</b>(준공을 2027.05로 <u>1년 앞당김</u>, 10조+α 장비 발주 임박) · <b>삼성 테일러 Fab1</b>(2027 양산, 2nm) · <b>마이크론 아이다호 1</b>(2027 중반 첫 웨이퍼)이 전부 2027에 걸린다. <u>반면 2026년에 새로 열리는 것은 M15X 초기 반입뿐</u>이다. <b>반증</b> — 이 중 두 곳 이상이 6개월 넘게 밀리면 「2027 분기점」이 무너진다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T3. 전공정 증착에 4사가 몰려 있고, 단독 자리는 셋뿐이다.</b><br>
+    <b>증착(CVD·ALD)</b>에 <b>원익IPS · 주성엔지니어링 · 테스 · 유진테크</b> 4사가 겹치고, <b>식각</b>에 <b>브이엠 · 주성 · 테스</b> 3사가 겹친다. 반면 <b>단독 자리는 셋</b>이다 — <b>HPSP</b>(고압 수소 어닐링, <i>「국내 최초로 고압 수소 어닐링 효과가 검증된 전공정 장비」</i>) · <b>피에스케이</b>(Dry Strip·Cleaning·Wafer Edge Clean) · <b>한미반도체</b>(HBM 본딩). <u>겹치는 자리는 팹 안에서 점유율 싸움이 되고, 단독 자리는 팹 수에 비례한다</u> [추론]. <b>반증</b> — 겹치는 4사의 매출 성장률이 서로 갈리지 않고 같이 움직이면 「점유율 싸움」이 아니라 파이 확대다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T4. 미국 팹은 2028~2030 양산이라 <u>지금 실적과 무관</u>하다.</b><br>
+    <b>SK하이닉스 인디애나</b>는 2026.08.27 기공식을 했으나 <b>클린룸 완공 2028.10 · 양산 2029 하반기</b>($38.7억)이고, <b>삼성 테일러 Fab2</b>는 2026 연말 착공 · <b>2030 양산</b>, <b>마이크론 뉴욕</b>도 <b>2030 양산</b>이다. <u>즉 「미국 투자」 헤드라인은 향후 3~4년의 이야기이며 2026~2027 실적에는 들어오지 않는다.</u> 예외는 <b>테일러 Fab1(2027 양산)</b>과 <b>마이크론 아이다호 1(2027 중반)</b>뿐이다. <b>반증</b> — 미국 팹향 장비 수주가 2027년 안에 공시되면 이 시차 판정이 틀린 것이다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T5. 브이엠은 M16 → M15X <u>공백 구간</u>에 있다 [추론].</b><br>
+    브이엠은 <b>이천 M16</b>(HBM3E 코어다이용 1b DRAM)에 2024 약 400억 · 2025 상반기 528억 · 2026.02 <b>463억</b>을 납품했고, <b>M15X는 「납품 준비 중」</b>이며 회사·언론이 <i>「내년이 M15X 투자의 사실상 원년」</i>이라 말한다. <u>그 사이에 발주 공백이 생길 수 있고</u>, 실제로 분기 매출이 <b>1Q26 889억 → 2Q26 723억(−18.7%)</b>으로 꺾였다. <b>반증</b> — 3Q26·4Q26 매출이 723억 위로 회복하면 공백이 아니라 분기 변동이고, 더 내려가면 공백이 실재한다. → <a href="kr_semi_equip_vm_psk.html"><b>브이엠·피에스케이 개별 판단 편</b></a></p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="falsify">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎반증 조건 · 다음 검증</div><h2 class="sec-title">무엇이 관측되면 틀렸는가</h2></div>
+  <div class="panel">
+  <p><b>T1 →</b> 에스티아이 매출이 <u>착공이 아니라 장비 반입</u>에 연동되면 「인프라가 먼저」가 틀린 것이다.<br>
+  <b>T2 →</b> M15X · 평택 P4 Ph2 · P5 Ph1 · 테일러 Fab1 · 아이다호 1 중 <b>두 곳 이상이 6개월 넘게 밀리면</b> 「2027 분기점」이 무너진다.<br>
+  <b>T3 →</b> 증착 4사의 성장률이 서로 갈리지 않고 함께 움직이면 점유율 싸움이 아니라 <b>파이 확대</b>다.<br>
+  <b>T4 →</b> 미국 팹향 장비 수주가 <b>2027년 안에</b> 공시되면 시차 판정이 틀린 것이다.<br>
+  <b>T5 →</b> 브이엠 3Q26·4Q26 매출이 <b>723억</b> 위로 회복하면 공백이 아니다.</p>
+  <p class="note"><b>다음 검증(날짜가 아니라 이벤트)</b> — ① <b>3Q26 분기보고서</b>(11월 중순): T3·T5 ② <b>삼성 P5 장비 발주 공시</b>(10조+α, 임박 보도): T1·T2 ③ <b>SK하이닉스·삼성 4Q26 컨콜 캐펙스 가이던스</b>: T2 ④ <b>M15X 양산 개시 발표</b>: T5.</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="s1">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">01</div><h2 class="sec-title">팹 타임라인 — 착공 · 반입 · 양산</h2>
+  <p class="sec-lead">아카이브에 팹 조각은 흩어져 있었으나(M16 93회 · 인디애나 13 · M15X 9 · 테일러 9) <b>「어느 팹이 언제 어느 단계인가」를 모은 정본이 없었다</b>. 여기가 정본이며 나머지 편은 참조 한 줄로 건다(§B5).</p></div>
+  <table class="val-table">
+    <thead><tr><th>사업자 · 팹</th><th>착공 · 준공</th><th>장비 반입</th><th>양산</th><th>비고</th><th>등급</th></tr></thead>
+    <tbody>
+      <tr><td><b>SK하이닉스</b> 이천 <b>M16</b></td><td>완료</td><td>진행 중</td><td><b>가동 중</b></td><td>HBM3E 코어다이용 <b>1b DRAM</b> 증산에 투자 집중</td><td>②</td></tr>
+      <tr><td><b>SK하이닉스</b> 청주 <b>M15X</b></td><td>준공 <b>2026.11</b></td><td><b>2026.03 첫 반입</b><br>(계획 5월 → <b>2개월 앞당김</b>)<br>2번째 클린룸 개방</td><td><b>2027 초</b></td><td><i>「내년이 M15X 투자의 <u>사실상 원년</u>」</i></td><td>②</td></tr>
+      <tr><td><b>SK하이닉스</b> 청주 <b>M17</b></td><td>착공 <b>2027.02</b><br>첫 클린룸 2028.12</td><td><b>2028 이후</b></td><td>2029~</td><td>용인 Y2와 합쳐 <b>54조원</b>(2026.08.07) · 투자는 2031.04까지 단계적</td><td>①</td></tr>
+      <tr><td><b>SK하이닉스</b> <b>용인 Y2</b></td><td>—</td><td>미정</td><td>미정</td><td>M17과 합산 54조. 1기 팹에 선제 투자 집행 중</td><td>①</td></tr>
+      <tr><td><b>SK하이닉스</b> 미 <b>인디애나</b></td><td><b>기공식 2026.08.27</b><br>클린룸 <b>2028.10</b></td><td>2028</td><td><b>2029 하반기</b></td><td>HBM <b>어드밴스드 패키징</b> · <b>$38.7억</b>(5.53조) · 한국 기업 최초 미국 HBM 생산</td><td>①</td></tr>
+      <tr><td><b>삼성전자</b> 평택 <b>P4</b></td><td>Ph4(상동) 7월 · Ph2(하동) 11월 <b>임시사용 승인</b></td><td><b>선제 반입</b>(임시사용 방식)</td><td>Ph2 가동준비 <b>2027 상반기</b></td><td>Ph2까지 <b>HBM4</b> 투입 · 완전 가동 <b>반년 앞당김</b></td><td>②</td></tr>
+      <tr><td><b>삼성전자</b> 평택 <b>P5</b></td><td>준공 <b>2027.05</b><br>(<u>1년 앞당김</u>)</td><td><b>10조+α 발주 임박</b>(2026.07)</td><td>Ph1 <b>2027</b> 가능 · 전체 <b>2028</b></td><td>워트 THC 반입 <b>2027.07</b> 예정</td><td>②</td></tr>
+      <tr><td><b>삼성전자</b> 미 <b>테일러 Fab1</b></td><td>완료</td><td>2026 <b>가동 준비 완료</b></td><td><b>2027</b></td><td><b>2nm</b> · 월 <b>5만장</b>으로 2배 확대 계획</td><td>②</td></tr>
+      <tr><td><b>삼성전자</b> 미 <b>테일러 Fab2</b></td><td><b>2026 연말 착공</b></td><td>2029~</td><td><b>2030</b></td><td>2026 2Q 컨콜에서 확인</td><td>①</td></tr>
+      <tr><td><b>마이크론</b> 아이다호 1·2</td><td>2번째 2027 착공</td><td>—</td><td>1번째 <b>2027 중반 첫 웨이퍼</b><br>2번째 <b>2028</b></td><td>FY26 캐펙스 <b>$180억 → $200억</b> 상향</td><td>②</td></tr>
+      <tr><td><b>마이크론</b> 뉴욕 · 싱가포르</td><td>뉴욕 2027 착공</td><td>—</td><td>뉴욕 <b>2030</b><br>싱가포르 HBM 패키징 <b>2027 본격</b></td><td>히로시마 클린룸 추가 확충</td><td>②</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔑 2026년은 비어 있고 2027년에 몰린다.</b> 새로 열리는 것이 <b>2026년에는 M15X 초기 반입 하나</b>인데, <b>2027년에는 M15X 본격 · 평택 P4 Ph2 · P5 Ph1 · 테일러 Fab1 · 아이다호 1</b>이 겹친다. <u>이 공백이 2026년 하반기 소부장 실적의 구조적 배경일 수 있다</u> [추론] — 실제로 브이엠이 2Q26에 −18.7%로 꺾였다.</p>
+</div>
+</section>
+
+<section class="blk" id="s2">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">02</div><h2 class="sec-title">공정 단계 — 누가 어디에 들어가나</h2>
+  <p class="sec-lead">전부 <b>DART 2026 반기보고서 「주요 제품」 원문</b>이므로 <b>① 등급</b>이다. <u>「소부장」이라는 한 단어가 서로 다른 네 가지 사업을 덮고 있었다</u>.</p></div>
+  <table class="val-table">
+    <thead><tr><th>단계</th><th>회사</th><th>DART 원문 품목</th><th>매출 비중</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="1"><b>① 인프라</b><br><span style="font-size:.8em;color:var(--ink-3)">클린룸 조성</span></td><td><b>에스티아이</b></td><td><b>CCSS</b>(중앙약품공급시스템) — <i>「전공정에 필요한 Chemical을 생산장비로 공급하는 full automatic system」</i> · WET SYSTEM(세정/식각/현상)</td><td class="tnum"><b>85.6%</b></td></tr>
+      <tr><td rowspan="4"><b>② 전공정 장비<br>— 증착</b></td><td><b>원익IPS</b></td><td><b>PECVD, ALD, Diffusion Thermal System</b> (+Display Dry Etcher)</td><td class="tnum">—</td></tr>
+      <tr><td><b>유진테크</b></td><td><b>LPCVD, Plasma ALD</b> — <i>「웨이퍼 위에 특정 용도막(산화막·절연막)을 증착」</i> · 전구체 소재 3.44%</td><td class="tnum"><b>82.1%</b></td></tr>
+      <tr><td><b>주성엔지니어링</b></td><td><b>ALD, HDPCVD, MOCVD, UHVCVD, Epi</b> + Dry Etch (SD/SDP/Guidance/Eureka)</td><td class="tnum">—</td></tr>
+      <tr><td><b>테스</b></td><td><b>PECVD, Gas Etcher</b> (Challenger300HTi 등)</td><td class="tnum">—</td></tr>
+      <tr><td rowspan="1"><b>② 전공정 장비<br>— 식각</b></td><td><b>브이엠</b></td><td><b>300mm Poly Etcher</b>(건식 식각) — 3세대 <b>레오 WS</b> 개발 중</td><td class="tnum"><b>99.0%</b></td></tr>
+      <tr><td rowspan="1"><b>② 전공정 장비<br>— 세정·스트립</b></td><td><b>피에스케이</b></td><td><b>Dry Strip, Dry Cleaning, Wafer Edge Clean</b> — TSMC향 <b>SUPRA</b> 데모 완료</td><td class="tnum">장비 51.8%<br>부품·용역 48.2%</td></tr>
+      <tr><td rowspan="1"><b>② 전공정 장비<br>— 열처리</b></td><td><b>HPSP</b></td><td><b>고압 수소 어닐링</b> — <i>「High-K 절연막 트랜지스터의 계면 특성 개선 · 국내 최초로 효과가 검증된 전공정 장비」</i></td><td class="tnum">—</td></tr>
+      <tr><td rowspan="1"><b>② 전·후공정<br>— 레이저</b></td><td><b>이오테크닉스</b></td><td><b>레이저마커 및 응용기기</b></td><td class="tnum"><b>80.8%</b></td></tr>
+      <tr><td rowspan="1"><b>③ 소재</b><br><span style="font-size:.8em;color:var(--ink-3)">양산 반복매출</span></td><td><b>솔브레인</b></td><td><b>HF, B.O.E, CMP Slurry, Precursor</b> — <i>「제조 공정상 사용되는 공정용 화학 소재」</i></td><td class="tnum"><b>85%</b></td></tr>
+      <tr><td rowspan="2"><b>④ 후공정<br>— 패키징</b></td><td><b>한미반도체</b></td><td><b>반도체 제조용 장비</b>(HBM 본딩) 89.3% + <b>Conversion Kit</b> 10.7%</td><td class="tnum"><b>89.3%</b></td></tr>
+      <tr><td><b>피에스케이홀딩스</b></td><td><b>Descum, Reflow</b> — 자회사 <b>SEMIgear</b>(Texas Austin) Fluxless Reflow</td><td class="tnum">—</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔑 겹침과 단독이 갈린다.</b> <b>증착에 4사</b>(원익IPS·유진테크·주성·테스)가 겹치고 <b>식각에 3사</b>(브이엠·주성·테스)가 겹친다. 반면 <b>단독 자리는 셋뿐</b>이다 — <b>HPSP</b>(고압 어닐링) · <b>피에스케이</b>(스트립·세정) · <b>한미반도체</b>(HBM 본딩). <u>겹치는 자리에서는 같은 팹 안에서 점유율을 나눠 갖고, 단독 자리는 팹 수에 비례한다</u> [추론].</p>
+</div>
+</section>
+
+<section class="blk" id="s3">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">03</div><h2 class="sec-title">발주 순서 — 같은 캐펙스가 다른 시점에 닿는다</h2></div>
+  <div class="panel">
+    <p><b>팹 하나가 세워지는 물리적 순서는 정해져 있고, 그것이 곧 매출 인식 순서다.</b></p>
+    <table class="val-table">
+      <thead><tr><th>시점</th><th>무엇이 일어나나</th><th>돈이 닿는 곳</th><th>지금 그 구간에 있는 팹</th></tr></thead>
+      <tbody>
+        <tr><td><b>T−24~12개월</b></td><td>착공 · 골조 · <b>클린룸 조성</b></td><td><b>에스티아이</b>(CCSS 85.6%) · 건설</td><td>청주 M17(2027.02 착공) · 테일러 Fab2(2026 연말) · 마이크론 뉴욕</td></tr>
+        <tr><td><b>T−12~0개월</b></td><td><b>장비 반입 · 셋업</b></td><td><b>증착 4사 · 식각 · 세정 · 어닐링</b><br>(원익IPS·유진테크·주성·테스·브이엠·피에스케이·HPSP)</td><td><b>M15X</b>(2026.03~) · <b>평택 P4 Ph2 · P5 Ph1</b> · 테일러 Fab1 · 아이다호 1</td></tr>
+        <tr><td><b>T+0~</b></td><td><b>양산</b> — 웨이퍼 투입</td><td><b>솔브레인</b>(소재 85%) · 각사 <b>부품·용역</b><br>(피에스케이 48.2% · 한미 Conversion Kit 10.7%)</td><td>이천 M16 · 테일러 Fab1(2027~)</td></tr>
+        <tr><td><b>HBM 별도</b></td><td><b>어드밴스드 패키징</b></td><td><b>한미반도체</b>(본딩 89.3%) · <b>피에스케이홀딩스</b></td><td><b>인디애나</b>(2029 하반기) · 마이크론 싱가포르(2027)</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><b>🔑 이 표가 답하는 것</b> — 「SK하이닉스가 54조를 쓴다」는 뉴스가 <u>어느 회사에 언제 닿는지</u>를 갈라 준다. <b>M17 54조는 2027.02 착공이므로 지금 닿는 것은 인프라뿐</b>이고, 장비사는 <b>2028년 이후</b>다. 반대로 <b>M15X는 이미 반입 구간</b>이라 장비사에 지금 닿는다.<br>
+    <b>⚠ 다만 이것은 <u>구조이지 금액이 아니다</u></b> — 각 팹의 단계별 발주 금액은 공시되지 않는다(§A7-0). 브이엠처럼 <b>개별 계약을 공시하는 경우에만</b> 금액이 확인된다(M16향 2024 ~400억 · 2025 상반기 528억 · 2026.02 463억).</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="s4">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">04</div><h2 class="sec-title">⚠ 이 편의 한계 — 매번 붙인다</h2></div>
+  <div class="panel">
+    <p><b>① 팹 일정은 대부분 ② 등급이다.</b> 컨콜·기공식에서 나온 것(<b>①</b>)은 인디애나 · 테일러 Fab2 · 용인 Y2·M17 54조뿐이고, <u>M15X 반입 시점 · P5 준공 앞당김 · 아이다호 첫 웨이퍼는 언론 보도</u>다. <b>일정은 미끄러진다</b> — 실제로 M15X는 <u>2개월 앞당겨졌고</u> P5는 <u>1년 앞당겨졌다</u>. 방향이 양쪽 다 열려 있다.<br>
+    <b>② 단계별 발주 금액은 공시되지 않는다.</b> 「몇 조를 쓴다」는 총액이고, 그중 <u>증착에 얼마·식각에 얼마</u>는 어디에도 없다. <b>따라서 이 편은 「누가 언제」까지만 답하고 「얼마나」는 답하지 않는다</b>(§A7-0).<br>
+    <b>③ 소부장 각사가 어느 팹에 들어가는지는 대부분 미공시</b>다. 브이엠만 개별 계약을 공시하고, 나머지는 <b>NDA·영업정책으로 수주 현황을 생략</b>한다(피에스케이·HPSP 등). <u>즉 02절의 「공정 단계」는 확정이지만 01절과의 연결은 추론이다</u>.<br>
+    <b>④ 점유율을 모른다.</b> 겹치는 자리(증착 4사·식각 3사)에서 누가 얼마를 가져가는지는 <b>글로벌 업체(AMAT·Lam·TEL·ASM) 포함</b> 판정되지 않는다. 브이엠 사업보고서 자신이 <i>「글로벌 업체들이 300mm 건식 식각장비의 90% 이상을 공급」</i>이라 적는다.<br>
+    <b>⑤ 수요가 꺾이면 순서와 무관하게 전부 밀린다.</b> 이 편은 <u>「투자가 계획대로 갈 때의 순서」</u>이며, 캐펙스 자체의 방향은 <a href="hbm_pkg_theme_memory_cycle.html">메모리 사이클 편</a>이 판정한다.</p>
+  </div>
+</div>
+</section>
+
+<footer class="blk">
+<div class="wrap">
+  <p class="note"><b>타임라인</b><br>
+  ▸ 2026.08.29 — 신설. 팹 11개 × 소부장 12사. 팹 일정은 컨콜·기공식·언론, 공정 단계는 DART 2026 반기보고서 「주요 제품」 원문. T1~T5 확정.</p>
+  <p class="note"><b>출처</b> — SK하이닉스 2026 2Q 컨콜 · 인디애나 기공식(2026.08.27) · 용인 Y2·청주 M17 발표(2026.08.07) · 삼성전자 2026 2Q 컨콜 · DART 2026 반기보고서(에스티아이·원익IPS·유진테크·주성엔지니어링·테스·브이엠·피에스케이·HPSP·이오테크닉스·솔브레인·한미반도체·피에스케이홀딩스) · 언론 보도.<br>
+  <b>⚠ 이 페이지는 매매·비중·시점을 지시하지 않는다</b>(§J6). 주는 것은 <u>단계 · 시점 · 반증 조건</u>이다.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>
