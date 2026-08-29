@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="브이엠·피에스케이를 DART 반기 원문으로 해부. 브이엠은 매출 100%가 2개 고객이고, 기관 순매수 9사 1위인데 고점 대비 −51.5%다. 「수급이 안 받쳐줬다」는 성립하지 않는다.">
+<meta name="keywords" content="브이엠,피에스케이,에이피티씨,APTC,반도체 소부장,고객 집중도,SK하이닉스 캐펙스,건식 식각,Dry Strip,DART 반기보고서,수급,낙폭">
+<meta property="og:title" content="브이엠 · 피에스케이 — 고객 2사 100%와 4사 77%의 차이">
+<meta property="og:description" content="브이엠·피에스케이를 DART 반기 원문으로 해부. 브이엠은 매출 100%가 2개 고객이고, 기관 순매수 9사 1위인데 고점 대비 −51.5%다. 「수급이 안 받쳐줬다」는 성립하지 않는다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_equip_vm_psk.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="브이엠 · 피에스케이 — 고객 2사 100%와 4사 77%의 차이">
+<meta name="twitter:description" content="브이엠·피에스케이를 DART 반기 원문으로 해부. 브이엠은 매출 100%가 2개 고객이고, 기관 순매수 9사 1위인데 고점 대비 −51.5%다. 「수급이 안 받쳐줬다」는 성립하지 않는다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_equip_vm_psk.html">
+<title>브이엠 · 피에스케이 — 고객 2사 100%와 4사 77%의 차이</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"브이엠 · 피에스케이 — 고객 2사 100%와 4사 77%의 차이","description":"브이엠·피에스케이를 DART 반기 원문으로 해부. 브이엠은 매출 100%가 2개 고객이고, 기관 순매수 9사 1위인데 고점 대비 −51.5%다. 「수급이 안 받쳐줬다」는 성립하지 않는다.","url":"https://ourprochoi-web.github.io/stock-research/hbm-packaging/kr_semi_equip_vm_psk.html","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>브이엠 · 피에스케이 개별 판단</div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 고객</a><a href="#s2">02 / 수급 검증</a><a href="#s3">03 / 납품 파이프라인</a><a href="#s4">04 / 정정</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">반도체 소부장 개별 판단 · 2026.08.28 종가 · DART 반기 원문</span>
+    <h1 class="hero-title">기관이 27%를 샀는데<br><span class="hl">주가는 반토막이다</span></h1>
+    <p class="hero-sub">브이엠은 1년간 <b>외국인 +7.69% · 기관 +26.96%</b>로 소부장 9사 중 <u>수급 1위</u>인데 고점 대비 <b>−51.5%</b>다. <b>「실적은 좋은데 수급이 안 받쳐줬다」는 성립하지 않는다.</b> 그리고 브이엠 매출의 <u>100%가 단 2개 고객</u>이며, 피에스케이는 <u>4사 77.3%</u>다 — 같은 소부장인데 <b>구조가 다르다</b>.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num tnum">100<span class="u">%</span></div><div class="lab">브이엠 매출 중 <b>상위 2개 고객</b> 비중 — A사 86.2% + B사 13.8%</div><div class="src">SRC: DART 2026 반기보고서 연결주석 14. 영업부문</div></div>
+      <div class="hstat"><div class="num tnum">+34.65<span class="u">%</span></div><div class="lab">브이엠 1년 <b>외국인+기관 순매수</b> ÷ 상장주식수 — <b>9사 중 1위</b></div><div class="src">SRC: 네이버 외국인·기관 일별, 2025.09.03~2026.08.28</div></div>
+      <div class="hstat"><div class="num tnum">−0.113</div><div class="lab">9사 <b>상승률 ↔ 하락률 상관</b> — 유의하지 않다(t=−0.30)</div><div class="src">SRC: 「많이 오른 게 많이 빠졌다」조차 아니다</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="now">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎현재 판단 · 2026.08.29</div>
+  <h2 class="sec-title">브이엠 · 피에스케이 — 같은 섹터, 다른 구조</h2>
+  <p class="sec-lead">작성 2026.08.29 · 최종 갱신 2026.08.29 · <b>🔴 정정 3</b> · 🔵 최근 0<br>
+  <b>기준일</b> — 시세 <b>2026.08.28 종가</b>(브이엠 58,000원 · 피에스케이 128,600원) · 실적 <b>1H26 DART 확정</b> · 수급 2025.09.03~2026.08.28 240거래일.<br>
+  <b>한 문장</b> — <u>브이엠은 SK하이닉스 캐펙스의 함수이고 피에스케이는 한국 밖에서 자란다</u>. 그리고 <b>둘의 하락은 수급도 실적도 아닌 섹터 사건</b>이었다.</p></div>
+
+  <div class="panel">
+    <p><b>T1. 브이엠은 매출의 100%가 2개 고객이다 — 이것이 이 회사의 전부다.</b><br>
+    1H26 연결주석의 「매출액 10% 이상 외부고객」이 <b>A사 1,389.74억(86.2%) + B사 222.01억(13.8%) = 1,611.86억</b>으로 <u>매출 전액</u>이다. 전반기도 <b>95.3% + 4.7% = 100%</b>였다. 같은 주석의 지역 공시가 <b>본사 소재지 국가 1,389.85억 / 중국 222.01억</b>으로 고객 금액과 일치하므로 <u>A사는 국내, B사는 중국</u>이다 [추론]. 사업보고서가 <b>SK하이닉스를 국책과제 공동 참여사로 명시</b>하고 본사가 <b>경기도 이천</b>(SK하이닉스 팹 소재지)이며 중국 종속기업이 <b>VM (Wuxi) Inc.</b>(우시 = SK하이닉스 DRAM 팹 소재지)다. <b>반증</b> — A사·B사가 실명 공시되거나, 3Q26에 세 번째 고객이 10%를 넘으면 이 구조가 바뀐다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T2. 「실적 대비 수급이 못 받쳐줬다」는 성립하지 않는다 — 브이엠은 9사 중 수급 1위다.</b><br>
+    240거래일 누적 순매매를 상장주식수로 나누면 브이엠은 <b>외국인 +7.69% · 기관 +26.96% = +34.65%로 9사 중 1위</b>인데 고점 대비 <b>−51.5%</b>다. <u>기관이 상장주식수의 27%를 순매수하는 동안 주가가 반토막 났다.</u> 주목도도 마찬가지다 — 시총 대비 일평균 거래대금이 <b>1.995%/일로 3위</b>이고, 저점→고점 상승률은 <b>+810.3%로 9사 중 1위</b>였다. <b>주목은 충분히 받았다.</b> 피에스케이는 외국인이 −2.51%로 약했으나 기관 포함 +11.77%(5위)로 중위권이다. <b>반증</b> — 3Q26에 기관 순매수가 이어지는데 주가가 회복되면 「수급이 늦게 반영된다」가 성립한다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T3. 브이엠은 하락이 실적보다 <u>6주 먼저</u> 왔다 — 순서를 뒤집어 읽으면 안 된다.</b><br>
+    <b>07.01 고점 119,700 → 07.15 115,900(−3.2%) → 08.03 64,000(−46.5%) → 08.14 반기보고서 → 08.28 58,000</b>. 2Q26 실적 꺾임(<b>매출 889억→723억 −18.7% · 영업이익 301억→201억 −33.2% · OPM 33.9%→27.7%</b>)은 <u>8월 공시</u>이고 급락은 <u>7월 후반</u>이다. 즉 <b>「실적이 좋은데 안 올랐다」가 아니라 「먼저 빠지고 나서 실적이 꺾였다」</b>이다. <b>반증</b> — 3Q26 매출이 2Q 수준(723억) 이상으로 돌아오면 2Q는 분기 변동이고, 두 분기 연속 감소하면 1Q26(889억)이 정점이었던 것이다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T4. 피에스케이는 장비사가 아니라 절반이 서비스다 — 그리고 성장은 한국 밖에서 온다.</b><br>
+    1H26 매출 3,240.68억 = <b>반도체 공정장비 1,677.45억(51.8%) + 부품·용역수수료 1,563.23억(48.2%)</b>이다. 장비 <b>대당 단가는 2년 연속 하락</b>했다(1,453 → 1,422 → <b>1,382백만원</b>, 누적 −4.9%) — <u>매출이 +54.0% 느는 동안 단가는 내려갔다</u>. 지역별 성장은 <b>미국 +156.9% · 대만 +95.0%</b>로 <b>한국 +26.0%</b>의 3.6~6.0배다. 고객은 <b>4사 77.3%</b>(A 28.4 · B 19.3 · C 15.9 · D 13.7)로 브이엠보다 분산돼 있고, 원문이 <b>국내 S사·H사 + 해외 M사 포함 10개사 이상</b>이라 적는다. <b>반증</b> — 3Q26에 장비 대당 단가가 반등하면 「단가 하락」 해석이 틀린 것이고, 미국·대만 성장률이 한국 아래로 내려오면 「한국 밖에서 자란다」가 무너진다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T5. 납품 파이프라인의 짝이 갈린다 — 브이엠만 판별할 계정이 없다.</b><br>
+    §A2-1-b대로 <b>재고의 짝(계약부채·재공품)</b>을 보면 셋으로 나뉜다. <b>원익IPS</b>는 재고 +18.6%에 <b>계약부채 3,210억(+22.0%)</b>이 붙어 선수금이 재고보다 빨리 늘고, <b>피에스케이</b>는 계약부채가 없지만 <b>재공품 +133.3%가 제품 +39.1%보다 3.4배 빠르다</b>. 그런데 <b>브이엠은 재고가 +82.0%(813억)인데 계약부채가 0이고, <u>재고 구성 주석 자체를 만들지 않는다</u></b>(연결주석 14개 항목에 재고자산이 없다). 즉 <u>「선제 생산인가 적체인가」를 판별할 계정이 하나도 없다</u> — Vertiv 때는 계약부채가 판정했고 피에스케이는 재공품이 판정했는데, 브이엠은 둘 다 없다. <b>반증</b> — 3Q26에 재고가 줄면서 매출이 늘면 선제 생산이고, 재고가 더 늘고 매출이 정체하면 적체다.</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="falsify">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎반증 조건 · 다음 검증</div>
+  <h2 class="sec-title">무엇이 관측되면 틀렸는가</h2></div>
+  <div class="panel">
+  <p><b>T1 →</b> 3Q26에 세 번째 고객이 매출의 10%를 넘으면 「2사 100%」 구조가 바뀐다. 반대로 B사(중국) 비중이 다시 5% 아래로 내려가면 <u>단일 고객 의존이 더 심해진 것</u>이다.<br>
+  <b>T2 →</b> 3Q26·4Q26에 기관 순매수가 이어지는데 주가가 회복되면 「수급이 늦게 반영된다」가 성립하고, 순매수가 이어지는데도 신저가면 <b>수급 축은 이 종목에서 정보가 없다</b>(§J8-2와 같은 결론).<br>
+  <b>T3 →</b> 3Q26 매출이 723억 이상이면 2Q는 분기 변동이다. 두 분기 연속 감소면 <b>1Q26 889억이 이번 사이클 정점</b>이었다.<br>
+  <b>T4 →</b> 3Q26 장비 대당 단가가 1,382백만원을 넘으면 「2년 연속 하락」 해석이 틀린 것이다.<br>
+  <b>T5 →</b> 브이엠 3Q26 재고가 813억 아래로 내려가면서 매출이 늘면 <b>선제 생산</b>, 재고가 더 늘고 매출이 정체하면 <b>적체</b>다.</p>
+  <p class="note"><b>다음 검증(날짜가 아니라 이벤트)</b> — ① <b>3Q26 분기보고서</b>(11월 중순): T3·T4·T5를 한 번에 판정한다 ② <b>SK하이닉스 4Q26 캐펙스 가이던스</b>: T1의 분모다 ③ <b>3Q26 13F·5% 대량보유 변동</b>: T2.</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="s1">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">01</div><h2 class="sec-title">고객 — 2사 100%와 4사 77%</h2>
+  <p class="sec-lead">둘 다 DART 2026 반기보고서 <b>연결주석 「매출액의 10% 이상 외부고객」</b>에서 나온다. 회사가 실명을 쓰지 않으므로 <b>A사·B사는 ② 미확인</b>이고, 지역 공시 금액과의 일치로 <u>소재 국가만</u> 특정된다.</p></div>
+  <table class="val-table">
+    <thead><tr><th>브이엠 (089970)</th><th>1H26</th><th>비중</th><th>1H25</th><th>비중</th><th>YoY</th></tr></thead>
+    <tbody>
+      <tr><td><b>A사</b> (본사 소재지 국가)</td><td class="tnum">1,389.74억</td><td class="tnum"><b>86.2%</b></td><td class="tnum">544.53억</td><td class="tnum">95.3%</td><td class="tnum">+155.2%</td></tr>
+      <tr><td><b>B사</b> (중국)</td><td class="tnum">222.01억</td><td class="tnum">13.8%</td><td class="tnum">26.64억</td><td class="tnum">4.7%</td><td class="tnum"><b>+733.4%</b></td></tr>
+      <tr><td><b>합계 = 전체 매출</b></td><td class="tnum"><b>1,611.86억</b></td><td class="tnum"><b>100.0%</b></td><td class="tnum">571.18억</td><td class="tnum"><b>100.0%</b></td><td class="tnum">+182.2%</td></tr>
+    </tbody>
+  </table>
+  <table class="val-table">
+    <thead><tr><th>피에스케이 (319660)</th><th>1H26</th><th>비중</th><th>1H25</th><th>YoY</th></tr></thead>
+    <tbody>
+      <tr><td>A사</td><td class="tnum">919.58억</td><td class="tnum">28.4%</td><td class="tnum">805.05억</td><td class="tnum">+14.2%</td></tr>
+      <tr><td>B사</td><td class="tnum">625.97억</td><td class="tnum">19.3%</td><td class="tnum">279.89억</td><td class="tnum">+123.6%</td></tr>
+      <tr><td>C사</td><td class="tnum">515.77억</td><td class="tnum">15.9%</td><td class="tnum">238.72억</td><td class="tnum">+116.1%</td></tr>
+      <tr><td>D사</td><td class="tnum">442.53억</td><td class="tnum">13.7%</td><td class="tnum">289.64억</td><td class="tnum">+52.8%</td></tr>
+      <tr><td><b>4사 합계</b></td><td class="tnum"><b>2,503.85억</b></td><td class="tnum"><b>77.3%</b></td><td class="tnum">1,613.30억</td><td class="tnum">+55.2%</td></tr>
+      <tr><td>기타 (10% 미만 고객)</td><td class="tnum">736.83억</td><td class="tnum">22.7%</td><td class="tnum">490.80억</td><td class="tnum">+50.1%</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔑 지역별로 보면 성장의 출처가 갈린다.</b> 피에스케이 1H26 지역 매출은 <b>한국 926.74억(+26.0%) · 중국 686.51억(+29.2%) · 미국 465.12억(+156.9%) · 대만 434.85억(+95.0%) · 기타 727.46억(+67.9%)</b>이다. <u>한국이 가장 느리게 자란다.</u> 브이엠은 <b>국내 86.2% · 중국 13.8%</b>로 두 곳뿐이다.</p>
+</div>
+</section>
+
+<section class="blk" id="s2">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">02</div><h2 class="sec-title">「수급이 못 받쳐줬다」 검증 — 반박된다</h2>
+  <p class="sec-lead">가설: <i>「아직 시장의 주목을 못 받아서 실적보다 수급이 못 받쳐줬다」</i>. 소부장 9사를 <b>2025.09.03~2026.08.28 240거래일</b>로 재면 <u>브이엠에서는 정반대</u>가 나온다.</p></div>
+  <table class="val-table">
+    <thead><tr><th>종목</th><th>시총 대비 거래대금</th><th>순위</th><th>외국인 누적</th><th>기관 누적</th><th>합산</th><th>고점 대비</th></tr></thead>
+    <tbody>
+      <tr><td>HPSP</td><td class="tnum">3.274%/일</td><td class="tnum">1</td><td class="tnum">+12.46%</td><td class="tnum">+9.40%</td><td class="tnum">+21.86%</td><td class="tnum">−38.8%</td></tr>
+      <tr><td>주성엔지니어링</td><td class="tnum">2.416%</td><td class="tnum">2</td><td class="tnum">−9.99%</td><td class="tnum">+10.17%</td><td class="tnum">+0.18%</td><td class="tnum">−29.4%</td></tr>
+      <tr><td><b>브이엠</b></td><td class="tnum"><b>1.995%</b></td><td class="tnum"><b>3</b></td><td class="tnum">+7.69%</td><td class="tnum"><b>+26.96%</b></td><td class="tnum"><b>+34.65%</b> (1위)</td><td class="tnum"><b>−51.5%</b></td></tr>
+      <tr><td>원익IPS</td><td class="tnum">1.907%</td><td class="tnum">4</td><td class="tnum">−13.80%</td><td class="tnum">+16.70%</td><td class="tnum">+2.90%</td><td class="tnum">−39.4%</td></tr>
+      <tr><td>테스</td><td class="tnum">1.475%</td><td class="tnum">5</td><td class="tnum">−3.23%</td><td class="tnum">+14.35%</td><td class="tnum">+11.12%</td><td class="tnum">−34.4%</td></tr>
+      <tr><td>한미반도체</td><td class="tnum">1.459%</td><td class="tnum">6</td><td class="tnum">+1.26%</td><td class="tnum">+3.73%</td><td class="tnum">+4.99%</td><td class="tnum">−46.4%</td></tr>
+      <tr><td><b>피에스케이</b></td><td class="tnum"><b>1.139%</b></td><td class="tnum"><b>7</b></td><td class="tnum">−2.51%</td><td class="tnum">+14.28%</td><td class="tnum">+11.77%</td><td class="tnum"><b>−39.2%</b></td></tr>
+      <tr><td>이오테크닉스</td><td class="tnum">1.047%</td><td class="tnum">8</td><td class="tnum">+5.87%</td><td class="tnum">+6.93%</td><td class="tnum">+12.80%</td><td class="tnum">−34.9%</td></tr>
+      <tr><td>피에스케이홀딩스</td><td class="tnum">0.858%</td><td class="tnum">9</td><td class="tnum">+2.19%</td><td class="tnum">+16.21%</td><td class="tnum">+18.40%</td><td class="tnum">−27.9%</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔴 그리고 이건 개별 종목 사건이 아니다 — 9사가 2026.05.14~07.14에 <u>전부</u> 고점을 찍었다.</b> 브이엠·피에스케이·피에스케이홀딩스는 <b>셋 다 2026-07-01 같은 날</b>이다. 아카이브 <a href="../market/kr_drawdown_2026.html"><b>2026년 낙폭 지도</b></a> T2가 소부장 고점 중앙일을 <b>06.12</b>로 이미 판정해 뒀고, T4가 <b>「상승은 종목을 가려서 갔고 하락은 안 가렸다」</b>고 결론냈다. <u>소부장이 그 세 번째 표본으로 재현된다</u> — 저점→고점 상승률은 <b>+210.8~+847.1%로 4.02배</b> 갈렸는데 고점→현재 하락률은 <b>−27.9~−51.5%로 1.85배</b>만 갈렸고, 둘의 상관은 <b>r = −0.113 (t = −0.30, n=9 — 유의하지 않다)</b>다. <b>「많이 오른 게 많이 빠졌다」조차 아니다.</b></p>
+  <p class="note"><b>⚠ 고점에서 수급 부호가 반전되지만, 그것을 원인으로 쓰지 않는다.</b> 창을 맞춰(고점 직전 40일 vs 직후 40일) 재면 9사 중 8사가 순매수→순매도로 뒤집힌다(브이엠 <b>+8.57% → −2.47%</b> · 피에스케이 +2.38% → −0.20% · HPSP +9.99% → <b>−13.20%</b>). 피에스케이는 공시로도 확인된다 — 고점 직후 <b>국민연금 8.14%→7.12%</b>, <b>삼성자산운용 7.30%→5.94%</b>로 줄었고 <b>신한자산운용이 07.20에 6.34% 신규 진입</b>했다. <u>그러나 §J8-2가 이미 판정했다 — 순매수는 거래의 4%만 보고 전방 예측력이 r ≈ 0이다.</u> 그리고 이건 <b>동시 관측이지 선행이 아니다</b> — 가격이 오를 때 사고 내릴 때 파는 것은 정의상 따라온다. 낙폭 편 T5의 경고가 그대로 적용된다.</p>
+</div>
+</section>
+
+<section class="blk" id="s3">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">03</div><h2 class="sec-title">납품 파이프라인 — 재고의 짝을 찾는다</h2>
+  <p class="sec-lead">「지금 매출이 얼마인가」가 아니라 <b>「앞으로 나갈 것이 쌓여 있는가」</b>를 본다. 소부장은 수주잔고를 공시하지 않으므로(§A6-1) <b>재고 ↔ 계약부채 ↔ 재공품</b>의 짝으로 판별한다(§A2-1-b).</p></div>
+  <table class="val-table">
+    <thead><tr><th>종목</th><th>재고자산</th><th>재고 YoY</th><th>계약부채</th><th>계약부채 YoY</th><th>재공품</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td>원익IPS</td><td class="tnum">4,580억</td><td class="tnum">+18.6%</td><td class="tnum"><b>3,210억</b></td><td class="tnum"><b>+22.0%</b></td><td class="tnum">3,752억 (77%)</td><td>🟢 선수금이 재고보다 빠르다</td></tr>
+      <tr><td>한미반도체</td><td class="tnum">1,438억</td><td class="tnum">−21.5%</td><td class="tnum">64억</td><td class="tnum">—</td><td class="tnum">1,694억 (87%)</td><td>🟢 재공품 지배 · 재고는 감소</td></tr>
+      <tr><td><b>피에스케이</b></td><td class="tnum">1,293억</td><td class="tnum">+23.1%</td><td class="tnum">—</td><td class="tnum">—</td><td class="tnum">144억 <b>(+133.3%)</b></td><td>🟢 재공품이 제품(+39.1%)보다 3.4배 빠르다</td></tr>
+      <tr><td>테스</td><td class="tnum">582억</td><td class="tnum">+23.0%</td><td class="tnum">36억</td><td class="tnum">−16.6%</td><td class="tnum">382억</td><td>⚠ 계약부채 감소</td></tr>
+      <tr><td>주성엔지니어링</td><td class="tnum">460억</td><td class="tnum">−21.0%</td><td class="tnum">108억</td><td class="tnum">−68.5%</td><td class="tnum">453억</td><td>🔴 둘 다 감소</td></tr>
+      <tr><td><b>브이엠</b></td><td class="tnum"><b>813억</b></td><td class="tnum"><b>+82.0%</b></td><td class="tnum"><b>0</b></td><td class="tnum">—</td><td class="tnum"><b>주석 없음</b></td><td>🔴 <b>판별 계정이 없다</b></td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔴 브이엠은 연결주석 14개 항목에 재고자산이 아예 없다.</b> 회사의 개요 · 회계정책 · 회계추정 · 공정가치 · 유형자산 · 무형자산 · 금융부채 · 판매보증충당부채 · 순확정급여부채 · 자본금 · 법인세 · 우발채무 · 특수관계자 · 영업부문 — <u>재고 구성을 공시하지 않는다</u>. 재무상태표에는 813억이 잡혀 있으므로 <b>「없다」가 아니라 「회사가 그 줄을 안 만든다」</b>이다(§A2-1의 Eaton과 같은 형태). <b>따라서 브이엠의 재고 +82.0%는 지금 해석할 수 없고, 3Q26에 재고와 매출이 어느 방향으로 함께 움직이는지로만 판정된다.</b></p>
+  <p class="note"><b>보조 지표는 우호적이다</b> — 브이엠 매출채권이 <b>218.48억 → 128.26억으로 −41.3%</b>(매출이 +182.2%인데 채권이 줄었다 = 회수가 빠르다)이고, 현금이 <b>1,305.19억 → 1,895.97억</b>으로 시총(1조 5,270억)의 <b>12.4%</b>다. <u>다만 이것은 「이미 판 것」의 지표이지 「앞으로 팔 것」의 지표가 아니다.</u></p>
+</div>
+</section>
+
+<section class="blk" id="s4">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">04</div><h2 class="sec-title">🔴 정정 이력</h2></div>
+  <div class="panel">
+    <p><b>🔴 C1급 · 2026.08.29 — 피에스케이 원문을 피에스케이홀딩스 것으로 읽었다.</b><br>
+    2026.08.28 <a href="kr_semi_equip_cross_valuation.html">소부장 크로스 밸류에이션</a>에 반영한 피에스케이 사업 서술이 <b>rcpNo 20260814000743 = 피에스케이<u>홀딩스</u></b>의 반기보고서였다. 진짜 피에스케이(319660)는 <b>000731</b>이다. 원인은 <code>'피에스케이' in '피에스케이홀딩스'</code> <b>부분 문자열 매칭</b>이며, <u>브이엠/에이치브이엠에 이어 두 번째</u>다.</p>
+    <table class="val-table">
+      <thead><tr><th>항목</th><th>정정 전 (홀딩스 값)</th><th>정정 후 (피에스케이 319660)</th></tr></thead>
+      <tbody>
+        <tr><td>주요 제품</td><td><s>Descum, Reflow</s></td><td><b>Dry Strip, Dry Cleaning, Wafer Edge Clean</b></td></tr>
+        <tr><td>고객</td><td><s>70개+ (IDM·OSAT·파운드리)</s></td><td><b>국내 S사·H사 + 해외 M사 포함 10개사 이상</b></td></tr>
+        <tr><td>수출 비중</td><td><s>62.7%</s></td><td><b>71.4%</b> (2,313.94억 ÷ 3,240.68억)</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><b>⚠ 재무 수치는 영향 없다</b> — 매출 3,240.68억 · 영업이익 974억 · OPM 30.07% · ROIC 25.3%는 <b>OpenDART corp_code(01365825) 기반</b>이라 정확하고, 네이버 분기합(1,566+1,675=3,241억)과도 일치한다. <b>무너진 것은 사업 서술이지 배수가 아니다.</b><br>
+    <b>영향 반경(§C2)</b> — 소부장 편의 「고객 다변화」 축에서 피에스케이 점수 근거가 <u>70개사 → 10개사+</u>로 바뀐다. 다만 <b>브이엠 2사 100% 대비로는 여전히 분산 우위</b>이므로 순위는 유지된다.</p>
+    <p class="note"><b>재발 방지</b> — §A2-2에 「corp_code로 식별한다」를 이미 써 두고 두 번째로 어겼다. 그래서 <b>이번에 OpenDART <code>corpCode.xml</code>로 상장사 3,988개의 종목코드↔corp_code 전수 맵을 만들었다</b>. 앞으로 회사 지정은 <u>종목코드</u>로만 한다.</p>
+  </div>
+  <div class="panel">
+    <p><b>🔵 C2급 · 2026.08.29 — 새로 확인된 것 2건.</b><br>
+    ① <b>피에스케이 장비 대당 단가가 2년 연속 하락</b>했다 — 1,453 → 1,422 → <b>1,382백만원</b>(누적 −4.9%). 매출이 +54.0% 느는 동안 단가는 내려갔으므로 <u>성장은 물량이지 가격이 아니다</u>.<br>
+    ② <b>브이엠은 회사가 추격자를 자인한다</b> — 사업보고서가 <i>「글로벌 업체들이 300mm 웨이퍼용 건식 식각장비의 90% 이상을 공급하고 있습니다. 이와 같은 과점시장에서 당사가 글로벌 업체들을 추격하기 위해 노력하고 있습니다」</i>라고 쓴다. 주력 개발 품목 <b>Da Vinci WH(고종횡비 식각) · Mona Lisa WH(범용 산화막, ~2026.12) · APES ALE(~2030.12)</b>는 <u>전부 「개발 중」</u>이다.</p>
+  </div>
+</div>
+</section>
+
+<footer class="blk">
+<div class="wrap">
+  <p class="note"><b>타임라인</b><br>
+  ▸ 2026.08.29 — 신설. DART 2026 반기보고서 원문(브이엠 rcpNo 20260813001486 · 피에스케이 20260814000731)과 네이버 외국인·기관 일별(240거래일)로 T1~T5 확정. <b>C1급 정정 1건</b>(피에스케이/홀딩스 혼동) 동반.</p>
+  <p class="note"><b>출처</b> — DART 반기보고서 연결주석(영업부문·재고자산·고객) · OpenDART <code>fnlttSinglAcntAll</code>(재무상태표 IFRS 태그) · 네이버 <code>finance/frgn</code>(외국인·기관 일별) · 네이버 일봉(<code>chart/domestic/item</code>) · DART 대량보유상황보고서.<br>
+  <b>기준일</b> — 시세 2026.08.28 종가 · 실적 1H26 확정(추정 아님) · 수급 2025.09.03~2026.08.28.<br>
+  <b>⚠ 이 페이지는 매매·비중·시점을 지시하지 않는다</b>(§J6). 주는 것은 <u>구조 · 반증 조건 · 판정 이벤트</u>다.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>
