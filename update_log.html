@@ -539,6 +539,21 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🔴🔴 2026.08.29 (20) — <b>C1급 정정</b> · <u>피에스케이 사업 서술이 홀딩스 원문이었다</u></div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">C1급</span> 🔴 <b>부분 문자열 함정에 두 번째로 걸렸다</b></div>
+    <div class="upd-body">
+      <b>08.28 소부장 크로스 밸류에이션이 인용한 피에스케이 사업 내용은 <u>rcpNo 20260814000743 = 피에스케이<b>홀딩스</b></u>의 반기보고서</b>였다. 진짜 피에스케이(319660)는 <b>000731</b>이다.<br>
+      <b>원인은 <code>'피에스케이' in '피에스케이홀딩스'</code> 부분 문자열 매칭</b>이며, <b><u>브이엠/에이치브이엠에 이어 두 번째</u></b>다. <b>§A2-2에 「corp_code로 식별한다」를 써 두고 두 번 어겼다.</b><br>
+      <b>고침</b> — 고객 <s>70개+ (IDM·OSAT·파운드리)</s> → <b>국내 S사·H사 + 해외 M사 포함 10개사 이상(상위 4사 77.3%)</b> · 주요 제품 <s>Descum, Reflow</s> → <b>Dry Strip, Dry Cleaning, Wafer Edge Clean</b> · 수출 <s>62.7%</s> → <b>71.4%</b>(2,313.94 ÷ 3,240.68억).<br>
+      <b>영향 반경(§C2)</b> — 「고객 다변화」 축의 근거가 70개사 → 10개사+로 바뀌지만 <b>브이엠 2사 100% 대비 여전히 분산 우위이므로 순위는 유지</b>된다. <b><u>배수·마진·ROIC는 OpenDART corp_code 기반이라 영향 없고</u></b> 네이버 분기합(1,566+1,675=3,241억)과 일치한다.<br>
+      <b>🔑 재발 방지</b> — OpenDART <code>corpCode.xml</code>로 <b>상장사 3,988개의 종목코드↔corp_code 전수 맵</b>을 만들었다. <b><u>앞으로 회사 지정은 종목코드로만 한다.</u></b>
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🔴🔴 2026.08.29 (19) — <b>브이엠·피에스케이 개별 판단 신설</b> · <u>「수급이 못 받쳐줬다」가 반박됐다</u></div>
 
   <div class="upd">
