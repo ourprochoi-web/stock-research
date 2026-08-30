@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="한국 4섹터에 쓴 자를 미국 74종목에 댔다. 업사이드 중앙값이 +22.7%라 「목표주가 25%」는 신호가 아니라 기준선이고, 배수 하위 25 중 10사가 ΔOPM 마이너스다.">
+<meta name="keywords" content="미국 주식,크로스 밸류에이션,TTM 배수,목표주가,투자의견,PER 밴드,PBR 밴드,ΔOPM,NVIDIA,Micron,Oracle,NRG,Vertiv">
+<meta property="og:title" content="미국 60사 7축 크로스 밸류에이션 — 다섯 축을 다 통과하는 자리는 없다">
+<meta property="og:description" content="한국 4섹터에 쓴 자를 미국 74종목에 댔다. 업사이드 중앙값이 +22.7%라 「목표주가 25%」는 신호가 아니라 기준선이고, 배수 하위 25 중 10사가 ΔOPM 마이너스다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/market/us_7axis_cross_valuation.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="미국 60사 7축 크로스 밸류에이션 — 다섯 축을 다 통과하는 자리는 없다">
+<meta name="twitter:description" content="한국 4섹터에 쓴 자를 미국 74종목에 댔다. 업사이드 중앙값이 +22.7%라 「목표주가 25%」는 신호가 아니라 기준선이고, 배수 하위 25 중 10사가 ΔOPM 마이너스다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/market/us_7axis_cross_valuation.html">
+<title>미국 60사 7축 크로스 밸류에이션 — 다섯 축을 다 통과하는 자리는 없다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"미국 60사 7축 크로스 밸류에이션 — 다섯 축을 다 통과하는 자리는 없다","description":"한국 4섹터에 쓴 자를 미국 74종목에 댔다. 업사이드 중앙값이 +22.7%라 「목표주가 25%」는 신호가 아니라 기준선이고, 배수 하위 25 중 10사가 ΔOPM 마이너스다.","url":"https://ourprochoi-web.github.io/stock-research/market/us_7axis_cross_valuation.html","datePublished":"2026-08-30","dateModified":"2026-08-30","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>미국 60사 7축 크로스 밸류에이션</div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 기준선</a><a href="#s2">02 / 배수 하위</a><a href="#s3">03 / 통과 종목</a><a href="#s4">04 / 한계</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">미국 74종목 → 유효 60사 · 2026.08.29 종가 · TTM 확정</span>
+    <h1 class="hero-title">다섯 축을 다 통과하는<br><span class="hl">자리는 없다</span></h1>
+    <p class="hero-sub">한국 4섹터에 쓴 자를 미국에 그대로 댔고, <b>미국에만 있는 축 둘</b>(목표주가·투자의견)을 더했다. <b>🔴 업사이드 중앙값이 <u>+22.7%</u>이고 마이너스는 60사 중 4사뿐</b>이다 — <u>「목표주가 25% 남았다」는 신호가 아니라 <b>기준선</b></u>이다. 그리고 <b>배수 하위 25사 중 10사가 ΔOPM 마이너스</b>다.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num tnum">+22.7<span class="u">%</span></div><div class="lab">업사이드 <b>중앙값</b> — 마이너스는 <b>4/60사</b>뿐. 애널리스트는 대부분 상승을 본다</div><div class="src">SRC: 네이버 해외 consensus (③ 등급)</div></div>
+      <div class="hstat"><div class="num tnum">10<span class="u">/25</span></div><div class="lab">배수 하위 25사 중 <b>ΔOPM 마이너스</b> — 싼 게 아니라 나빠지는 것</div><div class="src">SRC: 2Q26 vs 2Q25 동일 분기</div></div>
+      <div class="hstat"><div class="num tnum">0<span class="u">종목</span></div><div class="lab">다섯 축 전부 통과 — <b>네 축까지가 최대</b>이고 그 넷도 PBR에서 걸린다</div><div class="src">SRC: 배수·ΔOPM·업사이드·의견·PBR 밴드</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="now">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎현재 판단 · 2026.08.30</div>
+  <h2 class="sec-title">미국에는 축이 둘 더 있고, 그래서 더 냉정해진다</h2>
+  <p class="sec-lead">작성 2026.08.30 · 최종 갱신 2026.08.30 · 🔴 정정 0 · 🔵 최근 0<br>
+  <b>기준</b> — 실적 <b>TTM</b>(최근 4분기 합) · 성장·ΔOPM은 <b>2Q26 vs 2Q25 동일 분기</b> · 시세 <b>2026.08.29 종가</b> · 배수 = <b>시총 ÷ TTM EBIT</b>.<br>
+  <b>⚠ 한국 편과 창이 다르다</b> — 한국은 <b>1H26 vs 1H25 반기</b>, 미국은 <b>TTM + 분기 YoY</b>다. <u>배수 수준을 한·미 직접 비교하지 않는다</u>(§A5).<br>
+  <b>한 문장</b> — <u>미국은 <b>목표주가와 투자의견</b>이 있어 「오를 수 있나」를 직접 잴 수 있는데, <b>재보니 그 축이 거의 변별력이 없다</b>.</u></p></div>
+
+  <div class="panel">
+    <p><b>T1. 🔴 업사이드는 신호가 아니라 기준선이다.</b><br>
+    <b>60사 업사이드 중앙값이 +22.7%</b>이고 <b>마이너스는 4사(Moderna −37.2% · Berkshire −4.5% · CrowdStrike −4.5% · Freeport −4.2%)뿐</b>이다. <b>투자의견 중앙값도 4.06/5</b>다. <u>즉 애널리스트는 거의 전 종목에 상승을 본다</u> — <b>「목표주가 대비 25% 남았다」는 <u>평균</u>이지 발견이 아니다</b>. 아카이브가 이미 겪었다 — <i>「BofA TP 업사이드가 +103%로 남았는데 실제는 +48.2%」</i>. <b>반증</b> — 3개월 뒤 업사이드 상위 10사의 실제 수익률이 하위 10사를 <b>10%p 이상</b> 앞서면 이 축은 정보가 있는 것이다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T2. 🔴 배수 하위 25사 중 10사가 ΔOPM 마이너스다 — 「싼 것」이 아니라 「나빠지는 것」이다.</b><br>
+    <b>NiSource −3.59%p · Vistra −1.94%p · Lockheed −3.21%p · Shoals −2.92%p · Alphabet −0.59%p · Nextracker −0.40%p · <u>Meta −6.25%p</u> · Northrop −1.46%p · Freeport −3.84%p · <u>Constellation Energy −7.07%p</u></b>. <u>한국 4섹터에서 브이티·씨앤씨가 걸린 것과 같은 형태</u>이며, <b>가격 축(배수·업사이드)만 보면 전부 매력적으로 보인다</b>. <b>반증</b> — 3Q26에 이 10사 중 절반 이상이 ΔOPM 플러스로 돌아서면 1H26이 저점이었던 것이다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T3. 네 축 통과는 4사이고, 다섯 번째 축(PBR)에서 전부 걸린다.</b><br>
+    <b>배수 &lt; 중앙(25.7배) · ΔOPM &gt; 0 · 업사이드 &gt; 중앙(22.7%) · 의견 ≥ 4.0</b>을 통과하는 것은 <b>NRG Energy(9.8배) · SanDisk(17.4배) · Micron(17.8배) · Oracle(19.4배)</b> 넷이다. <u>그런데 PBR 밴드를 넣으면 <b>0사</b></u>다 — <b>NRG +115% · SanDisk +76% · Micron <u>+1021%</u></b>이고 Oracle은 밴드 산출 불가다. <b>즉 「이익 기준으로 싸다」와 「자본 기준으로 싸다」가 미국에서도 갈린다</b>(한국 조선에서 확인한 것과 같다). <b>반증</b> — 3Q26에 이 4사의 PBR이 역사 밴드 안으로 내려오면 다섯 축 통과가 생긴다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T4. ⚠ 메모리 2사는 네 축을 통과하지만 §A7 위험이 가장 크다.</b><br>
+    <b>SanDisk 매출 +371.6% · ΔOPM +75.81%p</b> · <b>Micron 매출 +345.7% · ΔOPM +56.44%p</b>로 <u>수치가 극단적</u>이다. <b>배수 17.4배·17.8배가 낮아 보이는 것은 <u>분모(TTM EBIT)가 사이클 정점에 있기 때문</u></b>일 가능성이 크고, <b>PBR 밴드가 +76% · +1021%로 역사 상단</b>인 것이 그 방증이다. <u>한국 조선에서 「PER로만 싸다」로 판정한 것과 같은 구조</u>다. <b>반증</b> — 3Q26·4Q26에 ΔOPM이 플러스를 유지하면 사이클 정점이 아직 아니다.</p>
+  </div>
+
+  <div class="panel">
+    <p><b>T5. 🔴 통화 불일치 3사를 제외해야 했다 — §A7-0이 또 걸렸다.</b><br>
+    첫 계산에서 <b>TSMC ADR 0.9배 · Novo Nordisk ADR 1.0배</b>가 나왔다. 원인은 <u>재무가 <b>TWD·DKK</b>인데 시총은 <b>USD</b></u>여서다(ASML도 EUR). <b>분자와 분모의 통화가 다른데 비율을 만든 것</b>이며, <b><code>finance/annual</code>의 <code>unit</code> 필드를 확인하면 걸러진다</b>. <u>오늘만 §A7-0 계열 오류가 세 번째</u>다(조선 배수 · PBR 밴드 폭 · 통화). <b>반증</b> — 없음. 이것은 판정이 아니라 <b>절차 기록</b>이다.</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="falsify">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎반증 조건 · 다음 검증</div><h2 class="sec-title">무엇이 관측되면 틀렸는가</h2></div>
+  <div class="panel">
+  <p><b>T1 →</b> 3개월 뒤 <b>업사이드 상위 10사</b>의 실제 수익률이 <b>하위 10사를 10%p 이상</b> 앞서면 목표주가 축은 정보가 있다.<br>
+  <b>T2 →</b> 3Q26에 ΔOPM 마이너스 10사 중 <b>절반 이상이 플러스</b>로 돌아서면 1H26이 저점이었다.<br>
+  <b>T3 →</b> 3Q26에 네 축 통과 4사의 <b>PBR이 역사 밴드 안(25% 미만)</b>으로 내려오면 다섯 축 통과가 생긴다.<br>
+  <b>T4 →</b> 3Q26·4Q26에 <b>SanDisk·Micron의 ΔOPM이 플러스를 유지</b>하면 사이클 정점이 아직 아니다.<br>
+  <b>T5 →</b> 절차 기록이므로 반증 조건 없음.</p>
+  <p class="note"><b>다음 검증(이벤트)</b> — ① <b>3Q26 실적</b>(10~11월): T2·T3·T4 ② <b>2026.11.30</b>: T1(3개월 후 수익률 대조) ③ <b>3Q26 13F</b>(11월 중순): §J12로 대가들의 포지션과 대조.</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="s1">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">01</div><h2 class="sec-title">기준선 — 무엇이 평균인가</h2>
+  <p class="sec-lead">개별 종목을 보기 전에 <b>분포부터</b> 본다. §J8-1이 <i>「N건 중 M건으로 정한 문턱은 표본이 바뀌면 재측정한다」</i>고 한 것과 같은 이유다.</p></div>
+  <table class="val-table">
+    <thead><tr><th>축</th><th>중앙값</th><th>분포</th><th>해석</th></tr></thead>
+    <tbody>
+      <tr><td><b>TTM 배수</b></td><td class="tnum"><b>25.7배</b></td><td>—</td><td>시총 ÷ 최근 4분기 EBIT</td></tr>
+      <tr><td><b>업사이드</b></td><td class="tnum"><b>+22.7%</b></td><td>마이너스 <b>4/60사</b></td><td>🔴 <b>거의 전 종목이 상승 전망</b> — 변별력이 낮다</td></tr>
+      <tr><td><b>투자의견</b></td><td class="tnum"><b>4.06</b>/5</td><td>—</td><td>🔴 중앙값이 이미 「매수」 구간</td></tr>
+      <tr><td><b>ΔOPM</b></td><td class="tnum">+2.17%p</td><td>플러스 <b>44/60사(73%)</b></td><td>🟢 대부분 마진이 개선 중</td></tr>
+      <tr><td><b>PBR 밴드</b></td><td class="tnum">+49%</td><td>역사 하단 <b>12/39사</b></td><td>밴드 산출 가능한 것이 39사뿐</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔑 이 표가 T1의 근거다.</b> <b>업사이드와 투자의견은 중앙값 자체가 이미 낙관</b>이므로, <u>「+25% 남았다」·「의견 4.1」을 <b>발견으로 쓰면 안 된다</b></u> — <b>상대 위치</b>로만 쓴다.<br>
+  <b>⚠ 목표주가는 ③ 등급이다.</b> 아카이브 실측 — <b>BofA의 TP 업사이드가 +103%였는데 실제 확인값은 +48.2%</b>였고, 브이엠 2Q26 컨센은 실제보다 <b>+24.8% 높았다</b>.</p>
+</div>
+</section>
+
+<section class="blk" id="s2">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">02</div><h2 class="sec-title">TTM 배수 하위 20 — 싼 것과 나빠지는 것</h2></div>
+  <table class="val-table">
+    <thead><tr><th>종목</th><th>TTM 배수</th><th>매출 YoY</th><th>TTM OPM</th><th>ΔOPM</th><th>PBR 밴드</th><th>업사이드</th><th>의견</th></tr></thead>
+    <tbody>
+<tr><td><b>Cheniere Energy</b></td><td class="tnum">9.1배</td><td class="tnum">+23.5%</td><td class="tnum">29.9%</td><td class="tnum" style="color:#22c55e">+20.33%p</td><td class="tnum">—</td><td class="tnum">+8.1%</td><td class="tnum">4.33</td></tr>
+<tr><td><b>NRG Energy</b></td><td class="tnum">9.8배</td><td class="tnum">+11.0%</td><td class="tnum">7.2%</td><td class="tnum" style="color:#22c55e">+4.32%p</td><td class="tnum">+115%</td><td class="tnum" style="color:#22c55e">+65.4%</td><td class="tnum">4.12</td></tr>
+<tr><td><b>NiSource</b></td><td class="tnum">10.5배</td><td class="tnum">+4.6%</td><td class="tnum">27.0%</td><td class="tnum" style="color:#ef4444">-3.59%p</td><td class="tnum">—</td><td class="tnum" style="color:#22c55e">+22.9%</td><td class="tnum">4.13</td></tr>
+<tr><td><b>Berkshire Hathaway B</b></td><td class="tnum">11.3배</td><td class="tnum">+10.0%</td><td class="tnum">16.4%</td><td class="tnum" style="color:#22c55e">+1.22%p</td><td class="tnum">—</td><td class="tnum" style="color:#ef4444">-4.5%</td><td class="tnum">3.60</td></tr>
+<tr><td><b>First Solar</b></td><td class="tnum">12.1배</td><td class="tnum">-3.7%</td><td class="tnum">33.6%</td><td class="tnum" style="color:#22c55e">+9.68%p</td><td class="tnum">-9%</td><td class="tnum" style="color:#22c55e">+32.2%</td><td class="tnum">3.65</td></tr>
+<tr><td><b>AEP</b></td><td class="tnum">12.4배</td><td class="tnum">+7.0%</td><td class="tnum">23.6%</td><td class="tnum" style="color:#22c55e">+5.66%p</td><td class="tnum">—</td><td class="tnum">+18.2%</td><td class="tnum">3.75</td></tr>
+<tr><td><b>Vistra</b></td><td class="tnum">12.5배</td><td class="tnum">-5.5%</td><td class="tnum">19.2%</td><td class="tnum" style="color:#ef4444">-1.94%p</td><td class="tnum">—</td><td class="tnum" style="color:#22c55e">+55.6%</td><td class="tnum">4.26</td></tr>
+<tr><td><b>Lockheed Martin</b></td><td class="tnum">13.4배</td><td class="tnum">+10.5%</td><td class="tnum">12.6%</td><td class="tnum" style="color:#ef4444">-3.21%p</td><td class="tnum">+40%</td><td class="tnum">+12.8%</td><td class="tnum">3.58</td></tr>
+<tr><td><b>Shoals</b></td><td class="tnum">14.0배</td><td class="tnum">+47.4%</td><td class="tnum">14.6%</td><td class="tnum" style="color:#ef4444">-2.92%p</td><td class="tnum">+32%</td><td class="tnum" style="color:#22c55e">+61.1%</td><td class="tnum">3.84</td></tr>
+<tr><td><b>TE Connectivity</b></td><td class="tnum">14.8배</td><td class="tnum">+13.8%</td><td class="tnum">20.6%</td><td class="tnum" style="color:#22c55e">+1.26%p</td><td class="tnum">+48%</td><td class="tnum">+22.0%</td><td class="tnum">3.91</td></tr>
+<tr><td><b>Alphabet</b></td><td class="tnum">15.3배</td><td class="tnum">+24.2%</td><td class="tnum">34.1%</td><td class="tnum" style="color:#ef4444">-0.59%p</td><td class="tnum">+29%</td><td class="tnum">+21.5%</td><td class="tnum">4.18</td></tr>
+<tr><td><b>Nextracker</b></td><td class="tnum">15.3배</td><td class="tnum">+8.2%</td><td class="tnum">23.3%</td><td class="tnum" style="color:#ef4444">-0.40%p</td><td class="tnum">-29%</td><td class="tnum" style="color:#22c55e">+65.6%</td><td class="tnum">4.03</td></tr>
+<tr><td><b>Xcel Energy</b></td><td class="tnum">15.8배</td><td class="tnum">-5.1%</td><td class="tnum">20.6%</td><td class="tnum" style="color:#22c55e">+4.70%p</td><td class="tnum">—</td><td class="tnum">+19.9%</td><td class="tnum">4.26</td></tr>
+<tr><td><b>Targa Resources</b></td><td class="tnum">15.9배</td><td class="tnum">+4.2%</td><td class="tnum">23.1%</td><td class="tnum" style="color:#22c55e">+3.33%p</td><td class="tnum">—</td><td class="tnum">+4.0%</td><td class="tnum">4.16</td></tr>
+<tr><td><b>Meta Platforms</b></td><td class="tnum">16.2배</td><td class="tnum">+28.0%</td><td class="tnum">39.8%</td><td class="tnum" style="color:#ef4444">-6.25%p</td><td class="tnum">—</td><td class="tnum" style="color:#22c55e">+30.7%</td><td class="tnum">4.15</td></tr>
+<tr><td><b>Northrop Grumman</b></td><td class="tnum">16.9배</td><td class="tnum">+5.1%</td><td class="tnum">10.7%</td><td class="tnum" style="color:#ef4444">-1.46%p</td><td class="tnum">-26%</td><td class="tnum">+19.1%</td><td class="tnum">3.75</td></tr>
+<tr><td><b>SanDisk</b></td><td class="tnum">17.4배</td><td class="tnum">+371.6%</td><td class="tnum">61.6%</td><td class="tnum" style="color:#22c55e">+75.81%p</td><td class="tnum">+76%</td><td class="tnum" style="color:#22c55e">+37.0%</td><td class="tnum">4.19</td></tr>
+<tr><td><b>Freeport-McMoRan</b></td><td class="tnum">17.7배</td><td class="tnum">-7.3%</td><td class="tnum">23.9%</td><td class="tnum" style="color:#ef4444">-3.84%p</td><td class="tnum">+176%</td><td class="tnum" style="color:#ef4444">-4.2%</td><td class="tnum">3.89</td></tr>
+<tr><td><b>Micron</b></td><td class="tnum">17.8배</td><td class="tnum">+345.7%</td><td class="tnum">65.7%</td><td class="tnum" style="color:#22c55e">+56.44%p</td><td class="tnum">+1021%</td><td class="tnum" style="color:#22c55e">+55.6%</td><td class="tnum">4.20</td></tr>
+<tr><td><b>General Dynamics</b></td><td class="tnum">18.1배</td><td class="tnum">+8.1%</td><td class="tnum">10.3%</td><td class="tnum" style="color:#22c55e">+0.35%p</td><td class="tnum">+62%</td><td class="tnum">+10.1%</td><td class="tnum">3.72</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔴 배수 하위 25사 중 10사가 ΔOPM 마이너스</b>다 — <b>Constellation Energy −7.07%p · Meta −6.25%p · Freeport −3.84%p · NiSource −3.59%p · Lockheed −3.21%p</b> 등.
+  <u>가격 축(배수·업사이드)만 보면 전부 매력적</u>인데 <b>사업 축을 넣으면 갈린다</b>. <b>한국 4섹터에서 브이티(ΔOPM −16.01%p·배수 8.4배)와 씨앤씨가 걸린 것과 같은 형태</b>다.<br>
+  <b>⚠ Cheniere ΔOPM +20.33%p는 그대로 쓰지 않는다</b> — <b>파생상품 평가손익이 매출원가에 들어가는 회사</b>이고, 아카이브가 <b>§A2-1</b>에서 <i>「이 지표를 이 회사에 쓰지 않는다」</i>로 이미 판정했다. <u>여기 표에는 기계적으로 계산된 값이 들어 있으므로 인용하지 않는다</u>.</p>
+</div>
+</section>
+
+<section class="blk" id="s3">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">03</div><h2 class="sec-title">🟢 네 축 통과 4사 — 그리고 다섯 번째에서 전부 걸린다</h2></div>
+  <table class="val-table">
+    <thead><tr><th>종목</th><th>TTM 배수</th><th>매출 YoY</th><th>ΔOPM</th><th>업사이드</th><th>의견</th><th>PBR 밴드</th><th>다섯째 축</th></tr></thead>
+    <tbody>
+      <tr><td><b>NRG Energy</b></td><td class="tnum">9.8배</td><td class="tnum">+11.0%</td><td class="tnum" style="color:#22c55e">+4.32%p</td><td class="tnum">+65.4%</td><td class="tnum">4.12</td><td class="tnum" style="color:#ef4444">+115%</td><td>🔴 역사 상단</td></tr>
+      <tr><td><b>SanDisk</b></td><td class="tnum">17.4배</td><td class="tnum"><b>+371.6%</b></td><td class="tnum" style="color:#22c55e"><b>+75.81%p</b></td><td class="tnum">+37.0%</td><td class="tnum">4.19</td><td class="tnum" style="color:#ef4444">+76%</td><td>🔴 역사 상단</td></tr>
+      <tr><td><b>Micron</b></td><td class="tnum">17.8배</td><td class="tnum"><b>+345.7%</b></td><td class="tnum" style="color:#22c55e"><b>+56.44%p</b></td><td class="tnum">+55.6%</td><td class="tnum">4.20</td><td class="tnum" style="color:#ef4444"><b>+1021%</b></td><td>🔴 역사 최상단</td></tr>
+      <tr><td><b>Oracle</b></td><td class="tnum">19.4배</td><td class="tnum">+20.6%</td><td class="tnum" style="color:#22c55e">+3.61%p</td><td class="tnum">+67.6%</td><td class="tnum">4.05</td><td class="tnum">산출 불가</td><td>⚠ 밴드 폭 부족</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>🔑 「이익 기준으로 싸다」와 「자본 기준으로 싸다」가 미국에서도 갈린다.</b> <b>한국 조선에서 <u>PER 밴드는 전부 아래인데 PBR 밴드는 전부 위</u></b>였던 것과 같은 구조이며, <u>확정배수·PER은 둘 다 이익을 분모로 쓰므로 이익이 피크면 함께 낮아진다</u>.<br>
+  <b>⚠ 메모리 2사가 가장 위험하다</b> — <b>매출 +371.6% · +345.7%, ΔOPM +75.81%p · +56.44%p</b>는 <u>사이클 정점의 전형적 수치</u>이고, <b>Micron PBR 밴드 +1021%</b>가 그 방증이다. <b>배수 17배대는 「싸다」가 아니라 「분모가 크다」일 수 있다</b>(§A7).<br>
+  <b>⚠ Oracle은 밴드를 못 만든다</b> — 과거 PBR 3년치의 폭이 좁아 <u>분모가 0에 가까워 폭발</u>했다(첫 계산에서 −3191%가 나왔다). <b>밴드 폭이 최저값의 25% 미만이면 쓰지 않는다</b>는 규칙을 이번에 고정했다.</p>
+</div>
+</section>
+
+<section class="blk" id="s4">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">04</div><h2 class="sec-title">⚠ 한계</h2></div>
+  <div class="panel">
+    <p><b>① 창이 한국 편과 다르다.</b> 한국은 <b>1H26 vs 1H25 반기</b>, 미국은 <b>TTM + 2Q26 vs 2Q25 분기</b>다. <u>배수 수준을 한·미 직접 비교하지 않는다</u>(§A5). 미국을 TTM으로 쓴 것은 <b>§A2-1의 Cheniere 교훈</b>(분기×4가 파생 평가손익에 흔들린다) 때문이다.<br>
+    <b>② PBR 밴드는 3년치이고 39/60사만 산출된다.</b> <u>밴드 폭이 좁으면 분모가 0에 가까워 폭발</u>하므로 <b>폭이 최저값의 25% 미만이면 버렸다</b>(Oracle·Snowflake가 그 사례).<br>
+    <b>③ 목표주가·투자의견은 ③ 등급</b>이고 <u>중앙값이 이미 낙관</u>이다. <b>절대값이 아니라 상대 위치로만 쓴다</b>.<br>
+    <b>④ 고객 집중도·수주잔고를 재지 않았다.</b> 한국에서 <b>브이엠 100% · 코스맥스 「10% 이상 고객 없음」</b>처럼 결정적이었던 축인데, 미국은 <b>10-K/10-Q Concentration 주석</b>을 열어야 한다 — <u>이 편은 그것을 안 했다</u>.<br>
+    <b>⑤ 섹터로 나누지 않았다.</b> 60사가 전력·AI·방산·결제·바이오에 걸쳐 있고 <b>섹터별 정상 배수가 다르다</b>. <u>낙폭 지도 T8의 「칸의 구성」 문제</u>가 여기에도 있으며, <b>섹터 편이 따로 있다</b>(→ <a href="../ai-infra/us_ai_adjacent_cross_valuation.html">미국 AI 인접 17사</a> · <a href="../ai-infra/us_power_regulated_vs_merchant.html">미국 전력 7사</a> · <a href="../payments/us_payment_networks.html">결제</a>).<br>
+    <b>⑥ 환 노출을 안 봤다.</b> 원/달러가 <b>3M −8.70%</b>로 원화가 강해졌고, <u>미국 주식은 원화 투자자에게 그만큼 손실</u>이다(§J13 — 방향은 판정하지 않되 크기는 적는다).</p>
+  </div>
+</div>
+</section>
+
+<footer class="blk">
+<div class="wrap">
+  <p class="note"><b>타임라인</b><br>
+  ▸ 2026.08.30 — 신설. 미국 74종목 → 유효 60사. TTM 배수 · 매출 YoY · TTM OPM · ΔOPM · PER 밴드 · PBR 밴드 · 목표주가 업사이드 · 투자의견. <b>통화 불일치 3사(TSMC·Novo Nordisk·ASML) 제외</b>.</p>
+  <p class="note"><b>출처</b> — 네이버 해외 <code>api.stock.naver.com/stock/{SYM}/basic · finance/quarter · finance/annual · consensus</code>(전부 무키).<br>
+  <b>등급</b> — 실적·배수는 ① · 목표주가·투자의견은 <b>③</b>.<br>
+  <b>⚠ 이 페이지는 매매·비중·시점을 지시하지 않는다</b>(§J6). 주는 것은 <u>구조 · 반증 조건 · 판정 시점</u>이다.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

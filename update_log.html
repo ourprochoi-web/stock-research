@@ -539,6 +539,40 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🇺🇸 2026.08.30 (4) — <b>미국 60사 7축 크로스 밸류에이션</b> · <u>다섯 축 통과는 0종목</u></div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag new">신설</span> 🔑 <b>미국에만 있는 축 둘 — 목표주가와 투자의견</b></div>
+    <div class="upd-body">
+      <b>네이버 해외 API가 <u>목표주가(mean/high/low)와 투자의견</u>을 준다</b> — 한국 4섹터에서 못 했던 <b>「오를 수 있나」를 직접 잴 수 있다</b>.
+      경로는 전부 무키다: <code>api.stock.naver.com/stock/{SYM}/basic · finance/quarter · finance/annual · consensus</code>.<br>
+      <b>🔴 그런데 재보니 그 축이 거의 변별력이 없다</b> — <b>업사이드 중앙값 +22.7%</b>이고 <b>마이너스는 60사 중 4사뿐</b>(Moderna −37.2% · Berkshire −4.5% · CrowdStrike −4.5% · Freeport −4.2%), <b>투자의견 중앙값도 4.06/5</b>다.
+      <u>「목표주가 25% 남았다」는 발견이 아니라 <b>평균</b></u>이며, <b>상대 위치로만 쓴다</b>.
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">발견</span> 🔴 <b>배수 하위 25사 중 10사가 ΔOPM 마이너스</b></div>
+    <div class="upd-body">
+      <b>Constellation Energy −7.07%p · Meta −6.25%p · Freeport −3.84%p · NiSource −3.59%p · Lockheed −3.21%p · Shoals −2.92%p · Vistra −1.94%p · Northrop −1.46%p · Alphabet −0.59%p · Nextracker −0.40%p</b>.<br>
+      <b>가격 축(배수·업사이드)만 보면 전부 매력적인데 사업 축을 넣으면 갈린다</b> — <u>한국 4섹터에서 브이티(ΔOPM −16.01%p·배수 8.4배)·씨앤씨가 걸린 것과 같은 형태</u>다.<br>
+      <b>🔑 네 축 통과는 4사</b>(NRG 9.8배 · SanDisk 17.4배 · Micron 17.8배 · Oracle 19.4배)<b>인데 <u>다섯째 축(PBR)에서 전부 걸린다</u></b> — NRG +115% · SanDisk +76% · <b>Micron +1021%</b> · Oracle 산출 불가. <b><u>다섯 축 통과 0종목</u></b>.<br>
+      <b>⚠ 메모리 2사가 가장 위험하다</b> — 매출 <b>+371.6% · +345.7%</b>, ΔOPM <b>+75.81%p · +56.44%p</b>는 사이클 정점의 전형이고 <b>배수 17배대는 「싸다」가 아니라 「분모가 크다」</b>일 수 있다(§A7). <u>한국 조선에서 「PER로만 싸다」로 판정한 것과 같은 구조</u>다.
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">§A7-0</span> 🔴 <b>오늘만 세 번째 — 통화 불일치</b></div>
+    <div class="upd-body">
+      첫 계산에서 <b>TSMC ADR 0.9배 · Novo Nordisk ADR 1.0배</b>가 나왔다. 원인은 <u>재무가 <b>TWD·DKK</b>인데 시총은 <b>USD</b></u>여서다(ASML은 EUR).
+      <b><code>finance/annual</code>의 <code>unit</code> 필드를 확인하면 걸러진다</b> — <b>3사를 제외해 74 → 60사</b>가 됐다.<br>
+      <b>🔴 오늘 §A7-0 계열이 세 번</b>이다 — ① <b>조선 배수</b>(분모가 사이클 어디인지 안 봄) ② <b>PBR 밴드 폭</b>(폭이 좁아 −3191%·+13890% 폭발) ③ <b>통화 불일치</b>.
+      <b>②는 규칙으로 고정했다 — 밴드 폭이 최저값의 25% 미만이면 쓰지 않는다.</b>
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🔴🔴 2026.08.30 (3) — <b>밸류에이션 3축 신설</b> · <u>PBR이 순환을 깨자 결론이 또 바뀌었다</u></div>
 
   <div class="upd">
