@@ -856,3 +856,34 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+# ═══ 2026-08-30 추가 — 목표주가·투자의견 시계열 ═══
+# 사용자 지적: "목표주가를 100% 신뢰해서 업사이드를 계산한 것도 이상하지 않나". 맞다.
+# 실측 — 한국 업사이드 중앙 +45.8%(미국 2배) · 마이너스가 52사 중 1사 · 의견이 거의 전부 4.00.
+#   52사 중 51사가 상승 전망이면 예측이 아니라 관행이고, 의견이 한 값이면 축이 아니다.
+# 🔴 결정적 반례 — 브이엠 목표가가 2026.04 87,000원 → 2026.08 121,667원인데
+#   같은 기간 주가는 고점 대비 −52%다. 목표가가 주가를 따라 내려오지 않았다.
+# 🔑 그래서 §J8(수급)과 같은 처리 — <수준에는 정보가 없고 변화에만 남는다>.
+#   낙관 편향이 상수면 차분하면 상쇄되므로 "목표가가 주가를 따라 움직였나"는 방향 정보를 갖는다.
+#   그런데 네이버는 현재값만 준다(createDate 하나) → 오늘부터 쌓아야 쓸 수 있다.
+# 판정 시한 2026-11-30(§E3) — 주가가 하락한 종목에서 목표가가 함께 내려온 비율을 잰다.
+#   절반 이상이 따라 내려오면 축을 유지하고, 브이엠처럼 반대로 가면 폐기한다.
+# ⚠ 새 저장소를 만들지 않는다 — 기존 prices.json 안에 consensus 키로 넣는다(§H).
+def fetch_consensus(code):
+    """m.stock.naver.com/api/stock/{code}/integration 의 consensusInfo.
+    국내는 별도 consensus 엔드포인트가 404이고 integration 안에만 있다(2026-08-30 실측)."""
+    url = f"https://m.stock.naver.com/api/stock/{code}/integration"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            d = json.loads(resp.read())
+        ci = d.get("consensusInfo") or {}
+        if not ci.get("priceTargetMean"):
+            return None
+        return {
+            "targetMean": ci.get("priceTargetMean"),
+            "recommMean": ci.get("recommMean"),
+            "createDate": ci.get("createDate"),
+        }
+    except Exception:
+        return None

@@ -539,6 +539,44 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🔴 2026.08.30 (8) — <b>목표주가 축을 판정 기준에서 내렸다</b> · <u>통과 종목이 통째로 바뀌었다</u></div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">정정</span> 🔴 <b>「업사이드」는 예측이 아니라 관행이다</b></div>
+    <div class="upd-body">
+      <b>사용자 지적 — <i>「목표주가를 100% 신뢰해서 업사이드가 있니 마니 계산한 것도 좀 이상하지 않나」</i>. 맞다.</b> 그리고 <u>나는 이미 반증 증거를 셋이나 갖고 있으면서 그 축으로 표를 만들었다</u>.<br>
+      <b>🔑 국내 컨센 경로를 찾아 같은 방법으로 재니 더 선명했다</b> — <code>m.stock.naver.com/api/stock/{code}/integration</code>의 <b><code>consensusInfo</code></b>(별도 <code>consensus</code> 엔드포인트는 404).<br>
+      <b>· 한국 업사이드 중앙 <u>+45.8%</u>(미국 +22.7%의 2배) · 마이너스가 <u>52사 중 1사</u> · 투자의견 <u>거의 전부 4.00</u></b><br>
+      <b>🔴 52사 중 51사가 상승 전망이면 그것은 예측이 아니라 관행</b>이고, <b>의견이 사실상 한 값이면 축이 아니다</b>.<br>
+      <b>🔴 결정적 반례 — 브이엠</b>: <b>2026.04.16 목표가 87,000원 → 2026.08.27 컨센 121,667원</b>인데 <u>같은 기간 주가는 고점 대비 <b>−52%</b></u>다. <b>주가가 반토막 나는 동안 목표가가 40% 올랐다</b>.
+      다른 실측도 같은 방향이다 — <b>BofA TP +103% vs 실제 +48.2%</b> · 브이엠 2Q26 컨센이 실제보다 <b>+24.8% 과대</b>.
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">재계산</span> 🔴 <b>정보 없는 축이 좋은 종목을 걸러내고 있었다</b></div>
+    <div class="upd-body">
+      <b>업사이드·의견을 빼고 <u>배수 &lt; 중앙(25.7배) · ΔOPM &gt; 0 · PBR 밴드 &lt; 25%</u></b>로 다시 재니 —<br>
+      <b>· 종전</b>: NRG · SanDisk · Micron · Oracle <span style="color:var(--ink-3)">(전부 PBR에서 걸렸었다)</span><br>
+      <b>· 변경</b>: <b>First Solar(12.1배 · ΔOPM +9.68%p · PBR −9%) · Salesforce(22.5배 · +1.68%p · +18%) · Microsoft(24.6배 · +0.21%p · −3%)</b><br>
+      <b>🔑 두 축이 서로 배타적이었다</b> — <u>업사이드가 높은 곳은 이미 많이 빠졌거나 기대가 큰 자리</u>이고 <u>PBR 역사 하단은 조용한 자리</u>다. <b>종전 기준은 「업사이드 &gt; 중앙」을 요구하느라 PBR을 넣을 자리가 없었다</b>.<br>
+      <b>🔴 그리고 잘못 걸러졌다</b> — <b>Salesforce는 업사이드 −2.0%</b>(목표가 기준 <u>하락</u> 전망)인데 사업 축으로는 통과하고, <b>Microsoft도 +11.1%로 중앙 아래</b>인데 통과한다.
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag new">신설</span> 🔑 <b>대신 「변화」를 쌓기 시작한다 — 판정 시한 2026-11-30</b></div>
+    <div class="upd-body">
+      <b>§J8(수급)과 같은 처리다 — <u>수준(level)에는 정보가 없고 변화(Δ)에만 남는다</u>.</b>
+      낙관 편향이 상수라면 <b>차분하면 상쇄</b>되므로 <i>「목표가가 주가를 따라 움직였나」</i>는 방향 정보를 갖는다.
+      <b>그런데 네이버는 현재값만 준다</b>(<code>createDate</code> 하나) — <u>지금은 쓸 수 없고 오늘부터 기록해야 쓴다</u>.<br>
+      <b><code>update_prices.py</code>에 <code>fetch_consensus()</code>를 추가</b>했다 — <b>새 저장소를 만들지 않고 기존 <code>prices.json</code> 안에 넣는다</b>(§H).<br>
+      <b>🔒 판정 시한 2026-11-30</b>(§E3) — <u>주가가 하락한 종목에서 목표가가 <b>함께 내려온 비율</b></u>을 잰다. <b>절반 이상이면 축을 유지하고, 브이엠처럼 반대로 가면 <u>폐기</u></b>한다.
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🟢 2026.08.30 (7) — <b>미국 수주잔고 SEC 전수</b> · <u>한국 판정이 미국에서 확인됐다</u></div>
 
   <div class="upd">
