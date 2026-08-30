@@ -221,7 +221,7 @@
 <nav><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>발언 기록</div>
   <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
-  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 판정 캘린더</a><a href="#s2">02 / 카프</a><a href="#s3">03 / 게이츠</a><a href="#s4">04 / 규칙</a></div>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">반증 조건</a><a href="#s1">01 / 판정 캘린더</a><a href="#s2">02 / 카프</a><a href="#s3">03 / 게이츠</a><a href="#s4">04 / 규칙</a><a href="#s5">05 / 🔴 버리</a></div>
 </div></nav>
 
 <header class="hero">
@@ -373,9 +373,43 @@
 </div>
 </section>
 
+<section class="blk" id="s5">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">05</div><h2 class="sec-title">🔴 마이클 버리 — 감가상각 연한 논쟁</h2>
+  <p class="sec-lead">2026.08 · 「진행 중인 범죄」 표현으로 보도 · <b>이 층의 T3(충돌 기록)에 해당하는 두 번째 사례</b>이고, <u>카프와 달리 <b>사실 관계를 원문으로 검증할 수 있었다</b></u>.</p></div>
+
+  <div class="panel">
+    <p><b>버리의 주장</b> — <i>「2~3년 제품 사이클로 엔비디아 칩·서버에 캐펙스를 급증시키면서 <b>동시에 컴퓨트 장비의 추정 유효연수를 연장</b>하는 것은 <u>현대의 가장 흔한 사기 중 하나</u>」</i>.
+    <b>2026~2028년 업계 전체 감가상각이 약 <u>$1,760억</u> 과소계상</b>되고, <b>Meta는 20.8% · Oracle은 26.9%</b> 이익이 과대계상될 것으로 추정했다.</p>
+  </div>
+
+  <table class="val-table">
+    <thead><tr><th>회사</th><th>서버·네트워크 감가상각 연한</th><th>10-K 원문</th><th>검증</th></tr></thead>
+    <tbody>
+      <tr><td><b>Meta</b></td><td class="tnum"><b>5.5년</b></td><td><i>「In January 2025, we completed an assessment of the useful lives of property and equipment, which resulted in <b>an increase in the estimated useful lives of most servers and network assets to 5.5 years</b>, effective January 1, 2025」</i></td><td style="color:#ef4444"><b>🔴 실제로 연장</b></td></tr>
+      <tr><td>Alphabet</td><td class="tnum"><b>6년</b></td><td><i>「We depreciate <b>servers and network equipment generally over a period of six years</b>」</i></td><td>확인</td></tr>
+      <tr><td>Microsoft</td><td class="tnum"><b>2~6년</b></td><td><i>「<b>servers and network equipment, two to six years</b>」</i></td><td>확인</td></tr>
+      <tr><td>Oracle</td><td class="tnum"><b>1~6년</b></td><td><i>「Computer, network, machinery and equipment <b>1 - 6 years</b>」</i> · 장부금액 <b>$303억 → $596억(+96.5%)</b></td><td>확인</td></tr>
+      <tr><td>CoreWeave</td><td class="tnum"><b>6년</b></td><td><i>「Technology equipment <b>6 years</b>」</i></td><td>확인</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note"><b>🔑 사실 관계는 <u>확인된다</u> — Meta는 원문이 <b>「an increase in the estimated useful lives」</b>라고 명시한다.</b> 그리고 <b>Alphabet·Microsoft·Oracle·CoreWeave가 서버를 <u>최대 6년</u>에 걸쳐 감가상각</b>한다. <u>GPU 신제품이 연 1회 발표되는 사이클과 6년 상각이 어긋난다는 지적 자체는 <b>사실에 기반한다</b></u>.<br>
+  <b>⚠ 그러나 「사기」인지는 판정하지 않는다.</b> <u>유효연수 재평가는 회계기준상 허용</u>되고, <b>실제 사용연한이 길어졌다면 정당</b>하다. 이 층은 <b>③·④를 판정하는 곳이 아니다</b>(T5).<br>
+  <b>🔴 그리고 엔비디아 반박은 <u>논점이 어긋났다</u></b> — 엔비디아는 애널리스트 메모로 <b>자사 현금창출력</b>을 들었다(<b>3Q 영업현금흐름 $238억 · FCF $221억 · FY2018 이후 장기 FCF가 GAAP 순이익의 약 98%</b>). <u>버리는 즉시 재반박했다</u> — <i>「<b>아무도 엔비디아 자신의 감가상각을 신경 쓰지 않는다</b>. 칩 설계사라 PP&amp;E가 거의 없다」</i>. <b>버리의 타깃은 엔비디아가 아니라 <u>하이퍼스케일러</u>였다</b>.</p>
+
+  <p class="note"><b>🔴 이것이 오늘 만든 <a href="../market/us_7axis_cross_valuation.html">미국 60사 편</a>에 직접 걸린다.</b><br>
+  <b>· Meta</b> — 오늘 <b>「배수 하위 25사 중 ΔOPM 마이너스」</b>에 <b>−6.25%p</b>로 걸렸다. <u>감가상각을 늘리면 ΔOPM이 더 나빠진다</u> — <b>버리 주장이 맞다면 그 −6.25%p가 실제보다 <u>덜 나쁜</u> 값</b>이다.<br>
+  <b>· Oracle</b> — 오늘 <b>RPO 커버리지 9.47년으로 60사 1위</b>이고 <b>네 축 통과 4사</b>에 들었다. <u>버리는 이 회사를 <b>26.9% 과대계상</b>으로 지목</u>했다.<br>
+  <b>· Microsoft</b> — 오늘 <b>세 축 통과 3사</b> 중 하나다(24.6배 · ΔOPM +0.21%p · PBR −3%). <u>ΔOPM이 +0.21%p로 <b>겨우 플러스</b>라 감가상각 가정에 민감하다</u>.<br>
+  <b>🔒 판정 방법</b> — <b>감가상각비 ÷ 캐펙스 비율</b>이 하이퍼스케일러에서 <u>하락 추세면 버리 주장이 지지</u>된다. <b>SEC 현금흐름표로 분기마다 잴 수 있다</b>. <b>판정 시점: 3Q26 10-Q(11월)</b>.</p>
+</div>
+</section>
+
 <footer class="blk">
 <div class="wrap">
   <p class="note"><b>타임라인</b><br>
+  ▸ 2026.08.30 — 개설. <b>마이클 버리 감가상각 논쟁 추가</b> — 이 층에서 <u>처음으로 사실 관계가 원문 검증된 사례</u>(Meta 5.5년 연장 명시).<br>
   ▸ 2026.08.30 — 개설. 사용자 지적(<i>「리서치 페이퍼에는 반영 안 해도 유명인 인터뷰는 자세히 기록해둘 필요가 있지 않나」</i>)으로 신설. <b>알렉스 카프 소버린 AI 발표</b>·<b>빌 게이츠 AI 입장 변화</b> 2건 등재. <b>판정 캘린더 5건 · 판정 불가 2건 명시</b>.</p>
   <p class="note"><b>⚠ 이 페이지의 항목은 투자 판단의 근거가 아니다.</b> 대부분 <b>③ 전문가 판단 · ④ 수사</b>이며, 본문 테제로 올라가려면 <u>별도 검증</u>을 거쳐야 한다(§A6).<br>
   <b>출처</b> — BZCF 비즈까페 번역 영상 2건 · 아카이브 대조는 grep 전수.</p>
