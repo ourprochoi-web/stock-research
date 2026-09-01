@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="토큰 단가는 내렸는데 마진은 올랐다. 앤스로픽 GM −94%→60%, Z AI 토큰당 추론 비용 −80% — 원가가 가격보다 빨리 내렸다. T6 「11층 압박」 테제를 철회한다.">
+<meta name="keywords" content="AI 토큰 경제학,추론 비용,앤스로픽,OpenAI,Z AI,즈푸,매출총이익률,GPU 임대료,멤플레이션,에이전틱 워크로드,세일즈포스 성과 기반,AI 밸류체인">
+<meta property="og:title" content="토큰 경제학의 반전 — 원가가 가격보다 빨리 내렸다">
+<meta property="og:description" content="토큰 단가는 내렸는데 마진은 올랐다. 앤스로픽 GM −94%→60%, Z AI 토큰당 추론 비용 −80% — 원가가 가격보다 빨리 내렸다. T6 「11층 압박」 테제를 철회한다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_token_economics_paper.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="토큰 경제학의 반전 — 원가가 가격보다 빨리 내렸다">
+<meta name="twitter:description" content="토큰 단가는 내렸는데 마진은 올랐다. 앤스로픽 GM −94%→60%, Z AI 토큰당 추론 비용 −80% — 원가가 가격보다 빨리 내렸다. T6 「11층 압박」 테제를 철회한다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/ai_token_economics_paper.html">
+<title>토큰 경제학의 반전 — 원가가 가격보다 빨리 내렸다</title>
+
+<style>
+:root{
+  --ink:#0D1117; --surf:#151C26; --surf2:#1D2634; --line:#2C3646;
+  --fg:#E6EAF0; --fg2:#A3ADBC; --fg3:#6B7688;
+  --up:#E0A458; --down:#7BA7C7; --warn:#D9634F; --ok:#6DBF8B;
+  --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --ink:#FAF9F6; --surf:#FFFFFF; --surf2:#F1EFEA; --line:#DAD6CD;
+    --fg:#14171C; --fg2:#4C5361; --fg3:#878E9C;
+    --up:#9C6316; --down:#2F6788; --warn:#B23C2A; --ok:#2E7A4E;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#0D1117; --surf:#151C26; --surf2:#1D2634; --line:#2C3646;
+  --fg:#E6EAF0; --fg2:#A3ADBC; --fg3:#6B7688;
+  --up:#E0A458; --down:#7BA7C7; --warn:#D9634F; --ok:#6DBF8B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--sans);
+  line-height:1.62;-webkit-font-smoothing:antialiased;font-size:15px}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+.tnum{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:var(--down)}
+
+header.hero{padding:58px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--up) 7%,transparent),transparent 62%)}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg3);display:block;margin-bottom:16px}
+h1{font-size:clamp(28px,4.5vw,45px);line-height:1.16;font-weight:800;letter-spacing:-.022em}
+h1 .up{color:var(--up)} h1 .dn{color:var(--down)}
+.lede{margin-top:20px;font-size:17px;color:var(--fg2);max-width:70ch;line-height:1.66}
+.lede b{color:var(--fg);font-weight:700}
+
+.flip{margin-top:34px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surf)}
+.flip .row{display:grid;grid-template-columns:1fr 46px 1fr;align-items:center;gap:0;
+  border-bottom:1px solid var(--line)}
+.flip .row:last-child{border-bottom:none}
+.flip .cell{padding:16px 18px}
+.flip .cell .k{font-size:11.5px;font-family:var(--mono);letter-spacing:.07em;color:var(--fg3);text-transform:uppercase}
+.flip .cell .v{margin-top:6px;font-family:var(--mono);font-variant-numeric:tabular-nums;
+  font-size:23px;font-weight:700;letter-spacing:-.02em}
+.flip .cell .n{margin-top:5px;font-size:12.5px;color:var(--fg2);line-height:1.45}
+.flip .arw{text-align:center;color:var(--fg3);font-size:17px;background:var(--surf2);align-self:stretch;
+  display:flex;align-items:center;justify-content:center}
+.flip .a .v{color:var(--fg3)} .flip .b .v{color:var(--up)}
+.flip .b.dn .v{color:var(--down)}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.sec-n{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:var(--fg3);
+  text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(21px,2.9vw,29px);font-weight:800;letter-spacing:-.018em;line-height:1.24}
+h2 em{font-style:normal;color:var(--up)} h2 i{font-style:normal;color:var(--down)}
+.sub{margin-top:14px;color:var(--fg2);max-width:74ch}
+.sub b{color:var(--fg)}
+p{margin:14px 0}
+
+.tbl{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}
+th{background:var(--surf2);padding:10px 12px;text-align:left;font-weight:700;font-size:11.5px;
+  letter-spacing:.05em;color:var(--fg2);text-transform:uppercase;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surf2) 42%,transparent)}
+td.r,th.r{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.up{color:var(--up);font-weight:700} .dn{color:var(--down);font-weight:700}
+.wn{color:var(--warn);font-weight:700} .dim{color:var(--fg3);font-size:.92em}
+
+.note{background:var(--surf);border:1px solid var(--line);border-left:3px solid var(--up);
+  border-radius:8px;padding:16px 18px;margin-top:22px;font-size:13.5px;color:var(--fg2)}
+.note b{color:var(--fg)}
+.note.d{border-left-color:var(--down)} .note.w{border-left-color:var(--warn)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:18px;border-top:3px solid var(--line)}
+.card.u{border-top-color:var(--up)} .card.d{border-top-color:var(--warn)}
+.card .h{font-size:11.5px;font-family:var(--mono);letter-spacing:.07em;color:var(--fg3);text-transform:uppercase}
+.card .t{margin-top:8px;font-size:16px;font-weight:800}
+.card.u .t{color:var(--up)} .card.d .t{color:var(--warn)}
+.card .big{margin-top:12px;font-family:var(--mono);font-variant-numeric:tabular-nums;
+  font-size:31px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.card.u .big{color:var(--up)} .card.d .big{color:var(--warn)}
+.card .d2{margin-top:10px;font-size:13px;color:var(--fg2);line-height:1.5}
+.card .d2 b{color:var(--fg)}
+
+.eqn{margin-top:22px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;
+  padding:20px;text-align:center;font-family:var(--mono);font-size:14.5px;line-height:2.1;color:var(--fg2)}
+.eqn b{color:var(--fg);font-weight:700}
+.eqn .g{color:var(--up)} .eqn .r{color:var(--down)}
+
+footer{padding:36px 0 60px;color:var(--fg3);font-size:12.5px}
+footer b{color:var(--fg2)}
+hr{border:none;border-top:1px solid var(--line);margin:18px 0}
+@media (max-width:640px){
+  .split{grid-template-columns:1fr}
+  .flip .row{grid-template-columns:1fr 34px 1fr}
+  .flip .cell{padding:13px 12px}
+  .flip .cell .v{font-size:19px}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"토큰 경제학의 반전 — 원가가 가격보다 빨리 내렸다","description":"토큰 단가는 내렸는데 마진은 올랐다. 앤스로픽 GM −94%→60%, Z AI 토큰당 추론 비용 −80% — 원가가 가격보다 빨리 내렸다. T6 「11층 압박」 테제를 철회한다.","url":"https://ourprochoi-web.github.io/stock-research/ai-infra/ai_token_economics_paper.html","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:18px;left:18px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 15px 8px 11px;background:color-mix(in srgb,var(--surf) 88%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--down);text-decoration:none;font-size:13px;font-weight:700">&#8592; Archive</a>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">ourprochoi Research · 2026.09.01 · AI 밸류체인 T6 판정</span>
+  <h1>토큰 값은 내렸는데<br><span class="up">마진은 올랐다</span></h1>
+  <p class="lede">본 아카이브는 2026년 8월에 <b>「11층(모델 회사)은 단가 하락 압력을 받는다」</b>고 적었다. <b>그날 스스로 잡은 오류가 있다</b> — <b>마진은 비율인데 분자(단가)만 보고 분모(원가)를 보지 않았다.</b> 그래서 <b>분모를 채점표로 걸었다</b>: 「토큰당 GPU-시간이 실제로 내리는가」.<br><br><b>3주 뒤 동·서 양쪽에서 답이 왔고, <span class="up">테제를 철회한다</span>.</b> 단가는 실제로 내렸지만 <b>원가가 더 빨리 내렸다.</b></p>
+  <div class="flip">
+    <div class="row">
+      <div class="cell a"><div class="k">Anthropic 매출총이익률 · 2024</div><div class="v">−94%</div><div class="n">추론 비용이 매출을 압도하던 국면</div></div>
+      <div class="arw">&rarr;</div>
+      <div class="cell b"><div class="k">2026</div><div class="v">약 60%</div><div class="n"><b>154%p 이동.</b> 사유가 「가격 인상이 아니라 <b>추론 효율 개선</b>」</div></div>
+    </div>
+    <div class="row">
+      <div class="cell a"><div class="k">주요 공급자 평균 · 100만 토큰당</div><div class="v">$10</div><div class="n">1년 전</div></div>
+      <div class="arw">&rarr;</div>
+      <div class="cell b dn"><div class="k">현재</div><div class="v">$2.50</div><div class="n"><b>−75%</b>. 서구 시장 전체의 원가·가격 동반 하락</div></div>
+    </div>
+    <div class="row">
+      <div class="cell a"><div class="k">Z AI 토큰당 추론 비용 · 연초</div><div class="v">100</div><div class="n">지수화</div></div>
+      <div class="arw">&rarr;</div>
+      <div class="cell b dn"><div class="k">2026.08</div><div class="v">20</div><div class="n"><b>−80%</b>. 동일 국산 하드웨어 기준 서빙 성능 <b>3배</b></div></div>
+    </div>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="sec-n">01 / 반전</div>
+  <h2>가격을 <em>101% 올렸는데</em> 호출량이 <i>40배</i>가 됐다</h2>
+  <p class="sub">중국 모델사 Z AI(즈푸)의 1H26 실적·컨콜이 <b>분자와 분모를 동시에</b> 보여준다. 이런 조합이 나오려면 <b>원가가 가격보다 훨씬 빨리 내려야 한다</b>.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>지표</th><th class="r">값</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td>API 평균 가격</td><td class="r up">+101%</td><td>분자 — <b>T6이 예상한 방향과 반대</b></td></tr>
+      <tr><td>호출량</td><td class="r up">40배</td><td>가격을 두 배로 올렸는데 수요가 40배</td></tr>
+      <tr><td>상위 10대 고객 일평균 호출</td><td class="r up">98배</td><td><b>대형 고객일수록 더 늘었다</b> — 파일럿이 아니다</td></tr>
+      <tr><td>토큰당 추론 비용</td><td class="r dn">−80%</td><td>분모 — <b>T6이 채점표로 걸어둔 자리</b></td></tr>
+      <tr><td>서빙 성능(동일 하드웨어)</td><td class="r dn">3배</td><td>하드웨어가 아니라 <b>소프트웨어 효율</b></td></tr>
+      <tr><td><b>클라우드/API 총이익률</b></td><td class="r"><span class="dim">−0.4%</span> → <b class="up">24.6%</b></td><td><b>순효과 — 흑자 전환</b></td></tr>
+    </tbody></table></div>
+  <div class="note d"><b>⚠ 이 회사 하나로는 판정할 수 없었다.</b> Z AI는 <b>약 10만 장 규모의 국산 GPU</b>로 상용 추론을 돌린다. 「−80%」에 <b>모델 효율 개선</b>과 <b>국산 하드웨어 단가</b>가 섞여 있고 분리되지 않는다.<br><br>그래서 <b>채점표를 걸었다</b> — <b>「서구 모델사에서도 같은 방향이 나오는가」</b>. 나오면 국산 하드웨어 효과가 아니라 <b>기술의 성질</b>이라는 뜻이다.</div>
+  <div class="note"><b>🔑 같은 날 답이 왔다.</b> <b>앤스로픽 GM이 2024년 −94% → 2026년 약 60%</b>이고, 보고된 사유가 <b>「가격 인상이 아니라 추론 효율 개선」</b>이다. <b>프로덕션 모델의 토큰당 총이익률은 65~80%</b>로 프론티어 추론 중 최고 수준이며, <b>주요 공급자 평균 100만 토큰당 비용은 1년 만에 $10 → $2.50(−75%)</b>다.<br><br><b>Z AI −80%와 서구 −75%. 방향도 크기도 비슷하다 — 국산 하드웨어 효과가 아니었다.</b></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-n">02 / 철회</div>
+  <h2>테제를 <em>다시 쓴다</em></h2>
+  <div class="eqn">
+    <b>종전</b> &nbsp;—&nbsp; 11층은 <span class="r">단가 하락</span> 압력을 받는다<br>
+    <span style="color:var(--fg3);font-size:20px">&darr;</span><br>
+    <b>개정</b> &nbsp;—&nbsp; 11층은 <span class="g">원가가 더 빨리 내려 마진이 오를 수 있고</span><br>
+    그 여부는 <b>토큰 효율 개선 속도</b> vs <b>태스크당 토큰 소모 증가 속도</b>가 정한다
+  </div>
+  <p class="sub"><b>단가는 실제로 내렸다</b> — 사용량 가중 토큰 지출이 100만 토큰당 <b>$1.33</b>으로 5월 정점 $2.07 대비 <b>−37.5%</b>다. <b>그런데 원가가 더 빨리 내렸다.</b> 본 아카이브가 <b>2026.08.11에 스스로 잡은 오류</b>(「마진은 비율인데 분자만 보고 분모를 안 봤다」)가 <b>3주 만에 실측으로 확정됐다</b>.</p>
+  <div class="note w"><b>🔴 그러나 「전면」 철회는 아니다 — 같은 층에서 정반대가 나온다.</b><br><br>SemiAnalysis 기준 <b>3Q26 앤스로픽 영업이익 $10억(영업이익률 약 6%)</b>인데 <b>같은 기간 오픈AI 영업이익률은 약 −100%</b>로 추정된다.<br><br><b>11층을 한 덩어리로 읽으면 −100%와 +6%를 평균내게 된다. 층이 아니라 회사로 갈린다.</b></div>
+  <div class="split">
+    <div class="card u"><div class="h">Anthropic · 3Q26E</div><div class="t">영업이익률 약 +6%</div>
+      <div class="big">$10억</div>
+      <div class="d2">GM 약 <b>60%</b>인데 OPM이 6%다 — <b>훈련·인건비가 54%p를 먹는다</b>.<br><br><b>「추론 원가가 내린다」와 「모델 회사가 돈을 번다」는 다른 문장</b>이다.</div></div>
+    <div class="card d"><div class="h">OpenAI · 3Q26E</div><div class="t">영업이익률 약 −100%</div>
+      <div class="big">−100%</div>
+      <div class="d2">같은 기술 곡선 위에 있는데 <b>손익은 정반대</b>다.<br><br>원가 하락이 <b>모든 회사에 같은 크기로 오지 않는다</b> — 컴퓨트 조달 구조와 모델 효율이 회사마다 다르다.</div></div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <div class="sec-n">03 / 반대 축</div>
+  <h2>「토큰당 싸다」가 <i>「작업당 싸다」</i>는 아니다</h2>
+  <p class="sub">이 페이퍼의 결론을 뒤집을 수 있는 축이 하나 있고, <b>본 아카이브는 그것을 이미 갖고 있었다</b>.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>모델</th><th class="r">리스트 단가<br><span class="dim">100만 토큰</span></th><th class="r">작업당 총비용<br><span class="dim">키미 K3 = 1.00×</span></th><th class="r">품질</th><th>함의</th></tr></thead>
+    <tbody>
+      <tr><td><b>Kimi K3</b></td><td class="r">$15</td><td class="r">1.00×</td><td class="r dim">기준</td><td>가장 싼 단가</td></tr>
+      <tr><td><b>Claude Opus 4.8</b></td><td class="r">$25</td><td class="r up">0.50×</td><td class="r up">+13%</td><td><b>단가 1.67배인데 총비용 절반</b> — 3.33배가 전부 <b>토큰 소모량</b>에서</td></tr>
+      <tr><td><b>GPT-5.6 Sol</b></td><td class="r">$30</td><td class="r up">0.87×</td><td class="r up">+20%</td><td>단가 2배인데 총비용은 더 싸다</td></tr>
+      <tr><td><b>GLM-5.2</b></td><td class="r dim">—</td><td class="r wn">2.00×</td><td class="r dim">—</td><td><b>싼 단가가 비싼 총비용</b>이 되는 경우</td></tr>
+    </tbody></table></div>
+  <div class="note w"><b>그리고 에이전틱이 이 축을 키운다.</b> 보고에 따르면 <b>에이전틱 워크로드는 태스크당 챗봇의 5~30배 토큰</b>을 쓴다.<br><br><b>즉 마진이 실제로 확대되는지는 <span style="color:var(--down)">비용 하락 속도</span>와 <span style="color:var(--up)">토큰 소모 증가 속도</span>의 경주가 정한다.</b> 지금까지는 전자가 이겼지만(앤스로픽 GM −94% → 60%), <b>에이전트가 본격화되면 후자가 가속된다</b>.<br><br>오픈AI CFO도 기업 구매 기준이 <b>「Tokenmaxxing」에서 「지능 단위당 비용」으로</b> 옮겨간다고 밝혔다 — <b>시장도 「토큰당」이 아니라 「작업당」으로 세기 시작했다</b>는 뜻이다.</div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-n">04 / 층별 함의</div>
+  <h2>같은 사실이 층마다 <em>정반대</em>로 읽힌다</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>층</th><th>무엇이 일어나는가</th><th class="r">방향</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td><b>11층</b><br><span class="dim">모델 회사</span></td><td>원가가 가격보다 빨리 내려 <b>마진이 오른다</b>. 단 회사별로 갈린다</td><td class="r up">↑ 조건부</td><td>앤스로픽 GM −94%→60% · Z AI 총마진 −0.4%→24.6%</td></tr>
+      <tr><td><b>10층</b><br><span class="dim">SW·앱</span></td><td>비용 전가 대신 <b>가격 산정 기준을 바꾼다</b> — 시트 → 소비 → <b>성과</b></td><td class="r up">↑ 재정의</td><td>세일즈포스 성과 기반 요금제 · 사용량 QoQ +97% · <b>예약매출 50%가 크레딧 리필</b></td></tr>
+      <tr><td><b>1~9층</b><br><span class="dim">칩·메모리·전력</span></td><td><b>임대료·부품가가 오른다</b>. 토큰 효율이 좋아져도 총 컴퓨트 수요는 늘어난다</td><td class="r up">↑</td><td>GPU 임대료 3개월 <b>+15.2%</b>(Blackwell $5.18) · 3Q26 PC DRAM <b>+18~23%</b></td></tr>
+      <tr><td><b>세트</b><br><span class="dim">PC·스마트폰</span></td><td><b>「멤플레이션」</b> — 메모리 원가 상승이 <b>세트 마진을 깎는다</b></td><td class="r wn">↓</td><td>2026 PC·스마트폰 출하 <b>10%대 초중반 감소</b> 전망 · OEM이 <b>사양을 낮춘다</b></td></tr>
+    </tbody></table></div>
+  <div class="note"><b>🔑 「AI가 잘 된다」를 한 방향으로 읽으면 층을 틀린다.</b> 같은 기간에 <b>모델사 마진은 오르고</b>, <b>부품 가격도 오르고</b>, <b>세트 마진은 깎인다</b>.<br><br>그리고 <b>대응 방식이 층마다 다르다</b> — 데이터센터는 <b>de-speccing</b>(HBM 용량을 낮춘다), 세트는 <b>사양 하향</b>, SW는 <b>과금 기준 변경</b>. <b>셋 다 「대당 소모량을 줄이거나 값을 다시 정의하는」 같은 형태</b>다.</div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-n">05 / 한계</div>
+  <h2>이 판정이 <i>기대는 것</i></h2>
+  <div class="tbl"><table>
+    <thead><tr><th style="width:30%">한계</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><b>전부 ②·③ 등급</b></td><td><b>앤스로픽·오픈AI 모두 비상장</b>이라 공시가 없다. GM 60% · 토큰당 GM 65~80% · OPM +6% vs −100%는 <b>전부 언론·분석기관 인용</b>이다. <b>값으로 쓰지 않고 방향만 쓴다.</b></td></tr>
+      <tr><td><b>가정법이 실측으로 둔갑할 뻔했다</b></td><td>본 아카이브의 규칙 파일에 <b>「앤스로픽 GM 38% → 60% 중반」</b>이 적혀 있었는데, <b>「~라면」이라는 예시</b>였고 <b>정본 페이지에는 없었다</b>. 실제 시작점은 <b>38%가 아니라 −94%</b>였다. <b>규칙 파일에만 있고 정본에 없는 값은 출처가 사라진다.</b></td></tr>
+      <tr><td><b>Z AI는 국산 GPU를 쓴다</b></td><td>「−80%」에 <b>모델 효율</b>과 <b>국산 하드웨어 단가</b>가 섞여 분리되지 않는다. 서구 실측이 없었다면 <b>이 판정은 성립하지 않았다</b>.</td></tr>
+      <tr><td><b>Z AI 실적은 컨센 하회다</b></td><td>1H26 매출 <b>9.54억 위안(+400%)</b>인데 <b>JPM 추정 22%·컨센 30% 하회</b>다. 사유는 <b>온프레미스 −20%</b>(추정 64% 하회)이고 <b>클라우드/API는 +27배로 전체의 86.5%</b>. <b>같은 회사에서 두 사업이 정반대</b>라 「+400%」를 그대로 읽으면 안 된다.</td></tr>
+      <tr><td><b>GM ≠ OPM</b></td><td>GM 60%에서 OPM 6%면 <b>훈련·인건비가 54%p</b>를 먹는다. 이 페이퍼는 <b>추론 원가</b>를 다루지 <b>회사의 수익성</b>을 다루지 않는다.</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-n">06 / 판정 이벤트</div>
+  <h2>무엇이 관측되면 <i>이 판정은 틀렸는가</i></h2>
+  <div class="tbl"><table>
+    <thead><tr><th>대상</th><th>반증 조건</th></tr></thead>
+    <tbody>
+      <tr><td><b>앤스로픽 GM</b></td><td><b>3Q26·4Q26에 60%대를 유지하지 못하면</b> 「원가가 더 빨리 내린다」가 일시적이었던 것이다. 특히 <b>에이전트 확산으로 태스크당 토큰이 늘어 GM이 꺾이면</b> 03절의 반대 축이 이긴다</td></tr>
+      <tr><td><b>오픈AI 영업이익률</b></td><td><b>−100%에서 개선되면</b> 「회사별로 갈린다」가 약해지고 층 전체의 개선으로 읽을 수 있다. <b>개선되지 않으면 회사별 분화가 구조</b>다</td></tr>
+      <tr><td><b>직접 공표</b></td><td><b>앤스로픽이 IPO 또는 투자자 자료로 GM·추론 원가를 직접 공표하면</b> 등급이 ②에서 ①로 올라간다. 그 전까지 60%는 값이 아니라 방향이다</td></tr>
+      <tr><td><b>토큰 소모량</b></td><td><b>에이전틱 태스크당 토큰이 5~30배에서 더 늘고 단가 하락이 멈추면</b> 종전 테제(11층 압박)가 다시 맞게 된다. <b>철회를 되돌릴 조건을 미리 적어 둔다</b></td></tr>
+      <tr><td><b>세일즈포스</b></td><td><b>Q3 FY27에 성과 기반 계약의 ARR 기여가 분리 공시되면</b> 10층의 「과금 기준 재정의」가 크기를 갖는다. 안 되면 서사다</td></tr>
+    </tbody></table></div>
+  <div class="note w"><b>⚠ 이 문서는 투자자문이 아니다.</b> 작성자는 공인 투자자문이 아니며 개인 맞춤 투자자문을 제공하지 않는다. 위 내용은 <b>층별 함의와 판정 시점</b>이지 매매 지시가 아니다.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>ourprochoi Research Archive</b> · AI 인프라 · 밸류체인 T6 판정</p>
+  <hr>
+  <p><b>출처와 등급</b> — Z AI 1H26 실적·컨콜(<b>①</b> 회사 발표 · ARR 가이던스는 <b>③</b>) · JP모건 Z AI 리뷰(<b>③</b>) · 앤스로픽 GM·오픈AI OPM(<b>②·③</b> 언론·분석기관 인용 · <b>양사 비상장으로 공시 없음</b>) · 알파센스 245개 질문 실측(<b>②</b>) · 세일즈포스 요금제(<b>①</b> 회사 발표 · 비중은 미공시 <b>②</b>) · GPU 임대료·DRAM 고정가(<b>②</b> TrendForce·Citi).</p>
+  <p>조회일 <b>2026.09.01</b> · 본 판정의 데이터·이력 정본은 아카이브 <b>AI 밸류체인 가이드 T6</b>이며, 수치가 갈리면 그쪽이 우선한다.</p>
+</div></footer>
+
+</body>
+</html>
