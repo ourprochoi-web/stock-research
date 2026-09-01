@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="중국 기술수출이 한국의 9배가 됐다. 그런데 24사를 분기 매출 변동계수로 가르면 무너진 곳과 오히려 커진 곳이 정확히 갈린다 — 중국이 경쟁자인 회사와 고객인 회사다.">
+<meta name="keywords" content="중국 바이오,라이선스아웃,기술수출,리가켐바이오,알테오젠,삼성바이오로직스,에스티팜,에이비엘바이오,SK바이오팜,셀트리온,BIOSECURE Act,매출 변동계수,ADC,제형 전환">
+<meta property="og:title" content="중국 바이오 위협 — 「누가 위험한가」는 매출의 성격이 답한다">
+<meta property="og:description" content="중국 기술수출이 한국의 9배가 됐다. 그런데 24사를 분기 매출 변동계수로 가르면 무너진 곳과 오히려 커진 곳이 정확히 갈린다 — 중국이 경쟁자인 회사와 고객인 회사다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-bio/kr_bio_china_competition.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="중국 바이오 위협 — 「누가 위험한가」는 매출의 성격이 답한다">
+<meta name="twitter:description" content="중국 기술수출이 한국의 9배가 됐다. 그런데 24사를 분기 매출 변동계수로 가르면 무너진 곳과 오히려 커진 곳이 정확히 갈린다 — 중국이 경쟁자인 회사와 고객인 회사다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-bio/kr_bio_china_competition.html">
+<title>중국 바이오 위협 — 「누가 위험한가」는 매출의 성격이 답한다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"중국 바이오 위협 — 「누가 위험한가」는 매출의 성격이 답한다","description":"중국 기술수출이 한국의 9배가 됐다. 그런데 24사를 분기 매출 변동계수로 가르면 무너진 곳과 오히려 커진 곳이 정확히 갈린다 — 중국이 경쟁자인 회사와 고객인 회사다.","url":"https://ourprochoi-web.github.io/stock-research/ai-bio/kr_bio_china_competition.html","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"ko","author":{"@type":"Organization","name":"ourprochoi Research"},"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"}}
+</script>
+</head>
+<body>
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(15,19,34,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#a5b4fc;text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>중국 바이오 경쟁 · K-바이오 24사</div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="#now" style="color:var(--accent)">▎현재 판단</a>
+    <a href="#falsify">반증 조건</a>
+    <a href="#s1">01 / 위협의 크기</a>
+    <a href="#s2">02 / 변동계수</a>
+    <a href="#s3">03 / 3사분면</a>
+    <a href="#s4">04 / 한계</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">AI 바이오 · 2026.08.31 종가 · DART 1H26 확정 · 국내 24사</span>
+    <h1 class="hero-title">「중국이 위협이다」는 맞다<br><span class="hl">그런데 <u>누구에게</u> 위협인지는 매출의 성격이 답한다</span></h1>
+    <p class="hero-sub">중국 기술수출이 <b>한국의 9배</b>가 됐고 글로벌 점유율이 <b>3년 만에 20% → 38~48%</b>다. 그런데 국내 24사를 <b>분기 매출 변동계수(CV)</b>로 가르면 <b>무너진 곳과 오히려 커진 곳이 정확히 갈린다</b> — <b>리가켐 −50.8% · 에이비엘 −57.8%</b>인 반면 <b>알테오젠 +37.3% · 에스티팜 +45.4%</b>다. <b>차이는 회사의 우열이 아니라 <u>중국이 경쟁자인가 고객인가</u>다.</b></p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num tnum">9<span class="u">배</span></div><div class="lab">중국 기술수출 ÷ 한국 (2025) — <b>2020년에는 1.1배</b>였다</div><div class="src">SRC: 언론 집계 · 등급 ②</div></div>
+      <div class="hstat"><div class="num tnum">24<span class="u">배</span></div><div class="lab">🔴 중국 <b>총 계약규모 ÷ 선불금</b> — 1,357억 vs <b>56억 달러</b></div><div class="src">SRC: 본 편 산출 · §A7-0</div></div>
+      <div class="hstat"><div class="num tnum">1.04<span class="u"> vs 0.14</span></div><div class="lab">매출 <b>변동계수</b> — 에이비엘 vs SK바이오팜. <b>7.4배</b></div><div class="src">SRC: 네이버 분기 재무 · 본 편 산출</div></div>
+      <div class="hstat"><div class="num tnum">2026<span class="u">.12.18</span></div><div class="lab"><b>BIOSECURE Act</b> OMB 대상 기업 목록 공표 시한</div><div class="src">SRC: FY2026 NDAA(2025.12.18 서명)</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="now">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎현재 판단 · 2026.09.01</div>
+  <h2 class="sec-title">위협은 실재하고, 이미 손익에 나타났다 — 다만 <u>전체가 아니라 한 칸</u>에서</h2>
+  <p class="sec-lead">작성 2026.09.01 · 최종 갱신 2026.09.01 · 🔴 정정 0 · 🔵 최근 1<br>
+  <b>기준</b> — 실적 <b>DART 1H26 확정</b>(누적 <code>thstrm_add_amount</code> · 연결 CFS 우선 · <b>① 등급</b>) · 분기 시계열 <b>네이버 재무</b> · 시세 <b>2026.08.31 종가</b> · 중국 집계 <b>언론 보도(② 등급)</b>.<br>
+  <b>한 문장</b> — <u>중국이 위협인 것은 <b>후보물질을 파는 회사</b>에게이고, <b>제형·생산·플랫폼을 파는 회사</b>에게는 <u>같은 중국이 <b>고객</b></u>이다. 둘을 「K-바이오」로 묶으면 정반대 결론이 섞인다.</u></p></div>
+
+  <div class="panel">
+    <p><b>T1. 위협의 크기는 실재한다 — 그런데 <u>인용되는 숫자가 실제 돈의 24배</u>다.</b><br>
+    <b>2025년 중국 아웃라이선스 <u>157건 · 1,357억 달러</u></b>로 한국(<b>18건 · 약 150억 달러</b>)의 <b>9배</b>다. 격차는 <b>2020년 1.1배 → 2022년 5.8배 → 2023년 6.9배 → 2025년 9배</b>로 벌어졌고, 글로벌 기술이전 점유율은 <b>2023년 20% → 2024년 27% → 2025년 <u>38%</u></b>다.<br>
+    <b>🔴 그런데 같은 해 <u>선불금 총액은 56억 달러</u></b>다 — <b>1,357억 ÷ 56억 = <u>24.2배</u></b>. <b>「1,357억 달러」는 <u>마일스톤을 전부 달성했을 때의 상한</u>이고 실제로 오간 돈이 아니다</b>(§A7-0).
+    <b>실제로 움직인 돈으로 보면 증가율이 더 크다</b> — 선불 총액 <b>2022년 11억 → 2025년 56억 달러(+400%)</b>, 평균 선불금 <b>5,200만 → 1억 7,200만 달러(+230%)</b>, 건수 <b>42 → 93건(+120%)</b>.
+    <b>즉 <u>총액은 부풀려 인용되지만 방향은 선불금으로도 확인된다</u>.</b><br>
+    <b>⚠ 점유율은 출처가 갈린다(§A5)</b> — 한 집계는 <b>2025년 38%</b>, 다른 집계는 <b>「2022~2024년 27% → 2025년 <u>48%</u>」</b>다. <b>분모가 건수인지 금액인지가 명시되지 않아 <u>둘 다 적고 하나를 고르지 않는다</u>.</b></p>
+  </div>
+
+  <div class="panel">
+    <p><b>T2. 🔑 위협은 이미 손익에 나타났다 — 그리고 <u>정확히 「후보물질을 파는 회사」에서만</u> 나타났다.</b><br>
+    <b>DART 1H26 확정으로 24사를 재면 매출 증감의 양 끝이 이렇다</b> — <b>에이비엘바이오 <u>−57.8%</u> · 리가켐바이오 <u>−50.8%</u> · 디앤디파마텍 −66.2%</b>가 하위이고, <b>SK바이오팜 +48.2% · 에스티팜 +45.4% · 셀트리온 +40.8% · 알테오젠 +37.3%</b>가 상위다.<br>
+    <b>🔑 하위 3사의 공통점은 규모도 분야도 아니라 <u>매출의 성격</u>이다 — 셋 다 <b>마일스톤·계약금이 매출의 대부분</b>인 구조다.</b>
+    <b>분기 매출 <u>변동계수(CV)</u>로 재면 그것이 숫자로 나온다</b> — <b>에이비엘 1.04 · 오스코텍 0.97 · 리가켐 0.51</b> vs <b>SK바이오팜 0.14 · 셀트리온 0.15 · 에스티팜 0.31</b>. <b>가장 큰 쪽이 가장 작은 쪽의 <u>7.4배</u></b>다.<br>
+    <b>그리고 중국이 가장 강한 분야가 <u>ADC</u>인데 리가켐이 ADC이고, 두 번째가 <u>이중·다중항체</u>인데 에이비엘이 이중항체다.</b> <b>겹침이 우연이 아니다.</b></p>
+  </div>
+
+  <div class="panel">
+    <p><b>T3. 🔑 그런데 <u>같은 중국이 다른 회사에게는 고객</u>이다 — 그리고 그것도 손익에 나타나 있다.</b><br>
+    <b>중국 바이오텍이 글로벌에 팔려면 <u>세 가지가 필요하다</u></b> — <b>제형</b>(피하주사 전환) · <b>생산</b>(미국 규제를 통과하는 CDMO) · <b>임상 대행</b>.
+    <b>본 편이 실측한 상위권이 정확히 그 자리다</b> — <b>알테오젠(SC 제형 변환 플랫폼) +37.3% · OPM 52.3%</b> · <b>에스티팜(올리고 CDMO) +45.4% · ΔOPM +5.45</b>.<br>
+    <b>🔑 그리고 업계 전망이 이것을 뒷받침한다</b> — 2026년 차세대 경쟁력 요소로 꼽히는 것이 <b>「이중항체 ADC · 신규 표적 ADC · <u>투여 간격 연장 및 제형 전환 기술</u>」</b>이다.
+    <b>즉 <u>중국의 ADC가 늘어날수록 제형 전환 수요도 늘어난다</u></b> — <b>알테오젠에게 중국은 <u>경쟁자가 아니라 잠재 고객</u>이다.</b><br>
+    <b>⚠ 이것은 <u>[추론]</u>이고 계약으로 확인되지 않았다</b>(§B3). <b>반증: 알테오젠의 중국 기업 대상 라이선스 계약이 <u>3Q26~4Q26에 한 건도 나오지 않으면</u> 이 논리는 가능성일 뿐이다.</b></p>
+  </div>
+
+  <div class="panel">
+    <p><b>T4. CDMO에는 <u>날짜가 박힌 촉매</u>가 하나 있다 — BIOSECURE Act.</b><br>
+    <b>2025년 12월 18일 <u>FY2026 국방수권법(NDAA)에 포함돼 서명</u>됐고, <b>OMB가 「우려 생명공학 기업(BCC)」 초기 목록을 <u>2026년 12월 18일까지</u> 공표</b>해야 한다.</b>
+    <b>🔴 범위를 정확히 한다(§A7-0) — 법이 막는 것은 <u>미 연방 기관의 계약·연장·갱신</u>이고 <b>민간 제약사의 조달을 직접 금지하지 않는다</b>.</b> <b>「우시가 퇴출되고 삼바가 다 가져간다」는 <u>법문이 말하는 것보다 넓다</u>.</b><br>
+    <b>📌 그래서 판정 이벤트를 <u>날짜로</u> 건다 — 「<u>2026.12.18까지 공표되는 OMB 목록에 우시가 포함되는가</u>」.</b> <b>포함되면 CDMO 수주 이동이 <u>가능성에서 조건으로</u> 바뀌고, 안 되면 이 축은 서사다.</b>
+    <b>⚠ 이것은 §E3가 금지하는 「날짜 리마인더」가 아니라 <u>법정 시한</u>이다 — 그날 공표되거나 되지 않거나 둘 중 하나이므로 판정된다.</b></p>
+  </div>
+
+  <div class="panel">
+    <p><b>T5. 🔴 그리고 인용된 「4분기 반도체 회복」 프레임은 <u>시점이 낡았다</u> — 같은 자료를 바이오에도 적용하면 안 된다.</b><br>
+    같은 정리가 반도체에 대해 <b>「2024~2025년 이어진 메모리 재고 축적이 소진 중」</b>·<b>「4분기 DRAM 가격 전 분기 대비 <u>5~10%</u> 상승 전망」</b>이라 적는데,
+    <b>본 아카이브가 <u>같은 주(2026.09.01)</u>에 실측한 것은 <b>3Q26 PC DRAM 고정가 QoQ +18~23% 확정 · 일부 +23~28% 체결</b></b>이고, 메모리 사이클 편 T2는 <b>「공급부족 정점은 2027년」</b>이며 마이크론이 <b>「고객 요구량의 절반도 못 채운다」</b>고 밝혔다.<br>
+    <b>🔑 「재고 소진 중 → 회복 초기」는 <u>2024~2025년 국면 서술</u>이고 지금은 <u>공급 부족 2년차</u>다.</b> <b>가격 전망도 <u>실측의 절반 이하</u>다.</b>
+    <b>⚠ 그래서 이 정리의 <u>바이오 부분도 같은 시점 리스크를 안고 있다</u>고 보고, <b>본 편은 그 서술을 근거로 쓰지 않고 <u>DART 확정값으로 다시 세웠다</u>.</b></b>
+    <b>다만 <u>바이오 진단 자체는 실측으로 지지된다</u> — 「라이선스아웃 의존 기업이 취약하다」는 <b>맞았다</b>.</b></p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="falsify">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎반증 조건 · 다음 검증</div>
+  <h2 class="sec-title">무엇이 관측되면 이 판단은 틀렸는가</h2></div>
+  <div class="panel">
+    <table><thead><tr><th>테제</th><th>반증 조건</th><th>판정 이벤트</th></tr></thead><tbody>
+    <tr><td><b>T2</b> 위협은 마일스톤 의존 기업에만</td><td><b>CV가 낮은 곳(셀트리온·SK바이오팜·에스티팜)에서 3Q26에 매출이 꺾이면</b> 「매출의 성격」 축이 아니라 섹터 전체 문제다</td><td><b>3Q26 분기보고서</b>(11월 중순)</td></tr>
+    <tr><td><b>T3</b> 중국은 알테오젠의 고객이다</td><td><b>3Q26~4Q26에 알테오젠의 중국 기업 대상 계약이 한 건도 없으면</b> 이 논리는 가능성일 뿐이다. 반대로 <b>중국 기업이 자체 제형 기술로 글로벌 딜을 하면</b> 직접 반증된다</td><td><b>알테오젠 기술이전 공시</b></td></tr>
+    <tr><td><b>T4</b> BIOSECURE가 CDMO 촉매</td><td><b>2026.12.18 OMB 목록에 우시가 없으면</b> 이 축을 지운다. 있어도 <b>민간 제약사 조달이 안 바뀌면</b> 크기가 작다</td><td><b>2026.12.18 OMB 공표</b>(법정 시한)</td></tr>
+    <tr><td><b>T1</b> 인용 숫자가 24배 부풀려진다</td><td><b>2026년 중국 딜의 선불금 비중이 크게 오르면</b>(예: 총액 대비 10% 초과) 「상한일 뿐」이라는 서술이 약해진다</td><td><b>2026년 연간 집계</b>(2027년 1월)</td></tr>
+    <tr><td><b>T5</b> 인용 자료의 시점이 낡았다</td><td>—(이미 확인됨). <b>다만 4Q26 DRAM 고정가가 실제로 +5~10%에 그치면</b> 그 전망이 맞았던 것이 된다</td><td><b>TrendForce 4Q26 고정가</b></td></tr>
+    </tbody></table>
+  </div>
+</div>
+</section>
+<section class="blk" id="s1">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">01 / 위협의 크기</div>
+  <h2 class="sec-title">9배는 맞다. 그런데 <u>어느 숫자의 9배</u>인지가 갈린다</h2></div>
+  <div class="panel">
+    <div style="overflow-x:auto"><table><thead><tr><th>지표</th><th style="text-align:right">2020</th><th style="text-align:right">2022</th><th style="text-align:right">2023</th><th style="text-align:right">2024</th><th style="text-align:right">2025</th></tr></thead><tbody>
+    <tr><td><b>중국 ÷ 한국 (총 계약규모)</b></td><td class="tnum" style="text-align:right">1.1배</td><td class="tnum" style="text-align:right">5.8배</td><td class="tnum" style="text-align:right">6.9배</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right"><b>9배</b></td></tr>
+    <tr><td><b>중국 글로벌 점유율</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">20%</td><td class="tnum" style="text-align:right">27%</td><td class="tnum" style="text-align:right"><b>38%</b> / <b>48%</b> ⚠</td></tr>
+    <tr><td>중국 계약 건수</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">42건</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right"><b>93~157건</b> ⚠</td></tr>
+    <tr><td><b>중국 총 계약규모</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right"><b>$1,357억</b></td></tr>
+    <tr><td><b>🔴 중국 <u>선불금</u> 총액</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">$11억</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right"><b>$56억</b></td></tr>
+    <tr><td>중국 평균 선불금</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">$5,200만</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right"><b>$1.72억</b>(2026)</td></tr>
+    <tr><td><b>한국 기술수출</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">8조(16건)</td><td class="tnum" style="text-align:right">8.8조(20건)</td><td class="tnum" style="text-align:right">8.1조(15건)</td><td class="tnum" style="text-align:right"><b>20조(18건)</b></td></tr>
+    </tbody></table></div>
+    <p style="margin-top:16px"><b>🔴 <u>총 계약규모 ÷ 선불금 = 24.2배</u>다.</b> <b>「1,357억 달러」는 <u>마일스톤을 전부 달성했을 때의 상한</u>이고 실제로 오간 돈은 <b>56억 달러</b></b>다.
+    <b>본 아카이브가 방산에서 「확정과 조건부를 더하지 않는다」고 정한 것과 <u>같은 형태</u></b>이며(§A6-1), <b>「9배」를 <u>돈의 9배</u>로 읽으면 안 된다.</b><br>
+    <b>🔑 그런데 <u>선불금으로 봐도 방향은 같다</u></b> — <b>2022년 $11억 → 2025년 $56억(+400%)</b>이고 <b>평균 선불금이 $5,200만 → $1.72억(+230%)</b>이다.
+    <b>즉 <u>크기는 부풀려 인용되지만 추세는 실재한다</u>.</b><br>
+    <b>⚠ 두 자리에서 출처가 갈린다(§A5)</b> — <b>점유율</b>이 한 집계는 2025년 <b>38%</b>인데 다른 집계는 <b>「2022~2024년 27% → 2025년 48%」</b>이고, <b>건수</b>도 <b>93건</b>과 <b>157건</b>으로 갈린다.
+    <b>분모가 <u>금액인지 건수인지</u>, 그리고 <u>「아웃라이선스」의 정의</u>가 명시되지 않아 <b>둘 다 적고 하나를 고르지 않는다</b>.</b><br>
+    <b>⚠ 그리고 <u>창을 좁히면 그림이 뒤집힌다</u></b> — <b>2026년 1분기에는 한국 기술수출이 「5년래 최저」로 <u>중국과의 격차가 20배 → 64배</u></b>가 됐는데, <b>같은 해 상반기 누적으로는 <u>13조원</u></b>으로 2025년 페이스(20조)를 넘어선다. <b>분기로 보면 재앙이고 반기로 보면 신기록이다.</b></p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="s2">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">02 / 변동계수</div>
+  <h2 class="sec-title">🔑 「라이선스아웃 의존」을 <u>숫자로</u> 바꾸면 매출 변동계수다</h2>
+  <p class="sec-lead"><b>인용된 정리는 <i>「글로벌 파트너십이 이미 확정된 곳, 독자적 플랫폼 기술 보유 기업」</i>으로 압축하라고 하는데, <u>그것은 측정 가능한 형태가 아니다</u>.</b> 본 편은 그것을 <b>분기 매출 변동계수(CV = 표준편차 ÷ 평균)</b>로 바꾼다 — <b>마일스톤이 매출의 대부분이면 분기마다 튀고, 제품·수주 매출이면 평평하다.</b></p></div>
+  <div class="panel">
+    <div style="overflow-x:auto"><table><thead><tr><th>종목</th><th style="text-align:right">CV</th><th>최근 6개 분기 매출(억원)</th><th>매출의 성격</th></tr></thead><tbody>
+    <tr><td><b>SK바이오팜</b></td><td class="tnum" style="text-align:right"><b>0.14</b></td><td class="tnum">1,763 · 1,917 · 1,944 · 2,279 · 2,474 · 2,536</td><td>🟢 <b>제품 직판</b>(엑스코프리) — 단조 증가</td></tr>
+    <tr><td><b>셀트리온</b></td><td class="tnum" style="text-align:right"><b>0.15</b></td><td class="tnum">9,615 · 10,290 · 13,302 · 11,450 · 13,937 · 14,477</td><td>🟢 <b>바이오시밀러 제품</b></td></tr>
+    <tr><td><b>에스티팜</b></td><td class="tnum" style="text-align:right">0.31</td><td class="tnum">524 · 683 · 819 · 1,291 · 670 · 1,049</td><td>🟢 <b>올리고 CDMO 수주</b></td></tr>
+    <tr><td><b>삼성바이오로직스</b></td><td class="tnum" style="text-align:right">0.37 ⚠</td><td class="tnum">10,142 · 16,602 · <b style="color:var(--bear)">3,086</b> · 12,571 · 13,209 · 13,379</td><td>🟢 CDMO — <b>⚠ 2512 급락은 에피스 분할</b></td></tr>
+    <tr><td><b>알테오젠</b></td><td class="tnum" style="text-align:right">0.42</td><td class="tnum">186 · 490 · 645 · 716 · 689 · 1,067</td><td>🟡 <b>플랫폼 로열티 + 마일스톤</b> — 단조 증가</td></tr>
+    <tr><td><b>리가켐바이오</b></td><td class="tnum" style="text-align:right"><b>0.51</b></td><td class="tnum">326 · 414 · 160 · 359 · <b style="color:var(--bear)">55</b></td><td>🔴 <b>ADC 라이선스아웃</b></td></tr>
+    <tr><td><b>오스코텍</b></td><td class="tnum" style="text-align:right"><b>0.97</b></td><td class="tnum">100 · 89 · <b>789</b> · 36 · <b>526</b></td><td>🔴 <b>마일스톤 — 있고 없고를 반복</b></td></tr>
+    <tr><td><b>에이비엘바이오</b></td><td class="tnum" style="text-align:right"><b>1.04</b></td><td class="tnum"><b>757</b> · <b style="color:var(--bear)">14</b> · 131 · 197</td><td>🔴 <b>이중항체 라이선스아웃</b> — 54배 진폭</td></tr>
+    </tbody></table></div>
+    <p style="margin-top:16px"><b>🔑 CV가 <u>1H26 매출 증감과 정렬한다</u>.</b> <b>CV 0.14~0.31 구간(SK바이오팜·셀트리온·에스티팜)은 <u>전부 +40% 이상</u></b>이고, <b>CV 0.51~1.04 구간(리가켐·오스코텍·에이비엘)은 <u>−50.8% · +371% · −57.8%</u>로 방향조차 안 맞는다</b>.
+    <b>오스코텍 +371%는 <u>좋아진 것이 아니라 마일스톤이 들어온 분기</u>이고</b>(2512에 789억 · 2606에 526억, 사이 분기는 36억), <b>다음 분기에 다시 떨어진다.</b><br>
+    <b>🔑 그래서 <u>「YoY 증감률」로 바이오를 줄 세우면 안 된다</u></b> — <b>CV가 높은 회사는 <u>분모가 되는 전년 동기가 무엇이었나</u>에 따라 ±수백%가 나온다</b>(§A7-0).
+    <b>본 편이 CV를 먼저 재는 이유가 이것이다.</b><br>
+    <b>🔴 <u>삼성바이오로직스 CV 0.37은 과대다</u>(§A5).</b> <b>2512 매출 3,086억은 <u>삼성바이오에피스 인적분할</u> 때문이고 사업 변동이 아니다</b> — 아카이브가 <b>「바이오시밀러(에피스) 분리 완료」</b>를 이미 기록해 뒀다.
+    <b>분할 이후 3개 분기만 보면 <u>12,571 → 13,209 → 13,379</u>로 CV가 훨씬 낮다.</b>
+    <b>그리고 같은 이유로 <u>「1H26 매출 −0.4%」도 그대로 쓰면 안 된다</u> — <b>분할 전(에피스 포함)과 분할 후를 비교한 값</b>이다.</b></p>
+  </div>
+</div>
+</section>
+<section class="blk" id="s3">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">03 / 3사분면</div>
+  <h2 class="sec-title">중국이 <u>경쟁자인가 고객인가</u> — 24사를 그것으로 가른다</h2>
+  <p class="sec-lead">가격 <b>2026.08.31 종가</b> · 실적 <b>DART 1H26 확정</b> · CV는 <b>본 편 산출</b>(네이버 분기 재무).<br>
+  <b>⚠ 「중국과의 관계」 분류는 <u>본 편의 판정이며 회사 공시가 아니다</u>(§B3 [추론]).</b> 사업 구조에서 도출했고 <b>계약으로 확인된 것이 아니다</b>.</p></div>
+  <div class="panel">
+<div style="overflow-x:auto"><table><thead><tr><th>중국과의 관계</th><th>종목</th><th style="text-align:right">시총</th><th style="text-align:right">1H26 매출</th><th style="text-align:right">YoY</th><th style="text-align:right">OPM</th><th style="text-align:right">ΔOPM</th><th style="text-align:right">CV</th><th>사유</th></tr></thead><tbody>
+<tr><td><b>🔴 경쟁</b></td><td><b>오스코텍</b></td><td class="tnum" style="text-align:right">1조 4,156억</td><td class="tnum" style="text-align:right">563억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+371.0%</b></td><td class="tnum" style="text-align:right">50.9%</td><td class="tnum" style="text-align:right">+125.86</td><td class="tnum" style="text-align:right">0.97</td><td style="color:var(--ink-2);font-size:.9em">항암 후보물질</td></tr>
+<tr><td><b></b></td><td><b>HLB</b></td><td class="tnum" style="text-align:right">4조 5,354억</td><td class="tnum" style="text-align:right">467억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+39.8%</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">항암 후보물질</td></tr>
+<tr><td><b></b></td><td><b>리가켐바이오</b></td><td class="tnum" style="text-align:right">3조 5,131억</td><td class="tnum" style="text-align:right">414억</td><td class="tnum" style="text-align:right;color:var(--bear)"><b>-50.8%</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">0.51</td><td style="color:var(--ink-2);font-size:.9em">ADC — 중국 주력 분야</td></tr>
+<tr><td><b></b></td><td><b>에이비엘바이오</b></td><td class="tnum" style="text-align:right">3조 9,751억</td><td class="tnum" style="text-align:right">328억</td><td class="tnum" style="text-align:right;color:var(--bear)"><b>-57.8%</b></td><td class="tnum" style="text-align:right">-103.6%</td><td class="tnum" style="text-align:right">-118.65</td><td class="tnum" style="text-align:right">1.04</td><td style="color:var(--ink-2);font-size:.9em">이중항체 — 중국 2순위</td></tr>
+<tr><td><b></b></td><td><b>디앤디파마텍</b></td><td class="tnum" style="text-align:right">2조 3,744억</td><td class="tnum" style="text-align:right">8억</td><td class="tnum" style="text-align:right;color:var(--bear)"><b>-66.2%</b></td><td class="tnum" style="text-align:right">-2655.7%</td><td class="tnum" style="text-align:right">-1912.65</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">펩타이드 후보물질</td></tr>
+<tr><td><b></b></td><td><b>보로노이</b></td><td class="tnum" style="text-align:right">3조 749억</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right;color:var(--ink-2)"><b>—</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">표적항암 후보물질</td></tr>
+<tr><td><b>🟡 혼합</b></td><td><b>한미약품</b></td><td class="tnum" style="text-align:right">6조 3,030억</td><td class="tnum" style="text-align:right">8,602억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+14.4%</b></td><td class="tnum" style="text-align:right">21.5%</td><td class="tnum" style="text-align:right">+5.60</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">후보물질 + 제품</td></tr>
+<tr><td><b></b></td><td><b>펩트론</b></td><td class="tnum" style="text-align:right">3조 8,590억</td><td class="tnum" style="text-align:right">34억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+12.0%</b></td><td class="tnum" style="text-align:right">-402.3%</td><td class="tnum" style="text-align:right">-95.94</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">펩타이드 플랫폼 — 매출 미미</td></tr>
+<tr><td><b></b></td><td><b>유한양행</b></td><td class="tnum" style="text-align:right">6조 880억</td><td class="tnum" style="text-align:right">11,662억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+8.9%</b></td><td class="tnum" style="text-align:right">6.5%</td><td class="tnum" style="text-align:right">+1.23</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">렉라자 로열티 + 제품</td></tr>
+<tr><td><b></b></td><td><b>삼천당제약</b></td><td class="tnum" style="text-align:right">3조 8,775억</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right;color:var(--ink-2)"><b>—</b></td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">시밀러 + 경구제형</td></tr>
+<tr><td><b>🟢 고객</b></td><td><b>에스티팜</b></td><td class="tnum" style="text-align:right">2조 1,503억</td><td class="tnum" style="text-align:right">1,754억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+45.4%</b></td><td class="tnum" style="text-align:right">17.0%</td><td class="tnum" style="text-align:right">+5.45</td><td class="tnum" style="text-align:right">0.31</td><td style="color:var(--ink-2);font-size:.9em">올리고 CDMO</td></tr>
+<tr><td><b></b></td><td><b>알테오젠</b></td><td class="tnum" style="text-align:right">20조 9,662억</td><td class="tnum" style="text-align:right">1,405억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+37.3%</b></td><td class="tnum" style="text-align:right">52.3%</td><td class="tnum" style="text-align:right">-6.90</td><td class="tnum" style="text-align:right">0.42</td><td style="color:var(--ink-2);font-size:.9em">SC 제형 변환 — 중국 ADC가 늘수록 수요</td></tr>
+<tr><td><b></b></td><td><b>삼성바이오로직스</b></td><td class="tnum" style="text-align:right">70조 3,622억</td><td class="tnum" style="text-align:right">25,780억</td><td class="tnum" style="text-align:right;color:var(--bear)"><b>-0.4%</b></td><td class="tnum" style="text-align:right">45.3%</td><td class="tnum" style="text-align:right">+8.09</td><td class="tnum" style="text-align:right">0.37</td><td style="color:var(--ink-2);font-size:.9em">CDMO — BIOSECURE 촉매</td></tr>
+<tr><td><b>⚪ 무관</b></td><td><b>SK바이오팜</b></td><td class="tnum" style="text-align:right">6조 9,699억</td><td class="tnum" style="text-align:right">4,753억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+48.2%</b></td><td class="tnum" style="text-align:right">39.3%</td><td class="tnum" style="text-align:right">+12.01</td><td class="tnum" style="text-align:right">0.14</td><td style="color:var(--ink-2);font-size:.9em">엑스코프리 미국 직판</td></tr>
+<tr><td><b></b></td><td><b>셀트리온</b></td><td class="tnum" style="text-align:right">43조 7,320억</td><td class="tnum" style="text-align:right">25,387억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+40.8%</b></td><td class="tnum" style="text-align:right">30.5%</td><td class="tnum" style="text-align:right">+8.74</td><td class="tnum" style="text-align:right">0.15</td><td style="color:var(--ink-2);font-size:.9em">바이오시밀러 제품</td></tr>
+<tr><td><b></b></td><td><b>휴젤</b></td><td class="tnum" style="text-align:right">3조 662억</td><td class="tnum" style="text-align:right">2,545억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+27.2%</b></td><td class="tnum" style="text-align:right">40.7%</td><td class="tnum" style="text-align:right">-7.07</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">보툴리눔</td></tr>
+<tr><td><b></b></td><td><b>파마리서치</b></td><td class="tnum" style="text-align:right">4조 3,013억</td><td class="tnum" style="text-align:right">3,248억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+26.1%</b></td><td class="tnum" style="text-align:right">38.1%</td><td class="tnum" style="text-align:right">-0.97</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">미용·의료기기</td></tr>
+<tr><td><b></b></td><td><b>동아에스티</b></td><td class="tnum" style="text-align:right">3,672억</td><td class="tnum" style="text-align:right">4,282억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+13.9%</b></td><td class="tnum" style="text-align:right">3.3%</td><td class="tnum" style="text-align:right">+6.11</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">내수 + 시밀러</td></tr>
+<tr><td><b></b></td><td><b>바이오노트</b></td><td class="tnum" style="text-align:right">4,891억</td><td class="tnum" style="text-align:right">689억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+13.3%</b></td><td class="tnum" style="text-align:right">21.5%</td><td class="tnum" style="text-align:right">+3.33</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">진단</td></tr>
+<tr><td><b></b></td><td><b>JW중외제약</b></td><td class="tnum" style="text-align:right">6,753억</td><td class="tnum" style="text-align:right">4,219억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+12.1%</b></td><td class="tnum" style="text-align:right">15.9%</td><td class="tnum" style="text-align:right">+3.38</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">내수</td></tr>
+<tr><td><b></b></td><td><b>종근당</b></td><td class="tnum" style="text-align:right">9,496억</td><td class="tnum" style="text-align:right">9,262억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+10.8%</b></td><td class="tnum" style="text-align:right">3.5%</td><td class="tnum" style="text-align:right">-0.79</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">내수 제네릭</td></tr>
+<tr><td><b></b></td><td><b>대웅제약</b></td><td class="tnum" style="text-align:right">1조 4,692억</td><td class="tnum" style="text-align:right">8,263억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+8.4%</b></td><td class="tnum" style="text-align:right">10.9%</td><td class="tnum" style="text-align:right">-1.75</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">내수 + 보툴리눔</td></tr>
+<tr><td><b></b></td><td><b>메디톡스</b></td><td class="tnum" style="text-align:right">5,328억</td><td class="tnum" style="text-align:right">1,294억</td><td class="tnum" style="text-align:right;color:var(--bull)"><b>+3.0%</b></td><td class="tnum" style="text-align:right">9.4%</td><td class="tnum" style="text-align:right">-0.01</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">보툴리눔</td></tr>
+<tr><td><b></b></td><td><b>녹십자</b></td><td class="tnum" style="text-align:right">1조 4,970억</td><td class="tnum" style="text-align:right">8,567억</td><td class="tnum" style="text-align:right;color:var(--bear)"><b>-3.1%</b></td><td class="tnum" style="text-align:right">1.6%</td><td class="tnum" style="text-align:right">—</td><td class="tnum" style="text-align:right">—</td><td style="color:var(--ink-2);font-size:.9em">혈액제제·백신</td></tr>
+</tbody></table></div>
+    <p style="margin-top:18px"><b>🔴 <u>「🔴 경쟁」 칸이 실제로 무너졌다</u>.</b> 리가켐 <b>−50.8%</b> · 에이비엘 <b>−57.8%</b> · 디앤디파마텍 <b>−66.2%</b>. <b>HLB(+39.8%)와 오스코텍(+371%)은 <u>마일스톤 유입 분기</u>라 방향이 반대로 보이지만 CV가 0.97로 가장 높다.</b><br>
+    <b>그리고 <u>겹침이 우연이 아니다</u></b> — 2026년 업계 설문에서 <b>ADC 52.4% · 이중·다중항체 38.1%</b>가 유망 모달리티 1·2위인데, <b>중국 라이선스아웃의 주력이 정확히 그 둘</b>이고 <b>리가켐이 ADC · 에이비엘이 이중항체</b>다.<br>
+    <b>🟢 <u>「고객」 칸은 반대다</u></b> — 알테오젠 <b>+37.3% · OPM 52.3%</b>, 에스티팜 <b>+45.4% · ΔOPM +5.45</b>. <b>삼성바이오로직스는 −0.4%로 보이지만 <u>분할 효과</u>이며 분할 후 3분기는 <u>단조 증가</u></b>다.<br>
+    <b>⚪ <u>「무관」 칸이 가장 강하다</u></b> — SK바이오팜 +48.2%(ΔOPM <b>+12.01</b>) · 셀트리온 +40.8%(<b>+8.74</b>) · 휴젤 +27.2% · 파마리서치 +26.1%.
+    <b>🔑 이것이 이 편의 가장 실용적인 결론일 수 있다 — <u>「중국 위협」 논의에서 가장 안전한 자리는 <b>중국과 아예 다른 게임을 하는 회사</b></u>이고, 그것은 <b>미용·보툴리눔·내수·시밀러</b>다.</b><br>
+    <b>⚠ 다만 그 칸에도 다른 위험이 있다</b> — <b>휴젤 ΔOPM −7.07 · 파마리서치 −0.97</b>로 <b>마진이 꺾이고 있고</b>, 보툴리눔은 <b>중국이 아니라 <u>국내 경쟁과 규제</u>가 변수</b>다. <b>「중국 위협이 없다」가 「좋다」는 아니다.</b></p>
+  </div>
+  <div class="panel">
+    <p><b>🔴 그리고 <u>밸류에이션이 이 분류와 정렬하지 않는다</u> — 오히려 반대다.</b><br>
+    <b>「경쟁」 칸이 가장 비싸다</b> — <b>보로노이 PBR 44.03배 · 에이비엘 23.18배 · HLB 13.15배</b>이고 <b>셋 다 PER이 N/A(적자)</b>다.
+    <b>매출이 −57.8%인 회사가 PBR 23배</b>인 것은 <b>시장이 <u>실적이 아니라 파이프라인 옵션가치</u>를 보고 있다</b>는 뜻이고, <b>그 옵션가치가 바로 중국이 공격하는 자리</b>다.<br>
+    <b>「무관」 칸이 가장 싸다</b> — <b>종근당 PER 11.95배·PBR 0.89배 · JW중외제약 7.13배/1.71배 · 대웅제약 7.52배/1.37배 · 동아에스티 PBR 0.56배</b>.
+    <b>🔑 즉 <u>「중국에 안 흔들리는 회사」가 가장 싸게 거래된다</u></b> — 다만 <b>그것은 성장이 낮기 때문이기도 하다</b>(종근당 +10.8% · 대웅 +8.4%). <b>싼 데는 이유가 있고, 그 이유가 「중국 위협」은 아니다.</b><br>
+    <b>⚠ 알테오젠은 <u>양쪽 다 극단</u>이다</b> — <b>PER 110.10배 · PBR 39.37배</b>로 24사 중 최상위권인데 <b>ΔOPM은 −6.90</b>이다. <b>「중국이 고객」 논거가 맞더라도 <u>그 가격이 이미 반영됐는지는 다른 질문</u>이다</b>(§A7).</p>
+  </div>
+</div>
+</section>
+
+<section class="blk" id="s4">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">04 / 한계</div>
+  <h2 class="sec-title">이 편이 답하지 못하는 것</h2></div>
+  <div class="panel">
+    <p><b>① 「중국과의 관계」 분류는 <u>본 편의 판정이지 실측이 아니다</u>.</b> 사업 구조에서 도출했고 <b>계약으로 확인되지 않았다</b>. 특히 <b>「알테오젠에게 중국은 고객」은 [추론]</b>이고, <b>반증 조건을 걸어 뒀다</b>(3Q26~4Q26 중국 대상 계약 0건이면 가능성일 뿐).</p>
+    <p style="margin-top:12px"><b>② 중국 집계는 전부 <u>② 등급</u>이다.</b> 1,357억 달러·157건·38~48%는 <b>언론이 인용한 집계</b>이고 <b>원자료(딜 데이터베이스)를 직접 확인하지 못했다</b>. <b>「아웃라이선스」의 정의와 분모가 출처마다 다를 수 있고, 실제로 <u>건수가 93건과 157건으로 갈린다</u></b>.
+    <b>시도 기록: 웹 검색 2회로 두 계열의 집계를 확인했으나 <u>원본 딜 DB(예: DealForma·Evaluate)에는 접근하지 못했다</u>.</b></p>
+    <p style="margin-top:12px"><b>③ 파이프라인 중복도를 <u>세지 못했다</u>.</b> 「항암·자가면역에서 중복이 위험하다」는 진단을 <b>표적(타깃) 수준에서 대조</b>해야 정확한데, <b>본 편은 <u>모달리티 수준</u>(ADC·이중항체)에서만 대조했다</b>. <b>CLDN18.2·CDH17·DLL3 같은 표적별 중복은 확인하지 않았다.</b></p>
+    <p style="margin-top:12px"><b>④ CDMO 단가 압박은 <u>숫자로 확인하지 못했다</u>.</b> 인용된 정리는 <b>「중국업체에 단가 압박」</b>을 말하는데, <b>본 편은 삼성바이오로직스의 <u>수주 단가</u>나 <u>수주잔고</u>를 받지 못했다</b>. <b>OPM 45.3%·ΔOPM +8.09는 <u>압박의 반대 방향</u>이지만, 이는 <u>기존 계약의 마진</u>이지 <u>신규 수주 단가</u>가 아니다</b>(§A5).</p>
+    <p style="margin-top:12px"><b>⑤ 중국 임상 비용 「한국의 1/3~1/5」을 <u>검증하지 않았다</u>.</b> 그럴듯하고 방향도 맞을 가능성이 높지만 <b>출처와 기준(어느 상, 어느 적응증)이 명시되지 않았다</b>. <b>값으로 쓰지 않는다.</b></p>
+    <p style="margin-top:12px"><b>⑥ 우시(WuXi) 실적을 받지 못했다.</b> <b>CDMO 경쟁의 반대편</b>이고 본 아카이브가 <b>「한쪽만 추적」을 마벨/브로드컴에서 이미 겪었는데</b>, 이번에도 <b>중국 CDMO 쪽 숫자가 없다</b>. <b>다음 세션 대상으로 남긴다.</b></p>
+  </div>
+</div>
+</section>
+
+<section class="blk">
+<div class="wrap">
+  <div class="sec-head"><div class="sec-eyebrow">▎최근 변경</div><h2 class="sec-title">2026.09.01</h2></div>
+  <div class="panel">
+    <p><b>▸ 신설.</b> 아카이브에 <b>중국 바이오 판단이 0편</b>이었다(항서·BeiGene·백스제네틱스 각 0편, 「중국 바이오」 1편·「라이선스아웃」 1편). <b>§J12의 ⓑ 공백 지도</b>이고, 인용된 진단(「라이선스아웃 의존 기업이 취약하다」)이 <b>실측으로 지지되는지</b> 확인하려고 세웠다 — <b>지지된다.</b> <b>→ T1~T5 신설</b></p>
+    <p style="margin-top:12px"><b>▸ 🔑 진단을 <u>측정 가능한 형태</u>로 바꿨다.</b> 「글로벌 파트너십 확정 + 독자 플랫폼」은 <b>판정할 수 없는 서술</b>이라 <b>분기 매출 변동계수(CV)</b>로 대체했고, <b>CV가 1H26 매출 증감과 정렬</b>했다. <b>→ 02절</b></p>
+    <p style="margin-top:12px"><b>▸ 🔴 인용 숫자의 <u>분모를 갈랐다</u>(§A7-0).</b> <b>중국 1,357억 달러는 총 계약규모이고 선불금은 56억 달러 — <u>24.2배</u></b>다. <b>「9배」를 돈의 9배로 읽으면 안 된다.</b> <b>→ T1 · 01절</b></p>
+    <p style="margin-top:12px"><b>▸ 🔴 삼성바이오로직스 두 수치를 <u>쓰지 않기로</u> 했다(§A5).</b> <b>CV 0.37과 1H26 −0.4%가 둘 다 <u>에피스 인적분할</u> 때문</b>이다. <b>분할 후 3분기는 단조 증가</b>다. <b>→ 02절</b></p>
+    <p style="margin-top:12px"><b>▸ 🔴 인용된 <u>반도체 프레임의 시점이 낡았다</u>.</b> 「재고 소진 중·4Q DRAM +5~10%」인데 아카이브 실측은 <b>3Q26 +18~23% 확정</b>이고 <b>공급부족 정점 2027년</b>이다. <b>같은 자료의 바이오 부분도 같은 시점 리스크를 안고 있다고 보고 DART로 다시 세웠다.</b> <b>→ T5</b></p>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>ourprochoi Research Archive</b> · AI 바이오 · 중국 경쟁</p>
+    <p class="note" style="margin-top:12px">▸ <b>2026.09.01 — 신설</b>. 국내 바이오 24사를 <b>DART 1H26 확정값</b>과 <b>분기 매출 변동계수</b>로 교차하고 <b>중국과의 관계(경쟁/고객/무관)</b>로 갈랐다.
+    <b>🔑 「중국이 위협이다」는 <u>후보물질을 파는 회사</u>에게 맞고(리가켐 −50.8% · 에이비엘 −57.8%), <u>제형·생산·플랫폼을 파는 회사</u>에게는 같은 중국이 <b>고객</b>이다(알테오젠 +37.3% · 에스티팜 +45.4%).</b>
+    <b>🔴 인용되는 「1,357억 달러」는 총 계약규모이고 선불금은 56억 달러로 <u>24.2배</u> 차이다.</b>
+    <b>🔴 삼성바이오로직스 CV 0.37과 −0.4%는 <u>에피스 분할 효과</u>라 쓰지 않는다.</b>
+    <b>🔴 인용된 반도체 프레임(「4Q DRAM +5~10%」)은 아카이브 실측(3Q26 +18~23% 확정)과 어긋나 <u>시점이 낡았다</u>.</b></p>
+    <p class="note" style="margin-top:8px">가격 기준 <b>2026.08.31 종가</b> · 실적 기준 <b>2026 반기보고서 확정값</b>(누적 <code>thstrm_add_amount</code> · 연결 CFS 우선) · CV = 분기 매출의 <b>모표준편차 ÷ 평균</b> · 중국 집계는 <b>② 등급</b>(언론 인용).</p>
+    <p style="margin-top:16px"><a href="../index.html">← 아카이브 홈</a> · <a href="ai_bio_company_kr.html">AI 바이오 국내</a> · <a href="../glp1/glp1_company_novo_lilly.html">노보/릴리</a> · <a href="../glp1/glp1_company_samsung_biologics.html">삼성바이오로직스</a></p>
+  </div>
+</footer>
+<script>
+var nt=document.getElementById('navToggle');
+if(nt)nt.addEventListener('click',function(){document.querySelector('.nav-links').classList.toggle('open');});
+</script>
+</body>
+</html>
