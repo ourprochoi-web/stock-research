@@ -539,6 +539,64 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🟣🔴 2026.09.03 (4) — <b>중국 공시 원문 경로를 열었고, <u>내가 오늘 발행한 페이퍼를 스스로 정정했다</u></b></div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag new">🟣 경로</span> <b>巨潮资讯网(cninfo) — <u>중국의 DART</u>가 열렸다</b></div>
+    <div class="upd-body">
+      사용자 질문(<b>「중국 공시를 분석해볼 수는 없어?」</b>)으로 시작했다. 지금까지 쓴 것은 <b>eastmoney 집계(2차 가공)</b>였고, <b>원문은 따로 있다</b>.<br>
+      <b>· orgId 조회</b> — <code>POST cninfo.com.cn/new/information/topSearch/query</code> <code>{keyWord:종목코드}</code><br>
+      <b>· 공시 검색</b> — <code>POST /new/hisAnnouncement/query</code> <code>{stock:"코드,orgId", column:"sse|szse", category:"category_bndbg_szsh;", seDate:"2026-07-01~2026-12-31"}</code><br>
+      &nbsp;&nbsp;<b>🔑 <code>category</code>를 안 주면 알림 공고까지 섞여 나온다 — <code>category_bndbg_szsh;</code>(반기보고서)로 정확히 잡힌다.</b><br>
+      <b>· PDF</b> — <code>static.cninfo.com.cn/{adjunctUrl}</code>. <b>전부 키가 필요 없다.</b>
+      SMIC 반기보고서 <b>167페이지 1.1MB</b>, CXMT 192페이지, 선그로우 205페이지를 받아 <code>pypdf</code>로 파싱했다.<br>
+      <b>⚠ 텍스트 추출 시 표의 공백이 깨지므로 <u>공백을 제거하고 검색</u>해야 한다</b> — 「分地区」가 그냥 검색으로는 안 잡힌다.
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag new">① 원문</span> <b>세 건 확인 — 그리고 SMIC는 <u>내수화가 진행 중</u>이다</b></div>
+    <div class="upd-body">
+      <b>· SMIC(반기보고서 p.23 「主营业务收入按地区分析」)</b> — <b>中国区 89.6%</b>(전년 84.2%) · <b>美国区 8.7%</b>(12.7%) · <b>欧亚区 1.7%</b>(3.1%).
+      <b>🔑 해외가 15.8% → 10.4%로 <u>줄었다</u> — 「내수 대체재」가 정적인 상태가 아니라 <b>움직이는 방향</b>이다.</b>
+      <b>덤으로 응용별도 나온다 — 소비전자 40.8% → 45.1% · 스마트폰 24.6% → 17.8% · 산업·자동차 10.1% → 15.4% · 12인치 77.4%.
+      <u>SMIC의 주력은 AI가 아니라 소비전자·산업용이다.</u></b><br>
+      <b>· 나우라(p.21 「分地区」)</b> — 东北及华北 21.86% · 中部及东南部 69.95% · 西北及西南 6.58% · 其他地区 1.61%.
+      <b>🔑 <u>국내 지역만 4분할</u>이고 해외 항목이 없다 — 「판정 불가」가 원문으로 확인됐다.</b><br>
+      <b>· 선그로우(p.35 「分地区」)</b> — 中国大陆(不包括中国港澳台) 26.60% · <b>海外地区(<u>包括中国港澳台</u>) 73.40%</b>.
+      <b>🔑 港澳台를 해외에 넣는 것이 원문에 명시돼 있다.</b> <b>그리고 중국 내수 매출이 181.5억 → 82.2억 위안으로 <u>−54.7%</u>다.</b><br>
+      <b>· 검산도 됐다</b> — INNOLIGHT 매출 417.78억·ROE 37.62%, EOPTOLINK 209.10억·34.86%, WUS 136.89억·17.38%, VGT 116.29억·11.80%가
+      <b>eastmoney 집계와 소수점까지 일치</b>한다(§A1-1 관점의 확인).
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">🔴 §G</span> <b>절반은 「확인 불가」가 아니라 <u>회사가 그 줄을 안 만든다</u></b></div>
+    <div class="upd-body">
+      <b>CXMT(192p) · 캠브리콘(174p) · 하이곤(166p) · WUS(157p)의 반기보고서에 <u>지역별 매출 표가 아예 없다</u>.</b>
+      <b>기가디바이스는 「公司境外销售占比较高」라고 <u>서술만</u> 하고 숫자를 내지 않는다.</b><br>
+      <b>🔑 §G가 구분하라고 한 그 형태다 — <u>「확인할 수 없다」와 「회사가 그 줄을 만들지 않는다」는 다르다</u>.
+      후자로 적어야 다음 사람이 연차보고서를 찾아본다.</b><br>
+      <b>📌 그리고 이것이 <u>기준일을 섞는다</u> — 지역별은 대부분 <u>연차보고서에만</u> 실리므로 집계의 「최신」이 회사마다 다르다.</b>
+    </div>
+  </div>
+
+  <div class="upd">
+    <div class="upd-title"><span class="tag fix">🔴 자기 정정</span> <b>오늘 발행한 페이퍼의 <u>기준일 표기가 틀렸다</u>(§A5)</b></div>
+    <div class="upd-body">
+      <b>페이퍼 초판이 「재무·지역 기준일 2026-06-30(1H26 누적)」이라고 <u>단일로</u> 적었는데, 실제로는
+      <u>60사 2026-06-30 · 13사 2025-12-31 · 1사(IEIT) 2024-12-31</u>로 혼재</b>한다.<br>
+      <b>영향 반경(§C2) — 결론은 안 바뀌고 값이 바뀐다.</b>
+      <b>2026-06-30만으로 좁히면 <u>PCB 층 중앙값 72.3% → 55.0%(−17.3%p)</u></b>(VGT가 2025-12-31이라 빠진다)이고
+      <b>나머지 16개 층은 ±1.7%p 이내</b>다.
+      <b>상관도 유지된다 — r = −0.464(n=70) → <u>−0.389(n=58, t = −3.16, 5% 유의)</u> · 격차 21.7%p → 15.0%p.</b><br>
+      <b>📌 §A5대로 <u>두 기준의 값을 병기</u>하도록 페이퍼를 고쳤고, 정정 사실을 footer에 남겼다.</b><br>
+      <b>🔑 이 정정은 <u>원문을 열러 갔기 때문에</u> 나왔다 — 집계만 봤으면 기준일이 섞였다는 것을 몰랐을 것이다.</b>
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">✅ 2026.09.03 (3) — <b>해외 매출 비중을 받아 ①로 올렸고, <u>지표 자체가 회사마다 다른 것을 센다</u>는 것을 발견했다</b></div>
 
   <div class="upd">
