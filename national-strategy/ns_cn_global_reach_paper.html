@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="중국 AI 공급망 84사 해외 매출 전수 실측. 「해외」가 회사마다 다른 것을 센다 — AI칩 0%·WFE 1.6% vs 광부품 58.5%·PCB 72.3%">
+<meta name="keywords" content="중국AI공급망,해외매출비중,CXMT,기가디바이스,INNOLIGHT,EOPTOLINK,홍콩경유,국산화,내수대체,글로벌경쟁력,광모듈,PCB,리서치페이퍼">
+<meta property="og:title" content="해외 매출 63.7%가 사실은 홍콩이었다 — 중국 AI 공급망 84사 실측">
+<meta property="og:description" content="중국 AI 공급망 84사 해외 매출 전수 실측. 「해외」가 회사마다 다른 것을 센다 — AI칩 0%·WFE 1.6% vs 광부품 58.5%·PCB 72.3%">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_cn_global_reach_paper.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="해외 매출 63.7%가 사실은 홍콩이었다 — 중국 AI 공급망 84사 실측">
+<meta name="twitter:description" content="중국 AI 공급망 84사 해외 매출 전수 실측. 「해외」가 회사마다 다른 것을 센다 — AI칩 0%·WFE 1.6% vs 광부품 58.5%·PCB 72.3%">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/national-strategy/ns_cn_global_reach_paper.html">
+<title>해외 매출 63.7%가 사실은 홍콩이었다 — 중국 AI 공급망 84사 실측</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+  --paper:#F4F1EA; --paper-2:#EBE6DB; --ink:#14171D; --ink-2:#454C58; --ink-3:#7B8494;
+  --rule:#D6D0C2;
+  --dom:#B23A2E;      /* 내수 — 인주 */
+  --hk:#C08A3E;       /* 홍콩 경유 — 회색지대 호박 */
+  --glo:#2D7D6E;      /* 글로벌 — 청록 */
+  --mix:#8A8578;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+  --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#14171D; --paper-2:#1B1F27; --ink:#F0EDE5; --ink-2:#B6BCC7; --ink-3:#7B8494;
+  --rule:#2C323C; --dom:#E4796A; --hk:#DDAE6B; --glo:#5FBFAB; --mix:#9A968A;
+}}
+:root[data-theme="dark"]{
+  --paper:#14171D; --paper-2:#1B1F27; --ink:#F0EDE5; --ink-2:#B6BCC7; --ink-3:#7B8494;
+  --rule:#2C323C; --dom:#E4796A; --hk:#DDAE6B; --glo:#5FBFAB; --mix:#9A968A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:0 26px}
+header.top{border-bottom:2px solid var(--ink);padding:52px 0 30px;margin-bottom:44px}
+.kicker{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dom);margin-bottom:16px}
+h1{font-size:clamp(1.9rem,5vw,3.1rem);line-height:1.16;letter-spacing:-.03em;font-weight:800;text-wrap:balance}
+h1 em{font-style:normal;color:var(--dom)}
+.lede{margin-top:20px;font-size:1.12rem;color:var(--ink-2);max-width:62ch}
+.meta{margin-top:24px;font-family:var(--mono);font-size:.76rem;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:6px 20px;border-top:1px solid var(--rule);padding-top:14px}
+h2{font-size:clamp(1.3rem,3vw,1.85rem);letter-spacing:-.025em;font-weight:750;margin:0 0 6px;text-wrap:balance}
+h3{font-size:1.08rem;font-weight:700;margin:30px 0 8px;letter-spacing:-.01em}
+section{margin-bottom:58px}
+.snum{font-family:var(--mono);font-size:.76rem;color:var(--dom);letter-spacing:.14em;margin-bottom:8px}
+p{margin:14px 0;max-width:66ch}
+p.wide{max-width:none}
+b{font-weight:680}
+u{text-decoration:none;border-bottom:2px solid var(--dom);padding-bottom:1px}
+.pull{border-left:3px solid var(--dom);padding:6px 0 6px 22px;margin:26px 0;
+  font-size:1.14rem;line-height:1.6;font-weight:640;letter-spacing:-.015em;max-width:none}
+.note{background:var(--paper-2);border:1px solid var(--rule);border-radius:11px;
+  padding:18px 22px;margin:22px 0;font-size:.94rem;color:var(--ink-2)}
+.note b{color:var(--ink)}
+.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:11px;margin:20px 0}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{background:var(--paper-2);text-align:left;padding:10px 9px;font-size:.74rem;
+  color:var(--ink-3);font-weight:650;letter-spacing:.03em;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;z-index:2;white-space:nowrap}
+td{padding:9px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.vd{font-size:.8rem;white-space:nowrap}
+.cn{color:var(--ink-3);font-size:.82em}
+.sub{color:var(--ink-3);font-size:.75rem}
+.warn{color:var(--hk);font-size:.75rem;font-weight:650}
+tr.v-d td:first-child{box-shadow:inset 3px 0 0 var(--dom)}
+tr.v-h td:first-child{box-shadow:inset 3px 0 0 var(--hk)}
+tr.v-g td:first-child{box-shadow:inset 3px 0 0 var(--glo)}
+tr.v-m td:first-child{box-shadow:inset 3px 0 0 var(--mix)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.82rem;color:var(--ink-2);margin:14px 0}
+.legend i{font-style:normal;display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:22px 0}
+.card{background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:20px 22px}
+.card.d{border-top:3px solid var(--dom)} .card.h{border-top:3px solid var(--hk)} .card.g{border-top:3px solid var(--glo)}
+.card h4{font-size:1rem;margin-bottom:8px} .card p{font-size:.9rem;margin:8px 0;color:var(--ink-2)}
+.big{font-family:var(--mono);font-size:2.1rem;font-weight:700;letter-spacing:-.03em;line-height:1}
+footer{border-top:2px solid var(--ink);margin-top:70px;padding:30px 0 70px;
+  font-size:.82rem;color:var(--ink-3);line-height:1.85}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="kicker">ourprochoi Research · 리서치 페이퍼</div>
+  <h1>해외 매출 <em>63.7%</em>가<br>사실은 홍콩이었다</h1>
+  <p class="lede">「중국이 온다」를 재려면 <b>해외에서 파는가</b>를 봐야 한다.
+    중국 AI 공급망 84사의 지역별 매출을 전수로 열어 보니, <b>그 지표 자체가 회사마다 다른 것을 세고 있었다.</b>
+    걷어내고 나면 <b>층이 두 종류로 갈리고, 그 경계가 한국 포지션과 정확히 겹친다.</b></p>
+  <div class="meta">
+    <span>2026.09.03</span><span>재무·지역 기준일 2026-06-30(1H26 누적)</span>
+    <span>시세 2026-09-02</span><span>84사 · 지역 확보 74사</span><span>환산 202.40원/위안</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <div class="snum">01</div>
+  <h2>지표가 회사마다 다른 것을 센다</h2>
+  <p>중국 상장사는 <b>「주영업무 구성」에 지역별 매출을 공시</b>한다. 84사 중 74사에서 받았다.
+    그런데 항목 이름을 전수로 세어 보니 <b>60여 종</b>이었고, <b>같은 「해외」가 서로 다른 것을 가리켰다.</b></p>
+  <div class="note">
+    <b>· 나우라·차이나텔레콤·차이나유니콤·RANGE TECH는 <u>국내 지역만</u> 쪼갠다</b> —
+      「중부 및 동남부」·「서북 및 서남」·「전국 범위」. <b>해외 축이 아예 없어 판정이 불가능하다.</b><br>
+    <b>· 선그로우는 「해외 지역(<u>중국 홍콩·마카오·대만 포함</u>)」</b>으로 <b>港澳台를 해외에 넣는다.</b><br>
+    <b>· 반대로 어떤 회사는 「국내(<u>港澳台 포함</u>)」</b>로 <b>같은 지역을 국내에 넣는다.</b><br>
+    <b>· CXMT는 2025년엔 「境外 56.7% <u>그중 홍콩 54.0%</u>」로 쪼개고, 2026년엔 「중국 본토 외 63.7%」로만 낸다</b> —
+      <b>같은 회사가 기간마다 다른 분류로 공시한다.</b>
+  </div>
+  <p class="pull">그래서 「해외 매출 비중 63.7%」를 그대로 인용하면 <u>틀린 답이 나온다</u>.
+    비율을 쓰기 전에 분자가 무엇인지 적어야 한다.</p>
+</section>
+
+<section>
+  <div class="snum">02</div>
+  <h2>판별식 하나 — 「해외」에서 홍콩을 뺀다</h2>
+  <p>중국 반도체·전자 기업은 <b>홍콩 법인이나 무역상을 거쳐 파는 경우</b>가 많고, 그러면 회계상 「境外」로 잡힌다.
+    <b>최종 수요처는 중국 본토일 수 있다.</b> 그래서 홍콩이 별도로 분해된 회사의 이력을 전부 꺼냈다.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>회사</th><th>현재 「해외」</th><th>홍콩 이력</th></tr></thead>
+    <tbody>
+      <tr class="v-h"><td><b>CXMT</b> <span class="cn">长鑫科技</span><br><span class="sub">⑨ 메모리</span></td>
+        <td class="n">63.7%</td>
+        <td><span class="warn">2022 74.5% → 2023 74.9% → 2024 67.5% → 2025 54.0% → <b>2026 분해 없음</b></span></td></tr>
+      <tr class="v-h"><td><b>기가디바이스</b> <span class="cn">兆易创新</span><br><span class="sub">⑨ 메모리</span></td>
+        <td class="n">15.0%</td>
+        <td><span class="warn">2025 46.9% → <b>2026 59.9%</b> (홍콩이 오르는 중)</span></td></tr>
+      <tr class="v-h"><td><b>SGMICRO</b> <span class="cn">圣邦股份</span><br><span class="sub">⑦ 전력·아날로그</span></td>
+        <td class="n">0.0%</td>
+        <td><span class="warn">2024 48.4% → 2025 53.7% → <b>2026 52.4%</b> (해외의 전부가 홍콩)</span></td></tr>
+      <tr class="v-h"><td><b>화훙</b> <span class="cn">华虹宏力</span><br><span class="sub">④ 파운드리</span></td>
+        <td class="n">20.9%</td><td><span class="warn">현재 홍콩 <b>78.5%</b></span></td></tr>
+      <tr class="v-g"><td><b>INNOLIGHT</b> <span class="cn">中际旭创</span><br><span class="sub">⑫ 광부품</span></td>
+        <td class="n">94.8%</td><td>홍콩 항목 <b>이력 없음</b></td></tr>
+      <tr class="v-g"><td><b>EOPTOLINK</b> <span class="cn">新易盛</span><br><span class="sub">⑫ 광부품</span></td>
+        <td class="n">97.9%</td><td>홍콩 항목 <b>이력 없음</b></td></tr>
+    </tbody></table></div>
+  <p><b>CXMT의 「해외」는 2022~2025년 내내 <u>대부분 홍콩</u>이었고, 2026년 상반기부터 분해가 사라졌다.</b>
+    <b>그러므로 「매출의 64%가 중국 밖」은 성립하지 않는다 <span class="sub">[추론 — 2026년 분해가 없어 단정 불가]</span>.</b>
+    <b>반증: 2026년 연차보고서가 홍콩을 다시 분해했을 때 비중이 10% 아래면 이 추론이 틀린 것이다.</b></p>
+</section>
+
+<section>
+  <div class="snum">03</div>
+  <h2>판별식 둘 — 국내외 마진 격차로 검산한다</h2>
+  <p>홍콩 무역상을 거친 것이면 <b>국내 판매와 제품·고객이 같으므로 마진이 비슷해야 한다.</b>
+    진짜 수출이면 <b>다른 제품·다른 고객이므로 마진이 갈린다.</b> 광모듈이 그렇다.</p>
+  <div class="grid">
+    <div class="card g"><h4>INNOLIGHT — 갈린다</h4>
+      <div class="big" style="color:var(--glo)">47.9<span style="font-size:.5em">%</span></div>
+      <p><b>해외 매출총이익률 47.9% vs 국내 15.5%</b> — <b>3.1배</b>다.
+        해외 비중도 <b>2024년 86.8% → 2026년 94.8%</b>로 4년 연속 86% 이상이다.
+        <b>같은 물건을 홍콩 경유로 파는 구조로는 이 격차가 나오지 않는다.</b></p></div>
+    <div class="card g"><h4>EOPTOLINK — 같은 형태</h4>
+      <div class="big" style="color:var(--glo)">97.9<span style="font-size:.5em">%</span></div>
+      <p><b>해외 GPM 48.6% vs 국내 43.2%</b>이고 해외 비중이 <b>2024년 78.7% → 2026년 97.9%</b>로
+        <b>오르는 중</b>이다. <b>광모듈 두 곳은 명백히 글로벌 기업이다.</b></p></div>
+    <div class="card h"><h4>CXMT — 검산할 수 없다</h4>
+      <div class="big" style="color:var(--hk)">—</div>
+      <p><b>지역별 매출총이익률을 공시하지 않는다.</b> 제품별로는 <b>DDR 88.4% · LPDDR 82.6%</b>인데
+        <b>이것은 지역을 가르지 않는다.</b> <b>「확인할 수 없다」가 아니라 「회사가 그 줄을 만들지 않는다」</b>가 정확한 서술이다.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="snum">04</div>
+  <h2>결과 — 층이 두 종류로 갈린다</h2>
+  <p>홍콩을 걷어내고 층별 <b>해외 매출 중앙값</b>을 내면 <b>대칭이 선명하다.</b></p>
+  <div class="legend">
+    <span><i style="background:var(--dom)"></i>내수(해외 15% 미만)</span>
+    <span><i style="background:var(--mix)"></i>혼재</span>
+    <span><i style="background:var(--glo)"></i>글로벌(해외 50% 이상)</span>
+    <span><i style="background:var(--hk)"></i>홍콩 경유 의심</span>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>층</th><th>사</th><th>해외 중앙값%</th><th>GPM 중앙값%</th><th>3M 중앙값%</th></tr></thead>
+    <tbody><tr class="v-d"><td><b>① WFE 장비</b></td><td class="n">7</td><td class="n">1.6</td><td class="n">41.0</td><td class="n" style="color:#2D7D6E">+20.3</td></tr>
+<tr class="v-d"><td><b>② 후공정 장비</b></td><td class="n">3</td><td class="n">11.7</td><td class="n">55.5</td><td class="n" style="color:#2D7D6E">+27.2</td></tr>
+<tr class="v-d"><td><b>③ 설계·IP</b></td><td class="n">4</td><td class="n">13.4</td><td class="n">72.8</td><td class="n" style="color:#B23A2E">-15.3</td></tr>
+<tr class="v-m"><td><b>④ 파운드리</b></td><td class="n">3</td><td class="n">20.9</td><td class="n">21.7</td><td class="n" style="color:#B23A2E">-8.5</td></tr>
+<tr class="v-m"><td><b>⑤ OSAT</b></td><td class="n">5</td><td class="n">23.0</td><td class="n">16.7</td><td class="n" style="color:#B23A2E">-15.0</td></tr>
+<tr class="v-d"><td><b>⑥ AI 칩</b></td><td class="n">4</td><td class="n">0.0</td><td class="n">56.1</td><td class="n" style="color:#B23A2E">-16.6</td></tr>
+<tr class="v-d"><td><b>⑦ 전력·아날로그</b></td><td class="n">6</td><td class="n">9.8</td><td class="n">30.9</td><td class="n" style="color:#B23A2E">-0.4</td></tr>
+<tr class="v-m"><td><b>⑧ 커넥티비티</b></td><td class="n">2</td><td class="n">48.2</td><td class="n">54.6</td><td class="n" style="color:#2D7D6E">+3.2</td></tr>
+<tr class="v-g"><td><b>⑨ 메모리</b></td><td class="n">5</td><td class="n">63.7</td><td class="n">58.9</td><td class="n" style="color:#B23A2E">-30.6</td></tr>
+<tr class="v-g"><td><b>⑩ PCB</b></td><td class="n">5</td><td class="n">72.3</td><td class="n">33.2</td><td class="n" style="color:#B23A2E">-8.8</td></tr>
+<tr class="v-m"><td><b>⑪ 서버 ODM</b></td><td class="n">6</td><td class="n">32.7</td><td class="n">11.1</td><td class="n" style="color:#2D7D6E">+14.2</td></tr>
+<tr class="v-g"><td><b>⑫ 광부품</b></td><td class="n">5</td><td class="n">58.5</td><td class="n">48.4</td><td class="n" style="color:#B23A2E">-29.6</td></tr>
+<tr class="v-m"><td><b>⑬ 케이블</b></td><td class="n">3</td><td class="n">29.3</td><td class="n">26.4</td><td class="n" style="color:#B23A2E">-23.0</td></tr>
+<tr class="v-d"><td><b>⑭ 냉각</b></td><td class="n">4</td><td class="n">13.0</td><td class="n">23.3</td><td class="n" style="color:#2D7D6E">+2.2</td></tr>
+<tr class="v-m"><td><b>⑮ 서버 전원</b></td><td class="n">2</td><td class="n">41.9</td><td class="n">19.6</td><td class="n" style="color:#B23A2E">-26.6</td></tr>
+<tr class="v-d"><td><b>⑯ IDC·통신</b></td><td class="n">4</td><td class="n">0.1</td><td class="n">26.8</td><td class="n" style="color:#B23A2E">-5.4</td></tr>
+<tr class="v-m"><td><b>⑰ 전력·ESS</b></td><td class="n">6</td><td class="n">41.0</td><td class="n">25.4</td><td class="n" style="color:#B23A2E">-18.6</td></tr></tbody></table></div>
+  <p class="pull">AI 칩 4사는 해외 매출이 <u>정확히 0%</u>다.<br>
+    반도체 장비 7사는 중앙값 <u>1.6%</u>다.<br>
+    광부품은 <u>58.5%</u>, PCB는 <u>72.3%</u>다.</p>
+  <p><b>중국이 「국산화」로 만든 층(AI 칩·WFE 장비·파운드리)은 <u>중국 밖에 팔지 않는다</u>.</b>
+    수출 통제가 시장을 만들어 준 자리이므로 <b>규제가 곧 해자</b>이고, <b>규제가 풀리면 시장이 사라지는 구조</b>다.
+    <b>반면 광부품·PCB·케이블은 규제 이전부터 세계에 팔던 사업</b>이고, 여기서는 중국이 이미 글로벌 플레이어다.</p>
+</section>
+
+<section>
+  <div class="snum">05</div>
+  <h2>그리고 그것이 한국이 두꺼운 층이다</h2>
+  <p>본 아카이브를 84사와 대조하면 <b>72사(83%)가 본문 언급 0회</b>이고 <b>10개 층이 통째로 비어 있다.</b>
+    비어 있는 층은 <b>광부품·PCB·냉각·서버전원·후공정 장비</b>다.</p>
+  <p class="pull">비워 둔 층이 정확히 <u>한국 종목으로 채워 둔 층</u>이었다.<br>
+    「중국이 위협하는가」를 <u>대기업 층에서만</u> 묻고 부품 층에서는 묻지 않았다.</p>
+  <div class="note">
+    <b>· 아카이브가 집중한 곳</b> — CXMT 217회 · 화웨이 Ascend 106회 · CATL 51회. <b>세 점뿐이다.</b><br>
+    <b>· 그런데 CXMT는 위 02절에서 「해외의 대부분이 홍콩」으로 판정됐고, 화웨이는 비상장이라 재무가 없다.</b><br>
+    <b>· 정작 <u>해외 94.8%로 글로벌에서 뛰는 INNOLIGHT</u>는 아카이브에 <b>0회</b>다.</b><br>
+    <b>🔑 즉 <u>관측이 위협의 실제 위치와 어긋나 있었다</u>.</b>
+  </div>
+</section>
+
+<section>
+  <div class="snum">06</div>
+  <h2>시장은 이미 그 선을 긋고 있다 — 다만 3개월짜리다</h2>
+  <p><b>해외 매출 비중과 3개월 수익률의 상관이 r = −0.464(t = −4.32)로 유의</b>하다.
+    <b>가장 큰 층(WFE 장비)을 빼도 −0.407(t = −3.48)로 유지</b>되므로 한 섹터가 만든 착시가 아니다.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>창</th><th>r</th><th>t</th><th>유의</th><th>내수 중앙</th><th>글로벌 중앙</th><th>격차</th></tr></thead>
+    <tbody>
+      <tr><td>1M</td><td class="n">−0.205</td><td class="n">−1.74</td><td>—</td><td class="n">+11.0</td><td class="n">+8.0</td><td class="n">+3.0%p</td></tr>
+      <tr class="v-g"><td><b>3M</b></td><td class="n"><b>−0.464</b></td><td class="n"><b>−4.32</b></td><td><b>5%</b></td><td class="n">−2.1</td><td class="n"><b>−23.8</b></td><td class="n"><b>+21.7%p</b></td></tr>
+      <tr><td>6M</td><td class="n">−0.183</td><td class="n">−1.53</td><td>—</td><td class="n">+40.9</td><td class="n">+23.1</td><td class="n">+17.8%p</td></tr>
+      <tr class="v-h"><td><b>1Y</b></td><td class="n">−0.096</td><td class="n">−0.78</td><td>—</td><td class="n">+63.2</td><td class="n"><b>+75.3</b></td><td class="n"><b>−12.1%p</b></td></tr>
+    </tbody></table></div>
+  <p class="pull">1년으로 보면 글로벌 노출 층이 <u>더 올랐고</u>(+75.3% vs +63.2%),<br>
+    3개월로 보면 <u>더 빠졌다</u>(−23.8% vs −2.1%). 창이 부호를 뒤집는다.</p>
+  <p><b>그래서 이 하락은 「글로벌 노출이 나쁘다」가 아니라 <u>차익실현</u>으로 읽는 것이 정합적이다
+    <span class="sub">[추론]</span>.</b> 실적으로는 설명되지 않는다 —
+    <b>매출 성장률 vs 3M은 r = −0.196(유의하지 않다)</b>, <b>GPM vs 3M은 r = +0.018로 사실상 0</b>이다.</p>
+  <div class="note"><b>⚠ 이것은 관측이지 예측이 아니다.</b>
+    <b>3개월 창이고, 상승 사이클 한 구간이다.</b> 본 아카이브는 같은 이유로 수급 지표를 테제로 올리지 않는다.
+    <b>여기서도 「해외 비중이 낮은 것을 사라」로 쓰지 않는다</b> — 읽는 것은 <b>「시장이 지금 무엇으로 줄을 긋고 있나」</b>이다.</div>
+</section>
+
+<section>
+  <div class="snum">07</div>
+  <h2>84사 전수</h2>
+  <div class="legend">
+    <span><i style="background:var(--dom)"></i>내수</span><span><i style="background:var(--mix)"></i>혼재</span>
+    <span><i style="background:var(--glo)"></i>글로벌</span><span><i style="background:var(--hk)"></i>홍콩 경유 의심</span>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>종목</th><th>국내%</th><th>해외%</th><th>홍콩%</th><th>GPM%</th><th>3M%</th><th>1Y%</th><th>판정</th></tr></thead>
+    <tbody><tr class="v-g"><td><b>EOPTOLINK</b> <span class="cn">新易盛</span><br><span class="sub">⑫ 광부품 · 300502.SZ</span></td><td class="n">2.1</td><td class="n">97.9</td><td class="n">0.0</td><td class="n">48.4</td><td class="n" style="color:#B23A2E">-30.8</td><td class="n" style="color:#2D7D6E">+51.1</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>INNOLIGHT</b> <span class="cn">中际旭创</span><br><span class="sub">⑫ 광부품 · 300308.SZ</span></td><td class="n">5.2</td><td class="n">94.8</td><td class="n">0.0</td><td class="n">46.3</td><td class="n" style="color:#B23A2E">-35.5</td><td class="n" style="color:#2D7D6E">+114.2</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>LUXSHARE</b> <span class="cn">立讯精密</span><br><span class="sub">⑬ 케이블 · 002475.SZ</span></td><td class="n">16.3</td><td class="n">83.7</td><td class="n">0.0</td><td class="n">11.8</td><td class="n" style="color:#B23A2E">-23.7</td><td class="n" style="color:#2D7D6E">+30.3</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>WUS</b> <span class="cn">沪电股份</span><br><span class="sub">⑩ PCB · 002463.SZ</span></td><td class="n">13.3</td><td class="n">81.6</td><td class="n">0.0</td><td class="n">38.7</td><td class="n" style="color:#B23A2E">-8.8</td><td class="n" style="color:#2D7D6E">+76.1</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>VGT</b> <span class="cn">胜宏科技</span><br><span class="sub">⑩ PCB · 300476.SZ</span></td><td class="n">23.2</td><td class="n">76.8</td><td class="n">0.0</td><td class="n">33.2</td><td class="n" style="color:#B23A2E">-36.3</td><td class="n" style="color:#B23A2E">-16.8</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>SUNGROW</b> <span class="cn">阳光电源</span><br><span class="sub">⑰ 전력·ESS · 300274.SZ</span></td><td class="n">26.6</td><td class="n">73.4</td><td class="n">0.0</td><td class="n">35.9</td><td class="n" style="color:#B23A2E">-49.4</td><td class="n" style="color:#B23A2E">-13.3</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>JCET</b> <span class="cn">长电科技</span><br><span class="sub">⑤ OSAT · 600584.SS</span></td><td class="n">27.2</td><td class="n">72.8</td><td class="n">0.0</td><td class="n">15.1</td><td class="n" style="color:#B23A2E">-11.0</td><td class="n" style="color:#2D7D6E">+82.8</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>DELTON</b> <span class="cn">广合科技</span><br><span class="warn">⚠ 과거 홍콩 19.3%(2022-06)</span><br><span class="sub">⑩ PCB · 001389.SZ</span></td><td class="n">20.9</td><td class="n">72.3</td><td class="n">0.0</td><td class="n">39.3</td><td class="n" style="color:#B23A2E">-12.5</td><td class="n" style="color:#2D7D6E">+121.8</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>LONGSYS</b> <span class="cn">江波龙</span><br><span class="sub">⑨ 메모리 · 301308.SZ</span></td><td class="n">29.4</td><td class="n">70.7</td><td class="n">0.0</td><td class="n">58.9</td><td class="n" style="color:#B23A2E">-32.0</td><td class="n" style="color:#2D7D6E">+285.4</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>MONTAGE</b> <span class="cn">澜起科技</span><br><span class="sub">⑧ 커넥티비티 · 688008.SS</span></td><td class="n">30.3</td><td class="n">69.5</td><td class="n">0.0</td><td class="n">65.3</td><td class="n" style="color:#B23A2E">-23.9</td><td class="n" style="color:#2D7D6E">+67.3</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>HUAQIN</b> <span class="cn">华勤技术</span><br><span class="sub">⑪ 서버 ODM · 603296.SS</span></td><td class="n">34.3</td><td class="n">65.7</td><td class="n">0.0</td><td class="n">8.1</td><td class="n" style="color:#B23A2E">-5.0</td><td class="n" style="color:#2D7D6E">+23.1</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>TWSC</b> <span class="cn">德明利</span><br><span class="sub">⑨ 메모리 · 001309.SZ</span></td><td class="n">35.0</td><td class="n">65.0</td><td class="n">0.0</td><td class="n">47.1</td><td class="n" style="color:#B23A2E">-33.3</td><td class="n" style="color:#2D7D6E">+332.8</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>CXMT</b> <span class="cn">长鑫科技</span><br><span class="warn">⚠ 과거 홍콩 74.9%(2023-12)</span><br><span class="sub">⑨ 메모리 · 688825.SS</span></td><td class="n">36.1</td><td class="n">63.7</td><td class="n">0.0</td><td class="n">84.7</td><td class="n">—</td><td class="n">—</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>TFME</b> <span class="cn">通富微电</span><br><span class="sub">⑤ OSAT · 002156.SZ</span></td><td class="n">36.6</td><td class="n">63.4</td><td class="n">0.0</td><td class="n">15.5</td><td class="n" style="color:#B23A2E">-15.0</td><td class="n" style="color:#2D7D6E">+74.9</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>TFC</b> <span class="cn">天孚通信</span><br><span class="sub">⑫ 광부품 · 300394.SZ</span></td><td class="n">41.5</td><td class="n">58.5</td><td class="n">0.0</td><td class="n">60.9</td><td class="n" style="color:#B23A2E">-29.6</td><td class="n" style="color:#2D7D6E">+75.7</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>WEICHAI</b> <span class="cn">潍柴动力</span><br><span class="sub">⑰ 전력·ESS · 000338.SZ</span></td><td class="n">48.9</td><td class="n">51.1</td><td class="n">0.0</td><td class="n">21.5</td><td class="n" style="color:#B23A2E">-19.8</td><td class="n" style="color:#2D7D6E">+73.7</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-g"><td><b>JEREH</b> <span class="cn">杰瑞股份</span><br><span class="sub">⑰ 전력·ESS · 002353.SZ</span></td><td class="n">49.6</td><td class="n">50.4</td><td class="n">0.0</td><td class="n">31.0</td><td class="n" style="color:#B23A2E">-13.6</td><td class="n" style="color:#2D7D6E">+162.3</td><td class="vd">🟢 글로벌</td></tr>
+<tr class="v-m"><td><b>BIWIN</b> <span class="cn">佰维存储</span><br><span class="warn">⚠ 과거 홍콩 47.2%(2021-09)</span><br><span class="sub">⑨ 메모리 · 688525.SS</span></td><td class="n">52.1</td><td class="n">47.9</td><td class="n">0.0</td><td class="n">54.8</td><td class="n" style="color:#B23A2E">-29.2</td><td class="n" style="color:#2D7D6E">+222.8</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>HONOR ELECTRONIC</b> <span class="cn">欧陆通</span><br><span class="sub">⑮ 서버 전원 · 300870.SZ</span></td><td class="n">52.3</td><td class="n">47.7</td><td class="n">0.0</td><td class="n">17.9</td><td class="n" style="color:#B23A2E">-28.2</td><td class="n" style="color:#2D7D6E">+19.9</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>SOUTHCHIP</b> <span class="cn">南芯科技</span><br><span class="sub">⑦ 전력·아날로그 · 688484.SS</span></td><td class="n">53.4</td><td class="n">46.6</td><td class="n">0.0</td><td class="n">35.3</td><td class="n" style="color:#B23A2E">-17.0</td><td class="n" style="color:#B23A2E">-25.2</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>FII</b> <span class="cn">工业富联</span><br><span class="sub">⑪ 서버 ODM · 601138.SS</span></td><td class="n">0.0</td><td class="n">43.9</td><td class="n">0.0</td><td class="n">7.2</td><td class="n" style="color:#B23A2E">-23.8</td><td class="n" style="color:#2D7D6E">+14.7</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>SCC</b> <span class="cn">深南电路</span><br><span class="sub">⑩ PCB · 002916.SZ</span></td><td class="n">58.0</td><td class="n">37.6</td><td class="n">0.0</td><td class="n">31.0</td><td class="n" style="color:#B23A2E">-8.8</td><td class="n" style="color:#2D7D6E">+93.7</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>MEGMEET</b> <span class="cn">麦格米特</span><br><span class="sub">⑮ 서버 전원 · 002851.SZ</span></td><td class="n">64.0</td><td class="n">36.0</td><td class="n">0.0</td><td class="n">21.2</td><td class="n" style="color:#B23A2E">-25.0</td><td class="n" style="color:#2D7D6E">+46.7</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>ZTE</b> <span class="cn">中兴通讯</span><br><span class="sub">⑪ 서버 ODM · 000063.SZ</span></td><td class="n">64.3</td><td class="n">35.7</td><td class="n">0.0</td><td class="n">25.5</td><td class="n" style="color:#B23A2E">-8.1</td><td class="n" style="color:#B23A2E">-25.3</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>NEXCHIP</b> <span class="cn">晶合集成</span><br><span class="sub">④ 파운드리 · 688249.SS</span></td><td class="n">61.3</td><td class="n">35.5</td><td class="n">0.0</td><td class="n">21.7</td><td class="n" style="color:#B23A2E">-12.5</td><td class="n" style="color:#2D7D6E">+53.2</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>CATL</b> <span class="cn">宁德时代</span><br><span class="sub">⑰ 전력·ESS · 300750.SZ</span></td><td class="n">68.5</td><td class="n">31.5</td><td class="n">0.0</td><td class="n">23.9</td><td class="n" style="color:#B23A2E">-18.3</td><td class="n" style="color:#2D7D6E">+15.0</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>VERISILICON</b> <span class="cn">芯原股份</span><br><span class="sub">③ 설계·IP · 688521.SS</span></td><td class="n">69.9</td><td class="n">30.1</td><td class="n">0.0</td><td class="n">31.3</td><td class="n" style="color:#B23A2E">-19.5</td><td class="n" style="color:#2D7D6E">+26.5</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>IEIT</b> <span class="cn">浪潮信息</span><br><span class="sub">⑪ 서버 ODM · 000977.SZ</span></td><td class="n">70.3</td><td class="n">29.7</td><td class="n">0.0</td><td class="n">8.7</td><td class="n" style="color:#2D7D6E">+33.4</td><td class="n" style="color:#2D7D6E">+34.3</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>WOER</b> <span class="cn">沃尔核材</span><br><span class="sub">⑬ 케이블 · 002130.SZ</span></td><td class="n">70.7</td><td class="n">29.3</td><td class="n">0.0</td><td class="n">29.4</td><td class="n" style="color:#B23A2E">-23.0</td><td class="n" style="color:#B23A2E">-30.7</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>CENTEC</b> <span class="cn">盛科通信</span><br><span class="sub">⑧ 커넥티비티 · 688702.SS</span></td><td class="n">73.0</td><td class="n">27.0</td><td class="n">0.0</td><td class="n">44.0</td><td class="n" style="color:#2D7D6E">+30.4</td><td class="n" style="color:#2D7D6E">+226.5</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>EVE ENERGY</b> <span class="cn">亿纬锂能</span><br><span class="sub">⑰ 전력·ESS · 300014.SZ</span></td><td class="n">75.2</td><td class="n">24.8</td><td class="n">0.0</td><td class="n">14.3</td><td class="n" style="color:#B23A2E">-18.9</td><td class="n" style="color:#B23A2E">-10.6</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>RJWL</b> <span class="cn">锐捷网络</span><br><span class="sub">⑪ 서버 ODM · 301165.SZ</span></td><td class="n">76.0</td><td class="n">24.0</td><td class="n">0.0</td><td class="n">31.6</td><td class="n" style="color:#2D7D6E">+82.2</td><td class="n" style="color:#2D7D6E">+84.9</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>FHEC</b> <span class="cn">甬矽电子</span><br><span class="sub">⑤ OSAT · 688362.SS</span></td><td class="n">76.9</td><td class="n">23.0</td><td class="n">0.0</td><td class="n">16.7</td><td class="n" style="color:#B23A2E">-2.3</td><td class="n" style="color:#2D7D6E">+68.5</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>Hua Hong</b> <span class="cn">华虹宏力</span><br><span class="sub">④ 파운드리 · 688347.SS</span></td><td class="n">78.5</td><td class="n">20.9</td><td class="n">0.0</td><td class="n">19.4</td><td class="n" style="color:#2D7D6E">+4.3</td><td class="n" style="color:#2D7D6E">+216.7</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>PRIMARIUS</b> <span class="cn">概伦电子</span><br><span class="sub">③ 설계·IP · 688206.SS</span></td><td class="n">80.0</td><td class="n">19.9</td><td class="n">0.0</td><td class="n">85.1</td><td class="n" style="color:#2D7D6E">+12.9</td><td class="n" style="color:#2D7D6E">+15.4</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>SYTECH</b> <span class="cn">生益科技</span><br><span class="sub">⑩ PCB · 600183.SS</span></td><td class="n">78.0</td><td class="n">19.9</td><td class="n">0.0</td><td class="n">30.7</td><td class="n" style="color:#2D7D6E">+2.8</td><td class="n" style="color:#2D7D6E">+192.9</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-m"><td><b>FRD</b> <span class="cn">飞荣达</span><br><span class="sub">⑭ 냉각 · 300602.SZ</span></td><td class="n">84.0</td><td class="n">16.0</td><td class="n">0.0</td><td class="n">21.7</td><td class="n" style="color:#2D7D6E">+7.6</td><td class="n" style="color:#2D7D6E">+51.1</td><td class="vd">⚪ 혼재</td></tr>
+<tr class="v-h"><td><b>GIGADEVICE</b> <span class="cn">兆易创新</span><br><span class="warn">⚠ 홍콩 59.9%</span><br><span class="sub">⑨ 메모리 · 603986.SS</span></td><td class="n">25.1</td><td class="n">15.0</td><td class="n">59.9</td><td class="n">63.1</td><td class="n" style="color:#B23A2E">-21.0</td><td class="n" style="color:#2D7D6E">+120.9</td><td class="vd">🟡 홍콩 경유 의심</td></tr>
+<tr class="v-d"><td><b>ENVICOOL</b> <span class="cn">英维克</span><br><span class="sub">⑭ 냉각 · 002837.SZ</span></td><td class="n">85.3</td><td class="n">14.7</td><td class="n">0.0</td><td class="n">24.9</td><td class="n" style="color:#B23A2E">-3.1</td><td class="n" style="color:#2D7D6E">+19.3</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>3PEAK</b> <span class="cn">思瑞浦</span><br><span class="sub">⑦ 전력·아날로그 · 688536.SS</span></td><td class="n">85.8</td><td class="n">14.2</td><td class="n">0.0</td><td class="n">49.0</td><td class="n" style="color:#B23A2E">-2.1</td><td class="n" style="color:#2D7D6E">+94.4</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>YUANJIE</b> <span class="cn">源杰科技</span><br><span class="sub">⑫ 광부품 · 688498.SS</span></td><td class="n">86.8</td><td class="n">13.2</td><td class="n">0.0</td><td class="n">80.4</td><td class="n" style="color:#2D7D6E">+5.4</td><td class="n" style="color:#2D7D6E">+510.1</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>JHT</b> <span class="cn">金海通</span><br><span class="sub">② 후공정 장비 · 603061.SS</span></td><td class="n">87.4</td><td class="n">12.3</td><td class="n">0.0</td><td class="n">53.5</td><td class="n" style="color:#2D7D6E">+9.1</td><td class="n" style="color:#2D7D6E">+351.3</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>CCTECH</b> <span class="cn">长川科技</span><br><span class="sub">② 후공정 장비 · 300604.SZ</span></td><td class="n">90.0</td><td class="n">11.7</td><td class="n">0.0</td><td class="n">55.5</td><td class="n" style="color:#2D7D6E">+27.2</td><td class="n" style="color:#2D7D6E">+362.7</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>GOALAND</b> <span class="cn">高澜股份</span><br><span class="sub">⑭ 냉각 · 300499.SZ</span></td><td class="n">88.7</td><td class="n">11.3</td><td class="n">0.0</td><td class="n">26.1</td><td class="n" style="color:#B23A2E">-12.4</td><td class="n" style="color:#2D7D6E">+12.0</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>SMIC</b> <span class="cn">中芯国际</span><br><span class="sub">④ 파운드리 · 688981.SS</span></td><td class="n">88.2</td><td class="n">10.2</td><td class="n">0.0</td><td class="n">23.2</td><td class="n" style="color:#B23A2E">-8.5</td><td class="n" style="color:#2D7D6E">+6.8</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>JOULWATT</b> <span class="cn">杰华特</span><br><span class="sub">⑦ 전력·아날로그 · 688141.SS</span></td><td class="n">89.9</td><td class="n">10.1</td><td class="n">0.0</td><td class="n">23.9</td><td class="n" style="color:#2D7D6E">+19.8</td><td class="n" style="color:#2D7D6E">+191.9</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>CRM Micro</b> <span class="cn">华润微</span><br><span class="sub">⑦ 전력·아날로그 · 688396.SS</span></td><td class="n">88.3</td><td class="n">9.5</td><td class="n">0.0</td><td class="n">26.6</td><td class="n" style="color:#B23A2E">-20.4</td><td class="n" style="color:#2D7D6E">+13.3</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>KINGSEMI</b> <span class="cn">芯源微</span><br><span class="sub">① WFE 장비 · 688037.SS</span></td><td class="n">91.4</td><td class="n">7.4</td><td class="n">0.0</td><td class="n">34.9</td><td class="n" style="color:#2D7D6E">+32.8</td><td class="n" style="color:#2D7D6E">+178.4</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>UNT</b> <span class="cn">芯联集成</span><br><span class="sub">⑦ 전력·아날로그 · 688469.SS</span></td><td class="n">92.8</td><td class="n">7.2</td><td class="n">0.0</td><td class="n">12.7</td><td class="n" style="color:#2D7D6E">+9.4</td><td class="n" style="color:#2D7D6E">+46.0</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>EMPYREAN</b> <span class="cn">华大九天</span><br><span class="sub">③ 설계·IP · 301269.SZ</span></td><td class="n">93.1</td><td class="n">6.9</td><td class="n">0.0</td><td class="n">87.5</td><td class="n" style="color:#B23A2E">-11.1</td><td class="n" style="color:#B23A2E">-23.3</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>ACCOTEST</b> <span class="cn">华峰测控</span><br><span class="sub">② 후공정 장비 · 688200.SS</span></td><td class="n">92.7</td><td class="n">6.8</td><td class="n">0.0</td><td class="n">74.7</td><td class="n" style="color:#2D7D6E">+44.7</td><td class="n" style="color:#2D7D6E">+203.8</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>SKYVERSE</b> <span class="cn">中科飞测</span><br><span class="sub">① WFE 장비 · 688361.SS</span></td><td class="n">94.2</td><td class="n">5.8</td><td class="n">0.0</td><td class="n">46.1</td><td class="n" style="color:#2D7D6E">+64.1</td><td class="n" style="color:#2D7D6E">+259.0</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>TGOOD</b> <span class="cn">特锐德</span><br><span class="sub">⑰ 전력·ESS · 300001.SZ</span></td><td class="n">94.4</td><td class="n">5.6</td><td class="n">0.0</td><td class="n">26.8</td><td class="n" style="color:#B23A2E">-7.8</td><td class="n" style="color:#2D7D6E">+40.6</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>SEMITRONIX</b> <span class="cn">广立微</span><br><span class="sub">③ 설계·IP · 301095.SZ</span></td><td class="n">94.7</td><td class="n">5.3</td><td class="n">0.0</td><td class="n">60.4</td><td class="n" style="color:#B23A2E">-28.7</td><td class="n" style="color:#B23A2E">-13.5</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>UNIS</b> <span class="cn">紫光股份</span><br><span class="sub">⑪ 서버 ODM · 000938.SZ</span></td><td class="n">95.1</td><td class="n">4.9</td><td class="n">0.0</td><td class="n">13.4</td><td class="n" style="color:#2D7D6E">+34.6</td><td class="n" style="color:#2D7D6E">+38.6</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>SJ Semi</b> <span class="cn">盛合晶微</span><br><span class="sub">⑤ OSAT · 688820.SS</span></td><td class="n">95.2</td><td class="n">4.8</td><td class="n">0.0</td><td class="n">30.1</td><td class="n" style="color:#B23A2E">-31.0</td><td class="n">—</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>SHENLING</b> <span class="cn">申菱环境</span><br><span class="sub">⑭ 냉각 · 301018.SZ</span></td><td class="n">96.6</td><td class="n">3.4</td><td class="n">0.0</td><td class="n">19.6</td><td class="n" style="color:#2D7D6E">+9.7</td><td class="n" style="color:#2D7D6E">+107.8</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>V-Test</b> <span class="cn">伟测科技</span><br><span class="sub">⑤ OSAT · 688372.SS</span></td><td class="n">97.4</td><td class="n">2.6</td><td class="n">0.0</td><td class="n">33.6</td><td class="n" style="color:#B23A2E">-17.4</td><td class="n" style="color:#2D7D6E">+50.3</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>EVERBRIGHT PHOTONICS</b> <span class="cn">长光华芯</span><br><span class="sub">⑫ 광부품 · 688048.SS</span></td><td class="n">97.9</td><td class="n">2.1</td><td class="n">0.0</td><td class="n">25.1</td><td class="n" style="color:#B23A2E">-27.1</td><td class="n" style="color:#2D7D6E">+264.0</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>ACM Shanghai</b> <span class="cn">盛美上海</span><br><span class="sub">① WFE 장비 · 688082.SS</span></td><td class="n">98.3</td><td class="n">1.7</td><td class="n">0.0</td><td class="n">46.9</td><td class="n" style="color:#2D7D6E">+11.9</td><td class="n" style="color:#2D7D6E">+90.1</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>NAURA</b> <span class="cn">北方华创</span><br><span class="sub">① WFE 장비 · 002371.SZ</span></td><td class="n">98.4</td><td class="n">1.6</td><td class="n">0.0</td><td class="n">40.1</td><td class="n" style="color:#2D7D6E">+8.5</td><td class="n" style="color:#2D7D6E">+76.2</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>AMEC</b> <span class="cn">中微公司</span><br><span class="warn">⚠ 과거 홍콩 31.6%(2016-12)</span><br><span class="sub">① WFE 장비 · 688012.SS</span></td><td class="n">97.4</td><td class="n">0.9</td><td class="n">1.7</td><td class="n">39.7</td><td class="n" style="color:#2D7D6E">+20.3</td><td class="n" style="color:#2D7D6E">+141.1</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>HUAFENG</b> <span class="cn">华丰科技</span><br><span class="sub">⑬ 케이블 · 688629.SS</span></td><td class="n">99.1</td><td class="n">0.9</td><td class="n">0.0</td><td class="n">26.4</td><td class="n" style="color:#B23A2E">-6.9</td><td class="n" style="color:#2D7D6E">+47.9</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>SINNET</b> <span class="cn">光环新网</span><br><span class="sub">⑯ IDC·통신 · 300383.SZ</span></td><td class="n">95.8</td><td class="n">0.1</td><td class="n">4.1</td><td class="n">13.7</td><td class="n" style="color:#B23A2E">-8.9</td><td class="n" style="color:#B23A2E">-21.2</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>PIOTECH</b> <span class="cn">拓荆科技</span><br><span class="sub">① WFE 장비 · 688072.SS</span></td><td class="n">96.6</td><td class="n">0.0</td><td class="n">0.0</td><td class="n">41.0</td><td class="n" style="color:#2D7D6E">+4.7</td><td class="n" style="color:#2D7D6E">+245.0</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>HWATSING</b> <span class="cn">华海清科</span><br><span class="sub">① WFE 장비 · 688120.SS</span></td><td class="n">99.1</td><td class="n">0.0</td><td class="n">0.0</td><td class="n">43.0</td><td class="n" style="color:#2D7D6E">+41.4</td><td class="n" style="color:#2D7D6E">+190.9</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>HYGON</b> <span class="cn">海光信息</span><br><span class="sub">⑥ AI 칩 · 688041.SS</span></td><td class="n">100.0</td><td class="n">0.0</td><td class="n">0.0</td><td class="n">55.2</td><td class="n" style="color:#B23A2E">-13.5</td><td class="n" style="color:#2D7D6E">+22.4</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>CAMBRICON</b> <span class="cn">寒武纪</span><br><span class="sub">⑥ AI 칩 · 688256.SS</span></td><td class="n">100.0</td><td class="n">0.0</td><td class="n">0.0</td><td class="n">55.3</td><td class="n" style="color:#B23A2E">-19.6</td><td class="n" style="color:#2D7D6E">+11.5</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>MOORE THREADS</b> <span class="cn">摩尔线程</span><br><span class="sub">⑥ AI 칩 · 688795.SS</span></td><td class="n">100.0</td><td class="n">0.0</td><td class="n">0.0</td><td class="n">56.9</td><td class="n" style="color:#B23A2E">-20.2</td><td class="n">—</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-d"><td><b>METAX</b> <span class="cn">沐曦股份</span><br><span class="sub">⑥ AI 칩 · 688802.SS</span></td><td class="n">100.0</td><td class="n">0.0</td><td class="n">0.0</td><td class="n">57.2</td><td class="n" style="color:#B23A2E">-12.2</td><td class="n">—</td><td class="vd">🔴 내수</td></tr>
+<tr class="v-h"><td><b>SGMICRO</b> <span class="cn">圣邦股份</span><br><span class="warn">⚠ 홍콩 52.4%</span><br><span class="sub">⑦ 전력·아날로그 · 300661.SZ</span></td><td class="n">44.6</td><td class="n">0.0</td><td class="n">52.4</td><td class="n">51.8</td><td class="n" style="color:#2D7D6E">+1.4</td><td class="n" style="color:#2D7D6E">+49.0</td><td class="vd">🟡 홍콩 경유 의심</td></tr>
+<tr class="v-x"><td><b>CHINA TELECOM</b> <span class="cn">中国电信</span><br><span class="sub">⑯ IDC·통신 · 601728.SS</span></td><td class="n">100.0</td><td class="n">—</td><td class="n">0.0</td><td class="n">29.8</td><td class="n" style="color:#2D7D6E">+5.7</td><td class="n" style="color:#B23A2E">-15.1</td><td class="vd">판정불가(국내 지역 분해만)</td></tr>
+<tr class="v-x"><td><b>CHINA UNICOM</b> <span class="cn">中国联通</span><br><span class="sub">⑯ IDC·통신 · 600050.SS</span></td><td class="n">100.0</td><td class="n">—</td><td class="n">0.0</td><td class="n">23.8</td><td class="n" style="color:#B23A2E">-1.8</td><td class="n" style="color:#B23A2E">-23.5</td><td class="vd">판정불가(국내 지역 분해만)</td></tr>
+<tr class="v-x"><td><b>RANGE TECH</b> <span class="cn">润泽科技</span><br><span class="sub">⑯ IDC·통신 · 300442.SZ</span></td><td class="n">100.0</td><td class="n">—</td><td class="n">0.0</td><td class="n">46.6</td><td class="n" style="color:#B23A2E">-20.8</td><td class="n" style="color:#2D7D6E">+20.4</td><td class="vd">판정불가(국내 지역 분해만)</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <div class="snum">08</div>
+  <h2>한계</h2>
+  <div class="note">
+    <b>① 지역별 매출은 74/84사</b>다. 홍콩 단독 상장 9사(비렌·일루바타 코어X·이노사이언스·LIGHTELLIGENCE·레노버·민스·GDS·VNET·WASION)와
+      일부 A주는 이 축을 공시하지 않는다. <b>단 비렌·일루바타는 기업 개요가 「자국 내수 시장을 중심으로」라고 명시</b>한다(<b>② 등급</b>).<br>
+    <b>② 「해외」의 최종 수요처는 확인되지 않는다.</b> 홍콩을 걷어내도 남는 것이 재수출일 수 있다.
+      <b>확정하려면 고객사 공시가 필요하고, 대부분의 회사가 내지 않는다.</b><br>
+    <b>③ 1H26 누적</b>이라 분기 흐름이 안 보인다. 상반기에 몰린 것인지 고르게 났는지 구분되지 않는다.<br>
+    <b>④ 3개월 상관은 상승 사이클 한 구간</b>이다. 하락 사이클에서 같은 관계가 유지되는지는 <b>이 표본이 판정하지 못한다</b>.<br>
+    <b>⑤ JP모건 리스트는 그들의 커버리지</b>이지 중국 AI 공급망 전체가 아니다. 화웨이·쿤룬신·T-Head는 비상장이다.
+  </div>
+  <h3>다음 검증 — 날짜가 아니라 이벤트</h3>
+  <p class="wide"><b>· 2026년 연차보고서(2027년 3~4월)</b> — CXMT가 홍콩을 다시 분해하는가(02절 반증) ·
+    공백 층 기업들의 해외 비중 확정<br>
+    <b>· 3Q26 누적 공시(10월 말)</b> — 기가디바이스 홍콩 비중이 계속 오르는가 · INNOLIGHT 해외 GPM 격차 유지<br>
+    <b>· DRAM 계약가 하락 전환</b> — CXMT GPM이 한국 3사보다 덜 빠지는가(원가 우위 실재 여부)<br>
+    <b>· 수출 통제 완화</b> — AI 칩·WFE 장비 층의 「규제가 해자」 구조가 시험받는 순간</p>
+</section>
+
+</div>
+<footer><div class="wrap">
+  <b>ourprochoi Research Archive</b> · 2026.09.03<br>
+  출처 — 중국 상장사 「주영업무 구성」 지역별 매출 공시(eastmoney 데이터센터 집계, 2026-06-30 기준) ·
+  분기·연간 재무(동일 출처) · 네이버 해외주식 API(홍콩·미국 상장) · Yahoo Finance 시세(2026-09-02) ·
+  JP모건 「China AI infrastructure ecosystem」(2026-09-02) · 환산 202.40원/위안(2026-09-02)<br><br>
+  <b>본 문서는 투자 판단을 위한 자료 정리이며 특정 종목의 매수·매도를 권유하지 않는다.</b>
+  등급 표기 — <b>①</b> 공시로 확인 · <b>②</b> 검증 가능하나 미확인 · <b>③</b> 전문가 판단 · <b>[추론]</b> 자체 추론(반증 조건 병기)
+</div></footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+"headline":"해외 매출 63.7%가 사실은 홍콩이었다 — 중국 AI 공급망 84사 실측","description":"중국 AI 공급망 84사 해외 매출 전수 실측. 「해외」가 회사마다 다른 것을 센다 — AI칩 0%·WFE 1.6% vs 광부품 58.5%·PCB 72.3%",
+"datePublished":"2026-09-03","dateModified":"2026-09-03",
+"author":{"@type":"Organization","name":"ourprochoi Research"},
+"publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/national-strategy/ns_cn_global_reach_paper.html"}}
+</script>
+</body>
+</html>
