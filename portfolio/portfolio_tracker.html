@@ -192,7 +192,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
   "headline":"포트폴리오 트래커 — v7.2 Phase 0 실매수 대시보드",
   "description":"v7.2 포트폴리오 Phase 0 실매수 트래커 — 2.47억 원 투자 현황, 종목별 P&L, 클러스터 배분 실시간 대시보드",
   "datePublished":"2026-07-14",
-  "dateModified":"2026-08-29",
+  "dateModified":"2026-09-07",
   "author":{"@type":"Person","name":"ourprochoi"},
   "publisher":{"@type":"Organization","name":"ourprochoi Research Archive"},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/portfolio/portfolio_tracker.html"}
@@ -269,6 +269,19 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
       <div class="sub">Phase 0 실매수 · 수수료 포함 원가 기준</div>
     </div>
     <div class="card">
+      <div style="background:rgba(5,150,105,.10);border-left:3px solid #059669;padding:10px 12px;margin-bottom:12px;font-size:.92em;line-height:1.6">
+        <b style="color:#059669">🟣 [2026.09.07 신설] <u>「걸린 판단」 열</u> — 포지션과 아카이브가 물리적으로 안 이어져 있었다.</b><br>
+        이 표는 <b>수량·평단·손익만</b> 담고 있었고 <b>정본 페이지 링크도 테제 번호도 0개</b>였다.
+        그래서 <b>§J1의 ①테제 → ②반증 조건 → ④포지션 조인이 <u>답할 때마다 손으로 다시 만들어졌다</u></b>.
+        <b>§J4가 기록한 SOL 8일 지연(−26.2%)이 정확히 이 조인의 실패</b>였고, 같은 조항이 확인 시점을
+        <i>「개정이 아니라 그 종목을 언급한 순간」</i>으로 옮긴 이유도 이것이다 — <b>언급은 밀리지 않는데 조인이 밀렸다.</b><br>
+        <b>🔑 담는 것은 <u>링크와 테제 번호뿐이고 문장은 복사하지 않는다</u>(§B5).</b>
+        수치를 복붙하면 <b>정본과 어긋나는 층이 하나 더 생기고</b>, 그것이 §H가 말한 「다른 파일에 한 번 더 써야 하는 층」이라 죽는다.
+        <b>링크는 썩지 않는다.</b><br>
+        <b>⚠ 다만 <u>테제 번호는 바뀔 수 있다</u></b> — 정본 페이지에서 T가 신설·철회되면 이 열도 함께 고친다.
+        <b>그 페이지를 손대는 세션이 이 표도 손대는 것이 규칙</b>이며(§G의 「손댈 때 테제 확인 3분」과 같은 자리),
+        <b>어긋나면 링크를 눌러 정본이 이긴다.</b>
+      </div>
       <div id="holdingsLoading" class="loading"><span class="spinner"></span>현재가 로딩 중…</div>
       <div id="holdingsTable" style="display:none">
         <div class="tbl-wrap">
@@ -283,6 +296,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
                 <th class="r">손익</th>
                 <th class="r">손익률</th>
                 <th class="r">비중</th>
+                <th>걸린 판단</th>
               </tr>
             </thead>
             <tbody id="holdingsBody"></tbody>
@@ -695,24 +709,37 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
         역산 -16.31%, SOL -15.07% vs -15.23%). 스톱로스 판정은 두 기준 모두 발동이므로
         결론은 같으나, 경계선 근처에서는 기준을 확정한 뒤 판정한다. fee는 미확인이라 0. */
   var HOLDINGS = [
-    { name:'SK하이닉스',        ticker:'000660', cluster:'A', qty:54,   avgPrice:1699046, fee:0, totalCost:91748484 },
-    { name:'삼성전자 (레거시)',  ticker:'005930', cluster:'A', qty:1300, avgPrice:72600,   fee:0, totalCost:94380000, priceKey:'삼성전자', legacy:true },
-    { name:'삼성전자 (신규)',    ticker:'005930', cluster:'A', qty:496,  avgPrice:244927,  fee:42318, totalCost:121483949, priceKey:'삼성전자' },
-    { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:3600, avgPrice:17801,   fee:0, totalCost:64083600 },
-    { name:'TIME 글로벌AI',     ticker:'456600', cluster:'C', qty:520,  avgPrice:62807,   fee:0, totalCost:32659640 },
-    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1880, avgPrice:33630, fee:0, totalCost:63224400 },
+    { name:'SK하이닉스',        ticker:'000660', cluster:'A', qty:54,   avgPrice:1699046, fee:0, totalCost:91748484,
+      page:'../hbm-packaging/hbm_pkg_company_sk_hynix.html', thesis:'T1·T2' },
+    { name:'삼성전자 (레거시)',  ticker:'005930', cluster:'A', qty:1300, avgPrice:72600,   fee:0, totalCost:94380000, priceKey:'삼성전자', legacy:true,
+      page:'../hbm-packaging/hbm_pkg_company_samsung.html', thesis:'—',
+      note:'관리 대상 밖(2026-08-12 B안)' },
+    { name:'삼성전자 (신규)',    ticker:'005930', cluster:'A', qty:496,  avgPrice:244927,  fee:42318, totalCost:121483949, priceKey:'삼성전자',
+      page:'../hbm-packaging/hbm_pkg_company_samsung.html', thesis:'T1·T3' },
+    { name:'SOL AI반도체TOP2+', ticker:'0167A0', cluster:'B', qty:3600, avgPrice:17801,   fee:0, totalCost:64083600,
+      page:'../hbm-packaging/hbm_pkg_company_sk_hynix.html', thesis:'SKH T1·T2 · 삼성 T1·T3',
+      note:'룩스루 66.8% — 상속' },
+    { name:'TIME 글로벌AI',     ticker:'456600', cluster:'C', qty:520,  avgPrice:62807,   fee:0, totalCost:32659640,
+      page:'../hbm-packaging/hbm_pkg_theme_memory_cycle.html', thesis:'🔴 판정 조건 없음',
+      note:'41종목 중 31종목(48.5%) 미공개' },
+    { name:'KODEX AI전력핵심설비', ticker:'487240', cluster:'D', qty:1880, avgPrice:33630, fee:0, totalCost:63224400,
+      page:'../ai-infra/kr_power_cross_valuation.html', thesis:'T3·T6',
+      note:'변압기 69% · 전선 13.5%' },
     /* 2026-08-13 신규 편입 — 투자자 집행. 수수료 포함 원가 기준.
        현대백화점: 매수 논거 = 자산가치 + 소비 섹터 강세 + 외국인 소비 증가(투자자 진술).
                   ⚠ 아카이브 인용 0편이었다 — 테제를 이 논거 위에 새로 세운다. */
-    { name:'현대백화점',           ticker:'069960', cluster:'E', qty:250, avgPrice:99362,   fee:34876, totalCost:24875376 },
+    { name:'현대백화점',           ticker:'069960', cluster:'E', qty:250, avgPrice:99362,   fee:34876, totalCost:24875376,
+      page:'../consumer/consumer_sector_department.html', thesis:'T2·T4·T5' },
     /* 2026-08-20 체결(결제 08-24) — 미래에셋 매매보고서 기준. 투자자 집행.
        파마리서치: 신규 편입 170주 @412,000, 정산 70,138,056 → 평단 412,577원(수수료 포함).
                  ⚠ 아카이브에 편은 있으나 <현재 판단 0편>이었다 — 같은 날 T1~T3 신설.
        삼성전자(신규): +113주 @267,500 → 383주 496주, 평단 238,157 244,927원.
        TIME 글로벌AI: -520주 @58,096(가중) → 1,040주 520주(정확히 절반).
                  실현손익 -2,491,739원(-7.63%). 평단은 불변. */
-    { name:'파마리서치',           ticker:'214450', cluster:'E', qty:170, avgPrice:412577,  fee:98056, totalCost:70138056 },
-    { name:'삼성바이오로직스',      ticker:'207940', cluster:'F', qty:17,  avgPrice:1549529, fee:36885, totalCost:26378878 }
+    { name:'파마리서치',           ticker:'214450', cluster:'E', qty:170, avgPrice:412577,  fee:98056, totalCost:70138056,
+      page:'../k-beauty/k_beauty_company_pharmaresearch.html', thesis:'T2·T3' },
+    { name:'삼성바이오로직스',      ticker:'207940', cluster:'F', qty:17,  avgPrice:1549529, fee:36885, totalCost:26378878,
+      page:'../glp1/glp1_company_samsung_biologics.html', thesis:'T1·T3' }
   ];
 
   /* 🔴 2026-08-27 C1급 정정 — 하드코딩 상수를 <파생값>으로 바꾼다.
@@ -808,7 +835,10 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
         currentValue: currentValue,
         totalCost: h.totalCost,
         pnl: pnl,
-        pnlPct: pnlPct
+        pnlPct: pnlPct,
+        page: h.page,
+        thesis: h.thesis,
+        note: h.note
       };
     });
 
@@ -858,6 +888,12 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
         + '<td class="r mono ' + cls + '">' + (r.pnl >= 0 ? '+' : '') + fmtWonShort(r.pnl) + '</td>'
         + '<td class="r mono ' + cls + '">' + fmtPct(r.pnlPct) + '</td>'
         + '<td class="r mono">' + weightPct + '%</td>'
+        + '<td style="white-space:normal;min-width:150px;max-width:190px;font-size:.86em;line-height:1.45">'
+          + (r.page
+              ? '<a href="' + r.page + '" style="color:var(--accent);text-decoration:none">' + r.thesis + ' \u2197</a>'
+                + (r.note ? '<div style="color:var(--sub);font-size:.88em">' + r.note + '</div>' : '')
+              : '<span style="color:#f87171">판단 없음</span>')
+          + '</td>'
         + '</tr>';
     });
     tbody.innerHTML = html;
@@ -871,6 +907,7 @@ footer a{color:var(--sub);text-decoration:none} footer a:hover{color:var(--gold)
       + '<td class="r mono ' + footCls + '" style="font-weight:900">' + (totalPnl >= 0 ? '+' : '') + fmtWonShort(totalPnl) + '</td>'
       + '<td class="r mono ' + footCls + '" style="font-weight:900">' + fmtPct(totalPnlPct) + '</td>'
       + '<td class="r mono" style="font-weight:900">100%</td>'
+      + '<td></td>'
       + '</tr>';
 
     /* ═══ 손익 분해 — 표 아래 (2026-08-27 신설)
