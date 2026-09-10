@@ -199,6 +199,13 @@ WATCH = {
 # 2026-08-08 추가. 엔드포인트가 국내(m.stock)와 다르다: api.stock.naver.com/stock/{SYM}/basic
 # 접미사는 NASDAQ=.O, NYSE=무접미사 또는 .K (심볼별로 다르므로 검증된 값만 넣는다)
 WATCH_US = {
+    # 2026-09-10 추가 — 「에너지 독수리 5형제」(VG·ET·FANG·LNG·TRGP) 중 추적 밖이던 셋.
+    # LNG(Cheniere)·TRGP(Targa)는 이미 있었고 ET·FANG은 아카이브 언급 0편이었다.
+    # ⚠ 티커 형식이 갈린다 — FANG은 .O(나스닥), TRGP는 .K가 붙어야 열린다.
+    #    「이 소스는 X를 지원하지 않는다」고 적기 전에 같은 소스의 다른 형식으로 대조한다(§G).
+    "Venture Global": "VG",
+    "Energy Transfer": "ET",
+    "Diamondback": "FANG.O",
     "Talen": "TLN.O",
     "AEP": "AEP.O",
     "NiSource": "NI",

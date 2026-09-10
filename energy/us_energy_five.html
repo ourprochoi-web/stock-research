@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="VG·ET·FANG·LNG·TRGP를 SEC 원문으로 실측했다. 5사 중 2사의 영업이익이 §A2-1 탐지에 걸렸고, 현금으로 재니 FCF 수익률이 ET 11.6% vs TRGP 1.4%로 8배 갈린다.">
+<meta name="keywords" content="에너지,LNG,미드스트림,Venture Global,Energy Transfer,Diamondback,Cheniere,Targa,FCF 수익률,EV/EBITDA,MLP,파생상품,감액손실,SEC XBRL">
+<meta property="og:title" content="미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다">
+<meta property="og:description" content="VG·ET·FANG·LNG·TRGP를 SEC 원문으로 실측했다. 5사 중 2사의 영업이익이 §A2-1 탐지에 걸렸고, 현금으로 재니 FCF 수익률이 ET 11.6% vs TRGP 1.4%로 8배 갈린다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/energy/us_energy_five.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다">
+<meta name="twitter:description" content="VG·ET·FANG·LNG·TRGP를 SEC 원문으로 실측했다. 5사 중 2사의 영업이익이 §A2-1 탐지에 걸렸고, 현금으로 재니 FCF 수익률이 ET 11.6% vs TRGP 1.4%로 8배 갈린다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/energy/us_energy_five.html">
+<title>미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <a href="../index.html" class="brand"><span class="dot"></span>ourprochoi Research</a>
+  <div class="nav-links">
+    <a href="#now">▎현재 판단</a><a href="#s01">01 오염 검사</a><a href="#s02">02 현금 표</a><a href="#s03">03 못 잰 것</a><a href="#recent">최근 변경</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="hero-bg"><div class="glow-a"></div><div class="glow-b"></div><div class="hero-grid"></div></div>
+<div class="wrap hero-in">
+  <div class="eyebrow">에너지 전환 · 신설</div>
+  <h1 class="hero-title">미국 에너지 5사<br><span class="hl">현금으로 줄 세웠다</span></h1>
+  <p class="hero-sub"><b>VG · ET · FANG · LNG · TRGP</b>를 SEC XBRL 원문으로 실측했다.
+  <b>5사 중 2사의 영업이익이 §A2-1 탐지에 걸렸고</b>, 그래서 <b>손익계산서 대신 현금흐름표</b>로 줄 세웠다.
+  <b>FCF 수익률이 ET 11.6% vs TRGP 1.4%로 8배 갈린다.</b></p>
+  <div class="hero-stats">
+    <div class="hstat"><div class="num tnum">2/5</div><div class="lab">영업이익이 오염 탐지에 걸린 회사</div></div>
+    <div class="hstat"><div class="num tnum">8배</div><div class="lab">FCF 수익률 최고(ET) ÷ 최저(TRGP)</div></div>
+    <div class="hstat"><div class="num tnum">−$70억</div><div class="lab">VG의 TTM 잉여현금흐름</div></div>
+    <div class="hstat"><div class="num tnum">0편</div><div class="lab">ET·FANG의 아카이브 기존 판단</div></div>
+  </div>
+</div></header>
+
+<section id="now" class="blk"><div class="wrap">
+<div style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.9">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎현재 판단 · 2026.09.10 <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 신설 · 🔵 최근 변경 1건</span></div>
+<b style="font-size:1.05em">한 문장 — <u>다섯을 <b>같은 표</b>에 놓으면 안 된다. 사업이 셋으로 갈리고, <b>둘은 손익계산서를 못 쓴다</b>.</u></b><br><br>
+
+<b>T1. 🔴 <u>이 업종은 영업이익을 그대로 못 쓴다 — <b>5사 중 2사</b>가 §A2-1 탐지에 걸렸다</u>.</b><br>
+&nbsp;&nbsp;<b>§A2-1의 3축(추세제거 잔차 변동계수 rCV · 부호 전환 · <u>매출-영업이익 상관</u>)을 돌린 결과 —</b><br>
+&nbsp;&nbsp;<b>· <b style="color:var(--bear)">LNG(Cheniere)</b> — <b>rCV 1.57 · 부호 전환 2회 · 매출-영익 r = <u>−0.250</u></b>. <b>매출이 오를 때 영업이익이 <u>반대로</u> 간다</b></b><br>
+&nbsp;&nbsp;<b>· <b style="color:#b45309">FANG(Diamondback)</b> — rCV 0.52 · r = +0.506. <b>2026-03 분기 OPM이 <u>2.7%</u>로 튀었고, 원인이 <b>유가스전 감액손실 $14억</b></b>이다(2026-06은 0)</b><br>
+&nbsp;&nbsp;<b>· VG · ET · TRGP · WMB는 r = +0.171~+0.980으로 통과</b><br>
+&nbsp;&nbsp;<b>🔑 <u>본 아카이브가 이미 Cheniere에서 같은 결론에 도달했다</u> — <b>「네 값이 전부 달랐다(분기×4 74.8% · TTM 29.9% · XBRL 파생 제외 45.0% · 본문 기준 산출 불가)」</b>이고
+<b>결론이 <i>「더 정확한 값」이 아니라 <u>「이 지표를 이 회사에 쓰지 않는다」</u></i></b>였다. <b>오늘 다섯으로 넓혀 재니 그것이 <u>Cheniere 하나의 특이사항이 아니었다</u>.</b></b><br><br>
+
+<b>T2. 🔑 <u>그래서 현금으로 줄 세웠다 — <b>파생 평가손익도 감액도 현금흐름표에는 안 들어간다</b></u>.</b><br>
+&nbsp;&nbsp;<b>TTM(2025-07~2026-06) 기준 <b>FCF 수익률</b>이 <b>ET +11.6% · FANG +8.5% · LNG +7.5% · WMB +2.5% · <u>TRGP +1.4%</u></b>로 <b>8배</b> 갈린다.</b><br>
+&nbsp;&nbsp;<b>🔴 <u>가른 것은 마진이 아니라 <b>재투자 강도</b>다</u> — <b>CapEx ÷ OCF</b>가 <b>FANG 30% · ET 36% · LNG 39% · WMB 60% · <u>TRGP 76%</u></b>다.
+<b>TRGP는 벌어들인 현금의 4분의 3을 다시 쓴다.</b></b><br>
+&nbsp;&nbsp;<b>🔴 <u>TRGP는 그런데 <b>비싸다</b></u> — <b>EV/EBITDA 12.56배</b>로 FANG(6.81배)의 <b>1.8배</b>이고 <b>OCF ÷ 영업이익이 <u>0.95로 5사 중 유일하게 1 미만</u></b>이다.
+<b>「영업이익만큼 현금이 안 들어오는데 배수는 높다」</b> — 본 편에서 가장 나쁜 조합이다.</b><br><br>
+
+<b>T3. 🔴 <u>VG는 나머지 넷과 <b>같은 게임이 아니다</b> — <b>FCF가 −$70억</b>이다</u>.</b><br>
+&nbsp;&nbsp;<b>TTM <b>OCF $68.3억 · CapEx $138.2억</b>으로 <b>CapEx ÷ OCF = <u>202%</u></b>다 — <b>벌어들인 현금의 두 배를 쓴다</b>.
+<b>순부채 $386.9억 · 순부채/EBITDA <u>5.78배</u></b>로 6사 중 최고다.</b><br>
+&nbsp;&nbsp;<b>🔑 <u>이건 흠이 아니라 <b>단계</b>다</u> — Plaquemines·CP2를 짓는 중이고 <b>매출이 4개 분기 만에 $9.3억 → $45.8억(4.9배)</b>이다.
+<b>다만 <u>「현금 창출 회사」로 다른 넷과 같은 표에 놓으면 전부 틀린다</u>.</b></b><br>
+&nbsp;&nbsp;<b>📌 판정 기준 — <b>CapEx ÷ OCF가 100% 아래로 내려오는 분기</b>가 「건설사에서 현금 회사로」의 전환점이다. <u>그 전에는 FCF·배수로 비교하지 않는다</u>.</b><br><br>
+
+<b>T4. 🟢 <u>배수와 재무 체력 <b>둘 다 1위는 FANG</b>이다 — 그리고 그것이 <b>유가 노출의 대가</b>다</u>.</b><br>
+&nbsp;&nbsp;<b>EV/EBITDA <b>6.81배</b>(최저) · 순부채/EBITDA <b>1.20배</b>(최저) · EBITDA 마진 <b>58.1%</b> · FCF 수익률 <b>+8.5%</b>.</b><br>
+&nbsp;&nbsp;<b>🔴 <u>그런데 셋 중 유일한 <b>E&amp;P</b>다</u> — 물량 계약이 아니라 <b>유가에 직접 걸린다</b>.
+<b>2026-03의 $14억 감액이 그 증거이고, 유가가 다시 빠지면 또 낸다</b>(§A2-1 ②「반복되나」).</b><br>
+&nbsp;&nbsp;<b>🔑 <u>즉 「싸다」가 아니라 <b>「가격에 유가 리스크가 붙어 있다」</b></u>가 정확한 서술이다.
+<b>같은 6.81배를 미드스트림이 받으면 싼 것이고 E&amp;P가 받으면 <u>정상</u>일 수 있다</b>(§A7 — 분모의 사이클 위치를 먼저 본다).</b><br><br>
+
+<b>T5. 🔴 <u>한국 투자자에게 <b>ET는 종목이 아니라 구조</b>다 — MLP다</u>.</b><br>
+&nbsp;&nbsp;<b>ET는 주식이 아니라 <b>파트너십 유닛</b>이다(네이버 표기도 <i>"Energy Transfer <u>Units</u>"</i>).
+<b>비미국 투자자에게 MLP는 <u>실효연계소득(ECI)에 더 높은 원천징수</u>가 붙고 <b>K-1/K-3 서류</b>가 따라온다</b>(<b>②</b>).</b><br>
+&nbsp;&nbsp;<b>🔑 <u>FCF 수익률 11.6%가 1위라는 사실과 별개로, <b>세후로 얼마가 남는지는 이 표에 없다</b></u>.
+<b>본 편은 그것을 재지 못했다 — 한·미 조세조약의 MLP 분배금 조항을 확인하지 않았다</b>(§G · 아래 03).</b><br>
+&nbsp;&nbsp;<b>📌 <u>그래서 ET를 「1위」로 쓰지 않는다</u> — <b>「세전 현금 기준 1위이고, 세후는 미측정」</b>이 정확하다.
+<b>같은 미드스트림에서 <u>법인 구조</u>인 대안이 TRGP·WMB</b>이고, <b>둘 다 FCF 수익률이 ET의 4분의 1 이하</b>다 — <u>그 격차가 구조의 값</u>일 수 있다 [추론].</b><br>
+</div></div></section>
+<section class="blk"><div class="wrap" style="margin-top:-70px">
+<div style="padding:16px 20px;border-left:4px solid #3b82f6;background:rgba(59,130,246,.05);line-height:1.9">
+<div style="font-weight:800;color:#3b82f6;margin-bottom:6px">반증 조건 · 다음 검증</div>
+<b>이 판단이 틀렸음을 보여줄 것</b><br>
+· <b>T1</b> → <b>Cheniere의 매출-영업이익 상관이 다음 4분기에 <u>+0.5 이상</u>으로 올라오면</b> 오염이 일시적이었던 것이다<br>
+· <b>T2</b> → <b>TRGP의 CapEx ÷ OCF가 <u>50% 아래</u>로 내려오면</b> FCF 수익률 1.4%는 투자 사이클의 바닥이었다<br>
+· <b>T3</b> → <b>VG의 CapEx ÷ OCF가 <u>100% 아래</u></b>로 내려오면 「건설사」에서 「현금 회사」로 전환된 것이다<br>
+· <b>T4</b> → <b>FANG이 유가 하락 국면에서 <u>감액 없이</u> 분기를 넘기면</b> 「반복된다」는 추정이 틀린 것이다<br>
+· <b>T5</b> → <b>ET 분배금의 실제 세후 수취율을 확인해 FCF 수익률 격차(11.6% vs 1.4%)를 <u>설명하지 못하면</u></b> 「구조의 값」이라는 추론이 기각된다<br><br>
+<b>다음 검증 — 날짜가 아니라 이벤트</b><br>
+· <b>5사 3Q26 실적</b>(10월 말~11월 초) — T1·T2·T3 동시 판정. <b>VG는 이때 <u>4분기 TTM이 처음 만들어진다</u></b><br>
+· <b>유가</b> — FANG의 감액 재발 여부. <b>⚠ 본 편은 유가 전망을 하지 않는다</b>(§J8과 같은 논리)<br>
+· 🔴 <b>한·미 조세조약 MLP 조항 확인</b> — T5의 미측정 부분. <b>§I-3 등재</b><br>
+</div></div></section>
+
+<section id="s01" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">01</div><h2 class="sec-title">오염 검사 — 영업이익이 사업을 반영하는가</h2></div>
+<p class="sec-lead">§A2-1은 <b>「계정을 세기 전에 <u>이 계정이 비즈니스의 무엇을 반영하는가</u>를 먼저 판정한다」</b>이다.
+탐지법은 <b>① 추세 제거 후 잔차 변동계수(rCV) ② 부호 전환 횟수 ③ <u>매출이 함께 움직였나</u></b> 셋을 <b>함께</b> 보는 것이고, <b>변동계수 단독으로는 오판한다</b>.</p>
+<div class="panel">
+<table class="val-table"><thead><tr><th>회사</th><th style="text-align:right">rCV</th><th style="text-align:right">부호 전환</th><th style="text-align:right">매출-영익 r</th><th>판정</th></tr></thead><tbody>
+<tr><td><b>LNG</b> <span class="src">Cheniere</span></td><td class="tnum" style="text-align:right"><b style="color:var(--bear)">1.57</b></td><td class="tnum" style="text-align:right"><b style="color:var(--bear)">2회</b></td><td class="tnum" style="text-align:right"><b style="color:var(--bear)">−0.250</b></td><td>🔴 <b>오염</b> — 매출과 <u>반대</u>로 간다</td></tr>
+<tr><td><b>FANG</b> <span class="src">Diamondback</span></td><td class="tnum" style="text-align:right">0.52</td><td class="tnum" style="text-align:right">0회</td><td class="tnum" style="text-align:right">+0.506</td><td>🟠 <b>감액 1회</b> — 2026-03 $14억</td></tr>
+<tr><td><b>VG</b> <span class="src">Venture Global</span></td><td class="tnum" style="text-align:right">0.31</td><td class="tnum" style="text-align:right">0회</td><td class="tnum" style="text-align:right">+0.885</td><td>✅ 사업 반영</td></tr>
+<tr><td><b>ET</b> <span class="src">Energy Transfer</span></td><td class="tnum" style="text-align:right">0.13</td><td class="tnum" style="text-align:right">0회</td><td class="tnum" style="text-align:right"><b style="color:var(--bull)">+0.980</b></td><td>✅ 사업 반영</td></tr>
+<tr><td><b>TRGP</b> <span class="src">Targa</span></td><td class="tnum" style="text-align:right">0.17</td><td class="tnum" style="text-align:right">0회</td><td class="tnum" style="text-align:right">+0.171</td><td>✅ <span class="src">단 상관이 낮다</span></td></tr>
+<tr><td><b>WMB</b> <span class="src">Williams · 비교군</span></td><td class="tnum" style="text-align:right">0.12</td><td class="tnum" style="text-align:right">0회</td><td class="tnum" style="text-align:right">+0.928</td><td>✅ 사업 반영</td></tr>
+</tbody></table>
+<p class="note">A6 <b>①</b> — SEC XBRL <code>companyfacts</code> 분기 시계열(최근 8개 확정분기). <b>rCV는 선형 추세를 제거한 잔차의 변동계수</b>이며, 삼성전자가 0.87 → 0.27로 내려간 것과 같은 계산이다.</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3 style="margin-bottom:8px">🔴 Cheniere — 아카이브가 이미 도달한 결론이 재현된다</h3>
+<p>본 아카이브는 2026-08-29에 Cheniere를 §A2-1의 <b>대조군</b>으로 썼다 — <b>rCV 1.55 · 부호 전환 2회</b>로 기록돼 있고,
+<b>10-Q 본문을 열었더니 <i>"Included in cost of sales"</i>로 <u>파생이 매출원가에 들어간다</u></b>는 것까지 확인했다.</p>
+<p style="margin-top:6px"><b>🔑 오늘 같은 계산을 다시 하니 <b>rCV 1.57</b>로 거의 같다. 그리고 <u>다섯으로 넓혀도 이 정도로 걸리는 건 Cheniere 하나</u>다</b> —
+<b>「LNG 업종 전체가 그렇다」가 아니라 <u>「이 회사의 회계 구조가 그렇다」</u></b>가 정확하다. <b>같은 LNG 수출사인 VG는 r = +0.885로 통과</b>한다.</p>
+<p style="margin-top:6px" class="note">⚠ <b>그래서 Cheniere를 배수로 비교하는 표에는 넣되 <u>영업이익 기반 지표에는 별표를 단다</u></b>. 회사가 가이드하는 <b>Adjusted EBITDA</b>가 정본이고, 본 편의 EBITDA(영업이익+D&amp;A)는 <b>그 오염을 그대로 물려받는다</b>.</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3 style="margin-bottom:8px">🟠 Diamondback — 감액은 「비현금」이라 현금 지표를 안 건드린다</h3>
+<p>2026-03 분기 매출 $42.4억에 영업이익 <b>$1.16억</b>(OPM 2.7%)였고, 원인이 <code>ImpairmentOfOilAndGasProperties</code> <b>$14억</b>이다. 2026-06은 <b>0</b>이다.</p>
+<p style="margin-top:6px">· <b>보고 TTM 영업이익 $50.03억 → 감액 되돌리면 $64.03억</b> (OPM <b>28.7% → 36.8%</b>)</p>
+<p style="margin-top:6px"><b>🔑 <u>그런데 감액은 현금이 안 나간다</u> — OCF·FCF는 애초에 영향이 없다.
+<b>본 편이 현금으로 줄 세운 이유가 정확히 이것</b>이고, <b>Cheniere의 파생도 같은 이유로 현금 지표를 안 건드린다</b>.</b></p>
+<p style="margin-top:6px" class="note">§A2-1의 판정 3기준 — ① 현금이 움직였나 <b>아니다</b> ② 반복되나 <b>유가 하락 시 재발 가능</b> ③ 사업 능력 반영하나 <b>과거 투자의 재평가</b>. <b>셋 중 하나도 아니므로 걷어낸 값을 함께 낸다.</b></p>
+</div>
+</div></section>
+
+<section id="s02" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">02</div><h2 class="sec-title">현금 표 — 사업이 셋으로 갈린다</h2></div>
+<div class="panel">
+<h3 style="margin-bottom:10px">① 현금흐름 (TTM 2025-07~2026-06 · 백만$)</h3>
+<div style="overflow-x:auto">
+<table class="val-table"><thead><tr><th>회사</th><th style="text-align:right">매출</th><th style="text-align:right">EBITDA</th><th style="text-align:right">OCF</th><th style="text-align:right">CapEx</th><th style="text-align:right">FCF</th><th style="text-align:right">순부채/EB</th><th style="text-align:right">CapEx/OCF</th><th style="text-align:right">EBITDA마진</th></tr></thead><tbody>
+<tr><td><b>VG</b> <span class='src'>Venture Global</span><br><span class='src' style='font-size:.72em'>LNG 수출</span></td><td class="tnum" style="text-align:right">15,607</td><td class="tnum" style="text-align:right">6,693</td><td class="tnum" style="text-align:right">6,829</td><td class="tnum" style="text-align:right">13,819</td><td class="tnum" style="text-align:right"><b style='color:var(--bear)'>-6,990</b></td><td class="tnum" style="text-align:right">5.78배</td><td class="tnum" style="text-align:right">202%</td><td class="tnum" style="text-align:right">42.9%</td></tr>
+<tr><td><b>ET</b> <span class='src'>Energy Transfer</span><br><span class='src' style='font-size:.72em'>미드스트림</span></td><td class="tnum" style="text-align:right">101,301</td><td class="tnum" style="text-align:right">16,999</td><td class="tnum" style="text-align:right">13,417</td><td class="tnum" style="text-align:right">4,788</td><td class="tnum" style="text-align:right">8,629</td><td class="tnum" style="text-align:right">3.96배</td><td class="tnum" style="text-align:right">36%</td><td class="tnum" style="text-align:right">16.8%</td></tr>
+<tr><td><b>FANG</b> <span class='src'>Diamondback</span><br><span class='src' style='font-size:.72em'>E&P(상류)</span></td><td class="tnum" style="text-align:right">17,404</td><td class="tnum" style="text-align:right">10,120</td><td class="tnum" style="text-align:right">6,942</td><td class="tnum" style="text-align:right">2,097</td><td class="tnum" style="text-align:right">4,845</td><td class="tnum" style="text-align:right">1.20배</td><td class="tnum" style="text-align:right">30%</td><td class="tnum" style="text-align:right">58.1%</td></tr>
+<tr><td><b>LNG</b> <span class='src'>Cheniere Energy</span><br><span class='src' style='font-size:.72em'>LNG 수출</span></td><td class="tnum" style="text-align:right">20,682</td><td class="tnum" style="text-align:right">6,569</td><td class="tnum" style="text-align:right">6,975</td><td class="tnum" style="text-align:right">2,721</td><td class="tnum" style="text-align:right">4,254</td><td class="tnum" style="text-align:right">3.49배</td><td class="tnum" style="text-align:right">39%</td><td class="tnum" style="text-align:right">31.8%</td></tr>
+<tr><td><b>TRGP</b> <span class='src'>Targa Resources</span><br><span class='src' style='font-size:.72em'>미드스트림</span></td><td class="tnum" style="text-align:right">16,946</td><td class="tnum" style="text-align:right">5,588</td><td class="tnum" style="text-align:right">3,740</td><td class="tnum" style="text-align:right">2,837</td><td class="tnum" style="text-align:right">903</td><td class="tnum" style="text-align:right">1.37배</td><td class="tnum" style="text-align:right">76%</td><td class="tnum" style="text-align:right">33.0%</td></tr>
+<tr><td><b>WMB</b> <span class='src'>Williams <span class="src">(비교군)</span></span><br><span class='src' style='font-size:.72em'>미드스트림</span></td><td class="tnum" style="text-align:right">11,787</td><td class="tnum" style="text-align:right">6,902</td><td class="tnum" style="text-align:right">5,784</td><td class="tnum" style="text-align:right">3,460</td><td class="tnum" style="text-align:right">2,324</td><td class="tnum" style="text-align:right">4.09배</td><td class="tnum" style="text-align:right">60%</td><td class="tnum" style="text-align:right">58.6%</td></tr>
+</tbody></table>
+</div>
+<p class="note">A6 <b>①</b> — SEC XBRL. <b>EBITDA = TTM 영업이익 + D&amp;A</b>(회사 Adjusted EBITDA가 아니다). 순부채는 <b>2026-06-30</b> 기준 총차입 − 현금.
+<b>⚠ VG의 OCF·CapEx는 누적 공시를 분해해 만들었다</b>(2025연간 − 2025상반기 + 2026상반기) — 분기 공시가 없어서다.
+<b>⚠ WMB 부채는 <code>LongTermDebtAndCapitalLeaseObligations</code>가 정본이다</b> — <code>LongTermDebtNoncurrent</code>는 0으로 나와 <u>순부채가 음수가 되는 오답</u>을 냈고, 태그를 다시 파서 잡았다(§C1).</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3 style="margin-bottom:10px">② 밸류에이션 (가격 2026-09-09~10 종가 · VG 제외)</h3>
+<div style="overflow-x:auto">
+<table class="val-table"><thead><tr><th>회사</th><th style="text-align:right">주가($)</th><th style="text-align:right">시총(억$)</th><th style="text-align:right">EV(억$)</th><th style="text-align:right">EV/EBITDA</th><th style="text-align:right">FCF 수익률</th><th style="text-align:right">OCF/영업이익</th></tr></thead><tbody>
+<tr><td><b>ET</b> <span class='src'>Energy Transfer</span></td><td class="tnum" style="text-align:right">21.68</td><td class="tnum" style="text-align:right">747</td><td class="tnum" style="text-align:right">1,420</td><td class="tnum" style="text-align:right">8.36배</td><td class="tnum" style="text-align:right"><span style="color:var(--bull)">+11.6%</span></td><td class="tnum" style="text-align:right">1.22</td></tr>
+<tr><td><b>FANG</b> <span class='src'>Diamondback</span></td><td class="tnum" style="text-align:right">202.63</td><td class="tnum" style="text-align:right">567</td><td class="tnum" style="text-align:right">689</td><td class="tnum" style="text-align:right">6.81배</td><td class="tnum" style="text-align:right"><span style="color:var(--bull)">+8.5%</span></td><td class="tnum" style="text-align:right">1.39</td></tr>
+<tr><td><b>LNG</b> <span class='src'>Cheniere Energy</span></td><td class="tnum" style="text-align:right">275.93</td><td class="tnum" style="text-align:right">570</td><td class="tnum" style="text-align:right">799</td><td class="tnum" style="text-align:right">12.17배</td><td class="tnum" style="text-align:right"><span style="color:var(--bull)">+7.5%</span></td><td class="tnum" style="text-align:right">1.35</td></tr>
+<tr><td><b>TRGP</b> <span class='src'>Targa Resources</span></td><td class="tnum" style="text-align:right">291.38</td><td class="tnum" style="text-align:right">625</td><td class="tnum" style="text-align:right">702</td><td class="tnum" style="text-align:right">12.56배</td><td class="tnum" style="text-align:right"><span style="color:var(--bull)">+1.4%</span></td><td class="tnum" style="text-align:right">0.95</td></tr>
+<tr><td><b>WMB</b> <span class='src'>Williams <span class="src">(비교군)</span></span></td><td class="tnum" style="text-align:right">75.15</td><td class="tnum" style="text-align:right">919</td><td class="tnum" style="text-align:right">1,202</td><td class="tnum" style="text-align:right">17.41배</td><td class="tnum" style="text-align:right"><span style="color:var(--bull)">+2.5%</span></td><td class="tnum" style="text-align:right">1.27</td></tr>
+</tbody></table>
+</div>
+<p class="note">시총 = SEC <code>EntityCommonStockSharesOutstanding</code>(2026-07-30~31) × 종가. <b>VG는 클래스 A/B/C/D 구조라 <code>companyfacts</code>에 주식수가 없어 제외</b>했다(§G — 「이 경로로는 안 된다」이지 「확인할 수 없다」가 아니다).</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3 style="margin-bottom:8px">🔑 이 두 표가 말하는 것</h3>
+<p>· <b>FCF 수익률</b> — <b>ET +11.6%</b> ≫ FANG +8.5% &gt; LNG +7.5% &gt; WMB +2.5% &gt; <b>TRGP +1.4%</b>. <b>최고 ÷ 최저 = 8.3배</b></p>
+<p>· <b>가른 것은 마진이 아니라 재투자 강도</b> — CapEx/OCF가 <b>FANG 30% · ET 36%</b> vs <b>WMB 60% · TRGP 76%</b></p>
+<p>· <b>EBITDA 마진은 순위가 반대다</b> — <b>WMB 58.6% · FANG 58.1%</b>가 높고 <b>ET는 16.8%로 최저</b>다.
+<b>🔑 ET 매출 $1,013억에 원자재 매매가 들어가 <u>분모가 부푼다</u></b>(§A7-0) — <b>마진으로 ET를 판단하면 틀린다</b></p>
+<p style="margin-top:8px"><b>📌 그래서 <u>같은 표에 놓되 같은 열로 줄 세우지 않는다</u>(§A5) —
+<b>LNG 수출(VG·LNG)은 계약 물량 · 미드스트림(ET·TRGP·WMB)은 처리량 · E&amp;P(FANG)은 유가</b>다.
+<u>세 사업의 EV/EBITDA를 한 줄로 비교하는 것 자체가 §A7 위반</u>이다.</b></p>
+</div>
+</div></section>
+<section id="s03" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">03</div><h2 class="sec-title">못 잰 것 — 시도 기록을 함께 적는다 (§G)</h2></div>
+<div class="panel">
+<p><b>① <u>VG 주식수</u></b> — <code>companyfacts</code>의 <code>dei</code>에 <b><code>EntityPublicFloat</code>만 있고 <code>SharesOutstanding</code>이 없다</b>.
+<b>클래스 A/B/C/D 구조라 member axis로 들어가 있고 <code>companyfacts</code>가 그것을 버린다.</b>
+<b>→ 「확인할 수 없다」가 아니라 <u>「이 경로로는 안 된다」</u>이며, <b>10-Q 표지·DEF 14A</b>로는 가능하다.</b></p>
+<p style="margin-top:8px"><b>② <u>VG의 4분기 TTM</u></b> — <b>2025년 1월 IPO</b>라 이력 자체가 짧다. <b>분기 현금흐름 공시가 없어 누적을 분해</b>했고,
+<b>온전한 4분기 TTM은 <u>3Q26 공시(10월 말~11월 초) 이후에 처음 만들어진다</u></b>.</p>
+<p style="margin-top:8px"><b>③ 🔴 <u>ET 분배금의 한국 투자자 세후 수취율</u></b> — MLP는 비미국 투자자에게 <b>실효연계소득(ECI) 원천징수</b>와 <b>K-1/K-3</b>가 따라온다(<b>②</b>).
+<b>한·미 조세조약의 MLP 분배금 조항을 확인하지 않았다.</b> <b>FCF 수익률 11.6%가 세후로 얼마가 되는지 이 표에 없다</b> — §I-3 등재.</p>
+<p style="margin-top:8px"><b>④ <u>회사 Adjusted EBITDA</u></b> — 본 편의 EBITDA는 <b>영업이익 + D&amp;A</b>라 <b>Cheniere의 파생 오염을 그대로 물려받는다</b>.
+<b>회사 IR의 조정 EBITDA를 받으면 LNG의 EV/EBITDA 12.17배가 움직인다.</b> <b>안 받았다.</b></p>
+<p style="margin-top:8px"><b>⑤ <u>계약 구조</u></b> — LNG 수출은 <b>장기 계약 비중·take-or-pay 조건</b>이, 미드스트림은 <b>수수료 기반 비중</b>이 실제 안정성을 가른다.
+<b>본 편은 재무제표만 봤고 <u>계약을 안 열었다</u>.</b> <b>메모리 편에서 LTA 조건이 T1을 통째로 바꿨던 것과 같은 자리</b>다.</p>
+<p style="margin-top:12px" class="note">🔑 <b>다섯 다 「확인할 수 없다」가 아니라 <u>「이번에 안 했다」</u></b>이다(§G — 불가 판정에는 시도 기록을 함께 적는다).</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3 style="margin-bottom:8px">⚠ 이 편이 하지 않는 것</h3>
+<p><b>· 유가 전망</b> — FANG의 판정은 유가에 달렸는데 <b>본 아카이브에 유가 판단이 0편</b>이다. <b>방향을 판정하지 않고 노출의 크기만 적는다</b>(§J13과 같은 처리).</p>
+<p><b>· 배당·분배금 수익률 비교</b> — <b>세후 수취율을 모르는 상태에서 세전 수익률을 비교하면 순위가 뒤집힐 수 있다</b>(T5).</p>
+<p><b>· 「독수리 5형제」를 한 덩어리로 읽는 것</b> — <b>사업이 셋으로 갈리고 그중 하나(VG)는 현금 창출 단계도 아니다.</b>
+<b>묶음의 이름이 분석을 대신하지 않는다</b>(§A6 ④ — 수사는 근거로 쓰지 않는다).</p>
+</div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+<div id="recent" style="padding:18px 20px;border-left:4px solid var(--glow);background:rgba(251,191,36,.05);line-height:1.9">
+<div style="font-weight:800;color:var(--glow);margin-bottom:8px">▎최근 변경 · 1건</div>
+<b>2026.09.10 · 🆕 신설 — 「어느 게 제일 매력 있나」에 답하려니 <u>먼저 손익계산서를 검사해야 했다</u></b> <span class="src">① SEC XBRL · ② MLP 과세</span><br>
+&nbsp;&nbsp;<b>ET·FANG이 <u>아카이브 언급 0편</u>이었고 VG는 조선 편에 한 줄뿐이었다. LNG·TRGP만 판단이 있었다.</b><br>
+&nbsp;&nbsp;<b>🔴 §A2-1을 5사에 돌리니 <b>2사가 걸렸다</b> — <b>Cheniere(rCV 1.57 · 매출-영익 r −0.250)</b>와 <b>FANG(2026-03 감액 $14억)</b>.
+<b>아카이브가 Cheniere 하나에서 얻은 결론이 <u>업종 검사로 확장된 것</u>이고, 동시에 <u>「LNG 업종 전체가 아니라 이 회사」</u>임도 확인됐다</b>(VG는 r +0.885로 통과).</b><br>
+&nbsp;&nbsp;<b>🔑 그래서 <u>현금으로 줄 세웠다</u> — FCF 수익률 <b>ET +11.6% · FANG +8.5% · LNG +7.5% · WMB +2.5% · TRGP +1.4%</b>로 <b>8.3배</b> 갈리고,
+<b>가른 것은 마진이 아니라 <u>CapEx ÷ OCF</u></b>(FANG 30% ~ TRGP 76%)다.</b><br>
+&nbsp;&nbsp;<b>🔴 <b>VG는 FCF −$70억 · CapEx/OCF 202%</b>로 <u>같은 표에 놓을 수 없다</u>. <b>TRGP는 EV/EBITDA 12.56배로 비싼데 OCF/영익이 0.95로 유일하게 1 미만</b>이다.</b><br>
+&nbsp;&nbsp;<b>🔴 <u>ET는 MLP</u>라 한국 투자자에게 <b>세후가 미측정</b>이다 — 「세전 현금 1위」로만 적었다. → §I-3 등재</b><br>
+&nbsp;&nbsp;<b>⚠ 검수에서 잡은 것 — <b>WMB 순부채가 처음에 −$20.7억(무차입)</b>으로 나왔다. <code>LongTermDebtNoncurrent</code>가 0이었고 정본은 <code>LongTermDebtAndCapitalLeaseObligations</code>였다(§C1 — 도구는 후보만 좁힌다).</b><br>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="sec-head" style="margin-bottom:12px"><div class="sec-eyebrow">Disclosure</div><h2 class="sec-title" style="font-size:1.3rem">타임라인 · 출처</h2></div>
+<div style="line-height:1.95;font-size:.92rem;color:var(--ink-2)">
+▸ 2026.09.10: <b>🆕 신설.</b> VG·ET·FANG·LNG·TRGP를 <b>SEC XBRL 원문</b>으로 실측하고 <b>WMB를 비교군</b>으로 넣었다.
+<b>T1~T5 신설</b> — ① <b>5사 중 2사의 영업이익이 §A2-1 탐지에 걸린다</b>(Cheniere rCV 1.57·r −0.250 · FANG 감액 $14억)
+② <b>현금으로 줄 세우면 FCF 수익률이 8.3배 갈리고 가른 것은 CapEx÷OCF</b>
+③ <b>VG는 FCF −$70억·CapEx/OCF 202%로 다른 게임</b>
+④ <b>FANG이 배수·재무 둘 다 1위인데 그것이 유가 노출의 대가</b>
+⑤ <b>ET는 MLP라 한국 투자자 세후가 미측정</b>.
+<b>못 잰 것 다섯을 명시했다</b>(VG 주식수·VG TTM·ET 세후·회사 Adjusted EBITDA·계약 구조).<br><br>
+<b>출처</b><br>
+· SEC XBRL <code>companyfacts</code> — <b>①</b> · CIK: VG 2007855 · ET 1276187 · FANG 1539838 · LNG 3570 · TRGP 1389170 · WMB 107263<br>
+· 주가 — 네이버 해외 시세 2026-09-09~10 종가. <b>⚠ 티커 형식이 갈린다: FANG은 <code>.O</code>, TRGP는 <code>.K</code></b><br>
+· MLP 비미국 투자자 과세 — <b>②</b> 일반 서술이며 <b>한·미 조세조약 원문 미확인</b><br>
+· 종목 목록 출처 — @ReturnDriver 게시물(2026-09-10). <b>목표가·분석 없이 종목 나열</b>이므로 <b>④ 수사</b>로 분류하고 <u>근거로 쓰지 않았다</u><br><br>
+<span style="color:var(--ink-3)">전체 아카이브 변경 이력은 <a href="../update_log.html" style="color:var(--accent)">업데이트 로그</a>.
+관련 편 — <a href="../ai-infra/us_ai_adjacent_cross_valuation.html#now" style="color:var(--accent)">미국 AI 인접 크로스 밸류에이션</a> ·
+<a href="../shipbuilding/k_ship_theme_lng_ai_nexus.html#now" style="color:var(--accent)">LNG·AI 넥서스</a></span>
+</div>
+</div></footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다",
+  "description": "VG·ET·FANG·LNG·TRGP를 SEC 원문으로 실측했다. 5사 중 2사의 영업이익이 오염 탐지에 걸렸고, 현금으로 재니 FCF 수익률이 ET 11.6% vs TRGP 1.4%로 8배 갈린다.",
+  "author": {"@type": "Organization", "name": "ourprochoi Research"},
+  "publisher": {"@type": "Organization", "name": "ourprochoi Research Archive"},
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ourprochoi-web.github.io/stock-research/energy/us_energy_five.html"},
+  "keywords": "에너지,LNG,미드스트림,Venture Global,Energy Transfer,Diamondback,Cheniere,Targa,FCF 수익률,EV/EBITDA,MLP"
+}
+</script>
+</body>
+</html>
