@@ -440,7 +440,27 @@ NAV   ▎현재 판단 | 01~0N 본문 | 최근 변경 | 정정 N
 | **삼성전자**(매도) | 2,000억 ÷ 1,517조 = **0.013%** | **1/77** | **−1.18%p** |
 | **소부장 5사**(매수) | 최대 1.4조 ÷ 42.0조 = **3.34%** | **3.3배** | **+10.53 ~ −4.07%p** |
 
-**🔑 문턱이 실제로 갈랐다 — 문턱의 1/11 아래에서는 「1.2조 매도」가 −1.3%p였고, 문턱의 3.3배에서는 두 자릿수가 나왔다.**
+**🔴 [2026-09-11 야간 정정 — <u>장중으로 잰 것을 종가로 다시 재니 결론이 바뀐다</u>. 제정 당시 「종가로 다시 잰다」고 명시했고, 쟀다.]**
+
+| | 장중(09-11 10:07) | **종가** | 차 |
+|---|---|---|---|
+| 티에스이 | +10.53%p | **−0.97%p** | **−11.50%p** |
+| 주성엔지니어링 | +9.98%p | **+3.22%p** | −6.76%p |
+| 코미코 | +2.35%p | +0.92%p | −1.43%p |
+| DB하이텍 | +0.20%p | −3.10%p | −3.30%p |
+| 한미반도체 | −4.07%p | −5.77%p | −1.70%p |
+| **SK하이닉스**(매도) | −1.33%p | **−0.36%p** | +0.97%p |
+| **삼성전자**(매도) | −1.18%p | −1.70%p | −0.52%p |
+
+**매수측 5사 중 왕복 초과수익이 양인 것은 둘뿐이고 <u>두 자릿수는 하나도 없다</u>.**
+**종전 서술 <s>「문턱의 3.3배에서는 두 자릿수가 나왔다」</s>는 <u>당일 스파이크</u>였고 이틀 만에 사라졌다.**
+
+**🔑 그래서 문턱이 가르는 것은 <u>가격이 아니라 「당일 유동성 프리미엄」</u>이다.**
+**리밸런싱 당일(09-09→09-10)에 티에스이 +14.15% · 주성 +7.02%가 난 것은 사실이지만, 왕복 이틀이면 소멸한다.**
+**⚠ 이 정정은 §J8-2를 약화시키지 않고 <u>더 강하게 지지</u>한다 — 순매수는 가격을 <u>지속적으로</u> 설명하지 못한다.**
+**📌 그리고 이것이 §J8-3의 「장중 스냅샷으로 판정하지 않는다」가 <u>실제로 결론을 뒤집은 첫 사례</u>다 — 한쪽은 11.50%p 움직였다.**
+
+**매도측 결론은 유지된다** — 문턱의 1/11·1/77에서 초과수익이 **−0.36%p·−1.70%p**로 작다. **「1.2조 매도」 헤드라인과 실제 영향의 괴리는 종가로도 그대로다.**
 **→ §J8의 크기 문턱은 <u>유지</u>하되, <u>가격 비탄력 수급인지</u>를 먼저 묻는다.** 지수 리밸런싱·강제 청산·의무 공개매수가 그것이고, **일반 외국인 순매도는 아니다**.
 
 **⚠ 그리고 문턱 위라도 <u>종목 선택을 대신하지 못한다</u>** — 매수측 5사의 왕복 초과수익이 **티에스이 +10.53%p · 주성 +9.98%p**인데 **한미반도체 −4.07%p**로 **부호까지 갈렸고**, 당일 급등분은 **5사 중 3사가 하루 만에 전부 반납**했다.
@@ -1215,7 +1235,7 @@ node -e "const t=require('fs').readFileSync('index.html','utf8');eval('var D='+t
 | **의회 PTR** | `disclosures-clerk.house.gov/public_disc/financial-pdfs/{연도}FD.zip` → 인덱스 TXT(`FilingType`=`P`) → `ptr-pdfs/{연도}/{DocID}.pdf` | 계약수·행사가·만기(§J12-2) |
 | **환율** | `api.stock.naver.com/marketindex/exchange/FX_USDKRW/prices?page={n}&pageSize=60` | `localTradedAt`·`closePrice`. **한 번에 720일**. 현물은 `cashBuyValue`/`cashSellValue`(§J13) |
 | **금리** | `fred.stlouisfed.org/graph/fredgraph.csv?id={DGS10\|DGS2\|MORTGAGE30US\|DFF}` | **🔴 FRED는 `Mozilla/5.0`을 차단한다** — 연락처가 든 UA를 쓴다(§J13-1) |
-| **수급 시계열** | `finance.naver.com/item/frgn.naver?code={}&page={n}` | EUC-KR, 20행/쪽. 날짜·종가·거래량·기관/외국인 순매매·보유율(§J8-2) |
+| **수급 시계열** | 🔴 `finance.naver.com/item/frgn.naver`는 **2026-09-11 확인 시 Next.js SPA로 바뀌어 서버 렌더 테이블이 없다**(EUC-KR 파싱 경로 사망). **대체: `m.stock.naver.com/api/stock/{code}/trend?pageSize=30&page={n}`** | JSON. `bizdate`·`closePrice`·`foreignerPureBuyQuant`·`organPureBuyQuant`·`individualPureBuyQuant`·`foreignerHoldRatio`. **값에 쉼표와 `+`가 붙어 있으므로 벗기고 int로 읽는다**(§J8-2) |
 | **임상** | `clinicaltrials.gov/api/v2/studies` | `query.intr`·`query.cond`·`query.spons`·`query.locn`·`filter.advanced=AREA[Phase]PHASE3`·`countTotal=true` |
 | **거시** | BLS 공개 API · BLS QCEW CSV · USAspending | 산업·주별 임금 · 연방 계약의 가격 결정 방식 |
 | **일본 상장사** | TDnet PDF 직링크 | **IR 라이브러리가 아니라 뉴스 페이지에 있다** |
