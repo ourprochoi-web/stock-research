@@ -254,6 +254,31 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🔴 2026.09.12 (6) — <b>C1급 정정 — <u>「18.4GW(2030년)」은 두 연도를 맞바꾼 것이다</u>. 6편 수정 · 구조 감사에서 나왔다</b></div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">AI 인프라</span> 🔴 <b>AIDC 18.4GW는 2030년이 아니라 <u>2035년</u>이다 — 2030은 재생에너지 100GW의 연도였다</b></div>
+    <div class="upd-body">
+      <b>Fable 구조 감사가 「<code>18.4GW</code>가 16편에 있고 연도가 2030·2035로 갈린다」를 잡아냈다. §C1 2단계로 읽어보니 <u>맞고, 더 나쁘다</u>.</b><br>
+      <b style="color:#b3261e">🔴 같은 페이지(<code>ai_korea_g3_sovereign_ai</code>) 안에서 <u>「정부 2035년 18.4GW 목표」와 「AIDC 18.4GW 수요(2030E)」가 공존</u>했고,
+      허브(<code>ai_power_infra_investment_map</code>)도 T2는 2035인데 <u>nav 카드는 2030</u>이었다.</b><br><br>
+      <b>📌 원안을 확인했다(§A1) — 전기국가 비전(2026.06.29)의 구조는 이렇다:</b><br>
+      &nbsp;&nbsp;· <b>1단계 2026~2029년</b> — 약 550조원 투입, <b>8.4GW</b><br>
+      &nbsp;&nbsp;· <b>2단계 2030~2035년</b> — <b>+10GW</b><br>
+      &nbsp;&nbsp;· <b>합계 18.4GW = <u>2035년</u> 완성</b><br>
+      &nbsp;&nbsp;· <b>재생에너지 100GW는 <u>2030년까지</u></b><br>
+      <b style="color:#b3261e">🔑 오류의 기전이 나왔다 — <u>발표에 연도가 둘(18.4GW→2035 · 100GW→2030) 있었고, 5편이 그 둘을 맞바꿔 붙였다</u>.</b>
+      실제로 문장이 <i>「18.4GW (2030년), 재생에너지 100GW 확보 계획」</i> 형태로 <b>두 수치가 나란히</b> 있다 — <b>2030이 뒤 수치의 것이다.</b><br><br>
+      <b>수정 6편</b>(§C3 — 원문은 취소선으로 남겼다) — <code>energy_ess_ai_power</code> · <code>energy_smr_nuclear_ai</code> · <code>energy_transition_update_2h26</code>(2곳) · <code>ai_korea_g3_sovereign_ai</code> · <code>ai_power_infra_investment_map</code>(본문 + nav 카드).<br><br>
+      <b style="color:#b3261e">🔴 그리고 <u>더 큰 것이 하나 더 나왔다 — 숫자 충돌</u></b><br>
+      <b><code>ns_bottleneck_map</code>의 18.4GW는 <u>용인 반도체 15GW + AIDC 3.4GW</u>의 합</b>이다.
+      <b>정부의 18.4GW는 <u>AIDC 단독</u>인데 <b style="color:#b3261e">AIDC 몫이 18.4 vs 3.4로 5.4배 차이</b>이고 총합만 같아 <u>겹쳐 보인다</u>.</b>
+      <b>§A7-0대로 분자 구성을 밝히지 않으면 값이 아니다 — 라벨을 붙이고 「합치거나 서로의 근거로 쓰지 않는다」를 명시했다.</b><br><br>
+      <b>✅ §C1이 또 값을 했다 — grep 후보 중 <u>「SMR 2030년 이후 가동」 뒤에 18.4GW가 나와 딸려 잡힌 오탐</u>이 하나 있었고, 읽어서 걸러냈다.</b>
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🔴 2026.09.12 (5) — <b>물리 층 신설 — <u>아카이브가 MW는 세는데 평·톤·kV는 안 셌다</u></b> · <b>「AI 랙 72kW」가 공식 스펙과 1.67배 어긋난다</b></div>
   <div class="upd">
     <div class="upd-title"><span class="tag">AI 인프라</span> 🔴 <b>돈은 셌고 물리는 안 셌다 — 데이터센터 종합 지도에 <u>00 물리 층</u> 신설</b></div>
