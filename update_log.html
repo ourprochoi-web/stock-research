@@ -254,6 +254,50 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🟢 2026.09.12 (7) — <b>구조 감사 1회차(Fable) — <u>§G 「월 1회 감사 에이전트」의 5주 만의 첫 실행</u></b> · <b>검사 없는 지시 3자리 수선</b></div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> 🔴 <b>§I-1 측정 명령 2건이 <u>자기 자신을 속이고 있었다</u></b></div>
+    <div class="upd-body">
+      <b>감사가 잡고 내가 §C1 2단계로 확인했다.</b><br>
+      <b>① 판단 보유 — <u>93편이 아니라 87편</u>이다.</b> 종전 명령이 <b>문자열</b> <code>'현재 판단'</code>을 세어
+      <i>「현재 판단이 0편이다」</i> 같은 <b>서술까지 6편 과대 계상</b>했다(<code>ai_datacenter_full_map</code>·<code>judgment_board</code>·<code>sector_map</code>·<code>physical_ai_autonomous_mobility</code>·<code>portfolio_tracker</code>·<code>space_company_kr</code>).
+      <b style="color:#b3261e">§G가 <code>[미검증]</code>에서 두 번 겪은 「서술과 미룬 일이 문장으로 구별되지 않는다」의 <u>세 번째 재발</u>이다.</b>
+      <b>날짜 패턴 <code>현재 판단 · [0-9]{4}</code>로 바꾸고 분모를 <u>index DATA 실행값</u>으로 고정했다.</b><br>
+      <b>② 불가 판정 — 후보 54건의 <u>61%가 규칙 자기인용</u></b>(<i>「「확인할 수 없다」가 아니라…」</i>)이었다. <b>페이지가 §G를 인용할수록 지표가 오르는 구조</b>였다.
+      <b>자기인용을 뺀 실질은 <u>21건</u></b>이다. 명령에 <code>grep -v</code> 한 줄을 추가했다.<br>
+      <b>③ 🔴 인라인 마커 측정 신설</b> — <b>「최근 변경 N건」 초과는 0편인데 본문 <code>[2026.MM.DD</code> 마커가 551개</b>이고
+      <b style="color:#b3261e">상위 2편이 220개(40%)</b>다(<code>memory_cycle</code> 72K→472K <b>6.5배</b> · <code>value_chain_guide_v2</code> 133K→511K <b>3.8배</b>, 35일간 약 11KB/일).
+      <b>§0가 막으려던 「업데이트 블록 비대화」가 <u>형태만 바꿔 계속</u>됐고 검출 명령이 없었다.</b> 20개 초과를 뽑는 한 줄을 §I-1에 넣었다.
+    </div>
+  </div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> ✅ <b>§F4 desc 120자 초과 <u>21편 → 0편</u> — journal에 「미룬 것」으로 등록만 돼 있던 §B6 위반을 닫았다</b></div>
+    <div class="upd-body">
+      <b>21/152(13.8%) · 최장 451자</b>였고, <code>docs/rules_journal.md</code>에 <b>「미룬 것 — desc 21편」으로 등록만</b> 돼 있었다 —
+      <b style="color:#b3261e">§B6의 「알면서 안 고친」 형태</b>다. <b>전부 120자 이내로 고쳤다.</b><br>
+      <b>§F4의 취지대로 「카드는 스캔용이지 초록이 아니다」 — <u>가장 판단에 걸리는 사실 하나</u>만 남겼다.</b>
+      예: 메모리 사이클 451자 → <i>「LTA로 하방은 고정됐고 그 대가로 상방을 포기했다…」</i>(T1 그 자체).<br>
+      <b>⚠ 작업 중 두 번 깨뜨렸다</b> — desc 안에 <code>\"곧 공유\"</code> 같은 <b>escape된 따옴표</b>가 있어 비탐욕 정규식이 중간에서 끊겼다.
+      <b>git으로 되돌리고 <u>escape 인지 스캐너</u>로 다시 했다.</b> <b>DATA를 eval해서 검증하고 브라우저로 렌더링까지 확인</b>했다(§F2-1).<br>
+      <b>📌 부수 발견 — hero의 <u>「66 리서치」</u>가 DATA 152편과 안 맞는다</b>(손으로 유지되는 지표 · 결함 3과 같은 형태). <b>이번엔 손대지 않았다.</b>
+    </div>
+  </div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> 📌 <b>감사가 찾은 「검사 없는 지시」 — sitemap 84/113과 같은 형태로 세 자리</b></div>
+    <div class="upd-body">
+      <b>대조군이 선명하다 — <u>훅이 강제하는 4개(dateModified·index updated·sitemap lastmod·update_log 동반)는 전부 불일치 0/152</u></b>인데,
+      <b>강제되지 않는 자리는 이렇다</b>:<br>
+      &nbsp;&nbsp;· <b>§F4 desc 13.8%</b>(21/152) → <b style="color:#059669">오늘 0으로</b><br>
+      &nbsp;&nbsp;· <b>§0 규칙1 테제 3~5개 초과 14.5%</b>(12/83 · 최대 <b>11개</b> <code>us_ai_adjacent_cross_valuation</code>) → <b>판단이 필요해 훅 대상이 아니다</b><br>
+      &nbsp;&nbsp;· <b style="color:#b3261e">§G 주 1회·월 1회 주기 작업 실행 흔적 <u>0회</u>(제정 후 5주)</b> → <b>기록 장소가 규정돼 있지 않아 「안 했다」인지 「안 적었다」인지 갈리지 않는다 — §E3의 「판정 못 할 트리거」에 걸린다</b><br>
+      <b>🔑 오늘 Fable 감사가 <u>§G 「월 1회 감사 에이전트」의 첫 실행</u>인 셈이다.</b><br><br>
+      <b>깨진 내부 링크 1/541 수정</b> — <code>update_log.html</code>(루트)의 <code>../ai-infra/...broadcom</code>이 저장소 밖을 가리켰다.<br>
+      <b>§I-3 헤더 갱신일 09-09 → 09-12</b>(본문엔 09-12 항목이 있었다) · <b><code>CLAUDE.md</code> 크기 기록 갱신</b>(52,981 → 실제 64,000자대).
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🔴 2026.09.12 (6) — <b>C1급 정정 — <u>「18.4GW(2030년)」은 두 연도를 맞바꾼 것이다</u>. 6편 수정 · 구조 감사에서 나왔다</b></div>
   <div class="upd">
     <div class="upd-title"><span class="tag">AI 인프라</span> 🔴 <b>AIDC 18.4GW는 2030년이 아니라 <u>2035년</u>이다 — 2030은 재생에너지 100GW의 연도였다</b></div>
@@ -3930,7 +3974,7 @@ a:hover{text-decoration:underline}
     <div class="upd-body">
       <b>Micron · AMD · SanDisk · Seagate가 전부 「10% 이상 고객 없음」</b>이다 — <u>한국에서 <b>브이엠 100%(2사) · 테스 94.5%(2사)</b>였던 것과 대조</u>된다. <b>같은 메모리·반도체인데 미국 쪽이 고객이 훨씬 분산</b>돼 있다.<br>
       <b>🔴 반대로 집중이 극단적인 곳은 <u>AI 신생·인터커넥트</u></b>다 — Credo 90% · Cerebras 78% · Broadcom 42%. <u>성장률이 가장 높은 자리가 집중도도 가장 높다</u>.<br>
-      <b>🔑 Broadcom 42%는 아카이브 <a href="../ai-infra/ai_chip_company_broadcom.html">브로드컴 편 T3</a>(「29% → 42%」)를 <u>원문으로 확인</u></b>한 것이다.<br>
+      <b>🔑 Broadcom 42%는 아카이브 <a href="ai-infra/ai_chip_company_broadcom.html">브로드컴 편 T3</a>(「29% → 42%」)를 <u>원문으로 확인</u></b>한 것이다.<br>
       <b>🟢 Western Digital이 이 축의 값을 보여준다</b> — 원문이 <i>「For 2024, no single customer accounted for 10% or more」</i>라 명시하는데 <u>1년 만에 3사 39%가 됐다</u>. <b>집중도는 고정값이 아니라 변하는 축이고, 그 변화가 곧 사업 구조의 변화</b>다.<br>
       <b>⚠ 미검출 40사를 「집중도가 낮다」로 읽지 않는다</b>(§G) — <b>방산은 고객이 미 정부 · 결제는 가맹점 · 규제 유틸리티는 지역 독점</b>이라 <u>개념 자체가 다르다</u>. <b>NVIDIA·Alphabet·Amazon·Microsoft는 10-Q·10-K를 둘 다 훑었으나 못 찾았고, 이는 「없다」가 아니라 「이 방법으로 못 찾았다」</b>이다.
     </div>
