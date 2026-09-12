@@ -418,6 +418,50 @@ a{color:var(--deep)}
 </div>
 
 <div class="layer gap">
+  <div class="lh"><span class="lnum">00</span><span class="lname">🔴 물리 — 아카이브가 MW는 세는데 평·톤·kV는 안 셌다</span><span class="lsrc">2026.09.12 신설</span></div>
+  <div class="lbody">
+    <div class="row"><div class="rk">🔴 공백</div><div class="rv">
+      <span class="new">NEW</span><b>이 지도를 포함해 아카이브 전체가 <u>「MW당 몇 억원」은 10편에서 세는데</u>
+      <b>「1MW를 담으려면 몇 평·몇 톤·몇 kV가 필요한가」는 0편</b>이었다.</b>
+      <b>실측: 랙밀도 0편 · 데이터홀 0편 · 화이트스페이스 0편 · 로딩독 0편 · POE 0편 · MW당 연면적 0편 · 22.9kV 0편.</b><br>
+      <b>🔑 돈은 셌고 <u>물리는 안 셌다</u>.</b> <b>그런데 「18.4GW 수요」를 랙 몇 개로 환산하려면 랙밀도가 있어야 하고,
+      <u>랙 무게는 건물 하중 = 건설 단가</u>로 직결된다(<a href="kr_construction_datacenter.html#now">건설 편</a> T3와 같은 축).</b>
+    </div></div>
+    <div class="row"><div class="rk">🔴 랙밀도</div><div class="rv">
+      <b style="color:#b3261e">「AI 서버 랙 = 72kW」가 널리 인용되는데 <u>NVIDIA 공식 스펙은 120kW</u>다.</b>
+      <b>GB200 NVL72: 정격 <u>120kW</u> · TDP 132kW · 피크(EDPp) 약 <u>192kW</u> · 무게 <u>1.36톤(3,000lb)</u> · 600×1,068×2,236mm</b>(<b>①</b> 벤더 스펙).<br>
+      <b style="color:#b3261e">🔑 <u>「NVL72」의 72는 GPU 개수이지 kW가 아니다</u> — 이름이 겹쳐 혼동되기 쉽고, 실제로 2차 정리물에서 그렇게 쓰인다(<b>②</b>).</b><br>
+      <b>📐 100MW로 환산하면 크기가 보인다(§A7-0)</b> —
+      <b>72kW 가정 → 랙 1,389개</b> vs <b>120kW 실제 → 833개</b>로 <b style="color:#b3261e">40% 줄어든다</b>.
+      <b><u>랙 수로 설계하면 전력이 67% 모자라고, 전력으로 설계하면 상면이 남는다</u>.</b>
+    </div></div>
+    <div class="row"><div class="rk">하중</div><div class="rv">
+      <b>랙 1개 1,360kg ÷ 바닥면적 0.641㎡ = <u>2,122 kg/㎡</u></b>이고,
+      통로를 포함한 실효 점유면적(랙 피치 1.2m × 열간 2.4m 가정)으로 나눠도 <b><u>944 kg/㎡</u></b>다.<br>
+      <b>일반 사무용 설계하중(통상 300kg/㎡)의 <u>3.1배</u></b>이며, <b>이것이 데이터홀 구조 단가를 가른다</b>.
+      <span class="src">⚠ 피치·열간은 <b>[추론] 가정</b>이다 — 실제 배치는 냉각 방식(액냉/공냉)에 따라 갈린다. <b>반증: 시공사 설계 기준 공시</b></span>
+    </div></div>
+    <div class="row"><div class="rk">상면</div><div class="rv">
+      <b>「MW당 약 300평」</b>이 국내 실무 경험칙으로 쓰인다(<b>②</b> 개인 정리 · <b>원 출처 미확인</b>) — 100MW면 <b>30,000평 = 99,174㎡</b>.<br>
+      <b style="color:#b3261e">⚠ 이 계수는 <u>랙밀도와 독립일 수 없다</u> — 72kW → 120kW면 같은 MW에 랙이 40% 적으므로 상면도 줄어야 산술이 맞는다.
+      <u>「MW당 300평」이 어느 랙밀도 기준인지 안 밝혀져 있고, 밝히지 않으면 값이 아니다</u>(§A7-0).</b><br>
+      <b>📌 채점표 — <u>「국내 신규 AIDC 인허가 공시에서 연면적 ÷ 계약전력이 300평/MW 아래로 내려오는가」</u>. 내려오면 밀도 상승이 상면으로 확인된 것이다.</b>
+    </div></div>
+    <div class="row"><div class="rk">전기</div><div class="rv">
+      <b>국내 수전 전압은 <u>22.9kV 또는 154kV</u></b>이고 <b>초고압일수록 지중 인입 공사비가 커지며 변전소까지의 거리에 비례</b>한다(<b>②</b>).
+      <b>같은 도로를 3년 이내 재굴착 금지</b> 같은 제약이 실제 병목으로 작동한다.<br>
+      <b>🔑 아카이브에 <u>154kV는 3편</u>에 있는데 <u>22.9kV는 0편</u>이었다 — 대용량만 세고 중용량 급지를 안 셌다.</b>
+      <span class="src">⚠ 전부 <b>②</b>(2차 정리물)이고 <b>한전 기준 원문 미대조</b>다. <b>①로 올리려면 한전 「전기공급약관」·지중화 단가표가 필요하다</b>(§G — 안 한 것이지 못 하는 것이 아니다)</span>
+    </div></div>
+    <div class="row"><div class="rk">📌 판정</div><div class="rv">
+      <b>이 층은 <u>종목을 고르는 축이 아니라 다른 층의 수치를 검산하는 축</u>이다.</b>
+      <b>「18.4GW」·「6.3GW 엔시날」·「850MW 인도」 같은 값이 들어올 때 <u>랙 수·상면·하중으로 환산해 말이 되는지 본다</u>.</b><br>
+      <b>⚠ 그래서 여기에 <u>종목을 붙이지 않는다</u>(§B4).</b>
+    </div></div>
+  </div>
+</div>
+
+<div class="layer gap">
   <div class="lh"><span class="lnum">08</span><span class="lname">운영 · REIT — 판단이 0편이다</span><span class="lsrc">비교용 인용만 3편</span></div>
   <div class="lbody">
     <div class="row"><div class="rk">아카이브</div><div class="rv">
@@ -568,7 +612,7 @@ a{color:var(--deep)}
 {"@context":"https://schema.org","@type":"Article",
 "headline":"데이터센터 종합 지도 — 아카이브가 아는 것 전부",
 "description":"AI 데이터센터를 9개 층으로 종합. 각 층의 정본 위치·핵심 수치·판정 조건과 비어 있는 곳을 함께 표시한다.",
-"datePublished":"2026-08-18","dateModified":"2026-09-11",
+"datePublished":"2026-08-18","dateModified":"2026-09-12",
 "author":{"@type":"Organization","name":"ourprochoi Research"},
 "publisher":{"@type":"Organization","name":"ourprochoi Research"},
 "mainEntityOfPage":"https://ourprochoi-web.github.io/stock-research/ai-infra/ai_datacenter_full_map.html"}
