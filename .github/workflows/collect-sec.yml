@@ -1,0 +1,33 @@
+name: Collect SEC XBRL (intake)
+
+# 2026-09-13: 수집 층 주문형 수집. 세션 샌드박스는 data.sec.gov 가 막혀 있어 여기서 받는다.
+# 판단은 하지 않는다 — intake/files/sec/*.json 에 슬림 스냅샷, intake/collected.jsonl 에 한 줄.
+on:
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "공백으로 구분한 티커 목록 (예: XOM CVX EQT)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch companyfacts
+        run: python3 intake/collect_sec.py ${{ inputs.tickers }}
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add intake/collected.jsonl intake/files/sec
+          git diff --cached --quiet && exit 0
+          git commit -m "📥 intake: SEC XBRL ${{ inputs.tickers }} ($(date +%Y-%m-%d))"
+          git push
