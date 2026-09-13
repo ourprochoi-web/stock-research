@@ -254,13 +254,21 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
-  <div class="day-date">🟢 2026.09.13 (2) — <b>미국 에너지 패권 시나리오 18사 신설</b> · <b>세 층 절차 두 번째 실행(SEC 수집은 GitHub Actions 우회)</b></div>
+  <div class="day-date">🟢 2026.09.13 (2) — <b>미국 에너지 패권 시나리오 18사 신설</b> · <b style="color:#b3261e">5사 편 C1 정정</b> · <b>세 층 절차 두 번째 실행(SEC 수집은 GitHub Actions 우회)</b></div>
   <div class="upd">
     <div class="upd-title"><span class="tag">신규</span> 🆕 <b><a href="energy/us_energy_hegemony_17.html#now">미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다</a></b></div>
     <div class="upd-body">
       사용자가 받은 시나리오 메모(「중동·베네수엘라의 대중 수출 차단 → 미국을 최대 수출국으로 → 셰일+LNG」)의 18사를 <b>SEC XBRL TTM(FY25−YTD25+YTD26)</b>으로 세웠다. 샌드박스가 SEC·EIA·FRED를 전부 막아 <b><code>intake/collect_sec.py</code>를 GitHub Actions 푸시 트리거로 돌려</b> 스냅샷을 받았다(세션 토큰은 dispatch 403).<br>
       <b>결론</b> — 시나리오가 파는 것은 <b>물량</b>(LNG 수출·미드스트림)인데 목록의 13사는 <b>가격</b>(업스트림)에 걸린다. 전제 셋 중 <b>둘은 이미 사실</b>(미국 = 최대 LNG·석유 수출국 · 이란→중국 −48%)이고 <b>하나는 반대</b>(중국은 미국 LNG를 2025-02 이후 안 산다). FCF 수익률은 <b>MTDR 14.0% · EXE 13.3% · PR 11.7% · FANG 11.5% · EQT 10.9%</b> 상위, <b>TRGP 1.2% · WMB −0.1% · VG −18%</b> 하위 — 높은 쪽은 유가 리스크의 대가, 낮은 쪽은 재투자의 대가.<br>
       <b>등급</b> — 현금 값 ① · 시총 6사 ① 11사 ② · 전제 수치 ②(에이전트 relay · EIA id 기록) · 메모 ④. <b>부산물로 5사 편 C1급 정정</b>(아래 · 별도 커밋).
+    </div>
+  </div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">정정</span> 🔴 <b><a href="energy/us_energy_five.html#now">미국 에너지 5사</a> — C1급 정정: TTM 현금 값이 VG 외 5사 전부에서 창 오류</b></div>
+    <div class="upd-body">
+      18사 편을 같은 방법(FY25 − YTD25 + YTD26)으로 세우다 발견했다. <b>원인</b> — 신설 당시 4개 분기를 더하면서 <b>Q4'25(= FY25 − 9M25) 대신 Q2'25를 넣었다</b>. FANG의 Q4'25 영업이익 <b>−$27.8억</b>(감액 $36.5억)이 통째로 빠져 「보고 TTM 영업이익 $50.03억」이 실제 <b>$10.82억</b>이었고, ET·LNG·TRGP·WMB의 OCF·CapEx도 전부 어긋났다. TRGP 순부채는 WMB와 같은 태그 함정(77→189억$).<br>
+      <b>판단 영향</b> — FCF 수익률 1위 <b>ET 11.6% → FANG 11.5%</b>(ET는 7.0%) · WMB는 +2.5% → <b>−0.1%</b>(CapEx/OCF 102%) · 「TRGP만 OCF/영익 1 미만」은 틀림(TRGP 1.12 · <b>LNG 0.96</b>) · FANG §A2-1 판정 🟠 → <b>🔴</b>(rCV 1.96 · 부호 전환 2회) · FANG 「배수 최저」는 감액 조정(6.1배)일 때만. <b>T1·T2·T4·T5 정정 · T3(VG) 유지</b> — VG는 값이 맞았다.<br>
+      <b>처리</b> — 배너 + 표 ①② 취소선 + 본문 교체 + 별도 커밋(§W4 C1). 정본 값은 <code>brain/facts.json</code>(산출 페이지는 18사 편). <b>재발 방지는 규칙이 아니라 절차</b>다 — 스냅샷을 <code>intake/files/sec/</code>에 남기고 TTM은 누적 차분으로만 만든다(이번에 재현이 됐던 이유).
     </div>
   </div>
 </div>

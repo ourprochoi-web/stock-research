@@ -4128,6 +4128,17 @@
      "grade": "①",
      "source": "① prices.json 09-11",
      "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 3.99,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) · D&A는 FY25 DepreciationAndAmortization 5,682 − 1H25 DDA 2,751 + 1H26 DDA 3,158 = 6,089",
+     "asof": "2026-06-30",
+     "num": "순부채 67,402",
+     "den": "영업이익 10,784 + D&A 6,089 = 16,873",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
     }
    },
    "intake": [
