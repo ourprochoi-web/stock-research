@@ -272,7 +272,7 @@
 
 
 <b>T2. 🔴 <u>위험은 「기술 수준」이 아니라 <b>물리적으로 지울 수 있느냐</b>가 정한다 — 그리고 병목은 <u>못 지우는 쪽</u>에 있다</u>.</b><br>
-&nbsp;&nbsp;<b>LPO/CPO 전환의 본질은 <u>전력을 아끼려고 부품을 하나씩 지우는 것</u>이다. GB200 NVL72 랙이 <b>72kW</b>인데 광 링크가 클러스터 전력의 상당 부분을 먹는다.</b><br>
+&nbsp;&nbsp;<b>LPO/CPO 전환의 본질은 <u>전력을 아끼려고 부품을 하나씩 지우는 것</u>이다. GB200 NVL72 랙이 <s>72kW</s> <b style="color:#f87171">🔴 [09.13 C1급 정정] <u>정격 120kW</u></b>(TDP 132kW · 피크 192kW · <b>①</b> 공식 스펙 — <a href="ai_datacenter_full_map.html" style="color:var(--accent)">종합 지도 물리 층</a>이 09.12에 확정했는데 이 편은 그대로 남아 있었다. <b>T2의 논지(전력을 아끼려 부품을 지운다)는 값이 커질수록 강해지므로 방향은 안 바뀐다</b>)인데 광 링크가 클러스터 전력의 상당 부분을 먹는다.</b><br>
 &nbsp;&nbsp;<table style="width:100%;border-collapse:collapse;font-size:.92rem;margin:.6em 0">
 <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:7px">부품</th><th style="padding:7px">지울 수 있나</th><th style="text-align:left;padding:7px">이유</th></tr>
 <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px"><b>광 DSP</b></td><td style="padding:7px;text-align:center"><b style="color:#f87171">지울 수 있다</b></td><td style="padding:7px">신호 보정을 스위치 SerDes가 대신할 수 있다 = LPO</td></tr>
@@ -416,6 +416,7 @@
 <footer><div class="wrap">
 <div class="sec-head" style="margin-bottom:12px"><div class="sec-eyebrow">Disclosure</div><h2 class="sec-title" style="font-size:1.3rem">타임라인 · 출처</h2></div>
 <div style="line-height:1.95;font-size:.92rem;color:var(--ink-2)">
+▸ 2026.09.13: <b>🔴 C1급 정정</b> — T2의 「NVL72 랙 72kW」를 <b>정격 120kW</b>로. 종합 지도 물리 층(09.12)이 6편을 고칠 때 이 편이 빠져 있었고, <a href="optical_valuechain_primer.html" style="color:var(--accent)">입문 편</a>을 쓰다가 대조에서 잡혔다. 논지 불변.<br>
 ▸ 2026.09.12: <b>🆕 신설.</b> 광 연결 밸류체인 <b>9사</b>(Credo·Semtech·Marvell·Astera·Coherent·Lumentum·Fabrinet·AAOI·MACOM)를 <b>층 지도 + TTM 실측 + 밸류에이션</b>으로 세웠다.
 <b>정본 관계(§B5)</b> — 국내 광은 <a href="kr_cooling_optical_layer.html#now" style="color:var(--accent)">냉각·광 계층 편</a>, 마벨 개별은 <a href="ai_chip_company_marvell.html#now" style="color:var(--accent)">마벨 편</a>, LPO 주장 검증은 <a href="optical_interconnect_layer.html#now" style="color:var(--accent)">광 연결 계층 편</a>이 정본이다.<br><br>
 <b>출처</b><br>
@@ -441,7 +442,7 @@
   "author": {"@type": "Organization", "name": "ourprochoi Research"},
   "publisher": {"@type": "Organization", "name": "ourprochoi Research Archive"},
   "datePublished": "2026-09-12",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-09-13",
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/optical_valuechain_9.html"},
   "keywords": "광통신,광모듈,LPO,CPO,AEC,SerDes,Credo,Semtech,Lumentum,Coherent,Fabrinet,Astera Labs,MACOM,Ciena,밸류에이션"
 }
