@@ -281,6 +281,18 @@ a:hover{text-decoration:underline}
     </div>
   </div>
   <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> 🧠 <b>두 층 구조 확정 — <code>brain/</code>이 정본, 리서치 페이퍼는 사용자가 읽는 뷰</b> · 광통신 3편 카드 전환</div>
+    <div class="upd-body">
+      <b>사용자 결정</b> — <i>「네가 계속 정보를 정리하고 업데이트하는 층이 필요하다. 리서치 페이퍼는 웹에서 내가 보는 것」</i>.
+      <b>실측</b>: 판단 블록 중앙값 2,858자 · 8편이 8,000자 초과 · 최대 24,578자 · 테제가 정확히 5개인 페이지 45편 · 판단 블록 안에 날짜 블록이 2,000자 넘게 붙는 형태.<br>
+      <b>구조</b> — <code>brain/</code> 여섯 파일(theses 87편 363테제 · facts 25사 164값 · inbox · entities 25사 · events 19건 · open 20건). <b>정보가 오면 브레인만 고치고 페이지는 테제 상태가 바뀔 때만 연다.</b>
+      페이지 상단 「현재 판단 카드」는 <code>render_cards.py</code>가 <code>theses.json</code>에서 렌더하고 pre-commit이 동기화한다 — <b>카드가 거기서 나오므로 브레인은 죽을 수 없다</b>(ground_truth.yaml 선례와의 차이).<br>
+      <b>첫 전환 3편</b> — <a href="ai-infra/optical_valuechain_9.html#now">9사 밸류체인</a> · <a href="ai-infra/optical_interconnect_layer.html#now">연결 계층</a> · <a href="ai-infra/kr_cooling_optical_layer.html#now">냉각·광</a>. 종전 판단 블록은 <b>00절로 옮겨 무손실</b>. 카드는 테제당 4줄(주장·근거·반증·판정).
+      <code>data/facts.json</code>은 <code>brain/facts.json</code>으로 이동. <code>docs/backlog.md</code>의 판정 이벤트·미착수 표는 <code>brain/events.json</code>·<code>open.json</code>으로 이동.<br>
+      <b>규칙</b> — §H1 「새 레지스트리 금지」→「브레인 밖에 새 저장소 금지」 · §R2·§W1 두 층에 맞게 개정(15조항 유지). <b>생존 판정 2026-10-13</b>: 카드 전환이 3편 그대로이거나 inbox가 비어 있으면 실패.
+    </div>
+  </div>
+  <div class="upd">
     <div class="upd-title"><span class="tag">규칙</span> 🆕 <b>수치 층 <code>data/facts.json</code> 시범 — 광통신 25사 · 164값. <u>페이지 산문에 흩어진 확정 지표의 정본</u></b></div>
     <div class="upd-body">
       <b>실측</b> — 161편 중앙값 50KB인데 <b>본문 텍스트는 39%</b> · 수치는 HTML 표 797개 안에만 · 같은 값이 <b>「4.11배」 8편 · 「46.2%」 8편</b>에 하드코딩 · 커밋당 수정 페이지 중앙값 1편.

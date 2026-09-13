@@ -1,0 +1,123 @@
+{
+ "_readme": {
+  "what": "판정 이벤트 일정. 날짜가 아니라 이벤트로 건다. 도래하면 판정하고 이 목록에서 지운다 — 지우는 것이 판정의 일부",
+  "done_log": "판정 결과는 inbox.jsonl 에 verdict 로 남긴다",
+  "seeded": "2026-09-13 · docs/backlog.md 표에서 이동 + 광통신 3편 카드의 event"
+ },
+ "events": [
+  {
+   "when": "2026-09-17/18",
+   "what": "FOMC — 금리보다 발언 톤. 30년물은 5.25% 위에서 맞는다(FRED 07-31 첫 돌파 · 최신 5.280%)",
+   "judges": "macro",
+   "grade": "①"
+  },
+  {
+   "when": "2026-09-18",
+   "what": "대미투자 공식 발표 — 원전 8기 포함 여부. 원전·SMR 편 T1·T3",
+   "judges": "ai-infra/ai_power_company_nuclear_smr.html#T1,T3",
+   "grade": "②"
+  },
+  {
+   "when": "2026-09말~10월중",
+   "what": "3Q26 프리뷰 — SK하이닉스 추정PER 4.71배가 전제하는 「이 이익이 오래 안 간다」의 첫 검증",
+   "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html",
+   "grade": "②"
+  },
+  {
+   "when": "2026-10 이내",
+   "what": "HD현대중공업 Corban 선수금 20%(약 1,912억) 수령 공시 — 계약일 08-07 이후 미발화. 미수령이면 계약 취소 가능",
+   "judges": "shipbuilding",
+   "grade": "②"
+  },
+  {
+   "when": "2026-10-13",
+   "what": "브레인 층 생존 판정 — facts 에 추가된 회사가 25사 그대로면 §H 선례와 같은 실패로 보고 폐기 논의",
+   "judges": "brain",
+   "grade": "—"
+  },
+  {
+   "when": "2026-10말~11월초",
+   "what": "키옥시아 2Q FY2027 — 5조 엔의 단독 몫과 기간 시작 연도 · 분기 유형자산 취득 700억엔",
+   "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "grade": "②"
+  },
+  {
+   "when": "2026-11(경)",
+   "what": "Lumentum FY27 Q1 — GPM 47.4%·OPM 27.7% 유지 여부",
+   "judges": "ai-infra/optical_valuechain_9.html#T2,T3",
+   "grade": "①"
+  },
+  {
+   "when": "2026-11(경)",
+   "what": "Coherent FY27 Q1 — DC&C 성장률·Industrial 방향·조정 OPM",
+   "judges": "ai-infra/optical_valuechain_9.html#T4",
+   "grade": "①"
+  },
+  {
+   "when": "2026-11(경)",
+   "what": "Credo FY27 Q2 — 광 매출 구성·SBC/매출·재고 증가율·가이던스 $525~535M",
+   "judges": "ai-infra/optical_interconnect_layer.html#T1,T2,T5",
+   "grade": "①"
+  },
+  {
+   "when": "2026-11 중순",
+   "what": "3Q26 — 건설 「매출이 함께 도는가」 · 오스코텍 마일스톤 없는 분기 · 리가켐 원천기술 비중 · 지엔씨에너지 계약부채 614억 · 국내 냉각·광 10사 YoY(적자 3사 흑전 여부)",
+   "judges": "multi · ai-infra/kr_cooling_optical_layer.html#T1",
+   "grade": "①"
+  },
+  {
+   "when": "2026-11 중순",
+   "what": "13F(3Q26) — 광통신 9사·연결 4사 기관 포지션. 45일 지연·롱온리",
+   "judges": "research/13f_2026q2.html",
+   "grade": "①"
+  },
+  {
+   "when": "2026-11 QRA",
+   "what": "장기 국채 발행 비중이 실제로 축소되는가 — 「AI로 부채를 푼다」 논지의 유일한 판정 지점",
+   "judges": "macro",
+   "grade": "①"
+  },
+  {
+   "when": "2026-12-18",
+   "what": "BIOSECURE OMB 목록(법정 시한) — 우시 포함 여부",
+   "judges": "ai-bio",
+   "grade": "①"
+  },
+  {
+   "when": "4Q26",
+   "what": "삼성SDI 선그로우 본계약 · 알테오젠 중국 대상 계약(T3 반증)",
+   "judges": "energy · ai-bio",
+   "grade": "②"
+  },
+  {
+   "when": "2027-1Q",
+   "what": "루빈 CPX 양산 — 랙 단위 총 HBM GB",
+   "judges": "hbm-packaging",
+   "grade": "②"
+  },
+  {
+   "when": "2027 상반기",
+   "what": "한미 HM15275 임상 2상 종료",
+   "judges": "glp1",
+   "grade": "①"
+  },
+  {
+   "when": "2027 3~4월",
+   "what": "INNOLIGHT·EOPTOLINK 연차보고서 — 해외 94.8%의 홍콩 분해 여부 · InnoLight GPM 46%대 유지 여부",
+   "judges": "ai-infra/optical_valuechain_9.html#T1 · national-strategy/ns_cn_global_reach_paper.html#T2",
+   "grade": "①"
+  },
+  {
+   "when": "2027 말",
+   "what": "HD현대중공업 신규 3.0GW 발전엔진 공장분의 AIDC 수주 — 0이면 「두 건짜리 특수」 확정. 공장 완공 2028-05-31",
+   "judges": "shipbuilding",
+   "grade": "②"
+  },
+  {
+   "when": "FY28",
+   "what": "Ciena 데이터센터 내부(Nubis AEC·XPO) 매출 인식 여부 — 시스템 벤더의 칩 층 진입",
+   "judges": "ai-infra/optical_valuechain_9.html#T5",
+   "grade": "③"
+  }
+ ]
+}

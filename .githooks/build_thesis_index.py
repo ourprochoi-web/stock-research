@@ -8,6 +8,7 @@ CLAUDE.md §H 의 기준을 통과하는 이유 — 새 데이터를 만들지 �
 """
 import glob
 import html as htmlmod
+import json
 import io
 import re
 import sys
@@ -98,10 +99,34 @@ def parse(path):
     )
 
 
+def from_brain():
+    """card:true 페이지는 HTML 을 파싱하지 않고 brain/theses.json 을 그대로 쓴다(정본)."""
+    try:
+        doc = json.load(io.open("brain/theses.json", encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for path, pg in doc.get("pages", {}).items():
+        if not pg.get("card"):
+            continue
+        dm = ""
+        try:
+            m = DM.search(io.open(path, encoding="utf-8", errors="ignore").read())
+            dm = m.group(1) if m else ""
+        except OSError:
+            pass
+        out[path] = dict(path=path, title=pg.get("title", path), judged=pg["judged"].replace("-", "."), modified=dm,
+                         one=pg.get("one", ""), theses=[(t["id"], f'{t["claim"]} [{t.get("status", "유지")}]') for t in pg.get("theses", [])],
+                         fals=[(t["id"], t["falsifier"]) for t in pg.get("theses", []) if t.get("falsifier")],
+                         nexts=list(pg.get("next", []))[:4])
+    return out
+
+
 def main():
-    pages = []
+    brain = from_brain()
+    pages = list(brain.values())
     for f in sorted(glob.glob("*/*.html")):
-        if "update_log" in f:
+        if "update_log" in f or f in brain:
             continue
         p = parse(f)
         if p:
@@ -109,7 +134,7 @@ def main():
     pages.sort(key=lambda p: p["judged"], reverse=True)
 
     out = []
-    out.append("# 테제 색인 — 정본은 페이지다\n")
+    out.append("# 테제 색인 — 정본은 brain/theses.json(카드 페이지) · 나머지는 페이지\n")
     out.append(f"자동 생성 · {date.today().isoformat()} · 판단 보유 {len(pages)}편 · "
                "생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)\n")
     out.append("**용도** — 종목·테마 질문을 받으면 이 파일에서 해당 테제를 찾고, "
