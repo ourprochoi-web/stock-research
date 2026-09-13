@@ -10,7 +10,8 @@
   ],
   "created": "2026-09-13",
   "scope": "ai-infra/optical_valuechain_9 · optical_interconnect_layer · kr_cooling_optical_layer 3편이 확정한 값 + 정본 포인터",
-  "not_here": "시세는 portfolio/data/prices.json · 테제는 docs/thesis_index.md"
+  "not_here": "시세는 portfolio/data/prices.json · 테제는 docs/thesis_index.md",
+  "intake": "companies.<tk>.intake = 이 회사의 값이 나온 수집 항목 id(intake/collected.jsonl · user.jsonl). 값을 고칠 때 그 조각을 다시 연다"
  },
  "companies": {
   "ALAB": {
@@ -186,7 +187,12 @@
      "source": "SEC 10-K/10-Q XBRL",
      "page": "ai-infra/optical_interconnect_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "CRDO": {
    "name": "Credo",
@@ -383,7 +389,12 @@
      "source": "네이버 미국 일봉",
      "page": "ai-infra/optical_interconnect_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "MTSI": {
    "name": "MACOM",
@@ -470,7 +481,12 @@
      "page": "ai-infra/optical_valuechain_9.html",
      "note": "같은 층 안에서만 비교(9사 편 T5)"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "SMTC": {
    "name": "Semtech",
@@ -691,7 +707,12 @@
      "source": "10-Q 고객집중도 주석",
      "page": "ai-infra/optical_interconnect_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "MRVL": {
    "name": "Marvell",
@@ -900,7 +921,12 @@
      "page": "ai-infra/optical_interconnect_layer.html"
     }
    },
-   "canonical_page_company": "ai-infra/ai_chip_company_marvell.html"
+   "canonical_page_company": "ai-infra/ai_chip_company_marvell.html",
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "LITE": {
    "name": "Lumentum",
@@ -1032,7 +1058,12 @@
      "source": "네이버 미국 시세",
      "page": "ai-infra/optical_valuechain_9.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "COHR": {
    "name": "Coherent",
@@ -1176,7 +1207,12 @@
      "source": "10-K",
      "page": "ai-infra/optical_valuechain_9.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "AAOI": {
    "name": "Applied Optoelectronics",
@@ -1263,7 +1299,12 @@
      "page": "ai-infra/optical_valuechain_9.html",
      "note": "같은 층 안에서만 비교(9사 편 T5)"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "FN": {
    "name": "Fabrinet",
@@ -1384,7 +1425,12 @@
      "page": "ai-infra/optical_valuechain_9.html",
      "note": "선수금이 사실상 없다 = 순수 EMS의 계정 지문"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "300308.SZ": {
    "name": "InnoLight",
@@ -1462,7 +1508,11 @@
      "page": "ai-infra/kr_cooling_optical_layer.html",
      "note": "홍콩 분해 여부 미확인(중국 84사 편 T2)"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-03",
+    "c-20260906-02"
+   ]
   },
   "300502.SZ": {
    "name": "Eoptolink",
@@ -1539,7 +1589,11 @@
      "source": "연차보고서",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-03",
+    "c-20260906-02"
+   ]
   },
   "300394.SZ": {
    "name": "T&S",
@@ -1605,7 +1659,11 @@
      "source": "eastmoney RPT_LICO_FN_CPD",
      "page": "ai-infra/optical_valuechain_9.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-03",
+    "c-20260906-02"
+   ]
   },
   "010170": {
    "name": "대한광통신",
@@ -1670,7 +1728,10 @@
      "source": "네이버 분기 재무(확정 · isConsensus=N)",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260906-01"
+   ]
   },
   "088800": {
    "name": "에이스테크",
@@ -1735,7 +1796,10 @@
      "source": "네이버 분기 재무(확정 · isConsensus=N)",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260906-01"
+   ]
   },
   "138080": {
    "name": "오이솔루션",
@@ -1800,7 +1864,10 @@
      "source": "네이버 분기 재무(확정 · isConsensus=N)",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260906-01"
+   ]
   },
   "046970": {
    "name": "우리로",
@@ -1865,7 +1932,10 @@
      "source": "네이버 분기 재무(확정 · isConsensus=N)",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260906-01"
+   ]
   },
   "380540": {
    "name": "옵티코어",
@@ -1930,7 +2000,10 @@
      "source": "네이버 분기 재무(확정 · isConsensus=N)",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260906-01"
+   ]
   },
   "CIEN": {
    "name": "Ciena",
@@ -1994,7 +2067,11 @@
      "source": "JP모건 노트",
      "page": "ai-infra/kr_cooling_optical_layer.html"
     }
-   }
+   },
+   "intake": [
+    "u-20260904-02",
+    "c-20260911-01"
+   ]
   },
   "TEL": {
    "name": "TE Connectivity",
@@ -2014,7 +2091,12 @@
      "source": "10-Q MD&A",
      "page": "ai-infra/us_ai_adjacent_sectors.html"
     }
-   }
+   },
+   "intake": [
+    "c-20260912-01",
+    "c-20260912-02",
+    "c-20260911-01"
+   ]
   },
   "GLW": {
    "name": "Corning",
@@ -2023,7 +2105,8 @@
    "layer": "광섬유·커넥터",
    "canonical_page": "ai-infra/us_vertiv_corning_deep.html",
    "metrics": {},
-   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
+   "intake": []
   },
   "APH": {
    "name": "Amphenol",
@@ -2032,7 +2115,8 @@
    "layer": "커넥터·케이블",
    "canonical_page": "ai-infra/us_ai_adjacent_sectors.html",
    "metrics": {},
-   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
+   "intake": []
   },
   "AVGO": {
    "name": "Broadcom",
@@ -2041,7 +2125,8 @@
    "layer": "스위치 칩·광DSP·레이저·CPO",
    "canonical_page": "ai-infra/ai_chip_company_broadcom.html",
    "metrics": {},
-   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
+   "intake": []
   },
   "NVDA": {
    "name": "NVIDIA",
@@ -2050,7 +2135,8 @@
    "layer": "스위치·CPO·NVLink 내재화",
    "canonical_page": "ai-infra/ai_chip_company_nvidia.html",
    "metrics": {},
-   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
+   "intake": []
   },
   "ANET": {
    "name": "Arista",
@@ -2059,7 +2145,8 @@
    "layer": "스위치 시스템",
    "canonical_page": "ai-infra/ai_value_chain_guide_v2.html",
    "metrics": {},
-   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
+   "intake": []
   },
   "CSCO": {
    "name": "Cisco",
@@ -2068,7 +2155,8 @@
    "layer": "스위치 시스템",
    "canonical_page": "ai-infra/ai_value_chain_guide_v2.html",
    "metrics": {},
-   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
+   "intake": []
   }
  }
 }
