@@ -548,6 +548,495 @@
    "facts": [],
    "theses": [],
    "tracked_price": false
+  },
+  "XOM": {
+   "name": "ExxonMobil",
+   "market": "US",
+   "layer": "메이저",
+   "business": "통합 메이저. 상류 4.514Moebd 중 Permian 1.8Moebd(≈40%) · Golden Pass LNG(QatarEnergy 합작) T1 2026-03 첫 생산 · 헤지 안 함 · FY26 CapEx $27~29B",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "CVX": {
+   "name": "Chevron",
+   "market": "US",
+   "layer": "메이저",
+   "business": "통합 메이저. Permian 1MMboe/d+ (전사 4MMboe/d의 ≈25%) · 호주 LNG는 아시아 장기계약 · 헤지 안 함 · FY26 CapEx $18~19B 하단",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "COP": {
+   "name": "ConocoPhillips",
+   "market": "US",
+   "layer": "대형 E&P",
+   "business": "글로벌 E&P. Permian 920Mboe/d(41%) · LNG 오프테이크 12→15MTPA 목표(Port Arthur 30% 지분·Rio Grande T5) · FY26 CapEx $12~12.5B",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "OXY": {
+   "name": "Occidental",
+   "market": "US",
+   "layer": "대형 E&P",
+   "business": "Permian 비중 56%(804/1,433Mboe/d) + OxyChem·미드스트림 · 헤지 100kb/d 칼라 $55/$76(≈7%) · 순부채 감축 → 우선주 상환 순서",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "FANG": {
+   "name": "Diamondback",
+   "market": "US",
+   "layer": "Permian E&P",
+   "business": "Permian(미들랜드+델라웨어) E&P · 아카이브 에너지 5사 편의 E&P 대표",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html",
+    "energy/us_energy_five.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "PR": {
+   "name": "Permian Resources",
+   "market": "US",
+   "layer": "Delaware E&P",
+   "business": "Delaware 순수 E&P(≈100%) · 376Mboe/d · 오일 53% · 오일 헤지 ≈15% · Waha 노출 가스 20% 감산 · 걸프 firm transport 400→700MMcf/d(2027+)",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "opm",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "DVN": {
+   "name": "Devon Energy(+Coterra)",
+   "market": "US",
+   "layer": "Delaware E&P(+Coterra)",
+   "business": "2026-05-07 Coterra 합병 완료(전주식). Delaware 앵커 · Permian ≈2/3 · 1.36MMboe/d · 오일 37% · 「70%+ 헤지 또는 걸프 연결」 · LNG 연동 가격 100MMcf/d(2027)+150(2028) · Delfin FLNG 톨링",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false,
+   "note": "Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json 에 없음(수집 404)"
+  },
+  "MTDR": {
+   "name": "Matador Resources",
+   "market": "US",
+   "layer": "Delaware E&P",
+   "business": "Delaware E&P + San Mateo 미드스트림 · 216Mboe/d · 오일 58% · 오일 헤지 35~40% · ET Hugh Brinson 500,000MMBtu/d firm → 걸프/LNG 시장 접근",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "EQT": {
+   "name": "EQT",
+   "market": "US",
+   "layer": "Appalachia 가스",
+   "business": "Appalachia 순수 최대 가스사(≈7.0Bcfe/d) · 2026 헤지 ≈25%(2027 ≈16%, 의도적 저헤지) · 0.5MTPA LNG 오프테이크 2028 · Port Arthur 오프테이크",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "AR": {
+   "name": "Antero Resources",
+   "market": "US",
+   "layer": "Appalachia 가스",
+   "business": "Appalachia 가스+NGL(4.1Bcfe/d · 액체 216MBbl/d) · 2026 헤지 ≈60% · 「LNG 판매점에 2.3Bcf/d — Appalachia 최고 노출」(회사 발언 ③)",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "RRC": {
+   "name": "Range Resources",
+   "market": "US",
+   "layer": "Appalachia 가스",
+   "business": "Marcellus 순수(2.3Bcfe/d · 가스 67%) · 헤지 비율 미공표(스왑 $4.05·칼라 $3.00/$5.70) · Repauno LPG 수출(2027)",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "EXE": {
+   "name": "Expand Energy",
+   "market": "US",
+   "layer": "Haynesville+Appalachia 가스",
+   "business": "구 Chesapeake+Southwestern. 미국 최대 가스 생산(7.5Bcfe/d · 가스 92%) — Haynesville+Appalachia · 2026 헤지 66% · Delfin FLNG SPA 1.15MTPA(HH 연동) · Twin Eagle 마케팅 인수 $1.25B",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "pretax_margin",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "LNG": {
+   "name": "Cheniere Energy",
+   "market": "US",
+   "layer": "LNG 수출",
+   "business": "미국 최대 LNG 수출(Sabine Pass·Corpus Christi · CCL3 7기 중 6기 수출 중) · 아카이브 5사 편: 파생이 매출원가에 들어가 영업이익 오염(rCV 1.57)",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html",
+    "energy/us_energy_five.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": true
+  },
+  "VG": {
+   "name": "Venture Global",
+   "market": "US",
+   "layer": "LNG 수출",
+   "business": "LNG 수출 2위권 신흥(Calcasieu Pass·Plaquemines · CP2 건설) · 아카이브 5사 편 T3: CapEx/OCF 202% — 건설사 단계",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html",
+    "energy/us_energy_five.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": true
+  },
+  "WMB": {
+   "name": "Williams",
+   "market": "US",
+   "layer": "미드스트림(가스)",
+   "business": "가스 미드스트림(Transco · NESE · SSE 1.6Bcf/d 확장 4Q27) — Appalachia→걸프 남향 파이프 소유자",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html",
+    "energy/us_energy_five.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": true
+  },
+  "ET": {
+   "name": "Energy Transfer",
+   "market": "US",
+   "layer": "미드스트림(MLP)",
+   "business": "MLP 미드스트림(가스·NGL·원유 · Hugh Brinson) · 아카이브 5사 편 T5: 한국 투자자에게 MLP 과세 미측정",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html",
+    "energy/us_energy_five.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": true
+  },
+  "EPD": {
+   "name": "Enterprise Products",
+   "market": "US",
+   "layer": "미드스트림(MLP·NGL)",
+   "business": "MLP 미드스트림(NGL 분류·수출 · 수수료 기반 GOM 80%) · Mont Belvieu·휴스턴 선박수로 LPG 수출 · 레버리지 3.0x",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
+  },
+  "TRGP": {
+   "name": "Targa Resources",
+   "market": "US",
+   "layer": "미드스트림(Permian NGL)",
+   "business": "Permian 가스 처리·NGL 미드스트림 · 아카이브 5사 편: CapEx/OCF 76~83% 재투자 국면",
+   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+   "pages": [
+    "energy/us_energy_hegemony_17.html",
+    "energy/us_energy_five.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false
   }
  }
 }

@@ -55,7 +55,7 @@ def render(path, pg):
         f'<table style="width:100%;border-collapse:collapse;font-size:.95rem;margin-top:12px">{"".join(rows)}</table>\n'
         f'<div id="falsify" style="margin-top:14px;padding-top:10px;border-top:1px solid var(--line)"><b style="color:#60a5fa">▎다음 검증 — 날짜가 아니라 이벤트</b>{nxt}</div>\n'
         f'<div style="margin-top:10px;color:var(--ink-2)"><b>포지션</b> — {pos}</div>\n'
-        f'<div style="margin-top:8px;font-size:.78rem;color:var(--ink-3)">이 카드는 손으로 고치지 않는다 — 정본은 <code>brain/theses.json</code>이고, 경위는 <code>brain/inbox.jsonl</code>과 아래 타임라인에 있다. 값의 분자·분모·기준일은 <code>brain/facts.json</code>.</div>\n'
+        f'<div style="margin-top:8px;font-size:.78rem;color:var(--ink-3)">이 카드는 손으로 고치지 않는다 — 정본은 <code>brain/theses.json</code>이고, 경위는 <code>brain/routing.jsonl</code>과 아래 타임라인에 있다. 값의 분자·분모·기준일은 <code>brain/facts.json</code>.</div>\n'
         f"</div>\n</div></section>\n{END}")
 
 

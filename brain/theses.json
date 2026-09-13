@@ -2434,20 +2434,20 @@
     {
      "id": "T1",
      "claim": "🔴 이 업종은 영업이익을 그대로 못 쓴다 — 5사 중 2사가 §A2-1 탐지에 걸렸다.",
-     "basis": "",
+     "basis": " [09.13 C1] FANG rCV 0.52·0회 → 1.96·2회(Q4'25 −$27.8억 포함) — 🟠 → 🔴 오염 판정",
      "falsifier": "Cheniere의 매출-영업이익 상관이 다음 4분기에 +0.5 이상으로 올라오면 오염이 일시적이었던 것이다",
      "event": "",
-     "status": "유지",
-     "last_tested": "2026-09-10"
+     "status": "정정",
+     "last_tested": "2026-09-13"
     },
     {
      "id": "T2",
      "claim": "🔑 그래서 현금으로 줄 세웠다 — 파생 평가손익도 감액도 현금흐름표에는 안 들어간다.",
-     "basis": "",
+     "basis": " [09.13 C1] TTM 현금 값이 4/5사에서 창 오류 — FANG OCF 6,942→10,143 · CapEx 2,097→3,646 · FCF 4,845→6,497(수익률 8.5→11.5%) · ET FCF 8,629→5,219(11.6→7.0%) · LNG 4,254→2,791(7.5→4.9%) · WMB 2,324→−108(2.5→−0.1%). FANG Q4'25 영업이익 −$27.8억 누락. 순위: FANG > ET > LNG > TRGP > WMB",
      "falsifier": "TRGP의 CapEx ÷ OCF가 50% 아래로 내려오면 FCF 수익률 1.4%는 투자 사이클의 바닥이었다",
      "event": "",
-     "status": "유지",
-     "last_tested": "2026-09-10"
+     "status": "정정",
+     "last_tested": "2026-09-13"
     },
     {
      "id": "T3",
@@ -2461,20 +2461,20 @@
     {
      "id": "T4",
      "claim": "🟢 배수와 재무 체력 둘 다 1위는 FANG이다 — 그리고 그것이 유가 노출의 대가다.",
-     "basis": "",
+     "basis": " [09.13 C1] TTM 현금 값이 4/5사에서 창 오류 — FANG OCF 6,942→10,143 · CapEx 2,097→3,646 · FCF 4,845→6,497(수익률 8.5→11.5%) · ET FCF 8,629→5,219(11.6→7.0%) · LNG 4,254→2,791(7.5→4.9%) · WMB 2,324→−108(2.5→−0.1%). FANG Q4'25 영업이익 −$27.8억 누락. 순위: FANG > ET > LNG > TRGP > WMB",
      "falsifier": "FANG이 유가 하락 국면에서 감액 없이 분기를 넘기면 「반복된다」는 추정이 틀린 것이다",
      "event": "",
-     "status": "유지",
-     "last_tested": "2026-09-10"
+     "status": "정정",
+     "last_tested": "2026-09-13"
     },
     {
      "id": "T5",
      "claim": "🔴 한국 투자자에게 ET는 종목이 아니라 구조다 — MLP다.",
-     "basis": "",
+     "basis": " [09.13 C1] TTM 현금 값이 4/5사에서 창 오류 — FANG OCF 6,942→10,143 · CapEx 2,097→3,646 · FCF 4,845→6,497(수익률 8.5→11.5%) · ET FCF 8,629→5,219(11.6→7.0%) · LNG 4,254→2,791(7.5→4.9%) · WMB 2,324→−108(2.5→−0.1%). FANG Q4'25 영업이익 −$27.8억 누락. 순위: FANG > ET > LNG > TRGP > WMB",
      "falsifier": "ET 분배금의 실제 세후 수취율을 확인해 FCF 수익률 격차(11.6% vs 1.4%)를 설명하지 못하면 「구조의 값」이라는 추론이 기각된다",
      "event": "",
-     "status": "유지",
-     "last_tested": "2026-09-10"
+     "status": "정정",
+     "last_tested": "2026-09-13"
     }
    ],
    "next": [
@@ -4624,6 +4624,84 @@
    "card": false,
    "seeded": "2026-09-13 자동 추출(build_thesis_index) — basis·event 미기입 · 손댈 때 채운다",
    "needs_manual": false
+  },
+  "energy/us_energy_hegemony_17.html": {
+   "title": "미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다",
+   "judged": "2026-09-13",
+   "one": "시나리오가 파는 것은 「수출 물량」인데 목록의 13사는 「가격」에 걸린 업스트림이다. 물량 쪽은 이미 일어났고(미국 LNG 17.4Bcf/d · 원유 수출 4월 5.6Mb/d 기록), 지금의 유가 $96은 시나리오가 아니라 호르무즈가 만든 것이다.",
+   "theses": [
+    {
+     "id": "T1",
+     "claim": "「미국 수출 확대」의 직접 수혜는 물량에 돈 받는 층(LNG 수출·미드스트림·걸프 연결 파이프)이고, 업스트림 13사는 유가·가스 가격에 걸린다. 미국 생산 증가는 가격을 누르므로 「패권 강화」는 업스트림에 중립~역풍이다 [추론].",
+     "basis": "EIA 1H26 LNG 수출 17.4Bcf/d(+23%) · 원유 수출 2025년 −3%(첫 감소)였다가 2026-04 5.6Mb/d 기록은 호르무즈 차단 때문(②) · WTI $96(09-09 ②) · 미국 생산 13.8Mb/d 기록 전망(EIA ②)",
+     "falsifier": "수출 확대 국면에서 업스트림 FCF 수익률이 미드스트림보다 계속 높고 WTI가 $80 위에 머문다(물량과 가격이 같이 간다)",
+     "event": "EIA STEO 월간 · 18사 3Q26 실적(10월 말~11월 초)",
+     "status": "유지",
+     "last_tested": "2026-09-13",
+     "facts": [
+      "FANG.fcf_yield",
+      "EQT.fcf_yield",
+      "WMB.fcf_yield",
+      "LNG.fcf_yield"
+     ]
+    },
+    {
+     "id": "T2",
+     "claim": "시나리오 전제 셋 중 둘은 이미 사실이고(미국 = 최대 LNG 수출국 2023~ · 최대 석유+제품 수출국 2026-05), 하나는 반대다 — 중국은 미국 LNG를 2025-02 이후 직수입하지 않는다(관세 25%). 「대중국 압박」의 지렛대는 미국 수출이 아니라 제3국 차단이고, 그것은 2026년 이란 전쟁·베네수엘라 봉쇄로 이미 진행 중이다. 시나리오는 예측이 아니라 현재 상태의 서술에 가깝다 [추론].",
+     "basis": "EIA·DOE(② 에이전트 relay): 2025 LNG 111Mt 세계 1위 · 5월 석유 수출 10.5Mb/d(러시아 7.0) · 이란→중국 −48%(7~8월 0.53Mb/d) · 베네수엘라 해상봉쇄 · 중국 미국산 LNG 0(2025-02~) · 2026-07 첫 카고는 보세창고 재수출 추정",
+     "falsifier": "중국이 미국산 LNG·원유 장기계약을 재개한다(관세 철회 확인)",
+     "event": "미중 관세 조치 · 중국 세관 월별 수입(미국산 항목)",
+     "status": "유지",
+     "last_tested": "2026-09-13"
+    },
+    {
+     "id": "T3",
+     "claim": "펜실베이니아 가스 2위는 맞지만 값은 가격이 아니라 파이프에 걸린다 — Appalachia 생산은 2020년부터 34~36Bcf/d 정체(테이크어웨이) · 베이시스 −$1.04 · 새 파이프(Transco SSE 1.6Bcf/d 4Q27 · MVP Southgate 2028 · Constitution 재추진)는 2027~28이다. 「PA 붐」의 수혜자는 EQT·AR·RRC보다 남향 파이프 소유자(WMB)와 LNG 판매점 접근을 확보한 쪽(AR 2.3Bcf/d · EXE Haynesville)이다.",
+     "basis": "ORVI/EIA·AEGIS·OGJ(②) · AR 「LNG 판매점 2.3Bcf/d」(회사 발언 ③) · EQT 2026 헤지 25%·2027 16%(의도적 저헤지 ②) · EXE 헤지 66%(②)",
+     "falsifier": "Appalachia 생산이 2027년에 +1Bcf/d 이상 늘고 베이시스가 −$0.5 안으로 좁혀진다",
+     "event": "EIA 월간 생산·베이시스 · Transco SSE 착공(4Q26) · Constitution FERC 결정",
+     "status": "유지",
+     "last_tested": "2026-09-13",
+     "facts": [
+      "EQT.fcf_yield",
+      "AR.fcf_yield",
+      "RRC.fcf_yield",
+      "EXE.fcf_yield",
+      "WMB.capex_to_ocf"
+     ]
+    },
+    {
+     "id": "T4",
+     "claim": "18사를 현금으로 세우면 FCF 수익률 상위는 소형 E&P(MTDR 14.0% · EXE 13.3% · PR 11.7% · FANG 11.5% · EQT 10.9%)이고, 시나리오가 「핵심 도구」로 꼽은 LNG·미드스트림이 하위다(ET 7.0% · LNG 4.9% · EPD 4.1% · TRGP 1.2% · WMB −0.1% · VG −18%). 높은 수익률은 유가 리스크의 대가이고 낮은 수익률은 재투자(CapEx/OCF 55~202%)의 대가다 — 같은 열로 줄 세우지 않는다.",
+     "basis": "SEC XBRL TTM(FY25−YTD25+YTD26 · ①) · 시총은 6사 ①(prices.json·아카이브) · 11사 ②(검색) · COP CapEx는 투자CF 대용 · XOM은 1H26",
+     "falsifier": "3Q26 이후 미드스트림 CapEx/OCF가 50% 아래로 내려오며 FCF 수익률이 E&P에 수렴한다(재투자 사이클 종료)",
+     "event": "18사 3Q26 실적 · 회사별 2027 CapEx 가이던스",
+     "status": "유지",
+     "last_tested": "2026-09-13",
+     "facts": [
+      "MTDR.fcf_yield",
+      "EXE.fcf_yield",
+      "PR.fcf_yield",
+      "FANG.fcf_yield",
+      "ET.fcf_yield",
+      "TRGP.fcf_yield",
+      "WMB.fcf_yield",
+      "VG.fcf_yield",
+      "VG.capex_to_ocf"
+     ]
+    }
+   ],
+   "next": [
+    "18사 3Q26 실적(10월 말~11월 초) — T1·T4 · 회사별 2027 CapEx 가이던스",
+    "EIA STEO 월간 · 주간 원유 수출(WCREXUS2) — T1 물량 축",
+    "Golden Pass T2(2026 말) · CP2·Port Arthur·Rio Grande 첫 LNG(2027) — LNG 물량 층의 다음 단",
+    "미중 관세 — 중국의 미국산 LNG·원유 구매 재개 여부(T2)",
+    "Transco SSE 착공(4Q26) · Constitution FERC(T3)",
+    "OFAC 이란·베네수엘라 조치 · 호르무즈 통항(T1 가격 축의 원인)"
+   ],
+   "position": "직접 편입 없음(HOLDINGS 9종목) · 접근 시 종목+환 두 결정(§J13) · ET·EPD 는 MLP 과세 미측정(5사 편 T5)",
+   "card": true,
+   "card_rendered": ""
   }
  }
 }
