@@ -25,11 +25,16 @@ jobs:
       - name: Fetch latest prices
         run: python3 portfolio/data/update_prices.py
 
+      # 2026-09-13: 수집 층(intake/) 자동 수집 — 일일 브리핑·TSMC 월매출. 판단 없이 받아서 남긴다.
+      # 실패해도 워크플로를 막지 않는다(실패 자체가 collected.jsonl 에 status 로 기록된다).
+      - name: Collect intake (soonsal · TSMC)
+        run: python3 intake/collect.py || true
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet portfolio/data/prices.json && exit 0
-          git add portfolio/data/prices.json
-          git commit -m "Update portfolio prices ($(date +%Y-%m-%d))"
+          git add portfolio/data/prices.json intake/collected.jsonl intake/files
+          git diff --cached --quiet && exit 0
+          git commit -m "Update prices · intake ($(date +%Y-%m-%d))"
           git push

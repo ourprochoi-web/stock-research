@@ -281,6 +281,16 @@ a:hover{text-decoration:underline}
     </div>
   </div>
   <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> 📥 <b>세 층 확정 — <code>intake/</code> 수집 → <code>brain/</code> 판단 → 페이퍼 설명</b> · 자동 수집 시범 2개</div>
+    <div class="upd-body">
+      <b>사용자 제안</b> — <i>「내가 주는 뉴스와 네가 수집하는 정보를 따로 수집·정리하는 레이어, 브레인 레이어, 리서치 아카이브 레이어」</i>.
+      <b>두 층에 남아 있던 구멍</b> — 원문이 안 남는다(무라타·TDK 3회 · 코어위브 첫 라우팅 누락) · 내가 받은 XBRL 조각도 안 남는다(Coherent OPM 다섯 값) · 수집과 판단이 한 레코드 · 자동 수집이 시세뿐.<br>
+      <b>처리</b> — <code>intake/user.jsonl</code>(사용자가 준 것 5건) · <code>collected.jsonl</code>(내가 받은 것 8건, <b>실패도 호스트와 함께</b>) · <code>files/</code>. <code>brain/inbox</code> → <code>routing.jsonl</code>(intake id 부착). <b>층마다 쓰는 순간 하나</b> — 도착 즉시 · 라우팅 시 · 상태 변경 시.
+      훅이 포인터(routing→intake · facts→intake · theses→facts) 실재를 검사한다.<br>
+      <b>자동 수집</b> — <code>intake/collect.py</code>를 매일 시세 워크플로에 얹었다(일일 브리핑 · TSMC 월매출). 판단 없이 <code>routed:false</code>로 남기고 다음 세션이 라우팅한다. <b>⚠ 샌드박스에서는 두 호스트가 프록시에 막혀 실제 수신 미확인</b> — 첫 실행 결과를 <code>status</code>로 본다.
+    </div>
+  </div>
+  <div class="upd">
     <div class="upd-title"><span class="tag">규칙</span> 🧠 <b>두 층 구조 확정 — <code>brain/</code>이 정본, 리서치 페이퍼는 사용자가 읽는 뷰</b> · 광통신 3편 카드 전환</div>
     <div class="upd-body">
       <b>사용자 결정</b> — <i>「네가 계속 정보를 정리하고 업데이트하는 층이 필요하다. 리서치 페이퍼는 웹에서 내가 보는 것」</i>.
