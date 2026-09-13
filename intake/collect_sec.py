@@ -28,6 +28,15 @@ TAGS = [  # 손익 · 현금흐름 · 재무상태 · 상류 특유 · 주식수
     "ImpairmentOfOilAndGasProperties", "ResultsOfOperationsImpairmentOfOilAndGasProperties",
     "DerivativeGainLossOnDerivativeNet", "GainLossOnDerivativeInstrumentsNetPretax", "UnrealizedGainLossOnDerivatives",
     "CommonStockSharesOutstanding", "EntityCommonStockSharesOutstanding",
+    # 2026-09-13 2차 — 메이저(XOM·CVX·COP·OXY)는 OperatingIncomeLoss 를 안 쓴다. 세전이익·기타 매출·감액 태그
+    "RevenuesExcludingInterestAndDividends", "RevenuesNetOfInterestExpense", "SalesRevenueNet",
+    "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+    "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+    "IncomeLossFromContinuingOperationsBeforeIncomeTaxesDomestic", "IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign",
+    "AssetImpairmentCharges", "ImpairmentOfLongLivedAssetsHeldForUse", "ImpairmentOfLongLivedAssetsToBeDisposedOf", "ImpairmentOfOilAndGasPropertiesAndOtherAssets",
+    "ExplorationExpense", "ExplorationAbandonmentAndImpairmentExpense", "ProductionTaxExpense",
+    "NetCashProvidedByUsedInInvestingActivities", "PaymentsToAcquireBusinessesNetOfCashAcquired", "ProceedsFromSaleOfPropertyPlantAndEquipment",
+    "IncomeLossFromEquityMethodInvestments", "NoncontrollingInterestInNetIncomeLoss", "NetIncomeLossAttributableToNoncontrollingInterest",
 ]
 
 

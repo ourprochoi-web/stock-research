@@ -1,21 +1,14 @@
 # 수집 요청 — 이 파일을 고쳐 push 하면 collect-sec.yml 이 돌아 intake/files/sec/ 에 스냅샷을 남긴다.
-# 2026-09-13 에너지 패권 시나리오 18사 + 비교군 TRGP
+# 2026-09-13 2차 — 태그 확장(메이저 세전이익·감액·투자CF) 후 재수집. CTRA 는 company_tickers.json 에 없어 CIK 로 대신 시도하지 않음(open.json)
 XOM
 CVX
 OXY
 COP
 FANG
-PR
 DVN
-CTRA
+RRC
+PR
 MTDR
 EQT
 AR
-RRC
 EXE
-LNG
-VG
-WMB
-ET
-EPD
-TRGP
