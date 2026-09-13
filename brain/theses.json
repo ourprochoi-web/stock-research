@@ -1026,11 +1026,11 @@
     {
      "id": "T2",
      "claim": "위험은 물리적으로 지울 수 있느냐가 정한다 — DSP는 지울 수 있고 레이저·드라이버·TIA는 못 지운다. 병목은 못 지우는 쪽에 있다.",
-     "basis": "Ciena 경영진(JP모건 미팅 09-12 · ③) 「병목은 캐파가 아니라 펌프 레이저·광 패키징」 · NVL72 랙 정격 120kW(①)",
+     "basis": "Ciena 경영진(JP모건 미팅 09-12 · ③) 「병목은 캐파가 아니라 펌프 레이저·광 패키징」 · NVL72 랙 정격 120kW(①) · 미즈호 09-14(③): EML 캐파 2026E 2배·CW 2029E 5배 = 증산 중(병목 정합). ⚠ 레이저는 남되 형태가 EML(62%→45%)→CW로 이동",
      "falsifier": "Lumentum·Coherent GPM이 꺾인다(물리 부품 병목이 풀렸다)",
      "event": "Lumentum FY27 Q1(11월경)",
      "status": "유지",
-     "last_tested": "2026-09-12",
+     "last_tested": "2026-09-14",
      "facts": [
       "LITE.gpm_latest_q",
       "COHR.gpm"
@@ -1039,11 +1039,11 @@
     {
      "id": "T3",
      "claim": "이번 사이클의 변곡은 광원에서 났다 — Lumentum OPM −31.3% → +27.7%(2년), 최신 분기 GPM 47.4%. 가격은 1년 +599.4%로 이미 안다.",
-     "basis": "분기 추이 ①(10-K/10-Q) · 원인은 [추론] 고속 EML 믹스",
+     "basis": "분기 추이 ①(10-K/10-Q) · 원인은 [추론] 고속 EML 믹스 · 미즈호 09-14(③): [추론] 고속 EML 믹스에 독립 근거 — LITE 고속 EML ~50%·레이저 중심·GPM 경로 50%초반. ⚠ 리스크: EML 1위(33%)인데 CW 4위(11%)",
      "falsifier": "분기 GPM 44% 아래 되돌림, 또는 통신 비중이 안 오르는데 GPM만 오른다(일시 요인)",
      "event": "Lumentum FY27 Q1(11월경)",
      "status": "유지",
-     "last_tested": "2026-09-12",
+     "last_tested": "2026-09-14",
      "facts": [
       "LITE.opm_latest_q",
       "LITE.gpm_latest_q",
@@ -1053,11 +1053,11 @@
     {
      "id": "T4",
      "claim": "연결 지표가 세그먼트를 가린다 — Coherent DC&C +40.5%·비중 74.1%인데 Industrial 역성장과 II-VI 상각이 연결 OPM 7.84%(조정 12.67%)를 누른다.",
-     "basis": "10-K FY26 세그먼트(①) · Semtech도 전사 GPM 53.8% vs SI 세그 65.3%(①)",
+     "basis": "10-K FY26 세그먼트(①) · Semtech도 전사 GPM 53.8% vs SI 세그 65.3%(①) · 미즈호 09-14(③): 걷어내도 남는 구조적 열위 — COHR가 최첨단 레이저를 LITE에서 산다. OPM 2028E 20%중반 정체 전망(세그먼트로 안 보이는 원인)",
      "falsifier": "Coherent Industrial이 다시 성장 전환해 연결이 세그먼트를 안 가린다",
      "event": "Coherent FY27 Q1",
      "status": "유지",
-     "last_tested": "2026-09-12",
+     "last_tested": "2026-09-14",
      "facts": [
       "COHR.opm",
       "COHR.opm_adjusted",
@@ -1068,11 +1068,11 @@
     {
      "id": "T5",
      "claim": "배수는 층을 반영하므로 P/S÷성장은 같은 층 안에서만 비교한다(칩 층에서 Credo가 2.4~3.6배 싸다). 그리고 층 경계가 움직인다 — Ciena가 Nubis로 AEC·리타이머에 들어온다.",
-     "basis": "9사 P/S÷성장 7.2~60.0(①) · Ciena Nubis 인수·XPO FY28(③)",
+     "basis": "9사 P/S÷성장 7.2~60.0(①) · Ciena Nubis 인수·XPO FY28(③) · 미즈호 09-14(③): ELS 플러거블 = 경계 이동 2호(레이저칩 대비 콘텐츠 2배·LITE 수주 시작). UHP CW $50~75 vs 상용 $7~9",
      "falsifier": "Ciena 데이터센터 내부 매출이 FY28에 안 잡힌다(시스템 벤더의 칩 진입 실패)",
      "event": "Ciena FY27 실적",
      "status": "유지",
-     "last_tested": "2026-09-12",
+     "last_tested": "2026-09-14",
      "facts": [
       "CRDO.ps_over_growth",
       "ALAB.ps_over_growth",
