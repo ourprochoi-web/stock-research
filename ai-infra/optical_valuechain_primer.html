@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="광통신 정본 3편을 읽기 위한 배경 지식. 전기→빛→광섬유→전기 4단계, 트랜시버 부품 6개, 플러거블→LPO→CPO 전환, 층별 22사가 무엇을 파는지 한 줄씩.">
+<meta name="keywords" content="광통신,광모듈,트랜시버,LPO,CPO,AEC,EML,VCSEL,실리콘포토닉스,Lumentum,Coherent,InnoLight,Fabrinet,Credo,Marvell,Ciena,오이솔루션,입문">
+<meta property="og:title" content="광통신 밸류체인 입문 — 빛이 데이터센터를 어떻게 지나가고, 누가 무엇을 파는가">
+<meta property="og:description" content="광통신 정본 3편을 읽기 위한 배경 지식. 전기→빛→광섬유→전기 4단계, 트랜시버 부품 6개, 플러거블→LPO→CPO 전환, 층별 22사가 무엇을 파는지 한 줄씩.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/optical_valuechain_primer.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="광통신 밸류체인 입문 — 빛이 데이터센터를 어떻게 지나가고, 누가 무엇을 파는가">
+<meta name="twitter:description" content="광통신 정본 3편을 읽기 위한 배경 지식. 전기→빛→광섬유→전기 4단계, 트랜시버 부품 6개, 플러거블→LPO→CPO 전환, 층별 22사가 무엇을 파는지 한 줄씩.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/optical_valuechain_primer.html">
+<title>광통신 밸류체인 입문 — 빛이 데이터센터를 어떻게 지나가고, 누가 무엇을 파는가</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <a href="../index.html" class="brand"><span class="dot"></span>ourprochoi Research</a>
+  <div class="nav-links">
+    <a href="#now">▎이 편의 위치</a><a href="#s01">01 왜 빛인가</a><a href="#s02">02 모듈 해부</a>
+    <a href="#s03">03 전환</a><a href="#s04">04 회사 지도</a><a href="#s05">05 세 정본</a><a href="#s06">06 용어</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="hero-bg"><div class="glow-a"></div><div class="glow-b"></div><div class="hero-grid"></div></div>
+<div class="wrap hero-in">
+  <div class="eyebrow">AI 인프라 · 입문 가이드 · 2026.09.13</div>
+  <h1 class="hero-title">광통신 밸류체인 입문<br><span class="hl">빛이 데이터센터를 어떻게 지나가고, 누가 무엇을 파는가</span></h1>
+  <p class="hero-sub">아카이브에 광통신 편이 <b>사흘 사이 세 편</b> 생겼는데(9사 밸류체인 · 연결 계층 주장 검증 · 국내 냉각·광), 셋 다 <b>「LPO」「EML」「리타이머」를 아는 독자</b>를 전제한다.
+  이 편은 그 세 편을 읽기 위한 <b>배경 지식</b>이다 — <b>전기가 빛이 되었다가 다시 전기가 되는 네 단계</b>를 따라가며, 각 단계에 <b>어느 회사가 무엇을 팔고 있는지</b>를 붙였다.
+  <b>판단은 세우지 않는다.</b> 판단은 정본 세 편에 있고, 여기서는 그 판단이 <b>무슨 말인지</b>를 풀어 쓴다.</p>
+  <div class="hero-stats" style="grid-template-columns:repeat(4,1fr)">
+    <div class="hstat"><div class="num tnum">4<span class="u">단계</span></div><div class="lab">전기 → 빛 → 광섬유 → 전기. 트랜시버 하나가 이 왕복을 한다</div></div>
+    <div class="hstat"><div class="num tnum">75→12%</div><div class="lab">같은 「광통신주」인데 층에 따라 GPM이 6배 갈린다 (① 9사 편 · TTM)</div></div>
+    <div class="hstat"><div class="num tnum">17+5</div><div class="lab">해외 17사 · 국내 5사의 사업을 한 줄씩 적었다</div></div>
+    <div class="hstat"><div class="num tnum">0</div><div class="lab">이 편이 세우는 테제 수. 판단은 정본 세 편으로 간다</div></div>
+  </div>
+</div></header>
+
+<section id="now" class="blk"><div class="wrap">
+<div style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.9">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎이 편의 위치 · 2026.09.13 <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 입문 가이드 · 판단 0개 · 정본 3편을 가리킨다</span></div>
+<b style="font-size:1.05em">한 문장 — <u>「광통신주」는 한 업종이 아니라 <b>같은 링크의 다른 층</b>이고, 마진·위험·배수가 전부 <b>어느 층에 서 있느냐</b>로 갈린다.</u> 이 편은 그 층을 구분할 수 있게 만드는 것이 목적이다.</b><br><br>
+<b>정본 세 편 — 판단·수치·기준일은 전부 여기에 있다(§B5).</b><br>
+&nbsp;&nbsp;· <a href="optical_valuechain_9.html#now" style="color:var(--accent)"><b>광 연결 밸류체인 9사</b></a> — <b>비즈니스 스터디.</b> 미국 9사 + 중국 3사를 SEC·eastmoney 원문으로 같은 축에 세웠다. <i>「마진은 층이 정하고, 위험은 물리적으로 지울 수 있느냐가 정한다」</i><br>
+&nbsp;&nbsp;· <a href="optical_interconnect_layer.html#now" style="color:var(--accent)"><b>광 연결 계층 — DSP가 빠지는 자리에 누가 남는가</b></a> — <b>주장 검증.</b> 소셜 발 「LPO 전환 · 크레도 매수 · 마벨 익절」 주장 9개를 10-Q로 대조했다. <i>「방향은 지지되지만 수혜·피해 배분이 공시와 어긋난다」</i><br>
+&nbsp;&nbsp;· <a href="kr_cooling_optical_layer.html#now" style="color:var(--accent)"><b>냉각·광 계층 — 국내</b></a> — <b>국내 10사 2Q26 확정 실적.</b> <i>「국내에는 AI 수혜가 손익에 아직 없다 · 규모 격차 10~37배」</i><br><br>
+<b>읽는 순서</b> — 처음이면 <b>이 편 01 → 02 → 04</b>를 먼저 읽고 정본으로 간다. 이미 아는 독자는 <b>04 회사 지도</b>만 보면 된다.<br>
+<b>⚠ 등급 표기</b> — 회사별 마진·성장·비중은 정본이 <b>①</b>(SEC XBRL·공시 직접 산출)로 확정한 값을 그대로 옮겼다. <b>「무엇을 파나」 서술은 각 사 공시 「사업의 개요」 수준의 일반 지식이며 이 편에서 원문을 재조회하지 않았으므로 <u>②</u>로 둔다</b>(국내 5사는 <code>m.stock.naver.com</code> 기업개요를 열려 했으나 <u>프록시 403</u>으로 막혔다 — §W5 호스트 기록). 기술 서술(속도·거리·전력)은 업계 교과서적 사실이되 <b>값은 대략</b>이다.
+</div>
+</div></section>
+
+<div class="divider"></div>
+
+<section id="s01" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">01</span><span class="ln"></span>왜 빛인가</div>
+<h2 class="sec-title">전기는 멀리 못 간다 — 그래서 데이터센터 안에 <b>거리 계층</b>이 생긴다</h2>
+<p class="sec-lead">AI 클러스터는 GPU 수만 개가 한 문제를 나눠 푼다. 서로 쉴 새 없이 결과를 주고받아야 하는데, <b>구리선 위의 전기 신호는 속도를 올릴수록 짧은 거리에서 뭉개진다.</b>
+그래서 <b>가까운 곳은 구리, 먼 곳은 빛</b>이 되고, 「먼 곳」의 기준 거리가 <b>속도 세대가 바뀔 때마다 짧아진다.</b> 이것이 광통신이 AI와 함께 커지는 물리적 이유다.</p></div>
+
+<div class="flow-chain">
+  <div class="flow-node"><div class="fn-label">① 랙 안 · 수십 cm ~ 2~3m</div><h4>GPU ↔ GPU (스케일업)</h4><p>NVL72 같은 랙 안에서는 <b>구리 백플레인·DAC(수동 구리 케이블)</b>로 충분하다. 엔비디아가 NVLink로 <b>내재화</b>한 구간이라 외부 광통신사의 매출이 거의 없다. <b>여기까지 빛이 내려오는 것이 CPO의 최종 목표</b>이고, 아카이브는 그 교차점을 <b>2031년경</b>으로 본다(③ 데이터센터 종합 지도).</p></div>
+  <div class="flow-arrow"><svg width="20" height="26" viewBox="0 0 20 26" fill="none"><path d="M10 0v22M3 15l7 8 7-8" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="flow-node"><div class="fn-label">② 서버 ↔ 스위치 · 수 m</div><h4>서버 → ToR/리프 스위치 (스케일아웃 첫 홉)</h4><p>DAC가 닿는 끝자락이다. <b>AEC(능동 구리 케이블 — 구리에 리타이머 칩을 넣어 거리를 몇 배 늘린 것)</b>가 여기서 광을 밀어낸다. <b>Credo·Astera·Semtech이 이 자리</b>다. 구리가 길게 버틸수록 이 층이 커지고, 광이 싸지면 줄어든다 — 9사 편 T2가 「경계가 움직인다」고 적은 자리.</p></div>
+  <div class="flow-arrow"><svg width="20" height="26" viewBox="0 0 20 26" fill="none"><path d="M10 0v22M3 15l7 8 7-8" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="flow-node" style="border-color:var(--accent)"><div class="fn-label" style="color:var(--glow)">③ 스위치 ↔ 스위치 · 수십 ~ 수백 m · 🔑 광 트랜시버의 본거지</div><h4>리프 ↔ 스파인 (스케일아웃)</h4><p>여기서부터 <b>빛이 필수</b>다. 스위치 앞면에 <b>엄지손가락만 한 광 트랜시버(플러거블 모듈)</b>를 꽂고 광섬유로 잇는다. <b>800G·1.6T 모듈 수요의 대부분</b>이 이 구간이고, 02절이 해부하는 것이 이 모듈이다. 거리 100m 안쪽은 멀티모드(VCSEL), 500m~2km는 싱글모드(EML·실리콘 포토닉스)를 쓴다.</p></div>
+  <div class="flow-arrow"><svg width="20" height="26" viewBox="0 0 20 26" fill="none"><path d="M10 0v22M3 15l7 8 7-8" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="flow-node"><div class="fn-label">④ 건물 ↔ 건물 · 데이터센터 ↔ 데이터센터 · 수 km ~ 수백 km</div><h4>DCI(데이터센터 상호연결) · 장거리</h4><p>한 캠퍼스로 전력이 모자라 <b>여러 데이터센터를 하나의 컴퓨터처럼 묶는</b> 수요가 새로 생겼다. 빛의 세기뿐 아니라 <b>위상까지 써서 정보를 싣는 코히런트 광</b>을 쓰며, <b>Ciena가 이 층의 대표</b>다. 정본은 이 회사의 <b>직접 클라우드 매출 +80%</b>(② 냉각·광 편)를 적어 두었다.</p></div>
+</div>
+
+<div class="thesis"><div class="tg">이 절에서 가져갈 것 하나</div><p>「광통신주가 오른다」는 문장은 <b>③번 구간</b>의 얘기다. ①은 엔비디아가 먹고, ②는 구리(AEC)와 다투고, ④는 다른 기술(코히런트)이다.
+<span class="u">그래서 정본 9사 편은 <b>「누가 더 좋냐」가 아니라 「어느 층이 마진을 갖고 어느 층이 지워질 수 있냐」</b>를 물었다. 그리고 크기 감각 하나 — 랙 바깥 상용 네트워크 시장이 <b>2024년 $280억 → 2028년 $1,874억</b>으로 데이터센터 전력(3.6배)보다 <b>두 배 빠르게(6.7배)</b> 큰다는 추정이 있고, 그중 <b>광 트랜시버+DSP가 $824억(44%)</b>으로 가장 큰 칸이다(③ 리포트 추정 · <a href="ai_value_chain_guide_v2.html" style="color:var(--accent)">밸류체인 가이드 5F</a>). 이유는 성장률이 아니라 <b>교체 주기</b>다 — 스위치는 여러 세대를 쓰지만 <b>모듈은 포트 속도가 바뀔 때마다 갈아 끼운다.</b></span></p></div>
+</div></section>
+
+<div class="divider"></div>
+
+<section id="s02" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">02</span><span class="ln"></span>모듈 해부</div>
+<h2 class="sec-title">트랜시버 하나를 열면 <b>여섯 개의 부품</b>이 있고, 부품마다 파는 회사가 다르다</h2>
+<p class="sec-lead">「800G 광모듈」은 <b>100G짜리 레인 8개</b>를 묶은 것이다(1.6T는 200G × 8). 각 레인이 아래 여섯 단계를 지난다.
+<b>정본 9사 편의 발견은 이 여섯 칸의 마진이 계단처럼 다르다는 것</b>이었다 — 실리콘(칩)에 가까울수록 높고, 조립에 가까울수록 낮다.</p></div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>#</th><th>부품</th><th>하는 일 (쉬운 말)</th><th>대표 회사</th><th>정본 실측 GPM (① TTM)</th><th>LPO/CPO에서</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>광 DSP</b><br><span style="font-size:.78em;color:var(--ink-3)">Digital Signal Processor</span></td><td>스위치에서 온 <b>전기 신호를 깨끗하게 다시 만들어</b> 레이저에 넘긴다. 신호 「교정기」. 모듈 전력의 큰 몫을 먹는다</td><td><b>마벨</b>(Inphi) · <b>브로드컴</b> · <b>크레도</b></td><td>마벨 <b>52.2%</b> · 크레도 <b>67.1%</b></td><td><b style="color:#f87171">지울 수 있다</b> — 스위치 칩의 SerDes가 대신 교정하면 LPO</td></tr>
+<tr><td>2</td><td><b>드라이버</b></td><td>레이저를 <b>초당 천억 번 켰다 껐다 할 전류</b>를 만든다. 「스위치를 두드리는 손」</td><td><b>MACOM</b> · <b>Semtech</b></td><td>MACOM <b>56.5%</b> · Semtech SI세그 <b>65.3%</b></td><td><b style="color:var(--bull)">못 지운다</b> — 전기↔빛 변환은 물리다</td></tr>
+<tr><td>3</td><td><b>레이저 · 변조기</b> = <b>광원</b><br><span style="font-size:.78em;color:var(--ink-3)">EML · VCSEL · CW 레이저+실리콘 포토닉스</span></td><td><b>빛을 만든다.</b> 짧은 거리는 값싼 <b>VCSEL</b>(수직 발광), 긴 거리는 <b>EML</b>(레이저+변조기 일체형 · 인듐인 기판), 실리콘 포토닉스 방식은 <b>CW 레이저</b>(연속광)를 켜 두고 실리콘 칩이 빛을 끊는다</td><td><b>Lumentum</b> · <b>Coherent</b> · 브로드컴 · (실리콘 포토닉스는 TSMC ②)</td><td>Lumentum <b>41.7%</b>(최신 분기 47.4%) · Coherent <b>37.5%</b></td><td><b style="color:var(--bull)">못 지운다 — 오히려 병목</b>. Ciena 경영진이 「캐파가 아니라 펌프 레이저·광 패키징」이 모자라다고 했다(③)</td></tr>
+<tr><td>4</td><td><b>광섬유 · 커넥터</b></td><td>빛이 지나가는 <b>유리 실</b>과 그것을 꽂는 <b>플러그</b>. 연결 개소가 늘수록 같이 는다</td><td><b>Corning</b> · <b>Amphenol</b> · <b>TE</b> · 대한광통신</td><td>9사 편 밖 — <a href="us_vertiv_corning_deep.html#now" style="color:var(--accent)">Corning 편</a>이 정본</td><td>영향 없음 — 어느 방식이든 유리는 필요하다</td></tr>
+<tr><td>5</td><td><b>포토다이오드 + TIA</b><br><span style="font-size:.78em;color:var(--ink-3)">Trans-Impedance Amplifier</span></td><td>받는 쪽. <b>빛을 미약한 전류로 바꾸고(PD) 그것을 증폭(TIA)</b>한다. 「귀」</td><td><b>MACOM</b> · <b>Semtech</b></td><td>(2번과 같은 회사)</td><td><b style="color:var(--bull)">못 지운다</b></td></tr>
+<tr><td>6</td><td><b>패키지 · 조립</b></td><td>위 다섯을 <b>엄지손가락 크기 케이스(OSFP·QSFP-DD)</b>에 넣고 정렬·검사한다. <b>자기 설계 제품으로 파느냐, 남의 설계를 조립만 하느냐</b>가 갈린다</td><td>자기 제품: <b>InnoLight · Eoptolink · Coherent · AAOI</b><br>위탁조립: <b>Fabrinet</b> · 광부품: <b>T&amp;S</b></td><td>InnoLight <b>46.2%</b> · Eoptolink 48.4% · AAOI 28.9% · <b>Fabrinet 12.0%</b></td><td><b>플러거블 자체가 사라지는 CPO가 오면 가장 크게 흔들린다</b> — 대신 광엔진 조립으로 이동</td></tr>
+</tbody></table></div>
+
+<div class="fw-grid" style="margin-top:28px">
+  <div class="fw-card"><div class="fw-num">읽는 법 ①</div><h3>「모듈 = 저마진」이 아니다</h3><div class="theme-body">9사 편 T1이 처음엔 「층이 마진을 정한다」고 썼다가 <b>같은 날 C1급으로 고쳤다.</b> 중국 InnoLight는 모듈사인데 GPM 46.2%로 미국 광원사(41.7%)보다 높다. <b>가르는 것은 층이 아니라 「자기 제품이냐 위탁조립이냐」</b>다. Fabrinet 12%는 남의 제품을 조립해서이고, 계약부채가 매출의 0.09%라 <b>선수금이 사실상 없다</b>(①) — 순수 EMS의 계정 지문이다.</div></div>
+  <div class="fw-card"><div class="fw-num">읽는 법 ②</div><h3>전사 숫자가 세그먼트를 가린다</h3><div class="theme-body">이 층 회사들은 <b>레거시 사업을 끼고 있는 경우가 많다.</b> Coherent는 데이터센터·통신이 74.1%인데 산업용이 역성장하며 연결 OPM을 누르고, Semtech은 전사 GPM 53.8%인데 <b>Signal Integrity 세그먼트만 보면 65.3%·+64.4%</b>다(①). <b>세그먼트를 열지 않은 비교는 값이 아니다</b> — 9사 편 T4.</div></div>
+  <div class="fw-card"><div class="fw-num">읽는 법 ③</div><h3>이번 사이클의 변곡은 광원에서 났다</h3><div class="theme-body">9사 중 <b>영업이익률이 −31.3% → +27.7%로 돌아선 회사는 Lumentum 하나</b>다(① 분기 추이). 원인은 [추론] 고속 EML 믹스이고, <b>1년 주가 +599.4%로 가격이 이미 알고 있다.</b> 「실적이 좋다」와 「지금 사도 된다」는 다른 질문 — 9사 편 T3.</div></div>
+</div>
+</div></section>
+
+<div class="divider"></div>
+
+<section id="s03" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>지금 일어나는 전환</div>
+<h2 class="sec-title">전력을 아끼려고 <b>부품을 하나씩 지우는 중</b>이다 — 플러거블 → LPO → CPO, 그리고 옆에서 AEC</h2>
+<p class="sec-lead">GB200 NVL72 랙 하나가 <b>정격 120kW</b>(① 종합 지도 물리 층)이고 광 링크가 클러스터 전력의 상당 부분을 먹는다. 그래서 업계 로드맵은 <b>「모듈 안에서 전기를 쓰는 부품을 없애자」</b>로 수렴한다. <b>무엇을 지우느냐에 따라 웃는 회사가 다르다.</b></p></div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>방식</th><th>무엇을 하나</th><th>무엇을 지우나</th><th>누구에게 불리 / 유리</th><th>상태 (등급)</th></tr></thead>
+<tbody>
+<tr><td><b>플러거블</b><br><span style="font-size:.78em;color:var(--ink-3)">현행 · 02절 모듈 그대로</span></td><td>스위치 앞면에 모듈을 꽂는다. DSP 포함</td><td>—</td><td>모듈사·DSP사·광원사 <b>전부 매출</b></td><td><b>주류.</b> 종합 지도는 「CPO 스케일업 교차가 2031년경이라 <b>플러거블이 이번 십년 내내 구조적으로 중요</b>」(③)</td></tr>
+<tr><td><b>LPO</b><br><span style="font-size:.78em;color:var(--ink-3)">Linear Pluggable Optics</span></td><td>모듈은 그대로 꽂되 <b>DSP를 뺀다.</b> 신호 교정을 스위치 칩(SerDes)이 맡는다</td><td><b>광 DSP</b>(1번 부품)</td><td><b>불리라고 알려진 쪽</b>: 마벨 · <b>유리라고 알려진 쪽</b>: 드라이버·TIA(Semtech·MACOM) · SerDes(크레도)<br><b style="color:#f87171">⚠ 그런데 정본이 둘 다 뒤집었다</b> — 마벨 데이터센터 +45.7%·비중 79%로 「피해」가 실적에 없고(T4), 크레도는 자기 가이던스에서 <b>optical DSP를 성장축</b>으로 제시한다(T1). 배분이 공시와 어긋난다</td><td>전력 <b>약 절반</b> 절감이 통설(③). 소셜의 「1416W → 78W」는 <b>자릿수 오기로 보인다</b>[추론 · 연결 계층 편]</td></tr>
+<tr><td><b>CPO</b><br><span style="font-size:.78em;color:var(--ink-3)">Co-Packaged Optics</span></td><td><b>광엔진을 스위치 칩 바로 옆에 패키징</b>한다. 앞면에 꽂는 모듈이 사라진다</td><td><b>플러거블 모듈 전체</b> + DSP</td><td><b>불리</b>: 모듈 조립·모듈 브랜드 · <b>유리</b>: 광엔진·레이저(Lumentum)·실리콘 포토닉스 파운드리(TSMC)·패키징(SPIL). <b>가치가 모듈에서 광엔진으로 이동</b></td><td>엔비디아 Spectrum-X Photonics(CPO 스위치)가 <b>2026년 8월 풀 프로덕션</b>·공급망 5사 공개(② 2차 정리 · 8-K 미대조 · 종합 지도). 스위치↔스위치가 먼저, GPU 랙 안은 나중</td></tr>
+<tr><td><b>NPO</b><br><span style="font-size:.78em;color:var(--ink-3)">Near-Packaged</span></td><td>CPO보다 조금 떨어뜨려 붙인다</td><td>—</td><td>CPO의 <b>대체재가 아니라 증분</b>(경영진 발언 ③)</td><td>「CPO 대비 25% 낮은 복잡도로 85% 효익」(③ 종합 지도)</td></tr>
+<tr><td><b>AEC</b><br><span style="font-size:.78em;color:var(--ink-3)">Active Electrical Cable</span></td><td><b>구리 케이블 양끝에 리타이머 칩</b>을 넣어 닿는 거리를 늘린다. 빛이 아니라 구리</td><td>(광 자체를 안 쓴다 — 01절 ②구간)</td><td><b>유리</b>: Credo(Zero-Flap) · Astera · Semtech(CopperEdge) · <b>새 진입</b>: Ciena(Nubis 인수 ③)</td><td>구리가 길게 버티는 동안 큰다. 9사 편 T5는 「층의 경계가 지금 움직인다」의 사례로 Ciena 진입을 건다</td></tr>
+</tbody></table></div>
+
+<div class="thesis"><div class="tg">이 절에서 가져갈 것 하나</div><p>「지울 수 있는 부품」과 「못 지우는 부품」을 구분하면 뉴스가 읽힌다. <b>DSP는 지울 수 있고, 레이저·드라이버·TIA는 못 지운다.</b>
+<span class="u">정본 9사 편 T2가 이것을 테제로 세웠고, 제3자(Ciena 경영진 · ③)가 「병목은 캐파가 아니라 펌프 레이저·광 패키징」이라고 확인해 줬다. <b>못 지우는 쪽이 실제로 모자라다.</b> 반증 조건은 <b>「Lumentum·Coherent GPM이 꺾인다」</b>이고, 판정은 <b>Lumentum FY27 Q1(11월경)</b>이 한다 — 그때까지 기다리라는 뜻이 아니라, 지금 움직이면 <b>「광원 병목이 계속되는지 모른 채」</b> 거는 것이라는 뜻이다(§J2).</span></p></div>
+</div></section>
+
+<div class="divider"></div>
+
+<section id="s04" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">04</span><span class="ln"></span>회사 지도</div>
+<h2 class="sec-title">누가 무엇을 파는가 — <b>층별 22사</b></h2>
+<p class="sec-lead">「무엇을 파나」는 <b>②</b>(사업의 개요 수준 · 이 편에서 원문 재조회 안 함). <b>실측 열은 ①</b>이며 값·기준일(미국 TTM·2026-09-11 종가 / 중국 1H26 누적 / 국내 2Q26 확정)은 정본 그대로다. <b>시세 추적</b>은 <code>portfolio/data/prices.json</code>(2026-09-11) 기준.</p></div>
+
+<h3 style="font-size:1.05rem;margin:8px 0 12px;color:var(--accent)">A. 연결 반도체 — 신호를 만들고 고치는 칩 (가장 높은 마진 층)</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>회사</th><th>무엇을 파나 (②)</th><th>정본 실측 (①)</th><th>추적</th><th>정본</th></tr></thead>
+<tbody>
+<tr><td><b>Marvell</b> <span class="badge badge-jp">MRVL</span></td><td><b>광 DSP</b>(2021년 Inphi 인수로 확보)·코히런트 DSP·<b>커스텀 AI ASIC</b>(하이퍼스케일러 전용 칩)·스위치·스토리지. 「DSP가 빠지면 피해」 논쟁의 당사자</td><td>GPM 52.2% · 데이터센터 매출 비중 <b>79%</b> · 5분기 연속 GPM 개선 · 유통 비중 41→50%·매출채권 +52.8%가 경고 축</td><td>○</td><td><a href="ai_chip_company_marvell.html#now" style="color:var(--accent)">마벨 편</a></td></tr>
+<tr><td><b>Broadcom</b> <span class="badge badge-jp">AVGO</span></td><td><b>Tomahawk 스위치 칩</b>(이더넷 스위치의 두뇌)·광 DSP·VCSEL/EML 레이저·<b>CPO 스위치</b>·커스텀 ASIC. 광 밸류체인의 거의 모든 칸에 발을 걸친 유일한 회사</td><td>9사 편 밖 — <a href="ai_chip_company_broadcom.html#now" style="color:var(--accent)">브로드컴 편</a>이 정본</td><td>○</td><td>브로드컴 편</td></tr>
+<tr><td><b>Credo</b> <span class="badge badge-jp">CRDO</span></td><td><b>SerDes IP</b>(칩 사이 고속 직렬 통신 회로)·<b>AEC</b>(Zero-Flap 브랜드)·광 DSP·실리콘 포토닉스 PIC(Dust Photonics 인수 ②). AEC의 대표주자</td><td>GPM 67.1% · OPM 31.7% · 매출 +114.7% · <b>SBC/매출 18.4%</b> · 재고 +168.3% · 최대 고객 43% · 09-02 하루 −20.04%</td><td>○</td><td><a href="optical_interconnect_layer.html#now" style="color:var(--accent)">연결 계층 편</a> T1·T2·T5</td></tr>
+<tr><td><b>Astera Labs</b> <span class="badge badge-jp">ALAB</span></td><td>서버 <b>안</b>의 신호 연장 — <b>PCIe/CXL 리타이머</b>(GPU↔CPU↔메모리 사이)·AEC·패브릭 스위치. 광이라기보다 「연결」 회사</td><td>GPM <b>75.1%</b>(9사 중 최고) · R&amp;D/매출 34.6% · 매출 +104.5% · 매출채권 +691.5%</td><td>○</td><td>9사 편 02절</td></tr>
+<tr><td><b>MACOM</b> <span class="badge badge-jp">MTSI</span></td><td><b>드라이버·TIA</b>(02절 2·5번)·RF·아날로그·일부 레이저. 「못 지우는 부품」의 순수 플레이에 가깝다</td><td>GPM 56.5% · OPM 18.1% · 매출 +35.8%</td><td>✗</td><td>9사 편 02절</td></tr>
+<tr><td><b>Semtech</b> <span class="badge badge-jp">SMTC</span></td><td><b>드라이버·TIA</b>(FiberEdge·Tri-Edge)·<b>AEC</b>(CopperEdge)·IoT(LoRa)·아날로그. LPO 수혜로 자주 거론</td><td>전사 GPM 53.8%인데 <b>Signal Integrity 세그 65.3%·+64.4%·비중 36.9%</b> · 최대 고객 15%(셋 중 최저 집중) · 전사 OPM에 영업권 손상 $42M</td><td>✗</td><td>연결 계층 편 T3</td></tr>
+</tbody></table></div>
+
+<h3 style="font-size:1.05rem;margin:28px 0 12px;color:var(--accent)">B. 광원·광부품 — 빛을 만드는 층 (지금 병목)</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>회사</th><th>무엇을 파나 (②)</th><th>정본 실측 (①)</th><th>추적</th><th>정본</th></tr></thead>
+<tbody>
+<tr><td><b>Lumentum</b> <span class="badge badge-jp">LITE</span></td><td><b>EML</b>(장거리용 레이저+변조기)·<b>CW 레이저</b>(실리콘 포토닉스용 광원)·<b>펌프 레이저</b>(증폭기용)·ROADM(통신망 파장 라우터)·3D 센싱 VCSEL. 엔비디아 CPO 공급망에 「레이저」로 이름이 올랐다(②)</td><td>FY26 매출 $3,014M(+83.2%) · GPM 41.7% → <b>최신 분기 47.4%</b> · OPM <b>−31.3% → +27.7%</b>(2년) · 1년 주가 +599.4% · P/S 27.6배</td><td>○</td><td>9사 편 T2·T3</td></tr>
+<tr><td><b>Coherent</b> <span class="badge badge-jp">COHR</span></td><td>구 II-VI. <b>인듐인 레이저·EML·VCSEL</b> + <b>트랜시버 완제품</b>까지 수직계열 + 산업용 레이저·광학 소재. 「광원사」이자 「모듈사」</td><td>매출 $7,118M · GPM 37.5% · OPM 7.84%(상각·구조조정 환입 시 12.67%) · <b>DC&amp;C 비중 55.9 → 74.1%</b>, Industrial 역성장 · II-VI 합병 상각 분기 $70~87M</td><td>○</td><td>9사 편 T4</td></tr>
+<tr><td><b>T&amp;S</b> 天孚通信 <span class="badge badge-cn">300394.SZ</span></td><td><b>광부품·광엔진</b>(파이버 어레이·격리기·렌즈 등 수동 부품 + 능동 서브어셈블리). 모듈사와 스위치사에 <b>부품으로</b> 공급 — 완제품 브랜드가 아니다</td><td>연환산 $0.84B · <b>GPM 60.9%</b>(부품인데 모듈사보다 높다) · +15.1% · P/S 50.5배</td><td>✗</td><td>9사 편 T1 정정표</td></tr>
+</tbody></table></div>
+
+<h3 style="font-size:1.05rem;margin:28px 0 12px;color:var(--accent)">C. 모듈 — 완제품을 만드는 층 (자기 제품이냐 위탁조립이냐)</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>회사</th><th>무엇을 파나 (②)</th><th>정본 실측 (①)</th><th>추적</th><th>정본</th></tr></thead>
+<tbody>
+<tr><td><b>InnoLight</b> 中际旭创 <span class="badge badge-cn">300308.SZ</span></td><td><b>세계 최대 광모듈사.</b> 800G·1.6T 모듈을 <b>자기 설계·자기 브랜드</b>로 하이퍼스케일러에 직납. 태국 생산 비중 확대(②)</td><td>연환산 <b>$12.45B</b>(Coherent의 1.75배·Lumentum의 4.1배) · <b>GPM 46.2%</b> · +182.5% · 해외 매출 94.8% · P/S 13.1배(Lumentum의 절반)</td><td>✗</td><td>9사 편 T1 정정 · <a href="../national-strategy/ns_cn_global_reach_paper.html" style="color:var(--accent)">중국 84사</a></td></tr>
+<tr><td><b>Eoptolink</b> 新易盛 <span class="badge badge-cn">300502.SZ</span></td><td>모듈 <b>설계·판매</b>. InnoLight와 같은 성격, 규모는 절반</td><td>연환산 $6.23B · GPM 48.4% · +100.3% · 해외 97.9% · P/S 14.1배</td><td>✗</td><td>9사 편 T1 정정표</td></tr>
+<tr><td><b>AAOI</b> <span class="badge badge-jp">AAOI</span></td><td>Applied Optoelectronics. <b>미국(텍사스) 본사의 수직계열 모듈사</b> — 레이저까지 자체 생산. 하이퍼스케일러·케이블TV 고객(②)</td><td>매출 $596M · GPM 28.9% · <b>OPM −11.3%(9사 중 유일한 적자)</b>인데 성장 +86.4%</td><td>✗</td><td>9사 편 02절</td></tr>
+<tr><td><b>Fabrinet</b> <span class="badge badge-jp">FN</span></td><td><b>위탁조립(EMS).</b> 남의 설계를 태국 공장에서 조립·검사한다. 광 트랜시버 외 산업용 레이저·자동차·의료도. 반도체 회사가 아니다</td><td>매출 $4,641M · <b>GPM 12.0% · OPM 10.0%</b>(간격 2%p — 판관비가 거의 없는 구조) · 데이터센터 47.9% · 태국 생산 61.2% · <b>계약부채 매출의 0.09%</b> · P/S 3.2배는 싼 게 아니라 이 층의 정상 배수</td><td>✗</td><td>9사 편 T1·T5</td></tr>
+</tbody></table></div>
+
+<h3 style="font-size:1.05rem;margin:28px 0 12px;color:var(--accent)">D. 광섬유·커넥터 · 시스템·장비 · 파운드리 — 모듈 바깥</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>회사</th><th>무엇을 파나 (②)</th><th>아카이브 위치</th><th>추적</th></tr></thead>
+<tbody>
+<tr><td><b>Corning</b> <span class="badge badge-jp">GLW</span></td><td><b>광섬유·광케이블·커넥터</b>(02절 4번) 1위. 하이퍼스케일러와 장기 공급 계약. 디스플레이 유리·자동차 등 비광 사업이 큼</td><td><a href="us_vertiv_corning_deep.html#now" style="color:var(--accent)">Vertiv·Corning 편</a> · <a href="us_ai_adjacent_sectors.html" style="color:var(--accent)">미국 AI 인접 섹터</a></td><td>○</td></tr>
+<tr><td><b>Amphenol</b> <span class="badge badge-jp">APH</span> · <b>TE Connectivity</b> <span class="badge badge-jp">TEL</span></td><td><b>커넥터·케이블 어셈블리</b>. 광·구리 양쪽. TE는 10-Q에 「Digital data networks 유기 +34.0%, 사유 AI」를 숫자로 공시(①)</td><td>미국 AI 인접 섹터 편</td><td>○</td></tr>
+<tr><td><b>Ciena</b> <span class="badge badge-jp">CIEN</span></td><td><b>DCI·장거리 코히런트 광 시스템</b>(01절 ④구간). 자체 코히런트 DSP(WaveLogic). <b>Nubis 인수로 AEC·리타이머(②구간)에 진입</b>하고 FY28부터 광엔진(XPO)을 낸다(③)</td><td>9사 편 T2·T5 · 냉각·광 편 T3</td><td>○</td></tr>
+<tr><td><b>Arista</b> <span class="badge badge-jp">ANET</span> · <b>Cisco</b> <span class="badge badge-jp">CSCO</span></td><td><b>스위치 시스템</b>(리프·스파인). 모듈은 사서 꽂는다 — 광통신사의 <b>고객</b>이자 CPO가 되면 <b>경쟁 구도가 바뀌는 자리</b></td><td>밸류체인 가이드 5F</td><td>○</td></tr>
+<tr><td><b>NVIDIA</b> <span class="badge badge-jp">NVDA</span></td><td>GPU 외에 <b>Spectrum-X(이더넷)·Quantum-X(인피니밴드) 스위치</b>와 자체 브랜드 케이블·트랜시버(LinkX). <b>CPO 스위치를 처음 양산</b>(② 2차 정리). 01절 ①구간을 NVLink로 내재화</td><td><a href="ai_chip_company_nvidia.html#now" style="color:var(--accent)">엔비디아 편</a> · <a href="ai_datacenter_full_map.html" style="color:var(--accent)">종합 지도</a></td><td>○</td></tr>
+<tr><td><b>TSMC</b> · <b>SPIL</b></td><td><b>실리콘 포토닉스 웨이퍼</b>(빛을 다루는 회로를 실리콘 공정으로 만든다)와 <b>광엔진 패키징</b>. CPO 공급망에 이름이 올랐다(②)</td><td>종합 지도</td><td>TSMC ADR ○</td></tr>
+</tbody></table></div>
+
+<h3 style="font-size:1.05rem;margin:28px 0 12px;color:var(--accent)">E. 국내 5사 — 정본은 <a href="kr_cooling_optical_layer.html#now" style="color:var(--accent)">냉각·광 계층 편</a></h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>회사</th><th>무엇을 파나 (②)</th><th>2Q26 확정 (①)</th><th>어느 층인가</th><th>추적</th></tr></thead>
+<tbody>
+<tr><td><b>오이솔루션</b> <span class="badge badge-kr">138080</span></td><td><b>광 트랜시버</b> 전문. 국내에서 02절의 모듈을 통째로 만드는 거의 유일한 상장사. 매출은 통신사 <b>5G 프론트홀·FTTH</b> 중심이고 데이터센터용은 진출 단계</td><td>매출 197억 · +23.9% · <b>OPM −4.6%</b></td><td>C. 모듈(자기 제품) — 다만 고객이 하이퍼스케일러가 아니다</td><td>○</td></tr>
+<tr><td><b>우리로</b> <span class="badge badge-kr">046970</span></td><td><b>PLC 광분배기</b>(빛을 여러 갈래로 나누는 수동 부품 · FTTH망)·광부품·SPAD 센서</td><td>매출 147억 · +45.5% · <b>OPM 17.7%</b>(5사 중 유일한 두 자릿수)</td><td>B. 광부품(수동)</td><td>○</td></tr>
+<tr><td><b>옵티코어</b> <span class="badge badge-kr">380540</span></td><td><b>광 트랜시버·광 부품</b>. 규모가 가장 작다</td><td>매출 34억 · +61.9% · <b>OPM −55.9%</b></td><td>C. 모듈</td><td>○</td></tr>
+<tr><td><b>대한광통신</b> <span class="badge badge-kr">010170</span></td><td><b>광섬유·광케이블</b>(02절 4번). Corning과 같은 칸</td><td>매출 491억 · +18.0% · OPM 2.0%</td><td>D. 광섬유</td><td>○</td></tr>
+<tr><td><b>에이스테크</b> <span class="badge badge-kr">088800</span></td><td><b>RF 안테나·필터</b> 등 <b>무선</b> 통신 부품. 광이 아니다 — 냉각·광 편의 「광 5사」 표에 함께 실려 있어 여기서도 구분해 적는다</td><td>매출 287억 · −37.7% · <b>OPM −28.2%</b></td><td>(광 밸류체인 밖)</td><td>○</td></tr>
+</tbody></table></div>
+
+<div class="risk" style="margin-top:28px"><h3><span class="rd"></span>국내 5사를 해외와 나란히 놓을 때 정본이 붙인 단서</h3>
+<div class="risk-grid">
+  <div class="ritem"><div class="ri">①</div><div class="rt"><b>규모가 10~37배 다르다</b><span>국내 광 5사 2Q 합계 1,156억원($85M) vs Lumentum 단독 $1,006M(11.8배) · InnoLight 반기는 국내 5사 반기의 37.2배. 「같은 층」이라 부를 수 있는지가 먼저다(냉각·광 편 T4).</span></div></div>
+  <div class="ritem"><div class="ri">②</div><div class="rt"><b>고객이 다르다</b><span>해외 모듈사의 고객은 하이퍼스케일러·엔비디아이고, 국내는 통신사(5G·FTTH)다. 같은 「광 트랜시버」라는 단어인데 <b>수요처의 CAPEX 사이클이 다르다.</b></span></div></div>
+  <div class="ritem"><div class="ri">③</div><div class="rt"><b>반기 YoY는 착시다</b><span>1Q25 결측으로 분모가 반쪽이라 1H 기준으로 계산하면 +67.8~+628.6%가 나온다. 정본은 이 함정에 한 번 빠졌다가 <b>2Q 단독</b>으로 다시 계산했다(T2).</span></div></div>
+  <div class="ritem"><div class="ri">④</div><div class="rt"><b>접근하려면 해외이고, 그러면 환 결정이 붙는다</b><span>이 층에서 손익이 나는 회사는 전부 해외 상장이다. 종목 선택과 달러·위안 노출이 동시에 결정된다(냉각·광 편 T6 · §J4).</span></div></div>
+</div></div>
+</div></section>
+
+<div class="divider"></div>
+
+<section id="s05" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">05</span><span class="ln"></span>세 정본이 말하는 것</div>
+<h2 class="sec-title">이 편을 읽고 나면 <b>정본의 테제가 이렇게 읽힌다</b></h2>
+<p class="sec-lead">아래는 정본에서 <b>헤드라인만</b> 옮긴 것이다. 값·반증 조건·판정 이벤트는 각 편의 「현재 판단」이 정본이며, 이 표는 「어느 편을 열 것인가」를 정하는 용도다.</p></div>
+
+<div class="fw-grid">
+  <div class="fw-card"><div class="fw-num"><a href="optical_valuechain_9.html#now" style="color:var(--accent)">9사 밸류체인 편 · 2026.09.12</a></div><h3>마진은 층이, 위험은 「지울 수 있느냐」가 정한다</h3>
+    <div class="fw-row"><span class="fw-label"><b>T1</b> GPM이 층을 따라 75→12% — 단, 가르는 것은 「EMS냐 자기 제품이냐」(C1급 정정)</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T2</b> 병목은 못 지우는 쪽(레이저·패키징)에 있다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T3</b> 이번 사이클의 변곡은 광원(Lumentum)에서 났다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T4</b> 연결 지표가 세그먼트를 가린다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T5</b> 배수는 층을 반영한다 · 층의 경계가 움직인다(Ciena)</span></div>
+    <div class="theme-highlight">이 편 02·04절이 T1·T4의 배경이고, 03절이 T2·T5의 배경이다</div></div>
+  <div class="fw-card"><div class="fw-num"><a href="optical_interconnect_layer.html#now" style="color:var(--accent)">연결 계층 편 · 2026.09.12</a></div><h3>전환 방향은 맞는데 수혜·피해 배분이 공시와 어긋난다</h3>
+    <div class="fw-row"><span class="fw-label"><b>T1</b> 「DSP가 빠질수록 크레도 수혜」는 크레도 가이던스와 어긋난다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T2</b> −20% 하락의 원인은 마진이 아니라 주식보상비(18.4%)</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T3</b> 「셈텍이 LPO 강자」는 세그먼트로 지지된다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T4</b> 「마벨이 피해자」는 실적에서 관측되지 않는다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T5</b> 크레도의 진짜 미확인은 재고다</span></div>
+    <div class="theme-highlight">이 편 03절의 LPO 행이 T1·T3·T4의 배경이다. 판정은 크레도 FY27 Q2(11월경)</div></div>
+  <div class="fw-card"><div class="fw-num"><a href="kr_cooling_optical_layer.html#now" style="color:var(--accent)">냉각·광 계층 편 · 2026.09.06</a></div><h3>「비워 둔 게 맞았다」 — 국내엔 실적이 따라온 종목이 없다</h3>
+    <div class="fw-row"><span class="fw-label"><b>T1</b> 국내 냉각·광에는 AI 수혜가 2Q 손익에 없다</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T2</b> 반기 YoY는 착시(분모 반쪽)</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T3</b> 미국·중국은 정반대 — OPM 15~28%</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T4</b> 규모 격차 10~37배</span></div>
+    <div class="fw-row"><span class="fw-label"><b>T6</b> 접근하려면 해외 → 환 결정이 붙는다</span></div>
+    <div class="theme-highlight">이 편 04-E절이 T1·T4의 배경이다. 판정은 3Q26 실적(11월 중순)</div></div>
+</div>
+
+<div class="tbl-wrap" style="margin-top:28px"><table>
+<thead><tr><th>질문</th><th>어디로 가나</th></tr></thead>
+<tbody>
+<tr><td>「이 회사는 뭐 하는 회사냐」</td><td><b>이 편 04절</b></td></tr>
+<tr><td>「LPO·CPO가 되면 누가 죽고 누가 사냐」</td><td>이 편 03절로 구조를 잡고 → <b>연결 계층 편 T1·T4</b>(배분이 공시와 어긋난다) + <b>9사 편 T2</b>(못 지우는 쪽이 병목)</td></tr>
+<tr><td>「지금 싸냐 비싸냐」</td><td><b>9사 편 T5 + 02절 표</b> — P/S÷성장은 <b>같은 층 안에서만</b> 비교한다. Fabrinet 3.2배는 싼 게 아니다</td></tr>
+<tr><td>「국내 광통신주는」</td><td><b>냉각·광 편 T1·T4</b> — 손익에 아직 없고 규모가 10~37배 다르다</td></tr>
+<tr><td>「왜 갑자기 광이냐」</td><td><b>이 편 01·03절</b> + <a href="ai_value_chain_guide_v2.html" style="color:var(--accent)">밸류체인 가이드 5F</a>(시장 크기 ③)</td></tr>
+<tr><td>「중국 모듈사는 왜 배수가 절반이냐」</td><td><b>9사 편이 판정하지 않았다</b>(A주 접근 제약·지정학·회계 기준이 섞여 있고 분리 안 함 · §W5). 열린 질문이다</td></tr>
+</tbody></table></div>
+</div></section>
+
+<div class="divider"></div>
+
+<section id="s06" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">06</span><span class="ln"></span>용어</div>
+<h2 class="sec-title">정본 세 편에 나오는 <b>용어 24개</b></h2></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>용어</th><th>뜻 (한 줄)</th><th>정본에서 어디에</th></tr></thead>
+<tbody>
+<tr><td><b>트랜시버 / 광모듈</b></td><td>전기를 빛으로, 빛을 전기로 바꾸는 엄지손가락 크기 부품. 송신(Transmit)+수신(Receive)</td><td>전편</td></tr>
+<tr><td><b>플러거블</b></td><td>스위치 앞면에 <b>꽂았다 뺐다</b> 하는 모듈. OSFP·QSFP-DD가 규격 이름</td><td>03절</td></tr>
+<tr><td><b>레인</b></td><td>모듈 안의 한 줄. 800G = 100G 레인 8개, 1.6T = 200G 레인 8개</td><td>02절</td></tr>
+<tr><td><b>PAM4</b></td><td>한 번에 0/1 두 단계가 아니라 <b>네 단계</b>를 실어 같은 속도로 두 배 보내는 변조. 그 대신 신호가 약해져 DSP가 필요해졌다</td><td>02절</td></tr>
+<tr><td><b>SerDes</b></td><td>Serializer/Deserializer. 칩 안의 병렬 데이터를 고속 직렬 신호로 바꾸는 회로. 크레도의 본업. LPO에서 DSP 역할을 대신한다</td><td>연결 계층 T1</td></tr>
+<tr><td><b>DSP (광 DSP)</b></td><td>모듈 안에서 신호를 교정·재생성하는 칩. 마벨·브로드컴·크레도. LPO가 지우려는 것</td><td>9사 T2 · 연결 계층 T1·T4</td></tr>
+<tr><td><b>리타이머</b></td><td>약해진 전기 신호를 <b>다시 타이밍 맞춰 살리는</b> 칩. 서버 안(PCIe)에서는 Astera, 케이블 안(AEC)에서는 Credo</td><td>9사 T2·T5</td></tr>
+<tr><td><b>DAC / AEC / AOC</b></td><td>수동 구리 / <b>능동 구리(칩 내장)</b> / 능동 광 케이블. 거리 순으로 DAC &lt; AEC &lt; AOC(=양끝에 모듈이 붙은 광케이블)</td><td>01절 ②</td></tr>
+<tr><td><b>EML</b></td><td>Electro-absorption Modulated Laser. 레이저와 변조기를 한 칩에 붙인 <b>장거리용 광원</b>. 인듐인 기판. Lumentum·Coherent·브로드컴</td><td>9사 T3</td></tr>
+<tr><td><b>VCSEL</b></td><td>표면에서 수직으로 빛을 쏘는 값싼 레이저. <b>100m 안쪽 멀티모드</b>용. 3D 센싱(얼굴 인식)에도 쓴다</td><td>02절</td></tr>
+<tr><td><b>CW 레이저</b></td><td>Continuous Wave. 켜 둔 채로 두는 광원. <b>실리콘 포토닉스</b> 방식에서 빛을 끊는 일은 실리콘 칩이 하고 레이저는 계속 켜져 있다</td><td>02절</td></tr>
+<tr><td><b>펌프 레이저</b></td><td>광섬유 증폭기(EDFA)에 에너지를 넣는 레이저. 장거리·DCI에 필수. Ciena가 「병목」으로 지목한 것</td><td>9사 T2</td></tr>
+<tr><td><b>실리콘 포토닉스 / PIC</b></td><td>빛을 다루는 회로(도파로·변조기·검출기)를 <b>반도체 공정으로</b> 만든 칩. PIC = Photonic Integrated Circuit. TSMC가 파운드리</td><td>02절 · 03절 CPO</td></tr>
+<tr><td><b>TIA</b></td><td>Trans-Impedance Amplifier. 포토다이오드가 만든 미약한 전류를 전압으로 증폭. MACOM·Semtech</td><td>02절 5번</td></tr>
+<tr><td><b>드라이버</b></td><td>레이저·변조기를 구동하는 전류를 만드는 칩. MACOM·Semtech</td><td>02절 2번</td></tr>
+<tr><td><b>LPO / LRO</b></td><td>Linear Pluggable Optics — DSP를 뺀 모듈. LRO(Linear Receive Optics)는 수신 쪽만 뺀 절충안</td><td>03절 · 연결 계층 전편</td></tr>
+<tr><td><b>CPO / NPO</b></td><td>Co-/Near-Packaged Optics — 광엔진을 스위치 칩 옆에(바로 옆에/조금 떨어져) 패키징. 플러거블이 사라진다</td><td>03절 · 종합 지도</td></tr>
+<tr><td><b>광엔진 / ELS</b></td><td>CPO에서 칩 옆에 붙는 광 송수신 블록. ELS = External Laser Source, 광엔진 밖에 두는 <b>교체 가능한 레이저</b>(레이저가 가장 먼저 고장 나므로)</td><td>종합 지도</td></tr>
+<tr><td><b>SR / DR / FR / LR / ZR</b></td><td>도달 거리 등급. SR 100m(멀티모드) · DR 500m · FR 2km · LR 10km(싱글모드) · ZR 80~120km(코히런트)</td><td>01절</td></tr>
+<tr><td><b>코히런트 광</b></td><td>빛의 세기뿐 아니라 <b>위상·편광까지</b> 써서 정보를 싣는 방식. 장거리·DCI. Ciena WaveLogic, 마벨 코히런트 DSP. (회사명 Coherent와 다르다)</td><td>01절 ④</td></tr>
+<tr><td><b>DCI</b></td><td>Data Center Interconnect. 떨어진 데이터센터들을 잇는 링크. 「여러 센터를 한 대의 컴퓨터로」 수요</td><td>01절 ④</td></tr>
+<tr><td><b>스케일업 / 스케일아웃</b></td><td>스케일업 = 랙 안 GPU끼리(NVLink · 구리). 스케일아웃 = 랙 밖 서버·스위치끼리(이더넷·인피니밴드 · 광)</td><td>01절</td></tr>
+<tr><td><b>ToR / 리프 / 스파인</b></td><td>스위치 계층. ToR(Top of Rack)=랙 위 첫 스위치, 리프=랙 묶음, 스파인=리프끼리 잇는 상위 스위치. 리프↔스파인이 광의 본거지</td><td>01절 ③</td></tr>
+<tr><td><b>EMS</b></td><td>Electronics Manufacturing Services — 위탁조립. Fabrinet. 자기 설계가 없어 마진이 낮고 선수금이 없다</td><td>9사 T1</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section id="recent" class="blk"><div class="wrap">
+<div style="padding:16px 20px;border-left:4px solid #60a5fa;background:rgba(96,165,250,.07);line-height:1.9">
+<div style="font-weight:900;color:#60a5fa;margin-bottom:6px">▎최근 변경 · 1건</div>
+<b>2026.09.13 — 신설.</b> <span style="color:var(--ink-3)">→ 판단 없음(입문 가이드)</span><br>
+사용자 요청 — <i>「최근 광통신 페이퍼를 만들었는데 내용을 잘 몰라서, 밸류체인을 쉽게 설명하고 각 회사가 어떤 비즈니스를 하는지도 같이」</i>.
+정본 세 편(9사 · 연결 계층 · 국내 냉각·광)의 <b>값을 한 자리도 새로 만들지 않고</b> 배경 지식과 회사 사업 서술만 붙였다. <b>「무엇을 파나」는 ②</b>이고, 다음에 이 회사들 중 하나를 손댈 때 10-K·사업보고서 「사업의 개요」로 ①로 올린다.
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="sec-head" style="margin-bottom:12px"><div class="sec-eyebrow">Disclosure</div><h2 class="sec-title" style="font-size:1.3rem">타임라인 · 출처</h2></div>
+<div style="line-height:1.95;font-size:.92rem;color:var(--ink-2)">
+▸ 2026.09.13: <b>🆕 신설.</b> 광통신 밸류체인 입문 가이드 — 거리 계층 4단계 · 모듈 부품 6개 · 전환 5방식 · 층별 22사 사업 · 용어 24개. <b>판단 0개</b>, 정본 3편을 가리킨다.<br>
+<b>정본 관계(§W2)</b> — 수치·판단은 <a href="optical_valuechain_9.html#now" style="color:var(--accent)">9사 밸류체인 편</a> · <a href="optical_interconnect_layer.html#now" style="color:var(--accent)">연결 계층 편</a> · <a href="kr_cooling_optical_layer.html#now" style="color:var(--accent)">냉각·광 계층 편</a>이 정본이며 이 편은 참조만 한다. 이 편의 값이 정본과 다르면 <b>이 편이 틀린 것</b>이다.<br><br>
+<b>출처</b><br>
+· 회사별 GPM·OPM·성장·비중·집중도 — 정본 3편이 <b>SEC 10-K/10-Q XBRL 직접 재구성(TTM · 2026-09-11 종가)</b>, eastmoney(중국 3사 1H26 누적), 네이버 분기 재무(국내 5사 2Q26 확정)로 산출한 값 — <b>①</b>(정본 그대로)<br>
+· 「무엇을 파나」 — 각 사 공시 「사업의 개요」 수준의 일반 지식. <b>이 편에서 원문 재조회 안 함 — ②</b>. 국내 5사는 <code>m.stock.naver.com/api/stock/{code}/integration</code>을 열려 했으나 <b>프록시 403(CONNECT 실패)</b>으로 막혔다(§W5 · 호스트 기록)<br>
+· 시장 크기($280억 → $1,874억 · 광 44%) · CPO 교차 2031년 · NPO 효익 — <b>③</b> 리포트·경영진 발언(<a href="ai_value_chain_guide_v2.html" style="color:var(--accent)">밸류체인 가이드</a> · <a href="ai_datacenter_full_map.html" style="color:var(--accent)">종합 지도</a>에서 인용)<br>
+· 엔비디아 CPO 풀 프로덕션·공급망 5사 — <b>②</b> 2차 정리(8-K 미대조 · 종합 지도의 표기를 그대로 따른다)<br>
+· 기술 서술(레인·PAM4·거리 등급·LPO 전력 절반) — 업계 교과서적 사실. <b>값은 대략</b>이며 LPO 전력은 연결 계층 편이 「자릿수 오기」로 판정한 [추론]을 따른다. OIF·모듈 벤더 스펙 원문은 <b>열지 않았다</b>(§W5)<br><br>
+<span style="color:var(--ink-3)">전체 아카이브 변경 이력은 <a href="../update_log.html" style="color:var(--accent)">업데이트 로그</a>.
+관련 편 — <a href="ai_chip_company_marvell.html#now" style="color:var(--accent)">마벨</a> ·
+<a href="ai_chip_company_broadcom.html#now" style="color:var(--accent)">브로드컴</a> ·
+<a href="us_vertiv_corning_deep.html#now" style="color:var(--accent)">Vertiv·Corning</a> ·
+<a href="ai_datacenter_full_map.html" style="color:var(--accent)">데이터센터 종합 지도</a></span>
+</div>
+</div></footer>
+
+<script>
+document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "광통신 밸류체인 입문 — 빛이 데이터센터를 어떻게 지나가고, 누가 무엇을 파는가",
+  "description": "광통신 정본 3편을 읽기 위한 배경 지식. 전기→빛→광섬유→전기 4단계, 트랜시버 부품 6개, 플러거블→LPO→CPO 전환, 층별 22사가 무엇을 파는지 한 줄씩.",
+  "author": {"@type": "Organization", "name": "ourprochoi Research"},
+  "publisher": {"@type": "Organization", "name": "ourprochoi Research Archive"},
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ourprochoi-web.github.io/stock-research/ai-infra/optical_valuechain_primer.html"},
+  "keywords": "광통신,광모듈,트랜시버,LPO,CPO,AEC,EML,VCSEL,실리콘포토닉스,Lumentum,Coherent,InnoLight,Fabrinet,Credo,Marvell,Ciena,오이솔루션,입문"
+}
+</script>
+</body>
+</html>
