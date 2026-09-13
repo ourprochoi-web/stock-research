@@ -357,3 +357,60 @@
 
 **⚠ 창이 2거래일이므로 이 판정은 <u>관측이지 예측이 아니다</u>(§J8과 동일 — 테제로 올리지 않는다).**
 
+---
+
+## 원문 경로 — 전부 무키(별도 표기 없으면)
+
+*(2026-09-13 `CLAUDE.md` §I-2에서 그대로 옮김. 「못 한다」고 적었다가 열린 경로들이다 — 시도 기록에는 호스트를 적는다.)*
+
+
+**§G의 「불가 판정에는 시도 기록을 함께 적는다」가 값을 하는 자리다 — 아래는 전부 <u>「못 한다」고 적었다가 열린 것</u>이다.**
+
+| 무엇 | 경로 | 주는 것 |
+|---|---|---|
+| **한국 공시 전문** | `opendart.fss.or.kr/api/document.xml?crtfc_key={KEY}&rcept_no={rcp}` 🔑키 | **ZIP 안에 보고서 전문 XML**(대우건설 11MB). rcpNo는 `list.json`이 준다. 표는 `<TABLE>`→`<TR>`→`<TD>` |
+| **한국 공시 (키 없이)** | `dart.fss.or.kr` **3단계** — 이 표 아래 | 절 원문만 골라 받는다. **전문을 받을 필요가 없다** |
+| **확정 실적** | `m.stock.naver.com/api/stock/{code}/disclosure` → `/disclosure/{id}` | 「연결재무제표기준영업(잠정)실적(공정공시)」 — **확정 실적의 유일한 무키 경로**(§A1-1) |
+| **경쟁사** | DART 반기보고서 **「경쟁제품」 열** | **회사가 스스로 경쟁자를 공시**한다(셀트리온 → Henlius·Qilu·Bio-Thera·Mabpharm). **추론을 ① 등급으로 대체** |
+| **미국 재무 시계열** | `data.sec.gov` XBRL companyfacts · 10-Q R-파일(FilingSummary) | 캐펙스·매출 시계열 · 세그먼트 분해 |
+| **13F** | `data.sec.gov/submissions/CIK{}.json` → 13F-HR → `Archives/.../index.json` → `form13f_*.xml` | `<infoTable>`. **⚠ 태그는 `sshPrnamt`**(대소문자 틀리면 주식수가 전부 0)(§J12-3) |
+| **의회 PTR** | `disclosures-clerk.house.gov/public_disc/financial-pdfs/{연도}FD.zip` → 인덱스 TXT(`FilingType`=`P`) → `ptr-pdfs/{연도}/{DocID}.pdf` | 계약수·행사가·만기(§J12-2) |
+| **환율** | `api.stock.naver.com/marketindex/exchange/FX_USDKRW/prices?page={n}&pageSize=60` | `localTradedAt`·`closePrice`. **한 번에 720일**. 현물은 `cashBuyValue`/`cashSellValue`(§J13) |
+| **금리** | `fred.stlouisfed.org/graph/fredgraph.csv?id={DGS10\|DGS2\|MORTGAGE30US\|DFF}` | **🔴 FRED는 `Mozilla/5.0`을 차단한다** — 연락처가 든 UA를 쓴다(§J13-1) |
+| **수급 시계열** | 🔴 `finance.naver.com/item/frgn.naver`는 **2026-09-11 확인 시 Next.js SPA로 바뀌어 서버 렌더 테이블이 없다**(EUC-KR 파싱 경로 사망). **대체: `m.stock.naver.com/api/stock/{code}/trend?pageSize=30&page={n}`** | JSON. `bizdate`·`closePrice`·`foreignerPureBuyQuant`·`organPureBuyQuant`·`individualPureBuyQuant`·`foreignerHoldRatio`. **값에 쉼표와 `+`가 붙어 있으므로 벗기고 int로 읽는다**(§J8-2) |
+| **임상** | `clinicaltrials.gov/api/v2/studies` | `query.intr`·`query.cond`·`query.spons`·`query.locn`·`filter.advanced=AREA[Phase]PHASE3`·`countTotal=true` |
+| **거시** | BLS 공개 API · BLS QCEW CSV · USAspending | 산업·주별 임금 · 연방 계약의 가격 결정 방식 |
+| **일본 상장사** | TDnet PDF 직링크 | **IR 라이브러리가 아니라 뉴스 페이지에 있다** |
+| **중국 공시** | cninfo | — |
+| 🔑 **한국 순별 수출** | 관세청 「수출입 현황」 — **매월 11일·21일·익월 1일**(1~10일 / 1~20일 / 월전체) | **아카이브에서 가장 빠른 ① 등급 계기판 — 지연 1일**(TSMC 월별 10일 · SEC XBRL 45일). 품목별 증감률·조업일수·일평균을 함께 준다. **⚠ 금액만 주고 물량은 안 준다** — 단가/물량 분해는 **한국은행 수출물량지수**가 필요하다(§A7-0). **⚠ 「조업일수 동일」을 반드시 확인한다** — 다르면 총액 증감률과 일평균 증감률이 갈린다 |
+| 🔑 **TSMC 월별 매출** | `investor.tsmc.com/english/monthly-revenue` (연도별 `/2026`) · 가이던스는 **SEC 6-K**(`data.sec.gov` CIK 1046179) | **AI 체인에서 가장 빠른 ① 등급 지표 — 약 10일 지연**(SEC XBRL 분기는 45일). 월별 NT$ 매출·YoY·YTD. **⚠ 월별 YoY 진폭이 +17.5~+67.9%(50.4%p)라 한 달로 판정하지 않는다** · **가이던스는 US$인데 매출은 NT$이므로 <u>환율 가정(32.0)과 실제를 대조</u>해야 비교된다** |
+| **일일 브리핑(2차)** | `soonsal.com/newsletters/{YYYY}/{MMDD}.html` — **매일 11~12시** | 시장 종가·IB 요약·딜·해외 뉴스. **⚠ 2차 요약이므로 등급은 항목마다 ②~③이고 §R2대로 <u>각각 매긴다</u>. 숫자는 원 출처로 올린다** — 실측 2건이 SEC XBRL과 일치했고(아마존 $53.4B·알파벳 $98.0B) 1건은 **해석이 과장**이었다(「대부분 미실현」 → 실제 21.8%) |
+
+**⚠ ClinicalTrials.gov 한계** — `query.locn`은 **임상 실시 국가**이지 스폰서 국적이 아니다.
+`query.spons`로는 **개발 코드명만 나오고 표적이 안 나온다**(ABL103·SKI-O-703).
+**대웅 240건·동아 263건은 대부분 제네릭 생동성 시험**이라 파이프라인이 아니다.
+
+**🔴 `dart.fss.or.kr/dsab007/detailSearch.ax`는 <u>삭제됐다</u>**(2026-08-24 확인).
+**확인 방법이 중요하다** — 그 URL은 **HTTP 200을 주면서 본문에 「요청하신 인터넷주소(URL)을 찾을 수 없습니다」**를 담는다.
+**상태 코드만 보면 성공으로 읽힌다.** 8경로를 다 시도한 뒤에야 삭제임을 확인했다 → `journal#dart-block`
+
+> **⚠ 한계**: 회사마다 표 구조가 다르다(수주잔고 열 위치·단위가 억원/백만원/천원/원으로 갈린다). **§C1대로 읽고 판단해야 하며, 29/37사만 확보됐다** — 미확보 8사 중 **세보엠이씨는 「영업정보 보안 문제로 별도 공시하지 않습니다」로 <u>회사가 안 내는 것</u>**이고 나머지는 파싱 한계다.
+
+> **현행 3단계 (2026-08-24 실측, 전부 키 없음):**
+> **① rcpNo 찾기 — `POST dart.fss.or.kr/dsac001/search.ax`**
+> `{selectDate:"YYYYMMDD", currentPage:"1..45", maxResults:"100", mdayCnt:"0"}` · Referer는 `dsac001/mainY.do`.
+> **날짜 피드이고 회사·보고서명 필터가 안 먹으므로 페이지네이션해서 행 텍스트로 거른다**(`reportName`/`searchWord`/`keyword`/`contentWord` 전부 무시된다).
+> **삼성전자 2026-08-14 반기보고서를 <u>22초·45페이지</u>에 찾았다.** 각 행이 **rcpNo + 시장 + 회사명 + 보고서명**을 준다.
+> **⚠ rcpNo는 14자리다** — 정규식을 `20\d{12}`로 쓴다. `2026\d{8}`(12자리)로 쓰면 **0건이 나온다**(실제로 한 번 겪었다).
+> **② 목차 — `GET dsaf001/main.do?rcpNo={rcp}`** (검색과 달리 <u>살아 있다</u>)
+> `node\d+['키'] = "값"`을 **순차 파싱**한다(`text`가 나오면 새 항목). 키는 `dcmno·eleid·offset·length`이고 **대소문자를 무시**해야 한다.
+> **🔑 덤으로 「직전 정기보고서 체인」이 같은 HTML에 들어 있다** — `value="rcpNo=..." title="분기보고서"` 형태로,
+> **한 번 시딩하면 과거 정기보고서를 rcpNo 없이 따라갈 수 있다.**
+> **③ 절 원문 — `GET report/viewer.do?rcpNo=&dcmNo=&eleId=&offset=&length=&dtd=dart4.xsd`**
+> **전문을 받을 필요가 없다.** 삼성전자 반기보고서 목차가 **126절**이고 「14. 계약부채 (연결)」만 3KB로 받았다.
+>
+> **⚠ 대안 경로는 전부 막혀 있다(시도 기록)** — KIND `disclosure/details.do`는 회사 필터가 안 먹고,
+> `api/todayRSS.xml`은 `crpCd`를 받는 듯하나 **실제로는 전체 시장 최근 50건**을 준다(회사 필터 무시).
+> 네이버 공시 API에는 **정기보고서가 없고**, 네이버 재무 API는 **손익계산서·비율만** 준다(재무상태표·현금흐름표 없음).
+
+
