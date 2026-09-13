@@ -1,0 +1,2074 @@
+{
+ "_readme": {
+  "what": "수치 층(pilot · 광통신 22사). 페이지 산문에 흩어진 확정 지표의 정본. 값을 고칠 때는 여기를 먼저 고치고 페이지를 맞춘다.",
+  "record": "metrics.<key> = {value, unit, basis(창), asof(기준일), num(분자), den(분모), grade(①~④), source, page(이 값을 산출한 정본 페이지), note}",
+  "rules": [
+   "§W2 — 분자·분모·기준일이 없는 값은 넣지 않는다",
+   "등급 ②·③은 넣되 grade에 표기하고 확정과 더하지 않는다(§R1)",
+   "페이지 값이 여기와 다르면 pre-commit이 경고한다(.githooks/check_facts.py)",
+   "새 회사·지표는 정본 페이지가 산출한 뒤에만 추가한다 — 이 파일에서 새로 계산하지 않는다"
+  ],
+  "created": "2026-09-13",
+  "scope": "ai-infra/optical_valuechain_9 · optical_interconnect_layer · kr_cooling_optical_layer 3편이 확정한 값 + 정본 포인터",
+  "not_here": "시세는 portfolio/data/prices.json · 테제는 docs/thesis_index.md"
+ },
+ "companies": {
+  "ALAB": {
+   "name": "Astera Labs",
+   "ticker": "ALAB",
+   "market": "US",
+   "layer": "연결 반도체 · 리타이머",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 1202,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 75.1,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 22.8,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 104.5,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 50.5,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 42.0,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 40.2,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "rev_q": {
+     "value": 392.4,
+     "unit": "USD M",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "gpm_q": {
+     "value": 73.3,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "분기 매출총이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "opm_q": {
+     "value": 22.7,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "rnd_to_rev_q": {
+     "value": 34.6,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "R&D",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "sbc_to_rev_q": {
+     "value": 15.9,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "ocf_to_ebit_q": {
+     "value": 1.21,
+     "unit": "배",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "영업이익",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "inventory_yoy": {
+     "value": 94.2,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "재고 − 전년",
+     "den": "전년 재고",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "receivables_yoy": {
+     "value": 691.5,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-30",
+     "num": "매출채권 − 전년",
+     "den": "전년 매출채권",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    }
+   }
+  },
+  "CRDO": {
+   "name": "Credo",
+   "ticker": "CRDO",
+   "market": "US",
+   "layer": "연결 반도체 · SerDes·AEC·광DSP",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 1591,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 67.1,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 31.7,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 114.7,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 30.6,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 19.3,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 16.8,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "rev_q": {
+     "value": 479.0,
+     "unit": "USD M",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "gpm_q": {
+     "value": 64.5,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "분기 매출총이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "opm_q": {
+     "value": 25.2,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "rnd_to_rev_q": {
+     "value": 23.9,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "R&D",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "sbc_to_rev_q": {
+     "value": 18.4,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "ocf_to_ebit_q": {
+     "value": 0.75,
+     "unit": "배",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "영업현금흐름",
+     "den": "영업이익",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "inventory_yoy": {
+     "value": 168.3,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "재고 − 전년",
+     "den": "전년 재고",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "receivables_yoy": {
+     "value": 59.4,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "매출채권 − 전년",
+     "den": "전년 매출채권",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "top_customer_share": {
+     "value": 43,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "최대 고객 매출",
+     "den": "총매출",
+     "grade": "①",
+     "source": "10-Q 고객집중도 주석",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "max_daily_drop": {
+     "value": -20.04,
+     "unit": "%",
+     "basis": "일간 등락",
+     "asof": "2026-09-02",
+     "num": "206.63 → 165.22",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 일봉",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    }
+   }
+  },
+  "MTSI": {
+   "name": "MACOM",
+   "ticker": "MTSI",
+   "market": "US",
+   "layer": "연결 반도체 · 드라이버·TIA·RF",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 1164,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 56.5,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 18.1,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 35.8,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 21.0,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 18.0,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 50.4,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    }
+   }
+  },
+  "SMTC": {
+   "name": "Semtech",
+   "ticker": "SMTC",
+   "market": "US",
+   "layer": "연결 반도체 · 드라이버·TIA·AEC",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 1174,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 53.8,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 5.5,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 32.7,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 15.6,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 13.3,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 40.6,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "opm_reported": {
+     "value": 2.1,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "보고 영업이익(영업권 손상 $42.0M 포함)",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "5.5%는 손상 환입값 — 병기"
+    },
+    "seg_signal_integrity_gpm": {
+     "value": 65.3,
+     "unit": "%",
+     "basis": "최근 분기 세그먼트",
+     "asof": "2026-07-26",
+     "num": "SI 세그먼트 매출총이익",
+     "den": "SI 세그먼트 매출",
+     "grade": "①",
+     "source": "10-Q 세그먼트(R80)",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "seg_signal_integrity_growth": {
+     "value": 64.4,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-07-26",
+     "num": "SI 매출 $76.8M → $126.2M",
+     "den": "—",
+     "grade": "①",
+     "source": "10-Q 세그먼트",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "seg_signal_integrity_share": {
+     "value": 36.9,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "SI 세그먼트 매출",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "10-Q 세그먼트",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "rev_q": {
+     "value": 341.9,
+     "unit": "USD M",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "opm_q": {
+     "value": 8.9,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html",
+     "note": "4월 분기 값 — 7월 분기 3개월 영업이익 태그 없음"
+    },
+    "rnd_to_rev_q": {
+     "value": 19.8,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "R&D",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "sbc_to_rev_q": {
+     "value": 9.1,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "ocf_to_ebit_q": {
+     "value": 1.4,
+     "unit": "배",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "영업현금흐름",
+     "den": "영업이익",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "inventory_yoy": {
+     "value": 20.2,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "재고 − 전년",
+     "den": "전년 재고",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "receivables_yoy": {
+     "value": 5.5,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "매출채권 − 전년",
+     "den": "전년 매출채권",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "top_customer_share": {
+     "value": 15,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-26",
+     "num": "최대 고객 매출",
+     "den": "총매출",
+     "grade": "①",
+     "source": "10-Q 고객집중도 주석",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    }
+   }
+  },
+  "MRVL": {
+   "name": "Marvell",
+   "ticker": "MRVL",
+   "market": "US",
+   "layer": "연결 반도체 · 광DSP·커스텀ASIC",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 9450,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 52.2,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 16.5,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 36.5,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 207.0,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 21.9,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 60.0,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "datacenter_share": {
+     "value": 79,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "데이터센터 매출 $2,171.5M",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "10-Q End Market(R36)",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "datacenter_growth": {
+     "value": 45.7,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-08-01",
+     "num": "$1,490.5M → $2,171.5M",
+     "den": "—",
+     "grade": "①",
+     "source": "10-Q",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "distribution_share": {
+     "value": 50,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "유통 채널 매출(41% → 50%)",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "10-Q 고객유형(R38)",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "rev_q": {
+     "value": 2739.3,
+     "unit": "USD M",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "gpm_q": {
+     "value": 53.1,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "분기 매출총이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "opm_q": {
+     "value": 16.8,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "rnd_to_rev_q": {
+     "value": 27.1,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "R&D",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "sbc_to_rev_q": {
+     "value": 8.6,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "ocf_to_ebit_q": {
+     "value": 1.88,
+     "unit": "배",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "영업현금흐름",
+     "den": "영업이익",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "inventory_yoy": {
+     "value": 29.4,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "재고 − 전년",
+     "den": "전년 재고",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    },
+    "receivables_yoy": {
+     "value": 52.8,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-08-01",
+     "num": "매출채권 − 전년",
+     "den": "전년 매출채권",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_interconnect_layer.html"
+    }
+   },
+   "canonical_page_company": "ai-infra/ai_chip_company_marvell.html"
+  },
+  "LITE": {
+   "name": "Lumentum",
+   "ticker": "LITE",
+   "market": "US",
+   "layer": "광원·부품 · EML·CW·펌프 레이저",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 3014,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 41.7,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 17.4,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 83.2,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 83.2,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 27.6,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 33.2,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "gpm_latest_q": {
+     "value": 47.4,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-27",
+     "num": "분기 매출총이익",
+     "den": "분기 매출 $1,006M",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm_latest_q": {
+     "value": 27.7,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-06-27",
+     "num": "분기 영업이익",
+     "den": "분기 매출 $1,006M",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "2024-03-30 분기 −31.3% → 9사 편 T3의 변곡"
+    },
+    "rev_latest_q": {
+     "value": 1006,
+     "unit": "USD M",
+     "basis": "최근 분기",
+     "asof": "2026-06-27",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "price_1y_change": {
+     "value": 599.4,
+     "unit": "%",
+     "basis": "1년 주가",
+     "asof": "2026-09-11",
+     "num": "$132.56 → $927.03",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    }
+   }
+  },
+  "COHR": {
+   "name": "Coherent",
+   "ticker": "COHR",
+   "market": "US",
+   "layer": "광원·부품 + 모듈(수직계열)",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 7118,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 37.5,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 7.84,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 33.7,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 59.8,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 8.4,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 24.9,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "opm_adjusted": {
+     "value": 12.67,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 + 무형상각 $280M + 구조조정 $63M",
+     "den": "매출 $7,118M",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "상각은 3년 연속 반복 — 병기하고 무시하지 않는다(§W3)"
+    },
+    "seg_dcc_revenue_fy26": {
+     "value": 5275,
+     "unit": "USD M",
+     "basis": "FY26(회계연도)",
+     "asof": "2026-06-30",
+     "num": "Datacenter & Communications",
+     "den": "—",
+     "grade": "①",
+     "source": "10-K FY26 세그먼트(R30)",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "seg_dcc_growth": {
+     "value": 40.5,
+     "unit": "%",
+     "basis": "FY26 YoY",
+     "asof": "2026-06-30",
+     "num": "$3,755M → $5,275M",
+     "den": "—",
+     "grade": "①",
+     "source": "10-K",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "seg_dcc_share": {
+     "value": 74.1,
+     "unit": "%",
+     "basis": "FY26",
+     "asof": "2026-06-30",
+     "num": "DC&C 매출",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "10-K",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "FY24 55.9% → FY26 74.1%"
+    },
+    "seg_industrial_revenue_fy26": {
+     "value": 1844,
+     "unit": "USD M",
+     "basis": "FY26",
+     "asof": "2026-06-30",
+     "num": "Industrial(역성장 $2,076M → $1,844M)",
+     "den": "—",
+     "grade": "①",
+     "source": "10-K",
+     "page": "ai-infra/optical_valuechain_9.html"
+    }
+   }
+  },
+  "AAOI": {
+   "name": "Applied Optoelectronics",
+   "ticker": "AAOI",
+   "market": "US",
+   "layer": "모듈 · 수직계열(미국)",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 596,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 28.9,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": -11.3,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 86.4,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 8.9,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 15.0,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 17.3,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    }
+   }
+  },
+  "FN": {
+   "name": "Fabrinet",
+   "ticker": "FN",
+   "market": "US",
+   "layer": "모듈 · 위탁조립(EMS)",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 4641,
+     "unit": "USD M",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "gpm": {
+     "value": 12.0,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "매출총이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "opm": {
+     "value": 10.0,
+     "unit": "%",
+     "basis": "TTM(최근 4분기 XBRL 직접 재구성)",
+     "asof": "2026-09-11",
+     "num": "영업이익 TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 44.6,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근 분기 매출 − 전년 동기",
+     "den": "전년 동기 매출",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 14.8,
+     "unit": "USD B",
+     "basis": "종가 × 주식수",
+     "asof": "2026-09-11",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 미국 시세",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 3.2,
+     "unit": "배",
+     "basis": "시총 ÷ TTM 매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps_over_growth": {
+     "value": 7.2,
+     "unit": "배",
+     "basis": "P/S ÷ 성장률(%)",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "최근 분기 YoY",
+     "grade": "①",
+     "source": "SEC 10-K/10-Q XBRL",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "같은 층 안에서만 비교(9사 편 T5)"
+    },
+    "datacenter_share": {
+     "value": 47.9,
+     "unit": "%",
+     "basis": "FY26",
+     "asof": "2026-06-26",
+     "num": "데이터센터 매출 $2,225M",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "10-K FY26 R56",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "thailand_production_share": {
+     "value": 61.2,
+     "unit": "%",
+     "basis": "FY26",
+     "asof": "2026-06-26",
+     "num": "태국 생산 $2,842M",
+     "den": "전사",
+     "grade": "①",
+     "source": "10-K FY26 R57",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "contract_liabilities_to_rev": {
+     "value": 0.09,
+     "unit": "%",
+     "basis": "FY26",
+     "asof": "2026-06-26",
+     "num": "계약부채 $4.2M",
+     "den": "매출",
+     "grade": "①",
+     "source": "10-K",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "선수금이 사실상 없다 = 순수 EMS의 계정 지문"
+    }
+   }
+  },
+  "300308.SZ": {
+   "name": "InnoLight",
+   "ticker": "300308.SZ",
+   "name_cn": "中际旭创",
+   "market": "CN",
+   "layer": "모듈 · 자기 설계·판매",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_annualized": {
+     "value": 12.45,
+     "unit": "USD B",
+     "basis": "1H26 누적 연환산",
+     "asof": "2026-06-30",
+     "num": "1H26 매출 × 2",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "환산 기준은 9사 편 표기"
+    },
+    "gpm": {
+     "value": 46.2,
+     "unit": "%",
+     "basis": "1H26 누적",
+     "asof": "2026-06-30",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 182.5,
+     "unit": "%",
+     "basis": "1H26 YoY",
+     "asof": "2026-06-30",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 162.5,
+     "unit": "USD B",
+     "basis": "시총",
+     "asof": "2026-09-12",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 13.1,
+     "unit": "배",
+     "basis": "시총 ÷ 연환산 매출",
+     "asof": "2026-09-12",
+     "num": "시총",
+     "den": "연환산 매출",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "overseas_share": {
+     "value": 94.8,
+     "unit": "%",
+     "basis": "FY2025 연차",
+     "asof": "2025-12-31",
+     "num": "해외 매출",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "연차보고서 「주영업무 구성」",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "홍콩 분해 여부 미확인(중국 84사 편 T2)"
+    }
+   }
+  },
+  "300502.SZ": {
+   "name": "Eoptolink",
+   "ticker": "300502.SZ",
+   "name_cn": "新易盛",
+   "market": "CN",
+   "layer": "모듈 · 자기 설계·판매",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_annualized": {
+     "value": 6.23,
+     "unit": "USD B",
+     "basis": "1H26 누적 연환산",
+     "asof": "2026-06-30",
+     "num": "1H26 매출 × 2",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "환산 기준은 9사 편 표기"
+    },
+    "gpm": {
+     "value": 48.4,
+     "unit": "%",
+     "basis": "1H26 누적",
+     "asof": "2026-06-30",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 100.3,
+     "unit": "%",
+     "basis": "1H26 YoY",
+     "asof": "2026-06-30",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 87.9,
+     "unit": "USD B",
+     "basis": "시총",
+     "asof": "2026-09-12",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 14.1,
+     "unit": "배",
+     "basis": "시총 ÷ 연환산 매출",
+     "asof": "2026-09-12",
+     "num": "시총",
+     "den": "연환산 매출",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "overseas_share": {
+     "value": 97.9,
+     "unit": "%",
+     "basis": "FY2025 연차",
+     "asof": "2025-12-31",
+     "num": "해외 매출",
+     "den": "전사 매출",
+     "grade": "①",
+     "source": "연차보고서",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "300394.SZ": {
+   "name": "T&S",
+   "ticker": "300394.SZ",
+   "name_cn": "天孚通信",
+   "market": "CN",
+   "layer": "광부품·광엔진",
+   "canonical_page": "ai-infra/optical_valuechain_9.html",
+   "metrics": {
+    "revenue_annualized": {
+     "value": 0.84,
+     "unit": "USD B",
+     "basis": "1H26 누적 연환산",
+     "asof": "2026-06-30",
+     "num": "1H26 매출 × 2",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html",
+     "note": "환산 기준은 9사 편 표기"
+    },
+    "gpm": {
+     "value": 60.9,
+     "unit": "%",
+     "basis": "1H26 누적",
+     "asof": "2026-06-30",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "rev_growth_yoy": {
+     "value": 15.1,
+     "unit": "%",
+     "basis": "1H26 YoY",
+     "asof": "2026-06-30",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "mcap": {
+     "value": 42.6,
+     "unit": "USD B",
+     "basis": "시총",
+     "asof": "2026-09-12",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    },
+    "ps": {
+     "value": 50.5,
+     "unit": "배",
+     "basis": "시총 ÷ 연환산 매출",
+     "asof": "2026-09-12",
+     "num": "시총",
+     "den": "연환산 매출",
+     "grade": "①",
+     "source": "eastmoney RPT_LICO_FN_CPD",
+     "page": "ai-infra/optical_valuechain_9.html"
+    }
+   }
+  },
+  "010170": {
+   "name": "대한광통신",
+   "ticker": "010170",
+   "market": "KR",
+   "layer": "광섬유·광케이블",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 491,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_2q25": {
+     "value": 416,
+     "unit": "억원",
+     "basis": "2Q25 단독",
+     "asof": "2025-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_growth_yoy": {
+     "value": 18.0,
+     "unit": "%",
+     "basis": "2Q26 YoY",
+     "asof": "2026-06-30",
+     "num": "2Q26 − 2Q25",
+     "den": "2Q25 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "⚠ 1H 기준 계산은 1Q25 결측으로 착시(냉각·광 편 T2)"
+    },
+    "op_2q26": {
+     "value": 10,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "opm": {
+     "value": 2.0,
+     "unit": "%",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "088800": {
+   "name": "에이스테크",
+   "ticker": "088800",
+   "market": "KR",
+   "layer": "RF 안테나·필터(광 밸류체인 밖 · 냉각·광 편 표에 포함)",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 287,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_2q25": {
+     "value": 461,
+     "unit": "억원",
+     "basis": "2Q25 단독",
+     "asof": "2025-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_growth_yoy": {
+     "value": -37.7,
+     "unit": "%",
+     "basis": "2Q26 YoY",
+     "asof": "2026-06-30",
+     "num": "2Q26 − 2Q25",
+     "den": "2Q25 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "⚠ 1H 기준 계산은 1Q25 결측으로 착시(냉각·광 편 T2)"
+    },
+    "op_2q26": {
+     "value": -81,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "opm": {
+     "value": -28.2,
+     "unit": "%",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "138080": {
+   "name": "오이솔루션",
+   "ticker": "138080",
+   "market": "KR",
+   "layer": "모듈 · 광트랜시버(통신사 프론트홀 중심)",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 197,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_2q25": {
+     "value": 159,
+     "unit": "억원",
+     "basis": "2Q25 단독",
+     "asof": "2025-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_growth_yoy": {
+     "value": 23.9,
+     "unit": "%",
+     "basis": "2Q26 YoY",
+     "asof": "2026-06-30",
+     "num": "2Q26 − 2Q25",
+     "den": "2Q25 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "⚠ 1H 기준 계산은 1Q25 결측으로 착시(냉각·광 편 T2)"
+    },
+    "op_2q26": {
+     "value": -9,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "opm": {
+     "value": -4.6,
+     "unit": "%",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "046970": {
+   "name": "우리로",
+   "ticker": "046970",
+   "market": "KR",
+   "layer": "광부품 · PLC 광분배기",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 147,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_2q25": {
+     "value": 101,
+     "unit": "억원",
+     "basis": "2Q25 단독",
+     "asof": "2025-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_growth_yoy": {
+     "value": 45.5,
+     "unit": "%",
+     "basis": "2Q26 YoY",
+     "asof": "2026-06-30",
+     "num": "2Q26 − 2Q25",
+     "den": "2Q25 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "⚠ 1H 기준 계산은 1Q25 결측으로 착시(냉각·광 편 T2)"
+    },
+    "op_2q26": {
+     "value": 26,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "opm": {
+     "value": 17.7,
+     "unit": "%",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "380540": {
+   "name": "옵티코어",
+   "ticker": "380540",
+   "market": "KR",
+   "layer": "모듈 · 광트랜시버",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 34,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_2q25": {
+     "value": 21,
+     "unit": "억원",
+     "basis": "2Q25 단독",
+     "asof": "2025-06-30",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "rev_growth_yoy": {
+     "value": 61.9,
+     "unit": "%",
+     "basis": "2Q26 YoY",
+     "asof": "2026-06-30",
+     "num": "2Q26 − 2Q25",
+     "den": "2Q25 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "⚠ 1H 기준 계산은 1Q25 결측으로 착시(냉각·광 편 T2)"
+    },
+    "op_2q26": {
+     "value": -19,
+     "unit": "억원",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "opm": {
+     "value": -55.9,
+     "unit": "%",
+     "basis": "2Q26 단독(확정)",
+     "asof": "2026-06-30",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "네이버 분기 재무(확정 · isConsensus=N)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "CIEN": {
+   "name": "Ciena",
+   "ticker": "CIEN",
+   "market": "US",
+   "layer": "시스템 · DCI·코히런트 + AEC 진입(Nubis)",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "metrics": {
+    "rev_q": {
+     "value": 1571,
+     "unit": "USD M",
+     "basis": "최근 분기",
+     "asof": "2026-07-31",
+     "num": "분기 매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL(prices.json us)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "opm_q": {
+     "value": 15.2,
+     "unit": "%",
+     "basis": "최근 분기",
+     "asof": "2026-07-31",
+     "num": "분기 영업이익",
+     "den": "분기 매출",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "ebit_growth_yoy": {
+     "value": 586.1,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-07-31",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "fy27_revenue_guidance_growth": {
+     "value": 30,
+     "unit": "%",
+     "basis": "FY27 가이던스",
+     "asof": "2026-09-04",
+     "num": "회사 제시 「+30% 이상」",
+     "den": "—",
+     "grade": "②",
+     "source": "JP모건 노트(회사 공시 미대조)",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "backlog": {
+     "value": 100,
+     "unit": "USD 억",
+     "basis": "회사 발표",
+     "asof": "2026-09-04",
+     "num": "수주잔고",
+     "den": "—",
+     "grade": "②",
+     "source": "JP모건 노트",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    }
+   }
+  },
+  "TEL": {
+   "name": "TE Connectivity",
+   "ticker": "TEL",
+   "market": "US",
+   "layer": "커넥터·케이블",
+   "canonical_page": "ai-infra/us_ai_adjacent_sectors.html",
+   "metrics": {
+    "digital_data_networks_organic_growth": {
+     "value": 34.0,
+     "unit": "%",
+     "basis": "최근 분기 유기 성장",
+     "asof": "2026-06-27",
+     "num": "Digital data networks(사유: AI applications)",
+     "den": "—",
+     "grade": "①",
+     "source": "10-Q MD&A",
+     "page": "ai-infra/us_ai_adjacent_sectors.html"
+    }
+   }
+  },
+  "GLW": {
+   "name": "Corning",
+   "ticker": "GLW",
+   "market": "US",
+   "layer": "광섬유·커넥터",
+   "canonical_page": "ai-infra/us_vertiv_corning_deep.html",
+   "metrics": {},
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+  },
+  "APH": {
+   "name": "Amphenol",
+   "ticker": "APH",
+   "market": "US",
+   "layer": "커넥터·케이블",
+   "canonical_page": "ai-infra/us_ai_adjacent_sectors.html",
+   "metrics": {},
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+  },
+  "AVGO": {
+   "name": "Broadcom",
+   "ticker": "AVGO",
+   "market": "US",
+   "layer": "스위치 칩·광DSP·레이저·CPO",
+   "canonical_page": "ai-infra/ai_chip_company_broadcom.html",
+   "metrics": {},
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+  },
+  "NVDA": {
+   "name": "NVIDIA",
+   "ticker": "NVDA",
+   "market": "US",
+   "layer": "스위치·CPO·NVLink 내재화",
+   "canonical_page": "ai-infra/ai_chip_company_nvidia.html",
+   "metrics": {},
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+  },
+  "ANET": {
+   "name": "Arista",
+   "ticker": "ANET",
+   "market": "US",
+   "layer": "스위치 시스템",
+   "canonical_page": "ai-infra/ai_value_chain_guide_v2.html",
+   "metrics": {},
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+  },
+  "CSCO": {
+   "name": "Cisco",
+   "ticker": "CSCO",
+   "market": "US",
+   "layer": "스위치 시스템",
+   "canonical_page": "ai-infra/ai_value_chain_guide_v2.html",
+   "metrics": {},
+   "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다"
+  }
+ }
+}

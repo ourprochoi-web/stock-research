@@ -281,6 +281,16 @@ a:hover{text-decoration:underline}
     </div>
   </div>
   <div class="upd">
+    <div class="upd-title"><span class="tag">규칙</span> 🆕 <b>수치 층 <code>data/facts.json</code> 시범 — 광통신 25사 · 164값. <u>페이지 산문에 흩어진 확정 지표의 정본</u></b></div>
+    <div class="upd-body">
+      <b>실측</b> — 161편 중앙값 50KB인데 <b>본문 텍스트는 39%</b> · 수치는 HTML 표 797개 안에만 · 같은 값이 <b>「4.11배」 8편 · 「46.2%」 8편</b>에 하드코딩 · 커밋당 수정 페이지 중앙값 1편.
+      <b>정본 1곳 규칙이 있어도 구조가 강제하지 않아 정정 한 번에 후보가 6~8곳</b> 나온다(오늘 72kW).<br>
+      <b>처리</b> — 레코드 <code>{value, unit, basis, asof, num, den, grade, source, page}</code>로 §W2의 분자·분모·기준일을 <u>필드로 강제</u>. <b>값은 새로 계산하지 않았고</b> 정본 3편이 확정한 것을 옮겼다.
+      <code>.githooks/check_facts.py</code>가 <b>164값 전부가 정본 페이지에 있는지 확인</b>했고, pre-commit이 매 커밋 이 대조를 돌린다(경고만).<br>
+      <b>⚠ §H 선례(ground_truth.yaml · research.json)와 같은 길을 갈 수 있다</b> — <b>2026-10-13까지 25사 그대로면 실패로 보고 폐기를 논의</b>한다. 규칙 6대로 손대는 페이지부터 옮긴다.
+    </div>
+  </div>
+  <div class="upd">
     <div class="upd-title"><span class="tag">신규</span> 🆕 <b><a href="ai-infra/optical_valuechain_primer.html">광통신 밸류체인 입문</a> — 빛이 데이터센터를 어떻게 지나가고, 누가 무엇을 파는가</b></div>
     <div class="upd-body">
       사용자 요청 — <i>「최근 광통신 페이퍼를 만들었는데 내용을 잘 몰라서, 밸류체인을 쉽게 설명하고 각 회사가 어떤 비즈니스를 하는지도」</i>.
