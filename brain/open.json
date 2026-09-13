@@ -1,0 +1,108 @@
+{
+ "_readme": {
+  "what": "열린 질문·미착수. 닫으면 closed 로 옮기지 않고 지운다(git 이 기억한다). 배치를 열기 전에 이 목록을 읽는다(§R3)",
+  "seeded": "2026-09-13 · docs/backlog.md 「남은 미착수」에서 이동"
+ },
+ "open": [
+  {
+   "id": "wuxi",
+   "what": "우시(WuXi) 실적 — CDMO 경쟁의 반대편. 「한쪽만 추적」이 마벨/브로드컴에 이어 두 번째",
+   "since": "2026-09"
+  },
+  {
+   "id": "rfmaterials",
+   "what": "RF머트리얼즈 판단 0편 — 관심종목(포지션 아님 · 사용자 확인 09-10). 2Q26 매출 +51.2%·OPM 21.11%. 52주 레인지 13.5배",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "adobe",
+   "what": "어도비 판단 0편 — AI 수익화 대조군(AI-first ARR $6.5억 = 전체의 2.4% · RPO +8% · Net New ARR −36~37%). 시세 추적 밖",
+   "since": "2026-09-11"
+  },
+  {
+   "id": "et-tax",
+   "what": "ET(Energy Transfer) MLP 분배금의 한국 투자자 세후 수취율 — ECI 원천징수·K-1. 세전 FCF 수익률 11.6% 1위인데 세후 미측정",
+   "since": "2026-09-10"
+  },
+  {
+   "id": "vg-shares",
+   "what": "VG 주식수(클래스 A~D member axis) · 온전한 4분기 TTM은 3Q26 공시 후",
+   "since": "2026-09-10"
+  },
+  {
+   "id": "materials-gpm",
+   "what": "소재 14사 GPM·ROIC·현금전환 — 네이버 재무 API에 없음. DART 반기보고서로 가능(안 한 것)",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "specialty-gas",
+   "what": "특수가스 4사가 왜 역행했나(솔브레인 +127.7% vs 티이엠씨 −14.5%) — 재고·계약부채 짝을 열어야 한다",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "cn-probe-kr",
+   "what": "중국이 한국산 DCS에도 조사를 걸 위험 — 소재 편 T2 「한국은 대체재」의 관측 항목",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "googl-other",
+   "what": "알파벳 기타수익 $98.0B 중 $76.6B의 성격 — 10-Q 본문 필요",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "dimm-chips",
+   "what": "DIMM 인터페이스 칩 층(MRCD/MDB·Rambus·Montage) 0편 — 「모듈당 콘텐츠 10배」(번스타인)면 공백이 결함",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "cyber-2",
+   "what": "사이버보안 2편 06-28 이후 정지 · 판단 0편 — CrowdStrike·Palo Alto 추적 중. 09-11 두 번째 등장(젠슨 황 발언) → 다음 손댈 때 판단을 세운다",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "smci-hpe",
+   "what": "SMCI 수주잔고 $600억 · HPE AI 주문 +76% — 시세도 판단도 없다",
+   "since": "2026-09-09"
+  },
+  {
+   "id": "construction-backlog",
+   "what": "건설 수주잔고 8사 파싱 한계(세보엠이씨는 회사가 미공시)",
+   "since": "2026-08"
+  },
+  {
+   "id": "legochem-share",
+   "what": "리가켐 원천기술 매출 비중 — 공시 없음. 단정 불가",
+   "since": "2026-08"
+  },
+  {
+   "id": "smr-terrapower",
+   "what": "SMR 주기기·테라파워 축 0편 — HD현대중공업 SMR 전용공장 2,386억(①) vs 두산에너빌리티 대조군 없음",
+   "since": "2026-09-10"
+  },
+  {
+   "id": "physical-coeff",
+   "what": "물리 환산 계수 ②→① — 「MW당 300평」 원 출처 · 한전 수전 전압별 지중화 단가(전기공급약관으로 가능)",
+   "since": "2026-09-12"
+  },
+  {
+   "id": "coverage",
+   "what": "판단 커버리지 87/161 — 규칙 6대로 손댈 때",
+   "since": "2026-08"
+  },
+  {
+   "id": "optical-facts-7",
+   "what": "광통신 7사(Corning·Amphenol·Broadcom·NVIDIA·Arista·Cisco·TSMC)의 광 축 확정 지표가 facts 에 없다 — 그 편을 손댈 때 채운다",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "optical-biz-grade",
+   "what": "광통신 25사 business 서술 ② → 사업보고서·10-K 「사업의 개요」로 ①. 국내 5사는 m.stock.naver.com 이 프록시 403(호스트 기록)",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "brain-migration",
+   "what": "brain/theses.json 의 card:false 84편 — 손댈 때 basis·event 채우고 카드 전환. 자동 추출 실패 10편은 needs_manual",
+   "since": "2026-09-13"
+  }
+ ]
+}

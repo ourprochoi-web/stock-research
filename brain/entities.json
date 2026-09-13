@@ -1,0 +1,553 @@
+{
+ "_readme": {
+  "what": "회사·테마 카드. 무슨 사업(business · 등급 표기), 어느 층, 정본 페이지, facts 키, 걸린 테제. 시세 추적 여부는 portfolio/data/update_prices.py 목록 기준.",
+  "rules": [
+   "business 는 사업보고서·10-K 「사업의 개요」로 대조하면 ①로 올리고 business_grade 를 고친다",
+   "새 회사는 정본 페이지가 생긴 뒤에 넣는다"
+  ],
+  "seeded": "2026-09-13 · 광통신 25사"
+ },
+ "companies": {
+  "ALAB": {
+   "name": "Astera Labs",
+   "market": "US",
+   "layer": "연결 반도체 · 리타이머",
+   "business": "PCIe/CXL 리타이머·AEC·패브릭 스위치(서버 안 신호 연장)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "gpm_q",
+    "inventory_yoy",
+    "mcap",
+    "ocf_to_ebit_q",
+    "opm",
+    "opm_q",
+    "ps",
+    "ps_over_growth",
+    "receivables_yoy",
+    "rev_growth_yoy",
+    "rev_q",
+    "revenue_ttm",
+    "rnd_to_rev_q",
+    "sbc_to_rev_q"
+   ],
+   "theses": [
+    "ai-infra/optical_valuechain_9.html#T5"
+   ],
+   "tracked_price": true
+  },
+  "CRDO": {
+   "name": "Credo",
+   "market": "US",
+   "layer": "연결 반도체 · SerDes·AEC·광DSP",
+   "business": "SerDes IP·AEC(Zero-Flap)·광 DSP·실리콘 포토닉스 PIC(Dust Photonics 인수 ②)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "gpm_q",
+    "inventory_yoy",
+    "max_daily_drop",
+    "mcap",
+    "ocf_to_ebit_q",
+    "opm",
+    "opm_q",
+    "ps",
+    "ps_over_growth",
+    "receivables_yoy",
+    "rev_growth_yoy",
+    "rev_q",
+    "revenue_ttm",
+    "rnd_to_rev_q",
+    "sbc_to_rev_q",
+    "top_customer_share"
+   ],
+   "theses": [
+    "ai-infra/optical_interconnect_layer.html#T2",
+    "ai-infra/optical_interconnect_layer.html#T5",
+    "ai-infra/optical_valuechain_9.html#T5"
+   ],
+   "tracked_price": true
+  },
+  "MTSI": {
+   "name": "MACOM",
+   "market": "US",
+   "layer": "연결 반도체 · 드라이버·TIA·RF",
+   "business": "드라이버·TIA·RF·아날로그·일부 레이저",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "mcap",
+    "opm",
+    "ps",
+    "ps_over_growth",
+    "rev_growth_yoy",
+    "revenue_ttm"
+   ],
+   "theses": [],
+   "tracked_price": false
+  },
+  "SMTC": {
+   "name": "Semtech",
+   "market": "US",
+   "layer": "연결 반도체 · 드라이버·TIA·AEC",
+   "business": "드라이버·TIA(FiberEdge·Tri-Edge)·AEC(CopperEdge)·IoT(LoRa)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "inventory_yoy",
+    "mcap",
+    "ocf_to_ebit_q",
+    "opm",
+    "opm_q",
+    "opm_reported",
+    "ps",
+    "ps_over_growth",
+    "receivables_yoy",
+    "rev_growth_yoy",
+    "rev_q",
+    "revenue_ttm",
+    "rnd_to_rev_q",
+    "sbc_to_rev_q",
+    "seg_signal_integrity_gpm",
+    "seg_signal_integrity_growth",
+    "seg_signal_integrity_share",
+    "top_customer_share"
+   ],
+   "theses": [
+    "ai-infra/optical_interconnect_layer.html#T3",
+    "ai-infra/optical_valuechain_9.html#T4"
+   ],
+   "tracked_price": false
+  },
+  "MRVL": {
+   "name": "Marvell",
+   "market": "US",
+   "layer": "연결 반도체 · 광DSP·커스텀ASIC",
+   "business": "광 DSP(Inphi 인수)·코히런트 DSP·커스텀 AI ASIC·스위치·스토리지",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html",
+    "ai-infra/ai_chip_company_marvell.html"
+   ],
+   "facts": [
+    "datacenter_growth",
+    "datacenter_share",
+    "distribution_share",
+    "gpm",
+    "gpm_q",
+    "inventory_yoy",
+    "mcap",
+    "ocf_to_ebit_q",
+    "opm",
+    "opm_q",
+    "ps",
+    "ps_over_growth",
+    "receivables_yoy",
+    "rev_growth_yoy",
+    "rev_q",
+    "revenue_ttm",
+    "rnd_to_rev_q",
+    "sbc_to_rev_q"
+   ],
+   "theses": [
+    "ai-infra/optical_interconnect_layer.html#T4",
+    "ai-infra/optical_valuechain_9.html#T5"
+   ],
+   "tracked_price": true
+  },
+  "LITE": {
+   "name": "Lumentum",
+   "market": "US",
+   "layer": "광원·부품 · EML·CW·펌프 레이저",
+   "business": "EML·CW 레이저·펌프 레이저·ROADM·3D 센싱 VCSEL. 엔비디아 CPO 공급망에 레이저로 거명(②)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "gpm_latest_q",
+    "mcap",
+    "opm",
+    "opm_latest_q",
+    "price_1y_change",
+    "ps",
+    "ps_over_growth",
+    "rev_growth_yoy",
+    "rev_latest_q",
+    "revenue_ttm"
+   ],
+   "theses": [
+    "ai-infra/optical_valuechain_9.html#T1",
+    "ai-infra/optical_valuechain_9.html#T2",
+    "ai-infra/optical_valuechain_9.html#T3"
+   ],
+   "tracked_price": true
+  },
+  "COHR": {
+   "name": "Coherent",
+   "market": "US",
+   "layer": "광원·부품 + 모듈(수직계열)",
+   "business": "구 II-VI. InP 레이저·EML·VCSEL + 트랜시버 완제품 + 산업용 레이저·소재",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "mcap",
+    "opm",
+    "opm_adjusted",
+    "ps",
+    "ps_over_growth",
+    "rev_growth_yoy",
+    "revenue_ttm",
+    "seg_dcc_growth",
+    "seg_dcc_revenue_fy26",
+    "seg_dcc_share",
+    "seg_industrial_revenue_fy26"
+   ],
+   "theses": [
+    "ai-infra/optical_valuechain_9.html#T2",
+    "ai-infra/optical_valuechain_9.html#T4"
+   ],
+   "tracked_price": true
+  },
+  "AAOI": {
+   "name": "Applied Optoelectronics",
+   "market": "US",
+   "layer": "모듈 · 수직계열(미국)",
+   "business": "미국(텍사스) 본사 수직계열 모듈사 — 레이저까지 자체 생산",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "mcap",
+    "opm",
+    "ps",
+    "ps_over_growth",
+    "rev_growth_yoy",
+    "revenue_ttm"
+   ],
+   "theses": [],
+   "tracked_price": false
+  },
+  "FN": {
+   "name": "Fabrinet",
+   "market": "US",
+   "layer": "모듈 · 위탁조립(EMS)",
+   "business": "위탁조립(EMS). 남의 설계를 태국에서 조립·검사. 반도체사가 아니다",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "contract_liabilities_to_rev",
+    "datacenter_share",
+    "gpm",
+    "mcap",
+    "opm",
+    "ps",
+    "ps_over_growth",
+    "rev_growth_yoy",
+    "revenue_ttm",
+    "thailand_production_share"
+   ],
+   "theses": [
+    "ai-infra/optical_valuechain_9.html#T1"
+   ],
+   "tracked_price": false
+  },
+  "300308.SZ": {
+   "name": "InnoLight",
+   "market": "CN",
+   "layer": "모듈 · 자기 설계·판매",
+   "business": "세계 최대 광모듈사. 800G·1.6T를 자기 설계·브랜드로 하이퍼스케일러 직납",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "mcap",
+    "overseas_share",
+    "ps",
+    "rev_growth_yoy",
+    "revenue_annualized"
+   ],
+   "theses": [
+    "ai-infra/kr_cooling_optical_layer.html#T3",
+    "ai-infra/optical_valuechain_9.html#T1"
+   ],
+   "tracked_price": false
+  },
+  "300502.SZ": {
+   "name": "Eoptolink",
+   "market": "CN",
+   "layer": "모듈 · 자기 설계·판매",
+   "business": "광모듈 설계·판매(InnoLight 절반 규모)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "mcap",
+    "overseas_share",
+    "ps",
+    "rev_growth_yoy",
+    "revenue_annualized"
+   ],
+   "theses": [],
+   "tracked_price": false
+  },
+  "300394.SZ": {
+   "name": "T&S",
+   "market": "CN",
+   "layer": "광부품·광엔진",
+   "business": "광부품·광엔진(파이버 어레이·격리기·렌즈 등) — 모듈사·스위치사에 부품으로 공급",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": [
+    "gpm",
+    "mcap",
+    "ps",
+    "rev_growth_yoy",
+    "revenue_annualized"
+   ],
+   "theses": [],
+   "tracked_price": false
+  },
+  "010170": {
+   "name": "대한광통신",
+   "market": "KR",
+   "layer": "광섬유·광케이블",
+   "business": "광섬유·광케이블",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/kr_cooling_optical_layer.html"
+   ],
+   "facts": [
+    "op_2q26",
+    "opm",
+    "rev_2q25",
+    "rev_2q26",
+    "rev_growth_yoy"
+   ],
+   "theses": [],
+   "tracked_price": true
+  },
+  "088800": {
+   "name": "에이스테크",
+   "market": "KR",
+   "layer": "RF 안테나·필터(광 밸류체인 밖 · 냉각·광 편 표에 포함)",
+   "business": "RF 안테나·필터(무선 부품 — 광 밸류체인 밖)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/kr_cooling_optical_layer.html"
+   ],
+   "facts": [
+    "op_2q26",
+    "opm",
+    "rev_2q25",
+    "rev_2q26",
+    "rev_growth_yoy"
+   ],
+   "theses": [
+    "ai-infra/kr_cooling_optical_layer.html#T1"
+   ],
+   "tracked_price": true
+  },
+  "138080": {
+   "name": "오이솔루션",
+   "market": "KR",
+   "layer": "모듈 · 광트랜시버(통신사 프론트홀 중심)",
+   "business": "광 트랜시버(통신사 5G 프론트홀·FTTH 중심, 데이터센터용 진출 단계)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/kr_cooling_optical_layer.html"
+   ],
+   "facts": [
+    "op_2q26",
+    "opm",
+    "rev_2q25",
+    "rev_2q26",
+    "rev_growth_yoy"
+   ],
+   "theses": [
+    "ai-infra/kr_cooling_optical_layer.html#T1"
+   ],
+   "tracked_price": true
+  },
+  "046970": {
+   "name": "우리로",
+   "market": "KR",
+   "layer": "광부품 · PLC 광분배기",
+   "business": "PLC 광분배기·광부품·SPAD 센서",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/kr_cooling_optical_layer.html"
+   ],
+   "facts": [
+    "op_2q26",
+    "opm",
+    "rev_2q25",
+    "rev_2q26",
+    "rev_growth_yoy"
+   ],
+   "theses": [],
+   "tracked_price": true
+  },
+  "380540": {
+   "name": "옵티코어",
+   "market": "KR",
+   "layer": "모듈 · 광트랜시버",
+   "business": "광 트랜시버·광부품(규모 최소)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/kr_cooling_optical_layer.html"
+   ],
+   "facts": [
+    "op_2q26",
+    "opm",
+    "rev_2q25",
+    "rev_2q26",
+    "rev_growth_yoy"
+   ],
+   "theses": [
+    "ai-infra/kr_cooling_optical_layer.html#T1"
+   ],
+   "tracked_price": true
+  },
+  "CIEN": {
+   "name": "Ciena",
+   "market": "US",
+   "layer": "시스템 · DCI·코히런트 + AEC 진입(Nubis)",
+   "business": "DCI·장거리 코히런트 시스템(WaveLogic 자체 DSP) · Nubis 인수로 AEC·리타이머 진입(③)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/kr_cooling_optical_layer.html"
+   ],
+   "facts": [
+    "backlog",
+    "ebit_growth_yoy",
+    "fy27_revenue_guidance_growth",
+    "opm_q",
+    "rev_q"
+   ],
+   "theses": [
+    "ai-infra/kr_cooling_optical_layer.html#T3"
+   ],
+   "tracked_price": true
+  },
+  "TEL": {
+   "name": "TE Connectivity",
+   "market": "US",
+   "layer": "커넥터·케이블",
+   "business": "커넥터·케이블. Digital data networks 유기 +34.0%(AI 사유 · ①)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/us_ai_adjacent_sectors.html"
+   ],
+   "facts": [
+    "digital_data_networks_organic_growth"
+   ],
+   "theses": [],
+   "tracked_price": true
+  },
+  "GLW": {
+   "name": "Corning",
+   "market": "US",
+   "layer": "광섬유·커넥터",
+   "business": "광섬유·광케이블·커넥터 1위 + 디스플레이 유리 등 비광 사업",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/us_vertiv_corning_deep.html"
+   ],
+   "facts": [],
+   "theses": [],
+   "tracked_price": true
+  },
+  "APH": {
+   "name": "Amphenol",
+   "market": "US",
+   "layer": "커넥터·케이블",
+   "business": "커넥터·케이블 어셈블리(광·구리)",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/us_ai_adjacent_sectors.html"
+   ],
+   "facts": [],
+   "theses": [],
+   "tracked_price": true
+  },
+  "AVGO": {
+   "name": "Broadcom",
+   "market": "US",
+   "layer": "스위치 칩·광DSP·레이저·CPO",
+   "business": "Tomahawk 스위치 칩·광 DSP·VCSEL/EML·CPO 스위치·커스텀 ASIC",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/ai_chip_company_broadcom.html"
+   ],
+   "facts": [],
+   "theses": [],
+   "tracked_price": true
+  },
+  "NVDA": {
+   "name": "NVIDIA",
+   "market": "US",
+   "layer": "스위치·CPO·NVLink 내재화",
+   "business": "GPU + Spectrum-X·Quantum-X 스위치·LinkX 케이블/트랜시버 · CPO 스위치 첫 양산(② 2차 정리) · NVLink로 랙 내부 내재화",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/ai_chip_company_nvidia.html"
+   ],
+   "facts": [],
+   "theses": [],
+   "tracked_price": true
+  },
+  "ANET": {
+   "name": "Arista",
+   "market": "US",
+   "layer": "스위치 시스템",
+   "business": "리프·스파인 스위치 시스템 — 모듈을 사서 꽂는 고객",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/ai_value_chain_guide_v2.html"
+   ],
+   "facts": [],
+   "theses": [],
+   "tracked_price": true
+  },
+  "CSCO": {
+   "name": "Cisco",
+   "market": "US",
+   "layer": "스위치 시스템",
+   "business": "스위치·라우터 시스템",
+   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+   "pages": [
+    "ai-infra/ai_value_chain_guide_v2.html"
+   ],
+   "facts": [],
+   "theses": [],
+   "tracked_price": false
+  }
+ }
+}

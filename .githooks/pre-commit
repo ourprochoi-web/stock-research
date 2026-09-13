@@ -273,17 +273,31 @@ def main():
         except (subprocess.CalledProcessError, OSError) as e:
             print(f"[pre-commit] ⚠ thesis_index 재생성 실패 — 커밋은 진행: {e}")
 
-    # 수치 층 검사 — data/facts.json 의 값이 정본 페이지에 있는지(경고만 · 2026-09-13).
+    # 브레인 카드 렌더 — brain/theses.json 이나 카드 페이지가 스테이징되면 카드를 다시 찍어 함께 커밋한다(2026-09-13).
+    # 페이지 상단 「현재 판단」의 정본은 theses.json 이고 카드는 생성물이다. 사람이 카드를 고쳐도 여기서 덮인다.
+    if "brain/theses.json" in run("git", "diff", "--cached", "--name-only").splitlines() or staged:
+        try:
+            r = subprocess.run([sys.executable, ".githooks/render_cards.py", *staged],
+                               capture_output=True, text=True)
+            for ln in r.stdout.splitlines():
+                print("[pre-commit] " + ln)
+                m = re.search(r"카드 렌더 — (\S+)", ln)
+                if m and m.group(1) not in partial:
+                    subprocess.run(["git", "add", m.group(1)], check=True)
+        except OSError as e:
+            print(f"[pre-commit] ⚠ 카드 렌더 실패 — 커밋은 진행: {e}")
+
+    # 수치 층 검사 — brain/facts.json 의 값이 정본 페이지에 있는지(경고만 · 2026-09-13).
     # 페이지를 고쳤는데 facts 를 안 고쳤거나 그 반대를 잡는다. 새 저장소가 아니라
     # 이미 페이지에 있는 값의 정본을 한 파일로 모은 것이며, 이 검사가 §B5 「정본 1곳」을 강제한다.
     all_staged = run("git", "diff", "--cached", "--name-only", "--diff-filter=ACM").splitlines()
-    if "data/facts.json" in all_staged or staged:
+    if "brain/facts.json" in all_staged or staged:
         try:
-            args = [] if "data/facts.json" in all_staged else staged
+            args = [] if "brain/facts.json" in all_staged else staged
             r = subprocess.run([sys.executable, ".githooks/check_facts.py", *args],
                                capture_output=True, text=True)
             out = r.stdout.strip()
-            if out and ("⚠" in out or "data/facts.json" in all_staged):
+            if out and ("⚠" in out or "brain/facts.json" in all_staged):
                 print(out)
         except OSError as e:
             print(f"[pre-commit] ⚠ facts 검사 실패 — 커밋은 진행: {e}")

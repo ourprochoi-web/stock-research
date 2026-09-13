@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""data/facts.json 의 각 값이 그 값을 산출한 정본 페이지에 실제로 있는지 검사한다.
+"""brain/facts.json 의 각 값이 그 값을 산출한 정본 페이지에 실제로 있는지 검사한다.
 
 경고만 한다 — 판정은 사람이 한다(§H). 두 방향의 드리프트를 잡는다:
   · 페이지를 고쳤는데 facts 를 안 고침 → 페이지에서 옛 값이 사라져 검출
@@ -12,7 +12,7 @@ import json
 import re
 import sys
 
-FACTS = "data/facts.json"
+FACTS = "brain/facts.json"
 
 
 def page_text(path):
