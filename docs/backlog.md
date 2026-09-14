@@ -133,3 +133,21 @@ print("엣지 부호 ?:",[e['id'] for e in M['edges'] if e['sign']=='?'])
 EOF
 ```
 
+```
+# mechanisms 걸기 — 값이 바뀐 노드에서 2홉. 라우팅 <후보>다(§C1 grep과 같은 지위 · 판정은 읽어서).
+PYTHONIOENCODING=utf-8 python3 - brent <<'EOF'
+# -*- coding: utf-8 -*-
+import json,io,sys
+M=json.load(io.open('brain/mechanisms.json',encoding='utf8')); start=sys.argv[1] if len(sys.argv)>1 else 'brent'
+seen={start}; frontier=[start]
+for h in (1,2):
+    nxt=[]
+    for n in frontier:
+        for e in M['edges']:
+            if e['from']==n:
+                print(h,e['id'],e['from'],'→',e['to'],e['sign'],e['grade'],e['theses'] or '(테제 없음)')
+                if e['to'] not in seen: seen.add(e['to']); nxt.append(e['to'])
+    frontier=nxt
+EOF
+```
+

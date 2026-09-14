@@ -129,6 +129,10 @@
   "kr_terms_of_trade": {
    "label": "한국 교역조건(원유 수입국)",
    "kind": "macro"
+  },
+  "hyperscaler_debt": {
+   "label": "하이퍼스케일러 부채 조달(장부 위+그림자)",
+   "kind": "flow"
   }
  },
  "edges": [
@@ -509,6 +513,37 @@
    "evidence": [],
    "theses": [],
    "note": ""
+  },
+  {
+   "id": "m-26",
+   "from": "ai_capex",
+   "to": "hyperscaler_debt",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "강",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [
+    "national-strategy/ns_bigtech_capex_roi.html#T2",
+    "national-strategy/ns_bigtech_capex_roi.html#T4"
+   ],
+   "note": "YTD $2,250억(2022 $500억) · 미개시 리스 $820억+ · 경보 지표는 CAPEX가 아니라 크레딧(T4)"
+  },
+  {
+   "id": "m-27",
+   "from": "hyperscaler_debt",
+   "to": "us10y",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "약",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [],
+   "note": "JPM: 민간 자본 수요 확대 = 구축효과 → 장기금리 상방 요인 중 하나"
   }
  ]
 }
