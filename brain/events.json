@@ -1,10 +1,16 @@
 {
  "_readme": {
   "what": "판정 이벤트 일정. 날짜가 아니라 이벤트로 건다. 도래하면 판정하고 이 목록에서 지운다 — 지우는 것이 판정의 일부",
-  "done_log": "판정 결과는 inbox.jsonl 에 verdict 로 남긴다",
+  "done_log": "판정 결과는 routing.jsonl 에 kind:'verdict' 한 줄(intake 는 판정 근거 id) — 09-14 수정(inbox.jsonl 은 존재하지 않았다)",
   "seeded": "2026-09-13 · docs/backlog.md 표에서 이동 + 광통신 3편 카드의 event"
  },
  "events": [
+  {
+   "when": "2026-09-15 아침",
+   "what": "애프터마켓 첫날 시세 봇 대조 — prices.json 09-14 closePrice가 15:30 정규 종가인가 16:30 애프터마켓가인가. 다르면 봇에 tradingSessionType 분기 필요(§J8-3 종가 정의)",
+   "judges": "portfolio/data/update_prices.py · brain/open.json:aftermarket",
+   "grade": "①"
+  },
   {
    "when": "2026-09-17/18",
    "what": "FOMC — 금리보다 발언 톤. 30년물은 5.25% 위에서 맞는다(FRED 07-31 첫 돌파 · 최신 5.280%)",

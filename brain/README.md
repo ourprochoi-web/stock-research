@@ -11,6 +11,20 @@
 | `events.json` | 판정 이벤트 일정 — 도래하면 판정하고 **지운다** | 이벤트를 걸 때·판정할 때 |
 | `open.json` | 열린 질문·미착수 | 배치를 열기 전에 읽고, 닫으면 지운다 |
 
+## 스키마 v2 (2026-09-14 — 첫 실전 하루 뒤 고침)
+
+**theses.json 테제 한 개**
+```
+{id, claim(≤170), status(유지·도전·정정·철회·관측·방법),
+ basis(≤220 · 현재 근거 <요약> · 라우팅 때 덮어쓴다 — 누적하면 페이지 인라인 비대화의 브레인판),
+ evidence[ routing id … ]  (append · 「왜」의 로그는 여기서 routing 으로 간다),
+ falsifier, event, last_tested,
+ auto:true(파서가 뽑은 테제 · basis·event 빌 수 있음) · auto_basis:true(파서가 페이지에서 뽑은 ② 근거)}
+```
+**routing.jsonl 한 줄** = `{id: r-YYYYMMDD-NN, date, intake[], grade, claim, routed[page#T…], verdict, action}` · 판정 이벤트 결과는 `kind:"verdict"` 로 여기(inbox.jsonl 은 없다).
+**왜 이렇게 고쳤나** — 시드 직후 실측: 테제 43/407 누락(추출기 12K 캡 + 「반증 조건」 본문 문구 충돌 · 둘 다 수정) · **basis 빈 것 400/428(93%)** — §J1 「브레인 먼저」가 「왜」 질문에 93% 실패하는 상태였다. 파서 v2로 361개를 ②로 채웠고(auto_basis), 라우팅이 닿을 때 ①로 올린다.
+**theses.json 은 문서가 아니라 DB다** — 264KB(≈90K 토큰). 통째로 읽지 않고 page 키로 꺼낸다.
+
 ## 작업 규칙
 
 1. **정보 유입 = intake 에 한 줄 → 브레인만 고친다.** `routing` 한 줄(intake id 부착) → 걸리는 테제의 `status`·`basis`·`last_tested` → 수치면 `facts`(회사의 `intake` 갱신). 페이지는 열지 않는다.
@@ -20,5 +34,5 @@
 5. **죽지 않는 이유** — 카드가 여기서 나온다. 이 파일이 낡으면 페이지 상단이 낡은 것이 바로 보인다.
 
 ## 시드 (2026-09-13)
-`theses.json` 87편 363테제(자동 추출 · `card:false` · basis·event 비어 있음) + 광통신 3편 수동 카드 · `facts.json` 광통신 25사 164값 · `events.json` 19건 · `open.json` 20건.
+`theses.json` 88편 428테제(09-14 파서 v2 후 · `card:true` 4편 · auto_basis 361) + 광통신 3편 수동 카드 · `facts.json` 광통신 25사 164값 · `events.json` 19건 · `open.json` 20건.
 **손대는 페이지부터 카드로 전환한다. 일괄 마이그레이션은 하지 않는다.**

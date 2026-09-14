@@ -548,6 +548,115 @@
    "facts": [],
    "theses": [],
    "tracked_price": false
+  },
+  "CRWD": {
+   "name": "CrowdStrike",
+   "market": "US",
+   "layer": "사이버보안 · 엔드포인트·SIEM·Agentic SOC",
+   "business": "엔드포인트·SIEM·Agentic SOC",
+   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": "CRWD",
+   "theses": [
+    "cybersecurity/cyber_ai_security.html#T2",
+    "cybersecurity/cyber_ai_security.html#T3"
+   ],
+   "tracked_price": true,
+   "ticker": "CRWD",
+   "canonical_page": "cybersecurity/cyber_ai_security.html"
+  },
+  "PANW": {
+   "name": "Palo Alto Networks",
+   "market": "US",
+   "layer": "사이버보안 · 네트워크·SASE·SIEM(+CyberArk IAM)",
+   "business": "네트워크·SASE·SIEM(+CyberArk IAM)",
+   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": "PANW",
+   "theses": [
+    "cybersecurity/cyber_ai_security.html#T2",
+    "cybersecurity/cyber_ai_security.html#T3",
+    "cybersecurity/cyber_ai_security.html#T4"
+   ],
+   "tracked_price": true,
+   "ticker": "PANW",
+   "canonical_page": "cybersecurity/cyber_ai_security.html"
+  },
+  "ZS": {
+   "name": "Zscaler",
+   "market": "US",
+   "layer": "사이버보안 · 제로트러스트 SASE",
+   "business": "제로트러스트 SASE",
+   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": "ZS",
+   "theses": [
+    "cybersecurity/cyber_ai_security.html#T2",
+    "cybersecurity/cyber_ai_security.html#T3"
+   ],
+   "tracked_price": true,
+   "ticker": "ZS",
+   "canonical_page": "cybersecurity/cyber_ai_security.html"
+  },
+  "FTNT": {
+   "name": "Fortinet",
+   "market": "US",
+   "layer": "사이버보안 · 네트워크 어플라이언스·SASE",
+   "business": "네트워크 어플라이언스·SASE",
+   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": "FTNT",
+   "theses": [
+    "cybersecurity/cyber_ai_security.html#T2",
+    "cybersecurity/cyber_ai_security.html#T3"
+   ],
+   "tracked_price": true,
+   "ticker": "FTNT",
+   "canonical_page": "cybersecurity/cyber_ai_security.html"
+  },
+  "S": {
+   "name": "SentinelOne",
+   "market": "US",
+   "layer": "사이버보안 · 엔드포인트·데이터",
+   "business": "엔드포인트·데이터",
+   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": "S",
+   "theses": [
+    "cybersecurity/cyber_ai_security.html#T2",
+    "cybersecurity/cyber_ai_security.html#T3"
+   ],
+   "tracked_price": true,
+   "ticker": "S",
+   "canonical_page": "cybersecurity/cyber_ai_security.html"
+  },
+  "NET": {
+   "name": "Cloudflare",
+   "market": "US",
+   "layer": "사이버보안 · 엣지·제로트러스트",
+   "business": "엣지·제로트러스트",
+   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+   "pages": [
+    "ai-infra/optical_valuechain_9.html"
+   ],
+   "facts": "NET",
+   "theses": [
+    "cybersecurity/cyber_ai_security.html#T2",
+    "cybersecurity/cyber_ai_security.html#T3"
+   ],
+   "tracked_price": true,
+   "ticker": "NET",
+   "canonical_page": "cybersecurity/cyber_ai_security.html"
   }
  }
 }
