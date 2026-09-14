@@ -13,6 +13,7 @@ CLAUDE.md §H 가 허용한 예외(동기화 훅) 중 하나. 이것이 없으�
   변경까지 커밋에 끌려들어온다.
 """
 import re
+import json
 import subprocess
 import sys
 from datetime import date
@@ -290,6 +291,22 @@ def main():
                     subprocess.run(["git", "add", m.group(1)], check=True)
         except OSError as e:
             print(f"[pre-commit] ⚠ 카드 렌더 실패 — 커밋은 진행: {e}")
+
+    # 브레인 구멍 검사 — 스테이징된 페이지의 <b>T?.</b> 집합이 brain/theses.json 에 다 있는지(경고만 · 2026-09-14).
+    # 실측: 시드 직후 43/407 테제가 빠져 있었고, 09-14 라우팅 4건 중 4건이 구멍에 걸렸다. 원인은 추출기의
+    # 12K 캡·「반증 조건」 본문 문구 충돌(둘 다 build_thesis_index.py 에서 수정). 이 검사는 재발을 잡는다.
+    try:
+        _doc = json.load(open("brain/theses.json", encoding="utf-8")).get("pages", {})
+        for _p in staged:
+            if _p not in _doc:
+                continue
+            _ids = set(re.findall(r"<b>(T\d)\.", open(_p, encoding="utf-8", errors="ignore").read()))
+            _br = {t.get("id") for t in _doc[_p].get("theses", [])}
+            _miss = sorted(_ids - _br)
+            if _miss:
+                print(f"[pre-commit] ⚠ 브레인 구멍 — {_p} 페이지 테제 {_miss} 가 brain/theses.json 에 없다")
+    except Exception as _e:
+        print(f"[pre-commit] ⚠ 브레인 구멍 검사 실패 — 커밋은 진행: {_e}")
 
     # 수치 층 검사 — brain/facts.json 의 값이 정본 페이지에 있는지(경고만 · 2026-09-13).
     # 페이지를 고쳤는데 facts 를 안 고쳤거나 그 반대를 잡는다. 새 저장소가 아니라
