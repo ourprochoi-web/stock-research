@@ -6,12 +6,6 @@
  },
  "events": [
   {
-   "when": "2026-09-15 아침",
-   "what": "애프터마켓 첫날 시세 봇 대조 — prices.json 09-14 closePrice가 15:30 정규 종가인가 16:30 애프터마켓가인가. 다르면 봇에 tradingSessionType 분기 필요(§J8-3 종가 정의)",
-   "judges": "portfolio/data/update_prices.py · brain/open.json:aftermarket",
-   "grade": "①"
-  },
-  {
    "when": "2026-09-15/16",
    "what": "FOMC(발표 9/16 수) — 인상 여부보다 발언 톤·점도표. 30년물은 5.25% 위에서 맞는다(FRED 07-31 첫 돌파 · 최신 5.280%). ⚠ 09-14 날짜 정정(r-20260914-21): 종전 09-17/18은 틀린 날짜였다",
    "judges": "macro",
