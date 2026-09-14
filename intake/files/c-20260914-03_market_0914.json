@@ -1,0 +1,83 @@
+{
+ "asof": "2026-09-14 22:13 KST",
+ "KOSPI": {
+  "close": 6684.37,
+  "chg_pct": -3.26,
+  "peak_0622": 9114.55,
+  "drawdown_pct": -26.7,
+  "days_le_-3pct_since_0623": 17,
+  "investors_억": {
+   "individual": 30351,
+   "foreign": -33363,
+   "institution": -11869
+  }
+ },
+ "KOSDAQ": {
+  "close": 806.79,
+  "chg_pct": -1.69
+ },
+ "US_premarket_0914_0913ET": {
+  "SOXX": -5.46,
+  "SMTC": {
+   "pre": 154.0,
+   "pct": -7.92
+  },
+  "CRDO": {
+   "pre": 151.7,
+   "pct": -6.9
+  },
+  "NVDA": {
+   "pre": 212.2,
+   "pct": -2.79
+  },
+  "QQQ": -1.72,
+  "VIX": 17.74,
+  "VG": {
+   "open_0931": 16.14,
+   "pct": 2.15
+  },
+  "LNG": {
+   "open": 282.33,
+   "pct": 1.43
+  },
+  "FANG": {
+   "open": 209.05,
+   "pct": 1.99
+  },
+  "ET": 21.63,
+  "WMB": 72.72,
+  "XLE": 1.09
+ },
+ "FRED": {
+  "DGS10": [
+   "2026-09-10",
+   4.95
+  ],
+  "DGS2": [
+   "2026-09-10",
+   4.56
+  ],
+  "DCOILWTICO": [
+   "2026-09-09",
+   97.26
+  ],
+  "DCOILBRENTEU": [
+   "2026-09-09",
+   109.51
+  ],
+  "VIXCLS": [
+   "2026-09-10",
+   17.84
+  ],
+  "T10YIE": [
+   "2026-09-11",
+   2.36
+  ],
+  "DHHNGSP": [
+   "2026-09-09",
+   2.81
+  ]
+ },
+ "naver_close_definition": "closePrice = 20:00 AFTER_MARKET (tradingSessionType) · SK하이닉스 1,683,000 −7.12% · /price 일봉 동일값",
+ "source": "m.stock.naver.com/api/index/KOSPI/price · api.stock.naver.com/stock/{SYM}/basic · fredgraph.csv"
+}
