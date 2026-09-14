@@ -207,10 +207,14 @@ def main():
     staged = [f for f in run("git", "diff", "--cached", "--name-only",
                              "--diff-filter=ACM").splitlines()
               if f.endswith(".html")]
-    if not staged:
+    # 2026-09-14 수정 — HTML 없이 brain/theses.json 만 스테이징된 커밋(라우팅으로 basis 만 갱신)에서
+    # 여기서 종료돼 카드 렌더(아래)에 닿지 못했다. 첫 실전(미즈호 라우팅)에서 카드가 낡은 채 커밋됐다.
+    # 「카드가 브레인에서 나온다」가 성립하려면 브레인만 바뀐 커밋도 렌더까지 가야 한다.
+    brain_staged = "brain/theses.json" in run("git", "diff", "--cached", "--name-only").splitlines()
+    if not staged and not brain_staged:
         return 0
 
-    if check_update_log(staged):
+    if staged and check_update_log(staged):
         return 1
 
     # 인덱스와 워킹트리가 다른 파일 = 부분 스테이징. 제외한다.
