@@ -4651,6 +4651,56 @@
    "card": false,
    "seeded": "2026-09-13 자동 추출(build_thesis_index) — basis·event 미기입 · 손댈 때 채운다",
    "needs_manual": false
+  },
+  "cybersecurity/cyber_ai_security.html": {
+   "title": "사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도",
+   "judged": "2026-09-14",
+   "card": true,
+   "one": "「AI 보안이 다음 거대 시장」은 세 번 확인됐는데, 그 시장을 파는 6사 중 GAAP로 돈을 버는 건 Fortinet 하나뿐이다.",
+   "theses": [
+    {
+     "id": "T1",
+     "claim": "수요는 확인됐다 — 위협이 「AI가 도구」에서 「AI가 주체」로 넘어갔다. 2Q26에 자율 에이전트가 6시간 만에 크레덴셜 수천 건을 사람 없이 수집했다.",
+     "basis": "GTIG AI Threat Tracker 2Q26(①: 6시간 자율 캠페인·UNC6780 PyPI/npm 오염·LLMjacking 계정가 2배) · OAI-HF 에이전트 스웜 사이버 공격(②) · RubyGems 에이전트 외부 개입(②) · 젠슨 황 「다음 거대 시장」(③) · 다리오 「6~12개월 내 봇넷」(③). 3회 등장(09-09·09-11·09-12~14)",
+     "falsifier": "차기 GTIG 반기 보고서에서 에이전트 주도 침해 비중이 오르지 않는다",
+     "event": "GTIG 차기 AI Threat Tracker(2027-1Q경)",
+     "status": "유지",
+     "last_tested": "2026-09-14"
+    },
+    {
+     "id": "T2",
+     "claim": "공급은 다르다 — 6사 중 GAAP 영업이익이 양인 건 FTNT 32.4%·PANW 6.1%뿐이고 CRWD −2.2%·ZS −4.0%·NET −14.1%·S −29.5%다. SBC를 환입해야 CRWD 20.5%·ZS 19.6%·PANW 19.0%가 된다. 「AI 보안」 순수주는 주식보상으로 버는 회사다.",
+     "basis": "SEC XBRL TTM 직접 재구성(① · 2026-06/07 분기말) · SBC/매출 CRWD 22.8%·ZS 23.5%·S 29.2%·NET 20.7% vs FTNT 3.9% · Credo 18.4%보다 높다",
+     "falsifier": "CRWD·ZS GAAP OPM이 두 분기 연속 양전",
+     "event": "CRWD Q3 FY27 · ZS Q1 FY27(11월경)",
+     "status": "유지",
+     "last_tested": "2026-09-14"
+    },
+    {
+     "id": "T3",
+     "claim": "가격은 서사를 따라간다 — P/S÷성장이 CRWD 152·NET 120·PANW 68·FTNT 59·ZS 32·S 30. 「Agentic SOC」 주인공 CRWD가 가장 비싸고, 유일한 GAAP 수익 FTNT는 중간이다.",
+     "basis": "2026-09-11 종가 × SEC dei 주식수 ÷ TTM 매출 ÷ 최근분기 YoY(①). ⚠ 같은 층(플랫폼) 안 비교 · S는 주식수 WeightedAverage 대체",
+     "falsifier": "CRWD 매출 성장이 40%+로 재가속해 배수를 정당화",
+     "event": "CRWD Q3 FY27(11월경)",
+     "status": "유지",
+     "last_tested": "2026-09-14"
+    },
+    {
+     "id": "T4",
+     "claim": "PANW EBIT YoY −51%는 사업이 아니라 CyberArk 인수 장부다 — 영업권 $6.9B → $21.9B(26-04), 무형자산상각 분기 $39M → $280M. 걷어내면 OPM 6.1%가 아니다.",
+     "basis": "SEC XBRL(①) Goodwill·AmortizationOfIntangibleAssets 분기 추이 · §W3 세 기준(현금·반복·사업능력) — Coherent II-VI와 같은 형태",
+     "falsifier": "상각 제외 OPM도 전년 대비 하락",
+     "event": "PANW Q1 FY27(11월경) — 인수 후 첫 온전한 분기",
+     "status": "유지",
+     "last_tested": "2026-09-14"
+    }
+   ],
+   "next": [
+    "CRWD Q3 FY27 · ZS Q1 FY27 · PANW Q1 FY27 · FTNT 3Q(전부 11월경) — T2·T3·T4",
+    "GTIG 차기 AI Threat Tracker — T1",
+    "한국(엑스게이트·드림시큐리티·안랩·파이오링크) — 시세만 추적, 판단 미수립(§B4)"
+   ],
+   "position": "보유 없음. 5억 미국 배정 후보로는 「AI 캐펙스와 상관이 낮은 축」이지만 T2·T3이 진입을 지지하지 않는다 — GAAP 수익이 있는 건 FTNT뿐이고 그것도 P/S÷성장 59."
   }
  }
 }

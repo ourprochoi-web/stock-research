@@ -47,7 +47,11 @@ def parse(path):
     stop = re.search(r"\n\s*0[1-9]\s*\n", seg)
     seg = seg[: stop.start()] if stop and stop.start() > 300 else seg[:12000]
 
-    j = seg.find("반증 조건")
+    # 2026-09-14 수정 — 종전 seg.find("반증 조건")은 T1 <본문> 안의 「어제 걸어둔 반증 조건이 충족됐다」 같은
+    # 문장에서 먼저 걸려 core 가 거기서 잘렸다(메모리 편 4,837자에서 절단 · T2 는 7,729자). 검증이 잦은 테제일수록
+    # 본문에 그 말이 들어가므로 핫 페이지 18편 · 테제 43개가 브레인에서 빠졌다. 블록 <헤더>를 잡는다.
+    hm = re.search(r"\n\s*▎?\s*반증 조건 · 다음 검증\s*\n", seg) or re.search(r"\n\s*이 판단이 틀렸음을 보여줄 것", seg)
+    j = hm.start() if hm else seg.find("반증 조건")
     core = seg[:j] if j > 0 else seg
     tail = seg[j:] if j > 0 else ""
 
