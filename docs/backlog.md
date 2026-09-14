@@ -111,3 +111,25 @@ for f in */*.html; do case $f in *update_log*) continue;; esac
 node -e "const t=require('fs').readFileSync('index.html','utf8');eval('var D='+t.match(/var DATA = \[[\s\S]*?\n  \];/)[0].replace(/^var DATA = /,'').replace(/;$/,''));console.log(D.filter(d=>d.desc.length>120).length+'/'+D.length)"
 ```
 
+## 4. v3 측정 명령 (2026-09-15 신설) — 레짐 신선도 · 캘리브레이션 · 그래프 커버리지 · 내러티브 수명
+
+```
+PYTHONIOENCODING=utf-8 python3 - <<'EOF'
+# -*- coding: utf-8 -*-
+import json,io
+from datetime import date
+T=json.load(io.open('brain/theses.json',encoding='utf8'))['pages']; R=json.load(io.open('brain/regime.json',encoding='utf8'))
+M=json.load(io.open('brain/mechanisms.json',encoding='utf8')); L=[json.loads(l) for l in io.open('brain/routing.jsonl',encoding='utf8') if l.strip()]
+td=date.today()
+print("레짐 신선도 %d일 (asof %s) %s"%((td-date.fromisoformat(R['asof'])).days,R['asof'],"🟠" if (td-date.fromisoformat(R['asof'])).days>7 else "✓"))
+P=[r for r in L if r.get('kind')=='prediction']; due=[r for r in P if r.get('resolve_by') and r['resolve_by']<=td.isoformat()]
+sc=[r for r in due if r.get('outcome')]; print("예측 %d건 · 기한 도래 %d · 채점 %d · 미채점 %d"%(len(P),len(due),len(sc),len(due)-len(sc)))
+if sc: print("  hit %d · partial %d · miss %d"%(sum(1 for r in sc if r['outcome']=='hit'),sum(1 for r in sc if r['outcome']=='partial'),sum(1 for r in sc if r['outcome']=='miss')))
+linked={t for e in M['edges'] for t in e['theses']}
+card=[(p,t['id']) for p,pg in T.items() if pg.get('card') for t in pg['theses']]
+print("그래프 커버리지 — 카드 테제 %d 중 mechanisms에 걸린 %d"%(len(card),sum(1 for p,i in card if f"{p}#{i}" in linked)))
+print("내러티브:",[(n['id'],(td-date.fromisoformat(n['since'])).days,n.get('status')) for n in R['narratives']],"| breaks_if 없음:",sum(1 for n in R['narratives'] if not n.get('breaks_if')))
+print("엣지 부호 ?:",[e['id'] for e in M['edges'] if e['sign']=='?'])
+EOF
+```
+

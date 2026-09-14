@@ -1,0 +1,282 @@
+{
+ "_readme": "포트폴리오 테제의 정본(v3 · docs/workspace_v3.md §2.3). tracker 「포트 카드」가 여기서 렌더된다. §J3 그대로 — 산술과 구조이고 수량·비중·집행은 사용자가 정한다. 사용자 변수 = allowed_loss_pct.",
+ "asof": "2026-09-14",
+ "base": {
+  "total_assets": 2027000000,
+  "cash": 1227505773,
+  "equity": 799800000,
+  "equity_cost": 589000000,
+  "price_definition": "20:00 애프터마켓가(09-14부터 · open aftermarket)",
+  "holdings_ref": "portfolio/portfolio_tracker.html HOLDINGS",
+  "us_allocation_plan": 500000000
+ },
+ "exposures": {
+  "ai_capex_beta": {
+   "share_of_equity": 0.9,
+   "names": [
+    "SK하이닉스",
+    "삼성전자",
+    "SOL AI반도체TOP2+",
+    "TIME 글로벌AI",
+    "KODEX AI전력핵심설비"
+   ],
+   "direction": "AI 캐펙스·금리에 동시에 걸림",
+   "mechanisms": [
+    "m-04",
+    "m-17",
+    "m-16"
+   ],
+   "note": "메모리만 75.4%"
+  },
+  "rates_up": {
+   "direction": "피해",
+   "names": [
+    "전부"
+   ],
+   "mechanisms": [
+    "m-04"
+   ],
+   "note": "장기금리↑ = 배수 압축. 현금 60%는 완충"
+  },
+  "oil_up": {
+   "direction": "피해(수입국·금리 경유) — 헤지 0",
+   "names": [],
+   "mechanisms": [
+    "m-02",
+    "m-24"
+   ]
+  },
+  "gas_spread": {
+   "direction": "노출 0",
+   "names": [],
+   "mechanisms": [
+    "m-11"
+   ]
+  },
+  "krw_weak": {
+   "direction": "보유 전부 KRW — 미국 배정이 곧 환 헤지",
+   "mechanisms": [
+    "m-22"
+   ]
+  },
+  "china_memory_selfsufficiency": {
+   "direction": "장기 피해",
+   "names": [
+    "SK하이닉스",
+    "삼성전자"
+   ],
+   "mechanisms": [],
+   "note": "반도체 전쟁 T2 자본 축(CXMT/YMTC)"
+  },
+  "non_ai_kr": {
+   "share_of_equity": 0.13,
+   "names": [
+    "현대백화점",
+    "파마리서치",
+    "삼성바이오로직스"
+   ],
+   "direction": "분산"
+  }
+ },
+ "scenarios": {
+  "hormuz_open": {
+   "trigger": "이란-걸프 회담 재개·파이프라인 복구",
+   "book": "유가↓→금리 부담↓→AI 반등: 크게 이긴다",
+   "hedge": "FANG·VG −1%(허용 손실) · WMB·TRGP 무관",
+   "action": "VG 추가 회차 중단 · FANG 감액 확인까지 유지"
+  },
+  "hormuz_worse": {
+   "trigger": "호르무즈 통행 추가 제한·카타르 장기 중단",
+   "book": "유가·금리·속도조절 삼중 → 더 맞는다",
+   "hedge": "브렌트 $130+·TTF $40[추론] → 헤지 여러 배",
+   "action": "헤지가 일하는 구간 — 본진 추가 없음"
+  },
+  "fomc_hawkish": {
+   "trigger": "점도표 추가 인상 2회+",
+   "book": "배수 압축 지속",
+   "hedge": "에너지·금융 상대 강세(m-23)",
+   "action": "SMTC·CRDO 2회차 → 3회차로"
+  },
+  "fomc_dovish": {
+   "trigger": "25bp + 「인상 후 장기금리 하락」",
+   "book": "델 +12%처럼 하루에 반등",
+   "hedge": "중립",
+   "action": "2회차 예정대로"
+  },
+  "memory_asp_confirmed": {
+   "trigger": "3Q26 DRAM ASP QoQ ≥ +15%",
+   "book": "PER 4.8이 틀린 것 — 본진 최대 수혜",
+   "hedge": "—",
+   "action": "없음(집중 이미 75%)"
+  }
+ },
+ "hedge_map": {
+  "hedges": [
+   "FANG(유가)",
+   "VG(수출 스프레드)",
+   "WMB·TRGP(가스 물량)",
+   "XOM"
+  ],
+  "not_hedges": [
+   "VST",
+   "CEG",
+   "TLN",
+   "BE",
+   "SMR",
+   "GEV"
+  ],
+  "why": "「AI 전력」은 09-14 프리마켓에서 반도체와 함께 빠졌다 — 수요의 뿌리가 AI 캐펙스라 AI 노출 추가다"
+ },
+ "sizing": {
+  "formula": "position = allowed_loss_pct × total_assets ÷ drawdown_at_falsifier",
+  "variable": "allowed_loss_pct (사용자 · 1~2%)",
+  "fx": 1350,
+  "drawdown_at_falsifier": {
+   "WMB": -0.15,
+   "TRGP": -0.2,
+   "FANG": -0.25,
+   "VG": -0.4,
+   "SMTC": -0.3,
+   "CRDO": -0.35,
+   "현대백화점": -0.2
+  },
+  "grade": "낙폭 ③[추론]",
+  "table_1pct": [
+   {
+    "sym": "WMB",
+    "price": 72.7,
+    "position_krw": 135000000,
+    "qty": 1376
+   },
+   {
+    "sym": "TRGP",
+    "price": 291,
+    "position_krw": 101000000,
+    "qty": 258
+   },
+   {
+    "sym": "FANG",
+    "price": 209,
+    "position_krw": 81100000,
+    "qty": 287
+   },
+   {
+    "sym": "VG",
+    "price": 16.1,
+    "position_krw": 50700000,
+    "qty": 2326
+   },
+   {
+    "sym": "SMTC",
+    "price": 154,
+    "position_krw": 67600000,
+    "qty": 325
+   },
+   {
+    "sym": "CRDO",
+    "price": 152,
+    "position_krw": 57900000,
+    "qty": 283
+   },
+   {
+    "sym": "현대백화점",
+    "price": 99000,
+    "position_krw": 101000000,
+    "qty": 1024
+   }
+  ],
+  "note": "1% 규칙으로 미국 6종목을 다 채우면 5.5억 > 5억 — 종목 선택 또는 낙폭 큰 것(VG·CRDO)만 1%"
+ },
+ "tranches": [
+  {
+   "n": 1,
+   "window": "~09-16 FOMC 전",
+   "names": [
+    "WMB",
+    "TRGP",
+    "FANG",
+    "VG",
+    "현대백화점"
+   ],
+   "why": "연준에 안 걸린다 — 가스는 호르무즈, 백화점은 자본배분이 정한다",
+   "share": "목표 수량의 1/3"
+  },
+  {
+   "n": 2,
+   "window": "09-17 ~ 09-25 미중 정상회담",
+   "names": [
+    "SMTC",
+    "CRDO",
+    "+1회차 종목"
+   ],
+   "why": "점도표 확인 후. 「인상+비둘기」면 이미 올라 있는 비용을 받아들이는 대신 매파 점도표에 안 걸린다",
+   "share": "1/3"
+  },
+  {
+   "n": 3,
+   "window": "10월 중순 3Q 실적 ~ VG 3Q(10월 말)",
+   "names": [
+    "남은 전부"
+   ],
+   "why": "중간선거 통계의 저점 구간(10월 말~11월 초). 반증 난 종목은 0",
+   "share": "1/3"
+  }
+ ],
+ "precommits": [
+  {
+   "if": "호르무즈 회담 재개 또는 TTF < $15",
+   "then": "VG 추가 회차 중단(보유분 유지) · WMB·TRGP 계속",
+   "ref": "r-20260914-31"
+  },
+  {
+   "if": "FOMC 점도표 추가 인상 2회 이상",
+   "then": "SMTC·CRDO 2회차를 3회차로 미룬다",
+   "ref": "r-20260914-33"
+  },
+  {
+   "if": "현대백화점 3Q26 전까지 배당·소각 공시 0",
+   "then": "3회차 취소(T4 반증)",
+   "ref": "consumer/consumer_sector_department.html#T4"
+  },
+  {
+   "if": "Henry Hub > $4",
+   "then": "VG에서 WMB·TRGP로 옮긴다(스프레드 축 종료 신호)",
+   "ref": "energy/us_energy_five.html#T6"
+  },
+  {
+   "if": "SK하이닉스 < ₩1,200,000",
+   "then": "스톱로스(사용자 규율)",
+   "ref": "§E1"
+  }
+ ],
+ "decisions": [
+  {
+   "date": "2026-08-23",
+   "what": "AI 우산 상한 25% 폐지",
+   "ref": "portfolio_tracker.html#fx-allocation"
+  },
+  {
+   "date": "2026-09-14",
+   "what": "손실 종목에 매도선을 두지 않는다 — 갱신을 보고 시장 상황으로 판단. 축은 손절이 아니라 분할매수 타이밍",
+   "ref": "memory feedback-no-sell-lines"
+  },
+  {
+   "date": "2026-09-14",
+   "what": "미국 5억의 축 = 광통신 + 에너지(헤지) · 국내 = 저평가·금융",
+   "ref": "r-20260914-40"
+  }
+ ],
+ "stops": [
+  {
+   "name": "SK하이닉스",
+   "level": 1200000,
+   "kind": "스톱로스",
+   "distance_pct": 40.3
+  }
+ ],
+ "next": [
+  "KB금융·은행 판단 신설 후 표에 추가",
+  "유가 프리미엄을 값으로(open oil-judgment)",
+  "레버리지 ETF AUM 측정(regime.flows.leverage)"
+ ]
+}

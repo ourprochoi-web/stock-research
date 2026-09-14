@@ -1,0 +1,123 @@
+{
+ "asof_run": "2026-09-14 23:59 KST",
+ "fred": {
+  "us10y": {
+   "date": "2026-09-10",
+   "value": 4.95,
+   "series": "DGS10",
+   "w1": 4.77,
+   "m1": 4.68
+  },
+  "us2y": {
+   "date": "2026-09-10",
+   "value": 4.56,
+   "series": "DGS2",
+   "w1": 4.34,
+   "m1": 4.2
+  },
+  "us30y": {
+   "date": "2026-09-10",
+   "value": 5.37,
+   "series": "DGS30",
+   "w1": 5.25,
+   "m1": 5.24
+  },
+  "bei10": {
+   "date": "2026-09-11",
+   "value": 2.36,
+   "series": "T10YIE",
+   "w1": 2.35,
+   "m1": 2.24
+  },
+  "wti": {
+   "date": "2026-09-09",
+   "value": 97.26,
+   "series": "DCOILWTICO",
+   "w1": 92.15,
+   "m1": 84.77
+  },
+  "brent": {
+   "date": "2026-09-09",
+   "value": 109.51,
+   "series": "DCOILBRENTEU",
+   "w1": 97.59,
+   "m1": 93.26
+  },
+  "henry_hub": {
+   "date": "2026-09-09",
+   "value": 2.81,
+   "series": "DHHNGSP",
+   "w1": 2.88,
+   "m1": 2.79
+  },
+  "vix_close": {
+   "date": "2026-09-11",
+   "value": 15.84,
+   "series": "VIXCLS",
+   "w1": 14.53,
+   "m1": 14.63
+  },
+  "dxy_broad": {
+   "date": "2026-09-04",
+   "value": 118.0732,
+   "series": "DTWEXBGS",
+   "w1": 118.7479,
+   "m1": 119.5113
+  }
+ },
+ "naver": {
+  "KOSPI": {
+   "close": "6,684.37",
+   "chg_pct": "-3.26",
+   "traded_at": "2026-09-14T20:15:00+09:00",
+   "session": "REGULAR?"
+  },
+  "KOSDAQ": {
+   "close": "806.79",
+   "chg_pct": "-1.69",
+   "traded_at": "2026-09-14T20:15:00+09:00",
+   "session": "REGULAR?"
+  },
+  "kospi_investors_억": {
+   "bizdate": "20260914",
+   "personalValue": "+30,351",
+   "foreignValue": "-33,363",
+   "institutionalValue": "-11,869"
+  },
+  "sp500": {
+   "close": "7,597.68",
+   "chg_pct": "-0.77",
+   "traded_at": "2026-09-14T10:59:48-04:00",
+   "status": "OPEN"
+  },
+  "nasdaq": {
+   "close": "26,069.36",
+   "chg_pct": "-1.00",
+   "traded_at": "2026-09-14T10:59:48-04:00",
+   "status": "OPEN"
+  },
+  "vix": {
+   "close": "17.53",
+   "chg_pct": "10.67",
+   "traded_at": "2026-09-14T10:44:48-04:00",
+   "status": "OPEN"
+  },
+  "sox": {
+   "close": "11,144.62",
+   "chg_pct": "-5.75",
+   "traded_at": "2026-09-14T10:59:48-04:00",
+   "status": "OPEN"
+  },
+  "price_definition_probe": {
+   "code": "000660",
+   "closePrice": "1,683,000",
+   "traded_at": "2026-09-14T20:20:22+09:00",
+   "session": "AFTER_MARKET",
+   "over_status": "CLOSE"
+  }
+ },
+ "breadth": {
+  "note": "prices.json 미갱신(같은 updated) — breadth 계산 안 함"
+ },
+ "errors": []
+}

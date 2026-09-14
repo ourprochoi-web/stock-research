@@ -10,6 +10,14 @@
 | `entities.json` | 회사·테마 카드 — 무슨 사업(등급 표기)·층·정본 페이지·facts 키·걸린 테제 | 회사를 새로 다룰 때 |
 | `events.json` | 판정 이벤트 일정 — 도래하면 판정하고 **지운다** | 이벤트를 걸 때·판정할 때 |
 | `open.json` | 열린 질문·미착수 | 배치를 열기 전에 읽고, 닫으면 지운다 |
+| `regime.json` 🆕v3 | **시장 상태의 정본** — 레짐 한 줄 · 매크로(금리·유가·가스·환·인플레) · 시장 구조(낙폭·breadth·배수) · 수급 · 내러티브(since·깨지는 조건) · 회전 · 「틀렸음을 보여줄 것」 | **바뀔 때만.** 주 1회 「같은 레짐인가」를 `history`에 한 줄. index 「지금 시장」 카드가 여기서 렌더 |
+| `mechanisms.json` 🆕v3 | **인과 그래프** — 엣지(from→to · 부호 · 시차 · 강도 · 등급 · 근거 · 걸린 테제). 테제가 아니라 세계의 작동 방식에 대한 등급 있는 가설 | 값이 바뀌면 from 노드에서 2홉을 걸어 라우팅 후보를 찾는다. 반박되면 sign→`?` + routing lesson |
+| `portfolio.json` 🆕v3 | **포트폴리오 테제** — 노출(요인별) · 시나리오(두 갈래표) · 헤지 지도 · 사이징 산술(변수=허용 손실%) · 회차 · 사전약속 · 사용자 결정 · 스톱 | 결정·시나리오가 바뀔 때. tracker 「포트폴리오 테제」 카드가 여기서 렌더. §J3 그대로 — 수량·집행은 사용자 |
+
+## v3 (2026-09-15) — 시장·인과·포트폴리오 층. 설계·근거는 `docs/workspace_v3.md`
+**브레인은 9 파일이 상한이다.** 다음 구멍은 필드로 푼다. `routing.jsonl`의 `kind`가 늘었다 — `route`(기본) · `verdict` · `decision`(사용자 결정) · **`prediction`**(내 예측: `resolve_by`·`confidence`·나중에 `outcome`·`lesson`) · **`lesson`**. `entities.json`에 `actors`(행위자 카드), `events.json`에 `precommit`(도래 전에 「어느 쪽이면 무엇」)이 붙었다.
+**답의 형식(§J2)에 두 줄** — ⓪ 레짐 한 줄(`regime.one`) · ⑥ 포트 영향(`portfolio.exposures`).
+**세션 시작 읽기 순서** — `regime.one`+`changes_if` → `events`(7일·precommit) → `open` → `portfolio.precommits` → `intake` `routed:false`.
 
 ## 스키마 v2 (2026-09-14 — 첫 실전 하루 뒤 고침)
 

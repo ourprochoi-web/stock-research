@@ -211,9 +211,47 @@ def main():
     # 2026-09-14 수정 — HTML 없이 brain/theses.json 만 스테이징된 커밋(라우팅으로 basis 만 갱신)에서
     # 여기서 종료돼 카드 렌더(아래)에 닿지 못했다. 첫 실전(미즈호 라우팅)에서 카드가 낡은 채 커밋됐다.
     # 「카드가 브레인에서 나온다」가 성립하려면 브레인만 바뀐 커밋도 렌더까지 가야 한다.
-    brain_staged = "brain/theses.json" in run("git", "diff", "--cached", "--name-only").splitlines()
+    _cached = run("git", "diff", "--cached", "--name-only").splitlines()
+    brain_staged = any(f in _cached for f in ("brain/theses.json", "brain/regime.json", "brain/portfolio.json",
+                                              "brain/mechanisms.json", "brain/routing.jsonl", "brain/events.json"))
     if not staged and not brain_staged:
         return 0
+
+    # v3 브레인 검사(2026-09-15 · 경고만) — regime·mechanisms·portfolio JSON 유효성 · 엣지 theses 포인터 · prediction 형식 · 레짐 신선도
+    if brain_staged:
+        try:
+            import json as _j
+            _T = _j.load(open("brain/theses.json", encoding="utf-8"))["pages"]
+            for _f in ("brain/regime.json", "brain/mechanisms.json", "brain/portfolio.json"):
+                _j.load(open(_f, encoding="utf-8"))
+            _M = _j.load(open("brain/mechanisms.json", encoding="utf-8"))
+            _bad = []
+            for _ed in _M["edges"]:
+                for _t in _ed.get("theses", []):
+                    if "#" in _t and not _t.startswith("events:"):
+                        _pg, _id = _t.split("#", 1)
+                        if _pg not in _T or _id not in {x["id"] for x in _T[_pg]["theses"]}:
+                            _bad.append((_ed["id"], _t))
+                if _ed["from"] not in _M["nodes"] or _ed["to"] not in _M["nodes"]:
+                    _bad.append((_ed["id"], "node 없음"))
+            if _bad:
+                print(f"[pre-commit] ⚠ mechanisms 포인터 {len(_bad)}건 실재 안 함 — {_bad[:3]}")
+            _R = _j.load(open("brain/regime.json", encoding="utf-8"))
+            from datetime import date as _d
+            _age = (_d.today() - _d.fromisoformat(_R["asof"])).days
+            if _age > 7:
+                print(f"[pre-commit] 🟠 regime.json 신선도 {_age}일 — 주 1회 「같은 레짐인가」를 history 에 답한다")
+            _np = 0
+            for _ln in open("brain/routing.jsonl", encoding="utf-8"):
+                if _ln.strip():
+                    _r = _j.loads(_ln)
+                    if _r.get("kind") == "prediction" and not _r.get("resolve_by"):
+                        _np += 1
+            if _np:
+                print(f"[pre-commit] ⚠ prediction 에 resolve_by 없음 {_np}건")
+            print("[pre-commit] [brain v3] ✓ regime·mechanisms·portfolio 유효" + ("" if _bad else " · 포인터 실재"))
+        except Exception as _e:  # noqa: BLE001
+            print(f"[pre-commit] ⚠ brain v3 검사 실패 — 커밋은 진행: {_e}")
 
     if staged and check_update_log(staged):
         return 1
@@ -280,7 +318,7 @@ def main():
 
     # 브레인 카드 렌더 — brain/theses.json 이나 카드 페이지가 스테이징되면 카드를 다시 찍어 함께 커밋한다(2026-09-13).
     # 페이지 상단 「현재 판단」의 정본은 theses.json 이고 카드는 생성물이다. 사람이 카드를 고쳐도 여기서 덮인다.
-    if "brain/theses.json" in run("git", "diff", "--cached", "--name-only").splitlines() or staged:
+    if brain_staged or staged:
         try:
             r = subprocess.run([sys.executable, ".githooks/render_cards.py", *staged],
                                capture_output=True, text=True)
