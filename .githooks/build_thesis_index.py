@@ -44,14 +44,19 @@ def parse(path):
     i = t.find("현재 판단 ·")
     seg = t[i:]
     # 블록의 끝 — 「01 」로 시작하는 본문 절 또는 다음 큰 제목. 넉넉히 12K자.
+    # 2026-09-14 v2 — 12K 캡이 헤더 검색보다 <먼저> 걸려 핫 페이지(헤더가 110K 뒤)는 캡 안에서 헤더를 못 찾고
+    # 본문의 「반증 조건」 문구로 떨어졌다. 캡은 헤더를 찾은 <뒤>에 건다.
     stop = re.search(r"\n\s*0[1-9]\s*\n", seg)
-    seg = seg[: stop.start()] if stop and stop.start() > 300 else seg[:12000]
+    if stop and stop.start() > 300:
+        seg = seg[: stop.start()]
 
     # 2026-09-14 수정 — 종전 seg.find("반증 조건")은 T1 <본문> 안의 「어제 걸어둔 반증 조건이 충족됐다」 같은
     # 문장에서 먼저 걸려 core 가 거기서 잘렸다(메모리 편 4,837자에서 절단 · T2 는 7,729자). 검증이 잦은 테제일수록
     # 본문에 그 말이 들어가므로 핫 페이지 18편 · 테제 43개가 브레인에서 빠졌다. 블록 <헤더>를 잡는다.
-    hm = re.search(r"\n\s*▎?\s*반증 조건 · 다음 검증\s*\n", seg) or re.search(r"\n\s*이 판단이 틀렸음을 보여줄 것", seg)
-    j = hm.start() if hm else seg.find("반증 조건")
+    hm = re.search(r"\n\s*▎?\s*반증 조건[^\n]{0,40}(다음 검증|틀렸음)", seg) or re.search(r"\n\s*이 판단이 틀렸음을 보여줄 것", seg)
+    j = hm.start() if hm else -1          # 헤더가 없으면 본문 문구로 떨어지지 않는다(그게 버그였다)
+    if j < 0 and len(seg) > 60000:
+        seg = seg[:60000]
     core = seg[:j] if j > 0 else seg
     tail = seg[j:] if j > 0 else ""
 
