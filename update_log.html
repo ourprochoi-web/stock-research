@@ -256,6 +256,15 @@ a:hover{text-decoration:underline}
 <div class="day">
   <div class="day-date">🟢 2026.09.13 (1) — <b>규칙 3층 분리 — <u>66조항 → 15조항 · 120KB → 10KB</u></b> · <b>테제 색인 신설</b> · <b>광통신 밸류체인 입문 편 신설</b></div>
   <div class="upd">
+    <div class="upd-title"><span class="tag">데이터</span> 🔴 <b>정규 종가 경로 확보 — <u>09-14 SK하이닉스는 −7.12%가 아니라 −6.35%였다</u> · 수급·심리·레버리지 첫 측정</b></div>
+    <div class="upd-body">
+      스카우트(에이전트 · <code>docs/datasource_scout_2026-09-15.md</code>): 네이버 모든 JSON의 <code>closePrice</code>는 09-14부터 20:00 애프터마켓가이고, 정규 종가(15:30)는 <b>분봉 15:30 바</b>에만 남는다. KRX 포털은 로그인 필수(프록시 아님). <code>update_prices.py</code>가 <b>prices=정규 · after=애프터</b>로 저장(102/102 확보) — tracker 09-14 블록 정정(주식 8.025억 −3.56% · 원가 대비 +36.24%).<br>
+      <b>첫 측정</b> — 국내 단일종목 2x ETF AUM 6.56조(하이닉스 4.18조·삼성 2.38조) + HK CSOP 7709.HK ≈5.1조 → 하이닉스 2x ≈ 시총 0.75%(7월 CSOP 23조의 1/2.5) · CNN 공포탐욕 30(공포) · CBOE put/call 지수 1.23/개별 0.58 · CFTC NG 머니매니저 순매도 −96,742 · TTF 83.78 EUR/MWh(≈$28.7) · US30Y 5.354 · DXY 99.12. JKM 일별은 무료 경로 없음.
+      <code>facts.macro</code> 11값 추가 · <code>regime.flows</code> 레버리지·심리 · open <code>aftermarket</code> 닫음 · 수집 v2에 소스 16개 추가(<code>collect_sources.py</code>).
+    </div>
+  </div>
+
+  <div class="upd">
     <div class="upd-title"><span class="tag">구조</span> 🧠 <b>워크스페이스 v3 — <u>시장·인과·포트폴리오 층이 생겼다</u> (밤샘 설계·시범 구축)</b></div>
     <div class="upd-body">
       09-14 실측: 매크로 값이 갈 곳이 없었고(유가 판단 0편), 시장 방향을 매번 0에서 재구성했고, 헤지·시나리오·사이징이 대화에만 있었고, 내 판단은 채점되지 않았다.<br>

@@ -148,11 +148,45 @@ def collect_macro(day):
     return out
 
 
+def collect_macro_v3(day, out):
+    """스카우트(2026-09-15)로 확보한 소스 — collect_sources.py 를 쓴다. 실패는 errors 에."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("cs", os.path.join(ROOT, "intake", "collect_sources.py"))
+    cs = importlib.util.module_from_spec(spec); spec.loader.exec_module(cs)
+    ymd = f"{day:%Y%m%d}"
+    def tryit(key, fn, *a, **k):
+        try:
+            out.setdefault("v3", {})[key] = fn(*a, **k)
+        except Exception as e:  # noqa: BLE001
+            out["errors"].append({"host": key, "path": str(getattr(e, "url", ""))[:80], "status": str(getattr(e, "status", e))[:80]})
+    tryit("kospi_flows_daum", cs.daum_index_investor_days, "KOSPI", 1, 5)
+    tryit("kosdaq_flows_daum", cs.daum_index_investor_days, "KOSDAQ", 1, 5)
+    tryit("kospi_investor_detail", cs.naver_investor_deal_trend_day, "01", ymd, 1)
+    tryit("breadth_kospi", cs.naver_breadth, "KOSPI")
+    tryit("breadth_kosdaq", cs.naver_breadth, "KOSDAQ")
+    tryit("energy_settle", lambda: {c: cs.naver_marketindex_prices("energy", c, 3) for c in ("CLcv1", "LCOcv1", "DCBc1", "NGcv1")})
+    tryit("dxy", cs.naver_marketindex_prices, "exchange", ".DXY", 3)
+    tryit("yields", lambda: {c: cs.naver_marketindex_prices("bond", c, 3) for c in ("US2YT=RR", "US10YT=RR", "US30YT=RR", "KR10YT=RR")})
+    tryit("ttf_yahoo", cs.yahoo_chart, "TTF=F", "5d", "1d")
+    tryit("cnn_fear_greed", cs.cnn_fear_greed)
+    tryit("cboe_put_call", cs.cboe_put_call, (day - timedelta(days=1)).isoformat())
+    tryit("leverage_etf_aum", lambda: {c: cs.naver_etf_basic(c) for c in ("0193T0", "0195S0", "0193W0", "0195R0")})
+    tryit("csop_7709", cs.naver_world_stock_basic, "7709.HK")
+    tryit("cftc_ng", cs.cftc_cot_managed_money, "023651", 2)
+    tryit("cftc_wti", cs.cftc_cot_managed_money, "067651", 2)
+    tryit("skh_regular_close", cs.krx_regular_close, "000660", ymd)
+    return out
+
+
 def macro_record(day, ids, dry):
     if os.path.exists(LOG) and any(json.loads(ln).get("kind") == "매크로" and json.loads(ln).get("date") == f"{day:%Y-%m-%d}"
                                    for ln in io.open(LOG, encoding="utf-8") if ln.strip()):
         return 0
     snap = collect_macro(day)
+    try:
+        collect_macro_v3(day, snap)
+    except Exception as e:  # noqa: BLE001
+        snap["errors"].append({"host": "collect_macro_v3", "path": "", "status": str(e)[:80]})
     rel = f"macro/{day:%Y-%m-%d}.json"
     fr = snap["fred"]; nv = snap["naver"]; br = snap.get("breadth", {})
     def v(k, src=fr):

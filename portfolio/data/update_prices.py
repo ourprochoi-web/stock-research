@@ -376,6 +376,25 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT = os.path.join(SCRIPT_DIR, "prices.json")
 
 
+def fetch_regular_close(code, yyyymmdd):
+    """15:30 종가 — 네이버 분봉의 15:30 바(동시호가 체결). 2026-09-14부터 naver closePrice 가 20:00 애프터마켓가라
+    정규 종가는 이 경로로만 남는다(스카우트 2026-09-15 · docs/datasource_scout_2026-09-15.md). 실패 시 None."""
+    url = (f"https://api.stock.naver.com/chart/domestic/item/{code}/minute"
+           f"?startDateTime={yyyymmdd}1520&endDateTime={yyyymmdd}1535")
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            bars = json.loads(resp.read())
+        for x in bars:
+            if str(x.get("localDateTime", "")).startswith(f"{yyyymmdd}1530"):
+                return int(float(x["currentPrice"]))
+        if bars:  # 15:30 바가 없으면 마지막 바(장중 실행 시)
+            return int(float(bars[-1]["currentPrice"]))
+    except Exception:
+        return None
+    return None
+
+
 def fetch_price(code):
     url = f"https://m.stock.naver.com/api/stock/{code}/basic"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -748,6 +767,7 @@ def fetch_us_fundamentals(sym):
 def main():
     print("포트폴리오 현재가 업데이트 중...\n")
     prices = {}
+    after = {}  # 종목별 {after, regular, session} — 정규/애프터 대조(2026-09-15)
     updated = ""
     updated_time = ""
 
@@ -755,12 +775,18 @@ def main():
         data = fetch_price(code)
         if not data:
             continue
-        close = int(data["closePrice"].replace(",", ""))
+        close_shown = int(data["closePrice"].replace(",", ""))
         date = data.get("localTradedAt", "")[:10]
         change = data.get("compareToPreviousClosePrice", "?")
         ratio = data.get("fluctuationsRatio", "?")
         direction = data.get("compareToPreviousPrice", {}).get("text", "")
-
+        # 정규 종가 우선(2026-09-15). 분봉 실패 시 표시가(애프터마켓 포함)로 폴백하고 그 사실을 남긴다.
+        over = data.get("overMarketPriceInfo") or {}
+        session = over.get("tradingSessionType") or "REGULAR"
+        reg = fetch_regular_close(code, date.replace("-", "")) if date else None
+        close = reg if reg else close_shown
+        if session == "AFTER_MARKET" or reg:
+            after[name] = {"after": close_shown, "regular": reg, "session": session}
         prices[name] = close
         if not updated:
             updated = date
@@ -891,8 +917,10 @@ def main():
         print("  기존 prices.json 은 그대로 둡니다(빈 파일로 덮지 않는다).")
         return 1
 
+    reg_n = sum(1 for v in after.values() if v.get("regular"))
     result = {"updated": updated, "updatedTime": updated_time,
-              "prices": prices, "fundamentals": fundamentals,
+              "priceDefinition": f"prices = 15:30 정규 종가(분봉 · {reg_n}/{len(prices)} 확보) · after = 20:00 애프터마켓가 · 미확보 종목은 표시가",
+              "prices": prices, "after": after, "fundamentals": fundamentals,
               "returns": returns, "flows": flows, "us": us}
     if fx:
         result["fx"] = fx    # §J13 — 해외 배정의 환 노출 축
