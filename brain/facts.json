@@ -11,7 +11,8 @@
   "created": "2026-09-13",
   "scope": "ai-infra/optical_valuechain_9 · optical_interconnect_layer · kr_cooling_optical_layer 3편이 확정한 값 + 정본 포인터",
   "not_here": "시세는 portfolio/data/prices.json · 테제는 docs/thesis_index.md",
-  "intake": "companies.<tk>.intake = 이 회사의 값이 나온 수집 항목 id(intake/collected.jsonl · user.jsonl). 값을 고칠 때 그 조각을 다시 연다"
+  "intake": "companies.<tk>.intake = 이 회사의 값이 나온 수집 항목 id(intake/collected.jsonl · user.jsonl). 값을 고칠 때 그 조각을 다시 연다",
+  "macro": "macro.<key> = {value, unit, asof, source, grade, intake, note} — 회사가 아닌 값(금리·유가·가스·환율·지수). 시세 정본은 prices.json이지만 판단이 인용하는 <기준값>은 여기(2026-09-14 신설 · 유가 판단 0편 문제의 해법)"
  },
  "companies": {
   "ALAB": {
@@ -5102,6 +5103,110 @@
     "c-20260913-23",
     "u-20260913-05"
    ]
+  }
+ },
+ "macro": {
+  "brent": {
+   "value": 109.51,
+   "unit": "USD/bbl",
+   "asof": "2026-09-09",
+   "source": "FRED DCOILBRENTEU",
+   "grade": "①",
+   "intake": "c-20260914-03",
+   "note": "1M 93.26 · 3M 88.64 · 1Y 70.48 → 호르무즈 프리미엄 첫 추정 $15~20[추론]"
+  },
+  "wti": {
+   "value": 97.26,
+   "unit": "USD/bbl",
+   "asof": "2026-09-09",
+   "source": "FRED DCOILWTICO",
+   "grade": "①",
+   "intake": "c-20260914-03"
+  },
+  "henry_hub": {
+   "value": 2.81,
+   "unit": "USD/MMBtu",
+   "asof": "2026-09-09",
+   "source": "FRED DHHNGSP",
+   "grade": "①",
+   "intake": "c-20260914-05",
+   "note": "1Y 2.98 평탄 — 수출 캐파 병목. 전환 신호 $4"
+  },
+  "ttf": {
+   "value": 23.0,
+   "unit": "USD/MMBtu(+)",
+   "asof": "2026-09 (기사 인용)",
+   "source": "Kpler·EIA (WebSearch)",
+   "grade": "②",
+   "intake": "c-20260914-05",
+   "note": "일별 시계열 경로 미확보. 전쟁 전 ~2분의 1"
+  },
+  "jkm": {
+   "value": 24.0,
+   "unit": "USD/MMBtu(~)",
+   "asof": "2026-09 (기사 인용)",
+   "source": "Kpler (WebSearch)",
+   "grade": "②",
+   "intake": "c-20260914-05"
+  },
+  "us10y": {
+   "value": 4.95,
+   "unit": "%",
+   "asof": "2026-09-10",
+   "source": "FRED DGS10",
+   "grade": "①",
+   "intake": "c-20260914-03",
+   "note": "9/11 장중 5% 터치(②) · 1M 4.68"
+  },
+  "us2y": {
+   "value": 4.56,
+   "unit": "%",
+   "asof": "2026-09-10",
+   "source": "FRED DGS2",
+   "grade": "①",
+   "intake": "c-20260914-03"
+  },
+  "us30y": {
+   "value": 5.4,
+   "unit": "%",
+   "asof": "2026-09-14",
+   "source": "JPM 전략 노트(u-20260914-20)",
+   "grade": "③",
+   "intake": "u-20260914-20",
+   "note": "20년 최고. FRED 대조 미착수"
+  },
+  "breakeven10y": {
+   "value": 2.36,
+   "unit": "%",
+   "asof": "2026-09-11",
+   "source": "FRED T10YIE",
+   "grade": "①",
+   "intake": "c-20260914-03"
+  },
+  "vix": {
+   "value": 17.74,
+   "unit": "pt",
+   "asof": "2026-09-14 09:00 ET",
+   "source": "api.stock.naver.com .VIX",
+   "grade": "①",
+   "intake": "c-20260914-03"
+  },
+  "kospi": {
+   "value": 6684.37,
+   "unit": "pt",
+   "asof": "2026-09-14",
+   "source": "m.stock.naver.com index/KOSPI",
+   "grade": "①",
+   "intake": "c-20260914-03",
+   "note": "06-22 고점 9,114.55 대비 −26.7% · 6/23 이후 −3% 이상 하락일 17"
+  },
+  "usdkrw": {
+   "value": 1350.2,
+   "unit": "KRW",
+   "asof": "2026-09-14",
+   "source": "prices.json fx",
+   "grade": "①",
+   "intake": "c-20260914-03"
   }
  }
 }

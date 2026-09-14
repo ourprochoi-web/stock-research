@@ -658,6 +658,70 @@
    "ticker": "NET",
    "canonical_page": "cybersecurity/cyber_ai_security.html"
   },
+  "TRGP": {
+   "name": "Targa Resources",
+   "market": "US",
+   "layer": "미드스트림 · 퍼미안 가스 집적·처리(G&P) + NGL 물류",
+   "business": "퍼미안(미들랜드·델라웨어) 가스 집적·처리 최대 사업자 → NGL을 Grand Prix 파이프라인으로 몬트벨뷰 운송·분류·LPG 수출(갤버스턴). 2026 조정 EBITDA 가이던스 $57~59억 · 성장 CapEx ~$50억 · 엑손모빌과 20년 전용 계약(2046)·델라웨어 신규 처리 플랜트 3기(+최대 5기 검토). 수수료 기반 중심이나 NGL 가격 노출 잔존",
+   "business_grade": "②(IR 보도자료·검색 · 2026-09-14 · 10-K 미대조)",
+   "pages": [
+    "energy/us_energy_five.html",
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T2",
+    "energy/us_energy_five.html#T6",
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": false,
+   "intake": [],
+   "note": "편 T2: FCF 수익률 1.4%(최저)의 원인은 CapEx/OCF 76% — 재투자 단계. T6: 국내 가스 물량 축(퍼미안→걸프 LNG)"
+  },
+  "WMB": {
+   "name": "Williams Companies",
+   "market": "US",
+   "layer": "미드스트림 · 주간 가스 파이프라인(Transco) + 발전(BTM)",
+   "business": "Transco — 걸프코스트→뉴욕 미 최대 주간 가스 파이프라인(미 가스 소비의 약 1/3 통과 · ②), 노스웨스트 파이프라인, 마셀러스·헤인즈빌 집적. EBITDA 약 90% 고정 계약. 데이터센터용 발전 진출: 오하이오 Socrates 500MW 가스 발전 $16억, 메타와 10년 고정가 PPA 440MW(2H26 가동) + 2단계 200MW · 전력 프로젝트 총 $31억. 남동부·버지니아 DC 수요용 Transco 증설",
+   "business_grade": "②(회사 IR·보도 · 2026-09-14 · 10-K 미대조)",
+   "pages": [
+    "energy/us_energy_five.html",
+    "energy/us_energy_hegemony_17.html"
+   ],
+   "facts": [
+    "capex",
+    "capex_to_ocf",
+    "fcf",
+    "fcf_yield",
+    "mcap",
+    "nd_to_ebitda",
+    "net_debt",
+    "ocf",
+    "opm",
+    "revenue"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T2",
+    "energy/us_energy_five.html#T6",
+    "energy/us_energy_hegemony_17.html#T1",
+    "energy/us_energy_hegemony_17.html#T2"
+   ],
+   "tracked_price": true,
+   "intake": [],
+   "note": "편 T2: FCF 2.5% · CapEx/OCF 60% · EBITDA 마진 58.6%. T6: 두 가스 축(수출 물량·DC 수요) 모두 물량으로 받는 자리 — 발전(Socrates)은 「가스 = 가장 빠른 전원」 축을 회사가 직접 실행하는 사례"
+  },
   "XOM": {
    "name": "ExxonMobil",
    "market": "US",
@@ -1038,34 +1102,6 @@
    ],
    "tracked_price": true
   },
-  "WMB": {
-   "name": "Williams",
-   "market": "US",
-   "layer": "미드스트림(가스)",
-   "business": "가스 미드스트림(Transco · NESE · SSE 1.6Bcf/d 확장 4Q27) — Appalachia→걸프 남향 파이프 소유자",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html",
-    "energy/us_energy_five.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": true
-  },
   "ET": {
    "name": "Energy Transfer",
    "market": "US",
@@ -1108,34 +1144,6 @@
     "fcf",
     "fcf_yield",
     "mcap",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "TRGP": {
-   "name": "Targa Resources",
-   "market": "US",
-   "layer": "미드스트림(Permian NGL)",
-   "business": "Permian 가스 처리·NGL 미드스트림 · 아카이브 5사 편: CapEx/OCF 76~83% 재투자 국면",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html",
-    "energy/us_energy_five.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
     "net_debt",
     "ocf",
     "opm",
