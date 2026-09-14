@@ -144,48 +144,48 @@
   "table_1pct": [
    {
     "sym": "WMB",
-    "price": 72.7,
-    "position_krw": 135000000,
-    "qty": 1376
+    "price": 71.95,
+    "position_krw": 135100000,
+    "qty": 1391
    },
    {
     "sym": "TRGP",
     "price": 291,
-    "position_krw": 101000000,
-    "qty": 258
+    "position_krw": 101400000,
+    "qty": 257
    },
    {
     "sym": "FANG",
-    "price": 209,
+    "price": 205.72,
     "position_krw": 57900000,
-    "qty": 205
+    "qty": 208
    },
    {
     "sym": "VG",
-    "price": 16.1,
+    "price": 15.27,
     "position_krw": 50700000,
-    "qty": 2326
+    "qty": 2458
    },
    {
     "sym": "SMTC",
-    "price": 154,
+    "price": 147.05,
     "position_krw": 67600000,
-    "qty": 325
+    "qty": 340
    },
    {
     "sym": "CRDO",
-    "price": 152,
+    "price": 150.09,
     "position_krw": 57900000,
-    "qty": 283
+    "qty": 285
    },
    {
     "sym": "현대백화점",
-    "price": 99000,
-    "position_krw": 101000000,
-    "qty": 1024
+    "price": 99200,
+    "position_krw": 101400000,
+    "qty": 1021
    }
   ],
-  "note": "1% 규칙으로 미국 6종목을 다 채우면 5.5억 > 5억 — 종목 선택 또는 낙폭 큰 것(VG·CRDO)만 1% · 09-15 정정: FANG 반증 낙폭 −25→−35%(휴전 시 브렌트 −20~35% · 세계은행 기준선) → 1% 포지션 5,790만·205주"
+  "note": "1% 규칙으로 미국 6종목을 다 채우면 5.5억 > 5억 — 종목 선택 또는 낙폭 큰 것(VG·CRDO)만 1% · 09-15 07:40 현가 갱신(미국 09-14 종가): SMTC $147(−12%)·CRDO $150·VG $15.27·FANG $205.7·WMB $71.95 — 수량은 현가로 재계산"
  },
  "tranches": [
   {
