@@ -1,0 +1,42 @@
+name: Collect SEC XBRL (intake)
+
+# 2026-09-13: 수집 층 주문형 수집. 세션 샌드박스는 data.sec.gov 가 막혀 있어 여기서 받는다.
+# 판단은 하지 않는다 — intake/files/sec/*.json 에 슬림 스냅샷, intake/collected.jsonl 에 한 줄.
+# 트리거 둘: ① 수동(workflow_dispatch) ② intake/requests/sec_tickers.txt 를 고쳐 push 하면 자동
+#   (세션의 GitHub 토큰은 dispatch 권한이 없어 403 — 파일 push 가 세션에서 쓸 수 있는 유일한 방아쇠다)
+on:
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "공백으로 구분한 티커 목록 (예: XOM CVX EQT)"
+        required: false
+        type: string
+  push:
+    paths:
+      - "intake/requests/sec_tickers.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch companyfacts
+        run: |
+          T="${{ inputs.tickers }}"
+          if [ -z "$T" ]; then T="$(grep -v '^#' intake/requests/sec_tickers.txt | tr '\n' ' ')"; fi
+          echo "tickers: $T"
+          python3 intake/collect_sec.py $T
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add intake/collected.jsonl intake/files/sec
+          git diff --cached --quiet && exit 0
+          git commit -m "📥 intake: SEC XBRL 스냅샷 ($(date +%Y-%m-%d))"
+          git push

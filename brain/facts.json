@@ -2878,6 +2878,2231 @@
      "note": "같은 층 안 비교만"
     }
    }
+  },
+  "XOM": {
+   "name": "ExxonMobil",
+   "ticker": "XOM",
+   "market": "US",
+   "layer": "메이저",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 201155,
+     "unit": "USD M",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 13.1,
+     "unit": "%",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 32260,
+     "unit": "USD M",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 12997,
+     "unit": "USD M",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 19263,
+     "unit": "USD M",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 40.3,
+     "unit": "%",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 2.8,
+     "unit": "%",
+     "basis": "1H26 누적(XOM companyfacts 에 연간·3M 값 없음) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 19263",
+     "den": "시총 6820억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json) · 시총 ② 09-01",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 31780,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/XOM.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 6820,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 09-01",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-05",
+    "c-20260913-24",
+    "u-20260913-05"
+   ]
+  },
+  "CVX": {
+   "name": "Chevron",
+   "ticker": "CVX",
+   "market": "US",
+   "layer": "메이저",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 215261,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 14.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 45321,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 17793,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquireOilAndGasPropertyAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 27528,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 39.3,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 6.6,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 27528",
+     "den": "시총 4200억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json) · 시총 ② 09-02",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 42126,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2025-12-31",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/CVX.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 4200,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 09-02",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-06",
+    "c-20260913-25",
+    "u-20260913-05"
+   ]
+  },
+  "COP": {
+   "name": "ConocoPhillips",
+   "ticker": "COP",
+   "market": "US",
+   "layer": "대형 E&P",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 63345,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 23.1,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 21925,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 10348,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "NetCashProvidedByUsedInInvestingActivities(순 · 자산매각 상계)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "투자CF 대용"
+    },
+    "fcf": {
+     "value": 11577,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "CapEx 가 투자CF 대용이라 자산매각이 상계돼 있다"
+    },
+    "capex_to_ocf": {
+     "value": 47.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 6.7,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 11577",
+     "den": "시총 1740억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json) · 시총 ② 9월",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 16716,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/COP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 1740,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 9월",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-08",
+    "c-20260913-27",
+    "u-20260913-05"
+   ]
+  },
+  "OXY": {
+   "name": "Occidental",
+   "ticker": "OXY",
+   "market": "US",
+   "layer": "대형 E&P",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 23926,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 23.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 10976,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 6183,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 4793,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 56.3,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 7.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 4793",
+     "den": "시총 610억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json) · 시총 ② 9월초",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 9390,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/OXY.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 610,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 9월초",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-07",
+    "c-20260913-26",
+    "u-20260913-05"
+   ]
+  },
+  "FANG": {
+   "name": "Diamondback",
+   "ticker": "FANG",
+   "market": "US",
+   "layer": "Permian E&P",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 17102,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 6.3,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "Q4'25 영업이익 −$27.8억 포함(감액 추정 · 태그 미확인)"
+    },
+    "pretax_margin": {
+     "value": 10.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 10143,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 3646,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToExploreAndDevelopOilAndGasProperties",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 6497,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 35.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 11.5,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 6497",
+     "den": "시총 567억$",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json) · 시총 ① 아카이브 09-10",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 12152,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 1.92,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/FANG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 567,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "① 아카이브 09-10",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-09",
+    "c-20260913-28",
+    "u-20260913-05"
+   ]
+  },
+  "PR": {
+   "name": "Permian Resources",
+   "ticker": "PR",
+   "market": "US",
+   "layer": "Delaware E&P",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 5737,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 35.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 29.0,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 3992,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 1948,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToExploreAndDevelopOilAndGasProperties",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 2044,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 48.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 11.7,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 2044",
+     "den": "시총 175억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json) · 시총 ② 08-03",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 2861,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/PR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 175,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 08-03",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-10",
+    "c-20260913-31",
+    "u-20260913-05"
+   ]
+  },
+  "DVN": {
+   "name": "Devon Energy(+Coterra)",
+   "ticker": "DVN",
+   "market": "US",
+   "layer": "Delaware E&P(+Coterra)",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 19676,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 21.4,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 8553,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 3859,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquireProductiveAssets",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 4694,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 45.1,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 8.4,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 4694",
+     "den": "시총 560억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json) · 시총 ② 9월",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 11935,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/DVN.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 560,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 9월",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-11",
+    "c-20260913-29",
+    "u-20260913-05"
+   ]
+  },
+  "MTDR": {
+   "name": "Matador Resources",
+   "ticker": "MTDR",
+   "market": "US",
+   "layer": "Delaware E&P",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 3645,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 32.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 26.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 2604,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 1542,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToExploreAndDevelopOilAndGasProperties",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 1062,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 59.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 14.0,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 1062",
+     "den": "시총 76억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json) · 시총 ② 09-13",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 4190,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 1.75,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/MTDR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 76,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 09-13",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-13",
+    "c-20260913-32",
+    "u-20260913-05"
+   ]
+  },
+  "EQT": {
+   "name": "EQT",
+   "ticker": "EQT",
+   "market": "US",
+   "layer": "Appalachia 가스",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 9535,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 42.5,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 40.3,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 6246,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 2488,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 3758,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 39.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 10.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 3758",
+     "den": "시총 345억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json) · 시총 ② 09-04",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 5658,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 0.84,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EQT.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 345,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 09-04",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-14",
+    "c-20260913-33",
+    "u-20260913-05"
+   ]
+  },
+  "AR": {
+   "name": "Antero Resources",
+   "ticker": "AR",
+   "market": "US",
+   "layer": "Appalachia 가스",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 6131,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 24.7,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 23.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 1979,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 822,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToExploreAndDevelopOilAndGasProperties",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 1157,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 41.5,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 9.5,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 1157",
+     "den": "시총 122억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json) · 시총 ② 09-01",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 2432,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 1.05,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/AR.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 122,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 09-01",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-15",
+    "c-20260913-34",
+    "u-20260913-05"
+   ]
+  },
+  "RRC": {
+   "name": "Range Resources",
+   "ticker": "RRC",
+   "market": "US",
+   "layer": "Appalachia 가스",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 3436,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 1359,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 633,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquireOilAndGasPropertyAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 726,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 46.5,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 8.1,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 726",
+     "den": "시총 90억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json) · 시총 ② 추정",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 867,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/RRC.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 90,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 추정",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-16",
+    "c-20260913-30",
+    "u-20260913-05"
+   ]
+  },
+  "EXE": {
+   "name": "Expand Energy",
+   "ticker": "EXE",
+   "market": "US",
+   "layer": "Haynesville+Appalachia 가스",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 14325,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 29.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "pretax_margin": {
+     "value": 28.6,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "세전이익(IncomeLoss…BeforeIncomeTaxes)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "메이저는 OperatingIncomeLoss 를 안 쓴다 — OPM 대신 세전이익률"
+    },
+    "ocf": {
+     "value": 5881,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 2880,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 3001,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 49.0,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 13.3,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 3001",
+     "den": "시총 226억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json) · 시총 ② 9월",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 3663,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-03-31",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 0.51,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-03-31",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EXE.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 226,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 9월",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-17",
+    "c-20260913-35",
+    "u-20260913-05"
+   ]
+  },
+  "LNG": {
+   "name": "Cheniere Energy",
+   "ticker": "LNG",
+   "market": "US",
+   "layer": "LNG 수출",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 21491,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 29.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 6138,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 3347,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 2791,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 54.5,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 4.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 2791",
+     "den": "시총 574억$",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json) · 시총 ① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 22944,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 2.92,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/LNG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 574,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-18",
+    "u-20260913-05"
+   ]
+  },
+  "VG": {
+   "name": "Venture Global",
+   "ticker": "VG",
+   "market": "US",
+   "layer": "LNG 수출",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 16951,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(RevenueFromContract)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 37.6,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 6829,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 13819,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": -6990,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 202.4,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": -18.0,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF -6990",
+     "den": "시총 388억$",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json) · 시총 ① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 38981,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 5.31,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/VG.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 388,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-19",
+    "u-20260913-05"
+   ]
+  },
+  "WMB": {
+   "name": "Williams",
+   "ticker": "WMB",
+   "market": "US",
+   "layer": "미드스트림(가스)",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 12204,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 38.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 5994,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 6102,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": -108,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 101.8,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": -0.1,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF -108",
+     "den": "시총 891억$",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json) · 시총 ① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 28121,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 4.02,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/WMB.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 891,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-20",
+    "u-20260913-05"
+   ]
+  },
+  "ET": {
+   "name": "Energy Transfer",
+   "ticker": "ET",
+   "market": "US",
+   "layer": "미드스트림(MLP)",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 107379,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 10.0,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 12119,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 6900,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquireProductiveAssets",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 5219,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 56.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 7.0,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 5219",
+     "den": "시총 748억$",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json) · 시총 ① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 67402,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 748,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "① prices.json 09-11",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 3.99,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) · D&A는 FY25 DepreciationAndAmortization 5,682 − 1H25 DDA 2,751 + 1H26 DDA 3,158 = 6,089",
+     "asof": "2026-06-30",
+     "num": "순부채 67,402",
+     "den": "영업이익 10,784 + D&A 6,089 = 16,873",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/ET.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-21",
+    "u-20260913-05"
+   ]
+  },
+  "EPD": {
+   "name": "Enterprise Products",
+   "ticker": "EPD",
+   "market": "US",
+   "layer": "미드스트림(MLP·NGL)",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 58471,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 13.4,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 8860,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 5400,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquireProductiveAssets",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 3460,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 60.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 4.1,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 3460",
+     "den": "시총 840억$",
+     "grade": "②",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json) · 시총 ② 9월",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 13888,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2011-03-31",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/EPD.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 840,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "②",
+     "source": "② 9월",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-22",
+    "u-20260913-05"
+   ]
+  },
+  "TRGP": {
+   "name": "Targa Resources",
+   "ticker": "TRGP",
+   "market": "US",
+   "layer": "미드스트림(Permian NGL)",
+   "canonical_page": "energy/us_energy_hegemony_17.html",
+   "metrics": {
+    "revenue": {
+     "value": 16742,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "매출(Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "opm": {
+     "value": 22.9,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OperatingIncomeLoss TTM",
+     "den": "매출 TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "ocf": {
+     "value": 4286,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "영업현금흐름",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex": {
+     "value": 3545,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "PaymentsToAcquirePropertyPlantAndEquipment",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf": {
+     "value": 741,
+     "unit": "USD M",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "OCF − CapEx",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "capex_to_ocf": {
+     "value": 82.7,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "CapEx",
+     "den": "OCF",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "fcf_yield": {
+     "value": 1.2,
+     "unit": "%",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집) ÷ 시총",
+     "asof": "2026-09",
+     "num": "FCF 741",
+     "den": "시총 625억$",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json) · 시총 ① 아카이브 09-10",
+     "page": "energy/us_energy_hegemony_17.html",
+     "note": "시총 등급이 ②면 이 값도 ②"
+    },
+    "net_debt": {
+     "value": 18888,
+     "unit": "USD M",
+     "basis": "시점",
+     "asof": "2026-06-30",
+     "num": "장기차입+유동차입 − 현금",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "nd_to_ebitda": {
+     "value": 3.44,
+     "unit": "배",
+     "basis": "TTM(FY25 − YTD25 + YTD26 누적 차분 · 2026-09-13 수집)",
+     "asof": "2026-06-30",
+     "num": "순부채",
+     "den": "영업이익+D&A TTM",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts(intake/files/sec/TRGP.json)",
+     "page": "energy/us_energy_hegemony_17.html"
+    },
+    "mcap": {
+     "value": 625,
+     "unit": "USD 억",
+     "basis": "시총",
+     "asof": "2026-09",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "① 아카이브 09-10",
+     "page": "energy/us_energy_hegemony_17.html"
+    }
+   },
+   "intake": [
+    "c-20260913-23",
+    "u-20260913-05"
+   ]
   }
  },
  "macro": {

@@ -5,6 +5,36 @@
  },
  "open": [
   {
+   "id": "energy-mcap-11",
+   "what": "에너지 18사 중 11사 시총이 ②(검색) — prices.json 추적 추가(update_prices.py 목록)로 ①로 올린다. FCF 수익률 열의 등급이 여기에 걸린다",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "fang-q4-charge",
+   "what": "FANG Q4'25 영업이익 −$27.8억(FY 1,266 − 9M 4,048)의 성격 — 감액인지 태그로 확인 못 함(ImpairmentOfOilAndGasProperties 는 2026-03 $14억만). 10-K 2025 본문 필요. 이것이 EV/EBITDA 「6.81배 최저」를 10.9배로 바꿨다",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "xom-companyfacts",
+   "what": "XOM companyfacts 가 1H 누적만 준다(연간·3M 없음 · 17~21태그) — 10-K/10-Q R-파일로 TTM 을 만들어야 한다. 현재 1H26 기준",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "cop-capex-tag",
+   "what": "COP 는 살아 있는 CapEx 태그가 없어 투자CF(순)로 대신했다 — 자산매각이 상계돼 CapEx 과소·FCF 과대 가능. 10-Q 현금흐름표 원문",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "energy-premise-primary",
+   "what": "시나리오 전제 수치(LNG 17.4Bcf/d · 원유 수출 5.6Mb/d · 이란→중국 −48% · WTI $96)가 전부 에이전트 relay ② — EIA TIE 원문 id 로 ①로 올린다(egress 차단 시 워크플로 수집)",
+   "since": "2026-09-13"
+  },
+  {
+   "id": "amodei-original",
+   "what": "아모데이 「We Must Pace the Frontier」 원문 대조 — 이 세션은 darioamodei.com egress 차단(c-20260913-03). 2차 요약(u-20260913-02)으로만 라우팅됐다. 특히 「OAI-HF 사건」·「6~12개월」·「Embedded Evaluators」가 원문 표현인지 확인",
+   "since": "2026-09-13"
+  },
+  {
    "id": "wuxi",
    "what": "우시(WuXi) 실적 — CDMO 경쟁의 반대편. 「한쪽만 추적」이 마벨/브로드컴에 이어 두 번째",
    "since": "2026-09"
