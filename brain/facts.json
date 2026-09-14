@@ -9,7 +9,7 @@
    "새 회사·지표는 정본 페이지가 산출한 뒤에만 추가한다 — 이 파일에서 새로 계산하지 않는다"
   ],
   "created": "2026-09-13",
-  "scope": "ai-infra/optical_valuechain_9 · optical_interconnect_layer · kr_cooling_optical_layer 3편이 확정한 값 + 정본 포인터 · 2026-09-13 에너지 패권 시나리오 18사(SEC XBRL 스냅샷 · TTM 현금 표) 추가",
+  "scope": "ai-infra/optical_valuechain_9 · optical_interconnect_layer · kr_cooling_optical_layer 3편이 확정한 값 + 정본 포인터",
   "not_here": "시세는 portfolio/data/prices.json · 테제는 docs/thesis_index.md",
   "intake": "companies.<tk>.intake = 이 회사의 값이 나온 수집 항목 id(intake/collected.jsonl · user.jsonl). 값을 고칠 때 그 조각을 다시 연다"
  },
@@ -2157,6 +2157,726 @@
    "metrics": {},
    "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
    "intake": []
+  },
+  "CRWD": {
+   "name": "CrowdStrike",
+   "ticker": "CRWD",
+   "market": "US",
+   "layer": "사이버보안 · 엔드포인트·SIEM·Agentic SOC",
+   "canonical_page": "cybersecurity/cyber_ai_security.html",
+   "intake": [
+    "c-20260914-02"
+   ],
+   "metrics": {
+    "rev_ttm": {
+     "value": 5396,
+     "unit": "$M",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "4분기 매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "gpm": {
+     "value": 75.2,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm": {
+     "value": -2.2,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익(GAAP)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm_ex_sbc": {
+     "value": 20.5,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익+SBC",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "§W3 병기 — 비현금이나 반복·희석"
+    },
+    "sbc_to_rev": {
+     "value": 22.8,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "growth_yoy": {
+     "value": 25.8,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근분기 매출",
+     "den": "전년동기 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "mcap": {
+     "value": 211.7,
+     "unit": "$B",
+     "basis": "2026-09-11 종가",
+     "asof": "2026-09-11",
+     "num": "주가×주식수(1024M)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps": {
+     "value": 39.2,
+     "unit": "배",
+     "basis": "시총÷TTM매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "TTM 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps_over_growth": {
+     "value": 151.9,
+     "unit": "—",
+     "basis": "P/S÷YoY×100",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "YoY %",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "같은 층 안 비교만"
+    }
+   }
+  },
+  "PANW": {
+   "name": "Palo Alto Networks",
+   "ticker": "PANW",
+   "market": "US",
+   "layer": "사이버보안 · 네트워크·SASE·SIEM(+CyberArk IAM)",
+   "canonical_page": "cybersecurity/cyber_ai_security.html",
+   "intake": [
+    "c-20260914-02"
+   ],
+   "metrics": {
+    "rev_ttm": {
+     "value": 11480,
+     "unit": "$M",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "4분기 매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "gpm": {
+     "value": 70.4,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm": {
+     "value": 6.1,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익(GAAP)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "CyberArk 상각 포함 — T4"
+    },
+    "opm_ex_sbc": {
+     "value": 19.0,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익+SBC",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "§W3 병기 — 비현금이나 반복·희석"
+    },
+    "sbc_to_rev": {
+     "value": 12.9,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "growth_yoy": {
+     "value": 34.5,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근분기 매출",
+     "den": "전년동기 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "mcap": {
+     "value": 270.5,
+     "unit": "$B",
+     "basis": "2026-09-11 종가",
+     "asof": "2026-09-11",
+     "num": "주가×주식수(818M)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps": {
+     "value": 23.6,
+     "unit": "배",
+     "basis": "시총÷TTM매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "TTM 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps_over_growth": {
+     "value": 68.4,
+     "unit": "—",
+     "basis": "P/S÷YoY×100",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "YoY %",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "같은 층 안 비교만"
+    }
+   }
+  },
+  "ZS": {
+   "name": "Zscaler",
+   "ticker": "ZS",
+   "market": "US",
+   "layer": "사이버보안 · 제로트러스트 SASE",
+   "canonical_page": "cybersecurity/cyber_ai_security.html",
+   "intake": [
+    "c-20260914-02"
+   ],
+   "metrics": {
+    "rev_ttm": {
+     "value": 3353,
+     "unit": "$M",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "4분기 매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "gpm": {
+     "value": 76.8,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm": {
+     "value": -4.0,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익(GAAP)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm_ex_sbc": {
+     "value": 19.6,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익+SBC",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "§W3 병기 — 비현금이나 반복·희석"
+    },
+    "sbc_to_rev": {
+     "value": 23.5,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "growth_yoy": {
+     "value": 24.9,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근분기 매출",
+     "den": "전년동기 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "mcap": {
+     "value": 26.8,
+     "unit": "$B",
+     "basis": "2026-09-11 종가",
+     "asof": "2026-09-11",
+     "num": "주가×주식수(163M)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps": {
+     "value": 8.0,
+     "unit": "배",
+     "basis": "시총÷TTM매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "TTM 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps_over_growth": {
+     "value": 32.1,
+     "unit": "—",
+     "basis": "P/S÷YoY×100",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "YoY %",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "같은 층 안 비교만"
+    }
+   }
+  },
+  "FTNT": {
+   "name": "Fortinet",
+   "ticker": "FTNT",
+   "market": "US",
+   "layer": "사이버보안 · 네트워크 어플라이언스·SASE",
+   "canonical_page": "cybersecurity/cyber_ai_security.html",
+   "intake": [
+    "c-20260914-02"
+   ],
+   "metrics": {
+    "rev_ttm": {
+     "value": 7527,
+     "unit": "$M",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "4분기 매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "gpm": {
+     "value": 80.2,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm": {
+     "value": 32.4,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "영업이익(GAAP)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm_ex_sbc": {
+     "value": 36.4,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "영업이익+SBC",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "§W3 병기 — 비현금이나 반복·희석"
+    },
+    "sbc_to_rev": {
+     "value": 3.9,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "growth_yoy": {
+     "value": 25.6,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근분기 매출",
+     "den": "전년동기 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "mcap": {
+     "value": 114.5,
+     "unit": "$B",
+     "basis": "2026-09-11 종가",
+     "asof": "2026-09-11",
+     "num": "주가×주식수(734M)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps": {
+     "value": 15.2,
+     "unit": "배",
+     "basis": "시총÷TTM매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "TTM 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps_over_growth": {
+     "value": 59.4,
+     "unit": "—",
+     "basis": "P/S÷YoY×100",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "YoY %",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "같은 층 안 비교만"
+    }
+   }
+  },
+  "S": {
+   "name": "SentinelOne",
+   "ticker": "S",
+   "market": "US",
+   "layer": "사이버보안 · 엔드포인트·데이터",
+   "canonical_page": "cybersecurity/cyber_ai_security.html",
+   "intake": [
+    "c-20260914-02"
+   ],
+   "metrics": {
+    "rev_ttm": {
+     "value": 1099,
+     "unit": "$M",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "4분기 매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "gpm": {
+     "value": 72.5,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm": {
+     "value": -29.5,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익(GAAP)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm_ex_sbc": {
+     "value": -0.3,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "영업이익+SBC",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "§W3 병기 — 비현금이나 반복·희석"
+    },
+    "sbc_to_rev": {
+     "value": 29.2,
+     "unit": "%",
+     "basis": "TTM 2025-10-31~2026-07-31",
+     "asof": "2026-09-11",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "growth_yoy": {
+     "value": 20.6,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근분기 매출",
+     "den": "전년동기 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "mcap": {
+     "value": 6.7,
+     "unit": "$B",
+     "basis": "2026-09-11 종가",
+     "asof": "2026-09-11",
+     "num": "주가×주식수(339M)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "WeightedAverage 주식수 대체"
+    },
+    "ps": {
+     "value": 6.1,
+     "unit": "배",
+     "basis": "시총÷TTM매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "TTM 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps_over_growth": {
+     "value": 29.6,
+     "unit": "—",
+     "basis": "P/S÷YoY×100",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "YoY %",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "같은 층 안 비교만"
+    }
+   }
+  },
+  "NET": {
+   "name": "Cloudflare",
+   "ticker": "NET",
+   "market": "US",
+   "layer": "사이버보안 · 엣지·제로트러스트",
+   "canonical_page": "cybersecurity/cyber_ai_security.html",
+   "intake": [
+    "c-20260914-02"
+   ],
+   "metrics": {
+    "rev_ttm": {
+     "value": 2512,
+     "unit": "$M",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "4분기 매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "gpm": {
+     "value": 72.6,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "매출총이익",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm": {
+     "value": -14.1,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "영업이익(GAAP)",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "opm_ex_sbc": {
+     "value": 6.6,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "영업이익+SBC",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "§W3 병기 — 비현금이나 반복·희석"
+    },
+    "sbc_to_rev": {
+     "value": 20.7,
+     "unit": "%",
+     "basis": "TTM 2025-09-30~2026-06-30",
+     "asof": "2026-09-11",
+     "num": "주식보상비",
+     "den": "매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "growth_yoy": {
+     "value": 35.9,
+     "unit": "%",
+     "basis": "최근 분기 YoY",
+     "asof": "2026-09-11",
+     "num": "최근분기 매출",
+     "den": "전년동기 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "mcap": {
+     "value": 108.4,
+     "unit": "$B",
+     "basis": "2026-09-11 종가",
+     "asof": "2026-09-11",
+     "num": "주가×주식수(353M)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps": {
+     "value": 43.1,
+     "unit": "배",
+     "basis": "시총÷TTM매출",
+     "asof": "2026-09-11",
+     "num": "시총",
+     "den": "TTM 매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": ""
+    },
+    "ps_over_growth": {
+     "value": 120.1,
+     "unit": "—",
+     "basis": "P/S÷YoY×100",
+     "asof": "2026-09-11",
+     "num": "P/S",
+     "den": "YoY %",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts · 네이버 시세",
+     "page": "cybersecurity/cyber_ai_security.html",
+     "note": "같은 층 안 비교만"
+    }
+   }
   },
   "XOM": {
    "name": "ExxonMobil",

@@ -14,7 +14,7 @@
 | 2026.09.14 | 2026-09-14 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 | 2026-09-13 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
 | 2026.09.13 | 2026-09-13 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 5 |
-| 2026.09.12 ⚠ | 2026-09-13 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
+| 2026.09.12 ⚠ | 2026-09-14 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
 | 2026.09.12 ⚠ | 2026-09-14 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 5 |
 | 2026.09.11 ⚠ | 2026-09-12 | [AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다](ai-infra/ai_power_infra_investment_map.html) | 5 |
 | 2026.09.11 | 2026-09-11 | [국내 전력 10사 — 「전력주」인데 전력 순수도가 0~100%다](ai-infra/kr_power_10_deep.html) | 0 |
@@ -32,7 +32,7 @@
 | 2026.09.08 | 2026-09-08 | [탈모 글로벌 파이프라인 — 신기전의 무덤에서 무엇이 달라졌나](hairloss/hairloss_global_pipeline.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [브로드컴 — 받을 것과 물어줄 것을 동시에 가진 회사](ai-infra/ai_chip_company_broadcom.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [HBM/패키징 투자 지도 — 크로스 밸류에이션](hbm-packaging/hbm_pkg_investment_map.html) | 5 |
-| 2026.09.06 ⚠ | 2026-09-13 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
+| 2026.09.06 ⚠ | 2026-09-14 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
 | 2026.09.06 | 2026-09-06 | [전력 크로스 밸류에이션 지도 — 배수를 비즈니스 질로 나누면 저평가가 갈린다](ai-infra/kr_power_cross_valuation.html) | 0 |
 | 2026.09.04 | 2026-09-04 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.03 | 2026-09-03 | [중국 바이오 위협 — 「누가 위험한가」는 매출의 성격이 답한다](ai-bio/kr_bio_china_competition.html) | 6 |
@@ -172,7 +172,7 @@
 
 ## 광 연결 계층 — DSP가 빠지는 자리에 누가 남는가
 
-`ai-infra/optical_interconnect_layer.html` · 판단 2026.09.12 · 갱신 2026-09-13
+`ai-infra/optical_interconnect_layer.html` · 판단 2026.09.12 · 갱신 2026-09-14
 
 **한 문장** — 기술 전환 방향은 지지되지만, 제시된 수혜·피해 배분이 회사 공시와 어긋난다. 크레도 하락의 원인은 마진이 아니라 주식보상비였다.
 
@@ -569,7 +569,7 @@
 
 ## 냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다
 
-`ai-infra/kr_cooling_optical_layer.html` · 판단 2026.09.06 · 갱신 2026-09-13
+`ai-infra/kr_cooling_optical_layer.html` · 판단 2026.09.06 · 갱신 2026-09-14
 
 **한 문장** — 「비워 둔 게 맞았다」 — 다만 이유는 「하우스 의견이 갈려서」가 아니라 국내에 실적이 따라온 종목이 없다는 것이다.
 
