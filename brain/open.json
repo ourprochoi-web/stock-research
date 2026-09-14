@@ -111,12 +111,17 @@
   },
   {
    "id": "frontier-pacing",
-   "what": "🔴 프런티어 감속(Pacing the Frontier) → AI 캐펙스 수요에 무슨 영향? 0편. 다리오 제안(③)에 올트먼·머스크·하사비스·MS 동의(①), OpenAI 2026 IPO 배제. 빅테크 CAPEX T1(투자 시차)·메모리 T2(공급부족 2027)가 「수요는 계속 는다」를 전제하는데, RSI 속도 제한이 실제 정책이 되면 그 전제에 걸린다. 황수욱 「시장이 이미 부정적으로 해석 중」. 아직 제안 단계라 테제 안 고침 — 관측: 공동 표준기구 설립·체크포인트 실제 채택 여부",
+   "what": "🔴 프런티어 감속(Pacing the Frontier) → AI 캐펙스 수요에 무슨 영향? 0편. 다리오 제안(③)에 올트먼·머스크·하사비스·MS 동의(①), OpenAI 2026 IPO 배제. 빅테크 CAPEX T1(투자 시차)·메모리 T2(공급부족 2027)가 「수요는 계속 는다」를 전제하는데, RSI 속도 제한이 실제 정책이 되면 그 전제에 걸린다. 황수욱 「시장이 이미 부정적으로 해석 중」. 아직 제안 단계라 테제 안 고침 — 관측: 공동 표준기구 설립·체크포인트 실제 채택 여부 · 관측①(09-11 종가 · r-20260914-22): 아모데이 에세이 다음 거래일 델 +11.98%·HP +8.40%, RBC 「성장 둔화 기미 없다」 — 첫 시장 반응은 하드웨어 수요 위축 아님(1일)",
    "since": "2026-09-14"
   },
   {
    "id": "aftermarket",
    "what": "🔴 KRX 애프터마켓 09-14 개장(16~20시). 실측 10:06 — 네이버 basic API에 <새 필드> overMarketPriceInfo{tradingSessionType:'REGULAR_MARKET', overPrice, localTradedAt}가 생겼다(KOSPI 대형주. 엑스게이트엔 없음). 정규장 중엔 closePrice=overPrice. 16:00 이후 closePrice가 15:30에 고정되는지 overPrice를 따라가는지 미확인. 🔴 봇 cron 07:30 UTC = <16:30 KST = 애프터마켓 1시간째> — update_prices.py 758행 closePrice·767행 localTradedAt이 그 시점 값을 받는다. 판정: 09-15 아침 prices.json 09-14 값 vs 일봉 API 09-14 종가 vs tradingSessionType 로그",
+   "since": "2026-09-14"
+  },
+  {
+   "id": "cxmt-ipo",
+   "what": "CXMT(DRAM) 상장 「완료」·YMTC(NAND) 상장 예정 — 나일스 ②. 상장 여부·조달액·용도를 cninfo로 ①승격하면 반도체 전쟁 T2의 자본 축이 값이 된다. 메모리 사이클 편의 CXMT(HBM3E 2027-28)와 연결",
    "since": "2026-09-14"
   }
  ]
