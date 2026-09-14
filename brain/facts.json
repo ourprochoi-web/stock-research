@@ -2888,7 +2888,7 @@
    "source": "FRED DCOILBRENTEU",
    "grade": "①",
    "intake": "c-20260914-03",
-   "note": "1M 93.26 · 3M 88.64 · 1Y 70.48 → 호르무즈 프리미엄 첫 추정 $15~20[추론]"
+   "note": "⚠ 09-15 정정: 「호르무즈 프리미엄 $15~20[추론]」 → 전쟁 공급 손실(2026-03~ · 8/30 재개). 호르무즈 <2mb/d · 사우디 ~6mb/d · IEA 2026 −5.7mb/d(② c-20260915-01). 종료 시 기준선 세계은행 $86(2026)·$70(2027)"
   },
   "wti": {
    "value": 97.26,
@@ -2982,6 +2982,24 @@
    "source": "prices.json fx",
    "grade": "①",
    "intake": "c-20260914-03"
+  },
+  "hormuz_crude_flow": {
+   "value": 2.0,
+   "unit": "mb/d 미만",
+   "asof": "2026-09 (8/30 이후)",
+   "source": "WebSearch 요약(IEA·Kpler 계열 인용)",
+   "grade": "②",
+   "intake": "c-20260915-01",
+   "note": "평시 약 20mb/d — 원출처 확인 미착수"
+  },
+  "saudi_output": {
+   "value": 6.0,
+   "unit": "mb/d(약)",
+   "asof": "2026-08",
+   "source": "WebSearch 요약",
+   "grade": "②",
+   "intake": "c-20260915-01",
+   "note": "30년 최저"
   }
  }
 }
