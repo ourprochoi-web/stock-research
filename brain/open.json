@@ -116,12 +116,17 @@
   },
   {
    "id": "aftermarket",
-   "what": "🔴 KRX 애프터마켓 09-14 개장(16~20시). 실측 10:06 — 네이버 basic API에 <새 필드> overMarketPriceInfo{tradingSessionType:'REGULAR_MARKET', overPrice, localTradedAt}가 생겼다(KOSPI 대형주. 엑스게이트엔 없음). 정규장 중엔 closePrice=overPrice. 16:00 이후 closePrice가 15:30에 고정되는지 overPrice를 따라가는지 미확인. 🔴 봇 cron 07:30 UTC = <16:30 KST = 애프터마켓 1시간째> — update_prices.py 758행 closePrice·767행 localTradedAt이 그 시점 값을 받는다. 판정: 09-15 아침 prices.json 09-14 값 vs 일봉 API 09-14 종가 vs tradingSessionType 로그",
+   "what": "🔴 판정(09-14 r-30): naver closePrice·일봉 모두 20:00 애프터마켓가. 15:30 정규 종가 경로 미확보 — 시도: m.stock.naver.com/api/stock/{code}/basic(overMarketPriceInfo만) · /price(동일값). 남은 경로: data.krx.co.kr(미시도). 봇 cron 이동은 드리프트 때문에 무효. 값 표기를 「애프터마켓가」로",
    "since": "2026-09-14"
   },
   {
    "id": "cxmt-ipo",
    "what": "CXMT(DRAM) 상장 「완료」·YMTC(NAND) 상장 예정 — 나일스 ②. 상장 여부·조달액·용도를 cninfo로 ①승격하면 반도체 전쟁 T2의 자본 축이 값이 된다. 메모리 사이클 편의 CXMT(HBM3E 2027-28)와 연결",
+   "since": "2026-09-14"
+  },
+  {
+   "id": "oil-judgment",
+   "what": "🔴 유가 판단 0편인데 유가가 포트폴리오 방향을 정하고 있다(09-14: 코스피 급락 3원인 중 하나 · 에너지 편입 논의). Brent 109.51(09-09 FRED · 1M +17%) · 사우디 동서 파이프라인 폐쇄 · 후티 페림섬 · 호르무즈 회담 연기. 필요한 것: 「가격이 전제하는 공급 손실」(사우디 우회로 몫 · 호르무즈 통행량)과 반증(회담 재개 시 낙폭). us_energy_five가 「방향은 판정하지 않는다」로 둔 자리 — 미국 에너지 편입 전에 채운다",
    "since": "2026-09-14"
   }
  ]
