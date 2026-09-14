@@ -151,3 +151,29 @@ for h in (1,2):
 EOF
 ```
 
+```
+# 세션 시작 브리핑(v3) — 레짐 한 줄 · 7일 내 판정 이벤트(+사전약속) · 열린 질문 · 포트 사전약속 · 미라우팅 intake
+PYTHONIOENCODING=utf-8 python3 - <<'EOF'
+# -*- coding: utf-8 -*-
+import json,io
+from datetime import date,timedelta
+R=json.load(io.open('brain/regime.json',encoding='utf8')); E=json.load(io.open('brain/events.json',encoding='utf8'))['events']
+O=json.load(io.open('brain/open.json',encoding='utf8'))['open']; P=json.load(io.open('brain/portfolio.json',encoding='utf8'))
+td=date.today(); print("▎레짐(%s · %d일)"%(R['asof'],(td-date.fromisoformat(R['asof'])).days)); print("  ",R['one'])
+print("▎7일 내 판정 이벤트")
+for e in E:
+    w=e['when'][:10].replace('/','-')
+    try:
+        d=date.fromisoformat(w[:10])
+        if td<=d<=td+timedelta(days=7): print("  ",e['when'],"|",e['what'][:90],"| 사전약속:",bool(e.get('precommit')))
+    except ValueError: pass
+print("▎열린 질문 %d건 · 🔴 %d"%(len(O),sum(1 for o in O if '🔴' in o['what'])))
+print("▎포트 사전약속"); [print("   if",x['if'],"→",x['then'][:60]) for x in P['precommits']]
+n=0
+for f in ('intake/user.jsonl','intake/collected.jsonl'):
+    for ln in io.open(f,encoding='utf8'):
+        if ln.strip() and json.loads(ln).get('routed') is False and json.loads(ln).get('status','ok')=='ok': n+=1
+print("▎미라우팅 intake(routed:false·ok): %d"%n)
+EOF
+```
+
