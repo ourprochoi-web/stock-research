@@ -9,7 +9,11 @@
    "when": "2026-09-15/16",
    "what": "FOMC(발표 9/16 수) — 인상 여부보다 발언 톤·점도표. 30년물은 5.25% 위에서 맞는다(FRED 07-31 첫 돌파 · JPM 09-14 약 5.40% · 20년 최고). ⚠ 09-14 날짜 정정(r-20260914-21): 종전 09-17/18은 틀린 날짜였다",
    "judges": "macro",
-   "grade": "①"
+   "grade": "①",
+   "precommit": {
+    "if_dovish": "25bp + 장기금리 하락 → 2회차(SMTC·CRDO) 예정대로 · n-hike 종료 후보",
+    "if_hawkish": "점도표 2회+ → SMTC·CRDO 2회차를 3회차로 · regime.rates 「얕은 인상」 전제 파기"
+   }
   },
   {
    "when": "2026-10-27/28",
@@ -33,7 +37,11 @@
    "when": "2026-09-24/25",
    "what": "미중 워싱턴 정상회담 — 중국산 배터리 일부 허용 여부(하나 김현수: 셀·시스템은 구조적 탈중국, 양극재·리튬 등 광물이 협상 카드) · CXMT·메모리 수출 허용 여부 · 20·30년물 입찰 동일 주",
    "judges": "energy/energy_battery_valuechain_update.html · hbm-packaging · macro",
-   "grade": "②"
+   "grade": "②",
+   "precommit": {
+    "if_battery_allowed": "배터리 편 T2(정책 리스크) 판정",
+    "if_memory_export_allowed": "반도체 전쟁 T2 자본 축 강화 · CXMT open 승격"
+   }
   },
   {
    "when": "2026-09말~10월중",

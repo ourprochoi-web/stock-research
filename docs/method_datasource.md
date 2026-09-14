@@ -413,4 +413,12 @@
 > `api/todayRSS.xml`은 `crpCd`를 받는 듯하나 **실제로는 전체 시장 최근 50건**을 준다(회사 필터 무시).
 > 네이버 공시 API에는 **정기보고서가 없고**, 네이버 재무 API는 **손익계산서·비율만** 준다(재무상태표·현금흐름표 없음).
 
+## 2026-09-15 스카우트 — 시세 정의·수급·가스·심리 소스 지도 (전문: `datasource_scout_2026-09-15.md`)
+- **🔴 정규 종가(15:30)**: 네이버 모든 JSON의 `closePrice`는 09-14부터 20:00 애프터마켓가. 정규 종가는 **분봉 15:30 바**(`api.stock.naver.com/chart/domestic/item/{code}/minute?startDateTime=YYYYMMDD1520&endDateTime=YYYYMMDD1535` → `localDateTime==…153000`)에만 남는다(수일 깊이 → 매일 수집). 폴백 `finance.naver.com/item/sise_time.naver`. KRX 포털은 **로그인 필수**(프록시 아님). `update_prices.py`가 09-15부터 `prices`=정규, `after`=애프터로 저장.
+- **지수·수급 이력**: Daum `finance.daum.net/api/market_index/days?market=KOSPI&page=&perPage=`(원 단위 개인/외국인/기관, 페이지) · 네이버 PC `sise/investorDealTrendDay.naver?bizdate=&sosok=01`(기관 세부 · EUC-KR). 네이버 `index/KOSPI/trend`는 당일만.
+- **유가·가스**: 네이버 `marketindex/energy/{CLcv1,LCOcv1,DCBc1,NGcv1}/prices`(일별 정산 · 10분 지연 장중). **TTF**: Yahoo `TTF=F`(EUR/MWh · 429 주의 · 소량 호출) · tradingeconomics 헤드라인 · FRED 월간 `PNGASEUUSDM`. **JKM 일별은 무료 경로 없음**(CME·ICE·S&P·barchart 403 · Yahoo 희소) — FRED 월간 `PNGASJPUSDM` 대리 · 수동 주 1회.
+- **달러·금리**: 네이버 `.DXY`(3경로) · `bond/{US2YT,US10YT,US30YT,KR10YT}=RR/prices` · FRED `DGS30·T10YIE·DFII10`.
+- **심리**: CNN F&G(`production.dataviz.cnn.io/index/fearandgreed/graphdata` · Chrome UA+Referer 필수) · CBOE put/call(T-1 파일) · VIX 이력 CSV. AAII는 Cloudflare 차단. KR 상승/하락 종목수 `m.stock.naver.com/api/stocks/{up,down}/KOSPI`(ETF 포함 · totalCount). 52주 신고가 수는 미확보.
+- **레버리지**: 국내 단일종목 2x ETF `m.stock.naver.com/api/etf/{code}/basic`의 `totalNav`(AUM · 이력 없음 → 매일 스냅샷). KODEX 0193T0 · TIGER 0195S0(하이닉스) · KODEX 0193W0 · TIGER 0195R0(삼성). HK CSOP 하이닉스 2x는 **7709.HK**(7522는 다른 상품).
+- **CFTC**: `publicreporting.cftc.gov/resource/72hh-3qpy.json?cftc_contract_market_code=023651`(NG) · `067651`(WTI) — 주간.
 

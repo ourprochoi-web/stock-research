@@ -1,0 +1,553 @@
+{
+ "_readme": "인과 그래프(v3 · docs/workspace_v3.md §2.2). 엣지는 테제가 아니라 세계의 작동 방식에 대한 등급 있는 가설. 값이 바뀌면 from 노드에서 2홉을 걸어 theses를 모은다(라우팅 후보). 관측으로 반박되면 sign을 ?로 내리고 routing에 lesson.",
+ "asof": "2026-09-14",
+ "nodes": {
+  "brent": {
+   "label": "브렌트 유가",
+   "kind": "macro",
+   "fact": "macro.brent"
+  },
+  "hormuz_risk": {
+   "label": "호르무즈·홍해 공급 리스크",
+   "kind": "policy"
+  },
+  "bei10": {
+   "label": "10년 기대인플레(BEI)",
+   "kind": "macro",
+   "fact": "macro.breakeven10y"
+  },
+  "us10y": {
+   "label": "미 10년물",
+   "kind": "macro",
+   "fact": "macro.us10y"
+  },
+  "us2y": {
+   "label": "미 2년물",
+   "kind": "macro",
+   "fact": "macro.us2y"
+  },
+  "fomc_hike": {
+   "label": "연준 인상(실현)",
+   "kind": "policy"
+  },
+  "ai_multiple": {
+   "label": "AI 종목 배수(선행 P/E)",
+   "kind": "sector"
+  },
+  "qatar_lng": {
+   "label": "카타르 LNG 수출량",
+   "kind": "sector"
+  },
+  "ttf": {
+   "label": "TTF/JKM 가스가",
+   "kind": "macro",
+   "fact": "macro.ttf"
+  },
+  "hh": {
+   "label": "Henry Hub",
+   "kind": "macro",
+   "fact": "macro.henry_hub"
+  },
+  "gas_spread": {
+   "label": "수출 스프레드(TTF−HH)",
+   "kind": "macro"
+  },
+  "dc_gas_demand": {
+   "label": "데이터센터 가스 발전 수요",
+   "kind": "sector"
+  },
+  "lng_export_capacity": {
+   "label": "미 LNG 액화 캐파",
+   "kind": "sector"
+  },
+  "VG": {
+   "label": "Venture Global 스팟 이익",
+   "kind": "company"
+  },
+  "gas_producers": {
+   "label": "미 가스 생산자(EQT 등)",
+   "kind": "sector"
+  },
+  "midstream_volume": {
+   "label": "미드스트림 처리량(WMB·TRGP·ET)",
+   "kind": "sector"
+  },
+  "pacing_narrative": {
+   "label": "프런티어 감속 내러티브",
+   "kind": "narrative"
+  },
+  "ai_capex": {
+   "label": "하이퍼스케일러 AI 캐펙스",
+   "kind": "sector"
+  },
+  "hbm_demand": {
+   "label": "HBM 비트 수요",
+   "kind": "sector"
+  },
+  "despec": {
+   "label": "GPU당 HBM 디스펙",
+   "kind": "sector"
+  },
+  "scaleout": {
+   "label": "스케일아웃(시스템당 GPU↑)",
+   "kind": "sector"
+  },
+  "memory_lta": {
+   "label": "메모리 LTA 기간·상한",
+   "kind": "sector"
+  },
+  "memory_upside": {
+   "label": "메모리 ASP 상방",
+   "kind": "sector"
+  },
+  "kr_foreign_flow": {
+   "label": "코스피 외국인 순매수",
+   "kind": "flow"
+  },
+  "kospi": {
+   "label": "코스피",
+   "kind": "macro",
+   "fact": "macro.kospi"
+  },
+  "leverage_etf": {
+   "label": "단일종목 레버리지 ETF AUM",
+   "kind": "flow"
+  },
+  "usdkrw": {
+   "label": "달러/원",
+   "kind": "macro",
+   "fact": "macro.usdkrw"
+  },
+  "curve_shape": {
+   "label": "커브 형태(베어 스티프닝/플래트닝)",
+   "kind": "macro"
+  },
+  "energy_fin_rel": {
+   "label": "에너지·금융 상대성과",
+   "kind": "sector"
+  },
+  "kr_terms_of_trade": {
+   "label": "한국 교역조건(원유 수입국)",
+   "kind": "macro"
+  },
+  "hyperscaler_debt": {
+   "label": "하이퍼스케일러 부채 조달(장부 위+그림자)",
+   "kind": "flow"
+  }
+ },
+ "edges": [
+  {
+   "id": "m-01",
+   "from": "hormuz_risk",
+   "to": "brent",
+   "sign": "+",
+   "lag": "일",
+   "strength": "강",
+   "grade": "②",
+   "evidence": [
+    "c-20260914-04",
+    "c-20260915-01"
+   ],
+   "theses": [],
+   "note": "전쟁(2026-03~ · 8/30 재개) 물리 손실: 호르무즈 <2mb/d · 사우디 6mb/d. 휴전 시 세계은행 기준선 $70~86 = −20~35%(②). 09-14의 「−10%[추론]」은 과소"
+  },
+  {
+   "id": "m-02",
+   "from": "brent",
+   "to": "bei10",
+   "sign": "+",
+   "lag": "주",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [],
+   "note": "JPM: BEI 2.5% 고정 — 유가가 기대인플레를 밀어올리는 경로"
+  },
+  {
+   "id": "m-03",
+   "from": "bei10",
+   "to": "us10y",
+   "sign": "+",
+   "lag": "주",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [
+    "events:FOMC"
+   ],
+   "note": "주식-채권 상관 +0.09(2022~) — 인플레 기대 불안정 시 양의 상관"
+  },
+  {
+   "id": "m-04",
+   "from": "us10y",
+   "to": "ai_multiple",
+   "sign": "−",
+   "lag": "주",
+   "strength": "강",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34",
+    "r-20260914-08"
+   ],
+   "theses": [
+    "national-strategy/ns_bigtech_capex_roi.html#T1"
+   ],
+   "note": "역U자 — EPS +15%면 5%까지, +20%면 6%까지 배수 유지(JPM 80년). 임계는 성장률이 정한다"
+  },
+  {
+   "id": "m-05",
+   "from": "fomc_hike",
+   "to": "us2y",
+   "sign": "+",
+   "lag": "즉시",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "r-20260914-08"
+   ],
+   "theses": [],
+   "note": ""
+  },
+  {
+   "id": "m-06",
+   "from": "fomc_hike",
+   "to": "us10y",
+   "sign": "?",
+   "lag": "일",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-08",
+    "u-20260914-17"
+   ],
+   "theses": [
+    "events:FOMC"
+   ],
+   "note": "「인상 기정사실화 → 단기물 이동 → 장기금리 하락」이 시장 최우호 시나리오(9/11 실증 1회). 부호 미확정"
+  },
+  {
+   "id": "m-07",
+   "from": "hormuz_risk",
+   "to": "qatar_lng",
+   "sign": "−",
+   "lag": "일",
+   "strength": "강",
+   "grade": "②",
+   "evidence": [
+    "c-20260914-05"
+   ],
+   "theses": [],
+   "note": "카타르 = 세계 LNG ~20% · 우회 파이프라인 없음 · 포스마주어 9월까지"
+  },
+  {
+   "id": "m-08",
+   "from": "qatar_lng",
+   "to": "ttf",
+   "sign": "−",
+   "lag": "일",
+   "strength": "강",
+   "grade": "②",
+   "evidence": [
+    "c-20260914-05"
+   ],
+   "theses": [],
+   "note": "공급↓ → 가격↑ (TTF $23+ · 전쟁 전 2배)"
+  },
+  {
+   "id": "m-09",
+   "from": "ttf",
+   "to": "gas_spread",
+   "sign": "+",
+   "lag": "즉시",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "c-20260914-05"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T6"
+   ],
+   "note": "정의"
+  },
+  {
+   "id": "m-10",
+   "from": "hh",
+   "to": "gas_spread",
+   "sign": "−",
+   "lag": "즉시",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "c-20260914-05"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T6"
+   ],
+   "note": "정의"
+  },
+  {
+   "id": "m-11",
+   "from": "gas_spread",
+   "to": "VG",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "강",
+   "grade": "②",
+   "evidence": [
+    "r-20260914-31"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T6",
+    "energy/us_energy_five.html#T3"
+   ],
+   "note": "미계약·커미셔닝 카고를 스팟에 — 가이던스 폭 $58~110억이 옵션 크기. Cheniere는 고정수수료라 약"
+  },
+  {
+   "id": "m-12",
+   "from": "dc_gas_demand",
+   "to": "hh",
+   "sign": "+",
+   "lag": "분기~년",
+   "strength": "중",
+   "grade": "②",
+   "evidence": [
+    "r-20260914-32"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T6",
+    "ai-infra/ai_power_infra_investment_map.html#T1"
+   ],
+   "note": "+3.0~6.1bcfd by 2030 · BTM 101GW · GEV 슬롯 2029 매진"
+  },
+  {
+   "id": "m-13",
+   "from": "lng_export_capacity",
+   "to": "hh",
+   "sign": "+",
+   "lag": "년",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-32"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T6"
+   ],
+   "note": "CP2·Golden Pass·CCL3 — 수출 패리티로 수렴 → 스프레드 축소"
+  },
+  {
+   "id": "m-14",
+   "from": "hh",
+   "to": "gas_producers",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "강",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-32",
+    "c-20260915-02"
+   ],
+   "theses": [],
+   "note": "HH $4 전에는 생산자가 스프레드를 못 받는다(수출 병목). 전환 신호 $4 · CFTC 09-08: MM NG 순매도 −96,742 — 시장도 HH 정체에 걸어 있다(①)"
+  },
+  {
+   "id": "m-15",
+   "from": "dc_gas_demand",
+   "to": "midstream_volume",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "중",
+   "grade": "②",
+   "evidence": [
+    "r-20260914-32"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T2"
+   ],
+   "note": "WMB Transco 증설·Socrates · TRGP 퍼미안 플랜트. 호르무즈와 무관"
+  },
+  {
+   "id": "m-16",
+   "from": "pacing_narrative",
+   "to": "ai_capex",
+   "sign": "?",
+   "lag": "미정",
+   "strength": "약",
+   "grade": "관측 1일",
+   "evidence": [
+    "r-20260914-22",
+    "r-20260914-39"
+   ],
+   "theses": [
+    "national-strategy/ns_bigtech_capex_roi.html#T1"
+   ],
+   "note": "제안 단계. 09-11 델 +12%·HP +8%는 반대 방향. MS 행동강령은 자사 모델 한정. open frontier-pacing"
+  },
+  {
+   "id": "m-17",
+   "from": "ai_capex",
+   "to": "hbm_demand",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "r-20260914-35"
+   ],
+   "theses": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T2"
+   ],
+   "note": "Citi 2027 752억Gb(2배) · 2028 ASIC(브로드컴)=엔비디아"
+  },
+  {
+   "id": "m-18",
+   "from": "despec",
+   "to": "scaleout",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-35"
+   ],
+   "theses": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T5",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4"
+   ],
+   "note": "GPU당 HBM↓는 부족 속 자원 효율 → 시스템 수요 유지(볼륨 수혜·프리미엄 희석 동반)"
+  },
+  {
+   "id": "m-19",
+   "from": "memory_lta",
+   "to": "memory_upside",
+   "sign": "−",
+   "lag": "년",
+   "strength": "중",
+   "grade": "②",
+   "evidence": [
+    "r-20260914-35"
+   ],
+   "theses": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1"
+   ],
+   "note": "LTA 3→5년 · 시장가 상한 · 공급자 스스로 자제 — 하방 고정의 대가"
+  },
+  {
+   "id": "m-20",
+   "from": "kr_foreign_flow",
+   "to": "kospi",
+   "sign": "+",
+   "lag": "일",
+   "strength": "강(문턱 위)",
+   "grade": "①",
+   "evidence": [
+    "c-20260914-03"
+   ],
+   "theses": [],
+   "note": "§J8-4: 크기(시총 대비)·가격 비탄력 여부를 먼저 본다. 09-14 −3.34조/일"
+  },
+  {
+   "id": "m-21",
+   "from": "leverage_etf",
+   "to": "kospi",
+   "sign": "증폭",
+   "lag": "일",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "c-20260915-02"
+   ],
+   "theses": [
+    "national-strategy/ns_semiconductor_war.html#T3"
+   ],
+   "note": "7월 폭락 = 레버리지 구조 이벤트(CSOP 2x 23조). 09-14 측정: 하이닉스 2x 합 ≈9.3조 = 시총 0.75%(①) — 증폭 위험 1/2.5"
+  },
+  {
+   "id": "m-22",
+   "from": "usdkrw",
+   "to": "kr_foreign_flow",
+   "sign": "−",
+   "lag": "주",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "c-20260914-03"
+   ],
+   "theses": [],
+   "note": "원화 약세 = 외국인 매도와 동행(인과 방향 미확정)"
+  },
+  {
+   "id": "m-23",
+   "from": "curve_shape",
+   "to": "energy_fin_rel",
+   "sign": "+(스티프닝)",
+   "lag": "주",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [],
+   "note": "JPM: 베어 스티프닝 = 에너지·금융 강세, 플래트닝 = 기술주. 09-14 KB·에너지 상승과 일치"
+  },
+  {
+   "id": "m-24",
+   "from": "brent",
+   "to": "kr_terms_of_trade",
+   "sign": "−",
+   "lag": "주",
+   "strength": "중",
+   "grade": "③",
+   "evidence": [],
+   "theses": [],
+   "note": "원유 수입국 — 유가↑ = 무역수지·원화·코스피 압박. 반면 조선(탱커)·정유는 반대"
+  },
+  {
+   "id": "m-25",
+   "from": "kr_terms_of_trade",
+   "to": "kospi",
+   "sign": "+",
+   "lag": "주",
+   "strength": "약",
+   "grade": "③",
+   "evidence": [],
+   "theses": [],
+   "note": ""
+  },
+  {
+   "id": "m-26",
+   "from": "ai_capex",
+   "to": "hyperscaler_debt",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "강",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [
+    "national-strategy/ns_bigtech_capex_roi.html#T2",
+    "national-strategy/ns_bigtech_capex_roi.html#T4"
+   ],
+   "note": "YTD $2,250억(2022 $500억) · 미개시 리스 $820억+ · 경보 지표는 CAPEX가 아니라 크레딧(T4)"
+  },
+  {
+   "id": "m-27",
+   "from": "hyperscaler_debt",
+   "to": "us10y",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "약",
+   "grade": "③",
+   "evidence": [
+    "r-20260914-34"
+   ],
+   "theses": [],
+   "note": "JPM: 민간 자본 수요 확대 = 구축효과 → 장기금리 상방 요인 중 하나"
+  }
+ ]
+}

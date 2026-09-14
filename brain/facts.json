@@ -5113,7 +5113,7 @@
    "source": "FRED DCOILBRENTEU",
    "grade": "①",
    "intake": "c-20260914-03",
-   "note": "1M 93.26 · 3M 88.64 · 1Y 70.48 → 호르무즈 프리미엄 첫 추정 $15~20[추론]"
+   "note": "⚠ 09-15 정정: 「호르무즈 프리미엄 $15~20[추론]」 → 전쟁 공급 손실(2026-03~ · 8/30 재개). 호르무즈 <2mb/d · 사우디 ~6mb/d · IEA 2026 −5.7mb/d(② c-20260915-01). 종료 시 기준선 세계은행 $86(2026)·$70(2027)"
   },
   "wti": {
    "value": 97.26,
@@ -5133,13 +5133,13 @@
    "note": "1Y 2.98 평탄 — 수출 캐파 병목. 전환 신호 $4"
   },
   "ttf": {
-   "value": 23.0,
-   "unit": "USD/MMBtu(+)",
-   "asof": "2026-09 (기사 인용)",
-   "source": "Kpler·EIA (WebSearch)",
-   "grade": "②",
-   "intake": "c-20260914-05",
-   "note": "일별 시계열 경로 미확보. 전쟁 전 ~2분의 1"
+   "value": 83.78,
+   "unit": "EUR/MWh (≈ $28.7/MMBtu · ÷3.412 × EURUSD 1.17)",
+   "asof": "2026-09-14",
+   "source": "Yahoo TTF=F 전월물(스카우트) · tradingeconomics 83.55 교차",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "09-11 79.52 → 09-14 +5.4%. 종전 「$23+」(Kpler 7월 인용 ②)를 교체"
   },
   "jkm": {
    "value": 24.0,
@@ -5147,7 +5147,8 @@
    "asof": "2026-09 (기사 인용)",
    "source": "Kpler (WebSearch)",
    "grade": "②",
-   "intake": "c-20260914-05"
+   "intake": "c-20260914-05",
+   "note": "일별 무료 경로 없음(CME·ICE·S&P 403 · Yahoo 희소) — FRED 월간 PNGASJPUSDM 대리(7월 $19.56) · 수동 주 1회"
   },
   "us10y": {
    "value": 4.95,
@@ -5167,13 +5168,13 @@
    "intake": "c-20260914-03"
   },
   "us30y": {
-   "value": 5.4,
+   "value": 5.354,
    "unit": "%",
-   "asof": "2026-09-14",
-   "source": "JPM 전략 노트(u-20260914-20)",
-   "grade": "③",
-   "intake": "u-20260914-20",
-   "note": "20년 최고. FRED 대조 미착수"
+   "asof": "2026-09-11",
+   "source": "naver bond US30YT=RR(스카우트) · FRED DGS30 09-10 5.37",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "JPM 「약 5.40%」(③)와 일치. 09-14 Yahoo ^TYX 5.375"
   },
   "breakeven10y": {
    "value": 2.36,
@@ -5198,7 +5199,7 @@
    "source": "m.stock.naver.com index/KOSPI",
    "grade": "①",
    "intake": "c-20260914-03",
-   "note": "06-22 고점 9,114.55 대비 −26.7% · 6/23 이후 −3% 이상 하락일 17"
+   "note": "06-22 고점 9,114.55 대비 −26.7% · 6/23 이후 −3% 이상 하락일 17 · 정규 종가 기준 SK하이닉스 1,697,000(−6.35%) 삼성 249,000(−4.05%)"
   },
   "usdkrw": {
    "value": 1350.2,
@@ -5207,6 +5208,94 @@
    "source": "prices.json fx",
    "grade": "①",
    "intake": "c-20260914-03"
+  },
+  "hormuz_crude_flow": {
+   "value": 2.0,
+   "unit": "mb/d 미만",
+   "asof": "2026-09 (8/30 이후)",
+   "source": "WebSearch 요약(IEA·Kpler 계열 인용)",
+   "grade": "②",
+   "intake": "c-20260915-01",
+   "note": "평시 약 20mb/d — 원출처 확인 미착수"
+  },
+  "saudi_output": {
+   "value": 6.0,
+   "unit": "mb/d(약)",
+   "asof": "2026-08",
+   "source": "WebSearch 요약",
+   "grade": "②",
+   "intake": "c-20260915-01",
+   "note": "30년 최저"
+  },
+  "dxy": {
+   "value": 99.12,
+   "unit": "pt",
+   "asof": "2026-09-11",
+   "source": "naver .DXY prices",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "09-14 장중 99.6"
+  },
+  "brent_front_ice": {
+   "value": 104.61,
+   "unit": "USD/bbl",
+   "asof": "2026-09-11",
+   "source": "naver LCOcv1 정산",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "09-14 +3.5% → ~$108(기사). FRED 109.51은 09-09 Dated Brent — 두 계열을 섞지 않는다"
+  },
+  "fear_greed": {
+   "value": 30.5,
+   "unit": "pt(fear)",
+   "asof": "2026-09-14",
+   "source": "CNN Fear&Greed",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "1W 45.2 · 1M 64.3 → 한 달에 탐욕→공포"
+  },
+  "put_call": {
+   "value": 0.86,
+   "unit": "CBOE total (equity 0.58 · SPX 1.23)",
+   "asof": "2026-09-11",
+   "source": "CBOE daily options",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "지수 풋 헤지는 높고(1.23) 개별주는 낮다(0.58) — 지수 헤지·개별 낙관"
+  },
+  "cftc_ng_mm_net": {
+   "value": -96742,
+   "unit": "계약(MM 순포지션)",
+   "asof": "2026-09-08",
+   "source": "CFTC 72hh-3qpy NG 023651",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "머니매니저가 HH 순매도 — 수출 병목 속 국내 가스 약세 베팅. HH $4 전환 신호의 반대편"
+  },
+  "cftc_wti_mm_net": {
+   "value": 111731,
+   "unit": "계약(MM 순포지션)",
+   "asof": "2026-09-08",
+   "source": "CFTC WTI 067651",
+   "grade": "①",
+   "intake": "c-20260915-02"
+  },
+  "kr_leverage_etf_aum": {
+   "value": 65621,
+   "unit": "억원(국내 단일종목 2x 9종 합 · 하이닉스 41,836 · 삼성 23,785)",
+   "asof": "2026-09-14",
+   "source": "naver etf/{code}/basic totalNav",
+   "grade": "①",
+   "intake": "c-20260915-02",
+   "note": "HK CSOP 7709.HK 시총 299억HKD≈5.1조원 별도. 하이닉스 2x 합 ≈ 9.3조 = 시총(1,239조)의 0.75% — 7월 CSOP 23조 대비 1/2.5"
+  },
+  "kospi_breadth": {
+   "value": "802/1473",
+   "unit": "상승/하락 종목수(ETF·ETN 포함)",
+   "asof": "2026-09-14",
+   "source": "naver stocks/up|down/KOSPI",
+   "grade": "①",
+   "intake": "c-20260915-02"
   }
  }
 }

@@ -1155,5 +1155,145 @@
    ],
    "tracked_price": false
   }
+ },
+ "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
+ "actors": {
+  "fed": {
+   "name": "연준(워시 의장)",
+   "type": "중앙은행",
+   "wants": "65개월 2% 상회 인플레의 책임을 진다 — 신뢰 회복",
+   "constraints": "10/28은 선거 3일 전 · 재정적자 6.3% · 장기금리 5.4%가 이미 긴축",
+   "next_move": "9/16 인상(~90%) · 점도표로 추가 횟수 신호",
+   "watch": "점도표 · 「보험성 인하 되돌림」 표현 유무",
+   "evidence": [
+    "u-20260914-18",
+    "u-20260914-20"
+   ],
+   "grade": "③"
+  },
+  "us_treasury": {
+   "name": "미 재무부",
+   "type": "정부",
+   "wants": "$40조 부채·순이자 $1조를 낮은 금리로 차환",
+   "constraints": "해외 수요 감소(중국 −$1,000억·엔 캐리) · 회사채와 경쟁($3,900억 vs $3,290억)",
+   "next_move": "11월 QRA — 단기물 편중 지속?",
+   "watch": "QRA 장기물 비중 · 30년물 5.4%",
+   "evidence": [
+    "u-20260914-20"
+   ],
+   "grade": "③"
+  },
+  "hyperscalers": {
+   "name": "하이퍼스케일러 5(MS·GOOGL·AMZN·META·ORCL)",
+   "type": "기업군",
+   "wants": "컴퓨트 확보 — 고금리를 감내(YTD 부채 $2,250억)",
+   "constraints": "전력·터빈 슬롯(2029) · 그림자 차입 $1.2조 약정 · 속도조절 압력",
+   "next_move": "3Q 실적에서 캐펙스 가이던스 유지 여부(10월 말)",
+   "watch": "캐펙스 가이던스 · 리스 미개시 잔액 · CDS",
+   "evidence": [
+    "r-20260914-34",
+    "national-strategy/ns_bigtech_capex_roi.html#T2"
+   ],
+   "grade": "②"
+  },
+  "kr_foreign": {
+   "name": "코스피 외국인",
+   "type": "투자자군",
+   "wants": "달러 기준 수익 — 원화·금리·AI 배수 셋에 동시에 걸림",
+   "constraints": "「굳이 한국에 들어올 이유」가 필요(사용자 09-12)",
+   "next_move": "4일 연속 매도 중 — 종목 비중은 문턱 아래(지수 매도 · 개별 보유 유지)",
+   "watch": "일 순매수 부호 전환 2주 · 환율 1,350",
+   "evidence": [
+    "c-20260914-03"
+   ],
+   "grade": "①(수급) ③(동기)"
+  },
+  "kr_retail": {
+   "name": "국내 개인(레버리지 포함)",
+   "type": "투자자군",
+   "wants": "유일한 매수 주체(09-14 +3.04조) — 저가 매수",
+   "constraints": "「돈이 없다」(사용자) · 7월 폭락의 레버리지 ETF 구조",
+   "next_move": "미측정",
+   "watch": "단일종목 2x ETF AUM · 신용잔고",
+   "evidence": [
+    "c-20260914-03",
+    "national-strategy/ns_semiconductor_war.html#T3"
+   ],
+   "grade": "②"
+  },
+  "china_state": {
+   "name": "중국(국가)",
+   "type": "정부",
+   "wants": "반도체 자립 — CXMT 상장·YMTC 상장으로 자본 조달, 내수 20%로 자급",
+   "constraints": "장비 통제(Match Act 리스크) · 미중 정상회담 9/24-25",
+   "next_move": "YMTC IPO 일정 · 정상회담에서 메모리 수출 허용 여부",
+   "watch": "cninfo CXMT 조달액·용도",
+   "evidence": [
+    "r-20260914-26"
+   ],
+   "grade": "②"
+  },
+  "saudi_opec": {
+   "name": "사우디·OPEC+",
+   "type": "산유국",
+   "wants": "공급 안정으로 $100 유가 유지 — 그러나 우회로(동서 파이프라인)를 잃음",
+   "constraints": "드론 공격 · 홍해 통제력 약화",
+   "next_move": "파이프라인 복구 시점",
+   "watch": "복구 발표 · 회담 재개",
+   "evidence": [
+    "c-20260914-04"
+   ],
+   "grade": "②"
+  },
+  "houthi_iran": {
+   "name": "후티·이란",
+   "type": "무장세력·정부",
+   "wants": "호르무즈·바브엘만데브 통제력 = 협상 지렛대",
+   "constraints": "회담 연기 자체가 카드",
+   "next_move": "이란-걸프 회담 재개 여부",
+   "watch": "페림섬·모카 상황 · 회담 일정",
+   "evidence": [
+    "c-20260914-04"
+   ],
+   "grade": "②"
+  },
+  "memory3": {
+   "name": "메모리 3사(삼성·SK하이닉스·마이크론)+키옥시아",
+   "type": "기업군",
+   "wants": "높은 가격을 오래 — 「또 한 번의 70% 상승」은 스스로 자제(키옥시아 CEO)",
+   "constraints": "LTA 3→5년(상방 포기) · HBM 캐파 배분 · 고객의 디스펙",
+   "next_move": "3Q 실적(10월) ASP · LTA 조건",
+   "watch": "DRAM ASP QoQ · HBM 점유(삼성 42% 전망)",
+   "evidence": [
+    "r-20260914-35",
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1"
+   ],
+   "grade": "②"
+  },
+  "frontier_labs": {
+   "name": "프런티어 랩(앤스로픽·오픈AI·xAI·구글DM)+MS",
+   "type": "기업군",
+   "wants": "속도조절 = 안전 포지셔닝 + IPO 전 규제 선점(삭스 「규제포획」 경고)",
+   "constraints": "앤스로픽 10월 IPO · 컴퓨트 배급",
+   "next_move": "공동 표준기구·체크포인트 채택 여부 · S-1",
+   "watch": "MS 행동강령 외 두 번째 회사 규범",
+   "evidence": [
+    "r-20260914-09",
+    "r-20260914-39"
+   ],
+   "grade": "③"
+  },
+  "kr_gov": {
+   "name": "한국 정부",
+   "type": "정부",
+   "wants": "대미투자 패키지(9/18 발표 · 원전 8기 포함?) · 애프터마켓 등 시장 제도",
+   "constraints": "트럼프 협상 · 820조 예산",
+   "next_move": "9/18 발표",
+   "watch": "원전 포함 여부(원전·SMR 편 T1·T3)",
+   "evidence": [
+    "brain/events.json"
+   ],
+   "grade": "②"
+  }
  }
 }
