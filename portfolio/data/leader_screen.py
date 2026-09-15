@@ -14,7 +14,8 @@ v4(09-16 새벽 · 36개월 백테스트 뒤 · intake/files/backtest_2026-09-15
   1M 낙폭 가드는 뺐다(KR 1M IC +0.035 유의 안 함 · 문헌은 단기 반전) · 섹터 국면 규칙은 점수에서 뺐다(KR: 「초기 반전」 매수 −2.7% · 「어깨」 +6.2% — 추세 시장 · US: 정보 없음)
   G 성장 30  = 3년 매출 CAGR(12) + 최근 분기 매출 YoY(12) + 선행 성장(6 · KR 컨센 매출 / US EBIT YoY)
   Q 질   20  = 분기 OPM 수준(7) + ΔOPM YoY(7) + ROE(6 · US는 ROA)   [− SBC 페널티 5]
-  E 기대 20  = KR: 컨센 EPS 성장(6) + Δ추정EPS 1M(8) + 10일 외인+기관/시총(6) · US: TP 괴리(6) + ΔTP 1M(8) + 투자의견(6)
+  E 기대 20  = KR: 컨센 EPS 성장(5) + Δ추정EPS 1M(7) + 외국인 60d 순매수/거래량(4 · IC +0.060 t 2.8) + 외국인 보유비율 Δ60d(4 · IC +0.063 t 3.1) — 기관은 IC −0.04 라 0 · US: TP 괴리(6) + ΔTP 1M(8) + 투자의견(6)
+  VCP(변동성 수축)은 없다 — 09-10 백테스트(승률 40%)에 이어 09-16 재검(20/120d 변동성비 IC +0.049 = 수축이 아니라 <확장>이 좋았고 하락기 −0.033 · 결합 52%)에서도 기각
 v3(09-15 밤 · 매니저 7종목 대조 뒤): 렌즈를 둘로 — <주도(Leader)>는 가격이 확인한 것, <선행(Early)>은 이익·기대는 도는데 가격이 아직인 것.
   Early 100 = 분기 매출 QoQ 개선 연속(20) + ΔOPM 개선(20) + 추정치 상향 1M(20) + 52주 고점 대비 낙폭(15 · 클수록 기회) + 가격 안정화(15 · 1M ≥ −5 & RS3<0) + 질 유지(10 · OPM 백분위)
   + 격자 이동 추적(--diff 이전 파일) + 브레인 반증 조건 병기(entities→theses) + --watch 목록 강제 출력
@@ -176,6 +177,35 @@ KR_SECTOR_ETF = {  # naver 산업코드 → 섹터 ETF(추적 목록 이름). �
     "KR273": "KODEX 자동차", "KR270": "KODEX 자동차", "KR264": "TIGER 200 생활소비재", "KR283": "KODEX 2차전지산업", "KR272": "TIGER 200 에너지화학",
     "KR322": "KODEX 철강", "KR287": "TIGER 소프트웨어", "KR324": "TIGER 소프트웨어", "KR306": "TIGER 200 중공업",
 }
+
+
+FLOWS = os.path.join(ROOT, "intake", "files", "flows_daily")
+
+
+def flow_signals(code, day):
+    """KR 수급(v4.3 · 09-16 검증): 외국인 60d 순매수/20d 평균거래량(IC +0.060 t 2.8) · 외국인 보유비율 Δ60d(IC +0.063 t 3.1).
+    기관은 IC −0.04(t −2.3)라 쓰지 않는다. 캐시가 그날 것이 아니면 Daum 1페이지(200행)만 받는다."""
+    os.makedirs(FLOWS, exist_ok=True)
+    fp = os.path.join(FLOWS, f"{code}.json")
+    rows = json.load(io.open(fp, encoding="utf-8")) if os.path.exists(fp) else []
+    if not rows or rows[-1]["d"] < day.replace("-", ""):
+        try:
+            import collect_sources as cs
+            r = cs.daum_stock_investor_days(code, 1, 200)
+            new = [{"d": x["date"][:10].replace("-", ""), "f": x.get("foreignStraightPurchaseVolume") or 0, "i": x.get("institutionStraightPurchaseVolume") or 0,
+                    "v": x.get("accTradeVolume") or 0, "fr": x.get("foreignOwnSharesRate")} for x in r]
+            have = {x["d"] for x in rows}
+            rows = sorted(rows + [x for x in new if x["d"] not in have], key=lambda x: x["d"])
+            io.open(fp, "w", encoding="utf-8").write(json.dumps(rows))
+        except Exception:  # noqa: BLE001
+            pass
+    fl = [x for x in rows if x["d"] <= day.replace("-", "")]
+    if len(fl) < 70:
+        return {}
+    av = sum(x["v"] for x in fl[-20:]) / 20 or 1
+    fr = [x["fr"] for x in fl if x["fr"] is not None]
+    return {"f60": sum(x["f"] for x in fl[-60:]) / (3 * av), "i60": sum(x["i"] for x in fl[-60:]) / (3 * av),
+            "dfr60": (fr[-1] - fr[-61]) * 100 if len(fr) > 61 else None}
 
 
 def daily_signals(code):
@@ -363,6 +393,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
             if p0 and p1 and p0 > 0:
                 rev1m = (p1 / p0 - 1) * 100
     ds = daily_signals(rec["code"])
+    fs = flow_signals(rec["code"], DAY_ASOF) if (not rec["us"] and not rec.get("etf")) else {}
     sbc_pen = 0
     ocf_warn = None
     if flags:
@@ -375,6 +406,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
     return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
             "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52, "etf": bool(rec.get("etf")),
             "hi52": ds.get("hi52"), "voladj6": ds.get("voladj6"), "mom6_1": ds.get("mom6_1"),
+            "f60": fs.get("f60"), "i60": fs.get("i60"), "dfr60": fs.get("dfr60"),
             "judged": bool(flags and (name in flags[2] or rec["code"].split(".")[0] in flags[2] or name in flags[3])),
             "falsifier": (flags[4].get(rec["code"].split(".")[0]) if flags and len(flags) > 4 else None),
             "cagr3": g_cagr, "rev_yoy_q": yoy, "fwd": fwd, "opm": opm_now, "d_opm": d_opm,
@@ -429,7 +461,10 @@ def score(rows, bench=None):
                 p = (pr("voladj6", 10) + pr("mom6_1", 8) + pr("rs6", 6) + pr("m1", 6)) * regime_factor
             p_max = (16 + 14 * regime_factor) if not us else 30 * regime_factor
             qv = pr("opm", 7) + pr("d_opm", 7) + pr("roe", 6) - x.get("sbc_pen", 0)  # KR ROE · US ROA · SBC 페널티
-            e = pr("e1", 6) + pr("rev1m", 8) + pr("e2", 6)
+            if not us:  # v4.3: 기관+외인 합(IC +0.016)은 정보가 없다 — 외국인만, 두 창으로
+                e = pr("e1", 5) + pr("rev1m", 7) + pr("f60", 4) + pr("dfr60", 4)
+            else:
+                e = pr("e1", 6) + pr("rev1m", 8) + pr("e2", 6)
             denom = 30 + p_max + 20 + 20
             x.update({"G": round(g / 30 * 100, 1), "P": round(p / p_max * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
                       "total": round((g + p + max(qv, 0) + e) / denom * 100, 1), "missing": miss})
@@ -614,7 +649,8 @@ def render_html(out, path_html):
 <b style="font-size:1.05em">한 문장 — <u>돈이 지금 어디로 가고 있나(주도)와 어디로 갈 준비가 됐나(선행)를 따로 센다. 둘 다 높으면 확인된 주도주, 주도↓선행↑이면 「아직」, 둘 다 낮으면 이 도구 밖(방어주·턴어라운드 전)이다.</u></b><br>
 <div class="lens">
 <div><b style="color:var(--accent)">주도(Leader) 100</b> · <b style="color:var(--ink-2)">중립</b> = G·Q·E를 <u>섹터 내</u> 백분위로 다시 센 총점(섹터 n≥4) — AI 섹터가 성장·마진 백분위를 독식하는 편향을 뺀 값. 브로드닝은 이 열로 본다.<br><b>v4.2 가격 축(P 30 · 우리 유니버스 36개월 + 코스피 시총 200 대조 · 두 레짐)</b> — KR: 52주 고점 근접도 10 · 12M RS 6 · 변동성조정 6M 6 · 6-1 모멘텀 4 · 섹터 ETF 3M 모멘텀 4(3M RS는 넓은 표본 하락기 −0.064라 0) / US: 변동성조정 6M 10 · 6-1 모멘텀 8 · 6M RS 6 · 1M 6. <b>레짐</b>: 지수 3M&lt;0 이면 모멘텀 항 ×0.5 — 두 표본·두 레짐에서 살아남은 52주 고점·12M(KR)은 감쇠 안 함(지금 KR {e(out.get('regime_factor',{}).get('KR'))} · US {e(out.get('regime_factor',{}).get('US'))}).<br> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
-<div><b style="color:#60a5fa">선행(Early) 100</b> — 매출 QoQ 개선 연속 20 · OPM QoQ 20 · 추정치 상향 1M 20 · 52주 고점 대비 낙폭 15(클수록 기회) · 가격 안정화 15(1M ≥ −5인데 RS3 &lt; 0) · 질 10. <b>격자</b>: A 높성장×강가격 · B 높성장×약가격(게이트: ΔOPM≥0 &amp; 매출 YoY&gt;0 = 눌림목, 아니면 탈락*) · C 낮성장×강가격 · D 나머지.</div>
+<div><b>수급·VCP(09-16 검증 · KR 34개월)</b> — 외국인 60d 순매수/거래량 IC +0.060(t 2.8 · 73% · 두 레짐 +) · 외국인 보유비율 Δ60d +0.063(t 3.1 · 76%) → E축에. <b>기관 순매수는 IC −0.04(t −2.3 · 27%)</b> — 기관이 산 종목이 이후 3M 부진, 외인+기관 합은 0에 수렴 → 기관은 뺐다. <b>VCP는 두 번 기각</b>(09-10 승률 40% · 09-16 변동성 수축 IC 부호 반대).<br>
+<b style="color:#60a5fa">선행(Early) 100</b> — 매출 QoQ 개선 연속 20 · OPM QoQ 20 · 추정치 상향 1M 20 · 52주 고점 대비 낙폭 15(클수록 기회) · 가격 안정화 15(1M ≥ −5인데 RS3 &lt; 0) · 질 10. <b>격자</b>: A 높성장×강가격 · B 높성장×약가격(게이트: ΔOPM≥0 &amp; 매출 YoY&gt;0 = 눌림목, 아니면 탈락*) · C 낮성장×강가격 · D 나머지.</div>
 </div>
 <div style="margin-top:12px;font-size:.85rem;color:var(--ink-2)">⚠ 한계 — KR 섹터 코드(네이버 278)가 메모리·소부장을 한 통에 넣는다 · US 52주 고점 없음(최근 낙폭 대체) · 추정치 변화는 스냅샷이 쌓인 종목만 · 반증 병기는 entities 등록 종목만 · 승률은 6개월 뒤 격자 이동으로 잰다. ● 판단 보유 ○ 판단 0편 = 다음 페이퍼 후보.</div>
 </div></div></section>
@@ -664,10 +700,15 @@ rows.sort((a,b)=>{{const x=a.cells[i].innerText.replace(/[+%,]/g,''),y=b.cells[i
     print(f"[html] {path_html} ({len(html)//1024}KB)")
 
 
+DAY_ASOF = date.today().isoformat()
+
+
 def main(argv):
+    global DAY_ASOF
     day = date.today().isoformat()
     if "--date" in argv:
         day = argv[argv.index("--date") + 1]
+    DAY_ASOF = day
     top = int(argv[argv.index("--top") + 1]) if "--top" in argv else 12
     watch = argv[argv.index("--watch") + 1].split(",") if "--watch" in argv else []
     diff_path = argv[argv.index("--diff") + 1] if "--diff" in argv else None
