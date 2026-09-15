@@ -7,8 +7,12 @@
   · 추정치 <변화>(1M): KR 추정EPS · US 목표주가 — git 의 prices.json 30일 전 스냅샷과 대조(「성장 기대 상향」의 실측)
   · SBC 페널티(facts.json sbc_to_rev_q > 15% → −5) · OCF/EBIT 경고(<0.7)
   · 판단 보유 여부(judged) · 추적에만 있고 시세 없는 US 종목은 그 자리에서 받는다(Semtech 등)
+v4(09-16 새벽 · 36개월 백테스트 뒤 · intake/files/backtest_2026-09-15.json): 가격 축을 <증거대로> 다시 짰다.
+  KR P 30 = 52주 고점 근접도(12 · IC +0.098 t 4.4) + 3M RS(6 · +0.066 t 2.7) + 변동성조정 6M(4 · +0.062) + 12M RS(2) + 섹터 ETF 3M 모멘텀(6 · ETF 유니버스 IC +0.25)
+  US P 30 = 변동성조정 6M(10 · +0.075 t 2.5) + 6-1 모멘텀(8 · +0.074 t 2.1) + 6M RS(6 · +0.081 t 2.2) + 1M(6 · f1 IC +0.074) — 52주 고점·섹터 모멘텀은 US에서 정보 없음(0)
+  레짐: 지수 3M < 0 이면 P 가중 ×0.5(KR 하락기 IC −0.02 · US −0.10) — 가격 신호가 죽는 구간에선 G·Q·E 비중이 커진다
+  1M 낙폭 가드는 뺐다(KR 1M IC +0.035 유의 안 함 · 문헌은 단기 반전) · 섹터 국면 규칙은 점수에서 뺐다(KR: 「초기 반전」 매수 −2.7% · 「어깨」 +6.2% — 추세 시장 · US: 정보 없음)
   G 성장 30  = 3년 매출 CAGR(12) + 최근 분기 매출 YoY(12) + 선행 성장(6 · KR 컨센 매출 / US EBIT YoY)
-  P 가격 30  = 3M 상대강도 vs 지수(10) + 3M 상대강도 vs 섹터(6) + 6M vs 지수(8) + 1M 낙폭 가드(6)
   Q 질   20  = 분기 OPM 수준(7) + ΔOPM YoY(7) + ROE(6 · US는 ROA)   [− SBC 페널티 5]
   E 기대 20  = KR: 컨센 EPS 성장(6) + Δ추정EPS 1M(8) + 10일 외인+기관/시총(6) · US: TP 괴리(6) + ΔTP 1M(8) + 투자의견(6)
 v3(09-15 밤 · 매니저 7종목 대조 뒤): 렌즈를 둘로 — <주도(Leader)>는 가격이 확인한 것, <선행(Early)>은 이익·기대는 도는데 가격이 아직인 것.
@@ -165,6 +169,35 @@ def load_sectors(allrec):
     return sec
 
 
+DAILY = os.path.join(ROOT, "intake", "files", "prices_daily")
+KR_SECTOR_ETF = {  # naver 산업코드 → 섹터 ETF(추적 목록 이름). 없는 코드는 None(섹터 모멘텀 중립)
+    "KR278": "KODEX 반도체", "KR299": "TIGER 200 중공업", "KR284": "PLUS K방산", "KR291": "SOL 조선TOP3플러스", "KR266": "TIGER 화장품",
+    "KR308": "TIGER 화장품", "KR261": "TIGER 헬스케어", "KR281": "TIGER 헬스케어", "KR286": "TIGER 헬스케어", "KR301": "KODEX 은행",
+    "KR273": "KODEX 자동차", "KR270": "KODEX 자동차", "KR264": "TIGER 200 생활소비재", "KR283": "KODEX 2차전지산업", "KR272": "TIGER 200 에너지화학",
+    "KR322": "KODEX 철강", "KR287": "TIGER 소프트웨어", "KR324": "TIGER 소프트웨어", "KR306": "TIGER 200 중공업",
+}
+
+
+def daily_signals(code):
+    """일봉 캐시(백테스트가 받아 둔 3.6년) → 52주 고점 근접도 · 변동성조정 6M · 6-1 모멘텀. 캐시 없으면 None."""
+    fp = os.path.join(DAILY, f"{code}.json")
+    if not os.path.exists(fp):
+        return {}
+    s_ = json.load(io.open(fp, encoding="utf-8"))
+    if len(s_) < 130:
+        return {}
+    px = [p for _, p in s_]
+    last = px[-1]
+    w52 = px[-252:] if len(px) >= 252 else px
+    hi52 = last / max(w52)
+    w6 = px[-126:]
+    dr = [w6[i] / w6[i - 1] - 1 for i in range(1, len(w6))]
+    mu = sum(dr) / len(dr); sd = (sum((x - mu) ** 2 for x in dr) / (len(dr) - 1)) ** 0.5
+    r6 = last / w6[0] - 1
+    r1 = last / px[-22] - 1 if len(px) >= 22 else None
+    return {"hi52": hi52 * 100, "voladj6": (r6 / sd) if sd else None, "mom6_1": ((1 + r6) / (1 + r1) - 1) * 100 if r1 is not None else None}
+
+
 def load_prev_prices(days=30):
     """git 에서 days 일 전 prices.json — 추정치 변화(Δ추정EPS · ΔTP)의 분모"""
     try:
@@ -219,8 +252,8 @@ def bench_returns():
     import collect_sources as cs
     out = {}
     today = date.today().strftime("%Y%m%d")
-    for key, fn in (("KR", lambda: cs.naver_index_daily("KOSPI", "20250601", today)),
-                    ("US", lambda: cs.naver_foreign_index_daily(".INX", "20250601", today))):
+    for key, fn in (("KR", lambda: cs.naver_index_daily("KOSPI", "20250101", today)),
+                    ("US", lambda: cs.naver_foreign_index_daily(".INX", "20250101", today))):
         try:
             rows = fn()
             closes = [(r.get("localDate") or r.get("date"), float(r["closePrice"])) for r in rows]
@@ -228,7 +261,7 @@ def bench_returns():
             def back(n):
                 return closes[-1 - n][1] if len(closes) > n else None
             out[key] = {"1M": (last / back(21) - 1) * 100 if back(21) else 0, "3M": (last / back(63) - 1) * 100 if back(63) else 0,
-                        "6M": (last / back(126) - 1) * 100 if back(126) else 0, "asof": closes[-1][0]}
+                        "6M": (last / back(126) - 1) * 100 if back(126) else 0, "12M": (last / back(252) - 1) * 100 if back(252) else 0, "asof": closes[-1][0]}
         except Exception as e:  # noqa: BLE001
             out[key] = {"1M": 0, "3M": 0, "6M": 0, "asof": None, "error": str(e)[:80]}
     return out
@@ -329,6 +362,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
             p0, p1 = num(pu.get("목표주가")), rec.get("tp")
             if p0 and p1 and p0 > 0:
                 rev1m = (p1 / p0 - 1) * 100
+    ds = daily_signals(rec["code"])
     sbc_pen = 0
     ocf_warn = None
     if flags:
@@ -340,6 +374,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
             ocf_warn = ocf[code_key]
     return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
             "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52, "etf": bool(rec.get("etf")),
+            "hi52": ds.get("hi52"), "voladj6": ds.get("voladj6"), "mom6_1": ds.get("mom6_1"),
             "judged": bool(flags and (name in flags[2] or rec["code"].split(".")[0] in flags[2] or name in flags[3])),
             "falsifier": (flags[4].get(rec["code"].split(".")[0]) if flags and len(flags) > 4 else None),
             "cagr3": g_cagr, "rev_yoy_q": yoy, "fwd": fwd, "opm": opm_now, "d_opm": d_opm,
@@ -347,10 +382,22 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
             "e1": e1, "e2": e2, "roe": roe, "n_annual": len(akeys), "n_quarter": len(qkeys), "has_fin": bool(akeys or qkeys)}
 
 
-def score(rows):
-    """시장별 백분위 → 가중 합. 결측은 해당 항목 평균(50)으로 두고 결측 수를 기록."""
+def score(rows, bench=None):
+    """시장별 백분위 → 가중 합. 결측은 해당 항목 평균(50)으로 두고 결측 수를 기록. v4: 레짐·섹터 모멘텀·일봉 신호."""
     for us in (False, True):
         grp = [x for x in rows if x["us"] == us]
+        lab = "US" if us else "KR"
+        b = (bench or {}).get(lab, {})
+        regime_factor = 0.5 if (b.get("3M") is not None and b["3M"] < 0) else 1.0
+        # KR 섹터 ETF 3M 상대강도 → 종목의 sector_mom (US는 정보 없음 → None)
+        etf_rs = {x["name"]: ((x.get("m3") or 0) - b.get("3M", 0)) for x in grp if x.get("etf")}
+        for x in grp:
+            x["rs12"] = (x.get("y1") - b.get("12M", 0)) if (x.get("y1") is not None and not us) else None
+            sk = str(x.get("sector") or "").split("(")[0]
+            etf_name = KR_SECTOR_ETF.get(sk) if not us else None
+            x["sector_etf"] = etf_name
+            x["sector_mom"] = etf_rs.get(etf_name) if etf_name else None
+            x["regime_factor"] = regime_factor
         def col(k):
             return [x.get(k) for x in grp]
         # 섹터 내 상대강도(3M): 같은 섹터 종목 3M 중앙값 대비
@@ -371,11 +418,16 @@ def score(rows):
                     v = 50.0
                 return v * w / 100
             g = pr("cagr3", 12) + pr("rev_yoy_q", 12) + pr("fwd", 6)
-            p = pr("rs3", 10) + pr("rs3_sector", 6) + pr("rs6", 8) + (x["guard"] * 6 if x["guard"] is not None else 3)
+            if not us:
+                p = pr("hi52", 12) + pr("rs3", 6) + pr("voladj6", 4) + pr("rs12", 2) + pr("sector_mom", 6)
+            else:
+                p = pr("voladj6", 10) + pr("mom6_1", 8) + pr("rs6", 6) + pr("m1", 6)
+            p = p * regime_factor  # 지수 3M<0 이면 0.5
             qv = pr("opm", 7) + pr("d_opm", 7) + pr("roe", 6) - x.get("sbc_pen", 0)  # KR ROE · US ROA · SBC 페널티
             e = pr("e1", 6) + pr("rev1m", 8) + pr("e2", 6)
-            x.update({"G": round(g / 30 * 100, 1), "P": round(p / 30 * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
-                      "total": round(g + p + max(qv, 0) + e, 1), "missing": miss})
+            denom = 30 + 30 * regime_factor + 20 + 20
+            x.update({"G": round(g / 30 * 100, 1), "P": round(p / (30 * regime_factor) * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
+                      "total": round((g + p + max(qv, 0) + e) / denom * 100, 1), "missing": miss})
             # v3 선행(Early) 렌즈 — 이익·기대는 도는데 가격이 아직
             e_qoq = {0: 0, 1: 8, 2: 15, 3: 20}.get(x.get("qoq_up", 0), 20)
             e_opm = pr("opm_qoq", 20)
@@ -395,7 +447,7 @@ def score(rows):
                 gn = prn("cagr3", 12) + prn("rev_yoy_q", 12) + prn("fwd", 6)
                 qn = prn("opm", 7) + prn("d_opm", 7) + prn("roe", 6) - x.get("sbc_pen", 0)
                 en = prn("e1", 6) + prn("rev1m", 8) + prn("e2", 6)
-                x["total_n"] = round(gn + p + max(qn, 0) + en, 1)  # P(가격)는 시장 기준 그대로
+                x["total_n"] = round((gn + p + max(qn, 0) + en) / denom * 100, 1)  # P(가격)는 시장 기준 그대로
             else:
                 x["total_n"] = None
             hg, sp = x["G"] >= 50, x["P"] >= 50
@@ -406,6 +458,8 @@ def score(rows):
             if x["cell"] == "B":
                 keep = (x.get("d_opm") is None or x["d_opm"] >= 0) and (x.get("rev_yoy_q") is None or x["rev_yoy_q"] > 0)
                 x["gate"] = "눌림목(이익 유지)" if keep else "탈락 후보(이익 하향)"
+            elif x.get("d_opm") is not None and x["d_opm"] < 0 and x.get("opm_qoq") is not None and x["opm_qoq"] < 0:
+                x["gate"] = "⚠ 이익 하향(YoY·QoQ 모두)"  # A·C 라도 마진이 두 축 다 꺾이면 표시 — v4 US 는 1개월 급락을 안 보므로 이 경고가 그 자리를 맡는다
     return rows
 
 
@@ -473,6 +527,28 @@ def render_html(out, path_html):
     early_kr = sorted([x for x in kr if x["P"] < 50], key=lambda x: -x["early"])[:10]
     early_us = sorted([x for x in us if x["P"] < 50], key=lambda x: -x["early"])[:10]
     b = out["bench"]
+    bt_path = sorted([f for f in os.listdir(os.path.join(ROOT, "intake", "files")) if f.startswith("backtest_")])
+    bt = json.load(io.open(os.path.join(ROOT, "intake", "files", bt_path[-1]), encoding="utf-8")) if bt_path else None
+    def bt_table():
+        if not bt:
+            return ""
+        keys = [("HI52_f3", "52주 고점 근접도"), ("RS3_f3", "3M 상대강도"), ("RS6_f3", "6M 상대강도"), ("RS12_f3", "12M 상대강도"), ("VOLADJ6_f3", "변동성조정 6M"), ("MOM6_1_f3", "6-1 모멘텀"), ("1M_f3", "1M"), ("1M_f1", "1M → 다음 1M")]
+        rows_ = ""
+        for k, lab in keys:
+            kr_, us_ = bt["by_market"]["KR"].get(k, {}), bt["by_market"]["US"].get(k, {})
+            f_ = lambda v: (f"IC {v['ic_mean']:+.3f} · t {v['ic_t']} · 양 {v['hit']:.0%}" if v else "—")
+            rows_ += f"<tr><td style='text-align:left'>{lab}</td><td style='text-align:left'>{f_(kr_)}</td><td style='text-align:left'>{f_(us_)}</td></tr>"
+        rg = bt.get("regime", {}); et = bt.get("etf_ic", {}); ph = bt.get("phase", {})
+        def phs(mk):
+            d = (ph.get(mk) or {}).get("ew") or {}
+            return " · ".join(f"{k} {v['fwd3']:+.1f}%({v['hit']:.0%})" for k, v in sorted(d.items(), key=lambda kv: -kv[1]["fwd3"]))
+        return (f"<div style='overflow-x:auto'><table class='scr'><thead><tr><th style='text-align:left'>신호 → 다음 3M</th><th style='text-align:left'>KR ({bt['n_dates']}개월 · n≈{bt['by_market']['KR'].get('RS3_f3',{}).get('n_avg','—')})</th><th style='text-align:left'>US (n≈{bt['by_market']['US'].get('RS3_f3',{}).get('n_avg','—')})</th></tr></thead><tbody>{rows_}</tbody></table></div>"
+                f"<div style='margin-top:10px;font-size:.88rem;color:var(--ink-2);line-height:1.8'>"
+                f"· <b>레짐</b> — 3M RS→다음 3M IC: KR 지수 상승기 {rg.get('KR',{}).get('up',{}).get('ic_mean')}({rg.get('KR',{}).get('up',{}).get('months')}m) / 하락기 {rg.get('KR',{}).get('down',{}).get('ic_mean')}({rg.get('KR',{}).get('down',{}).get('months')}m) · US 상승기 {rg.get('US',{}).get('up',{}).get('ic_mean')} / 하락기 {rg.get('US',{}).get('down',{}).get('ic_mean')} → 지수 3M&lt;0 이면 P 가중 ×0.5<br>"
+                f"· <b>섹터 ETF 모멘텀</b>(생존 편향 없음) → 다음 3M IC: KR 3M {et.get('KR',{}).get('3M',{}).get('ic_mean')} · 6M {et.get('KR',{}).get('6M',{}).get('ic_mean')} / US 3M {et.get('US',{}).get('3M',{}).get('ic_mean')} · 6M {et.get('US',{}).get('6M',{}).get('ic_mean')} → KR만 P에 6점<br>"
+                f"· <b>섹터 국면(동일가중 대비 · 다음 3M)</b> KR: {phs('KR')}<br>&nbsp;&nbsp;US: {phs('US')} → <b>점수에서 뺐다</b>. KR은 추세 시장(어깨가 초기보다 낫다), US는 정보 없음. 표의 국면 열은 서술일 뿐이다.<br>"
+                f"· 재무 QoQ(분기말+60일 시점 · KR 3분기): ΔOPM QoQ IC +0.04·+0.04·+0.19 — 유일하게 셋 다 양. 선행 렌즈·게이트의 근거.<br>"
+                f"· ⚠ 표본 = 우리 유니버스(생존 편향: 지금 추적하는 종목은 이미 오른 종목이 많다). ETF 결과가 편향 없는 대조군. 정본 <code>intake/files/{bt_path[-1]}</code> · 명령 <code>portfolio/data/screen_backtest.py</code></div>")
     desc = f"추적 {len(R)}종목(KR {len(kr)}·US {len(us)})을 주도·선행 두 렌즈로 채점. 판단이 아니라 후보를 좁히는 도구 — 가격이 확인한 것과 이익이 도는데 가격이 아직인 것을 따로 본다."
     title = "주도주 스크린 — 추적 유니버스 두 렌즈 채점표"
     url = "https://ourprochoi-web.github.io/stock-research/research/leader_screen.html"
@@ -532,7 +608,7 @@ def render_html(out, path_html):
 <div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎이 표는 무엇인가 · {e(out['asof'])} <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 정본 <code>intake/files/leader_screen_{e(out['asof'])}.json</code> · 명령 <code>portfolio/data/leader_screen.py</code> · 설계 <code>docs/leader_screen_design.md</code></span></div>
 <b style="font-size:1.05em">한 문장 — <u>돈이 지금 어디로 가고 있나(주도)와 어디로 갈 준비가 됐나(선행)를 따로 센다. 둘 다 높으면 확인된 주도주, 주도↓선행↑이면 「아직」, 둘 다 낮으면 이 도구 밖(방어주·턴어라운드 전)이다.</u></b><br>
 <div class="lens">
-<div><b style="color:var(--accent)">주도(Leader) 100</b> · <b style="color:var(--ink-2)">중립</b> = G·Q·E를 <u>섹터 내</u> 백분위로 다시 센 총점(섹터 n≥4) — AI 섹터가 성장·마진 백분위를 독식하는 편향을 뺀 값. 브로드닝은 이 열로 본다.<br> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
+<div><b style="color:var(--accent)">주도(Leader) 100</b> · <b style="color:var(--ink-2)">중립</b> = G·Q·E를 <u>섹터 내</u> 백분위로 다시 센 총점(섹터 n≥4) — AI 섹터가 성장·마진 백분위를 독식하는 편향을 뺀 값. 브로드닝은 이 열로 본다.<br><b>v4 가격 축(P 30 · 백테스트 IC 가중)</b> — KR: 52주 고점 근접도 12 · 3M RS 6 · 변동성조정 6M 4 · 12M RS 2 · 섹터 ETF 3M 모멘텀 6 / US: 변동성조정 6M 10 · 6-1 모멘텀 8 · 6M RS 6 · 1M 6. <b>레짐</b>: 지수 3M&lt;0 이면 P ×0.5(지금 KR {e(out.get('regime_factor',{}).get('KR'))} · US {e(out.get('regime_factor',{}).get('US'))}).<br> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
 <div><b style="color:#60a5fa">선행(Early) 100</b> — 매출 QoQ 개선 연속 20 · OPM QoQ 20 · 추정치 상향 1M 20 · 52주 고점 대비 낙폭 15(클수록 기회) · 가격 안정화 15(1M ≥ −5인데 RS3 &lt; 0) · 질 10. <b>격자</b>: A 높성장×강가격 · B 높성장×약가격(게이트: ΔOPM≥0 &amp; 매출 YoY&gt;0 = 눌림목, 아니면 탈락*) · C 낮성장×강가격 · D 나머지.</div>
 </div>
 <div style="margin-top:12px;font-size:.85rem;color:var(--ink-2)">⚠ 한계 — KR 섹터 코드(네이버 278)가 메모리·소부장을 한 통에 넣는다 · US 52주 고점 없음(최근 낙폭 대체) · 추정치 변화는 스냅샷이 쌓인 종목만 · 반증 병기는 entities 등록 종목만 · 승률은 6개월 뒤 격자 이동으로 잰다. ● 판단 보유 ○ 판단 0편 = 다음 페이퍼 후보.</div>
@@ -558,7 +634,9 @@ def render_html(out, path_html):
 <section id="method" class="blk" style="padding-top:0"><div class="wrap">
 <div class="sec-head"><div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>방법 · 판정</div><h2 class="sec-title">이 표가 틀렸음을 보여줄 것</h2></div>
 <div style="padding:16px 20px;border-left:4px solid #3b82f6;background:rgba(59,130,246,.05);line-height:1.9;font-size:.95rem">
-· <b>승률</b> — 판정 이벤트마다 재실행해(FOMC·정상회담·실적·지수 ±3% 일 · 월 1회는 하한) A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
+<b style="color:#60a5fa">▎36개월 백테스트(v4의 근거 · 2026-09-15)</b> — 가격 축은 여기서 나온 IC 대로 짰다. KR은 52주 고점 근접도가 압도적(t 4.4 · 79% 양), US는 변동성조정 6M·6-1 모멘텀. 1M 낙폭 가드는 뺐다.
+{bt_table()}
+<br>· <b>승률</b> — 판정 이벤트마다 재실행해(FOMC·정상회담·실적·지수 ±3% 일 · 월 1회는 하한) A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
 · <b>게이트</b> — 「탈락 후보」로 찍힌 종목이 다음 분기 OPM을 회복하면 게이트가 SBC·일회성에 속은 것이다(Credo가 첫 시험).<br>
 · <b>선행 렌즈</b> — 선행 상위 10의 이후 3M 상대수익률이 주도 상위 10보다 낮으면 「발바닥」은 도구로 못 잡는 것이다.<br>
 · 계보 — 성상현(ABP) 09-15 이효석아카데미 · 09-10 VCP 백테스트(가격만 본 실패) · 매니저 7종목 대조(r-20260915-31).
@@ -613,9 +691,9 @@ def main(argv):
     sectors = load_sectors(allrec)
     prev, prev_rev = load_prev_prices(30)
     flags = load_flags()
-    rows = score([compute(n, r, fin.get(n), bench, sectors.get(n), prev, flags) for n, r in allrec.items()])
+    rows = score([compute(n, r, fin.get(n), bench, sectors.get(n), prev, flags) for n, r in allrec.items()], bench)
     out = {"asof": day, "prices_asof": P.get("updated"), "bench": bench, "prev_rev": prev_rev, "n": len(rows), "rows": rows,
-           "weights": {"G": 30, "P": 30, "Q": 20, "E": 20}, "version": "v2",
+           "weights": {"G": 30, "P": 30, "Q": 20, "E": 20}, "version": "v4", "regime_factor": {"KR": 0.5 if bench["KR"]["3M"] < 0 else 1.0, "US": 0.5 if bench["US"]["3M"] < 0 else 1.0},
            "note": "판단 아님 — 후보. 점수는 시장별 백분위. E는 KR/US proxy가 다르다. 섹터 캡 3/10"}
     io.open(os.path.join(ROOT, "intake", "files", f"leader_screen_{day}.json"), "w", encoding="utf-8").write(json.dumps(out, ensure_ascii=False, indent=1))
     # 섹터 흐름표(ETF) — 브로드닝은 종목이 아니라 섹터 ETF에서 먼저 보인다
@@ -633,10 +711,12 @@ def main(argv):
         grp = sorted([x for x in rows if x["us"] == us and x["total"] is not None], key=lambda x: -x["total"])
         from collections import Counter
         print(f"\n═══ {lab} · {len(grp)}종목 · 벤치 3M {bench[lab]['3M']:+.1f} 6M {bench[lab]['6M']:+.1f} · 칸 {dict(Counter(x['cell'] for x in grp))} · 리비전 기준 {prev_rev}")
-        print(f"{'종목':<16}{'총점':>6}{'중립':>5}{'G':>5}{'P':>5}{'Q':>5}{'E':>5}  칸  CAGR3  qYoY  ΔOPM   RS3  RS3s  Δ추정  판단 섹터")
+        rf = grp[0].get("regime_factor", 1.0) if grp else 1.0
+        print(f"  레짐: 지수 3M {bench[lab]['3M']:+.1f}% → P 가중 ×{rf}")
+        print(f"{'종목':<16}{'총점':>6}{'중립':>5}{'G':>5}{'P':>5}{'Q':>5}{'E':>5}  칸  CAGR3  qYoY  ΔOPM   RS3  HI52 VolAdj6 섹터모  Δ추정  판단 섹터")
         f = lambda v, w=6, d=0: (f"{v:{w}.{d}f}" if isinstance(v, (int, float)) else f"{'—':>{w}}")
         for x in grp[:top]:
-            print(f"{x['name'][:15]:<16}{x['total']:>6.1f}{f(x.get('total_n'),5)}{x['G']:>5.0f}{x['P']:>5.0f}{x['Q']:>5.0f}{x['E']:>5.0f}  {x['cell']}  {f(x['cagr3'],6)}{f(x['rev_yoy_q'],6)}{f(x['d_opm'],6,1)}{f(x['rs3'],6)}{f(x['rs3_sector'],6)}{f(x['rev1m'],6,1)}  {'●' if x['judged'] else '○'}  {str(x.get('sector') or '')[:14]}{' SBC' if x.get('sbc_pen') else ''}{' ' + x.get('gate','') if x.get('gate') else ''}")
+            print(f"{x['name'][:15]:<16}{x['total']:>6.1f}{f(x.get('total_n'),5)}{x['G']:>5.0f}{x['P']:>5.0f}{x['Q']:>5.0f}{x['E']:>5.0f}  {x['cell']}  {f(x['cagr3'],6)}{f(x['rev_yoy_q'],6)}{f(x['d_opm'],6,1)}{f(x['rs3'],6)}{f(x.get('hi52'),6)}{f(x.get('voladj6'),8,2)}{f(x.get('sector_mom'),7)}{f(x['rev1m'],6,1)}  {'●' if x['judged'] else '○'}  {str(x.get('sector') or '')[:14]}{' SBC' if x.get('sbc_pen') else ''}{' ' + x.get('gate','') if x.get('gate') else ''}")
         # 섹터 캡 3/10 균등비중 후보
         picked, cnt = [], {}
         for x in grp:

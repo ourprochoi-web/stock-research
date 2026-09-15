@@ -182,3 +182,8 @@ EOF
 #   --diff 로 직전 파일과 격자 이동을 뽑아 routing 에 남긴다 · --html 로 페이지 재생성
 PYTHONIOENCODING=utf-8 python3 portfolio/data/leader_screen.py --top 15 --html --diff intake/files/leader_screen_<직전날짜>.json
 ```
+
+```
+# 스크린 팩터 재검증(분기 1회 · 일봉 캐시 갱신 --fetch) — IC 표가 페이지 방법 섹션에 들어간다
+PYTHONIOENCODING=utf-8 python3 portfolio/data/screen_backtest.py --fetch --months 36
+```
