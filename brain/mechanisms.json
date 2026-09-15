@@ -174,6 +174,10 @@
   "bill_issuance": {
    "label": "단기채 발행",
    "kind": "policy"
+  },
+  "bigtech_fcf": {
+   "label": "빅테크 FCF(캐펙스 지출자)",
+   "kind": "company"
   }
  },
  "edges": [
@@ -723,6 +727,23 @@
     "national-strategy/ns_bigtech_capex_roi.html#T2"
    ],
    "note": "하이퍼스케일러 부채 $2,250억·그림자 차입의 대주 쪽. 은행 확장이 캐펙스 자금의 한 다리"
+  },
+  {
+   "id": "m-37",
+   "from": "pacing_narrative",
+   "to": "bigtech_fcf",
+   "sign": "+",
+   "lag": "일(가격) · 분기(실적)",
+   "strength": "중",
+   "grade": "①(09-14 가격) ③(논리)",
+   "evidence": [
+    "r-20260915-25",
+    "r-20260915-16"
+   ],
+   "theses": [
+    "national-strategy/ns_bigtech_capex_roi.html#T1"
+   ],
+   "note": "감속 = 지출자에겐 FCF 개선, 수령자(칩·장비·SBG)에겐 매출 감소. 09-14: MSFT +1.6·GOOGL +2·META +1.4 vs SOX −5.8·소프트뱅크 −10.7. m-16(pacing→ai_capex ?)의 <배분> 엣지"
   }
  ]
 }
