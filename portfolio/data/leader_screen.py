@@ -101,17 +101,29 @@ def load_universe():
     P = json.load(io.open(PRICES, encoding="utf-8"))
     import update_prices as up  # 코드 매핑
     kr = {}
-    for name, code in {**up.TICKERS, **up.WATCH}.items():
+    etf_kr = getattr(up, "WATCH_KR_ETF", {})
+    for name, code in {**up.TICKERS, **up.WATCH, **etf_kr}.items():
         if name in P["prices"]:
             kr[name] = {"code": code, "us": False, "price": P["prices"][name], "ret": P["returns"].get(name, {}),
-                        "fund": P["fundamentals"].get(name, {}), "flow": P["flows"].get(name, {})}
+                        "fund": P["fundamentals"].get(name, {}), "flow": P["flows"].get(name, {}), "etf": name in etf_kr}
+        elif name in etf_kr:  # 섹터 ETF는 봇을 기다리지 않고 받는다(판단 없음 · 흐름표 전용)
+            d = up.fetch_price(code)
+            if d:
+                try:
+                    kr[name] = {"code": code, "us": False, "price": int(str(d["closePrice"]).replace(",", "")), "ret": up.fetch_returns(code) or {}, "fund": {}, "flow": {}, "etf": True}
+                    print(f"  + {name} ({code}) ETF 즉석 수집")
+                except (KeyError, ValueError):
+                    pass
     usd = {}
     for name, rec in P["us"].items():
         usd[name] = {"code": rec["symbol"], "us": True, "price": rec.get("price"), "ret": P["returns"].get(name, {}),
                      "mcapB": rec.get("mcapB"), "tp": num(rec.get("목표주가")), "rating": num(rec.get("투자의견")),
                      "ebit_yoy": rec.get("EBIT_YoY"), "opm_now": rec.get("OPM")}
     # v2: 추적(WATCH_US)에는 있는데 prices.json 에 아직 없는 종목 — 봇을 기다리지 않고 받는다
-    for name, sym in up.WATCH_US.items():
+    etf_us = getattr(up, "WATCH_US_ETF", {})
+    for name in list(usd):
+        usd[name]["etf"] = name in etf_us
+    for name, sym in {**up.WATCH_US, **etf_us}.items():
         if name in usd:
             continue
         d = up.fetch_us(sym)
@@ -123,7 +135,7 @@ def load_universe():
             continue
         fd = up.fetch_us_fundamentals(sym) or {}
         usd[name] = {"code": sym, "us": True, "price": px, "ret": up.fetch_returns(sym, foreign=True) or {},
-                     "tp": num(fd.get("목표주가")), "rating": num(fd.get("투자의견")), "ebit_yoy": fd.get("EBIT_YoY"), "opm_now": fd.get("OPM"), "fresh": True}
+                     "tp": num(fd.get("목표주가")), "rating": num(fd.get("투자의견")), "ebit_yoy": fd.get("EBIT_YoY"), "opm_now": fd.get("OPM"), "fresh": True, "etf": name in etf_us}
         print(f"  + {name} ({sym}) 즉석 수집")
     return P, kr, usd
 
@@ -327,7 +339,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
         if code_key in ocf and ocf[code_key] is not None and ocf[code_key] < 0.7:
             ocf_warn = ocf[code_key]
     return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
-            "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52,
+            "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52, "etf": bool(rec.get("etf")),
             "judged": bool(flags and (name in flags[2] or rec["code"].split(".")[0] in flags[2] or name in flags[3])),
             "falsifier": (flags[4].get(rec["code"].split(".")[0]) if flags and len(flags) > 4 else None),
             "cagr3": g_cagr, "rev_yoy_q": yoy, "fwd": fwd, "opm": opm_now, "d_opm": d_opm,
@@ -374,6 +386,18 @@ def score(rows):
             e_stab = 15.0 if (m1v is not None and rs3v is not None and m1v >= -5 and rs3v < 0) else (7.0 if (m1v is not None and m1v >= -5) else 0.0)
             e_q = pr("opm", 10)
             x["early"] = round(e_qoq + e_opm + e_rev + e_dd + e_stab + e_q, 1)
+            # 섹터 중립 총점 — AI 섹터가 G·Q 백분위를 독식하는 편향을 뺀 값(브로드닝용)
+            peers = [y for y in grp if y.get("sector_key") == x.get("sector_key") and y.get("has_fin")]
+            if len(peers) >= 4:
+                def prn(k, w):
+                    v = pct_rank([y.get(k) for y in peers], x.get(k))
+                    return (v if v is not None else 50.0) * w / 100
+                gn = prn("cagr3", 12) + prn("rev_yoy_q", 12) + prn("fwd", 6)
+                qn = prn("opm", 7) + prn("d_opm", 7) + prn("roe", 6) - x.get("sbc_pen", 0)
+                en = prn("e1", 6) + prn("rev1m", 8) + prn("e2", 6)
+                x["total_n"] = round(gn + p + max(qn, 0) + en, 1)  # P(가격)는 시장 기준 그대로
+            else:
+                x["total_n"] = None
             hg, sp = x["G"] >= 50, x["P"] >= 50
             x["cell"] = "A" if hg and sp else "B" if hg else "C" if sp else "D"
             if not x.get("has_fin"):  # ETF·재무 없음 — 격자 밖(가격만으로 A가 되면 안 된다)
@@ -397,7 +421,7 @@ def render_html(out, path_html):
         col = "var(--bull)" if (signed and v > 0) else ("var(--bear)" if (signed and v < 0) else "inherit")
         return f"<td class='tnum mono' style='color:{col}'>{v:+.{d}f}</td>" if signed else f"<td class='tnum mono'>{v:.{d}f}</td>"
     def table(rows, lab):
-        head = ("<tr><th>#</th><th>종목</th><th>주도</th><th>선행</th><th>칸</th><th>G</th><th>P</th><th>Q</th><th>E</th>"
+        head = ("<tr><th>#</th><th>종목</th><th>주도</th><th>중립</th><th>선행</th><th>칸</th><th>G</th><th>P</th><th>Q</th><th>E</th>"
                 "<th>CAGR3</th><th>qYoY</th><th>ΔOPM</th><th>OPM qoq</th><th>RS3</th><th>RS3s</th><th>1M</th><th>Δ추정</th><th>판단</th><th>섹터</th><th>게이트·반증</th></tr>")
         body = []
         for i, x in enumerate(rows, 1):
@@ -405,7 +429,7 @@ def render_html(out, path_html):
             gate = x.get("gate", "") or ""
             fal = x.get("falsifier") or ""
             body.append(f"<tr><td class='mono' style='color:var(--ink-3)'>{i}</td><td><b>{e(x['name'])}</b><br><span class='mono' style='font-size:.68rem;color:var(--ink-3)'>{e(x['code'])}</span></td>"
-                        f"<td class='tnum mono'><b>{x['total']:.0f}</b></td><td class='tnum mono'>{x['early']:.0f}</td><td class='mono' style='color:{cc};font-weight:800'>{e(x['cell'])}{'*' if gate.startswith('탈락') else ''}</td>"
+                        f"<td class='tnum mono'><b>{x['total']:.0f}</b></td><td class='tnum mono' style='color:var(--ink-2)'>{(f"{x['total_n']:.0f}" if isinstance(x.get('total_n'),(int,float)) else '—')}</td><td class='tnum mono'>{x['early']:.0f}</td><td class='mono' style='color:{cc};font-weight:800'>{e(x['cell'])}{'*' if gate.startswith('탈락') else ''}</td>"
                         + cell(x['G']) + cell(x['P']) + cell(x['Q']) + cell(x['E']) + cell(x.get('cagr3'), 0, True) + cell(x.get('rev_yoy_q'), 0, True) + cell(x.get('d_opm'), 1, True)
                         + cell(x.get('opm_qoq'), 1, True) + cell(x.get('rs3'), 0, True) + cell(x.get('rs3_sector'), 0, True) + cell(x.get('m1'), 0, True) + cell(x.get('rev1m'), 1, True)
                         + f"<td>{'●' if x['judged'] else '○'}</td><td style='font-size:.72rem;color:var(--ink-2)'>{e(str(x.get('sector') or '')[:18])}{' <b style=color:var(--bear)>SBC</b>' if x.get('sbc_pen') else ''}</td>"
@@ -417,6 +441,12 @@ def render_html(out, path_html):
     from collections import Counter
     ck, cu = Counter(x["cell"] for x in kr), Counter(x["cell"] for x in us)
     drop = [x["name"] for x in R if (x.get("gate") or "").startswith("탈락")]
+    def flow_table(us_flag, lab):
+        bmk = out["bench"][lab]
+        etfs = [x for x in out["rows"] if x["us"] == us_flag and x.get("etf")]
+        etfs.sort(key=lambda x: -((x.get("m3") or 0) - bmk["3M"]))
+        rows_ = "".join(f"<tr><td style='text-align:left'><b>{e(x['name'])}</b></td>" + cell((x.get('m3') or 0) - bmk['3M'], 1, True) + cell((x.get('m1') or 0) - bmk['1M'], 1, True) + cell((x.get('m6') or 0) - bmk['6M'], 1, True) + cell(x.get('m3'), 1, True) + "</tr>" for x in etfs)
+        return f"<div style='overflow-x:auto'><table class='scr'><thead><tr><th style='text-align:left'>{lab} 섹터 ETF</th><th>RS 3M</th><th>RS 1M</th><th>RS 6M</th><th>절대 3M</th></tr></thead><tbody>{rows_}</tbody></table></div>"
     early_kr = sorted([x for x in kr if x["P"] < 50], key=lambda x: -x["early"])[:10]
     early_us = sorted([x for x in us if x["P"] < 50], key=lambda x: -x["early"])[:10]
     b = out["bench"]
@@ -448,9 +478,9 @@ def render_html(out, path_html):
   table.scr{{width:100%;border-collapse:collapse;font-size:.8rem;white-space:nowrap}}
   .hero-stats{{grid-template-columns:repeat(4,1fr)}}
   table.scr th{{background:var(--bg-2);color:var(--ink-2);font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);cursor:pointer}}
-  table.scr th:nth-child(2),table.scr th:nth-child(5),table.scr th:nth-child(18),table.scr th:nth-child(19),table.scr th:nth-child(20){{text-align:left}}
+  table.scr th:nth-child(2),table.scr th:nth-child(6),table.scr th:nth-child(19),table.scr th:nth-child(20),table.scr th:nth-child(21){{text-align:left}}
   table.scr td{{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}}
-  table.scr td:nth-child(2),table.scr td:nth-child(5),table.scr td:nth-child(18),table.scr td:nth-child(19),table.scr td:nth-child(20){{text-align:left}}
+  table.scr td:nth-child(2),table.scr td:nth-child(6),table.scr td:nth-child(19),table.scr td:nth-child(20),table.scr td:nth-child(21){{text-align:left}}
   table.scr tr:hover td{{background:var(--surface)}}
   .lens{{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}}
   .lens>div{{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:.92rem;line-height:1.7}}
@@ -460,7 +490,7 @@ def render_html(out, path_html):
 <body>
 <nav><div class="wrap nav-in">
   <a href="../index.html" class="brand"><span class="dot"></span>ourprochoi Research</a>
-  <div class="nav-links"><a href="#now">▎이 표는 무엇인가</a><a href="#kr">KR {len(kr)}</a><a href="#us">US {len(us)}</a><a href="#early">선행 렌즈</a><a href="#method">방법</a></div>
+  <div class="nav-links"><a href="#now">▎이 표는 무엇인가</a><a href="#flow">섹터 흐름</a><a href="#early">선행 렌즈</a><a href="#kr">KR {len(kr)}</a><a href="#us">US {len(us)}</a><a href="#method">방법</a></div>
 </div></nav>
 <header class="hero"><div class="hero-bg"><div class="glow-a"></div><div class="glow-b"></div><div class="hero-grid"></div></div>
 <div class="wrap hero-in">
@@ -479,11 +509,15 @@ def render_html(out, path_html):
 <div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎이 표는 무엇인가 · {e(out['asof'])} <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 정본 <code>intake/files/leader_screen_{e(out['asof'])}.json</code> · 명령 <code>portfolio/data/leader_screen.py</code> · 설계 <code>docs/leader_screen_design.md</code></span></div>
 <b style="font-size:1.05em">한 문장 — <u>돈이 지금 어디로 가고 있나(주도)와 어디로 갈 준비가 됐나(선행)를 따로 센다. 둘 다 높으면 확인된 주도주, 주도↓선행↑이면 「아직」, 둘 다 낮으면 이 도구 밖(방어주·턴어라운드 전)이다.</u></b><br>
 <div class="lens">
-<div><b style="color:var(--accent)">주도(Leader) 100</b> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
+<div><b style="color:var(--accent)">주도(Leader) 100</b> · <b style="color:var(--ink-2)">중립</b> = G·Q·E를 <u>섹터 내</u> 백분위로 다시 센 총점(섹터 n≥4) — AI 섹터가 성장·마진 백분위를 독식하는 편향을 뺀 값. 브로드닝은 이 열로 본다.<br> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
 <div><b style="color:#60a5fa">선행(Early) 100</b> — 매출 QoQ 개선 연속 20 · OPM QoQ 20 · 추정치 상향 1M 20 · 52주 고점 대비 낙폭 15(클수록 기회) · 가격 안정화 15(1M ≥ −5인데 RS3 &lt; 0) · 질 10. <b>격자</b>: A 높성장×강가격 · B 높성장×약가격(게이트: ΔOPM≥0 &amp; 매출 YoY&gt;0 = 눌림목, 아니면 탈락*) · C 낮성장×강가격 · D 나머지.</div>
 </div>
 <div style="margin-top:12px;font-size:.85rem;color:var(--ink-2)">⚠ 한계 — KR 섹터 코드(네이버 278)가 메모리·소부장을 한 통에 넣는다 · US 52주 고점 없음(최근 낙폭 대체) · 추정치 변화는 스냅샷이 쌓인 종목만 · 반증 병기는 entities 등록 종목만 · 승률은 6개월 뒤 격자 이동으로 잰다. ● 판단 보유 ○ 판단 0편 = 다음 페이퍼 후보.</div>
 </div></div></section>
+<section id="flow" class="blk" style="padding-top:0"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">00</span><span class="ln"></span>섹터 흐름 — 브로드닝은 종목이 아니라 섹터 ETF에서 먼저 보인다</div><h2 class="sec-title">돈이 어느 섹터로 가고 있나</h2><p class="sec-lead">유니버스가 AI 인접(KR 55% · US 70%)이라 종목 스크린으로는 AI 밖 회전을 못 본다. 섹터 ETF 36개는 판단 없이도 흐름을 준다 — 지수 대비 상대강도(RS)로 읽는다. 여기서 켜진 섹터가 다음 유니버스 확장 대상이다.</p></div>
+<div class="lens">{flow_table(False,'KR')}{flow_table(True,'US')}</div>
+</div></section>
 <section id="early" class="blk" style="padding-top:0"><div class="wrap">
 <div class="sec-head"><div class="sec-eyebrow"><span class="idx">00</span><span class="ln"></span>선행 렌즈 — 가격 미확인(P&lt;50)인데 이익·기대가 도는 것</div><h2 class="sec-title">발바닥에서 무릎 사이</h2></div>
 <div class="lens">
@@ -537,6 +571,9 @@ def main(argv):
     fin = {}
     allrec = {**kr, **usd}
     for i, (name, rec) in enumerate(allrec.items()):
+        if rec.get("etf"):
+            fin[name] = None
+            continue
         fp = os.path.join(fdir, f"{rec['code']}.json")
         if os.path.exists(fp):
             fin[name] = json.load(io.open(fp, encoding="utf-8"))
@@ -558,14 +595,24 @@ def main(argv):
            "weights": {"G": 30, "P": 30, "Q": 20, "E": 20}, "version": "v2",
            "note": "판단 아님 — 후보. 점수는 시장별 백분위. E는 KR/US proxy가 다르다. 섹터 캡 3/10"}
     io.open(os.path.join(ROOT, "intake", "files", f"leader_screen_{day}.json"), "w", encoding="utf-8").write(json.dumps(out, ensure_ascii=False, indent=1))
+    # 섹터 흐름표(ETF) — 브로드닝은 종목이 아니라 섹터 ETF에서 먼저 보인다
+    for us, lab in ((False, "KR"), (True, "US")):
+        etfs = [x for x in rows if x["us"] == us and x.get("etf")]
+        if etfs:
+            bmk = bench[lab]
+            etfs.sort(key=lambda x: -((x.get("m3") or 0) - bmk["3M"]))
+            print(f"\n═══ {lab} 섹터 ETF 흐름 · 지수 대비 3M(1M · 6M) · {len(etfs)}개")
+            for x in etfs:
+                r3 = (x.get("m3") or 0) - bmk["3M"]; r1 = (x.get("m1") or 0) - bmk["1M"]; r6 = (x.get("m6") or 0) - bmk["6M"]
+                print(f"  {x['name'][:18]:<19} RS3 {r3:+6.1f}  RS1 {r1:+6.1f}  RS6 {r6:+6.1f}   절대 3M {x.get('m3') if x.get('m3') is not None else '—'}")
     for us, lab in ((False, "KR"), (True, "US")):
         grp = sorted([x for x in rows if x["us"] == us and x["total"] is not None], key=lambda x: -x["total"])
         from collections import Counter
         print(f"\n═══ {lab} · {len(grp)}종목 · 벤치 3M {bench[lab]['3M']:+.1f} 6M {bench[lab]['6M']:+.1f} · 칸 {dict(Counter(x['cell'] for x in grp))} · 리비전 기준 {prev_rev}")
-        print(f"{'종목':<16}{'총점':>6}{'G':>5}{'P':>5}{'Q':>5}{'E':>5}  칸  CAGR3  qYoY  ΔOPM   RS3  RS3s  Δ추정  판단 섹터")
+        print(f"{'종목':<16}{'총점':>6}{'중립':>5}{'G':>5}{'P':>5}{'Q':>5}{'E':>5}  칸  CAGR3  qYoY  ΔOPM   RS3  RS3s  Δ추정  판단 섹터")
         f = lambda v, w=6, d=0: (f"{v:{w}.{d}f}" if isinstance(v, (int, float)) else f"{'—':>{w}}")
         for x in grp[:top]:
-            print(f"{x['name'][:15]:<16}{x['total']:>6.1f}{x['G']:>5.0f}{x['P']:>5.0f}{x['Q']:>5.0f}{x['E']:>5.0f}  {x['cell']}  {f(x['cagr3'],6)}{f(x['rev_yoy_q'],6)}{f(x['d_opm'],6,1)}{f(x['rs3'],6)}{f(x['rs3_sector'],6)}{f(x['rev1m'],6,1)}  {'●' if x['judged'] else '○'}  {str(x.get('sector') or '')[:14]}{' SBC' if x.get('sbc_pen') else ''}{' ' + x.get('gate','') if x.get('gate') else ''}")
+            print(f"{x['name'][:15]:<16}{x['total']:>6.1f}{f(x.get('total_n'),5)}{x['G']:>5.0f}{x['P']:>5.0f}{x['Q']:>5.0f}{x['E']:>5.0f}  {x['cell']}  {f(x['cagr3'],6)}{f(x['rev_yoy_q'],6)}{f(x['d_opm'],6,1)}{f(x['rs3'],6)}{f(x['rs3_sector'],6)}{f(x['rev1m'],6,1)}  {'●' if x['judged'] else '○'}  {str(x.get('sector') or '')[:14]}{' SBC' if x.get('sbc_pen') else ''}{' ' + x.get('gate','') if x.get('gate') else ''}")
         # 섹터 캡 3/10 균등비중 후보
         picked, cnt = [], {}
         for x in grp:

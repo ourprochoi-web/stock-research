@@ -211,6 +211,20 @@ WATCH = {
 # 해외 종목 — 리서치 페이지에서 배수·기준가를 인용하는 종목.
 # 2026-08-08 추가. 엔드포인트가 국내(m.stock)와 다르다: api.stock.naver.com/stock/{SYM}/basic
 # 접미사는 NASDAQ=.O, NYSE=무접미사 또는 .K (심볼별로 다르므로 검증된 값만 넣는다)
+# 2026-09-15 추가 — 브로드닝 관측용 섹터 ETF(성상현 「탑다운: 섹터 ETF로 돈 흐름 먼저」). 판단 없음 · 격자 밖 · 섹터 흐름표에만.
+#   유니버스가 AI 인접 KR 55%·US 70%라 종목 스크린으로는 AI 밖 회전을 못 본다(r-20260915-34). ETF는 판단 없이도 흐름을 준다.
+WATCH_KR_ETF = {
+    "KODEX 은행": "091170", "KODEX 증권": "102970", "KODEX 보험": "140700", "KODEX 자동차": "091180",
+    "TIGER 화장품": "228790", "KODEX 건설": "117700", "KODEX 철강": "117680", "TIGER 200 에너지화학": "139250",
+    "TIGER 소프트웨어": "157490", "TIGER 헬스케어": "143860", "KODEX 반도체": "091160", "SOL 조선TOP3플러스": "466920",
+    "TIGER 미디어컨텐츠": "228810", "TIGER 여행레저": "228800", "TIGER 200 중공업": "139230", "TIGER 200 생활소비재": "227560",
+    "KODEX 2차전지산업": "305720", "PLUS K방산": "449450",
+}
+WATCH_US_ETF = {
+    "XLF 금융": "XLF", "XLI 산업재": "XLI", "XLE 에너지": "XLE", "XLV 헬스케어": "XLV", "XLP 필수소비": "XLP", "XLY 경기소비": "XLY",
+    "XLU 유틸리티": "XLU", "XLB 소재": "XLB", "XLC 커뮤니케이션": "XLC", "XLK 기술": "XLK", "SMH 반도체": "SMH.O", "IGV 소프트웨어": "IGV",
+    "KRE 지역은행": "KRE", "KBE 은행": "KBE", "XHB 주택건설": "XHB", "ITA 항공방산": "ITA", "XBI 바이오": "XBI", "IYT 운송": "IYT",
+}
 WATCH_US = {
     # 2026-09-10 추가 — 「에너지 독수리 5형제」(VG·ET·FANG·LNG·TRGP) 중 추적 밖이던 셋.
     # LNG(Cheniere)·TRGP(Targa)는 이미 있었고 ET·FANG은 아카이브 언급 0편이었다.
@@ -776,7 +790,7 @@ def main():
     updated = ""
     updated_time = ""
 
-    for name, code in {**TICKERS, **WATCH}.items():
+    for name, code in {**TICKERS, **WATCH, **WATCH_KR_ETF}.items():
         data = fetch_price(code)
         if not data:
             continue
@@ -812,7 +826,7 @@ def main():
 
     # 해외 종목 — 배수 검증용 (가격 + 상장주식수로 시총까지 산출)
     us = {}
-    for name, sym in WATCH_US.items():
+    for name, sym in {**WATCH_US, **WATCH_US_ETF}.items():
         d = fetch_us(sym)
         if not d:
             continue
