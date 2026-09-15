@@ -428,8 +428,9 @@ def render_html(out, path_html):
             cc = {"A": "var(--bull)", "B": "#f59e0b", "C": "#60a5fa", "D": "var(--ink-3)"}.get(x["cell"], "inherit")
             gate = x.get("gate", "") or ""
             fal = x.get("falsifier") or ""
+            tn = ("%.0f" % x["total_n"]) if isinstance(x.get("total_n"), (int, float)) else "—"
             body.append(f"<tr><td class='mono' style='color:var(--ink-3)'>{i}</td><td><b>{e(x['name'])}</b><br><span class='mono' style='font-size:.68rem;color:var(--ink-3)'>{e(x['code'])}</span></td>"
-                        f"<td class='tnum mono'><b>{x['total']:.0f}</b></td><td class='tnum mono' style='color:var(--ink-2)'>{(f"{x['total_n']:.0f}" if isinstance(x.get('total_n'),(int,float)) else '—')}</td><td class='tnum mono'>{x['early']:.0f}</td><td class='mono' style='color:{cc};font-weight:800'>{e(x['cell'])}{'*' if gate.startswith('탈락') else ''}</td>"
+                        f"<td class='tnum mono'><b>{x['total']:.0f}</b></td><td class='tnum mono' style='color:var(--ink-2)'>{tn}</td><td class='tnum mono'>{x['early']:.0f}</td><td class='mono' style='color:{cc};font-weight:800'>{e(x['cell'])}{'*' if gate.startswith('탈락') else ''}</td>"
                         + cell(x['G']) + cell(x['P']) + cell(x['Q']) + cell(x['E']) + cell(x.get('cagr3'), 0, True) + cell(x.get('rev_yoy_q'), 0, True) + cell(x.get('d_opm'), 1, True)
                         + cell(x.get('opm_qoq'), 1, True) + cell(x.get('rs3'), 0, True) + cell(x.get('rs3_sector'), 0, True) + cell(x.get('m1'), 0, True) + cell(x.get('rev1m'), 1, True)
                         + f"<td>{'●' if x['judged'] else '○'}</td><td style='font-size:.72rem;color:var(--ink-2)'>{e(str(x.get('sector') or '')[:18])}{' <b style=color:var(--bear)>SBC</b>' if x.get('sbc_pen') else ''}</td>"
