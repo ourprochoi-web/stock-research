@@ -5106,7 +5106,7 @@
   },
   "HOOD": {
    "name": "Robinhood Markets",
-   "intake": "c-20260916-04",
+   "intake": "c-20260916-05",
    "metrics": {
     "revenue_ttm": {
      "value": 4932,
@@ -5201,7 +5201,7 @@
      "grade": "①",
      "source": "SEC XBRL",
      "page": "payments/payments_company_robinhood.html",
-     "note": "TTM 7.1%"
+     "note": "TTM 7.1% · 2Q 105 중 CFO 교체 7 + 구조조정 7"
     },
     "buyback_ttm": {
      "value": 871,
@@ -5241,7 +5241,8 @@
      "den": "2.07B",
      "grade": "①",
      "source": "계산",
-     "page": "payments/payments_company_robinhood.html"
+     "page": "payments/payments_company_robinhood.html",
+     "note": "TTM 귀속 순이익에 일회성 129(세전) 포함 · 제외 시 ≈50배"
     },
     "gold_subs": {
      "value": 4.8,
@@ -5278,8 +5279,165 @@
      "grade": "③",
      "source": "naver consensus",
      "page": "payments/payments_company_robinhood.html"
+    },
+    "ni_q_gaap": {
+     "value": 573,
+     "unit": "$M",
+     "basis": "2Q26 순이익(비지배 포함) · 귀속 561 · 기타수익 135 = RVI 비연결 106 + 평가익 23",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "ni_q_underlying": {
+     "value": 457,
+     "unit": "$M",
+     "basis": "2Q26 귀속 순이익 561 − 일회성 129×(1−0.19)",
+     "asof": "2026-06-30",
+     "grade": "[역산]",
+     "source": "10-Q 기반 계산",
+     "page": "payments/payments_company_robinhood.html",
+     "note": "YoY +18% · 순이익률 35%"
+    },
+    "rate_sens_100bp": {
+     "value": 350,
+     "unit": "$M/yr",
+     "basis": "+100bp의 연 매출·순이익(세전) 효과 · 6/30 잔고 · 대칭",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q Item 3",
+     "page": "payments/payments_company_robinhood.html",
+     "note": "+50bp 175 · +150bp 525"
+    },
+    "margin_interest_q": {
+     "value": 215,
+     "unit": "$M",
+     "basis": "2Q26 · +89% · 순이자의 55%",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q Note 6",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "sec_lending_q": {
+     "value": 10,
+     "unit": "$M",
+     "basis": "2Q26 · −81% · 8월 순 −8",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q Note 6",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "margin_book_q": {
+     "value": 21.6,
+     "unit": "$B",
+     "basis": "2Q26 말 · +127% YoY",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 PR",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "cash": {
+     "value": 5362,
+     "unit": "$M",
+     "basis": "6/30 · 전환사채 순수취 포함",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q B/S",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "convertible": {
+     "value": 2200,
+     "unit": "$M",
+     "basis": "0% · 2029-10-01 만기 · 전환가 174.42 · 캡드콜 237.85 · 최대 20.8M주",
+     "asof": "2026-06-25",
+     "grade": "①",
+     "source": "8-K 06-25",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "credit_card_loans": {
+     "value": 1457,
+     "unit": "$M",
+     "basis": "6/30 · 12/31 1,040 · 충당금 104(7.1%) · FICO<690 24%",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q Note",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "provision_q": {
+     "value": 56,
+     "unit": "$M",
+     "basis": "2Q26 대손충당 · 전년 28",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "10-Q",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "opex_guide_2026": {
+     "value": 2725,
+     "unit": "$M",
+     "basis": "조정 영업비용+SBC 중간값(26.75~27.75억) · 4월 27~28.25억에서 하향",
+     "asof": "2026-07-29",
+     "grade": "①",
+     "source": "2Q26 PR",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "rif_2026_06": {
+     "value": 28,
+     "unit": "$M",
+     "basis": "인력 10% 감원 · 현금 20 + SBC 8",
+     "asof": "2026-06-16",
+     "grade": "①",
+     "source": "8-K Item 2.05",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "eps_2026e": {
+     "value": 2.54,
+     "unit": "$",
+     "basis": "컨센 24명 · 2027E 3.39(+34%) · 2026E 매출 52.0억",
+     "asof": "2026-09-16",
+     "grade": "③",
+     "source": "stockanalysis 컨센",
+     "page": "payments/payments_company_robinhood.html",
+     "note": "P/E 2026E 43.5 · 2027E 32.6 @ $110.45"
+    },
+    "crypto_share_tx_fy2024": {
+     "value": 38,
+     "unit": "%",
+     "basis": "FY2024 크립토 626 / 거래매출 1,647",
+     "asof": "2024-12-31",
+     "grade": "①",
+     "source": "10-K 2025",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "event_contracts_q2": {
+     "value": 13.6,
+     "unit": "B 계약",
+     "basis": "2Q26 · 계약당 매출 1.15¢",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 PR",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "adj_ebitda_margin_q": {
+     "value": 57,
+     "unit": "%",
+     "basis": "2Q26 741/1308 · 일회성 제외",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 PR 비GAAP",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "shares_out": {
+     "value": 899.1,
+     "unit": "M",
+     "basis": "Class A 790.6 + B 108.5 · 2026-07-23",
+     "asof": "2026-07-23",
+     "grade": "①",
+     "source": "10-Q 표지",
+     "page": "payments/payments_company_robinhood.html"
     }
-   }
+   },
+   "sec_files": "intake/files/sec/hood/ (10-K 2025 · 10-Q 1Q26·2Q26 · 8-K 03-24·06-16·06-23·06-25·07-29 · PR 4Q25·2Q26 · submissions.json)"
   }
  },
  "macro": {
