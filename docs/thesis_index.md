@@ -11,7 +11,7 @@
 
 | 판단 | 갱신 | 페이지 | 테제 |
 |---|---|---|---|
-| 2026.09.14 | 2026-09-14 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
+| 2026.09.14 ⚠ | 2026-09-15 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 | 2026-09-13 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
 | 2026.09.13 ⚠ | 2026-09-14 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 6 |
 | 2026.09.12 ⚠ | 2026-09-14 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
@@ -103,7 +103,7 @@
 
 ## 사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도
 
-`cybersecurity/cyber_ai_security.html` · 판단 2026.09.14 · 갱신 2026-09-14
+`cybersecurity/cyber_ai_security.html` · 판단 2026.09.14 · 갱신 2026-09-15
 
 **한 문장** — 「AI 보안이 다음 거대 시장」은 세 번 확인됐는데, 그 시장을 파는 6사 중 GAAP로 돈을 버는 건 Fortinet 하나뿐이다.
 

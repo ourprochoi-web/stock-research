@@ -7,13 +7,19 @@
  "events": [
   {
    "when": "2026-09-15/16",
-   "what": "FOMC(발표 9/16 수) — 인상 여부보다 발언 톤·점도표. 30년물은 5.25% 위에서 맞는다(FRED 07-31 첫 돌파 · JPM 09-14 약 5.40% · 20년 최고). ⚠ 09-14 날짜 정정(r-20260914-21): 종전 09-17/18은 틀린 날짜였다",
+   "what": "FOMC(발표 9/16 수 14:00 ET = 9/17 목 03:00 KST · 파월 03:30) — 인상 여부보다 발언 톤·점도표. 30년물은 5.25% 위에서 맞는다(FRED 07-31 첫 돌파 · JPM 09-14 약 5.40% · 20년 최고). ⚠ 09-14 날짜 정정(r-20260914-21): 종전 09-17/18은 틀린 날짜였다",
    "judges": "macro",
    "grade": "①",
    "precommit": {
-    "if_dovish": "25bp + 장기금리 하락 → 2회차(SMTC·CRDO) 예정대로 · n-hike 종료 후보",
-    "if_hawkish": "점도표 2회+ → SMTC·CRDO 2회차를 3회차로 · regime.rates 「얕은 인상」 전제 파기"
+    "if_dovish": "25bp + 점도표 ≤2회 + 장기금리 하락 → 2회차(SMTC·CRDO) 예정대로 · n-hike 종료 후보 · 사이버 반사 매수(PANW·CRWD) 되돌림 관측",
+    "if_hawkish": "점도표 추가 인상 3회+(2년물이 이미 4회 프라이싱 → 2회는 완화) → SMTC·CRDO 2회차를 3회차로 · regime.rates 「얕은 인상」 전제 파기"
    }
+  },
+  {
+   "when": "2026-09-16 03:15 KST",
+   "what": "클래리티 법안 상원 클로처 표결(60석 · 통과 확률 25% ③) — 통과 시 스테이블코인→단기채 의무 매입 → 장기금리 안정 경로(③) · BTC 77k 반응",
+   "judges": "macro(관측)",
+   "grade": "①(표결)"
   },
   {
    "when": "2026-10-27/28",
@@ -28,10 +34,36 @@
    "grade": "①(선거) · ② 통계"
   },
   {
+   "when": "2026-09-18(금)",
+   "what": "BOJ 금리 결정(인상 사실상 공언 ③) — 엔 캐리 청산·GPIF 해외국채 매도 조짐(②) → 미 장기금리·코스피 외국인",
+   "judges": "macro · regime.flows",
+   "grade": "①",
+   "precommit": {
+    "if_hike": "달러엔·10년물 반응을 regime.rates 에 · 외국인 순매수 부호 2주 관측 시작",
+    "if_hold": "n-hike 「연속 인상」 축 약화"
+   }
+  },
+  {
    "when": "2026-09-18",
    "what": "대미투자 공식 발표 — 원전 8기 포함 여부. 원전·SMR 편 T1·T3",
    "judges": "ai-infra/ai_power_company_nuclear_smr.html#T1,T3",
    "grade": "②"
+  },
+  {
+   "when": "2026-09-19(금)",
+   "what": "미 옵션 만기 — 「만기 전 흔들기」(유창희 ③) · 관측만",
+   "judges": "macro",
+   "grade": "관측"
+  },
+  {
+   "when": "2026-09-30~10-02",
+   "what": "마이크론 FQ4 실적 — 메모리 ASP 방향의 첫 ① · 예측 r-20260914-44(SKH 3Q DRAM ASP ≥ +15%)의 선행 판독 · 노근창 「3Q 크로스오버」 판정",
+   "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2 · regime:n-memory-durable",
+   "grade": "①",
+   "precommit": {
+    "if_asp_up": "n-memory-durable 가격 쪽이 틀림 → 본진 유지 근거 강화(행동 없음)",
+    "if_asp_flat": "r-44 miss 후보 · T2 「정점 2027」 재검토"
+   }
   },
   {
    "when": "2026-09-24/25",
@@ -185,6 +217,12 @@
    "when": "수시",
    "what": "중국의 미국산 LNG·원유 구매 재개(관세 철회) — T2 반증 · OFAC 이란·베네수엘라 조치 · 호르무즈 통항 회복이면 T1 가격 축이 빠진다",
    "judges": "energy/us_energy_hegemony_17.html#T1,T2",
+   "grade": "②"
+  },
+  {
+   "when": "2026-10-05",
+   "what": "AI 컴퓨팅 선물 지수 상장(③ 방송) — 새 트리거 후보 · 실체 미확인",
+   "judges": "관측",
    "grade": "②"
   }
  ]
