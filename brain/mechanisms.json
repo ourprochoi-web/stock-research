@@ -142,6 +142,38 @@
   "refining_margin": {
    "label": "정제마진(미·아시아)",
    "kind": "sector"
+  },
+  "rrp": {
+   "label": "역레포 잔고",
+   "kind": "flow",
+   "fact": "macro.rrp"
+  },
+  "tga": {
+   "label": "재무부 현금(TGA)",
+   "kind": "flow",
+   "fact": "macro.tga"
+  },
+  "reserves": {
+   "label": "은행 지준",
+   "kind": "flow",
+   "fact": "macro.reserves"
+  },
+  "fed_rmp": {
+   "label": "연준 RMP(국채 매입 $40B/월)",
+   "kind": "policy"
+  },
+  "bank_dereg": {
+   "label": "은행 규제완화(eSLR·바젤3)",
+   "kind": "policy"
+  },
+  "bank_credit": {
+   "label": "은행 대출·신용",
+   "kind": "flow",
+   "fact": "macro.bank_loans_yoy"
+  },
+  "bill_issuance": {
+   "label": "단기채 발행",
+   "kind": "policy"
   }
  },
  "edges": [
@@ -619,6 +651,78 @@
    ],
    "theses": [],
    "note": "수요 탄력이 작동하면 유가 상방이 스스로 깎인다 — 「$130 지속」 시나리오의 자기 제한"
+  },
+  {
+   "id": "m-32",
+   "from": "bill_issuance",
+   "to": "rrp",
+   "sign": "−",
+   "lag": "월",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "r-20260915-23"
+   ],
+   "theses": [],
+   "note": "2023-04~ 단기채가 역레포 자금을 흡수 → $2.4T→$1B. 성상현 프레임의 검증된 부분"
+  },
+  {
+   "id": "m-33",
+   "from": "tga",
+   "to": "reserves",
+   "sign": "−",
+   "lag": "주",
+   "strength": "중",
+   "grade": "①",
+   "evidence": [
+    "r-20260915-23"
+   ],
+   "theses": [],
+   "note": "세금·리빌드 시 TGA↑ = 지준↓. 9/15 법인세 일시. 남은 리빌드 ~$100B라 크기 작음"
+  },
+  {
+   "id": "m-34",
+   "from": "fed_rmp",
+   "to": "reserves",
+   "sign": "+",
+   "lag": "월",
+   "strength": "중",
+   "grade": "①",
+   "evidence": [
+    "r-20260915-23"
+   ],
+   "theses": [],
+   "note": "QT 종료(25-12-01) · RMP $40B/월 → 지준 평탄 유지. 「연준 긴축」 프레임을 낡게 만든 엣지"
+  },
+  {
+   "id": "m-35",
+   "from": "bank_dereg",
+   "to": "bank_credit",
+   "sign": "+",
+   "lag": "년",
+   "strength": "중",
+   "grade": "②",
+   "evidence": [
+    "r-20260915-23"
+   ],
+   "theses": [],
+   "note": "eSLR 04-01 시행(국채 중개) · 바젤3 순완화 $877억(시행 2027). 대출은 이미 +7.2%라 효과는 증분"
+  },
+  {
+   "id": "m-36",
+   "from": "bank_credit",
+   "to": "ai_capex",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "약",
+   "grade": "③",
+   "evidence": [
+    "r-20260915-23"
+   ],
+   "theses": [
+    "national-strategy/ns_bigtech_capex_roi.html#T2"
+   ],
+   "note": "하이퍼스케일러 부채 $2,250억·그림자 차입의 대주 쪽. 은행 확장이 캐펙스 자금의 한 다리"
   }
  ]
 }

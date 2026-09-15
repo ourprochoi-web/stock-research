@@ -5305,6 +5305,60 @@
    "grade": "①",
    "intake": "u-20260915-08",
    "note": "브렌트 105.68·WTI 101.39 대비 +10~15 — 아시아 프리미엄. 한국 수입 벤치마크"
+  },
+  "rrp": {
+   "value": 1,
+   "unit": "$B",
+   "asof": "2026-09-14",
+   "source": "FRED RRPONTSYD",
+   "grade": "①",
+   "intake": "c-20260915-05",
+   "note": "22-12 2,554 · 23-03 2,375 · 23-12 1,018 · 25-12 106 → 소진"
+  },
+  "tga": {
+   "value": 883,
+   "unit": "$B",
+   "asof": "2026-09-09",
+   "source": "FRED WTREGEN",
+   "grade": "①",
+   "intake": "c-20260915-05",
+   "note": "9/2 968 · 8월 말 951 — 「1조 리빌드」의 남은 폭 ~$100B · 9/15 법인세로 일시 상승"
+  },
+  "fed_assets": {
+   "value": 6.741,
+   "unit": "$T",
+   "asof": "2026-09-09",
+   "source": "FRED WALCL",
+   "grade": "①",
+   "intake": "c-20260915-05",
+   "note": "저점 6.536(25-12-03) → QT 종료(25-12-01) · RMP $40B/월 국채 매입(25-12-12~) · 국채 보유 +$224B"
+  },
+  "reserves": {
+   "value": 2.99,
+   "unit": "$T",
+   "asof": "2026-09-09",
+   "source": "FRED WRESBAL",
+   "grade": "①",
+   "intake": "c-20260915-05",
+   "note": "23-03 3.44 → 25-12 2.96 → 평탄(ample 유지가 RMP 목적)"
+  },
+  "bank_loans_yoy": {
+   "value": 7.2,
+   "unit": "%",
+   "asof": "2026-09-09",
+   "source": "FRED TOTLL",
+   "grade": "①",
+   "intake": "c-20260915-05",
+   "note": "예금 +6.4% · 은행신용 +5.9% — 은행은 이미 확장 중"
+  },
+  "sofr_iorb": {
+   "value": "3.62 / 3.65",
+   "unit": "%",
+   "asof": "2026-09-14/15",
+   "source": "FRED SOFR·IORB",
+   "grade": "①",
+   "intake": "c-20260915-05",
+   "note": "SOFR < IORB = 자금시장 스트레스 없음(역레포 0인데도)"
   }
  }
 }
