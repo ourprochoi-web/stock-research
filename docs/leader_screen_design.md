@@ -41,3 +41,11 @@
 - 보유: SKH 80(A) · 삼성 73(A) · 파마리서치 58(A) · 삼바 54(C) · 현대백화점 30(D)
 - 상위 집중: KR 15 중 반도체 소부장 7 · US 상위 4 전부 메모리 → 섹터 캡 3 적용 시 로보티즈·알테오젠·가온전선·에이피알 / PLTR·AVGO·TSM·ANET
 - 다음 실행 10/15(월 1회). 승률은 6개월 뒤에 센다
+
+## 7. v2 (09-15 밤) — 고도화 네 가지와 결과
+- **섹터 태그** 192(KR naver industryCode · US industryGroupKor · `intake/files/sectors.json`) → 섹터 내 3M 상대강도(P의 6점) · 섹터 캡 3/10 자동. ⚠ KR 코드 278이 메모리·소부장을 한 통에 넣는다 — 세분화 필요.
+- **추정치 변화(1M)** — git 30일 전 prices.json과 대조: KR Δ추정EPS · US Δ목표주가(E의 8점). 「성장 기대 상향」의 실측. 66/189만 값 있음(US TP 스냅샷은 09-10부터).
+- **SBC 페널티**(facts sbc_to_rev_q > 15% → Q −5): Credo·Astera. **판단 보유 ●/○**: 87/189.
+- **즉석 수집**: 추적엔 있고 시세가 없는 US(Semtech·MACOM·Fabrinet·AAOI)를 그 자리에서 받는다.
+- 결과: KR A28 B19 C33 D19 · US A29 B17 C27 D17. 섹터 캡 후보 KR 샘씨엔에스·티에스이·피에스케이H·알테오젠·RF머트리얼즈·실리콘투·로보티즈·심텍·가온전선·에이피알 / US Micron·SanDisk·NVIDIA·키옥시아·Palantir·Arista·Seagate·VG·Amphenol·FANG.
+
