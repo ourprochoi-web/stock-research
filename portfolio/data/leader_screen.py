@@ -385,6 +385,145 @@ def score(rows):
     return rows
 
 
+# ═══ HTML 뷰 (research/leader_screen.html) — 페이지는 뷰다. 정본은 intake/files/leader_screen_{date}.json
+def render_html(out, path_html):
+    import html as H
+    tpl = io.open(os.path.join(ROOT, "research", "vcp_breakout_backtest.html"), encoding="utf-8").read()
+    style = tpl[tpl.find("<style>"):tpl.find("</style>") + 8]
+    e = lambda v: H.escape(str(v if v is not None else "—"))
+    def cell(v, d=0, signed=False):
+        if not isinstance(v, (int, float)):
+            return "<td class='tnum mono' style='color:var(--ink-3)'>—</td>"
+        col = "var(--bull)" if (signed and v > 0) else ("var(--bear)" if (signed and v < 0) else "inherit")
+        return f"<td class='tnum mono' style='color:{col}'>{v:+.{d}f}</td>" if signed else f"<td class='tnum mono'>{v:.{d}f}</td>"
+    def table(rows, lab):
+        head = ("<tr><th>#</th><th>종목</th><th>주도</th><th>선행</th><th>칸</th><th>G</th><th>P</th><th>Q</th><th>E</th>"
+                "<th>CAGR3</th><th>qYoY</th><th>ΔOPM</th><th>OPM qoq</th><th>RS3</th><th>RS3s</th><th>1M</th><th>Δ추정</th><th>판단</th><th>섹터</th><th>게이트·반증</th></tr>")
+        body = []
+        for i, x in enumerate(rows, 1):
+            cc = {"A": "var(--bull)", "B": "#f59e0b", "C": "#60a5fa", "D": "var(--ink-3)"}.get(x["cell"], "inherit")
+            gate = x.get("gate", "") or ""
+            fal = x.get("falsifier") or ""
+            body.append(f"<tr><td class='mono' style='color:var(--ink-3)'>{i}</td><td><b>{e(x['name'])}</b><br><span class='mono' style='font-size:.68rem;color:var(--ink-3)'>{e(x['code'])}</span></td>"
+                        f"<td class='tnum mono'><b>{x['total']:.0f}</b></td><td class='tnum mono'>{x['early']:.0f}</td><td class='mono' style='color:{cc};font-weight:800'>{e(x['cell'])}{'*' if gate.startswith('탈락') else ''}</td>"
+                        + cell(x['G']) + cell(x['P']) + cell(x['Q']) + cell(x['E']) + cell(x.get('cagr3'), 0, True) + cell(x.get('rev_yoy_q'), 0, True) + cell(x.get('d_opm'), 1, True)
+                        + cell(x.get('opm_qoq'), 1, True) + cell(x.get('rs3'), 0, True) + cell(x.get('rs3_sector'), 0, True) + cell(x.get('m1'), 0, True) + cell(x.get('rev1m'), 1, True)
+                        + f"<td>{'●' if x['judged'] else '○'}</td><td style='font-size:.72rem;color:var(--ink-2)'>{e(str(x.get('sector') or '')[:18])}{' <b style=color:var(--bear)>SBC</b>' if x.get('sbc_pen') else ''}</td>"
+                        f"<td style='font-size:.72rem;color:var(--ink-2)'>{e(gate)}{('<br>' if gate and fal else '')}{e(fal)}</td></tr>")
+        return (f"<div style='overflow-x:auto;margin-top:18px'><table class='scr' data-lab='{lab}'><thead>{head}</thead><tbody>{''.join(body)}</tbody></table></div>")
+    R = [x for x in out["rows"] if x["total"] is not None]
+    kr = sorted([x for x in R if not x["us"]], key=lambda x: -x["total"])
+    us = sorted([x for x in R if x["us"]], key=lambda x: -x["total"])
+    from collections import Counter
+    ck, cu = Counter(x["cell"] for x in kr), Counter(x["cell"] for x in us)
+    drop = [x["name"] for x in R if (x.get("gate") or "").startswith("탈락")]
+    early_kr = sorted([x for x in kr if x["P"] < 50], key=lambda x: -x["early"])[:10]
+    early_us = sorted([x for x in us if x["P"] < 50], key=lambda x: -x["early"])[:10]
+    b = out["bench"]
+    desc = f"추적 {len(R)}종목(KR {len(kr)}·US {len(us)})을 주도·선행 두 렌즈로 채점. 판단이 아니라 후보를 좁히는 도구 — 가격이 확인한 것과 이익이 도는데 가격이 아직인 것을 따로 본다."
+    title = "주도주 스크린 — 추적 유니버스 두 렌즈 채점표"
+    url = "https://ourprochoi-web.github.io/stock-research/research/leader_screen.html"
+    html = f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="{e(desc)}">
+<meta name="keywords" content="주도주,스크린,퀀터멘탈,상대강도,ΔOPM,3년 CAGR,선행 렌즈,격자,섹터 캡,균등비중,성상현">
+<meta property="og:title" content="{e(title)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{url}">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{e(title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<link rel="canonical" href="{url}">
+<title>{e(title)}</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+{style}
+<style>
+  table.scr{{width:100%;border-collapse:collapse;font-size:.8rem;white-space:nowrap}}
+  .hero-stats{{grid-template-columns:repeat(4,1fr)}}
+  table.scr th{{background:var(--bg-2);color:var(--ink-2);font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);cursor:pointer}}
+  table.scr th:nth-child(2),table.scr th:nth-child(5),table.scr th:nth-child(18),table.scr th:nth-child(19),table.scr th:nth-child(20){{text-align:left}}
+  table.scr td{{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}}
+  table.scr td:nth-child(2),table.scr td:nth-child(5),table.scr td:nth-child(18),table.scr td:nth-child(19),table.scr td:nth-child(20){{text-align:left}}
+  table.scr tr:hover td{{background:var(--surface)}}
+  .lens{{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}}
+  .lens>div{{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:.92rem;line-height:1.7}}
+  @media(max-width:860px){{.lens{{grid-template-columns:1fr}}}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <a href="../index.html" class="brand"><span class="dot"></span>ourprochoi Research</a>
+  <div class="nav-links"><a href="#now">▎이 표는 무엇인가</a><a href="#kr">KR {len(kr)}</a><a href="#us">US {len(us)}</a><a href="#early">선행 렌즈</a><a href="#method">방법</a></div>
+</div></nav>
+<header class="hero"><div class="hero-bg"><div class="glow-a"></div><div class="glow-b"></div><div class="hero-grid"></div></div>
+<div class="wrap hero-in">
+  <div class="eyebrow">리서치 · 방법론 · 월 1회 갱신 · {e(out['asof'])}</div>
+  <h1 class="hero-title">주도주 스크린<br><span class="hl">두 렌즈로 본 {len(R)}종목</span></h1>
+  <p class="hero-sub"><b>주도(Leader)</b>는 가격이 확인한 것, <b>선행(Early)</b>은 이익·기대는 도는데 가격이 아직인 것. 성상현(ABP)의 격자에서 <u>「가격이 꺾였을 때 이익이 유지되면 눌림목, 하향이면 매도」</u>라는 게이트를 빌리고 팩터는 우리 데이터로 다시 짰다. <b>판단이 아니다 — 후보를 좁힌다.</b> 판단은 브레인(테제·반증)이 한다.</p>
+  <div class="hero-stats">
+    <div class="hstat"><div class="num tnum">{len(R)}</div><div class="lab">추적 유니버스 (KR {len(kr)} · US {len(us)}) — 새 유니버스를 만들지 않는다</div></div>
+    <div class="hstat"><div class="num tnum">{ck.get('A',0)+cu.get('A',0)}</div><div class="lab">A칸(높은 성장 × 강한 가격) — KR {ck.get('A',0)} · US {cu.get('A',0)}</div></div>
+    <div class="hstat"><div class="num tnum">{len(drop)}</div><div class="lab">이익 게이트 탈락 후보 — {e(' · '.join(drop[:4]))}</div></div>
+    <div class="hstat"><div class="num tnum">{b['KR']['3M']:+.0f}% / {b['US']['3M']:+.0f}%</div><div class="lab">벤치마크 3M (KOSPI / S&P) — 상대강도의 분모</div></div>
+  </div>
+</div></header>
+<section id="now" class="blk"><div class="wrap">
+<div style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.9">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎이 표는 무엇인가 · {e(out['asof'])} <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 정본 <code>intake/files/leader_screen_{e(out['asof'])}.json</code> · 명령 <code>portfolio/data/leader_screen.py</code> · 설계 <code>docs/leader_screen_design.md</code></span></div>
+<b style="font-size:1.05em">한 문장 — <u>돈이 지금 어디로 가고 있나(주도)와 어디로 갈 준비가 됐나(선행)를 따로 센다. 둘 다 높으면 확인된 주도주, 주도↓선행↑이면 「아직」, 둘 다 낮으면 이 도구 밖(방어주·턴어라운드 전)이다.</u></b><br>
+<div class="lens">
+<div><b style="color:var(--accent)">주도(Leader) 100</b> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
+<div><b style="color:#60a5fa">선행(Early) 100</b> — 매출 QoQ 개선 연속 20 · OPM QoQ 20 · 추정치 상향 1M 20 · 52주 고점 대비 낙폭 15(클수록 기회) · 가격 안정화 15(1M ≥ −5인데 RS3 &lt; 0) · 질 10. <b>격자</b>: A 높성장×강가격 · B 높성장×약가격(게이트: ΔOPM≥0 &amp; 매출 YoY&gt;0 = 눌림목, 아니면 탈락*) · C 낮성장×강가격 · D 나머지.</div>
+</div>
+<div style="margin-top:12px;font-size:.85rem;color:var(--ink-2)">⚠ 한계 — KR 섹터 코드(네이버 278)가 메모리·소부장을 한 통에 넣는다 · US 52주 고점 없음(최근 낙폭 대체) · 추정치 변화는 스냅샷이 쌓인 종목만 · 반증 병기는 entities 등록 종목만 · 승률은 6개월 뒤 격자 이동으로 잰다. ● 판단 보유 ○ 판단 0편 = 다음 페이퍼 후보.</div>
+</div></div></section>
+<section id="early" class="blk" style="padding-top:0"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">00</span><span class="ln"></span>선행 렌즈 — 가격 미확인(P&lt;50)인데 이익·기대가 도는 것</div><h2 class="sec-title">발바닥에서 무릎 사이</h2></div>
+<div class="lens">
+<div><b>KR</b><br>{'<br>'.join(f"{i+1}. <b>{e(x['name'])}</b> 선행 {x['early']:.0f} · 주도 {x['total']:.0f}({e(x['cell'])}) · QoQ↑{x['qoq_up']} · OPM qoq {e(round(x['opm_qoq'],1) if isinstance(x.get('opm_qoq'),(int,float)) else '—')} · RS3 {e(round(x['rs3']) if isinstance(x.get('rs3'),(int,float)) else '—')}" for i,x in enumerate(early_kr))}</div>
+<div><b>US</b><br>{'<br>'.join(f"{i+1}. <b>{e(x['name'])}</b> 선행 {x['early']:.0f} · 주도 {x['total']:.0f}({e(x['cell'])}) · QoQ↑{x['qoq_up']} · OPM qoq {e(round(x['opm_qoq'],1) if isinstance(x.get('opm_qoq'),(int,float)) else '—')} · RS3 {e(round(x['rs3']) if isinstance(x.get('rs3'),(int,float)) else '—')}" for i,x in enumerate(early_us))}</div>
+</div></div></section>
+<section id="kr" class="blk" style="padding-top:0"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">01</span><span class="ln"></span>KR {len(kr)}종목 · 주도 순 · 칸 A{ck.get('A',0)} B{ck.get('B',0)} C{ck.get('C',0)} D{ck.get('D',0)}</div><h2 class="sec-title">국내 — 벤치마크 KOSPI 3M {b['KR']['3M']:+.1f}%</h2><p class="sec-lead">열 머리를 누르면 정렬. 값은 네이버 재무(연간 3개·분기 5개)·prices.json(정규 종가)·10일 수급. 판단은 페이지·테제에.</p></div>
+{table(kr,'KR')}
+</div></section>
+<section id="us" class="blk" style="padding-top:0"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">02</span><span class="ln"></span>US {len(us)}종목 · 주도 순 · 칸 A{cu.get('A',0)} B{cu.get('B',0)} C{cu.get('C',0)} D{cu.get('D',0)}</div><h2 class="sec-title">미국 — 벤치마크 S&amp;P 3M {b['US']['3M']:+.1f}%</h2><p class="sec-lead">E축은 KR과 proxy가 다르다(목표주가 괴리·의견). 수급 없음. 52주 고점 없음.</p></div>
+{table(us,'US')}
+</div></section>
+<section id="method" class="blk" style="padding-top:0"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>방법 · 판정</div><h2 class="sec-title">이 표가 틀렸음을 보여줄 것</h2></div>
+<div style="padding:16px 20px;border-left:4px solid #3b82f6;background:rgba(59,130,246,.05);line-height:1.9;font-size:.95rem">
+· <b>승률</b> — 월 1회(15일) 재실행해 A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
+· <b>게이트</b> — 「탈락 후보」로 찍힌 종목이 다음 분기 OPM을 회복하면 게이트가 SBC·일회성에 속은 것이다(Credo가 첫 시험).<br>
+· <b>선행 렌즈</b> — 선행 상위 10의 이후 3M 상대수익률이 주도 상위 10보다 낮으면 「발바닥」은 도구로 못 잡는 것이다.<br>
+· 계보 — 성상현(ABP) 09-15 이효석아카데미 · 09-10 VCP 백테스트(가격만 본 실패) · 매니저 7종목 대조(r-20260915-31).
+</div></div></section>
+<footer><div class="wrap"><div style="font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:1.8">
+이 페이지는 생성물이다 — <code>python3 portfolio/data/leader_screen.py --html</code>. 정본은 <code>intake/files/leader_screen_{e(out['asof'])}.json</code>과 재무 스냅샷 <code>intake/files/financials/{e(out['asof'])}/</code>. 매수·매도 추천이 아니다(§J3).<br>
+"dateModified":"{e(out['asof'])}"
+</div></div></footer>
+<script>
+document.querySelectorAll('table.scr th').forEach((th,i)=>{{th.addEventListener('click',()=>{{const tb=th.closest('table').tBodies[0];const rows=[...tb.rows];const asc=th.dataset.asc!=='1';th.dataset.asc=asc?'1':'0';
+rows.sort((a,b)=>{{const x=a.cells[i].innerText.replace(/[+%,]/g,''),y=b.cells[i].innerText.replace(/[+%,]/g,'');const nx=parseFloat(x),ny=parseFloat(y);if(!isNaN(nx)&&!isNaN(ny))return asc?ny-nx:nx-ny;return asc?x.localeCompare(y):y.localeCompare(x);}});rows.forEach(r=>tb.appendChild(r));}});}});
+</script>
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"Article","headline":"{e(title)}","description":"{e(desc)}","datePublished":"2026-09-15","dateModified":"{e(out['asof'])}","author":{{"@type":"Person","name":"ourprochoi"}},"publisher":{{"@type":"Organization","name":"ourprochoi Research Archive"}},"mainEntityOfPage":"{url}","inLanguage":"ko"}}
+</script>
+</body>
+</html>
+"""
+    io.open(path_html, "w", encoding="utf-8").write(html)
+    print(f"[html] {path_html} ({len(html)//1024}KB)")
+
+
 def main(argv):
     day = date.today().isoformat()
     if "--date" in argv:
@@ -447,6 +586,8 @@ def main(argv):
             if not x or x["total"] is None:
                 print(f"  {w}: 없음"); continue
             print(f"  {x['name'][:16]:<17} 주도 {x['total']:>5.1f}({x['cell']}) 선행 {x['early']:>5.1f} | qYoY {x['rev_yoy_q'] and round(x['rev_yoy_q'])} QoQ↑{x['qoq_up']} ΔOPM {x['d_opm'] and round(x['d_opm'],1)} OPMqoq {x['opm_qoq'] and round(x['opm_qoq'],1)} RS3 {x['rs3'] and round(x['rs3'])} 1M {x['m1']} Δ추정 {x['rev1m'] and round(x['rev1m'],1)} {x.get('gate','')} | 반증: {x.get('falsifier') or '(판단 0편)'}")
+    if "--html" in argv:
+        render_html(out, os.path.join(ROOT, "research", "leader_screen.html"))
     if diff_path and os.path.exists(diff_path):
         prev = {x["name"]: x for x in json.load(io.open(diff_path, encoding="utf-8"))["rows"]}
         moves = [(x["name"], prev[x["name"]]["cell"], x["cell"], (x["total"] or 0) - (prev[x["name"]]["total"] or 0)) for x in rows if x["name"] in prev and prev[x["name"]].get("cell") != x.get("cell") and x["total"] is not None]
