@@ -11,6 +11,9 @@
   P 가격 30  = 3M 상대강도 vs 지수(10) + 3M 상대강도 vs 섹터(6) + 6M vs 지수(8) + 1M 낙폭 가드(6)
   Q 질   20  = 분기 OPM 수준(7) + ΔOPM YoY(7) + ROE(6 · US는 ROA)   [− SBC 페널티 5]
   E 기대 20  = KR: 컨센 EPS 성장(6) + Δ추정EPS 1M(8) + 10일 외인+기관/시총(6) · US: TP 괴리(6) + ΔTP 1M(8) + 투자의견(6)
+v3(09-15 밤 · 매니저 7종목 대조 뒤): 렌즈를 둘로 — <주도(Leader)>는 가격이 확인한 것, <선행(Early)>은 이익·기대는 도는데 가격이 아직인 것.
+  Early 100 = 분기 매출 QoQ 개선 연속(20) + ΔOPM 개선(20) + 추정치 상향 1M(20) + 52주 고점 대비 낙폭(15 · 클수록 기회) + 가격 안정화(15 · 1M ≥ −5 & RS3<0) + 질 유지(10 · OPM 백분위)
+  + 격자 이동 추적(--diff 이전 파일) + 브레인 반증 조건 병기(entities→theses) + --watch 목록 강제 출력
 격자: G≥50 & P≥50 = A(보유) · G≥50 & P<50 = B(눌림목 vs 탈락 — ΔOPM·매출 YoY로 게이트) · G<50 & P≥50 = C(사이클·테마 점검) · 나머지 D.
 점수는 시장별 백분위(0~100). 값의 정본은 intake/files/financials/{date}/ 스냅샷(naver finance annual·quarter).
 용법: leader_screen.py [--date YYYY-MM-DD] [--no-fetch] [--top N]
@@ -180,15 +183,24 @@ def load_flags():
     except Exception:  # noqa: BLE001
         pass
     judged = set()
+    falsifiers = {}
     try:
         T = json.load(io.open(THESES, encoding="utf-8"))["pages"]
         blob = " ".join(p.get("title", "") + " " + " ".join(t["claim"] for t in p["theses"]) for p in T.values())
         E = json.load(io.open(ENTITIES, encoding="utf-8"))["companies"]
         judged = {v.get("name", "") for v in E.values()} | {k for k in E}
         judged_blob = blob
+        for k, v in E.items():  # 첫 테제의 반증 조건을 스크린 옆에 붙인다
+            for ref in v.get("theses", []):
+                if "#" in ref:
+                    pg, tid = ref.split("#", 1)
+                    t = next((t for t in T.get(pg, {}).get("theses", []) if t["id"] == tid), None)
+                    if t and t.get("falsifier"):
+                        falsifiers[k] = f"{tid}: {t['falsifier'][:70]}"
+                        break
     except Exception:  # noqa: BLE001
         judged_blob = ""
-    return sbc, ocf, judged, judged_blob
+    return sbc, ocf, judged, judged_blob, falsifiers
 
 
 def bench_returns():
@@ -254,6 +266,20 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
         opm_now = op_q[-1] / rev_q[-1] * 100
     if opm_now is None and rec.get("opm_now") is not None:
         opm_now = rec["opm_now"]
+    # v3 선행 인자: 매출 QoQ 개선 연속 횟수(최근 3분기) · OPM QoQ 개선 · 52주 고점 대비 낙폭
+    qoq_up = 0
+    for i in range(len(rev_q) - 1, max(len(rev_q) - 4, 0), -1):
+        if rev_q[i] and rev_q[i - 1] and rev_q[i] > rev_q[i - 1]:
+            qoq_up += 1
+        else:
+            break
+    opm_qoq = None
+    if len(rev_q) >= 2 and rev_q[-1] and rev_q[-2] and op_q[-1] is not None and op_q[-2] is not None:
+        opm_qoq = op_q[-1] / rev_q[-1] * 100 - op_q[-2] / rev_q[-2] * 100
+    hi52 = num((rec.get("fund") or {}).get("52주 최고")) if not rec["us"] else None
+    dd52 = (rec["price"] / hi52 - 1) * 100 if hi52 and rec.get("price") else None
+    if dd52 is None and r.get("1Y") is not None and r.get("6M") is not None:
+        dd52 = min(0.0, -abs(min(r.get("1M") or 0, r.get("3M") or 0)))  # US: 고점 데이터 없음 → 최근 낙폭으로 대체(약한 proxy)
     # 선행 성장
     fwd = None
     if not rec["us"]:
@@ -294,14 +320,16 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
     sbc_pen = 0
     ocf_warn = None
     if flags:
-        sbc, ocf, judged, jblob = flags
+        sbc, ocf, judged, jblob = flags[:4]
         code_key = rec["code"].split(".")[0]
         if code_key in sbc and sbc[code_key] is not None and sbc[code_key] > 15:
             sbc_pen = 5
         if code_key in ocf and ocf[code_key] is not None and ocf[code_key] < 0.7:
             ocf_warn = ocf[code_key]
     return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
+            "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52,
             "judged": bool(flags and (name in flags[2] or rec["code"].split(".")[0] in flags[2] or name in flags[3])),
+            "falsifier": (flags[4].get(rec["code"].split(".")[0]) if flags and len(flags) > 4 else None),
             "cagr3": g_cagr, "rev_yoy_q": yoy, "fwd": fwd, "opm": opm_now, "d_opm": d_opm,
             "m1": m1, "m3": r.get("3M"), "m6": r.get("6M"), "y1": r.get("1Y"), "rs3": rs3, "rs6": rs6, "guard": guard,
             "e1": e1, "e2": e2, "roe": roe, "n_annual": len(akeys), "n_quarter": len(qkeys), "has_fin": bool(akeys or qkeys)}
@@ -336,6 +364,16 @@ def score(rows):
             e = pr("e1", 6) + pr("rev1m", 8) + pr("e2", 6)
             x.update({"G": round(g / 30 * 100, 1), "P": round(p / 30 * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
                       "total": round(g + p + max(qv, 0) + e, 1), "missing": miss})
+            # v3 선행(Early) 렌즈 — 이익·기대는 도는데 가격이 아직
+            e_qoq = {0: 0, 1: 8, 2: 15, 3: 20}.get(x.get("qoq_up", 0), 20)
+            e_opm = pr("opm_qoq", 20)
+            e_rev = pr("rev1m", 20)
+            dd = x.get("dd52")
+            e_dd = 0 if dd is None else max(0.0, min(15.0, (-dd - 10) / 40 * 15))  # −10%는 0 · −50%면 15
+            m1v, rs3v = x.get("m1"), x.get("rs3")
+            e_stab = 15.0 if (m1v is not None and rs3v is not None and m1v >= -5 and rs3v < 0) else (7.0 if (m1v is not None and m1v >= -5) else 0.0)
+            e_q = pr("opm", 10)
+            x["early"] = round(e_qoq + e_opm + e_rev + e_dd + e_stab + e_q, 1)
             hg, sp = x["G"] >= 50, x["P"] >= 50
             x["cell"] = "A" if hg and sp else "B" if hg else "C" if sp else "D"
             if not x.get("has_fin"):  # ETF·재무 없음 — 격자 밖(가격만으로 A가 되면 안 된다)
@@ -352,6 +390,8 @@ def main(argv):
     if "--date" in argv:
         day = argv[argv.index("--date") + 1]
     top = int(argv[argv.index("--top") + 1]) if "--top" in argv else 12
+    watch = argv[argv.index("--watch") + 1].split(",") if "--watch" in argv else []
+    diff_path = argv[argv.index("--diff") + 1] if "--diff" in argv else None
     P, kr, usd = load_universe()
     fdir = os.path.join(FIN_DIR, day)
     os.makedirs(fdir, exist_ok=True)
@@ -397,6 +437,20 @@ def main(argv):
             if len(picked) == 10:
                 break
         print(f"  ▶ 섹터 캡 3/10 · 균등비중 후보(D·탈락 제외): " + " · ".join(f"{x['name'][:10]}({x['total']:.0f})" for x in picked))
+        # v3 선행 렌즈 — 가격 미확인(P<50) 중 Early 상위
+        early = sorted([x for x in grp if x["P"] < 50], key=lambda x: -x["early"])[:top]
+        print(f"  ▶ 선행(Early) 상위 — 가격 미확인(P<50)인데 이익·기대가 도는 것: " + " · ".join(f"{x['name'][:10]}({x['early']:.0f}·{x['cell']})" for x in early))
+    if watch:
+        print("\n═══ 감시 목록(--watch) · 두 렌즈 + 브레인 반증 조건")
+        for w in watch:
+            x = next((x for x in rows if x["code"].split(".")[0] == w or x["name"] == w), None)
+            if not x or x["total"] is None:
+                print(f"  {w}: 없음"); continue
+            print(f"  {x['name'][:16]:<17} 주도 {x['total']:>5.1f}({x['cell']}) 선행 {x['early']:>5.1f} | qYoY {x['rev_yoy_q'] and round(x['rev_yoy_q'])} QoQ↑{x['qoq_up']} ΔOPM {x['d_opm'] and round(x['d_opm'],1)} OPMqoq {x['opm_qoq'] and round(x['opm_qoq'],1)} RS3 {x['rs3'] and round(x['rs3'])} 1M {x['m1']} Δ추정 {x['rev1m'] and round(x['rev1m'],1)} {x.get('gate','')} | 반증: {x.get('falsifier') or '(판단 0편)'}")
+    if diff_path and os.path.exists(diff_path):
+        prev = {x["name"]: x for x in json.load(io.open(diff_path, encoding="utf-8"))["rows"]}
+        moves = [(x["name"], prev[x["name"]]["cell"], x["cell"], (x["total"] or 0) - (prev[x["name"]]["total"] or 0)) for x in rows if x["name"] in prev and prev[x["name"]].get("cell") != x.get("cell") and x["total"] is not None]
+        print(f"\n═══ 격자 이동(vs {os.path.basename(diff_path)}) {len(moves)}건: " + " · ".join(f"{n[:8]} {a}→{b}({d:+.0f})" for n, a, b, d in sorted(moves, key=lambda m: -abs(m[3]))[:20]))
     return 0
 
 
