@@ -5193,19 +5193,19 @@
    "intake": "c-20260914-03"
   },
   "kospi": {
-   "value": 6684.37,
+   "value": 6627.26,
    "unit": "pt",
-   "asof": "2026-09-14",
+   "asof": "2026-09-15",
    "source": "m.stock.naver.com index/KOSPI",
    "grade": "①",
    "intake": "c-20260914-03",
-   "note": "06-22 고점 9,114.55 대비 −26.7% · 6/23 이후 −3% 이상 하락일 17 · 정규 종가 기준 SK하이닉스 1,697,000(−6.35%) 삼성 249,000(−4.05%)"
+   "note": "06-22 고점 9,114.55 대비 −27.3% · 09-15 외국인 −1.55조(5일째)·개인 +8,596억"
   },
   "usdkrw": {
-   "value": 1350.2,
+   "value": 1359,
    "unit": "KRW",
-   "asof": "2026-09-14",
-   "source": "prices.json fx",
+   "asof": "2026-09-15",
+   "source": "방송 종가(+13원) · prices.json 갱신 대기",
    "grade": "①",
    "intake": "c-20260914-03"
   },
@@ -5296,6 +5296,15 @@
    "source": "naver stocks/up|down/KOSPI",
    "grade": "①",
    "intake": "c-20260915-02"
+  },
+  "dubai": {
+   "value": 116.22,
+   "unit": "USD/bbl",
+   "asof": "2026-09-14",
+   "source": "naver DCBc1 정산(방송 $120은 장중/현물)",
+   "grade": "①",
+   "intake": "u-20260915-08",
+   "note": "브렌트 105.68·WTI 101.39 대비 +10~15 — 아시아 프리미엄. 한국 수입 벤치마크"
   }
  }
 }

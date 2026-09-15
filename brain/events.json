@@ -37,7 +37,11 @@
    "when": "2026-11-03",
    "what": "미국 중간선거 — 「중간선거 해 7월말~11/9 최대 낙폭 중앙값 10%」(나일스 ② 통계)가 이번에도 맞았나. 09-11 기준 S&P 고점 대비 낙폭을 이 날 재서 기록한다",
    "judges": "macro",
-   "grade": "①(선거) · ② 통계"
+   "grade": "①(선거) · ② 통계",
+   "precommit": {
+    "measure": "S&P·코스피 09-11 고점 대비 최대 낙폭(나일스 ③ 중앙값 10%) 채점",
+    "then": "이후 1년 경로 기록 시작 — 정우창 ③ 「선거 후 1년 19/19 상승·+14.9%」의 20번째 표본"
+   }
   },
   {
    "when": "2026-09-18(금)",
@@ -63,7 +67,7 @@
   },
   {
    "when": "2026-09-30~10-02",
-   "what": "마이크론 FQ4 실적 — 메모리 ASP 방향의 첫 ① · 예측 r-20260914-44(SKH 3Q DRAM ASP ≥ +15%)의 선행 판독 · 노근창 「3Q 크로스오버」 판정",
+   "what": "마이크론 FQ4 실적(10/1 ②) — 메모리 ASP 방향의 첫 ① · 예측 r-20260914-44(SKH 3Q DRAM ASP ≥ +15%)의 선행 판독 · 노근창 「3Q 크로스오버」 판정",
    "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2 · regime:n-memory-durable",
    "grade": "①",
    "precommit": {
@@ -229,6 +233,18 @@
    "when": "2026-10-05",
    "what": "AI 컴퓨팅 선물 지수 상장(③ 방송) — 새 트리거 후보 · 실체 미확인",
    "judges": "관측",
+   "grade": "②"
+  },
+  {
+   "when": "2026-10-08",
+   "what": "삼성전자 3Q26 잠정 실적 — BNK OP 108조(2026 하향) vs Citi 2027~28 상향의 첫 ① · NAND 애플 협상(+30%) 반영 전",
+   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T1,T2 · regime:n-memory-durable",
+   "grade": "①"
+  },
+  {
+   "when": "2026-10월 말(복구 5~6주 ②)",
+   "what": "사우디 동서 파이프라인 복구 — 두바이 프리미엄 소멸 → hormuz_open 시나리오 트리거(휴전 없이도). 얀부 잔여 7~10일은 9월 말",
+   "judges": "regime.oil · portfolio.precommits",
    "grade": "②"
   }
  ]

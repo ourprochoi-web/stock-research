@@ -133,6 +133,15 @@
   "hyperscaler_debt": {
    "label": "하이퍼스케일러 부채 조달(장부 위+그림자)",
    "kind": "flow"
+  },
+  "dubai": {
+   "label": "두바이 유가(아시아 벤치마크)",
+   "kind": "macro",
+   "fact": "macro.dubai"
+  },
+  "refining_margin": {
+   "label": "정제마진(미·아시아)",
+   "kind": "sector"
   }
  },
  "edges": [
@@ -510,7 +519,7 @@
    "grade": "③",
    "evidence": [],
    "theses": [],
-   "note": "원유 수입국 — 유가↑ = 무역수지·원화·코스피 압박. 반면 조선(탱커)·정유는 반대"
+   "note": "원유 수입국 — 유가↑ = 무역수지·원화·코스피 압박. 반면 조선(탱커)·정유는 반대 · 09-15: 실제 경로는 m-28→m-29(두바이). 브렌트는 대리"
   },
   {
    "id": "m-25",
@@ -554,6 +563,62 @@
    ],
    "theses": [],
    "note": "JPM: 민간 자본 수요 확대 = 구축효과 → 장기금리 상방 요인 중 하나"
+  },
+  {
+   "id": "m-28",
+   "from": "hormuz_risk",
+   "to": "dubai",
+   "sign": "+(브렌트보다 강)",
+   "lag": "일",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "r-20260915-21"
+   ],
+   "theses": [],
+   "note": "호르무즈 밖 원유 쏠림 → 두바이 $116~120 vs 브렌트 $106. 아시아(한국)가 프리미엄을 낸다"
+  },
+  {
+   "id": "m-29",
+   "from": "dubai",
+   "to": "kr_terms_of_trade",
+   "sign": "−",
+   "lag": "주",
+   "strength": "중",
+   "grade": "②",
+   "evidence": [
+    "r-20260915-21"
+   ],
+   "theses": [],
+   "note": "m-24(브렌트)보다 이 경로가 한국에 맞는 값. 환율 1,359 동행"
+  },
+  {
+   "id": "m-30",
+   "from": "brent",
+   "to": "refining_margin",
+   "sign": "−(급등 시)",
+   "lag": "주",
+   "strength": "중",
+   "grade": "①",
+   "evidence": [
+    "r-20260915-21"
+   ],
+   "theses": [],
+   "note": "8/31부터 미 정제마진 급락 — 수요 파괴. 정유주는 유가 급등의 역방향(SK이노·S-OIL 중립)"
+  },
+  {
+   "id": "m-31",
+   "from": "refining_margin",
+   "to": "brent",
+   "sign": "−",
+   "lag": "월",
+   "strength": "약",
+   "grade": "③",
+   "evidence": [
+    "r-20260915-21"
+   ],
+   "theses": [],
+   "note": "수요 탄력이 작동하면 유가 상방이 스스로 깎인다 — 「$130 지속」 시나리오의 자기 제한"
   }
  ]
 }
