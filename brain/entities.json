@@ -1154,6 +1154,45 @@
     "energy/us_energy_hegemony_17.html#T2"
    ],
    "tracked_price": false
+  },
+  "HOOD": {
+   "name": "Robinhood Markets",
+   "market": "US",
+   "layer": "핀테크 · 리테일 브로커 + 자사 파생 거래소(Rothera) + 체인",
+   "business": "옵션·주식·크립토·이벤트 계약 거래 수수료(PFOF·거래소 수수료) + 순이자(마진·캐시스윕·대차) + Gold 구독·신용카드. 2Q26 매출 $1,308M(거래 59%·순이자 30%·구독 11%) · 순이익률 42% · Gold 480만 · 플랫폼 자산 $384B(8월). Rothera(SIG 합작 CFTC 거래소) 6월 가동 · Robinhood Chain 7/1 메인넷 · Bitstamp(2025-06 인수) · 토큰화 주식 120개국",
+   "business_grade": "①(10-Q·실적 발표 · 2026-09-16)",
+   "pages": [
+    "payments/payments_company_robinhood.html"
+   ],
+   "facts": [
+    "revenue_ttm",
+    "net_income_ttm",
+    "ni_margin_ttm",
+    "rev_q",
+    "rev_growth_yoy",
+    "nii_q",
+    "event_contracts_rev_q",
+    "crypto_rev_q",
+    "options_rev_q",
+    "sbc_to_rev_q",
+    "buyback_ttm",
+    "mcap",
+    "ps",
+    "pe",
+    "gold_subs",
+    "margin_balance",
+    "event_contracts_aug",
+    "tp_mean"
+   ],
+   "theses": [
+    "payments/payments_company_robinhood.html#T1",
+    "payments/payments_company_robinhood.html#T2",
+    "payments/payments_company_robinhood.html#T3",
+    "payments/payments_company_robinhood.html#T4",
+    "payments/payments_company_robinhood.html#T5"
+   ],
+   "tracked_price": true,
+   "note": "금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

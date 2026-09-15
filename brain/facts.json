@@ -5103,6 +5103,183 @@
     "c-20260913-23",
     "u-20260913-05"
    ]
+  },
+  "HOOD": {
+   "name": "Robinhood Markets",
+   "intake": "c-20260916-04",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 4932,
+     "unit": "$M",
+     "basis": "3Q25~2Q26 분기 합",
+     "asof": "2026-06-30",
+     "num": "Revenues 분기 재구성",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "net_income_ttm": {
+     "value": 2072,
+     "unit": "$M",
+     "basis": "TTM",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "ni_margin_ttm": {
+     "value": 42.0,
+     "unit": "%",
+     "basis": "TTM",
+     "asof": "2026-06-30",
+     "num": "순이익 2072",
+     "den": "매출 4932",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "rev_q": {
+     "value": 1308,
+     "unit": "$M",
+     "basis": "2Q26",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "rev_growth_yoy": {
+     "value": 32.3,
+     "unit": "%",
+     "basis": "2Q26 vs 2Q25(989)",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "nii_q": {
+     "value": 389,
+     "unit": "$M",
+     "basis": "2Q26",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "event_contracts_rev_q": {
+     "value": 156,
+     "unit": "$M",
+     "basis": "2Q26",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 실적 발표",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "crypto_rev_q": {
+     "value": 100,
+     "unit": "$M",
+     "basis": "2Q26 · YoY −38%",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 실적 발표",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "options_rev_q": {
+     "value": 342,
+     "unit": "$M",
+     "basis": "2Q26 · +29%",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 실적 발표",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "sbc_to_rev_q": {
+     "value": 8.0,
+     "unit": "%",
+     "basis": "2Q26 105/1308",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html",
+     "note": "TTM 7.1%"
+    },
+    "buyback_ttm": {
+     "value": 871,
+     "unit": "$M",
+     "basis": "TTM",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "SEC XBRL",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "mcap": {
+     "value": 99.3,
+     "unit": "$B",
+     "basis": "$110.45 × 899.1M",
+     "asof": "2026-09-15",
+     "grade": "①",
+     "source": "naver · 10-Q 표지",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "ps": {
+     "value": 20.1,
+     "unit": "배",
+     "basis": "시총/TTM 매출",
+     "asof": "2026-09-15",
+     "num": "99.3B",
+     "den": "4.93B",
+     "grade": "①",
+     "source": "계산",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "pe": {
+     "value": 47.9,
+     "unit": "배",
+     "basis": "시총/TTM 순이익",
+     "asof": "2026-09-15",
+     "num": "99.3B",
+     "den": "2.07B",
+     "grade": "①",
+     "source": "계산",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "gold_subs": {
+     "value": 4.8,
+     "unit": "M",
+     "basis": "2Q26 · +39%",
+     "asof": "2026-06-30",
+     "grade": "①",
+     "source": "2Q26 실적",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "margin_balance": {
+     "value": 21.5,
+     "unit": "$B",
+     "basis": "8월 말 · +72% YoY",
+     "asof": "2026-08-31",
+     "grade": "①",
+     "source": "8월 운영 데이터",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "event_contracts_aug": {
+     "value": 4.7,
+     "unit": "B 계약",
+     "basis": "8월 · −23% MoM · 15배 YoY",
+     "asof": "2026-08-31",
+     "grade": "①",
+     "source": "8월 운영 데이터",
+     "page": "payments/payments_company_robinhood.html"
+    },
+    "tp_mean": {
+     "value": 124.22,
+     "unit": "$",
+     "basis": "28명 평균 · 최고 163~165(Citi) · 최저 55",
+     "asof": "2026-09-03",
+     "grade": "③",
+     "source": "naver consensus",
+     "page": "payments/payments_company_robinhood.html"
+    }
+   }
   }
  },
  "macro": {

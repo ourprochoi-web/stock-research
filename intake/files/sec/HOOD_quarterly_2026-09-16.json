@@ -1,0 +1,125 @@
+{
+ "cik": "0001783879",
+ "fetched": "2026-09-16",
+ "snap": {
+  "Revenues": {
+   "2025-03-31": 927000000,
+   "2025-06-30": 989000000,
+   "2025-09-30": 1274000000,
+   "2025-12-31": 1283000000,
+   "2026-03-31": 1067000000,
+   "2026-06-30": 1308000000
+  },
+  "RevenueFromContractWithCustomerExcludingAssessedTax": {
+   "2020-06-30": 187413000,
+   "2021-06-30": 451167000
+  },
+  "InterestIncomeExpenseNet": {
+   "2025-03-31": 290000000,
+   "2025-06-30": 357000000,
+   "2025-09-30": 456000000,
+   "2025-12-31": 411000000,
+   "2026-03-31": 359000000,
+   "2026-06-30": 389000000
+  },
+  "NetIncomeLoss": {
+   "2025-03-31": 336000000,
+   "2025-06-30": 386000000,
+   "2025-09-30": 556000000,
+   "2025-12-31": 605000000,
+   "2026-03-31": 350000000,
+   "2026-06-30": 561000000
+  },
+  "ShareBasedCompensation": {
+   "2025-03-31": 73000000,
+   "2025-06-30": 78000000,
+   "2025-09-30": 78000000,
+   "2025-12-31": 76000000,
+   "2026-03-31": 92000000,
+   "2026-06-30": 105000000
+  },
+  "AllocatedShareBasedCompensationExpense": {
+   "2025-03-31": 73000000,
+   "2025-06-30": 78000000,
+   "2025-09-30": 78000000,
+   "2025-12-31": 76000000,
+   "2026-03-31": 92000000,
+   "2026-06-30": 105000000
+  },
+  "NetCashProvidedByUsedInOperatingActivities": {
+   "2025-03-31": 642000000,
+   "2025-06-30": 3509000000,
+   "2025-09-30": -1576000000,
+   "2025-12-31": -937000000,
+   "2026-03-31": 2038000000,
+   "2026-06-30": 720000000
+  },
+  "PaymentsForRepurchaseOfCommonStock": {
+   "2025-03-31": 322000000,
+   "2025-06-30": 124000000,
+   "2025-09-30": 107000000,
+   "2025-12-31": 100000000,
+   "2026-03-31": 250000000,
+   "2026-06-30": 414000000
+  },
+  "WeightedAverageNumberOfDilutedSharesOutstanding": {
+   "2025-03-31": 909241619,
+   "2025-06-30": 909000000,
+   "2025-09-30": 917940660,
+   "2025-12-31": 175783,
+   "2026-03-31": 915038823,
+   "2026-06-30": 912000000
+  },
+  "IncomeTaxExpenseBenefit": {
+   "2025-03-31": 35000000,
+   "2025-06-30": 56000000,
+   "2025-09-30": 78000000,
+   "2025-12-31": 56000000,
+   "2026-03-31": 65000000,
+   "2026-06-30": 136000000
+  }
+ },
+ "dei_shares": null,
+ "line_tags": [
+  "DebtIssuanceCostsIncurredDuringNoncashOrPartialNoncashTransaction",
+  "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+  "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+  "IncreaseDecreaseInSecuritiesLoanedTransactions",
+  "InterestExpenseBorrowings",
+  "InterestIncomeExpenseNet",
+  "InterestIncomeOther",
+  "InterestIncomeSecuritiesPurchasedUnderAgreementsToResell",
+  "InterestPaidNet",
+  "OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentNetOfTax",
+  "ProceedsFromStockOptionsExercised",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableNumber",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriod",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageExercisePrice",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodGross",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingIntrinsicValue",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingNumber",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestExercisableAggregateIntrinsicValue",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingAggregateIntrinsicValue",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingNumber",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingWeightedAverageExercisePrice",
+  "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+  "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+  "StockIssuedDuringPeriodSharesStockOptionsExercised",
+  "StockIssuedDuringPeriodValueStockOptionsExercised",
+  "DebtSecuritiesAvailableForSaleAmortizedCostExcludingAccruedInterestAfterAllowanceForCreditLossCurrent",
+  "DebtSecuritiesAvailableForSaleExcludingAccruedInterestCurrent",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue",
+  "InterestIncomeOperating",
+  "DebtSecuritiesHeldToMaturityAmortizedCostExcludingAccruedInterestAfterAllowanceForCreditLossMaturityAllocatedAndSingleMaturityDateYearOne",
+  "DebtSecuritiesHeldToMaturityExcludingAccruedInterestAfterAllowanceForCreditLoss",
+  "DebtSecuritiesHeldToMaturityExcludingAccruedInterestAfterAllowanceForCreditLossCurrent",
+  "DebtSecuritiesHeldToMaturityExcludingAccruedInterestAfterAllowanceForCreditLossNoncurrent",
+  "RelatedPartyTransactionAmountsOfTransaction",
+  "DebtSecuritiesHeldToMaturityExcludingAccruedInterestNonaccrualNoAllowance",
+  "IncomeTaxExaminationPenaltiesAndInterestExpense",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExpirationsInPeriod",
+  "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresInPeriod"
+ ]
+}

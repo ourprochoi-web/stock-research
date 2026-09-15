@@ -232,6 +232,7 @@ WATCH_US = {
     #    「이 소스는 X를 지원하지 않는다」고 적기 전에 같은 소스의 다른 형식으로 대조한다(§G).
     # 2026-09-15 추가 — 광 9사 편(09-12)의 정본 종목인데 추적 밖이던 넷. 스크린을 돌리다 Semtech이 유니버스에 없는 걸 발견.
     "Semtech": "SMTC.O",
+    "Robinhood": "HOOD.O",  # 2026-09-16 페이퍼 신설
     "MACOM": "MTSI.O",
     "Fabrinet": "FN",
     "Applied Optoelectronics": "AAOI.O",

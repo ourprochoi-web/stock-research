@@ -259,6 +259,24 @@
    "what": "바젤3 엔드게임 최종 규칙(재제안 26-03-19 · 순완화 $877억 · 시행 2027) — 성상현 「다음 유동성 주인 = 은행」의 정책 축 판정",
    "judges": "regime.macro.liquidity · actors.banks",
    "grade": "①(공표 시)"
+  },
+  {
+   "when": "2026-10-09",
+   "what": "로빈후드 미시간 스포츠 이벤트 계약 포지션 청산 마감 — 스포츠 계약 비중의 첫 실측(T4)",
+   "judges": "payments/payments_company_robinhood.html#T4",
+   "grade": "①"
+  },
+  {
+   "when": "2026-10-10(경)",
+   "what": "로빈후드 9월 운영 데이터 — 이벤트 계약 MoM 2연속 감소면 T1 첫 반증 신호",
+   "judges": "payments/payments_company_robinhood.html#T1",
+   "grade": "①"
+  },
+  {
+   "when": "2026-10말",
+   "what": "로빈후드 3Q26 실적 — 매출 YoY <25%·순이익률 <40%면 T3 파기 · 순이자 QoQ(T2)",
+   "judges": "payments/payments_company_robinhood.html#T1,T2,T3",
+   "grade": "①"
   }
  ]
 }
