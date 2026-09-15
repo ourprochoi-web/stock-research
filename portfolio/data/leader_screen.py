@@ -464,7 +464,7 @@ def render_html(out, path_html):
 </div></nav>
 <header class="hero"><div class="hero-bg"><div class="glow-a"></div><div class="glow-b"></div><div class="hero-grid"></div></div>
 <div class="wrap hero-in">
-  <div class="eyebrow">리서치 · 방법론 · 월 1회 갱신 · {e(out['asof'])}</div>
+  <div class="eyebrow">리서치 · 방법론 · 이벤트마다 갱신 · {e(out['asof'])}</div>
   <h1 class="hero-title">주도주 스크린<br><span class="hl">두 렌즈로 본 {len(R)}종목</span></h1>
   <p class="hero-sub"><b>주도(Leader)</b>는 가격이 확인한 것, <b>선행(Early)</b>은 이익·기대는 도는데 가격이 아직인 것. 성상현(ABP)의 격자에서 <u>「가격이 꺾였을 때 이익이 유지되면 눌림목, 하향이면 매도」</u>라는 게이트를 빌리고 팩터는 우리 데이터로 다시 짰다. <b>판단이 아니다 — 후보를 좁힌다.</b> 판단은 브레인(테제·반증)이 한다.</p>
   <div class="hero-stats">
@@ -501,7 +501,7 @@ def render_html(out, path_html):
 <section id="method" class="blk" style="padding-top:0"><div class="wrap">
 <div class="sec-head"><div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>방법 · 판정</div><h2 class="sec-title">이 표가 틀렸음을 보여줄 것</h2></div>
 <div style="padding:16px 20px;border-left:4px solid #3b82f6;background:rgba(59,130,246,.05);line-height:1.9;font-size:.95rem">
-· <b>승률</b> — 월 1회(15일) 재실행해 A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
+· <b>승률</b> — 판정 이벤트마다 재실행해(FOMC·정상회담·실적·지수 ±3% 일 · 월 1회는 하한) A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
 · <b>게이트</b> — 「탈락 후보」로 찍힌 종목이 다음 분기 OPM을 회복하면 게이트가 SBC·일회성에 속은 것이다(Credo가 첫 시험).<br>
 · <b>선행 렌즈</b> — 선행 상위 10의 이후 3M 상대수익률이 주도 상위 10보다 낮으면 「발바닥」은 도구로 못 잡는 것이다.<br>
 · 계보 — 성상현(ABP) 09-15 이효석아카데미 · 09-10 VCP 백테스트(가격만 본 실패) · 매니저 7종목 대조(r-20260915-31).

@@ -178,6 +178,7 @@ EOF
 ```
 
 ```
-# 주도주 스크린(월 1회 · 15일) — 후보를 좁힐 뿐 판단하지 않는다. 결과·재무 스냅샷은 intake/files/
-PYTHONIOENCODING=utf-8 python3 portfolio/data/leader_screen.py --top 15
+# 주도주 스크린 — 이벤트 트리거(판정 이벤트 처리 뒤 · 지수 ±3% 일 · 보유/후보 실적 다음 날 · 월 1회 하한). 후보를 좁힐 뿐 판단하지 않는다.
+#   --diff 로 직전 파일과 격자 이동을 뽑아 routing 에 남긴다 · --html 로 페이지 재생성
+PYTHONIOENCODING=utf-8 python3 portfolio/data/leader_screen.py --top 15 --html --diff intake/files/leader_screen_<직전날짜>.json
 ```
