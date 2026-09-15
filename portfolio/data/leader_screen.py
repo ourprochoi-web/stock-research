@@ -9,12 +9,14 @@
   · 판단 보유 여부(judged) · 추적에만 있고 시세 없는 US 종목은 그 자리에서 받는다(Semtech 등)
 v4(09-16 새벽 · 36개월 백테스트 뒤 · intake/files/backtest_2026-09-15.json): 가격 축을 <증거대로> 다시 짰다.
   KR P 30 (v4.2) = 52주 고점 근접도(10 · 우리 +0.098 t 4.4 / 코스피200 +0.051 · 두 레짐 모두 +) + 12M RS(6 · 코스피200 +0.113 t 2.4 · 하락기 +0.138) + 변동성조정 6M(6 · 안정) + 6-1(4) + 섹터 ETF 3M 모멘텀(4 · ETF IC +0.25) — 3M RS 는 코스피200 하락기 −0.064 라 0
-  US P 30 = 변동성조정 6M(10 · +0.075 t 2.5) + 6-1 모멘텀(8 · +0.074 t 2.1) + 6M RS(6 · +0.081 t 2.2) + 1M(6 · f1 IC +0.074) — 52주 고점·섹터 모멘텀은 US에서 정보 없음(0)
+  US P 24 (v4.4 · 09-16 S&P500 point-in-time 578종목 44개월 대조 · intake/files/backtest_us_control_2026-09-16.json) = 12M RS(10 · 넓은 표본 +0.069 t 3.4 · 두 레짐 +0.073/+0.053 · 감쇠 없음) + [변동성조정 6M(8 · +0.040 t 2.2) + 6-1(6 · +0.034)](하락기 ×0.5)
+    — 6M RS·1M 은 넓은 표본에서 t<1.9 라 0. 우리 60종목은 효과를 2배 부풀렸고 12M 은 반대로 버렸었다(전/후 −0.035/+0.115 는 표본 탓). 52주 고점은 US 하락기 −0.155 라 0.
+    합성 검산: 현행 P IC +0.033(하락기 −0.006) → v4.4 +0.059(t 2.8 · 하락기 +0.035) → +공매도 +0.067(t 3.2)
   레짐: 지수 3M < 0 이면 모멘텀 항 ×0.5(KR 하락기 RS IC −0.02 · US −0.10 · US HI52 −0.23) — KR 의 HI52(하락기 +0.049)는 감쇠 안 함. 가격 신호가 죽는 구간에선 G·Q·E 비중이 커진다
   1M 낙폭 가드는 뺐다(KR 1M IC +0.035 유의 안 함 · 문헌은 단기 반전) · 섹터 국면 규칙은 점수에서 뺐다(KR: 「초기 반전」 매수 −2.7% · 「어깨」 +6.2% — 추세 시장 · US: 정보 없음)
   G 성장 30  = 3년 매출 CAGR(12) + 최근 분기 매출 YoY(12) + 선행 성장(6 · KR 컨센 매출 / US EBIT YoY)
   Q 질   20  = 분기 OPM 수준(7) + ΔOPM YoY(7) + ROE(6 · US는 ROA)   [− SBC 페널티 5]
-  E 기대 20  = KR: 컨센 EPS 성장(5) + Δ추정EPS 1M(7) + 외국인 60d 순매수/거래량(4 · IC +0.060 t 2.8) + 외국인 보유비율 Δ60d(4 · IC +0.063 t 3.1) — 기관은 IC −0.04 라 0 · US: TP 괴리(6) + ΔTP 1M(8) + 투자의견(6)
+  E 기대 20  = KR: 컨센 EPS 성장(5) + Δ추정EPS 1M(7) + 외국인 60d 순매수/거래량(4 · IC +0.060 t 2.8) + 외국인 보유비율 Δ60d(4 · IC +0.063 t 3.1) — 기관은 IC −0.04 라 0 · US(v4.4): TP 괴리(5) + ΔTP 1M(7) + 공매도 days-to-cover 역순(8 · FINRA 격월 · S&P500 PIT IC −0.043 t −3.3 · 두 레짐 −0.038/−0.067 — 공매도 잔고 변화(ΔSI)는 0)
   VCP(변동성 수축)은 없다 — 09-10 백테스트(승률 40%)에 이어 09-16 재검(20/120d 변동성비 IC +0.049 = 수축이 아니라 <확장>이 좋았고 하락기 −0.033 · 결합 52%)에서도 기각
 v3(09-15 밤 · 매니저 7종목 대조 뒤): 렌즈를 둘로 — <주도(Leader)>는 가격이 확인한 것, <선행(Early)>은 이익·기대는 도는데 가격이 아직인 것.
   Early 100 = 분기 매출 QoQ 개선 연속(20) + ΔOPM 개선(20) + 추정치 상향 1M(20) + 52주 고점 대비 낙폭(15 · 클수록 기회) + 가격 안정화(15 · 1M ≥ −5 & RS3<0) + 질 유지(10 · OPM 백분위)
@@ -208,6 +210,53 @@ def flow_signals(code, day):
             "dfr60": (fr[-1] - fr[-61]) * 100 if len(fr) > 61 else None}
 
 
+US_SI = os.path.join(FLOWS, "us_si")
+
+
+def us_short_interest(day):
+    """US 수급 프록시(v4.4 · 09-16 검증): FINRA 공매도 잔고 days-to-cover(잔고/ADV). 격월(15일·월말 정산) 최신 1회분을 전 종목 받아 캐시.
+    S&P500 PIT 44개월 IC −0.043(t −3.3 · 두 레짐 음) — 잔고가 많을수록 다음 3M 부진. ΔSI·공매도 비율(SVR)은 정보 없음."""
+    import datetime as _dt
+    os.makedirs(US_SI, exist_ok=True)
+    d0 = _dt.date.fromisoformat(day)
+    cands = []
+    for k in range(0, 60):
+        x = d0 - _dt.timedelta(days=k)
+        if x.weekday() >= 5:
+            continue
+        nxt = x + _dt.timedelta(days=1)
+        if x.day in (13, 14, 15) or nxt.month != x.month or (nxt + _dt.timedelta(days=1)).month != x.month or (nxt + _dt.timedelta(days=2)).month != x.month:
+            cands.append(x.isoformat())
+    have = sorted(f for f in os.listdir(US_SI) if f.startswith("screen_"))
+    if have and have[-1][7:17] >= (d0 - _dt.timedelta(days=45)).isoformat():
+        return json.load(io.open(os.path.join(US_SI, have[-1]), encoding="utf-8"))
+    for sd in cands[:8]:
+        out = {}; off = 0; got_date = None
+        try:
+            while True:
+                body = json.dumps({"limit": 5000, "offset": off, "compareFilters": [{"compareType": "EQUAL", "fieldName": "settlementDate", "fieldValue": sd}],
+                                   "fields": ["symbolCode", "daysToCoverQuantity", "settlementDate"]}).encode()
+                req = urllib.request.Request("https://api.finra.org/data/group/otcMarket/name/consolidatedShortInterest", data=body,
+                                             headers={"Content-Type": "application/json", "Accept": "application/json"})
+                with urllib.request.urlopen(req, timeout=90) as r:
+                    data = json.loads(r.read())
+                for x in data:
+                    out[x.get("symbolCode")] = x.get("daysToCoverQuantity")
+                    got_date = got_date or x.get("settlementDate")
+                if len(data) < 5000:
+                    break
+                off += 5000; time.sleep(0.3)
+        except Exception:  # noqa: BLE001
+            continue
+        if out:
+            out["_settlementDate"] = got_date or sd
+            if have and have[-1][7:17] >= out["_settlementDate"]:
+                return json.load(io.open(os.path.join(US_SI, have[-1]), encoding="utf-8"))
+            io.open(os.path.join(US_SI, f"screen_{out['_settlementDate']}.json"), "w", encoding="utf-8").write(json.dumps(out))
+            return out
+    return {}
+
+
 def daily_signals(code):
     """일봉 캐시(백테스트가 받아 둔 3.6년) → 52주 고점 근접도 · 변동성조정 6M · 6-1 모멘텀. 캐시 없으면 None."""
     fp = os.path.join(DAILY, f"{code}.json")
@@ -311,6 +360,9 @@ def mcap_krw(s):
     return t or None
 
 
+_US_SI_CACHE = {}
+
+
 def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
     r = rec["ret"] or {}
     a = (fin or {}).get("annual") or {}
@@ -394,6 +446,12 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
                 rev1m = (p1 / p0 - 1) * 100
     ds = daily_signals(rec["code"])
     fs = flow_signals(rec["code"], DAY_ASOF) if (not rec["us"] and not rec.get("etf")) else {}
+    dtc = None
+    if rec["us"] and not rec.get("etf"):
+        if "d" not in _US_SI_CACHE:
+            _US_SI_CACHE["d"] = us_short_interest(DAY_ASOF)
+        si = _US_SI_CACHE["d"]
+        dtc = si.get(rec["code"].split(".")[0].replace("b", ".B") if rec["code"].endswith("b") else rec["code"].split(".")[0])
     sbc_pen = 0
     ocf_warn = None
     if flags:
@@ -406,7 +464,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
     return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
             "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52, "etf": bool(rec.get("etf")),
             "hi52": ds.get("hi52"), "voladj6": ds.get("voladj6"), "mom6_1": ds.get("mom6_1"),
-            "f60": fs.get("f60"), "i60": fs.get("i60"), "dfr60": fs.get("dfr60"),
+            "f60": fs.get("f60"), "i60": fs.get("i60"), "dfr60": fs.get("dfr60"), "dtc": dtc,
             "judged": bool(flags and (name in flags[2] or rec["code"].split(".")[0] in flags[2] or name in flags[3])),
             "falsifier": (flags[4].get(rec["code"].split(".")[0]) if flags and len(flags) > 4 else None),
             "cagr3": g_cagr, "rev_yoy_q": yoy, "fwd": fwd, "opm": opm_now, "d_opm": d_opm,
@@ -424,7 +482,7 @@ def score(rows, bench=None):
         # KR 섹터 ETF 3M 상대강도 → 종목의 sector_mom (US는 정보 없음 → None)
         etf_rs = {x["name"]: ((x.get("m3") or 0) - b.get("3M", 0)) for x in grp if x.get("etf")}
         for x in grp:
-            x["rs12"] = (x.get("y1") - b.get("12M", 0)) if (x.get("y1") is not None and not us) else None
+            x["rs12"] = (x.get("y1") - b.get("12M", 0)) if x.get("y1") is not None else None  # v4.4: US 도 쓴다(넓은 표본 t 3.4)
             sk = str(x.get("sector") or "").split("(")[0]
             etf_name = KR_SECTOR_ETF.get(sk) if not us else None
             x["sector_etf"] = etf_name
@@ -458,13 +516,15 @@ def score(rows, bench=None):
             if not us:
                 p = pr("hi52", 10) + pr("rs12", 6) + (pr("voladj6", 6) + pr("mom6_1", 4) + pr("sector_mom", 4)) * regime_factor
             else:
-                p = (pr("voladj6", 10) + pr("mom6_1", 8) + pr("rs6", 6) + pr("m1", 6)) * regime_factor
-            p_max = (16 + 14 * regime_factor) if not us else 30 * regime_factor
+                # v4.4(09-16 · S&P500 PIT 대조): 12M RS 감쇠 없음(하락기 +0.053) · 6M RS·1M 은 넓은 표본에서 0
+                p = pr("rs12", 10) + (pr("voladj6", 8) + pr("mom6_1", 6)) * regime_factor
+            p_max = (16 + 14 * regime_factor) if not us else (10 + 14 * regime_factor)
             qv = pr("opm", 7) + pr("d_opm", 7) + pr("roe", 6) - x.get("sbc_pen", 0)  # KR ROE · US ROA · SBC 페널티
             if not us:  # v4.3: 기관+외인 합(IC +0.016)은 정보가 없다 — 외국인만, 두 창으로
                 e = pr("e1", 5) + pr("rev1m", 7) + pr("f60", 4) + pr("dfr60", 4)
             else:
-                e = pr("e1", 6) + pr("rev1m", 8) + pr("e2", 6)
+                # v4.4: 공매도 days-to-cover 역순 8(FINRA · PIT IC −0.043 t −3.3) — 결측이면 평균(50)
+                e = pr("e1", 5) + pr("rev1m", 7) + (8 - pr("dtc", 8))
             denom = 30 + p_max + 20 + 20
             x.update({"G": round(g / 30 * 100, 1), "P": round(p / p_max * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
                       "total": round((g + p + max(qv, 0) + e) / denom * 100, 1), "missing": miss})
@@ -567,7 +627,7 @@ def render_html(out, path_html):
     early_kr = sorted([x for x in kr if x["P"] < 50], key=lambda x: -x["early"])[:10]
     early_us = sorted([x for x in us if x["P"] < 50], key=lambda x: -x["early"])[:10]
     b = out["bench"]
-    bt_path = sorted([f for f in os.listdir(os.path.join(ROOT, "intake", "files")) if f.startswith("backtest_")])
+    bt_path = sorted([f for f in os.listdir(os.path.join(ROOT, "intake", "files")) if re.match(r"backtest_\d{4}-\d{2}-\d{2}\.json$", f)])
     bt = json.load(io.open(os.path.join(ROOT, "intake", "files", bt_path[-1]), encoding="utf-8")) if bt_path else None
     def bt_table():
         if not bt:
@@ -675,7 +735,7 @@ def render_html(out, path_html):
 <section id="method" class="blk" style="padding-top:0"><div class="wrap">
 <div class="sec-head"><div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>방법 · 판정</div><h2 class="sec-title">이 표가 틀렸음을 보여줄 것</h2></div>
 <div style="padding:16px 20px;border-left:4px solid #3b82f6;background:rgba(59,130,246,.05);line-height:1.9;font-size:.95rem">
-<b style="color:#60a5fa">▎36개월 백테스트(v4의 근거 · 2026-09-15)</b> — 가격 축은 여기서 나온 IC 대로 짰다. KR은 52주 고점 근접도가 압도적(t 4.4 · 79% 양), US는 변동성조정 6M·6-1 모멘텀. 1M 낙폭 가드는 뺐다.
+<b style="color:#60a5fa">▎36개월 백테스트(v4의 근거 · 2026-09-15)</b> — 가격 축은 여기서 나온 IC 대로 짰다. KR은 52주 고점 근접도가 압도적(t 4.4 · 79% 양), US는 변동성조정 6M·6-1 모멘텀. 1M 낙폭 가드는 뺐다. <b>v4.4(09-16)</b>: S&amp;P500 당시 구성 578종목·44개월 대조에서 US 12M 상대강도가 가장 강했고(IC +0.069 t 3.4 · 두 레짐 +) 6M RS·1M은 힘이 없어 US P를 12M RS 10 + 변동성조정 6M 8 + 6-1 6으로 다시 짰다(합성 IC +0.033 → +0.059). US 수급은 FINRA 공매도 days-to-cover(IC −0.043 t −3.3)를 E에 역순 8점으로 넣었다 — ΔSI·공매도 비율은 정보 없음.
 {bt_table()}
 <br>· <b>승률</b> — 판정 이벤트마다 재실행해(FOMC·정상회담·실적·지수 ±3% 일 · 월 1회는 하한) A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
 · <b>게이트</b> — 「탈락 후보」로 찍힌 종목이 다음 분기 OPM을 회복하면 게이트가 SBC·일회성에 속은 것이다(Credo가 첫 시험).<br>
