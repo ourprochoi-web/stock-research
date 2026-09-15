@@ -97,11 +97,19 @@ def collect_macro(day):
         st, body = fetch_ua(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", UA, 20)
         if st != 200 or not body:
             out["errors"].append({"host": "fred.stlouisfed.org", "path": f"fredgraph.csv?id={sid}", "status": st}); continue
-        rows = [ln.split(",") for ln in body.decode("utf-8", "ignore").strip().split("\n")[1:] if not ln.endswith(".")]
+        # 2026-09-15: 빈 값('' 또는 '.')이 섞인 계열(RRPONTSYD 등)에서 float('') 로 죽었다 → 값 있는 행만
+        rows = []
+        for ln in body.decode("utf-8", "ignore").strip().split("\n")[1:]:
+            parts = ln.split(",")
+            if len(parts) >= 2 and parts[1] not in ("", "."):
+                try:
+                    rows.append((parts[0], float(parts[1])))
+                except ValueError:
+                    continue
         if rows:
             last = rows[-1]
-            out["fred"][key] = {"date": last[0], "value": float(last[1]), "series": sid,
-                                "w1": float(rows[-6][1]) if len(rows) > 6 else None, "m1": float(rows[-22][1]) if len(rows) > 22 else None}
+            out["fred"][key] = {"date": last[0], "value": last[1], "series": sid,
+                                "w1": rows[-6][1] if len(rows) > 6 else None, "m1": rows[-22][1] if len(rows) > 22 else None}
     for name, url in NAVER_IDX.items():
         d, st = fetch_json(url)
         if not d:
@@ -179,9 +187,18 @@ def collect_macro_v3(day, out):
 
 
 def macro_record(day, ids, dry):
-    if os.path.exists(LOG) and any(json.loads(ln).get("kind") == "매크로" and json.loads(ln).get("date") == f"{day:%Y-%m-%d}"
-                                   for ln in io.open(LOG, encoding="utf-8") if ln.strip()):
-        return 0
+    if os.path.exists(LOG):
+        lines = [ln for ln in io.open(LOG, encoding="utf-8") if ln.strip()]
+        ok = [ln for ln in lines if json.loads(ln).get("kind") == "매크로" and json.loads(ln).get("date") == f"{day:%Y-%m-%d}" and json.loads(ln).get("status") == "ok"]
+        if ok:
+            return 0
+        # 같은 날 실패 기록은 성공 시 교체한다
+        kept = [ln for ln in lines if not (json.loads(ln).get("kind") == "매크로" and json.loads(ln).get("date") == f"{day:%Y-%m-%d}" and json.loads(ln).get("status") == "error")]
+        if len(kept) != len(lines) and not dry:
+            io.open(LOG, "w", encoding="utf-8").write("".join(kept))
+            for ln in lines:
+                if ln not in kept:
+                    ids.discard(json.loads(ln)["id"])
     snap = collect_macro(day)
     try:
         collect_macro_v3(day, snap)
@@ -268,7 +285,14 @@ def main(argv):
         try:
             written += macro_record(day, ids, dry)
         except Exception as e:  # noqa: BLE001
+            # 2026-09-15: 봇에서 실패하면 Actions 로그를 못 보므로 트레이스백을 collected.jsonl 에 남긴다(§W5)
+            import traceback
+            tb = traceback.format_exc()[-600:]
             print(f"[collect] ⚠ macro 실패 — {e}")
+            rec = {"id": next_id(ids, day), "date": f"{day:%Y-%m-%d}", "kind": "매크로", "host": "collect.py", "path": "macro_record",
+                   "subject": f"매크로 스냅샷 {day:%Y-%m-%d} 실패", "status": "error", "file": None, "routed": False, "auto": True, "note": tb}
+            if not dry:
+                io.open(LOG, "a", encoding="utf-8").write(json.dumps(rec, ensure_ascii=False) + "\n")
     print(f"[collect] {day} · {written}건 기록" + (" (dry-run)" if dry else ""))
     return 0
 
