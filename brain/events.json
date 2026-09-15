@@ -61,7 +61,7 @@
   },
   {
    "when": "2026-09-18",
-   "what": "대미투자 공식 발표 — 원전 8기 포함 여부. 원전·SMR 편 T1·T3",
+   "what": "대미투자 공식 발표 — 원전 8기 포함 여부. 원전·SMR 편 T1·T3 · 09-16 메리츠(②): 1호 = 텍사스 엔시날 가스 발전 6.3GW · 원전 8기는 프레임워크(Sell on news 위험) · Westinghouse 5~15% 지분 인수 보도 — 판정: 착공 계획·지분 가격·의결권",
    "judges": "ai-infra/ai_power_company_nuclear_smr.html#T1,T3",
    "grade": "②"
   },
@@ -301,6 +301,24 @@
    "what": "미국 중간선거 — Citi(③): AI 규제 프레임워크·DC 구축 속도의 분기점. 민주 양원 장악 시 감속 경로 → n-pacing 판정 이벤트(기존 11-03 precommit 에 축 추가)",
    "judges": "regime.narratives.n-pacing",
    "grade": "③"
+  },
+  {
+   "when": "2026-11초",
+   "what": "블룸에너지 3Q26 10-Q — 지역(미주 25%↑?)·단일고객(30%↓?)·관계자(20%↑?) 세 주석 = T2·T3 판정 · 주피터 진행",
+   "judges": "ai-infra/us_bloom_intel_deep.html#T2,T3",
+   "grade": "①"
+  },
+  {
+   "when": "2026-12-31",
+   "what": "블룸 연내 신규 하이퍼스케일러 계약(한투 기대 ③) — 0건이면 T4 「Oracle+α」 반증 · 주피터 파이프라인 2027-02 재지연 여부",
+   "judges": "ai-infra/us_bloom_intel_deep.html#T4",
+   "grade": "③"
+  },
+  {
+   "when": "2026-11중",
+   "what": "비나텍 3Q26 — 시스템 매출 첫 인식(412억 계약) · 한선 OPM · 아모센스 소재 매출 → T5(국내 밸류체인) 첫 실측",
+   "judges": "ai-infra/us_bloom_intel_deep.html#T5",
+   "grade": "①"
   }
  ]
 }

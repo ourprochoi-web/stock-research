@@ -8,7 +8,7 @@
   · SBC 페널티(facts.json sbc_to_rev_q > 15% → −5) · OCF/EBIT 경고(<0.7)
   · 판단 보유 여부(judged) · 추적에만 있고 시세 없는 US 종목은 그 자리에서 받는다(Semtech 등)
 v4(09-16 새벽 · 36개월 백테스트 뒤 · intake/files/backtest_2026-09-15.json): 가격 축을 <증거대로> 다시 짰다.
-  KR P 30 (v4.2) = 52주 고점 근접도(10 · 우리 +0.098 t 4.4 / 코스피200 +0.051 · 두 레짐 모두 +) + 12M RS(6 · 코스피200 +0.113 t 2.4 · 하락기 +0.138) + 변동성조정 6M(6 · 안정) + 6-1(4) + 섹터 ETF 3M 모멘텀(4 · ETF IC +0.25) — 3M RS 는 코스피200 하락기 −0.064 라 0
+  KR P 30 (v4.5 · 09-16 코스피300+코스닥150 재측정: 12M RS 는 코스피 1-200 +0.103 t 2.5 · 201-300 +0.069 / 코스닥 −0.014 → 코스닥은 rs12 0 · hi52 16) = 52주 고점 근접도(10 · 우리 +0.098 t 4.4 / 코스피200 +0.051 · 두 레짐 모두 +) + 12M RS(6 · 코스피200 +0.113 t 2.4 · 하락기 +0.138) + 변동성조정 6M(6 · 안정) + 6-1(4) + 섹터 ETF 3M 모멘텀(4 · ETF IC +0.25) — 3M RS 는 코스피200 하락기 −0.064 라 0
   US P 24 (v4.4 · 09-16 S&P500 point-in-time 578종목 44개월 대조 · intake/files/backtest_us_control_2026-09-16.json) = 12M RS(10 · 넓은 표본 +0.069 t 3.4 · 두 레짐 +0.073/+0.053 · 감쇠 없음) + [변동성조정 6M(8 · +0.040 t 2.2) + 6-1(6 · +0.034)](하락기 ×0.5)
     — 6M RS·1M 은 넓은 표본에서 t<1.9 라 0. 우리 60종목은 효과를 2배 부풀렸고 12M 은 반대로 버렸었다(전/후 −0.035/+0.115 는 표본 탓). 52주 고점은 US 하락기 −0.155 라 0.
     합성 검산: 현행 P IC +0.033(하락기 −0.006) → v4.4 +0.059(t 2.8 · 하락기 +0.035) → +공매도 +0.067(t 3.2)
@@ -145,6 +145,26 @@ def load_universe():
                      "tp": num(fd.get("목표주가")), "rating": num(fd.get("투자의견")), "ebit_yoy": fd.get("EBIT_YoY"), "opm_now": fd.get("OPM"), "fresh": True, "etf": name in etf_us}
         print(f"  + {name} ({sym}) 즉석 수집")
     return P, kr, usd
+
+
+MARKETS_FP = os.path.join(ROOT, "intake", "files", "markets.json")
+MARKETS = {}
+
+
+def load_markets(allrec):
+    """v4.5(09-16): KR 시장 구분(KOSPI/KOSDAQ) — 코스닥에선 12M RS가 안 통한다(IC −0.014~−0.028) → P 가중을 시장별로. naver basic.stockExchangeName 캐시."""
+    mk = json.load(io.open(MARKETS_FP, encoding="utf-8")) if os.path.exists(MARKETS_FP) else {}
+    changed = False
+    for name, rec in allrec.items():
+        if name in mk or rec["us"] or rec.get("etf"):
+            continue
+        d = get(f"https://m.stock.naver.com/api/stock/{rec['code']}/basic")
+        mk[name] = (d or {}).get("stockExchangeName") or None
+        changed = True
+        time.sleep(0.08)
+    if changed:
+        io.open(MARKETS_FP, "w", encoding="utf-8").write(json.dumps(mk, ensure_ascii=False, indent=1))
+    return mk
 
 
 def load_sectors(allrec):
@@ -461,7 +481,7 @@ def compute(name, rec, fin, bench, sector=None, prev=None, flags=None):
             sbc_pen = 5
         if code_key in ocf and ocf[code_key] is not None and ocf[code_key] < 0.7:
             ocf_warn = ocf[code_key]
-    return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
+    return {"name": name, "code": rec["code"], "us": rec["us"], "price": rec["price"], "sector": sector, "market": ("US" if rec["us"] else MARKETS.get(name)), "rev1m": rev1m, "sbc_pen": sbc_pen, "ocf_warn": ocf_warn,
             "qoq_up": qoq_up, "opm_qoq": opm_qoq, "dd52": dd52, "etf": bool(rec.get("etf")),
             "hi52": ds.get("hi52"), "voladj6": ds.get("voladj6"), "mom6_1": ds.get("mom6_1"),
             "f60": fs.get("f60"), "i60": fs.get("i60"), "dfr60": fs.get("dfr60"), "dtc": dtc,
@@ -514,7 +534,12 @@ def score(rows, bench=None):
             #   HI52(우리 +0.098 / 넓은 +0.051 · 하락기 +0.054) · RS12(넓은 +0.113 t 2.4 · 하락기 +0.138). 3M RS 는 넓은 표본에서 하락기 −0.064 → 0.
             #   변동성조정 6M(+0.041/+0.039 안정) · 6-1(65%) · 섹터 모멘텀은 하락기 감쇠.
             if not us:
-                p = pr("hi52", 10) + pr("rs12", 6) + (pr("voladj6", 6) + pr("mom6_1", 4) + pr("sector_mom", 4)) * regime_factor
+                # v4.5(09-16 · 코스피300+코스닥150 재측정): 12M RS는 코스피에서만 산다(1-200 +0.103 t 2.5 · 201-300 +0.069 / 코스닥 −0.014).
+                #   52주 고점은 세 집단 다 양(코스닥 +0.043 t 2.5) → 코스닥은 rs12 6점을 hi52로 옮긴다(hi52 16)
+                if x.get("market") == "KOSDAQ":
+                    p = pr("hi52", 16) + (pr("voladj6", 6) + pr("mom6_1", 4) + pr("sector_mom", 4)) * regime_factor
+                else:
+                    p = pr("hi52", 10) + pr("rs12", 6) + (pr("voladj6", 6) + pr("mom6_1", 4) + pr("sector_mom", 4)) * regime_factor
             else:
                 # v4.4(09-16 · S&P500 PIT 대조): 12M RS 감쇠 없음(하락기 +0.053) · 6M RS·1M 은 넓은 표본에서 0
                 p = pr("rs12", 10) + (pr("voladj6", 8) + pr("mom6_1", 6)) * regime_factor
@@ -735,7 +760,7 @@ def render_html(out, path_html):
 <section id="method" class="blk" style="padding-top:0"><div class="wrap">
 <div class="sec-head"><div class="sec-eyebrow"><span class="idx">03</span><span class="ln"></span>방법 · 판정</div><h2 class="sec-title">이 표가 틀렸음을 보여줄 것</h2></div>
 <div style="padding:16px 20px;border-left:4px solid #3b82f6;background:rgba(59,130,246,.05);line-height:1.9;font-size:.95rem">
-<b style="color:#60a5fa">▎36개월 백테스트(v4의 근거 · 2026-09-15)</b> — 가격 축은 여기서 나온 IC 대로 짰다. KR은 52주 고점 근접도가 압도적(t 4.4 · 79% 양), US는 변동성조정 6M·6-1 모멘텀. 1M 낙폭 가드는 뺐다. <b>v4.4(09-16)</b>: S&amp;P500 당시 구성 578종목·44개월 대조에서 US 12M 상대강도가 가장 강했고(IC +0.069 t 3.4 · 두 레짐 +) 6M RS·1M은 힘이 없어 US P를 12M RS 10 + 변동성조정 6M 8 + 6-1 6으로 다시 짰다(합성 IC +0.033 → +0.059). US 수급은 FINRA 공매도 days-to-cover(IC −0.043 t −3.3)를 E에 역순 8점으로 넣었다 — ΔSI·공매도 비율은 정보 없음.
+<b style="color:#60a5fa">▎36개월 백테스트(v4의 근거 · 2026-09-15)</b> — 가격 축은 여기서 나온 IC 대로 짰다. KR은 52주 고점 근접도가 압도적(t 4.4 · 79% 양), US는 변동성조정 6M·6-1 모멘텀. 1M 낙폭 가드는 뺐다. <b>v4.4(09-16)</b>: S&amp;P500 당시 구성 578종목·44개월 대조에서 US 12M 상대강도가 가장 강했고(IC +0.069 t 3.4 · 두 레짐 +) 6M RS·1M은 힘이 없어 US P를 12M RS 10 + 변동성조정 6M 8 + 6-1 6으로 다시 짰다(합성 IC +0.033 → +0.059). US 수급은 FINRA 공매도 days-to-cover(IC −0.043 t −3.3)를 E에 역순 8점으로 넣었다 — ΔSI·공매도 비율은 정보 없음. <b>v4.5(09-16)</b>: KR 12M 상대강도를 코스피300+코스닥150(409종목)으로 다시 재니 코스피에선 살고(1-200 +0.103 · 201-300 +0.069) 코스닥에선 죽는다(−0.014). 52주 고점은 세 집단 다 양(코스닥 t 2.5) → 코스닥 종목은 12M RS 6점을 52주 고점으로 옮겼다. 2023년 1~10월은 모든 모멘텀 신호가 −0.13~−0.19(2차전지 테마 반전) — 레짐 감쇠(지수 3M<0)가 못 잡는 「주도주 붕괴」 구간이 있다.
 {bt_table()}
 <br>· <b>승률</b> — 판정 이벤트마다 재실행해(FOMC·정상회담·실적·지수 ±3% 일 · 월 1회는 하한) A/B/C/D 이동을 기록한다. 6개월 뒤 A칸의 이후 3M 상대수익률 중앙값이 D칸보다 높지 않으면 이 채점은 정보가 없다(09-10 VCP 백테스트와 같은 판정).<br>
 · <b>게이트</b> — 「탈락 후보」로 찍힌 종목이 다음 분기 OPM을 회복하면 게이트가 SBC·일회성에 속은 것이다(Credo가 첫 시험).<br>
@@ -795,6 +820,7 @@ def main(argv):
         time.sleep(0.15)
     bench = bench_returns()
     sectors = load_sectors(allrec)
+    MARKETS.update(load_markets(allrec))
     prev, prev_rev = load_prev_prices(30)
     flags = load_flags()
     rows = score([compute(n, r, fin.get(n), bench, sectors.get(n), prev, flags) for n, r in allrec.items()], bench)

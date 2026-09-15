@@ -1211,6 +1211,91 @@
    "tracked_price": true,
    "note": "금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편",
    "sec": "CIK 0001783879 · intake/files/sec/hood/"
+  },
+  "126340": {
+   "name": "비나텍",
+   "market": "KR",
+   "layer": "BE 밸류체인 · 슈퍼캐패시터(스냅인 독점 ②)·시스템",
+   "business": "리드타입 슈퍼캡 58.5% · 스냅인 27.4% · 수소연료전지 8.3% · 수출 72.7%. BE 412억 DC용 슈퍼캡 시스템 계약(2026-06-30). 캐파 스냅인 4.2M/분기 → 9M(2027). 2Q26 매출 35십억(+71%) OP 0 · 순손실 −38(베트남 화재 298억·CB 평가손 96억) · CB 600억(556,740주 ≈ 7.8%). 시총 460십억(9/14 64,100)",
+   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+   "pages": [
+    "ai-infra/us_bloom_intel_deep.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "tracked_price": true,
+   "note": "한투 TP 94,400 = 2027F EBITDA 50.8십억 × 18.4배 − 순차입 206 / 7.74M주 · 2027F 매출 229(+72.9% · 시스템 54)",
+   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소"
+  },
+  "452280": {
+   "name": "한선엔지니어링",
+   "market": "KR",
+   "layer": "BE 밸류체인 · 피팅·밸브·모듈(1차 벤더 2021-10)",
+   "business": "피팅 63.3% · 밸브 17.9% · 모듈 13.5% · 내수 58.8%. 2Q26 매출 24십억(+52.6%) OPM 23.7%(1Q 27.7%) · 2026F 92(+45.6% · 종전 가이던스 72) · 캐파 1,500억 · 최대주주 62.3% · 유동 37.7% · PER 16.5(2025). 시총 207십억",
+   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+   "pages": [
+    "ai-infra/us_bloom_intel_deep.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "tracked_price": true,
+   "note": "밸류체인 중 유일하게 이익이 있는 회사 · BE 향 비중 미공개(②)",
+   "falsifier": "OPM 20% 아래 2분기 · 2026 매출 720억 미만"
+  },
+  "357580": {
+   "name": "아모센스",
+   "market": "KR",
+   "layer": "BE 밸류체인 · SOFC 세라믹 전해질 기판",
+   "business": "모듈 55.3% · 디바이스 29.4% · 소재 10.7%. BE 기판 초도 납품(2026-03 · MOU 2023-11) · 월 20만 → 60만장 · 초기 점유 9%(BE 2GW당 8,000만장 ③). 2Q26 적자(−1십억) · 2027F 매출 194(+57%). 시총 60십억 · 최대주주 58.8%",
+   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+   "pages": [
+    "ai-infra/us_bloom_intel_deep.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "tracked_price": true,
+   "note": "BE 공급망 탈중국·일본(③) · 가장 늦고 가장 작다",
+   "falsifier": "4Q26 소재 매출 <7십억 · 본격 출하 지연"
+  },
+  "178320": {
+   "name": "서진시스템",
+   "market": "KR",
+   "layer": "BE 밸류체인 · SOFC 모듈·부품 생산",
+   "business": "BE 785억 SOFC 모듈·부품 생산 계약(2026-07). 시총 2,224십억 — 5사 중 최대·다각화(ESS·통신장비)",
+   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+   "pages": [
+    "ai-infra/us_bloom_intel_deep.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "tracked_price": true,
+   "note": "BE 비중은 작음 [추론]",
+   "falsifier": "785억 계약 이행 지연 공시"
+  },
+  "089890": {
+   "name": "코세스",
+   "market": "KR",
+   "layer": "BE 밸류체인 · 전극셀 자동화 장비",
+   "business": "BE 1,504억 AI서버용 전극셀 자동화 장비(2026-07) · BE 누적 수주 2,372억(25-11 178 → 26-07 2,372). 시총 408십억 — 장비 수주가 BE 캐파(프리몬트 5GW → 4GW 대응)의 선행지표",
+   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+   "pages": [
+    "ai-infra/us_bloom_intel_deep.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "tracked_price": true,
+   "note": "캐파 증설의 첫 발주처",
+   "falsifier": "BE 신규 장비 발주 2분기 공백"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

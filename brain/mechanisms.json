@@ -178,6 +178,22 @@
   "bigtech_fcf": {
    "label": "빅테크 FCF(캐펙스 지출자)",
    "kind": "company"
+  },
+  "grid_constraint": {
+   "label": "미국 광역전력망 제약(LPT 노후·IR→COD 61개월·PJM 예비율)",
+   "kind": "macro"
+  },
+  "btm_onsite": {
+   "label": "BTM 현장발전 수요(2028+ 신규 DC 50% · SemiAnalysis ③)",
+   "kind": "sector"
+  },
+  "sofc_be": {
+   "label": "SOFC/블룸 캐파(1→2→5GW)",
+   "kind": "company"
+  },
+  "kr_be_chain": {
+   "label": "국내 BE 밸류체인(비나텍·한선·아모센스·서진·코세스)",
+   "kind": "sector"
   }
  },
  "edges": [
@@ -744,6 +760,71 @@
     "national-strategy/ns_bigtech_capex_roi.html#T1"
    ],
    "note": "감속 = 지출자에겐 FCF 개선, 수령자(칩·장비·SBG)에겐 매출 감소. 09-14: MSFT +1.6·GOOGL +2·META +1.4 vs SOX −5.8·소프트뱅크 −10.7. m-16(pacing→ai_capex ?)의 <배분> 엣지"
+  },
+  {
+   "id": "m-38",
+   "from": "grid_constraint",
+   "to": "btm_onsite",
+   "sign": "+",
+   "lag": "년",
+   "strength": "강",
+   "grade": "①/③",
+   "evidence": [
+    "u-20260916-08"
+   ],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T4"
+   ],
+   "note": "IR→COD 60.8개월(Berkeley ①) · PJM 예비율 14.7%(①) → 계통 대신 현장발전. 50% 침투는 SemiAnalysis ③"
+  },
+  {
+   "id": "m-39",
+   "from": "btm_onsite",
+   "to": "sofc_be",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "중",
+   "grade": "②",
+   "evidence": [
+    "u-20260916-08"
+   ],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T1",
+    "ai-infra/us_bloom_intel_deep.html#T4"
+   ],
+   "note": "조달 4개월 vs 터빈 12~60 · NOx 0.02 · DC 아키텍처. 단 LCOE $209 ≈ GT $210(③) · 가스터빈이 BTM의 50%"
+  },
+  {
+   "id": "m-40",
+   "from": "sofc_be",
+   "to": "dc_gas_demand",
+   "sign": "+",
+   "lag": "분기",
+   "strength": "약",
+   "grade": "②",
+   "evidence": [
+    "u-20260916-08"
+   ],
+   "theses": [
+    "energy/us_energy_five.html#T6"
+   ],
+   "note": "SOFC 연료 = 천연가스 · 주피터는 파이프라인 허가에 걸림 — 연료전지도 가스 물량이다"
+  },
+  {
+   "id": "m-41",
+   "from": "sofc_be",
+   "to": "kr_be_chain",
+   "sign": "+",
+   "lag": "분기~년",
+   "strength": "강",
+   "grade": "①",
+   "evidence": [
+    "u-20260916-08"
+   ],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "note": "BE 캐파 증설 → 코세스 장비(선행) → 서진 모듈·한선 피팅·비나텍 슈퍼캡·아모센스 기판(동행). 계약은 ① · 이익은 한선만"
   }
  ]
 }
