@@ -176,7 +176,7 @@
   },
   {
    "id": "leader-grid",
-   "what": "성상현 2×2(성장×가격) 격자를 정식으로 — 필요 데이터: 3년 매출·이익 CAGR(naver finance/quarter 또는 DART) · 상대강도(vs KOSPI) · ROE · 자금유입(외국인·기관 10일). 1차 근사(c-09)는 컨센 fwd EPS만 써서 K뷰티를 오분류. 월 1회(리밸런싱 주기와 동일) 돌려 A/B/C/D 이동을 routing에 남긴다. VCP 백테스트(09-10)의 후속 — 「가격 위에 이익 게이트」가 승률을 바꾸는지가 판정",
+   "what": "스크린 v1 가동(09-15 · docs/leader_screen_design.md · leader_screen.py). 남은 것: ① 섹터 태그 188(entities.layer 49만) → 캡 자동화 ② US E축 수급 대체(13F 분기 변화) ③ 월 1회(10/15) 재실행 → A/B/C/D 이동을 routing에 · 승률은 6개월 뒤 ④ 광 4사(SMTC·MTSI·FN·AAOI) 내일 봇부터 편입 ⑤ Credo ΔOPM의 SBC 분자",
    "since": "2026-09-15"
   }
  ]

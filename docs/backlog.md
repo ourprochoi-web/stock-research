@@ -177,3 +177,7 @@ print("▎미라우팅 intake(routed:false·ok): %d"%n)
 EOF
 ```
 
+```
+# 주도주 스크린(월 1회 · 15일) — 후보를 좁힐 뿐 판단하지 않는다. 결과·재무 스냅샷은 intake/files/
+PYTHONIOENCODING=utf-8 python3 portfolio/data/leader_screen.py --top 15
+```
