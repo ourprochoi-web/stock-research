@@ -199,6 +199,14 @@ def main(argv):
                         sp = quintile_spread(sig[w], fv)
                         if sp is not None:
                             rows[f"{w}_{h}"]["spread"].append(sp)
+        # 전반/후반 분할 — 가중이 표본 전체로 골라진 in-sample 이므로 절반씩의 IC 부호가 같은지 본다
+        half = {}
+        for k, v in rows.items():
+            if len(v["ic"]) >= 8:
+                h = len(v["ic"]) // 2
+                a_, b_ = v["ic"][:h], v["ic"][h:]
+                half[k] = (round(sum(a_) / len(a_), 3), round(sum(b_) / len(b_), 3))
+        results.setdefault("split", {})[mk] = half
         summ = {}
         for k, v in rows.items():
             if v["ic"]:
@@ -211,7 +219,8 @@ def main(argv):
         for k in ("1M_f1", "3M_f1", "6M_f1", "12M_f1", "RS3_f1", "RS6_f1", "VOLADJ3_f1", "HI52_f1", "MOM6_1_f1", "1M_f3", "3M_f3", "6M_f3", "12M_f3", "RS3_f3", "RS6_f3", "RS12_f3", "VOLADJ3_f3", "VOLADJ6_f3", "HI52_f3", "MOM6_1_f3"):
             v = summ.get(k)
             if v:
-                print(f"  {k:<8} IC {v['ic_mean']:+.3f}  t {v['ic_t']!s:>5}  양 {v['hit']:.0%}  스프레드 {v['spread_mean_pct']!s:>6}%  ({v['months']}개월 · n≈{v['n_avg']})")
+                hs = half.get(k)
+                print(f"  {k:<10} IC {v['ic_mean']:+.3f}  t {v['ic_t']!s:>5}  양 {v['hit']:.0%}  스프레드 {v['spread_mean_pct']!s:>6}%  ({v['months']}개월 · n≈{v['n_avg']})  전반/후반 {hs[0]:+.3f}/{hs[1]:+.3f}" if hs else f"  {k:<10} IC {v['ic_mean']:+.3f}  t {v['ic_t']!s:>5}  양 {v['hit']:.0%}  ({v['months']}개월)")
     # 섹터 ETF 유니버스(생존 편향 없음)에서 모멘텀 IC — 표본 작음(시장당 18)
     for mk in ("KR", "US"):
         names = [n for n, (c, us, k) in u.items() if (us == (mk == "US")) and k == "etf" and n in S]
@@ -290,6 +299,23 @@ def main(argv):
             ic3, _ = spearman(s3, f3)
             if ic3 is not None:
                 reg["up" if b3 > 0 else "down"].append(ic3)
+            # HI52 · VOLADJ6 도 레짐별로
+            hi, va = [], []
+            for n in names:
+                sr = S[n]; px = [pp for dd_, pp in sr if dd_ <= d]
+                w52 = px[-252:] if len(px) >= 252 else px
+                hi.append((px[-1] / max(w52)) if px else None)
+                w6 = px[-126:]
+                if len(w6) > 40:
+                    dr = [w6[i] / w6[i - 1] - 1 for i in range(1, len(w6))]
+                    mu = sum(dr) / len(dr); sd = (sum((x - mu) ** 2 for x in dr) / (len(dr) - 1)) ** 0.5
+                    va.append(((w6[-1] / w6[0] - 1) / sd) if sd else None)
+                else:
+                    va.append(None)
+            for key, sig_ in (("hi52", hi), ("voladj6", va)):
+                icx, _ = spearman(sig_, f3)
+                if icx is not None:
+                    reg.setdefault(f"{key}_{'up' if b3 > 0 else 'down'}", []).append(icx)
             # 복합 = 3M RS 순위 + 6M RS 순위
             def rk(v):
                 idxs = [i for i, x in enumerate(v) if x is not None]
@@ -340,6 +366,7 @@ def main(argv):
             for r in fund_rows:
                 print(f"  {r[0]:<10} IC 매출 {r[1]:+.3f} · ΔOPM {r[2] if r[2] is None else round(r[2],3):+}  n={r[3]}  스프레드 매출 {r[4] and round(100*r[4],1)}% · ΔOPM {r[5] and round(100*r[5],1)}%")
         results.setdefault("regime", {})[mk] = {k: {"ic_mean": round(sum(v) / len(v), 3) if v else None, "months": len(v)} for k, v in reg.items()}
+        print(f"\n═══ {mk} 레짐별 IC(→f3): " + " · ".join(f"{k} {v['ic_mean']}({v['months']}m)" for k, v in results['regime'][mk].items()))
         results.setdefault("composite", {})[mk] = {"ic_mean": round(sum(comp) / len(comp), 3) if comp else None, "hit": round(sum(1 for x in comp if x > 0) / len(comp), 2) if comp else None}
         print(f"\n═══ {mk} 레짐 분할 — 3M RS→f3 IC: 지수 3M 상승기 {results['regime'][mk]['up']} · 하락기 {results['regime'][mk]['down']} | 복합(3M+6M RS 순위) IC {results['composite'][mk]}")
     io.open(os.path.join(ROOT, "intake", "files", f"backtest_{today.isoformat()}.json"), "w", encoding="utf-8").write(json.dumps(results, ensure_ascii=False, indent=1))

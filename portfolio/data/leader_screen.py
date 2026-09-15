@@ -8,9 +8,9 @@
   · SBC 페널티(facts.json sbc_to_rev_q > 15% → −5) · OCF/EBIT 경고(<0.7)
   · 판단 보유 여부(judged) · 추적에만 있고 시세 없는 US 종목은 그 자리에서 받는다(Semtech 등)
 v4(09-16 새벽 · 36개월 백테스트 뒤 · intake/files/backtest_2026-09-15.json): 가격 축을 <증거대로> 다시 짰다.
-  KR P 30 = 52주 고점 근접도(12 · IC +0.098 t 4.4) + 3M RS(6 · +0.066 t 2.7) + 변동성조정 6M(4 · +0.062) + 12M RS(2) + 섹터 ETF 3M 모멘텀(6 · ETF 유니버스 IC +0.25)
+  KR P 30 = 52주 고점 근접도(12 · IC +0.098 t 4.4 · 전반/후반 +0.094/+0.102 · 하락기에도 +0.049) + 3M RS(6 · +0.066 t 2.7) + 변동성조정 6M(6 · 안정) + 섹터 ETF 3M 모멘텀(6 · ETF 유니버스 IC +0.25) — 12M은 불안정(+0.154/+0.001)이라 0
   US P 30 = 변동성조정 6M(10 · +0.075 t 2.5) + 6-1 모멘텀(8 · +0.074 t 2.1) + 6M RS(6 · +0.081 t 2.2) + 1M(6 · f1 IC +0.074) — 52주 고점·섹터 모멘텀은 US에서 정보 없음(0)
-  레짐: 지수 3M < 0 이면 P 가중 ×0.5(KR 하락기 IC −0.02 · US −0.10) — 가격 신호가 죽는 구간에선 G·Q·E 비중이 커진다
+  레짐: 지수 3M < 0 이면 모멘텀 항 ×0.5(KR 하락기 RS IC −0.02 · US −0.10 · US HI52 −0.23) — KR 의 HI52(하락기 +0.049)는 감쇠 안 함. 가격 신호가 죽는 구간에선 G·Q·E 비중이 커진다
   1M 낙폭 가드는 뺐다(KR 1M IC +0.035 유의 안 함 · 문헌은 단기 반전) · 섹터 국면 규칙은 점수에서 뺐다(KR: 「초기 반전」 매수 −2.7% · 「어깨」 +6.2% — 추세 시장 · US: 정보 없음)
   G 성장 30  = 3년 매출 CAGR(12) + 최근 분기 매출 YoY(12) + 선행 성장(6 · KR 컨센 매출 / US EBIT YoY)
   Q 질   20  = 분기 OPM 수준(7) + ΔOPM YoY(7) + ROE(6 · US는 ROA)   [− SBC 페널티 5]
@@ -418,15 +418,17 @@ def score(rows, bench=None):
                     v = 50.0
                 return v * w / 100
             g = pr("cagr3", 12) + pr("rev_yoy_q", 12) + pr("fwd", 6)
+            # v4.1(09-16): 분할 안정성 — KR 12M은 전반/후반 +0.154/+0.001로 불안정 → 0, 변동성조정 6M으로. 레짐: KR 하락기에 HI52는 살아남는다(IC +0.049)
+            #   → KR 은 HI52 를 레짐 감쇠에서 뺀다. US 하락기는 HI52 −0.23 · RS −0.10 → 전부 ×0.5
             if not us:
-                p = pr("hi52", 12) + pr("rs3", 6) + pr("voladj6", 4) + pr("rs12", 2) + pr("sector_mom", 6)
+                p = pr("hi52", 12) + (pr("rs3", 6) + pr("voladj6", 6) + pr("sector_mom", 6)) * regime_factor
             else:
-                p = pr("voladj6", 10) + pr("mom6_1", 8) + pr("rs6", 6) + pr("m1", 6)
-            p = p * regime_factor  # 지수 3M<0 이면 0.5
+                p = (pr("voladj6", 10) + pr("mom6_1", 8) + pr("rs6", 6) + pr("m1", 6)) * regime_factor
+            p_max = (12 + 18 * regime_factor) if not us else 30 * regime_factor
             qv = pr("opm", 7) + pr("d_opm", 7) + pr("roe", 6) - x.get("sbc_pen", 0)  # KR ROE · US ROA · SBC 페널티
             e = pr("e1", 6) + pr("rev1m", 8) + pr("e2", 6)
-            denom = 30 + 30 * regime_factor + 20 + 20
-            x.update({"G": round(g / 30 * 100, 1), "P": round(p / (30 * regime_factor) * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
+            denom = 30 + p_max + 20 + 20
+            x.update({"G": round(g / 30 * 100, 1), "P": round(p / p_max * 100, 1), "Q": round(max(qv, 0) / 20 * 100, 1), "E": round(e / 20 * 100, 1),
                       "total": round((g + p + max(qv, 0) + e) / denom * 100, 1), "missing": miss})
             # v3 선행(Early) 렌즈 — 이익·기대는 도는데 가격이 아직
             e_qoq = {0: 0, 1: 8, 2: 15, 3: 20}.get(x.get("qoq_up", 0), 20)
@@ -608,7 +610,7 @@ def render_html(out, path_html):
 <div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:8px">▎이 표는 무엇인가 · {e(out['asof'])} <span style="font-size:.72em;font-weight:600;color:var(--ink-3)">— 정본 <code>intake/files/leader_screen_{e(out['asof'])}.json</code> · 명령 <code>portfolio/data/leader_screen.py</code> · 설계 <code>docs/leader_screen_design.md</code></span></div>
 <b style="font-size:1.05em">한 문장 — <u>돈이 지금 어디로 가고 있나(주도)와 어디로 갈 준비가 됐나(선행)를 따로 센다. 둘 다 높으면 확인된 주도주, 주도↓선행↑이면 「아직」, 둘 다 낮으면 이 도구 밖(방어주·턴어라운드 전)이다.</u></b><br>
 <div class="lens">
-<div><b style="color:var(--accent)">주도(Leader) 100</b> · <b style="color:var(--ink-2)">중립</b> = G·Q·E를 <u>섹터 내</u> 백분위로 다시 센 총점(섹터 n≥4) — AI 섹터가 성장·마진 백분위를 독식하는 편향을 뺀 값. 브로드닝은 이 열로 본다.<br><b>v4 가격 축(P 30 · 백테스트 IC 가중)</b> — KR: 52주 고점 근접도 12 · 3M RS 6 · 변동성조정 6M 4 · 12M RS 2 · 섹터 ETF 3M 모멘텀 6 / US: 변동성조정 6M 10 · 6-1 모멘텀 8 · 6M RS 6 · 1M 6. <b>레짐</b>: 지수 3M&lt;0 이면 P ×0.5(지금 KR {e(out.get('regime_factor',{}).get('KR'))} · US {e(out.get('regime_factor',{}).get('US'))}).<br> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
+<div><b style="color:var(--accent)">주도(Leader) 100</b> · <b style="color:var(--ink-2)">중립</b> = G·Q·E를 <u>섹터 내</u> 백분위로 다시 센 총점(섹터 n≥4) — AI 섹터가 성장·마진 백분위를 독식하는 편향을 뺀 값. 브로드닝은 이 열로 본다.<br><b>v4.1 가격 축(P 30 · 백테스트 IC 가중 · 전반/후반 분할 안정성 확인)</b> — KR: 52주 고점 근접도 12 · 3M RS 6 · 변동성조정 6M 6 · 섹터 ETF 3M 모멘텀 6(12M은 불안정이라 0) / US: 변동성조정 6M 10 · 6-1 모멘텀 8 · 6M RS 6 · 1M 6. <b>레짐</b>: 지수 3M&lt;0 이면 모멘텀 항 ×0.5(KR 52주 고점은 하락기에도 IC +0.049라 감쇠 안 함)(지금 KR {e(out.get('regime_factor',{}).get('KR'))} · US {e(out.get('regime_factor',{}).get('US'))}).<br> — G 성장 30(3년 매출 CAGR 12 · 분기 YoY 12 · 선행 성장 6) · P 가격 30(3M 상대강도 vs 지수 10 · vs 섹터 6 · 6M 8 · 1M 낙폭 가드 6) · Q 질 20(OPM 7 · ΔOPM 7 · ROE 6 · SBC 페널티 −5) · E 기대 20(KR 컨센 EPS 6·Δ추정 1M 8·10일 수급 6 / US TP 괴리 6·ΔTP 8·의견 6). 시장별 백분위.</div>
 <div><b style="color:#60a5fa">선행(Early) 100</b> — 매출 QoQ 개선 연속 20 · OPM QoQ 20 · 추정치 상향 1M 20 · 52주 고점 대비 낙폭 15(클수록 기회) · 가격 안정화 15(1M ≥ −5인데 RS3 &lt; 0) · 질 10. <b>격자</b>: A 높성장×강가격 · B 높성장×약가격(게이트: ΔOPM≥0 &amp; 매출 YoY&gt;0 = 눌림목, 아니면 탈락*) · C 낮성장×강가격 · D 나머지.</div>
 </div>
 <div style="margin-top:12px;font-size:.85rem;color:var(--ink-2)">⚠ 한계 — KR 섹터 코드(네이버 278)가 메모리·소부장을 한 통에 넣는다 · US 52주 고점 없음(최근 낙폭 대체) · 추정치 변화는 스냅샷이 쌓인 종목만 · 반증 병기는 entities 등록 종목만 · 승률은 6개월 뒤 격자 이동으로 잰다. ● 판단 보유 ○ 판단 0편 = 다음 페이퍼 후보.</div>
