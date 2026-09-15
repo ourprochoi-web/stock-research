@@ -410,6 +410,23 @@ def score(rows):
 
 
 # ═══ HTML 뷰 (research/leader_screen.html) — 페이지는 뷰다. 정본은 intake/files/leader_screen_{date}.json
+def sector_phase(r6, r3, r1):
+    """회전 국면 — 3M 순위는 늦다. 6M·3M·1M 부호의 <순서>가 어디쯤인지 말한다(사용자 09-15 「알았을 땐 늦은 것 아닌가」).
+    초기: 1M+ 인데 3M·6M− (막 돌기 시작) · 중기: 1M+ 3M+ 6M− (무릎) · 후기: 셋 다 + (어깨 · 1M이 3M보다 작으면 식는 중) ·
+    이탈: 3M+ 인데 1M− (꺾임) · 바닥권: 6M− 3M− 1M− 인데 1M이 3M보다 나음 · 하락: 나머지"""
+    if r1 > 0 and r3 <= 0:
+        return "초기(반전)" if r6 <= 0 else "재가속"
+    if r1 > 0 and r3 > 0 and r6 <= 0:
+        return "중기(무릎)"
+    if r1 > 0 and r3 > 0 and r6 > 0:
+        return "후기(어깨)" if r1 < r3 / 3 else "후기·지속"
+    if r1 <= 0 and r3 > 0:
+        return "이탈(꺾임)"
+    if r1 <= 0 and r3 <= 0 and r1 > r3 / 3:
+        return "바닥권"
+    return "하락"
+
+
 def render_html(out, path_html):
     import html as H
     tpl = io.open(os.path.join(ROOT, "research", "vcp_breakout_backtest.html"), encoding="utf-8").read()
@@ -446,8 +463,13 @@ def render_html(out, path_html):
         bmk = out["bench"][lab]
         etfs = [x for x in out["rows"] if x["us"] == us_flag and x.get("etf")]
         etfs.sort(key=lambda x: -((x.get("m3") or 0) - bmk["3M"]))
-        rows_ = "".join(f"<tr><td style='text-align:left'><b>{e(x['name'])}</b></td>" + cell((x.get('m3') or 0) - bmk['3M'], 1, True) + cell((x.get('m1') or 0) - bmk['1M'], 1, True) + cell((x.get('m6') or 0) - bmk['6M'], 1, True) + cell(x.get('m3'), 1, True) + "</tr>" for x in etfs)
-        return f"<div style='overflow-x:auto'><table class='scr'><thead><tr><th style='text-align:left'>{lab} 섹터 ETF</th><th>RS 3M</th><th>RS 1M</th><th>RS 6M</th><th>절대 3M</th></tr></thead><tbody>{rows_}</tbody></table></div>"
+        rows_ = ""
+        for x in etfs:
+            r3 = (x.get('m3') or 0) - bmk['3M']; r1 = (x.get('m1') or 0) - bmk['1M']; r6 = (x.get('m6') or 0) - bmk['6M']
+            ph = sector_phase(r6, r3, r1)
+            pc = {"초기(반전)": "var(--bull)", "중기(무릎)": "var(--bull)", "재가속": "var(--bull)", "이탈(꺾임)": "var(--bear)", "후기(어깨)": "#f59e0b"}.get(ph, "var(--ink-2)")
+            rows_ += f"<tr><td style='text-align:left'><b>{e(x['name'])}</b></td>" + cell(r6, 1, True) + cell(r3, 1, True) + cell(r1, 1, True) + f"<td style='text-align:left;color:{pc};font-weight:700'>{e(ph)}</td>" + cell(x.get('m3'), 1, True) + "</tr>"
+        return f"<div style='overflow-x:auto'><table class='scr'><thead><tr><th style='text-align:left'>{lab} 섹터 ETF</th><th>RS 6M</th><th>RS 3M</th><th>RS 1M</th><th style='text-align:left'>국면</th><th>절대 3M</th></tr></thead><tbody>{rows_}</tbody></table></div>"
     early_kr = sorted([x for x in kr if x["P"] < 50], key=lambda x: -x["early"])[:10]
     early_us = sorted([x for x in us if x["P"] < 50], key=lambda x: -x["early"])[:10]
     b = out["bench"]
@@ -516,7 +538,7 @@ def render_html(out, path_html):
 <div style="margin-top:12px;font-size:.85rem;color:var(--ink-2)">⚠ 한계 — KR 섹터 코드(네이버 278)가 메모리·소부장을 한 통에 넣는다 · US 52주 고점 없음(최근 낙폭 대체) · 추정치 변화는 스냅샷이 쌓인 종목만 · 반증 병기는 entities 등록 종목만 · 승률은 6개월 뒤 격자 이동으로 잰다. ● 판단 보유 ○ 판단 0편 = 다음 페이퍼 후보.</div>
 </div></div></section>
 <section id="flow" class="blk" style="padding-top:0"><div class="wrap">
-<div class="sec-head"><div class="sec-eyebrow"><span class="idx">00</span><span class="ln"></span>섹터 흐름 — 브로드닝은 종목이 아니라 섹터 ETF에서 먼저 보인다</div><h2 class="sec-title">돈이 어느 섹터로 가고 있나</h2><p class="sec-lead">유니버스가 AI 인접(KR 55% · US 70%)이라 종목 스크린으로는 AI 밖 회전을 못 본다. 섹터 ETF 36개는 판단 없이도 흐름을 준다 — 지수 대비 상대강도(RS)로 읽는다. 여기서 켜진 섹터가 다음 유니버스 확장 대상이다.</p></div>
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">00</span><span class="ln"></span>섹터 흐름 — 브로드닝은 종목이 아니라 섹터 ETF에서 먼저 보인다</div><h2 class="sec-title">돈이 어느 섹터로 가고 있나</h2><p class="sec-lead">유니버스가 AI 인접(KR 55% · US 70%)이라 종목 스크린으로는 AI 밖 회전을 못 본다. 섹터 ETF 36개는 판단 없이도 흐름을 준다. <b>3M 순위만 보면 늦다</b> — 6M·3M·1M 부호의 <u>순서</u>가 국면을 말한다: 초기(1M+ · 3M/6M−) → 중기(1M+ 3M+ · 6M−) → 후기(셋 다 + · 1M이 식으면 어깨) → 이탈(3M+ · 1M−). 살 자리는 초기·중기, 팔 자리는 후기·이탈. 국면 앞에 <u>왜</u>(인과 그래프의 엣지)가 있어야 초기에 들어갈 근거가 된다.</p></div>
 <div class="lens">{flow_table(False,'KR')}{flow_table(True,'US')}</div>
 </div></section>
 <section id="early" class="blk" style="padding-top:0"><div class="wrap">
@@ -602,10 +624,11 @@ def main(argv):
         if etfs:
             bmk = bench[lab]
             etfs.sort(key=lambda x: -((x.get("m3") or 0) - bmk["3M"]))
-            print(f"\n═══ {lab} 섹터 ETF 흐름 · 지수 대비 3M(1M · 6M) · {len(etfs)}개")
+            print(f"\n═══ {lab} 섹터 ETF 흐름 · 지수 대비 3M(1M · 6M) · {len(etfs)}개 · 국면 = (6M,3M,1M) 부호")
             for x in etfs:
                 r3 = (x.get("m3") or 0) - bmk["3M"]; r1 = (x.get("m1") or 0) - bmk["1M"]; r6 = (x.get("m6") or 0) - bmk["6M"]
-                print(f"  {x['name'][:18]:<19} RS3 {r3:+6.1f}  RS1 {r1:+6.1f}  RS6 {r6:+6.1f}   절대 3M {x.get('m3') if x.get('m3') is not None else '—'}")
+                x["phase"] = sector_phase(r6, r3, r1)
+                print(f"  {x['name'][:18]:<19} RS3 {r3:+6.1f}  RS1 {r1:+6.1f}  RS6 {r6:+6.1f}   {x['phase']:<10} 절대 3M {x.get('m3') if x.get('m3') is not None else '—'}")
     for us, lab in ((False, "KR"), (True, "US")):
         grp = sorted([x for x in rows if x["us"] == us and x["total"] is not None], key=lambda x: -x["total"])
         from collections import Counter
