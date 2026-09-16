@@ -23,7 +23,7 @@
 | `docs/backlog.md` | 측정 명령 · 시작점 지표 |
 | `docs/method_datasource.md` | 원문 경로(DART·SEC·13F·수급·환율·금리) · 파싱 함정 |
 | `docs/rules_journal.md` · `docs/rules_archive_2026-09-13.md` | 규칙의 경위 · 종전 66조항 전문. **규칙을 고칠 때만** |
-| `portfolio/portfolio_tracker.html` | 보유 수량·평단 (`HOLDINGS`) |
+| `brain/portfolio.json` → `holdings`·`cash` | **보유 수량·평단·현금의 정본**(2026-09-17 C). 트래커의 `HOLDINGS`는 훅이 여기서 렌더한다 — 매매는 여기에만 반영 |
 
 ---
 

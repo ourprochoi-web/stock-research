@@ -66,6 +66,8 @@ def render(path, pg):
 REGIME, PORTFOLIO = "brain/regime.json", "brain/portfolio.json"
 MSTART, MEND = "<!-- brain:market:start -->", "<!-- brain:market:end -->"
 PSTART, PEND = "<!-- brain:portfolio:start -->", "<!-- brain:portfolio:end -->"
+HSTART, HEND = "  /* brain:holdings:start */", "  /* brain:holdings:end */"
+PRICES = os.path.join(ROOT, "portfolio", "data", "prices.json") if "ROOT" in globals() else "portfolio/data/prices.json"
 BOX = "padding:18px 20px;border-left:4px solid #f97316;background:rgba(249,115,22,.06);line-height:1.75;font-size:.95rem;color:inherit"
 SUB = "color:#8a94a6"
 
@@ -101,7 +103,7 @@ def render_portfolio(pf):
     scr = "".join(f'<tr style="border-top:1px solid rgba(138,148,166,.35)"><td style="padding:6px 8px 6px 0;vertical-align:top"><b>{e(kk)}</b><br><span style="{SUB}">{e(v["trigger"])}</span></td><td style="padding:6px 8px;vertical-align:top">{e(v["book"])}</td><td style="padding:6px 8px;vertical-align:top">{e(v["hedge"])}</td><td style="padding:6px 0;vertical-align:top;{SUB}">{e(v["action"])}</td></tr>' for kk, v in sc.items())
     tb = "".join(f'<tr><td>{e(r["sym"])}</td><td style="text-align:right">{r["price"]:,}</td><td style="text-align:right">{sz["drawdown_at_falsifier"].get(r["sym"],0)*100:+.0f}%</td><td style="text-align:right">{r["position_krw"]/1e8:.2f}억</td><td style="text-align:right">{r["qty"]:,}주</td></tr>' for r in sz["table_1pct"])
     tr = "".join(f'<li><b>{t["n"]}회차 · {e(t["window"])}</b> — {e(", ".join(t["names"]))} <span style="{SUB}">({e(t["why"])})</span></li>' for t in pf["tranches"])
-    pc = "".join(f'<li><b>{e(x["if"])}</b> → {e(x["then"])}</li>' for x in pf["precommits"])
+    pc = "".join(f'<li><b>{e(x.get("if") or x.get("trigger",""))}</b> → {e(x.get("then") or x.get("result",""))}</li>' for x in pf["precommits"])
     dc = "".join(f'<li>{e(d["date"])} — {e(d["what"])}</li>' for d in pf["decisions"])
     b = pf["base"]
     return (f"{PSTART}\n"
@@ -122,10 +124,46 @@ def render_portfolio(pf):
         f"</div></section>\n{PEND}")
 
 
+def render_holdings(pf):
+    """트래커 <script> 안의 HOLDINGS·CASH_REMAINING 을 brain/portfolio.json 에서 찍는다(2026-09-17 C). JSON 객체는 그대로 JS 리터럴이다."""
+    rows = ",\n    ".join(json.dumps(h, ensure_ascii=False) for h in pf.get("holdings", []))
+    cash = pf.get("cash", {})
+    return (f"{HSTART}\n  /* 정본 brain/portfolio.json → 훅 렌더. 매매는 portfolio.json 의 holdings·cash 에만 반영한다. */\n"
+            f"  var HOLDINGS = [\n    {rows}\n  ];\n"
+            f"  var CASH_REMAINING = {int(cash.get('value', 0))};  /* {cash.get('asof', '')} · {str(cash.get('note', ''))[:120]} */\n"
+            f"{HEND}")
+
+
+def check_positions(pf):
+    """§J4 — 스톱·반증선 도달을 훅이 센다. prices.json 의 정규 종가로 보유 종목 손익과 스톱 거리를 찍는다."""
+    try:
+        px = json.load(io.open(PRICES, encoding="utf-8"))
+    except OSError:
+        return
+    prices = px.get("prices", {})
+    tot_cost = tot_val = 0
+    for h in pf.get("holdings", []):
+        key = h.get("priceKey") or h["name"]
+        p = prices.get(key)
+        if not p:
+            continue
+        tot_cost += h["totalCost"]; tot_val += p * h["qty"]
+    if tot_cost:
+        print(f"[positions] {px.get('updated', '')} 주식 {tot_val/1e8:.3f}억 (원가 대비 {(tot_val/tot_cost-1)*100:+.2f}%) · 현금 {pf.get('cash', {}).get('value', 0)/1e8:.2f}억")
+    for st in pf.get("stops", []):
+        p = prices.get(st.get("priceKey") or st["name"])
+        if not p:
+            continue
+        d = (p / st["level"] - 1) * 100
+        flag = "🔴 도달" if p <= st["level"] else ("🟠 10% 이내" if d < 10 else "✓")
+        print(f"[positions] {st['name']} {st['kind']} {st['level']:,} vs {p:,.0f} → {d:+.1f}% {flag}")
+
+
 def render_v3(check=False):
     out = []
     for src, page, fn, st, en in ((REGIME, "index.html", render_market, MSTART, MEND),
-                                  (PORTFOLIO, "portfolio/portfolio_tracker.html", render_portfolio, PSTART, PEND)):
+                                  (PORTFOLIO, "portfolio/portfolio_tracker.html", render_portfolio, PSTART, PEND),
+                                  (PORTFOLIO, "portfolio/portfolio_tracker.html", render_holdings, HSTART, HEND)):
         try:
             doc = json.load(io.open(src, encoding="utf-8"))
             s = io.open(page, encoding="utf-8").read()
@@ -144,6 +182,10 @@ def render_v3(check=False):
         io.open(page, "w", encoding="utf-8").write(s[:i] + new + s[j + len(en):])
         print(f"[cards] 카드 렌더 — {page}")
         out.append(page)
+    try:
+        check_positions(json.load(io.open(PORTFOLIO, encoding="utf-8")))
+    except (OSError, ValueError, KeyError) as e:
+        print(f"[positions] ⚠ 검사 실패: {e}")
     return out
 
 
