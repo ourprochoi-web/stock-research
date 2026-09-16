@@ -42,6 +42,7 @@ def render(path, pg):
             f'<td style="padding:10px 0;vertical-align:top"><b>{e(t["claim"])}</b>'
             + (f'<br><span style="color:var(--ink-2)">근거 — {e(t["basis"])}</span>' if t.get("basis") else "")
             + (f'<br><span style="color:var(--ink-2)">반증 — {e(t["falsifier"])}</span>' if t.get("falsifier") else "")
+            + ((lambda lg: f'<br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log {len(lg)}건 · 최근 {lg[-1].get("date","")} {e(lg[-1].get("mark",""))} {e(lg[-1].get("text",""))[:90]}</span>' if lg else "")(t.get("log") or []))
             + (f'<br><span style="color:var(--ink-2)">판정 — {e(t["event"])}'
                + (f' · 마지막 검증 {e(t["last_tested"])}' if t.get("last_tested") else "") + "</span>" if t.get("event") else "")
             + "</td></tr>")

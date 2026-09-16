@@ -202,7 +202,7 @@ T=json.load(open('brain/theses.json'))['pages']; R=[json.loads(l) for l in open(
 def dm(p):
     m=re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})',io.open(p,encoding='utf8').read()); return m.group(1) if m else None
 for p,v in T.items():
-    d=dm(p); n=sum(1 for t in v.get('theses',[]) for e in t.get('evidence',[]) if d and rd.get(e,'0')>d)
+    d=dm(p); n=sum(1 for t in v.get('theses',[]) for e in t.get('log',[]) if d and e.get('date','0')>d)  # 2026-09-17 A: log 기준
     if n>=5: print(n,d,p)
 EOF
 ```
