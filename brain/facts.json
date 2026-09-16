@@ -5442,6 +5442,24 @@
     }
    },
    "sec_files": "intake/files/sec/hood/ (10-K 2025 · 10-Q 1Q26·2Q26 · 8-K 03-24·06-16·06-23·06-25·07-29 · PR 4Q25·2Q26 · submissions.json)"
+  },
+  "298040": {
+   "name": "효성중공업",
+   "intake": [
+    "u-20260917-03"
+   ],
+   "metrics": {
+    "hyperscaler_order_2026_09": {
+     "value": 3865,
+     "unit": "억원",
+     "basis": "미 빅테크 2곳 · 765kV 2,200억 + 345kV 1,665억 · 09-15 공시",
+     "asof": "2026-09-15",
+     "grade": "①",
+     "source": "단일판매공급계약 공시(뉴스핌·아시아경제 인용)",
+     "page": "ai-infra/ai_power_company_transformer_grid.html",
+     "note": "연간 수주 목표 8.4조 → 12조 상향"
+    }
+   }
   }
  },
  "macro": {
