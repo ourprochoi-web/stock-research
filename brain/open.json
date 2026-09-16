@@ -227,6 +227,21 @@
    "what": "09-17 스터디 우선순위: ① DDR5 소매↔계약가 선행 관계(3DCenter·TrendForce) ② HBM 사양 하향·KV캐시 이전의 크기(분자·분모) ③ 10년물 레벨·속도별 PER 역U자 실측(1994·2006·2023) ④ 정유 — 아시아 복합마진 vs 미 크랙(refiner-hedge 판정용) ⑤ 현대백화점·KB금융 판단 신설 ⑥ 코스닥 12M 모멘텀 음(−)의 원인 · 주도주 붕괴 감지기 ⑦ G·E 축 검증(DART 공시일 PIT) ⑧ 예측 캘리브레이션 첫 채점(10월) ⑨ BTM 실측 지표(EIA 860/861) ⑩ 13F 3Q·SpaceX 보호예수 뒤 유지 여부",
    "since": "2026-09-17",
    "grade": "계획"
+  },
+  {
+   "id": "seeder-artifacts",
+   "what": "09-13 자동 추출(build_thesis_index)이 남긴 오류 — 브레인 채우기 1회차(09-17) 에이전트가 발견. 별도 정정 패스 필요",
+   "updates": [
+    "q2_2026_earnings_overview T5 basis = 페이지 반증 블록 전체(진짜 근거는 BIS Shadow Borrowing)",
+    "k_defense_cross_valuation T6 falsifier = T7의 것(한화시스템 분기 OP 1,000억) · T9 falsifier = 보조 조건(T9-c) — 본 조건은 B2B>1",
+    "k_beauty_sector T5 basis = 「이 판단이 틀렸음을 보여줄 것」 블록 전체",
+    "kr_semi_equip_vm_psk T3·T5 falsifier가 페이지 §06에서 이미 폐기됨(3Q26 723억 → 2H26 1,660억 · 1Q27 계약 공시 10-14 · 연간 3,000억)",
+    "ns_semiconductor_war 페이지 T6(인텔 워런트·에스크로 파생부채)가 브레인에 없음",
+    "node_screener T4 판정 이벤트 NVIDIA Q2(08-27) 지났는데 판정 없음 · kr_bio T3 이벤트 09-02 노바티스(스위스라 반증 미충족)",
+    "hanmi 페이지 T4 제목 중복(두 번째 블록은 브레인 테제 없음)"
+   ],
+   "since": "2026-09-17",
+   "grade": "측정"
   }
  ]
 }
