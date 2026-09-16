@@ -124,6 +124,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "market/kr_4sector_cross_valuation.html": [
+     "T1"
+    ],
     "shipbuilding/k_ship_industry_overview.html": [
      "T2"
     ],
@@ -278,7 +281,9 @@
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_company_transformer_grid.html": [
-     "T1"
+     "T1",
+     "T2",
+     "T3"
     ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
@@ -306,6 +311,10 @@
      "T3"
     ],
     "market/kr_4sector_cross_valuation.html": [
+     "T2",
+     "T5"
+    ],
+    "research/statements_log.html": [
      "T2"
     ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
@@ -340,7 +349,8 @@
      "T5"
     ],
     "market/kr_4sector_cross_valuation.html": [
-     "T2"
+     "T2",
+     "T5"
     ]
    },
    "aliases": [],
@@ -584,6 +594,9 @@
      "T1",
      "T4",
      "T5"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T5"
     ]
    },
    "aliases": [],
@@ -697,6 +710,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1"
     ],
@@ -738,6 +754,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1"
     ],
@@ -869,6 +888,12 @@
     "hbm-packaging/kr_semi_fab_timeline.html": [
      "T3",
      "T5"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -894,7 +919,12 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1",
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -905,8 +935,15 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
     "ai-infra/ai_power_top5_picks.html": [
-     "T2"
+     "T1",
+     "T2",
+     "T3"
     ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
@@ -920,6 +957,9 @@
     ],
     "defense/k_defense_cross_valuation.html": [
      "T8"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T5"
     ]
    },
    "aliases": [],
@@ -1063,6 +1103,9 @@
    "theses": {
     "ai-infra/kr_power_10_deep.html": [
      "T4"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T1"
     ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T2"
@@ -1281,6 +1324,9 @@
    "theses": {
     "k-beauty/k_beauty_sector.html": [
      "T1"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
     ]
    },
    "aliases": [],
@@ -1645,6 +1691,9 @@
     "ai-infra/ai_power_company_cable_wire.html": [
      "T1"
     ],
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
      "T2",
@@ -1749,6 +1798,7 @@
      "T4"
     ],
     "market/kr_4sector_cross_valuation.html": [
+     "T2",
      "T3"
     ],
     "market/kr_drawdown_2026.html": [
@@ -1775,6 +1825,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1"
+    ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1"
     ],
@@ -1787,6 +1840,9 @@
      "T6"
     ],
     "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
      "T3"
     ],
     "national-strategy/ns_semiconductor_war.html": [
@@ -2035,6 +2091,9 @@
      "T3",
      "T4"
     ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
+    ],
     "market/kr_drawdown_2026.html": [
      "T3"
     ]
@@ -2099,6 +2158,9 @@
     ],
     "hbm-packaging/kr_semi_fab_timeline.html": [
      "T3"
+    ],
+    "national-strategy/ns_cn_ai_supply_chain.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -2124,7 +2186,12 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1",
+     "T2"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -2134,7 +2201,14 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T1"
+    ],
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -2220,6 +2294,9 @@
     "ai-infra/kr_power_cross_valuation.html": [
      "T4",
      "T6"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T1"
     ],
     "shipbuilding/k_ship_industry_overview.html": [
      "T2"
@@ -2384,6 +2461,10 @@
    "facts": 1,
    "theses": {
     "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1",
+     "T3"
+    ],
+    "ai-infra/ai_power_top5_picks.html": [
      "T1"
     ],
     "ai-infra/kr_power_10_deep.html": [
@@ -2394,6 +2475,9 @@
     "ai-infra/kr_power_cross_valuation.html": [
      "T4",
      "T6"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T5"
     ]
    },
    "aliases": [
@@ -2616,6 +2700,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1"
+    ],
     "ai-infra/ai_chip_company_marvell.html": [
      "T2"
     ],
@@ -2690,6 +2777,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T3"
     ],
@@ -2826,6 +2916,12 @@
      "T3",
      "T4",
      "T5"
+    ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
+    "ai-infra/ai_power_top5_picks.html": [
+     "T3"
     ]
    },
    "aliases": [
@@ -2840,6 +2936,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1"
+    ],
     "ai-infra/ai_chip_company_broadcom.html": [
      "T1",
      "T2",
@@ -2861,6 +2960,9 @@
      "T5"
     ],
     "ai-infra/us_ai_adjacent_sectors.html": [
+     "T1"
+    ],
+    "ai-infra/us_epc_datacenter_build.html": [
      "T1"
     ],
     "defense/us_defense_primes.html": [
@@ -3085,6 +3187,9 @@
     ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T4"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
     ]
    },
    "aliases": [],
@@ -3360,7 +3465,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -3595,6 +3704,9 @@
     "ai-infra/optical_valuechain_9.html": [
      "T5"
     ],
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1"
+    ],
     "ai-infra/ai_chip_company_marvell.html": [
      "T1",
      "T2",
@@ -3724,6 +3836,10 @@
      "T3",
      "T4",
      "T5"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T2",
+     "T3"
     ]
    },
    "aliases": [
@@ -3767,6 +3883,7 @@
    "facts": 0,
    "theses": {
     "ai-infra/ai_chip_architecture_war.html": [
+     "T1",
      "T4"
     ],
     "ai-infra/ai_chip_company_broadcom.html": [
@@ -3783,6 +3900,10 @@
      "T4",
      "T5"
     ],
+    "ai-infra/ai_korea_g3_sovereign_ai.html": [
+     "T1",
+     "T2"
+    ],
     "ai-infra/ai_power_company_semi_ess_dc.html": [
      "T1"
     ],
@@ -3794,6 +3915,9 @@
     ],
     "ai-infra/us_bloom_intel_deep.html": [
      "T4"
+    ],
+    "ai-infra/us_epc_datacenter_build.html": [
+     "T1"
     ],
     "ai-infra/us_vertiv_corning_deep.html": [
      "T6"
@@ -3836,7 +3960,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -3923,7 +4051,9 @@
    "facts": 0,
    "theses": {
     "market/us_7axis_cross_valuation.html": [
-     "T3"
+     "T2",
+     "T3",
+     "T5"
     ]
    },
    "aliases": [],
@@ -4086,7 +4216,14 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-sw/ai_sw_overview.html": [
+     "T1"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -4172,6 +4309,9 @@
    "theses": {
     "ai-sw/ai_sw_investment_map.html": [
      "T5"
+    ],
+    "ai-sw/ai_sw_overview.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -4203,6 +4343,9 @@
      "T2",
      "T3",
      "T4",
+     "T5"
+    ],
+    "market/us_7axis_cross_valuation.html": [
      "T5"
     ]
    },
@@ -4236,6 +4379,7 @@
     "space/space_case_contract_structure.html": [
      "T1",
      "T2",
+     "T4",
      "T5"
     ],
     "space/space_update_2026.html": [
