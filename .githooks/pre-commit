@@ -316,6 +316,16 @@ def main():
         except (subprocess.CalledProcessError, OSError) as e:
             print(f"[pre-commit] ⚠ thesis_index 재생성 실패 — 커밋은 진행: {e}")
 
+    # 이름 색인 재생성 — 2026-09-17 구조 개선 B. brain 이나 추적 목록이 바뀌면 docs/name_index.md · .json 을 다시 만든다(생성물).
+    if brain_staged or any(f.endswith("update_prices.py") for f in staged):
+        try:
+            r = subprocess.run([sys.executable, ".githooks/build_name_index.py"], capture_output=True, text=True, check=True)
+            print("[pre-commit] " + r.stdout.strip())
+            for f in ("docs/name_index.md", "docs/name_index.json"):
+                subprocess.run(["git", "add", f], check=True)
+        except (subprocess.CalledProcessError, OSError) as e:
+            print(f"[pre-commit] ⚠ name_index 재생성 실패 — 커밋은 진행: {e}")
+
     # 브레인 카드 렌더 — brain/theses.json 이나 카드 페이지가 스테이징되면 카드를 다시 찍어 함께 커밋한다(2026-09-13).
     # 페이지 상단 「현재 판단」의 정본은 theses.json 이고 카드는 생성물이다. 사람이 카드를 고쳐도 여기서 덮인다.
     if brain_staged or staged:

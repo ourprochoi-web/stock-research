@@ -1296,6 +1296,114 @@
    "tracked_price": true,
    "note": "캐파 증설의 첫 발주처",
    "falsifier": "BE 신규 장비 발주 2분기 공백"
+  },
+  "000660": {
+   "name": "SK하이닉스",
+   "market": "KR",
+   "layer": "메모리 · HBM 1위",
+   "business": "DRAM·HBM·NAND. 보유 종목",
+   "business_grade": "카드 테제에서 파생(2026-09-17)",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T2",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T5"
+   ],
+   "tracked_price": true,
+   "position": "보유 54주 · 평단 1,699,046 · 스톱 1,200,000",
+   "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
+   "note": "HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다."
+  },
+  "005930": {
+   "name": "삼성전자",
+   "market": "KR",
+   "layer": "메모리 2위 · 파운드리 · 삼성전기(기판·MLCC)",
+   "business": "DRAM·NAND·HBM·파운드리·세트. 보유 종목",
+   "business_grade": "카드 테제에서 파생(2026-09-17)",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T1",
+    "hbm-packaging/hbm_pkg_company_samsung.html#T2",
+    "hbm-packaging/hbm_pkg_company_samsung.html#T3",
+    "hbm-packaging/hbm_pkg_company_samsung.html#T4",
+    "hbm-packaging/hbm_pkg_company_samsung.html#T5"
+   ],
+   "tracked_price": true,
+   "position": "보유 신규 496주 평단 244,927 + 레거시 1,300주 평단 72,600",
+   "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
+   "note": "HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)"
+  },
+  "207940": {
+   "name": "삼성바이오로직스",
+   "market": "KR",
+   "layer": "CDMO",
+   "business": "항체 CDMO · PolyPeptide 인수. 보유 종목",
+   "business_grade": "카드 테제에서 파생(2026-09-17)",
+   "pages": [
+    "glp1/glp1_company_samsung_biologics.html"
+   ],
+   "facts": [],
+   "theses": [
+    "glp1/glp1_company_samsung_biologics.html#T1",
+    "glp1/glp1_company_samsung_biologics.html#T2",
+    "glp1/glp1_company_samsung_biologics.html#T3",
+    "glp1/glp1_company_samsung_biologics.html#T4"
+   ],
+   "tracked_price": true,
+   "position": "보유 17주 · 평단 1,549,529",
+   "falsifier": "T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선 없이도 PolyPeptide 가치가 재평가됨, 또는 반대로 마진이 2개 분기 연속 악화 · T3: 성장률이 20% 아래로 내려갔는데도 PER 40x가 유지됨 (성장률이 배수의 근거가 아니었음) · T4: Orforglipron 처방이 급증하고 주사제 선호 80%가 무너짐 (경구 전환이 빠름)",
+   "note": "3중 엔진 중 둘은 확정이고 하나는 실행 리스크다. 배수는 자기 역사 밴드 아래로 내려왔지만(38.23배) PER을 지탱하던 OPM 45%·성장 20% 두 문턱에 동시에 닿아 있다."
+  },
+  "214450": {
+   "name": "파마리서치",
+   "market": "KR",
+   "layer": "에스테틱 · 리쥬란",
+   "business": "PDRN·PN 스킨부스터 · 해외 확장. 보유 종목",
+   "business_grade": "카드 테제에서 파생(2026-09-17)",
+   "pages": [
+    "k-beauty/k_beauty_company_pharmaresearch.html"
+   ],
+   "facts": [],
+   "theses": [
+    "k-beauty/k_beauty_company_pharmaresearch.html#T1",
+    "k-beauty/k_beauty_company_pharmaresearch.html#T2",
+    "k-beauty/k_beauty_company_pharmaresearch.html#T3",
+    "k-beauty/k_beauty_company_pharmaresearch.html#T4"
+   ],
+   "tracked_price": true,
+   "position": "보유 170주 · 평단 412,577",
+   "falsifier": "T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에 판관비 증가율이 매출 증가율 아래로 내려오면서 OPM이 39% 위로 회복 (투자 국면이 맞았다) · T3: [추론] OPM이 37%대 이하에 머물거나 더 내려가는데도 파마리서치 PER이 K뷰티 5사 중 상위(2026.08.20 기준 21.62배 · 에이피알 24.76  · T4: 3rd-class 승인 또는 타법인 출자·합작 공시가 나오면 시점 전제를 다시 쓴다.",
+   "note": "원가는 좋아졌는데 판관비가 마진을 다 깎았다(2Q26 OPM 37.20%). 그 판관비가 성장의 값인지 비용인지는 3Q26 전까지 안 갈리고, 배수 프리미엄이 그 답에 걸려 있다."
+  },
+  "BE": {
+   "name": "Bloom Energy",
+   "market": "US",
+   "layer": "온사이트 발전 · SOFC",
+   "business": "SOFC 연료전지 · 800V DC 네이티브 · Brookfield PPA · Oracle MSA 2.8GW. 매니저 7종목",
+   "business_grade": "카드 테제에서 파생(2026-09-17)",
+   "pages": [
+    "ai-infra/us_bloom_intel_deep.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_bloom_intel_deep.html#T1",
+    "ai-infra/us_bloom_intel_deep.html#T2",
+    "ai-infra/us_bloom_intel_deep.html#T3",
+    "ai-infra/us_bloom_intel_deep.html#T4",
+    "ai-infra/us_bloom_intel_deep.html#T5"
+   ],
+   "tracked_price": true,
+   "position": "미보유 · 매니저 7종목",
+   "falsifier": "T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10-Q 미주 비중 25% 초과(서사 확인) / 반대로 단일 고객 50% 재돌파(구조) · T3: 3Q26 관계자 매출이 분기 매출의 20% 초과 — 1Q가 예외가 아니라 패턴 · T4: 연내 신규 하이퍼스케일러 계약 0(한투 자신의 기대) · 또는 주피터 2027-02 재지연 · 또는 SemiAnalysis BTM 50% 전망 철회 · 제3자(S · T5: 비나텍 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 등장 · 한선 OPM 20% 아래 2분기 · 아모센스 4Q26 소재 매출 <7십억",
+   "note": "블룸은 좋아졌지만 서사(미국 AI DC 온사이트)와 원장(1H26 아시아태평양 90% · 단일고객 73% · 1Q 관계자 49.7%)이 다르다. 한투(09-16)의 BTM·SOFC 프레임은 수요 논리를 채우지만 그 세 숫자를 건드리지 않는다. 판정은 3Q26 10-Q(지역·고객·관계자)와 오라클 주피터(파이프라인 2027-02)."
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

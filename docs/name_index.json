@@ -1,0 +1,4689 @@
+{
+ "generated": "2026-09-17",
+ "names": {
+  "Eoptolink": {
+   "code": "300502.SZ",
+   "market": "CN",
+   "entity": "300502.SZ",
+   "falsifier": null,
+   "facts": 6,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "InnoLight": {
+   "code": "300308.SZ",
+   "market": "CN",
+   "entity": "300308.SZ",
+   "falsifier": null,
+   "facts": 6,
+   "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T3"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "T&S": {
+   "code": "300394.SZ",
+   "market": "CN",
+   "entity": "300394.SZ",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "CJ제일제당": {
+   "code": "097950",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "GS건설": {
+   "code": "006360",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_construction_datacenter.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "HD한국조선해양": {
+   "code": "009540",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/kr_4sector_cross_valuation.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "HD현대마린솔루션": {
+   "code": "443060",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "HD현대일렉트릭": {
+   "code": "267260",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "HD현대중공업": {
+   "code": "329180",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "shipbuilding/k_ship_industry_overview.html": [
+     "T2"
+    ],
+    "shipbuilding/k_ship_theme_masga_us_alliance.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "현중"
+   ],
+   "auto_candidate": true
+  },
+  "HPSP": {
+   "code": "403870",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T1",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T2"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T1",
+     "T3"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KB금융": {
+   "code": "105560",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX AI전력핵심설비": {
+   "code": "487240",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KX하이텍": {
+   "code": "052900",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "LG생활건강": {
+   "code": "051900",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_apr.html": [
+     "T1"
+    ],
+    "k-beauty/k_beauty_sector.html": [
+     "T1"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "LG에너지솔루션": {
+   "code": "373220",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "energy/energy_battery_valuechain_update.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "LG이노텍": {
+   "code": "011070",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "LIG디펜스앤에어로스페이스": {
+   "code": "079550",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_company_lig_nexone.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T8",
+     "T9"
+    ]
+   },
+   "aliases": [
+    "넥스원",
+    "LIG넥스원"
+   ],
+   "auto_candidate": true
+  },
+  "LS": {
+   "code": "006260",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T2",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T5"
+    ],
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ],
+    "defense/k_defense_company_hanwha_systems_ocean.html": [
+     "T3"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T2"
+    ],
+    "shipbuilding/k_ship_theme_masga_us_alliance.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "LS ELECTRIC": {
+   "code": "010120",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T2",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "LS머트리얼즈": {
+   "code": "417200",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "POSCO홀딩스": {
+   "code": "005490",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "RFHIC": {
+   "code": "218410",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "RF머트리얼즈": {
+   "code": "327260",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "S-Oil": {
+   "code": "010950",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SFA": {
+   "code": "056190",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SFA반도체": {
+   "code": "036540",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SK바이오팜": {
+   "code": "326030",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/kr_bio_china_competition.html": [
+     "T2"
+    ],
+    "glp1/glp1_company_samsung_biologics.html": [
+     "T3"
+    ],
+    "glp1/glp1_kbio_portfolio_candidates.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SK스퀘어": {
+   "code": "402340",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SK하이닉스": {
+   "code": "000660",
+   "market": "KR",
+   "entity": "000660",
+   "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T8"
+    ],
+    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
+     "T1",
+     "T3",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T2"
+    ],
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T1"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T4"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T6",
+     "T7"
+    ],
+    "hbm-packaging/kr_semi_equip_vm_psk.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T2",
+     "T4"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T1"
+    ],
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T2",
+     "T5"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T3",
+     "T5"
+    ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T1",
+     "T4"
+    ]
+   },
+   "aliases": [
+    "하이닉스"
+   ],
+   "auto_candidate": true
+  },
+  "SOL AI반도체TOP2+": {
+   "code": "0167A0",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "STX엔진": {
+   "code": "077970",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIME 글로벌AI": {
+   "code": "456600",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "가온전선": {
+   "code": "000500",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T2"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "고려아연": {
+   "code": "010130",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "기아": {
+   "code": "000270",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "뉴로메카": {
+   "code": "348340",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "달바글로벌": {
+   "code": "483650",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "대덕전자": {
+   "code": "353200",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "대한광통신": {
+   "code": "010170",
+   "market": "KR",
+   "entity": "010170",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "대한전선": {
+   "code": "001440",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_cable_wire.html": [
+     "T4"
+    ],
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T3"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T3",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "동성화인텍": {
+   "code": "033500",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "두산": {
+   "code": "000150",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T1"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "defense/k_defense_company_hanwha_aero.html": [
+     "T4"
+    ],
+    "robot/robot_kr_16_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "두산로보틱스": {
+   "code": "454910",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "robot/robot_kr_16_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "두산에너빌리티": {
+   "code": "034020",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T1"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "defense/k_defense_company_hanwha_aero.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "드림시큐리티": {
+   "code": "203650",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "디아이": {
+   "code": "003160",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "레인보우로보틱스": {
+   "code": "277810",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ],
+    "robot/robot_kr_16_valuation.html": [
+     "T2",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "로보스타": {
+   "code": "090360",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "로보티즈": {
+   "code": "108490",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "robot/robot_kr_16_valuation.html": [
+     "T1",
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "리가켐바이오": {
+   "code": "141080",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/kr_bio_china_competition.html": [
+     "T2"
+    ],
+    "glp1/glp1_kbio_portfolio_candidates.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "브이엠": {
+   "code": "089970",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T2"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T5",
+     "T6",
+     "T7",
+     "T8"
+    ],
+    "hbm-packaging/kr_semi_equip_vm_psk.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "비나텍": {
+   "code": "126340",
+   "market": "KR",
+   "entity": "126340",
+   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소",
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "비에이치아이": {
+   "code": "083650",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "산일전기": {
+   "code": "062040",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_top5_picks.html": [
+     "T2"
+    ],
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T4",
+     "T6"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T8"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "삼성SDI": {
+   "code": "006400",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "energy/energy_ess_ai_power.html": [
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [
+    "SDI"
+   ],
+   "auto_candidate": true
+  },
+  "삼성바이오로직스": {
+   "code": "207940",
+   "market": "KR",
+   "entity": "207940",
+   "falsifier": "T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선 없이도 PolyPeptide 가치가 재평가됨, 또는 반대로 마진이 2개 분기 연속 악화 · T3: 성장률이 20% 아래로 내려갔는데도 PER 40x가 유지됨 (성장률이 배수의 근거가 아니었음) · T4: Orforglipron 처방이 급증하고 주사제 선호 80%가 무너짐 (경구 전환이 빠름)",
+   "facts": 0,
+   "theses": {
+    "glp1/glp1_company_samsung_biologics.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "ai-bio/kr_bio_china_competition.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "삼바"
+   ],
+   "auto_candidate": true
+  },
+  "삼성전기": {
+   "code": "009150",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T1",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "삼성전자": {
+   "code": "005930",
+   "market": "KR",
+   "entity": "005930",
+   "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T5"
+    ],
+    "ai-infra/kr_construction_datacenter.html": [
+     "T4"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T2",
+     "T5"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T1"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_materials_gas.html": [
+     "T1"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T1"
+    ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T1"
+    ],
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "삼전"
+   ],
+   "auto_candidate": true
+  },
+  "삼성전자우": {
+   "code": "005935",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "삼성중공업": {
+   "code": "010140",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T4"
+    ],
+    "shipbuilding/k_ship_theme_masga_us_alliance.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "삼아알미늄": {
+   "code": "006110",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "삼현": {
+   "code": "437730",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "robot/robot_kr_16_valuation.html": [
+     "T1",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "삼화콘덴서": {
+   "code": "001820",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "상신이디피": {
+   "code": "091580",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "샘씨엔에스": {
+   "code": "252990",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "서울바이오시스": {
+   "code": "092190",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "서진시스템": {
+   "code": "178320",
+   "market": "KR",
+   "entity": "178320",
+   "falsifier": "785억 계약 이행 지연 공시",
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ],
+    "energy/energy_ess_ai_power.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "세아베스틸지주": {
+   "code": "001430",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "세진중공업": {
+   "code": "075580",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "셀트리온": {
+   "code": "068270",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/ai_bio_investment_map.html": [
+     "T4"
+    ],
+    "ai-bio/kr_bio_china_competition.html": [
+     "T2"
+    ],
+    "glp1/glp1_kbio_portfolio_candidates.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "스피어": {
+   "code": "347700",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "실리콘투": {
+   "code": "257720",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_apr.html": [
+     "T1"
+    ],
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T1",
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_pharmaresearch.html": [
+     "T3"
+    ],
+    "k-beauty/k_beauty_company_silicon2.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "k-beauty/k_beauty_sector.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T5"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "심텍": {
+   "code": "222800",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T2",
+     "T3",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "씨메스로보틱스": {
+   "code": "475400",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "아모레퍼시픽": {
+   "code": "090430",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_sector.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "아모센스": {
+   "code": "357580",
+   "market": "KR",
+   "entity": "357580",
+   "falsifier": "4Q26 소재 매출 <7십억 · 본격 출하 지연",
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "아모텍": {
+   "code": "052710",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "아세아시멘트": {
+   "code": "183190",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_construction_datacenter.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "안랩": {
+   "code": "053800",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "알테오젠": {
+   "code": "196170",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/kr_bio_china_competition.html": [
+     "T2",
+     "T3"
+    ],
+    "glp1/glp1_kbio_portfolio_candidates.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "에스비비테크": {
+   "code": "389500",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "에스티아이": {
+   "code": "039440",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "에스피지": {
+   "code": "058610",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "robot/robot_kr_16_valuation.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "에이스테크": {
+   "code": "088800",
+   "market": "KR",
+   "entity": "088800",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "에이피알": {
+   "code": "278470",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_apr.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_pharmaresearch.html": [
+     "T3"
+    ],
+    "k-beauty/k_beauty_company_silicon2.html": [
+     "T4"
+    ],
+    "k-beauty/k_beauty_sector.html": [
+     "T2",
+     "T5"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "엑스게이트": {
+   "code": "356680",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "엔젤로보틱스": {
+   "code": "455900",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "엘앤에프": {
+   "code": "066970",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "energy/energy_battery_valuechain_update.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "오스코텍": {
+   "code": "039200",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/kr_bio_china_competition.html": [
+     "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "오이솔루션": {
+   "code": "138080",
+   "market": "KR",
+   "entity": "138080",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "옵티코어": {
+   "code": "380540",
+   "market": "KR",
+   "entity": "380540",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "와이씨": {
+   "code": "232140",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "우리로": {
+   "code": "046970",
+   "market": "KR",
+   "entity": "046970",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "원익IPS": {
+   "code": "240810",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T1",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_vm_psk.html": [
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "유니테스트": {
+   "code": "086390",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "유일로보틱스": {
+   "code": "388720",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "유진로봇": {
+   "code": "056080",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "유한양행": {
+   "code": "000100",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "glp1/glp1_kbio_portfolio_candidates.html": [
+     "T1",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "이수페타시스": {
+   "code": "007660",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T1"
+    ],
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "이오테크닉스": {
+   "code": "039030",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "일진전기": {
+   "code": "103590",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_cable_wire.html": [
+     "T1"
+    ],
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T5"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "주성엔지니어링": {
+   "code": "036930",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T1"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "케이엠더블유": {
+   "code": "032500",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "코미코": {
+   "code": "183300",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T2",
+     "T7"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "코세스": {
+   "code": "089890",
+   "market": "KR",
+   "entity": "089890",
+   "falsifier": "BE 신규 장비 발주 2분기 공백",
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "코스맥스": {
+   "code": "192820",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_apr.html": [
+     "T1"
+    ],
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_pharmaresearch.html": [
+     "T3"
+    ],
+    "k-beauty/k_beauty_company_silicon2.html": [
+     "T4"
+    ],
+    "k-beauty/k_beauty_sector.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
+    "market/kr_4sector_cross_valuation.html": [
+     "T3"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "클로봇": {
+   "code": "466100",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "테스": {
+   "code": "095610",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T1"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T1",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T3",
+     "T6"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "티로보틱스": {
+   "code": "117730",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "티에스이": {
+   "code": "131290",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "티엘비": {
+   "code": "356860",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "파마리서치": {
+   "code": "214450",
+   "market": "KR",
+   "entity": "214450",
+   "falsifier": "T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에 판관비 증가율이 매출 증가율 아래로 내려오면서 OPM이 39% 위로 회복 (투자 국면이 맞았다) · T3: [추론] OPM이 37%대 이하에 머물거나 더 내려가는데도 파마리서치 PER이 K뷰티 5사 중 상위(2026.08.20 기준 21.62배 · 에이피알 24.76  · T4: 3rd-class 승인 또는 타법인 출자·합작 공시가 나오면 시점 전제를 다시 쓴다.",
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_pharmaresearch.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_apr.html": [
+     "T1"
+    ],
+    "k-beauty/k_beauty_sector.html": [
+     "T1",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "파이오링크": {
+   "code": "170790",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "파인엠텍": {
+   "code": "441270",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "파크시스템스": {
+   "code": "140860",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T3",
+     "T4",
+     "T7"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "펩트론": {
+   "code": "087010",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "포스코퓨처엠": {
+   "code": "003670",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "energy/energy_battery_valuechain_update.html": [
+     "T1",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "풍산": {
+   "code": "103140",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_investment_map.html": [
+     "T1",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "피에스케이": {
+   "code": "319660",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T2",
+     "T4"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T2",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T7"
+    ],
+    "hbm-packaging/kr_semi_equip_vm_psk.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ],
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "피에스케이홀딩스": {
+   "code": "031980",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T4"
+    ],
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한국카본": {
+   "code": "017960",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한국콜마": {
+   "code": "161890",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_pharmaresearch.html": [
+     "T3"
+    ],
+    "k-beauty/k_beauty_company_silicon2.html": [
+     "T4"
+    ],
+    "k-beauty/k_beauty_sector.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한국항공우주": {
+   "code": "047810",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_company_kai.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T2",
+     "T3",
+     "T4",
+     "T8",
+     "T9"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한미반도체": {
+   "code": "042700",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_cross_valuation.html": [
+     "T8"
+    ],
+    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_investment_map.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T2"
+    ],
+    "hbm-packaging/kr_semi_equip_6.html": [
+     "T2",
+     "T3",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한선엔지니어링": {
+   "code": "452280",
+   "market": "KR",
+   "entity": "452280",
+   "falsifier": "OPM 20% 아래 2분기 · 2026 매출 720억 미만",
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한전KPS": {
+   "code": "051600",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한전기술": {
+   "code": "052690",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한화시스템": {
+   "code": "272210",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_company_hanwha_aero.html": [
+     "T5"
+    ],
+    "defense/k_defense_company_hanwha_systems_ocean.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T7",
+     "T8"
+    ],
+    "defense/k_defense_investment_map.html": [
+     "T1",
+     "T2",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한화에어로스페이스": {
+   "code": "012450",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_company_hanwha_aero.html": [
+     "T1",
+     "T2",
+     "T4",
+     "T5"
+    ],
+    "defense/k_defense_company_lig_nexone.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T5",
+     "T8"
+    ],
+    "defense/k_defense_investment_map.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T5"
+    ]
+   },
+   "aliases": [
+    "에어로"
+   ],
+   "auto_candidate": true
+  },
+  "한화엔진": {
+   "code": "082740",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T4",
+     "T6"
+    ],
+    "shipbuilding/k_ship_industry_overview.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한화오션": {
+   "code": "042660",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T4"
+    ],
+    "defense/k_defense_company_hanwha_aero.html": [
+     "T5"
+    ],
+    "defense/k_defense_company_hanwha_systems_ocean.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T7",
+     "T8",
+     "T9"
+    ],
+    "shipbuilding/k_ship_theme_masga_us_alliance.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "해성디에스": {
+   "code": "195870",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대건설": {
+   "code": "000720",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_construction_datacenter.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대로템": {
+   "code": "064350",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "defense/k_defense_company_hyundai_rotem.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T1",
+     "T4",
+     "T5",
+     "T6",
+     "T8"
+    ],
+    "defense/k_defense_investment_map.html": [
+     "T1",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대무벡스": {
+   "code": "319400",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T4"
+    ],
+    "robot/robot_kr_16_valuation.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대백화점": {
+   "code": "069960",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "consumer/consumer_sector_department.html": [
+     "T1",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대제철": {
+   "code": "004020",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대차": {
+   "code": "005380",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "효성중공업": {
+   "code": "298040",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 1,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
+    "ai-infra/kr_power_10_deep.html": [
+     "T1",
+     "T3",
+     "T4"
+    ],
+    "ai-infra/kr_power_cross_valuation.html": [
+     "T4",
+     "T6"
+    ]
+   },
+   "aliases": [
+    "효중"
+   ],
+   "auto_candidate": true
+  },
+  "효성티앤씨": {
+   "code": "298020",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 2차전지산업": {
+   "code": "305720",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 건설": {
+   "code": "117700",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 반도체": {
+   "code": "091160",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 보험": {
+   "code": "140700",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 은행": {
+   "code": "091170",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 자동차": {
+   "code": "091180",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 증권": {
+   "code": "102970",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 철강": {
+   "code": "117680",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "PLUS K방산": {
+   "code": "449450",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SOL 조선TOP3플러스": {
+   "code": "466920",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 200 생활소비재": {
+   "code": "227560",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 200 에너지화학": {
+   "code": "139250",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 200 중공업": {
+   "code": "139230",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 미디어컨텐츠": {
+   "code": "228810",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 소프트웨어": {
+   "code": "157490",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 여행레저": {
+   "code": "228800",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 헬스케어": {
+   "code": "143860",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 화장품": {
+   "code": "228790",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "AEP": {
+   "code": "AEP.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T5",
+     "T6"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T8"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "AMD": {
+   "code": "AMD.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_marvell.html": [
+     "T2"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T5"
+    ],
+    "research/13f_2026q2.html": [
+     "T4",
+     "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "ASML": {
+   "code": "ASML.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T5"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Absci": {
+   "code": "ABSI.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Alphabet": {
+   "code": "GOOGL.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T1"
+    ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_overview.html": [
+     "T2",
+     "T4"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "알파벳"
+   ],
+   "auto_candidate": true
+  },
+  "Amazon": {
+   "code": "AMZN.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T3"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T1",
+     "T2"
+    ],
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T4"
+    ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T5"
+    ],
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T6"
+    ],
+    "k-beauty/k_beauty_company_apr.html": [
+     "T3"
+    ]
+   },
+   "aliases": [
+    "아마존"
+   ],
+   "auto_candidate": true
+  },
+  "Amphenol": {
+   "code": "APH",
+   "market": "US",
+   "entity": "APH",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2"
+    ],
+    "ai-infra/us_epc_datacenter_build.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Antero Resources": {
+   "code": "AR",
+   "market": "US",
+   "entity": "AR",
+   "falsifier": null,
+   "facts": 11,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Applied Optoelectronics": {
+   "code": "AAOI.O",
+   "market": "US",
+   "entity": "AAOI",
+   "falsifier": null,
+   "facts": 7,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Arista Networks": {
+   "code": "ANET.K",
+   "market": "US",
+   "entity": "ANET",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Astera Labs": {
+   "code": "ALAB.O",
+   "market": "US",
+   "entity": "ALAB",
+   "falsifier": null,
+   "facts": 15,
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T5"
+    ],
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Berkshire Hathaway B": {
+   "code": "BRKb",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Bitdeer": {
+   "code": "BTDR.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Bloom Energy": {
+   "code": "BE",
+   "market": "US",
+   "entity": "BE",
+   "falsifier": "T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10-Q 미주 비중 25% 초과(서사 확인) / 반대로 단일 고객 50% 재돌파(구조) · T3: 3Q26 관계자 매출이 분기 매출의 20% 초과 — 1Q가 예외가 아니라 패턴 · T4: 연내 신규 하이퍼스케일러 계약 0(한투 자신의 기대) · 또는 주피터 2027-02 재지연 · 또는 SemiAnalysis BTM 50% 전망 철회 · 제3자(S · T5: 비나텍 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 등장 · 한선 OPM 20% 아래 2분기 · 아모센스 4Q26 소재 매출 <7십억",
+   "facts": 6,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [
+    "블룸에너지"
+   ],
+   "auto_candidate": true
+  },
+  "Broadcom": {
+   "code": "AVGO.O",
+   "market": "US",
+   "entity": "AVGO",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_broadcom.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T1",
+     "T3"
+    ],
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T5"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T1"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T5"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T1"
+    ],
+    "defense/us_defense_primes.html": [
+     "T1"
+    ],
+    "research/13f_2026q2.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "브로드컴"
+   ],
+   "auto_candidate": true
+  },
+  "Cerebras": {
+   "code": "CBRS.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
+    "research/13f_2026q2.html": [
+     "T4",
+     "T5",
+     "T6"
+    ],
+    "robot/robot_kr_16_valuation.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Cheniere Energy": {
+   "code": "LNG",
+   "market": "US",
+   "entity": "LNG",
+   "falsifier": null,
+   "facts": 10,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Chevron": {
+   "code": "CVX",
+   "market": "US",
+   "entity": "CVX",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Ciena": {
+   "code": "CIEN.K",
+   "market": "US",
+   "entity": "CIEN",
+   "falsifier": null,
+   "facts": 5,
+   "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T3"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T2",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Circle Internet": {
+   "code": "CRCL",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Cisco Systems": {
+   "code": "CSCO.O",
+   "market": "US",
+   "entity": "CSCO",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Cloudflare": {
+   "code": "NET",
+   "market": "US",
+   "entity": "NET",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "cybersecurity/cyber_ai_security.html": [
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Coherent": {
+   "code": "COHR.K",
+   "market": "US",
+   "entity": "COHR",
+   "falsifier": null,
+   "facts": 12,
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T2",
+     "T4"
+    ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T3"
+    ],
+    "cybersecurity/cyber_ai_security.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "코히런트"
+   ],
+   "auto_candidate": true
+  },
+  "Coinbase": {
+   "code": "COIN.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "payments/payments_company_robinhood.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "코인베이스"
+   ],
+   "auto_candidate": true
+  },
+  "Comfort Systems": {
+   "code": "FIX",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T3"
+    ],
+    "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T3"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T3"
+    ],
+    "ai-infra/us_epc_datacenter_build.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "ConocoPhillips": {
+   "code": "COP",
+   "market": "US",
+   "entity": "COP",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Constellation Energy": {
+   "code": "CEG.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "CoreWeave": {
+   "code": "CRWV.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_korea_g3_sovereign_ai.html": [
+     "T1"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Corning": {
+   "code": "GLW",
+   "market": "US",
+   "entity": "GLW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T5"
+    ],
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T7"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T7"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Credo Technology": {
+   "code": "CRDO.O",
+   "market": "US",
+   "entity": "CRDO",
+   "falsifier": null,
+   "facts": 17,
+   "theses": {
+    "ai-infra/optical_interconnect_layer.html": [
+     "T2",
+     "T5"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "CrowdStrike": {
+   "code": "CRWD.O",
+   "market": "US",
+   "entity": "CRWD",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "cybersecurity/cyber_ai_security.html": [
+     "T2",
+     "T3"
+    ],
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-sw/ai_sw_investment_map.html": [
+     "T2"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Datadog": {
+   "code": "DDOG.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T2",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Devon Energy(+Coterra)": {
+   "code": "DVN",
+   "market": "US",
+   "entity": "DVN",
+   "falsifier": "Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json 에 없음(수집 404)",
+   "facts": 9,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Diamondback": {
+   "code": "FANG.O",
+   "market": "US",
+   "entity": "FANG",
+   "falsifier": null,
+   "facts": 11,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "EQT": {
+   "code": "EQT",
+   "market": "US",
+   "entity": "EQT",
+   "falsifier": null,
+   "facts": 11,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "energy/us_energy_five.html": [
+     "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Eaton": {
+   "code": "ETN",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T3"
+    ],
+    "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T11",
+     "T5",
+     "T9"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2"
+    ],
+    "ai-infra/us_epc_datacenter_build.html": [
+     "T1"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Eli Lilly": {
+   "code": "LLY",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "glp1/glp1_company_novo_lilly.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Energy Transfer": {
+   "code": "ET",
+   "market": "US",
+   "entity": "ET",
+   "falsifier": null,
+   "facts": 10,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Enterprise Products": {
+   "code": "EPD",
+   "market": "US",
+   "entity": "EPD",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Expand Energy": {
+   "code": "EXE",
+   "market": "US",
+   "entity": "EXE",
+   "falsifier": null,
+   "facts": 11,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "ExxonMobil": {
+   "code": "XOM",
+   "market": "US",
+   "entity": "XOM",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Fabrinet": {
+   "code": "FN",
+   "market": "US",
+   "entity": "FN",
+   "falsifier": null,
+   "facts": 10,
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "First Solar": {
+   "code": "FSLR.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Fluence Energy": {
+   "code": "FLNC.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_semi_ess_dc.html": [
+     "T2"
+    ],
+    "energy/energy_ess_ai_power.html": [
+     "T1"
+    ]
+   },
+   "aliases": [
+    "플루언스"
+   ],
+   "auto_candidate": true
+  },
+  "Fortinet": {
+   "code": "FTNT.O",
+   "market": "US",
+   "entity": "FTNT",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "cybersecurity/cyber_ai_security.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Freeport-McMoRan": {
+   "code": "FCX",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "GE Vernova": {
+   "code": "GEV",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/kr_power_10_deep.html": [
+     "T3"
+    ]
+   },
+   "aliases": [
+    "GE버노바",
+    "GE 버노바"
+   ],
+   "auto_candidate": true
+  },
+  "Generac": {
+   "code": "GNRC",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "제너락"
+   ],
+   "auto_candidate": true
+  },
+  "General Dynamics": {
+   "code": "GD",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Hut 8": {
+   "code": "HUT.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Intel": {
+   "code": "INTC.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T3"
+    ],
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T2"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T7"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T4"
+    ],
+    "research/13f_2026q2.html": [
+     "T4",
+     "T6"
+    ]
+   },
+   "aliases": [
+    "인텔"
+   ],
+   "auto_candidate": true
+  },
+  "Kintor Pharmaceutical": {
+   "code": "9939.HK",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Kioxia Holdings": {
+   "code": "285A.T",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Lockheed Martin": {
+   "code": "LMT",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Lumentum": {
+   "code": "LITE.O",
+   "market": "US",
+   "entity": "LITE",
+   "falsifier": null,
+   "facts": 11,
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T5"
+    ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T3",
+     "T4"
+    ]
+   },
+   "aliases": [
+    "루멘텀"
+   ],
+   "auto_candidate": true
+  },
+  "MACOM": {
+   "code": "MTSI.O",
+   "market": "US",
+   "entity": "MTSI",
+   "falsifier": null,
+   "facts": 7,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Marvell": {
+   "code": "MRVL.O",
+   "market": "US",
+   "entity": "MRVL",
+   "falsifier": null,
+   "facts": 18,
+   "theses": {
+    "ai-infra/optical_interconnect_layer.html": [
+     "T4"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T5"
+    ],
+    "ai-infra/ai_chip_company_marvell.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_investment_map.html": [
+     "T3"
+    ],
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "마벨"
+   ],
+   "auto_candidate": true
+  },
+  "Mastercard": {
+   "code": "MA",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2",
+     "T6"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T6"
+    ],
+    "payments/us_payment_networks.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Matador Resources": {
+   "code": "MTDR",
+   "market": "US",
+   "entity": "MTDR",
+   "falsifier": null,
+   "facts": 11,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Meta Platforms": {
+   "code": "META.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Micron": {
+   "code": "MU.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/kr_bio_china_competition.html": [
+     "T5"
+    ],
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T3",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2",
+     "T5"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T7"
+    ],
+    "hbm-packaging/kr_semi_fab_timeline.html": [
+     "T2",
+     "T4"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T3",
+     "T4"
+    ],
+    "payments/us_payment_networks.html": [
+     "T1"
+    ],
+    "research/13f_2026q2.html": [
+     "T3"
+    ]
+   },
+   "aliases": [
+    "마이크론"
+   ],
+   "auto_candidate": true
+  },
+  "Microsoft": {
+   "code": "MSFT.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T2",
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_msft_pltr.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [
+    "마이크로소프트"
+   ],
+   "auto_candidate": true
+  },
+  "Moderna": {
+   "code": "MRNA.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "NRG Energy": {
+   "code": "NRG",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "NVIDIA": {
+   "code": "NVDA.O",
+   "market": "US",
+   "entity": "NVDA",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T4"
+    ],
+    "ai-infra/ai_chip_company_broadcom.html": [
+     "T2",
+     "T3"
+    ],
+    "ai-infra/ai_chip_company_marvell.html": [
+     "T2"
+    ],
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-infra/ai_power_company_semi_ess_dc.html": [
+     "T1"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T1"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T1"
+    ],
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T4"
+    ],
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T6"
+    ],
+    "defense/us_defense_primes.html": [
+     "T1"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2"
+    ],
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T5"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T5"
+    ],
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T1",
+     "T5"
+    ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T5"
+    ],
+    "research/13f_2026q2.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "엔비디아"
+   ],
+   "auto_candidate": true
+  },
+  "Nebius": {
+   "code": "NBIS.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Nextracker": {
+   "code": "NXT.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "NiSource": {
+   "code": "NI",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T5",
+     "T6",
+     "T7"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T8"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Northrop Grumman": {
+   "code": "NOC",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Novo Nordisk ADR": {
+   "code": "NVO",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Occidental": {
+   "code": "OXY",
+   "market": "US",
+   "entity": "OXY",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Oracle": {
+   "code": "ORCL.K",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Palantir": {
+   "code": "PLTR.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_msft_pltr.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T4"
+    ],
+    "research/statements_log.html": [
+     "T3"
+    ],
+    "robot/robot_theme_supply_chain.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "팔란티어"
+   ],
+   "auto_candidate": true
+  },
+  "Palo Alto Networks": {
+   "code": "PANW.O",
+   "market": "US",
+   "entity": "PANW",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "cybersecurity/cyber_ai_security.html": [
+     "T2",
+     "T3",
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Permian Resources": {
+   "code": "PR",
+   "market": "US",
+   "entity": "PR",
+   "falsifier": null,
+   "facts": 10,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Qualcomm": {
+   "code": "QCOM.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Quanta Services": {
+   "code": "PWR",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "RTX Corp": {
+   "code": "RTX",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Range Resources": {
+   "code": "RRC",
+   "market": "US",
+   "entity": "RRC",
+   "falsifier": null,
+   "facts": 8,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Recursion Pharma": {
+   "code": "RXRX.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Robinhood": {
+   "code": "HOOD.O",
+   "market": "US",
+   "entity": "HOOD",
+   "falsifier": "금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편",
+   "facts": 35,
+   "theses": {
+    "payments/payments_company_robinhood.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "로빈후드"
+   ],
+   "auto_candidate": true
+  },
+  "STMicroelectronics": {
+   "code": "STM",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Salesforce": {
+   "code": "CRM",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SanDisk": {
+   "code": "SNDK.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_company_msft_pltr.html": [
+     "T3"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T2"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T3",
+     "T4"
+    ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T2",
+     "T5"
+    ],
+    "payments/us_payment_networks.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Seagate": {
+   "code": "STX.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Semtech": {
+   "code": "SMTC.O",
+   "market": "US",
+   "entity": "SMTC",
+   "falsifier": null,
+   "facts": 19,
+   "theses": {
+    "ai-infra/optical_interconnect_layer.html": [
+     "T3"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "셈텍"
+   ],
+   "auto_candidate": true
+  },
+  "SentinelOne": {
+   "code": "S",
+   "market": "US",
+   "entity": "S",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "cybersecurity/cyber_ai_security.html": [
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "ServiceNow": {
+   "code": "NOW",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_investment_map.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Shoals": {
+   "code": "SHLS.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Snowflake": {
+   "code": "SNOW.K",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SpaceX": {
+   "code": "SPCX.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_msft_pltr.html": [
+     "T3"
+    ],
+    "market/q2_2026_earnings_overview.html": [
+     "T2",
+     "T4"
+    ],
+    "research/13f_2026q2.html": [
+     "T1",
+     "T6"
+    ],
+    "robot/robot_theme_supply_chain.html": [
+     "T4"
+    ],
+    "space/space_case_contract_structure.html": [
+     "T1",
+     "T2",
+     "T5"
+    ],
+    "space/space_update_2026.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TE Connectivity": {
+   "code": "TEL",
+   "market": "US",
+   "entity": "TEL",
+   "falsifier": null,
+   "facts": 1,
+   "theses": {
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TSMC ADR": {
+   "code": "TSM",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_broadcom.html": [
+     "T1"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T5"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T2"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T7"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T5"
+    ],
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T5"
+    ],
+    "national-strategy/ns_global_strategy_overview.html": [
+     "T1"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "research/13f_2026q2.html": [
+     "T4"
+    ]
+   },
+   "aliases": [
+    "TSMC"
+   ],
+   "auto_candidate": true
+  },
+  "Talen": {
+   "code": "TLN.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T2",
+     "T3",
+     "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Targa Resources": {
+   "code": "TRGP.K",
+   "market": "US",
+   "entity": "TRGP",
+   "falsifier": "09-15 정정 반영(C1): TTM FCF $7.4억(수익률 1.2%) · CapEx/OCF 82.7% · 순부채 $189억 — 재투자 단계. T6: 퍼미안→걸프 물량 축",
+   "facts": 10,
+   "theses": {
+    "energy/us_energy_five.html": [
+     "T2",
+     "T6"
+    ],
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Tesla": {
+   "code": "TSLA.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T2"
+    ]
+   },
+   "aliases": [
+    "테슬라"
+   ],
+   "auto_candidate": true
+  },
+  "Venture Global": {
+   "code": "VG",
+   "market": "US",
+   "entity": "VG",
+   "falsifier": null,
+   "facts": 10,
+   "theses": {
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Veradermics": {
+   "code": "MANE.K",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Vertiv": {
+   "code": "VRT",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T8"
+    ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T4"
+    ],
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T7"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Visa": {
+   "code": "V",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T5"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2",
+     "T6"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T6"
+    ],
+    "payments/us_payment_networks.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Vistra": {
+   "code": "VST",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T2"
+    ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T1"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T8"
+    ],
+    "market/us_7axis_cross_valuation.html": [
+     "T2"
+    ],
+    "research/13f_2026q2.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Vulcan Materials": {
+   "code": "VMC",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Western Digital": {
+   "code": "WDC.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Williams": {
+   "code": "WMB",
+   "market": "US",
+   "entity": "WMB",
+   "falsifier": "⚠ 09-15 정정(5사 편 C1 · r-20260913-09): TTM FCF −$1.08억(수익률 −0.1%) · CapEx/OCF 101.8% — 현금 회사가 아니라 <재투자 단계>(Transco 증설·Socrates). 종전 「FCF 2.5%·CapEx/OCF 60%」는 창 오류 값. T6: 두 가스 축 모두 물량으로 받는 자리 · 발전(Socrates)은 「가스 = 가장 빠른 전원」의 실행 사례",
+   "facts": 10,
+   "theses": {
+    "energy/us_energy_five.html": [
+     "T2",
+     "T6"
+    ],
+    "energy/us_energy_hegemony_17.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "X-Energy": {
+   "code": "XE.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "market/kr_drawdown_2026.html": [
+     "T8"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Xcel Energy": {
+   "code": "XEL.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Zscaler": {
+   "code": "ZS.O",
+   "market": "US",
+   "entity": "ZS",
+   "falsifier": null,
+   "facts": 9,
+   "theses": {
+    "cybersecurity/cyber_ai_security.html": [
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "IGV 소프트웨어": {
+   "code": "IGV",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "ITA 항공방산": {
+   "code": "ITA",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "IYT 운송": {
+   "code": "IYT",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KBE 은행": {
+   "code": "KBE",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KRE 지역은행": {
+   "code": "KRE",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SMH 반도체": {
+   "code": "SMH.O",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XBI 바이오": {
+   "code": "XBI",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XHB 주택건설": {
+   "code": "XHB",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLB 소재": {
+   "code": "XLB",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLC 커뮤니케이션": {
+   "code": "XLC",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLE 에너지": {
+   "code": "XLE",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLF 금융": {
+   "code": "XLF",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLI 산업재": {
+   "code": "XLI",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLK 기술": {
+   "code": "XLK",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLP 필수소비": {
+   "code": "XLP",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLU 유틸리티": {
+   "code": "XLU",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLV 헬스케어": {
+   "code": "XLV",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "XLY 경기소비": {
+   "code": "XLY",
+   "market": "US-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  }
+ }
+}

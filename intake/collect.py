@@ -16,6 +16,7 @@
 import hashlib
 import io
 import json
+import re
 import os
 import sys
 import urllib.error
@@ -260,6 +261,22 @@ def main(argv):
                "path": t["url"].split(t["host"], 1)[1], "subject": t["subject"], "grade_hint": t["grade_hint"],
                "status": "ok" if status == 200 and body else ("blocked" if status in (0, 403, 407) else str(status)),
                "file": None, "routed": ("data" if t["kind"] in ("XBRL", "매크로", "월지표", "연결성", "원문", "시세") else False), "auto": True}
+        if rec["status"] == "ok" and t["kind"] == "뉴스레터":
+            # 2026-09-17 구조 개선 B — 이름 색인으로 후보 테제를 붙인다(라우팅은 사람이 한다)
+            try:
+                nidx = json.load(io.open(os.path.join(ROOT, "docs", "name_index.json"), encoding="utf-8"))["names"]
+                txt = re.sub(r"<[^>]+>", " ", body)
+                cands = []
+                for nm, v in nidx.items():
+                    if not v.get("auto_candidate"):
+                        continue
+                    keys = [nm] + v.get("aliases", [])
+                    if any(k in txt for k in keys) and v.get("theses"):
+                        cands.append({"name": nm, "theses": [f"{pg.split('/')[-1].replace('.html','')}#{','.join(ids)}" for pg, ids in list(v["theses"].items())[:3]]})
+                if cands:
+                    rec["candidates"] = cands[:20]
+            except Exception:  # noqa: BLE001
+                pass
         if rec["status"] == "ok":
             h = hashlib.sha256(body).hexdigest()
             if h in hashes:  # 같은 내용(월지표가 안 바뀐 날) — 줄을 늘리지 않는다
