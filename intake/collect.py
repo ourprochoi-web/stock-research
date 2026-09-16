@@ -214,7 +214,7 @@ def macro_record(day, ids, dry):
                f"외국인 {(nv.get('kospi_investors_억') or {}).get('foreignValue')}억 · breadth {br.get('up')}/{br.get('n')} 상승")
     rec = {"id": next_id(ids, day), "date": f"{day:%Y-%m-%d}", "kind": "매크로", "host": "fred.stlouisfed.org · m.stock.naver.com · api.stock.naver.com",
            "path": "collect.py macro", "subject": subject, "grade_hint": "①(FRED·거래소) · breadth 는 prices.json 파생",
-           "status": "ok" if (fr or nv) else "blocked", "file": "intake/files/" + rel, "routed": False, "auto": True,
+           "status": "ok" if (fr or nv) else "blocked", "file": "intake/files/" + rel, "routed": "data", "auto": True,
            "note": (f"실패 {len(snap['errors'])}건: " + "; ".join(f"{e['host']}{e['path']} {e['status']}" for e in snap["errors"][:4])) if snap["errors"] else ""}
     if dry:
         print("[dry]", json.dumps(rec, ensure_ascii=False)[:600])
@@ -259,7 +259,7 @@ def main(argv):
         rec = {"id": next_id(ids, day), "date": f"{day:%Y-%m-%d}", "kind": t["kind"], "host": t["host"],
                "path": t["url"].split(t["host"], 1)[1], "subject": t["subject"], "grade_hint": t["grade_hint"],
                "status": "ok" if status == 200 and body else ("blocked" if status in (0, 403, 407) else str(status)),
-               "file": None, "routed": False, "auto": True}
+               "file": None, "routed": "data", "auto": True}
         if rec["status"] == "ok":
             h = hashlib.sha256(body).hexdigest()
             if h in hashes:  # 같은 내용(월지표가 안 바뀐 날) — 줄을 늘리지 않는다
