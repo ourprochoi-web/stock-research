@@ -148,7 +148,8 @@
      "T4"
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
-     "T2"
+     "T2",
+     "T3"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T2",
@@ -298,6 +299,9 @@
     "ai-infra/us_bloom_intel_deep.html": [
      "T5"
     ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T1"
+    ],
     "defense/k_defense_company_hanwha_systems_ocean.html": [
      "T3"
     ],
@@ -436,6 +440,7 @@
     "glp1/glp1_kbio_portfolio_candidates.html": [
      "T1",
      "T2",
+     "T3",
      "T4"
     ],
     "market/kr_4sector_cross_valuation.html": [
@@ -979,6 +984,9 @@
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T2"
+    ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T3"
     ]
    },
    "aliases": [],
@@ -1005,6 +1013,7 @@
      "T4"
     ],
     "ai-sw/ai_sw_company_anthropic.html": [
+     "T1",
      "T4"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
@@ -1339,6 +1348,7 @@
     "glp1/glp1_kbio_portfolio_candidates.html": [
      "T1",
      "T2",
+     "T3",
      "T4"
     ],
     "market/kr_4sector_cross_valuation.html": [
@@ -1591,6 +1601,7 @@
    "theses": {
     "glp1/glp1_kbio_portfolio_candidates.html": [
      "T1",
+     "T2",
      "T4"
     ]
    },
@@ -1779,6 +1790,13 @@
      "T3"
     ],
     "national-strategy/ns_semiconductor_war.html": [
+     "T4",
+     "T5"
+    ],
+    "robot/robot_theme_supply_chain.html": [
+     "T1",
+     "T2",
+     "T3",
      "T4",
      "T5"
     ]
@@ -2071,7 +2089,8 @@
      "T4"
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
-     "T2"
+     "T2",
+     "T3"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T2",
@@ -2349,7 +2368,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -3477,6 +3500,13 @@
     "hbm-packaging/kr_semi_fab_timeline.html": [
      "T4"
     ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
     "research/13f_2026q2.html": [
      "T4",
      "T6"
@@ -3647,6 +3677,9 @@
      "T3",
      "T4"
     ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T1"
+    ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T2",
      "T5"
@@ -3768,6 +3801,9 @@
     "defense/us_defense_primes.html": [
      "T1"
     ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T2"
+    ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T2"
     ],
@@ -3782,6 +3818,7 @@
      "T5"
     ],
     "node-screener/node_screener_hbm_scoreboard.html": [
+     "T4",
      "T5"
     ],
     "research/13f_2026q2.html": [
@@ -4064,6 +4101,7 @@
      "T3"
     ],
     "market/q2_2026_earnings_overview.html": [
+     "T1",
      "T2"
     ],
     "market/us_7axis_cross_valuation.html": [
