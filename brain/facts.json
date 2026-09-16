@@ -5460,6 +5460,68 @@
      "note": "연간 수주 목표 8.4조 → 12조 상향"
     }
    }
+  },
+  "BE": {
+   "name": "Bloom Energy",
+   "intake": [
+    "u-20260917-06"
+   ],
+   "metrics": {
+    "tco_5y_1gw_baseline": {
+     "value": 63.4,
+     "unit": "USD B",
+     "basis": "그리드 AC 1GW · Vera Rubin NVL72 · 2029 가격 · 회사 모델",
+     "asof": "2026-09-16",
+     "grade": "②",
+     "source": "Bloom 「The New Rules of AI Power」 부록 A(모델 · 벤더 견적 없음)",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "noncompute_capex_baseline": {
+     "value": 13.3,
+     "unit": "USD B",
+     "basis": "전기 4.9 + 냉각 4.4 + 건물 4.0",
+     "asof": "2026-09-16",
+     "grade": "②",
+     "source": "Bloom 「The New Rules of AI Power」 부록 A(모델 · 벤더 견적 없음)",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "noncompute_capex_bloom": {
+     "value": 9.7,
+     "unit": "USD B",
+     "basis": "−27% · 변전소·SST·BESS 제거 · 발전 플랜트는 PPA(OPEX)",
+     "asof": "2026-09-16",
+     "grade": "②",
+     "source": "Bloom 「The New Rules of AI Power」 부록 A(모델 · 벤더 견적 없음)",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "opex_5y_baseline": {
+     "value": 13.4,
+     "unit": "USD B",
+     "basis": "에너지(PPA/요금)·유지·인건비·SW·보험세",
+     "asof": "2026-09-16",
+     "grade": "②",
+     "source": "Bloom 「The New Rules of AI Power」 부록 A(모델 · 벤더 견적 없음)",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "opex_5y_bloom": {
+     "value": 11.5,
+     "unit": "USD B",
+     "basis": "−14% · PPA 포함",
+     "asof": "2026-09-16",
+     "grade": "②",
+     "source": "Bloom 「The New Rules of AI Power」 부록 A(모델 · 벤더 견적 없음)",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "noncompute_tco_saving": {
+     "value": 5.5,
+     "unit": "USD B",
+     "basis": "−21% 비컴퓨팅 · 총 TCO −9% · 컴퓨트 +8%",
+     "asof": "2026-09-16",
+     "grade": "②",
+     "source": "Bloom 「The New Rules of AI Power」 부록 A(모델 · 벤더 견적 없음)",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    }
+   }
   }
  },
  "macro": {

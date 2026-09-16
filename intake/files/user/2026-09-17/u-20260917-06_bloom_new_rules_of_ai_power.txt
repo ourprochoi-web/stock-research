@@ -1,0 +1,605 @@
+
+===== PAGE 1 =====
+September 2026
+The New Rules  
+of AI Power
+How DC power is changing what 
+it takes to build and scale AI
+SPECIAL REPORT
+
+===== PAGE 2 =====
+The modern power system was born at the end of the nineteenth century as cities were 
+growing, factories were expanding, and electricity began to transform how people lived and 
+worked. The new economy needed electricity for lighting, streetcars, elevators, motors, and 
+industrial machinery. It also needed a practical way to generate electricity at scale and deliver 
+it over long distances to where it was needed.
+Alternating current (AC) made that possible. Its voltage could be raised for efficient 
+transmission over long distances and then lowered again near homes, businesses, and 
+factories to levels that were safe and practical to use. That advantage helped establish 
+a model built around large, centralized power plants connected to customers through 
+transmission and distribution lines. Over the 20th century, that architecture expanded into the 
+grid we know today. It was extraordinarily effective for the mechanical age it was built to serve.
+Today’s digital age looks very different. The machines that relied on motors and mechanical 
+systems are increasingly enabled by computers, artificial intelligence, and software. Factories 
+run on automation and robotics. Hospitals depend on advanced imaging, monitoring, and 
+diagnostic systems. Everyday life depends on smartphones and connected devices. Offices, 
+communications networks, and data centers rely on computing at enormous scale. At the 
+heart are semiconductor-based electronics powered by direct current (DC). Yet most of the 
+electricity that powers the digital economy is still delivered as AC.
+Until recently, that mismatch was manageable. Data centers brought AC power into the 
+facility and converted it to DC at the rack level. At conventional rack densities, the amount of 
+equipment, copper, and space required remained relatively modest. AI changes the scale. Rack 
+power is expected to reach 600 kilowatts (kW) by 2027, with a path toward 1 megawatt (MW).1 
+At those densities, converting and moving power becomes far more costly and complex.
+That leaves data center developers with a consequential choice: continue with the existing 
+AC power model and convert it to DC, or generate DC power onsite and avoid much of the 
+conversion altogether. The decision reaches beyond electrical design, affecting equipment, 
+construction timelines, reliability, and available space.
+The financial stakes are enormous. In 2026, the five largest U.S. hyperscalers are expected 
+to deploy about $750 billion in capital.2 At that scale, even relatively small differences in 
+infrastructure cost translate into billions of dollars.
+This report compares the leading approaches to delivering DC power at AI scale and the 
+choices they create for developers. The path they choose will help determine whether power 
+infrastructure enables the next generation of AI compute or becomes a constraint.
+Preface 
+1	 NVIDIA published rack specifications and SemiAnalysis Datacenter Industry Model
+2	 S&P Global Ratings, S&P Global Ratings’ View On Artificial Intelligence And Hyperscalers, Estimate includes Alphabet, Amazon, Meta, 
+Microsoft, and Oracle
+2
+Special Report: The New Rules of AI Power
+
+===== PAGE 3 =====
+Rapidly growing compute density is driving a shift in data center electrical 
+architecture. AI compute is outrunning the power infrastructure built to support it. 
+Power demand per rack has increased roughly twenty-fold since 2020 and is expected 
+to reach 600 kW by 2027, with a path toward 1 MW.3 At those densities, scaling today’s 
+AC power architecture is more cumbersome and expensive: impractical amounts 
+of copper, additional electrical equipment, and valuable space devoted to power 
+infrastructure rather than compute. The industry’s response is 800V DC, which can 
+deliver far more power with less current and is emerging as the standard for next-
+generation AI systems. NVIDIA will require 800V DC beginning with its Rubin Ultra and 
+Kyber rack architecture. For data center developers, the question now is how 800V 
+DC power will be supplied.
+The default assumption is to preserve existing AC power sources and convert 
+their output to DC. The grid and most sources of data center power still deliver AC 
+power, even as next-generation AI systems move to DC. The industry bridges the gap 
+to bring AC power into the data center and convert it to 800V DC. That still requires 
+substantial electrical infrastructure with year-long lead times. Some designs also 
+depend on technologies with less operating history, such as solid-state transformers 
+that add to supply-chain and operational risk. The result is a new power architecture 
+built on old infrastructure. 
+There is another path: generate DC power natively and avoid costly and complex 
+AC-to-DC conversion. If AI racks require DC power, the most direct path is to 
+generate it from the beginning. This eliminates much of the equipment required 
+to convert AC power and reduces the number of components to buy, install, and 
+maintain. It also reduces dependence on long-lead electrical equipment and potential 
+points of failure. With fewer conversion stages, less power is lost along the way and 
+less space is consumed by electrical infrastructure. The result is a more streamlined 
+and less costly path from generation to consumption.
+Fuel cells are the only DC-native source that can provide continuous power at 
+gigawatt scale. Very few onsite power sources can meet all three requirements of an 
+800V DC data center: generate DC natively, run continuously, and scale to gigawatt 
+loads. Solar generates DC but cannot provide continuous power. Batteries operate on 
+DC but store electricity rather than generate it. Turbines and reciprocating engines 
+can provide continuous power at scale, but they generate AC and retain much of the 
+same conversion infrastructure as a grid-powered site. Fuel cells are the exception: 
+they generate DC natively and can run continuously. Bloom Energy is the only fuel 
+cell provider that operates at scale for large AI data centers and combines all three 
+requirements into one onsite power source.
+Executive Summary
+2. 
+1. 
+3. 
+3	 NVIDIA published rack specifications and SemiAnalysis Datacenter Industry Model.
+4. 
+3
+Special Report: The New Rules of AI Power
+
+===== PAGE 4 =====
+Bloom’s architectural advantage reduces data center non-compute CAPEX 
+by 27%, and five-year total cost of ownership by 9%. At gigawatt scale, what 
+looks like an electrical design choice becomes an economic one and changes 
+where billions of dollars are spent. For a 1 GW data center, minimizing upstream 
+distribution and conversion infrastructure lowers the five-year total cost of ownership 
+by approximately $5.5 billion, or about 9% of total facility cost. Of that, roughly 
+$3.6 billion comes from a 27% reduction in non-compute CAPEX. That capital can 
+instead go toward revenue-generating IT equipment, enough to fund roughly 8% more 
+compute for the same overall investment. The advantage extends beyond savings. An 
+800V DC-ready facility can deploy each new generation of higher-density chips as it 
+becomes available, shorten the path to deployment, and increase the economic value 
+of the data center.
+5. 
+4
+Special Report: The New Rules of AI Power
+
+===== PAGE 5 =====
+Rack power demand is increasing faster than the power infrastructure built to support it. In 
+2020, a typical rack drew about 10 kW. Today, that figure is closer to 200 kW, and by 2027 rack 
+power is expected to reach 600 kW (Exhibit 1), equivalent to the electricity consumption of 
+500 US homes.4 The electrical infrastructure designed for today’s racks cannot support the 
+next generation arriving next year.
+1. Rapidly growing compute density 
+is driving a shift in data center 
+electrical architecture
+4	 US Energy Information Administration, average annual electricity use per residential customer. At roughly 10,500 kWh a year per household, 
+600 kW of continuous draw is equivalent to about 500 homes.
+EXHIBIT 1: Each generation of rack architecture packs more compute 
+into a single rack, and power demand rises with it.
+Rack power demand evolution 
+Timeline
+Rack 
+Architecture
+GPU
+Rack Solution
+GPUs/ 
+Rack
+Total Power 
+Consumption
+2020
+2022
+2024
+2026
+2027
+2028
+EIA
+Ampere
+DGX A100 
+SuperPod
+8
+~10 kW
+MGX
+Hopper
+GH200 NVL32
+32
+~40 kW
+Oberon
+Blackwell
+GB200 NVL36
+36
+~70 kW
+Blackwell
+GB200 NVL72
+72
+~120 kW
+Blackwell 
+Ultra
+GB300 NVL72
+72
+~135-140 kW
+Rubin
+Vera Rubin NVL72
+72
+~200 kW
+Rubin Ultra
+Rubin Ultra NVL72
+72
+Not Published
+Kyber
+Rubin Ultra
+Kyber NVL144
+144
+~600 kW–1 MW
+Feynman
+Solution Not Yet 
+Disclosed
+Source: NVIDIA, “800 VDC Architecture for Next-Generation AI Infrastructure”, SemiAnalysis
+5
+Special Report: The New Rules of AI Power
+
+===== PAGE 6 =====
+Delivering that much power in lower-voltage power architecture causes electrical losses and 
+requires significantly more equipment, copper, and space that could be used for compute. In 
+addition, the required 400 pounds of copper for each rack becomes impractical.5
+Therefore, the industry is converging on 800V DC as the power architecture for next-
+generation AI systems. Higher voltage allows the same amount of power to be delivered 
+at lower current and requires significantly less copper and equipment. For data center 
+developers, this shift is a necessity rather than a choice. 
+AI-native companies with these rack architectures will feel the impact first. Beginning with 
+Rubin Ultra and Kyber rack architecture, NVIDIA has specified 800V DC for 2027 and all 
+generations after it. Facilities not designed for the new architecture will require substantial 
+changes. Developers planning for that generation of chips must build for 800V DC whether or 
+not they have chosen the standard. 
+The transition is already underway. An August 2026 Bernstein survey of 50 North American 
+data center procurement leaders found that 15% already have an 800V DC project under 
+construction or in operation, and another 29% expect to begin one by 2027.6 Bloom Energy’s 
+2026 Mid-Year Pulse Data Center Power Report found a similar trend where data center 
+leaders expect DC-based architectures to account for 58% of new deployments by 2030.7
+The question now is how 800V DC power will be supplied. Power architecture is determined 
+years before a facility opens and is expensive to revise after the fact. With 800V DC adoption 
+expected to accelerate in 2028 and 2029, developers targeting that window need to be 
+making those decisions now. 
+5	 NVIDIA, “NVIDIA 800 VDC Architecture Will Power the Next Generation of AI Factories,” NVIDIA Technical Blog, May 2025.
+6	 Bernstein survey of 50+ US data center operators, June 2026.
+7	 Bloom Energy, 2026 Data Center Power Report — Mid-Year Pulse, June 2026 (n=90 US data center developers).
+6
+Special Report: The New Rules of AI Power
+
+===== PAGE 7 =====
+The grid and most power sources provide AC power, even as next-generation AI systems move 
+to DC. The prevailing response is to preserve that model: source AC power from the grid and 
+convert it to 800V DC. Even when racks move to 800V DC, a grid-powered site still needs 
+a substation, medium-voltage switchgear, AC-to-DC conversion equipment, and backup 
+power to carry the load through an outage. The equipment is costly and leaves developers 
+exposed to year-long lead times on large transformers and switchgear (Exhibit 2). As a result, 
+developers incur expense and schedule risk associated with conventional AC architecture. 
+The default assumption is to 
+preserve existing AC power sources 
+and convert their output to DC
+2.
+EXHIBIT 2: Key electrical equipment for grid-powered designs carries 
+lead times measured in years.
+Grid-powered electrical equipment lead times 
+Large power transformers	
+3-4 yrs
+Medium voltage switchgear, DC spec	
+2-3 yrs
+High voltage circuit breakers	
+125 wks
+Solid state transformer	
+No estimate available1
+1 	 The solid-state transformer is still at pilot stage, supplied by a 
+handful of vendors with no delivery track record
+Grid-powered 800V DC
+3-4 
+years 
+Potential wait time for 
+long-lead equipment
+Sources: Environment+Energy Leader, “Grid equipment bottleneck isn’t just a data center problem,” July 2026, citing Reuters and Wood Mackenzie; 
+Giga Energy, “The constraints that cause lead time delays for data centers,” August 2026, citing Bloomberg; Terrapin Construction Group, 
+“Switchgear, transformer and generator lead times in 2026,” June 2026; Bernstein, Solid-State Transformers: 800V, Zero Windings, 19 August 2026
+The industry’s answer to multiple transformation and conversion steps is a solid-state 
+transformer that collapses medium voltage transformation and AC-to-DC conversion into 
+one system and replaces several pieces of conventional electrical equipment. But solid-state 
+transformers are newer technology with less operating history. No suppliers are producing 
+solid-state transformers at the volumes a gigawatt data center needs, and service practices and 
+operating history are thinner than those for conventional transformers. Developers must choose 
+between mature equipment that carries the full cost and lead-time burden, or new equipment 
+that does not yet exist at scale. The underlying constraint remains the same: power arrives as AC. 
+7
+Special Report: The New Rules of AI Power
+
+===== PAGE 8 =====
+There is another path: generate DC 
+power natively and avoid costly 
+and complex AC-to-DC conversion
+EXHIBIT 3: Moving from grid AC to onsite DC generation removes 
+equipment between the power source and compute rack.
+3.
+Power path from source to compute rack, by architecture 
+Starting with DC eliminates much of the equipment required to convert AC power (Exhibit 3). 
+Power produced as DC needs no conversion, simplifying the path from the generation source 
+to the rack. There are fewer components to purchase, install, operate, and maintain. It’s a more 
+reliable system with fewer points of failure and less electrical maintenance across the life of 
+the facility.8 Fewer conversion stages also reduce electrical losses and free up space inside the 
+data center for compute.
+1	 SST = Solid State Transformer, BBU = Battery  
+	 Bank Unit, CBU = Capacitor Bank Unit
+2	 PSU = Power Supply Unit, BC = Buck Converter
+3	 Includes small ride-through-battery
+Sources: NVIDIA, SemiAnalysis, external interviews 
+8	 NVIDIA and OCP Global Summit materials, October 2025, which attribute to the 800V DC architecture up to 5% better efficiency, roughly 70% 
+lower maintenance cost and up to 30% lower total cost of ownership.
+Combining multiple DC sources is simpler than integrating multiple AC sources. A DC system 
+keeps voltage steady, while AC systems must keep voltage, frequency, and timing aligned for 
+every source at once, which requires additional equipment and controls. The practical effect is 
+that DC capacity can be added as demand grows without reconfiguring equipment.
+8
+Special Report: The New Rules of AI Power
+
+===== PAGE 9 =====
+Grid (800V DC feed) 
+Most of the equipment as regular AC, significant energy loss, high equipment cost, and supply chain issues 
+Onsite turbines or recips 
+Similar issues to the grid with high equipment cost, and supply chain issues 
+Solar 
+High potential power output but intermittent; needs paired battery storage or other generation
+BESS 
+Stores power but doesn’t generate it; needs its own charging source
+Fuel cells 
+Native 800V DC output, minimal losses from generation to rack, and reduced need for electrical equipment
+AC power sources
+DC power sources
+EXHIBIT 4: Fuel cells are the only source that generates DC natively, 
+runs continuously, and scales to gigawatt loads.
+Fuel cells are the only DC-native 
+source that can provide continuous 
+power at gigawatt scale
+4.
+When power is generated as DC from the outset, data center sites do not need the conversion 
+equipment described in Section 2. Equipment in an AC-powered conventional build-out is 
+costly; eliminating it significantly lowers capital costs. The challenge is finding an onsite power 
+source that combines three requirements: native DC generation, continuous output, and the 
+ability to operate at data center scale. Most available technologies meet only some of these 
+requirements (Exhibit 4).
+Solar generates DC power natively, but its output is intermittent and cannot independently 
+support a continuous gigawatt-scale load. Batteries also operate on DC, but they store rather than 
+generate electricity, which limits their role as a primary source of power. Turbines and reciprocating 
+engines can provide continuous power at scale, but they generate AC; therefore, an 800V DC 
+data center powered by those technologies still requires the transformation and conversion 
+infrastructure and encounters the long lead times for equipment described in Section 2. 
+Starting with DC also leaves the distribution architecture open. Bloom’s fuel cells deliver 800V DC 
+with a center point, allowing customers to use either a monopolar or ±400V DC bipolar 
+architecture from one platform. Fuel cells are the only DC-native generation technology 
+capable of delivering continuous DC power at AI scale and Bloom is the only fuel cell provider 
+currently delivering that capability at scale for AI data centers.
+9
+Special Report: The New Rules of AI Power
+
+===== PAGE 10 =====
+Bloom’s architectural advantage 
+reduces non-compute CAPEX by 
+27% and five-year total cost of 
+ownership by 9%
+5.
+Chips, servers, and other IT costs account for more than half of a data center’s total cost and 
+are set by the chip roadmap, so a data center developer has little influence over them. Non-
+compute costs are about 40% and cover the electrical system, cooling, buildings, and five-year 
+operating costs. Exhibit 5 shows the breakdown of costs for a conventional grid-powered AC 
+data center scenario.
+EXHIBIT 5: Non-compute costs represent ~40% of the 5-year TCO.
+Estimated 5-year total cost of ownership for grid-powered AC, $B
+$29.5
+$7.2
+$13.4
+$13.3
+$13.4
+Total 5-Year 
+TCO
+Chips and 
+Servers
+Networking, 
+Storage and 
+other IT
+Operating 
+expenses 
+(5-year)
+Shell, Build, 
+and Other
+Cooling
+Electrical
+Total Non-
+compute 
+Costs
+$63.4
+$4.0
+$4.4
+$4.9
+$26.7
+Non-compute CAPEX
+OPEX (5-year)
+Compute CAPEX
+Budgets are under scrutiny and every dollar spent on buildings and electrical infrastructure is 
+a dollar that can’t go toward compute. 
+On a 1 GW build, a Bloom-powered, DC-native data center costs about $5.5 billion less over 
+five years (Exhibit 6), roughly 21% of five-year non-compute costs compared to a conventional 
+AC build powered by the grid. 
+10
+Special Report: The New Rules of AI Power
+
+===== PAGE 11 =====
+EXHIBIT 6: Bloom-delivered 800V DC cuts five-year non-compute costs 
+by $5.5 billion, or about 21% compared to grid-powered standard AC. 
+Non-compute total cost of ownership comparison, $B
+CAPEX = non-compute (electrical, cooling, shell/build). OPEX = 5-yr present value energy, software, maintenance, personnel, and other cost.
+Source: Bloom Energy Analysis, Expert interviews; SemiAnalysis, NVIDIA
+Standard AC
+grid powered
+800V DC
+Bloom powered
+800V DC
+grid powered
+$26.7
+$13.3
+$13.4
+$9.7
+$11.5
+$12.1
+$13.0
+$21.2
+$25.1
+~21% | ~$5.5B
+Non-compute CAPEX
+OPEX (5-year)
+Of that total, $1.9 billion comes from lower operating costs and $3.6 billion from lower capital 
+cost, which result in a 14% reduction in OPEX and a 27% reduction in non-compute CAPEX.
+Savings are driven by three changes to the build:
+•	 Overall operating costs, driven by removing 
+equipment that is expensive to service and 
+maintain.
+•	 Non-compute capital costs for electrical 
+as key infrastructure components like 
+substation, solid-state transformers, and 
+battery systems are removed from the 
+design.
+•	 The rest of non-compute capital costs (e.g., 
+shells and design) because a smaller electrical 
+footprint reduces overall building size.
+A design with fewer conversion stages loses less power and reduces energy costs. At gigawatt 
+scale, those savings materially improve project economics. For example, a Bloom-powered 
+800V DC build with the same investment of $49.9 billion could fund approximately 8% more 
+compute than a conventional AC build with the $3.6 billion in reduced CAPEX.
+Almost everything else about a data center’s cost is inherited. The chip roadmap sets the 
+IT spend, the site sets the land, and the market sets the price of construction. Electrical 
+architecture is an exception and is the reason two facilities of identical capacity and running 
+identical hardware can differ by billions of dollars in what they cost to build and operate. 
+OPEX
+$B over five years
+Non-compute Capex 
+$B, total build
+Non-compute TCO 
+$B over five years
+Total TCO
+$B over five years
++
+=
+$1.9B
+$3.6B
+$5.5B
+11
+Special Report: The New Rules of AI Power
+
+===== PAGE 12 =====
+Conclusion
+The chip roadmap is increasingly setting the 
+terms for data center design. The racks arriving 
+in 2027 assume a power architecture that most 
+facilities do not yet have. How developers supply 
+that power will determine whether they can deploy 
+each new generation as it arrives or retrofit their 
+infrastructure to catch up. Starting with DC frees 
+more capital for the part of the data center that 
+creates the most value: compute.
+12
+Special Report: The New Rules of AI Power
+
+===== PAGE 13 =====
+Appendix: Model Basis
+This appendix sets out the basis of the cost comparison. The comparison can be rebuilt on a 
+different platform, scale, cost year or price set, provided compute is held constant and only 
+the power source and electrical path vary.
+Item
+Basis
+Facility
+Greenfield data center sized to a target IT load.
+Compute held constant
+The same rack platform and rack count in all three cases, so demand is identical 
+and the cases are comparable outside IT compute.
+Rack platform
+NVIDIA Vera Rubin NVL72, with 54V distribution inside the rack. Rack count 
+follows from the platform and the IT load.
+Energy demand
+Power usage effectiveness converts IT load into gross facility load, which drives 
+energy demand.
+Grid power price
+This assumes a data center specific large load tariff negotiated to include grid 
+upgrades such as large-load interconnection, transmission, and step-down to 
+medium voltage on top of typical commercial grid power prices.
+On-site generation
+The plant sits outside the developer’s capital cost and is billed as a PPA, so it 
+lands in operating cost.
+Cost basis
+2029 prices, US dollars, single site. Priced per rack for IT, per MW of IT load for 
+everything else.
+Cost measured
+One-time capital cost plus five years of operating cost, escalated and 
+discounted to present value.
+Units
+Quoted per MW of IT load, which keeps cases comparable at any scale. At 1,000 
+MW, millions per MW and billions for the whole build are the same number.
+Difference between cases
+The power source and the electrical path to the rack; every difference in the 
+results traces to those choices.
+Conserved across cases
+Compute hardware, cooling technology, staffing, software licensing, utilization 
+and site conditions.
+Case
+Standard AC (baseline)
+800V DC 
+from the grid
+800V DC  
+generated on site
+Power source
+Utility, alternating current
+Utility, alternating current
+Bloom fuel cells, direct 
+current at source1
+Power-IT (MW)
+1,000
+1,000
+1,000
+Rack / chip 
+architecture
+Vera Rubin NVL72
+Vera Rubin NVL72
+Vera Rubin NVL72
+Table A.1: Case definitions
+Table A.2: Basis of the comparison
+1.	 Assumes an average 300-foot run to the edge of the data center shell.
+13
+Special Report: The New Rules of AI Power
+
+===== PAGE 14 =====
+Table A.3: Scope
+Category
+Treatment
+Capital cost, IT/compute
+GPU racks priced per rack, plus networking, storage and other IT built up 
+per rack. Identical in all cases.
+Capital cost, non-IT
+Priced per MW of IT load: electrical equipment from boundary to rack, 
+cooling, shell and build, project management and engineering, lighting, fire 
+protection, security, enclosures and raised floor.
+Operating cost
+Energy as a PPA based on facility demand, infrastructure maintenance, 
+software licenses, personnel, other site operating cost, property insurance 
+and tax.
+Excluded
+Land, interconnection charges and equipment up to medium voltage 
+distribution (included in PPA), financing, tax and depreciation, decommissioning 
+and residual value, IT refresh, and any value for earlier first power.
+Limitations to carry forward
+•	
+These are modeled figures, with no site-specific engineering or vendor bids behind them. Some priced 
+equipment is not yet in volume production, so its specifications are vendor targets, not measured 
+performance.
+•	
+Cooling and building unit costs are assumed to scale linearly with IT load.
+•	
+No value is placed on earlier first power or on the reliability gain from fewer conversion stages; both favor 
+the on-site DC case.
+14
+Special Report: The New Rules of AI Power
+
+===== PAGE 15 =====
+Bloom Energy empowers enterprises to meet 
+soaring energy demands and responsibly take 
+charge of their power needs. The company’s 
+fuel cell systems provide ultra-resilient, clean 
+and highly scalable onsite electricity for Fortune 
+500 customers around the world, including data 
+centers, semiconductor manufacturing, large 
+utilities and other commercial and industrial 
+sectors, as well as mission-critical organizations 
+in local communities such as hospitals, college 
+campuses and retailers. Headquartered in Silicon 
+Valley, Bloom Energy employs more than 2,000 
+people worldwide and manufactures its systems 
+in the United States. For more information, visit 
+bloomenergy.com/industries/data-center-power
+Forward-looking statements 
+This report contains certain forward-looking statements, which are subject 
+to the safe harbor provisions of the Private Securities Litigation Reform Act 
+of 1995. Forward-looking statements generally relate to future events or our 
+future financial or operating performance. In some cases, you can identify 
+forward-looking statements because they contain words such as “anticipate,” 
+“believe,” “could,” “estimate,” “expect,” “intend,” “may,” “should,” “will” and 
+“would” or the negative of these words or similar terms or expressions that 
+concern Bloom’s expectations, strategy, priorities, plans or intentions. These 
+forward-looking statements include, but are not limited to, the amount of 
+reduction in non-compute capital expenditures, the amount of additional 
+compute which can be funded, the amount of reduction of five-year total cost 
+of ownership, the reduction in long-lead electrical equipment, the effects of 
+the elimination of conversion equipment, and the ability to simplify the supply 
+chain, reduce potential points of failure, and reduce space devoted to power 
+infrastructure in each case through the use of DC-native fuel cells at an AI 
+data center rather than conventional grid-powered AC/DC architecture; the 
+capital expenditure of large hyperscalers in 2026; the timing of new generation 
+800V DC chips; the transition of AI infrastructure toward 800V DC; future 
+expectations with respect to each of rack power and deployments of DC-
+based architectures; the benefits of fuel cells compared to solar, batteries, 
+turbines, and reciprocating engines; and Bloom’s economic analysis related 
+to each of the foregoing. Readers are cautioned that these forward-looking 
+statements are only predictions and may differ materially from actual future 
+events or results due to a variety of factors, including, but not limited to, risks 
+and uncertainties detailed in Bloom’s SEC filings. More information on potential 
+risks and uncertainties that may impact Bloom’s business are set forth in 
+Bloom’s periodic reports filed with the SEC, including its Annual Report on Form 
+10-K for the year ended December 31, 2025, filed with the SEC on February 
+9, 2026, its Quarterly Reports on Form 10-Q for the quarters ended March 
+31, 2026 and June 30, 2026, filed with the SEC on April 29, 2026 and July 28, 
+2026, respectively, as well as subsequent reports filed with or furnished to the 
+SEC. Bloom assumes no obligation to, and does not intend to, update any such 
+forward-looking statements.
+About Bloom Energy
+15
+Special Report: The New Rules of AI Power
