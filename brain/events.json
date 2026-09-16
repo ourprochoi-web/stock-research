@@ -16,12 +16,6 @@
    }
   },
   {
-   "when": "2026-09-16 03:15 KST",
-   "what": "클래리티 법안 상원 클로처 표결(60석 · 통과 확률 25% ③) — 통과 시 스테이블코인→단기채 의무 매입 → 장기금리 안정 경로(③) · BTC 77k 반응",
-   "judges": "macro(관측)",
-   "grade": "①(표결)"
-  },
-  {
    "when": "2026-10-27/28",
    "what": "FOMC — 11/3 중간선거 3일 전. 나일스 「이때는 인상 못 한다 → 9월이 유일한 기회」(③)를 판정: 9월에 안 올렸으면 10월도 못 올리는가",
    "judges": "macro",
@@ -319,6 +313,18 @@
    "what": "비나텍 3Q26 — 시스템 매출 첫 인식(412억 계약) · 한선 OPM · 아모센스 소재 매출 → T5(국내 밸류체인) 첫 실측",
    "judges": "ai-infra/us_bloom_intel_deep.html#T5",
    "grade": "①"
+  },
+  {
+   "when": "2026-10중",
+   "what": "클래리티 재심의 동의 절차(09-16 클로처 49:50 부결 판정 후) · OCC 스테이블코인 최종규칙 11월 · 회기 종료 2027-01-03 — 로빈후드 T4 체인 서사 · regime.liquidity 경로",
+   "judges": "payments/payments_company_robinhood.html#T4 · regime.macro.liquidity",
+   "grade": "③"
+  },
+  {
+   "when": "2026-11중",
+   "what": "이수페타시스 3Q26 — 마진 QoQ 개선(CCL 전가) · HDI 전용 공장 발표 · 점유율 안정(OW 하우스 촉매 3 · ③)",
+   "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T1",
+   "grade": "③"
   }
  ]
 }
