@@ -192,3 +192,18 @@ PYTHONIOENCODING=utf-8 python3 portfolio/data/screen_backtest.py --fetch --month
 # 수급·VCP 재검증(분기 1회) — Daum investor/days 3년 · KR
 PYTHONIOENCODING=utf-8 python3 portfolio/data/screen_backtest_flows.py
 ```
+
+
+## ⓐ 누적 · 페이지 낡음 측정 (W1 넷째 조건 · 2026-09-16)
+```
+python3 - <<'EOF'
+import json,re,io,collections
+T=json.load(open('brain/theses.json'))['pages']; R=[json.loads(l) for l in open('brain/routing.jsonl',encoding='utf8') if l.strip()]; rd={r['id']:r['date'] for r in R}
+def dm(p):
+    m=re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})',io.open(p,encoding='utf8').read()); return m.group(1) if m else None
+for p,v in T.items():
+    d=dm(p); n=sum(1 for t in v.get('theses',[]) for e in t.get('evidence',[]) if d and rd.get(e,'0')>d)
+    if n>=5: print(n,d,p)
+EOF
+```
+함께 보는 것: 테제 상태 도전/정정/철회인데 `last_tested` > 페이지 갱신일 · `needs_manual` · 테제 0편 · 훅의 facts 불일치·끊긴 포인터 수.
