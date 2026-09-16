@@ -207,3 +207,16 @@ for p,v in T.items():
 EOF
 ```
 함께 보는 것: 테제 상태 도전/정정/철회인데 `last_tested` > 페이지 갱신일 · `needs_manual` · 테제 0편 · 훅의 facts 불일치·끊긴 포인터 수.
+
+
+## 예측 채점 (v3 prediction · 2026-09-17)
+```
+python3 - <<'EOF'
+import json
+R=[json.loads(l) for l in open('brain/routing.jsonl',encoding='utf8') if l.strip()]
+P=[r for r in R if r.get('kind')=='prediction']
+print('예측',len(P),'| 미채점',sum(1 for r in P if not r.get('judged_by')))
+for r in P: print(r['id'],r.get('due'),'|',('✓ '+str(r.get('verdict_result'))) if r.get('judged_by') else '미채점','|',r['claim'][:80])
+EOF
+```
+채점은 `judged_by`(routing id) · `verdict_result`(맞음/틀림/부분) 를 채운다. 월 1회 감사에서 적중률을 센다(개선안 금지 · 측정만).

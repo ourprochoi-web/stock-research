@@ -8,6 +8,7 @@
 """
 import io
 import json
+import re
 import sys
 
 
@@ -43,6 +44,18 @@ def main():
                 tk, _, key = fk.rpartition(".")
                 if tk not in F or key not in F[tk].get("metrics", {}):
                     bad.append(f"theses {path}#{t['id']} → facts {fk} 없음")
+    # 지난 날짜 판정 이벤트(§H1: 도래하면 판정하고 지운다) — 2026-09-17
+    try:
+        from datetime import date as _d
+        ev = json.load(io.open("brain/events.json", encoding="utf-8")).get("events", [])
+        today = _d.today().isoformat()
+        past = [e for e in ev if re.match(r"^\d{4}-\d{2}-\d{2}$", str(e.get("when", "")).strip()) and e["when"] < today]
+        if past:
+            print(f"[events] ⚠ 지난 판정 이벤트 {len(past)}건 — 판정하고 지운다(§H1)")
+            for e in past[:5]:
+                print(f"    · {e['when']} {str(e.get('what',''))[:70]}")
+    except (OSError, ValueError):
+        pass
     if bad:
         print(f"[intake] ⚠ 끊긴 포인터 {len(bad)}건")
         for b in bad[:20]:

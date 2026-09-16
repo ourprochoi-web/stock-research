@@ -205,6 +205,11 @@ def main(argv):
         if i < 0 or j < 0:
             print(f"[cards] ⚠ 마커 없음 — {path} (첫 전환은 마커를 넣어야 한다)")
             continue
+        # 카드 게이트(2026-09-17) — 근거·반증·판정 이벤트가 빈 테제가 있으면 카드를 찍지 않는다(빈 카드가 「현재 판단」으로 보이는 것을 막는다)
+        gate = [(t.get("id"), k) for t in (pg.get("theses") or []) if (not pg.get("card_theses") or t.get("id") in pg["card_theses"]) for k in ("basis", "falsifier", "event") if not t.get(k)]
+        if gate or not pg.get("one"):
+            print(f"[cards] ⚠ 카드 게이트 — {path}: 빈 칸 {gate[:4]}{' · one 없음' if not pg.get('one') else ''} → 렌더 건너뜀")
+            continue
         new = render(path, pg)
         cur = s[i:j + len(END)]
         # 생성일만 다른 경우는 드리프트로 보지 않는다
