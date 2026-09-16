@@ -239,8 +239,18 @@
     "ns_semiconductor_war 페이지 T6(인텔 워런트·에스크로 파생부채)가 브레인에 없음",
     "node_screener T4 판정 이벤트 NVIDIA Q2(08-27) 지났는데 판정 없음 · kr_bio T3 이벤트 09-02 노바티스(스위스라 반증 미충족)",
     "hanmi 페이지 T4 제목 중복(두 번째 블록은 브레인 테제 없음)",
-    "(2회차) 마벨 T1 페이지 철회(08-28)인데 브레인 유지 → 철회로 교체(basis 2Q) · statements_log T3에 버리 감가상각 사례 누락 · us_7axis T1·T3 falsifier가 옛 반증 블록 · ns_semiconductor_war T6 · us_defense_primes T6 · nvidia 판정 이벤트 08-26 지남(FY27 2Q 수치 없음) · 일진전기 PER 17.39 정정이 표엔 9x · 에너지 ESS 페이지 본문(08-22)이 브레인보다 낡음"
+    "(2회차) 마벨 T1 페이지 철회(08-28)인데 브레인 유지 → 철회로 교체(basis 2Q) · statements_log T3에 버리 감가상각 사례 누락 · us_7axis T1·T3 falsifier가 옛 반증 블록 · ns_semiconductor_war T6 · us_defense_primes T6 · nvidia 판정 이벤트 08-26 지남(FY27 2Q 수치 없음) · 일진전기 PER 17.39 정정이 표엔 9x · 에너지 ESS 페이지 본문(08-22)이 브레인보다 낡음",
+    "(3회차) 페이지에 있는데 브레인에 없는 테제: 조선 개관 T1-b(LNG 분모) · 빅테크 capex ROI 메모리 vs 비메모리(6번째) · 방산 지도 T2-b · 전력반도체 편의 STMicro(매니저 7종목 · 판정 조건 있음) · 팔로알토 FY26 4Q(09-01) 이벤트 무소속",
+    "(3회차) 지난 판정 이벤트 미기록: 마벨 FY27 2Q(08-27) · 브로드컴 FY26 3Q 10-Q(09-02 리스 백스톱 잔액) · KAI 07-27 블록의 2Q 추정치가 08-18 확정치와 모순",
+    "(3회차) 상태 변경: us_ai_adjacent_cross_valuation T5·T8 정정(페이지가 T9~T11로 뒤집음) · 방산 지도 T2 정정(C1) · crwd_ddog_snow T2 · 같은 두 회사의 연속 정정 7개 → §W1 페이지 분리 조건 해당",
+    "(3회차) 메가프로젝트 T5(4,755조 vs 1,461조)가 전선 편·전력 인프라 지도에 중복 — 정본 하나로"
    ],
+   "since": "2026-09-17",
+   "grade": "측정"
+  },
+  {
+   "id": "stm-thesis",
+   "what": "STMicroelectronics — 매니저 7종목이고 전력반도체 편(ai_power_company_semi_ess_dc)이 「정본 페이지」를 자처하며 판정 조건을 적었는데 브레인 테제가 없다. 스크린 C칸(51점). 판단 신설 대상",
    "since": "2026-09-17",
    "grade": "측정"
   }

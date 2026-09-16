@@ -71,6 +71,9 @@
    "theses": {
     "market/kr_4sector_cross_valuation.html": [
      "T1"
+    ],
+    "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -124,11 +127,17 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T4"
+    ],
     "market/kr_4sector_cross_valuation.html": [
      "T1"
     ],
     "shipbuilding/k_ship_industry_overview.html": [
      "T2"
+    ],
+    "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
+     "T3"
     ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T2"
@@ -232,6 +241,7 @@
    "facts": 0,
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
+     "T1",
      "T2"
     ]
    },
@@ -280,6 +290,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_cable_wire.html": [
+     "T1"
+    ],
     "ai-infra/ai_power_company_transformer_grid.html": [
      "T1",
      "T2",
@@ -392,7 +405,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "research/vcp_breakout_backtest.html": [
+     "T5"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -488,6 +505,9 @@
      "T4",
      "T5"
     ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T5"
+    ],
     "defense/k_defense_cross_valuation.html": [
      "T8"
     ],
@@ -534,6 +554,9 @@
     "national-strategy/ns_china_ai_ecosystem.html": [
      "T2",
      "T5"
+    ],
+    "national-strategy/ns_korea_impact_strategy.html": [
+     "T3"
     ],
     "national-strategy/ns_semiconductor_war.html": [
      "T3",
@@ -586,6 +609,11 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_cable_wire.html": [
+     "T1",
+     "T3",
+     "T4"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
      "T2"
@@ -638,7 +666,14 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_silicon2.html": [
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -675,6 +710,8 @@
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_company_cable_wire.html": [
+     "T1",
+     "T3",
      "T4"
     ],
     "ai-infra/kr_power_10_deep.html": [
@@ -972,6 +1009,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "energy/energy_battery_valuechain_update.html": [
+     "T1"
+    ],
     "energy/energy_ess_ai_power.html": [
      "T4",
      "T5"
@@ -1106,6 +1146,10 @@
     ],
     "market/kr_4sector_cross_valuation.html": [
      "T1"
+    ],
+    "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
+     "T1",
+     "T3"
     ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T2"
@@ -1322,6 +1366,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T4"
+    ],
     "k-beauty/k_beauty_sector.html": [
      "T1"
     ],
@@ -1472,6 +1519,9 @@
      "T1",
      "T2",
      "T3",
+     "T4"
+    ],
+    "k-beauty/k_beauty_company_largecap_odm.html": [
      "T4"
     ],
     "k-beauty/k_beauty_company_pharmaresearch.html": [
@@ -1689,7 +1739,8 @@
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_company_cable_wire.html": [
-     "T1"
+     "T1",
+     "T3"
     ],
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
@@ -1847,6 +1898,9 @@
     ],
     "national-strategy/ns_semiconductor_war.html": [
      "T4",
+     "T5"
+    ],
+    "research/vcp_breakout_backtest.html": [
      "T5"
     ],
     "robot/robot_theme_supply_chain.html": [
@@ -2335,6 +2389,11 @@
      "T8",
      "T9"
     ],
+    "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
+     "T1",
+     "T3",
+     "T5"
+    ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T2"
     ]
@@ -2763,6 +2822,10 @@
     ],
     "market/us_7axis_cross_valuation.html": [
      "T2"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
+     "T5"
     ]
    },
    "aliases": [
@@ -2798,6 +2861,9 @@
     ],
     "k-beauty/k_beauty_company_apr.html": [
      "T3"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1"
     ]
    },
    "aliases": [
@@ -2812,8 +2878,13 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T11",
+     "T4"
+    ],
     "ai-infra/us_ai_adjacent_sectors.html": [
-     "T2"
+     "T2",
+     "T7"
     ],
     "ai-infra/us_epc_datacenter_build.html": [
      "T1"
@@ -2922,6 +2993,12 @@
     ],
     "ai-infra/ai_power_top5_picks.html": [
      "T3"
+    ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T1"
+    ],
+    "research/13f_2026q2.html": [
+     "T5"
     ]
    },
    "aliases": [
@@ -2969,7 +3046,8 @@
      "T1"
     ],
     "research/13f_2026q2.html": [
-     "T2"
+     "T2",
+     "T4"
     ]
    },
    "aliases": [
@@ -3098,6 +3176,9 @@
     "ai-infra/kr_cooling_optical_layer.html": [
      "T3"
     ],
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T7"
+    ],
     "cybersecurity/cyber_ai_security.html": [
      "T4"
     ]
@@ -3137,6 +3218,7 @@
      "T3"
     ],
     "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2",
      "T3"
     ],
     "ai-infra/us_epc_datacenter_build.html": [
@@ -3203,7 +3285,11 @@
    "facts": 0,
    "theses": {
     "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T11",
      "T5"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2"
     ],
     "ai-infra/us_vertiv_corning_deep.html": [
      "T1",
@@ -3215,6 +3301,7 @@
      "T7"
     ],
     "market/kr_drawdown_2026.html": [
+     "T6",
      "T7"
     ]
    },
@@ -3597,6 +3684,12 @@
      "T4",
      "T5"
     ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T1"
+    ],
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T7"
+    ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T2"
     ],
@@ -3618,6 +3711,7 @@
     ],
     "research/13f_2026q2.html": [
      "T4",
+     "T5",
      "T6"
     ]
    },
@@ -3722,6 +3816,9 @@
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T2"
+    ],
+    "research/13f_2026q2.html": [
+     "T4"
     ]
    },
    "aliases": [
@@ -3937,9 +4034,15 @@
     "market/q2_2026_earnings_overview.html": [
      "T5"
     ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T4"
+    ],
     "national-strategy/ns_china_ai_ecosystem.html": [
      "T1",
      "T5"
+    ],
+    "national-strategy/ns_korea_impact_strategy.html": [
+     "T3"
     ],
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T4",
@@ -4054,6 +4157,9 @@
      "T2",
      "T3",
      "T5"
+    ],
+    "national-strategy/ns_global_strategy_overview.html": [
+     "T4"
     ]
    },
    "aliases": [],
@@ -4075,6 +4181,9 @@
      "T3",
      "T4",
      "T5"
+    ],
+    "ai-sw/ai_sw_investment_map.html": [
+     "T2"
     ],
     "market/q2_2026_earnings_overview.html": [
      "T4"
@@ -4262,7 +4371,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T7"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -4426,6 +4539,9 @@
     "ai-sw/ai_sw_company_anthropic.html": [
      "T4"
     ],
+    "ai-sw/ai_sw_investment_map.html": [
+     "T1"
+    ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T2"
     ],
@@ -4540,7 +4656,11 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/us_ai_adjacent_cross_valuation.html": [
+     "T11"
+    ],
     "ai-infra/us_ai_adjacent_sectors.html": [
+     "T2",
      "T8"
     ],
     "ai-infra/us_power_regulated_vs_merchant.html": [
@@ -4554,6 +4674,9 @@
      "T5",
      "T6",
      "T7"
+    ],
+    "market/kr_drawdown_2026.html": [
+     "T6"
     ]
    },
    "aliases": [],
@@ -4571,7 +4694,8 @@
     ],
     "ai-infra/us_ai_adjacent_sectors.html": [
      "T2",
-     "T6"
+     "T6",
+     "T7"
     ],
     "market/kr_drawdown_2026.html": [
      "T6"
@@ -4642,6 +4766,9 @@
     ],
     "energy/us_energy_hegemony_17.html": [
      "T1",
+     "T2"
+    ],
+    "ai-infra/us_ai_adjacent_sectors.html": [
      "T2"
     ]
    },

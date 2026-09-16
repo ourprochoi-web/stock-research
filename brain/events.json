@@ -321,6 +321,18 @@
    "what": "FOMC — 점도표 「연내 1회 더」의 시점. 사전약속: 10/28 인상 + 2027 중앙값 4.4 쪽 상향이면 「얕은 인상=감당 가능」 전제 파기(n-hike 강화) · 동결 + 2027 인하 복귀면 배수 압력 해소. 09-16 판정 기록: +25bp 12–0 · 2026 4.1 · 2027 4.1 · 실질 +1.6",
    "judges": "regime.narratives.n-hike · n-repression · portfolio.exposures.rates_up",
    "grade": "①"
+  },
+  {
+   "when": "2026-09-30",
+   "what": "코스피 낙폭 편(kr_drawdown_2026) T3 기한 — 페이지가 박은 9/30 판정선(3회차 브레인 채우기에서 발견)",
+   "judges": "market/kr_drawdown_2026.html#T3",
+   "grade": "페이지"
+  },
+  {
+   "when": "2026-09-18",
+   "what": "BOJ 결정 = 코스피 낙폭 편 T5(엔 캐리) 판정 이벤트 — 기존 BOJ 이벤트에 연결",
+   "judges": "market/kr_drawdown_2026.html#T5",
+   "grade": "③"
   }
  ]
 }
