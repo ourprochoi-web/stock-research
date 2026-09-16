@@ -5106,7 +5106,11 @@
   },
   "HOOD": {
    "name": "Robinhood Markets",
-   "intake": "c-20260916-05",
+   "intake": [
+    "c-20260916-04",
+    "c-20260916-05",
+    "c-20260916-06"
+   ],
    "metrics": {
     "revenue_ttm": {
      "value": 4932,
@@ -5748,6 +5752,15 @@
    "grade": "③",
    "intake": "u-20260916-25",
    "note": "DRAM WFE 2026 61(+46%) · 2027 85(+38%) · 2027 병목 클린룸→장비(JPM)"
+  },
+  "memory_fab_roadmap_hana": {
+   "value": "4Q27~2028",
+   "unit": "신규 웨이퍼 투입 집중 구간",
+   "asof": "2026-09-16",
+   "source": "하나증권 메모리 증설 로드맵(각사·언론·TrendForce·SemiAnalysis)",
+   "grade": "②",
+   "intake": "u-20260917-01",
+   "note": "삼성 P4 65K→150K(4Q27) · P5L-1 1Q28 / SKH M15X 40K→80K(4Q27) · Y1 3Q27 40K→300K / 마이크론 ID1 15K(4Q27) · PSMC P1 40K(3Q27) P2 40K(3Q28) / CXMT 허페이 420K(27말) · 베이징 600K+ / NAND SKH 다롄2 1Q27 +50K · YMTC 우한3 4Q27 50K · SKH M17 4Q28"
   }
  }
 }

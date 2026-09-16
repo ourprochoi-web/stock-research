@@ -26,6 +26,8 @@ def e(s):
 def render(path, pg):
     d = pg["judged"].replace("-", ".")
     th = pg.get("theses", [])
+    if pg.get("card_theses"):  # W1: 카드는 5개 상한 — 테제가 6개 이상이면 card_theses 로 고른다
+        th = [t for t in th if t.get("id") in pg["card_theses"]]
     cnt = {}
     for t in th:
         cnt[t.get("status", "유지")] = cnt.get(t.get("status", "유지"), 0) + 1
