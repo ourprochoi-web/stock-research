@@ -1404,6 +1404,74 @@
    "position": "미보유 · 매니저 7종목",
    "falsifier": "T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10-Q 미주 비중 25% 초과(서사 확인) / 반대로 단일 고객 50% 재돌파(구조) · T3: 3Q26 관계자 매출이 분기 매출의 20% 초과 — 1Q가 예외가 아니라 패턴 · T4: 연내 신규 하이퍼스케일러 계약 0(한투 자신의 기대) · 또는 주피터 2027-02 재지연 · 또는 SemiAnalysis BTM 50% 전망 철회 · 제3자(S · T5: 비나텍 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 등장 · 한선 OPM 20% 아래 2분기 · 아모센스 4Q26 소재 매출 <7십억",
    "note": "블룸은 좋아졌지만 서사(미국 AI DC 온사이트)와 원장(1H26 아시아태평양 90% · 단일고객 73% · 1Q 관계자 49.7%)이 다르다. 한투(09-16)의 BTM·SOFC 프레임은 수요 논리를 채우지만 그 세 숫자를 건드리지 않는다. 판정은 3Q26 10-Q(지역·고객·관계자)와 오라클 주피터(파이프라인 2027-02)."
+  },
+  "036540": {
+   "name": "SFA반도체",
+   "market": "KR",
+   "layer": "OSAT · 삼성 범용(DDR5·SSD) 패키징·테스트 외주",
+   "business": "필리핀(테스트·모듈)+한국 1공장(온양 이관 패키징 · 4Q26 양산 ②). 2025 매출 3,674억 OP −196억 · 2Q26 매출 1,263억(+66%) OP −62억. 시총 1.44조(9/17 8,750 · 52주 3,545~11,640) PBR 2.99. 한국 매출 비중 2026 32%→2027 38%(③ 한투)",
+   "business_grade": "① 네이버 확정 재무 · ② 설비 이관 보도 · ③ 한투 09-14 TP 12,000 · SK증권 2027 OP 785억",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T6"
+   ],
+   "tracked_price": true,
+   "note": "시총 ÷ 2027F OP 785억 = 18배 — 적자에서 980억 뒤집는 숫자가 전제",
+   "falsifier": "4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정"
+  },
+  "003160": {
+   "name": "디아이",
+   "market": "KR",
+   "layer": "번인·웨이퍼 테스터(자회사 디지털프론티어 HBM4 웨이퍼 테스터) · 삼성·SK하이닉스",
+   "business": "2026 공시 — 삼성 누적 1,517억 · SK하이닉스 HBM4 웨이퍼 테스터 1,960억. 2Q26 매출 1,686억(+41%) OP 396억(OPM 23.5%). 시총 9,000억(31,800) PER 30.8 · 컨센 2026 OP 1,157억. 캐파 DF 연 150대(③)",
+   "business_grade": "① 공시·확정 실적 · ③ 컨센",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T7"
+   ],
+   "tracked_price": true,
+   "note": "셋 중 이익이 이미 온 유일한 곳 · 3M +9.3%",
+   "falsifier": "3Q26 OPM 15% 미만"
+  },
+  "232140": {
+   "name": "와이씨",
+   "market": "KR",
+   "layer": "메모리 웨이퍼 테스터(DRAM·NAND·HBM) · 삼성",
+   "business": "삼성 Memory Wafer Tester 1,622억(8/27 · 납기 2027-06-30) + 상반기 930·403·422억. 2Q26 매출 1,050억 OP 151억(OPM 14.3%). 시총 9,927억(12,090 · 52주 6,820~24,150) PER 31.8 · 컨센 2026 OP 550억. 3M −19.9% 6M −41.5%",
+   "business_grade": "① 공시·확정 실적 · ③ 컨센",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T7"
+   ],
+   "tracked_price": true,
+   "note": "계약 최대 · 인식은 2027까지 분할 · 20일 외국인·기관 순매도",
+   "falsifier": "1,622억 정정(감액·연기) 공시"
+  },
+  "086390": {
+   "name": "유니테스트",
+   "market": "KR",
+   "layer": "DRAM·HBM 번인/웨이퍼 테스터 · SK하이닉스 + 태양광 EPC",
+   "business": "SK하이닉스 HBM4 WAFER TESTER 292억(5월)·227억(7월 · 납기 10/8) · 태양광 601억(~2028). 2Q26 매출 505억 OP 79억 흑자전환(2025 OP −211억). 시총 2,536억(11,990) · 컨센 2026 OP 219억",
+   "business_grade": "① 공시·확정 실적 · ③ 컨센",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T7"
+   ],
+   "tracked_price": true,
+   "note": "삼성 계약 없음 · 매출의 절반이 태양광 EPC",
+   "falsifier": "3Q까지 삼성·SK하이닉스 추가 공시 0"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

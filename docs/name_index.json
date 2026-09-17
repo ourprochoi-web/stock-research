@@ -431,7 +431,8 @@
    "facts": 0,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
-     "T1"
+     "T1",
+     "T6"
     ]
    },
    "aliases": [],
@@ -440,12 +441,13 @@
   "SFA반도체": {
    "code": "036540",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "036540",
+   "falsifier": "4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정",
    "facts": 0,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
-     "T1"
+     "T1",
+     "T6"
     ]
    },
    "aliases": [],
@@ -517,7 +519,8 @@
      "T4"
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
-     "T2"
+     "T2",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T3",
@@ -824,10 +827,14 @@
   "디아이": {
    "code": "003160",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "003160",
+   "falsifier": "3Q26 OPM 15% 미만",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T7"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -1056,7 +1063,9 @@
      "T2",
      "T3",
      "T4",
-     "T5"
+     "T5",
+     "T6",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T1",
@@ -1084,7 +1093,9 @@
      "T2",
      "T3",
      "T4",
-     "T5"
+     "T5",
+     "T6",
+     "T7"
     ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T5"
@@ -1620,10 +1631,14 @@
   "와이씨": {
    "code": "232140",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "232140",
+   "falsifier": "1,622억 정정(감액·연기) 공시",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T7"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -1661,10 +1676,14 @@
   "유니테스트": {
    "code": "086390",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "086390",
+   "falsifier": "3Q까지 삼성·SK하이닉스 추가 공시 0",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T7"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -1880,7 +1899,9 @@
      "T1"
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
-     "T1"
+     "T1",
+     "T6",
+     "T7"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T1",

@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-17)
 
-추적 283개 · 테제가 걸린 이름 174 · 엔티티 있음 60 · facts 있음 46.
+추적 283개 · 테제가 걸린 이름 177 · 엔티티 있음 64 · facts 있음 46.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -29,11 +29,11 @@
 | KR | RFHIC | 218410 | — | — | — |
 | KR | RF머트리얼즈 | 327260 | — | vcp_breakout_backtest#T5 | — |
 | KR | S-Oil | 010950 | — | — | — |
-| KR | SFA | 056190 | — | hbm_pkg_company_samsung#T1 | — |
-| KR | SFA반도체 | 036540 | — | hbm_pkg_company_samsung#T1 | — |
+| KR | SFA | 056190 | — | hbm_pkg_company_samsung#T1,T6 | — |
+| KR | SFA반도체 | 036540 | ✓ 4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정 | hbm_pkg_company_samsung#T1,T6 | — |
 | KR | SK바이오팜 | 326030 | — | kr_bio_china_competition#T2 · glp1_company_samsung_biologics#T3 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
 | KR | SK스퀘어 | 402340 | — | vcp_breakout_backtest#T4 | — |
-| KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T4 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T5 · node_screener_hbm_scoreboard#T1,T4 | — |
+| KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2,T7 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T4 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T5 · node_screener_hbm_scoreboard#T1,T4 | — |
 | KR | SOL AI반도체TOP2+ | 0167A0 | — | — | — |
 | KR | STX엔진 | 077970 | — | — | — |
 | KR | TIME 글로벌AI | 456600 | — | — | — |
@@ -50,7 +50,7 @@
 | KR | 두산로보틱스 | 454910 | — | robot_kr_16_valuation#T2 | — |
 | KR | 두산에너빌리티 | 034020 | — | ai_power_top5_picks#T1 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | — |
 | KR | 드림시큐리티 | 203650 | — | — | — |
-| KR | 디아이 | 003160 | — | — | — |
+| KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 | — |
 | KR | 레인보우로보틱스 | 277810 | — | vcp_breakout_backtest#T4 · robot_kr_16_valuation#T2,T4 | — |
 | KR | 로보스타 | 090360 | — | vcp_breakout_backtest#T4 | — |
 | KR | 로보티즈 | 108490 | — | robot_kr_16_valuation#T1,T2,T3 | — |
@@ -61,8 +61,8 @@
 | KR | 산일전기 | 062040 | — | ai_power_company_transformer_grid#T1,T2,T3 · ai_power_top5_picks#T1,T2,T3 · kr_power_10_deep#T1,T2,T4 · kr_power_cross_valuation#T1,T4,T6 · k_defense_cross_valuation#T8 · kr_4sector_cross_valuation#T5 | — |
 | KR | 삼성SDI | 006400 | — | energy_battery_valuechain_update#T1 · energy_ess_ai_power#T4,T5 | — |
 | KR | 삼성바이오로직스 | 207940 | ✓ T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선  | glp1_company_samsung_biologics#T1,T2,T3,T4 · kr_bio_china_competition#T4 | — |
-| KR | 삼성전기 | 009150 | — | hbm_pkg_company_samsung#T1,T2,T3,T4,T5 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2 · node_screener_hbm_scoreboard#T3 | — |
-| KR | 삼성전자 | 005930 | ✓ T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 | hbm_pkg_company_samsung#T1,T2,T3,T4,T5 · ai_value_chain_guide_v2#T5 · kr_construction_datacenter#T4 · ai_sw_company_anthropic#T1,T4 · hbm_pkg_investment_map#T2,T5 · hbm_pkg_overview#T1 · kr_semi_equip_6#T5 · kr_semi_materials_gas#T1 · q2_2026_earnings_overview#T1 · node_screener_hbm_scoreboard#T1 · robot_theme_supply_chain#T2 | — |
+| KR | 삼성전기 | 009150 | — | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2 · node_screener_hbm_scoreboard#T3 | — |
+| KR | 삼성전자 | 005930 | ✓ T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7 · ai_value_chain_guide_v2#T5 · kr_construction_datacenter#T4 · ai_sw_company_anthropic#T1,T4 · hbm_pkg_investment_map#T2,T5 · hbm_pkg_overview#T1 · kr_semi_equip_6#T5 · kr_semi_materials_gas#T1 · q2_2026_earnings_overview#T1 · node_screener_hbm_scoreboard#T1 · robot_theme_supply_chain#T2 | — |
 | KR | 삼성전자우 | 005935 | — | — | — |
 | KR | 삼성중공업 | 010140 | — | kr_power_10_deep#T4 · kr_4sector_cross_valuation#T1 · k_ship_theme_lng_ai_nexus#T1,T3 · k_ship_theme_masga_us_alliance#T2 | — |
 | KR | 삼아알미늄 | 006110 | — | — | — |
@@ -96,10 +96,10 @@
 | KR | 오스코텍 | 039200 | — | kr_bio_china_competition#T6 | — |
 | KR | 오이솔루션 | 138080 | ✓  | kr_cooling_optical_layer#T1 | 5 |
 | KR | 옵티코어 | 380540 | ✓  | kr_cooling_optical_layer#T1 | 5 |
-| KR | 와이씨 | 232140 | — | — | — |
+| KR | 와이씨 | 232140 | ✓ 1,622억 정정(감액·연기) 공시 | hbm_pkg_company_samsung#T7 | — |
 | KR | 우리로 | 046970 | ✓  | — | 5 |
 | KR | 원익IPS | 240810 | — | kr_semi_equip_6#T1,T5 · kr_semi_equip_vm_psk#T5 · kr_semi_fab_timeline#T3 | — |
-| KR | 유니테스트 | 086390 | — | — | — |
+| KR | 유니테스트 | 086390 | ✓ 3Q까지 삼성·SK하이닉스 추가 공시 0 | hbm_pkg_company_samsung#T7 | — |
 | KR | 유일로보틱스 | 388720 | — | — | — |
 | KR | 유진로봇 | 056080 | — | — | — |
 | KR | 유한양행 | 000100 | — | glp1_kbio_portfolio_candidates#T1,T2,T4 | — |
@@ -112,7 +112,7 @@
 | KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | — |
 | KR | 코스맥스 | 192820 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T4 · kr_4sector_cross_valuation#T2,T3 · kr_drawdown_2026#T3 | — |
 | KR | 클로봇 | 466100 | — | — | — |
-| KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · hbm_pkg_company_samsung#T1 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 | — |
+| KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · hbm_pkg_company_samsung#T1,T6,T7 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 | — |
 | KR | 티로보틱스 | 117730 | — | — | — |
 | KR | 티에스이 | 131290 | — | — | — |
 | KR | 티엘비 | 356860 | — | hbm_pkg_theme_substrate#T2,T3 | — |
