@@ -214,7 +214,7 @@
 | US | Generac | GNRC | — | us_bloom_intel_deep#T4 | — |
 | US | General Dynamics | GD | — | — | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
-| US | Intel | INTC.O | — | ai_chip_company_nvidia#T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T2 · hbm_pkg_theme_memory_cycle#T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4,T5,T6 | — |
+| US | Intel | INTC.O | — | ai_chip_company_nvidia#T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T2 · hbm_pkg_theme_memory_cycle#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4,T5,T6 | — |
 | US | Kintor Pharmaceutical | 9939.HK | — | — | — |
 | US | Kioxia Holdings | 285A.T | — | — | — |
 | US | Lockheed Martin | LMT | — | — | — |
