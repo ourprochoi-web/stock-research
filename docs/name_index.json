@@ -7,7 +7,11 @@
    "entity": "300502.SZ",
    "falsifier": null,
    "facts": 6,
-   "theses": {},
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -482,10 +486,13 @@
   "SK스퀘어": {
    "code": "402340",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "402340",
+   "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1",
    "facts": 0,
    "theses": {
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T6"
+    ],
     "research/vcp_breakout_backtest.html": [
      "T4"
     ]
@@ -505,7 +512,8 @@
      "T2",
      "T3",
      "T4",
-     "T5"
+     "T5",
+     "T6"
     ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T5"
@@ -2595,6 +2603,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "KODEX 미국AI광통신네트워크": {
+   "code": "0173Y0",
+   "market": "KR-ETF",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "KODEX 반도체": {
    "code": "091160",
    "market": "KR-ETF",
@@ -3781,7 +3803,8 @@
     "ai-infra/optical_valuechain_9.html": [
      "T1",
      "T2",
-     "T3"
+     "T3",
+     "T6"
     ],
     "ai-infra/ai_chip_company_nvidia.html": [
      "T5"
@@ -3802,7 +3825,11 @@
    "entity": "MTSI",
    "falsifier": null,
    "facts": 7,
-   "theses": {},
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },

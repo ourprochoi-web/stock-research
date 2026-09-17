@@ -1472,6 +1472,23 @@
    "tracked_price": true,
    "note": "삼성 계약 없음 · 매출의 절반이 태양광 EPC",
    "falsifier": "3Q까지 삼성·SK하이닉스 추가 공시 0"
+  },
+  "402340": {
+   "name": "SK스퀘어",
+   "market": "KR",
+   "layer": "지주 · SK하이닉스 지분 ~20.7% 통로",
+   "business": "시총 133.5조(9/17 1,012,000) · 하이닉스 지분가치 265.8조 → 할인 ~50% · 2026F 지분법 OP 48.2조(컨센) · 추정 PER 2.96 · PBR 2.43 · 외인 46.5%",
+   "business_grade": "① 시세·컨센 · ② 지분율 추정",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T6"
+   ],
+   "tracked_price": true,
+   "note": "할인율 = 1 − 스퀘어 시총 ÷ (하이닉스 시총 × 지분율) · 월 1회",
+   "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
