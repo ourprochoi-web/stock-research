@@ -219,7 +219,7 @@
 | US | Lockheed Martin | LMT | — | — | — |
 | US | Lumentum | LITE.O | ✓  | optical_valuechain_9#T1,T2,T3 · ai_chip_company_nvidia#T5 · kr_cooling_optical_layer#T3,T4 | 11 |
 | US | MACOM | MTSI.O | ✓  | — | 7 |
-| US | Marvell | MRVL.O | ✓  | optical_interconnect_layer#T4 · optical_valuechain_9#T5 · ai_chip_architecture_war#T1 · ai_chip_company_marvell#T1,T2,T3,T4,T5 · ai_dc_miner_conversion#T5 · ai_sw_investment_map#T3 · hbm_pkg_theme_substrate#T2 · 13f_2026q2#T4 | 18 |
+| US | Marvell | MRVL.O | ✓  | optical_interconnect_layer#T4 · optical_valuechain_9#T5 · ai_chip_architecture_war#T1 · ai_chip_company_marvell#T1,T2,T3,T4,T5 · ai_dc_miner_conversion#T5 · ai_sw_investment_map#T3 · hbm_pkg_theme_memory_cycle#T4 · hbm_pkg_theme_substrate#T2 · 13f_2026q2#T4 | 18 |
 | US | Mastercard | MA | — | us_ai_adjacent_sectors#T2,T6 · kr_drawdown_2026#T6 · us_payment_networks#T1 | — |
 | US | Matador Resources | MTDR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | Meta Platforms | META.O | — | — | — |
