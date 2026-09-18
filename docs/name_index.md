@@ -214,7 +214,7 @@
 | US | Generac | GNRC | — | us_bloom_intel_deep#T4 | — |
 | US | General Dynamics | GD | — | — | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
-| US | Intel | INTC.O | — | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T2 · hbm_pkg_theme_memory_cycle#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4,T5,T6 | — |
+| US | Intel | INTC.O | — | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4,T5,T6 | — |
 | US | Kintor Pharmaceutical | 9939.HK | — | — | — |
 | US | Kioxia Holdings | 285A.T | — | — | — |
 | US | Lockheed Martin | LMT | — | — | — |
@@ -224,7 +224,7 @@
 | US | Mastercard | MA | — | us_ai_adjacent_sectors#T2,T6 · kr_drawdown_2026#T6 · us_payment_networks#T1 | — |
 | US | Matador Resources | MTDR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | Meta Platforms | META.O | — | — | — |
-| US | Micron | MU.O | — | kr_bio_china_competition#T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · us_payment_networks#T1 · 13f_2026q2#T3 | — |
+| US | Micron | MU.O | — | kr_bio_china_competition#T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T2,T5 · hbm_pkg_theme_substrate#T1 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · us_payment_networks#T1 · 13f_2026q2#T3 | — |
 | US | Microsoft | MSFT.O | — | ai_value_chain_guide_v2#T2,T5 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T2,T3 | — |
 | US | Moderna | MRNA.O | — | us_7axis_cross_valuation#T1 | — |
 | US | NRG Energy | NRG | — | us_7axis_cross_valuation#T3 | — |
@@ -256,7 +256,7 @@
 | US | Snowflake | SNOW.K | — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T5 | — |
 | US | SpaceX | SPCX.O | — | ai_sw_company_crwd_ddog_snow#T5 · ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T2,T4 · 13f_2026q2#T1,T6 · robot_theme_supply_chain#T4 · space_case_contract_structure#T1,T2,T4,T5 · space_update_2026#T1,T2,T3,T4,T5 | — |
 | US | TE Connectivity | TEL | ✓  | us_ai_adjacent_sectors#T2 | 1 |
-| US | TSMC ADR | TSM | — | ai_chip_company_broadcom#T1 · ai_chip_company_nvidia#T1 · ai_value_chain_guide_v2#T5 · optical_valuechain_9#T5 · ai_sw_company_anthropic#T4 · ai_sw_investment_map#T1 · hbm_pkg_overview#T2 · kr_semi_equip_cross_valuation#T7 · us_7axis_cross_valuation#T5 · ns_china_ai_ecosystem#T5 · ns_global_strategy_overview#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
+| US | TSMC ADR | TSM | — | ai_chip_company_broadcom#T1 · ai_chip_company_nvidia#T1 · ai_value_chain_guide_v2#T5 · optical_valuechain_9#T5 · ai_sw_company_anthropic#T4 · ai_sw_investment_map#T1 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2 · hbm_pkg_theme_memory_cycle#T5 · hbm_pkg_theme_substrate#T1 · kr_semi_equip_cross_valuation#T7 · us_7axis_cross_valuation#T5 · ns_china_ai_ecosystem#T5 · ns_global_strategy_overview#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
 | US | Talen | TLN.O | — | us_power_regulated_vs_merchant#T2,T3,T6 | — |
 | US | Targa Resources | TRGP.K | ✓ 09-15 정정 반영(C1): TTM FCF $7.4억(수익률 1.2%) · CapEx/OCF 82.7% · | us_energy_five#T2,T6 · us_energy_hegemony_17#T1,T2 | 10 |
 | US | Tesla | TSLA.O | — | hbm_pkg_theme_substrate#T2 | — |

@@ -34,16 +34,6 @@
    }
   },
   {
-   "when": "2026-09-18(금)",
-   "what": "BOJ 금리 결정(인상 사실상 공언 ③) — 엔 캐리 청산·GPIF 해외국채 매도 조짐(②) → 미 장기금리·코스피 외국인",
-   "judges": "macro · regime.flows",
-   "grade": "①",
-   "precommit": {
-    "if_hike": "달러엔·10년물 반응을 regime.rates 에 · 외국인 순매수 부호 2주 관측 시작",
-    "if_hold": "n-hike 「연속 인상」 축 약화"
-   }
-  },
-  {
    "when": "2026-09-18",
    "what": "대미투자 공식 발표 — 원전 8기 포함 여부. 원전·SMR 편 T1·T3 · 09-16 메리츠(②): 1호 = 텍사스 엔시날 가스 발전 6.3GW · 원전 8기는 프레임워크(Sell on news 위험) · Westinghouse 5~15% 지분 인수 보도 — 판정: 착공 계획·지분 가격·의결권 · 후속: 9/22 국회 보고(웨스팅하우스 지분·알래스카 LNG · ② 삼프로)",
    "judges": "ai-infra/ai_power_company_nuclear_smr.html#T1,T3",
@@ -327,12 +317,6 @@
    "what": "코스피 낙폭 편(kr_drawdown_2026) T3 기한 — 페이지가 박은 9/30 판정선(3회차 브레인 채우기에서 발견)",
    "judges": "market/kr_drawdown_2026.html#T3",
    "grade": "페이지"
-  },
-  {
-   "when": "2026-09-18",
-   "what": "BOJ 결정 = 코스피 낙폭 편 T5(엔 캐리) 판정 이벤트 — 기존 BOJ 이벤트에 연결",
-   "judges": "market/kr_drawdown_2026.html#T5",
-   "grade": "③"
   },
   {
    "when": "2026-10-08",
