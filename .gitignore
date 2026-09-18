@@ -5,3 +5,7 @@
 .env
 .env.*
 !.env.example
+
+# 파이썬 바이트코드 (훅이 update_prices 를 import 할 때 생긴다)
+__pycache__/
+*.pyc
