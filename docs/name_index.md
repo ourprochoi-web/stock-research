@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-19)
 
-추적 284개 · 테제가 걸린 이름 181 · 엔티티 있음 66 · facts 있음 46.
+추적 284개 · 테제가 걸린 이름 181 · 엔티티 있음 67 · facts 있음 46.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -140,7 +140,7 @@
 | KR | 현대건설 | 000720 | — | kr_construction_datacenter#T1 | — |
 | KR | 현대로템 | 064350 | — | k_defense_company_hyundai_rotem#T1,T2,T3,T4 · k_defense_cross_valuation#T1,T4,T5,T6,T8 · k_defense_investment_map#T1,T5 | — |
 | KR | 현대무벡스 | 319400 | — | vcp_breakout_backtest#T4 · robot_kr_16_valuation#T1,T2 | — |
-| KR | 현대백화점 | 069960 | — | consumer_sector_department#T1,T3,T4,T5 | — |
+| KR | 현대백화점 | 069960 | ✓ 3Q26 지누스 손실 −250억 이상 지속 + 백화점 OP 감익(≈11-05) | consumer_sector_department#T1,T3,T4,T5,T6 | — |
 | KR | 현대제철 | 004020 | — | — | — |
 | KR | 현대차 | 005380 | — | robot_theme_supply_chain#T1 | — |
 | KR | 효성중공업 | 298040 | — | ai_power_company_transformer_grid#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T3,T4 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T5 | 1 |

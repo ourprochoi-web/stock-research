@@ -2517,15 +2517,16 @@
   "현대백화점": {
    "code": "069960",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "069960",
+   "falsifier": "3Q26 지누스 손실 −250억 이상 지속 + 백화점 OP 감익(≈11-05)",
    "facts": 0,
    "theses": {
     "consumer/consumer_sector_department.html": [
      "T1",
      "T3",
      "T4",
-     "T5"
+     "T5",
+     "T6"
     ]
    },
    "aliases": [],
