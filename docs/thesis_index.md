@@ -18,7 +18,7 @@
 | 2026.09.17 ⚠ | 2026-09-19 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series](k-beauty/k_beauty_company_pharmaresearch.html) | 4 |
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
-| 2026.09.16 ⚠ | 2026-09-17 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
+| 2026.09.16 ⚠ | 2026-09-19 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
@@ -65,7 +65,7 @@
 | 2026.08.25 | 2026-08-25 | [AI 바이오 투자 지도 — 12사 크로스 밸류에이션](ai-bio/ai_bio_investment_map.html) | 4 |
 | 2026.08.25 | 2026-08-25 | [미국 전력 7사 — 「규제형」과 「상인형」은 AI를 버는 방식이 다르다](ai-infra/us_power_regulated_vs_merchant.html) | 7 |
 | 2026.08.25 | 2026-08-25 | [370조엔 vs $921B vs $295B — 6개국 국가 전략 투자 총괄 비교](national-strategy/ns_global_strategy_overview.html) | 5 |
-| 2026.08.25 | 2026-08-25 | [13F 2026 Q2 — 대가 8인의 분기 변화, 주식 수로 분해했다](research/13f_2026q2.html) | 6 |
+| 2026.08.25 ⚠ | 2026-09-19 | [13F 2026 Q2 — 대가 8인의 분기 변화, 주식 수로 분해했다](research/13f_2026q2.html) | 6 |
 | 2026.08.25 | 2026-08-25 | [한국 로봇 16사 — 「로봇주」인데 로봇 매출이 없다](robot/robot_kr_16_valuation.html) | 0 |
 | 2026.08.24 | 2026-08-24 | [Vertiv · Corning — 두 축이 갈린 유일한 자리, 원문으로 열었다](ai-infra/us_vertiv_corning_deep.html) | 7 |
 | 2026.08.24 | 2026-08-24 | [한국 −41.3% · 미국 −18.6% — 2026 낙폭 지도와 「사업으로 고른 후보가 전부 고점」](market/kr_drawdown_2026.html) | 8 |
@@ -270,7 +270,7 @@
 
 ## 블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다
 
-`ai-infra/us_bloom_intel_deep.html` · 판단 2026.09.16 · 갱신 2026-09-17
+`ai-infra/us_bloom_intel_deep.html` · 판단 2026.09.16 · 갱신 2026-09-19
 
 - (테제 헤드라인을 기계적으로 못 잘랐다 — 페이지를 연다)
 
@@ -1270,7 +1270,7 @@
 
 ## 13F 2026 Q2 — 대가 8인의 분기 변화, 주식 수로 분해했다
 
-`research/13f_2026q2.html` · 판단 2026.08.25 · 갱신 2026-08-25
+`research/13f_2026q2.html` · 판단 2026.08.25 · 갱신 2026-09-19
 
 **한 문장** — 대가들은 「AI를 팔지」 않았다. AI 안에서 자리를 바꿨고, 그 방향이 서로 갈렸다.
 
