@@ -1,4 +1,4 @@
-# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-18)
+# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-19)
 
 추적 284개 · 테제가 걸린 이름 180 · 엔티티 있음 65 · facts 있음 46.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
@@ -112,7 +112,7 @@
 | KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | — |
 | KR | 코스맥스 | 192820 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T4 · kr_4sector_cross_valuation#T2,T3 · kr_drawdown_2026#T3 | — |
 | KR | 클로봇 | 466100 | — | — | — |
-| KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · ai_sw_company_anthropic#T1 · hbm_pkg_company_samsung#T1,T6,T7 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 | — |
+| KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · ai_sw_company_anthropic#T1 · hbm_pkg_company_samsung#T1,T6,T7 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 · cyber_ai_security#T1 | — |
 | KR | 티로보틱스 | 117730 | — | — | — |
 | KR | 티에스이 | 131290 | — | — | — |
 | KR | 티엘비 | 356860 | — | hbm_pkg_theme_substrate#T2,T3 | — |
@@ -224,7 +224,7 @@
 | US | Mastercard | MA | — | us_ai_adjacent_sectors#T2,T6 · kr_drawdown_2026#T6 · us_payment_networks#T1 | — |
 | US | Matador Resources | MTDR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | Meta Platforms | META.O | — | — | — |
-| US | Micron | MU.O | — | kr_bio_china_competition#T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T2,T5 · hbm_pkg_theme_substrate#T1 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · us_payment_networks#T1 · 13f_2026q2#T3 | — |
+| US | Micron | MU.O | — | kr_bio_china_competition#T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T1,T2,T5 · hbm_pkg_theme_substrate#T1 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · us_payment_networks#T1 · 13f_2026q2#T3 | — |
 | US | Microsoft | MSFT.O | — | ai_value_chain_guide_v2#T2,T5 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T2,T3 | — |
 | US | Moderna | MRNA.O | — | us_7axis_cross_valuation#T1 | — |
 | US | NRG Energy | NRG | — | us_7axis_cross_valuation#T3 | — |

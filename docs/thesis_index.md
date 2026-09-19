@@ -1,6 +1,6 @@
 # 테제 색인 — 정본은 brain/theses.json(카드 페이지) · 나머지는 페이지
 
-자동 생성 · 2026-09-18 · 판단 보유 90편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
+자동 생성 · 2026-09-19 · 판단 보유 90편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
 
 **용도** — 종목·테마 질문을 받으면 이 파일에서 해당 테제를 찾고, **그 페이지의 「현재 판단」만** 연다. 여기 적힌 문장은 페이지에서 잘라 온 첫 줄이며 **값·기준일·등급은 페이지가 정본**이다.
 
@@ -14,17 +14,17 @@
 | 2026.09.17 | 2026-09-17 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [삼성바이오로직스 × PolyPeptide — CDMO 플랫폼 확장 전략](glp1/glp1_company_samsung_biologics.html) | 4 |
 | 2026.09.17 | 2026-09-17 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 7 |
-| 2026.09.17 ⚠ | 2026-09-18 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 6 |
+| 2026.09.17 ⚠ | 2026-09-19 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series](k-beauty/k_beauty_company_pharmaresearch.html) | 4 |
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
-| 2026.09.14 ⚠ | 2026-09-18 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
+| 2026.09.14 ⚠ | 2026-09-19 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 | 2026-09-13 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
 | 2026.09.12 ⚠ | 2026-09-14 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
-| 2026.09.12 ⚠ | 2026-09-18 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 6 |
+| 2026.09.12 ⚠ | 2026-09-19 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 6 |
 | 2026.09.11 ⚠ | 2026-09-12 | [AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다](ai-infra/ai_power_infra_investment_map.html) | 5 |
 | 2026.09.11 | 2026-09-11 | [국내 전력 10사 — 「전력주」인데 전력 순수도가 0~100%다](ai-infra/kr_power_10_deep.html) | 0 |
 | 2026.09.11 | 2026-09-11 | [한미반도체 — TC본더 71%의 곡괭이 장수](hbm-packaging/hbm_pkg_company_hanmi_semi.html) | 4 |
@@ -180,7 +180,7 @@
 
 ## SK하이닉스 — HBM의 왕좌
 
-`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-09-18
+`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-09-19
 
 **한 문장** — HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다.
 
@@ -330,7 +330,7 @@
 
 ## 사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도
 
-`cybersecurity/cyber_ai_security.html` · 판단 2026.09.14 · 갱신 2026-09-18
+`cybersecurity/cyber_ai_security.html` · 판단 2026.09.14 · 갱신 2026-09-19
 
 **한 문장** — 「AI 보안이 다음 거대 시장」은 세 번 확인됐는데, 그 시장을 파는 6사 중 GAAP로 돈을 버는 건 Fortinet 하나뿐이다.
 
@@ -400,7 +400,7 @@
 
 ## 광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리
 
-`ai-infra/optical_valuechain_9.html` · 판단 2026.09.12 · 갱신 2026-09-18
+`ai-infra/optical_valuechain_9.html` · 판단 2026.09.12 · 갱신 2026-09-19
 
 **한 문장** — 마진은 「층」이 아니라 「자기 제품이냐 위탁조립이냐」가 정하고, 위험은 물리적으로 지울 수 있느냐가 정한다. 이번 사이클의 변곡은 칩이 아니라 광원에서 났다.
 
