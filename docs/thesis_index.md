@@ -91,7 +91,7 @@
 | 2026.08.19 | 2026-08-19 | [현대로템 기업 심층 분석 — K-방산 시리즈 Part 4-2](defense/k_defense_company_hyundai_rotem.html) | 4 |
 | 2026.08.19 | 2026-08-19 | [대형주·ODM 딥다이브 — 코스맥스·한국콜마·아모레·LG생건 · K-Beauty Series](k-beauty/k_beauty_company_largecap_odm.html) | 4 |
 | 2026.08.18 | 2026-08-18 | [KAI 한국항공우주산업 — K-방산 시리즈 Part 4-4](defense/k_defense_company_kai.html) | 5 |
-| 2026.08.18 | 2026-08-18 | [LIG디펜스앤에어로스페이스 심층 분석 — 미사일이 만드는 연금 · K-방산 Part 4](defense/k_defense_company_lig_nexone.html) | 5 |
+| 2026.08.18 ⚠ | 2026-09-19 | [LIG디펜스앤에어로스페이스 심층 분석 — 미사일이 만드는 연금 · K-방산 Part 4](defense/k_defense_company_lig_nexone.html) | 5 |
 | 2026.08.18 | 2026-08-18 | [LNG 캐리어 $71.3B — AI 전력이 바다 위 수주로 이어지는 구조](shipbuilding/k_ship_theme_lng_ai_nexus.html) | 5 |
 | 2026.08.17 | 2026-08-17 | [세계 조선의 새로운 좌표 — 슈퍼사이클 2.0과 한국의 프리미엄](shipbuilding/k_ship_industry_overview.html) | 5 |
 | 2026.08.12 | 2026-08-12 | [방산주 투자 지도 — K-방산 시리즈 Part 3](defense/k_defense_investment_map.html) | 5 |
@@ -1804,7 +1804,7 @@
 
 ## LIG디펜스앤에어로스페이스 심층 분석 — 미사일이 만드는 연금 · K-방산 Part 4
 
-`defense/k_defense_company_lig_nexone.html` · 판단 2026.08.18 · 갱신 2026-08-18
+`defense/k_defense_company_lig_nexone.html` · 판단 2026.08.18 · 갱신 2026-09-19
 
 - **T1.** 매출보다 이익이 빨리 는다 — KAI와 정확히 반대다.
 - **T2.** 🔴 그런데 컨센서스는 하반기에 마진이 절반으로 꺾인다고 본다 — 이것이 이 종목의 핵심 쟁점이다.
