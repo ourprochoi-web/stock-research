@@ -3938,11 +3938,13 @@
   "Micron": {
    "code": "MU.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "MU",
+   "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
    "facts": 0,
    "theses": {
-    "ai-bio/kr_bio_china_competition.html": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T1",
+     "T2",
      "T5"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
@@ -3950,13 +3952,11 @@
      "T3",
      "T4"
     ],
+    "ai-bio/kr_bio_china_competition.html": [
+     "T5"
+    ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T1"
-    ],
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
-     "T1",
-     "T2",
-     "T5"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T1"

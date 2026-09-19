@@ -1489,6 +1489,25 @@
    "tracked_price": true,
    "note": "할인율 = 1 − 스퀘어 시총 ÷ (하이닉스 시총 × 지분율) · 월 1회",
    "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1"
+  },
+  "MU": {
+   "name": "Micron",
+   "market": "US",
+   "layer": "DRAM·HBM·NAND 메이커 · 미국 유일 DRAM · 코어(메모리) 후보",
+   "business": "FQ4(8월 분기) 10/1 발표 — RBC 모델 매출 $50B · EPS 31.09 · GM 86.7 · DRAM 계약 CQ3 +20%+. FQ1 가이던스 컨센 $56B/EPS 34.85(TD 예상 ~37 · RBC +3~5%). SCA 16건 · $22B 예치 · 매출 절반 커버 · 40% 가격 하한. 2027 HBM 계약 +80~100%(RBC 공급망) · HBM 점유 ~25%. GPM 정점 CQ2:27 ~89%(TD) · CY27 EPS $173 · CY28 $138(TD). 자사주 $20B대(12/9 CHIPS 제한 2주년 후) · FCF 50%+ 환원 · CY27 FCF $100B+(RBC). 12M RS +472 · 3M −15%(09-15 스크린 88.5 A)",
+   "business_grade": "③ TD Cowen 09-17 · RBC 09-18(SCA는 회사 공시 인용) · ① 스크린 시세",
+   "pages": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2,T5",
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3,T4"
+   ],
+   "tracked_price": true,
+   "note": "코어 증액 트리거 종목 — 10/1 가이던스 ≥37 정상 · <35 = n-memory-durable 1스트라이크 · TP TD $1,600(CY27 9배) · RBC $1,500",
+   "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
