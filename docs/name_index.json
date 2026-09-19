@@ -423,7 +423,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "energy/oil_hedge_vehicles.html": [
+     "T4"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -576,6 +580,10 @@
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T1",
      "T4"
+    ],
+    "energy/oil_hedge_vehicles.html": [
+     "T1",
+     "T3"
     ]
    },
    "aliases": [
@@ -3473,6 +3481,9 @@
     ],
     "energy/us_energy_five.html": [
      "T6"
+    ],
+    "energy/oil_hedge_vehicles.html": [
+     "T1"
     ]
    },
    "aliases": [],
