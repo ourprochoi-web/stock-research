@@ -1624,6 +1624,25 @@
    "falsifier": "T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 → 3사 서사 도전",
    "tracked_price": true,
    "facts": []
+  },
+  "285A": {
+   "code": "285A",
+   "name": "Kioxia Holdings(키옥시아)",
+   "market": "JP",
+   "layer": "메모리 · NAND 전업(HBM·DRAM 없음) · SanDisk와 욧카이치·기타카미 JV",
+   "business": "3D NAND(BiCS FLASH) 웨이퍼·SSD. 1Q FY2026 매출 구성 SSD&스토리지 66%(데이터센터·엔터프라이즈가 그중 60%+) · 스마트디바이스 30% · 기타 4%. LTA 물량 커버 목표 CY2028 50%",
+   "business_grade": "① 1Q FY2026 결산 단신·설명회 자료(2026-07-31) — 사업의 개요는 유가증권보고서 미대조",
+   "pages": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html"
+   ],
+   "theses": [
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T6,T4"
+   ],
+   "tracked_price": true,
+   "position": "미보유",
+   "note": "가격은 정점 이익을 이미 배수에 넣었다(FY3/27 PER 5.7~6.9배 · SanDisk 9배). 같은 JV의 두 표본 중 키옥시아가 더 싼 이유는 오버행(도시바 12.84% 잔여 매도 · SKH 비이클 14.19%)과 HBM 부재다. 회사 가이던스 자체가 ASP +70→+25 둔화를 넣었고, TrendForce는 NAND 완화를 2H27(DRAM 2028)로 본다. 스크린(09-18 A · 88.7)의 fwd EPS 2,728.6은 10/1 3:1 분할 반영값이라 가격(미분할)과 짝이 안 맞는다 — 스크린 PER 20배는 오류, 실제 6~7배",
+   "falsifier": "T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce 4Q26 NAND +10% 재가속 · 오버행 소멸 — 셋 중 둘",
+   "facts": []
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

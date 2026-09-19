@@ -547,7 +547,8 @@
      "T1"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
-     "T4"
+     "T4",
+     "T6"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T5"
@@ -3815,10 +3816,15 @@
   "Kioxia Holdings": {
    "code": "285A.T",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "285A",
+   "falsifier": "T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce 4Q26 NAND +10% 재가속 · 오버행 소멸 — 셋 중 둘",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T4",
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -4444,6 +4450,9 @@
    "theses": {
     "ai-sw/ai_sw_company_msft_pltr.html": [
      "T3"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T6"
     ],
     "market/q2_2026_earnings_overview.html": [
      "T1",

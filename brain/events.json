@@ -98,7 +98,7 @@
   },
   {
    "when": "2026-10말~11월초",
-   "what": "키옥시아 2Q FY2027 — 5조 엔의 단독 몫과 기간 시작 연도 · 분기 유형자산 취득 700억엔",
+   "what": "키옥시아 2Q FY2027 — 5조 엔의 단독 몫과 기간 시작 연도 · 분기 유형자산 취득 700억엔 · 09-19 Kioxia T6 기준선: 2Q ASP 실측 ≥+30%(가이던스 역산 +25) + 3Q 가이던스 ASP 플러스 + 오버행 소멸 중 둘 이상이면 대안 코어 후보로 승격",
    "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
    "grade": "②"
   },
@@ -406,6 +406,12 @@
    "when": "2026-11-14",
    "what": "티에스이 3Q26 분기보고서(잠정 관행 없음) — 매출 QoQ · OPM ≥24% · 프로브카드 매출 → 4Q26~1Q27 SK하이닉스 HBM4E 퀄 결과 · 2027-07-22 CB 전환 개시",
    "judges": "node-screener/node_screener_hbm_scoreboard.html#T6",
+   "grade": "①"
+  },
+  {
+   "when": "2026-10-30~11-06",
+   "what": "Kioxia 2Q FY2026 결산(TDnet) — ASP 실측(회사 역산 +25%) · 3Q 가이던스 부호 · 분기 capex · 도시바 잔여 지분 매각 여부 → 메모리 사이클 T6·T4 판정 · 앞 마이크론 10/1 · 뒤 SanDisk FQ1 11월 초",
+   "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T6,T4",
    "grade": "①"
   }
  ]
