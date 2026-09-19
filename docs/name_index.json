@@ -255,10 +255,14 @@
   "LG이노텍": {
    "code": "011070",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "011070",
+   "falsifier": "3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순)",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -579,7 +583,8 @@
     ],
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T1",
-     "T4"
+     "T4",
+     "T6"
     ],
     "energy/oil_hedge_vehicles.html": [
      "T1",
@@ -1089,6 +1094,9 @@
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T2"
+    ],
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T6"
     ],
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T3"
@@ -1940,6 +1948,9 @@
      "T4",
      "T5"
     ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T6"
+    ],
     "research/vcp_breakout_backtest.html": [
      "T5"
     ],
@@ -1970,10 +1981,14 @@
   "티에스이": {
    "code": "131290",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "131290",
+   "falsifier": "T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 → 3사 서사 도전",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -3983,6 +3998,9 @@
     "market/us_7axis_cross_valuation.html": [
      "T3",
      "T4"
+    ],
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T6"
     ],
     "payments/us_payment_networks.html": [
      "T1"

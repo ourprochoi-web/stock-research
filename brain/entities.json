@@ -1526,6 +1526,104 @@
     "consumer/consumer_sector_department.html#T6,T4"
    ],
    "tracked_price": true
+  },
+  "011070": {
+   "code": "011070",
+   "name": "LG이노텍",
+   "market": "KR",
+   "layer": "광학(애플 카메라) / 기판(FC-BGA 후발)",
+   "business": "카메라 모듈(폴디드줌·가변조리개 · 애플 향 매출 80%) · 반도체 기판(RF-SiP·FC-CSP·FC-BGA · 매출 9%) · 차량 부품(9%)",
+   "business_grade": "②(부문 매출은 2Q26 실적 기사 · 고객 집중도는 반기보고서 인용 기사 · 사업보고서 원문 미대조 · 2026-09-19)",
+   "note": "2026-09-18 531,000원(시총 12.5조 · 2,362만주) · 추정 PER 13.49 · PBR 1.97 · 52주 174,900~1,814,000(dd52 −71%). 상반기 「기판 공급 부족」 테마로 +460% 후 −54%. 판단 페이지 hbm_pkg_theme_substrate T6. 2Q26 잠정 OP 2,458억(07-27) · 2026F 컨센 OP 1조2,757억 진도율 42.4%.",
+   "falsifier": "3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순)",
+   "pages": [
+    "hbm-packaging/hbm_pkg_theme_substrate.html"
+   ],
+   "facts_candidates": {
+    "rev_2q26": {
+     "value": 5527241,
+     "unit": "백만원",
+     "basis": "연결 잠정",
+     "date": "2026-07-27",
+     "grade": "①",
+     "source": "naver disclosure 80137986"
+    },
+    "op_2q26": {
+     "value": 245754,
+     "unit": "백만원",
+     "basis": "연결 잠정",
+     "date": "2026-07-27",
+     "grade": "①",
+     "source": "naver disclosure 80137986"
+    },
+    "op_1h26": {
+     "value": 541073,
+     "unit": "백만원",
+     "basis": "연결 잠정 누계",
+     "date": "2026-07-27",
+     "grade": "①"
+    },
+    "opm_2q26": {
+     "value": 4.45,
+     "unit": "%",
+     "numerator": "OP 245,754",
+     "denominator": "매출 5,527,241",
+     "grade": "①"
+    },
+    "op_2026f_consensus": {
+     "value": 1275700,
+     "unit": "백만원",
+     "basis": "네이버 컨센(isConsensus Y)",
+     "date": "2026-09-19",
+     "grade": "③"
+    },
+    "op_3q26e_consensus": {
+     "value": 311200,
+     "unit": "백만원",
+     "basis": "네이버 컨센(isConsensus Y)",
+     "date": "2026-09-19",
+     "grade": "③"
+    },
+    "apple_share_1h26": {
+     "value": 79.9,
+     "unit": "%",
+     "numerator": "10% 이상 단일고객 매출 8,841,475백만",
+     "denominator": "1H26 매출 11,062,077백만",
+     "basis": "반기보고서(기사 인용)",
+     "date": "2026-08-14",
+     "grade": "①값 ②경로"
+    },
+    "seg_rev_2q26": {
+     "optics": 4517900,
+     "package": 498400,
+     "mobility": 510900,
+     "unit": "백만원",
+     "grade": "②(실적 기사 · IR 자료 미열람)"
+    }
+   },
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_theme_substrate.html#T6"
+   ],
+   "tracked_price": true
+  },
+  "131290": {
+   "code": "131290",
+   "name": "티에스이",
+   "market": "KR",
+   "layer": "테스트 인터페이스·소모품(프로브카드 · 테스트 소켓 · 인터페이스/번인 보드) — 테스터(디아이·와이씨·유니테스트 T7)의 앞단",
+   "business": "메모리 웨이퍼·패키지 테스트용 프로브카드(NAND→DRAM·HBM 확장) · 테스트 소켓 · 인터페이스/번인 보드 · 자회사 타이거일렉(PCB)·메가터치(포고핀)·지엠테스트(테스트 서비스). 2025 매출 4,289억(메모리 88%) · 프로브카드 1,436억(33%)",
+   "business_grade": "②(반기보고서 미대조 · 제품 믹스·고객은 IR 보도 인용 · 2026-09-19)",
+   "pages": [
+    "node-screener/node_screener_hbm_scoreboard.html"
+   ],
+   "theses": [
+    "node-screener/node_screener_hbm_scoreboard.html#T6"
+   ],
+   "note": "2Q26 매출 1,888억 OP 525억 OPM 27.8% · 시총 2조 6,879억(09-18) · 추정 PER 18.8 · PBR 5.67 · CB 1,000억(전환가 238,664 · 리픽싱 없음 · 2027-07-22~) · 공급계약 공시 없는 소모품 구조 · 투자경고 09-11 · 12M +423%(2025-09-18 46,450 → 243,000)",
+   "falsifier": "T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 → 3사 서사 도전",
+   "tracked_price": true,
+   "facts": []
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
