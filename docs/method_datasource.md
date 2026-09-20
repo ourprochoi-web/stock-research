@@ -427,7 +427,7 @@
 
 **문제는 출처가 아니라 <어디서 받느냐>다.** 세션 샌드박스의 나가는 HTTPS 는 조직 egress 정책을 지나고, 정책에 없는 호스트는 프록시가 **403/407**로 끊는다(`/root/.ccr/README.md` — *"Do not retry or route around it"*). 이건 사이트가 죽은 게 아니라 **이 세션의 자리가 막힌 것**이다. 둘을 섞어 적으면 값이 영원히 ② 에 머문다(§W5).
 
-**측정된 차단 목록**(세션에서 실제로 시도한 것만 · 날짜 = 처음 막힌 날)
+**측정된 차단 목록**(세션에서 실제로 시도한 것만 · 날짜 = 처음 막힌 날) — ✅ <u>2026-09-20 전부 해소</u>. 아래 절 참조
 `data.sec.gov`·`www.sec.gov`(09-13) · `disclosures-clerk.house.gov`·`extapps2.oge.gov`(09-19) · `eia.gov`·FRED(09-14) · `m.stock.naver.com`·`api.stock.naver.com`(09-20 · CONNECT 403) · `comp.wisereport.co.kr`·`www.incheonilbo.com`·`www.korea.kr`(09-20 · EGRESS_BLOCKED) · 언론사 다수.
 → **반대로 GitHub Actions 러너는 막히지 않는다.** 시세 봇·SEC·의회 수집기가 이미 이 길로 돈다.
 
@@ -484,3 +484,28 @@ www.korea.kr
 |---|---|
 | **환경 allowlist** | 반복 쓰는 구조화 출처(SEC·네이버·DART·FRED) — 세션에서 바로 읽는다 |
 | **`collect_fetch` (CI)** | 일회성 페이지(언론 기사·정부 설명자료) — 원문 바이트만 리포에 남긴다 |
+
+### 2026-09-20 (3) — ✅ allowlist 적용 완료 · 22개 호스트 실측
+
+사용자가 새 클라우드 환경 **`stock-research`**(Network access = `Custom` · 패키지 기본목록 포함 체크)를 만들었다.
+그 환경에서 세션을 띄워 실측했다 — **22개 중 프록시 차단(`000`) 0건**. 결과 원본은 `intake/files/fetch/2026-09-20/_egress_probe.json`.
+
+| 축 | 호스트 | 코드 |
+|---|---|---|
+| 한국 재무·시세 | `m.stock.naver.com` **200**(본문 수신 확인) · `api.stock.naver.com` 404 · `finance.naver.com` 302 · `comp.wisereport.co.kr` 301 · `comp.fnguide.com` 302 | 전부 연결 |
+| 한국 공시 | **`opendart.fss.or.kr` 200 · `dart.fss.or.kr` 200** · `kind.krx.co.kr` 403 | 전부 연결 |
+| 미국 SEC | `data.sec.gov` 403 · `www.sec.gov` 403 | 연결됨(UA 요구) |
+| 정치인 공시 | `disclosures-clerk.house.gov` **200** · `extapps2.oge.gov` **200** · `efdsearch.senate.gov` 302 | 전부 연결 |
+| 매크로 | `fred.stlouisfed.org` 200 · `api.stlouisfed.org` 301 · `www.eia.gov` 200 · `api.eia.gov` 403 · `publicreporting.cftc.gov` 301 · `finance.daum.net` 200 · `production.dataviz.cnn.io` 302 | 전부 연결 |
+| 정부 | `www.korea.kr` 200 | 연결(응답 느림 — 타임아웃 15초 이상 줄 것) |
+| 대조군 | `pypi.org` 200 · `registry.npmjs.org` 200 | **패키지 기본목록 체크 살아 있음** |
+
+**🔑 `000`과 `403`을 구분하라.** `000`은 프록시가 CONNECT 를 끊은 것(정책 차단)이고, `403`은 **연결된 뒤 서버가 거절**한 것이다 — SEC 는 User-Agent 필수, `api.eia.gov` 는 API 키, `kind.krx.co.kr` 은 UA/Referer 요구다. 앞엣것은 정책 문제, 뒤엣것은 요청 문제이며 **고치는 곳이 다르다**. 「막혔다」고 쓰기 전에 둘을 갈라 적는다(§W5).
+
+**2차 실측 — 403 넷 중 SEC 둘은 조건을 맞추면 통과한다.** `User-Agent` 를 붙이니 `www.sec.gov/files/company_tickers.json` 과 `data.sec.gov` companyfacts 둘 다 **200 + 정상 본문**이었고, `python3 intake/collect_sec.py VST` 가 **세션에서 직접 성공**했다(ok · 30 tags · 310,767B — **GitHub Actions 러너 산출물과 바이트 동일**).
+→ **SEC 는 더 이상 워크플로를 거칠 필요가 없다.** `collect_sec.py` 를 세션에서 바로 돌린다. `collect-sec.yml` 은 정기 수집용으로 남긴다.
+(`kind.krx.co.kr` 은 UA/Referer, `api.eia.gov` 는 API 키 요구로 추정되나 **이번에 실측하지 않았다** `[미검증]`.)
+
+**⚠ 적용 범위** — 환경 설정은 컨테이너가 뜰 때 읽힌다. **`stock-research` 환경에서 시작한 세션만** 열린다. 옛 `기본값`(Trusted) 환경 세션은 그대로 막혀 있으니, 세션을 시작할 때 **구름 선택기에서 `stock-research` 를 고르는 것**이 전제 조건이다.
+
+**`collect_fetch` 의 자리가 줄었다** — 이제 반복 구조화 출처(SEC·네이버·DART·FRED)는 세션에서 직접 읽는다. `intake/requests/fetch_urls.txt` 는 **allowlist 에 넣을 수 없는 일회성 페이지**(언론 기사 · 정부 발표 첨부)만 남는다. 워크플로는 지우지 않는다 — 언론사 도메인은 무한해서 allowlist 로 못 덮는다.

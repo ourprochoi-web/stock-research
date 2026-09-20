@@ -326,10 +326,19 @@
   },
   {
    "id": "egress-allowlist",
-   "grade": "측정",
+   "grade": "측정 완료",
    "since": "2026-09-20",
    "what": "🔴 값 등급이 ② 에서 안 올라가는 구조적 원인 — 세션 egress 정책이 아카이브의 정본 출처를 막는다. 사용자 결정(2026-09-20): CI 우회가 아니라 <환경 allowlist>로 간다. 붙여넣을 목록과 경로는 docs/method_datasource.md 맨 뒤. 확인해야 할 것 — ① 다음 세션 시작 시 m.stock.naver.com 이 열렸는가(열렸으면 한양디지텍 T8 의 ②를 ①로 올린다) ② 「Also include default list of common package managers」가 체크됐는가(안 되면 pip·npm 이 끊긴다) ③ opendart.fss.or.kr 은 CLAUDE.md 가 「열려 있었다」고 적었는데 이번 세션에서 실측 안 했다 — allowlist 적용 뒤 재확인 ④ 실행 중 세션에 즉시 반영되는지는 문서에 없다 [미검증]",
-   "updates": []
+   "updates": [
+    {
+     "date": "2026-09-20",
+     "text": "✅ 해소. 사용자가 환경 stock-research(Custom · 패키지 기본목록 포함)를 만들었고, 그 환경의 세션에서 22개 호스트 실측 — 프록시 차단 0건. m.stock.naver.com 은 본문까지 수신 확인, opendart·dart 둘 다 200(CLAUDE.md §H1 의 「dart 는 막혀도 opendart 는 열려 있었다」는 이제 둘 다 열림). pypi·npm 200 이라 패키지 기본목록 체크도 살아 있다. 남은 확인 — 403 4건(data.sec.gov·www.sec.gov·kind.krx.co.kr·api.eia.gov)은 프록시가 아니라 서버측 요구(UA·API키)다. SEC 가 UA 를 붙이면 실제로 통과하는지는 2차 실측 중. ⚠ 전제 조건 하나 — 세션 시작 시 구름 선택기에서 stock-research 를 골라야 한다. 옛 「기본값」 환경은 그대로 막혀 있다."
+    },
+    {
+     "date": "2026-09-20 (2)",
+     "text": "2차 실측 완료 — SEC 403 은 UA 요구였다. UA 를 붙이니 200 + 본문 수신이고 collect_sec.py VST 가 세션에서 직접 성공했다(30 tags · 310,767B · 러너 산출물과 바이트 동일). SEC 는 이제 워크플로 없이 세션에서 받는다. kind.krx.co.kr · api.eia.gov 의 403 원인은 미실측 [미검증]. 이 항목은 닫는다."
+    }
+   ]
   }
  ]
 }
