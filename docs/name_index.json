@@ -793,7 +793,8 @@
      "T5"
     ],
     "ai-infra/kr_power_10_deep.html": [
-     "T1"
+     "T1",
+     "T5"
     ],
     "ai-infra/kr_power_cross_valuation.html": [
      "T1",
@@ -831,10 +832,13 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 11,
    "theses": {
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
+    ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T5"
     ],
     "ai-infra/kr_power_10_deep.html": [
      "T1"
@@ -2534,7 +2538,7 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 10,
    "theses": {},
    "aliases": [],
    "auto_candidate": true

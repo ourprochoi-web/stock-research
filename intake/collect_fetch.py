@@ -22,6 +22,16 @@
   label | https://url            ← label 이 파일명이 된다(영숫자·._- 만)
   label | https://url | referer  ← 첨부 다운로드처럼 <어느 페이지에서 눌렀는지>를 따지는 곳에 쓴다
   https://url                    ← label 을 URL 에서 만든다
+  dart | 회사명 | YYYYMMDD | 보고서명 | 절키워드[,절키워드...]   ← DART 정기보고서 절 원문
+
+DART 모드(2026-09-20 추가 · §H1 「새 예외의 기준은 실측 실패율」):
+  왜 URL 한 줄로 안 되나 — DART 는 3단계이고 ①이 POST 다(method_datasource.md).
+    ① POST dsac001/search.ax 로 날짜 피드를 페이지네이션해 rcpNo 를 찾는다(회사 필터가 안 먹는다)
+    ② GET  dsaf001/main.do?rcpNo=  목차에서 dcmNo·eleId·offset·length 를 읽는다
+    ③ GET  report/viewer.do?...    필요한 절만 받는다(전문 불필요 — 삼성전자 반기보고서 126절 중 1절이 3KB)
+  2026-09-20 실측: 세션에서 dart.fss.or.kr·opendart.fss.or.kr 이 CONNECT 403(조직 정책 거부)으로 닫혔다.
+    같은 날 오전에는 열려 있었다 — allowlist 가 세션 단위라 세션 밖에서는 보장되지 않는다.
+    막힌 것이 <세그먼트 원문>이라 등급이 ② 에서 안 올라가는 지점이 그대로 재발했다(해성디에스·두산 전자BG).
 """
 import hashlib
 import http.cookiejar
@@ -133,6 +143,66 @@ def get(url, retries=3, timeout=45, referer=""):
     return 0, "", last.encode()
 
 
+DART = "https://dart.fss.or.kr"
+
+
+def _post(url, data, ref, timeout=40):
+    body = urllib.parse.urlencode(data).encode()
+    req = urllib.request.Request(url, data=body, headers={
+        "User-Agent": BROWSER_UA, "Referer": ref, "X-Requested-With": "XMLHttpRequest",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Accept-Language": "ko,en;q=0.8"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8", "ignore")
+
+
+def dart_find(company, day, report, max_pages=45):
+    """① 날짜 피드를 페이지네이션해 rcpNo 를 찾는다.
+
+    ⚠ reportName·searchWord·keyword·contentWord 는 전부 무시된다 — 행 텍스트로 거른다.
+    ⚠ rcpNo 는 14자리다. 2026\d{8}(12자리)로 쓰면 0건이 나온다(2026-08-24 실측).
+    """
+    for page in range(1, max_pages + 1):
+        h = _post(DART + "/dsac001/search.ax",
+                  {"selectDate": day, "currentPage": str(page), "maxResults": "100", "mdayCnt": "0"},
+                  DART + "/dsac001/mainY.do")
+        for row in re.split(r"<tr[^>]*>", h):
+            if company in row and report in row:
+                m = re.search(r"20\d{12}", row)
+                if m:
+                    txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", row)).strip()
+                    return m.group(0), txt[:160]
+        if "<tr" not in h:
+            break
+    return None, f"{day} 피드 {max_pages}페이지에 {company}/{report} 없음"
+
+
+def dart_toc(rcp):
+    """② 목차 — node\d+['키'] = "값" 을 순차 파싱한다. text 가 나오면 새 항목. 키는 대소문자 무시."""
+    st, _, body = get(f"{DART}/dsaf001/main.do?rcpNo={rcp}")
+    if st != 200:
+        return [], f"main.do {st}"
+    h = body.decode("utf-8", "ignore")
+    items, cur = [], {}
+    for k, v in re.findall(r"node\d+\[[\'\"](\w+)[\'\"]\]\s*=\s*[\'\"]([^\'\"]*)[\'\"]", h):
+        k = k.lower()
+        if k == "text":
+            if cur.get("text"):
+                items.append(cur)
+            cur = {"text": v}
+        else:
+            cur[k] = v
+    if cur.get("text"):
+        items.append(cur)
+    return items, f"{len(items)}절"
+
+
+def dart_section(rcp, it):
+    return get(f"{DART}/report/viewer.do?rcpNo={rcp}&dcmNo={it.get('dcmno','')}"
+               f"&eleId={it.get('eleid','')}&offset={it.get('offset','')}"
+               f"&length={it.get('length','')}&dtd=dart4.xsd")
+
+
 def parse_requests(path):
     items = []
     if not os.path.exists(path):
@@ -147,6 +217,10 @@ def parse_requests(path):
             lab, url, ref = "", parts[0], ""
         else:
             lab, url, ref = (parts + ["", ""])[:3]
+        if lab.lower() == "dart":
+            # dart | 회사명 | YYYYMMDD | 보고서명 | 절키워드,절키워드
+            items.append(("__dart__", "|".join(parts[1:]), ""))
+            continue
         items.append((slug(lab) if lab else label_from_url(url), url, ref))
     return items
 
@@ -180,7 +254,40 @@ def main(argv):
         rec["id"] = f"c-{today.replace('-', '')}-{n:02d}"
         ids.add(rec["id"])
 
-        if not url.startswith("https://"):
+        if lab == "__dart__":
+            # DART 3단계 — 회사명|날짜|보고서명|절키워드,...
+            f = [x.strip() for x in url.split("|")]
+            comp, day_, rep = (f + ["", "", ""])[:3]
+            keys = [k.strip() for k in (f[3] if len(f) > 3 else "").split(",") if k.strip()]
+            rec.update(host="dart.fss.or.kr", kind="dart", subject=f"{comp} {rep} {day_} · {'/'.join(keys) or '목차'}")
+            rcp, note = dart_find(comp, day_, rep)
+            if not rcp:
+                rec.update(status="not_found", note=note)
+                bad += 1
+            else:
+                rec["rcpNo"] = rcp
+                toc, tnote = dart_toc(rcp)
+                rec["toc"] = tnote
+                got, files = 0, []
+                for it in toc:
+                    t = it.get("text", "")
+                    if keys and not any(k in t for k in keys):
+                        continue
+                    st, _, body = dart_section(rcp, it)
+                    if st != 200 or not body:
+                        continue
+                    fn = f"dart_{slug(comp,20)}_{rcp}_{slug(t,40)}.html"
+                    with open(os.path.join(day, fn), "wb") as fh:
+                        fh.write(body)
+                    files.append(os.path.relpath(os.path.join(day, fn), ROOT))
+                    got += 1
+                    time.sleep(0.3)
+                    if got >= 25:  # 한 요청이 보고서 전문을 끌어오지 못하게 한다
+                        break
+                rec.update(status=("ok" if got else "no_section"), files=files, sections=got, note=note)
+                if not got:
+                    bad += 1
+        elif not url.startswith("https://"):
             rec.update(status="skipped", note="https 만 받는다")
             bad += 1
         else:

@@ -6787,6 +6787,274 @@
      "note": "⚠ 영업이익은 흑자인데 EPS 가 음수다 — 영업외에서 깎였다. 짝 계정(영업외손익)을 열기 전까지 PER 은 값이 아니다(§W2·§W3)"
     }
    }
+  },
+  "195870": {
+   "name": "해성디에스",
+   "ticker": "195870",
+   "market": "KR",
+   "layer": "리드프레임 · 패키지기판(Package Substrate) — ⚠ AI 귀속 미측정",
+   "canonical_page": null,
+   "intake": [
+    "u-20260920-09"
+   ],
+   "metrics": {
+    "op_2q26": {
+     "value": 249,
+     "unit": "억원",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null,
+     "note": "전년 동기 82억 → +204%"
+    },
+    "op_2q25": {
+     "value": 82,
+     "unit": "억원",
+     "basis": "2Q25",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null
+    },
+    "opm_2q26": {
+     "value": 11.8,
+     "unit": "%",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "영업이익 249억",
+     "den": "매출 2,111억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null,
+     "note": "1Q26 5.8% · 2Q25 5.2% 에서 두 배"
+    },
+    "op_fy25": {
+     "value": 465,
+     "unit": "억원",
+     "basis": "FY25 확정",
+     "asof": "2026-09-18",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null
+    },
+    "op_arrival_ratio": {
+     "value": 0.77,
+     "unit": "배",
+     "basis": "1H26 ÷ FY25",
+     "asof": "2026-09-18",
+     "num": "1Q 110 + 2Q 249 = 359억",
+     "den": "FY25 465억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null
+    },
+    "mcap": {
+     "value": 9622,
+     "unit": "억원",
+     "basis": "09-18 종가 57,500원",
+     "asof": "2026-09-18",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null
+    },
+    "per_est": {
+     "value": 11.86,
+     "unit": "배",
+     "basis": "추정 PER",
+     "asof": "2026-09-18",
+     "num": "시총",
+     "den": "추정 순이익",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null,
+     "note": "스냅샷 TTM PER 은 17.96"
+    },
+    "drawdown_52w": {
+     "value": -47.0,
+     "unit": "%",
+     "basis": "52주 고점 대비",
+     "asof": "2026-09-18",
+     "num": "57,500",
+     "den": "108,500",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": null
+    },
+    "ytd": {
+     "value": 1.6,
+     "unit": "%",
+     "basis": "연초 대비",
+     "asof": "2026-09-17",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "portfolio/data/prices.json returns",
+     "page": null,
+     "note": "🔑 영업이익이 3배가 됐는데 주가는 제자리다 — 1Y 는 +108.9%, 3M 은 −22.8%"
+    },
+    "profit_attribution": {
+     "value": null,
+     "unit": "—",
+     "basis": "세그먼트 미측정",
+     "asof": "2026-09-20",
+     "num": "AI 패키지기판 매출",
+     "den": "전사 매출",
+     "grade": "미측정",
+     "source": "—",
+     "page": null,
+     "note": "⚠ 이익 증가가 AI 패키지기판에서 왔는지 자동차·전력반도체 리드프레임에서 왔는지 갈리지 않았다. dart.fss.or.kr CONNECT 403(2026-09-20 조직 정책) → intake/requests/fetch_urls.txt 큐. 갈리기 전에는 「AI 종목」으로 부르지 않는다"
+    }
+   }
+  },
+  "000150": {
+   "name": "두산",
+   "ticker": "000150",
+   "market": "KR",
+   "layer": "지주 — 전자BG(CCL) + 두산에너빌리티 지분 + 로보틱스 · SK실트론",
+   "canonical_page": "ai-infra/kr_cooling_optical_layer.html",
+   "intake": [
+    "u-20260920-09"
+   ],
+   "metrics": {
+    "ccl_capex_2026_09": {
+     "value": 9684,
+     "unit": "억원",
+     "basis": "2026-09-18 공시",
+     "asof": "2026-09-18",
+     "num": "CCL 생산능력 확대 투자 총액",
+     "den": "—",
+     "grade": "①/②",
+     "source": "메리츠 노트 인용 공시 · 원문 미대조",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "국내 4,210억 + 중국 5,474억 · 2028말까지 단계 집행 · 2028 순차 가동"
+    },
+    "ccl_capex_china_share": {
+     "value": 56.5,
+     "unit": "%",
+     "basis": "2026-09-18 공시",
+     "asof": "2026-09-18",
+     "num": "중국법인 5,474억",
+     "den": "총 9,684억",
+     "grade": "①/②",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "🔴 증설의 절반 이상이 중국이다. kr_power_10_deep T5(2026-08-26 미 행정명령 이후 「어디서 만드느냐」가 갈린다)가 걸리는데 노트는 금액만 적고 넘어간다"
+    },
+    "optical_ccl_rev_2q26": {
+     "value": 493,
+     "unit": "억원",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "광모듈용 CCL 매출",
+     "den": "—",
+     "grade": "②",
+     "source": "메리츠 노트(회사 공시 미대조)",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "1Q26 344억 → +43.3% QoQ · 하반기 분기 1,000억 전망은 ③"
+    },
+    "optical_ccl_share_of_ex_dbc": {
+     "value": 5.7,
+     "unit": "%",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "광모듈 CCL 493억",
+     "den": "두산 ex-에너빌리티 2Q 매출 8,613억",
+     "grade": "①/②",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "광모듈로 두산을 사면 5.7% 에 거는 것 — kr_cooling_optical_layer T5 규칙"
+    },
+    "ex_dbc_opm_2q26": {
+     "value": 20.2,
+     "unit": "%",
+     "basis": "2Q26 · 두산 연결 − 두산에너빌리티 연결",
+     "asof": "2026-09-18",
+     "num": "영업이익 1,741억",
+     "den": "매출 8,613억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "🔑 에너빌리티 OPM 6.7% 의 3.04배. 매출은 1/6 인데 마진은 3배 — 좋은 사업은 여기 있다"
+    },
+    "ex_dbc_op_ttm": {
+     "value": 4387,
+     "unit": "억원",
+     "basis": "TTM(2025Q3~2026Q2) · 두산 − 두산에너빌리티",
+     "asof": "2026-09-18",
+     "num": "영업이익 차",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "매출 차 30,593억 · OPM 14.3%"
+    },
+    "dbc_share_of_revenue": {
+     "value": 85.3,
+     "unit": "%",
+     "basis": "TTM",
+     "asof": "2026-09-18",
+     "num": "두산에너빌리티 매출 177,262억",
+     "den": "두산 연결 매출 207,855억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "dbc_share_of_op": {
+     "value": 67.2,
+     "unit": "%",
+     "basis": "TTM",
+     "asof": "2026-09-18",
+     "num": "두산에너빌리티 OP 8,970억",
+     "den": "두산 연결 OP 13,357억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "mcap": {
+     "value": 23.46,
+     "unit": "조원",
+     "basis": "09-18 종가 1,447,000원 (23조 4,649억)",
+     "asof": "2026-09-18",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html"
+    },
+    "per": {
+     "value": 83.55,
+     "unit": "배",
+     "basis": "09-18 · 연결 TTM",
+     "asof": "2026-09-18",
+     "num": "시총",
+     "den": "지배주주 순이익",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "⚠ 지주사 연결 PER 은 판정에 못 쓴다 — 분모의 67.2% 가 두산에너빌리티(PER 302.83)다"
+    },
+    "dbc_stake": {
+     "value": null,
+     "unit": "%",
+     "basis": "미측정",
+     "asof": "2026-09-20",
+     "num": "두산 보유 두산에너빌리티 지분",
+     "den": "—",
+     "grade": "미측정",
+     "source": "—",
+     "page": "ai-infra/kr_cooling_optical_layer.html",
+     "note": "🔑 두산 판단의 단일 잠금 숫자. 30% 가정 → 지분가치 16.47조(시총의 70.2%) · 잔여 7.00조 → 잔여시총/ex-에너빌 TTM OP 15.9배. 35% 가정 → 19.21조(81.9%) · 잔여 4.25조 → 9.7배. 5%p 로 결론이 뒤집힌다. DART 타법인출자현황 큐"
+    }
+   }
   }
  },
  "macro": {
