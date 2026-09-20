@@ -84,7 +84,7 @@
 | KR | 솔브레인 | 357780 | — | kr_semi_fab_timeline#T1 · kr_semi_materials_gas#T1,T4,T5 | — |
 | KR | 스피어 | 347700 | — | — | — |
 | KR | 실리콘투 | 257720 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T1,T2,T3,T4,T5 · k_beauty_sector#T1,T2,T3,T5 · kr_4sector_cross_valuation#T3 | — |
-| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | 8 |
+| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | 13 |
 | KR | 씨메스로보틱스 | 475400 | — | — | — |
 | KR | 아모레퍼시픽 | 090430 | — | k_beauty_company_largecap_odm#T4 · k_beauty_sector#T1 · kr_4sector_cross_valuation#T3 | — |
 | KR | 아모센스 | 357580 | ✓ 4Q26 소재 매출 <7십억 · 본격 출하 지연 | us_bloom_intel_deep#T5 | — |
