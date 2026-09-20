@@ -32,3 +32,26 @@ dart | 해성디에스 | 20260814 | 반기보고서 | 사업의 내용,매출 �
 #     30% 가정 시 잔여시총/ex-에너빌 OP 15.9배 · 35% 가정 시 9.7배 — 5%p 로 결론이 뒤집힌다.
 #     동시에 전자BG 세그먼트 매출·OP 가 있어야 CCL 증설 9,684억(중국 56.5%)의 분모가 생긴다.
 dart | 두산 | 20260814 | 반기보고서 | 사업의 내용,부문,타법인출자,계열회사
+
+# ── 2026-09-20 (3) 반도체 <소재> 층 티커 검증 — 이세철 구간론(③ 6/17)의 3번째 구간을 볼 장치가 없다.
+#    WATCH 195종목·스냅샷 225개인데 반도체 소재가 0개다(솔브레인·동진쎄미켐·후성 등 17/17 미등록).
+#    스냅샷에는 회사명 필드가 없어 <틀린 코드는 조용히 다른 회사를 받아온다> — 등록 전에 이름을 대조한다.
+#    세션에서 m.stock.naver.com·api.stock.naver.com 이 CONNECT 403(조직 정책)이라 러너로 돌린다.
+#    받은 뒤 stockName 을 대조해 맞는 것만 update_prices.py WATCH 에 넣는다.
+nv_357780 | https://m.stock.naver.com/api/stock/357780/basic
+nv_005290 | https://m.stock.naver.com/api/stock/005290/basic
+nv_272290 | https://m.stock.naver.com/api/stock/272290/basic
+nv_104830 | https://m.stock.naver.com/api/stock/104830/basic
+nv_093370 | https://m.stock.naver.com/api/stock/093370/basic
+nv_014680 | https://m.stock.naver.com/api/stock/014680/basic
+nv_213420 | https://m.stock.naver.com/api/stock/213420/basic
+nv_011790 | https://m.stock.naver.com/api/stock/011790/basic
+nv_033160 | https://m.stock.naver.com/api/stock/033160/basic
+nv_171010 | https://m.stock.naver.com/api/stock/171010/basic
+nv_102710 | https://m.stock.naver.com/api/stock/102710/basic
+nv_092070 | https://m.stock.naver.com/api/stock/092070/basic
+nv_064760 | https://m.stock.naver.com/api/stock/064760/basic
+nv_166090 | https://m.stock.naver.com/api/stock/166090/basic
+nv_101160 | https://m.stock.naver.com/api/stock/101160/basic
+nv_272110 | https://m.stock.naver.com/api/stock/272110/basic
+nv_155650 | https://m.stock.naver.com/api/stock/155650/basic
