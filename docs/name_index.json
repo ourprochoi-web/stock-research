@@ -1756,7 +1756,8 @@
    "facts": 0,
    "theses": {
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
-     "T1"
+     "T1",
+     "T2"
     ],
     "research/vcp_breakout_backtest.html": [
      "T4"
@@ -2875,6 +2876,16 @@
    "market": "US",
    "entity": null,
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Alibaba": {
+   "code": "BABA",
+   "market": "US",
+   "entity": "BABA",
+   "falsifier": "2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_value_chain_guide_v2 T5 의 「六張網」 서술로만 있다",
    "facts": 0,
    "theses": {},
    "aliases": [],

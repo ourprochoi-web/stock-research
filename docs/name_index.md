@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-20)
 
-추적 284개 · 테제가 걸린 이름 184 · 엔티티 있음 70 · facts 있음 46.
+추적 285개 · 테제가 걸린 이름 184 · 엔티티 있음 71 · facts 있음 46.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -103,7 +103,7 @@
 | KR | 유일로보틱스 | 388720 | — | — | — |
 | KR | 유진로봇 | 056080 | — | — | — |
 | KR | 유한양행 | 000100 | — | glp1_kbio_portfolio_candidates#T1,T2,T4 | — |
-| KR | 이수페타시스 | 007660 | — | hbm_pkg_theme_substrate#T1 · vcp_breakout_backtest#T4 | — |
+| KR | 이수페타시스 | 007660 | — | hbm_pkg_theme_substrate#T1,T2 · vcp_breakout_backtest#T4 | — |
 | KR | 이오테크닉스 | 039030 | — | — | — |
 | KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | — |
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
@@ -168,6 +168,7 @@
 | US | AMD | AMD.O | — | ai_chip_architecture_war#T1 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1 · hbm_pkg_theme_memory_cycle#T5 · 13f_2026q2#T4,T6 | — |
 | US | ASML | ASML.O | — | us_7axis_cross_valuation#T5 · ns_semiconductor_war#T4 | — |
 | US | Absci | ABSI.O | — | — | — |
+| US | Alibaba | BABA | ✓ 2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_val | — | — |
 | US | Alphabet | GOOGL.O | — | ai_value_chain_guide_v2#T1 · us_power_regulated_vs_merchant#T5 · ai_sw_overview#T2,T4 · us_7axis_cross_valuation#T2 · ns_bigtech_capex_roi#T1,T5 | — |
 | US | Amazon | AMZN.O | — | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · ai_value_chain_guide_v2#T1,T2 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · k_beauty_company_apr#T3 · ns_bigtech_capex_roi#T1 | — |
 | US | Amphenol | APH | ✓  | us_ai_adjacent_cross_valuation#T11,T4 · us_ai_adjacent_sectors#T2,T7 · us_epc_datacenter_build#T1 | — |
