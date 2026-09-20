@@ -78,7 +78,7 @@
 | KR | 셀트리온 | 068270 | — | ai_bio_investment_map#T4 · kr_bio_china_competition#T2 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
 | KR | 스피어 | 347700 | — | — | — |
 | KR | 실리콘투 | 257720 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T1,T2,T3,T4,T5 · k_beauty_sector#T1,T2,T3,T5 · kr_4sector_cross_valuation#T3 | — |
-| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6 · hbm_pkg_theme_substrate#T2,T3,T5 | — |
+| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | — |
 | KR | 씨메스로보틱스 | 475400 | — | — | — |
 | KR | 아모레퍼시픽 | 090430 | — | k_beauty_company_largecap_odm#T4 · k_beauty_sector#T1 · kr_4sector_cross_valuation#T3 | — |
 | KR | 아모센스 | 357580 | ✓ 4Q26 소재 매출 <7십억 · 본격 출하 지연 | us_bloom_intel_deep#T5 | — |
@@ -131,7 +131,7 @@
 | KR | 한국항공우주 | 047810 | — | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
 | KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 | — |
 | KR | 한선엔지니어링 | 452280 | ✓ OPM 20% 아래 2분기 · 2026 매출 720억 미만 | us_bloom_intel_deep#T5 | — |
-| KR | 한양디지텍 | 078350 | ✓ 2026-09-20 편입 · 같은 날 ①로 승격 — 외주로 나간 물건의 순수 노출. 이익은 왔는데 값이 안  | hbm_pkg_company_samsung#T6,T8 | 13 |
+| KR | 한양디지텍 | 078350 | ✓ 2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 | hbm_pkg_company_samsung#T6,T8 | 20 |
 | KR | 한전KPS | 051600 | — | ai_power_top5_picks#T1,T2 | — |
 | KR | 한전기술 | 052690 | — | ai_power_company_nuclear_smr#T1 · ai_power_top5_picks#T1 | — |
 | KR | 한화시스템 | 272210 | — | k_defense_company_hanwha_aero#T5 · k_defense_company_hanwha_systems_ocean#T1,T2,T3,T4 · k_defense_cross_valuation#T7,T8 · k_defense_investment_map#T1,T2,T4,T5 | — |

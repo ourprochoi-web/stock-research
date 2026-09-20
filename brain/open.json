@@ -286,17 +286,29 @@
   },
   {
    "id": "congress-ptr",
-   "grade": "측정",
+   "grade": "측정 완료",
    "since": "2026-09-20",
    "what": "🟢 하원 PTR 상시 수집 — 1차 실행 성공(09-20). 2026년 전체 공시 1,664건 중 PTR 26건(감시 5명) 수집 · 거래 100건 파싱(`intake/parse_ptr.py`). 측정된 한계 둘 — ① **텍스트 추출 12/26(46%)**: 실패 14건은 전부 구형 8자리 DocID(McCaul 6 · Khanna 8)로 스캔본 추정 → OCR 이 필요하거나 그 두 명은 건수만 안다 ② PTR 은 금액이 구간이라 비중 환산 불가(§J12-2). 남은 것 — 신규 PTR 이 뜰 때 §R2 로 라우팅하는 자리, 스캔본 OCR 여부 판단",
-   "updated": "2026-09-20"
+   "updated": "2026-09-20",
+   "updates": [
+    {
+     "date": "2026-09-20",
+     "text": "✅ 원문 대조 완료(②→①). egress allowlist 로 disclosures-clerk.house.gov 가 열려 세션에서 collect_congress.py 를 직접 돌렸다(2026 인덱스 1,664행 · PTR 26건). 아카이브가 보도로 확정해 둔 펠로시 8항목 전부 원문 일치 · 불일치 0건. 새로 셋 — ⓐ 같은 PTR 7번째 거래 REOF XXV, LLC(SF 호텔 LLC · 07/27 · $500,001~1,000,000)가 표에 없었다 ⓑ INTC 금액 구간(주식 $500,001~1M · 콜 $250,001~500K) 미기재 ⓒ 7건 전부 Owner=SP(배우자)인데 소유자 표기가 없었다. ⚠ 남은 것 — PTR 26건 중 텍스트 추출은 12건(46%)이고 14건은 스캔본(전부 구형 7~8자리 DocID · McCaul·Khanna). OCR 여부는 별도 과제."
+    }
+   ]
   },
   {
    "id": "trump-oge",
-   "grade": "측정",
+   "grade": "측정 완료 — 부정",
    "since": "2026-09-20",
    "what": "🔴 트럼프 = 거래 주체 판단 0편 · **수집 경로 미해결**. 09-20 1차 실행: `extapps2.oge.gov/201/Presiden.nsf/PAS+Index` 가 200 으로 열리는데 `$FILE/*.pdf` 링크가 **0건**이다(하원 다리는 26/26 성공). Domino 뷰가 프레임셋이거나 링크를 JS 로 그리는 것으로 보인다 [추론] — 다음 실행이 제목·프레임 링크·본문 앞 900자를 로그에 남기도록 계측했다(c-*-ogeprobe). 그 전까지 아는 것은 ② 보도뿐 — 278e 연례(2026-06-30 제출 · 2025년분 소득 $22억) · 278-T 거래 공시(1~3월 3,600건+ · $220M~750M · 8,940건 중 80% 지연). 재야 할 것은 그대로 — 3,600건이 종목 선택인가 채권·펀드 롤오버인가(분모 없이 「트럼프가 샀다」로 읽으면 §A7-0 위반) · DJT·WLFI 가 278-T 안에 잡히는가",
-   "updated": "2026-09-20"
+   "updated": "2026-09-20",
+   "updates": [
+    {
+     "date": "2026-09-20",
+     "text": "🔴 결론: <트럼프는 이 DB 소관이 아니다>. extapps2.oge.gov/201/Presiden.nsf/PAS+Index 를 열어 218명 전수 확인 — trump 0건. PAS = Presidentially Appointed, Senate-confirmed 이고 <대통령은 상원 인준 대상이 아니다>. 09-19 의 「$FILE 0건」은 고장이 아니라 정상이었다. 구조도 규명했다 — 프레임셋·iframe·JS 아니고 <카테고리가 접힌 Domino 뷰>다. 최상위는 인물 218행만 주고, 문서행은 ?OpenView&Start=1&Count=1000&Expand={N}(N=1..218) 로 펴야 나오며 링크는 작은따옴표다: /201/Presiden.nsf/PAS+Index/{UNID 32hex}/$FILE/{이름}-{MM.DD.YYYY}-278T.pdf (실물 200·5,996B·application/pdf 검증). 문서 라벨 6종: Annual(연도) · Annual Term · 278 Transaction(MM/DD/YYYY) · Nominee 278 · Ethics Agreement · Certification of Ethics Agreement Compliance. ⚠ 함정 — 뷰 이름은 `PAS+Index`(플러스)만 산다. 뷰가 뱉는 href 는 `PAS%20Index` 형이고 이쪽은 www.oge.gov 로 301 되는데 그 호스트는 여전히 프록시 403 이다. &ExpandView(전체 펴기)는 connection reset. 📌 다음 질문이 바뀐다 — 「트럼프 278-T 를 어디서 받나」가 아니라 <대통령의 거래 공시 의무가 어느 서식·어느 기관인가>다. 각료·PAS 인사는 이 DB 로 추적 가능하다."
+    }
+   ]
   },
   {
    "id": "vistra-gap",

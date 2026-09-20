@@ -5664,16 +5664,100 @@
      "page": "hbm-packaging/hbm_pkg_company_samsung.html"
     },
     "samsung_share": {
-     "value": 97.1,
+     "value": 97.2,
      "unit": "%",
-     "basis": "매출처 구성(시점 미표기)",
+     "basis": "FY2025 연결 · 부문별 매출처 합산",
      "asof": "2026-09-20",
-     "num": "삼성전자향 매출",
-     "den": "전체 매출",
-     "grade": "②",
-     "source": "2차 출처 · 원문 미개봉",
+     "num": "메모리모듈 65.5% + SSD 31.7%",
+     "den": "총매출 6,510.51억",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
      "page": "hbm-packaging/hbm_pkg_company_samsung.html",
-     "note": "모듈 82.1% + SSD 15% 구성도 같은 ② 출처 — 사업보고서로 재확인 필요"
+     "note": "원문이 매출처를 실명으로 적는다. 1H26 은 98.5%(64.2+34.3) · FY2023 은 97.0% — 시계열 안정. ②로 들고 있던 97.1% 는 맞았다"
+    },
+    "ssd_share_fy25": {
+     "value": 31.7,
+     "unit": "%",
+     "basis": "FY2025 연결",
+     "asof": "2026-09-20",
+     "num": "SSD 2,066.85억",
+     "den": "총매출 6,510.51억",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "1H26 은 34.3%. 아카이브가 ②로 들고 있던 「15%」는 FY2023 값이었다(원문 15.1%) — 2년 낡음"
+    },
+    "module_share_fy25": {
+     "value": 65.5,
+     "unit": "%",
+     "basis": "FY2025 연결",
+     "asof": "2026-09-20",
+     "num": "메모리모듈 4,256.57억",
+     "den": "총매출 6,510.51억",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "1H26 은 64.2%. ②의 「82.1%」는 FY2023 값(원문 81.9%)"
+    },
+    "ssd_growth_2y": {
+     "value": 186.6,
+     "unit": "%",
+     "basis": "FY2023 → FY2025",
+     "asof": "2026-09-20",
+     "num": "SSD 매출 721.01억 → 2,066.85억",
+     "den": "기준 721.01억",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "[추론] 같은 기간 모듈은 3,919.93 → 4,256.57억으로 +8.6% — 성장은 SSD 가 만들었다"
+    },
+    "material_to_rev": {
+     "value": 88.0,
+     "unit": "%",
+     "basis": "FY2025 연결",
+     "asof": "2026-09-20",
+     "num": "원재료 매입 5,731.76억",
+     "den": "총매출 6,510.51억",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "OPM 5.96% 상한의 실제 원인. 모듈 3,580.42억 + SSD 2,151.35억"
+    },
+    "util_module": {
+     "value": 81.82,
+     "unit": "%",
+     "basis": "FY2025(제22기) 평균가동률",
+     "asof": "2026-09-20",
+     "num": "실제가동 7,167시간",
+     "den": "가동가능 8,760시간",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "원문 주석 — 상승 사유가 물량이 아니라 「서버향·고용량 증가로 시간당 생산수량 감소」다"
+    },
+    "util_ssd": {
+     "value": 63.89,
+     "unit": "%",
+     "basis": "FY2025(제22기) 평균가동률",
+     "asof": "2026-09-20",
+     "num": "실제가동 5,596시간",
+     "den": "가동가능 8,760시간",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "모듈 81.82% 대비 여유 — 외주 물량을 받을 자리"
+    },
+    "pcb_price_ssd": {
+     "value": 2.92,
+     "unit": "USD/개",
+     "basis": "FY2025 · 주요 PCB 총매입금액÷총수량",
+     "asof": "2026-09-20",
+     "num": "SSD PCB 매입액",
+     "den": "수량",
+     "grade": "①",
+     "source": "DART 사업보고서 제22기 rcpNo 20260316001638(2026-03-16) 「II. 사업의 내용」 · intake/files/dart/2026-09-20/",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "제21기 2.40 · 제20기 2.15 → 2년 +35.8%. 같은 기간 SSD 평균판매단가는 20,138원으로 전기 22,394원 대비 −10.1%"
     }
    }
   },
