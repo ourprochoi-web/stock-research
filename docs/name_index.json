@@ -1228,7 +1228,7 @@
    "market": "KR",
    "entity": "005930",
    "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
-   "facts": 0,
+   "facts": 7,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
@@ -4433,6 +4433,9 @@
     ],
     "defense/us_defense_primes.html": [
      "T1"
+    ],
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T4"
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T2",

@@ -7756,6 +7756,102 @@
      "note": "중국 19.3% · 미국 12.9% · 베트남 2.7% · 대만 1.4% · 기타 10.0%. 전반기 대비 미국 +51.7% · 기타 +108.3%"
     }
    }
+  },
+  "005930": {
+   "name": "삼성전자",
+   "ticker": "005930",
+   "market": "KR",
+   "layer": "메모리 + 파운드리 + 시스템LSI",
+   "canonical_page": "hbm-packaging/hbm_pkg_company_samsung.html",
+   "intake": [
+    "c-20260920-f08",
+    "u-20260920-26"
+   ],
+   "metrics": {
+    "hbm_wafer_input_2026": {
+     "value": 18,
+     "unit": "만장/월",
+     "basis": "업계 추정",
+     "asof": "2026-09-20",
+     "num": "삼성 HBM 월평균 웨이퍼 투입량",
+     "den": "—",
+     "grade": "②",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "2027E 25만장 → +38.9%"
+    },
+    "hbm_wafer_input_2027e": {
+     "value": 25,
+     "unit": "만장/월",
+     "basis": "업계 전망",
+     "asof": "2026-09-20",
+     "num": "삼성 HBM 월평균 웨이퍼 투입량",
+     "den": "—",
+     "grade": "③",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "hbm4_share_2026": {
+     "value": 40,
+     "unit": "%",
+     "basis": "업계 추정",
+     "asof": "2026-09-20",
+     "num": "HBM4 계열 출하",
+     "den": "전체 HBM 출하",
+     "grade": "②",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "2027E 약 80% 전망(③)"
+    },
+    "hbm4_wafer_multiple": {
+     "value": 2.78,
+     "unit": "배",
+     "basis": "2027E ÷ 2026",
+     "asof": "2026-09-20",
+     "num": "25만 × 80% = 20.0만장",
+     "den": "18만 × 40% = 7.2만장",
+     "grade": "②/③",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "🔑 전체 캐파는 +38.9% 만 늘고 HBM4 계열이 2.78배가 된다 — <물량 공세>가 아니라 <믹스 전환>이다. 이 구분이 판정의 성격을 바꾼다: 물량이면 HBM 전반의 가격 압력이고, 믹스면 HBM4 세대의 <점유율 경쟁>이다. 이미 걸린 이벤트(삼성 HBM 금액 점유율 JPM ③ 2025 20% → 2026E 34% → 2027E 39%)와 정합적이다 — 금액 점유율이 오르는 이유가 웨이퍼가 아니라 믹스"
+    },
+    "glass_carrier_cleaning": {
+     "value": 5,
+     "unit": "만장/월",
+     "basis": "2027 계획",
+     "asof": "2026-09-20",
+     "num": "외주 세정 물량",
+     "den": "—",
+     "grade": "②",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "2025 1만 → 2026 2만 → 2027 5만장(2년에 5배). ⚠ 캐리어는 세정 후 <반복 사용>된다 — 기사도 「재사용·공정별 투입·수율을 고려하더라도」 2.5배면 생산 최소 2배로 본다. 웨이퍼로 직접 세면 HBM4 계열 2.78배라 「최소 2배」는 보수적 표현"
+    },
+    "glass_carrier_outsourcer": {
+     "value": null,
+     "unit": "—",
+     "basis": "원문에 없다",
+     "asof": "2026-09-20",
+     "num": "—",
+     "den": "—",
+     "grade": "미측정",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": null,
+     "note": "🔴 외주 세정 <업체명이 원문에도 없다>(「반도체 업계에 따르면」뿐). 추측해서 종목을 대지 않는다 — 오늘 해성디에스에서 라벨을 잘못 붙인 실수의 반복이 된다. 후보군 중 코미코(183300)만 WATCH 에 있고 원익QnC·한솔아이원스·미코·예스티·저스템은 미등록. 업체가 확인되면 그때 판단한다"
+    },
+    "hbm4_mass_production_start": {
+     "value": "2026-02",
+     "unit": "—",
+     "basis": "양산 출하 개시",
+     "asof": "2026-09-20",
+     "num": "10나노급 6세대(1c) D램 + 4나노 공정 베이스다이",
+     "den": "—",
+     "grade": "②",
+     "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "🔑 세 번째 독립 출처다 — 이세철 인터뷰(③ 09-20) · 전시 실물 사진(② 09-20) · 이 기사(② 09-20). 이제 ① 에 가깝다. HBM4E 12단 샘플은 2026-05 엔비디아 등에 제공"
+    }
+   }
   }
  },
  "macro": {
