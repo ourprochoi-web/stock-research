@@ -39,4 +39,13 @@ jobs:
           git add intake/collected.jsonl intake/files/sec
           git diff --cached --quiet && exit 0
           git commit -m "📥 intake: SEC XBRL 스냅샷 ($(date +%Y-%m-%d))"
+          # 2026-09-20: main 에 동시 푸시가 흔해졌다(시세 봇 · 수집기 3종 · 세션 여럿).
+          #   재시도 없이 push 하면 먼저 올린 쪽이 이기고 이쪽 수집분이 조용히 사라진다
+          #   — 실제로 났다(collect-fetch run 35485990057: 수집 성공 · 커밋 성공 · push 거절 · 결과 소실).
+          #   .gitattributes 의 merge=union 이 JSONL 의 append 충돌을 자동 해소한다(§H2).
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((i * 3))
+            git pull --rebase --autostash origin main || exit 1
+          done
           git push

@@ -1,0 +1,8 @@
+# 2026-09-20 — 수집 층의 append-only JSONL 은 union 병합한다.
+#   main 에 동시 푸시가 흔해졌다: 시세 봇(평일 16:30) · 수집기 3종(SEC·의회·URL) · 세션 여럿.
+#   기본 병합은 파일 끝 append 끼리 충돌로 보고 한쪽을 버리게 만드는데, CLAUDE.md §H2 는
+#   「봇 줄과 내 줄을 둘 다 살린 뒤 id 중복만 제거」라고 정해 놨다. union 이 그 규칙이다.
+#   ⚠ union 은 중복 줄을 만들 수 있다 — id 중복 제거는 여전히 사람/훅의 몫이다.
+intake/collected.jsonl merge=union
+intake/user.jsonl       merge=union
+brain/routing.jsonl     merge=union
