@@ -1658,6 +1658,123 @@
     "u-20260920-02"
    ],
    "note": "2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_value_chain_guide_v2 T5 의 「六張網」 서술로만 있다"
+  },
+  "078350": {
+   "name": "한양디지텍",
+   "ticker": "078350",
+   "market": "KOSDAQ",
+   "layer": "메모리 모듈·SSD 조립(SMT) — 삼성 외주화의 2층",
+   "business": "서버 메모리 모듈 + 서버 SSD SMT. 매출 구성 모듈 82.1% · SSD 15% · IP통신 1.7% · 기타 1.2%, 고객의 97.1%가 삼성전자. 2004-04 한양이엔지 메모리모듈 사업부 분할 설립·코스닥 직상장, 2019년 생산기지 중국→베트남 이전. 실적 — 1H26 매출 3,232.09억(+47.89% YoY) · OP 210.54억(+177.57%) · 2Q26 매출 1,556.80억(+42.70%) · OP 98.98억(OPM 6.4%)",
+   "business_grade": "②(2차 출처 · 원문 미개봉 · 사업보고서·네이버 원장 미대조)",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T6",
+    "hbm-packaging/hbm_pkg_company_samsung.html#T8"
+   ],
+   "intake": [
+    "u-20260917-08",
+    "u-20260920-03"
+   ],
+   "note": "2026-09-20 편입 — 삼성이 외주로 내보낸 물건(DDR5 모듈·SSD)의 순수 노출. 값이 전부 ②라 WATCH 편입으로 정본 측정을 Actions 수집에 넘겼다"
+  },
+  "192650": {
+   "name": "드림텍",
+   "ticker": "192650",
+   "market": "KOSPI",
+   "layer": "EMS — 스마트폰·전장·바이오 + (신규) 인도 메모리 모듈",
+   "business": "본체는 스마트폰 모듈·전장·바이오 EMS. 2024년 국내 메모리 고객사의 공급망 다변화로 인도 메모리모듈 공급사 신규 선정 → 2025-10 첫 진입, 인도 데이터센터向 서버용 공급. 글로벌 빅테크 6사 중 2사 퀄 테스트 완료, 9월 인도 증설 완료로 4Q26 본격 양산, SSD는 하반기 신규 진입. 2026E 매출 1조 4,048억(+14.8% YoY) · OP 748억(+107.9%)",
+   "business_grade": "③(하우스 전망 · 인도 진입은 ② 보도)",
+   "pages": [
+    "hbm-packaging/hbm_pkg_company_samsung.html"
+   ],
+   "facts": [],
+   "theses": [
+    "hbm-packaging/hbm_pkg_company_samsung.html#T8"
+   ],
+   "intake": [
+    "u-20260917-08",
+    "u-20260920-03"
+   ],
+   "note": "2026-09-20 편입 — 같은 2층인데 메모리모듈 매출 비중이 미공개라 분모가 없다(§W2). 그래서 값이 아니라 관측이다"
+  },
+  "VST": {
+   "name": "Vistra Corp",
+   "ticker": "VST",
+   "market": "NYSE",
+   "layer": "미국 상인형 전력 — 소매 + 발전(원전 약 6.6GW 포함 총 약 44GW)",
+   "business": "Retail/Texas/East/West/Asset Closure 5부문. 서명 완료 20년 PPA 약 3.8GW — AWS向 Comanche Peak 최대 1,200MW(2027-4Q 인도 개시~2032 램프) + Meta向 PJM 원전 2,609MW(가동분 2,176MW 2026말~2027말 · 업레이트 433MW 2031~2034). 계약단가 미공개. ① TTM(2025Q3~2026Q2) 매출 $19.21B · OP $3.56B(18.5%) · EBITDA $5.42B · OCF $5.12B · CapEx $2.87B · FCF $2.25B · 순부채 $19.16B(ND/EBITDA 3.53배). ③ FY26 가이던스 Adj EBITDA $6.8~7.6B · Adj FCFbG $3.925~4.725B",
+   "business_grade": "① 재무는 SEC XBRL · ② 시총·PPA 보도 · ③ 가이던스",
+   "pages": [
+    "ai-infra/us_power_regulated_vs_merchant.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_power_regulated_vs_merchant.html#T8"
+   ],
+   "intake": [
+    "u-20260920-04"
+   ],
+   "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중"
+  },
+  "NRG": {
+   "name": "NRG Energy",
+   "ticker": "NRG",
+   "market": "NYSE",
+   "layer": "미국 상인형 전력 — 소매(약 600만 고객) + 발전 + Vivint Smart Home + CPower",
+   "business": "2026-01-30 LS Power 포트폴리오 인수 완료(가스·이중연료 18개소 약 13GW · 발전용량 2배). 지역 믹스 ERCOT 50% / PJM 39% / ISO-NE 8% / NYISO 3%. 원전 없음 — 2023-11 South Texas Project 44% 지분을 Constellation에 $1.75B 매각. 하이퍼스케일러 건은 「주요 상업조건 합의」 단계(정식 PPA 아님) — 텍사스 1.2GW 신설 가스 · 투자 $3.2B · 2029년말 COD · 목표 연 Adj EBITDA $500M. ① TTM 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B · OCF $1.55B · FCF $0.35B · 순부채 $23.23B(ND/EBITDA 6.31배 · 부채 2024-12 $10.89B→2026-06 $23.39B). ③ FY26 가이던스 Adj EBITDA $5.325~5.825B · FCFbG $2.8~3.3B · 재무정책 Net Debt/EBITDA 3.0배 미만",
+   "business_grade": "① 재무는 SEC XBRL · ② 시총·인수·하이퍼스케일러 보도 · ③ 가이던스",
+   "pages": [
+    "ai-infra/us_power_regulated_vs_merchant.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/us_power_regulated_vs_merchant.html#T8"
+   ],
+   "intake": [
+    "u-20260920-04"
+   ],
+   "note": "2026-09-20 판단 신설. 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것"
+  },
+  "CBRS": {
+   "name": "Cerebras Systems",
+   "ticker": "CBRS",
+   "market": "NASDAQ",
+   "layer": "웨이퍼스케일 AI 반도체 + 추론 클라우드",
+   "business": "WSE 기반 AI 시스템 하드웨어 + 추론 클라우드. 2026-05-14 IPO(공모가 $185 · 3,000만주 · 조달 $5.55B ②). ① 1H26 매출 $373.5M(1H25 $202.8M) · 2Q26 $180.1M(QoQ −6.9%) · GAAP GPM 14.2% · OP −$477.2M · CapEx 1H26 $548.9M · D&A $42.6M · 현금 $6.74B · 자본 $9.15B. ② RPO $25.4B(24개월 인식분 약 22%) · 분기 SBC $386.6M · 2Q26 3개 고객 34/32/10%=76%(이름 미공개) · FY25 G42 24%+MBZUAI 62%=86%. ② OpenAI MRA(2025-12 · 750MW · 금액 보도 $20B/$10B 상충) · AWS Bedrock 2027-1Q 개시. ③ FY26 core 가이던스 $880~890M",
+   "business_grade": "① 재무는 SEC XBRL · ② 계약·고객·시총 · ③ 가이던스(core는 비GAAP)",
+   "pages": [
+    "ai-infra/ai_chip_architecture_war.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-infra/ai_chip_architecture_war.html#T5"
+   ],
+   "intake": [
+    "u-20260920-04"
+   ],
+   "note": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다"
+  },
+  "NTRA": {
+   "name": "Natera",
+   "ticker": "NTRA",
+   "market": "NASDAQ",
+   "layer": "분자진단(cfDNA/ctDNA) — Women's Health · Oncology(Signatera) · Organ Health(Prospera)",
+   "business": "검사 물량 × 보험 상환단가(ASP)가 사업의 실체. ① TTM 매출 $2,707M(8분기 연속 증가 $440M→$753M) · OP −$290M(−10.7%) · OCF +$228M · CapEx $144M · FCF +$84M · D&A $53M. ② 2Q26 검사 104만건 · Signatera 임상 MRD 28.3만 유닛(+56.4% YoY) · ASP 약 $1,275 · GPM 64.5%(+110bp). ②③ Medicare FFS 요율 $1,495가 2026~2027년 고정. ② 우발채무 Guardant Health 배심 평결 $292.5M(제9연방항소법원 계류 25-5503). ③ FY26 가이던스 매출 $2,850~2,910M · GM 64~66%",
+   "business_grade": "① 재무는 SEC XBRL · ② 물량·ASP·소송 · ③ 가이던스",
+   "pages": [
+    "ai-bio/ai_bio_investment_map.html"
+   ],
+   "facts": [],
+   "theses": [
+    "ai-bio/ai_bio_investment_map.html#T5"
+   ],
+   "intake": [
+    "u-20260920-04"
+   ],
+   "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

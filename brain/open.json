@@ -309,6 +309,20 @@
    "grade": "측정",
    "since": "2026-09-20",
    "what": "🔵 유리섬유(E-glass) — 기판 해자의 세 번째 층. Citi 이수페타시스 NDR(③ 09-19)이 핵심 병목으로 지목: 원재료 리드타임이 길어졌고 최종 고객이 CCL·유리섬유 업체와 직접 협의해 물량을 배정시킨다. 회사는 수요의 40%만 충족 중. 아카이브는 substrate T1 에서 ABF(Ajinomoto 95% 독점)·고층수(Ibiden)까지만 보고 있었다. 재야 할 것 — ① E-glass 공급자가 누구인가(니토보 Nitto Boseki 가 ai_value_chain T3 에 이미 있다) ② 「일반 E-glass」와 Low-Dk 특수 유리의 구분 ③ CCL 3사(이수·두산·신에츠) 중 누가 원재료를 쥐는가"
+  },
+  {
+   "id": "osat-layer",
+   "grade": "측정",
+   "since": "2026-09-20",
+   "what": "🔴 삼성 외주화의 수혜 층이 셋인데 아카이브는 하나만 쥐고 있었다. 09-17 intake(디일렉 u-20260917-08)가 「드림텍(인도)·한양디지텍(베트남)·SFA(필리핀)」 셋을 적었는데 그날 라우팅은 SFA 하나만 테제로 세웠고 나머지 둘은 이유 없이 버렸다(§R2의 ⓒ 규칙 위반). 재야 할 것 — ① 한양디지텍 3Q26 OPM(2Q 6.4% 유지 여부)과 삼성 매출 비중 97.1%의 출처 확인 ② 드림텍 인도 메모리모듈 매출이 별도 표기되는가(분모가 없으면 값이 아니다) ③ 0편으로 남은 국내 OSAT 넷 — 하나마이크론·네패스·엘비세미콘·시그네틱스가 이 외주화에서 어디에 서는가 ④ 값이 전부 ②인 이유 — 이 세션에서 m.stock.naver.com(프록시 403)·comp.wisereport.co.kr·incheonilbo.com이 전부 차단이었다. WATCH 편입했으니 Actions 수집으로 정본을 받는다",
+   "updates": []
+  },
+  {
+   "id": "us-merchant-page",
+   "grade": "측정",
+   "since": "2026-09-20",
+   "what": "🔵 13F 공백 4사(VST·NRG·NTRA·CBRS) 판단은 브레인에 섰는데 페이지가 없다 — 그래서 facts.json에 못 넣었다(정본 페이지가 산출한 뒤에만 등재). 값은 intake/files/sec/_ttm_summary.json에 있다. 페이지를 쓸 자리 후보 — ① us_power_regulated_vs_merchant를 「미국 전력」으로 확장(Talen 중심이라 상인형 2강이 본문에 없다) ② ai_chip_architecture_war에 웨이퍼스케일 층 추가 ③ ai_bio_investment_map 12사에 Natera 추가. 채우지 못한 칸 — CBRS 2Q26 3개 고객(34/32/10%) 이름 · VST AWS·Meta PPA 계약단가 · NRG 하이퍼스케일러 이름 · NTRA 상업보험 커버 인구수·제품라인별 매출",
+   "updates": []
   }
  ]
 }

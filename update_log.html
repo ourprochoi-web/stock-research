@@ -213,7 +213,7 @@ a:hover{text-decoration:underline}
   "description":"109편 리서치 페이퍼 주별 업데이트 이력 추적",
   "author":{"@type":"Person","name":"ourprochoi"},
   "datePublished":"2026-08-06",
-  "dateModified":"2026-09-19",
+  "dateModified":"2026-09-20",
   "publisher":{"@type":"Organization","name":"ourprochoi Research"}
 }
 </script>
@@ -251,6 +251,33 @@ a:hover{text-decoration:underline}
   <span class="week-badge badge-amber">11편 업데이트</span>
   <span class="week-badge badge-blue">정정 3건</span>
   <span class="week-badge badge-green">포트폴리오 4건 종결</span>
+</div>
+
+<div class="day">
+  <div class="day-date">🔴 2026.09.20 — <b style="color:#b3261e">삼성 외주화 수혜 층 정정(T6 관측→도전)</b> · <b>13F 공백 4사(Cerebras·Vistra·NRG·Natera) 판단 신설</b> · 추적 +3</div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">정정</span> 🔴 <b>수혜 층이 셋인데 아카이브는 하나만 쥐고 있었다 — 이익은 SFA가 아니라 모듈 조립에서 먼저 왔다</b></div>
+    <div class="upd-body">
+      사용자 질문(「삼성전자 외주 수혜회사는 어디가 수혜를 볼까?」)에서 나왔다. <a href="hbm-packaging/hbm_pkg_company_samsung.html">삼성 편 T6</a>은 <b>「삼성의 범용 후공정 외주화는 국내 OSAT 중 SFA반도체에서 <u>처음</u> 측정된다」</b>였는데, <b>「처음」이 틀렸다</b>.<br>
+      외주로 나간 물건은 <b>DDR5 모듈·SSD</b>인데 <b>SFA반도체가 받는 것은 FBGA 패키징과 필리핀 최종테스트</b>다 — 칩 후공정이지 모듈이 아니다. 층을 갈라 보면 셋이다:
+      <b>① 칩 후공정</b>(SFA반도체 · 2Q26 매출 1,263억 +66%에 <b>OP −62억</b> <b>①</b>) · <b>② 모듈·SSD 조립(SMT)</b>(<b>한양디지텍</b> 078350 — 매출 82.1% 모듈 + 15% SSD · 고객 97.1% 삼성 · <b>1H26 매출 3,232억 +47.9% · OP 210.5억 +177.6% · 2Q26 OPM 6.4%</b> <b>②</b> / 드림텍 192650 인도 라인 <b>③</b>) · <b>③ 모듈 기판</b>(티엘비·심텍 — 이미 추적).<br>
+      <b>🔑 이익이 먼저 온 자리는 ②층인데 판단 0편이었다.</b> 📌 다만 <b>②층이 좋은 사업이라는 뜻은 아니다</b> — OPM 6.4%는 SMT의 구조적 수준이고 <b>물량을 주는 손과 단가를 정하는 손이 같다</b>(삼성 97.1%).<br>
+      <b>⚠ 원인은 새 정보가 아니다</b> — 09-17 수집분(디일렉)이 이미 <b>「드림텍(인도)·한양디지텍(베트남)·SFA(필리핀)」 셋</b>을 적어 놨는데 그날 라우팅이 <b>SFA 하나만 세우고 나머지 둘을 이유 없이 버렸다</b>(§R2 ⓒ 규칙). → <b>T6 status 관측→도전 · T8 신설</b>.<br>
+      <b>⚠ 값 등급</b> — 한양디지텍 수치는 전부 <b>②</b>다. 이 세션에서 <code>m.stock.naver.com</code>(프록시 CONNECT 403) · <code>comp.wisereport.co.kr</code> · <code>incheonilbo.com</code>이 모두 차단이고 09-18 재무 스냅샷 225종목에도 없다 → <b>시세 추적 편입</b>으로 정본 측정을 다음 수집에 넘겼다(§W5).
+    </div>
+  </div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">신설</span> 🔵 <b>13F 상위 보유인데 판단 0편이던 4사 — 회사가 말하는 숫자와 원장이 갈린 자리가 판단이다</b></div>
+    <div class="upd-body">
+      SEC 원문이 이 세션에서 차단(<code>data.sec.gov</code> CONNECT 403)이라 <b>GitHub Actions 러너로 XBRL을 받아</b>(<code>intake/requests/sec_tickers.txt</code> 푸시 트리거) TTM(2025Q3~2026Q2)을 직접 재구성했다 — 아래 수치는 <b>①</b>이고 시총·계약·가이던스는 <b>②③</b>다.<br>
+      <b>· Vistra vs NRG</b>(<a href="ai-infra/us_power_regulated_vs_merchant.html">미국 전력 편 T8 신설</a>) — 시총/EBITDA로는 NRG가 반값으로 보이는데 <b>EV/EBITDA(TTM)는 12.27배 vs 12.25배로 동률</b>이다. 차이는 전부 부채다: <b>ND/EBITDA 6.31배(NRG) vs 3.53배(VST)</b>, FCF <b>$0.35B vs $2.25B</b>. NRG 부채는 <b>$10.89B(2024-12) → $23.39B(2026-06), 18개월 +115%</b>(LS Power 13GW 인수). EV/시총이 2.06 vs 1.41이라 <b>같은 10% EV 하락이 NRG 주주에게 −20.6%, VST 주주에게 −14.1%</b>로 온다.<br>
+      <b>· Cerebras</b>(<a href="ai-infra/ai_chip_architecture_war.html">아키텍처 전쟁 편 T5 신설</a>) — GAAP 매출이 <b>1Q26 $193.4M → 2Q26 $180.1M(QoQ −6.9%)</b>인데 회사가 말하는 +103%는 core(비GAAP)다. 그리고 <b>1H26 CapEx $548.9M에 감가상각 $42.6M</b> — 지금의 적자는 IPO 주식보상(<b>②</b> 분기 $386.6M)이지만 <b>비용이 아직 도착하지 않았다</b>.<br>
+      <b>· Natera</b>(<a href="ai-bio/ai_bio_investment_map.html">AI 바이오 지도 T5 신설</a>) — TTM 영업적자 <b>−$290M</b>에서 OCF <b>+$228M</b>까지의 다리 <b>$518M</b>을 감가상각 <b>$53M</b>으로는 못 메운다. <b>희석이 메운다.</b> 물량은 진짜인데(8분기 연속 증가 · Signatera +56% YoY) Medicare 요율 $1,495가 <b>2027년까지 고정</b>이다(<b>②③</b>).<br>
+      <b>⚠ 태그 함정</b> — VST·NRG는 <code>us-gaap:Revenues</code>가 회사 발표치와 맞고 <code>RevenueFromContractWithCustomer…</code>는 다르다(2Q26 VST 4,017 vs 4,401). NTRA는 반대다(<code>Revenues</code>가 2017년에 끊긴다). 태그를 고정하면 틀린다.<br>
+      <b>📌 페이지가 없어 <code>facts.json</code>에는 넣지 않았다</b>(정본 페이지가 산출한 뒤에만 등재) — 값은 <code>intake/files/sec/_ttm_summary.json</code>에 있고 <code>brain/open.json</code>의 <code>us-merchant-page</code>로 남긴다.<br>
+      <b>추적 편입 3</b> — 한양디지텍(078350) · 드림텍(192650) · Natera(NTRA.O). Cerebras는 2026-08-23에 이미 들어와 있었다(중복 키 회피).
+    </div>
+  </div>
 </div>
 
 <div class="day">

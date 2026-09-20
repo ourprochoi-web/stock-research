@@ -325,6 +325,9 @@
     "ai-infra/us_bloom_intel_deep.html": [
      "T5"
     ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T8"
+    ],
     "ai-sw/ai_sw_company_anthropic.html": [
      "T1"
     ],
@@ -846,6 +849,21 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "드림텍": {
+   "code": "192650",
+   "market": "KR",
+   "entity": "192650",
+   "falsifier": "2026-09-20 편입 — 같은 2층인데 메모리모듈 매출 비중이 미공개라 분모가 없다(§W2). 그래서 값이 아니라 관측이다",
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T6",
+     "T8"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "디아이": {
    "code": "003160",
    "market": "KR",
@@ -1087,7 +1105,8 @@
      "T4",
      "T5",
      "T6",
-     "T7"
+     "T7",
+     "T8"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T1",
@@ -1120,7 +1139,8 @@
      "T4",
      "T5",
      "T6",
-     "T7"
+     "T7",
+     "T8"
     ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T5"
@@ -1376,6 +1396,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T6"
+    ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T2",
      "T3",
@@ -1930,7 +1953,8 @@
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
      "T6",
-     "T7"
+     "T7",
+     "T8"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T1",
@@ -2001,6 +2025,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T6"
+    ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T2",
      "T3"
@@ -2289,6 +2316,21 @@
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
      "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한양디지텍": {
+   "code": "078350",
+   "market": "KR",
+   "entity": "078350",
+   "falsifier": "2026-09-20 편입 — 삼성이 외주로 내보낸 물건(DDR5 모듈·SSD)의 순수 노출. 값이 전부 ②라 WATCH 편입으로 정본 측정을 Actions 수집에 넘겼다",
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T6",
+     "T8"
     ]
    },
    "aliases": [],
@@ -3146,14 +3188,15 @@
   "Cerebras": {
    "code": "CBRS.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "CBRS",
+   "falsifier": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다",
    "facts": 0,
    "theses": {
     "ai-infra/ai_chip_architecture_war.html": [
      "T1",
      "T2",
-     "T4"
+     "T4",
+     "T5"
     ],
     "research/13f_2026q2.html": [
      "T4",
@@ -4077,10 +4120,13 @@
   "NRG Energy": {
    "code": "NRG",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "NRG",
+   "falsifier": "2026-09-20 판단 신설. 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것",
    "facts": 0,
    "theses": {
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T8"
+    ],
     "market/us_7axis_cross_valuation.html": [
      "T3"
     ]
@@ -4172,6 +4218,23 @@
    "aliases": [
     "엔비디아"
    ],
+   "auto_candidate": true
+  },
+  "Natera": {
+   "code": "NTRA.O",
+   "market": "US",
+   "entity": "NTRA",
+   "falsifier": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것",
+   "facts": 0,
+   "theses": {
+    "ai-bio/ai_bio_investment_map.html": [
+     "T5"
+    ],
+    "research/13f_2026q2.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
    "auto_candidate": true
   },
   "Nebius": {
@@ -4843,15 +4906,16 @@
   "Vistra": {
    "code": "VST",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "VST",
+   "falsifier": "2026-09-20 판단 신설 — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
    "facts": 0,
    "theses": {
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T1",
+     "T8"
+    ],
     "ai-infra/ai_dc_miner_conversion.html": [
      "T2"
-    ],
-    "ai-infra/us_power_regulated_vs_merchant.html": [
-     "T1"
     ],
     "market/kr_drawdown_2026.html": [
      "T8"
