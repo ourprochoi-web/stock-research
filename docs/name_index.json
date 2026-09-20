@@ -489,6 +489,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "SK가스": {
+   "code": "018670",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "SK바이오팜": {
    "code": "326030",
    "market": "KR",
@@ -526,6 +536,20 @@
      "T6"
     ],
     "research/vcp_breakout_backtest.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SK이노베이션": {
+   "code": "096770",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "energy/oil_hedge_vehicles.html": [
      "T4"
     ]
    },
@@ -2282,6 +2306,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "포스코인터내셔널": {
+   "code": "047050",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "포스코퓨처엠": {
    "code": "003670",
    "market": "KR",
@@ -2376,6 +2410,16 @@
      "T4"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한국가스공사": {
+   "code": "036460",
+   "market": "KR",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },

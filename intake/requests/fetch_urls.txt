@@ -36,13 +36,3 @@
 #    스냅샷에는 회사명 필드가 없어 <틀린 코드는 조용히 다른 회사를 받아온다> — 등록 전에 이름을 대조한다.
 #    세션에서 m.stock.naver.com·api.stock.naver.com 이 CONNECT 403(조직 정책)이라 러너로 돌린다.
 #    받은 뒤 stockName 을 대조해 맞는 것만 update_prices.py WATCH 에 넣는다.
-
-# ── 2026-09-20 (7) 국내 LNG 4사 티커 검증 — 하나증권 LNG 노트(09-20)의 Top Picks 4 중 3이 국내인데
-#    아카이브에 <하나도 없다>(WATCH 234종목·스냅샷 225개에 포스코인터·SK가스·SK이노·한국가스공사 0).
-#    오늘 아침 반도체 소재 층이 0개였던 것과 같은 구조적 구멍이다.
-#    ⚠ 등록 전에 stockName 을 대조한다 — 아침에 155650 을 「오알켐」이라 적었는데 와이엠씨였다(17건에 1건).
-nv_047050 | https://m.stock.naver.com/api/stock/047050/basic
-nv_018670 | https://m.stock.naver.com/api/stock/018670/basic
-nv_096770 | https://m.stock.naver.com/api/stock/096770/basic
-nv_036460 | https://m.stock.naver.com/api/stock/036460/basic
-nv_010950 | https://m.stock.naver.com/api/stock/010950/basic
