@@ -40,7 +40,7 @@
 | 2026.09.07 | 2026-09-07 | [브로드컴 — 받을 것과 물어줄 것을 동시에 가진 회사](ai-infra/ai_chip_company_broadcom.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [HBM/패키징 투자 지도 — 크로스 밸류에이션](hbm-packaging/hbm_pkg_investment_map.html) | 5 |
 | 2026.09.06 ⚠ | 2026-09-14 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
-| 2026.09.06 | 2026-09-06 | [전력 크로스 밸류에이션 지도 — 배수를 비즈니스 질로 나누면 저평가가 갈린다](ai-infra/kr_power_cross_valuation.html) | 0 |
+| 2026.09.06 ⚠ | 2026-09-20 | [전력 크로스 밸류에이션 지도 — 배수를 비즈니스 질로 나누면 저평가가 갈린다](ai-infra/kr_power_cross_valuation.html) | 0 |
 | 2026.09.03 | 2026-09-03 | [중국 바이오 위협 — 「누가 위험한가」는 매출의 성격이 답한다](ai-bio/kr_bio_china_competition.html) | 6 |
 | 2026.09.03 | 2026-09-03 | [중국 AI 공급망 84사 — 내수 폐쇄계인가, 글로벌 경쟁자인가](national-strategy/ns_cn_ai_supply_chain.html) | 5 |
 | 2026.09.01 | 2026-09-01 | [2차전지 밸류체인 — 양극재·음극재·분리막·전해질 투자 지도](energy/energy_battery_valuechain_update.html) | 5 |
@@ -745,7 +745,7 @@
 
 ## 전력 크로스 밸류에이션 지도 — 배수를 비즈니스 질로 나누면 저평가가 갈린다
 
-`ai-infra/kr_power_cross_valuation.html` · 판단 2026.09.06 · 갱신 2026-09-06
+`ai-infra/kr_power_cross_valuation.html` · 판단 2026.09.06 · 갱신 2026-09-20
 
 - (테제 헤드라인을 기계적으로 못 잘랐다 — 페이지를 연다)
 
