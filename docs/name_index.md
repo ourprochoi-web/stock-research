@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-20)
 
-추적 304개 · 테제가 걸린 이름 190 · 엔티티 있음 77 · facts 있음 62.
+추적 304개 · 테제가 걸린 이름 190 · 엔티티 있음 77 · facts 있음 63.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -43,7 +43,7 @@
 | KR | 기아 | 000270 | — | — | — |
 | KR | 뉴로메카 | 348340 | — | — | — |
 | KR | 달바글로벌 | 483650 | — | k_beauty_company_largecap_odm#T4 · k_beauty_company_silicon2#T3 | — |
-| KR | 대덕전자 | 353200 | — | hbm_pkg_theme_substrate#T2,T3 | — |
+| KR | 대덕전자 | 353200 | — | hbm_pkg_theme_substrate#T2,T3 | 6 |
 | KR | 대한광통신 | 010170 | ✓  | — | 5 |
 | KR | 대한전선 | 001440 | — | ai_power_company_cable_wire#T1,T3,T4 · kr_power_10_deep#T1,T3 · kr_power_cross_valuation#T3,T4 | — |
 | KR | 덕산네오룩스 | 213420 | — | — | — |
@@ -84,7 +84,7 @@
 | KR | 솔브레인 | 357780 | — | kr_semi_fab_timeline#T1 · kr_semi_materials_gas#T1,T4,T5 | — |
 | KR | 스피어 | 347700 | — | — | — |
 | KR | 실리콘투 | 257720 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T1,T2,T3,T4,T5 · k_beauty_sector#T1,T2,T3,T5 · kr_4sector_cross_valuation#T3 | — |
-| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | 7 |
+| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | 8 |
 | KR | 씨메스로보틱스 | 475400 | — | — | — |
 | KR | 아모레퍼시픽 | 090430 | — | k_beauty_company_largecap_odm#T4 · k_beauty_sector#T1 · kr_4sector_cross_valuation#T3 | — |
 | KR | 아모센스 | 357580 | ✓ 4Q26 소재 매출 <7십억 · 본격 출하 지연 | us_bloom_intel_deep#T5 | — |
