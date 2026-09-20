@@ -56,6 +56,25 @@ def main():
                 print(f"    · {e['when']} {str(e.get('what',''))[:70]}")
     except (OSError, ValueError):
         pass
+    # id 중복 검사(2026-09-20 실측으로 추가) — 층 전체가 id 로 서로를 가리키는데
+    #   append-only JSONL 에 <여러 주체>가 쓴다(세션 여럿 · 수집기 셋 · 시세 봇).
+    #   각자 「자기가 본 파일」로 다음 번호를 세면 같은 id 가 두 번 나고, 그러면
+    #   라우팅 포인터가 <어느 줄을 가리키는지 알 수 없게> 된다 — 조용히 틀리는 종류다.
+    #   09-20 에 실제로 13건 났다: routing 6(내가 손으로 번호를 적으며 파일을 안 봤다) ·
+    #   user 6(같은 사유 + 앞선 배치) · collected 1(collect-fetch ↔ collect-sec 동시 실행).
+    import collections
+    for f in ("intake/collected.jsonl", "intake/user.jsonl", "brain/routing.jsonl"):
+        try:
+            cnt = collections.Counter(
+                json.loads(ln)["id"] for ln in io.open(f, encoding="utf-8") if ln.strip())
+        except (OSError, ValueError, KeyError):
+            continue
+        dup = {k: v for k, v in cnt.items() if v > 1}
+        if dup:
+            print(f"[intake] 🔴 {f} id 중복 {len(dup)}건 — 라우팅이 어느 줄을 가리키는지 알 수 없다")
+            for k, v in list(dup.items())[:8]:
+                print(f"    · {k} ×{v}")
+
     if bad:
         print(f"[intake] ⚠ 끊긴 포인터 {len(bad)}건")
         for b in bad[:20]:

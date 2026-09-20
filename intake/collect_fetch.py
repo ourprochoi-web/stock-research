@@ -262,9 +262,13 @@ def main(argv):
     for lab, url, ref in items:
         rec = {"date": today, "kind": "fetch", "host": (re.match(r"https://([^/]+)", url) or [None, "?"])[1],
                "subject": lab, "auto": True, "routed": False, "url": url}
-        while f"c-{today.replace('-', '')}-{n:02d}" in ids:
+        # ⚠ 수집기마다 <고유 접두사>를 쓴다(2026-09-20 실측). collect-fetch 와 collect-sec 이
+        #   동시에 돌아 둘 다 c-20260920-43 을 할당했다 — 각자 <자기가 본 파일>로 다음 번호를 셌기
+        #   때문이다. union merge 가 두 줄을 모두 살리면서 id 가 겹친 채 남았고,
+        #   라우팅 포인터가 어느 줄을 가리키는지 알 수 없게 됐다. 접두사로 공간을 분리한다.
+        while f"c-{today.replace('-', '')}-f{n:02d}" in ids:
             n += 1
-        rec["id"] = f"c-{today.replace('-', '')}-{n:02d}"
+        rec["id"] = f"c-{today.replace('-', '')}-f{n:02d}"
         ids.add(rec["id"])
 
         if lab == "__dart__":

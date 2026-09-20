@@ -81,9 +81,11 @@ def main(argv):
     for tk in tickers:
         cik = tk2cik.get(tk)
         rec = {"date": today, "kind": "XBRL", "host": "data.sec.gov", "subject": f"{tk} companyfacts 슬림 스냅샷", "auto": True, "routed": False}
-        while f"c-{today.replace('-', '')}-{n:02d}" in ids:
+        # ⚠ 수집기마다 <고유 접두사>를 쓴다(2026-09-20 실측 · collect_fetch 와 같은 사유).
+        #   동시 실행 시 각자 자기가 본 파일로 다음 번호를 세어 같은 id 를 할당한다.
+        while f"c-{today.replace('-', '')}-s{n:02d}" in ids:
             n += 1
-        rec["id"] = f"c-{today.replace('-', '')}-{n:02d}"
+        rec["id"] = f"c-{today.replace('-', '')}-s{n:02d}"
         ids.add(rec["id"])
         if not cik:
             rec.update(status="404", note="company_tickers.json 에 티커 없음", path="—")
