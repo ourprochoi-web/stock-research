@@ -93,7 +93,19 @@ def collect_oge(year, today, log):
         print(f"[oge] 인덱스 실패 {st}")
         return
     html = body.decode("utf-8", "replace")
-    links = re.findall(r'href="(/201/Presiden\.nsf/[^"]*?\$FILE/[^"]+?\.pdf)"', html, re.I)
+    # 09-20 1차 실행: 링크 0건. Domino 뷰가 프레임셋이거나 링크 형태가 다르다 —
+    # 구조를 모르는 채 고칠 수 없으므로 표본을 로그에 남겨 다음 실행이 스스로 알려주게 한다.
+    links = re.findall(r'href="?([^"\s>]*?\$FILE/[^"\s>]+?\.pdf)"?', html, re.I)
+    if not links:
+        frames = re.findall(r'(?:src|href)="([^"]+\.nsf[^"]*)"', html, re.I)[:12]
+        log.write(json.dumps({"id": base + "probe", "date": today, "kind": "congress", "source_kind": "oge",
+                              "host": "extapps2.oge.gov", "path": "/201/Presiden.nsf/PAS+Index",
+                              "subject": "OGE 인덱스 구조 표본 — $FILE 링크 0건", "grade_hint": "진단",
+                              "status": "no_links", "bytes": len(html), "title": (re.search(r"<title>(.*?)</title>", html, re.I | re.S) or [None, ""])[1][:120].strip(),
+                              "frames": frames, "head": re.sub(r"\s+", " ", html[:900]),
+                              "routed": False, "auto": True}, ensure_ascii=False) + "\n")
+        print(f"[oge] $FILE 링크 0 · {len(html)}B · 프레임/링크 표본 {len(frames)}건을 로그에 남겼다")
+        return
     want = [u for u in dict.fromkeys(links) if "trump" in u.lower() and year in u]
     known = seen_docids()
     os.makedirs(os.path.join(OUT, "oge", year), exist_ok=True)
@@ -104,7 +116,7 @@ def collect_oge(year, today, log):
         if doc in known:
             continue
         n += 1
-        st2, raw = get("https://extapps2.oge.gov" + u)
+        st2, raw = get(u if u.startswith("http") else "https://extapps2.oge.gov" + u)
         rec = {"id": f"{base}{n}", "date": today, "kind": "congress", "source_kind": "oge",
                "host": "extapps2.oge.gov", "path": u, "doc_id": doc, "member": "Donald J. Trump",
                "subject": f"OGE {doc}", "grade_hint": "① 공시 원문", "routed": False, "auto": True}
