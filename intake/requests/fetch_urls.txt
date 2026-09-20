@@ -19,3 +19,5 @@
 #    세션에서는 www.korea.kr 전체가 relay reset(11초) 이라 러너로만 받는다.
 korea_kr_daemi_nuclear | https://www.korea.kr/common/download.do?fileId=198552978 | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
 korea_kr_daemi_nuclear_hwpx | https://www.korea.kr/common/download.do?fileId=198552979 | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
+#    ⚠ 워크플로 버그도 같이 고쳤다(5a454ac) — 1차 런은 push 가 거절돼도 재시도가 없었다.
+#       Fetch 실패와 push 실패가 겹쳐 두 번 잃을 뻔했다.
