@@ -11,3 +11,8 @@
 # ── 완료분(2026-09-20 · 10/10 성공 → C1 정정으로 라우팅됨) 은 지웠다.
 #    남은 것 하나 — 대미투자 설명자료 <본문>. HTML 엔 제목·날짜(2026-09-15 산업통상부)만 있고 본문은 첨부에 있다.
 #    ⚠ 첨부 직링크를 아직 못 찾았다(HTML 에 '바로보기/내려받기' 스크립트만 있다) — URL 을 확인한 뒤 여기 적는다.
+
+# ── 2026-09-20 요청: 대미투자 원전 설명자료 <본문> PDF.
+#    첨부 직링크를 HTML(c-20260920-15)에서 찾았다 — /common/download.do?fileId=198552978 (PDF) · 198552979 (HWPX).
+#    세션에서 download.do 는 relay reset(ws_closed_mid_exchange) 로 계속 실패한다 — 러너로 받는다.
+korea_kr_daemi_nuclear | https://www.korea.kr/common/download.do?fileId=198552978
