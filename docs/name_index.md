@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-20)
 
-추적 288개 · 테제가 걸린 이름 188 · 엔티티 있음 77 · facts 있음 58.
+추적 304개 · 테제가 걸린 이름 190 · 엔티티 있음 77 · facts 있음 58.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -31,6 +31,7 @@
 | KR | S-Oil | 010950 | — | oil_hedge_vehicles#T4 | — |
 | KR | SFA | 056190 | — | optical_valuechain_9#T1 · hbm_pkg_company_samsung#T1,T6,T8 | 3 |
 | KR | SFA반도체 | 036540 | ✓ 4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정 | hbm_pkg_company_samsung#T1,T6,T8 · optical_valuechain_9#T1 | — |
+| KR | SKC | 011790 | — | — | — |
 | KR | SK바이오팜 | 326030 | — | kr_bio_china_competition#T2 · glp1_company_samsung_biologics#T3 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
 | KR | SK스퀘어 | 402340 | ✓ 할인 55%+ 3개월 · 상승 국면 베타 <1 | hbm_pkg_company_sk_hynix#T6 · vcp_breakout_backtest#T4 | — |
 | KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5,T6 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2,T7 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T4,T6 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T5 · node_screener_hbm_scoreboard#T1,T4,T6 · oil_hedge_vehicles#T1,T3 | — |
@@ -45,13 +46,17 @@
 | KR | 대덕전자 | 353200 | — | hbm_pkg_theme_substrate#T2,T3 | — |
 | KR | 대한광통신 | 010170 | ✓  | — | 5 |
 | KR | 대한전선 | 001440 | — | ai_power_company_cable_wire#T1,T3,T4 · kr_power_10_deep#T1,T3 · kr_power_cross_valuation#T3,T4 | — |
+| KR | 덕산네오룩스 | 213420 | — | — | — |
 | KR | 동성화인텍 | 033500 | — | k_ship_theme_lng_ai_nexus#T5 | — |
+| KR | 동진쎄미켐 | 005290 | — | — | — |
 | KR | 두산 | 000150 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 · robot_kr_16_valuation#T2 | — |
 | KR | 두산로보틱스 | 454910 | — | kr_cooling_optical_layer#T5 · robot_kr_16_valuation#T2 | — |
 | KR | 두산에너빌리티 | 034020 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 18 |
 | KR | 드림시큐리티 | 203650 | — | — | — |
 | KR | 드림텍 | 192650 | ✓ 2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만 | hbm_pkg_company_samsung#T6,T8 | 7 |
 | KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 | — |
+| KR | 디엔에프 | 092070 | — | — | — |
+| KR | 램테크놀러지 | 171010 | — | — | — |
 | KR | 레인보우로보틱스 | 277810 | — | vcp_breakout_backtest#T4 · robot_kr_16_valuation#T2,T4 | — |
 | KR | 로보스타 | 090360 | — | vcp_breakout_backtest#T4 | — |
 | KR | 로보티즈 | 108490 | — | robot_kr_16_valuation#T1,T2,T3 | — |
@@ -76,6 +81,7 @@
 | KR | 세아베스틸지주 | 001430 | — | — | — |
 | KR | 세진중공업 | 075580 | — | — | — |
 | KR | 셀트리온 | 068270 | — | ai_bio_investment_map#T4 · kr_bio_china_competition#T2 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
+| KR | 솔브레인 | 357780 | — | kr_semi_fab_timeline#T1 · kr_semi_materials_gas#T1,T4,T5 | — |
 | KR | 스피어 | 347700 | — | — | — |
 | KR | 실리콘투 | 257720 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T1,T2,T3,T4,T5 · k_beauty_sector#T1,T2,T3,T5 · kr_4sector_cross_valuation#T3 | — |
 | KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | — |
@@ -94,20 +100,26 @@
 | KR | 엑스게이트 | 356680 | — | — | — |
 | KR | 엔젤로보틱스 | 455900 | — | — | — |
 | KR | 엘앤에프 | 066970 | — | energy_battery_valuechain_update#T1 | — |
+| KR | 엠케이전자 | 033160 | — | — | — |
 | KR | 오스코텍 | 039200 | — | kr_bio_china_competition#T6 | — |
 | KR | 오이솔루션 | 138080 | ✓  | kr_cooling_optical_layer#T1,T4 | 5 |
 | KR | 옵티코어 | 380540 | ✓  | kr_cooling_optical_layer#T1,T4 | 5 |
 | KR | 와이씨 | 232140 | ✓ 1,622억 정정(감액·연기) 공시 | hbm_pkg_company_samsung#T7 | — |
 | KR | 우리로 | 046970 | ✓  | — | 5 |
 | KR | 원익IPS | 240810 | — | kr_semi_equip_6#T1,T5 · kr_semi_equip_vm_psk#T5 · kr_semi_fab_timeline#T3 | — |
+| KR | 원익머트리얼즈 | 104830 | — | — | — |
+| KR | 월덱스 | 101160 | — | — | — |
 | KR | 유니테스트 | 086390 | ✓ 3Q까지 삼성·SK하이닉스 추가 공시 0 | hbm_pkg_company_samsung#T7 | — |
 | KR | 유일로보틱스 | 388720 | — | — | — |
 | KR | 유진로봇 | 056080 | — | — | — |
 | KR | 유한양행 | 000100 | — | glp1_kbio_portfolio_candidates#T1,T2,T4 | — |
+| KR | 이녹스첨단소재 | 272290 | — | — | — |
 | KR | 이수페타시스 | 007660 | — | hbm_pkg_theme_substrate#T1,T2 · vcp_breakout_backtest#T4 | — |
+| KR | 이엔에프테크놀로지 | 102710 | — | — | — |
 | KR | 이오테크닉스 | 039030 | — | — | — |
 | KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | 9 |
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
+| KR | 케이엔제이 | 272110 | — | — | — |
 | KR | 케이엠더블유 | 032500 | — | — | — |
 | KR | 코미코 | 183300 | — | kr_semi_equip_cross_valuation#T2,T7 | — |
 | KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | 7 |
@@ -115,6 +127,7 @@
 | KR | 클로봇 | 466100 | — | — | — |
 | KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · kr_cooling_optical_layer#T5 · ai_sw_company_anthropic#T1 · hbm_pkg_company_samsung#T1,T6,T7 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · node_screener_hbm_scoreboard#T6 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 · cyber_ai_security#T1 | — |
 | KR | 티로보틱스 | 117730 | — | — | — |
+| KR | 티씨케이 | 064760 | — | — | — |
 | KR | 티에스이 | 131290 | ✓ T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 | node_screener_hbm_scoreboard#T6 | — |
 | KR | 티엘비 | 356860 | — | hbm_pkg_company_samsung#T6 · hbm_pkg_theme_substrate#T2,T3 | — |
 | KR | 파마리서치 | 214450 | ✓ T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에  | k_beauty_company_pharmaresearch#T1,T2,T3,T4 · k_beauty_company_apr#T1 · k_beauty_sector#T1,T4 | — |
@@ -126,11 +139,13 @@
 | KR | 풍산 | 103140 | — | k_defense_investment_map#T1,T4,T5 | — |
 | KR | 피에스케이 | 319660 | — | hbm_pkg_investment_map#T2,T4 · kr_semi_equip_6#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T3 · vcp_breakout_backtest#T4 | — |
 | KR | 피에스케이홀딩스 | 031980 | — | hbm_pkg_investment_map#T4 · vcp_breakout_backtest#T4 | — |
+| KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 | — |
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | 한국항공우주 | 047810 | — | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
 | KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 | — |
 | KR | 한선엔지니어링 | 452280 | ✓ OPM 20% 아래 2분기 · 2026 매출 720억 미만 | us_bloom_intel_deep#T5 | 6 |
+| KR | 한솔케미칼 | 014680 | — | — | — |
 | KR | 한양디지텍 | 078350 | ✓ 2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 | hbm_pkg_company_samsung#T6,T8 | 20 |
 | KR | 한전KPS | 051600 | — | ai_power_top5_picks#T1,T2 | — |
 | KR | 한전기술 | 052690 | — | ai_power_company_nuclear_smr#T1 · ai_power_top5_picks#T1 | — |
@@ -147,6 +162,7 @@
 | KR | 현대차 | 005380 | — | robot_theme_supply_chain#T1 | — |
 | KR | 효성중공업 | 298040 | — | ai_power_company_transformer_grid#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T3,T4 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T5 | 1 |
 | KR | 효성티앤씨 | 298020 | — | — | — |
+| KR | 후성 | 093370 | — | — | — |
 | KR-ETF | KODEX 2차전지산업 | 305720 | — | — | — |
 | KR-ETF | KODEX 건설 | 117700 | — | — | — |
 | KR-ETF | KODEX 미국AI광통신네트워크 | 0173Y0 | — | optical_valuechain_9#T6 | — |

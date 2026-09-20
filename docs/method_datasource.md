@@ -509,3 +509,16 @@ www.korea.kr
 **⚠ 적용 범위** — 환경 설정은 컨테이너가 뜰 때 읽힌다. **`stock-research` 환경에서 시작한 세션만** 열린다. 옛 `기본값`(Trusted) 환경 세션은 그대로 막혀 있으니, 세션을 시작할 때 **구름 선택기에서 `stock-research` 를 고르는 것**이 전제 조건이다.
 
 **`collect_fetch` 의 자리가 줄었다** — 이제 반복 구조화 출처(SEC·네이버·DART·FRED)는 세션에서 직접 읽는다. `intake/requests/fetch_urls.txt` 는 **allowlist 에 넣을 수 없는 일회성 페이지**(언론 기사 · 정부 발표 첨부)만 남는다. 워크플로는 지우지 않는다 — 언론사 도메인은 무한해서 allowlist 로 못 덮는다.
+
+## WATCH 에 새 코드를 넣기 전에 이름을 대조한다 (2026-09-20 · 실측으로 승격)
+
+`intake/files/financials/{날짜}/{코드}.json` 스냅샷에는 **회사명 필드가 없다**(키는 `annual`·`quarter` 뿐).
+그래서 `update_prices.py` 의 WATCH 에 **틀린 코드를 넣으면 조용히 다른 회사를 받아온다** — 값은 멀쩡해 보이고
+턴 스크린도 정상 동작하며, 이름만 거짓이다. 이런 오류는 스스로 드러나지 않는다.
+
+**절차** — 새 코드는 등록 전에 `https://m.stock.naver.com/api/stock/{code}/basic` 의 `stockName` 을 대조한다.
+세션에서 네이버가 막히면(`m.stock.naver.com`·`api.stock.naver.com` 은 2026-09-20 오후 CONNECT 403) 
+`intake/requests/fetch_urls.txt` 에 줄을 넣어 러너로 돌린다.
+
+**실측**: 소재 17종목을 대조해 **16/17 일치**. 불일치 1건 — `155650` 을 「오알켐」으로 적었는데 실제는 **「와이엠씨」**였다.
+검증을 건너뛰었으면 그 한 줄이 영구히 틀린 채 남았을 것이다. **17건에 1건(5.9%)은 그냥 넘길 실패율이 아니다.**
