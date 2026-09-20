@@ -47,8 +47,8 @@
 | KR | 대한전선 | 001440 | — | ai_power_company_cable_wire#T1,T3,T4 · kr_power_10_deep#T1,T3 · kr_power_cross_valuation#T3,T4 | — |
 | KR | 동성화인텍 | 033500 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 두산 | 000150 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 · robot_kr_16_valuation#T2 | — |
-| KR | 두산로보틱스 | 454910 | — | robot_kr_16_valuation#T2 | — |
-| KR | 두산에너빌리티 | 034020 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 11 |
+| KR | 두산로보틱스 | 454910 | — | kr_cooling_optical_layer#T5 · robot_kr_16_valuation#T2 | — |
+| KR | 두산에너빌리티 | 034020 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 18 |
 | KR | 드림시큐리티 | 203650 | — | — | — |
 | KR | 드림텍 | 192650 | ✓ 2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만 | hbm_pkg_company_samsung#T6,T8 | 7 |
 | KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 | — |
@@ -138,7 +138,7 @@
 | KR | 한화에어로스페이스 | 012450 | — | k_defense_company_hanwha_aero#T1,T2,T4,T5 · k_defense_company_lig_nexone#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T5,T8 · k_defense_investment_map#T1,T2,T3,T5 | — |
 | KR | 한화엔진 | 082740 | — | kr_power_10_deep#T1,T3,T4,T5 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T1 · k_ship_industry_overview#T2 | — |
 | KR | 한화오션 | 042660 | — | kr_power_10_deep#T4 · k_defense_company_hanwha_aero#T5 · k_defense_company_hanwha_systems_ocean#T1,T2,T3,T4 · k_defense_cross_valuation#T1,T2,T3,T4,T5,T6,T7,T8,T9 · k_ship_theme_lng_ai_nexus#T1,T3,T5 · k_ship_theme_masga_us_alliance#T2 | — |
-| KR | 해성디에스 | 195870 | — | — | 10 |
+| KR | 해성디에스 | 195870 | — | — | 15 |
 | KR | 현대건설 | 000720 | — | kr_construction_datacenter#T1 | — |
 | KR | 현대로템 | 064350 | — | k_defense_company_hyundai_rotem#T1,T2,T3,T4 · k_defense_cross_valuation#T1,T4,T5,T6,T8 · k_defense_investment_map#T1,T5 | — |
 | KR | 현대무벡스 | 319400 | — | vcp_breakout_backtest#T4 · robot_kr_16_valuation#T1,T2 | — |
