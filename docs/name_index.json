@@ -261,6 +261,9 @@
    "theses": {
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T6"
+    ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T5"
     ]
    },
    "aliases": [],
@@ -786,6 +789,9 @@
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
     ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T5"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1"
     ],
@@ -1106,6 +1112,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T5"
+    ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
      "T2",
@@ -1283,7 +1292,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T5"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -1665,7 +1678,8 @@
    "facts": 5,
    "theses": {
     "ai-infra/kr_cooling_optical_layer.html": [
-     "T1"
+     "T1",
+     "T4"
     ]
    },
    "aliases": [],
@@ -1679,7 +1693,8 @@
    "facts": 5,
    "theses": {
     "ai-infra/kr_cooling_optical_layer.html": [
-     "T1"
+     "T1",
+     "T4"
     ]
    },
    "aliases": [],
@@ -1955,6 +1970,9 @@
    "theses": {
     "ai-infra/ai_chip_architecture_war.html": [
      "T1"
+    ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T5"
     ],
     "ai-sw/ai_sw_company_anthropic.html": [
      "T1"
