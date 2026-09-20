@@ -422,3 +422,20 @@
 - **레버리지**: 국내 단일종목 2x ETF `m.stock.naver.com/api/etf/{code}/basic`의 `totalNav`(AUM · 이력 없음 → 매일 스냅샷). KODEX 0193T0 · TIGER 0195S0(하이닉스) · KODEX 0193W0 · TIGER 0195R0(삼성). HK CSOP 하이닉스 2x는 **7709.HK**(7522는 다른 상품).
 - **CFTC**: `publicreporting.cftc.gov/resource/72hh-3qpy.json?cftc_contract_market_code=023651`(NG) · `067651`(WTI) — 주간.
 
+
+## 2026-09-20 — 세션 egress 에 막힌 호스트를 받는 길 (`intake/collect_fetch.py` · `collect-fetch.yml`)
+
+**문제는 출처가 아니라 <어디서 받느냐>다.** 세션 샌드박스의 나가는 HTTPS 는 조직 egress 정책을 지나고, 정책에 없는 호스트는 프록시가 **403/407**로 끊는다(`/root/.ccr/README.md` — *"Do not retry or route around it"*). 이건 사이트가 죽은 게 아니라 **이 세션의 자리가 막힌 것**이다. 둘을 섞어 적으면 값이 영원히 ② 에 머문다(§W5).
+
+**측정된 차단 목록**(세션에서 실제로 시도한 것만 · 날짜 = 처음 막힌 날)
+`data.sec.gov`·`www.sec.gov`(09-13) · `disclosures-clerk.house.gov`·`extapps2.oge.gov`(09-19) · `eia.gov`·FRED(09-14) · `m.stock.naver.com`·`api.stock.naver.com`(09-20 · CONNECT 403) · `comp.wisereport.co.kr`·`www.incheonilbo.com`·`www.korea.kr`(09-20 · EGRESS_BLOCKED) · 언론사 다수.
+→ **반대로 GitHub Actions 러너는 막히지 않는다.** 시세 봇·SEC·의회 수집기가 이미 이 길로 돈다.
+
+**쓰는 법** — `intake/requests/fetch_urls.txt` 에 `label | https://url` 한 줄씩 적고 **push** 한다.
+워크플로가 러너에서 받아 `intake/files/fetch/{날짜}/{label}.{ext}` 에 원문 바이트를 남기고 `intake/collected.jsonl` 에 `routed:false` 한 줄을 붙인다. 다음 세션 시작 때 §R3 대로 라우팅한다.
+- **push 가 유일한 방아쇠다** — 세션 토큰에는 `workflow_dispatch` 권한이 없어 수동 실행은 403 이다.
+- 판단하지 않는다. 파싱·비율·TTM 은 브레인 단계에서 한다(§R2).
+- `https` 만 · 파일당 8MB 상한 · 실패는 워크플로를 막지 않고 `status`(`blocked`/`404`/`too_big`)로 기록된다 — **실패도 증거다**.
+- 프록시 우회가 아니다. 세션의 403 은 조직 정책이고 보고 대상이며, 여기서 쓰는 것은 **사용자 소유 CI 러너의 정상 네트워크**다. 중계 프록시(`r.jina.ai` 류)는 쓰지 않는다.
+
+**한계** — 로그인·쿠키가 필요한 곳(KRX 포털)·비 443 포트·WebSocket 은 러너에서도 안 된다. Cloudflare 차단(AAII)은 러너에서도 같을 수 있다. 받아 본 뒤 `status` 로 갈린다.

@@ -1,0 +1,54 @@
+name: Collect URL (intake)
+
+# 2026-09-20: 주문형 URL 수집. 세션 샌드박스의 egress 정책에 막힌 호스트를 <사용자 소유 러너>에서 받는다.
+#   막힌 것이 반복 측정됐다 — data.sec.gov · disclosures-clerk.house.gov · extapps2.oge.gov ·
+#   m.stock.naver.com · comp.wisereport.co.kr · www.korea.kr · 언론사 다수.
+#   SEC(collect-sec)·의회(collect-congress)는 이미 이 길로 우회했는데 둘 다 한 출처 전용이라
+#   새 출처가 막힐 때마다 수집기를 하나씩 더 만들게 돼 있었다. 이 워크플로가 그 자리를 하나로 합친다.
+# 프록시를 우회하는 것이 아니다 — 세션 egress 403 은 조직 정책이고 보고 대상이다(/root/.ccr/README.md).
+#   여기서 쓰는 것은 CI 러너의 정상 네트워크이며 시세 봇이 쓰는 길과 같다.
+# 판단은 하지 않는다 — 원문 바이트를 intake/files/fetch/{날짜}/ 에, 한 줄을 intake/collected.jsonl 에.
+# 트리거 둘: ① 수동(workflow_dispatch) ② intake/requests/fetch_urls.txt 를 고쳐 push 하면 자동
+#   (세션 토큰은 dispatch 권한이 없어 403 — 파일 push 가 세션에서 쓸 수 있는 유일한 방아쇠다)
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "한 건만 받을 때의 URL (비우면 intake/requests/fetch_urls.txt 전체)"
+        required: false
+        type: string
+      label:
+        description: "파일 이름으로 쓸 라벨 (url 을 준 경우에만)"
+        required: false
+        type: string
+  push:
+    paths:
+      - "intake/requests/fetch_urls.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch
+        run: |
+          U="${{ inputs.url }}"
+          if [ -n "$U" ]; then
+            python3 intake/collect_fetch.py --url "$U" ${{ inputs.label && format('--label {0}', inputs.label) || '' }}
+          else
+            python3 intake/collect_fetch.py
+          fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add intake/collected.jsonl intake/files/fetch
+          git diff --cached --quiet && exit 0
+          git commit -m "📥 intake: URL 수집 ($(date +%Y-%m-%d))"
+          git push

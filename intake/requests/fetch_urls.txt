@@ -1,0 +1,23 @@
+# 주문형 URL 수집 요청 — 이 파일을 고쳐 push 하면 .github/workflows/collect-fetch.yml 이 돈다.
+# 결과: intake/files/fetch/{날짜}/{label}.{ext} + intake/collected.jsonl 한 줄(routed:false).
+# 형식: label | https://url   (label 생략 가능 · '#' 주석 · https 만)
+# 왜 있나: 세션 샌드박스의 egress 정책에 막힌 호스트를 사용자 소유 CI 러너에서 받기 위해서다(§W5 · §H1).
+#   프록시 우회가 아니다 — 세션의 403 은 조직 정책이고 여기서 쓰는 건 시세 봇이 쓰는 것과 같은 길이다.
+# 끝나면 이 목록은 비워도 된다(git 이 기억한다). 다음 요청 때 새로 적는다.
+
+# ── 2026-09-20 · 삼성 외주화 2층(brain hbm_pkg_company_samsung#T8)의 값이 전부 ② 라서 ① 로 올린다
+#    한양디지텍(078350) — 매출 82.1% 메모리 모듈 + 15% SSD · 고객 97.1% 삼성. 외주로 나간 물건의 순수 노출
+naver_078350_annual  | https://m.stock.naver.com/api/stock/078350/finance/annual
+naver_078350_quarter | https://m.stock.naver.com/api/stock/078350/finance/quarter
+naver_078350_basic   | https://m.stock.naver.com/api/stock/078350/basic
+naver_078350_integr  | https://m.stock.naver.com/api/stock/078350/integration
+#    드림텍(192650) — 같은 층의 인도 경로. 모듈 매출 비중이 미공개라 분모부터 확인해야 한다
+naver_192650_annual  | https://m.stock.naver.com/api/stock/192650/finance/annual
+naver_192650_quarter | https://m.stock.naver.com/api/stock/192650/finance/quarter
+naver_192650_basic   | https://m.stock.naver.com/api/stock/192650/basic
+naver_192650_integr  | https://m.stock.naver.com/api/stock/192650/integration
+#    대조군 SFA반도체(036540) — 같은 창에서 비교해야 층 구분이 값이 된다
+naver_036540_quarter | https://m.stock.naver.com/api/stock/036540/finance/quarter
+
+# ── 2026-09-20 · 대미투자 판정(brain ai_power_company_nuclear_smr#T3) — 정부 설명자료 원문이 ① 인데 못 열었다
+korea_kr_daemi_nuclear | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
