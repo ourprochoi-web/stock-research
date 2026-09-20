@@ -439,3 +439,48 @@
 - 프록시 우회가 아니다. 세션의 403 은 조직 정책이고 보고 대상이며, 여기서 쓰는 것은 **사용자 소유 CI 러너의 정상 네트워크**다. 중계 프록시(`r.jina.ai` 류)는 쓰지 않는다.
 
 **한계** — 로그인·쿠키가 필요한 곳(KRX 포털)·비 443 포트·WebSocket 은 러너에서도 안 된다. Cloudflare 차단(AAII)은 러너에서도 같을 수 있다. 받아 본 뒤 `status` 로 갈린다.
+
+### 2026-09-20 (2) — 근본 해결: 환경 allowlist에 호스트를 넣는다 (사용자 결정)
+
+CI 경유(`collect_fetch`)는 **증상 처리**다. 받아 온 결과를 세션 안으로 들이는 단계에서 다시 막히고(2026-09-20 실측 — `git pull` 이 `Containment Escape` 로 거부됨), 라우팅이 한 세션씩 밀린다.
+정본 해결은 **클라우드 환경의 네트워크 정책**을 바꾸는 것이다. 리포에서 못 고친다 — 계정 설정이다.
+
+**경로**(공식 문서 `code.claude.com/docs/en/cloud-environments#access-levels`)
+claude.ai/code → 메시지 상자 위 **구름 아이콘**(현재 환경 이름) → 환경에 hover → **설정(기어)** → **Network access** 를 `Trusted` → **`Custom`** 으로 → **Allowed domains** 에 한 줄씩 →
+🔴 **「Also include default list of common package managers」를 반드시 체크**(안 하면 여기 적은 것만 열리고 pip·npm 이 끊긴다).
+`*.` 로 시작하면 모든 서브도메인. 별도 설정 페이지·직접 URL 은 없다.
+
+**붙여넣을 목록** — 아카이브가 실제로 막혀서 값을 못 올린 호스트만. 축별로 왜 필요한지 함께 남긴다.
+
+```text
+# 미국 원문 — SEC (collect_sec.py · TTM 재구성의 ① 원장)
+*.sec.gov
+# 정치인 거래 공시 (§J12 · 2026-09-19 사용자 결정 「이 축은 중요하다」)
+disclosures-clerk.house.gov
+extapps2.oge.gov
+efdsearch.senate.gov
+# 한국 시세·재무 정본 (update_prices.py · leader_screen.py 가 쓰는 원장)
+*.stock.naver.com
+finance.naver.com
+comp.wisereport.co.kr
+comp.fnguide.com
+# 한국 공시 원문 (DART·KIND)
+*.fss.or.kr
+kind.krx.co.kr
+# 매크로 — 금리·에너지·수급·심리
+*.stlouisfed.org
+*.eia.gov
+publicreporting.cftc.gov
+finance.daum.net
+production.dataviz.cnn.io
+# 정부 발표 원문 (대미투자 판정 등)
+www.korea.kr
+```
+
+**적용 시점** — 환경 설정은 컨테이너가 뜰 때 읽힌다. **새 세션부터 확실히 적용**된다. 실행 중인 세션에 즉시 반영되는지는 문서에 없다 `[미검증]` — 세션이 만료돼 VM 이 회수된 뒤 다시 열면 새 VM 을 받으므로 그때는 반영될 것으로 보인다(같은 이유로 `[추론]`).
+
+**언론사는 넣지 않는다** — 도메인이 무한하고 allowlist 에 맞지 않는다. 그쪽은 `collect_fetch` 로 건별 수집한다. 둘은 대체가 아니라 분업이다:
+| | 쓰는 곳 |
+|---|---|
+| **환경 allowlist** | 반복 쓰는 구조화 출처(SEC·네이버·DART·FRED) — 세션에서 바로 읽는다 |
+| **`collect_fetch` (CI)** | 일회성 페이지(언론 기사·정부 설명자료) — 원문 바이트만 리포에 남긴다 |

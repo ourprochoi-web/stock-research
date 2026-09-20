@@ -323,6 +323,13 @@
    "since": "2026-09-20",
    "what": "🔵 13F 공백 4사(VST·NRG·NTRA·CBRS) 판단은 브레인에 섰는데 페이지가 없다 — 그래서 facts.json에 못 넣었다(정본 페이지가 산출한 뒤에만 등재). 값은 intake/files/sec/_ttm_summary.json에 있다. 페이지를 쓸 자리 후보 — ① us_power_regulated_vs_merchant를 「미국 전력」으로 확장(Talen 중심이라 상인형 2강이 본문에 없다) ② ai_chip_architecture_war에 웨이퍼스케일 층 추가 ③ ai_bio_investment_map 12사에 Natera 추가. 채우지 못한 칸 — CBRS 2Q26 3개 고객(34/32/10%) 이름 · VST AWS·Meta PPA 계약단가 · NRG 하이퍼스케일러 이름 · NTRA 상업보험 커버 인구수·제품라인별 매출",
    "updates": []
+  },
+  {
+   "id": "egress-allowlist",
+   "grade": "측정",
+   "since": "2026-09-20",
+   "what": "🔴 값 등급이 ② 에서 안 올라가는 구조적 원인 — 세션 egress 정책이 아카이브의 정본 출처를 막는다. 사용자 결정(2026-09-20): CI 우회가 아니라 <환경 allowlist>로 간다. 붙여넣을 목록과 경로는 docs/method_datasource.md 맨 뒤. 확인해야 할 것 — ① 다음 세션 시작 시 m.stock.naver.com 이 열렸는가(열렸으면 한양디지텍 T8 의 ②를 ①로 올린다) ② 「Also include default list of common package managers」가 체크됐는가(안 되면 pip·npm 이 끊긴다) ③ opendart.fss.or.kr 은 CLAUDE.md 가 「열려 있었다」고 적었는데 이번 세션에서 실측 안 했다 — allowlist 적용 뒤 재확인 ④ 실행 중 세션에 즉시 반영되는지는 문서에 없다 [미검증]",
+   "updates": []
   }
  ]
 }
