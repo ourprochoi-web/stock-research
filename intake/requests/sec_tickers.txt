@@ -1,14 +1,3 @@
-# 수집 요청 — 이 파일을 고쳐 push 하면 collect-sec.yml 이 돌아 intake/files/sec/ 에 스냅샷을 남긴다.
-# 2026-09-13 2차 — 태그 확장(메이저 세전이익·감액·투자CF) 후 재수집. CTRA 는 company_tickers.json 에 없어 CIK 로 대신 시도하지 않음(open.json)
-XOM
-CVX
-OXY
-COP
-FANG
-DVN
-RRC
-PR
-MTDR
-EQT
-AR
-EXE
+# 이 파일을 고쳐 push 하면 collect-sec.yml 이 돈다(세션 토큰은 dispatch 403).
+# 2026-09-20 — 13F T5 「상위 보유의 75.1%가 판단 0편」 목록 4사. 커버리지 공백 메우기.
+VST NRG NTRA CBRS
