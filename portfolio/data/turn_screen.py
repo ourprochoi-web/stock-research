@@ -24,6 +24,37 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
+def quality(ops):
+    """분기 이익의 <결>을 잰다 — 배수를 믿어도 되는지 가른다(2026-09-20).
+
+    왜 있나: 「2Q 연율 PER」이 낮은 회사를 싸다고 읽으면 <한 분기가 튄 것>을 영속화한다.
+      09-20 실측 — 디아이 2Q 연율 PER 7.0배인데 최근 5분기 OP 가 [123,100,43,189,396] 으로
+      2Q 가 평균의 2.33배다. 반대로 티엘비는 [69,87,86,107,128] 로 CV 0.21 · 2Q/평균 1.34 인데
+      연율 PER 이 20.5배다. <싸 보이는 집합>과 <이익의 결이 좋은 집합>은 겹치지 않는다.
+
+    반환: (단조증가 여부, CV, 2Q÷평균)
+      · 단조 ✓ + CV 높음 = 추세(대덕전자 19→244→289→513→703)  ← 연율화 OK
+      · 단조 ✗ + CV 높음 = 변동(한미반도체 863→678→276→85→1303) ← 연율화 금지
+      · CV ≤ 0.25 = 안정 ← 연율화 OK
+    """
+    import statistics as st
+    ops = [o for o in ops if o is not None]
+    if len(ops) < 5:
+        return None, None, None
+    mono = all(ops[i + 1] >= ops[i] for i in range(len(ops) - 1))
+    mean = st.mean(ops)
+    if not mean:
+        return mono, None, None
+    return mono, st.pstdev(ops) / abs(mean), ops[-1] / mean
+
+
+def annualizable(mono, cv):
+    """연율 배수를 값으로 써도 되는가 — 단조 추세이거나 변동이 작을 때만."""
+    if cv is None:
+        return False
+    return bool(mono) or cv <= 0.25
+
+
 def universe(day):
     d = os.path.join(ROOT, "intake", "files", "financials", day)
     names = {}
