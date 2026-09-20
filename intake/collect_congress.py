@@ -93,9 +93,14 @@ def collect_oge(year, today, log):
         print(f"[oge] 인덱스 실패 {st}")
         return
     html = body.decode("utf-8", "replace")
-    # 09-20 1차 실행: 링크 0건. Domino 뷰가 프레임셋이거나 링크 형태가 다르다 —
-    # 구조를 모르는 채 고칠 수 없으므로 표본을 로그에 남겨 다음 실행이 스스로 알려주게 한다.
-    links = re.findall(r'href="?([^"\s>]*?\$FILE/[^"\s>]+?\.pdf)"?', html, re.I)
+    # 09-20 2차(세션 직접 확인): 프레임셋도 JS 로딩도 아니다 — 카테고리가 접힌 Domino 뷰다.
+    #   · 최상위 뷰는 인물 카테고리 218행만 주고 문서행이 없다 → $FILE 0건은 정상이다.
+    #   · 문서행은 `?OpenView&Start=1&Count=1000&Expand={N}` 으로 펴야 나온다(N=1..218).
+    #   · 문서 링크는 작은따옴표다: href='/201/Presiden.nsf/PAS+Index/{UNID}/$FILE/{이름}-{MM.DD.YYYY}-278T.pdf'
+    #   · 뷰 이름은 `PAS+Index`(플러스)만 산다. `PAS%20Index`(뷰가 스스로 뱉는 형태)는 301 로
+    #     www.oge.gov 로 넘기고 그 호스트는 여기서 막혀 있다(000) — Expand 링크를 그대로 따라가면 죽는다.
+    #   · 트럼프는 이 뷰에 없다. PAS=상원 인준직이고 대통령은 인준 대상이 아니다(218명 전수 확인).
+    links = re.findall(r'''href=['"]?([^'"\s>]*?\$FILE/[^'"\s>]+?\.pdf)['"]?''', html, re.I)
     if not links:
         frames = re.findall(r'(?:src|href)="([^"]+\.nsf[^"]*)"', html, re.I)[:12]
         log.write(json.dumps({"id": base + "probe", "date": today, "kind": "congress", "source_kind": "oge",
