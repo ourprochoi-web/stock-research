@@ -6505,6 +6505,288 @@
      "note": "전년 63.4% 대비 +110bp — 매출 +37.7% 대비 마진 레버리지가 약하다"
     }
    }
+  },
+  "103590": {
+   "name": "일진전기",
+   "ticker": "103590",
+   "market": "KR",
+   "layer": "전력 — 전선·변압기(계통)",
+   "canonical_page": "ai-infra/kr_power_cross_valuation.html",
+   "intake": [],
+   "metrics": {
+    "op_fy25": {
+     "value": 1512,
+     "unit": "억원",
+     "basis": "FY25 확정",
+     "asof": "2026-09-18",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_power_cross_valuation.html"
+    },
+    "op_1q26": {
+     "value": 508,
+     "unit": "억원",
+     "basis": "1Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_power_cross_valuation.html"
+    },
+    "op_2q26": {
+     "value": 720,
+     "unit": "억원",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_power_cross_valuation.html"
+    },
+    "op_arrival_ratio": {
+     "value": 0.81,
+     "unit": "배",
+     "basis": "1H26 ÷ FY25",
+     "asof": "2026-09-18",
+     "num": "1Q 508 + 2Q 720 = 1,228억",
+     "den": "FY25 영업이익 1,512억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_power_cross_valuation.html",
+     "note": "1 을 넘으면 반년에 작년치를 다 냈다는 뜻. 10사 중 2위"
+    },
+    "opm_2q26": {
+     "value": 11.3,
+     "unit": "%",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익 720억",
+     "den": "분기 매출 6,374억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_power_cross_valuation.html"
+    },
+    "per": {
+     "value": 25.87,
+     "unit": "배",
+     "basis": "09-18 종가 기준",
+     "asof": "2026-09-18",
+     "num": "시총",
+     "den": "지배주주 순이익",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/kr_power_cross_valuation.html",
+     "note": "10사 중 한전KPS(15.35) 다음으로 낮다"
+    },
+    "quality_price_6axis": {
+     "value": 0.84,
+     "unit": "배",
+     "basis": "6축 매력도 대비 배수",
+     "asof": "2026-09-17",
+     "num": "배수 순위",
+     "den": "질 순위(6축 30점 만점)",
+     "grade": "③",
+     "source": "아카이브 자체 산출",
+     "page": "ai-infra/kr_power_cross_valuation.html",
+     "note": "10사 중 최저 = 질 대비 가장 싸다"
+    },
+    "ret_3m": {
+     "value": -10.1,
+     "unit": "%",
+     "basis": "3개월 주가",
+     "asof": "2026-09-17",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "portfolio/data/prices.json returns",
+     "page": "ai-infra/kr_power_cross_valuation.html",
+     "note": "10사 중 낙폭 최소권"
+    },
+    "kodex_487240_weight": {
+     "value": 3.5,
+     "unit": "%",
+     "basis": "KODEX AI전력핵심설비 구성",
+     "asof": "2026-07-14",
+     "num": "일진전기 비중",
+     "den": "ETF 순자산",
+     "grade": "①",
+     "source": "운용사 구성종목",
+     "page": "ai-infra/kr_power_cross_valuation.html",
+     "note": "6축 최저(가장 싸다)인데 그릇 안 비중은 8사 중 7위 — LS ELECTRIC(6축 3.95 · 19%)의 1/5.4"
+    }
+   }
+  },
+  "089890": {
+   "name": "코세스",
+   "ticker": "089890",
+   "market": "KR",
+   "layer": "BTM — 레이저 장비(BE 캐파 증설 선행) · 반도체 레이저 장비 본업",
+   "canonical_page": "ai-infra/us_bloom_intel_deep.html",
+   "intake": [],
+   "metrics": {
+    "op_fy25": {
+     "value": 174,
+     "unit": "억원",
+     "basis": "FY25 확정",
+     "asof": "2026-09-18",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "op_1q26": {
+     "value": 15,
+     "unit": "억원",
+     "basis": "1Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "op_2q26": {
+     "value": 57,
+     "unit": "억원",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html",
+     "note": "1Q 대비 3.8배 — BTM 체인 5사 중 유일한 가속"
+    },
+    "opm_2q26": {
+     "value": 30.6,
+     "unit": "%",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익 57억",
+     "den": "분기 매출 186억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "op_arrival_ratio": {
+     "value": 0.41,
+     "unit": "배",
+     "basis": "1H26 ÷ FY25",
+     "asof": "2026-09-18",
+     "num": "1Q 15 + 2Q 57 = 72억",
+     "den": "FY25 174억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "per": {
+     "value": 33.2,
+     "unit": "배",
+     "basis": "09-18 종가",
+     "asof": "2026-09-18",
+     "num": "시총",
+     "den": "지배주주 순이익",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "btm_revenue_attribution": {
+     "value": null,
+     "unit": "—",
+     "basis": "세그먼트 미공시",
+     "asof": "2026-09-20",
+     "num": "BTM 관련 매출",
+     "den": "전사 매출",
+     "grade": "②",
+     "source": "—",
+     "page": "ai-infra/us_bloom_intel_deep.html",
+     "note": "⚠ 2Q 가속이 BE BTM 인지 반도체 레이저 장비 본업인지 갈리지 않는다. 계약 1,504억은 ① 이나 이익 귀속은 ②. 3Q26 실적이 판정 이벤트"
+    }
+   }
+  },
+  "452280": {
+   "name": "한선엔지니어링",
+   "ticker": "452280",
+   "market": "KR",
+   "layer": "BTM — 피팅(BE 캐파 증설 동행)",
+   "canonical_page": "ai-infra/us_bloom_intel_deep.html",
+   "intake": [],
+   "metrics": {
+    "op_fy25": {
+     "value": 98,
+     "unit": "억원",
+     "basis": "FY25 확정",
+     "asof": "2026-09-18",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "op_1q26": {
+     "value": 62,
+     "unit": "억원",
+     "basis": "1Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "op_2q26": {
+     "value": 56,
+     "unit": "억원",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html",
+     "note": "2Q < 1Q — 감속. 「이익은 한선만」이 09-18 기준 깨진 두 번째 이유"
+    },
+    "op_arrival_ratio": {
+     "value": 1.2,
+     "unit": "배",
+     "basis": "1H26 ÷ FY25",
+     "asof": "2026-09-18",
+     "num": "1Q 62 + 2Q 56 = 118억",
+     "den": "FY25 98억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html",
+     "note": "반년에 작년 영업이익의 120% — BTM 5사 중 유일하게 1 초과"
+    },
+    "opm_2q26": {
+     "value": 23.7,
+     "unit": "%",
+     "basis": "2Q26",
+     "asof": "2026-09-18",
+     "num": "분기 영업이익 56억",
+     "den": "분기 매출 236억",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html"
+    },
+    "eps": {
+     "value": -15,
+     "unit": "원",
+     "basis": "09-18 원장",
+     "asof": "2026-09-18",
+     "num": "지배주주 순이익 ÷ 주식수",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 스냅샷 · intake/files/financials/2026-09-18/",
+     "page": "ai-infra/us_bloom_intel_deep.html",
+     "note": "⚠ 영업이익은 흑자인데 EPS 가 음수다 — 영업외에서 깎였다. 짝 계정(영업외손익)을 열기 전까지 PER 은 값이 아니다(§W2·§W3)"
+    }
+   }
   }
  },
  "macro": {

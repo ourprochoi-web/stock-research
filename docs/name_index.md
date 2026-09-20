@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-20)
 
-추적 288개 · 테제가 걸린 이름 188 · 엔티티 있음 77 · facts 있음 53.
+추적 288개 · 테제가 걸린 이름 188 · 엔티티 있음 77 · facts 있음 56.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -106,11 +106,11 @@
 | KR | 유한양행 | 000100 | — | glp1_kbio_portfolio_candidates#T1,T2,T4 | — |
 | KR | 이수페타시스 | 007660 | — | hbm_pkg_theme_substrate#T1,T2 · vcp_breakout_backtest#T4 | — |
 | KR | 이오테크닉스 | 039030 | — | — | — |
-| KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | — |
+| KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | 9 |
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
 | KR | 케이엠더블유 | 032500 | — | — | — |
 | KR | 코미코 | 183300 | — | kr_semi_equip_cross_valuation#T2,T7 | — |
-| KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | — |
+| KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | 7 |
 | KR | 코스맥스 | 192820 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T4 · kr_4sector_cross_valuation#T2,T3 · kr_drawdown_2026#T3 | — |
 | KR | 클로봇 | 466100 | — | — | — |
 | KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · kr_cooling_optical_layer#T5 · ai_sw_company_anthropic#T1 · hbm_pkg_company_samsung#T1,T6,T7 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · node_screener_hbm_scoreboard#T6 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 · cyber_ai_security#T1 | — |
@@ -130,7 +130,7 @@
 | KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | 한국항공우주 | 047810 | — | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
 | KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 | — |
-| KR | 한선엔지니어링 | 452280 | ✓ OPM 20% 아래 2분기 · 2026 매출 720억 미만 | us_bloom_intel_deep#T5 | — |
+| KR | 한선엔지니어링 | 452280 | ✓ OPM 20% 아래 2분기 · 2026 매출 720억 미만 | us_bloom_intel_deep#T5 | 6 |
 | KR | 한양디지텍 | 078350 | ✓ 2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 | hbm_pkg_company_samsung#T6,T8 | 20 |
 | KR | 한전KPS | 051600 | — | ai_power_top5_picks#T1,T2 | — |
 | KR | 한전기술 | 052690 | — | ai_power_company_nuclear_smr#T1 · ai_power_top5_picks#T1 | — |
