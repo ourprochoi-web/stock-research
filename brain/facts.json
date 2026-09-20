@@ -5522,6 +5522,289 @@
      "page": "ai-infra/us_bloom_intel_deep.html"
     }
    }
+  },
+  "078350": {
+   "name": "한양디지텍",
+   "ticker": "078350",
+   "market": "KR",
+   "layer": "메모리 모듈·SSD 조립(SMT) — 삼성 외주화 2층",
+   "canonical_page": "hbm-packaging/hbm_pkg_company_samsung.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 2580,
+     "unit": "KRW 억",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "매출액",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 · intake/files/fetch/2026-09-20/naver_078350_quarter.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_2q26": {
+     "value": 154,
+     "unit": "KRW 억",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "opm_2q26": {
+     "value": 5.96,
+     "unit": "%",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "영업이익 154억",
+     "den": "매출 2,580억",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_1h26": {
+     "value": 222,
+     "unit": "KRW 억",
+     "basis": "반기(1Q 68 + 2Q 154)",
+     "asof": "2026-09-20",
+     "num": "영업이익 합",
+     "den": "—",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "rev_1h26": {
+     "value": 4500,
+     "unit": "KRW 억",
+     "basis": "반기(1Q 1,920 + 2Q 2,580)",
+     "asof": "2026-09-20",
+     "num": "매출 합",
+     "den": "—",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_fy25": {
+     "value": 239,
+     "unit": "KRW 억",
+     "basis": "연간 2025 확정",
+     "asof": "2026-09-20",
+     "num": "영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 · intake/files/fetch/2026-09-20/naver_078350_annual.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_1h26_over_fy25": {
+     "value": 92.9,
+     "unit": "%",
+     "basis": "반기 ÷ 직전 연간",
+     "asof": "2026-09-20",
+     "num": "1H26 OP 222억",
+     "den": "FY25 OP 239억",
+     "grade": "①",
+     "source": "[추론] 위 두 값의 나눗셈",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "반기에 작년 연간 영업이익의 92.9%를 냈다는 뜻이지 연율화가 아니다"
+    },
+    "mktcap": {
+     "value": 3765,
+     "unit": "KRW 억",
+     "basis": "2026-09-20 장중",
+     "asof": "2026-09-20",
+     "num": "시가총액",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 integration · intake/files/fetch/2026-09-20/naver_078350_integr.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "per": {
+     "value": 12.14,
+     "unit": "배",
+     "basis": "2026.06 기준(네이버 표기)",
+     "asof": "2026-09-20",
+     "num": "주가 24,700",
+     "den": "EPS 2,034원",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "pbr": {
+     "value": 1.85,
+     "unit": "배",
+     "basis": "2026.06 기준",
+     "asof": "2026-09-20",
+     "num": "주가 24,700",
+     "den": "BPS 13,324원",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "drawdown_52w": {
+     "value": -44.2,
+     "unit": "%",
+     "basis": "52주 고점 대비",
+     "asof": "2026-09-20",
+     "num": "주가 24,700",
+     "den": "52주 최고 44,300",
+     "grade": "①",
+     "source": "[추론] 24,700/44,300−1",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "foreign_rate": {
+     "value": 6.98,
+     "unit": "%",
+     "basis": "2026-09-20",
+     "asof": "2026-09-20",
+     "num": "외국인 보유",
+     "den": "상장주식수",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "samsung_share": {
+     "value": 97.1,
+     "unit": "%",
+     "basis": "매출처 구성(시점 미표기)",
+     "asof": "2026-09-20",
+     "num": "삼성전자향 매출",
+     "den": "전체 매출",
+     "grade": "②",
+     "source": "2차 출처 · 원문 미개봉",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "모듈 82.1% + SSD 15% 구성도 같은 ② 출처 — 사업보고서로 재확인 필요"
+    }
+   }
+  },
+  "192650": {
+   "name": "드림텍",
+   "ticker": "192650",
+   "market": "KR",
+   "layer": "EMS — 스마트폰·전장·바이오 + (신규) 인도 메모리 모듈",
+   "canonical_page": "hbm-packaging/hbm_pkg_company_samsung.html",
+   "metrics": {
+    "op_2q26": {
+     "value": 1,
+     "unit": "KRW 억",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 · intake/files/fetch/2026-09-20/naver_192650_quarter.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "opm_2q26": {
+     "value": 0.04,
+     "unit": "%",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "영업이익 1억",
+     "den": "매출 2,573억",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_1h26": {
+     "value": 5,
+     "unit": "KRW 억",
+     "basis": "반기(1Q 4 + 2Q 1)",
+     "asof": "2026-09-20",
+     "num": "영업이익 합",
+     "den": "—",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "ni_1h26": {
+     "value": -94,
+     "unit": "KRW 억",
+     "basis": "반기(1Q −44 + 2Q −50)",
+     "asof": "2026-09-20",
+     "num": "당기순이익 합",
+     "den": "—",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_fy26e_consensus": {
+     "value": 386,
+     "unit": "KRW 억",
+     "basis": "연간 2026 컨센서스",
+     "asof": "2026-09-20",
+     "num": "영업이익",
+     "den": "—",
+     "grade": "③",
+     "source": "네이버 재무 컨센서스 열 · intake/files/fetch/2026-09-20/naver_192650_annual.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "1H26 실적 5억이라 2H26에 381억(상반기의 76배)을 요구한다"
+    },
+    "mktcap": {
+     "value": 5040,
+     "unit": "KRW 억",
+     "basis": "2026-09-20 장중",
+     "asof": "2026-09-20",
+     "num": "시가총액",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 integration · intake/files/fetch/2026-09-20/naver_192650_integr.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "eps": {
+     "value": -139,
+     "unit": "KRW",
+     "basis": "2026.06 기준",
+     "asof": "2026-09-20",
+     "num": "당기순이익",
+     "den": "주식수",
+     "grade": "①",
+     "source": "동일 — 마이너스라 PER 이 없다",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    }
+   }
+  },
+  "036540": {
+   "name": "SFA반도체",
+   "ticker": "036540",
+   "market": "KR",
+   "layer": "칩 후공정(OSAT) — 삼성 외주화 1층",
+   "canonical_page": "hbm-packaging/hbm_pkg_company_samsung.html",
+   "metrics": {
+    "op_2q26": {
+     "value": -62,
+     "unit": "KRW 억",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 · intake/files/fetch/2026-09-20/naver_036540_quarter.json",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "opm_2q26": {
+     "value": -4.87,
+     "unit": "%",
+     "basis": "분기(2026-04~06 확정)",
+     "asof": "2026-09-20",
+     "num": "영업이익 −62억",
+     "den": "매출 1,263억",
+     "grade": "①",
+     "source": "동일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_3q26e_consensus": {
+     "value": -31,
+     "unit": "KRW 억",
+     "basis": "분기 2026-3Q 컨센서스",
+     "asof": "2026-09-20",
+     "num": "영업이익",
+     "den": "—",
+     "grade": "③",
+     "source": "네이버 재무 컨센서스 열 · 동일 파일",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    }
+   }
   }
  },
  "macro": {

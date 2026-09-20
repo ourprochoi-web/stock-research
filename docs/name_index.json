@@ -443,11 +443,12 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 3,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
-     "T6"
+     "T6",
+     "T8"
     ]
    },
    "aliases": [],
@@ -462,7 +463,8 @@
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
-     "T6"
+     "T6",
+     "T8"
     ]
    },
    "aliases": [],
@@ -853,8 +855,8 @@
    "code": "192650",
    "market": "KR",
    "entity": "192650",
-   "falsifier": "2026-09-20 편입 — 같은 2층인데 메모리모듈 매출 비중이 미공개라 분모가 없다(§W2). 그래서 값이 아니라 관측이다",
-   "facts": 0,
+   "falsifier": "2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만",
+   "facts": 7,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T6",
@@ -1953,8 +1955,7 @@
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
      "T6",
-     "T7",
-     "T8"
+     "T7"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T1",
@@ -2325,8 +2326,8 @@
    "code": "078350",
    "market": "KR",
    "entity": "078350",
-   "falsifier": "2026-09-20 편입 — 삼성이 외주로 내보낸 물건(DDR5 모듈·SSD)의 순수 노출. 값이 전부 ②라 WATCH 편입으로 정본 측정을 Actions 수집에 넘겼다",
-   "facts": 0,
+   "falsifier": "2026-09-20 편입 · 같은 날 ①로 승격 — 외주로 나간 물건의 순수 노출. 이익은 왔는데 값이 안 붙은 자리",
+   "facts": 13,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T6",
