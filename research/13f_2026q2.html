@@ -142,6 +142,25 @@ b.hl{color:var(--red)}b.hb{color:var(--blue)}b.hg{color:var(--grn)}
   <tr style="background:#fffbf2"><td>2026-05-29</td><td><b>Uber</b></td><td>콜 200계약 · 행사가 $50 · 만기 <b>2027-03-19</b></td><td class="r">$0.5M~$1.0M</td><td><b class="ha">ⓑ 두 번째 신호 → <u>08-23 재판정 완료(아래)</u></b></td></tr>
   <tr><td>2025-12~2026-01</td><td>알파벳·아마존</td><td>콜 매수 + 현물 일부 매도·기부</td><td class="r">구간 다수</td><td class="g">기존 보유의 롤오버 성격</td></tr>
   </table></div>
+  <h3 style="margin:24px 0 6px;font-size:1.02rem">②-2 <b class="hb">「의원 거래 추적」은 사람 단위로 하면 안 된다 — 넷을 같은 축에 세워 봤다</b> <span style="font-size:.8rem;color:var(--ink-3)">2026.09.20 신설</span></h3>
+  <p>09-19에 감시 대상 5명(Pelosi·Greene·Gottheimer·Khanna·McCaul)을 정했는데, 그중 둘은 PTR이 <b>스캔 이미지</b>라 못 읽고 있었다. 09-20에 <b>14건 308면을 OCR</b>했고(<b>②</b> 기계 판독 · 거래행 4,493건 중 서식 검증 통과 1,964건), 텍스트 레이어 12건과 합쳐 <b>넷을 같은 축</b>에 세웠다.</p>
+  <div class="tw"><table>
+  <tr><th>의원</th><th class="r">2026 PTR</th><th class="r">거래</th><th class="r">매수 비중</th><th class="r">≤$50K (A~B)</th><th class="r">≥$250K (E+)</th><th>성격</th></tr>
+  <tr style="background:#f2fbf7"><td><b>Pelosi</b></td><td class="r">3</td><td class="r">26</td><td class="r"><b>73%</b></td><td class="r"><b>0%</b></td><td class="r"><b>85%</b></td><td><b class="hg">소수 · 대형 · 방향성 + 옵션</b></td></tr>
+  <tr><td>Gottheimer</td><td class="r">9</td><td class="r">122</td><td class="r">40%</td><td class="r">92%</td><td class="r">7%</td><td class="g">다수 · 소액 · 양방향</td></tr>
+  <tr><td>McCaul</td><td class="r">6</td><td class="r">534</td><td class="r">60%</td><td class="r">74%</td><td class="r">5%</td><td class="g">상위 보유가 <b>채권형 펀드</b> · SP 100%</td></tr>
+  <tr><td>Khanna</td><td class="r">8</td><td class="r">1,430</td><td class="r">50%</td><td class="r"><b>99%</b></td><td class="r"><b>0%</b></td><td class="g">고유 자산명 <b>1,033개</b> · SP+DC</td></tr>
+  <tr><td>Greene</td><td class="r"><b>0</b></td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="g">2026년 PTR 없음 — 판정 불가</td></tr>
+  </table></div>
+  <div class="warn"><b>🔑 거래 <u>수</u>와 집중도가 반비례한다.</b>
+  26건(펠로시 · E+ 85%) → 122건(고테이머 · 7%) → 534건(맥콜 · 5%) → <b>1,430건(칸나 · 0%)</b>.
+  <b>많이 거래하는 사람일수록 소액이고 양방향이다</b> — 사람이 고른 게 아니라 <b>자문일임·매니지드 어카운트가 기계적으로 리밸런싱</b>하고 있다는 뜻이다.
+  칸나는 <b>1,430건에 고유 자산명이 1,033개</b>(행당 1.4회)이고 전부 배우자·부양자녀 계좌다. 맥콜의 상위 보유는 종목이 아니라 <b>채권형 펀드</b>(Northern Intermed Tax Exempt 21건 · Northern Ultra-Short Fixed Inc 16건)다.
+  <b>펠로시만 다르다 — 26건인데 85%가 $250K 이상이고 매수가 73%이며, 유일하게 옵션(콜)을 산다.</b></div>
+  <div class="ok"><b>📏 그래서 필터를 하나로 고정한다 — <u>≥$250K(E 구간 이상) 비중 50%</u>.</b>
+  펠로시 85% 통과 · 나머지 셋 0~7% 전원 탈락으로 <b>단일 지표가 완전히 가른다</b>. 보조축은 매수 비중과 <b>고유 자산명 ÷ 거래 수</b>(1에 가까울수록 인덱스형 회전).<br>
+  <b>실행 — 감시 목록에서 Gottheimer·Khanna·McCaul을 뺀다</b>(<code>intake/requests/congress_members.txt</code>). <b>추적 비용만 들고 정보가 0이다.</b> Greene은 2026년 PTR이 0건이라 <u>탈락이 아니라 판정 불가</u>이므로 남긴다 — 첫 PTR이 오면 같은 필터를 건다.<br>
+  <span style="color:var(--ink-3)">⚠ OCR 값은 <b>②</b>다. 금액 구간만은 OCR이 아니라 <b>체크박스 흑점 검출</b>로 정했다(A~K 열 · 구간이 서식에 고정) — 그래서 「목록 밖 값」은 나올 수 없고 실패 양상은 「열을 잘못 짚음」이다. 칸나 건 확인율이 37%(맥콜 90%)로 낮은 것도 그 때문이다. 위 표의 비중은 <b>서식 검증을 통과한 행만</b>으로 셌다.</span></div>
   <div class="ok"><b>🔑 여기에만 있는 정보가 <u>행사가와 만기</u>다.</b>
   13F는 옵션을 <b>보유 스냅샷</b>으로만 주는데(§J12 한계 ②), PTR은 <b>계약수·행사가·만기</b>를 준다 —
   <b>「언제까지 얼마 이상」이라는 <u>시점과 문턱</u>이 읽힌다.</b> 여기서는 <b>2027-03-19</b>가 그 시한이다.</div>
