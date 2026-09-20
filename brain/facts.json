@@ -6210,6 +6210,301 @@
      "page": "ai-infra/us_merchant_power_vst_nrg.html"
     }
    }
+  },
+  "CBRS": {
+   "name": "Cerebras Systems",
+   "ticker": "CBRS",
+   "market": "US",
+   "layer": "웨이퍼스케일 AI 반도체 + 추론 클라우드",
+   "canonical_page": "ai-infra/ai_chip_architecture_war.html",
+   "metrics": {
+    "rev_2q26": {
+     "value": 180.1,
+     "unit": "USD M",
+     "basis": "분기 2026-04~06 · GAAP",
+     "asof": "2026-09-20",
+     "num": "매출",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "core(비GAAP)는 $209.9M — 섞어 쓰지 않는다"
+    },
+    "rev_qoq_2q26": {
+     "value": -6.9,
+     "unit": "%",
+     "basis": "1Q26 → 2Q26 · GAAP",
+     "asof": "2026-09-20",
+     "num": "2Q 180.110 − 1Q 193.406",
+     "den": "1Q 193.406",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "[추론] 회사가 말하는 +103%는 core YoY 다"
+    },
+    "rev_1h26": {
+     "value": 373.5,
+     "unit": "USD M",
+     "basis": "반기 2026-01~06 · GAAP",
+     "asof": "2026-09-20",
+     "num": "1Q 193.4 + 2Q 180.1",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html"
+    },
+    "gpm_2q26": {
+     "value": 14.2,
+     "unit": "%",
+     "basis": "분기 2026-04~06 · GAAP",
+     "asof": "2026-09-20",
+     "num": "매출 180.110 − 매출원가 154.551",
+     "den": "매출 180.110",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "1Q26 은 44.6% · 1H25 는 36.3%"
+    },
+    "opi_2q26": {
+     "value": -477.2,
+     "unit": "USD M",
+     "basis": "분기 2026-04~06 · GAAP",
+     "asof": "2026-09-20",
+     "num": "영업손익",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "OPM −265% · ② 분기 SBC $386.6M 이 주 원인으로 설명된다"
+    },
+    "capex_1h26": {
+     "value": 548.9,
+     "unit": "USD M",
+     "basis": "반기 2026-01~06",
+     "asof": "2026-09-20",
+     "num": "유형자산 취득",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "1H25 는 $185.1M — +197%"
+    },
+    "da_1h26": {
+     "value": 42.6,
+     "unit": "USD M",
+     "basis": "반기 2026-01~06",
+     "asof": "2026-09-20",
+     "num": "감가상각비",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html"
+    },
+    "capex_to_da_1h26": {
+     "value": 12.9,
+     "unit": "배",
+     "basis": "반기 2026-01~06",
+     "asof": "2026-09-20",
+     "num": "CapEx 548.9",
+     "den": "감가상각 42.6",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "[추론] 비용이 아직 도착하지 않았다 — 감가상각은 2027년부터 본격화하고 SBC 와 달리 일회성이 아니다"
+    },
+    "fcf_1h26": {
+     "value": -596.4,
+     "unit": "USD M",
+     "basis": "반기 2026-01~06",
+     "asof": "2026-09-20",
+     "num": "OCF −47.5 − CapEx 548.9",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html"
+    },
+    "cash": {
+     "value": 6742,
+     "unit": "USD M",
+     "basis": "2026-06-30",
+     "asof": "2026-09-20",
+     "num": "현금및현금성자산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "단기투자 포함하면 $8.6B(②)"
+    },
+    "equity": {
+     "value": 9150,
+     "unit": "USD M",
+     "basis": "2026-06-30",
+     "asof": "2026-09-20",
+     "num": "자본총계",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html"
+    },
+    "customer_top3_2q26": {
+     "value": 76,
+     "unit": "%",
+     "basis": "분기 2026-04~06 · 10-Q",
+     "asof": "2026-09-20",
+     "num": "3개 고객 34+32+10",
+     "den": "총매출",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-infra/ai_chip_architecture_war.html",
+     "note": "이름 미공개. FY25 는 G42 24% + MBZUAI 62% = 86%(둘 다 아부다비 계열) — FY24 G42 85% 에서 분산된 게 아니다"
+    }
+   }
+  },
+  "NTRA": {
+   "name": "Natera",
+   "ticker": "NTRA",
+   "market": "US",
+   "layer": "분자진단(cfDNA/ctDNA) — Women's Health · Oncology(Signatera) · Organ Health",
+   "canonical_page": "ai-bio/ai_bio_investment_map.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 2707,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "매출 4분기 합산",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html",
+     "note": "8분기 연속 증가 $440M → $753M"
+    },
+    "opi_ttm": {
+     "value": -290,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "영업손익 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "opm_ttm": {
+     "value": -10.7,
+     "unit": "%",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "영업손실 −290",
+     "den": "매출 2,707",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "ni_ttm": {
+     "value": -192,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "순손익 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "ocf_ttm": {
+     "value": 228,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "영업현금흐름 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "capex_ttm": {
+     "value": 144,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "유형자산 취득 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "fcf_ttm": {
+     "value": 84,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "OCF 228 − CapEx 144",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "da_ttm": {
+     "value": 53,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "감가상각비 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "opi_to_ocf_gap": {
+     "value": 518,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2)",
+     "asof": "2026-09-20",
+     "num": "OCF +228 − 영업손실 −290",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html",
+     "note": "[추론] 이 다리를 감가상각 $53M 으로는 못 메운다 — 나머지 약 $465M 이 주식보상과 운전자본이다. 「현금흐름 플러스」는 희석이 만든다"
+    },
+    "ps_ttm": {
+     "value": 19.5,
+     "unit": "배",
+     "basis": "2026-09-18 시총 ÷ TTM 매출",
+     "asof": "2026-09-20",
+     "num": "시총 $52,800M",
+     "den": "매출 $2,707M",
+     "grade": "①②",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/ · 수집 2026-09-20",
+     "page": "ai-bio/ai_bio_investment_map.html",
+     "note": "시총은 ②(검색 · 원문 미개봉)"
+    },
+    "signatera_asp": {
+     "value": 1275,
+     "unit": "USD",
+     "basis": "2Q26 · 회사 발표",
+     "asof": "2026-09-20",
+     "num": "Signatera 평균 실현단가",
+     "den": "—",
+     "grade": "②",
+     "source": "회사 실적 발표(검색 요약 경유)",
+     "page": "ai-bio/ai_bio_investment_map.html",
+     "note": "Medicare FFS 요율 $1,495 의 85.3% — 상업보험 믹스가 끌어내린다. 요율은 2026~2027 고정(②③)"
+    },
+    "gpm_2q26": {
+     "value": 64.5,
+     "unit": "%",
+     "basis": "분기 2026-04~06",
+     "asof": "2026-09-20",
+     "num": "매출총이익",
+     "den": "매출 $752.8M",
+     "grade": "②",
+     "source": "회사 실적 발표",
+     "page": "ai-bio/ai_bio_investment_map.html",
+     "note": "전년 63.4% 대비 +110bp — 매출 +37.7% 대비 마진 레버리지가 약하다"
+    }
+   }
   }
  },
  "macro": {

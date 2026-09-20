@@ -1766,14 +1766,17 @@
    "pages": [
     "ai-infra/ai_chip_architecture_war.html"
    ],
-   "facts": [],
+   "facts": [
+    "companies.CBRS"
+   ],
    "theses": [
     "ai-infra/ai_chip_architecture_war.html#T5"
    ],
    "intake": [
     "u-20260920-04"
    ],
-   "note": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다"
+   "note": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다",
+   "canonical_page": "ai-infra/ai_chip_architecture_war.html"
   },
   "NTRA": {
    "name": "Natera",
@@ -1785,14 +1788,17 @@
    "pages": [
     "ai-bio/ai_bio_investment_map.html"
    ],
-   "facts": [],
+   "facts": [
+    "companies.NTRA"
+   ],
    "theses": [
     "ai-bio/ai_bio_investment_map.html#T5"
    ],
    "intake": [
     "u-20260920-04"
    ],
-   "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것"
+   "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것",
+   "canonical_page": "ai-bio/ai_bio_investment_map.html"
   }
  },
  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

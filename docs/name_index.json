@@ -3192,7 +3192,7 @@
    "market": "US",
    "entity": "CBRS",
    "falsifier": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다",
-   "facts": 0,
+   "facts": 12,
    "theses": {
     "ai-infra/ai_chip_architecture_war.html": [
      "T1",
@@ -4227,7 +4227,7 @@
    "market": "US",
    "entity": "NTRA",
    "falsifier": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것",
-   "facts": 0,
+   "facts": 12,
    "theses": {
     "ai-bio/ai_bio_investment_map.html": [
      "T5"

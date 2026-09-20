@@ -59,11 +59,11 @@
 | 2026.08.29 | 2026-08-29 | [한·미 메모리 팹 증설 지도 — 어느 단계에 누가 들어가나](hbm-packaging/kr_semi_fab_timeline.html) | 5 |
 | 2026.08.29 | 2026-08-29 | [심화 테마 C — 부품 서플라이체인: 감속기에서 액추에이터까지](robot/robot_theme_supply_chain.html) | 5 |
 | 2026.08.29 | 2026-08-29 | [우주 산업 2026 업데이트 — SpaceX $1.77T IPO·Starship V3·한국 KASA](space/space_update_2026.html) | 5 |
-| 2026.08.28 | 2026-08-28 | [GPU vs ASIC — AI 반도체 아키텍처 전쟁](ai-infra/ai_chip_architecture_war.html) | 4 |
+| 2026.08.28 ⚠ | 2026-09-20 | [GPU vs ASIC — AI 반도체 아키텍처 전쟁](ai-infra/ai_chip_architecture_war.html) | 4 |
 | 2026.08.28 | 2026-08-28 | [마벨 — 지표는 나빠지는데 가격이 오른 유일한 종목](ai-infra/ai_chip_company_marvell.html) | 5 |
 | 2026.08.26 | 2026-08-26 | [EPC 2사 — 집중도의 반대편에서 짓는 사람들](ai-infra/us_epc_datacenter_build.html) | 5 |
 | 2026.08.26 | 2026-08-26 | [기판/소재 — ABF·글라스코어·CCL](hbm-packaging/hbm_pkg_theme_substrate.html) | 5 |
-| 2026.08.25 | 2026-08-25 | [AI 바이오 투자 지도 — 12사 크로스 밸류에이션](ai-bio/ai_bio_investment_map.html) | 4 |
+| 2026.08.25 ⚠ | 2026-09-20 | [AI 바이오 투자 지도 — 12사 크로스 밸류에이션](ai-bio/ai_bio_investment_map.html) | 4 |
 | 2026.08.25 | 2026-08-25 | [미국 전력 7사 — 「규제형」과 「상인형」은 AI를 버는 방식이 다르다](ai-infra/us_power_regulated_vs_merchant.html) | 7 |
 | 2026.08.25 | 2026-08-25 | [370조엔 vs $921B vs $295B — 6개국 국가 전략 투자 총괄 비교](national-strategy/ns_global_strategy_overview.html) | 5 |
 | 2026.08.25 ⚠ | 2026-09-20 | [13F 2026 Q2 — 대가 8인의 분기 변화, 주식 수로 분해했다](research/13f_2026q2.html) | 6 |
@@ -1125,7 +1125,7 @@
 
 ## GPU vs ASIC — AI 반도체 아키텍처 전쟁
 
-`ai-infra/ai_chip_architecture_war.html` · 판단 2026.08.28 · 갱신 2026-08-28
+`ai-infra/ai_chip_architecture_war.html` · 판단 2026.08.28 · 갱신 2026-09-20
 
 - **T1.** 본 편이 「AI 칩」으로 한 층에 묶어 온 것들이 수익 구조로는 5배 갈린다.
 - **T2.** ✅ Cerebras의 2분기 비용 급증은 IPO 주식보상이었다 — 그러나 GPM 붕괴는 아니었다.
@@ -1218,7 +1218,7 @@
 
 ## AI 바이오 투자 지도 — 12사 크로스 밸류에이션
 
-`ai-bio/ai_bio_investment_map.html` · 판단 2026.08.25 · 갱신 2026-08-25
+`ai-bio/ai_bio_investment_map.html` · 판단 2026.08.25 · 갱신 2026-09-20
 
 - **T1.** 이 시리즈의 가장 큰 결함은 분석이 아니라 판정 장치의 부재였다. AI 바이오는 6편이 쌓였는데 2026.08.12까지 상단 "현재 판단"이 0편이었고, 본문이 56회 인용하는 Recursion에 대한 가격 추적조차 없었다. 붙이고 보니 $3.35 · 1Y -36.7%다. 이 하락이 시리즈의 논지를 반…
 - **T2.** 밸류에이션 스펙트럼이 13배 벌어져 있다는 것은 같은 산업으로 묶여 있지 않다는 뜻이다. 본 편이 기록한 2026E P/S는 Schrödinger 4.2x ~ Insilico 55.7x로 13배 이상 차이다. 이 정도 격차는 "고평가/저평가"가 아니라 사업 모델이 다르다는 신호다 — 소프트웨어 라이선스…

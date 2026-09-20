@@ -330,13 +330,6 @@
    "updates": []
   },
   {
-   "id": "us-merchant-page",
-   "grade": "측정",
-   "since": "2026-09-20",
-   "what": "🔵 13F 공백 4사(VST·NRG·NTRA·CBRS) 판단은 브레인에 섰는데 페이지가 없다 — 그래서 facts.json에 못 넣었다(정본 페이지가 산출한 뒤에만 등재). 값은 intake/files/sec/_ttm_summary.json에 있다. 페이지를 쓸 자리 후보 — ① us_power_regulated_vs_merchant를 「미국 전력」으로 확장(Talen 중심이라 상인형 2강이 본문에 없다) ② ai_chip_architecture_war에 웨이퍼스케일 층 추가 ③ ai_bio_investment_map 12사에 Natera 추가. 채우지 못한 칸 — CBRS 2Q26 3개 고객(34/32/10%) 이름 · VST AWS·Meta PPA 계약단가 · NRG 하이퍼스케일러 이름 · NTRA 상업보험 커버 인구수·제품라인별 매출",
-   "updates": []
-  },
-  {
    "id": "egress-allowlist",
    "grade": "측정 완료",
    "since": "2026-09-20",
