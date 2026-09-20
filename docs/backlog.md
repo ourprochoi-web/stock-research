@@ -220,3 +220,17 @@ for r in P: print(r['id'],r.get('due'),'|',('✓ '+str(r.get('verdict_result')))
 EOF
 ```
 채점은 `judged_by`(routing id) · `verdict_result`(맞음/틀림/부분) 를 채운다. 월 1회 감사에서 적중률을 센다(개선안 금지 · 측정만).
+
+## 턴 스크린 — 「이익 도착 시점 대비 가격」 (2026-09-20 신설)
+```bash
+python3 portfolio/data/turn_screen.py            # 최신 스냅샷 · Ⓐ정방향 Ⓑ흑전 Ⓒ역방향
+python3 portfolio/data/turn_screen.py 2026-09-18 --all
+```
+한양디지텍을 찾아낸 조건 셋(① 1H26 OP ≥ FY25의 70% ② 2Q>1Q 가속 ③ PER ≤ 15)에
+④ 아카이브 판단 0편을 붙인 것. `leader_screen.py`(주도·선행 = 가격 모멘텀)와 **축이 다르다**.
+스냅샷이 정본이므로 **`leader_screen.py`를 먼저 돌려 스냅샷을 갱신**해야 값이 새것이 된다.
+- **Ⓒ 역방향이 보유 점검이다** — 2026-09-20 실행에서 보유 5종목(ETF 3종은 분기 재무 없어 불가) 중
+  SKH·삼성만 Ⓐ에 들었고 현대백화점(1H÷FY 47% · OP −9%)·파마리서치(58%)·삼바(56% · PER 38.4)는 안 들었다.
+  `portfolio.json` `next`의 성상현 격자(SKH·삼성 = B · 나머지 셋 = D)와 **독립적으로 같은 답**이 나왔다.
+- ⚠ 함정 둘(둘 다 2026-09-20에 실제로 밟았다) — 국내 `영업이익` vs 해외 `EBIT` 스키마 차이(고정하면 89종목 누락) ·
+  커버리지를 이름으로만 보면 미국 종목이 전부 「0편」이 된다(Diamondback → FANG).
