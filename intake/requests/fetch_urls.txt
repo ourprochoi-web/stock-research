@@ -3,21 +3,11 @@
 # 형식: label | https://url   (label 생략 가능 · '#' 주석 · https 만)
 # 왜 있나: 세션 샌드박스의 egress 정책에 막힌 호스트를 사용자 소유 CI 러너에서 받기 위해서다(§W5 · §H1).
 #   프록시 우회가 아니다 — 세션의 403 은 조직 정책이고 여기서 쓰는 건 시세 봇이 쓰는 것과 같은 길이다.
-# 끝나면 이 목록은 비워도 된다(git 이 기억한다). 다음 요청 때 새로 적는다.
+# 📌 근본 해결은 환경 allowlist 다(사용자 결정 2026-09-20) — 목록·경로는 docs/method_datasource.md 맨 뒤.
+#   allowlist 가 적용되면 반복 구조화 출처(SEC·네이버·DART·FRED)는 세션에서 바로 읽고,
+#   이 파일은 allowlist 에 넣을 수 없는 일회성 페이지(언론 기사·정부 발표 첨부)만 남는다.
+# 처리 끝난 요청은 지운다(git 이 기억한다). 지우지 않으면 다음 push 때 또 받아 id 만 늘어난다.
 
-# ── 2026-09-20 · 삼성 외주화 2층(brain hbm_pkg_company_samsung#T8)의 값이 전부 ② 라서 ① 로 올린다
-#    한양디지텍(078350) — 매출 82.1% 메모리 모듈 + 15% SSD · 고객 97.1% 삼성. 외주로 나간 물건의 순수 노출
-naver_078350_annual  | https://m.stock.naver.com/api/stock/078350/finance/annual
-naver_078350_quarter | https://m.stock.naver.com/api/stock/078350/finance/quarter
-naver_078350_basic   | https://m.stock.naver.com/api/stock/078350/basic
-naver_078350_integr  | https://m.stock.naver.com/api/stock/078350/integration
-#    드림텍(192650) — 같은 층의 인도 경로. 모듈 매출 비중이 미공개라 분모부터 확인해야 한다
-naver_192650_annual  | https://m.stock.naver.com/api/stock/192650/finance/annual
-naver_192650_quarter | https://m.stock.naver.com/api/stock/192650/finance/quarter
-naver_192650_basic   | https://m.stock.naver.com/api/stock/192650/basic
-naver_192650_integr  | https://m.stock.naver.com/api/stock/192650/integration
-#    대조군 SFA반도체(036540) — 같은 창에서 비교해야 층 구분이 값이 된다
-naver_036540_quarter | https://m.stock.naver.com/api/stock/036540/finance/quarter
-
-# ── 2026-09-20 · 대미투자 판정(brain ai_power_company_nuclear_smr#T3) — 정부 설명자료 원문이 ① 인데 못 열었다
-korea_kr_daemi_nuclear | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
+# ── 완료분(2026-09-20 · 10/10 성공 → C1 정정으로 라우팅됨) 은 지웠다.
+#    남은 것 하나 — 대미투자 설명자료 <본문>. HTML 엔 제목·날짜(2026-09-15 산업통상부)만 있고 본문은 첨부에 있다.
+#    ⚠ 첨부 직링크를 아직 못 찾았다(HTML 에 '바로보기/내려받기' 스크립트만 있다) — URL 을 확인한 뒤 여기 적는다.
