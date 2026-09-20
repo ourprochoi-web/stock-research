@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-20)
 
-추적 304개 · 테제가 걸린 이름 190 · 엔티티 있음 77 · facts 있음 58.
+추적 304개 · 테제가 걸린 이름 190 · 엔티티 있음 77 · facts 있음 62.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -84,7 +84,7 @@
 | KR | 솔브레인 | 357780 | — | kr_semi_fab_timeline#T1 · kr_semi_materials_gas#T1,T4,T5 | — |
 | KR | 스피어 | 347700 | — | — | — |
 | KR | 실리콘투 | 257720 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T1,T2,T3,T4,T5 · k_beauty_sector#T1,T2,T3,T5 · kr_4sector_cross_valuation#T3 | — |
-| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | — |
+| KR | 심텍 | 222800 | — | hbm_pkg_company_samsung#T6,T8 · hbm_pkg_theme_substrate#T2,T3,T5 | 7 |
 | KR | 씨메스로보틱스 | 475400 | — | — | — |
 | KR | 아모레퍼시픽 | 090430 | — | k_beauty_company_largecap_odm#T4 · k_beauty_sector#T1 · kr_4sector_cross_valuation#T3 | — |
 | KR | 아모센스 | 357580 | ✓ 4Q26 소재 매출 <7십억 · 본격 출하 지연 | us_bloom_intel_deep#T5 | — |
@@ -116,7 +116,7 @@
 | KR | 이녹스첨단소재 | 272290 | — | — | — |
 | KR | 이수페타시스 | 007660 | — | hbm_pkg_theme_substrate#T1,T2 · vcp_breakout_backtest#T4 | — |
 | KR | 이엔에프테크놀로지 | 102710 | — | — | — |
-| KR | 이오테크닉스 | 039030 | — | — | — |
+| KR | 이오테크닉스 | 039030 | — | — | 4 |
 | KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | 9 |
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
 | KR | 케이엔제이 | 272110 | — | — | — |
@@ -128,7 +128,7 @@
 | KR | 테스 | 095610 | — | ai_chip_architecture_war#T1 · kr_cooling_optical_layer#T5 · ai_sw_company_anthropic#T1 · hbm_pkg_company_samsung#T1,T6,T7 · kr_semi_equip_6#T1,T5 · kr_semi_equip_cross_valuation#T3,T6 · kr_semi_fab_timeline#T3 · kr_4sector_cross_valuation#T3 · ns_semiconductor_war#T4,T5 · node_screener_hbm_scoreboard#T6 · vcp_breakout_backtest#T5 · robot_theme_supply_chain#T1,T2,T3,T4,T5 · cyber_ai_security#T1 | — |
 | KR | 티로보틱스 | 117730 | — | — | — |
 | KR | 티씨케이 | 064760 | — | — | — |
-| KR | 티에스이 | 131290 | ✓ T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 | node_screener_hbm_scoreboard#T6 | — |
+| KR | 티에스이 | 131290 | ✓ T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 | node_screener_hbm_scoreboard#T6 | 11 |
 | KR | 티엘비 | 356860 | — | hbm_pkg_company_samsung#T6 · hbm_pkg_theme_substrate#T2,T3 | — |
 | KR | 파마리서치 | 214450 | ✓ T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에  | k_beauty_company_pharmaresearch#T1,T2,T3,T4 · k_beauty_company_apr#T1 · k_beauty_sector#T1,T4 | — |
 | KR | 파이오링크 | 170790 | — | — | — |
@@ -189,7 +189,7 @@
 | US | Alibaba | BABA | ✓ 2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_val | — | — |
 | US | Alphabet | GOOGL.O | — | ai_value_chain_guide_v2#T1 · us_power_regulated_vs_merchant#T5 · ai_sw_overview#T2,T4 · us_7axis_cross_valuation#T2 · ns_bigtech_capex_roi#T1,T5 | — |
 | US | Amazon | AMZN.O | — | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · ai_value_chain_guide_v2#T1,T2 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · k_beauty_company_apr#T3 · ns_bigtech_capex_roi#T1 | — |
-| US | Amphenol | APH | ✓  | us_ai_adjacent_cross_valuation#T11,T4 · us_ai_adjacent_sectors#T2,T7 · us_epc_datacenter_build#T1 | — |
+| US | Amphenol | APH | ✓  | us_ai_adjacent_cross_valuation#T11,T4 · us_ai_adjacent_sectors#T2,T7 · us_epc_datacenter_build#T1 | 9 |
 | US | Antero Resources | AR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | Applied Optoelectronics | AAOI.O | ✓  | — | 7 |
 | US | Arista Networks | ANET.K | ✓  | — | — |

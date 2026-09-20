@@ -161,19 +161,32 @@ def dart_find(company, day, report, max_pages=45):
 
     ⚠ reportName·searchWord·keyword·contentWord 는 전부 무시된다 — 행 텍스트로 거른다.
     ⚠ rcpNo 는 14자리다. 2026\d{8}(12자리)로 쓰면 0건이 나온다(2026-08-24 실측).
+    ⚠ <부분일치로 다른 회사를 잡는다>(2026-09-20 실측). 「디아이」를 찾다가 <디아이동일>
+      (섬유·알루미늄·화장품)을 받아 왔다. 같은 날 「오알켐」 티커가 <와이엠씨>였던 것과 같은 종류의
+      조용한 오류다 — 값은 멀쩡해 보이고 이름만 거짓이다. 그래서 <정확 일치를 먼저 찾고>,
+      없을 때만 부분일치로 내려가되 note 에 ⚠ 를 남긴다. 회사명 셀은 링크 텍스트로 들어온다.
     """
+    loose = None
     for page in range(1, max_pages + 1):
         h = _post(DART + "/dsac001/search.ax",
                   {"selectDate": day, "currentPage": str(page), "maxResults": "100", "mdayCnt": "0"},
                   DART + "/dsac001/mainY.do")
         for row in re.split(r"<tr[^>]*>", h):
-            if company in row and report in row:
-                m = re.search(r"20\d{12}", row)
-                if m:
-                    txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", row)).strip()
-                    return m.group(0), txt[:160]
+            if company not in row or report not in row:
+                continue
+            m = re.search(r"20\d{12}", row)
+            if not m:
+                continue
+            txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", row)).strip()
+            # 회사명이 <독립 토큰>으로 있는가 — 앞뒤가 공백/괄호/따옴표여야 정확 일치로 본다
+            if re.search(r"(?:^|[\s(（\[\"'>])" + re.escape(company) + r"(?:[\s)）\]\"'<,.]|$)", txt):
+                return m.group(0), txt[:160]
+            if loose is None:
+                loose = (m.group(0), "⚠ 부분일치 — " + txt[:150])
         if "<tr" not in h:
             break
+    if loose:
+        return loose
     return None, f"{day} 피드 {max_pages}페이지에 {company}/{report} 없음"
 
 

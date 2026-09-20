@@ -1491,7 +1491,7 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 7,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T6",
@@ -1944,7 +1944,7 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 4,
    "theses": {},
    "aliases": [],
    "auto_candidate": true
@@ -2181,7 +2181,7 @@
    "market": "KR",
    "entity": "131290",
    "falsifier": "T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 → 3사 서사 도전",
-   "facts": 0,
+   "facts": 11,
    "theses": {
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T6"
@@ -3212,7 +3212,7 @@
    "market": "US",
    "entity": "APH",
    "falsifier": null,
-   "facts": 0,
+   "facts": 9,
    "theses": {
     "ai-infra/us_ai_adjacent_cross_valuation.html": [
      "T11",
