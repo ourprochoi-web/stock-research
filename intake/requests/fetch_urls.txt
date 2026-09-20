@@ -14,5 +14,8 @@
 
 # ── 2026-09-20 요청: 대미투자 원전 설명자료 <본문> PDF.
 #    첨부 직링크를 HTML(c-20260920-15)에서 찾았다 — /common/download.do?fileId=198552978 (PDF) · 198552979 (HWPX).
-#    세션에서 download.do 는 relay reset(ws_closed_mid_exchange) 로 계속 실패한다 — 러너로 받는다.
-korea_kr_daemi_nuclear | https://www.korea.kr/common/download.do?fileId=198552978
+#    1차 시도(run 35485990057) 는 Fetch 단계에서 10분 넘게 안 끝났다 — 서버가 응답을 끝내지 않는다.
+#    collect_fetch.py 에 <브라우저 UA + 세션 쿠키 + Referer + 벽시계 read 상한> 을 붙이고 재시도한다.
+#    세션에서는 www.korea.kr 전체가 relay reset(11초) 이라 러너로만 받는다.
+korea_kr_daemi_nuclear | https://www.korea.kr/common/download.do?fileId=198552978 | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
+korea_kr_daemi_nuclear_hwpx | https://www.korea.kr/common/download.do?fileId=198552979 | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946

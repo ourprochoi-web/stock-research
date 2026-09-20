@@ -20,9 +20,11 @@
 
 요청 파일 형식(한 줄 하나 · '#' 주석 · 빈 줄 무시):
   label | https://url            ← label 이 파일명이 된다(영숫자·._- 만)
+  label | https://url | referer  ← 첨부 다운로드처럼 <어느 페이지에서 눌렀는지>를 따지는 곳에 쓴다
   https://url                    ← label 을 URL 에서 만든다
 """
 import hashlib
+import http.cookiejar
 import io
 import json
 import os
@@ -40,6 +42,16 @@ REQ = os.path.join(ROOT, "intake", "requests", "fetch_urls.txt")
 OUT = os.path.join(ROOT, "intake", "files", "fetch")
 MAX_BYTES = 8 * 1024 * 1024  # 한 파일 8MB — 저장소가 수집 층 무게로 무너지지 않게
 
+BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36")
+# 호스트별 예외 — 왜(2026-09-20 실측): www.korea.kr 의 /common/download.do 는 식별 UA + 쿠키 없는 요청에
+#   <응답을 끝내지 않는다>. 러너에서 10분 넘게 read 가 안 끝났고(run 35485990057) 세션에서는 relay 가 11초에 끊었다.
+#   같은 호스트의 HTML(actuallyView.do)은 정상이므로 호스트 차단이 아니라 <첨부 엔드포인트 전용 조건>이다 —
+#   브라우저 UA + 세션 쿠키(JSESSIONID) + Referer 를 붙인다.
+#   ⚠ 기본 UA 는 바꾸지 않는다 — SEC 는 반대로 <식별 UA>를 요구한다(403). 호스트 화이트리스트로만 건다.
+BROWSER_HOSTS = {"www.korea.kr"}
+READ_DEADLINE = 120  # 초 · 벽시계. 찔끔찔끔 보내는 서버가 러너를 6시간 붙잡지 못하게 하는 상한
+
 EXT = {"application/json": "json", "text/html": "html", "application/xhtml+xml": "html",
        "text/plain": "txt", "text/csv": "csv", "application/pdf": "pdf", "application/xml": "xml", "text/xml": "xml"}
 
@@ -56,18 +68,55 @@ def label_from_url(url):
     return slug(f"{host}_{tail}" if tail else host)
 
 
-def get(url, retries=3, timeout=45):
+def host_of(url):
+    m = re.match(r"https://([^/]+)", url)
+    return m.group(1) if m else ""
+
+
+def read_capped(r):
+    """MAX_BYTES 까지 읽되 벽시계 READ_DEADLINE 을 넘기면 끊는다.
+
+    socket timeout 은 <한 번의 recv 가 조용한 시간>만 잰다 — 서버가 몇 초마다 몇 바이트씩 흘리면
+    timeout 은 영원히 안 걸린다(2026-09-20 러너 실측). 전체 소요 시간에 상한을 따로 건다.
+    """
+    buf = bytearray()
+    t0 = time.time()
+    while len(buf) <= MAX_BYTES:
+        if time.time() - t0 > READ_DEADLINE:
+            raise TimeoutError(f"read deadline {READ_DEADLINE}s 초과 · {len(buf)}B 까지 받음")
+        chunk = r.read(65536)
+        if not chunk:
+            break
+        buf.extend(chunk)
+    return bytes(buf)
+
+
+def get(url, retries=3, timeout=45, referer=""):
+    host = host_of(url)
+    browserish = host in BROWSER_HOSTS
     last = "?"
     for i in range(retries):
         try:
-            req = urllib.request.Request(url, headers={
-                "User-Agent": UA,
+            jar = http.cookiejar.CookieJar()
+            opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+            hdrs = {
+                "User-Agent": BROWSER_UA if browserish else UA,
                 "Accept": "*/*",
                 "Accept-Language": "ko,en;q=0.8",
                 "Accept-Encoding": "gzip, deflate",
-            })
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                data = r.read(MAX_BYTES + 1)
+            }
+            if browserish:
+                hdrs["Referer"] = referer or f"https://{host}/"
+                # 쿠키를 먼저 받아 둔다 — 첨부 엔드포인트는 세션 없이는 응답을 끝내지 않는다
+                try:
+                    warm = urllib.request.Request(referer or f"https://{host}/", headers=hdrs)
+                    with opener.open(warm, timeout=timeout) as w:
+                        w.read(1 << 20)
+                except Exception:  # noqa: BLE001 — 워밍업 실패는 본 요청 결과로 판정한다
+                    pass
+            req = urllib.request.Request(url, headers=hdrs)
+            with opener.open(req, timeout=timeout) as r:
+                data = read_capped(r)
                 if r.headers.get("Content-Encoding") == "gzip":
                     import gzip
                     try:
@@ -92,11 +141,13 @@ def parse_requests(path):
         ln = ln.split("#", 1)[0].strip()
         if not ln:
             continue
-        if "|" in ln:
-            lab, url = (x.strip() for x in ln.split("|", 1))
+        # label | url | referer  (뒤 둘은 생략 가능)
+        parts = [x.strip() for x in ln.split("|")]
+        if len(parts) == 1:
+            lab, url, ref = "", parts[0], ""
         else:
-            lab, url = "", ln
-        items.append((slug(lab) if lab else label_from_url(url), url))
+            lab, url, ref = (parts + ["", ""])[:3]
+        items.append((slug(lab) if lab else label_from_url(url), url, ref))
     return items
 
 
@@ -104,7 +155,8 @@ def main(argv):
     if "--url" in argv:
         url = argv[argv.index("--url") + 1]
         lab = argv[argv.index("--label") + 1] if "--label" in argv else label_from_url(url)
-        items = [(slug(lab), url)]
+        ref = argv[argv.index("--referer") + 1] if "--referer" in argv else ""
+        items = [(slug(lab), url, ref)]
     else:
         items = parse_requests(REQ)
     if not items:
@@ -120,7 +172,7 @@ def main(argv):
             if ln.strip():
                 ids.add(json.loads(ln).get("id"))
     n, bad = 1, 0
-    for lab, url in items:
+    for lab, url, ref in items:
         rec = {"date": today, "kind": "fetch", "host": (re.match(r"https://([^/]+)", url) or [None, "?"])[1],
                "subject": lab, "auto": True, "routed": False, "url": url}
         while f"c-{today.replace('-', '')}-{n:02d}" in ids:
@@ -132,7 +184,9 @@ def main(argv):
             rec.update(status="skipped", note="https 만 받는다")
             bad += 1
         else:
-            st, ctype, body = get(url)
+            st, ctype, body = get(url, referer=ref)
+            if ref:
+                rec["referer"] = ref
             rec["content_type"] = ctype.split(";")[0].strip() or "—"
             if st != 200 or not body:
                 rec.update(status=("blocked" if st in (0, 403, 407) else str(st)),
@@ -143,6 +197,12 @@ def main(argv):
                 bad += 1
             else:
                 ext = EXT.get(rec["content_type"], "bin")
+                if ext == "bin":
+                    # 첨부 다운로드는 Content-Type 을 octet-stream 으로 주는 곳이 많다 — 매직으로 잡는다
+                    if body[:4] == b"%PDF":
+                        ext = "pdf"
+                    elif body[:2] == b"PK" and url.lower().find("hwpx") >= 0:
+                        ext = "hwpx"
                 path = os.path.join(day, f"{lab}.{ext}")
                 with open(path, "wb") as f:
                     f.write(body)
