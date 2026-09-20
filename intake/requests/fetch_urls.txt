@@ -12,12 +12,9 @@
 #    남은 것 하나 — 대미투자 설명자료 <본문>. HTML 엔 제목·날짜(2026-09-15 산업통상부)만 있고 본문은 첨부에 있다.
 #    ⚠ 첨부 직링크를 아직 못 찾았다(HTML 에 '바로보기/내려받기' 스크립트만 있다) — URL 을 확인한 뒤 여기 적는다.
 
-# ── 2026-09-20 요청: 대미투자 원전 설명자료 <본문> PDF.
-#    첨부 직링크를 HTML(c-20260920-15)에서 찾았다 — /common/download.do?fileId=198552978 (PDF) · 198552979 (HWPX).
-#    1차 시도(run 35485990057) 는 Fetch 단계에서 10분 넘게 안 끝났다 — 서버가 응답을 끝내지 않는다.
-#    collect_fetch.py 에 <브라우저 UA + 세션 쿠키 + Referer + 벽시계 read 상한> 을 붙이고 재시도한다.
-#    세션에서는 www.korea.kr 전체가 relay reset(11초) 이라 러너로만 받는다.
-korea_kr_daemi_nuclear | https://www.korea.kr/common/download.do?fileId=198552978 | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
-korea_kr_daemi_nuclear_hwpx | https://www.korea.kr/common/download.do?fileId=198552979 | https://www.korea.kr/briefing/actuallyView.do?newsId=148971946
-#    ⚠ 워크플로 버그도 같이 고쳤다(5a454ac) — 1차 런은 push 가 거절돼도 재시도가 없었다.
+# ── 완료분은 지운다. 대미투자 설명자료 본문(fileId=198552978 PDF · 198552979 HWPX)은
+#    2026-09-20 run 35486207633 에서 받았다 → intake/user.jsonl u-20260920-08.
+#    교훈 ①: /common/download.do 는 브라우저 UA + 쿠키 + Referer 가 있어야 응답을 끝낸다
+#       (collect_fetch.py BROWSER_HOSTS). 1차 run 35485990057 은 이것 때문에 Fetch 가 10분을 넘겼다.
+#    교훈 ②: 워크플로 버그도 같이 고쳤다(5a454ac) — 1차 런은 push 가 거절돼도 재시도가 없었다.
 #       Fetch 실패와 push 실패가 겹쳐 두 번 잃을 뻔했다.
