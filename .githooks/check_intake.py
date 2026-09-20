@@ -75,6 +75,28 @@ def main():
             for k, v in list(dup.items())[:8]:
                 print(f"    · {k} ×{v}")
 
+    # WATCH 중복 키 검사(2026-09-20 추가) — 파이썬 dict 는 <같은 키를 조용히 덮는다>.
+    #   뒤에 쓴 값이 이기고 앞의 것은 사라지는데 문법 오류도 경고도 없다.
+    #   오늘 두 번 났다: "Cerebras" 를 CBRS 로 넣었는데 아래에 CBRS.O 가 이미 있었고,
+    #   "S-Oil" 을 LNG 층에 넣었는데 이미 등록돼 있었다. 코드가 다르면 조용히 <다른 회사>를 받는다.
+    try:
+        import collections as _c
+        src = io.open("portfolio/data/update_prices.py", encoding="utf-8").read()
+        pairs = re.findall(r'"([^"]+)":\s*"([0-9A-Za-z.]{4,12})"', src)
+        names = _c.Counter(k for k, _ in pairs)
+        dup = {k: v for k, v in names.items() if v > 1}
+        if dup:
+            bycode = _c.defaultdict(set)
+            for k, v in pairs:
+                bycode[k].add(v)
+            print(f"[watch] 🔴 update_prices WATCH 중복 키 {len(dup)}건 — dict 는 뒤엣것으로 조용히 덮는다")
+            for k in list(dup)[:8]:
+                codes = "/".join(sorted(bycode[k]))
+                mark = " ⚠ 코드까지 다르다(다른 회사를 받는다)" if len(bycode[k]) > 1 else ""
+                print(f"    · {k} ×{dup[k]} → {codes}{mark}")
+    except (OSError, ValueError):
+        pass
+
     if bad:
         print(f"[intake] ⚠ 끊긴 포인터 {len(bad)}건")
         for b in bad[:20]:
