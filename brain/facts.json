@@ -5805,6 +5805,327 @@
      "page": "hbm-packaging/hbm_pkg_company_samsung.html"
     }
    }
+  },
+  "VST": {
+   "name": "Vistra Corp",
+   "ticker": "VST",
+   "market": "US",
+   "layer": "미국 상인형 전력 — 소매 + 발전(원전 약 6.6GW 포함 총 약 44GW)",
+   "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 19210,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "매출 4분기 합산(us-gaap:Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "opi_ttm": {
+     "value": 3560,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "영업이익 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "opm_ttm": {
+     "value": 18.5,
+     "unit": "%",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "영업이익 3,560",
+     "den": "매출 19,210",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ebitda_ttm": {
+     "value": 5420,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산) · 영업이익+감가상각",
+     "asof": "2026-09-20",
+     "num": "OP 3,560 + D&A 1,860",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ocf_ttm": {
+     "value": 5120,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "영업현금흐름 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "capex_ttm": {
+     "value": 2870,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "유형자산 취득 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "fcf_ttm": {
+     "value": 2250,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "OCF 5,120 − CapEx 2,870",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "net_debt": {
+     "value": 19160,
+     "unit": "USD M",
+     "basis": "2026-06-30 시점",
+     "asof": "2026-09-20",
+     "num": "us-gaap:LongTermDebt 19,595",
+     "den": "현금 435 차감",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "nd_ebitda": {
+     "value": 3.53,
+     "unit": "배",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산) 대비 2026-06-30 순부채",
+     "asof": "2026-09-20",
+     "num": "순부채 19,160",
+     "den": "EBITDA 5,420",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "mktcap": {
+     "value": 47220,
+     "unit": "USD M",
+     "basis": "2026-09-19 종가 $141.44",
+     "asof": "2026-09-20",
+     "num": "시가총액",
+     "den": "—",
+     "grade": "②",
+     "source": "검색 · 원문 미개봉",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ev_ebitda": {
+     "value": 12.25,
+     "unit": "배",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "EV 66,380(시총 47,220 + 순부채 19,160)",
+     "den": "EBITDA 5,420",
+     "grade": "①②",
+     "source": "재무 ① · 시총 ②",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ev_over_mktcap": {
+     "value": 1.41,
+     "unit": "배",
+     "basis": "2026-09-19",
+     "asof": "2026-09-20",
+     "num": "EV 66,380",
+     "den": "시총 47,220",
+     "grade": "①②",
+     "source": null,
+     "page": "ai-infra/us_merchant_power_vst_nrg.html",
+     "note": "같은 10% EV 하락이 주주에게 −14.1%로 온다 [추론]"
+    },
+    "fcf_yield": {
+     "value": 4.77,
+     "unit": "%",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산) ÷ 2026-09-19 시총",
+     "asof": "2026-09-20",
+     "num": "FCF 2,250",
+     "den": "시총 47,220",
+     "grade": "①②",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    }
+   }
+  },
+  "NRG": {
+   "name": "NRG Energy",
+   "ticker": "NRG",
+   "market": "US",
+   "layer": "미국 상인형 전력 — 소매(약 600만 고객) + 발전 + Vivint + CPower · 원전 없음",
+   "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html",
+   "metrics": {
+    "revenue_ttm": {
+     "value": 33120,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "매출 4분기 합산(us-gaap:Revenues)",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "opi_ttm": {
+     "value": 2020,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "영업이익 합(2Q26 단독 976)",
+     "den": "—",
+     "grade": "①",
+     "source": null,
+     "page": "ai-infra/us_merchant_power_vst_nrg.html",
+     "note": "회사 발표에는 GAAP 영업이익이 없다 — XBRL 에만 있다"
+    },
+    "opm_ttm": {
+     "value": 6.1,
+     "unit": "%",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "영업이익 2,020",
+     "den": "매출 33,120",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ebitda_ttm": {
+     "value": 3680,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산) · 영업이익+감가상각",
+     "asof": "2026-09-20",
+     "num": "OP 2,020 + D&A 1,660",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ocf_ttm": {
+     "value": 1550,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "영업현금흐름 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "capex_ttm": {
+     "value": 1210,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "유형자산 취득 합",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "fcf_ttm": {
+     "value": 350,
+     "unit": "USD M",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "OCF 1,550 − CapEx 1,210",
+     "den": "—",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "net_debt": {
+     "value": 23230,
+     "unit": "USD M",
+     "basis": "2026-06-30 시점",
+     "asof": "2026-09-20",
+     "num": "us-gaap:LongTermDebt 23,392",
+     "den": "현금 162 차감",
+     "grade": "①",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "nd_ebitda": {
+     "value": 6.31,
+     "unit": "배",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산) 대비 2026-06-30 순부채",
+     "asof": "2026-09-20",
+     "num": "순부채 23,230",
+     "den": "EBITDA 3,680",
+     "grade": "①",
+     "source": null,
+     "page": "ai-infra/us_merchant_power_vst_nrg.html",
+     "note": "회사 재무정책은 Net Debt/EBITDA 3.0배 미만(②) — 조정 EBITDA 기준으로 바꾸면 4.17배"
+    },
+    "debt_growth_18m": {
+     "value": 115,
+     "unit": "%",
+     "basis": "2024-12-31 → 2026-06-30",
+     "asof": "2026-09-20",
+     "num": "장기부채 10,890 → 23,392",
+     "den": "기준 10,890",
+     "grade": "①",
+     "source": null,
+     "page": "ai-infra/us_merchant_power_vst_nrg.html",
+     "note": "LS Power 13GW 인수(2026-01-30 완료 ②)"
+    },
+    "mktcap": {
+     "value": 21930,
+     "unit": "USD M",
+     "basis": "2026-09-18 종가 $104.31",
+     "asof": "2026-09-20",
+     "num": "시가총액",
+     "den": "—",
+     "grade": "②",
+     "source": "검색 · 원문 미개봉",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "ev_ebitda": {
+     "value": 12.27,
+     "unit": "배",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산)",
+     "asof": "2026-09-20",
+     "num": "EV 45,160(시총 21,930 + 순부채 23,230)",
+     "den": "EBITDA 3,680",
+     "grade": "①②",
+     "source": "재무 ① · 시총 ②",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html",
+     "note": "VST 12.25배와 사실상 동률 — 이 편의 결론"
+    },
+    "ev_over_mktcap": {
+     "value": 2.06,
+     "unit": "배",
+     "basis": "2026-09-18",
+     "asof": "2026-09-20",
+     "num": "EV 45,160",
+     "den": "시총 21,930",
+     "grade": "①②",
+     "source": null,
+     "page": "ai-infra/us_merchant_power_vst_nrg.html",
+     "note": "같은 10% EV 하락이 주주에게 −20.6%로 온다 [추론]"
+    },
+    "fcf_yield": {
+     "value": 1.6,
+     "unit": "%",
+     "basis": "TTM(2025Q3~2026Q2 · 분기 합산) ÷ 2026-09-18 시총",
+     "asof": "2026-09-20",
+     "num": "FCF 350",
+     "den": "시총 21,930",
+     "grade": "①②",
+     "source": "SEC XBRL companyfacts 직접 재구성 · intake/files/sec/_ttm_summary.json",
+     "page": "ai-infra/us_merchant_power_vst_nrg.html"
+    }
+   }
   }
  },
  "macro": {

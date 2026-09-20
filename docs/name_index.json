@@ -325,9 +325,6 @@
     "ai-infra/us_bloom_intel_deep.html": [
      "T5"
     ],
-    "ai-infra/us_power_regulated_vs_merchant.html": [
-     "T8"
-    ],
     "ai-sw/ai_sw_company_anthropic.html": [
      "T1"
     ],
@@ -344,6 +341,9 @@
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T1",
      "T2"
+    ],
+    "ai-infra/us_merchant_power_vst_nrg.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -4122,11 +4122,11 @@
    "code": "NRG",
    "market": "US",
    "entity": "NRG",
-   "falsifier": "2026-09-20 판단 신설. 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것",
-   "facts": 0,
+   "falsifier": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것",
+   "facts": 14,
    "theses": {
-    "ai-infra/us_power_regulated_vs_merchant.html": [
-     "T8"
+    "ai-infra/us_merchant_power_vst_nrg.html": [
+     "T1"
     ],
     "market/us_7axis_cross_valuation.html": [
      "T3"
@@ -4781,6 +4781,9 @@
      "T2",
      "T3",
      "T6"
+    ],
+    "ai-infra/us_merchant_power_vst_nrg.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -4908,15 +4911,17 @@
    "code": "VST",
    "market": "US",
    "entity": "VST",
-   "falsifier": "2026-09-20 판단 신설 — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
-   "facts": 0,
+   "falsifier": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
+   "facts": 13,
    "theses": {
-    "ai-infra/us_power_regulated_vs_merchant.html": [
-     "T1",
-     "T8"
+    "ai-infra/us_merchant_power_vst_nrg.html": [
+     "T1"
     ],
     "ai-infra/ai_dc_miner_conversion.html": [
      "T2"
+    ],
+    "ai-infra/us_power_regulated_vs_merchant.html": [
+     "T1"
     ],
     "market/kr_drawdown_2026.html": [
      "T8"

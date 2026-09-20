@@ -1719,16 +1719,19 @@
    "business": "Retail/Texas/East/West/Asset Closure 5부문. 서명 완료 20년 PPA 약 3.8GW — AWS向 Comanche Peak 최대 1,200MW(2027-4Q 인도 개시~2032 램프) + Meta向 PJM 원전 2,609MW(가동분 2,176MW 2026말~2027말 · 업레이트 433MW 2031~2034). 계약단가 미공개. ① TTM(2025Q3~2026Q2) 매출 $19.21B · OP $3.56B(18.5%) · EBITDA $5.42B · OCF $5.12B · CapEx $2.87B · FCF $2.25B · 순부채 $19.16B(ND/EBITDA 3.53배). ③ FY26 가이던스 Adj EBITDA $6.8~7.6B · Adj FCFbG $3.925~4.725B",
    "business_grade": "① 재무는 SEC XBRL · ② 시총·PPA 보도 · ③ 가이던스",
    "pages": [
-    "ai-infra/us_power_regulated_vs_merchant.html"
+    "ai-infra/us_merchant_power_vst_nrg.html"
    ],
-   "facts": [],
+   "facts": [
+    "companies.VST"
+   ],
    "theses": [
-    "ai-infra/us_power_regulated_vs_merchant.html#T8"
+    "ai-infra/us_merchant_power_vst_nrg.html#T1"
    ],
    "intake": [
     "u-20260920-04"
    ],
-   "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중"
+   "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
+   "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
   },
   "NRG": {
    "name": "NRG Energy",
@@ -1738,16 +1741,19 @@
    "business": "2026-01-30 LS Power 포트폴리오 인수 완료(가스·이중연료 18개소 약 13GW · 발전용량 2배). 지역 믹스 ERCOT 50% / PJM 39% / ISO-NE 8% / NYISO 3%. 원전 없음 — 2023-11 South Texas Project 44% 지분을 Constellation에 $1.75B 매각. 하이퍼스케일러 건은 「주요 상업조건 합의」 단계(정식 PPA 아님) — 텍사스 1.2GW 신설 가스 · 투자 $3.2B · 2029년말 COD · 목표 연 Adj EBITDA $500M. ① TTM 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B · OCF $1.55B · FCF $0.35B · 순부채 $23.23B(ND/EBITDA 6.31배 · 부채 2024-12 $10.89B→2026-06 $23.39B). ③ FY26 가이던스 Adj EBITDA $5.325~5.825B · FCFbG $2.8~3.3B · 재무정책 Net Debt/EBITDA 3.0배 미만",
    "business_grade": "① 재무는 SEC XBRL · ② 시총·인수·하이퍼스케일러 보도 · ③ 가이던스",
    "pages": [
-    "ai-infra/us_power_regulated_vs_merchant.html"
+    "ai-infra/us_merchant_power_vst_nrg.html"
    ],
-   "facts": [],
+   "facts": [
+    "companies.NRG"
+   ],
    "theses": [
-    "ai-infra/us_power_regulated_vs_merchant.html#T8"
+    "ai-infra/us_merchant_power_vst_nrg.html#T1"
    ],
    "intake": [
     "u-20260920-04"
    ],
-   "note": "2026-09-20 판단 신설. 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것"
+   "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것",
+   "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
   },
   "CBRS": {
    "name": "Cerebras Systems",

@@ -3134,25 +3134,6 @@
        "text": "Xcel은 선도매각 6,970만 주가 미결제이고 최소 예상 자금이 $52억인데, 2Q26 GAAP 순익 $586M ÷ EPS $0.93 = 주식수 630.1M주이므로 희석률이 11.1%다(§A7-0). NiSource도 희석 주식수가 472.1M → 481.2M(+1.9%)이고 Xcel 이자비용은 2Q $349M → $443M(+26.9%)다. 「rate base 9~11% 성장」의 이면이 "
       }
      ]
-    },
-    {
-     "id": "T8",
-     "status": "관측",
-     "last_tested": "2026-09-20",
-     "card": false,
-     "claim": "상인형 2강은 EV로 재면 같은 값이다 — VST 12.25배 · NRG 12.27배. 시총만 보면 NRG가 절반 값으로 보이는데, 그 차이는 전부 부채다.",
-     "basis": "① TTM(2025Q3~2026Q2) XBRL 재구성 — VST 매출 $19.21B · OP $3.56B(OPM 18.5%) · EBITDA $5.42B(28.2%) · OCF $5.12B · CapEx $2.87B · FCF $2.25B. NRG 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B(11.1%) · OCF $1.55B · CapEx $1.21B · FCF $0.35B. ① 순부채(2026-06-30 · us-gaap:LongTermDebt − 현금) — VST $19.16B · NRG $23.23B → ND/EBITDA VST 3.53배 · NRG 6.31배. ② 시총 VST $47.22B(09-19) · NRG $21.93B(09-18) → EV VST $66.38B · NRG $45.16B → EV/EBITDA(TTM) 12.25배 vs 12.27배 — 사실상 동률이다. 🔑 그래서 「NRG가 시총/EBITDA 3.9배로 싸다」는 읽기는 분모를 잘못 잡은 것이다. 싼 것은 주식이 아니라 지분의 몫이다 — EV/시총이 VST 1.41배 · NRG 2.06배라 같은 10% EV 하락이 VST 주주에게 −14.1%, NRG 주주에게 −20.6%로 온다 [추론 · 분자 EV 분모 시총]. ① NRG 부채 궤적이 그 원인이다 — $10.89B(2024-12-31) → $16.58B(2025-12-31) → $23.39B(2026-06-30), 18개월에 +115%(LS Power 13GW 인수 ②). ② 증익의 출처도 갈린다 — NRG 2Q26 부문은 East +$370M(인수 자산·용량가격) vs Texas −$131M이라 본업이 역성장했고, VST는 Generation Adj EBITDA +67.7%가 실현단가 +5%·헤지에서 나왔다. ⚠ 회사 조정치로 바꾸면 순위가 뒤집힌다 — FY26 Adj EBITDA 가이던스 중간값(VST $7.2B · NRG $5.575B)으로 재면 EV/EBITDA가 9.22배 vs 8.10배로 NRG가 12% 싸다(②③). 그런데 GAAP TTM→회사 조정치의 가산폭이 VST +33% · NRG +51%라, NRG는 가치의 더 많은 부분이 조정 항목 안에 있다(§W3). ③ 계약의 질도 다르다 — VST는 서명 완료 20년 PPA 약 3.8GW(AWS 1.2GW 2027-4Q 인도 개시 · Meta 2,609MW 2026말~2027말)인데 NRG는 「주요 상업조건 합의」 단계의 1.2GW 신설 가스(투자 $3.2B · 2029년말 COD · 목표 연 EBITDA $500M)라 검증까지 3년 이상 비어 있다. ① 값은 전부 data.sec.gov companyfacts XBRL 직접 재구성이다(intake/files/sec/*.json 09-20 수집 · TTM=2025Q3~2026Q2 · intake/files/sec/_ttm_summary.json). 시총·계약·가이던스는 ② 또는 ③이며 원문 미열람이다.",
-     "falsifier": "EV/EBITDA 동률이 깨지는 쪽이 답이다 — NRG가 3Q·4Q26에 Texas 부문 EBITDA를 플러스로 되돌리고 Net Debt/EBITDA 3.0배 재무정책(회사 명시 ②)에 근접하면 「차이는 전부 부채」가 틀린 것이고 NRG 할인이 정당해진다. 반대로 NRG 1.2GW가 정식 PPA로 체결되지 못하거나 FY27 가이던스를 계속 내놓지 못하면 할인은 더 벌어진다. VST 쪽 반증은 ERCOT 2027 선물가 — 약 $30/MWh(②)를 벗어나지 못하면 FCF $2.25B의 지속성이 깨진다.",
-     "event": "2026-11 양사 3Q26 실적(NRG Texas 부문 EBITDA 부호 · VST ERCOT 실현단가) · NRG 1.2GW 정식 계약 체결 공시 · 2026년말 Meta PPA 가동분 인도 개시",
-     "facts": [],
-     "log": [
-      {
-       "date": "2026-09-20",
-       "mark": "ⓒ 신설",
-       "rid": "r-20260920-09",
-       "text": "사용자 요청(13F 공백 4사). T1이 「아카이브는 상인형만 갖고 있었다」고 적어 놨는데 정작 상인형 2강(VST·NRG)에 판단이 0편이었다 — 그 구멍을 메운다. XBRL을 직접 받아 보니 시총 기준 배수와 EV 기준 배수가 정반대 결론을 준다."
-      }
-     ]
     }
    ],
    "next": [
@@ -3160,7 +3141,7 @@
     "Talen 데이터센터 계약 공시 (T3) · PJM 다음 기준용량경매 낙찰가 (T1·T3)",
     "Xcel·NiSource·AEP의 대형 부하 계약 규제 승인 (T5)",
     "11월 중순 3Q26 13F — 양쪽이 계속 매수하는가(§J12)",
-    "T8 신설(09-20) — VST·NRG. 이 페이지가 Talen 중심이라 상인형 2강이 본문에 없다. 다음에 손대면 T8을 본문으로 내리거나 미국 전력 편을 분리한다(§W1)"
+    "T8 분리(09-20) — VST·NRG 는 별도 편으로 뗐다(§W1 독립 결론). 이 편은 Talen + 규제형 3사로 남는다 → ai-infra/us_merchant_power_vst_nrg.html"
    ],
    "position": "",
    "card": false,
@@ -10592,6 +10573,55 @@
      "log": []
     }
    ]
+  },
+  "ai-infra/us_merchant_power_vst_nrg.html": {
+   "title": "미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다",
+   "judged": "2026-09-20",
+   "card": true,
+   "one": "VST 와 NRG 는 EV/EBITDA 가 12.25배 vs 12.27배로 동률이다. 시총만 보면 NRG 가 반값인데 그 차이는 전부 부채이고(ND/EBITDA 3.53 vs 6.31 · NRG 부채는 18개월에 +115%), FCF 는 $2.25B vs $0.35B 로 6.4배 벌어진다.",
+   "theses": [
+    {
+     "id": "T1",
+     "status": "관측",
+     "last_tested": "2026-09-20",
+     "card": true,
+     "claim": "상인형 2강은 EV로 재면 같은 값이다 — VST 12.25배 · NRG 12.27배. 시총만 보면 NRG가 절반 값으로 보이는데, 그 차이는 전부 부채다.",
+     "basis": "① TTM(2025Q3~2026Q2) XBRL 재구성 — VST 매출 $19.21B · OP $3.56B(OPM 18.5%) · EBITDA $5.42B(28.2%) · OCF $5.12B · CapEx $2.87B · FCF $2.25B. NRG 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B(11.1%) · OCF $1.55B · CapEx $1.21B · FCF $0.35B. ① 순부채(2026-06-30 · us-gaap:LongTermDebt − 현금) — VST $19.16B · NRG $23.23B → ND/EBITDA VST 3.53배 · NRG 6.31배. ② 시총 VST $47.22B(09-19) · NRG $21.93B(09-18) → EV VST $66.38B · NRG $45.16B → EV/EBITDA(TTM) 12.25배 vs 12.27배 — 사실상 동률이다. 🔑 그래서 「NRG가 시총/EBITDA 3.9배로 싸다」는 읽기는 분모를 잘못 잡은 것이다. 싼 것은 주식이 아니라 지분의 몫이다 — EV/시총이 VST 1.41배 · NRG 2.06배라 같은 10% EV 하락이 VST 주주에게 −14.1%, NRG 주주에게 −20.6%로 온다 [추론 · 분자 EV 분모 시총]. ① NRG 부채 궤적이 그 원인이다 — $10.89B(2024-12-31) → $16.58B(2025-12-31) → $23.39B(2026-06-30), 18개월에 +115%(LS Power 13GW 인수 ②). ② 증익의 출처도 갈린다 — NRG 2Q26 부문은 East +$370M(인수 자산·용량가격) vs Texas −$131M이라 본업이 역성장했고, VST는 Generation Adj EBITDA +67.7%가 실현단가 +5%·헤지에서 나왔다. ⚠ 회사 조정치로 바꾸면 순위가 뒤집힌다 — FY26 Adj EBITDA 가이던스 중간값(VST $7.2B · NRG $5.575B)으로 재면 EV/EBITDA가 9.22배 vs 8.10배로 NRG가 12% 싸다(②③). 그런데 GAAP TTM→회사 조정치의 가산폭이 VST +33% · NRG +51%라, NRG는 가치의 더 많은 부분이 조정 항목 안에 있다(§W3). ③ 계약의 질도 다르다 — VST는 서명 완료 20년 PPA 약 3.8GW(AWS 1.2GW 2027-4Q 인도 개시 · Meta 2,609MW 2026말~2027말)인데 NRG는 「주요 상업조건 합의」 단계의 1.2GW 신설 가스(투자 $3.2B · 2029년말 COD · 목표 연 EBITDA $500M)라 검증까지 3년 이상 비어 있다. ① 값은 전부 data.sec.gov companyfacts XBRL 직접 재구성이다(intake/files/sec/*.json 09-20 수집 · TTM=2025Q3~2026Q2 · intake/files/sec/_ttm_summary.json). 시총·계약·가이던스는 ② 또는 ③이며 원문 미열람이다.",
+     "falsifier": "EV/EBITDA 동률이 깨지는 쪽이 답이다 — NRG가 3Q·4Q26에 Texas 부문 EBITDA를 플러스로 되돌리고 Net Debt/EBITDA 3.0배 재무정책(회사 명시 ②)에 근접하면 「차이는 전부 부채」가 틀린 것이고 NRG 할인이 정당해진다. 반대로 NRG 1.2GW가 정식 PPA로 체결되지 못하거나 FY27 가이던스를 계속 내놓지 못하면 할인은 더 벌어진다. VST 쪽 반증은 ERCOT 2027 선물가 — 약 $30/MWh(②)를 벗어나지 못하면 FCF $2.25B의 지속성이 깨진다.",
+     "event": "2026-11 양사 3Q26 실적(NRG Texas 부문 EBITDA 부호 · VST ERCOT 실현단가) · NRG 1.2GW 정식 계약 체결 공시 · 2026년말 Meta PPA 가동분 인도 개시",
+     "facts": [
+      "VST.ev_ebitda",
+      "NRG.ev_ebitda",
+      "VST.nd_ebitda",
+      "NRG.nd_ebitda",
+      "VST.fcf_ttm",
+      "NRG.fcf_ttm",
+      "NRG.debt_growth_18m"
+     ],
+     "log": [
+      {
+       "date": "2026-09-20",
+       "mark": "ⓒ 신설",
+       "rid": "r-20260920-09",
+       "text": "사용자 요청(13F 공백 4사). T1이 「아카이브는 상인형만 갖고 있었다」고 적어 놨는데 정작 상인형 2강(VST·NRG)에 판단이 0편이었다 — 그 구멍을 메운다. XBRL을 직접 받아 보니 시총 기준 배수와 EV 기준 배수가 정반대 결론을 준다."
+      },
+      {
+       "date": "2026-09-20",
+       "mark": "분리",
+       "rid": "r-20260920-13",
+       "text": "페이지 신설로 us_power_regulated_vs_merchant#T8 → 이 편 T1 로 이동. 그 편은 Talen 중심이라 상인형 2강이 본문에 없었고, 결론(EV 로는 동률인데 레버리지가 1.8배 다르다)이 그 편의 결론(규제형 vs 상인형은 버는 방식이 다르다)과 독립이다(§W1)."
+      }
+     ]
+    }
+   ],
+   "next": [
+    "2026-11 양사 3Q26 실적 — NRG Texas 부문 EBITDA 부호(본업 회복 여부) · VST ERCOT 실현단가",
+    "NRG 1.2GW 하이퍼스케일러 건의 정식 PPA 체결 공시 — 「조건 합의」가 계약이 되는가",
+    "2026년 말 Meta PPA 가동분(2,176MW) 인도 개시 — VST 계약의 첫 현금화",
+    "NRG FY27 가이던스 제시 여부 — 아직 없다(VST 는 $7.4~7.8B 를 이미 냈다)",
+    "ERCOT 2027 선물 전력가 — 약 $30/MWh 를 벗어나는가(양사 공통 변수)"
+   ],
+   "position": "직접 편입 없음 — 13F 상위 보유라 판단만 세운다(§J12). 접근 시 종목+환 두 결정(§J13)"
   }
  }
 }

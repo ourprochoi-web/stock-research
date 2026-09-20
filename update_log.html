@@ -254,6 +254,28 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="day">
+  <div class="day-date">🆕 2026.09.20 (3) — <b>미국 상인형 전력 2강 편 신설(분리)</b> · <b>egress allowlist 적용 확인 — 22/22 · SEC 세션 직접 수집 가능</b></div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">신설</span> 🆕 <b>시총으로는 반값인데 EV로는 같은 값이다 — VST·NRG</b></div>
+    <div class="upd-body">
+      <a href="ai-infra/us_merchant_power_vst_nrg.html">미국 상인형 전력 2강</a> 신설. 09-20 오전에 <a href="ai-infra/us_power_regulated_vs_merchant.html">미국 전력 7사 편</a>에 T8로 세웠던 판단을 <b>독립 결론이라 별도 편으로 뗐다</b>(§W1) — 그 편은 이미 테제 8개였고 Talen·규제형 3사가 본문을 차지해 <b>정작 T1이 「아카이브는 상인형만 갖고 있었다」고 적어 놓고 상인형 2강에 판단이 0편</b>이던 모순이 있었다.<br>
+      <b>결론</b> — 시총/EBITDA로는 NRG가 VST의 반값(3.93 vs 6.56배)인데 <b>EV/EBITDA는 12.27 vs 12.25배로 동률</b>이다. 차이는 전부 부채다: <b>ND/EBITDA 6.31 vs 3.53</b>, FCF <b>$0.35B vs $2.25B</b>(6.4배). NRG 장기부채는 <b>$10.89B(2024-12) → $23.39B(2026-06), 18개월 +115%</b>(LS Power 13GW). EV÷시총이 2.06 vs 1.41이라 <b>같은 10% EV 하락이 NRG 주주에게 −20.6%, VST에 −14.1%</b>로 온다.<br>
+      <b>증익의 출처도 갈린다</b> — NRG는 East +$370M(인수·용량가격)인데 <b>Texas −$131M으로 본업이 역성장</b>, VST는 Generation +67.7%가 실현단가 +5%·헤지에서 나왔다. <b>계약의 질도 다르다</b> — VST는 <b>서명 완료</b> 20년 PPA 약 3.8GW(AWS 1.2GW · Meta 2,609MW), NRG는 <b>「주요 상업조건 합의」 단계</b> 1.2GW로 EBITDA 기여가 <b>2029년 이후</b>다.<br>
+      <b>📌 분모를 바꾸면 순위가 뒤집힌다</b> — 회사 조정 FY26 가이던스로 재면 9.22 vs 8.10배로 NRG가 12% 싸다. 다만 GAAP→조정 가산폭이 <b>VST +33% vs NRG +51%</b>라, NRG는 가치의 더 많은 부분이 조정 항목 안에 있다(§W3).<br>
+      <b>정본 등재</b> — 페이지가 생겨 <code>brain/facts.json</code>에 <b>VST·NRG 24개 지표</b>를 넣었다(분자·분모·기준일 포함). 그동안 「페이지가 없어 못 넣는다」로 비워 둔 자리다.
+    </div>
+  </div>
+  <div class="upd">
+    <div class="upd-title"><span class="tag">도구</span> ✅ <b>egress allowlist 적용 — 22개 호스트 전부 연결, 프록시 차단 0건</b></div>
+    <div class="upd-body">
+      사용자가 새 클라우드 환경 <code>stock-research</code>(Network access = Custom · 패키지 기본목록 포함)를 만들었다. 그 환경에서 실측 — <b>22/22 연결</b>. <code>m.stock.naver.com</code> 본문 수신 · <b><code>opendart.fss.or.kr</code>·<code>dart.fss.or.kr</code> 둘 다 200</b> · <code>disclosures-clerk.house.gov</code>·<code>extapps2.oge.gov</code> 200 · <code>pypi.org</code>·<code>registry.npmjs.org</code> 200.<br>
+      <b>🔑 <code>000</code>과 <code>403</code>은 다르다</b> — 앞은 프록시가 CONNECT를 끊은 <b>정책 차단</b>, 뒤는 연결된 뒤 <b>서버가 거절</b>한 것이다. SEC 403은 User-Agent 요구였고, UA를 붙이니 200 + 본문이며 <code>collect_sec.py VST</code>가 <b>세션에서 직접 성공</b>했다(30 tags · 310,767B · 러너 산출물과 바이트 동일). <b>SEC는 더 이상 워크플로를 거칠 필요가 없다.</b><br>
+      ⚠ 전제 — 세션 시작 시 구름 선택기에서 <code>stock-research</code>를 골라야 한다. 옛 「기본값」(Trusted) 환경은 그대로 막혀 있다. 목록·경로·실측표는 <code>docs/method_datasource.md</code> 맨 뒤.
+    </div>
+  </div>
+</div>
+
+<div class="day">
   <div class="day-date">🔴 2026.09.20 (2) — <b style="color:#b3261e">같은 날 C1 재정정: ②가 분기를 밀려 읽었다</b> · <b>막힌 호스트 수집 경로 신설(collect-fetch) — 10/10 성공</b> · 대미투자 판정</div>
   <div class="upd">
     <div class="upd-title"><span class="tag">정정</span> 🔴 <b>몇 시간 전에 쓴 한양디지텍 수치가 틀렸다 — 총액은 비슷했는데 추세 방향이 반대였다</b></div>

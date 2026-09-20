@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="VST·NRG를 SEC XBRL TTM으로 다시 세웠다. EV/EBITDA가 12.25배 vs 12.27배로 동률인데 ND/EBITDA는 3.53 vs 6.31이다. 차이는 전부 부채이고, FCF는 6.4배 벌어진다.">
+<meta name="keywords" content="Vistra,VST,NRG Energy,상인형 전력,merchant power,ERCOT,PJM,EV/EBITDA,순부채,LS Power,Comanche Peak,Meta PPA,데이터센터 전력,13F">
+<meta property="og:title" content="미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다">
+<meta property="og:description" content="VST·NRG를 SEC XBRL TTM으로 다시 세웠다. EV/EBITDA가 12.25배 vs 12.27배로 동률인데 ND/EBITDA는 3.53 vs 6.31이다. 차이는 전부 부채이고, FCF는 6.4배 벌어진다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-infra/us_merchant_power_vst_nrg.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다">
+<meta name="twitter:description" content="VST·NRG를 SEC XBRL TTM으로 다시 세웠다. EV/EBITDA가 12.25배 vs 12.27배로 동률인데 ND/EBITDA는 3.53 vs 6.31이다. 차이는 전부 부채이고, FCF는 6.4배 벌어진다.">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-infra/us_merchant_power_vst_nrg.html">
+<title>미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --bg:#080B14;
+    --bg-2:#0C1120;
+    --surface:#121A2E;
+    --surface-2:#16203A;
+    --line:#23304D;
+    --ink:#EAEFFA;
+    --ink-2:#9DA9C2;
+    --ink-3:#5E6B86;
+    --accent:#f97316;
+    --accent-2:#f472b6;
+    --glow:#fbbf24;
+    --bull:#22c55e;
+    --bear:#ef4444;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum" 1}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--ink-2);padding:8px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{color:var(--ink);background:var(--surface)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink-2);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);mask-image:radial-gradient(120% 90% at 70% 30%,#000 0%,transparent 72%);opacity:.45}
+  .glow-a{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(120px);opacity:.5;background:radial-gradient(circle,var(--accent),transparent 62%);top:-200px;right:-160px;animation:float 14s ease-in-out infinite}
+  .glow-b{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(120px);opacity:.32;background:radial-gradient(circle,var(--accent-2),transparent 62%);bottom:-180px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  .spark{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--glow),transparent);opacity:0;animation:sweep 5.5s linear infinite}
+  .spark:nth-child(4){top:30%;animation-delay:0s}.spark:nth-child(5){top:58%;animation-delay:1.8s}.spark:nth-child(6){top:74%;animation-delay:3.4s}
+  @keyframes sweep{0%{transform:translateX(-100%);opacity:0}8%{opacity:.7}50%{opacity:.7}100%{transform:translateX(100%);opacity:0}}
+  .hero-in{position:relative;z-index:2;padding:120px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(251,191,36,.05);margin-bottom:28px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+  h1.hero-title .hl{background:linear-gradient(105deg,var(--glow),var(--accent) 55%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--ink-2);max-width:56ch;font-weight:400}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hstat{background:var(--bg-2);padding:26px 22px}
+  .hstat .num{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.02em;color:var(--ink)}
+  .hstat .num .u{color:var(--accent);font-size:.62em}
+  .hstat .lab{margin-top:8px;font-size:.82rem;color:var(--ink-2);line-height:1.45}
+  .hstat .src{margin-top:9px;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);letter-spacing:.02em}
+  .scroll-cue{margin-top:54px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em}
+  .scroll-cue .bar{width:30px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;background:var(--glow);animation:loadbar 2.4s ease-in-out infinite}
+  @keyframes loadbar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+  /* SECTIONS */
+  section.blk{padding:108px 0;scroll-margin-top:60px;position:relative}
+  .sec-head{margin-bottom:52px;max-width:60ch}
+  .sec-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .idx{color:var(--ink-3)}.sec-eyebrow .ln{flex:0 0 40px;height:1px;background:var(--line)}
+  h2.sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:850;letter-spacing:-.03em;margin-top:18px;line-height:1.12}
+  .sec-lead{margin-top:18px;color:var(--ink-2);font-size:1.04rem;max-width:62ch}
+  .divider{height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* THESIS */
+  .thesis{margin-top:24px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:0 16px 16px 0;padding:30px 34px}
+  .thesis .tg{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase}
+  .thesis p{font-size:clamp(1.12rem,1.9vw,1.42rem);font-weight:650;letter-spacing:-.02em;margin-top:12px;line-height:1.4}
+  .thesis p .u{color:var(--ink-2);font-weight:400;font-size:.92rem;display:block;margin-top:14px;line-height:1.6}
+
+  /* CHAIN / FLOW */
+  .chain-wrap{margin-top:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:42px 32px;overflow:hidden}
+  .chain-legend{display:flex;align-items:center;gap:10px;justify-content:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-2);margin-bottom:34px}
+  .chain-legend .pulse{width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--glow),transparent);position:relative;overflow:hidden}
+  .chain-legend .pulse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#fff,transparent);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+
+  /* FLOW CHAIN */
+  .flow-chain{display:flex;flex-direction:column;gap:0}
+  .flow-node{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 28px;position:relative}
+  .flow-node .fn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+  .flow-node h4{font-size:1rem;font-weight:750;letter-spacing:-.02em;margin-bottom:6px}
+  .flow-node p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+  .flow-arrow{display:flex;justify-content:center;padding:10px 0}
+  .flow-arrow svg{color:var(--glow)}
+
+  /* GRID CARDS */
+  .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fw-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+  .fw-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+  .fw-card .fw-num{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .fw-card h3{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .fw-card .theme-market{font-family:var(--mono);font-size:.78rem;color:var(--accent-2);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .fw-card .theme-body{font-size:.86rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px}
+  .fw-card .theme-players{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fw-card .theme-players span{font-family:var(--mono);font-size:.62rem;color:var(--ink-2);border:1px solid var(--line);border-radius:5px;padding:3px 7px;background:var(--bg)}
+  .fw-card .theme-highlight{font-size:.8rem;color:var(--ink-3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .fw-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+  .fw-row:last-child{border-bottom:none}
+  .fw-row .fw-label{color:var(--ink-2);flex:1}
+  .fw-row .fw-val{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ink);min-width:70px;text-align:right}
+
+  /* VALMAP */
+  .valmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+  .valcol-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .valrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(35,48,77,.6);gap:8px}
+  .valrow:last-child{border-bottom:none}
+  .valrow .vname{font-size:.88rem;font-weight:650;letter-spacing:-.01em}
+  .valrow .vname .vticker{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .valrow .vstats{text-align:right}
+  .valrow .vps{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--ink)}
+  .valrow .vgrowth{font-family:var(--mono);font-size:.68rem;color:var(--bull);margin-top:2px}
+
+  /* TAG */
+  .moat-tag{display:inline-block;font-family:var(--mono);font-size:.64rem;padding:3px 8px;border-radius:5px;background:rgba(249,115,22,.1);color:var(--accent);border:1px solid rgba(249,115,22,.25);margin:2px}
+
+  /* RISK */
+  .risk{margin-top:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .risk h3{font-size:1.05rem;font-weight:750;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .risk h3 .rd{width:8px;height:8px;border-radius:50%;background:var(--bear);box-shadow:0 0 10px var(--bear)}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ritem{display:flex;gap:14px}
+  .ritem .ri{font-family:var(--mono);font-size:.82rem;color:var(--bear);font-weight:700;min-width:24px}
+  .ritem .rt b{display:block;font-weight:700;font-size:.92rem;margin-bottom:3px}
+  .ritem .rt span{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+
+  /* SERIES NAV */
+  .series-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:60px;padding:28px 0;border-top:1px solid var(--line)}
+  .series-nav a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:var(--ink-2);padding:14px 22px;border:1px solid var(--line);border-radius:12px;transition:.2s}
+  .series-nav a:hover{color:var(--ink);border-color:var(--accent);background:var(--surface)}
+  .series-nav .sn-label{font-size:.66rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+  .series-nav .sn-title{font-weight:700;margin-top:2px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;margin-top:40px}
+  .foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .disc-foot{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.65}
+  .foot-brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .src-list{margin-top:18px;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);line-height:1.9}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* VAL THESIS */
+  .val-thesis{margin-top:28px;background:linear-gradient(120deg,rgba(249,115,22,.05),rgba(244,114,182,.05));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 30px}
+  .val-thesis .vt-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .val-thesis p{font-size:.96rem;color:var(--ink-2);line-height:1.65}
+  .val-thesis p b{color:var(--ink)}
+
+  /* TABLE */
+  .tbl-wrap{margin-top:8px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  thead tr{background:var(--surface-2)}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr:hover{background:var(--surface)}
+  tbody td{padding:13px 18px;color:var(--ink-2);vertical-align:top;line-height:1.5}
+  tbody td:first-child{color:var(--ink);font-weight:650}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+  .badge-jp{background:rgba(249,115,22,.15);color:var(--accent);border:1px solid rgba(249,115,22,.3)}
+  .badge-cn{background:rgba(239,68,68,.15);color:var(--bear);border:1px solid rgba(239,68,68,.3)}
+  .badge-kr{background:rgba(34,197,94,.15);color:var(--bull);border:1px solid rgba(34,197,94,.3)}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .nav-toggle{display:flex}
+    .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-direction:column;padding:12px 24px 20px;gap:0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--line);font-size:.82rem}
+    .nav-links a:last-child{border-bottom:none}
+    .fw-grid{grid-template-columns:1fr}
+    .valmap{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr}
+    .series-nav{flex-direction:column}
+    .series-nav a{width:100%;justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a href="../index.html" class="brand"><span class="dot"></span>ourprochoi Research</a>
+  <div class="nav-links"><a href="#now">▎현재 판단</a><a href="#falsify">다음 검증</a><a href="#s01">01 왜 이 편인가</a><a href="#s02">02 현금 표</a><a href="#s03">03 시총이 속인다</a><a href="#s04">04 증익의 출처</a><a href="#s05">05 계약의 질</a><a href="#s06">06 분모를 바꾸면</a><a href="#s07">07 못 잰 것</a><a href="#recent">최근 변경</a></div>
+</div></nav>
+<header class="hero"><div class="hero-bg"><div class="glow-a"></div><div class="glow-b"></div><div class="hero-grid"></div></div>
+<div class="wrap hero-in">
+  <div class="eyebrow">AI 인프라 · 미국 전력 · 2026.09.20</div>
+  <h1 class="hero-title">상인형 전력 2강<br><span class="hl">차이는 전부 부채다</span></h1>
+  <p class="hero-sub"><b>13F 상위 보유인데 아카이브 판단이 0편</b>이던 두 회사를 <b>SEC XBRL 원문</b>으로 같은 축에 세웠다.
+  시총/EBITDA 로 보면 NRG 가 VST 의 <b>반값</b>인데, <b>EV/EBITDA 로 재면 12.27배 vs 12.25배로 사실상 동률</b>이다.
+  그 간극이 <b>순부채 $23.2B vs $19.2B</b>이고, 같은 기간 <b>FCF 는 $0.35B vs $2.25B 로 6.4배</b> 벌어진다.</p>
+  <div class="hero-stats" style="grid-template-columns:repeat(4,1fr)">
+    <div class="hstat"><div class="num tnum">12.27<span class="u">vs 12.25</span></div><div class="lab">EV/EBITDA(TTM) NRG vs VST — 동률이다 · ① SEC XBRL · 시총 ②</div></div>
+    <div class="hstat"><div class="num tnum">6.31<span class="u">vs 3.53</span></div><div class="lab">ND/EBITDA — 레버리지는 1.8배 차이 · ①</div></div>
+    <div class="hstat"><div class="num tnum">+115<span class="u">%</span></div><div class="lab">NRG 장기부채 18개월 증가($10.89B→$23.39B · LS Power 13GW) · ①</div></div>
+    <div class="hstat"><div class="num tnum">3.8<span class="u">GW vs 1.2GW</span></div><div class="lab">서명 완료 PPA(VST) vs 「조건 합의」 단계(NRG · 2029년 이후) · ②</div></div>
+  </div>
+</div></header>
+
+<!-- brain:card:start -->
+<section id="now" class="blk"><div class="wrap">
+<div data-brain-card="ai-infra/us_merchant_power_vst_nrg.html" style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.75">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:6px">▎현재 판단 · 2026.09.20 <span style="font-size:.7em;font-weight:600;color:var(--ink-3)">— 브레인 카드 · <code>brain/theses.json</code>에서 생성 2026-09-20 · 테제 1 (관측 1)</span></div>
+<b style="font-size:1.05em">한 문장 — VST 와 NRG 는 EV/EBITDA 가 12.25배 vs 12.27배로 동률이다. 시총만 보면 NRG 가 반값인데 그 차이는 전부 부채이고(ND/EBITDA 3.53 vs 6.31 · NRG 부채는 18개월에 +115%), FCF 는 $2.25B vs $0.35B 로 6.4배 벌어진다.</b>
+<table style="width:100%;border-collapse:collapse;font-size:.95rem;margin-top:12px"><tr style="border-top:1px solid var(--line)"><td style="padding:10px 8px 10px 0;vertical-align:top;white-space:nowrap"><b>T1</b><br><span style="font-family:var(--mono);font-size:.68rem;color:#60a5fa">관측</span></td><td style="padding:10px 0;vertical-align:top"><b>상인형 2강은 EV로 재면 같은 값이다 — VST 12.25배 · NRG 12.27배. 시총만 보면 NRG가 절반 값으로 보이는데, 그 차이는 전부 부채다.</b><br><span style="color:var(--ink-2)">근거 — ① TTM(2025Q3~2026Q2) XBRL 재구성 — VST 매출 $19.21B · OP $3.56B(OPM 18.5%) · EBITDA $5.42B(28.2%) · OCF $5.12B · CapEx $2.87B · FCF $2.25B. NRG 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B(11.1%) · OCF $1.55B · CapEx $1.21B · FCF $0.35B. ① 순부채(2026-06-30 · us-gaap:LongTermDebt − 현금) — VST $19.16B · NRG $23.23B → ND/EBITDA VST 3.53배 · NRG 6.31배. ② 시총 VST $47.22B(09-19) · NRG $21.93B(09-18) → EV VST $66.38B · NRG $45.16B → EV/EBITDA(TTM) 12.25배 vs 12.27배 — 사실상 동률이다. 🔑 그래서 「NRG가 시총/EBITDA 3.9배로 싸다」는 읽기는 분모를 잘못 잡은 것이다. 싼 것은 주식이 아니라 지분의 몫이다 — EV/시총이 VST 1.41배 · NRG 2.06배라 같은 10% EV 하락이 VST 주주에게 −14.1%, NRG 주주에게 −20.6%로 온다 [추론 · 분자 EV 분모 시총]. ① NRG 부채 궤적이 그 원인이다 — $10.89B(2024-12-31) → $16.58B(2025-12-31) → $23.39B(2026-06-30), 18개월에 +115%(LS Power 13GW 인수 ②). ② 증익의 출처도 갈린다 — NRG 2Q26 부문은 East +$370M(인수 자산·용량가격) vs Texas −$131M이라 본업이 역성장했고, VST는 Generation Adj EBITDA +67.7%가 실현단가 +5%·헤지에서 나왔다. ⚠ 회사 조정치로 바꾸면 순위가 뒤집힌다 — FY26 Adj EBITDA 가이던스 중간값(VST $7.2B · NRG $5.575B)으로 재면 EV/EBITDA가 9.22배 vs 8.10배로 NRG가 12% 싸다(②③). 그런데 GAAP TTM→회사 조정치의 가산폭이 VST +33% · NRG +51%라, NRG는 가치의 더 많은 부분이 조정 항목 안에 있다(§W3). ③ 계약의 질도 다르다 — VST는 서명 완료 20년 PPA 약 3.8GW(AWS 1.2GW 2027-4Q 인도 개시 · Meta 2,609MW 2026말~2027말)인데 NRG는 「주요 상업조건 합의」 단계의 1.2GW 신설 가스(투자 $3.2B · 2029년말 COD · 목표 연 EBITDA $500M)라 검증까지 3년 이상 비어 있다. ① 값은 전부 data.sec.gov companyfacts XBRL 직접 재구성이다(intake/files/sec/*.json 09-20 수집 · TTM=2025Q3~2026Q2 · intake/files/sec/_ttm_summary.json). 시총·계약·가이던스는 ② 또는 ③이며 원문 미열람이다.</span><br><span style="color:var(--ink-2)">반증 — EV/EBITDA 동률이 깨지는 쪽이 답이다 — NRG가 3Q·4Q26에 Texas 부문 EBITDA를 플러스로 되돌리고 Net Debt/EBITDA 3.0배 재무정책(회사 명시 ②)에 근접하면 「차이는 전부 부채」가 틀린 것이고 NRG 할인이 정당해진다. 반대로 NRG 1.2GW가 정식 PPA로 체결되지 못하거나 FY27 가이던스를 계속 내놓지 못하면 할인은 더 벌어진다. VST 쪽 반증은 ERCOT 2027 선물가 — 약 $30/MWh(②)를 벗어나지 못하면 FCF $2.25B의 지속성이 깨진다.</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log 2건 · 최근 2026-09-20 분리 페이지 신설로 us_power_regulated_vs_merchant#T8 → 이 편 T1 로 이동. 그 편은 Talen 중심이라 상인형 2강이 본문에 없었고, </span><br><span style="color:var(--ink-2)">판정 — 2026-11 양사 3Q26 실적(NRG Texas 부문 EBITDA 부호 · VST ERCOT 실현단가) · NRG 1.2GW 정식 계약 체결 공시 · 2026년말 Meta PPA 가동분 인도 개시 · 마지막 검증 2026-09-20</span></td></tr></table>
+<div id="falsify" style="margin-top:14px;padding-top:10px;border-top:1px solid var(--line)"><b style="color:#60a5fa">▎다음 검증 — 날짜가 아니라 이벤트</b><br>· 2026-11 양사 3Q26 실적 — NRG Texas 부문 EBITDA 부호(본업 회복 여부) · VST ERCOT 실현단가<br>· NRG 1.2GW 하이퍼스케일러 건의 정식 PPA 체결 공시 — 「조건 합의」가 계약이 되는가<br>· 2026년 말 Meta PPA 가동분(2,176MW) 인도 개시 — VST 계약의 첫 현금화<br>· NRG FY27 가이던스 제시 여부 — 아직 없다(VST 는 $7.4~7.8B 를 이미 냈다)<br>· ERCOT 2027 선물 전력가 — 약 $30/MWh 를 벗어나는가(양사 공통 변수)</div>
+<div style="margin-top:10px;color:var(--ink-2)"><b>포지션</b> — 직접 편입 없음 — 13F 상위 보유라 판단만 세운다(§J12). 접근 시 종목+환 두 결정(§J13)</div>
+<div style="margin-top:8px;font-size:.78rem;color:var(--ink-3)">이 카드는 손으로 고치지 않는다 — 정본은 <code>brain/theses.json</code>이고, 경위는 <code>brain/routing.jsonl</code>과 아래 타임라인에 있다. 값의 분자·분모·기준일은 <code>brain/facts.json</code>.</div>
+</div>
+</div></section>
+<!-- brain:card:end -->
+
+<div class="divider"></div>
+
+<section id="s01" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">01</div><h2 class="sec-title">왜 이 편이 따로 있나</h2></div>
+<p style="line-height:1.9;color:var(--ink-2)">아카이브의 <a href="us_power_regulated_vs_merchant.html" style="color:var(--accent)">미국 전력 7사 편</a>은 T1 에 <b>「가격이 이미 두 층을 갈랐다 — 그런데 아카이브는 상인형만 갖고 있었다」</b>라고 적어 놓고, 정작 <b>상인형 2강(VST·NRG)에 판단이 0편</b>이었다. 그 편의 본문은 Talen 과 규제형 3사(AEP·NiSource·Xcel)로 차 있다.
+두 회사는 <b>13F 상위 보유</b>이기도 하다 — 09-19 에 「상위 보유의 75.1%가 아카이브 판단 0편」이라고 센 그 목록에 들어 있었다.</p>
+<div class="thesis" style="margin-top:20px"><div class="tg">이 편이 하지 않는 것</div><p>전력 가격 전망을 하지 않는다. ERCOT 도매가 <b>약 $30/MWh</b>(②)는 두 회사에 <u>같은 방향</u>으로 작용하므로 이 편의 축이 아니다. 이 편이 재는 것은 <b>같은 가격 환경에서 두 회사의 자본구조가 만드는 차이</b>다.
+<span class="u">「N주 사라」도 하지 않는다. 대신 §J2 대로 — <b>NRG 에 들어가면 「LS Power 통합이 예정대로 되고 텍사스 본업이 돌아온다」에 2.06배 레버리지로 거는 것</b>이고, <b>VST 에 들어가면 「서명된 3.8GW 가 계약대로 현금이 된다」에 1.41배로 거는 것</b>이며, <b>안 들어가면 EV 기준 동률인 두 회사 중 어느 쪽이 먼저 갈리는지를 그냥 보는 것</b>이다. 셋 다 대가가 있다.</span></p></div>
+</div></section>
+
+<section id="s02" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">02</div><h2 class="sec-title">현금 표 — 같은 창, 같은 태그</h2></div>
+<p style="line-height:1.9;color:var(--ink-2);margin-bottom:14px">TTM 은 <b>2025Q3~2026Q2</b>이고, 값은 <code>data.sec.gov</code> companyfacts 를 직접 재구성한 것이다(<b>①</b>). 시총만 <b>②</b>(VST 09-19 · NRG 09-18). 강조된 줄이 이 편의 결론이다.</p>
+<table style="width:100%;border-collapse:collapse;font-size:.92rem"><tr><th style="text-align:left;padding:7px 10px 7px 0">TTM 2025Q3~2026Q2 · $M</th><th style="text-align:right;padding:7px 0">Vistra (VST)</th><th style="text-align:right;padding:7px 0">NRG Energy</th></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">매출</td><td class="tnum" style="text-align:right">19,210</td><td class="tnum" style="text-align:right">33,120</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">영업이익</td><td class="tnum" style="text-align:right">3,560</td><td class="tnum" style="text-align:right">2,020</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">영업이익률</td><td class="tnum" style="text-align:right">18.5%</td><td class="tnum" style="text-align:right">6.1%</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">EBITDA</td><td class="tnum" style="text-align:right">5,420</td><td class="tnum" style="text-align:right">3,680</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">EBITDA 마진</td><td class="tnum" style="text-align:right">28.2%</td><td class="tnum" style="text-align:right">11.1%</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">영업현금흐름</td><td class="tnum" style="text-align:right">5,120</td><td class="tnum" style="text-align:right">1,550</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">CapEx</td><td class="tnum" style="text-align:right">2,870</td><td class="tnum" style="text-align:right">1,210</td></tr><tr style="border-top:1px solid var(--line);background:rgba(249,115,22,.06)"><td style="padding:7px 10px 7px 0"><b>FCF</b></td><td class="tnum" style="text-align:right">2,250</td><td class="tnum" style="text-align:right">350</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">순이익</td><td class="tnum" style="text-align:right">2,220</td><td class="tnum" style="text-align:right">850</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">순부채(2026-06-30)</td><td class="tnum" style="text-align:right">19,160</td><td class="tnum" style="text-align:right">23,230</td></tr><tr style="border-top:1px solid var(--line);background:rgba(249,115,22,.06)"><td style="padding:7px 10px 7px 0"><b>ND/EBITDA</b></td><td class="tnum" style="text-align:right">3.53배</td><td class="tnum" style="text-align:right">6.31배</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">시가총액 ②</td><td class="tnum" style="text-align:right">47,220</td><td class="tnum" style="text-align:right">21,930</td></tr><tr style="border-top:1px solid var(--line);background:rgba(249,115,22,.06)"><td style="padding:7px 10px 7px 0"><b>EV</b></td><td class="tnum" style="text-align:right">66,380</td><td class="tnum" style="text-align:right">45,160</td></tr><tr style="border-top:1px solid var(--line);background:rgba(249,115,22,.06)"><td style="padding:7px 10px 7px 0"><b>EV/EBITDA</b></td><td class="tnum" style="text-align:right">12.25배</td><td class="tnum" style="text-align:right">12.27배</td></tr><tr style="border-top:1px solid var(--line);background:rgba(249,115,22,.06)"><td style="padding:7px 10px 7px 0">EV ÷ 시총</td><td class="tnum" style="text-align:right">1.41배</td><td class="tnum" style="text-align:right">2.06배</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">FCF/시총</td><td class="tnum" style="text-align:right">4.8%</td><td class="tnum" style="text-align:right">1.6%</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 10px 7px 0">FCF/EV</td><td class="tnum" style="text-align:right">3.4%</td><td class="tnum" style="text-align:right">0.8%</td></tr></table>
+<p style="line-height:1.9;color:var(--ink-2);margin-top:14px"><b>⚠ 태그 함정 하나를 기록해 둔다(§W2).</b> 두 회사 모두 <code>us-gaap:Revenues</code> 와 <code>RevenueFromContractWithCustomerExcludingAssessedTax</code> 가 <u>다르고</u>, 회사 발표치와 맞는 것은 <b>전자</b>다(2Q26 VST 4,017 vs 4,401 · NRG 7,481 vs 7,319).
+반대로 Natera 는 <code>Revenues</code> 가 2017년에 끊겨 후자를 써야 한다. <b>태그를 고정하면 틀린다</b> — 회사마다 확인한다.</p>
+<div style="margin-top:18px">
+<div class="tg" style="margin-bottom:6px">분기 매출 ($M · <code>us-gaap:Revenues</code>)</div>
+<table style="width:100%;border-collapse:collapse;font-size:.85rem"><tr><th style="text-align:left;padding:5px 8px 5px 0"></th><th style="text-align:right;padding:5px 6px;font-size:.74rem">24-09</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">24-12</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-03</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-06</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-09</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-12</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">26-03</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">26-06</th></tr><tr style="border-top:1px solid var(--line)"><td style="padding:6px 8px 6px 0"><b>VST</b></td><td class="tnum" style="text-align:right" style="padding:6px">6,288</td><td class="tnum" style="text-align:right" style="padding:6px">4,037</td><td class="tnum" style="text-align:right" style="padding:6px">3,933</td><td class="tnum" style="text-align:right" style="padding:6px">4,250</td><td class="tnum" style="text-align:right" style="padding:6px">4,971</td><td class="tnum" style="text-align:right" style="padding:6px">4,584</td><td class="tnum" style="text-align:right" style="padding:6px">5,640</td><td class="tnum" style="text-align:right" style="padding:6px">4,017</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:6px 8px 6px 0"><b>NRG</b></td><td class="tnum" style="text-align:right" style="padding:6px">7,223</td><td class="tnum" style="text-align:right" style="padding:6px">6,819</td><td class="tnum" style="text-align:right" style="padding:6px">8,585</td><td class="tnum" style="text-align:right" style="padding:6px">6,740</td><td class="tnum" style="text-align:right" style="padding:6px">7,635</td><td class="tnum" style="text-align:right" style="padding:6px">7,753</td><td class="tnum" style="text-align:right" style="padding:6px">10,256</td><td class="tnum" style="text-align:right" style="padding:6px">7,481</td></tr></table>
+<div class="tg" style="margin:14px 0 6px">분기 영업이익 ($M)</div>
+<table style="width:100%;border-collapse:collapse;font-size:.85rem"><tr><th style="text-align:left;padding:5px 8px 5px 0"></th><th style="text-align:right;padding:5px 6px;font-size:.74rem">24-09</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">24-12</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-03</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-06</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-09</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">25-12</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">26-03</th><th style="text-align:right;padding:5px 6px;font-size:.74rem">26-06</th></tr><tr style="border-top:1px solid var(--line)"><td style="padding:6px 8px 6px 0"><b>VST</b></td><td class="tnum" style="text-align:right" style="padding:6px">2,590</td><td class="tnum" style="text-align:right" style="padding:6px">600</td><td class="tnum" style="text-align:right" style="padding:6px">-120</td><td class="tnum" style="text-align:right" style="padding:6px">515</td><td class="tnum" style="text-align:right" style="padding:6px">1,037</td><td class="tnum" style="text-align:right" style="padding:6px">470</td><td class="tnum" style="text-align:right" style="padding:6px">1,499</td><td class="tnum" style="text-align:right" style="padding:6px">553</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:6px 8px 6px 0"><b>NRG</b></td><td class="tnum" style="text-align:right" style="padding:6px">-810</td><td class="tnum" style="text-align:right" style="padding:6px">950</td><td class="tnum" style="text-align:right" style="padding:6px">1,134</td><td class="tnum" style="text-align:right" style="padding:6px">0</td><td class="tnum" style="text-align:right" style="padding:6px">414</td><td class="tnum" style="text-align:right" style="padding:6px">300</td><td class="tnum" style="text-align:right" style="padding:6px">328</td><td class="tnum" style="text-align:right" style="padding:6px">976</td></tr></table>
+<p style="line-height:1.85;color:var(--ink-3);font-size:.88rem;margin-top:8px">둘 다 여름(3Q)·겨울(1Q) 피크의 계절성이 있고, 영업이익의 분기 변동은 <b>헤지 평가손익(MTD)</b>이 만든다 — VST 2Q26 GAAP 순이익 $305M 에는 <b>미실현 손실 $472M</b>이 들어 있다(②). <b>분기 한 개로 방향을 읽지 않는다.</b></p>
+</div>
+</div></section>
+
+<section id="s03" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">03</div><h2 class="sec-title">시총이 속이는 자리</h2></div>
+<p style="line-height:1.9;color:var(--ink-2)">시총 ÷ FY26 조정 EBITDA 가이던스 중간값으로 재면 <b>NRG 3.93배 · VST 6.56배</b>다. 이 숫자만 보면 NRG 가 40% 싸다. <b>그런데 상인형 발전사는 레버리지가 크고, 지분은 EV 에서 부채를 뺀 나머지다.</b></p>
+<div class="thesis" style="margin-top:16px"><div class="tg">같은 EV, 다른 지분</div><p>EV 로 재면 <b>NRG 12.27배 · VST 12.25배</b> — <b>사실상 동률</b>이다. 시장은 두 회사의 <u>사업</u>에 같은 값을 매기고 있고, 주가 차이는 <u>그 값 중 주주 몫이 얼마냐</u>의 차이다.
+<span class="u">EV ÷ 시총이 <b>NRG 2.06배 · VST 1.41배</b>이므로, <b>같은 10% EV 하락이 NRG 주주에게 −20.6%, VST 주주에게 −14.1%</b>로 온다 <b>[추론 · 분자 EV, 분모 시총]</b>. NRG 의 「할인」은 그 증폭의 대가다.</span></p></div>
+<div style="margin-top:18px">
+<div class="tg" style="margin-bottom:6px">NRG 장기부채 궤적 (<code>us-gaap:LongTermDebt</code> · <b>①</b>)</div>
+<table style="width:100%;border-collapse:collapse;font-size:.88rem"><tr><th style="text-align:right;padding:5px 8px;font-size:.76rem;color:var(--ink-3)">2023-12</th><th style="text-align:right;padding:5px 8px;font-size:.76rem;color:var(--ink-3)">2024-06</th><th style="text-align:right;padding:5px 8px;font-size:.76rem;color:var(--ink-3)">2024-12</th><th style="text-align:right;padding:5px 8px;font-size:.76rem;color:var(--ink-3)">2025-12</th><th style="text-align:right;padding:5px 8px;font-size:.76rem;color:var(--ink-3)">2026-03</th><th style="text-align:right;padding:5px 8px;font-size:.76rem;color:var(--ink-3)">2026-06</th></tr><tr><td class="tnum" style="text-align:right" style="padding:6px 8px"><b>$10.94B</b></td><td class="tnum" style="text-align:right" style="padding:6px 8px"><b>$10.86B</b></td><td class="tnum" style="text-align:right" style="padding:6px 8px"><b>$10.89B</b></td><td class="tnum" style="text-align:right" style="padding:6px 8px"><b>$16.58B</b></td><td class="tnum" style="text-align:right" style="padding:6px 8px"><b>$23.18B</b></td><td class="tnum" style="text-align:right" style="padding:6px 8px"><b>$23.39B</b></td></tr></table>
+<p style="line-height:1.85;color:var(--ink-2);margin-top:10px"><b>18개월에 +115%</b>다. 원인은 <b>LS Power 포트폴리오 인수</b>(가스·이중연료 18개소 약 13GW · 2026-01-30 완료 · 발전용량 2배 · <b>②</b>)이고, 회사의 재무정책은 <b>Net Debt/EBITDA 3.0배 미만</b>이라고 적혀 있다(<b>②</b>) — <b>측정값 6.31배와의 간극이 이 회사의 열린 질문</b>이다.
+<span style="color:var(--ink-3)">⚠ 회사가 쓰는 「Net Debt/EBITDA」는 조정 EBITDA 기준일 수 있어 분모가 다르다. 위 6.31배는 <b>GAAP TTM EBITDA(영업이익+감가상각) 기준</b>이며, FY26 조정 가이던스 중간값 $5,575M 으로 바꾸면 <b>4.17배</b>다 — 어느 쪽이든 3.0배 위다.</span></p>
+</div>
+</div></section>
+
+<section id="s04" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">04</div><h2 class="sec-title">증익의 출처가 다르다</h2></div>
+<p style="line-height:1.9;color:var(--ink-2)">둘 다 2Q26 에 GAAP 흑자였다(VST $305M · NRG $506M · <b>①</b>). 그런데 <b>어디서 벌었는지가 갈린다</b>(②· 회사 부문 공시).</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+  <div class="thesis"><div class="tg">VST — 가격과 헤지</div><p>Generation 조정 EBITDA <b>+67.7%</b>($593M→$994M). 동인은 <b>유리한 헤지 · MWh당 평균 실현가 약 +5% · PJM 용량수익 · Martin Lake 1호기 재가동 · Lotus 인수자산</b>. Retail 은 $756M→$773M 로 완만하다.</p></div>
+  <div class="thesis"><div class="tg">NRG — 인수와 용량가격</div><p>East <b>+$370M</b>(LS Power 자산 편입 · 용량가격 상승)인데 <b>Texas 는 −$131M</b>(부하 감소 · 온화한 날씨 · 공급비용 상승)이다. Vivint Smart Home 은 +$42M.
+  <span class="u"><b>증익이 전부 인수와 용량시장에서 나왔고, 매출의 절반이 걸린 텍사스 본업은 역성장했다.</b></span></p></div>
+</div>
+<p style="line-height:1.9;color:var(--ink-2);margin-top:14px">지역 믹스도 다르다 — NRG 는 인수 후 <b>ERCOT 50% / PJM 39% / ISO-NE 8% / NYISO 3%</b>(②)라 ERCOT 노출이 더 크다. 그리고 <b>NRG 에는 원전이 없다</b> — 2023-11 에 South Texas Project 44% 지분을 Constellation 에 $1.75B 로 팔았다(②).
+<span style="color:var(--ink-3)">⚠ 일부 데이터 제공처가 NRG 발전믹스에 「원전 5%」를 표시하는데 <b>매각 이전 값</b>이다. 쓰지 말 것.</span></p>
+</div></section>
+
+<section id="s05" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">05</div><h2 class="sec-title">계약의 질 — 「데이터센터 딜」로 묶어 읽으면 안 된다</h2></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+  <div class="thesis"><div class="tg">VST — 서명 완료 약 3.8GW</div><p><b>AWS / Comanche Peak</b>(8-K 2025-09-29) — 20년 PPA + 최대 20년 연장 · <b>최대 1,200MW</b>(총 약 2,400MW 의 절반) · 인도 <b>2027-4Q 개시 → 2032 전량</b>.<br>
+  <b>Meta / PJM 원전</b>(2026-01-09) — 20년 PPA <b>2,609MW</b> = 가동분 2,176MW(Perry 1,268 + Davis-Besse 908 · <b>2026년 말 일부 개시 → 2027년 말 전량</b>) + 업레이트 433MW(2031~2034 · 미국 내 기업 후원 원전 업레이트 <b>사상 최대</b>).<br>
+  <span class="u">[추론] 3.8GW ÷ 원전 약 6.6GW = <b>약 57%</b> · ÷ 총 약 44GW = <b>약 8.6%</b>. <b>계약단가는 미공개 — 미확인</b>이라 수익 기여는 못 센다.</span></p></div>
+  <div class="thesis"><div class="tg">NRG — 「주요 상업조건 합의」 1.2GW</div><p>2026-08-04 발표. <b style="color:#f87171">정식 체결 PPA 가 아니다 — 이 구분이 핵심이다.</b><br>
+  텍사스 <b>1.2GW 복합화력 신설</b>(원전 아님) · 투자 <b>$3.2B</b> · <b>2029년 말 COD</b> · 목표 연 조정 EBITDA <b>$500M</b>·FCFbG $375M · 세전 무차입 수익률 12~15% · 최소 15년 · 상대방 투자등급(<b>이름 미공개</b>) · 부지 최대 2.4GW 확장 가능.<br>
+  <span class="u"><b>EBITDA 기여는 2029년 이후다 — 검증까지 3년 이상 비어 있다.</b> 기존 발전자산 중 데이터센터에 계약된 비중은 <b>미공시</b>.</span></p></div>
+</div>
+</div></section>
+
+<section id="s06" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">06</div><h2 class="sec-title">분모를 바꾸면 순위가 뒤집힌다 — 그래서 분모를 밝힌다</h2></div>
+<p style="line-height:1.9;color:var(--ink-2)">위의 「동률」은 <b>GAAP TTM EBITDA</b> 기준이다. <b>회사 조정 FY26 가이던스 중간값</b>으로 바꾸면 <b>VST 9.22배 · NRG 8.10배</b>로 <b>NRG 가 12% 싸다</b>. 어느 쪽이 옳은가가 아니라 <b>무엇을 분모로 쓰는지를 밝히는 것</b>이 규칙이다(§W2).</p>
+<div class="thesis" style="margin-top:14px"><div class="tg">다만 가산폭이 다르다</div><p>GAAP TTM EBITDA → 회사 조정 FY26 가이던스 중간값의 <b>가산폭이 VST +33%($5,420M→$7,200M) · NRG +51%($3,680M→$5,575M)</b>다.
+<span class="u"><b>NRG 는 가치의 더 많은 부분이 조정 항목 안에 있다.</b> 조정이 큰 쪽이 틀렸다는 뜻은 아니지만, <b>「싸다」의 근거가 회계 조정에 더 많이 기대고 있다</b>는 뜻이다(§W3 — 이 계정이 사업을 반영하는가).</span></p></div>
+<p style="line-height:1.9;color:var(--ink-2);margin-top:14px"><b>가이던스</b> — VST FY26 조정 EBITDA <b>$6.8~7.6B</b> · 조정 FCFbG $3.925~4.725B, FY27 기회범위 <b>$7.4~7.8B</b>(Cogentrix·Meta PPA 효과 <u>제외</u>). NRG FY26 조정 EBITDA <b>$5.325~5.825B</b> · 조정 EPS $7.90~9.90 · FCFbG $2.8~3.3B, <b>FY27 가이던스는 아직 없다</b>(③ 회사 제시).</p>
+</div></section>
+
+<section id="s07" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow">07</div><h2 class="sec-title">못 잰 것 — 추정하지 않고 비워 둔다</h2></div>
+<ul style="line-height:2;color:var(--ink-2);padding-left:20px">
+<li><b>AWS·Meta PPA 계약단가</b> — 미공개. 3.8GW 가 얼마의 매출인지 못 센다</li>
+<li><b>NRG 하이퍼스케일러의 이름</b>과 <b>기존 발전자산 중 데이터센터 계약 비중</b> — 미공시</li>
+<li><b>부문별 매출 분해</b> — 두 회사 모두 부문은 <u>조정 EBITDA</u>로만 공시한다. 한 소스가 VST Retail 약 $14.34B 를 적으나 내부거래 제거 전후가 불명이라 <b>분자·분모를 한 줄로 못 쓴다 → 값으로 쓰지 않는다</b>(§W2)</li>
+<li><b>NRG 2Q26 GAAP 영업이익</b> — 회사 발표에는 없었는데 <b>XBRL 에는 있다: $976M</b>(<b>①</b>). 위 표의 TTM $2,020M 이 그 합이다</li>
+<li><b>NRG FY27 가이던스</b> — 미제시. VST 는 냈다</li>
+<li><b>가스화력의 데이터센터 계약 MW</b>(VST Cogentrix 관련) — 미공시</li>
+</ul>
+<p style="line-height:1.9;color:var(--ink-3);margin-top:12px">⚠ 계약·가이던스·시총은 <b>원문 미열람</b>이다(회사 IR·8-K 를 검색 요약 경유로 받았다 · <b>②③</b>). <b>재무는 전부 ①</b>(SEC XBRL 직접 재구성)이다. 둘을 같은 문장에 섞지 않는다(§R1).</p>
+</div></section>
+
+<section id="recent" class="blk"><div class="wrap">
+<div style="padding:16px 20px;border-left:4px solid #60a5fa;background:rgba(96,165,250,.07);line-height:1.9">
+<div style="font-weight:900;color:#60a5fa;margin-bottom:6px">▎최근 변경 · 1건</div>
+<b>2026.09.20 — 신설(분리).</b> <span style="color:var(--ink-3)">→ 미국 전력 7사 편 T8 → 이 편 T1 · 카드는 <code>brain/theses.json</code>에서 렌더</span><br>
+사용자 요청(「13F 공백 4사를 리서치하고 판단하자」)으로 09-20 오전에 <a href="us_power_regulated_vs_merchant.html" style="color:var(--accent)">미국 전력 7사 편</a>에 T8 로 세웠던 판단을, <b>독립 결론이라 별도 편으로 뗐다</b>(§W1). 그 편은 Talen + 규제형 3사로 남는다.
+SEC 원문은 세션 egress 가 막혀 GitHub Actions 러너로 받았는데(<code>collect-sec.yml</code>), <b>같은 날 환경 allowlist 가 열려 이제는 세션에서 직접 받는다</b>(<code>docs/method_datasource.md</code>).
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="sec-head" style="margin-bottom:12px"><div class="sec-eyebrow">Disclosure</div><h2 class="sec-title" style="font-size:1.3rem">타임라인 · 출처</h2></div>
+<div style="line-height:1.95;font-size:.92rem;color:var(--ink-2)">
+▸ 2026.09.20: <b>🆕 신설(분리).</b> VST·NRG 를 SEC XBRL TTM 으로 세우고 EV 기준으로 대조했다. 판단 T1. 미국 전력 7사 편 T8 에서 이동.<br>
+<b>정본 관계</b> — VST·NRG 의 재무 값은 <b>이 편</b>(→ <code>brain/facts.json</code>)이 정본이다. Talen·규제형 3사(AEP·NiSource·Xcel)는 <a href="us_power_regulated_vs_merchant.html#now" style="color:var(--accent)">미국 전력 7사 편</a>이 정본이다.<br><br>
+<b>출처</b><br>
+· <b>SEC XBRL companyfacts</b> VST·NRG — <code>intake/files/sec/{VST,NRG}.json</code>(2026-09-20 수집) · TTM = 2025Q3~2026Q2 분기 합산 · 재구성 결과 <code>intake/files/sec/_ttm_summary.json</code> — <b>①</b><br>
+· 순부채 = <code>us-gaap:LongTermDebt</code> − <code>CashAndCashEquivalentsAtCarryingValue</code>(2026-06-30) — <b>①</b><br>
+· 시총 — VST $47.22B(2026-09-19) · NRG $21.93B(2026-09-18) — <b>②</b>(검색 · 원문 미개봉)<br>
+· 부문 실적·PPA·가이던스 — 각 사 2Q26 실적 발표·8-K·IR(검색 요약 경유) — <b>②③</b><br>
+· 수집 경위 — <code>intake/user.jsonl</code> u-20260920-04 · 라우팅 <code>brain/routing.jsonl</code> r-20260920-09 · 분리 r-20260920-13<br><br>
+<span style="color:var(--ink-3)">전체 아카이브 변경 이력은 <a href="../update_log.html" style="color:var(--accent)">업데이트 로그</a>. 관련 편 — <a href="us_power_regulated_vs_merchant.html" style="color:var(--accent)">미국 전력 7사</a> · <a href="ai_power_infra_investment_map.html" style="color:var(--accent)">AI 전력 인프라 투자 지도</a> · <a href="../research/13f_2026q2.html" style="color:var(--accent)">13F 2026 Q2</a></span>
+</div></div></footer>
+</body>
+</html>
