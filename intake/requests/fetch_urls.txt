@@ -18,3 +18,9 @@
 #       (collect_fetch.py BROWSER_HOSTS). 1차 run 35485990057 은 이것 때문에 Fetch 가 10분을 넘겼다.
 #    교훈 ②: 워크플로 버그도 같이 고쳤다(5a454ac) — 1차 런은 push 가 거절돼도 재시도가 없었다.
 #       Fetch 실패와 push 실패가 겹쳐 두 번 잃을 뻔했다.
+
+# ── 2026-09-20 요청: 메르(ranto28) 네이버 블로그. 사용자가 「이 블로그 글 올라올 때마다 분석 가능?」으로 물었다.
+#    이 세션·현 allowlist 둘 다 blog.naver.com 이 없다(allowlist 는 *.stock.naver.com · finance.naver.com 만).
+#    경로 둘을 같이 시험한다 — ① RSS(새 글 감지용) ② PostView(본문. m.blog 는 iframe 이라 본문이 안 온다).
+mer_rss                | https://rss.blog.naver.com/ranto28.xml
+mer_224416965441_post  | https://blog.naver.com/PostView.naver?blogId=ranto28&logNo=224416965441 | https://m.blog.naver.com/ranto28/224416965441
