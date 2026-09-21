@@ -239,7 +239,7 @@
 <nav><div class="wrap nav-in">
   <a href="../index.html" class="brand"><span class="dot"></span>ourprochoi Research</a>
   <div class="nav-links">
-    <a href="#now">▎현재 판단</a><a href="#s01">01 방법</a><a href="#s02">02 베타 표</a><a href="#s03">03 계약</a><a href="#s04">04 가격</a><a href="#s05">05 크기</a><a href="#s06">06 정유</a><a href="#s07">07 다음 판정</a><a href="#recent">최근 변경</a>
+    <a href="#now">▎현재 판단</a><a href="#s01">01 방법</a><a href="#s02">02 베타 표</a><a href="#s03">03 계약</a><a href="#s04">04 가격</a><a href="#s05">05 크기</a><a href="#s06">06 정유</a><a href="#s07">07 탱커</a><a href="#s08">08 다음 판정</a><a href="#recent">최근 변경</a>
   </div>
 </div></nav>
 
@@ -423,7 +423,49 @@
 </div></section>
 
 <section id="s07" class="blk"><div class="wrap">
-<div class="sec-head"><div class="sec-eyebrow"><span class="idx">07</span><span class="ln"></span>다음 판정</div><h2 class="sec-title">날짜가 아니라 이벤트 — 틀렸음을 빨리 아는 장치</h2></div>
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">07</span><span class="ln"></span>탱커 — 후보에서 뺀 이유</div><h2 class="sec-title">베타가 0인데 1년에 두 배 올랐다 — 받는 축이 유가가 아니다</h2>
+<p class="sec-lead">탱커는 네 번 재등장한 끝에 판단을 세운 자리다(§J9). 본 편의 질문은 하나 — <b>유가 헤지 그릇인가</b>. 답은 <b>아니오</b>이고, 그 이유가 이 섹션이다(T5 · 관측).</p></div>
+<div class="panel">
+<h3>① 브렌트 베타 — 미드스트림보다도 낮다 (2026-03~09 일별 · n=133 · ①)</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>종목</th><th>선종</th><th>브렌트 β</th><th>R²</th><th>1Y</th><th>09-21(브렌트 −5%)</th></tr></thead>
+<tbody>
+<tr><td>Okeanis (ECO)</td><td>원유</td><td>−0.041</td><td>0.00</td><td><b>+182.2%</b></td><td>−2.73%</td></tr>
+<tr><td>Nordic American (NAT)</td><td>원유</td><td>−0.035</td><td>0.00</td><td>+145.4%</td><td>−3.03%</td></tr>
+<tr><td>Intl Seaways (INSW)</td><td>원유</td><td>−0.036</td><td>0.00</td><td>+129.2%</td><td>−1.84%</td></tr>
+<tr><td>Tsakos (TEN)</td><td>원유</td><td>−0.054</td><td>0.01</td><td>+124.1%</td><td>−2.25%</td></tr>
+<tr><td>Frontline (FRO)</td><td>원유</td><td><b>−0.086</b></td><td>0.02</td><td>+114.6%</td><td>−3.13%</td></tr>
+<tr><td>CMB.TECH (CMBT)</td><td>원유</td><td>−0.043</td><td>0.01</td><td>+113.7%</td><td>−3.11%</td></tr>
+<tr><td>Teekay Tankers (TNK)</td><td>원유</td><td>−0.023</td><td>0.00</td><td>+84.7%</td><td>−2.14%</td></tr>
+<tr><td>DHT Holdings (DHT)</td><td>원유</td><td>−0.079</td><td>0.02</td><td>+79.6%</td><td><b>−3.52%</b></td></tr>
+<tr><td>TORM (TRMD)</td><td><u>제품</u></td><td>−0.014</td><td>0.00</td><td>+64.5%</td><td>−2.90%</td></tr>
+<tr><td>Scorpio (STNG)</td><td><u>제품</u></td><td>+0.004</td><td>0.00</td><td>+46.6%</td><td>−1.09%</td></tr>
+<tr style="opacity:.75"><td>FANG <span class="src">대조군</span></td><td>E&amp;P</td><td>0.286</td><td>0.44</td><td>+35.5%</td><td>—</td></tr>
+<tr style="opacity:.75"><td>XLE <span class="src">대조군</span></td><td>섹터</td><td>0.183</td><td>0.36</td><td>+41.1%</td><td>—</td></tr>
+</tbody></table></div>
+<p class="note">같은 코드·같은 창으로 돌린 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 <b>02 베타 표의 값과 일치</b>한다 — 방법이 검증됐다는 뜻이다. 정본 <code>brain/facts.json</code> (<code>FRO.brent_beta</code> 외 9사).</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3>🔑 읽는 법 — 물동량은 줄었는데 거리가 늘었다</h3>
+<p>탱커 10사의 브렌트 베타는 <b>−0.086 ~ +0.004</b>로, 본 편이 「유가를 안 받는 물량 층」으로 분류한 미드스트림의 최저값(<b>KMI·WMB 0.03</b>)<u>보다도 낮고 부호도 음수</u>다. 사실상 0이다. <b>그런데 1년 수익률은 +47~182%로 20개 수단 중 최고이고 FANG(+35.5%)의 3~5배다.</b> 베타가 0인데 수익률이 최고면 <b>받는 축이 다른 것</b>이고, 그 축은 유가가 아니라 <b>톤마일</b>이다.</p>
+<p style="margin-top:10px">아카이브는 09-20에 이 층을 한 덩어리로 세우면 안 된다고 적어 두었다 — <b>운임은 사상 최고인데 물동량은 YoY −8%(중국 −33%)</b>였기 때문이다(JPM ②). 두 사실이 모순이 아닌 이유가 톤마일이다. <b>운임 = 톤마일 수요 ÷ 선복</b>이므로 실어 나르는 배럴이 줄어도 <u>항로가 더 길어지면</u> 운임은 오른다. 지금 항로는 이렇게 길어졌다 — 사우디 동서 송유관 정지로 유럽이 <b>아프리카 우회 5주</b>, 사우디는 라스타누라에서 <b>호르무즈를 거쳐 오만 앞바다 선박 간 환적</b>, 휴스턴→아시아 <b>배럴당 $26</b>(한 척 $5,200만)(②).</p>
+<p style="margin-top:10px"><b>선종이 그 설명을 검산한다</b> — 항로가 왜곡된 것은 원유(사우디→유럽 단절)이고 제품유는 덜 왜곡됐다. 실측도 그렇다: <b>원유선 평균 1Y +128% vs 제품선 +56%(2.3배)</b>. ⚠ 메리츠(③)는 디젤·Jet 마진을 이유로 제품선도 강세로 보는데 <b>실측은 반대</b>다.</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3>🔴 그래서 헤지가 아니다 — 09-21이 그것을 보여줬다</h3>
+<p>2026-09-21, 미-이란 회담 기대로 브렌트가 <b>−5%</b> 빠진 날 <b>탱커 10사가 전부 하락</b>했다 — DHT −3.52 · FRO −3.13 · CMBT −3.11 · NAT −3.03 · TRMD −2.90 · ECO −2.73 · TEN −2.25 · TNK −2.14 · INSW −1.84 · STNG −1.09%(①). <b>이벤트 배수 0.2~0.7</b>이다.</p>
+<p style="margin-top:10px"><b>일별 베타는 0인데 휴전 이벤트에는 같이 진다.</b> 이것이 T5의 핵심이고, 헤지 자격을 판정하는 자리다 — <u>베타 0이 헤지 자격을 주는 것이 아니라</u>, 베타 0이면서 같은 꼬리에 노출된 것이 <b>헤지로는 최악의 조합</b>이다. 포트폴리오 헤지로 쓰면 평시에는 아무것도 안 덮고, 휴전이 오면 코어와 <u>같은 방향으로</u> 잃는다. 05의 헤지 품질 공식 <b>β×(1−ρ)</b>가 잡지 못하는 종류의 위험이고, 01의 「이 숫자가 못 잡는 것」에 한 줄이 더 붙는다.</p>
+<p class="note"><b>공급 축은 아직 값이 아니다</b> — VLCC 오더북이 <b>217척</b>과 <b>151척</b>(BIMCO)으로 44% 갈리고(②), 노후선 해체·제재 선대를 빼면 유효 공급이 3년간 <b>+1%</b>라는 반대 숫자가 있다. 발주 ≠ 유효 공급이므로 어느 쪽도 인용하지 않는다(§W2). 인도는 2028~29라 지금 운임에는 안 들어오지만, <b>2028~29에 휴전과 신조 인도가 겹치면 두 번 맞는다</b>.</p>
+</div>
+<div class="panel" style="margin-top:16px">
+<h3>⚠ 이 섹션이 하지 않는 것</h3>
+<p><b>· 탱커 매수·매도 판단</b> — 본 편의 질문은 「헤지 그릇인가」이고 답은 아니오다. 「1년에 두 배 오른 전쟁 수혜주」로 사고 싶다면 그것은 헤지가 아니라 <b>방향성 베팅</b>이며, 판정 이벤트는 휴전이고 지금 값은 <u>휴전이 안 온다</u>는 쪽에 걸려 있다. 집행·수량은 §J3.<br>
+<b>· 운임 추세</b> — TD3C 등 운임 지수의 ① 소스를 아직 못 잡았다(Baltic Exchange 유료 · EIA·FRED에 시리즈 없음 · 호스트 확인 미착수). 지금 있는 것은 「사상 최고」(②)와 「$26/bbl」(②)뿐이라 <b>추세를 못 잰다</b>(§W5). 보유 0.</p>
+</div>
+</div></section>
+
+<section id="s08" class="blk"><div class="wrap">
+<div class="sec-head"><div class="sec-eyebrow"><span class="idx">08</span><span class="ln"></span>다음 판정</div><h2 class="sec-title">날짜가 아니라 이벤트 — 틀렸음을 빨리 아는 장치</h2></div>
 <div class="panel">
 <h3>이 판단이 틀렸음을 보여줄 것</h3>
 <ul class="fl">
@@ -431,6 +473,7 @@
 <li><b>T2 계약</b> → 어느 미드스트림이든 10-Q 민감도 표에서 <b>10% 가격 변동 손익이 EBITDA의 5%</b>를 넘으면 「계약이 차단」이 틀린 것 · VG SPA 개시(Plaquemines Ph2 COD · CP2 2027) 후 브렌트 베타 <b>0.3 미만</b>이면 「단계」 읽기 확인이자 <u>VG의 헤지 자격 상실</u> · FANG 10-Q에 <b>collar 상한</b>이 신설되면 상방 무헤지 종료.</li>
 <li><b>T3 축</b> → 다음 코스피 <b>−10% 창에서 브렌트가 하락</b>하면 「유가 축」이 낙폭의 원인이 아닌 것 — 헤지 논리 자체가 무너짐 · 코스피 20일 블록 브렌트 베타가 <b>0 이상</b>으로 뒤집힘.</li>
 <li><b>T4 정유</b> → 아시아 복합마진 실측이 미 크랙과 함께 붕괴하는데 S-Oil이 안 빠지면 「마진의 값」 읽기가 틀린 것 · 다음 코스피 최악 창에서 S-Oil <b>+10% 이상</b>이면 헤지 후보로 재검토.</li>
+<li><b>T5 탱커</b> → ① <b>휴전·회담 타결 창에서 탱커가 브렌트보다 <u>덜</u> 빠지면</b> 「톤마일이 유가와 분리된다」가 맞는 것 → 헤지 후보로 재검토 · ② 원유선(+128%)과 제품선(+56%)의 <b>1Y 격차 2.3배가 좁혀지면</b> 원인이 「거리」가 아니라 「선종 수급」 · ③ 발주(217 vs 151척)가 2028~29 인도로 나타나는데 <b>운임이 안 빠지면</b> 「유효 공급 +1%」 쪽이 맞는 것.</li>
 <li><b>FANG 개별</b> → 다음 브렌트 +30% 창에서 FANG 수익률 &lt; +5%(베타 0.2 미달) · 3Q26 감액 재발(유가 하락 국면이 아닌데 감액이면 5사 편 T4 전제 흔들림).</li>
 <li><b>VG 개별</b> → TTF &lt; $15인데 VG가 안 빠지면 「스팟 옵션 값」 읽기 기각(5사 편 T6) · 코스피 상관이 −0.13에서 <b>+0.2 위</b>로 가면 금리 종목화.</li>
 </ul>
@@ -441,6 +484,8 @@
 <li><b>9/22 유엔총회 걸프 회동 · 9/24 미중 정상회담</b> — 둘 중 하나가 「휴전 축」을 열면 T3의 k=0.5를 줄이는 판정. JPM(③)은 9/24를 「중국의 이란 영향력을 휴전·해로 개방으로 바꾸는 패키지」의 최대 성과 후보로 본다.</li>
 <li><b>10월 말 사우디 동서 파이프라인 복구</b>(regime precommit · 5~6주) — n-hormuz의 breaks_if. 트럼프 「중간선거 끝나야 전쟁 끝난다」(② 방송 인용 · 원문 미확인)라 휴전 축은 11/3 뒤로 밀리고 파이프라인만 남는다.</li>
 <li><b>3Q26 10-Q(10월 말~11월 초 · 확정일 ②)</b> — VG 커미셔닝 매출 비중 · 스팟 카고 수·실현 마진 · Plaquemines Ph2 COD · FANG 헤지 표(collar 유무)·감액 · LNG 단기 물량 비중. T2 판정.</li>
+<li><b>9/22~23 UNGA · 9/24 미중 · 10월 말 파이프라인 복구 — T5 이벤트 베타</b> 셋 중 하나가 휴전 축을 열면 <b>「베타 0짜리가 얼마나 빠지는가」</b>를 잰다. 09-21(브렌트 −5% → 탱커 −1.0~−3.5% · 배수 0.2~0.7)이 첫 관측이고 두 번째 관측으로 확정한다.</li>
+<li><b>탱커 3사 3Q26 실적</b>(FRO·DHT·INSW · 11월) — TCE 실현단가가 「운임 사상 최고」를 확인하는가 · 원유선 vs 제품선 격차 2.3배의 방향(T5 반증 ②).</li>
 <li><b>브렌트 다음 ±20% 창 즉시 재측정 · 월 1회 250일 베타 갱신</b>(FRED · naver) — T1. 명령은 <code>docs/backlog.md</code>.</li>
 <li><b>refiner-hedge 3Q 판정</b> — 정유 4사 3Q26 실적 · 아시아 복합마진 vs 미 크랙 실측. T4는 여기로 이관.</li>
 <li>주간 EIA · OPEC+ — 관측만(테제 아님).</li>
@@ -457,7 +502,9 @@
 
 <section class="blk"><div class="wrap">
 <div id="recent" style="padding:18px 20px;border-left:4px solid var(--glow);background:rgba(251,191,36,.05);line-height:1.9">
-<div style="font-weight:800;color:var(--glow);margin-bottom:8px">▎최근 변경 · 1건</div>
+<div style="font-weight:800;color:var(--glow);margin-bottom:8px">▎최근 변경 · 2건</div>
+<b>2026.09.22 · 🆕 T5 신설 — 탱커를 후보에 넣었다가 뺐다(§J9 네 번째 등장)</b> <span class="src">① naver 일봉 × FRED DCOILBRENTEU · ② 운임·오더북</span><br>
+&nbsp;&nbsp;탱커 10사의 브렌트 베타가 <b>−0.086 ~ +0.004(R² ≤0.02)</b>로 미드스트림 최저(0.03)보다도 낮은데 <b>1Y는 +47~182%</b>(FANG의 3~5배)다. 받는 축이 유가가 아니라 <b>톤마일</b>이고, 물동량 −8%(중국 −33%)와 운임 사상 최고가 동시에 참인 이유가 그것이다. 선종이 검산한다 — <b>원유선 +128% vs 제품선 +56%</b>. 🔴 결정적인 것은 <b>09-21</b>: 브렌트 −5%(회담 기대) 날 <b>10사 전부 −1.0~−3.5%</b>. 일별 베타는 0인데 휴전 이벤트에는 같이 진다 — <b>베타 0이면서 같은 꼬리에 노출된 최악의 조합</b>이라 헤지 후보에서 뺐다. 보유 0 · 수량 지시 없음. 07 섹션 신설 · 다음 판정 07→08.<br>
 <b>2026.09.19 · 🆕 신설 — 사용자 「석유가스 딥리서치」 → 포트의 유가 헤지 0(<code>portfolio.exposures.oil_up</code>)을 채우는 정본</b> <span class="src">① naver·FRED 일별 · ① 10-K/10-Q 11사 · ② 팀장 제시 평가액</span><br>
 &nbsp;&nbsp;20개 수단의 브렌트 베타(2026 창 · 250일 병기)와 코스피 lag1 상관을 재고 <b>헤지 품질 = β×(1−ρ)</b>로 줄 세웠다 — <b>USO 0.67 · BNO 0.64 · VG 0.65</b>만 유가를 받고 <b>FANG 0.29</b>가 E&amp;P 최상, <b>미드스트림 0.03~0.15</b>는 물량 층. 계약 원문(WMB 93% fee · KMI $64 헤지 · VG 96% SPA)이 그 이유이고 <b>VG의 0.65는 단계의 값</b>, <b>FANG은 상방 무헤지</b>. 코스피 최악 창 셋에서 유가는 셋 다 올랐다(+10/+14/+45%) → 헤지는 유가 축만 덮는다. <b>k=0.5 산술 USO 1.2억 · FANG 2.8억 · XLE 4.6억</b> · 대가 −21%(6/10~24 실측). 정유 S-Oil은 베타 0.19인데 1년 +155% — 헤지가 아니라 전쟁 레짐 수혜주 → refiner-hedge 이관. VG 시총 $388억(②)→$351억(① 10-Q 표지) 정정. T1~T4 신설 · 카드는 <code>brain/theses.json</code>.<br>
 </div>
@@ -494,7 +541,7 @@
   "author": {"@type": "Organization", "name": "ourprochoi Research"},
   "publisher": {"@type": "Organization", "name": "ourprochoi Research Archive"},
   "datePublished": "2026-09-19",
-  "dateModified": "2026-09-19",
+  "dateModified": "2026-09-22",
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ourprochoi-web.github.io/stock-research/energy/oil_hedge_vehicles.html"},
   "keywords": "유가 헤지,브렌트 베타,호르무즈,USO,BNO,Venture Global,Diamondback,미드스트림,Cheniere,Kinder Morgan,Williams,XLE,XOP,S-Oil,정유"
 }
