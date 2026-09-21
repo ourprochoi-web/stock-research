@@ -294,6 +294,14 @@ WATCH_US = {
     "Venture Global": "VG",
     "Energy Transfer": "ET",
     "Diamondback": "FANG.O",
+    # 2026-09-22 추가 — 탱커 10사. oil_hedge_vehicles T5(판단 신설) 이 브렌트 베타를 −0.09~0.00 으로
+    # 실측했는데, 그 계산을 이 세션에서 손으로 받아야 했다(추적 밖이었다). 보유는 0 이고
+    # 헤지 후보에서도 제외했지만 <판정 이벤트가 휴전>이라 추적이 필요하다 — 휴전 뉴스 날의
+    # 낙폭이 T5 의 이벤트 베타이고, 09-21(브렌트 −5% → 탱커 −1.0~−3.5%)이 첫 관측이다.
+    # 심볼 접미사는 전부 이 세션에서 응답 stockName 으로 검증했다(§W2).
+    "Frontline": "FRO", "DHT 홀딩스": "DHT", "Intl Seaways": "INSW.K",
+    "Teekay Tankers": "TNK", "Scorpio Tankers": "STNG.K", "Nordic American": "NAT",
+    "TORM": "TRMD.O", "CMB.TECH": "CMBT.K", "Okeanis": "ECO", "Tsakos": "TEN",
     "Talen": "TLN.O",
     "AEP": "AEP.O",
     "NiSource": "NI",
