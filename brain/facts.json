@@ -5993,6 +5993,66 @@
      "grade": "③",
      "source": "네이버 재무 컨센서스 열 · 동일 파일",
      "page": "hbm-packaging/hbm_pkg_company_samsung.html"
+    },
+    "op_streak_negative": {
+     "value": 5,
+     "unit": "분기",
+     "basis": "연속 영업적자",
+     "asof": "2026-06-30",
+     "num": "−67·−63·−6·−62·−62억(2Q25~2Q26)",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + iM증권 이상헌 2026-09-21(③)",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "🔴 같은 기간 매출은 761 → 1,263억(+66%)이다. 물량이 늘어도 적자가 그대로 — T6(「칩 후공정은 물량 ②까지이고 이익은 아직 0」)의 직접 근거"
+    },
+    "op_fy25": {
+     "value": -196,
+     "unit": "억원",
+     "basis": "FY25 확정",
+     "asof": "2025-12-31",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + iM증권 이상헌 2026-09-21(③)",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "FY23 −133 · FY24 0 · FY25 −196 — 적자가 확대됐다"
+    },
+    "final_test_capa_plan": {
+     "value": 200,
+     "unit": "억원/월",
+     "basis": "2027-2Q말 계획",
+     "asof": "2026-09-21",
+     "num": "파이널테스트 매출 CAPA",
+     "den": "—",
+     "grade": "③",
+     "source": "네이버 재무 원장 2026-09-18 + iM증권 이상헌 2026-09-21(③)",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "4Q26 월 100억 → 2027-2Q말 200억. ⚠ CAPA 는 매출이 아니다 — 가동률이 붙어야 매출이고 OPM 이 붙어야 이익이다"
+    },
+    "ddr5_packaging_delta_2027e": {
+     "value": 1100,
+     "unit": "억원",
+     "basis": "2027 매출 증가분 전망",
+     "asof": "2026-09-21",
+     "num": "온양 이관 DDR5 패키징",
+     "den": "—",
+     "grade": "③",
+     "source": "네이버 재무 원장 2026-09-18 + iM증권 이상헌 2026-09-21(③)",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "파이널테스트 연 1,200~2,400억과 합치면 FY25 매출 3,674억의 63~95% 규모 — 단 전부 ③ 전망이고 상한이다"
+    },
+    "ret_1m": {
+     "value": 57.2,
+     "unit": "%",
+     "basis": "1개월 주가",
+     "asof": "2026-09-18",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + iM증권 이상헌 2026-09-21(③)",
+     "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+     "note": "1W +27.7% · YTD +96.5% · 시총 1조 4,785억 · EPS −63원 — 이미 갔다"
     }
    }
   },

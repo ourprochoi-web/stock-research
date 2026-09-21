@@ -1,4 +1,4 @@
-# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-20)
+# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-21)
 
 추적 308개 · 테제가 걸린 이름 191 · 엔티티 있음 77 · facts 있음 64.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
@@ -29,7 +29,7 @@
 | KR | RFHIC | 218410 | — | — | — |
 | KR | RF머트리얼즈 | 327260 | — | vcp_breakout_backtest#T5 | — |
 | KR | S-Oil | 010950 | — | oil_hedge_vehicles#T4 | — |
-| KR | SFA | 056190 | — | optical_valuechain_9#T1 · hbm_pkg_company_samsung#T1,T6,T8 | 3 |
+| KR | SFA | 056190 | — | optical_valuechain_9#T1 · hbm_pkg_company_samsung#T1,T6,T8 | 8 |
 | KR | SFA반도체 | 036540 | ✓ 4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정 | hbm_pkg_company_samsung#T1,T6,T8 · optical_valuechain_9#T1 | — |
 | KR | SKC | 011790 | — | — | — |
 | KR | SK가스 | 018670 | — | — | — |
