@@ -12,32 +12,26 @@
    "grade": "②"
   },
   {
-   "when": "2026-09-15(월)~",
-   "what": "「Pacing the Frontier」 후속 — ① 원문 대조(darioamodei.com egress 차단 해제 시 · 등급 ②→①) ② OpenAI·xAI의 공식 조치 여부(발언 ② vs 조치 ①) ③ 미국 AI 인프라 가격 반응은 관측만(테제 아님 · §J4) — 기하급수 전제가 실린 쪽(P/S 20배대 광통신·AI SW)과 확정 실적에 값을 안 주던 쪽(메모리 추정PER 4.7배)이 다르게 움직이는가",
+   "when": "차단 해제 시(9일째 blocked)",
+   "what": "「Pacing the Frontier」 <원문 대조만 남았다> — darioamodei.com egress 9일째 차단(c-20260913-03 · 09-20 allowlist 적용 후에도 blocked). ✅ 09-22 판정 완료 두 건: ② 발언→조치 승격 <0건>(xAI 는 오히려 Grok 4.7 출시 · OpenAI×앤스로픽 상호 안전테스트는 협상 중) → ai_sw_company_anthropic#T1 ⓑ · ③ 가격 반응 <기하급수 쪽이 3.8배 더 올랐다>(09-21: 기하급수 평균 +4.6% vs 메모리 +1.2%) = 감속 가설과 반대 → n-pacing breaks_if 쪽. 한 점이지 추세 아님. 남은 것은 원문 대조(등급 ②→①)뿐이고, n-pacing 전체가 아직 2차 요약의 ② 위에 서 있다",
    "judges": "ai-sw/ai_sw_company_anthropic.html#T1 · national-strategy/ns_bigtech_capex_roi.html#T1(관측)",
-   "grade": "②~③"
+   "grade": "②"
   },
   {
-   "when": "2026-09-17 이후",
-   "what": "KB금융·은행 판단 신설(사용자 결정 09-15: FOMC 뒤로) — NIM·CET1·환율 민감도·PBR÷ROE · 후보표 편입",
+   "when": "착수 가능(FOMC 09-16 통과 · 6일째 미착수)",
+   "what": "KB금융·은행 판단 신설(사용자 결정 09-15: FOMC 뒤로) — NIM·CET1·환율 민감도·PBR÷ROE · 후보표 편입 · 🔴 09-22 상태 — 착수 조건(FOMC)은 충족됐고 미착수다. 재는 것 넷을 미리 고정: NIM(3Q26) · CET1 · USDKRW 1% 민감도 · PBR÷ROE(섹터 분위). 판정이 아니라 <작업>이므로 지우지 않는다",
    "judges": "portfolio.next",
    "grade": "작업"
   },
   {
-   "when": "2026-09-17 이후",
-   "what": "유동성 구조 페이퍼 신설(사용자 결정 09-15) — 정본은 regime.liquidity, 페이퍼는 구조만: 성상현 프레임 검증 결과 · 1946~51 억압 vs 지금 · 단기채 수요처 셋(은행·스테이블코인·연준 RMP)의 크기 · 신용 확장의 행방(하이퍼스케일러 부채·그림자 차입) · 판정(바젤3 4Q26·클래리티·QRA 11월). 상단 카드는 regime에서 렌더(render_cards 확장)",
+   "when": "착수 가능(6일째 미착수)",
+   "what": "유동성 구조 페이퍼 신설(사용자 결정 09-15) — 정본은 regime.liquidity, 페이퍼는 구조만: 성상현 프레임 검증 결과 · 1946~51 억압 vs 지금 · 단기채 수요처 셋(은행·스테이블코인·연준 RMP)의 크기 · 신용 확장의 행방(하이퍼스케일러 부채·그림자 차입) · 판정(바젤3 4Q26·클래리티·QRA 11월). 상단 카드는 regime에서 렌더(render_cards 확장) · 🔴 09-22 상태 — 미착수. 정본은 regime.liquidity 이므로 페이퍼는 <구조만> 쓰면 된다(새 저장소 금지 §H1)",
    "judges": "regime.macro.liquidity",
    "grade": "작업"
   },
   {
-   "when": "2026-09-19(금)",
-   "what": "미 옵션 만기 — 「만기 전 흔들기」(유창희 ③) · 관측만",
-   "judges": "macro",
-   "grade": "관측"
-  },
-  {
    "when": "2026-09-22",
-   "what": "스페이스X 스타십 시험발사(지구궤도 목표 · ② 일정) — 우주 2026 편 T2(Starship V3) 판정 · 9/24 보호예수 3.28억주 이틀 전 · 누리호 5차 10/7",
+   "what": "스페이스X 스타십 시험발사(지구궤도 목표 · ② 일정) — 우주 2026 편 T2(Starship V3) 판정 · 9/24 보호예수 3.28억주 이틀 전 · 누리호 5차 10/7 · ⚠ 09-22 <일정 불일치>: 순살 09-21(②)은 9/22, 삼프로 09-21(②)은 9/28 — 어느 쪽도 값이 아니다(§W2). 발사일 확정 전까지 우주 편 T2 판정은 열리지 않는다. 결과 미확인",
    "judges": "space/space_update_2026.html#T2",
    "grade": "②"
   },
