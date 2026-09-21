@@ -260,6 +260,7 @@
    "facts": 0,
    "theses": {
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T4",
      "T6"
     ],
     "ai-infra/kr_cooling_optical_layer.html": [
@@ -1216,6 +1217,7 @@
      "T2"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T4",
      "T6"
     ],
     "node-screener/node_screener_hbm_scoreboard.html": [
@@ -2751,7 +2753,11 @@
    "entity": null,
    "falsifier": null,
    "facts": 15,
-   "theses": {},
+   "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T4"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
