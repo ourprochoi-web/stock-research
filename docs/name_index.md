@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-22)
 
-추적 318개 · 테제가 걸린 이름 192 · 엔티티 있음 77 · facts 있음 66.
+추적 318개 · 테제가 걸린 이름 192 · 엔티티 있음 77 · facts 있음 76.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -202,7 +202,7 @@
 | US | Bitdeer | BTDR.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
 | US | Bloom Energy | BE | ✓ T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10 | us_bloom_intel_deep#T1,T2,T3,T4,T5 · ai_power_company_transformer_grid#T1 · ai_power_top5_picks#T3 · us_power_regulated_vs_merchant#T1 · 13f_2026q2#T5 | 6 |
 | US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · 13f_2026q2#T2,T4 | — |
-| US | CMB.TECH | CMBT.K | — | — | — |
+| US | CMB.TECH | CMBT.K | — | — | 4 |
 | US | Cerebras | CBRS.O | ✓ 2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SB | ai_chip_architecture_war#T1,T2,T4,T5 · 13f_2026q2#T4,T5,T6 · robot_kr_16_valuation#T3 | 12 |
 | US | Cheniere Energy | LNG | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Chevron | CVX | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
@@ -219,7 +219,7 @@
 | US | Corning | GLW | ✓  | us_ai_adjacent_cross_valuation#T11,T5 · us_ai_adjacent_sectors#T2 · us_vertiv_corning_deep#T1,T2,T3,T4,T5,T6,T7 · kr_drawdown_2026#T6,T7 | — |
 | US | Credo Technology | CRDO.O | ✓  | optical_interconnect_layer#T2,T5 · optical_valuechain_9#T5 | 17 |
 | US | CrowdStrike | CRWD.O | ✓  | cyber_ai_security#T2,T3 · ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · ai_sw_investment_map#T2 · us_7axis_cross_valuation#T1 | 9 |
-| US | DHT 홀딩스 | DHT | — | — | — |
+| US | DHT 홀딩스 | DHT | — | — | 4 |
 | US | Datadog | DDOG.O | — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · q2_2026_earnings_overview#T2,T4 | — |
 | US | Devon Energy(+Coterra) | DVN | ✓ Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Diamondback | FANG.O | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
@@ -235,13 +235,13 @@
 | US | Fluence Energy | FLNC.O | — | ai_power_company_semi_ess_dc#T2 · energy_ess_ai_power#T1 | — |
 | US | Fortinet | FTNT.O | ✓  | cyber_ai_security#T1,T2,T3,T4 | 9 |
 | US | Freeport-McMoRan | FCX | — | — | — |
-| US | Frontline | FRO | — | — | — |
+| US | Frontline | FRO | — | — | 4 |
 | US | GE Vernova | GEV | — | kr_power_10_deep#T3 | — |
 | US | Generac | GNRC | — | us_bloom_intel_deep#T4 | — |
 | US | General Dynamics | GD | — | — | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
 | US | Intel | INTC.O | — | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T1,T4,T5,T6 | 4 |
-| US | Intl Seaways | INSW.K | — | — | — |
+| US | Intl Seaways | INSW.K | — | — | 4 |
 | US | Kintor Pharmaceutical | 9939.HK | — | — | — |
 | US | Kioxia Holdings | 285A.T | ✓ T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce  | hbm_pkg_theme_memory_cycle#T4,T6 | — |
 | US | Lockheed Martin | LMT | — | — | — |
@@ -260,11 +260,11 @@
 | US | Nebius | NBIS.O | — | ai_chip_architecture_war#T1 | — |
 | US | Nextracker | NXT.O | — | us_7axis_cross_valuation#T2 | — |
 | US | NiSource | NI | — | us_power_regulated_vs_merchant#T5,T6,T7 · kr_drawdown_2026#T8 · us_7axis_cross_valuation#T2 | — |
-| US | Nordic American | NAT | — | — | — |
+| US | Nordic American | NAT | — | — | 4 |
 | US | Northrop Grumman | NOC | — | — | — |
 | US | Novo Nordisk ADR | NVO | — | us_7axis_cross_valuation#T5 | — |
 | US | Occidental | OXY | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
-| US | Okeanis | ECO | — | — | — |
+| US | Okeanis | ECO | — | — | 4 |
 | US | Oracle | ORCL.K | — | us_7axis_cross_valuation#T2,T3,T5 · ns_global_strategy_overview#T4 | — |
 | US | Palantir | PLTR.O | — | ai_sw_company_crwd_ddog_snow#T5 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · ai_sw_investment_map#T2 · q2_2026_earnings_overview#T4 · statements_log#T3 · robot_theme_supply_chain#T4 | — |
 | US | Palo Alto Networks | PANW.O | ✓  | cyber_ai_security#T2,T3,T4 | 9 |
@@ -278,7 +278,7 @@
 | US | STMicroelectronics | STM | — | — | — |
 | US | Salesforce | CRM | — | ai_sw_overview#T1 · us_7axis_cross_valuation#T3 | — |
 | US | SanDisk | SNDK.O | — | ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T1,T2 · us_7axis_cross_valuation#T3,T4 · node_screener_hbm_scoreboard#T2,T5 · us_payment_networks#T1 | 5 |
-| US | Scorpio Tankers | STNG.K | — | — | — |
+| US | Scorpio Tankers | STNG.K | — | — | 4 |
 | US | Seagate | STX.O | — | us_vertiv_corning_deep#T7 | — |
 | US | Semtech | SMTC.O | ✓  | optical_interconnect_layer#T3 · optical_valuechain_9#T4 | 19 |
 | US | SentinelOne | S | ✓  | cyber_ai_security#T2,T3 | 9 |
@@ -287,13 +287,13 @@
 | US | Snowflake | SNOW.K | — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T5 | — |
 | US | SpaceX | SPCX.O | — | ai_sw_company_crwd_ddog_snow#T5 · ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T2,T4 · 13f_2026q2#T1,T6 · robot_theme_supply_chain#T4 · space_case_contract_structure#T1,T2,T4,T5 · space_update_2026#T1,T2,T3,T4,T5 | — |
 | US | TE Connectivity | TEL | ✓  | us_ai_adjacent_sectors#T2 | 1 |
-| US | TORM | TRMD.O | — | — | — |
+| US | TORM | TRMD.O | — | — | 4 |
 | US | TSMC ADR | TSM | — | ai_chip_company_broadcom#T1 · ai_chip_company_nvidia#T1 · ai_value_chain_guide_v2#T5 · optical_valuechain_9#T5 · ai_sw_company_anthropic#T4 · ai_sw_investment_map#T1 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T5 · hbm_pkg_theme_substrate#T1 · kr_semi_equip_cross_valuation#T7 · us_7axis_cross_valuation#T5 · ns_china_ai_ecosystem#T5 · ns_global_strategy_overview#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
 | US | Talen | TLN.O | — | us_power_regulated_vs_merchant#T2,T3,T6 · us_merchant_power_vst_nrg#T1 | — |
 | US | Targa Resources | TRGP.K | ✓ 09-15 정정 반영(C1): TTM FCF $7.4억(수익률 1.2%) · CapEx/OCF 82.7% · | us_energy_five#T2,T6 · us_energy_hegemony_17#T1,T2 | 10 |
-| US | Teekay Tankers | TNK | — | — | — |
+| US | Teekay Tankers | TNK | — | — | 4 |
 | US | Tesla | TSLA.O | — | hbm_pkg_theme_substrate#T2 | — |
-| US | Tsakos | TEN | — | — | — |
+| US | Tsakos | TEN | — | — | 4 |
 | US | Venture Global | VG | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Veradermics | MANE.K | — | — | — |
 | US | Vertiv | VRT | — | us_ai_adjacent_cross_valuation#T11 · us_ai_adjacent_sectors#T2,T8 · us_power_regulated_vs_merchant#T4 · us_vertiv_corning_deep#T1,T2,T3,T4,T5,T6,T7 · kr_drawdown_2026#T6 | — |

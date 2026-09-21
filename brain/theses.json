@@ -10969,8 +10969,20 @@
       "r-20260922-04"
      ],
      "facts": [
-      "tanker_brent_beta",
-      "tanker_1y_returns"
+      "FRO.brent_beta",
+      "DHT.brent_beta",
+      "INSW.brent_beta",
+      "TNK.brent_beta",
+      "STNG.brent_beta",
+      "NAT.brent_beta",
+      "TRMD.brent_beta",
+      "CMBT.brent_beta",
+      "ECO.brent_beta",
+      "TEN.brent_beta",
+      "ECO.ret_1y",
+      "STNG.ret_1y",
+      "DHT.drop_20260921",
+      "FRO.drop_20260921"
      ],
      "log": [
       {

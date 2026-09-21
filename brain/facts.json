@@ -8039,6 +8039,556 @@
      "page": null
     }
    }
+  },
+  "FRO": {
+   "name": "Frontline",
+   "ticker": "FRO",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.086,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.02. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 114.6,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -3.13,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 49.81,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "DHT": {
+   "name": "DHT Holdings",
+   "ticker": "DHT",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.079,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.02. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 79.6,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -3.52,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 22.45,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "INSW": {
+   "name": "International Seaways",
+   "ticker": "INSW",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.036,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.00. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 129.2,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -1.84,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 109.1,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "TNK": {
+   "name": "Teekay Tankers",
+   "ticker": "TNK",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.023,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.00. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 84.7,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -2.14,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 98.76,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "STNG": {
+   "name": "Scorpio Tankers(제품선)",
+   "ticker": "STNG",
+   "market": "US",
+   "layer": "탱커(제품선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": 0.004,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.00. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 46.6,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -1.09,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 86.21,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "NAT": {
+   "name": "Nordic American Tankers",
+   "ticker": "NAT",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.035,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.00. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 145.4,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -3.03,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 8.0,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "TRMD": {
+   "name": "TORM(제품선)",
+   "ticker": "TRMD",
+   "market": "US",
+   "layer": "탱커(제품선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.014,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.00. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 64.5,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -2.9,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 37.12,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "CMBT": {
+   "name": "CMB.TECH",
+   "ticker": "CMBT",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.043,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.01. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 113.7,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -3.11,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 19.66,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "ECO": {
+   "name": "Okeanis Eco Tankers",
+   "ticker": "ECO",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.041,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.00. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 182.2,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -2.73,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 82.63,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
+  },
+  "TEN": {
+   "name": "Tsakos Energy Navigation",
+   "ticker": "TEN",
+   "market": "US",
+   "layer": "탱커(원유선)",
+   "canonical_page": "energy/oil_hedge_vehicles.html",
+   "metrics": {
+    "brent_beta": {
+     "value": -0.054,
+     "unit": "베타(일별 로그수익률)",
+     "basis": "2026-03~09 일별 회귀 · n=133",
+     "asof": "2026-09-19",
+     "num": "종목 일별 로그수익률",
+     "den": "Dated 브렌트 일별 로그수익률",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU(Dated 브렌트) · 본 세션 실측",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "R²=0.01. 대조군 FANG 0.286(R² 0.44)·XLE 0.183(0.36)이 oil_hedge_vehicles T1 값과 일치 — 방법 검증됨"
+    },
+    "ret_1y": {
+     "value": 124.1,
+     "unit": "%",
+     "basis": "1년 수익률(종가 기준)",
+     "asof": "2026-09-19",
+     "num": "현재 종가",
+     "den": "1년 전 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com 일봉",
+     "page": "energy/oil_hedge_vehicles.html"
+    },
+    "drop_20260921": {
+     "value": -2.25,
+     "unit": "%",
+     "basis": "브렌트 −5%(미-이란 회담 기대) 당일 등락",
+     "asof": "2026-09-21",
+     "num": "당일 종가 변동",
+     "den": "전일 종가",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html",
+     "note": "🔑 일별 브렌트 베타는 0인데 휴전 기대 날에는 같이 진다 — T5 의 핵심 근거"
+    },
+    "close": {
+     "value": 50.92,
+     "unit": "USD",
+     "basis": "종가",
+     "asof": "2026-09-21",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "api.stock.naver.com basic",
+     "page": "energy/oil_hedge_vehicles.html"
+    }
+   }
   }
  },
  "macro": {
@@ -8377,24 +8927,6 @@
    "grade": "①",
    "intake": "u-20260922-11",
    "note": "🔑 +277.3% YoY 인데 <−13.9% MoM>. 분해: DRAM 74,187(+328.6% YoY · −19.5% MoM) · Flash 82,303(+544.6% YoY · −17.3% MoM) · MCP 102,216(+239.2% YoY · −3.3% MoM) · DRAM 모듈 49,963(+474.0% YoY · <+59.5% MoM>). 같은 표의 수출<금액>은 메모리 215.0억달러(+350.7% YoY · +8.2% MoM) · DRAM 106.4억(+539.0% YoY · +8.5% MoM) · DRAM 모듈 83.9억(+478.5% YoY · +246.5% MoM). 읽는 법 — 단가는 달러/kg 이라 <믹스 함수>다. 칩이 모듈로 나가면 kg당 값이 달라지므로 −19.5% 를 곧바로 「가격 하락」으로 읽으면 안 된다. 계약가 축(BofA ② 3Q +20~30% QoQ)과 어긋나는 것은 JPM(③) 「웨이퍼 70%+ LTA」로 설명된다. 판정 10/1 마이크론 FQ4 · 3Q26 실적"
-  },
-  "tanker_brent_beta": {
-   "value": "−0.086 ~ +0.004",
-   "unit": "일별 로그수익률 베타(브렌트 Dated 대비 · R² 0.00~0.02 · n=133)",
-   "asof": "2026-03~2026-09-19",
-   "source": "api.stock.naver.com 일봉 × FRED DCOILBRENTEU · 본 세션 실측",
-   "grade": "①",
-   "intake": "u-20260922-01",
-   "note": "FRO −0.086(R² 0.02) · DHT −0.079(0.02) · TEN −0.054 · CMBT −0.043 · ECO −0.041 · INSW −0.036 · NAT −0.035 · TNK −0.023 · TRMD −0.014 · STNG +0.004. 같은 계산 대조군 FANG 0.286(0.44) · XLE 0.183(0.36) — oil_hedge_vehicles T1 의 FANG 0.29/0.44·XLE 0.18 과 일치(방법 검증). 🔑 미드스트림 최저(KMI·WMB 0.03)보다도 낮은 음수 = 유가를 전혀 안 받는다"
-  },
-  "tanker_1y_returns": {
-   "value": "+46.6 ~ +182.2",
-   "unit": "% (1년 · 2026-09-19 종가 기준)",
-   "asof": "2026-09-19",
-   "source": "api.stock.naver.com 일봉",
-   "grade": "①",
-   "intake": "u-20260922-01",
-   "note": "원유선 ECO +182.2 · NAT +145.4 · INSW +129.2 · TEN +124.1 · FRO +114.6 · CMBT +113.7 · TNK +84.7 · DHT +79.6 / 제품선 TRMD +64.5 · STNG +46.6. 원유선 평균이 제품선의 약 2.3배. 대조 FANG +35.5 · XLE +41.1. 09-21 단일일(브렌트 −5%): FRO −3.13 · DHT −3.52 · NAT −3.03 · CMBT −3.11 · TRMD −2.90 · ECO −2.73 · TEN −2.25 · TNK −2.14 · INSW −1.84 · STNG −1.09"
   }
  }
 }
