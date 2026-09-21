@@ -633,6 +633,7 @@
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T1",
      "T4",
+     "T5",
      "T6"
     ],
     "energy/oil_hedge_vehicles.html": [
@@ -4056,7 +4057,7 @@
    "market": "US",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 4,
    "theses": {
     "ai-infra/ai_chip_company_nvidia.html": [
      "T1",
@@ -4777,7 +4778,7 @@
    "market": "US",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 5,
    "theses": {
     "ai-sw/ai_sw_company_msft_pltr.html": [
      "T3"

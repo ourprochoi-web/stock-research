@@ -7912,6 +7912,133 @@
      "note": "🔑 세 번째 독립 출처다 — 이세철 인터뷰(③ 09-20) · 전시 실물 사진(② 09-20) · 이 기사(② 09-20). 이제 ① 에 가깝다. HBM4E 12단 샘플은 2026-05 엔비디아 등에 제공"
     }
    }
+  },
+  "INTC": {
+   "name": "Intel",
+   "ticker": "INTC",
+   "market": "US",
+   "layer": "로직 — CPU · Foundry · DCAI",
+   "canonical_page": "ai-infra/us_bloom_intel_deep.html",
+   "intake": [],
+   "metrics": {
+    "op_5q": {
+     "value": "−1,286 → 858 → 550 → 934 → 1,966",
+     "unit": "USD M",
+     "basis": "최근 5분기 영업이익",
+     "asof": "2026-09-18",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "비단조 · CV 1.75 · 2Q/평균 3.25배 → annualizable() 🔴 금지 구간"
+    },
+    "net_5q": {
+     "value": "−2,918 → 4,063 → −591 → −3,728 → −11,033",
+     "unit": "USD M",
+     "basis": "최근 5분기 순이익",
+     "asof": "2026-09-18",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "🔴 5번 중 4번 적자다. 2Q26 −$11,033M 은 아카이브 기록대로 에스크로 주식 시가평가(−$12,529M)가 주범 — 영업 턴어라운드(OPM −10.0% → 12.2%)는 진짜지만 순이익이 안 따라온다"
+    },
+    "op_fy25": {
+     "value": -23,
+     "unit": "USD M",
+     "basis": "FY25 확정",
+     "asof": "2025-12-27",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "FY24 −$4,708M → FY25 −$23M. 사실상 0 — 흑자 전환은 2026 분기부터다"
+    },
+    "consensus_upside": {
+     "value": 4.8,
+     "unit": "%",
+     "basis": "컨센 목표주가 대비",
+     "asof": "2026-09-18",
+     "num": "목표주가 $114.05",
+     "den": "현재가 $108.80",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "🔑 애널리스트 평균이 +4.8% 만 남겨 뒀다 = 영업 턴어라운드가 이미 값에 들어갔다는 뜻. 투자의견 3.29(중립권) · 시총 $575B · 1Y +336.9%"
+    }
+   }
+  },
+  "SNDK": {
+   "name": "SanDisk",
+   "ticker": "SNDK",
+   "market": "US",
+   "layer": "NAND — eSSD · 클라이언트",
+   "canonical_page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "intake": [],
+   "metrics": {
+    "op_5q": {
+     "value": "51 → 192 → 1,075 → 4,164 → 7,037",
+     "unit": "USD M",
+     "basis": "최근 5분기 영업이익",
+     "asof": "2026-09-18",
+     "num": "—",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "완전 단조 ✓ · CV 1.08 · 도착률 90% · annualizable OK"
+    },
+    "opm_2q26": {
+     "value": 78.5,
+     "unit": "%",
+     "basis": "2026-07-03 분기",
+     "asof": "2026-09-18",
+     "num": "영업이익 $7,037M",
+     "den": "매출 $8,965M",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "🔑 SK하이닉스(76.3%)보다 높다. OPM 궤적 2.7 → 8.3 → 35.5 → 70.0 → 78.5%"
+    },
+    "op_fy26": {
+     "value": 12468,
+     "unit": "USD M",
+     "basis": "FY26(2026-07-03)",
+     "asof": "2026-09-18",
+     "num": "연간 영업이익",
+     "den": "—",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "FY25 $507M → 24.6배"
+    },
+    "per_ttm": {
+     "value": 20.7,
+     "unit": "배",
+     "basis": "TTM",
+     "asof": "2026-09-18",
+     "num": "시총 $236.4B",
+     "den": "TTM 순이익 $11,443M",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null,
+     "note": "🔑 SK하이닉스 8.24배의 2.5배다. PBR 15.15 vs 7.15 로 2.1배. ⚠ 1Y +1,618%(16배) · YTD +580.1% — 이미 갔다"
+    },
+    "consensus_upside": {
+     "value": 31.6,
+     "unit": "%",
+     "basis": "컨센 목표주가 대비",
+     "asof": "2026-09-18",
+     "num": "목표주가 $2,124.18(최고 3,000 / 최저 1,020)",
+     "den": "현재가 $1,614.39",
+     "grade": "①",
+     "source": "네이버 재무 원장 2026-09-18 + portfolio/data/prices.json us(09-18)",
+     "page": null
+    }
+   }
   }
  },
  "macro": {
