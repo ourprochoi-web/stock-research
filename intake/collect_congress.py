@@ -18,7 +18,7 @@ FilingType 'P' = Periodic Transaction Report. 감시 대상은 intake/requests/c
 
 용법: collect_congress.py [YEAR] [--all] [--oge] [--no-house]
 """
-import io, json, os, re, sys, zipfile, urllib.request
+import io, json, os, re, sys, time, zipfile, urllib.request
 from datetime import date, datetime
 
 UA = "ourprochoi Research kenchoi@keywestaim.com"
@@ -103,7 +103,11 @@ def collect_oge(year, today, log):
     links = re.findall(r'''href=['"]?([^'"\s>]*?\$FILE/[^'"\s>]+?\.pdf)['"]?''', html, re.I)
     if not links:
         frames = re.findall(r'(?:src|href)="([^"]+\.nsf[^"]*)"', html, re.I)[:12]
-        log.write(json.dumps({"id": base + "probe", "date": today, "kind": "congress", "source_kind": "oge",
+        # ⚠ id 가 고정 문자열이면 같은 날 재실행 시 <항상 충돌>한다(2026-09-20 실측: c-20260920-ogeprobe ×2).
+        #   진단 레코드라 내용이 같아 눈에 안 띄는데, 층 전체가 id 로 서로를 가리키므로 중복은 그 자체가 오류다.
+        #   실행 시각(HHMM)을 붙여 같은 날 여러 번 돌아도 안 겹치게 한다.
+        _probe_id = base + "probe" + time.strftime("%H%M")
+        log.write(json.dumps({"id": _probe_id, "date": today, "kind": "congress", "source_kind": "oge",
                               "host": "extapps2.oge.gov", "path": "/201/Presiden.nsf/PAS+Index",
                               "subject": "OGE 인덱스 구조 표본 — $FILE 링크 0건", "grade_hint": "진단",
                               "status": "no_links", "bytes": len(html), "title": (re.search(r"<title>(.*?)</title>", html, re.I | re.S) or [None, ""])[1][:120].strip(),
