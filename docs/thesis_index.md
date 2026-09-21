@@ -13,7 +13,7 @@
 |---|---|---|---|
 | 2026.09.22 | 2026-09-22 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
 | 2026.09.20 | 2026-09-20 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
-| 2026.09.20 | 2026-09-20 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 8 |
+| 2026.09.20 ⚠ | 2026-09-22 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 8 |
 | 2026.09.20 |  | [미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다](ai-infra/us_merchant_power_vst_nrg.html) | 1 |
 | 2026.09.17 ⚠ | 2026-09-19 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [삼성바이오로직스 × PolyPeptide — CDMO 플랫폼 확장 전략](glp1/glp1_company_samsung_biologics.html) | 4 |
@@ -152,7 +152,7 @@
 
 ## 삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성
 
-`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-09-20
+`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-09-22
 
 **한 문장** — HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)
 
