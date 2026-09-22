@@ -20,7 +20,7 @@
 | KR | KX하이텍 | 052900 | — | — | — |
 | KR | LG생활건강 | 051900 | — | k_beauty_company_apr#T1 · k_beauty_sector#T1 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | LG에너지솔루션 | 373220 | — | energy_battery_valuechain_update#T1,T2 | — |
-| KR | LG이노텍 | 011070 | ✓ 3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순) | hbm_pkg_theme_substrate#T4,T6 · kr_cooling_optical_layer#T5 | — |
+| KR | LG이노텍 | 011070 | ✓ 3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순) | hbm_pkg_theme_substrate#T4,T5,T6 · kr_cooling_optical_layer#T5 | — |
 | KR | LIG디펜스앤에어로스페이스 | 079550 | — | k_defense_company_lig_nexone#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T8,T9 | — |
 | KR | LS | 006260 | — | ai_power_company_cable_wire#T1 · ai_power_company_transformer_grid#T1,T2,T3 · kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · optical_valuechain_9#T5 · us_bloom_intel_deep#T5 · ai_sw_company_anthropic#T1 · k_defense_company_hanwha_systems_ocean#T3 · kr_4sector_cross_valuation#T2,T5 · statements_log#T2 · k_ship_theme_masga_us_alliance#T1,T2 · us_merchant_power_vst_nrg#T1 | — |
 | KR | LS ELECTRIC | 010120 | — | kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · us_bloom_intel_deep#T5 · kr_4sector_cross_valuation#T2,T5 | — |
@@ -36,7 +36,7 @@
 | KR | SK바이오팜 | 326030 | — | kr_bio_china_competition#T2 · glp1_company_samsung_biologics#T3 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
 | KR | SK스퀘어 | 402340 | ✓ 할인 55%+ 3개월 · 상승 국면 베타 <1 | hbm_pkg_company_sk_hynix#T6 · vcp_breakout_backtest#T4 | — |
 | KR | SK이노베이션 | 096770 | — | oil_hedge_vehicles#T4 | — |
-| KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5,T6 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2,T7 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T4,T6 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T4,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T5 · node_screener_hbm_scoreboard#T1,T4,T5,T6 · oil_hedge_vehicles#T1,T3 | — |
+| KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5,T6 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2,T7 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T4,T6 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T4,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T4,T5 · node_screener_hbm_scoreboard#T1,T4,T5,T6 · oil_hedge_vehicles#T1,T3 | — |
 | KR | SOL AI반도체TOP2+ | 0167A0 | — | — | — |
 | KR | STX엔진 | 077970 | — | — | — |
 | KR | TIME 글로벌AI | 456600 | — | — | — |
@@ -45,7 +45,7 @@
 | KR | 기아 | 000270 | — | — | — |
 | KR | 뉴로메카 | 348340 | — | — | — |
 | KR | 달바글로벌 | 483650 | — | k_beauty_company_largecap_odm#T4 · k_beauty_company_silicon2#T3 | — |
-| KR | 대덕전자 | 353200 | — | hbm_pkg_theme_substrate#T2,T3 | 6 |
+| KR | 대덕전자 | 353200 | — | hbm_pkg_theme_substrate#T2,T3,T5 | 6 |
 | KR | 대한광통신 | 010170 | ✓  | — | 5 |
 | KR | 대한전선 | 001440 | — | ai_power_company_cable_wire#T1,T3,T4 · kr_power_10_deep#T1,T3 · kr_power_cross_valuation#T3,T4 | — |
 | KR | 덕산네오룩스 | 213420 | — | — | — |
@@ -69,7 +69,7 @@
 | KR | 산일전기 | 062040 | — | ai_power_company_transformer_grid#T1,T2,T3 · ai_power_top5_picks#T1,T2,T3 · kr_power_10_deep#T1,T2,T4 · kr_power_cross_valuation#T1,T4,T6 · k_defense_cross_valuation#T8 · kr_4sector_cross_valuation#T5 | — |
 | KR | 삼성SDI | 006400 | — | energy_battery_valuechain_update#T1 · energy_ess_ai_power#T4,T5 | — |
 | KR | 삼성바이오로직스 | 207940 | ✓ T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선  | glp1_company_samsung_biologics#T1,T2,T3,T4 · kr_bio_china_competition#T4 | — |
-| KR | 삼성전기 | 009150 | — | kr_cooling_optical_layer#T5 · hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2 · hbm_pkg_theme_substrate#T4,T6 · node_screener_hbm_scoreboard#T3 | — |
+| KR | 삼성전기 | 009150 | — | kr_cooling_optical_layer#T5 · hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2 · hbm_pkg_theme_substrate#T4,T5,T6 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T3 | — |
 | KR | 삼성전자 | 005930 | ✓ T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8 · ai_value_chain_guide_v2#T5 · kr_construction_datacenter#T4 · ai_sw_company_anthropic#T1,T4 · hbm_pkg_investment_map#T2,T5 · hbm_pkg_overview#T1 · kr_semi_equip_6#T5 · kr_semi_materials_gas#T1 · q2_2026_earnings_overview#T1 · node_screener_hbm_scoreboard#T1 · robot_theme_supply_chain#T2 | 7 |
 | KR | 삼성전자우 | 005935 | — | — | — |
 | KR | 삼성중공업 | 010140 | — | kr_power_10_deep#T4 · kr_4sector_cross_valuation#T1 · k_ship_theme_lng_ai_nexus#T1,T3 · k_ship_theme_masga_us_alliance#T2 | — |
@@ -131,7 +131,7 @@
 | KR | 티로보틱스 | 117730 | — | — | — |
 | KR | 티씨케이 | 064760 | — | — | — |
 | KR | 티에스이 | 131290 | ✓ T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 | node_screener_hbm_scoreboard#T6 | 11 |
-| KR | 티엘비 | 356860 | — | hbm_pkg_company_samsung#T6 · hbm_pkg_theme_substrate#T2,T3 | — |
+| KR | 티엘비 | 356860 | — | hbm_pkg_company_samsung#T6 · hbm_pkg_theme_substrate#T2,T3,T5 | — |
 | KR | 파마리서치 | 214450 | ✓ T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에  | k_beauty_company_pharmaresearch#T1,T2,T3,T4 · k_beauty_company_apr#T1 · k_beauty_sector#T1,T4 | — |
 | KR | 파이오링크 | 170790 | — | — | — |
 | KR | 파인엠텍 | 441270 | — | — | — |
@@ -147,7 +147,7 @@
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | 한국항공우주 | 047810 | — | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
-| KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 | — |
+| KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 · ns_semiconductor_war#T4 | — |
 | KR | 한선엔지니어링 | 452280 | ✓ OPM 20% 아래 2분기 · 2026 매출 720억 미만 | us_bloom_intel_deep#T5 | 6 |
 | KR | 한솔케미칼 | 014680 | — | — | — |
 | KR | 한양디지텍 | 078350 | ✓ 2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 | hbm_pkg_company_samsung#T6,T8 | 20 |
@@ -187,7 +187,7 @@
 | KR-ETF | TIGER 헬스케어 | 143860 | — | — | — |
 | KR-ETF | TIGER 화장품 | 228790 | — | — | — |
 | US | AEP | AEP.O | — | us_power_regulated_vs_merchant#T5,T6 · kr_drawdown_2026#T8 | — |
-| US | AMD | AMD.O | — | ai_chip_architecture_war#T1 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1 · hbm_pkg_theme_memory_cycle#T5 · 13f_2026q2#T4,T6 | — |
+| US | AMD | AMD.O | — | ai_chip_architecture_war#T1 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1 · hbm_pkg_theme_memory_cycle#T5 · hbm_pkg_theme_substrate#T5 · 13f_2026q2#T4,T6 | — |
 | US | ASML | ASML.O | — | us_7axis_cross_valuation#T5 · ns_semiconductor_war#T4 | — |
 | US | Absci | ABSI.O | — | — | — |
 | US | Alibaba | BABA | ✓ 2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_val | — | — |
@@ -240,7 +240,7 @@
 | US | Generac | GNRC | — | us_bloom_intel_deep#T4 | — |
 | US | General Dynamics | GD | — | — | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
-| US | Intel | INTC.O | — | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5 · hbm_pkg_theme_substrate#T4 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T1,T4,T5,T6 | 4 |
+| US | Intel | INTC.O | — | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5 · hbm_pkg_theme_substrate#T4,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T1,T4,T5,T6 | 4 |
 | US | Intl Seaways | INSW.K | — | — | 4 |
 | US | Kintor Pharmaceutical | 9939.HK | — | — | — |
 | US | Kioxia Holdings | 285A.T | ✓ T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce  | hbm_pkg_theme_memory_cycle#T4,T6 | — |
@@ -255,7 +255,7 @@
 | US | Microsoft | MSFT.O | — | ai_value_chain_guide_v2#T2,T5 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T2,T3 | — |
 | US | Moderna | MRNA.O | — | us_7axis_cross_valuation#T1 | — |
 | US | NRG Energy | NRG | ✓ 2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「 | us_merchant_power_vst_nrg#T1 · us_7axis_cross_valuation#T3 | 14 |
-| US | NVIDIA | NVDA.O | ✓  | ai_chip_architecture_war#T1,T4 · ai_chip_company_broadcom#T2,T3 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1,T2,T3,T4,T5 · ai_korea_g3_sovereign_ai#T1,T2 · ai_power_company_semi_ess_dc#T1 · ai_value_chain_guide_v2#T1 · us_ai_adjacent_sectors#T1 · us_bloom_intel_deep#T4 · us_epc_datacenter_build#T1 · us_vertiv_corning_deep#T6 · us_defense_primes#T1 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T2 · hbm_pkg_theme_substrate#T5 · q2_2026_earnings_overview#T5 · ns_bigtech_capex_roi#T4 · ns_china_ai_ecosystem#T1,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T2 · node_screener_hbm_scoreboard#T4,T5 · 13f_2026q2#T4 | — |
+| US | NVIDIA | NVDA.O | ✓  | ai_chip_architecture_war#T1,T4 · ai_chip_company_broadcom#T2,T3 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1,T2,T3,T4,T5 · ai_korea_g3_sovereign_ai#T1,T2 · ai_power_company_semi_ess_dc#T1 · ai_value_chain_guide_v2#T1 · us_ai_adjacent_sectors#T1 · us_bloom_intel_deep#T4 · us_epc_datacenter_build#T1 · us_vertiv_corning_deep#T6 · us_defense_primes#T1 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T2 · hbm_pkg_theme_substrate#T5 · q2_2026_earnings_overview#T5 · ns_bigtech_capex_roi#T4 · ns_china_ai_ecosystem#T1,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T2,T4 · node_screener_hbm_scoreboard#T4,T5 · 13f_2026q2#T4 | — |
 | US | Natera | NTRA.O | ✓ 2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「G | ai_bio_investment_map#T5 · optical_valuechain_9#T1 · 13f_2026q2#T5 | 12 |
 | US | Nebius | NBIS.O | — | ai_chip_architecture_war#T1 | — |
 | US | Nextracker | NXT.O | — | us_7axis_cross_valuation#T2 | — |
