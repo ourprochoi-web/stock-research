@@ -56,7 +56,7 @@
 | KR | 두산에너빌리티 | 034020 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 18 |
 | KR | 드림시큐리티 | 203650 | — | — | — |
 | KR | 드림텍 | 192650 | ✓ 2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만 | hbm_pkg_company_samsung#T6,T8 | 7 |
-| KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 | — |
+| KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 디엔에프 | 092070 | — | — | — |
 | KR | 램테크놀러지 | 171010 | — | — | — |
 | KR | 레인보우로보틱스 | 277810 | — | vcp_breakout_backtest#T4 · robot_kr_16_valuation#T2,T4 | — |
@@ -142,12 +142,12 @@
 | KR | 풍산 | 103140 | — | k_defense_investment_map#T1,T4,T5 | — |
 | KR | 피에스케이 | 319660 | — | hbm_pkg_investment_map#T2,T4 · kr_semi_equip_6#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T3 · vcp_breakout_backtest#T4 | — |
 | KR | 피에스케이홀딩스 | 031980 | — | hbm_pkg_investment_map#T4 · vcp_breakout_backtest#T4 | — |
-| KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 | — |
+| KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 한국가스공사 | 036460 | — | — | — |
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | 한국항공우주 | 047810 | — | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
-| KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 · ns_semiconductor_war#T4 | — |
+| KR | 한미반도체 | 042700 | — | k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 한선엔지니어링 | 452280 | ✓ OPM 20% 아래 2분기 · 2026 매출 720억 미만 | us_bloom_intel_deep#T5 | 6 |
 | KR | 한솔케미칼 | 014680 | — | — | — |
 | KR | 한양디지텍 | 078350 | ✓ 2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 | hbm_pkg_company_samsung#T6,T8 | 20 |
