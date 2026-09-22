@@ -1,1956 +1,1993 @@
 {
- "_readme": {
-  "what": "회사·테마 카드. 무슨 사업(business · 등급 표기), 어느 층, 정본 페이지, facts 키, 걸린 테제. 시세 추적 여부는 portfolio/data/update_prices.py 목록 기준.",
-  "rules": [
-   "business 는 사업보고서·10-K 「사업의 개요」로 대조하면 ①로 올리고 business_grade 를 고친다",
-   "새 회사는 정본 페이지가 생긴 뒤에 넣는다"
-  ],
-  "seeded": "2026-09-13 · 광통신 25사"
- },
- "companies": {
-  "ALAB": {
-   "name": "Astera Labs",
-   "market": "US",
-   "layer": "연결 반도체 · 리타이머",
-   "business": "PCIe/CXL 리타이머·AEC·패브릭 스위치(서버 안 신호 연장)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "gpm_q",
-    "inventory_yoy",
-    "mcap",
-    "ocf_to_ebit_q",
-    "opm",
-    "opm_q",
-    "ps",
-    "ps_over_growth",
-    "receivables_yoy",
-    "rev_growth_yoy",
-    "rev_q",
-    "revenue_ttm",
-    "rnd_to_rev_q",
-    "sbc_to_rev_q"
-   ],
-   "theses": [
-    "ai-infra/optical_valuechain_9.html#T5"
-   ],
-   "tracked_price": true
-  },
-  "CRDO": {
-   "name": "Credo",
-   "market": "US",
-   "layer": "연결 반도체 · SerDes·AEC·광DSP",
-   "business": "SerDes IP·AEC(Zero-Flap)·광 DSP·실리콘 포토닉스 PIC(Dust Photonics 인수 ②)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "gpm_q",
-    "inventory_yoy",
-    "max_daily_drop",
-    "mcap",
-    "ocf_to_ebit_q",
-    "opm",
-    "opm_q",
-    "ps",
-    "ps_over_growth",
-    "receivables_yoy",
-    "rev_growth_yoy",
-    "rev_q",
-    "revenue_ttm",
-    "rnd_to_rev_q",
-    "sbc_to_rev_q",
-    "top_customer_share"
-   ],
-   "theses": [
-    "ai-infra/optical_interconnect_layer.html#T2",
-    "ai-infra/optical_interconnect_layer.html#T5",
-    "ai-infra/optical_valuechain_9.html#T5"
-   ],
-   "tracked_price": true
-  },
-  "MTSI": {
-   "name": "MACOM",
-   "market": "US",
-   "layer": "연결 반도체 · 드라이버·TIA·RF",
-   "business": "드라이버·TIA·RF·아날로그·일부 레이저",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "mcap",
-    "opm",
-    "ps",
-    "ps_over_growth",
-    "rev_growth_yoy",
-    "revenue_ttm"
-   ],
-   "theses": [],
-   "tracked_price": false
-  },
-  "SMTC": {
-   "name": "Semtech",
-   "market": "US",
-   "layer": "연결 반도체 · 드라이버·TIA·AEC",
-   "business": "드라이버·TIA(FiberEdge·Tri-Edge)·AEC(CopperEdge)·IoT(LoRa)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "inventory_yoy",
-    "mcap",
-    "ocf_to_ebit_q",
-    "opm",
-    "opm_q",
-    "opm_reported",
-    "ps",
-    "ps_over_growth",
-    "receivables_yoy",
-    "rev_growth_yoy",
-    "rev_q",
-    "revenue_ttm",
-    "rnd_to_rev_q",
-    "sbc_to_rev_q",
-    "seg_signal_integrity_gpm",
-    "seg_signal_integrity_growth",
-    "seg_signal_integrity_share",
-    "top_customer_share"
-   ],
-   "theses": [
-    "ai-infra/optical_interconnect_layer.html#T3",
-    "ai-infra/optical_valuechain_9.html#T4"
-   ],
-   "tracked_price": false
-  },
-  "MRVL": {
-   "name": "Marvell",
-   "market": "US",
-   "layer": "연결 반도체 · 광DSP·커스텀ASIC",
-   "business": "광 DSP(Inphi 인수)·코히런트 DSP·커스텀 AI ASIC·스위치·스토리지",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html",
-    "ai-infra/ai_chip_company_marvell.html"
-   ],
-   "facts": [
-    "datacenter_growth",
-    "datacenter_share",
-    "distribution_share",
-    "gpm",
-    "gpm_q",
-    "inventory_yoy",
-    "mcap",
-    "ocf_to_ebit_q",
-    "opm",
-    "opm_q",
-    "ps",
-    "ps_over_growth",
-    "receivables_yoy",
-    "rev_growth_yoy",
-    "rev_q",
-    "revenue_ttm",
-    "rnd_to_rev_q",
-    "sbc_to_rev_q"
-   ],
-   "theses": [
-    "ai-infra/optical_interconnect_layer.html#T4",
-    "ai-infra/optical_valuechain_9.html#T5"
-   ],
-   "tracked_price": true
-  },
-  "LITE": {
-   "name": "Lumentum",
-   "market": "US",
-   "layer": "광원·부품 · EML·CW·펌프 레이저",
-   "business": "EML·CW 레이저·펌프 레이저·ROADM·3D 센싱 VCSEL. 엔비디아 CPO 공급망에 레이저로 거명(②)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "gpm_latest_q",
-    "mcap",
-    "opm",
-    "opm_latest_q",
-    "price_1y_change",
-    "ps",
-    "ps_over_growth",
-    "rev_growth_yoy",
-    "rev_latest_q",
-    "revenue_ttm"
-   ],
-   "theses": [
-    "ai-infra/optical_valuechain_9.html#T1",
-    "ai-infra/optical_valuechain_9.html#T2",
-    "ai-infra/optical_valuechain_9.html#T3"
-   ],
-   "tracked_price": true
-  },
-  "COHR": {
-   "name": "Coherent",
-   "market": "US",
-   "layer": "광원·부품 + 모듈(수직계열)",
-   "business": "구 II-VI. InP 레이저·EML·VCSEL + 트랜시버 완제품 + 산업용 레이저·소재",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "mcap",
-    "opm",
-    "opm_adjusted",
-    "ps",
-    "ps_over_growth",
-    "rev_growth_yoy",
-    "revenue_ttm",
-    "seg_dcc_growth",
-    "seg_dcc_revenue_fy26",
-    "seg_dcc_share",
-    "seg_industrial_revenue_fy26"
-   ],
-   "theses": [
-    "ai-infra/optical_valuechain_9.html#T2",
-    "ai-infra/optical_valuechain_9.html#T4"
-   ],
-   "tracked_price": true
-  },
-  "AAOI": {
-   "name": "Applied Optoelectronics",
-   "market": "US",
-   "layer": "모듈 · 수직계열(미국)",
-   "business": "미국(텍사스) 본사 수직계열 모듈사 — 레이저까지 자체 생산",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "mcap",
-    "opm",
-    "ps",
-    "ps_over_growth",
-    "rev_growth_yoy",
-    "revenue_ttm"
-   ],
-   "theses": [],
-   "tracked_price": false
-  },
-  "FN": {
-   "name": "Fabrinet",
-   "market": "US",
-   "layer": "모듈 · 위탁조립(EMS)",
-   "business": "위탁조립(EMS). 남의 설계를 태국에서 조립·검사. 반도체사가 아니다",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "contract_liabilities_to_rev",
-    "datacenter_share",
-    "gpm",
-    "mcap",
-    "opm",
-    "ps",
-    "ps_over_growth",
-    "rev_growth_yoy",
-    "revenue_ttm",
-    "thailand_production_share"
-   ],
-   "theses": [
-    "ai-infra/optical_valuechain_9.html#T1"
-   ],
-   "tracked_price": false
-  },
-  "300308.SZ": {
-   "name": "InnoLight",
-   "market": "CN",
-   "layer": "모듈 · 자기 설계·판매",
-   "business": "세계 최대 광모듈사. 800G·1.6T를 자기 설계·브랜드로 하이퍼스케일러 직납",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "mcap",
-    "overseas_share",
-    "ps",
-    "rev_growth_yoy",
-    "revenue_annualized"
-   ],
-   "theses": [
-    "ai-infra/kr_cooling_optical_layer.html#T3",
-    "ai-infra/optical_valuechain_9.html#T1"
-   ],
-   "tracked_price": false
-  },
-  "300502.SZ": {
-   "name": "Eoptolink",
-   "market": "CN",
-   "layer": "모듈 · 자기 설계·판매",
-   "business": "광모듈 설계·판매(InnoLight 절반 규모)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "mcap",
-    "overseas_share",
-    "ps",
-    "rev_growth_yoy",
-    "revenue_annualized"
-   ],
-   "theses": [],
-   "tracked_price": false
-  },
-  "300394.SZ": {
-   "name": "T&S",
-   "market": "CN",
-   "layer": "광부품·광엔진",
-   "business": "광부품·광엔진(파이버 어레이·격리기·렌즈 등) — 모듈사·스위치사에 부품으로 공급",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": [
-    "gpm",
-    "mcap",
-    "ps",
-    "rev_growth_yoy",
-    "revenue_annualized"
-   ],
-   "theses": [],
-   "tracked_price": false
-  },
-  "010170": {
-   "name": "대한광통신",
-   "market": "KR",
-   "layer": "광섬유·광케이블",
-   "business": "광섬유·광케이블",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/kr_cooling_optical_layer.html"
-   ],
-   "facts": [
-    "op_2q26",
-    "opm",
-    "rev_2q25",
-    "rev_2q26",
-    "rev_growth_yoy"
-   ],
-   "theses": [],
-   "tracked_price": true
-  },
-  "088800": {
-   "name": "에이스테크",
-   "market": "KR",
-   "layer": "RF 안테나·필터(광 밸류체인 밖 · 냉각·광 편 표에 포함)",
-   "business": "RF 안테나·필터(무선 부품 — 광 밸류체인 밖)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/kr_cooling_optical_layer.html"
-   ],
-   "facts": [
-    "op_2q26",
-    "opm",
-    "rev_2q25",
-    "rev_2q26",
-    "rev_growth_yoy"
-   ],
-   "theses": [
-    "ai-infra/kr_cooling_optical_layer.html#T1"
-   ],
-   "tracked_price": true
-  },
-  "138080": {
-   "name": "오이솔루션",
-   "market": "KR",
-   "layer": "모듈 · 광트랜시버(통신사 프론트홀 중심)",
-   "business": "광 트랜시버(통신사 5G 프론트홀·FTTH 중심, 데이터센터용 진출 단계)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/kr_cooling_optical_layer.html"
-   ],
-   "facts": [
-    "op_2q26",
-    "opm",
-    "rev_2q25",
-    "rev_2q26",
-    "rev_growth_yoy"
-   ],
-   "theses": [
-    "ai-infra/kr_cooling_optical_layer.html#T1"
-   ],
-   "tracked_price": true
-  },
-  "046970": {
-   "name": "우리로",
-   "market": "KR",
-   "layer": "광부품 · PLC 광분배기",
-   "business": "PLC 광분배기·광부품·SPAD 센서",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/kr_cooling_optical_layer.html"
-   ],
-   "facts": [
-    "op_2q26",
-    "opm",
-    "rev_2q25",
-    "rev_2q26",
-    "rev_growth_yoy"
-   ],
-   "theses": [],
-   "tracked_price": true
-  },
-  "380540": {
-   "name": "옵티코어",
-   "market": "KR",
-   "layer": "모듈 · 광트랜시버",
-   "business": "광 트랜시버·광부품(규모 최소)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/kr_cooling_optical_layer.html"
-   ],
-   "facts": [
-    "op_2q26",
-    "opm",
-    "rev_2q25",
-    "rev_2q26",
-    "rev_growth_yoy"
-   ],
-   "theses": [
-    "ai-infra/kr_cooling_optical_layer.html#T1"
-   ],
-   "tracked_price": true
-  },
-  "CIEN": {
-   "name": "Ciena",
-   "market": "US",
-   "layer": "시스템 · DCI·코히런트 + AEC 진입(Nubis)",
-   "business": "DCI·장거리 코히런트 시스템(WaveLogic 자체 DSP) · Nubis 인수로 AEC·리타이머 진입(③)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/kr_cooling_optical_layer.html"
-   ],
-   "facts": [
-    "backlog",
-    "ebit_growth_yoy",
-    "fy27_revenue_guidance_growth",
-    "opm_q",
-    "rev_q"
-   ],
-   "theses": [
-    "ai-infra/kr_cooling_optical_layer.html#T3"
-   ],
-   "tracked_price": true
-  },
-  "TEL": {
-   "name": "TE Connectivity",
-   "market": "US",
-   "layer": "커넥터·케이블",
-   "business": "커넥터·케이블. Digital data networks 유기 +34.0%(AI 사유 · ①)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/us_ai_adjacent_sectors.html"
-   ],
-   "facts": [
-    "digital_data_networks_organic_growth"
-   ],
-   "theses": [],
-   "tracked_price": true
-  },
-  "GLW": {
-   "name": "Corning",
-   "market": "US",
-   "layer": "광섬유·커넥터",
-   "business": "광섬유·광케이블·커넥터 1위 + 디스플레이 유리 등 비광 사업",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/us_vertiv_corning_deep.html"
-   ],
-   "facts": [],
-   "theses": [],
-   "tracked_price": true
-  },
-  "APH": {
-   "name": "Amphenol",
-   "market": "US",
-   "layer": "커넥터·케이블",
-   "business": "커넥터·케이블 어셈블리(광·구리)",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/us_ai_adjacent_sectors.html"
-   ],
-   "facts": [],
-   "theses": [],
-   "tracked_price": true
-  },
-  "AVGO": {
-   "name": "Broadcom",
-   "market": "US",
-   "layer": "스위치 칩·광DSP·레이저·CPO",
-   "business": "Tomahawk 스위치 칩·광 DSP·VCSEL/EML·CPO 스위치·커스텀 ASIC",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/ai_chip_company_broadcom.html"
-   ],
-   "facts": [],
-   "theses": [],
-   "tracked_price": true
-  },
-  "NVDA": {
-   "name": "NVIDIA",
-   "market": "US",
-   "layer": "스위치·CPO·NVLink 내재화",
-   "business": "GPU + Spectrum-X·Quantum-X 스위치·LinkX 케이블/트랜시버 · CPO 스위치 첫 양산(② 2차 정리) · NVLink로 랙 내부 내재화",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/ai_chip_company_nvidia.html"
-   ],
-   "facts": [],
-   "theses": [],
-   "tracked_price": true
-  },
-  "ANET": {
-   "name": "Arista",
-   "market": "US",
-   "layer": "스위치 시스템",
-   "business": "리프·스파인 스위치 시스템 — 모듈을 사서 꽂는 고객",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/ai_value_chain_guide_v2.html"
-   ],
-   "facts": [],
-   "theses": [],
-   "tracked_price": true
-  },
-  "CSCO": {
-   "name": "Cisco",
-   "market": "US",
-   "layer": "스위치 시스템",
-   "business": "스위치·라우터 시스템",
-   "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
-   "pages": [
-    "ai-infra/ai_value_chain_guide_v2.html"
-   ],
-   "facts": [],
-   "theses": [],
-   "tracked_price": false
-  },
-  "CRWD": {
-   "name": "CrowdStrike",
-   "market": "US",
-   "layer": "사이버보안 · 엔드포인트·SIEM·Agentic SOC",
-   "business": "엔드포인트·SIEM·Agentic SOC",
-   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": "CRWD",
-   "theses": [
-    "cybersecurity/cyber_ai_security.html#T2",
-    "cybersecurity/cyber_ai_security.html#T3"
-   ],
-   "tracked_price": true,
-   "ticker": "CRWD",
-   "canonical_page": "cybersecurity/cyber_ai_security.html"
-  },
-  "PANW": {
-   "name": "Palo Alto Networks",
-   "market": "US",
-   "layer": "사이버보안 · 네트워크·SASE·SIEM(+CyberArk IAM)",
-   "business": "네트워크·SASE·SIEM(+CyberArk IAM)",
-   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": "PANW",
-   "theses": [
-    "cybersecurity/cyber_ai_security.html#T2",
-    "cybersecurity/cyber_ai_security.html#T3",
-    "cybersecurity/cyber_ai_security.html#T4"
-   ],
-   "tracked_price": true,
-   "ticker": "PANW",
-   "canonical_page": "cybersecurity/cyber_ai_security.html"
-  },
-  "ZS": {
-   "name": "Zscaler",
-   "market": "US",
-   "layer": "사이버보안 · 제로트러스트 SASE",
-   "business": "제로트러스트 SASE",
-   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": "ZS",
-   "theses": [
-    "cybersecurity/cyber_ai_security.html#T2",
-    "cybersecurity/cyber_ai_security.html#T3"
-   ],
-   "tracked_price": true,
-   "ticker": "ZS",
-   "canonical_page": "cybersecurity/cyber_ai_security.html"
-  },
-  "FTNT": {
-   "name": "Fortinet",
-   "market": "US",
-   "layer": "사이버보안 · 네트워크 어플라이언스·SASE",
-   "business": "네트워크 어플라이언스·SASE",
-   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": "FTNT",
-   "theses": [
-    "cybersecurity/cyber_ai_security.html#T2",
-    "cybersecurity/cyber_ai_security.html#T3"
-   ],
-   "tracked_price": true,
-   "ticker": "FTNT",
-   "canonical_page": "cybersecurity/cyber_ai_security.html"
-  },
-  "S": {
-   "name": "SentinelOne",
-   "market": "US",
-   "layer": "사이버보안 · 엔드포인트·데이터",
-   "business": "엔드포인트·데이터",
-   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": "S",
-   "theses": [
-    "cybersecurity/cyber_ai_security.html#T2",
-    "cybersecurity/cyber_ai_security.html#T3"
-   ],
-   "tracked_price": true,
-   "ticker": "S",
-   "canonical_page": "cybersecurity/cyber_ai_security.html"
-  },
-  "NET": {
-   "name": "Cloudflare",
-   "market": "US",
-   "layer": "사이버보안 · 엣지·제로트러스트",
-   "business": "엣지·제로트러스트",
-   "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
-   "pages": [
-    "ai-infra/optical_valuechain_9.html"
-   ],
-   "facts": "NET",
-   "theses": [
-    "cybersecurity/cyber_ai_security.html#T2",
-    "cybersecurity/cyber_ai_security.html#T3"
-   ],
-   "tracked_price": true,
-   "ticker": "NET",
-   "canonical_page": "cybersecurity/cyber_ai_security.html"
-  },
-  "TRGP": {
-   "name": "Targa Resources",
-   "market": "US",
-   "layer": "미드스트림 · 퍼미안 가스 집적·처리(G&P) + NGL 물류",
-   "business": "퍼미안(미들랜드·델라웨어) 가스 집적·처리 최대 사업자 → NGL을 Grand Prix 파이프라인으로 몬트벨뷰 운송·분류·LPG 수출(갤버스턴). 2026 조정 EBITDA 가이던스 $57~59억 · 성장 CapEx ~$50억 · 엑손모빌과 20년 전용 계약(2046)·델라웨어 신규 처리 플랜트 3기(+최대 5기 검토). 수수료 기반 중심이나 NGL 가격 노출 잔존",
-   "business_grade": "②(IR 보도자료·검색 · 2026-09-14 · 10-K 미대조)",
-   "pages": [
-    "energy/us_energy_five.html",
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_five.html#T2",
-    "energy/us_energy_five.html#T6",
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false,
-   "intake": [],
-   "note": "09-15 정정 반영(C1): TTM FCF $7.4억(수익률 1.2%) · CapEx/OCF 82.7% · 순부채 $189억 — 재투자 단계. T6: 퍼미안→걸프 물량 축"
-  },
-  "WMB": {
-   "name": "Williams Companies",
-   "market": "US",
-   "layer": "미드스트림 · 주간 가스 파이프라인(Transco) + 발전(BTM)",
-   "business": "Transco — 걸프코스트→뉴욕 미 최대 주간 가스 파이프라인(미 가스 소비의 약 1/3 통과 · ②), 노스웨스트 파이프라인, 마셀러스·헤인즈빌 집적. EBITDA 약 90% 고정 계약. 데이터센터용 발전 진출: 오하이오 Socrates 500MW 가스 발전 $16억, 메타와 10년 고정가 PPA 440MW(2H26 가동) + 2단계 200MW · 전력 프로젝트 총 $31억. 남동부·버지니아 DC 수요용 Transco 증설",
-   "business_grade": "②(회사 IR·보도 · 2026-09-14 · 10-K 미대조)",
-   "pages": [
-    "energy/us_energy_five.html",
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_five.html#T2",
-    "energy/us_energy_five.html#T6",
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": true,
-   "intake": [],
-   "note": "⚠ 09-15 정정(5사 편 C1 · r-20260913-09): TTM FCF −$1.08억(수익률 −0.1%) · CapEx/OCF 101.8% — 현금 회사가 아니라 <재투자 단계>(Transco 증설·Socrates). 종전 「FCF 2.5%·CapEx/OCF 60%」는 창 오류 값. T6: 두 가스 축 모두 물량으로 받는 자리 · 발전(Socrates)은 「가스 = 가장 빠른 전원」의 실행 사례"
-  },
-  "XOM": {
-   "name": "ExxonMobil",
-   "market": "US",
-   "layer": "메이저",
-   "business": "통합 메이저. 상류 4.514Moebd 중 Permian 1.8Moebd(≈40%) · Golden Pass LNG(QatarEnergy 합작) T1 2026-03 첫 생산 · 헤지 안 함 · FY26 CapEx $27~29B",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "CVX": {
-   "name": "Chevron",
-   "market": "US",
-   "layer": "메이저",
-   "business": "통합 메이저. Permian 1MMboe/d+ (전사 4MMboe/d의 ≈25%) · 호주 LNG는 아시아 장기계약 · 헤지 안 함 · FY26 CapEx $18~19B 하단",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "COP": {
-   "name": "ConocoPhillips",
-   "market": "US",
-   "layer": "대형 E&P",
-   "business": "글로벌 E&P. Permian 920Mboe/d(41%) · LNG 오프테이크 12→15MTPA 목표(Port Arthur 30% 지분·Rio Grande T5) · FY26 CapEx $12~12.5B",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "OXY": {
-   "name": "Occidental",
-   "market": "US",
-   "layer": "대형 E&P",
-   "business": "Permian 비중 56%(804/1,433Mboe/d) + OxyChem·미드스트림 · 헤지 100kb/d 칼라 $55/$76(≈7%) · 순부채 감축 → 우선주 상환 순서",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "FANG": {
-   "name": "Diamondback",
-   "market": "US",
-   "layer": "Permian E&P",
-   "business": "Permian(미들랜드+델라웨어) E&P · 아카이브 에너지 5사 편의 E&P 대표",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html",
-    "energy/us_energy_five.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "PR": {
-   "name": "Permian Resources",
-   "market": "US",
-   "layer": "Delaware E&P",
-   "business": "Delaware 순수 E&P(≈100%) · 376Mboe/d · 오일 53% · 오일 헤지 ≈15% · Waha 노출 가스 20% 감산 · 걸프 firm transport 400→700MMcf/d(2027+)",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "opm",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "DVN": {
-   "name": "Devon Energy(+Coterra)",
-   "market": "US",
-   "layer": "Delaware E&P(+Coterra)",
-   "business": "2026-05-07 Coterra 합병 완료(전주식). Delaware 앵커 · Permian ≈2/3 · 1.36MMboe/d · 오일 37% · 「70%+ 헤지 또는 걸프 연결」 · LNG 연동 가격 100MMcf/d(2027)+150(2028) · Delfin FLNG 톨링",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false,
-   "note": "Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json 에 없음(수집 404)"
-  },
-  "MTDR": {
-   "name": "Matador Resources",
-   "market": "US",
-   "layer": "Delaware E&P",
-   "business": "Delaware E&P + San Mateo 미드스트림 · 216Mboe/d · 오일 58% · 오일 헤지 35~40% · ET Hugh Brinson 500,000MMBtu/d firm → 걸프/LNG 시장 접근",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "EQT": {
-   "name": "EQT",
-   "market": "US",
-   "layer": "Appalachia 가스",
-   "business": "Appalachia 순수 최대 가스사(≈7.0Bcfe/d) · 2026 헤지 ≈25%(2027 ≈16%, 의도적 저헤지) · 0.5MTPA LNG 오프테이크 2028 · Port Arthur 오프테이크",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "AR": {
-   "name": "Antero Resources",
-   "market": "US",
-   "layer": "Appalachia 가스",
-   "business": "Appalachia 가스+NGL(4.1Bcfe/d · 액체 216MBbl/d) · 2026 헤지 ≈60% · 「LNG 판매점에 2.3Bcf/d — Appalachia 최고 노출」(회사 발언 ③)",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "RRC": {
-   "name": "Range Resources",
-   "market": "US",
-   "layer": "Appalachia 가스",
-   "business": "Marcellus 순수(2.3Bcfe/d · 가스 67%) · 헤지 비율 미공표(스왑 $4.05·칼라 $3.00/$5.70) · Repauno LPG 수출(2027)",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "EXE": {
-   "name": "Expand Energy",
-   "market": "US",
-   "layer": "Haynesville+Appalachia 가스",
-   "business": "구 Chesapeake+Southwestern. 미국 최대 가스 생산(7.5Bcfe/d · 가스 92%) — Haynesville+Appalachia · 2026 헤지 66% · Delfin FLNG SPA 1.15MTPA(HH 연동) · Twin Eagle 마케팅 인수 $1.25B",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "pretax_margin",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "LNG": {
-   "name": "Cheniere Energy",
-   "market": "US",
-   "layer": "LNG 수출",
-   "business": "미국 최대 LNG 수출(Sabine Pass·Corpus Christi · CCL3 7기 중 6기 수출 중) · 아카이브 5사 편: 파생이 매출원가에 들어가 영업이익 오염(rCV 1.57)",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html",
-    "energy/us_energy_five.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": true
-  },
-  "VG": {
-   "name": "Venture Global",
-   "market": "US",
-   "layer": "LNG 수출",
-   "business": "LNG 수출 2위권 신흥(Calcasieu Pass·Plaquemines · CP2 건설) · 아카이브 5사 편 T3: CapEx/OCF 202% — 건설사 단계",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html",
-    "energy/us_energy_five.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "nd_to_ebitda",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": true
-  },
-  "ET": {
-   "name": "Energy Transfer",
-   "market": "US",
-   "layer": "미드스트림(MLP)",
-   "business": "MLP 미드스트림(가스·NGL·원유 · Hugh Brinson) · 아카이브 5사 편 T5: 한국 투자자에게 MLP 과세 미측정",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html",
-    "energy/us_energy_five.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": true
-  },
-  "EPD": {
-   "name": "Enterprise Products",
-   "market": "US",
-   "layer": "미드스트림(MLP·NGL)",
-   "business": "MLP 미드스트림(NGL 분류·수출 · 수수료 기반 GOM 80%) · Mont Belvieu·휴스턴 선박수로 LPG 수출 · 레버리지 3.0x",
-   "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
-   "pages": [
-    "energy/us_energy_hegemony_17.html"
-   ],
-   "facts": [
-    "capex",
-    "capex_to_ocf",
-    "fcf",
-    "fcf_yield",
-    "mcap",
-    "net_debt",
-    "ocf",
-    "opm",
-    "revenue"
-   ],
-   "theses": [
-    "energy/us_energy_hegemony_17.html#T1",
-    "energy/us_energy_hegemony_17.html#T2"
-   ],
-   "tracked_price": false
-  },
-  "HOOD": {
-   "name": "Robinhood Markets",
-   "market": "US",
-   "layer": "핀테크 · 리테일 브로커 + 자사 파생 거래소(Rothera) + 체인",
-   "business": "옵션·주식·크립토·이벤트 계약 거래 수수료(PFOF·거래소 수수료) + 순이자(마진·캐시스윕·대차) + Gold 구독·신용카드. 2Q26 매출 $1,308M(거래 59%·순이자 30%·구독 11%) · 순이익률 42% · Gold 480만 · 플랫폼 자산 $384B(8월). Rothera(SIG 합작 CFTC 거래소) 6월 가동 · Robinhood Chain 7/1 메인넷 · Bitstamp(2025-06 인수) · 토큰화 주식 120개국 · 자본: 현금 $53.6억 · 전환사채 $22억 0% 2029(전환가 $174) · RHS 신용한도 $32.5억 · 06-16 인력 10% 감원. 순이자 성장은 마진 대출($216억 +127%)이 전부. 소송: 제9순회 08-28 패소(스포츠 계약 ≠ 스왑) · 뉴저지 대법원 상고 09-02 · 미시간 10/9 청산 · 네바다 중단 · 워싱턴·매사추세츠·켄터키 · 부족 RICO · 집단소송 4건",
-   "business_grade": "①(10-Q·실적 발표 · 2026-09-16)",
-   "pages": [
-    "payments/payments_company_robinhood.html"
-   ],
-   "facts": [
-    "adj_ebitda_margin_q",
-    "buyback_ttm",
-    "cash",
-    "convertible",
-    "credit_card_loans",
-    "crypto_rev_q",
-    "crypto_share_tx_fy2024",
-    "eps_2026e",
-    "event_contracts_aug",
-    "event_contracts_q2",
-    "event_contracts_rev_q",
-    "gold_subs",
-    "margin_balance",
-    "margin_book_q",
-    "margin_interest_q",
-    "mcap",
-    "net_income_ttm",
-    "ni_margin_ttm",
-    "ni_q_gaap",
-    "ni_q_underlying",
-    "nii_q",
-    "opex_guide_2026",
-    "options_rev_q",
-    "pe",
-    "provision_q",
-    "ps",
-    "rate_sens_100bp",
-    "rev_growth_yoy",
-    "rev_q",
-    "revenue_ttm",
-    "rif_2026_06",
-    "sbc_to_rev_q",
-    "sec_lending_q",
-    "shares_out",
-    "tp_mean"
-   ],
-   "theses": [
-    "payments/payments_company_robinhood.html#T1",
-    "payments/payments_company_robinhood.html#T2",
-    "payments/payments_company_robinhood.html#T3",
-    "payments/payments_company_robinhood.html#T4",
-    "payments/payments_company_robinhood.html#T5"
-   ],
-   "tracked_price": true,
-   "note": "금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편",
-   "sec": "CIK 0001783879 · intake/files/sec/hood/"
-  },
-  "126340": {
-   "name": "비나텍",
-   "market": "KR",
-   "layer": "BE 밸류체인 · 슈퍼캐패시터(스냅인 독점 ②)·시스템",
-   "business": "리드타입 슈퍼캡 58.5% · 스냅인 27.4% · 수소연료전지 8.3% · 수출 72.7%. BE 412억 DC용 슈퍼캡 시스템 계약(2026-06-30). 캐파 스냅인 4.2M/분기 → 9M(2027). 2Q26 매출 35십억(+71%) OP 0 · 순손실 −38(베트남 화재 298억·CB 평가손 96억) · CB 600억(556,740주 ≈ 7.8%). 시총 460십억(9/14 64,100)",
-   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
-   "pages": [
-    "ai-infra/us_bloom_intel_deep.html"
-   ],
-   "facts": [],
-   "theses": [
-    "ai-infra/us_bloom_intel_deep.html#T5"
-   ],
-   "tracked_price": true,
-   "note": "한투 TP 94,400 = 2027F EBITDA 50.8십억 × 18.4배 − 순차입 206 / 7.74M주 · 2027F 매출 229(+72.9% · 시스템 54)",
-   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소"
-  },
-  "452280": {
-   "name": "한선엔지니어링",
-   "market": "KR",
-   "layer": "BE 밸류체인 · 피팅·밸브·모듈(1차 벤더 2021-10)",
-   "business": "피팅 63.3% · 밸브 17.9% · 모듈 13.5% · 내수 58.8%. 2Q26 매출 24십억(+52.6%) OPM 23.7%(1Q 27.7%) · 2026F 92(+45.6% · 종전 가이던스 72) · 캐파 1,500억 · 최대주주 62.3% · 유동 37.7% · PER 16.5(2025). 시총 207십억",
-   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
-   "pages": [
-    "ai-infra/us_bloom_intel_deep.html"
-   ],
-   "facts": [],
-   "theses": [
-    "ai-infra/us_bloom_intel_deep.html#T5"
-   ],
-   "tracked_price": true,
-   "note": "밸류체인 중 유일하게 이익이 있는 회사 · BE 향 비중 미공개(②)",
-   "falsifier": "OPM 20% 아래 2분기 · 2026 매출 720억 미만"
-  },
-  "357580": {
-   "name": "아모센스",
-   "market": "KR",
-   "layer": "BE 밸류체인 · SOFC 세라믹 전해질 기판",
-   "business": "모듈 55.3% · 디바이스 29.4% · 소재 10.7%. BE 기판 초도 납품(2026-03 · MOU 2023-11) · 월 20만 → 60만장 · 초기 점유 9%(BE 2GW당 8,000만장 ③). 2Q26 적자(−1십억) · 2027F 매출 194(+57%). 시총 60십억 · 최대주주 58.8%",
-   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
-   "pages": [
-    "ai-infra/us_bloom_intel_deep.html"
-   ],
-   "facts": [],
-   "theses": [
-    "ai-infra/us_bloom_intel_deep.html#T5"
-   ],
-   "tracked_price": true,
-   "note": "BE 공급망 탈중국·일본(③) · 가장 늦고 가장 작다",
-   "falsifier": "4Q26 소재 매출 <7십억 · 본격 출하 지연"
-  },
-  "178320": {
-   "name": "서진시스템",
-   "market": "KR",
-   "layer": "BE 밸류체인 · SOFC 모듈·부품 생산",
-   "business": "BE 785억 SOFC 모듈·부품 생산 계약(2026-07). 시총 2,224십억 — 5사 중 최대·다각화(ESS·통신장비)",
-   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
-   "pages": [
-    "ai-infra/us_bloom_intel_deep.html"
-   ],
-   "facts": [],
-   "theses": [
-    "ai-infra/us_bloom_intel_deep.html#T5"
-   ],
-   "tracked_price": true,
-   "note": "BE 비중은 작음 [추론]",
-   "falsifier": "785억 계약 이행 지연 공시"
-  },
-  "089890": {
-   "name": "코세스",
-   "market": "KR",
-   "layer": "BE 밸류체인 · 전극셀 자동화 장비",
-   "business": "BE 1,504억 AI서버용 전극셀 자동화 장비(2026-07) · BE 누적 수주 2,372억(25-11 178 → 26-07 2,372). 시총 408십억 — 장비 수주가 BE 캐파(프리몬트 5GW → 4GW 대응)의 선행지표",
-   "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
-   "pages": [
-    "ai-infra/us_bloom_intel_deep.html"
-   ],
-   "facts": [],
-   "theses": [
-    "ai-infra/us_bloom_intel_deep.html#T5"
-   ],
-   "tracked_price": true,
-   "note": "캐파 증설의 첫 발주처",
-   "falsifier": "BE 신규 장비 발주 2분기 공백"
-  },
-  "000660": {
-   "name": "SK하이닉스",
-   "market": "KR",
-   "layer": "메모리 · HBM 1위",
-   "business": "DRAM·HBM·NAND. 보유 종목",
-   "business_grade": "카드 테제에서 파생(2026-09-17)",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1",
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T2",
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3",
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4",
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T5"
-   ],
-   "tracked_price": true,
-   "position": "보유 54주 · 평단 1,699,046 · 스톱 1,200,000",
-   "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
-   "note": "HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다."
-  },
-  "005930": {
-   "name": "삼성전자",
-   "market": "KR",
-   "layer": "메모리 2위 · 파운드리 · 삼성전기(기판·MLCC)",
-   "business": "DRAM·NAND·HBM·파운드리·세트. 보유 종목",
-   "business_grade": "카드 테제에서 파생(2026-09-17)",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T1",
-    "hbm-packaging/hbm_pkg_company_samsung.html#T2",
-    "hbm-packaging/hbm_pkg_company_samsung.html#T3",
-    "hbm-packaging/hbm_pkg_company_samsung.html#T4",
-    "hbm-packaging/hbm_pkg_company_samsung.html#T5"
-   ],
-   "tracked_price": true,
-   "position": "보유 신규 496주 평단 244,927 + 레거시 1,300주 평단 72,600",
-   "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
-   "note": "HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)"
-  },
-  "207940": {
-   "name": "삼성바이오로직스",
-   "market": "KR",
-   "layer": "CDMO",
-   "business": "항체 CDMO · PolyPeptide 인수. 보유 종목",
-   "business_grade": "카드 테제에서 파생(2026-09-17)",
-   "pages": [
-    "glp1/glp1_company_samsung_biologics.html"
-   ],
-   "facts": [],
-   "theses": [
-    "glp1/glp1_company_samsung_biologics.html#T1",
-    "glp1/glp1_company_samsung_biologics.html#T2",
-    "glp1/glp1_company_samsung_biologics.html#T3",
-    "glp1/glp1_company_samsung_biologics.html#T4"
-   ],
-   "tracked_price": true,
-   "position": "보유 17주 · 평단 1,549,529",
-   "falsifier": "T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선 없이도 PolyPeptide 가치가 재평가됨, 또는 반대로 마진이 2개 분기 연속 악화 · T3: 성장률이 20% 아래로 내려갔는데도 PER 40x가 유지됨 (성장률이 배수의 근거가 아니었음) · T4: Orforglipron 처방이 급증하고 주사제 선호 80%가 무너짐 (경구 전환이 빠름)",
-   "note": "3중 엔진 중 둘은 확정이고 하나는 실행 리스크다. 배수는 자기 역사 밴드 아래로 내려왔지만(38.23배) PER을 지탱하던 OPM 45%·성장 20% 두 문턱에 동시에 닿아 있다."
-  },
-  "214450": {
-   "name": "파마리서치",
-   "market": "KR",
-   "layer": "에스테틱 · 리쥬란",
-   "business": "PDRN·PN 스킨부스터 · 해외 확장. 보유 종목",
-   "business_grade": "카드 테제에서 파생(2026-09-17)",
-   "pages": [
-    "k-beauty/k_beauty_company_pharmaresearch.html"
-   ],
-   "facts": [],
-   "theses": [
-    "k-beauty/k_beauty_company_pharmaresearch.html#T1",
-    "k-beauty/k_beauty_company_pharmaresearch.html#T2",
-    "k-beauty/k_beauty_company_pharmaresearch.html#T3",
-    "k-beauty/k_beauty_company_pharmaresearch.html#T4"
-   ],
-   "tracked_price": true,
-   "position": "보유 170주 · 평단 412,577",
-   "falsifier": "T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에 판관비 증가율이 매출 증가율 아래로 내려오면서 OPM이 39% 위로 회복 (투자 국면이 맞았다) · T3: [추론] OPM이 37%대 이하에 머물거나 더 내려가는데도 파마리서치 PER이 K뷰티 5사 중 상위(2026.08.20 기준 21.62배 · 에이피알 24.76  · T4: 3rd-class 승인 또는 타법인 출자·합작 공시가 나오면 시점 전제를 다시 쓴다.",
-   "note": "원가는 좋아졌는데 판관비가 마진을 다 깎았다(2Q26 OPM 37.20%). 그 판관비가 성장의 값인지 비용인지는 3Q26 전까지 안 갈리고, 배수 프리미엄이 그 답에 걸려 있다."
-  },
-  "BE": {
-   "name": "Bloom Energy",
-   "market": "US",
-   "layer": "온사이트 발전 · SOFC",
-   "business": "SOFC 연료전지 · 800V DC 네이티브 · Brookfield PPA · Oracle MSA 2.8GW. 매니저 7종목",
-   "business_grade": "카드 테제에서 파생(2026-09-17)",
-   "pages": [
-    "ai-infra/us_bloom_intel_deep.html"
-   ],
-   "facts": [],
-   "theses": [
-    "ai-infra/us_bloom_intel_deep.html#T1",
-    "ai-infra/us_bloom_intel_deep.html#T2",
-    "ai-infra/us_bloom_intel_deep.html#T3",
-    "ai-infra/us_bloom_intel_deep.html#T4",
-    "ai-infra/us_bloom_intel_deep.html#T5"
-   ],
-   "tracked_price": true,
-   "position": "미보유 · 매니저 7종목",
-   "falsifier": "T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10-Q 미주 비중 25% 초과(서사 확인) / 반대로 단일 고객 50% 재돌파(구조) · T3: 3Q26 관계자 매출이 분기 매출의 20% 초과 — 1Q가 예외가 아니라 패턴 · T4: 연내 신규 하이퍼스케일러 계약 0(한투 자신의 기대) · 또는 주피터 2027-02 재지연 · 또는 SemiAnalysis BTM 50% 전망 철회 · 제3자(S · T5: 비나텍 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 등장 · 한선 OPM 20% 아래 2분기 · 아모센스 4Q26 소재 매출 <7십억",
-   "note": "블룸은 좋아졌지만 서사(미국 AI DC 온사이트)와 원장(1H26 아시아태평양 90% · 단일고객 73% · 1Q 관계자 49.7%)이 다르다. 한투(09-16)의 BTM·SOFC 프레임은 수요 논리를 채우지만 그 세 숫자를 건드리지 않는다. 판정은 3Q26 10-Q(지역·고객·관계자)와 오라클 주피터(파이프라인 2027-02)."
-  },
-  "036540": {
-   "name": "SFA반도체",
-   "market": "KOSDAQ",
-   "layer": "칩 후공정(OSAT) — 삼성 외주화 1층",
-   "business": "① 2Q26 매출 1,263억 · OP −62억(OPM −4.87%) · 3Q26 컨센 매출 1,479억 · OP −31억 · 4Q25 1,196억·−6억. 시총 1.44조(09-17).",
-   "business_grade": "① 네이버 재무 원장 · ③ 컨센서스",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [
-    "companies.036540"
-   ],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T6"
-   ],
-   "tracked_price": true,
-   "note": "2026-09-20 ①로 승격. 값이 붙었는데 이익이 안 온 자리 — 한양디지텍의 대조군",
-   "falsifier": "4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정",
-   "ticker": "036540",
-   "intake": [
-    "u-20260917-08",
-    "u-20260920-06"
-   ]
-  },
-  "003160": {
-   "name": "디아이",
-   "market": "KR",
-   "layer": "번인·웨이퍼 테스터(자회사 디지털프론티어 HBM4 웨이퍼 테스터) · 삼성·SK하이닉스",
-   "business": "2026 공시 — 삼성 누적 1,517억 · SK하이닉스 HBM4 웨이퍼 테스터 1,960억. 2Q26 매출 1,686억(+41%) OP 396억(OPM 23.5%). 시총 9,000억(31,800) PER 30.8 · 컨센 2026 OP 1,157억. 캐파 DF 연 150대(③)",
-   "business_grade": "① 공시·확정 실적 · ③ 컨센",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T7"
-   ],
-   "tracked_price": true,
-   "note": "셋 중 이익이 이미 온 유일한 곳 · 3M +9.3%",
-   "falsifier": "3Q26 OPM 15% 미만"
-  },
-  "232140": {
-   "name": "와이씨",
-   "market": "KR",
-   "layer": "메모리 웨이퍼 테스터(DRAM·NAND·HBM) · 삼성",
-   "business": "삼성 Memory Wafer Tester 1,622억(8/27 · 납기 2027-06-30) + 상반기 930·403·422억. 2Q26 매출 1,050억 OP 151억(OPM 14.3%). 시총 9,927억(12,090 · 52주 6,820~24,150) PER 31.8 · 컨센 2026 OP 550억. 3M −19.9% 6M −41.5%",
-   "business_grade": "① 공시·확정 실적 · ③ 컨센",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T7"
-   ],
-   "tracked_price": true,
-   "note": "계약 최대 · 인식은 2027까지 분할 · 20일 외국인·기관 순매도",
-   "falsifier": "1,622억 정정(감액·연기) 공시"
-  },
-  "086390": {
-   "name": "유니테스트",
-   "market": "KR",
-   "layer": "DRAM·HBM 번인/웨이퍼 테스터 · SK하이닉스 + 태양광 EPC",
-   "business": "SK하이닉스 HBM4 WAFER TESTER 292억(5월)·227억(7월 · 납기 10/8) · 태양광 601억(~2028). 2Q26 매출 505억 OP 79억 흑자전환(2025 OP −211억). 시총 2,536억(11,990) · 컨센 2026 OP 219억",
-   "business_grade": "① 공시·확정 실적 · ③ 컨센",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T7"
-   ],
-   "tracked_price": true,
-   "note": "삼성 계약 없음 · 매출의 절반이 태양광 EPC",
-   "falsifier": "3Q까지 삼성·SK하이닉스 추가 공시 0"
-  },
-  "402340": {
-   "name": "SK스퀘어",
-   "market": "KR",
-   "layer": "지주 · SK하이닉스 지분 ~20.7% 통로",
-   "business": "시총 133.5조(9/17 1,012,000) · 하이닉스 지분가치 265.8조 → 할인 ~50% · 2026F 지분법 OP 48.2조(컨센) · 추정 PER 2.96 · PBR 2.43 · 외인 46.5%",
-   "business_grade": "① 시세·컨센 · ② 지분율 추정",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T6"
-   ],
-   "tracked_price": true,
-   "note": "할인율 = 1 − 스퀘어 시총 ÷ (하이닉스 시총 × 지분율) · 월 1회",
-   "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1"
-  },
-  "MU": {
-   "name": "Micron",
-   "market": "US",
-   "layer": "DRAM·HBM·NAND 메이커 · 미국 유일 DRAM · 코어(메모리) 후보",
-   "business": "FQ4(8월 분기) 10/1 발표 — RBC 모델 매출 $50B · EPS 31.09 · GM 86.7 · DRAM 계약 CQ3 +20%+. FQ1 가이던스 컨센 $56B/EPS 34.85(TD 예상 ~37 · RBC +3~5%). SCA 16건 · $22B 예치 · 매출 절반 커버 · 40% 가격 하한. 2027 HBM 계약 +80~100%(RBC 공급망) · HBM 점유 ~25%. GPM 정점 CQ2:27 ~89%(TD) · CY27 EPS $173 · CY28 $138(TD). 자사주 $20B대(12/9 CHIPS 제한 2주년 후) · FCF 50%+ 환원 · CY27 FCF $100B+(RBC). 12M RS +472 · 3M −15%(09-15 스크린 88.5 A)",
-   "business_grade": "③ TD Cowen 09-17 · RBC 09-18(SCA는 회사 공시 인용) · ① 스크린 시세",
-   "pages": [
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html"
-   ],
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2,T5",
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3,T4"
-   ],
-   "tracked_price": true,
-   "note": "코어 증액 트리거 종목 — 10/1 가이던스 ≥37 정상 · <35 = n-memory-durable 1스트라이크 · TP TD $1,600(CY27 9배) · RBC $1,500",
-   "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례"
-  },
-  "069960": {
-   "code": "069960",
-   "name": "현대백화점",
-   "market": "KR",
-   "layer": "소비 · 백화점(연결: 백화점 16점·아울렛 + 현대면세점 + 지누스 + 한섬 34.6% 등)",
-   "business": "백화점 수수료 매출(순매출 인식)이 이익의 전부. 2Q26 백화점 OP 1,101억 · 면세 62억 · 지누스 −267억 → 연결 793억. 발행주식 21,564,912(2026-05 소각 후) · 시총 2.14조(09-18)",
-   "business_grade": "①(잠정실적·소각·배당 공시 원문) · 부문 손익은 ②(회사 IR을 인용한 기사 · 반기보고서 세그먼트 미대조)",
-   "note": "지누스 인수(2022-03 · 8,790억) 누적 손상 4,997억(56.8% · ② 허핑턴포스트) · 2025 지누스 국내 매출 590억(목표 3,000억). 더현대광주 1,500억 유상증자(① 2025-11-05 · '26.1~5 3회 분납 · 출점 CapEx). 밸류업 목표 '27 ROE 6% · PBR 0.4(달성)/장기 0.8 · 배당총액 500억",
-   "falsifier": "3Q26 지누스 손실 −250억 이상 지속 + 백화점 OP 감익(≈11-05)",
-   "pages": [
-    "consumer/consumer_sector_department.html"
-   ],
-   "facts": [],
-   "theses": [
-    "consumer/consumer_sector_department.html#T6,T4"
-   ],
-   "tracked_price": true
-  },
-  "011070": {
-   "code": "011070",
-   "name": "LG이노텍",
-   "market": "KR",
-   "layer": "광학(애플 카메라) / 기판(FC-BGA 후발)",
-   "business": "카메라 모듈(폴디드줌·가변조리개 · 애플 향 매출 80%) · 반도체 기판(RF-SiP·FC-CSP·FC-BGA · 매출 9%) · 차량 부품(9%)",
-   "business_grade": "②(부문 매출은 2Q26 실적 기사 · 고객 집중도는 반기보고서 인용 기사 · 사업보고서 원문 미대조 · 2026-09-19)",
-   "note": "2026-09-18 531,000원(시총 12.5조 · 2,362만주) · 추정 PER 13.49 · PBR 1.97 · 52주 174,900~1,814,000(dd52 −71%). 상반기 「기판 공급 부족」 테마로 +460% 후 −54%. 판단 페이지 hbm_pkg_theme_substrate T6. 2Q26 잠정 OP 2,458억(07-27) · 2026F 컨센 OP 1조2,757억 진도율 42.4%.",
-   "falsifier": "3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순)",
-   "pages": [
-    "hbm-packaging/hbm_pkg_theme_substrate.html"
-   ],
-   "facts_candidates": {
-    "rev_2q26": {
-     "value": 5527241,
-     "unit": "백만원",
-     "basis": "연결 잠정",
-     "date": "2026-07-27",
-     "grade": "①",
-     "source": "naver disclosure 80137986"
+  "_readme": {
+    "what": "회사·테마 카드. 무슨 사업(business · 등급 표기), 어느 층, 정본 페이지, facts 키, 걸린 테제. 시세 추적 여부는 portfolio/data/update_prices.py 목록 기준.",
+    "rules": [
+      "business 는 사업보고서·10-K 「사업의 개요」로 대조하면 ①로 올리고 business_grade 를 고친다",
+      "새 회사는 정본 페이지가 생긴 뒤에 넣는다"
+    ],
+    "seeded": "2026-09-13 · 광통신 25사"
+  },
+  "companies": {
+    "ALAB": {
+      "name": "Astera Labs",
+      "market": "US",
+      "layer": "연결 반도체 · 리타이머",
+      "business": "PCIe/CXL 리타이머·AEC·패브릭 스위치(서버 안 신호 연장)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "gpm_q",
+        "inventory_yoy",
+        "mcap",
+        "ocf_to_ebit_q",
+        "opm",
+        "opm_q",
+        "ps",
+        "ps_over_growth",
+        "receivables_yoy",
+        "rev_growth_yoy",
+        "rev_q",
+        "revenue_ttm",
+        "rnd_to_rev_q",
+        "sbc_to_rev_q"
+      ],
+      "theses": [
+        "ai-infra/optical_valuechain_9.html#T5"
+      ],
+      "tracked_price": true,
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
     },
-    "op_2q26": {
-     "value": 245754,
-     "unit": "백만원",
-     "basis": "연결 잠정",
-     "date": "2026-07-27",
-     "grade": "①",
-     "source": "naver disclosure 80137986"
+    "CRDO": {
+      "name": "Credo",
+      "market": "US",
+      "layer": "연결 반도체 · SerDes·AEC·광DSP",
+      "business": "SerDes IP·AEC(Zero-Flap)·광 DSP·실리콘 포토닉스 PIC(Dust Photonics 인수 ②)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "gpm_q",
+        "inventory_yoy",
+        "max_daily_drop",
+        "mcap",
+        "ocf_to_ebit_q",
+        "opm",
+        "opm_q",
+        "ps",
+        "ps_over_growth",
+        "receivables_yoy",
+        "rev_growth_yoy",
+        "rev_q",
+        "revenue_ttm",
+        "rnd_to_rev_q",
+        "sbc_to_rev_q",
+        "top_customer_share"
+      ],
+      "theses": [
+        "ai-infra/optical_interconnect_layer.html#T2",
+        "ai-infra/optical_interconnect_layer.html#T5",
+        "ai-infra/optical_valuechain_9.html#T5"
+      ],
+      "tracked_price": true,
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
     },
-    "op_1h26": {
-     "value": 541073,
-     "unit": "백만원",
-     "basis": "연결 잠정 누계",
-     "date": "2026-07-27",
-     "grade": "①"
+    "MTSI": {
+      "name": "MACOM",
+      "market": "US",
+      "layer": "연결 반도체 · 드라이버·TIA·RF",
+      "business": "드라이버·TIA·RF·아날로그·일부 레이저",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "mcap",
+        "opm",
+        "ps",
+        "ps_over_growth",
+        "rev_growth_yoy",
+        "revenue_ttm"
+      ],
+      "theses": [],
+      "tracked_price": false,
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
     },
-    "opm_2q26": {
-     "value": 4.45,
-     "unit": "%",
-     "numerator": "OP 245,754",
-     "denominator": "매출 5,527,241",
-     "grade": "①"
+    "SMTC": {
+      "name": "Semtech",
+      "market": "US",
+      "layer": "연결 반도체 · 드라이버·TIA·AEC",
+      "business": "드라이버·TIA(FiberEdge·Tri-Edge)·AEC(CopperEdge)·IoT(LoRa)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "inventory_yoy",
+        "mcap",
+        "ocf_to_ebit_q",
+        "opm",
+        "opm_q",
+        "opm_reported",
+        "ps",
+        "ps_over_growth",
+        "receivables_yoy",
+        "rev_growth_yoy",
+        "rev_q",
+        "revenue_ttm",
+        "rnd_to_rev_q",
+        "sbc_to_rev_q",
+        "seg_signal_integrity_gpm",
+        "seg_signal_integrity_growth",
+        "seg_signal_integrity_share",
+        "top_customer_share"
+      ],
+      "theses": [
+        "ai-infra/optical_interconnect_layer.html#T3",
+        "ai-infra/optical_valuechain_9.html#T4"
+      ],
+      "tracked_price": false,
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
     },
-    "op_2026f_consensus": {
-     "value": 1275700,
-     "unit": "백만원",
-     "basis": "네이버 컨센(isConsensus Y)",
-     "date": "2026-09-19",
-     "grade": "③"
+    "MRVL": {
+      "name": "Marvell",
+      "market": "US",
+      "layer": "연결 반도체 · 광DSP·커스텀ASIC",
+      "business": "광 DSP(Inphi 인수)·코히런트 DSP·커스텀 AI ASIC·스위치·스토리지",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html",
+        "ai-infra/ai_chip_company_marvell.html"
+      ],
+      "facts": [
+        "datacenter_growth",
+        "datacenter_share",
+        "distribution_share",
+        "gpm",
+        "gpm_q",
+        "inventory_yoy",
+        "mcap",
+        "ocf_to_ebit_q",
+        "opm",
+        "opm_q",
+        "ps",
+        "ps_over_growth",
+        "receivables_yoy",
+        "rev_growth_yoy",
+        "rev_q",
+        "revenue_ttm",
+        "rnd_to_rev_q",
+        "sbc_to_rev_q"
+      ],
+      "theses": [
+        "ai-infra/optical_interconnect_layer.html#T4",
+        "ai-infra/optical_valuechain_9.html#T5"
+      ],
+      "tracked_price": true
     },
-    "op_3q26e_consensus": {
-     "value": 311200,
-     "unit": "백만원",
-     "basis": "네이버 컨센(isConsensus Y)",
-     "date": "2026-09-19",
-     "grade": "③"
+    "LITE": {
+      "name": "Lumentum",
+      "market": "US",
+      "layer": "광원·부품 · EML·CW·펌프 레이저",
+      "business": "EML·CW 레이저·펌프 레이저·ROADM·3D 센싱 VCSEL. 엔비디아 CPO 공급망에 레이저로 거명(②)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "gpm_latest_q",
+        "mcap",
+        "opm",
+        "opm_latest_q",
+        "price_1y_change",
+        "ps",
+        "ps_over_growth",
+        "rev_growth_yoy",
+        "rev_latest_q",
+        "revenue_ttm"
+      ],
+      "theses": [
+        "ai-infra/optical_valuechain_9.html#T1",
+        "ai-infra/optical_valuechain_9.html#T2",
+        "ai-infra/optical_valuechain_9.html#T3"
+      ],
+      "tracked_price": true
     },
-    "apple_share_1h26": {
-     "value": 79.9,
-     "unit": "%",
-     "numerator": "10% 이상 단일고객 매출 8,841,475백만",
-     "denominator": "1H26 매출 11,062,077백만",
-     "basis": "반기보고서(기사 인용)",
-     "date": "2026-08-14",
-     "grade": "①값 ②경로"
+    "COHR": {
+      "name": "Coherent",
+      "market": "US",
+      "layer": "광원·부품 + 모듈(수직계열)",
+      "business": "구 II-VI. InP 레이저·EML·VCSEL + 트랜시버 완제품 + 산업용 레이저·소재",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "mcap",
+        "opm",
+        "opm_adjusted",
+        "ps",
+        "ps_over_growth",
+        "rev_growth_yoy",
+        "revenue_ttm",
+        "seg_dcc_growth",
+        "seg_dcc_revenue_fy26",
+        "seg_dcc_share",
+        "seg_industrial_revenue_fy26"
+      ],
+      "theses": [
+        "ai-infra/optical_valuechain_9.html#T2",
+        "ai-infra/optical_valuechain_9.html#T4"
+      ],
+      "tracked_price": true
     },
-    "seg_rev_2q26": {
-     "optics": 4517900,
-     "package": 498400,
-     "mobility": 510900,
-     "unit": "백만원",
-     "grade": "②(실적 기사 · IR 자료 미열람)"
+    "AAOI": {
+      "name": "Applied Optoelectronics",
+      "market": "US",
+      "layer": "모듈 · 수직계열(미국)",
+      "business": "미국(텍사스) 본사 수직계열 모듈사 — 레이저까지 자체 생산",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "mcap",
+        "opm",
+        "ps",
+        "ps_over_growth",
+        "rev_growth_yoy",
+        "revenue_ttm"
+      ],
+      "theses": [],
+      "tracked_price": false
+    },
+    "FN": {
+      "name": "Fabrinet",
+      "market": "US",
+      "layer": "모듈 · 위탁조립(EMS)",
+      "business": "위탁조립(EMS). 남의 설계를 태국에서 조립·검사. 반도체사가 아니다",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "contract_liabilities_to_rev",
+        "datacenter_share",
+        "gpm",
+        "mcap",
+        "opm",
+        "ps",
+        "ps_over_growth",
+        "rev_growth_yoy",
+        "revenue_ttm",
+        "thailand_production_share"
+      ],
+      "theses": [
+        "ai-infra/optical_valuechain_9.html#T1"
+      ],
+      "tracked_price": false
+    },
+    "300308.SZ": {
+      "name": "InnoLight",
+      "market": "CN",
+      "layer": "모듈 · 자기 설계·판매",
+      "business": "세계 최대 광모듈사. 800G·1.6T를 자기 설계·브랜드로 하이퍼스케일러 직납",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "mcap",
+        "overseas_share",
+        "ps",
+        "rev_growth_yoy",
+        "revenue_annualized"
+      ],
+      "theses": [
+        "ai-infra/kr_cooling_optical_layer.html#T3",
+        "ai-infra/optical_valuechain_9.html#T1"
+      ],
+      "tracked_price": false
+    },
+    "300502.SZ": {
+      "name": "Eoptolink",
+      "market": "CN",
+      "layer": "모듈 · 자기 설계·판매",
+      "business": "광모듈 설계·판매(InnoLight 절반 규모)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "mcap",
+        "overseas_share",
+        "ps",
+        "rev_growth_yoy",
+        "revenue_annualized"
+      ],
+      "theses": [],
+      "tracked_price": false
+    },
+    "300394.SZ": {
+      "name": "T&S",
+      "market": "CN",
+      "layer": "광부품·광엔진",
+      "business": "광부품·광엔진(파이버 어레이·격리기·렌즈 등) — 모듈사·스위치사에 부품으로 공급",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "gpm",
+        "mcap",
+        "ps",
+        "rev_growth_yoy",
+        "revenue_annualized"
+      ],
+      "theses": [],
+      "tracked_price": false
+    },
+    "010170": {
+      "name": "대한광통신",
+      "market": "KR",
+      "layer": "광섬유·광케이블",
+      "business": "광섬유·광케이블",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "facts": [
+        "op_2q26",
+        "opm",
+        "rev_2q25",
+        "rev_2q26",
+        "rev_growth_yoy"
+      ],
+      "theses": [],
+      "tracked_price": true
+    },
+    "088800": {
+      "name": "에이스테크",
+      "market": "KR",
+      "layer": "RF 안테나·필터(광 밸류체인 밖 · 냉각·광 편 표에 포함)",
+      "business": "RF 안테나·필터(무선 부품 — 광 밸류체인 밖)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "facts": [
+        "op_2q26",
+        "opm",
+        "rev_2q25",
+        "rev_2q26",
+        "rev_growth_yoy"
+      ],
+      "theses": [
+        "ai-infra/kr_cooling_optical_layer.html#T1"
+      ],
+      "tracked_price": true
+    },
+    "138080": {
+      "name": "오이솔루션",
+      "market": "KR",
+      "layer": "모듈 · 광트랜시버(통신사 프론트홀 중심)",
+      "business": "광 트랜시버(통신사 5G 프론트홀·FTTH 중심, 데이터센터용 진출 단계)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "facts": [
+        "op_2q26",
+        "opm",
+        "rev_2q25",
+        "rev_2q26",
+        "rev_growth_yoy"
+      ],
+      "theses": [
+        "ai-infra/kr_cooling_optical_layer.html#T1"
+      ],
+      "tracked_price": true
+    },
+    "046970": {
+      "name": "우리로",
+      "market": "KR",
+      "layer": "광부품 · PLC 광분배기",
+      "business": "PLC 광분배기·광부품·SPAD 센서",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "facts": [
+        "op_2q26",
+        "opm",
+        "rev_2q25",
+        "rev_2q26",
+        "rev_growth_yoy"
+      ],
+      "theses": [],
+      "tracked_price": true
+    },
+    "380540": {
+      "name": "옵티코어",
+      "market": "KR",
+      "layer": "모듈 · 광트랜시버",
+      "business": "광 트랜시버·광부품(규모 최소)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "facts": [
+        "op_2q26",
+        "opm",
+        "rev_2q25",
+        "rev_2q26",
+        "rev_growth_yoy"
+      ],
+      "theses": [
+        "ai-infra/kr_cooling_optical_layer.html#T1"
+      ],
+      "tracked_price": true
+    },
+    "CIEN": {
+      "name": "Ciena",
+      "market": "US",
+      "layer": "시스템 · DCI·코히런트 + AEC 진입(Nubis)",
+      "business": "DCI·장거리 코히런트 시스템(WaveLogic 자체 DSP) · Nubis 인수로 AEC·리타이머 진입(③)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "facts": [
+        "backlog",
+        "ebit_growth_yoy",
+        "fy27_revenue_guidance_growth",
+        "opm_q",
+        "rev_q"
+      ],
+      "theses": [
+        "ai-infra/kr_cooling_optical_layer.html#T3"
+      ],
+      "tracked_price": true
+    },
+    "TEL": {
+      "name": "TE Connectivity",
+      "market": "US",
+      "layer": "커넥터·케이블",
+      "business": "커넥터·케이블. Digital data networks 유기 +34.0%(AI 사유 · ①)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/us_ai_adjacent_sectors.html"
+      ],
+      "facts": [
+        "digital_data_networks_organic_growth"
+      ],
+      "theses": [],
+      "tracked_price": true
+    },
+    "GLW": {
+      "name": "Corning",
+      "market": "US",
+      "layer": "광섬유·커넥터",
+      "business": "광섬유·광케이블·커넥터 1위 + 디스플레이 유리 등 비광 사업",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/us_vertiv_corning_deep.html"
+      ],
+      "facts": [],
+      "theses": [],
+      "tracked_price": true
+    },
+    "APH": {
+      "name": "Amphenol",
+      "market": "US",
+      "layer": "커넥터·케이블",
+      "business": "커넥터·케이블 어셈블리(광·구리)",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/us_ai_adjacent_sectors.html"
+      ],
+      "facts": [],
+      "theses": [],
+      "tracked_price": true
+    },
+    "AVGO": {
+      "name": "Broadcom",
+      "market": "US",
+      "layer": "스위치 칩·광DSP·레이저·CPO",
+      "business": "Tomahawk 스위치 칩·광 DSP·VCSEL/EML·CPO 스위치·커스텀 ASIC",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/ai_chip_company_broadcom.html"
+      ],
+      "facts": [],
+      "theses": [],
+      "tracked_price": true
+    },
+    "NVDA": {
+      "name": "NVIDIA",
+      "market": "US",
+      "layer": "스위치·CPO·NVLink 내재화",
+      "business": "GPU + Spectrum-X·Quantum-X 스위치·LinkX 케이블/트랜시버 · CPO 스위치 첫 양산(② 2차 정리) · NVLink로 랙 내부 내재화",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/ai_chip_company_nvidia.html"
+      ],
+      "facts": [],
+      "theses": [],
+      "tracked_price": true
+    },
+    "ANET": {
+      "name": "Arista",
+      "market": "US",
+      "layer": "스위치 시스템",
+      "business": "리프·스파인 스위치 시스템 — 모듈을 사서 꽂는 고객",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/ai_value_chain_guide_v2.html"
+      ],
+      "facts": [],
+      "theses": [],
+      "tracked_price": true
+    },
+    "CSCO": {
+      "name": "Cisco",
+      "market": "US",
+      "layer": "스위치 시스템",
+      "business": "스위치·라우터 시스템",
+      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "pages": [
+        "ai-infra/ai_value_chain_guide_v2.html"
+      ],
+      "facts": [],
+      "theses": [],
+      "tracked_price": false
+    },
+    "CRWD": {
+      "name": "CrowdStrike",
+      "market": "US",
+      "layer": "사이버보안 · 엔드포인트·SIEM·Agentic SOC",
+      "business": "엔드포인트·SIEM·Agentic SOC",
+      "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": "CRWD",
+      "theses": [
+        "cybersecurity/cyber_ai_security.html#T2",
+        "cybersecurity/cyber_ai_security.html#T3"
+      ],
+      "tracked_price": true,
+      "ticker": "CRWD",
+      "canonical_page": "cybersecurity/cyber_ai_security.html"
+    },
+    "PANW": {
+      "name": "Palo Alto Networks",
+      "market": "US",
+      "layer": "사이버보안 · 네트워크·SASE·SIEM(+CyberArk IAM)",
+      "business": "네트워크·SASE·SIEM(+CyberArk IAM)",
+      "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": "PANW",
+      "theses": [
+        "cybersecurity/cyber_ai_security.html#T2",
+        "cybersecurity/cyber_ai_security.html#T3",
+        "cybersecurity/cyber_ai_security.html#T4"
+      ],
+      "tracked_price": true,
+      "ticker": "PANW",
+      "canonical_page": "cybersecurity/cyber_ai_security.html"
+    },
+    "ZS": {
+      "name": "Zscaler",
+      "market": "US",
+      "layer": "사이버보안 · 제로트러스트 SASE",
+      "business": "제로트러스트 SASE",
+      "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": "ZS",
+      "theses": [
+        "cybersecurity/cyber_ai_security.html#T2",
+        "cybersecurity/cyber_ai_security.html#T3"
+      ],
+      "tracked_price": true,
+      "ticker": "ZS",
+      "canonical_page": "cybersecurity/cyber_ai_security.html"
+    },
+    "FTNT": {
+      "name": "Fortinet",
+      "market": "US",
+      "layer": "사이버보안 · 네트워크 어플라이언스·SASE",
+      "business": "네트워크 어플라이언스·SASE",
+      "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": "FTNT",
+      "theses": [
+        "cybersecurity/cyber_ai_security.html#T2",
+        "cybersecurity/cyber_ai_security.html#T3"
+      ],
+      "tracked_price": true,
+      "ticker": "FTNT",
+      "canonical_page": "cybersecurity/cyber_ai_security.html"
+    },
+    "S": {
+      "name": "SentinelOne",
+      "market": "US",
+      "layer": "사이버보안 · 엔드포인트·데이터",
+      "business": "엔드포인트·데이터",
+      "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": "S",
+      "theses": [
+        "cybersecurity/cyber_ai_security.html#T2",
+        "cybersecurity/cyber_ai_security.html#T3"
+      ],
+      "tracked_price": true,
+      "ticker": "S",
+      "canonical_page": "cybersecurity/cyber_ai_security.html"
+    },
+    "NET": {
+      "name": "Cloudflare",
+      "market": "US",
+      "layer": "사이버보안 · 엣지·제로트러스트",
+      "business": "엣지·제로트러스트",
+      "business_grade": "② 아카이브 서술 · 10-K 사업개요 미대조",
+      "pages": [
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": "NET",
+      "theses": [
+        "cybersecurity/cyber_ai_security.html#T2",
+        "cybersecurity/cyber_ai_security.html#T3"
+      ],
+      "tracked_price": true,
+      "ticker": "NET",
+      "canonical_page": "cybersecurity/cyber_ai_security.html"
+    },
+    "TRGP": {
+      "name": "Targa Resources",
+      "market": "US",
+      "layer": "미드스트림 · 퍼미안 가스 집적·처리(G&P) + NGL 물류",
+      "business": "퍼미안(미들랜드·델라웨어) 가스 집적·처리 최대 사업자 → NGL을 Grand Prix 파이프라인으로 몬트벨뷰 운송·분류·LPG 수출(갤버스턴). 2026 조정 EBITDA 가이던스 $57~59억 · 성장 CapEx ~$50억 · 엑손모빌과 20년 전용 계약(2046)·델라웨어 신규 처리 플랜트 3기(+최대 5기 검토). 수수료 기반 중심이나 NGL 가격 노출 잔존",
+      "business_grade": "②(IR 보도자료·검색 · 2026-09-14 · 10-K 미대조)",
+      "pages": [
+        "energy/us_energy_five.html",
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_five.html#T2",
+        "energy/us_energy_five.html#T6",
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false,
+      "intake": [],
+      "note": "09-15 정정 반영(C1): TTM FCF $7.4억(수익률 1.2%) · CapEx/OCF 82.7% · 순부채 $189억 — 재투자 단계. T6: 퍼미안→걸프 물량 축"
+    },
+    "WMB": {
+      "name": "Williams Companies",
+      "market": "US",
+      "layer": "미드스트림 · 주간 가스 파이프라인(Transco) + 발전(BTM)",
+      "business": "Transco — 걸프코스트→뉴욕 미 최대 주간 가스 파이프라인(미 가스 소비의 약 1/3 통과 · ②), 노스웨스트 파이프라인, 마셀러스·헤인즈빌 집적. EBITDA 약 90% 고정 계약. 데이터센터용 발전 진출: 오하이오 Socrates 500MW 가스 발전 $16억, 메타와 10년 고정가 PPA 440MW(2H26 가동) + 2단계 200MW · 전력 프로젝트 총 $31억. 남동부·버지니아 DC 수요용 Transco 증설",
+      "business_grade": "②(회사 IR·보도 · 2026-09-14 · 10-K 미대조)",
+      "pages": [
+        "energy/us_energy_five.html",
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_five.html#T2",
+        "energy/us_energy_five.html#T6",
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": true,
+      "intake": [],
+      "note": "⚠ 09-15 정정(5사 편 C1 · r-20260913-09): TTM FCF −$1.08억(수익률 −0.1%) · CapEx/OCF 101.8% — 현금 회사가 아니라 <재투자 단계>(Transco 증설·Socrates). 종전 「FCF 2.5%·CapEx/OCF 60%」는 창 오류 값. T6: 두 가스 축 모두 물량으로 받는 자리 · 발전(Socrates)은 「가스 = 가장 빠른 전원」의 실행 사례"
+    },
+    "XOM": {
+      "name": "ExxonMobil",
+      "market": "US",
+      "layer": "메이저",
+      "business": "통합 메이저. 상류 4.514Moebd 중 Permian 1.8Moebd(≈40%) · Golden Pass LNG(QatarEnergy 합작) T1 2026-03 첫 생산 · 헤지 안 함 · FY26 CapEx $27~29B",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "CVX": {
+      "name": "Chevron",
+      "market": "US",
+      "layer": "메이저",
+      "business": "통합 메이저. Permian 1MMboe/d+ (전사 4MMboe/d의 ≈25%) · 호주 LNG는 아시아 장기계약 · 헤지 안 함 · FY26 CapEx $18~19B 하단",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "COP": {
+      "name": "ConocoPhillips",
+      "market": "US",
+      "layer": "대형 E&P",
+      "business": "글로벌 E&P. Permian 920Mboe/d(41%) · LNG 오프테이크 12→15MTPA 목표(Port Arthur 30% 지분·Rio Grande T5) · FY26 CapEx $12~12.5B",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "OXY": {
+      "name": "Occidental",
+      "market": "US",
+      "layer": "대형 E&P",
+      "business": "Permian 비중 56%(804/1,433Mboe/d) + OxyChem·미드스트림 · 헤지 100kb/d 칼라 $55/$76(≈7%) · 순부채 감축 → 우선주 상환 순서",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "FANG": {
+      "name": "Diamondback",
+      "market": "US",
+      "layer": "Permian E&P",
+      "business": "Permian(미들랜드+델라웨어) E&P · 아카이브 에너지 5사 편의 E&P 대표",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html",
+        "energy/us_energy_five.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "PR": {
+      "name": "Permian Resources",
+      "market": "US",
+      "layer": "Delaware E&P",
+      "business": "Delaware 순수 E&P(≈100%) · 376Mboe/d · 오일 53% · 오일 헤지 ≈15% · Waha 노출 가스 20% 감산 · 걸프 firm transport 400→700MMcf/d(2027+)",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "opm",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "DVN": {
+      "name": "Devon Energy(+Coterra)",
+      "market": "US",
+      "layer": "Delaware E&P(+Coterra)",
+      "business": "2026-05-07 Coterra 합병 완료(전주식). Delaware 앵커 · Permian ≈2/3 · 1.36MMboe/d · 오일 37% · 「70%+ 헤지 또는 걸프 연결」 · LNG 연동 가격 100MMcf/d(2027)+150(2028) · Delfin FLNG 톨링",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false,
+      "note": "Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json 에 없음(수집 404)"
+    },
+    "MTDR": {
+      "name": "Matador Resources",
+      "market": "US",
+      "layer": "Delaware E&P",
+      "business": "Delaware E&P + San Mateo 미드스트림 · 216Mboe/d · 오일 58% · 오일 헤지 35~40% · ET Hugh Brinson 500,000MMBtu/d firm → 걸프/LNG 시장 접근",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "EQT": {
+      "name": "EQT",
+      "market": "US",
+      "layer": "Appalachia 가스",
+      "business": "Appalachia 순수 최대 가스사(≈7.0Bcfe/d) · 2026 헤지 ≈25%(2027 ≈16%, 의도적 저헤지) · 0.5MTPA LNG 오프테이크 2028 · Port Arthur 오프테이크",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "AR": {
+      "name": "Antero Resources",
+      "market": "US",
+      "layer": "Appalachia 가스",
+      "business": "Appalachia 가스+NGL(4.1Bcfe/d · 액체 216MBbl/d) · 2026 헤지 ≈60% · 「LNG 판매점에 2.3Bcf/d — Appalachia 최고 노출」(회사 발언 ③)",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "RRC": {
+      "name": "Range Resources",
+      "market": "US",
+      "layer": "Appalachia 가스",
+      "business": "Marcellus 순수(2.3Bcfe/d · 가스 67%) · 헤지 비율 미공표(스왑 $4.05·칼라 $3.00/$5.70) · Repauno LPG 수출(2027)",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "EXE": {
+      "name": "Expand Energy",
+      "market": "US",
+      "layer": "Haynesville+Appalachia 가스",
+      "business": "구 Chesapeake+Southwestern. 미국 최대 가스 생산(7.5Bcfe/d · 가스 92%) — Haynesville+Appalachia · 2026 헤지 66% · Delfin FLNG SPA 1.15MTPA(HH 연동) · Twin Eagle 마케팅 인수 $1.25B",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "pretax_margin",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "LNG": {
+      "name": "Cheniere Energy",
+      "market": "US",
+      "layer": "LNG 수출",
+      "business": "미국 최대 LNG 수출(Sabine Pass·Corpus Christi · CCL3 7기 중 6기 수출 중) · 아카이브 5사 편: 파생이 매출원가에 들어가 영업이익 오염(rCV 1.57)",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html",
+        "energy/us_energy_five.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": true
+    },
+    "VG": {
+      "name": "Venture Global",
+      "market": "US",
+      "layer": "LNG 수출",
+      "business": "LNG 수출 2위권 신흥(Calcasieu Pass·Plaquemines · CP2 건설) · 아카이브 5사 편 T3: CapEx/OCF 202% — 건설사 단계",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html",
+        "energy/us_energy_five.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "nd_to_ebitda",
+        "net_debt",
+        "ocf",
+        "opm",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": true
+    },
+    "ET": {
+      "name": "Energy Transfer",
+      "market": "US",
+      "layer": "미드스트림(MLP)",
+      "business": "MLP 미드스트림(가스·NGL·원유 · Hugh Brinson) · 아카이브 5사 편 T5: 한국 투자자에게 MLP 과세 미측정",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html",
+        "energy/us_energy_five.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "opm",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": true
+    },
+    "EPD": {
+      "name": "Enterprise Products",
+      "market": "US",
+      "layer": "미드스트림(MLP·NGL)",
+      "business": "MLP 미드스트림(NGL 분류·수출 · 수수료 기반 GOM 80%) · Mont Belvieu·휴스턴 선박수로 LPG 수출 · 레버리지 3.0x",
+      "business_grade": "②(회사 IR·10-Q 요약 — 프로필 에이전트 WebSearch · 2026-09-13 · 원문 재조회 안 함)",
+      "pages": [
+        "energy/us_energy_hegemony_17.html"
+      ],
+      "facts": [
+        "capex",
+        "capex_to_ocf",
+        "fcf",
+        "fcf_yield",
+        "mcap",
+        "net_debt",
+        "ocf",
+        "opm",
+        "revenue"
+      ],
+      "theses": [
+        "energy/us_energy_hegemony_17.html#T1",
+        "energy/us_energy_hegemony_17.html#T2"
+      ],
+      "tracked_price": false
+    },
+    "HOOD": {
+      "name": "Robinhood Markets",
+      "market": "US",
+      "layer": "핀테크 · 리테일 브로커 + 자사 파생 거래소(Rothera) + 체인",
+      "business": "옵션·주식·크립토·이벤트 계약 거래 수수료(PFOF·거래소 수수료) + 순이자(마진·캐시스윕·대차) + Gold 구독·신용카드. 2Q26 매출 $1,308M(거래 59%·순이자 30%·구독 11%) · 순이익률 42% · Gold 480만 · 플랫폼 자산 $384B(8월). Rothera(SIG 합작 CFTC 거래소) 6월 가동 · Robinhood Chain 7/1 메인넷 · Bitstamp(2025-06 인수) · 토큰화 주식 120개국 · 자본: 현금 $53.6억 · 전환사채 $22억 0% 2029(전환가 $174) · RHS 신용한도 $32.5억 · 06-16 인력 10% 감원. 순이자 성장은 마진 대출($216억 +127%)이 전부. 소송: 제9순회 08-28 패소(스포츠 계약 ≠ 스왑) · 뉴저지 대법원 상고 09-02 · 미시간 10/9 청산 · 네바다 중단 · 워싱턴·매사추세츠·켄터키 · 부족 RICO · 집단소송 4건",
+      "business_grade": "①(10-Q·실적 발표 · 2026-09-16)",
+      "pages": [
+        "payments/payments_company_robinhood.html"
+      ],
+      "facts": [
+        "adj_ebitda_margin_q",
+        "buyback_ttm",
+        "cash",
+        "convertible",
+        "credit_card_loans",
+        "crypto_rev_q",
+        "crypto_share_tx_fy2024",
+        "eps_2026e",
+        "event_contracts_aug",
+        "event_contracts_q2",
+        "event_contracts_rev_q",
+        "gold_subs",
+        "margin_balance",
+        "margin_book_q",
+        "margin_interest_q",
+        "mcap",
+        "net_income_ttm",
+        "ni_margin_ttm",
+        "ni_q_gaap",
+        "ni_q_underlying",
+        "nii_q",
+        "opex_guide_2026",
+        "options_rev_q",
+        "pe",
+        "provision_q",
+        "ps",
+        "rate_sens_100bp",
+        "rev_growth_yoy",
+        "rev_q",
+        "revenue_ttm",
+        "rif_2026_06",
+        "sbc_to_rev_q",
+        "sec_lending_q",
+        "shares_out",
+        "tp_mean"
+      ],
+      "theses": [
+        "payments/payments_company_robinhood.html#T1",
+        "payments/payments_company_robinhood.html#T2",
+        "payments/payments_company_robinhood.html#T3",
+        "payments/payments_company_robinhood.html#T4",
+        "payments/payments_company_robinhood.html#T5"
+      ],
+      "tracked_price": true,
+      "note": "금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편",
+      "sec": "CIK 0001783879 · intake/files/sec/hood/"
+    },
+    "126340": {
+      "name": "비나텍",
+      "market": "KR",
+      "layer": "BE 밸류체인 · 슈퍼캐패시터(스냅인 독점 ②)·시스템",
+      "business": "리드타입 슈퍼캡 58.5% · 스냅인 27.4% · 수소연료전지 8.3% · 수출 72.7%. BE 412억 DC용 슈퍼캡 시스템 계약(2026-06-30). 캐파 스냅인 4.2M/분기 → 9M(2027). 2Q26 매출 35십억(+71%) OP 0 · 순손실 −38(베트남 화재 298억·CB 평가손 96억) · CB 600억(556,740주 ≈ 7.8%). 시총 460십억(9/14 64,100)",
+      "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+      "pages": [
+        "ai-infra/us_bloom_intel_deep.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T5"
+      ],
+      "tracked_price": true,
+      "note": "한투 TP 94,400 = 2027F EBITDA 50.8십억 × 18.4배 − 순차입 206 / 7.74M주 · 2027F 매출 229(+72.9% · 시스템 54)",
+      "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소"
+    },
+    "452280": {
+      "name": "한선엔지니어링",
+      "market": "KR",
+      "layer": "BE 밸류체인 · 피팅·밸브·모듈(1차 벤더 2021-10)",
+      "business": "피팅 63.3% · 밸브 17.9% · 모듈 13.5% · 내수 58.8%. 2Q26 매출 24십억(+52.6%) OPM 23.7%(1Q 27.7%) · 2026F 92(+45.6% · 종전 가이던스 72) · 캐파 1,500억 · 최대주주 62.3% · 유동 37.7% · PER 16.5(2025). 시총 207십억",
+      "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+      "pages": [
+        "ai-infra/us_bloom_intel_deep.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T5"
+      ],
+      "tracked_price": true,
+      "note": "밸류체인 중 유일하게 이익이 있는 회사 · BE 향 비중 미공개(②)",
+      "falsifier": "OPM 20% 아래 2분기 · 2026 매출 720억 미만"
+    },
+    "357580": {
+      "name": "아모센스",
+      "market": "KR",
+      "layer": "BE 밸류체인 · SOFC 세라믹 전해질 기판",
+      "business": "모듈 55.3% · 디바이스 29.4% · 소재 10.7%. BE 기판 초도 납품(2026-03 · MOU 2023-11) · 월 20만 → 60만장 · 초기 점유 9%(BE 2GW당 8,000만장 ③). 2Q26 적자(−1십억) · 2027F 매출 194(+57%). 시총 60십억 · 최대주주 58.8%",
+      "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+      "pages": [
+        "ai-infra/us_bloom_intel_deep.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T5"
+      ],
+      "tracked_price": true,
+      "note": "BE 공급망 탈중국·일본(③) · 가장 늦고 가장 작다",
+      "falsifier": "4Q26 소재 매출 <7십억 · 본격 출하 지연"
+    },
+    "178320": {
+      "name": "서진시스템",
+      "market": "KR",
+      "layer": "BE 밸류체인 · SOFC 모듈·부품 생산",
+      "business": "BE 785억 SOFC 모듈·부품 생산 계약(2026-07). 시총 2,224십억 — 5사 중 최대·다각화(ESS·통신장비)",
+      "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+      "pages": [
+        "ai-infra/us_bloom_intel_deep.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T5"
+      ],
+      "tracked_price": true,
+      "note": "BE 비중은 작음 [추론]",
+      "falsifier": "785억 계약 이행 지연 공시"
+    },
+    "089890": {
+      "name": "코세스",
+      "market": "KR",
+      "layer": "BE 밸류체인 · 전극셀 자동화 장비",
+      "business": "BE 1,504억 AI서버용 전극셀 자동화 장비(2026-07) · BE 누적 수주 2,372억(25-11 178 → 26-07 2,372). 시총 408십억 — 장비 수주가 BE 캐파(프리몬트 5GW → 4GW 대응)의 선행지표",
+      "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+      "pages": [
+        "ai-infra/us_bloom_intel_deep.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T5"
+      ],
+      "tracked_price": true,
+      "note": "캐파 증설의 첫 발주처",
+      "falsifier": "BE 신규 장비 발주 2분기 공백"
+    },
+    "000660": {
+      "name": "SK하이닉스",
+      "market": "KR",
+      "layer": "메모리 · HBM 1위",
+      "business": "DRAM·HBM·NAND. 보유 종목",
+      "business_grade": "카드 테제에서 파생(2026-09-17)",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T2",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T5"
+      ],
+      "tracked_price": true,
+      "position": "보유 54주 · 평단 1,699,046 · 스톱 1,200,000",
+      "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
+      "note": "HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다."
+    },
+    "005930": {
+      "name": "삼성전자",
+      "market": "KR",
+      "layer": "메모리 2위 · 파운드리 · 삼성전기(기판·MLCC)",
+      "business": "DRAM·NAND·HBM·파운드리·세트. 보유 종목",
+      "business_grade": "카드 테제에서 파생(2026-09-17)",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T1",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T2",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T3",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T4",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T5"
+      ],
+      "tracked_price": true,
+      "position": "보유 신규 496주 평단 244,927 + 레거시 1,300주 평단 72,600",
+      "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
+      "note": "HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)"
+    },
+    "207940": {
+      "name": "삼성바이오로직스",
+      "market": "KR",
+      "layer": "CDMO",
+      "business": "항체 CDMO · PolyPeptide 인수. 보유 종목",
+      "business_grade": "카드 테제에서 파생(2026-09-17)",
+      "pages": [
+        "glp1/glp1_company_samsung_biologics.html"
+      ],
+      "facts": [],
+      "theses": [
+        "glp1/glp1_company_samsung_biologics.html#T1",
+        "glp1/glp1_company_samsung_biologics.html#T2",
+        "glp1/glp1_company_samsung_biologics.html#T3",
+        "glp1/glp1_company_samsung_biologics.html#T4"
+      ],
+      "tracked_price": true,
+      "position": "보유 17주 · 평단 1,549,529",
+      "falsifier": "T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선 없이도 PolyPeptide 가치가 재평가됨, 또는 반대로 마진이 2개 분기 연속 악화 · T3: 성장률이 20% 아래로 내려갔는데도 PER 40x가 유지됨 (성장률이 배수의 근거가 아니었음) · T4: Orforglipron 처방이 급증하고 주사제 선호 80%가 무너짐 (경구 전환이 빠름)",
+      "note": "3중 엔진 중 둘은 확정이고 하나는 실행 리스크다. 배수는 자기 역사 밴드 아래로 내려왔지만(38.23배) PER을 지탱하던 OPM 45%·성장 20% 두 문턱에 동시에 닿아 있다."
+    },
+    "214450": {
+      "name": "파마리서치",
+      "market": "KR",
+      "layer": "에스테틱 · 리쥬란",
+      "business": "PDRN·PN 스킨부스터 · 해외 확장. 보유 종목",
+      "business_grade": "카드 테제에서 파생(2026-09-17)",
+      "pages": [
+        "k-beauty/k_beauty_company_pharmaresearch.html"
+      ],
+      "facts": [],
+      "theses": [
+        "k-beauty/k_beauty_company_pharmaresearch.html#T1",
+        "k-beauty/k_beauty_company_pharmaresearch.html#T2",
+        "k-beauty/k_beauty_company_pharmaresearch.html#T3",
+        "k-beauty/k_beauty_company_pharmaresearch.html#T4"
+      ],
+      "tracked_price": true,
+      "position": "보유 170주 · 평단 412,577",
+      "falsifier": "T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에 판관비 증가율이 매출 증가율 아래로 내려오면서 OPM이 39% 위로 회복 (투자 국면이 맞았다) · T3: [추론] OPM이 37%대 이하에 머물거나 더 내려가는데도 파마리서치 PER이 K뷰티 5사 중 상위(2026.08.20 기준 21.62배 · 에이피알 24.76  · T4: 3rd-class 승인 또는 타법인 출자·합작 공시가 나오면 시점 전제를 다시 쓴다.",
+      "note": "원가는 좋아졌는데 판관비가 마진을 다 깎았다(2Q26 OPM 37.20%). 그 판관비가 성장의 값인지 비용인지는 3Q26 전까지 안 갈리고, 배수 프리미엄이 그 답에 걸려 있다."
+    },
+    "BE": {
+      "name": "Bloom Energy",
+      "market": "US",
+      "layer": "온사이트 발전 · SOFC",
+      "business": "SOFC 연료전지 · 800V DC 네이티브 · Brookfield PPA · Oracle MSA 2.8GW. 매니저 7종목",
+      "business_grade": "카드 테제에서 파생(2026-09-17)",
+      "pages": [
+        "ai-infra/us_bloom_intel_deep.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T1",
+        "ai-infra/us_bloom_intel_deep.html#T2",
+        "ai-infra/us_bloom_intel_deep.html#T3",
+        "ai-infra/us_bloom_intel_deep.html#T4",
+        "ai-infra/us_bloom_intel_deep.html#T5"
+      ],
+      "tracked_price": true,
+      "position": "미보유 · 매니저 7종목",
+      "falsifier": "T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10-Q 미주 비중 25% 초과(서사 확인) / 반대로 단일 고객 50% 재돌파(구조) · T3: 3Q26 관계자 매출이 분기 매출의 20% 초과 — 1Q가 예외가 아니라 패턴 · T4: 연내 신규 하이퍼스케일러 계약 0(한투 자신의 기대) · 또는 주피터 2027-02 재지연 · 또는 SemiAnalysis BTM 50% 전망 철회 · 제3자(S · T5: 비나텍 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 등장 · 한선 OPM 20% 아래 2분기 · 아모센스 4Q26 소재 매출 <7십억",
+      "note": "블룸은 좋아졌지만 서사(미국 AI DC 온사이트)와 원장(1H26 아시아태평양 90% · 단일고객 73% · 1Q 관계자 49.7%)이 다르다. 한투(09-16)의 BTM·SOFC 프레임은 수요 논리를 채우지만 그 세 숫자를 건드리지 않는다. 판정은 3Q26 10-Q(지역·고객·관계자)와 오라클 주피터(파이프라인 2027-02)."
+    },
+    "036540": {
+      "name": "SFA반도체",
+      "market": "KOSDAQ",
+      "layer": "칩 후공정(OSAT) — 삼성 외주화 1층",
+      "business": "① 2Q26 매출 1,263억 · OP −62억(OPM −4.87%) · 3Q26 컨센 매출 1,479억 · OP −31억 · 4Q25 1,196억·−6억. 시총 1.44조(09-17).",
+      "business_grade": "① 네이버 재무 원장 · ③ 컨센서스",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [
+        "companies.036540"
+      ],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T6"
+      ],
+      "tracked_price": true,
+      "note": "2026-09-20 ①로 승격. 값이 붙었는데 이익이 안 온 자리 — 한양디지텍의 대조군",
+      "falsifier": "4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정",
+      "ticker": "036540",
+      "intake": [
+        "u-20260917-08",
+        "u-20260920-06"
+      ]
+    },
+    "003160": {
+      "name": "디아이",
+      "market": "KR",
+      "layer": "번인·웨이퍼 테스터(자회사 디지털프론티어 HBM4 웨이퍼 테스터) · 삼성·SK하이닉스",
+      "business": "2026 공시 — 삼성 누적 1,517억 · SK하이닉스 HBM4 웨이퍼 테스터 1,960억. 2Q26 매출 1,686억(+41%) OP 396억(OPM 23.5%). 시총 9,000억(31,800) PER 30.8 · 컨센 2026 OP 1,157억. 캐파 DF 연 150대(③)",
+      "business_grade": "① 공시·확정 실적 · ③ 컨센",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T7"
+      ],
+      "tracked_price": true,
+      "note": "셋 중 이익이 이미 온 유일한 곳 · 3M +9.3%",
+      "falsifier": "3Q26 OPM 15% 미만"
+    },
+    "232140": {
+      "name": "와이씨",
+      "market": "KR",
+      "layer": "메모리 웨이퍼 테스터(DRAM·NAND·HBM) · 삼성",
+      "business": "삼성 Memory Wafer Tester 1,622억(8/27 · 납기 2027-06-30) + 상반기 930·403·422억. 2Q26 매출 1,050억 OP 151억(OPM 14.3%). 시총 9,927억(12,090 · 52주 6,820~24,150) PER 31.8 · 컨센 2026 OP 550억. 3M −19.9% 6M −41.5%",
+      "business_grade": "① 공시·확정 실적 · ③ 컨센",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T7"
+      ],
+      "tracked_price": true,
+      "note": "계약 최대 · 인식은 2027까지 분할 · 20일 외국인·기관 순매도",
+      "falsifier": "1,622억 정정(감액·연기) 공시"
+    },
+    "086390": {
+      "name": "유니테스트",
+      "market": "KR",
+      "layer": "DRAM·HBM 번인/웨이퍼 테스터 · SK하이닉스 + 태양광 EPC",
+      "business": "SK하이닉스 HBM4 WAFER TESTER 292억(5월)·227억(7월 · 납기 10/8) · 태양광 601억(~2028). 2Q26 매출 505억 OP 79억 흑자전환(2025 OP −211억). 시총 2,536억(11,990) · 컨센 2026 OP 219억",
+      "business_grade": "① 공시·확정 실적 · ③ 컨센",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T7"
+      ],
+      "tracked_price": true,
+      "note": "삼성 계약 없음 · 매출의 절반이 태양광 EPC",
+      "falsifier": "3Q까지 삼성·SK하이닉스 추가 공시 0"
+    },
+    "402340": {
+      "name": "SK스퀘어",
+      "market": "KR",
+      "layer": "지주 · SK하이닉스 지분 ~20.7% 통로",
+      "business": "시총 133.5조(9/17 1,012,000) · 하이닉스 지분가치 265.8조 → 할인 ~50% · 2026F 지분법 OP 48.2조(컨센) · 추정 PER 2.96 · PBR 2.43 · 외인 46.5%",
+      "business_grade": "① 시세·컨센 · ② 지분율 추정",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T6"
+      ],
+      "tracked_price": true,
+      "note": "할인율 = 1 − 스퀘어 시총 ÷ (하이닉스 시총 × 지분율) · 월 1회",
+      "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1"
+    },
+    "MU": {
+      "name": "Micron",
+      "market": "US",
+      "layer": "DRAM·HBM·NAND 메이커 · 미국 유일 DRAM · 코어(메모리) 후보",
+      "business": "FQ4(8월 분기) 10/1 발표 — RBC 모델 매출 $50B · EPS 31.09 · GM 86.7 · DRAM 계약 CQ3 +20%+. FQ1 가이던스 컨센 $56B/EPS 34.85(TD 예상 ~37 · RBC +3~5%). SCA 16건 · $22B 예치 · 매출 절반 커버 · 40% 가격 하한. 2027 HBM 계약 +80~100%(RBC 공급망) · HBM 점유 ~25%. GPM 정점 CQ2:27 ~89%(TD) · CY27 EPS $173 · CY28 $138(TD). 자사주 $20B대(12/9 CHIPS 제한 2주년 후) · FCF 50%+ 환원 · CY27 FCF $100B+(RBC). 12M RS +472 · 3M −15%(09-15 스크린 88.5 A)",
+      "business_grade": "③ TD Cowen 09-17 · RBC 09-18(SCA는 회사 공시 인용) · ① 스크린 시세",
+      "pages": [
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2,T5",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3,T4"
+      ],
+      "tracked_price": true,
+      "note": "코어 증액 트리거 종목 — 10/1 가이던스 ≥37 정상 · <35 = n-memory-durable 1스트라이크 · TP TD $1,600(CY27 9배) · RBC $1,500",
+      "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례"
+    },
+    "069960": {
+      "code": "069960",
+      "name": "현대백화점",
+      "market": "KR",
+      "layer": "소비 · 백화점(연결: 백화점 16점·아울렛 + 현대면세점 + 지누스 + 한섬 34.6% 등)",
+      "business": "백화점 수수료 매출(순매출 인식)이 이익의 전부. 2Q26 백화점 OP 1,101억 · 면세 62억 · 지누스 −267억 → 연결 793억. 발행주식 21,564,912(2026-05 소각 후) · 시총 2.14조(09-18)",
+      "business_grade": "①(잠정실적·소각·배당 공시 원문) · 부문 손익은 ②(회사 IR을 인용한 기사 · 반기보고서 세그먼트 미대조)",
+      "note": "지누스 인수(2022-03 · 8,790억) 누적 손상 4,997억(56.8% · ② 허핑턴포스트) · 2025 지누스 국내 매출 590억(목표 3,000억). 더현대광주 1,500억 유상증자(① 2025-11-05 · '26.1~5 3회 분납 · 출점 CapEx). 밸류업 목표 '27 ROE 6% · PBR 0.4(달성)/장기 0.8 · 배당총액 500억",
+      "falsifier": "3Q26 지누스 손실 −250억 이상 지속 + 백화점 OP 감익(≈11-05)",
+      "pages": [
+        "consumer/consumer_sector_department.html"
+      ],
+      "facts": [],
+      "theses": [
+        "consumer/consumer_sector_department.html#T6,T4"
+      ],
+      "tracked_price": true
+    },
+    "011070": {
+      "code": "011070",
+      "name": "LG이노텍",
+      "market": "KR",
+      "layer": "광학(애플 카메라) / 기판(FC-BGA 후발)",
+      "business": "카메라 모듈(폴디드줌·가변조리개 · 애플 향 매출 80%) · 반도체 기판(RF-SiP·FC-CSP·FC-BGA · 매출 9%) · 차량 부품(9%)",
+      "business_grade": "②(부문 매출은 2Q26 실적 기사 · 고객 집중도는 반기보고서 인용 기사 · 사업보고서 원문 미대조 · 2026-09-19)",
+      "note": "2026-09-18 531,000원(시총 12.5조 · 2,362만주) · 추정 PER 13.49 · PBR 1.97 · 52주 174,900~1,814,000(dd52 −71%). 상반기 「기판 공급 부족」 테마로 +460% 후 −54%. 판단 페이지 hbm_pkg_theme_substrate T6. 2Q26 잠정 OP 2,458억(07-27) · 2026F 컨센 OP 1조2,757억 진도율 42.4%.",
+      "falsifier": "3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순)",
+      "pages": [
+        "hbm-packaging/hbm_pkg_theme_substrate.html"
+      ],
+      "facts_candidates": {
+        "rev_2q26": {
+          "value": 5527241,
+          "unit": "백만원",
+          "basis": "연결 잠정",
+          "date": "2026-07-27",
+          "grade": "①",
+          "source": "naver disclosure 80137986"
+        },
+        "op_2q26": {
+          "value": 245754,
+          "unit": "백만원",
+          "basis": "연결 잠정",
+          "date": "2026-07-27",
+          "grade": "①",
+          "source": "naver disclosure 80137986"
+        },
+        "op_1h26": {
+          "value": 541073,
+          "unit": "백만원",
+          "basis": "연결 잠정 누계",
+          "date": "2026-07-27",
+          "grade": "①"
+        },
+        "opm_2q26": {
+          "value": 4.45,
+          "unit": "%",
+          "numerator": "OP 245,754",
+          "denominator": "매출 5,527,241",
+          "grade": "①"
+        },
+        "op_2026f_consensus": {
+          "value": 1275700,
+          "unit": "백만원",
+          "basis": "네이버 컨센(isConsensus Y)",
+          "date": "2026-09-19",
+          "grade": "③"
+        },
+        "op_3q26e_consensus": {
+          "value": 311200,
+          "unit": "백만원",
+          "basis": "네이버 컨센(isConsensus Y)",
+          "date": "2026-09-19",
+          "grade": "③"
+        },
+        "apple_share_1h26": {
+          "value": 79.9,
+          "unit": "%",
+          "numerator": "10% 이상 단일고객 매출 8,841,475백만",
+          "denominator": "1H26 매출 11,062,077백만",
+          "basis": "반기보고서(기사 인용)",
+          "date": "2026-08-14",
+          "grade": "①값 ②경로"
+        },
+        "seg_rev_2q26": {
+          "optics": 4517900,
+          "package": 498400,
+          "mobility": 510900,
+          "unit": "백만원",
+          "grade": "②(실적 기사 · IR 자료 미열람)"
+        }
+      },
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_theme_substrate.html#T6"
+      ],
+      "tracked_price": true
+    },
+    "131290": {
+      "code": "131290",
+      "name": "티에스이",
+      "market": "KR",
+      "layer": "테스트 인터페이스·소모품(프로브카드 · 테스트 소켓 · 인터페이스/번인 보드) — 테스터(디아이·와이씨·유니테스트 T7)의 앞단",
+      "business": "메모리 웨이퍼·패키지 테스트용 프로브카드(NAND→DRAM·HBM 확장) · 테스트 소켓 · 인터페이스/번인 보드 · 자회사 타이거일렉(PCB)·메가터치(포고핀)·지엠테스트(테스트 서비스). 2025 매출 4,289억(메모리 88%) · 프로브카드 1,436억(33%)",
+      "business_grade": "②(반기보고서 미대조 · 제품 믹스·고객은 IR 보도 인용 · 2026-09-19)",
+      "pages": [
+        "node-screener/node_screener_hbm_scoreboard.html"
+      ],
+      "theses": [
+        "node-screener/node_screener_hbm_scoreboard.html#T6"
+      ],
+      "note": "2Q26 매출 1,888억 OP 525억 OPM 27.8% · 시총 2조 6,879억(09-18) · 추정 PER 18.8 · PBR 5.67 · CB 1,000억(전환가 238,664 · 리픽싱 없음 · 2027-07-22~) · 공급계약 공시 없는 소모품 구조 · 투자경고 09-11 · 12M +423%(2025-09-18 46,450 → 243,000)",
+      "falsifier": "T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 → 3사 서사 도전",
+      "tracked_price": true,
+      "facts": []
+    },
+    "285A": {
+      "code": "285A",
+      "name": "Kioxia Holdings(키옥시아)",
+      "market": "JP",
+      "layer": "메모리 · NAND 전업(HBM·DRAM 없음) · SanDisk와 욧카이치·기타카미 JV",
+      "business": "3D NAND(BiCS FLASH) 웨이퍼·SSD. 1Q FY2026 매출 구성 SSD&스토리지 66%(데이터센터·엔터프라이즈가 그중 60%+) · 스마트디바이스 30% · 기타 4%. LTA 물량 커버 목표 CY2028 50%",
+      "business_grade": "① 1Q FY2026 결산 단신·설명회 자료(2026-07-31) — 사업의 개요는 유가증권보고서 미대조",
+      "pages": [
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html"
+      ],
+      "theses": [
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T6,T4"
+      ],
+      "tracked_price": true,
+      "position": "미보유",
+      "note": "가격은 정점 이익을 이미 배수에 넣었다(FY3/27 PER 5.7~6.9배 · SanDisk 9배). 같은 JV의 두 표본 중 키옥시아가 더 싼 이유는 오버행(도시바 12.84% 잔여 매도 · SKH 비이클 14.19%)과 HBM 부재다. 회사 가이던스 자체가 ASP +70→+25 둔화를 넣었고, TrendForce는 NAND 완화를 2H27(DRAM 2028)로 본다. 스크린(09-18 A · 88.7)의 fwd EPS 2,728.6은 10/1 3:1 분할 반영값이라 가격(미분할)과 짝이 안 맞는다 — 스크린 PER 20배는 오류, 실제 6~7배",
+      "falsifier": "T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce 4Q26 NAND +10% 재가속 · 오버행 소멸 — 셋 중 둘",
+      "facts": []
+    },
+    "BABA": {
+      "name": "Alibaba Group Holding",
+      "ticker": "BABA",
+      "market": "US(ADR)·HK 9988",
+      "layer": "중국 하이퍼스케일러 · 클라우드(阿里云) + MaaS(Qwen) + T-Head 칩",
+      "business": "중국 최대 퍼블릭 클라우드. 3년 3,800억 위안 캐펙스 · FY2031 외부 클라우드 매출 $1,000억 목표 · MaaS ARR 8월 160억 위안 → 연말 300억 목표 · 2032년까지 글로벌 DC 용량 10배 · 자체 칩 T-Head. 압사라 2025 기조: AGI→ASI · LLM 을 AI 시대 OS 로 규정 · 글로벌 「슈퍼 클라우드」 5~6개 전망",
+      "business_grade": "③(Citi 09-19 프리뷰 · 회사 목표치 · 원문 미대조)",
+      "pages": [],
+      "facts": [],
+      "theses": [],
+      "intake": [
+        "u-20260920-02"
+      ],
+      "note": "2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_value_chain_guide_v2 T5 의 「六張網」 서술로만 있다"
+    },
+    "078350": {
+      "name": "한양디지텍",
+      "ticker": "078350",
+      "market": "KOSDAQ",
+      "layer": "메모리 모듈·SSD 조립(SMT) — 삼성 외주화의 2층",
+      "business": "서버 메모리 모듈 + 서버 SSD SMT. ① DART 제22기 원문 — FY2025 매출 6,510.51억: 메모리모듈 4,256.57억(65.5%) · SSD 2,066.85억(31.7%) · IP통신 87.19억(1.3%) · 기타 99.89억(1.5%). 1H26 4,499.98억: 모듈 64.2% · SSD 34.3%. 매출처 실명 공시 — 모듈·SSD 전량 삼성전자(합계 97.2% · 1H26 98.5%). 생산은 베트남(한양디지텍VINA 외주생산 → 삼성 지정물류센터 납품 → 월말 일괄·익월 현금). 수주현황 미기재(수시 주문 생산). 원재료 매입 5,731.76억(매출의 88.0%) · 매입처 Unimicron·Tripod·심텍·APCB·UNIQUEST. 가동률 모듈 81.82% · SSD 63.89%. PCB 단가 모듈 USD 2.40 · SSD USD 2.92(2년 +35.8%). 실적 — 2Q26 매출 2,580억 OP 154억 OPM 5.96% / 1H26 4,500억·222억 / FY25 6,511억·239억. 시총 3,765억 · PER 12.14배 · 외인 6.98% · 52주 고점 대비 −44.2%",
+      "business_grade": "① DART 사업보고서·반기보고서 원문 + 네이버 재무 원장(교차 확인)",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [
+        "companies.078350"
+      ],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T6",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T8"
+      ],
+      "intake": [
+        "u-20260917-08",
+        "u-20260920-03",
+        "u-20260920-07"
+      ],
+      "note": "2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 — 아카이브가 ②로 들고 있던 「SSD 15%」는 FY2023 값이었다"
+    },
+    "192650": {
+      "name": "드림텍",
+      "ticker": "192650",
+      "market": "KOSPI",
+      "layer": "EMS — 스마트폰·전장·바이오 + (신규) 인도 메모리 모듈",
+      "business": "본체는 스마트폰 모듈·전장·바이오 EMS. 2024년 국내 메모리 고객사의 공급망 다변화로 인도 메모리모듈 공급사 신규 선정 → 2025-10 첫 진입(②). 🔴 ① 실적(네이버 원장 09-20) — 2Q26 매출 2,573억에 OP 1억(OPM 0.04%) · 순이익 −50억 / 1H26 매출 5,180억 · OP 5억 · 순손실 −94억 / 연간 2025 12,306억·OP 314억(2.55%). 2026E 컨센 매출 12,260억 · OP 386억(③)인데 1H26 5억이라 2H26에 381억을 요구한다. ① 시총 5,040억 · EPS −139원(PER 없음) · PBR 1.38 · 외인소진율 58.82%",
+      "business_grade": "① 재무·시세는 네이버 원장 · ② 인도 진입 보도 · ③ 컨센서스",
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "facts": [
+        "companies.192650"
+      ],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_samsung.html#T8"
+      ],
+      "intake": [
+        "u-20260917-08",
+        "u-20260920-03"
+      ],
+      "note": "2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만"
+    },
+    "VST": {
+      "name": "Vistra Corp",
+      "ticker": "VST",
+      "market": "NYSE",
+      "layer": "미국 상인형 전력 — 소매 + 발전(원전 약 6.6GW 포함 총 약 44GW)",
+      "business": "Retail/Texas/East/West/Asset Closure 5부문. 서명 완료 20년 PPA 약 3.8GW — AWS向 Comanche Peak 최대 1,200MW(2027-4Q 인도 개시~2032 램프) + Meta向 PJM 원전 2,609MW(가동분 2,176MW 2026말~2027말 · 업레이트 433MW 2031~2034). 계약단가 미공개. ① TTM(2025Q3~2026Q2) 매출 $19.21B · OP $3.56B(18.5%) · EBITDA $5.42B · OCF $5.12B · CapEx $2.87B · FCF $2.25B · 순부채 $19.16B(ND/EBITDA 3.53배). ③ FY26 가이던스 Adj EBITDA $6.8~7.6B · Adj FCFbG $3.925~4.725B",
+      "business_grade": "① 재무는 SEC XBRL · ② 시총·PPA 보도 · ③ 가이던스",
+      "pages": [
+        "ai-infra/us_merchant_power_vst_nrg.html"
+      ],
+      "facts": [
+        "companies.VST"
+      ],
+      "theses": [
+        "ai-infra/us_merchant_power_vst_nrg.html#T1"
+      ],
+      "intake": [
+        "u-20260920-04"
+      ],
+      "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
+      "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "NRG": {
+      "name": "NRG Energy",
+      "ticker": "NRG",
+      "market": "NYSE",
+      "layer": "미국 상인형 전력 — 소매(약 600만 고객) + 발전 + Vivint Smart Home + CPower",
+      "business": "2026-01-30 LS Power 포트폴리오 인수 완료(가스·이중연료 18개소 약 13GW · 발전용량 2배). 지역 믹스 ERCOT 50% / PJM 39% / ISO-NE 8% / NYISO 3%. 원전 없음 — 2023-11 South Texas Project 44% 지분을 Constellation에 $1.75B 매각. 하이퍼스케일러 건은 「주요 상업조건 합의」 단계(정식 PPA 아님) — 텍사스 1.2GW 신설 가스 · 투자 $3.2B · 2029년말 COD · 목표 연 Adj EBITDA $500M. ① TTM 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B · OCF $1.55B · FCF $0.35B · 순부채 $23.23B(ND/EBITDA 6.31배 · 부채 2024-12 $10.89B→2026-06 $23.39B). ③ FY26 가이던스 Adj EBITDA $5.325~5.825B · FCFbG $2.8~3.3B · 재무정책 Net Debt/EBITDA 3.0배 미만",
+      "business_grade": "① 재무는 SEC XBRL · ② 시총·인수·하이퍼스케일러 보도 · ③ 가이던스",
+      "pages": [
+        "ai-infra/us_merchant_power_vst_nrg.html"
+      ],
+      "facts": [
+        "companies.NRG"
+      ],
+      "theses": [
+        "ai-infra/us_merchant_power_vst_nrg.html#T1"
+      ],
+      "intake": [
+        "u-20260920-04"
+      ],
+      "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것",
+      "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
+    },
+    "CBRS": {
+      "name": "Cerebras Systems",
+      "ticker": "CBRS",
+      "market": "NASDAQ",
+      "layer": "웨이퍼스케일 AI 반도체 + 추론 클라우드",
+      "business": "WSE 기반 AI 시스템 하드웨어 + 추론 클라우드. 2026-05-14 IPO(공모가 $185 · 3,000만주 · 조달 $5.55B ②). ① 1H26 매출 $373.5M(1H25 $202.8M) · 2Q26 $180.1M(QoQ −6.9%) · GAAP GPM 14.2% · OP −$477.2M · CapEx 1H26 $548.9M · D&A $42.6M · 현금 $6.74B · 자본 $9.15B. ② RPO $25.4B(24개월 인식분 약 22%) · 분기 SBC $386.6M · 2Q26 3개 고객 34/32/10%=76%(이름 미공개) · FY25 G42 24%+MBZUAI 62%=86%. ② OpenAI MRA(2025-12 · 750MW · 금액 보도 $20B/$10B 상충) · AWS Bedrock 2027-1Q 개시. ③ FY26 core 가이던스 $880~890M",
+      "business_grade": "① 재무는 SEC XBRL · ② 계약·고객·시총 · ③ 가이던스(core는 비GAAP)",
+      "pages": [
+        "ai-infra/ai_chip_architecture_war.html"
+      ],
+      "facts": [
+        "companies.CBRS"
+      ],
+      "theses": [
+        "ai-infra/ai_chip_architecture_war.html#T5"
+      ],
+      "intake": [
+        "u-20260920-04"
+      ],
+      "note": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다",
+      "canonical_page": "ai-infra/ai_chip_architecture_war.html"
+    },
+    "NTRA": {
+      "name": "Natera",
+      "ticker": "NTRA",
+      "market": "NASDAQ",
+      "layer": "분자진단(cfDNA/ctDNA) — Women's Health · Oncology(Signatera) · Organ Health(Prospera)",
+      "business": "검사 물량 × 보험 상환단가(ASP)가 사업의 실체. ① TTM 매출 $2,707M(8분기 연속 증가 $440M→$753M) · OP −$290M(−10.7%) · OCF +$228M · CapEx $144M · FCF +$84M · D&A $53M. ② 2Q26 검사 104만건 · Signatera 임상 MRD 28.3만 유닛(+56.4% YoY) · ASP 약 $1,275 · GPM 64.5%(+110bp). ②③ Medicare FFS 요율 $1,495가 2026~2027년 고정. ② 우발채무 Guardant Health 배심 평결 $292.5M(제9연방항소법원 계류 25-5503). ③ FY26 가이던스 매출 $2,850~2,910M · GM 64~66%",
+      "business_grade": "① 재무는 SEC XBRL · ② 물량·ASP·소송 · ③ 가이던스",
+      "pages": [
+        "ai-bio/ai_bio_investment_map.html"
+      ],
+      "facts": [
+        "companies.NTRA"
+      ],
+      "theses": [
+        "ai-bio/ai_bio_investment_map.html#T5"
+      ],
+      "intake": [
+        "u-20260920-04"
+      ],
+      "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것",
+      "canonical_page": "ai-bio/ai_bio_investment_map.html"
+    },
+    "MXL": {
+      "name": "MaxLinear",
+      "market": "US",
+      "layer": "연결 반도체 · PAM4 DSP·인프라",
+      "business": "광 AI DC용 PAM4 DSP(Keystone 800G)·로드맵 1.6T(Rushmore)·TIA/리타이머 + 브로드밴드·커넥티비티·산업 레거시",
+      "business_grade": "①(10-Q 세그먼트·8-K EX-99.1 2026-07-23 대조 · 2026-09-23)",
+      "pages": [
+        "ai-infra/optical_interconnect_layer.html",
+        "ai-infra/optical_valuechain_9.html"
+      ],
+      "facts": [
+        "revenue_ttm",
+        "gpm",
+        "opm",
+        "rev_growth_yoy",
+        "mcap",
+        "ps",
+        "ps_over_growth",
+        "rev_q",
+        "gpm_q",
+        "opm_q",
+        "sbc_to_rev_q",
+        "inventory_yoy",
+        "receivables_yoy",
+        "seg_infrastructure_share",
+        "seg_infrastructure_growth",
+        "optical_dc_guide_fy2026"
+      ],
+      "theses": [],
+      "tracked_price": true,
+      "note": "2026-09-23 아카이브 공백 메움 — WEB/SEC 라벨 필수. 인프라 50%(Q2)이나 전사 브로드밴드 혼합.",
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
     }
-   },
-   "facts": [],
-   "theses": [
-    "hbm-packaging/hbm_pkg_theme_substrate.html#T6"
-   ],
-   "tracked_price": true
   },
-  "131290": {
-   "code": "131290",
-   "name": "티에스이",
-   "market": "KR",
-   "layer": "테스트 인터페이스·소모품(프로브카드 · 테스트 소켓 · 인터페이스/번인 보드) — 테스터(디아이·와이씨·유니테스트 T7)의 앞단",
-   "business": "메모리 웨이퍼·패키지 테스트용 프로브카드(NAND→DRAM·HBM 확장) · 테스트 소켓 · 인터페이스/번인 보드 · 자회사 타이거일렉(PCB)·메가터치(포고핀)·지엠테스트(테스트 서비스). 2025 매출 4,289억(메모리 88%) · 프로브카드 1,436억(33%)",
-   "business_grade": "②(반기보고서 미대조 · 제품 믹스·고객은 IR 보도 인용 · 2026-09-19)",
-   "pages": [
-    "node-screener/node_screener_hbm_scoreboard.html"
-   ],
-   "theses": [
-    "node-screener/node_screener_hbm_scoreboard.html#T6"
-   ],
-   "note": "2Q26 매출 1,888억 OP 525억 OPM 27.8% · 시총 2조 6,879억(09-18) · 추정 PER 18.8 · PBR 5.67 · CB 1,000억(전환가 238,664 · 리픽싱 없음 · 2027-07-22~) · 공급계약 공시 없는 소모품 구조 · 투자경고 09-11 · 12M +423%(2025-09-18 46,450 → 243,000)",
-   "falsifier": "T6: 3Q26 매출 QoQ 감소 또는 OPM 24% 미만 → 피크 판정. SK하이닉스 HBM4E 퀄 미채택 → 3사 서사 도전",
-   "tracked_price": true,
-   "facts": []
-  },
-  "285A": {
-   "code": "285A",
-   "name": "Kioxia Holdings(키옥시아)",
-   "market": "JP",
-   "layer": "메모리 · NAND 전업(HBM·DRAM 없음) · SanDisk와 욧카이치·기타카미 JV",
-   "business": "3D NAND(BiCS FLASH) 웨이퍼·SSD. 1Q FY2026 매출 구성 SSD&스토리지 66%(데이터센터·엔터프라이즈가 그중 60%+) · 스마트디바이스 30% · 기타 4%. LTA 물량 커버 목표 CY2028 50%",
-   "business_grade": "① 1Q FY2026 결산 단신·설명회 자료(2026-07-31) — 사업의 개요는 유가증권보고서 미대조",
-   "pages": [
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html"
-   ],
-   "theses": [
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T6,T4"
-   ],
-   "tracked_price": true,
-   "position": "미보유",
-   "note": "가격은 정점 이익을 이미 배수에 넣었다(FY3/27 PER 5.7~6.9배 · SanDisk 9배). 같은 JV의 두 표본 중 키옥시아가 더 싼 이유는 오버행(도시바 12.84% 잔여 매도 · SKH 비이클 14.19%)과 HBM 부재다. 회사 가이던스 자체가 ASP +70→+25 둔화를 넣었고, TrendForce는 NAND 완화를 2H27(DRAM 2028)로 본다. 스크린(09-18 A · 88.7)의 fwd EPS 2,728.6은 10/1 3:1 분할 반영값이라 가격(미분할)과 짝이 안 맞는다 — 스크린 PER 20배는 오류, 실제 6~7배",
-   "falsifier": "T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce 4Q26 NAND +10% 재가속 · 오버행 소멸 — 셋 중 둘",
-   "facts": []
-  },
-  "BABA": {
-   "name": "Alibaba Group Holding",
-   "ticker": "BABA",
-   "market": "US(ADR)·HK 9988",
-   "layer": "중국 하이퍼스케일러 · 클라우드(阿里云) + MaaS(Qwen) + T-Head 칩",
-   "business": "중국 최대 퍼블릭 클라우드. 3년 3,800억 위안 캐펙스 · FY2031 외부 클라우드 매출 $1,000억 목표 · MaaS ARR 8월 160억 위안 → 연말 300억 목표 · 2032년까지 글로벌 DC 용량 10배 · 자체 칩 T-Head. 압사라 2025 기조: AGI→ASI · LLM 을 AI 시대 OS 로 규정 · 글로벌 「슈퍼 클라우드」 5~6개 전망",
-   "business_grade": "③(Citi 09-19 프리뷰 · 회사 목표치 · 원문 미대조)",
-   "pages": [],
-   "facts": [],
-   "theses": [],
-   "intake": [
-    "u-20260920-02"
-   ],
-   "note": "2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_value_chain_guide_v2 T5 의 「六張網」 서술로만 있다"
-  },
-  "078350": {
-   "name": "한양디지텍",
-   "ticker": "078350",
-   "market": "KOSDAQ",
-   "layer": "메모리 모듈·SSD 조립(SMT) — 삼성 외주화의 2층",
-   "business": "서버 메모리 모듈 + 서버 SSD SMT. ① DART 제22기 원문 — FY2025 매출 6,510.51억: 메모리모듈 4,256.57억(65.5%) · SSD 2,066.85억(31.7%) · IP통신 87.19억(1.3%) · 기타 99.89억(1.5%). 1H26 4,499.98억: 모듈 64.2% · SSD 34.3%. 매출처 실명 공시 — 모듈·SSD 전량 삼성전자(합계 97.2% · 1H26 98.5%). 생산은 베트남(한양디지텍VINA 외주생산 → 삼성 지정물류센터 납품 → 월말 일괄·익월 현금). 수주현황 미기재(수시 주문 생산). 원재료 매입 5,731.76억(매출의 88.0%) · 매입처 Unimicron·Tripod·심텍·APCB·UNIQUEST. 가동률 모듈 81.82% · SSD 63.89%. PCB 단가 모듈 USD 2.40 · SSD USD 2.92(2년 +35.8%). 실적 — 2Q26 매출 2,580억 OP 154억 OPM 5.96% / 1H26 4,500억·222억 / FY25 6,511억·239억. 시총 3,765억 · PER 12.14배 · 외인 6.98% · 52주 고점 대비 −44.2%",
-   "business_grade": "① DART 사업보고서·반기보고서 원문 + 네이버 재무 원장(교차 확인)",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [
-    "companies.078350"
-   ],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T6",
-    "hbm-packaging/hbm_pkg_company_samsung.html#T8"
-   ],
-   "intake": [
-    "u-20260917-08",
-    "u-20260920-03",
-    "u-20260920-07"
-   ],
-   "note": "2026-09-20 편입 → 같은 날 ②→① 승격(DART 원문). 성장은 모듈이 아니라 SSD 가 만들었다 — 아카이브가 ②로 들고 있던 「SSD 15%」는 FY2023 값이었다"
-  },
-  "192650": {
-   "name": "드림텍",
-   "ticker": "192650",
-   "market": "KOSPI",
-   "layer": "EMS — 스마트폰·전장·바이오 + (신규) 인도 메모리 모듈",
-   "business": "본체는 스마트폰 모듈·전장·바이오 EMS. 2024년 국내 메모리 고객사의 공급망 다변화로 인도 메모리모듈 공급사 신규 선정 → 2025-10 첫 진입(②). 🔴 ① 실적(네이버 원장 09-20) — 2Q26 매출 2,573억에 OP 1억(OPM 0.04%) · 순이익 −50억 / 1H26 매출 5,180억 · OP 5억 · 순손실 −94억 / 연간 2025 12,306억·OP 314억(2.55%). 2026E 컨센 매출 12,260억 · OP 386억(③)인데 1H26 5억이라 2H26에 381억을 요구한다. ① 시총 5,040억 · EPS −139원(PER 없음) · PBR 1.38 · 외인소진율 58.82%",
-   "business_grade": "① 재무·시세는 네이버 원장 · ② 인도 진입 보도 · ③ 컨센서스",
-   "pages": [
-    "hbm-packaging/hbm_pkg_company_samsung.html"
-   ],
-   "facts": [
-    "companies.192650"
-   ],
-   "theses": [
-    "hbm-packaging/hbm_pkg_company_samsung.html#T8"
-   ],
-   "intake": [
-    "u-20260917-08",
-    "u-20260920-03"
-   ],
-   "note": "2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만"
-  },
-  "VST": {
-   "name": "Vistra Corp",
-   "ticker": "VST",
-   "market": "NYSE",
-   "layer": "미국 상인형 전력 — 소매 + 발전(원전 약 6.6GW 포함 총 약 44GW)",
-   "business": "Retail/Texas/East/West/Asset Closure 5부문. 서명 완료 20년 PPA 약 3.8GW — AWS向 Comanche Peak 최대 1,200MW(2027-4Q 인도 개시~2032 램프) + Meta向 PJM 원전 2,609MW(가동분 2,176MW 2026말~2027말 · 업레이트 433MW 2031~2034). 계약단가 미공개. ① TTM(2025Q3~2026Q2) 매출 $19.21B · OP $3.56B(18.5%) · EBITDA $5.42B · OCF $5.12B · CapEx $2.87B · FCF $2.25B · 순부채 $19.16B(ND/EBITDA 3.53배). ③ FY26 가이던스 Adj EBITDA $6.8~7.6B · Adj FCFbG $3.925~4.725B",
-   "business_grade": "① 재무는 SEC XBRL · ② 시총·PPA 보도 · ③ 가이던스",
-   "pages": [
-    "ai-infra/us_merchant_power_vst_nrg.html"
-   ],
-   "facts": [
-    "companies.VST"
-   ],
-   "theses": [
-    "ai-infra/us_merchant_power_vst_nrg.html#T1"
-   ],
-   "intake": [
-    "u-20260920-04"
-   ],
-   "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
-   "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
-  },
-  "NRG": {
-   "name": "NRG Energy",
-   "ticker": "NRG",
-   "market": "NYSE",
-   "layer": "미국 상인형 전력 — 소매(약 600만 고객) + 발전 + Vivint Smart Home + CPower",
-   "business": "2026-01-30 LS Power 포트폴리오 인수 완료(가스·이중연료 18개소 약 13GW · 발전용량 2배). 지역 믹스 ERCOT 50% / PJM 39% / ISO-NE 8% / NYISO 3%. 원전 없음 — 2023-11 South Texas Project 44% 지분을 Constellation에 $1.75B 매각. 하이퍼스케일러 건은 「주요 상업조건 합의」 단계(정식 PPA 아님) — 텍사스 1.2GW 신설 가스 · 투자 $3.2B · 2029년말 COD · 목표 연 Adj EBITDA $500M. ① TTM 매출 $33.12B · OP $2.02B(6.1%) · EBITDA $3.68B · OCF $1.55B · FCF $0.35B · 순부채 $23.23B(ND/EBITDA 6.31배 · 부채 2024-12 $10.89B→2026-06 $23.39B). ③ FY26 가이던스 Adj EBITDA $5.325~5.825B · FCFbG $2.8~3.3B · 재무정책 Net Debt/EBITDA 3.0배 미만",
-   "business_grade": "① 재무는 SEC XBRL · ② 시총·인수·하이퍼스케일러 보도 · ③ 가이던스",
-   "pages": [
-    "ai-infra/us_merchant_power_vst_nrg.html"
-   ],
-   "facts": [
-    "companies.NRG"
-   ],
-   "theses": [
-    "ai-infra/us_merchant_power_vst_nrg.html#T1"
-   ],
-   "intake": [
-    "u-20260920-04"
-   ],
-   "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「원전 5%」로 표시하는 데이터 소스가 있는데 2023년 매각 이전 값이다 — 쓰지 말 것",
-   "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
-  },
-  "CBRS": {
-   "name": "Cerebras Systems",
-   "ticker": "CBRS",
-   "market": "NASDAQ",
-   "layer": "웨이퍼스케일 AI 반도체 + 추론 클라우드",
-   "business": "WSE 기반 AI 시스템 하드웨어 + 추론 클라우드. 2026-05-14 IPO(공모가 $185 · 3,000만주 · 조달 $5.55B ②). ① 1H26 매출 $373.5M(1H25 $202.8M) · 2Q26 $180.1M(QoQ −6.9%) · GAAP GPM 14.2% · OP −$477.2M · CapEx 1H26 $548.9M · D&A $42.6M · 현금 $6.74B · 자본 $9.15B. ② RPO $25.4B(24개월 인식분 약 22%) · 분기 SBC $386.6M · 2Q26 3개 고객 34/32/10%=76%(이름 미공개) · FY25 G42 24%+MBZUAI 62%=86%. ② OpenAI MRA(2025-12 · 750MW · 금액 보도 $20B/$10B 상충) · AWS Bedrock 2027-1Q 개시. ③ FY26 core 가이던스 $880~890M",
-   "business_grade": "① 재무는 SEC XBRL · ② 계약·고객·시총 · ③ 가이던스(core는 비GAAP)",
-   "pages": [
-    "ai-infra/ai_chip_architecture_war.html"
-   ],
-   "facts": [
-    "companies.CBRS"
-   ],
-   "theses": [
-    "ai-infra/ai_chip_architecture_war.html#T5"
-   ],
-   "intake": [
-    "u-20260920-04"
-   ],
-   "note": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다",
-   "canonical_page": "ai-infra/ai_chip_architecture_war.html"
-  },
-  "NTRA": {
-   "name": "Natera",
-   "ticker": "NTRA",
-   "market": "NASDAQ",
-   "layer": "분자진단(cfDNA/ctDNA) — Women's Health · Oncology(Signatera) · Organ Health(Prospera)",
-   "business": "검사 물량 × 보험 상환단가(ASP)가 사업의 실체. ① TTM 매출 $2,707M(8분기 연속 증가 $440M→$753M) · OP −$290M(−10.7%) · OCF +$228M · CapEx $144M · FCF +$84M · D&A $53M. ② 2Q26 검사 104만건 · Signatera 임상 MRD 28.3만 유닛(+56.4% YoY) · ASP 약 $1,275 · GPM 64.5%(+110bp). ②③ Medicare FFS 요율 $1,495가 2026~2027년 고정. ② 우발채무 Guardant Health 배심 평결 $292.5M(제9연방항소법원 계류 25-5503). ③ FY26 가이던스 매출 $2,850~2,910M · GM 64~66%",
-   "business_grade": "① 재무는 SEC XBRL · ② 물량·ASP·소송 · ③ 가이던스",
-   "pages": [
-    "ai-bio/ai_bio_investment_map.html"
-   ],
-   "facts": [
-    "companies.NTRA"
-   ],
-   "theses": [
-    "ai-bio/ai_bio_investment_map.html#T5"
-   ],
-   "intake": [
-    "u-20260920-04"
-   ],
-   "note": "2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「GAAP 흑자」를 섞지 말 것",
-   "canonical_page": "ai-bio/ai_bio_investment_map.html"
+  "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
+  "actors": {
+    "fed": {
+      "name": "연준(워시 의장)",
+      "type": "중앙은행",
+      "wants": "65개월 2% 상회 인플레의 책임을 진다 — 신뢰 회복 · ⚠ 대차대조표는 반대 방향: QT 종료(25-12) · RMP $40B/월로 지준 ample 유지(①)",
+      "constraints": "10/28은 선거 3일 전 · 재정적자 6.3% · 장기금리 5.4%가 이미 긴축 · 2년물 4.64% = 시장은 이미 4회를 넣었다(③)",
+      "next_move": "9/16 인상(~90%) · 점도표로 추가 횟수 신호",
+      "watch": "점도표 · 「보험성 인하 되돌림」 표현 유무",
+      "evidence": [
+        "u-20260914-18",
+        "u-20260914-20"
+      ],
+      "grade": "③"
+    },
+    "us_treasury": {
+      "name": "미 재무부",
+      "type": "정부",
+      "wants": "$40조 부채·순이자 $1조를 낮은 금리로 차환",
+      "constraints": "해외 수요 감소(중국 −$1,000억·엔 캐리) · 회사채와 경쟁($3,900억 vs $3,290억)",
+      "next_move": "11월 QRA — 단기물 편중 지속?",
+      "watch": "QRA 장기물 비중 · 30년물 5.4% · GPIF(일본 최대 연기금) 해외국채 매도 조짐(② 09-14) — BOJ 인상 후 엔 귀환",
+      "evidence": [
+        "u-20260914-20"
+      ],
+      "grade": "③"
+    },
+    "hyperscalers": {
+      "name": "하이퍼스케일러 5(MS·GOOGL·AMZN·META·ORCL)",
+      "type": "기업군",
+      "wants": "컴퓨트 확보 — 고금리를 감내(YTD 부채 $2,250억)",
+      "constraints": "전력·터빈 슬롯(2029) · 그림자 차입 $1.2조 약정 · 속도조절 압력",
+      "next_move": "3Q 실적에서 캐펙스 가이던스 유지 여부(10월 말)",
+      "watch": "캐펙스 가이던스 · 리스 미개시 잔액 · CDS",
+      "evidence": [
+        "r-20260914-34",
+        "national-strategy/ns_bigtech_capex_roi.html#T2"
+      ],
+      "grade": "②"
+    },
+    "kr_foreign": {
+      "name": "코스피 외국인",
+      "type": "투자자군",
+      "wants": "달러 기준 수익 — 원화·금리·AI 배수 셋에 동시에 걸림",
+      "constraints": "「굳이 한국에 들어올 이유」가 필요(사용자 09-12)",
+      "next_move": "4일 연속 매도 중 — 종목 비중은 문턱 아래(지수 매도 · 개별 보유 유지)",
+      "watch": "일 순매수 부호 전환 2주 · 환율 1,350",
+      "evidence": [
+        "c-20260914-03"
+      ],
+      "grade": "①(수급) ③(동기)"
+    },
+    "kr_retail": {
+      "name": "국내 개인(레버리지 포함)",
+      "type": "투자자군",
+      "wants": "유일한 매수 주체(09-14 +3.04조) — 저가 매수",
+      "constraints": "「돈이 없다」(사용자) · 7월 폭락의 레버리지 ETF 구조",
+      "next_move": "미측정",
+      "watch": "단일종목 2x ETF AUM · 신용잔고",
+      "evidence": [
+        "c-20260914-03",
+        "national-strategy/ns_semiconductor_war.html#T3"
+      ],
+      "grade": "②"
+    },
+    "china_state": {
+      "name": "중국(국가)",
+      "type": "정부",
+      "wants": "반도체 자립 — CXMT 상장·YMTC 상장으로 자본 조달, 내수 20%로 자급",
+      "constraints": "장비 통제(Match Act 리스크) · 미중 정상회담 9/24-25",
+      "next_move": "YMTC IPO 일정 · 정상회담에서 메모리 수출 허용 여부",
+      "watch": "cninfo CXMT 조달액·용도",
+      "evidence": [
+        "r-20260914-26"
+      ],
+      "grade": "②"
+    },
+    "saudi_opec": {
+      "name": "사우디·OPEC+",
+      "type": "산유국",
+      "wants": "공급 안정으로 $100 유가 유지 — 그러나 우회로(동서 파이프라인)를 잃음",
+      "constraints": "드론 공격 · 홍해 통제력 약화",
+      "next_move": "파이프라인 복구 시점",
+      "watch": "복구 발표 · 회담 재개",
+      "evidence": [
+        "c-20260914-04"
+      ],
+      "grade": "②"
+    },
+    "houthi_iran": {
+      "name": "후티·이란",
+      "type": "무장세력·정부",
+      "wants": "호르무즈·바브엘만데브 통제력 = 협상 지렛대",
+      "constraints": "회담 연기 자체가 카드",
+      "next_move": "이란-걸프 회담 재개 여부",
+      "watch": "페림섬·모카 상황 · 회담 일정",
+      "evidence": [
+        "c-20260914-04"
+      ],
+      "grade": "②"
+    },
+    "memory3": {
+      "name": "메모리 3사(삼성·SK하이닉스·마이크론)+키옥시아",
+      "type": "기업군",
+      "wants": "높은 가격을 오래 — 「또 한 번의 70% 상승」은 스스로 자제(키옥시아 CEO)",
+      "constraints": "LTA 3→5년(상방 포기) · HBM 캐파 배분 · 고객의 디스펙",
+      "next_move": "3Q 실적(10월) ASP · LTA 조건",
+      "watch": "DRAM ASP QoQ · HBM 점유(삼성 42% 전망)",
+      "evidence": [
+        "r-20260914-35",
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1"
+      ],
+      "grade": "②"
+    },
+    "frontier_labs": {
+      "name": "프런티어 랩(앤스로픽·오픈AI·xAI·구글DM)+MS",
+      "type": "기업군",
+      "wants": "속도조절 = 안전 포지셔닝 + IPO 전 규제 선점(삭스 「규제포획」 경고)",
+      "constraints": "앤스로픽 10월 IPO · 컴퓨트 배급",
+      "next_move": "공동 표준기구·체크포인트 채택 여부 · S-1",
+      "watch": "MS 행동강령 외 두 번째 회사 규범",
+      "evidence": [
+        "r-20260914-09",
+        "r-20260914-39"
+      ],
+      "grade": "③"
+    },
+    "kr_gov": {
+      "name": "한국 정부",
+      "type": "정부",
+      "wants": "대미투자 패키지(9/18 발표 · 원전 8기 포함?) · 애프터마켓 등 시장 제도",
+      "constraints": "트럼프 협상 · 820조 예산",
+      "next_move": "9/18 발표",
+      "watch": "원전 포함 여부(원전·SMR 편 T1·T3)",
+      "evidence": [
+        "brain/events.json"
+      ],
+      "grade": "②"
+    },
+    "banks": {
+      "name": "미 은행(GSIB · JPM = 전체의 ~20%)",
+      "type": "기업군",
+      "wants": "규제완화(eSLR 04-01 · 바젤3 2027)로 국채 중개·대출 확대 — 대출 YoY +7.2%(①)",
+      "constraints": "지준 $2.99T 평탄 · LCR/HQLA(JPM HQLA $956B) · 예금 경쟁",
+      "next_move": "바젤3 최종(4Q26) · 스테이블코인 국채 수요(클래리티)",
+      "watch": "H.8 대출 YoY · SOFR−IORB · JPM 10-Q 현금/자산(성상현 13.3→6.1% 미확인)",
+      "evidence": [
+        "r-20260915-23"
+      ],
+      "grade": "①(데이터) ②(JPM 비율)"
+    }
   }
- },
- "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
- "actors": {
-  "fed": {
-   "name": "연준(워시 의장)",
-   "type": "중앙은행",
-   "wants": "65개월 2% 상회 인플레의 책임을 진다 — 신뢰 회복 · ⚠ 대차대조표는 반대 방향: QT 종료(25-12) · RMP $40B/월로 지준 ample 유지(①)",
-   "constraints": "10/28은 선거 3일 전 · 재정적자 6.3% · 장기금리 5.4%가 이미 긴축 · 2년물 4.64% = 시장은 이미 4회를 넣었다(③)",
-   "next_move": "9/16 인상(~90%) · 점도표로 추가 횟수 신호",
-   "watch": "점도표 · 「보험성 인하 되돌림」 표현 유무",
-   "evidence": [
-    "u-20260914-18",
-    "u-20260914-20"
-   ],
-   "grade": "③"
-  },
-  "us_treasury": {
-   "name": "미 재무부",
-   "type": "정부",
-   "wants": "$40조 부채·순이자 $1조를 낮은 금리로 차환",
-   "constraints": "해외 수요 감소(중국 −$1,000억·엔 캐리) · 회사채와 경쟁($3,900억 vs $3,290억)",
-   "next_move": "11월 QRA — 단기물 편중 지속?",
-   "watch": "QRA 장기물 비중 · 30년물 5.4% · GPIF(일본 최대 연기금) 해외국채 매도 조짐(② 09-14) — BOJ 인상 후 엔 귀환",
-   "evidence": [
-    "u-20260914-20"
-   ],
-   "grade": "③"
-  },
-  "hyperscalers": {
-   "name": "하이퍼스케일러 5(MS·GOOGL·AMZN·META·ORCL)",
-   "type": "기업군",
-   "wants": "컴퓨트 확보 — 고금리를 감내(YTD 부채 $2,250억)",
-   "constraints": "전력·터빈 슬롯(2029) · 그림자 차입 $1.2조 약정 · 속도조절 압력",
-   "next_move": "3Q 실적에서 캐펙스 가이던스 유지 여부(10월 말)",
-   "watch": "캐펙스 가이던스 · 리스 미개시 잔액 · CDS",
-   "evidence": [
-    "r-20260914-34",
-    "national-strategy/ns_bigtech_capex_roi.html#T2"
-   ],
-   "grade": "②"
-  },
-  "kr_foreign": {
-   "name": "코스피 외국인",
-   "type": "투자자군",
-   "wants": "달러 기준 수익 — 원화·금리·AI 배수 셋에 동시에 걸림",
-   "constraints": "「굳이 한국에 들어올 이유」가 필요(사용자 09-12)",
-   "next_move": "4일 연속 매도 중 — 종목 비중은 문턱 아래(지수 매도 · 개별 보유 유지)",
-   "watch": "일 순매수 부호 전환 2주 · 환율 1,350",
-   "evidence": [
-    "c-20260914-03"
-   ],
-   "grade": "①(수급) ③(동기)"
-  },
-  "kr_retail": {
-   "name": "국내 개인(레버리지 포함)",
-   "type": "투자자군",
-   "wants": "유일한 매수 주체(09-14 +3.04조) — 저가 매수",
-   "constraints": "「돈이 없다」(사용자) · 7월 폭락의 레버리지 ETF 구조",
-   "next_move": "미측정",
-   "watch": "단일종목 2x ETF AUM · 신용잔고",
-   "evidence": [
-    "c-20260914-03",
-    "national-strategy/ns_semiconductor_war.html#T3"
-   ],
-   "grade": "②"
-  },
-  "china_state": {
-   "name": "중국(국가)",
-   "type": "정부",
-   "wants": "반도체 자립 — CXMT 상장·YMTC 상장으로 자본 조달, 내수 20%로 자급",
-   "constraints": "장비 통제(Match Act 리스크) · 미중 정상회담 9/24-25",
-   "next_move": "YMTC IPO 일정 · 정상회담에서 메모리 수출 허용 여부",
-   "watch": "cninfo CXMT 조달액·용도",
-   "evidence": [
-    "r-20260914-26"
-   ],
-   "grade": "②"
-  },
-  "saudi_opec": {
-   "name": "사우디·OPEC+",
-   "type": "산유국",
-   "wants": "공급 안정으로 $100 유가 유지 — 그러나 우회로(동서 파이프라인)를 잃음",
-   "constraints": "드론 공격 · 홍해 통제력 약화",
-   "next_move": "파이프라인 복구 시점",
-   "watch": "복구 발표 · 회담 재개",
-   "evidence": [
-    "c-20260914-04"
-   ],
-   "grade": "②"
-  },
-  "houthi_iran": {
-   "name": "후티·이란",
-   "type": "무장세력·정부",
-   "wants": "호르무즈·바브엘만데브 통제력 = 협상 지렛대",
-   "constraints": "회담 연기 자체가 카드",
-   "next_move": "이란-걸프 회담 재개 여부",
-   "watch": "페림섬·모카 상황 · 회담 일정",
-   "evidence": [
-    "c-20260914-04"
-   ],
-   "grade": "②"
-  },
-  "memory3": {
-   "name": "메모리 3사(삼성·SK하이닉스·마이크론)+키옥시아",
-   "type": "기업군",
-   "wants": "높은 가격을 오래 — 「또 한 번의 70% 상승」은 스스로 자제(키옥시아 CEO)",
-   "constraints": "LTA 3→5년(상방 포기) · HBM 캐파 배분 · 고객의 디스펙",
-   "next_move": "3Q 실적(10월) ASP · LTA 조건",
-   "watch": "DRAM ASP QoQ · HBM 점유(삼성 42% 전망)",
-   "evidence": [
-    "r-20260914-35",
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1"
-   ],
-   "grade": "②"
-  },
-  "frontier_labs": {
-   "name": "프런티어 랩(앤스로픽·오픈AI·xAI·구글DM)+MS",
-   "type": "기업군",
-   "wants": "속도조절 = 안전 포지셔닝 + IPO 전 규제 선점(삭스 「규제포획」 경고)",
-   "constraints": "앤스로픽 10월 IPO · 컴퓨트 배급",
-   "next_move": "공동 표준기구·체크포인트 채택 여부 · S-1",
-   "watch": "MS 행동강령 외 두 번째 회사 규범",
-   "evidence": [
-    "r-20260914-09",
-    "r-20260914-39"
-   ],
-   "grade": "③"
-  },
-  "kr_gov": {
-   "name": "한국 정부",
-   "type": "정부",
-   "wants": "대미투자 패키지(9/18 발표 · 원전 8기 포함?) · 애프터마켓 등 시장 제도",
-   "constraints": "트럼프 협상 · 820조 예산",
-   "next_move": "9/18 발표",
-   "watch": "원전 포함 여부(원전·SMR 편 T1·T3)",
-   "evidence": [
-    "brain/events.json"
-   ],
-   "grade": "②"
-  },
-  "banks": {
-   "name": "미 은행(GSIB · JPM = 전체의 ~20%)",
-   "type": "기업군",
-   "wants": "규제완화(eSLR 04-01 · 바젤3 2027)로 국채 중개·대출 확대 — 대출 YoY +7.2%(①)",
-   "constraints": "지준 $2.99T 평탄 · LCR/HQLA(JPM HQLA $956B) · 예금 경쟁",
-   "next_move": "바젤3 최종(4Q26) · 스테이블코인 국채 수요(클래리티)",
-   "watch": "H.8 대출 YoY · SOFR−IORB · JPM 10-Q 현금/자산(성상현 13.3→6.1% 미확인)",
-   "evidence": [
-    "r-20260915-23"
-   ],
-   "grade": "①(데이터) ②(JPM 비율)"
-  }
- }
 }

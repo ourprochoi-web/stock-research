@@ -104,6 +104,18 @@
     },
     {
       "what": "⚠ <추적 유니버스(update_prices.py WATCH)가 편향 표본이다> — 09-22 확장에서 확인: 같은 계산이 추적 173 에서 격차 5.97%p, 시총 상위 549 에서 0.80%p 로 <7.5배 차이>가 났다. WATCH 는 「아카이브가 판단을 세운 곳」과 「그날 급등해서 시세가 없던 곳」으로 쌓였기 때문에 <AI·반도체·테마 쪽으로 기울어 있다>. 고칠 것이 아니라 <쓸 때 성격을 밝혀야 한다> — 유니버스 단위 결론에는 「추적 표본 n=173(편향)」을 붙이고, 「시장」을 말할 때는 시총 상위 N 을 따로 받는다(549종목 50초)"
+    },
+    {
+      "id": "mxl-optical-share",
+      "what": "MXL Infrastructure $85M 중 Keystone/광 DSP 순수 비중(모듈 OEM vs 브로드밴드 인프라 잔여) — 10-Q는 시장만 공개",
+      "page": "ai-infra/optical_interconnect_layer.html",
+      "since": "2026-09-23"
+    },
+    {
+      "id": "connectivity-chips-residual-edge",
+      "what": "연결칩 5사 잔여엣지 순위(MXL>SMTC>CRDO>MTSI>ALAB 잠정) — CRDO SBC/재고·ALAB AR·MXL Non-GAAP 의존이 뒤집히는지",
+      "page": "ai-infra/optical_interconnect_layer.html",
+      "since": "2026-09-23"
     }
   ],
   "parked": [
