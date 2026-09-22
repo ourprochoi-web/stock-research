@@ -1,0 +1,109 @@
+{
+  "appended_at": "2026-09-22T23:50:02+09:00",
+  "batch": "telegram-intake lead disposition batches 1+2 (5 NEW channels; aether already done)",
+  "considered": 60,
+  "counts": {
+    "keep": 12,
+    "drop": 41,
+    "duplicate": 6,
+    "skip": 1
+  },
+  "user_ids_appended": [
+    "u-20260922-tg08",
+    "u-20260922-tg09",
+    "u-20260922-tg10",
+    "u-20260922-tg11",
+    "u-20260922-tg12",
+    "u-20260922-tg13",
+    "u-20260922-tg14",
+    "u-20260922-tg15",
+    "u-20260922-tg16",
+    "u-20260922-tg17",
+    "u-20260922-tg18",
+    "u-20260922-tg19"
+  ],
+  "routing_ids_appended": [
+    "r-20260922-tg4",
+    "r-20260922-tg5",
+    "r-20260922-tg6",
+    "r-20260922-tg7",
+    "r-20260922-tg8",
+    "r-20260922-tg9",
+    "r-20260922-tg10"
+  ],
+  "duplicates_flagged": [
+    {
+      "channel": "insidertracking",
+      "msg_id": "64378",
+      "duplicate_of": [
+        "u-20260922-tg04",
+        "u-20260922-tg05",
+        "r-20260922-tg1"
+      ],
+      "reason": "BABA 20GW/V900 already in u-20260922-tg04/tg05 + r-20260922-tg1 (aether/Citi); Xbox alone DROP; no new fact"
+    },
+    {
+      "channel": "YeouidoStory2",
+      "msg_id": "117734",
+      "duplicate_of": [
+        "u-20260922-x11",
+        "r-20260922-x5"
+      ],
+      "reason": "SKIP duplicate — already u-20260922-x11 / r-20260922-x5 (C/②)"
+    },
+    {
+      "channel": "Samsung_Global_AI_SW",
+      "msg_id": "4615",
+      "duplicate_of": [
+        "u-20260922-tg04",
+        "u-20260922-tg05",
+        "u-20260922-x08",
+        "r-20260922-tg1"
+      ],
+      "reason": "duplicate path of existing aether/Citi BABA 20GW (tg04/tg05/r-tg1)"
+    },
+    {
+      "channel": "Samsung_Global_AI_SW",
+      "msg_id": "4605",
+      "duplicate_of": [
+        "u-20260922-02"
+      ],
+      "reason": "duplicate of u-20260922-02 (Youngjin/Samsung channel already ingested FCF −$2,780억 · 컴퓨팅 $8,560억)"
+    },
+    {
+      "channel": "meritz_research",
+      "msg_id": "44683",
+      "duplicate_of": [
+        "u-20260922-11",
+        "r-20260920-06"
+      ],
+      "reason": "duplicate of u-20260922-11 Meritz batch (same facts already routed); Yeouido 117730 kept as alt path"
+    },
+    {
+      "channel": "meritz_research",
+      "msg_id": "44662",
+      "duplicate_of": [
+        "u-20260922-11"
+      ],
+      "reason": "duplicate confirm of u-20260922-11 memory export +350.7% YoY — no new ASP fact"
+    },
+    {
+      "channel": "meritz_research",
+      "msg_id": "44660",
+      "duplicate_of": [
+        "u-20260922-11"
+      ],
+      "reason": "duplicate of u-20260922-11 아람코 유럽향 취소 already ingested"
+    }
+  ],
+  "backup_user": "intake/user.jsonl.bak-append-tg5ch-235002",
+  "backup_routing": "brain/routing.jsonl.bak-append-tg5ch-235002",
+  "staging": "intake/files/telegram/2026-09-22/lead_disposition_batch5ch.jsonl",
+  "line_counts_after": {
+    "user.jsonl": 187,
+    "routing.jsonl": 227
+  },
+  "push": false,
+  "theses_json_touched": false,
+  "note": "Local append only. Kenneth reviews then git push. theses.json untouched. Conservative 12 keepers / 7 routing."
+}

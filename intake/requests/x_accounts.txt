@@ -1,0 +1,13 @@
+# X whitelist for x-intake Bot → report to Grok Bot (stock-research lead)
+# Format: handle | tier | tags
+# tier A = every pull; B = weekly strict triage
+# 2026-09-22 Kenneth + lead lock
+
+ReturnDriver | A | macro,kr-equity,semi,tactical
+blazingbees | A | kr-flow-tactical
+citrini | A | thematic-us
+Liberty0918 | A | kr-flow-thematic
+USAnt_IDEA | B | us-politics-noise
+# adjacent candidates (not active until promoted)
+# dylan522p | C | semi-infra
+# fabknowledge | C | semi-thematic

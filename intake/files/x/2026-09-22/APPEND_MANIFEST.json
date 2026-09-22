@@ -1,0 +1,37 @@
+{
+  "appended_at": "2026-09-22T23:47:49",
+  "user_ids": [
+    "u-20260922-x01",
+    "u-20260922-x02",
+    "u-20260922-x03",
+    "u-20260922-x04",
+    "u-20260922-x05",
+    "u-20260922-x06",
+    "u-20260922-x07",
+    "u-20260922-x08",
+    "u-20260922-x09",
+    "u-20260922-x10",
+    "u-20260922-x11",
+    "u-20260922-tg01",
+    "u-20260922-tg02",
+    "u-20260922-tg03",
+    "u-20260922-tg04",
+    "u-20260922-tg05",
+    "u-20260922-tg06",
+    "u-20260922-tg07"
+  ],
+  "routing_ids": [
+    "r-20260922-x",
+    "r-20260922-x2",
+    "r-20260922-x3",
+    "r-20260922-x4",
+    "r-20260922-x5",
+    "r-20260922-tg1",
+    "r-20260922-tg2",
+    "r-20260922-tg3"
+  ],
+  "backup_user": "intake/user.jsonl.bak-append-234749",
+  "backup_routing": "brain/routing.jsonl.bak-append-234749",
+  "push": false,
+  "note": "Local append only. Kenneth reviews then git push. theses.json untouched."
+}
