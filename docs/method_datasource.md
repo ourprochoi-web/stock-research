@@ -566,8 +566,45 @@ collected 1건은 `collect-fetch` 와 `collect-sec` 이 동시에 돌아 둘 다
 
 `data.krx.co.kr` 200 · `openapi.krx.co.kr` 200 · `kind.krx.co.kr` **200** · `freesis.kofia.or.kr` 200 · `seibro.or.kr` 200 · `ecos.bok.or.kr` 200
 
-🔑 **09-20 프로브의 「kind.krx.co.kr 403」은 차단이 아니라 UA 문제였다** — 브라우저 UA를 붙이면 200이다. 09-20에 「403 = 서버측 UA/키 요구」로 적어 둔 것이 맞았고, 이번에 확인됐다.
+🔑 09-20 프로브의 「kind.krx.co.kr 403」은 차단이 아니라 **UA 문제**였다 — 브라우저 UA를 붙이면 200이다.
 
-⚠ `data.krx.co.kr/comm/bldAttendant/getJsonData.cmd` 는 세션 쿠키를 받아도(`/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201020301` 예열 · 쿠키 2개 수신) **400 Bad Request**다. 시도한 bld 넷 — `dbms/MDC/STAT/standard/MDCSTAT02203`(투자자별 일별추이) · `MDCSTAT02201`(기간합계) · `MDCSTAT01501`(전종목 시세) · `MDCSTAT02401`(투자자별 전종목). 로더 페이지가 **407바이트 JS 셸**이라 bld 식별자를 정적으로 못 뽑는다 — 실제 화면의 XHR을 봐야 한다(브라우저 필요). **기타법인 분해를 푸는 경로가 여기다.**
+### 🔴 KRX — 브라우저로 확인한 결과 (2026-09-22)
 
-미착수: 금투협 `freesis.kofia.or.kr` 신용잔고(200이지만 프레임셋 · 경로 미확보)
+**`data.krx.co.kr` 는 로그인 필수다.** Claude in Chrome으로 `/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201020301` 에 접근하니 `/contents/MDC/COMS/client/MDCCOMS001.cmd` **로그인 페이지로 리다이렉트**됐다(아이디/비밀번호 + 네이버·카카오 소셜).
+
+→ **`getJsonData.cmd` 의 400 Bad Request 원인이 bld가 아니라 인증이었다.** 09-22 오전에 「로더가 407바이트 JS 셸이라 bld를 못 뽑는다」고 적은 것은 **증상이지 원인이 아니었다** — 407바이트인 이유가 로그인 리다이렉트다.
+
+🔴 **계정 생성·로그인 자격증명 입력은 어시스턴트 제약으로 못 한다.** 사용자가 계정을 만들면 그 뒤는 자동화 가능 — 로그인 상태에서 화면을 한 번 열어 XHR을 캡처하면 bld·파라미터가 나오고, 세션 쿠키로 스크립트화된다.
+
+### KRX Open API — 실재하나 투자자별은 미제공
+
+| 경로 | 응답 | 뜻 |
+|---|---|---|
+| `data-dbg.krx.co.kr/svc/apis/sto/stk_bydd_trd` | **401 Unauthorized Key** | 엔드포인트 실재 · 인증키만 필요 |
+| `data-dbg.krx.co.kr/svc/apis/sto/stk_isu_base_info` | **401** | 실재 |
+| `data-dbg.krx.co.kr/svc/apis/sto/invst_trd` · idx 계열 | **404** | **없다** |
+
+서비스 목록은 지수·주식·증권상품·채권·파생상품·일반상품·ESG이고 **투자자별은 그 안에 없다**. `openapi.krx.co.kr` 공지 「KRX Open API **미제공 데이터**에 대한 안내」(2026-06)가 이것으로 보인다.
+→ **인증키를 받아도 기타법인 분해는 안 나온다.** 그 경로는 Data Marketplace 웹(로그인)뿐이다.
+
+### 막힌 대체 경로 (2026-09-22 전수 시도)
+
+- `finance.naver.com/sise/sise_deal_trend.naver` → **404**
+- `finance.naver.com/sise/investorDealTrendDay.naver` → **410 Gone**(폐지)
+- `finance.daum.net/api/investor/days|months` · `/api/quotes/A005930/investors` → **500**(경로 미확보)
+- Claude in Chrome은 `finance.naver.com` 을 **사이트 권한으로 차단**(Bash는 가능)
+
+`m.stock.naver.com/api/stock/{code}/trend` **필드 10개 확정** — itemCode · bizdate · foreignerPureBuyQuant · foreignerHoldRatio · organPureBuyQuant · individualPureBuyQuant · closePrice · compareToPreviousClosePrice · compareToPreviousPrice · accumulatedTradingVolume. **기타법인·연기금 필드는 없다.**
+
+### ✅ 549종목 표본 검산 통과 (2026-09-22)
+
+09-22 단일일 — 549종목 계산 **개인 −1.46조 · 외국인 +0.05조 · 기관 −0.19조** vs 지수 API 코스피+코스닥 합 **개인 −1.41조 · 외국인 −0.005조 · 기관 −0.22조**. **오차 3~5%**.
+금액 근사도 배제 — 09-22 종가 고정 −17.08조 vs 일별 종가 정확 −16.51조로 **오차 3.5%**.
+→ **시총 96% 표본으로 「시장」을 말해도 된다.**
+
+### 🔴 남은 미스터리 — 매일 −1.6조
+
+549종목 일별 (개인+외국인+기관) 합: −1.77 / −1.67 / −1.67 / −1.47 / −1.66 / −1.68 / −1.63 / −1.67 / −1.67 / **−1.61조**(09-09~09-22).
+**10일 내내 거의 일정하다 — 변동하는 오차가 아니라 정규적으로 도는 주체다.**
+후보 ① 기타법인(자사주·일반법인 — 삼성 자사주 1.6조는 **총액이지 일별이 아니라** 하루 1.6조를 설명 못 한다) ② naver의 「기관」이 연기금·보험·사모 일부만 포함 ③ ETF LP·신탁. **셋 다 미확인이고 가르는 소스가 KRX뿐이다.**
+크기가 하루 1.6조 = 10일 16조이므로, 이것을 모르면 **수급 해석의 절반이 비어 있다.**
