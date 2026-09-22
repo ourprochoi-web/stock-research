@@ -28,3 +28,7 @@
 
 ## routed 값 (2026-09-17)
 `routed:false` = 주장이라 라우팅이 필요한 것(세션 시작 시 처리). `routed:"data"` = XBRL·매크로·월지표 스냅샷처럼 **주장이 아니라 원료**인 것 — facts/regime 이 직접 읽으므로 라우팅하지 않는다. 봇이 kind 로 자동 분류한다(수집 실패 기록만 false).
+
+
+## Telegram 공개채널 수집 (2026-09-23)
+`collect_telegram.py` + `.github/workflows/collect-telegram.yml` — Bot API 없이 `t.me/s/{handle}` 미리보기 HTML에서 최근 글을 받는다. 화이트리스트는 `requests/telegram_channels.txt`(handle | notes). 원문 스니펫은 `files/telegram/{handle}/{YYYY-MM-DD}/`, 한 줄은 `collected.jsonl`(kind:`telegram` · `routed:false` · url 로 중복 제거). 스케줄 6시간마다 + 수동 `workflow_dispatch` + 화이트리스트 push. 판단은 하지 않는다.

@@ -29,7 +29,7 @@
  falsifier, event, last_tested,
  auto:true(파서가 뽑은 테제 · basis·event 빌 수 있음) · auto_basis:true(파서가 페이지에서 뽑은 ② 근거)}
 ```
-**routing.jsonl 한 줄** = `{id: r-YYYYMMDD-NN, date, intake[], grade, claim, routed[page#T…], verdict, action}` · 판정 이벤트 결과는 `kind:"verdict"` 로 여기(inbox.jsonl 은 없다).
+**routing.jsonl 한 줄** = `{id: r-YYYYMMDD-NN, date, intake[], grade, claim, routed[page#T…], verdict, action}` · 판정 이벤트 결과는 `kind:"verdict"` 로 여기(inbox.jsonl 은 없다). **새 observation/judgment** 는 `priced_in`·`variant`·`breaks_if` 필수 · soft target 은 `parked` (아래 「routing.jsonl 스키마」).
 **왜 이렇게 고쳤나** — 시드 직후 실측: 테제 43/407 누락(추출기 12K 캡 + 「반증 조건」 본문 문구 충돌 · 둘 다 수정) · **basis 빈 것 400/428(93%)** — §J1 「브레인 먼저」가 「왜」 질문에 93% 실패하는 상태였다. 파서 v2로 361개를 ②로 채웠고(auto_basis), 라우팅이 닿을 때 ①로 올린다.
 **theses.json 은 문서가 아니라 DB다** — 264KB(≈90K 토큰). 통째로 읽지 않고 page 키로 꺼낸다.
 
@@ -51,3 +51,32 @@
 - `log[]`: `{date, mark(ⓐⓑⓒ·🟢🔴…), text, rid?}` — 라우팅마다 한 줄씩 **뒤에 붙인다**. 페이지를 열 때(W1 넷째 조건: 페이지 갱신일 이후 log 5건) 여기서 본문으로 병합한다.
 - `evidence[]`: routing id 목록(기존). log 와 1:1일 필요는 없다.
 - 09-17 마이그레이션: basis 꼬리의 날짜 태그 45건을 log 로 옮겼다(40 테제). basis 가 태그로 시작하는 23 테제는 정본 문단이 없어 그대로 뒀다 — 페이지를 열 때 basis 를 다시 쓴다.
+
+
+## routing.jsonl 스키마 — observation / judgment (2026-09-23)
+
+기존 한 줄 골격은 유지한다:
+
+```
+{id, date, intake[], grade, claim, routed[page#T…], verdict, action
+ [, kind, source, resolve_by, confidence, outcome, lesson, …]}
+```
+
+**새 observation / judgment 줄에는 아래 세 필드를 채운다** (optional in schema · **required for new obs/judgment**):
+
+| field | type | meaning |
+|---|---|---|
+| `priced_in` | string | 시장 컨센서스가 **이미 가격에 넣은 것** (배수·함의 이익·내러티브) |
+| `variant` | string | 우리 쪽 **다른 인과 / 시간축 읽기** (priced_in 과 어디서 갈리는지) |
+| `breaks_if` | string | 이 variant/엣지를 **죽이는 관측** (무엇이면 접는지) |
+
+**규칙** — `priced_in` ≈ our view(variant 가 컨센서스와 실질 동일)이면 `action` 은 **`no-edge`** 또는 digest-only(관측만 · 사이즈/테제 변경 없음). 「같은 말을 다시 세게」하지 않는다.
+
+**id 형식**
+- 선호: `r-YYYYMMDD-NN` (`NN` = 그날 순번 01, 02, …)
+- 레거시(09-22 only): 글자 접미 `x`, `tg` 등 (`r-20260922-x`, `r-20260922-tg6`) — **새 줄에 쓰지 않는다**
+
+**소프트 타깃 (parked)**
+- `open` / `regime` / `portfolio` / `events` 처럼 **아직 페이지#T 에 안 붙는 대기**는 `routed[]` 에 문자열로 넣지 않는다.
+- 대신 필드: `parked: "open|regime|portfolio|events"` (파이프 구분 · 해당되는 것만).
+- `routed[]` 는 실재하는 `page` 또는 `page#T…` 만.

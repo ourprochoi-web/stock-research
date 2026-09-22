@@ -1,6 +1,6 @@
 {
- "_readme": "포트폴리오 테제의 정본(v3 · docs/workspace_v3.md §2.3). tracker 「포트 카드」가 여기서 렌더된다. §J3 그대로 — 산술과 구조이고 수량·비중·집행은 사용자가 정한다. 사용자 변수 = allowed_loss_pct.",
- "asof": "2026-09-21",
+ "_readme": "포트폴리오 테제의 정본(v3 · docs/workspace_v3.md §2.3). tracker 「포트 카드」가 여기서 렌더된다. §J3 그대로 — 산술과 구조이고 수량·비중·집행은 사용자가 정한다. 사용자 변수 = allowed_loss_pct. || 2026-09-23: sizing.holdings_table = 보유 SoT · candidates = 구 US 표 보존.",
+ "asof": "2026-09-23",
  "base": {
   "total_assets": 2027000000,
   "cash": 1227505773,
@@ -154,61 +154,147 @@
   "formula": "position = allowed_loss_pct × total_assets ÷ drawdown_at_falsifier",
   "variable": "allowed_loss_pct (사용자 · 1~2%)",
   "fx": 1350,
-  "drawdown_at_falsifier": {
-   "WMB": -0.2,
-   "TRGP": -0.2,
-   "FANG": -0.35,
-   "VG": -0.4,
-   "SMTC": -0.3,
-   "CRDO": -0.35,
-   "현대백화점": -0.2
-  },
-  "grade": "낙폭 ③[추론]",
-  "table_1pct": [
+  "holdings_table": [
    {
-    "sym": "WMB",
-    "price": 71.95,
-    "position_krw": 101000000,
-    "qty": 1043
+    "name": "SK하이닉스",
+    "ticker": "000660",
+    "falsifier_summary": "T1: 주주환원 프로그램 발표에도 디레이팅 계속 · T2: 목표가 분산 원인(OPM 지속성) 미해소 · T3: FCF 50% 재확인에 그침 또는 70%+에도 무반응 (archive: hbm_pkg_company_sk_hynix)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": "2026-09-30/10-01 마이크론 FQ4 · 3Q26 실적(10월 말) · HBM 계약가 9월 말",
+    "stop_ref": "stops[SK하이닉스]",
+    "note": "needs Kenneth fill — 반증 낙폭 % 아카이브에 없음(후보표 US만 기록됨)"
    },
    {
-    "sym": "TRGP",
-    "price": 291,
-    "position_krw": 101400000,
-    "qty": 257
+    "name": "삼성전자 (레거시)",
+    "ticker": "005930",
+    "falsifier_summary": "— (legacy · 관리 대상 밖 2026-08-12 B안)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": null,
+    "stop_ref": "stops[삼성전자 (레거시)]",
+    "note": "needs Kenneth fill — 이 계좌 잔고에 없음(09-22). 합산 제외 유지. 낙폭 미기록"
    },
    {
-    "sym": "FANG",
-    "price": 205.72,
-    "position_krw": 57900000,
-    "qty": 208
+    "name": "삼성전자 (신규)",
+    "ticker": "005930",
+    "falsifier_summary": "T1: 3Q'26 HBM 매출 QoQ 3배 미달 또는 HBM M/S < DRAM M/S · T3: 환원 발표가 FCF 50% 재확인에 그침 또는 발표에도 무반응 (archive: hbm_pkg_company_samsung)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": "2026-10-08 삼성 3Q26 잠정 · 주주환원 발표(시점 미제시)",
+    "stop_ref": "stops[삼성전자 (신규)]",
+    "note": "needs Kenneth fill — 반증 낙폭 % 아카이브에 없음"
    },
    {
-    "sym": "VG",
-    "price": 15.27,
-    "position_krw": 50700000,
-    "qty": 2458
+    "name": "SOL AI반도체TOP2+",
+    "ticker": "0167A0",
+    "falsifier_summary": "상속 — SKH T1·T2 · 삼성 T1·T3 (룩스루 66.8%)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": "코어와 동일(마이크론 10/1 · 삼성/SKH 3Q26)",
+    "stop_ref": "stops[SOL AI반도체TOP2+]",
+    "note": "needs Kenneth fill — ETF 자체 반증 낙폭 미기록 · 코어 낙폭 확정 후 룩스루로 유도 가능"
    },
    {
-    "sym": "SMTC",
-    "price": 147.05,
-    "position_krw": 67600000,
-    "qty": 340
+    "name": "TIME 글로벌AI",
+    "ticker": "456600",
+    "falsifier_summary": "🔴 판정 조건 없음 (holdings.thesis · 41종목 중 31종목 미공개)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": null,
+    "stop_ref": "stops[TIME 글로벌AI]",
+    "note": "needs Kenneth fill — 테제·낙폭·이벤트 전부 공백"
    },
    {
-    "sym": "CRDO",
-    "price": 150.09,
-    "position_krw": 57900000,
-    "qty": 285
+    "name": "KODEX AI전력핵심설비",
+    "ticker": "487240",
+    "falsifier_summary": "T3: 3Q에 ΔOPM 마이너스 3사 이상 → 낙폭 선반영 · T6: 효성중공업·한화엔진 CapEx/매출 두 자릿수 미도달 시 잔고만 쌓임 (archive: kr_power_cross_valuation)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": "3분기 보고서(2026년 11월 중순)",
+    "stop_ref": "stops[KODEX AI전력핵심설비]",
+    "note": "needs Kenneth fill — 반증 낙폭 % 아카이브에 없음"
    },
    {
-    "sym": "현대백화점",
-    "price": 99200,
-    "position_krw": 101400000,
-    "qty": 1021
+    "name": "현대백화점",
+    "ticker": "069960",
+    "falsifier_summary": "T4: 3Q26까지 배당성향 상향·자사주 소각·자산 재평가 0 → PBR 0.44가 균형 · T6: 지누스 영업손실 −250억+ 및 백화점 OP 감익 (archive: consumer_sector_department · precommit r-20260919-04)",
+    "drawdown_at_falsifier_pct": -0.2,
+    "time_window_event": "2026-09-24 산업부 8월 유통 · 2026-11-05 3Q26 잠정(예상)",
+    "stop_ref": "stops[현대백화점]",
+    "note": "drawdown −20% 는 구 sizing.drawdown_at_falsifier에서 복사(후보표 시절 · ③[추론]). Kenneth 재확인 권고"
+   },
+   {
+    "name": "파마리서치",
+    "ticker": "214450",
+    "falsifier_summary": "T2: 3Q26 판관비 증가율 < 매출 증가율 이면서 OPM 39%+ 회복(투자 국면 확인=반대 반증) · T3: OPM 37%대 이하인데 PER 상위 유지 (archive: k_beauty_company_pharmaresearch)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": "2026-11-14 전후 3Q26 분기보고서",
+    "stop_ref": "stops[파마리서치]",
+    "note": "needs Kenneth fill — 반증 낙폭 % 아카이브에 없음"
+   },
+   {
+    "name": "삼성바이오로직스",
+    "ticker": "207940",
+    "falsifier_summary": "T1: 세 엔진이 비슷한 확률로 실현(등급 분리 불필요) · T3: 성장률 <20%인데 PER 40x 유지 (archive: glp1_company_samsung_biologics)",
+    "drawdown_at_falsifier_pct": null,
+    "time_window_event": "PolyPeptide 공개매수 성립(2026 말 예상) · 3Q26 실적",
+    "stop_ref": "stops[삼성바이오로직스]",
+    "note": "needs Kenneth fill — 반증 낙폭 % 아카이브에 없음"
    }
   ],
-  "note": "1% 규칙으로 미국 6종목을 다 채우면 5.5억 > 5억 — 종목 선택 또는 낙폭 큰 것(VG·CRDO)만 1% · 09-15 07:40 현가 갱신(미국 09-14 종가): SMTC $147(−12%)·CRDO $150·VG $15.27·FANG $205.7·WMB $71.95 — 수량은 현가로 재계산 · 09-15 C1: WMB 반증 낙폭 −15→−20%(FCF 음수·CapEx/OCF 102% — 재투자 단계의 변동)"
+  "candidates": {
+   "drawdown_at_falsifier": {
+    "WMB": -0.2,
+    "TRGP": -0.2,
+    "FANG": -0.35,
+    "VG": -0.4,
+    "SMTC": -0.3,
+    "CRDO": -0.35,
+    "현대백화점": -0.2
+   },
+   "table_1pct": [
+    {
+     "sym": "WMB",
+     "price": 71.95,
+     "position_krw": 101000000,
+     "qty": 1043
+    },
+    {
+     "sym": "TRGP",
+     "price": 291,
+     "position_krw": 101400000,
+     "qty": 257
+    },
+    {
+     "sym": "FANG",
+     "price": 205.72,
+     "position_krw": 57900000,
+     "qty": 208
+    },
+    {
+     "sym": "VG",
+     "price": 15.27,
+     "position_krw": 50700000,
+     "qty": 2458
+    },
+    {
+     "sym": "SMTC",
+     "price": 147.05,
+     "position_krw": 67600000,
+     "qty": 340
+    },
+    {
+     "sym": "CRDO",
+     "price": 150.09,
+     "position_krw": 57900000,
+     "qty": 285
+    },
+    {
+     "sym": "현대백화점",
+     "price": 99200,
+     "position_krw": 101400000,
+     "qty": 1021
+    }
+   ],
+   "grade": "낙폭 ③[추론]",
+   "note": "1% 규칙으로 미국 6종목을 다 채우면 5.5억 > 5억 — 종목 선택 또는 낙폭 큰 것(VG·CRDO)만 1% · 09-15 07:40 현가 갱신(미국 09-14 종가): SMTC $147(−12%)·CRDO $150·VG $15.27·FANG $205.7·WMB $71.95 — 수량은 현가로 재계산 · 09-15 C1: WMB 반증 낙폭 −15→−20%(FCF 음수·CapEx/OCF 102% — 재투자 단계의 변동)"
+  },
+  "note": "2026-09-23: holdings가 사이징 SoT. 구 US-centric drawdown/table_1pct → sizing.candidates 로 보존. 실보유 표는 sizing.holdings_table — 낙폭 null은 Kenneth fill"
  },
  "tranches": [
   {
@@ -338,6 +424,70 @@
    "kind": "스톱로스",
    "distance_pct": 40.3,
    "priceKey": "SK하이닉스"
+  },
+  {
+   "name": "삼성전자 (레거시)",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "삼성전자",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "삼성전자 (신규)",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "삼성전자",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "SOL AI반도체TOP2+",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "SOL AI반도체TOP2+",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "TIME 글로벌AI",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "TIME 글로벌AI",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "KODEX AI전력핵심설비",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "KODEX AI전력핵심설비",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "현대백화점",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "현대백화점",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "파마리서치",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "파마리서치",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
+  },
+  {
+   "name": "삼성바이오로직스",
+   "level": null,
+   "kind": "스톱로스",
+   "distance_pct": null,
+   "priceKey": "삼성바이오로직스",
+   "note": "stub 2026-09-23 — level null until Kenneth fill"
   }
  ],
  "next": [
@@ -520,5 +670,17 @@
   "ETF 3종": "SOL AI반도체TOP2+ 기관 +2,406,772/개인 −2,914,546 · TIME 글로벌AI 기관 +167,759 · KODEX AI전력 기관 −66,935",
   "note": "§J4 대상 <아님>(반증 충족·판정 도래·판단 변경·스톱로스 어느 것도 아님). 수급은 테제가 아니다 — 판정은 전부 실적 공시로 유지한다 || 🔴 09-22 확장 정정 — 「현대백화점 외국인 10일 연속 매도」를 경고로 적었으나 <성과는 시장 대비 +2.78%p>다. 수급과 성과가 갈리므로 <수급만으로 판단하지 않는다>",
   "vs_market": "549종목 중앙(10일 −1.13%) 대비 — 삼성전자 +2.97%(<+4.10%p>) · SK하이닉스 −0.81%(+0.32%p) · 현대백화점 +1.64%(<+2.78%p — 외국인 10일 연속 순매도인데 시장보다 낫다>) · 파마리서치 −11.61%(<−10.48%p · 유일한 큰 열위이고 외국인은 오히려 샀다>) · 삼성바이오 −4.13%(−3.00%p)"
- }
+ },
+ "conflict_protocol": {
+  "flow_vs_thesis": "log-only until gate",
+  "gate": "N consecutive sessions extreme flow OR named event",
+  "hold_rule": "do not change size on single-day flow vs thesis mismatch; record routing observation",
+  "example": "r-20260922-x2 SKH"
+ },
+ "_changelog": [
+  {
+   "date": "2026-09-23",
+   "what": "사이징 SoT 교정 — holdings_table 신설 · 구 US drawdown/table_1pct → sizing.candidates 보존 · conflict_protocol(flow vs thesis) · stops stub for holdings missing levels · asof bump"
+  }
+ ]
 }

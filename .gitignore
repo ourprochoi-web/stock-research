@@ -9,3 +9,10 @@
 # 파이썬 바이트코드 (훅이 update_prices 를 import 할 때 생긴다)
 __pycache__/
 *.pyc
+
+# append backup copies (routing/user jsonl safety dumps)
+*.bak-append-*
+**/*.bak-append-*
+
+# hygiene backups
+*.bak-reinforce-*

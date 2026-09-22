@@ -1,0 +1,59 @@
+name: Collect Telegram (intake)
+
+# 2026-09-23: 공개 채널 t.me/s/{handle} 미리보기 수집. Bot API 불필요.
+# 판단은 하지 않는다 — intake/files/telegram/{handle}/{날짜}/ 스니펫 + collected.jsonl 한 줄(routed:false).
+# 트리거 셋: ① 6시간마다 ② 수동(workflow_dispatch) ③ whitelist 파일 push
+on:
+  schedule:
+    - cron: "15 */6 * * *"   # every 6h (UTC) · :15 to stagger vs other collectors
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "한 채널만 (비우면 telegram_channels.txt 전체)"
+        required: false
+        type: string
+  push:
+    paths:
+      - "intake/requests/telegram_channels.txt"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-telegram
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch Telegram previews
+        run: |
+          C="${{ inputs.channel }}"
+          if [ -n "$C" ]; then
+            python3 intake/collect_telegram.py --channel "$C"
+          else
+            python3 intake/collect_telegram.py
+          fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main || true
+          git add intake/collected.jsonl intake/files/telegram
+          git diff --cached --quiet && exit 0
+          git commit -m "📥 intake: Telegram 공개채널 ($(date +%Y-%m-%d))"
+          # 2026-09-20: main 에 동시 푸시가 흔해졌다(시세 봇 · 수집기 3종 · 세션 여럿).
+          #   재시도 없이 push 하면 먼저 올린 쪽이 이기고 이쪽 수집분이 조용히 사라진다
+          #   — 실제로 났다(collect-fetch run 35485990057: 수집 성공 · 커밋 성공 · push 거절 · 결과 소실).
+          #   .gitattributes 의 merge=union 이 JSONL 의 append 충돌을 자동 해소한다(§H2).
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((i * 3))
+            git pull --rebase --autostash origin main || exit 1
+          done
+          git push

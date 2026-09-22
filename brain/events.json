@@ -1,700 +1,750 @@
 {
- "_readme": {
-  "what": "판정 이벤트 일정. 날짜가 아니라 이벤트로 건다. 도래하면 판정하고 이 목록에서 지운다 — 지우는 것이 판정의 일부",
-  "done_log": "판정 결과는 routing.jsonl 에 kind:'verdict' 한 줄(intake 는 판정 근거 id) — 09-14 수정(inbox.jsonl 은 존재하지 않았다)",
-  "seeded": "2026-09-13 · docs/backlog.md 표에서 이동 + 광통신 3편 카드의 event"
- },
- "events": [
-  {
-   "when": "2026 말~2027",
-   "what": "미국 LNG 물량 층의 다음 단 — Golden Pass T2(2026 말) · CP2·Port Arthur·Rio Grande 첫 LNG(2027) · Transco SSE 착공(4Q26) · Constitution FERC",
-   "judges": "energy/us_energy_hegemony_17.html#T3 · LNG·VG·WMB",
-   "grade": "②"
-  },
-  {
-   "when": "차단 해제 시(9일째 blocked)",
-   "what": "「Pacing the Frontier」 <원문 대조만 남았다> — darioamodei.com egress 9일째 차단(c-20260913-03 · 09-20 allowlist 적용 후에도 blocked). ✅ 09-22 판정 완료 두 건: ② 발언→조치 승격 <0건>(xAI 는 오히려 Grok 4.7 출시 · OpenAI×앤스로픽 상호 안전테스트는 협상 중) → ai_sw_company_anthropic#T1 ⓑ · ③ 가격 반응 <기하급수 쪽이 3.8배 더 올랐다>(09-21: 기하급수 평균 +4.6% vs 메모리 +1.2%) = 감속 가설과 반대 → n-pacing breaks_if 쪽. 한 점이지 추세 아님. 남은 것은 원문 대조(등급 ②→①)뿐이고, n-pacing 전체가 아직 2차 요약의 ② 위에 서 있다",
-   "judges": "ai-sw/ai_sw_company_anthropic.html#T1 · national-strategy/ns_bigtech_capex_roi.html#T1(관측)",
-   "grade": "②"
-  },
-  {
-   "when": "착수 가능(FOMC 09-16 통과 · 6일째 미착수)",
-   "what": "KB금융·은행 판단 신설(사용자 결정 09-15: FOMC 뒤로) — NIM·CET1·환율 민감도·PBR÷ROE · 후보표 편입 · 🔴 09-22 상태 — 착수 조건(FOMC)은 충족됐고 미착수다. 재는 것 넷을 미리 고정: NIM(3Q26) · CET1 · USDKRW 1% 민감도 · PBR÷ROE(섹터 분위). 판정이 아니라 <작업>이므로 지우지 않는다",
-   "judges": "portfolio.next",
-   "grade": "작업"
-  },
-  {
-   "when": "착수 가능(6일째 미착수)",
-   "what": "유동성 구조 페이퍼 신설(사용자 결정 09-15) — 정본은 regime.liquidity, 페이퍼는 구조만: 성상현 프레임 검증 결과 · 1946~51 억압 vs 지금 · 단기채 수요처 셋(은행·스테이블코인·연준 RMP)의 크기 · 신용 확장의 행방(하이퍼스케일러 부채·그림자 차입) · 판정(바젤3 4Q26·클래리티·QRA 11월). 상단 카드는 regime에서 렌더(render_cards 확장) · 🔴 09-22 상태 — 미착수. 정본은 regime.liquidity 이므로 페이퍼는 <구조만> 쓰면 된다(새 저장소 금지 §H1)",
-   "judges": "regime.macro.liquidity",
-   "grade": "작업"
-  },
-  {
-   "when": "2026-09-22",
-   "what": "스페이스X 스타십 시험발사(지구궤도 목표 · ② 일정) — 우주 2026 편 T2(Starship V3) 판정 · 9/24 보호예수 3.28억주 이틀 전 · 누리호 5차 10/7 · ⚠ 09-22 <일정 불일치>: 순살 09-21(②)은 9/22, 삼프로 09-21(②)은 9/28 — 어느 쪽도 값이 아니다(§W2). 발사일 확정 전까지 우주 편 T2 판정은 열리지 않는다. 결과 미확인",
-   "judges": "space/space_update_2026.html#T2",
-   "grade": "②"
-  },
-  {
-   "when": "2026-09-22~24",
-   "what": "알리바바 압사라 컨퍼런스 2026(항저우) — Qwen v3.9/v4 · MaaS 9월 ARR(8월 160억 위안 → 연말 300억 목표) · T-Head 칩 · 3년 3,800억 위안 캐펙스 재확인 여부. Citi 30일 STV 긍정 개시(③)",
-   "judges": "관측 · entities BABA",
-   "grade": "②"
-  },
-  {
-   "when": "2026-09-24",
-   "what": "산업부 8월 주요 유통업체 매출동향 — 백화점 YoY(7월 +17.9%)가 얼마나 둔화하나 · 현대백화점 T6 선행 지표 · 9/30 중간배당 기준일(500원)",
-   "judges": "consumer/consumer_sector_department.html#T6,T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-09-24",
-   "what": "미중 정상회담 — LNG SPA(09-14 Venture Global ↔ China Gas 20년·연 50만톤 ①) 이후 중국산 선박 제재가 어디로 가는지",
-   "judges": "shipbuilding 채점표",
-   "grade": "①"
-  },
-  {
-   "when": "2026-09-24 · 10-09 · 12-08",
-   "what": "SpaceX 보호예수 해제 — 9/24 3.28억주 · 10/9 13억주(유통주식 +40% · 3Q 실적 이틀 뒤) · 12/8 7.98억주(JPM ③). 13F 대가 5:0 만장일치 신규(T1)의 첫 물량 시험 — 10/9가 크다",
-   "judges": "research/13f_2026q2.html#T1",
-   "grade": "③"
-  },
-  {
-   "when": "2026-09-24/25",
-   "what": "미중 워싱턴 정상회담 — 중국산 배터리 일부 허용 여부(하나 김현수: 셀·시스템은 구조적 탈중국, 양극재·리튬 등 광물이 협상 카드) · CXMT·메모리 수출 허용 여부 · 20·30년물 입찰 동일 주 · JPM 09-18(③): 국빈 방문 9/23~25 · 예상 = 희토류 휴전 1년 연장 · 일부 관세 예외 · 제한적 반도체 라이선스(H200·MI325X 사례별) · 구매(보잉 200대·농산물 $170억/년+) · 최대 성과 후보는 중국의 이란 영향력 → 휴전·해로 개방 · 「관리된 디커플링 안정」이지 되돌림 아님 · 후속 11/18 APEC 선전 · 12/14 G20",
-   "judges": "energy/energy_battery_valuechain_update.html · hbm-packaging · macro",
-   "grade": "②",
-   "precommit": {
-    "if_battery_allowed": "배터리 편 T2(정책 리스크) 판정",
-    "if_memory_export_allowed": "반도체 전쟁 T2 자본 축 강화 · CXMT open 승격",
-    "if_ai_pacing_on_agenda": "AI 감속이 의제로 실제 논의되면 n-pacing 「정치가 막는다」 축 약화 · 중국 「AI 냉전」 규정이면 강화"
-   }
-  },
-  {
-   "when": "2026-09-30",
-   "what": "코스피 낙폭 편(kr_drawdown_2026) T3 기한 — 페이지가 박은 9/30 판정선(3회차 브레인 채우기에서 발견)",
-   "judges": "market/kr_drawdown_2026.html#T3",
-   "grade": "페이지"
-  },
-  {
-   "when": "2026-09-30 유력(② · 회사 IR 미확인 · 방송은 9/30, 아카이브 종전 표기는 10/1)",
-   "what": "마이크론 FQ4 실적(10/1 ②) — 메모리 ASP 방향의 첫 ① · 예측 r-20260914-44(SKH 3Q DRAM ASP ≥ +15%)의 선행 판독 · 노근창 「3Q 크로스오버」 판정 · 사전약속(09-17 TD Cowen ③ 기준): FQ1 EPS 가이던스 ≥$37이면 「한 자릿수 상회」 정상 · <$35(컨센)이면 n-memory-durable 이익 축 1스트라이크 · 자사주 승인 $20B+ 발표 여부 = SKH T3 비교축 · GPM 가이던스가 QoQ 확대 멈추면 TD의 「마진 정점 CQ2:27」이 앞당겨진 것 · RBC 09-18(③): FQ4 $50B/31.09 · FQ1 가이던스 컨센 +3~5%(35.9~36.6) — TD 37과 함께 「35 미만 = 1스트라이크」 기준 유지 || 🔒 게이트는 r-20260922-05 에 고정(G1~G4) || 🔴 09-22 날짜 경고: 오늘 방송 둘이 「9/30」이라 한다(09-18 에도 「다음 주 화요일 vs 10/1」 불일치 기록). FQ4 는 8월 말 종료 분기라 9월 말 발표가 통상이므로 <9/30 이 더 유력>하나 micron.com/investors 를 안 봤다(§W5). <게이트 G1~G4 는 안 바꾸고 날짜만 통일> — 추석 연휴(9/23~26) 중 발표 가능성",
-   "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2 · regime:n-memory-durable",
-   "grade": "①",
-   "precommit": {
-    "if_asp_up": "n-memory-durable 가격 쪽이 틀림 → 본진 유지 근거 강화(행동 없음)",
-    "if_asp_flat": "r-44 miss 후보 · T2 「정점 2027」 재검토"
-   }
-  },
-  {
-   "when": "2026-09말~10월중",
-   "what": "3Q26 프리뷰 — SK하이닉스 추정PER 4.71배가 전제하는 「이 이익이 오래 안 간다」의 첫 검증",
-   "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10 이내",
-   "what": "HD현대중공업 Corban 선수금 20%(약 1,912억) 수령 공시 — 계약일 08-07 이후 미발화. 미수령이면 계약 취소 가능",
-   "judges": "shipbuilding",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10-01 이후 10거래일",
-   "what": "10Y 평균이 5.00 아래인가 — BOE 효과가 빠진 뒤의 n-hike 반증 성립 판정(r-20260918-06 사전약속)",
-   "judges": "regime.narratives.n-hike",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-05",
-   "what": "AI 컴퓨팅 선물 지수 상장(③ 방송) — 새 트리거 후보 · 실체 미확인",
-   "judges": "관측",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10-08",
-   "what": "삼성전자 3Q26 잠정 실적 — BNK OP 108조(2026 하향) vs Citi 2027~28 상향의 첫 ① · NAND 애플 협상(+30%) 반영 전",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T1,T2 · regime:n-memory-durable",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-08",
-   "what": "유니테스트 SK하이닉스 HBM4 웨이퍼 테스터 227억 납기 — 인식 여부(3Q/4Q)",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T7",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-09",
-   "what": "로빈후드 미시간 스포츠 이벤트 계약 포지션 청산 마감 — 스포츠 계약 비중의 첫 실측(T4)",
-   "judges": "payments/payments_company_robinhood.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-10(경)",
-   "what": "로빈후드 9월 운영 데이터 — 이벤트 계약 MoM 2연속 감소면 T1 첫 반증 신호",
-   "judges": "payments/payments_company_robinhood.html#T1",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-13",
-   "what": "브레인 층 생존 판정 — facts 에 추가된 회사가 25사 그대로면 §H 선례와 같은 실패로 보고 폐기 논의",
-   "judges": "brain",
-   "grade": "—"
-  },
-  {
-   "when": "2026-10-13~10-25",
-   "what": "삼성전자·SK하이닉스 자사주 매입 완료(② 박병창 추정 · 공시로 확정) — 「완료 뒤 외국인 복귀」 시나리오의 시작점. 판정: 완료 후 10거래일 외국인 순매수 부호 · 09-17 민재기(②): 취득 50%+ 진행 · 종료 10월 하순 — 시점 폭 2주 · 공시(취득 완료 보고)로 확정",
-   "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1 · market/kr_drawdown_2026.html",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10-16",
-   "what": "애플 아이폰 듀오 사전예약(출시 10/23) — LG이노텍 T6 관측(숫자는 못 움직임 · 초기 600~800만대 ②) → 10월 하순 3Q26 잠정(판정 · OP <2,650억이면 CR·환율 꺾임) → 10월 말 애플 12월 분기 가이던스",
-   "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T6",
-   "grade": "①②"
-  },
-  {
-   "when": "2026-10-17",
-   "what": "사우디 F-35 의회 30일 심사 종료(②) · UAE 통합대공망 Term Sheet 재공시(한화시스템 ②) — 방산 「중동 촉매」 판정 1차",
-   "judges": "defense/us_defense_primes.html#T4 · defense/k_defense_company_hanwha_systems_ocean.html#T4",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10-22",
-   "what": "UNGA 걸프 회동(09-22) 후 1개월 — 한화에어로·한화시스템·로템의 중동 상대 「단일판매공급계약」 공시 0건이면 「중동 촉매」는 수사(④) 확정",
-   "judges": "defense/k_defense_investment_map.html#T5",
-   "grade": "①(공시 유무)"
-  },
-  {
-   "when": "2026-10-27/28",
-   "what": "FOMC — 11/3 중간선거 3일 전. 나일스 「이때는 인상 못 한다 → 9월이 유일한 기회」(③)를 판정: 9월에 안 올렸으면 10월도 못 올리는가",
-   "judges": "macro",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-27/28",
-   "what": "FOMC — 점도표 「연내 1회 더」의 시점. 사전약속: 10/28 인상 + 2027 중앙값 4.4 쪽 상향이면 「얕은 인상=감당 가능」 전제 파기(n-hike 강화) · 동결 + 2027 인하 복귀면 배수 압력 해소. 09-16 판정 기록: +25bp 12–0 · 2026 4.1 · 2027 4.1 · 실질 +1.6",
-   "judges": "regime.narratives.n-hike · n-repression · portfolio.exposures.rates_up",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-28~11-06",
-   "what": "방산 7사 3Q26 잠정실적 — 판정 지표 (a) 9M 진도율 4사 이상 ≥75%(KAI 3Q OP ≥1,279억) · LIG 3Q OPM 6%(컨센) vs 9~12%(상반기) · 한화에어로 컨센 +3% 상향 여부",
-   "judges": "defense/k_defense_investment_map.html#T5 · defense/k_defense_company_lig_nexone.html#T2 · defense/k_defense_company_kai.html#T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10~11",
-   "what": "HBM 내년 단가 협상 — 김장열(③)이 「진짜 관전 포인트」로 지목. +50% 이상이면 SK하이닉스 이익 레버리지, 기대 이하면 2027~28 이익 하향. 아카이브 T1 판정 창과 같은 자리 · 🔑 09-22 JPM(③): 「협상은 마무리 단계」 · 2027 HBM 혼합 ASP YoY <+64%>(기존 +48% 상향) — 김장열의 문턱(+50%)을 넘는 값이나 ③ 채널체크이지 공시가 아니다. <기준선을 +64%로 박고 판정 자리는 3Q26 실적·10월 말로 유지>한다",
-   "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1",
-   "grade": "③"
-  },
-  {
-   "when": "2026-10말",
-   "what": "로빈후드 3Q26 실적 — 매출 YoY <25%·순이익률 <40%면 T3 파기 · 순이자 QoQ(T2)",
-   "judges": "payments/payments_company_robinhood.html#T1,T2,T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10말(3Q26 공시)",
-   "what": "CXMT — 5세대 양산 발표(09-20 ②) 후 첫 실측. GPM 유지 여부가 T2(「가격은 안 깎는다」) 판정이고, 웨이퍼당 +50% 가 비트 출하에 나타나는지가 T3(캐파 승수) 판정이다",
-   "judges": "national-strategy/ns_china_ai_ecosystem.html#T2·T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10말(3Q26 실적)",
-   "what": "삼성 HBM4 매출 QoQ 3배 가이던스 달성 여부 — 글라스 캐리어 세정 물량 2배(②)가 실제 HBM 매출로 나오나. SK하이닉스 T4(Scale-Out 희석)의 반증 조건이 여기 걸린다",
-   "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10말(3Q26 컨콜)",
-   "what": "삼성전자 주주환원 중간 업데이트 — JPM(③)이 「잠정적 방향성·코멘트」를 다음 관전 포인트로 지목. 공식 업데이트는 4Q26 실적. T4 「병목은 재원이 아니라 의사결정」의 판정",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T4",
-   "grade": "①(컨콜)"
-  },
-  {
-   "when": "2026-10말~11월초",
-   "what": "키옥시아 2Q FY2027 — 5조 엔의 단독 몫과 기간 시작 연도 · 분기 유형자산 취득 700억엔 · 09-19 Kioxia T6 기준선: 2Q ASP 실측 ≥+30%(가이던스 역산 +25) + 3Q 가이던스 ASP 플러스 + 오버행 소멸 중 둘 이상이면 대안 코어 후보로 승격",
-   "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10말~11월초",
-   "what": "미국 에너지 18사 3Q26 실적 — FCF 수익률 순위(E&P 상위 vs 미드스트림 하위)가 유지되는가 · 미드스트림 CapEx/OCF · 2027 CapEx 가이던스 · VG 첫 4분기 TTM",
-   "judges": "energy/us_energy_hegemony_17.html#T1,T4 · energy/us_energy_five.html#T2,T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10월 말(복구 5~6주 ②)",
-   "what": "사우디 동서 파이프라인 복구 — 두바이 프리미엄 소멸 → hormuz_open 시나리오 트리거(휴전 없이도). 얀부 잔여 7~10일은 9월 말",
-   "judges": "regime.oil · portfolio.precommits",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10중",
-   "what": "클래리티 재심의 동의 절차(09-16 클로처 49:50 부결 판정 후) · OCC 스테이블코인 최종규칙 11월 · 회기 종료 2027-01-03 — 로빈후드 T4 체인 서사 · regime.liquidity 경로 · 09-17 순살(②): 루미스 「끝났다」 · 다음 시도 2027 · 클로처 60표에 11표 부족 · 은행단체도 반대 — 삼프로 「10월 중순 재심의 가능」(③)과 상충. 10월 중순까지 동의 절차 착수 공시 없으면 순살 쪽으로 판정 · 09-17(②): SEC 앳킨스 「법 없어도 자체 규정」 3회 반복 · 나스닥 토큰화 주식 서비스 3Q말 발표 예정 · 하원 세입위 세제법안 28:21 통과 — 입법 없이 규제기관·거래소가 먼저 가는 경로 · 09-18 ①: SEC 「혁신 면제」 발표(토큰화 주식 5년 · 등록 없이) — 규제기관 경로 실현 · 재심의 여부와 무관하게 토큰화 축은 열림",
-   "judges": "payments/payments_company_robinhood.html#T4 · regime.macro.liquidity",
-   "grade": "③"
-  },
-  {
-   "when": "2026-11",
-   "what": "SFA반도체 — 온양 이관 1단계 장비 가동 개시(iM ③). T6 의 「물량은 오는데 이익은 0」이 깨지는지의 시작점. 판정 완결은 2027-02 4Q26 잠정(연결 OP 흑자 전환 여부)",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T6",
-   "grade": "③"
-  },
-  {
-   "when": "2026-11 QRA",
-   "what": "장기 국채 발행 비중이 실제로 축소되는가 — 「AI로 부채를 푼다」 논지의 유일한 판정 지점",
-   "judges": "macro",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11 중순",
-   "what": "3Q26 — 건설 「매출이 함께 도는가」 · 오스코텍 마일스톤 없는 분기 · 리가켐 원천기술 비중 · 지엔씨에너지 계약부채 614억 · 국내 냉각·광 10사 YoY(적자 3사 흑전 여부)",
-   "judges": "multi · ai-infra/kr_cooling_optical_layer.html#T1",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11 중순",
-   "what": "13F(3Q26) — 광통신 9사·연결 4사 기관 포지션. 45일 지연·롱온리",
-   "judges": "research/13f_2026q2.html",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 보고서)",
-   "what": "두산 — SK실트론 70.61% 인수대금이 재무에 처음 잡힌다(SPA 2026-07-31 ①). 조 단위면 잔여시총 4.5291조(전자BG 5.85배)를 깎는다. 메리츠는 업사이드로만 적었다 · 🔑 09-22 확인: 반기보고서 타법인출자 기준일이 2026-06-30 이고 SPA 는 07-31 이라 <6월 말 장부(3조6,325억)에 SK실트론은 없다>. 처음 잡히는 자리는 <2026-11 3Q26 분기보고서>다",
-   "judges": "ai-infra/kr_cooling_optical_layer.html#T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "코세스 — 2Q 가속(1Q 15억→2Q 57억 · OPM 30.6%)이 BE BTM 수혜인가 반도체 레이저 장비 본업인가. 세그먼트로 안 갈리면 m-41 에서 ⓒ 로 버린다",
-   "judges": "ai-infra/us_bloom_intel_deep.html#T5 · m-41",
-   "grade": "②"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "서진시스템 — m-41 「동행」 가정 판정. 2Q OP −194억(1H/FY −47.6)에서 안 돌아오면 m-41 의 동행 목록에서 뺀다",
-   "judges": "m-41",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "일진전기 — 1H/FY 0.81 이면 3Q 에 FY25(1,512억)를 넘어야 한다. 못 넘으면 「PER 25.87 이 싸다」의 분모가 틀린 것",
-   "judges": "ai-infra/kr_power_cross_valuation.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "Vistra vs NRG — NRG 가 Texas 부문 EBITDA 를 플러스로 돌려 EV/EBITDA 동률(12.25 vs 12.27)이 깨지는가. 깨지는 쪽이 답이다 · 09-22 중간 읽기(① XBRL): 2Q26 <연결> OP 는 NRG $976M > VST $553M 로 역전(1H 누적은 VST $2,052M > NRG $1,304M). ⚠ 판정 조건은 Texas <부문> EBITDA 이고 연결은 세그먼트를 가린다 — 판정 아님. NRG 자산 $29.1B→$39.9B·장기부채 $11.2B→$19.8B 라 인수 온기와 텍사스 마진이 안 갈린다",
-   "judges": "ai-infra/us_merchant_power_vst_nrg.html#T1",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "해성디에스 — 2Q26 OP +204%(82→249억 ①)의 귀속. AI 패키지기판인가 자동차·전력반도체 리드프레임인가. 안 갈리면 「AI 종목」으로 부르지 않는다",
-   "judges": "open.haesung-attribution",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "디아이 — 4Q25 순손실 −103억이 TTM 에서 빠지면 PER 30.46 이 얼마가 되나. 추정PER 16.28 이 맞는지 판정",
-   "judges": "—",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "두산 전자BG — 1H26 OPM 29.9% · 매출 +47.1% 가 이어지나. 꺾이면 잔여시총 5.9~13.2배의 분모가 틀린 것 · ✅ 09-22 원문 대조(① DART 20260814004047): 1H26 영업수익 1조2,934억(+47.1%) · 영업손익 3,869억 · OPM <29.91%> — 값 확정, 등급 ②→①. 판정 자리는 2026-11 3Q26",
-   "judges": "ai-infra/kr_cooling_optical_layer.html#T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "해성디에스 — 가동률 55.3%(Kpcs ①)가 더 오르나. AI 축이 아니라 「가동률·원소재 연동 판가」 축으로 판정한다. 귀금속 시세가 꺾이면 판가 전가도 역방향",
-   "judges": "open.haesung-attribution",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "전공정 장비 6사 — 이세철의 「올 하반기 수주 폭증」(③ 6/17)이 수주잔고에 나타나나. 현재 중앙 도착률 44%·OP YoY −25%·PER 51.4 로 이익 없이 값이 붙어 있다. 안 나타나면 구간론 1번이 틀린 것",
-   "judges": "m-43",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "후공정 장비 13사 — 중앙 도착률 88%·OP YoY +86%·가속 12/13 이 이어지나. 꺾이면 「이미 왔다」가 「왔다 갔다」가 된다",
-   "judges": "m-43",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "티에스이 — ProbeCard+InterfaceBoard 81.5%·+65~75% 가 이어지나. 꺾이면 이익 귀속은 맞았어도 진입 시점이 늦은 것(YTD +321.9%)",
-   "judges": "facts.131290",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(3Q26 실적)",
-   "what": "VG — 액화수수료가 2Q26 $6.45/MMBtu(+69% QoQ ①/②)에서 유지되나. 커미셔닝 카고가 상업가동으로 넘어가면 스팟 노출이 사라진다 — 「미계약 비중 유리」(③)가 아니라 「커미셔닝 단계」라는 읽기의 판정",
-   "judges": "energy/oil_hedge_vehicles.html#T2",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(FY26 3Q)",
-   "what": "Amphenol — 1H26 인수 $10.68B 의 <이자비용>과 <인수 자산 이익>이 둘 다 온기 반영되면 P/E 38.4배가 어디로 가나. 지금 TTM 배수는 양쪽이 부분 반영이라 불안정하다",
-   "judges": "facts.APH",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(경)",
-   "what": "사이버 4사 실적 — CRWD Q3 FY27(GAAP OPM 양전?·성장 재가속?) · ZS Q1 FY27 · PANW Q1 FY27(CyberArk 상각 제외 OPM) · FTNT 3Q",
-   "judges": "cybersecurity/cyber_ai_security.html#T2,T3,T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(경)",
-   "what": "Lumentum FY27 Q1 — GPM 47.4%·OPM 27.7% 유지 여부",
-   "judges": "ai-infra/optical_valuechain_9.html#T2,T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(경)",
-   "what": "Coherent FY27 Q1 — DC&C 성장률·Industrial 방향·조정 OPM",
-   "judges": "ai-infra/optical_valuechain_9.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(경)",
-   "what": "Credo FY27 Q2 — 광 매출 구성·SBC/매출·재고 증가율·가이던스 $525~535M",
-   "judges": "ai-infra/optical_interconnect_layer.html#T1,T2,T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11(연기)",
-   "what": "앤스로픽 S-1 공개 — GM·추론 원가·SBC·신용공여 잔액이 ①로. 토큰 편 「GM 60%대」 판정(GPM 80%+는 배분·학습비 전 기준이라 분자가 다르다) · 앤스로픽 편 T5 분모 확정 · 09-19 WSJ(②): IPO 11월로 연기 · 밸류 $2T · ARR $1,000억+ · 3Q 재무 공개 목적 — S-1 GM·추론 원가 판정도 11월로",
-   "judges": "ai-infra/ai_token_economics_paper.html · ai-sw/ai_sw_company_anthropic.html#T2,T5",
-   "grade": "①(공개 시)"
-  },
-  {
-   "when": "2026-11-03",
-   "what": "미국 중간선거 — 「중간선거 해 7월말~11/9 최대 낙폭 중앙값 10%」(나일스 ② 통계)가 이번에도 맞았나. 09-11 기준 S&P 고점 대비 낙폭을 이 날 재서 기록한다",
-   "judges": "macro",
-   "grade": "①(선거) · ② 통계",
-   "precommit": {
-    "measure": "S&P·코스피 09-11 고점 대비 최대 낙폭(나일스 ③ 중앙값 10%) 채점",
-    "then": "이후 1년 경로 기록 시작 — 정우창 ③ 「선거 후 1년 19/19 상승·+14.9%」의 20번째 표본"
-   }
-  },
-  {
-   "when": "2026-11-03",
-   "what": "미국 중간선거 — Citi(③): AI 규제 프레임워크·DC 구축 속도의 분기점. 민주 양원 장악 시 감속 경로 → n-pacing 판정 이벤트(기존 11-03 precommit 에 축 추가)",
-   "judges": "regime.narratives.n-pacing",
-   "grade": "③"
-  },
-  {
-   "when": "2026-11-05",
-   "what": "현대백화점 3Q26 잠정실적(예상) — 지누스 손실 폭(2Q −267억 대비) · 백화점 OP 부호 · 프리커밋(프로그램 밖 자본 배분 0 → 3회차 취소) 판정 · 12월 연내 소각(232,460주) 결의 여부",
-   "judges": "consumer/consumer_sector_department.html#T6,T4 · portfolio precommit",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11-09",
-   "what": "USTR 중국산 선박 제재 유예 만료 — 9/24 미중 정상회담이 선행 신호. 배기연 4시나리오(폐지·연장·종료·강화) 중 무엇인지로 조선 축을 판정",
-   "judges": "shipbuilding 채점표",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11-13",
-   "what": "LIG 제3자배정 우선주 5,320억 납입(희석 ~5%) · 11-12 미 해군 조선 계획 제출(각서+90일) → 한화오션 명단",
-   "judges": "defense/k_defense_company_lig_nexone.html#T1 · defense/k_defense_company_hanwha_systems_ocean.html#T1",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11-14",
-   "what": "티에스이 3Q26 분기보고서(잠정 관행 없음) — 매출 QoQ · OPM ≥24% · 프로브카드 매출 → 4Q26~1Q27 SK하이닉스 HBM4E 퀄 결과 · 2027-07-22 CB 전환 개시",
-   "judges": "node-screener/node_screener_hbm_scoreboard.html#T6",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11-16",
-   "what": "후공정 4사 3Q26 보고서 — SFA반도체 한국법인 매출·가동률(선행) · 디아이 OPM≥15% · 와이씨 1,622억 진행률 · 유니테스트 삼성 계약 유무",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T6,T7",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11-28",
-   "what": "한화에어로 스페인 K9 계약금액 공시 유보 만료(하한 6,676억) · 11월 중순 분기보고서 = 방산 6사 B2B 정식값(한화오션 ≥1 여부)",
-   "judges": "defense/k_defense_company_hanwha_aero.html#T1 · defense/k_defense_cross_valuation.html#T9",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11~12",
-   "what": "구글 TPU v10 수주 결정(JP모건 ③: 「올해 11~12월 중 예상」) — v9 EMIB-T 기판 수율이 최대 약 50%까지 오를 전망(이비덴 선두 · 유니마이크론 5~10%p 뒤짐). 아카이브 커버리지 0 인 영역이라 관측만",
-   "judges": "—",
-   "grade": "③"
-  },
-  {
-   "when": "2026-11말",
-   "what": "델 Q3 FY27 — AI 백로그($95B 다음 분기)·AI 서버 마진·FY27 $192B 가이던스 유지 여부. 서버 OEM 층 판단 신설의 판정 근거",
-   "judges": "open:smci-hpe",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11중",
-   "what": "비나텍 3Q26 — 시스템 매출 첫 인식(412억 계약) · 한선 OPM · 아모센스 소재 매출 → T5(국내 밸류체인) 첫 실측",
-   "judges": "ai-infra/us_bloom_intel_deep.html#T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11중",
-   "what": "이수페타시스 3Q26 — 마진 QoQ 개선(CCL 전가) · HDI 전용 공장 발표 · 점유율 안정(OW 하우스 촉매 3 · ③)",
-   "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T1",
-   "grade": "③"
-  },
-  {
-   "when": "2026-11중",
-   "what": "이수페타시스 3Q26 — 별도 OPM 17.8%(2Q26 ①) 대비 방향 · 멀티램 비중(1H26 10~15%) 진척 · 가격 인상 반영 여부. E-glass 병목이 출하에 걸리는지",
-   "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T2,T3 · open:e-glass",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11초",
-   "what": "블룸에너지 3Q26 10-Q — 지역(미주 25%↑?)·단일고객(30%↓?)·관계자(20%↑?) 세 주석 = T2·T3 판정 · 주피터 진행",
-   "judges": "ai-infra/us_bloom_intel_deep.html#T2,T3",
-   "grade": "①"
-  },
-  {
-   "when": "2027 중반 이후(회사가 시점을 답했다)",
-   "what": "Coherent — II-VI 무형상각 $280M 이 줄어 연결 OPM 7.84% 가 조정치 12.67% 로 수렴하는가. 안 줄면 「조정하면 모듈층에서 가장 싸다」가 틀린 것 || 🔑 09-22 회사 답변(③ ECOC): 「GPM 42%+ 목표를 열어뒀고 상회 기대하나 <향후 2~3개 분기 내 급격한 개선은 기대하지 말라>」 — <판정 자리가 2026-12(FY27 1Q)에서 2027 중반 이후로 밀린다>. 상쇄는 고정비 흡수·수율·공장 통합, 마진 기여는 800G→1.6T(2028경)·OCS·CPO·멀티레일",
-   "judges": "ai-infra/optical_valuechain_9.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-12(FY27 3Q 실적)",
-   "what": "CRDO — 재고 +168.3%(매출 +114.7% 의 1.47배)와 OCF/영업이익 0.75배가 개선되나. 미즈호(③)의 「하락 시 매수」는 수요 채널 체크만 근거로 하고 이 둘을 안 본다 — 판정은 현금전환이다",
-   "judges": "ai-infra/optical_interconnect_layer.html#T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-12-18",
-   "what": "BIOSECURE OMB 목록(법정 시한) — 우시 포함 여부",
-   "judges": "ai-bio",
-   "grade": "①"
-  },
-  {
-   "when": "2026-12-31",
-   "what": "블룸 연내 신규 하이퍼스케일러 계약(한투 기대 ③) — 0건이면 T4 「Oracle+α」 반증 · 주피터 파이프라인 2027-02 재지연 여부",
-   "judges": "ai-infra/us_bloom_intel_deep.html#T4",
-   "grade": "③"
-  },
-  {
-   "when": "2026-12-31",
-   "what": "폴란드 K9 3차(7조+)·미 자주포 「연내」 본계약 공시 유무 — 한화에어로 KR 쪽 유일한 진짜 이벤트(②) · 12-09 Austal 재공시 · 12-11 미 CR 만료",
-   "judges": "defense/k_defense_company_hanwha_aero.html#T1",
-   "grade": "②"
-  },
-  {
-   "when": "2026-12초(~09-02+90일)",
-   "what": "연방대법원 — 뉴저지 v. Kalshi 상고허가 판단(제3·9순회 충돌). 기각이면 제9순회(캘리포니아·워싱턴·네바다) 확정 → 로빈후드 T4 반증 경로",
-   "judges": "payments/payments_company_robinhood.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026년 하반기(연내)",
-   "what": "삼성전자 300mm 실리콘 포토닉스 PIC <양산 시작> 여부 — ③ OFC 2026 로드맵 4단계(2026 플랫폼·PDK→2027 TC본딩 엔진→2028 하이브리드 본딩→2029 턴키 CPO)의 <첫 검증점>이자 올해 안에 판정되는 유일한 마디. 아카이브의 「국내 광 층 종결(규모 격차)」을 다시 여는 조건 셋 중 하나다(kr_cooling_optical_layer#T6). 판정 기준을 미리 고정한다 — ⓐ 양산 개시가 <공시·실적>으로 나오면 국내 층 재개 검토 · ⓑ 「준비 완료」·「고객 평가 중」 수준이면 조건부 파이프라인(잔고와 더하지 않는다) · ⓒ 일정이 2027 로 밀리면 「2~3년 격차」가 <확대>된 것으로 기록",
-   "judges": "ai-infra/kr_cooling_optical_layer.html#T6",
-   "grade": "③(현재) → ①(양산 공시 시)"
-  },
-  {
-   "when": "2027 3~4월",
-   "what": "INNOLIGHT·EOPTOLINK 연차보고서 — 해외 94.8%의 홍콩 분해 여부 · InnoLight GPM 46%대 유지 여부",
-   "judges": "ai-infra/optical_valuechain_9.html#T1 · national-strategy/ns_cn_global_reach_paper.html#T2",
-   "grade": "①"
-  },
-  {
-   "when": "2027 말",
-   "what": "HD현대중공업 신규 3.0GW 발전엔진 공장분의 AIDC 수주 — 0이면 「두 건짜리 특수」 확정. 공장 완공 2028-05-31",
-   "judges": "shipbuilding",
-   "grade": "②"
-  },
-  {
-   "when": "2027 상반기",
-   "what": "한미 HM15275 임상 2상 종료",
-   "judges": "glp1",
-   "grade": "①"
-  },
-  {
-   "when": "2027-02-15",
-   "what": "SFA반도체 4Q26 잠정 — 연결 OP 흑자 전환이 판정(실패 시 철회)",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T6",
-   "grade": "①"
-  },
-  {
-   "when": "2027-04",
-   "what": "BOE 길트 매각 재개 여부 — 6개월 전면 중단의 종료 시점. 재개 시 장기물은 제외(영구 종료)이므로 장기 공급은 안 돌아온다. n-hike 반증 판정의 전제",
-   "judges": "regime.narratives.n-hike · regime.macro.liquidity",
-   "grade": "①"
-  },
-  {
-   "when": "2027-1Q",
-   "what": "루빈 CPX 양산 — 랙 단위 총 HBM GB",
-   "judges": "hbm-packaging",
-   "grade": "②"
-  },
-  {
-   "when": "2027-1Q(경)",
-   "what": "GTIG 차기 AI Threat Tracker — 에이전트 주도 침해 비중",
-   "judges": "cybersecurity/cyber_ai_security.html#T1",
-   "grade": "①"
-  },
-  {
-   "when": "2027년중",
-   "what": "삼성 HBM 금액 기준 점유율 — JPM ③ 경로(2025 20% → 2026E 34% → 2027E 39%)가 맞는가. 2027에도 20%대면 T1 의 「22% 탈출 미확인」이 확정된다",
-   "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T1",
-   "grade": "②"
-  },
-  {
-   "when": "2027년중",
-   "what": "엣지 AI — GTC 2026 의 노트북 128GB · AI 데스크톱 748GB(②)가 실제로 팔리나. 풍선효과(③)의 유일한 반증 가능 지점",
-   "judges": "open.edge-ai-gap",
-   "grade": "②"
-  },
-  {
-   "when": "4Q26",
-   "what": "삼성SDI 선그로우 본계약 · 알테오젠 중국 대상 계약(T3 반증)",
-   "judges": "energy · ai-bio",
-   "grade": "②"
-  },
-  {
-   "when": "4Q26",
-   "what": "바젤3 엔드게임 최종 규칙(재제안 26-03-19 · 순완화 $877억 · 시행 2027) — 성상현 「다음 유동성 주인 = 은행」의 정책 축 판정",
-   "judges": "regime.macro.liquidity · actors.banks",
-   "grade": "①(공표 시)"
-  },
-  {
-   "when": "FY28",
-   "what": "Ciena 데이터센터 내부(Nubis AEC·XPO) 매출 인식 여부 — 시스템 벤더의 칩 층 진입",
-   "judges": "ai-infra/optical_valuechain_9.html#T5",
-   "grade": "③"
-  },
-  {
-   "when": "날짜 미정(09-18 불발 · 국회 보고 연기)",
-   "what": "대미투자 MOU 서명·공식 발표 — 09-20 판정: 발표 불발로 ⓑ(조건부 파이프라인) 처리, 원전 8기는 잔고가 아니다. 다음 판정은 실제 서명일이며 기준은 고정 유지 — ⓐ 기수·금액·노형 명시 = ① · ⓒ 웨스팅하우스 지분율·의결권이 국내 몫을 가른다(韓 15%+의결권 vs 美 5~10% ②). 막힌 지점 셋: 지분율·의결권 · 노형 구성(AP1000 6 + APR1400 2 조율안 ②) · 사용후핵연료 재처리 투자. 선행 관측 — 연기된 국회 보고가 다시 잡히는가(산업통상자원중소벤처기업위·재정경제기획위) · ✅ 09-22 ① 근거 도착(korea.kr 산업통상부 09-15 설명자료): 「웨스팅하우스 지분인수 등을 포함하여 대미투자 원전 프로젝트 관련 구체적인 사항은 아직 정해진 바 없음」 — 09-20 의 ⓑ 판정이 ②에서 <①로 굳었다>",
-   "judges": "ai-infra/ai_power_company_nuclear_smr.html#T3",
-   "grade": "①"
-  },
-  {
-   "when": "미정(2026-4Q)",
-   "what": "CFTC 규칙 40.11 「게이밍」 정의 최종 규칙(NPRM 06-10 · 의견 마감 07-27 · 44개 주 반대) · Kalshi 제9순회 전원합의체 재심 결정 → 워싱턴 집행 유예 종료",
-   "judges": "payments/payments_company_robinhood.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "수시",
-   "what": "중국의 미국산 LNG·원유 구매 재개(관세 철회) — T2 반증 · OFAC 이란·베네수엘라 조치 · 호르무즈 통항 회복이면 T1 가격 축이 빠진다",
-   "judges": "energy/us_energy_hegemony_17.html#T1,T2",
-   "grade": "②"
-  },
-  {
-   "when": "2026-09-30 유력(② · 회사 IR 미확인 · 방송은 9/30, 아카이브 종전 표기는 10/1)",
-   "what": "🔑 마이크론 FQ4 — 09-22 어긋남의 판정: 9월 수출단가 −19.5% MoM(① TRASS) vs BofA 3Q 계약가 +20~30% QoQ(②). 재는 것 둘 — ① DRAM ASP QoQ 실측(예측 r-20260914-44: SKH 3Q ≥ +15%) ② 가이던스에서 「가격 상승 폭」 표현의 부호. 단가 −19.5%가 믹스였는지 가격이었는지가 여기서 갈린다 || 🔒 <사전약속 r-20260922-05> G1 DRAM ASP QoQ ≥+10% & 비트 QoQ ≥0 = 믹스(T1 확정) / ASP QoQ <0 = 가격 꺾임(T2 가 틀림 · §J4 즉시 보고) / 0~+10% = 둔화 시작·판정 보류. G2 가이던스 ≥$37.0B = TD 쪽 / $35.9~36.6B = 컨센 / <$35.9B = SanDisk 전례(피크아웃 ①단계가 DRAM 으로). G3 「가격 상승 폭 완만화」 문장 여부(②). G4 SKH 예측은 신뢰도만 조정, 반증으로 안 셈 || 📌 09-22 Stifel 예상(③ · 게이트는 안 바꾼다): 「실적·가이던스 모두 컨센 상회하되 <상향 폭 완만>」 — 사유가 <칼라(collar) 기반 계약 비중 확대 + 단기 비트 제약>이다. G2 의 TD 쪽($37.0B)과 컨센($35.9~36.6B) 사이를 본다는 뜻. CY27 DRAM 비트 +15~20%(CY26 +20%대 중후반) · 부족 해소엔 +40~50% 필요 || 🔴 09-22 날짜 경고: 오늘 방송 둘이 「9/30」이라 한다(09-18 에도 「다음 주 화요일 vs 10/1」 불일치 기록). FQ4 는 8월 말 종료 분기라 9월 말 발표가 통상이므로 <9/30 이 더 유력>하나 micron.com/investors 를 안 봤다(§W5). <게이트 G1~G4 는 안 바꾸고 날짜만 통일> — 추석 연휴(9/23~26) 중 발표 가능성",
-   "judges": "hbm_pkg_theme_memory_cycle.html#T1 · facts.macro.kr_memory_export_unit_price",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-20 전후",
-   "what": "9월 반도체 수출입 <확정치>(TRASS/관세청) — 잠정(~9/20)의 메모리 단가 −13.9% MoM · DRAM −19.5% MoM 이 확정에서 유지되는지. 유지되면 T1(「상방 포기」)의 ① 근거가 2건이 된다",
-   "judges": "hbm_pkg_theme_memory_cycle.html#T1",
-   "grade": "①"
-  },
-  {
-   "when": "2026-10-21 이후(1M 창 · 2026-10-21 마감)",
-   "what": "n-rotation breaks_if 판정 — 「1M 안에 AI 하드웨어가 회전 목적지(방산·K뷰티·조선·금융)를 다시 앞선다」. 09-21 미국에서 하루 충족(SOX +4.29% vs 메모리 소외 · ARM +17.16). 09-21 기점 1M 누적으로 센다. 단, 09-21 은 「AI 하드웨어」 안에서도 <메모리는 진 날>이다 — 목적지 비교와 층 비교를 섞지 않는다",
-   "judges": "regime.json#n-rotation",
-   "grade": "①"
-  },
-  {
-   "when": "2026-09-22~23",
-   "what": "UNGA — 트럼프–걸프/이란 회동 가능성 · 이란 대통령 09-23 연설. n-hormuz breaks_if(「휴전·회담 재개」)의 첫 실현 구간 판정. 09-21 에 이미 유가 −5%로 기대가 가격에 들어갔으므로, <회동 불발 시 되돌림 크기>가 그 기대의 값이다",
-   "judges": "regime.json#n-hormuz",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10월 하순",
-   "what": "LG이노텍 3Q26 연결영업(잠정) — 아카이브 판정선 <OP 2,650억 유지>(09-21 설정). 메리츠 09-21 하향치 1,501억(환율 사유). 1,501 근처 = 「컨센을 맞춘 하향」 · 2,650 근처 = 「환율 공포가 과했다」. 09-21 USDKRW 1,379.70(1,350 위쪽 이탈)이 4Q~'27 전제를 흔든 상태",
-   "judges": "hbm_pkg_theme_substrate.html#T6",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11-14 전후",
-   "what": "파마리서치 3Q26 분기보고서 — 세그먼트 공시(화장품 증가율 ÷ 의료기기 증가율 · Q1'26 3.5배 · 1H26 화장품 +74%) + 판관비 증가율이 매출 증가율 아래로 오는가 + OPM 39% 회복 여부. T1·T2·T3 동시 판정. ⚠ Chicmax 합작은 화장품 축이라 T4(중국 의료기기 옵션) 판정이 아니다",
-   "judges": "k_beauty_company_pharmaresearch.html#T1·T2·T3",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11 (3Q26 분기보고서)",
-   "what": "🔑 두산 3Q26 — SK실트론 70.61% 인수대금이 재무에 <처음> 잡히는 분기(SPA 2026-07-31 · 6/30 기준 반기보고서에는 없음을 09-22 원문으로 확인). 조 단위면 잔여시총 4.5291조(전자BG 5.85배)의 분모가 깎인다",
-   "judges": "두산 · 전자BG 잔여시총",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11",
-   "what": "드림텍 3Q26 — 기준선 둘로 좁힘(09-22): ① 영업이익 100억 회복 여부(2Q26 1억 · 궤적 88→106→21→4→1) ② <지배주주 순이익 부호>(2025 연결 132억 중 지배주주 1억). 한양디지텍과 매출 크기가 같은데 이익이 154배 차이나는 구조가 유지되는지",
-   "judges": "hbm_pkg_company_samsung.html#T8",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11 중순",
-   "what": "해성디에스 3Q26 — 「장기공급계약 수주현황 없음」이 유지되는가. 유지되면 <LTA 유무 = 병목 강도>라는 09-22 판단의 두 번째 관측점이 되고, 생기면 LTA 확산이 병목 없는 층까지 내려온 것",
-   "judges": "hbm_pkg_theme_substrate.html#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-09-22~23 · 09-24 · 10월 말",
-   "what": "🆕 탱커 T5 판정 창 — 휴전 축이 열리는 자리 셋(UNGA 걸프·이란 회동 / 미중 정상회담 / 사우디 동서 파이프라인 전량 복구). <베타 0짜리가 얼마나 빠지는가>를 잰다. 09-21 이 첫 관측(브렌트 −5% → 탱커 −1.0~−3.5% · 이벤트 배수 0.2~0.7) — 두 번째 관측으로 이벤트 베타 확정",
-   "judges": "energy/oil_hedge_vehicles.html#T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-11 (3Q26)",
-   "what": "탱커 3사 실적(FRO·DHT·INSW) — TCE 실현단가가 「운임 사상 최고」를 확인하는가. 함께: 원유선 vs 제품선 1Y 격차 2.3배(원유 +128% vs 제품 +56%)가 좁혀지는지 — 좁혀지면 원인이 「거리」가 아니라 「선종 수급」(T5 falsifier ②)",
-   "judges": "energy/oil_hedge_vehicles.html#T5",
-   "grade": "①"
-  },
-  {
-   "when": "2026-09-28 (마감 전)",
-   "what": "🔑 삼성전자 배당기준일(② 방송 단독 · 분기 배당 4,000원 · 분기 수익률 약 1.5%) — 🔴 09-22 정정 — <보유는 679주>다(09-21 +183주 반영 · 레거시 1,300주는 이 계좌에 없음이 HTS 잔고로 확인). 4,000원이면 약 <272만원>. 🔴 <미검증> — 과거 분기배당 361원과 44배 차이라 DART 현금·현물배당결정 공시로 대조해야 한다(§W2). 잠정 10/8~12(② · OP 105조 = JPM 102~109조 안 · 컨센 109~121조 아래) || ⚠ 잠정실적일도 갈린다 — 09-22 방송 <10/7~8> vs 09-21 방송 10/8~12. 둘 다 ②",
-   "judges": "portfolio.holdings 삼성전자 · hbm_pkg_company_samsung",
-   "grade": "②"
-  },
-  {
-   "when": "2026-10 초(삼성) · 2026-10 중순(하이닉스)",
-   "what": "🔑 자사주 매입 종료(③ 이재규·이지은) — 종료 뒤 <외국인 의존이 절대적>이 된다. 레짐 종료 조건(「코스피 외국인 순매수 전환 2주」)의 판정 창과 겹친다. 09-21 은 외국인이 삼성 +1조 매수 / 하이닉스 −8,000억 매도로 <배당 전략 교체>였다(②) — 순매수 전환으로 세면 안 된다",
-   "judges": "regime.json#kospi · changes_if",
-   "grade": "③"
-  },
-  {
-   "when": "2026-11 중순 (3Q26 13F · 지연 45일)",
-   "what": "드러켄밀러 3Q26 13F — 09-22 에 ① 로 잰 것들의 다음 점: ① 집중도가 계속 낮아지는가(HHI 588→493) ② 광통신 3사 청산이 재진입으로 뒤집히는가 ③ Rambus·램리서치·엔테그리스(장비·인터페이스 신규)를 유지·증량하는가 ④ 블룸 재진입 여부. 그리고 <한국 종목 0>이 바뀌는가 — 9/22 방한이 매수였다면 여기 아니면 5% 지분공시에 나온다",
-   "judges": "research/13f_2026q2 후속 · ns_semiconductor_war#T4",
-   "grade": "①"
-  },
-  {
-   "when": "2026-09-23",
-   "what": "🔴 09-21 체결분 결제일 — 집행 98,560,791원 vs 매수 전 예수금 80,361,274원 = <18,199,517원 부족>. 입금이 없으면 미수. 함께 확인할 것: 브레인 cash 12.28억(08-24)이 이 계좌 밖에 실재하는가",
-   "judges": "portfolio.cash",
-   "grade": "①"
-  },
-  {
-   "when": "2026-4Q 실적(2027-02 경)",
-   "what": "🔑 <CPO 시점 판정> — 코히런트가 「스케일아웃 CPO 2026 4Q 램프업(엔비디아 앵커 LTA)」이라 했다(③). 아카이브·Wedbush·미즈호는 「CPO 는 2020년대 말」이라 2~3년 어긋난다. <재는 것: 4Q26 DC&C 매출에서 CPO 가 분리돼 나오는가>. 나오면 「2020년대 말」이 틀린 것이고, 안 나오면 「램프업」이 수사다. ⚠ 스케일아웃 CPO(4Q26)와 스케일업 CPO(2027 하반기)를 섞지 않는다",
-   "judges": "ai-infra/optical_valuechain_9.html#T5",
-   "grade": "③"
-  },
-  {
-   "when": "2026-4Q~2027-1Q",
-   "what": "코히런트 6인치 InP 비중 <이번 분기말 약 50% → 2027말 약 75%>(③) · 텍사스 셔먼 6인치 InP 라인 이번 분기 램프업 · GaAs 6인치 전환 후 캐파 4배. <재는 것: 분기 실적에서 GPM 이 6인치 비중과 같이 움직이는가>(6인치는 다이당 비용 절반·라인당 캐파 4배). 🔑 반대 축도 같이 — 캐파가 4배면 병목이 풀린다(시에나도 「2년 뒤 수급 재균형」)",
-   "judges": "ai-infra/optical_valuechain_9.html#T3",
-   "grade": "③"
-  }
- ]
+  "_readme": {
+    "what": "판정 이벤트 일정. 날짜가 아니라 이벤트로 건다. 도래하면 판정하고 이 목록에서 지운다 — 지우는 것이 판정의 일부",
+    "done_log": "판정 결과는 routing.jsonl 에 kind:'verdict' 한 줄(intake 는 판정 근거 id) — 09-14 수정(inbox.jsonl 은 존재하지 않았다)",
+    "seeded": "2026-09-13 · docs/backlog.md 표에서 이동 + 광통신 3편 카드의 event"
+  },
+  "events": [
+    {
+      "when": "2026 말~2027",
+      "what": "미국 LNG 물량 층의 다음 단 — Golden Pass T2(2026 말) · CP2·Port Arthur·Rio Grande 첫 LNG(2027) · Transco SSE 착공(4Q26) · Constitution FERC",
+      "judges": "energy/us_energy_hegemony_17.html#T3 · LNG·VG·WMB",
+      "grade": "②"
+    },
+    {
+      "when": "차단 해제 시(9일째 blocked)",
+      "what": "「Pacing the Frontier」 <원문 대조만 남았다> — darioamodei.com egress 9일째 차단(c-20260913-03 · 09-20 allowlist 적용 후에도 blocked). ✅ 09-22 판정 완료 두 건: ② 발언→조치 승격 <0건>(xAI 는 오히려 Grok 4.7 출시 · OpenAI×앤스로픽 상호 안전테스트는 협상 중) → ai_sw_company_anthropic#T1 ⓑ · ③ 가격 반응 <기하급수 쪽이 3.8배 더 올랐다>(09-21: 기하급수 평균 +4.6% vs 메모리 +1.2%) = 감속 가설과 반대 → n-pacing breaks_if 쪽. 한 점이지 추세 아님. 남은 것은 원문 대조(등급 ②→①)뿐이고, n-pacing 전체가 아직 2차 요약의 ② 위에 서 있다",
+      "judges": "ai-sw/ai_sw_company_anthropic.html#T1 · national-strategy/ns_bigtech_capex_roi.html#T1(관측)",
+      "grade": "②"
+    },
+    {
+      "when": "착수 가능(FOMC 09-16 통과 · 6일째 미착수)",
+      "what": "KB금융·은행 판단 신설(사용자 결정 09-15: FOMC 뒤로) — NIM·CET1·환율 민감도·PBR÷ROE · 후보표 편입 · 🔴 09-22 상태 — 착수 조건(FOMC)은 충족됐고 미착수다. 재는 것 넷을 미리 고정: NIM(3Q26) · CET1 · USDKRW 1% 민감도 · PBR÷ROE(섹터 분위). 판정이 아니라 <작업>이므로 지우지 않는다",
+      "judges": "portfolio.next",
+      "grade": "작업"
+    },
+    {
+      "when": "착수 가능(6일째 미착수)",
+      "what": "유동성 구조 페이퍼 신설(사용자 결정 09-15) — 정본은 regime.liquidity, 페이퍼는 구조만: 성상현 프레임 검증 결과 · 1946~51 억압 vs 지금 · 단기채 수요처 셋(은행·스테이블코인·연준 RMP)의 크기 · 신용 확장의 행방(하이퍼스케일러 부채·그림자 차입) · 판정(바젤3 4Q26·클래리티·QRA 11월). 상단 카드는 regime에서 렌더(render_cards 확장) · 🔴 09-22 상태 — 미착수. 정본은 regime.liquidity 이므로 페이퍼는 <구조만> 쓰면 된다(새 저장소 금지 §H1)",
+      "judges": "regime.macro.liquidity",
+      "grade": "작업"
+    },
+    {
+      "when": "2026-09-22",
+      "what": "스페이스X 스타십 시험발사(지구궤도 목표 · ② 일정) — 우주 2026 편 T2(Starship V3) 판정 · 9/24 보호예수 3.28억주 이틀 전 · 누리호 5차 10/7 · ⚠ 09-22 <일정 불일치>: 순살 09-21(②)은 9/22, 삼프로 09-21(②)은 9/28 — 어느 쪽도 값이 아니다(§W2). 발사일 확정 전까지 우주 편 T2 판정은 열리지 않는다. 결과 미확인",
+      "judges": "space/space_update_2026.html#T2",
+      "grade": "②"
+    },
+    {
+      "when": "2026-09-22~24",
+      "what": "알리바바 압사라 컨퍼런스 2026(항저우) — Qwen v3.9/v4 · MaaS 9월 ARR(8월 160억 위안 → 연말 300억 목표) · T-Head 칩 · 3년 3,800억 위안 캐펙스 재확인 여부. Citi 30일 STV 긍정 개시(③)",
+      "judges": "관측 · entities BABA",
+      "grade": "②",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-09-24",
+      "what": "산업부 8월 주요 유통업체 매출동향 — 백화점 YoY(7월 +17.9%)가 얼마나 둔화하나 · 현대백화점 T6 선행 지표 · 9/30 중간배당 기준일(500원)",
+      "judges": "consumer/consumer_sector_department.html#T6,T3",
+      "grade": "①",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-09-24",
+      "what": "미중 정상회담 — LNG SPA(09-14 Venture Global ↔ China Gas 20년·연 50만톤 ①) 이후 중국산 선박 제재가 어디로 가는지",
+      "judges": "shipbuilding 채점표",
+      "grade": "①",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-09-24 · 10-09 · 12-08",
+      "what": "SpaceX 보호예수 해제 — 9/24 3.28억주 · 10/9 13억주(유통주식 +40% · 3Q 실적 이틀 뒤) · 12/8 7.98억주(JPM ③). 13F 대가 5:0 만장일치 신규(T1)의 첫 물량 시험 — 10/9가 크다",
+      "judges": "research/13f_2026q2.html#T1",
+      "grade": "③",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-09-24/25",
+      "what": "미중 워싱턴 정상회담 — 중국산 배터리 일부 허용 여부(하나 김현수: 셀·시스템은 구조적 탈중국, 양극재·리튬 등 광물이 협상 카드) · CXMT·메모리 수출 허용 여부 · 20·30년물 입찰 동일 주 · JPM 09-18(③): 국빈 방문 9/23~25 · 예상 = 희토류 휴전 1년 연장 · 일부 관세 예외 · 제한적 반도체 라이선스(H200·MI325X 사례별) · 구매(보잉 200대·농산물 $170억/년+) · 최대 성과 후보는 중국의 이란 영향력 → 휴전·해로 개방 · 「관리된 디커플링 안정」이지 되돌림 아님 · 후속 11/18 APEC 선전 · 12/14 G20",
+      "judges": "energy/energy_battery_valuechain_update.html · hbm-packaging · macro",
+      "grade": "②",
+      "precommit": {
+        "if_battery_allowed": "배터리 편 T2(정책 리스크) 판정",
+        "if_memory_export_allowed": "반도체 전쟁 T2 자본 축 강화 · CXMT open 승격",
+        "if_ai_pacing_on_agenda": "AI 감속이 의제로 실제 논의되면 n-pacing 「정치가 막는다」 축 약화 · 중국 「AI 냉전」 규정이면 강화"
+      }
+    },
+    {
+      "when": "2026-09-30",
+      "what": "코스피 낙폭 편(kr_drawdown_2026) T3 기한 — 페이지가 박은 9/30 판정선(3회차 브레인 채우기에서 발견)",
+      "judges": "market/kr_drawdown_2026.html#T3",
+      "grade": "페이지",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-09-30 유력(② · 회사 IR 미확인 · 방송은 9/30, 아카이브 종전 표기는 10/1)",
+      "what": "마이크론 FQ4 실적(10/1 ②) — 메모리 ASP 방향의 첫 ① · 예측 r-20260914-44(SKH 3Q DRAM ASP ≥ +15%)의 선행 판독 · 노근창 「3Q 크로스오버」 판정 · 사전약속(09-17 TD Cowen ③ 기준): FQ1 EPS 가이던스 ≥$37이면 「한 자릿수 상회」 정상 · <$35(컨센)이면 n-memory-durable 이익 축 1스트라이크 · 자사주 승인 $20B+ 발표 여부 = SKH T3 비교축 · GPM 가이던스가 QoQ 확대 멈추면 TD의 「마진 정점 CQ2:27」이 앞당겨진 것 · RBC 09-18(③): FQ4 $50B/31.09 · FQ1 가이던스 컨센 +3~5%(35.9~36.6) — TD 37과 함께 「35 미만 = 1스트라이크」 기준 유지 || 🔒 게이트는 r-20260922-05 에 고정(G1~G4) || 🔴 09-22 날짜 경고: 오늘 방송 둘이 「9/30」이라 한다(09-18 에도 「다음 주 화요일 vs 10/1」 불일치 기록). FQ4 는 8월 말 종료 분기라 9월 말 발표가 통상이므로 <9/30 이 더 유력>하나 micron.com/investors 를 안 봤다(§W5). <게이트 G1~G4 는 안 바꾸고 날짜만 통일> — 추석 연휴(9/23~26) 중 발표 가능성",
+      "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2 · regime:n-memory-durable",
+      "grade": "①",
+      "precommit": {
+        "if_asp_up": "n-memory-durable 가격 쪽이 틀림 → 본진 유지 근거 강화(행동 없음)",
+        "if_asp_flat": "r-44 miss 후보 · T2 「정점 2027」 재검토"
+      }
+    },
+    {
+      "when": "2026-09말~10월중",
+      "what": "3Q26 프리뷰 — SK하이닉스 추정PER 4.71배가 전제하는 「이 이익이 오래 안 간다」의 첫 검증",
+      "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10 이내",
+      "what": "HD현대중공업 Corban 선수금 20%(약 1,912억) 수령 공시 — 계약일 08-07 이후 미발화. 미수령이면 계약 취소 가능",
+      "judges": "shipbuilding",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10-01 이후 10거래일",
+      "what": "10Y 평균이 5.00 아래인가 — BOE 효과가 빠진 뒤의 n-hike 반증 성립 판정(r-20260918-06 사전약속)",
+      "judges": "regime.narratives.n-hike",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-05",
+      "what": "AI 컴퓨팅 선물 지수 상장(③ 방송) — 새 트리거 후보 · 실체 미확인",
+      "judges": "관측",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10-08",
+      "what": "삼성전자 3Q26 잠정 실적 — BNK OP 108조(2026 하향) vs Citi 2027~28 상향의 첫 ① · NAND 애플 협상(+30%) 반영 전",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T1,T2 · regime:n-memory-durable",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-08",
+      "what": "유니테스트 SK하이닉스 HBM4 웨이퍼 테스터 227억 납기 — 인식 여부(3Q/4Q)",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T7",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-09",
+      "what": "로빈후드 미시간 스포츠 이벤트 계약 포지션 청산 마감 — 스포츠 계약 비중의 첫 실측(T4)",
+      "judges": "payments/payments_company_robinhood.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-10(경)",
+      "what": "로빈후드 9월 운영 데이터 — 이벤트 계약 MoM 2연속 감소면 T1 첫 반증 신호",
+      "judges": "payments/payments_company_robinhood.html#T1",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-13",
+      "what": "브레인 층 생존 판정 — facts 에 추가된 회사가 25사 그대로면 §H 선례와 같은 실패로 보고 폐기 논의",
+      "judges": "brain",
+      "grade": "—"
+    },
+    {
+      "when": "2026-10-13~10-25",
+      "what": "삼성전자·SK하이닉스 자사주 매입 완료(② 박병창 추정 · 공시로 확정) — 「완료 뒤 외국인 복귀」 시나리오의 시작점. 판정: 완료 후 10거래일 외국인 순매수 부호 · 09-17 민재기(②): 취득 50%+ 진행 · 종료 10월 하순 — 시점 폭 2주 · 공시(취득 완료 보고)로 확정",
+      "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1 · market/kr_drawdown_2026.html",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10-16",
+      "what": "애플 아이폰 듀오 사전예약(출시 10/23) — LG이노텍 T6 관측(숫자는 못 움직임 · 초기 600~800만대 ②) → 10월 하순 3Q26 잠정(판정 · OP <2,650억이면 CR·환율 꺾임) → 10월 말 애플 12월 분기 가이던스",
+      "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T6",
+      "grade": "①②"
+    },
+    {
+      "when": "2026-10-17",
+      "what": "사우디 F-35 의회 30일 심사 종료(②) · UAE 통합대공망 Term Sheet 재공시(한화시스템 ②) — 방산 「중동 촉매」 판정 1차",
+      "judges": "defense/us_defense_primes.html#T4 · defense/k_defense_company_hanwha_systems_ocean.html#T4",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10-22",
+      "what": "UNGA 걸프 회동(09-22) 후 1개월 — 한화에어로·한화시스템·로템의 중동 상대 「단일판매공급계약」 공시 0건이면 「중동 촉매」는 수사(④) 확정",
+      "judges": "defense/k_defense_investment_map.html#T5",
+      "grade": "①(공시 유무)"
+    },
+    {
+      "when": "2026-10-27/28",
+      "what": "FOMC — 11/3 중간선거 3일 전. 나일스 「이때는 인상 못 한다 → 9월이 유일한 기회」(③)를 판정: 9월에 안 올렸으면 10월도 못 올리는가",
+      "judges": "macro",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-27/28",
+      "what": "FOMC — 점도표 「연내 1회 더」의 시점. 사전약속: 10/28 인상 + 2027 중앙값 4.4 쪽 상향이면 「얕은 인상=감당 가능」 전제 파기(n-hike 강화) · 동결 + 2027 인하 복귀면 배수 압력 해소. 09-16 판정 기록: +25bp 12–0 · 2026 4.1 · 2027 4.1 · 실질 +1.6",
+      "judges": "regime.narratives.n-hike · n-repression · portfolio.exposures.rates_up",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-28~11-06",
+      "what": "방산 7사 3Q26 잠정실적 — 판정 지표 (a) 9M 진도율 4사 이상 ≥75%(KAI 3Q OP ≥1,279억) · LIG 3Q OPM 6%(컨센) vs 9~12%(상반기) · 한화에어로 컨센 +3% 상향 여부",
+      "judges": "defense/k_defense_investment_map.html#T5 · defense/k_defense_company_lig_nexone.html#T2 · defense/k_defense_company_kai.html#T3",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10~11",
+      "what": "HBM 내년 단가 협상 — 김장열(③)이 「진짜 관전 포인트」로 지목. +50% 이상이면 SK하이닉스 이익 레버리지, 기대 이하면 2027~28 이익 하향. 아카이브 T1 판정 창과 같은 자리 · 🔑 09-22 JPM(③): 「협상은 마무리 단계」 · 2027 HBM 혼합 ASP YoY <+64%>(기존 +48% 상향) — 김장열의 문턱(+50%)을 넘는 값이나 ③ 채널체크이지 공시가 아니다. <기준선을 +64%로 박고 판정 자리는 3Q26 실적·10월 말로 유지>한다",
+      "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html#T1",
+      "grade": "③"
+    },
+    {
+      "when": "2026-10말",
+      "what": "로빈후드 3Q26 실적 — 매출 YoY <25%·순이익률 <40%면 T3 파기 · 순이자 QoQ(T2)",
+      "judges": "payments/payments_company_robinhood.html#T1,T2,T3",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10말(3Q26 공시)",
+      "what": "CXMT — 5세대 양산 발표(09-20 ②) 후 첫 실측. GPM 유지 여부가 T2(「가격은 안 깎는다」) 판정이고, 웨이퍼당 +50% 가 비트 출하에 나타나는지가 T3(캐파 승수) 판정이다",
+      "judges": "national-strategy/ns_china_ai_ecosystem.html#T2·T3",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10말(3Q26 실적)",
+      "what": "삼성 HBM4 매출 QoQ 3배 가이던스 달성 여부 — 글라스 캐리어 세정 물량 2배(②)가 실제 HBM 매출로 나오나. SK하이닉스 T4(Scale-Out 희석)의 반증 조건이 여기 걸린다",
+      "judges": "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10말(3Q26 컨콜)",
+      "what": "삼성전자 주주환원 중간 업데이트 — JPM(③)이 「잠정적 방향성·코멘트」를 다음 관전 포인트로 지목. 공식 업데이트는 4Q26 실적. T4 「병목은 재원이 아니라 의사결정」의 판정",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T4",
+      "grade": "①(컨콜)"
+    },
+    {
+      "when": "2026-10말~11월초",
+      "what": "키옥시아 2Q FY2027 — 5조 엔의 단독 몫과 기간 시작 연도 · 분기 유형자산 취득 700억엔 · 09-19 Kioxia T6 기준선: 2Q ASP 실측 ≥+30%(가이던스 역산 +25) + 3Q 가이던스 ASP 플러스 + 오버행 소멸 중 둘 이상이면 대안 코어 후보로 승격",
+      "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10말~11월초",
+      "what": "미국 에너지 18사 3Q26 실적 — FCF 수익률 순위(E&P 상위 vs 미드스트림 하위)가 유지되는가 · 미드스트림 CapEx/OCF · 2027 CapEx 가이던스 · VG 첫 4분기 TTM",
+      "judges": "energy/us_energy_hegemony_17.html#T1,T4 · energy/us_energy_five.html#T2,T3",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10월 말(복구 5~6주 ②)",
+      "what": "사우디 동서 파이프라인 복구 — 두바이 프리미엄 소멸 → hormuz_open 시나리오 트리거(휴전 없이도). 얀부 잔여 7~10일은 9월 말",
+      "judges": "regime.oil · portfolio.precommits",
+      "grade": "②"
+    },
+    {
+      "when": "2026-10중",
+      "what": "클래리티 재심의 동의 절차(09-16 클로처 49:50 부결 판정 후) · OCC 스테이블코인 최종규칙 11월 · 회기 종료 2027-01-03 — 로빈후드 T4 체인 서사 · regime.liquidity 경로 · 09-17 순살(②): 루미스 「끝났다」 · 다음 시도 2027 · 클로처 60표에 11표 부족 · 은행단체도 반대 — 삼프로 「10월 중순 재심의 가능」(③)과 상충. 10월 중순까지 동의 절차 착수 공시 없으면 순살 쪽으로 판정 · 09-17(②): SEC 앳킨스 「법 없어도 자체 규정」 3회 반복 · 나스닥 토큰화 주식 서비스 3Q말 발표 예정 · 하원 세입위 세제법안 28:21 통과 — 입법 없이 규제기관·거래소가 먼저 가는 경로 · 09-18 ①: SEC 「혁신 면제」 발표(토큰화 주식 5년 · 등록 없이) — 규제기관 경로 실현 · 재심의 여부와 무관하게 토큰화 축은 열림",
+      "judges": "payments/payments_company_robinhood.html#T4 · regime.macro.liquidity",
+      "grade": "③"
+    },
+    {
+      "when": "2026-11",
+      "what": "SFA반도체 — 온양 이관 1단계 장비 가동 개시(iM ③). T6 의 「물량은 오는데 이익은 0」이 깨지는지의 시작점. 판정 완결은 2027-02 4Q26 잠정(연결 OP 흑자 전환 여부)",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T6",
+      "grade": "③"
+    },
+    {
+      "when": "2026-11 QRA",
+      "what": "장기 국채 발행 비중이 실제로 축소되는가 — 「AI로 부채를 푼다」 논지의 유일한 판정 지점",
+      "judges": "macro",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11 중순",
+      "what": "3Q26 — 건설 「매출이 함께 도는가」 · 오스코텍 마일스톤 없는 분기 · 리가켐 원천기술 비중 · 지엔씨에너지 계약부채 614억 · 국내 냉각·광 10사 YoY(적자 3사 흑전 여부)",
+      "judges": "multi · ai-infra/kr_cooling_optical_layer.html#T1",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11 중순",
+      "what": "13F(3Q26) — 광통신 9사·연결 4사 기관 포지션. 45일 지연·롱온리",
+      "judges": "research/13f_2026q2.html",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 보고서)",
+      "what": "두산 — SK실트론 70.61% 인수대금이 재무에 처음 잡힌다(SPA 2026-07-31 ①). 조 단위면 잔여시총 4.5291조(전자BG 5.85배)를 깎는다. 메리츠는 업사이드로만 적었다 · 🔑 09-22 확인: 반기보고서 타법인출자 기준일이 2026-06-30 이고 SPA 는 07-31 이라 <6월 말 장부(3조6,325억)에 SK실트론은 없다>. 처음 잡히는 자리는 <2026-11 3Q26 분기보고서>다",
+      "judges": "ai-infra/kr_cooling_optical_layer.html#T5",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "코세스 — 2Q 가속(1Q 15억→2Q 57억 · OPM 30.6%)이 BE BTM 수혜인가 반도체 레이저 장비 본업인가. 세그먼트로 안 갈리면 m-41 에서 ⓒ 로 버린다",
+      "judges": "ai-infra/us_bloom_intel_deep.html#T5 · m-41",
+      "grade": "②"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "서진시스템 — m-41 「동행」 가정 판정. 2Q OP −194억(1H/FY −47.6)에서 안 돌아오면 m-41 의 동행 목록에서 뺀다",
+      "judges": "m-41",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "일진전기 — 1H/FY 0.81 이면 3Q 에 FY25(1,512억)를 넘어야 한다. 못 넘으면 「PER 25.87 이 싸다」의 분모가 틀린 것",
+      "judges": "ai-infra/kr_power_cross_valuation.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "Vistra vs NRG — NRG 가 Texas 부문 EBITDA 를 플러스로 돌려 EV/EBITDA 동률(12.25 vs 12.27)이 깨지는가. 깨지는 쪽이 답이다 · 09-22 중간 읽기(① XBRL): 2Q26 <연결> OP 는 NRG $976M > VST $553M 로 역전(1H 누적은 VST $2,052M > NRG $1,304M). ⚠ 판정 조건은 Texas <부문> EBITDA 이고 연결은 세그먼트를 가린다 — 판정 아님. NRG 자산 $29.1B→$39.9B·장기부채 $11.2B→$19.8B 라 인수 온기와 텍사스 마진이 안 갈린다",
+      "judges": "ai-infra/us_merchant_power_vst_nrg.html#T1",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "해성디에스 — 2Q26 OP +204%(82→249억 ①)의 귀속. AI 패키지기판인가 자동차·전력반도체 리드프레임인가. 안 갈리면 「AI 종목」으로 부르지 않는다",
+      "judges": "open.haesung-attribution",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "디아이 — 4Q25 순손실 −103억이 TTM 에서 빠지면 PER 30.46 이 얼마가 되나. 추정PER 16.28 이 맞는지 판정",
+      "judges": "—",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "두산 전자BG — 1H26 OPM 29.9% · 매출 +47.1% 가 이어지나. 꺾이면 잔여시총 5.9~13.2배의 분모가 틀린 것 · ✅ 09-22 원문 대조(① DART 20260814004047): 1H26 영업수익 1조2,934억(+47.1%) · 영업손익 3,869억 · OPM <29.91%> — 값 확정, 등급 ②→①. 판정 자리는 2026-11 3Q26",
+      "judges": "ai-infra/kr_cooling_optical_layer.html#T5",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "해성디에스 — 가동률 55.3%(Kpcs ①)가 더 오르나. AI 축이 아니라 「가동률·원소재 연동 판가」 축으로 판정한다. 귀금속 시세가 꺾이면 판가 전가도 역방향",
+      "judges": "open.haesung-attribution",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "전공정 장비 6사 — 이세철의 「올 하반기 수주 폭증」(③ 6/17)이 수주잔고에 나타나나. 현재 중앙 도착률 44%·OP YoY −25%·PER 51.4 로 이익 없이 값이 붙어 있다. 안 나타나면 구간론 1번이 틀린 것",
+      "judges": "m-43",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "후공정 장비 13사 — 중앙 도착률 88%·OP YoY +86%·가속 12/13 이 이어지나. 꺾이면 「이미 왔다」가 「왔다 갔다」가 된다",
+      "judges": "m-43",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "티에스이 — ProbeCard+InterfaceBoard 81.5%·+65~75% 가 이어지나. 꺾이면 이익 귀속은 맞았어도 진입 시점이 늦은 것(YTD +321.9%)",
+      "judges": "facts.131290",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(3Q26 실적)",
+      "what": "VG — 액화수수료가 2Q26 $6.45/MMBtu(+69% QoQ ①/②)에서 유지되나. 커미셔닝 카고가 상업가동으로 넘어가면 스팟 노출이 사라진다 — 「미계약 비중 유리」(③)가 아니라 「커미셔닝 단계」라는 읽기의 판정",
+      "judges": "energy/oil_hedge_vehicles.html#T2",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(FY26 3Q)",
+      "what": "Amphenol — 1H26 인수 $10.68B 의 <이자비용>과 <인수 자산 이익>이 둘 다 온기 반영되면 P/E 38.4배가 어디로 가나. 지금 TTM 배수는 양쪽이 부분 반영이라 불안정하다",
+      "judges": "facts.APH",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(경)",
+      "what": "사이버 4사 실적 — CRWD Q3 FY27(GAAP OPM 양전?·성장 재가속?) · ZS Q1 FY27 · PANW Q1 FY27(CyberArk 상각 제외 OPM) · FTNT 3Q",
+      "judges": "cybersecurity/cyber_ai_security.html#T2,T3,T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(경)",
+      "what": "Lumentum FY27 Q1 — GPM 47.4%·OPM 27.7% 유지 여부",
+      "judges": "ai-infra/optical_valuechain_9.html#T2,T3",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(경)",
+      "what": "Coherent FY27 Q1 — DC&C 성장률·Industrial 방향·조정 OPM",
+      "judges": "ai-infra/optical_valuechain_9.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(경)",
+      "what": "Credo FY27 Q2 — 광 매출 구성·SBC/매출·재고 증가율·가이던스 $525~535M",
+      "judges": "ai-infra/optical_interconnect_layer.html#T1,T2,T5",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11(연기)",
+      "what": "앤스로픽 S-1 공개 — GM·추론 원가·SBC·신용공여 잔액이 ①로. 토큰 편 「GM 60%대」 판정(GPM 80%+는 배분·학습비 전 기준이라 분자가 다르다) · 앤스로픽 편 T5 분모 확정 · 09-19 WSJ(②): IPO 11월로 연기 · 밸류 $2T · ARR $1,000억+ · 3Q 재무 공개 목적 — S-1 GM·추론 원가 판정도 11월로",
+      "judges": "ai-infra/ai_token_economics_paper.html · ai-sw/ai_sw_company_anthropic.html#T2,T5",
+      "grade": "①(공개 시)"
+    },
+    {
+      "when": "2026-11-03",
+      "what": "미국 중간선거 — 「중간선거 해 7월말~11/9 최대 낙폭 중앙값 10%」(나일스 ② 통계)가 이번에도 맞았나. 09-11 기준 S&P 고점 대비 낙폭을 이 날 재서 기록한다",
+      "judges": "macro",
+      "grade": "①(선거) · ② 통계",
+      "precommit": {
+        "measure": "S&P·코스피 09-11 고점 대비 최대 낙폭(나일스 ③ 중앙값 10%) 채점",
+        "then": "이후 1년 경로 기록 시작 — 정우창 ③ 「선거 후 1년 19/19 상승·+14.9%」의 20번째 표본"
+      }
+    },
+    {
+      "when": "2026-11-03",
+      "what": "미국 중간선거 — Citi(③): AI 규제 프레임워크·DC 구축 속도의 분기점. 민주 양원 장악 시 감속 경로 → n-pacing 판정 이벤트(기존 11-03 precommit 에 축 추가)",
+      "judges": "regime.narratives.n-pacing",
+      "grade": "③"
+    },
+    {
+      "when": "2026-11-05",
+      "what": "현대백화점 3Q26 잠정실적(예상) — 지누스 손실 폭(2Q −267억 대비) · 백화점 OP 부호 · 프리커밋(프로그램 밖 자본 배분 0 → 3회차 취소) 판정 · 12월 연내 소각(232,460주) 결의 여부",
+      "judges": "consumer/consumer_sector_department.html#T6,T4 · portfolio precommit",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11-09",
+      "what": "USTR 중국산 선박 제재 유예 만료 — 9/24 미중 정상회담이 선행 신호. 배기연 4시나리오(폐지·연장·종료·강화) 중 무엇인지로 조선 축을 판정",
+      "judges": "shipbuilding 채점표",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11-13",
+      "what": "LIG 제3자배정 우선주 5,320억 납입(희석 ~5%) · 11-12 미 해군 조선 계획 제출(각서+90일) → 한화오션 명단",
+      "judges": "defense/k_defense_company_lig_nexone.html#T1 · defense/k_defense_company_hanwha_systems_ocean.html#T1",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11-14",
+      "what": "티에스이 3Q26 분기보고서(잠정 관행 없음) — 매출 QoQ · OPM ≥24% · 프로브카드 매출 → 4Q26~1Q27 SK하이닉스 HBM4E 퀄 결과 · 2027-07-22 CB 전환 개시",
+      "judges": "node-screener/node_screener_hbm_scoreboard.html#T6",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11-16",
+      "what": "후공정 4사 3Q26 보고서 — SFA반도체 한국법인 매출·가동률(선행) · 디아이 OPM≥15% · 와이씨 1,622억 진행률 · 유니테스트 삼성 계약 유무",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T6,T7",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11-28",
+      "what": "한화에어로 스페인 K9 계약금액 공시 유보 만료(하한 6,676억) · 11월 중순 분기보고서 = 방산 6사 B2B 정식값(한화오션 ≥1 여부)",
+      "judges": "defense/k_defense_company_hanwha_aero.html#T1 · defense/k_defense_cross_valuation.html#T9",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11~12",
+      "what": "구글 TPU v10 수주 결정(JP모건 ③: 「올해 11~12월 중 예상」) — v9 EMIB-T 기판 수율이 최대 약 50%까지 오를 전망(이비덴 선두 · 유니마이크론 5~10%p 뒤짐). 아카이브 커버리지 0 인 영역이라 관측만",
+      "judges": "—",
+      "grade": "③"
+    },
+    {
+      "when": "2026-11말",
+      "what": "델 Q3 FY27 — AI 백로그($95B 다음 분기)·AI 서버 마진·FY27 $192B 가이던스 유지 여부. 서버 OEM 층 판단 신설의 판정 근거",
+      "judges": "open:smci-hpe",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11중",
+      "what": "비나텍 3Q26 — 시스템 매출 첫 인식(412억 계약) · 한선 OPM · 아모센스 소재 매출 → T5(국내 밸류체인) 첫 실측",
+      "judges": "ai-infra/us_bloom_intel_deep.html#T5",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11중",
+      "what": "이수페타시스 3Q26 — 마진 QoQ 개선(CCL 전가) · HDI 전용 공장 발표 · 점유율 안정(OW 하우스 촉매 3 · ③)",
+      "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T1",
+      "grade": "③"
+    },
+    {
+      "when": "2026-11중",
+      "what": "이수페타시스 3Q26 — 별도 OPM 17.8%(2Q26 ①) 대비 방향 · 멀티램 비중(1H26 10~15%) 진척 · 가격 인상 반영 여부. E-glass 병목이 출하에 걸리는지",
+      "judges": "hbm-packaging/hbm_pkg_theme_substrate.html#T2,T3 · open:e-glass",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11초",
+      "what": "블룸에너지 3Q26 10-Q — 지역(미주 25%↑?)·단일고객(30%↓?)·관계자(20%↑?) 세 주석 = T2·T3 판정 · 주피터 진행",
+      "judges": "ai-infra/us_bloom_intel_deep.html#T2,T3",
+      "grade": "①"
+    },
+    {
+      "when": "2027 중반 이후(회사가 시점을 답했다)",
+      "what": "Coherent — II-VI 무형상각 $280M 이 줄어 연결 OPM 7.84% 가 조정치 12.67% 로 수렴하는가. 안 줄면 「조정하면 모듈층에서 가장 싸다」가 틀린 것 || 🔑 09-22 회사 답변(③ ECOC): 「GPM 42%+ 목표를 열어뒀고 상회 기대하나 <향후 2~3개 분기 내 급격한 개선은 기대하지 말라>」 — <판정 자리가 2026-12(FY27 1Q)에서 2027 중반 이후로 밀린다>. 상쇄는 고정비 흡수·수율·공장 통합, 마진 기여는 800G→1.6T(2028경)·OCS·CPO·멀티레일",
+      "judges": "ai-infra/optical_valuechain_9.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-12(FY27 3Q 실적)",
+      "what": "CRDO — 재고 +168.3%(매출 +114.7% 의 1.47배)와 OCF/영업이익 0.75배가 개선되나. 미즈호(③)의 「하락 시 매수」는 수요 채널 체크만 근거로 하고 이 둘을 안 본다 — 판정은 현금전환이다",
+      "judges": "ai-infra/optical_interconnect_layer.html#T5",
+      "grade": "①"
+    },
+    {
+      "when": "2026-12-18",
+      "what": "BIOSECURE OMB 목록(법정 시한) — 우시 포함 여부",
+      "judges": "ai-bio",
+      "grade": "①"
+    },
+    {
+      "when": "2026-12-31",
+      "what": "블룸 연내 신규 하이퍼스케일러 계약(한투 기대 ③) — 0건이면 T4 「Oracle+α」 반증 · 주피터 파이프라인 2027-02 재지연 여부",
+      "judges": "ai-infra/us_bloom_intel_deep.html#T4",
+      "grade": "③"
+    },
+    {
+      "when": "2026-12-31",
+      "what": "폴란드 K9 3차(7조+)·미 자주포 「연내」 본계약 공시 유무 — 한화에어로 KR 쪽 유일한 진짜 이벤트(②) · 12-09 Austal 재공시 · 12-11 미 CR 만료",
+      "judges": "defense/k_defense_company_hanwha_aero.html#T1",
+      "grade": "②"
+    },
+    {
+      "when": "2026-12초(~09-02+90일)",
+      "what": "연방대법원 — 뉴저지 v. Kalshi 상고허가 판단(제3·9순회 충돌). 기각이면 제9순회(캘리포니아·워싱턴·네바다) 확정 → 로빈후드 T4 반증 경로",
+      "judges": "payments/payments_company_robinhood.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026년 하반기(연내)",
+      "what": "삼성전자 300mm 실리콘 포토닉스 PIC <양산 시작> 여부 — ③ OFC 2026 로드맵 4단계(2026 플랫폼·PDK→2027 TC본딩 엔진→2028 하이브리드 본딩→2029 턴키 CPO)의 <첫 검증점>이자 올해 안에 판정되는 유일한 마디. 아카이브의 「국내 광 층 종결(규모 격차)」을 다시 여는 조건 셋 중 하나다(kr_cooling_optical_layer#T6). 판정 기준을 미리 고정한다 — ⓐ 양산 개시가 <공시·실적>으로 나오면 국내 층 재개 검토 · ⓑ 「준비 완료」·「고객 평가 중」 수준이면 조건부 파이프라인(잔고와 더하지 않는다) · ⓒ 일정이 2027 로 밀리면 「2~3년 격차」가 <확대>된 것으로 기록",
+      "judges": "ai-infra/kr_cooling_optical_layer.html#T6",
+      "grade": "③(현재) → ①(양산 공시 시)"
+    },
+    {
+      "when": "2027 3~4월",
+      "what": "INNOLIGHT·EOPTOLINK 연차보고서 — 해외 94.8%의 홍콩 분해 여부 · InnoLight GPM 46%대 유지 여부",
+      "judges": "ai-infra/optical_valuechain_9.html#T1 · national-strategy/ns_cn_global_reach_paper.html#T2",
+      "grade": "①"
+    },
+    {
+      "when": "2027 말",
+      "what": "HD현대중공업 신규 3.0GW 발전엔진 공장분의 AIDC 수주 — 0이면 「두 건짜리 특수」 확정. 공장 완공 2028-05-31",
+      "judges": "shipbuilding",
+      "grade": "②"
+    },
+    {
+      "when": "2027 상반기",
+      "what": "한미 HM15275 임상 2상 종료",
+      "judges": "glp1",
+      "grade": "①"
+    },
+    {
+      "when": "2027-02-15",
+      "what": "SFA반도체 4Q26 잠정 — 연결 OP 흑자 전환이 판정(실패 시 철회)",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T6",
+      "grade": "①"
+    },
+    {
+      "when": "2027-04",
+      "what": "BOE 길트 매각 재개 여부 — 6개월 전면 중단의 종료 시점. 재개 시 장기물은 제외(영구 종료)이므로 장기 공급은 안 돌아온다. n-hike 반증 판정의 전제",
+      "judges": "regime.narratives.n-hike · regime.macro.liquidity",
+      "grade": "①"
+    },
+    {
+      "when": "2027-1Q",
+      "what": "루빈 CPX 양산 — 랙 단위 총 HBM GB",
+      "judges": "hbm-packaging",
+      "grade": "②"
+    },
+    {
+      "when": "2027-1Q(경)",
+      "what": "GTIG 차기 AI Threat Tracker — 에이전트 주도 침해 비중",
+      "judges": "cybersecurity/cyber_ai_security.html#T1",
+      "grade": "①"
+    },
+    {
+      "when": "2027년중",
+      "what": "삼성 HBM 금액 기준 점유율 — JPM ③ 경로(2025 20% → 2026E 34% → 2027E 39%)가 맞는가. 2027에도 20%대면 T1 의 「22% 탈출 미확인」이 확정된다",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T1",
+      "grade": "②"
+    },
+    {
+      "when": "2027년중",
+      "what": "엣지 AI — GTC 2026 의 노트북 128GB · AI 데스크톱 748GB(②)가 실제로 팔리나. 풍선효과(③)의 유일한 반증 가능 지점",
+      "judges": "open.edge-ai-gap",
+      "grade": "②"
+    },
+    {
+      "when": "4Q26",
+      "what": "삼성SDI 선그로우 본계약 · 알테오젠 중국 대상 계약(T3 반증)",
+      "judges": "energy · ai-bio",
+      "grade": "②"
+    },
+    {
+      "when": "4Q26",
+      "what": "바젤3 엔드게임 최종 규칙(재제안 26-03-19 · 순완화 $877억 · 시행 2027) — 성상현 「다음 유동성 주인 = 은행」의 정책 축 판정",
+      "judges": "regime.macro.liquidity · actors.banks",
+      "grade": "①(공표 시)"
+    },
+    {
+      "when": "FY28",
+      "what": "Ciena 데이터센터 내부(Nubis AEC·XPO) 매출 인식 여부 — 시스템 벤더의 칩 층 진입",
+      "judges": "ai-infra/optical_valuechain_9.html#T5",
+      "grade": "③"
+    },
+    {
+      "when": "날짜 미정(09-18 불발 · 국회 보고 연기)",
+      "what": "대미투자 MOU 서명·공식 발표 — 09-20 판정: 발표 불발로 ⓑ(조건부 파이프라인) 처리, 원전 8기는 잔고가 아니다. 다음 판정은 실제 서명일이며 기준은 고정 유지 — ⓐ 기수·금액·노형 명시 = ① · ⓒ 웨스팅하우스 지분율·의결권이 국내 몫을 가른다(韓 15%+의결권 vs 美 5~10% ②). 막힌 지점 셋: 지분율·의결권 · 노형 구성(AP1000 6 + APR1400 2 조율안 ②) · 사용후핵연료 재처리 투자. 선행 관측 — 연기된 국회 보고가 다시 잡히는가(산업통상자원중소벤처기업위·재정경제기획위) · ✅ 09-22 ① 근거 도착(korea.kr 산업통상부 09-15 설명자료): 「웨스팅하우스 지분인수 등을 포함하여 대미투자 원전 프로젝트 관련 구체적인 사항은 아직 정해진 바 없음」 — 09-20 의 ⓑ 판정이 ②에서 <①로 굳었다>",
+      "judges": "ai-infra/ai_power_company_nuclear_smr.html#T3",
+      "grade": "①"
+    },
+    {
+      "when": "미정(2026-4Q)",
+      "what": "CFTC 규칙 40.11 「게이밍」 정의 최종 규칙(NPRM 06-10 · 의견 마감 07-27 · 44개 주 반대) · Kalshi 제9순회 전원합의체 재심 결정 → 워싱턴 집행 유예 종료",
+      "judges": "payments/payments_company_robinhood.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "수시",
+      "what": "중국의 미국산 LNG·원유 구매 재개(관세 철회) — T2 반증 · OFAC 이란·베네수엘라 조치 · 호르무즈 통항 회복이면 T1 가격 축이 빠진다",
+      "judges": "energy/us_energy_hegemony_17.html#T1,T2",
+      "grade": "②"
+    },
+    {
+      "when": "2026-09-30 유력(② · 회사 IR 미확인 · 방송은 9/30, 아카이브 종전 표기는 10/1)",
+      "what": "🔑 마이크론 FQ4 — 09-22 어긋남의 판정: 9월 수출단가 −19.5% MoM(① TRASS) vs BofA 3Q 계약가 +20~30% QoQ(②). 재는 것 둘 — ① DRAM ASP QoQ 실측(예측 r-20260914-44: SKH 3Q ≥ +15%) ② 가이던스에서 「가격 상승 폭」 표현의 부호. 단가 −19.5%가 믹스였는지 가격이었는지가 여기서 갈린다 || 🔒 <사전약속 r-20260922-05> G1 DRAM ASP QoQ ≥+10% & 비트 QoQ ≥0 = 믹스(T1 확정) / ASP QoQ <0 = 가격 꺾임(T2 가 틀림 · §J4 즉시 보고) / 0~+10% = 둔화 시작·판정 보류. G2 가이던스 ≥$37.0B = TD 쪽 / $35.9~36.6B = 컨센 / <$35.9B = SanDisk 전례(피크아웃 ①단계가 DRAM 으로). G3 「가격 상승 폭 완만화」 문장 여부(②). G4 SKH 예측은 신뢰도만 조정, 반증으로 안 셈 || 📌 09-22 Stifel 예상(③ · 게이트는 안 바꾼다): 「실적·가이던스 모두 컨센 상회하되 <상향 폭 완만>」 — 사유가 <칼라(collar) 기반 계약 비중 확대 + 단기 비트 제약>이다. G2 의 TD 쪽($37.0B)과 컨센($35.9~36.6B) 사이를 본다는 뜻. CY27 DRAM 비트 +15~20%(CY26 +20%대 중후반) · 부족 해소엔 +40~50% 필요 || 🔴 09-22 날짜 경고: 오늘 방송 둘이 「9/30」이라 한다(09-18 에도 「다음 주 화요일 vs 10/1」 불일치 기록). FQ4 는 8월 말 종료 분기라 9월 말 발표가 통상이므로 <9/30 이 더 유력>하나 micron.com/investors 를 안 봤다(§W5). <게이트 G1~G4 는 안 바꾸고 날짜만 통일> — 추석 연휴(9/23~26) 중 발표 가능성",
+      "judges": "hbm_pkg_theme_memory_cycle.html#T1 · facts.macro.kr_memory_export_unit_price",
+      "grade": "①",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-10-20 전후",
+      "what": "9월 반도체 수출입 <확정치>(TRASS/관세청) — 잠정(~9/20)의 메모리 단가 −13.9% MoM · DRAM −19.5% MoM 이 확정에서 유지되는지. 유지되면 T1(「상방 포기」)의 ① 근거가 2건이 된다",
+      "judges": "hbm_pkg_theme_memory_cycle.html#T1",
+      "grade": "①"
+    },
+    {
+      "when": "2026-10-21 이후(1M 창 · 2026-10-21 마감)",
+      "what": "n-rotation breaks_if 판정 — 「1M 안에 AI 하드웨어가 회전 목적지(방산·K뷰티·조선·금융)를 다시 앞선다」. 09-21 미국에서 하루 충족(SOX +4.29% vs 메모리 소외 · ARM +17.16). 09-21 기점 1M 누적으로 센다. 단, 09-21 은 「AI 하드웨어」 안에서도 <메모리는 진 날>이다 — 목적지 비교와 층 비교를 섞지 않는다",
+      "judges": "regime.json#n-rotation",
+      "grade": "①"
+    },
+    {
+      "when": "2026-09-22~23",
+      "what": "UNGA — 트럼프–걸프/이란 회동 가능성 · 이란 대통령 09-23 연설. n-hormuz breaks_if(「휴전·회담 재개」)의 첫 실현 구간 판정. 09-21 에 이미 유가 −5%로 기대가 가격에 들어갔으므로, <회동 불발 시 되돌림 크기>가 그 기대의 값이다",
+      "judges": "regime.json#n-hormuz",
+      "grade": "②",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-10월 하순",
+      "what": "LG이노텍 3Q26 연결영업(잠정) — 아카이브 판정선 <OP 2,650억 유지>(09-21 설정). 메리츠 09-21 하향치 1,501억(환율 사유). 1,501 근처 = 「컨센을 맞춘 하향」 · 2,650 근처 = 「환율 공포가 과했다」. 09-21 USDKRW 1,379.70(1,350 위쪽 이탈)이 4Q~'27 전제를 흔든 상태",
+      "judges": "hbm_pkg_theme_substrate.html#T6",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11-14 전후",
+      "what": "파마리서치 3Q26 분기보고서 — 세그먼트 공시(화장품 증가율 ÷ 의료기기 증가율 · Q1'26 3.5배 · 1H26 화장품 +74%) + 판관비 증가율이 매출 증가율 아래로 오는가 + OPM 39% 회복 여부. T1·T2·T3 동시 판정. ⚠ Chicmax 합작은 화장품 축이라 T4(중국 의료기기 옵션) 판정이 아니다",
+      "judges": "k_beauty_company_pharmaresearch.html#T1·T2·T3",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11 (3Q26 분기보고서)",
+      "what": "🔑 두산 3Q26 — SK실트론 70.61% 인수대금이 재무에 <처음> 잡히는 분기(SPA 2026-07-31 · 6/30 기준 반기보고서에는 없음을 09-22 원문으로 확인). 조 단위면 잔여시총 4.5291조(전자BG 5.85배)의 분모가 깎인다",
+      "judges": "두산 · 전자BG 잔여시총",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11",
+      "what": "드림텍 3Q26 — 기준선 둘로 좁힘(09-22): ① 영업이익 100억 회복 여부(2Q26 1억 · 궤적 88→106→21→4→1) ② <지배주주 순이익 부호>(2025 연결 132억 중 지배주주 1억). 한양디지텍과 매출 크기가 같은데 이익이 154배 차이나는 구조가 유지되는지",
+      "judges": "hbm_pkg_company_samsung.html#T8",
+      "grade": "①"
+    },
+    {
+      "when": "2026-11 중순",
+      "what": "해성디에스 3Q26 — 「장기공급계약 수주현황 없음」이 유지되는가. 유지되면 <LTA 유무 = 병목 강도>라는 09-22 판단의 두 번째 관측점이 되고, 생기면 LTA 확산이 병목 없는 층까지 내려온 것",
+      "judges": "hbm_pkg_theme_substrate.html#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-09-22~23 · 09-24 · 10월 말",
+      "what": "🆕 탱커 T5 판정 창 — 휴전 축이 열리는 자리 셋(UNGA 걸프·이란 회동 / 미중 정상회담 / 사우디 동서 파이프라인 전량 복구). <베타 0짜리가 얼마나 빠지는가>를 잰다. 09-21 이 첫 관측(브렌트 −5% → 탱커 −1.0~−3.5% · 이벤트 배수 0.2~0.7) — 두 번째 관측으로 이벤트 베타 확정",
+      "judges": "energy/oil_hedge_vehicles.html#T5",
+      "grade": "①",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-11 (3Q26)",
+      "what": "탱커 3사 실적(FRO·DHT·INSW) — TCE 실현단가가 「운임 사상 최고」를 확인하는가. 함께: 원유선 vs 제품선 1Y 격차 2.3배(원유 +128% vs 제품 +56%)가 좁혀지는지 — 좁혀지면 원인이 「거리」가 아니라 「선종 수급」(T5 falsifier ②)",
+      "judges": "energy/oil_hedge_vehicles.html#T5",
+      "grade": "①"
+    },
+    {
+      "when": "2026-09-28 (마감 전)",
+      "what": "🔑 삼성전자 배당기준일(② 방송 단독 · 분기 배당 4,000원 · 분기 수익률 약 1.5%) — 🔴 09-22 정정 — <보유는 679주>다(09-21 +183주 반영 · 레거시 1,300주는 이 계좌에 없음이 HTS 잔고로 확인). 4,000원이면 약 <272만원>. 🔴 <미검증> — 과거 분기배당 361원과 44배 차이라 DART 현금·현물배당결정 공시로 대조해야 한다(§W2). 잠정 10/8~12(② · OP 105조 = JPM 102~109조 안 · 컨센 109~121조 아래) || ⚠ 잠정실적일도 갈린다 — 09-22 방송 <10/7~8> vs 09-21 방송 10/8~12. 둘 다 ②",
+      "judges": "portfolio.holdings 삼성전자 · hbm_pkg_company_samsung",
+      "grade": "②",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-10 초(삼성) · 2026-10 중순(하이닉스)",
+      "what": "🔑 자사주 매입 종료(③ 이재규·이지은) — 종료 뒤 <외국인 의존이 절대적>이 된다. 레짐 종료 조건(「코스피 외국인 순매수 전환 2주」)의 판정 창과 겹친다. 09-21 은 외국인이 삼성 +1조 매수 / 하이닉스 −8,000억 매도로 <배당 전략 교체>였다(②) — 순매수 전환으로 세면 안 된다",
+      "judges": "regime.json#kospi · changes_if",
+      "grade": "③"
+    },
+    {
+      "when": "2026-11 중순 (3Q26 13F · 지연 45일)",
+      "what": "드러켄밀러 3Q26 13F — 09-22 에 ① 로 잰 것들의 다음 점: ① 집중도가 계속 낮아지는가(HHI 588→493) ② 광통신 3사 청산이 재진입으로 뒤집히는가 ③ Rambus·램리서치·엔테그리스(장비·인터페이스 신규)를 유지·증량하는가 ④ 블룸 재진입 여부. 그리고 <한국 종목 0>이 바뀌는가 — 9/22 방한이 매수였다면 여기 아니면 5% 지분공시에 나온다",
+      "judges": "research/13f_2026q2 후속 · ns_semiconductor_war#T4",
+      "grade": "①"
+    },
+    {
+      "when": "2026-09-23",
+      "what": "🔴 09-21 체결분 결제일 — 집행 98,560,791원 vs 매수 전 예수금 80,361,274원 = <18,199,517원 부족>. 입금이 없으면 미수. 함께 확인할 것: 브레인 cash 12.28억(08-24)이 이 계좌 밖에 실재하는가",
+      "judges": "portfolio.cash",
+      "grade": "①",
+      "precommit": {
+        "if_a": "(fill)",
+        "if_b": "(fill)",
+        "note": "stub 2026-09-23"
+      }
+    },
+    {
+      "when": "2026-4Q 실적(2027-02 경)",
+      "what": "🔑 <CPO 시점 판정> — 코히런트가 「스케일아웃 CPO 2026 4Q 램프업(엔비디아 앵커 LTA)」이라 했다(③). 아카이브·Wedbush·미즈호는 「CPO 는 2020년대 말」이라 2~3년 어긋난다. <재는 것: 4Q26 DC&C 매출에서 CPO 가 분리돼 나오는가>. 나오면 「2020년대 말」이 틀린 것이고, 안 나오면 「램프업」이 수사다. ⚠ 스케일아웃 CPO(4Q26)와 스케일업 CPO(2027 하반기)를 섞지 않는다",
+      "judges": "ai-infra/optical_valuechain_9.html#T5",
+      "grade": "③"
+    },
+    {
+      "when": "2026-4Q~2027-1Q",
+      "what": "코히런트 6인치 InP 비중 <이번 분기말 약 50% → 2027말 약 75%>(③) · 텍사스 셔먼 6인치 InP 라인 이번 분기 램프업 · GaAs 6인치 전환 후 캐파 4배. <재는 것: 분기 실적에서 GPM 이 6인치 비중과 같이 움직이는가>(6인치는 다이당 비용 절반·라인당 캐파 4배). 🔑 반대 축도 같이 — 캐파가 4배면 병목이 풀린다(시에나도 「2년 뒤 수급 재균형」)",
+      "judges": "ai-infra/optical_valuechain_9.html#T3",
+      "grade": "③"
+    }
+  ]
 }
