@@ -1,0 +1,28 @@
+오픈AI, GPT-6 Sol·Luna 발표
+
+: 오픈AI가 GPT-6 Astra에 이어 더 빠르고 저렴한 GPT-6 Sol과 Luna 공개
+
+: Astra와 유사한 학습 방식을 적용해 전문 업무, 사실 정확성, 코딩, 컴퓨터 사용, 정렬 성능을 개선하면서 비용 효율성을 높이는 데 초점. Astra는 여전히 최상위 모델로 유지
+
+: API 가격은 GPT-5.6 대비 약 절반으로 인하
+
+- Sol은 $4/$20 →  $2/$10,
+-  Luna는 $0.20/$1.20 → $0.10/$0.50
+
+: 오픈AI 자체 평가에서도 Sol과 Luna의 비용 대비 성능 개선 강조. AAII 평가에서도 절대 성능 상승보다 비용 절감이 주요
+
+: Sol의 작업당 비용은 $1.06 vs GPT-5.6 Sol $1.99, Luna는 $0.07 vs $0.18로 각각 약 50%, 60% 감소.
+
+: 다만 출력 토큰 사용량은 Sol 29k에서 31k, Luna 41k에서 51k로 늘어 비용 개선은 대부분 가격 인하 효과
+
+: Artificial Analysis Coding Agent Index에서는 Sol이 57점으로 GPT-5.6 대비 2점 상승. 반면 Luna는 41점으로 2점 하락. 벤치마크별 성과 혼재.
+
+: 환각은 크게 감소. AA-Omniscience에서 Sol의 환각률은 92%에서 60%, Luna는 93%에서 77% 로 하락.
+
+: 다만 Sol은 답변 시도율을 99%에서 83%로 낮추면서 오답을 줄인 측면이 있으며, 정확도는 59%에서 54%로 5%p 하락
+
+: 프롬프트 캐싱도 개선해 캐시 적중률을 높였으며, GitHub는 최근 수개월간 이러한 개선으로 오픈AI 모델 요청에서 새로 처리해야 하는 프롬프트 토큰 비중이 50% 이상 감소했다고 설명
+
+: GPT-6 Sol과 Luna는 Plus, Pro, Business, Enterprise, Edu 사용자의 ChatGPT Work와 Codex에서 제공되며, Free와 Go 사용자는 데스크톱 앱에서 Luna 사용 가능. API에서는 gpt-6-sol, gpt-6-luna로 제공
+
+https://openai.com/index/introducing-gpt-6-sol-and-luna
