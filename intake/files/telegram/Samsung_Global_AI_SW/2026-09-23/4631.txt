@@ -1,0 +1,13 @@
+Crusoe, Thinking Machines Lab과 연 $65M 추론 계약 체결
+
+: Thinking Machines Lab의 오픈 모델 추론을 Crusoe Cloud에서 운영하는 계약으로, Crusoe Managed Inference를 통해 Inkling 모델, GLM 5.2·5.3, 자체 파인튜닝 모델 등 다양한 프로덕션 워크로드를 구동할 예정
+
+: 인프라는 NVIDIA HGX B200 시스템과 NVIDIA Quantum-2 InfiniBand 기반 전용 Tailored Deployment로 구성. Crusoe가 클러스터를 직접 운영·지원하며 벤치마크와 SLA가 적용된 전용 엔드포인트 제공
+
+: Thinking Machines Lab은 자체 추론 스택을 직접 관리하지 않고도 대규모·고처리량 추론 환경을 확보할 수 있으며, 비용 효율성을 높여 연구에 재투자할 수 있다고 설명
+
+: 양사는 향후 대규모 합성 데이터 생성을 위한 배치 추론으로 협력을 확대하는 방안도 검토 중
+
+: Crusoe의 Managed Inference는 출시 1년이 채 되지 않아 계약 ARR $100M을 돌파
+
+https://www.crusoe.ai/resources/newsroom/crusoe-thinking-machines-lab-inference-partnership
