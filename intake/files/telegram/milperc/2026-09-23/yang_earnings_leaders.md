@@ -1,0 +1,70 @@
+# DS투자증권 양형모 「실적과 주도주」
+
+- **Canonical source:** milperc message **348** (messages 349–352 are photo duplicates; cite 348)
+- **Published:** 2026-09-23 19:04:50 KST
+- **Permalink:** https://t.me/milperc/348
+- **Author framing:** DS투자증권 양형모 「실적과 주도주」
+- **Lead disposition:** grade ③ observation; no-edge · digest-only · parked regime
+- **Use:** October earnings scorecard + regime map (FCF / power / revisions)
+- **Portfolio instruction:** NOT a ticker add; no size; no thesis rewrite
+
+## Factual digest
+
+- **Valuation / growth:** S&P 500 forward PER fell from the recent high in the upper-22s to about 19; Z-score from around +2σ to around +1σ. Historical average is about 16, so the cooling is not the same as cheapness. Index earnings growth is expected to slow; the point is whether revisions continue, not merely whether growth remains high.
+- **Earnings concentration:** About 70% of index earnings growth comes from AI infrastructure and hyperscalers. Their contribution rates fall into 2027–28, but their combined dependency remains about 70%.
+- **Semiconductors:** Forward EPS growth moves roughly 160% → 60% → 20–30%. Price YoY performance often peaks before the EPS-growth peak; revisions matter more than the high growth level.
+- **Cash flow / funding:** 12-month forward FCF consensus is negative for META, AMZN and GOOG. MSFT remains positive but its forecast has been cut by more than half. Internal cash funding is shrinking, pushing hyperscalers toward external financing; the Fed chair cited hyperscaler market funding as a long-rate factor. Capex funding can lift long rates and discount rates, so earnings gains need not map fully to price.
+- **Power / supply constraints:** GE Vernova sees 2030 gas-turbine slots sold out and more than half of 2031 sold; Siemens Energy expects to remain about 10% short of 2030 demand even after expansion. Engines and backup generation are scaling 2–3×; Wärtsilä's 2028 production is sold out; HD Hyundai Heavy's engine backlog is about 3× last year's division sales.
+- **Implication:** AI-infrastructure pace is constrained by power, which may narrow further 2027–28 upside revisions. Power equipment is a revisit when the 2Y comes down (the “cashflow 2” bucket).
+- **Next leadership candidate:** AI users that convert AI into productivity, such as Airbnb and Snowflake; Meta Muse overlaps this category.
+- **October confirmation conditions:** (1) 2027 EPS revisions broaden beyond AI infrastructure/hyperscalers; (2) hyperscaler FCF downgrades stop; (3) long real rates remain stable despite financing.
+
+## Lead read-through
+
+**Priced in:** “Lower PER = cheap” and “AI capex is permanently high growth.”
+
+**Variant:** The PER drop is pricing the peak in the growth rate together with FCF externalization and a power bottleneck. This aligns with the Micron gate (duration/revisions versus slope) and the power soft watch. The note points to AI users as a possible next leadership group, but this is an observation—not a ticker or thesis change.
+
+**Breaks if:** Hyperscaler FCF outlook re-improves; 2027 EPS revisions broaden outside infrastructure; or power slots/lead times ease and infrastructure contribution re-accelerates.
+
+## Full Lead packet body
+
+실적과 주도주
+
+DS투자증권 양형모
+
+S&P 500 선행 PER과 Z-score, 이익 기여도, 반도체 주가와 EPS, 하이퍼스케일러의 잉여현금흐름 전망, 터빈·엔진 업체의 수주와 증설 계획을 함께 봤습니다.
+
+결론부터 말씀드리면 밸류에이션 부담은 낮아졌지만, 이를 곧바로 저평가 신호로 읽기는 어렵습니다. 지수 이익 성장의 약 70%를 책임지는 AI 인프라와 하이퍼스케일러는 올해를 정점으로 성장률이 둔화될 전망입니다. 동시에 자금과 전력이라는 두 가지 제약에도 부딪히고 있습니다. 낮아진 PER은 다음 이익 성장을 이끌 주체가 필요해지고 있다는 신호로 해석합니다. 그 후보는 AI를 활용해 이익을 늘리는 기업입니다.
+
+선행 PER은 최근 고점인 22배 중후반에서 19배 안팎으로, Z-score는 +2σ 부근에서 +1σ 안팎으로 내려왔습니다. 지수가 고점 부근인데 배수가 낮아졌다는 것은 예상 이익이 주가보다 빠르게 늘었다는 뜻입니다. 다만 차트상 평균은 약 16배로 현재보다 낮고, 그 평균 자체도 올라가고 있습니다. 과열이 식은 것은 맞지만 저평가를 말할 수준은 아닙니다.
+
+주가가 이익 증가를 따라가지 못하는 첫 번째 이유는 성장 속도입니다. 컨센서스 EPS 증가율은 2025년 11%에서 올해 28%로 높아졌다가 2027년 20%, 2028년 16%로 낮아집니다. 이익은 계속 늘지만 증가율은 올해가 정점이라는 전망입니다. 주가는 높은 이익 수준에 앞서, 그 성장 속도가 어떻게 달라질지를 반영하기 시작합니다.
+
+반도체에서 이런 모습이 가장 선명합니다. 선행 EPS 증가율은 160% 안팎까지 올라왔지만, 현재 전망대로라면 약 60%를 거쳐 20~30%대로 낮아집니다. 주가의 전년 대비 수익률은 이미 먼저 고점을 찍고 내려왔습니다. 과거에도 주가가 이익 증가율의 정점을 먼저 반영하고, 이후 1년 안팎에 전년 대비 수익률이 0 부근이나 그 아래로 낮아진 사례가 있었습니다. 다만 수익률 둔화와 주가 자체의 하락은 구분해야 합니다. 2025년처럼 이익 전망이 다시 크게 상향되면 주가도 새로운 상승 동력을 얻을 수 있습니다. 관건은 높은 성장률 자체보다 전망 상향이 이어지느냐입니다.
+
+두 번째 이유는 이익의 구성입니다. AI 인프라의 성장 기여도는 올해 15%p에서 2027년 11%p, 2028년 8%p로 낮아집니다. 하이퍼스케일러도 4%p에서 3%p로 줄어듭니다. 그런데 두 그룹이 전체 이익 성장에서 차지하는 비중은 약 70%로 유지됩니다. 성장 기여도는 낮아져도 이들에 대한 의존도는 줄지 않는다는 뜻입니다.
+
+나머지 종목의 기여도 역시 10%p에서 6%p, 5%p로 낮아집니다. 올해의 10%p에는 유가와 금리 상승에 따른 에너지·금융 업종의 이익이 적지 않게 포함돼 있을 것으로 봅니다. 저희 엔진이 정유를 매도하고 은행의 국면도 약해지는 것은 이들 업종의 이익 정점에 대한 경계를 높여야 한다는 신호로 해석합니다. 나머지 종목이 지수 이익을 받치려면 매크로 환경의 수혜를 넘어서는 새로운 이익원이 필요합니다.
+
+세 번째이자 가장 중요한 이유는 투자 재원의 변화입니다. 12개월 선행 잉여현금흐름 컨센서스에서 메타, 아마존, 알파벳은 마이너스로 돌아섰습니다. 24개월 선행으로 봐도 아마존은 0 부근이고 메타와 알파벳은 마이너스입니다. 설비투자 가이던스가 올라갈 때마다 잉여현금흐름 전망은 계단식으로 낮아졌습니다. 마이크로소프트도 전망치가 절반 이상 줄었지만, 비교한 네 기업 가운데 플러스를 유지하는 곳은 사실상 마이크로소프트뿐입니다.
+
+저희가 ‘내 돈’으로 분류해 온 하이퍼스케일러 가운데 내부 현금 창출만으로 투자를 감당할 수 있는 기업이 줄고 있습니다. 나머지는 외부 조달에 대한 의존이 높아지기 시작했습니다. 연준 의장이 장기금리 상승 요인으로 하이퍼스케일러의 시장 조달을 지목한 것도 같은 맥락입니다. 자사주 매입 여력까지 줄어들면 지수를 받쳐온 수요도 약해질 수 있습니다.
+
+여기서 이번 PER 하락의 성격을 생각해볼 필요가 있습니다. 2021년에는 지수가 27% 가까이 오르는 동안 선행 PER이 22배대 중반에서 21배대 초반으로 낮아졌습니다. 이익 증가가 가격 부담을 소화한 것입니다. 반면 2022년 1월부터 5월 초까지는 선행 EPS가 5.7% 늘었는데도 지수는 13.5% 하락했습니다. 당시에는 통화 긴축에 따른 금리 충격이 밸류에이션을 압박했습니다.
+
+지금은 금리 부담의 일부가 AI 투자 사이클 안에서 발생할 가능성에도 주목합니다. 이익 성장을 뒷받침하는 설비투자가 자금 조달을 늘리고, 늘어난 조달 수요가 장기금리와 할인율에 상승 압력을 줄 수 있습니다. 이익 증가와 할인율 상승이 함께 나타나면 이익 개선이 주가에 온전히 반영되기 어렵습니다. 시장이 설비투자로 만들어지는 이익의 지속성과 조달 비용을 함께 평가하고 있다는 해석입니다.
+
+전력은 물리적인 제약입니다. GE버노바는 2030년 가스터빈 생산 슬롯 전량과 2031년 슬롯의 절반 이상이 판매될 것으로 보고 있습니다. 지멘스에너지는 예정된 증설을 모두 마쳐도 2030년 공급이 수요에 약 10% 못 미칠 것으로 예상합니다. 대형 터빈의 공급 병목이 2030년 이후까지 이어질 가능성을 염두에 둬야 합니다.
+
+이를 더 빨리 보완할 수 있는 수단은 엔진과 백업 발전입니다. 관련 업체들은 2030년까지 생산능력을 2~3배로 늘릴 계획이며, 롤스로이스와 제네락은 향후 1~2년 안에 증설을 추진합니다. HD현대중공업의 엔진 수주잔고도 지난해 사업부 매출의 약 3배에 이릅니다. 다만 바르질라의 2028년 생산 물량은 이미 모두 판매됐습니다. 대체 수단에서도 공급 여유가 빠르게 줄고 있습니다.
+
+결국 AI 인프라의 구축 속도는 전력 공급이 늘어나는 속도의 제약을 받습니다. 컨센서스상 AI 인프라의 이익 성장 기여도가 낮아지는 데에는 이런 제약도 반영돼 있을 수 있습니다. 그렇다면 2027~2028년 이익 전망의 추가 상향 여지가 기대보다 좁을 가능성도 있습니다. 반대로 긴 납기는 전력 설비 업체의 중장기 수요를 뒷받침합니다. 현금흐름 2로 분류한 전력기기는 2년물이 내려오는 시점에 우선적으로 다시 살펴볼 범주입니다.
+
+그래서 다음 이익 성장의 동력은 AI를 활용하는 기업으로 넓어져야 한다고 봅니다. 저희가 다섯 번째 범주로 말씀드려 온, AI로 비용을 줄이고 매출을 늘리는 기업입니다. 이들은 AI 인프라를 직접 구축하기보다 서비스 이용료나 토큰 비용을 지불하는 경우가 많습니다. 대규모 설비투자와 전력 확보에 대한 직접적인 부담은 상대적으로 작습니다.
+
+에어비앤비가 AI 상담으로 예약당 고객서비스 비용을 낮추며 마진을 개선하고, 스노우플레이크가 AI 워크로드를 통해 매출 성장을 다시 가속한 것이 초기 사례입니다. 이런 이익은 컨센서스상 성장 기여도가 낮아지는 나머지 종목에서 나옵니다. 아직 전망에 충분히 반영되지 않은 생산성 개선이 확인된다면 새로운 상향 동력이 될 수 있습니다. 이 범주가 다음 주도주를 배출할 가능성에 주목하는 이유입니다. 하이퍼스케일러 가운데서도 메타의 뮤즈처럼 AI 투자의 성과를 당장 매출로 보여주는 기업은 이 범주와 겹칩니다.
+
+확인 조건은 셋입니다. 2027년 EPS 전망의 상향이 AI 인프라와 하이퍼스케일러 이외의 기업으로 확산되는지, 하이퍼스케일러의 잉여현금흐름 전망 하향이 멈추는지, 자금 조달이 늘어나는 가운데서도 장기 실질금리가 안정되는지입니다. 첫 번째가 확인되면 전체 이익 성장률이 낮아져도 지수는 오를 수 있습니다. 두 번째가 어긋나면 낮아진 PER만으로는 현금흐름의 부담을 충분히 읽기 어렵습니다.
+
+10월 실적 시즌에는 이익 성장의 주체가 실제로 넓어지기 시작하는지를 확인해야 하겠습니다.
