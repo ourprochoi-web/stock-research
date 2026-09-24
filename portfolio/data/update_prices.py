@@ -459,6 +459,18 @@ WATCH_US = {
     # 2026-09-17 편입 규칙 v1 — ESS 편 정본 종목(플루언스)과 하이퍼스케일러 백업 전력(제너락–아마존 $80억)
     "Fluence Energy": "FLNC.O",
     "Generac": "GNRC",
+    # 2026-09-24 추가 — absolute-return / Muse structure study / optical residual coverage.
+    # BKNG·EXPE·ABNB: Muse partner roster(BKNG 부재)·Google AI Mode MoR 구조 연구용 시세.
+    # MXL: 광 residual 워치(도씨에 있음; SMTC>CRDO>MXL 우선순위).
+    # Everpure($P): 구 Pure Storage(PSTG) — absolute-return soft watch / digest-only(r-20260924-04).
+    # 심볼은 이 세션에서 api.stock.naver.com stockName 대조(§G):
+    #   BKNG.O→부킹 홀딩스 · EXPE.O→익스피디아그룹 · ABNB.O→에어비앤비 ·
+    #   MXL.O→맥스리니어 · P→에버퓨어(NYSE; PSTG.*는 409).
+    "Booking Holdings": "BKNG.O",
+    "Expedia": "EXPE.O",
+    "Airbnb": "ABNB.O",
+    "MaxLinear": "MXL.O",
+    "Everpure": "P",
 }
 
 # 기간 수익률을 계산할 구간. "최근 순환매가 왔는가"는 52주 고저만으로는
