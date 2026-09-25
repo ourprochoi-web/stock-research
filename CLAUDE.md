@@ -13,6 +13,7 @@
 | 꺼내 쓰는 파일 | 언제 |
 |---|---|
 | `intake/README.md` · `brain/README.md` | 두 층의 규칙. **처음 한 번** |
+| `AGENTS.md` | **git 으로 쓰는 모든 에이전트(Grok Bot Lead 포함)의 계약** — 실행 루프 · 쓰기 권한 · routing 필수 필드 · ⓐⓑⓒ 권한. 어긴 커밋은 `check_routing.py`(훅)·`brain-check.yml`(CI)이 거절한다(2026-09-26) |
 | `intake/user.jsonl` · `collected.jsonl` | **정보가 오면 먼저 한 줄.** 재등장 대조도 여기 grep. `files/`에 원문 조각. 자동 수집(`collect.py`)이 매일 붙인다 — `routed:false`인 것을 세션 시작 시 라우팅한다 |
 | `brain/theses.json` | **종목·테마 질문을 받을 때 제일 먼저.** 페이지별 현재 판단(테제·근거·반증·판정 이벤트·상태). `card:true`면 페이지 카드가 여기서 나온다 |
 | `brain/facts.json` | **수치를 인용·정정할 때.** 값·분자·분모·기준일·등급·산출 페이지 |
@@ -97,7 +98,7 @@
 
 ## H. 도구 · 주기
 
-**H1. 세 층 밖에 새 저장소를 만들지 않는다.** 정본은 `intake/` 둘 + `brain/` 아홉 파일(v2 여섯 + v3 셋 · **9가 상한**, 다음 구멍은 필드로)이고, 그 밖의 스크립트는 **층 사이 동기화와 자동 수집**뿐이다 — `.githooks/pre-commit`(`dateModified` · index `updated` · sitemap `lastmod` · `update_log` 동반 검사 · **카드 렌더** · **`thesis_index.md` 재생성** · **`facts` ↔ 페이지 값 대조** · **층 포인터 실재 검사**, 뒤의 둘은 경고만)과 `intake/collect.py`(매일 워크플로). 새 예외의 기준은 편의가 아니라 **실측 실패율**이다. 브레인이 죽지 않는 이유는 카드가 거기서 나오기 때문이다 — 낡으면 페이지 상단이 낡은 것이 보인다. 「차단됐다」고 적기 전에 호스트 단위로 확인한다(`dart.fss.or.kr`는 막혀도 `opendart`는 열려 있었다).
+**H1. 세 층 밖에 새 저장소를 만들지 않는다.** 정본은 `intake/` 둘 + `brain/` 아홉 파일(v2 여섯 + v3 셋 · **9가 상한**, 다음 구멍은 필드로)이고, 그 밖의 스크립트는 **층 사이 동기화와 자동 수집**뿐이다 — `.githooks/pre-commit`(`dateModified` · index `updated` · sitemap `lastmod` · `update_log` 동반 검사 · **카드 렌더** · **`thesis_index.md` 재생성** · **`facts` ↔ 페이지 값 대조** · **층 포인터 실재 검사**, 뒤의 둘은 경고만 · **`check_routing.py` 계약 검사만 차단**(2026-09-26 · 경고 열흘의 결과가 「테제에 닿은 routing 30% · Lead 봇 줄 33건 전부 digest-only」였다) — 같은 검사를 `brain-check.yml`이 CI 에서 봇 커밋에도 건다)과 `intake/collect.py`(매일 워크플로) · `intake/triage.py`(수집 직후 분류 · 판단 없음) · `portfolio/data/packet.py`(§J2 입력 조립 · 읽기만) · `portfolio/data/watch.py`(§J4 감시 · 읽기만). 새 예외의 기준은 편의가 아니라 **실측 실패율**이다. 브레인이 죽지 않는 이유는 카드가 거기서 나오기 때문이다 — 낡으면 페이지 상단이 낡은 것이 보인다. 「차단됐다」고 적기 전에 호스트 단위로 확인한다(`dart.fss.or.kr`는 막혀도 `opendart`는 열려 있었다).
 **H2. 세션은 `git pull --rebase origin main`으로 열고 `git push origin main`으로 닫는다**(2026-09-18 사용자 결정). 시세 봇(GitHub Actions · 평일 16:30 KST)이 같은 `main`에 커밋하므로 안 당기면 봇이 죽은 것처럼 보이고, 안 올리면 봇이 낡은 브레인 위에서 돈다 — 09-17에 실제로 둘 다 일어났다(로컬 ahead 11 · behind 1). 충돌은 `intake/collected.jsonl`에서만 나고, 봇 줄과 내 줄을 **둘 다 살린 뒤 id 중복만 제거**한다(라우팅 상태는 내 쪽이 정본). 세션 시작 시 `routed:false`도 이때 같이 읽는다(§R3).
 
 **주기 작업은 둘 — 주 1회 레짐 리뷰**(`regime.history`에 「같은 레짐인가」 한 줄 · 내러티브 정리) · **월 1회 감사 에이전트**(테제와 업데이트가 모순되는 페이지 · 정정 선언 후 살아 있는 원문 · 판정 없는 트리거 · 미집행 액션 · **v3: prediction 캘리브레이션 · mechanisms 부호 검산**. 개선안 금지, 측정된 사실만). 실행 기록은 `update_log`에 남긴다. **매일 해야 하는 것은 없다.** 지표는 손으로 세지 않고 `backlog.md`의 명령으로 센다. **판정 이벤트가 도래하면 판정하고 `events.json`에서 지운다** — grep은 후보를 좁힐 뿐 판정하지 않는다.
