@@ -26,3 +26,7 @@ Oracle reportedly sent a force-majeure notice on the 2.45GW New Mexico Project J
 ## Lease structure (WSJ via 64641)
 
 The WSJ item relayed in insidertracking/64641 describes a hell-or-high-water lease for the New Mexico AI data center: rent remains due regardless of whether power is available, and the lease is non-cancellable. Oracle is still pursuing Project Jupiter. This adds a contractual power-availability risk marker to the existing force-majeure calendar; see the reusable CIFR/TSEM/ORCL digest `r-20260925-11` and `u-20260925-tg-cifr-tsem-orcl01`.
+
+## CDS / credit cross-link (X A-tier catch-up)
+
+The X `@ReturnDriver` credit digest archived as `r-20260925-13` / `u-20260925-x-orcl-credit01` adds ORCL 5Y CDS, long-bond-yield, senior-bond-price, BBB-, and Project Jupiter force-majeure markers. It remains a grade ③ observation and digest-only; read beside this memo and the hell-or-high-water digest, with portfolio and thesis stance unchanged.
