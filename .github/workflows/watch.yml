@@ -1,0 +1,30 @@
+name: Watch (§J4 daily)
+
+# 2026-09-26: 「묻지 않아도 즉시 말하는 것 넷」(CLAUDE.md §J4)을 세션 없이 매일 계산해 보낸다.
+#   지난 판정 이벤트 · 스톱 거리 · 반증 문턱 관측치 · 보유 테제 상태 · 레짐 신선도 · 라우팅 큐 · 미채점 예측.
+#   판단은 하지 않는다 — brain/·prices.json 을 읽어 목록만 만든다(§H1 렌더). 커밋도 하지 않는다.
+#   전송: Actions 요약(항상) + Telegram(TELEGRAM_BOT_TOKEN · TELEGRAM_CHAT_ID 시크릿이 있을 때만).
+#   시각: 시세 봇(07:30 UTC) 뒤 08:00 UTC = 17:00 KST. 수동 실행 가능.
+on:
+  schedule:
+    - cron: "0 8 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: watch.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          PYTHONIOENCODING=utf-8 python3 portfolio/data/watch.py --telegram | tee watch.txt
+          { echo '```'; cat watch.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

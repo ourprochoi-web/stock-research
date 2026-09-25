@@ -111,6 +111,16 @@ for f in */*.html; do case $f in *update_log*) continue;; esac
 node -e "const t=require('fs').readFileSync('index.html','utf8');eval('var D='+t.match(/var DATA = \[[\s\S]*?\n  \];/)[0].replace(/^var DATA = /,'').replace(/;$/,''));console.log(D.filter(d=>d.desc.length>120).length+'/'+D.length)"
 ```
 
+## 3.5 계약·감시·패킷 (2026-09-26 신설 · AGENTS.md)
+```bash
+PYTHONIOENCODING=utf-8 python3 .githooks/check_routing.py              # 새 routing 줄 계약 검사 · exit 1 = 커밋 금지 (--all 로 레거시 포함 통계)
+PYTHONIOENCODING=utf-8 python3 portfolio/data/watch.py                  # §J4 감시 — 지난 이벤트·스톱 거리·반증 문턱·보유 테제·레짐·큐·미채점 예측 (--json · --telegram)
+PYTHONIOENCODING=utf-8 python3 portfolio/data/packet.py SK하이닉스       # §J2 입력 패킷 (--full · --json · --routing N)
+PYTHONIOENCODING=utf-8 python3 intake/triage.py --retriage --dry-run    # 미라우팅 텔레그램 줄 소급 분류(실행은 --dry-run 제거)
+```
+시작점(09-25): routing 273 중 테제 접촉 82(30%) · Lead 봇 줄 33건 전부 digest-only · 마지막 테제 접촉 09-22 · 큐 456 → 트리아지 후 269(후보 115) · events due 없음 113 → 0 · 스톱 값 없음 8/9 · 예측 6(채점 0).
+**판정(10-10)** — 09-26 이후 routing 줄의 테제 접촉률이 70% 미만이거나 큐 순증이 +0 을 넘으면 트리아지 규칙·계약을 다시 고친다. 아니면 유지.
+
 ## 4. v3 측정 명령 (2026-09-15 신설) — 레짐 신선도 · 캘리브레이션 · 그래프 커버리지 · 내러티브 수명
 
 ```

@@ -253,6 +253,18 @@ def main():
         except Exception as _e:  # noqa: BLE001
             print(f"[pre-commit] ⚠ brain v3 검사 실패 — 커밋은 진행: {_e}")
 
+    # 계약 검사(2026-09-26 · AGENTS.md §3) — routing·theses·events·intake 가 스테이징되면 새 routing 줄의 스키마·포인터·테제 접촉을 검사한다.
+    # 유일하게 <차단>하는 브레인 검사다. 경고 열흘의 결과가 「테제에 닿은 routing 30% · Lead 봇 줄 33건 전부 digest-only」였다.
+    _contract_files = {"brain/routing.jsonl", "brain/theses.json", "brain/events.json",
+                       "intake/user.jsonl", "intake/collected.jsonl"}
+    if _contract_files & set(_cached):
+        r = subprocess.run([sys.executable, ".githooks/check_routing.py"], capture_output=True, text=True)
+        for ln in r.stdout.splitlines():
+            print("[pre-commit] " + ln)
+        if r.returncode != 0:
+            print("\n[pre-commit] 막힘 — routing 계약 위반(AGENTS.md §3). 고친 뒤 다시 커밋. 정말 예외면 --no-verify 를 쓰고 그 이유를 커밋 메시지에 적는다.\n")
+            return 1
+
     if staged and check_update_log(staged):
         return 1
 

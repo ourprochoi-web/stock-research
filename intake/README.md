@@ -30,5 +30,8 @@
 `routed:false` = 주장이라 라우팅이 필요한 것(세션 시작 시 처리). `routed:"data"` = XBRL·매크로·월지표 스냅샷처럼 **주장이 아니라 원료**인 것 — facts/regime 이 직접 읽으므로 라우팅하지 않는다. 봇이 kind 로 자동 분류한다(수집 실패 기록만 false).
 
 
+**2026-09-26 추가 — `routed:"skip:<이유>"`** = 라우팅 대상이 아니라고 <분류>된 것(`intake/triage.py` · 판단 아님). 이유는 `link`(링크만) · `short`(본문 40자 미만) · `media`(미디어만) · `no-claim`(이름 색인 매치도 주장 신호도 없음) · `no-thesis`(Lead가 배치처 없음으로 닫음) · `digest`(요약만 남김 · `summary` 필드). 줄과 `files/` 조각은 남는다(규칙 4). 주장이 있으면 `routed:false` + **`candidates[]`**(name_index 매치 → 걸리는 `page#T` 후보). 큐를 셀 때는 `routed is False` 만 센다.
+`user.jsonl` 은 `routed` 필드 없이 `used_by` 만 있는 줄이 113건 있다(09-25 실측) — 새 줄은 `routed` 를 반드시 쓴다.
+
 ## Telegram 공개채널 수집 (2026-09-23)
-`collect_telegram.py` + `.github/workflows/collect-telegram.yml` — Bot API 없이 `t.me/s/{handle}` 미리보기 HTML에서 최근 글을 받는다. 화이트리스트는 `requests/telegram_channels.txt`(handle | notes). 원문 스니펫은 `files/telegram/{handle}/{YYYY-MM-DD}/`, 한 줄은 `collected.jsonl`(kind:`telegram` · `routed:false` · url 로 중복 제거). 스케줄 6시간마다 + 수동 `workflow_dispatch` + 화이트리스트 push. 판단은 하지 않는다.
+`collect_telegram.py` + `.github/workflows/collect-telegram.yml` — Bot API 없이 `t.me/s/{handle}` 미리보기 HTML에서 최근 글을 받는다. 화이트리스트는 `requests/telegram_channels.txt`(handle | notes). 원문 스니펫은 `files/telegram/{handle}/{YYYY-MM-DD}/`, 한 줄은 `collected.jsonl`(kind:`telegram` · url 로 중복 제거). **09-26부터 쓰기 전에 `triage.py` 로 분류** — 주장이 있으면 `routed:false`+`candidates`, 없으면 `routed:"skip:*"`. 09-25 소급 적용: 447건 → 큐 260(후보 115) · skip 187. 스케줄 6시간마다 + 수동 `workflow_dispatch` + 화이트리스트 push. 판단은 하지 않는다.

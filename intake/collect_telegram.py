@@ -4,6 +4,8 @@
 Why (2026-09-23): 텔레그램 공개 채널 글이 user.jsonl 수동 붙여넣기에 의존해 왔다.
   t.me/s/ 미리보기 HTML 은 로그인·Bot 토큰 없이 최근 글을 준다. GitHub Actions 러너에서
   받아 intake/files/telegram/ 스니펫 + collected.jsonl 한 줄로 남긴다(판단 금지 · §R2).
+2026-09-26: 한 줄을 쓰기 전에 intake/triage.py 로 분류한다 — 주장이 있으면 routed:false(+candidates),
+  없으면 routed:"skip:<이유>". 원문은 똑같이 남는다.
 
 Whitelist: intake/requests/telegram_channels.txt  (handle | notes · # 주석 · 빈 줄 무시)
 
@@ -27,6 +29,9 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from triage import apply as triage_apply  # noqa: E402 — 2026-09-26 트리아지(분류만 · 판단 없음 · intake/triage.py)
 
 KST = timezone(timedelta(hours=9))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -345,6 +350,10 @@ def collect_channel(handle, existing_urls, ids, id_n, dry_run=False):
             "auto": True,
             "grade_hint": "②(공개 채널 미리보기 · 원문 미검증)",
         }
+        # 2026-09-26: 수집 직후 트리아지 — 링크만·본문 없음·이름도 주장 신호도 없음 → routed:"skip:<이유>",
+        #   주장이 있으면 routed:false + candidates(걸리는 테제 후보). 판단은 하지 않는다. 사흘간 501건이
+        #   전부 false 로 들어와 큐가 456건이 된 것이 계기(intake/triage.py 머리글).
+        triage_apply(rec)
         if not dry_run:
             io.open(LOG, "a", encoding="utf-8").write(json.dumps(rec, ensure_ascii=False) + "\n")
         added += 1

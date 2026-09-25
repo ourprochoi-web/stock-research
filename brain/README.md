@@ -76,6 +76,8 @@
 - 선호: `r-YYYYMMDD-NN` (`NN` = 그날 순번 01, 02, …)
 - 레거시(09-22 only): 글자 접미 `x`, `tg` 등 (`r-20260922-x`, `r-20260922-tg6`) — **새 줄에 쓰지 않는다**
 
+**2026-09-26 이후 줄은 `AGENTS.md` §3 이 정본이고 `.githooks/check_routing.py` 가 <차단>한다** — id 형식 · intake 실재 · claim 한국어 · grade ①~④ · `routed[]` 는 실재 `page#T`/페이지만 · obs/judgment 3행 · `digest-only` 는 routing 아님 · **`routed` 한 테제의 `log[].rid` 또는 `evidence` 에 이 줄이 있어야 한다** · ⓑ·prediction 은 `resolve_by`. `events.json` 은 `due`(YYYY-MM-DD|null) 필드가 기계용 날짜다(09-26 · `when` 은 사람용).
+
 **소프트 타깃 (parked)**
 - `open` / `regime` / `portfolio` / `events` 처럼 **아직 페이지#T 에 안 붙는 대기**는 `routed[]` 에 문자열로 넣지 않는다.
 - 대신 필드: `parked: "open|regime|portfolio|events"` (파이프 구분 · 해당되는 것만).
