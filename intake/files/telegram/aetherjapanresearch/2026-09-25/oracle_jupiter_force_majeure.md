@@ -22,3 +22,7 @@ Oracle reportedly sent a force-majeure notice on the 2.45GW New Mexico Project J
 **Parked:** AI DC power/gas soft risk calendar.
 
 **Portfolio / theses:** unchanged. Grade ③ observation, digest-only. digest-only · no ticker add · no execution order · no thesis rewrite · residual SMTC > CRDO (conditional) > MXL unchanged; Micron gate ~9/30 unchanged; no ticker adds — not META, MU, AKAM, ORCL, etc.
+
+## Lease structure (WSJ via 64641)
+
+The WSJ item relayed in insidertracking/64641 describes a hell-or-high-water lease for the New Mexico AI data center: rent remains due regardless of whether power is available, and the lease is non-cancellable. Oracle is still pursuing Project Jupiter. This adds a contractual power-availability risk marker to the existing force-majeure calendar; see the reusable CIFR/TSEM/ORCL digest `r-20260925-11` and `u-20260925-tg-cifr-tsem-orcl01`.
