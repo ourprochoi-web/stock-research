@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-26)
 
-추적 329개 · 테제가 걸린 이름 192 · 엔티티 있음 85 · facts 있음 77.
+추적 330개 · 테제가 걸린 이름 192 · 엔티티 있음 87 · facts 있음 77.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -50,6 +50,7 @@
 | KR | 대덕전자 | 353200 | — | hbm_pkg_theme_substrate#T2,T3,T5 | 6 |
 | KR | 대한광통신 | 010170 | ✓  | — | 5 |
 | KR | 대한전선 | 001440 | — | ai_power_company_cable_wire#T1,T3,T4 · kr_power_10_deep#T1,T3 · kr_power_cross_valuation#T3,T4 | — |
+| KR | 대한항공 | 003490 | ✓  | — | — |
 | KR | 덕산네오룩스 | 213420 | — | — | — |
 | KR | 동성화인텍 | 033500 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 동진쎄미켐 | 005290 | — | — | — |
@@ -259,7 +260,7 @@
 | US | Mastercard | MA | — | us_ai_adjacent_sectors#T2,T6 · kr_drawdown_2026#T6 · us_payment_networks#T1 | — |
 | US | Matador Resources | MTDR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | MaxLinear | MXL.O | ✓ 2026-09-23 아카이브 공백 메움 — WEB/SEC 라벨 필수. 인프라 50%(Q2)이나 전사 브로드밴 | — | 16 |
-| US | Meta Platforms | META.O | — | — | — |
+| US | Meta Platforms | META.O | ✓  | — | — |
 | US | Micron | MU.O | ✓ FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례 | hbm_pkg_theme_memory_cycle#T1,T2,T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · kr_bio_china_competition#T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_substrate#T1,T4 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T6 · us_payment_networks#T1 · 13f_2026q2#T3,T4 | — |
 | US | Microsoft | MSFT.O | — | ai_value_chain_guide_v2#T2,T5 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T2,T3 | — |
 | US | Moderna | MRNA.O | — | us_7axis_cross_valuation#T1 | — |

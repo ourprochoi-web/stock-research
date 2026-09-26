@@ -825,6 +825,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "대한항공": {
+   "code": "003490",
+   "market": "KR",
+   "entity": "003490",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "덕산네오룩스": {
    "code": "213420",
    "market": "KR",
@@ -4461,7 +4471,7 @@
   "Meta Platforms": {
    "code": "META.O",
    "market": "US",
-   "entity": null,
+   "entity": "META",
    "falsifier": null,
    "facts": 0,
    "theses": {},
