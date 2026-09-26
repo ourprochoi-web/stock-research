@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-26)
 
-추적 330개 · 테제가 걸린 이름 192 · 엔티티 있음 87 · facts 있음 77.
+추적 331개 · 테제가 걸린 이름 193 · 엔티티 있음 88 · facts 있음 77.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -304,6 +304,7 @@
 | US | Teekay Tankers | TNK | — | — | 4 |
 | US | Tesla | TSLA.O | — | hbm_pkg_theme_substrate#T2 · 13f_2026q2#T4 | — |
 | US | Tsakos | TEN | — | — | 4 |
+| US | Uber | UBER | ✓  | 13f_2026q2#T6 | — |
 | US | Venture Global | VG | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Veradermics | MANE.K | — | — | — |
 | US | Vertiv | VRT | — | us_ai_adjacent_cross_valuation#T11 · us_ai_adjacent_sectors#T2,T8 · us_power_regulated_vs_merchant#T4 · us_vertiv_corning_deep#T1,T2,T3,T4,T5,T6,T7 · kr_drawdown_2026#T6 | — |
