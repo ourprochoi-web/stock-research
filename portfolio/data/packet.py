@@ -5,9 +5,11 @@
   「그날 얼마나 잘 뒤졌나」에 달린다. 층 사이를 읽는 스크립트 하나로 고정한다 — 새 저장소가 아니다(§H1).
   AGENTS.md §7: 종목·포지션 질문에는 이 패킷 <위에서만> 답한다.
 
-출력(마크다운): ⓪ 레짐 · ① 기준일 · 엔티티 · 보유·스톱·노출 · 테제(claim/status/basis/falsifier/event/last_tested/log 최근)
-  · facts(값·분자·분모·기준일·등급) · 시세·배수·수익률·수급(창 명시) · 다가오는 판정 이벤트 · 열린 질문 · 최근 routing 5 · 미채점 예측
-용법: packet.py <이름|티커|별칭> [--json] [--routing N] [--full]
+출력(마크다운): ⓪ 레짐 · ① 기준일 · 엔티티(+watch) · 보유·스톱·노출 · <지난 번 이후>(델타) · 테제(claim/status/저울/basis/falsifier/event)
+  · <반대편>(ⓑ 모음) · facts(값·분자·분모·기준일·등급) · 시세·배수·수익률·수급(창 명시) · 판정 이벤트 · 열린 질문 · 최근 routing · 미채점 예측 · <비어 있는 칸>
+2026-09-26 v2 — 판정(status)만 보여주던 것에 <종합>을 붙였다: 테제별 증거 저울(ⓐ/ⓑ 수 · 등급 분포 · 마지막 ⓑ),
+  「지난 번 이후」(기본 = 이 이름의 마지막 kind:judgment 이후 · 없으면 30일), 반대편, 엔티티 watch[], 비어 있는 칸(= 딥리서치 티켓).
+용법: packet.py <이름|티커|별칭> [--json] [--routing N] [--full] [--since YYYY-MM-DD]
   기본은 주 페이지(보유·엔티티·card:true)만 전문, 나머지 언급 페이지는 한 줄. --full 이면 전부 전문.
 """
 import io
@@ -57,6 +59,30 @@ def resolve(q, names, holdings, facts_c, entities_c):
     return q, None, None
 
 
+MARK_RE = re.compile(r"[ⓐⓑⓒ]")
+GRADE_RE = re.compile(r"[①②③④]")
+
+
+def balance(logs, since=None):
+    """테제 log[] → 증거 저울. 판정(status)이 아니라 <무엇이 얼마나 쌓였나>를 보여준다."""
+    marks = {"ⓐ": 0, "ⓑ": 0, "ⓒ": 0, "기타": 0}
+    grades = {"①": 0, "②": 0, "③": 0, "④": 0}
+    recent = {"ⓐ": 0, "ⓑ": 0}
+    last_b = None
+    for e in logs:
+        m = MARK_RE.search(str(e.get("mark", "")))
+        k = m.group(0) if m else "기타"
+        marks[k] += 1
+        for g in GRADE_RE.findall(str(e.get("text", ""))):
+            grades[g] += 1
+        if k == "ⓑ":
+            last_b = e
+        if since and str(e.get("date", "")) >= since and k in recent:
+            recent[k] += 1
+    return {"marks": marks, "grades": grades, "since": recent,
+            "last_b": {"date": last_b.get("date"), "rid": last_b.get("rid"), "text": str(last_b.get("text", ""))[:200]} if last_b else None}
+
+
 def main(argv):
     if not argv or argv[0].startswith("-"):
         print(__doc__)
@@ -65,6 +91,7 @@ def main(argv):
     as_json = "--json" in argv
     nrt = int(argv[argv.index("--routing") + 1]) if "--routing" in argv else 5
     full = "--full" in argv
+    since_arg = argv[argv.index("--since") + 1] if "--since" in argv else None
     clip = 100000 if full else 320
     today = date.today()
 
@@ -114,9 +141,20 @@ def main(argv):
            "regime": {"asof": R.get("asof"), "one": R.get("one"), "changes_if": R.get("changes_if")},
            "prices_asof": PR.get("updated"), "price_definition": PR.get("priceDefinition")}
 
-    # 엔티티
+    # 이 이름에 걸린 routing — 델타의 기준점(마지막 J2 judgment)도 여기서
+    ent_key = f"entity:{code}" if code else None
+    rel = [r for r in RT if mentions(r.get("claim")) or any(mentions(x) for x in (r.get("routed") or []))
+           or (ent_key and ent_key in str(r.get("parked", "")))]
+    last_j = max((str(r.get("date", "")) for r in rel if r.get("kind") == "judgment"), default=None)
+    since = since_arg or last_j or (today - timedelta(days=30)).isoformat()
+    out["since"] = {"date": since, "basis": "--since" if since_arg else ("마지막 J2 judgment" if last_j else "기본 30일")}
+
+    # 엔티티 (+ watch — 테제에 안 걸린 관측의 종합 · AGENTS.md §4 관측 축적)
     if ent:
-        out["entity"] = {k: ent.get(k) for k in ("name", "market", "layer", "business", "business_grade", "theses") if k in ent}
+        out["entity"] = {k: ent.get(k) for k in ("name", "market", "layer", "business", "business_grade", "theses", "status") if k in ent}
+        watch = ent.get("watch") or []
+        out["watch"] = {"total": len(watch), "since": sum(1 for w in watch if str(w.get("date", "")) >= since),
+                        "recent": [{k: w.get(k) for k in ("date", "grade", "rid", "one")} for w in watch[-8:]]}
 
     # 보유 · 스톱 · 사이징 · 노출
     hs = [h for h in holdings if h.get("name") == name or h.get("priceKey") == name or h.get("ticker") == code]
@@ -162,7 +200,10 @@ def main(argv):
             rows.append({"id": t["id"], "status": t.get("status"), "claim": t.get("claim"), "basis": str(t.get("basis") or "")[:clip],
                          "auto_basis": bool(t.get("auto_basis")), "falsifier": t.get("falsifier"), "event": t.get("event"),
                          "last_tested": t.get("last_tested"), "facts": t.get("facts"),
-                         "log_n": len(lg), "log_last": lg[-1] if lg else None})
+                         "log_n": len(lg), "log_last": lg[-1] if lg else None,
+                         "balance": balance(lg, since),
+                         "log_since": [{"date": e.get("date"), "mark": e.get("mark"), "rid": e.get("rid"), "text": str(e.get("text", ""))[:160]}
+                                       for e in lg if str(e.get("date", "")) >= since]})
         th_out.append({"page": pg, "judged": page.get("judged"), "one": page.get("one"), "card": bool(page.get("card")),
                        "position": page.get("position"), "next": page.get("next"), "theses": rows})
     out["theses"] = th_out
@@ -199,12 +240,69 @@ def main(argv):
     out["open"] = [{"id": o.get("id"), "since": o.get("since"), "what": o.get("what")[:300]} for o in O if mentions(o.get("what"))]
 
     # 최근 routing · 미채점 예측
-    rel = [r for r in RT if mentions(r.get("claim")) or any(mentions(x) for x in (r.get("routed") or []))]
     out["routing_recent"] = [{k: r.get(k) for k in ("id", "date", "kind", "grade", "claim", "routed", "verdict", "action",
                                                      "priced_in", "variant", "breaks_if", "resolve_by")} for r in rel[-nrt:]]
     out["predictions_open"] = [{k: r.get(k) for k in ("id", "date", "claim", "resolve_by", "confidence")}
                                for r in rel if r.get("kind") == "prediction" and not (r.get("outcome") or r.get("judged_by"))]
     out["routing_total"] = len(rel)
+
+    # 지난 번 이후 — 결정 시점의 종합은 「전체」가 아니라 델타다
+    prim_rows = [t for pg in th_out if not pg.get("secondary") for t in pg.get("theses", [])]
+    facts_since = [k for k, m in (out.get("facts") or {}).items() if str(m.get("asof", "")) >= since]
+    out["delta"] = {
+        "routing": [{k: r.get(k) for k in ("id", "date", "kind", "grade", "claim", "verdict", "parked")} for r in rel if str(r.get("date", "")) >= since],
+        "log": [{"thesis": t["id"], **e} for t in prim_rows for e in t["log_since"]],
+        "watch": [w for w in (out.get("watch") or {}).get("recent", []) if str(w.get("date", "")) >= since],
+        "facts": facts_since,
+        "status_changed": [{"thesis": t["id"], "status": t["status"], "last_tested": t["last_tested"]}
+                           for t in prim_rows if str(t.get("last_tested", "")) >= since and str(t.get("status")) not in ("유지",)],
+    }
+
+    # 반대편 — 저울의 다른 쪽을 한 곳에 모은다(ⓑ 로그 · 도전 routing)
+    contra = []
+    for pg in th_out:
+        if pg.get("secondary") or pg.get("note"):
+            continue
+        src = {x["id"]: x for x in T.get(pg["page"], {}).get("theses", [])}
+        for t in pg.get("theses", []):
+            for e in src.get(t["id"], {}).get("log") or []:
+                if "ⓑ" in str(e.get("mark", "")):
+                    contra.append({"date": e.get("date"), "thesis": f"{pg['page'].split('/')[-1]}#{t['id']}", "rid": e.get("rid"),
+                                   "text": str(e.get("text", ""))[:200]})
+    for r in rel:
+        if "ⓑ" in str(r.get("verdict", "")) or "도전" in str(r.get("verdict", "")):
+            tgt = ",".join(x.split("/")[-1] for x in (r.get("routed") or [])) or str(r.get("parked"))
+            contra.append({"date": r.get("date"), "thesis": tgt[:70], "rid": r.get("id"),
+                           "text": str(r.get("claim", ""))[:200]})
+    contra.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+    out["contra"] = contra[:8]
+    out["contra_total"] = len(contra)
+
+    # 비어 있는 칸 — 채워야 근거 등급이 오르는 자리 = 딥리서치 티켓
+    gaps = []
+    for k, m in (out.get("facts") or {}).items():
+        if m.get("value") is not None and (m.get("num") in (None, "") or m.get("den") in (None, "")):
+            gaps.append(f"facts.{k}: 값 {m.get('value')} 은 있는데 분자·분모가 없다(§W2 — 아직 값이 아니다)")
+    for t in prim_rows:
+        if not str(t.get("falsifier") or "").strip():
+            gaps.append(f"{t['id']}: 반증 조건 없음 — 틀렸음을 알 방법이 없다")
+        ev_s = str(t.get("event") or "").strip()
+        if not ev_s or ev_s.startswith("미정"):
+            gaps.append(f"{t['id']}: 판정 창 없음/미정 — 언제 틀렸는지 모른다")
+        if t.get("auto_basis"):
+            gaps.append(f"{t['id']}: basis 가 파서 추출(auto_basis) — 재검증 전")
+        b = t["balance"]
+        if b["marks"]["ⓐ"] >= 3 and b["marks"]["ⓑ"] == 0:
+            gaps.append(f"{t['id']}: ⓐ {b['marks']['ⓐ']}건 · ⓑ 0건 — 반대편을 찾지 않았다(저울이 한쪽)")
+        if b["grades"]["①"] == 0 and (b["grades"]["③"] + b["grades"]["②"]) >= 3:
+            gaps.append(f"{t['id']}: 로그에 ① 0건 · ②③ {b['grades']['②'] + b['grades']['③']}건 — 하우스 의견만 쌓였다")
+    if ent and ent.get("status") == "후보":
+        n = (out.get("watch") or {}).get("total", 0)
+        gaps.append(f"후보 카드 · watch {n}줄 · 테제 0 — {'승격 판단 시점' if n >= 5 else '아직 쌓는 중'}")
+    for s in out["stops"]:
+        if s.get("level") is None:
+            gaps.append(f"스톱 {s.get('name')}: level 없음(사용자 몫) — 잃는 크기를 못 센다")
+    out["gaps"] = gaps
 
     if as_json:
         print(json.dumps(out, ensure_ascii=False, indent=1))
@@ -225,7 +323,12 @@ def render(o, today):
     a(f"\n## ① 기준일 — 시세 {o.get('prices_asof')} · {o.get('price_definition')}")
     if o.get("entity"):
         e = o["entity"]
-        a(f"\n## 엔티티 — {e.get('layer')} · {e.get('business')} ({e.get('business_grade')})")
+        a(f"\n## 엔티티 — {e.get('layer')} · {e.get('business')} ({e.get('business_grade')})" + (f" · **{e['status']}**" if e.get("status") else ""))
+        w = o.get("watch") or {}
+        if w.get("total"):
+            a(f"watch {w['total']}줄 (지난 번 이후 {w['since']}) — 테제에 안 걸린 관측의 종합")
+            for x in w["recent"]:
+                a(f"- {x.get('date')} {x.get('grade')} {x.get('one')} ({x.get('rid')})")
     a("\n## 보유 · 스톱 · 노출")
     if isinstance(o["position"], str):
         a(o["position"])
@@ -243,7 +346,23 @@ def render(o, today):
         a(f"- 노출 {k}: share {v.get('share_of_equity')} · {v.get('direction')} · mech {v.get('mechanisms')}")
     for p in o["precommits"]:
         a(f"- 사전약속: if {p.get('if')} → {p.get('then')}")
-    a("\n## 테제")
+    d = o.get("delta") or {}
+    s = o.get("since") or {}
+    a(f"\n## 지난 번 이후 — {s.get('date')} ({s.get('basis')}) · routing {len(d.get('routing', []))} · 테제 log {len(d.get('log', []))} · watch {len(d.get('watch', []))} · facts 갱신 {len(d.get('facts', []))}")
+    if not any(d.get(k) for k in ("routing", "log", "watch", "facts", "status_changed")):
+        a("들어온 것 없음 — 판단을 바꿀 새 정보가 없다는 것도 정식 결과다")
+    for x in d.get("status_changed", []):
+        a(f"- 🔶 {x['thesis']} status {x['status']} (검증 {x['last_tested']})")
+    for x in d.get("log", []):
+        a(f"- {x.get('date')} {x.get('mark')} {x['thesis']} — {x.get('text')}")
+    for x in d.get("watch", []):
+        a(f"- {x.get('date')} watch {x.get('grade')} — {x.get('one')}")
+    for x in d.get("routing", []):
+        if x.get("kind") in ("judgment", "prediction", "verdict", "correction", "decision"):
+            a(f"- {x.get('date')} {x.get('kind')} {x['id']} — {str(x.get('claim'))[:140]}")
+    if d.get("facts"):
+        a(f"- facts 갱신: {', '.join(d['facts'])}")
+    a("\n## 테제 (저울 = ⓐ/ⓑ 수 · 로그의 등급 분포 · 마지막 ⓑ — status 보다 먼저 읽는다)")
     for pg in o["theses"]:
         if pg.get("secondary"):
             a(f"- (언급 페이지) {pg['page']} · 판단 {pg.get('judged')} — " + " / ".join(f"{t['id']}[{t['status']}] {t['claim']}" for t in pg["theses"][:4]) + "  (--full 로 전문)")
@@ -256,10 +375,24 @@ def render(o, today):
             a(f"한 문장 — {pg['one']}")
         for t in pg["theses"]:
             a(f"- **{t['id']} [{t['status']}]** {t['claim']}")
+            b = t.get("balance") or {}
+            if b:
+                m, g, r = b["marks"], b["grades"], b["since"]
+                lean = "한쪽" if (m["ⓐ"] >= 3 and m["ⓑ"] == 0) else ("반반" if m["ⓑ"] and m["ⓑ"] >= m["ⓐ"] * 0.5 else "")
+                a(f"  - 저울: ⓐ {m['ⓐ']} · ⓑ {m['ⓑ']}" + (f" · ⓒ {m['ⓒ']}" if m["ⓒ"] else "") +
+                  f" · 등급 ①{g['①']} ②{g['②']} ③{g['③']} ④{g['④']}" + (f" · 지난 번 이후 ⓐ{r['ⓐ']}/ⓑ{r['ⓑ']}" if (r["ⓐ"] or r["ⓑ"]) else "") +
+                  (f" · **{lean}**" if lean else "") + (" · ①0 — 하우스 의견만" if g["①"] == 0 and (g["②"] + g["③"]) >= 3 else ""))
+                if b.get("last_b"):
+                    a(f"  - 마지막 ⓑ {b['last_b']['date']}: {b['last_b']['text'][:160]}")
             a(f"  - 근거{' (auto_basis · 파서 추출 · 재검증 전)' if t['auto_basis'] else ''}: {t.get('basis')}")
             a(f"  - 반증: {t.get('falsifier')}")
             a(f"  - 판정: {t.get('event')} · 마지막 검증 {t.get('last_tested')} · log {t['log_n']}건"
               + (f" · 최근 {t['log_last'].get('date')} {t['log_last'].get('mark')} {str(t['log_last'].get('text'))[:100]}" if t.get("log_last") else ""))
+    a(f"\n## 반대편 {min(len(o.get('contra', [])), 8)}/{o.get('contra_total', 0)} — 테제에 맞서는 기록(ⓑ 로그 · 도전 routing)")
+    for c in o.get("contra") or ["없음 — 반대편을 아직 찾지 않았다는 뜻일 수도 있다"]:
+        if isinstance(c, str):
+            a(c); continue
+        a(f"- {c.get('date')} {c.get('thesis')} — {c.get('text')}" + (f" ({c.get('rid')})" if c.get("rid") else ""))
     if o.get("facts"):
         a("\n## facts (값 · 분자/분모 · 기준일 · 등급)")
         for k, m in o["facts"].items():
@@ -286,7 +419,10 @@ def render(o, today):
         a("\n## 미채점 예측")
         for p in o["predictions_open"]:
             a(f"- {p['id']} ({p.get('resolve_by')} · {p.get('confidence')}) {str(p.get('claim'))[:120]}")
-    a("\n---\nJ2 답은 이 패킷 위에서만 — ② 배수는 facts 의 분자·분모로, ④ 잃는 크기는 stops·sizing 이 null 이면 「미측정」으로, ⑥ 은 exposures 로.")
+    a(f"\n## 비어 있는 칸 {len(o.get('gaps', []))} — 채워야 근거 등급이 오르는 자리(= 딥리서치 티켓)")
+    for g in o.get("gaps") or ["없음"]:
+        a(f"- {g}")
+    a("\n---\nJ2 답은 이 패킷 위에서만 — 저울과 「지난 번 이후」를 먼저, status 는 뒤에. ② 배수는 facts 의 분자·분모로, ④ 잃는 크기는 stops·sizing 이 null 이면 「미측정」으로, ⑥ 은 exposures 로. 답을 냈으면 routing kind:judgment 한 줄(다음 델타의 기준점).")
     return "\n".join(L)
 
 

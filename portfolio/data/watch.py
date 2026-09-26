@@ -151,6 +151,19 @@ def main(argv):
     preds = [r for r in RT if r.get("kind") == "prediction"]
     out["predictions_due_unscored"] = [{"id": r["id"], "resolve_by": r.get("resolve_by"), "claim": str(r.get("claim"))[:90]}
                                        for r in preds if r.get("resolve_by") and r["resolve_by"] <= ts and not (r.get("outcome") or r.get("judged_by"))]
+    # 종합층(2026-09-26) — 테제에 안 걸린 관측이 회사 카드 watch[] 에 쌓인다. 쌓임 자체가 「승격 후보」 신호다
+    ENT = J(B + "entities.json").get("companies", {})
+    week = (today - timedelta(days=7)).isoformat()
+    cands = [(k, c) for k, c in ENT.items() if c.get("status") == "후보"]
+    out["watch"] = {
+        "cards_with_watch": sum(1 for c in ENT.values() if c.get("watch")),
+        "lines_7d": sum(1 for c in ENT.values() for w in c.get("watch") or [] if str(w.get("date", "")) >= week),
+        "candidates": len(cands),
+        "promote": [{"key": k, "name": c.get("name"), "watch": len(c.get("watch") or [])}
+                    for k, c in cands if len(c.get("watch") or []) >= 5 and not c.get("theses")],
+        "over_cap": [{"key": k, "name": c.get("name"), "watch": len(c.get("watch") or [])}
+                     for k, c in ENT.items() if len(c.get("watch") or []) > 12],
+    }
     out["routing_last_date"] = max((r.get("date", "") for r in RT), default=None)
     out["theses_last_touch"] = max((t.get("last_tested", "") for pg in T.values() for t in pg.get("theses", [])), default=None)
     try:
@@ -197,6 +210,10 @@ def render(o):
     a(f"▎레짐 {rg['asof']} ({rg['age_days']}일{' 🟠 주 1회 리뷰 지남' if rg['stale'] else ''}) — {str(rg['one'])[:140]}")
     qn = o["queue"]
     a(f"▎라우팅 큐 {qn['total']}건 (후보 부착 {qn['with_candidates']} · skip 누적 {qn['skipped']}) · kind {qn['by_kind']}")
+    w = o.get("watch") or {}
+    a(f"▎종합(watch) 7일 {w.get('lines_7d', 0)}줄 · 카드 {w.get('cards_with_watch', 0)} · 후보 카드 {w.get('candidates', 0)}"
+      + (" · 승격 판단: " + " · ".join(f"{x['name']}({x['watch']}줄)" for x in w["promote"]) if w.get("promote") else "")
+      + (" · 🟠 12줄 초과: " + " · ".join(f"{x['name']}({x['watch']})" for x in w["over_cap"]) if w.get("over_cap") else ""))
     a(f"▎마지막 routing {o['routing_last_date']} · 마지막 테제 접촉 {o['theses_last_touch']}"
       + (" 🔴 routing 이 테제를 안 건드리고 있다" if o['routing_last_date'] and o['theses_last_touch'] and o['routing_last_date'] > o['theses_last_touch'] else ""))
     if o["predictions_due_unscored"]:

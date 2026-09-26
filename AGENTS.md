@@ -1,4 +1,4 @@
-# AGENTS.md — Lead 에이전트 작업 계약 (v1 · 2026-09-26)
+# AGENTS.md — Lead 에이전트 작업 계약 (v1.1 · 2026-09-26 · v1.1 = 종합층: `entities.watch[]` · `parked:"entity:KEY"` · 패킷 저울/델타)
 
 **누구를 위한 파일인가** — 이 저장소에 **git으로 쓰는 모든 LLM 에이전트**(Grok Bot Lead · Claude 세션 · 그 외). 모델을 가리지 않는다.
 사람용 규칙 전문은 `CLAUDE.md`(§J·§R·§W·§E·§H)이고, 이 파일은 그중 **에이전트가 매 실행에 지켜야 하는 것만** 기계가 검사할 수 있는 형태로 적은 것이다. 둘이 어긋나면 `CLAUDE.md`가 정본이고 이 파일을 고친다.
@@ -8,8 +8,8 @@
 
 ## 0. 역할 한 줄
 
-Lead는 **해석자**다 — 들어온 주장을 테제에 착지시키고(ⓐ 확인 · ⓑ 도전 · ⓒ 신규), 테제의 `last_tested`·`log`·`status`를 움직인다.
-요약해서 파일에 넣는 것은 해석이 아니라 보관이다. 보관은 수집기가 이미 한다. **테제를 건드리지 않은 routing 줄은 해석이 아니며 거절된다.**
+Lead는 **해석자이자 종합자**다 — 들어온 주장을 테제에 착지시키고(ⓐ 확인 · ⓑ 도전 · ⓒ 신규) 테제의 `last_tested`·`log`·`status`를 움직이거나, 테제에 안 걸리지만 회사·테마가 보이는 관측은 **`entities` 카드의 `watch[]`에 한국어 한 줄로 쌓는다**(2026-09-26 · 결정 순간에 필요한 것은 판정만이 아니라 「이 회사에 대해 무엇이 쌓였나」다).
+요약해서 intake 에만 넣는 것은 해석도 종합도 아니다. **테제도 엔티티 카드도 움직이지 않은 routing 줄은 거절된다.**
 
 ## 1. 실행 루프 (매 실행 · 이 순서 · 건너뛰면 그렇다고 적는다)
 
@@ -22,13 +22,15 @@ Lead는 **해석자**다 — 들어온 주장을 테제에 착지시키고(ⓐ �
    b. 걸리는 테제 찾기 — candidates → docs/name_index.json → brain/theses.json 의 page 키
       (통째로 읽지 않는다 · python3 portfolio/data/packet.py <이름> 으로 꺼낸다)
    c. 주장 단위로 쪼개 각각 등급(①공시 ②미확인 ③전문가 ④수사) — 통째 인용 금지
-   d. routing.jsonl 한 줄 (§3 스키마) + theses.json 갱신 (§4 권한) + 수치면 facts.json
+   d. 테제에 걸리면: routing.jsonl 한 줄 (§3 스키마) + theses.json 갱신 (§4 권한) + 수치면 facts.json
+      테제에 안 걸리지만 회사·테마가 있으면: routing 한 줄(parked:"entity:<KEY>") + entities.json 그 카드 watch[] 에 한 줄
+      (카드가 없으면 status:"후보" 카드를 만든다 · §4 ⓒ)
    e. intake 줄의 routed 를 true 로, routing 필드에 r-id
 4. python3 .githooks/check_routing.py         ← 0 이 아니면 커밋하지 않는다. 고친다
 5. git add -A brain intake && git commit && git push (실패 시 pull --rebase 후 재시도 5회)
 ```
 
-배치처가 없는 항목은 **`routed:"skip:no-thesis"`**로 닫고 routing 줄을 만들지 않는다(intake 규칙 4 — 줄과 원문은 남는다).
+회사도 테마도 식별되지 않는 항목만 **`routed:"skip:no-thesis"`**로 닫고 routing 줄을 만들지 않는다(intake 규칙 4 — 줄과 원문은 남는다). 「테제에 안 걸린다」는 버리는 이유가 아니다 — 종합(watch)으로 간다.
 한 실행에서 처리할 수 있는 양보다 큐가 크면 **보유 종목 · card:true 페이지 · events.json 7일 내 이벤트에 걸리는 것부터** 하고, 남은 수를 커밋 메시지에 적는다.
 
 ## 2. 쓰기 권한 표
@@ -44,7 +46,7 @@ Lead는 **해석자**다 — 들어온 주장을 테제에 착지시키고(ⓐ �
 | `brain/regime.json` | `history[]` append · `narratives[].status` · 수치 필드 | `one` 변경 (사람과 합의 후) |
 | `brain/mechanisms.json` | `edges[].last_tested` · `evidence[]` append · `sign` → `?` (반박 시) | 엣지 추가 (09-29 판정 전까지) |
 | `brain/portfolio.json` | `exposures`·`scenarios` 서술 · `_changelog` | **`holdings`·`cash`·`stops`·`decisions`·`precommits`** — 전부 사용자 |
-| `brain/entities.json` | 회사·행위자 카드 추가·갱신 | — |
+| `brain/entities.json` | 회사·행위자 카드 추가·갱신 · **`watch[]` append**(`{date, grade, rid, one(한국어 ≤160자), source?}`) · 정본 페이지 없는 회사는 **`status:"후보"`** 카드 신설(`name·market·layer·business·business_grade` + `watch[]`) | `watch` 항목 수정·삭제 · 접기(watch 12줄 초과 시 테제 승격 또는 접기는 사람과 함께) |
 | HTML 페이지 | 열지 않는다 | 본문 수정 (테제 상태가 바뀐 페이지는 open.json 에 `page-debt:` 로 남긴다) |
 
 ## 3. routing.jsonl 한 줄 — 필수 필드 (2026-09-26 이후 줄에 강제)
@@ -62,10 +64,11 @@ Lead는 **해석자**다 — 들어온 주장을 테제에 착지시키고(ⓐ �
 | `claim` | **한국어 포함**(재등장 대조가 grep 이라 언어가 갈리면 못 찾는다). 영어 원문은 intake `text` 에 |
 | `grade` | ①~④ 중 하나 이상 포함 |
 | `routed[]` | 원소는 **실재하는 `page.html#Tn`** 또는 실재 페이지 경로만. intake 파일 경로·`"관측"`·`"#T5"` 같은 문자열 금지 |
-| `parked` | `routed[]` 가 비면 필수 — `"open"`·`"regime"`·`"portfolio"`·`"events"` (파이프 구분) |
+| `parked` | `routed[]` 가 비면 필수 — `"open"`·`"regime"`·`"portfolio"`·`"events"` · **`"entity:<KEY>"`**(KEY = `entities.companies` 키 · 티커/코드) (파이프 구분) |
 | `priced_in`·`variant`·`breaks_if` | `observation`·`judgment` 는 셋 다 비면 안 된다 |
-| `action` | `priced_in ≈ variant` 면 `no-edge`. **`digest-only` 는 routing 줄이 아니다** — intake 줄에 `summary` 를 붙이고 `routed:"skip:digest"` 로 닫는다 |
-| **테제 접촉** | `routed[]` 에 `page#T` 가 있으면 그 테제의 `log[]` 에 `rid == id` 인 항목이 있거나 `last_tested >= date` 여야 한다. **이게 없으면 해석이 아니다** |
+| `action` | `priced_in ≈ variant` 면 `no-edge`. `digest-only` 는 **테제 또는 엔티티 watch 접촉이 있을 때만** 허용 — 어디에도 안 쌓인 요약은 routing 줄이 아니다(`routed:"skip:no-thesis"`) |
+| **테제 접촉** | `routed[]` 에 `page#T` 가 있으면 그 테제의 `log[]` 에 `rid == id` 인 항목이 있거나 `last_tested >= date` 여야 한다 |
+| **엔티티 접촉** | `parked` 에 `entity:KEY` 가 있으면 `entities.companies[KEY].watch[]` 에 `rid == id` 항목(한국어 `one`)이 있어야 한다. **둘 중 하나도 없으면 해석도 종합도 아니다** |
 | `resolve_by` | `prediction` 필수 · `judgment` 중 `verdict` 가 ⓑ 면 필수 (「언제 틀렸는지 아나」) |
 | `kind:verdict` | `event` 필드(판정한 events.json 항목 what 앞 40자) + 그 이벤트는 events.json 에서 삭제 |
 
@@ -75,9 +78,10 @@ Lead는 **해석자**다 — 들어온 주장을 테제에 착지시키고(ⓐ �
 
 | 판정 | Lead 권한 | 필수 |
 |---|---|---|
-| **ⓐ 확인** | 테제 `log[]` 에 `{date, mark:"ⓐ", rid, text}` append · `last_tested` 갱신 | 「같은 말을 더 세게」 금지 — `priced_in ≈ variant` 면 log 만 남기고 `action: no-edge` |
+| **ⓐ 확인** | 테제 `log[]` 에 `{date, mark:"ⓐ", rid, text}` append · `last_tested` 갱신 | 「같은 말을 더 세게」 금지 — `priced_in ≈ variant` 면 log 만 남기고 `action: no-edge`. **같은 배치에 반대 방향 ②③이 있으면 `text` 끝에 「반대편: …」 한 줄** — 저울은 한쪽만 올리면 기운다 |
 | **ⓑ 도전** | `status` → `도전` · `basis` 재작성(≤220자 · 날짜 꼬리표) · `log[]` mark ⓑ · **`resolve_by`** | 사람이 주간 감사에서 `정정`·`철회`·`유지` 로 확정. Lead는 확정하지 않는다 |
-| **ⓒ 신규** | 배치처 페이지가 있으면 테제 append (`id` 다음 번호 · `claim·basis·falsifier·event·status:"관측"`) | `falsifier` 와 `event` 없으면 거절. 페이지가 없으면 `open.json` 에 「판단 0편」으로 |
+| **ⓒ 신규** | 배치처 페이지가 있으면 테제 append (`id` 다음 번호 · `claim·basis·falsifier·event·status:"관측"`) | `falsifier` 와 `event` 없으면 거절. 페이지가 없으면 **회사면 `entities` 후보 카드 + `watch[]`**, 테마·매크로면 `open.json` 에 「판단 0편」으로 |
+| **관측 축적** | 테제에 안 걸린 회사 관측 → `parked:"entity:KEY"` + `watch[]` `{date, grade, rid, one}` | `one` 은 한국어 한 줄(수치·출처·방향) · 포지션 서열·집행 언급 금지 · watch 가 12줄을 넘으면 커밋 메시지에 「승격 후보」라 적고 사람과 테제로 올릴지 정한다 |
 | **이미 판정** | routing 에 새 줄 없이 intake `routed:true` + `routing:` 기존 r-id | grep 으로 그때 줄을 실제로 읽었을 때만 |
 
 수급·13F·환율·금리는 테제에 넣지 않고 **크기와 창을 밝힌 관측**으로만(`CLAUDE.md` §J4). 보유 종목의 수급이 테제와 어긋나면 `docs/judgment_protocols_2026-09-23.md` §2 (hold rule) — 사이즈 언급 없이 관측만.
@@ -96,9 +100,10 @@ Lead는 **해석자**다 — 들어온 주장을 테제에 착지시키고(ⓐ �
 
 ## 7. 종목·포지션 질문에 답할 때 (§J2)
 
-`python3 portfolio/data/packet.py <이름|티커>` 로 패킷을 뽑고 **그 위에서만** 답한다.
+`python3 portfolio/data/packet.py <이름|티커> [--since YYYY-MM-DD]` 로 패킷을 뽑고 **그 위에서만** 답한다. 패킷은 판정(status)만이 아니라 **종합**을 준다 — 테제별 **증거 저울**(ⓐ/ⓑ 수 · 등급 분포 · 마지막 ⓑ) · **지난 번 이후**(기본 = 이 이름의 마지막 `kind:judgment` 이후 들어온 routing·watch·log·facts) · **반대편**(ⓑ 로그·도전 routing 모음) · **엔티티 watch** · **비어 있는 칸**(분자·분모 없는 배수 · 반증·판정 창 없는 테제 · watch 만 쌓인 후보). 답은 저울과 델타를 먼저 말하고 status 는 뒤에.
 ⓪ `regime.one` ① 기준일 ② 가격이 전제하는 것(배수 → 분자·분모) ③ 오늘 정보의 방향 ④ 각 선택지의 대가 ⑤ 등급 ⑥ 포트 영향(`exposures` · 단일 반증에 걸리는 금액 — 값이 null 이면 「미측정」이라고 말한다).
-답을 냈으면 `routing.jsonl` 에 `kind:judgment · source:"J2 <질문 요지>" · resolve_by` 한 줄 — 조언도 채점된다.
+「비어 있는 칸」은 그대로 딥리서치 티켓이다 — 채워야 근거 등급이 오르는 칸만 판다.
+답을 냈으면 `routing.jsonl` 에 `kind:judgment · source:"J2 <질문 요지>" · resolve_by` 한 줄 — 조언도 채점되고, 다음 패킷의 「지난 번 이후」 기준점이 된다.
 
 ## 8. 검사 명령
 
@@ -107,5 +112,6 @@ python3 .githooks/check_routing.py            # 스키마·포인터·테제 접
 python3 .githooks/check_intake.py             # 포인터 실재 · id 중복 (경고)
 python3 .githooks/check_facts.py              # facts ↔ 페이지 값 (경고)
 python3 portfolio/data/watch.py               # §J4 감시 · 큐 크기
-python3 portfolio/data/packet.py SK하이닉스    # 종목 패킷
+python3 portfolio/data/packet.py SK하이닉스    # 종목 패킷 (저울 · 지난 번 이후 · 반대편 · watch · 빈 칸)
+python3 portfolio/data/packet.py 6981.T --since 2026-09-15   # 후보 카드도 같은 패킷으로
 ```
