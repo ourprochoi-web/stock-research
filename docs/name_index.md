@@ -38,7 +38,7 @@
 | KR | SK바이오팜 | 326030 | — | kr_bio_china_competition#T2 · glp1_company_samsung_biologics#T3 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
 | KR | SK스퀘어 | 402340 | ✓ 할인 55%+ 3개월 · 상승 국면 베타 <1 | hbm_pkg_company_sk_hynix#T6 · vcp_breakout_backtest#T4 | — |
 | KR | SK이노베이션 | 096770 | — | oil_hedge_vehicles#T4 | — |
-| KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5,T6 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2,T7 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T4,T6 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T4,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T4,T5 · node_screener_hbm_scoreboard#T1,T4,T5,T6 · oil_hedge_vehicles#T1,T3 | — |
+| KR | SK하이닉스 | 000660 | ✓ T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반 | hbm_pkg_company_sk_hynix#T1,T2,T3,T4,T5,T6 · ai_power_infra_investment_map#T5 · k_defense_cross_valuation#T8 · hbm_pkg_company_hanmi_semi#T1,T3,T4 · hbm_pkg_company_samsung#T2,T7 · hbm_pkg_investment_map#T3,T4,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T2,T4,T6 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T6,T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T2,T4 · q2_2026_earnings_overview#T1 · ns_china_ai_ecosystem#T2,T4,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T3,T4,T5 · node_screener_hbm_scoreboard#T1,T4,T5,T6 · oil_hedge_vehicles#T1,T3 | — |
 | KR | SOL AI반도체TOP2+ | 0167A0 | — | — | — |
 | KR | STX엔진 | 077970 | — | — | — |
 | KR | TIME 글로벌AI | 456600 | — | — | — |
@@ -208,7 +208,7 @@
 | US | Bitdeer | BTDR.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
 | US | Bloom Energy | BE | ✓ T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10 | us_bloom_intel_deep#T1,T2,T3,T4,T5 · ai_power_company_transformer_grid#T1 · ai_power_top5_picks#T3 · us_power_regulated_vs_merchant#T1 · 13f_2026q2#T5 | 6 |
 | US | Booking Holdings | BKNG.O | — | — | — |
-| US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 | — |
+| US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 | — |
 | US | CMB.TECH | CMBT.K | — | — | 4 |
 | US | Cerebras | CBRS.O | ✓ 2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SB | ai_chip_architecture_war#T1,T2,T4,T5 · 13f_2026q2#T4,T5,T6 · robot_kr_16_valuation#T3 | 12 |
 | US | Cheniere Energy | LNG | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
