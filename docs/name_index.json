@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-26",
+ "generated": "2026-09-27",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -5110,7 +5110,15 @@
    "entity": "RKLB",
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "space/space_update_2026.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },

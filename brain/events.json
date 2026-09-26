@@ -37,7 +37,7 @@
     {
       "when": "2026-09-28",
       "what": "스페이스X 스타십 Flight 14(09-28 08:15 EDT · 첫 궤도 목표 · Starlink V3 26기 · ② 일정 확정 보도) — 우주 2026 편 T2(Starship V3) 판정 · 09-22 는 미발사(r-20260926-53) · 누리호 5차 10/7",
-      "judges": "space/space_update_2026.html#T2",
+      "judges": "space/space_update_2026.html#T1",
       "grade": "②",
       "due": "2026-09-28"
     },
@@ -836,6 +836,21 @@
         "if_memory_export_allowed": "반도체 전쟁 T2 자본 축 강화 · CXMT 테제 재검",
         "if_nothing": "「관리된 디커플링 안정」 유지 · 삭제"
       }
+    },
+    {
+      "when": "2026-11 초(예상)",
+      "what": "Rocket Lab 3Q26 실적 — GPM 가이던스 29–31%(Q2 36.1%) 대비 실제 · 조정 EBITDA −$17~23M · Neutron 발사대 이동(Q4) · 백로그 $2.36B 의 매출 전환",
+      "judges": "space/space_update_2026.html#T4",
+      "grade": "①",
+      "due": "2026-11-10",
+      "due_note": "실적일 미공시 — 공시되면 이동"
+    },
+    {
+      "when": "2027-06-28(만료 · 12-28 연장 가능)",
+      "what": "Rocket Lab–Iridium 클로징 — FCC·Team Telecom·DCSA 승인 · IRDM 스프레드(09-26 −10.8%) · RKLB 칼라 하단 $67.50",
+      "judges": "space/space_update_2026.html#T5",
+      "grade": "①",
+      "due": "2027-06-28"
     }
   ]
 }
