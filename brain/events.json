@@ -66,18 +66,6 @@
       "due": "2026-09-24"
     },
     {
-      "when": "2026-09-24",
-      "what": "미중 정상회담 — LNG SPA(09-14 Venture Global ↔ China Gas 20년·연 50만톤 ①) 이후 중국산 선박 제재가 어디로 가는지",
-      "judges": "shipbuilding 채점표",
-      "grade": "①",
-      "precommit": {
-        "if_a": "(fill)",
-        "if_b": "(fill)",
-        "note": "stub 2026-09-23"
-      },
-      "due": "2026-09-24"
-    },
-    {
       "when": "2026-09-24 · 10-09 · 12-08",
       "what": "SpaceX 보호예수 해제 — 9/24 3.28억주 · 10/9 13억주(유통주식 +40% · 3Q 실적 이틀 뒤) · 12/8 7.98억주(JPM ③). 13F 대가 5:0 만장일치 신규(T1)의 첫 물량 시험 — 10/9가 크다",
       "judges": "research/13f_2026q2.html#T1",
@@ -86,18 +74,6 @@
         "if_a": "(fill)",
         "if_b": "(fill)",
         "note": "stub 2026-09-23"
-      },
-      "due": "2026-09-24"
-    },
-    {
-      "when": "2026-09-24/25",
-      "what": "미중 워싱턴 정상회담 — 중국산 배터리 일부 허용 여부(하나 김현수: 셀·시스템은 구조적 탈중국, 양극재·리튬 등 광물이 협상 카드) · CXMT·메모리 수출 허용 여부 · 20·30년물 입찰 동일 주 · JPM 09-18(③): 국빈 방문 9/23~25 · 예상 = 희토류 휴전 1년 연장 · 일부 관세 예외 · 제한적 반도체 라이선스(H200·MI325X 사례별) · 구매(보잉 200대·농산물 $170억/년+) · 최대 성과 후보는 중국의 이란 영향력 → 휴전·해로 개방 · 「관리된 디커플링 안정」이지 되돌림 아님 · 후속 11/18 APEC 선전 · 12/14 G20",
-      "judges": "energy/energy_battery_valuechain_update.html · hbm-packaging · macro",
-      "grade": "②",
-      "precommit": {
-        "if_battery_allowed": "배터리 편 T2(정책 리스크) 판정",
-        "if_memory_export_allowed": "반도체 전쟁 T2 자본 축 강화 · CXMT open 승격",
-        "if_ai_pacing_on_agenda": "AI 감속이 의제로 실제 논의되면 n-pacing 「정치가 막는다」 축 약화 · 중국 「AI 냉전」 규정이면 강화"
       },
       "due": "2026-09-24"
     },
@@ -209,13 +185,6 @@
       "judges": "defense/us_defense_primes.html#T4 · defense/k_defense_company_hanwha_systems_ocean.html#T4",
       "grade": "②",
       "due": "2026-10-17"
-    },
-    {
-      "when": "2026-10-22",
-      "what": "UNGA 걸프 회동(09-22) 후 1개월 — 한화에어로·한화시스템·로템의 중동 상대 「단일판매공급계약」 공시 0건이면 「중동 촉매」는 수사(④) 확정",
-      "judges": "defense/k_defense_investment_map.html#T5",
-      "grade": "①(공시 유무)",
-      "due": "2026-10-22"
     },
     {
       "when": "2026-10-27/28",
@@ -837,7 +806,7 @@
       "due_note": "when 에 월만 있어 말일로"
     },
     {
-      "when": "2026-09-22~23 · 09-24 · 10월 말",
+      "when": "09-22~23 불발 · 09-24 미수집 → 10월 말(사우디 동서 파이프라인 전량 복구)",
       "what": "🆕 탱커 T5 판정 창 — 휴전 축이 열리는 자리 셋(UNGA 걸프·이란 회동 / 미중 정상회담 / 사우디 동서 파이프라인 전량 복구). <베타 0짜리가 얼마나 빠지는가>를 잰다. 09-21 이 첫 관측(브렌트 −5% → 탱커 −1.0~−3.5% · 이벤트 배수 0.2~0.7) — 두 번째 관측으로 이벤트 베타 확정",
       "judges": "energy/oil_hedge_vehicles.html#T5",
       "grade": "①",
@@ -846,7 +815,8 @@
         "if_b": "(fill)",
         "note": "stub 2026-09-23"
       },
-      "due": "2026-09-22"
+      "due": "2026-10-31",
+      "note": "09-26 판정: 첫 두 축 불발/미수집 · r-20260926-15"
     },
     {
       "when": "2026-11 (3Q26)",
@@ -885,18 +855,6 @@
       "due_note": "when 에 월만 있어 말일로"
     },
     {
-      "when": "2026-09-23",
-      "what": "🔴 09-21 체결분 결제일 — 집행 98,560,791원 vs 매수 전 예수금 80,361,274원 = <18,199,517원 부족>. 입금이 없으면 미수. 함께 확인할 것: 브레인 cash 12.28억(08-24)이 이 계좌 밖에 실재하는가",
-      "judges": "portfolio.cash",
-      "grade": "①",
-      "precommit": {
-        "if_a": "(fill)",
-        "if_b": "(fill)",
-        "note": "stub 2026-09-23"
-      },
-      "due": "2026-09-23"
-    },
-    {
       "when": "2026-4Q 실적(2027-02 경)",
       "what": "🔑 <CPO 시점 판정> — 코히런트가 「스케일아웃 CPO 2026 4Q 램프업(엔비디아 앵커 LTA)」이라 했다(③). 아카이브·Wedbush·미즈호는 「CPO 는 2020년대 말」이라 2~3년 어긋난다. <재는 것: 4Q26 DC&C 매출에서 CPO 가 분리돼 나오는가>. 나오면 「2020년대 말」이 틀린 것이고, 안 나오면 「램프업」이 수사다. ⚠ 스케일아웃 CPO(4Q26)와 스케일업 CPO(2027 하반기)를 섞지 않는다",
       "judges": "ai-infra/optical_valuechain_9.html#T5",
@@ -910,6 +868,19 @@
       "judges": "ai-infra/optical_valuechain_9.html#T3",
       "grade": "③",
       "due": null
+    },
+    {
+      "id": null,
+      "due": "2027-01-10",
+      "when": "2027-01-10 (부산 휴전 2개월 연장 만료 · ③) · 결과 원문 들어오면 앞당김",
+      "what": "미중 워싱턴 정상회담(09-24/25) 후속 — 중국산 배터리 일부 허용 · CXMT/메모리 수출 허용 · 중국산 선박 제재 · LNG SPA 후속. 09-26 판정 시점에 회담 결과가 intake 에 0건이라 09-24 두 이벤트를 합쳐 다시 걸었다(r-20260926-16)",
+      "judges": "energy/energy_battery_valuechain_update.html · hbm-packaging · shipbuilding 채점표 · macro",
+      "grade": "②",
+      "precommit": {
+        "if_battery_allowed": "배터리 편 T2(정책 리스크) 판정",
+        "if_memory_export_allowed": "반도체 전쟁 T2 자본 축 강화 · CXMT 테제 재검",
+        "if_nothing": "「관리된 디커플링 안정」 유지 · 삭제"
+      }
     }
   ]
 }
