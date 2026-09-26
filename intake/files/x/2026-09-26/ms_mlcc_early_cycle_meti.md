@@ -4,7 +4,7 @@
 - **URLs:** https://x.com/LeroyGroffier/status/2100107729087934500 · https://x.com/LeroyGroffier/status/2100106355574984713 · https://x.com/LeroyGroffier/status/2099737339308204190 · https://x.com/LeroyGroffier/status/2099734596510269464
 - **Source date:** 2026-09-15/16
 - **Intake ID:** `u-20260926-x-ms-mlcc01`
-- **Routing ID:** `r-20260926-01`
+- **Routing ID:** `r-20260926-08` — entity parked `6981.T` · `009150` (v1.1). 무효 `r-20260926-01` 은 `r-20260926-06` 이 정정한 역사다.
 - **Lead disposition:** digest-only; grade ③ observation; soft watch MLCC high-end cycle numbers; no ticker add; no MLCC/소부장 absolute buy
 
 ## Evidence note

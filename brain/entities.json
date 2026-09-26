@@ -1837,6 +1837,66 @@
       "tracked_price": true,
       "note": "2026-09-23 아카이브 공백 메움 — WEB/SEC 라벨 필수. 인프라 50%(Q2)이나 전사 브로드밴드 혼합.",
       "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
+    },
+    "6981.T": {
+      "name": "무라타(Murata)",
+      "market": "JP",
+      "layer": "수동부품·MLCC",
+      "business": "MLCC 등 전자부품",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-08",
+          "one": "모건스탠리(③)는 무라타(6981)를 MLCC 톱픽으로 두고 2026년 말에도 얼리사이클이라 봤다. METI·재무성 출하액은 2026/27/28 +26/+20/+16%다.",
+          "source": "X @LeroyGroffier · intake/files/x/2026-09-26/ms_mlcc_early_cycle_meti.md"
+        }
+      ]
+    },
+    "009150": {
+      "name": "삼성전기",
+      "market": "KR",
+      "layer": "수동부품·MLCC·기판",
+      "business": "MLCC·ABF 등",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-08",
+          "one": "모건스탠리(③)는 삼성전기(009150)를 MLCC 톱픽으로 두고 고사양 2–3사 과점이라 2017–18 반복이 아니라고 봤다. 산업 매출 2026–28은 한 자릿수 후반 상향, 출하 +26/+20/+16%다.",
+          "source": "X @LeroyGroffier · intake/files/x/2026-09-26/ms_mlcc_early_cycle_meti.md"
+        }
+      ]
+    },
+    "6779.T": {
+      "name": "DEMPA(덴파)",
+      "market": "JP",
+      "layer": "광학·광트랜시버 인접",
+      "business": "광트랜시버 관련",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-09",
+          "one": "덴파(6779)는 견조한 2분기와 직전 주 노무라 개시로 관심이 붙었다. 5–6월에는 후기 과열로 읽혔고, 광트랜시버 업사이드는 실재하며 배수는 부담스럽지 않다고 적었다(③).",
+          "source": "X @LeroyGroffier · intake/files/x/2026-09-26/dempa_optical_transceiver_nomura.md"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
