@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-26)
 
-추적 331개 · 테제가 걸린 이름 193 · 엔티티 있음 88 · facts 있음 77.
+추적 332개 · 테제가 걸린 이름 193 · 엔티티 있음 89 · facts 있음 77.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -285,6 +285,7 @@
 | US | Range Resources | RRC | ✓  | us_energy_hegemony_17#T1,T2 | 8 |
 | US | Recursion Pharma | RXRX.O | — | — | — |
 | US | Robinhood | HOOD.O | ✓ 금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편 | payments_company_robinhood#T1,T2,T3,T4,T5 · ai_sw_company_anthropic#T2 | 35 |
+| US | Rocket Lab | RKLB | ✓  | — | — |
 | US | STMicroelectronics | STM | — | — | — |
 | US | Salesforce | CRM | — | ai_sw_overview#T1 · us_7axis_cross_valuation#T3 | — |
 | US | SanDisk | SNDK.O | — | ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T1,T2 · us_7axis_cross_valuation#T3,T4 · node_screener_hbm_scoreboard#T2,T5 · us_payment_networks#T1 | 5 |
