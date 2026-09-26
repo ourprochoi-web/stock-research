@@ -666,3 +666,9 @@ New Glenn 복구 **업계 "1년 이상" vs 자체 "연말"**.
 **결정** — ① `AGENTS.md`: 모델 무관 계약(실행 루프 · 쓰기 권한 표 · routing 필수 필드 · ⓐⓑⓒ 권한 · J2 패킷 의무). ② `check_routing.py`: 새 줄(≥09-26)에 대해 **차단**(§H1 첫 차단 검사 · 경고 열흘의 실패율이 근거) + `brain-check.yml` CI 로 봇 커밋에도 적용. ③ `intake/triage.py`: 수집 직후 분류(`skip:*` · `candidates`) — 판단 없음 · 447건 소급 → 큐 260. ④ `events.due` 기계용 날짜 필드(113건 부착 · 20건 null=조건 이벤트). ⑤ `packet.py`(§J2 입력 조립) · `watch.py`+`watch.yml`(§J4 를 세션 없이 매일). 브레인 파일 수 9 유지 · 새 저장소 없음(스크립트는 층 사이 읽기·분류만).
 **하지 않은 것** — 스톱·현금·반증 낙폭은 사용자 몫이라 비워 둠 · Lead 봇의 스케줄 실행 방식은 저장소 밖(런타임 미확인). **판정 10-10**(backlog §3.5).
 
+
+## 2026-09-26 (오후) — 종합층: `entities.watch[]` · `parked:"entity:KEY"` · 패킷 저울/델타 (사용자: 「정보가 들어올 때 브레인에 종합해서 결정에 도움이 되게 정리해 주는 게 중요하다 — 결론에만 집중하지 말고」)
+**실측** — 526 로그 / 475 테제 ≈ 테제당 1.1줄 · `basis` 는 status 변경 때만 갱신 · `contra_claim` 0/475 · 테제에 안 걸린 관측은 `skip:digest` 로 intake 에만(영어) 남고 브레인 밖 — MS MLCC(무라타·삼성전기)·DEMPA 가 그렇게 버려졌다 · `entities` 에 `dossier_20260923` 임시 필드 = 종합 자리가 필요했다는 흔적. 패킷은 status 와 마지막 로그 한 줄만 보여줬다(SKH T4 는 ⓐ3·ⓑ3 인데 「유지」로만 보임).
+**진단** — 입력 경로가 판정(ⓐⓑ·status)에 최적화돼 있고 종합이 쌓이는 자리가 없다. 오전에 만든 계약이 「digest-only 는 routing 아님」으로 그것을 한 칸 더 조였다.
+**결정** — ① `entities.companies[KEY].watch[]` `{date, grade, rid, one(한국어), source?}` — 테제에 안 걸린 회사 관측의 종합. 정본 페이지 없는 회사는 `status:"후보"` 카드. routing 은 `parked:"entity:KEY"`. `check_routing.py` 는 카드 실재 + `watch[].rid == id` 를 검사(테제 접촉과 대칭) · 12줄 초과 경고. ② §R2 ⓒ 「없으면 버린다」 → 「회사가 보이면 watch, 없으면 버린다」. ③ `packet.py` v2: 테제별 저울(ⓐ/ⓑ · 등급 분포 · 마지막 ⓑ) · 「지난 번 이후」(기본 = 마지막 J2 judgment) · 반대편 · watch · 비어 있는 칸(= 딥리서치 티켓). ④ AGENTS.md v1.1: ⓐ 붙일 때 같은 배치의 반대 방향 ②③ 을 「반대편:」으로 · 답은 저울·델타 먼저 status 뒤. ⑤ `watch.py` 에 종합 줄(7일 watch · 후보 카드 · 승격 판단 ≥5줄).
+**하지 않은 것** — `regime.narratives` 장문 구조화 · `mechanisms` 테제 연결 — 결정 순간에 덜 직접적이라 다음으로. 브레인 파일 수 9 그대로(필드만).
