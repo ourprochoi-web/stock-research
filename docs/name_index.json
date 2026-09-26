@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-22",
+ "generated": "2026-09-26",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -38,6 +38,26 @@
    "entity": "300394.SZ",
    "falsifier": null,
    "facts": 5,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "DEMPA(덴파)": {
+   "code": "6779.T",
+   "market": "JP",
+   "entity": "6779.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "무라타(Murata)": {
+   "code": "6981.T",
+   "market": "JP",
+   "entity": "6981.T",
+   "falsifier": null,
+   "facts": 0,
    "theses": {},
    "aliases": [],
    "auto_candidate": true
@@ -1198,7 +1218,7 @@
   "삼성전기": {
    "code": "009150",
    "market": "KR",
-   "entity": null,
+   "entity": "009150",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2414,6 +2434,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "피엠티(PMT)": {
+   "code": "147760",
+   "market": "KR",
+   "entity": "147760",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "하나머티리얼즈": {
    "code": "166090",
    "market": "KR",
@@ -3204,6 +3234,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Airbnb": {
+   "code": "ABNB.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Alibaba": {
    "code": "BABA",
    "market": "US",
@@ -3424,6 +3464,16 @@
    "aliases": [
     "블룸에너지"
    ],
+   "auto_candidate": true
+  },
+  "Booking Holdings": {
+   "code": "BKNG.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
    "auto_candidate": true
   },
   "Broadcom": {
@@ -3958,6 +4008,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Everpure": {
+   "code": "P",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Expand Energy": {
    "code": "EXE",
    "market": "US",
@@ -3970,6 +4030,16 @@
      "T2"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Expedia": {
+   "code": "EXPE.O",
+   "market": "US",
+   "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4175,6 +4245,9 @@
     "hbm-packaging/kr_semi_fab_timeline.html": [
      "T4"
     ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1"
+    ],
     "national-strategy/ns_semiconductor_war.html": [
      "T1",
      "T2",
@@ -4359,6 +4432,16 @@
      "T2"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "MaxLinear": {
+   "code": "MXL.O",
+   "market": "US",
+   "entity": "MXL",
+   "falsifier": "2026-09-23 아카이브 공백 메움 — WEB/SEC 라벨 필수. 인프라 50%(Q2)이나 전사 브로드밴드 혼합.",
+   "facts": 16,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -5444,6 +5527,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "사이퍼마이닝(Cipher Mining)": {
+   "code": "CIFR",
+   "market": "US",
+   "entity": "CIFR",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "IGV 소프트웨어": {
    "code": "IGV",
    "market": "US-ETF",
@@ -5618,6 +5711,16 @@
    "code": "XLY",
    "market": "US-ETF",
    "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "타워세미컨덕터(Tower Semiconductor)": {
+   "code": "TSEM",
+   "market": "US/IL",
+   "entity": "TSEM",
    "falsifier": null,
    "facts": 0,
    "theses": {},
