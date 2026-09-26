@@ -62,6 +62,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "히타치": {
+   "code": "6501.T",
+   "market": "JP",
+   "entity": "6501.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "CJ제일제당": {
    "code": "097950",
    "market": "KR",
@@ -789,6 +803,16 @@
      "T5"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "대원제약": {
+   "code": "003220",
+   "market": "KR",
+   "entity": "003220",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -1869,6 +1893,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "우리넷": {
+   "code": "115440",
+   "market": "KR",
+   "entity": "115440",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "우리로": {
    "code": "046970",
    "market": "KR",
@@ -2071,6 +2105,44 @@
    },
    "aliases": [],
    "auto_candidate": true
+  },
+  "채비": {
+   "code": "0011T0",
+   "market": "KR",
+   "entity": "0011T0",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_korea_g3_sovereign_ai.html": [
+     "T1"
+    ],
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T2"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T7",
+     "T8",
+     "T9"
+    ],
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T2",
+     "T5"
+    ],
+    "k-beauty/k_beauty_company_silicon2.html": [
+     "T5"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
   },
   "케이엔제이": {
    "code": "272110",
@@ -2281,6 +2353,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "파두": {
+   "code": "440110",
+   "market": "KR",
+   "entity": "440110",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
   "파마리서치": {
    "code": "214450",
    "market": "KR",
@@ -2358,7 +2440,7 @@
   "포스코인터내셔널": {
    "code": "047050",
    "market": "KR",
-   "entity": null,
+   "entity": "047050",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -2644,6 +2726,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "한올바이오파마": {
+   "code": "009420",
+   "market": "KR",
+   "entity": "009420",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "한전KPS": {
    "code": "051600",
    "market": "KR",
@@ -2862,6 +2954,20 @@
     "defense/k_defense_investment_map.html": [
      "T1",
      "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "현대모비스": {
+   "code": "012330",
+   "market": "KR",
+   "entity": "012330",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -3493,7 +3599,7 @@
   "Booking Holdings": {
    "code": "BKNG.O",
    "market": "US",
-   "entity": null,
+   "entity": "BKNG",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -4114,7 +4220,7 @@
   "Fluence Energy": {
    "code": "FLNC.O",
    "market": "US",
-   "entity": null,
+   "entity": "FLNC",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -4182,6 +4288,16 @@
     "GE버노바",
     "GE 버노바"
    ],
+   "auto_candidate": true
+  },
+  "GRAIL": {
+   "code": "GRAL",
+   "market": "US",
+   "entity": "GRAL",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
    "auto_candidate": true
   },
   "Generac": {
@@ -4848,6 +4964,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T5"
+    ],
     "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
      "T5"
     ],
@@ -5229,7 +5348,7 @@
   "TSMC ADR": {
    "code": "TSM",
    "market": "US",
-   "entity": null,
+   "entity": "TSM",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -5343,7 +5462,7 @@
   "Tesla": {
    "code": "TSLA.O",
    "market": "US",
-   "entity": null,
+   "entity": "TSLA",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -5770,6 +5889,16 @@
    "code": "TSEM",
    "market": "US/IL",
    "entity": "TSEM",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Arm Holdings": {
+   "code": "ARM",
+   "market": "US/UK",
+   "entity": "ARM",
    "falsifier": null,
    "facts": 0,
    "theses": {},

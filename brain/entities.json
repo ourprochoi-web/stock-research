@@ -1677,6 +1677,13 @@
           "rid": "r-20260926-51",
           "one": "압사라 2026: 3년 RMB 3,800억 AI·클라우드 투자 재확인(6월 말 누적 1,900억 집행) · Qwen 4 프리뷰. 주가 개막 전 6일 +8.4% → 다음 날 −4.7%(뉴스에 팔림) · MaaS 9월 ARR 미확인",
           "source": "technode 2026-09-24 · scmp · Yahoo 종가"
+        },
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-70",
+          "one": "Citi·JPM 압사라: MaaS 9월 ARR 200억 위안(8월 160억 · 연말 300억 목표) · 2032 20GW+ · V900 2027Q1 · JPM 1GW 당 $300억 가정 → 자체 캐펙스 FY30 까지 증가 · 「주주 수익은 파트너 경제성」",
+          "source": "aether 25440 · tg05"
         }
       ]
     },
@@ -2074,6 +2081,20 @@
           "rid": "r-20260926-47",
           "one": "GS 반대편 시간표: 에이전틱 커머스는 3~5년+ 점진 전환(이커머스 침투 4→7%에 10년) · 대면 지출 2% 전환 시 이커머스 성장 +1%p. Muse 결제는 스트라이프 가상카드 2단계 — 차지백 책임 미정",
           "source": "aether 25484"
+        },
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-71",
+          "one": "반대편 첫 건(로이터 09-24): Muse 인간 대리 통화 테스트에서 외부 계약자가 개인정보 수령·인종차별 발언 → MSL 공개 불충분 인정·중단·사과. 자율 에이전트 실패 = 사람 개입 = 공개·책임 비용",
+          "source": "aether 25466"
+        },
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-71",
+          "one": "가격표: 무료 주당 1억 토큰 · 5억 월 3,500엔 · 30억 월 17,000엔. Watermelon 수주 내. 여행 파트너 익스피디아·비아토르·투로 — 부킹 없음. OpenAI 도 상시 개인 에이전트 개발",
+          "source": "aether · insidertracking · Samsung 4604"
         }
       ]
     },
@@ -2134,6 +2155,286 @@
           "rid": "r-20260926-66",
           "one": "X @jinseongeo83473(+1차출처): SDA T3 72기=LMT/RKLB/NG/L3Harris 각18 · L3Harris PDR · RKLB~$805M(신규수주아님) · FY2029 · BAE MEO Epoch2 CDR~$1.2B/10기. 벤치=각18기 PDR→발사 속도.",
           "source": "https://x.com/jinseongeo83473/status/2103586781556052110"
+        }
+      ]
+    },
+    "BKNG": {
+      "name": "부킹홀딩스(Booking)",
+      "market": "US",
+      "layer": "온라인 여행(OTA)",
+      "business": "숙박·항공 예약 · MoR(판매 주체)",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-71",
+          "one": "리드 연구(09-24): Q2 GB +9% · EBITDA 마진 36% · FCF $36억 · 선행 PER 약 14배 · Muse 여행 파트너에 없음 · 구글 AI Mode 호텔 파트너(MoR 유지) — 로고 없이 MoR 로 에이전트 GMV 를 먹는다는 반대 가설",
+          "source": "lead bkng01"
+        }
+      ]
+    },
+    "TSM": {
+      "name": "TSMC",
+      "market": "TW/US",
+      "layer": "파운드리",
+      "business": "선단 공정 파운드리",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-72",
+          "one": "A14 시험 생산 1Q27 로 당김(工商時報 · 인텔 14A 1Q27 리스크 생산과 맞먹음) · 256Mb SRAM 수율 90% 근접",
+          "source": "aether 25430"
+        }
+      ]
+    },
+    "ARM": {
+      "name": "Arm Holdings",
+      "market": "US/UK",
+      "layer": "CPU IP·로열티",
+      "business": "CPU 아키텍처 라이선스·로열티 · 머천트 AGI CPU",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-72",
+          "one": "JPM(09-24): 클라우드/AI 로열티(전체의 14%) 전년 2배 성장 · 서버 CPU 로열티 FY27 전체의 10%+ · 머천트 AGI CPU 출시 예정",
+          "source": "aether 25465"
+        }
+      ]
+    },
+    "440110": {
+      "name": "파두",
+      "market": "KR",
+      "layer": "eSSD 컨트롤러",
+      "business": "데이터센터 SSD 컨트롤러 팹리스",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-72",
+          "one": "유진(09-22): 3Q 매출 1,221억(+376% YoY) · OP 355억(컨센 321억 상회) · 하이퍼스케일러 4곳 가시화 · KV 캐시 eSSD 수요 · TP 11만(현재 72,300)",
+          "source": "YeouidoStory2/117748"
+        }
+      ]
+    },
+    "6501.T": {
+      "name": "히타치",
+      "market": "JP",
+      "layer": "IT·에너지·모빌리티",
+      "business": "디지털 시스템·히타치 에너지(송배전)·철도",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-72",
+          "one": "JPM CFO 미팅(09-25): AI 로 SI 생산성 FY25 10% → FY27 30% 목표 · 가격 하방 압력 우려에도 국내 수급 타이트 · 히타치 에너지 긍정",
+          "source": "aether 25502"
+        }
+      ]
+    },
+    "047050": {
+      "name": "포스코인터내셔널",
+      "market": "KR",
+      "layer": "자원·트레이딩",
+      "business": "무역·가스전(미얀마)·LNG·식량",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-78",
+          "one": "메리츠(09-22): Marcellus 비운영 가스 $5.5억 인수 · 124 MMcf/d · 2028+ 연 OP 약 1,000억 · ROIC 약 10% · 배당 2026E 4.9%",
+          "source": "meritz 44680"
+        }
+      ]
+    },
+    "TSLA": {
+      "name": "테슬라",
+      "market": "US",
+      "layer": "EV·에너지·로봇",
+      "business": "EV · 세미 · 에너지저장 · 옵티머스",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-79",
+          "one": "세미 네바다 공장 가동(연 5만대) · ZET SCALE 2,500대 주 공급사 · 8월 유럽 등록 +4%(BYD YTD +144% vs 테슬라 +43%)",
+          "source": "insidertracking · 삼성 임은영"
+        }
+      ]
+    },
+    "012330": {
+      "name": "현대모비스",
+      "market": "KR",
+      "layer": "자동차 부품·로봇",
+      "business": "모듈·핵심부품 · 보스턴다이내믹스 아틀라스 액추에이터",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-79",
+          "one": "삼성(09-22): 보스턴다이내믹스 훈련센터 가동 · 모비스 액추에이터 2026-11 양산 · BD 연말 1조+ 증자 예상 · 아틀라스 양산 2028",
+          "source": "YeouidoStory2/117715"
+        }
+      ]
+    },
+    "FLNC": {
+      "name": "플루언스 에너지",
+      "market": "US",
+      "layer": "ESS 세트",
+      "business": "ESS 시스템 통합(AES·지멘스 합작)",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-79",
+          "one": "이사 2명 $7.36 추가 매수(가이던스 2차 하향 직후) — 수급 관측 · ESS T1 가동률 판정과 별개",
+          "source": "insidertracking · pikachu"
+        }
+      ]
+    },
+    "0011T0": {
+      "name": "채비",
+      "market": "KR",
+      "layer": "EV 급속충전",
+      "business": "급속 충전기 제조·설치·운영(CPO)",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-79",
+          "one": "한투(09-22): 급속충전 6,100기 · 가동률 약 5% → 8% 에서 흑전 · 완속 설치 둔화로 급속 이동",
+          "source": "YeouidoStory2/117762"
+        }
+      ]
+    },
+    "115440": {
+      "name": "우리넷",
+      "market": "KR",
+      "layer": "전송장비·양자암호",
+      "business": "PTN 전송장비 · QKD (코드 미대조)",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-79",
+          "one": "하나(09-22): PTN 전송장비 M/S 1위 · 통신사 레퍼런스로 QKD 주축 · TP 25,000",
+          "source": "YeouidoStory2/117756"
+        }
+      ]
+    },
+    "003220": {
+      "name": "대원제약",
+      "market": "KR",
+      "layer": "제약·건기식",
+      "business": "전문의약품·건강기능식품·화장품",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "③",
+          "rid": "r-20260926-79",
+          "one": "상상인(09-23): 3Q 연결 매출 소폭 성장 · 건기식 고성장 · 화장품 개선 과제 · TP 14,000",
+          "source": "YeouidoStory2/117746"
+        }
+      ]
+    },
+    "009420": {
+      "name": "한올바이오파마",
+      "market": "KR",
+      "layer": "바이오 기술수출",
+      "business": "FcRn 억제제(이뮤노반트 라이선스)",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-79",
+          "one": "이뮤노반트 IMVT-1402 피부 루푸스 2상 1차 지표 실패 → 해당 적응증 중단 · 그레이브스·RA·중증근무력증은 유지",
+          "source": "YeouidoStory2/117806"
+        }
+      ]
+    },
+    "GRAL": {
+      "name": "GRAIL",
+      "market": "US",
+      "layer": "암 조기진단",
+      "business": "다중암 조기검진 Galleri",
+      "business_grade": "②(후보 · 2026-09-26)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-26",
+          "grade": "②",
+          "rid": "r-20260926-79",
+          "one": "FDA 자문위 7:2 — 갈레리 이익이 위험보다 크다(09-23)",
+          "source": "YeouidoStory2 · 하나"
         }
       ]
     }
