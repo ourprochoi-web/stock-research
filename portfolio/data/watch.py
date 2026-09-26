@@ -109,11 +109,20 @@ def main(argv):
 
     # ④ breaks_if 관측 후보 — 숫자 문턱을 가진 조건만 기계가 본다(후보 · 판정은 사람)
     macro = J(B + "facts.json").get("macro", {})
+    # 시세 봇 계열(2026-09-26) — facts.macro 는 손으로 갱신하는 정본이라 늦는다. 봇 값이 더 새로우면 그쪽을 읽는다.
+    bot = dict(PR.get("macro") or {})
+    rt = PR.get("rates") or {}
+    for key, sid in (("us10y", "DGS10"), ("us2y", "DGS2"), ("us30y", "DGS30")):
+        if sid in (rt.get("levels") or {}):
+            bot[key] = {"value": rt["levels"][sid], "asof": (rt.get("asofs") or {}).get(sid, rt.get("asof")),
+                        "tail": (rt.get("tail") or {}).get(sid, [])}
     def mval(k):
-        m = macro.get(k)
-        if isinstance(m, dict):
-            return m.get("value"), m.get("asof")
-        return None, None
+        m, b2 = macro.get(k), bot.get(k)
+        cands = [x for x in (m, b2) if isinstance(x, dict) and x.get("value") is not None]
+        if not cands:
+            return None, None
+        x = max(cands, key=lambda c: str(c.get("asof") or ""))
+        return x.get("value"), x.get("asof")
     checks = []
     conds = []
     for n in R.get("narratives", []):
@@ -137,6 +146,30 @@ def main(argv):
             checks.append({"source": src, "cond": txt[:110], "key": key, "value": v, "asof": asof, "threshold": f"{op}{thr}", "hit": hit})
     out["breaks_if_checks"] = checks
     out["breaks_if_hit"] = [c for c in checks if c["hit"]]
+
+    # ④-b 판정 재료 스냅샷(2026-09-26) — 이벤트가 묻는 모양 그대로: 10Y 5일 평균 vs 5.00 · 브렌트 현물−선물 · 탱커 vs 브렌트 5일
+    def tail(k):
+        return [v for _, v in (bot.get(k) or {}).get("tail") or []]
+    snap = {}
+    t10 = tail("us10y")
+    if t10:
+        snap["us10y"] = {"last": t10[-1], "avg5": round(sum(t10[-5:]) / len(t10[-5:]), 3), "asof": bot["us10y"].get("asof"), "line": 5.00}
+    bs, bf = bot.get("brent"), bot.get("brent_front_ice")
+    if bs and bf:
+        # 같은 날짜끼리 뺀다 — FRED 현물은 2~3일 늦게 올라와서 최신값끼리 빼면 격차가 날짜 차이를 먹는다(09-26 실측 +10.57 vs 같은 날 +15.64)
+        fm = dict((d, v) for d, v in bf.get("tail") or [])
+        common = [(d, v) for d, v in bs.get("tail") or [] if d in fm]
+        if common:
+            d, v = common[-1]
+            snap["brent_gap"] = {"date": d, "spot": v, "front": fm[d], "gap": round(v - fm[d], 2),
+                                 "front_latest": bf["value"], "front_asof": bf["asof"]}
+    def chg5(k):
+        t = tail(k)
+        return round((t[-1] / t[-6] - 1) * 100, 1) if len(t) >= 6 else None
+    tk = {k.split("_", 1)[1]: chg5(k) for k in bot if k.startswith("tanker_") and chg5(k) is not None}
+    if tk and chg5("brent_front_ice") is not None:
+        snap["tanker_vs_brent_5d"] = {"brent_front": chg5("brent_front_ice"), "tankers": tk}
+    out["macro_snap"] = snap
 
     # ⑤ 레짐 · 큐 · 예측 · 계약
     rage = (today - date.fromisoformat(R["asof"])).days if R.get("asof") else None
@@ -201,6 +234,19 @@ def render(o):
     a("▎스톱 거리")
     for s in o["stops"]:
         a(f"   · {s['name']}: " + (f"{s.get('distance_pct')}% (현재 {s['price']:,} / 스톱 {s['level']:,})" if not s.get("missing") else "🔴 값 없음(사용자 몫)"))
+    ms = o.get("macro_snap") or {}
+    if ms:
+        parts = []
+        if ms.get("us10y"):
+            u = ms["us10y"]
+            parts.append(f"10Y {u['last']}({u['asof']}) · 5일 평균 {u['avg5']} {'< ' if u['avg5'] < u['line'] else '≥ '}{u['line']:.2f}")
+        if ms.get("brent_gap"):
+            g = ms["brent_gap"]
+            parts.append(f"브렌트 현물−선물 {g['gap']:+}({g['date']} · {g['spot']}−{g['front']}) · 선물 최신 {g['front_latest']}({g['front_asof']})")
+        if ms.get("tanker_vs_brent_5d"):
+            t = ms["tanker_vs_brent_5d"]
+            parts.append(f"5일: 브렌트 선물 {t['brent_front']:+}% vs 탱커 " + " ".join(f"{k} {v:+}%" for k, v in t["tankers"].items()))
+        a("▎판정 재료 — " + " · ".join(parts))
     a(f"▎반증 문턱 검사 {len(o['breaks_if_checks'])}건 · 충족 {len(o['breaks_if_hit'])} · 보유 테제 중 auto_basis(파서 근거 · 재검증 전) {o.get('held_auto_basis')}건")
     if o["held_flagged"]:
         a(f"▎보유 테제 점검 {len(o['held_flagged'])}건 (status≠유지 · 14일 미검증)")

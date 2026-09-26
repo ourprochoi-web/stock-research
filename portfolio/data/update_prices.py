@@ -6,6 +6,7 @@
 GitHub Actions cron으로 자동화 가능.
 """
 import json
+import urllib.parse
 import urllib.request
 import os
 import re
@@ -680,12 +681,14 @@ def fetch_rates():
     모기지 1개월이 국채 1주일이 된다(§A5).
     """
     import datetime as _dt
-    series = {"DGS10": "10년 국채", "DGS2": "2년 국채",
+    series = {"DGS10": "10년 국채", "DGS2": "2년 국채", "DGS30": "30년 국채",
               "MORTGAGE30US": "30년 모기지", "DFF": "연방기금(실효)"}
     # ⚠ FRED는 "Mozilla/5.0"을 차단한다(타임아웃). 연락처가 든 UA만 통과한다.
     #    2026-08-23 실측 — 같은 URL이 UA만 바꾸면 성공/타임아웃으로 갈렸다.
     hdr = {"User-Agent": "ourprochoi Research kenchoi@keywestaim.com"}
-    out = {"asof": "", "levels": {}, "changes": {}, "spreads": {}}
+    # asof 는 DGS10 의 날짜다. 2026-09-26 까지 시리즈 날짜의 최댓값이라 주간 모기지(목요일)가 앞서면
+    # 「10Y 5.11 · 09-24」처럼 09-23 값에 09-24 가 찍혔다. 시리즈마다 자기 날짜를 asofs 에 둔다.
+    out = {"asof": "", "asofs": {}, "levels": {}, "changes": {}, "spreads": {}, "tail": {}}
     rows_by_id = {}
     for sid in series:
         try:
@@ -718,8 +721,9 @@ def fetch_rates():
 
     for sid, rows in rows_by_id.items():
         end = _dt.date.fromisoformat(rows[-1][0])
-        out["asof"] = max(out["asof"], rows[-1][0])
+        out["asofs"][sid] = rows[-1][0]
         out["levels"][sid] = rows[-1][1]
+        out["tail"][sid] = [[d, v] for d, v in rows[-25:]]  # 되돌림 크기를 재려면 수준이 아니라 경로가 필요하다
         ch = {}
         for label, days in (("1M", 30), ("3M", 91), ("6M", 182), ("1Y", 365)):
             prior = value_on_or_before(rows, (end - _dt.timedelta(days=days)).isoformat())
@@ -727,6 +731,7 @@ def fetch_rates():
                 ch[label] = round(rows[-1][1] - prior, 2)
         out["changes"][sid] = ch
 
+    out["asof"] = out["asofs"].get("DGS10", "")
     L = out["levels"]
     if "DGS2" in L:
         out["spreads"]["curve_10y_2y"] = round(L["DGS10"] - L["DGS2"], 2)
@@ -737,6 +742,52 @@ def fetch_rates():
 
     print(f"  \u2713 금리 → 10y {L.get('DGS10')}% · 모기지 {L.get('MORTGAGE30US')}% · "
           f"FF {L.get('DFF')}%  (커브 {out['spreads'].get('curve_10y_2y'):+.2f}%p, {out['asof']})")
+    return out
+
+
+def fetch_macro():
+    """유가·가스·지수·탱커 일별 — 판정 이벤트가 「되돌림 크기」를 재는 재료(2026-09-26).
+
+    그 전까지 브렌트는 facts.json 에 09-09 값 하나였고, UNGA 되돌림·탱커 반증을 재려고 세션이
+    FRED·Yahoo 를 손으로 세 번 받았다. 키는 facts.macro 와 맞춘다(brent · wti · henry_hub ·
+    brent_front_ice) — watch.py 가 더 새로운 쪽을 읽는다. FRED Dated Brent(현물)와 ICE 선물은
+    다른 계열이라 섞지 않는다(격차 자체가 물리 부족의 값이다).
+    """
+    hdr_fred = {"User-Agent": "ourprochoi Research kenchoi@keywestaim.com"}
+    fred = {"brent": "DCOILBRENTEU", "wti": "DCOILWTICO", "henry_hub": "DHHNGSP"}
+    yahoo = {"brent_front_ice": "BZ=F", "kospi": "^KS11", "sox": "^SOX", "spx": "^GSPC",
+             "tanker_FRO": "FRO", "tanker_DHT": "DHT", "tanker_INSW": "INSW", "tanker_STNG": "STNG"}
+    out = {}
+    for key, sid in fred.items():
+        try:
+            req = urllib.request.Request(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", headers=hdr_fred)
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                text = resp.read().decode()
+        except Exception as e:
+            print(f"  \u2717 FRED {sid} — {e}")
+            continue
+        rows = [(d, float(v)) for d, v in (ln.split(",") for ln in text.strip().split("\n")[1:] if "," in ln) if v not in (".", "")]
+        if rows:
+            out[key] = {"source": f"FRED {sid}", "asof": rows[-1][0], "value": rows[-1][1], "tail": [[d, v] for d, v in rows[-25:]]}
+    import datetime as _dt
+    for key, sym in yahoo.items():
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(sym)}?range=2mo&interval=1d"
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                r = json.loads(resp.read())["chart"]["result"][0]
+            closes = r["indicators"]["quote"][0]["close"]
+            rows = [(_dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d"), round(c, 2)) for t, c in zip(r["timestamp"], closes) if c]
+        except Exception as e:
+            print(f"  \u2717 Yahoo {sym} — {e}")
+            continue
+        if rows:
+            out[key] = {"source": f"Yahoo {sym}", "asof": rows[-1][0], "value": rows[-1][1], "tail": [[d, v] for d, v in rows[-25:]]}
+    if not out:
+        return None
+    b, f = out.get("brent"), out.get("brent_front_ice")
+    if b and f:
+        print(f"  \u2713 매크로 → 브렌트 현물 {b['value']}({b['asof']}) · 선물 {f['value']}({f['asof']}) · {len(out)}계열")
     return out
 
 
@@ -913,6 +964,7 @@ def main():
     # 환율 — 해외 배정의 환 노출 축 (§J13)
     fx = fetch_fx()
     rates = fetch_rates()
+    macro = fetch_macro()
 
     # 해외 종목 — 배수 검증용 (가격 + 상장주식수로 시총까지 산출)
     us = {}
@@ -1035,6 +1087,8 @@ def main():
         result["fx"] = fx    # §J13 — 해외 배정의 환 노출 축
     if rates:
         result["rates"] = rates    # §J13-1 — 할인율 축
+    if macro:
+        result["macro"] = macro    # 유가·지수·탱커 일별(2026-09-26) — watch.py 반증 문턱이 facts 보다 새 값을 읽는다
     if stale:
         result["staleSections"] = stale  # 이 섹션들은 updated 날짜가 아니다
     if existing_holdings:
