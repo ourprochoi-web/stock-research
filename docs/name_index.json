@@ -2018,6 +2018,9 @@
      "T1",
      "T3"
     ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T3"
+    ],
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
     ],
@@ -3153,6 +3156,16 @@
    "code": "228790",
    "market": "KR-ETF",
    "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "홍즈(宏致電子 · ACES)": {
+   "code": "3605.TW",
+   "market": "TW",
+   "entity": "3605.TW",
    "falsifier": null,
    "facts": 0,
    "theses": {},

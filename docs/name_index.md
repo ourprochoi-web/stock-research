@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-26)
 
-추적 328개 · 테제가 걸린 이름 192 · 엔티티 있음 84 · facts 있음 77.
+추적 329개 · 테제가 걸린 이름 192 · 엔티티 있음 85 · facts 있음 77.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -121,7 +121,7 @@
 | KR | 이수페타시스 | 007660 | — | hbm_pkg_theme_substrate#T1,T2 · vcp_breakout_backtest#T4 | — |
 | KR | 이엔에프테크놀로지 | 102710 | — | — | — |
 | KR | 이오테크닉스 | 039030 | — | — | 4 |
-| KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | 9 |
+| KR | 일진전기 | 103590 | — | ai_power_company_cable_wire#T1,T3 · ai_power_company_transformer_grid#T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | 9 |
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
 | KR | 케이엔제이 | 272110 | — | — | — |
 | KR | 케이엠더블유 | 032500 | — | — | — |
@@ -189,6 +189,7 @@
 | KR-ETF | TIGER 여행레저 | 228800 | — | — | — |
 | KR-ETF | TIGER 헬스케어 | 143860 | — | — | — |
 | KR-ETF | TIGER 화장품 | 228790 | — | — | — |
+| TW | 홍즈(宏致電子 · ACES) | 3605.TW | ✓  | — | — |
 | US | AEP | AEP.O | — | us_power_regulated_vs_merchant#T5,T6 · kr_drawdown_2026#T8 | — |
 | US | AMD | AMD.O | — | ai_chip_architecture_war#T1 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1 · hbm_pkg_theme_memory_cycle#T5 · hbm_pkg_theme_substrate#T5 · 13f_2026q2#T4,T6 | — |
 | US | ASML | ASML.O | — | us_7axis_cross_valuation#T5 · ns_semiconductor_war#T4 | — |
