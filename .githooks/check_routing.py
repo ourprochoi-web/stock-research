@@ -6,6 +6,9 @@
   · 09-22 이후 Lead 봇 줄 33건 전부 digest-only · routed[] 는 intake 파일 경로 · theses.json 은 사흘간 무변화
 경고는 봇이 읽지 않는다. 거절만 읽는다.
 
+2026-09-26 추가 — 테제에 안 걸린 관측은 버리지 않고 entities.companies[KEY].watch[] 에 쌓는다(parked:"entity:<KEY>").
+  「판정」만 쌓이고 「종합」이 없던 것이 결정 시점의 그림을 비게 했다. 그래서 접촉 검사는 테제 log[] 또는 엔티티 watch[] 둘 중 하나.
+
 적용 범위: date >= EFFECTIVE 인 줄. 그 전 줄은 레거시로 두고(일괄 마이그레이션 금지) 통계만 찍는다.
 용법: check_routing.py [--all] [--effective YYYY-MM-DD]
 """
@@ -31,6 +34,9 @@ KNOWN_FIELDS = {"id", "date", "kind", "intake", "grade", "claim", "routed", "par
                 "found_by", "outcome", "lesson", "judged_by", "verdict_result", "due", "event", "note",
                 "page", "position", "batch", "via", "url", "ref", "tickers", "urls", "cross_ref"}
 PARKED = {"open", "regime", "portfolio", "events"}
+ENTITY_PREFIX = "entity:"   # parked:"entity:<KEY>" — 테제에 안 걸린 관측을 entities.companies[KEY].watch[] 에 쌓는다(2026-09-26)
+WATCH_SOFT_CAP = 12         # watch[] 가 이 수를 넘으면 경고 — 테제로 승격하거나 접을 때다
+ENTITIES = "brain/entities.json"
 ID_RE = re.compile(r"^r-\d{8}-\d{2,3}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 HANGUL = re.compile(r"[가-힣]")
@@ -71,6 +77,7 @@ def main(argv):
 
     T = json.load(io.open(THESES, encoding="utf-8"))["pages"]
     tid = {p: {t["id"]: t for t in pg.get("theses", [])} for p, pg in T.items()}
+    ENT = json.load(io.open(ENTITIES, encoding="utf-8")).get("companies", {})
     rows, bad = jsonl(ROUTING)
     errors += bad
     intake_ids = set()
@@ -141,17 +148,42 @@ def main(argv):
             else:
                 errors.append(f"{tag}: routed {x!r} — 실재 페이지 아님")
         parked = r.get("parked")
+        hit_entities = []
         if parked:
-            badp = [p for p in str(parked).split("|") if p.strip() not in PARKED]
-            if badp:
-                errors.append(f"{tag}: parked 값 {badp} 허용 밖 {sorted(PARKED)}")
+            for p in str(parked).split("|"):
+                p = p.strip()
+                if p in PARKED:
+                    continue
+                if p.startswith(ENTITY_PREFIX):
+                    key = p[len(ENTITY_PREFIX):]
+                    if key in ENT:
+                        hit_entities.append(key)
+                    else:
+                        errors.append(f"{tag}: parked {p!r} — entities.companies 에 {key!r} 카드가 없다 "
+                                      f"(같은 커밋에서 status:\"후보\" 카드를 만들고 watch[] 에 쌓는다)")
+                    continue
+                errors.append(f"{tag}: parked 값 {p!r} 허용 밖 {sorted(PARKED)} 또는 entity:<KEY>")
         action = str(r.get("action", ""))
         if kind in {"route", "observation", "judgment"}:
             if not routed and not parked:
                 errors.append(f"{tag}: routed[] 도 parked 도 없다 — 테제에 안 닿는 줄은 routing 이 아니다 "
-                              f"(intake 에 summary 를 붙이고 routed:\"skip:digest\")")
-            if "digest-only" in action and not hit_theses:
-                errors.append(f"{tag}: action digest-only 인데 테제 접촉 없음 — routing 줄이 아니라 intake summary 다")
+                              f"(회사·테마가 보이면 parked:\"entity:<KEY>\" + watch[] · 아니면 intake routed:\"skip:no-thesis\")")
+            if "digest-only" in action and not hit_theses and not hit_entities:
+                errors.append(f"{tag}: action digest-only 인데 테제도 엔티티 watch 도 건드리지 않았다 — "
+                              f"브레인에 남지 않는 줄은 routing 이 아니다(parked:\"entity:<KEY>\" 로 쌓거나 skip)")
+        # 엔티티 접촉 — parked entity:KEY 면 그 카드의 watch[] 에 이 줄이 있어야 한다(테제 접촉과 같은 원리)
+        for key in hit_entities:
+            watch = ENT[key].get("watch") or []
+            if any(w.get("rid") == rid for w in watch):
+                touched_ok += 1
+                bad = [w for w in watch if w.get("rid") == rid and not HANGUL.search(str(w.get("one", "")))]
+                if bad:
+                    errors.append(f"{tag}: entities[{key}].watch 의 one 에 한국어가 없다")
+            else:
+                errors.append(f"{tag}: parked entity:{key} 인데 그 카드 watch[] 에 rid=={rid} 항목이 없다 — 쌓지 않은 관측은 routing 이 아니다")
+            touched_total += 1
+            if len(watch) > WATCH_SOFT_CAP:
+                warns.append(f"entities[{key}].watch {len(watch)}줄 — 테제로 승격하거나 접을 때다(상한 {WATCH_SOFT_CAP})")
         # 테제 접촉 — routed 에 page#T 가 있으면 그 테제가 이 줄로 움직였어야 한다
         for pg, t in hit_theses:
             touched_total += 1
@@ -172,6 +204,27 @@ def main(argv):
             warns.append(f"{tag}: verdict 에 event 필드 없음 — 어느 이벤트를 판정했나")
         if kind == "correction" and not r.get("corrects"):
             errors.append(f"{tag}: correction 은 corrects(r-id) 필수")
+
+    # 2b. entities.json — watch[] 항목 형식 (rid 가 routing 에 실재해야 종합이 판정으로 되돌아갈 수 있다)
+    rids = {r.get("id") for r in rows}
+    for key, card in ENT.items():
+        watch = card.get("watch") or []
+        if not isinstance(watch, list):
+            errors.append(f"entities[{key}].watch 는 배열")
+            continue
+        for w in watch:
+            if str(w.get("date", "")) < eff and not all_rows:
+                continue
+            wt = f"entities[{key}].watch {w.get('rid') or '?'}"
+            for k in ("date", "grade", "rid", "one"):
+                if not str(w.get(k, "")).strip():
+                    errors.append(f"{wt}: {k} 비었다 (date·grade·rid·one 필수)")
+            if w.get("rid") and w["rid"] not in rids:
+                errors.append(f"{wt}: rid 가 routing.jsonl 에 없다")
+            if not DATE_RE.match(str(w.get("date", ""))):
+                errors.append(f"{wt}: date 형식")
+        if card.get("status") == "후보" and not watch and not card.get("theses"):
+            warns.append(f"entities[{key}] 후보 카드인데 watch 도 theses 도 없다 — 왜 있나")
 
     # 3. events.json — due 필드
     ev = json.load(io.open(EVENTS, encoding="utf-8")).get("events", [])

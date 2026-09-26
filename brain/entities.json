@@ -1,9 +1,10 @@
 {
   "_readme": {
-    "what": "회사·테마 카드. 무슨 사업(business · 등급 표기), 어느 층, 정본 페이지, facts 키, 걸린 테제. 시세 추적 여부는 portfolio/data/update_prices.py 목록 기준.",
+    "what": "회사·테마 카드. 무슨 사업(business · 등급 표기), 어느 층, 정본 페이지, facts 키, 걸린 테제. 시세 추적 여부는 portfolio/data/update_prices.py 목록 기준. 2026-09-26 · watch[]: 테제에 안 걸린 관측을 회사 단위로 쌓는 종합 필드 {date, grade, rid, one(한국어 한 줄), source?} — routing parked:\"entity:<KEY>\" 와 짝. status:\"후보\" 카드는 정본 페이지가 아직 없는 회사(watch 만 있음).",
     "rules": [
       "business 는 사업보고서·10-K 「사업의 개요」로 대조하면 ①로 올리고 business_grade 를 고친다",
-      "새 회사는 정본 페이지가 생긴 뒤에 넣는다"
+      "새 회사는 정본 페이지가 생긴 뒤에 넣는다 — 단 status:\"후보\" 카드는 예외(페이지 없음 · watch[] 로만 쌓임 · 12줄을 넘으면 테제로 승격하거나 접는다)",
+      "watch 항목은 append 만 · 수정·삭제·접기는 사람과 함께 · rid 는 routing.jsonl 에 실재 · one 에는 포지션 서열·집행 언급을 쓰지 않는다"
     ],
     "seeded": "2026-09-13 · 광통신 25사"
   },
