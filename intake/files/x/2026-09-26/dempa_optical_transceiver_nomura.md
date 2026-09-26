@@ -4,7 +4,7 @@
 - **URL:** https://x.com/LeroyGroffier/status/2099817175301161342
 - **Source date:** 2026-09-15
 - **Intake ID:** `u-20260926-x-dempa01`
-- **Routing ID:** `r-20260926-02`
+- **Routing ID:** `r-20260926-09` — entity parked `6779.T` (v1.1). 무효 `r-20260926-02` 는 `r-20260926-07` 이 정정한 역사다.
 - **Lead disposition:** digest-only; grade ③ observation; soft watch Japan optical-adjacent only; no DEMPA ticker add; does not flip residual `SMTC > CRDO` (conditional) `> MXL`
 
 ## Evidence note
