@@ -26,8 +26,8 @@
 | 2026.09.16 ⚠ | 2026-09-17 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
 | 2026.09.14 ⚠ | 2026-09-19 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 ⚠ | 2026-09-26 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
-| 2026.09.12 ⚠ | 2026-09-24 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
-| 2026.09.12 ⚠ | 2026-09-24 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 6 |
+| 2026.09.12 ⚠ | 2026-09-26 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
+| 2026.09.12 ⚠ | 2026-09-26 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 6 |
 | 2026.09.12 ⚠ | 2026-09-14 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer_orig.html) | 5 |
 | 2026.09.12 ⚠ | 2026-09-22 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9_orig.html) | 5 |
 | 2026.09.11 ⚠ | 2026-09-12 | [AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다](ai-infra/ai_power_infra_investment_map.html) | 5 |
@@ -445,7 +445,7 @@
 
 ## 광 연결 계층 — DSP가 빠지는 자리에 누가 남는가
 
-`ai-infra/optical_interconnect_layer.html` · 판단 2026.09.12 · 갱신 2026-09-24
+`ai-infra/optical_interconnect_layer.html` · 판단 2026.09.12 · 갱신 2026-09-26
 
 **한 문장** — 기술 전환 방향은 지지되지만, 제시된 수혜·피해 배분이 회사 공시와 어긋난다. 크레도 하락의 원인은 마진이 아니라 주식보상비였다.
 
@@ -470,7 +470,7 @@
 
 ## 광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리
 
-`ai-infra/optical_valuechain_9.html` · 판단 2026.09.12 · 갱신 2026-09-24
+`ai-infra/optical_valuechain_9.html` · 판단 2026.09.12 · 갱신 2026-09-26
 
 **한 문장** — 마진은 「층」이 아니라 「자기 제품이냐 위탁조립이냐」가 정하고, 위험은 물리적으로 지울 수 있느냐가 정한다. 이번 사이클의 변곡은 칩이 아니라 광원에서 났다.
 

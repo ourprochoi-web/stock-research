@@ -32,6 +32,16 @@ def render(path, pg):
     for t in th:
         cnt[t.get("status", "유지")] = cnt.get(t.get("status", "유지"), 0) + 1
     cnt_s = " · ".join(f"{k} {v}" for k, v in cnt.items())
+    # 쉬운 판(2026-09-26) — card_style:"easy" 페이지는 해요체 문장(claim_easy·one_easy)을 쓴다. 어미를 기계로 바꾸면 불규칙
+    # 활용(지운다→지워요 · 안다→알아요)에서 틀리므로 문장을 브레인에 저장해 두고, 원문이 바뀌어 *_src 와 어긋나면 원문으로 돌아간다.
+    easy = pg.get("card_style") == "easy"
+    stale = []
+    def txt(o, k):
+        if easy and o.get(k + "_easy") and o.get(k + "_easy_src") == o.get(k):
+            return o[k + "_easy"]
+        if easy and o.get(k + "_easy"):
+            stale.append(o.get("id", "한 문장"))
+        return o.get(k)
     rows = []
     for t in th:
         st = t.get("status", "유지")
@@ -39,22 +49,27 @@ def render(path, pg):
             f'<tr style="border-top:1px solid var(--line)">'
             f'<td style="padding:10px 8px 10px 0;vertical-align:top;white-space:nowrap"><b>{e(t["id"])}</b><br>'
             f'<span style="font-family:var(--mono);font-size:.68rem;color:{COLOR.get(st, "var(--ink-2)")}">{e(st)}</span></td>'
-            f'<td style="padding:10px 0;vertical-align:top"><b>{e(t["claim"])}</b>'
+            f'<td style="padding:10px 0;vertical-align:top"><b>{e(txt(t, "claim"))}</b>'
             + (f'<br><span style="color:var(--ink-2)">근거 — {e(t["basis"])}</span>' if t.get("basis") else "")
             + (f'<br><span style="color:var(--ink-2)">반증 — {e(t["falsifier"])}</span>' if t.get("falsifier") else "")
             + ((lambda lg: f'<br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log {len(lg)}건 · 최근 {lg[-1].get("date","")} {e(lg[-1].get("mark",""))} {e(lg[-1].get("text",""))[:90]}</span>' if lg else "")(t.get("log") or []))
             + (f'<br><span style="color:var(--ink-2)">판정 — {e(t["event"])}'
                + (f' · 마지막 검증 {e(t["last_tested"])}' if t.get("last_tested") else "") + "</span>" if t.get("event") else "")
             + "</td></tr>")
+    one = txt(pg, "one")
     nxt = "".join(f"<br>· {e(x)}" for x in pg.get("next", []))
+    label = (f'쉬운 판 · <code>brain/theses.json</code>에서 생성 {date.today().isoformat()} · 테제 {len(th)} ({cnt_s})'
+             + (f' · ⚠ 원문이 바뀌어 쉬운 문장 대신 원문: {e(", ".join(stale))}' if stale else "")) if easy else \
+            f'브레인 카드 · <code>brain/theses.json</code>에서 생성 {date.today().isoformat()} · 테제 {len(th)} ({cnt_s})'
+
     pos = e(pg.get("position") or "—")
     return (
         f"{START}\n"
         f'<section id="now" class="blk"><div class="wrap">\n'
         f'<div data-brain-card="{e(path)}" style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.75">\n'
         f'<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:6px">▎현재 판단 · {d} '
-        f'<span style="font-size:.7em;font-weight:600;color:var(--ink-3)">— 브레인 카드 · <code>brain/theses.json</code>에서 생성 {date.today().isoformat()} · 테제 {len(th)} ({cnt_s})</span></div>\n'
-        f'<b style="font-size:1.05em">한 문장 — {e(pg.get("one"))}</b>\n'
+        f'<span style="font-size:.7em;font-weight:600;color:var(--ink-3)">— {label}</span></div>\n'
+        f'<b style="font-size:1.05em">{"한 문장으로 말하면" if easy else "한 문장"} — {e(one)}</b>\n'
         f'<table style="width:100%;border-collapse:collapse;font-size:.95rem;margin-top:12px">{"".join(rows)}</table>\n'
         f'<div id="falsify" style="margin-top:14px;padding-top:10px;border-top:1px solid var(--line)"><b style="color:#60a5fa">▎다음 검증 — 날짜가 아니라 이벤트</b>{nxt}</div>\n'
         f'<div style="margin-top:10px;color:var(--ink-2)"><b>포지션</b> — {pos}</div>\n'
@@ -101,7 +116,12 @@ def render_portfolio(pf):
     ex = pf["exposures"]; sc = pf["scenarios"]; sz = pf["sizing"]
     exr = "".join(f'<li><b>{e(kk)}</b> — {e(v.get("direction",""))}' + (f' <span style="{SUB}">({e(", ".join(v.get("names",[])[:5]))}{" · 주식의 %.0f%%" % (v["share_of_equity"]*100) if v.get("share_of_equity") else ""})</span>' if v.get("names") or v.get("share_of_equity") else "") + "</li>" for kk, v in ex.items())
     scr = "".join(f'<tr style="border-top:1px solid rgba(138,148,166,.35)"><td style="padding:6px 8px 6px 0;vertical-align:top"><b>{e(kk)}</b><br><span style="{SUB}">{e(v["trigger"])}</span></td><td style="padding:6px 8px;vertical-align:top">{e(v["book"])}</td><td style="padding:6px 8px;vertical-align:top">{e(v["hedge"])}</td><td style="padding:6px 0;vertical-align:top;{SUB}">{e(v["action"])}</td></tr>' for kk, v in sc.items())
-    tb = "".join(f'<tr><td>{e(r["sym"])}</td><td style="text-align:right">{r["price"]:,}</td><td style="text-align:right">{sz["drawdown_at_falsifier"].get(r["sym"],0)*100:+.0f}%</td><td style="text-align:right">{r["position_krw"]/1e8:.2f}억</td><td style="text-align:right">{r["qty"]:,}주</td></tr>' for r in sz["table_1pct"])
+    # 2026-09-23 구조 변경 — 실보유 holdings_table 이 사이징 정본, 구 US 후보 표(table_1pct)는 sizing.candidates 로 보존.
+    # 낙폭이 null 인 칸은 사용자 기입 대기라 0% 로 찍지 않고 「미기입」으로 둔다(값이 없는 것과 0 은 다르다).
+    dd = lambda v: "미기입" if v is None else f"{(v * 100 if abs(v) <= 1 else v):+.0f}%"  # 필드명은 _pct 지만 값은 후보 표와 같은 비율(−0.2 = −20%)로 들어온다
+    tb = "".join(f'<tr><td>{e(r.get("name"))}</td><td style="text-align:right">{dd(r.get("drawdown_at_falsifier_pct"))}</td><td style="{SUB}">{e(r.get("time_window_event"))}</td></tr>' for r in sz.get("holdings_table", []))
+    cand = sz.get("candidates") or {}
+    tc = "".join(f'<tr><td>{e(r["sym"])}</td><td style="text-align:right">{r["price"]:,}</td><td style="text-align:right">{cand.get("drawdown_at_falsifier", {}).get(r["sym"], 0)*100:+.0f}%</td><td style="text-align:right">{r["position_krw"]/1e8:.2f}억</td><td style="text-align:right">{r["qty"]:,}주</td></tr>' for r in cand.get("table_1pct", []))
     tr = "".join(f'<li><b>{t["n"]}회차 · {e(t["window"])}</b> — {e(", ".join(t["names"]))} <span style="{SUB}">({e(t["why"])})</span></li>' for t in pf["tranches"])
     pc = "".join(f'<li><b>{e(x.get("if") or x.get("trigger",""))}</b> → {e(x.get("then") or x.get("result",""))}</li>' for x in pf["precommits"])
     dc = "".join(f'<li>{e(d["date"])} — {e(d["what"])}</li>' for d in pf["decisions"])
@@ -115,8 +135,10 @@ def render_portfolio(pf):
         f'<div><b style="color:#60a5fa">▎헤지 지도</b><br>헤지가 되는 것: {e(", ".join(pf["hedge_map"]["hedges"]))}<br>헤지가 아닌 것: {e(", ".join(pf["hedge_map"]["not_hedges"]))}<br><span style="{SUB}">{e(pf["hedge_map"]["why"])}</span></div>'
         f'</div>\n'
         f'<div style="margin-top:12px"><b style="color:#60a5fa">▎시나리오 — 어느 쪽이 와도</b><table style="width:100%;border-collapse:collapse;font-size:.92em;margin-top:6px"><tr style="{SUB}"><th style="text-align:left">시나리오</th><th style="text-align:left">본진</th><th style="text-align:left">헤지</th><th style="text-align:left">행동</th></tr>{scr}</table></div>\n'
-        f'<div style="margin-top:12px"><b style="color:#60a5fa">▎사이징 산술</b> — {e(sz["formula"])} · 변수 {e(sz["variable"])} · 낙폭 {e(sz["grade"])}'
-        f'<table style="border-collapse:collapse;font-size:.92em;margin-top:6px"><tr style="{SUB}"><th style="text-align:left">종목</th><th>현가</th><th>반증 시 낙폭</th><th>허용 1%</th><th>수량</th></tr>{tb}</table><span style="{SUB}">{e(sz["note"])}</span></div>\n'
+        f'<div style="margin-top:12px"><b style="color:#60a5fa">▎사이징 산술</b> — {e(sz["formula"])} · 변수 {e(sz["variable"])}' + (f' · 낙폭 {e(sz["grade"])}' if sz.get("grade") else "") +
+        f'<table style="border-collapse:collapse;font-size:.92em;margin-top:6px"><tr style="{SUB}"><th style="text-align:left">보유</th><th>반증 시 낙폭</th><th style="text-align:left">판정 창</th></tr>{tb}</table>'
+        + (f'<table style="border-collapse:collapse;font-size:.92em;margin-top:6px"><tr style="{SUB}"><th style="text-align:left">후보</th><th>현가</th><th>반증 시 낙폭</th><th>허용 1%</th><th>수량</th></tr>{tc}</table>' if tc else "")
+        + f'<span style="{SUB}">{e(sz.get("note"))}</span></div>\n'
         f'<div style="margin-top:12px"><b style="color:#60a5fa">▎회차 — 판정 이벤트 경계</b><ul style="margin:6px 0 0 18px;padding:0">{tr}</ul></div>\n'
         f'<div style="margin-top:12px"><b style="color:#f87171">▎미리 적어 둔 뒤집기</b><ul style="margin:6px 0 0 18px;padding:0">{pc}</ul></div>\n'
         f'<div style="margin-top:12px"><b>투자자 결정</b><ul style="margin:6px 0 0 18px;padding:0">{dc}</ul></div>\n'
@@ -128,6 +150,9 @@ def render_holdings(pf):
     """트래커 <script> 안의 HOLDINGS·CASH_REMAINING 을 brain/portfolio.json 에서 찍는다(2026-09-17 C). JSON 객체는 그대로 JS 리터럴이다."""
     rows = ",\n    ".join(json.dumps(h, ensure_ascii=False) for h in pf.get("holdings", []))
     cash = pf.get("cash", {})
+    if cash.get("value") is None:  # 현금은 사용자 값 — 비어 있으면 트래커 산술(NaN)을 깨지 않게 블록을 건드리지 않는다(2026-09-26)
+        print(f"[cards] ⚠ portfolio.cash.value 없음({cash.get('grade', '')}) — 트래커 HOLDINGS·CASH 블록 렌더 건너뜀")
+        return None
     return (f"{HSTART}\n  /* 정본 brain/portfolio.json → 훅 렌더. 매매는 portfolio.json 의 holdings·cash 에만 반영한다. */\n"
             f"  var HOLDINGS = [\n    {rows}\n  ];\n"
             f"  var CASH_REMAINING = {int(cash.get('value', 0))};  /* {cash.get('asof', '')} · {str(cash.get('note', ''))[:120]} */\n"
@@ -149,10 +174,10 @@ def check_positions(pf):
             continue
         tot_cost += h["totalCost"]; tot_val += p * h["qty"]
     if tot_cost:
-        print(f"[positions] {px.get('updated', '')} 주식 {tot_val/1e8:.3f}억 (원가 대비 {(tot_val/tot_cost-1)*100:+.2f}%) · 현금 {pf.get('cash', {}).get('value', 0)/1e8:.2f}억")
+        print(f"[positions] {px.get('updated', '')} 주식 {tot_val/1e8:.3f}억 (원가 대비 {(tot_val/tot_cost-1)*100:+.2f}%) · 현금 {(lambda c: '미기입' if c is None else f'{c/1e8:.2f}억')(pf.get('cash', {}).get('value'))}")
     for st in pf.get("stops", []):
         p = prices.get(st.get("priceKey") or st["name"])
-        if not p:
+        if not p or st.get("level") is None:  # 스톱 값은 사용자 몫 — 비어 있으면 거리를 못 잰다(watch.py 가 「값 없음」으로 알린다)
             continue
         d = (p / st["level"] - 1) * 100
         flag = "🔴 도달" if p <= st["level"] else ("🟠 10% 이내" if d < 10 else "✓")
@@ -174,6 +199,8 @@ def render_v3(check=False):
             print(f"[cards] ⚠ 마커 없음 — {page} ({src})")
             continue
         new = fn(doc)
+        if new is None:
+            continue
         norm = lambda x: re.sub(r"생성 \d{4}-\d{2}-\d{2}", "생성", x)
         if norm(s[i:j + len(en)]) == norm(new):
             continue
