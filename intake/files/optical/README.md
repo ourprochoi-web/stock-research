@@ -1,5 +1,9 @@
 # Optical FACT archive / 광통신 팩트 아카이브
 
+> **🔒 2026-09-27 브레인에 합침 (사용자 결정 · r-20260927-04)** — `facts_ledger.jsonl` 은 닫혔다(각 줄에 `brain_rid`). 새 줄을 쓰지 않는다 — `check_routing.py` 가 `brain_rid` 없는 원장 줄을 거절한다.
+> 판정(ⓐⓑⓒ)은 `brain/routing.jsonl` + 테제 `log[]`, 회사 사실은 `brain/entities.json` watch · `brain/facts.json`, 순위·스탠스는 `brain/open.json`(정본). 이 폴더에는 **원문 메모(dated)와 도셰(참고 스냅샷)** 만 둔다 — 도셰는 더 이상 「먼저 병합하는 곳」이 아니다.
+
+
 Easy-update path for optical (CPO/NPO/UHP/CW/connectivity) claim units.
 Follows `docs/rules_archive_2026-09-13.md` — claim-unit routing, ⓐ확인 / ⓑ도전 / ⓒ신규 / 이미판정.
 

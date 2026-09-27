@@ -205,6 +205,18 @@ def main(argv):
         if kind == "correction" and not r.get("corrects"):
             errors.append(f"{tag}: correction 은 corrects(r-id) 필수")
 
+    # 2a. intake/files 안의 판정 원장은 닫혔다(2026-09-27 · 광통신 원장이 브레인 밖에서 순위를 바꾸고 브레인은 낡은 채였다).
+    #     원장 줄은 brain_rid 로 브레인 routing 에 닿아야 한다 — 새 판정은 routing.jsonl 에 쓴다.
+    import glob as _glob
+    for lp in _glob.glob("intake/files/**/*ledger*.jsonl", recursive=True):
+        lrows, _ = jsonl(lp)
+        for lr in lrows:
+            br = lr.get("brain_rid")
+            if not br:
+                errors.append(f"{lp} {lr.get('id', '?')}: brain_rid 없는 원장 줄 — intake/files 에 판정 원장을 두지 않는다(AGENTS §6). routing.jsonl 에 쓴다")
+            elif br not in {r.get("id") for r in rows}:
+                errors.append(f"{lp} {lr.get('id', '?')}: brain_rid {br} 가 routing.jsonl 에 없다")
+
     # 2b. entities.json — watch[] 항목 형식 (rid 가 routing 에 실재해야 종합이 판정으로 되돌아갈 수 있다)
     rids = {r.get("id") for r in rows}
     for key, card in ENT.items():

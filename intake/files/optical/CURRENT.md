@@ -1,7 +1,11 @@
 # Optical FACT — CURRENT
 
+> **🔒 2026-09-27 브레인에 합침 (사용자 결정 · r-20260927-04)** — `facts_ledger.jsonl` 은 닫혔다(각 줄에 `brain_rid`). 새 줄을 쓰지 않는다 — `check_routing.py` 가 `brain_rid` 없는 원장 줄을 거절한다.
+> 판정(ⓐⓑⓒ)은 `brain/routing.jsonl` + 테제 `log[]`, 회사 사실은 `brain/entities.json` watch · `brain/facts.json`, 순위·스탠스는 `brain/open.json`(정본). 이 폴더에는 **원문 메모(dated)와 도셰(참고 스냅샷)** 만 둔다 — 도셰는 더 이상 「먼저 병합하는 곳」이 아니다.
+
+
 - **last_updated:** 2026-09-27 (KST)
-- **Residual stance (Lead):** **SMTC > CRDO (conditional) > MXL** (unchanged)
+- ~~**Residual stance (Lead):** SMTC > CRDO (conditional) > MXL~~ — 🔴 근거 줄 없음 · 도셰 본문 표(MXL #1)와 모순. 정본은 `brain/open.json` connectivity-chips-residual-edge(MXL>SMTC>CRDO>MTSI>ALAB 잠정)
 - **Micron gate:** separate track — do not fold MU cycle into optical residual sizing.
 - **2026-09-27 map:** Nomura Fig.10 scale-across via X @pequityresearch (③ secondary, not the Nomura PDF). Layer table in `2026-09-27/nomura-scale-across.md`. **CLS** added as entity 후보 + `WATCH_US` price-only (OCS midstream, §B4). Chinese names on the chart are **not** added to `WATCH_US`. HTML papers untouched. Routing `r-20260927-02` · action no-edge.
 - **This batch disposition:** PhotonLink / ECOC factmap → **digest-only · no ticker add**; SMTC residual retained; soft on C7/C8 (partial).

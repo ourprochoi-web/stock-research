@@ -113,7 +113,7 @@
     },
     {
       "id": "connectivity-chips-residual-edge",
-      "what": "연결칩 5사 잔여엣지 순위(MXL>SMTC>CRDO>MTSI>ALAB 잠정) — CRDO SBC/재고·ALAB AR·MXL Non-GAAP 의존이 뒤집히는지",
+      "what": "연결칩 5사 잔여엣지 순위(MXL>SMTC>CRDO>MTSI>ALAB 잠정) · ⚠ 09-27 원장 합침(r-20260927-04): 그록봇 파일의 「SMTC>CRDO>MXL(불변)」은 근거 줄 없고 같은 도셰 본문 표(MXL #1)와도 모순 — 정본은 이 순위, 바꾸려면 routing 근거 줄 — CRDO SBC/재고·ALAB AR·MXL Non-GAAP 의존이 뒤집히는지",
       "page": "ai-infra/optical_interconnect_layer.html",
       "since": "2026-09-23"
     }
