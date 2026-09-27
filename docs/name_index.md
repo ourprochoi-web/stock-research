@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-27)
 
-추적 344개 · 테제가 걸린 이름 198 · 엔티티 있음 106 · facts 있음 77.
+추적 344개 · 테제가 걸린 이름 200 · 엔티티 있음 106 · facts 있음 79.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -8,10 +8,10 @@
 | CN | Eoptolink | 300502.SZ | ✓  | optical_valuechain_9#T6 | 6 |
 | CN | InnoLight | 300308.SZ | ✓  | kr_cooling_optical_layer#T3 · optical_valuechain_9#T1,T2 | 6 |
 | CN | T&S | 300394.SZ | ✓  | — | 5 |
-| CN | 위안제(Yuanjie Semiconductor) | 688498.SS | ✓  | — | — |
+| CN | 위안제(Yuanjie Semiconductor) | 688498.SS | ✓  | optical_light_source_cw#T1,T4 | 4 |
 | JP | DEMPA(덴파) | 6779.T | ✓  | — | — |
 | JP | 무라타(Murata) | 6981.T | ✓  | — | — |
-| JP | 스미토모전공(Sumitomo Electric) | 5802.T | ✓  | — | — |
+| JP | 스미토모전공(Sumitomo Electric) | 5802.T | ✓  | optical_light_source_cw#T2,T3 | 7 |
 | JP | 히타치 | 6501.T | ✓  | us_bloom_intel_deep#T2 | — |
 | KR | CJ제일제당 | 097950 | — | — | — |
 | KR | GS건설 | 006360 | — | kr_construction_datacenter#T1 | — |
@@ -217,7 +217,7 @@
 | US | Bitdeer | BTDR.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
 | US | Bloom Energy | BE | ✓ T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10 | us_bloom_intel_deep#T1,T2,T3,T4,T5 · ai_power_company_transformer_grid#T1 · ai_power_top5_picks#T3 · us_power_regulated_vs_merchant#T1 · 13f_2026q2#T5 | 6 |
 | US | Booking Holdings | BKNG.O | ✓  | — | — |
-| US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 | — |
+| US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 · optical_light_source_cw#T1 | — |
 | US | CMB.TECH | CMBT.K | — | — | 4 |
 | US | Celestica | CLS | ✓  | optical_valuechain_9#T1 | — |
 | US | Cerebras | CBRS.O | ✓ 2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SB | ai_chip_architecture_war#T1,T2,T4,T5 · 13f_2026q2#T4,T5,T6 · robot_kr_16_valuation#T3 | 12 |
@@ -227,7 +227,7 @@
 | US | Circle Internet | CRCL | — | — | — |
 | US | Cisco Systems | CSCO.O | ✓  | — | — |
 | US | Cloudflare | NET | ✓  | cyber_ai_security#T2,T3 | 9 |
-| US | Coherent | COHR.K | ✓  | optical_valuechain_9#T1,T2,T3,T4,T5 · kr_cooling_optical_layer#T3 · us_vertiv_corning_deep#T7 · hbm_pkg_theme_substrate#T4 · 13f_2026q2#T4 · cyber_ai_security#T4 | 12 |
+| US | Coherent | COHR.K | ✓  | optical_valuechain_9#T1,T2,T3,T4,T5 · kr_cooling_optical_layer#T3 · us_vertiv_corning_deep#T7 · hbm_pkg_theme_substrate#T4 · 13f_2026q2#T4 · cyber_ai_security#T4 · optical_light_source_cw#T1,T2,T3,T4 | 12 |
 | US | Coinbase | COIN.O | — | payments_company_robinhood#T4 | — |
 | US | Comfort Systems | FIX | — | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T3 · us_ai_adjacent_sectors#T2,T3 · us_epc_datacenter_build#T1 | — |
 | US | ConocoPhillips | COP | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
@@ -265,7 +265,7 @@
 | US | Kintor Pharmaceutical | 9939.HK | — | — | — |
 | US | Kioxia Holdings | 285A.T | ✓ T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce  | hbm_pkg_theme_memory_cycle#T4,T6 | — |
 | US | Lockheed Martin | LMT | — | — | — |
-| US | Lumentum | LITE.O | ✓  | optical_valuechain_9#T1,T2,T3,T6 · ai_chip_company_nvidia#T5 · kr_cooling_optical_layer#T3,T4 · 13f_2026q2#T4 | 11 |
+| US | Lumentum | LITE.O | ✓  | optical_valuechain_9#T1,T2,T3,T6 · ai_chip_company_nvidia#T5 · kr_cooling_optical_layer#T3,T4 · 13f_2026q2#T4 · optical_light_source_cw#T1,T2,T3,T4 | 11 |
 | US | MACOM | MTSI.O | ✓  | optical_valuechain_9#T6 | 7 |
 | US | Marvell | MRVL.O | ✓  | optical_interconnect_layer#T4 · optical_valuechain_9#T5 · ai_chip_architecture_war#T1 · ai_chip_company_marvell#T1,T2,T3,T4,T5 · ai_dc_miner_conversion#T5 · ai_sw_investment_map#T3 · hbm_pkg_theme_memory_cycle#T4 · hbm_pkg_theme_substrate#T2 · 13f_2026q2#T4 | 18 |
 | US | Mastercard | MA | — | us_ai_adjacent_sectors#T2,T6 · kr_drawdown_2026#T6 · us_payment_networks#T1 | — |

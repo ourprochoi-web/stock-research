@@ -8784,6 +8784,156 @@
       "intake": [
         "c-20260923-mxl-sec"
       ]
+    },
+    "5802.T": {
+      "name": "스미토모전공",
+      "ticker": "5802.T",
+      "market": "JP",
+      "layer": "광원·광섬유·커넥터 / 자동차",
+      "canonical_page": "ai-infra/optical_light_source_cw.html",
+      "metrics": {
+        "infocom_rev_fy25": {
+          "value": 3266,
+          "unit": "JPY 억",
+          "basis": "FY2025(~2026-03) 정보통신 부문",
+          "asof": "2026-03-31",
+          "num": "정보통신 매출",
+          "den": "—",
+          "grade": "①",
+          "source": "유가증권보고서 156기 p28",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-sei01"
+        },
+        "infocom_opm_1q26": {
+          "value": 31.5,
+          "unit": "%",
+          "basis": "1Q FY26(2026-04~06)",
+          "asof": "2026-06-30",
+          "num": "정보통신 부문이익 ¥272.46억",
+          "den": "정보통신 매출 ¥864.84억",
+          "grade": "①",
+          "source": "1Q 결산단신 p8",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-sei01"
+        },
+        "infocom_op_share_1q26": {
+          "value": 28.1,
+          "unit": "%",
+          "basis": "1Q FY26",
+          "asof": "2026-06-30",
+          "num": "정보통신 OP ¥272억",
+          "den": "그룹 OP ¥971억",
+          "grade": "①",
+          "source": "1Q 결산단신",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-sei01"
+        },
+        "devices_qoq_1q26": {
+          "value": -13.7,
+          "unit": "%",
+          "basis": "광·전자 디바이스 분기 매출",
+          "asof": "2026-06-30",
+          "num": "1Q FY26 ¥233억",
+          "den": "4Q FY25 ¥270억",
+          "grade": "①",
+          "source": "Fact Book 1Q FY26 p4",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-sei01"
+        },
+        "per_fwd": {
+          "value": 20.3,
+          "unit": "배",
+          "basis": "FY26 회사 가이던스",
+          "asof": "2026-09-25",
+          "num": "주가 ¥2,211",
+          "den": "EPS ¥108.99",
+          "grade": "①",
+          "source": "Yahoo 5802.T · 1Q 결산단신 p2",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-sei01"
+        },
+        "pbr": {
+          "value": 2.43,
+          "unit": "배",
+          "basis": "2026-06-30 BPS",
+          "asof": "2026-09-25",
+          "num": "주가 ¥2,211",
+          "den": "BPS ¥908.7",
+          "grade": "①",
+          "source": "Yahoo · 1Q 결산단신 p1",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-sei01"
+        },
+        "cw_ext_share_2025": {
+          "value": 31.7,
+          "unit": "%",
+          "basis": "2025 SiPh 용 CW 외부판매(자가소비 제외)",
+          "asof": "2025-12-31",
+          "num": "Company D RMB 5.0억",
+          "den": "시장 RMB 15.9억",
+          "grade": "③",
+          "source": "CIC · 위안제 HKEX 신청서 p108",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-yuanjie01"
+        }
+      }
+    },
+    "688498.SS": {
+      "name": "위안제",
+      "ticker": "688498.SS",
+      "market": "CN",
+      "layer": "광원(CW·EML 칩)",
+      "canonical_page": "ai-infra/optical_light_source_cw.html",
+      "metrics": {
+        "gpm_1h26": {
+          "value": 80.4,
+          "unit": "%",
+          "basis": "1H26",
+          "asof": "2026-06-30",
+          "num": "매출총이익",
+          "den": "매출 RMB 9.25억",
+          "grade": "①",
+          "source": "2026 반기보고서",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-yuanjie01"
+        },
+        "top_customer_share_2025": {
+          "value": 53.4,
+          "unit": "%",
+          "basis": "FY2025",
+          "asof": "2025-12-31",
+          "num": "최대 고객 RMB 3.21억",
+          "den": "매출 RMB 6.01억",
+          "grade": "①",
+          "source": "HKEX 신청서 p15·p167",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-yuanjie01"
+        },
+        "per_ttm": {
+          "value": 282,
+          "unit": "배",
+          "basis": "TTM(FY25 − 1H25 + 1H26)",
+          "asof": "2026-09-24",
+          "num": "시총 RMB 2,117억",
+          "den": "TTM 지배순이익 RMB 7.52억",
+          "grade": "①",
+          "source": "Yahoo 688498.SS · 반기·연차보고서",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-yuanjie01"
+        },
+        "pbr": {
+          "value": 67,
+          "unit": "배",
+          "basis": "2026-06-30",
+          "asof": "2026-09-24",
+          "num": "시총 RMB 2,117억",
+          "den": "지배 순자산 RMB 31.4억",
+          "grade": "①",
+          "source": "반기보고서 p7",
+          "page": "ai-infra/optical_light_source_cw.html",
+          "intake": "u-20260927-yuanjie01"
+        }
+      }
     }
   },
   "macro": {

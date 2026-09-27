@@ -2538,10 +2538,15 @@
       "market": "JP",
       "layer": "광원(InP·CW 레이저)·광섬유",
       "business": "전선·광섬유·광부품 · CW 레이저 · 자동차 와이어하네스",
-      "business_grade": "②(후보 · 2026-09-27)",
-      "status": "후보",
-      "pages": [],
-      "theses": [],
+      "business_grade": "①(회사 공시 · 2026-09-27)",
+      "status": "판단 있음",
+      "pages": [
+        "ai-infra/optical_light_source_cw.html"
+      ],
+      "theses": [
+        "ai-infra/optical_light_source_cw.html#T2",
+        "ai-infra/optical_light_source_cw.html#T3"
+      ],
       "tracked_price": false,
       "watch": [
         {
@@ -2550,6 +2555,13 @@
           "rid": "r-20260927-03",
           "one": "세 번째 등장 — ① CW 레이저 1위 32%(미즈호 09-14) ② 메타 Petal 해저케이블 2코어 광섬유(09-21 ②) ③ 노무라 Fig.10 광칩+프리폼 두 칸(09-27). §J9 판단 세우기 조건 충족 · JPM 09-17 LITE 테크데이: InP 기판·CW 캐파 병목에 SEI 증설 요구",
           "source": "intake/files/optical/2026-09-27/nomura-scale-across.jpg"
+        },
+        {
+          "date": "2026-09-27",
+          "grade": "①",
+          "rid": "r-20260927-05",
+          "one": "판단 신설 — CW 는 그룹 매출 0.2% · 정보통신 OP 28% 는 커넥터·파이버가 끈다 · 선행 PER 20.3 · PBR 2.43",
+          "source": "ai-infra/optical_light_source_cw.html"
         }
       ]
     },
@@ -2558,10 +2570,15 @@
       "market": "CN",
       "layer": "광원(CW·DFB 레이저 칩)",
       "business": "InP 레이저 칩",
-      "business_grade": "②(후보 · 2026-09-27)",
-      "status": "후보",
-      "pages": [],
-      "theses": [],
+      "business_grade": "①(회사 공시 · 2026-09-27)",
+      "status": "판단 있음",
+      "pages": [
+        "ai-infra/optical_light_source_cw.html"
+      ],
+      "theses": [
+        "ai-infra/optical_light_source_cw.html#T4",
+        "ai-infra/optical_light_source_cw.html#T1"
+      ],
       "tracked_price": false,
       "watch": [
         {
@@ -2570,6 +2587,13 @@
           "rid": "r-20260927-03",
           "one": "CW 레이저 2위 24%(미즈호 09-14) · 노무라 Fig.10 광칩 칸(09-27). 코히런트 ECOC(09-22): 중국 CW 출력 70~100mW 수준 — 고출력 경쟁 밖이라는 공급자 주장(③)",
           "source": "intake/files/optical/2026-09-27/nomura-scale-across.jpg"
+        },
+        {
+          "date": "2026-09-27",
+          "grade": "①",
+          "rid": "r-20260927-05",
+          "one": "판단 신설 — 1H26 매출 +351% · GM 80.4% · TTM PER 282 · 100mW+ 는 검증 중 · 최대 고객 53%",
+          "source": "ai-infra/optical_light_source_cw.html"
         }
       ]
     }

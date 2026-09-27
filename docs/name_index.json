@@ -48,8 +48,13 @@
    "market": "CN",
    "entity": "688498.SS",
    "falsifier": null,
-   "facts": 0,
-   "theses": {},
+   "facts": 4,
+   "theses": {
+    "ai-infra/optical_light_source_cw.html": [
+     "T1",
+     "T4"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -78,8 +83,13 @@
    "market": "JP",
    "entity": "5802.T",
    "falsifier": null,
-   "facts": 0,
-   "theses": {},
+   "facts": 7,
+   "theses": {
+    "ai-infra/optical_light_source_cw.html": [
+     "T2",
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -3675,6 +3685,9 @@
     "research/13f_2026q2.html": [
      "T2",
      "T4"
+    ],
+    "ai-infra/optical_light_source_cw.html": [
+     "T1"
     ]
    },
    "aliases": [
@@ -3841,6 +3854,12 @@
      "T4"
     ],
     "cybersecurity/cyber_ai_security.html": [
+     "T4"
+    ],
+    "ai-infra/optical_light_source_cw.html": [
+     "T1",
+     "T2",
+     "T3",
      "T4"
     ]
    },
@@ -4511,6 +4530,12 @@
      "T4"
     ],
     "research/13f_2026q2.html": [
+     "T4"
+    ],
+    "ai-infra/optical_light_source_cw.html": [
+     "T1",
+     "T2",
+     "T3",
      "T4"
     ]
    },
