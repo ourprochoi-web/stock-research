@@ -1,15 +1,17 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-27)
 
-추적 341개 · 테제가 걸린 이름 197 · 엔티티 있음 103 · facts 있음 77.
+추적 344개 · 테제가 걸린 이름 198 · 엔티티 있음 106 · facts 있음 77.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
 |---|---|---|---|---|---|
 | CN | Eoptolink | 300502.SZ | ✓  | optical_valuechain_9#T6 | 6 |
-| CN | InnoLight | 300308.SZ | ✓  | kr_cooling_optical_layer#T3 · optical_valuechain_9#T1 | 6 |
+| CN | InnoLight | 300308.SZ | ✓  | kr_cooling_optical_layer#T3 · optical_valuechain_9#T1,T2 | 6 |
 | CN | T&S | 300394.SZ | ✓  | — | 5 |
+| CN | 위안제(Yuanjie Semiconductor) | 688498.SS | ✓  | — | — |
 | JP | DEMPA(덴파) | 6779.T | ✓  | — | — |
 | JP | 무라타(Murata) | 6981.T | ✓  | — | — |
+| JP | 스미토모전공(Sumitomo Electric) | 5802.T | ✓  | — | — |
 | JP | 히타치 | 6501.T | ✓  | us_bloom_intel_deep#T2 | — |
 | KR | CJ제일제당 | 097950 | — | — | — |
 | KR | GS건설 | 006360 | — | kr_construction_datacenter#T1 | — |
@@ -25,7 +27,7 @@
 | KR | LG에너지솔루션 | 373220 | — | energy_battery_valuechain_update#T1,T2 | — |
 | KR | LG이노텍 | 011070 | ✓ 3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순) | hbm_pkg_theme_substrate#T4,T5,T6 · kr_cooling_optical_layer#T5 | — |
 | KR | LIG디펜스앤에어로스페이스 | 079550 | — | k_defense_company_lig_nexone#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T8,T9 | — |
-| KR | LS | 006260 | — | ai_power_company_cable_wire#T1 · ai_power_company_transformer_grid#T1,T2,T3 · kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · optical_valuechain_9#T5 · us_bloom_intel_deep#T5 · ai_sw_company_anthropic#T1 · k_defense_company_hanwha_systems_ocean#T3 · kr_4sector_cross_valuation#T2,T5 · statements_log#T2 · k_ship_theme_masga_us_alliance#T1,T2 · us_merchant_power_vst_nrg#T1 | — |
+| KR | LS | 006260 | — | ai_power_company_cable_wire#T1 · ai_power_company_transformer_grid#T1,T2,T3 · kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · optical_valuechain_9#T1,T5 · us_bloom_intel_deep#T5 · ai_sw_company_anthropic#T1 · k_defense_company_hanwha_systems_ocean#T3 · kr_4sector_cross_valuation#T2,T5 · statements_log#T2 · k_ship_theme_masga_us_alliance#T1,T2 · us_merchant_power_vst_nrg#T1 | — |
 | KR | LS ELECTRIC | 010120 | — | kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · us_bloom_intel_deep#T5 · kr_4sector_cross_valuation#T2,T5 | — |
 | KR | LS머트리얼즈 | 417200 | — | — | — |
 | KR | POSCO홀딩스 | 005490 | — | — | — |
@@ -217,6 +219,7 @@
 | US | Booking Holdings | BKNG.O | ✓  | — | — |
 | US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 | — |
 | US | CMB.TECH | CMBT.K | — | — | 4 |
+| US | Celestica | CLS | ✓  | optical_valuechain_9#T1 | — |
 | US | Cerebras | CBRS.O | ✓ 2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SB | ai_chip_architecture_war#T1,T2,T4,T5 · 13f_2026q2#T4,T5,T6 · robot_kr_16_valuation#T3 | 12 |
 | US | Cheniere Energy | LNG | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Chevron | CVX | ✓  | us_energy_hegemony_17#T1,T2 | 9 |

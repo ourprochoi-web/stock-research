@@ -39,3 +39,8 @@
 - **깨지면:** CLS 공시가 OCS·모듈 조립이 아니거나, 노무라가 COHR·LITE·GLW 층을 반대로 고칠 때.
 
 원장: `f-20260927-opt-01`–`09` (`facts_ledger.jsonl`).
+
+
+## 원본 이미지 대조 부록 (2026-09-27 · Claude 세션 · r-20260927-03)
+
+위 층 표는 지정 이름만 옮겨 원본 칸과 다르다. 누락 — **광칩: Lumentum(LITE)** · 스미토모 5802 · 후루카와 5801 · 위안제 688498 · AFR 300620 · Shijia 688313 · Hisilicon / **OCS: Coherent(COHR)** · Triple-stone · Taclink · Calient.AI · Polatis · iPronic / 프리폼: 스미토모 5802 · 후지쿠라 5803 · 헝퉁 · 파이버홈 / 모듈: CIG · Hisense. CLS 는 유니버스 신규가 아니다(optical T1 log · JPM 09-18). 스미토모전공은 이번이 세 번째 등장 → §J9.

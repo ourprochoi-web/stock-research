@@ -26,7 +26,8 @@
      "T3"
     ],
     "ai-infra/optical_valuechain_9.html": [
-     "T1"
+     "T1",
+     "T2"
     ]
    },
    "aliases": [],
@@ -38,6 +39,16 @@
    "entity": "300394.SZ",
    "falsifier": null,
    "facts": 5,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "위안제(Yuanjie Semiconductor)": {
+   "code": "688498.SS",
+   "market": "CN",
+   "entity": "688498.SS",
+   "falsifier": null,
+   "facts": 0,
    "theses": {},
    "aliases": [],
    "auto_candidate": true
@@ -56,6 +67,16 @@
    "code": "6981.T",
    "market": "JP",
    "entity": "6981.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "스미토모전공(Sumitomo Electric)": {
+   "code": "5802.T",
+   "market": "JP",
+   "entity": "5802.T",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -359,6 +380,7 @@
      "T6"
     ],
     "ai-infra/optical_valuechain_9.html": [
+     "T1",
      "T5"
     ],
     "ai-infra/us_bloom_intel_deep.html": [
@@ -3666,6 +3688,20 @@
    "falsifier": null,
    "facts": 4,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Celestica": {
+   "code": "CLS",
+   "market": "US",
+   "entity": "CLS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/optical_valuechain_9.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
