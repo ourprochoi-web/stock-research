@@ -5,7 +5,7 @@
 
 
 - **last_updated:** 2026-09-27 (KST)
-- ~~**Residual stance (Lead):** SMTC > CRDO (conditional) > MXL~~ — 🔴 근거 줄 없음 · 도셰 본문 표(MXL #1)와 모순. 정본은 `brain/open.json` connectivity-chips-residual-edge(MXL>SMTC>CRDO>MTSI>ALAB 잠정)
+- **매수 서열:** SMTC > CRDO (conditional) > MXL — 정본 `brain/portfolio.json` tranches 2회차(r-20260915-07 · CRDO 조건 r-20260915-28). **잔여엣지 순위**(가격 미반영 크기 · MXL #1)는 다른 축 — `brain/open.json` connectivity-chips-residual-edge. (09-27 r-04 의 「모순」 표기는 C2 정정 r-20260927-06)
 - **Micron gate:** separate track — do not fold MU cycle into optical residual sizing.
 - **2026-09-27 map:** Nomura Fig.10 scale-across via X @pequityresearch (③ secondary, not the Nomura PDF). Layer table in `2026-09-27/nomura-scale-across.md`. **CLS** added as entity 후보 + `WATCH_US` price-only (OCS midstream, §B4). Chinese names on the chart are **not** added to `WATCH_US`. HTML papers untouched. Routing `r-20260927-02` · action no-edge.
 - **This batch disposition:** PhotonLink / ECOC factmap → **digest-only · no ticker add**; SMTC residual retained; soft on C7/C8 (partial).
