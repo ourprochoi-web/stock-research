@@ -1,5 +1,17 @@
 # Optical / copper connectivity chips dossier — SMTC · CRDO · MXL · ALAB · MTSI
 
+## Ledger deltas (newest first)
+
+### 2026-09-27 — Nomura Fig.10 스케일-어크로스 (X @pequityresearch · ③ 2차)
+
+재무 수치는 만들지 않았다. 상류 전기칩(DSP·TIA·드라이버)에 **AVGO · CRDO · MRVL**(과 COHR·LITE)이 있다.
+- **CLS는 이 슬리브가 아니다.** 노무라는 Celestica를 **OCS 중류**에 둔다(Accelink·Eoptolink·LITE와 함께). 후보 카드 + 시세만. 칩 층 재무 표에 넣지 않는다.
+- 잔여 스탠스 불변: **SMTC > CRDO > MXL**. 중국 티커는 WATCH_US에 넣지 않음.
+
+메모: `../2026-09-27/nomura-scale-across.md`.
+
+---
+
 - **As-of / staging date:** 2026-09-23 (KST)
 - **Scope:** Semtech (SMTC), Credo (CRDO), MaxLinear (MXL), Astera Labs (ALAB), MACOM (MTSI)
 - **Primary sources:** archive `brain/facts.json` · `brain/entities.json` · `ai-infra/optical_interconnect_layer.html` · `ai-infra/optical_valuechain_9.html` · `intake/files/financials/` · `intake/files/prices_daily/` · `data/13f/2026Q2/`

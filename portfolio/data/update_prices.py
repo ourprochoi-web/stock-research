@@ -353,6 +353,10 @@ WATCH_US = {
     "Arista Networks": "ANET.K",
     "Cisco Systems": "CSCO.O",
     "Credo Technology": "CRDO.O",
+    # 2026-09-27 — Celestica. Nomura Fig.10 OCS 중류 · §B4 시세만.
+    # 미국 상장(NYSE). api.stock.naver.com/stock/CLS/basic → stockName 셀레스티카, exchange NYS.
+    # CLS.K · CLS.O · CLS.TO 는 409. 중국 티커는 이 맵에서 넣지 않는다.
+    "Celestica": "CLS",
     # 2026-08-12 — AI 바이오 편(6편)이 본문에서 56회 인용하는데 가격 추적이 없었다.
     "Recursion Pharma": "RXRX.O",
     # 2026-08-12 — 메모리 테제의 핵심 비교 대상인데 추적이 없었다.

@@ -75,7 +75,16 @@
         "ai-infra/optical_valuechain_9.html#T5"
       ],
       "tracked_price": true,
-      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md",
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): 상류 전기칩(DSP·TIA·드라이버)에 Credo. 층 배치 재확인.",
+          "source": "X @pequityresearch/2103910976475345032"
+        }
+      ]
     },
     "MTSI": {
       "name": "MACOM",
@@ -170,7 +179,16 @@
         "ai-infra/optical_interconnect_layer.html#T4",
         "ai-infra/optical_valuechain_9.html#T5"
       ],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): 상류 전기칩(DSP·TIA·드라이버)에 Marvell. 층 배치 재확인.",
+          "source": "X @pequityresearch/2103910976475345032"
+        }
+      ]
     },
     "LITE": {
       "name": "Lumentum",
@@ -199,7 +217,16 @@
         "ai-infra/optical_valuechain_9.html#T2",
         "ai-infra/optical_valuechain_9.html#T3"
       ],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): 전기칩·코히런트 모듈·OCS에 Lumentum. 광원 층과 같은 방향.",
+          "source": "X @pequityresearch/2103910976475345032"
+        }
+      ]
     },
     "COHR": {
       "name": "Coherent",
@@ -228,7 +255,16 @@
         "ai-infra/optical_valuechain_9.html#T2",
         "ai-infra/optical_valuechain_9.html#T4"
       ],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): 상류 전기칩·광칩·광부품, 중류 코히런트 모듈(Finisar). 수직계열과 같은 방향.",
+          "source": "X @pequityresearch/2103910976475345032"
+        }
+      ]
     },
     "AAOI": {
       "name": "Applied Optoelectronics",
@@ -487,7 +523,16 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): 파이버 프리폼과 중공코어 광섬유·케이블에 Corning. 가격 전제는 그대로다.",
+          "source": "X @pequityresearch/2103910976475345032"
+        }
+      ]
     },
     "APH": {
       "name": "Amphenol",
@@ -513,7 +558,16 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): 상류 전기칩(DSP·TIA·드라이버)에 Broadcom. 층 배치 재확인.",
+          "source": "X @pequityresearch/2103910976475345032"
+        }
+      ]
     },
     "NVDA": {
       "name": "NVIDIA",
@@ -2449,6 +2503,26 @@
           "rid": "r-20260926-79",
           "one": "FDA 자문위 7:2 — 갈레리 이익이 위험보다 크다(09-23)",
           "source": "YeouidoStory2 · 하나"
+        }
+      ]
+    },
+    "CLS": {
+      "name": "Celestica",
+      "market": "US",
+      "layer": "EMS·OCS/모듈 조립(Nomura Fig.10)",
+      "business": "EMS·광모듈과 OCS 조립. 노무라 Fig.10은 OCS 중류에 둔다(사업보고서 미대조).",
+      "business_grade": "③(Nomura 맵·사업보고서 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-27",
+          "grade": "③",
+          "rid": "r-20260927-02",
+          "one": "노무라 Fig.10(③·X 2차): OCS 중류에 Celestica를 Accelink·Eoptolink·LITE와 함께 배치. 유니버스 신규 후보·시세만(§B4).",
+          "source": "X @pequityresearch/2103910976475345032"
         }
       ]
     }

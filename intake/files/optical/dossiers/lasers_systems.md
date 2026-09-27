@@ -2,6 +2,17 @@
 
 ## Ledger deltas (newest first)
 
+### 2026-09-27 — Nomura Fig.10 스케일-어크로스 (X @pequityresearch · ③ 2차)
+
+재무 수치는 만들지 않았다. 층 배치만 병합한다.
+- **COHR:** 상류 전기칩·광칩·광부품, 중류 코히런트 모듈(Finisar). 기존 수직계열과 같은 방향.
+- **LITE:** 전기칩·코히런트 모듈·**OCS**.
+- **GLW:** 파이버 프리폼·중공코어 광섬유/케이블.
+- **CLS (신규 후보):** OCS 중류. 차트는 Accelink·Eoptolink·LITE와 함께 둔다. 시세만(§B4). 이 도셰의 재무 표에는 넣지 않는다.
+- 잔여 스탠스 불변: **SMTC > CRDO > MXL**. 중국 티커는 WATCH_US에 넣지 않음.
+
+메모: `../2026-09-27/nomura-scale-across.md`. 원장 `f-20260927-opt-01`–`09`.
+
 ### 2026-09-24 — PhotonLink / ECOC (@dubidubabap factcheck → Lead digest-only)
 
 **Grounded (merge):**

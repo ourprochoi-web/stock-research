@@ -1,8 +1,9 @@
 # Optical FACT — CURRENT
 
-- **last_updated:** 2026-09-24 (KST)
-- **Residual stance (Lead):** **SMTC > CRDO (conditional) > MXL**
+- **last_updated:** 2026-09-27 (KST)
+- **Residual stance (Lead):** **SMTC > CRDO (conditional) > MXL** (unchanged)
 - **Micron gate:** separate track — do not fold MU cycle into optical residual sizing.
+- **2026-09-27 map:** Nomura Fig.10 scale-across via X @pequityresearch (③ secondary, not the Nomura PDF). Layer table in `2026-09-27/nomura-scale-across.md`. **CLS** added as entity 후보 + `WATCH_US` price-only (OCS midstream, §B4). Chinese names on the chart are **not** added to `WATCH_US`. HTML papers untouched. Routing `r-20260927-02` · action no-edge.
 - **This batch disposition:** PhotonLink / ECOC factmap → **digest-only · no ticker add**; SMTC residual retained; soft on C7/C8 (partial).
 
 ## Living dossiers
