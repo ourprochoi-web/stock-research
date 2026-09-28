@@ -1,0 +1,27 @@
+앤스로픽, Claude Sonnet 5.5 발표
+
+: Claude 5.5 제품군의 두 번째 모델 Sonnet 5.5 출시
+
+: Sonnet 5 대비 30% 이상 빠르며 코딩, 지식 업무, 컴퓨터 사용 성능을 대폭 개선. 복잡한 작업용 Opus 5.5와 대량·저비용 작업용 Haiku 5.5 사이를 담당하는 주력 범용 모델
+
+: Artificial Analysis Intelligence Index에서 Max effort 기준 56점으로 Sonnet 5 대비 18점 상승,
+
+: Opus 5.5 Max 58점에 이어 2위. 중형급 Sonnet 모델이 최상위 Opus와 불과 2점 차이까지 접근
+
+: 특히 에이전틱 코딩과 지식 업무에서 Opus급 성능. 앤스로픽 기준 Terminal-Bench 4.0 70.6% vs Sonnet 5 10.3%, GDPval-AA 1844 vs Opus 1846, AA-Briefcase 1811 vs 1822, OSWorld 80.1% vs 81.8% 기록
+
+: CursorBench도 55.5% vs Opus 57.8%로 격차가 제한적. 초기 사용자들은 코드베이스 이해 속도와 도구 호출 효율성 개선을 강조했으며, 문서·슬라이드·스프레드시트 제작과 디자인에서도 개선
+
+: 가격은 Sonnet 5와 동일한 입력 $2, 출력 $10/100만 토큰, 캐시 읽기 $0.2, 쓰기 $2.5로 유지
+
+: Opus 5.5의 입력 $4, 출력 $20 대비 토큰 단가는 절반이며, 앤스로픽 자체 테스트에서는 동일 작업 수행에 필요한 토큰 감소로 작업당 비용 최대 30% 절감
+
+: 다만 AAII 기준 Max effort의 작업당 약 19.3만 출력 토큰을 사용해 지금까지 측정한 모델 중 가장 높은 수준. Opus 5.5 Max 및 Sonnet 5 Max 대비 약 60% 많고 GPT-6 Astra Max 대비 약 7배
+
+: 이에 따라 Max effort의 실제 작업당 비용은 $7.60으로 Sonnet 5 대비 약 50% 높음
+
+: 반면 Low·Medium effort에서는 비용 효율성이 크게 개선. 앤스로픽 자체 테스트 기준 Sonnet 5의 최고 성능을 작업당 비용 약 10분의 1 수준에서 상회
+
+: 컨텍스트 윈도우는 100만 토큰으로 유지. 사이버 역량이 크게 높아지면서 Opus급 안전장치를 적용했으며, 고위험 사이버 요청에서는 Sonnet 5로 fallback. Haiku 5.5도 수주 내 출시 예정
+
+https://www.anthropic.com/claude-sonnet-5-5
