@@ -580,7 +580,23 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-56",
+          "one": "② TG가 전한 회사 발표(nvidia.com 미대조): OpenShell은 파일·도구·외부서비스 접근·자격증명·권한 로그를 통제. Claude Code·Codex·Hermes는 재작성 없이. 젠슨: 파트너 100+·신뢰 층.",
+          "source": "t.me/insidertracking/64830·64834 · x.com/JensenHuang/2104499465055023424 · aether 25518 제목만"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-57",
+          "one": "② 같은 발표: Sentry는 BlueField-4에서 에이전트 환경 밖을 감시하고, 허용 범위 이탈을 수 밀리초 내 격리한다고 했다. 레퍼런스 설계이며 출하·ASP는 없다.",
+          "source": "t.me/insidertracking/64830·64834"
+        }
+      ]
     },
     "ANET": {
       "name": "Arista",
