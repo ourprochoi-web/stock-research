@@ -83,6 +83,13 @@
           "rid": "r-20260927-02",
           "one": "노무라 Fig.10(③·X 2차): 상류 전기칩(DSP·TIA·드라이버)에 Credo. 층 배치 재확인.",
           "source": "X @pequityresearch/2103910976475345032"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-01",
+          "one": "③ 같은 법안(로이터 09-27): 대상은 중국 모듈 Eoptolink·Zhongji Innolight. Credo는 피규제 대상이 아님. 통과 전·ITI가 FCC 블랙리스트 반대.",
+          "source": "t.me/YeouidoStory2/117888"
         }
       ]
     },
@@ -143,7 +150,16 @@
         "ai-infra/optical_valuechain_9.html#T4"
       ],
       "tracked_price": false,
-      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md",
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-01",
+          "one": "③ 로이터 09-27(재등장 r-20260926-57): 상원, 국가안보 시스템 중국산 광트랜시버 금지 법안. Eoptolink·Zhongji. 5년 교체·장관 추가 지정. 법 아님·ITI 반대. 한국 광 반등은 가설.",
+          "source": "t.me/YeouidoStory2/117888"
+        }
+      ]
     },
     "MRVL": {
       "name": "Marvell",
@@ -580,7 +596,16 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-02",
+          "one": "③ 디인포메이션 09-27: MIIT가 RTX Pro 5500 희망 수량 보고를 받고 일부에 승인 의도. 바이트댄스 약 100만 검토. 분기 약 50만·주문 마감 09-30. 수출통제 예외는 미확인.",
+          "source": "t.me/YeouidoStory2/117888"
+        }
+      ]
     },
     "ANET": {
       "name": "Arista",
@@ -1906,7 +1931,16 @@
       "theses": [],
       "tracked_price": true,
       "note": "2026-09-23 아카이브 공백 메움 — WEB/SEC 라벨 필수. 인프라 50%(Q2)이나 전사 브로드밴드 혼합.",
-      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md"
+      "dossier_20260923": "intake/files/optical/2026-09-23/dossier_connectivity_chips.md",
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-01",
+          "one": "③ 같은 법안: 통과 시 5년 내 교체, 상무·국방 장관이 추가 지정. MaxLinear는 잔여 연결칩 관측. 한국 중형 광 카드는 만들지 않음.",
+          "source": "t.me/YeouidoStory2/117888"
+        }
+      ]
     },
     "6981.T": {
       "name": "무라타(Murata)",
@@ -2270,6 +2304,33 @@
           "rid": "r-20260926-72",
           "one": "A14 시험 생산 1Q27 로 당김(工商時報 · 인텔 14A 1Q27 리스크 생산과 맞먹음) · 256Mb SRAM 수율 90% 근접",
           "source": "aether 25430"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-03",
+          "one": "③ 블룸버그(채널, 페이월): VIS+NXP 합작 VisionPower가 싱가포르 2공장 검토. 1공장보다 선진 공정 가능성. 확정 캐펙스 아님.",
+          "source": "t.me/insidertracking/64818"
+        }
+      ]
+    },
+    "NXP": {
+      "name": "NXP Semiconductors",
+      "market": "US/NL",
+      "layer": "차량·산업 반도체 · 싱가포르 합작 파운드리",
+      "business": "차량·산업 MCU. VisionPower는 TSMC 계열 Vanguard International Semiconductor와의 싱가포르 합작(③ 채널이 블룸버그를 인용 · 10-K 미대조).",
+      "business_grade": "③(후보 · 2026-09-28 · 채널이 블룸버그를 인용 · 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-03",
+          "one": "③ 같은 보도: NXP는 VisionPower(VIS 합작) 당사자. 싱가포르 2공장 검토·공정 상향 가능성은 미확정. 수주·캐펙스 확정 전.",
+          "source": "t.me/insidertracking/64818"
         }
       ]
     },
