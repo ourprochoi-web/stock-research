@@ -1573,7 +1573,16 @@
       ],
       "tracked_price": true,
       "note": "코어 증액 트리거 종목 — 10/1 가이던스 ≥37 정상 · <35 = n-memory-durable 1스트라이크 · TP TD $1,600(CY27 9배) · RBC $1,500",
-      "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례"
+      "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-59",
+          "one": "JPM 할란 서(② TG전언·원문 미취득) OW유지·PT 1540(현 1082·+42%). 실적 앞 HBM4가 HBM3E보다 빠르고 SCA가 생산 절반 초과 가능. 구조적 부족 ~2028.",
+          "source": "t.me/insidertracking/64837"
+        }
+      ]
     },
     "069960": {
       "code": "069960",
