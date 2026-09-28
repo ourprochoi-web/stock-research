@@ -263,6 +263,20 @@
           "rid": "r-20260927-02",
           "one": "노무라 Fig.10(③·X 2차): 상류 전기칩·광칩·광부품, 중류 코히런트 모듈(Finisar). 수직계열과 같은 방향.",
           "source": "X @pequityresearch/2103910976475345032"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-65",
+          "one": "JPM All Stars(③): DC성장과 스케일업 구리→광(연결 약 10배). PhotonLink는 CPO/NPO/칩간, 협업 25건+, C4Q 램프, GM은 회사평균 상회, CPO·NPO 콘텐츠는 비슷. VCSEL 연 10억개 초과, 스케일업은 InP+VCSEL.",
+          "source": "t.me/aetherjapanresearch/25524"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-66",
+          "one": "JPM(③): FY27성장>FY26, 9월분기 프로포마 +50%+, FY27말 전 분기매출 약 30억달러. 제약=공급(InP 24개월 4배·이미 2배·매진). GM 34%→40.5%·목표>42%. LTA take-or-pay·회수 약 18개월. 중국매출 약 10%, Thermadite.",
+          "source": "t.me/aetherjapanresearch/25524"
         }
       ]
     },
@@ -580,7 +594,23 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-68",
+          "one": "② TG 전언·IR 미대조: AI 인프라 레퍼런스 설계의 GW당 매출 기회 Hopper 약 180억·Blackwell 약 250억·Rubin 약 400억 달러(블랙웰 대비 약 +60%).",
+          "source": "t.me/insidertracking/64855"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-69",
+          "one": "미확인 보도·출처없음(②): 엔비디아–앤트로픽 계약 가치가 1,800억 달러를 넘는다는 전언. 공시·IR·1차 출처가 없다.",
+          "source": "t.me/beluga_investment/3662"
+        }
+      ]
     },
     "ANET": {
       "name": "Arista",
@@ -606,7 +636,16 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": false
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-67",
+          "one": "JPM(③): FY27 매출 +15%(하이퍼스케일러+가격+코어). HS 부킹은 90일 내 출하분만. FY26 믹스 Silicon One 60/광학 40. FY29 고성능망 전부 Silicon One. 캠퍼스 스위치 EOL 약 400억달러. FY27 가이던스는 공급제약 아님.",
+          "source": "t.me/aetherjapanresearch/25524"
+        }
+      ]
     },
     "CRWD": {
       "name": "CrowdStrike",
