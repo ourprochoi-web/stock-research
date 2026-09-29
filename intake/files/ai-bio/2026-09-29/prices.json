@@ -1,0 +1,65 @@
+{
+  "asof": "2026-09-29",
+  "source": "query1.finance.yahoo.com/v8/finance/chart/{SYM}?interval=1d&range=5d",
+  "quote_v7": {
+    "url": "https://query1.finance.yahoo.com/v7/finance/quote?symbols=TEM,SDGR,BMY,NVO",
+    "http": 401,
+    "note": "Unauthorized — marketCap 미취득. 배수·시총 미작성"
+  },
+  "note": "regularMarketPrice·regularMarketChangePercent 를 쓴다. chartPreviousClose 는 전일 종가로 쓰지 않는다.",
+  "tickers": {
+    "TEM": {
+      "longName": "Tempus AI, Inc.",
+      "regularMarketPrice": 86.46,
+      "regularMarketChangePercent": 1.62,
+      "regularMarketTime": 1790690109,
+      "regularMarketTime_utc": "2026-09-29T13:55:09+00:00",
+      "fiftyTwoWeekLow": 40.77,
+      "fiftyTwoWeekHigh": 104.32,
+      "chartPreviousClose_not_used_as_prior": 77.19,
+      "currency": "USD",
+      "exchangeName": "NMS",
+      "marketCap": null
+    },
+    "SDGR": {
+      "longName": "Schrödinger, Inc.",
+      "regularMarketPrice": 29.415,
+      "regularMarketChangePercent": -0.288,
+      "regularMarketTime": 1790690110,
+      "regularMarketTime_utc": "2026-09-29T13:55:10+00:00",
+      "fiftyTwoWeekLow": 10.945,
+      "fiftyTwoWeekHigh": 31.595,
+      "chartPreviousClose_not_used_as_prior": 30.7,
+      "currency": "USD",
+      "exchangeName": "NMS",
+      "marketCap": null
+    },
+    "BMY": {
+      "longName": "Bristol-Myers Squibb Company",
+      "regularMarketPrice": 63.45,
+      "regularMarketChangePercent": -0.673,
+      "regularMarketTime": 1790690109,
+      "regularMarketTime_utc": "2026-09-29T13:55:09+00:00",
+      "fiftyTwoWeekLow": 42.52,
+      "fiftyTwoWeekHigh": 68.64,
+      "chartPreviousClose_not_used_as_prior": 62.25,
+      "currency": "USD",
+      "exchangeName": "NYQ",
+      "marketCap": null
+    },
+    "NVO": {
+      "longName": "Novo Nordisk A/S",
+      "regularMarketPrice": 38.345,
+      "regularMarketChangePercent": -0.956,
+      "regularMarketTime": 1790690110,
+      "regularMarketTime_utc": "2026-09-29T13:55:10+00:00",
+      "fiftyTwoWeekLow": 35.12,
+      "fiftyTwoWeekHigh": 64.16,
+      "chartPreviousClose_not_used_as_prior": 39.4,
+      "currency": "USD",
+      "exchangeName": "NYQ",
+      "marketCap": null,
+      "drawdown_from_52w_high": 0.40235349127182046
+    }
+  }
+}

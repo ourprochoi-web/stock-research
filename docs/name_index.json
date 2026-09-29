@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-27",
+ "generated": "2026-09-29",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -3639,6 +3639,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Bristol Myers Squibb": {
+   "code": "BMY",
+   "market": "US",
+   "entity": "BMY",
+   "falsifier": "순수 AI바이오가 아님. 약 테제 위 감시. ai-bio/ai_bio_company_global.html#ai-stack. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Broadcom": {
    "code": "AVGO.O",
    "market": "US",
@@ -4965,8 +4975,8 @@
   "Novo Nordisk ADR": {
    "code": "NVO",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "NVO",
+   "falsifier": "순수 AI바이오가 아님. 비만 테제가 본편. ai-bio/ai_bio_company_global.html#ai-stack. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "market/us_7axis_cross_valuation.html": [
@@ -5236,6 +5246,21 @@
     ],
     "payments/us_payment_networks.html": [
      "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Schrödinger": {
+   "code": "SDGR",
+   "market": "US",
+   "entity": "SDGR",
+   "falsifier": "정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html. 2Q26 믹스는 투자 지도 T2에 이미 있음. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {
+    "ai-bio/ai_bio_investment_map.html": [
+     "T2",
+     "T3"
     ]
    },
    "aliases": [],
@@ -5526,6 +5551,16 @@
    "entity": null,
    "falsifier": null,
    "facts": 4,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Tempus AI": {
+   "code": "TEM",
+   "market": "US",
+   "entity": "TEM",
+   "falsifier": "정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html · ai-bio/ai_bio_investment_map.html#watch-20260929. 비중·집행 아님.",
+   "facts": 0,
    "theses": {},
    "aliases": [],
    "auto_candidate": true

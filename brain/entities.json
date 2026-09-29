@@ -2626,6 +2626,90 @@
           "source": "ai-infra/optical_light_source_cw.html"
         }
       ]
+    },
+    "TEM": {
+      "name": "Tempus AI",
+      "market": "US",
+      "layer": "종양 데이터·진단·데이터/앱",
+      "business": "멀티모달 암 환자 데이터, 진단, 제약사향 데이터·모델",
+      "business_grade": "②(후보 · 2026-09-29 · Q1 페이지 수치는 기존 편, Q2는 이번 세션 429)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html · ai-bio/ai_bio_investment_map.html#watch-20260929. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-35",
+          "one": "TEM 후보 감시. AI는 데이터·앱 현금에 닿는다는 ②(Q2 페이지 429). 2026-09-29 정규가 $86.46(+1.62%), 52주 $40.77–104.32. 시총 미수록.",
+          "source": "intake/files/ai-bio/2026-09-29/lead-research.md · prices.json"
+        }
+      ]
+    },
+    "SDGR": {
+      "name": "Schrödinger",
+      "market": "US",
+      "layer": "계산화학 소프트웨어·협업 신약발굴",
+      "business": "물리 기반 소프트웨어(FEP+·Glide)와 자체·협업 파이프라인. 2026 IR에서 BMS에 Bunsen 배치 협약",
+      "business_grade": "①(Bunsen 협약 메타 · 2026-09-29) · 사업 전체는 ②",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html. 2Q26 믹스는 투자 지도 T2에 이미 있음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "①",
+          "rid": "r-20260929-36",
+          "one": "SDGR 후보 감시. 2026 IR 메타(①)에서 BMS 연구조직에 Bunsen 배치. 매출액은 메타에 없음. 정규가 $29.42, 52주 고점 $31.60 인근.",
+          "source": "intake/files/ai-bio/2026-09-29/primary_meta.txt"
+        }
+      ]
+    },
+    "BMY": {
+      "name": "Bristol Myers Squibb",
+      "market": "US",
+      "layer": "대형 제약 · AI는 운영 오버레이",
+      "business": "종양·면역·심혈관 바이오제약. Claude를 연구·임상·생산·상업의 공유 도구로 배치",
+      "business_grade": "①(BMS 보도 메타의 배치 범위 · 2026-09-29) · 손익 귀속은 없음",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "순수 AI바이오가 아님. 약 테제 위 감시. ai-bio/ai_bio_company_global.html#ai-stack. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "①",
+          "rid": "r-20260929-37",
+          "one": "BMY 후보 감시. Claude를 연구·임상·생산·상업에 두고 직원 3만+(① BMS 메타). 주가 축은 파이프라인·LOE. 정규가 $63.45.",
+          "source": "intake/files/ai-bio/2026-09-29/primary_meta.txt"
+        }
+      ]
+    },
+    "NVO": {
+      "name": "Novo Nordisk",
+      "market": "US",
+      "layer": "대형 제약 · 비만 · AI는 발견 오버레이",
+      "business": "비만·당뇨 중심 제약. 클로드 사이언스 신약발굴 시험은 브리프 ②",
+      "business_grade": "②(후보 · 2026-09-29 · GNW 타임아웃 · 로이터 401)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "순수 AI바이오가 아님. 비만 테제가 본편. ai-bio/ai_bio_company_global.html#ai-stack. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-38",
+          "one": "NVO 후보 감시. 클로드 사이언스 협업은 ②(GNW 타임아웃·로이터 401). 비만 테제 위 오버레이. 정규가 $38.35, 고점 대비 −40.2%.",
+          "source": "intake/files/ai-bio/2026-09-29/lead-research.md · prices.json"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
