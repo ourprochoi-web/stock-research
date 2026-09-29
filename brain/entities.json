@@ -1708,7 +1708,16 @@
       "position": "미보유",
       "note": "가격은 정점 이익을 이미 배수에 넣었다(FY3/27 PER 5.7~6.9배 · SanDisk 9배). 같은 JV의 두 표본 중 키옥시아가 더 싼 이유는 오버행(도시바 12.84% 잔여 매도 · SKH 비이클 14.19%)과 HBM 부재다. 회사 가이던스 자체가 ASP +70→+25 둔화를 넣었고, TrendForce는 NAND 완화를 2H27(DRAM 2028)로 본다. 스크린(09-18 A · 88.7)의 fwd EPS 2,728.6은 10/1 3:1 분할 반영값이라 가격(미분할)과 짝이 안 맞는다 — 스크린 PER 20배는 오류, 실제 6~7배",
       "falsifier": "T6: 2Q FY2026 ASP QoQ ≥ +30% + 3Q 가이던스 ASP 플러스 · TrendForce 4Q26 NAND +10% 재가속 · 오버행 소멸 — 셋 중 둘",
-      "facts": []
+      "facts": [],
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-07",
+          "one": "씨티 키타카미(③): K1 4만㎡·K2 3.1만㎡·K3 26-08 착공·29 램프(CR≥K2)·K4 부지. 과제=생산성. H1'27 BiCS8 과반. 29년 50:50은 K3 전제. 주가 중립.",
+          "source": "aether 25529"
+        }
+      ]
     },
     "BABA": {
       "name": "Alibaba Group Holding",
@@ -1994,6 +2003,20 @@
           "rid": "r-20260926-61",
           "one": "메리츠 3Q 프리뷰(③ 09-22): OP 6,571억(+152% · 컨센 +9.3%) · 컴포넌트 OPM 18분기 만에 20%+ · ABF OPM 30%+ · 북미 CPU 업체와 AI MLCC LTA · CPU향 ABF 비중 45%+. ① TRASS 9월 MLCC 수출 단가 +9.1%",
           "source": "t.me/meritz_research/44687 · 44668"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "①/③",
+          "rid": "r-20260929-05",
+          "one": "공시(① 9/28) 세종 4.3조+베트남 2.5조=ABF 6.8조. 메리츠(③) 실투자 4조+·누적 ~10조·선수금≥70%·2030 매출≥6조·LT 48–56주. 신한(③) 4.27조.",
+          "source": "meritz 44704 · YS 117905 · 신한 117901"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-06",
+          "one": "교보(③): 유리기판은 채택 당위는 있으나 원가·수율 데이터가 비어 단기 불확실. 3Q 프리뷰 매출 3.8조·OP 6,524억. 09-26 장비발주(②) 이후 서사만.",
+          "source": "YeouidoStory2 117902"
         }
       ]
     },
@@ -2156,6 +2179,13 @@
           "rid": "r-20260927-08",
           "one": "한경패널: 신뢰 Meta 7–8% vs Google~30%(출처미특정)·다마고치형 하드웨어·유저당 CPU2+7.7GB로 위임 유도; Scale49%/$143억→시총+$3500억「~20배」채널산수",
           "source": "한경글로벌 bPordRoqBuU"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-11",
+          "one": "PCMag(③): Muse가 마켓플레이스에서 집 주소를 허락 없이 구매자에게 공유하고 저가 제안까지 수락(맷 롭). 출처 불명. 신뢰·권한 이탈.",
+          "source": "aether 25530"
         }
       ]
     },
@@ -2230,6 +2260,13 @@
           "rid": "r-20260926-82",
           "one": "Iridium: 주총 81.02% · $27+주식(칼라 하단 $67.50 — 최근 RKLB $62.55~67.82) · IRDM 딜가 −10.8% · 소송 3건 · FCC/Team Telecom/DCSA · 만료 2027-06-28 · 희석 1년 +27% + 딜 약 3,900만주 · Neutron 10-Q 「Q4 발사대 이동」",
           "source": "intake/files/sec/RKLB/2026-09-26/factpack.md"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-12",
+          "one": "메리츠(③) F14: 진공 Raptor 1기 조기정지에도 ~275km 첫 완전궤도·V3 26기 교신. 조기 이탈 후 일부 폭발. F15=엔진·타워캐치. 발사 인접.",
+          "source": "meritz 44705"
         }
       ]
     },
@@ -2601,6 +2638,27 @@
           "rid": "r-20260927-05",
           "one": "판단 신설 — 1H26 매출 +351% · GM 80.4% · TTM PER 282 · 100mW+ 는 검증 중 · 최대 고객 53%",
           "source": "ai-infra/optical_light_source_cw.html"
+        }
+      ]
+    },
+    "AMD": {
+      "name": "AMD",
+      "ticker": "AMD",
+      "market": "US",
+      "layer": "AI compute / accelerator",
+      "business": "CPU·GPU 가속기. 2026-09-29 IR: 공간지능·3D 월드모델 회사 World Labs를 약 82억 달러 전액 주식으로 인수. 페이페이 리는 EVP 겸 Chief Scientist로 리사 수에게 보고. 규제 승인 후 2026년 말 완료 예상.",
+      "business_grade": "①(AMD IR 2026-09-29 인수 발표 · 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "①",
+          "rid": "r-20260929-10",
+          "one": "IR(①): World Labs 약 $8.2B 전액주식(공간지능·3D). 페이페이 리 EVP·Chief Scientist, 리사 수 직보. 클로즈 2026년 말(규제).",
+          "source": "AMD IR · Samsung 4659 · insider 64882"
         }
       ]
     }
