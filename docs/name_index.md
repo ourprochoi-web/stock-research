@@ -242,7 +242,7 @@
 | US | Diamondback | FANG.O | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | EQT | EQT | ✓  | us_energy_hegemony_17#T1,T2,T3,T4 · us_energy_five#T6 · oil_hedge_vehicles#T1 | 11 |
 | US | Eaton | ETN | — | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T11,T5,T9 · us_ai_adjacent_sectors#T2 · us_epc_datacenter_build#T1 · kr_drawdown_2026#T6 | — |
-| US | Eli Lilly | LLY | — | glp1_company_novo_lilly#T1,T2,T3,T4,T5 | — |
+| US | Eli Lilly | LLY | ✓  | glp1_company_novo_lilly#T1,T2,T3,T4,T5 | — |
 | US | Energy Transfer | ET | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Enterprise Products | EPD | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Everpure | P | — | — | — |

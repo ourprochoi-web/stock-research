@@ -2269,6 +2269,26 @@
         }
       ]
     },
+    "LLY": {
+      "name": "Eli Lilly",
+      "market": "US",
+      "layer": "비만·대사",
+      "business": "경구 GLP-1(orforglipron) 등",
+      "business_grade": "②(후보)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-35",
+          "one": "간접비교(ACHIEVE-3·PIONEER PLUS, 직접 아님): 파운다요 17.2mg이 경구 세마 25mg 대비 52주 체중 −1.5%p·A1C −0.3%p. ACHIEVE-3 단독은 17.2mg A1C −2.2%·체중 −9.2% vs 경구 세마 14mg −1.4%·−5.3%.",
+          "source": "insidertracking/64923"
+        }
+      ]
+    },
     "TSM": {
       "name": "TSMC",
       "market": "TW/US",
@@ -2286,6 +2306,13 @@
           "rid": "r-20260926-72",
           "one": "A14 시험 생산 1Q27 로 당김(工商時報 · 인텔 14A 1Q27 리스크 생산과 맞먹음) · 256Mb SRAM 수율 90% 근접",
           "source": "aether 25430"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-36",
+          "one": "대만 경제일보(③·무공식): TSMC 美 2번째 캠퍼스 검토, 첨단 팹 최대 6기, 댈러스 후보지. 선단 노드면 총투자가 애리조나 약 $265B 약속을 넘을 수 있음. 회사 입장 없음.",
+          "source": "insidertracking/64924"
         }
       ]
     },
