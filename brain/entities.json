@@ -580,7 +580,16 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-53",
+          "one": "JPM 9월 GPU 임대 A100·H100 하락·B200 소폭 반등 — 비하이퍼스케일러 용량 신호",
+          "source": "t.me/aetherjapanresearch/25546"
+        }
+      ]
     },
     "ANET": {
       "name": "Arista",
@@ -1582,7 +1591,16 @@
       ],
       "tracked_price": true,
       "note": "코어 증액 트리거 종목 — 10/1 가이던스 ≥37 정상 · <35 = n-memory-durable 1스트라이크 · TP TD $1,600(CY27 9배) · RBC $1,500",
-      "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례"
+      "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-54",
+          "one": "DDR5 현물 5개월↑ 후 첫 MoM 하락·YoY +614% 유지 · NAND 보합 (JPM 9월)",
+          "source": "t.me/aetherjapanresearch/25546"
+        }
+      ]
     },
     "069960": {
       "code": "069960",
