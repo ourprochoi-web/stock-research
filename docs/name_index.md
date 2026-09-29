@@ -1,6 +1,6 @@
-# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-27)
+# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-29)
 
-추적 344개 · 테제가 걸린 이름 200 · 엔티티 있음 106 · facts 있음 79.
+추적 347개 · 테제가 걸린 이름 201 · 엔티티 있음 110 · facts 있음 79.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -217,6 +217,7 @@
 | US | Bitdeer | BTDR.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
 | US | Bloom Energy | BE | ✓ T1: 2026말 캐파 2GW 미달 또는 Product GPM 35% 아래로 2분기 · T2: 3Q26 10 | us_bloom_intel_deep#T1,T2,T3,T4,T5 · ai_power_company_transformer_grid#T1 · ai_power_top5_picks#T3 · us_power_regulated_vs_merchant#T1 · 13f_2026q2#T5 | 6 |
 | US | Booking Holdings | BKNG.O | ✓  | — | — |
+| US | Bristol Myers Squibb | BMY | ✓ 순수 AI바이오가 아님. 약 테제 위 감시. ai-bio/ai_bio_company_global.html#a | — | — |
 | US | Broadcom | AVGO.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · us_defense_primes#T1 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 · optical_light_source_cw#T1 | — |
 | US | CMB.TECH | CMBT.K | — | — | 4 |
 | US | Celestica | CLS | ✓  | optical_valuechain_9#T1 | — |
@@ -283,7 +284,7 @@
 | US | NiSource | NI | — | us_power_regulated_vs_merchant#T5,T6,T7 · kr_drawdown_2026#T8 · us_7axis_cross_valuation#T2 | — |
 | US | Nordic American | NAT | — | — | 4 |
 | US | Northrop Grumman | NOC | — | — | — |
-| US | Novo Nordisk ADR | NVO | — | us_7axis_cross_valuation#T5 | — |
+| US | Novo Nordisk ADR | NVO | ✓ 순수 AI바이오가 아님. 비만 테제가 본편. ai-bio/ai_bio_company_global.html#a | us_7axis_cross_valuation#T5 | — |
 | US | Occidental | OXY | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Okeanis | ECO | — | — | 4 |
 | US | Oracle | ORCL.K | — | us_7axis_cross_valuation#T2,T3,T5 · ns_global_strategy_overview#T4 | — |
@@ -300,6 +301,7 @@
 | US | STMicroelectronics | STM | — | — | — |
 | US | Salesforce | CRM | — | ai_sw_overview#T1 · us_7axis_cross_valuation#T3 | — |
 | US | SanDisk | SNDK.O | — | ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T1,T2 · us_7axis_cross_valuation#T3,T4 · node_screener_hbm_scoreboard#T2,T5 · us_payment_networks#T1 | 5 |
+| US | Schrödinger | SDGR | ✓ 정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html. 2Q26 | ai_bio_investment_map#T2,T3 | — |
 | US | Scorpio Tankers | STNG.K | — | — | 4 |
 | US | Seagate | STX.O | — | us_vertiv_corning_deep#T7 | — |
 | US | Semtech | SMTC.O | ✓  | optical_interconnect_layer#T3 · optical_valuechain_9#T4 | 19 |
@@ -314,6 +316,7 @@
 | US | Talen | TLN.O | — | us_power_regulated_vs_merchant#T2,T3,T6 · us_merchant_power_vst_nrg#T1 | — |
 | US | Targa Resources | TRGP.K | ✓ 09-15 정정 반영(C1): TTM FCF $7.4억(수익률 1.2%) · CapEx/OCF 82.7% · | us_energy_five#T2,T6 · us_energy_hegemony_17#T1,T2 | 10 |
 | US | Teekay Tankers | TNK | — | — | 4 |
+| US | Tempus AI | TEM | ✓ 정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html · ai- | — | — |
 | US | Tesla | TSLA.O | ✓  | hbm_pkg_theme_substrate#T2 · 13f_2026q2#T4 | — |
 | US | Tsakos | TEN | — | — | 4 |
 | US | Uber | UBER | ✓  | 13f_2026q2#T6 | — |
