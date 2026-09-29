@@ -2874,6 +2874,48 @@
           "source": "https://www.hankyung.com/article/2026092927661"
         }
       ]
+    },
+    "HPE": {
+      "name": "Hewlett Packard Enterprise",
+      "market": "US",
+      "layer": "서버·네트워킹·스토리지",
+      "business": "엔터프라이즈 서버, 주니퍼 인수 후 네트워킹(아루바·미스트·QFX), 스토리지. AI 서버와 스케일업 스위치(헬리오스)를 겸함",
+      "business_grade": "③(후보 · 2026-09-29 · JP모건 노트, 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "정본 테제 페이지 없음. 시세 추적 밖. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-41",
+          "one": "JP모건(③) HPE OW·TP $70 유지(FY28 EPS $4.95×약 14배). 9/28 종가 $62.63. 네트워킹 FY27 목표 +14~17%. 헬리오스 수주 0·FY27 램프. 매출기회 $50~100억은 추정.",
+          "source": "t.me/aetherjapanresearch/25552"
+        }
+      ]
+    },
+    "OPENAI": {
+      "name": "OpenAI",
+      "market": "US",
+      "layer": "프런티어 모델·API·구독",
+      "business": "ChatGPT·API·기업용 AI. 비상장",
+      "business_grade": "②(후보 · 2026-09-29 · 공개 서술, 사업보고서 없음)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "지분 상장 전. ai_sw_overview T1·T5가 오픈AI를 언급하나 이번 ARR은 그 반증 창에 안 맞음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-43",
+          "one": "Axios(②) OpenAI ARR이 약 700억 달러에 근접(3분기 시작 후 +70%+). 기업 매출은 7월 이후 2배+로 앤트로픽과 격차를 좁힌다는 보도. 공시 아님.",
+          "source": "t.me/beluga_investment/3665"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
