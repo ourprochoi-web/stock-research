@@ -339,7 +339,7 @@
   "LIG디펜스앤에어로스페이스": {
    "code": "079550",
    "market": "KR",
-   "entity": null,
+   "entity": "079550",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2498,7 +2498,7 @@
   "풍산": {
    "code": "103140",
    "market": "KR",
-   "entity": null,
+   "entity": "103140",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2652,7 +2652,7 @@
   "한국항공우주": {
    "code": "047810",
    "market": "KR",
-   "entity": null,
+   "entity": "047810",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2804,18 +2804,18 @@
   "한화시스템": {
    "code": "272210",
    "market": "KR",
-   "entity": null,
+   "entity": "272210",
    "falsifier": null,
    "facts": 0,
    "theses": {
-    "defense/k_defense_company_hanwha_aero.html": [
-     "T5"
-    ],
     "defense/k_defense_company_hanwha_systems_ocean.html": [
      "T1",
      "T2",
      "T3",
      "T4"
+    ],
+    "defense/k_defense_company_hanwha_aero.html": [
+     "T5"
     ],
     "defense/k_defense_cross_valuation.html": [
      "T7",
@@ -2834,7 +2834,7 @@
   "한화에어로스페이스": {
    "code": "012450",
    "market": "KR",
-   "entity": null,
+   "entity": "012450",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2967,7 +2967,7 @@
   "현대로템": {
    "code": "064350",
    "market": "KR",
-   "entity": null,
+   "entity": "064350",
    "falsifier": null,
    "facts": 0,
    "theses": {

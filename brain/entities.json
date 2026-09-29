@@ -2710,6 +2710,170 @@
           "source": "intake/files/ai-bio/2026-09-29/lead-research.md · prices.json"
         }
       ]
+    },
+    "012450": {
+      "name": "한화에어로스페이스",
+      "market": "KR",
+      "layer": "지상·항공엔진",
+      "business": "K9 자주포·천무·레드백 체계종합, 항공엔진 면허생산",
+      "business_grade": "②(아카이브 서술 · 사업보고서 미대조 · 2026-09-29)",
+      "pages": [
+        "defense/k_defense_company_hanwha_aero.html"
+      ],
+      "theses": [
+        "defense/k_defense_company_hanwha_aero.html#T1",
+        "defense/k_defense_company_hanwha_aero.html#T2",
+        "defense/k_defense_company_hanwha_aero.html#T4",
+        "defense/k_defense_company_hanwha_aero.html#T5"
+      ],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-39",
+          "one": "한경(② 09-29): 5대무기 누적수출계약 65조+(이달·업계). 빅6 국내시설투자 4조386억→7조4926억(+85%). 컨센서스성 수출·증설 관측.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-40",
+          "one": "한경(② 09-29): K9 핀란드(4월)·미국·스페인(8월)을 대규모 계약으로 적음. 금액 없음. 미국 건을 조건부 파이프라인과 동일시하지 않고 잔고에 더하지 않음.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        }
+      ]
+    },
+    "064350": {
+      "name": "현대로템",
+      "market": "KR",
+      "layer": "지상·전차",
+      "business": "K2 전차·장갑차, 철도차량 겸업",
+      "business_grade": "②(아카이브 서술 · 사업보고서 미대조 · 2026-09-29)",
+      "pages": [
+        "defense/k_defense_company_hyundai_rotem.html"
+      ],
+      "theses": [
+        "defense/k_defense_company_hyundai_rotem.html#T1",
+        "defense/k_defense_company_hyundai_rotem.html#T2",
+        "defense/k_defense_company_hyundai_rotem.html#T3",
+        "defense/k_defense_company_hyundai_rotem.html#T4"
+      ],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-39",
+          "one": "한경(② 09-29): 창원 지상(전차·자주포) 거점의 한 축. 5대무기 누적계약 65조+(업계). 빅6 시설투자 +85%·증설 20곳은 가격에 들어간 캐파 서사.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        }
+      ]
+    },
+    "079550": {
+      "name": "LIG디펜스앤에어로스페이스",
+      "market": "KR",
+      "layer": "유도무기",
+      "business": "천궁-Ⅱ·현궁·해성 등 유도무기",
+      "business_grade": "②(아카이브 서술 · 사업보고서 미대조 · 2026-09-29)",
+      "pages": [
+        "defense/k_defense_company_lig_nexone.html"
+      ],
+      "theses": [
+        "defense/k_defense_company_lig_nexone.html#T1",
+        "defense/k_defense_company_lig_nexone.html#T2",
+        "defense/k_defense_company_lig_nexone.html#T3",
+        "defense/k_defense_company_lig_nexone.html#T4",
+        "defense/k_defense_company_lig_nexone.html#T5"
+      ],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-39",
+          "one": "한경(② 09-29): 구미는 레이더·전장·유도무기. 천궁-Ⅱ는 5대무기 누적계약 65조+에 포함(업계 ②). 빅6 시설투자 +85%는 컨센서스성 증설.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        }
+      ]
+    },
+    "047810": {
+      "name": "한국항공우주",
+      "market": "KR",
+      "layer": "항공",
+      "business": "FA-50·KF-21·수리온. 엔진은 GE 의존",
+      "business_grade": "②(아카이브 서술 · 사업보고서 미대조 · 2026-09-29)",
+      "pages": [
+        "defense/k_defense_company_kai.html"
+      ],
+      "theses": [
+        "defense/k_defense_company_kai.html#T1",
+        "defense/k_defense_company_kai.html#T2",
+        "defense/k_defense_company_kai.html#T3",
+        "defense/k_defense_company_kai.html#T4",
+        "defense/k_defense_company_kai.html#T5"
+      ],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-39",
+          "one": "한경(② 09-29): 사천은 우주항공청·KAI 항공 거점. FA-50은 5대무기 누적계약 65조+에 포함(업계 ②). 증설 20곳은 컨센서스성 캐파 서사.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        }
+      ]
+    },
+    "272210": {
+      "name": "한화시스템",
+      "market": "KR",
+      "layer": "방산전자·해양",
+      "business": "레이더·지휘통제·위성, 한화오션과 해양 페이지를 공유",
+      "business_grade": "②(아카이브 서술 · 사업보고서 미대조 · 2026-09-29)",
+      "pages": [
+        "defense/k_defense_company_hanwha_systems_ocean.html"
+      ],
+      "theses": [
+        "defense/k_defense_company_hanwha_systems_ocean.html#T1",
+        "defense/k_defense_company_hanwha_systems_ocean.html#T2",
+        "defense/k_defense_company_hanwha_systems_ocean.html#T3",
+        "defense/k_defense_company_hanwha_systems_ocean.html#T4"
+      ],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-39",
+          "one": "한경(② 09-29): 방산 빅6 국내시설투자 2024 4조386억→올해 7조4926억(+85%, 업계). 신규·증설 20곳. 65조는 컨센서스성 수출 관측.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        }
+      ]
+    },
+    "103140": {
+      "name": "풍산",
+      "market": "KR",
+      "layer": "탄약·소재",
+      "business": "탄약·신관. 정본 회사 페이지는 없고 투자 지도 테제에 걸림",
+      "business_grade": "②(아카이브 서술 · 사업보고서 미대조 · 2026-09-29)",
+      "pages": [
+        "defense/k_defense_investment_map.html"
+      ],
+      "theses": [
+        "defense/k_defense_investment_map.html#T1",
+        "defense/k_defense_investment_map.html#T4",
+        "defense/k_defense_investment_map.html#T5"
+      ],
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-39",
+          "one": "한경(② 09-29): 빅6에 포함. 국내시설투자 합산 4조386억→7조4926억(+85%). 기사는 1975년 필리핀 M1 탄약을 K방산 수출 출발로 적음.",
+          "source": "https://www.hankyung.com/article/2026092927661"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
