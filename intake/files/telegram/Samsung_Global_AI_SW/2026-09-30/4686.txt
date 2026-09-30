@@ -1,0 +1,17 @@
+딥시크, 화웨이 Ascend용 핵심 AI 인프라 스택 오픈소스 공개
+
+: 화웨이 Ascend AI 가속기용 핵심 소프트웨어 인프라를 오픈소스로 공개. 딥시크가 화웨이가 공동으로 Ascend 칩에 최적화된 프로그래밍 및 연산, 통신 도구 개발
+
+: 공개된 스택은 TileLang, DeepGEMM, DeepEP, TileKernels, FlashMLA, DeepSelect 등 6종
+
+: 기존 엔비디아 GPU 중심으로 구축된 딥시크의 학습·추론 인프라를 화웨이 AI 가속기에서도 활용할 수 있도록 지원
+
+: 핵심인 DeepGEMM Ascend는 기존 DeepGEMM과 API가 완전히 호환되며 BF16·FP8·FP4 GEMM, MQA logits, MegaMoE 등을 지원
+
+: 기존 개발 워크플로를 유지하면서 Ascend에서 사용할 수 있으며, 희소 데이터 로딩과 코루틴 기반 파이프라이닝 등 Ascend 전용 최적화를 적용해 다양한 행렬 연산에서 하드웨어 피크 성능에 근접한다고 설명
+
+: 특히 단순히 DeepGEMM 하나를 포팅한 것이 아니라 행렬연산, MoE 통신, 커널 프로그래밍 등 DeepSeek 모델 구동에 필요한 핵심 소프트웨어 계층을 Ascend로 확장했다는 점이 중요
+
+: AI 칩 경쟁에서 하드웨어뿐 아니라 개발자 생태계와 최적화 라이브러리가 핵심인 만큼 Ascend의 소프트웨어 경쟁력 강화로 연결
+
+https://github.com/deepseek-ai/DeepGEMM-Ascend
