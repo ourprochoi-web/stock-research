@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-29",
+ "generated": "2026-09-30",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -3528,6 +3528,43 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Anthropic": {
+   "code": "ANTHROPIC",
+   "market": "US",
+   "entity": "ANTHROPIC",
+   "falsifier": "정본 페이지는 있으나 엔티티 키는 2026-09-30에 신설. 이번 줄은 관측. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_korea_g3_sovereign_ai.html": [
+     "T4"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "ai-sw/ai_sw_overview.html": [
+     "T3",
+     "T5"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T5"
+    ],
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T5"
+    ],
+    "national-strategy/ns_global_strategy_overview.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Applied Optoelectronics": {
    "code": "AAOI.O",
    "market": "US",
@@ -3685,6 +3722,9 @@
     ],
     "ai-infra/us_epc_datacenter_build.html": [
      "T1"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T4"
     ],
     "defense/us_defense_primes.html": [
      "T1"
@@ -4392,6 +4432,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Hewlett Packard Enterprise": {
+   "code": "HPE",
+   "market": "US",
+   "entity": "HPE",
+   "falsifier": "정본 테제 페이지 없음. 시세 추적 밖. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Hut 8": {
    "code": "HUT.O",
    "market": "US",
@@ -5008,6 +5058,47 @@
    "falsifier": null,
    "facts": 4,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "OpenAI": {
+   "code": "OPENAI",
+   "market": "US",
+   "entity": "OPENAI",
+   "falsifier": "지분 상장 전. ai_sw_overview T1·T5가 오픈AI를 언급하나 이번 ARR은 그 반증 창에 안 맞음. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T5"
+    ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T1"
+    ],
+    "ai-infra/optical_valuechain_9.html": [
+     "T1"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T1"
+    ],
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
+     "T1"
+    ],
+    "ai-sw/ai_sw_company_msft_pltr.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_overview.html": [
+     "T5"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T4"
+    ],
+    "national-strategy/ns_global_strategy_overview.html": [
+     "T4"
+    ],
+    "space/space_update_2026.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },

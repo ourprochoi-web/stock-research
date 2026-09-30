@@ -1,6 +1,6 @@
 # 테제 색인 — 정본은 brain/theses.json(카드 페이지) · 나머지는 페이지
 
-자동 생성 · 2026-09-29 · 판단 보유 95편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
+자동 생성 · 2026-09-30 · 판단 보유 95편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
 
 **용도** — 종목·테마 질문을 받으면 이 파일에서 해당 테제를 찾고, **그 페이지의 「현재 판단」만** 연다. 여기 적힌 문장은 페이지에서 잘라 온 첫 줄이며 **값·기준일·등급은 페이지가 정본**이다.
 
@@ -86,7 +86,7 @@
 | 2026.08.22 | 2026-08-22 | [Q2 2026 어닝 시즌 종합 — 반도체 빅뱅과 KOSPI 9,385의 명암](market/q2_2026_earnings_overview.html) | 5 |
 | 2026.08.21 | 2026-08-21 | [변압기·송배전 — K-전력기기 슈퍼사이클의 최전방](ai-infra/ai_power_company_transformer_grid.html) | 3 |
 | 2026.08.20 | 2026-08-20 | [전선·케이블 — AI가 끌어올린 구리 슈퍼사이클](ai-infra/ai_power_company_cable_wire.html) | 5 |
-| 2026.08.20 | 2026-08-20 | [한화에어로스페이스 딥다이브 — K-방산 시리즈 Part 4-1](defense/k_defense_company_hanwha_aero.html) | 5 |
+| 2026.08.20 ⚠ | 2026-09-29 | [한화에어로스페이스 딥다이브 — K-방산 시리즈 Part 4-1](defense/k_defense_company_hanwha_aero.html) | 5 |
 | 2026.08.20 | 2026-08-20 | [한화시스템 · 한화오션 — K-방산 시리즈 Part 4-5](defense/k_defense_company_hanwha_systems_ocean.html) | 4 |
 | 2026.08.20 | 2026-08-20 | [실리콘투 딥다이브 — K-뷰티 해외 직구 플랫폼 · K-Beauty Series](k-beauty/k_beauty_company_silicon2.html) | 5 |
 | 2026.08.20 | 2026-08-20 | [K-뷰티 섹터 투자 지도 — K-Beauty Series · Sector Overview](k-beauty/k_beauty_sector.html) | 5 |
@@ -99,7 +99,7 @@
 | 2026.08.18 ⚠ | 2026-09-19 | [LIG디펜스앤에어로스페이스 심층 분석 — 미사일이 만드는 연금 · K-방산 Part 4](defense/k_defense_company_lig_nexone.html) | 5 |
 | 2026.08.18 | 2026-08-18 | [LNG 캐리어 $71.3B — AI 전력이 바다 위 수주로 이어지는 구조](shipbuilding/k_ship_theme_lng_ai_nexus.html) | 5 |
 | 2026.08.17 | 2026-08-17 | [세계 조선의 새로운 좌표 — 슈퍼사이클 2.0과 한국의 프리미엄](shipbuilding/k_ship_industry_overview.html) | 5 |
-| 2026.08.12 | 2026-08-12 | [방산주 투자 지도 — K-방산 시리즈 Part 3](defense/k_defense_investment_map.html) | 5 |
+| 2026.08.12 ⚠ | 2026-09-29 | [방산주 투자 지도 — K-방산 시리즈 Part 3](defense/k_defense_investment_map.html) | 5 |
 | 2026.08.12 | 2026-08-12 | [K-바이오 편입 후보 — 4-Factor 비대칭 스코어카드](glp1/glp1_kbio_portfolio_candidates.html) | 4 |
 | 2026.08.12 | 2026-08-12 | [에이피알 딥다이브 — 메디큐브 글로벌 D2C 플랫폼 · K-Beauty Series](k-beauty/k_beauty_company_apr.html) | 4 |
 | 2026.08.10 | 2026-08-10 | [HBM·패키징 산업구조와 투자 좌표 — 후공정이 전공정을 잡아먹는 시대](hbm-packaging/hbm_pkg_overview.html) | 3 |
@@ -1736,7 +1736,7 @@
 
 ## 한화에어로스페이스 딥다이브 — K-방산 시리즈 Part 4-1
 
-`defense/k_defense_company_hanwha_aero.html` · 판단 2026.08.20 · 갱신 2026-08-20
+`defense/k_defense_company_hanwha_aero.html` · 판단 2026.08.20 · 갱신 2026-09-29
 
 - **T1.** 이 종목의 강점은 단기 모멘텀이 아니라 수주잔고의 장기 가시성이다. 1Q26말 수주잔고는 39.7조원(역대 최대)이고 연말 40조 돌파가 전망되며, 2026년 연간 신규 수주 기대치는 23.3조원이다. 파이프라인은 노르웨이 천무 1.3조(1월 계약), 사우디 10조+ 협상 재개, 폴란드 K9 3차, 루…
 - **T2.** 절대 실적은 견조한데 섹터 내 상대 순위가 내려갔다 — 둘은 다른 질문이다. Granit34 기준 선호도는 기계 > 전력기기 ≥ 방산 > 조선으로 방산이 세 번째다. 7/27의 "PEG<1 밸류에이션 매력 재확인"은 절대 밸류 기준이고, 8/6의 순위는 상대 기준이므로 두 서술은 모순이 아니라 축이 다…
@@ -1952,7 +1952,7 @@
 
 ## 방산주 투자 지도 — K-방산 시리즈 Part 3
 
-`defense/k_defense_investment_map.html` · 판단 2026.08.12 · 갱신 2026-08-12
+`defense/k_defense_investment_map.html` · 판단 2026.08.12 · 갱신 2026-09-29
 
 - **T1.** 본 편이 쓰던 "글로벌 방산 디레이팅" 서술은 낡았다 — 배수는 다시 올라와 있다.
 - **T2.** 배수가 어긋난 4종목 중 2종목은 가격이 아니라 분모가 움직였다. §A7 절차대로 가격 변동으로 설명되는지 먼저 계산했다.
