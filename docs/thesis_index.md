@@ -84,7 +84,7 @@
 | 2026.08.22 | 2026-08-22 | [Microsoft · Palantir — AI 플랫폼의 양극단](ai-sw/ai_sw_company_msft_pltr.html) | 5 |
 | 2026.08.22 ⚠ | 2026-09-17 | [ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관](energy/energy_ess_ai_power.html) | 5 |
 | 2026.08.22 | 2026-08-22 | [Q2 2026 어닝 시즌 종합 — 반도체 빅뱅과 KOSPI 9,385의 명암](market/q2_2026_earnings_overview.html) | 5 |
-| 2026.08.21 | 2026-08-21 | [변압기·송배전 — K-전력기기 슈퍼사이클의 최전방](ai-infra/ai_power_company_transformer_grid.html) | 3 |
+| 2026.08.21 ⚠ | 2026-09-30 | [변압기·송배전 — K-전력기기 슈퍼사이클의 최전방](ai-infra/ai_power_company_transformer_grid.html) | 3 |
 | 2026.08.20 | 2026-08-20 | [전선·케이블 — AI가 끌어올린 구리 슈퍼사이클](ai-infra/ai_power_company_cable_wire.html) | 5 |
 | 2026.08.20 ⚠ | 2026-09-29 | [한화에어로스페이스 딥다이브 — K-방산 시리즈 Part 4-1](defense/k_defense_company_hanwha_aero.html) | 5 |
 | 2026.08.20 | 2026-08-20 | [한화시스템 · 한화오션 — K-방산 시리즈 Part 4-5](defense/k_defense_company_hanwha_systems_ocean.html) | 4 |
@@ -1695,7 +1695,7 @@
 
 ## 변압기·송배전 — K-전력기기 슈퍼사이클의 최전방
 
-`ai-infra/ai_power_company_transformer_grid.html` · 판단 2026.08.21 · 갱신 2026-08-21
+`ai-infra/ai_power_company_transformer_grid.html` · 판단 2026.08.21 · 갱신 2026-09-30
 
 - **T1.** 같은 슈퍼사이클 안에서도 이미 검증된 구간과 아직 아닌 구간이 갈린다. 변압기·송배전은 AI 데이터센터 + 노후 전력망 교체 + 신재생 확대가 동시에 밀어올리는 구조적 사이클이다. 그러나 초고압 765kV 과점(HD현대일렉트릭)·미국 내 최대 생산기지(효성중공업)·토탈 솔루션(LS일렉트릭)은 이미 실적…
 - **T2.** 제룡전기·지투파워는 밸류 매력과 리스크를 같이 본다. 밸류에이션 매력은 실재하지만 관세·경쟁·유동성 리스크가 함께 붙어 있다. 싸다는 것이 안전하다는 뜻은 아니다 — 특히 미국향 비중이 높을수록 관세는 마진에 직접 걸린다.

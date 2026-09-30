@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-30)
 
-추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 120 · facts 있음 79.
+추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 123 · facts 있음 79.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -17,7 +17,7 @@
 | KR | GS건설 | 006360 | — | kr_construction_datacenter#T1 | — |
 | KR | HD한국조선해양 | 009540 | — | kr_4sector_cross_valuation#T1 · k_ship_theme_lng_ai_nexus#T1 | — |
 | KR | HD현대마린솔루션 | 443060 | — | — | — |
-| KR | HD현대일렉트릭 | 267260 | — | ai_power_company_transformer_grid#T1 · kr_power_10_deep#T1,T2,T3,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | — |
+| KR | HD현대일렉트릭 | 267260 | ✓ 회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님. | ai_power_company_transformer_grid#T1 · kr_power_10_deep#T1,T2,T3,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | — |
 | KR | HD현대중공업 | 329180 | — | ai_power_infra_investment_map#T4 · kr_4sector_cross_valuation#T1 · k_ship_industry_overview#T2 · k_ship_theme_lng_ai_nexus#T3 · k_ship_theme_masga_us_alliance#T2 | — |
 | KR | HPSP | 403870 | — | hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T4,T5 · kr_semi_equip_cross_valuation#T1,T3 · kr_semi_fab_timeline#T3 | — |
 | KR | KB금융 | 105560 | — | — | — |
@@ -28,7 +28,7 @@
 | KR | LG이노텍 | 011070 | ✓ 3Q26 잠정 OP < 2,650억 또는 광학 매출 YoY 감소(10월 하순) | hbm_pkg_theme_substrate#T4,T5,T6 · kr_cooling_optical_layer#T5 | — |
 | KR | LIG디펜스앤에어로스페이스 | 079550 | ✓  | k_defense_company_lig_nexone#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T8,T9 | — |
 | KR | LS | 006260 | — | ai_power_company_cable_wire#T1 · ai_power_company_transformer_grid#T1,T2,T3 · kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · optical_valuechain_9#T1,T3,T5 · us_bloom_intel_deep#T5 · ai_sw_company_anthropic#T1 · k_defense_company_hanwha_systems_ocean#T3 · kr_4sector_cross_valuation#T2,T5 · statements_log#T2 · k_ship_theme_masga_us_alliance#T1,T2 · us_merchant_power_vst_nrg#T1 | — |
-| KR | LS ELECTRIC | 010120 | — | kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · us_bloom_intel_deep#T5 · kr_4sector_cross_valuation#T2,T5 | — |
+| KR | LS ELECTRIC | 010120 | ✓ 회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님. | ai_power_company_transformer_grid#T1 · kr_power_10_deep#T1,T2,T4,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · us_bloom_intel_deep#T5 · kr_4sector_cross_valuation#T2,T5 | — |
 | KR | LS머트리얼즈 | 417200 | — | — | — |
 | KR | POSCO홀딩스 | 005490 | — | — | — |
 | KR | RFHIC | 218410 | — | — | — |
@@ -177,7 +177,7 @@
 | KR | 현대백화점 | 069960 | ✓ 3Q26 지누스 손실 −250억 이상 지속 + 백화점 OP 감익(≈11-05) | consumer_sector_department#T1,T3,T4,T5,T6 | — |
 | KR | 현대제철 | 004020 | — | — | — |
 | KR | 현대차 | 005380 | — | robot_theme_supply_chain#T1 | — |
-| KR | 효성중공업 | 298040 | — | ai_power_company_transformer_grid#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T3,T4 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T5 | 1 |
+| KR | 효성중공업 | 298040 | ✓ 회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님. | ai_power_company_transformer_grid#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T3,T4 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T5 | 1 |
 | KR | 효성티앤씨 | 298020 | — | — | — |
 | KR | 후성 | 093370 | — | — | — |
 | KR-ETF | KODEX 2차전지산업 | 305720 | — | — | — |
