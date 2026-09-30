@@ -4312,8 +4312,8 @@
   "First Solar": {
    "code": "FSLR.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "FSLR",
+   "falsifier": "정본 테제 페이지 없음. energy 축 관측 카드. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "market/us_7axis_cross_valuation.html": [
@@ -5474,6 +5474,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/us_vertiv_corning_deep.html": [
+     "T6"
+    ],
     "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
      "T5"
     ],
