@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-30)
 
-추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 119 · facts 있음 79.
+추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 120 · facts 있음 79.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -252,7 +252,7 @@
 | US | Expedia | EXPE.O | — | — | — |
 | US | ExxonMobil | XOM | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Fabrinet | FN | ✓  | optical_valuechain_9#T1 | 10 |
-| US | First Solar | FSLR.O | — | us_7axis_cross_valuation#T3 | — |
+| US | First Solar | FSLR.O | ✓ 정본 테제 페이지 없음. energy 축 관측 카드. 비중·집행 아님. | us_7axis_cross_valuation#T3 | — |
 | US | Fluence Energy | FLNC.O | ✓  | ai_power_company_semi_ess_dc#T2 · energy_ess_ai_power#T1 | — |
 | US | Fortinet | FTNT.O | ✓  | cyber_ai_security#T1,T2,T3,T4 | 9 |
 | US | Freeport-McMoRan | FCX | — | — | — |
@@ -312,7 +312,7 @@
 | US | ServiceNow | NOW | — | ai_sw_investment_map#T5 · ai_sw_overview#T1 | — |
 | US | Shoals | SHLS.O | — | us_7axis_cross_valuation#T2 | — |
 | US | Snowflake | SNOW.K | — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T5 | — |
-| US | SpaceX | SPCX.O | — | ai_sw_company_crwd_ddog_snow#T5 · ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T2,T4 · 13f_2026q2#T1,T6 · robot_theme_supply_chain#T4 · space_case_contract_structure#T1,T2,T4,T5 · space_update_2026#T1,T2,T3,T4,T5 | — |
+| US | SpaceX | SPCX.O | — | us_vertiv_corning_deep#T6 · ai_sw_company_crwd_ddog_snow#T5 · ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T2,T4 · 13f_2026q2#T1,T6 · robot_theme_supply_chain#T4 · space_case_contract_structure#T1,T2,T4,T5 · space_update_2026#T1,T2,T3,T4,T5 | — |
 | US | TE Connectivity | TEL | ✓  | us_ai_adjacent_sectors#T2 | 1 |
 | US | TORM | TRMD.O | — | — | 4 |
 | US | TSMC ADR | TSM | ✓  | ai_chip_company_broadcom#T1 · ai_chip_company_nvidia#T1 · ai_value_chain_guide_v2#T5 · optical_valuechain_9#T5 · ai_sw_company_anthropic#T4 · ai_sw_investment_map#T1 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T5 · hbm_pkg_theme_substrate#T1 · kr_semi_equip_cross_valuation#T7 · us_7axis_cross_valuation#T5 · ns_china_ai_ecosystem#T5 · ns_global_strategy_overview#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T4 | — |
