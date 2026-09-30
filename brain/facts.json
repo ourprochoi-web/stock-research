@@ -8934,6 +8934,236 @@
           "intake": "u-20260927-yuanjie01"
         }
       }
+    },
+    "MU": {
+      "name": "Micron",
+      "ticker": "MU",
+      "market": "US",
+      "layer": "DRAM·HBM·NAND",
+      "canonical_page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+      "intake": [
+        "c-20261001-mu01",
+        "c-20261001-mu02",
+        "u-20261001-x-mu01"
+      ],
+      "metrics": {
+        "fq4_26_revenue": {
+          "value": 54.229,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "FQ4 매출 $54,229M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "분기 종료 2026-09-03. 공시 2026-09-30. FQ3 $41,456M."
+        },
+        "fq4_26_nongaap_eps": {
+          "value": 33.42,
+          "unit": "USD / diluted share",
+          "basis": "FQ4 FY2026 non-GAAP",
+          "asof": "2026-09-03",
+          "num": "non-GAAP net income $38,398M",
+          "den": "non-GAAP diluted shares 1,149M",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "회사 표기 $33.42. GAAP diluted EPS $32.87."
+        },
+        "fq4_26_gaap_eps": {
+          "value": 32.87,
+          "unit": "USD / diluted share",
+          "basis": "FQ4 FY2026 GAAP",
+          "asof": "2026-09-03",
+          "num": "GAAP net income $37,701M",
+          "den": "GAAP diluted shares 1,147M",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": ""
+        },
+        "fq4_26_nongaap_gm": {
+          "value": 87.0,
+          "unit": "%",
+          "basis": "FQ4 FY2026 non-GAAP",
+          "asof": "2026-09-03",
+          "num": "non-GAAP gross margin $47,204M",
+          "den": "revenue $54,229M",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "47,204/54,229=87.05% → 회사 표기 87.0%. GAAP GM 86.8%($47,047M/$54,229M)."
+        },
+        "fq4_26_capex_net": {
+          "value": 10.774,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "PP&E 지출 $11,110M − 매각 $9M − 정부 인센티브 $327M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "회사가 말하는 investments in capital expenditures, net. 텔레그램 $11.11B는 총 PP&E."
+        },
+        "fq4_26_ppe_gross": {
+          "value": 11.11,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "expenditures for property, plant, and equipment $11,110M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "순액 $10.774B와 다른 칸. 인센티브 차감 전."
+        },
+        "fy26_capex_net": {
+          "value": 27.367,
+          "unit": "USD B",
+          "basis": "FY2026",
+          "asof": "2026-09-03",
+          "num": "FY PP&E $30,712M − 매각 $29M − 인센티브 $3,316M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "회사 표기 $27.37B."
+        },
+        "fq1_27_guide_revenue": {
+          "value": 61.5,
+          "unit": "USD B",
+          "basis": "FQ1 FY2027 guide",
+          "asof": "2026-09-30",
+          "num": "FQ1-27 매출 가이던스 중심",
+          "den": "± $1.5B",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "GAAP·non-GAAP 동일. 범위 $60.0–63.0B."
+        },
+        "fq1_27_guide_nongaap_eps": {
+          "value": 38.15,
+          "unit": "USD / diluted share",
+          "basis": "FQ1 FY2027 guide",
+          "asof": "2026-09-30",
+          "num": "non-GAAP EPS 가이던스 중심",
+          "den": "± $1.00 · 희석주식 약 1.15B",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "GAAP EPS 가이던스 $37.84±1. 구 ≥37 문턱은 이 EPS 칸."
+        },
+        "fq1_27_guide_nongaap_gm": {
+          "value": 86.25,
+          "unit": "%",
+          "basis": "FQ1 FY2027 guide",
+          "asof": "2026-09-30",
+          "num": "FQ1 non-GAAP GM 가이던스(approximately)",
+          "den": "FQ1 매출 가이던스",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "FQ4 실측 87.0% 대비 가이던스는 한 분기 확대 정지. GAAP GM 가이던스 약 85.95%."
+        },
+        "fq4_26_bu_core_dc": {
+          "value": 18.002,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "Core Data Center revenue $18,002M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "GM 90%."
+        },
+        "fq4_26_bu_cloud_memory": {
+          "value": 16.283,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "Cloud Memory revenue $16,283M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "GM 83%."
+        },
+        "fq4_26_bu_mobile_client": {
+          "value": 13.114,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "Mobile and Client revenue $13,114M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "GM 90%."
+        },
+        "fq4_26_bu_auto_embedded": {
+          "value": 6.824,
+          "unit": "USD B",
+          "basis": "FQ4 FY2026",
+          "asof": "2026-09-03",
+          "num": "Automotive and Embedded revenue $6,824M",
+          "den": "—",
+          "grade": "①",
+          "source": "SEC Ex99.1 a2026q4ex991-pressrelease.htm",
+          "intake": "c-20261001-mu01",
+          "note": "GM 84%."
+        },
+        "fq4_26_dram_asp_qoq": {
+          "value": "high-teens",
+          "unit": "% QoQ",
+          "basis": "FQ4 FY2026 call",
+          "asof": "2026-09-03",
+          "num": "FQ4 DRAM ASP",
+          "den": "FQ3 DRAM ASP",
+          "grade": "②",
+          "source": "Investing.com FQ4 FY2026 call transcript 93CH-4925992",
+          "intake": "c-20261001-mu02",
+          "note": "포인트 추정 없음. Ex99.1에 없음. 비트는 mid-single digit QoQ(같은 문장). DRAM 매출 $39.8B·비중 73%·매출 QoQ +27%도 같은 ②."
+        },
+        "fq4_26_nand_asp_qoq": {
+          "value": 30,
+          "unit": "% QoQ approximately",
+          "basis": "FQ4 FY2026 call",
+          "asof": "2026-09-03",
+          "num": "FQ4 NAND ASP",
+          "den": "FQ3 NAND ASP",
+          "grade": "②",
+          "source": "Investing.com FQ4 FY2026 call transcript 93CH-4925992",
+          "intake": "c-20261001-mu02",
+          "note": "CFO 'approximately 30%'. 비트 approximately +10%. NAND 매출 $14.1B. Ex99.1에 없음."
+        },
+        "sca_commitments": {
+          "value": 32,
+          "unit": "USD B",
+          "basis": "call 2026-09-30",
+          "asof": "2026-09-30",
+          "num": "26건 SCA·연장의 고객 재무약정",
+          "den": "그중 대부분이 현금 예치",
+          "grade": "②",
+          "source": "Investing.com FQ4 FY2026 call transcript 93CH-4925992",
+          "intake": "c-20261001-mu02",
+          "note": "FQ3 콜의 $22B에서 증가했다는 CEO 발언. 대차대조표 고객계약부채 $12,895M(①)과는 다른 칸."
+        },
+        "rpo": {
+          "value": 150,
+          "unit": "USD B approximately",
+          "basis": "call 2026-09-30",
+          "asof": "2026-09-30",
+          "num": "가격 프레임이 있는 SCA의 최소 약정 볼륨×최소 가격",
+          "den": "—",
+          "grade": "②",
+          "source": "Investing.com FQ4 FY2026 call transcript 93CH-4925992",
+          "intake": "c-20261001-mu02",
+          "note": "CFO 'approximately $150 billion'. 보수적 최소. 매출은 RPO를 웃돈다고 함. Ex99.1에 없음."
+        }
+      }
     }
   },
   "macro": {
@@ -9273,7 +9503,7 @@
       "source": "TRASS(메리츠 김선우 09-21 집계)",
       "grade": "①",
       "intake": "u-20260922-11",
-      "note": "🔑 +277.3% YoY 인데 <−13.9% MoM>. 분해: DRAM 74,187(+328.6% YoY · −19.5% MoM) · Flash 82,303(+544.6% YoY · −17.3% MoM) · MCP 102,216(+239.2% YoY · −3.3% MoM) · DRAM 모듈 49,963(+474.0% YoY · <+59.5% MoM>). 같은 표의 수출<금액>은 메모리 215.0억달러(+350.7% YoY · +8.2% MoM) · DRAM 106.4억(+539.0% YoY · +8.5% MoM) · DRAM 모듈 83.9억(+478.5% YoY · +246.5% MoM). 읽는 법 — 단가는 달러/kg 이라 <믹스 함수>다. 칩이 모듈로 나가면 kg당 값이 달라지므로 −19.5% 를 곧바로 「가격 하락」으로 읽으면 안 된다. 계약가 축(BofA ② 3Q +20~30% QoQ)과 어긋나는 것은 JPM(③) 「웨이퍼 70%+ LTA」로 설명된다. 판정 10/1 마이크론 FQ4 · 3Q26 실적"
+      "note": "🔑 +277.3% YoY 인데 <−13.9% MoM>. 분해: DRAM 74,187(+328.6% YoY · −19.5% MoM) · Flash 82,303(+544.6% YoY · −17.3% MoM) · MCP 102,216(+239.2% YoY · −3.3% MoM) · DRAM 모듈 49,963(+474.0% YoY · <+59.5% MoM>). 같은 표의 수출<금액>은 메모리 215.0억달러(+350.7% YoY · +8.2% MoM) · DRAM 106.4억(+539.0% YoY · +8.5% MoM) · DRAM 모듈 83.9억(+478.5% YoY · +246.5% MoM). 읽는 법 — 단가는 달러/kg 이라 <믹스 함수>다. 칩이 모듈로 나가면 kg당 값이 달라지므로 −19.5% 를 곧바로 「가격 하락」으로 읽으면 안 된다. 계약가 축(BofA ② 3Q +20~30% QoQ)과 어긋나는 것은 JPM(③) 「웨이퍼 70%+ LTA」로 설명된다. 판정 10/1 마이크론 FQ4 · 3Q26 실적 2026-10-01 판정(r-20261001-01): MU DRAM ASP QoQ high-teens(②)·비트 mid-single → 단가 −19.5%는 믹스 쪽. SKH 3Q는 10/31 별도."
     },
     "kr_semi_layer_tail_202607": {
       "value": "코어 −5.4 / 전공정 중앙 −8.8 / 후공정 중앙 −10.5",
