@@ -3072,6 +3072,82 @@
           "source": "t.me/insidertracking/65024 · Mizuho"
         }
       ]
+    },
+    "298040": {
+      "name": "효성중공업",
+      "market": "KR",
+      "layer": "전력기기/변압기·송배전",
+      "business": "초고압 변압기·GIS/GCB. 미국 Memphis 생산, 창원 HVDC",
+      "business_grade": "③(HMSEC 09-30 · 사업보고서 미대조)",
+      "status": "후보",
+      "pages": [
+        "ai-infra/ai_power_company_transformer_grid.html"
+      ],
+      "theses": [
+        "ai-infra/ai_power_company_transformer_grid.html#T1",
+        "ai-infra/ai_power_company_transformer_grid.html#T3"
+      ],
+      "tracked_price": true,
+      "note": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-30",
+          "grade": "③",
+          "rid": "r-20260930-18",
+          "one": "HMSEC③ 09-30: Quanta JV(HICO BREAKER) GCB 첫 생산 2026-10·4Q26. Memphis 1단계·창원 HVDC 2027F 반영. 미국 765kV 설치분 약 50%. 수주 2024 5.5조·2025 7.6조·1H26 7.5조.",
+          "source": "HMSEC Megatrend #291"
+        }
+      ]
+    },
+    "267260": {
+      "name": "HD현대일렉트릭",
+      "market": "KR",
+      "layer": "전력기기/변압기·송배전",
+      "business": "초고압 변압기·배전기기. 울산·미국 Alabama, 청주 배전캠퍼스",
+      "business_grade": "③(HMSEC 09-30 · 사업보고서 미대조)",
+      "status": "후보",
+      "pages": [
+        "ai-infra/ai_power_company_transformer_grid.html"
+      ],
+      "theses": [
+        "ai-infra/ai_power_company_transformer_grid.html#T1"
+      ],
+      "tracked_price": true,
+      "note": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-30",
+          "grade": "③",
+          "rid": "r-20260930-19",
+          "one": "HMSEC③ 09-30: 울산 초고압 380→420대(4Q26 매출 인식), 앨라배마 105→150대(1H27 준공). 배전 비중 2025 17.9%→30% 목표, 청주 배전캠퍼스. 2026-07 빅테크 전력·배전 약 1.1조원.",
+          "source": "HMSEC Megatrend #291"
+        }
+      ]
+    },
+    "010120": {
+      "name": "LS ELECTRIC",
+      "market": "KR",
+      "layer": "전력기기/변압기·송배전",
+      "business": "배전반·배전변압기·초고압. 미국 Utah·부산",
+      "business_grade": "③(HMSEC 09-30 · 사업보고서 미대조)",
+      "status": "후보",
+      "pages": [
+        "ai-infra/ai_power_company_transformer_grid.html"
+      ],
+      "theses": [
+        "ai-infra/ai_power_company_transformer_grid.html#T1"
+      ],
+      "tracked_price": true,
+      "note": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-09-30",
+          "grade": "③",
+          "rid": "r-20260930-20",
+          "one": "HMSEC③ 09-30: Utah 배전반 2차 증설 1.68억달러, 2027년 하반기 준공(2027F). 배전을 늘리고 작았던 송전(초고압) 책을 키우는 경로.",
+          "source": "HMSEC Megatrend #291"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

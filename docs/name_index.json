@@ -161,8 +161,8 @@
   "HD현대일렉트릭": {
    "code": "267260",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "267260",
+   "falsifier": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_company_transformer_grid.html": [
@@ -424,10 +424,13 @@
   "LS ELECTRIC": {
    "code": "010120",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "010120",
+   "falsifier": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님.",
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
      "T2",
@@ -3069,8 +3072,8 @@
   "효성중공업": {
    "code": "298040",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "298040",
+   "falsifier": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님.",
    "facts": 1,
    "theses": {
     "ai-infra/ai_power_company_transformer_grid.html": [
