@@ -1,0 +1,27 @@
+구글 Gemini 4 Argon 공개
+
+: 신규 프런티어 모델 Gemini 4 Argon 공개. 복잡한 장기 추론과 소프트웨어 엔지니어링, 기업 지식 업무, 사이버보안에 초점을 맞춘 모델
+
+: 현재 Fairwind Program을 통해 일부 신뢰할 수 있는 사이버보안 담당자에게 우선 제공 중. 향후 유료 API 고객과 Google AI Ultra 구독자를 시작으로 순차 확대 예정
+
+: Artificial Analysis 기준 Intelligence Index 53점으로 GPT-6 Astra max와 동률, GPT-6.1 Sol max 52점을 소폭 상회
+
+: 특히 AutomationBench-AA 77.5%로 1위, Terminal Bench 4 57%를 기록하는 등 기존 Gemini의 상대적 약점이던 에이전틱 역량이 크게 개선
+
+: Google 자체 평가에서도 실제 장기 소프트웨어 엔지니어링 벤치마크 DeepSWE v1.1 77.9%, Zapier AutomationBench 51.3%로 1위 기록
+
+: Google 내부에서는 C/C++의 Rust 마이그레이션, 데이터센터 메모리 최적화 등에 이미 활용 중이며, Argon 에이전트를 통해 300TiB 이상의 메모리를 확보한 사례도 공개
+
+: 환각 억제도 강점. AA-Omniscience 기준 환각률 15%로 Intelligence Index 45점 이상 주요 모델 중 최저 수준
+
+: 다만 정확도는 50%로 Astra의 63%보다 낮아, 모르는 질문에서 추측하기보다 답변을 보수적으로 제한하는 특성 반영
+
+: 사이버보안에서는 취약점의 자율 탐지·검증·패치까지 수행. CWE-bench v1 68%로 공동 1위를 기록했으며, Wiz의 실제 테스트에서는 기존 프런티어 모델이 놓쳤던 의료 소프트웨어의 중요 개인정보 노출 취약점을 발견
+
+: Context Window 및 최대 출력 모두 1M 토큰을 지원. 신규 Long Decode Continuation 기능을 활용해 장시간 추론을 평가했으며, 긴 응답을 여러 API 호출에 걸쳐 이어 생성함으로써 최대 1M 출력 토큰까지 추론을 지속
+
+: 가격은 현재 프로모션 기준 입력/출력 100만 토큰당 $2/$10, 캐시 입력은 95% 할인
+
+: 작업당 비용은 $1.99로 GPT-6 Astra max의 60% 수준. 다만 이는 50% 출시 할인 영향이 크며, 정상 가격 $4/$20 적용 시 Task당 비용은 $3.98로 상승(AAII)
+
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/

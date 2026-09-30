@@ -1,14 +1,11 @@
-# aetherjapanresearch/25573 — factual snippet
+JP모건) OpenAI DevDay: Marketplace는 파트너사에 긍정적이나, 에이전트 및 워크스페이스 공략으로 경쟁 강도 상승
 
-- url: https://t.me/aetherjapanresearch/25573
-- time: 2026-09-30 22:34:41 KST
-- pull: pull_20260930_224211
-- relay: JPMorgan OpenAI DevDay note via the channel
+OpenAI는 9월 29일 DevDay 행사에서 20건 이상의 발표를 했으며, 그 중심에는 항상 작동하는 에이전트('dots'), 사람과 에이전트가 함께 작업하는 ChatGPT 내 공유 작업공간(Space, Pages 및 공동 작업 슬라이드), GPT-6 Astra 대비 5분의 1 토큰 가격의 GPT-6.1 Sol, 그리고 엔터프라이즈 고객이 기존 OpenAI 약정 금액의 일부를 승인된 파트너 소프트웨어에 적용할 수 있도록 하는 OpenAI Marketplace가 있었습니다. 이번 발표는 주로 엔터프라이즈 시장에서의 입지 확대를 목표로 한 것으로 보이며, 이는 당사 커버리지 내 일부 기업들의 AI 관련 수익화에 대한 경쟁 압력이 높아진다는 것을 의미하는 한편, OpenAI의 파트너로 자리매김할 수 있는 커버리지 기업들에게는 수혜가 될 수도 있습니다. 특히 ChatGPT의 협업 영역 확장은 당사 커버리지 일부 분야에서 경쟁 강도를 높이는 반면, 전반적인 시사점은 기록 시스템(system of record), 데이터 및 워크플로를 보유한 벤더들과, OpenAI의 엔터프라이즈 공략에서 파트너가 된 기업들에게 유리한 방향으로 기울어 있습니다. 오늘 32개 파트너와 함께한 Marketplace 출시의 일환으로 발표된 파트너십에는 당사 커버리지 종목 6개(ADBE, DDOG, FIG, HUBS, CRM, NOW)가 포함되었습니다. 당사는 파트너 기업들조차 엔터프라이즈 고객 수익화와 관련해 OpenAI와의 경쟁과 협력 사이에서 균형을 잡아야 할 것으로 보지만, 오늘 발표로 촉진될 엔터프라이즈 전반의 AI 기능 도입 확대로부터 순(net) 기준으로는 수혜를 입을 가능성이 높다고 판단합니다.
 
-Items in the post:
-- DevDay on 29 Sep: always-on agents ("dots"), shared workspace (Space, Pages, collaborative slides)
-- GPT-6.1 Sol token price one-fifth of GPT-6 Astra; $2 / $10 per million input/output tokens; cached input $0.10
-- Marketplace launched with 32 partners; customers contract and pay the partner; OpenAI settles committed usage; eligibility is product-specific
-- Partner and sandbox names are stored on the OPENAI watch line only
-- Microsoft: collaboration overlap with Copilot/Teams alongside integration (dots in Teams, Agent 365)
-- Responses API about 100x over one year with reliability above 99%; time-to-first-token down 45%
+Adobe, Datadog, Figma, HubSpot, Salesforce, ServiceNow의 Marketplace 적격성은 클라우드 마켓플레이스와 유사한 구조로 AI 시대의 유통을 뒷받침할 것입니다. 고객은 파트너와 직접 계약하고 대금을 지불하며, OpenAI가 약정 사용분을 정산하는 방식입니다. 다만 적격성은 등재된 파트너의 모든 제품이 아니라 특정 제품에 적용되며, 적격 금액은 각 고객의 OpenAI 계약에 따라 달라집니다. ADBE와 FIG는 또한 플러그인 확장 기능의 '수십 개 출시 파트너' 중 하나로 무대에서 소개되었습니다. 플러그인 확장 기능은 개발자가 ChatGPT 내부에서 네이티브로 실행되는 완전한 애플리케이션을 구축할 수 있도록 해주며, Photoshop 기능을 ChatGPT에서 직접 이용할 수 있고, Figma 데모에서는 사용자가 디자인을 열고 팀 코멘트를 검토한 뒤 대화와 함께 ChatGPT에 수정을 요청하는 모습이 시연되었습니다.
+
+Microsoft와는 협업 영역의 중복이 확대되나, 이는 더 깊은 통합으로 일부 상쇄됩니다. Space와 Pages, PowerPoint로 내보낼 수 있는 슬라이드, 그리고 Teams 내 @ChatGPT는 M365 Copilot과 경쟁하며, OpenAI 기반의 Bedrock Managed Agents(제한적 프리뷰)는 추론과 데이터를 AWS 내에 유지합니다. 또한 올트먼은 AWS 고객이 OpenAI의 프런티어 모델에 접근하고 Codex와 ChatGPT Work를 사용할 수 있다고 언급했습니다(이는 OpenAI 워크로드의 주요 거점으로서 Azure의 입지에 대한 경쟁 환경을 한층 심화시킵니다). 그렇긴 하나 dots는 Teams에서도 이용할 수 있으며, OpenAI는 기업들이 이미 사용 중인 Microsoft 도구를 통해 dots를 관리할 수 있도록 하는 것을 목표로 전문 dots를 Agent 365에 통합하기 위해 Microsoft와 협력하고 있습니다.
+
+Zoom, Monday.com, Dropbox에는 추가적인 압박 요인이 되며, Salesforce와 ServiceNow는 파트너이자 경쟁자라는 위치에 놓이게 됩니다. Meetings 플러그인(통화에 봇이 참여하지 않고도 메모를 작성)은 ZM의 AI Companion과 겹치고, Space는 MNDY 및 DBX와 겹치는데, 이는 드라이브에서와 마찬가지로 Space 안에 페이지와 파일이 함께 존재하고, 페이지는 연결된 도구로부터 스스로 업데이트되며, 향후 출시될 슬라이드는 에이전트가 쉽게 읽고 수정할 수 있도록 설계되었기 때문입니다. 한편 Slack 내의 @ChatGPT와 dots는 OpenAI의 어시스턴트를 Salesforce의 협업 레이어 안에 배치하며, 회계·마케팅·법무 업무를 겨냥하고 조달, 인보이스 처리, 고객 지원, 상업 계약 전반에 걸쳐 사내에서 시범 운영된 전문 dots는 NOW의 워크플로 자동화 영역으로 진출할 수 있습니다. Salesforce는 Bedrock 출시 발표에서도 언급되었으며, Salesforce Headless 360을 AWS상 OpenAI 에이전트를 위한 데이터 및 제어 레이어로 포지셔닝했습니다. 이들 제품의 엔터프라이즈 출시가 관전 포인트가 되겠지만, 현 시점에서 당사는 위에서 언급한 벤더들이 기존 통합, 관리자 통제 기능, 고객 데이터를 바탕으로 대형 엔터프라이즈 워크플로에 깊이 뿌리내린 상태를 유지할 것으로 예상하며, 파트너십의 순효과는 도입 확대 촉진에 힘입어 긍정적일 것으로 봅니다.
+
+에이전트 인프라 관련 출시는 Cloudflare, Oracle, Datadog에 긍정적인 시사점을 제공합니다. DevDay에서는 에이전트가 클라우드에서 지속적으로 실행되는 방향으로 추진되었는데, dots는 Cloud에서 24시간 작동하고, Codex는 이제 완전히 클라우드에서 실행되어 작업이 백그라운드에서 독립적으로 수행될 수 있으며, Agents API에 컴퓨터 사용(computer use) 기능이 추가되었습니다. Agents API에서 개발자는 OpenAI가 호스팅하는 샌드박스, 자체 인프라, 또는 Cloudflare와 Oracle(9월 10일 Agents API 출시 당시 명시)을 포함한 샌드박스 파트너를 통해 에이전트를 실행할 수 있습니다. OpenAI가 DevDay에서 공개한 지표들, 즉 1) 지난 1년간 99% 이상의 안정성을 유지하면서 Responses API가 100배 성장한 점, 2) 첫 토큰까지의 시간이 45% 단축되고 도구 호출 및 워크플로가 30% 이상 빨라진 점, 3) GPT-6.1 Sol의 가격이 입력/출력 100만 토큰당 2달러/10달러이며, 캐시된 입력은 0.10달러(표준 입력 가격 대비 95% 낮고 GPT-6 Sol의 캐시 입력 가격 대비 50% 낮음)로 책정된 점, 4) Ultrafast 티어가 표준 대비 6배의 가격으로 8배의 속도를 제공하는 점을 종합하면, 당사는 프로덕션 단계로 이행하는 에이전트 워크로드가 가속화되고 Datadog과 같은 옵저버빌리티(관측성) 벤더에 대한 수요가 뒷받침될 것으로 예상합니다.
