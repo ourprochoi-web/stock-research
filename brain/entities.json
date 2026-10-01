@@ -1414,6 +1414,13 @@
           "rid": "r-20260930-10",
           "one": "Edgewater③: SKH LP4x CY27말 EOL(삼성 CY28 연장 대비). 2군 CY27 이행률 50%. DDR4 증설 없음. 호남·일본 정치 전언(25567) 비접촉.",
           "source": "t.me/aetherjapanresearch/25568"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "③",
+          "rid": "r-20261001-01",
+          "one": "MU FQ4 피어 프린트(① $54.23B·EPS $33.42). DRAM ASP high-teens(②)는 10/31 SKH 3Q OP·HBM 계약가 창을 대체하지 않음. 수량·비중 변경 아님.",
+          "source": "SEC Ex99.1 · Investing.com FQ4 call transcript"
         }
       ]
     },
@@ -1452,6 +1459,13 @@
           "rid": "r-20260930-09",
           "one": "Edgewater③: 삼성 HBM4 생산 HBM3e 대비 원활·1c 베이스다이 진입. LP4x 지원 CY28까지(SKH는 CY27e EOL). DDR4 증설 없음.",
           "source": "t.me/aetherjapanresearch/25568"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "③",
+          "rid": "r-20261001-01",
+          "one": "MU FQ4 피어 프린트. 삼성 3Q HBM 매출·M/S 창은 그대로. DRAM ASP high-teens는 삼성 계약가 확인이 아님(②). 수량·비중 변경 아님.",
+          "source": "SEC Ex99.1 · Investing.com FQ4 call transcript"
         }
       ]
     },
@@ -1637,13 +1651,15 @@
         "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
         "hbm-packaging/hbm_pkg_company_sk_hynix.html"
       ],
-      "facts": [],
+      "facts": [
+        "companies.MU"
+      ],
       "theses": [
         "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2,T5",
         "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3,T4"
       ],
       "tracked_price": true,
-      "note": "코어 증액 트리거 종목 — 10/1 가이던스 ≥37 정상 · <35 = n-memory-durable 1스트라이크 · TP TD $1,600(CY27 9배) · RBC $1,500",
+      "note": "FQ4 게이트(2026-10-01): non-GAAP EPS 가이던스 $38.15로 ≥37 통과(①). DRAM ASP high-teens·비트 mid-single은 ② 콜. 수량·비중은 사용자. 종전 TP TD $1,600·RBC $1,500.",
       "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
       "watch": [
         {
@@ -1652,6 +1668,13 @@
           "rid": "r-20260930-08",
           "one": "Edgewater③: MU HBM4 적층 이슈·Samex 모색. 4Q 채널 DDR4/5 +15–25%. DRAM 둔화 最快 2H27·NAND mid-CY27. Citi HBM비트 +62%/+69%·S/D−21→−36%(r-14-35 재확인).",
           "source": "t.me/aetherjapanresearch/25568"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "①②",
+          "rid": "r-20261001-01",
+          "one": "FQ4 매출 $54.23B·non-GAAP EPS $33.42·GM 87%·CapEx순액 $10.77B(①). DRAM ASP QoQ high-teens·비트 mid-single(②콜). SCA약정 $32B·RPO ~$150B. HBM은 캘린더 2027 선계약.",
+          "source": "SEC Ex99.1 · Investing.com FQ4 call transcript"
         }
       ]
     },
