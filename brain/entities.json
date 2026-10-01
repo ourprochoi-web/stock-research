@@ -3265,6 +3265,56 @@
           "source": "t.me/meritz_research/44713 · t.me/YeouidoStory2/118007"
         }
       ]
+    },
+    "DELL": {
+      "name": "Dell Technologies",
+      "ticker": "DELL",
+      "market": "US",
+      "layer": "AI infra / rack-scale servers",
+      "business": "랙스케일 AI 서버. 2026-10-01 FT②: JERA·Rhaelm과 치바 $15B/400MW 오프그리드 DC(2028 가동·2029 풀캐파). Apollo 금융. 5년 3–4GW → ~$140B(@$35–45B/GW). Speed-to-Power LNG. MOU·보도. 계약 원문 미개봉.",
+      "business_grade": "②(후보 · 2026-10-01 FT)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261001-tg-25594"
+      ],
+      "tracked_price": false,
+      "note": "정본 테제 페이지 없음. 카드 키 DELL. 비중·집행 아님. SG 4696·beluga 3684는 aether 25594와 동일 FT라 r-20261001-11에 흡수.",
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-11",
+          "one": "FT②(25594): Dell·JERA·Rhaelm 치바 $15B/400MW 오프그리드 DC(2028가동·2029풀캐파)·Apollo·5년 3–4GW→~$140B(@$35–45B/GW)·Speed-to-Power LNG. 중국 외 최대급.",
+          "source": "t.me/aetherjapanresearch/25594 · SG 4696 · beluga 3684"
+        }
+      ]
+    },
+    "CRWV": {
+      "name": "CoreWeave",
+      "ticker": "CRWV",
+      "market": "US",
+      "layer": "AI cloud / neocloud",
+      "business": "AI 클라우드(네오클라우드). 2026-10-01 JPM③ Fully Connected: 2차 +10% 가격인상(선행 +25% 후), Forge·Vera CPU, Cognition Vera Rubin 추론 토큰 최대 4.8x. 단기 $40M/MW는 r-20260926-25 재확인.",
+      "business_grade": "③(후보 · 2026-10-01 JPM)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261001-tg-25593"
+      ],
+      "tracked_price": false,
+      "note": "정본 테제 페이지 없음. name_index 코드는 CRWV.O, 카드 키는 CRWV. 선행 +25%·$40M/MW·비GPU ARR은 r-20260926-25. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "③",
+          "rid": "r-20261001-12",
+          "one": "JPM③ Fully Connected(25593): 2차 +10% 가격인상(선행 +25% 후)·Forge·Vera CPU(비GPU 마진 축)·Cognition Vera Rubin 추론 토큰 최대 4.8x. 단기 $40M/MW는 기존 재확인.",
+          "source": "t.me/aetherjapanresearch/25593"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
