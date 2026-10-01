@@ -1,0 +1,48 @@
+{
+  "symbol": "VST",
+  "shortName": "Vistra Corp.",
+  "currency": "USD",
+  "exchangeName": "NYQ",
+  "regularMarketPrice": 138.35,
+  "regularMarketTime": 1790798403,
+  "fiftyTwoWeekHigh": 217.1,
+  "fiftyTwoWeekLow": 132.66,
+  "chartPreviousClose": 195.92,
+  "regularMarketTime_utc": "2026-09-30T20:00:03+00:00",
+  "drawdown_vs_52w_high_pct": -36.27,
+  "last_daily_closes": [
+    [
+      "2026-09-23",
+      137.97
+    ],
+    [
+      "2026-09-24",
+      137.94
+    ],
+    [
+      "2026-09-25",
+      138.46
+    ],
+    [
+      "2026-09-28",
+      138.02
+    ],
+    [
+      "2026-09-29",
+      140.83
+    ]
+  ],
+  "source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?interval=1d&range=1y",
+  "finviz": {
+    "url": "https://finviz.com/quote.ashx?t=VST",
+    "fetched": "2026-10-01",
+    "last_close": 138.35,
+    "last_close_label": "Sep 30 3:59 PM ET",
+    "pe_ttm": 23.35,
+    "eps_ttm": 5.92,
+    "forward_pe": 13.54,
+    "eps_next_y": 10.22,
+    "fifty_two_week_high": 217.1,
+    "note": "선도 P/E 13.54 = 138.35/10.22. TTM 23.35 ≈ 138.35/5.92. Finviz 화면 라벨. 회사 가이던스 EPS 아님."
+  }
+}

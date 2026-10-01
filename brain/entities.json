@@ -1907,7 +1907,32 @@
         "ai-infra/us_merchant_power_vst_nrg.html#T1"
       ],
       "intake": [
-        "u-20260920-04"
+        "u-20260920-04",
+        "u-20261001-x-vst01",
+        "c-20261001-vst01"
+      ],
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "①",
+          "rid": "r-20261001-02",
+          "one": "① Form4(2026-08-24) CEO James Burke 장내매수(P) 2,000주 @$135=$270k. 취득 후 JAMEB LP 간접 1,139,687주.",
+          "source": "SEC Form4 wk-form4_1787601817"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-02",
+          "one": "② 2026-09-30 종가 $138.35. 52주고 $217.10 대비 −36.3%. TTM P/E 23.35(EPS $5.92) · 선도 13.54(Finviz EPS next Y $10.22).",
+          "source": "Yahoo chart meta · Finviz VST"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "①",
+          "rid": "r-20261001-02",
+          "one": "① 2Q26 Ongoing Ops Adj. EBITDA $1,767M, 전년 대비 +$418M(÷$1,349M=+31%). PR은 30% 이상. Generation +67.7%와 다른 칸.",
+          "source": "PR Newswire 302845874"
+        }
       ],
       "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
       "canonical_page": "ai-infra/us_merchant_power_vst_nrg.html"
