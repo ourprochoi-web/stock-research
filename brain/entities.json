@@ -2862,6 +2862,13 @@
           "rid": "r-20260930-14",
           "one": "② 노보PR(09-21): REIMAGINE5(3상·T2D·60주) CagriSema −12.4% vs 티르제파타이드 5mg −9.1%. 비교는 5mg(최대용량 아님)·대상은 T2D(순수 비만 아님). 경구 위고비는 별건(’25-12).",
           "source": "Novo PR GlobeNewswire 2026-09-21 · X @USAnt_IDEA/2105120894834352255 (프레이밍 ④)"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-18",
+          "one": "② EASD: STEP UP 사후 n=55 — 위고비 7.2/2.4mg 72주 간지방 8.8→3.1%·>5%군 88.5% 정상화. MASH 서사 보강·승인 창 아님. 비중 아님.",
+          "source": "t.me/insidertracking/65131"
         }
       ]
     },
@@ -3263,6 +3270,32 @@
           "rid": "r-20261001-08",
           "one": "메리츠③ 3Q26 Preview: 전자BG 매출 7567억·OP 2263억(OPM 29.9%) 상향 · NV향 ~2773억(+34.7%QoQ, Vera Rubin) · 광모듈 1059억(QoQ 2배+). BUY/TP는 미반영.",
           "source": "t.me/meritz_research/44713 · t.me/YeouidoStory2/118007"
+        }
+      ]
+    },
+    "NBIS": {
+      "name": "Nebius",
+      "ticker": "NBIS",
+      "market": "US",
+      "layer": "AI neo-cloud/추론",
+      "business": "GPU 클라우드·Token Factory",
+      "business_grade": "②(회사 뉴스룸 · 2026-10-01)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261001-tg203707-01",
+        "u-20261001-tg203707-02"
+      ],
+      "tracked_price": false,
+      "note": "정본 테제 페이지 없음. name_index 코드는 NBIS.O, 카드 키는 NBIS. architecture_war T1 언급은 있으나 이번 인수와 비접촉이라 page# 로 라우팅하지 않음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-17",
+          "one": "② 네비우스 Inferize 인수(금액非) — Token Factory에 콜드스타트 단축·예비GPU↓. Eigen/Clarifai 이어 추론 스택 수직화. 비중 아님.",
+          "source": "https://nebius.com/newsroom/nebius-acquires-inferize-to-strengthen-nebius-token-factorys-production-inference-stack"
         }
       ]
     }
