@@ -589,6 +589,13 @@
           "rid": "r-20261001-04",
           "one": "psinvestor③: TOPPAN JV AST 싱가포르 FC-BGA 공장 개소(3개월 조기). ~9.5만㎡·엔지니어 200+·HV 양산 late-2026. Broadcom=TOPPAN 최대 FC-BGA 고객. 기판 병목 완화.",
           "source": "https://x.com/psinvestor/status/2105451419138507143"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-15",
+          "one": "로이터②(IPO 설명서): 앤트로픽 AI인프라 연계 최대 $420억 자금조달. 5년 $1,252억 TPU의 ~1/3·전환 가능. 2027년 최대 컴퓨트 고객 전망. HW+금융 이해상충.",
+          "source": "https://t.me/insidertracking/65127"
         }
       ]
     },
@@ -3085,6 +3092,13 @@
           "rid": "r-20260930-07",
           "one": "로이터②(데일리안): 작년 매출 47%(~$21.6억)가 AMZN·GOOG 클라우드 마켓플레이스 경유(23년 11%→24년 32%→47%). 유통수수료 ~$3.51억(~16%). 투자자=인프라=경쟁자. 고객 2곳 각 12%.",
           "source": "t.me/YeouidoStory2/117996 · Reuters via Dailyan"
+        },
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-15",
+          "one": "로이터②: 브로드컴 최대 $420억 금융(5년 $1,252억 TPU의 ~1/3)·지분전환 가능. 2027년 AVGO 최대 컴퓨트 고객 전망. HW공급+금융 이해상충. 리스 $1,612억과 별개.",
+          "source": "https://t.me/insidertracking/65127"
         }
       ]
     },
@@ -3263,6 +3277,32 @@
           "rid": "r-20261001-08",
           "one": "메리츠③ 3Q26 Preview: 전자BG 매출 7567억·OP 2263억(OPM 29.9%) 상향 · NV향 ~2773억(+34.7%QoQ, Vera Rubin) · 광모듈 1059억(QoQ 2배+). BUY/TP는 미반영.",
           "source": "t.me/meritz_research/44713 · t.me/YeouidoStory2/118007"
+        }
+      ]
+    },
+    "AMZN": {
+      "name": "Amazon / AWS",
+      "ticker": "AMZN",
+      "market": "US",
+      "layer": "클라우드·하이퍼스케일러",
+      "business": "EC2/클라우드·AI 인프라",
+      "business_grade": "②",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "정본 테제 페이지는 만들지 않음. Capacity Block GPU 예약가 관측 카드. 비중·집행 아님.",
+      "intake": [
+        "u-20261001-tg-3686",
+        "u-20261001-tg-25596"
+      ],
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "②③",
+          "rid": "r-20261001-16",
+          "one": "AWS Capacity Blocks 예약 GPU 10/7부터 ~15% 인상. US B300 $14.04→$16.146 · B200 $12.355→$14.208 · H100 $5.191→$5.97/hr. OD·SP 불변. WF③: 4분기 연속·YTD +40~75%.",
+          "source": "https://t.me/beluga_investment/3686 · https://t.me/aetherjapanresearch/25596"
         }
       ]
     }
