@@ -1,0 +1,13 @@
+네비우스, Inferize 인수로 Token Factory 추론 효율화 강화
+
+: 네비우스가 추론 최적화 스타트업 Inferize를 인수. Inferize의 기술과 엔지니어링 팀은 관리형 추론 플랫폼 Nebius Token Factory에 합류하며, 인수 금액은 비공개
+
+: Inferize의 핵심 기술은 대규모 AI 모델의 콜드 스타트 시간을 단축해 수요 증가 시 GPU 용량을 빠르게 확장하는 것. 2026년 1월 설립돼 3개월 만에 프로토타입을 구축한 초기 스타트업
+
+: 모델 로딩 과정에서 발생하는 GPU 유휴시간과 SLA 충족을 위해 상시 확보해야 하는 예비 GPU를 줄여 GPU 활용률 및 토큰 경제성 개선
+
+: 네비우스는 앞서 Eigen AI를 통해 모델, 커널, 시스템 최적화를 확보하고, Clarifai 핵심 팀 및 기술을 통해 추론·컴퓨팅 오케스트레이션 역량을 추가. 이번 Inferize 인수로 탄력적 GPU 스케일링까지 추론 스택을 확대
+
+: 네비우스는 GPU 공급을 넘어 모델·커널 최적화부터 오케스트레이션, GPU 용량 관리까지 아우르는 수직 통합형 추론 플랫폼 구축을 지속
+
+https://nebius.com/newsroom/nebius-acquires-inferize-to-strengthen-nebius-token-factorys-production-inference-stack
