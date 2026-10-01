@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30",
+ "generated": "2026-10-01",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -933,15 +933,15 @@
   "두산": {
    "code": "000150",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "000150",
+   "falsifier": "정본 서술은 냉각·광 계층 T5. 브로커 매수·목표가는 아카이브하지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
-    "ai-infra/ai_power_top5_picks.html": [
-     "T1"
-    ],
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
+    ],
+    "ai-infra/ai_power_top5_picks.html": [
+     "T1"
     ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
@@ -3979,8 +3979,8 @@
   "Constellation Energy": {
    "code": "CEG.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "CEG",
+   "falsifier": "정본 테제 페이지 없음. name_index 코드는 CEG.O, 카드 키는 CEG. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "market/us_7axis_cross_valuation.html": [
@@ -4726,7 +4726,7 @@
    "market": "US",
    "entity": "MU",
    "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
-   "facts": 0,
+   "facts": 18,
    "theses": {
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",

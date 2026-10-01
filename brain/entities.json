@@ -3196,6 +3196,61 @@
           "source": "HMSEC Megatrend #291"
         }
       ]
+    },
+    "CEG": {
+      "name": "Constellation Energy",
+      "ticker": "CEG",
+      "market": "US",
+      "layer": "power/nuclear",
+      "business": "미국 원전 운영. 2026-10-01 보도(②): Amazon과 Calvert Cliffs 20년 PPA 총 690MW(2030–32 증설 190MW 포함). 메릴랜드 인프라 30억달러+ 지원 서사. 계약 원문 미개봉.",
+      "business_grade": "②(후보 · 2026-10-01)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261001-tg-k3",
+        "c-20261001-t12"
+      ],
+      "tracked_price": false,
+      "note": "정본 테제 페이지 없음. name_index 코드는 CEG.O, 카드 키는 CEG. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "②",
+          "rid": "r-20261001-07",
+          "one": "② TG: CEG–AMZN Calvert Cliffs 20년 PPA 총 690MW(증설 190MW 포함 2030–32). MD 인프라 $30억+ 서사. 비중 아님.",
+          "source": "t.me/insidertracking/65067 · t.me/Samsung_Global_AI_SW/4688"
+        }
+      ]
+    },
+    "000150": {
+      "name": "두산",
+      "ticker": "000150",
+      "market": "KR",
+      "layer": "지주 · 전자BG(CCL·광모듈)",
+      "business": "전자BG는 CCL·광모듈. 2026-10-01 메리츠③ 3Q26 Preview(추정): 전자BG 매출 7,567억(+72% YoY)·OP 2,263억(OPM 29.9%)·NV향 약 2,773억(+34.7% QoQ)·광모듈 1,059억(QoQ 2배+). 확정 실적 아님.",
+      "business_grade": "③(후보 · 2026-10-01 메리츠)",
+      "status": "후보",
+      "pages": [
+        "ai-infra/kr_cooling_optical_layer.html"
+      ],
+      "theses": [
+        "ai-infra/kr_cooling_optical_layer.html#T5"
+      ],
+      "intake": [
+        "u-20261001-tg-k4"
+      ],
+      "tracked_price": false,
+      "note": "정본 서술은 냉각·광 계층 T5. 브로커 매수·목표가는 아카이브하지 않음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "③",
+          "rid": "r-20261001-08",
+          "one": "메리츠③ 3Q26 Preview: 전자BG 매출 7567억·OP 2263억(OPM 29.9%) 상향 · NV향 ~2773억(+34.7%QoQ, Vera Rubin) · 광모듈 1059억(QoQ 2배+). BUY/TP는 미반영.",
+          "source": "t.me/meritz_research/44713 · t.me/YeouidoStory2/118007"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

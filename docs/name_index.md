@@ -1,6 +1,6 @@
-# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-09-30)
+# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-10-01)
 
-추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 123 · facts 있음 79.
+추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 125 · facts 있음 80.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -58,7 +58,7 @@
 | KR | 덕산네오룩스 | 213420 | — | — | — |
 | KR | 동성화인텍 | 033500 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 동진쎄미켐 | 005290 | — | — | — |
-| KR | 두산 | 000150 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 · robot_kr_16_valuation#T2 | — |
+| KR | 두산 | 000150 | ✓ 정본 서술은 냉각·광 계층 T5. 브로커 매수·목표가는 아카이브하지 않음. 비중·집행 아님. | kr_cooling_optical_layer#T5 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 · robot_kr_16_valuation#T2 | — |
 | KR | 두산로보틱스 | 454910 | — | kr_cooling_optical_layer#T5 · robot_kr_16_valuation#T2 | — |
 | KR | 두산에너빌리티 | 034020 | — | ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 18 |
 | KR | 드림시큐리티 | 203650 | — | — | — |
@@ -233,7 +233,7 @@
 | US | Coinbase | COIN.O | — | payments_company_robinhood#T4 | — |
 | US | Comfort Systems | FIX | — | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T3 · us_ai_adjacent_sectors#T2,T3 · us_epc_datacenter_build#T1 | — |
 | US | ConocoPhillips | COP | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
-| US | Constellation Energy | CEG.O | — | us_7axis_cross_valuation#T2 | — |
+| US | Constellation Energy | CEG.O | ✓ 정본 테제 페이지 없음. name_index 코드는 CEG.O, 카드 키는 CEG. 비중·집행 아님. | us_7axis_cross_valuation#T2 | — |
 | US | CoreWeave | CRWV.O | — | ai_korea_g3_sovereign_ai#T1 · ai_value_chain_guide_v2#T4 · us_7axis_cross_valuation#T2 | — |
 | US | Corning | GLW | ✓  | us_ai_adjacent_cross_valuation#T11,T5 · us_ai_adjacent_sectors#T2 · us_vertiv_corning_deep#T1,T2,T3,T4,T5,T6,T7 · kr_drawdown_2026#T6,T7 | — |
 | US | Credo Technology | CRDO.O | ✓  | optical_interconnect_layer#T2,T5 · optical_valuechain_9#T5 | 17 |
@@ -275,7 +275,7 @@
 | US | Matador Resources | MTDR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | MaxLinear | MXL.O | ✓ 2026-09-23 아카이브 공백 메움 — WEB/SEC 라벨 필수. 인프라 50%(Q2)이나 전사 브로드밴 | — | 16 |
 | US | Meta Platforms | META.O | ✓  | — | — |
-| US | Micron | MU.O | ✓ FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례 | hbm_pkg_theme_memory_cycle#T1,T2,T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · kr_bio_china_competition#T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_substrate#T1,T4 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T6 · us_payment_networks#T1 · 13f_2026q2#T3,T4 | — |
+| US | Micron | MU.O | ✓ FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례 | hbm_pkg_theme_memory_cycle#T1,T2,T5 · hbm_pkg_company_sk_hynix#T1,T3,T4 · kr_bio_china_competition#T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_substrate#T1,T4 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T2,T4 · us_7axis_cross_valuation#T3,T4 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T6 · us_payment_networks#T1 · 13f_2026q2#T3,T4 | 18 |
 | US | Microsoft | MSFT.O | — | ai_value_chain_guide_v2#T2,T5 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T2,T3 | — |
 | US | Moderna | MRNA.O | — | us_7axis_cross_valuation#T1 | — |
 | US | NRG Energy | NRG | ✓ 2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「 | us_merchant_power_vst_nrg#T1 · us_7axis_cross_valuation#T3 | 14 |
