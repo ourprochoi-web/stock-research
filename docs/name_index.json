@@ -4781,10 +4781,14 @@
   "Microsoft": {
    "code": "MSFT.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "MSFT",
+   "falsifier": "Cloud GM이 66%에서 추가 급락 · ROIC 30% 하회 · FY27 A&I OPM이 50%대를 크게 하회",
    "facts": 0,
    "theses": {
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
+     "T3"
+    ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T2",
      "T5"

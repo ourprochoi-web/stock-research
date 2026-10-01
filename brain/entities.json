@@ -3265,6 +3265,38 @@
           "source": "t.me/meritz_research/44713 · t.me/YeouidoStory2/118007"
         }
       ]
+    },
+    "MSFT": {
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "market": "US",
+      "layer": "하이퍼스케일 클라우드·소프트웨어",
+      "business": "Azure·Microsoft 365·생산성. 2026-10-01 JPM③은 FY27 보고체계를 A&I/D&C로 재편하고 Microsoft Cloud ROIC를 하우스 모델로 추정(Cloud 투하자본≈전사 80%·OPM≈전사). 공시 ROIC가 아니다.",
+      "business_grade": "③(후보 · 2026-10-01 JPM 경유)",
+      "status": "후보",
+      "pages": [
+        "national-strategy/ns_bigtech_capex_roi.html",
+        "ai-sw/ai_sw_company_msft_pltr.html"
+      ],
+      "theses": [
+        "national-strategy/ns_bigtech_capex_roi.html#T1",
+        "national-strategy/ns_bigtech_capex_roi.html#T3"
+      ],
+      "intake": [
+        "u-20261001-tg234232-01"
+      ],
+      "tracked_price": true,
+      "falsifier": "Cloud GM이 66%에서 추가 급락 · ROIC 30% 하회 · FY27 A&I OPM이 50%대를 크게 하회",
+      "note": "name_index 코드는 MSFT.O, 카드 키는 MSFT. ai_sw_company_msft_pltr 페이지는 있으나 이 관측의 착지는 capex ROI T1·T3. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-01",
+          "grade": "③",
+          "rid": "r-20261001-21",
+          "one": "③ JPM: MSFT Cloud ROIC FY26≈37%→FY27–31E 32–33% 안정·A&I OPM>50%. CapEx/매출 FY27 50%·FY28 56%. 피어 ROIC MSFT34/ORCL13. 부담→수익 논점. 비중 아님.",
+          "source": "t.me/aetherjapanresearch/25599"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
