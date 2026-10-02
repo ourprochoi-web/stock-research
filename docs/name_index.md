@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-10-02)
 
-추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 126 · facts 있음 80.
+추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 128 · facts 있음 80.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -306,7 +306,7 @@
 | US | SanDisk | SNDK.O | — | ai_sw_company_msft_pltr#T3 · q2_2026_earnings_overview#T1,T2 · us_7axis_cross_valuation#T3,T4 · node_screener_hbm_scoreboard#T2,T5 · us_payment_networks#T1 | 5 |
 | US | Schrödinger | SDGR | ✓ 정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html. 2Q26 | ai_bio_investment_map#T2,T3 | — |
 | US | Scorpio Tankers | STNG.K | — | — | 4 |
-| US | Seagate | STX.O | — | us_vertiv_corning_deep#T7 | — |
+| US | Seagate | STX.O | ✓ 정본 페이지 없음. Vertiv T7은 피어 이름뿐이라 이번 HDD 캐파 주장은 라우팅하지 않음. Toshi | us_vertiv_corning_deep#T7 | — |
 | US | Semtech | SMTC.O | ✓  | optical_interconnect_layer#T3 · optical_valuechain_9#T4 | 19 |
 | US | SentinelOne | S | ✓  | cyber_ai_security#T2,T3 | 9 |
 | US | ServiceNow | NOW | — | ai_sw_investment_map#T5 · ai_sw_overview#T1 | — |
@@ -329,7 +329,7 @@
 | US | Visa | V | — | us_ai_adjacent_cross_valuation#T5 · us_ai_adjacent_sectors#T2,T6,T7 · kr_drawdown_2026#T6 · us_payment_networks#T1 | — |
 | US | Vistra | VST | ✓ 2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) —  | us_merchant_power_vst_nrg#T1 · ai_dc_miner_conversion#T2 · us_power_regulated_vs_merchant#T1 · kr_drawdown_2026#T8 · us_7axis_cross_valuation#T2 · 13f_2026q2#T5 | 13 |
 | US | Vulcan Materials | VMC | — | — | — |
-| US | Western Digital | WDC.O | — | — | — |
+| US | Western Digital | WDC.O | ✓ 정본 페이지 없음. Toshiba JP 카드 없음. NAND/SanDisk 사이클과 이 HDD 주장은 다른  | — | — |
 | US | Williams | WMB | ✓ ⚠ 09-15 정정(5사 편 C1 · r-20260913-09): TTM FCF −$1.08억(수익률 −0. | us_energy_five#T2,T6 · us_energy_hegemony_17#T1,T2 · us_ai_adjacent_sectors#T2 | 10 |
 | US | X-Energy | XE.O | — | kr_drawdown_2026#T8 | — |
 | US | Xcel Energy | XEL.O | — | — | — |
