@@ -7825,7 +7825,8 @@
       "canonical_page": "hbm-packaging/hbm_pkg_company_samsung.html",
       "intake": [
         "c-20260920-f08",
-        "u-20260920-26"
+        "u-20260920-26",
+        "u-20261002-tg-118092"
       ],
       "metrics": {
         "hbm_wafer_input_2026": {
@@ -7910,6 +7911,32 @@
           "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
           "page": "hbm-packaging/hbm_pkg_company_samsung.html",
           "note": "🔑 세 번째 독립 출처다 — 이세철 인터뷰(③ 09-20) · 전시 실물 사진(② 09-20) · 이 기사(② 09-20). 이제 ① 에 가깝다. HBM4E 12단 샘플은 2026-05 엔비디아 등에 제공"
+        },
+        "hbm4_ask_usd_per_gb": {
+          "value": "4대 중후반",
+          "unit": "USD/Gb",
+          "basis": "ask · 미타결 · 업계 전언",
+          "asof": "2026-10-02",
+          "num": "삼성 HBM4 내년 공급 제시가",
+          "den": "1Gb",
+          "grade": "②",
+          "source": "매일경제 박소라·이덕주 2026-10-02 「[단독] 삼성, 내년 HBM4 가격 3배 높인다」 https://www.mk.co.kr/news/business/12167164 · intake/files/telegram/2026-10-02/yeouido_118092_mk.md",
+          "intake": "u-20261002-tg-118092",
+          "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+          "note": "ask이지 타결가 아님. HBM3E 약 1.5달러 대비 ≥3×는 제시 배수. 타결이 Mirae r-09 ~2× 쪽으로 압축될 수 있음. 단일 호가로 역산하지 않음."
+        },
+        "hbm3e_usd_per_gb": {
+          "value": 1.5,
+          "unit": "USD/Gb",
+          "basis": "업계 · 현 주력 안팎",
+          "asof": "2026-10-02",
+          "num": "HBM3E 1Gb당 가격",
+          "den": "1Gb",
+          "grade": "②",
+          "source": "매일경제 박소라·이덕주 2026-10-02 「[단독] 삼성, 내년 HBM4 가격 3배 높인다」 https://www.mk.co.kr/news/business/12167164 · intake/files/telegram/2026-10-02/yeouido_118092_mk.md",
+          "intake": "u-20261002-tg-118092",
+          "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+          "note": "기사 문구는 「1.5달러 안팎」. 공시 확정가 아님."
         }
       }
     },
