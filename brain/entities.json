@@ -1574,6 +1574,13 @@
           "rid": "r-20260930-11",
           "one": "미즈호③: NM 대법원 일시 인허가 중단 해제→주피터 기존 일정. 연방 파이프라인 결정 12/3.",
           "source": "t.me/insidertracking/65024 · Mizuho"
+        },
+        {
+          "date": "2026-10-02",
+          "grade": "②",
+          "rid": "r-20261002-17",
+          "one": "② CEO(Bloomberg·Yahoo 10-01, TG 8352): Oracle 지연에도 가이던스 재확인. Brookfield $5B→$25B는 금융파트너≠최종고객. 박스 fungible(운송 중 전용).",
+          "source": "t.me/pikachu_aje/8352 · Yahoo 2026-10-01 · TheStreet 2026-09-30"
         }
       ]
     },
@@ -3343,6 +3350,39 @@
           "rid": "r-20261002-06",
           "one": "② 디일렉: LG엔솔 46100(46×100)→벤츠 차세대. 폴란드 Wrocław 셀+BMA검토. 공급28·라인27. 4680테슬라 무산. OC9→양산사양. 회사 고객/BMA 미확정. 비중 아님.",
           "source": "t.me/YeouidoStory2/118082 · thelec.kr idxno=63124"
+        }
+      ]
+    },
+    "PLTR": {
+      "name": "Palantir",
+      "ticker": "PLTR",
+      "market": "US",
+      "layer": "AI 소프트웨어 · 소버린 OS",
+      "business": "AIP·Foundry·Ontology 기반 Sovereign AI OS. 정부·상업 소프트웨어. 모듈형 DC 파트너(Armada)는 2026-10-01 Business Wire 재인쇄.",
+      "business_grade": "②(후보 · 2026-10-02 TG·Business Wire 재인쇄 · 10-K 미대조)",
+      "status": "후보",
+      "pages": [
+        "ai-sw/ai_sw_company_msft_pltr.html"
+      ],
+      "facts": [],
+      "theses": [
+        "ai-sw/ai_sw_company_msft_pltr.html#T1",
+        "ai-sw/ai_sw_company_msft_pltr.html#T2",
+        "ai-sw/ai_sw_company_msft_pltr.html#T3",
+        "ai-sw/ai_sw_company_msft_pltr.html#T4"
+      ],
+      "intake": [
+        "u-20261002-tg-65208"
+      ],
+      "tracked_price": false,
+      "note": "정본 페이지는 MSFT와 공유. 엔티티 카드가 없어 후보로 연다. Armada 카드는 만들지 않음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-02",
+          "grade": "②",
+          "rid": "r-20261002-16",
+          "one": "② TG 65208: PLTR–Armada 최초 Certified Modular DC Partner. Sovereign AI OS·네모트론·에어갭/독립망. Business Wire 재인쇄(10-01)와 같은 방향.",
+          "source": "t.me/insidertracking/65208 · Business Wire 2026-10-01"
         }
       ]
     }
