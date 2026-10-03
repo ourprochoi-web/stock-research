@@ -5373,8 +5373,8 @@
   "Seagate": {
    "code": "STX.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "STX",
+   "falsifier": "정본 페이지 없음. Vertiv T7은 피어 이름뿐이라 이번 HDD 캐파 주장은 라우팅하지 않음. Toshiba JP 카드 없음.",
    "facts": 0,
    "theses": {
     "ai-infra/us_vertiv_corning_deep.html": [
@@ -5830,8 +5830,8 @@
   "Western Digital": {
    "code": "WDC.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "WDC",
+   "falsifier": "정본 페이지 없음. Toshiba JP 카드 없음. NAND/SanDisk 사이클과 이 HDD 주장은 다른 층.",
    "facts": 0,
    "theses": {},
    "aliases": [],
