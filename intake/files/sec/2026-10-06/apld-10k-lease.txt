@@ -1,0 +1,24 @@
+Applied Digital FY2026 Form 10-K — Contracted Lease Portfolio excerpt
+url: https://www.sec.gov/Archives/edgar/data/1144879/000114487926000048/apld-20260531.htm
+period ended: 2026-05-31
+filed: 2026-07-29 (Last-Modified on the filing response)
+fetched: 2026-10-06 (www.sec.gov, User-Agent with contact)
+
+"As of May 31, 2026, we had executed long-term leases representing approximately 1,410 MW of contracted critical IT load across five campuses, representing approximately $36.2 billion of total contracted revenue over the initial 15-year base lease terms. Each lease is a direct, long-term agreement with CoreWeave or an investment-grade hyperscaler, is structured on a take-or-pay basis, and is non-cancellable, such that a termination for convenience would require payment of the full remaining contractual value."
+
+Table (Campus | Anchor tenant | Critical IT | Term | Contracted revenue | Expected delivery):
+Polaris Forge 1 | CoreWeave | 400 MW | 15 years | ~$11.0B | 2H25-1H27
+Polaris Forge 2 | Investment-grade hyperscaler | 200 MW | 15 years | ~$5.0B | 2H26-1H27
+Polaris Forge 3 | High investment-grade hyperscaler | 300 MW | 15 years | ~$7.5B | 2H27-2H28
+Delta Forge 1 | High investment-grade hyperscaler | 300 MW | 15 years | ~$7.5B | 1H27-1H28
+Delta Forge 2 | High investment-grade hyperscaler | 210 MW | 15 years | ~$5.2B | 1H28
+Total / Portfolio | | 1,410 MW | | ~$36.2B | 2H25-2H28
+
+Revenue is the initial 15-year base term and excludes renewal options.
+Derived straight-line $/MW-year (revenue / MW / 15), not a 10-K line:
+CoreWeave 11.0e9/400/15 = $1,833,333
+PF2 5.0e9/200/15 = $1,666,667
+PF3 7.5e9/300/15 = $1,666,667
+DF1 7.5e9/300/15 = $1,666,667
+DF2 5.2e9/210/15 = $1,650,794
+Hyperscaler blend 25.2e9/1010/15 = $1,663,366

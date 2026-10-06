@@ -187,6 +187,13 @@
           "rid": "r-20260927-02",
           "one": "노무라 Fig.10(③·X 2차): 상류 전기칩(DSP·TIA·드라이버)에 Marvell. 층 배치 재확인.",
           "source": "X @pequityresearch/2103910976475345032"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "①",
+          "rid": "r-20261007-02",
+          "one": "① 10-06 웹캐스트: 커스텀 FY29 $120억+(종전 $100억+). FY31 중간 인터커넥트 $375억·커스텀 약 $300억. 8-K 워런트 동일. 손익 라인·GAAP 세그먼트는 열림.",
+          "source": "investor day webcast 2026-10-06 · SEC 8-K 2026-08-18"
         }
       ]
     },
@@ -300,8 +307,8 @@
       "name": "Fabrinet",
       "market": "US",
       "layer": "모듈 · 위탁조립(EMS)",
-      "business": "위탁조립(EMS). 남의 설계를 태국에서 조립·검사. 반도체사가 아니다",
-      "business_grade": "②(사업보고서 미대조 · 2026-09-13)",
+      "business": "① FY26 10-K: 광 패키징·정밀광학 EMS. 매출 $46.4억(+35.7%), DC 47.9%·통신인프라 33.3%, GM 12.0%. 설계·생산은 태국. 현금+단기투자 $875.1M·부채 없음. 08-17 PR Q1 FY27 매출 $13.75–14.25억.",
+      "business_grade": "①(FY26 10-K 2026-08-18 · Q4 PR 2026-08-17)",
       "pages": [
         "ai-infra/optical_valuechain_9.html"
       ],
@@ -320,7 +327,16 @@
       "theses": [
         "ai-infra/optical_valuechain_9.html#T1"
       ],
-      "tracked_price": false
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "①/③",
+          "rid": "r-20261007-01",
+          "one": "③ RD 소프트와치 + ① FY26 $46.4억(+35.7%)·DC 47.9%/통신 33.3%·Cisco 19.9%·NVDA 16.3%(FY25 27.6%)·Nokia 10.7%·AMZN 10.5%·GM 12.0%·태국·순현금 $8.751억. Q1 $13.75–14.25억(08-17).",
+          "source": "x.com/returndriver/2107320229756100743 · SEC fn-20260626 · fn-2026811xex991"
+        }
+      ]
     },
     "300308.SZ": {
       "name": "InnoLight",
@@ -625,6 +641,13 @@
           "rid": "r-20261002-23",
           "one": "MS③ NVDA 반도체 최선호 재선정·루빈 10월 매출RR $80B·전력下 GW당 우위(TG 65211).",
           "source": "t.me/insidertracking/65211"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "③",
+          "rid": "r-20261006-04",
+          "one": "TrendForce③(09-21 요약): 루빈 램프 2027년 이연 · HBM4 수율 병목 · 블랙웰 중심 출하 지속. 패킷 2차 인용으로는 4Q26~1Q27 점진 램프.",
+          "source": "TrendForce RP260921NC3"
         }
       ],
       "intake": [
@@ -1817,6 +1840,13 @@
           "rid": "r-20261002-03",
           "one": "② Asiae/Counterpoint: 26Q2 DRAM매출점유 삼성38%·SKH25%(−4%p)·MU24%(+2%p·격차1%p)·CXMT10%. 리드문 MU/SKH 스왑→본문. 비중 아님.",
           "source": "Asiae 277/0005824071 · t.me/YeouidoStory2/118079"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "③",
+          "rid": "r-20261006-03",
+          "one": "MS③(10-05 로이터): 전력 병목으로 배치가 밀리면 인도 연기·취소가 메모리·광부터 닿는다. NVDA·AVGO 2027년은 안전. 수요 부정이 아니라 시점 위험이다. LTA take-or-pay가 실제 집행되는지 시험할 경로다.",
+          "source": "Reuters 2026-10-05 · StreetInsider/Investing"
         }
       ]
     },
@@ -2083,6 +2113,13 @@
           "rid": "r-20261001-02",
           "one": "① 2Q26 Ongoing Ops Adj. EBITDA $1,767M, 전년 대비 +$418M(÷$1,349M=+31%). PR은 30% 이상. Generation +67.7%와 다른 칸.",
           "source": "PR Newswire 302845874"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "①/②",
+          "rid": "r-20261006-05",
+          "one": "DOE ①/② 42억$ 조건부 대출 · 페리·데이비스-베시·비버밸리 합계 신규 433MW(①) — 발전소별 213/80/140MW는 보도(②) · 약 4GW 유지·20년 연장",
+          "source": "energy.gov 2026-10-05"
         }
       ],
       "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
@@ -2304,6 +2341,20 @@
           "rid": "r-20261002-12",
           "one": "③미래HV: SEMC 기판26–28년 9~10조(공시6.8조+부산·인프라). FC-BGA부족 27y21.7→28y32.6. 공급제약~2032. 6.8조는기존흡수. TP아님.",
           "source": "미래에셋 House View 2026.10.1 · 박준서"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "①/②",
+          "rid": "r-20261006-13",
+          "one": "① DART 10-06: MLCC 2,856억(USD 2.1024억×1,358.50)=FY25 연결매출 11.31조의 2.5%. 2027년 1년. 상대·단가 비공개. AI서버·6번째·3.9조는 회사 발표(②).",
+          "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261006800130"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "③",
+          "rid": "r-20261006-15",
+          "one": "③ 10-06 머니투데이: 유리기판 100×100㎜가 패키지 검증에 진입. 기사 문장은 「2027년말 유기기판 생산라인」. 그때 가동이면 매출은 2028년 이후. 엔비디아 2년 요청은 전언.",
+          "source": "https://n.news.naver.com/mnews/article/008/0005422748"
         }
       ]
     },
@@ -2890,8 +2941,8 @@
       "name": "Celestica",
       "market": "US",
       "layer": "EMS·OCS/모듈 조립(Nomura Fig.10)",
-      "business": "EMS·광모듈과 OCS 조립. 노무라 Fig.10은 OCS 중류에 둔다(사업보고서 미대조).",
-      "business_grade": "③(Nomura 맵·사업보고서 미대조)",
+      "business": "① FY25 10-K: CCS 74%(통신 네트워킹·스위치·HPS 41%)와 ATS. HPS는 맞춤 하드웨어 플랫폼. 자재는 단기 PO. 07-27 PR FY26 가이던스 매출 $205억·adj EPS $11.30·FCF $6억.",
+      "business_grade": "①(FY25 10-K · 2026-07-27 PR)",
       "status": "후보",
       "pages": [],
       "theses": [],
@@ -2910,6 +2961,13 @@
           "rid": "r-20260927-03",
           "one": "노무라 Fig.10 OCS 칸 — 같은 칸의 LITE·COHR 는 자기 제품, CLS 는 조립(EMS) → optical T1 EMS 쪽. 이미 브레인에 있음: JPM 09-18 OpenAI 랙 1세대 단독·저마진 · $3B 증자 운전자본 · 드러켄밀러 2Q 청산 0.28%",
           "source": "intake/files/optical/2026-09-27/nomura-scale-across.jpg"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "①/③",
+          "rid": "r-20261007-01",
+          "one": "③ RD 소프트와치 + ① FY25 $123.9억(+28%)·CCS 74%/HPS 41%·가이던스 $205억·EPS $11.30·FCF $6억(07-27). 상위10 79%·단기 PO. CapEx·IR Day 미확인. 노무라③·드러켄밀러 청산 유지.",
+          "source": "x.com/returndriver/2107320229756100743 · SEC cls-20251231 · cls-20260630pr"
         }
       ]
     },
@@ -3323,6 +3381,13 @@
           "rid": "r-20261002-30",
           "one": "Claude 中 그레이마켓 — 수천~만 리셀러·역프록시·KYC/USDT/$200 Max · 6사 증류 확인 · 단속↔우회 · 페이퍼社 · 민감데이터 주장 후 CN 조사(TG Samsung_AI_SW 4704).",
           "source": "t.me/Samsung_Global_AI_SW/4704"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "②",
+          "rid": "r-20261006-09",
+          "one": "② The Information(양사 미확인): 메타 Claude Code 6만→3만, MS 내부 전망 −1/3+(월 $10만→$1만). 매출 ~25%가 고객 2곳. 「반대편: Copilot 경유 연환산 $20억+」",
+          "source": "t.me/Samsung_Global_AI_SW/4717 · the-decoder.com 2026-10-05"
         }
       ]
     },
@@ -3453,6 +3518,13 @@
           "rid": "r-20261005-06",
           "one": "③ JPM 투어 중계(회사 공시 아님): 2028년까지 개폐기 생산능력을 3배로 늘릴 계획이고, 그 증설은 수주가 뒷받침한다. 유타 배전반 수주와 별개.",
           "source": "t.me/aetherjapanresearch/25635 · JPM Sam Edmunds 투어"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "①+②",
+          "rid": "r-20261006-07",
+          "one": "① 09-22 유타 시설자금 $55M(761억) · ① 반기 청주 가동률 96.4% · ② 수주목표 4→6.5조·상반기 북미 DC 1.2조. 가동 '내년 초'(②)와 HMSEC③ '2H27'(r-20260930-20)이 충돌.",
+          "source": "DART rcpNo 20260922800127 · sedaily 850335 · n.news.naver.com/article/648/0000051325"
         }
       ]
     },
@@ -3468,7 +3540,9 @@
       "theses": [],
       "intake": [
         "u-20261001-tg-k3",
-        "c-20261001-t12"
+        "c-20261001-t12",
+        "c-20261006-ceg-google",
+        "c-20261006-google-nuclear"
       ],
       "tracked_price": false,
       "note": "정본 테제 페이지 없음. name_index 코드는 CEG.O, 카드 키는 CEG. 비중·집행 아님.",
@@ -3479,6 +3553,13 @@
           "rid": "r-20261001-07",
           "one": "② TG: CEG–AMZN Calvert Cliffs 20년 PPA 총 690MW(증설 190MW 포함 2030–32). MD 인프라 $30억+ 서사. 비중 아님.",
           "source": "t.me/insidertracking/65067 · t.me/Samsung_Global_AI_SW/4688"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "①",
+          "rid": "r-20261006-18",
+          "one": "① Google 20년 PPA 890MW 업레이트(11기·$43억+·첫 2028·2032말 완료) + 15년 2.7GW 공급(발전원 미지정). PJM BYOP 대응. 가격 비공개. 프리마켓 +7.5%(③).",
+          "source": "https://www.constellationenergy.com/news/2026/10/google-and-constellation-announce-landmark-agreement-to-bring-890-mw-of-new-nuclear-capacity-to-pjm-grid.html · https://blog.google/company-news/why-were-backing-americas-existing-nuclear-plants/"
         }
       ]
     },
@@ -3535,7 +3616,8 @@
         "energy/energy_battery_valuechain_update.html#T2"
       ],
       "intake": [
-        "u-20261002-tg-118082"
+        "u-20261002-tg-118082",
+        "c-20261006-lges-dsx"
       ],
       "tracked_price": false,
       "note": "46100·벤츠·폴란드 BMA는 ②·미확정. 비중 아님.",
@@ -3546,6 +3628,13 @@
           "rid": "r-20261002-06",
           "one": "② 디일렉: LG엔솔 46100(46×100)→벤츠 차세대. 폴란드 Wrocław 셀+BMA검토. 공급28·라인27. 4680테슬라 무산. OC9→양산사양. 회사 고객/BMA 미확정. 비중 아님.",
           "source": "t.me/YeouidoStory2/118082 · thelec.kr idxno=63124"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "①/②",
+          "rid": "r-20261006-16",
+          "one": "① 09-22 자사 보도: BESS가 엔비디아 DSX Ready 인증(부하 평활·전압 라이드스루). 기사②의 필수 지정·테슬라 명단·77% 성장은 수주가 아니다.",
+          "source": "news.lgensol.com/5294 · docs.nvidia.com DSX v2.0 2026-08-19"
         }
       ]
     },
@@ -3851,6 +3940,39 @@
           "rid": "r-20261005-02",
           "one": "Project Star 최종조건에 두산 GT 의무사용·우선공급 없음. GE Vernova·지멘스에너지·미쓰비시파워와 공개입찰(③ 호스트).",
           "source": "https://x.com/ReturnDriver/status/2106562385821806905"
+        }
+      ]
+    },
+    "APLD": {
+      "name": "Applied Digital Corp.",
+      "ticker": "APLD",
+      "market": "NASDAQ",
+      "layer": "AI/HPC 데이터센터 개발·임대(US)",
+      "business": "① 10-K FY26: 5개 캠퍼스 1,410MW critical IT 임대 · 계약매출 약 $36.2B(15년) · 인도 2H25~2H28 · take-or-pay·해지 불가 · 임차인 코어위브(400MW) + 투자등급 하이퍼스케일러",
+      "business_grade": "①(10-K 2026-07-29)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261006-x-apld",
+        "c-20261006-apld10k",
+        "c-20261006-apld-finland"
+      ],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-10-06",
+          "grade": "①",
+          "rid": "r-20261006-01",
+          "one": "① 10-K: 1,410MW·약 $36.2B(15년)·5개 캠퍼스. 코어위브 400MW $11.0B, 하이퍼스케일러 1,010MW $25.2B. MW·년당 $1.83M vs ~$1.66M [계산]. FQ1 실적은 10-07(미 동부) 장 마감 후(패킷 기준).",
+          "source": "SEC 10-K apld-20260531.htm"
+        },
+        {
+          "date": "2026-10-06",
+          "grade": "①",
+          "rid": "r-20261006-17",
+          "one": "① 10-06 IR: 핀란드 잠재 전력 최대 1GW. 첫 미국 밖. 초기 전력 2028 예상. 하이퍼스케일러 논의 중, 임차 공시 없음. 10-K 1,410MW 계약과 별개.",
+          "source": "ir.applieddigital.com press detail/162"
         }
       ]
     }

@@ -1,0 +1,7 @@
+NVIDIA DSX Facilities Infrastructure Reference Design Overview, fetched 2026-10-06.
+https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview
+Source line on the page: NVIDIA DSX Facilities Infrastructure Design Guide v2.0, August 19, 2026.
+
+BESS is a named pin in the reference design, next to CDUs. The BESS section says AI loads are dynamic while the grid and generators serve steady loads, and in this reference site BESS sits on the 34.5 kV switchgear bus as a controllable buffer between them. On-premises generation, if used, and BESS share that bus.
+Listed functions: facility-level buffer, abnormal-event response, bridge power, and grid dispatchability.
+Applicability and sizing are deployment-specific and evaluated case-by-case. The page does not say BESS is mandatory at every site, does not date a September 22 revision, and does not name LG Energy Solution, Tesla, or Hitachi Energy.
