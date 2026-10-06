@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-10-05)
 
-추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 126 · facts 있음 80.
+추적 350개 · 테제가 걸린 이름 203 · 엔티티 있음 127 · facts 있음 80.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -207,7 +207,7 @@
 | US | Airbnb | ABNB.O | — | — | — |
 | US | Alibaba | BABA | ✓ 2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_val | — | — |
 | US | Alphabet | GOOGL.O | — | ai_value_chain_guide_v2#T1 · us_power_regulated_vs_merchant#T5 · ai_sw_overview#T2,T4 · us_7axis_cross_valuation#T2 · ns_bigtech_capex_roi#T1,T5 · 13f_2026q2#T4 | — |
-| US | Amazon | AMZN.O | — | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · ai_value_chain_guide_v2#T1,T2 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · k_beauty_company_apr#T3 · k_beauty_company_pharmaresearch#T1 · ns_bigtech_capex_roi#T1 | — |
+| US | Amazon | AMZN.O | ✓ 정본 테제 페이지 없음. 비중·집행 아님. | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · ai_value_chain_guide_v2#T1,T2 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · k_beauty_company_apr#T3 · k_beauty_company_pharmaresearch#T1 · ns_bigtech_capex_roi#T1 | — |
 | US | Amphenol | APH | ✓  | us_ai_adjacent_cross_valuation#T11,T4 · us_ai_adjacent_sectors#T2,T7 · us_epc_datacenter_build#T1 | 9 |
 | US | Antero Resources | AR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | Anthropic | ANTHROPIC | ✓ 정본 페이지는 있으나 엔티티 키는 2026-09-30에 신설. 이번 줄은 관측. 비중·집행 아님. | ai_korea_g3_sovereign_ai#T4 · ai_value_chain_guide_v2#T5 · ai_sw_company_anthropic#T1,T2,T3,T4,T5 · ai_sw_overview#T3,T5 · ns_bigtech_capex_roi#T5 · ns_china_ai_ecosystem#T5 · ns_global_strategy_overview#T4 | — |

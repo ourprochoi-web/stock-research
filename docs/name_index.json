@@ -3456,8 +3456,8 @@
   "Amazon": {
    "code": "AMZN.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "AMZN",
+   "falsifier": "정본 테제 페이지 없음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_company_nuclear_smr.html": [
