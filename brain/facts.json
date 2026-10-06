@@ -9241,6 +9241,138 @@
           "note": "전분기 29%에서 −4%p. 마이크론(24%)과 격차 1%p. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
         }
       }
+    },
+    "TSLA": {
+      "name": "Tesla",
+      "ticker": "TSLA",
+      "market": "US",
+      "layer": "EV·에너지저장",
+      "intake": [
+        "c-20261002-tsla-ex991",
+        "u-20261002-tg-3694"
+      ],
+      "metrics": {
+        "q3_26_deliveries": {
+          "value": 486532,
+          "unit": "vehicles",
+          "basis": "Q3 2026 total deliveries",
+          "asof": "2026-09-30",
+          "num": "Q3 2026 total deliveries",
+          "den": "— (대수 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 표 Total Deliveries. 승용차 고객 인도. 분기말 2026-09-30. 공시 2026-10-02."
+        },
+        "q3_26_production": {
+          "value": 464391,
+          "unit": "vehicles",
+          "basis": "Q3 2026 total production",
+          "asof": "2026-09-30",
+          "num": "Q3 2026 total production",
+          "den": "— (대수 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 표 Total Production."
+        },
+        "q3_26_m3y_production": {
+          "value": 457387,
+          "unit": "vehicles",
+          "basis": "Q3 2026 Model 3/Y production",
+          "asof": "2026-09-30",
+          "num": "Model 3/Y production",
+          "den": "— (대수 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 표."
+        },
+        "q3_26_m3y_deliveries": {
+          "value": 478237,
+          "unit": "vehicles",
+          "basis": "Q3 2026 Model 3/Y deliveries",
+          "asof": "2026-09-30",
+          "num": "Model 3/Y deliveries",
+          "den": "— (대수 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 표."
+        },
+        "q3_26_other_production": {
+          "value": 7004,
+          "unit": "vehicles",
+          "basis": "Q3 2026 Other Models production",
+          "asof": "2026-09-30",
+          "num": "Other Models production",
+          "den": "— (대수 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 표."
+        },
+        "q3_26_other_deliveries": {
+          "value": 8295,
+          "unit": "vehicles",
+          "basis": "Q3 2026 Other Models deliveries",
+          "asof": "2026-09-30",
+          "num": "Other Models deliveries",
+          "den": "— (대수 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 표."
+        },
+        "q3_26_ess_gwh": {
+          "value": 13.7,
+          "unit": "GWh",
+          "basis": "Q3 2026 energy storage deployed",
+          "asof": "2026-09-30",
+          "num": "energy storage products deployed",
+          "den": "— (GWh 합계 · 비율 아님)",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "Ex99.1 본문. 표 밖. 채널 vs 열은 이 값에 넣지 않음."
+        },
+        "q3_26_lease_share_total": {
+          "value": 1,
+          "unit": "%",
+          "basis": "Q3 2026 deliveries subject to operating lease accounting",
+          "asof": "2026-09-30",
+          "num": "operating-lease-accounted deliveries",
+          "den": "total deliveries",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "회사 표기 1%. 대수 분자는 Ex99.1에 없음."
+        },
+        "q3_26_lease_share_m3y": {
+          "value": 1,
+          "unit": "%",
+          "basis": "Q3 2026 Model 3/Y lease share",
+          "asof": "2026-09-30",
+          "num": "Model 3/Y operating-lease-accounted deliveries",
+          "den": "Model 3/Y deliveries",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "회사 표기 1%."
+        },
+        "q3_26_lease_share_other": {
+          "value": 4,
+          "unit": "%",
+          "basis": "Q3 2026 Other Models lease share",
+          "asof": "2026-09-30",
+          "num": "Other Models operating-lease-accounted deliveries",
+          "den": "Other Models deliveries",
+          "grade": "①",
+          "source": "SEC 8-K Ex99.1 accession 0001628280-26-064366 (filed 2026-10-02)",
+          "intake": "c-20261002-tsla-ex991",
+          "note": "회사 표기 4%."
+        }
+      }
     }
   },
   "macro": {
