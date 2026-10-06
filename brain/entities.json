@@ -603,7 +603,19 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
+      "tracked_price": true,
+      "watch": [
+        {
+          "date": "2026-10-02",
+          "grade": "③",
+          "rid": "r-20261002-23",
+          "one": "MS③ NVDA 반도체 최선호 재선정·루빈 10월 매출RR $80B·전력下 GW당 우위(TG 65211).",
+          "source": "t.me/insidertracking/65211"
+        }
+      ],
+      "intake": [
+        "u-20261002-tg-65211"
+      ]
     },
     "ANET": {
       "name": "Arista",
@@ -3671,6 +3683,58 @@
           "rid": "r-20261002-15",
           "one": "①한경/공시: 최태원 SK㈜ 2.3%(165만주)·9440억 매각계획. 11/2~·SI5440+PRS4000. 지분17.8→15.5%. 이혼항소 자금. 최대주주유지. 비중아님.",
           "source": "hankyung 2026100206627 · naver 015/0005338621 · t.me/aetherjapanresearch/25609"
+        }
+      ]
+    },
+    "STX": {
+      "name": "Seagate",
+      "ticker": "STX",
+      "market": "US",
+      "layer": "HDD · AI 데이터센터 스토리지",
+      "business": "엔터프라이즈 HDD. 정본 페이지 없음. 도시바 증설 관측은 동종 HDD 수요 이동의 옆자리로만 쌓는다.",
+      "business_grade": "②(후보 · 2026-10-02 TG·X · 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261002-tg-65212",
+        "u-20261002-tg-3693"
+      ],
+      "tracked_price": true,
+      "note": "정본 페이지 없음. Vertiv T7은 피어 이름뿐이라 이번 HDD 캐파 주장은 라우팅하지 않음. Toshiba JP 카드 없음.",
+      "watch": [
+        {
+          "date": "2026-10-02",
+          "grade": "②③",
+          "rid": "r-20261002-24",
+          "one": "도시바 AI DC HDD FY27 캐파2배·$3.8억 필리핀·65/100TB·SSD×20→HDD. STX−10%(TG·X).",
+          "source": "t.me/insidertracking/65212 · t.me/beluga_investment/3693 · x.com/wallstengine/status/2105982239750476036"
+        }
+      ]
+    },
+    "WDC": {
+      "name": "Western Digital",
+      "ticker": "WDC",
+      "market": "US",
+      "layer": "HDD · AI 데이터센터 스토리지",
+      "business": "HDD. 정본 페이지 없음. 도시바 증설 관측은 동종 HDD 수요 이동의 옆자리로만 쌓는다.",
+      "business_grade": "②(후보 · 2026-10-02 TG·X · 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261002-tg-65212",
+        "u-20261002-tg-3693"
+      ],
+      "tracked_price": true,
+      "note": "정본 페이지 없음. Toshiba JP 카드 없음. NAND/SanDisk 사이클과 이 HDD 주장은 다른 층.",
+      "watch": [
+        {
+          "date": "2026-10-02",
+          "grade": "②③",
+          "rid": "r-20261002-24",
+          "one": "도시바 AI DC HDD FY27 캐파2배·$3.8억 필리핀·65/100TB·SSD×20→HDD. WDC−7% 프리마켓(TG·X).",
+          "source": "t.me/insidertracking/65212 · t.me/beluga_investment/3693 · x.com/wallstengine/status/2105982239750476036"
         }
       ]
     }
