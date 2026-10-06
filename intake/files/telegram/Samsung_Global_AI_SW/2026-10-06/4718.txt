@@ -1,0 +1,23 @@
+Reflection, 5,010억 파라미터 오픈웨이트 모델 ‘Beam’ 공개
+
+: Reflection이 첫 오픈웨이트 모델 Beam 공개. 501B total, 23B active의 sparse MoE 구조로 코딩, 추론, 에이전트 워크로드에 특화
+
+: 23.8T 고품질 토큰으로 사전학습했으며, 이달 중 Apache 2.0 라이선스로 가중치, 기술 보고서, 실행·평가·파인튜닝 전체 스택 공개 예정
+
+: 성능보다 특히 추론 효율성을 강조. 코딩·에이전트 성능은 GLM 5.2와 경쟁하고 Qwen 3.8-Max에 근접하며, GLM 5.2와 유사한 고난도 추론 성능을 3~4배 적은 inference compute로 달성한다고 주장
+
+: 핵심 차별화는 대규모 High-Compute RL. NVIDIA GB300 10,500개를 4주간 투입해 100M+ 롤아웃, 약 1.3B 샌드박스 실행, 최대 256K context로 RL 진행.
+
+: 약 100만 개의 코딩·에이전트·STEM 환경을 구축했으며, RL compute를 늘리는 동안 주요 벤치마크 성능이 포화 없이 지속 개선됐다고 설명
+
+: RL 인프라도 대규모 자체 구축. 평균 110K concurrent rollouts, 최대 170K concurrent sandboxes를 처리했으며, 신규 모델 weight를 추론 fleet에 배포하는 데 중앙값 약 12초
+
+: 오래된 rollout을 활용하는 완전 비동기 RL에서도 최대 하루, 107개 weight version의 policy staleness를 견디도록 설계
+
+: 사전학습 역시 6,144개 GB300 NVL72 GPU로 4주 미만에 완료. raw Internet token의 약 95%를 필터링하면서 기존 큐레이션 방식이라면 제외됐을 1.8T개의 고품질 토큰 추가 확보
+
+: 불필요한 reasoning token을 줄이는 controllable length penalty와 reasoning effort 지원. 동일 성능에 필요한 token과 compute를 낮추는 방향으로 RL 진행
+
+: Reflection은 Beam을 단일 모델이 아닌 오픈웨이트 모델 시리즈의 첫 제품으로 제시했으며, 이미 후속 모델을 학습 중. 중국 모델이 주도해온 고성능 오픈웨이트 시장에서 서구권 오픈 모델의 성능과 추론 효율성을 끌어올리겠다는 전략
+
+https://reflection.ai/blog/introducing-beam
