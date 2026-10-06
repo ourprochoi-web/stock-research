@@ -7825,7 +7825,8 @@
       "canonical_page": "hbm-packaging/hbm_pkg_company_samsung.html",
       "intake": [
         "c-20260920-f08",
-        "u-20260920-26"
+        "u-20260920-26",
+        "u-20261002-tg-118079"
       ],
       "metrics": {
         "hbm_wafer_input_2026": {
@@ -7910,6 +7911,18 @@
           "source": "서울경제 2026-09-20 서종갑 「[단독] 삼성전자, 내년 HBM4·4E 생산 2배 늘린다」 원문 · intake/files/fetch/2026-09-20/sedaily_glass_carrier.html",
           "page": "hbm-packaging/hbm_pkg_company_samsung.html",
           "note": "🔑 세 번째 독립 출처다 — 이세철 인터뷰(③ 09-20) · 전시 실물 사진(② 09-20) · 이 기사(② 09-20). 이제 ① 에 가깝다. HBM4E 12단 샘플은 2026-05 엔비디아 등에 제공"
+        },
+        "dram_rev_share_2026q2": {
+          "value": 38,
+          "unit": "%",
+          "basis": "2026Q2 DRAM revenue share",
+          "asof": "2026-06-30",
+          "num": "2026Q2 삼성전자 D램 매출",
+          "den": "2026Q2 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint Global Memory Tracker via Asiae 2026-10-02 https://n.news.naver.com/mnews/article/277/0005824071",
+          "intake": "u-20261002-tg-118079",
+          "note": "전분기 38%·3분기 연속 1위. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
         }
       }
     },
@@ -8944,7 +8957,8 @@
       "intake": [
         "c-20261001-mu01",
         "c-20261001-mu02",
-        "u-20261001-x-mu01"
+        "u-20261001-x-mu01",
+        "u-20261002-tg-118079"
       ],
       "metrics": {
         "fq4_26_revenue": {
@@ -9162,6 +9176,42 @@
           "source": "Investing.com FQ4 FY2026 call transcript 93CH-4925992",
           "intake": "c-20261001-mu02",
           "note": "CFO 'approximately $150 billion'. 보수적 최소. 매출은 RPO를 웃돈다고 함. Ex99.1에 없음."
+        },
+        "dram_rev_share_2026q2": {
+          "value": 24,
+          "unit": "%",
+          "basis": "2026Q2 DRAM revenue share",
+          "asof": "2026-06-30",
+          "num": "2026Q2 마이크론 D램 매출",
+          "den": "2026Q2 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint Global Memory Tracker via Asiae 2026-10-02 https://n.news.naver.com/mnews/article/277/0005824071",
+          "intake": "u-20261002-tg-118079",
+          "note": "전분기 22%에서 +2%p. SK하이닉스(25%)와 격차 1%p. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
+        }
+      }
+    },
+    "000660": {
+      "name": "SK하이닉스",
+      "ticker": "000660",
+      "market": "KR",
+      "layer": "DRAM·HBM·NAND",
+      "canonical_page": "hbm-packaging/hbm_pkg_company_sk_hynix.html",
+      "intake": [
+        "u-20261002-tg-118079"
+      ],
+      "metrics": {
+        "dram_rev_share_2026q2": {
+          "value": 25,
+          "unit": "%",
+          "basis": "2026Q2 DRAM revenue share",
+          "asof": "2026-06-30",
+          "num": "2026Q2 SK하이닉스 D램 매출",
+          "den": "2026Q2 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint Global Memory Tracker via Asiae 2026-10-02 https://n.news.naver.com/mnews/article/277/0005824071",
+          "intake": "u-20261002-tg-118079",
+          "note": "전분기 29%에서 −4%p. 마이크론(24%)과 격차 1%p. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
         }
       }
     }
