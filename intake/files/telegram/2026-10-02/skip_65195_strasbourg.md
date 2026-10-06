@@ -1,0 +1,12 @@
+# insidertracking/65195 — Strasbourg school unrest (collection, not a judgment)
+
+- url: https://t.me/insidertracking/65195
+- fetched: 2026-10-02 t.me/s widget
+- widget time: 2026-10-02T02:55:57+00:00
+- disposition: skip:digest. No company, no thesis, no routing line.
+
+## widget body
+
+프랑스 스트라스부르의 마리 퀴리 고등학교에서 긴장이 고조되며 수업이 취소된 가운데, 경찰을 향해 물건이 투척됐다는 보고가 나왔고 경찰은 최루가스로 대응.
+
+이번 사태는 프랑스 전역에서 확산 중인 고등학교 봉쇄 움직임 속에서 발생.
