@@ -1588,6 +1588,13 @@
           "rid": "r-20260928-28",
           "one": "② 스마트데일리 단독(09-28): 도호쿠 기초공사 업계설. 공식 미확인. 합작여부 open(단독/키옥시아). 부품 증산 요구는 별도 업계설.",
           "source": "smedaily idxno=363767 · t.me/insidertracking/64806"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-29",
+          "one": "델타(09-28 채널②): 솔리다임 IPO는 여전히 미확정. 상단 $150B(로이터·기등재) vs $100B(오늘 채널). 000660 장중 약 −5%, SK스퀘어 −8%+, SK㈜ −6%+. 거버넌스포럼은 피라미드 심화·8월 철회 촉구.",
+          "source": "t.me/insidertracking/64811"
         }
       ]
     },
@@ -1876,7 +1883,16 @@
       ],
       "tracked_price": true,
       "note": "할인율 = 1 − 스퀘어 시총 ÷ (하이닉스 시총 × 지분율) · 월 1회",
-      "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1"
+      "falsifier": "할인 55%+ 3개월 · 상승 국면 베타 <1",
+      "watch": [
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-29",
+          "one": "지분 통로(② 09-28): SK스퀘어 −8%+로 하이닉스 장중 약 −5%보다 큼. 솔리다임 $100~150B는 미확정인데 당일 가격은 별도가치보다 지배구조 할인 쪽.",
+          "source": "t.me/insidertracking/64811"
+        }
+      ]
     },
     "MU": {
       "name": "Micron",
@@ -2696,6 +2712,13 @@
           "rid": "r-20260928-27",
           "one": "② EPNC Connect 2026: Muse→AI 글래스. Ray-Ban Audio 43g·최대 12시간(+케이스 48시간). 3세대 ≤9시간·6마이크·12MP/3K. 연말 100+조합(EssilorLuxottica). VR ~100g·IMAX Enhanced. 한국 일정 미정.",
           "source": "EPNC 407375 · t.me/YeouidoStory2/117875"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "②",
+          "rid": "r-20260928-31",
+          "one": "한국 유통(② 비바100 09-28): 신세계아이앤씨 총판, 메타 글래스 9모델·21 SKU, 48만~86만원. 레이밴 메타 3세대 74만원부터. 신세계 카드는 안 만듦.",
+          "source": "viva100 20260928500596 · YeouidoStory2/117878"
         }
       ]
     },
@@ -3964,7 +3987,8 @@
       ],
       "theses": [
         "national-strategy/ns_bigtech_capex_roi.html#T1",
-        "national-strategy/ns_bigtech_capex_roi.html#T3"
+        "national-strategy/ns_bigtech_capex_roi.html#T3",
+        "ai-sw/ai_sw_company_msft_pltr.html#T5"
       ],
       "intake": [
         "u-20261001-tg234232-01"
@@ -3986,8 +4010,16 @@
           "rid": "r-20260928-16",
           "one": "JPM(③): Copilot을 Home·Code·Autopilot으로 묶고 시트 $30에 사용량을 얹는다. 유료 약 3천만/M365 약 4.5억(약 7%). GH 사용량 전환 후 매출 QoQ +60%. 공시 아님.",
           "source": "t.me/aetherjapanresearch/25495"
+        },
+        {
+          "date": "2026-09-28",
+          "grade": "③",
+          "rid": "r-20260928-30",
+          "one": "재등장(T5 r-20260926-68). 이영진 09-28(③): Home·Code·Autopilot(Scout). USL 대 UBB 크레딧. 해자=데이터·권한·앱 맥락. 추론원가→라우팅·자체모델·실리콘. Today 10월 비공개. 매수 아님.",
+          "source": "t.me/Samsung_Global_AI_SW/4654"
         }
-      ]
+      ],
+      "facts": []
     },
     "AMZN": {
       "name": "Amazon / AWS",

@@ -1,0 +1,23 @@
+Telegram Samsung_Global_AI_SW/4654
+author: 이영진 (삼성증권 글로벌 AI/SW)
+datetime: 2026-09-28T04:19:35+00:00 (13:19 KST)
+url: https://t.me/Samsung_Global_AI_SW/4654
+fetched: 2026-09-28 via https://t.me/s/Samsung_Global_AI_SW/4654 HTTP 200
+Microsoft blog (known from prior intake, not re-opened): https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot
+blog fetch this pass: HTTP 403.
+Preview widget truncates. Full note text is the second message-text block on the same widget page.
+Prior landing: r-20260926-68 on ai-sw/ai_sw_company_msft_pltr.html#T5 (product split + USL/UBB). This file is the 2026-09-28 이영진 note.
+
+--- full note (widget text, cleaned) ---
+마이크로소프트, Copilot 전면 개편 - 엔터프라이즈에 집중하는 상시 작동 에이전트
+안녕하세요 삼성증권 글로벌 AI/SW 담당 이영진입니다.
+마이크로소프트가 Copilot을 개편하며 Home, Code, Autopilot을 공개했습니다.
+- Home: Chat과 Cowork를 통합. 오피스 제품을 Copilot에 직접 내장. 질문부터 복잡한 업무 위임, 실제 문서 생성 및 수정을 하나의 인터페이스로 통합
+- Code: GitHub Copilot 기반으로 자연어를 통해 앱, 대시보드, 자동화, 워크플로 제작 기능. Managed Runtime을 통해 엔터프라이즈 MS 365 환경에서 안전하게 실행
+- Autopilot: 기존 Scout 개편. 이름, 역할, 목표를 부여하면 채널 모니터링, 후속 연락, 반복 업무 등을 사용자 부재중에도 지속 수행하는 상시 작동형 에이전트
+과금 체계는 일반 Chat, 오피스 기능의 구독(USL)과 에이전틱 업무의 사용량 기반 과금(UBB)로 이원화했습니다. Cowork, Code, Autopilot과 프런티어 모델 활용은 Copilot 크레딧을 소비하며, FinOps 기능을 통해 기업이 비용과 모델 사용 범위를 관리할 수 있도록 지원합니다. 향후 이메일, 캘린더, Teams 기반으로 업무를 선제적으로 정리 및 실행하는 Today를 10월 비공개 프리뷰로 출시할 계획입니다.
+이번 개편의 핵심은 Copilot을 AI 챗봇에서 업무 실행 플랫폼으로 확장했다는 점입니다. 질문에 답하는 AI를 넘어서 실제 업무를 위임받고 지속적으로 실행하는 AI로 확장이 본격화되고 있습니다.
+특히 Autopilot은 최근 주요 AI 기업이 추진하고 있는 상시 작동형 AI 에이전트 경쟁에 본격 진입하는 의미가 있기도 합니다. 업데이트된 제품 방향은 소비자보다는 엔터프라이즈 AI 에이전트 시장에 무게 중심을 두고 있습니다. 마이크로소프트가 강조한 구조적 강점도 데이터, 권한, 업무 애플리케이션 등 비즈니스 컨텍스트 레이어 측면이구요
+수익화 측면에서는 사용량 모델 확대에 주목해야합니다. 특히 상시 작동 에이전트는 지속적으로 크레딧을 소비할 수밖에 없으니까요
+물론 에이전트의 높아지는 추론 비용 속 마진을 유지하기 위해서는 라우팅과 자체 모델 및 반도체 최적화가 수반될 필요가 있습니다.
+(2026/9/28 공표자료)
