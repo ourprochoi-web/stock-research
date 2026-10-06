@@ -2104,10 +2104,20 @@
         "ai-infra/ai_chip_architecture_war.html#T5"
       ],
       "intake": [
-        "u-20260920-04"
+        "u-20260920-04",
+        "u-20261002-tg-aether-25618"
       ],
       "note": "2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SBC·pass-through 제외에 고객 워런트 상각을 매출로 되살린다",
-      "canonical_page": "ai-infra/ai_chip_architecture_war.html"
+      "canonical_page": "ai-infra/ai_chip_architecture_war.html",
+      "watch": [
+        {
+          "date": "2026-10-02",
+          "grade": "③",
+          "rid": "r-20261002-29",
+          "one": "Citi③ CBRS TP$320 — Sol Ultrafast=NVDA호스트 과해석↓ · Groq 3431 vs CBRS 1800 tok/s(벤치≠상업) · CS-4 4Q26~2× · OP=GM안정 · 26–28매출뷰 유지(TG aether 25618).",
+          "source": "t.me/aetherjapanresearch/25618"
+        }
+      ]
     },
     "NTRA": {
       "name": "Natera",
@@ -3276,6 +3286,13 @@
           "rid": "r-20261002-25",
           "one": "앤트로픽②③ AVGO 칩·인프라 금융 ~$60B의 고객으로 거론—선순위$42B+후순위$18B(TG 65214). 공시 미대조.",
           "source": "t.me/insidertracking/65214"
+        },
+        {
+          "date": "2026-10-02",
+          "grade": "②③",
+          "rid": "r-20261002-30",
+          "one": "Claude 中 그레이마켓 — 수천~만 리셀러·역프록시·KYC/USDT/$200 Max · 6사 증류 확인 · 단속↔우회 · 페이퍼社 · 민감데이터 주장 후 CN 조사(TG Samsung_AI_SW 4704).",
+          "source": "t.me/Samsung_Global_AI_SW/4704"
         }
       ]
     },
