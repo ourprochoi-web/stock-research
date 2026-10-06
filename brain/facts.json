@@ -2231,9 +2231,38 @@
       "market": "US",
       "layer": "스위치 칩·광DSP·레이저·CPO",
       "canonical_page": "ai-infra/ai_chip_company_broadcom.html",
-      "metrics": {},
+      "metrics": {
+        "ai_semi_rev_q3_fy26": {
+          "value": 16.7,
+          "unit": "$B",
+          "basis": "FQ3 FY26 ended 2026-08-02 · release 2026-09-02",
+          "asof": "2026-09-02",
+          "num": "AI semiconductor revenue",
+          "den": "FQ3 FY26",
+          "grade": "②",
+          "source": "Broadcom Q3 FY26 earnings release (8-K EX-99.1 · PR Newswire)",
+          "intake": "c-20261005-avgo-ex991",
+          "page": null,
+          "note": "CEO quote: $16.7B, +221% YoY, +54% QoQ. FY28 EPS는 이 보도문에 없다."
+        },
+        "ai_semi_rev_q4_fy26_guide": {
+          "value": 21.7,
+          "unit": "$B",
+          "basis": "FQ4 FY26 outlook in the 2026-09-02 release",
+          "asof": "2026-09-02",
+          "num": "Q4 AI semiconductor revenue guidance",
+          "den": "FQ4 FY26",
+          "grade": "②",
+          "source": "Broadcom Q3 FY26 earnings release (8-K EX-99.1 · PR Newswire)",
+          "intake": "c-20261005-avgo-ex991",
+          "page": null,
+          "note": "CEO quote: expected $21.7B, +236% YoY. 회사 가이던스이지 FY28 EPS가 아니다."
+        }
+      },
       "note": "광통신 축의 확정 지표가 정본에 아직 없다 — 다음에 그 편을 손댈 때 채운다",
-      "intake": []
+      "intake": [
+        "c-20261005-avgo-ex991"
+      ]
     },
     "NVDA": {
       "name": "NVIDIA",
