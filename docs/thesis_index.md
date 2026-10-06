@@ -1,6 +1,6 @@
 # 테제 색인 — 정본은 brain/theses.json(카드 페이지) · 나머지는 페이지
 
-자동 생성 · 2026-10-02 · 판단 보유 95편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
+자동 생성 · 2026-10-06 · 판단 보유 95편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
 
 **용도** — 종목·테마 질문을 받으면 이 파일에서 해당 테제를 찾고, **그 페이지의 「현재 판단」만** 연다. 여기 적힌 문장은 페이지에서 잘라 온 첫 줄이며 **값·기준일·등급은 페이지가 정본**이다.
 
@@ -15,12 +15,12 @@
 | 2026.09.27 | 2026-09-27 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
 | 2026.09.27 | 2026-09-27 | [광원 층 — 병목의 주인은 누구이고, 가격은 어디까지 왔나](ai-infra/optical_light_source_cw.html) | 4 |
 | 2026.09.22 ⚠ | 2026-09-26 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
-| 2026.09.20 | 2026-09-20 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
-| 2026.09.20 ⚠ | 2026-09-22 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 8 |
+| 2026.09.20 ⚠ | 2026-10-06 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
+| 2026.09.20 ⚠ | 2026-10-06 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 8 |
 | 2026.09.20 |  | [미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다](ai-infra/us_merchant_power_vst_nrg.html) | 1 |
 | 2026.09.17 ⚠ | 2026-09-19 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [삼성바이오로직스 × PolyPeptide — CDMO 플랫폼 확장 전략](glp1/glp1_company_samsung_biologics.html) | 4 |
-| 2026.09.17 ⚠ | 2026-09-19 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 6 |
+| 2026.09.17 ⚠ | 2026-10-06 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series](k-beauty/k_beauty_company_pharmaresearch.html) | 4 |
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-20 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
@@ -198,7 +198,7 @@
 
 ## 냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다
 
-`ai-infra/kr_cooling_optical_layer.html` · 판단 2026.09.20 · 갱신 2026-09-20
+`ai-infra/kr_cooling_optical_layer.html` · 판단 2026.09.20 · 갱신 2026-10-06
 
 **한 문장** — 「비워 둔 게 맞았다」 — 다만 이유는 「하우스 의견이 갈려서」가 아니라 국내에 실적이 따라온 종목이 없다는 것이다.
 
@@ -225,7 +225,7 @@
 
 ## 삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성
 
-`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-09-22
+`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-10-06
 
 **한 문장** — HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)
 
@@ -321,7 +321,7 @@
 
 ## SK하이닉스 — HBM의 왕좌
 
-`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-09-19
+`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-10-06
 
 **한 문장** — HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다.
 

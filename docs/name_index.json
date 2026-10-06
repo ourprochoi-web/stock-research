@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-05",
+ "generated": "2026-10-06",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -102,6 +102,9 @@
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
      "T2"
+    ],
+    "energy/energy_ess_ai_power.html": [
+     "T4"
     ]
    },
    "aliases": [],
@@ -4932,6 +4935,12 @@
     ],
     "research/13f_2026q2.html": [
      "T4"
+    ],
+    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
+     "T3"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T5"
     ]
    },
    "aliases": [
@@ -5678,6 +5687,10 @@
     ],
     "research/13f_2026q2.html": [
      "T4"
+    ],
+    "energy/energy_ess_ai_power.html": [
+     "T3",
+     "T4"
     ]
    },
    "aliases": [
@@ -6117,6 +6130,16 @@
    "market": "KR",
    "entity": "034730",
    "falsifier": "402340 SK스퀘어·000660 SK하이닉스와 다른 카드. 최태원 2.3% 매각은 개인 자금·최대주주 유지. 비중 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Applied Digital Corp.": {
+   "code": "APLD",
+   "market": "NASDAQ",
+   "entity": "APLD",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
