@@ -281,7 +281,7 @@
 | US | NRG Energy | NRG | ✓ 2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「 | us_merchant_power_vst_nrg#T1 · us_7axis_cross_valuation#T3 | 14 |
 | US | NVIDIA | NVDA.O | ✓  | ai_chip_architecture_war#T1,T4 · ai_chip_company_broadcom#T2,T3 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1,T2,T3,T4,T5 · ai_korea_g3_sovereign_ai#T1,T2 · ai_power_company_semi_ess_dc#T1 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T2,T5 · us_ai_adjacent_sectors#T1 · us_bloom_intel_deep#T4 · us_epc_datacenter_build#T1 · us_vertiv_corning_deep#T6 · us_defense_primes#T1 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T2 · hbm_pkg_theme_substrate#T4,T5 · q2_2026_earnings_overview#T5 · ns_bigtech_capex_roi#T4 · ns_china_ai_ecosystem#T1,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T2,T4 · node_screener_hbm_scoreboard#T4,T5 · 13f_2026q2#T4 | — |
 | US | Natera | NTRA.O | ✓ 2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「G | ai_bio_investment_map#T5 · optical_valuechain_9#T1 · 13f_2026q2#T5 | 12 |
-| US | Nebius | NBIS.O | — | ai_chip_architecture_war#T1 | — |
+| US | Nebius | NBIS.O | ✓ 정본 테제 페이지 없음. name_index 코드는 NBIS.O, 카드 키는 NBIS. architectur | ai_chip_architecture_war#T1 | — |
 | US | Nextracker | NXT.O | — | us_7axis_cross_valuation#T2 | — |
 | US | NiSource | NI | — | us_power_regulated_vs_merchant#T5,T6,T7 · kr_drawdown_2026#T8 · us_7axis_cross_valuation#T2 | — |
 | US | Nordic American | NAT | — | — | 4 |
