@@ -2716,7 +2716,8 @@
       "intake": [
         "u-20260920-04",
         "u-20261001-x-vst01",
-        "c-20261001-vst01"
+        "c-20261001-vst01",
+        "u-20261005-tg-65405"
       ],
       "watch": [
         {
@@ -2746,6 +2747,13 @@
           "rid": "r-20261006-05",
           "one": "DOE ①/② 42억$ 조건부 대출 · 페리·데이비스-베시·비버밸리 합계 신규 433MW(①) — 발전소별 213/80/140MW는 보도(②) · 약 4GW 유지·20년 연장",
           "source": "energy.gov 2026-10-05"
+        },
+        {
+          "date": "2026-10-05",
+          "grade": "②",
+          "rid": "r-20261005-11",
+          "one": "② 로이터·블룸버그(10-02~03 익명): DOE가 VST에 약 42억 달러 대출, 원전 4곳 중 최소 3곳(오하이오 2·펜실베이니아 1) uprate. NRC 신규 인허가 불요. MW·금리·완공 미확인.",
+          "source": "Reuters 2026-10-03 · Bloomberg 2026-10-02"
         }
       ],
       "note": "2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg) — 13F 상위 보유인데 아카이브 판단 0편이던 자리. 시세는 2026-08-23부터 추적 중",
@@ -5172,6 +5180,26 @@
           "rid": "r-20261002-18",
           "one": "JNJ ICOTYDE ICONIC-TOTAL 112주 완전개선 두피60%·생식기89%(② EADV·TG 65210).",
           "source": "t.me/insidertracking/65210"
+        }
+      ]
+    },
+    "WULF": {
+      "name": "테라울프(TeraWulf)",
+      "status": "후보",
+      "market": "US",
+      "layer": "AI 데이터센터 임대(비트코인 채굴 전환)",
+      "business": "Lake Mariner(NY) 운영 + Kentucky Muskie·Justified 등 AI/HPC 캠퍼스 개발. 전력·부지 선확보 후 임차",
+      "business_grade": "① PR·유틸리티 ESA · ② 임차 미공개",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-10-05",
+          "grade": "①",
+          "rid": "r-20261005-16",
+          "one": "Muskie Kentucky Power ESA 500MW→1GW · 2차 500MW 2030→2029(PSC·공사 전제) · 1차 2028 램프 · 임차인 미공개 · 최대 2GW 검토",
+          "source": "https://investors.terawulf.com/news-events/press-releases/detail/146/terawulf-expands-contracted-power-capacity-at-its-muskie-data-campus-to-1-gw"
         }
       ]
     }
