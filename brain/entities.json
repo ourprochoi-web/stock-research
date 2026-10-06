@@ -3334,6 +3334,13 @@
           "rid": "r-20260928-03",
           "one": "③ 블룸버그(채널, 페이월): VIS+NXP 합작 VisionPower가 싱가포르 2공장 검토. 1공장보다 선진 공정 가능성. 확정 캐펙스 아님.",
           "source": "t.me/insidertracking/64818"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-24",
+          "one": "중앙일보 보도(③): 애리조나(약 360조 투자 프레임)에 이어 텍사스 첨단 반도체 생산기지 추진. 미국 거점 이원화, 엔비디아·애플 수요 대응 서사.",
+          "source": "https://n.news.naver.com/mnews/article/025/0003554480?sid=105"
         }
       ]
     },
@@ -4875,6 +4882,40 @@
           "rid": "r-20260929-10",
           "one": "IR(①): World Labs 약 $8.2B 전액주식(공간지능·3D). 페이페이 리 EVP·Chief Scientist, 리사 수 직보. 클로즈 2026년 말(규제).",
           "source": "AMD IR · Samsung 4659 · insider 64882"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "③",
+          "rid": "r-20260929-25",
+          "one": "한국경제 헤드라인(③): AMD가 AI 3D 공간지능 스타트업 World Labs를 $8.2B(82억달러)에 인수.",
+          "source": "한국경제 via YeouidoStory2/117927"
+        }
+      ]
+    },
+    "GOOGL": {
+      "name": "Alphabet/Google",
+      "market": "US",
+      "layer": "AI·클라우드 인프라",
+      "business": "검색·클라우드·AI 인프라(데이터센터)",
+      "business_grade": "②(후보 · 2026-09-29)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-22",
+          "one": "Crusoe 공식(09-28, ②): Google Armstrong County(TX) AI DC 개발사. 2027까지 TX DC·AI $40B 일부. 2025-06 착공·일 5,500명+. Goodnight1·2 각 265.5MW. 폐쇄루프 비증발 액체냉각.",
+          "source": "crusoe.ai newsroom"
+        },
+        {
+          "date": "2026-09-29",
+          "grade": "②",
+          "rid": "r-20260929-23",
+          "one": "Google이 EU 7월 DMA(경쟁 AI의 Android 핵심기능 동등접근·챗봇 포함 제3자 검색데이터 공유)에 EU일반법원 항소(②). 검색공유 2027-01, Android AI접근 2027-07. 개인정보·보안 약화 주장.",
+          "source": "https://t.me/insidertracking/64916"
         }
       ]
     }
