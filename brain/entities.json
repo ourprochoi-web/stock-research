@@ -5785,6 +5785,27 @@
           "source": "https://www.youtube.com/watch?v=Wd2F-sEasVw"
         }
       ]
+    },
+    "MCD": {
+      "name": "맥도날드(McDonald's)",
+      "ticker": "MCD",
+      "market": "US",
+      "layer": "QSR",
+      "business": "미국 퀵서비스 레스토랑. 방송은 약 1.4만 미국 매장에 결제·상권·경쟁사 가격을 넣은 AI 매장별 가격 추천이 있고, 본사는 최종 결정은 가맹점이라고 해명했다고 전한다.",
+      "business_grade": "②(후보 · 2026-10-07 손경제 하수정 · 로이터 중계 · 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-180",
+          "one": "② 로이터 중계: 미국 약 1.4만 매장 AI가 매장가격을 추천. 프레즈노 직영 2마일 빅맥 $5.69 vs $6.89(약 20%). 시카고 연방법원 집단소송(5년 메뉴 +약40%). MD 감시가격 금지 10/1은 MCD식 추천 제외.",
+          "source": "https://www.youtube.com/watch?v=zT3ZdD6Or2w"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
