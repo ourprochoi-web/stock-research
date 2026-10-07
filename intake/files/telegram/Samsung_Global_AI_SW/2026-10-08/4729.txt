@@ -1,0 +1,27 @@
+앤스로픽, Claude Haiku 5.5 출시. 구독자 API 크레딧 제공
+
+: 앤스로픽이 고용량·비용 민감형 워크로드를 겨냥한 Claude Haiku 5.5 출시
+
+: Haiku 계열 최초로 effort 설정과 adaptive thinking을 지원하며, 요약·컨텍스트 압축·분류·DB 쿼리·서브에이전트·브라우저 및 컴퓨터 사용 등 빠르고 반복적인 작업에 초점
+
+: AAII에서 Max effort 기준 43점으로 1년 전 Haiku 대비 26점 상승. vs Kimi K3 44점, GLM-5.3 Flash 42점, Gemini 3.8 Flash 41점, GPT-6 Luna 38점
+
+: 앤스로픽 자체 평가에서도 성능이 크게 개선. GDPval-AA 1620 vs GPT-6 Luna 1437, AA-Briefcase 1578 vs Luna 1336, OSWorld 72.4% vs Luna 48.9% 기록
+
+: 다만 Max effort의 토큰 효율성은 약점. Artificial Analysis 기준 작업당 약 162k 출력 토큰으로 GPT-6 Luna Max 약 50k의 3배 이상. Xhigh에서 Max로 높이면 성능은 2점 개선되는 반면 토큰 사용량은 약 1.8배 증가
+
+: 사실 지식도 상대적으로 낮아 AA-Omniscience 정확도는 36%로 Gemini 3.8 Flash 55%, GPT-6 Luna 44%를 하회
+
+: 반면 모르는 내용을 인정하는 성향이 강해 환각률은 40%로 Gemini 55%, Luna 77%보다 낮음
+
+: 가격 경쟁력 대폭 강화. 100k 이하 기준 입력 $0.10, 출력 $0.50/백만토큰으로 Haiku 4.5 대비 90% 인하되고 GPT-6 Luna와 동일
+
+: 다만 100k 초과 시 $0.50/$2.50으로 5배 상승. 앤스로픽은 실제 요청 분포와 토크나이저 변화까지 고려하면 Haiku 4.5 대비 평균 실행 비용이 약 75% 낮아졌다고 설명
+
+: 캐시 읽기는 100k 이하 $0.01, 캐시 쓰기는 $0.125이며 100k 초과 시 각각 $0.05, $0.625. 컨텍스트 윈도우는 기존 200k에서 1M tokens로 5배 확대, 텍스트·이미지 입력 및 텍스트 출력 지원
+
+: 동시에 Sonnet 5.5 캐시 읽기 가격을 $0.20에서 $0.10으로 50% 인하, 대부분의 에이전틱 워크로드 비용을 약 20% 절감
+
+: Max·Team 구독자에게 월 API 크레딧도 신규 제공. Max 5x 월 $100, Max 20x 월 $200, Team 최대 월 $500이며 모든 Claude 모델에 사용 가능. Python·TypeScript SDK에는 컴퓨터 및 브라우저 사용 기능을 베타로 추가
+
+https://www.anthropic.com/claude-haiku-5-5
