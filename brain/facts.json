@@ -9014,7 +9014,9 @@
         "c-20261001-mu01",
         "c-20261001-mu02",
         "u-20261001-x-mu01",
-        "u-20261002-tg-118079"
+        "u-20261002-tg-118079",
+        "c-20261007-nlst-8k",
+        "c-20261007-nlst-pr"
       ],
       "metrics": {
         "fq4_26_revenue": {
@@ -9244,6 +9246,18 @@
           "source": "Counterpoint Global Memory Tracker via Asiae 2026-10-02 https://n.news.naver.com/mnews/article/277/0005824071",
           "intake": "u-20261002-tg-118079",
           "note": "전분기 22%에서 +2%p. SK하이닉스(25%)와 격차 1%p. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
+        },
+        "netlist_license_5y": {
+          "value": 600,
+          "unit": "USD M",
+          "basis": "5-year license fees, Q4 2026 through Q3 2031",
+          "asof": "2026-10-05",
+          "num": "분기 $30M × 20분기",
+          "den": "5년(2026년 4분기–2031년 3분기)",
+          "grade": "①",
+          "source": "Netlist Form 8-K filed 2026-10-06, event 2026-10-05, accession 0001104659-26-113897",
+          "intake": "c-20261007-nlst-8k",
+          "note": "법률 라이선스 비용 하한. 연 $120M. FQ4 매출 $54.229B 대비 약 0.2%. 페이지 필드는 두지 않음(수요 테제 문장에 넣지 않음). ITC 사건명은 8-K 본문에 없음."
         }
       }
     },
