@@ -9478,6 +9478,115 @@
           "note": "전년 동기 42.54%, −6.07%p. 판매 −16.3%. 분자·분모 대수는 방송에 한 쌍으로 없고 점유율만 36.47/100. 합산 72.07%와 9월 ASR 대수는 이 지표가 아님. 정본 페이지 없음."
         }
       }
+    },
+    "373220": {
+      "name": "LG에너지솔루션",
+      "ticker": "373220",
+      "market": "KR",
+      "layer": "배터리셀",
+      "canonical_page": "energy/energy_battery_valuechain_update.html",
+      "intake": [
+        "c-20261008-163704-44787",
+        "c-20261008-163704-lges-release"
+      ],
+      "metrics": {
+        "q3_26p_revenue": {
+          "value": 96434,
+          "unit": "억원",
+          "basis": "3Q26 연결 잠정 매출(보조금 포함)",
+          "asof": "2026-10-08",
+          "num": "3Q26 연결 잠정 매출",
+          "den": "— (금액)",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "메리츠는 9.6조로 반올림. 전기 75,602(+27.6%), 전년동기 60,654(+59.0%). HTML 미수정(status 유지)."
+        },
+        "q3_26p_op": {
+          "value": 7560,
+          "unit": "억원",
+          "basis": "3Q26 연결 잠정 영업이익(보조금 포함)",
+          "asof": "2026-10-08",
+          "num": "3Q26 연결 잠정 영업이익",
+          "den": "— (금액)",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "전기 1,133(+567.3%), 전년동기 6,013(+25.7%)."
+        },
+        "q3_26p_ampc": {
+          "value": 4169,
+          "unit": "억원",
+          "basis": "3Q26 예상 북미 생산 보조금(IRA 45X 등)",
+          "asof": "2026-10-08",
+          "num": "3Q26 Tax Credit",
+          "den": "— (금액)",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "메리츠 +73% QoQ. 환산 출하 약 8.5GWh는 ③ 추정이라 이 지표 아님."
+        },
+        "q3_26p_ex_ampc_revenue": {
+          "value": 92265,
+          "unit": "억원",
+          "basis": "3Q26 잠정 매출 − 북미 생산 보조금",
+          "asof": "2026-10-08",
+          "num": "96,434 − 4,169",
+          "den": "— (차감 후 금액)",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "회사 주석 나 92,265. 메리츠 9.2조."
+        },
+        "q3_26p_ex_ampc_op": {
+          "value": 3391,
+          "unit": "억원",
+          "basis": "3Q26 잠정 영업이익 − 북미 생산 보조금",
+          "asof": "2026-10-08",
+          "num": "7,560 − 4,169",
+          "den": "— (차감 후 금액)",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "회사 주석 나 3,391. 보상금은 이 안에 있으나 금액은 공시에 없음."
+        },
+        "q3_26p_ex_ampc_opm": {
+          "value": 3.7,
+          "unit": "%",
+          "basis": "보조금 제외 영업이익률",
+          "asof": "2026-10-08",
+          "num": "3,391",
+          "den": "92,265",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "3391/92265=3.68%, 회사 표기 +3.7%."
+        },
+        "q3_26p_ampc_share_of_op": {
+          "value": 55.1,
+          "unit": "%",
+          "basis": "AMPC / 보고 영업이익",
+          "asof": "2026-10-08",
+          "num": "4,169",
+          "den": "7,560",
+          "grade": "①",
+          "source": "LG 보도 https://www.lg.co.kr/media/release/30650 (2026-10-08 공정공시 표 인용). DART rcpNo 미개봉.",
+          "intake": "c-20261008-163704-lges-release",
+          "note": "4169/7560=55.1%. T2의 121%는 이 분기 값이 아니다."
+        },
+        "q3_26p_ex_ampc_op_vs_meritz_cons": {
+          "value": 3.9,
+          "unit": "%",
+          "basis": "보조금 제외 영업이익 vs 메리츠가 적은 시장 예상",
+          "asof": "2026-10-08",
+          "num": "3,391 − 3,264 = 127",
+          "den": "3,264",
+          "grade": "③",
+          "source": "메리츠 노우호 2026-10-08 https://t.me/meritz_research/44787",
+          "intake": "c-20261008-163704-44787",
+          "note": "127/3264=3.89%. 상회분을 메리츠는 완성차 보상금 등 일회성으로 본다. 매출 컨센 8.8조는 별도."
+        }
+      }
     }
   },
   "macro": {
