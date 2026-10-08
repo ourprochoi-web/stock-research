@@ -1,0 +1,7 @@
+### [insidertracking/65591](https://t.me/insidertracking/65591)
+- time: 2026-10-07 09:58:45 KST
+- id: 65591
+
+월스트리트저널에 따르면 데이터센터 운영업체 데이원(DayOne)이 미국 기업공개(IPO)를 통해 최대 50억 달러 규모의 자금 조달 추진 중.
+
+---

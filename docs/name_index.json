@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-06",
+ "generated": "2026-10-07",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -62,6 +62,16 @@
    "code": "6779.T",
    "market": "JP",
    "entity": "6779.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TDK": {
+   "code": "6762.T",
+   "market": "JP",
+   "entity": "6762.T",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -557,8 +567,18 @@
   "SKC": {
    "code": "011790",
    "market": "KR",
-   "entity": null,
+   "entity": "011790",
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SK㈜ / SK Inc": {
+   "code": "034730",
+   "market": "KR",
+   "entity": "034730",
+   "falsifier": "402340 SK스퀘어·000660 SK하이닉스와 다른 카드. 최태원 2.3% 매각은 개인 자금·최대주주 유지. 비중 아님.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -620,7 +640,7 @@
   "SK이노베이션": {
    "code": "096770",
    "market": "KR",
-   "entity": null,
+   "entity": "096770",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -636,7 +656,7 @@
    "market": "KR",
    "entity": "000660",
    "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
-   "facts": 0,
+   "facts": 1,
    "theses": {
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T1",
@@ -654,7 +674,6 @@
     ],
     "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
      "T1",
-     "T3",
      "T4"
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
@@ -987,7 +1006,7 @@
   "두산에너빌리티": {
    "code": "034020",
    "market": "KR",
-   "entity": null,
+   "entity": "034020",
    "falsifier": null,
    "facts": 18,
    "theses": {
@@ -1138,6 +1157,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "미래에셋증권": {
+   "code": "006800",
+   "market": "KR",
+   "entity": "006800",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -1336,7 +1365,7 @@
    "market": "KR",
    "entity": "005930",
    "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
-   "facts": 9,
+   "facts": 10,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
@@ -1853,7 +1882,7 @@
   "엘앤에프": {
    "code": "066970",
    "market": "KR",
-   "entity": null,
+   "entity": "066970",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2489,7 +2518,7 @@
   "포스코퓨처엠": {
    "code": "003670",
    "market": "KR",
-   "entity": null,
+   "entity": "003670",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -3318,6 +3347,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Applied Digital Corp.": {
+   "code": "APLD",
+   "market": "NASDAQ",
+   "entity": "APLD",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "홍즈(宏致電子 · ACES)": {
    "code": "3605.TW",
    "market": "TW",
@@ -3697,7 +3736,7 @@
    "market": "US",
    "entity": "AVGO",
    "falsifier": null,
-   "facts": 0,
+   "facts": 2,
    "theses": {
     "ai-infra/ai_chip_architecture_war.html": [
      "T1"
@@ -3996,8 +4035,8 @@
   "CoreWeave": {
    "code": "CRWV.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "CRWV",
+   "falsifier": "정본 테제 페이지 없음. name_index 코드는 CRWV.O, 카드 키는 CRWV. 선행 +25%·$40M/MW·비GPU ARR은 r-20260926-25. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/ai_korea_g3_sovereign_ai.html": [
@@ -4122,6 +4161,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Dell Technologies": {
+   "code": "DELL",
+   "market": "US",
+   "entity": "DELL",
+   "falsifier": "정본 테제 페이지 없음. 카드 키 DELL. 비중·집행 아님. SG 4696·beluga 3684는 aether 25594와 동일 FT라 r-20261001-11에 흡수.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Devon Energy(+Coterra)": {
    "code": "DVN",
    "market": "US",
@@ -4149,6 +4198,16 @@
      "T2"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "DraftKings": {
+   "code": "DKNG",
+   "market": "US",
+   "entity": "DKNG",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4540,6 +4599,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Johnson & Johnson": {
+   "code": "JNJ",
+   "market": "US",
+   "entity": "JNJ",
+   "falsifier": "정본 페이지 없음. r-20260926-75(peak ~$50억·경구 펩타이드)는 soft cite. ICONIC-TOTAL 112주는 GLP-1 T3에 재라우팅하지 않음. PTGX 카드 없음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Kintor Pharmaceutical": {
    "code": "9939.HK",
    "market": "US",
@@ -4729,7 +4798,7 @@
    "market": "US",
    "entity": "MU",
    "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
-   "facts": 18,
+   "facts": 19,
    "theses": {
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",
@@ -4788,9 +4857,9 @@
    "falsifier": "Cloud GM이 66%에서 추가 급락 · ROIC 30% 하회 · FY27 A&I OPM이 50%대를 크게 하회",
    "facts": 0,
    "theses": {
-    "ai-infra/ai_value_chain_guide_v2.html": [
-     "T2",
-     "T5"
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
+     "T3"
     ],
     "ai-sw/ai_sw_company_msft_pltr.html": [
      "T1",
@@ -4799,12 +4868,12 @@
      "T4",
      "T5"
     ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T2",
+     "T5"
+    ],
     "market/us_7axis_cross_valuation.html": [
      "T2",
-     "T3"
-    ],
-    "national-strategy/ns_bigtech_capex_roi.html": [
-     "T1",
      "T3"
     ]
    },
@@ -4895,8 +4964,17 @@
     "ai-infra/us_vertiv_corning_deep.html": [
      "T6"
     ],
+    "ai-sw/ai_sw_company_msft_pltr.html": [
+     "T4"
+    ],
     "defense/us_defense_primes.html": [
      "T1"
+    ],
+    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
+     "T3"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T5"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T4"
@@ -4935,12 +5013,6 @@
     ],
     "research/13f_2026q2.html": [
      "T4"
-    ],
-    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
-     "T3"
-    ],
-    "hbm-packaging/hbm_pkg_company_samsung.html": [
-     "T5"
     ]
    },
    "aliases": [
@@ -5121,10 +5193,14 @@
   "Oracle": {
    "code": "ORCL.K",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "ORCL",
+   "falsifier": "정본 테제 페이지 없음. name_index 코드는 ORCL.K, 카드 키는 ORCL. 주피터 포스마저는 r-20260926-24(별개). 비중·집행 아님.",
    "facts": 0,
    "theses": {
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T1",
+     "T4"
+    ],
     "market/us_7axis_cross_valuation.html": [
      "T2",
      "T3",
@@ -5140,21 +5216,21 @@
   "Palantir": {
    "code": "PLTR.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "PLTR",
+   "falsifier": "정본 페이지는 MSFT와 공유. 엔티티 카드가 없어 후보로 연다. Armada 카드는 만들지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
-    "ai-sw/ai_sw_company_anthropic.html": [
-     "T5"
-    ],
-    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
-     "T5"
-    ],
     "ai-sw/ai_sw_company_msft_pltr.html": [
      "T1",
      "T2",
      "T3",
      "T4",
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
      "T5"
     ],
     "ai-sw/ai_sw_investment_map.html": [
@@ -5434,7 +5510,7 @@
   "ServiceNow": {
    "code": "NOW",
    "market": "US",
-   "entity": null,
+   "entity": "NOW",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -5680,16 +5756,16 @@
    "market": "US",
    "entity": "TSLA",
    "falsifier": null,
-   "facts": 0,
+   "facts": 10,
    "theses": {
+    "energy/energy_ess_ai_power.html": [
+     "T3",
+     "T4"
+    ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T2"
     ],
     "research/13f_2026q2.html": [
-     "T4"
-    ],
-    "energy/energy_ess_ai_power.html": [
-     "T3",
      "T4"
     ]
    },
@@ -5925,6 +6001,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "아카마이(Akamai)": {
+   "code": "AKAM",
+   "market": "US",
+   "entity": "AKAM",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "테라울프(TeraWulf)": {
+   "code": "WULF",
+   "market": "US",
+   "entity": "WULF",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "IGV 소프트웨어": {
    "code": "IGV",
    "market": "US-ETF",
@@ -6105,10 +6201,30 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Enerflex": {
+   "code": "EFXT",
+   "market": "US/CA",
+   "entity": "EFXT",
+   "falsifier": "정본 페이지 없음. 2026-10-01 후보 신설. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "타워세미컨덕터(Tower Semiconductor)": {
    "code": "TSEM",
    "market": "US/IL",
    "entity": "TSEM",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "NXP Semiconductors": {
+   "code": "NXP",
+   "market": "US/NL",
+   "entity": "NXP",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -6120,36 +6236,6 @@
    "market": "US/UK",
    "entity": "ARM",
    "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "SK㈜ / SK Inc": {
-   "code": "034730",
-   "market": "KR",
-   "entity": "034730",
-   "falsifier": "402340 SK스퀘어·000660 SK하이닉스와 다른 카드. 최태원 2.3% 매각은 개인 자금·최대주주 유지. 비중 아님.",
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "Applied Digital Corp.": {
-   "code": "APLD",
-   "market": "NASDAQ",
-   "entity": "APLD",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "Johnson & Johnson": {
-   "code": "JNJ",
-   "market": "US",
-   "entity": "JNJ",
-   "falsifier": "정본 페이지 없음. r-20260926-75(peak ~$50억·경구 펩타이드)는 soft cite. ICONIC-TOTAL 112주는 GLP-1 T3에 재라우팅하지 않음. PTGX 카드 없음.",
    "facts": 0,
    "theses": {},
    "aliases": [],
