@@ -1,0 +1,293 @@
+{
+ "asof": "2026-10-08",
+ "warn_at_confirm_streak": 5,
+ "theses": [
+  {
+   "page": "ai-infra/ai_value_chain_guide_v2.html",
+   "thesis": "T4",
+   "status": "유지",
+   "confirm": 11,
+   "refute": 0,
+   "confirm_streak": 11,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "thesis": "T1",
+   "status": "유지",
+   "confirm": 11,
+   "refute": 0,
+   "confirm_streak": 11,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "ai-infra/optical_valuechain_9.html",
+   "thesis": "T2",
+   "status": "유지",
+   "confirm": 10,
+   "refute": 0,
+   "confirm_streak": 10,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_substrate.html",
+   "thesis": "T2",
+   "status": "유지",
+   "confirm": 10,
+   "refute": 0,
+   "confirm_streak": 8,
+   "priced_in_warning": true,
+   "ledger_n": 3,
+   "breaks_if": [
+    {
+     "ledger_id": "j-20261008-08",
+     "routing_id": "r-20261008-20",
+     "ticker": "353200",
+     "text": "메모리 IDM 증설 지연·감산 또는 중국 BT 기판 증설로 수급이 완화되면 판가·LTA 레버리지가 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2027-06-30"
+    },
+    {
+     "ledger_id": "j-20261008-09",
+     "routing_id": "r-20261008-20",
+     "ticker": "222800",
+     "text": "메모리 IDM 증설 지연·감산 또는 중국 BT 기판 증설로 수급이 완화되면 판가·LTA 레버리지가 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2027-06-30"
+    },
+    {
+     "ledger_id": "j-20261008-10",
+     "routing_id": "r-20261008-20",
+     "ticker": "195870",
+     "text": "메모리 IDM 증설 지연·감산 또는 중국 BT 기판 증설로 수급이 완화되면 판가·LTA 레버리지가 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2027-06-30"
+    }
+   ]
+  },
+  {
+   "page": "ai-infra/ai_power_company_nuclear_smr.html",
+   "thesis": "T3",
+   "status": "유지",
+   "confirm": 7,
+   "refute": 0,
+   "confirm_streak": 7,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "ai-infra/us_bloom_intel_deep.html",
+   "thesis": "T4",
+   "status": "유지",
+   "confirm": 7,
+   "refute": 0,
+   "confirm_streak": 7,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "national-strategy/ns_semiconductor_war.html",
+   "thesis": "T4",
+   "status": "유지",
+   "confirm": 7,
+   "refute": 0,
+   "confirm_streak": 7,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "ai-infra/ai_chip_company_marvell.html",
+   "thesis": "T5",
+   "status": "유지",
+   "confirm": 5,
+   "refute": 0,
+   "confirm_streak": 5,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "ai-infra/ai_chip_company_nvidia.html",
+   "thesis": "T1",
+   "status": "유지",
+   "confirm": 5,
+   "refute": 0,
+   "confirm_streak": 5,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_company_sk_hynix.html",
+   "thesis": "T4",
+   "status": "유지",
+   "confirm": 7,
+   "refute": 3,
+   "confirm_streak": 5,
+   "priced_in_warning": true,
+   "ledger_n": 1,
+   "breaks_if": [
+    {
+     "ledger_id": "j-20261008-12",
+     "routing_id": "r-20261008-40",
+     "ticker": "000660",
+     "text": "10/29 콜에서 8Hi HBM4 NVDA향이 하이닉스 독점으로 남고 삼성 진입이 없으면 점유 이탈 해석은 기각된다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "thesis": "T4",
+   "status": "유지",
+   "confirm": 5,
+   "refute": 0,
+   "confirm_streak": 5,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_substrate.html",
+   "thesis": "T1",
+   "status": "유지",
+   "confirm": 7,
+   "refute": 0,
+   "confirm_streak": 5,
+   "priced_in_warning": true,
+   "ledger_n": 0,
+   "breaks_if": []
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_substrate.html",
+   "thesis": "T4",
+   "status": "유지",
+   "confirm": 4,
+   "refute": 0,
+   "confirm_streak": 4,
+   "priced_in_warning": false,
+   "ledger_n": 3,
+   "breaks_if": [
+    {
+     "ledger_id": "j-20261008-08",
+     "routing_id": "r-20261008-20",
+     "ticker": "353200",
+     "text": "메모리 IDM 증설 지연·감산 또는 중국 BT 기판 증설로 수급이 완화되면 판가·LTA 레버리지가 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2027-06-30"
+    },
+    {
+     "ledger_id": "j-20261008-09",
+     "routing_id": "r-20261008-20",
+     "ticker": "222800",
+     "text": "메모리 IDM 증설 지연·감산 또는 중국 BT 기판 증설로 수급이 완화되면 판가·LTA 레버리지가 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2027-06-30"
+    },
+    {
+     "ledger_id": "j-20261008-10",
+     "routing_id": "r-20261008-20",
+     "ticker": "195870",
+     "text": "메모리 IDM 증설 지연·감산 또는 중국 BT 기판 증설로 수급이 완화되면 판가·LTA 레버리지가 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2027-06-30"
+    }
+   ]
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+   "thesis": "T1",
+   "status": "유지",
+   "confirm": 6,
+   "refute": 0,
+   "confirm_streak": 3,
+   "priced_in_warning": false,
+   "ledger_n": 2,
+   "breaks_if": [
+    {
+     "ledger_id": "j-20261008-01",
+     "routing_id": "r-20261008-10",
+     "ticker": "005930",
+     "text": "10/29 콜에서 HBM4 QoQ 3배 가이던스가 미달이면 합산 비트의 메모리 해석이 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    },
+    {
+     "ledger_id": "j-20261008-01",
+     "routing_id": "r-20261008-10",
+     "ticker": "005930",
+     "text": "10/29 콜에서 메모리 영업이익 둔화가 확인되면 같은 해석이 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    },
+    {
+     "ledger_id": "j-20261008-11",
+     "routing_id": "r-20261008-40",
+     "ticker": "005930",
+     "text": "10/29 콜에서 8Hi HBM4 NVDA향이 하이닉스 독점으로 남고 삼성 진입이 없으면 점유 이동은 기각된다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+   "thesis": "T2",
+   "status": "유지",
+   "confirm": 5,
+   "refute": 1,
+   "confirm_streak": 1,
+   "priced_in_warning": false,
+   "ledger_n": 2,
+   "breaks_if": [
+    {
+     "ledger_id": "j-20261008-01",
+     "routing_id": "r-20261008-10",
+     "ticker": "005930",
+     "text": "10/29 콜에서 HBM4 QoQ 3배 가이던스가 미달이면 합산 비트의 메모리 해석이 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    },
+    {
+     "ledger_id": "j-20261008-01",
+     "routing_id": "r-20261008-10",
+     "ticker": "005930",
+     "text": "10/29 콜에서 메모리 영업이익 둔화가 확인되면 같은 해석이 깨진다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    },
+    {
+     "ledger_id": "j-20261008-11",
+     "routing_id": "r-20261008-40",
+     "ticker": "005930",
+     "text": "10/29 콜에서 8Hi HBM4 NVDA향이 하이닉스 독점으로 남고 삼성 진입이 없으면 점유 이동은 기각된다.",
+     "check": "manual",
+     "status": "manual",
+     "deadline": "2026-10-29"
+    }
+   ]
+  }
+ ]
+}

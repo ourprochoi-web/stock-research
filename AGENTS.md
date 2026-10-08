@@ -116,3 +116,24 @@ python3 portfolio/data/watch.py               # §J4 감시 · 큐 크기
 python3 portfolio/data/packet.py SK하이닉스    # 종목 패킷 (저울 · 지난 번 이후 · 반대편 · watch · 빈 칸)
 python3 portfolio/data/packet.py 6981.T --since 2026-09-15   # 후보 카드도 같은 패킷으로
 ```
+
+## 9. 판단 장부 — 제안 (2026-10-08 · Kenneth 리뷰 전 · 검사기는 아직 안 본다)
+
+**이 절은 계약이 아니다.** `check_routing.py` 는 이 절을 읽지 않는다. 장부 행이 없는 기존 routing 줄은 그대로 유효하고, 이 절을 어겨도 CI 가 거절하지 않는다. 강제할지, 문턱을 어디에 둘지는 이 PR 에서 Kenneth 가 정한다. 설계 전문은 `docs/judgment_ledger.md`.
+
+§6 의 「브레인 10번째 파일 · 새 저장소」와 이 제안은 충돌한다. 그래서 장부를 `brain/` 에 넣지 않았다. `ledger/` 는 측정 층으로 예외를 요청하는 자리고, 거절되면 예시 커밋을 되돌리면 된다. `intake/files/*ledger*.jsonl` 도 쓰지 않는다 — 그 경로는 이미 거절된다.
+
+제안하는 추가 동작은 §1 의 3.e 다음, 커밋 전이다.
+
+- 거래되는 이름에 방향(긍정 · 중립 · 부정 · 헤지)이 있으면 `ledger/judgment_ledger.jsonl` 에 **티커당 한 행**을 append 한다. 같은 라우팅이 두 방향을 말하면 행이 둘이다.
+- `routing.jsonl` 에는 필드를 더하지 않는다. `disposition` · `theses_change` · `portfolio_change` 와 수량 · 비중 · 스톱 · 주문은 장부에도 넣지 않는다.
+- 기준가는 네이버 차트의 **완료된 정규장 종가**. 세션이 열려 있으면 직전 완료 종가를 적고, 당일 바는 `same_day_bar_ignored` 로만 남긴다. 검증 불가면 `ref.price: null` 과 시도한 `endpoint`.
+- `breaks_if` 는 한국어 문장에 더해, 가능하면 `metric` · `op` · `threshold` · `deadline` · `check`(`manual` | `price` | `macro`). 가격·FRED 로 확인할 수 없으면 `manual`.
+- 호라이즌은 30일 · 90일. 적중은 Lead 가 미리 적지 않는다. `scripts/score_ledger.py` 가 만기 후에만 채운다.
+- 한 주장의 intake 가 여러 채널에 재게시돼도 독립 출처는 하나다(`scripts/source_cluster.py`). 텔레그램 채널은 출처가 아니다.
+
+```
+python3 scripts/check_ledger.py          # 장부 스키마 · routing 포인터 (제안 · 아직 훅 아님)
+python3 scripts/score_ledger.py          # 만기 행만 채점 · 카드 HTML 은 안 고친다
+python3 scripts/test_ledger.py           # 네트워크 없이
+```
