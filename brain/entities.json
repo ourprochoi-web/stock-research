@@ -3975,6 +3975,13 @@
           "rid": "r-20261007-127",
           "one": "③ 박지훈: FSD가 10/6 EU 안건에서 제외. 회원국 55%·인구 65% 요건. 승인 시계 후퇴 관측. 의안 원문 없음.",
           "source": "youtube ybLz66vTZRo"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-212",
+          "one": "② 한국 1~9월 약 8.9만 +104.4%, 전체 7%+·수입 31.9%. 9월 약 1.2만은 BMW+벤츠 합보다 많음(대수 ASR).",
+          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
         }
       ]
     },
@@ -5873,6 +5880,109 @@
           "rid": "r-20261007-192",
           "one": "② 한경: 8월 약 $9.26억 GPU ABS SPV. 투자등급 고객의 확정 배치·계약 현금흐름. 상장 티커는 아카이브에 없음.",
           "source": "https://www.youtube.com/watch?v=a9bwBy9G0BU"
+        }
+      ]
+    },
+    "005380": {
+      "name": "현대차",
+      "market": "KR",
+      "layer": "완성차",
+      "business": "승용·SUV·상용 및 전기차",
+      "business_grade": "②(후보 · 2026-10-07 방송 · 공시 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261007-yt-rxcy"
+      ],
+      "tracked_price": false,
+      "note": "정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chain.html#T1만 가리키고 내수 점유 주장과 맞지 않아 테제에 안 붙임. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-210",
+          "one": "② 1~9월 전체 점유 36.47%(전년 42.54, −6.07%p)·판매 −16.3%. 합산 72.07%. 중형 EV SUV 공백→모델Y. L2+ 2028. 70% 붕괴는 전언.",
+          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "③/④",
+          "rid": "r-20261007-214",
+          "one": "③/④ 아이오닉V는 베이징차·CATL·모멘타에 현대 마크. 중국 판매 실적은 다음 달 초. R&D 예산 축소는 내부 전언.",
+          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
+        }
+      ]
+    },
+    "000270": {
+      "name": "기아",
+      "market": "KR",
+      "layer": "완성차",
+      "business": "승용·RV·전기차 완성차",
+      "business_grade": "②(후보 · 2026-10-07 방송 · 공시 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261007-yt-rxcy"
+      ],
+      "tracked_price": false,
+      "note": "정본 페이지 없음. 9월 글로벌은 해외가 내수를 상쇄. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-211",
+          "one": "② 9월 내수 45,960. 국내 감소를 해외가 상쇄해 글로벌 +5.1%.",
+          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
+        }
+      ]
+    },
+    "BYD": {
+      "name": "BYD",
+      "market": "HK",
+      "layer": "전기차·배터리",
+      "business": "전기차·배터리. 홍콩 1211.HK",
+      "business_grade": "②(후보 · 2026-10-07 방송 · 공시 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261007-yt-rxcy"
+      ],
+      "tracked_price": false,
+      "note": "name_index에 기존 키 없음. 키는 BYD(1211.HK). 한국 중형 이하 완성차 카드는 만들지 않음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-213",
+          "one": "② 한국 1~9월 2만+(2.7–2.8만) +578%, 전체 1.64%. 보조금 이후 자체 지원. 연 3만 대는 전언.",
+          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
+        }
+      ]
+    },
+    "GM": {
+      "name": "제너럴모터스",
+      "market": "US",
+      "layer": "완성차",
+      "business": "쉐보레·뷰익·GMC·캐딜락. 한국GM 수입 포함",
+      "business_grade": "②(후보 · 2026-10-07 방송 · 공시 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261007-yt-rxcy"
+      ],
+      "tracked_price": false,
+      "note": "미국 대형 완성차. 일렉트라 E7은 현대 중형 SUV 가격대 조항. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-215",
+          "one": "② 뷰익 일렉트라 E7 한국GM 수입 PHEV 4,300–5,400만. 상하이GM·중국 개발. 싼타페·쏘렌토 HEV 가격대.",
+          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
         }
       ]
     }
