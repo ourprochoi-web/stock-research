@@ -1,0 +1,224 @@
+{
+ "ledger_n": 13,
+ "by_stance": {
+  "긍정": {
+   "n": 6,
+   "hit": 0,
+   "miss": 0,
+   "pending": 6,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "중립": {
+   "n": 3,
+   "hit": 0,
+   "miss": 0,
+   "pending": 3,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "부정": {
+   "n": 4,
+   "hit": 0,
+   "miss": 0,
+   "pending": 3,
+   "no_call": 0,
+   "manual": 1,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "헤지": {
+   "n": 0,
+   "hit": 0,
+   "miss": 0,
+   "pending": 0,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  }
+ },
+ "by_lead": {
+  "t.me/aetherjapanresearch/25700": {
+   "n": 3,
+   "hit": 0,
+   "miss": 0,
+   "pending": 3,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "tg-20261008-093704": {
+   "n": 7,
+   "hit": 0,
+   "miss": 0,
+   "pending": 6,
+   "no_call": 0,
+   "manual": 1,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "tg-20261008-104249": {
+   "n": 3,
+   "hit": 0,
+   "miss": 0,
+   "pending": 3,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  }
+ },
+ "by_page": {
+  "hbm-packaging/hbm_pkg_company_samsung.html#T1": {
+   "n": 2,
+   "hit": 0,
+   "miss": 0,
+   "pending": 2,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "hbm-packaging/hbm_pkg_company_samsung.html#T2": {
+   "n": 2,
+   "hit": 0,
+   "miss": 0,
+   "pending": 2,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4": {
+   "n": 1,
+   "hit": 0,
+   "miss": 0,
+   "pending": 1,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "hbm-packaging/hbm_pkg_theme_substrate.html#T2": {
+   "n": 3,
+   "hit": 0,
+   "miss": 0,
+   "pending": 3,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  },
+  "hbm-packaging/hbm_pkg_theme_substrate.html#T4": {
+   "n": 3,
+   "hit": 0,
+   "miss": 0,
+   "pending": 3,
+   "no_call": 0,
+   "manual": 0,
+   "unverified": 0,
+   "hit_rate": null
+  }
+ },
+ "evidence": {
+  "intake_rows_summed": 20,
+  "independent_origins_summed": 14,
+  "note": "행마다 센 합이다. 행 사이 URL 공유는 cross_claim_duplicates."
+ },
+ "cross_claim_duplicate_urls": {},
+ "priced_in_warning_n": 12,
+ "priced_in_warnings": [
+  {
+   "page": "ai-infra/ai_value_chain_guide_v2.html",
+   "thesis": "T4",
+   "confirm_streak": 11,
+   "confirm": 11,
+   "refute": 0
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "thesis": "T1",
+   "confirm_streak": 11,
+   "confirm": 11,
+   "refute": 0
+  },
+  {
+   "page": "ai-infra/optical_valuechain_9.html",
+   "thesis": "T2",
+   "confirm_streak": 10,
+   "confirm": 10,
+   "refute": 0
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_substrate.html",
+   "thesis": "T2",
+   "confirm_streak": 8,
+   "confirm": 10,
+   "refute": 0
+  },
+  {
+   "page": "ai-infra/ai_power_company_nuclear_smr.html",
+   "thesis": "T3",
+   "confirm_streak": 7,
+   "confirm": 7,
+   "refute": 0
+  },
+  {
+   "page": "ai-infra/us_bloom_intel_deep.html",
+   "thesis": "T4",
+   "confirm_streak": 7,
+   "confirm": 7,
+   "refute": 0
+  },
+  {
+   "page": "national-strategy/ns_semiconductor_war.html",
+   "thesis": "T4",
+   "confirm_streak": 7,
+   "confirm": 7,
+   "refute": 0
+  },
+  {
+   "page": "ai-infra/ai_chip_company_marvell.html",
+   "thesis": "T5",
+   "confirm_streak": 5,
+   "confirm": 5,
+   "refute": 0
+  },
+  {
+   "page": "ai-infra/ai_chip_company_nvidia.html",
+   "thesis": "T1",
+   "confirm_streak": 5,
+   "confirm": 5,
+   "refute": 0
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_company_sk_hynix.html",
+   "thesis": "T4",
+   "confirm_streak": 5,
+   "confirm": 7,
+   "refute": 3
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "thesis": "T4",
+   "confirm_streak": 5,
+   "confirm": 5,
+   "refute": 0
+  },
+  {
+   "page": "hbm-packaging/hbm_pkg_theme_substrate.html",
+   "thesis": "T1",
+   "confirm_streak": 5,
+   "confirm": 7,
+   "refute": 0
+  }
+ ],
+ "asof": "2026-10-08",
+ "note": "적중률 분모는 hit+miss 만이다. 중립은 no-call, 헤지와 CDS 는 manual, 호라이즌 전은 pending. 가격을 만들지 않는다."
+}

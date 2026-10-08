@@ -1,0 +1,42 @@
+name: Score judgment ledger
+
+# 설계 단계 (2026-10-08). 스케줄 없음. main 에 push 하지 않는다.
+# workflow_dispatch 이거나, 장부·채점 스크립트가 바뀐 pull request 에서만 검사한다.
+# 채점 결과 JSON 은 artifact 로만 남긴다.
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "ledger/**"
+      - "scripts/ledger_common.py"
+      - "scripts/score_ledger.py"
+      - "scripts/check_ledger.py"
+      - "scripts/backfill_ledger_sample.py"
+      - "scripts/source_cluster.py"
+      - "scripts/test_ledger.py"
+      - ".github/workflows/score-ledger.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: ledger contract
+        run: python3 scripts/check_ledger.py
+      - name: offline tests
+        run: python3 scripts/test_ledger.py
+      - name: score matured rows
+        run: python3 scripts/score_ledger.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: judgment-ledger-score
+          path: |
+            ledger/score_summary.json
+            ledger/scorecard.json

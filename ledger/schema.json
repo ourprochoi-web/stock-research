@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ourprochoi-web.github.io/stock-research/ledger/schema.json",
+  "title": "Judgment ledger row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "routing_id", "date", "ticker", "name", "market", "instrument",
+    "stance", "stance_source", "score_mode", "lead", "pages", "claim_ko",
+    "ref", "benchmark", "horizons", "breaks_if", "evidence"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^j-\\d{8}-\\d{2,3}$"},
+    "routing_id": {"type": "string", "pattern": "^r-\\d{8}-\\d{2,3}$"},
+    "date": {"type": "string", "format": "date"},
+    "ticker": {"type": "string", "minLength": 1},
+    "name": {"type": "string"},
+    "name_on_naver": {"type": ["string", "null"]},
+    "name_endpoint": {"type": ["string", "null"]},
+    "market": {"enum": ["KR", "US", "JP", "OTHER"]},
+    "instrument": {"type": "string", "description": "equity, cds_5y, … 채점 상품. 수량이 아니다."},
+    "stance": {"enum": ["긍정", "중립", "부정", "헤지"]},
+    "stance_source": {"enum": ["lead", "backfill-inferred"]},
+    "stance_note": {"type": "string"},
+    "score_mode": {"enum": ["excess", "manual"]},
+    "lead": {"type": "string"},
+    "routing_mark": {"type": ["string", "null"]},
+    "routing_grade": {"type": ["string", "null"]},
+    "pages": {
+      "type": "array",
+      "items": {"type": "string", "pattern": ".+#T\\d+$"}
+    },
+    "claim_ko": {"type": "string", "minLength": 1},
+    "ref": {"$ref": "#/$defs/priceRef"},
+    "benchmark": {"$ref": "#/$defs/benchmark"},
+    "horizons": {"const": ["30d", "90d"]},
+    "breaks_if": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/breakIf"}
+    },
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "scores": {"type": ["object", "null"]}
+  },
+  "$defs": {
+    "priceRef": {
+      "type": "object",
+      "required": ["price", "currency", "naver_code", "endpoint"],
+      "properties": {
+        "price": {"type": ["number", "null"]},
+        "currency": {"type": "string"},
+        "asof": {"type": ["string", "null"]},
+        "session": {"type": ["string", "null"]},
+        "naver_code": {"type": "string"},
+        "endpoint": {"type": "string"},
+        "fetched_at": {"type": "string"},
+        "unverified_reason": {"type": "string"},
+        "same_day_bar_ignored": {"type": "object"}
+      }
+    },
+    "benchmark": {
+      "type": "object",
+      "required": ["symbol", "naver_code", "endpoint", "why"],
+      "properties": {
+        "symbol": {"type": "string"},
+        "name": {"type": ["string", "null"]},
+        "name_endpoint": {"type": ["string", "null"]},
+        "kind": {"type": "string"},
+        "naver_code": {"type": "string"},
+        "currency": {"type": "string"},
+        "price": {"type": ["number", "null"]},
+        "asof": {"type": ["string", "null"]},
+        "session": {"type": ["string", "null"]},
+        "endpoint": {"type": "string"},
+        "why": {"type": "string"},
+        "same_day_bar_ignored": {"type": ["object", "null"]},
+        "unverified_reason": {"type": ["string", "null"]}
+      }
+    },
+    "breakIf": {
+      "type": "object",
+      "required": ["text", "check"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "metric": {"type": ["string", "null"]},
+        "op": {"enum": ["lt", "lte", "gt", "gte", "eq", "neq", null]},
+        "threshold": {"type": ["number", "null"]},
+        "unit": {"type": ["string", "null"]},
+        "deadline": {"type": ["string", "null"]},
+        "check": {"enum": ["manual", "price", "macro"]}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["intake_n", "independent_n", "origins"],
+      "properties": {
+        "intake_n": {"type": "integer"},
+        "independent_n": {"type": "integer"},
+        "origins": {"type": "array"},
+        "intake": {"type": "array", "items": {"type": "string"}},
+        "intake_missing": {"type": "array"}
+      }
+    }
+  }
+}
