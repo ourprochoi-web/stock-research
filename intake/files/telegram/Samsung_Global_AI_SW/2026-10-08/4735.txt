@@ -1,0 +1,19 @@
+마이크로소프트, Windows를 ‘하이브리드 인텔리전스’ 플랫폼으로 전환
+
+: 마이크로소프트는 Windows를 AI 에이전트가 로컬 PC와 클라우드를 오가며 작업을 수행하는 하이브리드 AI 플랫폼으로 재설계. 클라우드 토큰 비용 절감과 AI 성능, 보안, 기업 관리 기능의 통합이 핵심
+
+: Microsoft Execution Containers(MXC)를 Windows 11에 정식 출시. 에이전트별 파일·네트워크 접근을 제한하고 독립적 ID를 부여해 사용자와 에이전트의 행동을 구분. Agent 365·Intune과 연계해 기업의 통제·감사 지원
+
+: 에이전트 생태계 확대. 오픈AI Codex, GitHub Copilot, OpenClaw, Replit, NVIDIA OpenShell 등이 MXC를 지원하며 Claude Code, Manus, Perplexity 등도 지원 예정. Meta Muse도 Windows 네이티브 앱으로 출시해 MXC 통합 계획
+
+: 프론티어급 모델의 로컬 실행 확대. MAI Code 1.1 Flash(137B)는 3-bit 양자화로 모델 크기를 약 80% 축소하고 256K 컨텍스트 지원. NVIDIA Nemotron 70B+는 약 20GB 메모리에서 실행 가능하며 DeepSeek V4 Flash(284B)도 로컬 구동 추진
+
+: GitHub HydraFusion을 로컬까지 확장. 작업별로 로컬·클라우드 모델을 자동 선택해 토큰 비용 최적화. Copilot·CLI·VS Code에서 10월 말 프리뷰 예정
+
+: Copilot의 개인 에이전트 기능 강화. 사용자 허가하에 PC파일·활동 맥락을 이해하고 파일 정리, 문제 해결, 코딩 등을 직접 수행. 지속형 에이전트 Autopilot은 백그라운드 작업을 지원하며 Copilot+ PC에 순차 적용 예정
+
+: AI 에이전트 중심 하드웨어 확대. RTX Spark 기반 PC는 최대 128GB 메모리와 120B+ 모델 로컬 실행 지원. DGX Station for Windows는 최대 748GB 메모리로 1T+ 모델 및 32개 이상 동시 에이전트 실행 목표
+
+: Windows Search를 실행 인터페이스로 확장. 자연어로 PC 설정 변경, 창 정렬, 메시지 전송 등을 수행하고 향후 Copilot 통합 예정
+
+https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence
