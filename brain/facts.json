@@ -7979,6 +7979,45 @@
           "intake": "u-20261002-tg-118092",
           "page": "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
           "note": "기사 문구는 「1.5달러 안팎」. 공시 확정가 아님."
+        },
+        "q3_2026_prelim_sales": {
+          "value": 195.0,
+          "unit": "조원",
+          "basis": "연결 잠정 매출",
+          "asof": "2026-10-08",
+          "num": "연결 매출 1,950,000억",
+          "den": "1조원",
+          "grade": "①",
+          "source": "DART 연결재무제표기준영업(잠정)실적 rcpNo=20261008800004",
+          "intake": "c-20261008-t81",
+          "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+          "note": "YoY +126.6% vs 2025.3Q 86.0617조, QoQ +13.7% vs 2026.2Q 171.4995조. 공시 예상 200.8422조 대비 −3%."
+        },
+        "q3_2026_prelim_op": {
+          "value": 107.4,
+          "unit": "조원",
+          "basis": "연결 잠정 영업이익",
+          "asof": "2026-10-08",
+          "num": "영업이익 1,074,000억",
+          "den": "1조원",
+          "grade": "①",
+          "source": "DART 연결재무제표기준영업(잠정)실적 rcpNo=20261008800004",
+          "intake": "c-20261008-t81",
+          "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+          "note": "YoY +782.8% vs 2025.3Q 12.1661조, QoQ +20.0% vs 2026.2Q 89.4924조. 공시 예상 106.7467조 대비 +1%."
+        },
+        "q3_2026_prelim_opm": {
+          "value": 55.1,
+          "unit": "%",
+          "basis": "잠정 영업이익/잠정 매출",
+          "asof": "2026-10-08",
+          "num": "영업이익 107.4조",
+          "den": "매출 195.0조",
+          "grade": "①",
+          "source": "DART 잠정 107.4/195.0",
+          "intake": "c-20261008-t81",
+          "page": "hbm-packaging/hbm_pkg_company_samsung.html",
+          "note": "107.4/195.0=55.08% → 55.1%. 공시 라벨이 아니라 직접 나눔."
         }
       }
     },
