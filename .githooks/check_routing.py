@@ -36,6 +36,7 @@ KNOWN_FIELDS = {"id", "date", "kind", "intake", "grade", "claim", "routed", "par
 PARKED = {"open", "regime", "portfolio", "events"}
 ENTITY_PREFIX = "entity:"   # parked:"entity:<KEY>" — 테제에 안 걸린 관측을 entities.companies[KEY].watch[] 에 쌓는다(2026-09-26)
 WATCH_SOFT_CAP = 12         # watch[] 가 이 수를 넘으면 경고 — 테제로 승격하거나 접을 때다
+                                 # 사람 승인 접기(2026-10-08): 뺀 rid는 그 회사 theses의 evidence/log에 있으면 접촉이다
 ENTITIES = "brain/entities.json"
 ID_RE = re.compile(r"^r-\d{8}-\d{2,3}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -171,16 +172,37 @@ def main(argv):
             if "digest-only" in action and not hit_theses and not hit_entities:
                 errors.append(f"{tag}: action digest-only 인데 테제도 엔티티 watch 도 건드리지 않았다 — "
                               f"브레인에 남지 않는 줄은 routing 이 아니다(parked:\"entity:<KEY>\" 로 쌓거나 skip)")
-        # 엔티티 접촉 — parked entity:KEY 면 그 카드의 watch[] 에 이 줄이 있어야 한다(테제 접촉과 같은 원리)
+        # 엔티티 접촉 — parked entity:KEY 면 watch[] 또는 승격 테제(evidence/log)에 이 줄이 있어야 한다.
+        # 워치 12줄 초과를 사람이 테제로 접으면 rid는 지우지 않고 그 회사 theses가 가리키는 evidence[]·log[].rid에 남긴다.
+        def archived(key, rid_):
+            card = ENT[key]
+            for ref in card.get("theses") or []:
+                if not isinstance(ref, str) or "#" not in ref:
+                    continue
+                pg, rest = ref.split("#", 1)
+                page = tid.get(pg) or {}
+                for tname in rest.split(","):
+                    th = page.get(tname.strip())
+                    if not th:
+                        continue
+                    if rid_ in (th.get("evidence") or []):
+                        return True
+                    for e in th.get("log") or []:
+                        if isinstance(e, dict) and e.get("rid") == rid_:
+                            return True
+            return False
+
         for key in hit_entities:
             watch = ENT[key].get("watch") or []
-            if any(w.get("rid") == rid for w in watch):
+            in_watch = any(w.get("rid") == rid for w in watch)
+            if in_watch or archived(key, rid):
                 touched_ok += 1
-                bad = [w for w in watch if w.get("rid") == rid and not HANGUL.search(str(w.get("one", "")))]
-                if bad:
-                    errors.append(f"{tag}: entities[{key}].watch 의 one 에 한국어가 없다")
+                if in_watch:
+                    bad = [w for w in watch if w.get("rid") == rid and not HANGUL.search(str(w.get("one", "")))]
+                    if bad:
+                        errors.append(f"{tag}: entities[{key}].watch 의 one 에 한국어가 없다")
             else:
-                errors.append(f"{tag}: parked entity:{key} 인데 그 카드 watch[] 에 rid=={rid} 항목이 없다 — 쌓지 않은 관측은 routing 이 아니다")
+                errors.append(f"{tag}: parked entity:{key} 인데 watch[]에도 승격 테제 evidence/log에도 rid=={rid}가 없다 — 쌓지 않은 관측은 routing 이 아니다")
             touched_total += 1
             if len(watch) > WATCH_SOFT_CAP:
                 warns.append(f"entities[{key}].watch {len(watch)}줄 — 테제로 승격하거나 접을 때다(상한 {WATCH_SOFT_CAP})")

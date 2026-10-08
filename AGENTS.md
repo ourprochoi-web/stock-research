@@ -68,7 +68,7 @@ Lead는 **해석자이자 종합자**다 — 들어온 주장을 테제에 착�
 | `priced_in`·`variant`·`breaks_if` | `observation`·`judgment` 는 셋 다 비면 안 된다 |
 | `action` | `priced_in ≈ variant` 면 `no-edge`. `digest-only` 는 **테제 또는 엔티티 watch 접촉이 있을 때만** 허용 — 어디에도 안 쌓인 요약은 routing 줄이 아니다(`routed:"skip:no-thesis"`) |
 | **테제 접촉** | `routed[]` 에 `page#T` 가 있으면 그 테제의 `log[]` 에 `rid == id` 인 항목이 있거나 `last_tested >= date` 여야 한다 |
-| **엔티티 접촉** | `parked` 에 `entity:KEY` 가 있으면 `entities.companies[KEY].watch[]` 에 `rid == id` 항목(한국어 `one`)이 있어야 한다. **둘 중 하나도 없으면 해석도 종합도 아니다** |
+| **엔티티 접촉** | `parked` 에 `entity:KEY` 가 있으면 `entities.companies[KEY].watch[]` 에 `rid == id` 항목(한국어 `one`)이 있어야 한다. **사람 승인으로 테제에 접은 rid**는 watch에서 빠질 수 있다 — 그 경우 그 회사 `theses`가 가리키는 테제의 `evidence[]` 또는 `log[].rid`에 같은 rid가 있어야 한다(2026-10-08). **둘 중 하나도 없으면 해석도 종합도 아니다** |
 | `resolve_by` | `prediction` 필수 · `judgment` 중 `verdict` 가 ⓑ 면 필수 (「언제 틀렸는지 아나」) |
 | `kind:verdict` | `event` 필드(판정한 events.json 항목 what 앞 40자) + 그 이벤트는 events.json 에서 삭제 |
 
@@ -81,7 +81,7 @@ Lead는 **해석자이자 종합자**다 — 들어온 주장을 테제에 착�
 | **ⓐ 확인** | 테제 `log[]` 에 `{date, mark:"ⓐ", rid, text}` append · `last_tested` 갱신 | 「같은 말을 더 세게」 금지 — `priced_in ≈ variant` 면 log 만 남기고 `action: no-edge`. **같은 배치에 반대 방향 ②③이 있으면 `text` 끝에 「반대편: …」 한 줄** — 저울은 한쪽만 올리면 기운다 |
 | **ⓑ 도전** | `status` → `도전` · `basis` 재작성(≤220자 · 날짜 꼬리표) · `log[]` mark ⓑ · **`resolve_by`** | 사람이 주간 감사에서 `정정`·`철회`·`유지` 로 확정. Lead는 확정하지 않는다 |
 | **ⓒ 신규** | 배치처 페이지가 있으면 테제 append (`id` 다음 번호 · `claim·basis·falsifier·event·status:"관측"`) | `falsifier` 와 `event` 없으면 거절. 페이지가 없으면 **회사면 `entities` 후보 카드 + `watch[]`**, 테마·매크로면 `open.json` 에 「판단 0편」으로 |
-| **관측 축적** | 테제에 안 걸린 회사 관측 → `parked:"entity:KEY"` + `watch[]` `{date, grade, rid, one}` | `one` 은 한국어 한 줄(수치·출처·방향) · 포지션 서열·집행 언급 금지 · watch 가 12줄을 넘으면 커밋 메시지에 「승격 후보」라 적고 사람과 테제로 올릴지 정한다 |
+| **관측 축적** | 테제에 안 걸린 회사 관측 → `parked:"entity:KEY"` + `watch[]` `{date, grade, rid, one}` | `one` 은 한국어 한 줄(수치·출처·방향) · 포지션 서열·집행 언급 금지 · watch 가 12줄을 넘으면 커밋 메시지에 「승격 후보」라 적고 사람과 테제로 올릴지 정한다. 사람이 승격·접기를 승인하면 배치 페이지에 테제를 붙이고(`claim·basis·falsifier·event`), 뺀 rid는 그 테제 `evidence[]`에 남긴 뒤 watch를 12줄 이하로 줄인다 |
 | **이미 판정** | routing 에 새 줄 없이 intake `routed:true` + `routing:` 기존 r-id | grep 으로 그때 줄을 실제로 읽었을 때만 |
 
 수급·13F·환율·금리는 테제에 넣지 않고 **크기와 창을 밝힌 관측**으로만(`CLAUDE.md` §J4). 보유 종목의 수급이 테제와 어긋나면 `docs/judgment_protocols_2026-09-23.md` §2 (hold rule) — 사이즈 언급 없이 관측만.

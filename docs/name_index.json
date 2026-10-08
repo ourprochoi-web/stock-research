@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-07",
+ "generated": "2026-10-08",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -55,6 +55,16 @@
      "T4"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "BYD": {
+   "code": "BYD",
+   "market": "HK",
+   "entity": "BYD",
+   "falsifier": "name_index에 기존 키 없음. 키는 BYD(1211.HK). 한국 중형 이하 완성차 카드는 만들지 않음. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -404,6 +414,7 @@
     ],
     "ai-infra/optical_valuechain_9.html": [
      "T1",
+     "T2",
      "T3",
      "T5"
     ],
@@ -473,6 +484,16 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "OCI홀딩스": {
+   "code": "010060",
+   "market": "KR",
+   "entity": "010060",
+   "falsifier": "KRX 010060. 이번 세션 opendart 미조회.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -664,7 +685,8 @@
      "T3",
      "T4",
      "T5",
-     "T6"
+     "T6",
+     "T7"
     ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T5"
@@ -814,8 +836,8 @@
   "기아": {
    "code": "000270",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "000270",
+   "falsifier": "정본 페이지 없음. 9월 글로벌은 해외가 내수를 상쇄. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -1279,8 +1301,8 @@
   "삼성SDI": {
    "code": "006400",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "006400",
+   "falsifier": "KRX 006400. 이번 세션 opendart 미조회.",
    "facts": 0,
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
@@ -1328,6 +1350,9 @@
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
     ],
+    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
+     "T1"
+    ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
      "T2",
@@ -1336,7 +1361,8 @@
      "T5",
      "T6",
      "T7",
-     "T8"
+     "T8",
+     "T9"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T1",
@@ -1365,7 +1391,7 @@
    "market": "KR",
    "entity": "005930",
    "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
-   "facts": 10,
+   "facts": 13,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
@@ -1375,7 +1401,8 @@
      "T5",
      "T6",
      "T7",
-     "T8"
+     "T8",
+     "T9"
     ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T5"
@@ -1661,6 +1688,7 @@
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T2",
      "T3",
+     "T4",
      "T5"
     ]
    },
@@ -2123,15 +2151,15 @@
   "일진전기": {
    "code": "103590",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "103590",
+   "falsifier": "목표주가·비중은 아카이브하지 않음. 2029 납기 잔고 시계는 r-20260926-38과 겹친다.",
    "facts": 9,
    "theses": {
-    "ai-infra/ai_power_company_cable_wire.html": [
-     "T1",
+    "ai-infra/ai_power_company_transformer_grid.html": [
      "T3"
     ],
-    "ai-infra/ai_power_company_transformer_grid.html": [
+    "ai-infra/ai_power_company_cable_wire.html": [
+     "T1",
      "T3"
     ],
     "ai-infra/ai_power_top5_picks.html": [
@@ -2712,18 +2740,18 @@
   "한미반도체": {
    "code": "042700",
    "market": "KR",
-   "entity": null,
+   "entity": "042700",
    "falsifier": null,
    "facts": 0,
    "theses": {
-    "defense/k_defense_cross_valuation.html": [
-     "T8"
-    ],
     "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
      "T1",
      "T2",
      "T3",
      "T4"
+    ],
+    "defense/k_defense_cross_valuation.html": [
+     "T8"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T1",
@@ -2833,6 +2861,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한화솔루션": {
+   "code": "009830",
+   "market": "KR",
+   "entity": "009830",
+   "falsifier": "KRX 009830. 이번 세션 opendart 미조회.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -3090,10 +3128,13 @@
   "현대차": {
    "code": "005380",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
-   "facts": 0,
+   "entity": "005380",
+   "falsifier": "정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chain.html#T1만 가리키고 내수 점유 주장과 맞지 않아 테제에 안 붙임. 비중·집행 아님.",
+   "facts": 1,
    "theses": {
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T6"
+    ],
     "robot/robot_theme_supply_chain.html": [
      "T1"
     ]
@@ -3396,10 +3437,14 @@
      "T1"
     ],
     "ai-infra/ai_chip_company_marvell.html": [
-     "T2"
+     "T2",
+     "T5"
     ],
     "ai-infra/ai_chip_company_nvidia.html": [
      "T1"
+    ],
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T5"
@@ -3721,6 +3766,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Boost Run": {
+   "code": "BRUN",
+   "market": "US",
+   "entity": "BRUN",
+   "falsifier": "정본 페이지 없음. GB300·누적 $26억은 8-K에 없고 X 중계라 워치 본문에 넣지 않음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Bristol Myers Squibb": {
    "code": "BMY",
    "market": "US",
@@ -3772,6 +3827,12 @@
      "T4"
     ],
     "defense/us_defense_primes.html": [
+     "T1"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T5"
+    ],
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T1"
     ],
     "national-strategy/ns_semiconductor_war.html": [
@@ -4528,8 +4589,8 @@
   "Intel": {
    "code": "INTC.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "INTC",
+   "falsifier": "정본 카드가 없어 US 메가로 후보만. 테라팹 서사 전체는 넣지 않음. 블룸 편 테제는 비접촉. 비중·집행 아님.",
    "facts": 4,
    "theses": {
     "ai-infra/ai_chip_company_nvidia.html": [
@@ -4599,6 +4660,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "IonQ": {
+   "code": "IONQ",
+   "market": "US",
+   "entity": "IONQ",
+   "falsifier": "정본 테제 페이지 없음. 양자 테제 신설 안 함. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Johnson & Johnson": {
    "code": "JNJ",
    "market": "US",
@@ -4631,6 +4702,16 @@
      "T6"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Lambda Labs / Lambda cloud": {
+   "code": "Lambda",
+   "market": "US",
+   "entity": "Lambda",
+   "falsifier": "정본 테제 페이지 없음. 키는 Lambda. 티커를 확인하지 못해 코드 카드는 만들지 않음. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4798,12 +4879,13 @@
    "market": "US",
    "entity": "MU",
    "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
-   "facts": 19,
+   "facts": 20,
    "theses": {
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",
      "T2",
-     "T5"
+     "T5",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T1",
@@ -4945,6 +5027,9 @@
     "ai-infra/ai_power_company_semi_ess_dc.html": [
      "T1"
     ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T1"
     ],
@@ -4974,6 +5059,7 @@
      "T3"
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T1",
      "T5"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
@@ -5562,8 +5648,8 @@
   "SpaceX": {
    "code": "SPCX.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "SPCX",
+   "falsifier": "정본 페이지 없음. 테마 페이지 space/space_update_2026.html T1에 $400억 조달 보도만 로그. CSA 매출 숫자는 미검증이라 넣지 않음.",
    "facts": 0,
    "theses": {
     "ai-infra/us_vertiv_corning_deep.html": [
@@ -5798,6 +5884,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Unity": {
+   "code": "U",
+   "market": "US",
+   "entity": "U",
+   "falsifier": "정본 페이지 없음. US 게임 엔진. 핀란드 EIA와 무관. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Venture Global": {
    "code": "VG",
    "market": "US",
@@ -5991,6 +6087,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "맥도날드(McDonald's)": {
+   "code": "MCD",
+   "market": "US",
+   "entity": "MCD",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "사이퍼마이닝(Cipher Mining)": {
    "code": "CIFR",
    "market": "US",
@@ -6011,11 +6117,31 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "제너럴모터스": {
+   "code": "GM",
+   "market": "US",
+   "entity": "GM",
+   "falsifier": "미국 대형 완성차. 일렉트라 E7은 현대 중형 SUV 가격대 조항. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "테라울프(TeraWulf)": {
    "code": "WULF",
    "market": "US",
    "entity": "WULF",
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "펭귄솔루션스(Penguin Solutions)": {
+   "code": "PENG",
+   "market": "US",
+   "entity": "PENG",
+   "falsifier": "정본 페이지 없음. #111이 콜 금액을 이미 적음. 여기엔 TP·컨센서스 델타만. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
    "aliases": [],
