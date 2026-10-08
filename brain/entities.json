@@ -4,7 +4,7 @@
     "rules": [
       "business 는 사업보고서·10-K 「사업의 개요」로 대조하면 ①로 올리고 business_grade 를 고친다",
       "새 회사는 정본 페이지가 생긴 뒤에 넣는다 — 단 status:\"후보\" 카드는 예외(페이지 없음 · watch[] 로만 쌓임 · 12줄을 넘으면 테제로 승격하거나 접는다)",
-      "watch 항목은 append 만 · 수정·삭제·접기는 사람과 함께 · rid 는 routing.jsonl 에 실재 · one 에는 포지션 서열·집행 언급을 쓰지 않는다"
+      "watch 항목은 append 만 · 수정·삭제·접기는 사람과 함께 · 사람 승인 승격은 테제 evidence로 접고 watch는 12줄 이하 · rid는 evidence에 남긴다 · rid 는 routing.jsonl 에 실재 · one 에는 포지션 서열·집행 언급을 쓰지 않는다"
     ],
     "seeded": "2026-09-13 · 광통신 25사"
   },
@@ -273,6 +273,13 @@
           "rid": "r-20261007-222",
           "one": "③ TD코웬 Hold 상향 TP 245→350. 커넥티비티·커스텀 XPU 위험 완화. 파이퍼 400·웰스 365는 반복하지 않음.",
           "source": "t.me/insidertracking/65650"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-108",
+          "one": "③ MS는 EW 유지로 목표 $268→$300. FY2031 중간값 $800억. 2027년 배수는 EW가 OW의 2배 이상. 워런트 $120B는 기존.",
+          "source": "https://x.com/PSInvestor/status/2107874845669437709"
         }
       ]
     },
@@ -505,6 +512,13 @@
           "rid": "r-20261007-18",
           "one": "① ATM 완료(10-05): 5,694,845주 평균 $105.36, 순조달 약 $5.880억. Form 144: Yeh 6,000주 예정(~$72.0만), 계획 3/19. 체결 아님.",
           "source": "PR Newswire 302897857 · SEC Form 144 0001974078-26-000376"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-222",
+          "one": "② 대만 증설 전력에 블룸 연료전지 추진. 800G·1.6T가 전력망보다 빠르고 라인은 하이퍼스케일 인증 완료. 계약 공시 없음. 캐파 부족은 r-20260930-01.",
+          "source": "t.me/insidertracking/65743"
         }
       ]
     },
@@ -854,6 +868,13 @@
           "rid": "r-20261008-14",
           "one": "③ 오픈AI 커스텀칩 생산용 $50B+ 조달을 Apollo·Blackstone과 논의. 고객 신용위험이 공급사 대차대조표로 이동.",
           "source": "t.me/Samsung_Global_AI_SW/4731"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-223",
+          "one": "③ $50B+ 용도가 갈린다. WSJ는 오픈AI 맞춤칩(r-14와 같은 축), 프리마켓은 오라클·SpaceX이며 −2%. 용도는 고르지 않음. 공급자 금융이라 중립.",
+          "source": "t.me/insidertracking/65744 · t.me/insidertracking/65749"
         }
       ]
     },
@@ -1864,27 +1885,14 @@
         "hbm-packaging/hbm_pkg_company_sk_hynix.html#T2",
         "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3",
         "hbm-packaging/hbm_pkg_company_sk_hynix.html#T4",
-        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T5"
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T5",
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T7"
       ],
       "tracked_price": true,
       "position": "보유 54주 · 평단 1,699,046 · 스톱 1,200,000",
       "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
-      "note": "HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다.",
+      "note": "HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다. · 2026-10-08 승격 T7: 삼성의 8Hi HBM4 진입은 SKH 점유를 깎는 하방 variant다. 판가 레버리지가 가장 큰 쪽이 먼저 평탄화에 걸린다.",
       "watch": [
-        {
-          "date": "2026-09-29",
-          "grade": "③",
-          "rid": "r-20260929-44",
-          "one": "BCG(삼프로 여의도인사이트 09-29 ③): 용인 일정을 2032에서 2027년 하반기로 앞당긴다는 방송 주장. 부족·LTA 약 5년은 이미 메모리 사이클에 있어 테제 비접촉.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-30",
-          "grade": "②",
-          "rid": "r-20260930-04",
-          "one": "디일렉②(09-29): SK하이닉스가 윈팩에 DDR4·DDR5 플립칩 패키징 외주를 약 4년 만에 재개. P캠퍼스 라인 가동. OSAT 외주 확대 관측.",
-          "source": "t.me/YeouidoStory2/117966 · thelec.kr idxno=62922"
-        },
         {
           "date": "2026-09-30",
           "grade": "③",
@@ -1919,118 +1927,6 @@
           "rid": "r-20261002-03",
           "one": "② Counterpoint: 26Q2 D램매출점유 SKH 25%(QoQ −4%p·29→25), MU 24%와 1%p차. 삼성38% 유지. 비중 아님.",
           "source": "Asiae 277/0005824071 · t.me/YeouidoStory2/118079"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-01",
-          "one": "삼프로·목: 하이닉스 HBM~50%·HBM4 vs 중국 HBM3·베이스다이~4nm·12단 수율난이도; 합의맵 no-edge",
-          "source": "삼프로 PPxcDdxMAUA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-08",
-          "one": "미국 첫 메모리 생산(오하이오·인텔 부지)과 솔리다임 미국 상장 검토는 둘 다 미확인(③). 오하이오 합류는 마이크론 「미국 유일 팹」 프레이밍을 흔들 수 있는 색.",
-          "source": "https://x.com/semiconsight/status/2104117507418415598"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "②",
-          "rid": "r-20260928-20",
-          "one": "로이터(②, 09-25): 솔리다임 2027년 초 IPO 검토·베이크오프. 기업가치 최대 $150B, 조달 약 $15B(소스). 회사 미확인. 별도 카드 없음.",
-          "source": "reuters 2026-09-25"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "②",
-          "rid": "r-20260928-28",
-          "one": "② 스마트데일리 단독(09-28): 도호쿠 기초공사 업계설. 공식 미확인. 합작여부 open(단독/키옥시아). 부품 증산 요구는 별도 업계설.",
-          "source": "smedaily idxno=363767 · t.me/insidertracking/64806"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "②",
-          "rid": "r-20260928-29",
-          "one": "델타(09-28 채널②): 솔리다임 IPO는 여전히 미확정. 상단 $150B(로이터·기등재) vs $100B(오늘 채널). 000660 장중 약 −5%, SK스퀘어 −8%+, SK㈜ −6%+. 거버넌스포럼은 피라미드 심화·8월 철회 촉구.",
-          "source": "t.me/insidertracking/64811"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-46",
-          "one": "BCG 김창욱(③): 하이퍼스케일러 LTA 약 5년(삼성·하이닉스). SK실트론식 극단 연기·파기 가능. 메모리 파기 ① 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-48",
-          "one": "BCG 김창욱(③): 공급 부족을 삼성·SK하이닉스·마이크론 공통으로 프레이밍. 새 수급 숫자 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-49",
-          "one": "BCG 김창욱(③ 방송): 용인 클러스터 착공 2032→2027 하반기. GS 2027-02 팹 오픈과는 다른 문장. ① 아님.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-51",
-          "one": "BCG 김창욱(③): DC 병목은 그리드·전력, 미국 서부 전력 인허가 약 7년. 증설 앞당김의 외부 천장.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-52",
-          "one": "BCG 김창욱(③): DRAM 3사 웨이퍼 캐파 약 20년 CAGR 6–8%·감소 없음, 사이클=가격, 고정비 약 40%. ① 미검산.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-53",
-          "one": "BCG 김창욱(③): HBM 1단위≈DRAM 웨이퍼 8–10장. 10단 범핑 ×10 내부화, 모바일·PC는 외주(하나마이크론·SFA·네패스·LB세미콘).",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-54",
-          "one": "BCG 김창욱(③): 과거 수요 폰~30%·PC~20%·서버~20% → 하이퍼스케일러 DC. AI 수요는 GDP 2–3%가 아니라 기업 AX.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-59",
-          "one": "밴플리트(09-28 NY·머니투데이 ②): 젠슨, 핵심 생산은 SK·삼성·한국. SK와 수년 개발·수천억$ AI공장. 최태원: SK는 기억, 파트너십이 GPU 수요보다 빨리 커지길.",
-          "source": "https://www.mt.co.kr/world/2026/09/29/2026092914004310037"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-65",
-          "one": "SK하이닉스, 윈팩에 DDR4/5 플립칩 패키징 외주 4년 만에 재개·에이팩트 이어 OSAT 확대 — 메모리 시황·외주 수요 신호",
-          "source": "thelec.kr/news/articleView.html?idxno=62922"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-73",
-          "one": "SK하이닉스 HBM5, TSMC CoWoS 검증 완료. 패키지 개발조직이 초기부터 TSMC와 협력(OIP 2026 보도 ②).",
-          "source": "news.skhynix.com OIP 2026"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-75",
-          "one": "트렌드포스(연합 ②): 내년 HBM ASP +121%·공급부족 지속. GPU·ASIC이 8단 HBM 우선 적용 검토.",
-          "source": "yna AKR20260929162200003"
         },
         {
           "date": "2026-10-07",
@@ -2080,6 +1976,13 @@
           "rid": "r-20261008-40",
           "one": "JPM③: SEC가 내년 NVDA향 8Hi HBM4(SKH 주공급 SKU)를 준비한다는 점유 이동 주장. 프리미엄 실측은 아님. LTA는 가격 평탄화로 읽음.",
           "source": "t.me/aetherjapanresearch/25700"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-122",
+          "one": "③ 안철수(뉴스1): 솔리다임 IPO설에 중복상장·주주 통수. 모회사 할인 논쟁. IPO 사실은 r-12, 9440억 매각은 r-20261002-15. 상장 공시 아님.",
+          "source": "https://n.news.naver.com/mnews/article/421/0009217014"
         }
       ]
     },
@@ -2098,181 +2001,14 @@
         "hbm-packaging/hbm_pkg_company_samsung.html#T2",
         "hbm-packaging/hbm_pkg_company_samsung.html#T3",
         "hbm-packaging/hbm_pkg_company_samsung.html#T4",
-        "hbm-packaging/hbm_pkg_company_samsung.html#T5"
+        "hbm-packaging/hbm_pkg_company_samsung.html#T5",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T9"
       ],
       "tracked_price": true,
       "position": "보유 신규 496주 평단 244,927 + 레거시 1,300주 평단 72,600",
       "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
-      "note": "HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)",
+      "note": "HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%) · 2026-10-08 승격 T9: 덜 반영된 것은 내년 NVDA향 8Hi HBM4(SKH 주공급 SKU)로의 점유 이동이다. P→Q에서 판가 스토리는 priced_in이고, capex 앞당김은 수요이자 공급이다.",
       "watch": [
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-33",
-          "one": "삼성전자·물산·SDS·SDI·생명·화재 6개사, KKR 헬릭스 디지털 인프라스트럭처에 총 $1B 투자(머니투데이 09-29 ②, 본문에 6사 명시)",
-          "source": "n.news.naver.com/mnews/article/008/0005419399"
-        },
-        {
-          "date": "2026-09-30",
-          "grade": "③",
-          "rid": "r-20260930-09",
-          "one": "Edgewater③: 삼성 HBM4 생산 HBM3e 대비 원활·1c 베이스다이 진입. LP4x 지원 CY28까지(SKH는 CY27e EOL). DDR4 증설 없음.",
-          "source": "t.me/aetherjapanresearch/25568"
-        },
-        {
-          "date": "2026-10-01",
-          "grade": "③",
-          "rid": "r-20261001-01",
-          "one": "MU FQ4 피어 프린트. 삼성 3Q HBM 매출·M/S 창은 그대로. DRAM ASP high-teens는 삼성 계약가 확인이 아님(②). 수량·비중 변경 아님.",
-          "source": "SEC Ex99.1 · Investing.com FQ4 call transcript"
-        },
-        {
-          "date": "2026-10-02",
-          "grade": "③",
-          "rid": "r-20261002-09",
-          "one": "③미래HV: 27y DRAM비트+27.6·서버DRAM+32.1. DDR4/5계약 26/7→27말+43/+38. HBM4價~2×. 범용보합·HBM2×+→Blended ASP~+30%. Capa본격27. FQ4와 별개.",
-          "source": "미래에셋 House View 2026.10.1 · 김영건"
-        },
-        {
-          "date": "2026-10-02",
-          "grade": "③",
-          "rid": "r-20261002-10",
-          "one": "③미래HV: 삼성 HBM 비트+57%·ASP+49% 견인. ROE 15–25평균13%→26–28평균44%. OP 106/118/536조는③. TP40만·비중 아카이브 안 함.",
-          "source": "미래에셋 House View 2026.10.1 · 김영건"
-        },
-        {
-          "date": "2026-10-01",
-          "grade": "②",
-          "rid": "r-20261001-09",
-          "one": "키움③ 파운드리+LSI 영업손실 6.74→3.92조(−41.8%)·브로드컴 ≥$200B MOU(HBM4/4E·≤2nm) — TF 09-30",
-          "source": "telegram:aetherjapanresearch/25589"
-        },
-        {
-          "date": "2026-10-02",
-          "grade": "②",
-          "rid": "r-20261002-01",
-          "one": "② YNA/KINDS: 삼성 자사주 계획물량 100.96% 완료(5,380만/5,328만5,968·14.16조). 15조까지 ~300만주 여력. 창→실측. 비중 아님.",
-          "source": "t.me/YeouidoStory2/118073 · yna.co.kr/view/AKR20261002042100008"
-        },
-        {
-          "date": "2026-10-02",
-          "grade": "②",
-          "rid": "r-20261002-03",
-          "one": "② Counterpoint: 26Q2 D램매출점유 삼성38% 3Q 연속 1위(QoQ flat). SKH25%·MU24%·CXMT10%. FQ4 재탕 아님. 비중 아님.",
-          "source": "Asiae 277/0005824071 · t.me/YeouidoStory2/118079"
-        },
-        {
-          "date": "2026-10-02",
-          "grade": "②",
-          "rid": "r-20261002-04",
-          "one": "② 더구루: TSLA AI5 삼성 Taylor 2nm·7월 tape-out·내년 양산. AI6 계약 인용 $16.5B. RAM 72/144GB 축소는 수요·공급 신호. 비중 아님.",
-          "source": "theguru.co.kr no=107806 · t.me/YeouidoStory2/118080"
-        },
-        {
-          "date": "2026-10-02",
-          "grade": "②",
-          "rid": "r-20261002-14",
-          "one": "②매경단독: 삼성 HBM4 내년공급가≥3×HBM3E 협상. 업계~$4대중후반/Gb vs HBM3E~$1.5. LTA이달마무리→27 ASP. Mirae~2×와 긴장. 비중아님.",
-          "source": "t.me/YeouidoStory2/118092 · mk.co.kr/news/business/12167164"
-        },
-        {
-          "date": "2026-10-05",
-          "grade": "②",
-          "rid": "r-20261005-05",
-          "one": "② 디일렉 10-02: 엑시노스 2700 전공정 양산 시작, 물량은 작년 2600 대비 10% 이상. S27 기본·플러스·프로의 한·유럽 물량은 정해짐, 울트라 믹스는 미정.",
-          "source": "thelec.kr idxno=63219 · t.me/aetherjapanresearch/25619"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-01",
-          "one": "삼프로·목: 삼성 범용 노출·테일러 파운드리 완충·5년장기계약·재고타이트·멀티플5–7배·「버티라」채널주장; 게이트 전 추가논의 없음",
-          "source": "삼프로 PPxcDdxMAUA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "②",
-          "rid": "r-20260928-26",
-          "one": "ZDNet(② 09-28): P5 1단계 장비 반입 2027년 7–8월→5–6월 논의. 클린룸 ~6개월 당김. 2027년 1분기 반입 요청은 소문. Ph1 DRAM/HBM·Ph2 NAND V10 선매입(발주 없음). 7월 컨콜: 미충족 2026→2027, 쇼티지 2028 가능.",
-          "source": "ZDNet 20260928095625 · t.me/YeouidoStory2/117877"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-46",
-          "one": "BCG 김창욱(③): 하이퍼스케일러 LTA 약 5년(삼성·하이닉스). SK실트론식 극단 연기·파기 가능. 메모리 파기 ① 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-48",
-          "one": "BCG 김창욱(③): 공급 부족을 삼성·SK하이닉스·마이크론 공통으로 프레이밍. 새 수급 숫자 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-50",
-          "one": "BCG 김창욱(③): 삼성도 마이크론 뉴욕 메가팹과 같이 캐팩스를 앞당기는 프레이밍. 금액·일정 ① 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-51",
-          "one": "BCG 김창욱(③): DC 병목은 그리드·전력, 미국 서부 전력 인허가 약 7년. 증설 앞당김의 외부 천장.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-52",
-          "one": "BCG 김창욱(③): DRAM 3사 웨이퍼 캐파 약 20년 CAGR 6–8%·감소 없음, 사이클=가격, 고정비 약 40%. ① 미검산.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-53",
-          "one": "BCG 김창욱(③): HBM 1단위≈DRAM 웨이퍼 8–10장. 10단 범핑 ×10 내부화, 모바일·PC는 외주(하나마이크론·SFA·네패스·LB세미콘).",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-54",
-          "one": "BCG 김창욱(③): 과거 수요 폰~30%·PC~20%·서버~20% → 하이퍼스케일러 DC. AI 수요는 GDP 2–3%가 아니라 기업 AX.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-13",
-          "one": "블룸버그(②·공시 미확인): 삼성전자 포함 그룹 6사가 KKR 지원 Helix에 총 $10억 투자 합의. 반도체·건설·DC·클라우드·금융 AI 인프라 노출.",
-          "source": "insidertracking/64907 · Bloomberg 2026-09-28"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-58",
-          "one": "밴플리트(09-28 NY·머니투데이 ②): 젠슨, 핵심 생산은 삼성·SK·한국. 삼성과 수년 제품개발·수천억$ AI공장. 이재용 축사로 AI 올인 파트너십 재확인.",
-          "source": "https://www.mt.co.kr/world/2026/09/29/2026092914004310037"
-        },
-        {
-          "date": "2026-10-01",
-          "grade": "②",
-          "rid": "r-20261001-13",
-          "one": "라이프 우선주 소각 제안에 내부 거절 가닥(서울경제②). 자사주 15조 90%+·3거래일내 종료 전망. 잔여 환원 55–75조·10월 말 관측.",
-          "source": "t.me/aetherjapanresearch/25595 · m.sedaily.com/article/20097321"
-        },
-        {
-          "date": "2026-10-07",
-          "grade": "②",
-          "rid": "r-20261007-41",
-          "one": "② 채널: 자사주 매입 10-06 종료. 주식수·금액 없음. r-20261002-01 잔여 ~300만주·15조는 공시 전이라 이벤트를 닫지 않음.",
-          "source": "t.me/insidertracking/65589"
-        },
         {
           "date": "2026-10-07",
           "grade": "③",
@@ -2450,6 +2186,20 @@
           "rid": "r-20261007-16",
           "one": "④ NathanCross: 같은 명단에 BE. Jensen 인용은 AI 전력 수요 한 줄. 공시·계약 없음. OKLO·SMR·UUUU 카드는 만들지 않음.",
           "source": "https://x.com/NathanCrossNC/status/2107555095311458541"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-142",
+          "one": "③ P Equity: 구글이 BE·인터섹트를 평가. 가스+태양광 선호, 2027 SOFC를 더 볼 가능성. 조달 없음.",
+          "source": "t.me/pikachu_aje/8363 · https://x.com/pequityresearch/status/2107913097310880163"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-222",
+          "one": "② AAOI 대만 광모듈 공장이 증설 전력으로 연료전지 도입을 추진. 수요처가 데이터센터 밖 공장으로 넓어지나 규모는 작다. 계약 없음.",
+          "source": "t.me/insidertracking/65743"
         }
       ]
     },
@@ -2569,10 +2319,11 @@
       ],
       "theses": [
         "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1,T2,T5",
-        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3,T4"
+        "hbm-packaging/hbm_pkg_company_sk_hynix.html#T3,T4",
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T7"
       ],
       "tracked_price": true,
-      "note": "FQ4 게이트(2026-10-01): non-GAAP EPS 가이던스 $38.15로 ≥37 통과(①). DRAM ASP high-teens·비트 mid-single은 ② 콜. 수량·비중은 사용자. 종전 TP TD $1,600·RBC $1,500.",
+      "note": "FQ4 게이트(2026-10-01): non-GAAP EPS 가이던스 $38.15로 ≥37 통과(①). DRAM ASP high-teens·비트 mid-single은 ② 콜. 수량·비중은 사용자. 종전 TP TD $1,600·RBC $1,500. · 2026-10-08 승격 T7: 남은 질문은 JPM de-spec이 수요 약화인지 출하 극대화인지, 그리고 Q국면에서 가격보다 물량·증설이 먼저인지다.",
       "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
       "watch": [
         {
@@ -2616,118 +2367,6 @@
           "rid": "r-20261006-03",
           "one": "MS③(10-05 로이터): 전력 병목으로 배치가 밀리면 인도 연기·취소가 메모리·광부터 닿는다. NVDA·AVGO 2027년은 안전. 수요 부정이 아니라 시점 위험이다. LTA take-or-pay가 실제 집행되는지 시험할 경로다.",
           "source": "Reuters 2026-10-05 · StreetInsider/Investing"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-01",
-          "one": "삼프로·목: CXMT 비감산·~2028 범용격차·HBM3시작 vs KR HBM4·캡엑스7500억→1조(10월하순); MU 게이트·ASP 실측 전 no-edge",
-          "source": "삼프로 PPxcDdxMAUA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-08",
-          "one": "BofA 전문가콜(Fran Cardells·③): KV캐시·메모리 계층·모델 선택이 에이전틱 추론의 메모리 수요로 이어진다는 프레이밍. SK 미국생산·솔리다임 상장은 미확인. 게이트는 그대로.",
-          "source": "https://x.com/Liberty0918/status/2104026888402596206"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-09",
-          "one": "Dimon(③): 하이퍼스케일러 AI 지출 올해 약 $700B→내년 약 $1T 가능. 아카마이 $11.6B·소프트뱅크 채권 약 $11.1B는 기존 숫자의 재등장. 캐펙스→메모리 색. 카드 신설 없음.",
-          "source": "https://x.com/semiconsight/status/2104360690496532744"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-17",
-          "one": "씨티(③): 프런티어 AA 지능 +9%, 태스크 비용 −55%. 오픈 모델과의 격차가 다시 벌어진다는 효율 신호. 출하·가격의 확정은 아니다.",
-          "source": "t.me/aetherjapanresearch/25490"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-47",
-          "one": "BCG 김창욱(③): 마이크론 SCA는 미인수에도 대금, 가격 문턱 위면 상한. 40% 하한·칼라의 방송 재진술. ① 아님.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-48",
-          "one": "BCG 김창욱(③): 공급 부족을 삼성·SK하이닉스·마이크론 공통으로 프레이밍. 새 수급 숫자 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-50",
-          "one": "BCG 김창욱(③): 뉴욕 메가팹을 캐팩스 앞당김으로 말한다. 착공·금액 ① 없음.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-51",
-          "one": "BCG 김창욱(③): DC 병목은 그리드·전력, 미국 서부 전력 인허가 약 7년. 증설 앞당김의 외부 천장.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-52",
-          "one": "BCG 김창욱(③): DRAM 3사 웨이퍼 캐파 약 20년 CAGR 6–8%·감소 없음, 사이클=가격, 고정비 약 40%. ① 미검산.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-53",
-          "one": "BCG 김창욱(③): HBM 1단위≈DRAM 웨이퍼 8–10장. 10단 범핑 ×10 내부화, 모바일·PC는 외주(하나마이크론·SFA·네패스·LB세미콘).",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "③",
-          "rid": "r-20260928-54",
-          "one": "BCG 김창욱(③): 과거 수요 폰~30%·PC~20%·서버~20% → 하이퍼스케일러 DC. AI 수요는 GDP 2–3%가 아니라 기업 AX.",
-          "source": "youtube jSm5Gd8qEOA"
-        },
-        {
-          "date": "2026-09-28",
-          "grade": "②",
-          "rid": "r-20260928-59",
-          "one": "JPM 할란 서(② TG전언·원문 미취득) OW유지·PT 1540(현 1082·+42%). 실적 앞 HBM4가 HBM3E보다 빠르고 SCA가 생산 절반 초과 가능. 구조적 부족 ~2028.",
-          "source": "t.me/insidertracking/64837"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "③",
-          "rid": "r-20260929-01",
-          "one": "FQ4 비트는 이미 가격(③). 관건은 FQ1'27 가이던스 $550억 상회. S&P500 이익성장 기여에서 NVDA를 제칠 수 있다는 프레임.",
-          "source": "https://x.com/semiconsight/status/2104723330808914063"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "③",
-          "rid": "r-20260929-46",
-          "one": "JPM OW·TP $1540(③): F4Q26 컨센 매출 약 514억달러·GM 86.2%·EPS $31.73 비트+가이던스↑. ASP QoQ 약 +20%(DRAM·NAND). SCA 비트 ≥35%. 12/9 후 초과현금 100% 환원. CY27을 더 타이트로 격상.",
-          "source": "t.me/aetherjapanresearch/25537"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-55",
-          "one": "방송 시각 10/1 목 05:00 KST vs 정본 09-30 장후·KST 10-01 ~06:30(① investors.micron.com) — ① 시각은 유지. 관전=가이던스·SCA/LTA. 방송 매출·EPS 수치는 단위 의심(facts 미기록).",
-          "source": "삼프로TV 더블크루 ANxvbdFq73U"
-        },
-        {
-          "date": "2026-09-29",
-          "grade": "②",
-          "rid": "r-20260929-71",
-          "one": "DDR5 현물 5개월↑ 후 첫 MoM 하락·YoY +614% 유지 · NAND 보합 (JPM 9월)",
-          "source": "t.me/aetherjapanresearch/25546"
         },
         {
           "date": "2026-09-29",
@@ -3137,6 +2776,13 @@
           "rid": "r-20261002-29",
           "one": "Citi③ CBRS TP$320 — Sol Ultrafast=NVDA호스트 과해석↓ · Groq 3431 vs CBRS 1800 tok/s(벤치≠상업) · CS-4 4Q26~2× · OP=GM안정 · 26–28매출뷰 유지(TG aether 25618).",
           "source": "t.me/aetherjapanresearch/25618"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-111",
+          "one": "③ 올트먼 '긴밀한 파트너'에 새 계약·물량 없음. 직전 주 약 -20% 뒤 월요일 +8~9%.",
+          "source": "https://x.com/Semiconsight/status/2107737041224245715"
         }
       ]
     },
@@ -3853,6 +3499,13 @@
           "rid": "r-20260929-12",
           "one": "메리츠(③) F14: 진공 Raptor 1기 조기정지에도 ~275km 첫 완전궤도·V3 26기 교신. 조기 이탈 후 일부 폭발. F15=엔진·타워캐치. 발사 인접.",
           "source": "meritz 44705"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-228",
+          "one": "② 블루오리진에 $28B+외부 $10B·IPO 추진 소식에 프리마켓 −2.29%. 수주 변화는 없다. PL은 카드가 없어 제외.",
+          "source": "t.me/insidertracking/65749"
         }
       ]
     },
@@ -3956,6 +3609,13 @@
           "rid": "r-20261007-230",
           "one": "③ 씨티 25692: 매수·TP NT$4,000(27E EPS×25). 콜 10-15. FY26 +46%, 4Q ~+15%. 2H26E GM 66–67%. NI +4%/+5%. Capex $81B/$90B. AZ 6팹+패키징2·선단 30%. Terafab TX 베이스 아님.",
           "source": "t.me/aetherjapanresearch/25692"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-227",
+          "one": "② GFS와 실리콘 인터포저 5년 $20억. 미국 내 첨단 패키징 공급. 계약 공시 미개봉. GFS 카드는 만들지 않음.",
+          "source": "t.me/insidertracking/65744 · t.me/insidertracking/65745"
         }
       ]
     },
@@ -4385,6 +4045,20 @@
           "rid": "r-20261007-160",
           "one": "④③ 테크피드(10-07): 모더나·머크 피부암 맞춤백신 3상 성공이 환자별 유전체·종양 분석 수요로 이어져 TEM 진단이 붙는다는 주장. 미 학술기관 65%·동종 최대 매출(방송, 공시 미대조).",
           "source": "https://www.youtube.com/watch?v=Wd2F-sEasVw"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-110",
+          "one": "③ 퍼스널리스 인수 HSR 대기 종료를 10/6 8-K로 중계. EDGAR 원문은 이번 세션에 안 열었다.",
+          "source": "https://x.com/PSInvestor/status/2107858065257365616"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-204",
+          "one": "② 삼프로 10/8(공시 미대조): 매출 $382.5M(+22%), D&A $93.2M(+30%). 모더나 다년은 뉴스 인용. HSR은 r-110.",
+          "source": "https://www.youtube.com/watch?v=YHF9soni-WI"
         }
       ]
     },
@@ -5033,7 +4707,10 @@
       ],
       "intake": [
         "u-20261002-tg-118082",
-        "c-20261006-lges-dsx"
+        "c-20261006-lges-dsx",
+        "c-20261008-143851-65716",
+        "c-20261008-163704-44787",
+        "c-20261008-163704-lges-release"
       ],
       "tracked_price": false,
       "note": "46100·벤츠·폴란드 BMA는 ②·미확정. 비중 아님.",
@@ -5058,6 +4735,27 @@
           "rid": "r-20260929-51",
           "one": "아이뉴스24(②): LG엔솔–B2U. 사용후 EV 배터리→美 BESS 재사용(전력망·DC). GWh 목표이나 특정 수주 아님. 신품 LFP JF2·북미 ESS 잔고·5거점 병행.",
           "source": "t.me/YeouidoStory2/117923"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-124",
+          "one": "② 한국경제TV 점심브리핑: LG엔솔 40만원 회복·어닝시즌 강세. 수주·실적 숫자는 이 제목에 없음.",
+          "source": "https://t.me/YeouidoStory2/118236"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-133",
+          "one": "② 엘레브라 스포듀민 정광 다년 공급. 넥스트스타 약 50억 캐나다달러 투자 계획. 물량·기간 없음. 40만원은 r-124.",
+          "source": "https://t.me/insidertracking/65716"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "①③",
+          "rid": "r-20261008-150",
+          "one": "① 3Q26P 매출 9조6,434억·OP 7,560. AMPC 4,169 제외 OP 3,391(컨센 3,264 대비 +3.9%는 보상금). ESS 수율·팩 병목, 27년 턴. 컨콜 11/3.",
+          "source": "https://www.lg.co.kr/media/release/30650 · t.me/meritz_research/44787"
         }
       ],
       "code": "373220"
@@ -5494,6 +5192,13 @@
           "rid": "r-20261008-16",
           "one": "② Q1 FY27 매출 $341.9M(+322%), adj.EBITDA $64.4M, HPC NOI 마진 89%. 계약매출 약 $36B·12개월 600MW+. 7% 선순위 $1.59B. 부채 약 $6.4B·GAAP 순손실 $221M.",
           "source": "t.me/insidertracking/65699"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-102",
+          "one": "③ 연 고정임대 $2.37B가 Q1과 일치, 저자 계산 cap 약 9%. PF2 300MW 중 ORCL 200MW, 약 100MW는 문장이 잘림. Q1 손익은 r-16.",
+          "source": "https://x.com/PSInvestor/status/2108029113810514066"
         }
       ]
     },
@@ -5746,6 +5451,13 @@
           "rid": "r-20261007-221",
           "one": "② 공급망에 수백억 달러. 삼성·SK하이닉스를 장기·HBM 핵심 파트너. 삼성 메모리·파운드리 추가 협력 검토. 리사 수 수요일 회동.",
           "source": "t.me/insidertracking/65649 · 65652"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-107",
+          "one": "③ MI455X HBM4 공급은 공식화로 중계, 파운드리 본칩 수주는 미확정. 회동 예고는 r-20261007-221.",
+          "source": "https://x.com/NURadu_/status/2107756579584106578"
         }
       ]
     },
@@ -5808,6 +5520,64 @@
           "rid": "r-20261007-241",
           "one": "웰스파고③ TP $411→$417(2027E EPS $15.17×27.5). 클라우드 +142%(핵심 +81%). 외부 TPU $9.2/$11.5B, 경로 $21.9/$99/$169.1B. 검색 +14.5%·4Q +12.4%. 2027 캡엑스 $350B(컨 $305B).",
           "source": "https://t.me/aetherjapanresearch/25696"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-103",
+          "one": "③ 샤이엔 DC 확정계약: 계통 최대 590MW, 가스발전 $18억(2027–29), 2048년까지. r-20261007-40의 미계약 590MW를 서명으로 올림.",
+          "source": "https://x.com/PSInvestor/status/2107832562261602352"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-104",
+          "one": "③ 딥마인드·아이소모픽·메타가 바이오허브 Virtual Biology에 $3억. AI 생물데이터 $18억 추진(로이터 중계, 잘림).",
+          "source": "https://x.com/PSInvestor/status/2107893722226852191"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-109",
+          "one": "③ 웨이모 첫 사모대출 약 $30억→$50억, 기준금리+525bp. 핌코·블랙스톤·식스스트리트(블룸버그 중계).",
+          "source": "https://x.com/PSInvestor/status/2107832237442093141"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②③",
+          "rid": "r-20261008-224",
+          "one": "②③ Gemini Agent: 목표만 주면 완료, 하위 에이전트, Gemini+Claude 라우팅. TPU 8i 가성비 +80%. 고객 ~500곳 각 1조 토큰+, 포춘100 ~90% Enterprise.",
+          "source": "t.me/aetherjapanresearch/25708 · t.me/Samsung_Global_AI_SW/4737"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-225",
+          "one": "③ BofA 117곳: Q3 Search 계획대비 증가 30%로 1위, Q4 증가 기대 47%. ChatGPT 집행 28%·12개월 43%. 재배분 1위는 Search 15%이나 비중>5%는 11%. Q3 YoY 14%(컨센 15%).",
+          "source": "t.me/aetherjapanresearch/25710"
+        }
+      ]
+    },
+    "GNRC": {
+      "name": "Generac",
+      "market": "US",
+      "layer": "현장·백업 발전",
+      "business": "주택·상업 백업 발전기. 채널은 아마존 데이터센터 공급계약 최대 $8B와 발전설비 증산을 전한다. 공시 미개봉.",
+      "business_grade": "②(채널 전언 · 공시 미개봉 · 2026-10-08)",
+      "status": "후보",
+      "pages": [],
+      "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T4"
+      ],
+      "tracked_price": false,
+      "note": "정본 페이지는 없음. 이름 색인이 블룸 T4(온사이트)에 둔다. $8B는 09-17 로그에 이미 있고 SOFC가 아니다. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-226",
+          "one": "③ 키뱅크 OW·PT $280. 아마존 공급 최대 $8B와 데이터센터 발전설비 증산. $8B 금액은 09-17 T4에 이미 있음. 확정 발주 전.",
+          "source": "t.me/insidertracking/65745"
         }
       ]
     },
@@ -5856,11 +5626,12 @@
         "ai-sw/ai_sw_company_msft_pltr.html#T3",
         "ai-sw/ai_sw_company_msft_pltr.html#T4"
       ],
-      "intake": [
-        "u-20261002-tg-65208"
-      ],
       "tracked_price": false,
       "note": "정본 페이지는 MSFT와 공유. 엔티티 카드가 없어 후보로 연다. Armada 카드는 만들지 않음. 비중·집행 아님.",
+      "intake": [
+        "u-20261002-tg-65208",
+        "c-20261008-184253-65728"
+      ],
       "watch": [
         {
           "date": "2026-10-02",
@@ -5875,6 +5646,13 @@
           "rid": "r-20261007-161",
           "one": "④ 테크피드: 엔비디아 cuLitho는 설계 최적화, 하위 납품망 운영은 팔란티어 채택이라 「게임 끝」. 파트너십은 방송 주장(공시 아님).",
           "source": "https://www.youtube.com/watch?v=Wd2F-sEasVw"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-172",
+          "one": "② GS 매수·PT $230(198.55 대비 약 16%). 소버린 AI·맞춤앱·버티컬, 2027 초과성과. 파이퍼 $230과 같아 T1 no-edge.",
+          "source": "t.me/insidertracking/65728"
         }
       ]
     },
@@ -5960,6 +5738,20 @@
           "rid": "r-20261008-15",
           "one": "③ 5년 CDS 약 190bp(9월 중순 약 150bp, 블룸버그)로 사상 최고. 부채 조달 협상 중. 블루오리진은 첫 외부 $10B·IPO·베이조스 개인 $28B.",
           "source": "t.me/insidertracking/65671 · 65693"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-105",
+          "one": "③ 머스크: Terafab은 우리가 직접 짓고 운영한다. TSMC 운영설과 반대. 캐파·투자액은 없다.",
+          "source": "https://x.com/jinseongeo83473/status/2107922438436815243"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "③",
+          "rid": "r-20261008-106",
+          "one": "③ FCC가 스타링크 Direct-to-Cell 위성 15,000기를 허가. 매출·개시일은 이 글에 없다.",
+          "source": "https://x.com/jinseongeo83473/status/2107650741007761746"
         }
       ]
     },
