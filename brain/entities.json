@@ -5554,11 +5554,12 @@
         "ai-sw/ai_sw_company_msft_pltr.html#T3",
         "ai-sw/ai_sw_company_msft_pltr.html#T4"
       ],
-      "intake": [
-        "u-20261002-tg-65208"
-      ],
       "tracked_price": false,
       "note": "정본 페이지는 MSFT와 공유. 엔티티 카드가 없어 후보로 연다. Armada 카드는 만들지 않음. 비중·집행 아님.",
+      "intake": [
+        "u-20261002-tg-65208",
+        "c-20261008-184253-65728"
+      ],
       "watch": [
         {
           "date": "2026-10-02",
@@ -5573,6 +5574,13 @@
           "rid": "r-20261007-161",
           "one": "④ 테크피드: 엔비디아 cuLitho는 설계 최적화, 하위 납품망 운영은 팔란티어 채택이라 「게임 끝」. 파트너십은 방송 주장(공시 아님).",
           "source": "https://www.youtube.com/watch?v=Wd2F-sEasVw"
+        },
+        {
+          "date": "2026-10-08",
+          "grade": "②",
+          "rid": "r-20261008-172",
+          "one": "② GS 매수·PT $230(198.55 대비 약 16%). 소버린 AI·맞춤앱·버티컬, 2027 초과성과. 파이퍼 $230과 같아 T1 no-edge.",
+          "source": "t.me/insidertracking/65728"
         }
       ]
     },
