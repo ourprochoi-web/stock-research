@@ -972,10 +972,25 @@
           "rid": "r-20261007-163",
           "one": "④ 테크피드: 비싼 주식 승패는 모니터링뿐. CUDA 독점 대 AMD ROCm 구도 변화를 보자는 주장. 점유·실적 숫자 없음.",
           "source": "https://www.youtube.com/watch?v=Wd2F-sEasVw"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "②③",
+          "rid": "r-20261007-190",
+          "one": "②③ 한경 10-07: 거래별 잔존가치 지원 ≤25%(일괄 아님·조건 비공개). 경제수명 2–3년 대비 만기 6–7년. 수요 둔화 시 판매와 지원이 같이 온다.",
+          "source": "https://www.youtube.com/watch?v=a9bwBy9G0BU"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-193",
+          "one": "② 한경: 중고 H100 약 $1.8–2.2만 vs 신품 $3.5–4만(범위). 절반 안팎은 방송 표현. facts 단일값 아님.",
+          "source": "https://www.youtube.com/watch?v=a9bwBy9G0BU"
         }
       ],
       "intake": [
-        "u-20261002-tg-65211"
+        "u-20261002-tg-65211",
+        "u-20261007-yt-a9bw"
       ]
     },
     "ANET": {
@@ -3613,6 +3628,13 @@
           "rid": "r-20261007-80",
           "one": "② Citi 10-06: Muse 누적 DL 660만+·DAU 180만·16일 1위. 2030E ~$27B(거래~$23B+구독~$4.5B; 약세15.4/기본27.1/강세40). 광고·SMB·기기 제외. HUMAN 웹요청 72%·결제 +25%.",
           "source": "t.me/aetherjapanresearch/25677"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-191",
+          "one": "② 한경: 코어위브 올해 약 $85억 GPU담보의 기초가 메타 장기사용계약·무디스 AAA라고 방송. 공시 미대조.",
+          "source": "https://www.youtube.com/watch?v=a9bwBy9G0BU"
         }
       ]
     },
@@ -4943,7 +4965,8 @@
       "pages": [],
       "theses": [],
       "intake": [
-        "u-20261001-tg-25593"
+        "u-20261001-tg-25593",
+        "u-20261007-yt-a9bw"
       ],
       "tracked_price": false,
       "note": "정본 테제 페이지 없음. name_index 코드는 CRWV.O, 카드 키는 CRWV. 선행 +25%·$40M/MW·비GPU ARR은 r-20260926-25. 비중·집행 아님.",
@@ -4954,6 +4977,13 @@
           "rid": "r-20261001-12",
           "one": "JPM③ Fully Connected(25593): 2차 +10% 가격인상(선행 +25% 후)·Forge·Vera CPU(비GPU 마진 축)·Cognition Vera Rubin 추론 토큰 최대 4.8x. 단기 $40M/MW는 기존 재확인.",
           "source": "t.me/aetherjapanresearch/25593"
+        },
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-191",
+          "one": "② 한경: GPU담보 2023 약 $23억·올해 약 $85억(메타 LTA·무디스 AAA 방송)·8월 약 $26억(JPM·MS·GS). 만기 2031-09·2032-03. GPU+고객CF 도산절연 SPV.",
+          "source": "https://www.youtube.com/watch?v=a9bwBy9G0BU"
         }
       ]
     },
@@ -5804,6 +5834,30 @@
           "rid": "r-20261007-180",
           "one": "② 로이터 중계: 미국 약 1.4만 매장 AI가 매장가격을 추천. 프레즈노 직영 2마일 빅맥 $5.69 vs $6.89(약 20%). 시카고 연방법원 집단소송(5년 메뉴 +약40%). MD 감시가격 금지 10/1은 MCD식 추천 제외.",
           "source": "https://www.youtube.com/watch?v=zT3ZdD6Or2w"
+        }
+      ]
+    },
+    "Lambda": {
+      "name": "Lambda Labs / Lambda cloud",
+      "market": "US",
+      "layer": "AI cloud / neocloud",
+      "business": "AI 클라우드(네오클라우드). 2026-10-07 한경 월가아나토미(②): 8월 약 9억 2,600만 달러 GPU 자산담보 SPV 대출. 투자등급 고객의 확정 배치와 계약 현금흐름이 기초라고 방송. 상장 티커는 이 아카이브 name_index에 없다.",
+      "business_grade": "②(후보 · 2026-10-07 방송 · 공시 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261007-yt-a9bw"
+      ],
+      "tracked_price": false,
+      "note": "정본 테제 페이지 없음. 키는 Lambda. 티커를 확인하지 못해 코드 카드는 만들지 않음. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-07",
+          "grade": "②",
+          "rid": "r-20261007-192",
+          "one": "② 한경: 8월 약 $9.26억 GPU ABS SPV. 투자등급 고객의 확정 배치·계약 현금흐름. 상장 티커는 아카이브에 없음.",
+          "source": "https://www.youtube.com/watch?v=a9bwBy9G0BU"
         }
       ]
     }
