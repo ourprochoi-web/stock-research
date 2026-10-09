@@ -1,0 +1,231 @@
+# X A-tier 2026-10-09 분류
+
+posts: 537
+pulled_at: 2026-10-09T10:54:19+09:00
+window: 2026-10-08 ~12:45 KST → 2026-10-09 ~10:54 KST
+
+- keep: 23 — 라우팅 r-20261009-100..113 (같은 사실의 리포스트·스레드 답은 한 intake)
+- dup: 23 — 오늘 이미 판정한 사실. 새 줄 없음
+- no-claim: 314 — 짧은 답글
+- digest: 173 — 시세·티저·잘린 글·카드 없는 이름
+- kr-midsmall: 4 — KR 중소. 후보 카드 안 만듦
+
+dup 이유별:
+- dup:blue-origin: 1
+- dup:googl-cowen: 1
+- dup:openai-arr: 5
+- dup:orcl-cds-gas: 1
+- dup:rklb-barclays: 1
+- dup:samsung-prelim: 2
+- dup:spacex-spectrum: 8
+- dup:spcx-nvda-chips: 1
+- dup:ust10y-oct7: 1
+- dup:waller: 2
+
+이미 있는 축(재집계 안 함): OpenAI ARR 총액/순액(r-20261009-11), ORCL CDS·가스 트럭(r-20261009-12), 바클레이스 RKLB(r-20261009-16), 스페이스X 주파수(r-20261009-17), TD코웬 알파벳 485(r-20261009-15), 삼성 195조·107.4조(r-20261008-10·r-20261009-02, 세그먼트·HBM 색 없음), 월러(r-20261008-170), 10년 5.3%(r-20261009-01·r-20261008-141/180), GFS $20억(r-20261008-227, GFS 카드 없음), 블루오리진 $100억·IPO(r-20261008-15).
+
+digest에 남긴 것: Pad 39A는 일정·비용이 잘림. AVGO OCP 전시 일정. RKLB 시세·FOIA(새 공식 결정 없음). OSS·ABCL·LPTH·SMCI·PLTR 목표가. 한화엔진 답글에 신규 수주액 없음. LUNR·FLY·VOYG·PsiQuantum·GFS 카드는 만들지 않음.
+
+## dup urls
+- orcl-cds-gas https://x.com/NURadu_/status/2108342230687842309 (original) $ORCL 오라클이 전력 지연 피하기위해 트럭으로 천연가스 운송한다고하네요 전력은 숏티지가 맞다.. 근데 국채랑 유가가 더 문제다 가 정론  근데 시팔 너네 돈도없는데 이렇게하는거맞냐? 라클아 파산
+- openai-arr https://x.com/NURadu_/status/2108328680837775417 (original) 오픈AI 매출 180억 달러 증발? AI주 폭락의 진실  ㅅㅂ AI주들이 단체로 얻어맞은 이유가 이거였습니두.  오픈AI 연환산 매출이 기존 680억 달러가 아니라 500억 달러라는 보도가 나왔기 
+- waller https://x.com/NURadu_/status/2108120992052809761 (original) 연준 월러 “금리 인상은 더 필요하다. 다만 연속으로 올릴 필요는 없다”  시장이 흔들린두,,, 묘합니두.  월러 연준 이사는 추가 금리 인상이 필요하다는 기존 입장을 유지하면서도 인상 시점에는 유
+- googl-cowen https://x.com/psinvestor/status/2108225912894345512 (quote) 𝗧𝗗 𝗖𝗼𝘄𝗲𝗻 𝗹𝗶𝗳𝘁𝘀 𝗶𝘁𝘀 $GOOGL 𝘁𝗮𝗿𝗴𝗲𝘁 𝘁𝗼 $485 𝗮𝗵𝗲𝗮𝗱 𝗼𝗳 𝗤3.  Needham's Laura Martin reiterated Buy after the Unity P
+- ust10y-oct7 https://x.com/psinvestor/status/2108158619149840474 (original) 10-year Treasury closed Oct 7 at 5.28%. Intraday it hit 5.365%, the highest since April 2002.  1. The Fed hike
+- spcx-nvda-chips https://x.com/NathanCrossNC/status/2108319811189293299 (original) WALL STREET JUST PRINTED THE AI BILL.  Demand is screaming. Supply is still late. Capital is already moving.  
+- openai-arr https://x.com/NathanCrossNC/status/2108299640814882967 (original) One headline. Eight stocks hit. That’s how levered this trade is. OpenAI ARR printed closer to $50B, not the $
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108365890266014021 (quote) 🛰️ $SPCX $RKLB $VSAT $ASTS | 위성 이동통신 경쟁, 진짜 승부는 어디서 갈릴까?  이번 자료에서 제가 주목한 문장은 하나입니다.  “Global expansion/accepta
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108363935393214847 (original) 🚀 $RKLB   $SPCX  내가 두 기업에 투자하는 이유?  나는 두 기업을 단순히 로켓을 발사하는 회사로 보지 않습니다.  앞으로 우주산업이 발사체를 넘어 위성·통신·국방·AI 인프라, 그리고
+- blue-origin https://x.com/jinseongeo83473/status/2108350508473917611 (original) #Blue Origin  🚀 BLUE ORIGIN IPO WATCH | 베조스의 상장 시점 발언 확인✔️  2026년 10월 9일 기준 · CHECK & COMMENT  지난번에는 상장 시기가 불명
+- rklb-barclays https://x.com/jinseongeo83473/status/2108350120396046816 (original) 🚀 $RKLB | Barclays, Rocket Lab에 비중확대 의견 — 목표주가 $85 신규 제시👀  Barclays가 Rocket Lab에 대한 분석을 새롭게 시작했습니다.  투자의견: Ove
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108315276995690665 (quote) 🛰️ $SPCX × $RKLB  위성통신의 다음 전쟁은 주파수에서 시작된다.✔️  SpaceX가 또 14MHz를 확보하려 합니다.  저는 이번 소식을 단순한 주파수 추가 매입으로 보지 않습니다.  
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108302677851742373 (quote) 📡🚀 $SPCX | SpaceX, 미국 이동통신 시장의 판을 흔들기 시작했다.✔️  저는 이번 발표에서 기존 통신사들의 주가 하락보다 훨씬  중요한 변화를 보고 있습니다.  SpaceX가 단순한 위
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108299118825361485 (quote) $SPCX  📡🚀 $SPCX | Starlink Mobile, 이제 주파수까지 확보한다 — 우리가 확인해야 할 5가지  저는 이번 발표를 단순한 주파수 인수 뉴스로 보지 않습니다.  SpaceX는 
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108296559251353706 (quote) 🛰️📱 미국은 이제 ‘휴대전화 기지국’을 우주로 확장하려  한다  미국의 위성통신 정책이 새로운 단계로 넘어가고 있습니다.  지금까지 위성 인터넷의 경쟁이 위성을 얼마나 많이 배치하느냐에 집중됐다면
+- openai-arr https://x.com/jinseongeo83473/status/2108295874040463851 (quote) 📊 $CBRS | OpenAI 매출 500억 달러 논란, Cerebras에는 어떤 의미인가?  OpenAI의 연환산 매출이 시장에서 알려진 700억 달러보다 낮은 약 500억 달러라는 보도가 나왔습
+- waller https://x.com/jinseongeo83473/status/2108289935526789261 (quote) 📉 장기금리 5% 시대 — 이제 내 포트폴리오도 다시 한번  점검해볼 때.  연준 월러 이사가 추가 금리인상이 필요할 수 있다고 밝혔습니다.  하지만 제가 더 신경 쓰는 숫자는 기준금리보다 미국 장
+- samsung-prelim https://x.com/semiconsight/status/2108325252862464507 (repost) RT @NURadu_: 삼성전자 영업이익 107조 원 돌파. 그런데 왜 이렇게 찜찜할까욧..?   삼성전자 이번 실적 보고 진짜 입이 떡 벌어졌습니두 개쌉지리는 씹오지는 미친기업.   2026년 1
+- samsung-prelim https://x.com/semiconsight/status/2108133692510294468 (reply) @Issac0797 영업이익은 107.4조로 컨센서스 106조를 소폭 상회, 매출은 195조로 추정치 약 206조를 미달했다는 보도가 있음. 숫자는 조금씩 차이가 있음.  하락원인으로 거론되는 것들
+- openai-arr https://x.com/jinseongeo83473/status/2108342571252724184 (repost) RT 오픈AI 매출 180억 달러 증발. 앤트로픽은 총액, 오픈AI는 순액. r-20261009-11과 같은 사실.
+- openai-arr https://x.com/jinseongeo83473/status/2108295143489212582 (quote) OpenAI 매출 500억 달러. r-20261009-11과 같은 사실.
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108301196452913190 (repost) RT 통신주 시간외 하락. r-20261009-17과 같은 사실.
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108300944714899796 (repost) RT Trump on Starlink. 주파수 묶음과 같은 날의 재게시.
+
+## rest urls
+- digest 2108141045813022887 금리로 인해 유동성이 많이 딸린다. 이럴 때는 시총이 작은 스몰캡 중 급성장하는 회사들이 간다.   즉, 삼전과 하닉의 무지막지한 이익의 낙수효
+- kr-midsmall 2108125590431965362 @ukew22 나도 한화엔진 -20%...  외국인들이 그냥 한국 조선 섹터를 떠나는 거 같음.   중국이 수주 싹쓰리 중...  한화엔진은 중
+- digest 2108112802561032299 처절한 국장 안의 희망... 쏘캠을 담으라 하였다...
+- digest 2108058134342484422 증시가 좋지 않다...  뭔가 유동성이 없고, 외국인이 계속 뺀다.   그나마 반도체 소부장으로 돈이 쏠린다...  오히려 다 팔고 몇몇 확실한
+- digest 2108230827700310397 RT @naomi09091: 포항항 오늘도 읽고 생각할 콘텐츠가 가득가득👻👻 하루도 빠지지 않고 시장도 봐주시고  중요한거 글도 올려주시는것👍👍
+- digest 2108222293000454618 RT @synopgogo: @blazingbees 오늘도 수고 많으셨습니다. 계속 왔다갔다만 반복하는 느낌이네요. LG에너지솔루션 구독 코멘트도
+- digest 2108159597219594598 RT @mindmoon_108: 반도체 엔지니어의 최고의 부업은 초과근무만한게 없다고 생각. 그리고 성과 잘나와서 고과 잘받으면 최고의 보상..
+- digest 2108151761383133532 삼성전자 잠정 실적 관련해서 왜 이렇게 말들이 많냐?  상회, 하회 따지는 애들은 도대체 뭐냐?  108조 기준으로 -0.55%, 106조 기준
+- digest 2108143590719594872 RT @naomi09091: https://t.co/jrmttAAAvS
+- digest 2108129923571614042 RT @mad_dogdebt: 와.. 카투님 개인 사이트 대박이다. 진짜.  엄청 귀엽고 접근하기 쉽게 해놓으셨음.  뭐랄까, 어려운 주식도 굉
+- digest 2108107856797225431 RT @th_e_Q: 은행계열 다닐때 봉사 나가면 은행 쓰레기라고 일장연설 펴는 사람이 유난히 많은 곳이 어딘지 앎?  >> 무료급식소
+- digest 2108105638467576001 RT @CENT_eco: 기보 합격...^^ ㅎㅎ 그동안은 최합 아니라서 못 까불었지만 이젠 최합이죠?  관련 정보 얻고싶어서 팔로하신분들 계신
+- digest 2108105472075260311 RT @Oly_x_x: @blazingbees 구독코멘트 리밸런싱에 설명 감사합니다👍👍
+- digest 2108105450101375066 RT @crossroad_dui: @blazingbees 오 구독코멘트 리밸런스 설명 잘 배웠습니다 ㅎㅎ
+- digest 2108105355305918852 RT @blazingbees: 무료 아티클도 많이 있으니 많이들와서 보시라  https://t.co/tnANEMQ7BW
+- digest 2108083520862335027 동시호가에 삼성전자, SK하이닉스 사이좋게 -1% 갭하락 두산에너빌리티 혼자 동시호가에 3.31% 갭상승 뭥미 ㅋㅋ https://t.co/K8
+- digest 2108081162937934209 옵션만기일의 화려한 조명이 나를 비추네 https://t.co/MyI6r7uEGQ https://t.co/g8hD3tuAjM
+- digest 2108064251747422510 오늘 동시호가는 옵션 만기일 + 반도체 ETF 리밸런싱도 진행되는 환장파티 진행 예상. https://t.co/LXGTFUUQ1f https:/
+- digest 2108055646436470951 RT @bbori0127: @blazingbees 오후엔 쫌 정신체리~~~길~~~!!! https://t.co/NvAJKIvv6M
+- digest 2108339258750882217 Congratulations to the alternate timeline version of me who put everything into 
+- digest 2108338488214945932 Wild statistic of the day
+- digest 2108330573739471035 The good news is that throughout history making financing more complex has alway
+- digest 2108125548874723787 띠용🫨
+- kr-midsmall 2108102622339350585 시장이 너무 안 좋다😭 이번 주는 어떻게 지나갔는지 모를 정도로 빠르게 지나갔음.  그래도 내가 구독자 콘텐츠로 올린 종목들은 좋았으니 맘 편히
+- kr-midsmall 2108086506971881570 이틀 전에 우주 대장주로 말한 '알멕' 오늘도 급등하면서 주가는 이틀만에 14% 급등 구독자 콘텐츠로 올린 이후엔 두 달도 안 돼서 주가 74%
+- kr-midsmall 2108064526243647972 매일 매일 받아드는 구독자님들의 합격 목걸이😎 엠케이전자야 너도 가자. 중국 반도체 굴기랑 소캠2에서 대박날 거잖아.  실적 계속 좋을 거잖아.
+- digest 2108047947841888709 선택받은 것은 다가요.  @ReturnDriver
+- digest 2108360012766876151 https://t.co/TZbmGDtWsT
+- digest 2108341164789403679 RT @GreatJabez: 삼성은 회식에 술문화가 아직도 있나요??  술 잘 마셔야 하나봐…
+- digest 2108341149442416764 RT @seikokieseiko: 월가 것들 어버버해서 ai관련주들 팔았니? 🤭
+- digest 2108334804060213401 그냥 간단하게, 개인적으로는 10년물 5.3돌파한거 시간차 공격당했고 월가가 밀고싶어서 밀어버린장.. https://t.co/HWImdq9X4L
+- digest 2108214760353485263 누라두 죽어요... 현금업서요이제...  그만때려요제발... 시발 금리 시블 트럼프 https://t.co/XlKS7hJhJH
+- digest 2108200164762767782 @Dave_Joe_9377 @smeepsx @yebis_photo_cos @oyasumituki__ @Lunaagothy @investmentf
+- digest 2108180134423621711 젠슨 황 : 남자한테 키스당한건 한국이 "유일" 하다 https://t.co/3NPDzJIg0p
+- digest 2108154909875114184 캬.. 요약도 길지만 구스 https://t.co/t1PnlBktLp
+- digest 2108153079493444079 탄광속 카나리아
+- digest 2108113640511705155 길게 적으면 별로 안읽나.. 흑 https://t.co/ml8kAyXMNg
+- digest 2108080186986217735 “롸잇 나우” https://t.co/7GmEI7ZJKa
+- digest 2108354254557626741 Tax-loss harvesting: sell a position at a loss so the loss offsets your gains.  
+- digest 2108325918443975109 @Mr_Derivatives Need it green https://t.co/jksmcgwb7s
+- digest 2108320949422694506 @SmallCapSnipa Wow. Dude wt.... What is going on with the IR. were they not supp
+- digest 2108316508061376994 Super Micro $SMCI is adding Shesha Krishnapura, the former CTO of Intel IT and a
+- digest 2108303282318004234 $KOPN shows its expanded FPV evaluation kits at AUSA in Washington, Oct 12 to 14
+- digest 2108299564650488207 $APLD earnings weeks since the $CRWV CoreWeave lease, every number on the card. 
+- digest 2108294968142135362 @DeepValueBagger I got out of mrvl yesterday did good trade all this time. was g
+- digest 2108290771422179740 𝗦𝗽𝗲𝗮𝗸𝗶𝗻𝗴 𝗼𝗳 𝗺𝗲𝘁𝗲𝗼𝗿𝘀, $RDW 𝗵𝗮𝘀 𝗵𝗮𝗿𝗱𝘄𝗮𝗿𝗲 𝗼𝗻 𝗯𝗼𝘁𝗵 𝗼𝗳 𝘁𝗵𝗲 𝗳𝗶𝗿𝘀𝘁 𝗽𝗹𝗮𝗻𝗲𝘁𝗮𝗿𝘆 𝗱𝗲𝗳𝗲𝗻𝘀𝗲 𝗺𝗶
+- digest 2108287128195232096 @CKCapitalxx I so wanted to take put. Also these are not sure. If you read in th
+- digest 2108281475401728455 UBS held its Buy on $APLD after fiscal Q1. Card updated with every firm's latest
+- digest 2108278841169076270 𝗦𝗽𝗮𝗰𝗲 𝗴𝗼𝘁 𝗵𝗶𝘁 𝗯𝘆 𝗮 𝗺𝗲𝘁𝗲𝗼𝗿 𝘁𝗼𝗱𝗮𝘆.  1. $ASTI -7.41% 2. $ASTS -6.91% 3. $VSAT -6.66
+- digest 2108278194822582388 𝗡𝗲𝗼𝗰𝗹𝗼𝘂𝗱𝘀 𝗮𝗻𝗱 𝗺𝗶𝗻𝗲𝗿𝘀 𝗴𝗼𝘁 𝗵𝗶𝘁 𝗲𝘃𝗲𝗻 𝗵𝗮𝗿𝗱𝗲𝗿.  1. $NUAI -13.11% 2. $HUT -10.56% 3. $
+- digest 2108277902639067138 𝗕𝗿𝘂𝘁𝗮𝗹 𝗽𝘂𝗹𝗹𝗯𝗮𝗰𝗸 𝗶𝗻 𝗰𝗵𝗶𝗽𝘀 𝘁𝗼𝗱𝗮𝘆.  1. $INTC -5.86% 2. $SMCI -5.75% 3. $SNDK -5.34%
+- digest 2108253525394457024 $AVGO will show its full AI networking lineup at the 2026 OCP Global Summit in S
+- digest 2108244349893116326 Wells Fargo cut targets on $CMI $PCAR and $ALSN in its 4Q26 machinery outlook, w
+- digest 2108244345140994242 Wells Fargo says the US construction equipment recovery so far has come entirely
+- digest 2108244340619538667 Wells Fargo's 4Q26 machinery outlook has US data center construction starts runn
+- digest 2108234632856764666 @JaguarAnalytics $APLD is missing :( its burning too https://t.co/jmzDgdKSxU
+- digest 2108233460364296352 Newegg $NEGG is now selling inside Google's AI Mode and the Gemini app, a new me
+- digest 2108223664915419520 @StockMKTNewz This will save the stock from dipping more. Need some. https://t.c
+- digest 2108203262860292171 𝗡𝗲𝘁𝗳𝗹𝗶𝘅 $NFLX: 110 𝗨𝗦 𝘃𝗶𝗲𝘄𝗶𝗻𝗴 𝗺𝗶𝗻𝘂𝘁𝗲𝘀 𝗮 𝗺𝗼𝗻𝘁𝗵 𝗽𝗲𝗿 $1 𝗼𝗳 𝗿𝗲𝘃𝗲𝗻𝘂𝗲. 𝗔𝗽𝗽𝗹𝗲 𝗧𝗩+ 𝗶𝘀 𝗮𝘁
+- digest 2108203261895626782 𝗡𝗲𝘁𝗳𝗹𝗶𝘅 $NFLX 𝗮𝗱 𝗿𝗲𝘃𝗲𝗻𝘂𝗲 𝗵𝗶𝘁𝘀 $4.8𝗕 𝗶𝗻 2027 𝗶𝗻 𝗠𝗼𝗿𝗴𝗮𝗻 𝗦𝘁𝗮𝗻𝗹𝗲𝘆'𝘀 𝗺𝗼𝗱𝗲𝗹. 𝗧𝗿𝗶𝗽𝗹𝗲 20
+- digest 2108203261035790662 𝗡𝗲𝘁𝗳𝗹𝗶𝘅 $NFLX 𝘁𝗮𝗿𝗴𝗲𝘁 𝗰𝘂𝘁 𝘁𝗼 $80 𝗳𝗿𝗼𝗺 $83 𝗮𝘁 𝗠𝗼𝗿𝗴𝗮𝗻 𝗦𝘁𝗮𝗻𝗹𝗲𝘆. 𝗢𝘃𝗲𝗿𝘄𝗲𝗶𝗴𝗵𝘁 𝗸𝗲𝗽𝘁.  Th
+- digest 2108196954668978191 @SmallCapSnipa Macro is making it rought and Yeilds geez. It is going to crush s
+- digest 2108195723804058045 𝗢𝗻𝗲 𝗦𝘁𝗼𝗽 𝗦𝘆𝘀𝘁𝗲𝗺𝘀 $OSS 𝗹𝗮𝗻𝗱𝗲𝗱 𝗮 𝗻𝗶𝗻𝘁𝗵 𝗼𝗿𝗱𝗲𝗿 𝗳𝗿𝗼𝗺 𝗼𝗻𝗲 𝗱𝗲𝗳𝗲𝗻𝘀𝗲 𝗰𝘂𝘀𝘁𝗼𝗺𝗲𝗿.  The progr
+- digest 2108188160366608738 $KOPN is taking an expanded Sentinel-FPV evaluation kit lineup to AUSA 2026, sho
+- digest 2108179017543422280 @EstebanPunzo @Mr_Derivatives Yes earnings call was fantastic seriously. Yes, I 
+- digest 2108176946513453101 @stocksnipa Yes, messed up. I usually take a week out but don't know why i did t
+- digest 2108175807235654096 $APLD ratings the morning after fiscal Q1, updated on the card.  Texas Capital, 
+- digest 2108173065871827145 𝗖𝗶𝘁𝗶 𝗿𝗮𝗶𝘀𝗲𝗱 𝗶𝘁𝘀 $SMCI 𝘁𝗮𝗿𝗴𝗲𝘁 𝗶𝗻 𝗮 𝗤3 𝗽𝗿𝗲𝘃𝗶𝗲𝘄 𝗮𝗻𝗱 𝗸𝗲𝗽𝘁 𝗡𝗲𝘂𝘁𝗿𝗮𝗹.  Mizuho did the s
+- digest 2108170111937118443 $GOOGL The RealReal $REAL is rolling out Ask TRR, its AI shopping agent built wi
+- digest 2108165518616408499 Recent $APLD ratings, all on the card.  Two things stand out to me:  1. Nobody c
+- digest 2108160478237102286 Wells Fargo raised its $APLD target to $55 after fiscal Q1, and this time it pub
+- digest 2108153129477013800 @Mr_Derivatives Very volatile week. I don't do options, but this week I did for 
+- digest 2108063085894476229 $GOOGL is done with a Google Maps antitrust case. The Supreme Court declined to 
+- digest 2108184715178217527 A month ago, I reminded you:  $KOD — $36.36 → $94.70 (+160.5%)  $MXL — $59.45 → 
+- digest 2108184055489646665 If $VST reaches $250 by January 2028:  100 shares return about 50%. The $150 cal
+- digest 2108179526278869309 STOP guessing your portfolio theme.  Data center stocks into 2030 are the clear 
+- digest 2108074197847322926 $VST - Power contracts big tech is signing $CEG - Baseload nuclear the grid actu
+- digest 2108074188817002958 If you missed $NVDA in 2024  If you missed $PLTR in 2025  Or even missed $DELL i
+- digest 2108371810995871902 $LPTH   드디어 17,600주가 됐습니다.  지금은 제 투자 과정에서 가장 답답한? 구간 중 하나인 것 같습니다.  주변 환경은 분명 좋아
+- digest 2108361882130354527 $SPCX   $CBRS 🚀🤖 **여름 이후 새로 선택한 두 종목 — 이들이 내 미래가 될 수 있을까**?  올여름 이후 제 포트폴리오에 새롭게
+- digest 2108358065825419546 RT @MilksandMatcha: Thousands of people applied to become @cerebras ambassadors,
+- digest 2108357359722766717 $LPTH  우리도 이제 좀 가자.. https://t.co/vVvzvEwfMB
+- digest 2108356610611720221 $PLTR  재작년에 증여 받은.. 팔란티어를 $170에 매도후 이익실현한, 우리 부인님 曰 팔란티어가 $200이네..합니다..ㅎ 난..아직 있
+- digest 2108355682722554264 이제.. 버리는 아웃이다..🗑 https://t.co/W1gyH4QS3F
+- digest 2108349909854552265 자고 일어 났더니.. 계좌가 쪼그라들었어요. 범인이 누구야? https://t.co/uuCADFnUFp
+- digest 2108347187306606600 RT @KobeissiLetter: We are about to witness one of the biggest disruptions in th
+- digest 2108325295308910613 $PLTR  📈 $PLTR  Barclays, 목표주가 $265로 신규 커버리지 개시  Barclays가 팔란티어에 대해 Overweight(비
+- digest 2108303427738665367 https://t.co/3LKuwik7RV
+- digest 2108300602073866430 RT @mottbox_: $RKLB  ARK Invest’s Daniel Maguire: “There’s an enormous gap now w
+- digest 2108300367276777655 $LPTH  다시 추가로 진행했네요. 500주 추가매수로 17,600주로.. 정책과 숫자로 나와주길 기대하면서... 모아봅니다.. https:/
+- digest 2108299856704143411 $CBRS  오픈ai로 악재가 나올줄은 몰랐는데.. 자동 매수분과, 바쁘게 추가로.. 100주를 추가 매수.. 이제 500주로 포지션을 시작해봅
+- digest 2108297818230435946 🧬 $ABCL | 10월 22일 TMS 발표 — 새로운 임상 데이터, 그러나 12주 결과는 아니다. ✔️  AbCellera가 ABCL635의 
+- digest 2108293423946223850 🚨 $RKLB | NASA $700M MTN — 선정 근거를 향한 정보공개청구, 새로운 진전  우리가 기다리는 것은 Rocket Lab의 승소 
+- digest 2108292464075571363 🧬 $ABCL | 신약 하나의 가치인가, 신약을 계속 만들어낼 회사의 가치인가?  저는 AbCellera를 평가할 때 ABCL635의 미래 매출
+- digest 2108291503789633779 🧬 $ABCL | 항체 발견을 넘어, 후기 임상과 상업화 준비로.  AbCellera의 최근 채용에서 제가 주목하는 것은 단순한 인력 확대가 아
+- digest 2108291043489976590 🏭 $LPTH | WOLF와 LPTH의 가장 큰 차이  Wolfspeed와 LightPath를 같은 선상에서 보면 안 됩니다.  WOLF는 이미
+- digest 2108290524507705437 🔎 $LPTH | 직접 뉴스는 아니지만 MWIR 시장의 흐름은  확인됩니다.  SCD가 airborne·space·homeland securit
+- digest 2108290014140662078 🇰🇷🚀 한국도 극초음속 경쟁에 들어왔다 — HGV 첫 시험 발사 성공.✔️  이번 발사는 생각보다 의미가 큽니다.  단순히 **“빠른 미사일 하
+- digest 2108289989763358833 🚗🇨🇳 중국 전기차의 진짜 경쟁력은 열린 시장에서 드러난다  미국은 높은 관세로 중국 전기차를 사실상 시장에서 차단했습니다.  반면 영국은 지금
+- digest 2108289963326652860 🛰️ SPACE SUPERIORITY | 우주 우위란 무엇인가?  미 중부사령부(CENTCOM)는 이란과의 군사작전에서 미국이 ‘우주 우위(Sp
+- digest 2108283517876785329 RT @daveginvesting: It appears that the patience of $RKLB retail investors is fi
+- digest 2108276849608732960 RT @cekdrew: NEWS: U.S. Defense Industry Warns $12 Billion Critical Mineral Stoc
+- digest 2108187997309120536 RT @NASAAdmin: Under @POTUS leadership, we are returning @NASA Astronauts the Mo
+- digest 2108187784636932285 RT @CNBC: Trump bought up to $25 million in Meta and millions in SpaceX debt in 
+- digest 2108180175624298920 🔎 $LPTH | LPTH 직접 뉴스는 아니지만 경쟁사 관점에서는 꽤 중요합니다. ✔️  Teledyne FLIR가 Prism A-ISR을 공개
+- digest 2108176277329031174 RT @CNBC: Palantir has been on a tear. Goldman Sachs sees more momentum ahead ht
+- digest 2108172714150084697 RT @ASML2002: $RKLB $IRDM @RocketLab @IridiumComm NEW GPS IS LATE UNTIL THE 2040
+- digest 2108171608456417328 광고도 안하는데..ㅎ 요즘에도 꾸준히 들어오시네요... 최대한, 맞팔하고..감사드립니다 .🙇😅 https://t.co/3HaxHDjDjI
+- digest 2108163844820582440 @RKLBMan After completing the complete test... I want to see the green light cha
+- digest 2108162929740890273 과연 전쟁은 언제 끝날것인가? 끝낼 생각은 있는것인가? 끝날수 있을까? 어떻게 끝날 것인가? https://t.co/hlBQzSqNmH
+- digest 2108158499515675093 $PLTR  오늘은 $200을 넘을것인가? 역사적인 전고점도 그리 멀지 않았다..👀 넘어 보자... https://t.co/voMos34N3E
+- digest 2108140321662214356 RT @NPjoa_Hodl: 골드만삭스는 팔란티어 $PLTR을 매수 등급으로 상향 조정하며, 그 경쟁 우위가 가용 시장에서 또 다른 단계적 변화
+- digest 2108095401169441237 매월 KB증권에서 보내주는 작은 선물..👀 이번달에도.. https://t.co/mJHsijOTRJ
+- digest 2108088618719772934 📌 다들 텐배거, 멀티배거를 기대하시나요?  투자를 하면서 느끼는 건 큰 수익에는 기다림과 인내의 시간이 필요하다는 것입니다.  $PLTR 도 
+- digest 2108069461609664923 🚨 $RKLB–NASA MTN   10월 8일 기준, MTN 분쟁의 판세를 바꿀 만한 새로운 공식  발표는 확인되지 않았습니다.  다만, 10월
+- digest 2108064597190308166 🧠⚔️ ANDURIL | 미 육군 NGC2, 9개 기업 추가 선정  — Lattice의 진짜 시험이 시작된다.  Anduril의 경쟁력은 Lat
+- digest 2108061811920810269 🇺🇸🇮🇷 미·이란 | 협상보다 다시 군사옵션으로 기우나??  트럼프는 오늘 이란과의 협상에 **“별로 관심이 없다”**고 밝혔습니다.  동시에 
+- digest 2108050240485920932 #anduril Anduril은 도대체 어떤 회사인가?  그동안 연재했던 10편의 아티클을 정리해봅니다.  투자에 도움이 되시길...  1.🛡️
+- digest 2108049156715712753 🚀 $SPCX | Starship, 이제 텍사스를 넘어 플로리다로                           — 발사 인프라의 확장.✔️  
+- digest 2108042749304016996 RT @RocketLab: VICTUS HAZE is an iconic mission, and @SpaceNews_Inc agrees.  We'
+- digest 2108355780571545739 RT @mindmoon_108: @Semiconsight 생각보다 쓸만하네요ㅎㅎ 무료라는것도 큰 강점+
+- digest 2108330486095646909 RT @mung99933: SNS로 돈벌고싶으면 하지 말아야하는것  불특정 다수 저격 남의 실수 꼬집고 다니기 자랑과 기만  이 세개는 무조건 
+- digest 2108330321146257730 RT @10Billionaire_A: @Semiconsight ㅋㅋㅋ교도소 상
+- digest 2108330254913942005 RT @pathofsuccess92: 리포스트님 따라서 삼콤중,  모든 댓글 좋아요, 리포스트, 댓글.  나보다 팔로워 적어도 배울점 있으면 바
+- digest 2108329150985785385 RT @jinseongeo83473: @Semiconsight 😊
+- digest 2108329127958962274 RT @10Billionaire_A: 옆부서 존예 경리 인스타 알아낸 방법  넌 그냥 성공해라 https://t.co/hvWslzDm0V
+- digest 2108327831021457696 RT @jinseongeo83473: $PLTR  오늘은 $200을 넘을것인가? 역사적인 전고점도 그리 멀지 않았다..👀 넘어 보자... htt
+- digest 2108327747638681782 RT @mindmoon_108: [Meta 뮤즈 사용 예시] 안동에서 열리는 하회선유줄불놀이 가고 싶었는데 표가 매진. 원하는 날짜 알려주고 자
+- digest 2108327628373688764 RT @huchupick: @Semiconsight 옛날트위터하면 떠올리게되는 이미지의 사람들인것같아요
+- digest 2108327258045997255 RT @xrpnvdaretire: @Semiconsight 급할거 있습니까? 자신의 페이스로달리면 되는거같아요
+- digest 2108327017305518281 RT @jinseongeo83473: 🛰️📱 미국은 이제 ‘휴대전화 기지국’을 우주로 확장하려  한다  미국의 위성통신 정책이 새로운 단계로 넘
+- digest 2108326686974783557 RT @pilgrimnote: 저는 왠만하면 이웃국가를 욕하지 않습니다. 다만 한가지 역사를 왜곡하거나, 말같지 않는 말을 하는 경우 가끔씩 반
+- digest 2108326608939761942 RT @TheBigBerbowski: Can't believe we're about to double Substack numbers in a m
+- digest 2108326349228397009 RT @muuuaaa11: 새로 가입한 파딱 트친들 많던데  뉴비 위한 꿀팁  나를 알아달라 하지마시고  내 글 재미없나 고민하지마시고 찾아가세
+- digest 2108326131023917495 RT @xrpnvdaretire: @Semiconsight 그렇죠 아무래도 현생이 먼저니깐
+- digest 2108326079027085766 RT @1111kivin: @NURadu_ 그냥 짧게 잘라다가 이거이거간다!사라!팔아라!가 가장 좋은거같습니다..
+- digest 2108325856431202618 RT @xrpnvdaretire: @Semiconsight @Lockyjoon @Tesla ㅇㅇ 이콤도 사실 괜찮아요
+- digest 2108325692425535852 RT @xrpnvdaretire: @Semiconsight @Lockyjoon @Tesla 그정도로 되버리셨습니까?
+- digest 2108325211796033667 RT @NURadu_: 길게 적으면 별로 안읽나.. 흑
+- digest 2108324630511714460 RT @pathofsuccess92: X는 종종 봇 계정, 스팸계정을 한번씩 청소합니다.  그래서 언팔이 없이도 팔로워 수가 가끔 줄어드는데 오
+- digest 2108324533308731495 RT @lucian__03: 도대체 이게 무슨 일이람….   티보가 할 것 같은 짓을 앤트로픽이???   CSO가 바뀌었나요?? ㄷㄷ
+- digest 2108324336440668480 RT @xrpnvdaretire: @Semiconsight @Lockyjoon @Tesla 전 무조건 리포 드립니다
+- digest 2108324044672246219 RT @xrpnvdaretire: @Lockyjoon @Semiconsight @Tesla 성장이 눈부시게 빨라지실듯
+- digest 2108323814971236806 RT @xrpnvdaretire: @Semiconsight @Lockyjoon @Tesla 그게 클수있는 가장 빠른방법인거같아요
+- digest 2108323793144037435 RT @xrpnvdaretire: @Semiconsight 성장이 엄청 빨리지실듯
+- digest 2108323566584566066 RT @viver_0: 사실 문과라서 성과급 부럽지도 않다.   부럽지도 않다 ........... 흑 ………
+- digest 2108323407435870448 RT @xrpnvdaretire: 5시에 기상해도 시간이 부족해서 15분 정도 단축해사 기상했습니다.  행님들 화력이 진짜 넘사이십니다. 오늘은
+- digest 2108322753581621544 RT @Lockyjoon: 트럼프가 오늘 @Tesla의 FSD에 대해 언급하 며, 일론 머스크가 테슬라를 75년 만에 처음으로성공한 새로운 자동
+- digest 2108322723428729277 RT @lazyalphaio: 트뷰 뱌뱌! https://t.co/13iVtM44zF
+- digest 2108322641241313418 RT @huchupick: 렉카글 올리면서 느낀 부작용 하나.  조회수는 잘 나와서 좋긴 한데, 아침마다 알림창에 욕 박는 무딱들 때문에 하루 
+- digest 2108321654304842000 RT @minimozzzi: 1307/838.  종말이 팔로우/팔로워 비율이다.  비율만 봐도 걍 무지성 선팔하고 싶지 않음 ㅇㅅㅇ?  이런 계
+- digest 2108321529960530188 RT @xrpnvdaretire: @Semiconsight 형 광 명 조 ㅋㅋㅋㅋ
+- digest 2108319360897204595 RT @xrpnvdaretire: 이상한 사람 하나 없는 리포스트 계정입니다.  다 같은 목표를 가진 사람들이 모이다 보니 잡소리 내는 사람 한
+- digest 2108238650840662403 RT @Issac0797: @Semiconsight 🫡
+- digest 2108238644867973598 RT @two_god_: @Semiconsight 매크로가 너무 안좋음 어쩔수 없는듯  미장도 한번 돌고 쭉쭉 치고올려주고 국장도 매수세 들어와
+- digest 2108148544414908525 RT @xrpnvdaretire: 이제 슬슬 샤따 내려야겠습니다.  오늘도 많이 삼콤 뿌리고 다녔습니다. 어제 엑스에서 댓글 조정받은뒤로 쫄아가
+- digest 2108148415343608077 RT @quietnurse_: 안녕하세요.조용한간호사입니다.  X 시작한지 10개월차입니다. 처음 오신 분들 환영합니다. 같이 성장해요.  10
+- digest 2108133711841755213 RT @Issac0797: @Semiconsight 아니아니아니, 내 말은 주가가 왜 떨어진 건지 그 원인이 뭐냐는 거야🤔  시장이 준 기대치가
+- digest 2108133008989683766 RT @BTC_WyckoffLab: 매물대 상단이라고 숏 쳤다가 청산당하는 사람들의 특징.  차트에 두꺼운 매물대가 보입니다.  가격이 그 상단
+- digest 2108057244738994283 RT @xrpnvdaretire: 저는 약을팔지 않습니다. 제 리포스트는 여러분의 글을 제 알고리듬에 노출시킵니다.
+- digest 2108056920074690664 RT @xrpnvdaretire: @Semiconsight ㄱㅅㄱㅅ!
+- digest 2108051745264038221 RT @theodore_invest: $ALAB   S/R flip 나오는 모습. 종가까지 지켜주는지 주목! https://t.co/CNTEKB
+- digest 2108051711315320851 RT @theodore_invest: 뭐? 내일 삼성전자 실적발표라고?  뭐! 태오도르의 예측이 이미 나와있다고?  저는 미리 준비를 해두었습니
+- digest 2108051695502868937 RT @theodore_invest: 베센트 왈 - 모기지와 채권금리는 이란과의 분쟁이 끝나면 내려갈 것  재무부가 직접 채권금리 신경 써주는데
+- digest 2108051354698883344 RT @theodore_invest: $PLTR   한달뒤에 있을 팔란티어 실적 미리 예언해보겠습니다 실적 좋을 겁니다. 이상. https://
+- digest 2108050897028944174 RT @InverseMax: 500🥳  Next goal: 1,000. A long way off, but hope to be there thi
+- digest 2108050328931455026 RT @viver_0: X 하다 보니 직업병처럼 문제가 생겼다.  재밌거나 흥미로운 걸 발견하면  그냥 즐기고 감상하는 게 아니라,  '이걸 어
+- digest 2108050254042194348 RT @bumjun2kim: 드디어  3200명 돌파 🎉 읽어주시고 댓글로 얘기 나눠주시는 분들, 덕분에 계속할 맛이 납니다. 감사합니다!  오
+- digest 2108050233074844099 RT @AlexZio00: 427.7k 에서 434k 7천 못되게 늘었네요. 어제 노출이 20만이 터져서 못해도 1만은 기대했는데  영 아쉽습니
+- digest 2108049161572807049 RT @HunterAllen4: @02jason88 @Semiconsight Let’s keep winning gang!
+- digest 2108049145835733377 RT @Rooney_EE: @Semiconsight @mindmoon_108 @Alisvolatprop12 요즘 할말이 없어요 ㅋㅋ 걍 개발중 
+- digest 2108048918693151008 RT @Issac0797: @Semiconsight 是什么原因啊🤔 市场给的预期太高了吗
+- digest 2108048698844528973 RT @bumjun2kim: @NuttyCLD @Semiconsight @HunterAllen4 @mindmoon_108 @theodore_in
+- digest 2108048593382990290 RT @mindmoon_108: @Semiconsight @HunterAllen4 @theodore_invest @jinseongeo83473 
+- digest 2108048584826572957 @mindmoon_108 @HunterAllen4 @theodore_invest @jinseongeo83473 @quietnurse_ @supe
+- digest 2108048469311225935 RT @bumjun2kim: @ozzz8888 @Semiconsight 적립매수!
+- digest 2108048166696501520 RT @xrpnvdaretire: 3700 돌파했습니다.  하루 300씩 늘고 있습니다. 정말 신기하네요. 많이들 오시는거 보니 제 계정이 많이
