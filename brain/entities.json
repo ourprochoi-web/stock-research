@@ -6393,6 +6393,31 @@
           "source": "https://x.com/psinvestor/status/2108201205818351701"
         }
       ]
+    },
+    "QCOM": {
+      "name": "퀄컴",
+      "ticker": "QCOM",
+      "market": "US",
+      "layer": "스마트폰 AP·모뎀 · 엣지 칩",
+      "business": "핸드셋 AP·모뎀. 이번 줄은 소비자 AI 기기 전망이고 수주·매출은 없다.",
+      "business_grade": "②(후보 · 2026-10-09 · 10-K 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "intake": [
+        "u-20261009-x114"
+      ],
+      "tracked_price": true,
+      "note": "정본 페이지 없음. 엣지 AI 기기 #T가 없어 후보. META·MSFT 워치는 안 늘림. 비중·집행 아님.",
+      "watch": [
+        {
+          "date": "2026-10-09",
+          "grade": "③",
+          "rid": "r-20261009-124",
+          "one": "③ CFO: 6~9개월 내 프런티어·하이퍼스케일러·폰 OEM이 여러 AI 기기 출시, 승자 무관—공존이 칩 판매에 유리. Meta 워치 미발표, 이어폰 2027, MS=Solara 레퍼런스.",
+          "source": "https://x.com/USAnt_IDEA/status/2108157452881740121"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
