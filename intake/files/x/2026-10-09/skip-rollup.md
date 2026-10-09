@@ -5,19 +5,19 @@ pulled_at: 2026-10-09T10:54:19+09:00
 window: 2026-10-08 ~12:45 KST → 2026-10-09 ~10:54 KST
 
 - keep: 23 — 라우팅 r-20261009-100..113 (같은 사실의 리포스트·스레드 답은 한 intake)
-- dup: 19 — 오늘 이미 판정한 사실. 새 줄 없음
+- dup: 23 — 오늘 이미 판정한 사실. 새 줄 없음
 - no-claim: 314 — 짧은 답글
-- digest: 177 — 시세·티저·잘린 글·카드 없는 이름
+- digest: 173 — 시세·티저·잘린 글·카드 없는 이름
 - kr-midsmall: 4 — KR 중소. 후보 카드 안 만듦
 
 dup 이유별:
 - dup:blue-origin: 1
 - dup:googl-cowen: 1
-- dup:openai-arr: 3
+- dup:openai-arr: 5
 - dup:orcl-cds-gas: 1
 - dup:rklb-barclays: 1
 - dup:samsung-prelim: 2
-- dup:spacex-spectrum: 6
+- dup:spacex-spectrum: 8
 - dup:spcx-nvda-chips: 1
 - dup:ust10y-oct7: 1
 - dup:waller: 2
@@ -46,6 +46,10 @@ digest에 남긴 것: Pad 39A는 일정·비용이 잘림. AVGO OCP 전시 일�
 - waller https://x.com/jinseongeo83473/status/2108289935526789261 (quote) 📉 장기금리 5% 시대 — 이제 내 포트폴리오도 다시 한번  점검해볼 때.  연준 월러 이사가 추가 금리인상이 필요할 수 있다고 밝혔습니다.  하지만 제가 더 신경 쓰는 숫자는 기준금리보다 미국 장
 - samsung-prelim https://x.com/semiconsight/status/2108325252862464507 (repost) RT @NURadu_: 삼성전자 영업이익 107조 원 돌파. 그런데 왜 이렇게 찜찜할까욧..?   삼성전자 이번 실적 보고 진짜 입이 떡 벌어졌습니두 개쌉지리는 씹오지는 미친기업.   2026년 1
 - samsung-prelim https://x.com/semiconsight/status/2108133692510294468 (reply) @Issac0797 영업이익은 107.4조로 컨센서스 106조를 소폭 상회, 매출은 195조로 추정치 약 206조를 미달했다는 보도가 있음. 숫자는 조금씩 차이가 있음.  하락원인으로 거론되는 것들
+- openai-arr https://x.com/jinseongeo83473/status/2108342571252724184 (repost) RT 오픈AI 매출 180억 달러 증발. 앤트로픽은 총액, 오픈AI는 순액. r-20261009-11과 같은 사실.
+- openai-arr https://x.com/jinseongeo83473/status/2108295143489212582 (quote) OpenAI 매출 500억 달러. r-20261009-11과 같은 사실.
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108301196452913190 (repost) RT 통신주 시간외 하락. r-20261009-17과 같은 사실.
+- spacex-spectrum https://x.com/jinseongeo83473/status/2108300944714899796 (repost) RT Trump on Starlink. 주파수 묶음과 같은 날의 재게시.
 
 ## rest urls
 - digest 2108141045813022887 금리로 인해 유동성이 많이 딸린다. 이럴 때는 시총이 작은 스몰캡 중 급성장하는 회사들이 간다.   즉, 삼전과 하닉의 무지막지한 이익의 낙수효
@@ -76,7 +80,6 @@ digest에 남긴 것: Pad 39A는 일정·비용이 잘림. AVGO OCP 전시 일�
 - kr-midsmall 2108064526243647972 매일 매일 받아드는 구독자님들의 합격 목걸이😎 엠케이전자야 너도 가자. 중국 반도체 굴기랑 소캠2에서 대박날 거잖아.  실적 계속 좋을 거잖아.
 - digest 2108047947841888709 선택받은 것은 다가요.  @ReturnDriver
 - digest 2108360012766876151 https://t.co/TZbmGDtWsT
-- digest 2108342571252724184 RT @supernovajunn: 오픈AI 매출 180억 달러 증발?  앤트로픽은 클라우드 파트너를 통한 매출을 총액으로 잡고, 오픈AI는 자기
 - digest 2108341164789403679 RT @GreatJabez: 삼성은 회식에 술문화가 아직도 있나요??  술 잘 마셔야 하나봐…
 - digest 2108341149442416764 RT @seikokieseiko: 월가 것들 어버버해서 ai관련주들 팔았니? 🤭
 - digest 2108334804060213401 그냥 간단하게, 개인적으로는 10년물 5.3돌파한거 시간차 공격당했고 월가가 밀고싶어서 밀어버린장.. https://t.co/HWImdq9X4L
@@ -137,13 +140,10 @@ digest에 남긴 것: Pad 39A는 일정·비용이 잘림. AVGO OCP 전시 일�
 - digest 2108347187306606600 RT @KobeissiLetter: We are about to witness one of the biggest disruptions in th
 - digest 2108325295308910613 $PLTR  📈 $PLTR  Barclays, 목표주가 $265로 신규 커버리지 개시  Barclays가 팔란티어에 대해 Overweight(비
 - digest 2108303427738665367 https://t.co/3LKuwik7RV
-- digest 2108301196452913190 RT @wallstengine: Telecom stocks are falling after hours following SpaceX’s anno
-- digest 2108300944714899796 RT @cb_doge: 🚨 President Trump on Starlink:  SpaceX also created the largest-eve
 - digest 2108300602073866430 RT @mottbox_: $RKLB  ARK Invest’s Daniel Maguire: “There’s an enormous gap now w
 - digest 2108300367276777655 $LPTH  다시 추가로 진행했네요. 500주 추가매수로 17,600주로.. 정책과 숫자로 나와주길 기대하면서... 모아봅니다.. https:/
 - digest 2108299856704143411 $CBRS  오픈ai로 악재가 나올줄은 몰랐는데.. 자동 매수분과, 바쁘게 추가로.. 100주를 추가 매수.. 이제 500주로 포지션을 시작해봅
 - digest 2108297818230435946 🧬 $ABCL | 10월 22일 TMS 발표 — 새로운 임상 데이터, 그러나 12주 결과는 아니다. ✔️  AbCellera가 ABCL635의 
-- digest 2108295143489212582 🤖 OpenAI 매출 500억 달러 — AI 주식은 왜 함께 흔들렸을까?  오늘 $NVDA · $ORCL · $CRWV 등 AI 인프라 관련주가
 - digest 2108293423946223850 🚨 $RKLB | NASA $700M MTN — 선정 근거를 향한 정보공개청구, 새로운 진전  우리가 기다리는 것은 Rocket Lab의 승소 
 - digest 2108292464075571363 🧬 $ABCL | 신약 하나의 가치인가, 신약을 계속 만들어낼 회사의 가치인가?  저는 AbCellera를 평가할 때 ABCL635의 미래 매출
 - digest 2108291503789633779 🧬 $ABCL | 항체 발견을 넘어, 후기 임상과 상업화 준비로.  AbCellera의 최근 채용에서 제가 주목하는 것은 단순한 인력 확대가 아
