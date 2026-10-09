@@ -1,0 +1,121 @@
+{
+  "fetched_at": "2026-10-09T00:13:25Z",
+  "asof": "2026-10-08",
+  "quotes": {
+    "005930": {
+      "price": 263000.0,
+      "date": "20261008",
+      "name": "삼성전자",
+      "name_endpoint": "https://m.stock.naver.com/api/stock/005930/basic",
+      "endpoint": "https://api.stock.naver.com/chart/domestic/item/005930/day",
+      "currency": "KRW",
+      "kind": "domestic/item",
+      "tail": [
+        [
+          "20261006",
+          273000.0
+        ],
+        [
+          "20261007",
+          269000.0
+        ],
+        [
+          "20261008",
+          263000.0
+        ]
+      ]
+    },
+    "000660": {
+      "price": 1686000.0,
+      "date": "20261008",
+      "name": "SK하이닉스",
+      "name_endpoint": "https://m.stock.naver.com/api/stock/000660/basic",
+      "endpoint": "https://api.stock.naver.com/chart/domestic/item/000660/day",
+      "currency": "KRW",
+      "kind": "domestic/item",
+      "tail": [
+        [
+          "20261006",
+          1784000.0
+        ],
+        [
+          "20261007",
+          1715000.0
+        ],
+        [
+          "20261008",
+          1686000.0
+        ]
+      ]
+    },
+    "006400": {
+      "price": 567000.0,
+      "date": "20261008",
+      "name": "삼성SDI",
+      "name_endpoint": "https://m.stock.naver.com/api/stock/006400/basic",
+      "endpoint": "https://api.stock.naver.com/chart/domestic/item/006400/day",
+      "currency": "KRW",
+      "kind": "domestic/item",
+      "tail": [
+        [
+          "20261006",
+          577000.0
+        ],
+        [
+          "20261007",
+          557000.0
+        ],
+        [
+          "20261008",
+          567000.0
+        ]
+      ]
+    },
+    "SMH.O": {
+      "price": 607.27,
+      "date": "20261008",
+      "name": "VanEck Semiconductor ETF",
+      "name_endpoint": "https://api.stock.naver.com/stock/SMH.O/basic",
+      "endpoint": "https://api.stock.naver.com/chart/foreign/item/SMH.O/day",
+      "currency": "USD",
+      "kind": "foreign/item",
+      "tail": [
+        [
+          "20261006",
+          632.5
+        ],
+        [
+          "20261007",
+          625.03
+        ],
+        [
+          "20261008",
+          607.27
+        ]
+      ]
+    },
+    "KOSPI": {
+      "price": 6625.93,
+      "date": "20261008",
+      "name": "코스피",
+      "name_endpoint": "https://m.stock.naver.com/api/index/KOSPI/basic",
+      "endpoint": "https://api.stock.naver.com/chart/domestic/index/KOSPI/day",
+      "currency": "KRW",
+      "kind": "domestic/index",
+      "tail": [
+        [
+          "20261006",
+          6941.39
+        ],
+        [
+          "20261007",
+          6803.9
+        ],
+        [
+          "20261008",
+          6625.93
+        ]
+      ]
+    }
+  }
+}
