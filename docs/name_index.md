@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-10-10)
 
-추적 375개 · 테제가 걸린 이름 206 · 엔티티 있음 178 · facts 있음 85.
+추적 376개 · 테제가 걸린 이름 206 · 엔티티 있음 179 · facts 있음 85.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -158,6 +158,7 @@
 | KR | 피에스케이 | 319660 | — | hbm_pkg_investment_map#T2,T4 · kr_semi_equip_6#T2,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T3 · vcp_breakout_backtest#T4 | — |
 | KR | 피에스케이홀딩스 | 031980 | — | hbm_pkg_investment_map#T4 · vcp_breakout_backtest#T4 | — |
 | KR | 피엠티(PMT) | 147760 | ✓  | — | — |
+| KR | 필옵틱스 | 161580 | ✓ 양산 라인 TGV 장비 단일판매(금액·상대·기간)가 나오면 중립을 재검토. 양산이 더 밀리거나 고객 취소면  | — | — |
 | KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 한국가스공사 | 036460 | — | — | — |
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
