@@ -68,6 +68,10 @@ def main():
         else:
             for n in idx:
                 if nm and (nm in n or n in nm):
+                    # 추적명이 더 긴 회사명 안에만 있으면 다른 회사다.
+                    # 2026-10-10: 「테스」(095610) ⊂ 「나브테스코」(6268.T).
+                    if n in nm and nm not in n and len(n) + 2 <= len(nm):
+                        continue
                     target = n
                     break
         if target is None:

@@ -1,0 +1,21 @@
+{
+  "asof": "2026-10-08",
+  "161580": {
+    "name": "필옵틱스",
+    "exchange": "KOSDAQ",
+    "day_close": 41800,
+    "minute_1530": 41900,
+    "shares": 23442247,
+    "mcap_krw": 979885924600,
+    "integration_marketValue": "9,799억",
+    "per": "N/A",
+    "eps": "-842원",
+    "pbr": "9.27배",
+    "bps": "4,510원",
+    "day_endpoint": "https://api.stock.naver.com/chart/domestic/item/161580/day",
+    "minute_endpoint": "https://api.stock.naver.com/chart/domestic/item/161580/minute?startDateTime=202610081520&endDateTime=202610081535",
+    "basic_endpoint": "https://m.stock.naver.com/api/stock/161580/basic",
+    "integration_endpoint": "https://m.stock.naver.com/api/stock/161580/integration"
+  },
+  "note": "일봉 closePrice는 2026-09-14 이후 20:00 애프터마켓가. 시총은 41,800×23,442,247과 일치."
+}
