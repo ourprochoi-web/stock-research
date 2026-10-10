@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08",
+ "generated": "2026-10-10",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -120,6 +120,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ],
     "ai-infra/us_bloom_intel_deep.html": [
      "T2"
     ],
@@ -330,7 +333,7 @@
    "market": "KR",
    "entity": "373220",
    "falsifier": "46100·벤츠·폴란드 BMA는 ②·미확정. 비중 아님.",
-   "facts": 0,
+   "facts": 8,
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
      "T1",
@@ -398,6 +401,9 @@
      "T1",
      "T2",
      "T3"
+    ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
     ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
@@ -482,10 +488,14 @@
   "LS머트리얼즈": {
    "code": "417200",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "417200",
+   "falsifier": "서버랙 CBU 단일판매가 나오면 중립을 재검토. BBU·LIC·전원IC 대체, 일본 업체 물량, 증자, Kyber 지연이면 축이 약해진다",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -1236,11 +1246,14 @@
    "code": "126340",
    "market": "KR",
    "entity": "126340",
-   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소",
+   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소 · 서버랙 CBU 단일판매가 나오면 CBU 스탠스(중립)를 재검토",
    "facts": 0,
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
      "T5"
+    ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
     ]
    },
    "aliases": [],
@@ -1420,6 +1433,9 @@
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T1"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T7"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T5"
@@ -2356,6 +2372,10 @@
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
      "T6",
+     "T7",
+     "T9"
+    ],
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T7"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
@@ -3443,6 +3463,9 @@
     "ai-infra/ai_chip_company_nvidia.html": [
      "T1"
     ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T9"
+    ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T7"
     ],
@@ -3858,6 +3881,20 @@
    "falsifier": null,
    "facts": 4,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Caterpillar": {
+   "code": "CAT",
+   "market": "US",
+   "entity": "CAT",
+   "falsifier": "정본 페이지는 전력 인프라 지도 T1. GEV 카드는 없음. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -4535,8 +4572,8 @@
   "Generac": {
    "code": "GNRC",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "GNRC",
+   "falsifier": "정본 페이지는 없음. 이름 색인이 블룸 T4(온사이트)에 둔다. $8B는 09-17 로그에 이미 있고 SOFC가 아니다. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
@@ -4586,6 +4623,23 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "IREN": {
+   "code": "IREN",
+   "market": "US",
+   "entity": "IREN",
+   "falsifier": "정본 페이지 없음. NVDA·MSFT 워치는 안 늘림. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T3"
+    ],
+    "research/13f_2026q2.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Intel": {
    "code": "INTC.O",
    "market": "US",
@@ -4616,7 +4670,8 @@
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T2",
-     "T5"
+     "T5",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T4",
@@ -4702,6 +4757,16 @@
      "T6"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Kopin": {
+   "code": "KOPN",
+   "market": "US",
+   "entity": "KOPN",
+   "falsifier": "정본 페이지 없음. 광학 축 후보. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4895,6 +4960,9 @@
     "ai-bio/kr_bio_china_competition.html": [
      "T5"
     ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T9"
+    ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T1"
     ],
@@ -5060,7 +5128,8 @@
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
-     "T5"
+     "T5",
+     "T9"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T4"
@@ -5070,7 +5139,8 @@
      "T3"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
-     "T2"
+     "T2",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T4",
@@ -5371,8 +5441,8 @@
   "Qualcomm": {
    "code": "QCOM.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "QCOM",
+   "falsifier": "정본 페이지 없음. 엣지 AI 기기 #T가 없어 후보. META·MSFT 워치는 안 늘림. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -5383,6 +5453,16 @@
    "market": "US",
    "entity": null,
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "QuantumScape": {
+   "code": "QS",
+   "market": "US",
+   "entity": "QS",
+   "falsifier": "정본 페이지 없음. ESS 축 후보. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -5737,6 +5817,9 @@
     ],
     "ai-sw/ai_sw_investment_map.html": [
      "T1"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T9"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T4"
