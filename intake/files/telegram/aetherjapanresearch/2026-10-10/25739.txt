@@ -1,0 +1,4 @@
+최근 급격히 인기를 끌고 있는 의사결정용 AI에 마이크로소프트도 참전했습니다. 마이크로소프트에서 공개한 Microsoft-Decision-1은 TypesafeAI의 Jev와 유사하게 사람이 읽을 수 있는 문장을 생성하는데 중점을 두기 보다 참/거짓 확률, Yes or No 선택, 점수내기등 분류, 평가, 검증같은 곳에 특화된 AI입니다. 마이크르소프트의 자료에 의하면 Jev보다 약간 더 높은 정확도를 보이면서도, 응답속도는 3배나 더 빠르다고 합니다.
+마이크로소프트의 해당 모델은 Qwen3.5-9B를 사후학습해서 만들었다고 합니다.
+
+https://commandline.microsoft.com/microsoft-decision-1-model-foundry/
