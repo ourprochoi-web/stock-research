@@ -58,6 +58,30 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "LPKF": {
+   "code": "LPK",
+   "market": "DE",
+   "entity": "LPK",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "인피니언": {
+   "code": "IFX",
+   "market": "DE",
+   "entity": "IFX",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "BYD": {
    "code": "BYD",
    "market": "HK",
@@ -88,10 +112,70 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "THK": {
+   "code": "6481.T",
+   "market": "JP",
+   "entity": "6481.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "나브테스코": {
+   "code": "6268.T",
+   "market": "JP",
+   "entity": "6268.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "다이니폰인쇄": {
+   "code": "7912.T",
+   "market": "JP",
+   "entity": "7912.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "롬": {
+   "code": "6963.T",
+   "market": "JP",
+   "entity": "6963.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
   "무라타(Murata)": {
    "code": "6981.T",
    "market": "JP",
    "entity": "6981.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "무사시정밀": {
+   "code": "7220.T",
+   "market": "JP",
+   "entity": "7220.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "미쓰비시전기": {
+   "code": "6503.T",
+   "market": "JP",
+   "entity": "6503.T",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -112,6 +196,36 @@
    },
    "aliases": [],
    "auto_candidate": true
+  },
+  "일본전기초자": {
+   "code": "5214.T",
+   "market": "JP",
+   "entity": "5214.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "하모닉드라이브": {
+   "code": "6324.T",
+   "market": "JP",
+   "entity": "6324.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "화낙": {
+   "code": "6954.T",
+   "market": "JP",
+   "entity": "6954.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
   },
   "히타치": {
    "code": "6501.T",
@@ -4345,7 +4459,7 @@
   "Eaton": {
    "code": "ETN",
    "market": "US",
-   "entity": null,
+   "entity": "ETN",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -6180,6 +6294,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "나비타스": {
+   "code": "NVTS",
+   "market": "US",
+   "entity": "NVTS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_semi_ess_dc.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "맥도날드(McDonald's)": {
    "code": "MCD",
    "market": "US",
@@ -6210,11 +6338,31 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "온세미": {
+   "code": "ON",
+   "market": "US",
+   "entity": "ON",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "제너럴모터스": {
    "code": "GM",
    "market": "US",
    "entity": "GM",
    "falsifier": "미국 대형 완성차. 일렉트라 E7은 현대 중형 SUV 가격대 조항. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "테라다인": {
+   "code": "TER",
+   "market": "US",
+   "entity": "TER",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],

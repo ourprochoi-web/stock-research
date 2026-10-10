@@ -1,0 +1,162 @@
+{
+  "asof": "2026-10-09",
+  "fetched_at": "2026-10-10T08:16:23Z",
+  "note": "api.stock.naver.com chart day, localDate 20261009 closePrice. KR holiday irrelevant.",
+  "bars": {
+    "ETN": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "ETN",
+      "close": 429.65,
+      "name": "이튼"
+    },
+    "ON.O": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "ON.O",
+      "close": 77.53,
+      "name": "온 세미콘덕터"
+    },
+    "NVTS.O": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "NVTS.O",
+      "close": 10.78,
+      "name": "나비타스 세미컨덕터"
+    },
+    "TER.O": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "TER.O",
+      "close": 402.68,
+      "name": "테라다인"
+    },
+    "GLW": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "GLW",
+      "close": 156.68,
+      "name": "코닝"
+    },
+    "SMH.O": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "SMH.O",
+      "close": 603.33,
+      "name": "VanEck Semiconductor ETF"
+    },
+    "SPY": {
+      "market": "US",
+      "ccy": "USD",
+      "kind": "foreign/item",
+      "code": "SPY",
+      "close": 778.57,
+      "name": "State Street SPDR S&P 500 ETF Trust"
+    },
+    "6501.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6501.T",
+      "close": 5669.0,
+      "name": "히타치"
+    },
+    "7220.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "7220.T",
+      "close": 3025.0,
+      "name": "무사시 정밀공업"
+    },
+    "6963.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6963.T",
+      "close": 4934.0,
+      "name": "롬"
+    },
+    "6503.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6503.T",
+      "close": 5143.0,
+      "name": "미쓰비시전기"
+    },
+    "5214.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "5214.T",
+      "close": 5217.0,
+      "name": "일본전기초자"
+    },
+    "7912.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "7912.T",
+      "close": 2930.0,
+      "name": "다이니폰인쇄"
+    },
+    "6324.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6324.T",
+      "close": 6220.0,
+      "name": "하모닉 드라이브 시스템스"
+    },
+    "6268.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6268.T",
+      "close": 4859.0,
+      "name": "나부테스코"
+    },
+    "6954.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6954.T",
+      "close": 6103.0,
+      "name": "화낙"
+    },
+    "6481.T": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/item",
+      "code": "6481.T",
+      "close": 6710.0,
+      "name": "THK"
+    },
+    ".N225": {
+      "market": "JP",
+      "ccy": "JPY",
+      "kind": "foreign/index",
+      "code": ".N225",
+      "close": 69030.92,
+      "name": "니케이 225"
+    }
+  },
+  "eu_miss": [
+    "IFX",
+    "IFX.DE",
+    "IFXGn.DE",
+    "IFNNY",
+    "IFNNY.O",
+    "LPK",
+    "LPK.DE",
+    "LPKG.DE",
+    "LPKF"
+  ]
+}

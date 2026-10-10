@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-10-10)
 
-추적 376개 · 테제가 걸린 이름 206 · 엔티티 있음 179 · facts 있음 85.
+추적 390개 · 테제가 걸린 이름 208 · 엔티티 있음 194 · facts 있음 85.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -9,11 +9,22 @@
 | CN | InnoLight | 300308.SZ | ✓  | kr_cooling_optical_layer#T3 · optical_valuechain_9#T1,T2 | 6 |
 | CN | T&S | 300394.SZ | ✓  | — | 5 |
 | CN | 위안제(Yuanjie Semiconductor) | 688498.SS | ✓  | optical_light_source_cw#T1,T4 | 4 |
+| DE | LPKF | LPK | ✓  | — | — |
+| DE | 인피니언 | IFX | ✓  | ai_power_company_transformer_grid#T1 | — |
 | HK | BYD | BYD | ✓ name_index에 기존 키 없음. 키는 BYD(1211.HK). 한국 중형 이하 완성차 카드는 만들지 않 | — | — |
 | JP | DEMPA(덴파) | 6779.T | ✓  | — | — |
 | JP | TDK | 6762.T | ✓  | — | — |
+| JP | THK | 6481.T | ✓  | — | — |
+| JP | 나브테스코 | 6268.T | ✓  | — | — |
+| JP | 다이니폰인쇄 | 7912.T | ✓  | — | — |
+| JP | 롬 | 6963.T | ✓  | — | — |
 | JP | 무라타(Murata) | 6981.T | ✓  | — | — |
+| JP | 무사시정밀 | 7220.T | ✓  | — | — |
+| JP | 미쓰비시전기 | 6503.T | ✓  | — | — |
 | JP | 스미토모전공(Sumitomo Electric) | 5802.T | ✓  | optical_light_source_cw#T2,T3 | 7 |
+| JP | 일본전기초자 | 5214.T | ✓  | — | — |
+| JP | 하모닉드라이브 | 6324.T | ✓  | — | — |
+| JP | 화낙 | 6954.T | ✓  | — | — |
 | JP | 히타치 | 6501.T | ✓  | ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T2 · energy_ess_ai_power#T4 | — |
 | KR | CJ제일제당 | 097950 | — | — | — |
 | KR | GS건설 | 006360 | — | kr_construction_datacenter#T1 | — |
@@ -255,7 +266,7 @@
 | US | Diamondback | FANG.O | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | DraftKings | DKNG | ✓  | — | — |
 | US | EQT | EQT | ✓  | us_energy_hegemony_17#T1,T2,T3,T4 · us_energy_five#T6 · oil_hedge_vehicles#T1 | 11 |
-| US | Eaton | ETN | — | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T11,T5,T9 · us_ai_adjacent_sectors#T2 · us_epc_datacenter_build#T1 · kr_drawdown_2026#T6 | — |
+| US | Eaton | ETN | ✓  | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T11,T5,T9 · us_ai_adjacent_sectors#T2 · us_epc_datacenter_build#T1 · kr_drawdown_2026#T6 | — |
 | US | Eli Lilly | LLY | ✓  | glp1_company_novo_lilly#T1,T2,T3,T4,T5 | — |
 | US | Energy Transfer | ET | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Enterprise Products | EPD | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
@@ -353,10 +364,13 @@
 | US | X-Energy | XE.O | — | kr_drawdown_2026#T8 | — |
 | US | Xcel Energy | XEL.O | — | — | — |
 | US | Zscaler | ZS.O | ✓  | cyber_ai_security#T2,T3 | 9 |
+| US | 나비타스 | NVTS | ✓  | ai_power_company_semi_ess_dc#T1 | — |
 | US | 맥도날드(McDonald's) | MCD | ✓  | — | — |
 | US | 사이퍼마이닝(Cipher Mining) | CIFR | ✓  | — | — |
 | US | 아카마이(Akamai) | AKAM | ✓  | — | — |
+| US | 온세미 | ON | ✓  | — | — |
 | US | 제너럴모터스 | GM | ✓ 미국 대형 완성차. 일렉트라 E7은 현대 중형 SUV 가격대 조항. 비중·집행 아님. | — | — |
+| US | 테라다인 | TER | ✓  | — | — |
 | US | 테라울프(TeraWulf) | WULF | ✓  | — | — |
 | US | 펭귄솔루션스(Penguin Solutions) | PENG | ✓ 정본 페이지 없음. #111이 콜 금액을 이미 적음. 여기엔 TP·컨센서스 델타만. 비중·집행 아님. | — | — |
 | US-ETF | IGV 소프트웨어 | IGV | — | — | — |
