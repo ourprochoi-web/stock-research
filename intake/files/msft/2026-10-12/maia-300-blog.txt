@@ -1,0 +1,13 @@
+출처: https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/
+저자: Scott Guthrie, 2026-10-12. 이 커밋에서 본문 열람.
+
+요지(원문 문장):
+- Azure Maia family를 2027년부터 multi-gigawatt로 확대하고, Maia를 Microsoft 제품·서비스의 primary inference system으로 둔다.
+- Maia 200은 생산 워크로드(Copilot 등)에 들어가 있고, 미국·유럽·호주 배치, Teams·Copilot 대비 leading GPU 대비 최대 1.7x tokens per watt.
+- Maia 300은 2027년 production deployments. leading GPU-based systems 대비 40% more tokens per megawatt. 96-accelerator 구성에서 Maia 200 대비 rack-scale token throughput 최대 7x.
+- Eight HBM4 stacks, 18.0 TB/s peak memory bandwidth, 950-watt TDP. Compute chiplets는 TSMC N2P.
+- Rack: 96 accelerators, 167-kilowatt, 27.6 TB HBM, 1.7 PB/s aggregate HBM bandwidth.
+- 설계 목표는 data movement 축소(software-defined dataflow, on-die SRAM scratchpad, MXFP4).
+- 2027년 30만 개·현세대 대비 10배·100만 개 목표는 이 글에 없다.
+
+가속기당 용량 [계산]: 27.6 TB / 96 = 0.2875 TB ≈ 288GB (10진 TB).
