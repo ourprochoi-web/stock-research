@@ -15,6 +15,31 @@
     "macro": "macro.<key> = {value, unit, asof, source, grade, intake, note} — 회사가 아닌 값(금리·유가·가스·환율·지수). 시세 정본은 prices.json이지만 판단이 인용하는 <기준값>은 여기(2026-09-14 신설 · 유가 판단 0편 문제의 해법)"
   },
   "companies": {
+    "178320": {
+      "name": "서진시스템",
+      "ticker": "178320",
+      "market": "KR",
+      "layer": "BE 밸류체인 · SOFC 모듈·부품",
+      "canonical_page": "ai-infra/us_bloom_intel_deep.html",
+      "intake": [
+        "u-20261012-tg-pikachu-8366"
+      ],
+      "metrics": {
+        "sofc_module_contract": {
+          "value": 1064.4,
+          "unit": "억원",
+          "basis": "단일판매·공급계약 확정금액",
+          "asof": "2026-10-08",
+          "num": 106439770008,
+          "den": 1066330738953,
+          "grade": "①",
+          "source": "DART rcpNo 20261012900183 dcmNo 11609347",
+          "page": "ai-infra/us_bloom_intel_deep.html",
+          "intake": "u-20261012-tg-pikachu-8366",
+          "note": "106,439,770,008원 = USD 79,480,115 × 2026-10-08 서울외국환중개 1,339.20. num/den = 2025 연결 최근매출 대비 9.98%."
+        }
+      }
+    },
     "ALAB": {
       "name": "Astera Labs",
       "ticker": "ALAB",
