@@ -1561,10 +1561,11 @@
    "code": "178320",
    "market": "KR",
    "entity": "178320",
-   "falsifier": "785억 계약 이행 지연 공시",
-   "facts": 1,
+   "falsifier": "3Q26 연결 영업이익 > 0 이면 부정 스탠스가 깨진다",
+   "facts": 7,
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
+     "T1",
      "T5"
     ],
     "energy/energy_ess_ai_power.html": [

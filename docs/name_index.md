@@ -91,7 +91,7 @@
 | KR | 상신이디피 | 091580 | — | — | — |
 | KR | 샘씨엔에스 | 252990 | — | — | — |
 | KR | 서울바이오시스 | 092190 | — | kr_cooling_optical_layer#T5 | — |
-| KR | 서진시스템 | 178320 | ✓ 785억 계약 이행 지연 공시 | us_bloom_intel_deep#T5 · energy_ess_ai_power#T5 | 1 |
+| KR | 서진시스템 | 178320 | ✓ 3Q26 연결 영업이익 > 0 이면 부정 스탠스가 깨진다 | us_bloom_intel_deep#T1,T5 · energy_ess_ai_power#T5 | 7 |
 | KR | 세아베스틸지주 | 001430 | — | — | — |
 | KR | 세진중공업 | 075580 | — | — | — |
 | KR | 셀트리온 | 068270 | — | ai_bio_investment_map#T4 · kr_bio_china_competition#T2 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |

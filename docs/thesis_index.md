@@ -23,7 +23,7 @@
 | 2026.09.17 ⚠ | 2026-10-06 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 7 |
 | 2026.09.17 | 2026-09-17 | [파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series](k-beauty/k_beauty_company_pharmaresearch.html) | 4 |
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
-| 2026.09.16 ⚠ | 2026-09-20 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
+| 2026.09.16 ⚠ | 2026-10-12 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
@@ -397,7 +397,7 @@
 
 ## 블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다
 
-`ai-infra/us_bloom_intel_deep.html` · 판단 2026.09.16 · 갱신 2026-09-20
+`ai-infra/us_bloom_intel_deep.html` · 판단 2026.09.16 · 갱신 2026-10-12
 
 - (테제 헤드라인을 기계적으로 못 잘랐다 — 페이지를 연다)
 

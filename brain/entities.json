@@ -526,8 +526,7 @@
           "rid": "r-20261008-222",
           "one": "② 대만 증설 전력에 블룸 연료전지 추진. 800G·1.6T가 전력망보다 빠르고 라인은 하이퍼스케일 인증 완료. 계약 공시 없음. 캐파 부족은 r-20260930-01.",
           "source": "t.me/insidertracking/65743"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "②",
@@ -806,8 +805,7 @@
           "rid": "r-20260930-05",
           "one": "악시오스②: AT&T–코닝 광섬유 인프라 공급 $30억. Springboard T6 Amazon·NVIDIA에 이은 세 번째 대형 명명 계약(텔코 CapEx).",
           "source": "t.me/aetherjapanresearch/25564 · axios.com/2026/09/29"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "③",
@@ -828,8 +826,7 @@
       ],
       "facts": [],
       "theses": [],
-      "tracked_price": true
-    ,
+      "tracked_price": true,
       "watch": [
         {
           "date": "2026-10-09",
@@ -838,7 +835,8 @@
           "one": "③ Citi: IT 데이터컴 매출 +89%(유기 +63%), 수주 107억달러(+94%). PT 105→112(24개월 PER 28배). 커넥터 선호 1위.",
           "source": "t.me/aetherjapanresearch/25712"
         }
-      ]},
+      ]
+    },
     "AVGO": {
       "name": "Broadcom",
       "market": "US",
@@ -1877,18 +1875,22 @@
       "name": "서진시스템",
       "market": "KR",
       "layer": "BE 밸류체인 · SOFC 모듈·부품 생산",
-      "business": "BE 785억 SOFC 모듈·부품 생산 계약(2026-07). 시총 2,224십억 — 5사 중 최대·다각화(ESS·통신장비)",
-      "business_grade": "① 계약 공시 · ③ 한투 전망(2026-09-16 · u-20260916-08)",
+      "business": "글로벌 메탈 플랫폼. 1H26 매출 반도체장비 44.7%·ESS 29.9%·통신 9.7%(① 반기). 블룸 SOFC 785.5억(2026-07-15)·1,064.4억(2026-10-08).",
+      "business_grade": "① 반기보고서 20260814004243 · ① 계약 20261012900183·20260715900165",
       "pages": [
+        "ai-infra/kr_seojin_178320.html",
         "ai-infra/us_bloom_intel_deep.html"
       ],
-      "facts": [],
+      "facts": [
+        "companies.178320"
+      ],
       "theses": [
+        "ai-infra/us_bloom_intel_deep.html#T1",
         "ai-infra/us_bloom_intel_deep.html#T5"
       ],
       "tracked_price": true,
-      "note": "BE 비중은 작음 [추론]",
-      "falsifier": "785억 계약 이행 지연 공시",
+      "note": "스탠스 부정(2026-10-12). 수주는 ①, 손익은 적자. 플루언스 휴스턴=서진은 미확인.",
+      "falsifier": "3Q26 연결 영업이익 > 0 이면 부정 스탠스가 깨진다",
       "watch": [
         {
           "date": "2026-10-12",
@@ -1896,8 +1898,16 @@
           "rid": "r-20261012-38",
           "one": "① DART 20261012900183: SOFC 모듈·부품 확정 1,064.4억(USD 79,480,115×1,339.20). 2025 연결매출 대비 9.98%. 2026-10-08~2027-12-23 베트남 EXW. 785억과 별건.",
           "source": "DART rcpNo 20261012900183"
+        },
+        {
+          "date": "2026-10-12",
+          "grade": "①",
+          "rid": "r-20261012-39",
+          "one": "① 1H26 매출 690,352백만원. 반도체 44.7%·ESS 29.9%. 영업손익 -523.1억. 블룸 1,064.4억은 반기 이후. 스탠스 부정.",
+          "source": "DART 20260814004243 · 20261012900183"
         }
-      ]
+      ],
+      "status": "후보"
     },
     "089890": {
       "name": "코세스",
@@ -2262,8 +2272,7 @@
           "rid": "r-20261008-222",
           "one": "② AAOI 대만 광모듈 공장이 증설 전력으로 연료전지 도입을 추진. 수요처가 데이터센터 밖 공장으로 넓어지나 규모는 작다. 계약 없음.",
           "source": "t.me/insidertracking/65743"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "②·③",
@@ -2494,7 +2503,6 @@
           "one": "③ BofA: 2Q 메모리 매출 +384%·수량 +50%·가격 +222%. 칩 매출 비중 27%→57%. DRAM 월간 31%(2월)→6%(8월). 가격은 여전히 높다.",
           "source": "https://x.com/psinvestor/status/2108271211495182338"
         }
-
       ]
     },
     "069960": {
@@ -2876,7 +2884,6 @@
           "one": "④ 고객을 Cognition·Lovable·AlphaSense로 넓혔다는 말. 매출·계약액 없음. 750MW는 기존. 스탠스 불변.",
           "source": "https://x.com/jinseongeo83473/status/2108362683334775229"
         }
-
       ]
     },
     "NTRA": {
@@ -3164,8 +3171,12 @@
       "layer": "후공정 장비·TC본더",
       "business": "HBM TC본더",
       "business_grade": "②(페이지 정본 · 2026-10-07 카드)",
-      "pages": ["hbm-packaging/hbm_pkg_company_hanmi_semi.html"],
-      "theses": ["hbm-packaging/hbm_pkg_company_hanmi_semi.html#T1"],
+      "pages": [
+        "hbm-packaging/hbm_pkg_company_hanmi_semi.html"
+      ],
+      "theses": [
+        "hbm-packaging/hbm_pkg_company_hanmi_semi.html#T1"
+      ],
       "tracked_price": false,
       "watch": [
         {
@@ -3346,7 +3357,6 @@
           "one": "③ 비트퓨리가 11월 포워드 3회 중 첫 회 184만 주를 10/5 딜러에 넘김. 정정 13D는 장 마감 후. 13D 원문은 미개봉.",
           "source": "https://x.com/psinvestor/status/2108052266376941743"
         }
-
       ]
     },
     "3605.TW": {
@@ -3621,8 +3631,7 @@
           "rid": "r-20261008-228",
           "one": "② 블루오리진에 $28B+외부 $10B·IPO 추진 소식에 프리마켓 −2.29%. 수주 변화는 없다. PL은 카드가 없어 제외.",
           "source": "t.me/insidertracking/65749"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "③",
@@ -4961,8 +4970,7 @@
           "rid": "r-20261008-14",
           "one": "③ AI칩 구매 자금으로 Apollo·골드만삭스와 별도 금융. 같은 글의 브로드컴 $50B+ 조달과 짝 — 신용위험이 공급사 쪽으로 이동.",
           "source": "t.me/Samsung_Global_AI_SW/4731"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "②",
@@ -5245,8 +5253,7 @@
           "rid": "r-20261007-251",
           "one": "②③ TDK HDD 헤드 인수 보도. 6일 종가 $805(−9%), YTD +193%. TDK는 미정·도시바는 3자 협의 부인. 캐파 2배는 r-20261002-24.",
           "source": "https://soonsal.com/newsletters/2026/1007.html"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "③",
@@ -5286,8 +5293,7 @@
           "rid": "r-20261007-251",
           "one": "②③ 같은 TDK 헤드 보도에 −7%, YTD +139%. 독립 헤드 공급은 TDK뿐. 도시바 점유 10%→30%은 헤드 확보 논리.",
           "source": "https://soonsal.com/newsletters/2026/1007.html"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "③",
@@ -5411,7 +5417,6 @@
           "one": "③ CEO 프랜차이즈: 표준 150MW(홀 6·75MW×2), 건설 $18억·NOI 약 $2.18억·회수 약 8년/15년. 증설가 +15%. MW당 비용은 $11–13M로 안 내림.",
           "source": "https://x.com/psinvestor/status/2108322417110401204"
         }
-
       ]
     },
     "6762.T": {
@@ -5788,8 +5793,7 @@
           "rid": "r-20261008-225",
           "one": "③ BofA 117곳: Q3 Search 계획대비 증가 30%로 1위, Q4 증가 기대 47%. ChatGPT 집행 28%·12개월 43%. 재배분 1위는 Search 15%이나 비중>5%는 11%. Q3 YoY 14%(컨센 15%).",
           "source": "t.me/aetherjapanresearch/25710"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "③",
@@ -5811,7 +5815,6 @@
           "one": "② 블룸버그: 아이소모픽이 최소 $400억 가치로 조달 초기 협의. 바이오허브 $3억(r-20261008-104)과 다른 숫자. 계약 아님.",
           "source": "https://x.com/psinvestor/status/2108295688769663289"
         }
-
       ]
     },
     "GNRC": {
@@ -6008,8 +6011,7 @@
           "rid": "r-20261008-106",
           "one": "③ FCC가 스타링크 Direct-to-Cell 위성 15,000기를 허가. 매출·개시일은 이 글에 없다.",
           "source": "https://x.com/jinseongeo83473/status/2107650741007761746"
-        }
-      ,
+        },
         {
           "date": "2026-10-09",
           "grade": "②",
@@ -6031,7 +6033,6 @@
           "one": "③ JPM: 10/8 그레인 800MHz 최대 14MHz 페어드 최종계약, 금액 비공개. 직접통신 주파수. 통신사 단기 영향은 제한.",
           "source": "t.me/aetherjapanresearch/25716"
         }
-
       ]
     },
     "BRUN": {
@@ -6165,7 +6166,6 @@
           "one": "③ 10/7 DARPA Stage C(4사). 검증 시작이지 결과 아님. 최대 $3억은 예산 조건부. DoD $3.5억 중 약 $2억이 DARPA. 스탠스 중립.",
           "source": "https://x.com/psinvestor/status/2108218359074668708"
         }
-
       ]
     },
     "MCD": {
