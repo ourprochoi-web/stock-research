@@ -1,0 +1,50 @@
+{
+  "asof": "2026-10-08",
+  "note": "네이버 일봉 closePrice는 2026-09-14 이후 20:00 애프터마켓가다. 시총은 이 값과 일치한다. 15:30 분봉은 정규장 체결이다.",
+  "126340": {
+    "name": "비나텍",
+    "exchange": "KOSDAQ",
+    "day_close": 87800,
+    "day_endpoint": "https://api.stock.naver.com/chart/domestic/item/126340/day",
+    "minute_1530": 87000,
+    "minute_endpoint": "https://api.stock.naver.com/chart/domestic/item/126340/minute?startDateTime=202610081520&endDateTime=202610081535",
+    "shares": 7180414,
+    "mcap_krw": 630440349200,
+    "integration_marketValue": "6,304억",
+    "per": "N/A",
+    "eps": "-5,910원",
+    "pbr": "6.98배",
+    "bps": "12,581원",
+    "consensus": {
+      "createDate": "2026-10-08",
+      "recommMean": "4.00",
+      "priceTargetMean": "122,200"
+    },
+    "basic_endpoint": "https://m.stock.naver.com/api/stock/126340/basic",
+    "integration_endpoint": "https://m.stock.naver.com/api/stock/126340/integration"
+  },
+  "417200": {
+    "name": "LS머트리얼즈",
+    "exchange": "KOSDAQ",
+    "day_close": 16430,
+    "day_endpoint": "https://api.stock.naver.com/chart/domestic/item/417200/day",
+    "minute_1530": 16450,
+    "minute_endpoint": "https://api.stock.naver.com/chart/domestic/item/417200/minute?startDateTime=202610081520&endDateTime=202610081535",
+    "shares": 67652659,
+    "mcap_krw": 1111533187370,
+    "integration_marketValue": "1조 1,115억",
+    "per": "912.78배",
+    "eps": "18원",
+    "pbr": "6.03배",
+    "bps": "2,724원",
+    "consensus": null,
+    "basic_endpoint": "https://m.stock.naver.com/api/stock/417200/basic",
+    "integration_endpoint": "https://m.stock.naver.com/api/stock/417200/integration"
+  },
+  "KOSDAQ": {
+    "name": "코스닥",
+    "day_close": 892.27,
+    "endpoint": "https://api.stock.naver.com/chart/domestic/index/KOSDAQ/day",
+    "basic_endpoint": "https://m.stock.naver.com/api/index/KOSDAQ/basic"
+  }
+}

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12",
+ "generated": "2026-10-13",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -58,6 +58,30 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "LPKF": {
+   "code": "LPK",
+   "market": "DE",
+   "entity": "LPK",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "인피니언": {
+   "code": "IFX",
+   "market": "DE",
+   "entity": "IFX",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "BYD": {
    "code": "BYD",
    "market": "HK",
@@ -88,10 +112,74 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "THK": {
+   "code": "6481.T",
+   "market": "JP",
+   "entity": "6481.T",
+   "falsifier": "반도체 설비 수요 둔화로 증익 설명이 깨지거나, 금액 없는 휴머노이드 언급만 쌓이는 것",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "나브테스코": {
+   "code": "6268.T",
+   "market": "JP",
+   "entity": "6268.T",
+   "falsifier": "산업용 로봇 사이클 둔화로 CS 수주가 전년비 감소",
+   "facts": 0,
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "다이니폰인쇄": {
+   "code": "7912.T",
+   "market": "JP",
+   "entity": "7912.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "롬": {
+   "code": "6963.T",
+   "market": "JP",
+   "entity": "6963.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
   "무라타(Murata)": {
    "code": "6981.T",
    "market": "JP",
    "entity": "6981.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "무사시정밀": {
+   "code": "7220.T",
+   "market": "JP",
+   "entity": "7220.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "미쓰비시전기": {
+   "code": "6503.T",
+   "market": "JP",
+   "entity": "6503.T",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -112,6 +200,40 @@
    },
    "aliases": [],
    "auto_candidate": true
+  },
+  "일본전기초자": {
+   "code": "5214.T",
+   "market": "JP",
+   "entity": "5214.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "하모닉드라이브시스템즈": {
+   "code": "6324.T",
+   "market": "JP",
+   "entity": "6324.T",
+   "falsifier": "중국 감속기 채택 확대가 공시되거나 수주 증가가 리드타임 선주문으로 판명되면 상방이 깨진다",
+   "facts": 0,
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "화낙": {
+   "code": "6954.T",
+   "market": "JP",
+   "entity": "6954.T",
+   "falsifier": "수주가 선반영된 뒤 급감",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
   },
   "히타치": {
    "code": "6501.T",
@@ -138,6 +260,16 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "DN오토모티브": {
+   "code": "007340",
+   "market": "KR",
+   "entity": "007340",
+   "falsifier": "스탠스 없음. 수사 의뢰이고 기소 전. 장부 행 없음.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -222,6 +354,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T4"
     ],
@@ -405,6 +540,9 @@
      "T2",
      "T3"
     ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
      "T2",
@@ -488,10 +626,14 @@
   "LS머트리얼즈": {
    "code": "417200",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "417200",
+   "falsifier": "서버랙 CBU 단일판매가 나오면 중립을 재검토. BBU·LIC·전원IC 대체, 일본 업체 물량, 증자, Kyber 지연이면 축이 약해진다",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -993,6 +1135,9 @@
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
     ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
     ],
@@ -1201,6 +1346,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "뷰티스킨": {
+   "code": "406820",
+   "market": "KR",
+   "entity": "406820",
+   "falsifier": "스탠스 없음. 300억은 초도 발주 단계. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "브이엠": {
    "code": "089970",
    "market": "KR",
@@ -1245,11 +1400,14 @@
    "code": "126340",
    "market": "KR",
    "entity": "126340",
-   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소",
+   "falsifier": "3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소 · 서버랙 CBU 단일판매가 나오면 CBU 스탠스(중립)를 재검토",
    "facts": 0,
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
      "T5"
+    ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
     ]
    },
    "aliases": [],
@@ -1920,6 +2078,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "엘앤씨바이오": {
+   "code": "290650",
+   "market": "KR",
+   "entity": "290650",
+   "falsifier": "스탠스 없음. 361조는 파트너 판단이지 FDA 허가 공시가 아님. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "엘앤에프": {
    "code": "066970",
    "market": "KR",
@@ -1970,6 +2138,16 @@
      "T4"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "올릭스": {
+   "code": "226950",
+   "market": "KR",
+   "entity": "226950",
+   "falsifier": "스탠스 없음. IR의 OLX301A는 공시 코드와 갈린다. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -2429,8 +2607,8 @@
   "티로보틱스": {
    "code": "117730",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "117730",
+   "falsifier": "스탠스 없음. 포드 계약 상대·인도 일정은 기사에 없음. 장부 행 없음.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -2549,6 +2727,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "페스카로": {
+   "code": "0015S0",
+   "market": "KR",
+   "entity": "0015S0",
+   "falsifier": "스탠스 없음. 적용 차종 수는 회사 발언. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "펩트론": {
    "code": "087010",
    "market": "KR",
@@ -2661,6 +2849,16 @@
    "market": "KR",
    "entity": "147760",
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "필옵틱스": {
+   "code": "161580",
+   "market": "KR",
+   "entity": "161580",
+   "falsifier": "양산 라인 TGV 장비 단일판매(금액·상대·기간)가 나오면 중립을 재검토. 양산이 더 밀리거나 고객 취소면 상방 트리거가 약해진다",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -2946,6 +3144,9 @@
      "T2",
      "T4",
      "T5"
+    ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
     ],
     "defense/k_defense_company_lig_nexone.html": [
      "T1",
@@ -4346,7 +4547,7 @@
   "Eaton": {
    "code": "ETN",
    "market": "US",
-   "entity": null,
+   "entity": "ETN",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -4966,7 +5167,8 @@
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T1",
      "T3",
-     "T4"
+     "T4",
+     "T7"
     ],
     "ai-bio/kr_bio_china_competition.html": [
      "T5"
@@ -5947,6 +6149,9 @@
     ],
     "research/13f_2026q2.html": [
      "T4"
+    ],
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
     ]
    },
    "aliases": [
@@ -6181,6 +6386,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "나비타스": {
+   "code": "NVTS",
+   "market": "US",
+   "entity": "NVTS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_semi_ess_dc.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "맥도날드(McDonald's)": {
    "code": "MCD",
    "market": "US",
@@ -6211,11 +6430,31 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "온세미": {
+   "code": "ON",
+   "market": "US",
+   "entity": "ON",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "제너럴모터스": {
    "code": "GM",
    "market": "US",
    "entity": "GM",
    "falsifier": "미국 대형 완성차. 일렉트라 E7은 현대 중형 SUV 가격대 조항. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "테라다인": {
+   "code": "TER",
+   "market": "US",
+   "entity": "TER",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
