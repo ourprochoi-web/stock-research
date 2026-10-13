@@ -15,6 +15,110 @@
     "macro": "macro.<key> = {value, unit, asof, source, grade, intake, note} — 회사가 아닌 값(금리·유가·가스·환율·지수). 시세 정본은 prices.json이지만 판단이 인용하는 <기준값>은 여기(2026-09-14 신설 · 유가 판단 0편 문제의 해법)"
   },
   "companies": {
+    "178320": {
+      "name": "서진시스템",
+      "ticker": "178320",
+      "market": "KR",
+      "layer": "BE 밸류체인 · SOFC 모듈·부품",
+      "canonical_page": "ai-infra/kr_seojin_178320.html",
+      "intake": [
+        "u-20261012-tg-pikachu-8366",
+        "u-20261012-seojin-card"
+      ],
+      "metrics": {
+        "sofc_module_contract": {
+          "value": 1064.4,
+          "unit": "억원",
+          "basis": "단일판매·공급계약 확정금액",
+          "asof": "2026-10-08",
+          "num": 106439770008,
+          "den": 1066330738953,
+          "grade": "①",
+          "source": "DART rcpNo 20261012900183 dcmNo 11609347",
+          "page": "ai-infra/us_bloom_intel_deep.html",
+          "intake": "u-20261012-tg-pikachu-8366",
+          "note": "106,439,770,008원 = USD 79,480,115 × 2026-10-08 서울외국환중개 1,339.20. num/den = 2025 연결 최근매출 대비 9.98%."
+        },
+        "sofc_prior_202607": {
+          "value": 785.5,
+          "unit": "억원",
+          "basis": "단일판매·공급계약 확정금액",
+          "asof": "2026-07-15",
+          "num": 78547158135,
+          "den": 1066330738953,
+          "grade": "①",
+          "source": "DART rcpNo 20260715900165",
+          "page": "ai-infra/kr_seojin_178320.html",
+          "intake": "u-20261012-seojin-card",
+          "note": "78,547,158,135원. den은 2025 연결매출. 매출액 대비 7.37%."
+        },
+        "h1_2026_revenue": {
+          "value": 690352,
+          "unit": "백만원",
+          "basis": "2026 반기 연결 매출",
+          "asof": "2026-06-30",
+          "num": 690351704,
+          "den": 1000,
+          "grade": "①",
+          "source": "DART 반기보고서 rcpNo 20260814004243 II",
+          "page": "ai-infra/kr_seojin_178320.html",
+          "intake": "u-20261012-seojin-card",
+          "note": "부문표 합계 690,351,704천원 ÷ 1,000. 제품표는 반올림 690,352백만원."
+        },
+        "h1_2026_op": {
+          "value": -523.1,
+          "unit": "억원",
+          "basis": "2026 반기 연결 영업손익",
+          "asof": "2026-06-30",
+          "num": -52314334,
+          "den": 100000,
+          "grade": "①",
+          "source": "DART 반기보고서 rcpNo 20260814004243 부문 손익",
+          "page": "ai-infra/kr_seojin_178320.html",
+          "intake": "u-20261012-seojin-card",
+          "note": "-52,314,334천원 ÷ 100,000 = -523.1억."
+        },
+        "semi_share_h1_2026": {
+          "value": 44.7,
+          "unit": "%",
+          "basis": "반도체장비 매출 ÷ 반기 연결 매출",
+          "asof": "2026-06-30",
+          "num": 308568,
+          "den": 690352,
+          "grade": "①",
+          "source": "DART 반기보고서 rcpNo 20260814004243 제품 현황",
+          "page": "ai-infra/kr_seojin_178320.html",
+          "intake": "u-20261012-seojin-card",
+          "note": "308,568 / 690,352 백만원."
+        },
+        "ess_share_h1_2026": {
+          "value": 29.9,
+          "unit": "%",
+          "basis": "ESS장비 매출 ÷ 반기 연결 매출",
+          "asof": "2026-06-30",
+          "num": 206686,
+          "den": 690352,
+          "grade": "①",
+          "source": "DART 반기보고서 rcpNo 20260814004243 제품 현황",
+          "page": "ai-infra/kr_seojin_178320.html",
+          "intake": "u-20261012-seojin-card",
+          "note": "206,686 / 690,352 백만원."
+        },
+        "pbr_close_20261008": {
+          "value": 2.66,
+          "unit": "배",
+          "basis": "2026-10-08 종가 ÷ 2026.06 BPS",
+          "asof": "2026-10-08",
+          "num": 41150,
+          "den": 15499,
+          "grade": "①",
+          "source": "네이버 차트 종가 · 네이버 integration BPS valueDesc 2026.06",
+          "page": "ai-infra/kr_seojin_178320.html",
+          "intake": "u-20261012-seojin-card",
+          "note": "41,150 / 15,499 = 2.655 → 2.66."
+        }
+      }
+    },
     "ALAB": {
       "name": "Astera Labs",
       "ticker": "ALAB",
