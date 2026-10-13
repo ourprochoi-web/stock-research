@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10",
+ "generated": "2026-10-13",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -112,6 +112,30 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "THK": {
+   "code": "6481.T",
+   "market": "JP",
+   "entity": "6481.T",
+   "falsifier": "반도체 설비 수요 둔화로 증익 설명이 깨지거나, 금액 없는 휴머노이드 언급만 쌓이는 것",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "나브테스코": {
+   "code": "6268.T",
+   "market": "JP",
+   "entity": "6268.T",
+   "falsifier": "산업용 로봇 사이클 둔화로 CS 수주가 전년비 감소",
+   "facts": 0,
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "다이니폰인쇄": {
    "code": "7912.T",
    "market": "JP",
@@ -187,6 +211,30 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "하모닉드라이브시스템즈": {
+   "code": "6324.T",
+   "market": "JP",
+   "entity": "6324.T",
+   "falsifier": "중국 감속기 채택 확대가 공시되거나 수주 증가가 리드타임 선주문으로 판명되면 상방이 깨진다",
+   "facts": 0,
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "화낙": {
+   "code": "6954.T",
+   "market": "JP",
+   "entity": "6954.T",
+   "falsifier": "수주가 선반영된 뒤 급감",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
   "히타치": {
    "code": "6501.T",
    "market": "JP",
@@ -212,6 +260,16 @@
    "market": "KR",
    "entity": null,
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "DN오토모티브": {
+   "code": "007340",
+   "market": "KR",
+   "entity": "007340",
+   "falsifier": "스탠스 없음. 수사 의뢰이고 기소 전. 장부 행 없음.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -296,6 +354,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T4"
     ],
@@ -470,6 +531,9 @@
    "theses": {
     "ai-infra/ai_power_company_cable_wire.html": [
      "T1"
+    ],
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
     ],
     "ai-infra/ai_power_company_transformer_grid.html": [
      "T1",
@@ -891,6 +955,9 @@
      "T3",
      "T4"
     ],
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
      "T2"
@@ -1067,6 +1134,9 @@
    "theses": {
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
+    ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
     ],
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
@@ -1271,6 +1341,16 @@
    "market": "KR",
    "entity": "006800",
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "뷰티스킨": {
+   "code": "406820",
+   "market": "KR",
+   "entity": "406820",
+   "falsifier": "스탠스 없음. 300억은 초도 발주 단계. 장부 행 없음.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -1639,10 +1719,11 @@
    "code": "178320",
    "market": "KR",
    "entity": "178320",
-   "falsifier": "785억 계약 이행 지연 공시",
-   "facts": 0,
+   "falsifier": "3Q26 연결 영업이익 > 0 이면 부정 스탠스가 깨진다",
+   "facts": 7,
    "theses": {
     "ai-infra/us_bloom_intel_deep.html": [
+     "T1",
      "T5"
     ],
     "energy/energy_ess_ai_power.html": [
@@ -1997,6 +2078,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "엘앤씨바이오": {
+   "code": "290650",
+   "market": "KR",
+   "entity": "290650",
+   "falsifier": "스탠스 없음. 361조는 파트너 판단이지 FDA 허가 공시가 아님. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "엘앤에프": {
    "code": "066970",
    "market": "KR",
@@ -2047,6 +2138,16 @@
      "T4"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "올릭스": {
+   "code": "226950",
+   "market": "KR",
+   "entity": "226950",
+   "falsifier": "스탠스 없음. IR의 OLX301A는 공시 코드와 갈린다. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -2437,11 +2538,17 @@
     "ai-infra/ai_chip_architecture_war.html": [
      "T1"
     ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ],
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
     ],
     "ai-sw/ai_sw_company_anthropic.html": [
      "T1"
+    ],
+    "energy/energy_battery_valuechain_update.html": [
+     "T3"
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
@@ -2451,6 +2558,9 @@
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T7"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T1",
@@ -2483,6 +2593,10 @@
      "T4",
      "T5"
     ],
+    "space/space_update_2026.html": [
+     "T3",
+     "T4"
+    ],
     "cybersecurity/cyber_ai_security.html": [
      "T1"
     ]
@@ -2493,8 +2607,8 @@
   "티로보틱스": {
    "code": "117730",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "117730",
+   "falsifier": "스탠스 없음. 포드 계약 상대·인도 일정은 기사에 없음. 장부 행 없음.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -2610,6 +2724,16 @@
      "T7"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "페스카로": {
+   "code": "0015S0",
+   "market": "KR",
+   "entity": "0015S0",
+   "falsifier": "스탠스 없음. 적용 차종 수는 회사 발언. 장부 행 없음.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -3020,6 +3144,9 @@
      "T2",
      "T4",
      "T5"
+    ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
     ],
     "defense/k_defense_company_lig_nexone.html": [
      "T1",
@@ -3554,6 +3681,7 @@
      "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2",
      "T5"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
@@ -5039,7 +5167,8 @@
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T1",
      "T3",
-     "T4"
+     "T4",
+     "T7"
     ],
     "ai-bio/kr_bio_china_competition.html": [
      "T5"
@@ -6020,6 +6149,9 @@
     ],
     "research/13f_2026q2.html": [
      "T4"
+    ],
+    "robot/robot_theme_supply_chain.html": [
+     "T2"
     ]
    },
    "aliases": [
