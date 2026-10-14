@@ -9691,6 +9691,72 @@
           "note": "127/3264=3.89%. 상회분을 메리츠는 완성차 보상금 등 일회성으로 본다. 매출 컨센 8.8조는 별도."
         }
       }
+    },
+    "ASML": {
+      "name": "ASML",
+      "ticker": "ASML",
+      "market": "EU",
+      "layer": "노광 장비",
+      "canonical_page": "national-strategy/ns_semiconductor_war.html",
+      "intake": [
+        "u-20261014-tg-ajr-25828",
+        "u-20261014-tg-ins-66194",
+        "u-20261014-tg-ins-66195"
+      ],
+      "metrics": {
+        "q3_2026_net_sales_eur_m": {
+          "value": 11662,
+          "unit": "백만 유로",
+          "basis": "2026년 3분기 순매출. 분모는 2분기 순매출",
+          "asof": "2026-10-14",
+          "num": 11662,
+          "den": 9326,
+          "grade": "①",
+          "source": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+          "page": "national-strategy/ns_semiconductor_war.html",
+          "intake": "u-20261014-tg-ajr-25828",
+          "note": "11662/9326=1.251. 회사 헤드라인은 €11.7B 반올림. 수주 유로액은 이 보도자료에 없다."
+        },
+        "q3_2026_gross_margin_pct": {
+          "value": 57.5,
+          "unit": "%",
+          "basis": "2026년 3분기 매출총이익률",
+          "asof": "2026-10-14",
+          "num": 6700,
+          "den": 11662,
+          "grade": "①",
+          "source": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+          "page": "national-strategy/ns_semiconductor_war.html",
+          "intake": "u-20261014-tg-ajr-25828",
+          "note": "6700/11662=57.45%, 회사 표기 57.5%."
+        },
+        "q3_2026_net_income_eur_m": {
+          "value": 4960,
+          "unit": "백만 유로",
+          "basis": "2026년 3분기 순이익 / 순매출",
+          "asof": "2026-10-14",
+          "num": 4960,
+          "den": 11662,
+          "grade": "①",
+          "source": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+          "page": "national-strategy/ns_semiconductor_war.html",
+          "intake": "u-20261014-tg-ajr-25828",
+          "note": "4960/11662=42.5%. 헤드라인 €5.0B는 반올림."
+        },
+        "q3_2026_eps_basic_eur": {
+          "value": 12.95,
+          "unit": "유로",
+          "basis": "2026년 3분기 기본 주당순이익",
+          "asof": "2026-10-14",
+          "num": 12.95,
+          "den": 1,
+          "grade": "①",
+          "source": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+          "page": "national-strategy/ns_semiconductor_war.html",
+          "intake": "u-20261014-tg-ajr-25828",
+          "note": "주식 수는 보도자료 요약표에 없어 분모 1. 금액 비율이 아니다."
+        }
+      }
     }
   },
   "macro": {
