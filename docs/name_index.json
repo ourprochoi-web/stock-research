@@ -848,7 +848,8 @@
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T2",
-     "T7"
+     "T7",
+     "T9"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T3",
@@ -1134,6 +1135,9 @@
    "theses": {
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
+    ],
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
     ],
     "ai-infra/ai_power_company_transformer_grid.html": [
      "T1"
@@ -3700,7 +3704,7 @@
    "market": "US",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 4,
    "theses": {
     "market/us_7axis_cross_valuation.html": [
      "T5"
