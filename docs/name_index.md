@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-10-15)
 
-추적 405개 · 테제가 걸린 이름 212 · 엔티티 있음 213 · facts 있음 87.
+추적 406개 · 테제가 걸린 이름 212 · 엔티티 있음 214 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -336,6 +336,7 @@
 | US | Palantir | PLTR.O | ✓ 정본 페이지는 MSFT와 공유. 엔티티 카드가 없어 후보로 연다. Armada 카드는 만들지 않음. 비중·집 | ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · ai_sw_company_anthropic#T5 · ai_sw_company_crwd_ddog_snow#T5 · ai_sw_investment_map#T2 · q2_2026_earnings_overview#T4 · statements_log#T3 · robot_theme_supply_chain#T4 | — |
 | US | Palo Alto Networks | PANW.O | ✓  | cyber_ai_security#T2,T3,T4 | 9 |
 | US | Permian Resources | PR | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
+| US | Plug Power | PLUG | ✓ 정본 페이지 없음. 미국 이름이라 한국·유럽·중국 중소형 신규 카드가 아니다. 비중·집행 아님. | — | — |
 | US | Qualcomm | QCOM.O | ✓ 정본 페이지 없음. 엣지 AI 기기 #T가 없어 후보. META·MSFT 워치는 안 늘림. 비중·집행 아님. | — | — |
 | US | Quanta Services | PWR | — | — | — |
 | US | QuantumScape | QS | ✓ 정본 페이지 없음. ESS 축 후보. 비중·집행 아님. | — | — |
