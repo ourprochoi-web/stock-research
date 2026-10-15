@@ -25,7 +25,7 @@
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-12 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
-| 2026.09.16 ⚠ | 2026-09-17 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
+| 2026.09.16 ⚠ | 2026-10-15 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-14 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
 | 2026.09.14 ⚠ | 2026-09-19 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 ⚠ | 2026-09-26 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
@@ -65,7 +65,7 @@
 | 2026.08.28 ⚠ | 2026-09-20 | [GPU vs ASIC — AI 반도체 아키텍처 전쟁](ai-infra/ai_chip_architecture_war.html) | 4 |
 | 2026.08.28 | 2026-08-28 | [마벨 — 지표는 나빠지는데 가격이 오른 유일한 종목](ai-infra/ai_chip_company_marvell.html) | 5 |
 | 2026.08.26 | 2026-08-26 | [EPC 2사 — 집중도의 반대편에서 짓는 사람들](ai-infra/us_epc_datacenter_build.html) | 5 |
-| 2026.08.26 | 2026-08-26 | [기판/소재 — ABF·글라스코어·CCL](hbm-packaging/hbm_pkg_theme_substrate.html) | 5 |
+| 2026.08.26 ⚠ | 2026-10-15 | [기판/소재 — ABF·글라스코어·CCL](hbm-packaging/hbm_pkg_theme_substrate.html) | 5 |
 | 2026.08.25 ⚠ | 2026-10-13 | [AI 바이오 투자 지도 — 12사 크로스 밸류에이션](ai-bio/ai_bio_investment_map.html) | 4 |
 | 2026.08.25 | 2026-08-25 | [미국 전력 7사 — 「규제형」과 「상인형」은 AI를 버는 방식이 다르다](ai-infra/us_power_regulated_vs_merchant.html) | 7 |
 | 2026.08.25 | 2026-08-25 | [370조엔 vs $921B vs $295B — 6개국 국가 전략 투자 총괄 비교](national-strategy/ns_global_strategy_overview.html) | 5 |
@@ -426,7 +426,7 @@
 
 ## 메모리 사이클 판정 — CXMT 위협과 가격 피크
 
-`hbm-packaging/hbm_pkg_theme_memory_cycle.html` · 판단 2026.09.16 · 갱신 2026-09-17
+`hbm-packaging/hbm_pkg_theme_memory_cycle.html` · 판단 2026.09.16 · 갱신 2026-10-15
 
 **한 문장** — [추론] 앞은 메모리, 뒤는 반도체 전체일 가능성이 높다(2025년 메모리 $2,230억은 실제 규모와 부합하나, 이를 1년 만에 4.4배로 보는 전망은 본 편의 어떤 근거와도 맞지 않는다). 원문에서 각 수치의 대상(메모리 vs 전체)과 연도를 확인하기 전까지 인용하지 않는다. 이것이 2026.08.11에 새로 세운 규칙의 첫 적용이다 — 비율을 쓰기 전에 분자와 분모가 각각 무엇인지 한…
 
@@ -1277,7 +1277,7 @@
 
 ## 기판/소재 — ABF·글라스코어·CCL
 
-`hbm-packaging/hbm_pkg_theme_substrate.html` · 판단 2026.08.26 · 갱신 2026-08-26
+`hbm-packaging/hbm_pkg_theme_substrate.html` · 판단 2026.08.26 · 갱신 2026-10-15
 
 - **T1.** 해자의 위치는 바뀌지 않았다 — Ajinomoto와 Ibiden이다. Ajinomoto는 ABF 필름 95% 독점이며 AI 칩 세대가 올라갈수록 ABF 소요량이 4배 증가하는 구조적 수혜자다. 2032년까지 신규 CAPA 없이 수요를 독점 공급한다. Ibiden은 고층수 기판에서 70~80%를 쥐고 있…
 - **T2.** 한국 PCB 3사의 이익 급증은 믹스가 만든 것이고, 믹스는 되돌릴 수 있다. Q2에 대덕전자 매출 +63.1%에 영업이익 37.0배, 심텍 매출 +51.0%에 영업이익 11.4배, 티엘비 매출 +37.6%에 영업이익 +85.5%였다 [2026.08.21 확정값으로 교체 — 35배·10배]. 매출보다…
