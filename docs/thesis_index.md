@@ -12,7 +12,7 @@
 | 판단 | 갱신 | 페이지 | 테제 |
 |---|---|---|---|
 | 2026.09.30 | 2026-09-30 | [Novo Nordisk · Eli Lilly — 비만약 듀오폴리 심층 분석](glp1/glp1_company_novo_lilly.html) | 5 |
-| 2026.09.27 ⚠ | 2026-10-14 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
+| 2026.09.27 ⚠ | 2026-10-15 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
 | 2026.09.27 | 2026-09-27 | [광원 층 — 병목의 주인은 누구이고, 가격은 어디까지 왔나](ai-infra/optical_light_source_cw.html) | 4 |
 | 2026.09.22 ⚠ | 2026-09-26 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
 | 2026.09.20 ⚠ | 2026-10-06 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
@@ -132,7 +132,7 @@
 
 ## 우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA
 
-`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-10-14
+`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-10-15
 
 **한 문장** — SpaceX 는 AI 인프라주로 캐펙스가 매출의 2.35배라 자본시장이 조달 비용을 정하고, Rocket Lab 은 구조는 공시로 맞지만 EV/매출 58.7배가 Neutron·Iridium 의 성공을 먼저 샀다 — 둘 다 수직통합이고 둘 다 가격이 실행보다 앞에 있다.
 
