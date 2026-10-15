@@ -186,6 +186,21 @@
   .badge-amber{background:rgba(245,158,11,.12);color:var(--accent);border:1px solid rgba(245,158,11,.25)}
   .badge-red{background:rgba(239,68,68,.12);color:var(--bear);border:1px solid rgba(239,68,68,.25)}
 
+  /* 2026-10-13 검증 층 */
+  .tbl-scroll{overflow-x:auto;margin-top:18px;border:1px solid var(--line);border-radius:16px;background:var(--bg-2)}
+  .ptable{width:100%;border-collapse:collapse;font-size:.84rem;min-width:720px}
+  .ptable th{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;background:var(--surface-2)}
+  .ptable td{padding:11px 14px;border-bottom:1px solid rgba(35,48,77,.5);color:var(--ink-2);vertical-align:top;line-height:1.5}
+  .ptable tr:last-child td{border-bottom:none}
+  .ptable td b{color:var(--ink);font-weight:700}
+  .chain-svg{width:100%;height:auto;display:block;max-width:720px;margin:0 auto 8px}
+  .layer-note{margin-top:14px;font-size:.82rem;color:var(--ink-3);line-height:1.55}
+  .layer-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+  .layer-4 .cell{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .layer-4 .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+  .layer-4 .n{font-weight:750;margin-top:6px;letter-spacing:-.02em}
+  .layer-4 .d{font-size:.78rem;color:var(--ink-2);margin-top:4px;line-height:1.45}
+
   /* RESPONSIVE */
   @media(max-width:860px){
     .nav-toggle{display:flex}
@@ -199,6 +214,9 @@
     .hero-stats{grid-template-columns:1fr}
     .series-nav{flex-direction:column}
     .series-nav a{width:100%;justify-content:center}
+    .ptable{font-size:.78rem;min-width:640px}
+    .ptable th,.ptable td{padding:8px 10px}
+    .layer-4{grid-template-columns:1fr 1fr}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -209,7 +227,7 @@
   "headline": "AI 바이오 투자 지도 — 12사 크로스 밸류에이션",
   "description": "글로벌 7사+한국 5사 크로스 밸류에이션, P/S 4.2x~55.7x, 성장-밸류 매트릭스, 3종 포트폴리오, 리스크 히트맵",
   "datePublished": "2026-06-23",
-  "dateModified": "2026-09-29",
+  "dateModified": "2026-10-13",
   "author": {"@type":"Person","name":"ourprochoi"},
   "publisher": {"@type":"Organization","name":"ourprochoi Research Archive"},
   "mainEntityOfPage": {"@type":"WebPage","@id":"https://ourprochoi-web.github.io/stock-research/ai-bio/ai_bio_investment_map.html"}
@@ -225,6 +243,7 @@
     <div class="brand"><span class="dot"></span>AI 바이오 시리즈 Part 2</div>
     <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
     <div class="nav-links">
+      <a href="#wetlab-20261013">검증 병목</a>
       <a href="#watch-20260929">00 / 2026-09-29 감시</a>
       <a href="#valmap">01 / 밸류 맵</a>
       <a href="#matrix">02 / 성장-밸류 매트릭스</a>
@@ -244,7 +263,7 @@
   <div class="wrap hero-in">
     <span class="eyebrow">AI 바이오 시리즈 · Part 2 · 2026.06</span>
     <h1 class="hero-title">12사 크로스<br><span class="hl">밸류에이션 지도</span></h1>
-    <p class="hero-sub">Tempus·Guardant·Recursion·Insilico·Schrödinger — 글로벌 7사와 삼성바이오·셀트리온·루닛·뷰노·에임메드 — 한국 5사의 P/S·성장률을 하나의 좌표계로 비교한다. 2026-09-29 감시는 TEM·SDGR·BMY·NVO를 그 축 밖에 둔다. BMY·NVO의 배수는 만들지 않는다.</p>
+    <p class="hero-sub">Tempus·Guardant·Recursion·Insilico·Schrödinger — 글로벌 7사와 삼성바이오·셀트리온·루닛·뷰노·에임메드 — 한국 5사의 P/S·성장률을 하나의 좌표계로 비교한다. 2026-09-29 감시는 TEM·SDGR·BMY·NVO를 그 축 밖에 둔다. BMY·NVO의 배수는 만들지 않는다. 2026-10-13에는 습식 검증 층을 T3의 데이터 재현성 병목과 겨루게 붙였다. 상태와 6월 배수는 그대로다.</p>
 
     <div class="hero-stats">
       <div class="hstat">
@@ -347,12 +366,161 @@
         · <b>Recursion 다음 임상 리드아웃</b> — T3의 직접 판정. <b>1Y -36.7%가 무엇 때문이었는지 여기서 갈린다</b><br>
         · <b>Isomorphic Labs 첫 후보물질 임상 진입</b> — 신약 발굴 AI의 첫 실물 검증<br>
         · <b>12사 매출 구성 공시 확보</b> — T2의 미검증 표시 해소 조건<br>
-        · <b>루닛·뷰노 분기 매출</b> — T4(의료 AI는 매출이 먼저 나온다)의 판정<br><br>
-        <b style="color:var(--caution)">⚠ 본문 대부분이 2026.06.28 기준이다.</b> 상단 판단은 <b>2026.08.12 가격</b>으로 세웠으므로 <b>본문 수치와 기준일이 다르며</b>, 본문 현행화는 <b>다음에 이 페이지를 손댈 때</b> 한다(§0 규칙 6).
+        · <b>루닛·뷰노 분기 매출</b> — T4(의료 AI는 매출이 먼저 나온다)의 판정<br>
+        · <b>2026-10-13 · 검증 층 캐파·단가·계약액</b> — 습식 검증 매출이 AI 후보 증가와 같이 늘면 병목 위치는 검증 캐파. 신생항원 예측 <b>공개 벤치마크</b>가 나오면 병목은 다시 모델 정확도(T3, 08-25 데이터 재현성). 둘 다 없으면 위치는 안 갈린다. 본문은 <a href="#wetlab-20261013" style="color:#fbbf24">검증 병목</a><br>
+        · <b>원큐·ARKG 최신 보유표</b> — TEM이 약 22%·1위가 아니거나, ARKG 상위가 TXG·TWST·TEM·CRSP 순이 아니면 r-20261013-421은 깨진다. 유사도 61%·40%는 진행자 산수<br>
+        · <b>GC지놈 공시</b> — 2026 상반기 검사 4,100건·암종 6→10(2026)→20(2028)이 아니면, 또는 가던트가 본계약이면 MOU 문장의 등급이 바뀐다. 카드는 안 만든다<br>
+        · <b>프로티나×트위스트 MOU 원문</b> — MOU가 없거나 금액이 없으면 검증 층 수주 문장은 깨진다. 카드는 안 만든다<br><br>
+        <b style="color:var(--caution)">⚠ 12사 P/S 본문은 2026.06.28 스냅샷이다.</b> 상단 판단은 <b>2026.08.12 가격</b>. 2026-10-13에 손댄 것은 <a href="#wetlab-20261013" style="color:#fbbf24">습식 검증 층</a>과 이 목록이다. T1–T5 상태와 6월 배수는 고치지 않았다.
       </div>
     </div>
   </div>
 </section>
+
+<!-- 2026-10-13 WET-LAB -->
+<section class="blk" id="wetlab-20261013" style="padding-top:56px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">10-13</span>&nbsp;검증 병목 · wet-lab validation layer</div>
+      <h2 class="sec-title">발굴 다음 층. 병목의 위치는 아직 두 개다</h2>
+      <p class="sec-lead">2026-10-13. ③ 원리버(유튜브 hSv08zhIVCU). 진행자가 과거 원큐 ETF 광고를 본인이 고지했다. 자막은 ASR. 기존 T1–T5는 유지한다. 이 절은 새 상태가 아니라, T3가 이미 적어 둔 데이터 재현성 병목과 겨루는 프레임이다. 라우팅 r-20261013-420·421·422. 장부 행 없음.</p>
+    </div>
+
+    <div class="chain-wrap reveal">
+      <div class="chain-legend"><span class="pulse"></span>발견 → 습식 검증 → 진단·데이터 · ③ 밸류체인 · 캐파·단가·계약액은 비어 있음</div>
+      <svg class="chain-svg" viewBox="0 0 640 280" role="img" aria-labelledby="wetlabTitle wetlabDesc">
+        <title id="wetlabTitle">발견, 습식 검증, 진단·데이터 세 층</title>
+        <desc id="wetlabDesc">AI 설계에서 후보가 늘고, 습식 검증이 가운데 층이며, 진단과 데이터가 아래 층이다. 화살표는 방송의 순서다.</desc>
+        <rect x="70" y="8" width="500" height="64" rx="12" fill="#16203A" stroke="#23304D"/>
+        <text x="320" y="36" text-anchor="middle" fill="#fbbf24" font-family="Pretendard, sans-serif" font-size="20" font-weight="800">발견</text>
+        <text x="320" y="58" text-anchor="middle" fill="#9DA9C2" font-family="Pretendard, sans-serif" font-size="14">알파폴드 · 오픈소스 설계</text>
+        <line x1="320" y1="72" x2="320" y2="96" stroke="#f59e0b" stroke-width="2"/>
+        <polygon points="320,104 314,92 326,92" fill="#f59e0b"/>
+        <rect x="70" y="108" width="500" height="64" rx="12" fill="#16203A" stroke="#f59e0b" stroke-width="1.6"/>
+        <text x="320" y="136" text-anchor="middle" fill="#EAEFFA" font-family="Pretendard, sans-serif" font-size="20" font-weight="800">습식 검증</text>
+        <text x="320" y="158" text-anchor="middle" fill="#9DA9C2" font-family="Pretendard, sans-serif" font-size="14">합성 · 단백질 · 단일세포 · 자동화</text>
+        <line x1="320" y1="172" x2="320" y2="196" stroke="#f59e0b" stroke-width="2"/>
+        <polygon points="320,204 314,192 326,192" fill="#f59e0b"/>
+        <rect x="70" y="208" width="500" height="64" rx="12" fill="#16203A" stroke="#23304D"/>
+        <text x="320" y="236" text-anchor="middle" fill="#EAEFFA" font-family="Pretendard, sans-serif" font-size="20" font-weight="800">진단 · 데이터</text>
+        <text x="320" y="258" text-anchor="middle" fill="#9DA9C2" font-family="Pretendard, sans-serif" font-size="14">Tempus · Guardant · Illumina · Natera</text>
+      </svg>
+      <div class="layer-4">
+        <div class="cell"><div class="k">DNA 합성</div><div class="n">Twist</div><div class="d">TWST. 설계 서열을 DNA로. ③</div></div>
+        <div class="cell"><div class="k">단백질 분석 · PPI</div><div class="n">프로티나 SPID</div><div class="d">정제 없이 결합·발현. 카드 없음. ③</div></div>
+        <div class="cell"><div class="k">단일세포 · 공간</div><div class="n">10x Genomics</div><div class="d">TXG. 공간오믹스. 카드 없음. ③</div></div>
+        <div class="cell"><div class="k">실험 자동화</div><div class="n">회사 이름 없음</div><div class="d">방송은 층만 말했다.</div></div>
+      </div>
+      <p class="layer-note">화살표는 방송의 순서다. 아카이브의 결론이 아니다. 실험·사람 데이터가 모델을 다시 키운다는 선순환도 ③이고, 고리의 크기는 없다. 프로티나는 국내 watch다.</p>
+    </div>
+
+    <div class="fw-grid" style="margin-top:28px">
+      <div class="fw-card reveal">
+        <div class="fw-num">프레임 A · T3 유지 · 2026-08-25</div>
+        <h3>병목은 데이터 재현성</h3>
+        <div class="theme-body">③ 신의철. 맞춤형 암백신의 신생항원 선택이 AI 예측인데, 학습 데이터(생물학 논문)의 재현성이 낮아 예측이 부정확하다. 추적할 것은 모델 성능이 아니라 데이터 품질. 판정은 공개 벤치마크와 임상 이벤트. 09-17은 트위스트를 빅파마가 플랫폼 회사를 우회해 사는 항체 데이터 벤더로 이미 적었다.</div>
+        <div class="theme-highlight">상태 유지. 이 방송이 T3 반증(임상과 무관한 섹터 동조)을 닫지 않는다.</div>
+      </div>
+      <div class="fw-card reveal d1">
+        <div class="fw-num">프레임 B · 2026-10-13 · ③</div>
+        <h3>병목은 습식 검증 캐파</h3>
+        <div class="theme-body">원리버. 알파폴드와 오픈소스 설계로 후보 발굴은 풀렸고, 결합·생산·안정성·독성을 확인하는 수요가 늘어 먼저 돈을 받는 층이 DNA 합성·단백질 분석·실험 자동화·진단이라고 했다. 방향은 프레임 A와 같다. 위치가 다르다. 측정된 캐파·단가는 없다.</div>
+        <div class="theme-highlight">r-20261013-420. ⓐ 관측. digest-only. 스탠스 없음.</div>
+      </div>
+      <div class="fw-card reveal d2">
+        <div class="fw-num">무엇을 보면 갈리나</div>
+        <h3>캐파 · 단가 · 계약액</h3>
+        <div class="theme-body">캐파 — 합성·분석·자동화 처리량이 AI 후보 증가와 같이 느는가. 단가 — 후보 1건을 결합·발현까지 확인하는 단위 비용이 내려가는가, 대기열이 가격을 올리는가. 계약액 — Twist·10x·프로티나·진단사의 수주가 플랫폼 회사의 임상 이벤트보다 먼저 매출로 닫히는가.</div>
+        <div class="theme-highlight">검증 층 매출이 후보와 같이 안 늘면 B는 깨진다. 공개 벤치마크가 정확도를 닫으면 병목은 다시 A로 돌아간다. 셋 다 오늘 값이 없다.</div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:64px;margin-bottom:20px" id="etf-20261013">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">ETF</span>&nbsp;원큐 미국메디컬AI · ARKG</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.6vw,2rem)">보유는 진행자가 말한 순서다</h2>
+      <p class="sec-lead">③. 비중 수치는 TEM 약 22%뿐이다. 포트폴리오 유사도 61%·종목 유사도 40%는 진행자 자체 분석이고 산출식과 보유표를 안 열었다. [미검증]. 03의 6월 예시 비중과 이 표는 다른 문서다. 이 페이지는 ETF 비중을 만들지 않는다.</p>
+    </div>
+
+    <div class="tbl-scroll reveal">
+      <table class="ptable">
+        <thead>
+          <tr>
+            <th>진행자 순서</th>
+            <th>원큐 미국메디컬AI</th>
+            <th>ARKG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><b>Tempus (TEM) 약 22% · 1위라고 함</b></td>
+            <td><b>10x Genomics (TXG)</b> · 단일세포·공간</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><b>Moderna (MRNA)</b></td>
+            <td><b>Twist (TWST)</b> · DNA 합성</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><b>Merck (MRK)</b></td>
+            <td><b>Tempus (TEM)</b></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Illumina (ILMN) · 그 뒤를 나열</td>
+            <td><b>CRISPR Therapeutics (CRSP)</b></td>
+          </tr>
+          <tr>
+            <td>이어서</td>
+            <td>Guardant (GH) · 10x (TXG) · Twist (TWST) · Recursion (RXRX) · AbCellera (ABCL)</td>
+            <td>Guardant (GH) · Absci · Natera (NTRA)</td>
+          </tr>
+          <tr>
+            <td>겹침</td>
+            <td colspan="2">진행자가 공통으로 짚은 이름: <b>TEM · ILMN · GH · TXG · TWST</b>. 유사도 <b>61% / 40%</b>는 호스트 산수. 보유 파일 대조 전. Absci 티커는 방송에 없다. AbCellera(ABCL)와 Absci는 다른 회사다.</td>
+          </tr>
+          <tr>
+            <td>차이</td>
+            <td>MRNA·MRK를 포함한다. 진행자는 지금 AI와 묶이는 회사라고 했다.</td>
+            <td>유전자 편집·차세대 플랫폼(CRSP · Absci · NTRA)에 더 기울었다고 했다. 나테라 MRD는 이 지도 T5에 이미 있다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="layer-note">깨지는 조건 — 원큐 최신 보유에서 TEM이 약 22%가 아니거나 1위가 아니면, 또는 ARKG 상위가 TXG · TWST · TEM · CRSP 순이 아니면 r-20261013-421은 깨진다. 모더나 다년 계약과 퍼스널리스는 이 절에서 반복하지 않는다(r-20261008-204 · r-20261008-110). 10x·트위스트·크리스퍼·일루미나·가던트 카드는 없다.</p>
+
+    <div class="sec-head reveal" style="margin-top:64px;margin-bottom:20px" id="kr-watch-20261013">
+      <div class="sec-eyebrow"><span class="ln"></span><span class="idx">KR</span>&nbsp;watch only · 카드 없음</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.6vw,2rem)">GC지놈과 프로티나. 공시 전이다</h2>
+      <p class="sec-lead">③. 같은 방송. 국내 중형 카드는 Kenneth 허용 전에 만들지 않는다. name_index에 없어 후보 카드도 없다. 숫자는 공시·MOU 원문 미대조. open.json에 같은 문장이 있다(r-20261013-422).</p>
+    </div>
+
+    <div class="fw-grid" style="margin-top:8px">
+      <div class="fw-card reveal">
+        <div class="fw-num">GC지놈 · AI 캔서치 · ③</div>
+        <h3>검사 건수와 암종. MOU는 계약이 아니다</h3>
+        <div class="theme-body">한 번의 혈액으로 여러 암 신호를 본다는 다중암 조기 선별. 진행자 수치 — 검사 <b>2024년 900건 → 2026 상반기 4,100건</b>, 연간 1만 건 이상 계획. 암종 <b>6종 → 2026년 10종 → 2028년 20종</b>. 가던트와 MOU로 미국 사업화·유통을 논의한다고 했고, <b>본인이 본계약이 아니라고 말했다.</b></div>
+        <div class="theme-players"><span>watch</span><span>카드 없음</span><span>공시 미대조</span></div>
+        <div class="theme-highlight">가던트 액체생검은 지도에 이미 있다. 본계약이 나오면 이 한 줄의 등급이 올라간다. 기대가 가격에 먼저 들어가면 진행자도 되돌림을 말했다. 그 문장은 ③이고 매매 신호가 아니다.</div>
+      </div>
+      <div class="fw-card reveal d1">
+        <div class="fw-num">프로티나 · SPID · ③</div>
+        <h3>트위스트 MOU. 삼성바이오에피스도 파트너</h3>
+        <div class="theme-body">단백질 상호작용을 잰다. SPID(자막은 스피드)로 포유류 배양에서 정제 없이 항체 결합·발현을 본다고 했다. 트위스트와는 거래에서 MOU로 갔고, 트위스트가 DNA를 합성한 뒤 프로티나가 특성을 확인하는 다음 단계라고 진행자는 읽었다. 삼성바이오에피스도 파트너라고 했다. 계약 금액은 없다.</div>
+        <div class="theme-players"><span>watch</span><span>Twist MOU</span><span>카드 없음</span></div>
+        <div class="theme-highlight">트위스트가 검증·데이터 쪽이라는 방향만 T3(09-17, r-420)에 있다. MOU 원문이 없거나 금액이 0이면 이 문장은 깨진다. 두 회사의 일이 겹친다는 말도 ③이다.</div>
+      </div>
+    </div>
+
+    <div class="val-thesis reveal">
+      <div class="vt-tag">판정 조건 · 2026-10-13에 추가 · 위의 네 이벤트는 유지</div>
+      <p><b>캐파·단가·계약액</b>이 프레임 A/B를 가른다. <b>원큐·ARKG 보유표</b>가 421을 가른다. <b>GC지놈 검사·암종 공시와 가던트 본계약</b>, <b>프로티나–트위스트 MOU 원문</b>이 422를 가른다. 등급은 전부 ③. 상태 변경 없음. 출처 <a href="https://www.youtube.com/watch?v=hSv08zhIVCU" style="color:#fbbf24">youtube.com/watch?v=hSv08zhIVCU</a> · intake <b>u-20261013-yt-oneriver-aibio</b>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
 
 <!-- 00 WATCH 2026-09-29 -->
 <section class="blk" id="watch-20260929">
@@ -762,6 +930,7 @@
         BiopharmaVantage 2026 Valuation Guide · Eqvista · Qubit Capital · 키움/DS투자/삼성증권 리포트<br>
         작성 기준일 · 2026.06 · <b>상단 현재 판단은 2026.08.12 가격 기준</b>(A7 — 본문과 기준일이 다르다)<br>
         2026-09-29 감시 프레임(TEM·SDGR·BMY·NVO)은 P/S 표를 바꾸지 않는다. 가격 출처는 Yahoo chart meta.<br>
+        ▸ 2026.10.13: <b>검증 병목 절을 붙였다. T1–T5 상태는 유지.</b> ③ 원리버(hSv08zhIVCU, 과거 원큐 ETF 광고를 본인이 고지, ASR). 습식 검증 층(DNA 합성 Twist · 단백질 분석 프로티나 SPID · 단일세포 10x · 실험 자동화 · 진단 Tempus·Guardant·Illumina·Natera)을 T3의 데이터 재현성 병목과 겨루는 프레임으로 적었다. 가르는 증거는 캐파·단가·계약액이고 측정값은 없다. 원큐 TEM 약 22%·ARKG 순서 TXG·TWST·TEM·CRSP·유사도 61%/40%는 진행자 산수(보유표 미대조). GC지놈 검사 900→4,100·암종 6→10→20·가던트 MOU≠본계약, 프로티나는 트위스트 MOU·삼성바이오에피스·SPID. 카드 없음. r-20261013-420–422.<br>
         ▸ 2026.08.19 (2): <b>✅ T2의 미검증 표시 해소 — SEC 10-Q 원문으로 P/S 격차 <u>양 끝</u>을 열었다. <u>결론은 유지되고 이유가 바뀐다</u>.</b> <b>· <u>Schrödinger</u>는 순수 소프트웨어 회사가 아니고 <u>비중이 빠르게 떨어지는 중</u> — 인식 시점 기준 <u>소프트웨어 55.3% · 신약발굴 39.0% · 기여 5.7%</u>(2Q25는 65.8/25.5/8.7). 절대액도 <u>$36,031K → $32,544K(−9.7%)</u>이고 내부는 <u>온프레미스 −40.9% · 호스티드 +36.1%</u>로 전환 중. 총매출 역산 약 $58.9M</b>. <b>· <u>Recursion</u>은 매출이 「제품」이 아니라 <u>「마일스톤 인식」</u>이고 <u>−60.1%</u>다. 🔴 <u>매출원가 $11,491K &gt; 매출 $7,670K로 매출총이익이 마이너스</u>. 사노피 선급 $1억 + 누적 마일스톤 $3,400만, 남은 것 연구 $5.55억·개발 $18억. 주식수 <u>+27.6% 희석</u></b>. <b>🔑 이유가 더 나빠졌다 — ⓐ <u>「소프트웨어 회사」 라벨이 유효기간을 갖는다</u>(1년에 65.8→55.3%) ⓑ <u>Recursion P/S는 분모가 마일스톤 인식액이라 분기마다 튀고 원가보다 작을 수도 있다</u></b>. <b>🟣 추적 지표 교체 — P/S 대신 <u>ⓐ Schrödinger 소프트웨어 매출 절대액·비중 ⓑ Recursion 인식 마일스톤 vs 남은 잔액</u>. 둘 다 공시값이고 창에 흔들리지 않는다</b>. <b>⚠ 나머지 10사는 여전히 미확인</b><br>
 ▸ 2026.08.19: <b>✅ §G 주 1회 전수 판정에서 이 페이지의 미검증 태그를 §G 4분류로 재분류했다</b>(해소 서술·세계에 대한 서술·판단 완료·접근 불가 등). <b>§0 규칙5에 따라 <u>상단 테제를 함께 재확인</u>했다</b> — 추적 지표가 배수가 아니라 파이프라인 이벤트(T3)인데 <b>Recursion 1W −1.1% · 1M +12.6%</b>로 이벤트 없이 움직였다 — <b>T3와 모순 없음</b><br>
 ▸ 2026.08.12: <b>이 시리즈에 처음으로 "현재 판단"을 세웠다 — 6편을 쓰는 동안 판단이 0개였다.</b> 본문이 <b>56회 인용하는 Recursion에 가격 추적조차 없었고</b>, 붙여 보니 <b>$3.35 · 1Y -36.7%</b>였다. <b>그 하락이 시리즈의 논지를 반박하는지 개별 실패인지 말할 근거가 아카이브에 없었다</b>는 것이 T1이다. <b>T2</b> — P/S가 <b>Schrödinger 4.2x ~ Insilico 55.7x로 13배</b> 벌어진 것은 고저평가가 아니라 <b>사업 모델이 다르다는 신호</b>이며, 매출 구성(라이선스/마일스톤/파이프라인)이 본 편에 없어 <b>P/S를 같은 축에 놓는 것 자체가 A7-0 위반</b>이다(미검증 표시). <b>T3</b> — AI 신약은 매출 전에 가치가 정해지므로 <b>추적 지표는 배수가 아니라 파이프라인 이벤트</b>여야 하는데 그 목록이 없다. <b>T4</b> — 한국 5사(PEG 0.14~0.17)와 글로벌 7사(Insilico 2.23)는 <b>의료 AI vs 신약 발굴로 실패 확률·보상 구조가 달라 같은 자로 재지 않는다.</b> <b>다음 검증 4건을 이벤트로 걸었다</b>(Recursion 임상 리드아웃 · Isomorphic 첫 후보물질 임상 진입 · 12사 매출 구성 확보 · 루닛·뷰노 분기 매출)
