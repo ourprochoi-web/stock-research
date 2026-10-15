@@ -16,11 +16,11 @@
 | 2026.09.27 | 2026-09-27 | [광원 층 — 병목의 주인은 누구이고, 가격은 어디까지 왔나](ai-infra/optical_light_source_cw.html) | 4 |
 | 2026.09.22 ⚠ | 2026-09-26 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
 | 2026.09.20 ⚠ | 2026-10-06 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
-| 2026.09.20 ⚠ | 2026-10-14 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 9 |
+| 2026.09.20 ⚠ | 2026-10-15 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 9 |
 | 2026.09.20 |  | [미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다](ai-infra/us_merchant_power_vst_nrg.html) | 1 |
 | 2026.09.17 ⚠ | 2026-09-19 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [삼성바이오로직스 × PolyPeptide — CDMO 플랫폼 확장 전략](glp1/glp1_company_samsung_biologics.html) | 4 |
-| 2026.09.17 ⚠ | 2026-10-14 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 7 |
+| 2026.09.17 ⚠ | 2026-10-15 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 7 |
 | 2026.09.17 | 2026-09-17 | [파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series](k-beauty/k_beauty_company_pharmaresearch.html) | 4 |
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-12 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
@@ -225,7 +225,7 @@
 
 ## 삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성
 
-`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-10-14
+`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-10-15
 
 **한 문장** — HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)
 
@@ -251,6 +251,8 @@
 - T9 → 10/29 콜에서 NVDA향 HBM4 일정이 흐려지거나, LTA가 가격 상한으로 확인되거나, Q국면에서 판가가 먼저 꺾이는데 8Hi 점유 이동이 지연되면 이 카드는 틀린다.
 
 **다음 검증**
+- 10/15 TSMC 캡엑스 컷 — 통과(미발화). CAPEX $60–64B 유지(② r-20261015-301). 긍정 불변.
+- 다음 창 — 10/20 9월 확정 수출 · 10/29 삼성 HBM4 · CXMT 서버 퀄+수율.
 - T6 정정(09-20) — 외주화는 3층(칩 후공정 SFA / 모듈·SSD 조립 한양디지텍·드림텍 / 모듈 기판 티엘비·심텍)이고 이익은 가운데 층에서 먼저 왔다. T8 신설. 카드엔 안 올림
 - 분리 후보 — 후공정 외주화(T6·T7·T8)는 삼성 본편의 결론(HBM M/S·할인·환원)과 독립 결론이다. 다음에 이 층을 손대면 별도 페이지로 뗀다(§W1)
 
@@ -323,7 +325,7 @@
 
 ## SK하이닉스 — HBM의 왕좌
 
-`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-10-14
+`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-10-15
 
 **한 문장** — HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다.
 
@@ -345,6 +347,8 @@
 - T7 → 8Hi 점유가 삼성으로 안 옮겨지거나 HBM ASP 프리미엄이 유지되면 잠식 variant는 기각. LTA가 가격 상한으로 확인되면 판가 레버리지 전제도 깨진다.
 
 **다음 검증**
+- 10/15 TSMC 캡엑스 컷 — 통과(미발화). CAPEX $60–64B 유지(② r-20261015-301). 긍정 불변.
+- 다음 창 — 10/20 9월 확정 수출 · 10/29 삼성 HBM4 · CXMT 서버 퀄+수율.
 - T6 신설(09-17) — SK스퀘어 할인율 통로 · 카드 제외(card_theses 유지)
 
 ## 파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series
