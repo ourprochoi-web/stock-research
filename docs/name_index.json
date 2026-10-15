@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13",
+ "generated": "2026-10-14",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -848,7 +848,8 @@
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T2",
-     "T7"
+     "T7",
+     "T9"
     ],
     "hbm-packaging/hbm_pkg_investment_map.html": [
      "T3",
@@ -1134,6 +1135,9 @@
    "theses": {
     "ai-infra/kr_cooling_optical_layer.html": [
      "T5"
+    ],
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
     ],
     "ai-infra/ai_power_company_transformer_grid.html": [
      "T1"
@@ -3700,7 +3704,7 @@
    "market": "US",
    "entity": null,
    "falsifier": null,
-   "facts": 0,
+   "facts": 4,
    "theses": {
     "market/us_7axis_cross_valuation.html": [
      "T5"
@@ -4843,6 +4847,9 @@
    "facts": 0,
    "theses": {
     "ai-infra/ai_dc_miner_conversion.html": [
+     "T3"
+    ],
+    "ai-infra/ai_power_infra_investment_map.html": [
      "T3"
     ],
     "research/13f_2026q2.html": [
@@ -6042,6 +6049,7 @@
      "T3"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2",
      "T5"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>AI 인프라 2027~2028 테마 지도: 매출이 찍히는 순서대로 선점하기</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI 인프라 2027~2028 테마 지도: 매출이 찍히는 순서대로 선점하기",
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-14",
+  "inLanguage": "ko",
+  "author": {"@type": "Organization", "name": "ourprochoi Research"}
+}
+</script>
+<style>
+@page { size: A4; margin: 15mm 15mm 16mm 15mm;
+  @bottom-center { content: counter(page) " / " counter(pages); font-family: "Noto Sans CJK KR","Noto Sans KR",sans-serif; font-size: 8pt; color:#777; }
+  @top-right { content: "AI 인프라 2027~2028 테마 지도 · 2026-10-10 · Lead(Grok Bot)"; font-family: "Noto Sans CJK KR","Noto Sans KR",sans-serif; font-size: 7.5pt; color:#999; }
+}
+@page :first { @top-right { content: ""; } }
+:root { --navy:#123a6b; --blue:#1f6fd1; --light:#e8f0fb; --pos:#1b7f4b; --neu:#a06a00; --obs:#6b6b6b; --red:#b3261e; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "Noto Sans CJK KR","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif; font-size: 9.6pt; line-height: 1.62; color:#1d1d1f; margin:0; word-break: keep-all; overflow-wrap: anywhere; }
+.wrap { max-width: 182mm; margin: 0 auto; }
+h1 { font-size: 19pt; line-height:1.3; color: var(--navy); margin: 0 0 4px; letter-spacing:-0.3px; }
+h2 { font-size: 13.5pt; color: var(--navy); border-bottom: 2px solid var(--navy); padding-bottom: 3px; margin: 22px 0 10px; break-after: avoid; }
+h3 { font-size: 11pt; color: var(--blue); margin: 16px 0 6px; break-after: avoid; }
+h4 { font-size: 9.8pt; margin: 10px 0 4px; color:#333; break-after: avoid; }
+p { margin: 4px 0 8px; text-align: justify; }
+ul, ol { margin: 4px 0 8px; padding-left: 18px; }
+li { margin: 2px 0; }
+sup.fn { font-size: 6.8pt; color: var(--blue); }
+sup.fn a { color: var(--blue); text-decoration: none; }
+.meta { color:#555; font-size: 9pt; margin-bottom: 8px; }
+.sub { font-size: 10.5pt; color:#444; margin: 0 0 6px; }
+.disc { border:1px solid #d33; background:#fff5f4; color:#7a1a14; padding:6px 10px; font-size:8.4pt; margin: 8px 0 10px; border-radius:3px; }
+.box { background: var(--light); border-left: 4px solid var(--blue); padding: 8px 12px; margin: 8px 0 12px; border-radius: 2px; }
+.box p:last-child, .box ul:last-child { margin-bottom: 2px; }
+.warn { background:#fff8e6; border-left:4px solid #d39a00; padding:7px 11px; margin:8px 0 12px; font-size:9pt; }
+table { width:100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 8.3pt; line-height:1.45; break-inside: auto; }
+th { background: var(--navy); color:#fff; font-weight:600; padding: 4px 5px; text-align:left; vertical-align: bottom; }
+td { border-bottom: 1px solid #d6dbe3; padding: 4px 5px; vertical-align: top; }
+tr { break-inside: avoid; }
+tbody tr:nth-child(even) td { background:#f7f9fc; }
+.cap { font-size: 8.4pt; color:#444; font-weight:600; margin: 10px 0 3px; }
+.src { font-size: 7.6pt; color:#666; margin: -6px 0 12px; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:7.8pt; font-weight:700; color:#fff; white-space:nowrap; }
+.pos { background: var(--pos); } .neu { background: var(--neu); } .obs { background: var(--obs); } .none { background:#9aa3ad; }
+.ev { display:inline-block; padding:0 4px; border:1px solid #888; border-radius:3px; font-size:7.6pt; white-space:nowrap; }
+.ev.s { border-color: var(--pos); color: var(--pos); } .ev.m { border-color: var(--neu); color: var(--neu); } .ev.w { border-color: #888; color:#666; } .ev.t { border-color: var(--red); color: var(--red); }
+.unv { color: var(--red); font-weight:600; }
+.tiers { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 8px 0 10px; }
+.tier { border:1px solid #cfd6e0; border-top: 5px solid; padding: 7px 9px; font-size: 8.6pt; line-height:1.5; border-radius: 2px; }
+.tier h4 { margin: 0 0 4px; font-size: 10pt; }
+.tier.a { border-top-color: var(--pos); } .tier.b { border-top-color: var(--neu); } .tier.c { border-top-color: var(--obs); }
+.tier ul { padding-left: 14px; margin: 2px 0; }
+.fig { margin: 8px 0 4px; break-inside: avoid; }
+.fig svg { width:100%; height:auto; display:block; }
+.pb { break-before: page; }
+.kv { display:grid; grid-template-columns: 22mm 1fr; gap: 2px 8px; font-size:9pt; margin: 4px 0 8px; }
+.kv b { color: var(--navy); }
+.small { font-size: 8.2pt; color:#555; }
+.refs { font-size: 7.6pt; line-height: 1.45; padding-left: 22px; }
+.refs li { margin: 1px 0; word-break: break-all; }
+.refs a { color:#1f4f99; text-decoration:none; }
+.chap { break-before: page; }
+.two { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mini { font-size: 8.4pt; }
+</style>
+</head>
+<body><div class="wrap">
+
+<!-- ===================== 1. 요약 ===================== -->
+<div class="meta">리서치 페이퍼 · 개인 연구용 · 2026-10-10 (KST) · 작성 Lead(Grok Bot) · 대상: Kenneth · <a href="ai-infra-2027-2028-theme-map.pdf">PDF</a> · <a href="../index.html">아카이브</a></div>
+<h1>AI 인프라 2027~2028 테마 지도:<br>매출이 찍히는 순서대로 선점하기</h1>
+<p class="sub">메리츠 「10월 한국 시장의 고민」(2026-10-08) 그림8의 2027·2028~ 칸을 종목 단위로 풀고, Lead 최종 판정(2026-10-10)으로 정리</p>
+<div class="disc"><b>고지</b> 본 자료는 개인 연구용 정리이며 투자 권유나 비중 제시가 아닙니다. 기준가는 국내 2026-10-08 종가(10/9 한글날 휴장), 해외 2026-10-09 종가입니다. 모든 수치는 출처에 링크된 원문 또는 메리츠 보고서·Lead 판정 메모에서 가져왔고, 원문으로 확인하지 못한 항목은 <span class="unv">추정/미확인</span>으로 표시했습니다.</div>
+
+<h2 style="margin-top:6px">1. 요약</h2>
+<div class="box">
+<p><b>핵심 결론.</b> 메리츠는 2027년에 CBU·AI RAN·800VDC, 2028년 이후에 AI GRID·SST·유리기판·피지컬AI의 매출이 인식된다고 봤습니다<sup class="fn"><a href="#ref-1">[1]</a></sup>. 2026년 10월 현재 이 7개 테마 중 <b>의미 있는 매출이 확인된 순수 테마주는 없습니다.</b> 매출은 테마 이름 순서가 아니라 <b>공급망 위치 순서</b>로 찍힐 가능성이 큽니다. 순서는 ① 이미 돈을 버는 시설 측 전력장비 대형주, ② 장비·부품(TGV 장비, SiC/GaN, 슈퍼커패시터 셀), ③ 순수 테마 소형주, ④ 플랫폼형 테마(AI RAN, AI GRID, 피지컬AI) 순입니다. 장기금리가 높은 환경(미 10년 약 5.3%)에서는 ①로 지금 노출하고, ③은 <b>수주 공시가 나온 뒤</b> 들어가는 것이 Lead의 관점입니다.</p>
+</div>
+<div class="tiers">
+ <div class="tier a"><h4>지금 담을 것 <span class="tag pos">긍정</span></h4>
+  <b>800VDC 축, 현금흐름 있는 대형주</b>
+  <ul>
+   <li><b>이튼(ETN)</b> $429.65: NVIDIA 800VDC 레퍼런스 설계에 자사 슈퍼캡 포함, 전기 부문 매출 비중 75.8%. SST(MVSST)도 보유해서 CBU와 SST에 함께 노출</li>
+   <li><b>히타치(6501)</b> ¥5,669: 800VDC 전력시스템 공식 파트너, 에너지 매출 30.4%, 변압기 수주가 매출로 전환되는 중. SST 수주액은 <span class="unv">미확인</span></li>
+  </ul>
+  <span class="small">breaks_if: Kyber·800V 출하가 2027년 이후로 지연, 이튼 Electrical Americas 백로그 YoY 감소</span>
+ </div>
+ <div class="tier b"><h4>트리거 대기 <span class="tag neu">중립</span></h4>
+  <b>메커니즘은 맞지만 해당 매출 0</b>
+  <ul>
+   <li><b>CBU</b>: 비나텍(126340) 87,800원, LS머트리얼즈(417200) 16,430원. 트리거는 <b>서버랙 CBU 첫 단일판매 공시</b></li>
+   <li><b>유리기판</b>: 필옵틱스(161580) 41,800원. 트리거는 <b>양산 라인용 TGV 장비 단일판매 공시</b>. NEG·DNP·LPKF는 양산 PO</li>
+   <li><b>전력반도체</b>: 온세미·나비타스·롬·미쓰비시전기·인피니언. 트리거는 AI·800V 매출의 별도 금액화</li>
+   <li>무사시정밀(7220): GB200 채택 <span class="unv">미확인</span>(오라클 '검토'뿐)</li>
+  </ul>
+ </div>
+ <div class="tier c"><h4>관찰 <span class="tag obs">관찰</span></h4>
+  <b>일정은 있으나 매출 크기가 불확실</b>
+  <ul>
+   <li><b>AI RAN</b>: T-Mobile 필드 트라이얼(4Q26), 상용은 4Q27. 수혜가 NOK·NVDA 같은 대형사 매출 안에 묻혀 희석됨</li>
+   <li><b>AI GRID</b>: 정의부터 <span class="unv">미확인</span>(NVIDIA의 통신 엣지 추론인지, 전력망인지). 파일럿 단계</li>
+   <li><b>피지컬AI</b>: 하모닉드라이브·나브테스코·화낙·THK·테라다인 모두 중립. 휴머노이드 확정 매출은 거의 없음</li>
+  </ul>
+ </div>
+</div>
+<table>
+<thead><tr><th style="width:15%">테마(메리츠 시점)</th><th style="width:31%">현재 단계(2026-10)</th><th style="width:24%">먼저 매출이 찍힐 자리</th><th style="width:30%">Lead 행동</th></tr></thead>
+<tbody>
+<tr><td>800VDC (2027)</td><td>레퍼런스 설계 발표, Kyber 랙 2027 출하 예정</td><td>시설 측 전력장비(이튼·히타치·버티브 등)</td><td><span class="tag pos">긍정</span> 대형주로 지금 노출</td></tr>
+<tr><td>CBU (2027)</td><td>데이터센터 슈퍼캡 매출은 있음. 서버랙 CBU는 샘플·협의 단계</td><td>셀·모듈 공급사</td><td><span class="tag neu">중립</span> 랙 CBU 공시 시 재평가</td></tr>
+<tr><td>AI RAN (2027)</td><td>트라이얼 단계, 상용 매출 0</td><td>NVIDIA ARC-Pro, 노키아 SW</td><td><span class="tag obs">관찰</span> 4Q26 트라이얼 후 재검토</td></tr>
+<tr><td>SST (2028~)</td><td>제품·실증·사전인증. 수주 미공개</td><td>SiC 부품, 이튼·ABB(지분)</td><td>이튼으로 간접 노출. 순수 SST는 비상장 위주</td></tr>
+<tr><td>유리기판 (2028~)</td><td>샘플·신뢰성 평가. 비즈워치(② 10-14)는 삼성전기 목표를 2028로, LG 대표는 10-13에 2028년쯤·개발 단계라고 했다. BOE 양산은 옴디아가 2028년 이후로 본다<sup class="fn"><a href="#ref-68">[68]</a></sup></td><td>TGV 장비(필옵틱스·LPKF)</td><td><span class="tag neu">중립</span> 양산 PO·장비 공시 대기</td></tr>
+<tr><td>AI GRID (2028~)</td><td>GTC 2026 발표, 통신사 파일럿</td><td>NVIDIA·Cisco(매출 비중 미공개)</td><td><span class="tag obs">관찰</span></td></tr>
+<tr><td>피지컬AI (2028~)</td><td>플랫폼 초기 매출, 현대차 2028 투입 계획</td><td>감속기(하모닉 북미 AI로봇 수주)</td><td><span class="tag obs">관찰</span> 수주 금액 공시 대기</td></tr>
+</tbody></table>
+<h2 class="pb" style="margin-top:0">0. 읽는 법</h2>
+<p class="small"> <b>근거 강도</b>는 <span class="ev s">강</span> 공시·수주·공식 파트너 명단 &gt; <span class="ev m">중</span> 회사 발표·샘플·업계 보도 &gt; <span class="ev w">약</span> 2차 출처·추정 &gt; <span class="ev t">테마</span> 연결 근거만 있음. <b>Lead 판정</b>은 2026-10-10 최종 카드(stock-research PR #134)를 따르고, 이 판정이 스터디 파일의 이전 의견보다 우선합니다. 카드가 없는 종목은 <span class="tag none">판정 없음</span>으로 표시합니다. 판정은 판단 장부에서 30일·90일 뒤 채점합니다. 일본·유럽 종목과 국내 중소형주는 Kenneth의 허용 전까지 후보로만 둡니다.</p>
+
+<!-- ===================== 2. 매크로 ===================== -->
+<h2>2. 매크로 프레임: 고금리에서 무엇이 테마를 끌고 가나</h2>
+<h3>2-1. 메리츠 기본 시나리오: 장기금리 고점 유지 → AI 인프라 쏠림</h3>
+<p>메리츠 황수욱 애널리스트는 고금리를 '뉴노멀'로 봅니다<sup class="fn"><a href="#ref-1">[1]</a></sup>. 지난 20년 동안 과잉저축이 만든 저금리 기조는 끝났고, 지금은 AI발 투자에 따른 자금 수요가 금리 레벨을 높이고 있다는 진단입니다. 근거로 화폐유통속도(V=PY/M) 상승을 들었습니다. 돈이 실물로 흘러간다는 뜻이고, 투자 부진을 걱정하던 장기 구조적 침체(secular stagnation)와는 반대 그림이라는 설명입니다.</p>
+<table>
+<thead><tr><th style="width:34%">메리츠가 제시한 관측</th><th>수치(보고서 원문)</th></tr></thead>
+<tbody>
+<tr><td>글로벌 10년물 금리</td><td>연초 대비 약 100bp 상승. 미국은 9월 한 달에 53bp 올라 연간 상승분의 절반이 9월에 나옴</td></tr>
+<tr><td>글로벌 주가</td><td>MSCI ACWI 9월 -1.3%. 대만·한국·미국·일본 등 AI 인프라 밸류체인 국가는 아웃퍼폼. Nasdaq 9월 신고가, S&amp;P500은 10/6 신고가 합류</td></tr>
+<tr><td>금리 변동성 민감도</td><td>VIX-MOVE 상관계수: 2006년 이후 0.68 → 2022년 이후 0.40. 주식이 금리 변동성에 둔감해짐</td></tr>
+<tr><td>금리 스트레스 점검(표1)</td><td>2026년: 미 10년 현재 5.29%, 30년 모기지 7.03%, BBB 스프레드 90bp 안팎 안정, 달러지수 보합. 2000·2006년(리세션), 2016·2018년(예방적 인하), 2023년(리세션 없음)과 비교</td></tr>
+<tr><td>모니터링 지표</td><td>연준 FCI-G(Financial Condition Index on Growth)가 긴축 영역으로 넘어가는지가 금리 부담을 보는 1차 포인트</td></tr>
+<tr><td>한국 시장</td><td>KOSPI 횡보, 거래대금 감소, 이익 추정치 모멘텀 둔화와 원화 강세. 3개월 이익 추정치 변화율은 IT가전·전기전자가 강함</td></tr>
+<tr><td>KOSPI 반등 조건</td><td>반도체 2028년 이익 추정치 상향. 메리츠 영업이익 추정: 삼성전자 2027년 632조원·2028년 735조원(10/7), SK하이닉스 2027년 432조원·2028년 485조원(7/29)</td></tr>
+</tbody></table>
+<p>결론은 "고금리가 쉽게 꺾이기 어렵다 → AI 인프라(반도체·소부장·전기전자·전력인프라) 쏠림이 베이스 시나리오"입니다. 10월 중 테마 순환은 있을 수 있지만, 기회는 비용(금리)보다 높은 성장을 보여주는 AI 인프라 안에서 찾아야 한다는 것입니다.</p>
+
+<h3>2-2. 대안 시나리오: 금리 하락 → 쏠림 완화, 종목 확산</h3>
+<p>메리츠는 통화정책 기대의 되돌림이나 호르무즈 해협·유가 안정으로 금리가 내려가면, 이를 <b>쏠림 완화와 종목 확산의 조건</b>으로 봅니다. 이 경우 우주처럼 이익이 나기까지 듀레이션이 긴 업종으로 온기가 퍼질 수 있고, "오르지 못한 주요 테마들까지 스코프를 확장"하라고 권합니다. 그림9(KOSPI ADR과 미 10년물 전월 대비 변화)는 금리가 내리면 종목이 확산되고, 오르면 압축되는 패턴을 보여줍니다<sup class="fn"><a href="#ref-1">[1]</a></sup>.</p>
+
+<h3>2-3. Lead 관점: 시나리오별로 테마에 노출하는 방식</h3>
+<p>Lead의 매크로 장부(오늘 PR 이전 판단)는 메리츠보다 금리 부담을 더 무겁게 봅니다. 미 10년 약 5.3%, 30년 5.6~5.7%이고, 기간프리미엄은 2010년 이후 최고입니다. MMF로 1,664억달러가 들어왔고, 호르무즈 봉쇄에 대비한 에너지 헤지도 유지하고 있습니다<sup class="fn"><a href="#ref-0">[L]</a></sup>. 2027~2028년 매출 테마는 정의상 <b>듀레이션이 긴 자산</b>이어서 할인율 부담을 가장 크게 받습니다. 그래서 노출하는 방법을 둘로 나눕니다.</p>
+<div class="two">
+<div class="box" style="margin-top:2px"><b>① 대형주로 지금 노출</b><br>테마 매출이 아직 작아도 본업 현금흐름이 밸류에이션을 받쳐주는 회사를 고릅니다. 이튼(전기 매출 75.8%)과 히타치(에너지 30.4%, 변압기 수주의 매출 전환)가 여기에 해당합니다. 고금리에서도 버티고, 테마가 맞으면 덤으로 얹힙니다.</div>
+<div class="box" style="margin-top:2px;border-left-color:var(--neu);background:#fdf6e8"><b>② 소형주는 수주 공시에 진입</b><br>비나텍(PBR 6.98)·LS머트리얼즈(PER 913, PBR 6.03)·필옵틱스(PBR 9.27)는 기대가 이미 가격에 들어가 있는데 해당 매출은 0입니다. 고금리에서는 '기대만 있는 소형 성장주'의 밸류에이션 압박이 가장 큽니다. DART 단일판매·공급계약 공시를 진입 조건으로 둡니다.</div>
+</div>
+<table>
+<thead><tr><th style="width:18%">구분</th><th style="width:41%">기본: 장기금리 고점 유지(메리츠·Lead 공통)</th><th>대안: 금리 하락(10년 하락, FCI-G 완화)</th></tr></thead>
+<tbody>
+<tr><td>시장 구조</td><td>AI 인프라 쏠림, 종목 압축</td><td>쏠림 완화, 장기 듀레이션 종목으로 확산</td></tr>
+<tr><td>800VDC 대형주</td><td>핵심 노출 수단(긍정 유지)</td><td>유지. 다만 상대 성과가 둔화될 수 있음</td></tr>
+<tr><td>CBU·유리기판 소형주</td><td>공시 전 진입 금지. 트리거 대기</td><td>밸류 부담이 줄어 관찰 빈도를 높임. <b>진입 기준(공시)은 바꾸지 않음</b>. 바뀌는 건 따라가는 속도</td></tr>
+<tr><td>2028~ 테마(AI GRID·피지컬AI)</td><td>관찰. 매출이 확인될 때까지 할인</td><td>메리츠가 말하는 '스코프 확장' 구간. 후보군을 재점검</td></tr>
+<tr><td>점검 지표</td><td>미 10년·30년, 기간프리미엄, FCI-G, BBB 스프레드</td><td>KOSPI ADR 100% 상회 지속 여부, 금리 하락의 원인(성장 둔화인지 유가 안정인지)</td></tr>
+</tbody></table>
+<div class="warn"><b>주의.</b> 금리가 경기 둔화 때문에 내려가는 경우(메리츠 표1의 2000·2006년형)에는 AI 캐펙스 자체가 줄어들 수 있습니다. 이건 800VDC를 포함한 모든 테마의 공통 breaks_if입니다. 금리 하락의 <b>원인</b>을 먼저 구분해야 합니다.</div>
+
+<!-- ===================== 3. 타임라인 ===================== -->
+<h2 class="pb">3. 테마 타임라인: 매출 인식 순서</h2>
+<p>아래 도표는 메리츠 그림8 「2023년 이후 AI 인프라 관련 테마의 매출 인식 시점」의 라벨과 배치를 Lead가 다시 그린 것입니다. 하단의 Lead 판정 칩과 단계 구분은 메리츠 원본에 없는 Lead의 해석입니다. 메리츠 보고서는 2027·2028~ 칸을 <b>차트 라벨로만</b> 제시했고 본문 설명이나 종목은 없습니다<sup class="fn"><a href="#ref-1">[1]</a></sup>.</p>
+<div class="fig">
+<svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+ <defs>
+  <linearGradient id="tl" x1="0" x2="1" y1="0" y2="0">
+   <stop offset="0" stop-color="#123a6b"/><stop offset="0.56" stop-color="#1f6fd1"/><stop offset="0.72" stop-color="#7fb0ec"/><stop offset="1" stop-color="#dbe8fa"/>
+  </linearGradient>
+  <marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1f6fd1"/></marker>
+ </defs>
+ <rect x="640" y="8" width="352" height="414" fill="#f3f7fd" stroke="#7fb0ec" stroke-dasharray="5 4" rx="6"/>
+ <text x="816" y="28" text-anchor="middle" font-size="13" fill="#1f6fd1" font-weight="700">본 페이퍼 범위: 2027 · 2028~</text>
+ <!-- axis -->
+ <rect x="40" y="186" width="920" height="26" rx="13" fill="url(#tl)"/>
+ <path d="M955,180 L985,199 L955,218 z" fill="#dbe8fa"/>
+ <g stroke-width="5" fill="#fff">
+  <circle cx="80" cy="199" r="19" stroke="#123a6b"/><circle cx="235" cy="199" r="19" stroke="#123a6b"/>
+  <circle cx="390" cy="199" r="19" stroke="#1a4f92"/><circle cx="545" cy="199" r="19" stroke="#1f6fd1"/>
+  <circle cx="735" cy="199" r="19" stroke="#8db8ee"/><circle cx="900" cy="199" r="19" stroke="#c4daf6"/>
+ </g>
+ <g font-size="15" font-weight="700" text-anchor="middle" fill="#1d1d1f">
+  <text x="80" y="245">2023</text><text x="235" y="245">2024</text><text x="390" y="245">2025</text><text x="545" y="245">2026</text><text x="735" y="245">2027</text><text x="900" y="245">2028 ~</text>
+ </g>
+ <g font-size="10.5" fill="#777" text-anchor="middle">
+  <text x="157" y="262">연산 칩</text><text x="312" y="262">칩 주변 · 전력</text><text x="467" y="262">전력 · 메모리</text><text x="590" y="262">SW · CPU</text><text x="735" y="262">랙 전원 구조 전환</text><text x="900" y="262">시설 · 소재 · 엣지</text>
+ </g>
+ <!-- above labels -->
+ <g stroke="#1f6fd1" stroke-dasharray="3 3" fill="none" stroke-width="1.3">
+  <path d="M157,186 L157,130 L170,130"/><path d="M300,186 L300,150 L312,150"/><path d="M325,186 L325,112 L337,112"/>
+  <path d="M445,186 L445,150 L457,150"/><path d="M575,186 L575,150 L587,150"/>
+  <path d="M290,212 L290,288 L302,288"/><path d="M480,212 L480,288 L492,288"/>
+ </g>
+ <g font-size="14" fill="#1d1d1f">
+  <text x="175" y="135">GPU</text><text x="317" y="155">전력 인프라</text><text x="342" y="117">광케이블</text>
+  <text x="462" y="155">원전</text><text x="592" y="155">CPU</text>
+  <text x="307" y="293">ASIC, PCB</text><text x="497" y="293">메모리, HBM,</text><text x="497" y="311">스토리지</text>
+ </g>
+ <text x="545" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#1f6fd1">AI AGENT</text>
+ <line x1="545" y1="74" x2="545" y2="172" stroke="#1f6fd1" stroke-width="2.5" marker-end="url(#ar)"/>
+ <g stroke="#9db8db" stroke-dasharray="2 3" stroke-width="1.3"><line x1="735" y1="140" x2="735" y2="178"/><line x1="900" y1="150" x2="900" y2="178"/></g>
+ <g font-size="15" fill="#1f4f99" text-anchor="middle" font-weight="600">
+  <text x="735" y="76">CBU</text><text x="735" y="100">AI RAN</text><text x="735" y="124">800VDC</text>
+  <text x="900" y="62">AI GRID</text><text x="900" y="86">SST</text><text x="900" y="110">유리기판</text><text x="900" y="134">Physical AI</text>
+ </g>
+ <!-- Lead chips -->
+ <text x="816" y="292" text-anchor="middle" font-size="11" fill="#555" font-weight="700">Lead 판정 (2026-10-10)</text>
+ <g font-size="11.5" font-weight="700" fill="#fff">
+  <rect x="660" y="302" width="150" height="22" rx="4" fill="#1b7f4b"/><text x="735" y="317" text-anchor="middle">800VDC: 긍정(대형주)</text>
+  <rect x="660" y="330" width="150" height="22" rx="4" fill="#a06a00"/><text x="735" y="345" text-anchor="middle">CBU: 트리거 대기</text>
+  <rect x="660" y="358" width="150" height="22" rx="4" fill="#6b6b6b"/><text x="735" y="373" text-anchor="middle">AI RAN: 관찰</text>
+  <rect x="825" y="302" width="150" height="22" rx="4" fill="#3d7d63"/><text x="900" y="317" text-anchor="middle">SST: 이튼 경유 노출</text>
+  <rect x="825" y="330" width="150" height="22" rx="4" fill="#a06a00"/><text x="900" y="345" text-anchor="middle">유리기판: 트리거 대기</text>
+  <rect x="825" y="358" width="150" height="22" rx="4" fill="#6b6b6b"/><text x="900" y="373" text-anchor="middle">AI GRID: 관찰</text>
+  <rect x="825" y="386" width="150" height="22" rx="4" fill="#6b6b6b"/><text x="900" y="401" text-anchor="middle">피지컬AI: 관찰</text>
+ </g>
+ <text x="40" y="415" font-size="10.5" fill="#777">자료: 메리츠증권 리서치센터(그림8, 2026-10-08) 라벨을 Lead가 재구성. 단계 구분·판정 칩은 Lead 해석</text>
+</svg>
+</div>
+<p class="cap">그림 1. AI 인프라 테마 매출 인식 시점(메리츠 그림8 재구성)과 Lead 판정</p>
+<p class="src">원 자료: 메리츠증권 리서치센터, 황수욱 「10월 한국 시장의 고민」 그림8(2026-10-08)<sup class="fn"><a href="#ref-1">[1]</a></sup></p>
+
+<h3>3-1. 타임라인이 말해주는 패턴(Lead 해석)</h3>
+<ul>
+<li><b>매출 인식은 연산 칩에서 바깥쪽으로 이동합니다.</b> GPU(2023~24) 다음에 ASIC·PCB·광케이블(칩 주변 부품), 전력인프라·원전(전력 공급), 메모리·HBM·스토리지, AI AGENT·CPU(소프트웨어와 범용 연산) 순서로 넘어왔습니다. 2027 칸은 <b>랙 안쪽 전원 구조</b>(800VDC, CBU), 2028~ 칸은 <b>시설과 소재 자체의 교체</b>(SST, 유리기판)와 <b>데이터센터 밖으로의 확장</b>(AI RAN·AI GRID·피지컬AI)입니다.</li>
+<li><b>같은 칸 안에서도 매출 시점은 다릅니다.</b> 2027 칸의 800VDC는 시설 측 장비(배전반·정류기·사이드카)가 랙 출하보다 먼저 납품돼야 합니다. 그래서 2027 랙 출하를 앞두고 2026~27년에 장비 수주가 먼저 잡힐 수 있습니다(추정). 반면 AI RAN은 상용 제품이 4Q27이라 의미 있는 매출은 2028년 이후일 가능성이 큽니다.</li>
+<li><b>앞 칸 테마가 뒤 칸 테마의 '대형주 경유로'가 됩니다.</b> 2024~25년 '전력 인프라'로 이미 매출이 찍히는 이튼·히타치가 2027 800VDC와 2028 SST에도 걸쳐 있습니다. 고금리에서 이 겹침이 대형주 경유 전략의 근거입니다.</li>
+<li><b>메리츠 정의 미확인:</b> 메리츠는 CBU와 AI GRID의 정의를 주지 않았습니다. 본 페이퍼는 CBU = Capacitor Backup Unit(한국 셀사이드·롬 백서 용례), AI GRID = NVIDIA의 통신 분산 추론 플랫폼으로 읽었습니다. 둘 다 <span class="unv">추정</span>입니다.</li>
+</ul>
+<!-- ===================== 4. 테마별 ===================== -->
+<h2 class="pb">4. 테마별 분석</h2>
+<h3>4-0. 전력 체인 지도: 2027·2028 전력 테마는 하나의 줄로 이어진다</h3>
+<p>800VDC, SST, CBU는 서로 다른 테마가 아니라 <b>전력망에서 GPU까지 이어지는 한 줄의 전력 체인</b>에서 각자 다른 구간입니다. 아래 그림에서 왼쪽(시설 측)일수록 기존 전력장비 대형주의 영역이고, 오른쪽(랙 측)일수록 신규 부품과 소형주의 영역입니다. 랙에서 나간 트래픽은 통신망을 거쳐 AI RAN·AI GRID로 이어집니다.</p>
+<div class="fig">
+<svg viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+ <defs><marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#123a6b"/></marker>
+ <marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#888"/></marker></defs>
+ <!-- timing band -->
+ <rect x="8" y="8" width="150" height="22" rx="3" fill="#e9edf2"/><text x="83" y="23" text-anchor="middle" font-size="11" fill="#444">이미 매출(2024~ 전력 인프라)</text>
+ <rect x="174" y="8" width="150" height="22" rx="3" fill="#dbe8fa"/><text x="249" y="23" text-anchor="middle" font-size="11" fill="#1f4f99" font-weight="700">2028~ SST</text>
+ <rect x="340" y="8" width="652" height="22" rx="3" fill="#cfe0f7"/><text x="666" y="23" text-anchor="middle" font-size="11" fill="#123a6b" font-weight="700">2027: 800VDC · CBU (Kyber 랙 출하와 동행)</text>
+ <!-- boxes -->
+ <g font-size="13" text-anchor="middle">
+  <rect x="8" y="42" width="150" height="96" rx="6" fill="#123a6b"/>
+  <text x="83" y="70" fill="#fff" font-weight="700">전력망</text><text x="83" y="90" fill="#dce6f5" font-size="11.5">중전압 AC</text><text x="83" y="108" fill="#dce6f5" font-size="11">송전 · 변전 · 변압기</text><text x="83" y="125" fill="#dce6f5" font-size="10.5">(AI GRID 전력망 해석)</text>
+  <rect x="174" y="42" width="150" height="96" rx="6" fill="#1a4f92"/>
+  <text x="249" y="70" fill="#fff" font-weight="700">SST / 정류</text><text x="249" y="90" fill="#dce6f5" font-size="11.5">AC → 800VDC 1회 변환</text><text x="249" y="108" fill="#dce6f5" font-size="11">SiC 고주파 변환</text><text x="249" y="125" fill="#dce6f5" font-size="10.5">목표 효율 99%+ (3~6MW)</text>
+  <rect x="340" y="42" width="150" height="96" rx="6" fill="#1f6fd1"/>
+  <text x="415" y="70" fill="#fff" font-weight="700">800VDC 배전</text><text x="415" y="90" fill="#e8f0fb" font-size="11.5">시설 → 랙 직류 버스</text><text x="415" y="108" fill="#e8f0fb" font-size="11">전류↓ → 구리·손실↓</text><text x="415" y="125" fill="#e8f0fb" font-size="10.5">랙 200kW 이상에서 필요</text>
+  <rect x="506" y="42" width="150" height="96" rx="6" fill="#3a83dc"/>
+  <text x="581" y="70" fill="#fff" font-weight="700">사이드카 전원랙</text><text x="581" y="90" fill="#eef4fc" font-size="11.5">랙 옆 전원·저장 모듈</text><text x="581" y="108" fill="#eef4fc" font-size="11">변환 · 보호 · 저장</text>
+  <rect x="672" y="42" width="150" height="96" rx="6" fill="#fff" stroke="#a06a00" stroke-width="2.5"/>
+  <line x1="672" y1="90" x2="822" y2="90" stroke="#a06a00" stroke-dasharray="3 3"/>
+  <text x="747" y="62" fill="#a06a00" font-weight="700">CBU 슈퍼커패시터</text><text x="747" y="80" fill="#6b4a00" font-size="10.5">ms~초 부하 완충, BBU 브리지</text>
+  <text x="747" y="110" fill="#555" font-weight="700">BBU 배터리</text><text x="747" y="127" fill="#666" font-size="10.5">정전 시 분 단위 백업</text>
+  <rect x="838" y="42" width="154" height="96" rx="6" fill="#0d2747"/>
+  <text x="915" y="70" fill="#fff" font-weight="700">Kyber 랙</text><text x="915" y="90" fill="#dce6f5" font-size="11.5">Rubin Ultra 576개</text><text x="915" y="108" fill="#dce6f5" font-size="11">64:1 LLC 800→12V</text><text x="915" y="125" fill="#dce6f5" font-size="10.5">2027 출시 예정</text>
+ </g>
+ <g stroke="#123a6b" stroke-width="2.2" marker-end="url(#a2)">
+  <line x1="158" y1="90" x2="171" y2="90"/><line x1="324" y1="90" x2="337" y2="90"/><line x1="490" y1="90" x2="503" y2="90"/><line x1="656" y1="90" x2="669" y2="90"/><line x1="822" y1="90" x2="835" y2="90"/>
+ </g>
+ <!-- names -->
+ <text x="8" y="160" font-size="11" fill="#555" font-weight="700">구간별 노출 기업 (초록 굵게 = Lead 긍정 · 주황 = 트리거 대기 · 검정 = 중립·판정 없음 · * = 미확인·테마)</text>
+ <g font-size="11" fill="#1d1d1f">
+  <text x="12" y="180"><tspan font-weight="700" fill="#1b7f4b">히타치(6501)</tspan></text><text x="12" y="196">GE버노바(GEV)</text><text x="12" y="212">HD현대일렉트릭*</text><text x="12" y="228">효성중공업*</text><text x="12" y="244">LS일렉트릭*</text>
+  <text x="178" y="180"><tspan font-weight="700" fill="#1b7f4b">이튼 MVSST</tspan></text><text x="178" y="196">ABB(DG Matrix 지분)</text><text x="178" y="212">델타(2308 TT)</text><text x="178" y="228">효성·LS일렉(실증)</text><text x="178" y="244">SiC: IFX · ON · 롬</text>
+  <text x="344" y="180"><tspan font-weight="700" fill="#1b7f4b">이튼 · 히타치</tspan></text><text x="344" y="196">버티브 · 슈나이더</text><text x="344" y="212">ABB · 지멘스 · GEV</text><text x="344" y="228">미쓰비시전기</text><text x="344" y="244">LS일렉트릭*</text>
+  <text x="510" y="180">버티브(VRT)</text><text x="510" y="196"><tspan font-weight="700" fill="#1b7f4b">이튼</tspan></text><text x="510" y="212">델타 · 라이트온</text><text x="510" y="228">플렉스(FLEX)</text>
+  <text x="676" y="180"><tspan font-weight="700" fill="#1b7f4b">이튼(자사 슈퍼캡)</tspan></text><text x="676" y="196" fill="#a06a00">비나텍(126340)</text><text x="676" y="212" fill="#a06a00">LS머트리얼즈(417200)</text><text x="676" y="228">Skeleton(비상장)</text><text x="676" y="244">무사시정밀* · 야게오</text>
+  <text x="842" y="180">NVIDIA(NVDA)</text><text x="842" y="196">GaN/SiC: 나비타스</text><text x="842" y="212">인피니언 · TI · ST</text><text x="842" y="228">온세미 · 롬</text>
+ </g>
+ <!-- sequence arrow -->
+ <rect x="8" y="262" width="984" height="40" rx="4" fill="#f4f6f9"/>
+ <text x="500" y="279" text-anchor="middle" font-size="12" fill="#123a6b" font-weight="700">매출이 찍히는 순서(Lead 추정): ① 시설 측 대형 장비 → ② 부품(SiC/GaN, 슈퍼캡 셀) → ③ 랙 전용 순수 테마 소형주</text>
+ <text x="500" y="295" text-anchor="middle" font-size="10.5" fill="#666">시설 장비는 랙 출하보다 먼저 설치돼야 함 → 수주·백로그로 먼저 보임. 랙 측 부품은 랙 BOM 확정 뒤에 매출이 찍힘</text>
+ <!-- telecom branch -->
+ <path d="M915,138 L915,350 L822,350" fill="none" stroke="#888" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#a3)"/>
+ <text x="925" y="330" font-size="10.5" fill="#777">트래픽</text>
+ <g font-size="12" text-anchor="middle">
+  <rect x="672" y="325" width="150" height="50" rx="6" fill="#fff" stroke="#888"/><text x="747" y="346" fill="#333" font-weight="700">통신망 백본</text><text x="747" y="363" fill="#666" font-size="10.5">국사 · POP</text>
+  <rect x="440" y="325" width="200" height="50" rx="6" fill="#fff" stroke="#6b6b6b" stroke-width="2"/><text x="540" y="346" fill="#333" font-weight="700">AI RAN 기지국 (2027)</text><text x="540" y="363" fill="#666" font-size="10.5">GPU에서 RAN + AI 동시 처리</text>
+  <rect x="190" y="325" width="220" height="50" rx="6" fill="#fff" stroke="#6b6b6b" stroke-width="2"/><text x="300" y="346" fill="#333" font-weight="700">AI GRID 엣지 추론 (2028~)</text><text x="300" y="363" fill="#666" font-size="10.5">통신 분산 DC에서 저지연 추론</text>
+ </g>
+ <g stroke="#888" stroke-width="1.8" marker-end="url(#a3)"><line x1="672" y1="350" x2="643" y2="350"/><line x1="440" y1="350" x2="413" y2="350"/></g>
+ <g font-size="10.5" fill="#555"><text x="440" y="392">노키아(NOK) · NVIDIA ARC-Pro · 델/SMCI/콴타 · 마벨 · 삼성전자*</text><text x="190" y="392">NVDA · 시스코 · HPE · 아카마이 · AT&amp;T · T-Mobile*</text></g>
+ <text x="8" y="440" font-size="10.5" fill="#777">자료: NVIDIA 기술 블로그(800VDC 생태계), Schneider, SemiAnalysis, 롬 백서, 노키아·NVIDIA 발표를 바탕으로 Lead 작성. 기업 배치는 공식 파트너 명단·제품 발표 기준이며 수주 확인을 뜻하지 않음</text>
+ <text x="8" y="457" font-size="10.5" fill="#777">* 한국 3사(HD현대일렉·효성·LS일렉)의 800VDC 수주는 공식 확인 못 함. 무사시정밀의 GB200 채택은 미확인. 삼성전자·T-Mobile 등은 연구·트라이얼 단계</text>
+</svg>
+</div>
+<p class="cap">그림 2. 전력 체인: 전력망 → SST/정류 → 800VDC → 사이드카 → CBU/BBU → Kyber 랙, 그리고 통신 엣지 분기</p>
+<p class="src">출처: <sup class="fn"><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a><a href="#ref-4">[4]</a><a href="#ref-8">[8]</a><a href="#ref-22">[22]</a></sup></p>
+
+<!-- 800VDC -->
+<h3>4-1. 800VDC: 2027 앵커 테마 <span class="tag pos">긍정 · 대형주 경유</span></h3>
+<div class="kv"><b>메커니즘</b><span>랙 전력이 200kW를 넘으면 기존 방식(400V AC나 48V DC)으로는 버겁고, 400kW부터는 불가능합니다<sup class="fn"><a href="#ref-2">[2]</a></sup>. 그래서 시설 단에서 AC를 800V 직류로 한 번만 바꿔 랙까지 보냅니다. 같은 전력이면 전압이 높을수록 전류가 줄어 구리 사용량과 변환 손실이 함께 줄어듭니다. GPU 옆에서는 64:1 LLC 컨버터로 800V를 12V로 낮추고, NVIDIA는 이 방식으로 면적을 26% 줄인다고 밝혔습니다<sup class="fn"><a href="#ref-3">[3]</a></sup>.</span>
+<b>시점</b><span>Kyber 랙(Rubin Ultra 576개)은 2027년 출시 예정입니다. 폭스콘 가오슝-1(40MW)은 800VDC로 짓고 있고, CoreWeave·Oracle·Nebius 등은 설계 단계입니다<sup class="fn"><a href="#ref-4">[4]</a></sup>. 지금은 <b>레퍼런스 설계 발표 단계</b>이고 출하는 2027년입니다. OCP LVDC SST 사양은 v0.3(2026-07)까지 나왔습니다<sup class="fn"><a href="#ref-5">[5]</a></sup>.</span>
+<b>왜 지금</b><span>NVIDIA 로드맵이 시점을 정해 줬고, 시설 측 장비는 랙보다 먼저 설치돼야 합니다. 공식 파트너 중 이튼·히타치는 본업 현금흐름이 이미 크기 때문에 고금리에서도 버틸 수 있습니다. 다만 전력장비주는 이미 많이 올라서 <b>'선점'보다 '확인'에 가까운 국면</b>일 수 있습니다(스터디 메모).</span></div>
+<p class="cap">표 1. 800VDC 수혜 기업</p>
+<table>
+<thead><tr><th style="width:15%">기업</th><th style="width:7%">국가</th><th style="width:10%">티커</th><th style="width:33%">노출 방식</th><th style="width:9%">근거</th><th style="width:12%">Lead 판정</th><th style="width:14%">기준가</th></tr></thead>
+<tbody>
+<tr><td><b>이튼</b></td><td>미국</td><td>ETN</td><td>800VDC 레퍼런스 설계에 자사 슈퍼캡 포함<sup class="fn"><a href="#ref-6">[6]</a></sup>, 전기 매출 75.8%, MVSST 보유(SST 겸)</td><td><span class="ev s">강</span></td><td><span class="tag pos">긍정</span></td><td>$429.65</td></tr>
+<tr><td><b>히타치</b></td><td>일본</td><td>6501</td><td>전력시스템 공식 파트너(히타치에너지), 에너지 매출 30.4%, 변압기 수주 매출화. SST 수주액 <span class="unv">미확인</span></td><td><span class="ev s">강</span></td><td><span class="tag pos">긍정</span></td><td>¥5,669</td></tr>
+<tr><td>미쓰비시전기</td><td>일본</td><td>6503</td><td>데이터센터 전력시스템 파트너(공식). 회사 내 비중 작음</td><td><span class="ev s">강</span></td><td><span class="tag neu">중립</span></td><td>¥5,143</td></tr>
+<tr><td>온세미</td><td>미국</td><td>ON</td><td>실리콘 파트너(공식). SiC 본업(전기차) 부진 상쇄 여부 확인 필요</td><td><span class="ev s">강</span></td><td><span class="tag neu">중립</span></td><td>$77.53</td></tr>
+<tr><td>나비타스</td><td>미국</td><td>NVTS</td><td>GaN/SiC 파트너(공식). 분기 매출 $10.5M, 영업손실 $27.2M</td><td><span class="ev s">강</span>(파트너)</td><td><span class="tag neu">중립</span></td><td>$10.78</td></tr>
+<tr><td>롬</td><td>일본</td><td>6963</td><td>실리콘 파트너(공식), 800VDC 백서 발간. SiC 적자 구간</td><td><span class="ev s">강</span></td><td><span class="tag neu">중립</span></td><td>¥4,934</td></tr>
+<tr><td>인피니언</td><td>독일</td><td>IFX</td><td>실리콘 파트너(공식), 이튼 MVSST에 SiC 공급</td><td><span class="ev s">강</span></td><td><span class="tag neu">중립</span></td><td>장부 없음</td></tr>
+<tr><td>버티브 · 슈나이더 · ABB · GE버노바 · 지멘스</td><td>미·프·스위스·미·독</td><td>VRT · SU FP · ABB · GEV · (지멘스)</td><td>NVIDIA 800VDC 공식 파트너. 수주 확인 아님</td><td><span class="ev s">강</span>(명단)</td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>델타 · 라이트온 · 플렉스</td><td>대만·대만·미국</td><td>2308 TT 등</td><td>부품 파트너(공식). 델타는 OCP 2025에서 800VDC SST 공개</td><td><span class="ev s">강</span>(명단)</td><td><span class="tag none">범위 밖</span></td><td>—</td></tr>
+<tr><td>LS일렉트릭 · 효성중공업 · HD현대일렉트릭</td><td>한국</td><td>010120 · 298040 · 267260</td><td>DC 배전·변압기로 연결되는 테마. 800VDC 수주 공식 확인 못 함</td><td><span class="ev t">테마</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+</tbody></table>
+<p class="src">파트너 명단: NVIDIA 기술 블로그<sup class="fn"><a href="#ref-3">[3]</a></sup>. "공식 생태계에 들어갔다"는 것이지 수주가 확인됐다는 뜻은 아닙니다.</p>
+<div class="two">
+<div><h4>진입 트리거 / 유지 조건</h4><ul class="mini">
+<li>2027년 Kyber 출하 일정 유지(NVIDIA 발표·GTC·OCP)</li>
+<li>하이퍼스케일러의 800VDC 전환 수주 공개</li>
+<li>OCP에서 전압·안전 표준 확정(LVDC SST 사양 v0.3 이후)</li>
+<li>버티브·이튼 실적에서 800VDC 수주잔고 언급</li>
+<li>전력반도체(중립 5사): AI·800V 매출의 <b>별도 금액화</b> → 긍정 재검토</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>Rubin Ultra·Kyber·800V 출하가 2027년 이후로 지연</li>
+<li>이튼 Electrical Americas 백로그 YoY 감소</li>
+<li>±400VDC 같은 대안 표준이 주류가 됨</li>
+<li>하이퍼스케일러 AI 캐펙스 축소(경기 둔화형 금리 하락 포함)</li></ul></div>
+</div>
+<!-- CBU -->
+<h3 class="pb">4-2. CBU: 가장 작고 레버리지가 큰 2027 테마 <span class="tag neu">중립 · 트리거 대기</span></h3>
+<div class="kv"><b>정의</b><span>한국 셀사이드에서 CBU는 <b>Capacitor Backup Unit</b>입니다<sup class="fn"><a href="#ref-7">[7]</a></sup>. 롬 백서는 CBU를 "BBU가 켜질 때까지 대용량 커패시터로 전력을 공급하는 장치"로 설명합니다<sup class="fn"><a href="#ref-8">[8]</a></sup>. Skeleton은 같은 약자를 'Capacitor Bank Unit'으로 쓰고, 800VDC 제품 기준 정격 160kW·피크 240kW입니다<sup class="fn"><a href="#ref-9">[9]</a></sup>. CBU를 Battery Backup의 약자로 쓰는 경우는 확인하지 못했습니다. <span class="unv">메리츠가 쓴 정의는 본문에 없어 미확인입니다.</span></span>
+<b>메커니즘</b><span>GPU 학습 부하는 밀리초 단위로 출렁입니다. 슈퍼커패시터가 이 출렁임을 흡수해 전력망과 전원장치에 무리가 가지 않게 하고, 정전 때는 BBU(배터리)가 켜지기 전까지 다리 역할을 합니다. 그림 2의 사이드카 → CBU/BBU 구간입니다.</span>
+<b>시점</b><span>비나텍 기업 리포트(2026-09-01, 작성 증권사 미확인)는 "Rubin Ultra·Kyber 랙 시대엔 사이드카 내 CBU가 필수"라고 봅니다<sup class="fn"><a href="#ref-7">[7]</a></sup>(추정). 2027년 데이터센터 랙용 울트라커패시터 시장을 약 1조원으로 보는 업계 추정이 있으나 원 출처가 불명확합니다<sup class="fn"><a href="#ref-10">[10]</a></sup>.</span></div>
+
+<h4>국내 두 종목의 실제 상태(Lead 카드 기준)</h4>
+<table>
+<thead><tr><th style="width:17%">항목</th><th style="width:41%">비나텍(126340)</th><th>LS머트리얼즈(417200)</th></tr></thead>
+<tbody>
+<tr><td>기준가 / 시총</td><td>87,800원 / 6,304억원</td><td>16,430원 / 1조1,115억원</td></tr>
+<tr><td>확정 매출·수주</td><td>블룸 시스템 412.2억원(2025 매출의 50.1%), 산미나 셀 133.0억원(2025 매출의 16.17%, 2026/9/5~2027/1/28)<sup class="fn"><a href="#ref-11">[11]</a></sup>. 공시 문언은 '데이터센터용 슈퍼커패시터'이고 <b>서버랙 CBU가 아님</b></td><td>UC 매출 172.3억원(매출의 18.3%), 적자. 버티브 MOU(2024-09)는 금액 없음. 1H26 AI·CBU 매출 없음<sup class="fn"><a href="#ref-12">[12]</a></sup></td></tr>
+<tr><td>실적</td><td>1H26 매출 607.5억원, 영업이익 -10.4억원</td><td>"AI 매출은 아직 없음"(삼성증권 인용)</td></tr>
+<tr><td>밸류</td><td>PBR 6.98</td><td>PER 913, PBR 6.03</td></tr>
+<tr><td>희석 변수</td><td>4회 CB 220억원, 전환가 78,818원(현 주가보다 낮아 전환 가능 구간 → 희석 위험)</td><td>신규 증자</td></tr>
+<tr><td>기술 포인트</td><td>데이터센터용 슈퍼캡 양산 매출 보유</td><td>600만 회 사이클 UC 공개</td></tr>
+</tbody></table>
+
+<p class="cap">표 2. CBU 수혜 기업</p>
+<table>
+<thead><tr><th style="width:15%">기업</th><th style="width:7%">국가</th><th style="width:9%">티커</th><th style="width:35%">노출 방식</th><th style="width:9%">근거</th><th style="width:12%">Lead 판정</th><th style="width:13%">기준가</th></tr></thead>
+<tbody>
+<tr><td><b>이튼</b></td><td>미국</td><td>ETN</td><td>800VDC 레퍼런스 설계에 자사 슈퍼캡 포함. CBU는 '덤'</td><td><span class="ev s">강</span></td><td><span class="tag pos">긍정</span></td><td>$429.65</td></tr>
+<tr><td>비나텍</td><td>한국</td><td>126340</td><td>데이터센터 슈퍼캡 매출 있음, 서버랙 CBU는 샘플·협의 단계</td><td><span class="ev s">강</span>(DC용)/<span class="ev w">약</span>(랙)</td><td><span class="tag neu">중립</span></td><td>87,800원</td></tr>
+<tr><td>LS머트리얼즈</td><td>한국</td><td>417200</td><td>UC 보유, 버티브 MOU. AI 매출 0</td><td><span class="ev t">테마</span></td><td><span class="tag neu">중립</span></td><td>16,430원</td></tr>
+<tr><td>무사시정밀</td><td>일본</td><td>7220</td><td>자회사 LIC. 오라클 '검토'(2024-12)뿐, <span class="unv">GB200 채택은 공시가 아님(미확인)</span>. 매출 대부분 자동차</td><td><span class="ev w">약</span></td><td><span class="tag neu">중립</span></td><td>¥3,025</td></tr>
+<tr><td>야게오(KEMET)</td><td>대만</td><td>2327</td><td>엔비디아 AVL, 슈퍼캡 개발(보도)<sup class="fn"><a href="#ref-13">[13]</a></sup></td><td><span class="ev m">중</span></td><td><span class="tag none">범위 밖</span></td><td>—</td></tr>
+<tr><td>Skeleton</td><td>—</td><td>비상장</td><td>800VDC용 GPU 전원 모듈(160kW/240kW)</td><td><span class="ev m">중</span></td><td><span class="tag none">비상장</span></td><td>—</td></tr>
+</tbody></table>
+<p class="small">제외: 니폰케미콘·니치콘·루비콘(슈퍼캡 '확대' 보도만, AI 수주 미확인), 무라타·TDK·파나소닉·비샤이(CBU 공급 근거 없음), Maxwell(비상장), JM Energy(비상장화).</p>
+<div class="two">
+<div><h4>진입 트리거</h4><ul class="mini">
+<li><b>서버랙 CBU 첫 단일판매 공시</b>(비나텍·LS머트리얼즈 공통) → 긍정 재검토</li>
+<li>NVIDIA MGX/Kyber 레퍼런스 BOM에 CBU 명시</li>
+<li>버티브·델타 사이드카 사양에 커패시터 모듈 포함</li>
+<li>서버랙용 증설 투자 공시</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>랙 내 BBU·리튬이온 커패시터(LIC)나 GPU 쪽 전력 평활화(소프트웨어·전원 IC)로 대체</li>
+<li>일본 업체가 물량을 가져감</li>
+<li>비나텍 CB 전환, LS머트리얼즈 신규 증자(희석)</li>
+<li>Kyber 지연</li></ul></div>
+</div>
+<div class="box"><b>Lead 판단.</b> 메커니즘은 탄탄하고, 랙 하나당 부품 가치가 생기면 시총 6천억~1조원대 회사에는 레버리지가 큽니다. 하지만 지금 주가가 반영하는 것은 '데이터센터 슈퍼캡'이라는 이름이고, <b>랙 CBU 매출은 0</b>입니다. 비나텍의 확정 수주는 블룸·산미나향 비상전원·셀이고, 이 실적이 이미 PBR 7배 가까이로 반영돼 있습니다. 고금리에서는 공시가 나온 다음에 들어가도 늦지 않다고 봅니다. 첫 공시 직후 급등할 위험은 감수하는 쪽을 택합니다.</div>
+
+<!-- SST -->
+<h3 class="pb">4-3. SST(반도체 변압기): 800VDC의 2단계 <span class="tag pos">이튼 경유</span> <span class="tag neu">순수주 중립</span></h3>
+<div class="kv"><b>메커니즘</b><span>철심 변압기와 정류기 대신 SiC 전력반도체로 고주파 변환을 해서 중전압 AC를 바로 800VDC로 바꿉니다. 변환 단계가 줄어 효율과 면적이 좋아지고, 부하가 급변할 때 제어도 할 수 있습니다. 업체들은 효율 약 98.5%를 주장하지만 데이터센터에는 3~6MW급에서 99% 이상이 필요합니다<sup class="fn"><a href="#ref-22">[22]</a></sup>.</span>
+<b>왜 2028</b><span>800VDC(2027 Kyber) 다음 단계로 시설 측 변압·정류를 SST로 대체하는 흐름이고, 3.3kV급 SiC가 성숙해야 합니다<sup class="fn"><a href="#ref-22">[22]</a></sup>. 최근 12개월(~2026-03) SST 스타트업 투자는 $320M 이상입니다.</span>
+<b>현재 단계</b><span>제품 발표·사전인증·실증 단계이고, 고객 수주는 공개되지 않았습니다. 순수 SST 업체는 대부분 비상장입니다.</span></div>
+<table>
+<thead><tr><th style="width:20%">업체</th><th style="width:52%">발표 내용 / 목표</th><th>단계</th></tr></thead>
+<tbody>
+<tr><td>DG Matrix(비상장, ABB 투자)</td><td>NVIDIA MGX 생태계의 유일한 SST, 사전인증품 출하, UL 인증 목표 2026 Q2 말<sup class="fn"><a href="#ref-23">[23]</a></sup>. <span class="unv">인증 완료 여부 미확인</span></td><td><span class="ev m">회사 발표</span></td></tr>
+<tr><td>Amperesand(비상장)</td><td>2026년 30MW 상업 출하 목표<sup class="fn"><a href="#ref-24">[24]</a></sup></td><td><span class="ev m">목표</span></td></tr>
+<tr><td>Heron Power(비상장)</td><td>40GW 공장, H2 2027 목표<sup class="fn"><a href="#ref-24">[24]</a></sup></td><td><span class="ev m">목표</span></td></tr>
+<tr><td>이튼</td><td>2025-08 Resilient Power 인수, MVSST 2.0(인피니언 SiC) 아태 우선 배치 예정<sup class="fn"><a href="#ref-25">[25]</a></sup></td><td><span class="ev m">제품, 수주 미공개</span></td></tr>
+<tr><td>델타</td><td>OCP 2025에서 800VDC SST 공개<sup class="fn"><a href="#ref-24">[24]</a></sup></td><td><span class="ev m">제품</span></td></tr>
+<tr><td>효성중공업</td><td>22.9kV 1.05MVA SST 2022 개발, 서브모듈을 IEEE PES T&amp;D 2026에서 공개, 실증 중<sup class="fn"><a href="#ref-26">[26]</a></sup></td><td><span class="ev w">개발·실증</span></td></tr>
+<tr><td>LS일렉트릭</td><td>천안 DC팩토리 SST 실증(EV 충전 기반)<sup class="fn"><a href="#ref-27">[27]</a></sup></td><td><span class="ev w">실증</span></td></tr>
+<tr><td>HD현대일렉트릭</td><td>SST 공식 제품 확인 못 함. DC차단기 등 2030 로드맵<sup class="fn"><a href="#ref-28">[28]</a></sup></td><td><span class="ev t">테마</span></td></tr>
+<tr><td>슈나이더 · 히타치에너지</td><td>데이터센터용 SST 제품·수주 <span class="unv">원문 확인 못 함</span></td><td>—</td></tr>
+</tbody></table>
+<p class="cap">표 3. SST 상장 수혜 기업</p>
+<table>
+<thead><tr><th style="width:15%">기업</th><th style="width:7%">국가</th><th style="width:10%">티커</th><th style="width:34%">노출 방식</th><th style="width:9%">근거</th><th style="width:12%">Lead 판정</th><th style="width:13%">기준가</th></tr></thead>
+<tbody>
+<tr><td><b>이튼</b></td><td>미국</td><td>ETN</td><td>인수로 MVSST 확보. 800VDC·CBU와 같은 회사에서 겹침</td><td><span class="ev m">중</span></td><td><span class="tag pos">긍정</span></td><td>$429.65</td></tr>
+<tr><td><b>히타치</b></td><td>일본</td><td>6501</td><td>변압기(기존 경로) 수주 매출화. SST 수주액 <span class="unv">미확인</span></td><td><span class="ev m">중</span></td><td><span class="tag pos">긍정</span></td><td>¥5,669</td></tr>
+<tr><td>ABB</td><td>스위스</td><td>ABB</td><td>DG Matrix 지분 투자</td><td><span class="ev m">지분</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>인피니언 · 온세미 · 롬</td><td>독·미·일</td><td>IFX · ON · 6963</td><td>SiC 공급(이튼 MVSST에 인피니언 SiC)</td><td><span class="ev s">강</span>(공급 발표)</td><td><span class="tag neu">중립</span></td><td>—/$77.53/¥4,934</td></tr>
+<tr><td>울프스피드</td><td>미국</td><td>WOLF</td><td>SiC. 800VDC 파트너 명단에 없음, 재무 리스크</td><td><span class="ev w">약</span></td><td><span class="tag none">제외</span></td><td>—</td></tr>
+<tr><td>효성중공업 · LS일렉트릭 · HD현대일렉트릭</td><td>한국</td><td>298040 · 010120 · 267260</td><td>개발·실증, 수주 없음</td><td><span class="ev w">약</span>/<span class="ev t">테마</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+</tbody></table>
+<div class="two">
+<div><h4>진입 트리거</h4><ul class="mini">
+<li>UL 인증 완료와 첫 하이퍼스케일 MW급 수주 공시</li>
+<li>이튼·ABB 실적에서 SST 매출 언급</li>
+<li>3.3kV SiC 양산</li>
+<li>한국 3사의 SST 첫 납품 공시</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>신뢰성(MTBF)·99% 효율 미달로 기존 변압기+정류기(LV-input) 구조 유지</li>
+<li>SiC 공급 병목, 800VDC 도입 지연</li>
+<li><b>양면성:</b> SST가 확산되면 기존 변압기 수요 일부를 잠식할 수 있음. 한국 변압기주와 히타치에는 장기적으로 양날</li></ul></div>
+</div>
+<!-- AI RAN -->
+<h3>4-4. AI RAN: 시점은 2027, 매출 크기는 불확실 <span class="tag obs">관찰</span></h3>
+<div class="kv"><b>메커니즘</b><span>기지국 신호 처리(RAN)를 GPU 위에서 돌리는 방식입니다. AI로 주파수 효율을 높이고, 남는 연산은 엣지 AI 추론으로 팔 수 있습니다. 노키아는 주파수 효율 +20%를 달성했고, 2027년 +50%, 2028년 +100% 이상을 목표로 합니다<sup class="fn"><a href="#ref-14">[14]</a></sup>.</span>
+<b>시점</b><span>노키아는 2026년 말 파일럿, 2027년 상용을 제시했습니다<sup class="fn"><a href="#ref-14">[14]</a></sup>. T-Mobile 필드 트라이얼은 4Q26, 상용 5G 제품은 4Q27입니다<sup class="fn"><a href="#ref-15">[15]</a></sup>. NVIDIA는 노키아에 10억달러(주당 6.01달러, 지분 2.90%)를 투자했고 ARC-Pro를 공개했습니다(2025-10-28)<sup class="fn"><a href="#ref-16">[16]</a></sup>. 소프트뱅크 AITRAS는 FY2026부터 상용망 도입 계획입니다<sup class="fn"><a href="#ref-17">[17]</a></sup>. <b>현재 트라이얼 단계이고 상용 매출은 0</b>입니다.</span>
+<b>왜 관찰</b><span>일정은 공식 문서로 확인되지만, 통신사 캐펙스는 수년째 정체돼 있습니다. 시장 수급도 AI 데이터센터 쪽으로 쏠려 있습니다. 수혜가 NVDA·NOK 같은 큰 회사 매출의 일부로 묻혀 '테마 노출'로서의 순도가 낮습니다.</span></div>
+<p class="cap">표 4. AI RAN 수혜 기업</p>
+<table>
+<thead><tr><th style="width:16%">기업</th><th style="width:7%">국가</th><th style="width:12%">티커</th><th style="width:36%">노출 방식</th><th style="width:9%">근거</th><th style="width:12%">Lead 판정</th><th style="width:8%">기준가</th></tr></thead>
+<tbody>
+<tr><td>노키아</td><td>핀란드</td><td>NOK</td><td>AI-native RAN 플랫폼, 소프트웨어 구독 모델</td><td><span class="ev s">강</span>(발표)</td><td><span class="tag obs">관찰</span></td><td>—</td></tr>
+<tr><td>NVIDIA</td><td>미국</td><td>NVDA</td><td>ARC-Pro·Aerial, 노키아 지분 2.90%</td><td><span class="ev s">강</span></td><td><span class="tag obs">관찰</span>(테마 기준)</td><td>—</td></tr>
+<tr><td>델 · 슈퍼마이크로 · 콴타</td><td>미·미·대만</td><td>DELL · SMCI</td><td>AI-RAN 서버(노키아 MWC26 발표)<sup class="fn"><a href="#ref-18">[18]</a></sup></td><td><span class="ev m">중</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>마벨</td><td>미국</td><td>MRVL</td><td>대안 실리콘으로 언급</td><td><span class="ev w">약</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>삼성전자(네트워크)</td><td>한국</td><td>005930</td><td>AI RAN 연구. 상용 수주 확인 못 함. 본업(메모리) 판정은 긍정</td><td><span class="ev t">테마</span></td><td><span class="tag obs">관찰</span>(AI RAN)</td><td>—</td></tr>
+<tr><td>SK텔레콤 · KT</td><td>한국</td><td>017670 · 030200</td><td>AI RAN 연구. 상용 수주 확인 못 함</td><td><span class="ev t">테마</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+</tbody></table>
+<p class="small">국내 중소형 통신장비주는 후보로만 둡니다(원문으로 확인된 AI RAN 수주 없음). 소프트뱅크는 일본 통신사로 사업자 측 레퍼런스이며 종목 판정 대상이 아닙니다.</p>
+<div class="two">
+<div><h4>재검토 트리거</h4><ul class="mini">
+<li>T-Mobile 필드 트라이얼 결과(4Q26)</li>
+<li>첫 상용 구매 계약</li>
+<li>노키아 실적에서 AI-RAN 수주 금액 공개</li>
+<li>소프트뱅크 상용망 적용 규모</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>GPU 기지국의 전력비·장비 단가(TCO)가 기존 ASIC보다 불리하다는 결론</li>
+<li>통신사 캐펙스 정체 지속</li>
+<li>2027 상용화가 2028년 이후로 지연</li></ul></div>
+</div>
+
+<!-- 유리기판 -->
+<h3 class="pb">4-5. 유리기판: 장비가 먼저, 기판은 반복 지연 <span class="tag neu">중립 · 트리거 대기</span></h3>
+<div class="kv"><b>메커니즘</b><span>AI 가속기 패키지가 커지면 유기(ABF) 기판이 휘고 미세 배선에 한계가 옵니다. 유리 코어는 평탄하고 열팽창이 낮으며, TGV(유리관통전극)로 고밀도 배선이 가능해서 대면적 칩렛과 CPO에 유리합니다.</span>
+<b>시점</b><span>2028~ 칸이지만 일정은 이미 여러 번 밀렸습니다. 앱솔릭스(SKC 자회사)는 2024 양산 → 2026년 말 → 2027년으로 지연됐습니다<sup class="fn"><a href="#ref-29">[29]</a><a href="#ref-30">[30]</a></sup>. 비즈워치(② 2026-10-14)는 삼성전기가 2027년 양산 목표를 2028년으로 늦추고, 하반기 FC-BGA 가동률이 90%를 넘자 유기기판 물량을 먼저 챙긴다고 전했습니다. LG이노텍 문혁수 대표는 10-13 KES에서 공급을 「2028년쯤」, 「아직 공급이 아닌 개발 단계」라고 말했습니다<sup class="fn"><a href="#ref-68">[68]</a></sup>. 공시로 일정이 바뀐 것은 아니라 판정은 중립입니다. 매출 순서는 <b>TGV 장비 → 소재 → 기판</b>입니다. 장비는 양산 라인 투자 시점에 먼저 매출이 찍힙니다.</span></div>
+<table>
+<thead><tr><th style="width:18%">기판 업체</th><th style="width:60%">현재 상태</th><th>근거</th></tr></thead>
+<tbody>
+<tr><td>앱솔릭스(SKC, 011790)</td><td>조지아 공장 Phase1 연 12,000㎡. 2026 1Q 양산 샘플, 대만에서 패키지 신뢰성 평가. 2026-08-21 4,011억원 유상증자. Embedding은 신뢰성 평가, Non-Embedding은 하반기 공급사 선정 후 PoC<sup class="fn"><a href="#ref-31">[31]</a></sup>. 비즈워치(② 10-14)의 3,731억 수혈·5,900억/3년은 시사 2026-09-28과 같은 청약 합계라 4,011억을 덮지 않습니다<sup class="fn"><a href="#ref-68">[68]</a></sup></td><td><span class="ev s">공시</span>, 매출 없음</td></tr>
+<tr><td>삼성전기(009150)</td><td>동우화인켐과 JV 4,821억원(66:34, 2026-07-02). 생산 H2 2027 목표, 일부 보도는 H1 2028로 지연<sup class="fn"><a href="#ref-32">[32]</a></sup>(2차 출처). 비즈워치(② 10-14)는 양산 목표를 2027→2028로 늦추고, 출자 3,191억·합작 글라셈·세종·하반기 FC-BGA 가동률 90%라고 적습니다<sup class="fn"><a href="#ref-68">[68]</a></sup>. 3,191억은 09-28 시사의 66.2% 출자분과 같고 4,821억 총액을 대체하지 않습니다. 09-28 시사는 거점을 평택으로 적었고, 10-14 기사에는 평택이 없습니다. 거점은 합작 공시로 다시 열지 않았습니다</td><td><span class="ev s">JV 공시</span> + <span class="ev m">보도</span>, 매출 없음</td></tr>
+<tr><td>LG이노텍(011070)</td><td>구미 4공장 시범 라인. 2024 시제품, 종전 보도 목표 2027~28<sup class="fn"><a href="#ref-29">[29]</a></sup>. 문혁수 대표는 2026-10-13 KES에서 「2028년쯤 가능할 것으로 본다」, 「아직 공급이 아닌 개발 단계」라고 말했습니다(② 비즈워치)<sup class="fn"><a href="#ref-68">[68]</a></sup></td><td><span class="ev m">보도</span></td></tr>
+<tr><td>Intel</td><td>자체 도입 약 2030으로 후퇴, 특허 라이선스 중심<sup class="fn"><a href="#ref-29">[29]</a></sup></td><td><span class="ev m">보도</span></td></tr>
+<tr><td>BOE · CSOT · 비전옥스</td><td>BOE 천옌순 회장이 유리기판 캐리어 양산라인 투자를 공식화. 파일럿에서 유리코어 샘플, TGV 24층 대면적 시제품, CPU 패키징 후 서버 구동 검증. 옴디아는 본격 양산을 2028년 이후로 봅니다. CSOT·비전옥스는 전담 조직과 파일럿. 24층·서버 검증의 골격은 시사 2026-09-28과 같습니다(②)<sup class="fn"><a href="#ref-68">[68]</a></sup></td><td><span class="ev m">보도</span>, 매출 없음</td></tr>
+</tbody></table>
+<p class="small">포천비즈니스인사이트의 올해 79.1억 달러 → 2034년 106.3억 달러(CAGR 3.77%)는 디스플레이·태양광을 포함한 수치라 반도체 패키징 유리기판 TAM으로 쓰지 않습니다<sup class="fn"><a href="#ref-68">[68]</a></sup>. BOE·CSOT·비전옥스는 양산 시점 경쟁으로만 적습니다.</p>
+<p class="cap">표 5. 유리기판 장비·소재 수혜 기업</p>
+<table>
+<thead><tr><th style="width:14%">기업</th><th style="width:7%">국가</th><th style="width:8%">티커</th><th style="width:38%">노출 방식</th><th style="width:9%">근거</th><th style="width:11%">Lead 판정</th><th style="width:13%">기준가</th></tr></thead>
+<tbody>
+<tr><td>필옵틱스</td><td>한국</td><td>161580</td><td>2.0mm TGV 장비 신규 고객 납품·수주 보도<sup class="fn"><a href="#ref-33">[33]</a></sup>. 9/29 수주 발표는 금액·고객·기간 없음, <b>DART 공급계약 없음</b>. 1H26 반도체(TGV) 매출 24.6억원, 영업손실 -205.3억원, PBR 9.27, 시총 9,799억원</td><td><span class="ev m">중</span></td><td><span class="tag neu">중립</span></td><td>41,800원</td></tr>
+<tr><td>닛폰전기초자</td><td>일본</td><td>5214</td><td>515×510mm TGV 유리코어 샘플, 2028 양산 목표<sup class="fn"><a href="#ref-35">[35]</a></sup></td><td><span class="ev s">제품</span>/매출 0</td><td><span class="tag neu">중립</span></td><td>¥5,217</td></tr>
+<tr><td>다이니폰인쇄</td><td>일본</td><td>7912</td><td>쿠키(Kuki) 공장 TGV 파일럿 라인, 2026 초 샘플, FY2028 양산 체제<sup class="fn"><a href="#ref-36">[36]</a></sup></td><td><span class="ev s">제품</span>/매출 0</td><td><span class="tag neu">중립</span></td><td>¥2,930</td></tr>
+<tr><td>LPKF</td><td>독일</td><td>—</td><td>LIDE TGV 레이저 장비. 2026 가이던스 매출 €93–100M, 패키징 수주는 다음 해</td><td><span class="ev m">중</span></td><td><span class="tag neu">중립</span></td><td>장부 없음</td></tr>
+<tr><td>코닝</td><td>미국</td><td>GLW</td><td>반도체 유리 웨이퍼·TGV 제품<sup class="fn"><a href="#ref-37">[37]</a></sup>, 코어기판 수주 미확인. 광통신 축은 긍정 유지</td><td><span class="ev m">중</span></td><td><span class="tag neu">중립</span>(유리축)</td><td>$156.68</td></tr>
+<tr><td>제이앤티씨</td><td>한국</td><td>204270</td><td>美 빅테크 2mm 유리기판 검증 완료 보도<sup class="fn"><a href="#ref-34">[34]</a></sup>(브로드컴 직접 계약 미공개)</td><td><span class="ev w">보도</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>와이씨켐</td><td>한국</td><td>112290</td><td>유리기판용 소재(PR 등), 공급 규모 <span class="unv">미확인</span></td><td><span class="ev t">테마</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+</tbody></table>
+<p class="small">LPKF는 Lead 장부에 기준가가 없습니다. 제외: AGC(저CTE 유리 언급뿐), 이비덴·AMAT(유리코어 공식 근거 미확인), 신코전기(비상장화).</p>
+<div class="two">
+<div><h4>진입 트리거</h4><ul class="mini">
+<li>필옵틱스: <b>양산 라인용 TGV 장비 단일판매 공시</b>(금액·고객·기간 명시)</li>
+<li>NEG·DNP·LPKF·코닝: 양산 PO 또는 매출</li>
+<li>앱솔릭스 연말 신뢰성 평가 통과와 첫 양산 PO</li>
+<li>AMD·AWS·브로드컴 채택 공식화, 삼성전기 JV 라인 착공·가동</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>앱솔릭스 2027·삼성전기 2027H2~28H1 양산 <b>추가 지연</b>. 비즈워치(② 10-14)는 삼성전기 목표를 2028로 늦췄다고 전하나 회사 공시가 아니라 이 조건은 아직 안 닫힙니다<sup class="fn"><a href="#ref-68">[68]</a></sup></li>
+<li>유리 크랙·수율 문제</li>
+<li>고객이 대형 유기기판·실리콘 인터포저·패널레벨로 대체</li>
+<li>앱솔릭스 추가 증자</li></ul></div>
+</div>
+<!-- AI GRID -->
+<h3>4-6. AI GRID: 정의부터 확인이 필요한 테마 <span class="tag obs">관찰</span></h3>
+<div class="warn"><b>정의 불확실.</b> 메리츠 차트는 AI GRID를 정의하지 않았습니다. 두 가지로 읽을 수 있습니다. (a) NVIDIA 용어 "AI Grid"는 통신사 기지국·국사·POP에 GPU를 깔아 추론을 지역별로 분산 처리하는 플랫폼입니다<sup class="fn"><a href="#ref-19">[19]</a></sup>. (b) 일반적인 의미로는 AI 데이터센터용 전력망(송전·계통)입니다. 같은 차트의 2027 칸에 'AI RAN', 2024 칸에 '전력 인프라'가 따로 있으므로 본 페이퍼는 (a)로 읽습니다. 이 해석은 <span class="unv">추정이며 메리츠 확인이 필요</span>합니다.</div>
+<div class="kv"><b>메커니즘(a)</b><span>실시간 음성·영상·로봇 추론은 지연 시간이 중요해서, 사용자 가까운 통신 국사에서 처리합니다. 컨트롤 플레인이 지연과 비용을 기준으로 작업을 배치합니다. NVIDIA는 전 세계 약 10만 개 통신 분산 데이터센터, 100GW 이상의 잠재 용량을 제시했습니다(회사 주장)<sup class="fn"><a href="#ref-20">[20]</a></sup>.</span>
+<b>시점</b><span>GTC 2026(3월)에서 발표했습니다. AT&amp;T·Cisco는 댈러스 라이브 사례와 루이지애나 상업 파일럿, Comcast는 3개 트라이얼, T-Mobile·Spectrum·Akamai는 구축 또는 탐색 단계입니다<sup class="fn"><a href="#ref-21">[21]</a></sup>. GPU는 RTX PRO 6000 Blackwell 서버입니다. <b>발표·파일럿 단계이고 의미 있는 매출은 확인되지 않았습니다.</b></span></div>
+<p class="cap">표 6. AI GRID 수혜 기업</p>
+<table>
+<thead><tr><th style="width:20%">기업</th><th style="width:7%">국가</th><th style="width:16%">티커</th><th style="width:31%">노출 방식</th><th style="width:9%">근거</th><th style="width:12%">Lead 판정</th><th style="width:5%">기준가</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>미국</td><td>NVDA</td><td>GPU·BlueField·Dynamo 플랫폼 제공</td><td><span class="ev m">회사 발표</span></td><td><span class="tag obs">관찰</span></td><td>—</td></tr>
+<tr><td>시스코 · HPE · 아카마이</td><td>미국</td><td>CSCO · HPE · AKAM</td><td>Cisco AI Grid 레퍼런스, 인프라·엣지 플랫폼</td><td><span class="ev m">회사 발표</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>AT&amp;T · T-Mobile · Comcast · Charter</td><td>미국</td><td>T · TMUS · CMCSA · CHTR</td><td>통신사 파일럿·트라이얼. 매출 비중 미공개</td><td><span class="ev m">회사 발표</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td>SK텔레콤 · KT</td><td>한국</td><td>017670 · 030200</td><td>AI 데이터센터·AI RAN 언급은 있으나 "AI Grid" 수주·매출 원문 확인 못 함</td><td><span class="ev t">테마</span></td><td><span class="tag none">판정 없음</span></td><td>—</td></tr>
+<tr><td colspan="7" class="small">(b) 전력망 해석일 경우: GE버노바·이튼·히타치, HD현대일렉트릭·효성중공업·LS일렉트릭·LS/LS전선. 이들은 이미 2024~ '전력 인프라'로 매출이 찍히고 있어 2028 분류와 맞지 않습니다(정합성 낮음, 추정). 다만 이 해석이 맞다면 Lead의 이튼·히타치 긍정 판정이 AI GRID까지 덮게 됩니다.</td></tr>
+</tbody></table>
+<div class="two">
+<div><h4>재검토 트리거</h4><ul class="mini">
+<li>통신사 실적에서 엣지 추론 매출이나 토큰 매출 공개</li>
+<li>파일럿에서 상용 계약으로 전환</li>
+<li>한국 통신사의 NVIDIA AI Grid 참여 발표</li>
+<li>메리츠의 AI GRID 정의 확인</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>추론이 대형 중앙 AI 팩토리로 계속 집중(엣지 경제성 미달)</li>
+<li>기업 고객 수요 부진(Fierce 지적)</li>
+<li>통신사 캐펙스 제약</li></ul></div>
+</div>
+
+<!-- Physical AI -->
+<h3 class="pb">4-7. 피지컬AI: 2028의 근거는 현대차 계획, 부품주는 이미 비쌈 <span class="tag obs">관찰</span></h3>
+<div class="kv"><b>메커니즘</b><span>로봇·자율주행이 현실을 인식하고 추론해서 행동하는 AI입니다. 시뮬레이션·합성데이터(NVIDIA Cosmos·Isaac Sim)로 학습하고, 로봇 기반모델(GR00T)을 거쳐, 탑재 칩(Jetson Thor)에서 돌아갑니다. 데이터센터 연산 수요와 엣지 칩 수요를 함께 만들고, 하드웨어로는 감속기·액추에이터·직선운동 부품 수요가 생깁니다.</span>
+<b>시점</b><span>GTC 2026에서 GR00T N1.7 상업 라이선스 얼리 액세스를 시작했고, N2는 연말 예정입니다<sup class="fn"><a href="#ref-38">[38]</a></sup>. GR00T 레퍼런스 휴머노이드(유니트리 H2 Plus 기반)는 2026년 말 판매 예정입니다<sup class="fn"><a href="#ref-39">[39]</a></sup>. NVIDIA FY26 자동차+로보틱스 매출은 $2.3B로 전체의 약 1%이고, 로보틱스는 따로 공개하지 않습니다<sup class="fn"><a href="#ref-40">[40]</a></sup>. 2026년 상반기 휴머노이드 출하는 2.2만 대(Counterpoint)와 1.85만 대(Omdia)로 추정이 갈리고, 중국이 주도합니다<sup class="fn"><a href="#ref-41">[41]</a></sup>(2차 출처). 현대차그룹은 2028년부터 HMGMA에 아틀라스를 투입하고, 2.5만 대 이상 도입·연 3만 대 생산체계를 계획합니다<sup class="fn"><a href="#ref-42">[42]</a></sup>. 이것이 2028 분류의 가장 직접적인 근거로 보입니다(추정).</span></div>
+<p class="cap">표 7. 피지컬AI 부품 5사(Lead 카드)</p>
+<table>
+<thead><tr><th style="width:13%">기업</th><th style="width:6%">국가</th><th style="width:7%">티커</th><th style="width:40%">노출 방식 / 확정 근거</th><th style="width:12%">밸류(PER TTM/선행)</th><th style="width:10%">Lead 판정</th><th style="width:12%">기준가</th></tr></thead>
+<tbody>
+<tr><td>하모닉드라이브</td><td>일본</td><td>6324</td><td>파동기어 감속기(휴머노이드 관절). 1Q FY3/27 매출 ¥166.8억(+23.6%), 수주 ¥241.3억(+55.7%)<sup class="fn"><a href="#ref-46">[46]</a></sup>. 북미 AI로봇 고객 약 ¥12억 수주 2분기 연속(설명회 2차 요약, 고객명 <span class="unv">미확인</span>)<sup class="fn"><a href="#ref-48">[48]</a></sup>. 26년도 휴머노이드 감속기 매출 ¥100~200억 목표(계획)<sup class="fn"><a href="#ref-49">[49]</a></sup></td><td>201.6 / 79.9</td><td><span class="tag neu">중립</span></td><td>¥6,220</td></tr>
+<tr><td>나브테스코</td><td>일본</td><td>6268</td><td>RV 감속기(중·대형 산업로봇 관절, 점유율 ~60%는 회사 자체 추정). 휴머노이드용 파동기어·액추에이터 제품 발표뿐, 수주 0<sup class="fn"><a href="#ref-45">[45]</a></sup></td><td>30.4 / 21.9</td><td><span class="tag neu">중립</span></td><td>¥4,859</td></tr>
+<tr><td>화낙</td><td>일본</td><td>6954</td><td>산업로봇·CNC. 1Q 매출 ¥2,310억(+17.7%), 수주 +36.9%(선주문 포함). 회사 스스로 피지컬AI는 "대부분 시험 단계"<sup class="fn"><a href="#ref-59">[59]</a></sup></td><td>31.7 / 27.5</td><td><span class="tag neu">중립</span></td><td>¥6,103</td></tr>
+<tr><td>THK</td><td>일본</td><td>6481</td><td>LM가이드·볼나사. 1H 매출 ¥1,511억(+32.4%), 성장 동인은 반도체 설비·엔저<sup class="fn"><a href="#ref-62">[62]</a></sup>. 휴머노이드 수주 공시 없음</td><td>적자 / 16.5</td><td><span class="tag neu">중립</span></td><td>¥6,710</td></tr>
+<tr><td>테라다인</td><td>미국</td><td>TER</td><td>유니버설로봇(협동로봇)·MiR 보유. 2Q26 로보틱스 $100M(매출의 7.5%), 반도체 테스트 84.4%<sup class="fn"><a href="#ref-64">[64]</a></sup>. <b>테마로 사지 않음</b></td><td>55.3 / 41.3</td><td><span class="tag neu">중립</span></td><td>$402.68</td></tr>
+</tbody></table>
+<p class="src">밸류: stockanalysis.com(S&amp;P Global 데이터) 2026-10-09 기준, 비공식 집계로 증권사 데이터 재확인 권장<sup class="fn"><a href="#ref-66">[66]</a></sup>. 1년 주가: 하모닉 +111%, 나브테스코 +32%, 화낙 +35%, THK +56%, 테라다인 +178%.</p>
+<p class="cap">표 8. 피지컬AI 기타 노출(판정 없음, 참고)</p>
+<table>
+<thead><tr><th style="width:24%">기업</th><th style="width:8%">국가</th><th style="width:12%">티커</th><th style="width:44%">노출 방식</th><th>근거</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>미국</td><td>NVDA</td><td>Cosmos·Isaac·GR00T·Jetson Thor. 자동차+로보틱스 매출 $2.3B(~1%). 본업 기준 긍정, 테마 단독으로는 중립</td><td><span class="ev s">실적 공시</span></td></tr>
+<tr><td>테슬라</td><td>미국</td><td>TSLA</td><td>옵티머스. 매출 없음, 성능은 미검증</td><td><span class="ev w">약</span></td></tr>
+<tr><td>현대차 · 현대모비스</td><td>한국</td><td>005380 · 012330</td><td>HMGMA 아틀라스 2028 투입 계획, 모비스 액추에이터 공급 계획</td><td><span class="ev m">계획 발표</span></td></tr>
+<tr><td>레인보우로보틱스</td><td>한국</td><td>277810</td><td>삼성전자 지분 35%. 휴머노이드 매출은 소규모</td><td><span class="ev m">지분 공시</span></td></tr>
+<tr><td>두산로보틱스 · LG전자</td><td>한국</td><td>454910 · 066570</td><td>협동로봇 매출(휴머노이드는 개발 단계) / GR00T 채택 발표</td><td><span class="ev m">발표</span></td></tr>
+</tbody></table>
+<h4>중국 대체 위험(검증 결과)</h4>
+<ul class="mini">
+<li>중국 Leaderdrive의 감속기 가격은 하모닉 대비 40~60%(36Kr, 2차)<sup class="fn"><a href="#ref-52">[52]</a></sup>, JPM은 중국 내 점유율을 30~40%로 추정합니다(2026-03)<sup class="fn"><a href="#ref-53">[53]</a></sup>.</li>
+<li>"옵티머스 감속기 = Leaderdrive 주력"은 <span class="unv">미확인·과장 가능</span>입니다. 중국 매체는 독점 공급이라 하지만, JPM은 테슬라 '소량 R&amp;D 주문'으로만 봅니다. 공식 확인은 없습니다.</li>
+<li>하모닉 '아즈미노 증설·4Q26 가동'은 <span class="unv">부분 확인</span>입니다. 휴머노이드용 약 ¥100억 투자는 닛칸 보도로 확인되지만, 4Q26 가동은 출처가 불명확한 매체 단독입니다. 설명회에서는 국내 캐파에 여유가 있고 미국에서 +50% 증설한다고 했습니다<sup class="fn"><a href="#ref-48">[48]</a></sup>.</li>
+<li>THK의 휴머노이드용 행성롤러나사는 중국 업체가 서방 대비 약 50% 가격입니다(36Kr, 2차).</li>
+</ul>
+<div class="two">
+<div><h4>재검토 트리거</h4><ul class="mini">
+<li>하모닉: 휴머노이드 고객 수주 금액 공시, 분기 별도 매출(11/11 2Q 실적)</li>
+<li>나브테스코: 휴머노이드 제품 첫 고객·양산 공시(10/30 3Q)</li>
+<li>GR00T N2 출시와 상업 고객 수, NVIDIA 로보틱스 매출 별도 공시</li>
+<li>현대차 아틀라스 파일럿 성과·부품 발주</li></ul></div>
+<div><h4>breaks_if</h4><ul class="mini">
+<li>중국산 감속기 채택 확인</li>
+<li>하모닉 수주가 선주문으로 판명</li>
+<li>공장 생산성·안전성 미검증(벤치마크는 회사 주장)</li>
+<li>중국 저가 휴머노이드가 물량 장악, 현대차 투입 일정 지연</li></ul></div>
+</div>
+<div class="box"><b>Lead 판단.</b> 피지컬AI 부품주는 '수혜 기대'가 이미 가격에 들어가 있습니다(하모닉 선행 PER 약 80배, 1년 +111%). 그런데 확정 근거는 하모닉의 북미 AI로봇 수주 약 ¥12억(2차 요약)뿐입니다. 나머지 4사는 본업(산업로봇·반도체 설비·반도체 테스트)이 주가를 정합니다. 매출이 찍히는 순서로 보면 피지컬AI는 7개 테마 중 가장 뒤에 있습니다.</div>
+<!-- ===================== 5. 체크리스트 ===================== -->
+<h2 class="pb">5. 선점 체크리스트: 다음 6~12개월</h2>
+<p>아래 표는 2026-10부터 2027년 하반기까지 확인할 이벤트와, 결과에 따라 판정을 어떻게 바꿀지를 미리 정해 둔 것입니다. 원칙은 세 가지입니다. ① 소형주의 상향은 <b>금액·고객·기간이 적힌 공시</b>로만 합니다(보도·MOU·'수주 발표'는 해당 안 됨). ② 대형주의 하향은 <b>백로그·로드맵</b> 같은 선행 지표로 합니다. ③ 국내 중소형주와 일본·유럽 종목은 상향 조건이 충족돼도 Kenneth 허용을 받은 뒤 카드로 만듭니다.</p>
+<p class="cap">표 9. 이벤트 캘린더와 판단 변경 규칙</p>
+<table>
+<thead><tr><th style="width:12%">시기</th><th style="width:22%">이벤트</th><th style="width:13%">대상</th><th style="width:25%">확인할 것</th><th>판단 변경 규칙</th></tr></thead>
+<tbody>
+<tr><td>상시(DART)</td><td>단일판매·공급계약 공시</td><td>비나텍, LS머트리얼즈, 필옵틱스</td><td>서버랙 CBU / 양산 라인용 TGV 장비, 금액·고객·기간</td><td>충족 시 중립 → <b>긍정 재검토</b>(Kenneth 허용 후). 금액이 직전 연매출 대비 작으면 중립 유지</td></tr>
+<tr><td>상시(DART)</td><td>CB 전환·신규 증자</td><td>비나텍(4회 CB 220억, 전환가 78,818원), LS머트리얼즈, SKC</td><td>전환 청구 규모, 증자 목적</td><td>희석 반영. 상향 보류 또는 breaks_if 점검</td></tr>
+<tr><td>10월 말~11월</td><td>3Q26 실적시즌</td><td>삼성전자·SK하이닉스·마이크론</td><td>2028년 이익 추정치 상향 여부(메리츠 핵심 조건)</td><td>상향 시 메모리 긍정 유지. 메모리 사이클 T7 '도전'(3Q PC 출하 -20.1%) 악화 시 재검토</td></tr>
+<tr><td>3Q 실적(일자 소스 미기재)</td><td>이튼·버티브 실적</td><td>ETN(긍정)</td><td>Electrical Americas 백로그 YoY, 800VDC 수주잔고 언급</td><td>백로그 YoY 감소 → 긍정 → <b>중립</b>. 800VDC 수주 금액 공개 → 긍정 유지 근거 강화</td></tr>
+<tr><td>실적 발표 시</td><td>히타치 실적</td><td>6501(긍정)</td><td>에너지 수주·매출, SST 수주액 공개 여부</td><td>변압기 수주 둔화 → 중립 검토. SST 수주 금액화 → SST 칸 근거 강도 상향</td></tr>
+<tr><td>10/23(추정)</td><td>화낙 2Q</td><td>6954</td><td>수주 지속성(선주문 소진), 피지컬AI 패키지 매출화</td><td>중립 유지가 기본. 휴머노이드 매출 공시 시 재검토</td></tr>
+<tr><td>10/27(추정)</td><td>테라다인 3Q</td><td>TER</td><td>로보틱스 성장 지속, 미시간 공장 개소</td><td>테마 판정에 영향 작음(반도체 테스트가 주가 결정)</td></tr>
+<tr><td>10/30</td><td>나브테스코 3Q</td><td>6268</td><td>CS 수주, 휴머노이드 제품 첫 고객</td><td>고객·양산 공시 시 재검토</td></tr>
+<tr><td>11/11</td><td>하모닉드라이브 2Q</td><td>6324</td><td>북미 AI로봇 수주 지속(약 ¥12억 3분기째인지), 휴머노이드 매출 ¥100~200억 목표 진척, 미국 +50% 증설</td><td>휴머노이드 고객 수주 금액·분기 별도 매출 공시 → 긍정 검토. 선주문 판명·중국산 채택 → 하향</td></tr>
+<tr><td>11/13</td><td>THK 3Q</td><td>6481</td><td>반도체 설비 수요, 휴머노이드용 롤러나사 고객</td><td>중립 유지가 기본</td></tr>
+<tr><td>11/9 · 2027-01-08</td><td>판단 장부 30일·90일 채점</td><td>본 페이퍼 전 종목</td><td>기준가 대비 성과, 벤치(코스닥 892.27 등)</td><td>판정 근거가 깨졌는지와 가격 성과를 분리해 기록</td></tr>
+<tr><td>4Q26</td><td>T-Mobile AI RAN 필드 트라이얼</td><td>NOK, NVDA</td><td>성능·TCO, 상용 구매 계약</td><td>상용 계약·수주 금액 공개 → AI RAN 관찰 → 카드 작성 검토. TCO 불리 → 관찰 종료</td></tr>
+<tr><td>2026 연말</td><td>앱솔릭스 신뢰성 평가, Non-Embedding 공급사 선정</td><td>SKC, 필옵틱스, NEG, DNP, LPKF</td><td>평가 통과·첫 양산 PO</td><td>통과+PO → 장비·소재 순으로 재검토. 추가 지연 → 유리기판 breaks_if</td></tr>
+<tr><td>2026 연말</td><td>GR00T N2, 레퍼런스 휴머노이드 판매</td><td>NVDA, 부품 5사</td><td>상업 고객 수, 로보틱스 매출 별도 공시</td><td>공시 시 피지컬AI 관찰 강도 상향</td></tr>
+<tr><td>2026 중(경과 확인)</td><td>DG Matrix UL 인증(목표 Q2 말), Amperesand 30MW 출하</td><td>ABB(지분), ETN, SiC 3사</td><td>인증 완료, 첫 하이퍼스케일 MW급 수주</td><td>MW급 수주 공개 → SST 칸 '목표' → '수주'로 근거 상향</td></tr>
+<tr><td>OCP · GTC</td><td>800VDC/LVDC SST 표준, NVIDIA 로드맵</td><td>800VDC 전 종목</td><td>Kyber 2027 일정 유지, 전압·안전 표준 확정</td><td>Kyber 지연 → ETN·히타치 breaks_if 점검. 대안 표준(±400VDC) 주류화 → 800VDC 판정 재검토</td></tr>
+<tr><td>2027 H2</td><td>삼성전기 JV 생산, Heron Power 공장, AI RAN 상용 제품(4Q27)</td><td>삼성전기, 비상장 SST, NOK</td><td>일정 준수 여부. 비즈워치(② 10-14)는 유리 양산 목표를 2028로 옮겼다고 전함<sup class="fn"><a href="#ref-68">[68]</a></sup></td><td>공시 전이라 중립 유지. 회사가 일정을 H1 2028 이후로 공시하면 유리기판 매출 시점을 2028 이후로 조정</td></tr>
+<tr><td>상시(매크로)</td><td>미 10년·30년, 기간프리미엄, FCI-G, KOSPI ADR</td><td>전체</td><td>금리 하락의 원인(유가 안정·정책 기대인지, 성장 둔화인지)</td><td>유가 안정형 하락 → 소형주 관찰 빈도↑(진입 기준은 유지). 성장 둔화형 하락 → 전 테마 캐펙스 점검. FCI-G 긴축 진입 → 대형주 노출도 재점검</td></tr>
+</tbody></table>
+<p class="small">일정은 소스 파일 기준이며, (추정) 표시는 회사 확정 공지가 아닌 날짜입니다. 이튼·버티브·히타치 실적 발표일은 소스에 없어 적지 않았습니다.</p>
+
+<!-- ===================== 6. 리스크 ===================== -->
+<h2>6. 리스크</h2>
+<table>
+<thead><tr><th style="width:20%">리스크</th><th style="width:50%">내용</th><th>영향 받는 판정</th></tr></thead>
+<tbody>
+<tr><td>단일 로드맵 의존</td><td>2027 칸의 800VDC·CBU는 사실상 NVIDIA Kyber/Rubin Ultra 일정 하나에 걸려 있습니다. 로드맵이 반 년만 밀려도 '2027 매출'이 '2028 매출'이 됩니다</td><td>이튼·히타치(긍정), CBU 전체</td></tr>
+<tr><td>AI 캐펙스 사이클</td><td>하이퍼스케일러 캐펙스가 줄면 모든 테마가 동시에 흔들립니다. 성장 둔화형 금리 하락(메리츠 표1의 2000·2006년형)이 가장 위험한 경로입니다</td><td>전체</td></tr>
+<tr><td>네오클라우드 조달</td><td>③ 손경제 10/14: 퍼머스가 10/9 ASX 상장을 철회했다(가동 46MW, 계획 약 900MW). 코어위브 5년 표면 9.25%·유통 11% 이상이라는 방송. 비투자등급·사전 매출 창의 조달 스트레스이고, 하이퍼스케일러 캡엑스 가이던스 컷은 아니다. 미 10년 5% 중계는 본문의 약 5.3%를 덮지 않는다.</td><td>전체 캐펙스 경로. 메모리 주문으로 이어진다는 연결은 방송 해석</td></tr>
+<tr><td>금리·밸류에이션</td><td>10년 약 5.3%, 30년 5.6~5.7%, 기간프리미엄 2010년 이후 최고. 매출이 2027~28년에 찍히는 자산은 할인율 부담이 가장 큽니다. 소형 테마주는 PBR 6~9배, LS머트리얼즈 PER 913입니다</td><td>비나텍·LS머트리얼즈·필옵틱스, 피지컬AI</td></tr>
+<tr><td>기술 대체</td><td>CBU → 랙 내 BBU·LIC·전원 IC. 유리기판 → 대형 유기기판·실리콘 인터포저·패널레벨. SST → 신뢰성 미달 시 기존 변압기+정류기 유지. AI RAN → ASIC 대비 TCO 열위</td><td>테마별</td></tr>
+<tr><td>희석</td><td>비나텍 4회 CB(전환가 78,818원 &lt; 주가 87,800원), LS머트리얼즈 신규 증자 가능성, 앱솔릭스 4,011억원 증자 전례와 추가 증자 가능성</td><td>CBU, 유리기판</td></tr>
+<tr><td>중국 대체</td><td>감속기(Leaderdrive 가격 40~60%), 롤러나사(약 50%), 저가 휴머노이드 물량. 휴머노이드 출하는 이미 중국 주도</td><td>피지컬AI 부품주</td></tr>
+<tr><td>이미 오른 대형주</td><td>전력장비주는 많이 올라 '선점'이 아니라 '확인' 국면일 수 있습니다. 긍정 판정은 방향 판단이지 가격 매력 판단이 아닙니다</td><td>이튼·히타치</td></tr>
+<tr><td>양면성</td><td>SST가 확산되면 기존 변압기 수요 일부를 잠식할 수 있습니다. 한국 변압기 3사와 히타치에게 2028 이후 양날</td><td>히타치, 한국 전력기기</td></tr>
+<tr><td>해석·정의 위험</td><td>메리츠 그림8은 라벨만 있고 설명이 없습니다. CBU·AI GRID 정의, 각 칸에 어떤 종목을 상정했는지는 <span class="unv">미확인</span>입니다</td><td>CBU, AI GRID</td></tr>
+<tr><td>데이터 위험</td><td>일부 수치는 2차 출처(설명회 요약, 36Kr, gate.com), 비공식 집계(stockanalysis), 출처 불명확 추정(뉴스핌 1조원 시장)입니다. 각 표에 근거 강도를 표시했습니다</td><td>전체</td></tr>
+<tr><td>지정학·에너지</td><td>호르무즈 봉쇄는 유가와 금리 경로를 동시에 바꿉니다. Lead는 에너지 헤지를 유지 중입니다</td><td>매크로 프레임</td></tr>
+</tbody></table>
+<div class="disc"><b>고지(재확인)</b> 본 페이퍼는 Kenneth의 개인 연구용 정리이며 특정 종목의 매수·매도 권유나 비중 제시가 아닙니다. '긍정·중립·관찰'은 Lead 판단 장부의 방향 판정으로, 30·90일 뒤 채점하는 기록용입니다. 투자 결정과 그 결과는 투자자 본인의 판단과 책임입니다.</div>
+<h2 class="pb">7. 출처</h2>
+<p class="small"><b id="ref-0">[L]</b> Lead 카드 판정(2026-10-10, stock-research PR #134, 최종): 로컬 lead-card-calls-20261010.md. 판정·기준가·국내 종목 재무(비나텍·LS머트리얼즈·필옵틱스), 이튼·히타치 매출 비중, 매크로 장부의 출처입니다. 이 밖의 내부 자료는 같은 폴더의 2027-themes-study.md, 2028-themes-study.md, us-jp-names.md, physical-ai-names.md이며 각 수치의 원 출처는 아래 URL입니다. 그림 1·2는 Lead가 작성했고, 그림 1의 라벨 원본은 메리츠증권 리서치센터 그림8입니다.</p>
+<ol class="refs">
+<li id="ref-1">메리츠증권 리서치센터, 황수욱, Strategy Daily 「10월 한국 시장의 고민」, 2026-10-08 (그림8 포함). 로컬: 20261008_Meritz_StrategyDaily_황수욱_10월한국시장의고민.pdf.</li>
+<li id="ref-2">Schneider Electric, The 1 MW AI IT rack is coming and it needs 800 VDC power. <a href="https://blog.se.com/datacenter/2025/10/16/the-1-mw-ai-it-rack-is-coming-and-it-needs-800-vdc-power/">https://blog.se.com/datacenter/2025/10/16/the-1-mw-ai-it-rack-is-coming-and-it-needs-800-vdc-power/</a></li>
+<li id="ref-3">NVIDIA Technical Blog, Building the 800 VDC Ecosystem for Efficient, Scalable AI Factories. <a href="https://developer.nvidia.com/blog/building-the-800-vdc-ecosystem-for-efficient-scalable-ai-factories/">https://developer.nvidia.com/blog/building-the-800-vdc-ecosystem-for-efficient-scalable-ai-factories/</a></li>
+<li id="ref-4">NVIDIA Blog, Gigawatt AI factories · OCP · Vera Rubin. <a href="https://blogs.nvidia.com/blog/gigawatt-ai-factories-ocp-vera-rubin/">https://blogs.nvidia.com/blog/gigawatt-ai-factories-ocp-vera-rubin/</a></li>
+<li id="ref-5">NVIDIA Blog, 800 VDC power architecture for AI factory (OCP LVDC SST Spec v0.3). <a href="https://blogs.nvidia.com/blog/800-vdc-power-architecture-ai-factory/">https://blogs.nvidia.com/blog/800-vdc-power-architecture-ai-factory/</a></li>
+<li id="ref-6">Eaton, Eaton unveils next-generation architecture (2025). <a href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-unveils-next-generation-architecture.html">https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-unveils-next-generation-architecture.html</a></li>
+<li id="ref-7">비나텍 기업 리포트(2026-09-01, 작성 증권사 미확인). <a href="https://file.alphasquare.co.kr/media/pdfs/company-report/20260901085501380K_02.pdf">https://file.alphasquare.co.kr/media/pdfs/company-report/20260901085501380K_02.pdf</a></li>
+<li id="ref-8">ROHM, 800VDC Architecture Solution for AI Server (White Paper). <a href="https://fscdn.rohm.com/en/products/databook/white_paper/common/800vdc_architecture_solution_for_ai_server_wp-e.pdf">https://fscdn.rohm.com/en/products/databook/white_paper/common/800vdc_architecture_solution_for_ai_server_wp-e.pdf</a></li>
+<li id="ref-9">Skeleton Technologies, GrapheneGPU PCS400 datasheet. <a href="https://skeletontech.com/hubfs/Data_sheets/Modules/DS-GrapheneGPU-PCS400-250327.pdf">https://skeletontech.com/hubfs/Data_sheets/Modules/DS-GrapheneGPU-PCS400-250327.pdf</a></li>
+<li id="ref-10">뉴스핌(2026-03-13), 랙용 울트라커패시터 시장 추정(원 출처 불명확). <a href="https://www.newspim.com/news/view/20260313000718">https://www.newspim.com/news/view/20260313000718</a></li>
+<li id="ref-11">CBCI, 비나텍 산미나 공급계약. <a href="https://www.cbci.co.kr/news/articleView.html?idxno=604554">https://www.cbci.co.kr/news/articleView.html?idxno=604554</a></li>
+<li id="ref-12">씽크풀, LS머트리얼즈(삼성증권 인용). <a href="https://m.thinkpool.com/compDiscuss/cont/1025760">https://m.thinkpool.com/compDiscuss/cont/1025760</a></li>
+<li id="ref-13">TrendForce(2025-03-25), NVIDIA GB300 ignites supercapacitor push. <a href="https://www.trendforce.com/news/2025/03/25/news-nvidia-gb300-ignites-supercapacitor-push-among-leading-taiwanese-suppliers/">https://www.trendforce.com/news/2025/03/25/news-nvidia-gb300-ignites-supercapacitor-push-among-leading-taiwanese-suppliers/</a></li>
+<li id="ref-14">Nokia, Nokia defines the next era of radio with the industry's first AI-native RAN platform. <a href="https://www.nokia.com/newsroom/nokia-defines-the-next-era-of-radio-with-the-industrys-first-ai-native-ran-platform/">https://www.nokia.com/newsroom/nokia-defines-the-next-era-of-radio-with-the-industrys-first-ai-native-ran-platform/</a></li>
+<li id="ref-15">Light Reading, T-Mobile eager to test Nokia's AI-RAN this year. <a href="https://www.lightreading.com/5g/t-mobile-eager-to-test-nokia-s-ai-ran-this-year">https://www.lightreading.com/5g/t-mobile-eager-to-test-nokia-s-ai-ran-this-year</a></li>
+<li id="ref-16">NVIDIA Newsroom, NVIDIA and Nokia AI telecommunications (2025-10-28). <a href="https://nvidianews.nvidia.com/news/nvidia-nokia-ai-telecommunications">https://nvidianews.nvidia.com/news/nvidia-nokia-ai-telecommunications</a></li>
+<li id="ref-17">SoftBank, AITRAS research topic. <a href="https://www.softbank.jp/en/corp/technology/research/topics/224/">https://www.softbank.jp/en/corp/technology/research/topics/224/</a></li>
+<li id="ref-18">Nokia, AI-RAN momentum with new partnerships (MWC26). <a href="https://www.nokia.com/newsroom/nokia-accelerates-ai-ran-momentum-with-new-partnerships-driving-path-to-ai-native-6g-mwc26/">https://www.nokia.com/newsroom/nokia-accelerates-ai-ran-momentum-with-new-partnerships-driving-path-to-ai-native-6g-mwc26/</a></li>
+<li id="ref-19">NVIDIA Glossary, AI Grid. <a href="https://www.nvidia.com/en-us/glossary/ai-grid/">https://www.nvidia.com/en-us/glossary/ai-grid/</a></li>
+<li id="ref-20">NVIDIA Blog, Telecom AI grids for inference. <a href="https://blogs.nvidia.com/blog/telecom-ai-grids-inference/">https://blogs.nvidia.com/blog/telecom-ai-grids-inference/</a></li>
+<li id="ref-21">Fierce Network, NVIDIA GTC: AT&T, Cisco put AI Grid to work at network edge. <a href="https://www.fierce-network.com/broadband/nvidia-gtc-att-cisco-put-ai-grid-work-network-edge">https://www.fierce-network.com/broadband/nvidia-gtc-att-cisco-put-ai-grid-work-network-edge</a></li>
+<li id="ref-22">SemiAnalysis, Inside the 800VDC Revolution. <a href="https://newsletter.semianalysis.com/p/inside-the-800vdc-revolution-part">https://newsletter.semianalysis.com/p/inside-the-800vdc-revolution-part</a></li>
+<li id="ref-23">DG Matrix, joins the NVIDIA MGX ecosystem. <a href="https://www.dgmatrix.com/news-and-media/press-release/dg-matrix-joins-the-nvidia-mgx-ecosystem-to-power-the-next-era-of-accelerated-computing/1224">https://www.dgmatrix.com/news-and-media/press-release/dg-matrix-joins-the-nvidia-mgx-ecosystem-to-power-the-next-era-of-accelerated-computing/1224</a></li>
+<li id="ref-24">mGrid(2026-01-22), Amperesand targets 30 MW MV SST shipments in 2026. <a href="https://mgrid.org/2026/01/22/amperesand-targets-30-megawatts-of-commercial-medium-voltage-solid-state-transformer-shipments-to-hyperscale-ai-data-centers-in-2026/">https://mgrid.org/2026/01/22/amperesand-targets-30-megawatts-of-commercial-medium-voltage-solid-state-transformer-shipments-to-hyperscale-ai-data-centers-in-2026/</a></li>
+<li id="ref-25">eeNews Europe, Infineon SiC powers Eaton solid-state transformer for 800V AI data centers. <a href="https://www.eenewseurope.com/en/infineon-sic-powers-eaton-solid-state-transformer-for-800v-ai-data-centers/">https://www.eenewseurope.com/en/infineon-sic-powers-eaton-solid-state-transformer-for-800v-ai-data-centers/</a></li>
+<li id="ref-26">한국일보 데일리, 효성중공업 SST. <a href="https://daily.hankooki.com/news/articleView.html?idxno=1376635">https://daily.hankooki.com/news/articleView.html?idxno=1376635</a></li>
+<li id="ref-27">매일일보(m-i.kr), LS일렉트릭 SST 실증. <a href="https://www.m-i.kr/news/articleView.html?idxno=1369874">https://www.m-i.kr/news/articleView.html?idxno=1369874</a></li>
+<li id="ref-28">한국일보 데일리, HD현대일렉트릭 로드맵. <a href="https://daily.hankooki.com/news/articleView.html?idxno=1365101">https://daily.hankooki.com/news/articleView.html?idxno=1365101</a></li>
+<li id="ref-29">Tom's Hardware, Glass substrate roadmap examined. <a href="https://www.tomshardware.com/tech-industry/manufacturing/glass-substrate-roadmap-examined">https://www.tomshardware.com/tech-industry/manufacturing/glass-substrate-roadmap-examined</a></li>
+<li id="ref-30">TrendForce(2026-07-24), SKC reportedly pushes glass substrate mass production to 2027. <a href="https://www.trendforce.com/news/2026/07/24/news-skc-reportedly-pushes-glass-substrate-mass-production-to-2027-targets-final-validation-by-year-end/">https://www.trendforce.com/news/2026/07/24/news-skc-reportedly-pushes-glass-substrate-mass-production-to-2027-targets-final-validation-by-year-end/</a></li>
+<li id="ref-31">SKC 뉴스(유상증자·사업 현황). <a href="https://www.skc.kr/m/eng/Conmmunication/news/newsDetail.do?seq=1742">https://www.skc.kr/m/eng/Conmmunication/news/newsDetail.do?seq=1742</a></li>
+<li id="ref-32">Gate News, Samsung pushes glass substrate launch(2차 출처). <a href="https://www.gate.com/news/detail/semiconductor-glass-substrate-mass-production-delayed-samsung-pushes-launch-23441582">https://www.gate.com/news/detail/semiconductor-glass-substrate-mass-production-delayed-samsung-pushes-launch-23441582</a></li>
+<li id="ref-33">아시아경제(2026-09-29), 필옵틱스 TGV 장비. <a href="https://www.asiae.co.kr/article/2026092909311108936">https://www.asiae.co.kr/article/2026092909311108936</a></li>
+<li id="ref-34">데이터투자(2026-10-07), 제이앤티씨 유리기판 검증. <a href="https://www.datatooza.com/article/202610071120536686661c44de84_80">https://www.datatooza.com/article/202610071120536686661c44de84_80</a></li>
+<li id="ref-35">Nippon Electric Glass, Inorganic core substrate. <a href="https://www.neg.co.jp/en/products/inorganic-core-substrate/index.html">https://www.neg.co.jp/en/products/inorganic-core-substrate/index.html</a></li>
+<li id="ref-36">DNP News(2025-12-16), TGV glass core. <a href="https://www.global.dnp/en/news/detail/2025/12/1216_20177773/">https://www.global.dnp/en/news/detail/2025/12/1216_20177773/</a></li>
+<li id="ref-37">Corning, Semiconductor glass wafers. <a href="https://www.corning.com/worldwide/en/products/advanced-optics/product-materials/semiconductor-laser-optic-components/semiconductor-glass-wafers.html">https://www.corning.com/worldwide/en/products/advanced-optics/product-materials/semiconductor-laser-optic-components/semiconductor-glass-wafers.html</a></li>
+<li id="ref-38">NVIDIA IR(2026), NVIDIA and Global Robotics Leaders Take Physical AI to the Real World. <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Global-Robotics-Leaders-Take-Physical-AI-to-the-Real-World/default.aspx">https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Global-Robotics-Leaders-Take-Physical-AI-to-the-Real-World/default.aspx</a></li>
+<li id="ref-39">NVIDIA Newsroom, Open humanoid robot reference design. <a href="https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design">https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design</a></li>
+<li id="ref-40">NVIDIA IR, Financial Results for Fourth Quarter and Fiscal 2026. <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx">https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx</a></li>
+<li id="ref-41">The American Quorum, NVIDIA pushes into robotics as China drives early demand(2차 출처). <a href="https://www.theamericanquorum.com/nvidia-pushes-into-robotics-as-china-drives-early-demand/">https://www.theamericanquorum.com/nvidia-pushes-into-robotics-as-china-drives-early-demand/</a></li>
+<li id="ref-42">연합뉴스, 현대차그룹 HMGMA 아틀라스 투입 계획. <a href="https://www.yna.co.kr/view/AKR20260519073200003">https://www.yna.co.kr/view/AKR20260519073200003</a></li>
+<li id="ref-43">East Asia Brief, Harmonic Drive expands reducer capacity(출처 불명확 매체). <a href="https://eastasiabrief.com/robotics/harmonic-drive-expands-japanese-reducer-capacity-humanoid-robotics-deman-32">https://eastasiabrief.com/robotics/harmonic-drive-expands-japanese-reducer-capacity-humanoid-robotics-deman-32</a></li>
+<li id="ref-44">Upstream(tettares), The humanoid joint is going to China. <a href="https://upstream.tettares.com/p/the-humanoid-joint-is-going-to-china">https://upstream.tettares.com/p/the-humanoid-joint-is-going-to-china</a></li>
+<li id="ref-45">Nabtesco(독일 법인), Compact precision drives for humanoid robots. <a href="https://www.nabtesco.de/en/the-company/presse-detail/compact-precision-drives-for-humanoid-robots-backlash-free-strain-wave-gears-and-actuators-from-nabtesco">https://www.nabtesco.de/en/the-company/presse-detail/compact-precision-drives-for-humanoid-robots-backlash-free-strain-wave-gears-and-actuators-from-nabtesco</a></li>
+<li id="ref-46">Harmonic Drive Systems, 1Q FY3/27 결산(TDnet). <a href="https://www2.jpx.co.jp/disc/63240/140120260804507706.pdf">https://www2.jpx.co.jp/disc/63240/140120260804507706.pdf</a></li>
+<li id="ref-47">Harmonic Drive Systems, FY3/26 결산(TDnet). <a href="https://www2.jpx.co.jp/disc/63240/140120260511521357.pdf">https://www2.jpx.co.jp/disc/63240/140120260511521357.pdf</a></li>
+<li id="ref-48">BigGo Finance, 6324 1Q 설명회 요약(2차). <a href="https://finance.biggo.com/news/JP_6324.T_2026-08-07">https://finance.biggo.com/news/JP_6324.T_2026-08-07</a></li>
+<li id="ref-49">닛칸공업신문, 하모닉드라이브 휴머노이드 투자. <a href="https://www.nikkan.co.jp/articles/view/00726562">https://www.nikkan.co.jp/articles/view/00726562</a></li>
+<li id="ref-50">신슈마이니치(신마이), 하모닉드라이브 중기계획. <a href="https://www.shinmai.co.jp/news/article/gf01d97olen170m5r354mvdg">https://www.shinmai.co.jp/news/article/gf01d97olen170m5r354mvdg</a></li>
+<li id="ref-51">Harmonic Drive, Capacity update. <a href="https://www.harmonicdrive.net/about-us/capacity-update">https://www.harmonicdrive.net/about-us/capacity-update</a></li>
+<li id="ref-52">36Kr, 중국 휴머노이드 부품 가격(2차). <a href="https://eu.36kr.com/en/p/3780414717129481">https://eu.36kr.com/en/p/3780414717129481</a></li>
+<li id="ref-53">SignalsDeck, Leaderdrive(JPM 추정 인용). <a href="https://signalsdeck.com/industry/company/leaderdrive/">https://signalsdeck.com/industry/company/leaderdrive/</a></li>
+<li id="ref-54">Nabtesco, Summary of Consolidated Financial Statements FY2026 Q2. <a href="https://www.nabtesco.com/cms/wp-content/uploads/Summary_of_Consolidated_Financial_Statements_for_FY2026_Q2_e.pdf">https://www.nabtesco.com/cms/wp-content/uploads/Summary_of_Consolidated_Financial_Statements_for_FY2026_Q2_e.pdf</a></li>
+<li id="ref-55">Nabtesco, Referential data for sales (2026-07-31). <a href="https://www.nabtesco.com/cms/wp-content/uploads/Referencial_data_for_sales_as_of_20260731_e.pdf">https://www.nabtesco.com/cms/wp-content/uploads/Referencial_data_for_sales_as_of_20260731_e.pdf</a></li>
+<li id="ref-56">Nabtesco, Robot products. <a href="https://www.nabtesco.com/en/products/robot/">https://www.nabtesco.com/en/products/robot/</a></li>
+<li id="ref-57">Robotichina, China RV reducers vs Nabtesco. <a href="https://www.robotichina.com/china-rv-reducers-vs-nabtesco.html">https://www.robotichina.com/china-rv-reducers-vs-nabtesco.html</a></li>
+<li id="ref-58">FANUC 1Q FY3/27 결산(futu 사본). <a href="https://newsfile.futunn.com/public/NN-PersistNoticeAttachment/7781/20260731/JPX/20260730504186.PDF">https://newsfile.futunn.com/public/NN-PersistNoticeAttachment/7781/20260731/JPX/20260730504186.PDF</a></li>
+<li id="ref-59">FANUC, Q&A summary 2026-06. <a href="https://www.fanuc.co.jp/en/ir/announce/pdf/2026/qasummary202606_e.pdf">https://www.fanuc.co.jp/en/ir/announce/pdf/2026/qasummary202606_e.pdf</a></li>
+<li id="ref-60">FANUC America, Physical AI with NVIDIA technologies. <a href="https://www.fanucamerica.com/press-releases/fanuc-accelerates-physical-ai-in-industrial-robotics-leveraging-nvidia-technologies">https://www.fanucamerica.com/press-releases/fanuc-accelerates-physical-ai-in-industrial-robotics-leveraging-nvidia-technologies</a></li>
+<li id="ref-61">THK, 1H FY12/26 financial results. <a href="https://www.thk.com/jp/wordpress/wp-content/uploads/2026/08/260805_financial_result_en.pdf">https://www.thk.com/jp/wordpress/wp-content/uploads/2026/08/260805_financial_result_en.pdf</a></li>
+<li id="ref-62">THK, 1H FY12/26 presentation. <a href="https://www.thk.com/jp/wordpress/wp-content/uploads/2026/08/260805_presentation_en.pdf">https://www.thk.com/jp/wordpress/wp-content/uploads/2026/08/260805_presentation_en.pdf</a></li>
+<li id="ref-63">stockanalysis, THK Q2 2026 transcript. <a href="https://stockanalysis.com/quote/tyo/6481/transcripts/665690-q2-2026/">https://stockanalysis.com/quote/tyo/6481/transcripts/665690-q2-2026/</a></li>
+<li id="ref-64">Teradyne 2Q26 실적(SEC EX-99.1). <a href="https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-ex99_1.htm">https://www.sec.gov/Archives/edgar/data/97210/000119312526321933/ter-ex99_1.htm</a></li>
+<li id="ref-65">The Robot Report, Teradyne Robotics revenue rises 33% in Q2. <a href="https://www.therobotreport.com/teradyne-robotics-revenue-rises-33-year-over-year-in-q2/">https://www.therobotreport.com/teradyne-robotics-revenue-rises-33-year-over-year-in-q2/</a></li>
+<li id="ref-66">stockanalysis.com 밸류 통계(6324·6268·6954·6481·TER, 2026-10-09). <a href="https://stockanalysis.com/quote/tyo/6324/statistics/">https://stockanalysis.com/quote/tyo/6324/statistics/</a></li>
+<li id="ref-67">BigGo, 6324 earnings call(2차). <a href="https://finance.biggo.jp/quote/6324.T/earnings-call/JP_6324.T_2026-08-07">https://finance.biggo.jp/quote/6324.T/earnings-call/JP_6324.T_2026-08-07</a></li>
+<li id="ref-68">비즈워치(2026-10-14), 유리기판 한중 경쟁. 네이버 재전송. TG YeouidoStory2/118398. 3,731억·5,900억·3,191억·TGV 24층·포천 시장규모는 시사 2026-09-28과 같은 숫자이고, 4,011억 유상증자 수치를 대체하지 않는다. <a href="https://n.news.naver.com/mnews/article/648/0000051567">https://n.news.naver.com/mnews/article/648/0000051567</a></li>
+</ol>
+<p class="small" style="margin-top:10px">작성: Lead(Grok Bot) · 2026-10-10 KST · 유리기판 4-5는 2026-10-14 비즈워치(②)로 표를 고쳤다. 판정은 중립. 개인 연구용, 투자 권유·비중 제시 아님.</p>
+</div></body></html>

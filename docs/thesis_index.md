@@ -1,6 +1,6 @@
 # 테제 색인 — 정본은 brain/theses.json(카드 페이지) · 나머지는 페이지
 
-자동 생성 · 2026-10-12 · 판단 보유 95편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
+자동 생성 · 2026-10-14 · 판단 보유 95편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
 
 **용도** — 종목·테마 질문을 받으면 이 파일에서 해당 테제를 찾고, **그 페이지의 「현재 판단」만** 연다. 여기 적힌 문장은 페이지에서 잘라 온 첫 줄이며 **값·기준일·등급은 페이지가 정본**이다.
 
@@ -12,36 +12,36 @@
 | 판단 | 갱신 | 페이지 | 테제 |
 |---|---|---|---|
 | 2026.09.30 | 2026-09-30 | [Novo Nordisk · Eli Lilly — 비만약 듀오폴리 심층 분석](glp1/glp1_company_novo_lilly.html) | 5 |
-| 2026.09.27 | 2026-09-27 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
+| 2026.09.27 ⚠ | 2026-10-14 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
 | 2026.09.27 | 2026-09-27 | [광원 층 — 병목의 주인은 누구이고, 가격은 어디까지 왔나](ai-infra/optical_light_source_cw.html) | 4 |
 | 2026.09.22 ⚠ | 2026-09-26 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
 | 2026.09.20 ⚠ | 2026-10-06 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
-| 2026.09.20 ⚠ | 2026-10-06 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 9 |
+| 2026.09.20 ⚠ | 2026-10-14 | [삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성](hbm-packaging/hbm_pkg_company_samsung.html) | 9 |
 | 2026.09.20 |  | [미국 상인형 전력 2강 — 시총으로는 반값인데 EV로는 같은 값이다](ai-infra/us_merchant_power_vst_nrg.html) | 1 |
 | 2026.09.17 ⚠ | 2026-09-19 | [미국 에너지 5사 — 손익계산서를 못 믿는 업종에서 현금으로 줄 세웠다](energy/us_energy_five.html) | 6 |
 | 2026.09.17 | 2026-09-17 | [삼성바이오로직스 × PolyPeptide — CDMO 플랫폼 확장 전략](glp1/glp1_company_samsung_biologics.html) | 4 |
-| 2026.09.17 ⚠ | 2026-10-06 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 7 |
+| 2026.09.17 ⚠ | 2026-10-14 | [SK하이닉스 — HBM의 왕좌](hbm-packaging/hbm_pkg_company_sk_hynix.html) | 7 |
 | 2026.09.17 | 2026-09-17 | [파마리서치 딥다이브 — 리쥬란 글로벌 확장 · K-Beauty Series](k-beauty/k_beauty_company_pharmaresearch.html) | 4 |
 | 2026.09.16 ⚠ | 2026-09-18 | [로빈후드 — 크립토가 빠진 자리를 이벤트 계약이 메웠다](payments/payments_company_robinhood.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-12 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.16 ⚠ | 2026-09-17 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
-| 2026.09.16 ⚠ | 2026-09-17 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
+| 2026.09.16 ⚠ | 2026-10-14 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
 | 2026.09.14 ⚠ | 2026-09-19 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 ⚠ | 2026-09-26 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
 | 2026.09.12 ⚠ | 2026-09-26 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
 | 2026.09.12 ⚠ | 2026-09-26 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 6 |
 | 2026.09.12 ⚠ | 2026-09-14 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer_orig.html) | 5 |
 | 2026.09.12 ⚠ | 2026-09-22 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9_orig.html) | 5 |
-| 2026.09.11 ⚠ | 2026-09-12 | [AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다](ai-infra/ai_power_infra_investment_map.html) | 5 |
+| 2026.09.11 ⚠ | 2026-10-14 | [AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다](ai-infra/ai_power_infra_investment_map.html) | 5 |
 | 2026.09.11 | 2026-09-11 | [국내 전력 10사 — 「전력주」인데 전력 순수도가 0~100%다](ai-infra/kr_power_10_deep.html) | 0 |
 | 2026.09.11 | 2026-09-11 | [한미반도체 — TC본더 71%의 곡괭이 장수](hbm-packaging/hbm_pkg_company_hanmi_semi.html) | 4 |
 | 2026.09.11 | 2026-09-11 | [~$750B 투자 vs 수익 증거 — Big Tech Capex ROI 추적](national-strategy/ns_bigtech_capex_roi.html) | 5 |
 | 2026.09.10 | 2026-09-10 | [VCP·브레이크아웃·수급 3요건 — 평균이 거짓말을 했다](research/vcp_breakout_backtest.html) | 6 |
 | 2026.09.09 | 2026-09-09 | [반도체 소재·가스 — 병목 지도의 여섯 번째 축](hbm-packaging/kr_semi_materials_gas.html) | 5 |
-| 2026.09.08 | 2026-09-08 | [원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주](ai-infra/ai_power_company_nuclear_smr.html) | 3 |
+| 2026.09.08 ⚠ | 2026-10-14 | [원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주](ai-infra/ai_power_company_nuclear_smr.html) | 3 |
 | 2026.09.08 | 2026-09-08 | [K-전력 TOP 5 — 밸류체인 비교 투자 지도](ai-infra/ai_power_top5_picks.html) | 3 |
-| 2026.09.08 | 2026-09-08 | [전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드](ai-infra/ai_value_chain_guide_v2.html) | 3 |
+| 2026.09.08 ⚠ | 2026-10-14 | [전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드](ai-infra/ai_value_chain_guide_v2.html) | 3 |
 | 2026.09.08 | 2026-09-08 | [탈모 글로벌 파이프라인 — 신기전의 무덤에서 무엇이 달라졌나](hairloss/hairloss_global_pipeline.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [브로드컴 — 받을 것과 물어줄 것을 동시에 가진 회사](ai-infra/ai_chip_company_broadcom.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [HBM/패키징 투자 지도 — 크로스 밸류에이션](hbm-packaging/hbm_pkg_investment_map.html) | 5 |
@@ -81,7 +81,7 @@
 | 2026.08.23 | 2026-08-23 | [AI 소프트웨어 투자 지도 — 12사 크로스 밸류에이션](ai-sw/ai_sw_investment_map.html) | 5 |
 | 2026.08.23 | 2026-08-23 | [미국 방산 4사 — 「AI 밖」인데 가장 집중된 층](defense/us_defense_primes.html) | 5 |
 | 2026.08.23 | 2026-08-23 | [비자·마스터카드 — 사이클이 아닌데 마진이 높은 유일한 층](payments/us_payment_networks.html) | 5 |
-| 2026.08.22 | 2026-08-22 | [Microsoft · Palantir — AI 플랫폼의 양극단](ai-sw/ai_sw_company_msft_pltr.html) | 5 |
+| 2026.08.22 ⚠ | 2026-10-14 | [Microsoft · Palantir — AI 플랫폼의 양극단](ai-sw/ai_sw_company_msft_pltr.html) | 5 |
 | 2026.08.22 ⚠ | 2026-09-17 | [ESS $285B·AI DC 전력 교차점 — 에너지 저장 산업 개관](energy/energy_ess_ai_power.html) | 5 |
 | 2026.08.22 | 2026-08-22 | [Q2 2026 어닝 시즌 종합 — 반도체 빅뱅과 KOSPI 9,385의 명암](market/q2_2026_earnings_overview.html) | 5 |
 | 2026.08.21 ⚠ | 2026-09-30 | [변압기·송배전 — K-전력기기 슈퍼사이클의 최전방](ai-infra/ai_power_company_transformer_grid.html) | 3 |
@@ -132,7 +132,7 @@
 
 ## 우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA
 
-`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-09-27
+`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-10-14
 
 **한 문장** — SpaceX 는 AI 인프라주로 캐펙스가 매출의 2.35배라 자본시장이 조달 비용을 정하고, Rocket Lab 은 구조는 공시로 맞지만 EV/매출 58.7배가 Neutron·Iridium 의 성공을 먼저 샀다 — 둘 다 수직통합이고 둘 다 가격이 실행보다 앞에 있다.
 
@@ -225,7 +225,7 @@
 
 ## 삼성전자·삼성전기 — 메모리 2위와 기판의 비대칭성
 
-`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-10-06
+`hbm-packaging/hbm_pkg_company_samsung.html` · 판단 2026.09.20 · 갱신 2026-10-14
 
 **한 문장** — HBM M/S 22% 탈출은 선언됐을 뿐 3Q'26 실적으로 확인돼야 하고, 할인이 마진 열위의 원인이며, 환원의 병목은 재원이 아니라 의사결정이다 — 삼성전기는 「기대 프리미엄」이 계약으로 바뀌는 중(누계 25.3%)
 
@@ -323,7 +323,7 @@
 
 ## SK하이닉스 — HBM의 왕좌
 
-`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-10-06
+`hbm-packaging/hbm_pkg_company_sk_hynix.html` · 판단 2026.09.17 · 갱신 2026-10-14
 
 **한 문장** — HBM 지위는 유효하다 — 병목은 실적이 아니라 자본배분과 멀티플이다. 40조 자사주로 자본배분은 답이 왔고, 남은 것은 환율로 깎인 3Q26 원화 이익이 72~78.5조 중 어디에 떨어지는가다.
 
@@ -450,7 +450,7 @@
 
 ## 반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학
 
-`national-strategy/ns_semiconductor_war.html` · 판단 2026.09.16 · 갱신 2026-09-17
+`national-strategy/ns_semiconductor_war.html` · 판단 2026.09.16 · 갱신 2026-10-14
 
 - **T1.** 🟢 [2026.09.11 — 어제 세운 채점표를 JP모건이 독립적으로 검산해 줬다] JP모건 TSMC 노트: 「8월 매출은 JPMe/블룸버그 컨센서스 3Q26 추정치의 약 67%에 해당하며, 3Q26 매출이 가이던스 중단~상단에 도달할 것」(③).
 - **T2.** 중국의 대응은 단칩 성능이 아니라 시스템과 물량이다. 화웨이 Ascend 2026년 생산 목표는 160만 다이(2025년 81.2만 대비 약 2배)이고, 바이트댄스는 단일 기업 기준 역대 최대인 $56B를 발주했다. 9개 카테고리 국산 AI칩이 정부 보안심사를 통과(2026.05)해 공공·보안 분야에서…
@@ -622,7 +622,7 @@
 
 ## AI 전력 인프라 투자 지도 — 지능을 켜려면 전기가 필요하다
 
-`ai-infra/ai_power_infra_investment_map.html` · 판단 2026.09.11 · 갱신 2026-09-12
+`ai-infra/ai_power_infra_investment_map.html` · 판단 2026.09.11 · 갱신 2026-10-14
 
 - **T1.** 병목은 여전히 전력이고, 그 판단은 유지된다. IEA조차 "더 공격적인 수요 시나리오를 제약하는 것은 칩이 아니라 발전·송전·기자재 밸류체인의 병목"이라고 명시한다. 변압기·가스터빈 리드타임은 수년 단위로 길어졌고, 빅테크는 전력망을 기다리지 못해 가스 발전소를 직접 짓고 있다. 글로벌 투자가 동시에…
 - **T2.** 국내 AIDC 수요는 공식 수치가 됐지만, 그것을 받을 한전의 재무가 새 병목이다. 수요 측은 확정에 가깝다 — 2029년 8.4GW → 2035년 18.4GW로 기존 전력망 증설 수요의 2~3배이며, AIDC 특별법·국민성장펀드(6월 누적 집행의 47%가 데이터센터향)가 정책·자금 양면을 받친다. 문…
@@ -746,7 +746,7 @@
 
 ## 원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주
 
-`ai-infra/ai_power_company_nuclear_smr.html` · 판단 2026.09.08 · 갱신 2026-09-08
+`ai-infra/ai_power_company_nuclear_smr.html` · 판단 2026.09.08 · 갱신 2026-10-14
 
 - **T1.** 배관·구조물은 원전 건설비의 숨은 바닥이고, 물리적으로 생략할 수 없다. 원전 테마 자금이 설계·계측 등 상류에 집중되면서 하류 공정에 밸류에이션 미스프라이싱이 생겼을 수 있다 — 금화피에스시의 PER 5배가 그 후보다. 테마의 관심과 공정의 필수성이 반비례하는 구간을 찾는 것이 이 페이지의 방법이다.
 - **T2.** 성광벤드는 하방과 트리거를 동시에 가진 안정형이다. 순현금 1,075억이라는 다운사이드 프로텍션에 미국 LNG 발주라는 상방 트리거가 붙어 있다. 다만 건설업 특유의 프로젝트 사이클 변동성은 그대로 감안해야 한다 — 수주는 분기 단위로 뭉치고 매출은 공정률로 흩어진다.
@@ -758,10 +758,10 @@
 - T3 → AIDC 전력 수요 전망이 하향되거나, ESS 경제성 개선으로 재생에너지 단독 구성이 가능해짐
 
 **다음 검증**
-- 🔴 [2026.09.08 신설] 대미투자 프로젝트 공식 발표 — 원전 8기 포함 여부.
-- 본 편이 가장 먼저 판정될 이벤트이고 열흘 앞인데 걸려 있지 않았다(§J3 — 판정 이벤트 도래는 즉시 보고 대상이다).
-- 3,500억 달러 패키지의 1호는 텍사스 엔시날 가스복합화력 6.3GW·223억 달러로 이미 확정됐고
-- (AI 전력 인프라 투자지도가 정본),
+- 대미투자 Project Power — 판정선은 열려 있다 (2026-10-14 재시험, 중계 표, r-20261014-330).
+- 10/1 공동발표의 원전 8기·최대 1,200억 달러는 프레임이다. 기수·노형·지분·의결권의 ① 서명은 없고, 8기는 잔고가 아니다(r-20261001-05). 09-18 불발과 09-15 산업부 「구체적 사항은 아직 정해지지 않았음」(r-20260920-16)은 그…
+- 📌 판정 기준은 발표 전에 고정한 그대로다
+- ⓐ 기수·금액·노형(APR1400)이 ①로 명시
 
 ## K-전력 TOP 5 — 밸류체인 비교 투자 지도
 
@@ -784,7 +784,7 @@
 
 ## 전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드
 
-`ai-infra/ai_value_chain_guide_v2.html` · 판단 2026.09.08 · 갱신 2026-09-08
+`ai-infra/ai_value_chain_guide_v2.html` · 판단 2026.09.08 · 갱신 2026-10-14
 
 - **T2.** 설비투자는 아직 상향 중이다 — 꺾이는 신호가 아니라 올라가는 신호가 계속 나온다. 마이크로소프트 FY27 가이던스 $255~260B(+35% YoY), 아마존 2026년 $220B(기존 $200B 대비 +10%, 2027E $365B), 메타 2026년 $130~145B(하단 $5B 상향). 합산은…
 - **T3.** CAPEX가 실물 공급망 전 구간으로 전이됐다는 증거가 동시에 나왔다. 개별 호실적이 아니라 수렴 신호라는 점이 중요하다 — Ibiden(ABF 기판) 영업이익률 27.6% 역대 최고에 연간 가이던스 +41% 상향, Taiyo Yuden(MLCC) Book-to-Bill 1.72 역대 최고, Nitto…
@@ -1641,7 +1641,7 @@
 
 ## Microsoft · Palantir — AI 플랫폼의 양극단
 
-`ai-sw/ai_sw_company_msft_pltr.html` · 판단 2026.08.22 · 갱신 2026-08-22
+`ai-sw/ai_sw_company_msft_pltr.html` · 판단 2026.08.22 · 갱신 2026-10-14
 
 - **T1.** 🟣 [2026.08.18 — 배수를 듀레이션으로 재는 채점표를 상단에 올린다] P/S 절대값으로는 판정이 안 되므로 시총을 고정하고 성숙 배수를 가정해 「필요 매출」과 「거기까지 걸리는 기간」으로 바꾼다. 이 자를 같은 날 앤스로픽에도 적용했다 — IPO 밸류 $2조가 2026년 말 연환산 기준 16.…
 - **T2.** BofA의 TP $255는 12개월 목표주가가 아니라 듀레이션 9년짜리다. 2035년 예상 EBITDA에 13배를 적용해 산출된 값이다. 이런 구조에서는 ① 할인율(금리) ② 적용 배수 1단위 변화가 펀더멘털보다 주가에 훨씬 크게 작용한다. 이번 리포트가 정확히 그 사례다 — 2035E EBITDA를…
