@@ -26,7 +26,7 @@
 | 2026.09.16 ⚠ | 2026-10-12 | [블룸에너지 · 인텔 — 좋아진 건 맞다, 서사와 다른 곳이 좋아졌다](ai-infra/us_bloom_intel_deep.html) | 0 |
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-15 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
-| 2026.09.16 ⚠ | 2026-10-14 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
+| 2026.09.16 ⚠ | 2026-10-15 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
 | 2026.09.14 ⚠ | 2026-09-19 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 ⚠ | 2026-09-26 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
 | 2026.09.12 ⚠ | 2026-09-26 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
@@ -41,7 +41,7 @@
 | 2026.09.09 | 2026-09-09 | [반도체 소재·가스 — 병목 지도의 여섯 번째 축](hbm-packaging/kr_semi_materials_gas.html) | 5 |
 | 2026.09.08 ⚠ | 2026-10-14 | [원전·SMR 밸류체인 — K-원전 르네상스의 숨은 수혜주](ai-infra/ai_power_company_nuclear_smr.html) | 3 |
 | 2026.09.08 | 2026-09-08 | [K-전력 TOP 5 — 밸류체인 비교 투자 지도](ai-infra/ai_power_top5_picks.html) | 3 |
-| 2026.09.08 ⚠ | 2026-10-14 | [전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드](ai-infra/ai_value_chain_guide_v2.html) | 3 |
+| 2026.09.08 ⚠ | 2026-10-15 | [전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드](ai-infra/ai_value_chain_guide_v2.html) | 3 |
 | 2026.09.08 | 2026-09-08 | [탈모 글로벌 파이프라인 — 신기전의 무덤에서 무엇이 달라졌나](hairloss/hairloss_global_pipeline.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [브로드컴 — 받을 것과 물어줄 것을 동시에 가진 회사](ai-infra/ai_chip_company_broadcom.html) | 5 |
 | 2026.09.07 | 2026-09-07 | [HBM/패키징 투자 지도 — 크로스 밸류에이션](hbm-packaging/hbm_pkg_investment_map.html) | 5 |
@@ -450,7 +450,7 @@
 
 ## 반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학
 
-`national-strategy/ns_semiconductor_war.html` · 판단 2026.09.16 · 갱신 2026-10-14
+`national-strategy/ns_semiconductor_war.html` · 판단 2026.09.16 · 갱신 2026-10-15
 
 - **T1.** 🟢 [2026.09.11 — 어제 세운 채점표를 JP모건이 독립적으로 검산해 줬다] JP모건 TSMC 노트: 「8월 매출은 JPMe/블룸버그 컨센서스 3Q26 추정치의 약 67%에 해당하며, 3Q26 매출이 가이던스 중단~상단에 도달할 것」(③).
 - **T2.** 중국의 대응은 단칩 성능이 아니라 시스템과 물량이다. 화웨이 Ascend 2026년 생산 목표는 160만 다이(2025년 81.2만 대비 약 2배)이고, 바이트댄스는 단일 기업 기준 역대 최대인 $56B를 발주했다. 9개 카테고리 국산 AI칩이 정부 보안심사를 통과(2026.05)해 공공·보안 분야에서…
@@ -784,7 +784,7 @@
 
 ## 전기를 지능으로 바꾸는 공장 — AI 밸류체인 완전 가이드
 
-`ai-infra/ai_value_chain_guide_v2.html` · 판단 2026.09.08 · 갱신 2026-10-14
+`ai-infra/ai_value_chain_guide_v2.html` · 판단 2026.09.08 · 갱신 2026-10-15
 
 - **T2.** 설비투자는 아직 상향 중이다 — 꺾이는 신호가 아니라 올라가는 신호가 계속 나온다. 마이크로소프트 FY27 가이던스 $255~260B(+35% YoY), 아마존 2026년 $220B(기존 $200B 대비 +10%, 2027E $365B), 메타 2026년 $130~145B(하단 $5B 상향). 합산은…
 - **T3.** CAPEX가 실물 공급망 전 구간으로 전이됐다는 증거가 동시에 나왔다. 개별 호실적이 아니라 수렴 신호라는 점이 중요하다 — Ibiden(ABF 기판) 영업이익률 27.6% 역대 최고에 연간 가이던스 +41% 상향, Taiyo Yuden(MLCC) Book-to-Bill 1.72 역대 최고, Nitto…
