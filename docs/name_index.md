@@ -151,7 +151,7 @@
 | KR | 이오테크닉스 | 039030 | — | — | 4 |
 | KR | 일진전기 | 103590 | ✓ 목표주가·비중은 아카이브하지 않음. 2029 납기 잔고 시계는 r-20260926-38과 겹친다. | ai_power_company_transformer_grid#T3 · ai_power_company_cable_wire#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T2,T3,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · kr_4sector_cross_valuation#T5 | 9 |
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
-| KR | 채비 | 0011T0 | ✓  | ai_korea_g3_sovereign_ai#T1 · ai_power_company_nuclear_smr#T2 · k_defense_cross_valuation#T1,T2,T3,T4,T5,T6,T7,T8,T9 · kr_semi_equip_cross_valuation#T2,T5 · k_beauty_company_silicon2#T5 · ns_bigtech_capex_roi#T2 | — |
+| KR | 채비 | 0011T0 | ✓  | ai_korea_g3_sovereign_ai#T1 · ai_power_company_nuclear_smr#T2 · ai_value_chain_guide_v2#T4 · k_defense_cross_valuation#T1,T2,T3,T4,T5,T6,T7,T8,T9 · kr_semi_equip_cross_valuation#T2,T5 · k_beauty_company_silicon2#T5 · ns_bigtech_capex_roi#T2 | — |
 | KR | 케이엔제이 | 272110 | — | — | — |
 | KR | 케이엠더블유 | 032500 | — | — | — |
 | KR | 코미코 | 183300 | — | kr_semi_equip_cross_valuation#T2,T7 | — |
@@ -235,7 +235,7 @@
 | US | Airbnb | ABNB.O | — | — | — |
 | US | Alibaba | BABA | ✓ 2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_val | — | — |
 | US | Alphabet | GOOGL.O | ✓  | ai_value_chain_guide_v2#T1 · us_power_regulated_vs_merchant#T5 · ai_sw_overview#T2,T4 · us_7axis_cross_valuation#T2 · ns_bigtech_capex_roi#T1,T5 · 13f_2026q2#T4 | — |
-| US | Amazon | AMZN.O | ✓ 정본 테제 페이지 없음. 비중·집행 아님. | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · ai_value_chain_guide_v2#T1,T2 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · k_beauty_company_apr#T3 · k_beauty_company_pharmaresearch#T1 · ns_bigtech_capex_roi#T1 | — |
+| US | Amazon | AMZN.O | ✓ 정본 테제 페이지 없음. 비중·집행 아님. | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · ai_value_chain_guide_v2#T1,T2,T4 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · k_beauty_company_apr#T3 · k_beauty_company_pharmaresearch#T1 · ns_bigtech_capex_roi#T1 | — |
 | US | Amphenol | APH | ✓  | us_ai_adjacent_cross_valuation#T11,T4 · us_ai_adjacent_sectors#T2,T7 · us_epc_datacenter_build#T1 | 9 |
 | US | Anduril | ANDURIL | ✓  | — | — |
 | US | Antero Resources | AR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
