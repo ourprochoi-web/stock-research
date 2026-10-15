@@ -229,7 +229,7 @@
 | TW | Nanya Technology | 2408.TW | ✓  | — | — |
 | TW | 홍즈(宏致電子 · ACES) | 3605.TW | ✓  | — | — |
 | US | AEP | AEP.O | — | ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T4,T5 · us_power_regulated_vs_merchant#T5,T6 · kr_drawdown_2026#T8 | — |
-| US | AMD | AMD.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_marvell#T2,T5 · ai_chip_company_nvidia#T1 · ai_power_infra_investment_map#T1 · hbm_pkg_company_samsung#T9 · hbm_pkg_company_sk_hynix#T7 · hbm_pkg_theme_memory_cycle#T2,T5 · hbm_pkg_theme_substrate#T5 · 13f_2026q2#T4,T6 | — |
+| US | AMD | AMD.O | ✓  | ai_chip_architecture_war#T1 · ai_chip_company_marvell#T2,T5 · ai_chip_company_nvidia#T1 · ai_power_infra_investment_map#T1 · hbm_pkg_company_samsung#T9 · hbm_pkg_company_sk_hynix#T7 · hbm_pkg_theme_memory_cycle#T2,T5 · hbm_pkg_theme_substrate#T5 · ns_semiconductor_war#T1 · 13f_2026q2#T4,T6 | — |
 | US | ASML | ASML.O | — | us_7axis_cross_valuation#T5 · ns_semiconductor_war#T4 | 4 |
 | US | Absci | ABSI.O | — | — | — |
 | US | Airbnb | ABNB.O | — | — | — |
@@ -240,7 +240,7 @@
 | US | Anduril | ANDURIL | ✓  | — | — |
 | US | Antero Resources | AR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | Anthropic | ANTHROPIC | ✓ 정본 페이지는 있으나 엔티티 키는 2026-09-30에 신설. 이번 줄은 관측. 비중·집행 아님. | ai_korea_g3_sovereign_ai#T4 · ai_value_chain_guide_v2#T5 · ai_sw_company_anthropic#T1,T2,T3,T4,T5 · ai_sw_overview#T3,T5 · ns_bigtech_capex_roi#T5 · ns_china_ai_ecosystem#T5 · ns_global_strategy_overview#T4 | — |
-| US | Apple | AAPL | ✓  | ns_china_ai_ecosystem#T2 | — |
+| US | Apple | AAPL | ✓ 정본 페이지 없음. 기판 T6의 중국 칸은 듀오 물량이지 이 출시가 아니다. 비중·집행 아님. | ns_china_ai_ecosystem#T2 | — |
 | US | Applied Materials | AMAT | ✓ 정본 카드 없음. 반도체 전쟁 T4가 이름을 언급하나 이 줄은 관측. 비중·집행 아님. | — | — |
 | US | Applied Optoelectronics | AAOI.O | ✓  | — | 7 |
 | US | Arista Networks | ANET.K | ✓  | — | — |
@@ -300,7 +300,7 @@
 | US | Hewlett Packard Enterprise | HPE | ✓ 정본 테제 페이지 없음. 시세 추적 밖. 비중·집행 아님. | — | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
 | US | IREN | IREN | ✓ 정본 페이지 없음. NVDA·MSFT 워치는 안 늘림. 비중·집행 아님. | ai_dc_miner_conversion#T3 · ai_power_infra_investment_map#T3 · 13f_2026q2#T4 | — |
-| US | Intel | INTC.O | ✓ 정본 카드가 없어 US 메가로 후보만. 테라팹 서사 전체는 넣지 않음. 블룸 편 테제는 비접촉. 비중·집행  | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5,T7 · hbm_pkg_theme_substrate#T4,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_bigtech_capex_roi#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T1,T4,T5,T6 | 4 |
+| US | Intel | INTC.O | ✓ 정본 카드가 없어 US 메가로 후보만. 테라팹 서사 전체는 넣지 않음. 블룸 편 테제는 비접촉. 비중·집행  | ai_chip_company_nvidia#T1,T3 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5,T7 · hbm_pkg_theme_substrate#T1,T4,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_bigtech_capex_roi#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T1,T4,T5,T6 | 4 |
 | US | Intl Seaways | INSW.K | — | — | 4 |
 | US | IonQ | IONQ | ✓ 정본 테제 페이지 없음. 양자 테제 신설 안 함. 비중·집행 아님. | — | — |
 | US | Johnson & Johnson | JNJ | ✓ 정본 페이지 없음. r-20260926-75(peak ~$50억·경구 펩타이드)는 soft cite. ICO | — | — |
@@ -320,7 +320,7 @@
 | US | Microsoft | MSFT.O | ✓ Cloud GM이 66%에서 추가 급락 · ROIC 30% 하회 · FY27 A&I OPM이 50%대를 크게 | ns_bigtech_capex_roi#T1,T3 · ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · ai_value_chain_guide_v2#T2,T5 · us_7axis_cross_valuation#T2,T3 | — |
 | US | Moderna | MRNA.O | — | us_7axis_cross_valuation#T1 | — |
 | US | NRG Energy | NRG | ✓ 2026-09-20 판단 신설 → 같은 날 페이지 분리(us_merchant_power_vst_nrg). 「 | us_merchant_power_vst_nrg#T1 · us_7axis_cross_valuation#T3 | 14 |
-| US | NVIDIA | NVDA.O | ✓  | ai_chip_architecture_war#T1,T4 · ai_chip_company_broadcom#T2,T3 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1,T2,T3,T4,T5 · ai_korea_g3_sovereign_ai#T1,T2 · ai_power_company_semi_ess_dc#T1 · ai_power_company_transformer_grid#T1 · ai_power_infra_investment_map#T6 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T2,T5 · us_ai_adjacent_sectors#T1 · us_bloom_intel_deep#T4 · us_epc_datacenter_build#T1 · us_vertiv_corning_deep#T6 · ai_sw_company_msft_pltr#T4 · us_defense_primes#T1 · hbm_pkg_company_hanmi_semi#T3 · hbm_pkg_company_samsung#T1,T5,T9 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T1,T2,T7 · hbm_pkg_theme_substrate#T4,T5 · q2_2026_earnings_overview#T5 · ns_bigtech_capex_roi#T4 · ns_china_ai_ecosystem#T1,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T2,T4 · node_screener_hbm_scoreboard#T4,T5 · 13f_2026q2#T4 | — |
+| US | NVIDIA | NVDA.O | ✓  | ai_chip_architecture_war#T1,T4 · ai_chip_company_broadcom#T2,T3 · ai_chip_company_marvell#T2 · ai_chip_company_nvidia#T1,T2,T3,T4,T5 · ai_korea_g3_sovereign_ai#T1,T2 · ai_power_company_semi_ess_dc#T1 · ai_power_company_transformer_grid#T1 · ai_power_infra_investment_map#T6 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T2,T5 · us_ai_adjacent_sectors#T1 · us_bloom_intel_deep#T4 · us_epc_datacenter_build#T1 · us_vertiv_corning_deep#T6 · ai_sw_company_msft_pltr#T4 · us_defense_primes#T1 · hbm_pkg_company_hanmi_semi#T3 · hbm_pkg_company_samsung#T1,T5,T9 · hbm_pkg_company_sk_hynix#T4 · hbm_pkg_overview#T2,T3 · hbm_pkg_theme_memory_cycle#T1,T2,T7 · hbm_pkg_theme_substrate#T4,T5 · q2_2026_earnings_overview#T5 · ns_bigtech_capex_roi#T4 · ns_china_ai_ecosystem#T1,T5 · ns_korea_impact_strategy#T3 · ns_semiconductor_war#T1,T2,T4 · node_screener_hbm_scoreboard#T4,T5 · 13f_2026q2#T4 | — |
 | US | Natera | NTRA.O | ✓ 2026-09-20 판단 신설 — 13F 상위 보유인데 12사 지도에 없던 자리. 「현금흐름 플러스」와 「G | ai_bio_investment_map#T5 · optical_valuechain_9#T1 · 13f_2026q2#T5 | 12 |
 | US | Nebius | NBIS.O | ✓ 정본 테제 페이지 없음. name_index 코드는 NBIS.O, 카드 키는 NBIS. architectur | ai_chip_architecture_war#T1 | — |
 | US | Nextracker | NXT.O | — | us_7axis_cross_valuation#T2 | — |
