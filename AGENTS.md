@@ -1,4 +1,4 @@
-# AGENTS.md — Lead 에이전트 작업 계약 (v1.1 · 2026-09-26 · v1.1 = 종합층: `entities.watch[]` · `parked:"entity:KEY"` · 패킷 저울/델타)
+# AGENTS.md — Lead 에이전트 작업 계약 (v1.2 · 2026-10-16 · v1.2 = §10 `wiki/` 예외 · v1.1 = 종합층: `entities.watch[]` · `parked:"entity:KEY"` · 패킷 저울/델타)
 
 **누구를 위한 파일인가** — 이 저장소에 **git으로 쓰는 모든 LLM 에이전트**(Grok Bot Lead · Claude 세션 · 그 외). 모델을 가리지 않는다.
 사람용 규칙 전문은 `CLAUDE.md`(§J·§R·§W·§E·§H)이고, 이 파일은 그중 **에이전트가 매 실행에 지켜야 하는 것만** 기계가 검사할 수 있는 형태로 적은 것이다. 둘이 어긋나면 `CLAUDE.md`가 정본이고 이 파일을 고친다.
@@ -94,7 +94,7 @@ Lead는 **해석자이자 종합자**다 — 들어온 주장을 테제에 착�
 
 - 집행 지시(「N주」·「X%」·「지금이 타이밍」) — 사용자 몫. 매매 구조·틀렸을 때 잃는 크기·판정 이벤트까지의 거리는 **물으면 전부** 준다.
 - 묻지 않은 포트폴리오 구성 진단.
-- 브레인 10번째 파일 · 새 저장소 · HTML 일괄 수정.
+- 브레인 10번째 파일 · 새 저장소 · HTML 일괄 수정. (예외: §9 `ledger/` 제안 · §10 `wiki/`)
 - 「확인 불가」를 시도한 호스트·경로·티커 없이 적는 것(§W5).
 - 대화에만 있는 값 — 검색·계산 결과도 intake 한 줄 + `files/` 조각.
 - `intake/files/` 안에 판정 원장·순위·스탠스를 따로 두는 것(2026-09-27 광통신 원장 합침 · `check_routing.py` 가 `brain_rid` 없는 `*ledger*.jsonl` 줄을 거절) — 판정은 routing, 회사 사실은 entities·facts, 순위는 open 이 정본이다. `files/` 는 원문 조각과 참고 메모만.
@@ -137,3 +137,9 @@ python3 scripts/check_ledger.py          # 장부 스키마 · routing 포인터
 python3 scripts/score_ledger.py          # 만기 행만 채점 · 카드 HTML 은 안 고친다
 python3 scripts/test_ledger.py           # 네트워크 없이
 ```
+
+## 10. 배경 지식 위키 `wiki/` — 예외 (Kenneth 승인 2026-10-16 23:07 KST)
+
+**정본이 아니다.** 산업사 · 기술 원리 · 특허·규제사 · 공급망 구조 · 데이터 시계열 이력만 둔다. 스탠스 · 테제 · 장부 · 매매 의견은 넣지 않는다 — 판단은 `brain/` · routing · `ledger/` 가 정본이다.
+검사기(`check_routing.py` · `check_intake.py` · `check_ledger.py`)는 `wiki/` 를 읽지 않는다. 모든 사실 줄에 출처(경로/URL) · 날짜 · 등급, 날짜순 덧붙이기만. 규칙과 덧붙이기 절차는 `wiki/README.md`.
+
