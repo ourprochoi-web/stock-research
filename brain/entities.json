@@ -4524,6 +4524,13 @@
           "rid": "r-20261016-701",
           "one": "② 세 버전(퍼포먼스·스러스트·로켓). 로켓은 초청 1인승·비행 전부. 압축공기 자체 재충전 전언. 2028·1초·230마일은 r-400. 가격·합법 없음.",
           "source": "https://t.me/insidertracking/66448"
+        },
+        {
+          "date": "2026-10-16",
+          "grade": "④",
+          "rid": "r-20261016-802",
+          "one": "④ 05:16 ET 프리마켓 등락은 캡션 +5%와 방향이 같다. 마지막 호가는 380대와 당일 440대가 갈려 안 적음. 438.06은 r-400, 434.11은 r-602.",
+          "source": "https://t.me/insidertracking/66452"
         }
       ]
     },
@@ -7136,6 +7143,63 @@
           "rid": "r-20261016-700",
           "one": "④ 같은 캡션이 스페이스X를 테슬라와 같이 반짝이라 함. 타일 가격은 확정 안 함. 스타십 창은 r-112.",
           "source": "https://t.me/insidertracking/66447"
+        },
+        {
+          "date": "2026-10-16",
+          "grade": "②",
+          "rid": "r-20261016-801",
+          "one": "② 로이터: 스타실드 통신 속도 제한 지시. 발신자 미확인. 관계자는 트럼프 요청이 아니라고 함. 접근 제한은 r-555. T1의 AI 매출 아님.",
+          "source": "https://t.me/insidertracking/66451"
+        },
+        {
+          "date": "2026-10-16",
+          "grade": "④",
+          "rid": "r-20261016-802",
+          "one": "④ 캡션만 프리마켓 +2.4%. 사진은 테슬라 카드. 호가 없음. 4:08 ET 반짝은 r-700.",
+          "source": "https://t.me/insidertracking/66452"
+        }
+      ]
+    },
+    "6669": {
+      "name": "Wiwynn",
+      "ticker": "6669.TW",
+      "market": "TW",
+      "layer": "AI 서버 ODM · 액체냉각",
+      "business": "위스트론 계열 서버 ODM. 2026-10-16 OCP에서 Ayar Labs와 전면 교체 ELSFP 냉각 구조를 공개했다는 슬라이드 중계.",
+      "business_grade": "②(후보 · OCP 슬라이드 중계 2026-10-16 · 사업보고서 미대조)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "정본 페이지 없음. 대만 상장이지 한국·유럽·중국 중소가 아니라 후보 카드를 연다. 출하·매출은 없음.",
+      "watch": [
+        {
+          "date": "2026-10-16",
+          "grade": "②",
+          "rid": "r-20261016-803",
+          "one": "② OCP: Ayar와 전면 교체 ELSFP. 1RU 20개, 냉각수 45°C, 온도편차 2.9→0.8°C. 수주·매출 없음.",
+          "source": "https://t.me/beluga_investment/3725"
+        }
+      ]
+    },
+    "AYAR": {
+      "name": "Ayar Labs",
+      "market": "US",
+      "layer": "외부 레이저 · 실리콘 포토닉스",
+      "business": "비상장. OCP에서 ELSFP와 광학 엔진을 내고, 레이저를 전면 교체 부품으로 뒀다는 슬라이드 중계.",
+      "business_grade": "②(후보 · OCP 슬라이드 중계 2026-10-16 · 사업보고서 없음)",
+      "status": "후보",
+      "pages": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "정본 페이지 없음. 미국 비상장. 광원 테제 T2의 데모 관측. 출하 공시 없음.",
+      "watch": [
+        {
+          "date": "2026-10-16",
+          "grade": "②",
+          "rid": "r-20261016-803",
+          "one": "② ELSFP 8채널·채널당 23dBm. 100개+ 평균 23.4dBm. 레이저를 전면에서 교체. 출하 공시 아님.",
+          "source": "https://t.me/beluga_investment/3725"
         }
       ]
     },
