@@ -1,0 +1,15 @@
+메타, 오픈 웨이트 모델 Muse Spark Open 공개
+
+: 총 816B 파라미터(활성 42B), 100만 토큰 컨텍스트 윈도를 지원하는 MoE 기반 네이티브 멀티모달 모델로, 코딩과 장기 에이전트 작업에 특화
+
+: Artificial Analysis Intelligence Index는 39점으로 Mistral Large 4(38점)를 소폭 상회했으나, 중국의 Qwen3.8(40점), Kimi K3(44점), GLM 5.3(45점)에는 미치지 못함
+
+: 에이전트 성능에서는 JobBench 61.8점, MCP-Atlas 89.2점으로 주요 중국 오픈 모델을 상회. 반면 코딩 벤치마크인 Terminal-Bench 2.1에서는 76.4점으로 Kimi K3(85.0점), GLM 5.3(83.9점) 대비 열위
+
+: Apple M5 Ultra Mac Studio 2대에서 모델 전체를 로컬 실행할 수 있도록 최적화. 기기당 최대 512GB 통합 메모리를 활용하며, 실제 iOS 앱 개발과 DaVinci Resolve 영상 편집 등 복잡한 에이전트 작업 시연
+
+: NVIDIA와 AMD GPU에 최적화된 Helion 커널을 적용해 개별 커널 처리 속도를 최대 3.95배 개선. 모델 가중치는 Hugging Face와 주요 클라우드 플랫폼을 통해 배포하며, 7개 추론 플랫폼에서 API 제공
+
+: 메타는 이번 공개를 개인 초지능(Personal Superintelligence) 확산 전략의 일환으로 설명. 특히 고성능 에이전트의 로컬 실행을 통해 클라우드 의존도를 낮추고 개인용 AI 생태계를 확대하려는 방향성 확인
+
+https://research.meta.ai/blog/muse-spark-open
