@@ -17,3 +17,7 @@
 | industry | [athletic-footwear](industry/athletic-footwear.md) | 나이키 실적·DTC·러닝화 점유·배당 vs FCF |
 | devices | [foldable-smartphones](devices/foldable-smartphones.md) | 폴더블 비중·아이폰 듀오 가격·폴드 무게 |
 | policy | [korea-reshoring-incentives](policy/korea-reshoring-incentives.md) | 국내복귀 요건 4·면제·인센티브·통계·관세 비교(KOTRA 지원 홍보) |
+| power | [dc-moratoria](power/dc-moratoria.md) | 데이터센터 모라토리엄·지역 규제(텍사스 발언·SF 45일) |
+| macro | [us-fiscal-debt](macro/us-fiscal-debt.md) | 미국 부채 40조·이자 지출·재정적자·BTC–실질금리 상관 |
+| energy | [hormuz-iran-war-timeline](energy/hormuz-iran-war-timeline.md) | 이란 전쟁·호르무즈 사건 연표(10/17부터) |
+| ai-models | [benchmark-scores](ai-models/benchmark-scores.md) | 모델 벤치마크 점수 이력(회사 발표 C·독립 B) |
