@@ -9,3 +9,6 @@ related: ai-sw/ai_sw_overview.html#T1 · entity:ANTHROPIC · entity:OPENAI · en
 | 2026-10-17 | 同 | C | 同 | ProgramBench | 20.3→29.1 | — |
 | 2026-10-17 | 同 | C | 同 | Automation-Bench / Agents' Last Exam / Apex | 54.8→60.5 / 31.8→35.4 / 64.6→72.1 | 세 지표 모두 Sol·Opus 5 상회 주장 |
 | 2026-10-17 | 同 | C | 同 | HLE / Chartography | 36.8→42.6 / 78.9→83.0 | HLE: Sol 44.5 · Opus 5 56.3 |
+| 2026-10-13 | intake/files/telegram/Samsung_Global_AI_SW/2026-10-13/4769.txt | B | Meta Muse Wonder / Wonder Full | AAII | 52 / 56 | Muse Spark 1.3(6주 전) 48 |
+| 2026-10-16 | c-20261016-t86(채널 요약) | B | Meta Muse Spark Open(816B·활성 42B) | AAII | 39 | Mistral Large 4 38 |
+| 2026-10-04 | 씨티 via c-20261004-t01 | B | Gemini 4 Argon(9/30) | AA | 53 | Fable 5.1·GPT-6 Astra와 같은 수준(씨티 서술) |
