@@ -1,0 +1,17 @@
+딥시크, DeepSeek-V4.1-Flash-1017 공개, 성능과 비용 효율성 동시 개선
+
+: 딥시크는 기존 V4.1-Flash의 마이너 업데이트 버전인 V4.1-Flash-1017을 공개
+
+: 추론, 코딩, 에이전트 작업, 시각적 이해 능력 전반에서 성능을 개선하면서 작업 수행 시간과 출력 토큰을 축소
+
+: Terminal-Bench 4.0 점수는 31.2점에서 42.3점(+11.1p), ProgramBench는 20.3점에서 29.1점(+8.8p)으로 상승. Terminal-Bench에서는 GPT-5.6 Sol(39.9점)을 상회했으나 Claude Opus 5(51.8점)에는 미달
+
+: Automation-Bench는 54.8점에서 60.5점(+5.7p), Agents’ Last Exam은 31.8점에서 35.4점(+3.6p), Apex Bench는 64.6점에서 72.1점(+7.5p)으로 상승. 세 지표 모두 GPT-5.6 Sol과 Claude Opus 5를 상회
+
+: HLE는 36.8점에서 42.6점(+5.8p), Chartography는 78.9점에서 83.0점(+4.1p)으로 상승. 다만 HLE에서는 GPT-5.6 Sol(44.5점)과 Claude Opus 5(56.3점)에 미달
+
+: 작업 완료 시간 단축과 출력 토큰 감소를 통해 에이전트 환경에서 성능과 비용의 파레토 프런티어를 개선했다고 설명. DeepSeek Harness, 텐센트 CodeBuddy 및 WorkBuddy 등에 최적화
+
+: 웹사이트, 앱, API에 즉시 적용. 100만 토큰 컨텍스트를 지원하며, 모델 가중치는 MIT 라이선스로 공개
+
+https://x.com/deepseek_ai/status/2111375640717033777
