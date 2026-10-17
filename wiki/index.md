@@ -14,3 +14,5 @@
 | policy | [singapore-hdb-housing](policy/singapore-hdb-housing.md) | HDB 연혁·2차 시장·99년 임차권·인정가 대출 |
 | industry | [korea-dental-economics](industry/korea-dental-economics.md) | 치과 건보 수가·비급여 임플란트 구조(협찬·이해상충) |
 | devices | [ai-smart-glasses](devices/ai-smart-glasses.md) | AI 글래스 플레이어·기능·시험 부정·사생활 |
+| industry | [athletic-footwear](industry/athletic-footwear.md) | 나이키 실적·DTC·러닝화 점유·배당 vs FCF |
+| devices | [foldable-smartphones](devices/foldable-smartphones.md) | 폴더블 비중·아이폰 듀오 가격·폴드 무게 |
