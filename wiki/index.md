@@ -10,3 +10,4 @@
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 |
 | optics | [optics-interconnect-basics](optics/optics-interconnect-basics.md) | 800G/1.6T·CPO |
 | power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 |
+| etf | [covered-call-mechanics](etf/covered-call-mechanics.md) | 커버드콜 콜 매도 구조·부분 vs 100%OTM·상승 제한 |
