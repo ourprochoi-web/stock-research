@@ -16,3 +16,4 @@
 | devices | [ai-smart-glasses](devices/ai-smart-glasses.md) | AI 글래스 플레이어·기능·시험 부정·사생활 |
 | industry | [athletic-footwear](industry/athletic-footwear.md) | 나이키 실적·DTC·러닝화 점유·배당 vs FCF |
 | devices | [foldable-smartphones](devices/foldable-smartphones.md) | 폴더블 비중·아이폰 듀오 가격·폴드 무게 |
+| policy | [korea-reshoring-incentives](policy/korea-reshoring-incentives.md) | 국내복귀 요건 4·면제·인센티브·통계·관세 비교(KOTRA 지원 홍보) |
