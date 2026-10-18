@@ -23,3 +23,6 @@
 | ai-models | [benchmark-scores](ai-models/benchmark-scores.md) | 모델 벤치마크 점수 이력(회사 발표 C·독립 B) |
 | policy | [korea-waste-management](policy/korea-waste-management.md) | 하루 5만 톤·수도권매립지·직매립 금지·소각열·캔 재활용 |
 | autos | [sdv-vertical-integration](autos/sdv-vertical-integration.md) | 수평 vs 수직통합·ECU 소스코드 한계·OTA·BYD 평면 팩 |
+| policy | [us-government-equity-stakes](policy/us-government-equity-stakes.md) | 미국 정부 지분 35개사(인텔 9.9%·MP 15%·고려아연 테네시 40% 등) |
+| materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
+| policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
