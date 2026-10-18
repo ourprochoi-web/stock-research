@@ -15,3 +15,5 @@ related: memory 테제 (CXMT 반증 조건) · entity:CXMT
 | 2026-10-13 | MemoryTicker(89f99877…) · Korea Times 20261013 | B | 4F² 서버 DDR5 RDIMM은 「2026 연내 출시 목표」 — 용량·속도·전력·수율·출하 미공개. 9월 G5 플랫폼·24Gb LPDDR5X 양산 발표와 구분 |
 | 2026-07-02 | SCMP(Howard Liu) 3359168 | B | 소식통: 텐센트·바이트댄스 고객 검증 완료 후 선단 DDR5 서버 메모리 주문 수주 시작. 1Q 매출 +719% YoY·순익 330억 위안, ASP는 선두 3사 대비 5~10% 이내(세미애널리시스 추정). 과창판 상장 약 295억 위안 예정 |
 | (일자 미상, 로이터 2인 소식통) | thenextweb 「CXMT wins a reported $3bn memory deal with Tencent」 | B | 텐센트에 약 30억 달러 메모리 공급 합의 보도 — 기간·DDR5 비중·납기 미공개, 양사 무응답 |
+| 2026-10-18 | 이형수(HSL파트너스) 삼프로 G_-gvmaHLXE via intake/files/youtube/3protv/2026-10-19/yesterday_17_18.md §3 | C | (주장) 4F² 연내 발표는 「판을 뒤집기 위한 마케팅, 블러핑」 — 연내 샘플 몇 개, 양산은 잘해야 2분기. EUV 없이 14~15nm까지 멀티패터닝, 그 아래는 증착·식각·하이브리드 본딩으로 우회. 서버용 신뢰성 문제(5~6개월 후 고장 사례 전언), 미 하이퍼스케일러 채택 어려움, 중국 DC 수요는 미국의 약 1/5 |
+| 2026-10-18 | 댄 아이브스 삼프로 2JNxJOQKWFE via intake/files/youtube/3protv/2026-10-19/yesterday_17_18.md §1 | C | (주장) CXMT는 「실질적 위협 아님, 한국 기술 대비 몇 년 뒤처짐」 |
