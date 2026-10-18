@@ -21,3 +21,4 @@
 | macro | [us-fiscal-debt](macro/us-fiscal-debt.md) | 미국 부채 40조·이자 지출·재정적자·BTC–실질금리 상관 |
 | energy | [hormuz-iran-war-timeline](energy/hormuz-iran-war-timeline.md) | 이란 전쟁·호르무즈 사건 연표(10/17부터) |
 | ai-models | [benchmark-scores](ai-models/benchmark-scores.md) | 모델 벤치마크 점수 이력(회사 발표 C·독립 B) |
+| policy | [korea-waste-management](policy/korea-waste-management.md) | 하루 5만 톤·수도권매립지·직매립 금지·소각열·캔 재활용 |
