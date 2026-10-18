@@ -1,0 +1,38 @@
+Wiwynn – Ayar Labs와 교체형 레이저 모듈 기술 공개
+
+Ayar Labs와 Wiwynn(6669 TT)은 OCP 행사에서 교체 가능한 레이저 모듈을 구현하기 위한 기술과 시스템 설계를 공개했습니다.
+Wiwynn은 액체냉각 랙, 컴퓨팅 트레이, 콜드플레이트(냉각판)를 개발했으며, Ayar Labs는 외부 레이저 모듈(ELSFP)과 광학 엔진(Optical Engine)을 개발했습니다.
+
+ELSFP는 장비 전면 패널에 배치하고, 광학 엔진은 후면의 멀티칩 패키지 내부에 탑재하는 구조입니다.
+
+Ayar Labs의 레이저 엔지니어링 수석 매니저인 Nandita Aggarwal은 "가장 취약하면서 열에 민감한 부품인 레이저를 선택해, 장비 전면에서 쉽게 교체하고 유지보수할 수 있도록 설계했습니다"라고 설명했습니다.
+
+주요 기술 사양 및 테스트 결과
+
+1. ELSFP 모듈 사양
+
+각 ELSFP는 8개 채널을 지원하며, 채널당 광출력은 23dBm입니다. 능동형 온도 제어 기능을 탑재했으며, 여러 공급업체의 레이저 다이(Die)를 사용할 수 있도록 설계했습니다.
+
+2. 레이저 출력 검증
+
+100개 이상의 모듈을 테스트한 결과, 평균 광출력은 23.4dBm을 기록했습니다. 측정은 호스트 커넥터를 통과한 이후 광섬유에서 진행했으며, 모든 레이저가 요구 사양을 충족했습니다.
+
+3. 고밀도 모듈 집적 및 냉각
+
+1RU(랙 높이 약 4.45cm) 공간에 ELSFP 20개를 집적했습니다. 냉각수 유입 온도가 45°C인 조건에서 하나의 콜드플레이트를 이용해 모듈들을 서로 마주 보는 형태(Belly-to-Belly)로 냉각했습니다.
+
+4. 온도 균일성 개선
+
+모듈 간 온도 편차를 기존 2.9°C에서 0.8°C로 축소했습니다. 레이저 다이 온도는 50°C ±1°C 수준으로 안정적으로 유지했습니다.
+
+5. 유지보수 및 내구성 검증
+
+열전도 패드(Thermal Pad)는 100회 이상의 모듈 삽입·탈착 테스트를 거쳤으며, 이 과정에서 패드를 다시 부착하거나 교체할 필요가 없었습니다.
+
+https://x.com/carrioresearch/status/2110653059663860153?s=46
+
+beluga_investment/3725 (2026-10-16 17:47 KST)
+permalink: https://t.me/beluga_investment/3725
+슬라이드 두 장. tesseract가 읽은 영어 문장: "We are choosing the weakest element and the most heat sensitive element, that is the laser, to be serviceable in the front face plate." / "The distributions across these 100-plus ELSFP modules are very well within the spec, along with very healthy margins."
+하단: Open Compute Project | October 12-15, 2026 | San Jose, CA.
+X 원문과 회사 IR은 안 열었다. 출하·수주·매출은 이 글에 없다.
