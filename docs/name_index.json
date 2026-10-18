@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-15",
  "names": {
   "Eoptolink": {
    "code": "300502.SZ",
@@ -99,6 +99,20 @@
    "falsifier": null,
    "facts": 0,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Disco": {
+   "code": "6146.T",
+   "market": "JP",
+   "entity": "6146.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T2"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -289,14 +303,27 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "GS칼텍스": {
+   "code": "GSCALTEX",
+   "market": "KR",
+   "entity": "GSCALTEX",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "HD한국조선해양": {
    "code": "009540",
    "market": "KR",
-   "entity": null,
+   "entity": "009540",
    "falsifier": null,
    "facts": 0,
    "theses": {
     "market/kr_4sector_cross_valuation.html": [
+     "T1"
+    ],
+    "shipbuilding/k_ship_industry_overview.html": [
      "T1"
     ],
     "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
@@ -473,6 +500,9 @@
     "energy/energy_battery_valuechain_update.html": [
      "T1",
      "T2"
+    ],
+    "energy/energy_ess_ai_power.html": [
+     "T5"
     ]
    },
    "aliases": [],
@@ -684,7 +714,7 @@
   "S-Oil": {
    "code": "010950",
    "market": "KR",
-   "entity": null,
+   "entity": "010950",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -848,6 +878,7 @@
     ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T2",
+     "T4",
      "T7",
      "T9"
     ],
@@ -860,6 +891,7 @@
      "T1"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T1",
      "T2",
      "T4",
      "T6"
@@ -2101,6 +2133,9 @@
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
      "T1"
+    ],
+    "energy/energy_ess_ai_power.html": [
+     "T5"
     ]
    },
    "aliases": [],
@@ -2410,6 +2445,9 @@
     "ai-infra/ai_power_company_nuclear_smr.html": [
      "T2"
     ],
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T4"
+    ],
     "defense/k_defense_cross_valuation.html": [
      "T1",
      "T2",
@@ -2522,6 +2560,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "크래프톤": {
+   "code": "259960",
+   "market": "KR",
+   "entity": "259960",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "클로봇": {
    "code": "466100",
    "market": "KR",
@@ -2565,6 +2613,9 @@
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T2"
+    ],
+    "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T1"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T1",
@@ -3205,7 +3256,7 @@
   "한화오션": {
    "code": "042660",
    "market": "KR",
-   "entity": null,
+   "entity": "042660",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -3231,6 +3282,9 @@
      "T7",
      "T8",
      "T9"
+    ],
+    "shipbuilding/k_ship_industry_overview.html": [
+     "T1"
     ],
     "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
      "T1",
@@ -3369,6 +3423,9 @@
    "theses": {
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T6"
+    ],
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T1"
     ],
     "robot/robot_theme_supply_chain.html": [
      "T1"
@@ -3633,6 +3690,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Nanya Technology": {
+   "code": "2408.TW",
+   "market": "TW",
+   "entity": "2408.TW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "홍즈(宏致電子 · ACES)": {
    "code": "3605.TW",
    "market": "TW",
@@ -3650,6 +3717,13 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ],
+    "ai-infra/us_bloom_intel_deep.html": [
+     "T4",
+     "T5"
+    ],
     "ai-infra/us_power_regulated_vs_merchant.html": [
      "T5",
      "T6"
@@ -3678,6 +3752,9 @@
     "ai-infra/ai_chip_company_nvidia.html": [
      "T1"
     ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ],
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T9"
     ],
@@ -3690,6 +3767,9 @@
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T5"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T1"
     ],
     "research/13f_2026q2.html": [
      "T4",
@@ -3794,7 +3874,8 @@
     ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T1",
-     "T2"
+     "T2",
+     "T4"
     ],
     "ai-infra/us_bloom_intel_deep.html": [
      "T4"
@@ -3839,6 +3920,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Anduril": {
+   "code": "ANDURIL",
+   "market": "US",
+   "entity": "ANDURIL",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -3891,6 +3982,30 @@
      "T4"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Apple": {
+   "code": "AAPL",
+   "market": "US",
+   "entity": "AAPL",
+   "falsifier": "정본 페이지 없음. 기판 T6의 중국 칸은 듀오 물량이지 이 출시가 아니다. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Applied Materials": {
+   "code": "AMAT",
+   "market": "US",
+   "entity": "AMAT",
+   "falsifier": "정본 카드 없음. 반도체 전쟁 T4가 이름을 언급하나 이 줄은 관측. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4180,6 +4295,16 @@
      "T2"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Chipotle": {
+   "code": "CMG",
+   "market": "US",
+   "entity": "CMG",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4893,6 +5018,7 @@
      "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
+     "T1",
      "T4",
      "T5"
     ],
@@ -5168,6 +5294,7 @@
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",
      "T2",
+     "T4",
      "T5",
      "T7"
     ],
@@ -5318,6 +5445,9 @@
     "ai-infra/ai_power_company_transformer_grid.html": [
      "T1"
     ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T6"
+    ],
     "ai-infra/ai_value_chain_guide_v2.html": [
      "T1"
     ],
@@ -5359,6 +5489,7 @@
      "T3"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T1",
      "T2",
      "T7"
     ],
@@ -5380,6 +5511,7 @@
      "T3"
     ],
     "national-strategy/ns_semiconductor_war.html": [
+     "T1",
      "T2",
      "T4"
     ],
@@ -5525,6 +5657,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Ondas": {
+   "code": "ONDS",
+   "market": "US",
+   "entity": "ONDS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "OpenAI": {
    "code": "OPENAI",
    "market": "US",
@@ -5655,6 +5797,16 @@
      "T2"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Plug Power": {
+   "code": "PLUG",
+   "market": "US",
+   "entity": "PLUG",
+   "falsifier": "정본 페이지 없음. 미국 이름이라 한국·유럽·중국 중소형 신규 카드가 아니다. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -5870,6 +6022,7 @@
      "T3"
     ],
     "ai-infra/optical_valuechain_9.html": [
+     "T2",
      "T4"
     ]
    },
@@ -5989,6 +6142,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Starbucks": {
+   "code": "SBUX",
+   "market": "US",
+   "entity": "SBUX",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "TE Connectivity": {
    "code": "TEL",
    "market": "US",
@@ -6027,6 +6190,7 @@
      "T1"
     ],
     "ai-infra/ai_value_chain_guide_v2.html": [
+     "T2",
      "T5"
     ],
     "ai-infra/optical_valuechain_9.html": [
@@ -6042,7 +6206,8 @@
      "T9"
     ],
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
-     "T4"
+     "T4",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
      "T2",
@@ -6050,7 +6215,8 @@
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T2",
-     "T5"
+     "T5",
+     "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T1"
@@ -6398,7 +6564,7 @@
    "code": "NVTS",
    "market": "US",
    "entity": "NVTS",
-   "falsifier": null,
+   "falsifier": "정본 페이지 없음. 변압기 T1의 800V 일정과 같이 읽음. 블룸 T5(국내 BE)에 넣지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_company_semi_ess_dc.html": [
