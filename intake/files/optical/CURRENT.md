@@ -36,3 +36,5 @@ Historical snapshot: `2026-09-23/` (unchanged).
 
 Memo: [2026-09-24/dubidubabap_photonlink_cpo_ecoc_factmap.md](2026-09-24/dubidubabap_photonlink_cpo_ecoc_factmap.md)  
 Ledger: [facts_ledger.jsonl](facts_ledger.jsonl) · Routing: `u-20260924-x-photonlink01` / `r-20260924-11`
+
+- **2026-10-15:** 한경 Themes CEO(③, 이해관계) InP 비중확대·중국 트랜시버 비중축소·CPO 이르면 내년 말. 원장 줄 없음(09-27 닫힘). 테제 로그 `r-20261015-752`. 메모 [2026-10-15/hankyung-themes-inp.md](2026-10-15/hankyung-themes-inp.md). HTML 불변.

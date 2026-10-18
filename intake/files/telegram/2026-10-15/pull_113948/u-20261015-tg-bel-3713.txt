@@ -1,0 +1,28 @@
+source: https://t.me/beluga_investment/3713
+datetime_kst: 2026-10-15 10:42:14 KST
+handle: beluga_investment
+id: 3713
+x: https://x.com/news2082680/status/2110302404730102097?s=46
+---
+Arm, 에이전틱 AI 확산으로 2030년 CPU 시장 3,000억 달러 전망
+
+에이전틱 AI 확산으로 CPU의 중요성이 높아지는 가운데, Arm은 에이전틱 AI에 특화된 AGI CPU를 공개하고 새로운 데이터센터 시장 기회를 강조했습니다. Arm은 글로벌 CPU 시장이 2026년 520억 달러에서 2030년 3,000억 달러로 약 5.8배 성장(CAGR 55%)할 것으로 전망했습니다.
+
+1. AI 데이터센터에서 CPU의 3가지 핵심 역할
+① AI 헤드 노드: GPU 유휴를 막기 위한 스케줄링·데이터 이동·메모리 관리.
+② 클라우드 네이티브 CPU: 높은 코어 수로 VM 성능·확장. 맞춤형 DPU와 네트워킹·스토리지·보안.
+③ 에이전틱 CPU: 에이전트마다 CPU·메모리·컴퓨팅. 동시 실행이 수요의 핵심.
+
+2. AI 랙(추론·계획·모델, 토큰 효율)과 CPU 랙(도구 실행·스케줄링·오케스트레이션)의 이중 구조.
+
+3. Arm AGI CPU — 자체 첫 서버용 CPU.
+① 3세대 Neoverse, 메모리 지연 축소·코어당 대역폭 확대.
+② 사용률 90–95%에서도 선형 확장.
+③ 제한 전력에서 성능, 냉각비·랙당 코어 집적도.
+
+슬라이드 전사(enrich meta, 2026-10-15 11:40 KST 첨부 이미지):
+- "One AI data center. Three very different CPU jobs." AI Head Node / Cloud Native / Agentic.
+- CPU Market Growth Projections: 2026 $52B, 2027 $100B, 2028 $138B, 2029 $202B, 2030 $300B. Source: Citi Research, Mercury Research 2026.
+- Arm Based CPUs: AGI CPU(Arm), Yitian 710(Alibaba Cloud), Graviton(AWS), Monaka(Fujitsu), Axion(Google Cloud), Cobalt(Microsoft Azure), Vera(NVIDIA).
+- Arm Based DPUs: Nitro(AWS), Salina(AMD), E2100(Intel), OCTEON 10(Marvell), Azure Boost(Microsoft Azure), Bluefield4(NVIDIA), E1(Xsight). 한 로고는 판독 불가.
+- 페어링: AWS Graviton+Trainium, Google Cloud Axion+TPU, Meta AGI CPU+MTIA, Microsoft Azure Cobalt+Maia, NVIDIA Vera+Rubin.
