@@ -37,3 +37,4 @@
 | macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
 | macro | [africa-urbanization](macro/africa-urbanization.md) | 아프리카 도시화·비공식 경제 |
 | policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
+| geopolitics | [korea-us-alliance](geopolitics/korea-us-alliance.md) | 한미 전작권·핵잠·대미투자 마찰 |
