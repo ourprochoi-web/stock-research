@@ -27,3 +27,5 @@
 | policy | [us-government-equity-stakes](policy/us-government-equity-stakes.md) | 미국 정부 지분 35개사(인텔 9.9%·MP 15%·고려아연 테네시 40% 등) |
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
+| space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
+| macro | [china-activity-data](macro/china-activity-data.md) | 중국 분기 GDP·월간 활동지표·위안 고시 이력 |

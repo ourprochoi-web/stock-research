@@ -40,3 +40,4 @@ related: entity:ORCL · entity:CRWV · AI capex 테제
 | 2026-10-16 | JPM 사믹 채터지 via psinvestor X · intake/files/x/2026-10-19/r102-jpm-crwv-defense.txt | C | CRWV 다음 GPU 대출 기준(하우스 제시) | SOFR+5.50% 안쪽 여부 · FCF 흑자 2030(하우스 추정) |
 | 2026-10-18 | FT via 연합 · intake/files/telegram/2026-10-19/pull_103325/yeouido_118578.txt | B | 퍼머스 IPO 철회 조건 | 밸류 440억 호주달러(3개월 전 라운드 2배)·상장 후 채권 최대 300억 달러 계획 → 10/10 철회, 사모 조달로 전환. 에어트렁크 싱가포르 리츠 상장 취소 |
 | 2026-10-16 | 골드만 트레이딩 데스크 via CNBC · intake/files/telegram/2026-10-19/pull_123411/yeouido_118585.txt | B | AI·하이퍼스케일러 크레딧 스프레드 | 연중 최대(데스크 관찰). 지난번 이 수준일 때 주가는 15% 더 낮았음 · 금요일 풋 거래량 6월 다음 2위 |
+| 2026-10-19 | FT via insidertracking 66657 · intake/files/telegram/2026-10-19/pull_153741/insider_66657.txt | B | 사모신용 감독 | 영국 중앙은행(BoE)이 바클레이스의 사모신용 익스포저 공시 문제를 조사 중(보도). 같은 날 프리마켓 브리핑(66658): Nscale IPO 목표 약 300억 달러에 일부 투자자 160억~190억 달러 제시 |
