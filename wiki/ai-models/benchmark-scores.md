@@ -13,3 +13,4 @@ related: ai-sw/ai_sw_overview.html#T1 · entity:ANTHROPIC · entity:OPENAI · en
 | 2026-10-16 | c-20261016-t86(채널 요약) | B | Meta Muse Spark Open(816B·활성 42B) | AAII | 39 | Mistral Large 4 38 |
 | 2026-10-04 | 씨티 via c-20261004-t01 | B | Gemini 4 Argon(9/30) | AA | 53 | Fable 5.1·GPT-6 Astra와 같은 수준(씨티 서술) |
 | 2026-10-19 | 손경제 김아람 7J8fmfx-9m8 · intake/files/youtube/sonkyung/2026-10-19/today_02.md | C/ASR | Gemini 4 Argon | 아레나 / Vals / 환각률 | 종합·지시이행 1위·웹개발 8위 / 1위(구글 첫 1위) / 15%(정답률 50%) | 오픈AI 환각 50%대(정답 63%) ·  AA 지수 Opus 5.5 58·Muse Wonder Full 56·Argon 53(방송). 앱 기본 미디엄 vs 발표 하이 모드. API 반값 11/30까지 |
+| 2026-10-19 | minimax.io/blog/minimax-m31f via intake/files/telegram/2026-10-19/pull_214157/samsung_4813.txt | B | MiniMax M3.1 Flash(익명 Space Bunny 정식판) | DeepSWE v1.1 / OSWorld V2 / ALE / CyberGym / BankerToolBench | 73.7% / 61.7 / 29.6 / 82% / 76.2 | 가격 입력 $0.15·출력 $0.60(100만 토큰), 출력 170~200TPS, 가중치 10/23 공개, Pro 예고 |
