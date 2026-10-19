@@ -29,3 +29,4 @@
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
 | space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
 | macro | [china-activity-data](macro/china-activity-data.md) | 중국 분기 GDP·월간 활동지표·위안 고시 이력 |
+| geopolitics | [inter-korean-border-tensions](geopolitics/inter-korean-border-tensions.md) | 남북 접경 긴장·북측 담화·확성기·경고사격 연표 |
