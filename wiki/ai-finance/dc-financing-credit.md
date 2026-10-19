@@ -31,3 +31,10 @@ related: entity:ORCL · entity:CRWV · AI capex 테제
 | 2026-10-19 | DS 양형모 via intake/collected.jsonl c-20261018-t81 | C | 위험 프리미엄 분해(견해) | 앤스로픽 10% = 무위험 5% + 같은 등급 가산 2%p + 3%p(매출 의심). AI 하드웨어 31종목 PER 23.7→15.0배, 역산 요구수익률 필수소비재 7.5%·S&P500 8.4%·AI 하드웨어 10.1% (견해) |
 | 2026-10-16 | 문홍철(DB증권) 삼프로 Fnlg3uWqLHA via intake/files/youtube/3protv/2026-10-19/yesterday_17_18.md §5 | C | CRWV CDS-회사채 베이시스(주장) | 이론상 회사채 금리 ≈ 미국채(무위험)+CDS. 코어위브 최다거래 회사채 금리와 (미국채+코어위브 CDS)의 괴리가 9월 중하순까지 약 50bp → 9/22부터 균열 → 10월 초 확대 → 최근 약 200bp. 안정 조건으로 괴리 50bp 복귀·미 10년물 4.8% 복귀 제시. 출연자 자료 화면, 원 데이터(TRACE·CDS 호가) 미확인 |
 | 2026-09-01~10-15 | FRED DGS10 · intake/files/web/2026-10-19/ust10y_krx_july_line.md | A | 미 10년물 | 9/8 4.80(4.8% 첫 도달) · 9/22 4.96 · 9/23 5.11 · 10/5 5.31(구간 최고) · 10/15 5.10 |
+| 2026-10-15 | CNBC(Michelle Fox 10/15) · traderknows · intake/files/x/2026-10-19/r100-crwv-cds-basis.txt | B | CRWV 5Y CDS | 장중 1,140bp 초과 · 마지막 약 1,038bp(CNBC 인용 2곳) / 1,088bp(traderknows·X 전달) · 주간 +16~33%·전년 +164~177% |
+| 2026-10-15 | CNBC · intake/files/x/2026-10-19/r100-crwv-cds-basis.txt | B | CRWV 9.75% 2031년채 만기수익률 | 15.78% · 부채·의무 510억 달러 초과 · 오라클 5Y CDS 282~288bp |
+| 2026-10-15 | 로이터(investing.com 4950549) · intake/files/x/2026-10-19/r100-crwv-cds-basis.txt | B | CRWV 5Y CDS 내재 부도확률 | 1,000bp ≈ 5년 누적 약 64%(1년 전 약 30%) · 2031채 장중 약 16% → 약 14% · S&P 데이터 기준 CDS 1,100bp 돌파 |
+| 2026-10-15 | FRED DGS5 + 위 두 줄(계산) | A(입력 B) | CRWV 채권 − (5년물+CDS) 근사 | DGS5 4.91% · 15.78% 기준 +49bp(CDS 1,038)·−1bp(1,088)·−53bp(1,140) · 14% 기준 약 −129bp · 만기·호가 방식·시점 불일치 있는 근사 |
+| 2026-10-18 | ReturnDriver X 전달(원 보도 미확인) · intake/files/x/2026-10-19/r101-dc-project-bonds.txt | C | DC 프로젝트채 가격(액면 100) | 메타·블루아울 약 92 · 허트8(NVDA 임차) 92~94 · MS 임차 QTS 88 미만 · 오라클 미시간 87 · CRWV 80 미만(수익률 약 15%) |
+| 2026-10-16 | psinvestor X(CRWV 2Q 공시 정리) · intake/files/x/2026-10-19/r102-jpm-crwv-defense.txt | C | CRWV 이자·감가 | 3Q 이자 가이드 연환산 34~38억 달러 · 미인출 약 160억 · 감가상각/매출 42%(2년 전) → 54% · 백로그 약 1,040억 · 2Q 상위 3고객 72% |
+| 2026-10-16 | JPM 사믹 채터지 via psinvestor X · intake/files/x/2026-10-19/r102-jpm-crwv-defense.txt | C | CRWV 다음 GPU 대출 기준(하우스 제시) | SOFR+5.50% 안쪽 여부 · FCF 흑자 2030(하우스 추정) |
