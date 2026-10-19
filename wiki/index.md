@@ -33,3 +33,5 @@
 | macro | [korea-margin-credit](macro/korea-margin-credit.md) | 신용잔고·예탁금·반대매매 이력(7월·10월) |
 | crypto | [btc-flows](crypto/btc-flows.md) | 고래·거래소 보유량·ETF 흐름 |
 | industry | [newspaper-digital-transition](industry/newspaper-digital-transition.md) | 신문 디지털 전환·NYT 모델·김동환 신문사 시도 |
+| energy | [diesel-market](energy/diesel-market.md) | 경유 수급·중국 수출 쿼터·러시아 딜·EIA 가동률 |
+| macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
