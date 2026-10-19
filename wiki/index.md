@@ -35,3 +35,5 @@
 | industry | [newspaper-digital-transition](industry/newspaper-digital-transition.md) | 신문 디지털 전환·NYT 모델·김동환 신문사 시도 |
 | energy | [diesel-market](energy/diesel-market.md) | 경유 수급·중국 수출 쿼터·러시아 딜·EIA 가동률 |
 | macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
+| macro | [africa-urbanization](macro/africa-urbanization.md) | 아프리카 도시화·비공식 경제 |
+| policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
