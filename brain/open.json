@@ -375,6 +375,27 @@
    "since": "2026-10-20",
    "page": "hbm-packaging/hbm_pkg_company_samsung.html",
    "needs": "주간 감사에서 T5 철회·정정·유지를 정하고, 채점표 분모(1H26 연환산 vs 최근매출액)를 하나로 박는다. 3Q26 실적으로 분모가 바뀌면 재측정. Lead는 HTML을 고치지 않음."
+  },
+  {
+   "id": "kenneth:classys-cash-source",
+   "since": "2026-10-20",
+   "what": "클래시스 10-14 정산 250,321,960원(10-16 결제)의 재원 미확인. 기록상 cash.value null, 계좌 예수금은 80,361,274(09-21 매수 전)에서 09-21 매수 98,560,791로 −18,199,517 부족 기록이 마지막이다. 유가증권 총액 한도 잔여는 19.52억(09-30)이라 한도는 감당.",
+   "page": "brain/portfolio.json",
+   "needs": "Kenneth 확인: 결제 재원(법인 고유계정 이체 여부)과 10/16 이후 계좌 예수금 값. 받으면 cash.account_deposit 갱신."
+  },
+  {
+   "id": "kenneth:samsung-legacy-1300",
+   "since": "2026-10-20",
+   "what": "삼성전자 레거시 1,300주 기록 불일치 — holdings 메모는 「이 계좌(058-22-5037645) 잔고에 없다·합산하지 않는다」(09-22)인데, 10-02 한도표 역산(938,062,900 +0.01%)은 실재를 가리킨다. 어느 계좌에 있는지·holdings 메모 갱신 여부가 미정.",
+   "page": "brain/portfolio.json",
+   "needs": "Kenneth 확인: 레거시 보관 계좌와 holdings[삼성전자 (레거시)].note 수정 여부. 관리 대상 밖(B안)·D2 제외는 유지."
+  },
+  {
+   "id": "kenneth:classys-thesis-page",
+   "since": "2026-10-20",
+   "what": "클래시스(214150) 보유 카드는 만들었지만 전용 페이지·테제가 없다 — 연결은 4섹터 T4뿐. 테제 status 결정은 Kenneth 몫.",
+   "page": "market/kr_4sector_cross_valuation.html",
+   "needs": "전용 페이지(테제 status 포함)를 만들지, T4 연결로 둘지 결정. update_prices.py 이름표에 클래시스 추가 여부도."
   }
  ],
  "parked": [
