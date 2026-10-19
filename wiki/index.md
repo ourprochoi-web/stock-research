@@ -39,3 +39,9 @@
 | policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
 | geopolitics | [korea-us-alliance](geopolitics/korea-us-alliance.md) | 한미 전작권·핵잠·대미투자 마찰 |
 | autos | [adas-l2-comparison](autos/adas-l2-comparison.md) | FSD/TAD·샤오펑 XNGP 시승 비교·유럽 승인 |
+| energy | [oil-gas-benchmarks](energy/oil-gas-benchmarks.md) | Dated Brent·선물 격차·EU 가스 재고 이력 |
+| power | [doe-202c-orders](power/doe-202c-orders.md) | DOE 202(c) 긴급명령(PJM 대형 부하 백업 발전) |
+| materials | [abf-substrate](materials/abf-substrate.md) | ABF 기판 수급 추정·증설 일정 |
+| quantum | [error-correction-milestones](quantum/error-correction-milestones.md) | 양자 오류 정정 이정표(매직 스테이트) |
+| macro | [us-treasury-yields](macro/us-treasury-yields.md) | FRED DGS5·DGS10 종가·PPI |
+| geopolitics | [taiwan-strait-activity](geopolitics/taiwan-strait-activity.md) | 대만 국방부 PLA 일일 집계 |
