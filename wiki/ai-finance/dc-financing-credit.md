@@ -38,3 +38,4 @@ related: entity:ORCL · entity:CRWV · AI capex 테제
 | 2026-10-18 | ReturnDriver X 전달(원 보도 미확인) · intake/files/x/2026-10-19/r101-dc-project-bonds.txt | C | DC 프로젝트채 가격(액면 100) | 메타·블루아울 약 92 · 허트8(NVDA 임차) 92~94 · MS 임차 QTS 88 미만 · 오라클 미시간 87 · CRWV 80 미만(수익률 약 15%) |
 | 2026-10-16 | psinvestor X(CRWV 2Q 공시 정리) · intake/files/x/2026-10-19/r102-jpm-crwv-defense.txt | C | CRWV 이자·감가 | 3Q 이자 가이드 연환산 34~38억 달러 · 미인출 약 160억 · 감가상각/매출 42%(2년 전) → 54% · 백로그 약 1,040억 · 2Q 상위 3고객 72% |
 | 2026-10-16 | JPM 사믹 채터지 via psinvestor X · intake/files/x/2026-10-19/r102-jpm-crwv-defense.txt | C | CRWV 다음 GPU 대출 기준(하우스 제시) | SOFR+5.50% 안쪽 여부 · FCF 흑자 2030(하우스 추정) |
+| 2026-10-18 | FT via 연합 · intake/files/telegram/2026-10-19/pull_103325/yeouido_118578.txt | B | 퍼머스 IPO 철회 조건 | 밸류 440억 호주달러(3개월 전 라운드 2배)·상장 후 채권 최대 300억 달러 계획 → 10/10 철회, 사모 조달로 전환. 에어트렁크 싱가포르 리츠 상장 취소 |
