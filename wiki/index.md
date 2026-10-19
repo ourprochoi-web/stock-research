@@ -30,3 +30,6 @@
 | space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
 | macro | [china-activity-data](macro/china-activity-data.md) | 중국 분기 GDP·월간 활동지표·위안 고시 이력 |
 | geopolitics | [inter-korean-border-tensions](geopolitics/inter-korean-border-tensions.md) | 남북 접경 긴장·북측 담화·확성기·경고사격 연표 |
+| macro | [korea-margin-credit](macro/korea-margin-credit.md) | 신용잔고·예탁금·반대매매 이력(7월·10월) |
+| crypto | [btc-flows](crypto/btc-flows.md) | 고래·거래소 보유량·ETF 흐름 |
+| industry | [newspaper-digital-transition](industry/newspaper-digital-transition.md) | 신문 디지털 전환·NYT 모델·김동환 신문사 시도 |
