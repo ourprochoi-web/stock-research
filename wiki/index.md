@@ -2,6 +2,7 @@
 | 영역 | 페이지 | 요지 |
 |---|---|---|
 | battery | [lfp-patent-history](battery/lfp-patent-history.md) | LFP 특허 소송사, 한국 NCM·중국 LFP 분기 |
+| battery | [large-cylindrical-46-series](battery/large-cylindrical-46-series.md) | 46계열 원통형 양산·공급사(BMW Gen6·EVE·CATL) |
 | companies | [tesla-early-history](companies/tesla-early-history.md) | 2003 창업~2010 상장 |
 | memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 |
 | ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 |
