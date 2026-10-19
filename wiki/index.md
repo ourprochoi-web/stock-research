@@ -38,3 +38,4 @@
 | macro | [africa-urbanization](macro/africa-urbanization.md) | 아프리카 도시화·비공식 경제 |
 | policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
 | geopolitics | [korea-us-alliance](geopolitics/korea-us-alliance.md) | 한미 전작권·핵잠·대미투자 마찰 |
+| autos | [adas-l2-comparison](autos/adas-l2-comparison.md) | FSD/TAD·샤오펑 XNGP 시승 비교·유럽 승인 |
