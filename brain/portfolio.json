@@ -682,8 +682,8 @@
    "fee": 349960,
    "totalCost": 250321960,
    "page": "../market/kr_4sector_cross_valuation.html",
-   "thesis": "🔴 판정 조건 없음",
-   "note": "2026-10-14 신규 8,880주 @28,150(약정 249,972,000 · 수수료 349,960 · 정산 250,321,960 · 결제 10-16) — ① 미래에셋 매매보고서((주)라온저축은행 058-22-5037645). 평단 수수료 포함 28,189.4. 레포 테제·엔티티 카드 없음(4섹터 T4에 미용의료 3사 ΔOPM 언급뿐)"
+   "thesis": "k_beauty_company_classys T1·T2·T3(관측) · 4섹터 T4",
+   "note": "2026-10-14 신규 8,880주 @28,150(약정 249,972,000 · 수수료 349,960 · 정산 250,321,960 · 결제 10-16) — ① 미래에셋 매매보고서((주)라온저축은행 058-22-5037645). 평단 수수료 포함 28,189.4. 레포 테제·엔티티 카드 없음(4섹터 T4에 미용의료 3사 ΔOPM 언급뿐) || 2026-10-20 전용 테제 신설(Kenneth 지시 10/20 08:45) — page 링크는 HTML 생성 전까지 4섹터 페이지 유지(page-debt:classys-html)"
   }
  ],
  "holdings_notes": [
@@ -759,7 +759,8 @@
   "2026-10-05 — 해외증권 행 정정(사용자 ①): 잔액 300백만=외화 자산. 미국 노출은 국내 ETF·랩 경로 → 국내 ETF 는 주식 한도(TIME 글로벌AI 가 9월말 주식에 포함된 것이 근거). us_allocation_plan 경고 완화.",
   "2026-10-05 — 랩의 미국 주식 직접 매수도 외화 한도 해당 없음(사용자 확인) → [미검증] 해소.",
   "2026-10-20 — 클래시스 10-14 매수(① 매매보고서) 반영 · exposures 재측정 · D2 스냅샷. sizing·stops 행은 Kenneth 몫으로 비워 둠.",
-  "2026-10-20 — Kenneth 확인 10/20 08:42 반영: 레거시 1,300주 이 계좌에 없음 확정(holdings note·holdings_notes·limits.reconciliation 정정) · 클래시스 정산 이 계좌 현금 출금(cash.note·outflows) · cash.value null 유지."
+  "2026-10-20 — Kenneth 확인 10/20 08:42 반영: 레거시 1,300주 이 계좌에 없음 확정(holdings note·holdings_notes·limits.reconciliation 정정) · 클래시스 정산 이 계좌 현금 출금(cash.note·outflows) · cash.value null 유지.",
+  "2026-10-20 — 클래시스 전용 테제(k_beauty_company_classys T1~T3) 연결: holdings[클래시스].thesis 갱신(Kenneth 지시 10/20 08:45)."
  ],
  "limits": {
   "_readme": "(주)라온저축은행 고유계정 유가증권 <내부·규제 한도>의 정본. 출처 intake u-20261002-seclimits(경영기획팀 2026.10.2 · 단위 백만원 → 여기서는 원). 이 블록은 <여력>만 말한다 — 집중도는 denominators.D2 가 센다. holdings·집행 필드와 무관하며 매매로 갱신되지 않는다(분기 보고서가 올 때 교체).",
