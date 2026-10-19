@@ -12,3 +12,4 @@ related: memory 테제 · hbm-packaging
 | 2026-10-18 | UBS via 서울경제 영문판 | B | 2027 HBM 수요 약 615억Gb(+91% YoY) 대 메모리 3사 신규 출하 약 546억Gb → 수요 대비 약 10% 부족 |
 | 2026-10-18 | 로이터 via Business Standard(서울경제 인용) · intake/files/web/2026-10-19/nvhbm_sedaily_reuters.md | B | NVHBM 베이스다이: 엔비디아가 공급 3사에 TSMC 3nm 베이스다이·1c 코어다이 통일 요구, 삼성 수용 보도. 표준 HBM·다른 고객 커스텀은 자체 생산 유지, TSMC 캐파 초과 시 자사 파운드리 생산 평가(익명 소식통). 회사 확인 없음 |
 | 2026-08-28 | 서울경제 20084484 · 同 | B | NVHBM은 HBM4E 8단 기반, 속도 사양 17~18Gbps(삼성 초기 HBM4E 샘플 14.4Gbps), 루빈 울트라부터 적용 가능성(기사 서술) |
+| 2026-10-19 | JP모건 APAC via aether · intake/files/telegram/2026-10-19/pull_133857/aether_25924.txt | C | NVHBM 생산은 TSMC N3 캐파 여유가 생기는 FY28에 대부분(하우스). 엔비디아 주장 스택당 대역폭 +30%, 로직 베이스다이 조달은 사실상 엔비디아 통제 |
