@@ -1,7 +1,7 @@
 # 클래시스 (Classys) — KOSDAQ 214150
 ## 보유 종목 테제 원고 | 2026-10-20 (Lead 초안 · Kenneth 지시 10/20 08:45)
 
-> 이 파일은 `brain/theses.json` 의 `k-beauty/k_beauty_company_classys.html` 테제 블록의 원고다. HTML 페이지는 아직 없다(Lead는 HTML을 만들지 않는다 — 세션 몫, open `page-debt:classys-html`). 테제 status 는 `관측`(AGENTS §4 ⓒ 신규 관례)이고, 유지·정정·철회는 Kenneth 가 정한다.
+> 이 파일은 `brain/theses.json` 의 `k-beauty/k_beauty_company_classys.html` 테제 블록의 원고다. HTML 페이지 `k-beauty/k_beauty_company_classys.html` 은 2026-10-20 생성(HTML 예외: Kenneth 지시 10/20 08:49). 테제 status 는 `관측`(AGENTS §4 ⓒ 신규 관례)이고, 유지·정정·철회는 Kenneth 가 정한다.
 > 근거 조각: `intake/files/web/2026-10-20/classys_verify.md` · 매매: `intake/files/user/2026-10-20/classys_trade_20261014.txt` · routing `r-20261020-513` · `r-20261020-514`
 
 ---
