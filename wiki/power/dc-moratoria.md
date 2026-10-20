@@ -10,4 +10,7 @@ related: ai-infra/ai_power_infra_investment_map.html#T3 · AI capex 테제
 | 2026-10-16 | sfstandard.com 2026-10-16 · growsf.org 2026-10-16 · intake/files/telegram/insidertracking/2026-10-17/66537.txt | A/B | 미국 샌프란시스코 | 루리 시장 서명. 전력·물·대기·토지이용·지역 영향 검토, 11월까지 청문. 최대 22개월 연장 또는 영구 규정 대체 가능. 채널은 사유를 전기요금 상승·물 소비 우려, 중간선거 앞 규제 강화 흐름으로 요약 |
 | 2026-09-24 | 가디언 theguardian.com/technology/2026/sep/24 | B | 영국 에식스 로턴 | Nscale 로턴(「영국 최대 AI 슈퍼컴퓨터」) 2027 가동 목표가 전력 공급 문제로 2030년대 중반까지 밀릴 수 있다는 보도(UK Power Networks) |
 | 2026-10-18 | 텔레그래프 via 로이터(channelnewsasia 6469486) · 가디언 2026/oct/18 · intake/collected.jsonl c-20261018-t65 · t67 (PR #141) | B | 영국 에식스 로턴 | 마이크로소프트가 로턴 계약 종료. 전력망 당국이 2030년대 전 전력 공급 불가 전망. Nscale: 런던 전역 전력망 문제, 다른 계약 영향 없음, 대체 전원 모색. 채널 전언: 엔비디아 칩 2.3만 개 임차 예정, Nscale 총계약 1,030억 중 MS 40%+, 4월 OpenAI도 영국 스타게이트를 전기요금 이유로 중단 |
+| 2026-10-18 | FT via intake/files/telegram/2026-10-19/pull_093911/insider_66622.txt | B | 영국 에식스 로턴(같은 부지) | MS 임대 규모 50MW·GB300 약 2.3만 개, MS 220억 파운드 영국 투자 계획 포함. 영국 전력망 연결 대기 약 315개 DC·수요 73GW 대 영국 최대 전력수요 45GW |
+| 2026-10-19 | FT via 한국경제 · intake/files/telegram/2026-10-19/pull_103325/yeouido_118572.txt | B | 미국 전역(대형만) | 레그레이어 집계 올해 대형 DC 최소 47건 지연·철회·저지. 번스타인: 계획 DC 중 실현 가능 약 35% |
+| 2026-10-19 | 채널 요약 · intake/files/telegram/2026-10-19/pull_214157/insider_66699.txt | C | 미국 조지아 | 디지털 리얼티 30억 달러 DC 부지(옛 군사시설)에서 백린 등 유해물질 발견 → 공사 잠정 중단(원 보도 미개봉) |
 | 2026-10-19 | SemiAnalysis 'Datacenters 2027' 무료 공개부 | B | 미국 뉴멕시코 | 오라클 뉴멕시코 사이트 불가항력(Force Majeure) 지연은 2026년 4월 건(10/20 방송의 FT 전달분과 같은 사건으로 보임) |

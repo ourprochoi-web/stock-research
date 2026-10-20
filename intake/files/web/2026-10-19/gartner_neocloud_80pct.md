@@ -1,0 +1,3 @@
+Gartner 보도자료(2026-10-14): "By 2030, Gartner predicts that cost pressure and a lack of a differentiating business model will force over 80% of neocloud providers to cease independent operations." AI-optimized IaaS spending $66B(2027) → $174B(2030); 다수 공급자가 현 세대 칩 교체 전에 투자 회수를 못 할 것. 2030년까지 AI 인프라 지출 중 3.5조 달러+ 손상 노출.
+TechTarget(10/14) Will Sommer: "ceasing independent operations may include acquisition, it may include partnerships, or it may include outright failure."
+대조: 삼프로 성상현 「네오클라우드 80% 소멸」 → 원문은 '독립 운영 중단'(인수 포함). 성상현의 '빅테크가 싸게 떠안는다' 시나리오와 원문 정의가 오히려 일치.

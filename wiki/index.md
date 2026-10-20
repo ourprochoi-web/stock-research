@@ -2,6 +2,7 @@
 | 영역 | 페이지 | 요지 |
 |---|---|---|
 | battery | [lfp-patent-history](battery/lfp-patent-history.md) | LFP 특허 소송사, 한국 NCM·중국 LFP 분기 |
+| battery | [large-cylindrical-46-series](battery/large-cylindrical-46-series.md) | 46계열 원통형 양산·공급사(BMW Gen6·EVE·CATL) |
 | companies | [tesla-early-history](companies/tesla-early-history.md) | 2003 창업~2010 상장 |
 | memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 |
 | ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 |
@@ -31,6 +32,24 @@
 | policy | [us-government-equity-stakes](policy/us-government-equity-stakes.md) | 미국 정부 지분 35개사(인텔 9.9%·MP 15%·고려아연 테네시 40% 등) |
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
+| space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
+| macro | [china-activity-data](macro/china-activity-data.md) | 중국 분기 GDP·월간 활동지표·위안 고시 이력 |
+| geopolitics | [inter-korean-border-tensions](geopolitics/inter-korean-border-tensions.md) | 남북 접경 긴장·북측 담화·확성기·경고사격 연표 |
+| macro | [korea-margin-credit](macro/korea-margin-credit.md) | 신용잔고·예탁금·반대매매 이력(7월·10월) |
+| crypto | [btc-flows](crypto/btc-flows.md) | 고래·거래소 보유량·ETF 흐름 |
+| industry | [newspaper-digital-transition](industry/newspaper-digital-transition.md) | 신문 디지털 전환·NYT 모델·김동환 신문사 시도 |
+| energy | [diesel-market](energy/diesel-market.md) | 경유 수급·중국 수출 쿼터·러시아 딜·EIA 가동률 |
+| macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
+| macro | [africa-urbanization](macro/africa-urbanization.md) | 아프리카 도시화·비공식 경제 |
+| policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
+| geopolitics | [korea-us-alliance](geopolitics/korea-us-alliance.md) | 한미 전작권·핵잠·대미투자 마찰 |
+| autos | [adas-l2-comparison](autos/adas-l2-comparison.md) | FSD/TAD·샤오펑 XNGP 시승 비교·유럽 승인 |
+| energy | [oil-gas-benchmarks](energy/oil-gas-benchmarks.md) | Dated Brent·선물 격차·EU 가스 재고 이력 |
+| power | [doe-202c-orders](power/doe-202c-orders.md) | DOE 202(c) 긴급명령(PJM 대형 부하 백업 발전) |
+| materials | [abf-substrate](materials/abf-substrate.md) | ABF 기판 수급 추정·증설 일정 |
+| quantum | [error-correction-milestones](quantum/error-correction-milestones.md) | 양자 오류 정정 이정표(매직 스테이트) |
+| macro | [us-treasury-yields](macro/us-treasury-yields.md) | FRED DGS5·DGS10 종가·PPI |
+| geopolitics | [taiwan-strait-activity](geopolitics/taiwan-strait-activity.md) | 대만 국방부 PLA 일일 집계 |
 | macro | [china-gdp-quarterly](macro/china-gdp-quarterly.md) | 중국 분기 GDP·산업생산·소매 시계열(3Q26 +4.5%) |
 | policy | [china-drone-export-controls](policy/china-drone-export-controls.md) | 중국 공고 2026년 제49호 드론 물항 수출통제(11/18 시행) |
 | policy | [korea-industrial-safety-penalty](policy/korea-industrial-safety-penalty.md) | 산안법 개정: 산재 사망 3명+ 기업 영업이익 최대 5% 과징금(2026-10-20 국무회의) |
