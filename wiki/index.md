@@ -39,3 +39,5 @@
 | macro | [france-fiscal-politics](macro/france-fiscal-politics.md) | 프랑스 시위·예산 교착·국채 4.9%(24년 만 최고) |
 | macro | [italy-family-business](macro/italy-family-business.md) | 이탈리아 가족기업 85%·10인 미만 94.8%·증시 조달 3.9%·지수 20년 정체(④) |
 | autos | [china-ev-cost-korea-entry](autos/china-ev-cost-korea-entry.md) | 중국 EV 원가 2만 vs 유럽 3.1만 달러·한국 진입·이탈리아 생산 21만·생산보조금 논쟁 |
+| methodology | [nxt-premarket-price-formation](methodology/nxt-premarket-price-formation.md) | NXT 프리마켓 2027-01-18 시가 단일가·1주 하한가 사례·기준가(KRX 정규장 종가) 함의 |
+| macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |

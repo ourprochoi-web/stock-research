@@ -1,0 +1,18 @@
+https://t.me/Samsung_Global_AI_SW/4828
+2026-10-20 20:13:53 KST
+
+오픈AI, COBOL 등 레거시 프로그래밍 언어 코딩 성능 대폭 개선
+
+: 오픈AI가 COBOL, Fortran, Visual Basic 등 학습 데이터가 부족한 프로그래밍 언어에서 최신 모델의 소프트웨어 개발 및 마이그레이션 성능 개선 결과 발표
+
+: 자체 개발한 MultiLangBench에서 GPT-6 Astra의 평균 테스트 통과율은 87.4%로 GPT-5.6 Sol(26.8%) 대비 대폭 상승. 20개 언어 모두에서 성능 개선
+
+: GPT-6 Luna 역시 평균 40.3%를 기록하며 GPT-5.6 Sol을 상회. 샘플당 API 비용은 $0.77로 기존 $3.48 대비 78% 절감
+
+: COBOL 코드를 C++, Java, Python 등으로 변환하는 마이그레이션 평가에서 GPT-6.1 Sol의 정확도는 86.6%(vs GPT-5.6 Sol 5.4%). API 비용은 39% 낮았으며, 추론 강도를 높이면 정확도 97.9% 달성
+
+: COBOL은 온라인 뱅킹 시스템의 40% 이상, 대면 신용카드 거래의 80%, ATM 거래의 95%를 지원하는 등 금융권 핵심 인프라에 광범위하게 활용
+
+: 오픈AI는 이번 성능 개선이 레거시 시스템의 유지보수 및 현대화를 가속화할 것으로 기대. 다만 실제 운영 환경에서는 전문가 검토와 추가 테스트가 필요하다고 강조
+
+https://openai.com/index/low-resource-programming-languages
