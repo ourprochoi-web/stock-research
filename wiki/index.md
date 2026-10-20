@@ -38,3 +38,4 @@
 | crypto | [onchain-app-era](crypto/onchain-app-era.md) | 크립토 인프라→앱 전환 주장·ETF 유출·스트레티지 수급(C) |
 | macro | [france-fiscal-politics](macro/france-fiscal-politics.md) | 프랑스 시위·예산 교착·국채 4.9%(24년 만 최고) |
 | macro | [italy-family-business](macro/italy-family-business.md) | 이탈리아 가족기업 85%·10인 미만 94.8%·증시 조달 3.9%·지수 20년 정체(④) |
+| autos | [china-ev-cost-korea-entry](autos/china-ev-cost-korea-entry.md) | 중국 EV 원가 2만 vs 유럽 3.1만 달러·한국 진입·이탈리아 생산 21만·생산보조금 논쟁 |
