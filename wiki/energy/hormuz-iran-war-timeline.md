@@ -22,3 +22,4 @@ related: open:oil-judgment · open:war-coverage · regime
 | 2026-10-17 | IRGC 영상 via intake/collected.jsonl c-20261018-t11 | C | 혁명수비대 해군이 공격받은 두 번째 VLCC 화재 영상 공개 (주장) |
 | 2026-10-17 10:30 UTC | UKMTO via intake/collected.jsonl c-20261018-t17 | B | 예멘 알무칼라 남동쪽 약 140해리(259km)에서 LNG선 겨냥 총격 — 7명 탄 소형 보트 2발, 무장 보안팀 경고사격 2발 후 이탈 |
 | 2026-10-18 | 이란 외무장관 via intake/collected.jsonl c-20261018-t53 · t66 | C | 「호르무즈 재개방 일주일 제안 유효 — 미국이 조건을 받으면 6일 안에 개방, 7일째 협상 재개」 (주장) |
+| 2026-10-20 | t.me/insidertracking/66729 · 66752 · 66744 | B | 이란, 전쟁 재개 시 호르무즈 통과 해저 인터넷 케이블 7개 공격 위협(주장). 미 SPR 2억 8,270만 배럴로 1982년 10월 이후 최저(DOE 자료 보도). 사우디 FII 2027 연기 |
