@@ -1,0 +1,18 @@
+https://t.me/Samsung_Global_AI_SW/4825
+2026-10-20 15:53:38 KST
+
+미니맥스 MiniMax M3.1 Flash 출시  : 익명 모델 Space Bunny의 정식 버전으로, 초기 모델은 운영 기간 동안 200조 개 이상의 토큰을 처리. 에이전트 작업, 코딩, Computer Use, 사이버보안 전반에서 성능 개선  : 복잡한 기업 업무 자동화를 평가하는 AutomationBench-AA에서 최상위권 성능 기록. 금융 업무 평가인 BankerToolBench에서는 76.2점 달성  : 코딩 벤치마크 DeepSWE v1.1에서…미니맥스 MiniMax M3.1 Flash, AAII 42점 기록
+
+: AAII 42점으로 기존 M3(29점) 대비 13점 상승. GLM-5.3-Flash(42점)와 동률이며, Gemini 3.8 Flash(41점)를 앞섰으나 DeepSeek V4.1 Flash 1017(45점)에는 뒤처짐
+
+: 복잡한 추론 성능이 크게 개선. HLE 48%(vs M3 39%), CritPt 22%(vs M3 4%) 기록. HLE에서는 DeepSeek V4.1 Flash 1017(43%)과 GLM-5.3-Flash(40%)를 상회
+
+: 입력 $0.15, 출력 $0.60(100만 토큰당). 작업당 평균 비용은 $0.22로 기존 M3($0.51) 대비 절반 이하(vs DeepSeek $0.26, GLM-5.3-Flash $0.28)
+
+: 평가 과정에서 생성한 토큰은 1.89억 개(vs DeepSeek 2.24억 개, GLM-5.3-Flash 3.24억 개). 출력 토큰 사용량 감소가 비용 효율성 개선에 기여
+
+: 사실 정확성을 평가하는 AA-Omniscience에서 정답률 56%로 DeepSeek(43%)와 GLM-5.3-Flash(28%)를 상회. 다만 환각 발생률은 93%로 높아 신뢰성 측면의 한계 존재
+
+: 텍스트 및 이미지 입력, 텍스트 출력을 지원하며 100만 토큰의 컨텍스트 윈도우 제공. 현재 자체 API로 이용 가능하며, 10월 23일 모델 가중치 공개 예정
+
+https://x.com/ArtificialAnlys/status/2112211865128608002
