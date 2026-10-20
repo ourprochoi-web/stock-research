@@ -11,7 +11,13 @@
   soonsal  일일 브리핑 soonsal.com/newsletters/{YYYY}/{MMDD}.html — 매일 11~12시 KST 발행 · 2차 요약(②~③)
   tsmc     월별 매출 investor.tsmc.com/english/monthly-revenue/{YYYY} — 월 10일경 갱신 · ① 등급
 실패(차단·404)도 status 와 host 를 남긴다 — 「못 한다」에는 시도 기록이 붙어야 한다(§W5).
-용법: collect.py [--dry-run] [--date YYYY-MM-DD]
+용법: collect.py [--dry-run] [--no-macro] [--date YYYY-MM-DD]
+
+2026-10-21 (Kenneth 승인 — 10/07·10/19 거짓 404 재발 방지):
+  · 수집일: --date > 환경변수 COLLECT_DATE(update-prices.yml 이 잡 시작 시각의 KST 날짜로 고정) >
+    KST 현재 시각(단 06:00 KST 전이면 전날). 시세 봇이 몇 시간 밀려 자정을 넘겨도 시작일로 적는다.
+  · 같은 날 (host, kind) 중복 방지는 status=ok 행만 건너뛴다. 404·blocked 등 실패 행은 다시 받고,
+    결과(성공이든 또 실패든)로 그 행을 같은 id 그대로 제자리 교체한다 — 줄이 늘지 않는다.
 """
 import hashlib
 import io
@@ -29,8 +35,39 @@ FILES = os.path.join(ROOT, "intake", "files")
 UA = "ourprochoi Research (kenchoi@keywestaim.com)"
 
 
+KST = timezone(timedelta(hours=9))
+DAY_CUTOFF_HOUR = 6  # 이 시각(KST) 전의 실행은 전날 수집으로 본다 — 자정 넘김 실행 보호
+
+
 def kst_today():
-    return datetime.now(timezone(timedelta(hours=9))).date()
+    return datetime.now(KST).date()
+
+
+def collection_day(argv, now=None):
+    """수집일 결정: --date > COLLECT_DATE 환경변수 > KST 시각(06:00 전이면 전날)."""
+    if "--date" in argv:
+        return datetime.strptime(argv[argv.index("--date") + 1], "%Y-%m-%d").date()
+    env = os.environ.get("COLLECT_DATE", "").strip()
+    if env:
+        return datetime.strptime(env, "%Y-%m-%d").date()
+    now = now or datetime.now(KST)
+    if now.hour < DAY_CUTOFF_HOUR:
+        return (now - timedelta(days=1)).date()
+    return now.date()
+
+
+def replace_line(rec_id, new_rec):
+    """같은 id 의 줄을 제자리 교체한다(줄 순서 유지)."""
+    lines = io.open(LOG, encoding="utf-8").read().splitlines()
+    out, hit = [], False
+    for ln in lines:
+        if ln.strip() and not hit and json.loads(ln).get("id") == rec_id:
+            out.append(json.dumps(new_rec, ensure_ascii=False)); hit = True
+        else:
+            out.append(ln)
+    if not hit:
+        raise KeyError(rec_id)
+    io.open(LOG, "w", encoding="utf-8").write("\n".join(out) + "\n")
 
 
 def fetch(url, timeout=25):
@@ -230,9 +267,7 @@ def macro_record(day, ids, dry):
 
 def main(argv):
     dry = "--dry-run" in argv
-    day = kst_today()
-    if "--date" in argv:
-        day = datetime.strptime(argv[argv.index("--date") + 1], "%Y-%m-%d").date()
+    day = collection_day(argv)
     ids, hashes = existing_ids_and_hashes()
     targets = [
         dict(kind="뉴스레터", key="soonsal", host="soonsal.com",
@@ -245,19 +280,20 @@ def main(argv):
              file=f"tsmc/monthly-revenue-{day:%Y}.html", monthly=True),
     ]
     written = 0
-    # 같은 날 같은 host 의 실패 기록이 이미 있으면 다시 적지 않는다(2026-09-15 — 수동 재실행 시 중복 방지)
-    seen_today = set()
+    # 같은 날 같은 (host, kind) 행: ok 면 건너뛰고(2026-09-15 중복 방지), 실패 행이면 다시 받아 제자리 교체(2026-10-21)
+    seen_today = {}
     if os.path.exists(LOG):
         for ln in io.open(LOG, encoding="utf-8"):
             if ln.strip():
                 d = json.loads(ln)
                 if d.get("date") == f"{day:%Y-%m-%d}":
-                    seen_today.add((d.get("host"), d.get("kind")))
+                    seen_today.setdefault((d.get("host"), d.get("kind")), d)
     for t in targets:
-        if (t["host"], t["kind"]) in seen_today:
+        prev = seen_today.get((t["host"], t["kind"]))
+        if prev and prev.get("status") == "ok":
             continue
         status, body = fetch(t["url"])
-        rec = {"id": next_id(ids, day), "date": f"{day:%Y-%m-%d}", "kind": t["kind"], "host": t["host"],
+        rec = {"id": prev["id"] if prev else next_id(ids, day), "date": f"{day:%Y-%m-%d}", "kind": t["kind"], "host": t["host"],
                "path": t["url"].split(t["host"], 1)[1], "subject": t["subject"], "grade_hint": t["grade_hint"],
                "status": "ok" if status == 200 and body else ("blocked" if status in (0, 403, 407) else str(status)),
                "file": None, "routed": ("data" if t["kind"] in ("XBRL", "매크로", "월지표", "연결성", "원문", "시세") else False), "auto": True}
@@ -277,9 +313,11 @@ def main(argv):
                     rec["candidates"] = cands[:20]
             except Exception:  # noqa: BLE001
                 pass
+        if prev:
+            rec["retry_of"] = prev.get("status")
         if rec["status"] == "ok":
             h = hashlib.sha256(body).hexdigest()
-            if h in hashes:  # 같은 내용(월지표가 안 바뀐 날) — 줄을 늘리지 않는다
+            if h in hashes and not prev:  # 같은 내용(월지표가 안 바뀐 날) — 줄을 늘리지 않는다
                 continue
             rec["sha256"] = h
             rec["bytes"] = len(body)
@@ -290,11 +328,13 @@ def main(argv):
                 io.open(path, "wb").write(body)
         else:
             rec["note"] = f"HTTP {status}" if status else body.decode(errors="ignore")[:160]
-            if t["monthly"] and status == 404:
+            if t["monthly"] and status == 404 and not prev:
                 continue  # 연도 페이지가 아직 없을 때만 조용히 넘어간다
         ids.add(rec["id"])
         if dry:
-            print("[dry]", json.dumps(rec, ensure_ascii=False))
+            print("[dry]" + (" (교체)" if prev else ""), json.dumps(rec, ensure_ascii=False))
+        elif prev:
+            replace_line(prev["id"], rec)
         else:
             io.open(LOG, "a", encoding="utf-8").write(json.dumps(rec, ensure_ascii=False) + "\n")
         written += 1

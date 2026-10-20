@@ -16,6 +16,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # 2026-10-21: 수집일을 잡 시작 시각(KST)으로 고정한다. 예약 실행이 몇 시간 밀려 자정을 넘기면
+      #   collect.py 가 다음 날 날짜로 순살을 받아 거짓 404 를 남겼다(10/07·10/19, 10745b4).
+      #   잡 자체가 자정 뒤에 시작될 수도 있어 collect.py 와 같은 규칙(06:00 KST 전 = 전날)을 여기서도 쓴다.
+      - name: Pin collection date (KST, job start · 06:00 cutoff)
+        run: echo "COLLECT_DATE=$(TZ=Asia/Seoul date -d '-6 hours' +%F)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -36,7 +42,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add portfolio/data/prices.json intake/collected.jsonl intake/files
           git diff --cached --quiet && exit 0
-          git commit -m "Update prices · intake ($(date +%Y-%m-%d))"
+          git commit -m "Update prices · intake (${COLLECT_DATE})"
           # 2026-09-20: main 에 동시 푸시가 흔해졌다(시세 봇 · 수집기 3종 · 세션 여럿).
           #   재시도 없이 push 하면 먼저 올린 쪽이 이기고 이쪽 수집분이 조용히 사라진다
           #   — 실제로 났다(collect-fetch run 35485990057: 수집 성공 · 커밋 성공 · push 거절 · 결과 소실).
