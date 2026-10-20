@@ -1594,7 +1594,16 @@
         "energy/us_energy_hegemony_17.html#T1",
         "energy/us_energy_hegemony_17.html#T2"
       ],
-      "tracked_price": false
+      "tracked_price": false,
+      "watch": [
+        {
+          "date": "2026-10-20",
+          "grade": "②",
+          "rid": "r-20261020-569",
+          "one": "2028년 초 트리니다드 해상 초심해 탐사 시추 추진(최종 결정은 탐사 데이터 뒤).",
+          "source": "intake/collected.jsonl (TG 10/20 14:36 패킷)"
+        }
+      ]
     },
     "CVX": {
       "name": "Chevron",
@@ -4494,6 +4503,13 @@
           "rid": "r-20261020-521",
           "one": "③ MS: Muse DAU 1억당 GPU 1–4GW 가능, 목표 $820(전언). 판정 창은 10/22 KST 실적·캡엑스 가이던스.",
           "source": "intake/files/x/2026-10-20/r521-meta-ms-muse.txt"
+        },
+        {
+          "date": "2026-10-20",
+          "grade": "②",
+          "rid": "r-20261020-569",
+          "one": "호주 정부, 16세 미만 SNS 금지 위반으로 메타·틱톡·유튜브 소송 추진(최대 벌금 약 7,600만 달러).",
+          "source": "intake/collected.jsonl (TG 10/20 14:36 패킷)"
         }
       ],
       "watch_digest": {
@@ -7208,6 +7224,13 @@
           "rid": "r-20261020-561",
           "one": "10/20 레딧 WSB 12시간 트렌딩 1위(언급 약 245, 집계 방법 미공개). 리테일 관심도, 테제 재료 아님.",
           "source": "intake/collected.jsonl (TG 10/20 13:38 패킷)"
+        },
+        {
+          "date": "2026-10-20",
+          "grade": "②",
+          "rid": "r-20261020-568",
+          "one": "ARK 10/19 약 810만 달러 매수(일일 매매 공개 전언). 규모 작음, 크레딧 재료 아님.",
+          "source": "intake/collected.jsonl (TG 10/20 14:36 패킷)"
         }
       ],
       "watch_digest": {
@@ -8589,6 +8612,13 @@
           "rid": "r-20261013-16",
           "one": "② Regna AI: 팔란티어는 학습 인프라·현장 지원. 주권 모델을 프론티어 대안으로 파는 구조. 프랑스 이탈과 별 칸.",
           "source": "ondas IR 2026-10-12"
+        },
+        {
+          "date": "2026-10-20",
+          "grade": "②",
+          "rid": "r-20261020-568",
+          "one": "ARK 10/19 약 356만 달러 매도(일일 매매 공개 전언).",
+          "source": "intake/collected.jsonl (TG 10/20 14:36 패킷)"
         }
       ]
     },

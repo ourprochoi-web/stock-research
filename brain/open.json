@@ -375,6 +375,12 @@
    "since": "2026-10-20",
    "page": "hbm-packaging/hbm_pkg_company_samsung.html",
    "needs": "주간 감사에서 T5 철회·정정·유지를 정하고, 채점표 분모(1H26 연환산 vs 최근매출액)를 하나로 박는다. 3Q26 실적으로 분모가 바뀌면 재측정. Lead는 HTML을 고치지 않음."
+  },
+  {
+   "id": "pdf-debt:samsungpop-personal-agent-20261020",
+   "what": "삼성증권 '개인 에이전트가 온다'(글로벌주식×Tech, 10/20) PDF가 TLS 실패로 미확보 — 목차만 r-20261020-570.",
+   "since": "2026-10-20",
+   "needs": "PDF(samsungpop streamdocs 2026102009381687K_02_02.pdf)를 받아 메모리·CPU·HDD 수요 주장을 ai_value_chain_guide_v2 T7에 대보고 정정 줄로 대체."
   }
  ],
  "parked": [
@@ -875,7 +881,14 @@
   {
    "id": "x-cand-pending-20261020",
    "since": "2026-10-20",
-   "what": "카드 없는 이름 대기 목록(미승인 후보 카드 안 염 · r-20261020-536). ASTS(EU 4사 MSS LOI 협력사 r-524) · SIVE(CW DFB 1억 개+ r-526) · LPTH·구치앤하우스고(게르마늄 대체 광학 r-529) · CLF(2027 분기 EBITDA 10억+ 언급 ③) · FABC(KOPN 19.9%) · 키옥시아·이비덴(JPM APAC 전언 ③). 반증: Kenneth가 개설을 거절하면 목록에서 지운다."
+   "what": "카드 없는 이름 대기 목록(미승인 후보 카드 안 염 · r-20261020-536). ASTS(EU 4사 MSS LOI 협력사 r-524) · SIVE(CW DFB 1억 개+ r-526) · LPTH·구치앤하우스고(게르마늄 대체 광학 r-529) · CLF(2027 분기 EBITDA 10억+ 언급 ③) · FABC(KOPN 19.9%) · 키옥시아·이비덴(JPM APAC 전언 ③). 반증: Kenneth가 개설을 거절하면 목록에서 지운다.",
+   "updates": [
+    {
+     "date": "2026-10-20",
+     "rid": "r-20261020-569",
+     "one": "추가: ABB(미쓰비시전기 저압 배전 51% 4.95억 달러 JV)·보잉(737 MAX 10 인증 예정)·지오플랫폼(IPO 사전 신청 260억+). 카드 안 염."
+    }
+   ]
   },
   {
    "id": "kr-cand-pending-20261020tg",
@@ -896,6 +909,11 @@
      "date": "2026-10-20",
      "rid": "r-20261020-560",
      "one": "루닛(기존 목록) ESMO 2026 본문 숫자: PD-L1 993명 일치율 73%·HER2 Study B 진출. 카드 안 염."
+    },
+    {
+     "date": "2026-10-20",
+     "rid": "r-20261020-565",
+     "one": "추가: 엘리스(한국 DC, 계획 134MW, IPO 시초가 −32% ②). 카드 안 염."
     }
    ]
   }
