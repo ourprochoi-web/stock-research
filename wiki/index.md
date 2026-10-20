@@ -60,3 +60,4 @@
 | autos | [china-ev-cost-korea-entry](autos/china-ev-cost-korea-entry.md) | 중국 EV 원가 2만 vs 유럽 3.1만 달러·한국 진입·이탈리아 생산 21만·생산보조금 논쟁 |
 | methodology | [nxt-premarket-price-formation](methodology/nxt-premarket-price-formation.md) | NXT 프리마켓 2027-01-18 시가 단일가·1주 하한가 사례·기준가(KRX 정규장 종가) 함의 |
 | macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |
+| memory | [korea-dram-export-unit-value](memory/korea-dram-export-unit-value.md) | HSK 8542321010 D램 수출 단위가치 월별(2025-10~2026-09)·잠정/확정 기준선·고정가 |
