@@ -10,6 +10,14 @@
 
 > Parent merge 노트: 이 파일은 `cw-laser-leaders` 판단 0 메우기용 intake. `brain/*.json` 비파괴. 미즈호 09-14 CW 점유(③)와 TrendForce CW **캐파** 리더십(③)은 **지표가 다름**(매출 점유 ≠ 캐파) — 교차 확인 전 한 숫자로 합치지 말 것.
 
+## Ledger deltas (newest first)
+
+### 2026-10-20 — X A-tier: Sivers(SIVE) CW DFB (③ semiconsight)
+
+- 2027 4Q부터 CW DFB 연 1억 개+ 계획, WIN Semi 위탁 병행, JBL 1.6T·GFS CPO 참조 설계, 70–100mW 가장 타이트. 제품별 매출 없음 → 숫자 표에 안 넣음. 카드 없음(대기 목록). 판정 `r-20261020-526`.
+
+메모: `../2026-10-20/x-atier-lite-sive-kopn.md`.
+
 ---
 
 ## 0. 한 줄 (Lead)

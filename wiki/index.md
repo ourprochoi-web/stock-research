@@ -31,3 +31,5 @@
 | policy | [us-government-equity-stakes](policy/us-government-equity-stakes.md) | 미국 정부 지분 35개사(인텔 9.9%·MP 15%·고려아연 테네시 40% 등) |
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
+| macro | [china-gdp-quarterly](macro/china-gdp-quarterly.md) | 중국 분기 GDP·산업생산·소매 시계열(3Q26 +4.5%) |
+| policy | [china-drone-export-controls](policy/china-drone-export-controls.md) | 중국 공고 2026년 제49호 드론 물항 수출통제(11/18 시행) |
