@@ -35,3 +35,5 @@
 | policy | [china-drone-export-controls](policy/china-drone-export-controls.md) | 중국 공고 2026년 제49호 드론 물항 수출통제(11/18 시행) |
 | policy | [korea-industrial-safety-penalty](policy/korea-industrial-safety-penalty.md) | 산안법 개정: 산재 사망 3명+ 기업 영업이익 최대 5% 과징금(2026-10-20 국무회의) |
 | autos | [china-auto-hud-emirror](autos/china-auto-hud-emirror.md) | 차량 HUD·e-미러 출하(옴디아 1Q HUD +26%·e-미러 +61%) |
+| crypto | [onchain-app-era](crypto/onchain-app-era.md) | 크립토 인프라→앱 전환 주장·ETF 유출·스트레티지 수급(C) |
+| macro | [france-fiscal-politics](macro/france-fiscal-politics.md) | 프랑스 시위·예산 교착·국채 4.9%(24년 만 최고) |
