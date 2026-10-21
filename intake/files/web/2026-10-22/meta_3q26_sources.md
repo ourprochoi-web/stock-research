@@ -1,0 +1,14 @@
+# Meta 3Q26 (2026-10-21 US, ~05:00 KST 10/22) — Lead 확인 07:45 KST
+- ① IR 보도자료: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx
+  - 3Q capex(금융리스 원금 포함) $34.91B (PP&E 33.942 + 리스 0.964). 9M 합계 $85.82B.
+  - "We anticipate 2026 capital expenditures, including principal payments on finance leases, to be in the range of $135-145 billion, narrowed from our prior outlook of $130-145 billion."
+  - "Looking beyond 2026, we are still developing our budget and capacity plans for next year, but we expect to continue investing aggressively to support both our core business and emerging AI initiatives."
+  - FCF −$2.12B, 현금·유가증권 $82.45B(2Q $90.3B), 장기부채 $80.92B, 자사주 매입 0, 부채 발행 3Q 0(9M $24.91B), 'Proceeds from data center venture distribution' $1.037B, 제한 현금(기타자산) $12.5B.
+  - Class C 무의결권 주식 신설(2027-01-19 효력, 1:1 배당=2:1 분할 효과): "Creating a New Class of Shares for Capital Raising, Employee Compensation, Potential Acquisitions..."
+  - 매출 $64.60B(+26%), 4Q 가이던스 $73–76B, 총비용 2026 $175–179B(법률 9.9B 반영), RL 2027 손실 약 $15B.
+- ② 콜 녹취(Benzinga): https://www.benzinga.com/news/26/10/62514401/meta-platforms-q3-2026-earnings-call-transcript
+  - Susan Li(2027): "we are quite early in developing our budget and capacity plans for next year ... evaluating a lot of investment proposals that have attractive return profiles ... figure out how we can fund as many of those as possible within the construct of our overall budget and financial goals ... nothing more specific or quantitative to share until we get to the Q4 call"
+  - Susan Li(Class C): "It will expand our funding tools ... We don't have any specific financing plans to announce at this time, but we thought it was prudent to establish the appropriate capital structure framework"
+  - Zuckerberg: "we are building out the capacity to serve more than a billion people over the next few years"; Muse 10M+ 설정(미·캐나다 6주), 설정자 약 25% 일간 사용, 쇼핑 >25%·평균 구매 $200+, 컴퓨트 효율 1년 내 10배+.
+  - 텍사스 허가·CoreWeave·오프밸런스(하이페리온/엘패소) 언급: 녹취에서 찾지 못함.
+- ② CNBC 라이브: 시간외 약 +3%, 캡엑스 컨센 $138.27B; ② Business Insider: 시간외 +4.12%, 컨센 $139.79B, Muse 일간 200만+.
