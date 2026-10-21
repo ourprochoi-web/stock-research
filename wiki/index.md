@@ -61,3 +61,7 @@
 | methodology | [nxt-premarket-price-formation](methodology/nxt-premarket-price-formation.md) | NXT 프리마켓 2027-01-18 시가 단일가·1주 하한가 사례·기준가(KRX 정규장 종가) 함의 |
 | macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |
 | memory | [korea-dram-export-unit-value](memory/korea-dram-export-unit-value.md) | HSK 8542321010 D램 수출 단위가치 월별(2025-10~2026-09)·잠정/확정 기준선·고정가 |
+| ai-finance | [ai-bubble-valuation](ai-finance/ai-bubble-valuation.md) | AI 버블 vs 닷컴 — 선행 PER·CAPE·집중도·벤더 파이낸싱 비교 이력 |
+| companies | [tmo-earnings](companies/tmo-earnings.md) | 써모피셔 분기 실적 이력(카드 없음·watch-only 배경) |
+| macro | [europe-china-competition](macro/europe-china-competition.md) | 유럽–중국 산업 경쟁·의존(배터리·EV·태양광·럭셔리) 이력 |
+| policy | [ai-super-pacs](policy/ai-super-pacs.md) | 미국 AI 정치자금·슈퍼팩(오픈AI vs 앤스로픽 진영)·중간선거 시나리오 |
