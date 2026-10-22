@@ -12,3 +12,4 @@ related: energy/oil_hedge_vehicles.html#T1 · regime
 | 2026-10-19 | WSJ·텔레그래프(채널) · intake/files/telegram/2026-10-19/pull_214157/insider_66698.txt | B | 유럽 천연가스 가격 2022년 12월 이후 최고. EU 가스 재고율 약 74%(5년 평균 89%) |
 | 2026-10-19 | 트라피구라(채널) · intake/files/telegram/2026-10-19/pull_214157/insider_66698.txt | B | 중동 원유 공급 전쟁 전 대비 하루 500만~700만 배럴, 석유제품 약 400만 배럴 감소 (주장 · 원 발언 미개봉) |
 | 2026-10-22 | J.P. Morgan 10/19 via pikachu_aje 8391 · intake/files/telegram/pikachu_aje/2026-10-22/8391.txt | C | (주장) 엘니뇨로 유럽 겨울 온화 전망, JPM 3월말 EU 가스 저장률 전망 28%로 상향(최대 +15%p 여지 중 일부만 반영), TTF 추가 하방 리스크 |
+| 2026-10-22 | FT via insidertracking 66983 · intake/files/telegram/insidertracking/2026-10-22/66983.txt | C | (주장) 이란 전쟁 공급 충격의 미주 수혜: 리스타드 미주 원유 생산 2026~28 약 +10%, 우드맥켄지 미국 2027년 말 하루 1,800만 배럴(전쟁 전 예상 +100만), 미국 디젤·제품 수출 올해 +15%, 셰브론 바카 무에르타 하루 5천→4만 배럴(10년 138억 달러), 토탈 아르헨티나 해상가스 100억, 셸 캐나다 BC LNG 200억, 베네수엘라 하루 약 120만 배럴(+10%) |
