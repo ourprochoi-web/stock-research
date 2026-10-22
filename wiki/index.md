@@ -65,3 +65,5 @@
 | companies | [tmo-earnings](companies/tmo-earnings.md) | 써모피셔 분기 실적 이력(카드 없음·watch-only 배경) |
 | macro | [europe-china-competition](macro/europe-china-competition.md) | 유럽–중국 산업 경쟁·의존(배터리·EV·태양광·럭셔리) 이력 |
 | policy | [ai-super-pacs](policy/ai-super-pacs.md) | 미국 AI 정치자금·슈퍼팩(오픈AI vs 앤스로픽 진영)·중간선거 시나리오 |
+| etf | [single-stock-leveraged-etp](etf/single-stock-leveraged-etp.md) | 국내 단일종목 레버리지 ETP 개인 손실(실현 2.32조·합계 6.31조)·규제 경과 |
+| memory | [dram-fab-roadmap](memory/dram-fab-roadmap.md) | 메모리 팹·노드 로드맵(마이크론 ID1·ID2·히로시마·1δ·3D D램) |
