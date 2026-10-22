@@ -1,0 +1,10 @@
+https://t.me/aetherjapanresearch/25977
+2026-10-22 09:54:19 KST photos=0
+
+마이크론의 DDR6, DDR5 대비 대역폭 2배·LPDDR6는 전력 효율 35% 개선, 모두 차세대 1δ DRAM 노드 기반으로 제작되며, vHBM은 수직 구조로 전환하고 G11 NAND는 400단을 넘어섭니다
+
+마이크론은 DRAM·HBM·NAND 전반에 걸친 다세대 로드맵을 공개하며, AI의 각 단계마다 메모리 수요가 급증하고 있고 에이전틱 AI는 AI 추론 대비 메모리 수요가 30배 늘었으며 피지컬 AI가 10배 이상의 성장이 예상되는 다음 수요처라고 밝혔습니다. DRAM 로드맵의 핵심은 2027년 하반기 양산 램프에 들어갈 1δ(1-델타) 노드로, 1γ 대비 비트 밀도가 20% 중반대 개선되고 옹스트롬 수준의 공정 제어와 첨단 HKMG CMOS를 적용해 미국에서 생산되며, HBM5·vHBM·vEIM·DDR6·LPDDR6 등 고성능 제품을 지원합니다. 이를 기반으로 LPDDR6는 LPDDR5 대비 전력 효율이 35% 이상 개선되어 모바일뿐 아니라 데이터센터에서도 중요해질 것이며(Meta와 데이터센터 적용 협력 중), DDR6는 DDR5 대비 대역폭이 2배 이상이고, 1TB 용량의 RDIMM도 선보일 예정입니다. 마이크론은 복잡성과 비용 문제로 4F² 구조는 추진하지 않고 6F² 미세화를 지속하며, 이후 웨이퍼 본딩(1ε), High-NA EUV(ζA), 신소재(ηA)를 거쳐 3D DRAM으로 나아갈 계획이고, 인터커넥트 밀도를 높이기 위한 하이브리드 본딩을 핵심 기술로 꼽았습니다.
+
+HBM은 표준, 커스텀, 수직 설계로 확장되며, 2026년 출하되는 HBM4 12H(스택당 2.8TB/s)에 이어 HBM5·HBM5E·HBM6가 각각 2028·2029·2030년경 예정되어 있고, 커스텀 HBM은 베이스 다이 로직에 컴퓨트 로직 등 차별화 기능을 넣는 방식입니다. 이와 병행해 연산 다이 위에 메모리를 직접 쌓아 메모리-연산 경로를 최단화하고 와트당 대역폭과 토큰 효율을 높이는 vHBM(2028년경 vHBM1~2030년경 vHBM3)과, 모듈당 약 2TB/s 대역폭과 1pJ/bit 미만 에너지를 목표로 하는 엣지 추론용 vEIM도 개발되며, 이를 위해 16단 마이크로범프·하이브리드 스택, PHY 위 히트 스프레더 등 첨단 패키징 기술이 필요합니다. NAND에서는 G9의 후속인 G11이 웨이퍼-온-웨이퍼 본딩으로 400단 이상과 업계 최고 수준의 셀 피치를 구현해 2027년 하반기 양산 램프에 들어가며, G9 대비 비트 밀도 약 2배, I/O 속도 최대 1.5배, 비트당 데이터 전송 에너지 25% 이상 절감을 제공하고, 이후에는 고이동도 신소재와 초고밀도 셀 구조를 검토하며 고IOPS·고대역폭 AI용 NAND도 개발 중입니다. 마이크론은 향후 10년간 마이크론 리서치 랩에 100억 달러, 마이크론 벤처스에 5억 5천만 달러를 투자하는 등 장기 R&D를 확대해 데이터센터부터 엣지까지 AI 시스템의 핵심인 고성능 메모리 수요에 대응할 수 있는 역대 가장 강력한 위치에 있다고 강조했습니다.
+https://wccftech.com/micron-ddr6-doubles-ddr5-bandwidth-lpddr6-better-power-efficiency-vhbm-vertical-g11-nand-beyond-400-layers/
+[link_preview] https://wccftech.com/micron-ddr6-doubles-ddr5-bandwidth-lpddr6-better-power-efficiency-vhbm-vertical-g11-nand-beyond-400-layers | Micron's DDR6 Doubles DDR5 Bandwidth While LPDDR6 Delivers 35% Better Power Efficiency, Both Built On Its Upcoming 1δ DRAM Node… | Micron has showcased its next-gen DRAM and NAND products which will power upcoming client and enterprise solutions while uplifting AI.
