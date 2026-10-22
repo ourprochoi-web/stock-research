@@ -6250,25 +6250,25 @@
       "note": "지분 상장 전. ai_sw_overview T1·T5가 오픈AI를 언급하나 이번 ARR은 그 반증 창에 안 맞음. 비중·집행 아님.",
       "watch": [
         {
+          "date": "2026-10-22",
+          "grade": "②",
+          "rid": "r-20261022-721",
+          "one": "② 9/27~10/5 안전 연표: 안전 우려로 GPT-6.1 Astra 공개 취소(WSJ)·폭주 에이전트 외부기관 통보·안전 연구원 3명 해고·증류 캠페인 차단·백악관 책임 서약.",
+          "source": "t.me/Samsung_Global_AI_SW"
+        },
+        {
+          "date": "2026-10-22",
+          "grade": "②",
+          "rid": "r-20261022-720",
+          "one": "② 9/28~10/15 제품 연표: GPT-6.1 Sol(Astra급 ¼ 비용)·출시 직후 긴급 캐파·Astra Ultrafast 8배·28일 매일 개선(속도 +50%)·수학 722편. 매출 숫자 없음.",
+          "source": "t.me/Samsung_Global_AI_SW"
+        },
+        {
           "date": "2026-10-18",
           "grade": "②",
           "rid": "r-20261018-23",
           "one": "② 오픈AI 직원 X: Codex·Work 서브에이전트 컨텍스트 재사용·캐시 연장으로 같은 한도 처리량 확대, GPT-6 Astra Pro 속도 개선, 멀티에이전트 병렬 실행",
           "source": "x.com/thsottiaux/status/2111492673890824348"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "③",
-          "rid": "r-20261016-01",
-          "one": "③ 이지환: 오픈AI 매출 보도는 공시가 아니라 언론이고 이후 정정. 500 대 700 내용은 r-20261009-11·r-20261013-07.",
-          "source": "https://www.youtube.com/watch?v=anzUtqJai9E"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-304",
-          "one": "② 같은 타운홀: 비교에 파트너십의 비공개 기술 정보를 썼다고 함. Doug·Bel은 오픈AI 미확인. 매출 비중 변화 없음.",
-          "source": "https://t.me/Samsung_Global_AI_SW/4792"
         },
         {
           "date": "2026-10-16",
@@ -6318,13 +6318,6 @@
           "source": "https://t.me/aetherjapanresearch/25887"
         },
         {
-          "date": "2026-10-15",
-          "grade": "②",
-          "rid": "r-20261015-902",
-          "one": "② 임원 회의실 녹음장치(9/28쯤 설치). 알포잔 도청 혐의로 FBI 10/9 체포. 회사는 가중치 유출이 없다고 함. 공소장 미개봉.",
-          "source": "soonsal 2026-10-15 c-20261015-01"
-        },
-        {
           "date": "2026-10-20",
           "grade": "②",
           "rid": "r-20261020-541",
@@ -6370,13 +6363,24 @@
           ],
           "one": "10/19 접음(7줄): ② 인사이더 10-05: OpenAI, ChatGPT에 새로운 시각적 광·③ 에테르 10-06: 월가 은행들, 브로드컴과 앤트로픽을 위한 사상 최·② 같은 논문: 가격 조건 없이 GPT-5가 저소득 평균 191불·부자 ",
           "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — 야간 Lead 정리 10/19"
+        },
+        {
+          "date": "2026-10-22",
+          "into": "ai-sw/ai_sw_overview.html#T1",
+          "rids": [
+            "r-20261015-902",
+            "r-20261016-01",
+            "r-20261016-304"
+          ],
+          "one": "10/22 접음(3줄): ② 임원 회의실 녹음장치(9/28쯤 설치). 알포잔 도청 혐의로 FBI  · ③ 이지환: 오픈AI 매출 보도는 공시가 아니라 언론이고 이후 정정. 5 · ② 같은 타운홀: 비교에 파트너십의 비공개 기술 정보를 썼다고 함. Do",
+          "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — Lead 일일 정리 10/22"
         }
       ],
       "watch_digest": {
         "asof": "2026-10-19",
         "n": 18,
         "one": "② 오픈AI 직원 X: Codex·Work 서브에이전트 컨텍스트 재사용·캐시 연장으로 같은 한도 처 / ② 공지: GPT-6 아스트라 프로 개선·멀티에이전트 병렬(프로), 컴퓨트 확충으로 용량 초과 오류 / ② 블룸버그: ~1.4조 달러 가치로 ≥300억 달러 조달 추진(UAE 최대 100억·블랙록 협의) / ③ 이지환: 오픈AI 매출 보도는 공시가 아니라 언론이고 이후 정정. 500 대 7",
-        "note": "2026-10-19 야간: 7줄을 ai_sw_overview.html#T1×7 evidence로 접음. 남은 watch 11줄."
+        "note": "2026-10-19 야간: 7줄을 ai_sw_overview.html#T1×7 evidence로 접음. 남은 watch 11줄. · 2026-10-22: 3줄을 ai-sw/ai_sw_overview.html#T1 evidence로 접음. 남은 watch 11줄."
       }
     },
     "FSLR": {
@@ -6626,6 +6630,13 @@
       "tracked_price": false,
       "note": "정본 테제 페이지 없음. name_index 코드는 CEG.O, 카드 키는 CEG. 비중·집행 아님.",
       "watch": [
+        {
+          "date": "2026-10-22",
+          "grade": "②",
+          "rid": "r-20261022-712",
+          "one": "② 구글과 10억 달러+ 다년 원전 전력 계약 근접 보도(10/6). 성사 시 4대 하이퍼스케일러 전부와 계약. 체결 공시 미확인.",
+          "source": "t.me/insidertracking/65506"
+        },
         {
           "date": "2026-10-01",
           "grade": "②",
@@ -8664,6 +8675,13 @@
       "tracked_price": false,
       "watch": [
         {
+          "date": "2026-10-22",
+          "grade": "②",
+          "rid": "r-20261022-710",
+          "one": "② 레타트루타이드 3상 12mg 80주 체중 −20.8%·A1C 감소, 2027 1Q FDA 신청 계획(9/30 채널, PR 미대조).",
+          "source": "t.me/insidertracking/64984"
+        },
+        {
           "date": "2026-09-29",
           "grade": "②",
           "rid": "r-20260929-52",
@@ -10676,25 +10694,18 @@
       "tracked_price": false,
       "watch": [
         {
+          "date": "2026-10-22",
+          "grade": "②",
+          "rid": "r-20261022-716",
+          "one": "② 거먼(10/6): 10/13 스마트홈 허브·홈팟 미니·애플TV, 이후 OLED 아이패드 미니·M6 터치 OLED 맥 2차 발표 가능. 지난 일정 기록.",
+          "source": "t.me/insidertracking/65533"
+        },
+        {
           "date": "2026-10-18",
           "grade": "④",
           "rid": "r-20261018-08",
           "one": "④ 맹성준 전언: 256GB 맥 스튜디오는 클라우드 업체 대량주문으로 지금 주문해도 2월에도 수령 불가. 로컬 LLM용 유니파이드 메모리 수요 일화, 미확인",
           "source": "https://www.youtube.com/watch?v=ZaM6KLDqCgU"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-204",
-          "one": "② 연합은 CXMT 시험을 적고 한경은 터너스 직접 지목·로이터 미확인을 적음. 중국 판매 한정이 논의의 초점. 서버 퀄 아님.",
-          "source": "yna AKR20261016003100091"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-222",
-          "one": "② 2025-07 폴더블 부품 단가 추정 재게시. 오늘 출하 공시 아님. CXMT는 r-204.",
-          "source": "t.me/YeouidoStory2/118463"
         },
         {
           "date": "2026-10-16",
@@ -10799,13 +10810,23 @@
           ],
           "one": "10/20 접음(1줄): ③ 키뱅크: 2027년 애플향 비트는 소폭 증가, PC·중국 폰 OEM은 −40~50%. 배정 공시 아님.",
           "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — 야간 Lead 정리 10/20"
+        },
+        {
+          "date": "2026-10-22",
+          "into": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T7",
+          "rids": [
+            "r-20261016-204",
+            "r-20261016-222"
+          ],
+          "one": "10/22 접음(2줄): ② 연합은 CXMT 시험을 적고 한경은 터너스 직접 지목·로이터 미확인을 · ② 2025-07 폴더블 부품 단가 추정 재게시. 오늘 출하 공시 아님.",
+          "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — Lead 일일 정리 10/22"
         }
       ],
       "watch_digest": {
         "asof": "2026-10-20",
         "n": 13,
         "one": "② 맥루머스: 아이폰 듀오 미국 배송 1/25로 밀려 연말 품절. 폭스콘 최종 조립 수율  / ② 12월 중국 애플 인텔리전스(iOS 27.3)·제미나이 시리 제외·알리바바 승인 장치  / ② 10/28 LA 'Pro and tell' 행사, OLED 터치 맥북 프로 등 예상(보 / 아이폰 듀오·18 프로 맥스 한·일 워크인 제한(물량 부족·리셀 방지), 사전예약 30분 ",
-        "note": "2026-10-20 야간: 2줄을 ns_china_ai_ecosystem.html#T2×1, hbm_pkg_theme_memory_cycle.html#T7×1 evidence로 접음. 남은 watch 11줄."
+        "note": "2026-10-20 야간: 2줄을 ns_china_ai_ecosystem.html#T2×1, hbm_pkg_theme_memory_cycle.html#T7×1 evidence로 접음. 남은 watch 11줄. · 2026-10-22: 2줄을 hbm-packaging/hbm_pkg_theme_memory_cycle.html#T7 evidence로 접음. 남은 watch 11줄."
       }
     },
     "6146.T": {
