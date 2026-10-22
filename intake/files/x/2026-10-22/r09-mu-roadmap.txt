@@ -1,0 +1,46 @@
+# 마이크론 로드맵 — HBM4E(2027)~HBM6(2030) · NAND G11 2H27 · 1δ 2H27
+x-intake A-tier 2026-10-22 · Lead 처분 r-20261022-09
+원문(영문·한글 그대로). 판정은 brain/routing.jsonl.
+
+--- #324 @psinvestor 2026-10-21 23:40 KST https://x.com/psinvestor/status/2112916828129521716
+$MU is going straight from G9 to G11 in NAND, with volume in the second half of 2027.
+
+More than 400 layers, about twice the bit density of G9, up to 1.5x faster I/O and over 25% less energy per bit moved.
+
+That's the same 2H 2027 window as its next DRAM node. https://t.co/3Bq1qxUCrC https://t.co/2v5pQVGATN
+
+--- #325 @psinvestor 2026-10-21 23:37 KST https://x.com/psinvestor/status/2112916301979217996
+$MU just put dates on its HBM roadmap through 2030.
+
+HBM4E arrives in 2027, then HBM5 and the first vertical HBM in 2028, and HBM6 by 2030. Custom HBM starts with HBM4E.
+
+The goal is token efficiency: more bandwidth and capacity for every watt, which is as they said very URGENT 🔴🔴
+
+--- #326 @psinvestor 2026-10-21 23:36 KST https://x.com/psinvestor/status/2112915985477071275
+$MU says the next leaps in HBM come from packaging.
+
+Dies bonded with copper and no gap between them, stacks 16 layers high, and a second layer of memory sitting right on top of the GPU next to the regular HBM.
+
+Keeping all of it cool is part of the design too. https://t.co/JtkyfP92Cc https://t.co/jMsPFkhMmh
+
+--- #327 @psinvestor 2026-10-21 23:33 KST https://x.com/psinvestor/status/2112915301440569679
+$MU laid out its HBM roadmap in three steps
+Each step shortens the path between memory and compute, which Micron pitches as more tokens per watt. In the vertical design, the memory no longer sits beside the GPU on an interposer. https://t.co/M5sfTnwD3S https://t.co/1iBXme5W2I
+
+--- #328 @psinvestor 2026-10-21 23:30 KST https://x.com/psinvestor/status/2112914437736923268
+$MU put a number on the logic inside its DRAM: more than 10x faster from 2020 to 2030, across five new generations ending in 3D CMOS.
+
+That logic sets how fast data moves in and out of the memory, and $MU calls it the foundation of its AI memory lead. Its HBM4 already runs on a base die Micron builds in-house.
+
+--- #329 @psinvestor 2026-10-21 23:28 KST https://x.com/psinvestor/status/2112913939566928374
+$MU calls its next DRAM node, 1δ, "𝙩𝙝𝙚 𝙬𝙤𝙧𝙡𝙙'𝙨 𝙢𝙤𝙨𝙩 𝙖𝙙𝙫𝙖𝙣𝙘𝙚𝙙 𝘿𝙍𝘼𝙈." It ramps in the second half of 2027.
+
+$MU says it will be made in the U.S. Its new Idaho fab is due to start wafer output in the same window.
+
+1δ is the node behind HBM5. https://t.co/ronq9zSiF1 https://t.co/tYqXHC3aSi
+
+--- #319 @psinvestor 2026-10-21 23:46 KST https://x.com/psinvestor/status/2112918467280318651
+$MU and $META are working together to make LPDDR6 https://t.co/UkRdc2V2Tn https://t.co/VC4T2mYPDC
+
+--- #320 @psinvestor 2026-10-21 23:45 KST https://x.com/psinvestor/status/2112918221213127074
+$MU and WEKA: more than 1.1 exabytes of storage in a single rack, using Micron's 245TB SSDs. https://t.co/K5Rft8iAjA https://t.co/C3O9pz06Uv

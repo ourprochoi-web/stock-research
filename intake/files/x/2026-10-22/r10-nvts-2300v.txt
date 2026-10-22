@@ -1,0 +1,35 @@
+# NVTS 2300V SiC 풀브리지 모듈 샘플링
+x-intake A-tier 2026-10-22 · Lead 처분 r-20261022-10
+원문(영문·한글 그대로). 판정은 brain/routing.jsonl.
+
+--- #317 @psinvestor 2026-10-22 00:00 KST https://x.com/psinvestor/status/2112921866495255037
+$NVTS 𝗽𝘂𝘁 𝗮 2300 𝗩, 8 𝗺Ω 𝗳𝘂𝗹𝗹-𝗯𝗿𝗶𝗱𝗴𝗲 𝘀𝗶𝗹𝗶𝗰𝗼𝗻 𝗰𝗮𝗿𝗯𝗶𝗱𝗲 𝗺𝗼𝗱𝘂𝗹𝗲 𝗶𝗻𝘁𝗼 𝘀𝗮𝗺𝗽𝗹𝗶𝗻𝗴 𝘁𝗼𝗱𝗮𝘆.
+
+Solar farms and grid batteries run on 1500 V DC buses. 1200 V switches can't hold that alone, so designers stack them in three-level converters. A 2300 V switch lets the same converter run two-level, with fewer devices and fewer gate drivers. $WOLF pitched its own 2300 V modules on that same math in 2024.
+
+Per the datasheet, the 8 mΩ is die-only at 25°C. At 175°C it rises to 21 mΩ, and the package adds about 1.9 mΩ per half-bridge. Converters get sized to the hot figure.
+
+1. Q2 revenue was $10.5M, Q3 guide is $13.5M
+2. Management expects AI data center plus grid and energy to pass one-third of revenue by year-end
+3. $NVTS sizes wide-bandgap content in solid-state transformers at $25K to $35K per MW
+
+At $25K per MW, 1 GW of SST-fed data center capacity is $25M of content for all suppliers combined. That is about 2.4x $NVTS's Q2 revenue (my math).
+
+Samples are the start of a design-in. Grid equipment qualifies slowly, and $NVTS has put SSTs inside AI data centers at 2028 and later.
+
+--- #214 @NURadu_ 2026-10-21 21:50 KST https://x.com/NURadu_/status/2112889323196682435
+예전에 관심 있게 지켜보던 기업인데 호재가 떴꾼요 ㄷㄷ
+
+$NVTS 나비타스 반도체가 AI 데이터센터와 전력망 인프라를 겨냥한 2,300V급 SiC 전력 모듈을 선보였습니두
+
+핵심은 전력 손실과 발열을 줄이면서 대규모 전력을 안정적으로 공급하는 기술입니두
+
+AI 데이터센터가 커질수록 GPU만큼 중요한 게 전력 변환 효율인데, 나비타스가 바로 이 시장을 공략하고 있는 겁니두
+
+특히 고체 변압기, 에너지저장장치, 초고속 충전 인프라까지 적용할 수 있다는 점이 흥미롭습니두
+
+다만 해당 제품군은 기존에 공개된 기술인 만큼, 신규 수주보다는 기술 경쟁력과 사업 확장 가능성을 보여주는 소식에 가깝습니두
+
+AI 인프라 전쟁이 반도체 연산 성능을 넘어 전력 공급 효율로 확장되는 모습입니두
+
+오랜만에 다시 관심 가져볼 만하겠습니두
