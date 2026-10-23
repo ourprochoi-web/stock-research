@@ -9,6 +9,7 @@
 | memory | [memory-cycle-background](memory/memory-cycle-background.md) | 가격·밸류에이션 배경 |
 | companies | [samsung-shareholder-return](companies/samsung-shareholder-return.md) | 삼성전자 2026 환원 90~110조·30조 배당·자사주 15조·1월 배분·금산법 |
 | companies | [semco-supply-contracts](companies/semco-supply-contracts.md) | 삼성전기 LTA 공시 이력(MLCC·패키지기판)·2027 누계 |
+| companies | [dts-air-cooled-thermal](companies/dts-air-cooled-thermal.md) | 디티에스 공랭식 열교환기 IPO 이력·AI 냉각 신사업 |
 | memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 |
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 |
 | ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 |
@@ -49,6 +50,7 @@
 | energy | [oil-gas-benchmarks](energy/oil-gas-benchmarks.md) | Dated Brent·선물 격차·EU 가스 재고 이력 |
 | power | [doe-202c-orders](power/doe-202c-orders.md) | DOE 202(c) 긴급명령(PJM 대형 부하 백업 발전) |
 | materials | [abf-substrate](materials/abf-substrate.md) | ABF 기판 수급 추정·증설 일정 |
+| memory | [socamm-module-substrate](memory/socamm-module-substrate.md) | SOCAMM 규격·LPDDR 공급·티엘비 기판 실적 추정 이력 |
 | quantum | [error-correction-milestones](quantum/error-correction-milestones.md) | 양자 오류 정정 이정표(매직 스테이트) |
 | macro | [us-treasury-yields](macro/us-treasury-yields.md) | FRED DGS5·DGS10 종가·PPI |
 | geopolitics | [taiwan-strait-activity](geopolitics/taiwan-strait-activity.md) | 대만 국방부 PLA 일일 집계 |
