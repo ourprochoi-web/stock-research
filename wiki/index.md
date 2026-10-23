@@ -67,3 +67,6 @@
 | policy | [ai-super-pacs](policy/ai-super-pacs.md) | 미국 AI 정치자금·슈퍼팩(오픈AI vs 앤스로픽 진영)·중간선거 시나리오 |
 | etf | [single-stock-leveraged-etp](etf/single-stock-leveraged-etp.md) | 국내 단일종목 레버리지 ETP 개인 손실(실현 2.32조·합계 6.31조)·규제 경과 |
 | memory | [dram-fab-roadmap](memory/dram-fab-roadmap.md) | 메모리 팹·노드 로드맵(마이크론 ID1·ID2·히로시마·1δ·3D D램) |
+| optics | [optical-fiber-supply](optics/optical-fiber-supply.md) | TrendForce 광섬유 1.8억 fiber-km 부족·BIF 가격·2028까지 |
+| companies | [bloom-energy-quarterly](companies/bloom-energy-quarterly.md) | 블룸에너지 3Q26 실적·10-Q 관련자 매출·집중도 |
+| power | [korea-lmp-pricing](power/korea-lmp-pricing.md) | 한국 LMP 모의운영(가격 분리 31.4%·수도권 +10.6원) |
