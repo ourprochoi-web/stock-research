@@ -47,6 +47,7 @@
 | crypto | [btc-flows](crypto/btc-flows.md) | 고래·거래소 보유량·ETF 흐름 |
 | industry | [newspaper-digital-transition](industry/newspaper-digital-transition.md) | 신문 디지털 전환·NYT 모델·김동환 신문사 시도 |
 | industry | [microneedle-glp1-patch](industry/microneedle-glp1-patch.md) | 마이크로니들 패치형 GLP-1 개발 동향(대웅·라파스·릴리 특허) |
+| industry | [korea-outbound-travel-2026](industry/korea-outbound-travel-2026.md) | 한국인 해외여행: 동남아 −·일본 중국 +, 모두투어·하나투어 3Q, 유류할증료 27단계, 중국 무비자 2026-12-31 |
 | energy | [diesel-market](energy/diesel-market.md) | 경유 수급·중국 수출 쿼터·러시아 딜·EIA 가동률 |
 | macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
 | macro | [policy-rate-outlook](macro/policy-rate-outlook.md) | 연준·한은 정책금리·원/달러 연말 전망 이력 |
