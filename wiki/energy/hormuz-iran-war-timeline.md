@@ -42,3 +42,6 @@ related: open:oil-judgment · open:war-coverage · regime
 | 2026-10-05 | 발틱거래소 전언 via t.me/insidertracking (c-20261005-t06 · r-20261022-701) | B | VLCC 운임 1년간 1,000%+ 상승, 페르시아만→중국 일 약 120만 달러+ |
 | 2026-10-05~06 | WSJ via t.me/insidertracking (c-20261005-t08 · c-20261006-t08 · r-20261022-701) | B | 미 공군 B-1B 12대 영국 페어포드에서 철수(IRGC 지시 드론 공격 우려) |
 | 2026-10-15 | WSJ·플라이트레이더 via t.me/insidertracking (c-20261015-t70 · r-20261022-700) | B | 리야드 공항 주기 항공기 134대 → 38대(수요일 정오 기준) |
+| 2026-09-27 | 미 에너지장관 via t.me/insidertracking/64752 · intake/files/telegram/insidertracking/2026-09-27/64752.txt | B | 호르무즈 원유 수송량 하루 약 1,300만 배럴, 미군이 원유·가스·비료 통과 지원 |
+| 2026-10-02 | t.me/insidertracking/65165 · intake/files/telegram/insidertracking/2026-10-02/65165.txt (r-20261023-138) | C | (주장, 채널 조사) 최근 며칠 호르무즈에서 유조선 여러 척 피격, 최근 3척은 쿠웨이트·UAE 소유·임대이며 PGSA 최근 비협조 선박 명단에 포함 |
+| 2026-10-02 | t.me/insidertracking/65213 · intake/files/telegram/insidertracking/2026-10-02/65213.txt | B | 사우디 동서 송유관으로 하루 약 600만 배럴 운송, 이 중 약 450만 배럴 수출 가능 물량 |
