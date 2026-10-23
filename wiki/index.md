@@ -92,3 +92,6 @@
 | power | [us-project-power-large-reactors](power/us-project-power-large-reactors.md) | 미국 대형원전 8기(Project Power)·웨스팅하우스 지분 검토·400GW 목표·APR1400 DC·재가동 비용 대조 |
 | companies | [western-digital-quarterly](companies/western-digital-quarterly.md) | 웨스턴디지털 FQ1'27 실적·콜(출하·클라우드 88%·ePMR/HAMR 일정) |
 | companies | [tesla-q3-2026-analysts](companies/tesla-q3-2026-analysts.md) | 테슬라 3Q26 실적 후 애널리스트 시각(GS·HSBC·트루이스트 등, CNBC 대조) |
+| companies | [us-earnings-slb-axp-3q26](companies/us-earnings-slb-axp-3q26.md) | SLB·AXP 3Q26 실적(10/23) |
+| companies | [revmed-rasonque-rasolute302](companies/revmed-rasonque-rasolute302.md) | 레볼루션 메디슨스 RASONQUE 췌장암 RASolute 302·FDA·CHMP |
+| industry | [korea-financial-holdings-3q26](industry/korea-financial-holdings-3q26.md) | 한국 금융지주 3Q26: 하나·우리 순익·CET1·주주환원 |
