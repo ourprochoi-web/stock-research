@@ -9,6 +9,7 @@
 | memory | [memory-cycle-background](memory/memory-cycle-background.md) | 가격·밸류에이션 배경 |
 | companies | [samsung-shareholder-return](companies/samsung-shareholder-return.md) | 삼성전자 2026 환원 90~110조·30조 배당·자사주 15조·1월 배분·금산법 |
 | companies | [semco-supply-contracts](companies/semco-supply-contracts.md) | 삼성전기 LTA 공시 이력(MLCC·패키지기판)·2027 누계 |
+| companies | [dts-air-cooled-thermal](companies/dts-air-cooled-thermal.md) | 디티에스 공랭식 열교환기 IPO 이력·AI 냉각 신사업 |
 | memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 |
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 |
 | ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 |
@@ -33,11 +34,13 @@
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
 | space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
+| space | [starlink-mobile-spectrum-sites](space/starlink-mobile-spectrum-sites.md) | 스타링크 모바일 주파수(에코스타·그레인·트라이스타)·지상 사이트 협상 이력 |
 | macro | [china-activity-data](macro/china-activity-data.md) | 중국 분기 GDP·월간 활동지표·위안 고시 이력 |
 | geopolitics | [inter-korean-border-tensions](geopolitics/inter-korean-border-tensions.md) | 남북 접경 긴장·북측 담화·확성기·경고사격 연표 |
 | macro | [korea-margin-credit](macro/korea-margin-credit.md) | 신용잔고·예탁금·반대매매 이력(7월·10월) |
 | crypto | [btc-flows](crypto/btc-flows.md) | 고래·거래소 보유량·ETF 흐름 |
 | industry | [newspaper-digital-transition](industry/newspaper-digital-transition.md) | 신문 디지털 전환·NYT 모델·김동환 신문사 시도 |
+| industry | [microneedle-glp1-patch](industry/microneedle-glp1-patch.md) | 마이크로니들 패치형 GLP-1 개발 동향(대웅·라파스·릴리 특허) |
 | energy | [diesel-market](energy/diesel-market.md) | 경유 수급·중국 수출 쿼터·러시아 딜·EIA 가동률 |
 | macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
 | macro | [africa-urbanization](macro/africa-urbanization.md) | 아프리카 도시화·비공식 경제 |
@@ -47,6 +50,7 @@
 | energy | [oil-gas-benchmarks](energy/oil-gas-benchmarks.md) | Dated Brent·선물 격차·EU 가스 재고 이력 |
 | power | [doe-202c-orders](power/doe-202c-orders.md) | DOE 202(c) 긴급명령(PJM 대형 부하 백업 발전) |
 | materials | [abf-substrate](materials/abf-substrate.md) | ABF 기판 수급 추정·증설 일정 |
+| memory | [socamm-module-substrate](memory/socamm-module-substrate.md) | SOCAMM 규격·LPDDR 공급·티엘비 기판 실적 추정 이력 |
 | quantum | [error-correction-milestones](quantum/error-correction-milestones.md) | 양자 오류 정정 이정표(매직 스테이트) |
 | macro | [us-treasury-yields](macro/us-treasury-yields.md) | FRED DGS5·DGS10 종가·PPI |
 | geopolitics | [taiwan-strait-activity](geopolitics/taiwan-strait-activity.md) | 대만 국방부 PLA 일일 집계 |
@@ -61,3 +65,14 @@
 | methodology | [nxt-premarket-price-formation](methodology/nxt-premarket-price-formation.md) | NXT 프리마켓 2027-01-18 시가 단일가·1주 하한가 사례·기준가(KRX 정규장 종가) 함의 |
 | macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |
 | memory | [korea-dram-export-unit-value](memory/korea-dram-export-unit-value.md) | HSK 8542321010 D램 수출 단위가치 월별(2025-10~2026-09)·잠정/확정 기준선·고정가 |
+| ai-finance | [ai-bubble-valuation](ai-finance/ai-bubble-valuation.md) | AI 버블 vs 닷컴 — 선행 PER·CAPE·집중도·벤더 파이낸싱 비교 이력 |
+| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 |
+| companies | [tmo-earnings](companies/tmo-earnings.md) | 써모피셔 분기 실적 이력(카드 없음·watch-only 배경) |
+| macro | [europe-china-competition](macro/europe-china-competition.md) | 유럽–중국 산업 경쟁·의존(배터리·EV·태양광·럭셔리) 이력 |
+| policy | [ai-super-pacs](policy/ai-super-pacs.md) | 미국 AI 정치자금·슈퍼팩(오픈AI vs 앤스로픽 진영)·중간선거 시나리오 |
+| etf | [single-stock-leveraged-etp](etf/single-stock-leveraged-etp.md) | 국내 단일종목 레버리지 ETP 개인 손실(실현 2.32조·합계 6.31조)·규제 경과 |
+| memory | [dram-fab-roadmap](memory/dram-fab-roadmap.md) | 메모리 팹·노드 로드맵(마이크론 ID1·ID2·히로시마·1δ·3D D램) |
+| optics | [optical-fiber-supply](optics/optical-fiber-supply.md) | TrendForce 광섬유 1.8억 fiber-km 부족·BIF 가격·2028까지 |
+| companies | [bloom-energy-quarterly](companies/bloom-energy-quarterly.md) | 블룸에너지 3Q26 실적·10-Q 관련자 매출·집중도 |
+| power | [korea-lmp-pricing](power/korea-lmp-pricing.md) | 한국 LMP 모의운영(가격 분리 31.4%·수도권 +10.6원) |
+| companies | [western-digital-quarterly](companies/western-digital-quarterly.md) | 웨스턴디지털 FQ1'27 실적·콜(출하·클라우드 88%·ePMR/HAMR 일정) |

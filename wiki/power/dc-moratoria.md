@@ -14,3 +14,8 @@ related: ai-infra/ai_power_infra_investment_map.html#T3 · AI capex 테제
 | 2026-10-19 | FT via 한국경제 · intake/files/telegram/2026-10-19/pull_103325/yeouido_118572.txt | B | 미국 전역(대형만) | 레그레이어 집계 올해 대형 DC 최소 47건 지연·철회·저지. 번스타인: 계획 DC 중 실현 가능 약 35% |
 | 2026-10-19 | 채널 요약 · intake/files/telegram/2026-10-19/pull_214157/insider_66699.txt | C | 미국 조지아 | 디지털 리얼티 30억 달러 DC 부지(옛 군사시설)에서 백린 등 유해물질 발견 → 공사 잠정 중단(원 보도 미개봉) |
 | 2026-10-19 | SemiAnalysis 'Datacenters 2027' 무료 공개부 | B | 미국 뉴멕시코 | 오라클 뉴멕시코 사이트 불가항력(Force Majeure) 지연은 2026년 4월 건(10/20 방송의 FT 전달분과 같은 사건으로 보임) |
+| 2026-10-22 | 한경 글로벌마켓 김인엽 L1fGSWNgIbM · intake/files/youtube/hkglobal/2026-10-22/today_packet.md | B(현장 르포) | 미국 새너제이 | 10/15 시청 DC 규제 공청회(319석 만석): 신규 11곳 논의, 규제안 디젤 연 50→25h·소음 55dB(ASR)·식수 냉각 금지·부담금 MW당 5만$·sqft당 4~5$, 99MW DC당 유틸리티세 연 약 560만$(시 추정). 주민 45일 모라토리엄 요구 vs IBEW 332 찬성. 같은 날 OCP 글로벌 서밋 폐막 |
+| 2026-10-22 | Bay City News/SFGate 10/21 · localnewsmatters.org/2026/10/21/san-mateo-county-data-center-zoning/ | B | 미국 산마테오 카운티 | 10/20 감독위원회 비법인 지역 DC 구역 규정 개정 검토 결의(전면 금지 문구 삭제 후 통과, 금지는 별도 조례 필요). 계기: 7월 Global Stack 박람회장 10MW 엣지 DC 제안(카운티 거절). 브리즈번 10/1·SF 10/16(11/30까지)·오클랜드·길로이 임시 중단 |
+| 2026-10-22 | PPIC Statewide Survey 2026-07 · ppic.org | A | 미국 캘리포니아 | 6/29~7/6 성인 1,578명: 거주 지역 AI DC 건설 반대 성인 73%(강하게 44%)·투표 예상층 77%, 환경 영향 우려 63%(베이지역 68%로 최고) |
+| 2026-10-22 | 순살 10/22 · poll.qu.edu releaseid=3969 · governor.ny.gov EO No.62 | A | 미국 전국·뉴욕주 | 퀴니피액 9/24~27: 동네 AI DC 반대 성인 72%(3월 65%)·등록 유권자 73%. 뉴욕 EO 62(7/14) 50MW+ DEC 재량 허가 중단(GEIS 완료까지, 최대 약 1년)+지역 투자 틀(CIF) |
+| 2026-10-23 | 유진투자증권 허재환 via 여의도스토리 118825(갤럽·UMass 인용, 원 조사 미대조) (routing r-20261023-61) | C | 미국 전국 | (주장·④ 글 중 인용) 자기 지역 데이터센터 건설 반대 미국인 60~70% — 원 조사 미개봉, 위 퀴니피액·PPIC(A) 수치와 별개 |
