@@ -10,6 +10,8 @@
 | companies | [samsung-shareholder-return](companies/samsung-shareholder-return.md) | 삼성전자 2026 환원 90~110조·30조 배당·자사주 15조·1월 배분·금산법 |
 | companies | [semco-supply-contracts](companies/semco-supply-contracts.md) | 삼성전기 LTA 공시 이력(MLCC·패키지기판)·2027 누계 |
 | companies | [dts-air-cooled-thermal](companies/dts-air-cooled-thermal.md) | 디티에스 공랭식 열교환기 IPO 이력·AI 냉각 신사업 |
+| companies | [futurechem-fc705](companies/futurechem-fc705.md) | 퓨쳐켐 FC705 미국 2a상 Topline 공시(ORR 38.89%)·국내 3상 |
+| companies | [dnd-pharmatech-nly01](companies/dnd-pharmatech-nly01.md) | 디앤디파마텍 NLY01 신경교종 전임상(UCSF 프리프린트)·적응증 확장 |
 | memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 |
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 |
 | ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 |
@@ -31,6 +33,7 @@
 | policy | [korea-waste-management](policy/korea-waste-management.md) | 하루 5만 톤·수도권매립지·직매립 금지·소각열·캔 재활용 |
 | autos | [sdv-vertical-integration](autos/sdv-vertical-integration.md) | 수평 vs 수직통합·ECU 소스코드 한계·OTA·BYD 평면 팩 |
 | policy | [us-government-equity-stakes](policy/us-government-equity-stakes.md) | 미국 정부 지분 35개사(인텔 9.9%·MP 15%·고려아연 테네시 40% 등) |
+| policy | [korea-aidc-support-package](policy/korea-aidc-support-package.md) | 정부 AIDC 생태계 지원 방안(인허가 일괄처리·국산화 2,000억 정부안·특구 2027H1) |
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
 | space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
