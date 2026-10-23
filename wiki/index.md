@@ -82,5 +82,9 @@
 | optics | [optical-fiber-supply](optics/optical-fiber-supply.md) | TrendForce 광섬유 1.8억 fiber-km 부족·BIF 가격·2028까지 |
 | companies | [bloom-energy-quarterly](companies/bloom-energy-quarterly.md) | 블룸에너지 3Q26 실적·10-Q 관련자 매출·집중도 |
 | power | [korea-lmp-pricing](power/korea-lmp-pricing.md) | 한국 LMP 모의운영(가격 분리 31.4%·수도권 +10.6원) |
+| power | [korea-nuclear-ppa](power/korea-nuclear-ppa.md) | 한국 원전 PPA 법안(의안 2220177)·원전 정산단가 EPSIS |
+| power | [france-arenh-capn](power/france-arenh-capn.md) | 프랑스 ARENH→CAPN(EDF 원전 장기공급) |
+| power | [us-colocation-talen-aws](power/us-colocation-talen-aws.md) | 미국 원전 공동입지: FERC 2024 거부·Talen–AWS 재구성 |
+| power | [mankala-model](power/mankala-model.md) | 핀란드 망칼라 원가 공급 모델(TVO) |
 | companies | [western-digital-quarterly](companies/western-digital-quarterly.md) | 웨스턴디지털 FQ1'27 실적·콜(출하·클라우드 88%·ePMR/HAMR 일정) |
 | companies | [tesla-q3-2026-analysts](companies/tesla-q3-2026-analysts.md) | 테슬라 3Q26 실적 후 애널리스트 시각(GS·HSBC·트루이스트 등, CNBC 대조) |
