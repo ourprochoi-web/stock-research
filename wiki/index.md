@@ -95,3 +95,4 @@
 | companies | [us-earnings-slb-axp-3q26](companies/us-earnings-slb-axp-3q26.md) | SLB·AXP 3Q26 실적(10/23) |
 | companies | [revmed-rasonque-rasolute302](companies/revmed-rasonque-rasolute302.md) | 레볼루션 메디슨스 RASONQUE 췌장암 RASolute 302·FDA·CHMP |
 | industry | [korea-financial-holdings-3q26](industry/korea-financial-holdings-3q26.md) | 한국 금융지주 3Q26: 하나·우리 순익·CET1·주주환원 |
+| industry | [kpop-industry-structure](industry/kpop-industry-structure.md) | K팝 구조: 라이크기획 인세 공시·SM 합치/하이브 멀티레이블·A2O(싱가포르) 데뷔 |
