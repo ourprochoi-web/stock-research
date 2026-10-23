@@ -2,6 +2,13 @@
 
 ## Ledger deltas (newest first)
 
+### 2026-10-20 — X A-tier: MXL 차트 코멘트(④) · KOPN Neural I/O(③)
+
+- 연결칩 숫자 없음. MXL은 개인 차트 코멘트(④, `r-20261020-528`). KOPN·FABC MicroLED 광 I/O는 모델 단계(`r-20261020-527`).
+- 잔여 표 불변: 잔여엣지 MXL > SMTC > CRDO · 매수 서열 **SMTC > CRDO > MXL**.
+
+메모: `../2026-10-20/x-atier-lite-sive-kopn.md`.
+
 ### 2026-09-27 — Nomura Fig.10 스케일-어크로스 (X @pequityresearch · ③ 2차)
 
 재무 수치는 만들지 않았다. 상류 전기칩(DSP·TIA·드라이버)에 **AVGO · CRDO · MRVL**(과 COHR·LITE)이 있다.

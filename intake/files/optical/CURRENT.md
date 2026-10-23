@@ -4,7 +4,7 @@
 > 판정(ⓐⓑⓒ)은 `brain/routing.jsonl` + 테제 `log[]`, 회사 사실은 `brain/entities.json` watch · `brain/facts.json`, 순위·스탠스는 `brain/open.json`(정본). 이 폴더에는 **원문 메모(dated)와 도셰(참고 스냅샷)** 만 둔다 — 도셰는 더 이상 「먼저 병합하는 곳」이 아니다.
 
 
-- **last_updated:** 2026-09-27 (KST)
+- **last_updated:** 2026-10-20 (KST)
 - **매수 서열:** SMTC > CRDO (conditional) > MXL — 정본 `brain/portfolio.json` tranches 2회차(r-20260915-07 · CRDO 조건 r-20260915-28). **잔여엣지 순위**(가격 미반영 크기 · MXL #1)는 다른 축 — `brain/open.json` connectivity-chips-residual-edge. (09-27 r-04 의 「모순」 표기는 C2 정정 r-20260927-06)
 - **Micron gate:** separate track — do not fold MU cycle into optical residual sizing.
 - **2026-09-27 map:** Nomura Fig.10 scale-across via X @pequityresearch (③ secondary, not the Nomura PDF). Layer table in `2026-09-27/nomura-scale-across.md`. **CLS** added as entity 후보 + `WATCH_US` price-only (OCS midstream, §B4). Chinese names on the chart are **not** added to `WATCH_US`. HTML papers untouched. Routing `r-20260927-02` · action no-edge.
@@ -37,4 +37,5 @@ Historical snapshot: `2026-09-23/` (unchanged).
 Memo: [2026-09-24/dubidubabap_photonlink_cpo_ecoc_factmap.md](2026-09-24/dubidubabap_photonlink_cpo_ecoc_factmap.md)  
 Ledger: [facts_ledger.jsonl](facts_ledger.jsonl) · Routing: `u-20260924-x-photonlink01` / `r-20260924-11`
 
+- **2026-10-20:** X A-tier — LITE 10일 −24.4%(섹터 동반, GPM 50.4%)·SIVE CW DFB 1억 개+·KOPN Neural I/O(④ 모델)·MXL 차트(④). 원장 줄 없음. 테제 로그 `r-20261020-525`·`526`, watch `527`·`528`. 연결칩 표 불변. 메모 [2026-10-20/x-atier-lite-sive-kopn.md](2026-10-20/x-atier-lite-sive-kopn.md). HTML 불변.
 - **2026-10-15:** 한경 Themes CEO(③, 이해관계) InP 비중확대·중국 트랜시버 비중축소·CPO 이르면 내년 말. 원장 줄 없음(09-27 닫힘). 테제 로그 `r-20261015-752`. 메모 [2026-10-15/hankyung-themes-inp.md](2026-10-15/hankyung-themes-inp.md). HTML 불변.
