@@ -88,5 +88,6 @@
 | power | [france-arenh-capn](power/france-arenh-capn.md) | 프랑스 ARENH→CAPN(EDF 원전 장기공급) |
 | power | [us-colocation-talen-aws](power/us-colocation-talen-aws.md) | 미국 원전 공동입지: FERC 2024 거부·Talen–AWS 재구성 |
 | power | [mankala-model](power/mankala-model.md) | 핀란드 망칼라 원가 공급 모델(TVO) |
+| power | [us-project-power-large-reactors](power/us-project-power-large-reactors.md) | 미국 대형원전 8기(Project Power)·웨스팅하우스 지분 검토·400GW 목표·APR1400 DC·재가동 비용 대조 |
 | companies | [western-digital-quarterly](companies/western-digital-quarterly.md) | 웨스턴디지털 FQ1'27 실적·콜(출하·클라우드 88%·ePMR/HAMR 일정) |
 | companies | [tesla-q3-2026-analysts](companies/tesla-q3-2026-analysts.md) | 테슬라 3Q26 실적 후 애널리스트 시각(GS·HSBC·트루이스트 등, CNBC 대조) |
