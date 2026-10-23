@@ -83,3 +83,4 @@
 | companies | [bloom-energy-quarterly](companies/bloom-energy-quarterly.md) | 블룸에너지 3Q26 실적·10-Q 관련자 매출·집중도 |
 | power | [korea-lmp-pricing](power/korea-lmp-pricing.md) | 한국 LMP 모의운영(가격 분리 31.4%·수도권 +10.6원) |
 | companies | [western-digital-quarterly](companies/western-digital-quarterly.md) | 웨스턴디지털 FQ1'27 실적·콜(출하·클라우드 88%·ePMR/HAMR 일정) |
+| companies | [tesla-q3-2026-analysts](companies/tesla-q3-2026-analysts.md) | 테슬라 3Q26 실적 후 애널리스트 시각(GS·HSBC·트루이스트 등, CNBC 대조) |
