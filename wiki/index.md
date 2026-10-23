@@ -30,12 +30,15 @@
 | macro | [us-fiscal-debt](macro/us-fiscal-debt.md) | 미국 부채 40조·이자 지출·재정적자·BTC–실질금리 상관 |
 | energy | [hormuz-iran-war-timeline](energy/hormuz-iran-war-timeline.md) | 이란 전쟁·호르무즈 사건 연표(10/17부터) |
 | ai-models | [benchmark-scores](ai-models/benchmark-scores.md) | 모델 벤치마크 점수 이력(회사 발표 C·독립 B) |
+| ai-models | [microsoft-mai-dxo](ai-models/microsoft-mai-dxo.md) | 마이크로소프트 MAI-DxO 의료 AI 진단 성능(SDBench·회사 발표) |
 | policy | [korea-waste-management](policy/korea-waste-management.md) | 하루 5만 톤·수도권매립지·직매립 금지·소각열·캔 재활용 |
 | autos | [sdv-vertical-integration](autos/sdv-vertical-integration.md) | 수평 vs 수직통합·ECU 소스코드 한계·OTA·BYD 평면 팩 |
 | policy | [us-government-equity-stakes](policy/us-government-equity-stakes.md) | 미국 정부 지분 35개사(인텔 9.9%·MP 15%·고려아연 테네시 40% 등) |
 | policy | [korea-aidc-support-package](policy/korea-aidc-support-package.md) | 정부 AIDC 생태계 지원 방안(인허가 일괄처리·국산화 2,000억 정부안·특구 2027H1) |
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
+| policy | [korea-crypto-transfer-reporting](policy/korea-crypto-transfer-reporting.md) | 외국환거래법 개정 12/3 시행·가상자산 국경 간 이전 한은 보고(편람 초안 완화 재논의) |
+| policy | [kosdaq-penny-stock-delisting](policy/kosdaq-penny-stock-delisting.md) | 코스닥 동전주 상폐 5곳 정리매매 보류·가처분 이력 |
 | space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
 | space | [starlink-mobile-spectrum-sites](space/starlink-mobile-spectrum-sites.md) | 스타링크 모바일 주파수(에코스타·그레인·트라이스타)·지상 사이트 협상 이력 |
 | macro | [china-activity-data](macro/china-activity-data.md) | 중국 분기 GDP·월간 활동지표·위안 고시 이력 |
@@ -46,6 +49,7 @@
 | industry | [microneedle-glp1-patch](industry/microneedle-glp1-patch.md) | 마이크로니들 패치형 GLP-1 개발 동향(대웅·라파스·릴리 특허) |
 | energy | [diesel-market](energy/diesel-market.md) | 경유 수급·중국 수출 쿼터·러시아 딜·EIA 가동률 |
 | macro | [france-fiscal-bonds](macro/france-fiscal-bonds.md) | 프랑스 OAT·분트 스프레드·등급 일정 |
+| macro | [policy-rate-outlook](macro/policy-rate-outlook.md) | 연준·한은 정책금리·원/달러 연말 전망 이력 |
 | macro | [africa-urbanization](macro/africa-urbanization.md) | 아프리카 도시화·비공식 경제 |
 | policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
 | geopolitics | [korea-us-alliance](geopolitics/korea-us-alliance.md) | 한미 전작권·핵잠·대미투자 마찰 |
