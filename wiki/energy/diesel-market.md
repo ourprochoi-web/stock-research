@@ -11,3 +11,7 @@ related: oil_hedge_vehicles#T4 · entity:010950 · entity:096770 · regime
 | 2026-10-19 | 언더스탠딩 장순원 PD3J7O5FvFA · intake/files/youtube/understanding/2026-10-19/today_01.md | C/ASR | (주장) 중국 원유 수입 피크 약 1,200만(실수요 약 1,000만+비축 100~200만) → 2Q 최저 약 600만 b/d, 감소 550~600만 = 초과수입 축소·비축유 사용·제품 수출 중단·내수 억제. 6월 휴전 브렌트 72달러 때 크랙 확대 → 「2월 재고 유지」 조건부 수출 허용 → 8월 수입 증가·즉시 인도분 +$20~30·용선료 급등 → 내수 왜곡 → 10/1 중단. 중국 비축유 약 12억 배럴 중 1억~1.5억 사용. 중국 제품 수출 세계의 약 8% |
 | 2026-10-19 | 同 | C/ASR | (주장) 러시아 경유는 여름용(약 영하 5도까지)·겨울용 구분 생산, 10월 여름용 재고 방출 여지. 7월부터 경유 수출 제한, 8월 첫 3주 생산 약 −20%. 유럽 경유 수입의 약 30%가 미국산. 한국은 제품 수출 전년 수준 쿼터·경유 가격 상한 |
 | 2026-10-21 | insidertracking 66884 · intake/files/telegram/insidertracking/2026-10-21/66884.txt | B | 노박 러시아 부총리: 러시아 디젤 공급이 연말까지 미국 외 다른 국가로 확대될 수 있다(발언 전달) |
+| 2026-09-29 | IEA via t.me/insidertracking/64944 · intake/files/telegram/insidertracking/2026-09-29/64944.txt (r-20261023-138) | B | IEA: 유럽은 디젤 공급에 매우 취약, 미국산이 현재 유럽 디젤 공급의 약 절반. 추가 비축유 방출 필요 시 회원국 협의, 어려운 겨울 경고 |
+| 2026-09-30 | 미 에너지부 via t.me/insidertracking/64974 · intake/files/telegram/insidertracking/2026-09-30/64974.txt (r-20261023-138) | B | SPR 최대 4,000만 배럴 원유 방출 예정, 에너지 기업에 대여 방식 |
+| 2026-09-30 | t.me/insidertracking/65041 · intake/files/telegram/insidertracking/2026-09-30/65041.txt | B | 러시아 디젤 수출 금지 조치 10월까지 연장 결정 |
+| 2026-10-02 | t.me/insidertracking/65213 · intake/files/telegram/insidertracking/2026-10-02/65213.txt (r-20261023-138) | B | 프랑스: 유럽 디젤 5,000만 배럴+IEA 회원국 원유 5,000만 배럴 방출 제안. EU는 미국 디젤 수출 금지 가능성 전면 반대, 독일은 방출에 신중. 러시아는 공급 과잉 시 디젤 수출 제한 부분 해제 검토 |
