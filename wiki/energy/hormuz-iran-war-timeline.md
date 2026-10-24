@@ -45,3 +45,6 @@ related: open:oil-judgment · open:war-coverage · regime
 | 2026-09-27 | 미 에너지장관 via t.me/insidertracking/64752 · intake/files/telegram/insidertracking/2026-09-27/64752.txt | B | 호르무즈 원유 수송량 하루 약 1,300만 배럴, 미군이 원유·가스·비료 통과 지원 |
 | 2026-10-02 | t.me/insidertracking/65165 · intake/files/telegram/insidertracking/2026-10-02/65165.txt (r-20261023-138) | C | (주장, 채널 조사) 최근 며칠 호르무즈에서 유조선 여러 척 피격, 최근 3척은 쿠웨이트·UAE 소유·임대이며 PGSA 최근 비협조 선박 명단에 포함 |
 | 2026-10-02 | t.me/insidertracking/65213 · intake/files/telegram/insidertracking/2026-10-02/65213.txt | B | 사우디 동서 송유관으로 하루 약 600만 배럴 운송, 이 중 약 450만 배럴 수출 가능 물량 |
+| 2026-10-23 | IRGC 해군 성명(Sepah News·IRNA) via 신화·아나돌루 · t.me/insidertracking/67155 (routing r-20261024-16) | B | (IRGC 주장, 독립 확인 없음) 호르무즈 남쪽 「무허가」 항로의 초대형 유조선 2척이 기뢰에 맞아 기관실 화재·정지, 원유 합계 450만 배럴+, 선원 대피. 타스님: 전날 항로 보조시설 파괴·「위반」 유조선 4척 타격 |
+| 2026-10-23 | t.me/insidertracking/67177 외(신화·악시오스 인용) (routing r-20261024-16) | B | 미 정보당국, 이란의 중동 주재 미 외교관·관리 겨냥 공격 움직임 「현저히 강화」 판단, 클레이턴 DNI 정보공개 확대 요청. 배럭 대사 「이번 주말 공격 가능」, 왈츠 대사 「장기 대치 대비」 |
+| 2026-10-02~08 | UKMTO·CENTCOM·FT via t.me/insidertracking (10/16 일괄 행 재검토, routing r-20261024-22) | B | UKMTO 유조선 피격 10/2·10/4·10/6 보고, IRGC 회항 강요 10/5(카사브 북쪽 11해리), CENTCOM 봉쇄로 상선 130척 항로 변경(10/5까지), B-1 12대 페어퍼드 철수, 링컨함 11개월 파병 뒤 귀환, FT 영국 재정 손실 약 120억 파운드 |
