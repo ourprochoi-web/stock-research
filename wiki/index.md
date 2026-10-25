@@ -22,7 +22,7 @@
 | industry | [korea-dental-economics](industry/korea-dental-economics.md) | 치과 건보 수가·비급여 임플란트 구조(협찬·이해상충) |
 | devices | [ai-smart-glasses](devices/ai-smart-glasses.md) | AI 글래스 플레이어·기능·시험 부정·사생활 |
 | industry | [athletic-footwear](industry/athletic-footwear.md) | 나이키 실적·DTC·러닝화 점유·배당 vs FCF |
-| devices | [foldable-smartphones](devices/foldable-smartphones.md) | 폴더블 비중·아이폰 듀오 가격·폴드 무게 |
+| devices | [foldable-smartphones](devices/foldable-smartphones.md) | 폴더블 비중·아이폰 듀오 가격·내구성·폴드 무게 |
 | policy | [korea-reshoring-incentives](policy/korea-reshoring-incentives.md) | 국내복귀 요건 4·면제·인센티브·통계·관세 비교(KOTRA 지원 홍보) |
 | policy | [korea-duplicate-listing-rules](policy/korea-duplicate-listing-rules.md) | 중복상장 원칙금지·이사회 5대 의무·해외 상장 포함·부칙 |
 | macro | [kospi-drawdown-history](macro/kospi-drawdown-history.md) | 코스피 연속 급락 사례·정규장 vs NXT 수급·신용 집중도 관리 |
@@ -37,7 +37,7 @@
 | policy | [korea-aidc-support-package](policy/korea-aidc-support-package.md) | 정부 AIDC 생태계 지원 방안(인허가 일괄처리·국산화 2,000억 정부안·특구 2027H1) |
 | materials | [heavy-rare-earths](materials/heavy-rare-earths.md) | 중희토류 — 미얀마 약 2/3·중국 수입 52.8%·용도·미–미얀마 회담 |
 | policy | [korea-crypto-tax](policy/korea-crypto-tax.md) | 가상자산 과세 2020 도입·3회 연기·250만 공제 22%·2027 시행·2029 연기안 |
-| policy | [korea-crypto-transfer-reporting](policy/korea-crypto-transfer-reporting.md) | 외국환거래법 개정 12/3 시행·가상자산 국경 간 이전 한은 보고(편람 초안 완화 재논의) |
+| policy | [korea-crypto-transfer-reporting](policy/korea-crypto-transfer-reporting.md) | 외국환거래법 개정 12/3 시행·가상자산 국경 간 이전 한은 보고·스테이블코인 「지급수단」 개정 추진(편람 초안 완화 재논의) |
 | policy | [kosdaq-penny-stock-delisting](policy/kosdaq-penny-stock-delisting.md) | 코스닥 동전주 상폐 5곳 정리매매 보류·가처분 이력 |
 | space | [space-startup-funding](space/space-startup-funding.md) | 분기별 우주 스타트업 투자(세라핌)·주요 라운드 |
 | space | [starlink-mobile-spectrum-sites](space/starlink-mobile-spectrum-sites.md) | 스타링크 모바일 주파수(에코스타·그레인·트라이스타)·지상 사이트 협상 이력 |
@@ -97,3 +97,4 @@
 | companies | [revmed-rasonque-rasolute302](companies/revmed-rasonque-rasolute302.md) | 레볼루션 메디슨스 RASONQUE 췌장암 RASolute 302·FDA·CHMP |
 | industry | [korea-financial-holdings-3q26](industry/korea-financial-holdings-3q26.md) | 한국 금융지주 3Q26: 하나·우리 순익·CET1·주주환원 |
 | industry | [kpop-industry-structure](industry/kpop-industry-structure.md) | K팝 구조: 라이크기획 인세 공시·SM 합치/하이브 멀티레이블·A2O(싱가포르) 데뷔 |
+| crypto | [stablecoin-genius-act](crypto/stablecoin-genius-act.md) | GENIUS Act 준비금 요건·OCC 최종 규칙 |
