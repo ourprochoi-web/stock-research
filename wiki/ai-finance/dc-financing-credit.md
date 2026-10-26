@@ -55,3 +55,5 @@ related: entity:ORCL · entity:CRWV · AI capex 테제
 | 2026-10-20 | LSEG(보도 인용) · 한경 월가아나토미 R8JkAUoV0cE (routing r-20261024-02) | B | 빅테크 4사 회사채 | 알파벳·아마존·메타·오라클 2026년 누적 약 2,280억$(방송 2,284억$) |
 | 2026-10-19~22 | TokenPost·Mixed Times·Crypto Briefing 보도(GS·번스타인 노트 원문 미열람) · routing r-20261026-73 | B | CRWV 조달 필요액 | 골드만 신규 부채 약 230억$(선급 20% 포함·GPU 6년이면 195억$·4.2GW 전부 약 380억$) vs 번스타인 850억$−기존 한도 90억$ ≈ 760억$ — 가정 상이 |
 | 2026-10-26 | 삼프로 유영화(KB) RNIPxMqZeas · 박병창 JYJ2nDf4qiA · intake/files/youtube/3protv/2026-10-26/today_packet.md | C/ASR | 네오클라우드 크레딧(주장) | 「CDS 재상승·미 HY 스프레드 약 3.5(작년 4.5)·소프트뱅크 9%+ 조달·골드만 집계 네오클라우드 5사 숏 약 170억$」 — 미검증 |
+| 2026-10-19~23 | bondScovery 적합곡선(2026-10-23) · CNBC 10/19 · Seeking Alpha 10/22 (r-20261026-85) | B | 오라클 채권·CDS | 10년 7.97%·30~40년 약 8.5%·2065년물 8.74%, SA 「8.8%」, 5년 CDS 295bp(1년 +287%), S&P BBB−(7월 강등), 장기부채 1,180억$+리스 390억$(FactSet) |
+| 2026-10-26 | 이효석아카데미 김열매 25gAhJiZaJ4 · intake/files/youtube/hyoseok/2026-10-26/today_packet.md | C/ASR | 사모 DC(주장) | 빅테크 캡엑스는 미국 DC의 절반 미만, 사모끼리 21~22년 투자분을 올해 상반기 4배 매각·차입 70%+, 스펙 개발 유입 — 미검증 |
