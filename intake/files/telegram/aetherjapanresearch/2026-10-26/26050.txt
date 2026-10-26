@@ -1,0 +1,7 @@
+엔비디아에서도 루빈 GPU에 사용되는 HBM속도를 9.6Gbps로 수정했네요.
+
+19.2TB/s * 1024=19660.8GB/s
+HBM4는 2048비트 인터페이스니 19660.9/2048=9.6Gbps가 나옵니다.
+
+삼성전자의 11.7Gbps HBM4만으로는 물량 채우기가 부족했나보네요.|
+https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/
