@@ -98,3 +98,4 @@
 | industry | [korea-financial-holdings-3q26](industry/korea-financial-holdings-3q26.md) | 한국 금융지주 3Q26: 하나·우리 순익·CET1·주주환원 |
 | industry | [kpop-industry-structure](industry/kpop-industry-structure.md) | K팝 구조: 라이크기획 인세 공시·SM 합치/하이브 멀티레이블·A2O(싱가포르) 데뷔 |
 | crypto | [stablecoin-genius-act](crypto/stablecoin-genius-act.md) | GENIUS Act 준비금 요건·OCC 최종 규칙 |
+| policy | [sejong-administrative-relocation](policy/sejong-administrative-relocation.md) | 세종 2차 이전 44개 기관·약 1만 명(2027~31)·제2집무실 2029·국회 2033·입주 0·특공 제47조 |
