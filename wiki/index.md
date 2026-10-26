@@ -6,14 +6,14 @@
 | companies | [tesla-early-history](companies/tesla-early-history.md) | 2003 창업~2010 상장 |
 | memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 |
 | ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 |
-| memory | [memory-cycle-background](memory/memory-cycle-background.md) | 가격·밸류에이션 배경 |
+| memory | [memory-cycle-background](memory/memory-cycle-background.md) | 가격·밸류에이션 배경 · TrendForce DRAM 현물(10/26) |
 | companies | [samsung-shareholder-return](companies/samsung-shareholder-return.md) | 삼성전자 2026 환원 90~110조·30조 배당·자사주 15조·1월 배분·금산법 |
 | companies | [semco-supply-contracts](companies/semco-supply-contracts.md) | 삼성전기 LTA 공시 이력(MLCC·패키지기판)·2027 누계 |
 | companies | [dts-air-cooled-thermal](companies/dts-air-cooled-thermal.md) | 디티에스 공랭식 열교환기 IPO 이력·AI 냉각 신사업 |
 | companies | [futurechem-fc705](companies/futurechem-fc705.md) | 퓨쳐켐 FC705 미국 2a상 Topline 공시(ORR 38.89%)·국내 3상 |
 | companies | [dnd-pharmatech-nly01](companies/dnd-pharmatech-nly01.md) | 디앤디파마텍 NLY01 신경교종 전임상(UCSF 프리프린트)·적응증 확장 |
-| memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 |
-| ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 |
+| memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 · 루빈 HBM4 19.2TB/s 사양(10/26) |
+| ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 · 메타 350억$ 주식 조달(10/26) |
 | ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 |
 | optics | [optics-interconnect-basics](optics/optics-interconnect-basics.md) | 800G/1.6T·CPO |
 | power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 |
@@ -55,7 +55,7 @@
 | policy | [china-tech-export-catalog](policy/china-tech-export-catalog.md) | 중국 기술 수출목록 개정(AI 23·태양광 12) |
 | geopolitics | [korea-us-alliance](geopolitics/korea-us-alliance.md) | 한미 전작권·핵잠·대미투자 마찰 |
 | autos | [adas-l2-comparison](autos/adas-l2-comparison.md) | FSD/TAD·샤오펑 XNGP 시승 비교·유럽 승인 |
-| energy | [oil-gas-benchmarks](energy/oil-gas-benchmarks.md) | Dated Brent·선물 격차·EU 가스 재고 이력 |
+| energy | [oil-gas-benchmarks](energy/oil-gas-benchmarks.md) | Dated Brent·선물 격차·EU 가스 재고 이력 · EQT–레인지 합병(10/26) |
 | power | [doe-202c-orders](power/doe-202c-orders.md) | DOE 202(c) 긴급명령(PJM 대형 부하 백업 발전) |
 | materials | [abf-substrate](materials/abf-substrate.md) | ABF 기판 수급 추정·증설 일정 |
 | memory | [socamm-module-substrate](memory/socamm-module-substrate.md) | SOCAMM 규격·LPDDR 공급·티엘비 기판 실적 추정 이력 |
