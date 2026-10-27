@@ -1,0 +1,66 @@
+이번에 문제가된 iphone duo 분해 원인 규명 영상
+디스플레이 제거후 외장 힌지가 문제 됨을 확인.
+https://www.macrumors.com/2026/10/25/ifixit-iphone-duo-teardown/
+
+[보강 본문 — /workspace/telegram-intake/enrich, pull 20261027_113801]
+# iFixit iPhone Duo Teardown Points to Possible Cause of Screen Cracks
+
+- source_url: https://www.macrumors.com/2026/10/25/ifixit-iphone-duo-teardown/
+- final_url: https://www.macrumors.com/2026/10/25/ifixit-iphone-duo-teardown/
+- published: 2026-10-25T21:43:54+00:00
+- tg: https://t.me/YeouidoStory2/118970
+- fetched_at_kst: 2026-10-27 11:39:11 KST
+
+iFixit iPhone Duo Teardown Points to Possible Cause of Screen Cracks
+Sunday October 25, 2026 2:43 pm PDT
+by
+Juli Clover
+Teardown site iFixit took apart the
+iPhone Duo
+to see what's inside, how it holds up to dust, and how repairable it is. There's a video walking through the teardown, as well as
+a blog post summing it up
+.
+Apple’s Folding iPhone Might Have a Screen Problem!
+iFixit
+Watch on
+YouTube
+Before opening up the Duo, iFixit inundated it with fluorescent dust. The ‌iPhone Duo‌ has an IP68 dust and water resistance rating, which means it's sealed against dust. iFixit found dust in the USB-C port, speaker mesh, and bezel, but few particles reached the internals of the device.
+Particles did infiltrate the hinge, causing it to crunch, and that could lead to screen damage. The ‌iPhone Duo‌'s hinge gathered less dust than the Galaxy Z Fold8 or the Pixel 11 Pro Fold during similar tests. iFixit said the result is "encouraging," but suggested it's not a great device for the beach because some dust still got to moving parts. YouTuber JerryRigEverything
+also did a dust test
+where particles entered the hinge and caused the magnets that hold the phone shut to fail.
+iFixit was able to peel the cover layer away easily, which is as Apple intended. Apple made the nano-texture cover layer simple to remove
+so it could be replaced
+inexpensively, but you're not supposed to take it off on your own. With
+AppleCare
++,
+replacing the cover layer
+is $19, and it's $49 without it.
+The ‌iPhone Duo‌ uses the battery adhesive Apple introduced with the
+iPhone 16
+, so a small electrical charge loosens the adhesive and allows the batteries to be removed. iFixit said it was the "best battery removal experience" from a foldable to date.
+The outer display was easy to take off, and iFixit said the construction is "robust," which is a plus for repairability since most internal repairs have to go through the outer display. The inner screen trim comes off with heat, but there is a lot of adhesive to get through to remove the inner panel.
+Apple describes the ‌iPhone Duo‌'s inner display as a 10-layer stack, and iFixit was able to peel back some of the layers to get a look at them under the microscope.
+The ‌iPhone Duo‌ uses an unstacked logic board, and it's the first iPhone to do so since the iPhone 8. The single-layer design is one way Apple kept the Duo thin.
+iFixit commented on
+some of the display failures
+people have been seeing, suggesting they could be caused by pressure, a trapped particle, repeated bending, or a manufacturing defect. It may not be that the display has physically snapped, because a wiring problem can cause the same effect.
+Where most of the faulty units are experiencing issues, the hinge has a different shape. The failure spot is also near where the accordion cable passes by and where several edges meet, which could be leading to a concentration of stress in that spot. From iFixit:
+To see where the stresses build up from folding, we built a 3D hinge model from teardown footage, patents, and CT scans, then compared it with the reported damage locations. The breaks cluster near the transition from the gap for the crossing flex cable to the central hinge support. The damage we're seeing in photos isn't right where the display cable passes through the hinge, but slightly lower, at a point where several edges meet and change how the thin display is supported as it bends.
+iFixit said it could also be the curved rails of the hinge that follow the screen's pivot points. The curved rails may be lifting above the flat plates of the hinge as the phone closes, and one rail lines up with the damage. It's possible a hinge component that's meant to retract isn't doing so, but there's no clear answer. The site has an interactive CT scan of the ‌iPhone Duo‌'s hinge that shows how the supports, cable, and components fit beneath the display for anyone who wants to take a look.
+With a repair manual available on day one, an option to remove the outer display intact, and batteries that release with an electrical charge, iFixit gave the ‌iPhone Duo‌ a provisional repair score of 5 out of 10. The inner display and hinge assembly are the biggest vulnerabilities, which cost the Duo points. "This is the most repairable foldable smartphone we've seen so far, and it's still going to be a bear to repair," said iFixit.
+The Galaxy Z Fold8 and Pixel 11 Pro Fold both scored 4 out of 10.
+Related Roundup:
+iPhone Duo
+Buyer's Guide:
+iPhone Duo (Buy Now)
+Related Forum:
+iPhone
+[
+170 comments
+]
+
+![img](/workspace/telegram-intake/enrich/yeouido_118970_20261027/img_01.jpg)  <!-- https://i.ytimg.com/vi/WOVIjFnivJA/maxresdefault.jpg -->
+![img](/workspace/telegram-intake/enrich/yeouido_118970_20261027/img_02.jpg)  <!-- https://yt3.ggpht.com/ytc/AIdro_mi_o-58whNhO9OCSiyZnf4Zk05RmI_wumtnK2TtCRkgAo=s88-c-k-c0x00ffffff-no-rj -->
+![img](/workspace/telegram-intake/enrich/yeouido_118970_20261027/img_03.jpg)  <!-- https://images.macrumors.com/t/aD9v5-NsSHy1I6TxT3H2bVfWBLQ=/400x0/article-new/2026/10/ifixit-iphone-duo-teardown.jpg?lossy -->
+![img](/workspace/telegram-intake/enrich/yeouido_118970_20261027/img_04.jpg)  <!-- https://images.macrumors.com/t/FdRlnZOLUlONluB0_-VnqKA_bzU=/400x0/article-new/2026/10/ifixit-iphone-duo-open.jpg?lossy -->
+![img](/workspace/telegram-intake/enrich/yeouido_118970_20261027/img_05.jpg)  <!-- https://images.macrumors.com/t/Cd9xF_TwLLv2_IJoF8mGVMGYOy8=/2500x/article-new/2026/10/ifixit-iphone-duo-teardown.jpg -->
