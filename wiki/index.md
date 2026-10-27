@@ -62,6 +62,7 @@
 | quantum | [error-correction-milestones](quantum/error-correction-milestones.md) | 양자 오류 정정 이정표(매직 스테이트) |
 | macro | [us-treasury-yields](macro/us-treasury-yields.md) | FRED DGS5·DGS10 종가·PPI |
 | geopolitics | [taiwan-strait-activity](geopolitics/taiwan-strait-activity.md) | 대만 국방부 PLA 일일 집계 |
+| geopolitics | [israel-election-2026](geopolitics/israel-election-2026.md) | 이스라엘 총선·연정 일정(12/14경 1차 마감) |
 | macro | [china-gdp-quarterly](macro/china-gdp-quarterly.md) | 중국 분기 GDP·산업생산·소매 시계열(3Q26 +4.5%) |
 | policy | [china-drone-export-controls](policy/china-drone-export-controls.md) | 중국 공고 2026년 제49호 드론 물항 수출통제(11/18 시행) |
 | policy | [korea-industrial-safety-penalty](policy/korea-industrial-safety-penalty.md) | 산안법 개정: 산재 사망 3명+ 기업 영업이익 최대 5% 과징금(2026-10-20 국무회의) |
