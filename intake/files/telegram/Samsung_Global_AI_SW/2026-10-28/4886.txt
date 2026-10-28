@@ -1,0 +1,13 @@
+Artificial Analysis, Intelligence Index v5 발표
+
+: Artificial Analysis가 AI 모델 성능 평가 지표인 Intelligence Index v5 공개. 신규 벤치마크 2개 추가 및 기존 3개 개선. 전체 평가의 60%를 비공개 테스트셋 또는 비공개 정답 기반으로 구성해 평가 신뢰도 강화
+
+: 실제 코딩 작업의 코드 병합 가능성을 평가하는 FrontierCode 2.0과 70개 과학 연구 과제로 구성된 Terminal-Bench-Science 추가. 기존 HLE, AA-Omniscience, CritPt 평가도 개선
+
+: Claude Opus 5.5가 58점으로 1위, GPT-6 Astra 57점, GPT-6.1 Sol 55점 순. 앤스로픽과 오픈AI가 상위 5개 모델 독점. 구글 Gemini 4 Argon은 50점 기록
+
+: 오픈웨이트 모델과 최상위 모델의 성능 격차는 기존 3점에서 12점으로 확대. Kimi K3.1 Pro가 46점으로 선두이나 가중치는 미공개. 실제 가중치가 공개된 모델 중에서는 DeepSeek V4.1 Flash와 GLM-5.3이 32점으로 공동 1위
+
+: 상위 10개 모델의 작업당 비용은 최대 13.6배 차이. GPT-6.1 Terra가 0.96달러로 가장 저렴하며, Claude Fable 5.1은 13.04달러로 가장 높은 비용 기록
+
+https://x.com/artificialanlys/status/2115265133467635877
