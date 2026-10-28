@@ -105,3 +105,8 @@
 | geopolitics | [civil-defense-stockpiles](geopolitics/civil-defense-stockpiles.md) | 영·일 비상물자 비축 지침 |
 | companies | [corning-quarterly](companies/corning-quarterly.md) | 코닝 분기 실적(3Q26 핵심 매출 +19%·광통신 +44%) |
 | companies | [lg-innotek-quarterly](companies/lg-innotek-quarterly.md) | LG이노텍 분기 실적(3Q26 잠정 OP 948억·OPM 1.49%) |
+| companies | [sk-hynix-quarterly](companies/sk-hynix-quarterly.md) | SK하이닉스 분기 실적·환원(3Q26 OP 83.3조·영업외 −32.6조·환원 약 100조) |
+| companies | [semco-quarterly](companies/semco-quarterly.md) | 삼성전기 분기 실적·콜(3Q26 OP 6,909.57억·광학 9,413억·MLCC LTA) |
+| materials | [glass-substrate-timeline](materials/glass-substrate-timeline.md) | 글라스 기판 양산·인증 목표 시점(삼성전기 2028·SKC 1H27 인증) |
+| power | [us-demand-response-vpp](power/us-demand-response-vpp.md) | 미국 수요반응·VPP 빅테크 계약(구글–볼터스 1,070MW) |
+| companies | [lg-chem-lges-stake](companies/lg-chem-lges-stake.md) | LG화학의 LG엔솔 지분 처분(PRS 2년·약 2.5조) |

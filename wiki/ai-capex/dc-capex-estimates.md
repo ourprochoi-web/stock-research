@@ -20,3 +20,5 @@ related: AI capex 테제 · entity:NVDA
 | 2026-10-19 | 이효석 t2O7mJw0uEU (SemiAnalysis 유료 구간 전달) | C/ASR | 공기·지역 비중 | 모듈러 공기 2024 19개월 → 2026 3개월, 미국 외 비중 35% → 28%, 2026 25GW → 2027 51GW (원문 미대조) |
 | 2026-10-07 | 데이터센터맵(9/29 기준) 집계 via t.me/insidertracking/65529 · intake c-20261007-t16 | B | 국가별 데이터센터 수(운영·건설·계획·부지 포함) | 세계 약 1만2,500곳, 미국 4,783곳(약 40%). 북·중미 5,223·유럽 3,919·아시아 1,925. 영국 571·독일 548·중국 426·프랑스 394·호주 321·인도 311·캐나다 290·일본 265·이탈리아 259·스페인 246·브라질 224·한국 102 |
 | 2026-10-25 | 가트너 via 월스트리트cn 3784409 (routing r-20261025-13, 원문 미대조) | C | AI 인프라 손상 위험 | 2030년까지 AI 인프라 투자 중 약 3.5조 달러가 손상 위험(주장) |
+| 2026-07-29 (10/28 재전달) | MSFT FY26 Q4 콜(Amy Hood) https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4 · intake/files/web/2026-10-28/msft_lease_reclass.md (routing r-20261028-58) | A | MSFT CY26 CAPEX | 약 $175bn(이전 $190bn은 CFO Dive·Morningstar 보도치). 내용연수 15→25년(FY27~)으로 미래 DC 리스가 금융리스→운용리스로 이동 — 「그 영향 외 CY26 투자 계획 불변」. FY4Q26 capex $41bn(금융리스 $5.6bn 포함)·FCF $19.6bn, FY1Q27 「over $50bn」 |
+| 2026-10-28 | 벨루가 채널 요약(미대조) (r-20261028-58) | C | Alphabet CY26 CAPEX 가이드 | $195~205bn(기존 $180~190bn), 컨센 $202.2bn |
