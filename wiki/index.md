@@ -25,6 +25,7 @@
 | devices | [foldable-smartphones](devices/foldable-smartphones.md) | 폴더블 비중·아이폰 듀오 가격·내구성·폴드 무게 |
 | policy | [korea-reshoring-incentives](policy/korea-reshoring-incentives.md) | 국내복귀 요건 4·면제·인센티브·통계·관세 비교(KOTRA 지원 홍보) |
 | policy | [korea-duplicate-listing-rules](policy/korea-duplicate-listing-rules.md) | 중복상장 원칙금지·이사회 5대 의무·해외 상장 포함·부칙 |
+| policy | [korea-ipo-allocation-rules](policy/korea-ipo-allocation-rules.md) | 기관 배정 40% 확약·환매청구권 90%·2026 시초가 수익률(방송 전언) |
 | macro | [kospi-drawdown-history](macro/kospi-drawdown-history.md) | 코스피 연속 급락 사례·정규장 vs NXT 수급·신용 집중도 관리 |
 | power | [dc-moratoria](power/dc-moratoria.md) | 데이터센터 모라토리엄·지역 규제(텍사스 발언·SF 45일) |
 | macro | [us-fiscal-debt](macro/us-fiscal-debt.md) | 미국 부채 40조·이자 지출·재정적자·BTC–실질금리 상관 |
