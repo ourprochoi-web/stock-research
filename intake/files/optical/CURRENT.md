@@ -40,3 +40,4 @@ Ledger: [facts_ledger.jsonl](facts_ledger.jsonl) · Routing: `u-20260924-x-photo
 - **2026-10-20:** X A-tier — LITE 10일 −24.4%(섹터 동반, GPM 50.4%)·SIVE CW DFB 1억 개+·KOPN Neural I/O(④ 모델)·MXL 차트(④). 원장 줄 없음. 테제 로그 `r-20261020-525`·`526`, watch `527`·`528`. 연결칩 표 불변. 메모 [2026-10-20/x-atier-lite-sive-kopn.md](2026-10-20/x-atier-lite-sive-kopn.md). HTML 불변.
 - **2026-10-15:** 한경 Themes CEO(③, 이해관계) InP 비중확대·중국 트랜시버 비중축소·CPO 이르면 내년 말. 원장 줄 없음(09-27 닫힘). 테제 로그 `r-20261015-752`. 메모 [2026-10-15/hankyung-themes-inp.md](2026-10-15/hankyung-themes-inp.md). HTML 불변.
 - **2026-10-29:** ② 블룸버그 — 마벨이 루멘텀 인수 막바지 협상(합의 전, 다음 주 발표 가능). 원장 줄 없음. 테제 로그 `r-20261029-15`. 연결칩 서열 불변. 메모 [2026-10-29/x-atier-mrvl-lite.md](2026-10-29/x-atier-mrvl-lite.md). HTML 불변.
+- **2026-10-29 (2):** ③ 벨루가(photoncap X 인용) — SK하이닉스 HBM 다음 실리콘 포토닉스·CPO 서사(회사 발표·숫자 없음). 원장 줄 없음. 테제 로그 `r-20261029-100`(optical_valuechain_9#T5). 연결칩 잔여엣지·매수 서열 불변.
