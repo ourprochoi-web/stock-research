@@ -22,3 +22,6 @@ related: AI capex 테제 · entity:NVDA
 | 2026-10-25 | 가트너 via 월스트리트cn 3784409 (routing r-20261025-13, 원문 미대조) | C | AI 인프라 손상 위험 | 2030년까지 AI 인프라 투자 중 약 3.5조 달러가 손상 위험(주장) |
 | 2026-07-29 (10/28 재전달) | MSFT FY26 Q4 콜(Amy Hood) https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4 · intake/files/web/2026-10-28/msft_lease_reclass.md (routing r-20261028-58) | A | MSFT CY26 CAPEX | 약 $175bn(이전 $190bn은 CFO Dive·Morningstar 보도치). 내용연수 15→25년(FY27~)으로 미래 DC 리스가 금융리스→운용리스로 이동 — 「그 영향 외 CY26 투자 계획 불변」. FY4Q26 capex $41bn(금융리스 $5.6bn 포함)·FCF $19.6bn, FY1Q27 「over $50bn」 |
 | 2026-10-28 | 벨루가 채널 요약(미대조) (r-20261028-58) | C | Alphabet CY26 CAPEX 가이드 | $195~205bn(기존 $180~190bn), 컨센 $202.2bn |
+| 2026-10-28 | 알파벳 8-K Ex.99.1 · CNBC(LSEG) (routing r-20261029-17) | A | Alphabet 3Q26 capex·FCF | capex 513.55억$(컨센 551억$), OCF 422.9억$, FCF −90.65억$(2Q −58.55억$, 2분기 연속 음수). 2026 가이드 1,950~2,050억$ 유지, 2027 「크게 증가」(콜) |
+| 2026-10-28 | CNBC(StreetAccount 컨센·콜 인용) (routing r-20261029-18) | B | MSFT FY27 1Q capex | capex+금융리스 452억$(컨센 506.7억$) — 3P 용량 인도 일부 지연, 2Q 500억$+ 가이드, 약 75% 단수명 자산 |
+| 2026-10-29 | KLA FQ1'27 콜 요약(채널, 원문 미대조) (routing r-20261029-45) | C | WFE 전망 | 2026 「1,500억달러 중반」, 2027 「2,000억달러 이상」(경영진). 핵심 부품 조달 약 12개월 |

@@ -110,3 +110,10 @@
 | materials | [glass-substrate-timeline](materials/glass-substrate-timeline.md) | 글라스 기판 양산·인증 목표 시점(삼성전기 2028·SKC 1H27 인증) |
 | power | [us-demand-response-vpp](power/us-demand-response-vpp.md) | 미국 수요반응·VPP 빅테크 계약(구글–볼터스 1,070MW) |
 | companies | [lg-chem-lges-stake](companies/lg-chem-lges-stake.md) | LG화학의 LG엔솔 지분 처분(PRS 2년·약 2.5조) |
+| optics | [optical-deals-ma](optics/optical-deals-ma.md) | 광통신 M&A·딜 이력(마벨–루멘텀 협상 10/28) |
+| policy | [us-section-232-actions](policy/us-section-232-actions.md) | 미 Section 232 로보틱스·산업기계 포고문(180일 협상)·태양광 최저수입가격 |
+| policy | [us-ai-datacenter-tax-bills](policy/us-ai-datacenter-tax-bills.md) | 미 AI·DC 세제 법안(S.5054 보너스 감가상각 제외·S.5518 초과이익세) |
+| policy | [korea-mandatory-tender-offer](policy/korea-mandatory-tender-offer.md) | 의무공개매수제 50%+1주 vs 100%·안분 논쟁(대통령 X 10/28) |
+| ai-models | [ai-training-data-market](ai-models/ai-training-data-market.md) | AI 학습 데이터 벤더·스피릿 데이터 경매(구글 1,000만$) |
+| power | [czech-dukovany-epc](power/czech-dukovany-epc.md) | 두코바니 시공협상 종료(10/29)·2027-07 재선정·두산–뉴스케일 URPV |
+| macro | [korea-gdp-quarterly](macro/korea-gdp-quarterly.md) | 한국 분기 GDP 속보(3Q26 +1.0% QoQ·GDI +18.8%) |
