@@ -117,3 +117,6 @@
 | ai-models | [ai-training-data-market](ai-models/ai-training-data-market.md) | AI 학습 데이터 벤더·스피릿 데이터 경매(구글 1,000만$) |
 | power | [czech-dukovany-epc](power/czech-dukovany-epc.md) | 두코바니 시공협상 종료(10/29)·2027-07 재선정·두산–뉴스케일 URPV |
 | macro | [korea-gdp-quarterly](macro/korea-gdp-quarterly.md) | 한국 분기 GDP 속보(3Q26 +1.0% QoQ·GDI +18.8%) |
+| crypto | [exchange-hacks](crypto/exchange-hacks.md) | 암호화폐 거래소 해킹 이력(바이낸스 10/30 약 63억$·북한 지목) |
+| companies | [keytruda-qlex-sales](companies/keytruda-qlex-sales.md) | 키트루다 큐렉스 분기 매출(3Q26 8.30억$) |
+| companies | [daeduck-quarterly](companies/daeduck-quarterly.md) | 대덕전자 분기 실적(3Q26 OP 878.71억·OPM 21.0%) |
