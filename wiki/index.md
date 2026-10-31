@@ -120,3 +120,7 @@
 | crypto | [exchange-hacks](crypto/exchange-hacks.md) | 암호화폐 거래소 해킹 이력(바이낸스 10/30 약 63억$·북한 지목) |
 | companies | [keytruda-qlex-sales](companies/keytruda-qlex-sales.md) | 키트루다 큐렉스 분기 매출(3Q26 8.30억$) |
 | companies | [daeduck-quarterly](companies/daeduck-quarterly.md) | 대덕전자 분기 실적(3Q26 OP 878.71억·OPM 21.0%) |
+| macro | [msci-market-classification](macro/msci-market-classification.md) | MSCI 시장 분류(인도네시아 Standalone 협의, 결정 2027-06-30 이전) |
+| cybersecurity | [ot-ics-incidents](cybersecurity/ot-ics-incidents.md) | OT·산업제어 보안 사고(프랑스 슈퍼마켓 냉장 원격 조작 10/11~13) |
+| robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
+| power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |

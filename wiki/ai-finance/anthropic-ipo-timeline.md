@@ -16,3 +16,7 @@ related: 테제 ai-sw/ai_sw_company_anthropic#T5 · entity:ANTHROPIC
 | 2026-10-28 | S-1 원문 https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm (routing r-20261028-05) | A | SpaceXAI 최대 1,205억$ — 2027-01/03 비해지 기간 이후 90일 통지로 양측 해지 가능; Nscale 446억·Lambda 413억$ 인도분만 과금. 사용량 무관 2,694억 + TPU 리스 1,612억 = 약 4,306억$ vs NVIDIA 용량 약 2,064억$(Lead 합산) |
 | 2026-10-29 | EDGAR CIK 2130357 제출 목록 · S-1(10/26) 원문 (routing r-20261029-16) | A | 10/29 현재 S-1/A 없음(최신 S-1 10/26, 그 전 DRS/A 10/09). 한국은 FSCMA 미등록·「사모(private placement)」 청약(공모 제외 아님). 개인 배정 15~20%(X)는 S-1에 문구 없음 |
 | 2026-10-26 | WSJ 10/26 (routing r-20261029-06) | B | 「on track to debut the week of Nov. 16」 — 회사 미발표 |
+| 2026-10-31 | S-1 원문(EDGAR CIK 2130357, 10/26 · 10/31 현재 S-1/A 없음) (routing r-20261031-20) | A | 락업: 첫 거래일 일부 매도 허용 → 27·48·62·76일 → FY26 실적 후 단계 해제 → 180일 → 일부 365일. 주식 수·공모 규모 공란. 나스닥 「ANT」 |
+| 2026-10-31 | 삼성증권 채널 4914(블룸버그 요약) (routing r-20261031-06) | B | 블랙스톤: IPO 후에도 BB급 등급 가능성(당초 연말 투자적격 예상) |
+| 2026-10-31 | CNBC 「Anthropic's path to the Nasdaq just got a lot bumpier」(채널 요약) (routing r-20261031-27) | B | 하이퍼스케일러 FCF 악화·네오클라우드 차입비용 상승으로 IPO 불확실성. Oura·Firmus·솔리다임 상장 연기·철회(미대조). 1H26 순손실 약 800억$ = S-1 807.48억$ |
+| 2026-10-31 | @claudeai X 공지 요약(채널 4916) (routing r-20261031-13) | B | 상위 요금제 명칭 변경 Max 5x→Max(100$)·Max 20x→Ultra(200$), Ultra 5시간 한도 폐지 |

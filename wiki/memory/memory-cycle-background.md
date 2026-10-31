@@ -39,3 +39,6 @@ related: memory 테제 · entity:005930 · entity:000660 · entity:MU
 | 2026-10-29 | 삼성전자 3Q26 콜 Q&A(Investing.com 전사) · 뉴스룸 (routing r-20261029-38·44) | A/B | 3Q 영업이익 107.44조·DS OP 106.5조(A 잠정). HBM4 매출 QoQ 3배+, HBM 내 HBM4 비중 60%, 2027 HBM 공급량 「agreed target price」로 완판, LTA 10곳 완료·10곳 협상, 「tight supply conditions are expected to continue into 2028」(콜 답변) |
 | 2026-10-30 | TrendForce DRAM Spot · intake/files/web/2026-10-30/trendforce_dram_spot_1030.md (routing r-20261030-102) | A | DDR5 16Gb $61.50(+0.27%)·DDR4 16Gb 3200 $82.796(−0.15%)·DDR4 8Gb $46.864(보합) |
 | 2026-10-30 | WSJ(요약 전달, 원문 미대조) · 올트먼 Cheeky Pint 요약 (routing r-20261030-17·62·81) | B/C | 애플 2025년 세계 플래시 약 8% 구매, 1년 플래시 가격 약 5배, 하이퍼스케일러 구매가 애플의 약 2배. 올트먼: 메모리 업체는 과거 공급과잉 경험으로 증설에 보수적 |
+| 2026-10-31 | 인텔 3Q26 콜 전문(Motley Fool·StockAnalysis) (routing r-20261031-17) | A | CFO: 「We do not expect a sustained recovery until memory availability improves and pricing begins to normalize」 — PC TAM 2026 약 −12%(하반기 −20%+)·2027 약 −10% |
+| 2026-10-31 | t.me/insidertracking/67907(TrendForce·BofA 보도 전달, 원문 미대조) (routing r-20261031-05) | B | TrendForce 4Q PC DRAM 가격 QoQ +13~18% 전망. BofA: 메모리 원가 상승 마진 압박으로 애플 주요 추천 제외·FY27 아이폰 판매 전망 하향 |
+| 2026-10-31 | 블룸버그 리드(본문 403) · 삼성 성명 전달 (routing r-20261031-15) | B | 올트먼, 10/31 용인에서 삼성 계열사 임원 약 50명과 회동 — 공급 계약·물량·가격 언급 없음 |
