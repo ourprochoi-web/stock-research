@@ -76,3 +76,6 @@ related: entity:ORCL · entity:CRWV · AI capex 테제
 | 2026-10-31 | 블룸버그 요약 채널 4914 (routing r-20261031-06) | B | Project North Star | 630억$ — 선순위 420억$+ 브로드컴 보증, 후순위 180억$ KBRA BB+·DBRS BB, 블랙스톤 90억$ 10%+ |
 | 2026-10-31 | t.me/insidertracking/67907 (routing r-20261031-06) | B | 메타 S&P 전망 | 「부정적」 — AI 수익화 능력 제한 |
 | 2026-10-28 | 오라클 IR (routing r-20261031-20) | A | 오라클 capex | 「peak capex in FY27-FY28」 후 FY29 step-down, FY29 FCF 300억$+ |
+| 2026-11-01 | 삼성 글로벌 AI SW t.me/Samsung_Global_AI_SW/4922 · CNBC 2026-10-14 (routing r-20261101-21) | B | 코어위브 채권 | 연초 발행 표면 9.75% 채권 유통수익률 15%+(CNBC 10/14: 2031년물 약 14.9%·2032년물 14.8%) |
+| 2026-11-01 | 같은 글 (routing r-20261101-21) | B | 네비우스·람다·엔스케일 | 네비우스 하이일드 발행 보류·고객 선급금 등으로 1GW 자금 확보 전망 · 람다 목표 기업가치 145억→130억$(미확인) · 엔스케일 IPO 11월→12월 무게, 목표 300억~350억$ |
+| 2026-11-01 | BofA 글로벌 리서치·ICE 데이터 전달 t.me/insidertracking/67980 (routing r-20261101-32) | B | IG AI 스프레드 10월 변화(9/30~10/29) | 스페이스X +65bp · 오라클 +43bp · 브로드컴 +35bp · 메타 약 +23bp · 엔비디아 약 +22bp · 알파벳 약 +12bp · MSFT·아마존 각 약 +10bp |
