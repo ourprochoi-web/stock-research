@@ -124,3 +124,6 @@
 | cybersecurity | [ot-ics-incidents](cybersecurity/ot-ics-incidents.md) | OT·산업제어 보안 사고(프랑스 슈퍼마켓 냉장 원격 조작 10/11~13) |
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
+| macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
+| ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
+| policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
