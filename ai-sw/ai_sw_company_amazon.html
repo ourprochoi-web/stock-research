@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="아마존(AMZN) 관측 카드 — 3Q26 AWS +39%·수주잔고 5,780억$, FCF −348억$(분기)·장기부채 656억→1,731억$, BofA 스프레드 약 +10bp, 앤트로픽 1,100억$ 약정">
+<meta name="keywords" content="아마존,AMZN,AWS,트레이니움,캐펙스,FCF,회사채,앤트로픽,하이퍼스케일러">
+<meta property="og:title" content="아마존 — AWS 공급 제약과 부채로 굴리는 증설">
+<meta property="og:description" content="아마존(AMZN) 관측 카드 — 3Q26 AWS +39%·수주잔고 5,780억$, FCF −348억$(분기)·장기부채 656억→1,731억$, BofA 스프레드 약 +10bp, 앤트로픽 1,100억$ 약정">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_amazon.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ourprochoi Research Archive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="아마존 — AWS 공급 제약과 부채로 굴리는 증설">
+<meta name="twitter:description" content="아마존(AMZN) 관측 카드 — 3Q26 AWS +39%·수주잔고 5,780억$, FCF −348억$(분기)·장기부채 656억→1,731억$, BofA 스프레드 약 +10bp, 앤트로픽 1,100억$ 약정">
+<link rel="canonical" href="https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_amazon.html">
+<title>아마존 — AWS 공급 제약과 부채로 굴리는 증설 · AI SW Series</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#19212b; --sub:#566270; --faint:#909aa6;
+  --bg:#f3f1ec; --card:#ffffff; --line:#e2ddd3; --note:#ece7de; --chip-bg:#e8e1d4;
+  --accent:#e8890c; --accents:#fdf1e0; --accent-line:#f2c98a;
+  --navy:#1c2430;
+  --up:#1d7a59; --ups:#e3f2ec;
+  --down:#bd442d; --downs:#f8e9e5;
+  --caution:#b3801f; --cautions:#f5edd5;
+  --blue:#37588a; --blues:#e7eef7;
+  --steel:#3c5167; --steels:#e8edf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),#d97706,var(--blue),var(--accent));width:0%;z-index:99;transition:width .15s}
+nav{position:sticky;top:0;background:rgba(243,241,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:90;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:none;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+nav a:active{background:var(--chip-bg)}
+
+.wrap{max-width:790px;margin:0 auto;padding:0 20px 100px}
+
+/* HERO */
+.hero-shell{background:linear-gradient(170deg,#0f1620 0%,#1a2533 40%,#111a26 100%);color:#eef2f6;position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:0;opacity:.35;background-image:
+  repeating-linear-gradient(0deg, transparent 0 48px, rgba(232,137,12,.07) 48px 49px),
+  repeating-linear-gradient(90deg, transparent 0 48px, rgba(232,137,12,.07) 48px 49px);pointer-events:none}
+.hero-shell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(15,22,32,.9),transparent);pointer-events:none}
+.hero{position:relative;max-width:790px;margin:0 auto;padding:74px 20px 36px;text-align:center;z-index:1}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--accent);font-weight:800}
+.hero h1{font-size:clamp(30px,7.4vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.16;margin:16px 0 14px;
+  background:linear-gradient(110deg,#fff 20%,#f7c06b 50%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p.lede{color:#9aa8b8;max-width:620px;margin:0 auto;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:34px auto 0}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 8px;backdrop-filter:blur(4px)}
+.stat .n{font-size:clamp(18px,4.6vw,28px);font-weight:900;color:#f7c06b;letter-spacing:-.02em}
+.stat .l{font-size:11.5px;color:#8a96a6;margin-top:5px;line-height:1.45}
+
+/* hero proportion bar */
+.prop-bar{max-width:660px;margin:32px auto 0;position:relative}
+.prop-bar .pb-label{font-size:11px;color:#7a8694;letter-spacing:.12em;font-weight:700;margin-bottom:10px;text-align:left}
+.pb-track{display:flex;height:30px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.06)}
+.pb-seg{display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#fff;letter-spacing:.02em;transition:width 1.2s cubic-bezier(.2,.8,.3,1)}
+.pb-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.pb-legend span{font-size:11.5px;color:#8a96a6;display:flex;align-items:center;gap:5px}
+.pb-legend .dot{width:8px;height:8px;border-radius:50%;flex:none}
+
+/* SECTIONS */
+section{padding-top:10px}
+.zone-head{margin:78px 0 6px;position:relative}
+.zone-head .z-big{position:absolute;right:-4px;top:-46px;font-size:118px;font-weight:900;opacity:.05;letter-spacing:-.05em;line-height:1;pointer-events:none}
+.zone-head .z-num{font-size:12px;font-weight:800;letter-spacing:.2em}
+.zone-head h2{font-size:clamp(24px,5.4vw,33px);font-weight:900;letter-spacing:-.02em;margin-top:6px;color:var(--ink)}
+.zone-head p{color:var(--sub);margin-top:8px;font-size:15.5px;max-width:660px}
+
+.floor{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--zc,var(--ink));border-radius:18px;padding:30px 28px;margin:26px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
+.floor.visible{opacity:1;transform:none}
+@media(hover:hover){.floor:hover{box-shadow:0 14px 38px -20px rgba(25,33,43,.25)}}
+.floor .f-tag{display:inline-flex;gap:8px;font-size:12px;font-weight:800;color:var(--zc);background:var(--zs);padding:5px 13px;border-radius:999px;letter-spacing:.04em}
+.floor h3{font-size:22.5px;font-weight:900;margin:14px 0 4px;letter-spacing:-.02em}
+.floor .meta{font-size:13.5px;color:var(--faint);margin-bottom:14px}
+.floor p.body{margin:12px 0;font-size:15.6px}
+.floor p.body b{color:var(--ink)}
+
+/* COMPANY CARDS */
+.co-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 6px}
+@media(max-width:600px){.co-grid{grid-template-columns:1fr}}
+.co-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--zc);border-radius:14px;padding:16px 18px;position:relative}
+.co-card .ticker{font-size:10.5px;font-weight:800;color:var(--faint);letter-spacing:.06em}
+.co-card h4{font-size:17px;font-weight:900;margin:2px 0 10px;letter-spacing:-.01em}
+.co-card .metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.co-card .m{text-align:center;background:var(--zs,#f5f5f2);border-radius:10px;padding:8px 4px}
+.co-card .m .mv{font-size:17px;font-weight:900;color:var(--zc,var(--ink));letter-spacing:-.02em}
+.co-card .m .ml{font-size:10px;color:var(--sub);margin-top:2px}
+.co-card .highlight{font-size:12.8px;color:var(--sub);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.6}
+.co-card .highlight b{color:var(--ink)}
+
+/* DATA TABLE */
+table{width:100%;border-collapse:collapse;font-size:13.3px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:18px 0 4px}
+th{background:var(--ink);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:800;white-space:nowrap}
+.tag-up{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--ups);color:var(--up)}
+.tag-dn{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--downs);color:var(--down)}
+.tag-ca{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--cautions);color:var(--caution)}
+.tag-pk{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--accents);color:var(--accent)}
+
+/* FACT GRID */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+@media(max-width:500px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--zs,#f5f5f2);border:1px solid color-mix(in srgb, var(--zc,#999) 20%, white);border-radius:13px;padding:14px 10px;text-align:center}
+.fact .n{font-size:clamp(15px,3.7vw,22px);font-weight:900;color:var(--zc,var(--ink));letter-spacing:-.02em;line-height:1.2}
+.fact .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.42}
+
+/* RISK CARD */
+.risk-list{display:grid;gap:14px;margin:18px 0 6px}
+.risk{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;align-items:flex-start}
+.risk .sev{flex:none;width:52px;text-align:center}
+.risk .sev .dot{width:12px;height:12px;border-radius:50%;margin:0 auto 4px}
+.risk .sev .dot.high{background:var(--down)}
+.risk .sev .dot.med{background:var(--caution)}
+.risk .sev .dot.low{background:var(--up)}
+.risk .sev .stxt{font-size:10px;font-weight:800;letter-spacing:.08em}
+.risk h4{font-size:15.5px;font-weight:900;margin-bottom:4px}
+.risk .rdesc{font-size:13.8px;color:var(--sub);line-height:1.65}
+.risk .rdesc b{color:var(--ink)}
+
+/* STRATEGY MATRIX */
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+@media(max-width:560px){.matrix{grid-template-columns:1fr}}
+.mx-cell{border-radius:16px;padding:20px;border:1px solid}
+.mx-cell h4{font-size:16px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.mx-cell .mx-tag{font-size:10px;font-weight:800;padding:2px 8px;border-radius:6px;color:#fff}
+.mx-cell ul{list-style:none;margin-top:10px}
+.mx-cell li{font-size:13.5px;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08);color:var(--sub)}
+.mx-cell li:last-child{border-bottom:none}
+.mx-cell li b{color:var(--ink)}
+.mx-a{background:var(--ups);border-color:#a9d6c3}
+.mx-a h4{color:var(--up)}
+.mx-a .mx-tag{background:var(--up)}
+.mx-b{background:var(--accents);border-color:var(--accent-line)}
+.mx-b h4{color:var(--accent)}
+.mx-b .mx-tag{background:var(--accent)}
+
+/* CALLOUT */
+.callout{margin-top:16px;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);background:var(--card)}
+.callout .c-head{padding:14px 22px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.callout .c-body{padding:20px 24px;font-size:15px;line-height:1.9;color:var(--sub)}
+.callout .c-body b{color:var(--ink);font-weight:800}
+.callout-pink .c-head{background:var(--accent)}
+.callout-green .c-head{background:var(--up)}
+.callout-red .c-head{background:var(--down)}
+.callout-blue .c-head{background:var(--blue)}
+
+/* INVESTOR VIEW */
+.view{margin-top:16px;border:1.5px dashed var(--accent-line);background:var(--accents);border-radius:14px;padding:15px 17px}
+.view .v-head{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#9e3a6e;margin-bottom:6px}
+.view p{font-size:14.3px;color:#6b2f50}
+
+/* ANALOGY */
+.analogy{background:linear-gradient(100deg,#fdf1e0,#fbe3bf);border-left:4px solid var(--accent);padding:13px 17px;border-radius:0 12px 12px 0;font-size:15.3px;margin:14px 0;color:#4a3208}
+.analogy b{color:#2e1f05}
+
+/* MISC */
+.disclaimer{margin-top:48px;padding:18px;border-radius:14px;background:var(--note);border:1px solid var(--line);font-size:12.5px;color:var(--sub);line-height:1.7}
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:38px}
+.series-nav{display:flex;justify-content:space-between;gap:12px;margin-top:48px}
+.series-nav a{flex:1;display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:all .2s}
+.series-nav a:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.series-nav .sn-label{font-size:10.5px;color:var(--faint);letter-spacing:.1em;font-weight:800;margin-bottom:4px}
+
+@media print{nav,#prog{display:none}.floor{opacity:1;transform:none;break-inside:avoid}.hero-shell{background:#fff;color:var(--ink)}.hero h1{color:var(--ink);-webkit-text-fill-color:var(--ink)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "아마존 — AWS 공급 제약과 부채로 굴리는 증설",
+  "description": "아마존(AMZN) 관측 카드 — 3Q26 AWS +39%·수주잔고 5,780억$, FCF −348억$(분기)·장기부채 656억→1,731억$, BofA 스프레드 약 +10bp, 앤트로픽 1,100억$ 약정",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "author": {"@type": "Person", "name": "ourprochoi"},
+  "publisher": {"@type": "Organization", "name": "ourprochoi Research Archive"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ourprochoi-web.github.io/stock-research/ai-sw/ai_sw_company_amazon.html"}
+}
+</script>
+</head>
+<body>
+
+<a href="../" style="position:fixed;top:20px;left:20px;z-index:9999;display:flex;align-items:center;gap:6px;padding:8px 16px 8px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--steel);text-decoration:none;font-family:'Pretendard',sans-serif;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s" onmouseover="this.style.background='#fff';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='rgba(255,255,255,.88)';this.style.borderColor='var(--line)'"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<div id="prog"></div>
+
+<!-- HERO -->
+<div class="hero-shell" id="hero">
+  <div class="hero">
+    <div class="eyebrow">AI SW SERIES · COMPANY WATCH · 2026.11</div>
+    <h1>아마존 — 팔 용량이 없다, 지을 현금도 없다</h1>
+    <p class="lede">AWS는 수요가 아니라 공급에 묶여 있다(3Q26 +39%, 2026 용량 매진). 그 용량을 짓는 돈은 영업현금이 아니라 회사채다 — 분기 FCF −348억$, 장기부채는 9개월 만에 2.6배. 이 카드는 신용시장이 그 조합을 언제 의심하기 시작하는지를 지켜본다.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">39.3%</div><div class="l">3Q26 AWS 매출 성장<br>460억$ (① 실적 발표)</div></div>
+      <div class="stat"><div class="n">−34.8B$</div><div class="l">3Q26 FCF(OCF−capex)<br>(① 10-Q)</div></div>
+      <div class="stat"><div class="n">173.1B$</div><div class="l">장기부채(비유동) 9월 말<br>2025년 말 65.6B$ (① 10-Q)</div></div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#now" style="color:#b3261e;font-weight:800">▎현재 판단</a>
+  <a href="#z1">Ⅰ AWS 수요·공급</a>
+  <a href="#z2">Ⅱ 현금흐름과 부채</a>
+  <a href="#z3">Ⅲ 신용·집중</a>
+  <a href="#z4">Ⅳ 연결·리스크</a>
+</nav>
+
+<div class="wrap">
+
+<!-- brain:card:start -->
+<section id="now" class="blk"><div class="wrap">
+<div data-brain-card="ai-sw/ai_sw_company_amazon.html" style="padding:18px 20px;border-left:4px solid var(--accent);background:rgba(249,115,22,.06);line-height:1.75">
+<div style="font-weight:900;font-size:1.15em;color:var(--accent);margin-bottom:6px">▎현재 판단 · 2026.11.02 <span style="font-size:.7em;font-weight:600;color:var(--ink-3)">— 브레인 카드 · <code>brain/theses.json</code>에서 생성 2026-11-02 · 테제 4 (관측 4)</span></div>
+<b style="font-size:1.05em">한 문장 — AWS는 팔 용량이 없어서 못 판다(3Q +39%, 수주잔고 5,780억$). 그 용량을 짓는 돈은 현금이 아니라 부채다(TTM FCF −469억$, 장기부채 2.6배) — 신용시장이 의심을 시작하는지가 판정이다.</b>
+<table style="width:100%;border-collapse:collapse;font-size:.95rem;margin-top:12px"><tr style="border-top:1px solid var(--line)"><td style="padding:10px 8px 10px 0;vertical-align:top;white-space:nowrap"><b>T1</b><br><span style="font-family:var(--mono);font-size:.68rem;color:#60a5fa">관측</span></td><td style="padding:10px 0;vertical-align:top"><b>AWS 성장을 묶는 것은 수요가 아니라 공급이다 — 2026 용량은 매진, 2027 대부분·2028 상당분이 이미 약정됐다.</b><br><span style="color:var(--ink-2)">근거 — ① 3Q26 AWS 매출 460억$(+39.3%)·영업이익 178억$. ② 콜: 수주잔고 5,780억$, 2027·28 각 40%+ 전망. ② 재시(a16z) 「2026 매진·2027 대부분·2028 상당분」, 메모리 부족 2027에 안 끝남(HBM vs DRAM). (2026-11-02)</span><br><span style="color:var(--ink-2)">반증 — 4Q26 또는 1Q27 AWS 성장률이 30% 아래로 내려오거나, 수주잔고가 전분기보다 줄거나, 회사가 「매진」 표현을 거둔다.</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log 1건 · 최근 2026-11-02 ⓒ 신규(Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」). status 관측 — 유지·정정·철회는 Kenneth.</span><br><span style="color:var(--ink-2)">판정 — 4Q26 실적(2027-02 초 추정) — AWS 성장률·수주잔고·2027 capex 가이던스. · 마지막 검증 2026-11-02</span></td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:10px 8px 10px 0;vertical-align:top;white-space:nowrap"><b>T2</b><br><span style="font-family:var(--mono);font-size:.68rem;color:#60a5fa">관측</span></td><td style="padding:10px 0;vertical-align:top"><b>아마존의 AI 증설은 현금이 아니라 부채로 굴러간다 — FCF는 음수이고 장기부채는 9개월 만에 2.6배가 됐다.</b><br><span style="color:var(--ink-2)">근거 — ① 10-Q 3Q26: OCF 424억$ − capex 773억$ = FCF −348억$, TTM −469억$(회사 정의 −424억$). 장기부채(비유동) 656억→1,731억$(9M 발행 1,151억$), 9M 인수 638억$, 자사주 0. (2026-11-02)</span><br><span style="color:var(--ink-2)">반증 — 4Q26·1Q27 중 분기 FCF(OCF−capex)가 플러스로 돌아서고 순차입이 멈춘다.</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log 2건 · 최근 2026-11-02 관측 5사 10-Q 대조(①): 아마존 분기 FCF −348억$로 5사 중 가장 큼, MSFT만 +186억$.</span><br><span style="color:var(--ink-2)">판정 — 4Q26 10-K(2027-02 추정) — 연간 FCF·부채 만기표·2027 capex. · 마지막 검증 2026-11-02</span></td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:10px 8px 10px 0;vertical-align:top;white-space:nowrap"><b>T3</b><br><span style="font-family:var(--mono);font-size:.68rem;color:#60a5fa">관측</span></td><td style="padding:10px 0;vertical-align:top"><b>신용시장은 아직 아마존을 의심하지 않는다 — 아마존 스프레드가 벌어지면 그것이 경보다.</b><br><span style="color:var(--ink-2)">근거 — ② BofA·ICE: AI 발행사 IG 스프레드 확대 중 아마존 약 +10bp(MSFT와 같음, 오라클 +43bp·메타 +23bp보다 좁음). ② BofA 하이퍼스케일러 FCF/NI 약 100%→−15%. ② 한은 총부채/EBITDA 아마존 1.3배. (2026-11-02)</span><br><span style="color:var(--ink-2)">반증 — 아마존 IG 스프레드가 메타·오라클 수준(+25bp 이상)으로 벌어지거나, 무디스·S&amp;P가 등급 전망을 부정적으로 바꾼다.</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log 1건 · 최근 2026-11-02 ⓒ 신규(Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」). status 관측 — 유지·정정·철회는 Kenneth.</span><br><span style="color:var(--ink-2)">판정 — 다음 아마존 회사채 발행 가산금리 · 4Q26 실적 후 신용평가 코멘트. · 마지막 검증 2026-11-02</span></td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:10px 8px 10px 0;vertical-align:top;white-space:nowrap"><b>T4</b><br><span style="font-family:var(--mono);font-size:.68rem;color:#60a5fa">관측</span></td><td style="padding:10px 0;vertical-align:top"><b>AWS 수주잔고의 질은 앤트로픽·오픈AI 약정과 자체칩이 정한다 — 집중은 해자이자 리스크다.</b><br><span style="color:var(--ink-2)">근거 — ① 앤트로픽 S-1: AWS에 2026-05~2036-04 최소 1,100억$ 비해지 약정, 아마존 NPA 150억$. ② 재시: 오픈AI Bedrock·트레이니움 수 GW 약정. ② 그래비톤·트레이니움 약정 각 20배+, 2027 하반기 외부 판매 계획. (2026-11-02)</span><br><span style="color:var(--ink-2)">반증 — 앤트로픽 S-1 개정·IPO 후 AWS 약정이 줄거나 TPU로 옮겨가거나, 트레이니움 외부 판매가 연기된다.</span><br><span style="font-family:var(--mono);font-size:.68rem;color:var(--ink-3)">근거 log 1건 · 최근 2026-11-02 ⓒ 신규(Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」). status 관측 — 유지·정정·철회는 Kenneth.</span><br><span style="color:var(--ink-2)">판정 — 앤트로픽 IPO 가격 결정·S-1 개정 · AWS re:Invent(2026-12 초 추정) 트레이니움 발표. · 마지막 검증 2026-11-02</span></td></tr></table>
+<div id="falsify" style="margin-top:14px;padding-top:10px;border-top:1px solid var(--line)"><b style="color:#60a5fa">▎다음 검증 — 날짜가 아니라 이벤트</b><br>· AWS re:Invent(2026-12 초 추정) — T4 트레이니움 외부 판매·오픈AI 용량<br>· 4Q26 실적·10-K(2027-02 초 추정) — T1 AWS 성장률·수주잔고, T2 연간 FCF·부채<br>· 아마존 다음 회사채 발행 가산금리 — T3</div>
+<div style="margin-top:10px;color:var(--ink-2)"><b>포지션</b> — 보유 없음 — 관측 카드(비중·집행 아님).</div>
+<div style="margin-top:8px;font-size:.78rem;color:var(--ink-3)">이 카드는 손으로 고치지 않는다 — 정본은 <code>brain/theses.json</code>이고, 경위는 <code>brain/routing.jsonl</code>과 아래 타임라인에 있다. 값의 분자·분모·기준일은 <code>brain/facts.json</code>.</div>
+</div>
+</div></section>
+<!-- brain:card:end -->
+
+<section id="z1">
+<div class="zone-head"><span class="z-big">01</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 01</div>
+  <h2>AWS — 수요가 아니라 공급이 성장을 묶는다</h2>
+  <p>3Q26 AWS는 약 5년 만에 가장 빠르게 자랐고, 경영진은 2027·2028년에도 각 40% 이상을 말했습니다. 제약은 고객이 아니라 전력·메모리·가속기입니다.</p>
+</div>
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">AWS · 3Q26</div>
+  <h3>매출 460억$(+39.3%) · 영업이익 178억$ · 수주잔고 5,780억$</h3>
+  <table>
+    <tr><th>항목</th><th>값</th><th>출처·등급</th></tr>
+    <tr><td>AWS 매출</td><td>460억$ (+39.3%, 연환산 1,840억$)</td><td>① 3Q26 실적 발표(r-20261030-01)</td></tr>
+    <tr><td>AWS 영업이익</td><td>178억$ (전년 114억$)</td><td>① 같은 자료</td></tr>
+    <tr><td>수주잔고</td><td>5,780억$ (YoY 세 자릿수 증가)</td><td>② 콜 요약(r-20261030-20)</td></tr>
+    <tr><td>용량</td><td>2026 매진 · 2027 대부분 · 2028 상당분</td><td>② 재시 a16z(r-20261026-07 · r-20261101-06, 더빙 경유)</td></tr>
+    <tr><td>메모리</td><td>부족이 2027에 안 끝남 — HBM vs DRAM 배분 트레이드오프</td><td>② 재시(r-20261026-07)</td></tr>
+  </table>
+  <div class="analogy"><b>읽는 법:</b> 2026 capex 약 2,200억$로도 「상당한 수요를 놓치고 있다」(② 재시). 수요 쪽 반증은 성장률 둔화가 아니라 수주잔고 감소와 「매진」 표현의 철회다.</div>
+</div>
+</section>
+
+<section id="z2">
+<div class="zone-head"><span class="z-big">02</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 02</div>
+  <h2>현금흐름 — 증설은 부채로 굴러간다</h2>
+  <p>같은 정의(영업현금흐름 − 유형자산 취득)로 5사의 최신 10-Q를 한 표에 놓았습니다. 아마존의 분기 적자가 가장 크고, 차입 증가도 가장 큽니다.</p>
+</div>
+<div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+  <div class="f-tag">5사 최신 10-Q · 십억 달러 · ① SEC XBRL</div>
+  <h3>분기 FCF: MSFT만 플러스</h3>
+  <table>
+    <tr><th>회사</th><th>분기</th><th>OCF</th><th>capex</th><th>FCF</th><th>TTM FCF</th><th>장기부채 변화*</th></tr>
+    <tr><td>MSFT</td><td>FY27 1Q(7–9월)</td><td>58.0</td><td>39.4</td><td><b>+18.6</b></td><td>+60.0</td><td>−4.8</td></tr>
+    <tr><td>GOOGL</td><td>3Q26</td><td>42.3</td><td>51.4</td><td><b>−9.1</b></td><td>+19.7</td><td>+77.6</td></tr>
+    <tr style="background:#fdf1e0;font-weight:800"><td>AMZN</td><td>3Q26</td><td>42.4</td><td>77.3</td><td><b>−34.8</b></td><td>−46.9</td><td>+111.6</td></tr>
+    <tr><td>META</td><td>3Q26</td><td>32.8</td><td>33.9</td><td><b>−1.2</b></td><td>+28.6</td><td>+24.9</td></tr>
+    <tr><td>ORCL</td><td>FY27 1Q(6–8월)</td><td>23.1</td><td>28.5</td><td><b>−5.4</b></td><td>−28.7</td><td>−4.2</td></tr>
+  </table>
+  <p class="body" style="font-size:13px;color:var(--sub)">* 장기부채 변화: 역년 회사는 2025년 말→2026-09-30, MSFT는 6/30→9/30, 오라클은 5/31→8/31. 아마존 capex는 매각·인센티브 차감 전 총액(회사 정의 TTM FCF −424억$). 원본: <code>intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md</code></p>
+  <div class="analogy"><b>아마존 조달 구조(① 10-Q 9M26):</b> 장기부채(비유동) 656억→1,731억$, 장기채 발행 1,151억$(3Q 481억$), 인수 지출 638억$, 자사주 매입 0. 9M 순이익에 영업외이익 682억$(지분 평가 등)이 들어 있어 순이익 대비 FCF 비율은 더 나빠 보인다.</div>
+</div>
+</section>
+
+<section id="z3">
+<div class="zone-head"><span class="z-big">03</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 03</div>
+  <h2>신용과 집중 — 경보는 스프레드에서 울린다</h2>
+  <p>캐펙스 가이던스는 리스·SPV로 옮겨갈 수 있어 경보로 약합니다(CAP T4). 아마존 쪽 경보는 회사채 스프레드와 앤트로픽 약정의 질입니다.</p>
+</div>
+<div class="floor" style="--zc:var(--blue);--zs:var(--blues)">
+  <div class="f-tag">신용 · 집중</div>
+  <ul>
+    <li>② BofA·ICE: AI 발행사 IG 스프레드 확대 중 아마존 약 <b>+10bp</b> — MSFT와 같고 오라클 +43bp·메타 +23bp보다 좁다(r-20261101-32).</li>
+    <li>② BofA: 하이퍼스케일러 향후 12개월 FCF/순이익 2023 약 100% → 2026 약 −15%(r-20261102-01).</li>
+    <li>② 한국은행: 총부채/EBITDA 아마존 1.3배(MS 0.7·알파벳 0.6·오라클 5.6, r-20261027-82).</li>
+    <li>① 앤트로픽 S-1: AWS에 2026-05~2036-04 최소 <b>1,100억$</b> 사용량 무관 약정, 아마존 NPA 150억$(r-20261029-16 · r-20261027-23).</li>
+    <li>② 재시: 오픈AI Bedrock 실행·트레이니움 수 GW 약정(r-20261101-07). ② 그래비톤·트레이니움 약정 각 20배+, 2027 하반기 외부 판매 계획(r-20261101-12).</li>
+  </ul>
+</div>
+</section>
+
+<section id="z4">
+<div class="zone-head"><span class="z-big">04</span>
+  <div class="z-num" style="color:var(--accent)">SECTION 04</div>
+  <h2>연결과 리스크</h2>
+  <p>보유 없음 — 관측 카드입니다. 스탠스는 Lead 기본 중립(25/50/25)이고 비중·집행이 아닙니다.</p>
+</div>
+<div class="floor" style="--zc:var(--accent);--zs:var(--accents)">
+  <div class="f-tag">교차 링크</div>
+  <ul>
+    <li><a href="../national-strategy/ns_bigtech_capex_roi.html#now">빅테크 캐펙스 ROI</a> — T1(버블이 아니라 투자 시차) · T4(경보 지표를 크레딧으로) · T5</li>
+    <li><a href="ai_sw_company_anthropic.html">앤트로픽</a> — T4 컴퓨트 약정(아마존 T4의 상대편)</li>
+    <li><a href="ai_sw_company_msft_pltr.html">Microsoft · Palantir</a> — 5사 중 분기 FCF 플러스는 MSFT뿐(r-20261102-302)</li>
+  </ul>
+</div>
+<div class="floor" style="--zc:var(--down);--zs:var(--downs)">
+  <div class="f-tag">시나리오 · Lead 기본 중립 25/50/25</div>
+  <ul>
+    <li><b>상방 25</b> — AWS 40%+ 유지, 4Q부터 OCF가 capex를 따라잡음</li>
+    <li><b>기본 50</b> — 수요는 확인되나 FCF 음수가 2027까지, 시장은 FCF 회복 시점을 기다림</li>
+    <li><b>하방 25</b> — 스프레드 확대·앤트로픽 약정 흔들림·capex 추가 상향</li>
+  </ul>
+</div>
+</section>
+
+<div class="disclaimer">
+  <b>면책 고지</b><br>
+  본 페이지는 2026년 11월 2일 기준 관측 기록이며 투자 권유가 아닙니다. 현금흐름·부채는 SEC 10-Q XBRL(①)에서 같은 정의로 계산했고, 경영진 발언(②, 일부 기계번역 더빙 경유)·증권사·은행 의견(②③)은 구분해 적었습니다. 4Q26 실적일·re:Invent 일정은 전년 패턴으로 추정했습니다. 원본: <code>intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md</code>
+</div>
+
+<div class="series-nav">
+  <a href="ai_sw_company_msft_pltr.html">
+    <div class="sn-label">RELATED · COMPANY ANALYSIS</div>
+    ← Microsoft · Palantir
+  </a>
+  <a href="../" style="text-align:center">
+    <div class="sn-label">HOME</div>
+    Research Archive
+  </a>
+</div>
+
+<div class="wrap" style="margin-top:22px;padding:14px 16px;border:1px solid rgba(128,128,128,.3);border-radius:6px"><b>업데이트 타임라인</b><br>
+▸ 2026.11.02: <b>🆕 페이지 신설 — Kenneth 지시(11/02 07:54) · entity:AMZN 관측 축적 승격 · 현재 판단 T1~T4(status 관측)</b> · r-20261102-301 · r-20261102-302<br>
+</div>
+
+<footer style="margin-top:32px">
+  <p>ourprochoi Research Archive · AI SW Series · Company Watch · 아마존(AMZN) · 2026.11.02</p>
+  <p style="margin-top:6px">데이터 기준: 3Q26 10-Q(SEC accession 0001018724-26-000040, 2026-10-30 제출) · 5사 최신 10-Q · 발언·의견 2026-10-20 ~ 11-02</p>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+/* Scroll Reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.floor').forEach(el => io.observe(el));
+
+/* Progress Bar */
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (window.scrollY / h * 100) + '%';
+});
+
+/* Count-Up */
+function countUp(el) {
+  const target = +el.dataset.count;
+  const pre = el.dataset.pre || '';
+  const suf = el.dataset.suf || '';
+  const duration = 1200;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = pre + Math.round(target * ease).toLocaleString() + suf;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+/* Smooth Nav Scroll */
+document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+/* Scroll Spy Nav */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.background = a.getAttribute('href') === '#' + current ? 'var(--accents)' : 'var(--card)';
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : 'var(--sub)';
+    a.style.borderColor = a.getAttribute('href') === '#' + current ? 'var(--accent-line)' : 'var(--line)';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

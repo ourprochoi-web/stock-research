@@ -7955,6 +7955,13 @@
           "rid": "r-20261026-117",
           "one": "② 9/24 채널: 2030년까지 중동(사우디·쿠웨이트·카타르·UAE) 100억 달러+ 투자 계획, 약 4억 달러는 해저 케이블. 5년 누적이라 연 캡엑스 대비 작음.",
           "source": "t.me/insidertracking 2026-09-24"
+        },
+        {
+          "date": "2026-11-02",
+          "grade": "①",
+          "rid": "r-20261102-302",
+          "one": "① 10-Q FY27 1Q: OCF 580억$·capex 394억$ → FCF +186억$(FCF/NI 51%), 장기부채 −48억$, 자사주 44억·배당 68억$ — 5사 중 분기 FCF 플러스·순상환·주주환원 동시는 MSFT뿐. 단 신규 금융리스 52억$(리스 포함 FCF 약 +134억$), TTM FCF/NI 42%로 하락 중.",
+          "source": "intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md"
         }
       ],
       "facts": [],
@@ -8004,8 +8011,14 @@
       "business": "AWS 클라우드·AI 인프라. 2026-10-02 FT②③(TG): 미국 5개 주·12곳 이상 DC의 Nvidia Grace Blackwell GPU 약 80억 달러를 SPV로 이전 후 재임차 논의. Amazon은 SPV 지분 미보유, 외부 equity 10% 이하. 확정 거래 아님.",
       "business_grade": "②③(후보 · 2026-10-02 FT via TG)",
       "status": "후보",
-      "pages": [],
+      "pages": [
+        "ai-sw/ai_sw_company_amazon.html"
+      ],
       "theses": [
+        "ai-sw/ai_sw_company_amazon.html#T1",
+        "ai-sw/ai_sw_company_amazon.html#T2",
+        "ai-sw/ai_sw_company_amazon.html#T3",
+        "ai-sw/ai_sw_company_amazon.html#T4",
         "national-strategy/ns_bigtech_capex_roi.html#T1",
         "national-strategy/ns_bigtech_capex_roi.html#T5"
       ],
@@ -8016,71 +8029,8 @@
         "u-20261001-tg-25596"
       ],
       "tracked_price": false,
-      "note": "정본 테제 페이지 없음. 비중·집행 아님.",
-      "watch": [
-        {
-          "date": "2026-10-16",
-          "grade": "③",
-          "rid": "r-20261016-973",
-          "one": "r-20261016-972와 같은 글의 재게시 — 독립 근거 아님 (10/17 재판정 r-20261017-154)",
-          "source": "https://t.me/aetherjapanresearch/25880"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-972",
-          "one": "② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출 가능성 시사…“어쩌면” 일론 머스크 테슬라·스페이스X CEO가 세계 최대 전자상거래 기업 중 하나인 아마존(Amazon·$AMZN)과 경쟁하는 사업을 시작할 가능성",
-          "source": "https://t.me/aetherjapanresearch/25879"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-973",
-          "one": "② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출 가능성 시사…“어쩌면” 일론 머스크 테슬라·스페이스X CEO가 세계 최대 전자상거래 기업 중 하나인 아마존(Amazon·$AMZN)과 경쟁하는 사업을 시작할 가능성",
-          "source": "https://t.me/aetherjapanresearch/25880"
-        },
-        {
-          "date": "2026-10-15",
-          "grade": "②④",
-          "rid": "r-20261015-857",
-          "one": "②④ 머스크가 경쟁사를 어쩌면 만든다고 했다. Grok 봇 차단은 사용자 주장. 출시 없음. 스탠스 없음.",
-          "source": "t.me/aetherjapanresearch/25879"
-        },
-        {
-          "date": "2026-10-20",
-          "grade": "③",
-          "rid": "r-20261020-520",
-          "one": "③ MS 노왁: 톱픽, 목표 $335→$350, AWS 2027 +47% 전망. ② 10/19 시총 +1,340억 달러. 노트 미개봉.",
-          "source": "intake/files/x/2026-10-20/r520-amzn-ms-toppick.txt"
-        },
-        {
-          "date": "2026-10-19",
-          "grade": "①",
-          "rid": "r-20261019-267",
-          "one": "① TorchNeuron: PyTorch 코드 수정 없이 Trainium2·3 실행, 10/20 Apache 2.0 오픈소스. TorchTitan·FSDP·vLLM 호환. 채택 수치 없음.",
-          "source": "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai"
-        },
-        {
-          "date": "2026-10-21",
-          "grade": "②",
-          "rid": "r-20261021-21",
-          "one": "② 보도: 아마존 약 50억 달러 GB300 확보, 일부는 전력·인프라 제약으로 즉시 가동 불가. 전력 확보 전 GPU 선구매해 창고 보관. capex 축소 아님((c) 꺼짐).",
-          "source": "t.me/insidertracking/66810"
-        },
-        {
-          "date": "2026-10-25",
-          "grade": "②",
-          "rid": "r-20261025-24",
-          "one": "WSJ(10/12 전언): 아마존, AI 스타트업 데카트 약 70억 달러 인수 협상. 계약 아님."
-        },
-        {
-          "date": "2026-11-01",
-          "grade": "②",
-          "rid": "r-20261101-09",
-          "one": "② 재시(a16z 더빙): DC 반대는 오해 — 골프장 물 200배·세인트조셉 카운티 세금 약 30억$(미확인), 레오 위성 5억 가구 대상.",
-          "source": "youtube.com/watch?v=x_aehPQjvlQ"
-        }
-      ],
+      "note": "Kenneth 지시 관측 카드(2026-11-02 07:54 「아마존 테제 카드 올리고」, r-20261102-301). 정본 페이지 ai-sw/ai_sw_company_amazon.html T1~T4 status 관측. Lead 기본 스탠스 중립 25/50/25: 상방 25 — AWS 40%+ 유지와 4Q부터 OCF가 capex를 따라잡음 / 기본 50 — 수요는 확인되나 FCF 음수가 2027까지, 시장은 FCF 회복 시점을 기다림 / 하방 25 — 스프레드 확대·앤트로픽 약정 흔들림·capex 추가 상향. 판단 트리거(재검토 조건·집행 아님): 4Q26 실적의 AWS 성장률·분기 FCF·2027 capex. 장부 행 없음. 비중·집행 아님. 출처: intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md",
+      "watch": [],
       "folded": [
         {
           "date": "2026-10-19",
@@ -8129,6 +8079,30 @@
           ],
           "one": "11/01 접음(4줄 · 같은 rid 중복 2쌍): ③ 600억$ TPU 임차 부채 신디케이션(엔티티 오배정 — 앤스로픽)·③ 키뱅크 9월 클라우드 인스턴스 트래커(범용 둔화·그래비톤/블랙웰 확산)",
           "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — 11/01 야간 Lead 정리"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_amazon.html#T1",
+          "rids": [
+            "r-20261020-520",
+            "r-20261021-21",
+            "r-20261101-09"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(3줄): ③ MS 노왁: 톱픽, 목표 $335→$350, AWS 2027 +47% / ② 보도: 아마존 약 50억 달러 GB300 확보, 일부는 전력·인프라  / ② 재시(a16z 더빙): DC 반대는 오해 — 골프장 물 200배·세인",
+          "approved": "Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」(t984u)"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_amazon.html#T4",
+          "rids": [
+            "r-20261019-267",
+            "r-20261025-24",
+            "r-20261016-972",
+            "r-20261016-973",
+            "r-20261015-857"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(6줄): r-20261016-972와 같은 글의 재게시 — 독립 근거 아님 (10 / ② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출  / ② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출  / ②④ 머스크가 경쟁사를 어쩌면 만든다고 했다. Grok 봇 차단은 사용자 / ① TorchNeuron: PyTorch 코드 수정 없이 Trainium / WSJ(10/12 전언): 아마존, AI 스타트업 데카트 약 70억 달러",
+          "approved": "Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」(t984u)"
         }
       ],
       "watch_digest": {
@@ -8136,7 +8110,8 @@
         "n": 13,
         "one": "③ 삼성글로벌AI 10-06: [삼성 이영진] 글로벌 AI/SW 뉴스 🤖 (26/10/6) / ②④ 머스크가 경쟁사를 어쩌면 만든다고 했다. Grok 봇 차단은 사용자 주장. 출시 없음 / ③ MS 노왁: 톱픽, 목표 $335→$350, AWS 2027 +47% 전망. ② 10/ / ① TorchNeuron: PyTorch 코드 수정 없이 Trainium2·3 실행, 10",
         "note": "2026-10-20 야간: 2줄을 ns_bigtech_capex_roi.html#T5×1, ns_bigtech_capex_roi.html#T1×1 evidence로 접음. 남은 watch 11줄."
-      }
+      },
+      "falsifier": "T1 AWS 성장률 30% 미만·수주잔고 감소, T2 분기 FCF 플러스 전환·순차입 정지, T3 아마존 IG 스프레드 +25bp 이상·등급 전망 부정적, T4 앤트로픽 AWS 약정 축소·트레이니움 외부 판매 연기."
     },
     "034730": {
       "name": "SK㈜ / SK Inc",
