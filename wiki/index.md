@@ -127,3 +127,4 @@
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
+| industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
