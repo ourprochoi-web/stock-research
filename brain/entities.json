@@ -13906,7 +13906,7 @@
       "name": "티에프이",
       "market": "KR",
       "layer": "반도체 테스트 소켓·CoK·보드 (SoCAMM2·비메모리)",
-      "business": "현대차증권(11/2 커버리지 개시) 추정: 3Q26 매출 539억(+97.9%)·OP 138억(+185.8%, OPM 25.6%), SoCAMM2 고객사 3차 P/O까지 수주, 2027E 매출 2,683억·OP 778억(OPM 29.0%). 반기 비메모리 비중 30%대 중반, CPO는 ASIC향 R&D 양산 일부, 신규 북미 고객 2곳 직접 벤더. 모두 증권사 전망·전언(③), 종목코드 미대조.",
+      "business": "현대차증권(11/2 커버리지 개시) 추정: 3Q26 매출 539억(+97.9%)·OP 138억(+185.8%, OPM 25.6%), SoCAMM2 고객사 3차 P/O까지 수주, 2027E 매출 2,683억·OP 778억(OPM 29.0%). 반기 비메모리 비중 30%대 중반, CPO는 ASIC향 R&D 양산 일부, 신규 북미 고객 2곳 직접 벤더. 모두 증권사 전망·전언(③), 종목코드 425420(코스닥) 대조.",
       "business_grade": "③ 현대차증권 11/2 리포트 요약(전망)",
       "status": "후보",
       "pages": [],
@@ -13923,7 +13923,9 @@
           "one": "③ 현대차증권 신규 BUY·TP 13만: 3Q 매출 539억·OPM 25.6% 추정, SoCAMM2 3차 P/O, 2027E OP 778억. 전망치, 회사 실적 발표 전.",
           "source": "https://t.me/YeouidoStory2/119177"
         }
-      ]
+      ],
+      "ticker": "425420",
+      "code_source": "https://finance.naver.com/item/main.naver?code=425420 · https://www.etnews.com/20221103000139(2022.11 코스닥 상장)"
     },
     "030000": {
       "name": "제일기획",
@@ -14090,7 +14092,7 @@
       "name": "GC메디아이",
       "market": "KR",
       "layer": "의료 IT · 의원급 EMR(옛 유비케어)",
-      "business": "③ 삼프로 주말인터뷰(10/31, 대표 출연): 의원 EMR 약 1.6만 곳(50%+), AI 진료보조 테스트판 9월 출시 1,300곳 가입(무료), 제약 마케팅 플랫폼(OPM 50%+ 주장, 기존 SW 유통 OPM 3~4%). 매출 약 2천억+, 작년 OP 70억→올해 170억+·내년 200억+ 가능, 배당 검토(발언). 공시 미대조, 종목코드 032620은 옛 유비케어 기준.",
+      "business": "③ 삼프로 주말인터뷰(10/31, 대표 출연): 의원 EMR 약 1.6만 곳(50%+), AI 진료보조 테스트판 9월 출시 1,300곳 가입(무료), 제약 마케팅 플랫폼(OPM 50%+ 주장, 기존 SW 유통 OPM 3~4%). 매출 약 2천억+, 작년 OP 70억→올해 170억+·내년 200억+ 가능, 배당 검토(발언). 공시 미대조, 종목코드 032620 유지 확인(2026-03-24 상호변경 유비케어→지씨메디아이, KIND 공시).",
       "business_grade": "③ 방송(회사 대표 발언)",
       "status": "후보",
       "pages": [],
@@ -14107,20 +14109,22 @@
           "one": "③ EMR 점유 50%+, AI 진료보조 1,300곳 가입(무료), OP 70억→올해 170억+·내년 200억+ 가능, 배당 검토(대표 발언).",
           "source": "https://www.youtube.com/watch?v=T3NkFvkAmJs"
         }
-      ]
+      ],
+      "ticker": "032620",
+      "code_source": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20260324001330&docno=&method=search&viewerhost= · https://m.finance.daum.net/quotes/A032620/news/disclosure/20260324035170"
     },
     "WEIHUA.TW": {
-      "name": "웨이화테크놀로지(Taiwan)",
+      "name": "蔚華科技 Spirox(웨이화테크놀로지, Taiwan)",
       "market": "TW",
       "layer": "유리기판 테스트장비 (AI 패키징)",
-      "business": "② CMoney(11/2, 채널 전달): 대만 AI 패키징 유리기판 테스트장비 업체 웨이화테크놀로지 주가 +6.72%. 사업 내용·매출·종목코드 원문 미대조 — 이름과 영역만 확인.",
+      "business": "② CMoney(11/2): 蔚華科(3055, TWSE 上市 2002-12-12) 143元 +6.72%, TGV 유리기판 마이크로크랙 고속 스캔 시스템이 테마. 주업은 반도체 장비 대리점·기술지원(산업분류 電子通路業). 9월 매출 −57.28% YoY, 기관 추정 2026 EPS −0.09元.",
       "business_grade": "② CMoney 기사 링크(채널 미리보기)",
       "status": "후보",
       "pages": [],
       "facts": [],
       "theses": [],
       "tracked_price": false,
-      "note": "정본 페이지 없음. 11/02 야간 제안 → Kenneth 승인(11/02 22:27)으로 후보 카드 신설. 비중·집행 아님.",
+      "note": "정본 페이지 없음. 11/02 야간 제안 → Kenneth 승인(11/02 22:27)으로 후보 카드 신설. 비중·집행 아님. · 키 WEIHUA.TW는 r-20261102-60 parked 포인터 보존용으로 유지, 실제 코드는 ticker 3055.TW.",
       "falsifier": "유리기판 상용화(삼성전기 등) 일정이 밀리면 테스트장비 수요 축이 없다.",
       "watch": [
         {
@@ -14130,7 +14134,9 @@
           "one": "② 유리기판 테스트장비로 소개, 11/2 주가 +6.72%(CMoney). 매출·코드 미대조 — 사업 확인 전 후보.",
           "source": "https://cmnews.com.tw/article/cmoneyairesearcher-d06be130-d670-11f1-ba95-1fa0af97bd1b"
         }
-      ]
+      ],
+      "ticker": "3055.TW",
+      "code_source": "https://www.twse.com.tw/pdf/ch/3055_ch.pdf · https://www.spirox.com.tw/tw/about/ · https://cmnews.com.tw/article/cmoneyairesearcher-d06be130-d670-11f1-ba95-1fa0af97bd1b"
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
