@@ -7905,12 +7905,16 @@
       "layer": "하이퍼스케일 클라우드·소프트웨어",
       "business": "Azure·Microsoft 365·생산성. 2026-10-01 JPM③은 FY27 보고체계를 A&I/D&C로 재편하고 Microsoft Cloud ROIC를 하우스 모델로 추정(Cloud 투하자본≈전사 80%·OPM≈전사). 공시 ROIC가 아니다.",
       "business_grade": "③(후보 · 2026-10-01 JPM 경유)",
-      "status": "후보",
+      "status": "관측",
       "pages": [
+        "ai-sw/ai_sw_company_microsoft.html",
         "national-strategy/ns_bigtech_capex_roi.html",
         "ai-sw/ai_sw_company_msft_pltr.html"
       ],
       "theses": [
+        "ai-sw/ai_sw_company_microsoft.html#T1",
+        "ai-sw/ai_sw_company_microsoft.html#T2",
+        "ai-sw/ai_sw_company_microsoft.html#T3",
         "national-strategy/ns_bigtech_capex_roi.html#T1",
         "national-strategy/ns_bigtech_capex_roi.html#T3",
         "ai-sw/ai_sw_company_msft_pltr.html#T5"
@@ -7920,78 +7924,8 @@
       ],
       "tracked_price": true,
       "falsifier": "Cloud GM이 66%에서 추가 급락 · ROIC 30% 하회 · FY27 A&I OPM이 50%대를 크게 하회",
-      "note": "name_index 코드는 MSFT.O, 카드 키는 MSFT. ai_sw_company_msft_pltr 페이지는 있으나 이 관측의 착지는 capex ROI T1·T3. 비중·집행 아님.",
-      "watch": [
-        {
-          "date": "2026-10-12",
-          "grade": "④",
-          "rid": "r-20261012-75",
-          "one": "④ 한경: 앤트로픽 사용을 줄인다는 보도. 공시 아님. 금액 없음.",
-          "source": "https://www.youtube.com/watch?v=D9mYScmSvTQ"
-        },
-        {
-          "date": "2026-10-13",
-          "grade": "①",
-          "rid": "r-20261013-20",
-          "one": "① 블로그 10-12: Maia 300은 2027년 생산, HBM4 8스택·18TB/s·950W. 멀티GW는 2027부터. 30만 개 목표는 글에 없음.",
-          "source": "blogs.microsoft.com 2026-10-12"
-        },
-        {
-          "date": "2026-10-13",
-          "grade": "②③",
-          "rid": "r-20261013-247",
-          "one": "③ JPM·로이터②: Maia 300 내년 100만 개+는 블로그에 없던 개수. FY27 캡엑스 예상 약 $2,100억(2026 $1,750억). 클라우드 GPM 60% 중후반 개선 여지.",
-          "source": "t.me/aetherjapanresearch/25796"
-        },
-        {
-          "date": "2026-10-18",
-          "grade": "②",
-          "rid": "r-20261018-14",
-          "one": "② 텔레그래프·로이터: MS가 영국 로턴 Nscale DC 계약 종료(전력망 2030년대 전 불가). Nscale 총계약 1,030억 중 MS 40%+는 채널 전언. 캡엑스 가이던스 하향 아님",
-          "source": "channelnewsasia.com 6469486"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-215",
-          "one": "② MAI-Base-2 2.8T·활성 80B. GB200 1.6만·38일·MFU 21%. 증류 안 했다는 회사 주장.",
-          "source": "t.me/Samsung_Global_AI_SW/4791"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-304",
-          "one": "② 슐레이만 타운홀 전언: MAI-Base-2가 Spud보다 패턴 예측에서 앞섰고 컴퓨트는 25%. 2.8T는 r-215. Astra로 안 넓힘.",
-          "source": "https://t.me/Samsung_Global_AI_SW/4792"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "③②",
-          "rid": "r-20261016-952",
-          "one": "BofA③: 향후 12M FCF 음전환 안 할 유일 하이퍼스케일러. ② 나이소스 인디애나 1.1GW·20년·2028, 발전·송전비 MS 부담. 스톤엑스 TP 600.",
-          "source": "https://t.me/insidertracking/66461"
-        },
-        {
-          "date": "2026-10-22",
-          "grade": "②",
-          "rid": "r-20261022-56",
-          "one": "나델라 FY26 서한: FY26 신규 DC 88개·Fairwater 슈퍼팩토리, Maia 300 와트당 토큰 +40%(회사), 모델 1.1만+·Foundry 고객 10만+.",
-          "source": "linkedin.com/pulse/my-annual-letter-building-frontier-ecosystem-satya-nadella-iujec"
-        },
-        {
-          "date": "2026-10-25",
-          "grade": "④",
-          "rid": "r-20261025-23",
-          "one": "KUVIC 학생 리포트: 1MW 매출 토큰판매/GPU임대 FY26 3.2배→FY28 4.6배, Copilot 유료 좌석 4월 2,000만→7월 3,000만(출처 미기재)."
-        },
-        {
-          "date": "2026-10-26",
-          "grade": "②",
-          "rid": "r-20261026-117",
-          "one": "② 9/24 채널: 2030년까지 중동(사우디·쿠웨이트·카타르·UAE) 100억 달러+ 투자 계획, 약 4억 달러는 해저 케이블. 5년 누적이라 연 캡엑스 대비 작음.",
-          "source": "t.me/insidertracking 2026-09-24"
-        }
-      ],
+      "note": "Kenneth 지시 관측 카드(2026-11-02 22:27 「마이크로소프트 카드 만들고」, r-20261102-303). 정본 페이지 ai-sw/ai_sw_company_microsoft.html T1~T3 status 관측. Lead 기본 스탠스 중립 25/50/25: 상방 25 — FCF 플러스 유지·Maia 일정 준수 / 기본 50 — FCF는 플러스지만 capex 확대로 FCF/NI 하락 지속 / 하방 25 — 분기 FCF 음전환·리스 급증·capex 추가 상향. 판단 트리거(재검토 조건·집행 아님): FY27 2Q 분기 FCF·capex. 장부 행 없음. 비중·집행 아님. name_index 코드는 MSFT.O, 카드 키는 MSFT. 출처: intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md",
+      "watch": [],
       "facts": [],
       "folded": [
         {
@@ -8022,13 +7956,48 @@
           ],
           "one": "10/26 접음(3줄): 엔티티 오배정(MS 개별 아님 — 구글 Gemini 4·FTC 조사, 오픈AI Dots) 재판정 r-20261017-197 기준",
           "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — Lead 일일 정리 10/26"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_microsoft.html#T1",
+          "rids": [
+            "r-20261102-302",
+            "r-20261016-952"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(2줄): ① 10-Q FY27 1Q: OCF 580억$·capex 394억$ →  / BofA③: 향후 12M FCF 음전환 안 할 유일 하이퍼스케일러. ② ",
+          "approved": "Kenneth 지시 11/02 22:27 「마이크로소프트 카드 만들고」"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_microsoft.html#T2",
+          "rids": [
+            "r-20261013-20",
+            "r-20261013-247",
+            "r-20261022-56",
+            "r-20261016-215",
+            "r-20261016-304"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(5줄): ① 블로그 10-12: Maia 300은 2027년 생산, HBM4 8스 / ③ JPM·로이터②: Maia 300 내년 100만 개+는 블로그에 없던 / 나델라 FY26 서한: FY26 신규 DC 88개·Fairwater 슈퍼 / ② MAI-Base-2 2.8T·활성 80B. GB200 1.6만·38일 / ② 슐레이만 타운홀 전언: MAI-Base-2가 Spud보다 패턴 예측에",
+          "approved": "Kenneth 지시 11/02 22:27 「마이크로소프트 카드 만들고」"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_microsoft.html#T3",
+          "rids": [
+            "r-20261018-14",
+            "r-20261012-75",
+            "r-20261026-117",
+            "r-20261025-23"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(4줄): ② 텔레그래프·로이터: MS가 영국 로턴 Nscale DC 계약 종료(전 / ④ 한경: 앤트로픽 사용을 줄인다는 보도. 공시 아님. 금액 없음. / ② 9/24 채널: 2030년까지 중동(사우디·쿠웨이트·카타르·UAE)  / KUVIC 학생 리포트: 1MW 매출 토큰판매/GPU임대 FY26 3.2",
+          "approved": "Kenneth 지시 11/02 22:27 「마이크로소프트 카드 만들고」"
         }
       ],
       "watch_digest": {
-        "asof": "2026-10-19",
-        "n": 14,
-        "one": "② 텔레그래프·로이터: MS가 영국 로턴 Nscale DC 계약 종료(전력망 2030년대 전 불가) / ② MAI-Base-2 2.8T·활성 80B. GB200 1.6만·38일·MFU 21%. 증류 안  / ② 슐레이만 타운홀 전언: MAI-Base-2가 Spud보다 패턴 예측에서 앞섰고 컴퓨트는 25%. / BofA③: 향후 12M FCF 음전환 안 할 유일 하이퍼스케일러. ② 나이소스 인",
-        "note": "2026-10-19 야간: 3줄을 ns_bigtech_capex_roi.html#T1×2, ns_bigtech_capex_roi.html#T3×1 evidence로 접음. 남은 watch 11줄."
+        "asof": "2026-11-02",
+        "n": 0,
+        "one": "11줄 전부 ai_sw_company_microsoft T1~T3 evidence로 이관(카드 승격).",
+        "note": "2026-11-02 Kenneth 지시 카드 승격 — watch 11→0."
       }
     },
     "AMZN": {
@@ -8039,8 +8008,14 @@
       "business": "AWS 클라우드·AI 인프라. 2026-10-02 FT②③(TG): 미국 5개 주·12곳 이상 DC의 Nvidia Grace Blackwell GPU 약 80억 달러를 SPV로 이전 후 재임차 논의. Amazon은 SPV 지분 미보유, 외부 equity 10% 이하. 확정 거래 아님.",
       "business_grade": "②③(후보 · 2026-10-02 FT via TG)",
       "status": "후보",
-      "pages": [],
+      "pages": [
+        "ai-sw/ai_sw_company_amazon.html"
+      ],
       "theses": [
+        "ai-sw/ai_sw_company_amazon.html#T1",
+        "ai-sw/ai_sw_company_amazon.html#T2",
+        "ai-sw/ai_sw_company_amazon.html#T3",
+        "ai-sw/ai_sw_company_amazon.html#T4",
         "national-strategy/ns_bigtech_capex_roi.html#T1",
         "national-strategy/ns_bigtech_capex_roi.html#T5"
       ],
@@ -8051,71 +8026,8 @@
         "u-20261001-tg-25596"
       ],
       "tracked_price": false,
-      "note": "정본 테제 페이지 없음. 비중·집행 아님.",
-      "watch": [
-        {
-          "date": "2026-10-16",
-          "grade": "③",
-          "rid": "r-20261016-973",
-          "one": "r-20261016-972와 같은 글의 재게시 — 독립 근거 아님 (10/17 재판정 r-20261017-154)",
-          "source": "https://t.me/aetherjapanresearch/25880"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-972",
-          "one": "② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출 가능성 시사…“어쩌면” 일론 머스크 테슬라·스페이스X CEO가 세계 최대 전자상거래 기업 중 하나인 아마존(Amazon·$AMZN)과 경쟁하는 사업을 시작할 가능성",
-          "source": "https://t.me/aetherjapanresearch/25879"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-973",
-          "one": "② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출 가능성 시사…“어쩌면” 일론 머스크 테슬라·스페이스X CEO가 세계 최대 전자상거래 기업 중 하나인 아마존(Amazon·$AMZN)과 경쟁하는 사업을 시작할 가능성",
-          "source": "https://t.me/aetherjapanresearch/25880"
-        },
-        {
-          "date": "2026-10-15",
-          "grade": "②④",
-          "rid": "r-20261015-857",
-          "one": "②④ 머스크가 경쟁사를 어쩌면 만든다고 했다. Grok 봇 차단은 사용자 주장. 출시 없음. 스탠스 없음.",
-          "source": "t.me/aetherjapanresearch/25879"
-        },
-        {
-          "date": "2026-10-20",
-          "grade": "③",
-          "rid": "r-20261020-520",
-          "one": "③ MS 노왁: 톱픽, 목표 $335→$350, AWS 2027 +47% 전망. ② 10/19 시총 +1,340억 달러. 노트 미개봉.",
-          "source": "intake/files/x/2026-10-20/r520-amzn-ms-toppick.txt"
-        },
-        {
-          "date": "2026-10-19",
-          "grade": "①",
-          "rid": "r-20261019-267",
-          "one": "① TorchNeuron: PyTorch 코드 수정 없이 Trainium2·3 실행, 10/20 Apache 2.0 오픈소스. TorchTitan·FSDP·vLLM 호환. 채택 수치 없음.",
-          "source": "https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai"
-        },
-        {
-          "date": "2026-10-21",
-          "grade": "②",
-          "rid": "r-20261021-21",
-          "one": "② 보도: 아마존 약 50억 달러 GB300 확보, 일부는 전력·인프라 제약으로 즉시 가동 불가. 전력 확보 전 GPU 선구매해 창고 보관. capex 축소 아님((c) 꺼짐).",
-          "source": "t.me/insidertracking/66810"
-        },
-        {
-          "date": "2026-10-25",
-          "grade": "②",
-          "rid": "r-20261025-24",
-          "one": "WSJ(10/12 전언): 아마존, AI 스타트업 데카트 약 70억 달러 인수 협상. 계약 아님."
-        },
-        {
-          "date": "2026-11-01",
-          "grade": "②",
-          "rid": "r-20261101-09",
-          "one": "② 재시(a16z 더빙): DC 반대는 오해 — 골프장 물 200배·세인트조셉 카운티 세금 약 30억$(미확인), 레오 위성 5억 가구 대상.",
-          "source": "youtube.com/watch?v=x_aehPQjvlQ"
-        }
-      ],
+      "note": "Kenneth 지시 관측 카드(2026-11-02 07:54 「아마존 테제 카드 올리고」, r-20261102-301). 정본 페이지 ai-sw/ai_sw_company_amazon.html T1~T4 status 관측. Lead 기본 스탠스 중립 25/50/25: 상방 25 — AWS 40%+ 유지와 4Q부터 OCF가 capex를 따라잡음 / 기본 50 — 수요는 확인되나 FCF 음수가 2027까지, 시장은 FCF 회복 시점을 기다림 / 하방 25 — 스프레드 확대·앤트로픽 약정 흔들림·capex 추가 상향. 판단 트리거(재검토 조건·집행 아님): 4Q26 실적의 AWS 성장률·분기 FCF·2027 capex. 장부 행 없음. 비중·집행 아님. 출처: intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md",
+      "watch": [],
       "folded": [
         {
           "date": "2026-10-19",
@@ -8164,6 +8076,30 @@
           ],
           "one": "11/01 접음(4줄 · 같은 rid 중복 2쌍): ③ 600억$ TPU 임차 부채 신디케이션(엔티티 오배정 — 앤스로픽)·③ 키뱅크 9월 클라우드 인스턴스 트래커(범용 둔화·그래비톤/블랙웰 확산)",
           "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — 11/01 야간 Lead 정리"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_amazon.html#T1",
+          "rids": [
+            "r-20261020-520",
+            "r-20261021-21",
+            "r-20261101-09"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(3줄): ③ MS 노왁: 톱픽, 목표 $335→$350, AWS 2027 +47% / ② 보도: 아마존 약 50억 달러 GB300 확보, 일부는 전력·인프라  / ② 재시(a16z 더빙): DC 반대는 오해 — 골프장 물 200배·세인",
+          "approved": "Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」(t984u)"
+        },
+        {
+          "date": "2026-11-02",
+          "into": "ai-sw/ai_sw_company_amazon.html#T4",
+          "rids": [
+            "r-20261019-267",
+            "r-20261025-24",
+            "r-20261016-972",
+            "r-20261016-973",
+            "r-20261015-857"
+          ],
+          "one": "2026-11-02 카드 승격으로 이관(6줄): r-20261016-972와 같은 글의 재게시 — 독립 근거 아님 (10 / ② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출  / ② 에테르 10-16: 일론 머스크, 아마존(AMZN) 경쟁 사업 진출  / ②④ 머스크가 경쟁사를 어쩌면 만든다고 했다. Grok 봇 차단은 사용자 / ① TorchNeuron: PyTorch 코드 수정 없이 Trainium / WSJ(10/12 전언): 아마존, AI 스타트업 데카트 약 70억 달러",
+          "approved": "Kenneth 지시 11/02 07:54 「아마존 테제 카드 올리고」(t984u)"
         }
       ],
       "watch_digest": {
@@ -8171,7 +8107,8 @@
         "n": 13,
         "one": "③ 삼성글로벌AI 10-06: [삼성 이영진] 글로벌 AI/SW 뉴스 🤖 (26/10/6) / ②④ 머스크가 경쟁사를 어쩌면 만든다고 했다. Grok 봇 차단은 사용자 주장. 출시 없음 / ③ MS 노왁: 톱픽, 목표 $335→$350, AWS 2027 +47% 전망. ② 10/ / ① TorchNeuron: PyTorch 코드 수정 없이 Trainium2·3 실행, 10",
         "note": "2026-10-20 야간: 2줄을 ns_bigtech_capex_roi.html#T5×1, ns_bigtech_capex_roi.html#T1×1 evidence로 접음. 남은 watch 11줄."
-      }
+      },
+      "falsifier": "T1 AWS 성장률 30% 미만·수주잔고 감소, T2 분기 FCF 플러스 전환·순차입 정지, T3 아마존 IG 스프레드 +25bp 이상·등급 전망 부정적, T4 앤트로픽 AWS 약정 축소·트레이니움 외부 판매 연기."
     },
     "034730": {
       "name": "SK㈜ / SK Inc",
