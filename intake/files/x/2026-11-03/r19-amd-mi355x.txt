@@ -1,0 +1,14 @@
+# AMD MI355X vs B200 토큰당 비용(SemiAnalysis)
+# X A-tier pull 2026-11-03 (10/30 09:18 → 11/3 09:22 KST) · Lead 발췌
+
+## semiconsight · 2026-11-01 12:26 KST · quote · https://x.com/semiconsight/status/2116733658157736333
+$AMD MI355X가 Kimi K3 에이전틱 추론에서 $NVDA B200을 달러당 성능으로 최대 2배 앞섰다.
+
+SemiAnalysis InferenceX 데이터 기준으로 토큰당 비용은 B200 0.089달러, MI355X 0.046달러다. 비결은 AITER 커널 튜닝과 MonoKernel 디코드 최적화다. MI355X는 서버당 HBM이 2,304GB라, 1.5TB가 안 되는 B200이 거쳐야 하는 느린 서버 간 네트워킹(8x400Gbit/s)을 건너뛸 수 있다. Kimi K3가 2.8조 파라미터라 1.5TB 넘는 VRAM이 필요한 구조에서 나온 차이다.
+
+다만 SemiAnalysis 자체 데이터라 독립 검증은 없다. 최대 2배는 최적 운영점 기준일 수 있고, 절대 처리량은 B300이 여전히 앞선다. MI355X의 콜드 프리필은 51초로 B300의 23초보다 느리다.
+추론 경쟁이 스펙 경쟁에서 달러당 토큰 경쟁으로 넘어갔다는 신호로 읽는 게 맞다.
+> [SemiAnalysis_] https://x.com/i/status/2116606900271788210
+> ALERT🚨🚨🚨: AMD's @AnushElangovan and his team have achieved up to 2x better performance per dollar than even B200 on Kimi K3 Agentic Inference! This is due to various software optimization efforts, including tuning AITER kernels and MonoKernel decode.
+> 
+> Along with MI355X having https://t.co/3al52CFQOt
