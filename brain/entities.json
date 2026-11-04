@@ -14626,6 +14626,79 @@
           "source": "https://t.me/meritz_research/45014"
         }
       ]
+    },
+    "356860": {
+      "code": "356860",
+      "name": "티엘비",
+      "market": "KR",
+      "layer": "메모리 모듈 PCB(DDR5 RDIMM·MR-DIMM·SoCAMM/LPCAMM) · SSD PCB · 베트남 법인(TLB VINA)",
+      "business": "2Q26 매출 882억(+37.6%)·영업이익 128억(+85.5%)·OPM 14.47%(① 공정공시 08-03). 2Q말 수주잔고 1,318억(1Q 539억, ③ 키움). 3Q26E 매출 942억·OP 170억(OPM 18.1%, ③ 키움). SOCAMM2 기판 판가·생산시간 약 2배, 베트남 2공장 내년 4Q 가동(② 디일렉). 10-29 TLB VINA 여신 보증 352.8억(자기자본 2,580.6억의 13.67%, ① DART).",
+      "business_grade": "① DART 공정공시(2Q 잠정)·채무보증결정 10-29 · ② 디일렉 · ③ 키움·메리츠 — 3Q26 잠정 미공시(11-04)",
+      "pages": [
+        "hbm-packaging/hbm_pkg_theme_substrate.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/hbm_pkg_theme_substrate.html#T2",
+        "hbm-packaging/hbm_pkg_theme_substrate.html#T5"
+      ],
+      "tracked_price": true,
+      "position": "보유 396주 · 평단 50,300(증권사 · 수수료 제외 · 체결일·수수료 매매보고서 미수령) · ① 통합 잔고 11/03 09:59",
+      "falsifier": "3Q26 잠정에서 영업이익이 ③ 키움 추정 170억(OPM 18.1%)을 크게 밑돌거나 OPM이 2Q 14.5% 아래로 내려가면 SoCAMM 믹스·판가 근거(substrate T2·T5)가 약해진다. 3Q OPM이 17%+를 유지하면 substrate T3(「기저효과」)의 반증 쪽이다.",
+      "note": "보유 카드(Kenneth 지시 t1039u(2026-11-04 10:21 KST) 「티엘비와 동진쎄미켐 넣어줘」). 전용 테제·전용 페이지 없음 — 연결 테제는 substrate T2(이름·Q2 실적이 claim에 있음)·T5(SoCAMM). 기본 스탠스·시나리오 미설정(Kenneth 몫 · 클래시스 카드는 Kenneth 지시로 중립을 넣었으나 이번 지시엔 스탠스 언급 없음). 다음 판정: 3Q26 잠정(미공시). 가격 추적: update_prices.py WATCH 기존 편입(356860). 사이즈·스톱·주문 아님. 출처: intake/files/web/2026-11-04/tlb_dongjin_verify.md",
+      "watch": [
+        {
+          "date": "2026-11-04",
+          "grade": "①",
+          "rid": "r-20261104-41",
+          "one": "① 보유 편입 표시: 11/03 통합 잔고 396주 @50,300(수수료 제외)·현재가 36,400(−27.6%). 보유 카드 신설(t1039u). 3Q 잠정 미공시",
+          "source": "u-20261104-holdings-1103"
+        },
+        {
+          "date": "2026-10-29",
+          "grade": "①",
+          "rid": "r-20261104-41",
+          "one": "① TLB VINA(베트남) 시티 여신한도 USD 26.4M 보증 352.8억=자기자본 13.67%·11/05~27/11/05. 임시주총 12/18(정관·자본준비금 감액)",
+          "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029900521"
+        }
+      ]
+    },
+    "005290": {
+      "code": "005290",
+      "name": "동진쎄미켐",
+      "market": "KR",
+      "layer": "반도체 공정 화학(포토레지스트 — 2022 EUV용 국산화 · 신너·현상액 등) · 디스플레이 소재",
+      "business": "3Q26 연결 잠정 매출 3,708억(+23.6% YoY·+6.9% QoQ)·영업이익 611억(+51.2% YoY·+3.0% QoQ)·OPM 16.5%(① DART 11-03). 세전 −79억(적자전환)인데 순이익 1,129억 — 원인 공시 본문에 없음(미확인). 2Q26 매출 3,469억·OP 593억·OPM 17.09%(① · kr_semi_materials_gas 표와 일치). 2022년 EUV용 포토레지스트 국산화(② 언론·업계 집계).",
+      "business_grade": "① DART 연결 영업(잠정)실적 공정공시 2026-11-03(rcpNo 20261103900296) · ② 언론(국산화) — 세그먼트 원문 미대조",
+      "pages": [
+        "hbm-packaging/kr_semi_materials_gas.html"
+      ],
+      "facts": [],
+      "theses": [
+        "hbm-packaging/kr_semi_materials_gas.html#T3",
+        "hbm-packaging/kr_semi_materials_gas.html#T4",
+        "hbm-packaging/kr_semi_materials_gas.html#T5"
+      ],
+      "tracked_price": true,
+      "position": "보유 573주 · 평단 52,200(증권사 · 수수료 제외 · 체결일·수수료 매매보고서 미수령) · ① 통합 잔고 11/03 09:59",
+      "falsifier": "4Q26 잠정에서 영업이익이 QoQ 감소로 돌아서고 OPM이 3Q 16.5% 아래면 「화학은 메모리 가동률을 따라간다」(소재 T5)의 이 회사 몫이 약해진다. 3Q 세전 적자의 원인이 일회성이 아니면(분기보고서 확인) 순이익 급증은 이익의 질이 아니다.",
+      "note": "보유 카드(Kenneth 지시 t1039u(2026-11-04 10:21 KST)). 전용 테제·전용 페이지 없음 — 연결 테제는 kr_semi_materials_gas T3(포토레지스트 국산화 대조군 · 페이지 본문)·T4(실적↑ 가격↓ 패턴 · 표 14사 중 하나)·T5(가스 vs 화학). theses.json claim에는 이름이 없고 HTML 본문·표에 있다. 기본 스탠스·시나리오 미설정(Kenneth 몫). 다음 확인: 3Q 분기보고서(세전 적자·순이익 괴리 원인) · 4Q 잠정. 가격 추적: update_prices.py WATCH 기존 편입(005290). 사이즈·스톱·주문 아님. 출처: intake/files/web/2026-11-04/tlb_dongjin_verify.md",
+      "watch": [
+        {
+          "date": "2026-11-03",
+          "grade": "①",
+          "rid": "r-20261104-42",
+          "one": "① 3Q26 잠정 매출 3,708억(+23.6%)·OP 611억(+51.2%)·OPM 16.5%. 세전 −79억인데 순이익 1,129억 — 원인 미공개",
+          "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103900296"
+        },
+        {
+          "date": "2026-11-04",
+          "grade": "①",
+          "rid": "r-20261104-42",
+          "one": "① 보유 편입 표시: 11/03 통합 잔고 573주 @52,200(수수료 제외)·현재가 37,300(−28.5%). 보유 카드 신설(t1039u)",
+          "source": "u-20261104-holdings-1103"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
