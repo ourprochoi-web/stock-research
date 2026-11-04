@@ -4994,6 +4994,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "CVS Health": {
+   "code": "CVS",
+   "market": "US",
+   "entity": "CVS",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Caterpillar": {
    "code": "CAT",
    "market": "US",
@@ -5503,6 +5513,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Emerson Electric": {
+   "code": "EMR",
+   "market": "US",
+   "entity": "EMR",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Energy Transfer": {
    "code": "ET",
    "market": "US",
@@ -5718,6 +5738,20 @@
    "falsifier": null,
    "facts": 0,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "GlobalFoundries": {
+   "code": "GFS",
+   "market": "US",
+   "entity": "GFS",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_equip_cross_valuation.html": [
+     "T7"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -6929,6 +6963,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SharkNinja": {
+   "code": "SN",
+   "market": "US",
+   "entity": "SN",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },

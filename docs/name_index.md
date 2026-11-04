@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-04)
 
-추적 459개 · 테제가 걸린 이름 236 · 엔티티 있음 284 · facts 있음 87.
+추적 463개 · 테제가 걸린 이름 237 · 엔티티 있음 288 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -305,6 +305,7 @@
 | US | Bristol Myers Squibb | BMY | ✓ 순수 AI바이오가 아님. 약 테제 위 감시. ai-bio/ai_bio_company_global.html#a | — | — |
 | US | Broadcom | AVGO.O | ✓  | ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_architecture_war#T1 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · ai_sw_company_anthropic#T4 · us_defense_primes#T1 · hbm_pkg_company_samsung#T5 · hbm_pkg_theme_memory_cycle#T2 · hbm_pkg_theme_substrate#T1 · ns_bigtech_capex_roi#T2,T4 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 · optical_light_source_cw#T1 | 2 |
 | US | CMB.TECH | CMBT.K | — | — | 4 |
+| US | CVS Health | CVS | ✓ — | — | — |
 | US | Caterpillar | CAT | ✓ 정본 페이지는 전력 인프라 지도 T1. GEV 카드는 없음. 비중·집행 아님. | ai_power_infra_investment_map#T1 | — |
 | US | Celestica | CLS | ✓  | optical_valuechain_9#T1 | — |
 | US | Cerebras | CBRS.O | ✓ 2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SB | ai_chip_architecture_war#T1,T2,T4,T5 · 13f_2026q2#T4,T5,T6 · robot_kr_16_valuation#T3 | 12 |
@@ -333,6 +334,7 @@
 | US | EQT | EQT | ✓  | us_energy_hegemony_17#T1,T2,T3,T4 · us_energy_five#T6 · oil_hedge_vehicles#T1 | 11 |
 | US | Eaton | ETN | ✓  | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T11,T5,T9 · us_ai_adjacent_sectors#T2 · us_epc_datacenter_build#T1 · kr_drawdown_2026#T6 | — |
 | US | Eli Lilly | LLY | ✓  | glp1_company_novo_lilly#T1,T2,T3,T4,T5 | — |
+| US | Emerson Electric | EMR | ✓ — | — | — |
 | US | Energy Transfer | ET | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Enterprise Products | EPD | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Everpure | P | — | — | — |
@@ -349,6 +351,7 @@
 | US | GRAIL | GRAL | ✓  | — | — |
 | US | Generac | GNRC | ✓ 정본 페이지는 없음. 이름 색인이 블룸 T4(온사이트)에 둔다. $8B는 09-17 로그에 이미 있고 SOF | us_bloom_intel_deep#T4 | — |
 | US | General Dynamics | GD | — | — | — |
+| US | GlobalFoundries | GFS | ✓ — | kr_semi_equip_cross_valuation#T7 | — |
 | US | HP Inc. | HPQ | ✓  | — | — |
 | US | Hewlett Packard Enterprise | HPE | ✓ 정본 테제 페이지 없음. 시세 추적 밖. 비중·집행 아님. | ai_chip_architecture_war#T1 | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
@@ -407,6 +410,7 @@
 | US | Semtech | SMTC.O | ✓  | optical_interconnect_layer#T3 · optical_valuechain_9#T2,T4 | 19 |
 | US | SentinelOne | S | ✓  | cyber_ai_security#T2,T3 | 9 |
 | US | ServiceNow | NOW | ✓  | ai_sw_investment_map#T5 · ai_sw_overview#T1 | — |
+| US | SharkNinja | SN | ✓ — | — | — |
 | US | Shoals | SHLS.O | — | us_7axis_cross_valuation#T2 | — |
 | US | Snowflake | SNOW.K | — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · us_7axis_cross_valuation#T5 | — |
 | US | SpaceX | SPCX.O | ✓ 정본 페이지 없음. 테마 페이지 space/space_update_2026.html T1에 $400억 조달  | space_update_2026#T1,T2,T3,T4,T5 · us_vertiv_corning_deep#T6 · ai_sw_company_anthropic#T4,T5 · ai_sw_company_crwd_ddog_snow#T5 · ai_sw_company_msft_pltr#T3 · hbm_pkg_theme_memory_cycle#T2 · q2_2026_earnings_overview#T2,T4 · ns_bigtech_capex_roi#T1,T2,T4 · 13f_2026q2#T1,T6 · robot_theme_supply_chain#T4 · space_case_contract_structure#T1,T2,T4,T5 | — |
