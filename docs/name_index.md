@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-04)
 
-추적 459개 · 테제가 걸린 이름 236 · 엔티티 있음 283 · facts 있음 87.
+추적 459개 · 테제가 걸린 이름 236 · 엔티티 있음 284 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -312,7 +312,7 @@
 | US | Chevron | CVX | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Chipotle | CMG | ✓  | — | — |
 | US | Ciena | CIEN.K | ✓  | kr_cooling_optical_layer#T3 · optical_valuechain_9#T2,T5 | 5 |
-| US | Circle Internet | CRCL | — | — | — |
+| US | Circle Internet | CRCL | ✓ — | — | — |
 | US | Cisco Systems | CSCO.O | ✓  | — | — |
 | US | Cloudflare | NET | ✓  | cyber_ai_security#T2,T3 | 9 |
 | US | Coherent | COHR.K | ✓  | optical_valuechain_9#T1,T2,T3,T4,T5 · kr_cooling_optical_layer#T3 · us_vertiv_corning_deep#T7 · hbm_pkg_theme_substrate#T4 · 13f_2026q2#T4 · cyber_ai_security#T4 · optical_light_source_cw#T1,T2,T3,T4 | 12 |
@@ -384,7 +384,7 @@
 | US | Occidental | OXY | ✓  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Okeanis | ECO | — | — | 4 |
 | US | Ondas | ONDS | ✓  | — | — |
-| US | OpenAI | OPENAI | ✓ 지분 상장 전. ai_sw_overview T1·T5가 오픈AI를 언급하나 이번 ARR은 그 반증 창에 안  | ai_sw_overview#T1,T5 · ai_chip_company_nvidia#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1 · ai_sw_company_anthropic#T1,T5 · ai_sw_company_crwd_ddog_snow#T1 · ai_sw_company_msft_pltr#T5 · ns_bigtech_capex_roi#T4,T5 · ns_global_strategy_overview#T4 · space_update_2026#T1 · ai_sw_company_amazon#T4 | — |
+| US | OpenAI | OPENAI | ✓ 지분 상장 전. ai_sw_overview T1·T5가 오픈AI를 언급하나 이번 ARR은 그 반증 창에 안  | ai_sw_overview#T1,T5 · ai_chip_company_nvidia#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1 · ai_sw_company_anthropic#T1,T5 · ai_sw_company_crwd_ddog_snow#T1 · ai_sw_company_msft_pltr#T5 · ns_bigtech_capex_roi#T4,T5 · ns_global_strategy_overview#T4 · space_update_2026#T1 · ai_sw_company_amazon#T4 · ai_sw_company_microsoft#T3 | — |
 | US | Oracle | ORCL.K | ✓ 정본 테제 페이지 없음. name_index 코드는 ORCL.K, 카드 키는 ORCL. 주피터 포스마저는 r | ns_bigtech_capex_roi#T2,T4 · us_bloom_intel_deep#T1,T4 · us_7axis_cross_valuation#T2,T3,T5 · ns_global_strategy_overview#T4 | — |
 | US | Palantir | PLTR.O | ✓ 정본 페이지는 MSFT와 공유. 엔티티 카드가 없어 후보로 연다. Armada 카드는 만들지 않음. 비중·집 | ai_sw_company_msft_pltr#T1,T2,T3,T4,T5 · ai_sw_company_anthropic#T5 · ai_sw_company_crwd_ddog_snow#T5 · ai_sw_investment_map#T2 · q2_2026_earnings_overview#T4 · statements_log#T3 · robot_theme_supply_chain#T4 | — |
 | US | Palo Alto Networks | PANW.O | ✓  | cyber_ai_security#T2,T3,T4 | 9 |

@@ -14864,6 +14864,30 @@
           "source": "https://t.me/meritz_research/45028"
         }
       ]
+    },
+    "CRCL": {
+      "name": "Circle Internet Group",
+      "ticker": "CRCL",
+      "market": "US",
+      "layer": "스테이블코인(USDC) 발행 · 결제 네트워크",
+      "business": "준비금 운용수익이 매출 대부분. 3Q26 총매출·준비금 수익 $8.65억(ARC 토큰 사전판매 $1.82억 포함), USDC 유통량 $739억(② 텔레그램 요약).",
+      "business_grade": "② 텔레그램 실적 요약 — 회사 IR 미대조",
+      "status": "후보",
+      "pages": [],
+      "facts": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "Lead 신설 후보 카드(2026-11-04, r-20261104-93). 테제 없음 — watch만. 비중·스톱·주문 아님.",
+      "falsifier": "—",
+      "watch": [
+        {
+          "date": "2026-11-04",
+          "grade": "②",
+          "rid": "r-20261104-93",
+          "one": "② 3Q26 매출 $8.65억 beat이나 ARC 토큰 $1.82억 제외 시 $6.83억(예상 하회), 준비금 수익 −8%, USDC 점유율 27%(−183bp)",
+          "source": "https://t.me/insidertracking/68334"
+        }
+      ]
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",

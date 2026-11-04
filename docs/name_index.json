@@ -5108,8 +5108,8 @@
   "Circle Internet": {
    "code": "CRCL",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "CRCL",
+   "falsifier": "—",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -6565,6 +6565,9 @@
     ],
     "ai-sw/ai_sw_company_amazon.html": [
      "T4"
+    ],
+    "ai-sw/ai_sw_company_microsoft.html": [
+     "T3"
     ]
    },
    "aliases": [],
