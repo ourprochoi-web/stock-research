@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-04)
 
-추적 458개 · 테제가 걸린 이름 236 · 엔티티 있음 282 · facts 있음 87.
+추적 459개 · 테제가 걸린 이름 236 · 엔티티 있음 283 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -184,6 +184,7 @@
 | KR | 주성엔지니어링 | 036930 | — | kr_semi_equip_6#T1 · kr_semi_fab_timeline#T3 | — |
 | KR | 채비 | 0011T0 | ✓  | ai_korea_g3_sovereign_ai#T1 · ai_power_company_nuclear_smr#T2 · ai_value_chain_guide_v2#T4 · k_defense_cross_valuation#T1,T2,T3,T4,T5,T6,T7,T8,T9 · kr_semi_equip_cross_valuation#T2,T5 · k_beauty_company_silicon2#T5 · ns_bigtech_capex_roi#T2,T4 | — |
 | KR | 카나프테라퓨틱스 | 0082N0 | ✓ 전임상 데이터가 학회·IR에서 재현되지 않음, 유상증자, 공동개발 해지면 중립→부정 재검토 | — | — |
+| KR | 카카오뱅크 | 323410 | ✓ — | — | — |
 | KR | 케이엔제이 | 272110 | — | — | — |
 | KR | 케이엠더블유 | 032500 | — | — | — |
 | KR | 켄코아에어로스페이스 | 274090 | ✓ 3Q26 영업적자 재전환, 추가 무형자산 손상, 유상증자·CB 발행, SpaceX 공급이 회사 확인으로 부인 | — | — |
