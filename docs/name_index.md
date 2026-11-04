@@ -1,6 +1,6 @@
-# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-04)
+# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-05)
 
-추적 463개 · 테제가 걸린 이름 237 · 엔티티 있음 288 · facts 있음 87.
+추적 467개 · 테제가 걸린 이름 237 · 엔티티 있음 292 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -323,6 +323,7 @@
 | US | Constellation Energy | CEG.O | ✓ 정본 테제 페이지 없음. name_index 코드는 CEG.O, 카드 키는 CEG. 비중·집행 아님. | us_7axis_cross_valuation#T2 | — |
 | US | CoreWeave | CRWV.O | ✓ 정본 테제 페이지 없음. name_index 코드는 CRWV.O, 카드 키는 CRWV. 선행 +25%·$40 | ns_bigtech_capex_roi#T2,T4 · ai_korea_g3_sovereign_ai#T1 · ai_value_chain_guide_v2#T4 · us_7axis_cross_valuation#T2 | — |
 | US | Corning | GLW | ✓  | us_ai_adjacent_cross_valuation#T11,T5 · us_ai_adjacent_sectors#T2 · us_vertiv_corning_deep#T1,T2,T3,T4,T5,T6,T7 · kr_drawdown_2026#T6,T7 | — |
+| US | Costco Wholesale | COST | ✓ — | — | — |
 | US | Credo Technology | CRDO.O | ✓  | optical_interconnect_layer#T2,T5 · optical_valuechain_9#T5 | 17 |
 | US | CrowdStrike | CRWD.O | ✓  | cyber_ai_security#T2,T3 · ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · ai_sw_investment_map#T2 · us_7axis_cross_valuation#T1 | 9 |
 | US | DHT 홀딩스 | DHT | — | — | 4 |
@@ -331,6 +332,7 @@
 | US | Devon Energy(+Coterra) | DVN | ✓ Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Diamondback | FANG.O | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
 | US | DraftKings | DKNG | ✓  | — | — |
+| US | Dutch Bros | BROS | ✓ — | — | — |
 | US | EQT | EQT | ✓  | us_energy_hegemony_17#T1,T2,T3,T4 · us_energy_five#T6 · oil_hedge_vehicles#T1 | 11 |
 | US | Eaton | ETN | ✓  | kr_power_10_deep#T3 · us_ai_adjacent_cross_valuation#T11,T5,T9 · us_ai_adjacent_sectors#T2 · us_epc_datacenter_build#T1 · kr_drawdown_2026#T6 | — |
 | US | Eli Lilly | LLY | ✓  | glp1_company_novo_lilly#T1,T2,T3,T4,T5 | — |
@@ -399,6 +401,7 @@
 | US | RTX Corp | RTX | — | — | — |
 | US | Range Resources | RRC | ✓  | us_energy_hegemony_17#T1,T2 | 8 |
 | US | Recursion Pharma | RXRX.O | — | — | — |
+| US | Riot Platforms | RIOT | ✓ — | — | — |
 | US | Robinhood | HOOD.O | ✓ 금리 인상·변동성 확대의 수혜 — 아카이브 보유 노출의 구조적 반대편 | payments_company_robinhood#T1,T2,T3,T4,T5 · ai_sw_company_anthropic#T2 | 35 |
 | US | Rocket Lab | RKLB | ✓  | space_update_2026#T1,T2,T3,T4,T5 | — |
 | US | STMicroelectronics | STM | — | — | — |
@@ -423,6 +426,7 @@
 | US | Teekay Tankers | TNK | — | — | 4 |
 | US | Tempus AI | TEM | ✓ 정본 테제 페이지는 없음. 서술 위치 ai-bio/ai_bio_company_global.html · ai- | — | — |
 | US | Tesla | TSLA.O | ✓  | robot_theme_supply_chain#T2,T6 · energy_ess_ai_power#T3,T4 · hbm_pkg_company_samsung#T5 · hbm_pkg_theme_substrate#T1,T2 · 13f_2026q2#T4 · space_update_2026#T1,T3 | 10 |
+| US | Trump Media & Technology Group | DJT | ✓ — | — | — |
 | US | Tsakos | TEN | — | — | 4 |
 | US | Uber | UBER | ✓  | 13f_2026q2#T6 | — |
 | US | Unity | U | ✓ 정본 페이지 없음. US 게임 엔진. 핀란드 EIA와 무관. 비중·집행 아님. | — | — |
