@@ -399,6 +399,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "GS리테일": {
+   "code": "007070",
+   "market": "KR",
+   "entity": "007070",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {
+    "consumer/consumer_sector_department.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "GS칼텍스": {
    "code": "GSCALTEX",
    "market": "KR",
