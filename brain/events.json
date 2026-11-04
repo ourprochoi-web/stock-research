@@ -1145,6 +1145,54 @@
    "grade": "③",
    "due": "2026-12-31",
    "due_note": "시점 미정 — 연말로 두고 도래 시 재설정"
+  },
+  {
+   "when": "2026-11-06 08:30 ET (11/6 22:30 KST)",
+   "what": "미국 10월 고용보고서(NFP·실업률·임금) — 12월 FOMC 인상 확률의 첫 입력",
+   "judges": "regime · macro",
+   "grade": "①",
+   "due": "2026-11-06",
+   "note": "BLS 2026년 11월 일정표(bls.gov/schedule/2026/11_sched.htm, 11/3 갱신) Employment Situation for October · Fri Nov 6 08:30 AM. lead 11/4."
+  },
+  {
+   "when": "2026-11-10 08:30 ET (11/10 22:30 KST)",
+   "what": "미국 10월 CPI — 9월 헤드라인 3.7/근원 2.6(FRED 계산) 다음 값. 12월 FOMC 인상 판정의 물가 입력",
+   "judges": "regime · macro",
+   "grade": "①",
+   "due": "2026-11-10",
+   "note": "BLS 2026년 11월 일정표 CPI for October · Tue Nov 10 08:30 AM. PPI 11/13. lead 11/4."
+  },
+  {
+   "when": "~2026-11-16 (법정 기한)",
+   "what": "삼성SDI 3Q26 분기보고서 — 잠정실적(10/29 공정공시) 뒤 부문별(ESS·EV) 매출·수주잔고·선그로우 계약 기재 확인",
+   "judges": "energy/energy_ess_ai_power.html · energy/energy_battery_valuechain_update.html",
+   "grade": "① 기한",
+   "due": "2026-11-16",
+   "note": "분기 말 9/30 + 45일 = 11/14(토) → 다음 영업일 11/16. DART 11/4 조회: 미제출(10/29 잠정실적·10/28 기타경영사항만). lead 11/4."
+  },
+  {
+   "when": "2026-11-17 17:00 ET (11/18 07:00 KST)",
+   "what": "엔비디아 3Q FY27 실적·컨퍼런스콜 — 데이터센터 매출·가이던스·HBM/메모리 원가 코멘트",
+   "judges": "national-strategy/ns_bigtech_capex_roi.html · hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+   "grade": "①",
+   "due": "2026-11-18",
+   "note": "NVIDIA IR 보도자료(10/28): Q3 FY27 콜 Tue Nov 17 2pm PT/5pm ET. lead 11/4."
+  },
+  {
+   "when": "2026-11-24 08:30 ET (11/24 22:30 KST 콜 · 실적은 11/23 장 마감 후 추정)",
+   "what": "Fluence FQ4(FY26) 실적·콜 — ESS 수주잔고·FY27 가이던스·셀 조달(국내 셀 업체 연결)",
+   "judges": "energy/energy_ess_ai_power.html · ai-infra/ai_power_company_semi_ess_dc.html",
+   "grade": "③",
+   "due": "2026-11-24",
+   "note": "회사 IR 미공지(11/4 확인) — Marketbeat·equibles 추정 일정. IR 확정 시 ①로 교체. lead 11/4."
+  },
+  {
+   "when": "2026-12-09 14:00 ET (12/10 04:00 KST · 파월 회견 04:30)",
+   "what": "FOMC 12월 결정 + SEP(점도표) — 10월 동결 뒤 「연내 1회 더」 인상 여부",
+   "judges": "regime · macro",
+   "grade": "①",
+   "due": "2026-12-10",
+   "note": "federalreserve.gov FOMC 캘린더 December 8-9*(SEP 동반). lead 11/4."
   }
  ]
 }
