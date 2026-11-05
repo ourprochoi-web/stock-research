@@ -1010,8 +1010,8 @@
   "SK가스": {
    "code": "018670",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "018670",
+   "falsifier": "—",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -1832,7 +1832,7 @@
   "비에이치아이": {
    "code": "083650",
    "market": "KR",
-   "entity": "090460",
+   "entity": "083650",
    "falsifier": "—",
    "facts": 0,
    "theses": {
@@ -3541,8 +3541,8 @@
   "한국가스공사": {
    "code": "036460",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "036460",
+   "falsifier": "—",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -4365,6 +4365,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "한국전력": {
+   "code": "015760",
+   "market": "KS",
+   "entity": "015760",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {
+    "market/kr_4sector_cross_valuation.html": [
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Applied Digital Corp.": {
    "code": "APLD",
    "market": "NASDAQ",
@@ -5032,6 +5046,16 @@
    "code": "CVS",
    "market": "US",
    "entity": "CVS",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Cameco": {
+   "code": "CCJ",
+   "market": "US",
+   "entity": "CCJ",
    "falsifier": "—",
    "facts": 0,
    "theses": {},

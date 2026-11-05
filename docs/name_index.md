@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-05)
 
-추적 470개 · 테제가 걸린 이름 237 · 엔티티 있음 297 · facts 있음 87.
+추적 472개 · 테제가 걸린 이름 238 · 엔티티 있음 301 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -71,7 +71,7 @@
 | KR | SFA반도체 | 036540 | ✓ 4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정 | hbm_pkg_company_samsung#T1,T6,T8 · optical_valuechain_9#T1 | — |
 | KR | SKC | 011790 | ✓  | hbm_pkg_company_samsung#T5 | — |
 | KR | SK㈜ / SK Inc | 034730 | ✓ 402340 SK스퀘어·000660 SK하이닉스와 다른 카드. 최태원 2.3% 매각은 개인 자금·최대주주 유 | — | — |
-| KR | SK가스 | 018670 | — | — | — |
+| KR | SK가스 | 018670 | ✓ — | — | — |
 | KR | SK바이오팜 | 326030 | — | kr_bio_china_competition#T2 · glp1_company_samsung_biologics#T3 · glp1_kbio_portfolio_candidates#T1,T2,T3,T4 · kr_4sector_cross_valuation#T4 | — |
 | KR | SK스퀘어 | 402340 | ✓ 할인 55%+ 3개월 · 상승 국면 베타 <1 | hbm_pkg_company_sk_hynix#T1,T6 · vcp_breakout_backtest#T4 | — |
 | KR | SK실트론 | SKSILTRON | ✓  | kr_cooling_optical_layer#T5 | — |
@@ -221,7 +221,7 @@
 | KR | 피엠티(PMT) | 147760 | ✓  | — | — |
 | KR | 필옵틱스 | 161580 | ✓ 양산 라인 TGV 장비 단일판매(금액·상대·기간)가 나오면 중립을 재검토. 양산이 더 밀리거나 고객 취소면  | — | — |
 | KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 · node_screener_hbm_scoreboard#T6 | — |
-| KR | 한국가스공사 | 036460 | — | — | — |
+| KR | 한국가스공사 | 036460 | ✓ — | — | — |
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
 | KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | 한국항공우주 | 047810 | ✓  | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
@@ -273,6 +273,7 @@
 | KR-ETF | TIGER 여행레저 | 228800 | — | — | — |
 | KR-ETF | TIGER 헬스케어 | 143860 | — | — | — |
 | KR-ETF | TIGER 화장품 | 228790 | — | — | — |
+| KS | 한국전력 | 015760 | ✓ — | kr_4sector_cross_valuation#T5 | — |
 | NASDAQ | Applied Digital Corp. | APLD | ✓  | — | — |
 | NYSE | JPMorgan Chase & Co. | JPM | ✓  | — | — |
 | SA | Saudi Aramco | 2222.SR | ✓  | — | — |
@@ -309,6 +310,7 @@
 | US | Broadcom | AVGO.O | ✓  | ai_chip_company_broadcom#T1,T2,T3,T4,T5 · ai_chip_architecture_war#T1 · ai_chip_company_nvidia#T1,T3 · ai_dc_miner_conversion#T5 · ai_value_chain_guide_v2#T1 · optical_valuechain_9#T1,T5 · us_ai_adjacent_sectors#T1 · us_epc_datacenter_build#T1 · ai_sw_company_anthropic#T4 · us_defense_primes#T1 · hbm_pkg_company_samsung#T5 · hbm_pkg_theme_memory_cycle#T2 · hbm_pkg_theme_substrate#T1 · ns_bigtech_capex_roi#T2,T4 · ns_semiconductor_war#T4 · 13f_2026q2#T2,T4 · optical_light_source_cw#T1 | 2 |
 | US | CMB.TECH | CMBT.K | — | — | 4 |
 | US | CVS Health | CVS | ✓ — | — | — |
+| US | Cameco | CCJ | ✓ — | — | — |
 | US | Caterpillar | CAT | ✓ 정본 페이지는 전력 인프라 지도 T1. GEV 카드는 없음. 비중·집행 아님. | ai_power_infra_investment_map#T1 | — |
 | US | Celestica | CLS | ✓  | optical_valuechain_9#T1 | — |
 | US | Cerebras | CBRS.O | ✓ 2026-09-20 판단 신설. core(비GAAP)와 GAAP을 한 문장에 섞지 말 것 — core는 SB | ai_chip_architecture_war#T1,T2,T4,T5 · 13f_2026q2#T4,T5,T6 · robot_kr_16_valuation#T3 | 12 |
