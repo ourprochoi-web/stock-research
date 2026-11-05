@@ -8122,6 +8122,18 @@
           "intake": "c-20261008-t81",
           "page": "hbm-packaging/hbm_pkg_company_samsung.html",
           "note": "107.4/195.0=55.08% → 55.1%. 공시 라벨이 아니라 직접 나눔."
+        },
+        "dram_rev_share_2026q3": {
+          "value": 38,
+          "unit": "%",
+          "basis": "2026Q3 DRAM revenue share",
+          "asof": "2026-09-30",
+          "num": "2026Q3 005930 D램 매출",
+          "den": "2026Q3 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint via Yonhap 2026-11-05 https://n.news.naver.com/mnews/article/001/0016424666",
+          "intake": "c-20261105-t1040",
+          "note": "Q2 39%→Q3 38% 1위. 사다리 삼38·닉29·MU21·CXMT9. 내년 HBM1위는 전망(이 지표 아님)."
         }
       }
     },
@@ -9401,6 +9413,18 @@
           "source": "Netlist Form 8-K filed 2026-10-06, event 2026-10-05, accession 0001104659-26-113897",
           "intake": "c-20261007-nlst-8k",
           "note": "법률 라이선스 비용 하한. 연 $120M. FQ4 매출 $54.229B 대비 약 0.2%. 페이지 필드는 두지 않음(수요 테제 문장에 넣지 않음). ITC 사건명은 8-K 본문에 없음."
+        },
+        "dram_rev_share_2026q3": {
+          "value": 21,
+          "unit": "%",
+          "basis": "2026Q3 DRAM revenue share",
+          "asof": "2026-09-30",
+          "num": "2026Q3 MU D램 매출",
+          "den": "2026Q3 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint via Yonhap 2026-11-05 https://n.news.naver.com/mnews/article/001/0016424666",
+          "intake": "c-20261105-t1040",
+          "note": "사다리 삼38·닉29·MU21·CXMT9. Q2(24) 대비 하락."
         }
       }
     },
@@ -9425,6 +9449,18 @@
           "source": "Counterpoint Global Memory Tracker via Asiae 2026-10-02 https://n.news.naver.com/mnews/article/277/0005824071",
           "intake": "u-20261002-tg-118079",
           "note": "전분기 29%에서 −4%p. 마이크론(24%)과 격차 1%p. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
+        },
+        "dram_rev_share_2026q3": {
+          "value": 29,
+          "unit": "%",
+          "basis": "2026Q3 DRAM revenue share",
+          "asof": "2026-09-30",
+          "num": "2026Q3 000660 D램 매출",
+          "den": "2026Q3 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint via Yonhap 2026-11-05 https://n.news.naver.com/mnews/article/001/0016424666",
+          "intake": "c-20261105-t1040",
+          "note": "Q2 대비 +3%p. 사다리 삼38·닉29·MU21·CXMT9."
         }
       }
     },

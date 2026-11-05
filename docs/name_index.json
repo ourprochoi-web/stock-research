@@ -68,6 +68,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Rheinmetall": {
+   "code": "RHM.DE",
+   "market": "DE",
+   "entity": "RHM.DE",
+   "falsifier": "Lead 후보 신설 r-20261105-77. 정본 페이지 없음.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "인피니언": {
    "code": "IFX",
    "market": "DE",
@@ -1290,7 +1300,7 @@
    "market": "KR",
    "entity": "000660",
    "falsifier": "T1: 주주환원 프로그램이 발표됐는데도 디레이팅이 계속됨 (병목이 자본배분이 아니었다는 뜻). 환율 축의 반증은 따로다 — 「환율 때문에 더 내려간다」를 쓰려면 JP모건 · T2: 페이지 원문 — 「최저 목표가가 현재가 아래로 내려옴(커버리지 기반 하방이 다시 정의되어 비율 산출이 가능해짐)」. ⚠ 이 조건은 2026.08.13(₩1,593 · T3: 회사가 FCF 50% 재확인에 그치는 발표를 함 (역촉매 확정), 또는 FCF 70%+ 발표에도 주가 무반응 · T4: NVIDIA 랙 출하 대수 가이던스가 1.5배 미만, 또는 8-Hi 비중이 확대되는데도 SK하이닉스 HBM ASP 프리미엄이 유지됨(희석 우려 기각) · T5: Morgan Stanley가 상향 근거로 밸류에이션이 아닌 수주·가격 데이터를 제시",
-   "facts": 1,
+   "facts": 2,
    "theses": {
     "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
      "T1",
@@ -2171,7 +2181,7 @@
    "market": "KR",
    "entity": "005930",
    "falsifier": "T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 계속 하회(페이지 반증표) · T2: 할인 축소 없이 메모리 OPM이 컨센을 상회 — 할인이 마진 열위의 원인이 아니었다는 뜻(페이지 반증표) · T3: 환원 발표가 FCF 50% 재확인에 그침(역촉매 확정) · 또는 ③ 수준 발표에도 주가 무반응(자사주가 하방 방어 장치가 아니었음) · T4: 환원 발표에 CAPEX 가이던스 하향이 동반되거나, 132조원 추정의 전제(FCF 산정 기준)가 반박됨 · T5: ⓐ 2027 시작 공급계약 누계 ≥ 연매출 30%면 「기대 프리미엄」 철회 · ⓑ 2027 중 계약 하향·해지 공시 · ⓒ 유리기판은 별도(2027 양산 재확인+",
-   "facts": 13,
+   "facts": 14,
    "theses": {
     "hbm-packaging/hbm_pkg_company_samsung.html": [
      "T1",
@@ -6431,7 +6441,7 @@
    "market": "US",
    "entity": "MU",
    "falsifier": "FQ1 가이던스 <$35 · GM 가이던스 QoQ 확대 정지(마진 정점 앞당김) · SCA 재협상 사례",
-   "facts": 20,
+   "facts": 21,
    "theses": {
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",
