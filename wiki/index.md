@@ -130,3 +130,4 @@
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
 | policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) |
+| companies | [qualcomm-quarterly](companies/qualcomm-quarterly.md) | 퀄컴 분기 세그먼트·가이던스(FQ4 FY26 핸드셋 −26%·FQ1 핸드셋 감소 가이던스) |
