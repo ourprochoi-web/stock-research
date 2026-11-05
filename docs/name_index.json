@@ -542,6 +542,21 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "티이엠씨": {
+   "code": "425040",
+   "market": "KQ",
+   "entity": "425040",
+   "falsifier": "Lead 후보 신설 r-20261105-84",
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/kr_semi_materials_gas.html": [
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "AP위성": {
    "code": "211270",
    "market": "KR",
@@ -4578,6 +4593,16 @@
      "T5"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한온시스템": {
+   "code": "018880",
+   "market": "KS",
+   "entity": "018880",
+   "falsifier": "Lead 후보 신설 r-20261105-85",
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
