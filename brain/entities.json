@@ -7045,6 +7045,13 @@
           "rid": "r-20261102-12",
           "one": "② 신규 라운드 조달 목표 300억$→약 200억$(−33%)·밸류 1.4조→1.25조$, MGX·Coatue 주도(삼성증권 보도 전달).",
           "source": "t.me/Samsung_Global_AI_SW/4925 · 4931 · t.me/YeouidoStory2/119171"
+        },
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-100",
+          "one": "② Community Compact: 자체 DC 전력·인프라비 전액·재정 보증·NDA 금지·GA/OH 기부·Georgia Power 피크 1GW 감축",
+          "source": "https://t.me/insidertracking/68445"
         }
       ],
       "folded": [
@@ -7113,7 +7120,8 @@
         "n": 18,
         "one": "② 오픈AI 직원 X: Codex·Work 서브에이전트 컨텍스트 재사용·캐시 연장으로 같은 한도 처 / ② 공지: GPT-6 아스트라 프로 개선·멀티에이전트 병렬(프로), 컴퓨트 확충으로 용량 초과 오류 / ② 블룸버그: ~1.4조 달러 가치로 ≥300억 달러 조달 추진(UAE 최대 100억·블랙록 협의) / ③ 이지환: 오픈AI 매출 보도는 공시가 아니라 언론이고 이후 정정. 500 대 7",
         "note": "2026-10-19 야간: 7줄을 ai_sw_overview.html#T1×7 evidence로 접음. 남은 watch 11줄. · 2026-10-22: 3줄을 ai-sw/ai_sw_overview.html#T1 evidence로 접음. 남은 watch 11줄."
-      }
+      },
+      "승격_후보": true
     },
     "FSLR": {
       "name": "First Solar",
@@ -15849,6 +15857,28 @@
           "rid": "r-20261105-96",
           "one": "③ 메리츠: 3Q 매출 9,616억(+6.7%)·OP 239억(−29%, 컨센 −3.6%)·GMV 1,135억(+95.7%)·수수료 6→8%·27년 허브센터",
           "source": "https://t.me/meritz_research/45042"
+        }
+      ]
+    },
+    "071050": {
+      "name": "한국금융지주",
+      "market": "KS",
+      "layer": "증권·금융지주",
+      "business": "한국투자증권 등 자회사. 브로커리지·WM·IB·운용.",
+      "business_grade": "③(후보 · 2026-11-05 · 메리츠 Company Brief)",
+      "status": "후보",
+      "pages": [],
+      "facts": [],
+      "theses": [],
+      "tracked_price": false,
+      "note": "Lead 후보 신설 r-20261105-102",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "③",
+          "rid": "r-20261105-102",
+          "one": "③ 메리츠 Buy TP 205,000↓: 3Q 지배순익 2,823억 컨센 −44%·평가손 −133억·브로커 −40.6%QoQ·27E PER 4배",
+          "source": "https://t.me/meritz_research/45043"
         }
       ]
     }
