@@ -20804,6 +20804,12 @@
               "mark": "관측",
               "rid": "r-20261104-02",
               "text": "② 로이터: 미국이 SK하이닉스 중국 팹 확장용 미국산 장비 승인 보류, ② FT: 엔비디아가 클라우드 고객에 중국 매출 49% 이하 요구. 통제가 장비·클라우드 층으로 확장, 판정 불변."
+            },
+            {
+              "date": "2026-11-05",
+              "mark": "관측",
+              "rid": "r-20261105-152",
+              "text": "② 문샷AI 유럽 네오클라우드 Blackwell 원격 임대 논의·RASA 상원 미통과. 통제가 클라우드 원격접근 층으로 확장(T5 새 전선). 판정 불변."
             }
           ]
         }
@@ -20817,7 +20823,8 @@
       "position": "",
       "card": false,
       "seeded": "2026-09-13 자동 추출(build_thesis_index) — basis·event 미기입 · 손댈 때 채운다",
-      "fill_notes": "T1~T4는 basis가 이미 채워져 있어 event만 채웠다. T5만 basis·event가 모두 비어 있었다. 날짜 태그로 시작하는 basis는 없다 — T1의 claim이 🟢 [2026.09.11 — …]로 시작하지만 basis는 「🔑 어제 본 편이…」로 시작하므로 basis_rewrite 대상이 아니다. 다만 T1·T3의 basis는 문장 중간(「→ 헤지펀드의…」)에서 잘려 시작하는 파서 v2 잔재이고, T6(인텔 워런트·Escrowed 파생부채)은 페이지에는 있는데 brain/theses.json에는 없다 — next 배열에만 「T6」로 참조된다. 둘 다 이번 지시 범위 밖이라 손대지 않았다."
+      "fill_notes": "T1~T4는 basis가 이미 채워져 있어 event만 채웠다. T5만 basis·event가 모두 비어 있었다. 날짜 태그로 시작하는 basis는 없다 — T1의 claim이 🟢 [2026.09.11 — …]로 시작하지만 basis는 「🔑 어제 본 편이…」로 시작하므로 basis_rewrite 대상이 아니다. 다만 T1·T3의 basis는 문장 중간(「→ 헤지펀드의…」)에서 잘려 시작하는 파서 v2 잔재이고, T6(인텔 워런트·Escrowed 파생부채)은 페이지에는 있는데 brain/theses.json에는 없다 — next 배열에만 「T6」로 참조된다. 둘 다 이번 지시 범위 밖이라 손대지 않았다.",
+      "last_tested": "2026-11-05"
     },
     "node-screener/node_screener_hbm_scoreboard.html": {
       "title": "HBM 밸류체인 병목 스코어보드 — ourprochoi Research",
