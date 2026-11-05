@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-05)
 
-추적 472개 · 테제가 걸린 이름 238 · 엔티티 있음 301 · facts 있음 87.
+추적 474개 · 테제가 걸린 이름 239 · 엔티티 있음 303 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -32,6 +32,7 @@
 | JP | 화낙 | 6954.T | ✓ 수주가 선반영된 뒤 급감 | — | — |
 | JP | 히타치 | 6501.T | ✓  | ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T2 · energy_ess_ai_power#T4 | — |
 | KQ | 고영 | 098460 | ✓ — | — | — |
+| KQ | 레이 | 228670 | ✓ — | ai_chip_company_broadcom#T1 · ai_chip_company_nvidia#T1,T2 · ai_dc_miner_conversion#T1,T3 · ai_power_company_nuclear_smr#T3 · ai_power_company_semi_ess_dc#T1 · ai_power_company_transformer_grid#T1 · ai_power_infra_investment_map#T1,T3 · ai_value_chain_guide_v2#T4 · kr_cooling_optical_layer#T1 · optical_valuechain_9#T1,T2,T3,T4,T5,T6 · us_bloom_intel_deep#T2,T4,T5 · us_vertiv_corning_deep#T6 · ai_sw_company_anthropic#T2 · ai_sw_company_crwd_ddog_snow#T1,T2 · ai_sw_company_msft_pltr#T1,T2,T3,T5 · ai_sw_investment_map#T5 · ai_sw_overview#T1,T2,T3,T4,T5 · k_defense_company_hanwha_aero#T4 · k_defense_investment_map#T1,T2,T3,T4,T5 · energy_battery_valuechain_update#T1 · energy_ess_ai_power#T5 · hbm_pkg_company_samsung#T3,T4,T9 · hbm_pkg_company_sk_hynix#T4,T6 · hbm_pkg_overview#T2 · hbm_pkg_theme_memory_cycle#T1,T2,T7 · hbm_pkg_theme_substrate#T1,T4,T5 · kr_semi_materials_gas#T4 · q2_2026_earnings_overview#T1,T2,T3,T4,T5 · ns_bigtech_capex_roi#T1,T4,T5 · ns_china_ai_ecosystem#T3 · ns_korea_impact_strategy#T4 · ns_semiconductor_war#T1,T3,T4 · vcp_breakout_backtest#T1,T2,T3,T4,T5,T6 · robot_kr_16_valuation#T1 · robot_theme_supply_chain#T4,T6 · space_update_2026#T1,T2,T3,T4 · cyber_ai_security#T1 · oil_hedge_vehicles#T3,T4 · us_merchant_power_vst_nrg#T1 · optical_light_source_cw#T1,T2 · ai_sw_company_amazon#T4 | — |
 | KQ | 씨피시스템 | 413630 | ✓ — | — | — |
 | KQ | 에스엠 | 041510 | ✓ — | — | — |
 | KR | AP위성 | 211270 | ✓  | — | — |
@@ -273,6 +274,7 @@
 | KR-ETF | TIGER 여행레저 | 228800 | — | — | — |
 | KR-ETF | TIGER 헬스케어 | 143860 | — | — | — |
 | KR-ETF | TIGER 화장품 | 228790 | — | — | — |
+| KS | 제일전기공업 | 002690 | ✓ — | — | — |
 | KS | 한국전력 | 015760 | ✓ — | kr_4sector_cross_valuation#T5 | — |
 | NASDAQ | Applied Digital Corp. | APLD | ✓  | — | — |
 | NYSE | JPMorgan Chase & Co. | JPM | ✓  | — | — |
