@@ -320,6 +320,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "고영": {
+   "code": "098460",
+   "market": "KQ",
+   "entity": "098460",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "에스엠": {
+   "code": "041510",
+   "market": "KQ",
+   "entity": "041510",
+   "falsifier": "—",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "AP위성": {
    "code": "211270",
    "market": "KR",
@@ -1802,8 +1822,8 @@
   "비에이치아이": {
    "code": "083650",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "090460",
+   "falsifier": "—",
    "facts": 0,
    "theses": {
     "ai-infra/ai_power_top5_picks.html": [
@@ -1990,6 +2010,7 @@
      "T1"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T1",
      "T2",
      "T7"
     ],
@@ -2949,7 +2970,7 @@
   "카카오뱅크": {
    "code": "323410",
    "market": "KR",
-   "entity": "323410",
+   "entity": "035720",
    "falsifier": "—",
    "facts": 0,
    "theses": {},
@@ -5388,8 +5409,8 @@
   "Datadog": {
    "code": "DDOG.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "DDOG",
+   "falsifier": "—",
    "facts": 0,
    "theses": {
     "ai-sw/ai_sw_company_crwd_ddog_snow.html": [

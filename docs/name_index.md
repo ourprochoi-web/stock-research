@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-05)
 
-추적 467개 · 테제가 걸린 이름 237 · 엔티티 있음 292 · facts 있음 87.
+추적 469개 · 테제가 걸린 이름 237 · 엔티티 있음 296 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -31,6 +31,8 @@
 | JP | 하모닉드라이브시스템즈 | 6324.T | ✓ 중국 감속기 채택 확대가 공시되거나 수주 증가가 리드타임 선주문으로 판명되면 상방이 깨진다 | robot_theme_supply_chain#T2 | — |
 | JP | 화낙 | 6954.T | ✓ 수주가 선반영된 뒤 급감 | — | — |
 | JP | 히타치 | 6501.T | ✓  | ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T2 · energy_ess_ai_power#T4 | — |
+| KQ | 고영 | 098460 | ✓ — | — | — |
+| KQ | 에스엠 | 041510 | ✓ — | — | — |
 | KR | AP위성 | 211270 | ✓  | — | — |
 | KR | CJ제일제당 | 097950 | — | — | — |
 | KR | DB하이텍 | 000990 | ✓ 삼성 이탈 물량이 해외 파운드리로 가고 8인치 가격이 오르지 않으면(1Q27 계약가) 수혜 축이 없다. | — | — |
@@ -115,13 +117,13 @@
 | KR | 뷰티스킨 | 406820 | ✓ 스탠스 없음. 300억은 초도 발주 단계. 장부 행 없음. | — | — |
 | KR | 브이엠 | 089970 | — | hbm_pkg_investment_map#T2 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T5,T6,T7,T8 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T3,T5 · kr_4sector_cross_valuation#T3 · us_7axis_cross_valuation#T1 | — |
 | KR | 비나텍 | 126340 | ✓ 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소 · 서버랙 CBU | us_bloom_intel_deep#T5 · ai_power_infra_investment_map#T6 | — |
-| KR | 비에이치아이 | 083650 | — | ai_power_top5_picks#T1,T3 | — |
+| KR | 비에이치아이 | 083650 | ✓ — | ai_power_top5_picks#T1,T3 | — |
 | KR | 산일전기 | 062040 | — | ai_power_company_transformer_grid#T1,T2,T3 · ai_power_top5_picks#T1,T2,T3 · kr_power_10_deep#T1,T2,T4 · kr_power_cross_valuation#T1,T4,T6 · k_defense_cross_valuation#T8 · kr_4sector_cross_valuation#T5 | — |
 | KR | 삼성E&A | 028050 | ✓ 4Q 영업이익이 가이던스 역산치(약 4,380억)에 크게 못 미치거나 영업외손실·대형 프로젝트 원가 추가 반 | — | — |
 | KR | 삼성SDI | 006400 | ✓ KRX 006400. 이번 세션 opendart 미조회. | energy_battery_valuechain_update#T1,T3 · energy_ess_ai_power#T3,T4,T5 · robot_kr_16_valuation#T1 | — |
 | KR | 삼성바이오로직스 | 207940 | ✓ T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선  | glp1_company_samsung_biologics#T1,T2,T3,T4 · kr_bio_china_competition#T4 | — |
 | KR | 삼성전기 | 009150 | ✓  | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8,T9 · kr_cooling_optical_layer#T5 · hbm_pkg_company_hanmi_semi#T1 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2 · hbm_pkg_theme_substrate#T1,T4,T5 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T3 | — |
-| KR | 삼성전자 | 005930 | ✓ T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8,T9 · ai_value_chain_guide_v2#T5 · kr_construction_datacenter#T4 · ai_sw_company_anthropic#T1,T4 · hbm_pkg_investment_map#T2,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T2,T7 · kr_semi_equip_6#T5 · kr_semi_materials_gas#T1 · kr_drawdown_2026#T4 · q2_2026_earnings_overview#T1 · ns_semiconductor_war#T3 · node_screener_hbm_scoreboard#T1 · robot_theme_supply_chain#T2 | 13 |
+| KR | 삼성전자 | 005930 | ✓ T1: 3Q'26 HBM 매출이 QoQ 3배에 미달하거나, 하반기에도 HBM M/S가 전체 DRAM M/S를 | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8,T9 · ai_value_chain_guide_v2#T5 · kr_construction_datacenter#T4 · ai_sw_company_anthropic#T1,T4 · hbm_pkg_investment_map#T2,T5 · hbm_pkg_overview#T1 · hbm_pkg_theme_memory_cycle#T1,T2,T7 · kr_semi_equip_6#T5 · kr_semi_materials_gas#T1 · kr_drawdown_2026#T4 · q2_2026_earnings_overview#T1 · ns_semiconductor_war#T3 · node_screener_hbm_scoreboard#T1 · robot_theme_supply_chain#T2 | 13 |
 | KR | 삼성전자우 | 005935 | — | hbm_pkg_company_samsung#T9 | — |
 | KR | 삼성중공업 | 010140 | — | kr_power_10_deep#T4 · kr_4sector_cross_valuation#T1 · k_ship_industry_overview#T2 · k_ship_theme_lng_ai_nexus#T1,T3 · k_ship_theme_masga_us_alliance#T2 | — |
 | KR | 삼아알미늄 | 006110 | — | — | — |
@@ -327,7 +329,7 @@
 | US | Credo Technology | CRDO.O | ✓  | optical_interconnect_layer#T2,T5 · optical_valuechain_9#T5 | 17 |
 | US | CrowdStrike | CRWD.O | ✓  | cyber_ai_security#T2,T3 · ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · ai_sw_investment_map#T2 · us_7axis_cross_valuation#T1 | 9 |
 | US | DHT 홀딩스 | DHT | — | — | 4 |
-| US | Datadog | DDOG.O | — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · q2_2026_earnings_overview#T2,T4 | — |
+| US | Datadog | DDOG.O | ✓ — | ai_sw_company_crwd_ddog_snow#T1,T2,T3,T4,T5 · q2_2026_earnings_overview#T2,T4 | — |
 | US | Dell Technologies | DELL | ✓ 정본 테제 페이지 없음. 카드 키 DELL. 비중·집행 아님. SG 4696·beluga 3684는 aeth | — | — |
 | US | Devon Energy(+Coterra) | DVN | ✓ Coterra(CTRA)는 2026-05-07 Devon 에 흡수 — company_tickers.json  | us_energy_hegemony_17#T1,T2 | 9 |
 | US | Diamondback | FANG.O | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
