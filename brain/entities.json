@@ -1310,6 +1310,13 @@
           "rid": "r-20261105-113",
           "one": "③ 우정엽: 민주 의회가 NVDA 대중 칩 수출통제를 더 죄 가능(트럼프 일부완화·20% 발언 대비)",
           "source": "https://www.youtube.com/watch?v=Q5cDdmXNSuU"
+        },
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-137",
+          "one": "② H200 AI 가속기 ~60만 개 홍콩 대기·중국 대규모 수입 미승인. 일부 인터넷 기업 각 ~1만 개 확보.",
+          "source": "https://t.me/insidertracking/68454 · https://t.me/insidertracking/68456"
         }
       ],
       "intake": [
@@ -1398,7 +1405,8 @@
           "one": "10/19 접음(1줄): ②③ 한경 10-07: 거래별 잔존가치 지원 ≤25%(일괄 아님·조건 비",
           "approved": "Kenneth 일일 정리 루틴(10/16 「backlog 매일」·US 동일 강도) — 야간 Lead 정리 10/19"
         }
-      ]
+      ],
+      "승격_후보": true
     },
     "ANET": {
       "name": "Arista",
@@ -7180,6 +7188,13 @@
           "rid": "r-20261105-100",
           "one": "② Community Compact: 자체 DC 전력·인프라비 전액·재정 보증·NDA 금지·GA/OH 기부·Georgia Power 피크 1GW 감축",
           "source": "https://t.me/insidertracking/68445"
+        },
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-143",
+          "one": "② 브록만: 3Q Sol·Work로 기업매출>소비자·JPM Daybreak. 2027 IPO. 조달 $20B@$1.25T(재). LTF $25M 추가기부 취소.",
+          "source": "https://t.me/Samsung_Global_AI_SW/4968"
         }
       ],
       "folded": [
@@ -9879,6 +9894,13 @@
           "rid": "r-20261030-07",
           "one": "② 3Q 콜: 2026 매출 910~920억$·EPS 35~36$ 상향, 미국 실질가격 −7~10%, 일회성 약 20억$(2027 비반복).",
           "source": "t.me/insidertracking/67803"
+        },
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-135",
+          "one": "② 레타트루타이드 TRIUMPH-4 무릎통증 최대−75.8%(68주)·TRIUMPH-1 −73.1%. 탈츠×젭바운드 ACR50 43.7%. ACR 11/6~11.",
+          "source": "https://t.me/insidertracking/68452 · https://t.me/insidertracking/68456"
         }
       ]
     },
@@ -16240,6 +16262,57 @@
           "rid": "r-20261105-131",
           "one": "③ 메리츠: 3Q26 OP 5,301억 컨센+4.4%·CMD 환원 5조+α·DPS 8,000(+33%)·배당성향 75%",
           "source": "https://t.me/meritz_research/45045"
+        }
+      ]
+    },
+    "ACMR": {
+      "name": "ACM Research",
+      "market": "US",
+      "layer": "반도체 습식·도금 장비",
+      "business": "Ultra ECP 패널레벨 도금·Hot SPM 세정 등 습식 공정 장비. 링강 제2공장 증설.",
+      "business_grade": "②(후보 · TG 섹터 정리)",
+      "status": "후보",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-139",
+          "one": "② 첫 310×310mm Ultra ECP 패널레벨 장비 아시아 출하·Hot SPM 황산 70% 재활용·링강 2공장 면적 2배.",
+          "source": "https://t.me/insidertracking/68456"
+        }
+      ]
+    },
+    "HIMX": {
+      "name": "Himax Technologies",
+      "market": "US",
+      "layer": "디스플레이 IC·AI 비전",
+      "business": "WiseEye AI 프로세서·CPO(FOCI) 등. 스마트글래스·자율주행 광학.",
+      "business_grade": "②(후보 · TG 섹터 정리)",
+      "status": "후보",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-140",
+          "one": "② 알리바바 Qwen 스마트글래스 WiseEye 채택·FOCI와 CPO 양산·자율주행 광학 센싱 공급 선정.",
+          "source": "https://t.me/insidertracking/68456"
+        }
+      ]
+    },
+    "IRM": {
+      "name": "Iron Mountain",
+      "market": "US",
+      "layer": "데이터센터·기록보관",
+      "business": "문서보관·콜로/DC 임대. 연초 이후 DC 임대 누적 확대.",
+      "business_grade": "②(후보 · TG 섹터 정리)",
+      "status": "후보",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-141",
+          "one": "② 3Q 신규 DC 임대 102MW·연초 누적 137MW.",
+          "source": "https://t.me/insidertracking/68456"
         }
       ]
     }
