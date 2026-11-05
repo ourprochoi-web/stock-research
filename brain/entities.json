@@ -5361,6 +5361,13 @@
           "rid": "r-20261105-07",
           "one": "② 어닝콜: LTM FCF 104억$, 4Q EPS +37% 가이던스, Uber One 약 5,500만",
           "source": "https://t.me/insidertracking/68365"
+        },
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-129",
+          "one": "② Uber Eats×아마존 프라임 제휴 출시($25+ 무료배달·프로모)",
+          "source": "https://t.me/insidertracking/68449"
         }
       ]
     },
@@ -8547,7 +8554,15 @@
       ],
       "tracked_price": false,
       "note": "Kenneth 지시 관측 카드(2026-11-02 07:54 「아마존 테제 카드 올리고」, r-20261102-301). 정본 페이지 ai-sw/ai_sw_company_amazon.html T1~T4 status 관측. Lead 기본 스탠스 중립 25/50/25: 상방 25 — AWS 40%+ 유지와 4Q부터 OCF가 capex를 따라잡음 / 기본 50 — 수요는 확인되나 FCF 음수가 2027까지, 시장은 FCF 회복 시점을 기다림 / 하방 25 — 스프레드 확대·앤트로픽 약정 흔들림·capex 추가 상향. 판단 트리거(재검토 조건·집행 아님): 4Q26 실적의 AWS 성장률·분기 FCF·2027 capex. 장부 행 없음. 비중·집행 아님. 출처: intake/files/sec/2026-11-02/bigtech_cashflow_latest_10q.md",
-      "watch": [],
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-129",
+          "one": "② 프라임×Uber Eats: $25+ 배달비 무료·첫 2회 $20 할인(미 ~1만 도시)",
+          "source": "https://t.me/insidertracking/68449"
+        }
+      ],
       "folded": [
         {
           "date": "2026-10-19",
@@ -16132,6 +16147,57 @@
           "rid": "r-20261105-118",
           "one": "③ WSJ/한경: 2015 블레빈스 보복 협박 일화·애플 플래시 협상(역사) — 판단 0편",
           "source": "https://www.youtube.com/watch?v=CFHVGCGHv2E"
+        }
+      ]
+    },
+    "CELH": {
+      "name": "Celsius Holdings",
+      "market": "US",
+      "layer": "음료·에너지드링크",
+      "business": "CELSIUS·Alani Nu·Rockstar 에너지음료 포트폴리오. 2026-11 브랜드별 3사업부 개편(② TG).",
+      "business_grade": "②",
+      "status": "후보",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "②",
+          "rid": "r-20261105-128",
+          "one": "② CELH: 셀시우스·알라니누·록스타 3사업부 신설·사장 선임(인프라 통합 유지)",
+          "source": "https://t.me/insidertracking/68448"
+        }
+      ]
+    },
+    "282330": {
+      "name": "BGF리테일",
+      "market": "KR",
+      "layer": "편의점·유통",
+      "business": "CU 편의점. 3Q26 매출 2.515조(+2.1%)·OP 1,008억(+3.2%) 컨센 −5.4%(③ 메리츠).",
+      "business_grade": "③",
+      "status": "후보",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "③",
+          "rid": "r-20261105-130",
+          "one": "③ 메리츠: 3Q26 OP 1,008억 컨센−5.4%·동일점 +0.9%·GPM +0.3%p·10월 동일점 2%초",
+          "source": "https://t.me/meritz_research/45044"
+        }
+      ]
+    },
+    "033780": {
+      "name": "KT&G",
+      "market": "KR",
+      "layer": "담배·건기식·부동산",
+      "business": "담배(해외궐련·NGP)·건기식·부동산. CMD COMPOUND 2030·환원 4년 5조+α(③ 메리츠).",
+      "business_grade": "③",
+      "status": "후보",
+      "watch": [
+        {
+          "date": "2026-11-05",
+          "grade": "③",
+          "rid": "r-20261105-131",
+          "one": "③ 메리츠: 3Q26 OP 5,301억 컨센+4.4%·CMD 환원 5조+α·DPS 8,000(+33%)·배당성향 75%",
+          "source": "https://t.me/meritz_research/45045"
         }
       ]
     }
