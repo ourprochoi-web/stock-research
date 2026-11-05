@@ -364,7 +364,7 @@
 | US | HP Inc. | HPQ | ✓  | — | — |
 | US | Hewlett Packard Enterprise | HPE | ✓ 정본 테제 페이지 없음. 시세 추적 밖. 비중·집행 아님. | ai_chip_architecture_war#T1 | — |
 | US | Hut 8 | HUT.O | — | ai_dc_miner_conversion#T1,T2,T3,T4,T5 | — |
-| US | IREN | IREN | ✓ 정본 페이지 없음. NVDA·MSFT 워치는 안 늘림. 비중·집행 아님. | ai_dc_miner_conversion#T3 · ai_power_infra_investment_map#T1,T3 · ai_value_chain_guide_v2#T2 · ns_bigtech_capex_roi#T2,T4 · 13f_2026q2#T4 | — |
+| US | IREN | IREN | ✓ 정본 페이지 없음. NVDA·MSFT 워치는 안 늘림. 비중·집행 아님. | ai_dc_miner_conversion#T3 · ai_power_infra_investment_map#T1,T3 · ai_value_chain_guide_v2#T2 · ns_bigtech_capex_roi#T2,T4 · 13f_2026q2#T4 · ai_sw_company_microsoft#T3 | — |
 | US | Intel | INTC.O | ✓ 정본 카드가 없어 US 메가로 후보만. 테라팹 서사 전체는 넣지 않음. 블룸 편 테제는 비접촉. 비중·집행  | ai_chip_architecture_war#T1 · ai_chip_company_nvidia#T1,T3 · ai_power_company_semi_ess_dc#T1 · us_bloom_intel_deep#T1,T2,T3,T4,T5 · us_power_regulated_vs_merchant#T1 · us_vertiv_corning_deep#T7 · ai_sw_company_anthropic#T1 · hbm_pkg_company_samsung#T5 · hbm_pkg_company_sk_hynix#T1,T2 · hbm_pkg_theme_memory_cycle#T2,T5,T7 · hbm_pkg_theme_substrate#T1,T4,T5 · kr_semi_equip_cross_valuation#T7 · kr_semi_fab_timeline#T4 · ns_bigtech_capex_roi#T1 · ns_semiconductor_war#T1,T2,T3,T4,T5 · 13f_2026q2#T1,T4,T5,T6 · space_update_2026#T1 | 4 |
 | US | Intl Seaways | INSW.K | — | — | 4 |
 | US | IonQ | IONQ | ✓ 정본 테제 페이지 없음. 양자 테제 신설 안 함. 비중·집행 아님. | — | — |
