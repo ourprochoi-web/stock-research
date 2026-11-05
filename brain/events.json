@@ -1232,35 +1232,8 @@
     },
     {
       "when": "2026-11-06",
-      "what": "아이온큐(IONQ) 실적 발표(② TG 「내일 새벽」). 수치·가이던스 확인 창.",
-      "judges": "entity:IONQ",
-      "grade": "②",
-      "due": "2026-11-06",
-      "due_note": "r-20261105-151. 채널 일정 — 회사 IR 확인 시 ①.",
-      "note": "Lead TG 20261105_234209. Kenneth tell: 신규 날짜 촉매."
-    },
-    {
-      "when": "2026-11-06",
       "what": "아이렌(IREN) 실적 발표(② TG 「내일 새벽」). 수치·가이던스 확인 창.",
       "judges": "entity:IREN",
-      "grade": "②",
-      "due": "2026-11-06",
-      "due_note": "r-20261105-151. 채널 일정 — 회사 IR 확인 시 ①.",
-      "note": "Lead TG 20261105_234209. Kenneth tell: 신규 날짜 촉매."
-    },
-    {
-      "when": "2026-11-06",
-      "what": "에어비앤비(ABNB) 실적 발표(② TG 「내일 새벽」). 수치·가이던스 확인 창.",
-      "judges": "entity:ABNB",
-      "grade": "②",
-      "due": "2026-11-06",
-      "due_note": "r-20261105-151. 채널 일정 — 회사 IR 확인 시 ①.",
-      "note": "Lead TG 20261105_234209. Kenneth tell: 신규 날짜 촉매."
-    },
-    {
-      "when": "2026-11-06",
-      "what": "클라우드플레어(NET) 실적 발표(② TG 「내일 새벽」). 수치·가이던스 확인 창.",
-      "judges": "entity:NET",
       "grade": "②",
       "due": "2026-11-06",
       "due_note": "r-20261105-151. 채널 일정 — 회사 IR 확인 시 ①.",
@@ -1283,6 +1256,33 @@
       "due": "2026-11-16",
       "due_note": "r-20261106-01. 보도「오는 16일」— 회사 확인 시 ①.",
       "note": "Lead TG 20261106_004125. Kenneth tell: 신규 날짜 촉매."
+    },
+    {
+      "when": "2027-01",
+      "what": "BE×NTT Global 900MW 해외 DC 연료전지 초기 출하 창(② TG).",
+      "judges": "entity:BE|ai-infra/us_bloom_intel_deep.html#T2",
+      "grade": "②",
+      "due": "2027-03-31",
+      "due_note": "r-20261106-04. 채널「2027년 초기 출하」— 회사 공시 확인 시 ①.",
+      "note": "Lead TG 20261106_063649. Kenneth tell: 신규 날짜 촉매."
+    },
+    {
+      "when": "2026-Q4",
+      "what": "MP Materials GM용 상업 자석 공급 개시(② TG · 4Q26).",
+      "judges": "entity:MP",
+      "grade": "②",
+      "due": "2026-12-31",
+      "due_note": "r-20261106-07. 채널「2026년 4분기」— 회사 확인 시 ①.",
+      "note": "Lead TG 20261106_063649. Kenneth tell: 신규 날짜 촉매."
+    },
+    {
+      "when": "2027-H1",
+      "what": "ABNB AI 네이티브 여행 에이전트 출시 목표(② TG).",
+      "judges": "entity:ABNB",
+      "grade": "②",
+      "due": "2027-06-30",
+      "due_note": "r-20261106-07. 채널「2027년 상반기」— 회사 확인 시 ①.",
+      "note": "Lead TG 20261106_063649. Kenneth tell: 신규 날짜 촉매."
     }
   ]
 }
