@@ -28,3 +28,5 @@ related: AI capex 테제 · entity:NVDA
 | 2026-10-30 | 아마존 3Q 보도자료 · MSFT 콜 전문 인용 (routing r-20261030-01·16·61) | A/B | 아마존·MSFT capex | 아마존 3Q 설비투자 772.59억$(+120%)·2026 2,200억$ 유지(②)·FCF −424억$. MSFT CY26 약 1,750억→1,700억$(3P 인도 지연) |
 | 2026-11-03 | semiconsight X · 10-Q 합산 대조 (routing r-20261103-10) | A/B | 4사 3Q capex·FCF | 아마존·알파벳·메타·MSFT 3Q26 capex 2,019억$(정의별 2,015억~2,029억$), FCF −264억$(10-Q 대조 −265억$), 4Q 계획 2,320억$, 2026 가이던스 합 7,200억~7,400억$ |
 | 2026-11-03 | NURadu_(BofA 리포트 전언) (routing r-20261103-10) | C | 클라우드 capex | 2026 1.03조$(+99%) · 2027 1.58조$(+54%), GPU 임대료 연초 대비 B200 +47%·H100 +31% |
+
+| 2026-11-07 | Samsung_Global_AI_SW·insidertracking 경유 (routing r-20261107-29 인근·OpenAI 관련 r-40) | B/C | 구글 와이오밍 첫 DC에 170억$ 투자·Bloom Energy 연료전지 702MW 도입 보도(②). OpenAI CFO CNBC 요약(영상 미열람): 3Q 사업규모 QoQ+70% 등 채널 수치 — IR 원문 대조 전 채택 보류 |
