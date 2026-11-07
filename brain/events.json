@@ -1435,6 +1435,14 @@
       "judges": "entity:US_EARNINGS_CALENDAR",
       "grade": "②",
       "note": "insidertracking/68583 · r-20261107-15; RKLB·CPI 기존 event 유지. 회사 IR 일정 대조 전 채널 일정."
+    },
+    {
+      "due": "2026-11-18",
+      "when": "2026-11-18 (미국 현지 날짜 주장·시각/출석 수락 미확인)",
+      "what": "NVDA 젠슨 황 하원 3개 위원회 비공개 브리핑 출석 요청일(채널②) — 중국 정보수집 의혹·보안/수출통제 설명 요청, 확정 출석 아님",
+      "judges": "ai-infra/ai_chip_company_nvidia.html#T4",
+      "grade": "②",
+      "note": "insidertracking/68605·68612; 기존 11/18 NVDA 실적과 별개. 요청서·수락 원문 미대조."
     }
   ]
 }
