@@ -1,6 +1,6 @@
 # 테제 색인 — 정본은 brain/theses.json(카드 페이지) · 나머지는 페이지
 
-자동 생성 · 2026-11-05 · 판단 보유 98편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
+자동 생성 · 2026-11-07 · 판단 보유 98편 · 생성기 `.githooks/build_thesis_index.py` (pre-commit 이 페이지가 바뀔 때 다시 만든다)
 
 **용도** — 종목·테마 질문을 받으면 이 파일에서 해당 테제를 찾고, **그 페이지의 「현재 판단」만** 연다. 여기 적힌 문장은 페이지에서 잘라 온 첫 줄이며 **값·기준일·등급은 페이지가 정본**이다.
 
@@ -15,7 +15,7 @@
 | 2026.11.02 ⚠ | 2026-11-04 | [마이크로소프트 — 증설을 현금으로 내는 유일한 하이퍼스케일러 (관측 카드)](ai-sw/ai_sw_company_microsoft.html) | 3 |
 | 2026.10.20 ⚠ | 2026-11-04 | [클래시스 — 미용의료 기기 설치 기반·브라질 통합 (보유 종목)](k-beauty/k_beauty_company_classys.html) | 3 |
 | 2026.09.30 | 2026-09-30 | [Novo Nordisk · Eli Lilly — 비만약 듀오폴리 심층 분석](glp1/glp1_company_novo_lilly.html) | 5 |
-| 2026.09.27 ⚠ | 2026-11-04 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
+| 2026.09.27 ⚠ | 2026-11-07 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
 | 2026.09.27 ⚠ | 2026-11-04 | [광원 층 — 병목의 주인은 누구이고, 가격은 어디까지 왔나](ai-infra/optical_light_source_cw.html) | 4 |
 | 2026.09.22 ⚠ | 2026-11-04 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
 | 2026.09.20 ⚠ | 2026-11-04 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
@@ -196,7 +196,7 @@
 
 ## 우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA
 
-`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-11-04
+`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-11-07
 
 **한 문장** — SpaceX 는 AI 인프라주로 캐펙스가 매출의 2.35배라 자본시장이 조달 비용을 정하고, Rocket Lab 은 구조는 공시로 맞지만 EV/매출 58.7배가 Neutron·Iridium 의 성공을 먼저 샀다 — 둘 다 수직통합이고 둘 다 가격이 실행보다 앞에 있다.
 
