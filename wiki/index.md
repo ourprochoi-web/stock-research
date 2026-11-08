@@ -125,7 +125,10 @@
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
+| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
 | policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) |
+| companies | [qualcomm-quarterly](companies/qualcomm-quarterly.md) | 퀄컴 분기 세그먼트·가이던스(FQ4 FY26 핸드셋 −26%·FQ1 핸드셋 감소 가이던스) |
+| consumer | [fashion-inventory-signal](consumer/fashion-inventory-signal.md) | 패션 재고·제조원가 역산·벤처 확장 신호(언더스탠딩 11/06) |
