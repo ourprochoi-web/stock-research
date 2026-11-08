@@ -11514,78 +11514,19 @@
       "layer": "완성차",
       "business": "승용·SUV·상용 및 전기차",
       "business_grade": "②(후보 · 2026-10-07 방송 · 공시 미대조)",
-      "status": "후보",
+      "status": "관측",
       "pages": [],
-      "theses": [],
+      "theses": [
+        "auto/company_hyundai_motor_005380.html#T1",
+        "auto/company_hyundai_motor_005380.html#T2",
+        "auto/company_hyundai_motor_005380.html#T3"
+      ],
       "intake": [
         "u-20261007-yt-rxcy"
       ],
       "tracked_price": false,
-      "note": "정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chain.html#T1만 가리키고 내수 점유 주장과 맞지 않아 테제에 안 붙임. 비중·집행 아님.",
+      "note": "2026-11-08 후보→관측 페이지. 내수·인도·중국 전언. 매수·비중 아님. 접은 rid 9개는 페이지 테제 evidence.",
       "watch": [
-        {
-          "date": "2026-10-07",
-          "grade": "②",
-          "rid": "r-20261007-210",
-          "one": "② 1~9월 전체 점유 36.47%(전년 42.54, −6.07%p)·판매 −16.3%. 합산 72.07%. 중형 EV SUV 공백→모델Y. L2+ 2028. 70% 붕괴는 전언.",
-          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
-        },
-        {
-          "date": "2026-10-07",
-          "grade": "③/④",
-          "rid": "r-20261007-214",
-          "one": "③/④ 아이오닉V는 베이징차·CATL·모멘타에 현대 마크. 중국 판매 실적은 다음 달 초. R&D 예산 축소는 내부 전언.",
-          "source": "https://www.youtube.com/watch?v=rxCynOioQD0"
-        },
-        {
-          "date": "2026-10-12",
-          "grade": "③",
-          "rid": "r-20261012-23",
-          "one": "③ 메리츠: 3Q26 판매 -10%(파업 제외 -8%)인데 OP 2.33조·컨센 -22%. 전기차 대당 적자. 27E EPS -8%, TP 58만. 확정 전.",
-          "source": "https://t.me/meritz_research/44792"
-        },
-        {
-          "date": "2026-10-14",
-          "grade": "②",
-          "rid": "r-20261014-472",
-          "one": "② 2032년까지 인도 155억불(작년 50억불의 3배 초과). FY25 내수 58.5만(−2.3%) 2위→4위. 마힌드라 66.0만·타타 63.1만. 공시 미대조. 로봇 T1 아님.",
-          "source": "https://soonsal.com/newsletters/2026/1014.html"
-        },
-        {
-          "date": "2026-10-18",
-          "grade": "④",
-          "rid": "r-20261018-07",
-          "one": "④ 맹성준: 현대차는 ECU를 사와 캘리브레이션 — 소스코드 없어 잦은 OTA 제약. 컨트롤러 자체 제작은 어렵지 않다는 주장. AI데이(엔비디아 ADAS 협업)는 「많이 실망 안 함」",
-          "source": "https://www.youtube.com/watch?v=ZaM6KLDqCgU"
-        },
-        {
-          "date": "2026-10-16",
-          "grade": "②",
-          "rid": "r-20261016-504",
-          "one": "② 155억불·7년은 r-472 재등장(22조 vs 약 20.8조). 새것은 푸네 2030년 연 32만대·현지화 90%+. SIAM 내수 +7.9%·수출 +17.5%. 공시 없음.",
-          "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/16/2026101600109.html"
-        },
-        {
-          "date": "2026-10-15",
-          "grade": "③",
-          "rid": "r-20261015-408",
-          "one": "③ 푸네 신공장 2032년까지 20.8조. 2030년 32만 대, 인도 합산 100만 대/년. 공시 미개봉.",
-          "source": "https://www.youtube.com/watch?v=RvIxnUqv-DU"
-        },
-        {
-          "date": "2026-10-20",
-          "grade": "④",
-          "rid": "r-20261020-604",
-          "one": "권용주(방송): 중국 브랜드 국내 1~9월 약 2만 대(전년 2,900), 7~10곳 진입 시 현대·기아 EV와 정면 경쟁. 쏘나타 LPG 택시 전량 중국산 약 1.4만 대.",
-          "source": "intake/user.jsonl (YT 손경제 10/20)"
-        },
-        {
-          "date": "2026-10-20",
-          "grade": "④",
-          "rid": "r-20261020-605",
-          "one": "권용주(전언): 2027 도심·고속도로 L2++ 목표, 엔비디아+자체 투트랙, 파운드리 모델 논의. 압권 10/19 전언(2028H2 L2+)과 시점 상충.",
-          "source": "intake/user.jsonl (YT 손경제 10/20)"
-        },
         {
           "date": "2026-10-19",
           "grade": "④",
@@ -11670,8 +11611,7 @@
           "one": "② 패널의 아이오닉7/EV7 프로젝트중단 전언은 회사확인 없음. ③ 류종은은 중형전기SUV재개·카니발EV·수익성보다점유확대 제안, 대중전기MPV세계공석이라는 해석. 실행계획/실제개발재개/매수근거로 채택안함. 권순우는 해법모르겠다며 고용·중국공급망얽힘 현실직시 강조. ④ 초입/산",
           "source": "https://www.youtube.com/watch?v=cZQMeppZh0k"
         }
-      ],
-      "승격_후보": true
+      ]
     },
     "000270": {
       "name": "기아",
@@ -19017,7 +18957,7 @@
       "layer": "조선·기자재",
       "business": "산업용 관이음쇠·플랜트 기자재",
       "business_grade": "② 메리츠 리서치 전달 · 2026-11-07",
-      "status": "후보",
+      "status": "관측",
       "watch": [
         {
           "date": "2026-11-07",
@@ -19026,7 +18966,12 @@
           "one": "② 메리츠 전달 성광벤드 3Q 매출428억원(YoY−33.6%·QoQ−33.2%)·OP−12억원·OPM−2.7%, 공시 원문 미대조. ③ 배기연은 조업일수 감소·정상조업도 기준 원가배부로 미배부 고정비 당기비용 추정(K-IFRS1002문단13 인용). 원인 확정 아님. nucl",
           "source": "https://t.me/meritz_research/45065"
         }
-      ]
+      ],
+      "theses": [
+        "shipbuilding/company_sungkwang_bend_014620.html#T1",
+        "ai-infra/ai_power_company_nuclear_smr.html#T2"
+      ],
+      "note": "2026-11-08 회사 관측 페이지 신설. nuclear T2(순현금·LNG, 상태 유지)와 별개. 3Q 적자는 ② 채널."
     },
     "082740": {
       "name": "한화엔진",
@@ -19034,7 +18979,7 @@
       "layer": "조선·기자재",
       "business": "선박용 엔진",
       "business_grade": "② 메리츠 리서치 전달 · 2026-11-07",
-      "status": "후보",
+      "status": "관측",
       "watch": [
         {
           "date": "2026-11-07",
@@ -19043,7 +18988,11 @@
           "one": "② 메리츠 전달 한화엔진 매출4,136억원(YoY+39.1%)·OP409억원(+53.7%)·OPM9.9%(QoQ−0.6%p). ③ 신공장 고정비와 조업일 감소 이중부담 추정·4Q 성과급 위험. 배기연 선호 DC엔진>FDC>밸류/배당>군함, Top Picks HD현대중공업·HD현",
           "source": "https://t.me/meritz_research/45065"
         }
-      ]
+      ],
+      "theses": [
+        "shipbuilding/company_hanwha_engine_082740.html#T1"
+      ],
+      "note": "2026-11-08 회사 관측 페이지. 3Q 수치는 ② 채널, Top-Pick은 ③. 매수 순위 아님."
     },
     "077970": {
       "name": "STX엔진",
@@ -19051,7 +19000,7 @@
       "layer": "조선·기자재",
       "business": "선박·방산용 엔진",
       "business_grade": "② 메리츠 리서치 전달 · 2026-11-07",
-      "status": "후보",
+      "status": "관측",
       "watch": [
         {
           "date": "2026-11-07",
@@ -19060,7 +19009,11 @@
           "one": "② 메리츠 전달 한화엔진 매출4,136억원(YoY+39.1%)·OP409억원(+53.7%)·OPM9.9%(QoQ−0.6%p). ③ 신공장 고정비와 조업일 감소 이중부담 추정·4Q 성과급 위험. 배기연 선호 DC엔진>FDC>밸류/배당>군함, Top Picks HD현대중공업·HD현",
           "source": "https://t.me/meritz_research/45065"
         }
-      ]
+      ],
+      "theses": [
+        "shipbuilding/company_stx_engine_077970.html#T1"
+      ],
+      "note": "2026-11-08 회사 관측 페이지. 11/7 메모에 분기 숫자 없음. watch의 한화엔진 문장을 실적으로 쓰지 않음."
     },
     "443060": {
       "name": "HD현대마린솔루션",
@@ -19068,7 +19021,7 @@
       "layer": "조선·기자재",
       "business": "선박 유지보수·서비스",
       "business_grade": "② 메리츠 리서치 전달 · 2026-11-07",
-      "status": "후보",
+      "status": "관측",
       "watch": [
         {
           "date": "2026-11-07",
@@ -19077,7 +19030,11 @@
           "one": "② 메리츠 전달 한화엔진 매출4,136억원(YoY+39.1%)·OP409억원(+53.7%)·OPM9.9%(QoQ−0.6%p). ③ 신공장 고정비와 조업일 감소 이중부담 추정·4Q 성과급 위험. 배기연 선호 DC엔진>FDC>밸류/배당>군함, Top Picks HD현대중공업·HD현",
           "source": "https://t.me/meritz_research/45065"
         }
-      ]
+      ],
+      "theses": [
+        "shipbuilding/company_hd_hms_443060.html#T1"
+      ],
+      "note": "2026-11-08 회사 관측 페이지. 11/7 명단 수록만. 분기 숫자는 이 메모에 없음."
     },
     "MOUNJARO": {
       "name": "마운자로(Mounjaro) 제품 관측",
@@ -19731,7 +19688,7 @@
       "name": "모델솔루션",
       "market": "KR",
       "layer": "mid",
-      "status": "후보",
+      "status": "관측",
       "business": "스타링크 샘플공급 보도(미검증) 등 우주·기구 부품 관측",
       "business_grade": "④",
       "watch": [
@@ -19742,7 +19699,11 @@
           "one": "스타링크 샘플공급 보도(②) — 우주 공급망 후보",
           "source": "c-20261016-t149"
         }
-      ]
+      ],
+      "theses": [
+        "space/company_model_solution.html#T1"
+      ],
+      "note": "2026-11-08 회사 관측 페이지. 스타링크 샘플은 ② 보도. 코드·매출 미기재."
     }
   },
   "_readme_actors": "행위자 카드(v3 §2.5) — 자본을 움직이는 주체의 동기·제약·다음 행동. 회사 카드(companies)와 분리. 등급은 「원하는 것」의 근거 등급",
