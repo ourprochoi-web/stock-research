@@ -88,20 +88,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "비트코인": {
-   "code": "BTC",
-   "market": "CRYPTO",
-   "entity": "BTC",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {
-    "ai-infra/ai_dc_miner_conversion.html": [
-     "T4"
-    ]
-   },
-   "aliases": [],
-   "auto_candidate": true
-  },
   "LPKF": {
    "code": "LPK",
    "market": "DE",
@@ -373,16 +359,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "니토보세키": {
-   "code": "3110.T",
-   "market": "JP",
-   "entity": "3110.T",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "다이니폰인쇄": {
    "code": "7912.T",
    "market": "JP",
@@ -469,30 +445,10 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "일본담배산업(채널명)": {
-   "code": "JAPAN_TOBACCO",
-   "market": "JP",
-   "entity": "JAPAN_TOBACCO",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "일본전기초자": {
    "code": "5214.T",
    "market": "JP",
    "entity": "5214.T",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "타이요유덴": {
-   "code": "6967.T",
-   "market": "JP",
-   "entity": "6967.T",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -862,16 +818,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "GKL": {
-   "code": "GKL",
-   "market": "KR",
-   "entity": "GKL",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "GS건설": {
    "code": "006360",
    "market": "KR",
@@ -1051,26 +997,6 @@
      "T6"
     ]
    },
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "JTBC": {
-   "code": "JTBC",
-   "market": "KR",
-   "entity": "JTBC",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "JYP Ent.": {
-   "code": "JYP",
-   "market": "KR",
-   "entity": "JYP",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -1866,16 +1792,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "넷마블": {
-   "code": "251270",
-   "market": "KR",
-   "entity": "251270",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "노티드": {
    "code": "KNOTTED",
    "market": "KR",
@@ -2210,20 +2126,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "디앤디파마텍": {
-   "code": "DND_PHARM",
-   "market": "KR",
-   "entity": "DND_PHARM",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {
-    "ai-bio/kr_bio_china_competition.html": [
-     "T2"
-    ]
-   },
-   "aliases": [],
-   "auto_candidate": true
-  },
   "디엔에프": {
    "code": "092070",
    "market": "KR",
@@ -2306,16 +2208,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "롯데관광개발": {
-   "code": "LOTTE_TOUR",
-   "market": "KR",
-   "entity": "LOTTE_TOUR",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "롯데쇼핑": {
    "code": "023530",
    "market": "KR",
@@ -2370,16 +2262,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "리브스메드": {
-   "code": "LIVSMED",
-   "market": "KR",
-   "entity": "LIVSMED",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "마땡킴": {
    "code": "MATINKIM",
    "market": "KR",
@@ -2420,31 +2302,11 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "바이오니아": {
-   "code": "064550",
-   "market": "KR",
-   "entity": "064550",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "박셀바이오": {
    "code": "323990",
    "market": "KR",
    "entity": "323990",
    "falsifier": "2026-10-16 Kenneth: 후보 아님. watch 관측만.",
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "백화점 차량 트래픽": {
-   "code": "KR_DEPT_TRAFFIC",
-   "market": "KR",
-   "entity": "KR_DEPT_TRAFFIC",
-   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -3425,16 +3287,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "와이지엔터": {
-   "code": "YGENT",
-   "market": "KR",
-   "entity": "YGENT",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "우리금융지주": {
    "code": "316140",
    "market": "KR",
@@ -3490,16 +3342,6 @@
    "code": "104830",
    "market": "KR",
    "entity": null,
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "원화 스테이블코인": {
-   "code": "KRW_STABLECOIN",
-   "market": "KR",
-   "entity": "KRW_STABLECOIN",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -3894,21 +3736,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "코스메카코리아": {
-   "code": "241710",
-   "market": "KR",
-   "entity": "241710",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {
-    "k-beauty/k_beauty_company_largecap_odm.html": [
-     "T1",
-     "T2"
-    ]
-   },
-   "aliases": [],
-   "auto_candidate": true
-  },
   "코어라인소프트": {
    "code": "384470",
    "market": "KR",
@@ -4133,16 +3960,6 @@
    "theses": {},
    "aliases": [],
    "auto_candidate": false
-  },
-  "파라다이스": {
-   "code": "PARADISE",
-   "market": "KR",
-   "entity": "PARADISE",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
   },
   "파마리서치": {
    "code": "214450",
@@ -4381,42 +4198,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "하이브": {
-   "code": "HYBE",
-   "market": "KR",
-   "entity": "HYBE",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {
-    "ai-infra/ai_power_company_transformer_grid.html": [
-     "T1"
-    ],
-    "ai-infra/kr_cooling_optical_layer.html": [
-     "T6"
-    ],
-    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
-     "T1",
-     "T2",
-     "T3",
-     "T4"
-    ],
-    "hbm-packaging/hbm_pkg_company_samsung.html": [
-     "T9"
-    ],
-    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
-     "T7"
-    ],
-    "hbm-packaging/hbm_pkg_overview.html": [
-     "T3"
-    ],
-    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
-     "T2",
-     "T7"
-    ]
-   },
-   "aliases": [],
-   "auto_candidate": true
-  },
   "한국가스공사": {
    "code": "036460",
    "market": "KR",
@@ -4444,7 +4225,7 @@
   "한국콜마": {
    "code": "161890",
    "market": "KR",
-   "entity": "161890",
+   "entity": null,
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -4473,16 +4254,6 @@
      "T3"
     ]
    },
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "한국타이어앤테크놀로지": {
-   "code": "161390",
-   "market": "KR",
-   "entity": "161390",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4999,16 +4770,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "혜인": {
-   "code": "HYEIN",
-   "market": "KR",
-   "entity": "HYEIN",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": false
-  },
   "효성중공업": {
    "code": "298040",
    "market": "KR",
@@ -5327,16 +5088,6 @@
    "market": "KS",
    "entity": "018880",
    "falsifier": "Lead 후보 신설 r-20261105-85",
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "글로벌 정세 브리핑": {
-   "code": "GLOBAL_GEOPOLITICS",
-   "market": "Macro",
-   "entity": "GLOBAL_GEOPOLITICS",
-   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -8930,16 +8681,6 @@
    "aliases": [],
    "auto_candidate": true
   },
-  "미국 항공 안전 사건": {
-   "code": "US_AVIATION_SAFETY",
-   "market": "US",
-   "entity": "US_AVIATION_SAFETY",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
   "미국주식 신고가·시장폭": {
    "code": "US_EQUITY_BREADTH",
    "market": "US",
@@ -8947,21 +8688,6 @@
    "falsifier": null,
    "facts": 0,
    "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "베라더믹스": {
-   "code": "VERADERMICS",
-   "market": "US",
-   "entity": "VERADERMICS",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {
-    "hairloss/hairloss_global_pipeline.html": [
-     "T1",
-     "T2"
-    ]
-   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -9416,7 +9142,7 @@
   "르노코리아/르노(방송 관측)": {
    "code": "RENAULT_KOREA",
    "market": "방송명/테마(코드 원문 미제시)",
-   "entity": "RENAULT_KR",
+   "entity": "RENAULT_KOREA",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -9515,16 +9241,6 @@
    "code": "LOTTE_UNSPECIFIED",
    "market": "이름·그룹 예시(종목코드 아님)",
    "entity": "LOTTE_UNSPECIFIED",
-   "falsifier": null,
-   "facts": 0,
-   "theses": {},
-   "aliases": [],
-   "auto_candidate": true
-  },
-  "폴란드 공공안전 사건": {
-   "code": "POLAND_PUBLIC_SAFETY",
-   "market": "이벤트",
-   "entity": "POLAND_PUBLIC_SAFETY",
    "falsifier": null,
    "facts": 0,
    "theses": {},

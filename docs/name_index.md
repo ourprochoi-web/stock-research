@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-09)
 
-추적 604개 · 테제가 걸린 이름 269 · 엔티티 있음 445 · facts 있음 87.
+추적 580개 · 테제가 걸린 이름 264 · 엔티티 있음 420 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -12,7 +12,6 @@
 | CN | Moonshot AI | MOONSHOT | ✓  | — | — |
 | CN | T&S | 300394.SZ | ✓  | — | 5 |
 | CN | 위안제(Yuanjie Semiconductor) | 688498.SS | ✓  | optical_light_source_cw#T1,T4 | 4 |
-| CRYPTO | 비트코인 | BTC | ✓  | ai_dc_miner_conversion#T4 | — |
 | DE | LPKF | LPK | ✓  | — | — |
 | DE | Rheinmetall | RHM.DE | ✓ Lead 후보 신설 r-20261105-77. 정본 페이지 없음. | — | — |
 | DE | 인피니언 | IFX | ✓  | ai_power_company_transformer_grid#T1 | — |
@@ -36,7 +35,6 @@
 | JP | TDK | 6762.T | ✓  | — | — |
 | JP | THK | 6481.T | ✓ 반도체 설비 수요 둔화로 증익 설명이 깨지거나, 금액 없는 휴머노이드 언급만 쌓이는 것 | — | — |
 | JP | 나브테스코 | 6268.T | ✓ 산업용 로봇 사이클 둔화로 CS 수주가 전년비 감소 | robot_theme_supply_chain#T2 | — |
-| JP | 니토보세키 | 3110.T | ✓  | — | — |
 | JP | 다이니폰인쇄 | 7912.T | ✓  | — | — |
 | JP | 롬 | 6963.T | ✓  | hbm_pkg_theme_memory_cycle#T2 | — |
 | JP | 무라타(Murata) | 6981.T | ✓  | — | — |
@@ -44,9 +42,7 @@
 | JP | 미쓰비시전기 | 6503.T | ✓  | — | — |
 | JP | 소프트뱅크그룹(SoftBank Group) | 9984.T | ✓ LTV 25% 초과 공시, OpenAI 다운라운드·약정 축소, 스타게이트/오하이오 10GW 철회, Arm 마 | ns_bigtech_capex_roi#T4 · ai_value_chain_guide_v2#T1 | — |
 | JP | 스미토모전공(Sumitomo Electric) | 5802.T | ✓  | optical_light_source_cw#T2,T3 | 7 |
-| JP | 일본담배산업(채널명) | JAPAN_TOBACCO | ✓  | — | — |
 | JP | 일본전기초자 | 5214.T | ✓  | — | — |
-| JP | 타이요유덴 | 6967.T | ✓  | — | — |
 | JP | 하모닉드라이브시스템즈 | 6324.T | ✓ 중국 감속기 채택 확대가 공시되거나 수주 증가가 리드타임 선주문으로 판명되면 상방이 깨진다 | robot_theme_supply_chain#T2 | — |
 | JP | 화낙 | 6954.T | ✓ 수주가 선반영된 뒤 급감 | — | — |
 | JP | 히타치 | 6501.T | ✓  | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T2 · energy_ess_ai_power#T4 | — |
@@ -63,7 +59,6 @@
 | KR | DL이앤씨 | 375500 | ✓ 후보 엔티티(카드 아님). 11/02 Kenneth 승인 카드(262c711d, r-20261102-53)  | kr_construction_datacenter#T1,T3 | — |
 | KR | DN오토모티브 | 007340 | ✓ 스탠스 없음. 수사 의뢰이고 기소 전. 장부 행 없음. | — | — |
 | KR | GC메디아이 | 032620 | ✓ 후보 엔티티(카드 아님). 11/02 Kenneth 승인 카드(262c711d, r-20261102-59)  | — | — |
-| KR | GKL | GKL | ✓  | — | — |
 | KR | GS건설 | 006360 | ✓  | ai_power_company_nuclear_smr#T3 · kr_construction_datacenter#T1 | — |
 | KR | GS리테일 | 007070 | ✓ — | consumer_sector_department#T1 | — |
 | KR | GS칼텍스 | GSCALTEX | ✓  | — | — |
@@ -73,8 +68,6 @@
 | KR | HD현대중공업 | 329180 | ✓ LNG 신조선가 하락이 멈추지 않고 2027 LNG선 발주가 2026 수준을 넘지 못하면 메리츠 「바닥」 판 | k_ship_theme_lng_ai_nexus#T2,T3 · k_ship_industry_overview#T2 · ai_power_company_transformer_grid#T1 · ai_power_infra_investment_map#T4 · kr_4sector_cross_valuation#T1 · k_ship_theme_masga_us_alliance#T2 | — |
 | KR | HN상조 | HN상조 | ✓  | — | — |
 | KR | HPSP | 403870 | ✓ 메모리 3사 capex 가이던스 하향, HPSP 특허 분쟁 불리한 판결·매출 역성장 지속, 피에스케이 3Q  | kr_semi_equip_6#T2,T3,T4,T5 · ns_semiconductor_war#T4 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_cross_valuation#T1,T3 · kr_semi_fab_timeline#T3 · robot_theme_supply_chain#T6 | — |
-| KR | JTBC | JTBC | ✓  | — | — |
-| KR | JYP Ent. | JYP | ✓  | — | — |
 | KR | KB금융 | 105560 | — | — | — |
 | KR | KG모빌리티 | 003620 | ✓  | — | — |
 | KR | KODEX AI전력핵심설비 | 487240 | — | — | — |
@@ -118,7 +111,6 @@
 | KR | 기업은행 | 024110 | ✓  | — | — |
 | KR | 나무가 | 190510 | ✓ 삼성 스마트폰 카메라 점유 하락으로 감익 지속, 로봇 초도 일정 2027→2028 이후로 연기, 고객 이름· | robot_theme_supply_chain#T2 · robot_kr_16_valuation#T1 | — |
 | KR | 네오티스 | 085910 | ✓  | — | — |
-| KR | 넷마블 | 251270 | ✓  | — | — |
 | KR | 노티드 | KNOTTED | ✓ 비상장 후보. 벤처자본×희소성 브랜드 사례. | — | — |
 | KR | 뉴로메카 | 348340 | — | — | — |
 | KR | 달바글로벌 | 483650 | — | k_beauty_company_largecap_odm#T4 · k_beauty_company_silicon2#T3 | — |
@@ -139,26 +131,21 @@
 | KR | 드림시큐리티 | 203650 | — | — | — |
 | KR | 드림텍 | 192650 | ✓ 2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만 | hbm_pkg_company_samsung#T6,T8 | 7 |
 | KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 · node_screener_hbm_scoreboard#T6 | — |
-| KR | 디앤디파마텍 | DND_PHARM | ✓  | kr_bio_china_competition#T2 | — |
 | KR | 디엔에프 | 092070 | — | — | — |
 | KR | 디오 | 039840 | ✓ 후보 엔티티(카드 아님). 11/02 Kenneth 승인 카드(262c711d, r-20261102-58)  | robot_kr_16_valuation#T1 | — |
 | KR | 램테크놀러지 | 171010 | — | — | — |
 | KR | 레인보우로보틱스 | 277810 | — | vcp_breakout_backtest#T4 · robot_kr_16_valuation#T2,T4 | — |
 | KR | 로보스타 | 090360 | — | vcp_breakout_backtest#T4 | — |
 | KR | 로보티즈 | 108490 | — | robot_kr_16_valuation#T1,T2,T3 | — |
-| KR | 롯데관광개발 | LOTTE_TOUR | ✓  | — | — |
 | KR | 롯데쇼핑 | 023530 | ✓  | consumer_sector_department#T1,T3,T4,T5 | — |
 | KR | 롯데케미칼 | 011170 | ✓ 정본 화학 페이지 없음. 대형 상장사라 후보 카드를 연다. 중소 신규 카드 금지와 별개. 비중·집행 아님. | — | — |
 | KR | 롯데하이마트 | 071840 | ✓ — | — | — |
 | KR | 리가켐바이오 | 141080 | — | kr_bio_china_competition#T2 · glp1_kbio_portfolio_candidates#T1 | — |
-| KR | 리브스메드 | LIVSMED | ✓  | — | — |
 | KR | 마땡킴 | MATINKIM | ✓ 비상장. 마르디와 대비되는 생산 확대 사례. | — | — |
 | KR | 마이크로투나노 | 424980 | ✓ NAND 투자 둔화로 분기 매출이 2Q 대비 감소하거나 HBM4 인증 탈락이 확인되면 중립→부정 재검토. H | — | — |
 | KR | 모델솔루션 | MODEL_SOLUTION | ✓  | — | — |
 | KR | 미래에셋증권 | 006800 | ✓  | — | — |
-| KR | 바이오니아 | 064550 | ✓  | — | — |
 | KR | 박셀바이오 | 323990 | ✓ 2026-10-16 Kenneth: 후보 아님. watch 관측만. | — | — |
-| KR | 백화점 차량 트래픽 | KR_DEPT_TRAFFIC | ✓  | — | — |
 | KR | 뷰티스킨 | 406820 | ✓ 스탠스 없음. 300억은 초도 발주 단계. 장부 행 없음. | — | — |
 | KR | 브이엠 | 089970 | — | hbm_pkg_investment_map#T2 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T5,T6,T7,T8 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T3,T5 · kr_4sector_cross_valuation#T3 · us_7axis_cross_valuation#T1 | — |
 | KR | 비나텍 | 126340 | ✓ 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소 · 서버랙 CBU | us_bloom_intel_deep#T5 · ai_power_infra_investment_map#T6 | — |
@@ -215,13 +202,11 @@
 | KR | 옵티코어 | 380540 | ✓  | kr_cooling_optical_layer#T1,T4 | 5 |
 | KR | 와이씨 | 232140 | ✓ 3Q 이익 역성장(방산 자회사 일회성 확인), 리비안 물량 감소, 자기주식·유상증자 등 희석이면 중립→부정  | hbm_pkg_company_samsung#T7 | — |
 | KR | 와이엠티 | 251370 | ✓ 유리기판 상용화가 2028 이후로 밀리는 고객 발언, 본업 감익 지속(3Q OP < 15억), 자회사 증자· | hbm_pkg_theme_substrate#T1 | — |
-| KR | 와이지엔터 | YGENT | ✓  | — | — |
 | KR | 우리금융지주 | 316140 | ✓  | — | — |
 | KR | 우리넷 | 115440 | ✓  | — | — |
 | KR | 우리로 | 046970 | ✓  | — | 5 |
 | KR | 원익IPS | 240810 | — | kr_semi_equip_6#T1,T5 · kr_semi_equip_vm_psk#T5 · kr_semi_fab_timeline#T3 | — |
 | KR | 원익머트리얼즈 | 104830 | — | — | — |
-| KR | 원화 스테이블코인 | KRW_STABLECOIN | ✓  | — | — |
 | KR | 월덱스 | 101160 | — | — | — |
 | KR | 윈스테크넷 | 136540 | ✓  | — | — |
 | KR | 유니테스트 | 086390 | ✓ 3Q까지 삼성·SK하이닉스 추가 공시 0 | hbm_pkg_company_samsung#T7 | — |
@@ -248,7 +233,6 @@
 | KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | 7 |
 | KR | 코스닥 지수 | KOSDAQ | ✓  | — | — |
 | KR | 코스맥스 | 192820 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T4 · kr_4sector_cross_valuation#T2,T3 · kr_drawdown_2026#T3 | — |
-| KR | 코스메카코리아 | 241710 | ✓  | k_beauty_company_largecap_odm#T1,T2 | — |
 | KR | 코어라인소프트 | 384470 | ✓ 유상증자·CB 등 자금 조달, 해외 매출 정체, 손실 재확대면 중립→부정 재검토 | — | — |
 | KR | 크래프톤 | 259960 | ✓  | — | — |
 | KR | 클래시스 | 214150 | ✓ 하방: 3Q26 영업이익이 컨센 대비 −10% 이상 미달(다올 375억 수준), 연간 가이던스 추가 하향(4 | k_beauty_company_classys#T1,T2,T3 · kr_4sector_cross_valuation#T4 | — |
@@ -261,7 +245,6 @@
 | KR | 티에프이 | 티에프이 | ✓ 후보 엔티티(카드 아님). 11/02 Kenneth 승인 카드(262c711d, r-20261102-51)  | — | — |
 | KR | 티엘비 | 356860 | ✓ 3Q26 잠정에서 영업이익이 ③ 키움 추정 170억(OPM 18.1%)을 크게 밑돌거나 OPM이 2Q 14. | hbm_pkg_theme_substrate#T2,T3,T4,T5 · hbm_pkg_company_samsung#T6 | — |
 | KR | 파두 | 440110 | ✓  | — | — |
-| KR | 파라다이스 | PARADISE | ✓  | — | — |
 | KR | 파마리서치 | 214450 | ✓ T1: 화장품 성장률이 의료기기 수준(10%대)으로 내려온다 (스윙 팩터가 아니었다) · T2: 3Q26에  | k_beauty_company_pharmaresearch#T1,T2,T3,T4 · k_beauty_company_apr#T1 · k_beauty_sector#T1,T4 | — |
 | KR | 파이오링크 | 170790 | — | — | — |
 | KR | 파인엠텍 | 441270 | ✓  | — | — |
@@ -278,11 +261,9 @@
 | KR | 피엠티(PMT) | 147760 | ✓  | — | — |
 | KR | 필옵틱스 | 161580 | ✓ 양산 라인 TGV 장비 단일판매(금액·상대·기간)가 나오면 중립을 재검토. 양산이 더 밀리거나 고객 취소면  | — | — |
 | KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 · node_screener_hbm_scoreboard#T6 | — |
-| KR | 하이브 | HYBE | ✓  | ai_power_company_transformer_grid#T1 · kr_cooling_optical_layer#T6 · hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · hbm_pkg_company_samsung#T9 · hbm_pkg_company_sk_hynix#T7 · hbm_pkg_overview#T3 · hbm_pkg_theme_memory_cycle#T2,T7 | — |
 | KR | 한국가스공사 | 036460 | ✓ — | — | — |
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
-| KR | 한국콜마 | 161890 | ✓  | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
-| KR | 한국타이어앤테크놀로지 | 161390 | ✓  | — | — |
+| KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
 | KR | 한국항공우주 | 047810 | ✓  | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
 | KR | 한미반도체 | 042700 | ✓  | hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · k_defense_cross_valuation#T8 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 한미약품 | 128940 | ✓ AASLD 2b상에서 MASH 해소·섬유화 개선이 위고비 대비 열위로 나오면 3상 진입·마일스톤 기대가 약해 | — | — |
@@ -309,7 +290,6 @@
 | KR | 현대위아 | 011210 | ✓ 스마트카 열관리 수주가 연내 확정되지 않으면 재편 논리의 첫 이정표가 빠진다. | k_defense_company_hyundai_rotem#T3 | — |
 | KR | 현대제철 | 004020 | ✓ 4Q 연결 OP가 전망(1,286억)을 크게 밑돌거나 밸류업 공개가 다시 미뤄지면 「하방 제한」 읽기가 약해 | — | — |
 | KR | 현대차 | 005380 | ✓ 정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chai | energy_ess_ai_power#T5 · hbm_pkg_theme_substrate#T6 · k_beauty_company_largecap_odm#T1 · robot_theme_supply_chain#T1 | 1 |
-| KR | 혜인 | HYEIN | ✓  | — | — |
 | KR | 효성중공업 | 298040 | ✓ 회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님. | ai_power_company_transformer_grid#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T3,T4 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T5 | 1 |
 | KR | 효성티앤씨 | 298020 | — | — | — |
 | KR | 후성 | 093370 | — | — | — |
@@ -339,7 +319,6 @@
 | KS | 한국금융지주 | 071050 | ✓ Lead 후보 신설 r-20261105-102 | — | — |
 | KS | 한국전력 | 015760 | ✓ — | ai_power_company_nuclear_smr#T3 · kr_4sector_cross_valuation#T5 | — |
 | KS | 한온시스템 | 018880 | ✓ Lead 후보 신설 r-20261105-85 | — | — |
-| Macro | 글로벌 정세 브리핑 | GLOBAL_GEOPOLITICS | ✓  | — | — |
 | Macro | 미국 경제지표 일정 | US_MACRO_CALENDAR | ✓  | — | — |
 | Macro | 미국 정치 발언 | US_POLITICS | ✓  | — | — |
 | Macro | 이란·호르무즈 정세 | HORMUZ_GEOPOLITICS | ✓  | — | — |
@@ -544,9 +523,7 @@
 | US | 나비타스 | NVTS | ✓ 정본 페이지 없음. 변압기 T1의 800V 일정과 같이 읽음. 블룸 T5(국내 BE)에 넣지 않음. 비중·집 | ai_power_company_semi_ess_dc#T1 | — |
 | US | 맥도날드(McDonald's) | MCD | ✓  | — | — |
 | US | 미국 기업 실적 일정 | US_EARNINGS_CALENDAR | ✓  | — | — |
-| US | 미국 항공 안전 사건 | US_AVIATION_SAFETY | ✓  | — | — |
 | US | 미국주식 신고가·시장폭 | US_EQUITY_BREADTH | ✓  | — | — |
-| US | 베라더믹스 | VERADERMICS | ✓  | hairloss_global_pipeline#T1,T2 | — |
 | US | 사이퍼마이닝(Cipher Mining) | CIFR | ✓  | ai_dc_miner_conversion#T1,T2 | — |
 | US | 아카마이(Akamai) | AKAM | ✓  | — | — |
 | US | 온세미 | ON | ✓  | — | — |
@@ -598,7 +575,6 @@
 | 상품명(코드 미기재) | KODEX 미국배당다우존스(방송명) | KODEX_US_DIVIDEND_DOW | ✓  | — | — |
 | 상품명(코드 미기재) | TIGER 미국배당다우존스(방송명) | TIGER_US_DIVIDEND_DOW | ✓  | — | — |
 | 이름·그룹 예시(종목코드 아님) | 롯데(법인 미특정) | LOTTE_UNSPECIFIED | ✓  | — | — |
-| 이벤트 | 폴란드 공공안전 사건 | POLAND_PUBLIC_SAFETY | ✓  | — | — |
 | 제품/서비스(상장코드 미제시) | 산사(온라인 절 서비스) | SANSA_ONLINE | ✓  | — | — |
 | 제품/서비스(상장코드 미제시) | 에페(방송명·제조사 미표기) | EPE_UNSPECIFIED | ✓  | — | — |
 | 제품·테마(주식 티커 아님) | 마운자로(Mounjaro) 제품 관측 | MOUNJARO | ✓  | — | — |
