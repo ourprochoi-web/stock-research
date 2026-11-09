@@ -1,0 +1,24 @@
+=== Samsung_Global_AI_SW 4997 | 2026-11-10 06:01:29 KST | https://t.me/Samsung_Global_AI_SW/4997
+앤스로픽, Claude Fable 5.2 및 Mythos 5.2 출시
+
+: 앤스로픽은 최상위 기술 모델 Fable 5.2와 Mythos 5.2 공개. 동일한 기반 모델이지만 Fable에는 사이버보안·생물학 안전장치를 적용하고, Mythos는 검증된 전문기관에 제한적으로 제공
+
+: 코딩 성능 향상. FrontierCode 2.0에서 49.1%로 Opus 5.5(45.5%), GPT-6 Astra(42.8%) 상회. FrontierSWE v2에서도 69.9% 기록
+
+: 앤스로픽 핵심 코드베이스 변경 사항의 90% 이상이 Claude로 작성. Fable 5.2는 1,000개 이상의 하위 에이전트를 활용해 8일 만에 실제 부팅 가능한 운영체제 프로토타입 제작
+
+: 과학·엔지니어링 역량 확대. 블랙홀 관련 미해결 문제 2개 해결, 페르마의 마지막 정리 형식화를 30시간 만에 완료. 단백질 구조 예측 34개 중 28개 성공, 전자기기 3종 제작. 로봇 제어 RoboDojo 평가 64.9%로 Opus 5.5(39.4%) 상회
+
+: 사이버보안 성능 개선. Mythos 5.2는 CVE Rediscovery에서 89.6%로 이전 모델(78.3%) 및 Opus 5.5(81.3%) 상회. Claude Security에 통합돼 기업 코드베이스 취약점 탐지·수정에 활용
+
+: 속도 및 비용 효율 개선. 5.1 대비 출력 속도 최대 30% 향상. API 가격은 입력/출력 100만 토큰당 $8/$40, 최대 2.5배 빠른 Fast Mode는 $16/$80. Fable 5.2 High는 Opus 5.5 Max와 유사한 성능을 약 절반의 작업당 비용으로 달성
+
+: 안전장치 강화. 불필요한 차단 55% 감소, 증류 공격 데이터 수집량 90~99% 축소. AI 개발 가속 위험을 고려해 가속기 커널 최적화 및 LLM 아키텍처 개선 역량은 의도적으로 Opus 5.5 수준으로 제한
+
+: Fable 5.2는 Claude, AWS, Google Cloud, Azure에서 제공하며, Mythos 5.2는 검증 프로그램을 통해 접근 가능. 일반 코딩·지식 작업에는 Opus 5.5, 고난도 기술 작업에는 Fable·Mythos 사용 권장
+
+https://www.anthropic.com/claude-fable-and-mythos-5-2
+[link_preview] https://anthropic.com/claude-fable-and-mythos-5-2
+
+
+공식 페이지 HTTP 200, 표기 November 9, 2026. Fable과 Mythos는 같은 모델이다. Fable은 사이버·생물 안전장치를 켜 전체 공개하고, Mythos는 생명과학·사이버 검증 프로그램으로 제한한다. 출력은 5.1 대비 최대 30% 빠르고 가격은 100만 토큰당 입력 8달러·출력 40달러, 패스트 모드는 16달러·80달러다. FrontierCode 2.0 표에 Fable 5.2 49.1%(Xhigh)가 있다. 기업 승률, 매출, 삼성 파운드리, 구글 TPU 조건, 9650억 달러 아래 라운드는 이 페이지에 없다.
