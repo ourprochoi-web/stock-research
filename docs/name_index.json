@@ -862,6 +862,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "GKL": {
+   "code": "GKL",
+   "market": "KR",
+   "entity": "GKL",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "GS건설": {
    "code": "006360",
    "market": "KR",
@@ -1048,6 +1058,16 @@
    "code": "JTBC",
    "market": "KR",
    "entity": "JTBC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "JYP Ent.": {
+   "code": "JYP",
+   "market": "KR",
+   "entity": "JYP",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -2190,6 +2210,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "디앤디파마텍": {
+   "code": "DND_PHARM",
+   "market": "KR",
+   "entity": "DND_PHARM",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-bio/kr_bio_china_competition.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "디엔에프": {
    "code": "092070",
    "market": "KR",
@@ -2272,6 +2306,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "롯데관광개발": {
+   "code": "LOTTE_TOUR",
+   "market": "KR",
+   "entity": "LOTTE_TOUR",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "롯데쇼핑": {
    "code": "023530",
    "market": "KR",
@@ -2326,6 +2370,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "리브스메드": {
+   "code": "LIVSMED",
+   "market": "KR",
+   "entity": "LIVSMED",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "마땡킴": {
    "code": "MATINKIM",
    "market": "KR",
@@ -2360,6 +2414,16 @@
    "code": "006800",
    "market": "KR",
    "entity": "006800",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "바이오니아": {
+   "code": "064550",
+   "market": "KR",
+   "entity": "064550",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -3361,6 +3425,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "와이지엔터": {
+   "code": "YGENT",
+   "market": "KR",
+   "entity": "YGENT",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "우리금융지주": {
    "code": "316140",
    "market": "KR",
@@ -3416,6 +3490,16 @@
    "code": "104830",
    "market": "KR",
    "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "원화 스테이블코인": {
+   "code": "KRW_STABLECOIN",
+   "market": "KR",
+   "entity": "KRW_STABLECOIN",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -4050,6 +4134,16 @@
    "aliases": [],
    "auto_candidate": false
   },
+  "파라다이스": {
+   "code": "PARADISE",
+   "market": "KR",
+   "entity": "PARADISE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "파마리서치": {
    "code": "214450",
    "market": "KR",
@@ -4282,6 +4376,42 @@
     ],
     "node-screener/node_screener_hbm_scoreboard.html": [
      "T6"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "하이브": {
+   "code": "HYBE",
+   "market": "KR",
+   "entity": "HYBE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
+    ],
+    "ai-infra/kr_cooling_optical_layer.html": [
+     "T6"
+    ],
+    "hbm-packaging/hbm_pkg_company_hanmi_semi.html": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T9"
+    ],
+    "hbm-packaging/hbm_pkg_company_sk_hynix.html": [
+     "T7"
+    ],
+    "hbm-packaging/hbm_pkg_overview.html": [
+     "T3"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2",
+     "T7"
     ]
    },
    "aliases": [],
