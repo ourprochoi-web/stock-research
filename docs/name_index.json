@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07",
+ "generated": "2026-11-09",
  "names": {
   "Optus": {
    "code": "OPTUS",
@@ -445,6 +445,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "일본담배산업(채널명)": {
+   "code": "JAPAN_TOBACCO",
+   "market": "JP",
+   "entity": "JAPAN_TOBACCO",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "일본전기초자": {
    "code": "5214.T",
    "market": "JP",
@@ -760,6 +770,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "DB손해보험": {
+   "code": "005830",
+   "market": "KR",
+   "entity": "005830",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "DB하이텍": {
    "code": "000990",
    "market": "KR",
@@ -866,7 +886,7 @@
   "HD현대마린솔루션": {
    "code": "443060",
    "market": "KR",
-   "entity": null,
+   "entity": "443060",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -988,6 +1008,16 @@
    "code": "105560",
    "market": "KR",
    "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KG모빌리티": {
+   "code": "003620",
+   "market": "KR",
+   "entity": "003620",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -1654,7 +1684,7 @@
   "STX엔진": {
    "code": "077970",
    "market": "KR",
-   "entity": null,
+   "entity": "077970",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -1725,6 +1755,16 @@
    "theses": {},
    "aliases": [],
    "auto_candidate": false
+  },
+  "기업은행": {
+   "code": "024110",
+   "market": "KR",
+   "entity": "024110",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
   },
   "나무가": {
    "code": "190510",
@@ -2242,6 +2282,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "모델솔루션": {
+   "code": "MODEL_SOLUTION",
+   "market": "KR",
+   "entity": "MODEL_SOLUTION",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "미래에셋증권": {
    "code": "006800",
    "market": "KR",
@@ -2692,6 +2742,20 @@
     ],
     "energy/energy_ess_ai_power.html": [
      "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "성광벤드": {
+   "code": "014620",
+   "market": "KR",
+   "entity": "014620",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T2"
     ]
    },
    "aliases": [],
@@ -3220,6 +3284,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "우리금융지주": {
+   "code": "316140",
+   "market": "KR",
+   "entity": "316140",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "우리넷": {
    "code": "115440",
    "market": "KR",
@@ -3608,6 +3682,16 @@
      "T5"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "코스닥 지수": {
+   "code": "KOSDAQ",
+   "market": "KR",
+   "entity": "KOSDAQ",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4427,7 +4511,7 @@
   "한화엔진": {
    "code": "082740",
    "market": "KR",
-   "entity": null,
+   "entity": "082740",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -4744,6 +4828,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "PLUS 고배당": {
+   "code": "161510",
+   "market": "KR ETF",
+   "entity": "161510",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "KODEX 2차전지산업": {
    "code": "305720",
    "market": "KR-ETF",
@@ -4992,6 +5086,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "글로벌 정세 브리핑": {
+   "code": "GLOBAL_GEOPOLITICS",
+   "market": "Macro",
+   "entity": "GLOBAL_GEOPOLITICS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "미국 경제지표 일정": {
    "code": "US_MACRO_CALENDAR",
    "market": "Macro",
@@ -5186,6 +5290,7 @@
      "T5"
     ],
     "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
      "T2",
      "T4"
     ],
@@ -5458,6 +5563,8 @@
      "T5"
     ],
     "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
+     "T4",
      "T5"
     ],
     "national-strategy/ns_china_ai_ecosystem.html": [
@@ -8317,6 +8424,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1"
+    ],
     "research/13f_2026q2.html": [
      "T6"
     ]
@@ -8571,6 +8681,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "미국 항공 안전 사건": {
+   "code": "US_AVIATION_SAFETY",
+   "market": "US",
+   "entity": "US_AVIATION_SAFETY",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "미국주식 신고가·시장폭": {
    "code": "US_EQUITY_BREADTH",
    "market": "US",
@@ -8674,6 +8794,16 @@
    "code": "US_RETAIL_FLOW",
    "market": "US",
    "entity": "US_RETAIL_FLOW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "SCHD": {
+   "code": "SCHD",
+   "market": "US ETF",
+   "entity": "SCHD",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -8897,6 +9027,362 @@
    "falsifier": null,
    "facts": 0,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Klabin": {
+   "code": "KLABIN",
+   "market": "방송/채널명·테마(종목코드 미확정)",
+   "entity": "KLABIN",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "글로벌 정책·경제 브리핑(테마)": {
+   "code": "GLOBAL_MACRO_NEWS",
+   "market": "방송/채널명·테마(종목코드 미확정)",
+   "entity": "GLOBAL_MACRO_NEWS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "러시아 정유시설·공급차질(테마)": {
+   "code": "RUSSIA_OIL_ENERGY",
+   "market": "방송/채널명·테마(종목코드 미확정)",
+   "entity": "RUSSIA_OIL_ENERGY",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "바이낸스": {
+   "code": "BINANCE",
+   "market": "방송/채널명·테마(종목코드 미확정)",
+   "entity": "BINANCE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "ING": {
+   "code": "ING",
+   "market": "방송명/테마(코드 원문 미기재)",
+   "entity": "ING",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/us_ai_adjacent_sectors.html": [
+     "T5"
+    ],
+    "hairloss/hairloss_global_pipeline.html": [
+     "T5"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T4"
+    ],
+    "national-strategy/ns_cn_ai_supply_chain.html": [
+     "T1",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "론 파인 캐피털": {
+   "code": "LONE_PINE",
+   "market": "방송명/테마(코드 원문 미기재)",
+   "entity": "LONE_PINE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "미국 고용 방송수치 불일치(관측)": {
+   "code": "US_EMPLOYMENT_SOURCE_CONFLICT",
+   "market": "방송명/테마(코드 원문 미기재)",
+   "entity": "US_EMPLOYMENT_SOURCE_CONFLICT",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "버크셔 해서웨이": {
+   "code": "BRK",
+   "market": "방송명/테마(코드 원문 미기재)",
+   "entity": "BRK",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-sw/ai_sw_overview.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "CATL": {
+   "code": "CATL",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "CATL",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "energy/energy_battery_valuechain_update.html": [
+     "T3"
+    ],
+    "national-strategy/ns_cn_ai_supply_chain.html": [
+     "T3",
+     "T4"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "르노코리아/르노(방송 관측)": {
+   "code": "RENAULT_KOREA",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "RENAULT_KOREA",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "베이징자동차": {
+   "code": "BAIC",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "BAIC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "자동차 중국 R&D·협력사 생태계(테마)": {
+   "code": "AUTO_CHINA_RND",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "AUTO_CHINA_RND",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "지리": {
+   "code": "GEELY",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "GEELY",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_value_chain_guide_v2.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "체리": {
+   "code": "CHERY",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "CHERY",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "토요타": {
+   "code": "TOYOTA",
+   "market": "방송명/테마(코드 원문 미제시)",
+   "entity": "TOYOTA",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Megaspeed": {
+   "code": "MEGASPEED",
+   "market": "비상장·싱가포르",
+   "entity": "MEGASPEED",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "KODEX 미국배당다우존스(방송명)": {
+   "code": "KODEX_US_DIVIDEND_DOW",
+   "market": "상품명(코드 미기재)",
+   "entity": "KODEX_US_DIVIDEND_DOW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "TIGER 미국배당다우존스(방송명)": {
+   "code": "TIGER_US_DIVIDEND_DOW",
+   "market": "상품명(코드 미기재)",
+   "entity": "TIGER_US_DIVIDEND_DOW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "롯데(법인 미특정)": {
+   "code": "LOTTE_UNSPECIFIED",
+   "market": "이름·그룹 예시(종목코드 아님)",
+   "entity": "LOTTE_UNSPECIFIED",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "폴란드 공공안전 사건": {
+   "code": "POLAND_PUBLIC_SAFETY",
+   "market": "이벤트",
+   "entity": "POLAND_PUBLIC_SAFETY",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "산사(온라인 절 서비스)": {
+   "code": "SANSA_ONLINE",
+   "market": "제품/서비스(상장코드 미제시)",
+   "entity": "SANSA_ONLINE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "에페(방송명·제조사 미표기)": {
+   "code": "EPE_UNSPECIFIED",
+   "market": "제품/서비스(상장코드 미제시)",
+   "entity": "EPE_UNSPECIFIED",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "마운자로(Mounjaro) 제품 관측": {
+   "code": "MOUNJARO",
+   "market": "제품·테마(주식 티커 아님)",
+   "entity": "MOUNJARO",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "공상은행": {
+   "code": "ICBC",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "ICBC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "농업은행": {
+   "code": "ABC_BANK",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "ABC_BANK",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "샤오미": {
+   "code": "XIAOMI",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "XIAOMI",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "robot/robot_theme_supply_chain.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "자산손실·투자심리 교육(테마)": {
+   "code": "WEALTH_RISK_EDUCATION",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "WEALTH_RISK_EDUCATION",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "중국 외환관리·위안화 국제화(테마)": {
+   "code": "CHINA_FX_RMB",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "CHINA_FX_RMB",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "헝다": {
+   "code": "EVERGRANDE",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "EVERGRANDE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "화웨이": {
+   "code": "HUAWEI",
+   "market": "테마/방송명(코드 검증 없음)",
+   "entity": "HUAWEI",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T1"
+    ],
+    "national-strategy/ns_cn_ai_supply_chain.html": [
+     "T4"
+    ],
+    "national-strategy/ns_global_strategy_overview.html": [
+     "T4",
+     "T5"
+    ],
+    "national-strategy/ns_semiconductor_war.html": [
+     "T2",
+     "T5"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   }

@@ -79,3 +79,4 @@ related: open:oil-judgment · open:war-coverage · regime
 | 2026-11-03 | 순살 11/3(수출 집계 2차 요약) (routing r-20261104-109) | B | 사우디 등 걸프 4국 10월 원유 수출 하루 1,553만 배럴로 연초 수준 회복, 이란 수출은 미군 봉쇄로 두 달째 0. 이란 대통령 「최고지도자에게 평화 협상 권한」 |
 
 | 2026-11-07 | t.me/insidertracking 경유 (routing r-20261107-25·28·34) | B/C | WSJ 인용 네타냐후 추가공격 추진·Fox 인용 트럼프 해상봉쇄·선박통제 주장·미국 외교공관 11개국 보안경보(공식문 미대조). 우크라 드론의 러시아 사라토프 정유 타격·최근 약 1주 정유 6곳 피격 주장(가동손실량 미제공). 트럼프 「호르무즈 통제…점령군일 수도」 발언은 ④ 수사·지상점령 미확인 |
+| 2026-11-07 | CENTCOM 공개문 https://www.centcom.mil/MEDIA/PUBLIC-RELEASES/Article/4644273/us-forces-disable-cargo-vessel-attempting-to-violate-naval-blockade/ (routing r-20261108-17) | A/B | CENTCOM: 11/7 오만만에서 세인트키츠 선적 M/V Huda가 경고를 무시하고 봉쇄 위반을 시도했다며 선미를 타격해 무력화했다고 발표. 정당성·피해 규모의 독립 확인은 이 성명 밖 |
