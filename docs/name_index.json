@@ -88,6 +88,20 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "비트코인": {
+   "code": "BTC",
+   "market": "CRYPTO",
+   "entity": "BTC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_dc_miner_conversion.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "LPKF": {
    "code": "LPK",
    "market": "DE",
@@ -9272,7 +9286,7 @@
   "르노코리아/르노(방송 관측)": {
    "code": "RENAULT_KOREA",
    "market": "방송명/테마(코드 원문 미제시)",
-   "entity": "RENAULT_KOREA",
+   "entity": "RENAULT_KR",
    "falsifier": null,
    "facts": 0,
    "theses": {},
