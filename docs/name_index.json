@@ -359,6 +359,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "니토보세키": {
+   "code": "3110.T",
+   "market": "JP",
+   "entity": "3110.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "다이니폰인쇄": {
    "code": "7912.T",
    "market": "JP",
@@ -465,6 +475,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "타이요유덴": {
+   "code": "6967.T",
+   "market": "JP",
+   "entity": "6967.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "하모닉드라이브시스템즈": {
    "code": "6324.T",
    "market": "JP",
@@ -496,6 +516,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T1"
     ],
@@ -832,6 +855,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "ai-infra/kr_construction_datacenter.html": [
      "T1"
     ]
@@ -1001,6 +1027,16 @@
      "T6"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "JTBC": {
+   "code": "JTBC",
+   "market": "KR",
+   "entity": "JTBC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -1446,6 +1482,9 @@
    "theses": {
     "ai-infra/ai_power_company_semi_ess_dc.html": [
      "T1"
+    ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T3"
     ]
    },
    "aliases": [],
@@ -1793,6 +1832,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "넷마블": {
+   "code": "251270",
+   "market": "KR",
+   "entity": "251270",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "노티드": {
    "code": "KNOTTED",
    "market": "KR",
@@ -2059,7 +2108,8 @@
    "facts": 18,
    "theses": {
     "ai-infra/ai_power_company_nuclear_smr.html": [
-     "T1"
+     "T1",
+     "T3"
     ],
     "ai-infra/ai_power_top5_picks.html": [
      "T1"
@@ -2312,6 +2362,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "백화점 차량 트래픽": {
+   "code": "KR_DEPT_TRAFFIC",
+   "market": "KR",
+   "entity": "KR_DEPT_TRAFFIC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "뷰티스킨": {
    "code": "406820",
    "market": "KR",
@@ -2438,6 +2498,9 @@
    "falsifier": "4Q 영업이익이 가이던스 역산치(약 4,380억)에 크게 못 미치거나 영업외손실·대형 프로젝트 원가 추가 반영이 반복되고, 신규수주가 연 19조 목표를 못 채우면 중립→부정 재검토",
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "energy/energy_ess_ai_power.html": [
      "T3"
     ]
@@ -3733,6 +3796,21 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "코스메카코리아": {
+   "code": "241710",
+   "market": "KR",
+   "entity": "241710",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "k-beauty/k_beauty_company_largecap_odm.html": [
+     "T1",
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "코어라인소프트": {
    "code": "384470",
    "market": "KR",
@@ -4222,7 +4300,7 @@
   "한국콜마": {
    "code": "161890",
    "market": "KR",
-   "entity": null,
+   "entity": "161890",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -4251,6 +4329,16 @@
      "T3"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한국타이어앤테크놀로지": {
+   "code": "161390",
+   "market": "KR",
+   "entity": "161390",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -4566,7 +4654,8 @@
      "T9"
     ],
     "shipbuilding/k_ship_industry_overview.html": [
-     "T1"
+     "T1",
+     "T2"
     ],
     "shipbuilding/k_ship_theme_lng_ai_nexus.html": [
      "T1",
@@ -4765,6 +4854,16 @@
    },
    "aliases": [],
    "auto_candidate": true
+  },
+  "혜인": {
+   "code": "HYEIN",
+   "market": "KR",
+   "entity": "HYEIN",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
   },
   "효성중공업": {
    "code": "298040",
@@ -5069,6 +5168,9 @@
    "falsifier": "—",
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "market/kr_4sector_cross_valuation.html": [
      "T5"
     ]
@@ -6671,6 +6773,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_company_nuclear_smr.html": [
+     "T3"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T3"
     ]
@@ -8698,6 +8803,21 @@
    "falsifier": null,
    "facts": 0,
    "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "베라더믹스": {
+   "code": "VERADERMICS",
+   "market": "US",
+   "entity": "VERADERMICS",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hairloss/hairloss_global_pipeline.html": [
+     "T1",
+     "T2"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },

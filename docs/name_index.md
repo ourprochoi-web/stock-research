@@ -1,6 +1,6 @@
 # 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-09)
 
-추적 584개 · 테제가 걸린 이름 264 · 엔티티 있음 424 · facts 있음 87.
+추적 593개 · 테제가 걸린 이름 266 · 엔티티 있음 434 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -35,6 +35,7 @@
 | JP | TDK | 6762.T | ✓  | — | — |
 | JP | THK | 6481.T | ✓ 반도체 설비 수요 둔화로 증익 설명이 깨지거나, 금액 없는 휴머노이드 언급만 쌓이는 것 | — | — |
 | JP | 나브테스코 | 6268.T | ✓ 산업용 로봇 사이클 둔화로 CS 수주가 전년비 감소 | robot_theme_supply_chain#T2 | — |
+| JP | 니토보세키 | 3110.T | ✓  | — | — |
 | JP | 다이니폰인쇄 | 7912.T | ✓  | — | — |
 | JP | 롬 | 6963.T | ✓  | hbm_pkg_theme_memory_cycle#T2 | — |
 | JP | 무라타(Murata) | 6981.T | ✓  | — | — |
@@ -44,9 +45,10 @@
 | JP | 스미토모전공(Sumitomo Electric) | 5802.T | ✓  | optical_light_source_cw#T2,T3 | 7 |
 | JP | 일본담배산업(채널명) | JAPAN_TOBACCO | ✓  | — | — |
 | JP | 일본전기초자 | 5214.T | ✓  | — | — |
+| JP | 타이요유덴 | 6967.T | ✓  | — | — |
 | JP | 하모닉드라이브시스템즈 | 6324.T | ✓ 중국 감속기 채택 확대가 공시되거나 수주 증가가 리드타임 선주문으로 판명되면 상방이 깨진다 | robot_theme_supply_chain#T2 | — |
 | JP | 화낙 | 6954.T | ✓ 수주가 선반영된 뒤 급감 | — | — |
-| JP | 히타치 | 6501.T | ✓  | ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T2 · energy_ess_ai_power#T4 | — |
+| JP | 히타치 | 6501.T | ✓  | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T1 · us_bloom_intel_deep#T2 · energy_ess_ai_power#T4 | — |
 | KQ | 고영 | 098460 | ✓ — | — | — |
 | KQ | 레이 | 228670 | ✓ — | ai_chip_company_broadcom#T1 · ai_chip_company_nvidia#T1,T2 · ai_dc_miner_conversion#T1,T3 · ai_power_company_nuclear_smr#T3 · ai_power_company_semi_ess_dc#T1 · ai_power_company_transformer_grid#T1 · ai_power_infra_investment_map#T1,T3 · ai_value_chain_guide_v2#T4 · kr_cooling_optical_layer#T1 · optical_valuechain_9#T1,T2,T3,T4,T5,T6 · us_bloom_intel_deep#T2,T4,T5 · us_vertiv_corning_deep#T6 · ai_sw_company_anthropic#T2 · ai_sw_company_crwd_ddog_snow#T1,T2 · ai_sw_company_msft_pltr#T1,T2,T3,T5 · ai_sw_investment_map#T5 · ai_sw_overview#T1,T2,T3,T4,T5 · k_defense_company_hanwha_aero#T4 · k_defense_investment_map#T1,T2,T3,T4,T5 · energy_battery_valuechain_update#T1 · energy_ess_ai_power#T5 · hbm_pkg_company_samsung#T3,T4,T9 · hbm_pkg_company_sk_hynix#T4,T6 · hbm_pkg_overview#T2 · hbm_pkg_theme_memory_cycle#T1,T2,T7 · hbm_pkg_theme_substrate#T1,T4,T5 · kr_semi_materials_gas#T4 · q2_2026_earnings_overview#T1,T2,T3,T4,T5 · ns_bigtech_capex_roi#T1,T4,T5 · ns_china_ai_ecosystem#T3 · ns_korea_impact_strategy#T4 · ns_semiconductor_war#T1,T3,T4 · vcp_breakout_backtest#T1,T2,T3,T4,T5,T6 · robot_kr_16_valuation#T1 · robot_theme_supply_chain#T4,T6 · space_update_2026#T1,T2,T3,T4 · cyber_ai_security#T1 · oil_hedge_vehicles#T3,T4 · us_merchant_power_vst_nrg#T1 · optical_light_source_cw#T1,T2 · ai_sw_company_amazon#T4 | — |
 | KQ | 씨피시스템 | 413630 | ✓ — | — | — |
@@ -60,7 +62,7 @@
 | KR | DL이앤씨 | 375500 | ✓ 후보 엔티티(카드 아님). 11/02 Kenneth 승인 카드(262c711d, r-20261102-53)  | kr_construction_datacenter#T1,T3 | — |
 | KR | DN오토모티브 | 007340 | ✓ 스탠스 없음. 수사 의뢰이고 기소 전. 장부 행 없음. | — | — |
 | KR | GC메디아이 | 032620 | ✓ 후보 엔티티(카드 아님). 11/02 Kenneth 승인 카드(262c711d, r-20261102-59)  | — | — |
-| KR | GS건설 | 006360 | ✓  | kr_construction_datacenter#T1 | — |
+| KR | GS건설 | 006360 | ✓  | ai_power_company_nuclear_smr#T3 · kr_construction_datacenter#T1 | — |
 | KR | GS리테일 | 007070 | ✓ — | consumer_sector_department#T1 | — |
 | KR | GS칼텍스 | GSCALTEX | ✓  | — | — |
 | KR | HD한국조선해양 | 009540 | ✓  | kr_4sector_cross_valuation#T1 · k_ship_industry_overview#T1 · k_ship_theme_lng_ai_nexus#T1 | — |
@@ -69,6 +71,7 @@
 | KR | HD현대중공업 | 329180 | ✓ LNG 신조선가 하락이 멈추지 않고 2027 LNG선 발주가 2026 수준을 넘지 못하면 메리츠 「바닥」 판 | k_ship_theme_lng_ai_nexus#T2,T3 · k_ship_industry_overview#T2 · ai_power_company_transformer_grid#T1 · ai_power_infra_investment_map#T4 · kr_4sector_cross_valuation#T1 · k_ship_theme_masga_us_alliance#T2 | — |
 | KR | HN상조 | HN상조 | ✓  | — | — |
 | KR | HPSP | 403870 | ✓ 메모리 3사 capex 가이던스 하향, HPSP 특허 분쟁 불리한 판결·매출 역성장 지속, 피에스케이 3Q  | kr_semi_equip_6#T2,T3,T4,T5 · ns_semiconductor_war#T4 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_cross_valuation#T1,T3 · kr_semi_fab_timeline#T3 · robot_theme_supply_chain#T6 | — |
+| KR | JTBC | JTBC | ✓  | — | — |
 | KR | KB금융 | 105560 | — | — | — |
 | KR | KG모빌리티 | 003620 | ✓  | — | — |
 | KR | KODEX AI전력핵심설비 | 487240 | — | — | — |
@@ -93,7 +96,7 @@
 | KR | S-Oil | 010950 | ✓  | oil_hedge_vehicles#T4 | — |
 | KR | SFA | 056190 | — | optical_valuechain_9#T1 · hbm_pkg_company_samsung#T1,T6,T8 | 8 |
 | KR | SFA반도체 | 036540 | ✓ 4Q26 OP 흑자 실패 · 베트남 팹에 DDR5 테스트 배정 | hbm_pkg_company_samsung#T1,T6,T8 · optical_valuechain_9#T1 | — |
-| KR | SGC에너지 | 005090 | ✓ 후보. Meta 해외DC→국내 유치 서사의 예시로만 등장. 승격은 수주/요금제 공시 후. | ai_power_company_semi_ess_dc#T1 | — |
+| KR | SGC에너지 | 005090 | ✓ 후보. Meta 해외DC→국내 유치 서사의 예시로만 등장. 승격은 수주/요금제 공시 후. | ai_power_company_semi_ess_dc#T1 · ai_power_infra_investment_map#T3 | — |
 | KR | SKC | 011790 | ✓  | hbm_pkg_company_samsung#T5 | — |
 | KR | SK㈜ / SK Inc | 034730 | ✓ 402340 SK스퀘어·000660 SK하이닉스와 다른 카드. 최태원 2.3% 매각은 개인 자금·최대주주 유 | — | — |
 | KR | SK가스 | 018670 | ✓ — | — | — |
@@ -112,6 +115,7 @@
 | KR | 기업은행 | 024110 | ✓  | — | — |
 | KR | 나무가 | 190510 | ✓ 삼성 스마트폰 카메라 점유 하락으로 감익 지속, 로봇 초도 일정 2027→2028 이후로 연기, 고객 이름· | robot_theme_supply_chain#T2 · robot_kr_16_valuation#T1 | — |
 | KR | 네오티스 | 085910 | ✓  | — | — |
+| KR | 넷마블 | 251270 | ✓  | — | — |
 | KR | 노티드 | KNOTTED | ✓ 비상장 후보. 벤처자본×희소성 브랜드 사례. | — | — |
 | KR | 뉴로메카 | 348340 | — | — | — |
 | KR | 달바글로벌 | 483650 | — | k_beauty_company_largecap_odm#T4 · k_beauty_company_silicon2#T3 | — |
@@ -128,7 +132,7 @@
 | KR | 동진쎄미켐 | 005290 | ✓ 4Q26 잠정에서 영업이익이 QoQ 감소로 돌아서고 OPM이 3Q 16.5% 아래면 「화학은 메모리 가동률을 | kr_semi_materials_gas#T3,T4,T5 · robot_theme_supply_chain#T6 | — |
 | KR | 두산 | 000150 | ✓ 정본 서술은 냉각·광 계층 T5. 브로커 매수·목표가는 아카이브하지 않음. 비중·집행 아님. | kr_cooling_optical_layer#T5 · ai_power_company_nuclear_smr#T1,T3 · ai_power_company_transformer_grid#T1 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T5 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · us_bloom_intel_deep#T4 · k_defense_company_hanwha_aero#T4 · robot_kr_16_valuation#T2 | — |
 | KR | 두산로보틱스 | 454910 | — | kr_cooling_optical_layer#T5 · robot_kr_16_valuation#T2 | — |
-| KR | 두산에너빌리티 | 034020 | ✓  | ai_power_company_nuclear_smr#T1 · ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 18 |
+| KR | 두산에너빌리티 | 034020 | ✓  | ai_power_company_nuclear_smr#T1,T3 · ai_power_top5_picks#T1 · kr_cooling_optical_layer#T5 · kr_power_10_deep#T1 · kr_power_cross_valuation#T1,T3,T4,T5,T6 · k_defense_company_hanwha_aero#T4 | 18 |
 | KR | 드림시큐리티 | 203650 | — | — | — |
 | KR | 드림텍 | 192650 | ✓ 2026-09-20 편입 후 같은 날 강등 — 인도 메모리모듈은 서사이고 손익에 0이다. 관측만 | hbm_pkg_company_samsung#T6,T8 | 7 |
 | KR | 디아이 | 003160 | ✓ 3Q26 OPM 15% 미만 | hbm_pkg_company_samsung#T7 · node_screener_hbm_scoreboard#T6 | — |
@@ -147,12 +151,13 @@
 | KR | 모델솔루션 | MODEL_SOLUTION | ✓  | — | — |
 | KR | 미래에셋증권 | 006800 | ✓  | — | — |
 | KR | 박셀바이오 | 323990 | ✓ 2026-10-16 Kenneth: 후보 아님. watch 관측만. | — | — |
+| KR | 백화점 차량 트래픽 | KR_DEPT_TRAFFIC | ✓  | — | — |
 | KR | 뷰티스킨 | 406820 | ✓ 스탠스 없음. 300억은 초도 발주 단계. 장부 행 없음. | — | — |
 | KR | 브이엠 | 089970 | — | hbm_pkg_investment_map#T2 · kr_semi_equip_6#T5 · kr_semi_equip_cross_valuation#T5,T6,T7,T8 · kr_semi_equip_vm_psk#T1,T2,T3,T4,T5 · kr_semi_fab_timeline#T3,T5 · kr_4sector_cross_valuation#T3 · us_7axis_cross_valuation#T1 | — |
 | KR | 비나텍 | 126340 | ✓ 3Q26 시스템 매출 첫 인식 0 · BE 슈퍼캡 2nd 벤더 · 스냅인 매출 QoQ 감소 · 서버랙 CBU | us_bloom_intel_deep#T5 · ai_power_infra_investment_map#T6 | — |
 | KR | 비에이치아이 | 083650 | ✓ — | ai_power_top5_picks#T1,T3 | — |
 | KR | 산일전기 | 062040 | — | ai_power_company_transformer_grid#T1,T2,T3 · ai_power_top5_picks#T1,T2,T3 · kr_power_10_deep#T1,T2,T4 · kr_power_cross_valuation#T1,T4,T6 · k_defense_cross_valuation#T8 · kr_4sector_cross_valuation#T5 | — |
-| KR | 삼성E&A | 028050 | ✓ 4Q 영업이익이 가이던스 역산치(약 4,380억)에 크게 못 미치거나 영업외손실·대형 프로젝트 원가 추가 반 | energy_ess_ai_power#T3 | — |
+| KR | 삼성E&A | 028050 | ✓ 4Q 영업이익이 가이던스 역산치(약 4,380억)에 크게 못 미치거나 영업외손실·대형 프로젝트 원가 추가 반 | ai_power_company_nuclear_smr#T3 · energy_ess_ai_power#T3 | — |
 | KR | 삼성SDI | 006400 | ✓ KRX 006400. 이번 세션 opendart 미조회. | energy_battery_valuechain_update#T1,T3,T4,T5 · energy_ess_ai_power#T3,T4,T5 · robot_kr_16_valuation#T1 | — |
 | KR | 삼성바이오로직스 | 207940 | ✓ T1: 세 엔진이 실제로 비슷한 확률로 실현됨 (등급 분리가 불필요했음) · T2: EBITDA 마진 개선  | glp1_company_samsung_biologics#T1,T2,T3,T4 · kr_bio_china_competition#T4 | — |
 | KR | 삼성전기 | 009150 | ✓  | hbm_pkg_company_samsung#T1,T2,T3,T4,T5,T6,T7,T8,T9 · kr_cooling_optical_layer#T5 · hbm_pkg_company_hanmi_semi#T1 · hbm_pkg_investment_map#T1,T4 · hbm_pkg_overview#T2 · hbm_pkg_theme_substrate#T1,T2,T4,T5 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T3 | — |
@@ -234,6 +239,7 @@
 | KR | 코세스 | 089890 | ✓ BE 신규 장비 발주 2분기 공백 | us_bloom_intel_deep#T5 | 7 |
 | KR | 코스닥 지수 | KOSDAQ | ✓  | — | — |
 | KR | 코스맥스 | 192820 | — | k_beauty_company_apr#T1 · k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T4 · kr_4sector_cross_valuation#T2,T3 · kr_drawdown_2026#T3 | — |
+| KR | 코스메카코리아 | 241710 | ✓  | k_beauty_company_largecap_odm#T1,T2 | — |
 | KR | 코어라인소프트 | 384470 | ✓ 유상증자·CB 등 자금 조달, 해외 매출 정체, 손실 재확대면 중립→부정 재검토 | — | — |
 | KR | 크래프톤 | 259960 | ✓  | — | — |
 | KR | 클래시스 | 214150 | ✓ 하방: 3Q26 영업이익이 컨센 대비 −10% 이상 미달(다올 375억 수준), 연간 가이던스 추가 하향(4 | k_beauty_company_classys#T1,T2,T3 · kr_4sector_cross_valuation#T4 | — |
@@ -264,7 +270,8 @@
 | KR | 하나머티리얼즈 | 166090 | — | kr_semi_materials_gas#T4 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 한국가스공사 | 036460 | ✓ — | — | — |
 | KR | 한국카본 | 017960 | — | k_ship_theme_lng_ai_nexus#T5 | — |
-| KR | 한국콜마 | 161890 | — | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
+| KR | 한국콜마 | 161890 | ✓  | k_beauty_company_largecap_odm#T1,T2,T3,T4 · k_beauty_company_pharmaresearch#T3 · k_beauty_company_silicon2#T4 · k_beauty_sector#T1,T2,T3,T4 · kr_4sector_cross_valuation#T3 · kr_drawdown_2026#T3 | — |
+| KR | 한국타이어앤테크놀로지 | 161390 | ✓  | — | — |
 | KR | 한국항공우주 | 047810 | ✓  | k_defense_company_kai#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T2,T3,T4,T8,T9 | — |
 | KR | 한미반도체 | 042700 | ✓  | hbm_pkg_company_hanmi_semi#T1,T2,T3,T4 · k_defense_cross_valuation#T8 · hbm_pkg_investment_map#T1,T2,T4 · hbm_pkg_overview#T2,T3 · kr_semi_equip_6#T2,T3,T5 · kr_semi_fab_timeline#T3 · ns_cn_ai_supply_chain#T1 · ns_semiconductor_war#T4 · node_screener_hbm_scoreboard#T6 | — |
 | KR | 한미약품 | 128940 | ✓ AASLD 2b상에서 MASH 해소·섬유화 개선이 위고비 대비 열위로 나오면 3상 진입·마일스톤 기대가 약해 | — | — |
@@ -279,7 +286,7 @@
 | KR | 한화시스템 | 272210 | ✓  | k_defense_company_hanwha_systems_ocean#T1,T2,T3,T4 · k_defense_company_hanwha_aero#T5 · k_defense_cross_valuation#T7,T8 · k_defense_investment_map#T1,T2,T4,T5 | — |
 | KR | 한화에어로스페이스 | 012450 | ✓  | k_defense_company_hanwha_aero#T1,T2,T4,T5 · ai_power_company_transformer_grid#T1 · k_defense_company_lig_nexone#T1,T2,T3,T4,T5 · k_defense_cross_valuation#T5,T8 · k_defense_investment_map#T1,T2,T3,T5 · robot_theme_supply_chain#T3 | — |
 | KR | 한화엔진 | 082740 | ✓  | kr_power_10_deep#T1,T3,T4,T5 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T1 · k_ship_industry_overview#T2 | — |
-| KR | 한화오션 | 042660 | ✓  | kr_power_10_deep#T4 · k_defense_company_hanwha_aero#T5 · k_defense_company_hanwha_systems_ocean#T1,T2,T3,T4 · k_defense_cross_valuation#T1,T2,T3,T4,T5,T6,T7,T8,T9 · k_ship_industry_overview#T1 · k_ship_theme_lng_ai_nexus#T1,T3,T5 · k_ship_theme_masga_us_alliance#T2 · oil_hedge_vehicles#T5 | — |
+| KR | 한화오션 | 042660 | ✓  | kr_power_10_deep#T4 · k_defense_company_hanwha_aero#T5 · k_defense_company_hanwha_systems_ocean#T1,T2,T3,T4 · k_defense_cross_valuation#T1,T2,T3,T4,T5,T6,T7,T8,T9 · k_ship_industry_overview#T1,T2 · k_ship_theme_lng_ai_nexus#T1,T3,T5 · k_ship_theme_masga_us_alliance#T2 · oil_hedge_vehicles#T5 | — |
 | KR | 해성디에스 | 195870 | — | hbm_pkg_theme_substrate#T4 | 15 |
 | KR | 현대건설 | 000720 | — | ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T3 · kr_construction_datacenter#T1 | — |
 | KR | 현대그린푸드 | 453340 | ✓  | — | — |
@@ -291,6 +298,7 @@
 | KR | 현대위아 | 011210 | ✓ 스마트카 열관리 수주가 연내 확정되지 않으면 재편 논리의 첫 이정표가 빠진다. | k_defense_company_hyundai_rotem#T3 | — |
 | KR | 현대제철 | 004020 | ✓ 4Q 연결 OP가 전망(1,286억)을 크게 밑돌거나 밸류업 공개가 다시 미뤄지면 「하방 제한」 읽기가 약해 | — | — |
 | KR | 현대차 | 005380 | ✓ 정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chai | energy_ess_ai_power#T5 · hbm_pkg_theme_substrate#T6 · k_beauty_company_largecap_odm#T1 · robot_theme_supply_chain#T1 | 1 |
+| KR | 혜인 | HYEIN | ✓  | — | — |
 | KR | 효성중공업 | 298040 | ✓ 회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 비중·집행 아님. | ai_power_company_transformer_grid#T1,T3 · ai_power_top5_picks#T1 · kr_power_10_deep#T1,T3,T4 · kr_power_cross_valuation#T4,T6 · kr_4sector_cross_valuation#T5 | 1 |
 | KR | 효성티앤씨 | 298020 | — | — | — |
 | KR | 후성 | 093370 | — | — | — |
@@ -318,7 +326,7 @@
 | KS | CJ프레시웨이 | 051500 | ✓ Lead 후보 신설 r-20261105-96 | — | — |
 | KS | 제일전기공업 | 002690 | ✓ — | — | — |
 | KS | 한국금융지주 | 071050 | ✓ Lead 후보 신설 r-20261105-102 | — | — |
-| KS | 한국전력 | 015760 | ✓ — | kr_4sector_cross_valuation#T5 | — |
+| KS | 한국전력 | 015760 | ✓ — | ai_power_company_nuclear_smr#T3 · kr_4sector_cross_valuation#T5 | — |
 | KS | 한온시스템 | 018880 | ✓ Lead 후보 신설 r-20261105-85 | — | — |
 | Macro | 글로벌 정세 브리핑 | GLOBAL_GEOPOLITICS | ✓  | — | — |
 | Macro | 미국 경제지표 일정 | US_MACRO_CALENDAR | ✓  | — | — |
@@ -417,7 +425,7 @@
 | US | Fox Corporation | FOXA | ✓  | — | — |
 | US | Freeport-McMoRan | FCX | — | — | — |
 | US | Frontline | FRO | — | — | 4 |
-| US | GE Vernova | GEV | ✓  | kr_power_10_deep#T3 | — |
+| US | GE Vernova | GEV | ✓  | ai_power_company_nuclear_smr#T3 · kr_power_10_deep#T3 | — |
 | US | GRAIL | GRAL | ✓  | — | — |
 | US | Generac | GNRC | ✓ 정본 페이지는 없음. 이름 색인이 블룸 T4(온사이트)에 둔다. $8B는 09-17 로그에 이미 있고 SOF | us_bloom_intel_deep#T4 | — |
 | US | General Dynamics | GD | — | — | — |
@@ -527,6 +535,7 @@
 | US | 미국 기업 실적 일정 | US_EARNINGS_CALENDAR | ✓  | — | — |
 | US | 미국 항공 안전 사건 | US_AVIATION_SAFETY | ✓  | — | — |
 | US | 미국주식 신고가·시장폭 | US_EQUITY_BREADTH | ✓  | — | — |
+| US | 베라더믹스 | VERADERMICS | ✓  | hairloss_global_pipeline#T1,T2 | — |
 | US | 사이퍼마이닝(Cipher Mining) | CIFR | ✓  | ai_dc_miner_conversion#T1,T2 | — |
 | US | 아카마이(Akamai) | AKAM | ✓  | — | — |
 | US | 온세미 | ON | ✓  | — | — |
