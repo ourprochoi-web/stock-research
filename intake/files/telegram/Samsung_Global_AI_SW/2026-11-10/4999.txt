@@ -1,0 +1,13 @@
+앤스로픽, Claude Fable 5.2 및 Mythos 5.2 출시  : 앤스로픽은 최상위 기술 모델 Fable 5.2와 Mythos 5.2 공개. 동일한 기반 모델이지만 Fable에는 사이버보안·생물학 안전장치를 적용하고, Mythos는 검증된 전문기관에 제한적으로 제공  : 코딩 성능 향상. FrontierCode 2.0에서 49.1%로 Opus 5.5(45.5%), GPT-6 Astra(42.8%) 상회. FrontierSWE v2에서도 69.9%…앤스로픽 Claude Fable 5.2, AAII 65점 1위
+
+: Claude Fable 5.2는 Artificial Analysis Intelligence Index v5에서 65점으로 1위 기록. Gemini 4 Carbon(60점), Opus 5.5(59점), GPT-6 Astra(57점)를 상회하며, 전작 Fable 5.1(49점) 대비 16점 상승
+
+: 전체 9개 평가 중 5개에서 최고 성능 달성. 과학적 추론(HLE-Diamond 80%), 지식(AA-Omniscience 67점), 코딩(FrontierCode 2.0 49%) 등에서 기존 최고 기록 경신
+
+: 다만 에이전트 기반 지식 업무(AA-Briefcase 1,785 Elo)와 터미널 코딩(Terminal-Bench 4.0 60%)에서는 Opus 5.5와 유사한 수준. 자동화 평가(AutomationBench-AA)는 76%로 Opus 5.5(70%) 상회
+
+: API 가격은 입력/출력 100만 토큰당 $8/$40으로 전작 대비 20% 인하. 그러나 최대 추론 강도 기준 작업당 평균 비용은 $26.5로 Opus 5.5($10.0)의 2.6배, Fable 5.1($12.99)의 2배 수준
+
+: 추론 강도를 high/xhigh로 낮춰도 지능지수 62점으로 경쟁 모델의 최고 설정을 상회. 출력 토큰 사용량도 Opus 5.5(max) 대비 약 43% 적어, 추론 강도 조절 시 더 낮은 비용으로 높은 성능 구현 가능
+
+https://x.com/artificialanlys/status/2119878995386982508
