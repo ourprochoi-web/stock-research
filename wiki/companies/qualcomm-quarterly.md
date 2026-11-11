@@ -8,3 +8,4 @@ related: entity:QCOM · ledger j-20261105-01
 | 2026-11-04 | 퀄컴 FQ4 FY26 발표 자료 https://s204.q4cdn.com/645488518/files/content_files/FY2026-4th-Quarter-Earnings-Presentation_Final.pdf (routing r-20261105-148) | A | FQ4 Non-GAAP 매출 $10,442M(−7%) · EPS $2.17(−28%). QCT $9,015M — 핸드셋 $5,137M(−26%) · 자동차 $1,990M(+89%, 첫 20억$ 분기) · IoT $1,888M(+4%). QTL $1,304M(EBT 70%) |
 | 2026-11-04 | 같은 자료·컨퍼런스콜 CFO 발언 (routing r-20261105-148) | A | FQ1 FY27 가이던스: 매출 $10.4~11.2B · EPS $2.15~2.35 · QCT $9.0~9.6B(EBT 20~22%, 데이터센터 편입 −3%p) · QTL $1.3~1.5B. 핸드셋 전 분기 대비 한 자릿수 중반 감소(애플 물량 축소), 데이터센터 $650M+(하이퍼스케일러 2곳 커스텀 실리콘), 원가 상승 가격 반영 효과 FY27 하반기 |
 | 2026-11-04 | CNBC (routing r-20261105-148) | B | 핸드셋 $5.14B는 StreetAccount $5.21B 하회. 회사: 2027 핸드셋 시장 보합, 중국 안드로이드 출하 바닥 |
+| 2026-11-10 | 메리츠 노트 사진 t.me/meritz_research/45097 (routing r-20261110-102) | C | 11/4 스페이스X가 퀄컴 QRU100·QDU100(기지국 RU·DU 칩) 계약 — 노트 사진 판독, 회사 공시 아님 |
