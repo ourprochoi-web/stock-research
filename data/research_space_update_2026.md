@@ -388,3 +388,12 @@ Starshield는 Starlink을 군사·정보 용도로 특화한 SpaceX의 방산 �
 | 조건 | 부스트의 기존 망 임대 계약은 자동 승계되지 않을 수 있어 AT&T·T모바일 승인 필요 가능 | ② (r-20261102-35) |
 
 읽기(구조만): space_update_2026#T3 관측. 거래는 협상 단계. 배경은 wiki/space/starlink-mobile-spectrum-sites.md.
+
+## 2026-11-10 덧붙임 — 로켓랩 3Q26 (Lead · 판단은 brain/routing)
+
+| 항목 | 내용 | 등급 (routing) |
+|---|---|---|
+| 로켓랩 3Q26 | 매출 2.68억$·EPS −0.12$·조정 EBITDA −1,800만$·백로그 35.7억$·발사 잔고 117회 | ③ 채널 정리 (r-20261110-07) |
+| 뉴트론 | 첫 발사 2027년으로 연기(어닝콜 전언) | ③ (r-20261110-54) |
+
+읽기(구조만): 백로그는 늘었지만 뉴트론 일정이 밀렸다. 카드 테제 연결 space_update_2026#T4·T5(11/10), 배경은 wiki/companies/rocket-lab-quarterly.md.
