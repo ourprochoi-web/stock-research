@@ -8309,6 +8309,32 @@
         }
       ]
     },
+    "062040": {
+      "name": "산일전기",
+      "ticker": "062040",
+      "market": "KR",
+      "layer": "전력기기/변압기·송배전",
+      "business": "배전변압기. 태양광 EPC 하청에서 DC 디벨로퍼·연료전지 직접 수주로 피벗. Bloom Energy 등 DC향 직접 수주가 T1 관찰 축.",
+      "business_grade": "③(변압기 테제 페이지 · DS 11-10 교차 · 사업보고서 세그먼트 미대조)",
+      "status": "후보",
+      "pages": [
+        "ai-infra/ai_power_company_transformer_grid.html"
+      ],
+      "theses": [
+        "ai-infra/ai_power_company_transformer_grid.html#T1"
+      ],
+      "tracked_price": false,
+      "note": "회사 단독 페이지는 없음. 정본 서술은 변압기·송배전 페이지. 2026-11-11 Kenneth가 후보 카드 개설을 지시. 비중·집행 아님. 테제 status 비접촉.",
+      "watch": [
+        {
+          "date": "2026-11-11",
+          "grade": "③",
+          "rid": "r-20261111-53",
+          "one": "③ DS 허준서 11/10 「전력 공급의 조건」 목표 16만 원(하우스). 채택·비중 아님. Kenneth가 후보 카드를 열라고 함.",
+          "source": "https://www.ds-sec.co.kr/bbs/board.php?bo_table=sub03_02&wr_id=3802"
+        }
+      ]
+    },
     "267260": {
       "name": "HD현대일렉트릭",
       "market": "KR",
