@@ -1,18 +1,2 @@
-📮[메리츠증권 통신/우주/미디어 정지수]
-
-▶ Issue Comment: 통신/우주:
-SpaceX 지상망 구축에 따른 수혜 점검
-2026.11.10(화)
-
-SpaceX, 기지국 구축을 위해 Qualcomm과 계약 체결
-11월 4일 SpaceX는 지상 기지국 구축을 위해 Qualcomm과 QRU100(RU 칩), QDU100(DU 가속 카드), 그리고 L1 소프트웨어 계약을 체결. Verizon, T-Mobile이 SpaceX에 망을 빌려주는 MVNO 도매계약을 공개적으로 거부하면서 자체적인 지상망 구축에 대한 수요가 커진 것으로 판단. SpaceX가 Qualcomm의 QRU100 플랫폼을 채택하면서 Massive MIMO(64T64R) 기반의 Open RAN 방식 채택이 유력(Qualcomm 공식 홈페이지에도 SpaceX 기지국 아키텍처를 “open, evolvable architecture”라고 표현).
-
-SpaceX의 기지국 직접 설계·제조 가능성 vs 부품 업체의 공급 기회
-보도에 따르면 Qualcomm이 L1 기반 신호처리 기술을 제공하고, SpaceX가 L2/L3와 코어망까지 상위 소프트웨어를 개발한다고 설명했으나, 이는 개발 책임을 분담한다는 의미지 SpaceX가 모든 하드웨어를 자체 제조한다는 의미가 아님. 이번 계약과 가장 유사한 사례는 2022년 5월 Qualcomm과 베트남 Viettel의 Open RAN 협력 계약으로, Viettel은 2024년 11월 Qualcomm의 QRU100을 활용한 5G Open RAN 기지국 상용화를 공식 발표. 중요한 점은 Viettel이 RU 하드웨어 설계와 L2/L3 소프트웨어를 자체 설계했지만 RF 증폭기는 한국 부품사로부터 공급받아 장비 개발을 완료했다는 사실임.
-
-국내 통신장비 섹터 내 시사점
-SpaceX의 Open RAN 채택 방식이 유력해지면서 삼성전자 기지국 장비 채택, 혹은 경쟁 입찰을 통한 부품 단위 공급 가능성 등 실익을 따져봐야겠지만 RFHIC (218410) 등 국내 통신장비 부품사의 수혜 가능성은 여전히 존재. 한편, SpaceX의 RAN Validation Engineer 채용공고에는 LIG아큐버(073490)의 고유 브랜드인 무선망 최적화 솔루션 ‘XCAL’ 분석 도구 경험을 우대요건으로 인정하고 있으며, LIG아큐버의 통신 T&M 솔루션 ‘XCAT-SPACE’ 제품은 SpaceX향 납품 레퍼런스를 보유. 지상망 구축 방식이나 제조사와 무관하게 SpaceX의 지상-위성 통합망 구축 확정 시 LIG아큐버 역시 관련 수혜가 기대.
-
-자료: https://tinyurl.com/443ccd9n
-
-* 동 자료는 Compliance 규정을 준수하여 사전 공표된 자료이며, 고객의 증권 투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.
+③ PDF는 HTTP 500. 채널 본문과 같은 보고서 사진이 45098에 있다. 11월 4일 퀄컴 QRU100·QDU100 계약이라는 노트. RFHIC·LIG아큐버·스페이스X 카드 없음.
+https://t.me/meritz_research/45097

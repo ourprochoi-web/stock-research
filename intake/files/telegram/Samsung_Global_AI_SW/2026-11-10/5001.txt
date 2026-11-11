@@ -1,15 +1,2 @@
-메타, 초저비용 에이전트 모델 Muse Ember 출시
-
-: 메타는 가장 작고 효율적인 AI 모델 'Muse Ember'를 출시. 도구 호출, 코딩 하위 작업, 정보 추출, 장문 문서 분석 등 에이전트가 반복적으로 수행하는 작업에 특화
-
-: AAII 36점으로 Claude Haiku 5.5와 동일하며, GPT-6 Luna(28점)를 상회. 작업당 비용은 약 $0.14로 Claude Haiku 5.5의 최고 성능 설정 대비 약 1/3 수준
-
-: 에이전트 성능에서도 경쟁력을 확보. AutomationBench 37.8%(GPT-6 Luna 20.2%, Haiku 5.5 13.9%), Terminal-Bench 4.0 40.9%(Haiku 39.2%), OSWorld 2.1 69.5%(Haiku 68.9%) 기록. 다만 FrontierCode 2.0에서는 Haiku 5.5에 열위
-
-: API 가격은 입력 100만 토큰당 $0.10, 출력 $0.50, 캐시 입력 $0.004. 100만 토큰 컨텍스트와 최대 51.2만 출력 토큰을 지원하며, 텍스트·이미지·음성·비디오를 모두 처리
-
-: 기존 Muse Spark 1.3 대비 지능 지수는 36점 vs. 37점으로 유사하지만, 작업당 비용은 $0.14 vs. $2.39로 약 94% 저렴. 입력·출력 토큰 가격도 각각 92%, 88% 낮은 수준
-
-: Muse Ember는 Muse Wonder Full을 활용해 훈련한 첫 모델. 고난도 추론(Wonder), 코딩·에이전트 워크플로(Spark), 대규모 반복 작업(Ember)으로 모델 라인업을 세분화. Box, Oracle, Cloudflare, Cline 등이 초기 테스트에 참여
-
-https://research.meta.ai/blog/muse-ember
+① 메타 블로그. 입력 0.10·출력 0.50달러/백만 토큰, AA 36점.
+https://t.me/Samsung_Global_AI_SW/5001

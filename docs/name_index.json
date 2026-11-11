@@ -1347,11 +1347,14 @@
   "POSCO홀딩스": {
    "code": "005490",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "005490",
+   "falsifier": "정본 철강 페이지 없음. 키는 005490. 047050·003670과 합치지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
-   "aliases": [],
+   "aliases": [
+    "포스코",
+    "포항제철"
+   ],
    "auto_candidate": true
   },
   "RFHIC": {
@@ -8297,8 +8300,8 @@
   "Talen": {
    "code": "TLN.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "TLN",
+   "falsifier": "정본 전력 페이지는 이 실행에서 열지 않음. 키는 TLN. VST·CEG와 합치지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/us_power_regulated_vs_merchant.html": [
@@ -8310,7 +8313,11 @@
      "T1"
     ]
    },
-   "aliases": [],
+   "aliases": [
+    "탈렌에너지",
+    "탈렌",
+    "Talen Energy"
+   ],
    "auto_candidate": true
   },
   "Targa Resources": {
@@ -9201,6 +9208,18 @@
    "facts": 0,
    "theses": {},
    "aliases": [],
+   "auto_candidate": true
+  },
+  "Helsing": {
+   "code": "HELSING",
+   "market": "EU/DE 비상장",
+   "entity": "HELSING",
+   "falsifier": "정본 테제 페이지 없음. 키는 HELSING. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [
+    "헬싱"
+   ],
    "auto_candidate": true
   },
   "Megaspeed": {

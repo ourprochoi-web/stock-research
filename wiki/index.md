@@ -132,3 +132,5 @@
 | policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) |
 | companies | [qualcomm-quarterly](companies/qualcomm-quarterly.md) | 퀄컴 분기 세그먼트·가이던스(FQ4 FY26 핸드셋 −26%·FQ1 핸드셋 감소 가이던스) |
 | consumer | [fashion-inventory-signal](consumer/fashion-inventory-signal.md) | 패션 재고·제조원가 역산·벤처 확장 신호(언더스탠딩 11/06) |
+| companies | [rocket-lab-quarterly](companies/rocket-lab-quarterly.md) | 로켓랩 분기 실적(3Q26 매출 2.68억$·백로그 35.7억$) |
+| companies | [tsmc-monthly-revenue](companies/tsmc-monthly-revenue.md) | TSMC 월매출(10월 5,868.9억 대만달러·+59.7% YoY) |
