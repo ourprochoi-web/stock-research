@@ -1347,11 +1347,14 @@
   "POSCO홀딩스": {
    "code": "005490",
    "market": "KR",
-   "entity": null,
-   "falsifier": null,
+   "entity": "005490",
+   "falsifier": "정본 철강 페이지 없음. 키는 005490. 047050·003670과 합치지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
-   "aliases": [],
+   "aliases": [
+    "포스코",
+    "포항제철"
+   ],
    "auto_candidate": true
   },
   "RFHIC": {
