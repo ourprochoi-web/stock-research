@@ -1,0 +1,19 @@
+구글, Gemini 4 Carbon 발표  : Gemini 4 Argon 출시 2주 만에 차세대 프런티어 모델 Gemini 4 Carbon 발표. 복잡한 추론, 코딩, 장기 에이전트 작업 및 사이버보안 역량 강화. 수일간 자율적으로 작업하며 대규모 코드베이스의 버그를 탐지하고 수정하는 능력 확보  : AAII v5에서 59점으로 전체 1위 기록. 9개 평가 중 HLE-Diamond, Terminal-Bench-Science, AA-Omniscience,…구글, Gemini 4 Carbon 정식 출시
+
+: 구글은 Gemini 4 Carbon을 개발자, 기업, 일반 사용자 대상으로 출시. 기존 Gemini 4 Argon이 범용 코딩 및 지식 업무에 최적화됐다면, Carbon은 고난도 추론, 장기 에이전트 작업, 사이버보안 및 과학 연구에 특화
+
+: 에이전트 성능 강화. CursorBench 4.0, Perplexity WANDR, Zapier AutomationBench에서 1위 기록. 차순위 외부 모델 대비 작업당 비용 50% 이상 절감. 멀티모달 지식 업무 벤치마크 MKA에서는 2위로, 1위 모델 대비 작업당 비용 6배 이상 낮음
+
+: 멀티에이전트 기능 확대. Google Antigravity에 /swarm 기능 도입. 단일 프롬프트로 여러 AI 에이전트를 병렬 실행하고 실시간으로 작업 추적. Carbon이 아키텍처 설계 및 검증을 담당하고 경량 모델이 하위 작업을 수행하는 구조
+
+: 기업 및 금융 업무 성능 개선. Hebbia의 심층 금융 리서치 평가에서 최고 모델과 동등한 성능 기록. Balyasny의 금융 AI 벤치마크에서도 23개 모델 구성 중 최상위 성능. 복잡한 문서 분석, 엑셀 모델링, 파워포인트 생성 역량 강화
+
+: 사이버보안 역량 강화. 취약점 발견(SEC-bench Pro), 악용 가능성 검증(ExploitGym), 패치(CWE-bench v1)에서 선도적 성능. 구글 내부 평가에서 취약점 스캔 재현율 100%, 분류 정밀도 95% 기록. Wiz는 Carbon을 활용해 주요 SaaS 기업 2곳에서 2시간 이내 제로데이 취약점 발견
+
+: 과학 연구 성과 확대. Signal 암호화 프로토콜의 핵심 보안 속성을 수학적으로 검증하는 작업을 수년에서 수주로 단축. 단백질 구조 예측 연구에서는 상동 서열 검색량을 평균 40배 확대. 신약 독성 분석 및 실험 데이터 검증에도 활용
+
+: 안전성 개선. 모의 사이버공격 차단율 99%, 개별 공격 시도당 침해 성공률 0.8%(Argon 3.1%). 에이전트 정직성 평가 통과율 92%(Argon 70%), Gray Swan 프롬프트 인젝션 벤치마크 공격 성공률 0% 기록
+
+: 가격은 Argon과 동일. 초기 API 가격은 입력 $2/1M tokens, 출력 $10/1M tokens. Google AI Studio, Gemini for Business에서 유료 고객에게 제공하며, Google AI Ultra 구독자는 Gemini 앱, 검색 AI Mode, Antigravity에서 이용 가능
+
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available
