@@ -8300,8 +8300,8 @@
   "Talen": {
    "code": "TLN.O",
    "market": "US",
-   "entity": null,
-   "falsifier": null,
+   "entity": "TLN",
+   "falsifier": "정본 전력 페이지는 이 실행에서 열지 않음. 키는 TLN. VST·CEG와 합치지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/us_power_regulated_vs_merchant.html": [
@@ -8313,7 +8313,11 @@
      "T1"
     ]
    },
-   "aliases": [],
+   "aliases": [
+    "탈렌에너지",
+    "탈렌",
+    "Talen Energy"
+   ],
    "auto_candidate": true
   },
   "Targa Resources": {
