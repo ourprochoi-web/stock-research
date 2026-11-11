@@ -4,8 +4,8 @@
 | battery | [lfp-patent-history](battery/lfp-patent-history.md) | LFP 특허 소송사, 한국 NCM·중국 LFP 분기 |
 | battery | [large-cylindrical-46-series](battery/large-cylindrical-46-series.md) | 46계열 원통형 양산·공급사(BMW Gen6·EVE·CATL) |
 | companies | [tesla-early-history](companies/tesla-early-history.md) | 2003 창업~2010 상장 |
-| memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 |
-| ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 |
+| memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 · 6세대 ES 검증·연말 서버 RDIMM 샘플 계획(11/11 덧붙임) |
+| ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 · 2028 미국 96GW 중 37.5GW 중단 가능(JPM AM, 11/11 덧붙임) |
 | memory | [memory-cycle-background](memory/memory-cycle-background.md) | 가격·밸류에이션 배경 · TrendForce DRAM 현물(10/26) |
 | companies | [samsung-shareholder-return](companies/samsung-shareholder-return.md) | 삼성전자 2026 환원 90~110조·30조 배당·자사주 15조·1월 배분·금산법 |
 | companies | [semco-supply-contracts](companies/semco-supply-contracts.md) | 삼성전기 LTA 공시 이력(MLCC·패키지기판)·2027 누계 |
@@ -125,7 +125,7 @@
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
-| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) |
+| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/11 · D램 현물 11/11 |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
