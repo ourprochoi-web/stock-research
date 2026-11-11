@@ -30,3 +30,5 @@ related: AI capex 테제 · entity:NVDA
 | 2026-11-03 | NURadu_(BofA 리포트 전언) (routing r-20261103-10) | C | 클라우드 capex | 2026 1.03조$(+99%) · 2027 1.58조$(+54%), GPU 임대료 연초 대비 B200 +47%·H100 +31% |
 
 | 2026-11-07 | Samsung_Global_AI_SW·insidertracking 경유 (routing r-20261107-29 인근·OpenAI 관련 r-40) | B/C | 구글 와이오밍 첫 DC에 170억$ 투자·Bloom Energy 연료전지 702MW 도입 보도(②). OpenAI CFO CNBC 요약(영상 미열람): 3Q 사업규모 QoQ+70% 등 채널 수치 — IR 원문 대조 전 채택 보류 |
+| 2026-11-11 열람(기사 날짜 미확인) | JPMorgan AM 마이클 셈벨레스트 via moneycontrol https://www.moneycontrol.com/news/business/us-midterm-backlash-puts-37-5-gw-of-us-ai-data-centre-capacity-at-risk-14075592.html | B | 미국 2028 DC 용량(중간선거 후 규제) | 2028 예상 96GW 중 37.5GW 공사 중단 가능 · 15GW는 비용 상승 조건(계통비 부담·용수·백업전원·노동·NDA·세제 혜택 상실). 2027 예상 약 37GW는 약 75%가 이미 공사 중. AI 대형사 부채·리스 약정의 약 15%만 대차대조표 내. 모건스탠리 등: AI capex 증가율 2027 약 60%·2028 약 14% |
+| 2026-11-09 | 아이브스(Yorkville Ives) 메모 via Yahoo Finance https://finance.yahoo.com/technology/articles/dan-ives-says-microsoft-amazon-145605618.html | C | 블루웨이브 시나리오 미건설 비율 | (주장) 향후 18개월 미국 계획 DC의 10~30% 미건설 가능, 빅테크 capex 내년 1조$ 상회, 향후 수년 3~4조$, 자금 조달 약 25% 감소 가능 |
