@@ -1,0 +1,17 @@
+구글, 초저비용·저지연 의사결정 특화 모델 Gemini Decision 1 출시
+
+: 구글은 AI 에이전트의 모델 라우팅, 도구 선택, 정책 준수 확인 등에 특화된 Gemini Decisions API와 신규 모델 Gemini Decision 1 공개
+
+: 생성형 AI처럼 답변을 토큰 단위로 생성하는 대신, 단일 순전파(Forward Pass)로 후보 선택지의 확률과 신뢰도를 산출하는 구조
+
+: 텍스트, 이미지, 오디오, 동영상, PDF 등 멀티모달 입력을 지원하며, 최대 256K 토큰의 입력에 대해 한 번에 최대 1,000개 질문 처리 가능. 예/아니요, 객관식(2~255개 선택지), 점수 평가 등 3가지 의사결정 방식 지원
+
+: 모델 연산 지연시간은 50~100ms, 엔드투엔드 기준 150~250ms. 입력 토큰 100만 개당 $0.10, 출력 토큰 과금은 없음
+
+: 공통 벤치마크 기준 Gemini 3.5 Flash-Lite 대비 약 5배 저렴하며, 질문 수가 1개에서 100개로 증가해도 지연시간은 거의 일정
+
+: 구글 내부 서비스에도 이미 적용. Gemini Notebook은 질문의 복잡도에 따라 적절한 모델과 추론 수준을 선택하는 라우팅에 활용해 일반 질문의 지연시간을 최대 40% 단축. Stitch는 디자인 작업, Google Search는 MCP 도구의 악의적 행동 및 콘텐츠 탐지에 활용
+
+: 별도의 분류 모델 학습 없이 선택지만 정의해 실시간 의사결정 기능을 구현할 수 있다는 점이 특징. OpenRouter, LangChain, Vercel 등 개발자 생태계와 통합을 확대하고 있으며, 향후 Google Cloud에서도 지원 예정
+
+https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api
