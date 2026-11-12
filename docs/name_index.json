@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11",
+ "generated": "2026-11-12",
  "names": {
   "Optus": {
    "code": "OPTUS",
@@ -15,6 +15,16 @@
    "code": "ENB",
    "market": "CA",
    "entity": "ENB",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "CXMT(창신메모리)": {
+   "code": "CXMT",
+   "market": "CN",
+   "entity": "CXMT",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -150,7 +160,8 @@
    "facts": 0,
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
-     "T1"
+     "T1",
+     "T4"
     ]
    },
    "aliases": [],
@@ -229,6 +240,33 @@
    "market": "EU",
    "entity": "VW",
    "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "지멘스 에너지": {
+   "code": "ENR",
+   "market": "EU",
+   "entity": "ENR",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T3"
+    ],
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Helsing": {
+   "code": "HELSING",
+   "market": "EU/DE 비상장",
+   "entity": "HELSING",
+   "falsifier": "정본 테제 페이지 없음. 키는 HELSING. 상장 티커는 이 아카이브에서 확인하지 못함. 헨졸트 카드는 만들지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -413,6 +451,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "미쓰코시이세탄": {
+   "code": "3099.T",
+   "market": "JP",
+   "entity": "3099.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "소프트뱅크그룹(SoftBank Group)": {
    "code": "9984.T",
    "market": "JP",
@@ -524,7 +572,8 @@
     ],
     "ai-infra/ai_chip_company_nvidia.html": [
      "T1",
-     "T2"
+     "T2",
+     "T4"
     ],
     "ai-infra/ai_dc_miner_conversion.html": [
      "T1",
@@ -566,7 +615,8 @@
      "T6"
     ],
     "ai-sw/ai_sw_company_anthropic.html": [
-     "T2"
+     "T2",
+     "T5"
     ],
     "ai-sw/ai_sw_company_crwd_ddog_snow.html": [
      "T1",
@@ -779,7 +829,11 @@
    "entity": "000990",
    "falsifier": "삼성 이탈 물량이 해외 파운드리로 가고 8인치 가격이 오르지 않으면(1Q27 계약가) 수혜 축이 없다.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_power_company_semi_ess_dc.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -952,6 +1006,16 @@
    ],
    "auto_candidate": true
   },
+  "HLB제약": {
+   "code": "047920",
+   "market": "KR",
+   "entity": "047920",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "HN상조": {
    "code": "HN상조",
    "market": "KR",
@@ -997,6 +1061,16 @@
      "T6"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "JYP엔터테인먼트": {
+   "code": "035900",
+   "market": "KR",
+   "entity": "035900",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -1110,7 +1184,8 @@
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
      "T1",
-     "T2"
+     "T2",
+     "T4"
     ],
     "energy/energy_ess_ai_power.html": [
      "T5"
@@ -1330,6 +1405,22 @@
    "entity": "035420",
    "falsifier": "대출 조건에 네이버 보증·재무 약정이 붙거나, 본업 영업이익 역성장, AI 인프라 고객 미확보 상태로 가동 지연이면 중립→부정 재검토",
    "facts": 0,
+   "theses": {
+    "ai-infra/ai_korea_g3_sovereign_ai.html": [
+     "T1",
+     "T2",
+     "T3"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "NHN": {
+   "code": "181710",
+   "market": "KR",
+   "entity": "181710",
+   "falsifier": null,
+   "facts": 0,
    "theses": {},
    "aliases": [],
    "auto_candidate": true
@@ -1348,13 +1439,10 @@
    "code": "005490",
    "market": "KR",
    "entity": "005490",
-   "falsifier": "정본 철강 페이지 없음. 키는 005490. 047050·003670과 합치지 않음. 비중·집행 아님.",
+   "falsifier": "정본 철강 페이지 없음. 키는 005490. 포스코인터내셔널(047050)·포스코퓨처엠(003670)과 합치지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {},
-   "aliases": [
-    "포스코",
-    "포항제철"
-   ],
+   "aliases": [],
    "auto_candidate": true
   },
   "RFHIC": {
@@ -1748,6 +1836,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "광동제약": {
+   "code": "009290",
+   "market": "KR",
+   "entity": "009290",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "기아": {
    "code": "000270",
    "market": "KR",
@@ -1782,6 +1880,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "네오위즈": {
+   "code": "095660",
+   "market": "KR",
+   "entity": "095660",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -1949,10 +2057,30 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "대화제약": {
+   "code": "067080",
+   "market": "KR",
+   "entity": "067080",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "덕산네오룩스": {
    "code": "213420",
    "market": "KR",
    "entity": null,
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "동국씨엠": {
+   "code": "460850",
+   "market": "KR",
+   "entity": "460850",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -2166,7 +2294,7 @@
   "레인보우로보틱스": {
    "code": "277810",
    "market": "KR",
-   "entity": null,
+   "entity": "277810",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2228,6 +2356,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "롯데웰푸드": {
+   "code": "280360",
+   "market": "KR",
+   "entity": "280360",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "롯데케미칼": {
    "code": "011170",
    "market": "KR",
@@ -2241,8 +2379,8 @@
   "롯데하이마트": {
    "code": "071840",
    "market": "KR",
-   "entity": "071840",
-   "falsifier": "—",
+   "entity": "139480",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -2285,6 +2423,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "메디아나": {
+   "code": "041920",
+   "market": "KR",
+   "entity": "041920",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "모델솔루션": {
    "code": "MODEL_SOLUTION",
    "market": "KR",
@@ -2305,11 +2453,31 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "바이오니아": {
+   "code": "064550",
+   "market": "KR",
+   "entity": "064550",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "박셀바이오": {
    "code": "323990",
    "market": "KR",
    "entity": "323990",
    "falsifier": "2026-10-16 Kenneth: 후보 아님. watch 관측만.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "버넥트": {
+   "code": "438700",
+   "market": "KR",
+   "entity": "438700",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -2679,7 +2847,7 @@
   "삼현": {
    "code": "437730",
    "market": "KR",
-   "entity": null,
+   "entity": "437730",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -2787,6 +2955,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "셀바스AI": {
+   "code": "108860",
+   "market": "KR",
+   "entity": "108860",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "셀트리온": {
    "code": "068270",
    "market": "KR",
@@ -2843,10 +3021,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "신세계": {
+   "code": "004170",
+   "market": "KR",
+   "entity": "004170",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "consumer/consumer_sector_department.html": [
+     "T1",
+     "T4",
+     "T5"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "실리콘투": {
    "code": "257720",
    "market": "KR",
-   "entity": null,
+   "entity": "257720",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -3151,6 +3345,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "엑시콘": {
+   "code": "092870",
+   "market": "KR",
+   "entity": "092870",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "엔씨소프트(NC)": {
+   "code": "036570",
+   "market": "KR",
+   "entity": "036570",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "엔젤로보틱스": {
    "code": "455900",
    "market": "KR",
@@ -3207,6 +3421,16 @@
    "theses": {},
    "aliases": [],
    "auto_candidate": false
+  },
+  "오리온": {
+   "code": "271560",
+   "market": "KR",
+   "entity": "271560",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
   },
   "오스코텍": {
    "code": "039200",
@@ -3287,6 +3511,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "와이제이링크": {
+   "code": "209640",
+   "market": "KR",
+   "entity": "209640",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -3431,6 +3665,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "이미지스": {
+   "code": "115610",
+   "market": "KR",
+   "entity": "115610",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "이수페타시스": {
    "code": "007660",
    "market": "KR",
@@ -3473,6 +3717,16 @@
    "code": "420610",
    "market": "KR",
    "entity": "420610",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "일동제약": {
+   "code": "249420",
+   "market": "KR",
+   "entity": "249420",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -3567,6 +3821,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "지니언스": {
+   "code": "263860",
+   "market": "KR",
+   "entity": "263860",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "진에어": {
+   "code": "272450",
+   "market": "KR",
+   "entity": "272450",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "채비": {
    "code": "0011T0",
    "market": "KR",
@@ -3629,6 +3903,33 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "컨텍": {
+   "code": "451760",
+   "market": "KR",
+   "entity": "451760",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T1"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "케이엔에스": {
+   "code": "432470",
+   "market": "KR",
+   "entity": "432470",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "케이엔제이": {
    "code": "272110",
    "market": "KR",
@@ -3662,7 +3963,7 @@
   "코미코": {
    "code": "183300",
    "market": "KR",
-   "entity": null,
+   "entity": "183300",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -3704,7 +4005,7 @@
   "코스맥스": {
    "code": "192820",
    "market": "KR",
-   "entity": null,
+   "entity": "192820",
    "falsifier": null,
    "facts": 0,
    "theses": {
@@ -3744,6 +4045,16 @@
    "market": "KR",
    "entity": "384470",
    "falsifier": "유상증자·CB 등 자금 조달, 해외 매출 정체, 손실 재확대면 중립→부정 재검토",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "큐리옥스바이오시스템즈": {
+   "code": "445680",
+   "market": "KR",
+   "entity": "445680",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -4201,11 +4512,31 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "하이젠알앤엠": {
+   "code": "160190",
+   "market": "KR",
+   "entity": "160190",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "한국가스공사": {
    "code": "036460",
    "market": "KR",
    "entity": "036460",
    "falsifier": "—",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "한국공항": {
+   "code": "005430",
+   "market": "KR",
+   "entity": "005430",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -4425,7 +4756,7 @@
   "한진칼": {
    "code": "180640",
    "market": "KR",
-   "entity": "180640",
+   "entity": "002320",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -4548,6 +4879,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "shipbuilding/k_ship_theme_masga_us_alliance.html": [
+     "T2"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T4"
     ],
@@ -4579,9 +4913,6 @@
      "T1",
      "T3",
      "T5"
-    ],
-    "shipbuilding/k_ship_theme_masga_us_alliance.html": [
-     "T2"
     ],
     "energy/oil_hedge_vehicles.html": [
      "T5"
@@ -5079,6 +5410,9 @@
     "ai-infra/ai_power_company_nuclear_smr.html": [
      "T3"
     ],
+    "ai-infra/kr_construction_datacenter.html": [
+     "T3"
+    ],
     "market/kr_4sector_cross_valuation.html": [
      "T5"
     ]
@@ -5199,6 +5533,16 @@
    "code": "DAZHONG",
    "market": "TW",
    "entity": "DAZHONG",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "폭스콘(훙하이)": {
+   "code": "2317.TW",
+   "market": "TW",
+   "entity": "2317.TW",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -5832,7 +6176,8 @@
     ],
     "national-strategy/ns_bigtech_capex_roi.html": [
      "T2",
-     "T4"
+     "T4",
+     "T5"
     ],
     "national-strategy/ns_semiconductor_war.html": [
      "T4"
@@ -6671,6 +7016,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_power_infra_investment_map.html": [
+     "T1"
+    ],
     "ai-infra/ai_power_company_nuclear_smr.html": [
      "T3"
     ],
@@ -7580,6 +7928,11 @@
    "falsifier": "순수 AI바이오가 아님. 비만 테제가 본편. ai-bio/ai_bio_company_global.html#ai-stack. 비중·집행 아님.",
    "facts": 0,
    "theses": {
+    "glp1/glp1_company_novo_lilly.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
     "market/us_7axis_cross_valuation.html": [
      "T5"
     ]
@@ -7802,7 +8155,11 @@
    "entity": "QCOM",
    "falsifier": "정본 페이지 없음. 엣지 AI 기기 #T가 없어 후보. META·MSFT 워치는 안 늘림. 비중·집행 아님.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T6"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -8282,6 +8639,9 @@
     "market/us_7axis_cross_valuation.html": [
      "T5"
     ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T4"
+    ],
     "national-strategy/ns_china_ai_ecosystem.html": [
      "T5"
     ],
@@ -8301,7 +8661,7 @@
    "code": "TLN.O",
    "market": "US",
    "entity": "TLN",
-   "falsifier": "정본 전력 페이지는 이 실행에서 열지 않음. 키는 TLN. VST·CEG와 합치지 않음. 비중·집행 아님.",
+   "falsifier": "정본 전력 페이지는 이 실행에서 열지 않음. 키는 TLN. 비스트라(VST)·컨스텔레이션(CEG)과 합치지 않음. 비중·집행 아님.",
    "facts": 0,
    "theses": {
     "ai-infra/us_power_regulated_vs_merchant.html": [
@@ -8313,11 +8673,7 @@
      "T1"
     ]
    },
-   "aliases": [
-    "탈렌에너지",
-    "탈렌",
-    "Talen Energy"
-   ],
+   "aliases": [],
    "auto_candidate": true
   },
   "Targa Resources": {
@@ -8380,6 +8736,9 @@
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
      "T1",
      "T2"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1"
     ],
     "research/13f_2026q2.html": [
      "T4"
@@ -8654,6 +9013,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "게보": {
+   "code": "GEVO",
+   "market": "US",
+   "entity": "GEVO",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": false
+  },
+  "게티이미지": {
+   "code": "GETY",
+   "market": "US",
+   "entity": "GETY",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "나비타스": {
    "code": "NVTS",
    "market": "US",
@@ -8665,6 +9044,26 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "라이트패스": {
+   "code": "LPTH",
+   "market": "US",
+   "entity": "LPTH",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "레드와이어": {
+   "code": "RDW",
+   "market": "US",
+   "entity": "RDW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -8713,10 +9112,40 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "스트래티지": {
+   "code": "MSTR",
+   "market": "US",
+   "entity": "MSTR",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "아카마이(Akamai)": {
    "code": "AKAM",
    "market": "US",
    "entity": "AKAM",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "애질리티 로보틱스": {
+   "code": "AGLT",
+   "market": "US",
+   "entity": "AGLT",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "앱셀레라": {
+   "code": "ABCL",
+   "market": "US",
+   "entity": "ABCL",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -8791,6 +9220,16 @@
    "code": "US_RETAIL_FLOW",
    "market": "US",
    "entity": "US_RETAIL_FLOW",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "화이자": {
+   "code": "PFE",
+   "market": "US",
+   "entity": "PFE",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -9208,18 +9647,6 @@
    "facts": 0,
    "theses": {},
    "aliases": [],
-   "auto_candidate": true
-  },
-  "Helsing": {
-   "code": "HELSING",
-   "market": "EU/DE 비상장",
-   "entity": "HELSING",
-   "falsifier": "정본 테제 페이지 없음. 키는 HELSING. 비중·집행 아님.",
-   "facts": 0,
-   "theses": {},
-   "aliases": [
-    "헬싱"
-   ],
    "auto_candidate": true
   },
   "Megaspeed": {
