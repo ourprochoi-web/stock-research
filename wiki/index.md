@@ -125,7 +125,7 @@
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
-| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/11 · D램 현물 11/11 |
+| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/13 · D램 현물 주간 45·46주 |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
@@ -135,4 +135,6 @@
 | companies | [rocket-lab-quarterly](companies/rocket-lab-quarterly.md) | 로켓랩 분기 실적(3Q26 매출 2.68억$·백로그 35.7억$) |
 | companies | [tsmc-monthly-revenue](companies/tsmc-monthly-revenue.md) | TSMC 월매출(10월 5,868.9억 대만달러·+59.7% YoY) · 이사회 409.3억$ 설비 예산(11/12 덧붙임) |
 | companies | [classys-quarterly](companies/classys-quarterly.md) | 클래시스 분기 실적(3Q26 영업이익 270억·컨센 −29%) |
-| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정 여부(11/12 결정 없음) |
+| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사) |
+| companies | [applied-materials-quarterly](companies/applied-materials-quarterly.md) | 어플라이드 분기 실적(FQ4 FY26 104.1억$·FQ1 가이드 111억$·DRAM 33%) |
+| companies | [modine-samsung-talks](companies/modine-samsung-talks.md) | 모딘 — 삼성전자 인수 협상 보도(블룸버그 11/13, 합의 없음) |
