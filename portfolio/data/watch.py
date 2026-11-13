@@ -187,15 +187,20 @@ def main(argv):
     # 종합층(2026-09-26) — 테제에 안 걸린 관측이 회사 카드 watch[] 에 쌓인다. 쌓임 자체가 「승격 후보」 신호다
     ENT = J(B + "entities.json").get("companies", {})
     week = (today - timedelta(days=7)).isoformat()
+    # Kenneth 2026-11-13: 레짐에서 관리하라고 한 축(regime_managed)과
+    # 승격 후보 플래그를 끈 카드는 watch>12여도 승격 후보로 세지 않는다.
+    def _flagged(c):
+        return c.get("regime_managed") is True or c.get("승격_후보") is False
+
     cands = [(k, c) for k, c in ENT.items() if c.get("status") == "후보"]
     out["watch"] = {
         "cards_with_watch": sum(1 for c in ENT.values() if c.get("watch")),
         "lines_7d": sum(1 for c in ENT.values() for w in c.get("watch") or [] if str(w.get("date", "")) >= week),
         "candidates": len(cands),
         "promote": [{"key": k, "name": c.get("name"), "watch": len(c.get("watch") or [])}
-                    for k, c in cands if len(c.get("watch") or []) >= 5 and not c.get("theses")],
+                    for k, c in cands if len(c.get("watch") or []) >= 5 and not c.get("theses") and not _flagged(c)],
         "over_cap": [{"key": k, "name": c.get("name"), "watch": len(c.get("watch") or [])}
-                     for k, c in ENT.items() if len(c.get("watch") or []) > 12],
+                     for k, c in ENT.items() if len(c.get("watch") or []) > 12 and not _flagged(c)],
     }
     out["routing_last_date"] = max((r.get("date", "") for r in RT), default=None)
     out["theses_last_touch"] = max((t.get("last_tested", "") for pg in T.values() for t in pg.get("theses", [])), default=None)
