@@ -422,6 +422,33 @@
       "breaks_if": "하이퍼스케일러 FCF 하향 중단(3Q 실적) · 조달 확대에도 10Y 실질금리 안정 · 하이퍼스케일러 캐펙스 가이던스 하향",
       "status": "후보 — 09-26 신설(주간 리뷰)",
       "last_tested": "2026-10-13"
+    },
+    {
+      "id": "n-us-politics",
+      "since": "2026-11-13",
+      "text": "미국 정치는 종목 테제가 아니라 레짐을 가로지르는 드라이버다(Kenneth 2026-11-13 23:30 KST — 테제 카드 없음, one 불변). entity:US_POLITICS watch 41줄(②가 대부분)의 요약. 수출통제: 미국 기업 수출통제 중단 연장 예정이나 기간·품목 없음(r-20261109-156). 워런·쿤스가 엔비디아 대중국 수출 문서 보존을 요청한 것은 정식 조사의 첫 단계이고 처분은 아니다(r-20261112-15). 관세: 24% 추가관세 유예·선박수수료 중단은 2027-01-10까지(r-20261109-134·r-20261109-148). 300%와 관세 수입 3,100억은 ④ 수사 또는 ③ 전달이라 확정과 더하지 않는다(r-20261109-105·r-20261109-78). 중간선거: 잠정 상원 민주 54·하원 254(r-20261109-169). 하원 확정 42석·잔여 약 17은 공식 개표와 대조하지 않음(r-20261110-105). 배경 위키 wiki/macro/us-midterms-fed-personnel.md는 11/4 AP 양원 장악을 적는다. 금리·정책 발언(비서실장·탄핵·이민)은 테제 조건을 열지 않는다. 자동차 관세 지속은 제목만이다(r-20261109-36). 닿는 카드: ai-infra/ai_chip_company_nvidia.html(수출·문서보존), national-strategy/ns_bigtech_capex_roi.html(조달의 옆자리), energy/oil_hedge_vehicles.html#T3 와 energy/energy_theme_hormuz.html(휴전 시점 — 이 드라이버가 T3를 대체하지 않음), consumer/consumer_company_hyundai.html · consumer/consumer_company_kia.html(자동차 관세 전언). 발언만으로 기존 테제 status는 바꾸지 않는다.",
+      "evidence": [
+        "r-20261109-156",
+        "r-20261112-15",
+        "r-20261109-134",
+        "r-20261109-148",
+        "r-20261109-169",
+        "r-20261110-105",
+        "r-20261109-36",
+        "r-20261113-62",
+        "r-20261113-69"
+      ],
+      "breaks_if": "수출통제의 품목·기간이 관보(①)로 바뀌거나, 24% 유예가 2027-01-10 전에 철회되거나, 엔비디아 문서 보존이 소환·처분으로 가거나, 자동차 관세 변경이 현대차·기아 실적 가이던스에 ①로 찍히면 해당 테제에 ⓑ로 내린다. ④ 수사만으로는 내리지 않는다.",
+      "status": "관측 — 테제 카드 아님(Kenneth 2026-11-13). regime.one 불변.",
+      "last_tested": "2026-11-13",
+      "affects": [
+        "ai-infra/ai_chip_company_nvidia.html",
+        "national-strategy/ns_bigtech_capex_roi.html",
+        "energy/oil_hedge_vehicles.html#T3",
+        "energy/energy_theme_hormuz.html",
+        "consumer/consumer_company_hyundai.html",
+        "consumer/consumer_company_kia.html"
+      ]
     }
   ],
   "rotation": {
@@ -2429,6 +2456,12 @@
       "one": "② 달러/원 1,364원 채널 마감·이란 확정명령 없음. one/(a)(d)·삼성전자 부정 불변.",
       "text": "r-20261107-11·20 · stamp 20261107_093441",
       "by": "lead-20261107-tg093441"
+    },
+    {
+      "date": "2026-11-13",
+      "one": "같은 레짐인가 — 예. one 불변. 미국 정치는 테제 카드가 아니라 n-us-politics(수출통제·관세·중간선거·엔비디아 문서보존·금리·정책 발언).",
+      "text": "Kenneth 2026-11-13 23:30 KST. 호르무즈·현대차·기아·두산에너빌리티·씨게이트만 관측 카드. BYD·삼성E&A·KT는 승격 후보로 유지.",
+      "by": "r-20261113-69"
     }
   ]
 }

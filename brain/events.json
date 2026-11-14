@@ -1458,6 +1458,70 @@
       "grade": "②",
       "due": "2026-11-20",
       "note": "DDRWatcher 주간 브리프. j-20261113-01 breaks_if ①."
+    },
+    {
+      "when": "2026-12-31",
+      "what": "호르무즈 재개방 서명 또는 CENTCOM·JMIC 봉쇄 해제 공고 — 없으면 T1·T2 관측 유지. 유가 헤지 T3를 대체하지 않음.",
+      "judges": "energy/energy_theme_hormuz.html#T1",
+      "grade": "②",
+      "due": "2026-12-31"
+    },
+    {
+      "when": "서명 후 첫 현물",
+      "what": "재개방 서명 뒤 EIA·FRED 브렌트 현물. 서명 없으면 2026-12-31에 장중 가격을 출구로 보지 않음.",
+      "judges": "energy/energy_theme_hormuz.html#T3",
+      "grade": "②",
+      "due": "2026-12-31"
+    },
+    {
+      "when": "2027-02-28 검토",
+      "what": "현대차 4Q26 잠정 또는 사업보고서 — 내수 점유·영업이익. IR 캘린더 미확인.",
+      "judges": "consumer/consumer_company_hyundai.html#T1",
+      "grade": "②",
+      "due": "2027-02-28"
+    },
+    {
+      "when": "2027-06-30",
+      "what": "현대차 자율주행 일정 공식 IR — 없으면 ④ 일정 충돌 유지.",
+      "judges": "consumer/consumer_company_hyundai.html#T3",
+      "grade": "④",
+      "due": "2027-06-30"
+    },
+    {
+      "when": "2027-02-28 검토",
+      "what": "기아 4Q26 판매·잠정 손익 — 판매 전언과 이익 전언 중 ①로 확인되는 쪽.",
+      "judges": "consumer/consumer_company_kia.html#T2",
+      "grade": "③",
+      "due": "2027-02-28"
+    },
+    {
+      "when": "2027-07-31",
+      "what": "체코 원전 시공 재입찰 — 위키가 전한 2027년 7월 목표. 두산 주기기 계약 유지 여부.",
+      "judges": "energy/energy_company_doosan_enerbility.html#T1",
+      "grade": "②",
+      "due": "2027-07-31"
+    },
+    {
+      "when": "2027-03-31",
+      "what": "두산에너빌리티 SMR 금액 공시가 없으면 T2(금액 없는 계약) 유지.",
+      "judges": "energy/energy_company_doosan_enerbility.html#T2",
+      "grade": "②",
+      "due": "2027-03-31"
+    },
+    {
+      "when": "2027-01-31 검토",
+      "what": "씨게이트 FY2Q27 — 가이던스 매출 48억$·EPS 9.20$ 대비. 발표일은 미확인.",
+      "judges": "ai-infra/ai_infra_company_seagate.html#T1",
+      "grade": "②",
+      "due": "2027-01-31"
+    },
+    {
+      "when": "2027-01-10",
+      "what": "미 대중 24% 추가관세 유예 창 — 유지·연장·철회. 테제 카드 없음. regime n-us-politics.",
+      "judges": "regime",
+      "grade": "②",
+      "due": "2027-01-10",
+      "note": "Kenneth 2026-11-13: 미국 정치는 레짐 드라이버. one 불변."
     }
   ]
 }
