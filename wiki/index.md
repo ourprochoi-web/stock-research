@@ -138,3 +138,6 @@
 | companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사) |
 | companies | [applied-materials-quarterly](companies/applied-materials-quarterly.md) | 어플라이드 분기 실적(FQ4 FY26 104.1억$·FQ1 가이드 111억$·DRAM 33%) |
 | companies | [modine-samsung-talks](companies/modine-samsung-talks.md) | 모딘 — 삼성전자 인수 협상 보도(블룸버그 11/13, 합의 없음) |
+| ai-finance | [nscale-s1](ai-finance/nscale-s1.md) | Nscale S-1/A 계약·용량(TCV 1,058억$·MSFT SOW 438억$·앤트로픽 446억$ 조달 미확보) |
+| power | [grid-large-load-interconnection](power/grid-large-load-interconnection.md) | 계통 운영자 대형 부하 접속 규정(ISO-NE FERC 제출, 2027-06-01) |
+| macro | [us-ppi-monthly](macro/us-ppi-monthly.md) | 미국 PPI 월간(10월 헤드라인 YoY 6.5%·근원 5.0%) |
