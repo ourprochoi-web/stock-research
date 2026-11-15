@@ -141,3 +141,5 @@
 | ai-finance | [nscale-s1](ai-finance/nscale-s1.md) | Nscale S-1/A 계약·용량(TCV 1,058억$·MSFT SOW 438억$·앤트로픽 446억$ 조달 미확보) |
 | power | [grid-large-load-interconnection](power/grid-large-load-interconnection.md) | 계통 운영자 대형 부하 접속 규정(ISO-NE FERC 제출, 2027-06-01) |
 | macro | [us-ppi-monthly](macro/us-ppi-monthly.md) | 미국 PPI 월간(10월 헤드라인 YoY 6.5%·근원 5.0%) |
+| policy | [us-navy-foreign-shipbuilding](policy/us-navy-foreign-shipbuilding.md) | 미 해군 해외 조선 — 핀란드 모델 입찰 검토·FY27 국방수권/세출법 상태 |
+| autos | [tesla-cybercab-launch](autos/tesla-cybercab-launch.md) | 테슬라 사이버캡 주문 조건(2만9,990$·월 299$ 구독·12월 인도 예정·텍사스 지오펜스) |
