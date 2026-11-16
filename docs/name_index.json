@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12",
+ "generated": "2026-11-13",
  "names": {
   "Optus": {
    "code": "OPTUS",
@@ -363,13 +363,37 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "JX금속(JX Advanced Metals)": {
+   "code": "5016.T",
+   "market": "JP",
+   "entity": "5016.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Micronics Japan(마이크로닉스재팬)": {
+   "code": "6871.T",
+   "market": "JP",
+   "entity": "6871.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "TDK": {
    "code": "6762.T",
    "market": "JP",
    "entity": "6762.T",
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_infra_company_seagate.html": [
+     "T2"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -527,6 +551,16 @@
    "aliases": [],
    "auto_candidate": false
   },
+  "후루카와전기(Furukawa Electric)": {
+   "code": "5801.T",
+   "market": "JP",
+   "entity": "5801.T",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "히타치": {
    "code": "6501.T",
    "market": "JP",
@@ -556,7 +590,11 @@
    "entity": "098460",
    "falsifier": "—",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "energy/energy_company_doosan_enerbility.html": [
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": false
   },
@@ -739,6 +777,13 @@
     ],
     "ai-sw/ai_sw_company_amazon.html": [
      "T4"
+    ],
+    "energy/energy_theme_hormuz.html": [
+     "T1",
+     "T2"
+    ],
+    "consumer/consumer_company_hyundai.html": [
+     "T3"
     ]
    },
    "aliases": [],
@@ -1016,6 +1061,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "HMM": {
+   "code": "011200",
+   "market": "KR",
+   "entity": "011200",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "HN상조": {
    "code": "HN상조",
    "market": "KR",
@@ -1250,6 +1305,9 @@
     "defense/k_defense_cross_valuation.html": [
      "T8",
      "T9"
+    ],
+    "energy/energy_company_doosan_enerbility.html": [
+     "T1"
     ]
    },
    "aliases": [
@@ -1850,9 +1908,19 @@
    "code": "000270",
    "market": "KR",
    "entity": "000270",
-   "falsifier": "정본 페이지 없음. 9월 글로벌은 해외가 내수를 상쇄. 비중·집행 아님.",
+   "falsifier": "Kenneth 승인 관측 카드(2026-11-13 23:30 KST, r-20261113-66). 정본 페이지 consumer/consumer_company_kia.html T1~T3 status 관측. watch는 evidence·log로 이관. 비중·집행 아님. 기존: 정본 페이지 없음. 9월 글로벌은 해외가 내수를 상쇄. 비중·집행 아님.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "consumer/consumer_company_kia.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "consumer/consumer_company_hyundai.html": [
+     "T1",
+     "T2"
+    ]
+   },
    "aliases": [],
    "auto_candidate": false
   },
@@ -2159,6 +2227,11 @@
     ],
     "robot/robot_kr_16_valuation.html": [
      "T2"
+    ],
+    "energy/energy_company_doosan_enerbility.html": [
+     "T1",
+     "T2",
+     "T3"
     ]
    },
    "aliases": [],
@@ -2185,9 +2258,14 @@
    "code": "034020",
    "market": "KR",
    "entity": "034020",
-   "falsifier": null,
+   "falsifier": "Kenneth 승인 관측 카드(2026-11-13 23:30 KST, r-20261113-67). 정본 페이지 energy/energy_company_doosan_enerbility.html T1~T3 status 관측. watch는 evidence·log로 이관. 비중·집행 아님. 기존:",
    "facts": 18,
    "theses": {
+    "energy/energy_company_doosan_enerbility.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
     "ai-infra/ai_power_company_nuclear_smr.html": [
      "T1",
      "T3"
@@ -2668,6 +2746,20 @@
    ],
    "auto_candidate": true
   },
+  "삼성생명": {
+   "code": "032830",
+   "market": "KR",
+   "entity": "032830",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T4"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "삼성전기": {
    "code": "009150",
    "market": "KR",
@@ -2819,6 +2911,44 @@
     ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T2"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "삼성증권": {
+   "code": "016360",
+   "market": "KR",
+   "entity": "016360",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T5"
+    ],
+    "ai-sw/ai_sw_company_anthropic.html": [
+     "T4",
+     "T5"
+    ],
+    "ai-sw/ai_sw_overview.html": [
+     "T1"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T1",
+     "T2"
+    ],
+    "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
+     "T2"
+    ],
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T1"
+    ],
+    "space/space_update_2026.html": [
+     "T3"
+    ],
+    "cybersecurity/cyber_ai_security.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -3790,7 +3920,11 @@
    "entity": "204270",
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_infra_company_seagate.html": [
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -4950,6 +5084,9 @@
     ],
     "ai-infra/kr_construction_datacenter.html": [
      "T1"
+    ],
+    "energy/energy_company_doosan_enerbility.html": [
+     "T3"
     ]
    },
    "aliases": [],
@@ -5085,9 +5222,14 @@
    "code": "005380",
    "market": "KR",
    "entity": "005380",
-   "falsifier": "정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chain.html#T1만 가리키고 내수 점유 주장과 맞지 않아 테제에 안 붙임. 비중·집행 아님.",
+   "falsifier": "Kenneth 승인 관측 카드(2026-11-13 23:30 KST, r-20261113-65). 정본 페이지 consumer/consumer_company_hyundai.html T1~T3 status 관측. watch는 evidence·log로 이관. 비중·집행 아님. 기존: 정본 자동차 페이지 없음. name_index 현대차는 robot/robot_theme_supply_chain.html#T1만 가리키고 내수 점유 주장과 맞지 않아 테제에 안 붙임. 비중·집행 아님.",
    "facts": 1,
    "theses": {
+    "consumer/consumer_company_hyundai.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
     "energy/energy_ess_ai_power.html": [
      "T5"
     ],
@@ -5444,7 +5586,7 @@
    "code": "US_POLITICS",
    "market": "Macro",
    "entity": "US_POLITICS",
-   "falsifier": null,
+   "falsifier": "Kenneth 2026-11-13 23:30 KST: 테제 카드로 승격하지 않고 regime.narratives n-us-politics에서 관리. 승격 후보 플래그 제거(regime_managed). watch는 routing 접촉을 위해 유지. regime.one 불변.",
    "facts": 0,
    "theses": {},
    "aliases": [],
@@ -5454,9 +5596,15 @@
    "code": "HORMUZ_GEOPOLITICS",
    "market": "Macro",
    "entity": "HORMUZ_GEOPOLITICS",
-   "falsifier": null,
+   "falsifier": "Kenneth 승인 관측 카드(2026-11-13 23:30 KST, r-20261113-64). 정본 페이지 energy/energy_theme_hormuz.html T1~T3 status 관측. watch는 evidence·log로 이관. 비중·집행 아님. 기존:",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "energy/energy_theme_hormuz.html": [
+     "T1",
+     "T2",
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -5589,6 +5737,9 @@
     ],
     "market/kr_drawdown_2026.html": [
      "T8"
+    ],
+    "energy/energy_company_doosan_enerbility.html": [
+     "T2"
     ]
    },
    "aliases": [],
@@ -5828,6 +5979,9 @@
     ],
     "k-beauty/k_beauty_company_pharmaresearch.html": [
      "T1"
+    ],
+    "energy/energy_company_doosan_enerbility.html": [
+     "T2"
     ]
    },
    "aliases": [
@@ -6758,6 +6912,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "ERock($EROC)": {
+   "code": "EROC",
+   "market": "US",
+   "entity": "EROC",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Eaton": {
    "code": "ETN",
    "market": "US",
@@ -7023,6 +7187,9 @@
      "T3"
     ],
     "ai-infra/kr_power_10_deep.html": [
+     "T3"
+    ],
+    "energy/energy_company_doosan_enerbility.html": [
      "T3"
     ]
    },
@@ -7679,6 +7846,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "Modine Manufacturing(모딘)": {
+   "code": "MOD",
+   "market": "US",
+   "entity": "MOD",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "NRG Energy": {
    "code": "NRG",
    "market": "US",
@@ -7820,6 +7997,9 @@
     ],
     "research/13f_2026q2.html": [
      "T4"
+    ],
+    "consumer/consumer_company_hyundai.html": [
+     "T3"
     ]
    },
    "aliases": [
@@ -8354,9 +8534,14 @@
    "code": "STX.O",
    "market": "US",
    "entity": "STX",
-   "falsifier": "정본 페이지 없음. Vertiv T7은 피어 이름뿐이라 이번 HDD 캐파 주장은 라우팅하지 않음. Toshiba JP 카드 없음.",
+   "falsifier": "Kenneth 승인 관측 카드(2026-11-13 23:30 KST, r-20261113-68). 정본 페이지 ai-infra/ai_infra_company_seagate.html T1~T3 status 관측. watch는 evidence·log로 이관. 비중·집행 아님. 기존: 정본 페이지 없음. Vertiv T7은 피어 이름뿐이라 이번 HDD 캐파 주장은 라우팅하지 않음. Toshiba JP 카드 없음.",
    "facts": 0,
    "theses": {
+    "ai-infra/ai_infra_company_seagate.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
     "ai-infra/us_vertiv_corning_deep.html": [
      "T7"
     ]
@@ -9580,6 +9765,9 @@
     ],
     "national-strategy/ns_semiconductor_war.html": [
      "T2"
+    ],
+    "consumer/consumer_company_hyundai.html": [
+     "T2"
     ]
    },
    "aliases": [],
@@ -9601,7 +9789,11 @@
    "entity": "BAIC",
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "consumer/consumer_company_hyundai.html": [
+     "T3"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
