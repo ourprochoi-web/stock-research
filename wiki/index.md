@@ -138,5 +138,10 @@
 | companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사 · 11/16 하스 접촉 보도·회사 부인·목표가 하향) |
 | companies | [applied-materials-quarterly](companies/applied-materials-quarterly.md) | 어플라이드 분기 실적(FQ4 FY26 104.1억$·FQ1 가이드 111억$·DRAM 33%) |
 | companies | [modine-samsung-talks](companies/modine-samsung-talks.md) | 모딘 — 삼성전자 인수 협상 보도(블룸버그 11/13, 합의 없음) |
+| ai-finance | [nscale-s1](ai-finance/nscale-s1.md) | Nscale S-1/A 계약·용량(TCV 1,058억$·MSFT SOW 438억$·앤트로픽 446억$ 조달 미확보) |
+| power | [grid-large-load-interconnection](power/grid-large-load-interconnection.md) | 계통 운영자 대형 부하 접속 규정(ISO-NE FERC 제출, 2027-06-01) |
+| macro | [us-ppi-monthly](macro/us-ppi-monthly.md) | 미국 PPI 월간(10월 헤드라인 YoY 6.5%·근원 5.0%) |
+| policy | [us-navy-foreign-shipbuilding](policy/us-navy-foreign-shipbuilding.md) | 미 해군 해외 조선 — 핀란드 모델 입찰 검토·FY27 국방수권/세출법 상태 |
+| autos | [tesla-cybercab-launch](autos/tesla-cybercab-launch.md) | 테슬라 사이버캡 주문 조건(2만9,990$·월 299$ 구독·12월 인도 예정·텍사스 지오펜스) |
 | policy | [us-ai-national-champions](policy/us-ai-national-champions.md) | 미 AI 「국가대표」 지정 보도(WSJ 11/16, 엔비디아·아마존·MS·오픈AI·앤트로픽 등 20여 곳) |
 | power | [korea-offshore-wind-outlook](power/korea-offshore-wind-outlook.md) | 한국 해상풍력 보급 전망(IEA Renewables 2026: 2026~30 1.7GW, −41%) |
