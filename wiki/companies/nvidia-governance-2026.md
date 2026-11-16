@@ -14,3 +14,8 @@ related: entity:NVDA, entity:MEGASPEED
 | 2026-11-13 | 삼성증권 정리·JP모건 채권팀·WSJ (routing r-20261113-02) | B | 크레스 임시 CEO가 공격적 투자·보증에 제동할 가능성 보도. WSJ: 황이 크레스를 공개 비판, 크레스는 황의 일부 거래에 의문 제기. |
 | 2026-11-13 | 8-K(2026-08-26) intake/files/web/2026-11-13/nvda_108b_guide.md (routing r-20261113-01) | A | 3Q FY27 가이던스 1,080억$ ±2%(크레스 CFO 명의, 중국 DC 미가정). 황 포기 주식 1.08억$와 별개. |
 | 2026-11-13 | 블룸버그(DOJ)·싱가포르 정부 보도·CNN·테크크런치 (routing r-20261113-05) | B | 싱가포르 앨리스 황 출국금지·메가스피드 허위신고 조사, DOJ 슈퍼마이크로 밀반입 연루 조사, 와이든·닐 H200 대중 판매 조사, CNN: 중국 정부 연계 미확인. |
+| 2026-11-13 | FT 「Arm boss Rene Haas approached in Nvidia CEO search」 · 조선비즈 영문 11/14 · CNBC 11/13 · intake/files/web/2026-11-16/nvda_ceo_search.md (routing r-20261116-02) | B | FT: 이사회가 Arm CEO 르네 하스에 접촉(후보 중 1명). 조선비즈: 엔비디아는 접촉을 부인, 서치펌 선정 단계. CNBC: 서치펌 미선정, 크레스 임시 CEO 유지. |
+| 2026-11-15~16 | 연합·FT(황 복귀 논의) · t.me/insidertracking/69379(베선트) · t.me/aethersemiconductor/26963 (routing r-20261116-02) | B | 황이 측근들과 CEO 복귀 가능성 논의 보도. 베선트 재무장관 「새 CEO는 회사 외부에서」 발언. 복귀 촉구 공개서한 8,000명+ 서명(채널). |
+| 2026-11-16 | t.me/insidertracking/69405(SEC Form 4 정리, 원문 미대조) (routing r-20261116-02) | B | 이사 마크 스티븐스 8/31~9/18 가족 신탁으로 약 423.7만 주·약 9.47억$ 매도(주당 219.40~234$), 10b5-1 표시 없음. |
+| 2026-11-13~14 | TheFly/TipRanks · CNBC 2026-11-13 · intake/files/web/2026-11-16/nvda_targets.md (routing r-20261116-04) | B | 모건스탠리 목표가 $300→$267(비중확대 유지, FY28·29 DC 매출 약 −10%). HSBC 매수→보유, $365→$170. |
+| 2026-11-16 | NVIDIA IR 「NVIDIA Sets Conference Call for Third-Quarter Financial Results」 (routing r-20261116-04) | A | 3Q FY27 콜 2026-11-17 14:00 PT = 11/18 07:00 KST. 발표 시각(06:20 KST 설)은 IR 원문에 없음. |
