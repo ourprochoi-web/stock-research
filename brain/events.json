@@ -1436,6 +1436,22 @@
       "note": "DART 20261113801115(개최시각 13:00은 싱가포르 현지) · 런던 RNS 0958D 「2:00 pm KST」. r-20261113 삼성 IR 줄."
     },
     {
+      "when": "2026-11-26",
+      "what": "젠슨 황 의회 선서 증언 기한(CBS ②). 수출통제 위반 사실이 나오면 엔비디아 T4 재검토.",
+      "judges": "ai-infra/ai_chip_company_nvidia.html#T4",
+      "grade": "②",
+      "due": "2026-11-26",
+      "note": "r-20261114-03 · 하원 외교위 비공개 인터뷰 12/1 요구(별도)."
+    },
+    {
+      "when": "2026-11-28(약)",
+      "what": "Nscale–앤트로픽 Building 2 협상 60일 창 종료(9/29 권리 행사, 상호 연장 가능). 합의·조달 약정 공시 여부.",
+      "judges": "ai-sw/ai_sw_company_anthropic.html#T4",
+      "grade": "①",
+      "due": "2026-11-28",
+      "note": "r-20261114-01 · S-1/A 원문."
+    },
+    {
       "when": "2026-11-18(미국)",
       "what": "모딘(MOD) 애널리스트·투자자의 날 + 삼성전자 인수 협상 「수주 내」 보도 — 합의·가격 공시 여부.",
       "judges": "entity:MOD",
@@ -1458,6 +1474,70 @@
       "grade": "②",
       "due": "2026-11-20",
       "note": "DDRWatcher 주간 브리프. j-20261113-01 breaks_if ①."
+    },
+    {
+      "when": "2026-11-17(KST) 정규장",
+      "what": "외국인 삼성전자 정규장 순매매 — 순매도면 조기 하향 (d) 점등(넷 중 셋, 삼성전자 부정 강화). 순매수면 (d) 리셋.",
+      "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T7",
+      "grade": "①",
+      "due": "2026-11-17",
+      "note": "11/16 −6,193.6억(연합 [표]). 연합 [표] 외국인 순매수도·마감 기사로 확인. r-20261116-10"
+    },
+    {
+      "when": "2026-11-17 KST(미 상원)",
+      "what": "BAAJA(인허가 단축·DC 전력비용 수요자 부담) 대체수정안 토론종결 표결 — 가결 시 전력기기 발주·납품 지연 위험 완화.",
+      "judges": "ai-infra/ai_power_company_transformer_grid.html#T3",
+      "grade": "②",
+      "due": "2026-11-18",
+      "note": "신한 Power Up 11월 3주. r-20261116-14"
+    },
+    {
+      "when": "2026-11 하순(미정)",
+      "what": "상무부 AI 「국가대표」 명단 발표 — 엔비디아·아마존·MS·오픈AI·앤트로픽 포함 여부, 수출 허가 신속화 내용.",
+      "judges": "entity:NVDA",
+      "grade": "②",
+      "due": "2026-11-30",
+      "note": "WSJ via Reuters, 러트닉 발표 「1주 안」 가능·지연 가능. r-20261116-05"
+    },
+    {
+      "when": "2026-11-19 15:30 KST",
+      "what": "트럼프·시진핑·푸틴 선전 회담(보도) — 엔비디아·수출통제·이란 관련 발언 여부.",
+      "judges": "regime",
+      "grade": "②",
+      "due": "2026-11-19",
+      "note": "t.me/insidertracking/69409(채널 일정). r-20261116-32"
+    },
+    {
+      "when": "2026-11~12",
+      "what": "삼성SDI–Jupiter Power 16GWh 계약의 DART 단일판매·공급계약 공시 여부(11/16 기준 미공시).",
+      "judges": "energy/energy_battery_valuechain_update.html#T3",
+      "grade": "②",
+      "due": "2026-12-16",
+      "note": "회사 보도자료 sdi-news/5101. r-20261116-13"
+    },
+    {
+      "when": "2026-11-17 22:30 KST",
+      "what": "미국 10월 소매판매·산업생산 — 9월 소매 +0.8%(자동차·휘발유 제외 +0.2%)·제조업 +0.3% 다음 값. 강하면 금리, 약하면 둔화 쪽(레짐).",
+      "judges": "regime",
+      "grade": "②",
+      "due": "2026-11-17",
+      "note": "r-20261115-11 · t.me/insidertracking/69311"
+    },
+    {
+      "when": "2026-11-19 04:00 KST",
+      "what": "10월 FOMC 의사록 — 3.75~4.00% 동결 회의에서 추가 25bp 인상 지지 위원 범위. 넓으면 12월 인상 확률↑(레짐 금리 축).",
+      "judges": "regime",
+      "grade": "②",
+      "due": "2026-11-19",
+      "note": "r-20261115-11 · t.me/insidertracking/69311"
+    },
+    {
+      "when": "2026-11-18~19 (선전 APEC·목요일 미·중·러 3자)",
+      "what": "트럼프–시진핑 회담·APEC — 미 당국자 「반도체 수출통제는 협상 대상 아님」. 결과문에 대중 칩 판매 문장이 있으면 엔비디아 T4 재검토.",
+      "judges": "ai-infra/ai_chip_company_nvidia.html#T4",
+      "grade": "②",
+      "due": "2026-11-19",
+      "note": "r-20261115 큐 · t.me/insidertracking/69281"
     },
     {
       "when": "2026-12-31",

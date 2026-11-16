@@ -14,9 +14,9 @@
 | companies | [dnd-pharmatech-nly01](companies/dnd-pharmatech-nly01.md) | 디앤디파마텍 NLY01 신경교종 전임상(UCSF 프리프린트)·적응증 확장 |
 | memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 · 루빈 HBM4 19.2TB/s 사양(10/26) |
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 · 메타 350억$ 주식 조달(10/26) |
-| ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 |
+| ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 · 11/15 WSJ 지원 축소·UBS 500억$+ |
 | optics | [optics-interconnect-basics](optics/optics-interconnect-basics.md) | 800G/1.6T·CPO |
-| power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 |
+| power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 · ISO-NE 대형부하 FERC안·BAAJA·SKT–효성 MOU(11/16) |
 | etf | [covered-call-mechanics](etf/covered-call-mechanics.md) | 커버드콜 콜 매도 구조·부분 vs 100%OTM·상승 제한 |
 | policy | [singapore-hdb-housing](policy/singapore-hdb-housing.md) | HDB 연혁·2차 시장·99년 임차권·인정가 대출 |
 | industry | [korea-dental-economics](industry/korea-dental-economics.md) | 치과 건보 수가·비급여 임플란트 구조(협찬·이해상충) |
@@ -78,7 +78,7 @@
 | macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |
 | memory | [korea-dram-export-unit-value](memory/korea-dram-export-unit-value.md) | HSK 8542321010 D램 수출 단위가치 월별(2025-10~2026-09)·잠정/확정 기준선·고정가 |
 | ai-finance | [ai-bubble-valuation](ai-finance/ai-bubble-valuation.md) | AI 버블 vs 닷컴 — 선행 PER·CAPE·집중도·벤더 파이낸싱 비교 이력 |
-| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 |
+| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 · 6배 수요·74$ 중간값 약 1.33조$(11/16) |
 | companies | [tmo-earnings](companies/tmo-earnings.md) | 써모피셔 분기 실적 이력(카드 없음·watch-only 배경) |
 | macro | [europe-china-competition](macro/europe-china-competition.md) | 유럽–중국 산업 경쟁·의존(배터리·EV·태양광·럭셔리) 이력 |
 | macro | [el-nino-2026](macro/el-nino-2026.md) | NOAA 역대 최강 엘니뇨 확률 83%(10~12월)·다음 판정 11/12, 대만 태풍 휴장·커피 |
@@ -129,12 +129,19 @@
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
-| policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) |
+| policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) · 11/15 의회 법안 가속·노무라 영향 추정 |
 | companies | [qualcomm-quarterly](companies/qualcomm-quarterly.md) | 퀄컴 분기 세그먼트·가이던스(FQ4 FY26 핸드셋 −26%·FQ1 핸드셋 감소 가이던스) |
 | consumer | [fashion-inventory-signal](consumer/fashion-inventory-signal.md) | 패션 재고·제조원가 역산·벤처 확장 신호(언더스탠딩 11/06) |
 | companies | [rocket-lab-quarterly](companies/rocket-lab-quarterly.md) | 로켓랩 분기 실적(3Q26 매출 2.68억$·백로그 35.7억$) |
 | companies | [tsmc-monthly-revenue](companies/tsmc-monthly-revenue.md) | TSMC 월매출(10월 5,868.9억 대만달러·+59.7% YoY) · 이사회 409.3억$ 설비 예산(11/12 덧붙임) |
 | companies | [classys-quarterly](companies/classys-quarterly.md) | 클래시스 분기 실적(3Q26 영업이익 270억·컨센 −29%) |
-| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사) |
+| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사 · 11/16 하스 접촉 보도·회사 부인·목표가 하향) |
 | companies | [applied-materials-quarterly](companies/applied-materials-quarterly.md) | 어플라이드 분기 실적(FQ4 FY26 104.1억$·FQ1 가이드 111억$·DRAM 33%) |
 | companies | [modine-samsung-talks](companies/modine-samsung-talks.md) | 모딘 — 삼성전자 인수 협상 보도(블룸버그 11/13, 합의 없음) |
+| ai-finance | [nscale-s1](ai-finance/nscale-s1.md) | Nscale S-1/A 계약·용량(TCV 1,058억$·MSFT SOW 438억$·앤트로픽 446억$ 조달 미확보) |
+| power | [grid-large-load-interconnection](power/grid-large-load-interconnection.md) | 계통 운영자 대형 부하 접속 규정(ISO-NE FERC 제출, 2027-06-01) |
+| macro | [us-ppi-monthly](macro/us-ppi-monthly.md) | 미국 PPI 월간(10월 헤드라인 YoY 6.5%·근원 5.0%) |
+| policy | [us-navy-foreign-shipbuilding](policy/us-navy-foreign-shipbuilding.md) | 미 해군 해외 조선 — 핀란드 모델 입찰 검토·FY27 국방수권/세출법 상태 |
+| autos | [tesla-cybercab-launch](autos/tesla-cybercab-launch.md) | 테슬라 사이버캡 주문 조건(2만9,990$·월 299$ 구독·12월 인도 예정·텍사스 지오펜스) |
+| policy | [us-ai-national-champions](policy/us-ai-national-champions.md) | 미 AI 「국가대표」 지정 보도(WSJ 11/16, 엔비디아·아마존·MS·오픈AI·앤트로픽 등 20여 곳) |
+| power | [korea-offshore-wind-outlook](power/korea-offshore-wind-outlook.md) | 한국 해상풍력 보급 전망(IEA Renewables 2026: 2026~30 1.7GW, −41%) |
