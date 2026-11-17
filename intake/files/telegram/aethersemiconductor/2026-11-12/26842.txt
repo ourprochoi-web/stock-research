@@ -1,0 +1,45 @@
+[MS NVDA Credit] 엔비디아 금융지원 구조
+핵심은 엔비디아가 단순 GPU 판매자를 넘어 AI 인프라의 ‘금융 제공자’ 역할까지 확대하고 있다는 점.
+ 
+#엔비디아의 (?q=%23%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%EC%9D%98) 새로운 역할
+Apollo, BlackRock, Blackstone, Brookfield, GS, KKR 등과 $500bn+ AI 인프라 금융 플랫폼 추진
+프로젝트별 최대 25% RVS(잔존가치 지원), 데이터센터 lease/RVG, revenue-sharing·credit-support 등 활용
+고객이 자체 자금으로 GPU를 구매하는 기존 구조에서,
+NVDA의 신용보강을 이용해 SPV·Neocloud가 자금을 조달하고 GPU를 구매하는 구조로 확장
+즉 GPU 매출 = 실제 end demand뿐 아니라 financing을 통해 만들어진 수요까지 포함될 가능성.
+ 
+1) RVS = 잔존가치 지원 
+엔비디아가 몇 년 뒤 GPU 가격이 일정 수준 이하로 떨어지면 그 손실 일부를 내가 메워주겠다 라고 보증해주는 구조.
+SPV들은 대출을 받아서 GPU를 구매하는데 이때 GPU가 담보물이 됨.
+SPV가 GPU $100어치를 대출받아 구매
+대출 만기 때 GPU를 팔았는데 가치가 $50밖에 안 남음
+금융기관은 이 잔존가치 하락 때문에 대출을 꺼림
+NVDA가 RVS를 제공해 “일정 수준 이하로 떨어지는 손실은 내가 부담”한다고 약속 → 신용보강
+그러면 은행/사모대출 입장에서는 손실 위험이 줄어들어 자금 공급이 쉬워짐
+GPU를 다시 사주는 것만 의미하는게 아니라 담보가치 부족분을 메워주거나 리스나 자산을 인수하는 방식이 가능함. 
+ 
+2) Revenue Floor
+RVS는 GPU/데이터센터의 잔존가치 일부를 보증해주는 것이지만, 
+Revenue floor는 GPU의 미래 earning power 자체를 일부 보증하는 구조
+GPU-hour 가격이 floor 이상이면 NVDA가 추가 revenue share 수취
+가격이 floor 아래면 NVDA가 Neocloud의 매출 일부 부담
+미판매 compute capacity를 NVDA가 직접 구매하는 형태도 가능
+
+단기적으로는 AI 반도체 사이클에 긍정적
+자금조달 능력이 부족한 Neocloud 고객까지 GPU 구매 가능
+GPU·HBM·CoWoS·데이터센터 투자를 추가로 만들어낼 수 있음
+결과적으로 2027~29년 AI Capex 및 반도체 수요 peak를 뒤로 미루게 되는 효과
+SK하이닉스·TSMC 등 upstream 업체들은 추가 물량의 수혜를 받으면서 NVDA의 직접적인 금융보증 리스크는 지지 않는 구조 
+ 
+NVDA의 새로운 해자 
+NVDA의 막대한 FCF와 balance sheet 자체가 GPU 판매 경쟁력이 됨
+GPU의 높은 범용성·재배치 가능성·중고 가치가 높을수록 담보가치 상승
+담보가치↑ → financing cost↓ → GPU 구매 확대 → CUDA 생태계 확대 ; 또하나의 레버리지가 됨
+향후 경쟁은 단순 칩 성능뿐 아니라 ‘누구의 칩이 가장 쉽게 금융조달되는가’까지 확대될 가능성
+ 
+하지만 가장 큰 문제는 매출의 질이 변화한다는 것
+기존:  고객 자금조달 → GPU 구매 → NVDA 매출
+현재 : NVDA 신용보강 → 고객/SPV 자금조달 → GPU 구매 → NVDA 매출
+회계상 매출은 동일하지만 경제적으로는 NVDA가 고객의 구매력을 일부 만들어주는 구조임
+따라서 향후 GPU Q를 그대로 AI 실수요라고 보기 어려워지고, Organic demand와 NVDA-financed demand를 구분할 필요가 있음
+❤6
