@@ -1,0 +1,4 @@
+Source: https://www.investing.com/news/transcripts/earnings-call-transcript-fabrinet-posts-q1-2027-beat-as-stock-jumps-after-hours-93CH-4993155 (published Nov 02, 2026 6:02 PM ET)
+Seamus Grady (CEO), answering JPMorgan's Joseph Cardoso:
+"both companies are customers of Fabrinet. Lumentum has been a customer for a very long time, really since the foundation of our company... Marvell has become a customer more recently... Historically, when there's been consolidation in the industry, it has tended to benefit Fabrinet... Lumentum acquisition of NeoPhotonics or when Infinera acquired Coriant, or even the more recent one when Nokia has acquired Infinera. In all cases, we've seen our business subsequently grow with the combined entity."
+FN regular session 11/2: -3.85% to $314.70; after-hours +11.4% to $350.59 on Q1 beat (rev $1.474B +51%, Q2 guide $1.6-1.65B).

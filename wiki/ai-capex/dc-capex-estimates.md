@@ -26,3 +26,12 @@ related: AI capex 테제 · entity:NVDA
 | 2026-10-28 | CNBC(StreetAccount 컨센·콜 인용) (routing r-20261029-18) | B | MSFT FY27 1Q capex | capex+금융리스 452억$(컨센 506.7억$) — 3P 용량 인도 일부 지연, 2Q 500억$+ 가이드, 약 75% 단수명 자산 |
 | 2026-10-29 | KLA FQ1'27 콜 요약(채널, 원문 미대조) (routing r-20261029-45) | C | WFE 전망 | 2026 「1,500억달러 중반」, 2027 「2,000억달러 이상」(경영진). 핵심 부품 조달 약 12개월 |
 | 2026-10-30 | 아마존 3Q 보도자료 · MSFT 콜 전문 인용 (routing r-20261030-01·16·61) | A/B | 아마존·MSFT capex | 아마존 3Q 설비투자 772.59억$(+120%)·2026 2,200억$ 유지(②)·FCF −424억$. MSFT CY26 약 1,750억→1,700억$(3P 인도 지연) |
+| 2026-11-03 | semiconsight X · 10-Q 합산 대조 (routing r-20261103-10) | A/B | 4사 3Q capex·FCF | 아마존·알파벳·메타·MSFT 3Q26 capex 2,019억$(정의별 2,015억~2,029억$), FCF −264억$(10-Q 대조 −265억$), 4Q 계획 2,320억$, 2026 가이던스 합 7,200억~7,400억$ |
+| 2026-11-03 | NURadu_(BofA 리포트 전언) (routing r-20261103-10) | C | 클라우드 capex | 2026 1.03조$(+99%) · 2027 1.58조$(+54%), GPU 임대료 연초 대비 B200 +47%·H100 +31% |
+
+| 2026-11-07 | Samsung_Global_AI_SW·insidertracking 경유 (routing r-20261107-29 인근·OpenAI 관련 r-40) | B/C | 구글 와이오밍 첫 DC에 170억$ 투자·Bloom Energy 연료전지 702MW 도입 보도(②). OpenAI CFO CNBC 요약(영상 미열람): 3Q 사업규모 QoQ+70% 등 채널 수치 — IR 원문 대조 전 채택 보류 |
+| 2026-11-11 열람(기사 날짜 미확인) | JPMorgan AM 마이클 셈벨레스트 via moneycontrol https://www.moneycontrol.com/news/business/us-midterm-backlash-puts-37-5-gw-of-us-ai-data-centre-capacity-at-risk-14075592.html | B | 미국 2028 DC 용량(중간선거 후 규제) | 2028 예상 96GW 중 37.5GW 공사 중단 가능 · 15GW는 비용 상승 조건(계통비 부담·용수·백업전원·노동·NDA·세제 혜택 상실). 2027 예상 약 37GW는 약 75%가 이미 공사 중. AI 대형사 부채·리스 약정의 약 15%만 대차대조표 내. 모건스탠리 등: AI capex 증가율 2027 약 60%·2028 약 14% |
+| 2026-11-09 | 아이브스(Yorkville Ives) 메모 via Yahoo Finance https://finance.yahoo.com/technology/articles/dan-ives-says-microsoft-amazon-145605618.html | C | 블루웨이브 시나리오 미건설 비율 | (주장) 향후 18개월 미국 계획 DC의 10~30% 미건설 가능, 빅테크 capex 내년 1조$ 상회, 향후 수년 3~4조$, 자금 조달 약 25% 감소 가능 |
+| 2026-11-13(전재 11-16) | 세미애널리시스 모델 via 월가견문 https://wallstreetcn.com/articles/3786019 · intake/files/web/2026-11-17/semianalysis_cut.md (routing r-20261117-07) | B | 글로벌 AI 가속기 capex(종전→신규) | 2026 약 3,920억$ 불변 · 2027 7,700억→6,270억(−19%) · 2028 1.054조→7,580억(−28%) · 2029 1.352조→7,960억(−41%) · 2030 1.531조→9,230억(−40%). 「−28%」는 2028, 「−41%」는 2029 값 |
+| 2026-11-13(전재 11-16) | 同 | B | HBM(EB)·엔비디아 출하 매출 하향 | HBM 2028 −30%·2029 −23%·2030 −12% · 엔비디아 2027~30 −22/−39/−56/−66% · 브로드컴 ASIC 2026~30 누적 −11% · 트레이니엄 2027~28 미삭감 |
+| 2026-11-17 | 에포크AI · 블룸버그 인텔리전스(문화일보) (routing r-20261117-33) | B | 구글 TPU | 브로드컴 3Q TPU 생산 약 80만 개(QoQ +65%) · 구글 TPU 관련 매출 올해 약 120억$→2028 1,350억$+ 전망(BI) |

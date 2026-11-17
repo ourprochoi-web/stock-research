@@ -1,0 +1,31 @@
+[Lead web lookup · 정규장 종가·수급 · Asia/Seoul 2026-11-05]
+
+■ 정규장(15:30) 종가 — Naver m.stock basic closePrice / Daum finance quotes tradeTime=153000 (NXT 시간외 제외)
+- 코스피: 5,383.80 (−5.28%, −300.00) · Naver polling SERVICE_INDEX:KOSPI nv=538380 ms=CLOSE
+  https://polling.finance.naver.com/api/realtime?query=SERVICE_INDEX:KOSPI
+- 삼성전자(005930): 201,500 (−7.57%, −16,500; 전일 218,000) · NXT 시간외는 별도(조회 시점 ~203,000대, 정규장과 혼동 금지)
+  https://m.stock.naver.com/api/stock/005930/basic · Daum A005930 tradeTime=153000
+- SK하이닉스(000660): 1,264,000 (−9.46%, −132,000; 전일 1,396,000)
+  https://m.stock.naver.com/api/stock/000660/basic · Daum A000660
+- 삼성SDI(006400): 509,000 (−6.61%, −36,000; 전일 545,000)
+  https://m.stock.naver.com/api/stock/006400/basic · Daum A006400
+
+■ 외국인·기관 순매매(억원) — 알파패스(KRX 투자자별 집계 인용) · 마감 직후 잠정치, 당일 Naver/KRX 일별표 미반영(Naver trend 최신 20261103)
+조회 시각 ~15:47 KST · 종목 페이지 수치는 안정, '종가 확정' 표시가는 NXT 혼입 주의(위 정규장 종가 사용)
+- 삼성전자: 외국인 −11,687 · 기관 +34 · 개인 +12,256 · 외국인 3일 연속 순매도
+  (알파패스 표: 11/4 −8,093 · 11/3 −2,107 — Kenneth 기존 기록 11/4 −8,083 · 11/3 −2,062와 소폭 차이)
+  https://www.alphapass.kr/stock/005930/today
+- SK하이닉스: 외국인 −15,427 · 기관 +2,923 · 개인 +9,072 · 외국인 5일 연속
+  https://www.alphapass.kr/stock/000660/today
+- 삼성SDI: 외국인 −11 · 기관 −135 · 개인 +284
+  https://www.alphapass.kr/stock/006400/today
+- 코스피 시장(알파패스 today 표, 같은 창): 외국인 약 −3.8조대 순매도 · 개인·기관 순매수 (페이지 갱신 중)
+
+■ 맥락(연합 장중, 종가 확정 기사 아님)
+- https://www.yna.co.kr/view/AKR20261105081800008 (11:14 장중)
+- https://www.yna.co.kr/view/AKR20261105070051008 (14:45 종합·사이드카)
+- 조선비즈 속보: 코스피 5,383.65 (−5.28%) 마감 https://biz.chosun.com/stock/stock_general/2026/11/05/HA4GCNRRGVSTEZRTGRRDIMLBGU/
+
+■ Lead 판정 메모(stance/regime/holdings/status/light 비접촉)
+- trigger (d) 삼성전자 외국인 순매도: 11/5도 순매도 → ON 유지(11/3·11/4·11/5 3일 연속). 2일 연속 순매수 revert 창 미개시.
+- 삼성SDI 509,000 ≈ early-buy 50만 존 진입/근접 · 전일 545,000 대비 −3.6만.

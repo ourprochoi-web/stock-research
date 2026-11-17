@@ -12,3 +12,4 @@ related: entity:AAPL · entity:005930 (판단은 brain/에 없음 · 메모리�
 | 2026-10-19 | 메리츠 양승수 via intake/files/telegram/2026-10-19/pull_093911/meritz_44853.txt | C | 아이폰 듀오 공홈 출고 예정 1/25(한·중 1/22), 힌지·UTG·OEM 조립 수율 부진(채널체크), 2026 출하 목표 600만 대+ · 패널 출하 추정 2026 국내 1,000만·북미 800만 → 2027 1,200만·1,500만 |
 | 2026-10-24 | 제리릭에브리씽 유튜브 via t.me/insidertracking/67213 (routing r-20261025-12) | C | 아이폰 듀오 내구성 테스트: 내부 폴더블 화면 모스 2단계(손톱에 흠집), 화염 10초 변형, 나노 텍스처층 손상 시 전체 교체 약 1,000달러, 먼지 유입 시 자석 결합 약화·티타늄 힌지 걸림(IP68에도) |
 | 2026-10-26 | blazingbees X https://x.com/blazingbees/status/2114314908410183684 (routing r-20261026-13) | C | 아이폰 듀오 화면 크랙 사례 게시, 힌지는 파인엠텍 독점 공급이라는 주장 — 빈도·원인(힌지 vs 설계) 미상, 회사 확인 없음 |
+| 2026-10-16 | YeouidoStory2 118461 → https://www.ithinkdiff.com/iphone-duo-time-best-inventions-2026/ (routing r-20261111-168) | C | 아이폰 듀오가 Time 2026 최고의 발명품 목록에 들었다는 링크(URL 슬러그·채널 문구, 본문 미열람) |

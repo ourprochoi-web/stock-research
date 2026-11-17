@@ -150,12 +150,13 @@ def render_holdings(pf):
     """트래커 <script> 안의 HOLDINGS·CASH_REMAINING 을 brain/portfolio.json 에서 찍는다(2026-09-17 C). JSON 객체는 그대로 JS 리터럴이다."""
     rows = ",\n    ".join(json.dumps(h, ensure_ascii=False) for h in pf.get("holdings", []))
     cash = pf.get("cash", {})
-    if cash.get("value") is None:  # 현금은 사용자 값 — 비어 있으면 트래커 산술(NaN)을 깨지 않게 블록을 건드리지 않는다(2026-09-26)
-        print(f"[cards] ⚠ portfolio.cash.value 없음({cash.get('grade', '')}) — 트래커 HOLDINGS·CASH 블록 렌더 건너뜀")
-        return None
+    unset = cash.get("value") is None  # 현금은 사용자 값 — 비어 있어도 HOLDINGS 는 찍고, 현금은 0 + CASH_UNSET 으로 「미기입」 표시(NaN 방지 · 2026-11-04)
+    if unset:
+        print(f"[cards] ⚠ portfolio.cash.value 없음({cash.get('grade', '')}) — HOLDINGS 렌더 · 현금 「미기입」")
     return (f"{HSTART}\n  /* 정본 brain/portfolio.json → 훅 렌더. 매매는 portfolio.json 의 holdings·cash 에만 반영한다. */\n"
             f"  var HOLDINGS = [\n    {rows}\n  ];\n"
-            f"  var CASH_REMAINING = {int(cash.get('value', 0))};  /* {cash.get('asof', '')} · {str(cash.get('note', ''))[:120]} */\n"
+            f"  var CASH_REMAINING = {0 if unset else int(cash['value'])};  /* {'미기입 · ' if unset else ''}{cash.get('asof', '')} · {str(cash.get('note', ''))[:120]} */\n"
+            f"  var CASH_UNSET = {'true' if unset else 'false'};\n"
             f"{HEND}")
 
 

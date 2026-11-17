@@ -8122,6 +8122,18 @@
           "intake": "c-20261008-t81",
           "page": "hbm-packaging/hbm_pkg_company_samsung.html",
           "note": "107.4/195.0=55.08% → 55.1%. 공시 라벨이 아니라 직접 나눔."
+        },
+        "dram_rev_share_2026q3": {
+          "value": 38,
+          "unit": "%",
+          "basis": "2026Q3 DRAM revenue share",
+          "asof": "2026-09-30",
+          "num": "2026Q3 005930 D램 매출",
+          "den": "2026Q3 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint via Yonhap 2026-11-05 https://n.news.naver.com/mnews/article/001/0016424666",
+          "intake": "c-20261105-t1040",
+          "note": "Q2 39%→Q3 38% 1위. 사다리 삼38·닉29·MU21·CXMT9. 내년 HBM1위는 전망(이 지표 아님)."
         }
       }
     },
@@ -9401,6 +9413,18 @@
           "source": "Netlist Form 8-K filed 2026-10-06, event 2026-10-05, accession 0001104659-26-113897",
           "intake": "c-20261007-nlst-8k",
           "note": "법률 라이선스 비용 하한. 연 $120M. FQ4 매출 $54.229B 대비 약 0.2%. 페이지 필드는 두지 않음(수요 테제 문장에 넣지 않음). ITC 사건명은 8-K 본문에 없음."
+        },
+        "dram_rev_share_2026q3": {
+          "value": 21,
+          "unit": "%",
+          "basis": "2026Q3 DRAM revenue share",
+          "asof": "2026-09-30",
+          "num": "2026Q3 MU D램 매출",
+          "den": "2026Q3 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint via Yonhap 2026-11-05 https://n.news.naver.com/mnews/article/001/0016424666",
+          "intake": "c-20261105-t1040",
+          "note": "사다리 삼38·닉29·MU21·CXMT9. Q2(24) 대비 하락."
         }
       }
     },
@@ -9425,6 +9449,18 @@
           "source": "Counterpoint Global Memory Tracker via Asiae 2026-10-02 https://n.news.naver.com/mnews/article/277/0005824071",
           "intake": "u-20261002-tg-118079",
           "note": "전분기 29%에서 −4%p. 마이크론(24%)과 격차 1%p. 사다리(본문) 삼성38·SKH25·MU24·CXMT10. 리드문은 MU25/SKH24로 뒤바뀜 → 본문 채택. CXMT 전분기 8%·전년동기 4%. FQ4 $54.23B·GM 86.8%·메로트라 75%·2027–28은 r-20261001-01 흡수(이 지표 아님)."
+        },
+        "dram_rev_share_2026q3": {
+          "value": 29,
+          "unit": "%",
+          "basis": "2026Q3 DRAM revenue share",
+          "asof": "2026-09-30",
+          "num": "2026Q3 000660 D램 매출",
+          "den": "2026Q3 글로벌 D램 매출",
+          "grade": "②",
+          "source": "Counterpoint via Yonhap 2026-11-05 https://n.news.naver.com/mnews/article/001/0016424666",
+          "intake": "c-20261105-t1040",
+          "note": "Q2 대비 +3%p. 사다리 삼38·닉29·MU21·CXMT9."
         }
       }
     },
@@ -9849,22 +9885,22 @@
       "intake": "c-20260914-03"
     },
     "kospi": {
-      "value": 7025.0,
+      "value": 5059.69,
       "unit": "pt",
-      "asof": "2026-09-22",
-      "source": "삼프로TV 클로징벨 09-22(①)",
-      "grade": "①",
-      "intake": "u-20260922-15",
-      "note": "고점 9,114.55 대비 −22.9% · 장중 고점 7,171 터치 후 전강후약 · 외국인 현물 +2,600억(⚠ 다른 방송 +1,500억) · 개인 9월 누적 −16조 · 선물 베이시스 −1.3pt"
+      "asof": "2026-11-06",
+      "source": "여의도뉴스서비스 장마감 브리핑 16:00 (② yeouidonews/p/536086)",
+      "grade": "②",
+      "intake": "c-20261106-t158",
+      "note": "−324.11(−6.02%). NXT 비사용. 외인 결측."
     },
     "usdkrw": {
-      "value": 1350.0,
-      "unit": "KRW",
-      "asof": "2026-09-22",
-      "source": "삼프로TV 09-22(② 방송 「1,350원대」)",
+      "value": 1356.6,
+      "unit": "KRW/USD",
+      "asof": "2026-11-06",
+      "source": "여의도뉴스서비스 장마감 브리핑 (②)",
       "grade": "②",
-      "intake": "u-20260922-15",
-      "note": "🔴 이틀 연속 방향 전환 — 09-18 저점 1,340 → 09-21 종가 1,379.70(①) → 09-22 1,350원대(②). 3Q26 누적 평균 1,411(JPM ③)은 불변. 삼성 민감도 USD 1% = 영업이익 870억. <추세로 읽지 않는다>"
+      "intake": "c-20261106-t158",
+      "note": "+14.5(6개월 최대폭 언급)."
     },
     "hormuz_crude_flow": {
       "value": 2.0,
@@ -10146,6 +10182,15 @@
       "num": 1531,
       "den": 957,
       "note": "9,570억 달러→1조 5,310억 달러. 1531/957−1 = +60.0%. 방송의 50%는 올해 증가율이라 전년 절대액은 역산하지 않음. JPM 6사 2027E 1,523(hyperscaler_capex_jpm)·5대 1.21조(r-20261013-203)와 모집단이 다름."
+    },
+    "kosdaq": {
+      "value": 644.27,
+      "unit": "pt",
+      "asof": "2026-11-06",
+      "source": "여의도뉴스서비스 장마감 브리핑 16:00 (②)",
+      "grade": "②",
+      "intake": "c-20261106-t158",
+      "note": "−34.14(−5.03%)."
     }
   }
 }

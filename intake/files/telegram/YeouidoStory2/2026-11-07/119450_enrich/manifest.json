@@ -1,0 +1,26 @@
+{
+  "channel": "YeouidoStory2",
+  "message_id": 119450,
+  "url": "https://n.news.naver.com/mnews/article/021/0002831042?sid=101",
+  "dir": "/workspace/telegram-intake/enrich/YeouidoStory2_119450_20261107",
+  "ok": true,
+  "final_url": "https://n.news.naver.com/mnews/article/021/0002831042?sid=101",
+  "title": "오픈AI, 美 민주당 승리에도 “데이터센터 15조 투자 계속 진행”",
+  "body_chars": 845,
+  "images": [
+    {
+      "file": "/workspace/telegram-intake/enrich/YeouidoStory2_119450_20261107/img_01.jpg",
+      "src": "https://imgnews.pstatic.net/image/021/2026/11/07/0002831042_002_20261107144021959.jpg?type=w860",
+      "bytes": 192351,
+      "og": false
+    },
+    {
+      "file": "/workspace/telegram-intake/enrich/YeouidoStory2_119450_20261107/img_02.jpg",
+      "src": "https://imgnews.pstatic.net/image/021/2026/11/07/0002831042_001_20261107144021935.jpg?type=w800",
+      "bytes": 22221,
+      "og": true
+    }
+  ],
+  "published": null,
+  "status": "ok"
+}

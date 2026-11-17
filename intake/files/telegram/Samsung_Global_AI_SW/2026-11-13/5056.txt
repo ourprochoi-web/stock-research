@@ -1,0 +1,37 @@
+구글, Gemini 4 Hydrogen 출시
+
+: 구글 딥마인드가 Gemini 4 Carbon, Argon에 이어 고효율 모델 Gemini 4 Hydrogen 공개. 최근 6주간 세 번째 신규 모델 출시
+
+: Carbon과 Argon이 복잡한 장기 추론에 집중한다면, Hydrogen은 코딩, 에이전트 실행 등 일상적인 워크플로우의 속도와 효율성에 초점
+
+■ 프론티어 모델에 근접한 성능
+
+: Artificial Analysis Intelligence Index에서 최고 추론 수준(xhigh) 기준 54점 기록. Claude Sonnet 5.5 및 GPT-6.1 Sol(각 55점)에 근접. 기본 High 설정에서는 51점으로 Argon(50점)을 상회
+
+: 시각적 추론 평가 GDP.pdf에서 공동 1위. 환각 발생률은 8%로 Claude Sonnet 5.5(43%), GPT-6.1 Sol(52%) 대비 낮은 수준
+
+: 반면 에이전트 코딩 평가 Terminal-Bench 4.0에서는 54%로 Claude Sonnet 5.5(64%), GPT-6.1 Sol(56%) 대비 열위
+
+■ 높은 비용 효율성
+
+: API 가격은 입력·출력 100만 토큰당 각각 1.5달러, 7.5달러. 캐시 입력은 95% 할인
+
+: xhigh 기준 작업당 비용은 3.16달러로 Claude Sonnet 5.5의 약 32% 수준이지만, GPT-6.1 Sol 대비 약 2.5배
+
+: 기본 High에서는 작업당 비용이 1.87달러로 약 41% 감소하는 반면, 지능 지수는 54점에서 51점으로 소폭 하락. Argon 대비 작업당 비용은 약 19% 수준
+
+■ 멀티모델 에이전트 전략 강화
+
+: Google Antigravity에 Orchestrator 도입. Carbon이 복잡한 추론과 작업 조정을 담당하고 Hydrogen이 실행·검증을 수행하는 멀티모델 구조 지원
+
+: 단일 모델 사용 대비 Carbon에 근접한 작업 성공률을 유지하면서 할당량 사용은 24% 감소, 작업 완료 시간은 19% 단축
+
+: 기존 Gemini 3.8 Flash 대비 작업 속도 2.5배, Terminal-Bench 4.1 점수는 18.2%에서 57%로 상승
+
+■ 기업용 AI 및 소비자 서비스 확대
+
+: 100만 토큰 컨텍스트 지원. PDF, 스프레드시트, 영상 등 멀티모달 자료를 활용한 보고서 작성, 데이터 분석, 프레젠테이션 생성에 활용
+
+: Google Sheets의 금융 모델링, Google Slides의 프레젠테이션 자동 생성 등 시연. Gemini API, Antigravity, 기업용 Gemini, Gemini 앱, 구글 검색 전반에 순차 출시
+
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen

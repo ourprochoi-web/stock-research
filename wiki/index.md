@@ -4,8 +4,8 @@
 | battery | [lfp-patent-history](battery/lfp-patent-history.md) | LFP 특허 소송사, 한국 NCM·중국 LFP 분기 |
 | battery | [large-cylindrical-46-series](battery/large-cylindrical-46-series.md) | 46계열 원통형 양산·공급사(BMW Gen6·EVE·CATL) |
 | companies | [tesla-early-history](companies/tesla-early-history.md) | 2003 창업~2010 상장 |
-| memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 |
-| ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 |
+| memory | [cxmt-progress](memory/cxmt-progress.md) | CXMT 4F² 등 진척 추적 · 6세대 ES 검증·연말 서버 RDIMM 샘플 계획(11/11 덧붙임) |
+| ai-capex | [dc-capex-estimates](ai-capex/dc-capex-estimates.md) | AI DC 투자·출하 추정치 이력 · 2028 미국 96GW 중 37.5GW 중단 가능(JPM AM, 11/11 덧붙임) · 세미애널리시스 2027~30 하향·구글 TPU(11/17) |
 | memory | [memory-cycle-background](memory/memory-cycle-background.md) | 가격·밸류에이션 배경 · TrendForce DRAM 현물(10/26) |
 | companies | [samsung-shareholder-return](companies/samsung-shareholder-return.md) | 삼성전자 2026 환원 90~110조·30조 배당·자사주 15조·1월 배분·금산법 |
 | companies | [semco-supply-contracts](companies/semco-supply-contracts.md) | 삼성전기 LTA 공시 이력(MLCC·패키지기판)·2027 누계 |
@@ -14,9 +14,9 @@
 | companies | [dnd-pharmatech-nly01](companies/dnd-pharmatech-nly01.md) | 디앤디파마텍 NLY01 신경교종 전임상(UCSF 프리프린트)·적응증 확장 |
 | memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 · 루빈 HBM4 19.2TB/s 사양(10/26) |
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 · 메타 350억$ 주식 조달(10/26) |
-| ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 |
+| ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 · 11/15 WSJ 지원 축소·UBS 500억$+ |
 | optics | [optics-interconnect-basics](optics/optics-interconnect-basics.md) | 800G/1.6T·CPO |
-| power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 |
+| power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 · ISO-NE 대형부하 FERC안·BAAJA·SKT–효성 MOU(11/16) |
 | etf | [covered-call-mechanics](etf/covered-call-mechanics.md) | 커버드콜 콜 매도 구조·부분 vs 100%OTM·상승 제한 |
 | policy | [singapore-hdb-housing](policy/singapore-hdb-housing.md) | HDB 연혁·2차 시장·99년 임차권·인정가 대출 |
 | industry | [korea-dental-economics](industry/korea-dental-economics.md) | 치과 건보 수가·비급여 임플란트 구조(협찬·이해상충) |
@@ -26,7 +26,7 @@
 | policy | [korea-reshoring-incentives](policy/korea-reshoring-incentives.md) | 국내복귀 요건 4·면제·인센티브·통계·관세 비교(KOTRA 지원 홍보) |
 | policy | [korea-duplicate-listing-rules](policy/korea-duplicate-listing-rules.md) | 중복상장 원칙금지·이사회 5대 의무·해외 상장 포함·부칙 |
 | policy | [korea-ipo-allocation-rules](policy/korea-ipo-allocation-rules.md) | 기관 배정 40% 확약·환매청구권 90%·2026 시초가 수익률(방송 전언) |
-| macro | [kospi-drawdown-history](macro/kospi-drawdown-history.md) | 코스피 연속 급락 사례·정규장 vs NXT 수급·신용 집중도 관리 |
+| macro | [kospi-drawdown-history](macro/kospi-drawdown-history.md) | 코스피 연속 급락 사례·정규장 vs NXT 수급·신용 집중도 관리 · 11/17 4,968(5,000 하회) |
 | power | [dc-moratoria](power/dc-moratoria.md) | 데이터센터 모라토리엄·지역 규제(텍사스 발언·SF 45일) |
 | macro | [us-fiscal-debt](macro/us-fiscal-debt.md) | 미국 부채 40조·이자 지출·재정적자·BTC–실질금리 상관 |
 | energy | [hormuz-iran-war-timeline](energy/hormuz-iran-war-timeline.md) | 이란 전쟁·호르무즈 사건 연표(10/17부터) |
@@ -78,7 +78,7 @@
 | macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |
 | memory | [korea-dram-export-unit-value](memory/korea-dram-export-unit-value.md) | HSK 8542321010 D램 수출 단위가치 월별(2025-10~2026-09)·잠정/확정 기준선·고정가 |
 | ai-finance | [ai-bubble-valuation](ai-finance/ai-bubble-valuation.md) | AI 버블 vs 닷컴 — 선행 PER·CAPE·집중도·벤더 파이낸싱 비교 이력 |
-| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 |
+| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 · 6배 수요·74$ 중간값 약 1.33조$(11/16) · 블룸버그 약 7배·거스너 50억$·직원 10b5-1(11/17) |
 | companies | [tmo-earnings](companies/tmo-earnings.md) | 써모피셔 분기 실적 이력(카드 없음·watch-only 배경) |
 | macro | [europe-china-competition](macro/europe-china-competition.md) | 유럽–중국 산업 경쟁·의존(배터리·EV·태양광·럭셔리) 이력 |
 | macro | [el-nino-2026](macro/el-nino-2026.md) | NOAA 역대 최강 엘니뇨 확률 83%(10~12월)·다음 판정 11/12, 대만 태풍 휴장·커피 |
@@ -120,11 +120,28 @@
 | crypto | [exchange-hacks](crypto/exchange-hacks.md) | 암호화폐 거래소 해킹 이력(바이낸스 10/30 약 63억$·북한 지목) |
 | companies | [keytruda-qlex-sales](companies/keytruda-qlex-sales.md) | 키트루다 큐렉스 분기 매출(3Q26 8.30억$) |
 | companies | [daeduck-quarterly](companies/daeduck-quarterly.md) | 대덕전자 분기 실적(3Q26 OP 878.71억·OPM 21.0%) |
-| macro | [msci-market-classification](macro/msci-market-classification.md) | MSCI 시장 분류(인도네시아 Standalone 협의, 결정 2027-06-30 이전) |
+| macro | [msci-market-classification](macro/msci-market-classification.md) | MSCI 시장 분류(인도네시아 Standalone 협의, 결정 2027-06-30 이전) · 11월 리뷰 인도네시아 편출(11/17) |
 | cybersecurity | [ot-ics-incidents](cybersecurity/ot-ics-incidents.md) | OT·산업제어 보안 사고(프랑스 슈퍼마켓 냉장 원격 조작 10/11~13) |
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
+| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/13 · D램 현물 주간 45·46주 · 11/16–11/17 2일 연속 순매도((d) 점등) |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
+| policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) · 11/15 의회 법안 가속·노무라 영향 추정 · BIS 원격 접근 IFR(11/17) |
+| companies | [qualcomm-quarterly](companies/qualcomm-quarterly.md) | 퀄컴 분기 세그먼트·가이던스(FQ4 FY26 핸드셋 −26%·FQ1 핸드셋 감소 가이던스) |
+| consumer | [fashion-inventory-signal](consumer/fashion-inventory-signal.md) | 패션 재고·제조원가 역산·벤처 확장 신호(언더스탠딩 11/06) |
+| companies | [rocket-lab-quarterly](companies/rocket-lab-quarterly.md) | 로켓랩 분기 실적(3Q26 매출 2.68억$·백로그 35.7억$) |
+| companies | [tsmc-monthly-revenue](companies/tsmc-monthly-revenue.md) | TSMC 월매출(10월 5,868.9억 대만달러·+59.7% YoY) · 이사회 409.3억$ 설비 예산(11/12 덧붙임) |
+| companies | [classys-quarterly](companies/classys-quarterly.md) | 클래시스 분기 실적(3Q26 영업이익 270억·컨센 −29%) |
+| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사 · 11/16 하스 접촉 보도·회사 부인·목표가 하향) · 11/17 감독위원회 신설·복귀 공방 |
+| companies | [applied-materials-quarterly](companies/applied-materials-quarterly.md) | 어플라이드 분기 실적(FQ4 FY26 104.1억$·FQ1 가이드 111억$·DRAM 33%) |
+| companies | [modine-samsung-talks](companies/modine-samsung-talks.md) | 모딘 — 삼성전자 인수 협상 보도(블룸버그 11/13, 합의 없음) |
+| ai-finance | [nscale-s1](ai-finance/nscale-s1.md) | Nscale S-1/A 계약·용량(TCV 1,058억$·MSFT SOW 438억$·앤트로픽 446억$ 조달 미확보) |
+| power | [grid-large-load-interconnection](power/grid-large-load-interconnection.md) | 계통 운영자 대형 부하 접속 규정(ISO-NE FERC 제출, 2027-06-01) · BAAJA 토론종결 70–27·PJM 50MW+(11/17) |
+| macro | [us-ppi-monthly](macro/us-ppi-monthly.md) | 미국 PPI 월간(10월 헤드라인 YoY 6.5%·근원 5.0%) |
+| policy | [us-navy-foreign-shipbuilding](policy/us-navy-foreign-shipbuilding.md) | 미 해군 해외 조선 — 핀란드 모델 입찰 검토·FY27 국방수권/세출법 상태 |
+| autos | [tesla-cybercab-launch](autos/tesla-cybercab-launch.md) | 테슬라 사이버캡 주문 조건(2만9,990$·월 299$ 구독·12월 인도 예정·텍사스 지오펜스) |
+| policy | [us-ai-national-champions](policy/us-ai-national-champions.md) | 미 AI 「국가대표」 지정 보도(WSJ 11/16, 엔비디아·아마존·MS·오픈AI·앤트로픽 등 20여 곳) |
+| power | [korea-offshore-wind-outlook](power/korea-offshore-wind-outlook.md) | 한국 해상풍력 보급 전망(IEA Renewables 2026: 2026~30 1.7GW, −41%) |
