@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-13",
+ "generated": "2026-11-17",
  "names": {
   "Optus": {
    "code": "OPTUS",
@@ -730,7 +730,8 @@
      "T5"
     ],
     "national-strategy/ns_china_ai_ecosystem.html": [
-     "T3"
+     "T3",
+     "T4"
     ],
     "national-strategy/ns_korea_impact_strategy.html": [
      "T4"
@@ -982,9 +983,16 @@
    "code": "443060",
    "market": "KR",
    "entity": "443060",
-   "falsifier": null,
+   "falsifier": "2026-11-08 회사 관측 페이지. 11/7 명단 수록만. 분기 숫자는 이 메모에 없음.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "shipbuilding/company_hd_hms_443060.html": [
+     "T1"
+    ],
+    "shipbuilding/company_hanwha_engine_082740.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -1044,6 +1052,9 @@
     ],
     "shipbuilding/k_ship_theme_masga_us_alliance.html": [
      "T2"
+    ],
+    "shipbuilding/company_hanwha_engine_082740.html": [
+     "T1"
     ]
    },
    "aliases": [
@@ -1171,6 +1182,9 @@
     ],
     "ai-infra/ai_power_company_semi_ess_dc.html": [
      "T1"
+    ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T3"
     ],
     "ai-infra/ai_power_infra_investment_map.html": [
      "T2",
@@ -1760,7 +1774,8 @@
      "T5"
     ],
     "hbm-packaging/hbm_pkg_overview.html": [
-     "T1"
+     "T1",
+     "T2"
     ],
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",
@@ -1833,9 +1848,16 @@
    "code": "077970",
    "market": "KR",
    "entity": "077970",
-   "falsifier": null,
+   "falsifier": "2026-11-08 회사 관측 페이지. 11/7 메모에 분기 숫자 없음. watch의 한화엔진 문장을 실적으로 쓰지 않음.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "shipbuilding/company_stx_engine_077970.html": [
+     "T1"
+    ],
+    "shipbuilding/company_hanwha_engine_082740.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -2196,6 +2218,7 @@
    "facts": 0,
    "theses": {
     "ai-infra/kr_cooling_optical_layer.html": [
+     "T1",
      "T5"
     ],
     "ai-infra/ai_power_company_nuclear_smr.html": [
@@ -2515,9 +2538,13 @@
    "code": "MODEL_SOLUTION",
    "market": "KR",
    "entity": "MODEL_SOLUTION",
-   "falsifier": null,
+   "falsifier": "2026-11-08 회사 관측 페이지. 스타링크 샘플은 ② 보도. 코드·매출 미기재.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "space/company_model_solution.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -3055,9 +3082,12 @@
    "code": "014620",
    "market": "KR",
    "entity": "014620",
-   "falsifier": null,
+   "falsifier": "2026-11-08 회사 관측 페이지 신설. nuclear T2(순현금·LNG, 상태 유지)와 별개. 3Q 적자는 ② 채널.",
    "facts": 0,
    "theses": {
+    "shipbuilding/company_sungkwang_bend_014620.html": [
+     "T1"
+    ],
     "ai-infra/ai_power_company_nuclear_smr.html": [
      "T2"
     ]
@@ -3523,7 +3553,8 @@
    "facts": 0,
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
-     "T1"
+     "T1",
+     "T4"
     ],
     "energy/energy_ess_ai_power.html": [
      "T5"
@@ -4512,7 +4543,8 @@
    "theses": {
     "energy/energy_battery_valuechain_update.html": [
      "T1",
-     "T3"
+     "T3",
+     "T4"
     ]
    },
    "aliases": [],
@@ -4983,9 +5015,12 @@
    "code": "082740",
    "market": "KR",
    "entity": "082740",
-   "falsifier": null,
+   "falsifier": "2026-11-08 회사 관측 페이지. 3Q 수치는 ② 채널, Top-Pick은 ③. 매수 순위 아님.",
    "facts": 0,
    "theses": {
+    "shipbuilding/company_hanwha_engine_082740.html": [
+     "T1"
+    ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
      "T3",
@@ -5001,6 +5036,12 @@
     ],
     "shipbuilding/k_ship_industry_overview.html": [
      "T2"
+    ],
+    "shipbuilding/company_stx_engine_077970.html": [
+     "T1"
+    ],
+    "shipbuilding/company_hd_hms_443060.html": [
+     "T1"
     ]
    },
    "aliases": [],
@@ -5226,6 +5267,11 @@
    "facts": 1,
    "theses": {
     "consumer/consumer_company_hyundai.html": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "auto/company_hyundai_motor_005380.html": [
      "T1",
      "T2",
      "T3"
@@ -5943,6 +5989,7 @@
     ],
     "national-strategy/ns_bigtech_capex_roi.html": [
      "T1",
+     "T2",
      "T4",
      "T5"
     ],
@@ -5978,6 +6025,9 @@
      "T3"
     ],
     "k-beauty/k_beauty_company_pharmaresearch.html": [
+     "T1"
+    ],
+    "space/space_update_2026.html": [
      "T1"
     ],
     "energy/energy_company_doosan_enerbility.html": [
@@ -9986,6 +10036,9 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "ai-infra/ai_chip_architecture_war.html": [
+     "T6"
+    ],
     "national-strategy/ns_china_ai_ecosystem.html": [
      "T1"
     ],

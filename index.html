@@ -177,7 +177,7 @@ input{font-family:inherit}
 .sec-label.energy{color:#22c55e}.sec-label.energy::before{background:#22c55e}
 .sec-label.quantum{color:#7c3aed}.sec-label.quantum::before{background:#7c3aed}
 .sec-label.cybersecurity{color:#f43f5e}.sec-label.cybersecurity::before{background:#f43f5e}
-  .sec-label.research{color:#f59e0b}.sec-label.payments{color:#6366f1}.sec-label.payments::before{background:#6366f1}.sec-label.hbm-pkg{color:#0ea5e9}.sec-label.hbm-pkg::before{background:#0ea5e9}.sec-label.portfolio{color:#10b981}.sec-label.portfolio::before{background:#10b981}.sec-label.consumer{color:#ec4899}.sec-label.consumer::before{background:#ec4899}.sec-label.research::before{background:#f59e0b}
+  .sec-label.research{color:#f59e0b}.sec-label.payments{color:#6366f1}.sec-label.payments::before{background:#6366f1}.sec-label.hbm-pkg{color:#0ea5e9}.sec-label.hbm-pkg::before{background:#0ea5e9}.sec-label.portfolio{color:#10b981}.sec-label.portfolio::before{background:#10b981}.sec-label.consumer{color:#ec4899}.sec-label.consumer::before{background:#ec4899}.sec-label.auto{color:#f97316}.sec-label.auto::before{background:#f97316}.sec-label.research::before{background:#f59e0b}
 .sec-label.digital-assets{color:#eab308}.sec-label.digital-assets::before{background:#eab308}
 .sec-label.k-beauty{color:#e8529a}.sec-label.k-beauty::before{background:#e8529a}
 .sec-label.market-review{color:#14b8a6}.sec-label.market-review::before{background:#14b8a6}
@@ -793,6 +793,11 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
       desc: '브랜드·유통·ODM — 층마다 마진이 다르게 움직인다',
       badgeMap: { '기업 분석': 'badge-company', '섹터': 'badge-theme' }
     },
+    '자동차': {
+      cssClass: 'auto', title: 'Auto',
+      desc: '완성차 관측 카드 — 후보에서 올린 회사 페이지. 매수 순위가 아니다',
+      badgeMap: { '기업 분석': 'badge-company' }
+    },
     '리서치': {
       cssClass: 'research', title: 'Research',
       desc: '아카이브가 스스로를 점검하는 글 — 외부 데이터와 대조해 판단의 공백을 찾는다',
@@ -847,7 +852,7 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
     '조선': {
       cssClass: 'shipbuilding', title: 'K-Shipbuilding',
       desc: 'K-조선 Big 3 실적 해부·LNG $71.3B·방산 수출·그린 전환·MASGA 한미 조선 동맹 — 5편 시리즈',
-      badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '심화 테마': 'badge-theme' }
+      badgeMap: { '산업 개관': 'badge-overview', '투자 지도': 'badge-map', '심화 테마': 'badge-theme', '기업 분석': 'badge-company' }
     },
     '에너지 전환': {
       cssClass: 'energy', title: 'Energy Transition',
@@ -888,6 +893,54 @@ footer{text-align:center;padding:80px 24px 40px;font-size:12px;color:#3b4560;let
 
   /* ═══════ DATA ═══════ */
   var DATA = [
+    {
+      title: "현대차 — 내수·인도·중국 관측",
+      desc: "후보 카드의 내수 점유·인도 투자·중국 개발 전언을 관측 페이지로 올렸다. 공시 전이고 매수 판단이 아니다.",
+      category: "자동차", type: "기업 분석", series: "자동차",
+      file: "auto/company_hyundai_motor_005380.html",
+      date: "2026-11-08", updated: "2026-11-08",
+      tags: ["현대차","005380","관측","인도","아이오닉"]
+    },
+    {
+      title: "성광벤드 — 3Q 적자 전달은 공시 전 관측",
+      desc: "메리츠가 전한 3Q 매출 428억·영업이익 −12억. 고정비 해석은 추정이고 순현금 반증 충족이 아니다.",
+      category: "조선", type: "기업 분석", series: "조선",
+      file: "shipbuilding/company_sungkwang_bend_014620.html",
+      date: "2026-11-08", updated: "2026-11-08",
+      tags: ["성광벤드","014620","관측","LNG"]
+    },
+    {
+      title: "한화엔진 — 3Q 채널 실적과 하우스 선호",
+      desc: "채널 전달 3Q 매출 4,136억·영업이익 409억·OPM 9.9%. Top-Pick은 전문가 선호이고 매수 순위가 아니다.",
+      category: "조선", type: "기업 분석", series: "조선",
+      file: "shipbuilding/company_hanwha_engine_082740.html",
+      date: "2026-11-08", updated: "2026-11-08",
+      tags: ["한화엔진","082740","관측"]
+    },
+    {
+      title: "STX엔진 — 선호 명단만 있고 분기 숫자는 없다",
+      desc: "11/7 메리츠 주간 Top-Pick에 STX엔진이 있다. 그 글에는 STX 매출·이익이 없다.",
+      category: "조선", type: "기업 분석", series: "조선",
+      file: "shipbuilding/company_stx_engine_077970.html",
+      date: "2026-11-08", updated: "2026-11-08",
+      tags: ["STX엔진","077970","관측"]
+    },
+    {
+      title: "HD현대마린솔루션 — 11/7 명단에 있고 실적 숫자는 없다",
+      desc: "11/7 주간 Top-Pick에 HD현대마린솔루션이 있다. 분기 매출·이익은 그 글에 없다.",
+      category: "조선", type: "기업 분석", series: "조선",
+      file: "shipbuilding/company_hd_hms_443060.html",
+      date: "2026-11-08", updated: "2026-11-08",
+      tags: ["HD현대마린솔루션","443060","관측"]
+    },
+    {
+      title: "모델솔루션 — 스타링크 샘플 보도",
+      desc: "2026-10-16 채널 보도: 스타링크 샘플 공급. 매출·양산·종목코드는 이 조각에 없다.",
+      category: "우주 경제", type: "기업 분석", series: "우주 경제",
+      file: "space/company_model_solution.html",
+      date: "2026-11-08", updated: "2026-11-08",
+      tags: ["모델솔루션","스타링크","관측"]
+    },
     {
       title: "AI 인프라 2027~2028 테마 지도 — 매출이 찍히는 순서대로 선점하기",
       desc: "메리츠 그림8의 2027·2028 칸을 종목으로 풀었다. 순수 테마주 매출은 없고, 찍히는 순서는 시설 전력장비→장비·부품→소형주→플랫폼이다.",
