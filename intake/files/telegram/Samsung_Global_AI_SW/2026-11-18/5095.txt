@@ -1,0 +1,25 @@
+오픈AI, GPT-6.2 Astra 및 Sol 출시
+
+: 오픈AI는 고난도 전문 업무용 GPT-6.2 Astra와 일상 업무용 GPT-6.2 Sol 공개. 두 모델 모두 에이전트 작업 효율성과 문서·스프레드시트·프레젠테이션 생성 능력을 개선하고, 작업당 비용 절감에 초점
+
+: AAII에서 Astra(62점)는 전작 대비 5점 상승하며 앤스로픽 Claude Fable 5.2에 이어 2위 기록. Gemini 4 Carbon(60점)과 Claude Opus 5.5(59점)를 상회
+
+: Sol(57점)은 전작 대비 2점 상승. GPT-6 Astra와 동등한 성능을 약 15%의 작업당 비용으로 달성
+
+: Astra API 가격은 입력 $8, 출력 $40/100만 토큰으로 전작 대비 20% 인하. 캐시 입력은 $1에서 $0.40으로 60% 인하. Sol은 기존 가격인 입력 $2, 출력 $10 유지
+
+: 오픈AI 모델들이 작업당 비용 대비 성능의 파레토 최적 경계 대부분을 차지. 출력 토큰 효율성에서도 오픈AI가 우위를 보였으며, 해당 경계에 포함된 타사 모델은 Claude Fable 5.2가 유일
+
+: Astra는 과학 연구 에이전트 평가인 Terminal-Bench-Science 0.1에서 1위, 물리학 추론 및 지식 평가에서는 Fable 5.2에 이어 2위. 전문 업무 평가인 Agents’ Last Exam에서는 전작 대비 5.2%p 높은 점수를 3분의 1 미만 비용으로 달성
+
+: 금융·법률 등 실무 결과물 품질도 개선. 내부 GDPval v2에서 Astra는 전작 대비 6.2%p 상승하면서 출력 토큰 22% 절감. 법률 업무 평가에서는 Fable 5.2 대비 전체 기준 통과율이 2배 이상 높았으며, 비용은 약 6분의 1 수준
+
+: 3D·로보틱스 분야 선두. AA-3D에서 Astra 1,318 Elo로 1위(Fable 5.2 1,271). AA-Robotics에서도 Astra 79점, Sol 78점으로 Fable 5.2(75점)를 상회
+
+: 코딩 에이전트 성능은 정체. Artificial Analysis Coding Agent Index에서 Astra는 전작과 동일한 점수, Sol은 전작 대비 3점 하락. 특히 Sol은 코드 관련 질의응답 평가에서 핵심 사실 누락이 증가하며 14점 하락. 다만 비용 대비 성능 경쟁력은 개선
+
+: 한편 Astra는 오픈AI 외부 공개 모델 최초로 AI 자기개선 역량에서 High 임계치 도달. 오픈AI는 이를 모든 연구자에게 고성능 연구 엔지니어 1명을 추가 배치하는 것과 유사한 AI 연구 가속 효과로 평가
+
+: 두 모델은 ChatGPT Work와 Codex에서 Plus·Pro·Enterprise·Edu 사용자에게 제공되며, API에서도 이용 가능
+
+https://openai.com/index/introducing-gpt-6-2-astra-sol

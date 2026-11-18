@@ -1,0 +1,49 @@
+마이크로소프트, Ignite 2026 주요 발표 내용
+
+: 마이크로소프트는 Ignite 2026에서 AI를 업무 전반에 통합하는 ‘프런티어 생태계(Frontier Ecosystem)’ 전략 발표. 사티아 나델라 CEO는 Copilot을 ’업무를 위한 새로운 운영체제(OS)’로 정의
+
+■ Copilot 및 기업용 AI 플랫폼
+
+: Copilot Workspaces 공개
+
+→ 사용자와 여러 AI 에이전트가 공통의 업무 맥락을 공유하며 공동 목표를 수행하는 협업 환경. 24시간 자율적으로 업무를 수행하는 Autopilot과 맞춤형 앱 개발을 지원하는 Code도 소개
+
+: Microsoft IQ 발표
+
+→ Microsoft 365, Fabric, Foundry 및 외부 시스템의 데이터를 통합해 조직의 업무 맥락을 AI 에이전트에 제공. 수백 개의 신규 커넥터 추가 및 세일즈포스와 Copilot 통합 협력 발표
+
+■ 자체 AI 모델 경쟁력 강화
+
+: Microsoft-Decision-1.1 정식 출시
+
+→ 멀티모달 지원과 추론 정확도 및 응답 속도 개선. 이미 4,000개 이상 고객사가 활용. GPT-6.2와 메타의 최신 모델도 Foundry에 도입
+
+: MAI Code 2 및 Code 2 Flash 정식 출시
+
+→ 복잡한 코딩 및 대량의 반복 작업을 각각 지원하며, GitHub Copilot과 Foundry에서 제공. 보안 특화 모델 Cyber 2 Flash도 공개. 신뢰할 수 있는 고객에게 자체 모델 가중치를 제공하는 MAI Licensed Weights 발표
+
+■ AI 에이전트 관리 및 보안
+
+: Agent 365 Business Analytics 발표
+
+→ 기업의 AI 사용 비용을 실제 비즈니스 성과와 연결하고 ROI를 분석하는 관리 도구. Agent 365에 등록된 에이전트는 이미 5,000만 개 이상
+
+: Microsoft Perception 정식 출시
+
+→ 공격 시뮬레이션(레드팀), 공격 탐지(블루팀), 문제 수정 및 복구(그린팀)를 담당하는 AI 에이전트들이 협업하는 자율형 보안 시스템
+
+: AI Transparency Initiative 발표
+
+→ NIST 및 40개 이상 조직과 협력해 AI 시스템의 투명성, 독립적 검증 및 안전성에 관한 개방형 산업 표준 개발 추진
+
+■ 데이터베이스 및 자체 인프라
+
+: HorizonDB 정식 출시
+
+→ Azure 기반 분산형 PostgreSQL 데이터베이스로, 자체 관리형 PostgreSQL 대비 최대 8배 성능 제공. Fabric과 통합해 실시간 트랜잭션 및 페타바이트 규모의 과거 데이터를 AI 에이전트가 함께 분석하도록 지원
+
+: 자체 AI 가속기 Maia 300
+
+→ 주요 GPU 기반 시스템 대비 와트당 토큰 처리량 40% 개선을 목표로 제시. 차세대 범용 VM인 Cobalt 200도 정식 출시
+
+https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem

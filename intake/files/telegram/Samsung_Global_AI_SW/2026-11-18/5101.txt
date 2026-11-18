@@ -1,0 +1,27 @@
+구글, ‘Tasks in Gemini’ 무료 출시, 전화·예약·결제까지 자동 수행
+
+: 구글은 Gemini 4 Hydrogen 모델 기반으로 사용자의 업무를 직접 수행하는 ‘Tasks in Gemini’ 출시. 미국, 한국, 일본, 캐나다, 호주, 인도 등 6개국 수억 명의 사용자에게 무료로 순차 제공. 일부 고급 기능은 미국부터 출시
+
+: 단순 질의응답을 넘어 실제 업무 수행으로 확장. Gemini 앱에서 Chat을 Task 모드로 전환하면 전화 통화, 예약, 청구서 분석, 쇼핑 및 결제, 일정 관리 등을 AI가 대신 처리
+
+: 주요 활용 사례
+
+① 자동차 서비스센터 2곳에 동시 전화해 정비 예약 및 캘린더 등록
+
+② 이메일과 전력회사 포털을 분석해 전기요금 급증 원인 파악
+
+③ 상품 비교, 할인 코드 검색, 결제까지 쇼핑 전 과정 수행
+
+④ 문자와 사진을 통해 장보기 상품 추가
+
+⑤ 학교 이메일 분석 후 일정 등록 및 가족 간 일정 조율
+
+: 구글 생태계와의 통합이 핵심 경쟁력. Gmail, Calendar, Maps, Google Pay, Password Manager 등 기존 서비스에 저장된 개인 데이터를 활용. 현재 60개 이상의 외부 앱과 연동하며, 개발자를 위한 Connected Apps Platform도 개방
+
+: AI 결제 기능도 본격 도입. Agent Payments Protocol(AP2)을 활용해 상품 구매를 지원하며, Mastercard, Visa 등과 협력. 사용자는 사전 지출 한도를 설정할 수 있고 기존 카드 혜택도 유지. 향후 Universal Commerce Protocol(UCP) 통합 예정
+
+: 보안 인프라도 강화. Google Cloud의 Agent Compute Engine을 통해 사용자별 전용 격리 가상머신에서 작업 수행. 중요 결제 및 민감한 작업에는 사용자 승인을 요구하며, 반복적인 일상 작업은 사전 허용 가능
+
+: 다만 웹사이트별 AI 에이전트 지원 수준에 차이가 있어 일부 작업은 최종 단계에서 사용자 개입이 필요. 구글은 주요 웹사이트 및 보안 업체와 협력해 에이전트 친화적인 웹 환경 구축 추진
+
+https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features
