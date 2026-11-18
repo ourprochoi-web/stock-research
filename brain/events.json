@@ -1157,14 +1157,6 @@
       "note": "분기 말 9/30 + 45일 = 11/14(토) → 다음 영업일 11/16. DART 11/4 조회: 미제출(10/29 잠정실적·10/28 기타경영사항만). lead 11/4."
     },
     {
-      "when": "2026-11-17 17:00 ET (11/18 07:00 KST)",
-      "what": "엔비디아 3Q FY27 실적·컨퍼런스콜 — 데이터센터 매출·가이던스·HBM/메모리 원가 코멘트",
-      "judges": "national-strategy/ns_bigtech_capex_roi.html · hbm-packaging/hbm_pkg_theme_memory_cycle.html",
-      "grade": "①",
-      "due": "2026-11-18",
-      "note": "NVIDIA IR 보도자료(10/28): Q3 FY27 콜 Tue Nov 17 2pm PT/5pm ET. lead 11/4."
-    },
-    {
       "when": "2026-11-24 08:30 ET (11/24 22:30 KST 콜 · 실적은 11/23 장 마감 후 추정)",
       "what": "Fluence FQ4(FY26) 실적·콜 — ESS 수주잔고·FY27 가이던스·셀 조달(국내 셀 업체 연결)",
       "judges": "energy/energy_ess_ai_power.html · ai-infra/ai_power_company_semi_ess_dc.html",
@@ -1412,14 +1404,6 @@
       "note": "insidertracking/68583 · r-20261107-15; RKLB·CPI 기존 event 유지. 회사 IR 일정 대조 전 채널 일정."
     },
     {
-      "due": "2026-11-18",
-      "when": "2026-11-18 (미국 현지 날짜 주장·시각/출석 수락 미확인)",
-      "what": "NVDA 젠슨 황 하원 3개 위원회 비공개 브리핑 출석 요청일(채널②) — 중국 정보수집 의혹·보안/수출통제 설명 요청, 확정 출석 아님",
-      "judges": "ai-infra/ai_chip_company_nvidia.html#T4",
-      "grade": "②",
-      "note": "insidertracking/68605·68612; 기존 11/18 NVDA 실적과 별개. 요청서·수락 원문 미대조."
-    },
-    {
       "when": "2026-11-18",
       "what": "앤트로픽 공모가 확정(11/18) · 나스닥 상장(11/19, 티커 ANT) — 희망가 70~78달러. 확정가 × 완전희석 주식 수 vs T5 문턱 9,650억 달러(하단 70달러 약 9,161억·74달러 약 9,684억).",
       "judges": "ai-sw/ai_sw_company_anthropic.html#T5",
@@ -1474,14 +1458,6 @@
       "grade": "②",
       "due": "2026-11-20",
       "note": "DDRWatcher 주간 브리프. j-20261113-01 breaks_if ①."
-    },
-    {
-      "when": "2026-11-17(KST) 정규장",
-      "what": "외국인 삼성전자 정규장 순매매 — 순매도면 조기 하향 (d) 점등(넷 중 셋, 삼성전자 부정 강화). 순매수면 (d) 리셋.",
-      "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T7",
-      "grade": "①",
-      "due": "2026-11-17",
-      "note": "11/16 −6,193.6억(연합 [표]). 연합 [표] 외국인 순매수도·마감 기사로 확인. r-20261116-10"
     },
     {
       "when": "2026-11 하순(미정)",
@@ -1602,6 +1578,14 @@
       "grade": "①②",
       "due": "2026-11-20",
       "note": "상원 표결 #264(70–27) 후속. r-20261117-32"
+    },
+    {
+      "when": "2026-12-01",
+      "what": "젠슨 황 미 의회 위원회 증언(블룸버그 ②) · 12/2 엔비디아 법무총괄 — 메가스피드·수출통제 관련 사실관계 진술 여부. CBS 11/26 기한과 날짜 상충.",
+      "judges": "ai-infra/ai_chip_company_nvidia.html#T4",
+      "grade": "②",
+      "due": "2026-12-01",
+      "note": "11/18 브리핑 이벤트 후속. r-20261118-40"
     }
   ]
 }
