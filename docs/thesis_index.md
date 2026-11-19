@@ -11,7 +11,7 @@
 
 | 판단 | 갱신 | 페이지 | 테제 |
 |---|---|---|---|
-| 2026.11.13 | 2026-11-13 | [호르무즈 — 재개방 서명 전의 봉쇄 관측 (관측 카드)](energy/energy_theme_hormuz.html) | 3 |
+| 2026.11.13 ⚠ | 2026-11-19 | [호르무즈 — 재개방 서명 전의 봉쇄 관측 (관측 카드)](energy/energy_theme_hormuz.html) | 3 |
 | 2026.11.13 | 2026-11-13 | [현대차 — 점유·일정은 전언이고 공시는 아직 없다 (관측 카드)](consumer/consumer_company_hyundai.html) | 3 |
 | 2026.11.13 | 2026-11-13 | [기아 — 판매 전언과 이익 전언이 갈린다 (관측 카드)](consumer/consumer_company_kia.html) | 3 |
 | 2026.11.13 | 2026-11-13 | [두산에너빌리티 — 계약은 있고 금액·서명은 없다 (관측 카드)](energy/energy_company_doosan_enerbility.html) | 3 |
@@ -22,11 +22,11 @@
 | 2026.11.08 | 2026-11-08 | [STX엔진 — 주간 선호 명단에 있고 3Q 숫자는 없다](shipbuilding/company_stx_engine_077970.html) | 1 |
 | 2026.11.08 | 2026-11-08 | [HD현대마린솔루션 — 선호 명단 수록, 이번 메모에 실적 없음](shipbuilding/company_hd_hms_443060.html) | 1 |
 | 2026.11.08 | 2026-11-08 | [모델솔루션 — 스타링크 샘플 보도는 수주가 아니다](space/company_model_solution.html) | 1 |
-| 2026.11.02 ⚠ | 2026-11-04 | [아마존 — AWS 공급 제약과 부채로 굴리는 증설 (관측 카드)](ai-sw/ai_sw_company_amazon.html) | 4 |
-| 2026.11.02 ⚠ | 2026-11-04 | [마이크로소프트 — 증설을 현금으로 내는 유일한 하이퍼스케일러 (관측 카드)](ai-sw/ai_sw_company_microsoft.html) | 3 |
+| 2026.11.02 ⚠ | 2026-11-19 | [아마존 — AWS 공급 제약과 부채로 굴리는 증설 (관측 카드)](ai-sw/ai_sw_company_amazon.html) | 4 |
+| 2026.11.02 ⚠ | 2026-11-19 | [마이크로소프트 — 증설을 현금으로 내는 유일한 하이퍼스케일러 (관측 카드)](ai-sw/ai_sw_company_microsoft.html) | 3 |
 | 2026.10.20 ⚠ | 2026-11-12 | [클래시스 — 미용의료 기기 설치 기반·브라질 통합 (보유 종목)](k-beauty/k_beauty_company_classys.html) | 3 |
 | 2026.09.30 | 2026-09-30 | [Novo Nordisk · Eli Lilly — 비만약 듀오폴리 심층 분석](glp1/glp1_company_novo_lilly.html) | 5 |
-| 2026.09.27 ⚠ | 2026-11-07 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
+| 2026.09.27 ⚠ | 2026-11-19 | [우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA](space/space_update_2026.html) | 5 |
 | 2026.09.27 ⚠ | 2026-11-04 | [광원 층 — 병목의 주인은 누구이고, 가격은 어디까지 왔나](ai-infra/optical_light_source_cw.html) | 4 |
 | 2026.09.22 ⚠ | 2026-11-04 | [유가 헤지 그릇 — 석유가스는 테마가 아니라 층이다](energy/oil_hedge_vehicles.html) | 5 |
 | 2026.09.20 ⚠ | 2026-11-04 | [냉각·광 계층 — 아카이브가 비워 둔 두 층을 열어 봤다](ai-infra/kr_cooling_optical_layer.html) | 6 |
@@ -41,7 +41,7 @@
 | 2026.09.16 ⚠ | 2026-09-17 | [Anthropic — AI 안전의 상업화, $965B 기업가치의 해부](ai-sw/ai_sw_company_anthropic.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-15 | [메모리 사이클 판정 — CXMT 위협과 가격 피크](hbm-packaging/hbm_pkg_theme_memory_cycle.html) | 5 |
 | 2026.09.16 ⚠ | 2026-10-15 | [반도체 패권 전쟁 — 68조엔·$52.7B·4,755조 메가프로젝트·TSMC 70% 독점의 지정학](national-strategy/ns_semiconductor_war.html) | 6 |
-| 2026.09.14 ⚠ | 2026-11-04 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
+| 2026.09.14 ⚠ | 2026-11-19 | [사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도](cybersecurity/cyber_ai_security.html) | 4 |
 | 2026.09.13 ⚠ | 2026-11-04 | [미국 에너지 패권 시나리오 — 18사를 현금으로 다시 읽었다: 물량 수혜와 가격 수혜는 다른 종목이다](energy/us_energy_hegemony_17.html) | 4 |
 | 2026.09.12 ⚠ | 2026-11-04 | [광 연결 계층 — DSP가 빠지는 자리에 누가 남는가](ai-infra/optical_interconnect_layer.html) | 5 |
 | 2026.09.12 ⚠ | 2026-11-04 | [광 연결 밸류체인 9사 — 마진 사다리와 지워질 수 있는 자리](ai-infra/optical_valuechain_9.html) | 6 |
@@ -123,7 +123,7 @@
 
 ## 호르무즈 — 재개방 서명 전의 봉쇄 관측 (관측 카드)
 
-`energy/energy_theme_hormuz.html` · 판단 2026.11.13 · 갱신 2026-11-13
+`energy/energy_theme_hormuz.html` · 판단 2026.11.13 · 갱신 2026-11-19
 
 **한 문장** — 호르무즈는 봉쇄·피격 전언이 11월에도 이어지고 재개방 서명은 없다. 유가 헤지 T3의 출구(휴전·파이프 복구)를 이 카드가 대신 열지 않는다. 근거는 대부분 ②이고 ①은 CENTCOM 성명이다.
 
@@ -314,7 +314,7 @@
 
 ## 아마존 — AWS 공급 제약과 부채로 굴리는 증설 (관측 카드)
 
-`ai-sw/ai_sw_company_amazon.html` · 판단 2026.11.02 · 갱신 2026-11-04
+`ai-sw/ai_sw_company_amazon.html` · 판단 2026.11.02 · 갱신 2026-11-19
 
 **한 문장** — AWS는 팔 용량이 없어서 못 판다(3Q +39%, 수주잔고 5,780억$). 그 용량을 짓는 돈은 현금이 아니라 부채다(TTM FCF −469억$, 장기부채 2.6배) — 신용시장이 의심을 시작하는지가 판정이다.
 
@@ -336,7 +336,7 @@
 
 ## 마이크로소프트 — 증설을 현금으로 내는 유일한 하이퍼스케일러 (관측 카드)
 
-`ai-sw/ai_sw_company_microsoft.html` · 판단 2026.11.02 · 갱신 2026-11-04
+`ai-sw/ai_sw_company_microsoft.html` · 판단 2026.11.02 · 갱신 2026-11-19
 
 **한 문장** — 최신 분기 빅테크 5사 중 증설을 영업현금으로 내고도 부채를 줄인 곳은 MSFT뿐이다(FCF +186억$) — 다만 capex 2배·리스 확대로 여유가 줄고 있어, 다음 분기 FCF가 판정이다.
 
@@ -398,7 +398,7 @@
 
 ## 우주 2026 — SpaceX·Rocket Lab, 수직통합의 두 가격 · Starship V3 · KASA
 
-`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-11-07
+`space/space_update_2026.html` · 판단 2026.09.27 · 갱신 2026-11-19
 
 **한 문장** — SpaceX 는 AI 인프라주로 캐펙스가 매출의 2.35배라 자본시장이 조달 비용을 정하고, Rocket Lab 은 구조는 공시로 맞지만 EV/매출 58.7배가 Neutron·Iridium 의 성공을 먼저 샀다 — 둘 다 수직통합이고 둘 다 가격이 실행보다 앞에 있다.
 
@@ -745,7 +745,7 @@
 
 ## 사이버보안 × AI — 플랫폼 전쟁과 AI 무장의 투자 지도
 
-`cybersecurity/cyber_ai_security.html` · 판단 2026.09.14 · 갱신 2026-11-04
+`cybersecurity/cyber_ai_security.html` · 판단 2026.09.14 · 갱신 2026-11-19
 
 **한 문장** — 「AI 보안이 다음 거대 시장」은 세 번 확인됐는데, 그 시장을 파는 6사 중 GAAP로 돈을 버는 건 Fortinet 하나뿐이다.
 
