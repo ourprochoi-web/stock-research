@@ -145,3 +145,6 @@
 | autos | [tesla-cybercab-launch](autos/tesla-cybercab-launch.md) | 테슬라 사이버캡 주문 조건(2만9,990$·월 299$ 구독·12월 인도 예정·텍사스 지오펜스) |
 | policy | [us-ai-national-champions](policy/us-ai-national-champions.md) | 미 AI 「국가대표」 지정 보도(WSJ 11/16, 엔비디아·아마존·MS·오픈AI·앤트로픽 등 20여 곳) |
 | power | [korea-offshore-wind-outlook](power/korea-offshore-wind-outlook.md) | 한국 해상풍력 보급 전망(IEA Renewables 2026: 2026~30 1.7GW, −41%) |
+| companies | [nvidia-quarterly](companies/nvidia-quarterly.md) | 엔비디아 분기 실적·약정(3Q FY27 1,158억$·4Q 가이드 1,300억$·공급약정 3,900억$·보증 1,180억$) |
+| policy | [us-china-optical-transceiver-ban](policy/us-china-optical-transceiver-ban.md) | 미국 중국산 광트랜시버 수입 제한 추진(로이터 11/17, 보류 가능) |
+| policy | [korea-china-fta-services](policy/korea-china-fta-services.md) | 한중 FTA 서비스·투자 후속협상 실질 타결(11/18, 콘텐츠 최혜국대우) |

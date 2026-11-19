@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17",
+ "generated": "2026-11-19",
  "names": {
   "Optus": {
    "code": "OPTUS",
@@ -207,7 +207,11 @@
    "entity": "SIEMENS",
    "falsifier": null,
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "energy/energy_ess_ai_power.html": [
+     "T2"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -6039,6 +6043,16 @@
    ],
    "auto_candidate": true
   },
+  "Amkor Technology": {
+   "code": "AMKR",
+   "market": "US",
+   "entity": "AMKR",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "Amphenol": {
    "code": "APH",
    "market": "US",
@@ -8374,6 +8388,16 @@
    "market": "US",
    "entity": "PLUG",
    "falsifier": "정본 페이지 없음. 미국 이름이라 한국·유럽·중국 중소형 신규 카드가 아니다. 비중·집행 아님.",
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "Powell Industries": {
+   "code": "POWL",
+   "market": "US",
+   "entity": "POWL",
+   "falsifier": null,
    "facts": 0,
    "theses": {},
    "aliases": [],
