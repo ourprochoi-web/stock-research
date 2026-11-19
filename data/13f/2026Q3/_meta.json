@@ -1,0 +1,68 @@
+{
+ "appaloosa": {
+  "name": "아팔루사(데이비드 테퍼)",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 24,
+  "total": 7559628593
+ },
+ "altimeter": {
+  "name": "Altimeter Capital",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 16,
+  "total": 9797175663,
+  "note": "cover tableValueTotal $10,309,080,051 − info table 합 $10,308,735,663 = $344,388. total은 info table 주식만(옵션 1줄 제외)."
+ },
+ "tiger": {
+  "name": "타이거 글로벌(체이스 콜먼)",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 45,
+  "total": 20173101170
+ },
+ "berkshire": {
+  "name": "버크셔 해서웨이(버핏·아벨)",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 89,
+  "total": 304196581325
+ },
+ "duquesne": {
+  "name": "듀케인(스탠리 드러켄밀러)",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 60,
+  "total": 4148873,
+  "note": "value 단위는 천 달러(2Q와 동일). cover tableValueTotal 4,470,866 vs info table 합 4,470,867 — 1(천$) 차이. total은 info table 주식만."
+ },
+ "coatue": {
+  "name": "코투(필립 라퐁)",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 263,
+  "total": 54495247703
+ },
+ "whalerock": {
+  "name": "Whale Rock Capital",
+  "filed": "2026-11-13",
+  "period": "2026-09-30",
+  "n": 40,
+  "total": 11449943528
+ },
+ "pershing": {
+  "name": "퍼싱스퀘어(빌 애크먼)",
+  "filed": "2026-11-16",
+  "period": "2026-09-30",
+  "n": 17,
+  "total": 30796550126,
+  "note": "CIK 0002026053 Pershing Square Inc. 13F-HR 0001172661-26-005427(2026-11-16). data/13f/2026Q2/pershing.json은 구 CIK 0001336528의 2026-03-31 공시(filed 2026-05-15, accession 000117266126002336)라 2Q가 아니다. 신 CIK 2Q는 0001172661-26-003790(2026-08-14)이고, 13F-HR/A 0001172661-26-005426(2026-11-16, NEW HOLDINGS)이 자기주식 184,289,699주 $6,055,759,509를 더한다. 3Q에도 같은 주수(가치 $10,309,165,762). n·total은 info table 주식. 우버 34,268,279주 $2,347,719,794 = total 대비 7.62%."
+ },
+ "ark": {
+  "name": "ARK Invest (캐시 우드)",
+  "filed": "2026-11-13",
+  "period": "2026-09-30",
+  "n": 181,
+  "total": 17373614456
+ }
+}
