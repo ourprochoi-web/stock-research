@@ -42,3 +42,7 @@ related: 테제 ai-sw/ai_sw_company_anthropic#T5 · entity:ANTHROPIC
 | 2026-11-16~17 | CNBC 2026-11-16 · Semafor 행사 발언(Stocktwits) · 블룸버그 전재 · intake/files/web/2026-11-17/anthropic_book.md (routing r-20261117-21) | B/C | 알티미터 거스너 50억$ 청약 목표. 블룸버그 집계 북 약 7배, 11/17 마감·11/18 가격 확정·11/19 나스닥 ANT. 「10~20배 초과청약」은 청약자 본인 발언 (주장). 공모 8.25억 주·70~78$·약 1.4조$. |
 | 2026-11-17 | 채널·X 정리(블룸버그 인용) (routing r-20261117-22) | B | 상장 후 직원 10b5-1 의무화: 상장일 보유분 최대 10% 매각 허용, 첫 실적 후(2027년 초) 추가 35%(누적 45%). |
 | 2026-11-17 | 오픈라우터 집계(X) (routing r-20261117-23) | B | Fable 5.2 출시 첫 주 앤트로픽 API 지출의 11%(토큰 5%). |
+| 2026-11-18 | 앤트로픽 보도자료 anthropic.com/news/anthropic-prices-initial-public-offering · intake/files/web/2026-11-19/anthropic_pricing.md (routing r-20261119-03·39) | A | 공모가 83달러, Class A 9.8억 주(회사 956,351,354·매도 주주 23,648,646), 그린슈 1.47억 주. 나스닥 「ANT」 11/19 거래, 11/20 납입. 총액 약 813.4억$(계산). |
+| 2026-11-19 | 로이터·AP·CNBC(채널 t.me/insidertracking/69659·t.me/Samsung_Global_AI_SW/5112) (routing r-20261119-03) | B | 조달 약 813억$, 기업가치 약 1.5조$, 물량 약 19% 증액. 비구속 주문 약 5,000억$(CNBC). |
+| 2026-11-19 | 윌리엄 블레어(채널 t.me/aethersemiconductor/27072) · SK텔레콤 지분 계산(t.me/insidertracking/69701) (routing r-20261119-04) | C | (주장) 투자자 질문은 경쟁·오픈웨이트·가격 하락, 「다수 승자」 동의. SK텔레콤 약 3,860만 주 ≈ 32억$(83달러 기준). |
+| 2026-11-19 | 삼프로TV 방송 3편(ASR) (routing r-20261119-03) | ASR | 방송 조달액 940억·960억·680~700억$ 표기 — 회사 숫자(813.4억$)와 불일치, 미사용 정정 줄. |

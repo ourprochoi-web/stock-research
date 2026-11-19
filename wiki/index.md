@@ -14,9 +14,9 @@
 | companies | [dnd-pharmatech-nly01](companies/dnd-pharmatech-nly01.md) | 디앤디파마텍 NLY01 신경교종 전임상(UCSF 프리프린트)·적응증 확장 |
 | memory | [hbm-structure](memory/hbm-structure.md) | HBM 수요 산식·패키징 · 루빈 HBM4 19.2TB/s 사양(10/26) |
 | ai-finance | [dc-financing-credit](ai-finance/dc-financing-credit.md) | CDS·채권·차입 지표 · 메타 350억$ 주식 조달(10/26) |
-| ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 · 11/15 WSJ 지원 축소·UBS 500억$+ |
+| ai-finance | [nvidia-compute-financing](ai-finance/nvidia-compute-financing.md) | 엔비디아 금융 플랫폼 5,000억+·잔존가치 지원·오픈AI 보증 · 11/15 WSJ 지원 축소·UBS 500억$+ · WSJ 5,000억$ 집행 0·브로드컴 보증 75~85%(11/19) |
 | optics | [optics-interconnect-basics](optics/optics-interconnect-basics.md) | 800G/1.6T·CPO |
-| power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 · ISO-NE 대형부하 FERC안·BAAJA·SKT–효성 MOU(11/16) |
+| power | [transformer-grid](power/transformer-grid.md) | 변압기·송전 · ISO-NE 대형부하 FERC안·BAAJA·SKT–효성 MOU(11/16) · BAAJA 수정안 69대27·FERC 5권역 제출·효성 난퉁 250대(11/19) |
 | etf | [covered-call-mechanics](etf/covered-call-mechanics.md) | 커버드콜 콜 매도 구조·부분 vs 100%OTM·상승 제한 |
 | policy | [singapore-hdb-housing](policy/singapore-hdb-housing.md) | HDB 연혁·2차 시장·99년 임차권·인정가 대출 |
 | industry | [korea-dental-economics](industry/korea-dental-economics.md) | 치과 건보 수가·비급여 임플란트 구조(협찬·이해상충) |
@@ -78,7 +78,7 @@
 | macro | [us-midterms-fed-personnel](macro/us-midterms-fed-personnel.md) | 노무라: 민주 하원 90%·양원 60%, 상원=연준 인사 승인권(파월 이사 2028-01) |
 | memory | [korea-dram-export-unit-value](memory/korea-dram-export-unit-value.md) | HSK 8542321010 D램 수출 단위가치 월별(2025-10~2026-09)·잠정/확정 기준선·고정가 |
 | ai-finance | [ai-bubble-valuation](ai-finance/ai-bubble-valuation.md) | AI 버블 vs 닷컴 — 선행 PER·CAPE·집중도·벤더 파이낸싱 비교 이력 |
-| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 · 6배 수요·74$ 중간값 약 1.33조$(11/16) · 블룸버그 약 7배·거스너 50억$·직원 10b5-1(11/17) |
+| ai-finance | [anthropic-ipo-timeline](ai-finance/anthropic-ipo-timeline.md) | 앤스로픽 IPO 일정·기대 밸류 이력 · 6배 수요·74$ 중간값 약 1.33조$(11/16) · 블룸버그 약 7배·거스너 50억$·직원 10b5-1(11/17) · 11/18 공모가 83$·9.8억 주 확정(11/19) |
 | companies | [tmo-earnings](companies/tmo-earnings.md) | 써모피셔 분기 실적 이력(카드 없음·watch-only 배경) |
 | macro | [europe-china-competition](macro/europe-china-competition.md) | 유럽–중국 산업 경쟁·의존(배터리·EV·태양광·럭셔리) 이력 |
 | macro | [el-nino-2026](macro/el-nino-2026.md) | NOAA 역대 최강 엘니뇨 확률 83%(10~12월)·다음 판정 11/12, 대만 태풍 휴장·커피 |
@@ -125,11 +125,11 @@
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
-| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/13 · D램 현물 주간 45·46주 · 11/16–11/17 2일 연속 순매도((d) 점등) |
+| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/13 · D램 현물 주간 45·46주 · 11/16–11/17 2일 연속 순매도((d) 점등) · 11/19 삼성전자 외국인 4일 연속 순매도 |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
-| policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) · 11/15 의회 법안 가속·노무라 영향 추정 · BIS 원격 접근 IFR(11/17) |
+| policy | [us-hbm-export-controls](policy/us-hbm-export-controls.md) | 미 HBM 대중 수출통제 구조·번들 우회(11/3 The Information) · 11/15 의회 법안 가속·노무라 영향 추정 · BIS 원격 접근 IFR(11/17) · FT TSMC·삼성 일부 중국 출하 중단(11/19) |
 | companies | [qualcomm-quarterly](companies/qualcomm-quarterly.md) | 퀄컴 분기 세그먼트·가이던스(FQ4 FY26 핸드셋 −26%·FQ1 핸드셋 감소 가이던스) |
 | consumer | [fashion-inventory-signal](consumer/fashion-inventory-signal.md) | 패션 재고·제조원가 역산·벤처 확장 신호(언더스탠딩 11/06) |
 | companies | [rocket-lab-quarterly](companies/rocket-lab-quarterly.md) | 로켓랩 분기 실적(3Q26 매출 2.68억$·백로그 35.7억$) |

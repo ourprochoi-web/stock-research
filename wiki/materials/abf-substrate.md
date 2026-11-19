@@ -14,3 +14,4 @@ related: hbm-packaging/hbm_pkg_theme_substrate.html#T1
 - 2026-10-31 · 인텔 3Q26 콜 전문 (routing r-20261031-17) · A · 립부 탄: 「an industry-wide shortage of advanced organic substrates for our EMIB packaging is also impacting our ability to scale output」. 진스너: 「supply constrained throughout 2027 and into 2028」
 - 2026-10-31 · Futurum (routing r-20261031-17) · B · 인텔 기판 캐파 +40% 추가 확보, 대부분 2027 하반기 도착
 - 2026-10-31 · 이효석 방송 (routing r-20261031-17) · C · (주장) 「삼성전기도 기판이 부족하다는 얘기」 — 출처 미제시
+- 2026-11-19 · JPM APAC(채널 t.me/aethersemiconductor/27075) · 노무라(t.me/BrainlessCollector/3878) (routing r-20261119-14) · B/C · 엔비디아 기판 추가 용량 — 킨서스 전용 용량 2H27 생산분부터 3.5배, 3Q28 추가. 이비덴 경쟁(유니마이크론·신코·삼성전기). 일본 9월 FC-BGA 출하액 YoY +83%·m²당 단가 +75% 사상 최고(노무라). 이비덴 AI 빌드업 면적 2026→2030 5.4배(C).

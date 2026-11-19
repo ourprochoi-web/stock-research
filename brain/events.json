@@ -1404,14 +1404,6 @@
       "note": "insidertracking/68583 · r-20261107-15; RKLB·CPI 기존 event 유지. 회사 IR 일정 대조 전 채널 일정."
     },
     {
-      "when": "2026-11-18",
-      "what": "앤트로픽 공모가 확정(11/18) · 나스닥 상장(11/19, 티커 ANT) — 희망가 70~78달러. 확정가 × 완전희석 주식 수 vs T5 문턱 9,650억 달러(하단 70달러 약 9,161억·74달러 약 9,684억).",
-      "judges": "ai-sw/ai_sw_company_anthropic.html#T5",
-      "grade": "②",
-      "due": "2026-11-18",
-      "note": "Kenneth 지시 2026-11-12 23:04 KST: 잠정 「11/16 전후」 이벤트를 이 줄로 대체하고 11/16 줄은 삭제. 공모가 11/18, 나스닥 상장 11/19, 희망가 70~78달러. 출처 국민일보 005/0001884637·blazingbees X(11/11), r-20261112-23."
-    },
-    {
       "when": "2026-11-18 14:00 KST(13:00 SGT)",
       "what": "삼성전자 Investor Forum 2026(싱가포르) — DS AI 방향·파운드리·메모리·DX. 메모리 세션이 HBM4 고객·공급 규율을 말하는지 = 삼성전자 스탠스 (a) 재검토 입력.",
       "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T9",
@@ -1468,14 +1460,6 @@
       "note": "WSJ via Reuters, 러트닉 발표 「1주 안」 가능·지연 가능. r-20261116-05"
     },
     {
-      "when": "2026-11-19 15:30 KST",
-      "what": "트럼프·시진핑·푸틴 선전 회담(보도) — 엔비디아·수출통제·이란 관련 발언 여부.",
-      "judges": "regime",
-      "grade": "②",
-      "due": "2026-11-19",
-      "note": "t.me/insidertracking/69409(채널 일정). r-20261116-32"
-    },
-    {
       "when": "2026-11~12",
       "what": "삼성SDI–Jupiter Power 16GWh 계약의 DART 단일판매·공급계약 공시 여부(11/16 기준 미공시).",
       "judges": "energy/energy_battery_valuechain_update.html#T3",
@@ -1490,22 +1474,6 @@
       "grade": "②",
       "due": "2026-11-17",
       "note": "r-20261115-11 · t.me/insidertracking/69311"
-    },
-    {
-      "when": "2026-11-19 04:00 KST",
-      "what": "10월 FOMC 의사록 — 3.75~4.00% 동결 회의에서 추가 25bp 인상 지지 위원 범위. 넓으면 12월 인상 확률↑(레짐 금리 축).",
-      "judges": "regime",
-      "grade": "②",
-      "due": "2026-11-19",
-      "note": "r-20261115-11 · t.me/insidertracking/69311"
-    },
-    {
-      "when": "2026-11-18~19 (선전 APEC·목요일 미·중·러 3자)",
-      "what": "트럼프–시진핑 회담·APEC — 미 당국자 「반도체 수출통제는 협상 대상 아님」. 결과문에 대중 칩 판매 문장이 있으면 엔비디아 T4 재검토.",
-      "judges": "ai-infra/ai_chip_company_nvidia.html#T4",
-      "grade": "②",
-      "due": "2026-11-19",
-      "note": "r-20261115 큐 · t.me/insidertracking/69281"
     },
     {
       "when": "2026-12-31",
@@ -1586,6 +1554,14 @@
       "grade": "②",
       "due": "2026-12-01",
       "note": "11/18 브리핑 이벤트 후속. r-20261118-40"
+    },
+    {
+      "when": "2026-12-21",
+      "what": "BIS 원격접근 IFR 운송 중 물량 유예 종료(12/21) — TSMC·삼성 중국 고객 출하 라이선스 승인 여부(FT 11/19 출하 중단 보도 후속).",
+      "judges": "national-strategy/ns_semiconductor_war.html#T5",
+      "grade": "②",
+      "due": "2026-12-21",
+      "note": "11/19 야간 Lead. r-20261119-07"
     }
   ]
 }

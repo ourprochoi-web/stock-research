@@ -59,3 +59,5 @@ related: memory 테제 · entity:005930 · entity:000660 · entity:MU
 | 2026-11-15 | 경제일보 https://money.udn.com/money/story/5612/9879861 (채널 t.me/YeouidoStory2/119825 · routing r-20261115-06) | B | 대만 모듈업체 「마이크로닉스」(채널 표기) 3분기 사상 최대·D램 부족 심화 전망, 창견(트랜센드) 등 모듈업체는 3분기 마진 하락 |
 | 2026-09-30 (11/15 기록) | DS투자증권 양형모 t.me/milperc/356 (routing r-20261115-30) | B | 범용 D램 계약가 상승률 3분기 13~18% 수준으로 축소, HBM은 가격·물량 계약이 더 길게 잡힘(국면 엔진 서술) |
 | 2026-10-01 (11/15 기록) | 마이크론 FY4Q26 콜(한투 정리 t.me/aetherjapanresearch/25581·25582) (routing r-20261115-32) | B | SCA 26건(직전 16)·2030년까지 매출 35%+·3/4이 Floor~Ceiling 가격 밴드. RPO 약 1,500억$, 고객 선수금 320억$(4Q 예치금 수취 123억$). CY27 생산 75%+ 약정. CY26 업계 NAND 비트 출하 20% 초반 증가 |
+| 2026-11-18 | TomorrowX 서밋(채널 t.me/aethersemiconductor/27059 · psinvestor X · 아이뉴스24 t.me/YeouidoStory2/120037) (routing r-20261119-12) | B | 마이크론 메흐로트라: 2027 물량 약 75% 판매 완료. AI칩 수요 10~15% 줄어도 LTA 유지 — 해지 요청분은 다른 고객에 판매. |
+| 2026-11-19 | JPM APAC 컨퍼런스 피드백(채널 t.me/aethersemiconductor/27076) (routing r-20261119-12) | C | TIG 투자심리 최약. 메모리 약점: 키옥시아 가격 정체, 난야·윈본드 vs CXMT. |
