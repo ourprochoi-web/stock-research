@@ -1,6 +1,6 @@
-# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-17)
+# 이름 색인 — 종목·키워드 → 테제 · 엔티티 · facts (훅 생성 · 2026-11-19)
 
-추적 627개 · 테제가 걸린 이름 281 · 엔티티 있음 475 · facts 있음 87.
+추적 629개 · 테제가 걸린 이름 282 · 엔티티 있음 477 · facts 있음 87.
 라우팅할 때 이름으로 여기를 먼저 본다(§R2 ①). 테제 0인 이름에 정보가 오면 ⓒ 신규 — 배치처가 없다는 뜻이므로 판단을 세울지 버릴지 그 자리에서 정한다.
 
 | 시장 | 이름 | 코드 | 엔티티(반증) | 테제 | facts |
@@ -22,7 +22,7 @@
 | EU | CAF | CAF | ✓  | k_defense_company_hyundai_rotem#T2 | — |
 | EU | Ericsson | ERIC | ✓ 대형 유럽 통신장비. 한국·유럽·중국 중소 후보 카드 금지와 무관. 정본 페이지 없음. 비중·집행 아님. | — | — |
 | EU | Mercedes-Benz | MBG | ✓  | — | — |
-| EU | Siemens | SIEMENS | ✓  | — | — |
+| EU | Siemens | SIEMENS | ✓  | energy_ess_ai_power#T2 | — |
 | EU | Stellantis | STLA | ✓  | — | — |
 | EU | Talgo | TALGO | ✓  | k_defense_company_hyundai_rotem#T2 | — |
 | EU | Volkswagen | VW | ✓  | — | — |
@@ -378,6 +378,7 @@
 | US | Alibaba | BABA | ✓ 2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_val | — | — |
 | US | Alphabet | GOOGL.O | ✓  | ns_bigtech_capex_roi#T1,T2,T4,T5 · ai_value_chain_guide_v2#T1 · us_power_regulated_vs_merchant#T5 · ai_sw_company_anthropic#T4 · ai_sw_overview#T2,T4 · hbm_pkg_theme_memory_cycle#T2 · us_7axis_cross_valuation#T2 · 13f_2026q2#T4 · space_update_2026#T1 · ai_sw_company_microsoft#T1 | — |
 | US | Amazon | AMZN.O | ✓ T1 AWS 성장률 30% 미만·수주잔고 감소, T2 분기 FCF 플러스 전환·순차입 정지, T3 아마존 I | ai_sw_company_amazon#T1,T2,T3,T4 · ns_bigtech_capex_roi#T1,T2,T4,T5 · ai_power_company_nuclear_smr#T3 · ai_power_infra_investment_map#T1,T3 · ai_value_chain_guide_v2#T1,T2,T4 · us_bloom_intel_deep#T4 · us_power_regulated_vs_merchant#T5 · us_vertiv_corning_deep#T6 · ai_sw_company_anthropic#T4 · hbm_pkg_theme_memory_cycle#T2,T7 · k_beauty_company_apr#T3 · k_beauty_company_pharmaresearch#T1 · space_update_2026#T1 · energy_company_doosan_enerbility#T2 | — |
+| US | Amkor Technology | AMKR | ✓  | — | — |
 | US | Amphenol | APH | ✓  | us_ai_adjacent_cross_valuation#T11,T4 · us_ai_adjacent_sectors#T2,T7 · us_epc_datacenter_build#T1 | 9 |
 | US | Anduril | ANDURIL | ✓  | — | — |
 | US | Antero Resources | AR | ✓  | us_energy_hegemony_17#T1,T2 | 11 |
@@ -508,6 +509,7 @@
 | US | Palo Alto Networks | PANW.O | ✓  | cyber_ai_security#T2,T3,T4 | 9 |
 | US | Permian Resources | PR | ✓  | us_energy_hegemony_17#T1,T2 | 10 |
 | US | Plug Power | PLUG | ✓ 정본 페이지 없음. 미국 이름이라 한국·유럽·중국 중소형 신규 카드가 아니다. 비중·집행 아님. | — | — |
+| US | Powell Industries | POWL | ✓  | — | — |
 | US | Qualcomm | QCOM.O | ✓ 정본 페이지 없음. 엣지 AI 기기 #T가 없어 후보. META·MSFT 워치는 안 늘림. 비중·집행 아님. | ai_chip_architecture_war#T6 | — |
 | US | Quanta Services | PWR | — | — | — |
 | US | QuantumScape | QS | ✓ 정본 페이지 없음. ESS 축 후보. 비중·집행 아님. | — | — |
