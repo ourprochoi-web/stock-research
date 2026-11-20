@@ -125,7 +125,7 @@
 | robotics | [humanoid-funding-listings](robotics/humanoid-funding-listings.md) | 휴머노이드 조달·상장(애질리티 AGLT 11/5) |
 | power | [uranium-supply](power/uranium-supply.md) | 우라늄 공급·계약가(카메코 2026 생산 가이던스 축소) |
 | macro | [korea-monthly-exports](macro/korea-monthly-exports.md) | 산업부 월간 수출입 동향(10월 1,152.8억$·반도체 564.4억$) |
-| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/13 · D램 현물 주간 45·46주 · 11/16–11/17 2일 연속 순매도((d) 점등) · 11/19 삼성전자 외국인 4일 연속 순매도 |
+| macro | [korea-foreign-flows-memory](macro/korea-foreign-flows-memory.md) | 외국인 삼성전자·SK하이닉스 정규장 일별 순매매(조기 하향 (d) 원자료) · 11/10–11/13 · D램 현물 주간 45·46주 · 11/16–11/17 2일 연속 순매도((d) 점등) · 11/19 삼성전자 외국인 4일 연속 순매도 · 11/20 5일 연속·D램 현물 47주 반등((b) 소등) |
 | ai-finance | [hyperscaler-commitments-debt](ai-finance/hyperscaler-commitments-debt.md) | 하이퍼스케일러 capex 밖 약정·리스·백스톱·장기부채(알파벳 9,244억$·아마존 LTD 1,731억$) |
 | policy | [us-fcc-robot-covered-list](policy/us-fcc-robot-covered-list.md) | FCC 해외 생산 로봇 커버드 리스트·연구용 수입 한도 4,000→40 안 |
 | industry | [kr-electronics-exports-trass](industry/kr-electronics-exports-trass.md) | 전기전자 부품 월간 수출(TRASS 잠정) — 10월 PCB +54.3%·MLCC +38.5%·카메라모듈 −6.7% |
@@ -148,3 +148,6 @@
 | companies | [nvidia-quarterly](companies/nvidia-quarterly.md) | 엔비디아 분기 실적·약정(3Q FY27 1,158억$·4Q 가이드 1,300억$·공급약정 3,900억$·보증 1,180억$) |
 | policy | [us-china-optical-transceiver-ban](policy/us-china-optical-transceiver-ban.md) | 미국 중국산 광트랜시버 수입 제한 추진(로이터 11/17, 보류 가능) |
 | policy | [korea-china-fta-services](policy/korea-china-fta-services.md) | 한중 FTA 서비스·투자 후속협상 실질 타결(11/18, 콘텐츠 최혜국대우) |
+| memory | [kioxia-ownership](memory/kioxia-ownership.md) | 키옥시아 지분 구조 — SK하이닉스 SPC2 CB 전환·간접 약 14.1%(11/20 공시, 취득 12/4) |
+| companies | [coherent-capital-return](companies/coherent-capital-return.md) | 코히어런트 자사주 20억$ 승인(11/18)·자본 배분 |
+| memory | [sellside-memory-targets](memory/sellside-memory-targets.md) | 메모리 2사 증권사 목표가 변경 이력(11/20 키움·하나·MS 하향·유안타 상향·BNK 105만) |
