@@ -46,3 +46,4 @@ related: 테제 ai-sw/ai_sw_company_anthropic#T5 · entity:ANTHROPIC
 | 2026-11-19 | 로이터·AP·CNBC(채널 t.me/insidertracking/69659·t.me/Samsung_Global_AI_SW/5112) (routing r-20261119-03) | B | 조달 약 813억$, 기업가치 약 1.5조$, 물량 약 19% 증액. 비구속 주문 약 5,000억$(CNBC). |
 | 2026-11-19 | 윌리엄 블레어(채널 t.me/aethersemiconductor/27072) · SK텔레콤 지분 계산(t.me/insidertracking/69701) (routing r-20261119-04) | C | (주장) 투자자 질문은 경쟁·오픈웨이트·가격 하락, 「다수 승자」 동의. SK텔레콤 약 3,860만 주 ≈ 32억$(83달러 기준). |
 | 2026-11-19 | 삼프로TV 방송 3편(ASR) (routing r-20261119-03) | ASR | 방송 조달액 940억·960억·680~700억$ 표기 — 회사 숫자(813.4억$)와 불일치, 미사용 정정 줄. |
+| 2026-11-19 | CNBC·로이터·닛케이 · intake/files/web/2026-11-20/anthropic_day1.md (routing r-20261120-01) | A | 나스닥 ANT 첫날: 시초가 111.50$ · 종가 97.17$(공모가 83$ 대비 +17%) · 완전희석 약 1.77조$(로이터)·약 1.8조$(CNBC) · 거래량 8.46억 주. 가디언 1.3조$는 기준 상이로 미사용. |
