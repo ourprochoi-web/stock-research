@@ -151,3 +151,5 @@
 | memory | [kioxia-ownership](memory/kioxia-ownership.md) | 키옥시아 지분 구조 — SK하이닉스 SPC2 CB 전환·간접 약 14.1%(11/20 공시, 취득 12/4) |
 | companies | [coherent-capital-return](companies/coherent-capital-return.md) | 코히어런트 자사주 20억$ 승인(11/18)·자본 배분 |
 | memory | [sellside-memory-targets](memory/sellside-memory-targets.md) | 메모리 2사 증권사 목표가 변경 이력(11/20 키움·하나·MS 하향·유안타 상향·BNK 105만) |
+| cybersecurity | [security-ma-2026](cybersecurity/security-ma-2026.md) | 사이버보안 인수합병 이력(PANW–Applied Compute 45억$·CRWD–ZS 협상 보도 11/20) |
+| ai-models | [ai-math-discovery](ai-models/ai-math-discovery.md) | AI 수학·과학 발견 주장 이력(앤트로픽·Claude 리만 가설 증명 주장 11/20, 공식 인정 전) |

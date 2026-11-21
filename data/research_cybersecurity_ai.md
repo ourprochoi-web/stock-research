@@ -362,3 +362,10 @@
 | ANSSI | 국장 상원 청문(10/21): 인터넷 직접 노출·약한 비밀번호 등 기초 보안 결함, 제로데이 아님, Danfoss AK-SM·AK-SC 제어기 차단 권고, 강제 권한 없음 | ② (r-20261031-24) |
 
 읽기(구조만): cyber_ai_security#T1 관측 — OT·공급망(외부 유지보수) 노출.
+
+## 2026-11-21 덧붙임 (Lead · 판단은 brain/routing)
+| 항목 | 내용 | 등급·출처 |
+|---|---|---|
+| 인수 | CRWD–ZS 협상 보도(11/20, 성사 불확실) · PANW Applied Compute 전액 주식 45억$(마감 FY27 3Q) | ② (r-20261121-12) |
+
+읽기(구조만): cyber_ai_security#T3 관측 — P/S÷성장이 높은 쪽이 주식으로 사는 구도. 배경은 wiki/cybersecurity/security-ma-2026.md.

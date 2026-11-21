@@ -11,3 +11,4 @@ related: ai-infra/ai_power_infra_investment_map.html#T3 · wiki/power/dc-morator
 | 2026-11-16~17 | Utility Dive · SPP(채널 t.me/jsheo/1693·1694·1695) (routing r-20261118-24) | B | PJM·CAISO·MISO·NYISO 11/16(ISO-NE 11/13) FERC 대형부하 접속 개혁안 제출(6월 소명명령 응답, SPP 11/20까지). SPP 2026 통합송전계획 승인(765kV 포함, 피크 58→72GW 2030). AEP 오하이오 DC 요금지원(PIPP) 분담 확대안. |
 | 2026-11-19 | 상원 표결 보도·채널 t.me/jsheo (routing r-20261120-16) | A/B | 연방 | BAAJA 상원 최종 62–33 가결, 하원으로. 20MW+ 신규 데이터센터는 추가 인프라 비용 전액 부담 조항. |
 | 2026-11-19~20 | 텍사스 PUCT 보도(채널) (routing r-20261120-17) | B | ERCOT | Oncor 퍼미안 765kV 송전 2건 재심 불심의 → 승인 확정 수순. |
+| 2026-11-20 | 12news(KPNX) · 채널 t.me/jsheo/1722 · intake/files/web/2026-11-21/spacex_az_12news.md (routing r-20261121-15) | B | 애리조나 코치스 카운티 | 스페이스X 관여 DC 특별사용 허가 신청: 약 747에이커·건물 9동·최대 6GW(주 발전용량 약 20%)·배터리 최대 24GWh·계통 업그레이드 약 36억$(회사 제시)·건식 냉각. 마예스 검찰총장 11/19 서한으로 12/9 위원회 표결 연기 요청, 12/3 타운홀 |
