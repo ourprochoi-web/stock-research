@@ -148,3 +148,5 @@
 | companies | [nvidia-quarterly](companies/nvidia-quarterly.md) | 엔비디아 분기 실적·약정(3Q FY27 1,158억$·4Q 가이드 1,300억$·공급약정 3,900억$·보증 1,180억$) |
 | policy | [us-china-optical-transceiver-ban](policy/us-china-optical-transceiver-ban.md) | 미국 중국산 광트랜시버 수입 제한 추진(로이터 11/17, 보류 가능) |
 | policy | [korea-china-fta-services](policy/korea-china-fta-services.md) | 한중 FTA 서비스·투자 후속협상 실질 타결(11/18, 콘텐츠 최혜국대우) |
+| cybersecurity | [security-ma-2026](cybersecurity/security-ma-2026.md) | 사이버보안 인수합병 이력(PANW–Applied Compute 45억$·CRWD–ZS 협상 보도 11/20) |
+| ai-models | [ai-math-discovery](ai-models/ai-math-discovery.md) | AI 수학·과학 발견 주장 이력(앤트로픽·Claude 리만 가설 증명 주장 11/20, 공식 인정 전) |
