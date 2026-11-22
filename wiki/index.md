@@ -61,6 +61,7 @@
 | materials | [abf-substrate](materials/abf-substrate.md) | ABF 기판 수급 추정·증설 일정 |
 | memory | [socamm-module-substrate](memory/socamm-module-substrate.md) | SOCAMM 규격·LPDDR 공급·티엘비 기판 실적 추정 이력 |
 | quantum | [error-correction-milestones](quantum/error-correction-milestones.md) | 양자 오류 정정 이정표(매직 스테이트) |
+| macro | [us-equity-drawdown-2026](macro/us-equity-drawdown-2026.md) | 미국 3대 지수·SOX 급락 종가 이력 · 11/20 나스닥 주간 −10.02%·SOX 주간 −17.1%(11/22 신설) |
 | macro | [us-treasury-yields](macro/us-treasury-yields.md) | FRED DGS5·DGS10 종가·PPI |
 | geopolitics | [taiwan-strait-activity](geopolitics/taiwan-strait-activity.md) | 대만 국방부 PLA 일일 집계 |
 | geopolitics | [israel-election-2026](geopolitics/israel-election-2026.md) | 이스라엘 총선·연정 일정(12/14경 1차 마감) |
@@ -135,7 +136,7 @@
 | companies | [rocket-lab-quarterly](companies/rocket-lab-quarterly.md) | 로켓랩 분기 실적(3Q26 매출 2.68억$·백로그 35.7억$) |
 | companies | [tsmc-monthly-revenue](companies/tsmc-monthly-revenue.md) | TSMC 월매출(10월 5,868.9억 대만달러·+59.7% YoY) · 이사회 409.3억$ 설비 예산(11/12 덧붙임) |
 | companies | [classys-quarterly](companies/classys-quarterly.md) | 클래시스 분기 실적(3Q26 영업이익 270억·컨센 −29%) |
-| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사 · 11/16 하스 접촉 보도·회사 부인·목표가 하향) · 11/17 감독위원회 신설·복귀 공방 |
+| companies | [nvidia-governance-2026](companies/nvidia-governance-2026.md) | 엔비디아 젠슨 황 거취 보도 이력·이사회 결정(11/12 사임)·후속(11/13 크레스 체제·중국 조사 · 11/16 하스 접촉 보도·회사 부인·목표가 하향) · 11/17 감독위원회 신설·복귀 공방 · 11/20 로이터 SEC 회계 조사·메가스피드 네트워크(FT/WSJ) |
 | companies | [applied-materials-quarterly](companies/applied-materials-quarterly.md) | 어플라이드 분기 실적(FQ4 FY26 104.1억$·FQ1 가이드 111억$·DRAM 33%) |
 | companies | [modine-samsung-talks](companies/modine-samsung-talks.md) | 모딘 — 삼성전자 인수 협상 보도(블룸버그 11/13, 합의 없음) |
 | ai-finance | [nscale-s1](ai-finance/nscale-s1.md) | Nscale S-1/A 계약·용량(TCV 1,058억$·MSFT SOW 438억$·앤트로픽 446억$ 조달 미확보) |
