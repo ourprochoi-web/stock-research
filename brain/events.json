@@ -470,12 +470,12 @@
       "due_note": "when 에 월만 있어 말일로"
     },
     {
-      "when": "2026-11말",
+      "when": "2026-11-24 장 후(미 동부) = 11/25 06시 전후 KST",
       "what": "델 Q3 FY27 — AI 백로그($95B 다음 분기)·AI 서버 마진·FY27 $192B 가이던스 유지 여부. 서버 OEM 층 판단 신설의 판정 근거",
       "judges": "open:smci-hpe",
       "grade": "①",
-      "due": "2026-11-30",
-      "due_note": "when 에 월만 있어 말일로"
+      "due": "2026-11-25",
+      "note": "11/23 일자 확인(psinvestor·JPM 프리뷰) r-20261123-08"
     },
     {
       "when": "2026-11중",
@@ -1554,6 +1554,78 @@
       "grade": "①",
       "due": "2026-11-26",
       "note": "r-20261121-05 · 순살 11/20 일정표도 11/26"
+    },
+    {
+      "when": "2026-11-23 장 후(미 동부) = 11/24 06시 전후 KST",
+      "what": "셈테크 FY27 3분기 실적 — 매출 가이던스 약 4.10억$ 대비·Signal Integrity GPM 62% 선·4분기 가이던스. 사전 판단 충족 65%(r-20261123-18).",
+      "judges": "ai-infra/optical_interconnect_layer.html#T3",
+      "grade": "①",
+      "due": "2026-11-24",
+      "note": "r-20261123-18 · 보유 종목"
+    },
+    {
+      "when": "2026-11-23 장 후(미 동부) = 11/24 KST 새벽",
+      "what": "HPE FQ4 실적 — AI 시스템 백로그·서버 가격 전가(FT 최대 45%)·메모리 원가.",
+      "judges": "entity:HPE",
+      "grade": "①",
+      "due": "2026-11-24",
+      "note": "r-20261123-08"
+    },
+    {
+      "when": "2026-11-24 정규장(KST)",
+      "what": "삼성전자 외국인 순매수 전환 여부 — 조기 하향 (d) 리셋 판정. Lead 사전 판단 전환 45%.",
+      "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T7",
+      "grade": "①",
+      "due": "2026-11-24",
+      "note": "r-20261123-35"
+    },
+    {
+      "when": "2026-11-27(DDRWatcher 48주)",
+      "what": "D램 현물 48주 — DDR5 주간 평균 하락이면 (b) 1주차.",
+      "judges": "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T1",
+      "grade": "②",
+      "due": "2026-11-27",
+      "note": "r-20261123-35"
+    },
+    {
+      "when": "2026-12-15",
+      "what": "앤트로픽 보호예수 1차 단계 해제(상장 27일째) — 최대 3.03억 주(Class A 1.74억·N 1.29억) = 공모 유통 30.9%·발행 2.3%(424B4 ①). 공모가 83달러 위 유지 여부.",
+      "judges": "ai-sw/ai_sw_company_anthropic.html#T5",
+      "grade": "①",
+      "due": "2026-12-15",
+      "note": "r-20261123-11 · 이후 1/5 3.03억·1/19 3.53억·2/2 3.53억"
+    },
+    {
+      "when": "2026-12-21(발표 12/11, 채널 ③)",
+      "what": "앤트로픽 나스닥100·FTSE 러셀 편입(채널 주장, 지수사 공지 미확인) — 패시브 매수와 12/15 해제 물량의 순효과.",
+      "judges": "ai-sw/ai_sw_company_anthropic.html#T5",
+      "grade": "③",
+      "due": "2026-12-21",
+      "note": "r-20261123-11"
+    },
+    {
+      "when": "FY26 실적 발표 +2거래일(일자 미정 → 2027-03-31 래핑)",
+      "what": "앤트로픽 FY26 실적 직후 보호예수 해제 약 17억 주(Class A 15억·N 2.69억, 424B4 ①) — 앤트로픽 중립 스탠스의 첫 판정 창. 분기 매출 성장 유지 여부.",
+      "judges": "ai-sw/ai_sw_company_anthropic.html#T2",
+      "grade": "①",
+      "due": "2027-03-31",
+      "note": "r-20261123-13"
+    },
+    {
+      "when": "2027-01 말(발표일 미확인)",
+      "what": "웨스턴디지털 FQ2 FY27 — 가이던스 매출 50~52억$·EPS 5.60~6.00$ 대비, HAMR 출하 일정.",
+      "judges": "ai-infra/ai_infra_company_seagate.html#T4",
+      "grade": "①",
+      "due": "2027-02-15",
+      "note": "r-20261123-24"
+    },
+    {
+      "when": "2027-02-23",
+      "what": "금융위 자사주 1일 매수 주문 한도 완화 종료(11/24~2/23) — 기간 중 대형주 신규 자사주 결의·집행 여부.",
+      "judges": "hbm-packaging/hbm_pkg_company_samsung.html#T3",
+      "grade": "①",
+      "due": "2027-02-23",
+      "note": "r-20261123-02"
     }
   ]
 }
