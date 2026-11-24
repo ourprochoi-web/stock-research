@@ -1157,14 +1157,6 @@
       "note": "분기 말 9/30 + 45일 = 11/14(토) → 다음 영업일 11/16. DART 11/4 조회: 미제출(10/29 잠정실적·10/28 기타경영사항만). lead 11/4."
     },
     {
-      "when": "2026-11-24 08:30 ET (11/24 22:30 KST 콜 · 실적은 11/23 장 마감 후 추정)",
-      "what": "Fluence FQ4(FY26) 실적·콜 — ESS 수주잔고·FY27 가이던스·셀 조달(국내 셀 업체 연결)",
-      "judges": "energy/energy_ess_ai_power.html · ai-infra/ai_power_company_semi_ess_dc.html",
-      "grade": "③",
-      "due": "2026-11-24",
-      "note": "회사 IR 미공지(11/4 확인) — Marketbeat·equibles 추정 일정. IR 확정 시 ①로 교체. lead 11/4."
-    },
-    {
       "when": "2026-12-09 14:00 ET (12/10 04:00 KST · 파월 회견 04:30)",
       "what": "FOMC 12월 결정 + SEP(점도표) — 10월 동결 뒤 「연내 1회 더」 인상 여부",
       "judges": "regime · macro",
@@ -1626,6 +1618,14 @@
       "grade": "①",
       "due": "2027-02-23",
       "note": "r-20261123-02"
+    },
+    {
+      "when": "2026-12-04",
+      "what": "미 AI 인프라 신규 관세 발효 예정(채널 ②) — 대상 품목(서버·네트워크 장비·부품)과 세율, 동맹국 예외 여부. 캐펙스 효율(ns_bigtech_capex_roi) 입력.",
+      "judges": "regime",
+      "grade": "②",
+      "due": "2026-12-04",
+      "note": "r-20261124-19 · t.me/insidertracking/70084"
     }
   ]
 }
