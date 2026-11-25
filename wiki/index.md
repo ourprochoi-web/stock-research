@@ -151,10 +151,12 @@
 | policy | [korea-china-fta-services](policy/korea-china-fta-services.md) | 한중 FTA 서비스·투자 후속협상 실질 타결(11/18, 콘텐츠 최혜국대우) |
 | memory | [kioxia-ownership](memory/kioxia-ownership.md) | 키옥시아 지분 구조 — SK하이닉스 SPC2 CB 전환·간접 약 14.1%(11/20 공시, 취득 12/4) |
 | companies | [coherent-capital-return](companies/coherent-capital-return.md) | 코히어런트 자사주 20억$ 승인(11/18)·자본 배분 |
-| memory | [sellside-memory-targets](memory/sellside-memory-targets.md) | 메모리 2사 증권사 목표가 변경 이력(11/20 키움·하나·MS 하향·유안타 상향·BNK 105만) |
+| memory | [sellside-memory-targets](memory/sellside-memory-targets.md) | 메모리 2사 증권사 목표가 변경 이력(11/20 키움·하나·MS 하향·유안타 상향·BNK 105만 · 11/24 BNP 마이크론 775$) |
 | cybersecurity | [security-ma-2026](cybersecurity/security-ma-2026.md) | 사이버보안 인수합병 이력(PANW–Applied Compute 45억$·CRWD–ZS 협상 보도 11/20) |
 | ai-models | [ai-math-discovery](ai-models/ai-math-discovery.md) | AI 수학·과학 발견 주장 이력(앤트로픽·Claude 리만 가설 증명 주장 11/20, 공식 인정 전) |
 | ai-finance | [ipo-lockup-schedules](ai-finance/ipo-lockup-schedules.md) | 스페이스X·앤트로픽 424B4 보호예수 해제 일정·수량(12/8 7.976억 · 12/15 3.03억) |
 | policy | [korea-market-stabilization](policy/korea-market-stabilization.md) | 증안펀드 이력(2008·2020 10.76조)·자사주 1일 매수 한도 완화(2026-11-24~2027-02-23) |
 | companies | [semtech-quarterly](companies/semtech-quarterly.md) | 셈테크 분기 실적 이력(FY27 3Q 423.0M$·SI GM 69.8%·4Q 가이던스 480M$) |
 | companies | [fluence-quarterly](companies/fluence-quarterly.md) | 플루언스 에너지 분기 실적(FY26 4Q 매출 −28.6%·GPM −5.0%·잔고 89억$) |
+| companies | [dell-quarterly](companies/dell-quarterly.md) | 델 분기 실적 이력(FY27 3Q AI 수주 602억·백로그 1,323억$) |
+| policy | [ustr-301-tariffs-2026](policy/ustr-301-tariffs-2026.md) | USTR 301조 16개 경제권 신규 관세 보도 이력(11/24~) |
