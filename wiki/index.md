@@ -154,3 +154,5 @@
 | memory | [sellside-memory-targets](memory/sellside-memory-targets.md) | 메모리 2사 증권사 목표가 변경 이력(11/20 키움·하나·MS 하향·유안타 상향·BNK 105만) |
 | cybersecurity | [security-ma-2026](cybersecurity/security-ma-2026.md) | 사이버보안 인수합병 이력(PANW–Applied Compute 45억$·CRWD–ZS 협상 보도 11/20) |
 | ai-models | [ai-math-discovery](ai-models/ai-math-discovery.md) | AI 수학·과학 발견 주장 이력(앤트로픽·Claude 리만 가설 증명 주장 11/20, 공식 인정 전) |
+| ai-finance | [ipo-lockup-schedules](ai-finance/ipo-lockup-schedules.md) | 스페이스X·앤트로픽 424B4 보호예수 해제 일정·수량(12/8 7.976억 · 12/15 3.03억) |
+| policy | [korea-market-stabilization](policy/korea-market-stabilization.md) | 증안펀드 이력(2008·2020 10.76조)·자사주 1일 매수 한도 완화(2026-11-24~2027-02-23) |

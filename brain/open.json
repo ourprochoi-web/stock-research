@@ -441,6 +441,13 @@
       "since": "2026-11-12",
       "page": "k-beauty/k_beauty_company_classys.html",
       "needs": "주간 감사 — T2 도전을 정정·철회·유지로 확정. Lead는 HTML 본문을 고치지 않음."
+    },
+    {
+      "id": "page-debt:ai_infra_company_seagate-t4",
+      "what": "씨게이트 관측 카드에 T4(웨스턴디지털) 신설(Lead ⓒ 11/23, r-20261123-24). brain/theses.json에만 있고 HTML 판단 카드는 아직 재렌더 안 함.",
+      "since": "2026-11-23",
+      "page": "ai-infra/ai_infra_company_seagate.html",
+      "needs": "Kenneth 요청 시 render_cards.py로 카드 재렌더. 유지·정정·철회는 Kenneth."
     }
   ],
   "parked": [
