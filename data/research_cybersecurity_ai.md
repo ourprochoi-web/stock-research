@@ -369,3 +369,10 @@
 | 인수 | CRWD–ZS 협상 보도(11/20, 성사 불확실) · PANW Applied Compute 전액 주식 45억$(마감 FY27 3Q) | ② (r-20261121-12) |
 
 읽기(구조만): cyber_ai_security#T3 관측 — P/S÷성장이 높은 쪽이 주식으로 사는 구도. 배경은 wiki/cybersecurity/security-ma-2026.md.
+
+## 2026-11-24 덧붙임 (Lead · 판단은 brain/routing)
+| 항목 | 내용 | 등급·출처 |
+|---|---|---|
+| 인수 | 크라우드스트라이크–지스케일러 최종 계약 약 439억$ · 전액 주식 · 주당 260.41$ · 삼성 「인수 오버행」 | ②③ (r-20261124-13) |
+
+읽기(구조만): cyber_ai_security#T3 ⓐ — 고배수(CRWD P/S÷성장 152) 주식이 저배수(ZS 32) 자산을 사는 통화. 배경은 wiki/cybersecurity/security-ma-2026.md.

@@ -156,3 +156,5 @@
 | ai-models | [ai-math-discovery](ai-models/ai-math-discovery.md) | AI 수학·과학 발견 주장 이력(앤트로픽·Claude 리만 가설 증명 주장 11/20, 공식 인정 전) |
 | ai-finance | [ipo-lockup-schedules](ai-finance/ipo-lockup-schedules.md) | 스페이스X·앤트로픽 424B4 보호예수 해제 일정·수량(12/8 7.976억 · 12/15 3.03억) |
 | policy | [korea-market-stabilization](policy/korea-market-stabilization.md) | 증안펀드 이력(2008·2020 10.76조)·자사주 1일 매수 한도 완화(2026-11-24~2027-02-23) |
+| companies | [semtech-quarterly](companies/semtech-quarterly.md) | 셈테크 분기 실적 이력(FY27 3Q 423.0M$·SI GM 69.8%·4Q 가이던스 480M$) |
+| companies | [fluence-quarterly](companies/fluence-quarterly.md) | 플루언스 에너지 분기 실적(FY26 4Q 매출 −28.6%·GPM −5.0%·잔고 89억$) |
