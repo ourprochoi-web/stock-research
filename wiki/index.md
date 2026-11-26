@@ -160,3 +160,4 @@
 | companies | [fluence-quarterly](companies/fluence-quarterly.md) | 플루언스 에너지 분기 실적(FY26 4Q 매출 −28.6%·GPM −5.0%·잔고 89억$) |
 | companies | [dell-quarterly](companies/dell-quarterly.md) | 델 분기 실적 이력(FY27 3Q AI 수주 602억·백로그 1,323억$) |
 | policy | [ustr-301-tariffs-2026](policy/ustr-301-tariffs-2026.md) | USTR 301조 16개 경제권 신규 관세 보도 이력(11/24~) |
+| ai-capex | [orbital-data-centers](ai-capex/orbital-data-centers.md) | 우주(궤도) 데이터센터 허가·계획 이력(스페이스X FCC 100만 기 승인 11/25·블루오리진 신청) |
