@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19",
+ "generated": "2026-11-28",
  "names": {
   "Optus": {
    "code": "OPTUS",
@@ -1786,7 +1786,8 @@
      "T2",
      "T4",
      "T5",
-     "T6"
+     "T6",
+     "T7"
     ],
     "hbm-packaging/kr_semi_equip_6.html": [
      "T5"
@@ -2128,6 +2129,9 @@
      "T1",
      "T3",
      "T4"
+    ],
+    "ai-infra/ai_power_company_transformer_grid.html": [
+     "T1"
     ],
     "ai-infra/kr_power_10_deep.html": [
      "T1",
@@ -4268,6 +4272,26 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "타이거일렉": {
+   "code": "219130",
+   "market": "KR",
+   "entity": "219130",
+   "falsifier": "4Q26 STO 매출이 1~3분기 누적에 크게 못 미침(메리츠는 근접을 적음). 티에스이 프로브카드 수주잔고가 3Q26말 1,126억에서 감소. NAND 주문 축소가 확인됨. 중국 메모리 고객에 미국 신규 통제.",
+   "facts": 0,
+   "theses": {
+    "node-screener/node_screener_hbm_scoreboard.html": [
+     "T6"
+    ],
+    "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
+     "T2"
+    ],
+    "hbm-packaging/hbm_pkg_company_samsung.html": [
+     "T9"
+    ]
+   },
+   "aliases": [],
+   "auto_candidate": true
+  },
   "테스": {
    "code": "095610",
    "market": "KR",
@@ -5289,6 +5313,9 @@
     "k-beauty/k_beauty_company_largecap_odm.html": [
      "T1"
     ],
+    "robot/robot_kr_16_valuation.html": [
+     "T3"
+    ],
     "robot/robot_theme_supply_chain.html": [
      "T1"
     ]
@@ -5927,7 +5954,11 @@
    "entity": "BABA",
    "falsifier": "2026-09-20 유니버스 편입 — 시세만 추적, 판단 0편(§B4). 아카이브에 중국 스택은 ai_value_chain_guide_v2 T5 의 「六張網」 서술로만 있다",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "national-strategy/ns_china_ai_ecosystem.html": [
+     "T1"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -6110,7 +6141,6 @@
     "ai-sw/ai_sw_company_anthropic.html": [
      "T1",
      "T2",
-     "T3",
      "T4",
      "T5"
     ],
@@ -6508,9 +6538,6 @@
      "T4",
      "T5",
      "T6"
-    ],
-    "robot/robot_kr_16_valuation.html": [
-     "T3"
     ]
    },
    "aliases": [],
@@ -7177,12 +7204,16 @@
    "falsifier": null,
    "facts": 0,
    "theses": {
+    "energy/energy_ess_ai_power.html": [
+     "T1",
+     "T2",
+     "T4"
+    ],
     "ai-infra/ai_power_company_semi_ess_dc.html": [
      "T2"
     ],
-    "energy/energy_ess_ai_power.html": [
-     "T1",
-     "T2"
+    "energy/energy_battery_valuechain_update.html": [
+     "T3"
     ]
    },
    "aliases": [
@@ -8027,6 +8058,8 @@
     "hbm-packaging/hbm_pkg_theme_memory_cycle.html": [
      "T1",
      "T2",
+     "T4",
+     "T6",
      "T7"
     ],
     "hbm-packaging/hbm_pkg_theme_substrate.html": [
@@ -8734,7 +8767,7 @@
    "code": "SPCX.O",
    "market": "US",
    "entity": "SPCX",
-   "falsifier": "정본 페이지 없음. 테마 페이지 space/space_update_2026.html T1에 $400억 조달 보도만 로그. CSA 매출 숫자는 미검증이라 넣지 않음.",
+   "falsifier": "정본: space/space_update_2026.html(T1·T3). 나스닥 SPCX 상장 2026-06-11(공모가 135달러, 424B4 0001628280-26-042639). 12/8 180일 해제 최대 7.976억 주(조기해제 조건 미충족 확인 11/23).",
    "facts": 0,
    "theses": {
     "space/space_update_2026.html": [
@@ -8899,6 +8932,7 @@
      "T5"
     ],
     "national-strategy/ns_bigtech_capex_roi.html": [
+     "T1",
      "T4"
     ],
     "national-strategy/ns_china_ai_ecosystem.html": [
@@ -9205,9 +9239,13 @@
    "code": "WDC.O",
    "market": "US",
    "entity": "WDC",
-   "falsifier": "정본 페이지 없음. Toshiba JP 카드 없음. NAND/SanDisk 사이클과 이 HDD 주장은 다른 층.",
+   "falsifier": "정본: 씨게이트 관측 카드 T4(2026-11-23 Lead ⓒ 신설, watch 접음). Toshiba JP 카드 없음. NAND/SanDisk 사이클과 이 HDD 주장은 다른 층.",
    "facts": 0,
-   "theses": {},
+   "theses": {
+    "ai-infra/ai_infra_company_seagate.html": [
+     "T4"
+    ]
+   },
    "aliases": [],
    "auto_candidate": true
   },
@@ -9303,6 +9341,16 @@
      "T1"
     ]
    },
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "디어(Deere & Company)": {
+   "code": "DE",
+   "market": "US",
+   "entity": "DE",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
    "aliases": [],
    "auto_candidate": true
   },
@@ -9465,6 +9513,16 @@
    "aliases": [],
    "auto_candidate": true
   },
+  "테이크투 인터랙티브(Take-Two)": {
+   "code": "TTWO",
+   "market": "US",
+   "entity": "TTWO",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
   "펭귄솔루션스(Penguin Solutions)": {
    "code": "PENG",
    "market": "US",
@@ -9499,6 +9557,16 @@
    "code": "SCHD",
    "market": "US ETF",
    "entity": "SCHD",
+   "falsifier": null,
+   "facts": 0,
+   "theses": {},
+   "aliases": [],
+   "auto_candidate": true
+  },
+  "뉴럴링크(Neuralink)": {
+   "code": "NEURALINK",
+   "market": "US(비상장)",
+   "entity": "NEURALINK",
    "falsifier": null,
    "facts": 0,
    "theses": {},
@@ -9919,7 +9987,7 @@
    "code": "MEGASPEED",
    "market": "비상장·싱가포르",
    "entity": "MEGASPEED",
-   "falsifier": null,
+   "falsifier": " 2026-11-23: 정본 연결 엔비디아 T4(중국) — watch 접음 대상.",
    "facts": 0,
    "theses": {
     "ai-infra/ai_chip_company_nvidia.html": [
@@ -10062,6 +10130,9 @@
    "theses": {
     "ai-infra/ai_chip_architecture_war.html": [
      "T6"
+    ],
+    "ai-infra/ai_chip_company_nvidia.html": [
+     "T4"
     ],
     "national-strategy/ns_china_ai_ecosystem.html": [
      "T1"

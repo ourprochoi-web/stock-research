@@ -19317,6 +19317,52 @@
       ],
       "folded": []
     },
+    "219130": {
+      "name": "타이거일렉",
+      "ticker": "219130",
+      "market": "KR",
+      "layer": "반도체 테스트 PCB(프로브카드·로드보드·STO)",
+      "business": "프로브카드 PCB(메모리 NAND·DRAM·HBM, 중국 메모리 고객) · 비메모리 프로브카드 PCB(대만 프로브카드 고객) · 로드보드 PCB(북미 CPU) · STO(스페이스 트랜스포머) 기판. 티에스이 자회사(엔티티 131290 서술, 이번 세션 지분 공시 미대조).",
+      "business_grade": "③(메리츠 양승수 11-10 개시 목록·11-16 3Q 리뷰·11-27 NDR. DART 세그먼트 미대조)",
+      "status": "후보",
+      "pages": [
+        "node-screener/node_screener_hbm_scoreboard.html",
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html",
+        "hbm-packaging/hbm_pkg_company_samsung.html"
+      ],
+      "theses": [
+        "node-screener/node_screener_hbm_scoreboard.html#T6",
+        "hbm-packaging/hbm_pkg_theme_memory_cycle.html#T2",
+        "hbm-packaging/hbm_pkg_company_samsung.html#T9"
+      ],
+      "tracked_price": false,
+      "note": "회사 단독 페이지는 없음. 2026-11-28 Kenneth 승인(09:14 KST)으로 후보 카드 개설. 긍정. 하우스 적정주가(12만→13만)는 채택하지 않음. 테제 status·regime.one·보유 비접촉. 비중·집행 아님. 연결은 티에스이 T6·메모리 사이클 T2·삼성 T9이고 그 status는 그대로다. 다음 확인은 4Q26 실적.",
+      "falsifier": "4Q26 STO 매출이 1~3분기 누적에 크게 못 미침(메리츠는 근접을 적음). 티에스이 프로브카드 수주잔고가 3Q26말 1,126억에서 감소. NAND 주문 축소가 확인됨. 중국 메모리 고객에 미국 신규 통제.",
+      "watch": [
+        {
+          "date": "2026-11-28",
+          "grade": "③",
+          "rid": "r-20261128-01",
+          "one": "③ 3Q26 별도 매출 347억(+70.3%)·OP 85억(+723%)·OPM 24.5%. 컨센 OP 80억 상회(하우스 7.2%). 개시 Buy 12만→13만. 후보 카드 개설.",
+          "source": "t.me/meritz_research/45184"
+        },
+        {
+          "date": "2026-11-28",
+          "grade": "②③",
+          "rid": "r-20261128-02",
+          "one": "③ 메모리 PCB 424→584억, 대만 60→160→270억, 로드보드 1Q27이 올해 물량의 80% 초과. STO 43→100→200억. ② 회사는 NAND 둔화가 없다고 함.",
+          "source": "t.me/meritz_research/45242"
+        },
+        {
+          "date": "2026-11-28",
+          "grade": "①③",
+          "rid": "r-20261128-03",
+          "one": "긍정 후보. 시장은 메모리 베타, 매출은 웨이퍼 투입·테스트 난이도. 11/27 종가 81,700원, 고점 대비 31.9% 아래.",
+          "source": "https://api.stock.naver.com/chart/domestic/item/219130/day"
+        }
+      ],
+      "folded": []
+    },
     "222800": {
       "name": "심텍",
       "market": "KR",
