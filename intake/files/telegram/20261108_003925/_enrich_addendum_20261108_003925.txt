@@ -1,0 +1,20 @@
+enrich stamp=20261108_003925 thin-link / archive enrichment
+box_dir=/workspace/telegram-intake/enrich
+written_at_kst=2026-11-08 00:40:04 KST
+enrich_count=1
+
+--- ENRICH YeouidoStory2/119451 (https://t.me/YeouidoStory2/119451)
+Linked URL: https://finance.sina.com.cn/stock/usstock/c/2026-11-06/doc-inixvfeu5348321.shtml
+Title: 美银：AI股抛售后韩元出现买入机会_新浪财经_新浪网 (新浪财经)
+Box: /workspace/telegram-intake/enrich/yeouidos_119451_20261108/body.txt, /workspace/telegram-intake/enrich/yeouidos_119451_20261108/article_full.md, /workspace/telegram-intake/enrich/yeouidos_119451_20261108/page.html
+Status: ok body_chars=310 images=0 (no body images in article)
+BODY:
+美国银行认为，在人工智能相关股票遭遇抛售后，韩元出现买入机会。
+
+该行全球研究部亚洲外汇与利率策略主管Claudio Piron表示，韩元近期随AI相关股票一道走弱，但韩国规模可观的经常账户盈余，为投资者建立多头头寸提供了“相当大”的支撑。
+
+美国银行Claudio Piron认为，在AI驱动的抛售之后，韩元出现做多机会
+
+“这一因素将开始发挥作用，”他接采访时表示，“从边际上看，我认为目前这些价位为投资者建立韩元多头头寸提供了机会。”
+
+对于美元，Piron表示，此前推动美元走强的“美国例外论”叙事与AI密切相关，而这一叙事目前已经有所退潮。他预计美元兑韩元年底将达到1，330，下一季度将进一步降至1，300。
