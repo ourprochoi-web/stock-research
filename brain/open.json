@@ -462,6 +462,13 @@
       "since": "2026-11-23",
       "page": "ai-infra/ai_infra_company_seagate.html",
       "needs": "Kenneth 요청 시 render_cards.py로 카드 재렌더. 유지·정정·철회는 Kenneth."
+    },
+    {
+      "id": "page-debt:robot_kr_16_valuation-t3",
+      "what": "로보티즈 T3 유지→도전(Lead ⓑ 11/27, r-20261127-16): 3Q26 영업이익 −26억으로 반증 조건 충족. brain/theses.json에만 반영, HTML 판단 카드는 재렌더 안 함.",
+      "since": "2026-11-27",
+      "page": "robot/robot_kr_16_valuation.html",
+      "needs": "Kenneth 주간 감사에서 정정·철회·유지 확정. 요청 시 render_cards.py로 카드 재렌더."
     }
   ],
   "parked": [
